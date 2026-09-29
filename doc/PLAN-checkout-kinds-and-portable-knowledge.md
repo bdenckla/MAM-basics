@@ -1,10 +1,10 @@
 # Checkout kinds and portable knowledge: feedback and plan
 
-State: live. Workstream B is complete. Ben authorized Workstream A on 2026-09-29 and
-approved Decisions 1–3. Workstream A steps 1–7 are implemented, pushed and deployed;
-Ben approved creation and verification of GitRepos2 and GitRepos3 on 2026-09-29,
-and transferred continuation and final completion to a fresh session. Steps 8–9 are
-authorized and await that executor. Decisions 6 and 7 remain planning only.
+State: executed 2026-09-29. Workstreams A and B are complete. GitRepos2 and GitRepos3
+each have four independent full clones and six fresh constrained environments;
+both forests passed their own suite, mega and configuration checks. Decisions 6 and 7
+remain deferred proposals. Account permission settings, laptop work and source-forest
+synchronization remain outside this completed scope.
 
 Written 2026-09-28 by Claude Opus 5.5 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `a367f962`. File and line citations refer to that commit.
@@ -92,7 +92,7 @@ repositories, cloud skips, user-configuration deployment and environment setup a
 per checkout today. The remaining gaps identified on 2026-09-28 now have these dispositions:
 - **Implemented 2026-09-29:** Workstream A distinguishes a worktree's home clone from any
   full clone, records the per-machine forest policy, adds synchronization and pins the six
-  development environments. Forest creation and its verification remain steps 8–9.
+  development environments. Steps 8–9 created and verified both approved secondary forests.
 - **Completed 2026-09-29:** Workstream B migrated the approved repository guidance into tracked
   text, disabled memory and retired the approved legacy stores.
 
@@ -212,9 +212,9 @@ checkout is `C:/Users/BenDe/GitRepos/MAM-basics` on `main`. Every full clone run
 `.venv/Scripts/python.exe` from its repository root. Below, `<py>` means that interpreter, run
 from `C:/Users/BenDe/GitRepos/MAM-basics`. This machine's `$HOME` is `C:/Users/BenDe`.
 
-**Execution status, 2026-09-29:** steps 1–7 are complete. The implementation and check evidence
-are in the revision ledger below. Ben has approved steps 8–9 for the two exact destination
-forests and assigned continuation to a fresh session. Use “Fresh-session handoff” below.
+**Execution status, 2026-09-29:** steps 1–9 are complete. The implementation and check evidence
+are in the revision ledger below, including “Secondary forests created and verified”.
+“Fresh-session handoff” preserves the instructions used by the completion executor.
 
 **Load first:**
 - `mam-repository-topology`, with its two references;
@@ -346,16 +346,16 @@ writing in that repository.
    2. From `C:/Users/BenDe/GitRepos/MAM-basics`, run `<py> py/main_repo_util.py --sync-user-config`.
    3. Confirm that `--check` then reports clean.
    4. Ben runs the same deployment on the laptop, from any full clone there.
-8. **Build the forests.** Ben approved the two exact roots and step 9's verification on
-   2026-09-29. The fresh session owns this work; no repeat scope approval is needed.
-   - Run `<py> py/main_repo_util.py --sync-forest $HOME/GitRepos2`, then the same command for
+8. **Build the forests: completed 2026-09-29.** Ben approved the two exact roots and step 9's
+   verification on 2026-09-29. The fresh session created both forests under that approval.
+   - Ran `<py> py/main_repo_util.py --sync-forest $HOME/GitRepos2`, then the same command for
      `GitRepos3`. Each forest downloads about 0.9 GiB of Git data plus its packages.
    - Ben then makes the per-path settings. While doing so, he can prune the eight GitRepos entries
      at lines 60–66 and 68 of `additionalDirectories` in `~/.claude/settings.json`. Most of those
      entries name repositories that are gone.
-9. **Verify each secondary forest.**
-   - `--forest-status` reports every repository clean, on `main` and 0/0 with `origin`, and all
-     six environments present and matching their constraints.
+9. **Verify each secondary forest: completed 2026-09-29.**
+   - `--forest-status` reported each new forest's four repositories clean, on `main` and
+     0/0 with `origin`, and its six environments present and matching their constraints.
    - From `$HOME/GitRepos2/MAM-basics`, `.venv/Scripts/python.exe py/main_test.py` passes. The
      run includes `test_final_stress_vs_phonetic_mam.py`, which proves the forest's own MAM-private
      is the one being read.
@@ -494,18 +494,20 @@ an execution step of this approved scope.
 
 ## Order
 
-Workstream B is complete. Workstream A steps 1–7 followed Ben's separate authorization and
-resolved Decisions 1–3. Steps 8–9 are now approved and assigned to the fresh successor.
-Cloud expansion remains gated by Decision 7. No temporary
+Workstreams A and B are complete. Workstream A followed Ben's separate authorization,
+resolved Decisions 1–3, and completed the separately approved forest creation and verification.
+Decisions 6–7 remain deferred; cloud expansion still requires Decision 7. No temporary
 memory-directory bridge is part of either implementation.
 
 ## Checks, unchanged outputs, risk
 
 Workstream B's exact gates and expected unchanged outputs are above. Workstream A completed
-its executable/setup checks, full suite and deployment checks. Secondary-forest suite, mega
-and deployment checks remain step 9, now approved for the fresh session. Instruction-only revisions do not expire
-a relevant full-suite result. The Workstream B utility removal has no mega-generator reach but
-still owes the repository's final integration mega.
+its executable/setup checks, source suite and deployment checks, then verified both new forests
+with their own interpreters. Each secondary forest passed its full suite, all 52 mega steps,
+all six environment checks and the user-configuration comparison; tracked outputs were unchanged.
+The completion entry below records the exact tested commits and results. Instruction-only
+revisions do not expire a relevant full-suite result. The Workstream B utility removal had no
+mega-generator reach but received the repository's required final integration mega.
 
 MAM-basics declares product reach in `py/product_scopes.py`; MAM-private declares no corresponding
 product map or root test runner. The approved authored `MAM-parsed/README.md` change is explicit;
@@ -513,7 +515,7 @@ remaining products and generated outputs are expected unchanged. Outward or diff
 acts are separate: normal public/private `main` pushes, account deployment, account-setting writes,
 and approved memory deletion. The completed deletion remains backed by the retained private
 archive and exact approval. Public main retains its existing Pages schedule. Environment
-pinning is complete under Workstream A; forest creation is approved for the fresh successor.
+pinning and both approved forest creations are complete under Workstream A.
 
 
 ## Decisions for Ben
@@ -536,11 +538,12 @@ pinning is complete under Workstream A; forest creation is approved for the fres
 5. **Resolved — Codex memories:** the same approval migrates useful content into tracked text and
    turns generation and use off. Its active metadata database is retained; the refreshed exact
    legacy-file manifest was separately approved and executed on 2026-09-29.
-6. **New lessons:** should a session propose the tracked edit in its final message and commit only
-   when Ben says yes? Recommended. The alternative is to commit without asking.
-7. **Cloud skills:** should the cloud hook install every shared skill once none contains Windows
-   paths? Recommended. This revisits Ben's decision of 2026-09-14 not to install `github-issues` in
-   the cloud.
+6. **Deferred proposal — new lessons:** should a session propose the tracked edit in its final
+   message and commit only when Ben says yes? Recommended. The alternative is to commit without
+   asking.
+7. **Deferred proposal — cloud skills:** should the cloud hook install every shared skill once
+   none contains Windows paths? Recommended. This revisits Ben's decision of 2026-09-14 not to
+   install `github-issues` in the cloud.
 
 ## Revision ledger
 
@@ -640,10 +643,78 @@ and explicitly transfers continuation, repair, verification, write-back, integra
 completion to the fresh executor. The current session only records the approval and handoff,
 commits and pushes that write-back, and then stops. Its two sub-agents have completed their work.
 
+### Secondary forests created and verified
+
+Codex, 2026-09-29: completed Workstream A steps 8–9 in the fresh session. Source,
+development and final public integration use `C:/Users/BenDe/GitRepos/MAM-basics`,
+verified clean `main` at the required
+`e87ff5c625a4a855b5664003b54f3d408c2cd10b` before editing. The preceding session had
+stopped, and this executor owns completion. Both literal destination roots were absent;
+the four origins came from the roster's source siblings, and the source interpreter was
+Python 3.13.15. The two approved `--sync-forest` creation commands ran sequentially
+from the source checkout and each returned zero problems.
+
+**Implemented:** `C:/Users/BenDe/GitRepos2` and `C:/Users/BenDe/GitRepos3` each contain
+the four independent, non-shallow full clones below. Every clone has its own `.git`
+directory and object storage, with no alternates or directory links, and its origin matches
+the corresponding source clone. These are the commits used for both forests' suite and mega:
+
+| Repository | Verified HEAD in both new forests |
+| --- | --- |
+| MAM-basics | `e87ff5c625a4a855b5664003b54f3d408c2cd10b` |
+| MAM-private | `3dfbc5ed2949bf67a8c3014980945a41103eabb3` |
+| hbofonts | `812ff746cb7317e908e70748f8058d3db535a6f8` |
+| phonetic-hbo | `8da90513df1c759d8db34b135d007e79686715d3` |
+
+**Verified:** each forest owns six freshly installed environments: MAM-basics root,
+hbofonts root, and MAM-private root plus `mgketer`, `al-hatorah` and `masorah-books`.
+No environment was copied, linked or borrowed. All twelve interpreter prefixes name their
+own `.venv`; every development requirements/constraints pair matches its committed bytes,
+and corresponding pairs are byte-identical across the two forests. Every environment passed
+direct requirement coverage, installed pin agreement, system-site exclusion and `pip check`.
+MAM-simple's consumer requirements were excluded, and phonetic-hbo has no development
+requirements. `repos_root()` and every roster sibling lookup resolved inside the invoking
+forest. Sibling discovery was not redirected to another forest, and cloud flags were not enabled.
+
+**Passed:** the four verification commands in the handoff ran from each new MAM-basics root
+with that root's own interpreter. GitRepos2's suite reported 1011 passed, 5 skipped in
+177.84 seconds; GitRepos3's suite reported 1011 passed, 5 skipped in 175.33 seconds.
+Both runs executed the private-data checks. Each mega completed all 52 steps with exit zero:
+GitRepos2's mega took 262.3 seconds, and GitRepos3's mega took 251.9 seconds. Both used the
+pinned Graphviz 16.0.0 and its font checks.
+Neither mega used cloud skips. Each `--sync-forest --check` returned zero problems, and each
+`--sync-user-config --check` reported all 21 mappings clean and zero problems.
+
+**Unchanged outputs:** after both megas, all eight target clones were clean `main`, 0/0
+with freshly fetched origin. NUL-delimited status, unstaged and staged filename diffs were
+empty in every clone. Products, generated pages, font outputs and private outputs remained
+unchanged; there was no generated diff to explain or commit. The audits produced no
+line-ending warnings. This completion write-back changes only this plan and does not expire
+the suite or mega results at the exact executable baseline above.
+
+**Left unchanged because source-forest synchronization is excluded:** the final
+`--forest-status` returned exit one solely for
+`C:/Users/BenDe/GitRepos/MAM-private`, clean `main` at
+`384bf4f615f140c3657a9236a15ff35cecae6cf3`, two commits behind
+`origin/main@3dfbc5ed2949bf67a8c3014980945a41103eabb3`. All six source environments
+passed. GitRepos2 and GitRepos3 each reported zero problems in that same status run.
+The source MAM-private checkout was neither advanced nor otherwise changed.
+
+**Completed scope:** Workstream A steps 1–9 and Workstream B are implemented. Decisions 6–7
+remain deferred proposals. Ben retains ownership of account trust and permission settings.
+No account settings, laptop state, memory backups, cloud-skill installation, unrelated private
+pipeline or existing worktree was changed. UTF-8 logs, job results and Git/environment audit
+JSON remain in the source checkout's `.novc/` under the unique
+`portable-knowledge-20260929-01-` prefix; the material results are recorded above.
+
 ## Fresh-session handoff
 
-Prepared by Codex on 2026-09-29. Ben's actual authorization is quoted in the preceding entry;
-the instructions below are Codex's reconstruction of the remaining approved work.
+This handoff was prepared before steps 8–9 ran. “Secondary forests created and verified”
+records its completed disposition; the commands below preserve the verification procedure.
+
+Prepared by Codex on 2026-09-29. Ben's actual authorization is quoted in the revision-ledger
+entry beginning “Ben replied to the concrete proposal to create GitRepos2 and GitRepos3”;
+the instructions below are Codex's reconstruction of the then-remaining approved work.
 
 **Ownership and checkouts.** The fresh session is the sole continuation owner and owns final
 completion. Start in `C:/Users/BenDe/GitRepos/MAM-basics`, a full clone on `main`. Source,
