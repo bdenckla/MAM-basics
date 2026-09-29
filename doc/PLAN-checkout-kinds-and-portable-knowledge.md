@@ -249,6 +249,11 @@ writing in that repository.
      and applies to every full clone. A linked worktree has no `.venv` and uses its home clone's.
 3. **Paths.**
    - Delete the `REPOS_ROOT` paragraph at `verifying.md` lines 54–62.
+   - Rewrite the sibling-paths bullet at `verifying.md` line 241. Its heading, "Sibling paths break
+     in agent worktrees, and `REPOS_ROOT` is the fix", and its last fallback, `repo_root().parent`,
+     have been wrong since `516a4a1a` (2026-09-10), when `mb_cmn/paths.py` began finding siblings
+     beside a worktree's home clone with no variable. Ben agreed on 2026-09-28 that this rewrite
+     waits for this step.
    - Make the script paths checkout-relative in:
      - `verse-links/SKILL.md`;
      - `github-issues/references/reading-and-writing.md` (line 110);
