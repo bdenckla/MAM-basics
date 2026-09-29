@@ -58,6 +58,22 @@ the repository-specific reference before writing. Load only the references neede
   `references/verifying.md`. Regenerate the tracked artifact, read its diff, and read every
   reported number back from the generated file.
 
+## Claude cloud applicability
+
+The checklist and repository exceptions apply in cloud sessions. Source research and
+regeneration require their actual inputs: private OCR, account-local source books and private
+surveys do not arrive with a single MAM-basics checkout. Read a supplied source before making
+its claim; report unavailable source evidence instead of inferring the source's reading.
+Machine paths and dated measurements in the references identify their original evidence,
+rather than a resource that must exist in the cloud.
+
+Run active command recipes from the verified checkout with its own environment. Windows
+full clones use `.venv/Scripts/python.exe`; a Linux cloud checkout uses `.venv/bin/python`
+after hydration against tracked requirements and constraints. A linked worktree uses its home
+clone's interpreter by absolute path. Windows verification does not prove Linux dependency
+compatibility. Follow the repository's declared cloud skips and distinguish their limited
+verification from a generator requiring unavailable private inputs.
+
 ## Canonical copy
 
 This skill is canonical at `MAM-basics/dot-claude/skills/hebrew-prose/` and is shared with

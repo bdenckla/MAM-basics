@@ -32,7 +32,9 @@ them, then use the same complete deployment. `dot-Codex/README.md` and
 ### Claude Code only: cloud SessionStart installation
 
 In a Claude cloud session, MAM-basics' hook installs the common body, Claude wrapper, and
-`hebrew-prose` skill from the session's checked-out branch rather than from local `origin/main`.
+every shared skill declared in `dot-claude/shared-skills.txt` from the session's checked-out
+branch rather than from local `origin/main`. The skills state their cloud runtime limits;
+installation does not establish workflow dependencies, credentials or permissions.
 The checked-out branch is not necessarily `main`, and the hook never overwrites an existing live
 file.
 

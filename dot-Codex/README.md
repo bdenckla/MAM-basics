@@ -144,6 +144,12 @@ checked-out branch, which is `main` only when `main` is that branch. The hook pr
 common-body architecture. It does not install this README, a Codex-only skill, `config.toml`, or
 any other Codex state.
 
+By Ben's 2026-09-29 decision, that Claude hook also installs every skill declared in
+`dot-claude/shared-skills.txt` into the cloud `~/.claude/skills/`, including complete reference
+trees. It preserves existing files and reports incomplete resources. Each skill states its
+cloud runtime limits; copying instructions supplies no dependencies, credentials or
+permissions. The hook remains network-free and excludes Codex-only skills.
+
 Deliberately not tracked here: `auth.json`, `config.toml`, `settings*.json`,
 plugin caches, session transcripts, databases, logs, machine permission state,
 and other generated or secret-bearing Codex state. Add authored configuration

@@ -36,10 +36,10 @@ lesson outside the authorized task's scope. Continue recording approved decision
 task outcomes and necessary documentation corrections as part of the authorized work.
 
 The base's proposed “commit only when Ben says yes” is too broad unless “new lessons” is
-defined. `dot-Codex/user-wide-AGENTS.md`, “Git and commits”, currently says “Commit finished
-work without asking.” Its “Memory retirement” section routes maintained knowledge to owning
-tracked instructions, skills or documents. Neither passage currently grants an inferred lesson
-special policy status or imposes a general knowledge-edit approval gate. A gate on every
+defined. At the investigation baseline, `dot-Codex/user-wide-AGENTS.md`, “Git and commits”,
+said “Commit finished work without asking.” Its “Memory retirement” section routes maintained
+knowledge to owning tracked instructions, skills or documents. Neither baseline passage
+granted an inferred lesson special policy status or imposed a general knowledge-edit approval gate. A gate on every
 documentation commit would also interrupt the required same-commit phase records in
 `iterative-document-editing`.
 
@@ -67,14 +67,15 @@ agent-written text when a particular issue command cannot run.
 
 `dot-claude/shared-skills.txt` declares six skills. Local deployment in
 `py/repo_util/user_config_sync.py`, `_build_mappings`, sends every Claude skill to Claude and
-the declared shared skills to Codex. The cloud hook has a different inventory:
-`.claude/hooks/install-user-config.sh`, “WHAT IS INSTALLED”, copies only the common body,
-Claude wrapper and `hebrew-prose`. Its absence checks, source checks and banners all name
+the declared shared skills to Codex. The cloud hook had a different inventory at the required
+baseline: `.claude/hooks/install-user-config.sh`, “WHAT IS INSTALLED”, copied only the common
+body, Claude wrapper and `hebrew-prose`. Its absence checks, source checks and banners all named
 that one skill. `.claude/settings.json` invokes the hook on startup, resume and compaction.
 
-The hook's exclusions for `verse-links` and `github-issues` still describe absolute Windows
-command paths. Their skill command recipes now use the selected checkout. Other runtime
-obstacles remain, and `mam-wikisource-refresh/SKILL.md` still names the desktop interpreter.
+The baseline hook's exclusions for `verse-links` and `github-issues` still described absolute
+Windows command paths. Their skill command recipes already used the selected checkout.
+Other runtime obstacles remained, and the baseline `mam-wikisource-refresh/SKILL.md` still
+named the desktop interpreter.
 Removing every Windows path is not an appropriate readiness test: historical measurements
 and named local source locations can remain useful evidence, while a relative command can
 still depend on unavailable private inputs or an unsupported API.
@@ -120,7 +121,7 @@ The proposed implementation has these boundaries:
 3. Keep `dot-Codex/user-wide-AGENTS.md`, “Claude Code only: cloud SessionStart installation”,
    both `dot-*/README.md` files and the maintained cloud-setup description consistent with the
    expanded inventory. Later status belongs in the existing cloud-setup update. Retain the
-   2026-09-14 exclusion as a dated decision superseded only if Ben approves this proposal.
+   2026-09-14 exclusion as a dated decision superseded by Ben's approval below.
 4. Provision no dependencies, credentials, permission/trust settings or sibling clones in the
    configuration-copy hook. REST support for issue-body edits is separate executable work,
    outside this proposed installation scope. A real cloud startup and supported-command check
@@ -194,14 +195,15 @@ separate from product reach.
 | Decision 6 policy choice | Implemented; Ben approved the exact narrow paragraph on 2026-09-29. |
 | Decision 6 canonical implementation, push and deployment | Implemented; verification and deployment evidence below. |
 | Decision 7 policy choice | Implemented; Ben approved the six-skill proposal with its stated cloud limits. |
-| Decision 7 implementation and verification | Active under that approval. |
+| Decision 7 canonical implementation and verification | Implemented; integration, push and deployment remain active until the completion entry below. |
 | Source-forest synchronization and other excluded work | Deferred outside this task's scope. |
 
 **Planning write-back verification:** a scratch comparison against the required commit verified
 that the base receipt differs only by the prescribed pointer and joining of its opening State
-paragraph. NUL-delimited status contains only the base receipt and this update. `git diff --check`
-passed. The investigation and Decision 6's instruction change owe neither suite nor mega.
-Skills, executable hooks and products remain unchanged at this stage. Decision 6 was
+paragraph. The task-owned paths at Decision 6's commit were the base receipt, this update and
+the approved canonical common body. `git diff --check` passed. The investigation and
+Decision 6's instruction change owed neither suite nor mega. Skills, executable hooks and
+products were unchanged at that stage. Decision 6 was
 presented to Ben first, following the one-independent-decision-at-a-time procedure; Decision 7
 was presented after Ben approved Decision 6.
 
@@ -249,3 +251,57 @@ implementation baseline is the approved Decision 6 commit
 
 **Effective base State:** Decision 6 is implemented and deployed; Decision 7 is active under
 Ben's explicit approval. Workstreams A and B stay complete. No excluded task is reopened.
+
+## 2026-09-29: Decision 7 implemented and targeted verification completed
+
+Recorded by Codex. **Implemented:** the Claude cloud hook consumes the unchanged six-name
+shared inventory, installs complete skill trees and reports resources independently. It
+preserves existing files, completes missing references when sources are available and reports
+invalid inventory, missing needed sources and incompatible paths. It remains branch-sourced,
+network-free and a local no-op, with zero-exit reporting for ordinary failure paths.
+
+Missing files are staged on the destination filesystem, compared to their canonical bytes
+and published through an exact-target hard link that cannot replace an existing file. Linked
+parents are refused. Interrupted copies leave no partial final file to be accepted on resume;
+a directory appearing at the publication target is refused. A read-only delegated review
+identified these copying cases; Codex root verified and repaired the implementation.
+
+Canonical cloud guidance now covers Linux environments, unavailable private evidence,
+checkout topology, complete REST issue reads and the pre-download private dependency
+preflight. The refresh skill's passage beginning “After the command” previously allowed only
+raw-input paths despite `download_wikisource.run` calling `parse_ws.almost_main` and
+`parse_ws_products.generate_production`. That necessary guidance correction now classifies
+their intermediate, plus, support and documentation outputs and requires each diff to be
+explained. No download, generator or issue operation was performed.
+
+**Targeted checks passed:** Git Bash `bash -n`; 26 disposable fake-home scenarios across the
+main harness and its final failure-injection supplement; exact byte comparison of all six
+installed trees; preservation of existing sentinel bytes and modification times; complete
+REST-recipe capture against a 204-comment independent oracle; and failure of a comments-page
+request without writing a purported complete artifact. The harness covered local no-op,
+empty and seeded homes, repeated runs, incomplete skill trees, absent needed and unneeded
+sources, malformed inventories, CRLF declarations without a final newline, repository
+fallback, malformed HOME, incompatible parents, linked parents, partial-copy recovery and
+exact publication. Windows native symlink creation lacked privilege, so disposable junctions
+exercised the linked-parent cases; their targets remained unchanged. Git Bash command
+overrides were applied through a scratch Bash environment file to make copy failures real.
+
+**Provenance checks passed:** root, `main`, required ancestry and HEAD
+`8c16583828bb57dfd69f07d7fa07957656b322e5` were rechecked with NUL-delimited task-owned status.
+The base receipt still differs from the required source only by its prescribed update pointer
+and joined opening State paragraph. Shared inventory, `iterative-document-editing`, workflow
+executables and all products remain unchanged. Changed text uses UTF-8 and LF as declared by
+repository attributes, and `git diff --check` passed. No tracked test was added.
+
+**Full-suite gate passed:** after the hook's final exact-target publication correction,
+`py/main_test.py` from this full clone's root with its own environment passed with 1011 passed
+and 5 skipped in 154.65 seconds. No mega is owed because the changed hook reaches no generator
+or product. The final fetch found documentation-only origin movement through
+`3bf60ceca97d26e1194b6f4adda25baad786ca9d`; integration must preserve those changes before
+the normal push. Those documentation changes do not expire this suite result.
+
+**Effective base State:** Workstreams A and B and Decision 6 remain executed 2026-09-29.
+Decision 7's approved implementation and verification are complete; integration, push and
+canonical deployment remain active. Actual Claude cloud loading and
+remote API capabilities remain unverified on this Windows machine. The existing body-edit
+helper's REST implementation and every originally excluded task remain outside this scope.

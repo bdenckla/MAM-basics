@@ -82,3 +82,37 @@ beginning “The symmetric user-level arrangement will give Claude Code a minima
 described a future conversion. The conversion landed at
 `d695966be8daea270f85424cb77d06f3b92a873d` on September 16, so the retained update now describes
 the completed common-body arrangement. This correction performs no new cloud-session check.
+
+## 2026-09-29: all six shared skills approved for cloud installation
+
+Recorded by Codex. **Approved and implemented:** Ben chose to install all six shared skills
+with explicit cloud limits, superseding the 2026-09-14 `github-issues` exclusion for
+instruction installation. `.claude/hooks/install-user-config.sh` reads the validated
+`dot-claude/shared-skills.txt` inventory and copies complete trees, including references.
+The common body and Claude wrapper remain independent resources. Existing files are
+preserved; available source trees fill missing references. Invalid inventory and resource
+failures are reported in session context, and ordinary failure paths exit zero.
+
+The hook remains local-no-op, branch-sourced and network-free. It refuses linked destination
+parents, stages missing files and verifies their bytes before publishing without clobbering,
+so a failed copy cannot become an accepted partial file on resume. It installs no runtime,
+credentials, permissions or sibling clones. Claude-only pruning and Codex-only skills remain
+excluded.
+
+Canonical skill guidance now distinguishes portable rules from available workflows. Linux
+commands use the selected checkout's environment. Private source claims stay limited by
+available evidence. Issue reads capture every comment page through REST; body editing remains
+pending under the restricted proxy while the existing helper lacks REST transport. Chapter
+downloads require the complete private dependency loop before starting. The detailed approval,
+implementation and verification record is
+`PLAN-checkout-kinds-and-portable-knowledge-update.md`.
+
+**Local verification passed:** hook syntax, 26 disposable fake-home scenarios, complete
+tree and preservation comparisons, REST-recipe capture against an independent comment-page
+oracle and the canonical suite (1011 passed, 5 skipped). Linked-parent checks used disposable
+Windows junctions because this account lacked native symlink privilege. No product or
+workflow executable changed, so no mega was owed.
+
+**Cloud runtime remains unverified:** no real Claude cloud startup or live API operation was
+performed on this Windows machine. The historical 2026-09-09 loading measurement above does
+not establish loading of the expanded inventory.

@@ -12,11 +12,27 @@ refresh is committed before dependent regeneration, and MAM change logs are comm
 the dependency loop returns to its final MAM-basics state. The change-log generator compares the
 latest release with committed `HEAD`; dirty `MAM-parsed/plus` data is invisible to that comparison.
 
-The commands below run from the verified MAM-basics development checkout. Use
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` as the interpreter, even when the
-development checkout is a linked worktree. Keep network approval, integration, and push
+The commands below run from the verified MAM-basics development checkout. A full clone uses
+its own interpreter; a linked worktree names its home clone's interpreter by absolute path.
+The examples show Windows `.venv/Scripts/python.exe`; a Linux checkout uses `.venv/bin/python`
+from its own environment hydrated against tracked requirements and constraints.
+Keep network approval, integration, and push
 authority within the surrounding user and repository instructions; this skill does not grant
 them.
+
+## Claude cloud preflight
+
+Before starting a chapter download in a Claude cloud session, read
+`references/dependent-refresh.md` and require every checkout, environment, owned input,
+generator and integration capability needed for its complete dependency loop. The download
+command also reparses affected books and can write products. A successful public API request
+does not establish that the full refresh can finish.
+
+The ordinary one-repository cloud checkout lacks MAM-private and phonetic-hbo, so stop before
+the download and report the unavailable dependency loop. Installing this skill supplies its
+rules without enabling a partial refresh. A mega run with declared cloud skips does not
+verify the missing private regeneration or satisfy the complete refresh procedure. Keep
+pywikibot account configuration and authorization separate from this public download workflow.
 
 ## Verify the checkout
 
@@ -29,8 +45,8 @@ Before downloading anything:
 3. When a required source commit was supplied, require that commit to equal `HEAD` or be an
    ancestor. Refresh `origin/main` when the surrounding instructions require a current remote
    baseline.
-4. Confirm that the primary interpreter above exists. Never copy, junction, or symlink the
-   primary `.venv` into a worktree.
+4. Confirm that the selected clone's interpreter exists. A worktree uses its home clone's
+   interpreter; never copy, junction, or symlink the home clone's `.venv` into a worktree.
 5. On Windows when repository ownership differs, pass the development checkout's exact absolute
    path through `git -c "safe.directory=<DEV>" -C "<DEV>"` on every Git invocation. Never add a
    global trust exception.
@@ -43,17 +59,23 @@ the expected one, stop before the download.
 Run the book-data download without `--force-download`:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py fr-wikisource
+./.venv/Scripts/python.exe py/main_download.py fr-wikisource
 ```
 
 Use `--force-download` only when Ben explicitly requests a forced download. After the command,
-inspect NUL-delimited Git status before running a generator. Require every changed or untracked
-path to be an expected chapter output under `in/mam-ws/`, chapter metadata in
-`in/mam-ws-revisions.json`, or a special-page output under `in/mam-ws-special/`; an unexpected
-path blocks the workflow. If status is completely clean, report that the Wikisource data is
+inspect NUL-delimited Git status before running another generator. Classify raw chapter
+outputs under `in/mam-ws/`, chapter metadata in `in/mam-ws-revisions.json` and special-page
+outputs under `in/mam-ws-special/` separately from the download's own regeneration. That
+regeneration writes affected book JSON under `out/mam-ws-parsed-fmt-2/` and `MAM-parsed/plus/`,
+the declared support files under `MAM-parsed/py-examples/`, documentation under
+`gh-pages/MAM-parsed/` and `doc/mp-claims.md`. Inspect every generated diff against the actual
+`parse_ws.almost_main` and `parse_ws_products.generate_production` outputs; an unexplained
+path or diff blocks the workflow. If status is completely clean, report that the Wikisource data is
 already current and stop: do not run mega, commit, or push. If no tracked file changed but
 expected untracked output remains, report that unexpected residue and stop for cleanup or
-direction; do not run mega, commit, or push.
+direction; do not run mega, commit, or push. Generated changes without chapter data or metadata
+changes also need an explanation; do not report unchanged source data as a completed refresh
+with dirty products.
 
 ## After a Wikisource bot run
 

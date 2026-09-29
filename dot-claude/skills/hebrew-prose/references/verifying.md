@@ -19,6 +19,11 @@ All of accgram runs from the selected **MAM-basics** checkout's repository root 
 writes into that checkout's own `out/` and `gh-pages/wlc/` — the code moved on 2026-08-01 and the
 corpus followed on 2026-08-12:
 
+The active examples below show a Windows full clone's interpreter. A Linux cloud checkout
+uses `.venv/bin/python` from its own hydrated environment; a linked worktree names its home
+clone's interpreter by absolute path. Hydration follows the checkout's tracked requirements
+and constraints. Preserve dated historical commands as evidence about those earlier runs.
+
 ```bash
 .venv/Scripts/python.exe py/main_accgram.py generate-html
 ```
@@ -99,11 +104,12 @@ while this paragraph read "Never" the skill contradicted the repo's own instruct
 diff there before trusting a worktree regeneration. Reinstating the old ban for those trees was
 considered and rejected the same day, as a claim of breakage with no measurement behind it.
 
-Tests run from the verified repository root with the home clone's interpreter, following
+Tests run from the verified repository root with the full clone's own interpreter, or a
+linked worktree's home-clone interpreter by absolute path, following
 `AGENTS.md`, “Running tests”, and the worktree runtime reference:
 
 ```bash
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+./.venv/Scripts/python.exe py/main_test.py
 ```
 
 `py/main_test.py` is the only runner — a bare `pytest` failing to collect is the designed state,

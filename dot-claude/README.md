@@ -51,7 +51,7 @@ Tracked so far:
 
 | Skill | What it is |
 | --- | --- |
-| `github-issues` | The rules for touching a GitHub issue in Ben's repositories — reading one in full, filing one, commenting on one, correcting a stale fact in an open issue's body with MAM-basics' `py/main_github_issue_edit.py`, closing, reopening, relabelling or reassigning one with a comment saying why, and citing issues. Took over the former user-wide section "Never change an issue's state without a comment saying why" and two MAM-basics memory notes; the common body's "Load task-specific skills" section now routes issue work here. Added 2026-09-14, shared with Codex and not installed in cloud sessions, all Ben's decisions of that day. |
+| `github-issues` | The rules for touching a GitHub issue in Ben's repositories — reading one in full, filing one, commenting on one, correcting a stale fact in an open issue's body with MAM-basics' `py/main_github_issue_edit.py`, closing, reopening, relabelling or reassigning one with a comment saying why, and citing issues. Took over the former user-wide section "Never change an issue's state without a comment saying why" and two MAM-basics memory notes; the common body's "Load task-specific skills" section now routes issue work here. Added and shared with Codex by Ben's 2026-09-14 decisions. Ben superseded that day's cloud exclusion on 2026-09-29: install the rules with explicit transport limits, including the current body-editor restriction. |
 | `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the former scattered copies in the old full `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — current instruction bodies keep routing pointers, and a rule change goes into the skill first. |
 | `iterative-document-editing` | The shared workflow for evolving multi-turn or multi-session documents, including cumulative revisions, planning and execution separation, and one-writer handoff. |
 | `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
@@ -100,7 +100,14 @@ steps.
 The cloud SessionStart hook is the explicit exception. A cloud session gets the user-level
 configuration from its checked-out branch, not from `main` unless `main` is the checked-out
 branch. The hook remains network-free and does not overwrite a file already present in the cloud
-home.
+home. By Ben's 2026-09-29 decision it reads `shared-skills.txt` and installs all six declared
+shared skill trees, including their references. It fills missing files in an incomplete tree
+while preserving existing files, and reports each resource independently. Claude-only pruning
+and Codex-only skills remain outside its inventory. Installation supplies rules, without
+provisioning environments, siblings, credentials or permissions. The skills require the
+available Linux runtime, complete issue reads through supported transport and the full private
+dependency loop before a chapter refresh. The current issue-body helper remains unavailable
+under the restricted cloud proxy; installation does not bypass that helper.
 
 The former procedure was live-first from 2026-09-09 through 2026-09-13. That procedure could put
 branch-only text into files every local session loads and twice left Codex's shared-skill home
@@ -125,4 +132,6 @@ configuration.
 Do not copy a shared skill separately. The complete `--sync-user-config` operation deploys every
 declared home in one transaction, and `--check` compares every declared home. Adding a skill
 requires adding its canonical directory; adding a Codex destination for a Claude skill also
-requires adding that skill's directory name to `dot-claude/shared-skills.txt`.
+requires adding that skill's directory name to `dot-claude/shared-skills.txt`. The cloud hook
+also consumes that declaration. Audit a new shared skill's cloud applicability and runtime
+requirements before declaring it; installation alone does not make its operations available.

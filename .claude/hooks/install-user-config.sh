@@ -1,268 +1,253 @@
 #!/usr/bin/env bash
-#
-# SessionStart hook: put Ben's user-level Claude configuration and its Codex import
-# target into an ephemeral cloud container, which does not get them any other way.
-#
-# WHAT IS MISSING WITHOUT THIS, AND WHY IT MATTERS
-#
-# A cloud session starts from a fresh clone of MAM-basics, so everything tracked in
-# the repository travels: CLAUDE.md, .claude/settings.json, .claude/skills/. Nothing
-# under ~/.claude/ travels -- Anthropic's cloud-environments documentation says so
-# outright, in its "What carries over from your setup" table, for both
-# ~/.claude/CLAUDE.md and ~/.claude/skills/. Verified in a remote session on
-# 2026-09-09: `find / -name CLAUDE.md` found nothing outside the checkout, and
-# ~/.claude/skills/ held no hebrew-prose. The common user-level arrangement adopted
-# for implementation in MAM-basics issue 274 also needs ~/.codex/AGENTS.md: the
-# minimal Claude wrapper imports that file, and the tracked copy alone does not
-# create the import target.
-#
-# The symmetric setup depends on all three resources by name. Its repository
-# instructions require the hebrew-prose skill, while its minimal user-level Claude
-# wrapper imports ~/.codex/AGENTS.md. Without this hook, a cloud session can read
-# wrappers or repository instructions that point at files the session cannot open,
-# and nothing says so.
-#
-# WHY THIS COPIES AND DOES NOT CLONE
-#
-# It cloned bdenckla/github-misc until 2026-09-09, and that could never have worked.
-# A cloud session's git credential is scoped to the repositories attached to the
-# session; github-misc is private and unattached, so the clone returned "Invalid
-# username or token" no matter how the token was supplied. Measured that day. The
-# files therefore moved into MAM-basics, at dot-claude/ and dot-Codex/, where they
-# arrive with the clone -- so this hook now copies from the checkout and touches the
-# network not at all. doc/user-level-config-in-cloud-sessions.md records the
-# measurement and the reasoning; dot-claude/README.md records the origin/main-sourced
-# deployment procedure for Ben's own machines. Ben's decision, 2026-09-13: this hook
-# is the exception. It uses the user-level files from the cloud session's checked-out
-# branch, which is main only when main is that branch; it never substitutes main for a
-# different checked-out branch.
-#
-# WHAT IS INSTALLED, AND WHAT IS DELIBERATELY NOT
-#
-#   dot-Codex/user-wide-AGENTS.md    -> ~/.codex/AGENTS.md
-#   dot-claude/user-wide-CLAUDE.md  -> ~/.claude/CLAUDE.md
-#   dot-claude/skills/hebrew-prose/ -> ~/.claude/skills/hebrew-prose/
-#
-# Those are the three resources the symmetric Claude setup needs. Other tracked entries
-# are deliberately not installed here; the relevant cases include:
-#
-#   - dot-claude/skills/prune-claude-state/
-#                          prunes this repository's global ~/.claude/plans/ drafts,
-#                          which do not reach a cloud container, so it would have
-#                          nothing to read. It is also
-#                          declared disable-model-invocation: true, so it runs only
-#                          when Ben asks for it by name.
-#   - dot-claude/skills/verse-links/
-#                          names its interpreter and py/main_verse_links.py by the
-#                          absolute Windows paths of Ben's own machines, which a
-#                          cloud container does not have. The command itself needs
-#                          only the checkout, and its --help says how to run it.
-#   - dot-claude/skills/github-issues/
-#                          names the same interpreter and
-#                          py/main_github_issue_edit.py by those absolute Windows
-#                          paths, and whether a cloud session's repository-scoped
-#                          token may write to a GitHub issue has not been
-#                          measured. Ben's decision, 2026-09-14: not installed here.
-#   - dot-claude/shared-skills.txt
-#                          is the local deployment manifest that declares which shared skills
-#                          Codex receives. It is not itself a user-level resource installed by
-#                          the Claude cloud hook.
-#   - dot-claude/README.md and the rest of dot-Codex/
-#                          are the deployment procedure and Codex-only resources.
-#                          Nothing in a Claude cloud session loads them, and they
-#                          are readable in the checkout if wanted.
-#
-# WHICH GATE, AND WHY BOTH OF THEM
-#
-# Gate 1, CLAUDE_CODE_REMOTE=true, is the documented discriminator: the cloud VM
-# sets it and it is never true locally. It is what keeps this script from touching
-# ~/.claude/ on Ben's own machines, where that directory is the live configuration
-# and overwriting it would be destructive. On a local machine the script exits
-# before reading anything.
-#
-# Gate 2, write only what is absent, is not redundant with gate 1. A self-hosted
-# runner also reports CLAUDE_CODE_REMOTE=true, and Anthropic's documentation says
-# such a runner can seed a session from the runner host's own ~/.claude/. So
-# "remote" does not by itself imply "~/.claude/ is empty", and gate 2 is what makes
-# the script safe in that case. It also makes a resumed session a no-op.
-#
-# WHY IT NEVER EXITS NON-ZERO
-#
-# A SessionStart hook that exits 2 blocks the session from starting. Missing prose
-# rules must not stop the session; they must be announced. So every path here exits
-# 0, and a failure is reported by printing a banner. SessionStart is one of the few
-# events whose plain-text stdout Claude Code adds to the session as context, so the
-# banner reaches both Ben's transcript and the model.
+# Install tracked common instructions, the Claude wrapper and every declared shared
+# skill in a Claude cloud home. Ben approved the six-skill inventory on 2026-09-29,
+# superseding the 2026-09-14 github-issues exclusion for instruction installation.
+# Sources come from the checked-out branch; copying needs no network or Python.
+# Skills provide rules, not credentials, dependencies or workflow authorization.
+# Existing files are preserved, including in a seeded runner or resumed session.
+# A missing resource is reported to session context; every path exits zero.
 
 set -u
 
-DOC_NOTE="doc/user-level-config-in-cloud-sessions-update.md"
-CLAUDE_DEST="$HOME/.claude"
-CODEX_DEST="$HOME/.codex"
-
-# $CLAUDE_PROJECT_DIR is set for a hook, but derive a fallback from this script's own
-# location so the hook still works when run by hand from another directory.
-REPO="${CLAUDE_PROJECT_DIR:-}"
-if [ -z "$REPO" ]; then
-    REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-fi
-CLAUDE_SRC="$REPO/dot-claude"
-CODEX_SRC="$REPO/dot-Codex"
-
-# Gate 1: do nothing at all outside an ephemeral cloud container.
+# Local sessions return before reading configuration or deriving home destinations.
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
     exit 0
 fi
 
-# Gate 2: decide what is actually absent. Anything already present is left alone.
-want_common=no
-want_wrapper=no
-want_skill=no
-[ -f "$CODEX_DEST/AGENTS.md" ] || want_common=yes
-[ -f "$CLAUDE_DEST/CLAUDE.md" ] || want_wrapper=yes
-# A directory alone is not the skill: an interrupted cp -R leaves one behind, and
-# the report below already reads presence off SKILL.md rather than off the directory.
-[ -f "$CLAUDE_DEST/skills/hebrew-prose/SKILL.md" ] || want_skill=yes
-
-if [ "$want_common" = no ] && [ "$want_wrapper" = no ] && [ "$want_skill" = no ]; then
-    # Nothing to install, but still say where the three resources are: this branch is
-    # what a resumed or compacted session hits, and after a compaction the notice
-    # printed at startup may no longer be in context.
-    echo "MAM-basics SessionStart hook: Ben's user-level Claude configuration is already in place."
-    echo "  $HOME/.codex/AGENTS.md"
-    echo "      -- the user-level instruction file at Codex's native path."
-    echo "  $HOME/.claude/CLAUDE.md"
-    echo "      -- the user-level instruction file at Claude Code's native path."
-    echo "  $HOME/.claude/skills/hebrew-prose/"
-    echo "      -- the canonical accentuation-prose rules; if hebrew-prose is not in your"
-    echo "         available-skills list, read its SKILL.md directly."
+DOC_NOTE="doc/user-level-config-in-cloud-sessions-update.md"
+if [ -z "${HOME:-}" ] || [ ! -d "$HOME" ] || [ -L "$HOME" ]; then
+    echo "MAM-basics SessionStart hook: USER-LEVEL CONFIGURATION IS INCOMPLETE (HOME must name an existing directory, not a link)."
+    echo "Tell Ben before the task; no configuration was installed. See $DOC_NOTE."
     exit 0
 fi
-
-have_common_source=no
-have_wrapper_source=no
-have_skill_source=no
-[ -f "$CODEX_SRC/user-wide-AGENTS.md" ] && have_common_source=yes
-[ -f "$CLAUDE_SRC/user-wide-CLAUDE.md" ] && have_wrapper_source=yes
-[ -f "$CLAUDE_SRC/skills/hebrew-prose/SKILL.md" ] && have_skill_source=yes
-
-missing_source=no
-if [ "$want_common" = yes ] && [ "$have_common_source" = no ]; then
-    missing_source=yes
+REPO="${CLAUDE_PROJECT_DIR:-}"
+if [ -z "$REPO" ]; then
+    if ! REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"; then
+        echo "MAM-basics SessionStart hook: cannot locate this checkout. See $DOC_NOTE."
+        exit 0
+    fi
 fi
-if [ "$want_wrapper" = yes ] && [ "$have_wrapper_source" = no ]; then
-    missing_source=yes
-fi
-if [ "$want_skill" = yes ] && [ "$have_skill_source" = no ]; then
-    missing_source=yes
-fi
+CLAUDE_SRC="$REPO/dot-claude"
+CODEX_SRC="$REPO/dot-Codex"
+CLAUDE_DEST="$HOME/.claude"
+CODEX_DEST="$HOME/.codex"
+problem_count=0
+installed_count=0
 
-if [ "$missing_source" = yes ]; then
-    echo "================================================================================"
-    echo "  MAM-basics SessionStart hook: USER-LEVEL CLAUDE CONFIGURATION IS MISSING"
-    echo "================================================================================"
-    echo "SOURCE STATUS (a source is needed only when its destination is missing)"
-    echo "  dot-Codex/user-wide-AGENTS.md present:             $have_common_source"
-    echo "  dot-claude/user-wide-CLAUDE.md present:            $have_wrapper_source"
-    echo "  dot-claude/skills/hebrew-prose/SKILL.md present:   $have_skill_source"
-    echo "Looked under:"
-    echo "    $CODEX_SRC"
-    echo "    $CLAUDE_SRC"
-    echo "Found under dot-Codex/:"
-    ls -1 "$CODEX_SRC" 2>&1 | sed 's/^/    /'
-    echo "Found under dot-claude/:"
-    ls -1 "$CLAUDE_SRC" 2>&1 | sed 's/^/    /'
-    echo
-    echo "DESTINATION STATUS"
-    if [ "$want_common" = yes ]; then
-        echo "  $HOME/.codex/AGENTS.md present: no"
+problem() {
+    problem_count=$((problem_count + 1))
+    printf '  UNAVAILABLE: %s\n' "$1"
+}
+
+destination_parents_ok() {
+    local parent
+    parent="$(dirname "$1")"
+    while [ "$parent" != "$HOME" ] && [ "$parent" != / ] && [ "$parent" != . ]; do
+        if [ -L "$parent" ] || { [ -e "$parent" ] && [ ! -d "$parent" ]; }; then
+            problem "$parent is an existing non-directory or link; left untouched."
+            return 1
+        fi
+        parent="$(dirname "$parent")"
+    done
+    return 0
+}
+
+publish_missing_file() {
+    local source="$1" destination="$2" temporary
+    # Stage on the destination filesystem. A failed copy leaves no final file that
+    # a resumed session could mistake for a completed install. ln never clobbers.
+    if ! temporary="$(mktemp "$(dirname "$destination")/.mam-user-config.XXXXXX")"; then
+        return 1
+    fi
+    if ! cp -- "$source" "$temporary" || ! cmp -s -- "$source" "$temporary"; then
+        rm -f -- "$temporary"
+        return 1
+    fi
+    if ! ln -T -- "$temporary" "$destination"; then
+        rm -f -- "$temporary"
+        return 1
+    fi
+    rm -f -- "$temporary"
+    return 0
+}
+
+install_file() {
+    local source="$1" destination="$2"
+    destination_parents_ok "$destination" || return
+    if [ -e "$destination" ] || [ -L "$destination" ]; then
+        if [ -f "$destination" ] && [ ! -L "$destination" ]; then
+            printf '  PRESERVED: %s\n' "$destination"
+        else
+            problem "$destination is an existing non-regular file; left untouched."
+        fi
+        return
+    fi
+    if [ ! -f "$source" ] || [ -L "$source" ]; then
+        problem "$destination needs missing or non-regular source $source."
+        return
+    fi
+    if ! mkdir -p -- "$(dirname "$destination")"; then
+        problem "cannot create the parent of $destination."
+        return
+    fi
+    if publish_missing_file "$source" "$destination"; then
+        installed_count=$((installed_count + 1))
+        printf '  INSTALLED: %s\n' "$destination"
     else
-        echo "  $HOME/.codex/AGENTS.md present: yes"
+        problem "$destination was not copied completely; existing content was preserved."
     fi
-    if [ "$want_wrapper" = yes ]; then
-        echo "  $HOME/.claude/CLAUDE.md present: no"
+}
+
+install_skill() {
+    local name="$1" source="$CLAUDE_SRC/skills/$1" destination="$CLAUDE_DEST/skills/$1"
+    local listing entry target relative valid=yes needed=no changed=no
+    destination_parents_ok "$destination" || return
+    # A seeded skill needs no absent source. When a source is available, check its
+    # complete file inventory so a marker alone cannot hide missing references.
+    if [ ! -f "$source/SKILL.md" ] || [ -L "$source" ] || [ -L "$source/SKILL.md" ]; then
+        if [ -f "$destination/SKILL.md" ] && [ ! -L "$destination" ] && [ ! -L "$destination/SKILL.md" ]; then
+            printf '  PRESERVED: %s (source not needed for an existing skill)\n' "$destination"
+        else
+            problem "$destination needs missing or non-regular source $source/SKILL.md."
+        fi
+        return
+    fi
+    if [ -L "$destination" ] || { [ -e "$destination" ] && [ ! -d "$destination" ]; }; then
+        problem "$destination is an existing non-directory or link; left untouched."
+        return
+    fi
+    if ! listing="$(mktemp)"; then
+        problem "cannot inspect the complete $name source tree."
+        return
+    fi
+    if ! find "$source" -mindepth 1 -print0 > "$listing"; then
+        problem "cannot read the complete $name source tree."
+        rm -f -- "$listing"
+        return
+    fi
+    # Preflight every required destination before copying through any directory.
+    while IFS= read -r -d '' entry; do
+        relative="${entry#"$source"/}"
+        target="$destination/$relative"
+        if [ -L "$entry" ] || { [ ! -f "$entry" ] && [ ! -d "$entry" ]; }; then
+            problem "$name source contains an unsupported entry: $entry."
+            valid=no
+        elif [ -L "$target" ]; then
+            problem "$target is an existing link; left untouched."
+            valid=no
+        elif [ -e "$target" ]; then
+            if { [ -d "$entry" ] && [ ! -d "$target" ]; } || { [ -f "$entry" ] && [ ! -f "$target" ]; }; then
+                problem "$target has an incompatible existing type; left untouched."
+                valid=no
+            fi
+        else
+            needed=yes
+        fi
+    done < "$listing"
+    if [ "$valid" = no ]; then
+        rm -f -- "$listing"
+        return
+    fi
+    if [ "$needed" = no ]; then
+        printf '  PRESERVED: %s (all required files are present)\n' "$destination"
+        rm -f -- "$listing"
+        return
+    fi
+    if ! mkdir -p -- "$destination"; then
+        problem "cannot create $destination."
+        rm -f -- "$listing"
+        return
+    fi
+    while IFS= read -r -d '' entry; do
+        relative="${entry#"$source"/}"
+        target="$destination/$relative"
+        if [ -d "$entry" ]; then
+            if ! mkdir -p -- "$target"; then
+                valid=no
+                problem "cannot create $target."
+                break
+            fi
+        elif [ ! -e "$target" ] && [ ! -L "$target" ]; then
+            if publish_missing_file "$entry" "$target"; then
+                changed=yes
+            else
+                valid=no
+                problem "$target was not copied completely."
+                break
+            fi
+        fi
+    done < "$listing"
+    # Verify every required entry, including references, after the attempted copy.
+    while IFS= read -r -d '' entry; do
+        relative="${entry#"$source"/}"
+        target="$destination/$relative"
+        if [ -L "$target" ] || { [ -f "$entry" ] && [ ! -f "$target" ]; } || { [ -d "$entry" ] && [ ! -d "$target" ]; }; then
+            valid=no
+        fi
+    done < "$listing"
+    rm -f -- "$listing"
+    if [ "$valid" = yes ]; then
+        if [ "$changed" = yes ]; then
+            installed_count=$((installed_count + 1))
+        fi
+        printf '  AVAILABLE: %s (complete required tree; existing files preserved)\n' "$destination"
     else
-        echo "  $HOME/.claude/CLAUDE.md present: yes"
+        problem "$destination is incomplete; do not treat this skill as available."
     fi
-    if [ "$want_skill" = yes ]; then
-        echo "  $HOME/.claude/skills/hebrew-prose/SKILL.md present: no"
-    else
-        echo "  $HOME/.claude/skills/hebrew-prose/SKILL.md present: yes"
-    fi
-    echo
-    echo "WHAT THIS MEANS FOR THIS SESSION"
-    if [ "$want_common" = yes ]; then
-        echo "  - The user-level instructions at $HOME/.codex/AGENTS.md are unavailable."
-    fi
-    if [ "$want_wrapper" = yes ]; then
-        echo "  - The user-level Claude file at $HOME/.claude/CLAUDE.md is unavailable."
-    fi
-    if [ "$want_skill" = yes ]; then
-        echo "  - The hebrew-prose skill is NOT available. Do not write or edit prose about"
-        echo "    Hebrew accentuation as though you had read it, and do not report having"
-        echo "    followed it."
-    fi
-    echo "  - Say so in your first reply to Ben, before doing the task."
-    echo "  - Nothing here needs the network: all three sources are tracked in this repository,"
-    echo "    so their absence means the checkout is wrong or they have been moved."
-    echo "    See $DOC_NOTE."
-    echo "================================================================================"
-    exit 0
-fi
+}
 
-if [ "$want_common" = yes ]; then
-    mkdir -p "$CODEX_DEST"
-    cp "$CODEX_SRC/user-wide-AGENTS.md" "$CODEX_DEST/AGENTS.md"
-fi
-if [ "$want_wrapper" = yes ]; then
-    mkdir -p "$CLAUDE_DEST"
-    cp "$CLAUDE_SRC/user-wide-CLAUDE.md" "$CLAUDE_DEST/CLAUDE.md"
-fi
-if [ "$want_skill" = yes ]; then
-    # The trailing /. copies the contents, so a directory left by an interrupted
-    # run is filled rather than nested inside itself.
-    mkdir -p "$CLAUDE_DEST/skills/hebrew-prose"
-    cp -R "$CLAUDE_SRC/skills/hebrew-prose/." "$CLAUDE_DEST/skills/hebrew-prose/"
-fi
+echo "MAM-basics SessionStart hook: checking Ben's tracked user-level Claude configuration."
+echo "Sources: $REPO (the checked-out branch)."
 
-# Report against the filesystem rather than against what the copies returned, so a
-# half-completed install is announced as one.
-ok_common=no
-ok_wrapper=no
-ok_skill=no
-[ -f "$CODEX_DEST/AGENTS.md" ] && ok_common=yes
-[ -f "$CLAUDE_DEST/CLAUDE.md" ] && ok_wrapper=yes
-[ -f "$CLAUDE_DEST/skills/hebrew-prose/SKILL.md" ] && ok_skill=yes
-
-if [ "$ok_common" = yes ] && [ "$ok_wrapper" = yes ] && [ "$ok_skill" = yes ]; then
-    # Both banners spell these paths the same way, expanded. They did not until
-    # 2026-09-09, when the cloud verification reported that this branch wrote a
-    # literal ~ while the already-in-place branch above wrote the expanded form; an
-    # agent that has to open the file is better served by the expanded one.
-    echo "MAM-basics SessionStart hook: installed Ben's user-level Claude configuration from this checkout."
-    echo "  $HOME/.codex/AGENTS.md"
-    echo "      -- the user-level instruction file at Codex's native path."
-    echo "  $HOME/.claude/CLAUDE.md"
-    echo "      -- the user-level instruction file at Claude Code's native path."
-    echo "  $HOME/.claude/skills/hebrew-prose/"
-    echo "      -- the canonical accentuation-prose rules."
-    echo "Claude Code watches ~/.claude/skills/ and picks a skill added to it up without a"
-    echo "restart. Measured 2026-09-09 in a cloud container: hebrew-prose was in the"
-    echo "available-skills list, and these instructions were in context, on the turn after"
-    echo "this hook ran. If hebrew-prose is nonetheless absent from your list, read"
-    echo "$HOME/.claude/skills/hebrew-prose/SKILL.md directly before writing or editing any"
-    echo "prose about accentuation, and read both $HOME/.claude/CLAUDE.md and"
-    echo "$HOME/.codex/AGENTS.md before your first edit."
+# Validate the declaration without treating a malformed name as a path.
+skills=()
+inventory_ok=yes
+inventory="$CLAUDE_SRC/shared-skills.txt"
+if [ ! -f "$inventory" ] || [ -L "$inventory" ]; then
+    problem "shared-skill inventory is missing or non-regular: $inventory."
+    inventory_ok=no
 else
-    echo "================================================================================"
-    echo "  MAM-basics SessionStart hook: INSTALL ONLY PARTLY SUCCEEDED"
-    echo "================================================================================"
-    echo "  ~/.codex/AGENTS.md present:                      $ok_common"
-    echo "  ~/.claude/CLAUDE.md present:                     $ok_wrapper"
-    echo "  ~/.claude/skills/hebrew-prose/SKILL.md present:  $ok_skill"
-    echo "Tell Ben which resource is missing; do not treat its rules as available."
-    echo "See $DOC_NOTE."
-    echo "================================================================================"
+    while IFS= read -r name || [ -n "$name" ]; do
+        name="${name#"${name%%[![:space:]]*}"}"
+        name="${name%"${name##*[![:space:]]}"}"
+        if [ -z "$name" ] || [[ "$name" == \#* ]]; then
+            continue
+        fi
+        if [[ ! "$name" =~ ^[a-z0-9][a-z0-9_-]*$ ]]; then
+            problem "invalid shared-skill name: $name."
+            inventory_ok=no
+            continue
+        fi
+        for previous in "${skills[@]}"; do
+            if [ "$previous" = "$name" ]; then
+                problem "duplicate shared-skill name: $name."
+                inventory_ok=no
+            fi
+        done
+        skills+=("$name")
+    done < "$inventory"
+    if [ "${#skills[@]}" -eq 0 ]; then
+        problem "the shared-skill inventory is empty."
+        inventory_ok=no
+    fi
 fi
 
+install_file "$CODEX_SRC/user-wide-AGENTS.md" "$CODEX_DEST/AGENTS.md"
+install_file "$CLAUDE_SRC/user-wide-CLAUDE.md" "$CLAUDE_DEST/CLAUDE.md"
+if [ "$inventory_ok" = yes ]; then
+    for name in "${skills[@]}"; do
+        install_skill "$name"
+    done
+fi
+
+if [ "$problem_count" -eq 0 ]; then
+    echo "MAM-basics SessionStart hook: all declared resources are in place; $installed_count resource(s) installed or completed."
+else
+    echo "MAM-basics SessionStart hook: USER-LEVEL CONFIGURATION IS INCOMPLETE ($problem_count problem(s))."
+    echo "Tell Ben which resource is unavailable before the task; do not treat its rules as read."
+    echo "See $DOC_NOTE."
+fi
+echo "Read $CODEX_DEST/AGENTS.md and $CLAUDE_DEST/CLAUDE.md before the first edit."
+echo "If a shared skill is absent from your available-skills list, read its SKILL.md directly under $CLAUDE_DEST/skills/."
+echo "Skill installation does not establish workflow dependencies, credentials or permissions; follow each skill's cloud limits."
 exit 0
