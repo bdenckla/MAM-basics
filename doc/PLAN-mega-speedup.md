@@ -114,7 +114,7 @@ record's §5).
   git -C C:/Users/BenDe/GitRepos/MAM-basics log --no-merges --format="%h %ad %s" --date=short 132f2f3e..HEAD -- py/main_mam_simple.py py/main_tmpl_survey.py py/tmpl_survey py/subcommands py/accgram py/main_accgram.py py/mb_cmn/file_io.py py/main_wlc_json_and_unicode.py py/main_fois.py py/main_mam_with_doc.py py/main_multimark.py
   ```
 
-- **The repository phase of `doc/PLAN-retire-google-sheet.md` removed two more steps**, `parse-go`
+- **The repository phase of the archived [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md) removed two more steps**, `parse-go`
   and `diff-wsgo`, on 2026-09-27. They took 1.1 to 3.5 s and 12.4 to 16.1 s in the dated record's
   runs. Phase 1 now times two fewer steps, and item 6 has only the repeat in `ws-bot-proto`.
 
