@@ -744,3 +744,19 @@ completion records leave source, generated products and canonical configuration
 bytes unchanged, so the suite, mega, freshness and deployment evidence above remains
 applicable. The complete read-only configuration check is repeated after the final
 receipt push; no new generator or full-suite run is required for these records.
+
+## Archived receipt references, 2026-09-29
+
+Recorded by ChatGPT-Codex on 2026-09-29, at Ben's request. References in the frozen September 26
+turn records to the following completed receipts are historical evidence, not current guidance.
+The receipts have been retired from the tracked tree and remain at these immutable locations:
+
+- [September 14 remediation plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14-update.md);
+- [September 16 remediation plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-16.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-16-update.md);
+- [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md);
+- [symmetric-instructions plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-symmetric-CLAUDE-and-AGENTS-instructions.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-symmetric-CLAUDE-and-AGENTS-instructions-update.md);
+- [September 16 turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md); and
+- [September 26 turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-26-turn-06-codex.md).

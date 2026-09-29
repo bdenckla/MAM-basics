@@ -135,3 +135,10 @@ adjacent-attribute rule remains true. The hazard 9 assertion “No repository de
 withdrawn for the guide's universal three-encoding claim. The genuine between-verse
 duplicate-counting hazard remains; only the claim that every break has three encodings is
 withdrawn.
+
+## 2026-09-29: archived Google Sheet retirement receipt
+
+Recorded by ChatGPT-Codex on 2026-09-29, at Ben's request. The base document's reference to
+`doc/PLAN-retire-google-sheet.md` is historical evidence, not current guidance. The completed
+receipt has been retired from the tracked tree and remains as the archived
+[Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md).

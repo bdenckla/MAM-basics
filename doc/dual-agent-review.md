@@ -194,7 +194,7 @@ run in the checkout that owns the current turn.
 
 **`dar` abbreviates `dual-agent-review` in the remote branch name and, when used, a
 worktree-folder name, and nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2
-of MAM-private's `doc/PLAN-private-review-series-catch-up.md`. The turn filenames keep the full
+of MAM-private's archived [private-review catch-up plan](https://github.com/bdenckla/MAM-private/blob/f1ac7e39a0c0c1aefe66525965c8ff9fe78ed665/doc/PLAN-private-review-series-catch-up.md). The turn filenames keep the full
 word, so `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md` is unchanged, and so is the
 historical `git worktree lock` reason. The abbreviation shortens a worktree root by fourteen
 characters: `doc/windows-long-paths.md` measures
@@ -275,7 +275,8 @@ finished exchange, and approval of its choices does not claim its remediation is
 
 The September 16 round was the first standard round to use the neutral roles and numbered filenames
 from its start. Claude was Agent 1 and wrote the odd turns; Codex was Agent 2 and wrote the even
-turns. Turn 05 accepted every conclusion and disposition of turn 04, and turn 06 acknowledged that
+turns. Turn 05 accepted every conclusion and disposition of turn 04, and archived
+[turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md) acknowledged that
 closure without an objection. Ben approved the complete close-out decision package on 2026-09-17;
 the decisions are recorded in
 `doc/dual-agent-review-2026-09-16-turn-01-claude-update.md`. The package makes the shared review
