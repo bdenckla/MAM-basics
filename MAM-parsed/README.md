@@ -27,7 +27,7 @@ For detailed documentation of the file structures, see:
 * [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
 The [consumer cautions](#consumer-cautions) below cover whitespace templates and text
-spacing around narpas.
+spacing around narpas (narrow-sense paseq, ׀).
 
 This product directory also contains a toy sample application
 [`main_tmpl_survey_toy_example.py`](py-examples/main_tmpl_survey_toy_example.py),
@@ -81,9 +81,12 @@ git -C MAM-parsed-sparse sparse-checkout set MAM-parsed
 ```
 
 The files are under `MAM-parsed-sparse/MAM-parsed/`.
-The historical inputs are included. This sparse checkout supplies data and
-the self-contained toy example; the full MAM-basics checkout supplies the
-product generators. No release archive is maintained.
+The historical inputs are included: a ZIP snapshot of `plus/`, of 13 to 15 MB,
+for each boundary of a named change-log release, with one more for each release
+pinned later. This sparse checkout supplies data and the self-contained toy
+example; the full MAM-basics checkout supplies the product generators. No
+release archive of this product, such as a packaged download of a version, is
+maintained; the historical snapshots are inputs to the change log.
 
 ## Consumer cautions
 
@@ -101,8 +104,7 @@ narpas.
 ### Narpas and text spacing
 
 The narrow-sense paseq template also has no text whitespace before or after it, but it
-is not a whitespace template. The omission is not a grouping instruction: narpas
-(narrow-sense paseq, ׀) forms no compound of any kind, and only maqaf joins atoms into
+is not a whitespace template. The omission is not a grouping instruction: narpas forms no compound of any kind, and only maqaf joins atoms into
 a chanted word. The omission also prescribes no display spacing. An edition decides
 whether to display spacing before and/or after narpas; an analytical consumer need not
 make a display-spacing decision.

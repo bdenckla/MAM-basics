@@ -64,7 +64,8 @@ The worktree-cleanup standard
 Repository maintenance should inspect linked worktrees through the shared retirement
 API. Candidate selection can be Claude-only, Codex-only, both, or an exact path;
 ownership never supplies a different Git or ignored-content safety policy.
-`repo_util.worktree_retirement` is the implementation of record. The compatibility
+`repo_util.worktree_retirement` is the API of record; its docstring names the
+`worktree_retirement_*` modules that implement it. The compatibility
 `git_worktree_cleanup` API and `--clean-worktrees` action inspect Claude candidates;
 they never prune registrations, sweep folders, or automatically delete branches.
 
@@ -197,14 +198,31 @@ optional one update file as one retirement family: keep or delete the whole
 family, never only one member. A historical numbered sibling found in Git
 history remains historical evidence, not authority to create another one.
 
-Before deleting a family, audit GitHub issue bodies and comments. A reference
-to current guidance is repointed to a current successor or blocks deletion. A
-historical reference is repointed to the full SHA of the last commit whose
-tree contains every family member, after verifying every path there. Correct
-a stale open-issue body through the approved body editor; for a closed issue,
+Before deleting a receipt family, audit references in tracked files as well as GitHub
+issue bodies and comments. Classify each reference as current guidance or historical
+evidence. A current-guidance reference must reach a maintained successor or block
+deletion. A historical reference must reach the full 40-character SHA of the last
+commit whose tree contains every family member. Verify every target path there and
+link the base and its update so the correction sequence remains visible. Correct
+present-state documents and source comments in place; correct a finished receipt
+through its single live update. Do not bulk-edit finished bases. This audit and the
+retirement decision remain manual.
+
+Ben may explicitly reclassify a finished receipt family as a maintained document.
+Record Ben's decision and date, identify the original family and an archival commit
+containing every member, and preserve the research provenance and later corrections.
+If the transition consolidates the update into the maintained document, remove the
+update and its pointer in the same commit and repair current-guidance references;
+historical references retain recoverable access to the original family.
+Reclassification is separate from retirement and is never automatic.
+
+Correct a stale open-issue body through the approved body editor; for a closed issue,
 or a reference in any comment, add a dated agent-written correction comment
-and never edit or delete the old comment. This gate and the deletion decision
-remain manual.
+and never edit or delete the old comment. Read back complete issues. The archival
+commit must already exist on origin/main before changing issue links.
+
+Each update entry identifies the passage it corrects by that passage's own words,
+not only by a finding number or line number.
 
 The shape to look for is a plan, a migration note or a decisions log whose
 end result is already in the code -- in the modules it produced, or in their
@@ -222,17 +240,19 @@ tree page shows.
 The cheap screen is inbound references: for each tracked file under doc/, does
 any other tracked file name it? In wlc-utils that produced exactly four
 candidates out of nine, and the five it passed over were the five worth
-keeping -- among them doc/review-findings-2026-07-29.md, which a dozen code
-comments cite by item number, the clearest way a doc earns its place. But
+keeping -- among them the later-retired July 29 review, archived at
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-07-29.md
+and cited by a dozen code comments by item number, the clearest way a doc earns
+its place. But
 unreferenced is not the same as spent: of the four, three were deleted and the
 fourth, doc/PLAN-overall-port-to-python.md, is a live intention whose next
 stage is merely unstarted. So the screen yields a list to hand-check, never a
 delete list. The question it cannot answer -- is the end result in the tree
-yet? -- is the whole question. (The six doc/ files that screen kept are THIS
-repo's doc/ files now: the 2026-08 rest-of-wlc-utils evacuation copied them
-here on 2026-08-12 and deleted wlc-utils' doc/ outright on 2026-08-17, so the
-paths above read against MAM-basics, doc/PLAN-overall-port-to-python.md
-included.)
+yet? -- is the whole question. The six retained doc/ files were copied to
+MAM-basics on 2026-08-12; wlc-utils' doc/ was deleted on 2026-08-17. That is
+a historical import inventory. Later retirement can remove a document from
+the working tree while retaining its archive, so the inventory is not a
+current list of six tracked files.
 
 MAM-basics' own doc/ was swept on 2026-07-31: ten files, 1126 lines plus a
 rendered SVG, out of the thirteen the screen raised. Two test-harness
@@ -278,7 +298,10 @@ sporadically, but I certainly plan to return to it, and I don't think it is wort
 it ... to introduce some additional state like paused".  What `paused` marks is
 work somebody stopped on a nameable day, which is why it carries one.
 It exists because the inbound-reference screen above is the wrong instrument for
-a plan. `PLAN-evacuate-the-rest-of-three-repos.md` is executed work, and the spent
+a plan. The retired `PLAN-evacuate-the-rest-of-three-repos.md` records executed work;
+its complete family is recoverable at
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-the-rest-of-three-repos.md.
+The spent
 `PLAN-evacuate-python-from-codex-index-trio.md` was deleted on 2026-08-29 but remains
 preserved in Git history. The evacuations wrote plan citations into the code they
 produced, so for plans a high reference count can report that the work landed, not
@@ -326,6 +349,12 @@ measured 2026-09-12, six on `main` and two arriving with the 2026-09-10
 review round, five reading "first entry" and three "first entries".  Nothing
 checks it, here or anywhere else.
 
+While a plan is being executed, keep its State true in place and record a phase
+change in the same commit as the phase work. After the plan becomes a finished
+receipt, a later State correction goes in its update. The latest dated declaration
+of the plan's State in that update is the effective plan State; it is separate from
+the update file's own State. An update remains open while its base is tracked.
+
 An update file is live while its base remains tracked: later dated entries are
 appended and stale present-tense claims are corrected in place. Its `State:` is
 `open` because more entries may be added, and it has no terminal state for as
@@ -349,9 +378,12 @@ convention, so the phrase is worth pinning: what became doc-only is where a
 review is WRITTEN DOWN -- the doc alone, the thin issue retired, the State
 line carrying the open/closed state.  It says nothing about which files a
 review may read, and a review reads whatever its window changed in a public
-repository: doc/review-findings-2026-09-08.md is headed "review of the public
-repos" and accounts for 99 commits and 513 changed paths across Python, pages
-and data.  Pinned 2026-09-09, when two documents written that day both read it
+repository: the retired September 8 review, headed "review of the public repos",
+accounts for 99 commits and 513 changed paths across Python, pages and data. Its
+complete family is preserved at
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md
+and
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08-update.md.  Pinned 2026-09-09, when two documents written that day both read it
 as a limit on READING and so proposed a scope widening for the dot-claude/ and
 dot-Codex/ trees that had just arrived here.  No widening is owed: those trees
 are tracked files in a public repository, which is the whole test.
@@ -1077,9 +1109,7 @@ def run_check_repo_standards_across_repos(
     results: list[dict] = []
 
     for repo_info in repo_infos:
-        # Progress, in clean_worktrees.py's shape and for the reason given in
-        # its own copy of this line: a sweep that prints nothing until it
-        # finishes is indistinguishable from a hung one.
+        # Flush per-repository progress so captured sweeps remain observable.
         print(f"=== {repo_info.name} ===", flush=True)
         repo_dir = repo_info.path
         # Decides whether the three Python-dependent checks are asked at all --

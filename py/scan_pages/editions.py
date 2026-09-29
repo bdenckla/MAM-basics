@@ -1,8 +1,9 @@
 """The five editions, where their scans live, and where the index is tracked.
 
-The scans root is absolute and checkout-independent on purpose: the images live
-outside every repo and no image ever enters one, so nothing here may be built from
-repo_root().  A worktree therefore reads the same scans the primary clone does.
+Every edition's folder is under ``paths.book_scans_root()``, which is absolute and
+checkout-independent on purpose: the images live outside every repo and no image ever
+enters one, so nothing here may be built from repo_root().  A worktree therefore reads the
+same scans the primary clone does.
 """
 
 from pathlib import Path
@@ -35,19 +36,14 @@ TITLES = {
 }
 
 
-def scans_root() -> Path:
-    """Return the folder holding one subfolder per scanned book."""
-    return Path.home() / "OneDrive" / "Documents" / "ScansOfBooks"
-
-
 def folder_name(edition_id: str) -> str:
-    """Return an edition's subfolder name under the scans root."""
+    """Return an edition's subfolder name under ``paths.book_scans_root()``."""
     return _FOLDERS[edition_id]
 
 
 def edition_dir(edition_id: str) -> Path:
     """Return the folder holding one edition's page images."""
-    return scans_root() / folder_name(edition_id)
+    return paths.book_scans_root() / folder_name(edition_id)
 
 
 def index_dir() -> Path:

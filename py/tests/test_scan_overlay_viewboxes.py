@@ -113,7 +113,7 @@ def _viewbox_size(viewbox: str | None) -> tuple[int, int] | None:
 
 def _annotated_figures() -> list[Figure]:
     """Every annotated figure in the published tree, in page then document order."""
-    gh_pages = paths.wlc_pages_dir()
+    gh_pages = paths.repo_root() / "gh-pages"
     figures = []
     for page in sorted(gh_pages.rglob("*.html")):
         parser = _OverlayParser()

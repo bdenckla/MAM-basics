@@ -1,6 +1,6 @@
 # Public-data consumer hazards audit, 2026-09-16 — update
 
-State: finished audit update. This receipt supplements
+State: open, first entry 2026-09-16. This update supplements
 `public-data-consumer-hazards-2026-09-16.md` and remains the family's single update
 file while the base receipt is tracked.
 
@@ -105,3 +105,33 @@ between adjacent Scripture strings. It must require a plain-text projection to s
 a separator and a layout-preserving renderer to implement the documented space or
 break. It must distinguish that positive whitespace meaning from narpas, whose absent
 literal whitespace expresses no display-spacing policy.
+
+## 2026-09-28: structural-boundary audience and conditional break encodings
+
+Recorded by ChatGPT-Codex on 2026-09-28, New York time, under Ben's approved September 26 review
+remediation plan. **Corrected here; the finished audit remains unchanged.**
+
+The audit's hazard 5 passage “A standalone paseq/legarmeh element had been treated as a
+space-delimited chanted word” describes separate narrow-sense-paseq and legarmeh representations
+without naming them separately. Read it as: “A standalone XML element representing either
+narrow-sense paseq or legarmeh had been treated as a space-delimited chanted word.” The XML
+element boundary does not define an atom or a chanted word. The demonstrated failure arose in an
+internal MAM-simple reader; the representation can also mislead an external MAM-simple consumer.
+The audit's hazard 5 destination “both embedded notices”, hazard 7's same destination, and the
+closing policy's “Both must require” refer to the MAM-parsed and MAM-simple notice families.
+Those family references do not assert that both formats have the same representation or failure.
+
+The hazard 2 passage “Failure mode: omission. Audience: both” names generic external consumers
+and MAM-internal reproducers. The hazard 3 destination “both embedded notices” means parsed-plus
+and MAM-simple notices: parsed-plain has no special-letter wrapper. The relevant special-letter
+documentation is therefore parsed-plus documentation and the MAM-simple XML guide.
+
+The audit's hazard 9 claim “MAM-simple exposes the same parashah break in three encodings” and
+the guide quotation “MAM-simple has three encodings of each parashah break” were too broad.
+Adjacent verse attributes can describe the same break and must not be counted as separate breaks;
+a separate marker node may also occur. An adjacent verse attribute is not guaranteed for every
+standalone marker. The current XML guide states that condition. The existing embedded notice's
+adjacent-attribute rule remains true. The hazard 9 assertion “No repository defect was found” is
+withdrawn for the guide's universal three-encoding claim. The genuine between-verse
+duplicate-counting hazard remains; only the claim that every break has three encodings is
+withdrawn.

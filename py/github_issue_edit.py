@@ -28,8 +28,8 @@ left from its wlc-utils days; nothing in it was ever specific to that repository
 WHICH TRACKER IS AN ARGUMENT, NOT AN INHERITED CWD.  ``gh`` resolves which repo
 "issue <number>" names from the git checkout it runs in, so this module used to pass
 ``cwd=<the wlc-utils root>`` to pin it.  That worked while there was one tracker to
-pin to.  Issues now live in several trackers whose numbers collide -- MAM-basics,
-MAM-private, and the five trackers recorded in
+pin to.  Issues now live in several trackers whose numbers collide -- MAM-private
+and the five trackers recorded in
 ``dot-claude/skills/github-issues/references/mam-basics-trackers.md`` -- so no
 checkout is a safe default, and a plausible-looking ``#69`` names a different issue in
 each.  ``repo`` is therefore required and travels to ``gh`` as ``--repo bdenckla/<name>``.

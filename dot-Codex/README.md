@@ -44,7 +44,7 @@ Tracked Codex-only skills:
 | `prune-Codex-state` (`skills/prune-claude-state/`) | Review Codex auto-memory and plan files for the current repository, cross-check them against live issue state, and propose stale files for deletion. |
 
 The general forest procedure is canonical in `skills/worktree-forest/SKILL.md`.
-`MAM-basics/doc/review-findings-2026-09-01.md` records the first forest's history,
+The retired [review-findings-2026-09-01.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-01.md) records the first forest's history,
 and each later forest may carry its own `review-manifest.json` and review reports;
 those per-run records describe instances rather than replacing the reusable skill.
 

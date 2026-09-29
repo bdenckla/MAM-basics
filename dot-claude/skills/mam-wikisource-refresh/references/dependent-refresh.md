@@ -65,12 +65,9 @@ orchestrator or a push that the surrounding instructions do not allow.
    unexplained diff or evidence that the output did not use the just-committed MAM-private state
    stops the workflow.
 
-5. **Return to MAM-basics and close the dependency loop.** Set the supported sibling-root
-   override when the MAM-basics development checkout is a managed worktree:
-
-   ```powershell
-   $env:REPOS_ROOT = "C:/Users/BenDe/GitRepos"
-   ```
+5. **Return to MAM-basics and close the dependency loop.** Normal linked worktrees resolve
+   siblings through Git common-directory metadata. `REPOS_ROOT` remains a supported
+   override for unusual layouts; ordinary managed worktrees need no override.
 
    Rerun the post-stress survey:
 
@@ -118,11 +115,11 @@ orchestrator or a push that the surrounding instructions do not allow.
 7. **Run final gates, integrate, and push in dependency order.** If MAM-basics work ran in a
    linked worktree, merge current `main` into the worktree branch according to the repository's
    worktree procedure, rerun every required final gate there, and fast-forward the clean primary
-   clone only after the gates pass. MAM-basics requires:
-
-   ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
-   ```
+   clone only after the gates pass. Run the full suite after the last executable-source,
+   test, schema, shared-data or cross-repository-path change likely to break it. A still-relevant
+   suite result is not repeated merely for integration; later documentation, comment, record or
+   instruction-text changes do not expire it. Every generator/data branch still requires the
+   final mega after merging current main:
 
    ```powershell
    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py

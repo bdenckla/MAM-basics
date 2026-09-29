@@ -20,11 +20,12 @@ checkable work to another sub-agent, either in parallel or as a sequential hando
 reviewer remains responsible for the review: the root reviewer sets the scope, reconciles the
 reports, verifies the claims it adopts, and owns the findings file and commit.
 
-In a shared checkout, only one agent writes, stages or commits at a time. Other sub-agents report
-without editing unless writing responsibility is explicitly handed to one sub-agent. Use
-delegation when it can save time, protect the root reviewer's context or improve confidence, not
-merely to create another task. The mandatory pre-commit check under "Reviewing the review, with the
-same agent and with Ben" still applies.
+Within any one checkout, only one agent writes, stages or commits at a time. A procedure with a
+shared remote branch may impose a stricter one-writer rule across separate checkouts as well. Other
+sub-agents report without editing unless writing responsibility is explicitly handed to one
+sub-agent. Use delegation when it can save time, protect the root reviewer's context or improve
+confidence, not merely to create another task. The mandatory pre-commit check under "Reviewing the
+review, with the same agent and with Ben" still applies.
 
 ## What the periodic review is
 
@@ -56,7 +57,9 @@ don't go 'looking for trouble' in details beyond the narrow focus". A review of 
 across a series of commits, for better instruction files or linters, is a different review, and
 there individual commits matter.
 
-Establish the window from endpoint commits, not commit dates. For a cloned repository, carry
+Ben approved this method on 2026-09-17 in the September 16 review's close-out decision for
+finding 20. Establish the window from endpoint commits, not commit dates.
+For a cloned repository, carry
 forward the previous review's recorded end commit and compare `<previous-end>..<current-end>`.
 For a GitHub-only repository, record the previous and current default-branch commit IDs and
 compare those endpoints through the API. Repository-level `pushed_at` can establish that some
@@ -96,7 +99,8 @@ Three things follow.
    one. The cost is real: before this decision a round could carry a small sibling along with the
    main repository. The 2026-09-16 round's window was MAM-basics `bca64824..71f96ca3` plus
    phonetic-hbo `10de7970..8b134b6b`, stated as "98 commits in two public repos" in its turn-01
-   file on the pushed branch `dual-agent-review-2026-09-16`, and `doc/review-findings-2026-09-10.md`
+   file `doc/dual-agent-review-2026-09-16-turn-01-claude.md`, now tracked on `main`, and
+   `doc/review-findings-2026-09-10.md`
    covered "252 commits across three public repos". Those files record their windows as they
    were scoped and are not rewritten.
 3. **Each series carries its own anchors forward**, so no series hands another one a repository
@@ -437,8 +441,10 @@ The September 8 MAS-page reversals are the worked example, not the scope boundar
 instructions at `47edbee6` made editorial rewrites executable without identifying approved
 wording; `1095f029` and `a9edd4f9` record Ben's reversal of unrequested rewrites. Those decisions
 require dated corrections to the earlier remediation records, not reinstatement of the reversed
-prose. The counter-argument's "MAS decisions and the scope of future remediation" section and
-the close-out plan's D7 decision record the evidence and Ben's generalization of the rule.
+prose. The retired counter-argument's "MAS decisions and the scope of future remediation" section and
+the close-out plan's D7 decision record the evidence and Ben's generalization of the rule. Their
+complete archive families are [codex-review-findings-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/codex-review-findings-2026-09-08.md);
+[PLAN-close-out-review-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08.md) and [PLAN-close-out-review-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md).
 
 ### Present remediation by public-facing risk — Ben's decision, 2026-09-09
 

@@ -1,9 +1,12 @@
 """Read stored release inputs and committed MAM-parsed data.
 
-Named historical releases use the tracked snapshots in MAM-parsed/historical/.
-HEAD and other current repository refs use MAM-parsed/plus/ in MAM-basics.
-Only an explicit legacy: revision reads the sibling MAM-parsed Git repository.
-That optional mode performs read-only Git operations and never fetches or clones.
+Every boundary of a named release uses its tracked snapshot in MAM-parsed/historical/:
+the six pre-migration boundaries, MAM-parsed commits, and each MAM-basics commit
+archived when it was pinned, since a shallow clone lacks such a commit within days.
+HEAD and any other MAM-basics ref use MAM-parsed/plus/ in MAM-basics Git, which has
+HEAD in every clone. Only an explicit legacy: revision reads the sibling MAM-parsed
+Git repository. That optional mode performs read-only Git operations and never
+fetches or clones.
 """
 
 from dataclasses import dataclass
@@ -19,9 +22,11 @@ from mb_cmn import paths
 from mb_cmn.git_process import git_command
 from mb_cmn.new_york_time import new_york_date
 
-_ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
-_ZIP_CREATE_SYSTEM = 3
-_ZIP_EXTERNAL_ATTR = 0o100644 << 16
+# The member metadata every stored release archive carries. ``mpplus_archive`` writes
+# exactly this, and ``_validated_archive_members`` rejects anything else.
+ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
+ZIP_CREATE_SYSTEM = 3
+ZIP_EXTERNAL_ATTR = 0o100644 << 16
 
 
 def _git(repo, *args):
@@ -39,10 +44,42 @@ def _git(repo, *args):
     return result.stdout.strip()
 
 
-def _manifest():
-    path = paths.repo_root() / "MAM-parsed" / "historical" / "manifest.json"
-    with path.open(encoding="utf-8") as stream:
+def historical_directory():
+    """MAM-parsed/historical/, which holds the stored releases and their manifest."""
+    return paths.repo_root() / "MAM-parsed" / "historical"
+
+
+def manifest_path():
+    return historical_directory() / "manifest.json"
+
+
+def archive_path(commit):
+    """The stored release archive of ``commit``, a full 40-character hash."""
+    return historical_directory() / f"{commit}.zip"
+
+
+def load_manifest():
+    with manifest_path().open(encoding="utf-8") as stream:
         return json.load(stream)
+
+
+def stored_commit(rev, manifest=None):
+    """Return the manifest key that ``rev`` names, or None if it names no stored release.
+
+    ``rev`` names a stored release when it is 7 to 40 hexadecimal digits that begin exactly
+    one key of the manifest's ``revisions``. No Git is involved, so every clone, however
+    shallow, gives the same answer.
+    """
+    if not re.fullmatch(r"[0-9a-fA-F]{7,40}", rev):
+        return None
+    if manifest is None:
+        manifest = load_manifest()
+    matches = [sha for sha in manifest["revisions"] if sha.startswith(rev.lower())]
+    if len(matches) > 1:
+        raise ValueError(
+            f"Ambiguous stored release revision {rev!r}: it begins {', '.join(matches)}"
+        )
+    return matches[0] if matches else None
 
 
 def _listed_archive_members(prefix, stored_files):
@@ -105,9 +142,9 @@ def _validated_archive_members(archive_name, expected, _size, _mtime_ns):
                 if (
                     info.is_dir()
                     or info.compress_type != zipfile.ZIP_STORED
-                    or info.date_time != _ZIP_TIMESTAMP
-                    or info.create_system != _ZIP_CREATE_SYSTEM
-                    or info.external_attr != _ZIP_EXTERNAL_ATTR
+                    or info.date_time != ZIP_TIMESTAMP
+                    or info.create_system != ZIP_CREATE_SYSTEM
+                    or info.external_attr != ZIP_EXTERNAL_ATTR
                     or info.internal_attr != 0
                     or info.extra
                     or info.comment
@@ -135,8 +172,8 @@ class Revision:
 
     ``commit`` is always the full 40-character hash of the commit the tree is read from,
     never the revision as given. A stored release or a legacy:<ref> is recorded by that
-    commit and by ``date``. A MAM-basics ref is recorded by ``tree``, the git tree id of
-    MAM-parsed/plus at ``commit``, and its ``date`` is empty; ``resolve`` says why.
+    commit and by ``date``. Any other MAM-basics ref is recorded by ``tree``, the git tree
+    id of MAM-parsed/plus at ``commit``, and its ``date`` is empty; ``resolve`` says why.
     """
 
     commit: str
@@ -210,14 +247,18 @@ class Revision:
 def resolve(rev):
     """Resolve a stored release, a MAM-basics ref, or explicit legacy:<ref>.
 
-    A stored release and a legacy:<ref> are recorded by their MAM-parsed commit and its
-    date. A MAM-basics ref is recorded by the git tree id of MAM-parsed/plus at the ref,
-    and has no date.
+    A stored release and a legacy:<ref> are recorded by their commit and its date. A
+    stored release's commit is a MAM-parsed commit for the six pre-migration boundaries
+    and a MAM-basics commit for each boundary archived when it was pinned. Any other
+    MAM-basics ref is recorded by the git tree id of MAM-parsed/plus at the ref, and has
+    no date.
 
     Every date is the commit's date in New York time, by Ben's decision of 2026-09-14,
     recorded in mb_cmn/new_york_time.py. A legacy:<ref>'s date is converted from git's
-    committer time. A stored release's date is the manifest's, which a check that day
-    against GitHub's UTC committer times found is already the New York date.
+    committer time. A stored release's date is the manifest's. The six pre-migration
+    dates were found that day, by a check against GitHub's UTC committer times, to be
+    New York dates already; ``mpplus_archive`` converts a MAM-basics boundary's date
+    from git's committer time when it archives the boundary.
 
     WHY A TREE ID, AND NO DATE. Until 2026-09-14 a MAM-basics ref resolved to its content
     commit, the last commit at or before the ref that changed MAM-parsed/plus, found with
@@ -230,13 +271,22 @@ def resolve(rev):
     real change. The report then published a wrong hash and date over correct diffs, as
     section 7 of doc/mega-timing-cloud-2026-09-14.md and its update record. On 2026-09-14
     Ben chose the tree id instead. ``git rev-parse <commit>:MAM-parsed/plus`` needs only
-    the commit and its trees, which every shallow clone has, and prints the same id in
-    every clone. A tree that a later commit restores gets its old id back, which is
-    right, since the inputs are then identical: 73c6b113 restored 209b4c05's tree, and
-    both carry 2072b5f9. So HEAD keeps one id until MAM-parsed/plus changes, and a report
-    regenerated over unchanged inputs is byte-identical. In a clone with full history,
+    the commit and its trees, which a shallow clone has for every commit inside its
+    window, as HEAD always is, and prints the same id in every clone. A tree that a
+    later commit restores gets its old id back, which is right, since the inputs are
+    then identical: 73c6b113 restored 209b4c05's tree, and both carry 2072b5f9. So HEAD
+    keeps one id until MAM-parsed/plus changes, and a report regenerated over unchanged
+    inputs is byte-identical. In a clone with full history,
     ``git log --full-history --find-object=<tree id> -- MAM-parsed/plus`` lists the
     commits that introduced or removed a tree.
+
+    WHY A PINNED BOUNDARY IS ARCHIVED. A commit outside a shallow clone's window cannot
+    be read at all, and a pinned boundary falls outside a depth-50 clone of main within
+    days: on 2026-09-28 the window of 8c2fa6c3 reached back only to 2026-09-22 and lacked
+    cb95915, which 78559eba had pinned on 2026-09-17. So, by Ben's decisions of
+    2026-09-28, each MAM-basics boundary is archived when it is pinned and resolves as a
+    stored release, and the change log refuses a boundary that is not stored;
+    ``mpplus_archive`` writes the archives.
 
     TWO QUESTIONS, ONE ID. Ben observed on 2026-09-14, having chosen the tree id, that
     two distinct questions had been fused into one. The first is what a reader of the
@@ -271,23 +321,19 @@ def resolve(rev):
         date = new_york_date(committed).isoformat()
         return Revision(commit, date, repo, "plus")
 
-    manifest = _manifest()
-    if re.fullmatch(r"[0-9a-fA-F]{7,40}", rev):
-        matches = [sha for sha in manifest["revisions"] if sha.startswith(rev.lower())]
-        if len(matches) > 1:
-            raise ValueError(f"Ambiguous stored MAM-parsed revision: {rev}")
-        if matches:
-            commit = matches[0]
-            entry = manifest["revisions"][commit]
-            archive = paths.repo_root() / "MAM-parsed" / "historical" / f"{commit}.zip"
-            return Revision(
-                commit,
-                entry["date"],
-                archive.parent,
-                "plus",
-                tuple(row["path"].removeprefix("plus/") for row in entry["files"]),
-                archive,
-            )
+    manifest = load_manifest()
+    commit = stored_commit(rev, manifest)
+    if commit is not None:
+        entry = manifest["revisions"][commit]
+        archive = archive_path(commit)
+        return Revision(
+            commit,
+            entry["date"],
+            archive.parent,
+            "plus",
+            tuple(row["path"].removeprefix("plus/") for row in entry["files"]),
+            archive,
+        )
 
     migration = manifest["migration"]
     repo = paths.repo_root()

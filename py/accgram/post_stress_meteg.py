@@ -19,7 +19,7 @@ THE CORPUS IS PHONETIC MAM'S TEXT, and it is a SNAPSHOT of MAM rather than MAM's
 state.  Phonetic MAM is regenerated on al-hatorah's schedule, so the standard set
 here can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the thirty Holman
 meteg suggestions of ``doc/PLAN-holman-meteg-rollout-programme.md`` among the differences.
-``currency`` below MEASURES that rather than assuming it away: it counts U+05BD per numbered verse on
+``post_stress_meteg_survey.py`` measures currency rather than assuming it away: it counts U+05BD per numbered verse on
 both sides and names every verse where the two disagree, so the page can say which MAM its
 figures describe.  Refreshing the oracle is al-hatorah's business; re-running this survey
 afterwards is one command.

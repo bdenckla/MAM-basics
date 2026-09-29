@@ -225,10 +225,11 @@ that none of its boundaries was newer than that change, not that its window held
 
 1. The summary's 249.0 s is the sum of the 54 per-step medians in section 3, not the median of
    the three run totals; the run-total median is 249.4 s from 271.3, 248.4 and 249.4 s.
-2. A blank `Cloud / Ben` ratio has one of two causes: `diff-mpplus` and `gen-site` raised in the
-   comparison run, while `find-uxlc-accent-changes`, `tmpl-survey-toy`, `letter-small-job`,
+2. The table's eight blank `Cloud / Ben` ratios have three causes: `diff-mpplus` and `gen-site`
+   raised in the comparison run; `find-uxlc-accent-changes`, `tmpl-survey-toy`, `letter-small-job`,
    `map-changes-to-book-of-job` and `ac-gen-index-flat-annotated` have a recorded Ben value of
-   0.0, so their ratios have a zero denominator.
+   0.0, so their ratios have a zero denominator; and `accgram-survey-post-stress-meteg` was
+   skipped in cloud. The recorded step names and measurements are unchanged.
 3. In section 7, “Both” means the two output groups: the `vendoring-audit` outputs,
    `doc/vendoring-inventory.md` and `out/vendoring_compare_out.txt`, and the `diff-mpplus`
    outputs, `unpinned-latest.html` and `unpinned-latest.json`; all four listed files changed.

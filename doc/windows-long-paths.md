@@ -31,9 +31,10 @@ getting past that limit with absolute paths:
 See [Microsoft's long-path
 requirements](https://learn.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation).
 
-Python 3.6 and later can use extended paths when the Windows setting is enabled.
-The Python documentation specifically names `open()`, `os`, and most other path
-functionality. See [Python's Windows
+Python 3.6 and later support the second mechanism above when the Windows setting is
+enabled. The Python documentation specifically names `open()`, `os`, and most other path
+functionality.
+See [Python's Windows
 guidance](https://docs.python.org/3.13/using/windows.html#removing-the-max-path-limitation).
 
 Git for Windows `core.longpaths` uses the first mechanism: its C-based Git
@@ -45,7 +46,7 @@ paths](https://gitforwindows.org/git-cannot-create-a-file-or-directory-with-a-lo
 
 Codex-managed worktrees live under `$CODEX_HOME/worktrees` by default, although
 the root can be changed in Codex settings. See the [official OpenAI worktree
-documentation](https://developers.openai.com/es-419/docs/environments/git-worktrees).
+documentation (Spanish locale)](https://developers.openai.com/es-419/docs/environments/git-worktrees).
 
 ## Local observations from 2026-09-19
 
@@ -58,19 +59,26 @@ On 2026-09-19, both the original investigation and execution of this guide
 measured:
 
 - `LongPathsEnabled`: `0`.
-- Effective Git `core.longpaths`: unset. `git config --show-origin --get-all
-  core.longpaths` produced no output and exited with status 1.
+- Effective Git `core.longpaths` in the investigation checkout: unset.
+  `git config --show-origin --get-all core.longpaths` produced no output and exited with status 1.
+  The original record did not name the checkout used for this Git setting. It therefore does
+  not establish the primary checkout's effective setting.
 
-Re-measure these values when this guide is used. If either value changes, retain
-the 2026-09-19 observation above and record the newer dated measurement rather
-than rewriting history.
+Re-measure the machine value and each checkout's effective Git setting when this guide is used.
+Name the exact checkout for each Git query, and record a newer dated measurement while retaining
+the September 19 observation. Different checkout results need not mean a machine setting changed.
+
+On 2026-09-28, the primary and development checkout were both
+`C:/Users/BenDe/GitRepos/MAM-basics`, by Ben's execution amendment. The exact query below returned
+no output and exit status 1, so `core.longpaths` was unset there. The old DAR worktree path was
+physically absent and was not measured independently.
 
 ```powershell
 Get-ItemPropertyValue -Path 'HKLM:/SYSTEM/CurrentControlSet/Control/FileSystem' -Name LongPathsEnabled
 ```
 
 ```powershell
-git config --show-origin --get-all core.longpaths
+git -c safe.directory=C:/Users/BenDe/GitRepos/MAM-basics -C C:/Users/BenDe/GitRepos/MAM-basics config --show-origin --get-all core.longpaths
 ```
 
 ### Root lengths and observed failures
@@ -88,7 +96,7 @@ None of these roots alone caused the observed failures.
 Synthetic retirement tests constructed 251-257-character destinations by
 reproducing the source path beneath the retention root. The implementation
 anchor is `_shadow_parts` in
-[`py/repo_util/worktree_retirement.py`](../py/repo_util/worktree_retirement.py),
+[`py/repo_util/worktree_retirement_preflight.py`](../py/repo_util/worktree_retirement_preflight.py),
 which turns the source's drive and absolute path components into the destination
 shadow.
 

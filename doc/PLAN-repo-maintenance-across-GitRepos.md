@@ -457,13 +457,23 @@ member. Never create `<stem>-update-N.md`. A historical numbered sibling found i
 remains historical evidence and belongs to the historical family in which it appears; preserving
 that file literally does not make numbered siblings current policy.
 
-Before deleting a family, audit GitHub issue bodies and comments owner-wide and classify each
-reference. A reference to current guidance is repointed to a current successor or blocks the
-deletion. A reference to historical evidence is repointed to the full 40-character SHA of the
-last commit whose tree contains every family member. Verify every path there with `git cat-file
--e`; never use `blob/main`, a branch, a tag, a short SHA, or the deletion commit whose tree lacks
-the files. Link the base receipt and every update sibling so that the correction sequence remains
-visible.
+Before deleting a receipt family, audit references in tracked files as well as GitHub
+issue bodies and comments. Classify each reference as current guidance or historical
+evidence. A current-guidance reference must reach a maintained successor or block
+deletion. A historical reference must reach the full 40-character SHA of the last
+commit whose tree contains every family member. Verify every target path there and
+link the base and its update so the correction sequence remains visible. Correct
+present-state documents and source comments in place; correct a finished receipt
+through its single live update. Do not bulk-edit finished bases. This audit and the
+retirement decision remain manual.
+
+Ben may explicitly reclassify a finished receipt family as a maintained document.
+Record Ben's decision and date, identify the original family and an archival commit
+containing every member, and preserve the research provenance and later corrections.
+If the transition consolidates the update into the maintained document, remove the
+update and its pointer in the same commit and repair current-guidance references;
+historical references retain recoverable access to the original family.
+Reclassification is separate from retirement and is never automatic.
 
 For an open issue, correct a stale body reference with `py/main_github_issue_edit.py`, first with
 `--dry-run`, and read the entire outgoing body before applying it. For a closed issue, or a

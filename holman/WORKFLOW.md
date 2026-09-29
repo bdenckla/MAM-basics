@@ -26,10 +26,10 @@ availability do not belong in a disposition.
 
 The four authored Holman CSS and JavaScript assets live under `holman/assets/`.
 Edit those files rather than their generated copies under `gh-pages/holman/`.
-Every authored CSS theme declares `color-scheme: light dark` on `:root` and
-every theme custom property that stores a color uses a
-`light-dark(<light>, <dark>)` pair. Fixed badge foregrounds and backgrounds
-remain literal colors.
+Every authored CSS theme declares `color-scheme: light dark` on `:root`, and every
+theme custom property that stores a color uses a `light-dark(<light>, <dark>)` pair.
+Fixed badge foregrounds and backgrounds remain literal colors. Do not add an
+`@media (prefers-color-scheme: dark)` block.
 
 Ben decided on 2026-09-12 that the two renamed JC3 zayin pages receive no compatibility stubs,
 so their old URLs may break; `in/holman_ketiv_qere_redirect_pages.json` records that decision.

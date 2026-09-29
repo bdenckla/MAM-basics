@@ -32,7 +32,8 @@ decision, 2026-08-22, reaffirmed 2026-08-31 as the general rule that **an evacua
 appear in `GitRepos`**. **The repo itself is alive** — `bdenckla/wlc-utils` is the redirect host
 for `bdenckla.github.io/wlc-utils/<path>`, and only the clone is unwanted. Nothing routine wants
 one: its 93 issues are read and written with `gh --repo bdenckla/wlc-utils`, which needs no
-checkout (`py/github_issue_edit.py`); its site deploys from the remote by its own `pages.yml`; and no
+checkout (`py/github_issue_edit.py`); its site deploys from the remote by its own `pages.yml`;
+and no
 test here resolves that sibling.
 
 **The worked case for reading a reflog before believing a clone's story.** A machine surveyed on
@@ -48,7 +49,8 @@ al-hatorah's and masorah-books', on the evacuated-repos rule above.
 `py/main_redirect_stubs.py build --repo wlc-utils --publish`, and
 `check --repo wlc-utils` with no `--dir`, reach `py/redirect_stubs/stubs.py`'s
 `source_pages_dir`. Every redirect command requires `--repo`; table order never chooses a
-missing source clone. **Nothing schedules the program**: it is in no pipeline — `py/main_0_mega.py` and
+missing source clone. **Nothing schedules the program**: it is in no pipeline —
+`py/main_0_mega.py` and
 `py/pipeline_graph/pipeline_graph_spec.py` never name it — and the one check that runs all the
 time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely because it
 needs no clone. It raises with the command that fixes it:
@@ -74,9 +76,10 @@ so a stale entry would kill `--run-black`, `--clean-worktrees` and the standards
 just the part that names wlc-utils. That is the same three-step the frozen repos took on
 2026-08-07 (move out, drop from the workspace file, record it).
 
-The `../wlc-utils` paths in `doc/`'s plans are execution records of what was true when each phase
-ran, and are left as written—the dispositions Ben chose on 2026-08-10 for masorah-books and on
-2026-08-11 for al-hatorah.
+The historical `../wlc-utils` paths in the retired evacuation plans describe the checkout layout
+when each phase ran. The complete [PLAN-evacuate-the-rest-of-three-repos.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-the-rest-of-three-repos.md)
+archive preserves that record. Keeping the historical paths follows the dispositions Ben chose
+on 2026-08-10 for masorah-books and on 2026-08-11 for al-hatorah.
 
 ## MAM-OSIS belongs on no machine except for explicit stub publication
 
@@ -169,7 +172,8 @@ diffable-pointed-hebrew product's samples and its nine short Unicode-name assign
 assignments moved to `in/diffable-pointed-hebrew-short-name-overrides.json`, and the two sample
 pairs, a historical output, the README and the product's MIT `LICENSE` were deleted. The samples
 were MAM text, which that licence could not cover, and the command's two remaining goldens are
-the zarqa tables under `misc/zarqa-table-diff/`. Its command is `py/main_diffable_pointed_hebrew.py`, which uses
+the zarqa tables under `misc/zarqa-table-diff/`. Its command is
+`py/main_diffable_pointed_hebrew.py`, which uses
 MAM-basics' maintained `mb_cmn` utilities plus the retained product data. The old source clone
 is deliberately absent from `all-repos.code-workspace` and `repo_visibility`. The source
 repository keeps its history as an archived dated breadcrumb. Ben
@@ -237,8 +241,9 @@ and the unpublished Second Rabbinic Bible crop remain in `doc/meteg-after-silluq
 Lamentations evidence remains in `doc/lam-2-3-akhla-snips/`. On Ben's decision
 of 2026-09-10 the Wikisource index generator was removed, with the package and paths module it
 used and its three generated files, since it "will never be run again";
-`git show --stat 985262e2` names every file removed; Phase 3 of
-`doc/PLAN-mega-coverage.md` records the totals. No Leningrad code remains, so
+`git show --stat 985262e2` names every file removed. Phase 3 of the retired
+[PLAN-mega-coverage.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md) and [PLAN-mega-coverage-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)
+records the historical totals. No Leningrad code remains, so
 `py/repo_scopes.py` lists none.
 
 Phase 5 on 2026-09-04 confirmed that the clean primary clone's `HEAD` and `origin/main` were both

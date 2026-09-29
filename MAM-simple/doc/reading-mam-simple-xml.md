@@ -63,7 +63,9 @@ This treatment of parashah breaks is a distinctive feature of MAM-simple. Most e
 
 Each system (freely-placed breaks and verse-assigned breaks) has its merits. MAM-simple has freely-placed breaks, but also provides `starts-with-sampe` and `ends-with-sampe` verse attributes. These attributes support use-cases for which a starts-with or ends-with encoding is a better fit.
 
-Thus, MAM-simple has three encodings of each parashah break: free, starts-with, and ends-with.
+For a break between verses, MAM-simple provides a free-standing element and the adjacent
+verses' `starts-with-sampe` and `ends-with-sampe` attributes. A break within verse text has
+its element inside the verse, without corresponding start/end attributes.
 This makes MAM-simple less simple, but we believe the tradeoff is a good one.
 Choosing a single encoding would simplify the data at a cost to use-cases that don't fit
 that encoding well.
@@ -80,9 +82,10 @@ So for any element, either its text is the `text` attribute directly, or its tex
 is assembled from its children — there is no case in which you must combine the two.
 
 **The combining marks of a letter are in MAM's order, not Unicode's.**
-Four marks come first, in this order: shin dot (U+05C1), sin dot (U+05C2),
-dagesh or mapiq (U+05BC), and rafe (U+05BF).
-Every other mark keeps the relative order it already had.
+Five code points have priority: shin dot (U+05C1), sin dot (U+05C2),
+dagesh/mapiq/shuruq dot (U+05BC), dagesh ḥazaq (U+05C9), and rafe (U+05BF).
+The two dagesh code points have the same priority and retain their relative order.
+Every other mark keeps its relative order.
 The consequence you will meet first is that a dagesh comes before its vowel,
 where Unicode's canonical order puts the vowel first.
 
@@ -101,12 +104,12 @@ imposes: the generator checks every element it renders and aborts on a violation
 instead of repairing one.
 The implementation is `give_std_mark_order`, in MAM-basics'
 [`py/mb_cmn/uni_denorm.py`](https://github.com/bdenckla/MAM-basics/blob/main/py/mb_cmn/uni_denorm.py).
-The combining-class values `give_std_mark_order` sorts by follow the recommendation at
-the end of the SBL Hebrew Font user manual.
+The existing combining-class values are attributed to the SBL Hebrew Font recommendation;
+the repository assigns U+05C9 the same priority as U+05BC.
 
-Only those four marks have a declared place.
+Only those five code points have a declared priority.
 A vowel and an accent pass in either order, so MAM's mark order is not a full canonical
-form: agreement on the four marks does not imply byte-identity after a round trip
+form: agreement on those priorities does not imply byte-identity after a round trip
 through some other sort.
 
 ## How Verse Text Is Stored
@@ -185,9 +188,9 @@ The "Text" column says where an element's text is: `text` means the `text` attri
 | `<kq-k-velo-q-maq/>` | Maqaf after a ketiv with no qere | none |
 | `<kq-q-velo-k>` | Qere with no Ketiv | `text` |
 | `<cant-all-three>` | Wraps combined, alef, and bet | children |
-| `<cant-combined>` | Combined cantillation (1 of 3) | either |
-| `<cant-alef>` | Alef cantillation (2 of 3) | either |
-| `<cant-bet>` | Bet cantillation (3 of 3) | either |
+| `<cant-combined>` | Combined representation | either |
+| `<cant-alef>` | Alef strand | either |
+| `<cant-bet>` | Bet strand | either |
 | `<shirah-space/>` | Shirah (song) spacing | none |
 | `<good-ending>` | Repeated ending | `text` |
 | `<scrdfftar>` | Targeted scroll-difference note | children |
@@ -296,16 +299,16 @@ atom-form is enough; never append both to the running text.
 </scrdfftar>
 ```
 
-### The three cantillations: `<cant-all-three>`
+### Dual cantillation: `<cant-all-three>`
 
 `<cant-all-three>` has exactly three children, `<cant-combined>`, `<cant-alef>`, and
-`<cant-bet>`, giving three cantillations of the same consonantal text. It appears in the
+`<cant-bet>`, giving two strands and their combined representation of the same consonantal text. It appears in the
 two Decalogues, Exod.20 and Deut.5, where MAM has both the תחתון cantillation
 (`<cant-alef>`) and the עליון one (`<cant-bet>`). It also appears at Gen.35.22, where MAM
 has both the פשוטה cantillation (`<cant-alef>`), whose chanted verse ends before the
 petuḥah inside the numbered verse, and the מדרשית one (`<cant-bet>`), whose chanted verse
-runs on past it. Wherever it appears, `<cant-combined>` is a combined form that has the
-marks of both.
+runs on past it. Wherever it appears, `<cant-combined>` is a combined representation of the two strands;
+it need not include every mark of each strand.
 
 ### Repeated endings: `<good-ending>`
 

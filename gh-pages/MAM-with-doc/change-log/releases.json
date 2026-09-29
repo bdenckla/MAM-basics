@@ -1,12 +1,16 @@
 {
   "_header": [
     "Each entry defines a named release as a half-open range (old, new]",
-    " of commits in the MAM-parsed repo.",
+    " of MAM-parsed states, each named by a commit's short hash: a MAM-parsed commit",
+    " for the pre-migration boundaries, a MAM-basics commit since.",
     " 'old' is the state before the first change (exclusive boundary);",
     " 'new' is the state after the last change (inclusive boundary).",
     " Consecutive releases share a boundary: the 'new' of one release",
     " equals the 'old' of the next.",
-    " main_diff_mpplus.py also uses these to map --old/--new args to a release",
+    " Every boundary is stored in MAM-parsed/historical/, and the change log refuses",
+    " one that is not. py/main_diff.py mpplus --pin <name> appends a release ending",
+    " at HEAD and stores HEAD; --archive <boundary> stores a boundary added by hand.",
+    " py/main_diff.py mpplus also uses these to map --old/--new args to a release",
     " name for the output filename."
   ],
   "releases": [

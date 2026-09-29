@@ -6,8 +6,9 @@ studies, excerpts, technical resources, and reviews by subject.  The structure s
 except for the named four-part Masoretes series.  Unicode and Taamey D are linked headings
 because each heading is itself the sole destination for that topic.
 
-Every internal href is relative so the generated page works both in a local checkout and
-at the site root.  ``py/tests/test_site_index_links.py`` walks all typed anchors, including
+Internal hrefs include relative paths and absolute published URLs. Relative links
+work in a local checkout; absolute links target the published pages.
+``py/tests/test_site_index_links.py`` walks all typed anchors, including
 heading links and grouped entries, to verify tracked targets and deploy-root reachability.
 
 The three translated excerpts from the Introduction to MAM copy the ``_TITLE`` constants
@@ -75,11 +76,11 @@ POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
 )
 
 # The stylesheet the deploy-root pages link, written by Ben and tracked as
-# gh-pages/style.css -- a sibling of every page, so the href needs no prefix.  Its whole job is
-# the light/dark switching every other page generated here already had through
-# gh-pages/wlc/style.css, which the deploy-root pages cannot simply share: that file's @font-face
-# names woff2/Taamey_D.woff2 relative to itself, and it carries a hundred rules for
-# accgram tables that no link index has any use for.  Ben asked for the switching on
+# gh-pages/style.css -- a sibling of every deploy-root page, so its href needs no
+# prefix. It supplies light/dark switching, the bounded text measure, and book-title
+# italics. The post-stress-meteg pages also link gh-pages/wlc/style.css for pointed
+# Hebrew, romanizations, and tables; its font URL resolves relative to that stylesheet.
+# Ben asked for the switching on
 # 2026-08-31, having noticed the two deploy-root pages that existed then staying white on a
 # dark display.
 CSS_HREF = "style.css"
@@ -92,8 +93,8 @@ CSS_HREF = "style.css"
 # resolves from the deploy root as it does from gh-pages/wlc/.
 ACCGRAM_CSS_HREF = "wlc/style.css"
 
-# Every href below that stays inside this site is written RELATIVE, because this page is
-# published at the site root and a relative link works in a local checkout too.
+# Hrefs below include relative paths within the deploy root and absolute URLs to
+# published pages, including MAM-with-doc and other repositories.
 # py/tests/test_site_index_links.py resolves each one against gh-pages/.
 #
 # AND IT NAMES index.html EXPLICITLY where document-index wrote a bare directory URL.
@@ -178,10 +179,10 @@ _INTRODUCTION_EXCERPTS = Section(
     entries=(
         _mwd_misc("Gray maqaf", "he_ws_intro_to_mam_gray_maqaf_1.html"),
         _mwd_misc("Paseq and legarmeh", "he_ws_intro_to_mam_pasleg.html"),
-        # The note repeats the caveat the page opens with; drop both once a human has
-        # reviewed the translation.
+        # Remove this note together with the page caveat and misc-index label caveat
+        # only once a human has reviewed the translation.
         _mwd_misc(
-            "געיה marks in MAM",
+            "The געיה marks in MAM",
             "he_ws_intro_to_mam_gaya_text.html",
             note=(" (AI-generated translation, not yet reviewed by a human)",),
         ),

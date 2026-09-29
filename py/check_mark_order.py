@@ -3,7 +3,10 @@
 Check that every Hebrew word in tracked .py and .json files has the
 project’s standard combining-mark order (SBL2):
 
-    base letter → shin/sin dot → dagesh → rafeh → (everything else unchanged)
+    base letter → shin/sin dot → dagesh/mapiq/shuruq dot or dagesh ḥazaq (U+05C9)
+    → rafe → (everything else unchanged)
+
+The two dagesh code points share a priority and keep their relative order.
 
 The canonical reordering function is ``give_std_mark_order`` from
 mb_cmn.uni_denorm.

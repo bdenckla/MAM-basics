@@ -562,7 +562,7 @@ def _pin_prose_claims(survey: dict) -> None:
     ):
         assert bcv in survey["currency"]["focus_verses"], (
             f"{bcv} is named in the page's prose but the survey records no chanted word"
-            " for it; add it to post_stress_meteg._FOCUS_VERSES"
+            " for it; add it to accgram.post_stress_meteg_sources._FOCUS_VERSES"
         )
     _excerpt_accounting()
 
@@ -578,5 +578,7 @@ def _excerpt_accounting() -> tuple[int, int]:
     for (source, _text), length in zip(_EXCERPTS, lengths):
         assert length <= _MAX_WORDS_PER_EXCERPT, f"{source}: {length} words"
     assert sum(lengths) <= _MAX_WORDS_IN_ALL_EXCERPTS, sum(lengths)
-    assert not _EXCERPTS, "this page quotes neither book; see the module docstring"
+    assert (
+        not _EXCERPTS
+    ), "this page quotes neither book; see author_site.post_stress_meteg"
     return len(_EXCERPTS), sum(lengths)

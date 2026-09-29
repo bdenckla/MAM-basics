@@ -87,7 +87,7 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
-from accgram import chanted_word_accents as cwa
+from accgram import chanted_word_accents_units as cwa
 from accgram import mam_simple_verse
 from accgram import maqaf_nonfinal_accents as mna
 from accgram import prose_filter
@@ -962,7 +962,7 @@ def mam_atoms(vels: list) -> list[str]:
     """MAM-simple's atoms, with the paseq/legarmeh mark folded onto the atom before it.
 
     MAM-simple emits ``lp-paseq`` and ``lp-legarmeih`` as a lone PASOLEG token standing between
-    two atoms, and ``chanted_word_accents._atom_frags`` then makes it a unit of its own -- a
+    two atoms, and ``chanted_word_accents_units._atom_frags`` then makes it a unit of its own -- a
     space-delimited run of the mark body carrying no accent.  WLC's side does not: the paseq is
     part of the word it follows, so ``uni_to_marks`` puts it into that word's marks with NO
     space.  The difference is not cosmetic.  ``prose_scanner`` fuses munaḥ with a following

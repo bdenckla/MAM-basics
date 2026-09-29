@@ -40,8 +40,8 @@ PALETTE = [
 ]
 
 ASSETS_DIR = hkq_paths.assets_dir()
-CSS_TEMPLATE_PATH = ASSETS_DIR / "table_data_findings.css"
-JS_TEMPLATE_PATH = ASSETS_DIR / "table_data_findings.js"
+CSS_TEMPLATE_PATH = ASSETS_DIR / "mam-suggestions-report.css"
+JS_TEMPLATE_PATH = ASSETS_DIR / "mam-suggestions-report.js"
 CSS_COLOR_PLACEHOLDER = "/* __FINDING_COLORS__ */"
 
 

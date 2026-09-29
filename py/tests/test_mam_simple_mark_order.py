@@ -47,9 +47,9 @@ seconds and dropping a tree from a lint needs a better reason than that.
 
 WHAT MAM'S MARK ORDER IS, AND WHAT IT IS NOT
 
-``mb_cmn/uni_denorm.py`` is the authority. Four marks come first -- shin dot, sin dot,
-dagesh/mapiq, rafe -- and every other mark keeps the relative order it already had, so
-only those four have a declared place. A vowel and an accent pass in either order, and
+``mb_cmn/uni_denorm.py`` is the authority. Five code points have priority: shin dot,
+sin dot, dagesh/mapiq/shuruq dot, dagesh ḥazaq (U+05C9), and rafe. The two dagesh
+code points share a priority. Every other mark keeps its relative order. A vowel and an accent pass in either order, and
 ``has_std_mark_order`` says nothing about which of them comes first. This lint is
 therefore not a canonical-form check and must not be read as one.
 

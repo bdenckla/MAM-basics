@@ -226,18 +226,18 @@ _POST_SILLUQ_LC_CROP_SOURCE_URL = "https://github.com/bdenckla/phonetic-hbo/issu
 
 _POST_SILLUQ_ALEPPO_CROP_URL = "img/Aleppo-Codex-1S-17v5-no-post-silluq-meteg.png"
 
-_POST_SILLUQ_CAIRO_COTP_CROP_URL = "img/cairo-cotp-p110-image103-1S17v5-nexoshet.png"
+_POST_SILLUQ_CAIRO_COTP_CROP_URL = "img/cairo-cotp-p110-image103-1S17v5-NXJF.png"
 
 _POST_SILLUQ_CAIRO_COTP_SOURCE_URL = "https://simurg.csic.es/view/9918494052404201"
 
-_POST_SILLUQ_SASSOON_CROP_URL = "img/sassoon-1053-1S17v5-nexoshet.png"
+_POST_SILLUQ_SASSOON_CROP_URL = "img/sassoon-1053-1S17v5-NXJF.png"
 
 _POST_SILLUQ_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=1+Samuel&chapter=17&verse=5&manuscript=sassoon"
 )
 
 _POST_SILLUQ_PETERSBURG_CROP_URL = (
-    "img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png"
+    "img/st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-NXJF.png"
 )
 
 _POST_SILLUQ_PETERSBURG_SOURCE_URL = (
@@ -259,20 +259,20 @@ _MAM_POST_SILLUQ_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=1+Kings&chapter=7&verse=37&manuscript=sassoon"
 )
 
-_FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-atta.png"
+_FIRST_KINGS_14_ALEPPO_CROP_URL = "img/aleppo-083r-1K14v14-G603FH.png"
 
-_FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-atta.png"
+_FIRST_KINGS_14_LENINGRAD_CROP_URL = "img/leningrad-195B-col2-line27-1K14v14-G603FH.png"
 
-_FIRST_KINGS_14_CAIRO_COTP_CROP_URL = "img/cairo-cotp-image204-1K14v14-atta.png"
+_FIRST_KINGS_14_CAIRO_COTP_CROP_URL = "img/cairo-cotp-image204-1K14v14-G603FH.png"
 
-_FIRST_KINGS_14_SASSOON_CROP_URL = "img/sassoon-1053-1K14v14-atta.png"
+_FIRST_KINGS_14_SASSOON_CROP_URL = "img/sassoon-1053-1K14v14-G603FH.png"
 
 _FIRST_KINGS_14_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=1+Kings&chapter=14&verse=14&manuscript=sassoon"
 )
 
 _FIRST_KINGS_14_PETERSBURG_CROP_URL = (
-    "img/st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png"
+    "img/st-petersburg-evr-ii-b-55-image186-1K14v14-G603FH.png"
 )
 
 _FIRST_KINGS_14_PETERSBURG_SOURCE_URL = (
@@ -294,15 +294,15 @@ _PSALMS_60_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Psalms&chapter=60&verse=10&manuscript=sassoon"
 )
 
-_PSALMS_70_ALEPPO_CROP_URL = "img/aleppo-253r-Ps70v2-xushah.png"
+_PSALMS_70_ALEPPO_CROP_URL = "img/aleppo-253r-Ps70v2-XVJH.png"
 
-_PSALMS_70_LENINGRAD_CROP_URL = "img/leningrad-379B-Ps70v2-xushah.png"
+_PSALMS_70_LENINGRAD_CROP_URL = "img/leningrad-379B-Ps70v2-XVJH.png"
 
-_PSALMS_70_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps70v2-xushah.png"
+_PSALMS_70_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps70v2-XVJH.png"
 
-_PSALMS_70_SASSOON_CROP_URL = "img/sassoon-1053-Ps70v2-xushah.png"
+_PSALMS_70_SASSOON_CROP_URL = "img/sassoon-1053-Ps70v2-XVJH.png"
 
-_PSALMS_70_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps70v2-xushah.png"
+_PSALMS_70_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps70v2-XVJH.png"
 
 _PSALMS_70_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Psalms&chapter=70&verse=2&manuscript=sassoon"
@@ -312,11 +312,11 @@ _PSALMS_72_ALEPPO_CROP_URL = "img/aleppo-253v-Ps72v15-yevarkhenhu.png"
 
 _PSALMS_72_LENINGRAD_CROP_URL = "img/leningrad-380A-col2-line3-Ps72v15-yevarkhenhu.png"
 
-_PSALMS_72_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps72v15-yevarkhenhu.png"
+_PSALMS_72_CAM1753_CROP_URL = "img/cam1753-unlocated-Ps72v15-YBRKNHV.png"
 
-_PSALMS_72_SASSOON_CROP_URL = "img/sassoon-1053-Ps72v15-yevarkhenhu.png"
+_PSALMS_72_SASSOON_CROP_URL = "img/sassoon-1053-Ps72v15-YBRKNHV.png"
 
-_PSALMS_72_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps72v15-yevarkhenhu.png"
+_PSALMS_72_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Ps72v15-YBRKNHV.png"
 
 _PSALMS_72_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Psalms&chapter=72&verse=15&manuscript=sassoon"
@@ -326,21 +326,28 @@ _JOB_4_ALEPPO_CROP_URL = "img/aleppo-271r-col2-line5-Job4v12-menhu.png"
 
 _JOB_4_LENINGRAD_CROP_URL = "img/leningrad-398A-Job4v12-menhu.png"
 
-_JOB_4_CAM1753_CROP_URL = "img/cam1753-0073B-col2-line13-Job4v12-menhu.png"
+_JOB_4_CAM1753_CROP_URL = "img/cam1753-0073B-col2-line13-Job4v12-MNHV.png"
 
-_JOB_4_SASSOON_CROP_URL = "img/sassoon-1053-Job4v12-menhu.png"
+_JOB_4_SASSOON_CROP_URL = "img/sassoon-1053-Job4v12-MNHV.png"
 
 _JOB_4_SASSOON_SOURCE_URL = (
     "https://www.masoretica.org/?book=Job&chapter=4&verse=12&manuscript=sassoon"
 )
 
-_JOB_4_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png"
+_JOB_4_PETERSBURG_CROP_URL = "img/st-petersburg-evr-ii-b-55-Job4v12-MNHV.png"
 
 _PETERSBURG_RECORD_URL = (
     "https://www.nli.org.il/he/manuscripts/NNL_ALEPH990000991240205171/NLI"
 )
 
-_URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-eeseh.png"
+_PETERSBURG_FULL_NAME = "St. Petersburg Evr. II B 55"
+_PETERSBURG_SHORT_NAME = "EVR-II-B-55"
+_PETERSBURG_CONTINUATION_NAME = "Evr. II B 247"
+_PETERSBURG_SURVIVING_TEXT_GAP = (
+    "its surviving text breaks off at 2 Sam. 1:16 and resumes at 1 Kgs. 8:61."
+)
+
+_URJ_DISTINCT_STROKE_CROP_URL = "img/urj-2005-Num23v26-A3JH.png"
 
 _POST_SILLUQ_CASES_JSON = "meteg_after_silluq_cases.json"
 

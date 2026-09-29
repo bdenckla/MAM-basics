@@ -32,10 +32,28 @@ that begins on line 3 without changing its text. A spent base receipt and its op
 `<stem>-update.md` form one retirement family and may be deleted together. Never create a numbered
 update sibling. A historical numbered sibling remains historical evidence and belongs to the
 historical family in which it appears; literal preservation does not make that naming current
-policy. Before deletion, audit GitHub issue bodies and comments: current-guidance references
-must reach a current successor or block deletion, and historical references must reach the
-verified full SHA of the last commit containing every family member. Follow the GitHub-issues
-skill's open-body versus closed-issue-or-comment procedure for the corrections.
+policy.
+
+Before deleting a receipt family, audit references in tracked files as well as GitHub
+issue bodies and comments. Classify each reference as current guidance or historical
+evidence. A current-guidance reference must reach a maintained successor or block
+deletion. A historical reference must reach the full 40-character SHA of the last
+commit whose tree contains every family member. Verify every target path there and
+link the base and its update so the correction sequence remains visible. Correct
+present-state documents and source comments in place; correct a finished receipt
+through its single live update. Do not bulk-edit finished bases. This audit and the
+retirement decision remain manual.
+
+Ben may explicitly reclassify a finished receipt family as a maintained document.
+Record Ben's decision and date, identify the original family and an archival commit
+containing every member, and preserve the research provenance and later corrections.
+If the transition consolidates the update into the maintained document, remove the
+update and its pointer in the same commit and repair current-guidance references;
+historical references retain recoverable access to the original family.
+Reclassification is separate from retirement and is never automatic.
+
+Follow the GitHub-issues skill's open-body versus closed-issue-or-comment procedure,
+including complete read-back and an archival commit already on origin/main.
 
 ## Completed Codex task folders
 

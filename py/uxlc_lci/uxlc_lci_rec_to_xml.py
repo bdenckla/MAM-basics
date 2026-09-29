@@ -71,7 +71,7 @@ def _fill_elem_with_value(elem, value):
     elif isinstance(value, int):
         elem.text = str(value)
     elif value is not None:
-        raise TypeError(f"unsupported JSON value in Leningrad header: {value!r}")
+        raise TypeError(f"unsupported JSON value in Leningrad index: {value!r}")
 
 
 def _fill_col_analysis_elem(ca_elem, ca_dic):

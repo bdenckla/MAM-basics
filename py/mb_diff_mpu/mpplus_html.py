@@ -30,6 +30,7 @@ from mb_diff_mpu.mpplus_template_change_desc import kq_if_template_addition_part
 from mb_diff_mpu.mpplus_display import (
     display_text,
     normalize_paseq_spacing,
+    restore_gray_maqaf_text,
     postprocess_gray_maqaf_html,
     postprocess_paseq_html,
     postprocess_kq_html,
@@ -186,6 +187,8 @@ def _expand_diffs(diffs):
                 sub["templates_added"] = tmpl_added
             if tmpl_removed:
                 sub["templates_removed"] = tmpl_removed
+            if idx == 0 and diff.get("alternative_changes"):
+                sub["alternative_changes"] = diff["alternative_changes"]
             expanded.append(sub)
     return expanded
 
@@ -219,6 +222,31 @@ def _render_filter_buttons(counts):
     return "\n".join(parts)
 
 
+def _render_alternative_changes(changes):
+    """Render the two approved roles without calling them selected-text changes."""
+    labels = {
+        ("qere", "content"): "Qere alternative changed",
+        ("qere", "pointing-migration"): "Pointing added to the qere alternative",
+        (
+            "stress-helper-alternative",
+            "content",
+        ): "Alternative with the stress helper changed",
+    }
+    paragraphs = []
+    for change in changes:
+        key = change["role"], change["kind"]
+        if key not in labels:
+            raise ValueError(f"unclassified rendered alternative change: {key!r}")
+        old_html, new_html = char_diff_spans(change["old"], change["new"])
+        paragraphs.append(
+            '<p class="alternative-change">'
+            f'{labels[key]}: <span class="pointed-heb" dir="rtl">{old_html}</span>'
+            " &rarr; "
+            f'<span class="pointed-heb" dir="rtl">{new_html}</span>.</p>'
+        )
+    return paragraphs
+
+
 def _render_card(diff):
     cat = diff["category"]
     label, _ = CATEGORY_INFO.get(cat, (cat, "#888"))
@@ -231,8 +259,8 @@ def _render_card(diff):
         old_narrow = diff["narrowed_old"]
         new_narrow = diff["narrowed_new"]
         eng_desc = describe_change(
-            old_narrow,
-            new_narrow,
+            restore_gray_maqaf_text(old_narrow),
+            restore_gray_maqaf_text(new_narrow),
             cat,
             diff["book"],
             diff["chapter"],
@@ -250,9 +278,8 @@ def _render_card(diff):
                 tmpl_parts.append(
                     "removed: " + _format_template_name_changes(tmpl_removed)
                 )
-            eng_desc = (
-                (eng_desc or "") + "; Template change (" + "; ".join(tmpl_parts) + ")"
-            )
+            template_desc = "Template change (" + "; ".join(tmpl_parts) + ")"
+            eng_desc = "; ".join(part for part in (eng_desc, template_desc) if part)
     else:
         added = diff.get("templates_added")
         removed = diff.get("templates_removed")
@@ -303,7 +330,11 @@ def _render_card(diff):
                 detail = (
                     "; ".join(desc_parts) if desc_parts else "template restructured"
                 )
-                eng_desc = f"Template change ({detail})"
+                eng_desc = (
+                    None
+                    if not desc_parts and diff.get("alternative_changes")
+                    else f"Template change ({detail})"
+                )
     if eng_desc:
         esc_desc = add_name_tooltips(_esc(eng_desc))
         desc_html = f' <span class="change-desc">&mdash; {esc_desc}</span>'
@@ -331,6 +362,7 @@ def _render_card(diff):
             f'<span class="heb new-side">{new_html}</span>'
             "</div>"
         )
+    lines.extend(_render_alternative_changes(diff.get("alternative_changes", [])))
     for note in diff.get("docnote_notes", []):
         body_html = docnote_body_to_html(note)
         lines.append(
@@ -397,6 +429,8 @@ def write_report(diffs, old_label, new_label, out_path, old_date="", new_date=""
         "<h1>MAM Body Text Changes</h1>",
         '<p class="subtitle"><a href="index.html">Up to MAM Change Logs</a></p>',
         subtitle_table,
+        '<p class="subtitle">Includes changes to the selected body text, template '
+        "structure, qere alternatives, and alternatives with the stress helper.</p>",
         '<h2 id="summary">Summary by category</h2>',
         _render_summary_table(counts, total),
         '<h2 id="diffs">Changes (reading order)</h2>',

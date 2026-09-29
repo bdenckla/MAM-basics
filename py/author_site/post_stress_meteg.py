@@ -72,8 +72,9 @@ pr29:6, pr29:18 and jb22:13.  The one type-2 MAS whose next chanted word begins 
 poetic, ps19:14, which is one of item (b)'s four cantillated-word examples; all four of those
 examples are type-2 MAS records here.  Re-derive current counts by grouping the tracked JSON's
 ``TYPE_GUTTURAL`` records by
-``(record["system"], psm.type_2_next_filter_group(record["next_mam_form"]))``.  The grouping
-must partition the type-2 records, but its populations are not source-code constants.
+``(record["system"], type_2_next_filter_group(record["next_mam_form"]))``, both names from
+``accgram.post_stress_meteg_model``.  The grouping must partition the type-2 records, but its
+populations are not source-code constants.
 """
 
 from __future__ import annotations
@@ -87,6 +88,9 @@ from author_site import post_stress_meteg_appendices as _appendices_module
 from author_site import post_stress_meteg_cases as _cases_module
 from author_site import post_stress_meteg_overview as _overview_module
 from author_site import post_stress_meteg_post_silluq_data as _post_silluq_data_module
+from author_site import (
+    post_stress_meteg_post_silluq_images as _post_silluq_images_module,
+)
 from author_site import post_stress_meteg_post_silluq_page as _post_silluq_page_module
 from author_site import post_stress_meteg_shared as _shared_module
 from author_site import post_stress_meteg_survey as _survey_module
@@ -117,7 +121,6 @@ from author_site.post_stress_meteg_shared import (
     _POST_SILLUQ_FNAME,
     _POST_SILLUQ_TITLE,
     _POST_SILLUQ_VERSE,
-    _ROM_METEG,
     _ROM_METEG_CAP,
     _ROM_SILLUQ,
     _TITLE,
@@ -143,6 +146,9 @@ from author_site.post_stress_meteg_post_silluq_data import (
 
 from author_site.post_stress_meteg_post_silluq_page import (
     build_post_silluq_body,
+)
+
+from author_site.post_stress_meteg_post_silluq_images import (
     build_post_silluq_image_body,
 )
 
@@ -180,6 +186,7 @@ _AUTHOR_SOURCE_PATHS = (
             _cases_module,
             _post_silluq_data_module,
             _post_silluq_page_module,
+            _post_silluq_images_module,
             _validation_module,
             _overview_module,
             _appendices_module,
@@ -355,16 +362,6 @@ def build_methods_body(survey: dict) -> list:
             (_ROM_METEG_CAP, " after ", _ROM_SILLUQ, " in the census")
         ),
         mb_html.para(_mam_post_silluq_statement(survey)),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(
-                    ("comprehensive ", _ROM_METEG, "-after-", _ROM_SILLUQ, " page"),
-                    _POST_SILLUQ_FNAME,
-                ),
-                " gives the comparative evidence, known cases, and unresolved candidates.",
-            )
-        ),
         *_census_definitions(survey),
         *_dually_cantillated_passages(survey),
         *_oleh_meteg_overlap(survey),

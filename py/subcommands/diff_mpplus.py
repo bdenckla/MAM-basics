@@ -6,9 +6,12 @@ Usage:
     .venv/Scripts/python.exe py/main_diff.py mpplus
     .venv/Scripts/python.exe py/main_diff.py mpplus --old <rev> --new <rev>
     .venv/Scripts/python.exe py/main_diff.py mpplus --all
+    .venv/Scripts/python.exe py/main_diff.py mpplus --check
+    .venv/Scripts/python.exe py/main_diff.py mpplus --pin <name>
+    .venv/Scripts/python.exe py/main_diff.py mpplus --archive <boundary>
 
-Named historical releases read tracked MAM-parsed/historical/ snapshots.
-HEAD and other MAM-basics Git refs read committed MAM-parsed/plus/ data.
+Every boundary of a named release reads a tracked MAM-parsed/historical/
+snapshot. HEAD and any other MAM-basics ref read committed MAM-parsed/plus/ data.
 Use --legacy-history with --old and --new for arbitrary revisions in a sibling
 MAM-parsed clone. That rare mode requires read access and never fetches or clones.
 Output goes to gh-pages/MAM-with-doc/change-log/ by default. If the hash range
@@ -17,26 +20,49 @@ otherwise the sanitised hash range is used.
 
 The --all flag generates reports for every named release in releases.json
 and regenerates index.html, including unpinned-latest when unreleased diffs exist.
+The --check flag regenerates every artifact in a temporary directory and fails if
+a tracked copy differs.
+
+The --pin flag pins HEAD as the end of a new release with the given name, which
+it requires: it appends the release to releases.json, stores HEAD as a snapshot in
+MAM-parsed/historical/, regenerates the change log as --all does, and prints the
+paths to stage. It commits nothing, and run_pin lists what it refuses.
+
+The --archive flag stores the MAM-basics commit that a boundary of releases.json
+names as a snapshot in MAM-parsed/historical/, so that generating the change log
+never again needs that commit in the clone. It is for a boundary pinned without
+--pin. Run --all after it.
 
 When run with no arguments, the script compares the latest named release against
 HEAD and writes gh-pages/MAM-with-doc/change-log/unpinned-latest.html when that
 comparison produces diffs. When unreleased diffs are absent, the unpinned-latest
 artifacts are rewritten as empty reports so stale content is not left behind.
 
-WHICH RELEASE IS THE LATEST IS READ OFF releases.json RATHER THAN OUT OF GIT,
-and that is what lets this program run in a shallow clone -- see
-_latest_release_entry for the chain walk that replaced a commit count, and
-Ben's decision of 2026-09-11 behind it.
+WHICH RELEASE IS THE LATEST IS READ OFF releases.json RATHER THAN OUT OF GIT --
+see _latest_release_entry for the chain walk that replaced a commit count, and
+Ben's decision of 2026-09-11 behind it. That lets this program run in a shallow
+clone only together with the snapshots. A boundary that is not a stored release
+is read from MAM-basics history, which a shallow clone lacks beyond its depth:
+cb95915, pinned on 2026-09-17 without a snapshot, was missing on 2026-09-28 from
+the depth-50 clone of main at 8c2fa6c3 in a Claude cloud container, whose window
+reached back only to 2026-09-22, and the mega's diff-mpplus step stopped there.
+So, by Ben's decisions of 2026-09-28, --pin stores each boundary as it pins it,
+and --all, --check, a run with no arguments and the mega refuse a boundary that
+is not stored before comparing anything (_refuse_unstored_boundaries). With both
+in place, the change log needs no MAM-basics history but HEAD, which every clone
+has.
 """
 
 import argparse
 import json
 import os
 from pathlib import Path
+import re
 from tempfile import TemporaryDirectory
 
 from mb_cmn import paths
 from mb_diff_mpu import (
+    mpplus_archive,
     mpplus_classify,
     mpplus_extract,
     mpplus_html,
@@ -53,6 +79,8 @@ PRESERVED_CHANGE_LOG_ARTIFACTS = (
     UNPINNED_LATEST_HTML,
     UNPINNED_LATEST_JSON,
 )
+# Names --pin refuses, since a release's reports are <name>.html and <name>.json.
+_RESERVED_RELEASE_NAMES = frozenset({"index", "releases", "unpinned-latest"})
 
 
 def generated_artifact_names() -> tuple[str, ...]:
@@ -62,14 +90,22 @@ def generated_artifact_names() -> tuple[str, ...]:
     names = []
     for entry in releases:
         names.extend((f"{entry['name']}.html", f"{entry['name']}.json"))
-    names.extend(("unpinned-latest.html", "unpinned-latest.json", "index.html"))
+    names.extend(
+        (
+            "unpinned-latest.html",
+            "unpinned-latest.json",
+            "index.html",
+            "style.css",
+            "filter.js",
+        )
+    )
     return tuple(names)
 
 
 def _commit_date(rev):
-    """Return a stored release's or legacy:<ref>'s date, or "" for a MAM-basics ref.
+    """Return a stored release's or legacy:<ref>'s date, or "" for any other MAM-basics ref.
 
-    A MAM-basics ref has had no date since 2026-09-14, when it began to be recorded by the git
+    Such a ref has had no date since 2026-09-14, when it began to be recorded by the git
     tree id of MAM-parsed/plus.  Until then its date was that of the last commit to change
     MAM-parsed/plus, found by a path-filtered ``git log --full-history -1``, and in a shallow clone that walk can
     return the wrong commit.  Git treats each commit listed in .git/shallow as having no
@@ -162,9 +198,10 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     ``old_rev`` and ``new_rev`` verbatim, so unpinned-latest said "HEAD", which names
     nothing once the report is committed; Ben decided that day that "a true hash should
     be recorded". A stored release or a legacy:<ref> records the full hash of its
-    MAM-parsed commit. A MAM-basics ref recorded its content commit until 2026-09-14,
-    and since then records the git tree id of MAM-parsed/plus, which is the same in
-    every clone, shallow ones included; ``mpplus_revisions.resolve`` says why. The log
+    commit, a MAM-parsed commit or, for a boundary archived when it was pinned, a
+    MAM-basics commit. Any other MAM-basics ref recorded its content commit until
+    2026-09-14, and since then records the git tree id of MAM-parsed/plus, which is the
+    same in every clone, shallow ones included; ``mpplus_revisions.resolve`` says why. The log
     need not keep up with every commit -- Ben, 2026-09-11: "I want the diff to be able
     to run as sparsely or as frequently as the user wants" -- so a report that lags only
     has to say exactly what it describes, and the recorded ids say it.
@@ -197,8 +234,55 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
     return total, old.date
 
 
+def _release_boundaries():
+    """Every boundary releases.json names, each once, in the order the file names them."""
+    with open(RELEASES_JSON, "r", encoding="utf-8") as in_fp:
+        releases = json.load(in_fp)["releases"]
+    return list(
+        dict.fromkeys(entry[side] for entry in releases for side in ("old", "new"))
+    )
+
+
+def _refuse_unstored_boundaries(boundaries):
+    """Refuse, before comparing anything, a boundary that names no stored release.
+
+    Ben's decision, 2026-09-28 ("Guard and pin command"): every boundary of releases.json
+    must be a stored release in MAM-parsed/historical/. An unstored boundary is read from
+    MAM-basics history, which a shallow clone lacks beyond its depth. 78559eba pinned
+    cb95915 on 2026-09-17 without an archive, and on 2026-09-28 the depth-50 clone of main
+    at 8c2fa6c3 in a Claude cloud container reached back only to 2026-09-22 and lacked it,
+    so the mega's diff-mpplus step stopped with a ValueError whose advice, a sibling
+    MAM-parsed clone, did not apply to a MAM-basics commit. Refusing in every clone makes
+    the omission fail where it is made, not days later in a shallow one, and names the
+    command that mends it.
+    """
+    manifest = mpplus_revisions.load_manifest()
+    unstored = [
+        boundary
+        for boundary in boundaries
+        if mpplus_revisions.stored_commit(boundary, manifest) is None
+    ]
+    if unstored:
+        commands = "".join(
+            f"\n    py/main_diff.py mpplus --archive {boundary}"
+            for boundary in unstored
+        )
+        raise RuntimeError(
+            f"No stored release in {mpplus_revisions.historical_directory()} for these"
+            f" boundaries of releases.json: {', '.join(unstored)}. Comparing one would"
+            " read MAM-basics history, which a shallow clone lacks beyond its depth."
+            " Archive each once, in a clone that has its commit, then run"
+            f" py/main_diff.py mpplus --all:{commands}"
+        )
+
+
 def run_all(change_log_dir=CHANGE_LOG_DIR):
-    """Generate reports for named releases plus unpinned-latest, then write index."""
+    """Generate reports for named releases plus unpinned-latest, then write index.
+
+    Returns each release's index entry. Refuses first any boundary that is not a stored
+    release; ``_refuse_unstored_boundaries`` says why.
+    """
+    _refuse_unstored_boundaries(_release_boundaries())
     with open(RELEASES_JSON, "r", encoding="utf-8") as in_fp:
         data = json.load(in_fp)
     release_info = []
@@ -212,6 +296,7 @@ def run_all(change_log_dir=CHANGE_LOG_DIR):
     if unpinned_info is not None:
         release_info.append(unpinned_info)
     mpplus_index.write_index(release_info, change_log_dir)
+    return release_info
 
 
 def run_unpinned_latest(change_log_dir=CHANGE_LOG_DIR):
@@ -225,11 +310,15 @@ def run_unpinned_latest(change_log_dir=CHANGE_LOG_DIR):
     the same result, which is the same fact stated twice.  Ben's decision, 2026-09-11: remove
     it.  ``count``, which ``generate_report`` returns, is the honest test of "is there anything
     to report", and it is measured rather than predicted.
+
+    The old side, the latest release's end, must be a stored release;
+    ``_refuse_unstored_boundaries`` says why.
     """
     latest_release = _latest_release_entry()
     if latest_release is None:
         raise RuntimeError("releases.json has no release entries")
     old_rev = latest_release["new"]
+    _refuse_unstored_boundaries([old_rev])
     unpinned_latest_html = f"{change_log_dir}/unpinned-latest.html"
     unpinned_latest_json = f"{change_log_dir}/unpinned-latest.json"
     count, old_date = generate_report(
@@ -246,6 +335,149 @@ def run_unpinned_latest(change_log_dir=CHANGE_LOG_DIR):
         )
         return None
     return {"name": "unpinned-latest", "count": count, "old_date": old_date}
+
+
+def run_archive(boundary):
+    """Store a releases.json boundary that is a MAM-basics commit in MAM-parsed/historical/.
+
+    The change log is not regenerated here. Run ``--all`` next: its reports then name the
+    boundary by its full hash and New York date, as they name the stored releases before it.
+    """
+    if boundary not in _release_boundaries():
+        raise SystemExit(
+            f"--archive takes a boundary of {RELEASES_JSON}, and {boundary!r} is not one."
+        )
+    commit = mpplus_archive.archive_boundary(boundary)
+    print(f"Archived {boundary} as {mpplus_revisions.archive_path(commit)}")
+    print(f"  and listed it in {mpplus_revisions.manifest_path()}.")
+    print(
+        "Next: py/main_diff.py mpplus --all, then stage both files and the change log."
+    )
+
+
+def _json_lines(items):
+    """Each item as JSON on a line of its own, comma-separated, as releases.json has them."""
+    last = len(items) - 1
+    return [
+        f"    {json.dumps(item, ensure_ascii=False)}{',' if index < last else ''}"
+        for index, item in enumerate(items)
+    ]
+
+
+def _releases_json_text(data):
+    """releases.json in its hand layout: a line for each header line and each release."""
+    lines = [
+        "{",
+        '  "_header": [',
+        *_json_lines(data["_header"]),
+        "  ],",
+        '  "releases": [',
+        *_json_lines(data["releases"]),
+        "  ]",
+        "}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def _refuse_release_name(name, releases):
+    """Refuse a name that is not a plain file stem, or is taken, or names another file."""
+    if not re.fullmatch(r"[0-9A-Za-z][0-9A-Za-z._-]*", name):
+        raise SystemExit(
+            f"--pin {name!r}: a release name is the stem of its reports' file names, so it"
+            " holds only letters, digits, '.', '_' and '-', and begins with a letter or digit"
+        )
+    if name.casefold() in _RESERVED_RELEASE_NAMES:
+        raise SystemExit(
+            f"--pin {name!r}: {name}.html or {name}.json would overwrite another file of"
+            " the change log"
+        )
+    for entry in releases:
+        if entry["name"].casefold() == name.casefold():
+            raise SystemExit(f"--pin {name!r}: releases.json already has {entry}")
+
+
+def run_pin(name):
+    """Pin HEAD as the end of a new named release, archive it and regenerate the change log.
+
+    Ben's decision, 2026-09-28 ("Guard and pin command"): one step appends the release to
+    releases.json, archives its end, and regenerates the change log, so that no boundary
+    is pinned without the stored release a shallow clone needs. The release runs from the
+    latest release's end to HEAD, which is spelled, as every boundary pinned so far is, by
+    its 7-character short hash. Nothing is committed; the paths to stage are printed.
+
+    The name is required and never derived. The earlier names begin with the New York
+    date of their end commit, but release 2026-09-17 ends at cb95915, dated 2026-09-16,
+    and its page is published under that name.
+
+    Nothing is written when releases.json is not already in the layout this writes, so
+    that the appended line is the file's only change; when the name is taken or would
+    overwrite another file of the change log; when MAM-parsed/plus/ has uncommitted
+    changes; when the latest release's end is not a stored release; when HEAD's short
+    hash already begins a stored release's hash; or when the release would hold nothing,
+    that is, when HEAD's MAM-parsed/plus/*.json blob ids are those of the latest
+    release's end.
+    """
+    raw = Path(RELEASES_JSON).read_bytes()
+    data = json.loads(raw.decode("utf-8"))
+    if _releases_json_text(data).encode("utf-8") != raw:
+        raise SystemExit(
+            f"{RELEASES_JSON} is not in the layout --pin writes, a line for each header"
+            " line and each release, so appending would rewrite more than one line."
+        )
+    _refuse_release_name(name, data["releases"])
+    uncommitted = mpplus_archive.uncommitted_plus_paths()
+    if uncommitted:
+        raise SystemExit(
+            "--pin archives MAM-parsed/plus/ as committed at HEAD, and Git reports"
+            " uncommitted changes under it: " + "; ".join(uncommitted)
+        )
+    latest = _latest_release_entry()
+    if latest is None:
+        raise SystemExit("releases.json has no release for --pin to continue")
+    old = latest["new"]
+    _refuse_unstored_boundaries([old])
+    manifest = mpplus_revisions.load_manifest()
+    head = mpplus_archive.head_commit()
+    new = head[:7]
+    clash = mpplus_revisions.stored_commit(new, manifest)
+    if clash == head:
+        raise SystemExit(f"HEAD, {head}, is already a stored release")
+    if clash is not None:
+        raise SystemExit(
+            f"HEAD's short hash {new} also begins the stored release {clash}, so it"
+            " could not name HEAD alone"
+        )
+    old_rows = manifest["revisions"][mpplus_revisions.stored_commit(old, manifest)]
+    old_blob_ids = {row["path"]: row["sha"] for row in old_rows["files"]}
+    if mpplus_archive.plus_blob_ids(head) == old_blob_ids:
+        raise SystemExit(
+            f"MAM-parsed/plus/*.json at HEAD is byte for byte what {old}, the end of"
+            f" release {latest['name']}, holds, so a release ending at HEAD would hold"
+            " nothing"
+        )
+    mpplus_archive.archive_boundary(new, head)
+    data["releases"].append({"old": old, "new": new, "name": name})
+    with open(RELEASES_JSON, "w", encoding="utf-8", newline="") as out_fp:
+        out_fp.write(_releases_json_text(data))
+    # resolve caches by revision string; the manifest it read before this point is stale.
+    mpplus_revisions.resolve.cache_clear()
+    release_info = run_all()
+    count = next(info["count"] for info in release_info if info["name"] == name)
+    change_log = Path(CHANGE_LOG_DIR)
+    written = (
+        Path(RELEASES_JSON),
+        mpplus_revisions.archive_path(head),
+        mpplus_revisions.manifest_path(),
+        change_log / f"{name}.html",
+        change_log / f"{name}.json",
+        change_log / "unpinned-latest.html",
+        change_log / "unpinned-latest.json",
+        change_log / "index.html",
+    )
+    print(f"Pinned release {name}, {old} to {new}, with {count} changes.")
+    print("Nothing is committed. Review the diff, then stage:")
+    for path in written:
+        print(f"  {path.relative_to(paths.repo_root()).as_posix()}")
 
 
 def _generated_artifact_problems(
@@ -302,19 +534,56 @@ def add_arguments(parser: argparse.ArgumentParser) -> None:
         default=None,
         help="Output HTML path (default: auto from releases.json or hash range)",
     )
+    parser.add_argument(
+        "--archive",
+        metavar="BOUNDARY",
+        help="Store the MAM-basics commit a releases.json boundary names in"
+        " MAM-parsed/historical/",
+    )
+    parser.add_argument(
+        "--pin",
+        metavar="NAME",
+        help="Pin HEAD as the end of a new release NAME: append it to releases.json,"
+        " archive it, and regenerate the change log; commits nothing",
+    )
 
 
 def run_from_args(args: argparse.Namespace) -> None:
     if args.check:
         conflicting = (
-            args.all or args.old or args.new or args.output or args.legacy_history
+            args.all
+            or args.old
+            or args.new
+            or args.output
+            or args.legacy_history
+            or args.archive is not None
+            or args.pin is not None
         )
         if conflicting:
             raise SystemExit(
                 "--check cannot be combined with --all, --old, --new, --output, "
-                "or --legacy-history"
+                "--legacy-history, --archive, or --pin"
             )
         check_all()
+        return
+    if args.archive is not None or args.pin is not None:
+        combined = (
+            args.all
+            or args.old
+            or args.new
+            or args.output
+            or args.legacy_history
+            or (args.archive is not None and args.pin is not None)
+        )
+        if combined:
+            raise SystemExit(
+                "--archive and --pin each stand alone: neither combines with the other, "
+                "--all, --old, --new, --output, or --legacy-history"
+            )
+        if args.archive is not None:
+            run_archive(args.archive)
+        else:
+            run_pin(args.pin)
         return
     if args.legacy_history and (args.all or not args.old or not args.new):
         raise SystemExit(

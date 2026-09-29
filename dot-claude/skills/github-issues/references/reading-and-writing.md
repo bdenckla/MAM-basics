@@ -81,8 +81,7 @@ Read the sections needed for the requested operation before touching GitHub.
    `Closing, reopening, relabelling and reassigning`, says why.
 3. **Post it from a file**: `gh issue comment <number> --repo bdenckla/<repo> --body-file <file>`.
    1. Never pass a multi-line body as an argument, a shell here-doc or a PowerShell here-string,
-      and never `--body-file -`, which reads stdin (item 3 of section 1). "Running scripts — no
-      inline one-liners", in the common `~/.codex/AGENTS.md` body imported by Claude Code through
+      and never `--body-file -`, which reads stdin (item 3 of section 1). "Shell, scripts, and file operations", in the common `~/.codex/AGENTS.md` body imported by Claude Code through
       `~/.claude/CLAUDE.md`, is the general rule.
    2. Name the file for its one task, such as `.novc/issue272_plan_link_comment.md`, never a
       generic `comment.md` reused across jobs: a stale file from an earlier task gets posted,
@@ -129,16 +128,24 @@ Read the sections needed for the requested operation before touching GitHub.
 
 ## 5. Correcting references before a tracked document is retired
 
-1. Audit issue bodies and comments before deleting the document. Classify each reference as
-   current guidance or historical evidence. Repoint current guidance to a current successor; if
-   no successor exists, the reference blocks deletion. Repoint historical evidence to the full
-   40-character SHA of the last commit whose tree contains the document.
-2. A base receipt and its optional one live `<stem>-update.md` are one retirement family. Verify
-   both members at the archival SHA and link both so the correction sequence remains visible.
-   Never create a numbered update sibling. A historical numbered sibling found at the archival SHA
-   remains part of that historical family and must also be verified and linked; its literal
-   preservation does not make numbered siblings current policy. Never use `blob/main`, a branch, a
-   tag, a short SHA, or the deletion commit whose tree lacks the files.
+1. Before deleting a receipt family, audit references in tracked files as well as GitHub
+   issue bodies and comments. Classify each reference as current guidance or historical
+   evidence. A current-guidance reference must reach a maintained successor or block
+   deletion. A historical reference must reach the full 40-character SHA of the last
+   commit whose tree contains every family member. Verify every target path there and
+   link the base and its update so the correction sequence remains visible. Correct
+   present-state documents and source comments in place; correct a finished receipt
+   through its single live update. Do not bulk-edit finished bases. This audit and the
+   retirement decision remain manual.
+
+2. Ben may explicitly reclassify a finished receipt family as a maintained document.
+   Record Ben's decision and date, identify the original family and an archival commit
+   containing every member, and preserve the research provenance and later corrections.
+   If the transition consolidates the update into the maintained document, remove the
+   update and its pointer in the same commit and repair current-guidance references;
+   historical references retain recoverable access to the original family.
+   Reclassification is separate from retirement and is never automatic.
+
 3. If the stale reference is in an open issue body, correct that body with
    `py/main_github_issue_edit.py`, first with `--dry-run`, exactly as section 4 requires.
 4. If the issue is closed, or if the stale reference is in any comment, add a new dated

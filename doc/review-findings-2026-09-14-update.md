@@ -94,12 +94,14 @@ Every approved disposition has the following outcome:
 8. **Finding 8:** the approved live instructions, cloud hook, procedures and user-configuration
    corrections were made. Neutral Agent 1 and Agent 2 roles remain in force, and the Claude
    user-level instructions now have the general delegation counterpart.
-9. **Counter-finding C1:** the image-retirement plan now requires the primary checkout to move the
-   ignored Cambridge tree after tracked integration. The move itself remains a later execution
-   step of that retirement plan, not part of this review remediation.
-10. **Counter-finding C2:** the Google-Sheet retirement plan now pins the exact 4 + 24 + 8 title
-    inventory and the approved identity rules. Building the independent mirror remains a later
-    execution step of that retirement plan.
+9. **Counter-finding C1 was implemented later by the image-work retirement.** The September 16
+   remediation required the primary checkout to move the ignored Cambridge tree after tracked
+   integration. The retirement's later execution completed that move; it is no longer pending.
+10. **Counter-finding C2's repository work was implemented later by the Google-Sheet retirement.**
+    The independent 36-page special-page mirror and identity checks now belong to every
+    `fr-wikisource` run. The overall retirement remains incomplete until Ben applies and reports
+    the manual frozen-Sheet and Hebrew Wikisource documentation edits and the required live
+    results are verified. The September 14 remediation-plan update records that distinction.
 11. **Finding 9:** MAM-basics issue #278's obsolete hand-authored-directory example was removed
     without replacement. The issue remained open with its state, labels and assignment preserved,
     and received the required dated Codex note and agent-written comment.

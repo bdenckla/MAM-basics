@@ -3,7 +3,7 @@
 Split text into grapheme clusters (base char + combining marks) and
 produce HTML with ``<mark>`` tags around clusters that differ.
 
-Depends only on ``difflib`` and the shared Unicode-property fallback.
+Depends on html, difflib and the shared Unicode-property fallback.
 """
 
 import difflib

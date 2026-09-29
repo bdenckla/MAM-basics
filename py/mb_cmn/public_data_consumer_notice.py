@@ -22,6 +22,10 @@ CAMBRIDGE_INDEX_DOCUMENTATION = (
     "https://github.com/bdenckla/MAM-basics/blob/main/"
     "cam1753/README.md#consumer-guide"
 )
+EVR_INDEX_DOCUMENTATION = (
+    "https://github.com/bdenckla/MAM-basics/blob/main/"
+    "evr-ii-b-55/README.md#consumer-guide"
+)
 
 NARPAS_GROUPING_RULE = (
     "Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf "
@@ -139,11 +143,12 @@ def mam_simple_notice() -> dict[str, object]:
 
 
 def codex_index_notice(documentation: str) -> dict[str, object]:
-    """Return the notice for one of the three public codex entry indexes."""
+    """Return the notice for one of the four public manuscript entry indexes."""
     if documentation not in {
         LENINGRAD_INDEX_DOCUMENTATION,
         ALEPPO_INDEX_DOCUMENTATION,
         CAMBRIDGE_INDEX_DOCUMENTATION,
+        EVR_INDEX_DOCUMENTATION,
     }:
         raise ValueError(f"unknown codex-index documentation URL: {documentation!r}")
     return {

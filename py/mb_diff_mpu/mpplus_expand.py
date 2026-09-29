@@ -1,6 +1,9 @@
 """Expand structural MAM-parsed-plus diffs into note-scoped sub-diffs when needed."""
 
-from mb_diff_mpu.mpplus_structure import template_name_multiset_delta
+from mb_diff_mpu.mpplus_structure import (
+    normalized_trivial_qere_content,
+    template_name_multiset_delta,
+)
 from mb_diff_mpu.mpplus_template_change_desc import kq_if_template_addition_parts_list
 
 _TEMPLATE_REMOVAL_CATS = {
@@ -23,8 +26,10 @@ def _split_kq_if_additions(diff):
 
     notes = diff.get("docnote_notes", [])
     subs = []
-    for addition in additions:
+    for index, addition in enumerate(additions):
         sub = dict(diff)
+        if index:
+            sub.pop("alternative_changes", None)
         sub["templates_added"] = [addition["template_name"]]
         sub["templates_removed"] = []
         sub["kq_if_template_addition"] = {
@@ -42,7 +47,9 @@ def _split_kq_if_additions(diff):
 
 
 def _is_kq_trivial_rename(diff):
-    """Return True if diff is a pure bot-edit rename: קו״כ-אם → מ:קו״כ-אם-2."""
+    """Suppress a recognized rename only after its selected/qere content is equal."""
+    if diff.get("alternative_changes"):
+        return False
     added, removed = template_name_multiset_delta(diff["old_ep"], diff["new_ep"])
     if not added or not removed:
         return False
@@ -50,7 +57,9 @@ def _is_kq_trivial_rename(diff):
         return False
     if not all(n == "מ:קו״כ-אם-2" for n in added):
         return False
-    return len(added) == len(removed)
+    return len(added) == len(removed) and normalized_trivial_qere_content(
+        diff["old_ep"]
+    ) == normalized_trivial_qere_content(diff["new_ep"])
 
 
 def split_structural_diff(diff):
@@ -70,6 +79,8 @@ def split_structural_diff(diff):
     subs = []
     for i, tname in enumerate(sorted(splittable)):
         sub = dict(diff)
+        if i:
+            sub.pop("alternative_changes", None)
         sub["category"] = _TEMPLATE_REMOVAL_CATS[tname]
         sub["templates_added"] = []
         sub["templates_removed"] = [tname]

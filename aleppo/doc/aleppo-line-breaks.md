@@ -137,9 +137,10 @@ Deuteronomy run 001r–006r. The strict MAM-simple comparison checked those two
 runs separately: no JSON file represents the text between Deuteronomy 34 and
 Psalms 149.
 
-The check's MAM-simple sequence comparison ignored meteg and rafe and nothing else:
-`no_marks_comparison_key` was narrowed to those two marks on 2026-09-08, in
-c76239a5. Every other mark, every format character, and all punctuation,
+The check's MAM-simple sequence comparison omitted U+05BD and U+05BF and no other
+code points. U+05BD serves as either meteg or silluq; U+05BF is rafe.
+`no_marks_comparison_key` was narrowed to those code points on 2026-09-08, in
+`c76239a5`. Every other mark, every format character, and all punctuation,
 including maqaf, PASEQ, and sof pasuq, had to match. The pointed JSON strings
 remain the page's display and transcription data, and the comparison did not
 normalize Hebrew. The frozen report, `aleppo/check_line_breaks.html`, lists 91

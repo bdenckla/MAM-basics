@@ -63,10 +63,10 @@ a pair settles neither question here: WLC has merkha-with-tipexa and mahapakh-wi
 compounds that are not of this kind, on the same two pairs as MAM's, so the MARK has to be read.
 ``gaya_after_the_nonfinal_accent`` reads it, mechanically -- a meteg between the non-final atom's
 accent and the maqaf -- and is tried before ``_NAMED_CONFIGURATIONS``, so a pair Yeivin's
-inventory names does not hide a §357 hit.  ``chanted_word_accents._gaya_after_accent`` asks the
-same question of the same compounds off the mark bodies rather than off the Unicode, and that
-module's ``scan_corpus`` asserts on every split compound that the two answer alike, so the two
-surveys cannot come to different answers about one compound.
+inventory names does not hide a §357 hit.  ``chanted_word_accents_units._gaya_after_accent``
+asks the same question of the same compounds off the mark bodies rather than off the Unicode,
+and ``chanted_word_accents.scan_corpus`` asserts on every split compound that the two answer
+alike, so the two surveys cannot come to different answers about one compound.
 ``chanted_word_accents.maqaf_after_gaya`` is where the finding itself is set out, with both
 books' quotes and the per-corpus counts.
 
@@ -629,9 +629,9 @@ def gaya_after_the_nonfinal_accent(word: str) -> bool:
     definition -- silluq is verse-final, and a maqaf-joined atom never is (see CLAUDE.md on
     meteg-vs-silluq) -- which is what makes a bare containment test safe here.
 
-    ``chanted_word_accents._gaya_after_accent`` answers the same question off the mark bodies,
-    and that module's ``scan_corpus`` asserts on every split compound of all three corpora that
-    the two agree, so the two surveys cannot part company over one compound.
+    ``chanted_word_accents_units._gaya_after_accent`` answers the same question off the mark
+    bodies, and ``chanted_word_accents.scan_corpus`` asserts on every split compound of all three
+    corpora that the two agree, so the two surveys cannot part company over one compound.
     """
     for atom in word.split(MAQAF)[:-1]:
         seen_accent = False

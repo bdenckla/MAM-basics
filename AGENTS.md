@@ -9,7 +9,8 @@ section now points; do not mechanically rewrite historical citations.
 
 ## Hebrew marks go in MAM-normal order, not Unicode-normal order
 
-MAM-normal order puts shin dot, sin dot, dagesh/mapiq, and rafe before every other mark while
+MAM-normal order gives priority to shin dot, sin dot, dagesh/mapiq/shuruq dot,
+dagesh ḥazaq (U+05C9), and rafe. The two dagesh code points share a priority while
 preserving the other marks' relative order. `py/mb_cmn/uni_denorm.py` is the authority:
 `give_std_mark_order` applies the order and `has_std_mark_order` checks it.
 
@@ -141,6 +142,13 @@ describing the present—this file, README files, docstrings, and a plan still b
 kept true in place. The `State:` and retirement rules live in
 `py/repo_util/check_repo_standards.py`'s module docstring.
 
+Each update entry identifies the passage it corrects by that passage's own words,
+not only by a finding number or line number.
+
+For retirement references and Ben-authorized reclassification, follow
+`mam-repository-topology`'s `references/repository-maintenance.md`,
+"Manual document retirement".
+
 ## Repository topology is task-specific
 
 Load the shared `mam-repository-topology` skill before setting up or synchronizing GitRepos,
@@ -204,8 +212,11 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
 
 A failing step or unexplained tracked diff is a failure. Commit each explained generated change
 on the worktree branch before the primary clone is fast-forwarded. Running the suite too is
-optional. A branch changing only documentation or instruction files—`doc/`, `AGENTS.md`,
-`CLAUDE.md`, `dot-claude/`, or `dot-Codex/`—needs neither a mega run nor the suite. The user-level
+optional. A branch changing only documentation, comments, docstrings, or instruction text needs neither a mega run
+nor the suite. This exemption describes the changed content, not its directory.
+Executable hooks and helpers, tests, schemas, shared data, and execution-changing
+configuration receive the applicable checks even below `doc/`, `dot-claude/`, or
+`dot-Codex/`. Generator or product changes still require their applicable generator checks. The user-level
 Git section gives the remaining integration order.
 
 ## Running tests: use the one entrypoint from the repository root

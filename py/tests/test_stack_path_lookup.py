@@ -32,7 +32,6 @@ class TestStackPathLookup(unittest.TestCase):
         self,
         fixture,
         *,
-        dataset_key,
         target_path=_TARGET_PATH,
         verbose=False,
         limit=10,
@@ -44,38 +43,9 @@ class TestStackPathLookup(unittest.TestCase):
         ):
             return spl.search_stack_path(
                 target_path,
-                dataset_key,
                 limit,
                 verbose=verbose,
             )
-
-    def test_non_verbose_hit_is_occurrence_with_verse_metadata(self):
-        fixture = _fixture_from_d_column(
-            [
-                {
-                    "tmpl": [
-                        ["נוסח"],
-                        ["אאא"],
-                        [{"stmpl": "ש"}],
-                    ]
-                }
-            ]
-        )
-
-        hits = self._search_with_fixture(fixture, dataset_key="plain", verbose=False)
-
-        self.assertEqual(1, len(hits))
-        self.assertEqual(
-            {
-                "dataset": "plain",
-                "bk24na": "ספר מבחן",
-                "sub_bkna": None,
-                "chnu": "1",
-                "psv_psn": "1",
-                "stack_path": _TARGET_PATH,
-            },
-            hits[0],
-        )
 
     def test_verbose_returns_one_hit_per_match_occurrence(self):
         fixture = _fixture_from_d_column(
@@ -91,7 +61,7 @@ class TestStackPathLookup(unittest.TestCase):
                     "tmpl_name": "נוסח",
                     "tmpl_params": {
                         "1": "ב",
-                        "2": {"tmpl_name": "ש", "tmpl_params": {"1": "ג"}},
+                        "2": {"tmpl_name": "ש"},
                     },
                 },
             ]
@@ -99,7 +69,6 @@ class TestStackPathLookup(unittest.TestCase):
 
         hits = self._search_with_fixture(
             fixture,
-            dataset_key="plus",
             verbose=True,
         )
 
@@ -132,7 +101,7 @@ class TestStackPathLookup(unittest.TestCase):
         self.assertEqual(
             {
                 "{{נוסח|א|{{ש}}}}",
-                "{{נוסח|ב|{{ש|ג}}}}",
+                "{{נוסח|ב|{{ש}}}}",
             },
             root_wikitexts,
         )
@@ -178,13 +147,12 @@ class TestStackPathLookup(unittest.TestCase):
         self.assertTrue(handled)
         mock_search.assert_called_once_with(
             _TARGET_PATH,
-            "plus",
             10,
             verbose=True,
         )
         mock_print.assert_called_once()
 
-    def test_plain_and_verbose_variants_are_mutually_exclusive(self):
+    def test_non_verbose_and_verbose_variants_are_mutually_exclusive(self):
         parser = argparse.ArgumentParser()
         spl.add_parser_args(parser)
         args = parser.parse_args(
@@ -241,7 +209,6 @@ class TestStackPathLookup(unittest.TestCase):
 
         hits = self._search_with_fixture(
             fixture,
-            dataset_key="plus",
             target_path="D/נוסח/ש",
         )
 
@@ -273,7 +240,6 @@ class TestStackPathLookup(unittest.TestCase):
         with mock.patch.object(spl.sys, "stdout", fake_stdout):
             spl.print_results(
                 _TARGET_PATH,
-                "plus",
                 10,
                 [
                     {

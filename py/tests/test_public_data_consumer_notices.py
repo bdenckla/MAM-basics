@@ -2,6 +2,7 @@
 
 import json
 import re
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -30,6 +31,10 @@ DOCUMENTATION_TARGETS = {
     ),
     notice.CAMBRIDGE_INDEX_DOCUMENTATION: (
         ROOT / "cam1753" / "README.md",
+        "## Consumer guide",
+    ),
+    notice.EVR_INDEX_DOCUMENTATION: (
+        ROOT / "evr-ii-b-55" / "README.md",
         "## Consumer guide",
     ),
 }
@@ -100,6 +105,7 @@ def _assert_documentation_targets():
         notice.LENINGRAD_INDEX_DOCUMENTATION,
         notice.ALEPPO_INDEX_DOCUMENTATION,
         notice.CAMBRIDGE_INDEX_DOCUMENTATION,
+        notice.EVR_INDEX_DOCUMENTATION,
     }
     for url, (path, anchor_text) in DOCUMENTATION_TARGETS.items():
         assert path.is_file(), f"{url}: maintained local target is missing: {path}"
@@ -251,6 +257,28 @@ def test_codex_entry_indexes_use_canonical_schema_and_notices():
         ROOT / "cam1753" / "cam1753-page-index.json",
         notice.codex_index_notice(notice.CAMBRIDGE_INDEX_DOCUMENTATION),
         {"de_leaf", "de_archive_spread", "de_spread_side"},
+    )
+    _assert_codex_index(
+        ROOT / "evr-ii-b-55" / "evr-ii-b-55-page-index.json",
+        notice.codex_index_notice(notice.EVR_INDEX_DOCUMENTATION),
+        {"de_shelfmark", "de_nli_part", "de_nli_image", "de_fl_id"},
+    )
+
+
+def test_leningrad_xml_derivative_has_the_canonical_notice():
+    path = ROOT / "uxlc" / "out" / "UXLC-misc" / "lci_recs.xml"
+    root = ET.parse(path).getroot()
+    element = root.find("header/consumer_notice")
+    assert element is not None, f"{path}: missing consumer notice"
+    actual = {
+        "summary": element.findtext("summary"),
+        "critical_rules": [
+            item.text for item in element.findall("critical_rules/item")
+        ],
+        "documentation": element.findtext("documentation"),
+    }
+    _assert_notice(
+        actual, notice.codex_index_notice(notice.LENINGRAD_INDEX_DOCUMENTATION), path
     )
 
 

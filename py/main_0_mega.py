@@ -541,7 +541,9 @@ _STEPS = [
         " rewrites the HTML and CSS under gh-pages/book-of-job/ and the generated JSON"
         " under book-of-job/out/; ends in a spell check of those pages that exits 1 on"
         " any spelling, apostrophe or period finding, so such a finding fails the"
-        " mega, as doc/PLAN-mega-coverage.md intends",
+        " mega, following the historical Phase 7 decision in"
+        " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md"
+        " (with update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)",
     ),
     StepRecord(
         "map-changes-to-book-of-job",

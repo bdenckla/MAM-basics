@@ -41,7 +41,7 @@ The JSON format mirrors the XML structure: it has the same hierarchy and element
 For a detailed guide to the hierarchy and element types of both formats,
 see [Reading MAM-simple](doc/reading-mam-simple.md).
 The [consumer cautions](#consumer-cautions) below cover MAM mark order and text spacing
-around narpas.
+around narpas (narrow-sense paseq, ׀).
 
 For the versification and cantillation choices behind this extract, the two Decalogues
 above all, see
@@ -109,7 +109,7 @@ For the full statement, including what the guarantee does and does not cover, se
 
 ### Narpas and text spacing
 
-MAM-simple also has a separate node for narpas (narrow-sense paseq, ׀), with no text
+MAM-simple also has a separate node for narpas, with no text
 whitespace encoded before or after it. Narpas forms no compound of any kind; only
 maqaf joins atoms into a chanted word. The missing whitespace expresses neither
 grouping nor a display-spacing preference. An edition decides whether to display

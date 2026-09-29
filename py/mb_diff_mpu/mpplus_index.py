@@ -51,11 +51,13 @@ def write_index(release_info, change_log_dir):
         old_date = info["old_date"]
         count = info["count"]
         suffix = "change" if count == 1 else "changes"
-        start = f"{labelled(old_date)}," if old_date else old_date
+        release_text = (
+            f"Release spanning {labelled(old_date)}, to" if old_date else "Release to"
+        )
         lines.append(
-            f"  <li>Release spanning {start} to"
+            f"  <li>{release_text}"
             f' <a href="{name}.html">{name}</a>'
-            f" &mdash; {count} body text {suffix}</li>"
+            f" &mdash; {count} {suffix}</li>"
         )
     lines.extend(["</ul>", "</body>", "</html>"])
     path = f"{change_log_dir}/index.html"

@@ -25,19 +25,25 @@ Five contributors are named below, and each keeps its name throughout:
 5. **The image-list session**, a Claude session on 2026-09-26, read the NLI viewer's list of
    volume 2's images and added the NLI session's findings to this directory.
 
+Throughout this README, **the download** means `public-archivedwl-808.zip` and its extracted
+directory. It does not include Avi's other zip.
+
 ## Data
 
 - [`evr-ii-b-55-page-index.json`](evr-ii-b-55-page-index.json) is the page index. It is partial
   and grows page by page. The consumer guide below describes it.
 - [`evr-ii-b-55-nli-fl-ids.json`](evr-ii-b-55-nli-fl-ids.json) gives the NLI's file id of each of
-  volume 2's images 1–495, most of which the download lacks. "Reaching images 005–495 online"
-  describes it.
+  volume 2's images 1–495, most of which the download lacks. "Reaching images 005–495"
+  describes both Avi's other zip and the online fallback.
 - [`evr-ii-b-55-images-provenance.md`](evr-ii-b-55-images-provenance.md) records where the
   images read so far came from, and what the NLI's record and image service showed.
-- No image is tracked here. The images are the NLI's. Ben's download of them holds about half of
-  the codex's images, and the provenance record describes it. The crops made while reading are
-  scratch files and are not kept. Ben's own crops of the last chanted words of six verses, taken
-  from these images, are published with the post-silluq case pages, and
+- No image is tracked here. The images are the NLI's. The particular pCloud zip that Ben found
+  holds about half of the codex's images, and the provenance record describes it. Ben reports on
+  2026-09-28 that another zip in Avi's pCloud directory holds the rest. Avi used two zip files to
+  separate Prophets from Writings; this manuscript spans both divisions and fits that organization
+  awkwardly. The crops made while reading are scratch files and are not kept. Ben's own crops of
+  the last chanted words of six verses, taken from these images, are published with the post-silluq
+  case pages, and
   [`../doc/meteg-after-silluq-snips/README.md`](../doc/meteg-after-silluq-snips/README.md)
   documents them.
 
@@ -76,7 +82,7 @@ records was read:
 | `de_first_surviving_atom_ref`, `_num`, `_text`, `_state` | Present only when the first atom is lost. They name the first atom that survives. |
 | `de_last_atom_ref`, `_num`, `_text`, `_state` | The page's last atom. Present only when the page's edges were read. |
 | `de_pencil_numbers` | The pencilled numbers seen at the foot or in the lower-left margin, each with `de_number`, `de_place` and, where the reading is uncertain, `de_doubt`. Present only when both places were examined. An empty list means that none was seen there. |
-| `de_text_at_line`, `de_text_at_line_ref` | A located verse. The first field gives the verse's atoms on one line, and the second names that line, and on a three-column page its column. |
+| `de_text_at_line`, `de_text_at_line_ref` | A located verse. `de_text_at_line` gives the verse's atoms on one line; `de_text_at_line_ref` names that line and, on a three-column page, its column. |
 | `de_note` | Who read or located the record, when, and at what resolution, with any damage that affects the reading. |
 
 An atom is one written form between spaces or maqafs. These rules define its fields:
@@ -189,7 +195,7 @@ says what that session re-checked on 2026-09-26:
   There, image = 2 × folio + 6, and a recto falls on an even-numbered image. That relation would put
   fol. 78b at image 163, where the Psalms relation would put it at image 174. An estimate from
   letter counts puts the end of 2 Samuel 1:16 near the end of image 166 ("Open questions" under
-  "Reaching images 005–495 online" gives it). The catalog gives the extent as "482, 13" folios.
+  "Reaching images 005–495" gives it). The catalog gives the extent as "482, 13" folios.
   There are three possibilities, and none has been checked:
   - somewhere the images don't run two per folio;
   - the numbers at the foot are not the catalog's foliation;
@@ -287,7 +293,9 @@ verses from these images.
 ## Extending the index
 
 1. **Estimate, then read.** Interpolate MAM letter counts between verified pages to estimate the
-   target page, then read the target page's edges. Two sessions measured how well this works:
+   target page, then read the target page's edges. Two sessions estimated page positions;
+   the findings sub-agent recounted the Prophets' rates, and the image-list session
+   reproduced the recount:
    - In Psalms, the first reading session's first estimate, from the filename labels alone, was
      about 1.2 images early. After one verified page nearby, its estimates were within about half
      an image.
@@ -337,8 +345,9 @@ verses from these images.
 4. **Crop at full resolution.** The images read so far are 6,048 to 6,384 pixels wide and 7,056 to
    7,824 pixels tall, and the Read tool shrinks a whole page to about 1,700 pixels wide. So crop
    each edge with Pillow into scratch files, a half or a third of a line at a time, and read the
-   crops. Images that the download lacks are read in the NLI's viewer instead, as "Reaching
-   images 005–495 online" describes.
+   crops. For images that the download lacks, locate the other zip in Avi's pCloud directory.
+   The NLI viewer remains a fallback and the source used for the two Prophets readings already
+   recorded here, as "Reaching images 005–495" describes.
 5. **Don't list the download's folder.** Take the images' exact names from the zip's central
    directory, which the provenance record describes. The download sits under OneDrive, where a
    listing or search can pull cloud-only files down to disk.
@@ -353,7 +362,7 @@ verses from these images.
      qere that is not written, a maqaf after a ketiv that is not read, and a repeated ending
      contribute nothing. A parashah break within a verse contributes nothing either, so the
      verse's atom numbers run straight through it. In the two Decalogues and at Gen 35:22 the
-     atoms are those of `<cant-combined>`, the text with the marks of both strands, whose atom
+     atoms are those of `<cant-combined>`, the combined representation of the two strands, whose atom
      numbers and letters are the same as either strand's. The reader's module docstring gives
      each decision with an example. No verse is refused now, and
      `py/tests/test_mam_xml_verses.py` checks both fixes over the whole of MAM-simple.
@@ -367,16 +376,22 @@ verses from these images.
    `<cant-combined>`. Those choices give the same letters as Ben's decisions, as item 3's
    comparison shows.
 
-   One defect remains, found on 2026-09-26 and not yet fixed. `get_verse_words` takes a
-   `<kq-trivial>`'s text only from its `text=` attribute. Psalms 10:5 holds the one
-   `<kq-trivial>` in MAM-simple that has child elements instead, so the reader drops that verse's
-   second atom and the legarmeh after it. No record reaches Psalms 10.
+   The defect found on 2026-09-26 was fixed on 2026-09-28: `get_verse_words` now
+   reads the child form of `<kq-trivial>` at Psalms 10:5, preserving the second atom
+   and its legarmeh. No current index record reaches Psalms 10, so this fix changes
+   no tracked locator record.
 
-## Reaching images 005–495 online
+## Reaching images 005–495
 
-Ben's download lacks volume 2's images 005–495. They presumably hold the Prophets and whatever of
-Chronicles comes before 2 Chronicles 11. This section records what a later session needs in order
-to index them through the NLI's website. Every estimate here is marked as one.
+The examined zip, `public-archivedwl-808.zip`, lacks volume 2's images 005–495. They presumably
+hold the Prophets and whatever of Chronicles comes before 2 Chronicles 11. Ben reports on
+2026-09-28 that a different zip in Avi's pCloud directory has the rest of the images; Ben does not
+intend to locate it now. Avi used two zip files because he wanted his folders to separate Prophets
+from Writings, and this manuscript lands awkwardly in that scheme because it spans both divisions.
+The other zip, rather than the NLI site, is the expected source when these images are next needed.
+
+The NLI procedure below remains the historical record of how the NLI session found two Prophets
+passages and a fallback if the other zip is unavailable. Every estimate here is marked as one.
 
 ### How to view an image
 
@@ -483,10 +498,15 @@ image-list session matched the findings sub-agent's quoted words to MAM's atoms 
    overstate what survives. Re-anchor within each surviving stretch rather than carry one rate
    across the catalog's gaps.
 
-### Filling out the download
+### Obtaining the other images
 
-Whether to obtain the missing images is Ben's decision. Nothing has been downloaded, and no
-download path has been tested. The provenance record gives the facts so far in detail:
+No NLI download is needed to fill the gap in the download. Ben reports that the other zip in
+Avi's pCloud directory has the rest of the images, but its filename and location within that
+directory have not been recorded and the zip has not been examined. There is no need to locate it
+until the images are wanted. The provenance record gives the measured facts about the download
+in detail.
+
+For completeness, the NLI access facts found in 2026 remain:
 
 - The image service serves each image in tiles 1,024 pixels square, under an IIIF level-1
   profile that caps a direct request at 526 × 526 pixels. Direct requests for an image were
@@ -497,15 +517,10 @@ download path has been tested. The provenance record gives the facts so far in d
   "public domain non commercial use" in field 939. The license of the catalog-only PNX manifest
   and the rights link in `info.json` point to the NLI's "copying prohibited" pages.
 
-The options include these five, and the evidence favours none of them:
+The rights statements matter only if someone later chooses to obtain images from the NLI rather
+than locate Avi's other zip.
 
-1. Keep reading images 005–495 live in the viewer, as the NLI session did.
-2. Ask whoever prepared the pCloud folder, who is not known, whether the other images exist.
-3. Ask the NLI for the images, or for permission, in view of its conflicting statements.
-4. Ask the National Library of Russia, which holds the codex.
-5. Check whether the Friedberg Genizah Project's records 55977 and 247977 offer images.
-
-### Segmentation of these books
+### Segmentation of Psalms, Job and Proverbs
 
 Since 2026-09-26 `get_verse_words` refuses no verse ("Extending the index", item 6). Of the 4,827
 verses that the catalog lists before 2 Chronicles 11, 25 hold one of the seven formerly refused

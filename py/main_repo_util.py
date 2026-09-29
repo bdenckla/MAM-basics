@@ -19,7 +19,9 @@ Usage examples:
 ``--workspace-file all-repos.code-workspace`` is what widens any of these past the
 handful of repos ``MAM-basics.code-workspace`` lists, and is worth spelling out for
 ``--clean-worktrees``: the repos most in need of it are the ones with no Python and
-so no maintenance script of their own (see ``repo_util/clean_worktrees.py``).
+so no maintenance script of their own. See
+``dot-claude/skills/mam-repository-topology/references/repository-maintenance.md``,
+section "Completed linked worktrees".
 
 ``--inspect-worktrees --worktree-owner claude|codex|both`` selects candidates
 across the chosen repositories. ``--worktree PATH`` inspects one exact target.
@@ -611,16 +613,14 @@ def main(argv: Sequence[str] | None = None) -> int:
         ended = [Path(path) for path in args.session_ended]
         unknown = unknown_worktrees(repo_infos, ended, owner=owner)
         if unknown:
-            # Refused before anything runs: a name matching nothing would be
-            # ignored, and the worktree meant would be spared as "may be in use"
-            # with nothing saying that the override missed it.
+            # Compatibility inspection does not use the ended-path argument to authorize
+            # removal.
             parser.error(
                 "--session-ended names no linked worktree in the selected owner scope "
                 "of the selected repos: " + ", ".join(str(path) for path in unknown)
             )
-        # Same contract as --run-black: a repo the sweep could not clean fails
-        # the run rather than being passed over. A worktree deliberately spared
-        # is not a failure -- see repo_util/clean_worktrees.py.
+        # Inspection failures fail the sweep. Safety blockers are reported
+        # as kept worktrees and do not authorize or attempt retirement.
         reports = run_clean_worktrees_across_repos(
             repo_infos, sessions_ended=ended, owner=owner
         )

@@ -35,7 +35,6 @@ from author_site.post_stress_meteg_shared import (
     _NOT_FIT_FNAME,
     _NUMERIC_CELL,
     _PASHTA_STRESS_HELPER_FOOTNOTE_ID,
-    _POST_SILLUQ_FNAME,
     _POST_SILLUQ_FOOTNOTE_ID,
     _ROM_HE,
     _ROM_MAPPIQ,
@@ -106,16 +105,6 @@ def _post_silluq_footnote(survey: dict) -> list:
                 mb_html.anchor_h("Methods", _METHODS_FNAME),
                 " page, ",
                 *_mam_post_silluq_statement(survey, starts_sentence=False),
-            )
-        ),
-        mb_html.para(
-            (
-                "The ",
-                mb_html.anchor_h(
-                    ("maintained ", _ROM_METEG, "-after-", _ROM_SILLUQ, " register"),
-                    _POST_SILLUQ_FNAME,
-                ),
-                " gives the known cases, evidence, and unresolved candidates.",
             )
         ),
     ]

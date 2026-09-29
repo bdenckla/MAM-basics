@@ -8,7 +8,7 @@ Usage:
 written to .novc/scans/ -- gitignored, since a rendering is disposable and can be regenerated
 from the scan, but stable across sessions unlike a temp directory.
 
-The scans themselves are a personal archive outside the repo (see WLC_SCANS_DIR).  Filename
+The scans themselves are a personal archive outside the repo (see BOOK_SCANS_ROOT).  Filename
 conventions differ per book: the Simanim Tiqqun's main body is an identity map from printed
 page to C<page:03d>.jpg, while the Koren Classic Tanakh numbers the Torah continuously as
 A<n>-<letter>-<page:03d>.jpg and gives its appendix a separate V-<page:03d>.jpg sequence.
@@ -43,18 +43,15 @@ render its crops -- a function call, where it once ran this file as a subprocess
 from __future__ import annotations
 
 import argparse
-import os
 from pathlib import Path
 
 from PIL import Image
 
 from mb_cmn import paths
 
-# The scans are a personal archive outside any repo, so this is the one machine-specific path
-# here; WLC_SCANS_DIR overrides it, in the style of mb_cmn.paths' sibling-repo overrides.
-SCANS = Path(
-    os.environ.get("WLC_SCANS_DIR", Path.home() / "OneDrive/Documents/ScansOfBooks")
-)
+# The scans are a personal archive outside any repo.  mb_cmn.paths locates it for this module
+# and for scan_pages.editions alike, and BOOK_SCANS_ROOT overrides the default there.
+SCANS = paths.book_scans_root()
 # Renderings are disposable and can be large, so they go to gitignored scratch, not out/.
 OUT = paths.scans_dir()
 

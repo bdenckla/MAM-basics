@@ -31,8 +31,9 @@ Some accgram docstrings and comments deliberately retain historical sibling spel
 written as `../masorah-books/...` now resolves conceptually to
 `../MAM-private/masorah-books/...`; a path written as `../al-hatorah/...` now resolves
 conceptually to `../MAM-private/al-hatorah/...`. Ben chose on 2026-08-10 to document the eight
-stale `../masorah-books/...` citations rather than edit them, and chose the same disposition on
-2026-08-11 for the eight stale `../al-hatorah/...` citations. For live source research, use the
+stale `../masorah-books/...` citations rather than edit them. His 2026-08-11 al-hatorah decision
+covered seven historical accgram citations and one test site; only three of those eight sites
+literally used `../al-hatorah/...`. Those historical source citations remain as written. For live source research, use the
 current MAM-private
 paths in `references/sources-and-corpora.md` and search the full Yeivin OCR before concluding that
 Yeivin is silent.

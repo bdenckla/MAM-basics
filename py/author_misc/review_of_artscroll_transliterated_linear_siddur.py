@@ -17,7 +17,7 @@ headings -- with the rafe after the sheva. (Until 2026-09-01 this paragraph
 called that "Unicode-normal mark order", which fits only the dagesh-less
 cluster of u-vin'cho: in the clusters of had'vorim and t'muna the gist puts
 the dagesh first, an order that is neither Unicode-normal nor MAM-normal.)
-MAM-basics puts the rafe among the four marks with a declared place,
+MAM-basics puts the rafe among the five code points with a declared priority,
 before every other mark of the cluster (``mb_cmn/uni_denorm.py``, and the
 first section of this repo's ``CLAUDE.md``). The two orders hold the same
 characters and render identically; only the order differs. This page has all
@@ -52,8 +52,9 @@ def anchor():
 def _hbo_checked(word):
     """Hebrew lifted from the gist, guarded against a normalizing round trip.
 
-    MAM-normal mark order puts the shin dot, the sin dot, the dagesh and the
-    rafe first, in that order, and every other mark of the cluster after them.
+    MAM-normal mark order gives priority to shin dot, sin dot,
+    dagesh/mapiq/shuruq dot, dagesh ḥazaq (U+05C9), and rafe. The two dagesh
+    code points share a priority; every other mark keeps its relative order.
     Unicode-normal order sorts by canonical combining class instead, which puts
     the dagesh after the vowel and the rafe after the sheva. The two orders
     render identically, so a paste through anything that normalizes is invisible

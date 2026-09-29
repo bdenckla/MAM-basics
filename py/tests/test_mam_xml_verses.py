@@ -22,6 +22,7 @@ counts are asserted non-zero, so an empty scan cannot pass.
 """
 
 import subprocess
+import re
 import xml.etree.ElementTree as ET
 
 from mb_cmn import paths
@@ -88,3 +89,77 @@ def test_get_verses_in_range_returns_every_verse_of_every_book():
     assert book_count > 0, "No <book39> was found in MAM-simple/xml-vtrad-mam/"
     assert verse_count > 0, "get_verses_in_range returned no verse at all"
     assert not mismatches, f"Books whose verses differ from the scan: {mismatches}"
+
+
+def _selected_parts(node):
+    """Independently walk only the reader's declared Scripture nodes."""
+    if node.tag in {"verse", "cant-combined", "kq-trivial", "sdt-target"}:
+        if "text" in node.attrib:
+            yield node.attrib["text"]
+        else:
+            for child in node:
+                yield from _selected_parts(child)
+    elif node.tag in {"text", "kq-k-velo-q"}:
+        yield node.attrib["text"]
+    elif node.tag == "slh-word":
+        yield node.attrib["slhw-desc-0"]
+    elif node.tag in {"lp-legarmeih", "lp-paseq"}:
+        yield "\N{HEBREW PUNCTUATION PASEQ}"
+    elif node.tag == "kq":
+        ketiv = node.find("kq-k")
+        assert ketiv is not None
+        if "text" in ketiv.attrib:
+            yield ketiv.attrib["text"]
+        else:
+            special = ketiv.find("slh-word")
+            assert special is not None
+            yield special.attrib["slhw-desc-0"]
+    elif node.tag == "scrdfftar":
+        target = node.find("sdt-target")
+        assert target is not None
+        yield from _selected_parts(target)
+    elif node.tag == "cant-all-three":
+        combined = node.find("cant-combined")
+        assert combined is not None
+        yield from _selected_parts(combined)
+    elif node.tag in {
+        "implicit-maqaf",
+        "shirah-space",
+        "spi-invnun",
+        "spi-pe1",
+        "spi-samekh1",
+        "spi-pe2",
+        "spi-samekh2",
+        "spi-pe3",
+        "spi-samekh3",
+        "kq-q-velo-k",
+        "kq-k-velo-q-maq",
+        "good-ending",
+    }:
+        return
+    else:
+        raise ValueError(f"Unknown selected-source node <{node.tag}>")
+
+
+def test_reader_atom_content_matches_selected_source_nodes_over_the_full_corpus():
+    """Compare marks as well as letters, independently of the reader's word joining."""
+    count = 0
+    mismatches = []
+    attached = {"\N{HEBREW PUNCTUATION PASEQ}", "\N{HEBREW PUNCTUATION SOF PASUQ}"}
+    maqaf = "\N{HEBREW PUNCTUATION MAQAF}"
+    for path in _tracked_xml_files():
+        for verse in ET.parse(path).getroot().iter("verse"):
+            expected = []
+            for part in _selected_parts(verse):
+                for atom in re.findall(rf"[^\s{maqaf}]+{maqaf}?", part):
+                    if atom in attached:
+                        assert expected, verse.attrib["osisID"]
+                        expected[-1] += atom
+                    else:
+                        expected.append(atom)
+            actual = get_verse_atoms(verse)
+            count += 1
+            if actual != expected:
+                mismatches.append((verse.attrib["osisID"], actual, expected))
+    assert count > 0
+    assert not mismatches, f"Selected atom-content mismatches: {mismatches}"

@@ -109,11 +109,16 @@ def _uxlc_words(bcv: str) -> list[str]:
         if node.tag == "v" and node.attrib.get("n") == str(vrnu)
     ]
     assert len(verses) == 1, f"{xml_path}: {len(verses)} verse {chnu}:{vrnu} elements"
-    return [
-        atom.text.strip()
-        for atom in verses[0]
-        if atom.tag in {"w", "q"} and atom.text is not None
-    ]
+    words = []
+    for atom in verses[0]:
+        if atom.tag not in {"w", "q"} or len(atom) or atom.text is None:
+            raise ValueError(
+                f"{xml_path} {bcv}: unsupported Scripture child <{atom.tag}>"
+            )
+        if not atom.text.strip():
+            raise ValueError(f"{xml_path} {bcv}: empty Scripture child <{atom.tag}>")
+        words.append(atom.text.strip())
+    return words
 
 
 def _wlc_words(bcv: str) -> list[str]:
@@ -545,7 +550,9 @@ def _post_silluq_comparison(survey: dict) -> tuple[tuple[str, str], ...]:
     the printed BHS on 2026-09-09, which confirms the two marks, meteg after silluq.
     Ben's decision, the same day: the page's wording stands and takes no "checked"
     clause; this docstring and the review records are where the reading is recorded
-    (doc/review-findings-2026-09-08.md, finding 3 and its State line).
+    (the retired September 8 review, finding 3 and its State line, with its update:
+    https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md
+    https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08-update.md).
     """
     letters = ("נחשת",)
     bhs_form_from_uxlc = _source_focus_word(

@@ -1,6 +1,7 @@
 # Retire the codex-index image-work pipelines
 
 State: executed 2026-09-26
+Updates and later status: [PLAN-retire-codex-index-image-work-update.md](PLAN-retire-codex-index-image-work-update.md).
 
 Recorded 2026-09-12 and executed on 2026-09-26: `f2a9ead4` executed part of it, Ben decided the
 two questions it left open, and `65f5a1c6` executed the rest. “Executed in part on 2026-09-26”,

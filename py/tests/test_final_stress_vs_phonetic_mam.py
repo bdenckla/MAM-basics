@@ -98,7 +98,7 @@ pytestmark = pytest.mark.skipif(
 # What a join key drops: the accents (U+0591..U+05AE), masora circle (U+05AF), meteg (U+05BD),
 # rafe (U+05BF), the punctuation that can sit inside a chanted word (paseq U+05C0 and sof pasuq
 # U+05C3), the two puncta U+05C4..U+05C5, and the two invisibles (CGJ U+034F and varika U+FB1E).
-# What is left is letters and points, which is what the two sides have to agree on: they are two
+# What is left is letters, points and maqaf, which is what the two sides have to agree on: they are two
 # renderings of MAM rather than one file, and the accents are what this test COMPARES rather than
 # what it matches on.  Written as numeric escapes because a character class wants range endpoints
 # and because a bare combining mark in a literal is unreadable and un-diffable.

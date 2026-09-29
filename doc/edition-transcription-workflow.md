@@ -40,8 +40,10 @@ at the end.
 None of the five modules under `py/accgram/` is runnable on its own; `--help` on the entry
 point lists them, and `--help` on a subcommand gives its flags.
 
-Scans live outside the repo (see the `book-scan-page-naming` note; `WLC_SCANS_DIR` overrides
-the root). Render a whole page first to locate the Decalogue:
+Scans live outside the repo (see
+[the survey findings in `scan-pages.md`](scan-pages.md#survey-findings-measured-2026-08-06-against-the-live-onedrive-folder)
+for each edition's page filenames; `BOOK_SCANS_ROOT` overrides the root). Render a whole page
+first to locate the Decalogue:
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py scan-page "Feldheim Simanim Tiqqun" C208 --width 1100

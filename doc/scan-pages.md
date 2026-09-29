@@ -56,11 +56,12 @@ has exactly `header` and `body`. The header contains `description`,
 fields named by `column-dictionary`, including page, column, line, book, chapter,
 verse, and atom boundaries plus an optional note.
 
-The Aleppo and Cambridge entry indexes use the same `{header, body}` contract; their
-format-specific fields are documented in `aleppo/README.md` and `cam1753/README.md`.
-Each header's `consumer_notice.documentation` points to the relevant consumer guide.
+The Aleppo, Cambridge and Evr. II B 55 entry indexes use the same `{header, body}` contract;
+their format-specific fields are documented in `aleppo/README.md`, `cam1753/README.md` and
+`evr-ii-b-55/README.md`. Each header's `consumer_notice.documentation` points to the relevant
+consumer guide.
 
-All three files are locator indexes, not manuscript transcriptions or Bible editions.
+These entry indexes are locator indexes, not manuscript transcriptions or Bible editions.
 Ranges and text cues identify positions on photographed pages; a cue copied or derived
 from MAM is not evidence that the manuscript has MAM's pointing or mark order. A range
 can begin or end mid-verse. Gaps and incomplete coverage are meaningful and must not be
@@ -178,8 +179,9 @@ are separate evidence and must not be inferred from an entry-index record.
   `os.startfile` default went with it, against the standing rule that a link costs one
   click when the page is not already open and a duplicate window when it is.
 - **The program is cwd-independent.** Scans root and repo paths are anchored in code
-  (`Path.home() / "OneDrive" / "Documents" / "ScansOfBooks"`; `mb_cmn/paths.py` for
-  siblings), never cwd-relative, so it runs from anywhere. UTF-8 stdio reconfigure first
+  (`mb_cmn.paths.book_scans_root()`: `~/OneDrive/Documents/ScansOfBooks` unless
+  `BOOK_SCANS_ROOT` overrides it; `mb_cmn/paths.py` for siblings), never cwd-relative, so it
+  runs from anywhere. UTF-8 stdio reconfigure first
   thing in `main()`, per the global rules — and load-bearing rather than precautionary
   since 2026-09-10, because the answer itself now goes to stdout: a JSON ride-along that
   holds the page-edge phrases puts Hebrew there. Until that day this clause said real
@@ -195,6 +197,9 @@ are separate evidence and must not be inferred from an entry-index record.
   | `bhl` | `Biblia Hebraica Leningradensia` | 1295 |
 
 ### Canonical holdings outside the current five-edition index
+
+This subsection was added by commit `622b48fd` on 2026-09-24; no source here identifies a separately
+dated decision by Ben.
 
 The canonical Da'at Miqra scan is
 `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks/Da-at Miqra`. It is available and
@@ -764,6 +769,6 @@ here. Independent of Phase 2, so the two can interleave.
 
 1. **Census order across the four full-Tanakh editions?** Default: jc1, bhl, koren,
    simanim-tanakh.
-2. **Scope beyond the recorded Da'at Miqra disposition:** the other ScansOfBooks folders
+2. **Scope beyond the Da'at Miqra subsection added on 2026-09-24:** the other ScansOfBooks folders
    (JC2 Companion, JC3, the
    readers, the loose PDFs) stay out of the index. Confirm.

@@ -87,9 +87,10 @@ remediation plan must present separately.
     pushes directly, because commit-date `since` queries can miss an older commit pushed during the
     review window; the reviewed repository trees require no correction from this finding.
 
-The fresh-task remediation plan with concrete editorial wording is the next close-out phase. No
-remediation named above is performed by this decision entry, except for the procedure-record update
-that the sequential-review procedure requires after Ben's decisions.
+At the time of this decision entry, the fresh-task remediation plan with concrete editorial
+wording was the next close-out phase. The plan was subsequently written and executed on
+2026-09-18. This decision entry performed only the procedure-record update required after Ben's
+decisions.
 
 Product axis: this decision record and the procedure-record update reach no repository product.
 Act axis: they are ordinary commits on the locked shared review branch, backed up to the existing
@@ -123,23 +124,23 @@ the final dispositions of the twenty findings:
 8. **Finding 8 was fixed by `4e30b0f4` and `18aabf8d`.** The reader-facing introduction guidance,
    moved mark-order pointer, Phase 3 and current-repository claims, and source-number form are
    corrected without rewriting the move's history.
-9. **Finding 9 was fixed by `18aabf8d`; the portions already current at baseline remain
-   unchanged.** The live headings, quotations, paths, cross-file section references and
-   cross-tracker issue spellings are repaired, while truthful historical retired-plan references
-   remain historical.
+9. **Finding 9 was partly fixed by `18aabf8d`; two source-section citations remained unfixed.**
+   The remaining GitHub issue-guidance citations to the obsolete script heading and the wrong risk
+   item are addressed by finding 12 of the September 26 review. Truthful historical retired-plan
+   references remain historical.
 10. **Finding 10 was already resolved by current `main` at `d3edadc6` plus `fbaae3d0`.** The shared
     skill list, common-body wrapper and long-lived review-branch backup exception were current, so
     no later implementation commit was required.
 11. **Finding 11 was fixed by `18aabf8d`.** The affected instruction and skill passages now carry
     dated or explicitly undated provenance without implying that the underlying policies had
     disappeared.
-12. **Finding 12 was fixed by baseline `d3edadc6` and `d759adec`.** The current reparse-point
-    guards already closed 12.1. The citation gate for 12.2 now matches only the exact relocated
-    paths across the target, primary checkout and registered worktrees, preserves its complete
-    audit record, and rejects generic `.novc` and `.novc-old` references. Verification used the
-    operational simulation; no real worktree retirement ran.
-13. **Findings 13.1 through 13.3 were fixed by `5b8e4026`; conditional finding 13.4 required no
-    hook change under the approved stop rule.** The owner-scope diagnostic, unused helper, Git-date
+12. **Finding 12.1 was already fixed at baseline `d3edadc6`; `d759adec` narrowed the citation
+    gate for 12.2 but did not complete the repair.** The gate still counted generic `.novc/`
+    prose and missed some actual relocated-path spellings. The remaining matcher defect is
+    finding 16 of the September 26 review. The September 18 verification used the operational
+    simulation; no real worktree retirement ran.
+13. **Findings 13.1 and 13.3 were fixed by `5b8e4026`, and finding 13.2 by `18aabf8d`;
+    conditional finding 13.4 required no hook change under the approved stop rule.** The owner-scope diagnostic, unused helper, Git-date
     wording and custom MAM-simple directory diagnostic are corrected. Codex
     `0.154.0-alpha.6.2` ran the no-bypass inventory in ephemeral session
     `01a0b49d-6169-7812-810b-c3f61ef0ef0e`, but its diagnostics did not provide a complete hook
@@ -147,7 +148,7 @@ the final dispositions of the twenty findings:
     the capture and subprocess harness were not run, and no live or tracked hook changed. The
     cleanup disposition and durable hashes for the ignored experiment result are recorded below;
     the `.novc/` path is not durable evidence.
-14. **Finding 14 was fixed by `4e30b0f4` and `18aabf8d`.** The two module paths now include `py/`,
+14. **Finding 14's module paths and CSS wording were fixed by `4e30b0f4`.** The two module paths now include `py/`,
     and the Holman workflow distinguishes theme custom properties that use `light-dark(...)` from
     fixed badge colors.
 15. **Finding 15 was fixed by `18aabf8d`.** The New York label rule now governs generated clock
@@ -163,10 +164,12 @@ the final dispositions of the twenty findings:
 18. **Finding 18 was fixed by `18ddfbf7`.** The live speedup plan retains only the provenance gap
     for 37.7 MB and now gives the corrected commit set, baseline suite count, verification commands
     and recoverable record aliases.
-19. **Finding 19 was fixed by `18ddfbf7` and `18aabf8d`; part 19.4 was already resolved at baseline
-    `d3edadc6`.** The receipt update corrects the prose-system wording, and the remaining skill and
-    plan prose removes the redundant “own”, fixes formatting and the drive path, numbers the three
-    exemptions and names the intended works directly.
+19. **Finding 19 was partly fixed by `18ddfbf7` and `18aabf8d`; part 19.4 was repaired during
+    execution, and some overlong skill prose remained.** `7014cfbb` moved the drive-path example
+    unchanged; `18ddfbf7` prescribed its repair, and `18aabf8d` implemented it. Part 19.4 was
+    therefore not already resolved at baseline `d3edadc6`. The receipt update corrected the
+    prose-system wording; the other changes removed the redundant “own”, repaired four of the
+    eight overlong prose lines, numbered the three exemptions and named the intended works.
 20. **Finding 20 was fixed by `18aabf8d`.** The review procedure now establishes windows from
     endpoint commits and corroborates pushes directly rather than treating commit-date queries as
     a completeness check.
@@ -190,8 +193,9 @@ Product axis: the remediation reaches generated Sefaria and OSIS data through th
 refresh diffs in `61aa48ee`; the final mega added no product diff. Act axis: the substantive head
 was backed up to the existing remote review branch, fast-forwarded to `main`, pushed and deployed
 to the live user-configuration destinations. No issue changed, no history was rewritten and no
-worktree was retired. The closing documentation commit still requires its planned backup,
-fast-forward and final `main` push.
+worktree was retired. The closing documentation commit `f3bd280a` subsequently reached `origin/main` on
+2026-09-18. The September 26 review records a local-reflog arrival at 10:00:17, New York time;
+that is local evidence, not independent GitHub history.
 
 ## Cleanup evidence disposition recorded on 2026-09-18
 
@@ -247,6 +251,7 @@ tree had no junction, symbolic link or other reparse point, and no process other
 inspection command named the exact worktree path. These facts permit ordinary non-forced removal
 after this documentation commit is backed up, integrated and published.
 
-Product axis: this cleanup entry reaches no repository product. Act axis: preserving the durable
-evidence requires the ordinary review-branch backup, `main` fast-forward and push; later worktree
-and local-branch removal dispose only the explicitly classified scratch and merged local state.
+Product axis: this cleanup entry reaches no repository product. Act axis: the cleanup record
+`437b54d1` subsequently reached `origin/main` on 2026-09-18. The September 26 review records a
+local-reflog arrival at 13:48:21, New York time; that is local evidence, not independent GitHub
+history. The later removal disposition covered only the classified scratch and merged local state.

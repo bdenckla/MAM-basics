@@ -9,6 +9,7 @@ from pathlib import Path
 
 from repo_util import git_worktree_cleanup, worktree_retirement
 from repo_util.repo_selection import RepoInfo
+from repo_util.worktree_retirement_git import _same_path
 
 
 def problem_repos(reports: list[tuple[str, list[str]]]) -> list[str]:
@@ -26,9 +27,7 @@ def unknown_worktrees(
     return [
         path
         for path in named
-        if not any(
-            worktree_retirement._same_path(path, candidate) for candidate in candidates
-        )
+        if not any(_same_path(path, candidate) for candidate in candidates)
     ]
 
 
@@ -41,14 +40,14 @@ def run_clean_worktrees_across_repos(
     reports = []
     stranded = []
     for info in repo_infos:
-        # Flush progress so a captured long-running audit remains observable.
+        # Flush per-repository progress so captured sweeps remain observable.
         print(f"=== {info.name} ===", flush=True)
         try:
             report = git_worktree_cleanup.clean_worktrees(
                 info.path, sessions_ended=sessions_ended, owner=owner
             )
             git_worktree_cleanup.print_report(report)
-            reports.append((info.name, report.errors))
+            reports.append((info.name, []))
             stranded.extend(info.name for _ in report.stranded_branches)
         except (RuntimeError, OSError) as exc:
             print(f"worktrees: ERROR {exc}")

@@ -7,7 +7,7 @@ recorded justification as to why it is not in mega", and "It should be part of r
 maintenance (if it is not already) to check that the only programs not part of mega are
 those that have documented justifications for why they are not part of mega."  The
 design is section 7 of ``doc/mega-coverage-2026-09-10.md``, which Ben agreed to that
-day; this file is phase 7 of ``doc/PLAN-mega-coverage.md``.  It is part of maintenance
+day; this file implemented phase 7 of the now-retired mega-coverage plan.  It is part of maintenance
 with no wiring of its own: ``py/main_repo_maintenance.py`` runs the suite at its step 6,
 before its step 7 runs the mega.
 
@@ -72,7 +72,7 @@ WHERE THE REASONS COME FROM
 Each reason says why the mega leaves the program out, and where that is recorded.  A
 reason beginning "Claude-written, accepted by Ben on 2026-09-10" was proposed by a
 Claude session, most of them in section 4 of the analysis and the rest in phase 7 of
-doc/PLAN-mega-coverage.md, and Ben accepted every one of those proposals that day, as
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md), and Ben accepted every one of those proposals that day, as
 phase 7's record in that plan says: "They are all fine. The most important thing is
 to get a baseline so that *new* programs that are added to the repo either need to be
 added to mega or given a justification as to why they should not be added to mega."
@@ -99,7 +99,7 @@ from mb_cmn import paths
 # ---------------------------------------------------------------------------
 _ACCGRAM_SINGLE = (
     "One report of the batch that the accgram-generate-html step runs whole."
-    ' Recorded in doc/review-findings-2026-08-03.md ("the generate-html-<name> singles'
+    ' Recorded in https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-08-03.md ("the generate-html-<name> singles'
     ' the batch covers") and doc/mega-coverage-2026-09-10.md §3.'
 )
 _EDITION_HAND_WORK = (
@@ -111,7 +111,7 @@ _EDITION_HAND_WORK = (
 _HOLMAN_MAILBOX = (
     "Reads Holman's untracked mailboxes under .novc/; the reports regenerate from the"
     " tracked derivatives, which the mega's Holman steps read.  Recorded in"
-    ' doc/PLAN-evacuate-the-rest-of-three-repos.md ("neither is needed to'
+    ' https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-the-rest-of-three-repos.md ("neither is needed to'
     " regenerate\"), CLAUDE.md's section on Holman's mailboxes, and"
     " doc/mega-coverage-2026-09-10.md §3."
 )
@@ -205,7 +205,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " --trust-surveys and gen-site renders from that step's JSON.  Recorded in"
         " py/main_0_mega.py, the comment in _run_gen_site, and py/main_authored.py, the"
         " comment above _SURVEY_READING_PAGES.  doc/mega-coverage-2026-09-10.md §3 gives"
-        " the reason as it stood before phase 2 of doc/PLAN-mega-coverage.md put the"
+        " the reason as it stood before phase 2 of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md) put the"
         " survey in the mega."
     ),
     "py/main_edition_transcription.py scan-page": _EDITION_HAND_WORK,
@@ -253,12 +253,12 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_ws_bot.py real --no-save": (
         "Reads live Wikisource pages through the bot's login.  Recorded in"
-        " doc/PLAN-holman-meteg-rollout-programme.md and"
+        " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-holman-meteg-rollout-programme.md and"
         " doc/mega-coverage-2026-09-10.md §3."
     ),
     "py/main_ws_bot.py proto --edits <file>": (
         "A rehearsal of one edit file before a real save; the ws-bot-proto step runs"
-        " proto without --edits.  Recorded in doc/PLAN-holman-meteg-rollout-programme.md"
+        " proto without --edits.  Recorded in https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-holman-meteg-rollout-programme.md"
         " and doc/mega-coverage-2026-09-10.md §3."
     ),
     "py/main_slide_generator.py render-slides": (
@@ -276,7 +276,7 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_clc.py <BookId> [chapter]": (
         "One book or one chapter, for focused work; the clc step runs the all form, every"
         " pilot page.  Recorded in py/main_clc.py's docstring,"
-        " doc/mega-coverage-2026-09-10.md §3, and phase 7 of doc/PLAN-mega-coverage.md."
+        " doc/mega-coverage-2026-09-10.md §3, and phase 7 of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)."
     ),
     "py/main_clc_download_notes.py": (
         'A network download of UXLC\'s note pages, "NOT part of the default build".'
@@ -328,7 +328,7 @@ NOT_IN_MEGA: dict[str, str] = {
         "Claude-written, accepted by Ben on 2026-09-10: it prints coverage counts and"
         " writes nothing, where the find-uxlc-accent-changes step runs the form that"
         " writes in/accgram/uxlc_accent_changes.json.  Proposed in"
-        " doc/mega-coverage-2026-09-10.md §4; phase 7 of doc/PLAN-mega-coverage.md"
+        " doc/mega-coverage-2026-09-10.md §4; phase 7 of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)"
         " names this mode."
     ),
     "py/main_scan_pages.py survey": (
@@ -396,7 +396,7 @@ NOT_IN_MEGA: dict[str, str] = {
         "Ben's decision, 2026-09-10: \"don't include these thumbnail-generator-programs"
         ' in mega".  It thumbnails the slides that render-slides draws, which the mega'
         " does not run either.  Recorded in doc/mega-coverage-2026-09-10.md §1,"
-        " decision 4(d), and phase 7 of doc/PLAN-mega-coverage.md."
+        " decision 4(d), and phase 7 of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)."
     ),
     # --- Programs the analysis's sections 3 and 4 do not name.
     "py/main_0_mega.py": (
@@ -411,7 +411,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " recorded in py/main_authored.py's docstring and in the Method paragraph of"
         " doc/mega-coverage-2026-09-10.md, which names parse-go as the step that ran"
         " gen-mam-parsed-docs; the Phase 4 record of"
-        " doc/PLAN-wikisource-derived-mam-products.md records its move to the"
+        " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products-update.md) records its move to the"
         " Wikisource product generation that the parse-ws step runs."
     ),
     "py/main_authored.py verify-mp": (
@@ -421,14 +421,14 @@ NOT_IN_MEGA: dict[str, str] = {
         " py/main_authored.py's docstring and in the Method paragraph of"
         " doc/mega-coverage-2026-09-10.md, which names parse-go as the step that ran"
         " gen-mam-parsed-docs; the Phase 4 record of"
-        " doc/PLAN-wikisource-derived-mam-products.md records its move to the"
+        " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products-update.md) records its move to the"
         " Wikisource product generation that the parse-ws step runs."
     ),
     "py/main_parse.py ws-products": (
         "A second parse of the Wikisource input, which writes candidate plus/ JSON"
         " to an --output-dir outside MAM-parsed/, for an independent check of the"
         " product that the parse-ws step writes.  Recorded in"
-        ' doc/PLAN-wikisource-derived-mam-products.md, whose Phase 4 says to "Avoid'
+        ' https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products-update.md), whose Phase 4 says to "Avoid'
         ' parsing WS twice in one run", and whose Phase 2 record says that ws-products'
         " rejects a production-tree destination."
     ),
@@ -437,7 +437,7 @@ NOT_IN_MEGA: dict[str, str] = {
     "py/main_mam_simple.py all": (
         "The mega runs its two halves as two steps, mam-simple for the export and"
         " mam-simple-docs for the docs.  Recorded in item 1 of phase 5b of"
-        " doc/PLAN-mega-coverage.md, and in the comment above the mam-simple-docs step"
+        " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md), and in the comment above the mam-simple-docs step"
         " in py/main_0_mega.py."
     ),
     "py/main_just_render_table.py": (
@@ -446,7 +446,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " is declared on its own.  Recorded in doc/mega-coverage-2026-09-10.md §5, in"
         ' the row for py/main_verify_and_render_table.py ("its render-only subset"),'
         " whose recommendation Ben agreed to on 2026-09-10 and phase 5a of"
-        " doc/PLAN-mega-coverage.md carried out."
+        " https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md) carried out."
     ),
     "py/main_github_issue_edit.py": (
         "Ben's decision, 2026-09-14, approving a Claude-written proposal: it corrects a"
@@ -459,7 +459,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " prints the links for a verse, and an atom of it, named on its command line,"
         " and writes nothing.  Its module docstring and"
         " dot-claude/skills/verse-links/SKILL.md describe that use.  Declared when the"
-        " integration of doc/PLAN-mega-coverage.md merged main at 225ea3f2, which had"
+        " integration of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md) merged main at 225ea3f2, which had"
         " gained the program in 5aae8465."
     ),
     "py/main_hbce_psalms.py compare": (
@@ -479,7 +479,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " of seven checks, run by hand, and each of the seven is accounted for on its"
         " own: its spell check runs at the end of the book-of-job-site step, and the"
         " other six are declared here.  That it is book-of-job's register is recorded in"
-        " py/ac_paths.py and doc/PLAN-evacuate-public-repos-programme.md"
+        " py/ac_paths.py and https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-public-repos-programme.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-public-repos-programme-update.md)"
         ' ("`check_all.py` stays each repo\'s register"), and'
         " doc/book-of-job-artifacts.md runs it by hand."
     ),

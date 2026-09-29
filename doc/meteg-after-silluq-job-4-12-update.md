@@ -9,7 +9,7 @@ sibling file named `<stem>-update.md`, which is what this file is for that repor
 
 ## Finding 11.4: the five possession verbs should read “has”
 
-Recorded by Codex on 2026-09-12. All five cited sites are the report's analytic prose rather than
+Recorded by ChatGPT-Codex on 2026-09-12. All five cited sites are the report's analytic prose rather than
 protected quotations. The passages should be read with these five corrections:
 
 1. The clause “MAM copies the meteg as the Aleppo Codex has it wherever that manuscript survives”
@@ -28,7 +28,7 @@ verbs and do not change any claim.
 
 ## Finding 11.5: narrative romanizations should use `pataḥ` and `ḥataf`
 
-Recorded by Codex on 2026-09-13. A fresh census of the finished Job 4:12 report found three
+Recorded by ChatGPT-Codex on 2026-09-13. A fresh census of the finished Job 4:12 report found three
 `patah` sites and three `hataf` sites. The corrected readings are:
 
 1. In summary item 7, “before a hataf” should read “before a ḥataf.”
@@ -63,14 +63,14 @@ The finished report remains unchanged under the receipt policy.
 Ben supplied `Screenshot 2026-09-22 171050.png` as a crop of the verse-final word at Job 4:12
 in Cambridge Add. 1753. The screenshot's SHA-256 is
 `7FBEA62B6781874F4295041C3BA1DFF32CF3FB8787C6D166D41680CE673445F2`; its byte-identical
-published copy is `gh-pages/img/cam1753-0073B-col2-line13-Job4v12-menhu.png`. The manuscript
+published copy is `gh-pages/img/cam1753-0073B-col2-line13-Job4v12-MNHV.png`. The manuscript
 locator, page 0073B, column 2, line 13, is recorded in the finished report.
 
 Ben reads both metsil marks in the crop: the silluq under the mem and a meteg after it. Unlike
 the Aleppo and Leningrad codices, Cambridge Add. 1753 has its silluq to the left of its segol,
 in the normal position rather than the “early” position. The case ledger already classified
 Cambridge Add. 1753 as having both strokes; this later observation adds the crop and the
-placement contrast without changing that classification. Codex did not independently inspect
+placement contrast without changing that classification. ChatGPT-Codex did not independently inspect
 the pointed-Hebrew image.
 
 ## 2026-09-25: St. Petersburg Evr. II B 55 has the silluq alone
@@ -78,13 +78,13 @@ the pointed-Hebrew image.
 Ben supplied `Screenshot 2026-09-25 080758.png` as a crop of the verse-final word at Job 4:12 in
 the manuscript MAM identifies by the siglum ל-א. The screenshot's SHA-256 is
 `CD1F5CFF0296E25F0B8F839EDBF2551A5B6C8D73AD8448EDC391BE3F58D89A09`; its byte-identical
-published copy is `gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-menhu.png`.
+published copy is `gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-MNHV.png`.
 
 The local `doc/sigil-decoding.md` and cached MAM introduction identify ל-א as St. Petersburg
 Evr. II B 55, a manuscript of the Prophets and Writings close to the Aleppo Codex. The NLI
 presents B 55 together with its direct continuation, Evr. II B 247; they are separate shelfmarks,
 not former and current names. The cached introduction records Job 1:1–9:19 among its surviving
-text. Codex directly inspected the crop and saw the silluq under the mem and no later mark under
+text. ChatGPT-Codex directly inspected the crop and saw the silluq under the mem and no later mark under
 the he. St. Petersburg Evr. II B 55 is the only manuscript represented on the published Job 4:12
 crop page that has this silluq-only form.
 

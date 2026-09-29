@@ -7,7 +7,8 @@ This current reference carries the detailed repository-specific evidence and sco
 Two orders exist for the combining marks of one base-letter cluster, and they differ on where the
 dagesh sits:
 
-- **MAM-normal order**, the one this repo uses. Shin dot, sin dot, dagesh/mapiq, rafe, then every
+- **MAM-normal order**, the one this repo uses. Shin dot, sin dot, dagesh/mapiq/shuruq dot
+  (U+05BC) and dagesh ḥazaq (U+05C9) at the same priority, rafe, then every
   other mark in the relative order it already had. Spelled out and implemented in
   `py/mb_cmn/uni_denorm.py` — `give_std_mark_order` is the authority, `has_std_mark_order` the
   predicate. The code calls it "(our) standard mark order" and its combining-class table "SBL2",
@@ -65,7 +66,7 @@ covered. Source outside its scope is still yours to check: `py/check_mark_order.
 `py/py_misc/uni_check.py` and `py/py_misc/check_mpplus.py` check data, and
 `py/foi/foiz_wt_unicode.py` reports `NON_STANDARD_MARK_ORDER` as a feature of interest.
 
-Scope: only those four marks have a declared place. A vowel and an accent pass in either order, so
+Scope: only those five code points have a declared priority. A vowel and an accent pass in either order, so
 `has_std_mark_order` says nothing about which of them comes first.
 
 **This section is back, not new.** It stood in `CLAUDE.md` and `.github/copilot-instructions.md`

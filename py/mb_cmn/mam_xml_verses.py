@@ -27,7 +27,7 @@ ValueError. What each contributes:
     before it. A legarmeh and a narrow-sense paseq have the same glyph.
   - <kq>: its ketiv, unpointed: <kq-k>'s text=, or its <slh-word>'s slhw-desc-0.
     ketiv_indices lists the entries that hold a ketiv. The qere contributes nothing.
-  - <kq-trivial>: its pointed text=.
+  - <kq-trivial>: its pointed text=, or its <text>/<lp-legarmeih> child form.
   - <slh-word>: slhw-desc-0, the whole pointed atom.
   - <scrdfftar>: the visible text of its <sdt-target>, in document order. The note
     contributes nothing.
@@ -60,7 +60,8 @@ then contribute, keeping the atoms what is written on the page:
     <spi-samekh2>. So Neh 3:4's atoms run from 1 to 22.
   - <cant-all-three>, in the two Decalogues and at Gen 35:22: its <cant-combined>
     only, read as verse-level <text>, <lp-legarmeih> and <lp-paseq>. That is one text
-    with the marks of both strands, <cant-alef> and <cant-bet>. In the Decalogues they
+    representing the two strands, <cant-alef> and <cant-bet>; it need not include
+    every mark of each strand. In the Decalogues they
     are the תחתון and עליון strands, and at Gen 35:22 the פשוטה and מדרשית strands.
     Atom numbers and letters are the same as for either strand, but one entry can join
     atoms that each strand alone divides between two chanted words. So Deut 5:6's
@@ -109,7 +110,7 @@ _SAMPE_PARASHAH = {
 }
 _PARASHAH_TAGS = frozenset(_SAMPE_PARASHAH.values())
 
-_CANT_STRANDS = ["cant-combined", "cant-alef", "cant-bet"]
+_CANT_FORMS = ["cant-combined", "cant-alef", "cant-bet"]
 _NU10_INVNUN_NEIGHBOR = {"class": "nu10-invnun-neighbor"}
 
 
@@ -167,10 +168,10 @@ def _check_bare(el, verse_osis, allowed_attrib=None):
         )
 
 
-def _strand_words(strand, verse_osis):
-    """Check one strand of a <cant-all-three> and return its text split at whitespace.
+def _form_words(strand, verse_osis):
+    """Check one form of a <cant-all-three> and return its text split at whitespace.
 
-    A strand has a text= alone, or no attributes and children drawn from <text>,
+    A form has a text= alone, or no attributes and children drawn from <text>,
     <lp-legarmeih> and <lp-paseq>, read as they are directly under a <verse>.
     """
     if "text" in strand.attrib:
@@ -200,20 +201,32 @@ def _strand_words(strand, verse_osis):
 
 
 def _cant_combined_words(cant_all_three, verse_osis):
-    """Check a <cant-all-three> and all three strands; return <cant-combined>'s words.
+    """Check the two strands and combined representation; return the combined words.
 
-    Ben's decision of 2026-09-26: the combined text, which has the marks of both
-    strands, and neither strand alone.
+    Ben's decision of 2026-09-26 selects their combined representation. It need
+    not include every mark of each strand.
     """
     strands = list(cant_all_three)
-    if cant_all_three.attrib or [s.tag for s in strands] != _CANT_STRANDS:
+    if cant_all_three.attrib or [s.tag for s in strands] != _CANT_FORMS:
         raise ValueError(
             f"<cant-all-three> in {verse_osis} does not have exactly the children "
-            f"{_CANT_STRANDS} and no attributes: {[s.tag for s in strands]}, "
+            f"{_CANT_FORMS} and no attributes: {[s.tag for s in strands]}, "
             f"{cant_all_three.attrib}"
         )
-    combined, _alef, _bet = [_strand_words(s, verse_osis) for s in strands]
+    combined, _alef, _bet = [_form_words(s, verse_osis) for s in strands]
     return combined
+
+
+def _trivial_kq_words(el, verse_osis):
+    """Read either known trivial ketiv/qere form, preserving the pointed ketiv."""
+    if "text" in el.attrib:
+        return _lone_text(el, verse_osis).split()
+    if el.attrib or [child.tag for child in el] != ["text", "lp-legarmeih"]:
+        raise ValueError(f"Unsupported <kq-trivial> shape in {verse_osis}")
+    words = _lone_text(el[0], verse_osis).split()
+    _check_bare(el[1], verse_osis)
+    words[-1] += PASEQ
+    return words
 
 
 def get_verse_words(verse_el):
@@ -271,12 +284,9 @@ def get_verse_words(verse_el):
                     raw_words.extend(ws)
                     ketiv_flags.extend([True] * len(ws))
             elif tag == "kq-trivial":
-                # Trivial k/q — use pointed text attribute
-                text = child.attrib.get("text", "").strip()
-                if text:
-                    ws = text.split()
-                    raw_words.extend(ws)
-                    ketiv_flags.extend([False] * len(ws))
+                ws = _trivial_kq_words(child, verse_osis)
+                raw_words.extend(ws)
+                ketiv_flags.extend([False] * len(ws))
             elif tag == "slh-word":
                 # Suspended-letter word — use desc-0 (full pointed word)
                 text = child.attrib.get("slhw-desc-0", "").strip()

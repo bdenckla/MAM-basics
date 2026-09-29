@@ -9,7 +9,7 @@ from accgram import poetic_accent_names as pan
 from accgram import poetic_scanner
 from accgram import prose_scanner
 from accgram import uni_to_marks
-from accgram import chanted_word_accents as cwa
+from accgram import chanted_word_accents_units as cwa
 from accgram.almost_errors_html_shared import accents_and_letters
 from accgram.uni_to_marks import is_accent
 from mb_cmn import bib_locales as tbn
@@ -1091,8 +1091,8 @@ def _bare(word: str) -> str:
     """The chanted word in letters and accents alone, its maqafs put back.
 
     ``accents_and_letters`` drops the maqaf along with the vowels, so a compound is reduced
-    atom by atom and rejoined, as ``chanted_word_accents._display`` does it.  Phonetic MAM
-    spells MAM's gray maqaf as a tilde, restored here as the maqaf it stands for.
+    atom by atom and rejoined, as ``chanted_word_accents_units._display`` does it.  Phonetic
+    MAM spells MAM's gray maqaf as a tilde, restored here as the maqaf it stands for.
 
     NOT what the page shows, and it cannot be: ``accents_and_letters`` drops U+05BD with the
     vowels, and U+05BD is this survey's whole subject.  The page shows ``mam_form``, MAM's

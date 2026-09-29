@@ -438,7 +438,7 @@ figcaption { font-size: 0.9em; color: light-dark(#555, #aaa); margin-top: 0.4em;
 }
 /* A focus-of-attention fade uses an SVG luminance mask: white keeps the tint visible,
    black keeps each focus box clear, and the filter supplies the gradual transition.
-   The tint is the discarded crop editor's muted ochre at its historical maximum alpha.
+   The caller supplies the focus-fade tint; the 1 Kings 14:14 figure uses rgb(184,184,184).
    Per-figure custom properties permit modest reuse without another annotation system. */
 .scan-annot-overlay.focus-fade-overlay .focus-fade-mask-base { fill: white; }
 .scan-annot-overlay.focus-fade-overlay .focus-fade-mask-cutout { fill: black; }
