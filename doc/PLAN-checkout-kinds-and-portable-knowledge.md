@@ -1,10 +1,7 @@
 # Checkout kinds and portable knowledge: feedback and plan
 
-State: executed 2026-09-29. Workstreams A and B are complete. GitRepos2 and GitRepos3
-each have four independent full clones and six fresh constrained environments;
-both forests passed their own suite, mega and configuration checks. Decisions 6 and 7
-remain deferred proposals. Account permission settings, laptop work and source-forest
-synchronization remain outside this completed scope.
+State: executed 2026-09-29. Workstreams A and B are complete. GitRepos2 and GitRepos3 each have four independent full clones and six fresh constrained environments; both forests passed their own suite, mega and configuration checks. Decisions 6 and 7 remain deferred proposals. Account permission settings, laptop work and source-forest synchronization remain outside this completed scope.
+Updates and later status: [PLAN-checkout-kinds-and-portable-knowledge-update.md](PLAN-checkout-kinds-and-portable-knowledge-update.md).
 
 Written 2026-09-28 by Claude Opus 5.5 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `a367f962`. File and line citations refer to that commit.
