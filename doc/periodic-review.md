@@ -27,6 +27,21 @@ sub-agent. Use delegation when it can save time, protect the root reviewer's con
 confidence, not merely to create another task. The mandatory pre-commit check under "Reviewing the
 review, with the same agent and with Ben" still applies.
 
+## The checkout a review uses — Ben's decision, 2026-09-29
+
+**By default a review runs in whatever checkout its session is already in; a linked worktree is
+optional.** Ben's instruction of 2026-09-29, given while the 2026-09-29 dual-agent round was being
+set up in a linked worktree made for it: "While the DAR process should continue to be able to use
+a worktree, both this session and the DAR procedure (and the single-agent procedure) should now say
+that the default is to just use whatever directory, be it a clone in GitRepos, GitRepos2, GitRepos3,
+etc. or some worktree dependent on those (or maybe even some day a cloud session)."
+
+That checkout may be a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`,
+`$HOME/GitRepos3` and so on, as `doc/clone-forests.md` describes — or a linked worktree of one of
+those clones, and perhaps some day a cloud session's checkout. A review may still use a linked
+worktree made for it, but nothing in this procedure or in `doc/dual-agent-review.md` requires one.
+The one-writer rule above applies to whichever checkout the review uses.
+
 ## What the periodic review is
 
 Every four to eight days one Claude session reads a commit range in one public repository and
