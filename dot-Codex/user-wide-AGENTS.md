@@ -242,6 +242,14 @@ messages and GitHub bodies: write a uniquely named file and pass `git commit -F`
 control flow are not. Prefer `git -C <path>` to changing directories as part of a compound
 command.
 
+On Windows, run agent shell commands in PowerShell 7, not Git Bash or another POSIX emulation
+layer. Git Bash can quietly give a wrong answer where PowerShell uses the Windows setting
+directly: `TZ=America/New_York date` prints UTC because Git Bash does not recognize that zone
+name. Read New York time with
+`[System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::UtcNow, 'Eastern Standard Time')`,
+and state the zone with every clock reading. A POSIX shell remains correct in a Linux cloud
+session.
+
 Write explicit UTF-8 with declared line endings; repository attributes and external-format
 exceptions govern rather than an unconditional all-files-LF rule.
 
