@@ -1,7 +1,7 @@
 """Check or deploy Ben's user-level agent configuration from ``origin/main``.
 
 The live Claude and Codex files sit outside Git, so the source for every operation is
-the freshly fetched ``refs/remotes/origin/main`` of the primary MAM-basics clone.  A
+the freshly fetched ``refs/remotes/origin/main`` of the full MAM-basics clone.  A
 failed fetch stops before any live destination changes.  The cloud-session bootstrap
 hook is deliberately separate: it sources the cloud session's checked-out branch.
 
@@ -40,9 +40,10 @@ _ARCHIVE_PATHS = (
     Path("dot-Codex/hooks.json"),
     Path("dot-Codex/hooks/check_project_doc_budget.py"),
     Path("dot-Codex/skills"),
+    Path("dot-Codex/retired-skills.txt"),
     _SHARED_SKILLS,
 )
-_Kind = Literal["file", "directory"]
+_Kind = Literal["file", "directory", "absent"]
 
 
 class UserConfigSyncError(RuntimeError):
@@ -67,7 +68,7 @@ class Comparison:
 class _Staged:
     mapping: ConfigMapping
     destination: Path
-    staged_path: Path
+    staged_path: Path | None
 
 
 @dataclass(frozen=True)
@@ -81,24 +82,24 @@ def run_user_config_sync(
 ) -> bool:
     """Fetch, then check or deploy the complete user-level configuration.
 
-    Deployment is accepted only from the primary clone.  A check may run from a linked
+    Deployment is accepted only from the full clone.  A check may run from a linked
     worktree, which lets ``main_repo_maintenance.py`` retain a useful failure mode if it
     is invoked from the wrong checkout without letting that checkout deploy anything.
     """
     current_root = (repo_root or paths.repo_root()).resolve()
     live_home = (home or Path.home()).resolve()
     try:
-        primary = _primary_clone(current_root)
-        if not check and current_root != primary:
+        home_clone = _home_clone(current_root)
+        if not check and current_root != home_clone:
             raise UserConfigSyncError(
-                "deployment must run from the primary MAM-basics clone: "
-                f"{primary}; current checkout is {current_root}"
+                "deployment must run from the full MAM-basics clone: "
+                f"{home_clone}; current checkout is {current_root}"
             )
-        _fetch_origin(primary)
-        with _source_tree(primary) as (source_root, source_commit):
+        _fetch_origin(home_clone)
+        with _source_tree(home_clone) as (source_root, source_commit):
             mappings = _build_mappings(source_root)
             comparisons = _compare_all(source_root, live_home, mappings)
-            print(f"USER_CONFIG_SOURCE={primary} {_SOURCE_REF}@{source_commit}")
+            print(f"USER_CONFIG_SOURCE={home_clone} {_SOURCE_REF}@{source_commit}")
             if check:
                 _print_comparisons(comparisons)
                 problems = [item for item in comparisons if item.status != "clean"]
@@ -131,24 +132,24 @@ def run_user_config_sync(
         return False
 
 
-def _primary_clone(repo_root: Path) -> Path:
-    primary = provenance.home_clone_dir(repo_root)
-    if primary is None:
+def _home_clone(repo_root: Path) -> Path:
+    home_clone = provenance.home_clone_dir(repo_root)
+    if home_clone is None:
         raise UserConfigSyncError(
-            f"cannot identify the primary MAM-basics clone from {repo_root}"
+            f"cannot identify the full MAM-basics clone from {repo_root}"
         )
-    primary = primary.resolve()
-    if primary.name.casefold() != "mam-basics":
+    home_clone = home_clone.resolve()
+    if home_clone.name.casefold() != "mam-basics":
         raise UserConfigSyncError(
-            f"expected the primary clone to be named MAM-basics, found {primary}"
+            f"expected the full clone to be named MAM-basics, found {home_clone}"
         )
-    return primary
+    return home_clone
 
 
-def _fetch_origin(primary: Path) -> None:
+def _fetch_origin(home_clone: Path) -> None:
     try:
         result = _run_git(
-            primary,
+            home_clone,
             "fetch",
             "--no-tags",
             "origin",
@@ -165,7 +166,7 @@ def _fetch_origin(primary: Path) -> None:
             "git fetch origin failed; no live destination was changed: "
             + _command_error(result)
         )
-    verify = _run_git(primary, "rev-parse", "--verify", f"{_SOURCE_REF}^{{commit}}")
+    verify = _run_git(home_clone, "rev-parse", "--verify", f"{_SOURCE_REF}^{{commit}}")
     if verify.returncode != 0:
         raise UserConfigSyncError(
             f"fresh fetch left no {_SOURCE_REF}: {_command_error(verify)}"
@@ -173,9 +174,9 @@ def _fetch_origin(primary: Path) -> None:
 
 
 @contextmanager
-def _source_tree(primary: Path) -> Iterator[tuple[Path, str]]:
+def _source_tree(home_clone: Path) -> Iterator[tuple[Path, str]]:
     commit_result = _run_git(
-        primary, "rev-parse", "--verify", f"{_SOURCE_REF}^{{commit}}"
+        home_clone, "rev-parse", "--verify", f"{_SOURCE_REF}^{{commit}}"
     )
     if commit_result.returncode != 0:
         raise UserConfigSyncError(_command_error(commit_result))
@@ -184,7 +185,7 @@ def _source_tree(primary: Path) -> Iterator[tuple[Path, str]]:
         temp_root = Path(tmp)
         archive_path = temp_root / "source.tar"
         result = _run_git(
-            primary,
+            home_clone,
             "archive",
             "--format=tar",
             f"--output={archive_path}",
@@ -204,13 +205,13 @@ def _source_tree(primary: Path) -> Iterator[tuple[Path, str]]:
 
 
 def _run_git(
-    primary: Path, *args: str, timeout_seconds: int | None = None
+    home_clone: Path, *args: str, timeout_seconds: int | None = None
 ) -> subprocess.CompletedProcess[str]:
     environment = os.environ.copy()
     environment["GIT_TERMINAL_PROMPT"] = "0"
     environment["GCM_INTERACTIVE"] = "Never"
     return subprocess.run(
-        git_command(primary, *args),
+        git_command(home_clone, *args),
         capture_output=True,
         text=True,
         encoding="utf-8",
@@ -278,6 +279,12 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
     claude_skills = _skill_names(source_root / "dot-claude" / "skills")
     codex_skills = _skill_names(source_root / "dot-Codex" / "skills")
     shared_skills = _read_shared_skills(source_root / _SHARED_SKILLS)
+    retired_skills = _read_shared_skills(source_root / "dot-Codex/retired-skills.txt")
+    overlapping = sorted(set(retired_skills) & (set(codex_skills) | set(shared_skills)))
+    if overlapping:
+        raise UserConfigSyncError(
+            "retired skills still declared for installation: " + ", ".join(overlapping)
+        )
     missing_shared = sorted(set(shared_skills) - set(claude_skills))
     if missing_shared:
         raise UserConfigSyncError(
@@ -322,6 +329,14 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
     # Activate the hook only after its script and fingerprint are in place on a
     # first installation. Existing sessions can still see individual replacements,
     # but every replacement has already been staged and rollback remains complete.
+    mappings.extend(
+        ConfigMapping(
+            Path("dot-Codex/retired-skills.txt"),
+            Path(".agents/skills") / name,
+            "absent",
+        )
+        for name in retired_skills
+    )
     mappings.append(hook_config)
     _reject_duplicate_destinations(mappings)
     return tuple(mappings)
@@ -390,10 +405,16 @@ def _compare_all(
 def _compare_one(source_root: Path, home: Path, mapping: ConfigMapping) -> Comparison:
     source = source_root / mapping.source_rel
     destination = home / mapping.destination_rel
+    if mapping.kind == "absent":
+        try:
+            destination.lstat()
+        except FileNotFoundError:
+            return Comparison(mapping, "clean", "retired skill is absent")
+        return Comparison(mapping, "drift", "retired skill remains installed")
     if not destination.exists() and not destination.is_symlink():
         return Comparison(mapping, "not installed")
-    if destination.is_symlink():
-        return Comparison(mapping, "drift", "live destination is a symlink")
+    if destination.is_symlink() or destination.is_junction():
+        return Comparison(mapping, "drift", "live destination is a link")
     if mapping.kind == "file":
         if not destination.is_file():
             return Comparison(mapping, "drift", "live destination is not a file")
@@ -477,7 +498,8 @@ def _deploy_transaction(
                 backup = _unique_sibling(destination, "backup")
                 _replace_path(destination, backup)
             try:
-                _replace_path(item.staged_path, destination)
+                if item.staged_path is not None:
+                    _replace_path(item.staged_path, destination)
             except OSError:
                 if backup is not None:
                     try:
@@ -487,6 +509,11 @@ def _deploy_transaction(
                         raise
                 raise
             installed.append(_Installed(destination, backup))
+        verification = _compare_all(source_root, home, tuple(mappings))
+        if any(item.status != "clean" for item in verification):
+            raise UserConfigSyncError(
+                "transaction verification failed before backup cleanup"
+            )
     except (OSError, UserConfigSyncError) as exc:
         rollback_errors = _rollback(installed)
         stage_cleanup_errors = _remove_staged_paths(staged)
@@ -522,20 +549,36 @@ def _validate_destinations(home: Path, mappings: list[ConfigMapping]) -> None:
             )
         current = destination.parent
         while current != home:
-            if current.is_symlink():
+            if current.is_symlink() or current.is_junction():
                 raise UserConfigSyncError(
                     f"live destination parent must not be a symlink: {current}"
                 )
             current = current.parent
-        if destination.is_symlink():
+        if destination.is_symlink() or destination.is_junction():
             raise UserConfigSyncError(
                 f"live destination must not be a symlink: {destination}"
             )
+        if mapping.kind == "absent" and destination.exists():
+            if not destination.is_dir():
+                raise UserConfigSyncError(
+                    f"retired skill destination is not a directory: {destination}"
+                )
+            for child in destination.rglob("*"):
+                if (
+                    child.is_symlink()
+                    or child.is_junction()
+                    or not (child.is_file() or child.is_dir())
+                ):
+                    raise UserConfigSyncError(
+                        f"retired skill contains a linked or non-file entry: {child}"
+                    )
 
 
 def _stage_one(source_root: Path, home: Path, mapping: ConfigMapping) -> _Staged:
     source = source_root / mapping.source_rel
     destination = home / mapping.destination_rel
+    if mapping.kind == "absent":
+        return _Staged(mapping, destination, None)
     destination.parent.mkdir(parents=True, exist_ok=True)
     staged_path = _unique_sibling(destination, "stage")
     try:
@@ -574,6 +617,8 @@ def _rollback(installed: list[_Installed]) -> list[str]:
 def _remove_staged_paths(staged: list[_Staged]) -> list[str]:
     errors = []
     for item in staged:
+        if item.staged_path is None:
+            continue
         try:
             _remove_path(item.staged_path)
         except OSError as exc:

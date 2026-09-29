@@ -44,18 +44,18 @@ push is a normal fast-forward with no force.
 
 ## Integrate immediately before archival
 
-Once the worktree and primary checkout are clean:
+Once the worktree and home clone are clean:
 
 1. In the worktree, merge `main` into the worktree branch. Resolve conflicts and make any fixes
    on that branch.
 2. Run the repository's required broad check on the merged branch. Commit every explained
    generated change there; an unexplained change is a failure.
-3. In the primary clone, fast-forward `main` with
-   `git -C <primary-clone> merge --ff-only <worktree-branch>`. If `main` moved, return to step 1
-   instead of creating a second merge in the primary clone.
+3. In the worktree's home clone, fast-forward `main` with
+   `git -C <home-clone> merge --ff-only <worktree-branch>`. If `main` moved, return to step 1
+   instead of creating a second merge in the worktree's home clone.
 4. Push `main` normally.
 
-The primary clone receives only the verified fast-forward. Removing the worktree and deleting its
+The worktree's home clone receives only the verified fast-forward. Removing the worktree and deleting its
 branch wait until the task has ended on Windows; never force removal around a live process.
 
 ## Retire a completed worktree through the shared policy

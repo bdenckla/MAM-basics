@@ -18,20 +18,48 @@
 #
 #    PS C:/Users/BenDe/GitRepos/MAM-basics> ./misc/requirements-venv-setup-windows.ps1
 
-python -m venv .venv
-if (-not $?)
-{
-    throw 'python -m venv .venv failed'
-}
+param([string]$BasePython = 'python')
 
-.venv/Scripts/Activate.ps1
-if (-not $?)
-{
-    throw '.venv/Scripts/Activate.ps1 failed'
+$ErrorActionPreference = 'Stop'
+$RepositoryRoot = Split-Path -Parent $PSScriptRoot
+if (-not (Test-Path -LiteralPath "$RepositoryRoot/.git" -PathType Container)) {
+    throw 'Setup requires a full clone; a linked worktree uses its home clone environment.'
 }
-
-pip install -r requirements.txt
-if (-not $?)
-{
-    throw 'pip install -r requirements.txt failed'
+foreach ($InputName in @('requirements.txt', 'constraints.txt')) {
+    if (-not (Test-Path -LiteralPath "$RepositoryRoot/$InputName" -PathType Leaf)) {
+        throw "The tracked $InputName is required before environment setup."
+    }
+}
+$EnvironmentRoot = "$RepositoryRoot/.venv"
+$EnvironmentItem = $null
+try {
+    $EnvironmentItem = Get-Item -LiteralPath $EnvironmentRoot -Force
+} catch [System.Management.Automation.ItemNotFoundException] {
+    # Create only when the environment path is absent.
+}
+if ($null -ne $EnvironmentItem) {
+    if ($EnvironmentItem.Attributes -band [IO.FileAttributes]::ReparsePoint) {
+        throw 'The environment must be a real directory, never a link or junction.'
+    }
+    if (-not $EnvironmentItem.PSIsContainer) {
+        throw 'The existing environment path must be a directory.'
+    }
+} else {
+    & $BasePython -m venv $EnvironmentRoot
+    if ($LASTEXITCODE -ne 0) {
+        throw 'Environment creation failed.'
+    }
+}
+$EnvironmentPython = "$EnvironmentRoot/Scripts/python.exe"
+if (-not (Test-Path -LiteralPath $EnvironmentPython -PathType Leaf) -or
+    -not (Test-Path -LiteralPath "$EnvironmentRoot/pyvenv.cfg" -PathType Leaf)) {
+    throw 'The existing environment is incomplete; repair it deliberately.'
+}
+& $EnvironmentPython -m pip install --no-input -r "$RepositoryRoot/requirements.txt" -c "$RepositoryRoot/constraints.txt"
+if ($LASTEXITCODE -ne 0) {
+    throw 'Constrained dependency installation failed.'
+}
+& $EnvironmentPython -m pip check
+if ($LASTEXITCODE -ne 0) {
+    throw 'Installed dependencies do not satisfy pip check.'
 }

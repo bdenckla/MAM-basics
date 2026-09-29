@@ -36,9 +36,9 @@ the task cannot run in a worktree and names the alternative checkout.
 
 Each plan identifies:
 
-1. Absolute source, development and primary integration checkout paths, and the checkout where
+1. Absolute source, development and integration checkout paths, and the checkout where
    each command runs. Record the actual development path and exact HEAD before editing.
-2. Required baseline commits and ancestry checks, the shared interpreter, required skills and
+2. Required baseline commits and ancestry checks, each applicable interpreter, required skills and
    instruction files, and the executor who owns final integration.
 3. Dated and attributed decisions. Figures that must stay current have baseline commits and
    re-measurement commands; a passing-question measurement may remain a dated observation
@@ -125,5 +125,5 @@ The canonical copy of this shared skill is
 `dot-claude/skills/iterative-document-editing/SKILL.md` in MAM-basics, and
 `dot-claude/shared-skills.txt` declares its Codex destination. Never edit the live copies. Commit,
 integrate, and push the canonical change to `main`, then deploy both live copies with
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config`
-from the primary MAM-basics clone.
+`./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config`
+from any full MAM-basics clone, using that clone's own environment.

@@ -29,6 +29,11 @@ uses a recency criterion, apply that criterion rather than widening it to every 
 
 ## Current operating rules
 
+- `in/repo_maintenance_policy.json`, `clone_forests`, defines primary and optional numbered
+  secondary forests on each machine. A roster clone in any declared forest is expected.
+  Each full clone owns its environments; a worktree uses its home clone's environments.
+  Repository sweeps cover the invoking clone's forest, never a different forest by default.
+
 - An evacuated public repository can remain live as a Pages redirect host or issue tracker
   while its clone belongs on no machine. Do not restore such a clone for ordinary development,
   tests, issue work, or local previews.
@@ -38,7 +43,7 @@ uses a recency criterion, apply that criterion rather than widening it to every 
 - `MAM-private/al-hatorah/` and `MAM-private/masorah-books/` are subtrees of MAM-private, not
   sibling clones. Read the full reference before interpreting old `../al-hatorah` or
   `../masorah-books` paths.
-- A directory directly under `GitRepos` can be a linked worktree rather than a repository.
+- A directory directly under any clone forest can be a linked worktree rather than a repository.
   Inspect `git rev-parse --git-common-dir` or the suspected repository's worktree list before
   treating it as an independent clone. `wlc-koren-12th` was a wlc-utils worktree, never a repo.
 - Before retiring any clone or worktree, establish that the working tree is clean and that no

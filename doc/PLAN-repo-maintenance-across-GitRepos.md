@@ -38,11 +38,11 @@ step 6, inspect completed task artifacts under `C:/Users/BenDe/Documents/Codex`.
 `C:/Users/BenDe/Documents/Codex/ReviewForests`, even when empty, and preserve every active task
 folder. Do not create another maintenance script for this judgment step.
 
-For a directory presented as a reusable worktree forest, read `review-manifest.json` before any
-repository command. Preserve a forest whose manifest names a future phase or handoff. A missing
-manifest means the directory is not established as a forest: inspect every Git directory instead
+For a directory presented as a reusable coordinated review worktree set, read `review-manifest.json` before any
+repository command. Preserve a worktree set whose manifest names a future phase or handoff. A missing
+manifest means the directory is not established as a coordinated review worktree set: inspect every Git directory instead
 of assuming the directory is reusable. A linked worktree has a `.git` pointer file; a `.git`
-directory is a standalone clone; a proposal snapshot with neither is not a worktree forest.
+directory is a standalone clone; a proposal snapshot with neither is not a coordinated review worktree set.
 
 Before retiring a standalone task clone, establish all of the following from that exact clone:
 
@@ -541,9 +541,9 @@ folder is a forest intended for a later handoff.
 Keep the `ReviewForests` root, whether it is empty or populated, and keep each active task folder.
 For a dated task folder that appears complete, distinguish these cases before retiring it:
 
-1. A reusable worktree forest has `review-manifest.json` at the forest root and Git worktrees at
-   the paths declared in that manifest. Read the manifest before running Git in any forest member.
-   A directory merely containing repository-named copies is not a forest.
+1. A reusable coordinated review worktree set has `review-manifest.json` at the worktree-set root and Git worktrees at
+   the paths declared in that manifest. Read the manifest before running Git in any review worktree.
+   A directory merely containing repository-named copies is not a coordinated review worktree set.
 2. A linked worktree has a `.git` pointer file. A `.git` directory is a standalone clone, so check
    its cleanliness, branch/ref state, and whether the checked-out commit is already preserved in
    the primary clone or remote. A clone using `objects/info/alternates` can show dangling objects

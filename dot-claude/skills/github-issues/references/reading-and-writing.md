@@ -110,10 +110,11 @@ order. Distinguish checking whether marks survived transport from checking their
    place, and a finished dated document, corrected in `<stem>-update.md`.
 2. **End the corrected body with one line saying who edited it, when and why**, such as *"Edited on
    2026-09-14 by a Claude session, with Ben's approval, to correct …"*.
-3. **Make the edit with MAM-basics' command**, from any directory:
+3. **Make the edit with MAM-basics' command**, from its verified repository root. Use that
+   full clone's own interpreter, or a linked worktree's home-clone interpreter by absolute path:
 
    ```
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_github_issue_edit.py --repo <repo> --issue <number> --edits <file> [--dry-run]
+   ./.venv/Scripts/python.exe py/main_github_issue_edit.py --repo <repo> --issue <number> --edits <file> [--dry-run]
    ```
 
    1. **The edits file** is UTF-8 JSON, `{"replacements": [{"old": "…", "new": "…"}], "note": "…"}`,

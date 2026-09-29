@@ -48,7 +48,7 @@ carries this repository's exceptions and page-specific rules, including the deli
 The canonical shared skill is `dot-claude/skills/hebrew-prose/`; the live copies under
 `~/.claude/skills/` and `~/.agents/skills/` are what the agents load. `dot-claude/` and
 `dot-Codex/` are version-controlled storage, not project instruction trees. Edit a canonical
-copy, commit and integrate it, then deploy from the primary MAM-basics clone with the
+copy, commit and integrate it, then deploy from any full MAM-basics clone with the
 `--sync-user-config` procedure in `dot-claude/README.md`. Never edit a live copy.
 
 ### Claude Code cloud SessionStart installation
@@ -184,15 +184,16 @@ The cloud-only suite exception is declared on the test module that reads Phoneti
 
 ## Integrating a worktree branch here: run the mega unless the branch is exempt
 
-For final worktree integration, after merging `main` into the worktree branch, run from the
-worktree root:
+For final worktree integration, after merging the home clone's `main` into the worktree branch,
+run from the worktree root using the home clone's interpreter by absolute path. The full-clone
+form is:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+./.venv/Scripts/python.exe py/main_0_mega.py
 ```
 
 A failing step or unexplained tracked diff is a failure. Commit each explained generated change
-on the worktree branch before the primary clone is fast-forwarded. Running the suite too is
+on the worktree branch before the worktree's home clone is fast-forwarded. Running the suite too is
 optional. A branch changing only documentation, comments, docstrings, or instruction text needs neither a mega run
 nor the suite. This exemption describes the changed content, not its directory.
 Executable hooks and helpers, tests, schemas, shared data, and execution-changing
@@ -202,10 +203,11 @@ Git section gives the remaining integration order.
 
 ## Running tests: use the one entrypoint from the repository root
 
-Run the suite from the MAM-basics root through the primary clone's shared interpreter:
+Run the suite from the verified MAM-basics repository root. A full clone uses its own
+environment; a linked worktree uses its home clone's interpreter by absolute path:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+./.venv/Scripts/python.exe py/main_test.py
 ```
 
 Arguments pass through to pytest. A linked worktree normally finds MAM-private through Git's

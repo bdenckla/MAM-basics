@@ -1,7 +1,7 @@
 # Repository maintenance and local retirement
 
 Read this reference for a maintenance sweep, for Black coverage across repositories, or before
-retiring selected linked worktrees, completed Codex task folders, standalone task clones, worktree forests, or disposable
+retiring selected linked worktrees, completed Codex task folders, standalone task clones, coordinated review worktrees, or disposable
 Claude cache data.
 
 ## Mechanical repository sweeps
@@ -11,10 +11,11 @@ Claude cache data.
 from that roster. `in/vendoring_policy.json` declares tracked paths that a sweep leaves alone.
 Do not keep a second remembered repository list.
 
-The MAM-basics Black wrapper is:
+Run a sweep from any full MAM-basics clone, using its own environment and workspace file.
+The sweep covers that clone's forest. The MAM-basics Black wrapper is:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace --repos <repo>
+./.venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace --repos <repo>
 ```
 
 Omit `--repos` only for a requested full sweep. The action reformats files, so do not run it to
@@ -65,22 +66,22 @@ Screen `C:/Users/BenDe/Documents/Codex` after the mechanical repository and docu
 Keep `ReviewForests` even when empty, keep every active task folder, and do not remove the parent
 directory while either remains.
 
-A directory containing repository names is not automatically a worktree forest. A reusable
-forest has `review-manifest.json` at its root and Git worktrees at the paths the manifest
-declares. A linked worktree has a `.git` pointer file; a `.git` directory identifies a standalone
+A clone forest follows `clone_forests` and the workspace roster; it is not a disposable task
+folder. A coordinated review worktree set has `review-manifest.json` at its root and Git
+worktrees at the paths the manifest declares. A linked worktree has a `.git` pointer file; a `.git` directory identifies a standalone
 clone. A `proposed/` directory containing copies without Git metadata is a proposal snapshot.
 
-Read a forest manifest before running a repository command inside the forest. Preserve a forest
+Read a review manifest before running a repository command in its worktrees. Preserve a set
 that names a future phase or handoff. When no manifest exists, inspect every Git directory rather
 than calling the directory reusable.
 
 For each standalone task clone, establish all of the following:
 
 1. The working tree is clean.
-2. The checked-out commit exists in the primary clone or remote.
+2. The checked-out commit exists in the home clone or remote.
 3. No local branch or object is the only copy of unmerged work.
 
-`.git/objects/info/alternates` can expose objects belonging to the primary clone.
+`.git/objects/info/alternates` can expose objects belonging to the home clone.
 `git count-objects -vH` helps distinguish objects stored by the task clone itself.
 
 ## Completed linked worktrees
@@ -92,15 +93,15 @@ and branch eligibility. Never maintain separate cleanup policies by owner.
 
 Retirement is a destructive local act independent of product reach. First establish all gates:
 
-1. The task or session has ended. The target is not the primary or executing checkout, is not
+1. The task or session has ended. The target is not the home clone or executing checkout, is not
    Git-locked, contains no other registered worktree, and has no running session or runtime lease.
 2. Tracked and untracked state is clean, with no Git operation in progress. HEAD and the branch
    are integrated into the local default branch. Worktree reflogs, per-worktree refs, recovery
    pseudorefs and administration objects must not be the only protection of recoverable work.
 3. Unique ignored content outside `.novc` blocks retirement. Known regenerable tool caches and
-   byte-identical primary-checkout copies may be disposable. Linked directories and uncertain
+   byte-identical home-clone copies may be disposable. Linked directories and uncertain
    objects fail closed; never force removal to bypass the audit.
-4. Tracked references to relocated `.novc` paths require review. Search the target, primary and
+4. Tracked references to relocated `.novc` paths require review. Search the target, home clone and
    every other registered linked worktree for the exact relative or absolute paths that this
    retirement will relocate, including receipts added after the target's HEAD. Review every match
    semantically, promote a durable result or record its relocated path, and give a substantive
@@ -108,7 +109,7 @@ Retirement is a destructive local act independent of product reach. First establ
 5. Inventory every `.novc` and relocate it outside the worktree using the shadow layout below.
    Verify membership, bytes and SHA-256 before Git removal. Retain its JSON provenance.
 
-Claude discovery recognizes `.claude/worktrees/` beneath the primary checkout and `claude/*`
+Claude discovery recognizes `.claude/worktrees/` beneath the home clone and `claude/*`
 branches. Codex discovery recognizes `CODEX_HOME/worktrees/` and `codex/*` or `codex-*` branches.
 Conflicting owner evidence blocks retirement. An exact target with a non-agent branch can retire
 its checkout while retaining the branch. Only the successfully retired target's unchanged,
@@ -129,11 +130,11 @@ session ended, honor Git locks, and do not remove or bypass a lease merely to co
 
 ### Inspect, prepare and execute
 
-Run from the primary MAM-basics clone with its interpreter. Inspection across the workspace is
+Run from any full MAM-basics clone with its interpreter. Inspection across the workspace is
 read-only and selects only the requested owners:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_repo_util.py --inspect-worktrees --worktree-owner claude --workspace-file C:/Users/BenDe/GitRepos/MAM-basics/all-repos.code-workspace
+./.venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner claude --workspace-file all-repos.code-workspace
 ```
 
 Use `--worktree-owner codex` or `--worktree-owner both` for those scopes. To inspect one target,
@@ -142,7 +143,7 @@ Inspect each blocker and verify the target's session ended before preparation. P
 per target so a citation review and ended-session attestation cannot spill across candidates:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_repo_util.py --prepare-worktree-retirement "C:/absolute/ended-worktree" --task-ended --preflight-file "C:/absolute/preflight.json"
+./.venv/Scripts/python.exe py/main_repo_util.py --prepare-worktree-retirement "C:/absolute/ended-worktree" --task-ended --preflight-file "C:/absolute/preflight.json"
 ```
 
 The default durable retention root is `$HOME/worktree-retirements`; override it with
@@ -158,7 +159,7 @@ operational retirement simulation.
 Review the preflight, then execute under the ordinary user token from a separate checkout:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_repo_util.py --execute-worktree-retirement "C:/absolute/preflight.json" --task-ended
+./.venv/Scripts/python.exe py/main_repo_util.py --execute-worktree-retirement "C:/absolute/preflight.json" --task-ended
 ```
 
 Every execution and resume attempt first runs
@@ -206,7 +207,7 @@ shadow of the former absolute parent path:
 At that shadow location, give each retained directory a timestamp-and-random collision-safe name
 of the form `.novc--<retirement-id>` and place an adjacent same-stem JSON sidecar. Never overwrite
 an existing directory or sidecar. The sidecar records at least the schema version, original
-`.novc` and worktree paths, primary repository path, `HEAD`, branch or detached state, discoverable
+`.novc` and worktree paths, home clone path, `HEAD`, branch or detached state, discoverable
 Codex task IDs and Claude session IDs, selected owners, retirement timestamp with offset, destination, file count, total bytes,
 verification manifest and algorithm, relocation method, current disposition, and whether the
 worktree and branch were removed.

@@ -38,14 +38,20 @@ Its old --session-ended paths are validated but never cause automatic removal.
 Codex-named prepare/execute actions use the shared engine with a Codex selection
 guard. Old schema-1 preflights must be prepared again with the new safety gates.
 
+``--sync-forest ROOT`` uses all-repos.code-workspace, matching source origins and independent
+environments. ``--check`` fetches and reports without cloning, merging or installing.
+``--forest-status`` discovers the account's primary and numbered secondary forests.
+Ineligible repositories are reported unchanged; no action resets, stashes, switches
+branches, forces history or deletes checkouts.
+
 ``--sync-user-config`` does not traverse a workspace.  It fetches ``origin`` in the
-primary MAM-basics clone and uses only ``refs/remotes/origin/main`` as its source.
+MAM-basics home clone and uses only ``refs/remotes/origin/main`` as its source.
 ``--check`` compares the common instruction body, the Claude wrapper, the user-level Codex hook
 and every tracked skill destination without changing them.  Without ``--check``, the action
-deploys the complete configuration and must be run from the primary clone.  The Claude
+deploys the complete configuration and must be run from any full clone.  The Claude
 cloud-session hook is separate and continues to source the cloud session's checked-out branch.
 
-Three of the repos that file lists are private, so a sweep over all of them
+The roster contains private repositories, so a sweep over all of them
 produces findings that must not land in this public repo's tracked tree.
 ``--visibility`` splits the sweep, and is the intended shape of a full round of
 maintenance -- two runs of each read-only action rather than one:
@@ -87,6 +93,7 @@ from repo_util.report_destination import assert_report_destination_ok
 from repo_util.repo_selection import select_repo_infos
 from repo_util.run_black import problem_repos, run_black_across_repos
 from repo_util.user_config_sync import run_user_config_sync
+from repo_util.forest_sync import run_forest_sync, run_forest_status
 
 REPO_ROOT = paths.repo_root()
 DEFAULT_WORKSPACE_FILE = REPO_ROOT / "MAM-basics.code-workspace"
@@ -145,12 +152,22 @@ def build_parser() -> argparse.ArgumentParser:
         ),
     )
     action_group.add_argument("--sync-user-config", action="store_true")
+    action_group.add_argument(
+        "--sync-forest",
+        metavar="ROOT",
+        help="Clone, fast-forward and hydrate the complete workspace roster in ROOT",
+    )
+    action_group.add_argument(
+        "--forest-status",
+        action="store_true",
+        help="Fetch and check GitRepos and every numbered GitReposN forest",
+    )
     action_group.add_argument("--commit-across-repos", action="store_true")
 
     parser.add_argument(
         "--check",
         action="store_true",
-        help="With --sync-user-config: compare without changing live configuration",
+        help="With --sync-user-config or --sync-forest: fetch and compare without changing destination files",
     )
 
     parser.add_argument(
@@ -335,8 +352,12 @@ def _validate_action_specific_args(
 ) -> None:
     if args.session_ended and not args.clean_worktrees:
         parser.error("--session-ended only applies to --clean-worktrees")
-    if args.check and not args.sync_user_config:
-        parser.error("--check only applies to --sync-user-config")
+    if args.check and not (
+        args.sync_user_config or args.sync_forest or args.forest_status
+    ):
+        parser.error(
+            "--check only applies to --sync-user-config, --sync-forest or --forest-status"
+        )
 
     preparing = (
         args.prepare_worktree_retirement or args.prepare_codex_worktree_retirement
@@ -502,6 +523,10 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     if args.sync_user_config:
         return 0 if run_user_config_sync(check=args.check) else 1
+    if args.sync_forest:
+        return 0 if run_forest_sync(Path(args.sync_forest), check=args.check) else 1
+    if args.forest_status:
+        return 0 if run_forest_status() else 1
 
     workspace_file = Path(args.workspace_file).resolve()
     repos_root = (

@@ -40,13 +40,15 @@ Tracked Codex-only skills:
 | Skill | Purpose |
 | --- | --- |
 | `codex-worktree-tasks` | Verify, use, recover, hand off, and archive ordinary Codex-managed worktree tasks, including branch naming, shared virtual environments, exact checkout identity, and final integration. |
-| `worktree-forest` | Create, verify, reuse, hand off, and retire pinned multi-repository worktree forests, including the Windows SID `safe.directory` workaround. |
 | `prune-Codex-state` (`skills/prune-claude-state/`) | Review this repository's Codex draft plans against live tracked state and complete relevant issues, with exact deletion approval. |
 
-The general forest procedure is canonical in `skills/worktree-forest/SKILL.md`.
-The retired [review-findings-2026-09-01.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-01.md) records the first forest's history,
-and each later forest may carry its own `review-manifest.json` and review reports;
-those per-run records describe instances rather than replacing the reusable skill.
+Ben retired `worktree-forest` on 2026-09-29 when adopting full clone forests. Existing review
+manifests and historical review records remain evidence about their coordinated worktrees.
+`retired-skills.txt` explicitly names Codex skills whose live destinations deployment removes.
+The check reports a remaining retired skill as drift; the deployment validates the removal,
+retains a transaction backup until verification passes, and rolls back a failed transaction.
+It never removes an unlisted personal skill. Forest layout and synchronization are documented
+in `doc/clone-forests.md` and `in/repo_maintenance_policy.json`, `clone_forests`.
 
 The cross-agent `github-issues`, `hebrew-prose`, `iterative-document-editing`,
 `mam-repository-topology`, `mam-wikisource-refresh` and `verse-links` skills remain canonical
@@ -105,10 +107,10 @@ common body, wrapper, and all shared and agent-specific configuration together.
 
 Codex loads the live copies; Git protects the tracked canonical copies. Ben's decision,
 2026-09-13: **do not edit a live copy.** After the canonical change is committed, integrated into
-`main` and pushed, run this from `C:/Users/BenDe/GitRepos/MAM-basics`, the primary clone:
+`main` and pushed, run this from any full MAM-basics clone, using its own environment:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
+./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
 
 The command fetches `origin`, fails before any live write if the fetch or source validation fails,
@@ -122,7 +124,7 @@ The read-only form reports `clean`, `drift`, or `not installed` for every Claude
 destination:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
+./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
 ```
 
 Ordinary `py/main_repo_maintenance.py` runs that installation check automatically and then runs

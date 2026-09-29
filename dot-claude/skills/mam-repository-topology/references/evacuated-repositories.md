@@ -20,7 +20,9 @@ Two consequences, and they apply to every location claim below.
    them they say what belongs on a machine, and nothing else does — **not** a comparison against
    `gh repo list`, which that rule's clause 4 forbids outright as the proxy that dragged the
    discontinued `trope` back onto a disk.
-2. **A clone's presence is residue, not evidence that a decision was reversed.** It is far more
+2. **An evacuated or unlisted repository's clone is residue, not evidence that its
+   disposition was reversed.** Roster clones in the primary and numbered secondary forests
+   declared by `clone_forests` are expected residents. It is far more
    likely to predate the decision, or to come from a sync that did not know about it, than to
    record a change of mind. Before concluding anything about where a clone came from, read its
    reflog: a fresh clone opens with `clone: from …`, a survivor does not.

@@ -15,8 +15,8 @@ One run writes both the page and its data, so the two cannot drift.
 
 ## Commands
 
-All of accgram runs from **MAM-basics'** repo root, `C:/Users/BenDe/GitRepos/MAM-basics`, and
-writes into that repo's own `out/` and `gh-pages/wlc/` — the code moved on 2026-08-01 and the
+All of accgram runs from the selected **MAM-basics** checkout's repository root and
+writes into that checkout's own `out/` and `gh-pages/wlc/` — the code moved on 2026-08-01 and the
 corpus followed on 2026-08-12:
 
 ```bash

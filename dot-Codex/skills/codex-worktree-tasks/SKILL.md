@@ -1,22 +1,22 @@
 ---
 name: codex-worktree-tasks
-description: Ben's rules for creating, verifying, recovering, handing off, or archiving Codex tasks that use Git worktrees, and for ordinary work inside a Codex-managed worktree. Covers exact checkout and commit verification, branch naming, shared virtual environments, local Git trust, one-writer handoffs, and final integration. Do not use for a multi-repository review forest; use worktree-forest.
+description: Ben's rules for creating, verifying, recovering, handing off, or archiving Codex tasks that use Git worktrees, and for ordinary work inside a Codex-managed worktree. Covers exact checkout and commit verification, branch naming, shared virtual environments, local Git trust, one-writer handoffs, and final integration.
 ---
 
 # Codex Worktree Tasks
 
 Keep the task attached to the intended checkout and preserve the Git state that carries its work.
-These rules apply to a single-repository Codex task; the `worktree-forest` skill governs a
-coordinated multi-repository forest.
+These rules apply to linked worktrees in any clone forest. A multi-repository review procedure
+may add its own manifest and stricter ownership rules.
 
 ## Rules that apply throughout
 
 1. Verify the exact checkout before editing: run `git rev-parse --show-toplevel`,
    `git rev-parse HEAD`, inspect branch or detached-HEAD state, and run
    `git status --porcelain`. A required commit must equal `HEAD` or be an ancestor of it.
-2. Treat the primary clone as the integration checkout, not the development workspace. In a
+2. Treat the worktree's home clone as the integration checkout, not the development workspace. In a
    secondary-worktree task, source edits, generators, formatters, tests, staging, and commits all
-   run in the verified worktree. An explicit repository procedure may instead assign a primary
+   run in the verified worktree. An explicit repository procedure may instead assign a full
    checkout to a named shared branch on `origin`; that procedure then owns the development and
    integration roles for its workflow.
 3. Keep one writer per checkout. Before staging, confirm that `HEAD` still equals the recorded

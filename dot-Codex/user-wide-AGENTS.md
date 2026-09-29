@@ -12,15 +12,16 @@ MAM-basics. `dot-claude/user-wide-CLAUDE.md` is only the tracked Claude Code wra
 the live common body. The live files `~/.codex/AGENTS.md` and `~/.claude/CLAUDE.md` are deployed
 copies; never edit either live file directly. Edit the canonical common body or wrapper in the
 applicable MAM-basics development checkout, commit the change, integrate and push `main`, then
-deploy from the primary MAM-basics clone:
+deploy from any full MAM-basics clone, using its own environment from its repository root:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
+./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
 
 The deployment fetches `origin`, validates all canonical sources, and installs only from the
-fresh `refs/remotes/origin/main` tree. Its `--check` mode is read-only. The common body must not
-import the Claude wrapper; that would create an import cycle.
+fresh `refs/remotes/origin/main` tree. Its `--check` mode fetches and compares without changing
+live configuration. The common body must not import the Claude wrapper; that would create an
+import cycle.
 
 Shared skills are canonical under `dot-claude/skills/` and declared for Codex in
 `dot-claude/shared-skills.txt`. Codex-only skills are canonical under `dot-Codex/skills/`.
@@ -61,9 +62,9 @@ matters; clearing one axis does not clear the other.
 ## Git and commits
 
 - Commit finished work without asking. A commit is an ordinary implementation step.
-- In a primary checkout, commit directly to `main` and push `main` normally. Do not create a
+- In any full clone, commit directly to `main` and push `main` normally. Do not create a
   feature branch merely because work has begun. A repository procedure that explicitly names a
-  shared branch on `origin`, such as a dual-agent review round, is an exception: a primary checkout
+  shared branch on `origin`, such as a dual-agent review round, is an exception: a full clone
   may temporarily use a local carrier for that branch under the procedure's handoff and integration
   rules.
 - A secondary worktree uses its existing local branch. If a new Codex-managed worktree is
@@ -71,7 +72,7 @@ matters; clearing one axis does not clear the other.
   `codex-worktree-<worktree-id>` branch name. Commit there without pushing the worktree branch.
 - Integrate a worktree branch immediately before the task is archived, or earlier only when Ben
   asks or a concrete dependency requires it. Load `codex-worktree-tasks` and follow the
-  repository's integration check. The primary clone receives only a verified fast-forward, then
+  repository's integration check. The worktree's home clone receives only a verified fast-forward, then
   `main` is pushed.
 - Ask before rewriting history or discarding work: force-push, amend, rebase, hard reset, branch
   deletion, stash drop, or equivalent operations.
@@ -98,16 +99,41 @@ local carrier branch, and each completed handoff commit is pushed to the one nam
 the local branch name and checkout path are not shared state. Follow the branch's explicit
 authorization and integration procedure.
 
+## Clone forests and portable work
+
+A **forest** holds a full independent clone of every repository in the declared workspace
+roster, under canonical names with matching origins. Each machine's `$HOME/GitRepos` is its
+**primary forest**, distinguished by being created first. Optional **secondary forests** are
+`$HOME/GitRepos<N>`, for integers N at least 2. No machine or forest is globally primary.
+MAM-basics' `in/repo_maintenance_policy.json`, `clone_forests`, declares this layout.
+
+Every full clone has its own Python environments. Corresponding environments use the same
+tracked `requirements.txt` and `constraints.txt` at the same commit; installed versions do not
+vary by forest policy. Regenerate constraints only as a deliberate committed dependency change.
+A worktree uses its own home clone as its integration target and environment provider.
+
+Before pushing a full clone's `main`, fetch `origin`, merge `origin/main` if it moved, and run
+the checks owed by the resulting changes, including the mega when owed. Push normally. If the
+push is refused because origin moved, repeat the fetch, merge and affected checks in that full
+clone. Do not rewrite history or discard work to make the push pass.
+
+A task moves between checkouts only through commits pushed to `origin`. A task needing
+checkout-local untracked inputs, such as `.novc/`, stays in the checkout that holds them.
+Unpushed work stays in its checkout until pushed; neither state permits a forest-spanning
+handoff. Inputs outside every repository are user-level inputs reachable by every forest on
+that machine, discovered through explicit account configuration such as `BOOK_SCANS_ROOT` or
+the user's pywikibot configuration.
+
 ## Linked-worktree safeguards shared by Claude and Codex
 
 - Before editing, verify the exact checkout with `git rev-parse --show-toplevel`, `git rev-parse
   HEAD`, the branch or detached state, and `git status --porcelain`. A required source commit must
   equal `HEAD` or be its ancestor. Recheck `HEAD` and task-owned status before staging.
-- A secondary worktree is the development checkout. Use the primary clone's Python interpreter
+- A secondary worktree is the development checkout. Use the worktree's home clone's Python interpreter
   by absolute path, but run scripts, formatters, tests, generators, staging, and commits in the
   worktree. Use a repository-supported sibling-path override when the worktree layout requires
   one.
-- Never junction or symlink the primary clone's virtual environment into a worktree: worktree
+- Never junction or symlink the worktree's home clone's virtual environment into a worktree: worktree
   removal can follow the junction and empty the real environment. Do not copy the environment as
   a shortcut because Windows console scripts retain the source interpreter's absolute path.
 
@@ -121,15 +147,15 @@ reflogs, and the relevant diffs. Compare the actual provenance before consulting
 stashes or unreachable commits; a matching path alone does not establish lost work.
 
 When Ben reviews a generated local page, identify and verify the exact page path,
-checkout, and commit. A worktree commit does not establish that the primary clone or
+checkout, and commit. A worktree commit does not establish that the worktree's home clone or
 remote branch contains the page.
 
 A worktree may have its own freshly created environment when its task requires
-different dependencies. State that reason; never copy or junction the primary environment.
+different dependencies. State that reason; never copy or junction the home clone's environment.
 
-If the primary clone refuses the final fast-forward, return to the development
+If the worktree's home clone refuses the final fast-forward, return to the development
 worktree, merge the new main there, and repeat the applicable checks. Do not replace
-the failed fast-forward with a merge in the primary clone.
+the failed fast-forward with a merge in the worktree's home clone.
 
 ChatGPT-Codex loads `codex-worktree-tasks` for the full task lifecycle and runtime procedure. Claude Code
 follows the shared safeguards above and the repository's own integration instructions.
@@ -187,8 +213,6 @@ user-explicit verification requirements take precedence.
   Hebrew Wikisource, and after a live Wikisource bot run that changes tracked book data.
 - Load `codex-worktree-tasks` for ordinary Codex-managed worktree setup, task creation, handoff,
   recovery, or archival.
-- Load `worktree-forest` for a pinned multi-repository worktree forest. Do not apply that skill
-  to an ordinary single-repository worktree.
 - Load `prune-Codex-state` only when Ben asks to review Codex plan files. The skill
   requires explicit confirmation before deleting anything.
 - Load `verse-links` whenever Ben asks for links for a verse or atom; the skill runs the
@@ -256,11 +280,12 @@ owns review filenames and review State conventions.
 ## Format changed Python with Black
 
 Run Black at its defaults on every Python file changed before committing. Format only the files
-changed; a repository-wide reformat is a separate commit. In a worktree, use the primary clone's
+changed; a repository-wide reformat is a separate commit. In a worktree, use the worktree's home clone's
 interpreter by absolute path as `codex-worktree-tasks` specifies. Never prefix Black or a tracked
 script with `PYTHONUTF8=1`.
 
-A missing `.venv` means the clone is not hydrated; create the environment or stop. Do not fall
+In a full clone, a missing `.venv` means the clone is not hydrated; create the environment or
+stop. A linked worktree normally has no `.venv` and uses its home clone's environment. Do not fall
 back to an unrelated Black on `PATH`. For a cross-repository sweep, load
 `mam-repository-topology` and use MAM-basics' declared workspace, frozen-repository register, and
 vendoring policy instead of a remembered repository list.

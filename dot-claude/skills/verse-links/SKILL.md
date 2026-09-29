@@ -15,10 +15,11 @@ of 278 cases, checked 2026-09-10.
 
 ## Running the command
 
-From any directory — every path is resolved from the script, never from the cwd:
+Run from the selected MAM-basics repository root. A full clone uses its own interpreter;
+a linked worktree uses its home clone's interpreter by absolute path with this script path:
 
 ```
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_verse_links.py <book> <c:v> [<hebrew> | --atom N]
+./.venv/Scripts/python.exe py/main_verse_links.py <book> <c:v> [<hebrew> | --atom N]
 ```
 
 1. **`<book>` is a bk39 id, and several are not the obvious spelling**: `Levit`, `Deuter`,
@@ -99,7 +100,7 @@ One markdown link per line, in this order:
 
 ## Where each piece lives in MAM-basics
 
-All under `C:/Users/BenDe/GitRepos/MAM-basics`. Change a link there, never in this skill:
+All under the selected MAM-basics checkout. Change a link there, never in this skill:
 
 1. `py/main_verse_links.py` — the command.
 2. `py/mb_cmn/verse_external_links.py` — the mgketer, MwD, MAM-ws, tica and MM builders for all

@@ -177,11 +177,11 @@ publishes it as `origin/dar-<date>`. A setup-only session may do that without pe
 turn; otherwise Agent 1 does it before turn 01. The remote branch, not a directory or local branch
 name, is the round's shared coordination state.
 
-Each turn and close-out task may use its own verified checkout: a linked worktree, a primary clone,
+Each turn and close-out task may use its own verified checkout: a linked worktree, a full clone,
 or another clone. A local branch is only that checkout's carrier for `origin/dar-<date>`. It may use
 the remote branch's name when available or a checkout-specific name when, for example, another
 worktree registered to the same clone already has `dar-<date>` checked out. Do not create a second
-remote review branch to match a local carrier branch. A linked worktree uses the primary clone's
+remote review branch to match a local carrier branch. A linked worktree uses the worktree's home clone's
 venv by absolute path; development commands, edits, staging and commits run in the checkout that
 owns the current turn.
 
@@ -228,10 +228,11 @@ the cheap checks matched to its changed surface, while the full suite runs after
 test-risky change rather than after every low-test-risk commit or handoff. A later documentation,
 comment, review-record or instruction-only commit does not expire that full-suite result. The final
 remediation task integrates once: merge current `origin/main` into the review branch, run
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py` from the integration
+`./.venv/Scripts/python.exe py/main_0_mega.py` with a full clone's environment, or the
+worktree's home-clone interpreter by absolute path from the integration
 checkout with no `REPOS_ROOT`, read its Git diff, commit every explained generated change, and push
 the verified commit to `origin/dar-<date>`. An unexplained generated change or a failing mega step
-is a failure. Then fetch in the designated primary clone, fast-forward its clean `main` with
+is a failure. Then fetch in the designated full integration clone, fast-forward its clean `main` with
 `--ff-only` to `origin/dar-<date>`, and push `main`. If the fast-forward or push refuses because
 `origin/main` moved, merge current `origin/main` and verify again in the integration checkout, then
 update the remote review branch before retrying. Retire each task-owned worktree and merged local
@@ -571,7 +572,7 @@ This document does not prescribe or assess current Codex sandbox syntax.
 
 For the standard alternating round, give the Codex reviewer the exact pushed commit on
 `origin/dar-<date>` under D11 above. Each successor fetches that branch into its own verified
-checkout. A worktree runs the primary clone's venv by absolute path.
+checkout. A worktree runs the worktree's home clone's venv by absolute path.
 
 ## A precondition this document does not own: `~/.codex/AGENTS.md`
 
@@ -589,7 +590,7 @@ that a session running a Codex review knows the dependency exists and can check 
 met.
 
 `dot-Codex/user-wide-AGENTS.md` is canonical. After canonical changes integrate and `main` is
-pushed, deploy from the primary clone with `py/main_repo_util.py --sync-user-config`; the command
+pushed, deploy from any full MAM-basics clone with `py/main_repo_util.py --sync-user-config`; the command
 fetches and installs only from fresh `origin/main`. Verify afterward with
 `py/main_repo_util.py --sync-user-config --check`.
 

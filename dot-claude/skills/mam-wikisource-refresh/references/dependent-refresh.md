@@ -11,11 +11,12 @@ orchestrator or a push that the surrounding instructions do not allow.
   worktree procedure when any development checkout is a linked worktree.
 - Record the absolute top level, branch, `HEAD`, remote relationship, and NUL-delimited status of
   every checkout used. Recheck the recorded `HEAD` and task-owned status before each commit.
-- Use the interpreter belonging to each repository's primary clone. Run each command from the
-  repository root whose files the command changes.
-- Require the primary checkouts at `C:/Users/BenDe/GitRepos/MAM-private` and
-  `C:/Users/BenDe/GitRepos/phonetic-hbo` to be on `main`, current enough for the refresh, clean,
-  and unambiguously assigned to this workflow before either checkout is written. A clean status
+- Use the interpreter belonging to each full clone, or a worktree's home clone. Run each
+  command from the repository root whose files the command changes. The commands below show
+  the full-clone form; substitute the home clone's absolute interpreter path in a worktree.
+- Require the same forest's full MAM-private and phonetic-hbo checkouts to be on `main`, current
+  enough for the refresh, clean, and unambiguously assigned to this workflow before either
+  checkout is written. A clean status
   alone does not establish ownership. A known active task,
   an unexplained worktree association, or the absence of a clear handoff is ambiguous ownership.
 - Do not push any repository until all three repositories have completed their local work and
@@ -27,7 +28,7 @@ orchestrator or a push that the surrounding instructions do not allow.
    run the complete product pipeline:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+   ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
    Read and explain every tracked diff, including generated products. Run `git diff --check`,
@@ -43,15 +44,15 @@ orchestrator or a push that the surrounding instructions do not allow.
    Require a handoff or cleanup; do not borrow, stash, discard, or work around another task's
    state.
 
-3. **Regenerate MAM-private.** MAM-private reads MAM-basics from its primary clone,
-   `C:/Users/BenDe/GitRepos/MAM-basics`, never from a linked worktree, and requires the census
-   inputs committed there. When step 1's commit is on a linked worktree's branch, first
-   fast-forward the clean primary clone to that verified commit, locally; nothing is pushed
-   before step 7. From `C:/Users/BenDe/GitRepos/MAM-private`, run its refresh profile with its
+3. **Regenerate MAM-private.** MAM-private reads MAM-basics from the same forest's full clone,
+   never from a linked worktree, and requires the census inputs committed there. When step 1's
+   commit is on a linked worktree's branch, first
+   fast-forward the clean home clone to that verified commit, locally; nothing is pushed
+   before step 7. From the same forest's full MAM-private root, run its refresh profile with its
    repository interpreter:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-private/.venv/Scripts/python.exe py/main_0_mega.py --profile mam-refresh
+   ./.venv/Scripts/python.exe py/main_0_mega.py --profile mam-refresh
    ```
 
    Read every MAM-private diff, run the repository's required checks, and commit every explained
@@ -59,7 +60,7 @@ orchestrator or a push that the surrounding instructions do not allow.
    stale MAM-basics input stops the workflow.
 
 4. **Audit phonetic-hbo Pages output.** Inspect the resulting changes in
-   `C:/Users/BenDe/GitRepos/phonetic-hbo`, run that repository's required checks, and commit the
+   the same forest's phonetic-hbo checkout, run that repository's required checks, and commit the
    explained Pages changes on `main`. If regeneration legitimately
    produced no phonetic-hbo diff, record the no-op and continue without an empty commit. An
    unexplained diff or evidence that the output did not use the just-committed MAM-private state
@@ -72,19 +73,19 @@ orchestrator or a push that the surrounding instructions do not allow.
    Rerun the post-stress survey:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_accgram.py survey-post-stress-meteg
+   ./.venv/Scripts/python.exe py/main_accgram.py survey-post-stress-meteg
    ```
 
    Generate the authored pages from that survey:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_authored.py gen-site --trust-surveys
+   ./.venv/Scripts/python.exe py/main_authored.py gen-site --trust-surveys
    ```
 
    Then run the required complete product pipeline again:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+   ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
    Audit every diff. Expected survey or page movement is dependent regeneration, not a census
@@ -96,14 +97,14 @@ orchestrator or a push that the surrounding instructions do not allow.
    work must be committed before this command:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --all
+   ./.venv/Scripts/python.exe py/main_diff.py mpplus --all
    ```
 
    Read every change-log diff. Changes to reports for named historical releases are unexpected.
    Run the freshness guard:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_diff.py mpplus --check
+   ./.venv/Scripts/python.exe py/main_diff.py mpplus --check
    ```
 
    Require current artifacts. If the refresh changed book data but produced no change-log diff,
@@ -114,7 +115,7 @@ orchestrator or a push that the surrounding instructions do not allow.
 
 7. **Run final gates, integrate, and push in dependency order.** If MAM-basics work ran in a
    linked worktree, merge current `main` into the worktree branch according to the repository's
-   worktree procedure, rerun every required final gate there, and fast-forward the clean primary
+   worktree procedure, rerun every required final gate there, and fast-forward the clean home
    clone only after the gates pass. Run the full suite after the last executable-source,
    test, schema, shared-data or cross-repository-path change likely to break it. A still-relevant
    suite result is not repeated merely for integration; later documentation, comment, record or
@@ -122,7 +123,7 @@ orchestrator or a push that the surrounding instructions do not allow.
    final mega after merging current main:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+   ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
    Run `git diff --check` through the checkout's required exact-path Git invocation. Require
@@ -132,7 +133,7 @@ orchestrator or a push that the surrounding instructions do not allow.
    incorporate the new state, rerun the affected generators and gates, and audit every new diff
    before retrying.
 
-8. **Verify the final state.** Fetch the three remotes and require each primary checkout to be
+8. **Verify the final state.** Fetch the three remotes and require each full clone to be
    clean, on `main`, and at the same commit as `origin/main`. A local commit
    left ahead, a remote commit left ahead, or any tracked residue means the workflow is not
    complete.

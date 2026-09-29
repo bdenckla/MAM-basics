@@ -4,6 +4,12 @@ Tracked copies of the machine-level Claude Code configuration that lives outside
 repo, in `~/.claude/` (`C:/Users/BenDe/.claude/` on Windows). The Claude instruction file is a
 minimal wrapper around the single common user-level body in `dot-Codex`.
 
+Full clone forests and their own environments follow `doc/clone-forests.md`. Canonical
+configuration deployment runs from any full MAM-basics clone after the changes are pushed.
+Codex's `dot-Codex/retired-skills.txt` declares explicit live skill removals; checks report
+remaining retired destinations, and deployment includes removal in its verified rollback
+transaction. Other personal skills remain untouched.
+
 | Path in here | Live location |
 | --- | --- |
 | `user-wide-CLAUDE.md` | `~/.claude/CLAUDE.md` |
@@ -64,11 +70,10 @@ turn the observation into permanent installation policy.
 The common body, wrapper, and skills have tracked canonical copies, and Claude Code loads their
 deployed destinations. Ben's decision, 2026-09-13: **edit the tracked canonical copy, never the
 live copy.** Commit the edit in its MAM-basics development checkout, integrate it into `main`,
-and push `main`. Then run the deployment from `C:/Users/BenDe/GitRepos/MAM-basics`, the primary
-clone:
+and push `main`. Then run the deployment from any full MAM-basics clone with its own environment:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
+./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
 ```
 
 The command fetches `origin` and uses only the freshly updated
@@ -84,7 +89,7 @@ The read-only form uses the same fresh source and reports `clean`, `drift`, or `
 every destination:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
+./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
 ```
 
 Ordinary `py/main_repo_maintenance.py` runs that check automatically, verifies the installed

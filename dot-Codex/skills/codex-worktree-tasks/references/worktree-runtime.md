@@ -29,21 +29,21 @@ environment so its Git descendants inherit the trust entry. The ownership warnin
 establish corruption, dirt, or a wrong commit. Trust does not grant filesystem access: if a Git
 metadata write crosses a sandbox boundary and is denied, use the normal escalation path.
 
-## Share the primary clone's Python environment
+## Use the home clone's Python environment
 
-A worktree normally has no `.venv` because the directory is ignored. Use the primary clone's
+A worktree normally has no `.venv` because the directory is ignored. Use the worktree's home clone's
 interpreter by absolute path while keeping the current directory and script path in the
 worktree:
 
 ```powershell
-C:/Users/BenDe/GitRepos/<repo>/.venv/Scripts/python.exe py/main_<x>.py
+C:/absolute/home-clone/.venv/Scripts/python.exe py/main_<x>.py
 ```
 
-CPython puts the worktree script's directory on `sys.path[0]`, so the primary clone's
+CPython puts the worktree script's directory on `sys.path[0]`, so the worktree's home clone's
 interpreter still imports the worktree's `py/` modules. A repository root derived from
 `Path(__file__)` also remains the worktree.
 
-Never junction or symlink the primary `.venv` into the worktree: worktree removal can follow the
+Never junction or symlink the home clone's `.venv` into the worktree: worktree removal can follow the
 junction and empty the real environment. Do not copy the environment as a shortcut; Windows
 console scripts embed the source interpreter's absolute path. A worktree whose declared purpose
 is testing a different dependency set may have a real environment of its own; say why.

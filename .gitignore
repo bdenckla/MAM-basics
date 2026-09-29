@@ -1,4 +1,5 @@
 .claude/projects/
+.claude/worktrees/
 ~$*
 __pycache__/
 .novc/
