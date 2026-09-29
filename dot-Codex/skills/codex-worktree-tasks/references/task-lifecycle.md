@@ -63,9 +63,8 @@ branch wait until the task has ended on Windows; never force removal around a li
 Load `mam-repository-topology` and its `references/repository-maintenance.md`, section
 “Completed linked worktrees”. That reference is the common retirement policy for Claude,
 Codex, both owners, and an exact named target. `codex` is a candidate selector, not a separate
-cleanup system. The shared executor protects Git state, retains and verifies `.novc`, records
-provenance, uses non-forced removal and `git branch -d`, and conservatively records Windows
-residue. Retained material disposal remains a separate recorded decision.
+cleanup system. Follow that reference's retirement eligibility, ownership evidence, approval gates,
+verified retention and executor procedure; do not duplicate its removal recipe here.
 
 For Codex provenance, the adapter reads task IDs and cwd values from `state_*.sqlite` under
 `CODEX_HOME` (default `$HOME/.codex`) and treats a corresponding `thread-writer-locks/<id>.lock`

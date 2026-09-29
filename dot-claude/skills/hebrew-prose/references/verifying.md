@@ -5,6 +5,7 @@
 `MAM-basics/doc/agent-planning-principles.md` §"Generated Outputs Are the Tests" is the full rule.
 In short:
 
+- Edit the declared generator, then regenerate its output. Preserve declared hand-authored exceptions.
 - Regenerate the relevant JSON and HTML with the **real CLI command**.
 - Inspect the generated files for the expected changes.
 - Confirm that files expected to be unchanged **are** unchanged.
@@ -51,15 +52,10 @@ one place the skill's "never a loose word" rule is suspended: `references/mam-ba
 §'The post-stress-meteg pages say plain "word"' records Ben's decision of 2026-09-08, and
 `py/tests/test_post_stress_meteg_plain_word.py` enforces it by forbidding "chanted" in every one.
 
-**From a MAM-basics worktree, set `REPOS_ROOT` and regenerate. The ban this paragraph carried
-until 2026-09-09 has been withdrawn, both reasons it gave having been fixed.** It read "Never
-from a git worktree, only from that repo root", and named two breakages, one loud and one
-silent. Each is disposed of below, and the history is kept rather than erased: the silent one
-was a real defect that reached a published file.
-
-```powershell
-$env:REPOS_ROOT = "C:/Users/BenDe/GitRepos"
-```
+From a MAM-basics worktree, follow `AGENTS.md`, “Running tests”, and the worktree runtime
+reference. Siblings normally resolve through Git's common-directory metadata; `REPOS_ROOT`
+is an override for an unusual layout. The worktree ban withdrawn on 2026-09-09 had named a
+loud failure and a silent provenance failure; their historical dispositions follow.
 
 1. **The loud one, `mb_cmn/read_books_from_mam_parsed_plus.py`'s cwd-relative `"../MAM-parsed"`
    default, no longer tells a worktree from the repo root, because it is dead in both.** The
@@ -88,7 +84,7 @@ $env:REPOS_ROOT = "C:/Users/BenDe/GitRepos"
 
 Measured 2026-09-09 in the worktree
 `C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/verify-worktree-regeneration`,
-at commit `20ebbac1`, tree clean, with `REPOS_ROOT` set as above: `py/main_accgram.py
+at commit `20ebbac1`, tree clean, with `REPOS_ROOT=C:/Users/BenDe/GitRepos`: `py/main_accgram.py
 survey-post-stress-meteg` (51s), `py/main_authored.py gen-site` (53s, all eleven deploy-root
 pages) and `py/main_accgram.py generate-html-maqaf-nonfinal-accents` (6s) each rewrote their
 tracked artifacts byte-identically, `git status --porcelain` staying empty throughout. The suite
@@ -103,11 +99,11 @@ while this paragraph read "Never" the skill contradicted the repo's own instruct
 diff there before trusting a worktree regeneration. Reinstating the old ban for those trees was
 considered and rejected the same day, as a claim of breakage with no measurement behind it.
 
-Tests, from the repo root — or from a worktree with `REPOS_ROOT` set, per the paragraph above —
-with the venv's own interpreter (the system Python has neither pytest nor PLY):
+Tests run from the verified repository root with the home clone's interpreter, following
+`AGENTS.md`, “Running tests”, and the worktree runtime reference:
 
 ```bash
-.venv/Scripts/python.exe py/main_test.py
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
 ```
 
 `py/main_test.py` is the only runner — a bare `pytest` failing to collect is the designed state,
@@ -177,34 +173,20 @@ Prior art for a fuller claim/verifier scheme is **MAM-basics**: `py/mb_author/cl
 `py/verify_mp/` (one verifier per id in a module-level `REGISTRY`), and the generated index
 `doc/mp-claims.md`. Copy those id/subject/verifier conventions rather than inventing new ones.
 
-## Do not write more tests
+## Test-policy authority and dated rationale
 
-Only two shapes have ever paid, across all twenty repos (2026-07-25 audit: four occasions where a
-test demonstrably found something, **zero** recorded cases of a pre-existing example-based unit
-test later catching a regression):
+The common body, “Tests are differential or lint-shaped”, owns the current test-shape rule.
+Follow the repository's declared exceptions, including MAM-basics' `ws_bot` and cloud-only
+test declarations. `doc/agent-planning-principles.md`, “Generated Outputs Are the Tests”,
+preserves the rationale; this reference does not add another test policy.
 
-1. **A differential check against an independent oracle** — the PLY parity comparator against the
-   frozen Goerwitz C checker (the parity number *was* the port's completion criterion), the
-   Decalogue transcription checks against the vendored strands, a MAM-private project's verse
-   reconstruction compared against that project's own input (private annex §5).
-2. **A mechanical lint over the tree** — a decidable property of the *source text*:
-   `py/tests/test_transliterations.py` (wlc-utils#26), `test_no_decomposed_composites_tree_wide`,
-   `test_h_dot_below_nfc.py`. All three are in MAM-basics' `py/tests/` since 2026-08-01.
-
-Anything else: regenerate and read the diff. Do **not** write an example-based unit test pinning
-one hand-picked case, string or name — 253 of wlc-utils' 807 commits touch `py/tests`, much of it
-the suite being dragged through terminology sweeps it does not police, and no CI runs pytest in
-any repo.
-
-**A missing input must FAIL, never skip.** `25a7800` removed twenty-one guards that reported green
-having verified nothing. Skips are a *semantic* channel in this suite (a skip reports that a page
-diverges from its strand), so an environment skip corrupts the signal. An empty `@parametrize`
-list also reports as a skip — hence the `or ["(none committed)"]` fallbacks, which are the failure
-mechanism and must stay.
-
-**Do not enforce any of this mechanically.** "Is this test example-based?" is not decidable, and
-#27 → #49 is the cautionary tale: a guard test faithfully enforced decomposed ḥ across 21 files
-until the policy reversed to NFC. This is advice a reviewer can override.
+The 2026-07-25 audit recorded four occasions where a test demonstrably found something and
+zero recorded cases of a pre-existing example-based unit test later catching a regression.
+Its differential examples included the PLY parity comparator against the frozen Goerwitz C
+checker and the Decalogue checks against vendored strands. Its lint examples included the
+transliteration and NFC checks. Those are dated audit observations, not a current census.
+The historical removal of twenty-one missing-input guards by `25a7800` explains the fail-loud
+rule; it does not override the repository's subsequently declared cloud exception.
 
 ## Mechanics that bite while editing this prose
 
@@ -238,17 +220,9 @@ until the policy reversed to NFC. This is advice a reviewer can override.
   I/O preserves LF endings and normalization).
 - **Files change under you mid-session.** Ben edits the same file in parallel — re-diff before
   staging, and commit only your own work.
-- **Sibling paths break in agent worktrees, and `REPOS_ROOT` is the fix — the prefix is no longer
-  `WLC_`.** A worktree under `.claude/worktrees` sits a level too deep for `repo_root().parent` to
-  land on a sibling clone, so `mb_cmn/paths.py` resolves each sibling by per-repo
-  `REPO_<NAME>_DIR`, else `REPOS_ROOT` joined with the name, else `repo_root().parent`. **The two
-  names were `WLC_SIBLINGS_ROOT` and `WLC_<NAME>_DIR` until 2026-08-01**, when the override chain
-  moved out of wlc-utils into MAM-basics; `py/tests/test_mb_cmn_paths.py`'s module docstring
-  records the rename and its reason, that "a module six repos vendor should not advertise a
-  seventh repo's name". **The example this bullet gave, `../MAM-simple`, has been corrected as
-  well**: MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc and MAM-OSIS are landed products
-  inside MAM-basics, so the siblings the override still serves are MAM-private and a temporary
-  redirect-host clone.
+- **Sibling paths and test invocation follow the repository's instructions.** MAM-basics'
+  `AGENTS.md`, “Running tests”, and `codex-worktree-tasks/references/worktree-runtime.md`
+  own the current procedure; do not copy an override recipe here.
 - **Committing and pushing: follow the common `~/.codex/AGENTS.md` body, section "Git and
   commits", imported by Claude Code through `~/.claude/CLAUDE.md`.** This bullet cites that
   section rather than restating it. It read

@@ -25,3 +25,6 @@ Read this reference when writing or auditing issue citations.
    such a number a form no renderer reads as an issue: a UXLC change as its change id,
    `2026.02.05-109`; a Yeivin section as "ITM section 194"; a design-document item as "design doc
    §9 item 6".
+
+4. In issue or PR bodies, link current repository guidance with a `blob/main` URL and historical
+   evidence with an immutable commit URL.

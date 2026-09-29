@@ -5,7 +5,6 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --run-black
     .venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --today-only
     .venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --repos MAM-basics
-    .venv/Scripts/python.exe py/main_repo_util.py --check-memory-health --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner claude --workspace-file all-repos.code-workspace
     .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner codex
     .venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner both
@@ -70,7 +69,6 @@ from typing import Sequence
 
 from mb_cmn import paths
 from repo_util.audit_line_terms import run_audit_line_terms_across_repos
-from repo_util.check_memory_health import run_check_memory_health_across_repos
 from repo_util.check_repo_standards import run_check_repo_standards_across_repos
 from repo_util.worktree_retirement import (
     inspect_worktrees,
@@ -86,7 +84,7 @@ from repo_util.clean_worktrees import (
 from repo_util.commit_across_repos import run_commit_across_repos
 from repo_util import maintenance_policy
 from repo_util.report_destination import assert_report_destination_ok
-from repo_util.repo_selection import load_workspace_repo_dirs, select_repo_infos
+from repo_util.repo_selection import select_repo_infos
 from repo_util.run_black import problem_repos, run_black_across_repos
 from repo_util.user_config_sync import run_user_config_sync
 
@@ -101,7 +99,6 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument("--run-black", action="store_true")
     action_group.add_argument("--audit-line-terms", action="store_true")
     action_group.add_argument("--check-repo-standards", action="store_true")
-    action_group.add_argument("--check-memory-health", action="store_true")
     action_group.add_argument(
         "--clean-worktrees",
         action="store_true",
@@ -299,14 +296,14 @@ def build_parser() -> argparse.ArgumentParser:
         "--report-json",
         help=(
             "Write JSON report for --run-black, --audit-line-terms,"
-            " --check-repo-standards or --check-memory-health"
+            " --check-repo-standards"
         ),
     )
     parser.add_argument(
         "--report-txt",
         help=(
             "Write text report for --run-black, --audit-line-terms,"
-            " --check-repo-standards or --check-memory-health"
+            " --check-repo-standards"
         ),
     )
 
@@ -519,10 +516,6 @@ def main(argv: Sequence[str] | None = None) -> int:
         repos=args.repos,
         today_only=args.today_only,
     )
-    # Kept before any filtering, because --check-memory-health resolves a cited
-    # path against the whole workspace rather than against the selection. See
-    # run_check_memory_health_across_repos' docstring for the measured figures.
-    workspace_repo_dirs = load_workspace_repo_dirs(workspace_file, repos_root)
     repo_infos = _filter_by_visibility(repo_infos, args.visibility)
     if not repo_infos:
         print(
@@ -596,15 +589,6 @@ def main(argv: Sequence[str] | None = None) -> int:
             exclude_dot_venv=args.exclude_dot_venv,
             report_json=report_json,
             report_txt=report_txt,
-        )
-        return 0
-
-    if args.check_memory_health:
-        run_check_memory_health_across_repos(
-            repo_infos,
-            report_json=report_json,
-            report_txt=report_txt,
-            resolution_repo_dirs=workspace_repo_dirs,
         )
         return 0
 

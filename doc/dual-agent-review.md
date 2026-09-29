@@ -163,29 +163,12 @@ reason, 2026-09-11: keeping such documents current is maintenance without end, a
 them more confusing rather than less, since a reader cannot tell how the writer could have known
 at the time what the document now says.
 
-Each finished document has at most one live sibling, `<stem>-update.md`. Corrections, later
-measurements, later State, and remediation dispositions go in that file. Keep the update file true
-while the base remains tracked: append later dated entries and correct stale present-tense claims
-in place. Never create `<stem>-update-N.md`.
-
-When the update file is created, insert one line directly below line 3 of the base: `Updates and
-later status: [<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary
-joining of a prose paragraph that begins on line 3 without changing its text, is the only
-post-completion edit to the base. Each update entry names the passage it corrects by that passage's
-own words, since line numbers drift. A spent base and its optional one update file are one
-retirement family and may be retired together under the repository's manual retirement procedure.
-For retirement references and Ben-authorized reclassification, follow
-`mam-repository-topology`'s `references/repository-maintenance.md`,
-"Manual document retirement".
-
-A historical numbered sibling in Git history remains historical evidence; the live policy neither
-creates another numbered sibling nor uses the historical file as authority for doing so.
-
-The `State:`-line declaration for update files is in `py/repo_util/check_repo_standards.py`'s
-module docstring, under “THE `State:` LINE ON doc/*-update.md”.
-
-A document that describes the present is the opposite case and is kept true in place: `CLAUDE.md`,
-the READMEs, the docstrings, this file, and a plan still being executed.
+Load `iterative-document-editing`, “Finished receipts and maintained documents”, for the sole
+update sibling, line-four pointer, passage identification and effective State procedure.
+Its “MAM-basics and MAM-private State conventions” section owns non-review State forms;
+“Review filenames and State lines” below owns review-specific exceptions.
+Present-state documents stay true in place. Load `mam-repository-topology`, “Manual document
+retirement”, for receipt-family retirement and Ben-authorized reclassification.
 
 ### The shared origin branch — Ben's decisions, 2026-09-09 and 2026-09-28 (D11, revised)
 

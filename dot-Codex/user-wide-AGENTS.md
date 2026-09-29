@@ -35,6 +35,14 @@ In a Claude cloud session, MAM-basics' hook installs the common body, Claude wra
 The checked-out branch is not necessarily `main`, and the hook never overwrites an existing live
 file.
 
+## Memory retirement
+
+Do not create, update, or consume Claude auto memory or Codex memories as current guidance.
+Legacy memory files may be read as evidence for an authorized retirement triage. Maintained
+repository knowledge belongs in its owning tracked instructions, skills or documents.
+Account-specific values belong in explicit account configuration. Retirement requires a
+verified backup and Ben's approval of the exact deletion list.
+
 ## Risk has two independent axes
 
 1. **Product reach** is repository-specific. Use the repository's declared product scopes. In
@@ -67,6 +75,8 @@ matters; clearing one axis does not clear the other.
   `main` is pushed.
 - Ask before rewriting history or discarding work: force-push, amend, rebase, hard reset, branch
   deletion, stash drop, or equivalent operations.
+- Correct a false claim in a pushed commit message through a later related commit or maintained
+  record; leave the historical message intact unless Ben explicitly requests rewriting.
 - In an elevated Windows session, give the first direct Git invocation and every subsequent Git
   invocation the exact repository path through a per-command `safe.directory`. Never use
   `safe.directory=*` or add a global trust entry. A parent program that launches Git supplies the
@@ -179,7 +189,7 @@ user-explicit verification requirements take precedence.
   recovery, or archival.
 - Load `worktree-forest` for a pinned multi-repository worktree forest. Do not apply that skill
   to an ordinary single-repository worktree.
-- Load `prune-Codex-state` only when Ben asks to review Codex memory or plan files. The skill
+- Load `prune-Codex-state` only when Ben asks to review Codex plan files. The skill
   requires explicit confirmation before deleting anything.
 - Load `verse-links` whenever Ben asks for links for a verse or atom; the skill runs the
   repository generator rather than constructing URLs by hand.
@@ -197,6 +207,9 @@ messages and GitHub bodies: write a uniquely named file and pass `git commit -F`
 `--body-file`. One plain, self-contained command is fine; assembled shell pipelines and shell
 control flow are not. Prefer `git -C <path>` to changing directories as part of a compound
 command.
+
+Write explicit UTF-8 with declared line endings; repository attributes and external-format
+exceptions govern rather than an unconditional all-files-LF rule.
 
 A throwaway scratch script has one requirement: it does its requested job and no more. It may
 ignore source-style preferences, but it still uses explicit UTF-8 handling when non-ASCII text
@@ -231,56 +244,14 @@ Ben.
 
 ## Plans and finished dated records
 
-Every executable plan is a handoff artifact for a fresh session with no access to the surrounding
-conversation, even when execution may begin immediately. A plan never assumes same-session
-execution or uncompacted context. Keep the plan proportional: a short task can have a short
-standalone plan.
+Every executable plan must stand alone for a fresh executor. Load `iterative-document-editing`
+for the plan checklist, cumulative revisions, handoffs, and finished dated records. Its
+“Executable plans” and “Finished receipts and maintained documents” sections are the
+procedures of record.
 
-Every repository execution plan is worktree-compatible by default. It identifies the development
-worktree, primary integration checkout, required baseline, shared interpreter, exact verification,
-commit discipline, and integration sequence. If a task genuinely cannot run in a worktree, the
-plan says why and names the alternative checkout.
-
-After substantial planning or investigation, prefer execution in a fresh worktree session. Use
-same-session execution when the work is small and repeating discovery would cost more.
-
-In each plan:
-
-- use absolute repository paths and name the checkout where each command runs;
-- name the skills and instruction files to load before editing;
-- attribute and date decisions instead of using “this session” or “as discussed”;
-- attach a re-measurement command and baseline commits to figures that must remain current;
-- say which outputs are expected not to change and treat an unexpected diff as a finding;
-- cite a searchable anchor as well as any line number;
-- state preconditions, verification commands, and commit and integration discipline.
-
-A figure answering a passing question may remain a dated measurement with no maintained
-reproduction path if the plan says that explicitly.
-
-A finished dated review, remediation plan, completed plan, or execution record is a receipt.
-Each receipt has at most one live sibling, `<stem>-update.md`. Corrections, later measurements,
-later State, and remediation dispositions go in that file. Keep the update file true while the
-base remains tracked, and never create `<stem>-update-N.md`. When the update file is created,
-insert one line directly below line 3 of the base: `Updates and later status:
-[<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary joining of a
-prose paragraph that begins on line 3 without changing its text, is the only post-completion edit
-to the base. A spent base and its optional one update file are one retirement family and may be
-retired together under the manual retirement procedure. A historical numbered sibling in Git
-history remains historical evidence; it does not authorize another numbered sibling. Keep
-present-state documents, instructions, README files, comments, and docstrings true in place.
-
-In MAM-basics and MAM-private, an unprefixed `doc/review-findings-<date>.md` belongs to the
-single-agent Claude review series and the Claude half of blind Design B. A Codex Design B review
-uses `doc/codex-review-findings-<date>.md`. A standard sequential alternating round instead uses
-`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`; Agent 1 owns odd turns, Agent 2 owns
-even turns, and either Claude or Codex may be Agent 1. The private series stays in MAM-private.
-
-Each update entry identifies the passage it corrects by that passage's own words,
-not only by a finding number or line number.
-
-For retirement references and Ben-authorized reclassification, follow
-`mam-repository-topology`'s `references/repository-maintenance.md`,
-"Manual document retirement".
+Load `mam-repository-topology`, “Manual document retirement”, before retiring a receipt family
+or carrying out Ben-authorized reclassification. The applicable repository review procedure
+owns review filenames and review State conventions.
 
 ## Format changed Python with Black
 
@@ -357,6 +328,12 @@ subject rather than using a bare `# Report`.
   directly; avoid headings such as “One more thing” or “Worth flagging.”
 - Lead every reported finding with its disposition: it has been fixed, it is filed as a named
   issue, or it remains unfixed for a stated reason. Do not bury the disposition in later detail.
+
+- Lead with the conclusion and the reason affecting the decision. Keep routine narration brief.
+- Use bold for structural labels or first definitions, rather than running emphasis.
+- Do not reopen a dismissed finding without new evidence.
+- Describe a push as pushed or on origin; reserve public/private for repository visibility.
+- Name the actual file and searchable passage when locating evidence or a decision.
 
 These rules apply to pages, docstrings, comments, commit messages, issues, plans, and chat.
 

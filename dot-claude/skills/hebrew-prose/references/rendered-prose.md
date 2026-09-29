@@ -78,6 +78,12 @@ is a checker error name.
   prose only when that attribution or method is itself needed for the reader's argument or
   evaluation.
 
+When adjacent Hebrew spans' order matters, separate them with strong Latin text or appropriate
+HTML isolation. Neutral punctuation alone can join the RTL run. Use isolation for an observed
+ordering problem. For unpointed-Hebrew font behavior, follow
+`MAM-basics/py/accgram/almost_errors_html_shared.py`'s `wrap_hebrew_runs`; the helper owns the
+detailed classification.
+
 ## Cite the two books as ITM and CoS, with the full title on hover
 
 Ben, 2026-07-28: *"'Breuer, Chapter 9' doesn't say what breuer book … use CoS and ITM
@@ -214,6 +220,10 @@ comment block: that is a primary observation, and no test will defend it.
 
 How the harness works belongs in the docstring, not on the page (wlc-utils#79 tracks the sweep;
 wlc-utils#77 bare "the strand" and wlc-utils#78 the two senses of "strand" are its siblings).
+
+Keep a page focused on its declared question. Narrowing the presentation does not authorize
+dropping data. Preserve useful omitted analysis in an existing suitable reference or an
+authorized issue.
 
 ## Handing a page to Ben
 

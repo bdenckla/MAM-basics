@@ -163,8 +163,12 @@ Two properties of the series matter to every review in it.
    replaces it: **no scope widening and no new exception is owed for `dot-claude/` or `dot-Codex/`**,
    which point 1 above is what settles.
 
-The convention of record for both properties is the "The doc/ directory standard" section of
-`py/repo_util/check_repo_standards.py`'s module docstring. Read it there rather than re-deriving it.
+Receipt and State procedures are in `iterative-document-editing`; review exceptions are in
+`doc/dual-agent-review.md`, “Review filenames and State lines”. Read those authorities rather
+than re-deriving their rules. The standards checker retains the dated doc-only rationale.
+
+Compare a finding with the baseline before attributing it to a reviewed edit. Identify whether
+the reviewed change introduced the finding or the finding predated that change.
 
 ## What a review file contains
 
@@ -178,7 +182,7 @@ founding it. A review that departs from it should say why in its opening paragra
    since <date>".
 2. **Line 3 is the `State:` line**, directly under the H1, recording what was true when the review
    finished. Later remediation State and every disposition go in the review's single live update
-   file. `check_repo_standards.py`'s docstring is where the vocabulary is declared.
+   file. `doc/dual-agent-review.md`, “Review filenames and State lines”, owns review vocabulary.
 3. **The opening paragraphs say how the file was written**: which session, which commit it was frozen
    at, and anything that happened to it on the way into the tree.
 4. **`## Scope, anchors and census`**: the window's repository and its commit range, named by
@@ -401,27 +405,10 @@ After a review is written, and after any review of it:
 
 ### Verification cadence during remediation — Ben's decision, 2026-09-13
 
-Remediation uses three verification gates, chosen by test-breakage risk rather than by the number
-of commits or handoffs:
-
-1. Every commit gets `git diff --check`, formatting for each changed source file, and directly
-   relevant targeted tests or lints.
-2. The full suite runs after the last change with a meaningful likelihood of breaking it:
-   executable source, tests or test infrastructure, schemas, shared data, cross-repository path
-   behavior, or another surface the repository identifies. Documentation, comments, review
-   records and instruction-only commits are batched; none of those commits or handoffs by itself
-   requires another full-suite run or expires the last relevant result. If no later test-risky
-   change follows, that result remains the verification result for final close-out.
-3. A targeted generator runs during development when useful for a product-affecting change. A
-   repository-wide generation or regeneration pipeline runs earlier only when a generator,
-   orchestration or product change makes a differential checkpoint materially useful, and always
-   at the final integration gate where repository instructions require it. MAM-basics' complete
-   mega is not a per-unit check.
-
-Deferred broad verification still requires small, coherent commits, each intended to be valid.
-A final failure may be isolated by bisect, but the cadence does not license a knowingly broken
-intermediate commit. A repository-specific or user-explicit requirement for more verification
-wins. Test-breakage risk remains separate from the public/product risk and hard-to-undo-act axes.
+Follow the common instruction body's “Verification cadence for multi-session work” section.
+Repository-specific and user-explicit checks still apply; MAM-basics' final integration gate
+is in `AGENTS.md`. Verification follows test-breakage risk independently of product reach
+and the difficulty of undoing an act.
 
 The 2026-09-10 remediation is the case that produced the rule. At the time of Ben's decision, the
 live update summarized 18 successful full-suite runs; the known actual lower bound was 20 because

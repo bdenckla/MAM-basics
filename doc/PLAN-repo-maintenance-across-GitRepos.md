@@ -34,7 +34,7 @@ Do not enumerate GitHub repositories and subtract exclusion lists, and do not ad
 The earlier scope paragraph's subtraction and gist instructions are superseded.
 
 After the mechanical repository actions, the `doc/` sweep, and the template-projection audit in
-step 7, inspect completed task artifacts under `C:/Users/BenDe/Documents/Codex`. Preserve
+step 6, inspect completed task artifacts under `C:/Users/BenDe/Documents/Codex`. Preserve
 `C:/Users/BenDe/Documents/Codex/ReviewForests`, even when empty, and preserve every active task
 folder. Do not create another maintenance script for this judgment step.
 
@@ -368,7 +368,6 @@ Actions are mutually exclusive, one per invocation. Repository sweeps use worksp
 | `--inspect-worktrees` | no | selects `--worktree-owner claude`, `codex` or `both`; `--worktree PATH` targets one exact registration |
 | `--clean-worktrees` | no | compatibility alias for Claude-only inspection; `--session-ended` validates paths without retiring them |
 | `--check-repo-standards` | no | |
-| `--check-memory-health` | no | |
 | `--audit-line-terms` | no | |
 | `--run-black` | **REFORMATS** | its own commit, never riding along |
 | `--commit-across-repos` | **COMMITS** | do NOT use — see H3 |
@@ -410,78 +409,46 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRe
 ```
 
 Use `claude` or `codex` to narrow selection. Read every candidate and blocker. Inspection
-removes nothing; `WORKTREE_PROBLEM_COUNT` reports repository-audit errors. Follow step 8 for
+removes nothing; `WORKTREE_PROBLEM_COUNT` reports repository-audit errors. Follow step 7 for
 reviewed per-target preparation and execution, and H8 for runtime limitations.
 
-**2–4. The three read-only checks**, in any order:
-```
-.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
-.venv/Scripts/python.exe py/main_repo_util.py --check-memory-health   --workspace-file all-repos.code-workspace --report-txt <file>
-.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms      --workspace-file all-repos.code-workspace --report-txt <file>
-```
-Use `--report-txt`: the one-line-per-repo stdout summary gives counts, and the text report
-gives the actual findings. Write reports into `.novc/`, not into a tracked directory.
+**2–3. The two read-only checks**, in either order, from the primary MAM-basics root:
 
-**`--check-memory-health` checks a memory directory's mechanics, never whether a memory is still
-worth having**, and the judgment half is deliberately not part of maintenance: it belongs to the
-on-demand skill `dot-claude/skills/prune-claude-state/`, live at `~/.claude/skills/` and
-`~/.agents/skills/`, which Ben invokes as `/prune-claude-state` (the skill carries
-`disable-model-invocation: true`, so a session cannot start it). That skill reads a repo's
-memories and its slice of `~/.claude/plans/`, cross-checks each against live GitHub issue state
-rather than the file's own prose, and deletes nothing without an explicit confirmation. Its own
-statement of why it sits outside this runbook is that it is expensive. Do not fold it in, and do
-not prune memories by judgment during a maintenance sweep. A worked pass, 2026-09-12 in
-MAM-basics: five memories deleted as describing a world that no longer exists or as superseded by
-`~/.claude/CLAUDE.md`, five repointed at paths the evacuations had moved, two pairs merged, and
-every `MEMORY.md` hook cut to one clause, taking the index that loads each session from 14,766 to
-about 7,500 bytes.
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
+```
 
-**5. `--run-black`**, last of the mechanical steps and the only one that rewrites source:
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --workspace-file all-repos.code-workspace --report-txt <file>
+```
+
+Use `--report-txt` for the actual findings and keep reports in the visibility-appropriate `.novc/`.
+Memory-health maintenance was retired by Ben's approved memory-retirement proposal on 2026-09-28.
+The August execution records above remain historical evidence. The pruning skills now review
+draft plans only and remain separate, on-demand procedures requiring exact deletion approval.
+
+**4. `--run-black`**, last of the mechanical steps and the only one that rewrites source:
 ```
 .venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace
 ```
 Expect `BLACK_PROBLEM_COUNT` absent/zero — see H5 for why, and what a nonzero one means.
 
-**6. The `doc/` sweep — genuinely last, and the only step that is not mechanical.** It deletes
+**5. The `doc/` sweep — genuinely last, and the only step that is not mechanical.** It deletes
 tracked files and needs a judgment `main_repo_util.py` deliberately does not make, so it runs
 after everything else, where a wrong call is plainest in the diff. The standard it applies is
-the "The doc/ directory standard" section of `py/repo_util/check_repo_standards.py`: a doc file
-that only records finished work is deleted, not archived; git history keeps it.
+manual policy in `mam-repository-topology/references/repository-maintenance.md`,
+“Manual document retirement”. Load `iterative-document-editing`, “Finished receipts and
+maintained documents”, for corrections and receipt-family treatment. Keep or retire a complete
+family. Audit tracked and GitHub references, classify current guidance versus historical
+evidence, verify the archival commit and each family path, and resolve every reference before
+the deletion decision. The topology reference owns the exact audit and reclassification gates;
+`github-issues` owns body edits, comments and complete read-back. None of these acts is automated
+by the maintenance entrypoints.
 
-Receipt immutability and retention are independent. A finished dated document is never edited
-while it remains tracked apart from its authorized line-4 update pointer and a mechanically
-necessary joining of a prose paragraph that begins on line 3 without changing its text, but
-receipt status does not make the document permanent. Treat a base receipt and its optional one
-live `<stem>-update.md` as one retirement family: keep or delete the whole family, never only one
-member. Never create `<stem>-update-N.md`. A historical numbered sibling found in Git history
-remains historical evidence and belongs to the historical family in which it appears; preserving
-that file literally does not make numbered siblings current policy.
-
-Before deleting a receipt family, audit references in tracked files as well as GitHub
-issue bodies and comments. Classify each reference as current guidance or historical
-evidence. A current-guidance reference must reach a maintained successor or block
-deletion. A historical reference must reach the full 40-character SHA of the last
-commit whose tree contains every family member. Verify every target path there and
-link the base and its update so the correction sequence remains visible. Correct
-present-state documents and source comments in place; correct a finished receipt
-through its single live update. Do not bulk-edit finished bases. This audit and the
-retirement decision remain manual.
-
-Ben may explicitly reclassify a finished receipt family as a maintained document.
-Record Ben's decision and date, identify the original family and an archival commit
-containing every member, and preserve the research provenance and later corrections.
-If the transition consolidates the update into the maintained document, remove the
-update and its pointer in the same commit and repair current-guidance references;
-historical references retain recoverable access to the original family.
-Reclassification is separate from retirement and is never automatic.
-
-For an open issue, correct a stale body reference with `py/main_github_issue_edit.py`, first with
-`--dry-run`, and read the entire outgoing body before applying it. For a closed issue, or a
-reference found in any comment, add a dated agent-written correction comment; never edit or delete
-an existing comment. Then read back the complete issues, delete the family in one repository
-commit, verify, and push. The archival commit must already be on `origin/main` before the issue
-links are changed. This audit and the deletion decision remain manual; neither
-`py/main_repo_maintenance.py` nor `py/main_repo_util.py` automates them.
+For each selected repository, inspect tracked paths across the whole tree so a root-only glob
+cannot miss a plan inside an evacuated subtree. Read effective State and determine whether the
+document still supplies current guidance; an executed plan can remain load-bearing. Then apply
+the named reference-audit and approval gates to each proposed retirement family.
 
 **Only two folders under `GitRepos` have plans — MAM-basics 6 and MAM-private 4**, and that
 second figure read 3 until 2026-08-29, when running this step against MAM-private turned up a
@@ -522,7 +489,7 @@ against repos that have earned their docs. For doc/ files that are *not* plans, 
 the inbound-reference one that same section of `check_repo_standards.py` describes; note that
 the screen inverts on plans and must not be used on them.
 
-**7. Audit recursive template and node walkers for undeclared projections — judgment work, not
+**6. Audit recursive template and node walkers for undeclared projections — judgment work, not
 a `main_repo_util.py` action.** The same recursion syntax serves two opposite purposes: a
 template inventory correctly visits every classified branch, while a Scripture survey normally
 selects one ketiv/qere, qamats, cantillation, or stress-helper branch. A mechanical rule cannot
@@ -564,7 +531,7 @@ claim that the traversed values are Scripture. Record the files and functions re
 walkers found valid, so the next maintenance run can distinguish a repeated review from a missed
 area.
 
-**8. Retire completed Codex task folders under
+**7. Retire completed Codex task folders under
 `C:/Users/BenDe/Documents/Codex` — judgment work outside the Python CLI.** This is normal
 repository maintenance even though the folder is outside `GitRepos`, but it deliberately is **not**
 a new `main_repo_util.py` action: an automatic process cannot determine whether a task is active,
@@ -597,26 +564,11 @@ the evidence, and leave an ambiguous task folder in place. The Recycle Bin makes
 recoverable, but it does not free disk space until emptied. Do not delete the `Documents/Codex`
 root while an active task folder or the `ReviewForests` root remains.
 
-Linked-worktree retirement has one owner-neutral policy. Load `mam-repository-topology`
-and `references/repository-maintenance.md`, section “Completed linked worktrees”; load
-`codex-worktree-tasks` and its lifecycle reference when coordinating a Codex task. Claude-only,
-Codex-only and both select candidates. An exact path selects one target. All selections share
-the same current/primary, active/leased, locked, tracked/untracked, integration, reflog and
-object gates, plus citation review and verified `.novc` retention.
-
-Inspect with `--inspect-worktrees --worktree-owner claude|codex|both`, or
-`--inspect-worktrees --worktree "C:/absolute/ended-worktree"`. Prepare the selected exact path
-with `--prepare-worktree-retirement "C:/absolute/ended-worktree" --task-ended --preflight-file
-"C:/absolute/preflight.json"`. Read the JSON and settle every tracked reference to a `.novc`
-path that this retirement will relocate; prepare a new file with `--citations-reviewed
---citation-note "disposition"` when necessary. Execute with
-`--execute-worktree-retirement "C:/absolute/preflight.json" --task-ended` under the ordinary
-user token from a separate checkout. Preparation is nondestructive and does not run the
-operational simulation. Every execution and resume attempt runs
-`py/repo_util/worktree_retirement_simulation_test.py` first and fails closed before reading the
-preflight or mutating the target; only after that pass does the shared executor revalidate and
-retire the target. The full absolute PowerShell commands and metadata requirements are in the
-shared skill reference.
+Linked-worktree retirement has one owner-neutral policy. Load `mam-repository-topology`,
+`references/repository-maintenance.md`, “Completed linked worktrees”, for selectors, ownership
+evidence, ended-task and approval gates, citation review, verified retention and exact commands.
+Load `codex-worktree-tasks` and its lifecycle reference for Codex task coordination. Follow the
+shared procedure rather than reproducing a retirement recipe in this runbook.
 
 `--clean-worktrees` now selects Claude candidates for inspection only. Its `--session-ended`
 compatibility argument cannot remove anything. Codex-named prepare/execute actions delegate
@@ -686,13 +638,18 @@ Three constraints on that fan-out:
 
 ---
 
-## 5. Concrete pending items, found 2026-08-07 — re-verify each
+## 5. Historical pending items, found 2026-08-07
+
+These are dated observations. Memory-health commands and memory-carryover recommendations in
+this list were superseded by complete memory retirement on 2026-09-28. They authorize no
+current scan, migration to another memory store, or transcript deletion. Use the approved
+retirement inventory and its separate exact deletion gate.
 
 - **holman-ketiv-qere has a leftover worktree and branch.**
   `.claude/worktrees/festive-shamir-dad9ec` (detached at `ca1beea`) and branch
   `claude/festive-shamir-dad9ec`, "Register two unrun test modules in main_test.py". Confirm
   merged into that repo's default branch before deleting. Re-verify this historical finding;
-  current retirement requires the reviewed preflight in step 8 and leaves orphan branches alone.
+  current retirement requires the reviewed preflight in step 7 and leaves orphan branches alone.
 - **masorah-books has 5 orphaned worktree project directories** under
   `C:/Users/BenDe/.claude/projects/` (`C--Users-BenDe-GitRepos-masorah-books--claude-worktrees-*`).
   Same litter cleaned out of MAM-basics on 2026-08-07 (7 dirs, 50.2 MB). `--check-memory-health`
@@ -703,7 +660,8 @@ Three constraints on that fan-out:
   `C:/Users/BenDe/.claude/projects/C--Users-BenDe-GitRepos-breuer-cos/memory/`. breuer-cos was
   superseded on 2026-07-31 when Breuer's *Cantillation of Scripture* was merged into
   masorah-books. Per `check_memory_health.py`'s docstring these are memories worth keeping, so
-  they want **carrying over into masorah-books' memory directory, not deleting.**
+  the August recommendation was **carrying over into masorah-books' memory directory**;
+  that recommendation is now superseded.
   That docstring also cites `yeivin-itm` as having four such files; verified 2026-08-07 that
   `C--Users-BenDe-GitRepos-yeivin-itm` now has NO memory directory, so that half of its
   example is already resolved and **the docstring is stale on it** — worth correcting while
@@ -729,7 +687,7 @@ cleanup mechanism.
 
 **H2 — Tracked references to relocated `.novc` paths require review.** Unique ignored content
 outside `.novc` blocks retirement. Every selected owner's `.novc` is inventoried, relocated and
-verified under step 8, even when small. Every tracked reference to one of those exact relative or
+verified under step 7, even when small. Every tracked reference to one of those exact relative or
 absolute paths requires review; generic `.novc` policy prose does not. Later disposal is a
 separate recorded decision. Historical measurement on 2026-08-07 found seven spent ignored files
 in two spared MAM-basics worktrees; that observation does not establish that today's contents are
@@ -820,13 +778,11 @@ Findings from that run, worth carrying forward:
 ## 8. What is NOT expected to change
 
 - **No tracked source file should change except by `--run-black`.** The other cross-repository
-  sweeps read only. Shared retirement in step 8 relocates ignored evidence and changes only
+  sweeps read only. Shared retirement in step 7 relocates ignored evidence and changes only
   the reviewed target registration and its eligible branch; ownership only selects candidates.
 - **`HEX_ESCAPES` findings are advisory and are never auto-fixed** —
   `check_repo_standards.py` says findings are reported, never auto-fixed. Do not start
   converting `\uXXXX` escapes to `\N{...}` across repos as part of a maintenance sweep.
-- **A dangling `[[link]]` in a memory file is not an error.** It marks something worth writing
-  later. MAM-basics' one dangling link was deliberately left in place on 2026-08-07.
 - **A skip in a test suite may be a semantic signal, not a problem.** In MAM-basics' accgram
   tests a skip reports that a page diverges from its strand.
 
@@ -836,8 +792,8 @@ Findings from that run, worth carrying forward:
 
 Re-run each sweep after acting on its findings and confirm the counts moved the way you
 expect: `WORKTREE_PROBLEM_COUNT` absent, only the reviewed targets and their eligible branches
-retired, no unexpected change outside the selected owners, `WORKTREE_PROJECT_DIRS` at 0 for any repo
-whose orphaned session directories you removed, and `MIXED_FILES=0`/`NO_TERM=0` for line terms.
+retired, no unexpected change outside the selected owners, and `MIXED_FILES=0`/`NO_TERM=0`
+for line terms. Session-directory deletion is outside these maintenance checks.
 An active or retained worktree of either owner, or a preserved orphan branch, can keep counts nonzero.
 
 For any repo with its own test suite, run it from that repo's root with that repo's own venv

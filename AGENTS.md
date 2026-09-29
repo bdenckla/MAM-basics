@@ -121,33 +121,14 @@ encountered by past sweeps, read the skill's `references/mam-basics-trackers.md`
 
 ## Review filenames and finished dated documents
 
-An unprefixed `doc/review-findings-<date>.md` is the single-agent Claude review series and the
-Claude half of blind Design B. A Codex Design B review of the same window is
-`doc/codex-review-findings-<date>.md`. A standard sequential alternating round instead uses
-`doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`; Agent 1 owns odd turns, Agent 2 owns
-even turns, and either Claude or Codex may be Agent 1. The private series stays in MAM-private.
-`doc/periodic-review.md` and `doc/dual-agent-review.md` are the procedures of record.
+Follow `doc/dual-agent-review.md`, “Review filenames and State lines”, for the filename matching
+the agent and review round, author and turn ownership, and review State exceptions. Private
+review records stay in MAM-private; `doc/periodic-review.md` owns the series procedure.
 
-A finished dated review, remediation plan, completed plan, or execution record is a receipt.
-Each receipt has at most one live sibling, `<stem>-update.md`. Corrections, later measurements,
-later State, and remediation dispositions go in that file. Keep the update file true while the
-base remains tracked, and never create `<stem>-update-N.md`. When the update file is created,
-insert one line directly below line 3 of the base: `Updates and later status:
-[<stem>-update.md](<stem>-update.md).` That pointer, plus a mechanically necessary joining of a
-prose paragraph that begins on line 3 without changing its text, is the only post-completion edit
-to the base. A spent base and its optional one update file are one retirement family and may be
-retired together under the manual retirement procedure. A historical numbered sibling in Git
-history remains historical evidence; it does not authorize another numbered sibling. A document
-describing the present—this file, README files, docstrings, and a plan still being executed—is
-kept true in place. The `State:` and retirement rules live in
-`py/repo_util/check_repo_standards.py`'s module docstring.
-
-Each update entry identifies the passage it corrects by that passage's own words,
-not only by a finding number or line number.
-
-For retirement references and Ben-authorized reclassification, follow
-`mam-repository-topology`'s `references/repository-maintenance.md`,
-"Manual document retirement".
+Load `iterative-document-editing`, “Finished receipts and maintained documents” and
+“MAM-basics and MAM-private State conventions”, for receipt corrections and non-review State.
+Load `mam-repository-topology`, “Manual document retirement”, before retiring a receipt family
+or carrying out Ben-authorized reclassification.
 
 ## Repository topology is task-specific
 
@@ -237,22 +218,18 @@ designed state; do not add `sys.path` surgery, a root `conftest.py`, pytest `pyt
 `PYTHONPATH`, or an editable installation. Pytest discovers `test_*.py` and `*_test.py`
 automatically; no registry exists.
 
+Compare pytest summary counts using the same options.
+
 Sibling paths use `mb_cmn.paths.repo_root()`, `repos_root()`, `sibling_repo(name)`, and the
 required-sibling helpers, not cwd-relative parent paths or ad hoc `Path.parents` chains. The
 local product directories do not require sibling clones.
 
 ## Writing tests: differential and lint-shaped only
 
-Do not add an example-based unit test unless Ben asks. Add tests in one of two shapes:
-
-1. A differential check against an independent oracle.
-2. A mechanical lint over source text or the repository tree.
-
-Otherwise regenerate the tracked artifact with the real command and read its diff; the artifact
-is the test. A missing input fails rather than skips, and an empty parametrization must not report
-green. The `ws_bot` tests are the deliberate exception because a live Wikisource edit is an
-outward-facing act with no regeneratable artifact. `doc/agent-planning-principles.md`, “Generated
-Outputs Are the Tests”, carries the evidence and full rationale.
+Follow the common instruction body's “Tests are differential or lint-shaped” rule.
+The `ws_bot` tests remain the deliberate exception because a live Wikisource edit is an
+outward-facing act with no regeneratable artifact. `doc/agent-planning-principles.md`,
+“Generated Outputs Are the Tests”, carries the dated evidence and rationale.
 
 ## This is the only repository instruction body
 

@@ -48,7 +48,7 @@ junction and empty the real environment. Do not copy the environment as a shortc
 console scripts embed the source interpreter's absolute path. A worktree whose declared purpose
 is testing a different dependency set may have a real environment of its own; say why.
 
-Check for sibling paths computed as `repo_root().parent / "<sibling>"` before running a suite.
-They resolve under the managed-worktree directory rather than under `GitRepos`. Use the
-repository's supported override, such as `REPOS_ROOT`, instead of editing or reading from an
-unrecorded primary clone.
+Before running a suite, follow the repository's test-entrypoint and sibling-path instructions.
+MAM-basics resolves a linked worktree's siblings through Git's common-directory metadata; its
+“Running tests” section is the authority. `REPOS_ROOT` remains an override for an unusual layout,
+not a normal worktree prerequisite.

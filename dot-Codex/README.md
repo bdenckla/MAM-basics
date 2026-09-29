@@ -41,7 +41,7 @@ Tracked Codex-only skills:
 | --- | --- |
 | `codex-worktree-tasks` | Verify, use, recover, hand off, and archive ordinary Codex-managed worktree tasks, including branch naming, shared virtual environments, exact checkout identity, and final integration. |
 | `worktree-forest` | Create, verify, reuse, hand off, and retire pinned multi-repository worktree forests, including the Windows SID `safe.directory` workaround. |
-| `prune-Codex-state` (`skills/prune-claude-state/`) | Review Codex auto-memory and plan files for the current repository, cross-check them against live issue state, and propose stale files for deletion. |
+| `prune-Codex-state` (`skills/prune-claude-state/`) | Review this repository's Codex draft plans against live tracked state and complete relevant issues, with exact deletion approval. |
 
 The general forest procedure is canonical in `skills/worktree-forest/SKILL.md`.
 The retired [review-findings-2026-09-01.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-01.md) records the first forest's history,
@@ -54,7 +54,14 @@ under `dot-claude/skills`; `dot-claude/shared-skills.txt` declares their live Co
 under `~/.agents/skills`. The two state-pruning
 skills are deliberately separate: Claude's `prune-claude-state` remains canonical
 under `dot-claude/skills`, while Codex's `prune-Codex-state` is canonical here at
-`dot-Codex/skills/prune-claude-state/` because it addresses Codex memory and plans.
+`dot-Codex/skills/prune-claude-state/` because it addresses Codex draft plans.
+
+## Machine-local runtime discovery
+
+Discover the configured runtime when it is needed. In the desktop app, use
+`load_workspace_dependencies` when available to locate its bundled Node.js, Python and artifact
+libraries; otherwise inspect the actual installed runtime. Old fleet versions and claims that
+Node.js is absent are dated observations, not current configuration or environment-pinning policy.
 
 ## Machine-local project-instruction budget
 

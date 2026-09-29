@@ -50,8 +50,14 @@ Tracked so far:
 | `iterative-document-editing` | The shared workflow for evolving multi-turn or multi-session documents, including cumulative revisions, planning and execution separation, and one-writer handoff. |
 | `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
 | `mam-wikisource-refresh` | The safe end-to-end workflow for refreshing MAM book data from Hebrew Wikisource, including the dependent refresh after a live bot run, auditing generated products, and regenerating change logs only after the refreshed data has been committed. |
-| `prune-claude-state` | A manual hygiene pass over Claude Code's *own* persisted state for the current repo — the per-repo auto-memory directory and that repo's slice of the global `~/.claude/plans/`. Cross-checks each file against live GitHub issue state and proposes stale ones for deletion, never deleting without explicit confirmation. Both directories live outside git, so there is no undo. |
+| `prune-claude-state` | A manual review of this repository's global Claude draft plans against live tracked state and complete relevant issues; deletes only an exact approved list. |
 | `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex folio with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
+
+## Windows desktop diagnostics
+
+An old AppData redirection observation is stale until reproduced. If the observation is useful
+to a current diagnosis, record the runtime, date, reproduction and configuration home. Do not
+turn the observation into permanent installation policy.
 
 ## Main-sourced deployment and check
 

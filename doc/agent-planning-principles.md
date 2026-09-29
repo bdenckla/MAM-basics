@@ -15,9 +15,13 @@ Instead, use the generated outputs as the verification surface:
 
 In these workflows, examining the generated HTML and JSON is the test.
 
+The common instruction body's “Tests are differential or lint-shaped” section owns current
+test policy. The audit and examples below are dated rationale; repository-declared exceptions
+remain in the owning repository's instructions.
+
 ### The two shapes of test that have earned their place
 
-An audit of git history, code comments, and issues across all of Ben's repos (2026-07-25) found four occasions where a test demonstrably found something, and **zero** recorded cases of a pre-existing example-based unit test failing later and thereby catching a regression. All four have one of two shapes. If a proposed test is neither shape, do not write it.
+An audit of git history, code comments, and issues across all of Ben's repos (2026-07-25) found four occasions where a test demonstrably found something, and **zero** recorded cases of a pre-existing example-based unit test failing later and thereby catching a regression. All four had one of the two shapes described below.
 
 **1. A differential check against an independent oracle.** Regenerate the whole corpus and compare it against a frozen reference, or against a second derivation of the same fact.
 
@@ -29,7 +33,7 @@ An audit of git history, code comments, and issues across all of Ben's repos (20
 
 ### What not to write
 
-Do not write an example-based unit test that pins one hand-picked case, a string, or a name. Two reasons, both from the record:
+The common test rule prohibits example-based unit tests unless Ben asks. Two reasons from the dated audit:
 
 - No such test in this repo is recorded as ever having caught anything.
 - They are pure carrying cost. 253 of 807 commits touch `py/tests`, and much of that is the suite being dragged through terminology sweeps it does not police: `simanim_*`→`simtiq_*`, the `ws/` strand prefix, "oddball"→ungrammatical, the meteg standardization.
@@ -38,7 +42,7 @@ Bear in mind that no CI runs pytest here — `pages.yml` is a Pages deploy that 
 
 ### A missing input must fail, never skip
 
-`25a7800` deleted twenty-one guards that skipped when an input was absent, each reporting green having verified nothing. Skips are a **semantic** channel in this suite — the one remaining site reports that a page diverges from its strand — so environment skips mixed in make that list unreadable. An empty `@parametrize` list is itself reported as a skip, which is why the `or ["(none committed)"]` fallbacks exist and must stay.
+`25a7800` deleted twenty-one guards that skipped when an input was absent, each reporting green having verified nothing. In that dated audit, skips were a **semantic** channel: the one remaining site reported a page's divergence from its strand. That was a dated population, not today's skip census; current cloud-only exceptions are declared on their test modules. An empty `@parametrize` list is itself reported as a skip, which is why the `or ["(none committed)"]` fallbacks exist and must stay.
 
 ### Do not enforce this rule mechanically
 
@@ -84,6 +88,9 @@ Prefer small, purpose-named modules for new feature areas rather than swelling e
 
 This keeps review simpler and makes it easier to abandon, revise, or phase in new behavior without disturbing mature code paths.
 
+For internal entrypoints, correct invalid usage text without widening accepted inputs or adding
+interface features unless the task calls for them.
+
 ## Size Phases to Natural Boundaries
 
 Size phases to coherent goals and natural verification points, not to any model's context limit. A capable agent can take on a large phase in one session, so do not pre-fragment work to fit a smaller executor; combine steps that share a goal and a verification point.
@@ -115,3 +122,14 @@ After writing the phase state back, compact the conversation context before cont
 Prefer real workflow commands over narrow synthetic checks. For generated-output workflows, the primary verification should be the same CLI command a maintainer would run to refresh the artifacts.
 
 If a smaller local invocation is useful inside an intermediate phase, use it only as provisional verification. The final phase should still run the real regeneration command and inspect the resulting tracked artifacts.
+
+Before presenting a performance cost as unavoidable, check for duplicated work and profile the
+part that dominates. A behavior task does not automatically gain a page deliverable: inspect
+adjacent products, since tracked JSON may already provide durable evidence.
+
+A checker's acceptance rate is diagnostic. The correctness of its rules and newly flagged cases
+decides tightening or reversion; acceptance is not the objective.
+
+Distinguish exercised behavior from source-based inference or prior runs. Identify the checkout,
+command and material limitation. Use a supported scratch-output override when a command could
+overwrite a durable result.

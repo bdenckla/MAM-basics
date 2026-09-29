@@ -207,6 +207,11 @@ a test rather than surfacing as a puzzling runtime message.
 
 ## 3. Check before committing
 
+For image adjudication, identify the printed page and line and supply the smallest useful
+evidence. Avoid slow per-token boxing when the location is clear; preserve the padding that
+keeps the relevant marks visible. Ask one independent decision at a time with the facts needed
+to answer it, following `iterative-document-editing`, “Maintain cumulative state”.
+
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py check $HOME/Downloads/simtiq_dt_elyon_p208-transcription.json $HOME/Downloads/simtiq_dt_elyon_p209-transcription.json --key dt elyon printed
 ```
@@ -312,6 +317,10 @@ with no committed transcription fails the page build) and regenerate the three p
 `generate-html`. Pin the verdict in `test_edition_transcriptions.py` too: a departure appearing
 where none is pinned means an edition prints an accent sequence the prose grammar rejects and
 nobody has looked at it.
+
+For an authorized issue-tracked task, finish with its checklist and outcome update through
+`github-issues/references/reading-and-writing.md`, “Correcting a stale fact in an open issue's
+body”. Additions and closed-issue corrections follow that reference's comment procedure.
 
 ## What the harness cannot tell you
 

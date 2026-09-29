@@ -22,17 +22,21 @@ inspect coverage. It derives whether a repository has Python from tracked `*.py`
 when a repository with tracked Python has no Black installation. A vendored file is formatted in
 its source repository, not in each destination copy. A repo-wide reformat is a separate commit.
 
+For unexpectedly large formatting diffs, compare `git diff --ignore-cr-at-eol --stat`.
+Cite the declaring file rather than restating its roster or exemptions. Do not infer permission
+to restore or discard files, or to change version-pinning policy, from a formatting diff.
+
 ## Manual document retirement
 
 Use MAM-basics' live `doc/PLAN-repo-maintenance-across-GitRepos.md`, section “The `doc/` sweep —
-genuinely last”, for the cross-repository procedure. The sweep is judgment work and remains
-outside the maintenance scripts. A finished dated document is immutable while tracked apart from
-its authorized line-4 update pointer and a mechanically necessary joining of a prose paragraph
-that begins on line 3 without changing its text. A spent base receipt and its optional one live
-`<stem>-update.md` form one retirement family and may be deleted together. Never create a numbered
-update sibling. A historical numbered sibling remains historical evidence and belongs to the
-historical family in which it appears; literal preservation does not make that naming current
-policy.
+genuinely last”, for cross-repository discovery and ordering. The sweep is judgment work and remains
+outside the maintenance scripts. A document that only records finished work and supplies no
+needed current guidance may be retired after the reference audit and Ben's approval. Delete
+the tracked receipt family rather than creating a second archive in the tree; Git history
+keeps the verified historical family. Executed does not itself mean spent.
+
+Load `iterative-document-editing`, “Finished receipts and
+maintained documents”, for immutable bases, permitted corrections and receipt-family treatment.
 
 Before deleting a receipt family, audit references in tracked files as well as GitHub
 issue bodies and comments. Classify each reference as current guidance or historical

@@ -98,6 +98,17 @@ maintained; the historical snapshots are inputs to the change log.
 
 ## Consumer cautions
 
+Consumers use this parsed product and its supported reader rather than reconstructing Scripture
+from raw Wikitext. Within MAM-basics, `mb_cmn.read_books_from_mam_parsed_plus` reads `plus/` with
+the explicit product path from `mb_cmn.paths.mam_parsed_path()`. Specialized material absent
+from this product uses its declared source. Pipeline implementations may read their raw inputs.
+
+### Illustrations inside notes
+
+A note may illustrate an overburdened letter as two copies joined by `+`. Such an illustration
+is not automatically running edition text or evidence of a manuscript reading. Apply the
+consumer's declared projection; a manuscript claim requires manuscript evidence.
+
 ### Whitespace templates
 
 A whitespace template can be the only separator between adjacent Scripture strings in

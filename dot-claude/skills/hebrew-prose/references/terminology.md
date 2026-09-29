@@ -40,6 +40,10 @@ chanted because it is clear from context."*
   stays short: accgram's one-letter appendix heading is `Word` with `title="The chanted
   word; …"`.
 
+Call base glyphs letters. Name the specific printed tradition rather than generalizing a
+finding to all printed editions. “Paseq vs legarmeh” below distinguishes Unicode PASEQ from
+the grammatical term.
+
 ## Naming an atom by position, not by role
 
 Say **"a non-final atom of a compound."**
@@ -233,7 +237,8 @@ all — it **ends** a chanted verse. Only a space truly divides words. Umbrella 
 
 ## Just say "has"
 
-Full list in `SKILL.md`. Two extra notes:
+Full list in `SKILL.md`. Do not describe co-located marks as stacked without verified spatial
+evidence. Name the letter and marks and use “has”. Two extra notes:
 
 - The rule is **not only about corpora** — the subject that "has" an accent is just as often an
   atom, a chanted word, or a compound. The false-agency argument is not what makes *bears* wrong
@@ -442,7 +447,14 @@ across the poetic files — a pending sweep, not the standard.
 - **For these two code points, ASCII internal labels use `sheva-na` and `dagesh-xazaq`.**
   These are Unicode-close names; they do not establish terminology for the abstract concepts.
 
+## Ungrammatical verses and checker statuses
+
+Use “ungrammatical verse” as the umbrella while preserving the distinct `error`, `no_parse`,
+and `illegal_mark` statuses. Existing oddball identifiers remain compatibility identifiers.
+
 ## Transliteration (accgram)
+
+Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 
 - **ḥet (ח) is never `h`.** ASCII **`x`/`X`** almost everywhere hand-written — identifiers
   (`DEXI`, `MUNAX`, `TARXA`) and free-text comments/docstrings (`dexi`, `munax`, `tarxa`). Real

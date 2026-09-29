@@ -187,42 +187,11 @@ indistinguishable from one inside a string literal.
 
 The doc/ directory standard
 ---------------------------
-A DOC FILE THAT ONLY RECORDS FINISHED WORK IS DELETED, NOT ARCHIVED. Git
-history keeps it; the tree should carry only what a reader needs now. A
-finished dated document is immutable while tracked, apart from its one
-authorized line-4 update pointer and a mechanically necessary joining of a prose
-paragraph that begins on line 3 without changing its text. Each finished document
-has at most one live
-`<stem>-update.md`; never create `<stem>-update-N.md`. Treat the base and its
-optional one update file as one retirement family: keep or delete the whole
-family, never only one member. A historical numbered sibling found in Git
-history remains historical evidence, not authority to create another one.
-
-Before deleting a receipt family, audit references in tracked files as well as GitHub
-issue bodies and comments. Classify each reference as current guidance or historical
-evidence. A current-guidance reference must reach a maintained successor or block
-deletion. A historical reference must reach the full 40-character SHA of the last
-commit whose tree contains every family member. Verify every target path there and
-link the base and its update so the correction sequence remains visible. Correct
-present-state documents and source comments in place; correct a finished receipt
-through its single live update. Do not bulk-edit finished bases. This audit and the
-retirement decision remain manual.
-
-Ben may explicitly reclassify a finished receipt family as a maintained document.
-Record Ben's decision and date, identify the original family and an archival commit
-containing every member, and preserve the research provenance and later corrections.
-If the transition consolidates the update into the maintained document, remove the
-update and its pointer in the same commit and repair current-guidance references;
-historical references retain recoverable access to the original family.
-Reclassification is separate from retirement and is never automatic.
-
-Correct a stale open-issue body through the approved body editor; for a closed issue,
-or a reference in any comment, add a dated agent-written correction comment
-and never edit or delete the old comment. Read back complete issues. The archival
-commit must already exist on origin/main before changing issue links.
-
-Each update entry identifies the passage it corrects by that passage's own words,
-not only by a finding number or line number.
+Document retirement is a manual judgment, not a check this module performs.
+The iterative-document-editing skill, "Finished receipts and maintained documents",
+owns receipt corrections. The mam-repository-topology skill's maintenance reference,
+"Manual document retirement", owns reference audits, family retirement and
+Ben-authorized reclassification. The examples below are historical rationale.
 
 The shape to look for is a plan, a migration note or a decisions log whose
 end result is already in the code -- in the modules it produced, or in their
@@ -283,83 +252,19 @@ enforce this rule mechanically" in the testing rule. If it is ever written,
 have it report the unreferenced filenames and nothing else, never a count,
 which would read as a defect tally against repos that have earned their docs.
 
-THE `State:` LINE, added 2026-08-29 to the plan files then present.
-Correction, 2026-09-09: the "all ten" census written at `9cf48863` omitted
-`doc/PLAN-remediate-review-findings-2026-09-07.md`, added earlier on September 8.
-That commit had eleven direct tracked `doc/PLAN-*.md` files, all with State lines.
-The reviewed `38a606e2` tree had thirteen plans and eleven State lines: the new
-merge and silluq-template plans lacked them. These are dated Git-tree counts,
-not a current census. Line 3 of each file,
-directly under the H1, is one of five words
-plus an optional date: `executed <date>`, `paused <date>`, `live`, `runbook`,
-`pointer`.  Sporadic work is `live`, not `paused`, and needs no state of its own:
-Ben, 2026-08-29, on MAM-private's melody compiler -- "I only work on it
-sporadically, but I certainly plan to return to it, and I don't think it is worth
-it ... to introduce some additional state like paused".  What `paused` marks is
-work somebody stopped on a nameable day, which is why it carries one.
-It exists because the inbound-reference screen above is the wrong instrument for
-a plan. The retired `PLAN-evacuate-the-rest-of-three-repos.md` records executed work;
-its complete family is recoverable at
-https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-evacuate-the-rest-of-three-repos.md.
-The spent
-`PLAN-evacuate-python-from-codex-index-trio.md` was deleted on 2026-08-29 but remains
-preserved in Git history. The evacuations wrote plan citations into the code they
-produced, so for plans a high reference count can report that the work landed, not
-that the file is still wanted. Keep the screen for other `doc/` files; read the
-`State:` line for plans.
+State conventions and receipt corrections
+----------------------------------------
+The iterative-document-editing skill's "MAM-basics and MAM-private State conventions"
+and "Finished receipts and maintained documents" sections own plan and update policy.
+`doc/dual-agent-review.md`, "Review filenames and State lines", owns review exceptions.
+This checker does not mechanically validate State shapes or decide whether a document
+is spent. The historical inbound-reference screen above remains unimplemented.
 
-For the current review-file naming and State rules, see `doc/periodic-review.md` for
-the series and `doc/dual-agent-review.md`, "Review filenames and State lines" (Ben's
-decision, 2026-09-09, D10), for the files of a two-agent window. D10
-covers the initial reviews, Codex counterparts and exceptional additional reviews,
-and later numbered turns; the historical review glob below names only the initial
-Claude series. This pointer adds no mechanical standards check.
-
-The State line is written by whoever last moves a phase, in the SAME commit as
-the phase work.  `c0d9e21` is why that clause is here: the b2-to-t451 plan's
-Phase 7 was done at 15:20 on 2026-08-27 and its record was not written until
-17:38, and inside that window two sessions read the plan and both reported the
-phase unstarted.  A plan file is not an oracle for its own state unless
-something keeps it one.
-
-THE `State:` LINE ON doc/review-findings-*.md, added 2026-09-01 to all
-seven, same position and same purpose: line 3, under the H1, `acted on
-<date>` plus any clause naming what is not.  It arrived with the retirement
-of the tracking issue each review used to file.  From 2026-07-29 to
-2026-09-01 every review filed one -- wlc-utils#87, then MAM-basics #219,
-#228, #231, #232, #261, #263 -- whose body was a thin pointer to the doc.
-Ben, 2026-09-01: "are the (thin?) github issues corresponding to
-doc/review-findings-*.md serving any purpose? I'm not looking at them."
-They were not.  Every comment on all seven was agent-written from Ben's
-account, so the thread was one agent reporting to the next; nothing
-mechanical read them; and of the seven only #219 was ever adopted as a
-short citation handle (ten sites in this repo, because the 2026-08-03
-review was the one with numbered items), its five successors cited from
-nowhere at all.  The open/closed state was the single thing the issue held
-that the doc did not, and the State line is that, in the file a reader is
-already in.  #261 and #263 were closed on 2026-09-01 with a comment saying
-why; the other five were already closed.
-
-THE `State:` LINE ON doc/*-update.md, declared 2026-09-12: line 3, directly
-under the H1, the word `open` plus a first-entry date -- the position and
-shape the two declarations above use.  The declaration follows the practice
-rather than founding it.  All eight update files already carried the line,
-several sessions having reached the same wording with nothing to copy from:
-measured 2026-09-12, six on `main` and two arriving with the 2026-09-10
-review round, five reading "first entry" and three "first entries".  Nothing
-checks it, here or anywhere else.
-
-While a plan is being executed, keep its State true in place and record a phase
-change in the same commit as the phase work. After the plan becomes a finished
-receipt, a later State correction goes in its update. The latest dated declaration
-of the plan's State in that update is the effective plan State; it is separate from
-the update file's own State. An update remains open while its base is tracked.
-
-An update file is live while its base remains tracked: later dated entries are
-appended and stale present-tense claims are corrected in place. Its `State:` is
-`open` because more entries may be added, and it has no terminal state for as
-long as the document it corrects exists. This is distinct from a live plan,
-whose work is still being done and which therefore ends at `executed <date>`.
+The State convention arrived for plans on 2026-08-29, reviews on 2026-09-01,
+and updates on 2026-09-12. Correction, 2026-09-09: the "all ten" census at
+`9cf48863` omitted a September 8 plan; that tree held eleven direct doc/PLAN-*.md
+files with State lines. The reviewed `38a606e2` tree held thirteen plans, eleven
+with State lines. These are historical Git-tree measurements, not a current census.
 
 What is retired is the THIN POINTER, not issue-filing, and only for the
 review files.  A review that finds work somebody must do still files a real

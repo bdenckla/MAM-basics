@@ -13,6 +13,9 @@ agents, having been on the wrong end of it.
 the remote.** Closing before pushing leaves the issue marked resolved while the fix is still only
 local.
 
+Read what remains before closing. A code move does not resolve an issue; a register citation
+alone does not require an issue to remain open. Preserve issue-specific published-state effects.
+
 1. **Close** with `gh issue close <number> --repo bdenckla/<repo> --comment "<one line>"`, adding
    `--reason "not planned"` when the work will not be done. **Reopen** with `gh issue reopen` and
    the same `--comment`. Both take the comment only as an argument, so a reason longer than one

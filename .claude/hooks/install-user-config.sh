@@ -47,9 +47,9 @@
 # are deliberately not installed here; the relevant cases include:
 #
 #   - dot-claude/skills/prune-claude-state/
-#                          operates on ~/.claude/plans/ and on the per-repo
-#                          auto-memory directory, neither of which reaches a cloud
-#                          container, so it would have nothing to read. It is also
+#                          prunes this repository's global ~/.claude/plans/ drafts,
+#                          which do not reach a cloud container, so it would have
+#                          nothing to read. It is also
 #                          declared disable-model-invocation: true, so it runs only
 #                          when Ben asks for it by name.
 #   - dot-claude/skills/verse-links/
