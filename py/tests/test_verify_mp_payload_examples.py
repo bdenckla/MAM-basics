@@ -6,7 +6,7 @@ from author_misc import mam_parsed_docs_build
 from mb_author import claim as claim_mod
 from verify_mp import payload_examples
 from verify_mp import pattern_match
-from verify_mp.corpus import Context, Corpus, PlainCorpus
+from verify_mp.corpus import Context, Corpus
 
 
 def _make_record(*, claim_id: str, payload, subject: str = "mp:plus"):
@@ -18,12 +18,10 @@ def _make_record(*, claim_id: str, payload, subject: str = "mp:plus"):
     )
 
 
-def _ctx(*, plus_files=None, plain_files=None):
+def _ctx(*, plus_files=None):
     return Context(
         corpus=Corpus(files=[] if plus_files is None else plus_files, book39s=[]),
-        corpus_plain=PlainCorpus(files=[] if plain_files is None else plain_files),
         survey={},
-        survey_plain={},
     )
 
 
@@ -222,9 +220,6 @@ class TestVerifyMpPayloadExamples(unittest.TestCase):
     def test_good_ending_examples_are_claims(self):
         claims = mam_parsed_docs_build.collect_explicit_claims()
 
-        self.assertIn(
-            "mp.plain.example.good-ending-template-stmpl", claims.records_by_id
-        )
         self.assertIn(
             "mp.plus.example.good-ending-template-object", claims.records_by_id
         )

@@ -12,7 +12,7 @@ _KQ_AM2_ROW_INDEX = 2
 def _kq_am2_sug_values(*, claims: ClaimCollection):
     return cmn.emit_claim_by_id(
         claims=claims,
-        claim_id="mp.both.templates.kq-am2.sug-values",
+        claim_id="mp.plus.templates.kq-am2.sug-values",
     )
 
 

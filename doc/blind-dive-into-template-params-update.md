@@ -134,3 +134,16 @@ Verification passed: Black and Ruff, the full suite (1,019 passed, five skipped)
 52 mega steps. The rebuilt tracked artifacts were unchanged. The CLI comparisons and full
 dataset traversal described above also passed; the frozen Psalms note census was checked
 through its read-only row builder.
+
+## The persisted plain product and survey have been retired
+
+Recorded by Codex on 2026-09-28 during execution of
+`doc/PLAN-retire-mam-parsed-plain.md`. The base review's descriptions of
+`MAM-parsed/plain/`, `py/tmpl_survey/survey_plain.py`,
+`out/tmpl-survey-plain/`, and the published plain-template call graphs are now
+historical evidence about the reviewed commit. The maintenance-audit table's
+plain-survey row, the plain half of its stack-path-lookup row, and its plain-corpus
+iterator names are likewise historical evidence about that audit's commit.
+MAM-basics no longer persists or distributes the plain representation or its
+survey. The raw template-shape and expanded-stack checks remain live at the
+transient parser-stage validation boundary in `py/verify_mp/parser_stage.py`.

@@ -10,7 +10,6 @@ digraph mam_pipeline {
     // ── Data stores ──
     node [shape=cylinder];
     ds_parsed_plus        [label="MAM-parsed/plus/"];
-    ds_parsed_plain       [label="MAM-parsed/plain/"];
     ds_ws                 [label="in/mam-ws/\n(Wikisource JSON)"];
     ds_ws_special         [label="in/mam-ws-special/\n(raw Wikitext)"];
     src_ws_live           [label="Hebrew Wikisource"];
@@ -47,7 +46,7 @@ digraph mam_pipeline {
     ds_parsed_plus       -> mam_with_doc;
     ds_parsed_plus       -> mam_simple;
     ds_parsed_plus       -> misc_1;
-    ds_parsed_plain      -> tmpl_survey;
+    ds_parsed_plus       -> tmpl_survey;
 
     // MAM-with-doc outputs
     foi                  -> ds_with_doc;
@@ -73,7 +72,6 @@ digraph mam_pipeline {
     download_ws          -> ds_ws;
     download_ws          -> ds_ws_special;
     ds_ws                -> parse_ws;
-    parse_ws             -> ds_parsed_plain;
     parse_ws             -> ds_parsed_plus;
     ds_ws                -> misc_3;
     ws_bot               -> src_ws_live;

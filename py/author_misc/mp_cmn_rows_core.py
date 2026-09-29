@@ -223,17 +223,6 @@ def accent_rows_for_templates(template_names):
     return rows
 
 
-JER_ROWS = [
-    [
-        author.hbo("מ:ירושלם"),
-        "Handles the masoretic spelling of Jerusalem without $yod. Two params (vowel and accent of $lamed).",
-    ],
-    [
-        author.hbo("מ:ירושלמה"),
-        "Like מ:ירושלם but for the directional form \u201cto Jerusalem\u201d (4 cases).",
-    ],
-]
-
 POETIC_ROWS = [
     [
         author.hbo("ר1"),
@@ -274,10 +263,10 @@ def poetic_rows_for_templates(template_names):
 
 CLAIM_DEFS = (
     _claim_def(
-        "mp.both.templates.kq.set",
+        "mp.plus.templates.kq.set",
         KQ_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "templates": [
                 "כו״ק",
@@ -290,10 +279,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.kq-am2.sug-values",
+        "mp.plus.templates.kq-am2.sug-values",
         KQ_AM2_SUG_LIST,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "מ:קו״כ-אם-2",
             "param": "סוג",
@@ -307,10 +296,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.special-letters.set",
+        "mp.plus.templates.special-letters.set",
         SPECIAL_LETTER_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "templates": [
                 "מ:אות-ג",
@@ -321,10 +310,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.accents.set",
+        "mp.plus.templates.accents.set",
         ACCENT_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "templates": [
                 "מ:לגרמיה-2",
@@ -332,31 +321,17 @@ CLAIM_DEFS = (
                 "מ:מקף אפור",
                 "מ:דחי",
                 "מ:צינור",
-                # גלגל-2, ירח בן יומו-2, מ:טעם, and שני טעמים באות אחת קמץ-תחתון-פתח-עליון
-                # are boring templates (expanded by mpplus_boring_tmpls.py in plus);
-                # they appear only in the plain survey. Verified in PLAIN_ONLY.
-                # אתנח הפוך is documented above but absent from the parsed corpus
-                # (doc-only per novc_tmpl_survey). Excluded from machine verification.
                 "מ:קמץ",
                 "מ:כפול",
             ]
         },
     ),
     _claim_def(
-        "mp.plain.templates.jerusalem.set",
-        JER_ROWS,
-        kind="enum",
-        subject="mp:plain",
-        data={"templates": ["מ:ירושלם", "מ:ירושלמה"]},
-    ),
-    _claim_def(
-        "mp.both.templates.poetic.set",
+        "mp.plus.templates.poetic.set",
         POETIC_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
-            # פרשה-מרכז is a boring template (expanded by mpplus_boring_tmpls.py);
-            # it appears only in the plain survey. Verified in PLAIN_ONLY.
             "templates": ["ר1", "ר2", "ר3", "ר4", "ר0"],
         },
     ),

@@ -124,10 +124,10 @@ KQ_SPECIAL_SUBTYPE_COUNTS = (
 
 CLAIM_DEFS = (
     _claim_def(
-        "mp.both.templates.kq-special.subtypes",
+        "mp.plus.templates.kq-special.subtypes",
         KQ_SPECIAL_ROWS,
         kind="enum",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "מ:כו״ק מיוחד",
             "param": "סוג",
@@ -145,10 +145,10 @@ CLAIM_DEFS = (
         },
     ),
     _claim_def(
-        "mp.both.templates.kq-special.subtype-counts",
+        "mp.plus.templates.kq-special.subtype-counts",
         KQ_SPECIAL_SUBTYPE_COUNTS,
         kind="struct",
-        subject="mp:both",
+        subject="mp:plus",
         data={
             "template": "מ:כו״ק מיוחד",
             "param": "סוג",

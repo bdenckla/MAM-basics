@@ -2,8 +2,8 @@
 
 The sequence combines this repository's processing steps with the wlc steps
 that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
-ordinary sequence begins by deriving MAM-parsed plain/plus from committed
-Wikisource input. The five downstream MAM product generators write into this
+ordinary sequence begins by deriving MAM-parsed plus from committed Wikisource
+input. The five downstream MAM product generators write into this
 repository after the fourth-stage Repoint steps completed on 2026-09-10. One
 step uses the MAM-private sibling, and it only reads it: the post-stress-meteg
 survey reads its Phonetic MAM. A cloud session skips that step (Ben's decision,

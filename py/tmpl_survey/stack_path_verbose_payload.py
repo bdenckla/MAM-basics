@@ -1,17 +1,16 @@
-"""Helpers for verbose stack-path payload construction and de-parsed Wikitext."""
+"""Helpers for verbose plus stack-path payloads and de-parsed Wikitext."""
 
 from mb_cmn import ws_tmpl2 as wtp2
-from ws import ws_unparse
 
 
-def _path_template_context(dataset_key, template_chain):
+def _path_template_context(template_chain):
     assert template_chain
     subtypes = [subtype for subtype, _wtel in template_chain]
     root_subtype, root_wtel = template_chain[0]
     root_ctx = {
         "path_template_subtypes": subtypes,
         "path_root_subtype": root_subtype,
-        "path_root_wikitext": wtel_to_wikitext(dataset_key, root_wtel),
+        "path_root_wikitext": wtel_to_wikitext_plus(root_wtel),
     }
     if len(template_chain) == 1:
         return {
@@ -23,35 +22,28 @@ def _path_template_context(dataset_key, template_chain):
     return {
         **root_ctx,
         "path_parent_subtype": parent_subtype,
-        "path_parent_wikitext": wtel_to_wikitext(dataset_key, parent_wtel),
+        "path_parent_wikitext": wtel_to_wikitext_plus(parent_wtel),
     }
 
 
-def build_root_payload(dataset_key, template_chain):
+def build_root_payload(template_chain):
     assert template_chain
     _root_subtype, root_wtel = template_chain[0]
     return {
-        "path_root_wikitext": wtel_to_wikitext(dataset_key, root_wtel),
+        "path_root_wikitext": wtel_to_wikitext_plus(root_wtel),
         "path_root_json": root_wtel,
     }
 
 
-def build_match_payload(dataset_key, stack, subtype, wtel, template_chain):
+def build_match_payload(stack, subtype, wtel, template_chain):
     return {
         "column": stack[0],
         "stack_path": f"{'/'.join(stack)}/{subtype}",
         "subtype": subtype,
         "match_tree_json": wtel,
-        "match_tree_wikitext": wtel_to_wikitext(dataset_key, wtel),
-        **_path_template_context(dataset_key, template_chain),
+        "match_tree_wikitext": wtel_to_wikitext_plus(wtel),
+        **_path_template_context(template_chain),
     }
-
-
-def wtel_to_wikitext(dataset_key, wtel):
-    if dataset_key == "plain":
-        return ws_unparse.unparse(wtel)
-    assert dataset_key == "plus", dataset_key
-    return wtel_to_wikitext_plus(wtel)
 
 
 def wtel_to_wikitext_plus(wtel):

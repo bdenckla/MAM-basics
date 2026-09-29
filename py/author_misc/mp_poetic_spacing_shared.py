@@ -16,7 +16,7 @@ _POETIC_TEMPLATE_NAMES = (
 
 
 def build_body(*, claims: ClaimCollection, back_doc: str, back_label: str):
-    cmn.emit_claim_by_id(claims=claims, claim_id="mp.both.templates.poetic.set")
+    cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.poetic.set")
     poetic_rows = cmn.poetic_rows_for_templates(_POETIC_TEMPLATE_NAMES)
     back_link = author.anchor_h(back_label, back_doc)
     return [

@@ -34,10 +34,10 @@ class TestExplicitClaims(unittest.TestCase):
 
     def test_claim_collection_duplicate_emissions_preserve_defined_in_provenance(self):
         claims = claim_mod.ClaimCollection()
-        claim_id = "mp.both.templates.kq-special.subtypes"
+        claim_id = "mp.plus.templates.kq-special.subtypes"
         common = {
             "kind": "enum",
-            "subject": "mp:both",
+            "subject": "mp:plus",
             "data": {"allowed": ["ctor", "func"]},
         }
 
@@ -213,18 +213,18 @@ class TestExplicitClaims(unittest.TestCase):
     def test_mp_cmn_import_has_no_claim_side_effects(self):
         importlib.invalidate_caches()
         mp_cmn = importlib.import_module("author_misc.mp_cmn")
-        mpplain = importlib.import_module("author_misc.mpplain")
+        mpplus = importlib.import_module("author_misc.mpplus")
         claims = claim_mod.ClaimCollection()
 
         self.assertTrue(hasattr(mp_cmn, "emit_claim_by_id"))
         self.assertFalse(hasattr(mp_cmn, "emit_claims"))
-        self.assertNotIn("mp.plain.example.top-level-skel", claims.records_by_id)
-        self.assertNotIn("mp.plain.book39.fields", claims.records_by_id)
+        self.assertNotIn("mp.plus.example.top-level-skel", claims.records_by_id)
+        self.assertNotIn("mp.plus.book39.fields", claims.records_by_id)
 
-        mpplain._build_body(claims=claims)
+        mpplus._build_body(claims=claims)
 
-        self.assertIn("mp.plain.example.top-level-skel", claims.records_by_id)
-        self.assertIn("mp.plain.book39.fields", claims.records_by_id)
+        self.assertIn("mp.plus.example.top-level-skel", claims.records_by_id)
+        self.assertIn("mp.plus.book39.fields", claims.records_by_id)
 
     def test_mpplus_aot_build_body_requires_explicit_claims(self):
         aot = importlib.import_module("author_misc.mpplus_aot")
@@ -309,89 +309,30 @@ class TestExplicitClaims(unittest.TestCase):
             with self.subTest(claim_id=claim_id):
                 self.assertIn(claim_id, claims.records_by_id)
 
-    def test_mpplus_diff_from_plain_build_body_can_emit_explicit_claims(self):
-        diff_doc = importlib.import_module("author_misc.mpplus_diff_from_plain")
-        claims = claim_mod.ClaimCollection()
-
-        diff_doc._build_body(claims=claims)
-
-        self.assertIn("mp.plus.diff-from-plain", claims.records_by_id)
-        self.assertIn("mp.plain.template.stmpl-format-example", claims.records_by_id)
-
-    def test_mpplus_plain_only_templates_build_body_can_emit_explicit_claims(self):
-        plain_only_doc = importlib.import_module(
-            "author_misc.mpplus_plain_only_templates"
-        )
-        claims = claim_mod.ClaimCollection()
-
-        plain_only_doc._build_body(claims=claims)
-
-        self.assertIn(
-            "mp.plain.docs.plain-only-templates.categories", claims.records_by_id
-        )
-        self.assertIn(
-            "mp.plain.docs.plain-only-templates.pre-evaluated.handlers",
-            claims.records_by_id,
-        )
-
     def test_mpplus_body_has_no_stale_claim_defs_table(self):
         mpplus_body = importlib.import_module("author_misc.mpplus_body")
 
         self.assertFalse(hasattr(mpplus_body, "_CLAIM_DEFS"))
 
-    def test_mpplain_import_has_no_claim_side_effects(self):
-        importlib.invalidate_caches()
-        mpplain = importlib.import_module("author_misc.mpplain")
-
-        self.assertFalse(hasattr(mpplain, "populate_claims"))
-
-    def test_mpplain_build_body_has_no_implicit_claim_side_effects(self):
-        mpplain = importlib.import_module("author_misc.mpplain")
-        claims = claim_mod.ClaimCollection()
-
-        mpplain._build_body(claims=claims)
-
-    def test_mpplain_has_no_populate_claims_symbol(self):
-        mpplain = importlib.import_module("author_misc.mpplain")
-        self.assertFalse(hasattr(mpplain, "populate_claims"))
-
-    def test_mpplain_build_body_can_emit_explicit_claims(self):
-        mpplain = importlib.import_module("author_misc.mpplain")
-        claims = claim_mod.ClaimCollection()
-
-        mpplain._build_body(claims=claims)
-
-        representative_ids = [
-            "mp.plain.example.top-level-skel",
-            "mp.plain.header.fields",
-            "mp.plain.example.header-job",
-            "mp.plain.example.header-samuel",
-            "mp.plain.book39.fields",
-        ]
-
-        for claim_id in representative_ids:
-            with self.subTest(claim_id=claim_id):
-                self.assertIn(claim_id, claims.records_by_id)
-
     def test_collect_explicit_claims_does_not_write_docs_or_css(self):
         docs_build = importlib.import_module("author_misc.mam_parsed_docs_build")
-        mpplain = importlib.import_module("author_misc.mpplain")
+        mpplus = importlib.import_module("author_misc.mpplus")
 
         with mock.patch(
             "author_misc.mam_parsed_docs_build.styles_mam_parsed.make_css_file_for_mam_parsed"
         ) as make_css_mock, mock.patch(
-            "author_misc.mpplain.gen_html_file",
+            "author_misc.mpplus.gen_html_file",
             side_effect=AssertionError("collect_explicit_claims must not write docs"),
         ), mock.patch(
-            "author_misc.mpplain.build_body",
-            wraps=mpplain.build_body,
+            "author_misc.mpplus.build_body",
+            wraps=mpplus.build_body,
         ) as build_body_mock:
             claims = docs_build.collect_explicit_claims()
 
         make_css_mock.assert_not_called()
         build_body_mock.assert_called_once()
-        self.assertIn("mp.plain.header.fields", claims.records_by_id)
-        self.assertIn("mp.plain.book39.fields", claims.records_by_id)
+        self.assertIn("mp.plus.header.fields", claims.records_by_id)
+        self.assertIn("mp.plus.book39.fields", claims.records_by_id)
 
 
 if __name__ == "__main__":

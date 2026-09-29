@@ -13,7 +13,6 @@ if TYPE_CHECKING:
     from mb_author.claim import ClaimRecord
 
 _PLUS_DIR = str(paths.mam_parsed_dir() / "plus")
-_PLAIN_DIR = str(paths.mam_parsed_dir() / "plain")
 
 
 @dataclass
@@ -29,20 +28,11 @@ class Corpus:
 
 
 @dataclass
-class PlainCorpus:
-    """All parsed plain-corpus files (each entry is the full top-level JSON object)."""
-
-    files: list = field(default_factory=list)  # list of top-level dicts
-
-
-@dataclass
 class Context:
-    """Everything a verifier may need: the loaded corpus plus the survey artifacts."""
+    """Everything a verifier may need: the plus corpus and survey artifact."""
 
     corpus: Corpus
-    corpus_plain: PlainCorpus
     survey: dict  # loaded plus.json from out/tmpl-survey-plus/
-    survey_plain: dict  # loaded plain.json from out/tmpl-survey-plain/
     claim_records: Mapping[str, "ClaimRecord"] | None = None
 
 
@@ -63,52 +53,6 @@ def load_plus_corpus() -> Corpus:
         files.append(data)
         book39s.extend(data["book39s"])
     return Corpus(files=files, book39s=book39s)
-
-
-def load_plain_corpus() -> PlainCorpus:
-    """Load every plain/*.json file.
-
-    Must be called with the repo root as the working directory.
-    """
-    pattern = f"{_PLAIN_DIR}/*.json"
-    paths = sorted(glob.glob(pattern))
-    assert paths, f"No plain JSON files found matching {pattern!r}"
-    files = []
-    for path in paths:
-        with open(path, encoding="utf-8") as fh:
-            files.append(json.load(fh))
-    return PlainCorpus(files=files)
-
-
-def iter_plain_verses(corpus_plain: PlainCorpus) -> Iterator[tuple]:
-    """Yield (book39, ch_key, verse_key, verse) for every verse in the plain corpus."""
-    for top in corpus_plain.files:
-        for book39 in top["book39s"]:
-            for ch_key, chapter in book39["chapters"].items():
-                for v_key, verse in chapter.items():
-                    yield book39, ch_key, v_key, verse
-
-
-def iter_plain_book39s(corpus_plain: PlainCorpus) -> Iterator[dict]:
-    """Yield every book39 dict across all plain corpus files."""
-    for top in corpus_plain.files:
-        yield from top["book39s"]
-
-
-def iter_plain_chapters(corpus_plain: PlainCorpus) -> Iterator[tuple]:
-    """Yield (book39, ch_key, chapter_dict) for every chapter in the plain corpus."""
-    for book39 in iter_plain_book39s(corpus_plain):
-        for ch_key, chapter in book39["chapters"].items():
-            yield book39, ch_key, chapter
-
-
-def iter_plain_col_objects(node) -> Iterator[dict]:
-    """Yield every plain-column dict node (stmpl, custom_tag, etc.) in node."""
-    if isinstance(node, dict):
-        yield node
-    elif isinstance(node, list):
-        for item in node:
-            yield from iter_plain_col_objects(item)
 
 
 def iter_chapters(corpus: Corpus) -> Iterator[tuple]:

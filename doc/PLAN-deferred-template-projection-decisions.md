@@ -348,7 +348,7 @@ stream:
    information. The regenerated holam-he report retained its previous hit set.
    `doc/blind-dive-into-template-params.md`, Finding 2, records the affected examples
    and measured reach.
-2. `py/mb_cmn/plain_template_schema.py:validate_current_plain_template`
+2. `py/mb_cmn/parser_stage_template_schema.py:validate_parser_stage_template`
    validates the exact required and allowed argument identities as well as the
    argument count. Finding 4 records the affected consumers.
 3. Existing shape validators now run before parameters are selected, flattened,

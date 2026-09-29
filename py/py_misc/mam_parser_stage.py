@@ -1,9 +1,7 @@
-"""Build the shared plain-product header and book list."""
-
-from mb_cmn import public_data_consumer_notice as consumer_notice
+"""Build the transient parser-stage wrapper consumed by MAM-parsed plus."""
 
 
-def add_header(light_books, source):
+def add_header(light_books):
     """Wrap an ordered mapping of Hebrew book-name pairs to chapters."""
     he_bns = {}  # An insertion-ordered set.
     he_sbns = []
@@ -22,8 +20,4 @@ def add_header(light_books, source):
         "sub_book_names": he_sbns,
         "chapter_counts": chap_cnts,
     }
-    if source == "wikisource":
-        header["consumer_notice"] = consumer_notice.mam_parsed_notice("plain")
-    elif source != "google":
-        raise ValueError(f"unknown MAM-parsed source: {source!r}")
     return {"header": header, "book39s": book39s}

@@ -2,10 +2,6 @@
 
 import json
 
-MAM_PARSED_PLAIN_DOCUMENTATION = (
-    "https://bdenckla.github.io/MAM-basics/MAM-parsed/plain/html/"
-    "mpplain.html#consumer-notice"
-)
 MAM_PARSED_PLUS_DOCUMENTATION = (
     "https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/"
     "mpplus.html#consumer-notice"
@@ -51,22 +47,8 @@ MAM_PARSED_WHITESPACE_TEMPLATE_RULE = (
 )
 
 
-def mam_parsed_notice(variant: str) -> dict[str, object]:
-    """Return the notice for a MAM-parsed plain or plus payload."""
-    if variant == "plain":
-        variant_rule = (
-            "Plain retains the 0 and triple-tav pseudo-verses and other source "
-            "structure; those records are not automatically Scripture."
-        )
-        documentation = MAM_PARSED_PLAIN_DOCUMENTATION
-    elif variant == "plus":
-        variant_rule = (
-            "Plus omits plain's 0 and triple-tav pseudo-verses, but its remaining "
-            "structures still require documented role and choice handling."
-        )
-        documentation = MAM_PARSED_PLUS_DOCUMENTATION
-    else:
-        raise ValueError(f"unknown MAM-parsed variant: {variant!r}")
+def mam_parsed_notice() -> dict[str, object]:
+    """Return the notice for a MAM-parsed-plus payload."""
     return {
         "summary": (
             "This is a structured dataset, not ready-to-display Scripture; interpret "
@@ -84,23 +66,23 @@ def mam_parsed_notice(variant: str) -> dict[str, object]:
                 "including ketiv/qere, dual cantillation, qamats, and stress-helper "
                 "alternatives where present; do not concatenate the branches."
             ),
-            *(
-                [
-                    "A special-letter template's interrupted spelling and uninterrupted "
-                    "atom-form are two representations of one atom-form; select one text "
-                    "representation rather than collecting both."
-                ]
-                if variant == "plus"
-                else []
+            (
+                "A special-letter template's interrupted spelling and uninterrupted "
+                "atom-form are two representations of one atom-form; select one text "
+                "representation rather than collecting both."
             ),
             (
                 "Reassemble text fragments before identifying atoms or chanted words; "
                 "array, template, and element boundaries are not segmentation "
                 "boundaries."
             ),
-            NARPAS_GROUPING_RULE,
             MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
-            variant_rule,
+            NARPAS_GROUPING_RULE,
+            (
+                "Source boundary records such as the 0 and triple-tav pseudo-verses "
+                "are absent; the remaining structures still require documented role "
+                "and choice handling."
+            ),
             (
                 "For literal search, byte comparison, or MAM-compatible output, "
                 "preserve MAM mark order or transform both sides deliberately; "
@@ -108,7 +90,7 @@ def mam_parsed_notice(variant: str) -> dict[str, object]:
                 "differently."
             ),
         ],
-        "documentation": documentation,
+        "documentation": MAM_PARSED_PLUS_DOCUMENTATION,
     }
 
 

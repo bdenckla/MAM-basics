@@ -13,10 +13,6 @@ ROOT = paths.repo_root()
 NOTICE_KEYS = {"summary", "critical_rules", "documentation"}
 MAM_SIMPLE_COUNTS = {"mam": 24, "bhs": 6, "sef": 5}
 DOCUMENTATION_TARGETS = {
-    notice.MAM_PARSED_PLAIN_DOCUMENTATION: (
-        ROOT / "gh-pages" / "MAM-parsed" / "plain" / "html" / "mpplain.html",
-        'id="consumer-notice"',
-    ),
     notice.MAM_PARSED_PLUS_DOCUMENTATION: (
         ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
         'id="consumer-notice"',
@@ -44,7 +40,6 @@ DOCUMENTATION_TARGETS = {
 }
 NARPAS_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-parsed" / "README.md",
-    ROOT / "gh-pages" / "MAM-parsed" / "plain" / "html" / "mpplain.html",
     ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
     ROOT / "MAM-simple" / "README.md",
     ROOT / "MAM-simple" / "doc" / "reading-mam-simple.md",
@@ -52,7 +47,6 @@ NARPAS_DOCUMENTATION_TARGETS = (
 )
 MAM_PARSED_WHITESPACE_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-parsed" / "README.md",
-    ROOT / "gh-pages" / "MAM-parsed" / "plain" / "html" / "mpplain.html",
     ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
 )
 
@@ -106,7 +100,6 @@ def _assert_mam_parsed_whitespace_rule(actual, source: Path | str):
 
 def _assert_documentation_targets():
     assert set(DOCUMENTATION_TARGETS) == {
-        notice.MAM_PARSED_PLAIN_DOCUMENTATION,
         notice.MAM_PARSED_PLUS_DOCUMENTATION,
         notice.MAM_SIMPLE_DOCUMENTATION,
         notice.LENINGRAD_INDEX_DOCUMENTATION,
@@ -150,36 +143,27 @@ def _assert_mam_parsed_whitespace_documentation():
 
 
 def test_mam_parsed_notices_and_complete_file_sets():
-    expected_stems = None
-    for variant in ("plain", "plus"):
-        directory = ROOT / "MAM-parsed" / variant
-        assert directory.is_dir(), f"missing MAM-parsed directory: {directory}"
-        files = sorted(directory.glob("*.json"))
-        assert files, f"no MAM-parsed {variant} payloads discovered"
-        assert (
-            len(files) == 24
-        ), f"expected 24 MAM-parsed {variant} payloads, discovered {len(files)}"
-        stems = {path.stem for path in files}
-        if expected_stems is None:
-            expected_stems = stems
-        else:
-            assert stems == expected_stems, "MAM-parsed plain and plus file sets differ"
-        expected_notice = notice.mam_parsed_notice(variant)
-        _assert_narpas_rule(expected_notice, f"MAM-parsed/{variant}")
-        _assert_mam_parsed_whitespace_rule(expected_notice, f"MAM-parsed/{variant}")
-        for path in files:
-            payload = _load_json(path)
-            assert set(payload) == {
-                "header",
-                "book39s",
-            }, f"{path}: unexpected top-level schema"
-            assert set(payload["header"]) == {
-                "book24_name",
-                "sub_book_names",
-                "chapter_counts",
-                "consumer_notice",
-            }, f"{path}: unexpected header schema"
-            _assert_notice(payload["header"]["consumer_notice"], expected_notice, path)
+    directory = ROOT / "MAM-parsed" / "plus"
+    assert directory.is_dir(), f"missing MAM-parsed directory: {directory}"
+    files = sorted(directory.glob("*.json"))
+    assert files, "no MAM-parsed-plus payloads discovered"
+    assert len(files) == 24, f"expected 24 MAM-parsed-plus payloads, found {len(files)}"
+    expected_notice = notice.mam_parsed_notice()
+    _assert_narpas_rule(expected_notice, "MAM-parsed/plus")
+    _assert_mam_parsed_whitespace_rule(expected_notice, "MAM-parsed/plus")
+    for path in files:
+        payload = _load_json(path)
+        assert set(payload) == {
+            "header",
+            "book39s",
+        }, f"{path}: unexpected top-level schema"
+        assert set(payload["header"]) == {
+            "book24_name",
+            "sub_book_names",
+            "chapter_counts",
+            "consumer_notice",
+        }, f"{path}: unexpected header schema"
+        _assert_notice(payload["header"]["consumer_notice"], expected_notice, path)
 
 
 def _mam_simple_files(fmt: str, vtrad: str) -> list[Path]:

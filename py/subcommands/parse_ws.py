@@ -11,8 +11,8 @@ from ws import ws_get_bk_in_both_fmts as wsin
 def almost_main(bkids=None, write_fmt_1=False):
     """
     Read in the 39 per-book JSON files from the Wikisource download and output
-    them to parsed format 2 and production plain/plus, plus optional debugging
-    format 1.
+    them to parsed format 2 and production MAM-parsed-plus, plus optional
+    debugging format 1.
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
@@ -27,9 +27,9 @@ def almost_main(bkids=None, write_fmt_1=False):
             _write_outfile(".novc/mam-ws-parsed-fmt-1", bkid, wsf1_book)
         _write_outfile("out/mam-ws-parsed-fmt-2", bkid, wsf2_book)
         my_utils_fm.show_progress_g(__file__, "book", bkid)
-    out_paths = parse_ws_products.generate_production(bkids, parsed_books)
+    plus_paths = parse_ws_products.generate_production(bkids, parsed_books)
     my_utils_fm.show_progress_g(__file__, "END", begin_end)
-    return out_paths
+    return plus_paths
 
 
 def _write_outfile(out_path, bkid, book):

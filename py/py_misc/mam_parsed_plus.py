@@ -34,7 +34,7 @@ def _plus_header(header):
     already match plus shape for these fields.
     """
     out_header = dict(header)
-    out_header["consumer_notice"] = consumer_notice.mam_parsed_notice("plus")
+    out_header["consumer_notice"] = consumer_notice.mam_parsed_notice()
     sbns = header["sub_book_names"]
     if isinstance(sbns, dict):
         if len(sbns) == 0:

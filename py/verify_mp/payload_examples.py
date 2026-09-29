@@ -63,10 +63,7 @@ def _roots_for_subject(record: ClaimRecord, ctx: Context) -> list:
     """Return corpus roots to search based on claim subject."""
     if record.subject == "mp:plus":
         return ctx.corpus.files
-    if record.subject == "mp:plain":
-        return ctx.corpus_plain.files
-    assert record.subject == "mp:both"
-    return [*ctx.corpus.files, *ctx.corpus_plain.files]
+    raise AssertionError(f"unsupported claim subject: {record.subject!r}")
 
 
 def _contains_pattern(node, pattern) -> bool:

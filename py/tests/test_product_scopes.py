@@ -130,6 +130,18 @@ def test_every_product_dir_exists_and_is_tracked() -> None:
     )
 
 
+def test_mam_parsed_current_format_exists_and_is_tracked() -> None:
+    current_format = product_scopes.mam_parsed_current_format_dir()
+    rel = _rel(current_format)
+    assert (
+        current_format.is_dir()
+    ), f"declared MAM-parsed current format is missing: {rel}"
+    assert (
+        rel in _tracked_dirs()
+    ), f"declared MAM-parsed current format is untracked: {rel}"
+    assert current_format.parent in product_scopes.product_dirs()
+
+
 def test_every_generator_entry_point_exists_and_is_tracked() -> None:
     rels = product_scopes.generator_entry_point_rels()
     assert rels, "py/product_scopes.py declares no tier-3 entry point"

@@ -59,12 +59,13 @@ _EXPECTED_UNSTAMPED = frozenset(
     }
 )
 
-# 14 tracked SVGs carried a stamp on 2026-09-09: the 12 call graphs under
-# gh-pages/MAM-parsed/**/svg/, doc/process-documentation/pipeline.svg and
+# Eight tracked SVGs carry a stamp after the 2026-09-28 retirement of the six
+# plain-product call graphs: the six plus call graphs under
+# gh-pages/MAM-parsed/plus/svg/, doc/process-documentation/pipeline.svg, and
 # doc/process-documentation/MAM-process.dot.svg. The floor is here to catch a
 # scan that read nothing or almost nothing, not to assert a size -- the call
 # graphs are written one per column version, so their number is free to move.
-_MIN_STAMPED = 10
+_MIN_STAMPED = 6
 
 
 def _tracked_svg_paths():

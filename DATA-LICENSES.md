@@ -51,7 +51,7 @@ away:**
 | `in/mam-ws-intro/` | the MAM introduction's thirteen pages, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below. This is the same publication as `in/mam-ws/`, which is why it takes the same terms: the introduction is what the Wikisource edition says about itself, and `manifest.json` beside the pages records the revision of each one mirrored |
 | `in/mam-from-Sefaria-2021-11-23/` | MAM, downloaded from Sefaria | CC-BY-SA 4.0 — the statement below |
 | `in/mam-ws-bot-edits/` | edits this repository's bot makes to MAM on Hebrew Wikisource | CC-BY-SA 4.0 — the statement below |
-| `out/mam-ws-parsed-fmt-2/`, `out/mam-ws-bot/`, `out/tmpl-survey-plain/`, `out/tmpl-survey-plus/` | derived from the MAM inputs above | CC-BY-SA 4.0, inherited: the license is share-alike, so what is derived from MAM carries MAM's terms |
+| `out/mam-ws-parsed-fmt-2/`, `out/mam-ws-bot/`, `out/tmpl-survey-plus/` | derived from the MAM inputs above | CC-BY-SA 4.0, inherited: the license is share-alike, so what is derived from MAM carries MAM's terms |
 | `in/chabad-ctr/` | sample verses of the Complete Tanach with Rashi, from chabad.org | chabad.org's; **no grant is made or implied here.** Reproduced for textual comparison, with the source URL of every chapter recorded in the files themselves |
 | `in/Psalms 120-134 -- wlcubs420.txt` | a Westminster Leningrad Codex sample | tanach.us's terms: the biblical Hebrew text may be copied without restriction, and citation of the site and version number is requested |
 | `in/osisCore.2.1.1-cw6.xsd` | the OSIS 2.1.1 schema | the Bible Technologies Group's: "freely available for all purposes", with acknowledgement requested. The full notice is in the file's own opening annotation |
