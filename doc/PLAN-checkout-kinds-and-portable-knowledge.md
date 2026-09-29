@@ -2,8 +2,9 @@
 
 State: live. Workstream B is complete. Ben authorized Workstream A on 2026-09-29 and
 approved Decisions 1–3. Workstream A steps 1–7 are implemented, pushed and deployed;
-creation of GitRepos2 and GitRepos3 awaits step 8's separate approval. Step 9 follows
-that approval. Decisions 6 and 7 remain planning only.
+Ben approved creation and verification of GitRepos2 and GitRepos3 on 2026-09-29,
+and transferred continuation and final completion to a fresh session. Steps 8–9 are
+authorized and await that executor. Decisions 6 and 7 remain planning only.
 
 Written 2026-09-28 by Claude Opus 5.5 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `a367f962`. File and line citations refer to that commit.
@@ -212,8 +213,8 @@ checkout is `C:/Users/BenDe/GitRepos/MAM-basics` on `main`. Every full clone run
 from `C:/Users/BenDe/GitRepos/MAM-basics`. This machine's `$HOME` is `C:/Users/BenDe`.
 
 **Execution status, 2026-09-29:** steps 1–7 are complete. The implementation and check evidence
-are in the final revision-ledger entry below. Resume at step 8 only after Ben approves the
-two exact destination forests; step 9 then runs in each new checkout.
+are in the revision ledger below. Ben has approved steps 8–9 for the two exact destination
+forests and assigned continuation to a fresh session. Use “Fresh-session handoff” below.
 
 **Load first:**
 - `mam-repository-topology`, with its two references;
@@ -345,7 +346,8 @@ writing in that repository.
    2. From `C:/Users/BenDe/GitRepos/MAM-basics`, run `<py> py/main_repo_util.py --sync-user-config`.
    3. Confirm that `--check` then reports clean.
    4. Ben runs the same deployment on the laptop, from any full clone there.
-8. **Build the forests.** This writes outside every repository, so Ben approves it first.
+8. **Build the forests.** Ben approved the two exact roots and step 9's verification on
+   2026-09-29. The fresh session owns this work; no repeat scope approval is needed.
    - Run `<py> py/main_repo_util.py --sync-forest $HOME/GitRepos2`, then the same command for
      `GitRepos3`. Each forest downloads about 0.9 GiB of Git data plus its packages.
    - Ben then makes the per-path settings. While doing so, he can prune the eight GitRepos entries
@@ -493,15 +495,15 @@ an execution step of this approved scope.
 ## Order
 
 Workstream B is complete. Workstream A steps 1–7 followed Ben's separate authorization and
-resolved Decisions 1–3. Forest creation remains gated by step 8's explicit approval, followed
-by step 9's verification. Cloud expansion remains gated by Decision 7. No temporary
+resolved Decisions 1–3. Steps 8–9 are now approved and assigned to the fresh successor.
+Cloud expansion remains gated by Decision 7. No temporary
 memory-directory bridge is part of either implementation.
 
 ## Checks, unchanged outputs, risk
 
 Workstream B's exact gates and expected unchanged outputs are above. Workstream A completed
 its executable/setup checks, full suite and deployment checks. Secondary-forest suite, mega
-and deployment checks remain step 9, after creation is approved. Instruction-only revisions do not expire
+and deployment checks remain step 9, now approved for the fresh session. Instruction-only revisions do not expire
 a relevant full-suite result. The Workstream B utility removal has no mega-generator reach but
 still owes the repository's final integration mega.
 
@@ -511,7 +513,7 @@ remaining products and generated outputs are expected unchanged. Outward or diff
 acts are separate: normal public/private `main` pushes, account deployment, account-setting writes,
 and approved memory deletion. The completed deletion remains backed by the retained private
 archive and exact approval. Public main retains its existing Pages schedule. Environment
-pinning is complete under Workstream A; forest creation awaits its separate approval.
+pinning is complete under Workstream A; forest creation is approved for the fresh successor.
 
 
 ## Decisions for Ben
@@ -625,6 +627,106 @@ Products, generated pages, font outputs and private outputs are unchanged by thi
 `C:/Users/BenDe/GitRepos2` and `C:/Users/BenDe/GitRepos3` remain absent. Step 8's concrete
 proposal is to create those two roots from the four declared repositories' verified origins,
 with independent full clones and six freshly installed constrained environments per forest.
-Root retains final verification responsibility. No account trust or permission setting is
+At this stage root retained final verification responsibility; the later transfer below
+supersedes that ownership. No account trust or permission setting is
 changed; Ben owns the per-path settings in step 8. Laptop execution, Decisions 6–7, cloud
 expansion and backup disposal remain outside this execution.
+
+Codex, 2026-09-29: Ben replied to the concrete proposal to create GitRepos2 and GitRepos3,
+each with four independent clones and six constrained environments, then run suite and mega:
+“Yes, you may, but please give me a prompt to do so in a fresh session, and in general transfer
+responsibility for continuation of this task into that new session”. This approves steps 8–9
+and explicitly transfers continuation, repair, verification, write-back, integration and final
+completion to the fresh executor. The current session only records the approval and handoff,
+commits and pushes that write-back, and then stops. Its two sub-agents have completed their work.
+
+## Fresh-session handoff
+
+Prepared by Codex on 2026-09-29. Ben's actual authorization is quoted in the preceding entry;
+the instructions below are Codex's reconstruction of the remaining approved work.
+
+**Ownership and checkouts.** The fresh session is the sole continuation owner and owns final
+completion. Start in `C:/Users/BenDe/GitRepos/MAM-basics`, a full clone on `main`. Source,
+development and final public integration all use that checkout because the remaining work is
+full-clone forest setup, followed by a documentation write-back; a linked worktree is unnecessary.
+The verified source baseline before this handoff edit is
+`9ad31ae2d852d9e99f926dfd97aa9760df402cc1`, clean `main`. The successor must use that commit
+or a descendant containing this approval/handoff entry, verify its ancestry, and refresh exact
+top level, HEAD, branch and NUL-delimited status before editing. Stop on unowned changes.
+The outgoing session performs no further forest work after pushing this handoff.
+
+**Load and scope.** Read the applicable common and repository AGENTS instructions,
+`mam-repository-topology` with its routed references, `iterative-document-editing`,
+`C:/Users/BenDe/GitRepos/MAM-basics/doc/clone-forests.md`, and Workstream A steps 8–9 above.
+Steps 1–7 are complete; use the implemented utility. Create the approved roots
+`C:/Users/BenDe/GitRepos2` and `C:/Users/BenDe/GitRepos3` sequentially. The complete repository
+roster comes only from `all-repos.code-workspace`; take origins from the verified source
+siblings. Never reconstruct the roster from GitHub or disk enumeration.
+
+Each forest has the four declared full independent clones and six environments: MAM-basics
+root, hbofonts root, and MAM-private root plus its `mgketer`, `al-hatorah` and `masorah-books`
+subtrees. phonetic-hbo has no development requirements. MAM-simple's consumer requirements are
+excluded by the product declaration. Use tracked constraints at each checked-out commit;
+create environments freshly, with no copying, junctions or symlinks. The desktop source
+MAM-private was clean at `384bf4f615f140c3657a9236a15ff35cecae6cf3`, two commits behind the
+observed `origin/main@3dfbc5ed2949bf67a8c3014980945a41103eabb3`. Fresh target clones read
+current origin. Catching up that source checkout's separate work is outside this handoff.
+
+**Creation commands.** First recheck both literal roots for existing directories or links,
+available space, source origins and the source interpreter. Preserve unexpected existing
+contents. Use ordinary sandbox escalation for the already-approved writes outside the source
+checkout. Run from `C:/Users/BenDe/GitRepos/MAM-basics`:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-forest C:/Users/BenDe/GitRepos2
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-forest C:/Users/BenDe/GitRepos3
+```
+
+Require successful completion and inspect every failure. The utility preserves existing
+environments and reports a failed partial installation; diagnose and repair with the target's
+own interpreter and tracked requirements/constraints rather than deleting or replacing work.
+Do not ask Ben again for the already-approved creation and verification scope.
+
+**Verify each new checkout.** Record each clone's exact path, HEAD, `main`, origin, clean status
+and independent Git metadata. Verify that sibling discovery stays in the same forest. From
+`C:/Users/BenDe/GitRepos2/MAM-basics`, run:
+
+```powershell
+C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+```
+
+```powershell
+C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+```
+
+```powershell
+C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-forest C:/Users/BenDe/GitRepos2 --check
+```
+
+```powershell
+C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
+```
+
+Repeat the four commands from `C:/Users/BenDe/GitRepos3/MAM-basics` with the interpreter and
+root changed to `GitRepos3`. Do not borrow the source forest's interpreter for those checks,
+set a sibling override pointing elsewhere, or enable cloud skips. The earlier source suite
+result (1011 passed, 5 skipped) does not verify either new checkout. Require all six target
+environments to pass their constraints checks and every clone to be clean `main`, 0/0 with
+fresh origin. Product and generated content changes are expected to be empty. Inspect every
+tracked diff; treat an unexplained diff or failing generator as a failure, never discard it.
+
+**Finish.** Run `--forest-status` from the source checkout and distinguish new-forest results
+from any separately reported source-forest lag. Record exact target commits, environment and
+suite results, mega results and unchanged-output evidence in this one live plan. Commit and
+normally push the public documentation write-back from the source full clone after fetching
+and following the integration loop. The fresh session owns any necessary repairs and their
+applicable checks, final integration and the completion report. Keep the plan live until
+steps 8–9 succeed; unrelated Decisions 6–7 remain deferred.
+
+Ben owns per-path account trust and permission settings; do not change them. No laptop work,
+memory or backup disposal, cloud-skill expansion, unrelated private pipeline change, primary
+source-forest synchronization, or retirement is authorized by this continuation. No previous
+`.novc` fixture is needed. Do not create or message another chat unless Ben asks.
