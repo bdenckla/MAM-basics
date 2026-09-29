@@ -10,8 +10,8 @@ Recorded by Codex. This entry addresses the base receipt's passages beginning
 session; its reconstruction is not evidence that Ben approved either proposal.
 
 **Effective base State:** executed 2026-09-29 for Workstreams A and B. Decisions 6 and 7
-were deferred when this investigation began. Ben approved Decision 6's narrow rule below;
-Decision 7 remains deferred pending Ben's choice. The historical “Fresh-session handoff” has been executed;
+were deferred when this investigation began. Ben approved Decision 6's narrow rule and
+Decision 7's six-skill installation with cloud limits below. The historical “Fresh-session handoff” has been executed;
 “Secondary forests created and verified” remains the completion evidence. This investigation
 does not repeat forest setup, suite, mega or environment verification.
 
@@ -58,7 +58,7 @@ lessons”. Its ordinary commit, push and canonical deployment belong to that au
 
 ### Decision 7: make all six shared skills available as cloud instructions
 
-**Deferred pending Ben's choice. Recommended:** install all six declared shared skills after
+**Approved by Ben on 2026-09-29:** install all six declared shared skills after
 adding explicit cloud applicability and runtime requirements. Skill availability supplies the
 rules for a requested act; it does not establish that the act's dependencies or permissions
 are available. In particular, the refresh rules prevent a cloud session from treating partial
@@ -126,7 +126,7 @@ The proposed implementation has these boundaries:
    outside this proposed installation scope. A real cloud startup and supported-command check
    remains necessary before claiming cloud runtime verification.
 
-The alternative is to retain the current one-skill cloud inventory. The recommendation changes
+Ben chose “Install all six with these cloud limits (Recommended)” on 2026-09-29. This changes
 instruction availability and runtime guidance; it does not make the private refresh loop or
 every GitHub mutation cloud-capable.
 
@@ -192,8 +192,9 @@ separate from product reach.
 | Investigate Decision 6 against current instructions | Implemented; exact proposed common text above. |
 | Audit Decision 7 against hook, mapping, skills and runtime requirements | Implemented; static and primary-source evidence above. |
 | Decision 6 policy choice | Implemented; Ben approved the exact narrow paragraph on 2026-09-29. |
-| Decision 6 canonical implementation, push and deployment | Active under that approval. |
-| Decision 7 policy choice and implementation | Deferred pending Ben's explicit choice. |
+| Decision 6 canonical implementation, push and deployment | Implemented; verification and deployment evidence below. |
+| Decision 7 policy choice | Implemented; Ben approved the six-skill proposal with its stated cloud limits. |
+| Decision 7 implementation and verification | Active under that approval. |
 | Source-forest synchronization and other excluded work | Deferred outside this task's scope. |
 
 **Planning write-back verification:** a scratch comparison against the required commit verified
@@ -203,3 +204,48 @@ passed. The investigation and Decision 6's instruction change owe neither suite 
 Skills, executable hooks and products remain unchanged at this stage. Decision 6 was
 presented to Ben first, following the one-independent-decision-at-a-time procedure; Decision 7
 was presented after Ben approved Decision 6.
+
+## 2026-09-29: Decision 6 implemented and deployed
+
+Recorded by Codex. **Implemented:** Ben's exact narrow lesson rule is under “New reusable
+lessons” in `dot-Codex/user-wide-AGENTS.md`. Commit
+`7549ebf706ca6a098478fe0ea5e6a8cfd90866c0` contains that instruction change, this update and
+the prescribed base-receipt pointer. It was pushed normally to `origin/main` after a successful
+fetch showed no moved remote commit to merge.
+
+**Passed:** the base-receipt comparison against the required commit, NUL-delimited ownership
+check, unstaged and staged `git diff --check`, and exact paragraph inspection. No suite or mega
+was owed by the instruction and documentation content. All products and executable hooks
+remained unchanged.
+
+**Deployed and verified:** the full canonical deployment fetched and sourced
+`refs/remotes/origin/main@7549ebf706ca6a098478fe0ea5e6a8cfd90866c0`, changed two mappings
+(the common instruction body and its generated fingerprint), and its subsequent `--check`
+reported all 21 mappings clean with zero problems. Live files were changed only through that
+repository deployment, never edited directly.
+
+**Effective base State:** executed 2026-09-29 for Workstreams A and B and the approved
+Decision 6 continuation. Decision 7 was still deferred at this deployment; its later approval
+is recorded below. The cloud hook at that commit installs only `hebrew-prose`.
+No excluded task or cloud workflow was performed.
+
+## 2026-09-29: Decision 7 approved for implementation
+
+Recorded by Codex. Ben replied “Install all six with these cloud limits (Recommended)” to the
+concrete proposal above. This supersedes his 2026-09-14 cloud exclusion of `github-issues` for
+instruction installation, with the approved capability limits preserved.
+
+**Approval snapshot:** implement the hook inventory and copying behavior, canonical skill
+runtime clauses and cloud REST full-read guidance described above. Expected changed paths are
+`.claude/hooks/install-user-config.sh`, `dot-Codex/user-wide-AGENTS.md`, both configuration
+READMEs, the canonical `github-issues`, `hebrew-prose`, `mam-repository-topology`,
+`mam-wikisource-refresh` and `verse-links` skill trees, the maintained cloud-setup description,
+its existing update and this update. The six-name shared inventory and
+`iterative-document-editing` need no content change. Keep `py/github_issue_edit.py` and all
+workflow executables unchanged. The verification and integration scope above is approved.
+Source, development, integration and sole-writer ownership remain as recorded above; the
+implementation baseline is the approved Decision 6 commit
+`7549ebf706ca6a098478fe0ea5e6a8cfd90866c0` or its documentation-only descendant.
+
+**Effective base State:** Decision 6 is implemented and deployed; Decision 7 is active under
+Ben's explicit approval. Workstreams A and B stay complete. No excluded task is reopened.
