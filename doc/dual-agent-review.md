@@ -170,20 +170,27 @@ Its “MAM-basics and MAM-private State conventions” section owns non-review S
 Present-state documents stay true in place. Load `mam-repository-topology`, “Manual document
 retirement”, for receipt-family retirement and Ben-authorized reclassification.
 
-### The shared origin branch — Ben's decisions, 2026-09-09 and 2026-09-28 (D11, revised)
+### The shared origin branch — Ben's decisions, 2026-09-09, 2026-09-28 and 2026-09-29 (D11, revised)
 
 For future rounds, setup creates branch `dar-<date>` from the approved starting commit and
 publishes it as `origin/dar-<date>`. A setup-only session may do that without performing a review
 turn; otherwise Agent 1 does it before turn 01. The remote branch, not a directory or local branch
 name, is the round's shared coordination state.
 
-Each turn and close-out task may use its own verified checkout: a linked worktree, a full clone,
-or another clone. A local branch is only that checkout's carrier for `origin/dar-<date>`. It may use
-the remote branch's name when available or a checkout-specific name when, for example, another
-worktree registered to the same clone already has `dar-<date>` checked out. Do not create a second
-remote review branch to match a local carrier branch. A linked worktree uses the worktree's home clone's
-venv by absolute path; development commands, edits, staging and commits run in the checkout that
-owns the current turn.
+**By default, each turn and close-out task runs in whatever verified checkout its session is
+already in** (Ben's decision, 2026-09-29, whose words `doc/periodic-review.md`, "The checkout a
+review uses", records): a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`,
+`$HOME/GitRepos3` and so on — or a linked worktree of one of those clones, and perhaps some day a
+cloud session's checkout. A round may still use a linked worktree made for it, but no step of this
+procedure requires one. A local branch is only that checkout's carrier for `origin/dar-<date>`. It
+may use the remote branch's name when available or a checkout-specific name when, for example,
+another worktree registered to the same clone already has `dar-<date>` checked out. In a full
+clone the carrier is temporary, under the common instruction body's “Git and commits” exception
+for a named shared branch: the clone switches back to `main` when the task ends, since
+`doc/clone-forests.md`'s synchronization check fails a full clone on any other branch. Do not create
+a second remote review branch to match a local carrier branch. A linked worktree uses the
+worktree's home clone's venv by absolute path; development commands, edits, staging and commits
+run in the checkout that owns the current turn.
 
 **`dar` abbreviates `dual-agent-review` in the remote branch name and, when used, a
 worktree-folder name, and nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2
