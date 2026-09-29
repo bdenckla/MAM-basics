@@ -1451,3 +1451,60 @@ mega figures, finding 1.2's crash and item 36.2's lag with its own commands and 
 `commits_files.py`, `test_counts.py`, `mega_steps.py`, `root_handrun_lag.py`), and adopted the others on
 the streams' evidence and the pre-commit check's. The reconciliation section goes below this one, under
 `## Reconciliation with the Codex review`, per `doc/dual-agent-review.md`.
+
+## Reconciliation with the Codex review
+
+Appended by Codex, Agent 2, on 2026-09-29, New York time. The counter-argument is
+[turn 02](dual-agent-review-2026-09-29-turn-02-codex.md), written against this
+file at `27999316` and the frozen window `f4d81285..7549ebf7`. No earlier text
+was changed. Three read-only sub-agents checked the principal sources for
+findings 1–35 and selected sources for item 36, and
+Codex reconciled their reports and checked the material qualifications. C1–C6
+name turn 02's counter-findings. "Confirmed" means the cited condition
+survives review, not that its problem was fixed. "Qualified" states the
+supported part and its limit; "unchecked" does not establish the claim.
+Every accepted defect remains unfixed by this review. Later remediation and
+State belong in this argument's single update file after close-out.
+
+| Finding | Codex assessment | Unfixed work, limit or remaining decision |
+|---|---|---|
+| 1. Merge losses | **Confirmed.** Notice order, stack-path crash and lost update corrections reproduce. | Restore the lost changes in later remediation; this turn changes none. |
+| 2. Close-out credits | **Confirmed, with scope qualification.** The cited credited changes are absent or partial; item 2.5's skill-routing scope needs the approved plan's reading. | Correct the later disposition record and complete only approved work. |
+| 3. Evr. II B 55 README | **Confirmed.** The heading names the wrong books and the Psalms 10:5 exception is stale. | Correct the reader-facing record later. |
+| 4. Remediation records | **Confirmed, qualified.** The inaccuracies reproduce; some cited passages or conditions existed before this window. | Correct present claims in their permitted live homes without attributing all errors to this window. |
+| 5. Code and prose disagreement | **Confirmed.** Cited docstrings, comments and signature disagree with current code or data; item 5.6's parameter is unused rather than a demonstrated runtime failure. | Bring descriptions and signature into agreement. |
+| 6. Test claims | **Confirmed as coverage gaps.** Current outputs pass, but three changed tests prove less than their prose says. | Strengthen claims or checks under the repository's test rule. |
+| 7. Retirement citation gate | **Confirmed conditionally.** A Windows suite run's `.novc/t` child can make the gate fail; exact behavior depends on retaining that child. | Narrow the gate or define the intended cache treatment. |
+| 8. Approved scope | **Confirmed.** The unapproved editorial wording and unasked plan question remain process discrepancies; the underlying hazard-5 wording is sound. | Close-out determines whether to retain the wording and where the question belongs. |
+| 9. Receipt provenance | **Confirmed, qualified.** Two updates lack the required first-entry date; item 9.2's in-place base edits preceded the approved remediation plan. | Correct receipt handling without assigning those edits to the wrong commit. |
+| 10. Licence and product account | **Confirmed as textual inconsistency.** `DATA-LICENSES.md` and the changed wrappers disagree with the product account. | Reader-facing wording needs later disposition; legal adequacy remains unchecked. |
+| 11. Special-page tests | **Qualified (C2).** Four fault cases are selected scenarios; the all-36-page round trip has a possible differential oracle. | Decide whether that oracle satisfies the test rule before treating all five stub tests as prohibited. |
+| 12. Two-table description | **Confirmed.** The Decalogue section slice includes a 36th link after its table. | Describe the actual inventory source. |
+| 13. Introduction manifest | **Confirmed.** The current manifest does not support the README's five August timestamps. | Correct the reader-facing source claim. |
+| 14. Retirement residue | **Qualified (C3).** Dead lint entries, import, constant and citations remain; several "plain-file concern" passages describe a true historical distinction. | Repair stale sites without rewriting accurate historical descriptions. |
+| 15. Parser-stage encoding check | **Confirmed.** The dict/list-only walker misses tuple rows in this call path. | Make the check inspect the actual plus representation. |
+| 16. Grammar lock provenance | **Confirmed.** The lock names a generator that writes only the plus lock. | Record or implement a real parser-stage lock regeneration path. |
+| 17. D-column labels | **Qualified (C4).** The validation compares aliyah or `mpasuq` records, not every label; the plan's intended meaning of "labels" is unresolved. | Decide the required projection before expanding the check. |
+| 18. Cambridge 1753 records | **Confirmed on cited contradictions.** The recovery command and retained Proverbs evidence disagree with the README and note; the 221-atom count was not rerun here. | Correct reader-facing instructions and inventory. |
+| 19. Crop-program absolute | **Confirmed.** Retained `accgram` code still makes crops. | Qualify the absolute claim. |
+| 20. HBCE licence description | **Confirmed as a code/text discrepancy.** The comparison also changes U+05BA to U+05B9; legal adequacy was not assessed. | Describe the transformation accurately. |
+| 21. HBCE outputs and receipt | **Confirmed.** The repeated headings and receipt's overbroad claim reproduce. | A correction to the frozen output needs Ben's decision; correct the dated receipt through its update file. |
+| 22. Survey lag | **Qualified (C4).** Public artifacts show a specific 2 Kings 22:1 lag after a refresh attempt; the private input and an exact expected replacement count are unchecked. | Decide whether and how to refresh the snapshot before changing the survey. |
+| 23. Bot refresh guidance | **Qualified (C3).** The special-page side effect is omitted, but the cited guidance does not literally say "only chapters". | Document the effect of a post-run forced download. |
+| 24. Release archive README | **Confirmed with guard-scope detail (C4).** The two dates refer to different objects; explicit and no-argument runs do not perform the same boundary census as `--all`. | State chronology and each guard path precisely. |
+| 25. Forest timeouts | **Confirmed.** The universal timeout claim exceeds the Git call sites' behavior. | Bound those calls or narrow the claim. |
+| 26. Forest fetch before eligibility | **Confirmed, qualified.** Ineligible clones can have remote-tracking refs updated before eligibility is decided, while checkout and environment files remain untouched. | Define and describe the intended meaning of "untouched". |
+| 27. Root setup command | **Confirmed.** The README omits the newly required constraints file. | Align the command with environment policy. |
+| 28. Forest-specific paths | **Confirmed overall.** Cited live commands remain pinned to the primary forest; item 28.4 is an incomplete action table, and historical examples need not be rewritten. | Make live commands checkout-neutral. |
+| 29. Read-only label | **Qualified (C5).** The READMEs disclose the fetch; "read-only" is ambiguous about local Git metadata, not a hidden operation. | Sharpen wording if the intended scope includes every local write. |
+| 30. Untracked proposal | **Qualified (C5).** Tracked records lack the labeled additions and maintenance can delete `.novc/`; the file's present contents and uniqueness are unverified. | Preserve a checkable approval record before relying on those labels. |
+| 31. Auto-memory citations | **Qualified (C5).** A live comment and docstring still cite retired memory names, but the deleted store was not inspected. | Repoint supported claims to tracked evidence. |
+| 32. Scan-root configuration | **Qualified (C5).** The tracked explicit-configuration rule conflicts with the tracked default path; account settings were not verified from public evidence. | Ben decides which behavior the rule should describe. |
+| 33. Full-clone push rule | **Confirmed as a scope ambiguity (C5).** The specific worktree fast-forward rule can resolve a run, but the general full-clone wording does not state that exception. | Clarify where a merge belongs when `origin/main` moves. |
+| 34. Skill pointers | **Qualified (C5).** The retirement section exists but its reference is omitted; the review-State shorthand is wrong; the removed historical quotation is a weaker navigation gap. | Repair the false shorthand and make the intended reference explicit. |
+| 35. D11 backup pointer | **Confirmed.** "Backup exception recorded above" no longer names the current shared-branch exception. | Correct the live procedure; preserve historical receipt wording as historical. |
+| 36. Ben's questions | **Retained as questions, not defects (C6).** Item 36.2 is a verified conflict between the hand-run-generator rule and the products' allowed lag; the other subitems were not all rechecked. | Ben settles policy, legal clarity and editorial choices at close-out; this turn approves none. |
+
+**Additional omission C1:** the new special-page downloader promises a whole-mirror atomic
+replacement, but implements per-file atomic replacements followed by the manifest. This is
+an unfixed docstring overclaim, not a failure of the approved validation and write order.
