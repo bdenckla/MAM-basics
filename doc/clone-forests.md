@@ -48,8 +48,11 @@ can change; unreadable installed records block writes rather than proving inacti
 
 ## Environments
 
-Each tracked `requirements.txt` has a tracked sibling `constraints.txt` and an independent
-`.venv` beside it. Requirements name direct dependencies; constraints pin direct and indirect
+Each tracked development `requirements.txt` has a tracked sibling `constraints.txt` and an
+independent `.venv` beside it. MAM-basics' distributed product directories, declared in
+`py/product_scopes.py`, contain consumer inputs rather than extra development environments.
+For example, `MAM-simple/requirements.txt` is excluded from hydration. Requirements name
+direct dependencies; constraints pin direct and indirect
 versions selected from a validated environment. Matching checkouts use the same tracked pins;
 versions do not vary by forest policy. A constraints entry does not require installation of an
 otherwise unnecessary package. Verification requires the direct requirements, installed

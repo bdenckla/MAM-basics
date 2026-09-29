@@ -12,6 +12,7 @@ from packaging.requirements import Requirement
 from packaging.utils import canonicalize_name
 from packaging.version import Version
 
+from product_scopes import product_dirs
 from repo_util.user_config_sync import _run_git, _command_error
 
 
@@ -148,15 +149,23 @@ def _check_environment(directory: Path) -> None:
 
 
 def synchronize_environments(repo: Path, *, check: bool) -> bool:
-    """Inspect all tracked requirements; create only environments that are absent."""
+    """Inspect development requirements, excluding distributed product inputs."""
     tracked = _run_git(
         repo, "ls-files", "-z", "--", "requirements.txt", "**/requirements.txt"
     )
     if tracked.returncode:
         raise ForestError(_command_error(tracked))
     requirements = [name for name in tracked.stdout.split("\0") if name]
+    product_names = (
+        {directory.name for directory in product_dirs()}
+        if repo.name == "MAM-basics"
+        else set()
+    )
     success = True
     for name in requirements:
+        if Path(name).parts[0] in product_names:
+            print(f"FOREST_CONSUMER_REQUIREMENTS: {repo / name}")
+            continue
         requirement_path = repo / name
         directory = requirement_path.parent
         try:

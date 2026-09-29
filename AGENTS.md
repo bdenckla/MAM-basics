@@ -138,9 +138,10 @@ where an evacuated repository or sibling dependency lives. If the skill is not i
 cloud session, read `dot-claude/skills/mam-repository-topology/SKILL.md` from the checkout and
 follow its reference routing.
 
-`in/repo_maintenance_policy.json` and `all-repos.code-workspace` are the sources of truth. A
-clone's presence on one machine is residue, not evidence that a topology decision changed. Do
-not infer the desired clone set from `gh repo list` or a disk set difference. Evacuated public
+`in/repo_maintenance_policy.json` and `all-repos.code-workspace` are the sources of truth.
+Roster clones in the forests declared by `clone_forests` are expected. An evacuated or unlisted
+repository's clone is residue, not evidence that its disposition changed. Do not infer the
+desired clone set from `gh repo list` or a disk set difference. Evacuated public
 repositories can remain redirect hosts or issue trackers while belonging on no machine; the
 skill's `references/evacuated-repositories.md` carries their exact current dispositions,
 temporary-stub procedures, and historical traps.
