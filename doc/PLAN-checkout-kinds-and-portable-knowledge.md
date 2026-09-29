@@ -1,8 +1,9 @@
 # Checkout kinds and portable knowledge: feedback and plan
 
 State: live. Workstream B is complete. Ben authorized Workstream A on 2026-09-29 and
-approved Decisions 1–3. Implementation is in progress; creation of GitRepos2 and GitRepos3
-retains step 8's separate approval boundary. Decisions 6 and 7 remain planning only.
+approved Decisions 1–3. Workstream A steps 1–7 are implemented, pushed and deployed;
+creation of GitRepos2 and GitRepos3 awaits step 8's separate approval. Step 9 follows
+that approval. Decisions 6 and 7 remain planning only.
 
 Written 2026-09-28 by Claude Opus 5.5 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `a367f962`. File and line citations refer to that commit.
@@ -48,8 +49,9 @@ yet.” The approved proposal is
 `C:/Users/BenDe/GitRepos/MAM-basics/.novc/PROPOSAL-memory-retirement-and-instruction-consolidation-2026-09-28.md`;
 its private appendix is
 `C:/Users/BenDe/GitRepos/MAM-private/.novc/PROPOSAL-memory-retirement-private-2026-09-28.md`.
-Codex's revision below executes that focused scope. Every unrelated proposal remains planning
-only; a Plan Mode transition grants no implementation authority.
+Codex's revision below executes that focused scope. Workstream A was separately authorized
+on 2026-09-29; other proposals remain planning only. A Plan Mode transition grants no
+implementation authority.
 
 **Terms (Decision 1 settles them).**
 - A **forest** is a directory holding one full, independent clone of every repository in
@@ -87,8 +89,9 @@ The intended outcome has four parts:
 **Verdict: both directions are sound, and the code is already mostly there.** Resolution of sibling
 repositories, cloud skips, user-configuration deployment and environment setup all work
 per checkout today. The remaining gaps identified on 2026-09-28 now have these dispositions:
-- **Open:** the instruction and policy text assumes one global primary clone; Workstream A
-  retains that unresolved checkout policy.
+- **Implemented 2026-09-29:** Workstream A distinguishes a worktree's home clone from any
+  full clone, records the per-machine forest policy, adds synchronization and pins the six
+  development environments. Forest creation and its verification remain steps 8–9.
 - **Completed 2026-09-29:** Workstream B migrated the approved repository guidance into tracked
   text, disabled memory and retired the approved legacy stores.
 
@@ -172,14 +175,16 @@ Three rules apply to every kind:
 
 ### What secondary forests cost
 
-1. **Three silent failures to fix before first use (Workstream A):**
-   - **Stale forests.** Nothing clones or refreshes the roster. `_how_to_obtain`
-     (`py/repo_util/repo_selection.py:49`) only builds text for an error message.
-   - **Instructions that send sessions back into GitRepos.** The stale mandatory
+1. **Three failures addressed by Workstream A steps 1–7:**
+   - **Fixed: stale forests can be inspected or synchronized.** `--sync-forest` clones and
+     hydrates missing roster members, advances eligible clean `main` checkouts, and reports
+     working or divergent clones without changing their files or environments.
+   - **Fixed: instructions use the selected checkout.** The stale mandatory
      `REPOS_ROOT` recipe in `dot-claude/skills/hebrew-prose/references/verifying.md` was
-     corrected under Workstream B. Workstream A's broader checkout-path policy remains open.
-   - **Policy that calls a forest residue.** Three passages do this:
-     - `evacuated-repositories.md` says "A clone's presence is residue";
+     corrected under Workstream B. Workstream A implemented the broader checkout-path policy.
+   - **Fixed: roster clones in declared forests are expected.** These passages now distinguish
+     declared forests from evacuated repositories and disposable task copies:
+     - "Repo locations are decisions" in `evacuated-repositories.md`;
      - clause 5 of `gitrepos_setup_rule`;
      - the "Completed Codex task folders" screening in `repository-maintenance.md`.
 2. **Memory retirement is independent.** Workstream B migrates approved content and disables
@@ -205,6 +210,10 @@ full clone, because `--sync-user-config` refuses to run in a linked worktree. Th
 checkout is `C:/Users/BenDe/GitRepos/MAM-basics` on `main`. Every full clone runs its own
 `.venv/Scripts/python.exe` from its repository root. Below, `<py>` means that interpreter, run
 from `C:/Users/BenDe/GitRepos/MAM-basics`. This machine's `$HOME` is `C:/Users/BenDe`.
+
+**Execution status, 2026-09-29:** steps 1–7 are complete. The implementation and check evidence
+are in the final revision-ledger entry below. Resume at step 8 only after Ben approves the
+two exact destination forests; step 9 then runs in each new checkout.
 
 **Load first:**
 - `mam-repository-topology`, with its two references;
@@ -262,8 +271,8 @@ writing in that repository.
 3. **Paths.**
    - Recheck `verifying.md`, “Commands”, rather than applying the old line-number deletion.
      The approved memory consolidation already routes ordinary sibling discovery to MAM-basics'
-     instructions and retains `REPOS_ROOT` only as an unusual-layout override. Workstream A's
-     broader forest and path policy remains unresolved.
+     instructions and retains `REPOS_ROOT` only as an unusual-layout override. Workstream A
+     applies the resolved forest and path policy to the selected checkout.
    - Rewrite the sibling-paths bullet at `verifying.md` line 241. Its heading, "Sibling paths break
      in agent worktrees, and `REPOS_ROOT` is the fix", and its last fallback, `repo_root().parent`,
      have been wrong since `516a4a1a` (2026-09-10), when `mb_cmn/paths.py` began finding siblings
@@ -324,6 +333,9 @@ writing in that repository.
      `misc/requirements-venv-setup-windows.ps1`, `misc/requirements-venv-setup-linux.txt` and
      whatever setup MAM-private and hbofonts document.
    - A constraints file changes only through a deliberate, committed regeneration.
+   - Distributed consumer inputs, such as `MAM-simple/requirements.txt`, are not additional
+     development environments. The synchronizer excludes MAM-basics' product directories
+     using `py/product_scopes.py`, while missing development constraints still fail.
    - On the laptop, Ben reinstalls each environment against the constraints once. This fixes the
      drift between the two machines as well as between forests.
 6. **`.gitignore`.** Add `.claude/worktrees/` to the tracked `.gitignore` in MAM-basics and in
@@ -480,16 +492,16 @@ an execution step of this approved scope.
 
 ## Order
 
-Execute the approved Workstream B independently of Workstream A. Finish migration, consolidation,
-checks, integration, deployment, account disablement and verified backup before asking for exact
-deletion approval. Workstream A remains gated by Decisions 1–3; cloud expansion remains gated by
-Decision 7. No temporary memory-directory bridge is part of the approved implementation.
+Workstream B is complete. Workstream A steps 1–7 followed Ben's separate authorization and
+resolved Decisions 1–3. Forest creation remains gated by step 8's explicit approval, followed
+by step 9's verification. Cloud expansion remains gated by Decision 7. No temporary
+memory-directory bridge is part of either implementation.
 
 ## Checks, unchanged outputs, risk
 
-Workstream B's exact gates and expected unchanged outputs are above. Workstream A keeps its own
-prospective gates: relevant checks after executable/setup changes, its full suite, secondary-forest
-mega and deployment checks once that work is authorized. Instruction-only revisions do not expire
+Workstream B's exact gates and expected unchanged outputs are above. Workstream A completed
+its executable/setup checks, full suite and deployment checks. Secondary-forest suite, mega
+and deployment checks remain step 9, after creation is approved. Instruction-only revisions do not expire
 a relevant full-suite result. The Workstream B utility removal has no mega-generator reach but
 still owes the repository's final integration mega.
 
@@ -498,8 +510,8 @@ product map or root test runner. The approved authored `MAM-parsed/README.md` ch
 remaining products and generated outputs are expected unchanged. Outward or difficult-to-undo
 acts are separate: normal public/private `main` pushes, account deployment, account-setting writes,
 and approved memory deletion. The completed deletion remains backed by the retained private
-archive and exact approval. Public main retains its existing Pages schedule. Forest creation
-and environment pinning remain outside this execution scope.
+archive and exact approval. Public main retains its existing Pages schedule. Environment
+pinning is complete under Workstream A; forest creation awaits its separate approval.
 
 
 ## Decisions for Ben
@@ -568,3 +580,51 @@ font outputs and private outputs are expected unchanged. Decisions 6–7, accoun
 settings, laptop execution, cloud expansion, memory backups and existing worktree retirement
 remain outside this scope. The explicit skill retirement includes a tracked deployment
 removal declaration so its live copy cannot be silently left installed.
+
+Codex, 2026-09-29: Workstream A steps 1–7 are implemented and pushed. MAM-basics' initial
+implementation is `7cf780e14e1b7101343f5ea21c94a69f66d1cfba`; the subsequent consumer-input
+correction and matching topology clarification are
+`9fabe0269417d8d0ff5c6b6fe65a59588f581397`. MAM-private's environment and instruction
+commit is `384bf4f615f140c3657a9236a15ff35cecae6cf3`; hbofonts' final setup commit is
+`812ff746cb7317e908e70748f8058d3db535a6f8`. All were pushed normally to `origin/main`.
+
+The full suite passed after the final executable change: 1011 passed, 5 skipped, using the
+owning public interpreter and `py/main_test.py`. Black, Ruff and `git diff --check` passed.
+Disposable manual probes verified full independent clones, nested environment hydration,
+idempotence, continued processing after a failure, preservation of dirty/non-main/ahead/
+divergent/in-progress checkouts, remote rewind refusal, guarded tracking-ref updates,
+symbolic-ref refusal, repeated writer inspection, normalized containment, system-site
+rejection, consumer-input exclusion, missing development constraints, dangling junction
+refusal and complete deployment rollback after a retired skill was moved to backup.
+No tracked example tests were added.
+
+All six existing desktop environments passed requirement coverage, installed-pin agreement
+and `pip check`. Offline setup probes created only disposable environments and verified
+refusal of missing inputs, malformed existing environments and junctions. Actual public and
+font setup preserved installed versions. The public environment initially lacked the already
+declared PyYAML; PyYAML 6.0.3 was installed before freezing constraints. No other package
+upgrade was needed. Linux commands were updated but not executed on this Windows machine.
+
+Canonical deployment from freshly fetched `origin/main` installed 16 changed mappings;
+its 21 mapping checks then reported zero problems, including absence of `worktree-forest`.
+The retiring live skill was verified against all 7518 original bytes before deployment;
+unlisted personal skills were not selected. The last configuration check sourced
+`9fabe0269417d8d0ff5c6b6fe65a59588f581397` and remained clean.
+
+The real forest check verified all six environments and the corrected consumer-input
+selection. hbofonts, MAM-basics and phonetic-hbo were clean `main`, 0/0 with origin. The
+phonetic-hbo checkout was fast-forwarded only from `821a85626721521d647be089dbfcd100a2037dbe`
+to `8da90513df1c759d8db34b135d007e79686715d3`, whose only change ignores `.venv/`.
+During verification, separate commits arrived on MAM-private's origin. The check correctly
+reported its clean local `main` two commits behind
+`3dfbc5ed2949bf67a8c3014980945a41103eabb3`; the checkout was left at the task's
+`384bf4f615f140c3657a9236a15ff35cecae6cf3`. Synchronization remains pending for that
+separate work; the task's changes are already on origin.
+
+Products, generated pages, font outputs and private outputs are unchanged by this task.
+`C:/Users/BenDe/GitRepos2` and `C:/Users/BenDe/GitRepos3` remain absent. Step 8's concrete
+proposal is to create those two roots from the four declared repositories' verified origins,
+with independent full clones and six freshly installed constrained environments per forest.
+Root retains final verification responsibility. No account trust or permission setting is
+changed; Ben owns the per-path settings in step 8. Laptop execution, Decisions 6–7, cloud
+expansion and backup disposal remain outside this execution.
