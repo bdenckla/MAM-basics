@@ -1,6 +1,7 @@
 # Plan: automate the dual-agent review relay, and measure what the second agent adds
 
-State: live. Proposed 2026-09-30 and not approved for execution; no phase has started.
+State: live. Ben authorized implementation on 2026-09-30; core code and local verification
+are complete in GitRepos2. D13 wording and live rollout remain pending.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -76,16 +77,63 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | active: sections 1 to 6 |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | active: the assessment answers from the records; rollout step 5 measures what they cannot |
-| R3 | Use the review branch as a mailbox, by polling or trigger | active: the tick polls the branch |
-| R4 | Choose between sub-agents and fresh sessions for taking a turn | active: a fresh process per turn for both agents, each free to use sub-agents |
-| R5 | Try the headless CLIs despite the expected authentication trouble | implemented 2026-09-30: `codex exec` works; the Claude CLI needs a login |
-| R6 | Dispatch from a Task Scheduler job | active |
-| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | active |
-| R8 | Finish the two rounds in flight by hand | active, outside this plan |
+| R1 | Relieve Ben of relaying each turn | implemented dispatcher; real-worker rehearsal and first approved round pending |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | assessment retained; measurement prompts prepared, execution and record filename await Ben |
+| R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
+| R4 | Choose between sub-agents and fresh sessions for taking a turn | implemented launchers: fresh process per turn, with required read-only sub-agent checks; live behavior pending |
+| R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30: read-only `codex exec` succeeds; Claude's OAuth session expired before inference |
+| R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; registration remains Ben's action after live rehearsal |
+| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | implemented launch records and flags; full real-worker verification pending |
+| R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
-| R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | active: Ben's decision of 2026-09-30 |
+| R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | implemented in the verified GitRepos2 full clone |
+
+## Execution authorization and checkout, 2026-09-30
+
+Codex records Ben's instruction: "Implement the recent plan to try to make auto-handoffs
+in dual-agent review. I'm not sure what the plan is called." Ben then instructed:
+"don't interfere with either of the ongoing dual-agent reviews (a MAM-basics and a MAM-private)".
+The actual development checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`, clean `main`
+at `303bf2399c1e1fc1300a75f4fb1ed335d62984d0` before editing; `38a360d2` is an ancestor.
+That clone's own `.venv/Scripts/python.exe` runs all checks. Codex owns the main push.
+`doc/dual-agent-review-automation.md` holds the implementation details, proposed D13
+wording, local verification results, and remaining operational prerequisites.
+The ongoing reviews and the occupied primary clone remain outside execution scope.
+
+## Implementation status and choices, 2026-09-30
+
+The runbook's proposed D13 text remains a proposal: this plan explicitly requires
+Ben's approval before committing that wording as the review procedure. Production
+kickoff and scheduler registration are disabled. The unchanged manual procedure
+continues to govern the ongoing rounds. The runbook records the final suite result
+(1015 passed, 5 skipped, 60 subtests), the local Git differential check, and probes
+P1 through P8. Claude authentication prevents the real-worker rehearsal; an approved
+future window is also still required for adoption. This plan's full definition of
+done has not been met.
+
+The implemented mechanics supersede the planned mechanics below where they differ:
+
+- The helper clone is GitRepos2. It runs without updating the occupied primary clone;
+  round worktrees belong to the exact full clone named at kickoff.
+- Only rounds explicitly registered by `start` are polled. Existing manual branches
+  are never adopted. Private logs and notifications stay in the private repository.
+- Carriers update through verified `--ff-only` merges. No reset or `checkout -B` is
+  used; unexpected commits and occupancy stop dispatch.
+- Default caps allow one reopening and turns 01 through 10. The first reopening is
+  permitted; a second stops. Facts-only from turn 03 remains false pending Ben's
+  separate decision. Other proposed defaults are recorded in tracked configuration.
+- `dontAsk` and explicit tool allow rules are prepared for Claude. Authentication,
+  required permissions and headless sub-agents still need live verification.
+- Atomic in-flight markers record an approved tree before commit. Manual handoff can
+  recover that commit or an already successful push idempotently after a failure.
+- Rehearsal setup checks every fetch and push URL before any remote query, requiring
+  one local filesystem destination of each kind. URL identity changes refuse a
+  worker result before outbound contact; launch records do not store credentials.
+- `pythonw.exe` supplies the hidden scheduler launch. A hidden Windows PowerShell
+  WinRT helper supplies the toast; agent shell commands use PowerShell 7.
+- The three-turn local check uses deterministic fake workers and does not establish
+  real-model review behavior. Scheduler registration, private SSH probing, live
+  rehearsal, measurement and first adoption remain rollout work.
 
 ## Context: what the relay costs
 

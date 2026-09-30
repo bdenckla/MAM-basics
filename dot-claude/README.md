@@ -13,6 +13,7 @@ transaction. Other personal skills remain untouched.
 | Path in here | Live location |
 | --- | --- |
 | `user-wide-CLAUDE.md` | `~/.claude/CLAUDE.md` |
+| `agents/dual-agent-review-turn.md` | `~/.claude/agents/dual-agent-review-turn.md` |
 | `skills/<name>/` | `~/.claude/skills/<name>/`; shared skills also deploy to `~/.agents/skills/<name>/` for Codex |
 
 **This directory is storage, not something MAM-basics loads.** Nothing here is read by a session
@@ -79,7 +80,8 @@ and push `main`. Then run the deployment from any full MAM-basics clone with its
 The command fetches `origin` and uses only the freshly updated
 `refs/remotes/origin/main`. A fetch failure or invalid source stops before any live write. The
 source includes the common instruction body, the Claude wrapper, the user-level Codex hook,
-every Claude-specific and Codex-specific skill, and both destinations of every shared skill. The
+every Claude-specific and Codex-specific skill, both destinations of every shared skill,
+and the automated review's Claude agent file. The
 operation generates the hook's expected user-wide-AGENTS fingerprint from the same `origin/main`
 source. The operation validates all sources first, stages all changed destinations, replaces
 complete skill directories instead of nesting them, and rolls earlier replacements back if a
