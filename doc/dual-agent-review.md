@@ -262,6 +262,57 @@ of both agents and the close-out used it. Ben's judgment on 2026-09-09 was that 
 worktree had been a good idea, but its path and branch read as Codex's. The approved naming makes
 the shared purpose explicit. The September 8 worktree and branch keep their existing names.
 
+### Automated relay and the `Next:` line — Ben's decision, 2026-09-30 (D13)
+
+**Automated relay and the `Next:` line.** Ben may start an automated round through
+`py/main_repo_util.py --dual-agent-review start`. Setup creates a new `dar-<date>`
+remote branch from the named full clone's clean `main` HEAD, which must contain the
+review window's end commit. The start and end commits define the reviewed diff;
+the branch baseline carries current instructions. Setup refuses an existing remote
+branch, carrier, or worktree. Existing manual rounds are never adopted.
+
+Setup first commits `doc/dual-agent-review-<date>-round.md`. This present-state
+document records protocol version 1, Agent 1, endpoint commits, Ben's kickoff
+instruction verbatim, pinned models and efforts, caps, and two dedicated checkouts.
+The workers are Claude Opus 5.5 at `max` and the Sol model selected in Codex's
+configuration at kickoff, pinned at `xhigh`. Agent 1 owns odd turns; Agent 2 owns
+even turns. Each worker starts with fresh context and uses read-only sub-agents
+to check its findings.
+
+Every automated turn has exactly one `Next:` line after its line-3 `State:` and
+before its first `##` heading. Five forms are valid:
+
+1. `Next: turn <NN>, <claude|codex>` names the next number and other agent.
+2. `Next: turn <NN>, <claude|codex>; acknowledgment` accepts everything and
+   requests the owed acknowledgment.
+3. `Next: none; round closed` closes only an owed acknowledgment with no objection.
+4. `Next: Ben; <reason>` stops for a decision or an incomplete turn.
+5. `Next: turn <NN>, <claude|codex>; objection` is allowed only in an owed
+   acknowledgment and identifies the disputed claim and necessary evidence.
+
+D10's State rules remain: turn 01 records `State: not yet acted on`; later turns
+record `State: completed <date>; review only`. Default caps permit 10 turns and
+1 reopening: the first reopening is allowed; a second stops dispatch. The dispatcher
+stops before turn 11. Ben may raise caps or record
+`Override: next turn <NN>, <agent>` in the round header after a pause. A persistent
+override is consumed once its named turn exists.
+
+Workers write only their new turn and, for turn 02, the reconciliation append to
+turn 01. The dispatcher verifies unchanged HEAD, carrier, and live remote tip;
+the exact permitted path set; turn 01's preserved prefix; and a valid header
+transition. Only the dispatcher stages, commits, and pushes
+`origin HEAD:dar-<date>`. The verified push supplies the next worker's required
+commit. Refusals, remote movement, timeouts, authentication or usage failures pause
+the round and preserve its checkout for inspection.
+
+Only new rounds in the dispatcher's explicit local registry are eligible. The
+dispatcher never updates a home clone's `main`, remediates, retires worktrees, or
+deletes branches. Manual rounds retain Ben's relay; automated guards replace that
+relay only for an explicitly started round. Close-out and integration remain manual.
+
+The optional facts-only rule from turn 03 is recorded per round. It currently
+defaults to the existing review scope, pending Ben's separate choice.
+
 ### The September 10 round
 
 The September 10 exchange closed, and its remediation outcome is recorded in
@@ -506,6 +557,10 @@ For future reviews, the filenames and states follow these rules:
    Preserve historical filenames and `State:` lines, including September 4's Codex "acted on",
    September 8's turns under a Codex-prefixed stem, and September 14's mixed old and numbered
    naming.
+5. **Automated rounds additionally follow D13:** setup records
+   `doc/dual-agent-review-<date>-round.md`, and each turn has the `Next:` header
+   defined in "Automated relay and the `Next:` line" above. Manual rounds keep
+   their existing relay and State conventions.
 
 For the single-agent and blind conventions, the asymmetry reads correctly: the unprefixed name is
 the incumbent, and the prefixed name announces its difference. Repository instructions say that an
@@ -610,9 +665,9 @@ fetches and installs only from fresh `origin/main`. Verify afterward with
 
 1. **Whether every periodic window should have a blind parallel review.** Design B's calibration
    addresses that cadence; D9 already settles the standard dual-agent procedure.
-2. **How to run Codex on this machine.** No command line is given here. Codex demonstrably runs
-   here — see the provenance section — but this document has not examined how it is invoked, and
-   guessing a spelling would be worse than the omission.
+2. **Manual Codex launches.** D13, approved 2026-09-30, defines the automated relay;
+   `doc/dual-agent-review-automation.md` records the implemented launcher, verified probes
+   and remaining live prerequisites. Invocation outside automated rounds remains unspecified here.
 
 ## Provenance and caveat
 
@@ -656,3 +711,6 @@ document warns against** — neither agent ever answered the other directly. Ben
 2026-09-04: that fresh-session safeguard belongs to Design B, where bucket 4 compares independent
 reviews. Under Design A, the Codex review is the comparison, so the Codex reviewer writes the short
 reconciliation while the comparison context is still present.
+
+The provenance above describes manual rounds. D13, approved 2026-09-30, replaces
+Ben's relay with dispatcher guards only for explicitly started automated rounds.

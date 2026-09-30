@@ -329,7 +329,7 @@ def start(
     protocol.validate_date(round_date)
     if not rehearsal and not config["production_enabled"]:
         raise protocol.ReviewError(
-            "production rollout is disabled pending D13 approval and live worker rehearsal"
+            "production rollout is disabled pending live worker rehearsal"
         )
     if agent1 not in protocol.AGENTS or not instruction.strip():
         raise protocol.ReviewError(

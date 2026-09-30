@@ -1,7 +1,7 @@
 # Plan: automate the dual-agent review relay, and measure what the second agent adds
 
 State: live. Ben authorized implementation on 2026-09-30; core code and local verification
-are complete in GitRepos2. D13 wording and live rollout remain pending.
+are complete in GitRepos2. D13 wording is approved 2026-09-30; live rollout remains pending.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -96,15 +96,19 @@ in dual-agent review. I'm not sure what the plan is called." Ben then instructed
 The actual development checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`, clean `main`
 at `303bf2399c1e1fc1300a75f4fb1ed335d62984d0` before editing; `38a360d2` is an ancestor.
 That clone's own `.venv/Scripts/python.exe` runs all checks. Codex owns the main push.
-`doc/dual-agent-review-automation.md` holds the implementation details, proposed D13
-wording, local verification results, and remaining operational prerequisites.
+`doc/dual-agent-review-automation.md` holds the implementation details, D13 approval
+record, local verification results, and remaining operational prerequisites.
+Ben subsequently selected the D13 approval passage in Codex's implementation
+report and replied "I approve" on 2026-09-30. The approved wording is now in
+`doc/dual-agent-review.md`, "Automated relay and the `Next:` line" (D13).
 The ongoing reviews and the occupied primary clone remain outside execution scope.
 
 ## Implementation status and choices, 2026-09-30
 
-The runbook's proposed D13 text remains a proposal: this plan explicitly requires
-Ben's approval before committing that wording as the review procedure. Production
-kickoff and scheduler registration are disabled. The unchanged manual procedure
+Ben approved the runbook's proposed D13 wording on 2026-09-30, satisfying this
+plan's requirement for approval before adoption as the review procedure. D13 is
+now adopted in `doc/dual-agent-review.md`. Production kickoff and scheduler
+registration remain disabled pending the real-worker rehearsal. The manual procedure
 continues to govern the ongoing rounds. The runbook records the final suite result
 (1015 passed, 5 skipped, 60 subtests), the local Git differential check, and probes
 P1 through P8. Claude authentication prevents the real-worker rehearsal; an approved
@@ -563,11 +567,12 @@ and one forced failure exercised, D13 merged, the lint green on `main`, and the 
 deployed with `--check` clean; then one real round whose every turn was dispatched, each turn file
 quoting the kickoff instruction and its effort level.
 
-### 7. Decisions still open for Ben
+### 7. Decisions for rollout
 
-Each carries its default in parentheses; confirm them at execution.
+The cap decision is approved with D13. The remaining choices carry their proposed
+defaults in parentheses and still need confirmation at rollout.
 
-1. The turn cap and the reopening cap (10 and 1).
+1. The turn cap and the reopening cap (10 and 1): approved with D13 on 2026-09-30.
 2. The facts-only rule from turn 03 (adopt it).
 3. Whether the dispatcher takes turns 01 and 02 as well (yes, if probe P1 passes).
 4. The Claude worker's production permission mode (`dontAsk` with tracked allow rules; `auto` is

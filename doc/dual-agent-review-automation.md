@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; core implemented and verified 2026-09-30; protocol approval and live rollout pending.
+State: live; core implemented and verified 2026-09-30; D13 approved 2026-09-30; live rollout pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -8,63 +8,21 @@ excluded both ongoing September 29 reviews. The sole development checkout is
 `303bf2399c1e1fc1300a75f4fb1ed335d62984d0`. Its own environment runs all commands.
 Codex owns implementation, verification, and pushing `main`.
 
-## Proposed D13 wording for Ben's approval
+## Approved D13 protocol
 
-**Automated relay and the `Next:` line.** Ben may start an automated round through
-`py/main_repo_util.py --dual-agent-review start`. Setup creates a new `dar-<date>`
-remote branch from the named full clone's clean `main` HEAD, which must contain the
-review window's end commit. The start and end commits define the reviewed diff;
-the branch baseline carries current instructions. Setup refuses an existing remote
-branch, carrier, or worktree. Existing manual rounds are never adopted.
-
-Setup first commits `doc/dual-agent-review-<date>-round.md`. This present-state
-document records protocol version 1, Agent 1, endpoint commits, Ben's kickoff
-instruction verbatim, pinned models and efforts, caps, and two dedicated checkouts.
-The workers are Claude Opus 5.5 at `max` and the Sol model selected in Codex's
-configuration at kickoff, pinned at `xhigh`. Agent 1 owns odd turns; Agent 2 owns
-even turns. Each worker starts with fresh context and uses read-only sub-agents
-to check its findings.
-
-Every automated turn has exactly one `Next:` line after its line-3 `State:` and
-before its first `##` heading. Five forms are valid:
-
-1. `Next: turn <NN>, <claude|codex>` names the next number and other agent.
-2. `Next: turn <NN>, <claude|codex>; acknowledgment` accepts everything and
-   requests the owed acknowledgment.
-3. `Next: none; round closed` closes only an owed acknowledgment with no objection.
-4. `Next: Ben; <reason>` stops for a decision or an incomplete turn.
-5. `Next: turn <NN>, <claude|codex>; objection` is allowed only in an owed
-   acknowledgment and identifies the disputed claim and necessary evidence.
-
-D10's State rules remain: turn 01 records `State: not yet acted on`; later turns
-record `State: completed <date>; review only`. Default caps permit 10 turns and
-1 reopening: the first reopening is allowed; a second stops dispatch. The dispatcher
-stops before turn 11. Ben may raise caps or record
-`Override: next turn <NN>, <agent>` in the round header after a pause. A persistent
-override is consumed once its named turn exists.
-
-Workers write only their new turn and, for turn 02, the reconciliation append to
-turn 01. The dispatcher verifies unchanged HEAD, carrier, and live remote tip;
-the exact permitted path set; turn 01's preserved prefix; and a valid header
-transition. Only the dispatcher stages, commits, and pushes
-`origin HEAD:dar-<date>`. The verified push supplies the next worker's required
-commit. Refusals, remote movement, timeouts, authentication or usage failures pause
-the round and preserve its checkout for inspection.
-
-Only new rounds in the dispatcher's explicit local registry are eligible. The
-dispatcher never updates a home clone's `main`, remediates, retires worktrees, or
-deletes branches. Manual rounds retain Ben's relay; automated guards replace that
-relay only for an explicitly started round. Close-out and integration remain manual.
-
-The optional facts-only rule from turn 03 is recorded per round. It currently
-defaults to the existing review scope, pending Ben's separate choice.
+Ben approved the proposed D13 wording on 2026-09-30 by selecting the approval
+passage in Codex's implementation report and replying "I approve". The approved
+wording now lives in `doc/dual-agent-review.md`, "Automated relay and the `Next:`
+line — Ben's decision, 2026-09-30 (D13)". The approval covers that protocol;
+the facts-only rule, measurement, real-worker rehearsal and future review window
+retain their recorded prerequisites.
 
 ## Configuration and operation
 
 `in/dual_agent_review_automation.json` sets launch rules, caps, timeouts, and CLI
 discovery; `--automation-config <absolute-path>` selects an explicit alternative.
-`production_enabled` is false while protocol approval and real-worker rehearsal
-remain outstanding; both production kickoff and scheduler registration refuse.
+`production_enabled` remains false until the real-worker rehearsal passes;
+both production kickoff and scheduler registration refuse. D13 is approved.
 Claude discovery checks PATH, `.local/bin`, the ordinary app-bundled CLI, and its
 packaged-app LocalCache layout. Codex
 checks an explicit path, `CODEX_CLI_PATH` in its configuration, then the newest app
@@ -146,7 +104,7 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 Authentication probe logs and launch records are in this implementation clone's
 `.novc/dual-agent-review-probe-20260930/`. The dispatcher registry is absent, and no
 real round was started. The primary clone was not fast-forwarded. Production remains
-disabled until Ben approves D13 and the real-worker checks pass. Core commit
+disabled until the real-worker checks pass; Ben has approved D13. Core commit
 `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` was pushed to `main`. Main-sourced
 configuration deployment installed only the new Claude agent file; every existing
 instruction, hook and skill was already clean. The subsequent

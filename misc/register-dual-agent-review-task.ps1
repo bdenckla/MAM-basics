@@ -9,7 +9,7 @@ if (-not (Test-Path -LiteralPath $reviewPython) -or -not (Test-Path -LiteralPath
 $reviewAction = New-ScheduledTaskAction -Execute $reviewPython -Argument ('"' + $reviewEntry + '" --dual-agent-review tick') -WorkingDirectory $reviewRoot
 $reviewConfiguration = Get-Content -LiteralPath (Join-Path $reviewRoot 'in/dual_agent_review_automation.json') -Raw | ConvertFrom-Json
 if (-not $reviewConfiguration.production_enabled) {
-    throw 'Production rollout is disabled pending protocol approval and live rehearsal.'
+    throw 'Production rollout is disabled pending live worker rehearsal.'
 }
 $reviewTrigger = New-ScheduledTaskTrigger -Once -At ([DateTime]::Now.AddMinutes(1)) -RepetitionInterval (New-TimeSpan -Minutes $reviewConfiguration.tick_interval_minutes)
 $reviewPrincipal = New-ScheduledTaskPrincipal -UserId ([System.Security.Principal.WindowsIdentity]::GetCurrent().Name) -LogonType Interactive -RunLevel Limited
