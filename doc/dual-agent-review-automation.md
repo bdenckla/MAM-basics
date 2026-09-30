@@ -146,8 +146,11 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 Authentication probe logs and launch records are in this implementation clone's
 `.novc/dual-agent-review-probe-20260930/`. The dispatcher registry is absent, and no
 real round was started. The primary clone was not fast-forwarded. Production remains
-disabled until Ben approves D13 and the real-worker checks pass. Canonical user
-configuration deployment follows the main push and its comparison check.
+disabled until Ben approves D13 and the real-worker checks pass. Core commit
+`1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` was pushed to `main`. Main-sourced
+configuration deployment installed only the new Claude agent file; every existing
+instruction, hook and skill was already clean. The subsequent
+`--sync-user-config --check` returned zero problems.
 
 The first real automated round requires Ben's future window approval. The comparison
 measurement also needs his decision and record filename. These two prompts are

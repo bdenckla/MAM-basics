@@ -111,6 +111,11 @@ P1 through P8. Claude authentication prevents the real-worker rehearsal; an appr
 future window is also still required for adoption. This plan's full definition of
 done has not been met.
 
+Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
+The complete main-sourced configuration deployment installed only the new Claude
+agent file, and its follow-up check reported zero problems. Existing instructions,
+hooks and skills were already clean and were not replaced.
+
 The implemented mechanics supersede the planned mechanics below where they differ:
 
 - The helper clone is GitRepos2. It runs without updating the occupied primary clone;
