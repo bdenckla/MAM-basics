@@ -23,6 +23,19 @@ from repo_util.worktree_owners import runtime_facts
 SOURCE = paths.repo_root()
 CONFIG = SOURCE / "in/dual_agent_review_automation.json"
 CONTROL = SOURCE / ".novc/dual-agent-review"
+READ_ONLY_GIT = (
+    "status",
+    "show",
+    "diff",
+    "log",
+    "rev-parse",
+    "merge-base",
+    "ls-files",
+    "ls-tree",
+    "symbolic-ref",
+    "hash-object",
+    "check-attr",
+)
 
 
 class LockExists(protocol.ReviewError):
@@ -485,7 +498,8 @@ and State lines. Read doc/periodic-review.md, The effort a review runs at and
 Reviewing the review, with the same agent and with Ben. For a private round read
 those procedure files in {SOURCE.as_posix()}/doc/ as external public instructions.
 Review the endpoint diff {state['start']}..{state['end']}; follow the turn's assigned
-role in D9. Have read-only sub-agents check every finding and reconcile their evidence.
+role in D9. Have read-only sub-agents check every finding in the foreground.
+Wait for every checker to finish and reconcile its evidence before writing the turn.
 {scope}
 
 Write only your new turn file. Turn 02 additionally appends the reconciliation table
@@ -511,6 +525,16 @@ def worker_command(
 ) -> list[str]:
     binary = str(resolve_cli(agent, config))
     if agent == "claude":
+        # Name the exact trust options before the subcommand; no middle wildcard
+        # may grant arbitrary Git options or a different command.
+        trust = f"-c safe.directory={checkout.as_posix()} -C {checkout.as_posix()}"
+        allowed = list(config["claude_allowed_tools"])
+        allowed.extend(
+            f"{tool}(git {prefix}{trust} {command} *)"
+            for tool in ("Bash", "PowerShell")
+            for prefix in ("", "--no-optional-locks ")
+            for command in READ_ONLY_GIT
+        )
         return [
             binary,
             "-p",
@@ -528,7 +552,7 @@ def worker_command(
             "--max-turns",
             str(config["claude_max_turns"]),
             "--allowedTools",
-            *config["claude_allowed_tools"],
+            *allowed,
             "--disallowedTools",
             *config["claude_disallowed_tools"],
             "--output-format",
@@ -538,7 +562,6 @@ def worker_command(
     return [
         binary,
         "exec",
-        "--ephemeral",
         "-C",
         str(checkout),
         "-s",
@@ -561,6 +584,8 @@ def launch_worker(
 ) -> None:
     environment = os.environ.copy()
     environment.update(GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="Never")
+    environment["CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"] = "1"
+    environment["CLAUDE_CODE_USE_POWERSHELL_TOOL"] = "1"
     add_windows_safe_directory(environment, checkout)
     with log.open("wb") as output:
         process = subprocess.Popen(

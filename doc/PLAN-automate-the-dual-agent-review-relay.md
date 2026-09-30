@@ -81,7 +81,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 | R2 | Weigh the dual-agent review against one agent iterating on its own review | assessment retained; measurement prompts prepared, execution and record filename await Ben |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | implemented launchers: fresh process per turn, with required read-only sub-agent checks; live behavior pending |
-| R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30: read-only `codex exec` succeeds; Claude's OAuth session expired before inference |
+| R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30: both no-tool probes succeed after Ben renewed Claude login; real-worker checks are in progress |
 | R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; registration remains Ben's action after live rehearsal |
 | R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | implemented launch records and flags; full real-worker verification pending |
 | R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
@@ -111,8 +111,11 @@ now adopted in `doc/dual-agent-review.md`. Production kickoff and scheduler
 registration remain disabled pending the real-worker rehearsal. The manual procedure
 continues to govern the ongoing rounds. The runbook records the final suite result
 (1015 passed, 5 skipped, 60 subtests), the local Git differential check, and probes
-P1 through P8. Claude authentication prevents the real-worker rehearsal; an approved
-future window is also still required for adoption. This plan's full definition of
+P1 through P8. Ben renewed Claude login and the headless Opus 5.5 probe succeeded.
+The isolated public-source capability check exposed denied native PowerShell Git
+reads; the launcher now names the exact checkout and read commands in its allow
+rules. Real-worker verification and an approved future window are still required
+for adoption. This plan's full definition of
 done has not been met.
 
 Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
@@ -131,8 +134,15 @@ The implemented mechanics supersede the planned mechanics below where they diffe
 - Default caps allow one reopening and turns 01 through 10. The first reopening is
   permitted; a second stops. Facts-only from turn 03 remains false pending Ben's
   separate decision. Other proposed defaults are recorded in tracked configuration.
-- `dontAsk` and explicit tool allow rules are prepared for Claude. Authentication,
-  required permissions and headless sub-agents still need live verification.
+- `dontAsk` and explicit tool allow rules include native PowerShell and ordinary
+  Git reads, plus exact per-checkout trust options before the read subcommand.
+  Authentication now succeeds; required permissions and headless sub-agents still
+  need a successful live capability check. Worker-local configuration disables
+  background checkers, and prompts require waiting for every foreground checker.
+- Codex starts a fresh `exec` process without `--ephemeral`: the first capability
+  check's child could not load its parent transcript under that flag. The dispatcher
+  never resumes a prior turn. Claude's exact native PowerShell Git read passed
+  independently after the permission fix; full capability checks are separate.
 - Atomic in-flight markers record an approved tree before commit. Manual handoff can
   recover that commit or an already successful push idempotently after a failure.
 - Rehearsal setup checks every fetch and push URL before any remote query, requiring

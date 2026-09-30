@@ -92,17 +92,28 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 
 | Probe | Verified result and remaining work |
 |---|---|
-| P1: Claude effort and sub-agents | The packaged Claude 2.1.284 CLI accepted the launch arguments but failed before inference: its OAuth session expired and could not be refreshed. Opus 5.5 at max and headless sub-agents remain unverified. |
-| P2: Codex model and effort | A read-only, no-tool authentication probe returned a successful terminal event. Launch records pin `gpt-6.1-sol` at `xhigh`; the event stream alone did not establish both settings. Real-turn verification remains. |
+| P1: Claude effort and sub-agents | Ben renewed login on 2026-09-30. The new no-tool probe returned `OK`, with Opus 5.5 in the initialization event and `max` in the launch record. The first capability check called a checker but denied native PowerShell Git reads. The launcher now supplies exact trusted read-command rules and disables background checkers; a successful capability check and real turns remain required. |
+| P2: Codex model and effort | The authentication probe and capability check returned successful terminal events; launch records pin `gpt-6.1-sol` at `xhigh`. Git verification passed, but the required checker failed to start with `invalid thread-store request: no rollout found`. The launcher no longer uses `--ephemeral`, so the child can load its parent's transcript. A fresh check and real-turn verification remain. |
 | P3: foreign-file gate | Passed against independent Git status evidence in the local check. |
 | P4: movement and failures | The gate rejected a worker push observed independently on the bare remote. Forced dispatcher push-failure notification and commit recovery passed. A real-worker remote-movement rehearsal remains. |
 | P5: closure | The local three-turn check requested acknowledgment, closed, and did not launch a fourth worker. |
 | P6: notifications and hidden launch | The WinRT toast API returned successfully; visual receipt is unconfirmed. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
 | P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
-| P8: Codex worktree and instructions | Deferred to the real-worker rehearsal; the authentication probe did not establish worktree trust or sub-agent behavior. |
+| P8: Codex worktree and instructions | The full-clone capability check read the applicable instructions and verified clean HEAD and branch. The first sub-agent failed under `--ephemeral`; a successful child and worktree turn remain required. |
 
-Authentication probe logs and launch records are in this implementation clone's
-`.novc/dual-agent-review-probe-20260930/`. The dispatcher registry is absent, and no
+Original failed authentication logs are preserved in this implementation clone's
+`.novc/dual-agent-review-probe-20260930/`; the successful renewed-login probe is in
+`.novc/dual-agent-review-renewed-login-20260930/`. The isolated rehearsal home is
+`C:/Users/BenDe/GitRepos-rehearsal/dual-agent-review-20260930/MAM-basics`, a clean
+public-source clone with its own environment and a local bare origin. Its initial
+baseline is `38f1b57313267908ad70a70cbfa15f4b6919fe0d`; initial capability logs stay
+in its `.novc/dual-agent-review-preflight/`. No worker reads MAM-private. The
+separate `.novc/dual-agent-review-native-git-20260930/` probe in the implementation
+clone confirmed the new Claude permission rule: the exact native PowerShell Git
+read returned that baseline with zero permission denials. Fresh Codex processes
+now retain their ordinary CLI transcripts to support sub-agents; the dispatcher
+never resumes an earlier turn's session.
+The dispatcher registry in the implementation clone is absent, and no
 real round was started. The primary clone was not fast-forwarded. Production remains
 disabled until the real-worker checks pass; Ben has approved D13. Core commit
 `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` was pushed to `main`. Main-sourced
