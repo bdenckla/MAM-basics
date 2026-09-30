@@ -492,6 +492,12 @@ Output: {protocol.turn_path(state['round'], number, agent)}
 Integration owner: Ben's later close-out task. The dispatcher alone commits and pushes turns.
 
 Verify checkout root, HEAD, carrier branch, and clean status before editing.
+On Windows use only native PowerShell 7, never Bash. Run each Git read in a
+separate tool call, with this exact prefix (the trust entry is process-local too):
+git -c "safe.directory={checkout.as_posix()}" -C "{checkout.as_posix()}"
+Verify with rev-parse --show-toplevel, rev-parse HEAD, symbolic-ref --short -q HEAD,
+and status --porcelain=v1 -z. Use the generated New York timestamp above as the
+time reference for this turn; no shell-version or clock probe is required.
 Read AGENTS.md (and CLAUDE.md when applicable), the predecessor from the required
 commit, and doc/dual-agent-review.md sections D9, D10, D11, D13 and Review filenames
 and State lines. Read doc/periodic-review.md, The effort a review runs at and
@@ -527,14 +533,22 @@ def worker_command(
     if agent == "claude":
         # Name the exact trust options before the subcommand; no middle wildcard
         # may grant arbitrary Git options or a different command.
-        trust = f"-c safe.directory={checkout.as_posix()} -C {checkout.as_posix()}"
+        path = checkout.as_posix()
+        trust_forms = (
+            f"-c safe.directory={path} -C {path}",
+            f'-c "safe.directory={path}" -C "{path}"',
+        )
         allowed = list(config["claude_allowed_tools"])
         allowed.extend(
             f"{tool}(git {prefix}{trust} {command} *)"
-            for tool in ("Bash", "PowerShell")
+            for tool in (("PowerShell",) if os.name == "nt" else ("Bash", "PowerShell"))
+            for trust in trust_forms
             for prefix in ("", "--no-optional-locks ")
             for command in READ_ONLY_GIT
         )
+        denied = list(config["claude_disallowed_tools"])
+        if os.name == "nt":
+            denied.append("Bash")
         return [
             binary,
             "-p",
@@ -554,7 +568,7 @@ def worker_command(
             "--allowedTools",
             *allowed,
             "--disallowedTools",
-            *config["claude_disallowed_tools"],
+            *denied,
             "--output-format",
             "stream-json",
             "--verbose",
@@ -585,7 +599,8 @@ def launch_worker(
     environment = os.environ.copy()
     environment.update(GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="Never")
     environment["CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"] = "1"
-    environment["CLAUDE_CODE_USE_POWERSHELL_TOOL"] = "1"
+    if os.name == "nt":
+        environment["CLAUDE_CODE_USE_POWERSHELL_TOOL"] = "1"
     add_windows_safe_directory(environment, checkout)
     with log.open("wb") as output:
         process = subprocess.Popen(

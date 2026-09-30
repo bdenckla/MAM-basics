@@ -92,14 +92,14 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 
 | Probe | Verified result and remaining work |
 |---|---|
-| P1: Claude effort and sub-agents | Ben renewed login on 2026-09-30. The new no-tool probe returned `OK`, with Opus 5.5 in the initialization event and `max` in the launch record. The first capability check called a checker but denied native PowerShell Git reads. The launcher now supplies exact trusted read-command rules and disables background checkers; a successful capability check and real turns remain required. |
-| P2: Codex model and effort | The authentication probe and capability check returned successful terminal events; launch records pin `gpt-6.1-sol` at `xhigh`. Git verification passed, but the required checker failed to start with `invalid thread-store request: no rollout found`. The launcher no longer uses `--ephemeral`, so the child can load its parent's transcript. A fresh check and real-turn verification remain. |
+| P1: Claude effort and sub-agents | Passed the renewed-login and full capability checks. Opus 5.5 at max verified root, HEAD, branch and NUL status, completed one foreground Explore checker, and wrote the ignored capability JSON. Terminal statistics confirm one completed checker, zero background checkers and no nested child. The native PowerShell Git rules passed; an optional shell-version expression was denied and its ineffective allow rule was removed. Real turns are in progress. |
+| P2: Codex model and effort | Passed the full capability check after removing `--ephemeral`: native Git reads, one completed checker and native JSON write succeeded. The saved `turn_context` confirms `gpt-6.1-sol`, `xhigh`, workspace-write and network disabled. Its thread is `01a0f49c-77ad-7841-9f6d-b1de819b4f5a`. Real-turn verification remains. |
 | P3: foreign-file gate | Passed against independent Git status evidence in the local check. |
 | P4: movement and failures | The gate rejected a worker push observed independently on the bare remote. Forced dispatcher push-failure notification and commit recovery passed. A real-worker remote-movement rehearsal remains. |
 | P5: closure | The local three-turn check requested acknowledgment, closed, and did not launch a fourth worker. |
-| P6: notifications and hidden launch | The WinRT toast API returned successfully; visual receipt is unconfirmed. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
+| P6: notifications and hidden launch | Both hidden WinRT notification tests returned 0; visual receipt is unconfirmed. Ben was asked whether he saw the notification titled Dual-agent review with Relay rehearsal notification test. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
 | P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
-| P8: Codex worktree and instructions | The full-clone capability check read the applicable instructions and verified clean HEAD and branch. The first sub-agent failed under `--ephemeral`; a successful child and worktree turn remain required. |
+| P8: Codex worktree and instructions | Passed instructions, clean HEAD and branch, and foreground checker verification in the full rehearsal clone. Worktree verification awaits its real turn. |
 
 Original failed authentication logs are preserved in this implementation clone's
 `.novc/dual-agent-review-probe-20260930/`; the successful renewed-login probe is in
@@ -113,13 +113,35 @@ clone confirmed the new Claude permission rule: the exact native PowerShell Git
 read returned that baseline with zero permission denials. Fresh Codex processes
 now retain their ordinary CLI transcripts to support sub-agents; the dispatcher
 never resumes an earlier turn's session.
-The dispatcher registry in the implementation clone is absent, and no
-real round was started. The primary clone was not fast-forwarded. Production remains
+The successful full capability logs and JSON records are in the rehearsal home's
+`.novc/dual-agent-review-preflight-02/`. Its main baseline is
+`05e109cf579d97404ff596a1f8ff78394d077c20`. The isolated round started at local
+mirror tip `491168dd13a831be3bf5b1ef1d70beafbdbcd4db`, reviewing the D13 adoption
+window `9988db8e..38f1b573`, with Claude as Agent 1, a four-turn cap and a twenty-minute
+worker deadline. Logs and markers stay in that home's
+`.novc/dual-agent-review/2026-09-30/`. Codex stopped the first worker after denied
+batched PowerShell reads led it to use Git Bash. Only the verified rehearsal driver
+PID 35672 and its own descendants were terminated; the checkout stayed clean and
+no review turn was committed. The original marker and log are preserved before
+recovery. The launcher now denies Bash on Windows, covers exact quoted trust
+prefixes, and supplies separate Git command forms in the prompt. Optional shell
+and clock queries are unnecessary because the native tool declares PowerShell 7+
+and the dispatcher supplies an explicit New York timestamp.
+The isolated quoted-prefix worktree probe then returned the expected tip with
+zero permission denials. Its launch command is 13,754 characters, independently
+checked below the Windows 32,767-character limit; records are in the implementation
+clone's `.novc/dual-agent-review-native-worktree-20260930/`.
+The source implementation registry is absent;
+no production round was started. The primary clone was not fast-forwarded. Production remains
 disabled until the real-worker checks pass; Ben has approved D13. Core commit
 `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` was pushed to `main`. Main-sourced
 configuration deployment installed only the new Claude agent file; every existing
 instruction, hook and skill was already clean. The subsequent
 `--sync-user-config --check` returned zero problems.
+Worker fix commit `05e109cf579d97404ff596a1f8ff78394d077c20` is on `origin/main`;
+its complete deployment installed only the changed Claude agent definition and
+the follow-up check again returned zero problems. The latest full suite passed
+1015 tests, 5 skips and 60 subtests without a warning.
 
 The first real automated round requires Ben's future window approval. The comparison
 measurement also needs his decision and record filename. These two prompts are

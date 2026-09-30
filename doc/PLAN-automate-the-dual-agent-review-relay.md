@@ -80,10 +80,10 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 | R1 | Relieve Ben of relaying each turn | implemented dispatcher; real-worker rehearsal and first approved round pending |
 | R2 | Weigh the dual-agent review against one agent iterating on its own review | assessment retained; measurement prompts prepared, execution and record filename await Ben |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
-| R4 | Choose between sub-agents and fresh sessions for taking a turn | implemented launchers: fresh process per turn, with required read-only sub-agent checks; live behavior pending |
+| R4 | Choose between sub-agents and fresh sessions for taking a turn | fresh-process capability checks passed for both workers, including their foreground sub-agents; real-turn rehearsal is in progress |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30: both no-tool probes succeed after Ben renewed Claude login; real-worker checks are in progress |
 | R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; registration remains Ben's action after live rehearsal |
-| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | implemented launch records and flags; full real-worker verification pending |
+| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | verified in Claude initialization and launch records and Codex saved runtime context; real-turn rehearsal is in progress |
 | R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
 | R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | implemented in the verified GitRepos2 full clone |
@@ -114,7 +114,9 @@ continues to govern the ongoing rounds. The runbook records the final suite resu
 P1 through P8. Ben renewed Claude login and the headless Opus 5.5 probe succeeded.
 The isolated public-source capability check exposed denied native PowerShell Git
 reads; the launcher now names the exact checkout and read commands in its allow
-rules. Real-worker verification and an approved future window are still required
+rules. Both full capability checks subsequently passed, including native Git,
+foreground sub-agents and ignored JSON writes. The capped local-mirror round is
+in progress. Real-turn verification and an approved future window are still required
 for adoption. This plan's full definition of
 done has not been met.
 
