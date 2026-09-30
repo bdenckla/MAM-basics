@@ -102,6 +102,10 @@ responsibility is explicitly handed to one sub-agent. The one-writer rule applie
 agents use separate checkouts. Use delegation when it can save time, protect the root reviewer's
 context or improve confidence, not merely to create another task.
 
+**Each turn runs at its agent's top effort level, `max` for a Claude turn and `xhigh`, extra high,
+for a Codex turn** (Ben's decision, 2026-09-30, whose words `doc/periodic-review.md`, "The effort a
+review runs at", records).
+
 Before the round starts, assign the two roles. **Agent 1 reviews first and owns every odd-numbered
 turn; Agent 2 reviews second and owns every even-numbered turn. Either Claude or Codex may be Agent
 1, and the other is Agent 2.** The role names describe sequence, not which agent fills the role.

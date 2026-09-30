@@ -42,6 +42,19 @@ those clones, and perhaps some day a cloud session's checkout. A review may stil
 worktree made for it, but nothing in this procedure or in `doc/dual-agent-review.md` requires one.
 The one-writer rule above applies to whichever checkout the review uses.
 
+## The effort a review runs at — Ben's decision, 2026-09-30
+
+**Whether a window has one responsible reviewer or two, the session writing each review turn runs
+at its agent's top effort level: `max` for Claude and `xhigh`, extra high, for Codex.** Ben's
+instruction of 2026-09-30, given when a Claude session proposed that review turns run at `max`:
+"Yes, add the max-effort line to the procedure docs. But 'max' is the level for Claude. The level
+for Codex is 'xhigh' (extra high)."
+
+The case was turn 03 of MAM-private's 2026-09-29 dual-agent round. It ran at Claude's `medium`
+level, took about four minutes and used no sub-agents, and later turns corrected two of its claims.
+For a Claude session the level can be told afterwards: the Claude desktop app's session record
+holds it, and the session's transcript records it with each response.
+
 ## What the periodic review is
 
 Every four to eight days one Claude session reads a commit range in one public repository and
