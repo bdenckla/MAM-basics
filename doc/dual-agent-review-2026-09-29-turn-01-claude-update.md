@@ -549,3 +549,95 @@ Ben's decisions", is left to a later close-out step, the step-2 plan or its exec
 does not write it. This entry changes only this file; before it was committed, `git diff --check`
 passed, and the same four lint tests passed. This update remains `State: open` while its base
 survives.
+
+## Detailed remediation plan prepared; approval pending, 2026-09-30
+
+Prepared by Claude on 2026-09-30, New York time, as close-out step 2 of the round, in two sessions.
+The first session worked from a handoff prompt that the step-1 session prepared that day and Ben
+pasted in; that prompt records Ben's selection of "I approve" for the package and is otherwise that
+session's reconstruction. When Ben told the first session "You're about to get compacted. Wrap up
+and perhaps provide a new prompt for a new session.", it wrote a second handoff prompt and
+checkout-local notes, and Ben pasted the prompt into the second session, which corrected,
+re-verified and committed the plan. Neither
+session attributed a reconstruction's facts to Ben; each checked them. This entry records the plan
+and three answers Ben gave while it was drafted. It executes no remediation.
+
+**Checkout and merge.** The full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, on its carrier
+`dar-2026-09-29`. The clone's reflog shows it switched to `main` and fast-forwarded to
+`origin/main` at 15:05:00 New York time, a minute after the step-1 session's last commit, and
+moved back to the carrier by a checkout at 15:07:34, where the first session found it. At the start
+of each session a fetch found `HEAD` and `origin/dar-2026-09-29` both at
+`bcbbb1dc8199317b6bf9c9a6bfb430019b1f5374`, the tree clean (for the second session, apart from the
+untracked draft), and `origin/main`, `303bf2399c1e1fc1300a75f4fb1ed335d62984d0`, already merged by
+`c344c5df`; so the merge that D11 requires before editing made no commit, and nothing was pushed
+before this entry. Each session was the only writer in the checkout. The primary forest's clone,
+`C:/Users/BenDe/GitRepos/MAM-basics`, was clean on `main` at `90d1169e` when the first session
+looked at 15:22 and when the second looked at 17:58 New York time, and finding 30's untracked
+source there still existed at both checks, 95,251 bytes, last written 2026-09-28 19:18:06 New York
+time. Neither session opened it.
+
+**The plan** is [`PLAN-remediate-review-findings-2026-09-29.md`](PLAN-remediate-review-findings-2026-09-29.md),
+State "live; detailed plan drafted 2026-09-30; awaiting approval of concrete wording and execution."
+It presents the changes in `doc/periodic-review.md`'s risk order: the reader-facing documents, with
+current and proposed wording, including the five product licence files and question 5's
+conforming edits; then the one public-data change, finding 1.1's consumer notice in all 24
+MAM-parsed plus files, with its generated effects; then the lower-risk changes, first by type. It
+keeps the thirteen reproducible code and test defects apart from the editorial proposals, gives
+concrete wording for every editorial item, presents finding 8.1's rewritten passages for Ben's
+approval or reversal, and lists thirteen sites found while planning, each for his approval or
+striking. Finding 30's list of approved public additions is drafted from its untracked source and
+shown to Ben before anything drawn from that source is committed or pushed.
+
+**Ben's answers while the plan was drafted.** Three gaps in the package went to Ben in one dialog on
+2026-09-30. The questions, option labels and descriptions quoted here were the first session's
+wording; Ben's part is his selection of each.
+
+1. To "Question 5 listed seven sites that write a manuscript page as "folio 57a". A census of the tree
+   found more. Which sites should the plan's conforming edits cover?", Ben selected "Maintained prose
+   (Recommended)", described as "Q5's list plus the other maintained Markdown, docstrings, skill text
+   and tool output: evr-ii-b-55/README.md:182 and :493, the meteg snips README's :416, seven passages
+   of the Lamentations snips README, the rest of the verse-links skill and generator, and two
+   Holman/UXLC helper docstrings or messages. The new skill section names the unswept rest." The
+   other options were "Also generated pages, data" and "Only question 5's list". The question's
+   "seven sites" should have said eight: question 5's list names finding 2.4's two locators,
+   `evr-ii-b-55/README.md:194` and `:485`, `references/sources-and-corpora.md:46`,
+   `dot-claude/skills/verse-links/SKILL.md:70` and `:95`, and `py/main_verse_links.py:209–212`.
+2. To "The sub-agents found further sites with the same defect as approved items but not named in the
+   package. … Should the plan include them?", Ben selected "Include, flagged (Recommended)", described
+   as "A separate "Sites found while planning" section gives current and proposed wording for each.
+   You approve or strike them along with the rest of the plan." The other option was "Leave them".
+3. To "When the executor corrects a stale claim in place in an open update file (findings 1.3, 4,
+   35), should that file also get a dated entry naming each passage it corrected? Item 36.3's general
+   policy question stays deferred either way.", Ben selected "Dated entry per file (Recommended)",
+   described as "Each corrected update gains one dated entry naming, in their own words, the passages
+   corrected, so a reader can see what changed and when." The other option was "In place only".
+
+**Delegation and checks.** By its own account the first session had read-only sub-agents re-measure
+every cited site before drafting, and five read-only verifiers check the draft in bounded groups; it
+verified three verifiers' corrections against the tree, while the defects verifier's report
+arrived as it wrapped up and the verifier of the receipts' updates and docstrings reported after
+it. The second session re-checked each of the verified corrections against the tree before applying
+it, and four fresh read-only sub-agents checked what remained: A the defects section and the
+defects verifier's items; B the receipts' updates, the new HBCE update and finding 30; C the Python
+comments and docstrings and `AGENTS.md`'s test exception; and D a census of "folio" and "leaf"
+across the tree. The second session re-read the source of every claim it adopted. Those checks
+corrected counts, line numbers and wording, and found three things the package did not name: the
+last case of `py/tests/test_wikisource_special_page_download.py` would pass even if the manifest
+check were broken (flagged site 11), a sentence on the generated Holman corrections page has been
+false since 2026-08-12 (flagged site 12), and the census found eighteen more maintained passages
+that call a page a folio or a leaf. The plan adds those to question 5's conforming edits, as it does
+the sites that the first session's later checks found, each marked as found after Ben's answer. No
+MAM-private content was read. Every assistant record of both sessions' transcripts
+gives Claude's `max` effort level; the app's session record for the second session gives `high`.
+
+**Verification of this entry.** This entry and the plan are one commit, and nothing else changes.
+No source file, product or generator changes, and no suite, mega or generator run is owed for these
+documentation commits. Before the commit, `git diff --check` passed, and
+`./.venv/Scripts/python.exe py/main_test.py py/tests/test_receipt_update_links.py
+py/tests/test_prose_conventions.py py/tests/test_prose_mark_order.py` passed.
+
+**What remains.** Ben's approval of the plan's reader-facing wording, its public-data change and its
+lower-risk changes; his choices on finding 8.1, on each group of flagged sites, on the MAM-with-doc
+licence alternative, on the corrected H6 value and on the HBCE "split" and "join" wording; and his
+approval of execution. Then close-out steps 3 and 4, execution and final integration, in a fresh
+task. This update remains `State: open` while its base survives.
