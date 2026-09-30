@@ -31,6 +31,11 @@ authorize executing it. Ben's words, verbatim:
 4. His request to the Opus session:
    > Please (1) persist this plan as a file in the "doc" folder (2) opine as to whether, though it
    > was planned by Fable, it can be executed by Opus.
+5. His question about the Opus session's advice to execute "in a worktree": "why in a
+   worktree?" In the dialog that followed he selected "GitRepos2 or GitRepos3 clone
+   (Recommended)".
+6. His instruction when he ended Plan Mode for that amendment:
+   > You are out of plan mode so you can edit the plan, NOT so you can execute it.
 
 Everything else below is the two sessions' reconstruction. Re-verify every observation dated
 2026-09-30 before relying on it; the section "Observations of 2026-09-30" gives the commands.
@@ -39,15 +44,18 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 - **Executor:** a fresh session at its model's top effort, Claude `max` or Codex `xhigh`. Nothing
   in the plan depends on the model that wrote it.
-- **Source and baseline:** this file on `main` at the commit that added it, a descendant of
-  `38a360d2`. Check with `git merge-base --is-ancestor 38a360d2 HEAD` in the development
-  checkout.
-- **Development checkout:** a linked worktree of the primary clone
-  `C:/Users/BenDe/GitRepos/MAM-basics`, or that clone on `main` when no other session writes
-  there. Record the path and exact `HEAD` before editing. Interpreter: the primary clone's
-  `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, by absolute path.
-- **Integration owner:** the executing session, under the user-level "Git and commits" section: a
-  verified fast-forward of the primary clone's `main`, then a push of `main`.
+- **Source and baseline:** this file on `main` at or after the commit that last changed it, a
+  descendant of `38a360d2`. Check with `git merge-base --is-ancestor 38a360d2 HEAD` in the
+  development checkout.
+- **Development checkout:** a full MAM-basics clone in a secondary forest,
+  `C:/Users/BenDe/GitRepos2/MAM-basics` or `C:/Users/BenDe/GitRepos3/MAM-basics`, whichever no
+  other session is writing to; `--forest-status` reports occupancy. Ben chose this on 2026-09-30
+  over the linked worktree the first persisted version named. Fetch and fast-forward `main`
+  before editing, then record the path and exact `HEAD`. Interpreter: that clone's own
+  `./.venv/Scripts/python.exe`, run from the clone's root.
+- **Integration owner:** the executing session. It commits on `main` in that clone and pushes
+  normally, merging a moved `origin/main` first, as `doc/clone-forests.md`, "Work and
+  verification", prescribes.
 - **Required reading:** `AGENTS.md`; `doc/dual-agent-review.md` (D9, D10, D11, and "Review
   filenames and State lines"); `doc/periodic-review.md` ("The effort a review runs at" and
   "Reviewing the review, with the same agent and with Ben"); `dot-Codex/user-wide-AGENTS.md`;
@@ -77,6 +85,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 | R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | active |
 | R8 | Finish the two rounds in flight by hand | active, outside this plan |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
+| R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | active: Ben's decision of 2026-09-30 |
 
 ## Context: what the relay costs
 
@@ -131,6 +140,7 @@ in aggregate.
    `C:/Users/BenDe/.codex/config.toml` names at kickoff, pinned for the round at `xhigh`.
 4. Finish the two rounds in flight by hand. The dispatcher starts with the first round created by
    the new setup action.
+5. The executor works in a GitRepos2 or GitRepos3 full clone, not a linked worktree.
 
 ## Observations of 2026-09-30
 
@@ -391,8 +401,11 @@ nothing else and retired at close-out with the existing `--prepare-worktree-reti
   name. The name spells the words out because `dar` is reserved for the remote branch and
   worktree folders.
 
-Both use the primary clone's interpreter by absolute path. `owners()` will classify the Codex
-worktree as Claude's; open decision 8 settles its location. Whether the existing Codex trust of
+Worktrees suit the dispatcher even though the executor works in a full clone: code creates and
+retires them, and a full clone held on a review branch for a whole round would fail
+`--sync-forest --check`, which rejects any branch other than `main`. Both worktrees use the
+primary clone's interpreter by absolute path. `owners()` will classify the Codex worktree as
+Claude's; open decision 8 settles its location. Whether the existing Codex trust of
 `C:/Users/BenDe/GitRepos` covers a worktree beneath it is probe P8.
 
 The Claude worker runs in the Claude worktree with the prompt file on standard input:
@@ -462,7 +475,8 @@ Concurrent rounds in the two repositories share nothing: separate branches, work
 2. **Protocol and code on `main`.** Section 1's text after Ben approves it; the two modules, the
    action, the configuration file, the agent file, the sync mapping, the README note and the test;
    Black; the suite; then deploy the user-level files with `--sync-user-config` and confirm with
-   `--sync-user-config --check`.
+   `--sync-user-config --check`. Then fast-forward the primary clone's `main` with `--ff-only`
+   when no session is writing there, because the scheduled job runs the primary clone's code.
 3. **Rehearsal with no outward-facing act.** Create a bare mirror
    `C:/Users/BenDe/GitRepos-rehearsal/MAM-basics.git` and a working clone whose `origin` is that
    mirror. Both lie outside the forest pattern and are retired afterwards under the
