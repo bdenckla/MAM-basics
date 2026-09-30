@@ -41,6 +41,19 @@ a linked worktree uses its home clone's interpreter by absolute path with this s
 
 `--help` is the full statement, including the versification caveat below.
 
+## Claude cloud runtime
+
+This command uses tracked MAM-basics data and needs no network, private sibling or account
+source files. Run it from the verified Linux checkout with that checkout's own hydrated
+environment, installed against tracked requirements and constraints:
+
+```
+./.venv/bin/python py/main_verse_links.py <book> <c:v> [<hebrew> | --atom N]
+```
+
+Verify that the interpreter and required packages exist before running it. Windows environment
+checks do not establish Linux compatibility. Installing this skill does not hydrate Python.
+
 ## What each printed link is
 
 One markdown link per line, in this order:

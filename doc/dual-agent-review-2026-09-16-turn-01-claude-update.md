@@ -255,3 +255,15 @@ Product axis: this cleanup entry reaches no repository product. Act axis: the cl
 `437b54d1` subsequently reached `origin/main` on 2026-09-18. The September 26 review records a
 local-reflog arrival at 13:48:21, New York time; that is local evidence, not independent GitHub
 history. The later removal disposition covered only the classified scratch and merged local state.
+
+## 2026-09-29: archived receipt references
+
+Recorded by ChatGPT-Codex on 2026-09-29, at Ben's request. The references in the frozen
+September 16 turn records to the September 14 remediation family, the Google Sheet retirement
+plan and turn 06 are historical evidence, not current guidance. Those receipts have been retired
+from the tracked tree and remain at these immutable locations:
+
+- [September 14 remediation plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14-update.md);
+- [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md); and
+- [September 16 turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md).

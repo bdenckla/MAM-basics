@@ -4,7 +4,9 @@ Read the sections needed for the requested operation before touching GitHub.
 
 ## 1. Reading an issue in full
 
-1. Read an issue you are about to work on, comment on or edit with one command:
+1. Read an issue you are about to work on, comment on or edit with one command. In a Claude
+   cloud session, use `references/cloud.md`'s complete REST read instead of assuming this
+   GraphQL-backed command is supported:
 
    ```
    gh issue view <number> --repo bdenckla/<repo> --json title,state,labels,body,comments
@@ -116,6 +118,11 @@ order. Distinguish checking whether marks survived transport from checking their
    ```
    ./.venv/Scripts/python.exe py/main_github_issue_edit.py --repo <repo> --issue <number> --edits <file> [--dry-run]
    ```
+
+   A Linux checkout uses its own `.venv/bin/python`, or a linked worktree's home-clone
+   interpreter by absolute path. The helper's `gh issue view` and `gh issue edit` transport
+   remains unavailable under the restricted Claude cloud proxy, including for `--dry-run`;
+   follow `references/cloud.md` rather than substituting an ad hoc body rewrite.
 
    1. **The edits file** is UTF-8 JSON, `{"replacements": [{"old": "…", "new": "…"}], "note": "…"}`,
       where `note` is the line item 2 describes. Copy each `old` from the body as `--json body`

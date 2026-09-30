@@ -60,7 +60,7 @@ Recorded by Codex on 2026-09-27. The base review's description of finding 4 name
 `py/subcommands/diff_wsgo.py`, the two `out/diff_mamws_mamgo*.json` files, and proposed
 Google Sheet edits as products reached by the weaker validator. Those paths were historical
 evidence at the reviewed commit, but the Google download, parse, comparison, and auto-edit
-pipeline was removed during the execution of `doc/PLAN-retire-google-sheet.md`. The survey and
+pipeline was removed during the execution of the archived [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md). The survey and
 documentation-verification paths named beside them remain current.
 
 ## The maintenance audit also found missing validation in dataset inventories

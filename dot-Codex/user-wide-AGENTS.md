@@ -32,7 +32,9 @@ them, then use the same complete deployment. `dot-Codex/README.md` and
 ### Claude Code only: cloud SessionStart installation
 
 In a Claude cloud session, MAM-basics' hook installs the common body, Claude wrapper, and
-`hebrew-prose` skill from the session's checked-out branch rather than from local `origin/main`.
+every shared skill declared in `dot-claude/shared-skills.txt` from the session's checked-out
+branch rather than from local `origin/main`. The skills state their cloud runtime limits;
+installation does not establish workflow dependencies, credentials or permissions.
 The checked-out branch is not necessarily `main`, and the hook never overwrites an existing live
 file.
 
@@ -239,6 +241,14 @@ messages and GitHub bodies: write a uniquely named file and pass `git commit -F`
 `--body-file`. One plain, self-contained command is fine; assembled shell pipelines and shell
 control flow are not. Prefer `git -C <path>` to changing directories as part of a compound
 command.
+
+On Windows, run agent shell commands in PowerShell 7, not Git Bash or another POSIX emulation
+layer. Git Bash can quietly give a wrong answer where PowerShell uses the Windows setting
+directly: `TZ=America/New_York date` prints UTC because Git Bash does not recognize that zone
+name. Read New York time with
+`[System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::UtcNow, 'Eastern Standard Time')`,
+and state the zone with every clock reading. A POSIX shell remains correct in a Linux cloud
+session.
 
 Write explicit UTF-8 with declared line endings; repository attributes and external-format
 exceptions govern rather than an unconditional all-files-LF rule.

@@ -6,9 +6,11 @@ Updates and later status: [user-level-config-in-cloud-sessions-update.md](user-l
 Since 2026-09-09 the fix has two halves. `dot-claude/` and `dot-Codex/` hold the
 version-controlled originals of Ben's user-level Claude and Codex configuration, so they arrive
 with the clone; and `.claude/hooks/install-user-config.sh`, wired in by `.claude/settings.json` as
-a `SessionStart` hook, installs three resources when their destinations are absent:
-`dot-Codex/user-wide-AGENTS.md` as `~/.codex/AGENTS.md`, and
-`dot-claude/user-wide-CLAUDE.md` plus `dot-claude/skills/hebrew-prose/` under `~/.claude/`.
+a `SessionStart` hook, installs the common body, Claude wrapper and every skill declared in
+`dot-claude/shared-skills.txt`. The common body goes to `~/.codex/AGENTS.md`; the wrapper and
+complete shared skill trees go under `~/.claude/`. Ben approved the six-skill inventory on
+2026-09-29 with the runtime limits below. The hook preserves existing files and fills missing
+files in an incomplete skill tree.
 
 This file records the gap and how it was measured, why the configuration is stored here rather
 than in `github-misc`, the one sentence that was redacted on the way in, and how the hook is
@@ -128,8 +130,7 @@ Two naming decisions follow from that, and both are mechanical rather than cosme
 
 ## How the hook is gated
 
-It runs everywhere, local sessions included, so it has two independent guards. Both are in the
-script's comments at greater length.
+It runs everywhere, local sessions included, so it has two independent guards.
 
 1. **`CLAUDE_CODE_REMOTE = true`** is the documented discriminator: the cloud VM sets it and it is
    never true locally. This is what keeps the script from touching `~/.claude/` on Ben's own
@@ -138,29 +139,40 @@ script's comments at greater length.
 2. **Write only what is absent.** Not redundant with the first guard: a self-hosted runner also
    reports `CLAUDE_CODE_REMOTE=true`, and Anthropic's documentation says such a runner can seed a
    session from the runner host's own `~/.claude/`. "Remote" therefore does not by itself mean
-   "`~/.claude/` is empty". It also makes a resumed or compacted session a no-op.
+   "`~/.claude/` is empty". A resumed or compacted session preserves the files already present;
+   it fills missing references when their source tree is available. The hook refuses linked
+   destination directories and incompatible existing path types. It stages each missing file,
+   verifies its bytes and publishes it without replacing an existing target, so a failed copy
+   cannot leave a partial final file that a later run accepts as complete.
 
 **Every path exits 0.** A `SessionStart` hook that exits 2 blocks the session from starting and
 resumes the previous one, which is far too severe a response to a missing prose reference. Failure
 is reported by printing a banner instead: `SessionStart` is one of the few hook events whose
 plain-text stdout Claude Code adds to the session as context, so the banner reaches Ben's
-transcript **and** the model. Two failures get their own banner—a needed tracked source being
-absent from the checkout, and any of the three destinations still missing after copying—and each
-tells the session to say so to Ben before starting work rather than to proceed as though the rules
-had been read.
+transcript **and** the model. Malformed runtime or inventory, missing needed sources,
+incompatible path types and incomplete copies receive failure banners. Resource failures do
+not suppress installation of independent resources. The hook tells the session which rules
+are unavailable and to tell Ben before starting work. An existing file needs no absent source;
+when a skill source is available, the check includes its complete reference tree.
 
-**The hook installs the three tracked resources the symmetric Claude setup needs and not the
-rest.**
-`dot-claude/skills/prune-claude-state/` reads `~/.claude/plans/` and the per-repo auto-memory
-directory, neither of which reaches a cloud container, and it declares
-`disable-model-invocation: true`. `dot-claude/README.md` and the rest of `dot-Codex/` are not loaded by
-a Claude cloud session at all, and are readable in the checkout when wanted.
-`dot-claude/skills/verse-links/`, added 2026-09-10, names its interpreter and
-`py/main_verse_links.py` by the absolute Windows paths of Ben's own machines, which a cloud
-container does not have; the command itself needs only the checkout.
-`dot-claude/skills/github-issues/`, added 2026-09-14, names the same interpreter and
-`py/main_github_issue_edit.py` by those paths, and whether a cloud session's repository-scoped
-token may write to a GitHub issue has not been measured; Ben decided that day not to install it.
+**The hook installs all six shared skills with explicit runtime limits.** The declared skills
+are `github-issues`, `hebrew-prose`, `iterative-document-editing`, `mam-repository-topology`,
+`mam-wikisource-refresh` and `verse-links`. Ben's 2026-09-29 approval supersedes his
+2026-09-14 cloud exclusion of `github-issues` for instruction installation.
+
+Portable rules and executable availability are separate. Active commands use the selected
+checkout's environment: `.venv/bin/python` on Linux instead of the Windows interpreter recipe.
+Account-local books, private inputs and dated machine measurements retain their meaning;
+the hook provisions none of those resources. A cloud checkout is not a full clone forest.
+Issue reads capture the issue and all comment pages through REST when the prescribed GraphQL
+read is unavailable. The existing body-edit helper has no REST transport and remains
+unavailable under the restricted proxy, including its dry run. A chapter refresh requires a
+preflight of the complete private dependency loop before downloading; cloud mega skips cannot
+satisfy that loop. Each affected canonical skill carries the operative limits.
+
+Claude-only `prune-claude-state`, which addresses account-local draft plans, and Codex-only
+skills remain excluded. The hook does not install READMEs, dependencies, credentials or
+permission settings. Configuration READMEs remain readable in the checkout.
 
 ## Is a skill written after Claude Code launches picked up? Yes, measured
 
@@ -186,8 +198,10 @@ container satisfies that caveat: `~/.claude/skills/` is already present, and in 
 container held `session-start-hook/` — stamped two and a half hours earlier, so from the image
 rather than from this hook — beside a `synced/` directory holding the account-level skills.
 
-The hook still does not depend on the answer. Its success message names both absolute paths and
-tells the session to read `SKILL.md` directly if `hebrew-prose` is absent from its list.
+The hook still does not depend on the answer. Its success message names both instruction paths
+and tells the session to read a shared skill's `SKILL.md` directly if that skill is absent from
+the available-skills list. The measurement above covers the 2026-09-09 installation; it does
+not verify actual cloud loading of the expanded 2026-09-29 inventory.
 
 ## One consequence worth knowing about session sharing
 
@@ -215,7 +229,7 @@ not tracked; the six cases are listed here so they can be rebuilt.
 
 **The whole path was then exercised in a real cloud container**, on `main` at `74d883d2`; the
 section above records what that run measured. It also settles the one thing the harness cannot:
-that the hook makes no network call. The script invokes `cp`, `echo`, `ls`, `mkdir`, `sed` to
+that version's observed startup behavior. The 2026-09-09 script invoked `cp`, `echo`, `ls`, `mkdir`, `sed` to
 indent one listing, and `cd` / `dirname` / `pwd` in its repository-root fallback, and
 nothing else — no `git`, no `curl`, no
 `gh`.

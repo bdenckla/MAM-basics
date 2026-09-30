@@ -524,7 +524,7 @@ declarations:
    update.
 7. `doc/PLAN-deferred-template-projection-decisions.md`: `State: paused 2026-09-12` at line 3.
 8. `doc/PLAN-retire-codex-index-image-work.md`: `State: live` at line 3.
-9. `doc/PLAN-retire-google-sheet.md`: `State: live` at line 3.
+9. The archived [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md): `State: live` at line 3.
 
 The first six plans were finished execution records. D12 preserved their bases at this
 implementation phase, and their sibling updates supplied the effective declarations. The six

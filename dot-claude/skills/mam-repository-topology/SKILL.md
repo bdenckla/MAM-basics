@@ -50,6 +50,19 @@ uses a recency criterion, apply that criterion rather than widening it to every 
   branch, commit, or object is the only copy of recoverable work. Use the Recycle Bin for
   verified task-folder retirement where the maintenance instructions require it.
 
+## Claude cloud applicability
+
+A shallow cloud checkout is a checkout kind, rather than a full clone forest to hydrate from
+the workspace roster. Apply the tracked topology and evacuated-repository decisions there;
+do not recreate missing siblings merely to bypass a declared cloud limitation. Operations
+requiring private sources or other owned checkouts need those prerequisites before starting.
+
+Forest sweeps require the invoking forest's clones and environments. Desktop retirement also
+requires the runtime ownership records and recovery facilities in the maintenance reference.
+Missing desktop records in a cloud container do not establish that a desktop task ended.
+The Windows Recycle Bin procedures describe Windows operations; they do not provide a cloud
+retirement implementation. Installing this skill supplies none of those missing capabilities.
+
 ## Canonical copy
 
 This skill is canonical at `MAM-basics/dot-claude/skills/mam-repository-topology/` and is

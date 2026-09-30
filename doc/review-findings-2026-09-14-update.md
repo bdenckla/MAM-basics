@@ -141,3 +141,10 @@ directly without giving the commands. Turn 3 later supplied Black and Ruff comma
 corrected the Black version to 26.5.1. The accurate prose counts need no numerical correction,
 and `counter-findings`, `new findings` and `counter-argument` describe different scopes rather
 than contradictory names.
+
+## 2026-09-29: archived Google Sheet retirement receipt
+
+Recorded by ChatGPT-Codex on 2026-09-29, at Ben's request. References in the frozen review and
+turn records to `doc/PLAN-retire-google-sheet.md` are historical evidence, not current guidance.
+The completed receipt has been retired from the tracked tree and remains as the archived
+[Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md).

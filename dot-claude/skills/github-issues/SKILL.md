@@ -9,7 +9,8 @@ Load the reference for the requested operation before touching GitHub. These rul
 throughout:
 
 1. Every `gh issue` command names its repository with `--repo bdenckla/<repo>`.
-2. `gh` acts through Ben's account. Every issue, comment, body edit, or state-change comment
+2. On Ben's machines, `gh` acts through Ben's account; cloud authentication is discovered
+   separately. Every issue, comment, body edit, or state-change comment
    written by a session says that it is agent-written and gives the date.
 3. Multi-line issue text is written to a uniquely named UTF-8 file in a gitignored scratch
    directory and passed with `--body-file`. Never use stdin, a here-document, a PowerShell
@@ -19,6 +20,10 @@ throughout:
 
 ## Route by operation
 
+- **Claude cloud session:** read `references/cloud.md` before a live operation. Citation and
+  authorship rules apply even when the requested tracker or transport is unavailable. Use the
+  complete REST read there when the cloud proxy restricts `gh issue`'s GraphQL transport.
+  The required issue-body editor remains unavailable under that restricted proxy.
 - **Read, file, comment, or correct an open issue body:** read
   `references/reading-and-writing.md`. A full read uses
   `gh issue view <number> --repo bdenckla/<repo> --json title,state,labels,body,comments`.

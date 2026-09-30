@@ -1,6 +1,7 @@
 # Remediate the September 26, 2026 dual-agent review of MAM-basics
 
 State: executed 2026-09-28.
+Updates and later status: [PLAN-remediate-review-findings-2026-09-26-update.md](PLAN-remediate-review-findings-2026-09-26-update.md).
 
 Completion evidence: [the review's live update](dual-agent-review-2026-09-26-turn-01-claude-update.md),
 anchor "Final integration and configuration deployment completed, 2026-09-28".

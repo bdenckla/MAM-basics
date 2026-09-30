@@ -102,6 +102,10 @@ responsibility is explicitly handed to one sub-agent. The one-writer rule applie
 agents use separate checkouts. Use delegation when it can save time, protect the root reviewer's
 context or improve confidence, not merely to create another task.
 
+**Each turn runs at its agent's top effort level, `max` for a Claude turn and `xhigh`, extra high,
+for a Codex turn** (Ben's decision, 2026-09-30, whose words `doc/periodic-review.md`, "The effort a
+review runs at", records).
+
 Before the round starts, assign the two roles. **Agent 1 reviews first and owns every odd-numbered
 turn; Agent 2 reviews second and owns every even-numbered turn. Either Claude or Codex may be Agent
 1, and the other is Agent 2.** The role names describe sequence, not which agent fills the role.
@@ -170,24 +174,31 @@ Its “MAM-basics and MAM-private State conventions” section owns non-review S
 Present-state documents stay true in place. Load `mam-repository-topology`, “Manual document
 retirement”, for receipt-family retirement and Ben-authorized reclassification.
 
-### The shared origin branch — Ben's decisions, 2026-09-09 and 2026-09-28 (D11, revised)
+### The shared origin branch — Ben's decisions, 2026-09-09, 2026-09-28 and 2026-09-29 (D11, revised)
 
 For future rounds, setup creates branch `dar-<date>` from the approved starting commit and
 publishes it as `origin/dar-<date>`. A setup-only session may do that without performing a review
 turn; otherwise Agent 1 does it before turn 01. The remote branch, not a directory or local branch
 name, is the round's shared coordination state.
 
-Each turn and close-out task may use its own verified checkout: a linked worktree, a full clone,
-or another clone. A local branch is only that checkout's carrier for `origin/dar-<date>`. It may use
-the remote branch's name when available or a checkout-specific name when, for example, another
-worktree registered to the same clone already has `dar-<date>` checked out. Do not create a second
-remote review branch to match a local carrier branch. A linked worktree uses the worktree's home clone's
-venv by absolute path; development commands, edits, staging and commits run in the checkout that
-owns the current turn.
+**By default, each turn and close-out task runs in whatever verified checkout its session is
+already in** (Ben's decision, 2026-09-29, whose words `doc/periodic-review.md`, "The checkout a
+review uses", records): a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`,
+`$HOME/GitRepos3` and so on — or a linked worktree of one of those clones, and perhaps some day a
+cloud session's checkout. A round may still use a linked worktree made for it, but no step of this
+procedure requires one. A local branch is only that checkout's carrier for `origin/dar-<date>`. It
+may use the remote branch's name when available or a checkout-specific name when, for example,
+another worktree registered to the same clone already has `dar-<date>` checked out. In a full
+clone the carrier is temporary, under the common instruction body's “Git and commits” exception
+for a named shared branch: the clone switches back to `main` when the task ends, since
+`doc/clone-forests.md`'s synchronization check fails a full clone on any other branch. Do not create
+a second remote review branch to match a local carrier branch. A linked worktree uses the
+worktree's home clone's venv by absolute path; development commands, edits, staging and commits
+run in the checkout that owns the current turn.
 
 **`dar` abbreviates `dual-agent-review` in the remote branch name and, when used, a
 worktree-folder name, and nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2
-of MAM-private's `doc/PLAN-private-review-series-catch-up.md`. The turn filenames keep the full
+of MAM-private's archived [private-review catch-up plan](https://github.com/bdenckla/MAM-private/blob/f1ac7e39a0c0c1aefe66525965c8ff9fe78ed665/doc/PLAN-private-review-series-catch-up.md). The turn filenames keep the full
 word, so `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md` is unchanged, and so is the
 historical `git worktree lock` reason. The abbreviation shortens a worktree root by fourteen
 characters: `doc/windows-long-paths.md` measures
@@ -268,7 +279,8 @@ finished exchange, and approval of its choices does not claim its remediation is
 
 The September 16 round was the first standard round to use the neutral roles and numbered filenames
 from its start. Claude was Agent 1 and wrote the odd turns; Codex was Agent 2 and wrote the even
-turns. Turn 05 accepted every conclusion and disposition of turn 04, and turn 06 acknowledged that
+turns. Turn 05 accepted every conclusion and disposition of turn 04, and archived
+[turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md) acknowledged that
 closure without an objection. Ben approved the complete close-out decision package on 2026-09-17;
 the decisions are recorded in
 `doc/dual-agent-review-2026-09-16-turn-01-claude-update.md`. The package makes the shared review
