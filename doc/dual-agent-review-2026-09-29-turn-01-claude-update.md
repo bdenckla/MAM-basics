@@ -492,3 +492,60 @@ mega or generator run is owed for these review records. Before this entry was co
 py/tests/test_receipt_update_links.py py/tests/test_prose_conventions.py
 py/tests/test_prose_mark_order.py` passed its four tests. The step-2 plan's executor re-measures
 every line reference it relies on.
+
+## Ben's decisions and approval of the package, 2026-09-30
+
+Recorded by Claude on 2026-09-30, New York time, in the session that prepared the package above,
+committed and pushed at `1dec120315990707cb1ff66d06d55dc0cfab43ce`. Ben answered the package's
+seven questions in two dialogs by selecting one option of each. The option labels and descriptions
+quoted below are the session's wording; Ben's part is his selection of each.
+
+1. **Question 1, finding 11:** Ben selected "Keep all five", described as "Record an exception for
+   all five: the four for refuse-to-replace, the round trip for its offline reuse and
+   forced-refresh coverage." Under the rule's "unless Ben asks", Ben asks for all five stub test
+   ids of `py/tests/test_wikisource_special_page_download.py`. The step-2 plan records that
+   exception with its two reasons, for example beside the `ws_bot` exception that `AGENTS.md`'s
+   section on writing tests declares, and presents the wording for approval; no test is removed.
+2. **Question 2, item 36.2:** Ben selected "Allow the lag (Recommended)", described as "Amend
+   AGENTS.md and py/product_scopes.py so a MAM text refresh does not oblige rerunning mam4sef and
+   mam_osis, as AGENTS.md already says of the HBCE comparison; a change to their code still does.
+   The products keep lagging." MAM-for-Sefaria and MAM-OSIS are therefore not rerun, and no public
+   data changes under this item; the step-2 plan words the amendment.
+3. **Question 3, finding 32:** Ben selected "Rule names the default (Recommended)", described as
+   "Reword the common-body rule to name the default location, with BOOK_SCANS_ROOT as its
+   override; no code or machine change." The common-body change is deployed with
+   `--sync-user-config`.
+4. **Question 4, finding 33:** Ben selected "Home clone stays ff-only (Recommended)", described as
+   "Scope the fetch-and-merge rule to ordinary full-clone work, as doc/clone-forests.md already
+   does, and give worktree integration (common body and Codex lifecycle) a fetch before the
+   fast-forward and a refused-push branch back to the worktree."
+5. **Question 5, finding 8.2:** Ben selected "In the hebrew-prose skill (Recommended)", described
+   as "Add it to the shared skill, widening its description to cover manuscript locators; the
+   step-2 plan proposes the wording and the conforming edits." The conforming edits it proposes
+   cover the prose that question 5 listed as not following the terminology, each for approval.
+6. **Question 6, item 36.1 with finding 10.1:** Ben selected "Restore an explicit grant
+   (Recommended)", described as "Add to the five wrappers a sentence saying the statement covers
+   the data in that directory (a licence file in each distributed product; wording in the step-2
+   plan); DATA-LICENSES.md then describes them as they stand." The five product `LICENSE.md` files
+   thereby join the step-2 plan's reader-facing approval surface.
+7. **Question 7, the package:** to "Do you approve the proposed fixes, deferrals, and no-action
+   dispositions?", Ben selected "I approve", described as "Approve the complete package committed
+   at 1dec1203, with your answers to the six questions. It approves no unspecified editorial
+   wording; the step-2 plan presents concrete wording."
+
+The approval applies to the complete package committed at
+`1dec120315990707cb1ff66d06d55dc0cfab43ce`, meaning its disposition list, the table of
+recommendations, the table of finding 36's items, the already-resolved subitems, the deferrals and
+the no-action dispositions, as the six answers above settle its questions. It supplies no approval
+of unspecified editorial wording and no semantic choice beyond those answers. Every fix remains for
+later remediation. The list also raised with Ben the risk that a default `py/main_repo_maintenance.py`
+run deletes finding 30's untracked source in `C:/Users/BenDe/GitRepos/MAM-basics/.novc/`; he gave
+no instruction about it, and this task took no action on it.
+
+**Close-out step 1 is complete; steps 2 to 4 remain.** Step 2 is a fresh-task remediation plan
+with concrete editorial wording, presented in `doc/periodic-review.md`'s risk order.
+`doc/dual-agent-review.md`'s record of this round, which its close-out paragraph requires "after
+Ben's decisions", is left to a later close-out step, the step-2 plan or its executor; this task
+does not write it. This entry changes only this file; before it was committed, `git diff --check`
+passed, and the same four lint tests passed. This update remains `State: open` while its base
+survives.
