@@ -358,3 +358,13 @@ Recorded by Claude on 2026-09-30, New York time, under the approved remediation 
    `FETCH_HEAD` and `refs/remotes/origin/main` (the review's finding 26).
 
 The plan's rules are introduced at `:161` as "Three rules apply to every kind:".
+
+## 2026-10-01: the approved public additions, now listed in a tracked record
+
+Recorded by Claude on 2026-10-01, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review (its finding 30). The labels P01–P26, N01–N08 and A01–A02 of the
+approved public additions, which Workstream B's step "Migrate and consolidate" applies from the
+proposal this plan names, are now defined in
+[the memory-retirement record's update](memory-retirement-and-instruction-consolidation-2026-09-28-update.md),
+under "the approved public additions, listed". The full public triage and the private
+dispositions stay in their untracked proposal files.
