@@ -427,3 +427,33 @@ reading of the test.
 6. Commits after the window, except where this turn names them as evidence.
 7. The prose style of the window's documents, beyond the factual consistency of the passages
    cited.
+
+## Reconciliation by Codex, turn 02, 2026-10-01
+
+Codex wrote this append at `xhigh`, extra high, effort after all foreground checkers
+finished. The original turn-01 bytes remain unchanged as a prefix. These are review
+judgments, not remediation decisions. The counter-argument and full evidence are in
+`doc/dual-agent-review-2026-10-01-turn-02-codex.md`; Claude's turn 03 should assess the
+rejections, qualifications and two added findings before the round seeks acknowledgment.
+
+| Finding and subject | Turn-02 disposition | Unfixed work and qualification |
+|---|---|---|
+| 1. Turn 02 stopping without reconciliation | Rejected as a code defect | D13 and the prompt universally require the append. D9 permits unchecked claims in the table. A stop-without-append exception would be a new policy, not an established repair. |
+| 2. Repeated failure after resume suppresses notice | Confirmed | Unfixed: the reason/tip signature survives resume and suppresses a renewed notice when PAUSE is recreated. The local notify probe was isolated, with toast disabled. |
+| 3. Claude interpreter permission | Qualified | Unfixed configuration gap: no interpreter rule is provided while the procedure asks for checks. Effective future CLI restrictions and the exact transcript-denial quotations remain unchecked. Ben decides the intended checking capability. |
+| 4. Mechanical worker boundary | Qualified | Unfixed design limitation: the grants and gate do not establish a complete boundary around external files and remote acts. Actual permission matching and the listed escape forms remain untested. Ben decides the intended boundary. |
+| 5. Whitespace checked after staging | Confirmed | Unfixed: a deterministic-worker probe reproduced the staged, unapproved result and subsequent handoff refusal. |
+| 6. Empty or uninformative refusal reason | Confirmed | Unfixed: stderr-only reporting loses whitespace stdout and negative-ancestry context. The probe produced a newline-only PAUSE after cached whitespace refusal. |
+| 7. Redispatch overwrites attempt records | Confirmed | Unfixed: prompts, launch records, logs and the Codex last-message output reuse names after explicit recovery. Existing turn files and markers remain protected while the marker stands. |
+| 8. Stop notices and registry lifecycle | Qualified | Unfixed duplicate notices and lifecycle gap. Non-live State is a prospective constraint, not a required closure transition. Deleted-branch failure blocks later entries on that tick; subsequent ticks skip its PAUSE. |
+| 9. Turn-01 acknowledgment | Qualified | Unfixed D9/D13 ambiguity for Ben: literal D13 permits it, while D9 assigns turn 02 the counter-argument. An objection's reopening consequence is confirmed. |
+| 10. Error-text fix-up classifier | Confirmed | Unfixed: the invalid turn-01 State message misses the four tokens; unrelated whitespace content can match them. |
+| 11. Deployment test's selected name | Rejected as an instruction violation | The test mechanically lints actual source and the repository tree, an allowed shape. Broadening its narrow coverage is optional; no repair is established by the cited rule. |
+| 12. Commit subject versus plan | Confirmed; history scope clarified | Unfixed low-severity editorial mismatch. The mixed-history counts use all local refs, not endpoint ancestry alone. A future subject change must preserve recovery compatibility. |
+| 13. Fetch/push destination verification — added in turn 02 | Confirmed | Unfixed: real local Git setup pushed to bare B before verification against bare A refused. URL fingerprints detect changes, not the initial destination relationship. Different spellings of the same repository are legitimate. |
+| 14. Nested Windows differential-test path — added in turn 02 | Confirmed | Unfixed test portability defect: default targeted run gave 3 passed, 1 failed here; a process-local long-path workaround gave 4 passed. Production relay failure is not established. |
+
+The endpoint census and whitespace check were verified. The full suite, effective
+Claude CLI permissions, installed notification/task behavior and untracked rehearsal
+receipts remain unchecked by turn 02. None of the confirmed or qualified work was
+remediated during this review. Later corrections belong in later turns.
