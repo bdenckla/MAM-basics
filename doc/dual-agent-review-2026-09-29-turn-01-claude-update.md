@@ -997,7 +997,8 @@ written, as the last paragraph describes, which also names the draft's three cor
 are New York time.
 
 **Effort.** Every assistant record of the second step-2 session's transcript gives `max`: 768
-before its context was compacted at 22:24:11, and 28 after, through its last record at 22:33:07.
+before its context was compacted at 22:24:11, and 28 after, through 22:33:07, its last record
+when this entry was written.
 The first step-2 session's 377 assistant records also all give `max`. The app's session record for
 the second session gave `high` when that session read it at 17:17, ten minutes after its creation
 at 17:07:26. At 22:17 Ben wrote to it: "UI says "high" just now. I set it to Max. Seems like
@@ -1120,5 +1121,45 @@ fast-forwarded to it and pushed, and the read-only `--sync-user-config --check` 
 branch `origin/dar-2026-09-29` remain; retiring a local carrier needs Ben's approval, and deleting
 the remote branch is separate outward-facing cleanup that needs its own authorization. The clone
 `C:/Users/BenDe/GitRepos2/MAM-basics` is left on `main`.
+
+This update remains `State: open` while its base survives.
+
+## Ben's approval of D11's sentences on the app's checkouts, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in the second step-2 session, resumed after the
+steps 3–4 session had finished. At 22:33 on 2026-09-30 the second step-2 session proposed three
+sentences for D11, `doc/dual-agent-review.md`, "The shared origin branch", and at 07:46 on
+2026-10-01 it reported that they were not applied, ending: "If you approve, I'll apply it on main
+once the steps 3–4 session, which is still busy, has finished." At 07:55 Ben replied: "no sessions
+are currently working. go ahead and make this fix".
+
+D11 now adds 2026-10-01 to its heading's dates and says, after its sentence that a full clone
+switches back to `main` when the task ends:
+
+> When the Claude desktop app creates a session whose recorded source branch is the carrier, it
+> checks that branch out in the session's working directory, as two checkouts in
+> `$HOME/GitRepos2/MAM-basics` on 2026-09-30 indicate. A full clone that a task has returned to
+> `main` can therefore be on the carrier again when a later session starts. Each task verifies the
+> branch before acting, and only the task that owns the current turn switches the clone back to
+> `main`.
+
+An attribution follows, as D11 gives Ben's other decisions, pointing to this entry. The sentences
+differ from the proposal in two places. "The desktop app" became "the Claude desktop app", because
+D11 governs Codex's turns too and the evidence comes only from Claude's app. "As two checkouts in
+`$HOME/GitRepos2/MAM-basics` showed on 2026-09-30" became "as two checkouts in
+`$HOME/GitRepos2/MAM-basics` on 2026-09-30 indicate", because "The app's effort record and the
+clone's checkouts, 2026-09-30", above, records the evidence and says that the app itself was not
+examined.
+
+**Also corrected in place in this file**, in "The app's effort record and the clone's checkouts,
+2026-09-30": "and 28 after, through its last record at 22:33:07." now reads "and 28 after, through
+22:33:07, its last record when this entry was written.", because the second step-2 session resumed
+on 2026-10-01 and added records. Every one of those records also gives `max`.
+
+**Verification of this entry.** This entry, the in-place correction and D11's change are one
+commit. `git diff --check` passed, and `py/main_test.py` with
+`py/tests/test_receipt_update_links.py`, `py/tests/test_prose_conventions.py` and
+`py/tests/test_prose_mark_order.py` passed. No source, product, generator or canonical
+configuration changes, so no suite, mega, generator run or deployment is owed.
 
 This update remains `State: open` while its base survives.

@@ -184,7 +184,7 @@ Present-state documents stay true in place. Load
 `mam-repository-topology/references/repository-maintenance.md`, “Manual document retirement”, for
 receipt-family retirement and Ben-authorized reclassification.
 
-### The shared origin branch — Ben's decisions, 2026-09-09, 2026-09-28 and 2026-09-29 (D11, revised)
+### The shared origin branch — Ben's decisions, 2026-09-09, 2026-09-28, 2026-09-29 and 2026-10-01 (D11, revised)
 
 For future rounds, setup creates branch `dar-<date>` from the approved starting commit and
 publishes it as `origin/dar-<date>`. A setup-only session may do that without performing a review
@@ -203,7 +203,14 @@ available or a checkout-specific name when, for example, another worktree regist
 clone already has `dar-<date>` checked out. In a full
 clone the carrier is temporary, under the common instruction body's “Git and commits” exception
 for a named shared branch: the clone switches back to `main` when the task ends, since
-`doc/clone-forests.md`'s synchronization check fails a full clone on any other branch. Do not create
+`doc/clone-forests.md`'s synchronization check fails a full clone on any other branch. When the
+Claude desktop app creates a session whose recorded source branch is the carrier, it checks that
+branch out in the session's working directory, as two checkouts in `$HOME/GitRepos2/MAM-basics` on
+2026-09-30 indicate. A full clone that a task has returned to `main` can therefore be on the
+carrier again when a later session starts. Each task verifies the branch before acting, and only
+the task that owns the current turn switches the clone back to `main` (Ben's decision, 2026-10-01,
+whose words `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`, "Ben's approval of D11's
+sentences on the app's checkouts, 2026-10-01", records). Do not create
 a second remote review branch to match a local carrier branch. A linked worktree uses the
 worktree's home clone's venv by absolute path; development commands, edits, staging and commits
 run in the checkout that owns the current turn.
