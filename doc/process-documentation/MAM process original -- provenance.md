@@ -10,7 +10,7 @@ beside it is rendered from it by `py/main_pipeline_graph.py`, which also
 generates this directory's other graph, `pipeline.dot` and `pipeline.svg`. Run
 it from the repo root after editing the `.dot`:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_pipeline_graph.py
+    ./.venv/Scripts/python.exe py/main_pipeline_graph.py
 
 Do not render the SVG with a hand `dot` invocation: that bypasses the Graphviz
 version pin in `py/mb_cmn/graphviz_pin.py`, which is how this SVG came to sit

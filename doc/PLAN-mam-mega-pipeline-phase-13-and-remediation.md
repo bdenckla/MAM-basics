@@ -313,9 +313,9 @@ implementation. This adds a dependency to the remediation program: the census
 wave need not precede unrelated remediation waves, but it must finish before
 near-Aleppo implementation code begins. The private ledger and the two private
 near-Aleppo plans hold the findings and evidence at
-`C:/Users/BenDe/GitRepos/MAM-private/doc/mega-pipeline-review-findings-2026-09-01.md`,
-`C:/Users/BenDe/GitRepos/MAM-private/doc/PLAN-near-aleppo.md`, and
-`C:/Users/BenDe/GitRepos/MAM-private/doc/PLAN-near-aleppo-implementation.md`;
+`MAM-private/doc/mega-pipeline-review-findings-2026-09-01.md`,
+`MAM-private/doc/PLAN-near-aleppo.md`, and
+`MAM-private/doc/PLAN-near-aleppo-implementation.md`;
 this public plan records only the cross-program ordering and acceptance
 conditions.
 

@@ -618,10 +618,11 @@ which **29 across 11 files** name
 [`doc/review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-07-29.md).
 The figure grew with the
 `State:` line work and the mega-pipeline review docs, and this document itself adds further
-citations, so re-measure rather than trusting either figure:
+citations, so re-measure from the root of a full MAM-basics clone rather than trusting
+either figure:
 
 ```powershell
-git -C C:/Users/BenDe/GitRepos/MAM-basics grep -cI "review-findings"
+git grep -cI "review-findings"
 ```
 
 Four reasons the rename was rejected, none of which the growing count changes.

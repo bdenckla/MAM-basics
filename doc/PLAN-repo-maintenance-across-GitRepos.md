@@ -47,7 +47,8 @@ directory is a standalone clone; a proposal snapshot with neither is not a coord
 Before retiring a standalone task clone, establish all of the following from that exact clone:
 
 1. The working tree is clean.
-2. The checked-out commit is preserved in the primary clone or remote.
+2. The checked-out commit is preserved in a full clone of the repository, in any forest, or on
+   its remote.
 3. No local branch, unreachable commit, or other object is the only copy of unmerged work.
 4. `.git/objects/info/alternates`, when present, is accounted for, and `git count-objects -vH`
    shows whether the task clone itself has unique objects.
@@ -318,6 +319,11 @@ tree stayed still. What was verified then:
 - MAM-basics: 0 worktrees, 0 `claude/*` branches, `main` at `4afa1e8`.
 - Every repo in GitRepos clean and pushed.
 
+Run every command in this section from the root of a full MAM-basics clone, as section 1 says of
+the whole runbook. Precondition 2 inspects the repository containing the current directory, and
+precondition 3 every directory in that directory's parent, which from the clone's root is the
+clone's forest.
+
 1. **Two chip sessions launched 2026-08-07 must have ENDED.** They were:
    - *"Fix #218: 3 prose oddballs block generate-html"* — ran in the MAIN clone
      `C:/Users/BenDe/GitRepos/MAM-basics`, committing to `main`.
@@ -549,9 +555,9 @@ For a dated task folder that appears complete, distinguish these cases before re
    A directory merely containing repository-named copies is not a coordinated review worktree set.
 2. A linked worktree has a `.git` pointer file. A `.git` directory is a standalone clone, so check
    its cleanliness, branch/ref state, and whether the checked-out commit is already preserved in
-   the primary clone or remote. A clone using `objects/info/alternates` can show dangling objects
-   that actually belong to the primary clone; verify its own object store before calling the clone
-   disposable.
+   a full clone of the repository, in any forest, or on its remote. A clone using
+   `objects/info/alternates` can show dangling objects that actually belong to the object store
+   its alternates file names; verify its own object store before calling the clone disposable.
 3. A Git-less `proposed/` copy set is a task artifact, not a forest. Once its changes are committed
    and pushed, retain the commits and generated reports in their proper repositories rather than
    retaining the copies.

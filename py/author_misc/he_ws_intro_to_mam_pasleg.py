@@ -1310,4 +1310,4 @@ _CBODY = [
     author.he_en_table_wct(_FTNT_TRIPLES),
 ]
 
-# E.g. file:///C:/Users/BenDe/GitRepos/MAM-with-doc/gh-pages/misc/he_ws_intro_to_mam_pasleg.html
+# Rendered by py/main_authored.py as gh-pages/MAM-with-doc/misc/he_ws_intro_to_mam_pasleg.html.

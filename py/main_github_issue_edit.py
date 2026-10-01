@@ -1,9 +1,9 @@
 """Correct a stale fact in an open GitHub issue's body: fetch, replace, push, in one process.
 
-Run with MAM-basics' interpreter, from any directory -- every path here is
-resolved from this file, never from the cwd:
+Run with a full MAM-basics clone's own interpreter; every path here is resolved
+from this file, never from the cwd. From the clone's root:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_github_issue_edit.py --repo <repo> --issue <number> --edits <file> [--dry-run]
+    ./.venv/Scripts/python.exe py/main_github_issue_edit.py --repo <repo> --issue <number> --edits <file> [--dry-run]
 
 --repo is a repository name, standing for bdenckla/<name>, or an owner/name
 slug.  It is required because gh otherwise resolves a bare issue number from

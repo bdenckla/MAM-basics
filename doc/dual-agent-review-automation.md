@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; scheduler registered and idle tick verified 2026-10-01; first approved production round pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first two production handoffs independently verified 2026-10-01; turn 03 and the blind measurement are running; later production verification and the approved comparison remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -121,7 +121,7 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 | P4: movement and failures | Passed with a real Claude worker: the local mirror advanced mid-process, the gate rejected remote movement, the checkout stayed clean at its original tip, and pause, marker, logs and notification were preserved. Independent bare-repository reads confirmed the dummy commit. The differential worker-push refusal and forced dispatcher push-failure recovery also passed. |
 | P5: closure and cap | The differential three-turn check requested acknowledgment, closed, and did not launch a fourth worker. The real four-turn rehearsal requested turn 05 acknowledgment, stopped at cap 4, and stayed idle with no further commit. The real round did not close. |
 | P6: notifications and hidden launch | Passed after correcting the sender identity. The hidden helper and dispatcher test both reached Windows notification history. Ben replied "Yes, I see the corrected test" and supplied a screenshot. Ben registered the scheduler on 2026-10-01; its exact hidden action and settings were independently verified, and a scheduled idle tick completed with result 0 and zero registered rounds. |
-| P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
+| P7: private SSH | Unverified. Ben reported both September 29 reviews completed on 2026-10-01, clearing the completion wait. Private readiness and an approved private kickoff remain separate rollout steps; no private fetch or push was attempted in this implementation session. |
 | P8: Codex worktree and instructions | Passed in both real Codex turns: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, and repository and required skill instructions were loaded. All three turn-02 checker reports arrived before the final revisions and dispatcher commit; completion before its first draft write is not established. |
 
 Original failed authentication logs are preserved in this implementation clone's
@@ -274,11 +274,22 @@ or product is reached by this fix.
 
 ## Future review and measurement
 
-The first real automated round requires Ben's future window approval. The comparison
-measurement also needs his decision and record filename. These two prompts are
-prepared for that kickoff; their placeholders must be filled from the approved round
-and their successor provenance must name the preparing agent, date, source checkout,
-required commit, development checkout and integration owner.
+Ben reported both September 29 reviews completed on 2026-10-01 and said:
+"So I think you can proceed, though you are approaching compaction, so perhaps
+give me a prompt for a new session that will proceed." He distinguished his
+current MAM-basics follow-up work from the completed review. The completion wait
+is cleared; that follow-up work remains outside the relay task's write ownership.
+The successor continues in `C:/Users/BenDe/GitRepos2/MAM-basics` with its own
+interpreter and owns further authorized main integration. This report does not
+audit either completed review's integration or retirement, and neither old round
+is adopted. Private readiness P7 is still unverified.
+
+Ben approved the first production kickoff by running the supplied start command,
+as recorded below. Ben approved the comparison and its record filename on
+2026-10-01. These two prompts are prepared for that round; their placeholders must
+be filled from the approved round and their successor provenance must name the
+preparing agent, date, source checkout, required commit, development checkout and
+integration owner.
 
 1. **Fresh Claude counter-argument:** run at max in a separate checkout detached at
    the verified turn-01 commit. Quote Ben's measurement instruction verbatim. Read
@@ -292,6 +303,217 @@ required commit, development checkout and integration owner.
    Ben names on `main`, outside the review branch. The executing session owns that
    integration; the dispatcher never reads or writes the comparison.
 
-No production review or measurement begins in this implementation task. The local
-mirror, its unique commits, worktrees, logs and failure receipts remain preserved;
-retirement requires the repository's verified backup and retirement procedure.
+No production review or measurement was started before this handoff. The fresh
+session has Ben's authorization to proceed with rollout, subject to the concrete
+kickoff decisions above. The local mirror, its unique commits, worktrees, logs
+and failure receipts remain preserved; retirement requires the repository's
+verified backup and retirement procedure.
+
+## Production readiness recheck, 2026-10-01
+
+Verified in `C:/Users/BenDe/GitRepos2/MAM-basics` at clean `main`
+`61fa3d1d06311ae6567be12093809aa446e1ff52`, matching both the required handoff
+commit and live `origin/main`. The proposed `dar-2026-10-01` remote branch,
+local carriers, dedicated worktree paths and round control directory are absent.
+The registry is absent and production is enabled. The installed worker binaries
+resolve, and Codex's current kickoff model is `gpt-6.1-sol`. The registered
+scheduler is enabled and Ready, with the exact hidden Python action, repository
+working directory, three-minute interval, interactive limited privilege and
+IgnoreNew setting; its latest completed tick returned `0`.
+The focused checks passed `4 passed` using the two relay test modules and
+`py/main_test.py -q` at this baseline. No full-suite result for every change
+subsequently merged after the implementation revision is claimed.
+
+Proposed window:
+`303bf2399c1e1fc1300a75f4fb1ed335d62984d0..1bfceff4d952470618fc7584a6bca4fc5c9b2f5f`.
+The range spans nine relay implementation commits; its endpoint diff changes
+15 paths, with 2,506 insertions and 34 deletions and no `gh-pages/`, `MAM-*` product or
+September 29 review-record changes. Claude is recommended as Agent 1. This is a
+bounded rollout review; the periodic series' carried-forward anchor is unchanged.
+The window, Agent 1, new round date and kickoff instruction were proposed for
+Ben's approval; his later start is recorded below. The review branch starts from
+the clean home clone's then-current `main`, carrying current instructions while
+the reviewed diff stays at the approved endpoints. Ben ran start after the
+preparing conversation yielded; start rechecked occupancy. Dispatcher-owned
+worker launches, commits and pushes follow the registered schedule.
+The facts-only option remains false. P7 and private kickoff remain separate.
+
+## Approved comparison preparation, 2026-10-01
+
+Ben selected "Run the comparison using that filename (Recommended)" in response
+to Codex's proposal for a fresh Claude counter-argument blind to Codex turn 02,
+then an independent comparison. The approved final record is
+`doc/dual-agent-review-comparison-2026-10-01.md` on `main`, outside the review
+branch. This approves the measurement, not the proposed production window.
+
+Codex prepared the following prompt frames on 2026-10-01 in
+`C:/Users/BenDe/GitRepos2/MAM-basics` at
+`61fa3d1d06311ae6567be12093809aa446e1ff52`. Before either worker starts, fill
+the approved endpoint pair, the exact pushed turn-01 commit, the absolute
+development checkout and the later turn-02 commit where applicable. An unresolved
+placeholder blocks that worker. The rollout Codex session owns final integration
+of the comparison on `main`; the dispatcher continues to own every review turn.
+
+**Blind Claude counter-argument prompt frame:**
+
+> Codex prepared this successor prompt on 2026-10-01. Ben's comparison decision,
+> verbatim: "Run the comparison using that filename (Recommended)". Codex's
+> question proposed a fresh Claude counter-argument blind to Codex turn 02 and an
+> independent comparison in `doc/dual-agent-review-comparison-2026-10-01.md`.
+> The remaining prompt is Codex's reconstruction of that approved measurement.
+>
+> Source and home clone: `C:/Users/BenDe/GitRepos2/MAM-basics`.
+> Required commit: `<exact pushed turn-01 commit>`.
+> Development checkout: `<separate absolute checkout detached at that commit>`.
+> Interpreter: `C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe`,
+> run from the development checkout. Integration owner: the rollout Codex session.
+> Run a fresh Claude Opus 5.5 process at `max`; verify root, exact HEAD, detached
+> state and NUL-delimited clean status. Read applicable instructions, the approved
+> endpoint diff `<start>..<end>` and the original turn 01 from the required commit.
+> Do not fetch, inspect a later ref or commit, or read Codex turn 02, its
+> reconciliation append, later turns or comparison evidence. Use only public
+> MAM-basics evidence; do not read MAM-private or the other workers' logs.
+> Check turn 01's claims and the same diff for omissions, as an independent
+> counter-argument. Have foreground read-only sub-agents check every finding,
+> wait for them all, and verify the claims you adopt. Write only
+> `.novc/dual-agent-review-comparison-2026-10-01-claude.md` in this checkout.
+> Record source commits, scope, method, checked claims, additions, rejections,
+> errors and available effort evidence. Never modify a tracked file, stage,
+> commit, push or remediate. Report the output path and input identity.
+
+**Independent comparison prompt frame:**
+
+> Codex prepared this successor prompt on 2026-10-01. Ben's comparison decision,
+> verbatim: "Run the comparison using that filename (Recommended)". The remaining
+> prompt is Codex's reconstruction of the approved measurement.
+>
+> Source and integration clone: `C:/Users/BenDe/GitRepos2/MAM-basics`.
+> Required inputs: approved endpoints `<start>..<end>`; original turn 01 at
+> `<turn-01 commit>`; Codex turn 02 at `<turn-02 commit>`; and the blind Claude
+> counter-argument at `<absolute verified output path>`. Name and verify every
+> input before reading it. Run in fresh context that authored neither
+> counter-argument. Use only public MAM-basics evidence. Compare both
+> counter-arguments against the same original turn 01 and endpoint diff.
+> Verify every claimed addition or rejection; record shared and unique valid
+> findings, incompatible claims, errors, unchecked material and available
+> measured effort. Do not infer unavailable timing or token figures, or
+> generalize a single comparison into a standing policy. Keep the review branch
+> untouched. Return the comparison with both counter-arguments preserved for
+> `doc/dual-agent-review-comparison-2026-10-01.md`; the rollout Codex session
+> verifies and integrates that record on `main` with normal commit and push.
+
+## First production kickoff and queued comparison, 2026-10-01
+
+Ben ran the supplied start command and returned the successful status. Independent
+Git reads verified `origin/dar-2026-10-01` at setup commit
+`ef133e4dc79de069229754ee8dc8d5fc59b3e812`; its parent is home-clone `main`
+`870ce133048aff218484683f5ef3f569150e086b`. The round file matches the approved
+endpoints `303bf2399c1e1fc1300a75f4fb1ed335d62984d0..1bfceff4d952470618fc7584a6bca4fc5c9b2f5f`,
+Claude as Agent 1, Opus 5.5/max and `gpt-6.1-sol`/xhigh, caps 10 and 1,
+facts-only false, and production rather than rehearsal. Its kickoff instruction is:
+
+> Run the first automated MAM-basics review of the relay implementation window with Claude as Agent 1.
+
+The registry contains only this production round. The existing Windows task
+launched turn 01 at `2026-10-01T11:11:14.568068-04:00, New York time`; its
+Running state and result `267009` describe a live task rather than an idle
+failure. The dispatcher lock records PID 2276. The in-flight marker names the
+setup tip and dedicated Claude checkout, and the saved launch record pins the
+expected model and effort. The startup hook succeeded. A compound Git read with
+an appended PowerShell expression was denied; subsequent native Git reads
+succeeded. No completed production handoff or halt was established by this
+initial observation. The scheduler, not this verifying session, launches and
+hands off every review turn.
+
+Codex also queued Ben's approved one-time blind Claude counter-argument. The
+bounded operator is `.novc/run-approved-relay-comparison-20261001.py` in this home
+clone; execution session 57831 waits for the dispatcher's turn-01 handoff receipt.
+Its records are under `.novc/dual-agent-review-comparison/2026-10-01/`.
+After the verified handoff it creates
+`C:/Users/BenDe/GitRepos2/MAM-basics/.claude/worktrees/dar-comparison-2026-10-01-claude`
+detached at the exact turn-01 commit, locks it, fills the blind prompt and launches
+a fresh Opus 5.5/max process. The worker reads the original turn 01 and approved
+diff, reads no later ref, turn or worker log, and writes only its ignored
+counter-argument. The operator verifies unchanged HEAD, detached state and clean
+tracked status before recording completion. Its wait is bounded to three hours
+and its worker to 120 minutes; failure preserves its venue, output and logs.
+The independent comparison waits for both that output and Codex turn 02.
+
+Ben explicitly approved a 15-minute follow-up in the preparing Codex chat after
+automatic approval review rejected creating a recurring automation without
+explicit authorization. The active follow-up's id is
+`verify-first-production-dual-agent-review`. It verifies production handoffs and
+stopping behavior, completes the already approved comparison, and commits and
+pushes finished documentation on `main`. It stays quiet during ordinary progress
+and notifies Ben only on a halt, required decision, measurement failure or
+completed verification and comparison. It pauses when the round ends or halts
+and the comparison is recorded; if the halt prevents the comparison, it reports
+the dependency and pauses. The Windows dispatcher retains every review launch,
+commit and push. This follow-up does not override a halt, remediate or retire
+review venues.
+
+**Concurrent work:** this production round uses GitRepos2 and separate dedicated
+review worktrees. The home clone stays on `main`; Claude's worktree holds
+`dar-2026-10-01`, and Codex's worktree holds
+`dual-agent-review-2026-10-01-codex`. Concurrent work in another checkout in
+the same forest does not compete for those working trees or current branches.
+Each checkout still has one writer, and only the dispatcher writes the shared
+review branch. Changes to relay code or configuration in this home clone need
+coordination because later scheduled ticks load those files; changes in another
+clone do not change this helper's code.
+
+## First production handoff verified, 2026-10-01
+
+The dispatcher receipt records Claude turn 01 at
+`dd50e9b946609ac8ab7cc8c15d205d93dd5390e9`, completed at
+`2026-10-01T12:03:41.160480-04:00, New York time`. A live `ls-remote` read
+corroborated that commit on `origin/dar-2026-10-01`. Independent Git and log
+checks established the direct setup parent, one added path
+`doc/dual-agent-review-2026-10-01-turn-01-claude.md`, unchanged round metadata,
+the correctly quoted kickoff instruction across its Markdown line wrap,
+`Next: turn 02, codex`, Opus 5.5/max launch arguments and actual model identity,
+and a successful worker terminal event. The terminal log reports 3,125,198 ms
+and 66 turns. Available usage and sub-agent statistics, log hashes and receipt
+hashes are preserved in
+`.novc/production-relay-independent-verification-20261001/turn-01.json`.
+The repeatable independent verifier is
+`.novc/verify-production-handoffs-20261001.py` in the home clone.
+
+The scheduler launched Codex turn 02 at
+`2026-10-01T12:05:19.992312-04:00, New York time`, pinned to `gpt-6.1-sol`/xhigh
+with the verified turn-01 commit as its required tip. The existing bounded
+comparison operator launched its fresh blind Opus 5.5/max worker at
+`2026-10-01T12:03:58.249172-04:00, New York time`; its saved input commit and
+turn-01 hash match the verified handoff. The separate comparison checkout is
+detached at that exact commit and its NUL-delimited Git status is clean.
+At this observation the operator's execution session was live, Codex turn 02
+and the blind measurement were incomplete, and the independent comparison had
+not started. No production halt was observed; the verification follow-up remained active.
+
+## Second production handoff verified, 2026-10-01
+
+The dispatcher receipt records Codex turn 02 at
+`c9d49a232357140a1d370d454be42b3fd1c8f309`, completed at
+`2026-10-01T12:26:08.490478-04:00, New York time`. A live remote read corroborated
+that commit. Independent checks established its direct turn-01 parent, exactly
+the new turn-02 path and turn-01 reconciliation path changed, unchanged round
+metadata, preservation of the original turn-01 bytes as a prefix, the correctly
+quoted kickoff instruction, `Next: turn 03, claude`, and a successful terminal
+event. Launch arguments pin `gpt-6.1-sol`/xhigh; the worker's actual runtime
+context confirms that model, effort and dedicated checkout. The verifier was
+corrected to recognize Codex's `-m` launch flag, without changing the dispatcher.
+
+The evidence is
+`.novc/production-relay-independent-verification-20261001/turn-02.json` and
+`codex-context-123822-698840.json` in the same directory. The terminal stream's
+reported usage is preserved; it supplies no `duration_ms` or `num_turns`, so
+those values remain unavailable. The original turn-01 SHA-256 is
+`5b1db09bc9a0bfa7fe44e86d9eeb0414eec819e6c8d4f1820b15d74c832a9aa0`.
+The runtime-context inspector is `.novc/inspect-production-codex-context-20261001.py`.
+
+The scheduler launched Claude turn 03 at
+`2026-10-01T12:26:19.948592-04:00, New York time`, with the turn-02 commit as its
+required tip. The separate blind Claude worker remains live. The independent
+comparison awaits that worker's verified completion; the pushed Codex
+counter-argument is now available. No production halt was observed, and the
+verification follow-up remains active.

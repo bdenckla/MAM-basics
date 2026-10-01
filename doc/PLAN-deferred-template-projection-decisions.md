@@ -25,6 +25,12 @@ commit identifiers describe the historical 2026-09-12 review state. A later
 session must inspect current Git state and remeasure affected products rather
 than assume that the repository has remained at these commits.
 
+Every command below runs from the root of the selected MAM-basics checkout,
+in any forest. A full clone runs its own `./.venv/Scripts/python.exe`; a linked
+worktree runs its home clone's interpreter by absolute path, written
+`<home-clone>/.venv/Scripts/python.exe`, where `<home-clone>` is the worktree's
+home clone.
+
 Before continuing the review, read these sources completely:
 
 1. The live user instructions at `C:/Users/BenDe/.codex/AGENTS.md`.
@@ -71,20 +77,20 @@ Do not reopen these decisions while resuming the deferred review:
    stress-helper decision. Re-establish the current count by running, from the
    selected MAM-basics checkout:
 
-       C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-qamats-var --single-threaded
+       ./.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-qamats-var --single-threaded
 
 9. The 66 poetic stress-helper FOI rows retain the new parameter identifiers in
    their provenance fields. Re-establish the current artifact by running, from
    the selected MAM-basics checkout:
 
-       C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-poetic-sh --single-threaded
+       ./.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-poetic-sh --single-threaded
 
 10. The Goerwitz-page glossary remains limited to codes that the page renders.
 11. The decnreub proposal selects parameter `ד` only inside `מ:קמץ`. The proposal
     writes 157 rows rather than the 159 rows on `main`. Re-establish the current
     proposal count by running, from the selected MAM-basics checkout:
 
-        C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_decnreub.py
+        ./.venv/Scripts/python.exe py/main_decnreub.py
 
 12. The Holman table verifier keeps the parameter-1 pointed-ketiv behavior that
     is on `main` until the row-level investigation in MAM-basics #276 establishes
@@ -125,7 +131,7 @@ proposal. Those observations are not a decision and came from an ignored
 throwaway measurement script. Recreate the comparison from the current corpus
 before Ben decides. After a decision, regenerate all multimark artifacts with:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_multimark.py
+    ./.venv/Scripts/python.exe py/main_multimark.py
 
 Read the diffs in `out/mam-multimarks-raw.json`,
 `out/mam-multimarks-full.json`, `out/mam-multimarks-ch.json`, and
@@ -153,7 +159,7 @@ question. The completed fragment-tokenization repair joins adjacent projected
 fragments before it identifies words and preserves combined source metadata.
 After a decision, regenerate `holman/out/holam_he_qere_report.json` with:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_search_holam_he_qere.py
+    ./.venv/Scripts/python.exe py/main_search_holam_he_qere.py
 
 The report regenerated during completion retained the previous hit population;
 only its policy notes changed. Review every resulting difference before
@@ -180,7 +186,7 @@ decide:
 
 After a decision, run the survey from the selected MAM-basics checkout:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_accgram.py survey-breuer-zaqef-units
+    ./.venv/Scripts/python.exe py/main_accgram.py survey-breuer-zaqef-units
 
 The survey writes `.novc/breuer-zaqef-units.json`; compare the entire result with
 a run from the chosen baseline.
@@ -220,7 +226,7 @@ surveys ask different questions.
 
 After a decision, regenerate the focused FOI artifacts with:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-mtgmtg --single-threaded
+    ./.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-mtgmtg --single-threaded
 
 ### 6. Quick-brown FOI dual-cantillation population
 
@@ -236,7 +242,7 @@ the quick-brown survey asks for the same population.
 
 After a decision, regenerate the focused FOI artifacts with:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-quick-brown --single-threaded
+    ./.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-quick-brown --single-threaded
 
 ### 7. Versification-and-cantillation page Scripture projection
 
@@ -277,7 +283,7 @@ as paseq/legarmeh unless the grammatical reading has been established.
 
 After a decision, regenerate the focused FOI artifact with:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-kq-1 --single-threaded
+    ./.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-kq-1 --single-threaded
 
 Inspect `gh-pages/MAM-with-doc/foi/foi-kq-simple.json` and the corresponding HTML
 artifact.
@@ -397,15 +403,15 @@ stream:
 5. Implement each chosen policy as an explicit, consumer-specific dispatch. Name
    every recognized template and validate the exact shape before selecting or
    discarding parameters.
-6. Run Black at its defaults on every changed Python file, using the primary
+6. Run Black at its defaults on every changed Python file, using the home
    clone's interpreter from the worktree:
 
-       C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black <changed Python files>
+       <home-clone>/.venv/Scripts/python.exe -m black <changed Python files>
 
 7. Run each affected generator, inspect the complete generated diff, and commit
    only explained changes on the worktree branch.
 8. Immediately before archival, follow the MAM-basics worktree integration rule:
    merge `main` into the worktree branch, run
-   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py`
+   `<home-clone>/.venv/Scripts/python.exe py/main_0_mega.py`
    from the worktree, commit every explained generated change, fast-forward the
-   primary clone's `main` to the verified worktree branch, and push `main`.
+   home clone's `main` to the verified worktree branch, and push `main`.

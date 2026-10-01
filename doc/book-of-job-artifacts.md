@@ -33,10 +33,10 @@ the 76-file snapshot was unused and redundant with codex-index-aleppo data.
 
 ## Regeneration and verification
 
-Run Book-of-Job generation from `C:/Users/BenDe/GitRepos/MAM-basics`:
+Run Book-of-Job generation from the root of a full MAM-basics clone:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
+./.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
 ```
 
 Read the resulting Git diff. `git status --porcelain` is not reliable for this
@@ -55,7 +55,7 @@ where it matters, compare the working file with its `HEAD` blob through
 Run the Book-of-Job checks from the same repository root:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/check_all.py
+./.venv/Scripts/python.exe py/check_all.py
 ```
 
 ## Entry points

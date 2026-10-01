@@ -35,7 +35,7 @@ Seven independent steps, in order:
    Prepare each ended target with `py/main_repo_util.py --prepare-worktree-retirement`,
    review its preflight and .novc citations, then execute separately with
    `--execute-worktree-retirement`. All owners use the same safety and .novc policy.
-3. Fetch ``origin`` in the primary MAM-basics clone and compare both live
+3. Fetch ``origin`` in the MAM-basics home clone and compare both live
    instruction files, the user-level Codex hook, its origin-derived instruction
    fingerprint and every tracked user-level skill destination with
    ``refs/remotes/origin/main``.  Then run the same Codex instruction check as the
