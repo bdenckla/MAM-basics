@@ -969,9 +969,11 @@ names.
    loop over `Get-ChildItem -Directory ..`, and until that fix only precondition 4 and section 1,
    both later in the runbook, said where to run those commands. Before the remediation the
    commands named the primary forest's clone.
-9. Left unfixed because the approved plan does not cover it: `ruff check --no-cache py` reports
-   E731, a lambda assigned to a name, at `py/tests/test_dual_agent_review_dispatch.py:42`, which
-   `1a50d4b6` added after the plan was written.
+9. Left unfixed when this entry was written, because the approved plan does not cover it, and
+   fixed on 2026-10-01 at Ben's request, as "Ruff's E731 in the review relay's dispatch test
+   fixed, 2026-10-01" records: until that fix, `ruff check --no-cache py` reported E731, a lambda
+   assigned to a name, at `py/tests/test_dual_agent_review_dispatch.py:42`, which `1a50d4b6` added
+   after the plan was written.
 
 **Noticed outside the plan, for Ben.** Finding 28's kind, a live text pinned to the primary
 forest's clone, remains at sites the plan names nowhere: the interpreter path
@@ -1074,9 +1076,11 @@ configuration deployment, so close-out steps 3 and 4 are complete.** This entry 
 pending items that "Approved remediation implemented; final gates pending, 2026-10-01" names in its
 first paragraph and under "What remains". Every deferral, no-action disposition and unresolved
 question there remains as recorded, apart from finding 23's question, which Ben decided later that
-day, as "Ben's decision on the commit for a bot run's special-page changes, 2026-10-01" records,
-and item 8 of "Corrections to the plan and to this branch's records", fixed later that day, as
-"Ben's wording for where the maintenance runbook's preconditions run, 2026-10-01" records.
+day, as "Ben's decision on the commit for a bot run's special-page changes, 2026-10-01" records;
+item 8 of "Corrections to the plan and to this branch's records", fixed later that day, as "Ben's
+wording for where the maintenance runbook's preconditions run, 2026-10-01" records; and item 9 of
+"Corrections to the plan and to this branch's records", fixed later that day, as "Ruff's E731 in
+the review relay's dispatch test fixed, 2026-10-01" records.
 
 **The final merge.** A fetch found `origin/main` at `c3eb743c`, five commits past the carrier's
 last merge base, `0f745369`: the review relay's toast fix and production kickoff (`1bfceff4`), its
@@ -1384,6 +1388,88 @@ The plan, `doc/PLAN-remediate-review-findings-2026-09-29.md`, is a receipt and s
 paragraph are one commit on `main`. They change only documentation, so neither the suite nor the
 mega is owed, and no canonical skill or configuration changed, so no deployment is owed. Before the
 commit, `git diff --check` passed, and `py/tests/test_receipt_update_links.py`,
+`py/tests/test_prose_conventions.py` and `py/tests/test_prose_mark_order.py` passed through
+`py/main_test.py`.
+
+This update remains `State: open` while its base survives.
+
+## Ruff's E731 in the review relay's dispatch test fixed, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in a session in the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` that worked from a handoff prompt that Claude prepared that day
+in the session that executed close-out steps 3 and 4, and that Ben pasted in. The prompt quotes
+Ben's instruction to that session, a request for a prompt for a session that would address the third
+of the five "Left for you" items in that session's final report, and this session found that
+instruction, worded as the prompt quotes it, in that session's transcript. The rest of the prompt is
+that session's reconstruction, which this session checked against the tree. **Fixed: item 9 of
+"Corrections to the plan and to this branch's records", in "Approved remediation implemented; final
+gates pending, 2026-10-01".** In `py/tests/test_dual_agent_review_dispatch.py`,
+`test_local_dispatch_against_git_oracle` assigned a lambda to the name `empty_runtime`, which ruff's
+E731 reports. `954dacf5` replaces the assignment with a nested function of the same name, parameter
+and return value.
+
+**Checkout.** This session verified the clone clean on `main` at `90d1169e` and fast-forwarded it to
+`origin/main` at `870ce133`, which contains `3bd8d24c`, before its first edit. No other session of
+the Claude desktop app had the clone as its working directory, and the clone had no linked worktree.
+Before the edit, read-only checks found that on every ref of this clone and of
+`C:/Users/BenDe/GitRepos3/MAM-basics` the only commit that touched the test file was `1a50d4b6`, and
+that the working tree of `C:/Users/BenDe/GitRepos3/MAM-basics` had not changed it. Before staging
+each of its two commits, this session rechecked `HEAD`: `870ce133`, and then its own `954dacf5`.
+
+**The change.** The assignment `empty_runtime = lambda checkout: {"blockers": []}` became this
+nested function, and Black at its defaults added a blank line before and after it, as the file
+already has around the test's nested function `no_outbound_query`:
+
+```python
+    def empty_runtime(checkout):
+        return {"blockers": []}
+```
+
+Like the lambda, the function takes one parameter, `checkout`, and returns a new `{"blockers": []}`
+on each call; every call of `runtime_facts` under `py/` passes it one positional argument. The two
+`monkeypatch.setattr` calls that install `empty_runtime` are unchanged, and so is the lambda passed
+directly to `monkeypatch.setattr` for `codex_settings`, which assigns no name and so falls outside
+E731. Nothing else in the file changed.
+
+**Verification.** Before the change, `./.venv/Scripts/python.exe -m ruff check --no-cache py`, with
+ruff 0.16.5 as `constraints.txt` pins it, reported this E731 at
+`py/tests/test_dual_agent_review_dispatch.py:42:5` and no other finding; after the change it
+reported "All checks passed!". `git diff --check` passed, and
+`./.venv/Scripts/python.exe py/main_test.py py/tests/test_dual_agent_review_dispatch.py` passed the
+module's one test. `./.venv/Scripts/python.exe py/main_test.py -q`, run once after the change and
+ending at 11:20:37 New York time, passed 1,016 tests, with 5 skipped and 60 subtests passed, in
+197.95 seconds, the counts of "Final integration and configuration deployment completed,
+2026-10-01". A test change cannot reach a mega generator, so the suite was owed and the mega was
+not.
+
+**Also corrected in place in this file:**
+
+1. In "Approved remediation implemented; final gates pending, 2026-10-01", item 9 of "Corrections to
+   the plan and to this branch's records": "Left unfixed because the approved plan does not cover
+   it: `ruff check --no-cache py` reports" now reads "Left unfixed when this entry was written,
+   because the approved plan does not cover it, and fixed on 2026-10-01 at Ben's request, as "Ruff's
+   E731 in the review relay's dispatch test fixed, 2026-10-01" records: until that fix,
+   `ruff check --no-cache py` reported".
+2. In "Final integration and configuration deployment completed, 2026-10-01": "apart from finding
+   23's question, which Ben decided later that day, as "Ben's decision on the commit for a bot run's
+   special-page changes, 2026-10-01" records, and item 8 of "Corrections to the plan and to this
+   branch's records", fixed later that day, as "Ben's wording for where the maintenance runbook's
+   preconditions run, 2026-10-01" records." now reads "apart from finding 23's question, which Ben
+   decided later that day, as "Ben's decision on the commit for a bot run's special-page changes,
+   2026-10-01" records; item 8 of "Corrections to the plan and to this branch's records", fixed
+   later that day, as "Ben's wording for where the maintenance runbook's preconditions run,
+   2026-10-01" records; and item 9 of "Corrections to the plan and to this branch's records", fixed
+   later that day, as "Ruff's E731 in the review relay's dispatch test fixed, 2026-10-01" records."
+
+The plan, `doc/PLAN-remediate-review-findings-2026-09-29.md`, is a receipt and stays as written. In
+"Approved remediation implemented; final gates pending, 2026-10-01", item 2 of the targeted-check
+results under "Checks for every commit." ends "`ruff check --no-cache py` reports only the E731
+named below."; it records a dated result, so it also stays as written.
+
+**Verification of this entry.** This entry and its two in-place corrections are one commit on
+`main`, after `954dacf5`. They change only documentation, so they owe neither the suite nor the
+mega, and no canonical skill or configuration changed, so no deployment is owed. Before the commit,
+`git diff --check` passed, and `py/tests/test_receipt_update_links.py`,
 `py/tests/test_prose_conventions.py` and `py/tests/test_prose_mark_order.py` passed through
 `py/main_test.py`.
 
