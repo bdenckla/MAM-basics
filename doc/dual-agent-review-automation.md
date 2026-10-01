@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first three production handoffs independently verified 2026-10-01; turn 04 is running; the blind measurement is complete; later production verification and the approved comparison record remain pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first four production handoffs independently verified 2026-10-01; turn 05 acknowledgment is running; approved blind comparison is recorded; later production handoffs and stopping behavior remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -554,3 +554,33 @@ identity of every reported flash remains unproven. The diagnostic record is
 `.novc/visible-console-windows-133749531648.json`. Black left the changed source
 unchanged; the complete suite passed **1,016 tests with 5 skips in 154.11 seconds**.
 The change does not reach a mega generator or alter the historical review window.
+
+## Fourth handoff and approved comparison recorded, 2026-10-01
+
+Codex turn 04 is `900c815f646121e84c178dbb7e86d2ac3bc569b8`, handed off at
+`2026-10-01T13:44:48.621827-04:00, New York time`. Independent checks verified
+its direct turn-03 parent, sole new turn-04 path, unchanged round metadata,
+quoted kickoff instruction, actual `gpt-6.1-sol`/xhigh runtime context,
+successful terminal event and `Next: turn 05, claude; acknowledgment`.
+The live remote corroborated the tip. The scheduler owns the owed acknowledgment.
+Evidence is `.novc/production-relay-independent-verification-20261001/turn-04.json`
+and the timestamped Codex context record in that directory.
+
+The approved comparison is completed in
+`doc/dual-agent-review-comparison-2026-10-01.md`, with both counter-arguments
+preserved byte for byte. A fresh independent read-only assessor and parent
+verification established complementary contributions and each input's material
+misses. Effort fields retain their source scopes; missing figures are not
+invented. No standing review policy or remediation decision follows from it.
+The comparison operator is finished and must not be relaunched. The verification
+follow-up stays active until the production round ends or halts, then pauses.
+
+Ben saw another console burst while the old controller completed turn 04.
+The Git suppression fix is pushed in `0c12552b`, merged on main at `734ba753`;
+Ben's newer instruction/documentation work was preserved. Eight relevant checks
+passed after the merge. The subsequent scheduled launch at 13:47:14, New York
+time, occurred within an elevated minute-long read-only desktop observation
+that detected no visible console window. Its record is
+`.novc/visible-console-windows-134746619190.json`. The original burst's exact
+window/process pairing was not captured; later worker children remain subject
+to observation.
