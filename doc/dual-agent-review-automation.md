@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first production round registered and turn 01 automatically launched 2026-10-01; production verification and the approved comparison remain pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first production handoff independently verified 2026-10-01; turn 02 and the blind measurement are running; later production verification and the approved comparison remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -461,3 +461,31 @@ Each checkout still has one writer, and only the dispatcher writes the shared
 review branch. Changes to relay code or configuration in this home clone need
 coordination because later scheduled ticks load those files; changes in another
 clone do not change this helper's code.
+
+## First production handoff verified, 2026-10-01
+
+The dispatcher receipt records Claude turn 01 at
+`dd50e9b946609ac8ab7cc8c15d205d93dd5390e9`, completed at
+`2026-10-01T12:03:41.160480-04:00, New York time`. A live `ls-remote` read
+corroborated that commit on `origin/dar-2026-10-01`. Independent Git and log
+checks established the direct setup parent, one added path
+`doc/dual-agent-review-2026-10-01-turn-01-claude.md`, unchanged round metadata,
+the correctly quoted kickoff instruction across its Markdown line wrap,
+`Next: turn 02, codex`, Opus 5.5/max launch arguments and actual model identity,
+and a successful worker terminal event. The terminal log reports 3,125,198 ms
+and 66 turns. Available usage and sub-agent statistics, log hashes and receipt
+hashes are preserved in
+`.novc/production-relay-independent-verification-20261001/turn-01.json`.
+The repeatable independent verifier is
+`.novc/verify-production-handoffs-20261001.py` in the home clone.
+
+The scheduler launched Codex turn 02 at
+`2026-10-01T12:05:19.992312-04:00, New York time`, pinned to `gpt-6.1-sol`/xhigh
+with the verified turn-01 commit as its required tip. The existing bounded
+comparison operator launched its fresh blind Opus 5.5/max worker at
+`2026-10-01T12:03:58.249172-04:00, New York time`; its saved input commit and
+turn-01 hash match the verified handoff. The separate comparison checkout is
+detached at that exact commit and its NUL-delimited Git status is clean.
+The operator's execution session remains live. Codex turn 02 and the blind
+measurement remain incomplete, so the independent comparison has not started.
+No production halt was observed; the verification follow-up remains active.

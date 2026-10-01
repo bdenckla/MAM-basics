@@ -4,8 +4,9 @@ State: live. Ben authorized implementation on 2026-09-30; core code and four rea
 handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
 production is enabled, and scheduler registration and an idle tick are verified
 2026-10-01. Ben started the approved first production round on 2026-10-01;
-the scheduler launched turn 01. Production handoffs and the approved comparison
-remain to be verified.
+the first production handoff is independently verified and turn 02 is running.
+Later production handoffs, stopping behavior and the approved comparison remain
+to be verified.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -81,8 +82,8 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first production round registered and turn 01 automatically launched; production handoffs and stopping behavior remain pending |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process is queued for the verified turn-01 handoff; comparison remains pending |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first production handoff independently verified and turn 02 running; later handoffs and stopping behavior remain pending |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process is running at the verified turn-01 commit; comparison remains pending |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
@@ -377,6 +378,27 @@ retains sole ownership of every numbered review turn.
 > only on a meaningful halt, decision, measurement failure or completion.
 > Pause the verification follow-up after the round ends or halts and the
 > comparison is recorded, or report and stop if the halt prevents comparison.
+
+## First production handoff verified, 2026-10-01
+
+The dispatcher pushed Claude turn 01 as
+`dd50e9b946609ac8ab7cc8c15d205d93dd5390e9`, a direct child of the setup commit.
+The independent verifier checked the receipt, exact changed path, unchanged
+round bytes, quoted kickoff instruction, valid `Next: turn 02, codex`, pinned
+launch model and effort, and successful Claude terminal event. A live remote
+read corroborated the pushed commit. The saved evidence is
+`.novc/production-relay-independent-verification-20261001/turn-01.json`; the
+repeatable scratch verifier is `.novc/verify-production-handoffs-20261001.py`.
+The worker's terminal log reports 3,125,198 ms and 66 turns; these are recorded
+worker measurements rather than a reconstruction from commit times.
+
+The scheduler launched Codex turn 02 at
+`2026-10-01T12:05:19.992312-04:00, New York time`. The already-running comparison
+operator launched the separate blind Claude worker at
+`2026-10-01T12:03:58.249172-04:00, New York time`. Independent Git reads found
+its dedicated checkout detached at the exact turn-01 commit with clean
+NUL-delimited status. Both processes remain live; neither turn 02 nor the blind
+output is yet complete. The verification follow-up remains active.
 
 ## Context: what the relay costs
 
