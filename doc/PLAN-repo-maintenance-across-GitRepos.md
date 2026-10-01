@@ -688,7 +688,9 @@ cleanup mechanism.
 **H2 — Tracked references to relocated `.novc` paths require review.** Unique ignored content
 outside `.novc` blocks retirement. Every selected owner's `.novc` is inventoried, relocated and
 verified under step 7, even when small. Every tracked reference to one of those exact relative or
-absolute paths requires review; generic `.novc` policy prose does not. Later disposal is a
+absolute paths requires review; generic `.novc` policy prose does not, and neither does a spelling
+of a target's root `.novc/t` or of anything below it, the suite's disposable base-temporary tree
+on Windows. Later disposal is a
 separate recorded decision. Historical measurement on 2026-08-07 found seven spent ignored files
 in two spared MAM-basics worktrees; that observation does not establish that today's contents are
 spent.
