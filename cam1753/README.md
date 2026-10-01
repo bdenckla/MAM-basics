@@ -1,8 +1,9 @@
 # Cambridge Ms. Add. 1753 page-location data
 
 This tree holds data for locating Hebrew words on photographed pages of Cambridge
-University Library MS Add. 1753. Its line-break data begins in Psalms and continues
-through Job, and its page index also covers Lamentations.
+University Library MS Add. 1753. Its line-break data begins at Psalms 149:7 and continues
+through Job into Proverbs, ending with the first three atoms of Proverbs 1:31, and its page
+index also covers Lamentations.
 
 No program maintains this data. The page images and every program that worked on them
 were retired on 2026-09-26 by

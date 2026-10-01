@@ -29,7 +29,7 @@ https://www.masoretica.org/?book=Lamentations&chapter=2&verse=3&manuscript=sasso
 It gives the page and folio and, where the images are on the Internet Archive, the scan
 number, so it turns "which page is this verse on" into one URL. It has the Leningrad Codex,
 the Aleppo Codex and Codex Sassoon 1053 among others. Checked 2026-08-04: it does **not**
-have Cambridge University Library MS Add. 1753, so the leaf hunt for that manuscript still
+have Cambridge University Library MS Add. 1753, so finding the page for that manuscript still
 runs through `../../cam1753/`.
 
 ### The Leningrad Codex
@@ -41,12 +41,13 @@ are the same photographs:
 - <https://archive.org/details/Leningrad_Codex_Color_Images/page/n859/mode/1up?view=theater>
 
 That index page, mirrored at `../../in/mam-ws-intro/index-leningrad.mediawiki`, has both links
-for every folio — 982 of them, checked 2026-09-10 — so it is the way to get from a folio number
-to an image. The page is a folio and side, as in `430B`.
+for every manuscript page identifier — 982 of them, checked 2026-09-10 — so it is the way to get
+from a page identifier to an image. The manuscript page identifier combines the folio number and
+side, as in `F430B`.
 
 ### Cambridge Add. 1753
 
-The page is a leaf and side in `{leaf:04d}{side}` form, as in `0105B`. To get from a verse to a
+The manuscript page identifier is `{leaf:04d}{side}`, as in `0105B`. To get from a verse to a
 page: `../../cam1753/cam1753-page-index.json` for the low-resolution index and
 `../../cam1753/cam1753-line-breaks/` for the Job pages that have line-level data. The BookReader
 URL is `https://archive.org/details/ketuvim-cambridge-ms-add-1753-images/page/n<spread>/mode/1up`,
@@ -55,7 +56,7 @@ manuscript.
 
 ## leningrad-430B-col2-line10-Lam2v3-akhla.png
 
-Lamentations 2:3, the word אָכְלָ֖ה, on **folio 430B, column 2, line 10**.
+Lamentations 2:3, the word אָכְלָ֖ה, on **page F430B, column 2, line 10**.
 
 **The Leningrad Codex has no meteg on this word** — confirmed by Ben from this image on
 2026-08-04. The qamats under the alef stands alone, so nothing in the manuscript marks the
@@ -72,25 +73,25 @@ manuscript has.
 
 Codex Sassoon 1053 and Cambridge Add. 1753 have no meteg on this word either, both confirmed
 the same day: `sassoon1053-p740-Lam2v3-akhla.png` for Sassoon 1053 page 740,
-and `cam1753-0105B-col2-Lam2v3-akhla.png` for Cambridge Add. 1753 leaf 0105B
+and `cam1753-0105B-col2-Lam2v3-akhla.png` for Cambridge Add. 1753 page 0105B
 column 2.
 
 ### Calibration note for the atom-location estimator
 
-`MAM-basics/py/main_uxlc_estimate_atom_loc.py` put this word at folio 430B, column 2, line
+`MAM-basics/py/main_uxlc_estimate_atom_loc.py` put this word at page F430B, column 2, line
 12.9 — three lines low against the line 10 Ben read off the image:
 
 ```
 {'page': '430B', 'fline-guess': '39.9', 'line-guess': '12.9', 'column-guess': 2}
 ```
 
-The folio is right and the column is not independently confirmed: Ben's correction named the
+The page is right and the column is not independently confirmed: Ben's correction named the
 line only, and the column is still the estimator's. Recorded here as one data point about how
 close the estimate runs, not as a defect report.
 
 ## cam1753-0105B-col2-Lam2v3-akhla.png
 
-Lamentations 2:3, the word אָכְלָ֖ה, on **leaf 0105B, column 2, third line up from the
+Lamentations 2:3, the word אָכְלָ֖ה, on **page 0105B, column 2, third line up from the
 bottom** — so line 24, if the column is the usual 26 of `../../cam1753/cam1753-col-quads/`. It is the
 right-hand page of archive.org spread n110.
 

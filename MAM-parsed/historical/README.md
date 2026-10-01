@@ -22,8 +22,8 @@ permissions are 0644, and members use `ZIP_STORED`. Archive and member comments
 and extra fields are empty. The reader checks the complete manifest/archive
 member set, rejects duplicate or unlisted members, validates this metadata and
 member CRCs, and reads members directly without extraction. The six
-pre-migration archives were written on 2026-09-10 by a program that was never
-tracked. `py/mb_diff_mpu/mpplus_archive.py` writes the MAM-basics snapshots and,
+pre-migration archives were written on 2026-09-10, from loose JSON copies of
+their files stored on 2026-09-06, by a program that was never tracked. `py/mb_diff_mpu/mpplus_archive.py` writes the MAM-basics snapshots and,
 given the members of each pre-migration archive, reproduces it byte for byte.
 
 Ben's decision, 2026-09-06: common change-log generation must not require a
@@ -33,9 +33,10 @@ automatic fetch is used.
 
 Ben's decisions, 2026-09-28: archive each MAM-basics boundary when it is
 pinned, and label it as the older snapshots are labelled, by its full hash and
-New York date. The snapshots had been made on 2026-09-06 for the six
-boundaries that lived in MAM-parsed, and a later boundary was read from
-MAM-basics history, which a shallow clone lacks beyond its depth. On 2026-09-28
+New York date. Snapshots of the six boundaries that lived in MAM-parsed had
+been stored since 2026-09-06, as loose JSON until 2026-09-10 and as archives
+since, and a later boundary was read from MAM-basics history, which a shallow
+clone lacks beyond its depth. On 2026-09-28
 the depth-50 clone of main at 8c2fa6c3 in a Claude cloud container held 117
 commits and not cb95915, the boundary that 78559eba pinned on 2026-09-17, so
 the mega's diff-mpplus step stopped there. cb95915 was archived that day. Its
@@ -75,10 +76,20 @@ already begins a snapshot's hash. Each pin adds a snapshot of about 13 MB to
 every checkout, sparse checkouts of `MAM-parsed/` included, and to Git history
 for good.
 
-Every change-log run refuses, before comparing anything, a boundary of
-`releases.json` that has no snapshot, and names the fix. For a boundary pinned
-without `--pin`, run this in a clone that has the boundary's commit, then run
-`--all`:
+Before comparing anything, a change-log run refuses each boundary of
+`releases.json` that it checks and that has no snapshot, and names the fix.
+Which boundaries it checks depends on the run. `--all`, `--check` and the
+mega's diff-mpplus step check every boundary. A run without arguments checks
+only the latest release's end, the one boundary it compares. `--pin` checks the
+latest release's end before it writes anything, and the other boundaries only
+when it regenerates the change log, after it has written HEAD's snapshot, its
+manifest entry and its line in `releases.json`; the fix a refusal names then
+completes the pin. A run with explicit `--old` and `--new` checks no boundary.
+A snapshot counts as stored when `manifest.json` lists it, so a listed snapshot
+whose archive file is missing passes every guard and stops the run at its first
+read, with an error that names the missing file but not the fix. For a boundary
+pinned without `--pin`, run this in a clone that has the boundary's commit, then
+run `--all`:
 
 ```powershell
 .venv/Scripts/python.exe py/main_diff.py mpplus --archive <boundary>

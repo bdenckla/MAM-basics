@@ -179,7 +179,7 @@ says what that session re-checked on 2026-09-26:
   the folio's "a" side, and the next image is its verso, the "b" side. Ben identifies the sides
   in the same way in
   [`../doc/meteg-after-silluq-snips/README.md`](../doc/meteg-after-silluq-snips/README.md):
-  image 623 is folio 303a, and images 632, 634 and 714 are folios 307b, 308b and 348b.
+  image 623 is page 303a, and images 632, 634 and 714 are pages 307b, 308b and 348b.
 - **Pencilled chapter-and-verse numbers** stand in the lower-left margin of three pages: 12,2 on
   image 497, 71,10 on image 632 and 57 on image 714. Each names the verse in which its page ends.
 - **The foliation question, which is unresolved.** The catalog cites these folios:
@@ -191,7 +191,7 @@ says what that session re-checked on 2026-09-26:
   By the Psalms relation, fol. 256 would end around image 530. But image 497 already starts in
   2 Chronicles 11:16, which puts the end of fol. 256 around image 494, by the first reading
   session's estimate. The Prophets pages do not fit the Psalms relation either. Ben reads the
-  folio number 57 at the bottom of image 120, in 1 Samuel, and identifies the page as folio 57a.
+  folio number 57 at the bottom of image 120, in 1 Samuel, and identifies image 120 as page 57a.
   There, image = 2 × folio + 6, and a recto falls on an even-numbered image. That relation would put
   fol. 78b at image 163, where the Psalms relation would put it at image 174. An estimate from
   letter counts puts the end of 2 Samuel 1:16 near the end of image 166 ("Open questions" under
@@ -340,8 +340,8 @@ verses from these images.
    The Prophets figures in item 1 come from another counter, the NLI session's own, which read
    MAM-simple's JSON rather than the atoms of the consumer guide. On 2026-09-26 the image-list
    session compared the two counters verse by verse over Joshua through Kings, the Latter
-   Prophets, Chronicles and the Writings. They agree on all 17,358 verses but Psalms 10:5, where
-   `get_verse_words` drops an atom (item 6).
+   Prophets, Chronicles and the Writings. They agreed on all 17,358 verses but Psalms 10:5, where
+   `get_verse_words` then dropped an atom; item 6 records the fix of 2026-09-28.
 4. **Crop at full resolution.** The images read so far are 6,048 to 6,384 pixels wide and 7,056 to
    7,824 pixels tall, and the Read tool shrinks a whole page to about 1,700 pixels wide. So crop
    each edge with Pillow into scratch files, a half or a third of a line at a time, and read the
@@ -482,7 +482,7 @@ image-list session matched the findings sub-agent's quoted words to MAM's atoms 
 2. **Where do fol. 78b and fol. 79a fall?** Three estimates disagree:
    1. At about 568 letters per page from the start of image 120, the end of 2 Samuel 1:16 comes
       near the end of image 166, so 1 Kings 8:61 would begin around image 167.
-   2. Ben's folio 57a on image 120 puts fol. 78b at image 163, if the images run two per folio in
+   2. Ben's page 57a on image 120 puts fol. 78b at image 163, if the images run two per folio in
       between. That would take about 605 letters per page.
    3. If fol. 1a were image 005, fol. 78b would be image 160.
 3. **What is canvas 416?** It is FL48718854, the file id that the record's MARC 907 field for
@@ -490,7 +490,7 @@ image-list session matched the findings sub-agent's quoted words to MAM's atoms 
    it.
 4. **What is the mark at the foot of image 116?** The findings sub-agent saw a faint mark there,
    illegible in the screenshots. On image 120 the mark is the folio number 57, by Ben's reading.
-   By the relation at image 120, image 116 would be folio 55a.
+   By the relation at image 120, image 116 would be page 55a.
 5. **Does the catalogued text fit images 005–495?** The text that the catalog lists before
    2 Chronicles 11 holds 296,806 letters, by the findings sub-agent's count, which the image-list
    session reproduced. At 565–568 letters per page that takes about 523–525 pages, an estimate,
@@ -520,7 +520,7 @@ For completeness, the NLI access facts found in 2026 remain:
 The rights statements matter only if someone later chooses to obtain images from the NLI rather
 than locate Avi's other zip.
 
-### Segmentation of Psalms, Job and Proverbs
+### Segmentation of the verses the catalog lists before 2 Chronicles 11
 
 Since 2026-09-26 `get_verse_words` refuses no verse ("Extending the index", item 6). Of the 4,827
 verses that the catalog lists before 2 Chronicles 11, 25 hold one of the seven formerly refused
