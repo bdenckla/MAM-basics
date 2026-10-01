@@ -706,3 +706,280 @@ file, product or generator changes, and no suite, mega or generator run is owed.
 
 **Close-out step 2 is complete; steps 3 and 4 remain**, in a fresh task that executes the plan and
 owns final integration. This update remains `State: open` while its base survives.
+
+## Approved remediation implemented; final gates pending, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in the session that executes the remediation plan
+as close-out steps 3 and 4. It worked from a handoff prompt that the second step-2 session prepared
+and Ben pasted in; that prompt quotes Ben's selection of "Approve execution (Recommended)", which
+the entry above records, and is otherwise that session's reconstruction, which this session checked
+against the plan and the tree. **Implemented: every active row of the plan's "Finite execution
+ledger", apart from finding 2's dated entry in the 2026-09-26 close-out record, which the plan's
+"Records" assigns to the closing records.** The full suite passed at `94535122`, and it runs again
+after the final merge because `9588700f`, later, changed a test. Final integration, meaning the
+merge of the current `origin/main`, the mega and the push of `main`, and the `--sync-user-config`
+deployment remain pending.
+
+**Checkouts and baseline.** The development checkout is the full clone
+`C:/Users/BenDe/GitRepos2/MAM-basics`, on its carrier `dar-2026-09-29`. Editing began there at
+`a849e068f1db485ef0dea9062596ff12cfef9896`, the commit of "Ben's approval of the remediation plan,
+2026-09-30", with the tree clean. A fetch found `origin/dar-2026-09-29` at the same commit, and
+`1dec1203`, `bcbbb1dc`, `a849e068` and `origin/main`, then `0f745369`, were all ancestors of `HEAD`,
+so the merge that D11 requires made no commit. Phase 1, finding 30, ran in the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, which holds the finding's untracked source: phase 1a read it
+and drafted the list in this session's scratch directory, and after Ben's answer phase 1b created
+that clone's carrier from `origin/dar-2026-09-29` at `94535122`, committed and pushed `b8700f12`
+there, and switched that clone back to `main`. The development checkout then fast-forwarded to
+`b8700f12`. From its first edit, at 22:29 New York time on 2026-09-30, to this entry, this session
+was the only writer in either checkout; its sub-agents only read.
+
+**Ben's decisions in this session.** Each question and its options were this session's wording;
+Ben's part is his selection of each, made at 06:54 New York time on 2026-10-01.
+
+1. **Finding 30.** To the question whether he approved the phase-1a draft (36 rows and two
+   entries, the privacy check passed, every addition present at `HEAD` and added by `0e254fdc`,
+   with rows A01 and A02 generalizing their destinations' wording to keep account observations
+   out of a public row), Ben selected "Approve as drafted (Recommended)" rather than "Approve;
+   quote A01/A02 exactly" or "Not yet". Phase 1b wrote the draft as approved.
+2. **The step-2 session's request.** The second step-2 session asked this session, at Ben's
+   suggestion, to record an in-place correction of its sentence on the app's effort record and a
+   new entry on that record and the clone's checkouts. Ben selected "Record it, verified",
+   described as "Before writing, I check each fact against the reflog, the app's session records,
+   the settings file and the transcripts; I drop any fact I cannot verify and say what I verified.
+   It goes in with the closing records.", rather than "Leave it out".
+
+**Commits.** Twenty-six commits before this entry, each pushed to `origin/dar-2026-09-29` with
+`git push origin HEAD:dar-2026-09-29` as soon as it was made, never forced:
+
+1. Phase 2, records, instructions and procedures: `d67bee39` (the plan's State, E1, findings 34.1
+   and 35, and the round record), `76fc0086` (`AGENTS.md`), `7cf1ed21` (the common body and the
+   lifecycle reference of Codex's `codex-worktree-tasks` skill), `1c0cf3f8` (the shared skills and
+   the configuration READMEs), `8fd5b6e6` (runbooks and procedure documents) and `37169648`
+   (seven open update files and the HBCE receipt's new update); and `3451942e`, made during phase
+   4, which corrects two of `37169648`'s entries.
+2. Phase 3, the reader-facing documents and the licence files: `4a5f9800` and `aef596c7`.
+3. Phase 4, code, tests, docstrings and their generated outputs: `8742d96a`, `572e2f08`,
+   `71f5cd50`, `951f9b35`, `b158db02`, `41d73299`, `f62428c4`, `3a1b9a7c`, `23e0f587`, `392dced7`,
+   `4f271a50` and `37002a28`.
+4. Phase 5: `94535122`, the change-log regeneration that the first full suite showed was owed;
+   and `71214987`, `9588700f` and `174357eb`, which fix what the read-only verifiers below found.
+5. Phase 1b: `b8700f12`, made in `C:/Users/BenDe/GitRepos/MAM-basics`.
+
+### Dispositions of findings 1 to 36, C1, E1 and the round record
+
+| Finding | Execution disposition |
+|---|---|
+| 1 | Implemented. 1.1: `f62428c4` lists the narpas rule before the whitespace-template rule and regenerates the 24 `MAM-parsed/plus` files and `mpplus.html`, and `94535122` regenerates the change log's `unpinned-latest` for the new plus tree id. 1.2: `8742d96a`. 1.3: `37169648`, corrected by `3451942e`. |
+| 2 | Implemented, apart from the dated entry in the 2026-09-26 close-out record, which goes in the closing records. 2.1: `4a5f9800` (`in/mam-ws-intro/README.md`) and `37002a28` (two docstrings). 2.2: `8fd5b6e6` (the September 9 plan) and `37002a28` (`py/ac_paths.py`). 2.3: `572e2f08`. 2.4: `4a5f9800`. 2.5: `7cf1ed21` and `8fd5b6e6`. |
+| 3 | Implemented in `4a5f9800`: 3.1's heading and 3.2's sentence in `evr-ii-b-55/README.md`. |
+| 4 | Implemented: 4.1's second site, 4.2, 4.3 and 4.7 to 4.9 in `37169648`; 4.4 in `8fd5b6e6`; 4.5 in `1c0cf3f8`. Already resolved before this task: 4.1's first site and 4.6, by `e4934b6e`. |
+| 5 | Implemented: 5.1, 5.4 and 5.5 in `37002a28`; 5.2 in `8fd5b6e6`; 5.3 and 5.6 in `572e2f08`. |
+| 6 | Implemented: 6.1 in `71f5cd50`, 6.2 in `951f9b35` and 6.3 in `b158db02`. |
+| 7 | Implemented in `b158db02`, with gate 4's wording and hazard H2 (flagged site 7). |
+| 8 | Implemented. 8.1: approved as it stands, so its passages stay. 8.2, by question 5: the `hebrew-prose` description and its new section in `1c0cf3f8`, and the conforming edits in `1c0cf3f8`, `8fd5b6e6`, `4a5f9800`, `392dced7`, `4f271a50` and `37002a28`. |
+| 9 | Implemented in `37169648`: 9.1's State form in `evr-ii-b-55/evr-ii-b-55-images-provenance-update.md` and `doc/post-stress-meteg-image-provenance-update.md`, and 9.2's record in the first. |
+| 10 | Implemented in `aef596c7`: 10.1 with item 36.1, in `DATA-LICENSES.md` and the five product licence files, and 10.2 in `DATA-LICENSES.md`. |
+| 11 | Implemented: the exception for all five stub test ids in `AGENTS.md` (`76fc0086`) and in the test module's docstring (`23e0f587`). No test was removed. |
+| 12 | Implemented in `76fc0086` (`AGENTS.md`) and `23e0f587` (the docstrings of `py/ws/ws_special_page_download.py`). |
+| 13 | Implemented in `4a5f9800` (`in/mam-ws-intro/README.md`) and `37002a28` (`py/subcommands/download_wikisource_intro.py`). |
+| 14 | Implemented in `8742d96a`: 14.1, 14.2, 14.3's two false references and three rewordings, and 14.4. |
+| 15 | Implemented in `41d73299`. |
+| 16 | Implemented in `41d73299`, with its `NOT_IN_MEGA` reason; `9588700f` corrects one sentence of `parse_ws.almost_main`'s docstring. |
+| 17 | Implemented in `41d73299`. |
+| 18 | Implemented in `4a5f9800`: 18.1 and 18.2. |
+| 19 | Implemented in `8fd5b6e6`. |
+| 20 | Implemented with flagged site 9's "join" wording: `hbce-psalms/README.md` in `4a5f9800` and `DATA-LICENSES.md` in `aef596c7`. |
+| 21 | Implemented in `37169648`: the new `doc/hbce-psalms-vs-mam-2026-09-26-update.md` and the base's line-4 pointer. Deferred, as the plan records: the heading fix in `py/hbce_psalms/compare.py`. `hbce-psalms/out/` is unchanged. |
+| 22 | Deferred: no MAM-basics change; the next dependent refresh checks that the variant reaches phonetic-hbo's page and the survey. |
+| 23 | Implemented: the `mam-wikisource-refresh` skill in `1c0cf3f8` and `py/ws/pywikibot-setup.md` in `8fd5b6e6`, with flagged site 2 in `37002a28`. Unresolved, for Ben: the question the plan leaves open under "The `mam-wikisource-refresh` skill (finding 23)", which commit takes a special page that the post-bot download changes. |
+| 24 | Implemented: 24.1 and 24.2 in `MAM-parsed/historical/README.md` (`4a5f9800`, rewrapped by `71214987`) and the module docstring of `py/subcommands/diff_mpplus.py` (`37002a28`). |
+| 25 | Implemented in `3a1b9a7c`, with the new lint `py/tests/test_forest_subprocess_bounds.py`, which `9588700f` extends to calls through imported modules. |
+| 26 | Implemented in `3a1b9a7c`, with its texts; `174357eb` restores the approved wording of flagged site 5.5's entry. The write form was not run. |
+| 27 | Implemented in `4a5f9800`. |
+| 28 | Implemented: 28.3 in `1c0cf3f8`; 28.4, turn 07's ten runbook lines, in `8fd5b6e6`, and its three action-table rows in `3a1b9a7c`; 28.5 in `8fd5b6e6`; 28.6 in `4a5f9800`. Already resolved before this task: 28.1 and 28.2, by `4d3ebf66`. |
+| 29 | Implemented: the configuration READMEs in `1c0cf3f8` and the September 9 plan in `8fd5b6e6`. |
+| 30 | Implemented in `b8700f12`, with the wording Ben approved on 2026-10-01. |
+| 31 | Implemented in `37002a28`. |
+| 32 | Implemented in `7cf1ed21`, with flagged site 5's other statements of the rule. |
+| 33 | Implemented in `7cf1ed21`: the common body and Codex's lifecycle reference. |
+| 34 | Implemented: 34.1 in `d67bee39`, `76fc0086`, `7cf1ed21` and `1c0cf3f8`; 34.2 and 34.3 in `1c0cf3f8`. |
+| 35 | Implemented in `d67bee39`. |
+| 36 | By item, below. |
+| C1 | Implemented in `23e0f587`. |
+| E1 | Implemented in `d67bee39`. |
+| Round record | Implemented in `d67bee39`: "The September 29 round" in `doc/dual-agent-review.md`. |
+
+### Dispositions of the sites found while planning
+
+Ben approved all thirteen; none was struck, so none is superseded.
+
+| Site | Execution disposition |
+|---|---|
+| 1 | Implemented in `37169648`, whose new entry `3451942e` corrected. |
+| 2 | Implemented in `37002a28`. |
+| 3 | Implemented: 3.1 and 3.2 in `8fd5b6e6`, 3.3 in `4f271a50`, 3.4 in `1c0cf3f8` and 3.5 in `37002a28`. |
+| 4 | Implemented in `8fd5b6e6`. |
+| 5 | Implemented: 5.1 in `8fd5b6e6`; 5.2, 5.3 and 5.4 in `37002a28`; 5.5 in `3a1b9a7c`, with its approved wording restored by `174357eb`. |
+| 6 | Implemented: 6.1 in `8fd5b6e6` and 6.2 in `8742d96a`. |
+| 7 | Implemented in `b158db02`. |
+| 8 | Implemented in `1c0cf3f8`. |
+| 9 | Implemented in `4a5f9800` and `aef596c7`, as finding 20's wording. |
+| 10 | Implemented in `37002a28`. |
+| 11 | Implemented in `23e0f587`. |
+| 12 | Implemented in `392dced7`. |
+| 13 | Implemented in `b8700f12`. |
+
+The plan's "Noticed and left out" items stay as the plan leaves them.
+
+### The items of finding 36, and the other deferrals
+
+| Item | Execution disposition |
+|---|---|
+| 36.1 | Implemented with finding 10.1, in `aef596c7`. |
+| 36.2 | Implemented: `AGENTS.md` in `76fc0086` and `py/product_scopes.py` in `37002a28`. MAM-for-Sefaria and MAM-OSIS were not rerun. |
+| 36.3 | Deferred, as the plan records. |
+| 36.4 | Deferred: only Ben can supply the words of his 2026-09-28 decisions. |
+| 36.5 | Deferred. |
+| 36.6 | Deferred: no test exercises either forest module's behaviour. |
+| 36.7 | Deferred. |
+| 36.8 | Deferred to Ben, with no action in remediation: the Sheet link on the English Decalogue page is an outward-facing Wikisource edit, his to make. |
+| 36.9 | Superseded: `e4934b6e` retired the executed Google Sheet plan, so no action is owed. |
+| 36.10 | Implemented: the `NOT_IN_MEGA` reason, in `37002a28`. Deferred: running `lint-receipt` in the suite. |
+| 36.11 | Deferred. |
+| 36.12 | Implemented in `4a5f9800`; `cam1753/cam1753-page-index.json:3` is unchanged, as the plan records. |
+| 11's older tests | Implemented as no action: the fourteen pre-window example-based methods of `py/tests/test_main_download_fr_wikisource.py` stay. |
+
+### Verification and generated-diff evidence before final integration
+
+**Checks for every commit.** `git diff --check` passes on every one of the 26 commits, each of
+which has a single parent, rechecked commit by commit on 2026-10-01. Every Markdown, update and
+instruction commit passed `./.venv/Scripts/python.exe py/main_test.py
+py/tests/test_receipt_update_links.py py/tests/test_prose_conventions.py
+py/tests/test_prose_mark_order.py`, run from the root of the checkout it was made in. Black at its
+defaults found every changed Python file formatted. Each edit to a file holding pointed Hebrew was
+applied byte for byte by a scratch script, so no other Hebrew in those files changed. Each commit
+message records its own targeted checks; the results of those that "Targeted verification" names
+were:
+
+1. **Finding 1.1:** in each of the 24 plus files, only the two exchanged lines changed, and they
+   equal `52f1f6bf`'s; the first "narpas", case-insensitively, is the gloss; `mpplus.html`
+   exchanged the same two rules in the notice's list and in the Job and Samuel example headers and
+   changed nowhere else; `py/tests/test_public_data_consumer_notices.py` passed.
+2. **Findings 1.2 and 14.2:** both `--find-stack-path` lookups of `E/נוסח` print Genesis 1:1 and
+   1:3 and write nothing; `ruff check --no-cache py` reports only the E731 named below.
+3. **Finding 5.6:** `py/main_authored.py gen-site --trust-surveys` rewrote every deploy-root page
+   byte for byte, including `gh-pages/post-stress-meteg-post-silluq-1k14v14.html`.
+4. **Finding 6.1:** three scratch mutations, `-ff` on a worktree removal, `git branch -df` and a
+   `"-fd"` constant, each fail the lint; the old lint caught none of them.
+5. **Finding 6.2:** over the reports at `f4d81285`, the new lint finds the old lint's nine problem
+   marks at four sites and exactly one more, U+05A5 at line 70 of `2026-03-06.html`.
+6. **Findings 6.3 and 7:** `py/main_test.py py/repo_util/worktree_retirement_simulation_test.py`
+   passed twice, 34 tests each, in about 300 seconds each.
+7. **Findings 15 and 17:** six in-memory scratch faults on Genesis now raise, where the old checks
+   let all six pass.
+8. **Finding 16:** one run of `py/main_parse.py ws --write-parser-stage-grammar-lock`, 17
+   seconds, changed line 2 of the lock alone and no product.
+9. **Finding 21:** `py/main_hbce_psalms.py lint-receipt` reported "0 problems".
+10. **Finding 25:** the lint counts 30 launches, 18 of them the modules' own wrappers. A scratch
+    harness that writes mutated sources outside the checkout found that each of eleven mutations
+    fails the lint as `9588700f` leaves it; the lint as `3a1b9a7c` committed it missed four of
+    them, all calls through an imported module or package.
+11. **Flagged site 11:** with a scratch `_load_manifest` that accepts "not json", the fixed test
+    fails where the old one passed.
+12. **Flagged site 12:** `py/main_render_uxlc_corrections.py` changed only the one sentence of the
+    page's introduction; `holman/docs-not-served/uxlc_corrections.json` and `holman/data/` are
+    unchanged.
+13. **Question 5:** `py/main_verse_links.py 1Samuel 17:5 --atom 14` prints "Sefaria's image of
+    Leningrad Codex page F159A"; the two searches that "Targeted verification" names found only
+    the categories it lists.
+14. **Finding 30:** the 36 rows' destinations were re-confirmed with `git grep` at `94535122`, 71
+    searches with none missing, and the privacy check passed on the draft and again before the
+    commit.
+
+**Read-only verification of the whole plan.** Four read-only sub-agents each checked one part of
+the plan against `b8700f12`, reading each file with `git show` and each change with `git diff
+a849e068 b8700f12`: the reader-facing documents and public data; the code and test defects and the
+Python comments and docstrings; the agent instructions, skills and procedure documents; and the
+receipts' updates and the sites found while planning. Each found every item of its part present,
+apart from finding 2's entry, which is pending by design, and found no change that no item accounts
+for. This session re-checked against the tree each fault they reported before acting on it; the
+corrections below list those faults.
+
+**The full suite.** Its first run, at `37002a28`, the last executable change at the time, ended at
+23:38 New York time on 2026-09-30 with 1 failed, 1,015 passed and 5 skipped, in 168.03 seconds.
+The failure,
+`py/tests/test_diff_mpplus_unpinned_latest.py::test_registered_outputs_match_real_regeneration`,
+showed that the committed `unpinned-latest.html` and `unpinned-latest.json` no longer matched a
+regeneration: finding 1.1's change to the plus files' headers moved the `MAM-parsed/plus` tree id
+that labels the unpinned release from `0758f964` to `c3619446`. `py/main_diff.py mpplus --all`
+changed only those two files, on three lines, committed as `94535122`. The second run, at
+`94535122`, ended at 06:59:47 New York time on 2026-10-01 with 1,016 passed and 5 skipped, in
+180.20 seconds; its summary line reports no subtest count. `9588700f` later changed a test, so the
+suite runs again on the integrated tree.
+
+**Generated diffs, each explained.** These are the only generated outputs that changed:
+
+1. The 24 `MAM-parsed/plus/*.json` files: rules 5 and 6 of `header.consumer_notice.critical_rules`
+   exchange places (finding 1.1); every Scripture payload and `book39s` value is unchanged.
+2. `gh-pages/MAM-parsed/plus/html/mpplus.html`: the same exchange, in the notice's list and the two
+   example headers.
+3. `py/verify_mp/expanded_stack_grammar_parser_stage.lock.json`: line 2, the provenance, now names
+   the writer (finding 16).
+4. `gh-pages/holman/uxlc_corrections.html`: the one sentence of flagged site 12.
+5. `gh-pages/MAM-with-doc/change-log/unpinned-latest.html` and `unpinned-latest.json`: the plus
+   tree id, on three lines. The four Scripture changes they report, every named release and
+   `index.html` are unchanged.
+
+The mega at final integration checks every other output that "Outputs expected to stay unchanged"
+names.
+
+**Corrections to the plan and to this branch's records.**
+
+1. The plan's "Outputs expected to stay unchanged" names "every change-log file under
+   `gh-pages/MAM-with-doc/change-log/`" as unchanged. Finding 1.1 necessarily changes
+   `unpinned-latest.html` and `unpinned-latest.json`, whose label is the plus tree id; the plan
+   missed that consequence, and `94535122` regenerated them as explained above.
+2. The plan's "Summary by type", item 2, counts "three test modules, four with flagged site 6.2"
+   among the docstring changes; there are four, five with flagged site 6.2.
+3. The subject of `37169648` says "Correct eight open update files"; that commit corrects seven.
+   The plan's eighth, the 2026-09-26 close-out record, is corrected in the closing records. The
+   pushed message stays as it is, and `3451942e`'s message says so.
+4. Fixed in `174357eb`: the entry "2026-09-30: corrections made in the 2026-09-29 review's
+   remediation", which `3a1b9a7c` added to `doc/PLAN-checkout-kinds-and-portable-knowledge-update.md`
+   for flagged site 5.5, departed from the approved text twice. Its item 1 cited "(`:171–172`)",
+   which now reads "(`:170–172`)", as approved; and it ended with "The plan's rules are introduced
+   at `:161` as "Three rules apply to every kind:".", a note the plan addresses to the executor
+   outside the quoted entry, now removed.
+5. Fixed in `71214987`: `4a5f9800` left one 142-character line in `MAM-parsed/historical/README.md`,
+   a file that wraps at about 79 characters; the paragraph is rewrapped, with no word changed.
+6. Fixed in `9588700f`: the lint that `3a1b9a7c` added for finding 25 recognized a launcher only by
+   a name that `from ... import` binds, so a call through an imported module object or a dotted
+   path escaped it; and `parse_ws.almost_main`'s docstring said the lock is rewritten "first",
+   though the per-book outputs are written before it.
+7. Left as Ben approved it: finding 30's entry in
+   `doc/memory-retirement-and-instruction-consolidation-2026-09-28-update.md` names its line-3
+   correction by former and new words but not by its number, flagged site 13, which the plan's
+   general rule for dated entries asks for; `b8700f12`'s message names the site.
+8. Left unfixed, because a fix would change wording Ben approved: in the maintenance runbook,
+   preconditions 2 and 3 now run cwd-relative commands, `git worktree list`,
+   `git branch --list "claude/*"` and a loop over `Get-ChildItem -Directory ..`, and only
+   precondition 4 and section 1 then say to run from the root of a full MAM-basics clone. Before
+   the remediation the commands named the primary forest's clone.
+9. Left unfixed because the approved plan does not cover it: `ruff check --no-cache py` reports
+   E731, a lambda assigned to a name, at `py/tests/test_dual_agent_review_dispatch.py:42`, which
+   `1a50d4b6` added after the plan was written.
+
+**Noticed outside the plan, for Ben.** Finding 28's kind, a live text pinned to the primary
+forest's clone, remains at sites the plan names nowhere: the interpreter path
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` in `py/main_diff.py:13`,
+`py/main_github_issue_edit.py:6`, `py/main_pipeline_graph.py:31`,
+`py/main_uxlc_estimate_atom_loc.py:65` and `py/tests/test_graphviz_version_pin.py:39`, and several
+passages of `doc/scan-pages.md`. No action was taken.
+
+**What remains.** Final integration as the plan's "Final integration" describes: merging the
+current `origin/main`, which has moved to `1158938e`; the mega; the full suite on the integrated
+tree; the fast-forward and push of `main`; and the `--sync-user-config` deployment and its check.
+Then the closing records: the entry "Final integration and configuration deployment completed",
+the plan's State, finding 2's entry in the 2026-09-26 close-out record with its two in-place
+corrections, and the step-2 session's correction and entry, verified. This update remains
+`State: open` while its base survives.
