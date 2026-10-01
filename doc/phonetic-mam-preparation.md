@@ -1,10 +1,11 @@
 # Phonetic MAM preparation
 
 The modules under `py/phonetic_mam/` implement the unified rendering of the existing
-public Phonetic MAM pages. The migration branch now contains the source-independent
-algorithm core, read-only computation interface, exporter, closed display release,
-public consumers and generated target. Main integration and site deployment remain
-separate steps.
+public Phonetic MAM pages. The source-independent algorithm core, read-only
+computation interface, exporter, closed display release, public consumers and
+generated target were integrated and pushed to `main` on 2026-10-01 in
+`2b92117ab909f74481cd0be4dbbc9d85204295ee`. Site deployment and live URL
+verification remain separate publication steps.
 
 ## Public display contract
 
@@ -25,8 +26,9 @@ the closed validator is only the mechanical part of that boundary.
 The five example pages have their own closed display-document format. Their input
 is normalized from the exact rendered HTML rather than retaining calculation
 fixtures or source-code string boundaries. The public renderer reproduces those
-pages byte-for-byte. The source adapter remains a migration dependency for their
-calculation, so later private retirement must account for that adapter.
+pages byte-for-byte apart from their explicit shared favicon link. The source
+adapter remains a migration dependency for their calculation, so later private
+retirement must account for that adapter.
 
 Existing alternatives can occupy different numbers of transcription columns in
 the two pronunciations. The model preserves those visible column counts. It does
@@ -43,9 +45,11 @@ unrelated query parameters and fragments survive. Missing or invalid values are
 normalized to Sephardic. No hidden stored preference is used.
 
 Without JavaScript, the radio control changes the current page; navigation retains
-the explicit Sephardic fallback. Browser-level CSS, printing, and no-JavaScript
-verification remains outstanding. The corpus DOM differential
-and standalone JavaScript contract checks do not substitute for those checks.
+the explicit Sephardic fallback. Local Edge acceptance on 2026-10-01 passed
+the browser-level CSS, printing, no-JavaScript, navigation, focus, font/image,
+and console/network checks after the explicit favicon links were added. At a
+390-pixel viewport, wider tables require horizontal scrolling. These results
+verify the integrated local pages; live deployment still requires its own checks.
 
 ## Font support
 
@@ -70,5 +74,6 @@ The independent pre-stress-meteg analysis lives under `py/accgram/` and
 Ben approved correcting his added claims to the reproducible public-MAM analysis.
 The independent analysis feeds the minimized `Yeivin-ITM/meteg-claims.json` product,
 which the Yeivin renderer validates before rendering the selected excerpts.
-The Phonetic index links to the separate Yeivin target. Both targets remain on the
-migration branch until main integration and deployment are authorized.
+The Phonetic index links to the separate Yeivin target. Both targets are on
+integrated `main`; target deployment and the coordinated legacy redirect
+cutover remain separate steps.

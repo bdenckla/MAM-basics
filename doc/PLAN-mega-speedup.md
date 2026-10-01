@@ -170,10 +170,11 @@ of the code the item names.
 
 ## Three further proposals for the post-stress-meteg survey, from reading its code on 2026-09-14
 
-**2026-10-01 branch disposition: items 13–15 are superseded as written by the
+**2026-10-01 integrated disposition: items 13–15 are superseded as written by the
 Phonetic MAM evacuation's tracked public display reader.** The migration replaces
 the private standard-set reader with `py/phonetic_mam/analysis_reader.py` and
 `py/phonetic_mam/release.py`; the post-stress survey now runs in cloud sessions too.
+This disposition is integrated on `main` in `2b92117ab909f74481cd0be4dbbc9d85204295ee`.
 The old path, compound-bracket representation and proposed hoisting locations
 below are no longer current targets. This is not a claim of a speedup or execution
 of this plan's timing phases. A later optimization must measure the new reader,
