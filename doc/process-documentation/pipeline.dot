@@ -76,6 +76,7 @@ digraph mam_pipeline {
     ds_ws                -> misc_3;
     ws_bot               -> src_ws_live;
     ws_bot               -> ds_ws;
+    ws_bot               -> ds_ws_special;
     ws_bot               -> ds_out [tooltip="via automatic post-download reparse"];
 
 }

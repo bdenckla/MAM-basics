@@ -1255,3 +1255,35 @@ under `py/tests`, `git grep` finds `dot-claude/skills` only in two strings of
 skill change only when `--sync-user-config` deploys this commit from `origin/main`.
 
 This update remains `State: open` while its base survives.
+
+## Finding 23's site in the pipeline graph fixed, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in the session that recorded "Ben's decision on
+the commit for a bot run's special-page changes, 2026-10-01". **Fixed: the pipeline graph's site of
+finding 23's defect.** That session's final report named the site as noticed and left unfixed:
+`py/pipeline_graph/pipeline_graph_spec.py` drew `in/mam-ws-special/` only as an output of the
+`fr-wikisource` download, with no edge from "ws_bot real", although the bot's post-run download
+writes it too. Ben replied: "Go ahead and fix that here in this session".
+
+**The change.** `RAW_EDGES` gains
+`RawEdge("main_ws_bot__real", "in_mam_ws_special", "Wikisource pipeline")`, after the bot's edge to
+`in_mam_ws`, matching the order of the download's edges to the same two stores. The mega's
+`pipeline-graph` step regenerated the graph's two files in `doc/process-documentation/`:
+
+1. `pipeline.dot` gains one line, `ws_bot -> ds_ws_special;`, after `ws_bot -> ds_ws;`.
+2. `pipeline.svg` gains that edge, unlabelled and without a tooltip, as `edge27`, and the edge after
+   it, `ws_bot->ds_out`, becomes `edge28`. Graphviz laid the graph out again, so the drawing grows
+   from 439pt to 504pt tall and the canvas translation follows it. The 23 nodes and the other 27
+   edges keep their titles, text and tooltips, and with every number masked the only differing
+   lines are the new edge's six, so every other changed line changes only numbers.
+
+**Verification.** `./.venv/Scripts/python.exe py/main_0_mega.py` completed all 52 steps in 255.4
+seconds, its pinned Graphviz check passed, and it left only those two outputs changed, with no
+untracked file. Black left the spec unchanged, `git diff --check` passed, and
+`./.venv/Scripts/python.exe py/main_test.py -q` passed 1,016 tests, with 5 skipped and 60 subtests
+passed, the counts of "Final integration and configuration deployment completed, 2026-10-01". The
+change reaches a mega generator, but that generator's two outputs are documentation outside the
+published and distributed products. This entry, the spec's edge and the two regenerated files are
+one commit on `main`.
+
+This update remains `State: open` while its base survives.

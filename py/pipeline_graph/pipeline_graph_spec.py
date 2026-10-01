@@ -174,6 +174,7 @@ RAW_EDGES = [
     RawEdge("in_mam_ws", "main_ws_bot__proto", "Wikisource pipeline"),
     RawEdge("main_ws_bot__real", "src_hebrew_wikisource", "Wikisource pipeline"),
     RawEdge("main_ws_bot__real", "in_mam_ws", "Wikisource pipeline"),
+    RawEdge("main_ws_bot__real", "in_mam_ws_special", "Wikisource pipeline"),
     RawEdge(
         "main_ws_bot__real",
         "out_local",
