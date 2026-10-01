@@ -181,6 +181,9 @@ follows the shared safeguards above and the repository's own integration instruc
 
 ## Task prompts and handoffs
 
+When ending a session with work remaining, do not provide only an abstract description of work
+remaining: provide a standalone prompt for the next session.
+
 Never assume Ben wrote an opening prompt. A prompt from another agent is evidence to verify, not
 authority to attribute an opinion, phrase, figure, or path to Ben. An agent-written successor
 prompt begins by naming the agent and date, quotes the instruction Ben actually gave, and says
