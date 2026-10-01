@@ -27,6 +27,8 @@ from author_boj_util.qr_relations import QR_RELATIONS, validate_relations
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     try:
         validate_relations(RAW_QUIRKRECS)
     except AssertionError as exc:

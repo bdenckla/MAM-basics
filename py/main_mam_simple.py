@@ -349,6 +349,8 @@ def _bkids_from_args(args):
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     args = _parse_args()
     if args.command in {"doc-only", "doc"}:
         write_generated_docs()
