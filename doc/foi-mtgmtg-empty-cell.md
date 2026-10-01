@@ -14,11 +14,11 @@ quotation. The three names are the same mark.
 
 ## The figures, and how to re-establish them
 
-Run from `C:/Users/BenDe/GitRepos/MAM-basics`, on that clone's interpreter (a worktree spells the
-interpreter absolutely and runs from the worktree root):
+Run from the root of a full MAM-basics clone, on that clone's own interpreter (a worktree spells
+its home clone's interpreter absolutely and runs from the worktree root):
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-mtgmtg
+./.venv/Scripts/python.exe py/main_foi_features_of_interest.py --foi args-foi-mtgmtg
 ```
 
 That rewrites `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` and `foi-mtgmtg.html`. On 2026-09-09 the

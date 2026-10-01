@@ -24,7 +24,7 @@ displayed height matches the Aleppo image's native height.
    `gh-pages/book-of-job/jobn/img/Lenin/Lenin-{SID}.png`, then prints both image
    sizes and the Aleppo-height / Leningrad-height ratio. Run that file with:
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe .novc/inspect_boj_image_dimensions_{SID}.py
+   .venv/Scripts/python.exe .novc/inspect_boj_image_dimensions_{SID}.py
    ```
 
 2. **Set the scale factor** in `py/author_boj_util/lenin_img_too_tall.py`:
@@ -38,8 +38,8 @@ displayed height matches the Aleppo image's native height.
    .venv/Scripts/python.exe ./py/main_gen_misc_authored_english_documents.py
    ```
 
-4. **Show the detail page** by giving Ben a `file:///` link to
-   `C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/book-of-job/jobn-details/{SID}.html`.
+4. **Show the detail page** by giving Ben an absolute `file:///` link to
+   `gh-pages/book-of-job/jobn-details/{SID}.html` in the checkout that generated it.
 
 ## Notes
 

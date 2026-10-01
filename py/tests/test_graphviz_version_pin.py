@@ -36,7 +36,7 @@ is asserted to be exactly `_EXPECTED_UNSTAMPED` rather than merely tolerated.
 
 Run it inside the suite, or on its own:
 
-  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -k graphviz_version_pin
+  ./.venv/Scripts/python.exe py/main_test.py -k graphviz_version_pin
 """
 
 import subprocess

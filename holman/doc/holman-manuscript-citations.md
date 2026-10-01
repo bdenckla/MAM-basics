@@ -175,5 +175,5 @@ No network access or sibling clone is needed for any of the three measurements.
    and, on 2026-08-12, an untracked shadow copy of the 2026.10.19 file that
    double-counts 82 records.
 
-Run anything written for this from the repo root with
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
+Run anything written for this from the root of a full MAM-basics clone, with that
+clone's own `./.venv/Scripts/python.exe`.
