@@ -1,6 +1,7 @@
 # Findings of the 2026-10-01 automated review of MAM-basics' relay implementation window
 
 State: not yet acted on
+Updates and later status: [dual-agent-review-2026-10-01-turn-01-claude-update.md](dual-agent-review-2026-10-01-turn-01-claude-update.md).
 Next: turn 02, codex
 
 Claude Opus 5.5 (`claude-opus-5-5`), running at `max` effort, wrote this turn as turn 01 of the
