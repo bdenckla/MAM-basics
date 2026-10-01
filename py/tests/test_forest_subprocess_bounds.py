@@ -14,10 +14,15 @@ whose remediation plan Ben approved on 2026-09-30.  It passes only if:
 
 Any other launcher fails it: a ``subprocess`` function other than ``run``,
 ``os.system``, ``os.popen``, an ``os.spawn*`` or ``os.exec*`` function, or a function
-imported from ``repo_util.user_config_sync``, ``repo_util.worktree_retirement_git`` or
+of ``repo_util.user_config_sync``, ``repo_util.worktree_retirement_git`` or
 ``repo_util.worktree_retirement_inspection`` other than ``_run_git``, ``_command_error``
-and the three helpers.  A scan that finds no launch fails.  The lint checks only these
-launch bounds; no test exercises either module's behaviour.
+and the three helpers.  Each of these is recognized whether it is called by a name
+that ``from ... import`` binds or through an imported module or package, such as
+``g._git`` after ``from repo_util import worktree_retirement_git as g`` or
+``repo_util.user_config_sync._run_git`` after ``import repo_util.user_config_sync``.
+A call through a name bound other than by an import, such as a local alias, is beyond
+what this syntax lint follows.  A scan that finds no launch fails.  The lint checks
+only these launch bounds; no test exercises either module's behaviour.
 """
 
 import ast
@@ -41,7 +46,11 @@ _OS_LAUNCHER_PREFIXES = ("spawn", "exec")
 
 
 def _imported_names(tree):
-    """Map each name bound by an import to (module, original name or None)."""
+    """Map each name bound by an import to (module, original name or None).
+
+    ``import a.b.c`` binds ``a`` to the package ``a``; ``import a.b.c as m`` binds
+    ``m`` to the module ``a.b.c``.
+    """
     names = {}
     for node in ast.walk(tree):
         if isinstance(node, ast.ImportFrom) and node.module:
@@ -49,8 +58,34 @@ def _imported_names(tree):
                 names[alias.asname or alias.name] = (node.module, alias.name)
         elif isinstance(node, ast.Import):
             for alias in node.names:
-                names[alias.asname or alias.name.split(".")[0]] = (alias.name, None)
+                if alias.asname:
+                    names[alias.asname] = (alias.name, None)
+                else:
+                    root = alias.name.split(".")[0]
+                    names[root] = (root, None)
     return names
+
+
+def _call_target(func, imports):
+    """Return (module, function) for a call of an imported function, else None.
+
+    A name that ``from M import f`` binds gives (M, f).  An attribute chain whose root
+    an import binds gives the dotted module the chain names and its last attribute:
+    ``g.f`` after ``import M as g`` gives (M, f), ``g.f`` after ``from P import m as g``
+    gives (P.m, f), and ``p.m.f`` after ``import p.m`` gives (p.m, f).
+    """
+    chain = []
+    while isinstance(func, ast.Attribute):
+        chain.append(func.attr)
+        func = func.value
+    if not isinstance(func, ast.Name) or func.id not in imports:
+        return None
+    module, original = imports[func.id]
+    if not chain:
+        return None if original is None else (module, original)
+    chain.reverse()
+    base = module if original is None else f"{module}.{original}"
+    return ".".join([base, *chain[:-1]]), chain[-1]
 
 
 def _keywords(call):
@@ -105,23 +140,17 @@ def _scan(rel, wrapper):
             continue
         where = f"{rel}:{node.lineno}"
         func = node.func
-        if isinstance(func, ast.Attribute) and isinstance(func.value, ast.Name):
-            module, original = imports.get(func.value.id, (None, None))
-            if module is not None and original is None:
-                _check_module_call(module, func.attr, node, where, launches, problems)
-        elif isinstance(func, ast.Name):
-            if func.id == wrapper and func.id not in imports:
-                launches.append(where)
-            elif func.id in imports:
-                module, original = imports[func.id]
-                if module in ("subprocess", "os") and original is not None:
-                    _check_module_call(
-                        module, original, node, where, launches, problems
-                    )
-                else:
-                    _check_imported_call(
-                        module, original, node, where, launches, problems
-                    )
+        if isinstance(func, ast.Name) and func.id == wrapper and func.id not in imports:
+            launches.append(where)
+            continue
+        target = _call_target(func, imports)
+        if target is None:
+            continue
+        module, name = target
+        if module in ("subprocess", "os"):
+            _check_module_call(module, name, node, where, launches, problems)
+        else:
+            _check_imported_call(module, name, node, where, launches, problems)
     return launches, problems
 
 

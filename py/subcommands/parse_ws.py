@@ -12,8 +12,9 @@ def almost_main(bkids=None, write_fmt_1=False, write_parser_stage_grammar_lock=F
     """
     Read in the 39 per-book JSON files from the Wikisource download and output
     them to parsed format 2 and production MAM-parsed-plus, plus optional
-    debugging format 1.  With write_parser_stage_grammar_lock, first rewrite the
-    parser stage's expanded stack grammar lock from all 24 book groups.
+    debugging format 1.  With write_parser_stage_grammar_lock, also rewrite the
+    parser stage's expanded stack grammar lock from all 24 book groups, after the
+    per-book outputs and before the plus groups are validated and written.
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
