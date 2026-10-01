@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first four production handoffs independently verified 2026-10-01; turn 05 acknowledgment is running; approved blind comparison is recorded; later production handoffs and stopping behavior remain pending.
+State: runbook; D13 and notification receipt confirmed; all five first-production handoffs, acknowledgment closure and a subsequent scheduled idle tick independently verified 2026-10-01; approved blind comparison recorded; private readiness P7 and concrete private kickoff decisions remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -532,10 +532,10 @@ observed at `2026-10-01T13:33:52.103596-04:00, New York time`.
 The one-time blind operator completed successfully at
 `2026-10-01T13:14:39.678789-04:00, New York time`. Its output hash matches the
 completion receipt, and the saved reads show no detected access to turn 02
-or later review content. The fresh independent comparison agent has completed
-its read-only assessment; the parent is verifying that assessment before
-recording the approved comparison. Both original counter-arguments will be
-preserved in that record.
+or later review content. At this observation the fresh independent comparison
+agent had completed its read-only assessment, and parent verification was
+underway before recording the approved comparison. Both original
+counter-arguments were to be preserved in that record.
 
 ## Suppressing dispatcher Git consoles, 2026-10-01
 
@@ -584,3 +584,35 @@ that detected no visible console window. Its record is
 `.novc/visible-console-windows-134746619190.json`. The original burst's exact
 window/process pairing was not captured; later worker children remain subject
 to observation.
+
+## First production round completed and stopping verified, 2026-10-01
+
+Claude turn 05 is `aad47955e13e88db020113bacbccfce0ac89c7bb`, handed off at
+`2026-10-01T14:19:19.149879-04:00, New York time`. Independent checks verified
+its direct turn-04 parent, sole new turn-05 path, unchanged round metadata,
+quoted kickoff instruction, Opus 5.5/max identity and successful terminal event.
+Its `Next: none; round closed` answers turn 04's request for acknowledgment.
+The live remote corroborated the final tip. All five numbered turns were
+launched, committed and pushed by the dispatcher.
+
+The independent stop verifier read every transition directly from Git: five
+turns under the ten-turn cap, zero reopenings under the one-reopening cap, and
+closure only after an owed acknowledgment. This production round exercised
+closure, not a cap halt. No turn-06 launch, in-flight marker, failure pause or
+live dispatcher lock was present. The next scheduled tick at
+`2026-10-01T14:20:14-04:00, New York time` exited zero, with no additional worker
+and the remote tip unchanged. The task remained enabled with `IgnoreNew`.
+
+The evidence directory
+`.novc/production-relay-independent-verification-20261001/` holds
+`turn-05.json`, `stopping-after-closure.json` and `scheduler-after-closure.json`.
+The repeatable source checks are `.novc/verify-production-handoffs-20261001.py`
+and `.novc/verify-production-stop-20261001.py` in the home clone. The latter
+preserves its first successful observation rather than overwriting receipts.
+
+The approved comparison and all verification work are complete. After pushing
+this record, pause the Codex follow-up `verify-first-production-dual-agent-review`.
+This does not disable the Windows scheduler or alter the registry or review
+branch. Close-out must decide the finished round file's lifecycle, any relay
+pause before close-out writes, review integration and remediation. Private
+readiness P7 remains unverified. All review and rehearsal evidence is preserved.

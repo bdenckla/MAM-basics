@@ -1,12 +1,11 @@
 # Plan: automate the dual-agent review relay, and measure what the second agent adds
 
-State: live. Ben authorized implementation on 2026-09-30; core code and four real automatic
-handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
-production is enabled, and scheduler registration and an idle tick are verified
-2026-10-01. Ben started the approved first production round on 2026-10-01;
-the first four production handoffs are independently verified and turn 05 is running
-as the owed acknowledgment. The approved blind comparison is recorded. Later
-production handoffs and stopping behavior remain to be verified.
+State: live. Ben authorized implementation on 2026-09-30; public implementation,
+the first production rollout and the approved comparison are complete. All five
+production handoffs, acknowledgment closure and a subsequent scheduled idle tick
+are independently verified on 2026-10-01. D13 and notification receipt are confirmed.
+Private readiness P7 and concrete private kickoff decisions remain pending.
+Manual close-out, review integration and remediation retain their separate procedure.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -82,7 +81,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first four production handoffs independently verified and turn 05 acknowledgment running; later handoffs and stopping behavior remain pending |
+| R1 | Relieve Ben of relaying each turn | implemented and verified for MAM-basics: all five first-production handoffs, owed acknowledgment closure and subsequent scheduled idle tick passed independently; private readiness P7 remains unverified |
 | R2 | Weigh the dual-agent review against one agent iterating on its own review | implemented for this first-round comparison in `doc/dual-agent-review-comparison-2026-10-01.md`: fresh blind Claude output, independent assessment and parent verification complete; both counter-arguments preserved; no general model ranking or standing policy inferred |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
@@ -424,9 +423,9 @@ No production halt was observed, and the verification follow-up remained active.
 The third production handoff is `58597c3b622e37839e97f49c86df63a9eadc3fde`,
 independently verified against its receipt, exact Git parent and changed path,
 unchanged round metadata and successful Opus 5.5/max terminal result. Codex
-turn 04 is live in its dedicated worktree. The separate blind measurement
-completed successfully, and the fresh read-only comparison agent completed its
-assessment; parent verification and the finished comparison record remain.
+turn 04 was live in its dedicated worktree at this observation. The separate
+blind measurement and fresh read-only assessment had completed; parent
+verification and the finished comparison record were still pending.
 
 Ben asked to suppress distracting terminal windows. The Windows Git child
 launches now use `CREATE_NO_WINDOW`; workers remain running and later scheduled
@@ -441,8 +440,8 @@ of turn 03, handed off at `2026-10-01T13:44:48.621827-04:00, New York time`.
 Independent Git, receipt, worker-log and runtime-context checks verified the
 sole new turn-04 path, unchanged metadata, quoted instruction, pinned
 `gpt-6.1-sol`/xhigh and `Next: turn 05, claude; acknowledgment`.
-The live remote corroborated the tip. The scheduler launched the owed turn 05;
-stopping behavior remains pending its response.
+The live remote corroborated the tip. At this observation the scheduler had
+launched the owed turn 05, and stopping verification awaited its response.
 
 Ben's approved comparison is completed in
 `doc/dual-agent-review-comparison-2026-10-01.md`. The independent assessor was
@@ -460,6 +459,32 @@ covered the next scheduled launch at 13:47:14, New York time, and detected no
 visible console window. Its record is
 `.novc/visible-console-windows-134746619190.json`. This is bounded observation,
 not proof that every future worker child is hidden.
+
+## First production round completed, 2026-10-01
+
+Claude turn 05 is `aad47955e13e88db020113bacbccfce0ac89c7bb`, a direct child
+of turn 04, handed off at `2026-10-01T14:19:19.149879-04:00, New York time`.
+Its `Next: none; round closed` answers turn 04's owed acknowledgment. Independent
+Git, receipt and terminal-log checks verified the sole new turn-05 path,
+unchanged round metadata, quoted instruction, actual Opus 5.5/max identity and
+successful terminal result. The live remote corroborated the final tip.
+
+Independent stopping checks derived all five header transitions from Git, found
+zero reopenings under the cap of one, and five turns under the cap of ten.
+Closure, rather than either cap, ended this round. There is no later launch,
+in-flight marker, failure pause or live dispatcher lock. A subsequent scheduled
+tick at `2026-10-01T14:20:14-04:00, New York time` exited zero without another
+worker. Evidence is `turn-05.json`, `stopping-after-closure.json` and
+`scheduler-after-closure.json` under
+`.novc/production-relay-independent-verification-20261001/`. The scratch stop
+verifier is `.novc/verify-production-stop-20261001.py`.
+
+The authorized verification and comparison follow-up has completed its work;
+pause it after this documentation is pushed. The Windows scheduler remains
+registered and enabled, and this closed round stays registered under the current
+procedure. No review branch, worktree, marker or rehearsal evidence was retired.
+The round file's State and any relay pause before close-out remain close-out
+decisions. Private automation still requires P7 and its concrete kickoff choices.
 
 ## Context: what the relay costs
 
