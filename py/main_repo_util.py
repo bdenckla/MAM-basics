@@ -19,6 +19,7 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review pause --repo <full-clone> --round YYYY-MM-DD
     .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review resume --repo <full-clone> --round YYYY-MM-DD
     .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review handoff --repo <full-clone> --round YYYY-MM-DD
+    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review deactivate --repo <full-clone> --round YYYY-MM-DD
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
 
 ``--workspace-file all-repos.code-workspace`` is what widens any of these past the
@@ -171,7 +172,7 @@ def build_parser() -> argparse.ArgumentParser:
     action_group.add_argument("--commit-across-repos", action="store_true")
     action_group.add_argument(
         "--dual-agent-review",
-        choices=("status", "start", "tick", "pause", "resume", "handoff"),
+        choices=("status", "start", "tick", "pause", "resume", "handoff", "deactivate"),
         help="Operate an explicitly registered automated review; never adopt a manual round",
     )
     parser.add_argument("--repo", help="Exact full clone for one automated round")

@@ -1,6 +1,6 @@
 # Plan: close out and remediate the first automated relay review
 
-State: live; remediation approved 2026-10-01; execution assigned to a fresh session in the existing worktree.
+State: live; approved remediation implemented 2026-10-01; final verification and integration pending.
 
 Codex prepared this plan on 2026-10-01 from the supplied successor prompt. The predecessor
 quoted Ben's latest instruction as: "Please give a prompt for a session that will do (or at
@@ -104,6 +104,9 @@ establish inactivity. If a scheduler tick momentarily owns its lock, do no branc
 until a fresh audit establishes the paused round has no live worker.
 
 ## Single close-out list
+
+The table records the review-time dispositions and approved scope. The cumulative ledger
+and the single turn-01 update record subsequent implementation and verification.
 
 The authoritative dispositions are turn 04's **Findings after turn 04**, qualified by turn 05's
 **Corrections this turn accepts**, **Evidence this turn adds**, and **Reading notes on turn 04's

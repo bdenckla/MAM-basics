@@ -58,11 +58,15 @@ def test_next_transitions_against_independent_state_model():
                 if number == 1
                 else "State: completed 2026-09-30; review only"
             )
-            for acknowledgment in (False, True):
-                previous = {
-                    "kind": "turn",
-                    "flag": "acknowledgment" if acknowledgment else None,
-                }
+            for acknowledgment in ((False, True) if number >= 3 else (False,)):
+                previous = (
+                    {
+                        "kind": "turn",
+                        "flag": "acknowledgment" if acknowledgment else None,
+                    }
+                    if number > 1
+                    else None
+                )
                 for kind in ("continue", "acknowledgment", "objection", "close", "Ben"):
                     if kind == "close":
                         marker = "Next: none; round closed"
@@ -77,6 +81,9 @@ def test_next_transitions_against_independent_state_model():
                         ("close", "objection", "Ben")
                         if acknowledgment
                         else ("continue", "acknowledgment", "Ben")
+                    )
+                    expected = expected and not (
+                        number == 1 and kind == "acknowledgment"
                     )
                     for header_markers in (
                         (),
@@ -152,3 +159,161 @@ def test_agent_deployment_source_and_mapping():
         encoding="utf-8"
     )
     assert 'Path(".claude/agents/dual-agent-review-turn.md")' in implementation
+
+
+def git_observe(repo, *arguments):
+    return subprocess.run(
+        git_command(repo, *arguments), capture_output=True, check=True
+    ).stdout
+
+
+def oracle_round(
+    repo, round_date, agent1, turn_cap, reopening_cap, terminal=False, override=None
+):
+    """Author inputs from the approved grammar, independently of production rendering."""
+    state = f"executed {round_date}; close-out completed" if terminal else "live"
+    head = git_observe(repo, "rev-parse", "HEAD").decode("ascii").strip()
+    lines = [
+        f"# Independent round {round_date}",
+        "",
+        f"State: {state}",
+        "Protocol: 1",
+        f"Agent 1: {agent1}",
+        f"Start: {head}",
+        f"End: {head}",
+        f"Turn cap: {turn_cap}",
+        f"Reopening cap: {reopening_cap}",
+        'Kickoff instruction: "Assess the independent protocol history."',
+        "Claude model: claude-opus-5-5",
+        "Claude effort: max",
+        "Codex model: gpt-6.1-sol",
+        "Codex effort: xhigh",
+        "Facts only from turn 03: no",
+        "Rehearsal: yes",
+    ]
+    for agent in ("claude", "codex"):
+        checkout = (repo / ".claude/worktrees" / f"dar-{round_date}-{agent}").resolve()
+        import json
+
+        lines.append(
+            agent.capitalize() + " checkout: " + json.dumps(checkout.as_posix())
+        )
+    if override:
+        lines.append(f"Override: next turn {override[0]:02}, {override[1]}")
+    return "\n".join(lines) + "\n\n## Evidence\n\nIndependent history.\n"
+
+
+def test_protocol_status_against_reachable_git_histories_and_caps(tmp_path):
+    repo = tmp_path / "r"
+    repo.mkdir()
+    git_observe(repo, "init", "-b", "main")
+    git_observe(repo, "config", "user.name", "Protocol oracle")
+    git_observe(repo, "config", "user.email", "oracle@example.invalid")
+    (repo / "baseline.txt").write_text(
+        "Independent baseline.\n", encoding="utf-8", newline="\n"
+    )
+    git_observe(repo, "add", "--", "baseline.txt")
+    git_observe(repo, "commit", "-m", "Independent protocol baseline")
+    scenarios = (
+        [(["continue"] * cap, cap, 2, "turn cap reached", False) for cap in (3, 4, 5)]
+        + [
+            (
+                [
+                    "continue",
+                    "acknowledgment",
+                    "objection",
+                    "acknowledgment",
+                    "objection",
+                ],
+                9,
+                cap,
+                "reopening cap exceeded" if cap < 2 else None,
+                False,
+            )
+            for cap in (0, 1, 2)
+        ]
+        + [
+            (["continue", "acknowledgment", "close"], 9, 2, "round closed", False),
+            (["continue", "Ben"], 9, 2, "Ben's decision required", False),
+            (["continue"], 9, 2, "close-out completed", True),
+        ]
+    )
+    for assignment, agent1 in enumerate(("claude", "codex")):
+        for case, (
+            actions,
+            turn_cap,
+            reopening_cap,
+            expected_stop,
+            terminal,
+        ) in enumerate(scenarios):
+            round_date = f"2026-{assignment + 1:02}-{case + 1:02}"
+            round_name = f"doc/dual-agent-review-{round_date}-round.md"
+            (repo / "doc").mkdir(exist_ok=True)
+            metadata = repo / round_name
+            metadata.write_text(
+                oracle_round(repo, round_date, agent1, turn_cap, reopening_cap),
+                encoding="utf-8",
+                newline="\n",
+            )
+            git_observe(repo, "add", "--", round_name)
+            git_observe(repo, "commit", "-m", "Independent round input")
+            independently_owned = []
+            for number, action in enumerate(actions, 1):
+                agent = (
+                    agent1
+                    if number % 2
+                    else ("claude" if agent1 == "codex" else "codex")
+                )
+                successor = "claude" if agent == "codex" else "codex"
+                if action == "close":
+                    next_line = "Next: none; round closed"
+                elif action == "Ben":
+                    next_line = "Next: Ben; Independently assessed decision"
+                else:
+                    suffix = "" if action == "continue" else "; " + action
+                    next_line = f"Next: turn {number + 1:02}, {successor}{suffix}"
+                state = (
+                    "State: not yet acted on"
+                    if number == 1
+                    else f"State: completed {round_date}; review only"
+                )
+                name = f"doc/dual-agent-review-{round_date}-turn-{number:02}-{agent}.md"
+                (repo / name).write_text(
+                    f"# Independent turn\n\n{state}\n{next_line}\n\n## Findings\n\nIndependent evidence.\n",
+                    encoding="utf-8",
+                    newline="\n",
+                )
+                git_observe(repo, "add", "--", name)
+                git_observe(repo, "commit", "-m", "Independent reachable transition")
+                independently_owned.append((number, agent, name))
+            if terminal:
+                successor = "claude" if agent1 == "codex" else "codex"
+                metadata.write_text(
+                    oracle_round(
+                        repo,
+                        round_date,
+                        agent1,
+                        turn_cap,
+                        reopening_cap,
+                        terminal=True,
+                        override=(2, successor),
+                    ),
+                    encoding="utf-8",
+                    newline="\n",
+                )
+                git_observe(repo, "add", "--", round_name)
+                git_observe(repo, "commit", "-m", "Independent completed close-out")
+            head = git_observe(repo, "rev-parse", "HEAD").decode("ascii").strip()
+            git_observe(
+                repo, "update-ref", f"refs/remotes/origin/dar-{round_date}", head
+            )
+            result = protocol.status(repo, round_date, occupancy=False)
+            assert not result["problems"], result
+            assert result["stop_reason"] == expected_stop
+            assert result["dispatchable"] == (expected_stop is None)
+            assert result["reopenings"] == actions.count("objection")
+            assert [
+                (turn["turn"], turn["agent"], turn["path"]) for turn in result["turns"]
+            ] == independently_owned
+            assert result["tip"] == head
+            assert result["terminal"] == terminal

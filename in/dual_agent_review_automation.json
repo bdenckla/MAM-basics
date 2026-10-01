@@ -9,6 +9,7 @@
   "claude_effort": "max",
   "codex_effort": "xhigh",
   "claude_permission_mode": "dontAsk",
+  "worker_checks": "public-only",
   "claude_max_turns": 80,
   "claude_cli": null,
   "codex_cli": null,

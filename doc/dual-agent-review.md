@@ -121,6 +121,8 @@ The round takes turns in this order:
 2. **Agent 2 counter-argument:** check Agent 1's claims and the same ranges for omissions. Once the
    turn is stable, Agent 2 appends the reconciliation table to Agent 1's argument, recording
    confirmed, qualified, rejected and unchecked claims and identifying unfixed work.
+   Turn 01 cannot request acknowledgment; turn 02 always supplies this counter-argument and
+   reconciliation append before an acknowledgment can be owed.
 3. **Agent 1 rebuttal:** accept, qualify or contest the counter-argument and its characterization
    of the argument. A rebuttal need not defend the initial findings.
 4. **Agent 2 counter-rebuttal:** assess the rebuttal against the cited evidence and record any
@@ -283,7 +285,7 @@ of both agents and the close-out used it. Ben's judgment on 2026-09-09 was that 
 worktree had been a good idea, but its path and branch read as Codex's. The approved naming makes
 the shared purpose explicit. The September 8 worktree and branch keep their existing names.
 
-### Automated relay and the `Next:` line — Ben's decision, 2026-09-30 (D13)
+### Automated relay and the `Next:` line — Ben's decisions, 2026-09-30 and 2026-10-01 (D13)
 
 **Automated relay and the `Next:` line.** Ben may start an automated round through
 `py/main_repo_util.py --dual-agent-review start`. Setup creates a new `dar-<date>`
@@ -311,6 +313,11 @@ before its first `##` heading. Five forms are valid:
 5. `Next: turn <NN>, <claude|codex>; objection` is allowed only in an owed
    acknowledgment and identifies the disputed claim and necessary evidence.
 
+An acknowledgment request is permitted only from turn 02 onward, after a predecessor's
+claims have been assessed under D9. Turn 01 names turn 02 for the counter-argument or stops
+for Ben; turn 02 always supplies its reconciliation append. The earliest owed acknowledgment
+is turn 03. A counter-argument to turn 01 does not consume a reopening.
+
 D10's State rules remain: turn 01 records `State: not yet acted on`; later turns
 record `State: completed <date>; review only`. Default caps permit 10 turns and
 1 reopening: the first reopening is allowed; a second stops dispatch. The dispatcher
@@ -325,6 +332,22 @@ transition. Only the dispatcher stages, commits, and pushes
 `origin HEAD:dar-<date>`. The verified push supplies the next worker's required
 commit. Refusals, remote movement, timeouts, authentication or usage failures pause
 the round and preserve its checkout for inspection.
+
+Both workers may run relevant public-only scripts and targeted checks with the named home
+clone's interpreter from their own checkout. Before running a check, verify that its inputs
+stay within the round's evidence scope and that it preserves tracked inputs and products.
+Checks write only ignored scratch; workers do not run generators that rewrite tracked output.
+Scratch probes stay in that checkout's ignored directory. A denied or unavailable required
+check is reported as unchecked. Full-suite checks
+that require private inputs belong to manual remediation, outside a public review turn.
+
+On acknowledgment closure, the dispatcher marks that round inactive before later ticks can
+fetch or launch it. Manual close-out begins only after a round-specific pause and verification
+that no worker is live. A deactivate action records manual ownership for an already-closed
+round without deleting its registry entry, checkout or evidence. The round file stays live
+while close-out work remains. After approved remediation is verified and main integration
+has actually succeeded, it records `State: executed <date>; close-out completed`. The parser
+and tracked-round lint accept that terminal State, and terminal rounds are never dispatchable.
 
 Only new rounds in the dispatcher's explicit local registry are eligible. The
 dispatcher never updates a home clone's `main`, remediates, retires worktrees, or

@@ -3,15 +3,19 @@
 from __future__ import annotations
 
 from contextlib import contextmanager
+from dataclasses import dataclass
 from datetime import datetime
 import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import tomllib
+from urllib.parse import unquote, urlsplit
 import uuid
 
 from mb_cmn import paths
@@ -45,14 +49,20 @@ class LockExists(protocol.ReviewError):
     """An existing dispatcher lock requires inspection, never automatic removal."""
 
 
+class WhitespaceError(protocol.ReviewError):
+    """Git's whitespace check refused proposed bytes before real staging."""
+
+
 def write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def write_json(path: Path, value) -> None:
-    staged = path.with_name(path.name + ".tmp." + uuid.uuid4().hex)
-    write_text(staged, json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+    staged = path.with_name(path.name + ".tmp." + uuid.uuid4().hex[:8])
+    staged.parent.mkdir(parents=True, exist_ok=True)
+    with staged.open("x", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
     os.replace(staged, path)
 
 
@@ -66,6 +76,8 @@ def load_config(path: Path = CONFIG) -> dict:
         raise protocol.ReviewError("worker effort must be max and xhigh")
     if config["claude_permission_mode"] not in ("dontAsk", "auto"):
         raise protocol.ReviewError("unsupported Claude permission mode")
+    if config["worker_checks"] != "public-only":
+        raise protocol.ReviewError("unsupported worker checking policy")
     for key in ("worker_timeout_minutes", "tick_interval_minutes", "claude_max_turns"):
         if type(config[key]) is not int or config[key] <= 0:
             raise protocol.ReviewError(f"invalid {key}")
@@ -109,11 +121,97 @@ def origin_urls(repo: Path) -> dict:
 
 
 def origin_identity(repo: Path) -> dict:
-    """Detect every URL change without recording embedded credentials."""
+    """Retain legacy URL fingerprints for recovery of existing markers."""
     return {
         kind: [hashlib.sha256(url.encode("utf-8")).hexdigest() for url in values]
         for kind, values in origin_urls(repo).items()
     }
+
+
+def resolve_destination(repo: Path, url: str) -> dict:
+    """Resolve only supported GitHub spellings or an actual local Git directory."""
+    if url.startswith("git@github.com:"):
+        name = url[len("git@github.com:") :]
+    elif url.startswith(("https://", "ssh://")):
+        parsed = urlsplit(url)
+        if (
+            parsed.hostname != "github.com"
+            or parsed.query
+            or parsed.fragment
+            or parsed.port
+        ):
+            raise protocol.ReviewError("unsupported or ambiguous remote identity")
+        if parsed.scheme == "ssh" and parsed.username != "git":
+            raise protocol.ReviewError("unsupported SSH repository identity")
+        name = parsed.path.lstrip("/")
+    else:
+        if url.startswith("file://"):
+            parsed = urlsplit(url)
+            if (
+                parsed.netloc not in ("", "localhost")
+                or parsed.query
+                or parsed.fragment
+            ):
+                raise protocol.ReviewError("unsupported local repository alias")
+            local = unquote(parsed.path)
+            if os.name == "nt" and re_drive_path(local):
+                local = local[1:]
+        else:
+            local = url
+        if "://" in local or (":" in local and not Path(local).is_absolute()):
+            raise protocol.ReviewError("unknown remote alias or transport")
+        destination = Path(local)
+        if not destination.is_absolute():
+            destination = repo / destination
+        destination = destination.resolve()
+        if not destination.is_dir() or destination.as_posix().startswith("//"):
+            raise protocol.ReviewError(
+                "remote does not name a supported local Git repository"
+            )
+        common = protocol.git_text(
+            destination, "rev-parse", "--path-format=absolute", "--git-common-dir"
+        )
+        return {"kind": "local", "git_dir": Path(common).resolve().as_posix()}
+    if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:\.git)?", name):
+        raise protocol.ReviewError("unsupported GitHub repository identity")
+    owner, repository = name.split("/")
+    return {
+        "kind": "github",
+        "host": "github.com",
+        "owner": owner.lower(),
+        "repository": repository.removesuffix(".git").lower(),
+    }
+
+
+def re_drive_path(value: str) -> bool:
+    return (
+        len(value) >= 4
+        and value[0] == "/"
+        and value[1].isalpha()
+        and value[2:4] == ":/"
+    )
+
+
+def repository_identity(repo: Path) -> dict:
+    urls = origin_urls(repo)
+    if any(len(values) != 1 for values in urls.values()):
+        raise protocol.ReviewError(
+            "requires exactly one effective fetch and push destination"
+        )
+    identities = [resolve_destination(repo, values[0]) for values in urls.values()]
+    if identities[0] != identities[1]:
+        raise protocol.ReviewError(
+            "fetch and push repository identities differ; no outbound query attempted"
+        )
+    return identities[0]
+
+
+def verify_destinations(repo: Path, checkouts, expected: dict) -> None:
+    for path in (repo, *checkouts):
+        if repository_identity(Path(path)) != expected:
+            raise protocol.ReviewError(
+                "repository identity differs from retained setup identity; no outbound query attempted"
+            )
 
 
 @contextmanager
@@ -136,7 +234,26 @@ def lock(control: Path):
         path.unlink()
 
 
-def notify(repo: Path, round_date: str, reason: str, *, toast: bool = True) -> None:
+def resolve_notice(repo: Path, round_date: str, *, kind: str | None = None) -> None:
+    """End an unresolved episode without deleting its notice evidence."""
+    signature = state_dir(repo, round_date) / "last-notification.json"
+    if signature.exists():
+        value = json.loads(signature.read_text(encoding="utf-8"))
+        if kind is not None and value.get("episode_kind") != kind:
+            return
+        value["resolved"] = True
+        write_json(signature, value)
+
+
+def notify(
+    repo: Path,
+    round_date: str,
+    reason: str,
+    *,
+    toast: bool = True,
+    episode_kind: str = "failure",
+    episode_key: str | None = None,
+) -> None:
     directory = state_dir(repo, round_date)
     signature = directory / "last-notification.json"
     cached = protocol.git(
@@ -149,16 +266,25 @@ def notify(repo: Path, round_date: str, reason: str, *, toast: bool = True) -> N
     value = {
         "reason": reason,
         "tip": cached.stdout.decode("ascii", errors="replace").strip(),
+        "episode_kind": episode_kind,
+        "episode_key": episode_key,
     }
-    if (
-        signature.exists()
-        and json.loads(signature.read_text(encoding="utf-8")) == value
+    old = (
+        json.loads(signature.read_text(encoding="utf-8")) if signature.exists() else {}
+    )
+    if not old.get("resolved", False) and all(
+        old.get(key) == item for key, item in value.items()
     ):
         return
+    value.update(episode=uuid.uuid4().hex, resolved=False)
     displayed = labelled(datetime.now(NEW_YORK).isoformat())
     write_text(
         directory / "NEEDS-BEN.md",
-        f"# Dual-agent review needs Ben\n\n{displayed}\n\n{repo.name}, round {round_date}: {reason}\n\nInspect this round's inflight.json, launch records, and worker logs before resuming.\n",
+        f"# Dual-agent review needs Ben\n\n{displayed}\n\n{repo.name}, round {round_date}: {reason}\n",
+    )
+    write_text(
+        directory / f"notice-{value['episode']}.md",
+        (directory / "NEEDS-BEN.md").read_text(encoding="utf-8"),
     )
     write_json(signature, value)
     if toast and os.name == "nt":
@@ -331,7 +457,71 @@ def render_round(
 
 def registry(control: Path) -> list[dict]:
     path = control / "rounds.json"
-    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    entries = json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    for item in entries:
+        if item.get("state", "active") not in ("active", "inactive"):
+            raise protocol.ReviewError("unknown registry lifecycle state")
+    return entries
+
+
+def registered(control: Path, repo: Path, round_date: str) -> dict | None:
+    return next(
+        (
+            item
+            for item in registry(control)
+            if item["repo"] == repo.as_posix() and item["round"] == round_date
+        ),
+        None,
+    )
+
+
+def deactivate(
+    repo: Path, round_date: str, control: Path, *, manual: bool = True
+) -> None:
+    directory = state_dir(repo, round_date)
+    if manual and not (directory / "PAUSE").is_file():
+        raise protocol.ReviewError(
+            "manual deactivation requires a round-specific pause"
+        )
+    if any(
+        (directory / name).exists() for name in ("inflight.json", "setup-inflight.json")
+    ):
+        raise protocol.ReviewError("deactivation refuses in-flight work")
+    for agent in protocol.AGENTS:
+        blockers = runtime_facts(
+            repo / ".claude/worktrees" / f"dar-{round_date}-{agent}"
+        )["blockers"]
+        if blockers:
+            raise protocol.ReviewError(
+                "deactivation refuses occupied worker checkouts: " + "; ".join(blockers)
+            )
+    state = protocol.status(repo, round_date, occupancy=False)
+    if state["problems"] or state["next"] is None or state["next"]["kind"] != "closed":
+        raise protocol.ReviewError(
+            "only an acknowledged closed round may be deactivated"
+        )
+    entries = registry(control)
+    entry = next(
+        (
+            item
+            for item in entries
+            if item["repo"] == repo.as_posix() and item["round"] == round_date
+        ),
+        None,
+    )
+    if entry is None:
+        raise protocol.ReviewError("round is not registered in this control directory")
+    if entry.get("state") == "inactive":
+        return
+    transition = {
+        "state": "inactive",
+        "ownership": "manual" if manual else "closed",
+        "deactivated_at": datetime.now(NEW_YORK).isoformat(),
+        "closed_tip": state["tip"],
+    }
+    write_json(directory / f"deactivation-{uuid.uuid4().hex}.json", transition)
+    entry.update(transition)
+    write_json(control / "rounds.json", entries)
 
 
 def start(
@@ -368,34 +558,30 @@ def start(
         raise protocol.ReviewError("start requires a clean home clone on main")
     if runtime_facts(repo)["blockers"]:
         raise protocol.ReviewError("home clone is occupied; use a free full clone")
-    urls = origin_urls(repo)
-    if any(len(values) != 1 for values in urls.values()):
+    identity = repository_identity(repo)
+    if rehearsal and identity["kind"] != "local":
         raise protocol.ReviewError(
-            "setup requires exactly one fetch URL and one push URL"
+            "rehearsal requires local filesystem fetch and push URLs"
         )
-    if rehearsal:
-        for origin in urls["fetch"] + urls["push"]:
-            candidate = Path(origin) if Path(origin).is_absolute() else repo / origin
-            if (
-                "://" in origin
-                or origin.startswith("git@")
-                or candidate.as_posix().startswith("//")
-                or not candidate.is_dir()
-            ):
-                raise protocol.ReviewError(
-                    "rehearsal requires local filesystem fetch and push URLs"
-                )
     if remote_tip(repo, round_date):
         raise protocol.ReviewError(
             "round branch already exists; start never adopts an existing review"
         )
     baseline = protocol.git_text(repo, "rev-parse", "HEAD")
-    first = protocol.git_text(
-        repo, "rev-parse", "--verify", f"{start_commit}^{{commit}}"
-    )
-    last = protocol.git_text(repo, "rev-parse", "--verify", f"{end_commit}^{{commit}}")
-    protocol.git(repo, "merge-base", "--is-ancestor", first, last)
-    protocol.git(repo, "merge-base", "--is-ancestor", last, baseline)
+    try:
+        first = protocol.git_text(
+            repo, "rev-parse", "--verify", f"{start_commit}^{{commit}}"
+        )
+    except protocol.ReviewError as exc:
+        raise protocol.ReviewError("Start commit lookup failed: " + str(exc)) from exc
+    try:
+        last = protocol.git_text(
+            repo, "rev-parse", "--verify", f"{end_commit}^{{commit}}"
+        )
+    except protocol.ReviewError as exc:
+        raise protocol.ReviewError("End commit lookup failed: " + str(exc)) from exc
+    require_ancestor(repo, first, last, "Start must be an ancestor of End")
+    require_ancestor(repo, last, baseline, "End must be an ancestor of home HEAD")
     model = codex_settings()["model"]
     if not model.endswith("-sol"):
         raise protocol.ReviewError("kickoff Codex model must be a Sol model")
@@ -419,7 +605,11 @@ def start(
         raise protocol.ReviewError("round local control directory already exists")
     write_json(
         directory / "setup-inflight.json",
-        {"baseline": baseline, "repo": repo.as_posix()},
+        {
+            "baseline": baseline,
+            "repo": repo.as_posix(),
+            "repository_identity": identity,
+        },
     )
     checkout = repo / ".claude/worktrees" / f"dar-{round_date}-claude"
     protocol.git(
@@ -457,17 +647,37 @@ def start(
             f"active automated dual-agent review {round_date}",
             str(path),
         )
+    verify_destinations(repo, (checkout, codex_checkout), identity)
     if remote_tip(repo, round_date):
         raise protocol.ReviewError("remote round appeared during setup")
+    verify_destinations(repo, (checkout, codex_checkout), identity)
     protocol.git(checkout, "push", "origin", f"HEAD:refs/heads/dar-{round_date}")
     if remote_tip(repo, round_date) != tip:
         raise protocol.ReviewError("setup push could not be verified")
     fetch(repo, round_date)
     entries = registry(control)
-    entries.append({"repo": repo.as_posix(), "round": round_date})
+    entries.append(
+        {
+            "repo": repo.as_posix(),
+            "round": round_date,
+            "state": "active",
+            "repository_identity": identity,
+        }
+    )
     write_json(control / "rounds.json", entries)
     (directory / "setup-inflight.json").unlink()
     return protocol.status(repo, round_date)
+
+
+def require_ancestor(repo: Path, first: str, last: str, context: str) -> None:
+    result = protocol.git(repo, "merge-base", "--is-ancestor", first, last, check=False)
+    if result.returncode:
+        raise protocol.ReviewError(
+            f"{context}: {first} -> {last}; "
+            + protocol.git_diagnostic(
+                ("merge-base", "--is-ancestor", first, last), result
+            )
+        )
 
 
 def prompt_for(
@@ -485,6 +695,11 @@ def prompt_for(
         else "This is a private review. All findings, logs, and scratch stay in this private repository."
     )
     effort = config[agent + "_effort"]
+    agreement = (
+        f"Agreement after assessing the predecessor: Next: turn {number + 1:02}, {protocol.other(agent)}; acknowledgment"
+        if number >= 2
+        else "Turn 01 cannot request acknowledgment. Turn 02 supplies the counter-argument and reconciliation append."
+    )
     return f"""Generated by the dual-agent review dispatcher on {generated}.
 Ben's kickoff instruction, verbatim (JSON string): {json.dumps(state['instruction'], ensure_ascii=False)}
 The rest is the dispatcher's mechanical reconstruction of the authorized turn.
@@ -519,11 +734,18 @@ Wait for every checker to finish and reconcile its evidence before writing the t
 Write only your new turn file. Turn 02 additionally appends the reconciliation table
 to turn 01: preserve all original bytes as a prefix. Keep scratch under .novc/.
 Never commit, push, remediate, restore, discard, or edit any other tracked file.
+Both workers may run relevant public-only scripts and targeted checks with the named home
+clone's interpreter from their own checkout. Before running a check, verify that its inputs
+stay within the round's evidence scope and that it preserves tracked inputs and products.
+Checks write only ignored scratch; workers do not run generators that rewrite tracked output.
+Scratch probes stay in that checkout's ignored directory. A denied or unavailable required
+check is reported as unchecked. Full-suite checks that require private inputs belong to
+manual remediation, outside a public review turn.
 Quote Ben's kickoff instruction and state your effort in your opening paragraph.
 Keep State: on line 3: turn 01 uses State: not yet acted on; later turns use
 State: completed YYYY-MM-DD; review only. Add exactly one Next: header before ##.
 Continue: Next: turn {number + 1:02}, {protocol.other(agent)}
-Agreement: Next: turn {number + 1:02}, {protocol.other(agent)}; acknowledgment
+{agreement}
 Only when the predecessor requests acknowledgment: Next: none; round closed
 or Next: turn {number + 1:02}, {protocol.other(agent)}; objection
 Need a decision or unable to finish: Next: Ben; concrete reason
@@ -547,6 +769,13 @@ def worker_command(
             f'-c "safe.directory={path}" -C "{path}"',
         )
         allowed = list(config["claude_allowed_tools"])
+        interpreter = (Path(state["repo"]) / ".venv/Scripts/python.exe").as_posix()
+        allowed.extend(
+            f"{tool}({prefix}{spelling} *)"
+            for tool in (("PowerShell",) if os.name == "nt" else ("Bash", "PowerShell"))
+            for spelling in (interpreter, f'"{interpreter}"')
+            for prefix in ("", "& ")
+        )
         allowed.extend(
             f"{tool}(git {prefix}{trust} {command} *)"
             for tool in (("PowerShell",) if os.name == "nt" else ("Bash", "PowerShell"))
@@ -656,25 +885,102 @@ def launch_worker(
         raise protocol.ReviewError("worker stream has no successful terminal event")
 
 
-def gate(repo: Path, round_date: str, checkout: Path, inflight: dict) -> list[str]:
-    errors = []
+@dataclass(frozen=True)
+class GateFailure:
+    category: str
+    message: str
+
+
+def owned_paths(round_date: str, inflight: dict) -> list[str]:
+    owned = [protocol.turn_path(round_date, inflight["turn"], inflight["agent"])]
+    if inflight["turn"] == 2:
+        owned.append(protocol.turn_path(round_date, 1, inflight["agent1"]))
+    return owned
+
+
+def check_identity(repo: Path, round_date: str, inflight: dict) -> None:
+    expected = inflight.get("repository_identity") or repository_identity(repo)
+    checkouts = [
+        repo / ".claude/worktrees" / f"dar-{round_date}-{agent}"
+        for agent in protocol.AGENTS
+    ]
+    verify_destinations(repo, checkouts, expected)
     if (
         inflight.get("origin_identity")
-        and origin_identity(checkout) != inflight["origin_identity"]
+        and origin_identity(Path(inflight["checkout"])) != inflight["origin_identity"]
     ):
-        return ["worker changed origin URL identity; no outbound query attempted"]
+        raise protocol.ReviewError(
+            "legacy origin URL fingerprint changed; no outbound query attempted"
+        )
+
+
+def proposed_tree(checkout: Path, baseline: str, owned: list[str]) -> str:
+    """Git's own attributes and whitespace rules judge all admitted bytes before staging."""
+    scratch = checkout / ".novc"
+    scratch.mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="relay-index-", dir=scratch) as directory:
+        environment = {"GIT_INDEX_FILE": str(Path(directory) / "index")}
+        protocol.git(checkout, "read-tree", baseline, environment=environment)
+        protocol.git(checkout, "add", "--", *owned, environment=environment)
+        arguments = ("diff", "--cached", "--check")
+        result = protocol.git(
+            checkout, *arguments, environment=environment, check=False
+        )
+        if result.returncode:
+            # --check uses 2 for whitespace errors; a fatal Git refusal has its own category.
+            error = WhitespaceError if result.returncode == 2 else protocol.ReviewError
+            raise error(protocol.git_diagnostic(arguments, result))
+        return (
+            protocol.git(checkout, "write-tree", environment=environment)
+            .stdout.decode("ascii")
+            .strip()
+        )
+
+
+def gate(
+    repo: Path, round_date: str, checkout: Path, inflight: dict
+) -> list[GateFailure]:
+    """Classify failures by the check that failed, never by diagnostic substrings."""
+    try:
+        return inspect_gate(repo, round_date, checkout, inflight)
+    except (
+        protocol.ReviewError,
+        OSError,
+        ValueError,
+        subprocess.SubprocessError,
+    ) as exc:
+        return [GateFailure("git", str(exc))]
+
+
+def inspect_gate(
+    repo: Path, round_date: str, checkout: Path, inflight: dict
+) -> list[GateFailure]:
+    errors = []
+
+    def refuse(category, message):
+        errors.append(GateFailure(category, message))
+
+    try:
+        check_identity(repo, round_date, {**inflight, "checkout": checkout.as_posix()})
+    except protocol.ReviewError as exc:
+        return [GateFailure("identity", str(exc))]
+    try:
+        assert_checkout(checkout, repo, carrier(round_date, inflight["agent"]))
+    except protocol.ReviewError as exc:
+        return [GateFailure("ownership", str(exc))]
     if protocol.git_text(checkout, "rev-parse", "HEAD") != inflight["tip"]:
-        errors.append("worker changed HEAD")
+        refuse("ownership", "worker changed HEAD")
     if protocol.git_text(checkout, "branch", "--show-current") != carrier(
         round_date, inflight["agent"]
     ):
-        errors.append("worker changed carrier branch")
+        refuse("ownership", "worker changed carrier branch")
     if remote_tip(repo, round_date) != inflight["tip"]:
-        errors.append(
-            "remote moved during the turn; possible worker push or D11 collision"
+        refuse(
+            "ownership",
+            "remote moved during the turn; possible worker push or D11 collision",
         )
     if protocol.git(checkout, "diff", "--cached", "--name-only", "-z").stdout:
-        errors.append("worker staged files")
+        refuse("staging", "worker staged files")
     raw = protocol.git(
         checkout, "status", "--porcelain=v1", "-z", "--untracked-files=all"
     ).stdout
@@ -683,8 +989,9 @@ def gate(repo: Path, round_date: str, checkout: Path, inflight: dict) -> list[st
         if not record:
             continue
         if len(record) < 4 or record[:2] not in (b"??", b" M"):
-            errors.append(
-                "unexpected status entry (rename, deletion, staged file, or conflict)"
+            refuse(
+                "paths",
+                "unexpected status entry (rename, deletion, staged file, or conflict)",
             )
             continue
         entries.append(record[3:].decode("utf-8"))
@@ -695,13 +1002,14 @@ def gate(repo: Path, round_date: str, checkout: Path, inflight: dict) -> list[st
     if number == 2:
         expected.add(first_path)
     if set(entries) != expected or len(entries) != len(expected):
-        errors.append(
-            "change set must be exactly the new turn and, for turn 02, the reconciliation append"
+        refuse(
+            "paths",
+            "change set must be exactly the new turn and, for turn 02, the reconciliation append",
         )
     if output in entries:
         path = checkout / output
         if path.is_symlink():
-            errors.append("turn output is a symlink")
+            refuse("paths", "turn output is a symlink")
         else:
             try:
                 protocol.validate_turn(
@@ -711,11 +1019,13 @@ def gate(repo: Path, round_date: str, checkout: Path, inflight: dict) -> list[st
                     inflight["agent1"],
                     inflight["previous"],
                 )
+            except protocol.HeaderError as exc:
+                refuse("header", str(exc))
             except (protocol.ReviewError, OSError, ValueError) as exc:
-                errors.append(str(exc))
+                refuse("paths", str(exc))
     if number == 2 and first_path in entries:
         original = protocol.git(
-            checkout, "show", f"{inflight['tip']}:{first_path}"
+            checkout, "show", f"{inflight['tip']}:{first_path}", "--"
         ).stdout
         # Verify that line-ending conversion is the only clean-filter transformation.
         blob = protocol.git_text(
@@ -723,23 +1033,26 @@ def gate(repo: Path, round_date: str, checkout: Path, inflight: dict) -> list[st
         )
         current = (checkout / first_path).read_bytes().replace(b"\r\n", b"\n")
         if not current.startswith(original) or len(current) == len(original):
-            errors.append(
-                "reconciliation is not a nonempty append preserving the original prefix"
+            refuse(
+                "paths",
+                "reconciliation is not a nonempty append preserving the original prefix",
             )
         canonical_blob = hashlib.sha1(
             b"blob " + str(len(current)).encode("ascii") + b"\0" + current
         ).hexdigest()
         if blob != canonical_blob:
-            errors.append("unrecognized reconciliation clean-filter transformation")
+            refuse("paths", "unrecognized reconciliation clean-filter transformation")
         try:
             protocol.validate_turn(
                 current.decode("utf-8"), 1, inflight["agent1"], inflight["agent1"], None
             )
         except (protocol.ReviewError, ValueError) as exc:
-            errors.append("invalid reconciliation header: " + str(exc))
-    check = protocol.git(checkout, "diff", "--check", check=False)
-    if check.returncode:
-        errors.append(check.stdout.decode("utf-8", errors="replace"))
+            refuse("paths", "invalid reconciliation header: " + str(exc))
+    if not any(error.category != "header" for error in errors):
+        try:
+            proposed_tree(checkout, inflight["tip"], owned_paths(round_date, inflight))
+        except WhitespaceError as exc:
+            refuse("whitespace", str(exc))
     return errors
 
 
@@ -756,26 +1069,24 @@ def handoff(repo: Path, round_date: str, directory: Path) -> str:
     ):
         raise protocol.ReviewError("inflight marker does not belong to this round")
     checkout = Path(inflight["checkout"])
-    if (
-        inflight.get("origin_identity")
-        and origin_identity(checkout) != inflight["origin_identity"]
-    ):
-        raise protocol.ReviewError(
-            "origin URL identity changed; no outbound query attempted"
-        )
+    check_identity(repo, round_date, inflight)
     assert_checkout(checkout, repo, carrier(round_date, inflight["agent"]))
-    subject = f"Record {inflight['agent'].capitalize()} turn {inflight['turn']:02} of the {round_date} dual-agent review"
+    subject = (
+        inflight.get("subject")
+        or f"Record {inflight['agent'].capitalize()} turn {inflight['turn']:02} of the {round_date} dual-agent review"
+    )
     if "approved_tree" not in inflight:
         errors = gate(repo, round_date, checkout, inflight)
         if errors:
-            raise protocol.ReviewError("gate refused: " + "; ".join(errors))
-        owned = [protocol.turn_path(round_date, inflight["turn"], inflight["agent"])]
-        if inflight["turn"] == 2:
-            owned.append(protocol.turn_path(round_date, 1, inflight["agent1"]))
+            raise protocol.ReviewError(
+                "gate refused: " + "; ".join(error.message for error in errors)
+            )
+        owned = owned_paths(round_date, inflight)
+        approved = proposed_tree(checkout, inflight["tip"], owned)
+        inflight.update(approved_tree=approved, subject=subject)
+        write_json(marker, inflight)
         protocol.git(checkout, "add", "--", *owned)
         protocol.git(checkout, "diff", "--cached", "--check")
-        inflight["approved_tree"] = protocol.git_text(checkout, "write-tree")
-        write_json(marker, inflight)
     head = protocol.git_text(checkout, "rev-parse", "HEAD")
     if head == inflight["tip"]:
         if (
@@ -805,17 +1116,14 @@ def handoff(repo: Path, round_date: str, directory: Path) -> str:
         raise protocol.ReviewError("committed handoff checkout is dirty")
     inflight["committed_tip"] = committed
     write_json(marker, inflight)
-    if (
-        inflight.get("origin_identity")
-        and origin_identity(checkout) != inflight["origin_identity"]
-    ):
-        raise protocol.ReviewError("origin URL identity changed before push")
+    check_identity(repo, round_date, inflight)
     current_remote = remote_tip(repo, round_date)
     if current_remote not in (inflight["tip"], committed):
         raise protocol.ReviewError(
             "remote moved before push; preserve the committed turn"
         )
     if current_remote != committed:
+        check_identity(repo, round_date, inflight)
         protocol.git(checkout, "push", "origin", f"HEAD:refs/heads/dar-{round_date}")
     if remote_tip(repo, round_date) != committed:
         raise protocol.ReviewError("pushed turn tip does not match the remote")
@@ -835,7 +1143,135 @@ def handoff(repo: Path, round_date: str, directory: Path) -> str:
         ) as handle:
             handle.write(json.dumps(entry) + "\n")
     marker.unlink()
+    resolve_notice(repo, round_date)
     return committed
+
+
+def failure_records(errors: list[GateFailure]) -> list[dict]:
+    return [{"category": error.category, "message": error.message} for error in errors]
+
+
+def save_refusal(
+    attempt: Path,
+    checkout: Path,
+    round_date: str,
+    inflight: dict,
+    errors: list[GateFailure],
+    name: str,
+) -> dict[str, bytes]:
+    directory = attempt / name
+    directory.mkdir()
+    write_json(directory / "gate.json", failure_records(errors))
+    copies = {}
+    manifest = {}
+    for number, filename in enumerate(owned_paths(round_date, inflight)):
+        path = checkout / filename
+        if path.is_file() and not path.is_symlink():
+            copies[filename] = path.read_bytes()
+            copy_name = f"owned-{number}.md"
+            manifest[filename] = copy_name
+            destination = directory / copy_name
+            destination.write_bytes(copies[filename])
+    write_json(directory / "files.json", manifest)
+    return copies
+
+
+def fixup_prompt(state: dict, inflight: dict, errors: list[GateFailure]) -> str:
+    owned = owned_paths(state["round"], inflight)
+    return f"""The dispatcher permits one header-only correction of this refused attempt.
+Ben's kickoff instruction (JSON string): {json.dumps(state['instruction'], ensure_ascii=False)}
+Development checkout: {inflight['checkout']}
+Required unchanged HEAD: {inflight['tip']}
+Expected dirty paths (JSON): {json.dumps(owned)}
+These files are intentionally dirty from your initial draft. Verify the exact dirty set;
+do not demand a clean checkout or rewrite the review. The real index must remain unstaged.
+Correct only the assigned new turn's control header. Preserve every byte after its first
+## heading and all other files, including turn 02's existing reconciliation append.
+Do not stage, commit, push, restore, discard, or run generators. Keep ignored scratch.
+Header errors (JSON): {json.dumps(failure_records(errors), ensure_ascii=False)}
+"""
+
+
+def launch_attempt(
+    agent: str,
+    state: dict,
+    config: dict,
+    checkout: Path,
+    directory: Path,
+    prompt: str,
+    worker,
+) -> None:
+    directory.mkdir()
+    command = worker_command(agent, state, config, checkout, directory)
+    write_text(directory / "prompt.md", prompt)
+    write_json(
+        directory / "launch.json",
+        {
+            "command": command,
+            "model": state["models"][agent],
+            "effort": config[agent + "_effort"],
+            "started_at": datetime.now(NEW_YORK).isoformat(),
+        },
+    )
+    worker(
+        command,
+        prompt,
+        checkout,
+        directory / "stream.jsonl",
+        config["worker_timeout_minutes"] * 60,
+    )
+
+
+def verify_header_correction(
+    checkout: Path, round_date: str, inflight: dict, copies: dict[str, bytes]
+) -> None:
+    output = protocol.turn_path(round_date, inflight["turn"], inflight["agent"])
+    for filename, original in copies.items():
+        current = (checkout / filename).read_bytes()
+        if filename == output:
+
+            def body(value):
+                lines = value.splitlines(keepends=True)
+                boundary = next(
+                    (i for i, line in enumerate(lines) if line.startswith(b"## ")),
+                    len(lines),
+                )
+                return b"".join(lines[boundary:])
+
+            same = body(current) == body(original)
+        else:
+            same = current == original
+        if not same:
+            raise protocol.ReviewError(
+                "header fix-up changed refused review bytes outside its owned header"
+            )
+
+
+def stop_notice(state: dict) -> str:
+    if state["next"] and state["next"]["kind"] == "Ben":
+        turn = state["turns"][-1]["path"]
+        update = (
+            protocol.turn_path(state["round"], 1, state["agent1"]).removesuffix(".md")
+            + "-update.md"
+        )
+        return f"Ben's decision required: {state['next']['reason']}. Read {turn}. Record the decision in {update}; continue through an authorized Override: in {protocol.round_path(state['round'])}."
+    return state["stop_reason"] + (
+        ": " + "; ".join(state["problems"]) if state["problems"] else ""
+    )
+
+
+def stopped_round(
+    repo: Path, round_date: str, state: dict, control: Path, toast: bool
+) -> None:
+    if state["dispatchable"]:
+        return
+    if state["stop_reason"] not in (
+        "no remote round",
+        "manual round; no automated protocol",
+    ):
+        if state["next"] and state["next"]["kind"] == "closed":
+            deactivate(repo, round_date, control, manual=False)
+        notify(repo, round_date, stop_notice(state), toast=toast)
 
 
 def tick_round(
@@ -845,7 +1281,11 @@ def tick_round(
     *,
     worker=launch_worker,
     toast: bool = True,
+    control: Path = CONTROL,
 ) -> dict:
+    entry = registered(control, repo, round_date)
+    if entry is not None and entry.get("state", "active") == "inactive":
+        return {"round": round_date, "stop_reason": "inactive", "dispatchable": False}
     directory = state_dir(repo, round_date)
     if (repo / ".novc/dual-agent-review/PAUSE").exists() or (
         directory / "PAUSE"
@@ -853,18 +1293,38 @@ def tick_round(
         return {"round": round_date, "stop_reason": "paused", "dispatchable": False}
     marker = directory / "inflight.json"
     if marker.exists() or (directory / "setup-inflight.json").exists():
+        evidence = marker if marker.exists() else directory / "setup-inflight.json"
         notify(
             repo,
             round_date,
             "stale in-flight marker; inspect before a manual handoff or resume",
             toast=toast,
+            episode_kind="marker",
+            episode_key=hashlib.sha256(evidence.read_bytes()).hexdigest(),
         )
         return {
             "round": round_date,
             "stop_reason": "in-flight marker",
             "dispatchable": False,
         }
+    resolve_notice(repo, round_date, kind="marker")
     try:
+        expected = entry.get("repository_identity") if entry else None
+        expected = expected or repository_identity(repo)
+        verify_destinations(
+            repo,
+            (
+                repo / ".claude/worktrees" / f"dar-{round_date}-{agent}"
+                for agent in protocol.AGENTS
+            ),
+            expected,
+        )
+        if entry is not None and "repository_identity" not in entry:
+            entries = registry(control)
+            for item in entries:
+                if item["repo"] == repo.as_posix() and item["round"] == round_date:
+                    item["repository_identity"] = expected
+            write_json(control / "rounds.json", entries)
         fetch(repo, round_date)
     except (protocol.ReviewError, OSError, subprocess.SubprocessError) as exc:
         write_text(directory / "PAUSE", str(exc) + "\n")
@@ -872,16 +1332,7 @@ def tick_round(
         raise
     state = protocol.status(repo, round_date)
     if not state["dispatchable"]:
-        if state["stop_reason"] not in (
-            "no remote round",
-            "manual round; no automated protocol",
-        ):
-            notify(
-                repo,
-                round_date,
-                state["stop_reason"] + ": " + "; ".join(state["problems"]),
-                toast=toast,
-            )
+        stopped_round(repo, round_date, state, control, toast)
         return state
     agent, number = state["next"]["agent"], state["next"]["turn"]
     if agent not in config["enabled_agents"]:
@@ -893,14 +1344,20 @@ def tick_round(
         assert_checkout(checkout, repo, carrier(round_date, agent))
         if protocol.git(checkout, "status", "--porcelain=v1", "-z").stdout:
             raise protocol.ReviewError("worker checkout is dirty")
-        protocol.git(checkout, "merge-base", "--is-ancestor", "HEAD", state["tip"])
+        require_ancestor(
+            checkout,
+            "HEAD",
+            state["tip"],
+            "worker HEAD must be an ancestor of the shared tip",
+        )
         # A verified fast-forward preserves history; no checkout -B or reset is needed.
         protocol.git(checkout, "merge", "--ff-only", state["tip"])
-        command = worker_command(agent, state, config, checkout, directory)
         prompt = prompt_for(state, agent, number, checkout, config)
-        write_text(directory / f"prompt-turn-{number:02}-{agent}.md", prompt)
+        attempt = directory / "attempts" / f"{number:02}-{uuid.uuid4().hex[:12]}"
+        attempt.mkdir(parents=True)
         inflight = {
-            "origin_identity": origin_identity(checkout),
+            "repository_identity": expected,
+            "attempt": attempt.as_posix(),
             "repo": repo.as_posix(),
             "round": round_date,
             "checkout": checkout.as_posix(),
@@ -911,41 +1368,39 @@ def tick_round(
             "previous": state["turns"][-1]["next"] if state["turns"] else None,
         }
         write_json(marker, inflight)
-        write_json(
-            directory / f"launch-turn-{number:02}-{agent}.json",
-            {
-                "command": command,
-                "model": state["models"][agent],
-                "effort": config[agent + "_effort"],
-                "started_at": datetime.now(NEW_YORK).isoformat(),
-            },
+        launch_attempt(
+            agent, state, config, checkout, attempt / "initial", prompt, worker
         )
-        log = directory / f"log-turn-{number:02}-{agent}.jsonl"
-        worker(command, prompt, checkout, log, config["worker_timeout_minutes"] * 60)
         errors = gate(repo, round_date, checkout, inflight)
         if errors:
-            # Never launch a fix-up after HEAD, remote, or ownership breaches.
-            safe_fix = all(
-                "Next:" in error
-                or "State:" in error
-                or "acknowledgment" in error
-                or "D10" in error
-                for error in errors
+            copies = save_refusal(
+                attempt, checkout, round_date, inflight, errors, "initial-refusal"
             )
+            safe_fix = all(error.category == "header" for error in errors)
             if safe_fix:
-                worker(
-                    command,
-                    prompt + "\nFix only these header errors: " + json.dumps(errors),
+                launch_attempt(
+                    agent,
+                    state,
+                    config,
                     checkout,
-                    directory / f"fixup-turn-{number:02}-{agent}.jsonl",
-                    config["worker_timeout_minutes"] * 60,
+                    attempt / "fixup",
+                    fixup_prompt(state, inflight, errors),
+                    worker,
                 )
-            else:
-                raise protocol.ReviewError("gate refused: " + "; ".join(errors))
+                verify_header_correction(checkout, round_date, inflight, copies)
+                errors = gate(repo, round_date, checkout, inflight)
+                if errors:
+                    save_refusal(
+                        attempt, checkout, round_date, inflight, errors, "fixup-refusal"
+                    )
+            if errors:
+                raise protocol.ReviewError(
+                    "gate refused: " + "; ".join(error.message for error in errors)
+                )
         handoff(repo, round_date, directory)
         final = protocol.status(repo, round_date)
         if not final["dispatchable"]:
-            notify(repo, round_date, final["stop_reason"], toast=toast)
+            stopped_round(repo, round_date, final, control, toast)
         return final
     except (
         protocol.ReviewError,
@@ -980,6 +1435,9 @@ def run_action(args) -> int:
             print(json.dumps(state, ensure_ascii=False, indent=2))
             return int(bool(state["problems"]))
         with lock(control):
+            for item in registry(control):
+                if item.get("state", "active") == "active":
+                    resolve_notice(Path(item["repo"]), item["round"], kind="lock")
             if action == "start":
                 if not all((args.agent_1, args.start, args.end, args.instruction)):
                     raise protocol.ReviewError(
@@ -1010,13 +1468,19 @@ def run_action(args) -> int:
                     entries = [
                         item
                         for item in entries
-                        if Path(item["repo"]).resolve() == repo
+                        if item["repo"] == repo.as_posix()
                         and item["round"] == args.round
                     ]
                     if not entries:
                         raise protocol.ReviewError("round is not registered by start")
                 for item in entries:
-                    tick_round(Path(item["repo"]), item["round"], config)
+                    if item.get("state", "active") == "inactive":
+                        continue
+                    tick_round(
+                        Path(item["repo"]), item["round"], config, control=control
+                    )
+            elif action == "deactivate":
+                deactivate(repo, args.round, control)
             elif action == "pause":
                 write_text(
                     state_dir(repo, args.round) / "PAUSE",
@@ -1024,6 +1488,9 @@ def run_action(args) -> int:
                 )
             elif action == "resume":
                 directory = state_dir(repo, args.round)
+                entry = registered(control, repo, args.round)
+                if entry is not None and entry.get("state", "active") == "inactive":
+                    raise protocol.ReviewError("inactive rounds cannot resume dispatch")
                 if (directory / "inflight.json").exists() or (
                     directory / "setup-inflight.json"
                 ).exists():
@@ -1033,6 +1500,7 @@ def run_action(args) -> int:
                 marker = directory / "PAUSE"
                 if marker.exists():
                     marker.unlink()
+                resolve_notice(repo, args.round)
             elif action == "handoff":
                 if args.agent:
                     owner = json.loads(
@@ -1045,6 +1513,9 @@ def run_action(args) -> int:
                             "--agent disagrees with the in-flight turn owner"
                         )
                 print(handoff(repo, args.round, state_dir(repo, args.round)))
+                stopped_round(
+                    repo, args.round, protocol.status(repo, args.round), control, True
+                )
             else:
                 raise protocol.ReviewError("unknown automation action")
         return 0
@@ -1056,11 +1527,21 @@ def run_action(args) -> int:
         subprocess.SubprocessError,
     ) as exc:
         if action == "tick" and isinstance(exc, LockExists):
+            try:
+                lock_key = hashlib.sha256(
+                    (control / "dispatcher.lock").read_bytes()
+                ).hexdigest()
+            except FileNotFoundError:
+                lock_key = None
             for item in registry(control):
+                if lock_key is None or item.get("state", "active") == "inactive":
+                    continue
                 notify(
                     Path(item["repo"]),
                     item["round"],
                     "dispatcher lock requires inspection: " + str(exc),
+                    episode_kind="lock",
+                    episode_key=lock_key,
                 )
         print(f"Dual-agent review action refused: {exc}", file=sys.stderr)
         return 1

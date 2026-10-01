@@ -28,18 +28,43 @@ class ReviewError(RuntimeError):
     """Protocol or operational preconditions refused the action."""
 
 
-def git(repo: Path, *args: str, check: bool = True) -> subprocess.CompletedProcess:
-    environment = os.environ.copy()
-    environment.update(GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="Never")
+class HeaderError(ReviewError):
+    """An owned turn's control header can receive one bounded correction."""
+
+
+def safe_diagnostic(text: str) -> str:
+    """Keep diagnostics useful without retaining URL credentials."""
+    return re.sub(r"(https?://|ssh://)[^\s/@]+(?::[^\s/@]*)?@", r"\1[redacted]@", text)
+
+
+def git_diagnostic(args, result) -> str:
+    streams = []
+    for name in ("stdout", "stderr"):
+        value = getattr(result, name).decode("utf-8", errors="replace").strip()
+        if value:
+            streams.append(f"{name}: {safe_diagnostic(value)}")
+    operation = safe_diagnostic("git " + " ".join(args))
+    return f"{operation} exited {result.returncode}" + (
+        "; " + "; ".join(streams) if streams else "; no diagnostic output"
+    )
+
+
+def git(
+    repo: Path, *args: str, check: bool = True, environment=None
+) -> subprocess.CompletedProcess:
+    child_environment = os.environ.copy()
+    child_environment.update(GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="Never")
+    if environment:
+        child_environment.update(environment)
     result = subprocess.run(
         git_command(repo, *args),
         capture_output=True,
-        env=environment,
+        env=child_environment,
         timeout=60,
         creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
     )
     if check and result.returncode:
-        raise ReviewError(result.stderr.decode("utf-8", errors="replace").strip())
+        raise ReviewError(git_diagnostic(args, result))
     return result
 
 
@@ -103,12 +128,12 @@ def parse_next(text: str) -> dict:
     lines = header(text)
     markers = [line for line in lines if line.startswith("Next:")]
     if len(markers) != 1:
-        raise ReviewError("expected exactly one Next: line in the header")
+        raise HeaderError("expected exactly one Next: line in the header")
     if lines.index(markers[0]) <= 2:
-        raise ReviewError("Next: must follow the line-3 State:")
+        raise HeaderError("Next: must follow the line-3 State:")
     match = NEXT.fullmatch(markers[0])
     if not match:
-        raise ReviewError("invalid Next: line")
+        raise HeaderError("invalid Next: line")
     if match[1]:
         return {
             "kind": "turn",
@@ -125,12 +150,14 @@ def parse_round(
     text: str, repo: Path, round_date: str, *, bind_checkout: bool = True
 ) -> dict:
     lines = header(text)
-    if field(lines, "Protocol") != "1" or field(lines, "State") != "live":
+    state = field(lines, "State")
+    terminal = re.fullmatch(r"executed \d{4}-\d{2}-\d{2}; close-out completed", state)
+    if field(lines, "Protocol") != "1" or (state != "live" and not terminal):
         raise ReviewError("unsupported round protocol or State")
     agent1 = field(lines, "Agent 1")
     if agent1 not in AGENTS:
         raise ReviewError("invalid Agent 1")
-    values = {"agent1": agent1}
+    values = {"agent1": agent1, "terminal": bool(terminal)}
     for label, key in (("Start", "start"), ("End", "end")):
         value = field(lines, label)
         if not re.fullmatch(r"[a-f0-9]{40}", value):
@@ -210,27 +237,35 @@ def validate_turn(
 ) -> dict:
     expected_agent = agent1 if number % 2 else other(agent1)
     if agent != expected_agent:
-        raise ReviewError("turn filename disagrees with Agent 1 parity")
+        raise HeaderError("turn filename disagrees with Agent 1 parity")
     lines = text.splitlines()
     if len(lines) < 4 or not lines[0].startswith("# ") or lines[1] != "":
-        raise ReviewError("turn needs an H1, blank line, and line-3 State:")
+        raise HeaderError("turn needs an H1, blank line, and line-3 State:")
     state = lines[2]
     if number > 1:
         if not re.fullmatch(r"State: completed \d{4}-\d{2}-\d{2}; review only", state):
-            raise ReviewError("later turn has invalid D10 State:")
+            raise HeaderError("later turn has invalid D10 State:")
     elif not state.startswith("State: not yet acted on"):
-        raise ReviewError("turn 01 must record not yet acted on")
+        raise HeaderError("turn 01 must record not yet acted on")
     next_step = parse_next(text)
-    acknowledged = previous is not None and previous.get("flag") == "acknowledgment"
+    acknowledged = (
+        number >= 3
+        and previous is not None
+        and previous.get("flag") == "acknowledgment"
+    )
     if next_step["kind"] == "closed" and not acknowledged:
-        raise ReviewError("only an owed acknowledgment may close the round")
+        raise HeaderError("only an owed acknowledgment may close the round")
     if next_step["kind"] == "turn":
         if next_step["turn"] != number + 1 or next_step["agent"] != other(agent):
-            raise ReviewError("Next: must name the next number and the other agent")
+            raise HeaderError("Next: must name the next number and the other agent")
+        if number == 1 and next_step["flag"] == "acknowledgment":
+            raise HeaderError(
+                "turn 01 must receive turn 02's counter-argument before acknowledgment"
+            )
         if next_step["flag"] == "objection" and not acknowledged:
-            raise ReviewError("objection must answer an owed acknowledgment")
+            raise HeaderError("objection must answer an owed acknowledgment")
         if acknowledged and next_step["flag"] != "objection":
-            raise ReviewError("acknowledgment must close, object, or ask Ben")
+            raise HeaderError("acknowledgment must close, object, or ask Ben")
     return next_step
 
 
@@ -275,7 +310,7 @@ def status(repo: Path, round_date: str, *, occupancy: bool = True) -> dict:
             result["stop_reason"] = "manual round; no automated protocol"
             return result
         specification = parse_round(
-            git(repo, "show", f"{tip}:{metadata}").stdout.decode("utf-8"),
+            git(repo, "show", f"{tip}:{metadata}", "--").stdout.decode("utf-8"),
             repo,
             round_date,
         )
@@ -297,7 +332,9 @@ def status(repo: Path, round_date: str, *, occupancy: bool = True) -> dict:
                     filename,
                 )
                 historical = parse_round(
-                    git(repo, "show", f"{creation}:{metadata}").stdout.decode("utf-8"),
+                    git(repo, "show", f"{creation}:{metadata}", "--").stdout.decode(
+                        "utf-8"
+                    ),
                     repo,
                     round_date,
                 )
@@ -310,7 +347,7 @@ def status(repo: Path, round_date: str, *, occupancy: bool = True) -> dict:
                     raise ReviewError(
                         "turn follows a stop without an explicit Override:"
                     )
-            text = git(repo, "show", f"{tip}:{filename}").stdout.decode("utf-8")
+            text = git(repo, "show", f"{tip}:{filename}", "--").stdout.decode("utf-8")
             previous = validate_turn(
                 text, number, agent, specification["agent1"], previous
             )
@@ -336,7 +373,9 @@ def status(repo: Path, round_date: str, *, occupancy: bool = True) -> dict:
                 raise ReviewError("Override: must name the next alternating turn")
             next_step = override
         result["next"] = next_step
-        if next_step["kind"] != "turn":
+        if specification["terminal"]:
+            result["stop_reason"] = "close-out completed"
+        elif next_step["kind"] != "turn":
             result["stop_reason"] = (
                 "round closed"
                 if next_step["kind"] == "closed"

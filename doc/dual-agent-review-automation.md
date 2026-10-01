@@ -19,6 +19,12 @@ retain their recorded prerequisites.
 
 ## Configuration and operation
 
+Ben approved the first automated round's remediation scope and choices C1–C6 on 2026-10-01.
+`doc/PLAN-close-out-review-2026-10-01.md`, **Frozen approval snapshot**, owns that scope;
+the turn-01 update owns later dispositions. The following operations describe the revised
+implementation. Historical rollout observations below retain their original checkout and
+validation scope.
+
 `in/dual_agent_review_automation.json` sets launch rules, caps, timeouts, and CLI
 discovery; `--automation-config <absolute-path>` selects an explicit alternative.
 `production_enabled` is true after the real-worker rehearsal, collision probe
@@ -57,6 +63,78 @@ The handoff action resumes a dispatcher-approved index or commit idempotently,
 verifying its tree and parent, and recognizes a push that already reached the remote.
 Then resume the round to clear its failure pause. A commit made by a worker has no
 dispatcher approval record and remains a breach.
+
+Setup records the verified repository identity. Before setup or handoff pushes, and before
+each dispatch, the dispatcher verifies that the home clone's observing destination and
+each worker's effective fetch and push destinations resolve to that identity. Verification
+includes per-worktree configuration and expanded URL rewrite rules. Unknown or ambiguous
+identity stops before a push. Matching branch tips and unchanged URL fingerprints do not
+establish repository identity. Supported GitHub HTTPS and SSH spellings resolve to host,
+owner and repository; local destinations resolve to their actual Git common directory.
+Legacy registrations acquire a verified baseline before dispatch, and legacy marker
+fingerprints remain recovery guards. Credential-bearing URLs are never recorded.
+
+Workers are instructed to write only their allowed review records and ignored scratch, and
+to leave staging, commits and pushes to the dispatcher. Launch restrictions reduce their
+capabilities. The gate verifies the worker checkout, permitted paths and the named review
+branch before handoff. These checks do not establish containment of every external file,
+shared Git setting or remote act. This design relies on trusted workers following their
+scope; a complete containment guarantee requires a separately verified boundary.
+
+Both workers may run relevant public-only scripts and targeted checks with the named home
+clone's interpreter from their own checkout. Before running a check, verify that its inputs
+stay within the round's evidence scope and that it preserves tracked inputs and products.
+Checks write only ignored scratch; workers do not run generators that rewrite tracked output.
+Scratch probes stay in that checkout's ignored directory. A denied or unavailable required
+check is reported as unchecked. Full-suite checks
+that require private inputs belong to manual remediation, outside a public review turn.
+`worker_checks` declares this public-only policy. Claude retains `dontAsk`; the launcher
+adds rules for that round's exact home interpreter. Configured admission and observed CLI
+behavior are separate evidence.
+
+Each dispatch creates an exclusive `attempts/<NN>-<id>/` directory. Initial
+and fix-up launches each retain their prompt, command, stream and distinct Codex last-message
+path. First gate errors and refused owned bytes are saved before correction; `files.json`
+maps short copy filenames to their original owned paths. Short artifact names preserve
+operation in this Windows worktree with `core.longpaths=false`. The dispatcher
+permits one correction only when every failure is structurally a header failure. Its fix-up
+prompt names the intentionally dirty owned paths, unchanged HEAD and unstaged-index
+requirement; every byte outside the new turn's header remains protected.
+
+Whitespace validation builds a disposable index from the baseline and exact admitted paths.
+Git's attributes and whitespace rules judge all proposed bytes before the real index changes.
+A legacy staged attempt without an approved tree is preserved and refused. Recovery requires
+preserving that evidence, correcting the whitespace and explicitly unstaging the owned paths
+before retrying; unstaging alone repeats the refusal. New approval records retain the exact
+tree and subject before staging, so a committed or pushed approved result remains recoverable.
+Historical pushed subjects are unchanged.
+
+Repeated notices stay quiet within one unresolved episode. Resume, successful handoff and
+observed marker/lock recovery end the relevant episode; a new marker or lock also carries
+its own identity. Every new notice retains a separate copy. Handoff and idle stops use the
+same formatter. A successful `Next: Ben` notice reads:
+
+> <repository>, round <date>: Ben's decision required: <worker reason>. Read <turn path>.
+> Record the decision in <turn-01 update path>; continue through an authorized Override:
+> in <round-file path>.
+
+On acknowledgment closure, the dispatcher marks that round inactive before later ticks can
+fetch or launch it. Manual close-out begins only after a round-specific pause and verification
+that no worker is live. A deactivate action records manual ownership for an already-closed
+round without deleting its registry entry, checkout or evidence. The round file stays live
+while close-out work remains. After approved remediation is verified and main integration
+has actually succeeded, it records `State: executed <date>; close-out completed`. The parser
+and tracked-round lint accept that terminal State, and terminal rounds are never dispatchable.
+Cap and decision stops remain recoverable. Inactive entries are skipped before clone or remote
+operations and cannot resume dispatch. Use `--dual-agent-review deactivate --repo <home-clone>
+--round <date>` from the scheduler's source checkout for its actual registry; a development
+worktree has a separate CONTROL path. PAUSE stays present for this first round throughout
+manual remediation and deployment.
+
+An acknowledgment request is permitted only from turn 02 onward, after a predecessor's
+claims have been assessed under D9. Turn 01 names turn 02 for the counter-argument or stops
+for Ben; turn 02 always supplies its reconciliation append. The earliest owed acknowledgment
+is turn 03. A counter-argument to turn 01 does not consume a reopening.
 
 The toast helper uses Windows PowerShell's .NET Framework WinRT support in a hidden
 process: the required WinRT types are unavailable in this machine's PowerShell 7.

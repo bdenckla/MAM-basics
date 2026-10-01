@@ -2,11 +2,14 @@
 
 State: open; first entry 2026-10-01.
 
+**Remediation is implemented; final verification and main integration remain pending.**
+The execution entry below records the current disposition. Findings 1 and 11 remain withdrawn.
+
 ## Close-out preparation by Codex, 2026-10-01
 
-**The review remains not yet acted on; remediation is approved for a fresh executor.** Turn 05's
-"No finding has been remediated; every finding that stands remains unfixed" is the current
-remediation disposition. Turn 04's **Findings after turn 04**, qualified by turn 05's
+**Preparation completed; remediation was approved for a fresh executor.** Turn 05's
+"No finding has been remediated; every finding that stands remains unfixed" describes the
+review's closing disposition before remediation. Turn 04's **Findings after turn 04**, qualified by turn 05's
 **Corrections this turn accepts**, **Evidence this turn adds** and **Reading notes on turn 04's
 wording**, supplies the agreed review conclusions. Findings 1 and 11 are withdrawn for their
 recorded reasons. Agreement between reviewers is no editorial or execution approval.
@@ -41,8 +44,8 @@ The separately authorized console fix is already on main as `0c12552b`. The fini
 and its original evidence are preserved. Unique comparison additions, general hardening,
 performance tuning, private readiness/kickoff and cleanup remain outside execution approval.
 
-**Effective base State, 2026-10-01:** not yet acted on; close-out plan approved for fresh-session
-remediation; every surviving defect remains unfixed.
+**Preparation's effective base State, 2026-10-01:** not yet acted on; close-out plan approved
+for fresh-session remediation; every surviving defect remained unfixed at that point.
 
 ## Ben's C1 decision, 2026-10-01
 
@@ -191,3 +194,60 @@ No further general execution or main-integration approval is required within thi
 An unexpected material requirement, unowned edit, unexplained output or ownership collision
 still follows the plan's stop/reconciliation procedure. No remediation code was changed in
 this planning session.
+
+## Remediation execution by Codex, 2026-10-01
+
+**Implemented; final suite, mega, main integration, deployment and home-registry transition
+are pending.** The executor reused the named Claude worktree on local `dar-2026-10-01`.
+Required handoff `b7f6f0933d9b57e8b0cfaa96d312ca90bc2011c0` was its clean pre-edit HEAD.
+Fresh fetch found that shared review tip unchanged and main at
+`4f4cbb6657e3c7b48a9878308d8cecf6edcc67e1`; both D11 merges were already up to date.
+Current runtime/process checks found no round worker or dispatcher, no dispatcher lock or
+in-flight/setup marker, and PAUSE present. The scheduler stayed enabled, Ready; the existing
+follow-up was left paused. The separate console fix remains in the ancestry.
+
+The table resolves the surviving review list by finding number and searchable subject.
+
+| Finding | Implementation and verification |
+|---|---|
+| 1. Turn 02 stopping without reconciliation | Withdrawn; no new exception. Turn 02's append remains required. |
+| 2. Repeated failure suppresses notice | Fixed in `resolve_notice`, `notify` and dispatcher lock handling: recovery ends an episode, new episodes receive distinct notice copies, repeats stay quiet. The recovery-event oracle covers failure, marker and lock episodes, including lock disappearance. |
+| 3. Claude interpreter permission | Fixed under C1 in configuration, `worker_command`, prompts and the canonical worker agent. Bounded Claude and Codex probes actually ran the exact home interpreter on a public scratch check and emitted `RELAY_PUBLIC_CHECK_OK é`; tracked diffs stayed unchanged. This observes these launches, not every future CLI launch. |
+| 4. Mechanical worker boundary | Fixed under C2 in the live relay plan and runbook with the approved trusted-worker wording. No complete external-file, shared-setting or remote-act containment claim remains. |
+| 5. Whitespace checked after staging | Fixed in `proposed_tree` and `handoff`: a disposable index validates all proposed owned bytes before real staging; approval records precede staging. Independent Git index/tree checks cover whitespace settings, reconciliation bytes and preserved legacy staged-unapproved recovery. The runbook explains explicit recovery. |
+| 6. Empty or uninformative refusal reason | Fixed in `git_diagnostic` and ancestry/start/end lookup: operation, exit status, available stdout/stderr and explicit empty-output context are retained, with URL credentials redacted. Real Git command results supply the differential oracle. The console-hiding fix is preserved. |
+| 7. Attempt records reused | Fixed with exclusively created short attempt directories and separate initial/fix-up prompt, launch, stream and Codex output paths. First refusal diagnostics and owned bytes are saved with `files.json`; redispatch preserves old records. Independent launch and byte observations verify preservation. |
+| 8. Stop notices and registry lifecycle | Fixed under C3 in `stop_notice`, `stopped_round`, `deactivate`, parser/lint and CLI. Ben stops name the reason, turn, update and Override route. Closed registrations become inactive; inactive ticks skip clone/remote work. The two-round oracle checks continuation, closure and another eligible round. This actual home registration still awaits the new code's integration. |
+| 9. Turn-01 acknowledgment | Fixed under C4 in D9/D13, parser, prompts and worker agent. Turn 02 counter-argument precedes acknowledgment; the earliest owed acknowledgment is turn 03. Both Agent-1 assignments and reachable histories/caps are checked independently. |
+| 10. Error-text fix-up classifier | Fixed with typed `GateFailure` categories and `HeaderError`. One fix-up is available only for an all-header refusal; its prompt names the real dirty paths, unchanged HEAD and unstaged index. Refused body/reconciliation bytes are protected. Fault and dirty-byte oracles cover arbitrary token-bearing unsafe errors and header corrections. |
+| 11. Deployment test's selected name | Withdrawn; the permitted mechanical deployment lint is retained without optional broadening. |
+| 12. Commit subject versus plan | Fixed under C5 by aligning the live plan to `Record <Claude|Codex> turn <NN> of the <date> dual-agent review`. New markers retain their exact subject; recovery retains legacy handling. Historical pushed subjects are unchanged. |
+| 13. Remote identity guard | Fixed under C6 in setup, retained registrations/markers, dispatch and pre-push gates. Supported GitHub spellings resolve to host/owner/repository and local destinations to actual Git directories. Independent local A/B, alias/rewrite, retained-baseline and per-worktree destination checks refuse splits without changing either remote. |
+| 14. Windows blob-path lookup | Fixed with the explicit `--` blob separator. The focused entry point passed from this exact worktree with process-local `core.longpaths=false`; persistent Git settings stayed unchanged. Short artifact names also repair path-length failures exposed by that run. |
+| 15. Verification coverage | Fixed with the approved differential/lint checks in both relay test modules: reachable protocol histories, caps/terminal State, actual Git bytes/refs, refusal categories, recovery, unique artifacts, notice episodes and two-round lifecycle. Missing inputs fail; the existing deployment lint remains. |
+
+Focused verification passed 15 tests. After the fresh source audit's continuation-handoff and
+lock-disappearance repairs, the affected Git/episode checks passed 2 tests with 13 deselected.
+Both runs used the required home interpreter from this worktree, `core.longpaths=false`,
+`PYTHONUTF8=0` and no `PYTHONIOENCODING`; persistent configuration hashes stayed unchanged.
+Black at defaults left all changed Python formatted, and `git diff --check` passed.
+Earlier failed focused runs exposed the long artifact paths and an outdated copy-path test
+assertion; those failures were corrected without relocating the checkout or changing Windows
+settings. Root retained sole writing ownership; delegated audits were read-only and the
+bounded test-writing handoff returned ownership before further root edits.
+
+Public verification evidence is retained under this worktree's ignored `.novc/`:
+`relay-remediation-focused-7c8322d6f416`, `relay-remediation-focused-862b21ffc0ec`,
+`relay-capability-claude-26d30d24db7a`, `relay-capability-claude-ee65fb02ad5e` and
+`relay-capability-codex-8f840da99a3c`. Claude's probe used an explicit current packaged
+2.1.286 executable after inspecting the historical launch and current installation;
+the historical 2.1.284 path was unavailable. This is probe provenance, not a CLI-discovery
+redesign. The PowerShell tool result and Codex command result contain the sentinel; the
+Claude completed result reports no permission denials. No numbered review or network push
+was launched by either probe. Full verification logs remain in MAM-private.
+
+The original 26 home-control evidence files were snapshotted by SHA-256 in
+`relay-remediation-snapshot-29ac3e13f38d/original-evidence.json` before implementation.
+The five numbered turns, finished comparison/rehearsal evidence, both September 29 reviews,
+Ben's separate work and private rollout boundary remain preserved. The single base pointer
+already exists and needs no rewrite.

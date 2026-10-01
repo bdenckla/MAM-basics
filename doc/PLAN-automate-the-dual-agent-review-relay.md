@@ -109,6 +109,16 @@ The ongoing reviews and the occupied primary clone remain outside execution scop
 
 ## Implementation status and choices, updated 2026-10-01
 
+Ben subsequently approved C1–C6 and the complete first-round remediation scope in
+`doc/PLAN-close-out-review-2026-10-01.md`, **Frozen approval snapshot**. The revised runbook
+and D13 specify public-only checking with the exact home interpreter, the trusted-worker
+boundary, acknowledgment only after turn 02's counter-argument, inactive registration on
+closure, and terminal round State after verified remediation and actual main integration.
+The runbook's **Configuration and operation** describes retained destination identity,
+whitespace before staging, unique attempt evidence and notice episodes. Those maintained
+mechanics supersede the original planned paths and sequencing below. The turn-01 update
+records implementation and verification outcomes; the comparison is not rerun.
+
 Ben approved the runbook's proposed D13 wording on 2026-09-30, satisfying this
 plan's requirement for approval before adoption as the review procedure. D13 is
 now adopted in `doc/dual-agent-review.md`. Production is enabled after Ben
@@ -684,7 +694,10 @@ lines". Ben approves its wording before it is committed.
    the round file or close the round.
 4. **Who commits.** The worker writes only its turn file, plus turn 01's reconciliation table in
    turn 02, and never commits or pushes. The dispatcher gates that change set, commits it with the
-   established subject form, and pushes `origin HEAD:dar-<date>`; the push is the handoff. The
+   form `Record <Claude|Codex> turn <NN> of the <date> dual-agent review`, and pushes
+   `origin HEAD:dar-<date>`; the push is the handoff. Historical subjects remain unchanged.
+   Recovery verifies the subject recorded for the original approved attempt rather than
+   silently replacing its expected wording. The
    next turn's prompt names that commit. This keeps D11's one-writer rule and keeps network
    credentials away from both models.
 5. **Record.** The provenance note about Ben supplying the turn describes manual rounds; the
@@ -792,7 +805,7 @@ passes:
    Anything else fails the turn: the tree is left for inspection, Ben is notified, and the tick
    stops. One bounded fix-up launch of the same agent, given the gate's error list, is allowed
    before stopping.
-7. Stage the gated paths, commit "Record <Claude's|Codex> turn <NN> of the <date> dual-agent
+7. Stage the gated paths, commit "Record <Claude|Codex> turn <NN> of the <date> dual-agent
    review", fetch, refuse if `origin/dar-<date>` moved (a D11 collision), push
    `origin HEAD:dar-<date>`, fetch again, require `origin/dar-<date>` to equal `HEAD`, and remove
    `inflight.json`.
@@ -868,8 +881,12 @@ Concurrent rounds in the two repositories share nothing: separate branches, work
   and the mechanical prompt are a worker's only instructions.
 - The dispatcher never force-pushes, never pushes anything that failed the gate, never touches
   `main`, never edits or deletes, never runs two turns at once, and never dispatches past a cap.
-- A worker never commits, pushes, remediates, or edits an earlier turn. The launch flags and the
-  gate enforce this mechanically.
+- Workers are instructed to write only their allowed review records and ignored scratch, and
+  to leave staging, commits and pushes to the dispatcher. Launch restrictions reduce their
+  capabilities. The gate verifies the worker checkout, permitted paths and the named review
+  branch before handoff. These checks do not establish containment of every external file,
+  shared Git setting or remote act. This design relies on trusted workers following their
+  scope; a complete containment guarantee requires a separately verified boundary.
 - Every failure stops the round with a notification and leaves the checkout for inspection.
 - Idle ticks are free. Each turn costs one top-effort worker session, as today. The caps bound the
   worst case, and every turn is review-only prose on a branch nobody must merge.
