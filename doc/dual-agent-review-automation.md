@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first production handoff independently verified 2026-10-01; turn 02 and the blind measurement are running; later production verification and the approved comparison remain pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first two production handoffs independently verified 2026-10-01; turn 03 and the blind measurement are running; later production verification and the approved comparison remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -486,6 +486,34 @@ comparison operator launched its fresh blind Opus 5.5/max worker at
 `2026-10-01T12:03:58.249172-04:00, New York time`; its saved input commit and
 turn-01 hash match the verified handoff. The separate comparison checkout is
 detached at that exact commit and its NUL-delimited Git status is clean.
-The operator's execution session remains live. Codex turn 02 and the blind
-measurement remain incomplete, so the independent comparison has not started.
-No production halt was observed; the verification follow-up remains active.
+At this observation the operator's execution session was live, Codex turn 02
+and the blind measurement were incomplete, and the independent comparison had
+not started. No production halt was observed; the verification follow-up remained active.
+
+## Second production handoff verified, 2026-10-01
+
+The dispatcher receipt records Codex turn 02 at
+`c9d49a232357140a1d370d454be42b3fd1c8f309`, completed at
+`2026-10-01T12:26:08.490478-04:00, New York time`. A live remote read corroborated
+that commit. Independent checks established its direct turn-01 parent, exactly
+the new turn-02 path and turn-01 reconciliation path changed, unchanged round
+metadata, preservation of the original turn-01 bytes as a prefix, the correctly
+quoted kickoff instruction, `Next: turn 03, claude`, and a successful terminal
+event. Launch arguments pin `gpt-6.1-sol`/xhigh; the worker's actual runtime
+context confirms that model, effort and dedicated checkout. The verifier was
+corrected to recognize Codex's `-m` launch flag, without changing the dispatcher.
+
+The evidence is
+`.novc/production-relay-independent-verification-20261001/turn-02.json` and
+`codex-context-123822-698840.json` in the same directory. The terminal stream's
+reported usage is preserved; it supplies no `duration_ms` or `num_turns`, so
+those values remain unavailable. The original turn-01 SHA-256 is
+`5b1db09bc9a0bfa7fe44e86d9eeb0414eec819e6c8d4f1820b15d74c832a9aa0`.
+The runtime-context inspector is `.novc/inspect-production-codex-context-20261001.py`.
+
+The scheduler launched Claude turn 03 at
+`2026-10-01T12:26:19.948592-04:00, New York time`, with the turn-02 commit as its
+required tip. The separate blind Claude worker remains live. The independent
+comparison awaits that worker's verified completion; the pushed Codex
+counter-argument is now available. No production halt was observed, and the
+verification follow-up remains active.

@@ -4,7 +4,7 @@ State: live. Ben authorized implementation on 2026-09-30; core code and four rea
 handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
 production is enabled, and scheduler registration and an idle tick are verified
 2026-10-01. Ben started the approved first production round on 2026-10-01;
-the first production handoff is independently verified and turn 02 is running.
+the first two production handoffs are independently verified and turn 03 is running.
 Later production handoffs, stopping behavior and the approved comparison remain
 to be verified.
 
@@ -82,7 +82,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first production handoff independently verified and turn 02 running; later handoffs and stopping behavior remain pending |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first two production handoffs independently verified and turn 03 running; later handoffs and stopping behavior remain pending |
 | R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process is running at the verified turn-01 commit; comparison remains pending |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
@@ -397,8 +397,27 @@ The scheduler launched Codex turn 02 at
 operator launched the separate blind Claude worker at
 `2026-10-01T12:03:58.249172-04:00, New York time`. Independent Git reads found
 its dedicated checkout detached at the exact turn-01 commit with clean
-NUL-delimited status. Both processes remain live; neither turn 02 nor the blind
-output is yet complete. The verification follow-up remains active.
+NUL-delimited status. At this observation both processes were live, neither
+turn 02 nor the blind output was complete, and the verification follow-up was active.
+
+## Second production handoff verified, 2026-10-01
+
+The dispatcher pushed Codex turn 02 as
+`c9d49a232357140a1d370d454be42b3fd1c8f309`, a direct child of the verified
+turn-01 commit. Independent verification checked the exact two changed paths,
+unchanged round bytes, original turn-01 bytes preserved as a prefix, quoted
+kickoff instruction, valid `Next: turn 03, claude`, pinned launch arguments and
+successful Codex terminal event. A live remote read corroborated the push.
+The worker's saved runtime context independently confirms `gpt-6.1-sol`,
+`xhigh`, and the dedicated Codex checkout. Evidence is preserved in
+`.novc/production-relay-independent-verification-20261001/turn-02.json` and
+`codex-context-123822-698840.json` in that same directory.
+
+The scheduler launched Claude turn 03 at
+`2026-10-01T12:26:19.948592-04:00, New York time`. The separate blind Claude
+measurement is still running. The independent comparison waits only for that
+measurement's verified completion; Codex turn 02 is now available. No production
+halt was observed, and the verification follow-up remains active.
 
 ## Context: what the relay costs
 
