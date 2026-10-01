@@ -562,7 +562,8 @@ Codex turn 04 is `900c815f646121e84c178dbb7e86d2ac3bc569b8`, handed off at
 its direct turn-03 parent, sole new turn-04 path, unchanged round metadata,
 quoted kickoff instruction, actual `gpt-6.1-sol`/xhigh runtime context,
 successful terminal event and `Next: turn 05, claude; acknowledgment`.
-The live remote corroborated the tip. The scheduler owns the owed acknowledgment.
+The live remote corroborated the tip. The scheduler subsequently completed the
+owed acknowledgment, as recorded below.
 Evidence is `.novc/production-relay-independent-verification-20261001/turn-04.json`
 and the timestamped Codex context record in that directory.
 
@@ -616,3 +617,32 @@ This does not disable the Windows scheduler or alter the registry or review
 branch. Close-out must decide the finished round file's lifecycle, any relay
 pause before close-out writes, review integration and remediation. Private
 readiness P7 remains unverified. All review and rehearsal evidence is preserved.
+
+## Final home-clone integration checks, 2026-10-01
+
+The completed stopping record was committed in `f359d16f`. Before pushing,
+Codex preserved newer `origin/main` work through a normal merge at
+`821c134543115cd4e5ee7690f699f80b2efc7744`. The incoming public products and
+generators required the full pipeline and suite. The first pipeline attempt
+stopped because this forest's MAM-private clone lacked the new source adapter.
+Ben approved a clean fast-forward of that clone provided it was unoccupied.
+The shared Git and runtime guards passed before and after fetching; the
+fast-forward supplied the adapter and left clean `main`. Its synchronization
+receipt remains in MAM-private.
+
+The full pipeline rerun passed all 57 steps in 409.137 seconds of elapsed time,
+with no tracked output changes. The suite at the merged public tree passed
+1,043 tests with 5 skips in 254.50 seconds. Evidence is the `.log` and `.json`
+pairs with stems `.novc/relay-final-integration-mega-20261001-144155` and
+`.novc/relay-final-integration-suite-20261001-143503`; the initial failed attempt
+is also retained. The required baseline `61fa3d1d06311ae6567be12093809aa446e1ff52`
+remains an ancestor.
+
+A further normal merge at `9a29227acec0dc3e3e7ec5fa20a15f416bd0a3b4` preserved
+new documentation and the Codex startup-hook fix. Black's check left that hook
+unchanged. The hook does not reach a generator, so the pipeline result remains
+applicable. The final suite passed 1,043 tests with 5 skips in 245.32 seconds.
+Its retained `.log` and `.json` stem is
+`.novc/relay-final-integration-suite-20261001-145056`. The final documentation
+changes passed all 12 directly relevant filename, time-zone, product-scope and
+review-record checks in 8.41 seconds, together with `git diff --check`.

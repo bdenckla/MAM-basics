@@ -486,6 +486,16 @@ procedure. No review branch, worktree, marker or rehearsal evidence was retired.
 The round file's State and any relay pause before close-out remain close-out
 decisions. Private automation still requires P7 and its concrete kickoff choices.
 
+Final main integration preserved Ben's newer public product and generator work
+through a normal merge at `821c134543115cd4e5ee7690f699f80b2efc7744`.
+Ben approved a guarded clean fast-forward of the unoccupied GitRepos2 MAM-private
+clone to supply the new export adapter. The subsequent full pipeline passed all
+57 steps without tracked output changes; the public suite passed 1,043 tests
+with 5 skips. A later documentation and startup-hook merge at
+`9a29227acec0dc3e3e7ec5fa20a15f416bd0a3b4` passed the full suite again:
+1,043 tests with 5 skips. The runbook's "Final home-clone integration checks"
+passage owns the exact validation and retained receipts.
+
 ## Context: what the relay costs
 
 - MAM-basics `origin/dar-2026-09-29` held eight turns when planning began. Its pushes, New York
