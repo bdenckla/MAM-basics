@@ -39,7 +39,10 @@ def test_local_dispatch_against_git_oracle(tmp_path, monkeypatch):
         claude_cli=sys.executable, codex_cli=sys.executable, turn_cap=4
     )
     monkeypatch.setattr(dispatch, "codex_settings", lambda: {"model": "gpt-6.1-sol"})
-    empty_runtime = lambda checkout: {"blockers": []}
+
+    def empty_runtime(checkout):
+        return {"blockers": []}
+
     monkeypatch.setattr(dispatch, "runtime_facts", empty_runtime)
     monkeypatch.setattr(protocol, "runtime_facts", empty_runtime)
     control = tmp_path / "control"
