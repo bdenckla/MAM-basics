@@ -288,6 +288,96 @@ The implemented mechanics supersede the planned mechanics below where they diffe
   separately, and the scheduler is registered with a verified idle tick. Private
   SSH probing, measurement and first production adoption remain rollout work.
 
+## Continuation checkpoint and successor prompt, 2026-10-01
+
+Codex prepared this checkpoint in the GitRepos2 home clone at clean `main`
+`7d0426b2e79f2c673c7e2f127de797b5ff68389c`, pushed normally to `origin/main`.
+That commit merges Ben's separate dispatch-test cleanup and its record,
+`954dacf5` and `f3760d1c`, with the rollout documentation. The merged tree passed
+`py/main_test.py -q`: 1,016 passed, 5 skipped and 60 subtests passed in 137.44
+seconds. Black's check left the changed dispatch test unchanged, and
+`git diff --check` passed. This new full-suite result belongs to the merged tree;
+the earlier 1,015-test result remains historical.
+
+At `2026-10-01T11:42:36.499333-04:00, New York time`, the production branch
+still held setup commit `ef133e4dc79de069229754ee8dc8d5fc59b3e812`, with Claude
+turn 01 live, no handoff receipt and no pause. The blind measurement operator
+was still waiting for the verified turn-01 handoff. These are dated observations,
+not assumptions for a successor: recheck the control records and current processes.
+
+The preparing chat and its approved follow-up remain the verification and
+comparison owner. Compaction does not transfer that ownership. A fresh chat may
+inspect read-only, but must establish an explicit handover and disable or transfer
+the existing follow-up before becoming the writer. Never leave two follow-ups
+writing the same home clone. The Windows dispatcher continues independently and
+retains sole ownership of every numbered review turn.
+
+**Backup successor prompt:**
+
+> Codex prepared this handoff on 2026-10-01. Ben's latest instruction, verbatim:
+> "Oh, the second of two things is this session will soon be compacted; should
+> anything be done to make a more orderly management of context, e.g. start a new
+> session (or give me a prompt for a new session that I will start)?"
+> The remaining prompt is Codex's reconstruction. Codex recommended retaining
+> the preparing chat as owner through compaction; this is a backup prompt for a
+> deliberate later handover, not evidence that Ben approved transferring ownership.
+>
+> Source, intended development and main integration checkout:
+> `C:/Users/BenDe/GitRepos2/MAM-basics`. Required source commit:
+> `7d0426b2e79f2c673c7e2f127de797b5ff68389c`. The successor, once ownership is
+> transferred, owns authorized documentation integration in this full clone.
+> Use `C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe` from that
+> repository root. Verify root, HEAD, branch and NUL-delimited status; a newer
+> HEAD must contain the required commit. Preserve newer commits and unowned work.
+>
+> Read `AGENTS.md`, `doc/PLAN-automate-the-dual-agent-review-relay.md`,
+> `doc/dual-agent-review-automation.md`,
+> `doc/dual-agent-review.md` and `doc/periodic-review.md`. Load
+> iterative-document-editing, codex-worktree-tasks and mam-repository-topology.
+> Check the existing follow-up `verify-first-production-dual-agent-review` before
+> writing. If it remains active in the preparing chat, inspect read-only and
+> report the state; obtain Ben's explicit handover instruction before changing
+> its ownership. Establish one writer before any main edit or commit.
+>
+> Continue verification of production round `2026-10-01`, shared remote branch
+> `dar-2026-10-01`, Agent 1 Claude. Approved window:
+> `303bf2399c1e1fc1300a75f4fb1ed335d62984d0..1bfceff4d952470618fc7584a6bca4fc5c9b2f5f`.
+> Setup commit: `ef133e4dc79de069229754ee8dc8d5fc59b3e812`. The pinned workers
+> are Claude Opus 5.5/max and Codex `gpt-6.1-sol`/xhigh; caps are 10 turns and
+> one reopening, and facts-only remains false. The scheduler is already
+> registered. Let the dispatcher launch, commit and push every review turn;
+> never restart the round, relay manually, remove a marker or bypass a halt.
+> Verify handoff ancestry, permitted paths, unchanged round metadata,
+> reconciliation prefixes, model and effort evidence, and stopping behavior
+> under the approved procedure. Distinguish a live in-flight marker from a
+> stalled worker; a planned next turn alone does not authorize launching it.
+>
+> Ben approved one blind Claude counter-argument and the independent comparison
+> in `doc/dual-agent-review-comparison-2026-10-01.md`. The one-time operator
+> `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/run-approved-relay-comparison-20261001.py`
+> already exists and was launched; execution session 57831 was still running
+> at handoff. Inspect its waiting, in-flight, completion and failure receipts
+> under `.novc/dual-agent-review-comparison/2026-10-01/`, and verify process
+> state before any recovery. Never duplicate the operator or blind worker.
+> The operator creates a separate locked checkout detached at the exact pushed
+> turn-01 commit. Verify the saved log's blind input boundary before accepting
+> the output. After both the blind output and pushed Codex turn 02 exist, use
+> a fresh read-only comparison sub-agent with no inherited conversation that
+> authored neither counter-argument. Verify its claims, preserve both
+> counter-arguments and measured effort in the approved record, then commit
+> and push finished documentation on main normally. Do not infer missing
+> timing or token figures or turn this single measurement into standing policy.
+>
+> A compact read-only inspector is
+> `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/inspect-production-relay-20261001.py`.
+> Protect Ben's separate follow-up work, both completed September 29 reviews,
+> and all rehearsal venues, unique commits, logs, markers and screenshot evidence.
+> Private readiness P7 remains unverified; private automation is outside this
+> round. Close-out and remediation retain their separate procedures. Notify
+> only on a meaningful halt, decision, measurement failure or completion.
+> Pause the verification follow-up after the round ends or halts and the
+> comparison is recorded, or report and stop if the halt prevents comparison.
+
 ## Context: what the relay costs
 
 - MAM-basics `origin/dar-2026-09-29` held eight turns when planning began. Its pushes, New York
