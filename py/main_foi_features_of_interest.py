@@ -40,6 +40,7 @@ from foi import foiz_wt_unicode as foi_unicode
 from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import bib_locales as tbn
+from wlc_cmn.utf8_io import force_utf8_io
 
 
 def _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois):
@@ -50,7 +51,8 @@ def _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois)
         for bkid, out_for_this_bk in map(find_wt_fois_for_1_bk, the_arg_triple):
             out_for_all_bks[bkid] = out_for_this_bk
     else:
-        with multiprocessing.Pool(processes=8) as pool:
+        # Each worker is a new process, which main()'s reconfigure does not reach.
+        with multiprocessing.Pool(processes=8, initializer=force_utf8_io) as pool:
             for bkid, out_for_this_bk in pool.imap_unordered(
                 find_wt_fois_for_1_bk, the_arg_triple
             ):
