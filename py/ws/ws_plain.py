@@ -1,4 +1,4 @@
-"""Convert faithful Wikisource format 2 into the plain-product schema.
+"""Convert faithful Wikisource format 2 into the transient parser stage's plain-shaped schema.
 
 Format-2 line boundaries become plain's // notation. An isolated line boundary
 in a verse prefix becomes __ unless a spacing template already supplies the
@@ -56,7 +56,7 @@ def _convert_chapter(chapter):
         ]
     suffix.extend(_noinclude(chapter["ws-chap-noinclude-footer"]))
     rows["תתת"] = Minirow(tuple(suffix), (), ())
-    # The category identifies the source page; it is not a plain-product row.
+    # The category identifies the source page; it is not a parser-stage row.
     return rows
 
 

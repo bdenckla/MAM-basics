@@ -15,10 +15,11 @@ one shape at a time, and to exercise the two guards, which real data cannot
 exercise because real data does not violate them.
 
 That differential test is written for TWO corpus states, and deliberately: the
-count table describes the pre-edit corpus, and Phase 3 of
-doc/PLAN-replace-sigil-b2-with-t451.md re-downloads the six edited chapters into
-that same file. So the invariant that holds across the whole plan is "each table
-chapter holds either its counted ב2 and no ת451, or no ב2 and its counted ת451",
+count table describes the pre-edit corpus, and Phase 3 of the retired
+doc/PLAN-replace-sigil-b2-with-t451.md, whose last version is at
+https://github.com/bdenckla/MAM-basics/blob/4f3fed2dcb1e21835ad73a31ea8e5e472f4960d7/doc/PLAN-replace-sigil-b2-with-t451.md,
+re-downloaded the six edited chapters into that same file. So the invariant that
+holds across the whole plan is "each table chapter holds either its counted ב2 and no ת451, or no ב2 and its counted ת451",
 and that is what is asserted. A single-state assertion would have gone red at
 Phase 3 -- a test destroying itself halfway through the plan it was written for.
 """

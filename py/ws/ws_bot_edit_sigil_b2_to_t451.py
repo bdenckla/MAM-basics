@@ -35,7 +35,9 @@ raises on the count assertion instead of quietly doing nothing. That is the
 right failure -- a bot era is run once -- but it is worth knowing before
 re-running a proto rehearsal after Phase 3.
 
-doc/PLAN-replace-sigil-b2-with-t451.md is the fuller historical statement,
+The retired doc/PLAN-replace-sigil-b2-with-t451.md, whose last version is at
+https://github.com/bdenckla/MAM-basics/blob/4f3fed2dcb1e21835ad73a31ea8e5e472f4960d7/doc/PLAN-replace-sigil-b2-with-t451.md,
+is the fuller historical statement,
 including the four classes of non-sigil ב2 and the former chain through the
 Google Sheet. The Sheet pipeline was retired in 2026-09; Hebrew Wikisource is
 now the maintained source from which MAM-parsed is generated.
