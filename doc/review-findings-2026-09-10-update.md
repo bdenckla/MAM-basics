@@ -529,8 +529,10 @@ declarations:
 The first six plans were finished execution records. D12 preserved their bases at this
 implementation phase, and their sibling updates supplied the effective declarations. The six
 complete families were later retired by `2a051ba5`; the archive links above preserve those
-declarations. The last three plans describe work
-that is paused or live, so the three State lines are kept true in the plans themselves. The
+declarations. The last three plans described work
+that was paused or live when this entry was first written, so their State lines were kept true
+in the plans themselves; the codex-index plan has since recorded `State: executed 2026-09-26`,
+and the Google Sheet plan `State: executed 2026-09-27` before `e4934b6e` retired it. The
 fourth plan added after the review anchor, `doc/PLAN-dispose-mega-pipeline-review-findings.md`,
 already begins with `State: live` and needs no correction.
 
@@ -665,9 +667,12 @@ A historical live-tree census at
    external input distinguished from prose, and the lint failure. The adjacent docstring called
    the edition-transcription headers “hand-written” and immediately identified their contents as
    Ben's notes. Commit `c8ba9f00` changed that live docstring to “Ben-written.”
-4. The finished [PLAN-wikisource-derived-mam-products.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products.md) and [PLAN-wikisource-derived-mam-products-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products-update.md) and frozen
-   `doc/mam-products-phase6-command-map.md` each had one “hand-authored” occurrence, both
-   distinguishing source from generated output. The finished
+4. The finished
+   [PLAN-wikisource-derived-mam-products.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products.md) and the
+   frozen [`doc/mam-products-phase6-command-map.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/mam-products-phase6-command-map.md)
+   each had one “hand-authored” occurrence, both distinguishing source from generated output;
+   the plan's [update](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-wikisource-derived-mam-products-update.md) had none. The
+   finished
    `doc/assessment-two-stranded-artifacts-2026-09-09.md` had ten literal “hand-authored”
    occurrences and one “hand-written” occurrence, rather than a literal population of nine. Three
    occurrences quote earlier instruction text; seven use the generated-or-captured
@@ -1033,9 +1038,10 @@ their original range; current filesystem and remote checks are dated below.
    September 8 Codex review worktree named through `--session-ended`. The path remains absent
    from disk and `git worktree list`, and local branch `codex-review-2026-09-08` remains absent.
    The surviving evidence does not prove which command removed the branch. D12 left the
-   finished [PLAN-close-out-review-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08.md) and [PLAN-close-out-review-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md) unchanged; its live sibling
-   [PLAN-close-out-review-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md) now records that Step 7 is complete and
-   preserves the evidentiary limit.
+   finished [PLAN-close-out-review-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08.md)
+   unchanged; its live sibling [PLAN-close-out-review-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md)
+   recorded that Step 7 was complete and preserved the evidentiary limit, until `2a051ba5`
+   retired both.
 
 3. **Item 21.3 is a confirmed historical census, not a process defect.** Git history still
    gives 31 merge commits in `38a606e2..0354b6cc`, including 13 merges of `main` into
@@ -1203,7 +1209,7 @@ The 43 lines have these classifications:
 
 | Searchable anchor in the finished plan | Lines in the measured tree | Classification |
 |---|---:|---|
-| “The reproducible scratch scripts remain” and the experiment command | 163–166 and 171 | Historical command record, reproducible method and disposable outputs. The plan states the conversion, comparison and codepoint-inspection method and explicitly requires reconstructing a missing checker. The tracked review-differences receipt preserves the original nine changed fields, while the Phase 2 implementation and receipt preserve the accepted general representation rules and corrected direct-cluster method. The absent scripts are not inputs to a current operation. |
+| “The reproducible scratch scripts remain” and the experiment command | 163–166 and 171 | Historical command record, reproducible method and disposable outputs. The plan states the conversion, comparison and codepoint-inspection method and explicitly requires reconstructing a missing checker. The archived review-differences receipt preserves the original nine changed fields, while the Phase 2 implementation and receipt preserve the accepted general representation rules and corrected direct-cluster method. The absent scripts are not inputs to a current operation. |
 | Phase 2 candidate command under “Implementation phases” | 239 | Reproducible current command and disposable output destination. The tracked `py/main_parse.py ws-products --output-dir` entry point remains live, and `py/subcommands/parse_ws_products.py` rejects a production-tree destination. A new run creates a new candidate; the named `.novc` directory is not an input. |
 | Phase 5: “create a disposable standalone clone” | 328 | Historical optional verification method and disposable working copy. The plan permitted omitting the private census, and Phase 5 did omit it. Commit `d32a17b82c8dbf779be101be896c7c491c5b4e4e` later removed the `near-aleppo-census` mega step, so the current MAM-basics mega has no private writer for this procedure to support. |
 | Baseline wrapper, eight-command driver, driver command and receipt directory | 360, 367, 380 and 390 | Historical wrapper and command record, reproducible method, and historical output inventory. The plan prints all eight tracked entry points in order and records every return code and generated-diff result. The later phase commits preserve the code as it stood, and current generation has the tracked `py/main_0_mega.py` entry point. The missing logs limit direct reinspection of the 2026-09-10 processes but are not inputs to a current method. |
@@ -1214,9 +1220,9 @@ The 43 lines have these classifications:
 | Phase 2 rendering wrapper and detailed scratch receipt | 617 and 626 | Historical verification command, reproducible method and output. The archived Phase 2 receipt preserves the complete rendering differences and all nine inverted-nun results; the tracked MAM-with-doc, MAM-simple, Sefaria, AJF and OSIS handlers remain available for a new whole-corpus comparison. |
 | Phase 2 independence wrapper and detailed scratch receipt | 632 and 642 | Historical fault-injection command, reproducible method and output. The plan states every blocked input and import, the write boundary and input census. The archived Phase 2 receipt preserves the counts and successful boundary results, and the current candidate entry point supplies the subject for a new fault-injection harness. |
 | Phase 2 receipt writer | 645 | Historical provenance. The command wrote the archived Phase 2 validation receipt that survives; the writer is not required to read, use or re-establish that receipt. |
-| Phase 2 Google, format-2 and suite wrappers, with the shared receipt directory | 653, 657, 670 and 677 | Historical wrapper commands and output inventory. The direct tracked entry points remain, while Git history at Phase 2 preserves their then-current behavior. The plan and tracked Phase 2 receipt preserve the return codes, documentation result, suite result and unchanged-production conclusion; none of the missing logs is a current input. |
-| Phase 3 Google and comparator wrapper commands | 735 and 758 | Historical wrapper commands around current tracked entry points. The archived Phase 3 receipt preserves their zero-difference results, and commits `05cfc018ee63da5bcb25dd2d3152157f75029584` and `426fa229c69aad6168cf2ec5217b105088d6293f` preserve the intermediate and cutover implementations. A current comparison runs the direct entry points rather than reading a wrapper or its logs. |
-| Phase 3 source-boundary verifier and scratch receipt | 766 and 782 | Historical fault-injection command, reproducible method and output. The plan states the blocked production input and Google-only mutation checks. The archived Phase 3 receipt preserves the reader boundary, search and replacement checks, normalization-call count and results; the Google reader and comparator remain tracked. |
+| Phase 2 Google, format-2 and suite wrappers, with the shared receipt directory | 653, 657, 670 and 677 | Historical wrapper commands and output inventory. The direct entry points remain tracked, though `a41fbcdd` removed the `go` subcommand of `py/main_parse.py` on 2026-09-27; Git history at Phase 2 preserves their then-current behavior. The plan and the archived Phase 2 receipt preserve the return codes, documentation result, suite result and unchanged-production conclusion; none of the missing logs is a current input. |
+| Phase 3 Google and comparator wrapper commands | 735 and 758 | Historical wrapper commands around the `py/main_parse.py go` and `py/main_diff.py wsgo` commands, which `a41fbcdd` removed on 2026-09-27. The archived Phase 3 receipt preserves their zero-difference results, and commits `05cfc018ee63da5bcb25dd2d3152157f75029584` and `426fa229c69aad6168cf2ec5217b105088d6293f` preserve the intermediate and cutover implementations. Until that removal, a comparison could run those commands directly rather than read a wrapper or its logs. |
+| Phase 3 source-boundary verifier and scratch receipt | 766 and 782 | Historical fault-injection command, reproducible method and output. The plan states the blocked production input and Google-only mutation checks. The archived Phase 3 receipt preserves the reader boundary, search and replacement checks, normalization-call count and results; `a41fbcdd` deleted the Google reader and comparator on 2026-09-27, and Git history keeps them. |
 | Phase 4 detailed receipts and logs | 896 | Historical output inventory. The archived Phase 4 validation receipt preserves the source boundary, product comparison, protected-capture counts, commands and test results. Commit `426fa229c69aad6168cf2ec5217b105088d6293f` preserves the complete cutover diff. |
 | Phase 5 mega logs | 923 | Historical output inventory. The archived Phase 5 validation receipt lists every one of the 38 local steps in order with its return code and timing, records the omitted private step and preserves the stability result. The current mega is a tracked direct command and has since removed that private step. |
 | Phase 5 artifact-audit receipt | 959 | Historical detailed output. The archived Phase 5 receipt names all 30 changed artifacts, partitions them by the two accepted representation changes, records the change-log arithmetic, support copy, protected-tree hashes and empty unexplained-change set. Git diff from baseline `67cb3ecc17931732d2cd1f9bbafee1976a322a2e` through Phase 5 commit `321b2eeb43295f4de0e9e008e9c13bcbeb371df6` preserves the artifact changes themselves. |
@@ -1393,9 +1399,12 @@ rewrite occurred.
 ## Finding 7.1, Phase 6 map, September 8 review and close-out plan: no missing `.novc` dependency remains
 
 Recorded by Codex on 2026-09-12. This entry classifies only the live `.novc` references in
-`doc/mam-products-phase6-command-map.md`, [review-findings-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md) and [review-findings-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08-update.md) and
-[PLAN-close-out-review-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08.md) and [PLAN-close-out-review-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md). It does not establish a rule for the rest of finding
-7's census.
+[`doc/mam-products-phase6-command-map.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/mam-products-phase6-command-map.md),
+[`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md) and
+[`doc/PLAN-close-out-review-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08.md); the two
+sibling updates, the [review's](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08-update.md) and the
+[plan's](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-close-out-review-2026-09-08-update.md), held none. It does not establish a
+rule for the rest of finding 7's census.
 
 At checkpoint `a94ee16e703c768838b4b58c4d239c68623c1632`, after current `main` at
 `f079523148ae4892bec3b313dd43b3b627c1a2a9` was confirmed already merged, each assigned document
@@ -1647,10 +1656,10 @@ blocks this close-out.
 |---:|---|
 | 1 | The mark-operation position defect is fixed by `f11ecaf8`. |
 | 2 | The MAM-with-doc change log is regenerated with the twelve omitted verses by `6b45ad0f`. |
-| 3 | The retired display fallback is recorded in the two sibling update files named in the 2026-09-11 disposition. |
+| 3 | The retired display fallback was recorded in the two sibling update files named in the 2026-09-11 disposition, [review-findings-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08-update.md) and [PLAN-remediate-review-findings-2026-09-08-update.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-remediate-review-findings-2026-09-08-update.md), updates of [review-findings-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md) and [PLAN-remediate-review-findings-2026-09-08.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-remediate-review-findings-2026-09-08.md); `2a051ba5` later retired all four. |
 | 4 | `CLAUDE.md` now gives the measured mark-order populations and calls the remaining 7,247 clusters unclassified. |
 | 5 | `CLAUDE.md` now names the prose lint's edition-transcription `.txt` scope and the limit outside that scope. |
-| 6 | The Wikisource refresh and the records it overtook are recorded in three sibling update files; the finished plans and validation receipt remain unchanged. |
+| 6 | The Wikisource refresh and the records it overtook were recorded in three sibling update files; the finished plans and validation receipt stayed unchanged until `2a051ba5` retired their families, which remain at `f7229708`. |
 | 7 | All 17 documents in the finding's `.novc` census have document-by-document classifications. Finding 7.1 finds no missing indispensable dependency. Finding 7.2 identifies one missing exact-replay dependency for the ten ordered first-match categories, and Ben's 2026-09-13 decision is to preserve the historical totals and explain that limit rather than reconstruct the predicates. |
 | 8 | Every applicable plan and review State defect has an effective declaration; D10-protected historical State lines remain unchanged, and no mechanical check was added. |
 | 9 | The live template plan now compares the regenerated FOI with its measured starting blob rather than with superseded bytes. |
@@ -1716,8 +1725,9 @@ research on September 23, and `36106f4b` consolidated its update into that base.
 Psalms report therefore has no update sibling. The other still-tracked finished research bases
 remain preserved with their single live updates.
 
-The validation receipts and compressed evidence described in the four retired-plan
-classifications above were also retired by `2a051ba5`. Their verified archive locations are:
+The validation and review-differences receipts and compressed evidence described in the four
+retired-plan classifications above were also retired by `2a051ba5`. Their verified archive
+locations are:
 
 - [wikisource-derived-mam-products-phase2-validation.json](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/wikisource-derived-mam-products-phase2-validation.json)
 - [wikisource-derived-mam-products-phase3-validation.json](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/wikisource-derived-mam-products-phase3-validation.json)
@@ -1727,3 +1737,73 @@ classifications above were also retired by `2a051ba5`. Their verified archive lo
 - [efficient-wikisource-downloads-phase2-validation.json](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/efficient-wikisource-downloads-phase2-validation.json)
 - [efficient-wikisource-downloads-phase3-validation.json](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/efficient-wikisource-downloads-phase3-validation.json)
 - [worktree-file-consolidation-baseline.json.gz](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/worktree-file-consolidation-baseline.json.gz)
+- [wikisource-derived-mam-products-review-differences.json](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/wikisource-derived-mam-products-review-differences.json)
+
+## 2026-09-30: corrections made in the 2026-09-29 review's remediation
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. Ten passages above are corrected in place; the links they gained
+point to the archive at `f7229708`. The review's finding 4.2 is the first three, and its finding
+4.3 the rest. Each is quoted here without its links.
+
+1. In "Finding 20.1: term-of-art uses remain and the Ben attribution is explicit", item 4: "The
+   finished PLAN-wikisource-derived-mam-products.md and
+   PLAN-wikisource-derived-mam-products-update.md and frozen
+   `doc/mam-products-phase6-command-map.md` each had one “hand-authored” occurrence, both
+   distinguishing source from generated output." now reads "The finished
+   PLAN-wikisource-derived-mam-products.md and the frozen `doc/mam-products-phase6-command-map.md`
+   each had one “hand-authored” occurrence, both distinguishing source from generated output; the
+   plan's update had none."
+2. In "Finding 21: the eight process-and-hygiene items are disposed or decision-pending", item 2:
+   "D12 left the finished PLAN-close-out-review-2026-09-08.md and
+   PLAN-close-out-review-2026-09-08-update.md unchanged; its live sibling
+   PLAN-close-out-review-2026-09-08-update.md now records that Step 7 is complete and preserves
+   the evidentiary limit." now reads "D12 left the finished PLAN-close-out-review-2026-09-08.md
+   unchanged; its live sibling PLAN-close-out-review-2026-09-08-update.md recorded that Step 7
+   was complete and preserved the evidentiary limit, until `2a051ba5` retired both."
+3. In "Finding 7.1, Phase 6 map, September 8 review and close-out plan": "This entry classifies
+   only the live `.novc` references in `doc/mam-products-phase6-command-map.md`,
+   review-findings-2026-09-08.md and review-findings-2026-09-08-update.md and
+   PLAN-close-out-review-2026-09-08.md and PLAN-close-out-review-2026-09-08-update.md." now reads
+   "This entry classifies only the live `.novc` references in
+   `doc/mam-products-phase6-command-map.md`, `doc/review-findings-2026-09-08.md` and
+   `doc/PLAN-close-out-review-2026-09-08.md`; the two sibling updates, the review's and the
+   plan's, held none."
+4. In "Finding 7.1, Wikisource-derived MAM products plan", the row "“The reproducible scratch
+   scripts remain” and the experiment command": "The tracked review-differences receipt
+   preserves" now reads "The archived review-differences receipt preserves". The receipt is now
+   the ninth entry of the archive list in "2026-09-28: retired-family locations and the later
+   Psalms consolidation", whose lead-in "The validation receipts and compressed evidence" now
+   reads "The validation and review-differences receipts and compressed evidence".
+5. In the same table, the row "Phase 2 Google, format-2 and suite wrappers, with the shared
+   receipt directory": "The direct tracked entry points remain, while Git history at Phase 2
+   preserves their then-current behavior. The plan and tracked Phase 2 receipt preserve" now
+   reads "The direct entry points remain tracked, though `a41fbcdd` removed the `go` subcommand
+   of `py/main_parse.py` on 2026-09-27; Git history at Phase 2 preserves their then-current
+   behavior. The plan and the archived Phase 2 receipt preserve".
+6. In the row "Phase 3 Google and comparator wrapper commands": "Historical wrapper commands
+   around current tracked entry points." now reads "Historical wrapper commands around the
+   `py/main_parse.py go` and `py/main_diff.py wsgo` commands, which `a41fbcdd` removed on
+   2026-09-27."; and "A current comparison runs the direct entry points rather than reading a
+   wrapper or its logs." now reads "Until that removal, a comparison could run those commands
+   directly rather than read a wrapper or its logs."
+7. In the row "Phase 3 source-boundary verifier and scratch receipt": "the Google reader and
+   comparator remain tracked." now reads "`a41fbcdd` deleted the Google reader and comparator on
+   2026-09-27, and Git history keeps them."
+8. In "Finding 8: applicable State defects have declarations": "The last three plans describe
+   work that is paused or live, so the three State lines are kept true in the plans themselves."
+   now reads "The last three plans described work that was paused or live when this entry was
+   first written, so their State lines were kept true in the plans themselves; the codex-index
+   plan has since recorded `State: executed 2026-09-26`, and the Google Sheet plan
+   `State: executed 2026-09-27` before `e4934b6e` retired it."
+9. In "Close-out: every finding and inherited integration item has a disposition", row 3: "The
+   retired display fallback is recorded in the two sibling update files named in the 2026-09-11
+   disposition." now reads "The retired display fallback was recorded in the two sibling update
+   files named in the 2026-09-11 disposition, review-findings-2026-09-08-update.md and
+   PLAN-remediate-review-findings-2026-09-08-update.md, updates of review-findings-2026-09-08.md
+   and PLAN-remediate-review-findings-2026-09-08.md; `2a051ba5` later retired all four."
+10. In the same table, row 6: "The Wikisource refresh and the records it overtook are recorded in
+    three sibling update files; the finished plans and validation receipt remain unchanged." now
+    reads "The Wikisource refresh and the records it overtook were recorded in three sibling
+    update files; the finished plans and validation receipt stayed unchanged until `2a051ba5`
+    retired their families, which remain at `f7229708`."
