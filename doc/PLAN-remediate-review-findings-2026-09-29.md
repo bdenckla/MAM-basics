@@ -1,6 +1,6 @@
 # Remediate the September 29, 2026 dual-agent review of MAM-basics
 
-State: live; detailed plan drafted 2026-09-30; awaiting approval of concrete wording and execution.
+State: live; approved for execution 2026-09-30; remediation not started.
 
 Prepared by Claude on 2026-09-30, New York time, as close-out step 2 of the round, in two sessions.
 The first drafted this plan from a handoff prompt that the close-out step-1 session prepared that
@@ -18,12 +18,13 @@ disposition package proposed, 2026-09-30", "Ben's decisions and approval of the 
 2026-09-30" and "Detailed remediation plan prepared; approval pending, 2026-09-30", the entry
 committed with this plan.
 
-The dispositions are approved. The concrete editorial wording and the execution in this plan still
-require Ben's approval under [the periodic-review procedure](periodic-review.md), sections
-"Close-out: from findings to dispositions" and "Separate defects from editorial proposals" (D7).
-Preparing or committing this plan implements none of its changes. Approval of this plan authorizes
-the stated repairs, including the consumer notice of the 24 MAM-parsed plus files and the five
-product licence files, and selects no deferred semantic or policy choice.
+The dispositions are approved. On 2026-09-30 Ben also approved this plan's concrete editorial
+wording and its execution, as [the periodic-review procedure](periodic-review.md) requires in
+"Close-out: from findings to dispositions" and "Separate defects from editorial proposals" (D7),
+with the choices item 5 of "Decisions this plan follows" lists. Preparing, committing or approving
+this plan implemented none of its changes. The approval authorizes the stated repairs, including
+the consumer notice of the 24 MAM-parsed plus files and the five product licence files, and selects
+no deferred semantic or policy choice.
 
 Line numbers are those of the planning tree, `bcbbb1dc`, where every cited passage was re-measured
 on 2026-09-30; a passage's own quoted words, not its number, identify it. Two archive commits recur,
@@ -35,6 +36,13 @@ and links to them are written here in shorthand:
   the last commit holding the complete families that `e4934b6e` retired.
 
 Write each such link out in full, and check its path first with `git cat-file -e <commit>:<path>`.
+
+Two merges of `origin/main` into the review branch after the planning tree, `23f96667` and
+`02a20154` on 2026-09-30, moved passages this plan cites in five files without changing their
+words: `doc/dual-agent-review.md` (E1's paragraph now begins at `:151`, finding 34.1's sentence is
+at `:178–179` and finding 35's paragraph at `:345–347`), `doc/periodic-review.md`,
+`dot-claude/README.md` (`:61` and `:90–91`), `py/main_repo_util.py` (`:50–51` and `:592–597`) and
+`py/repo_util/user_config_sync.py` (`:209` and `:212–213`).
 
 ## Standalone executor contract
 
@@ -168,6 +176,25 @@ requires of a full clone.
    are not kept continuously current ("I know of no reason to be supplying constantly-updated
    versions of these", quoted in the same file's `_SEF_AND_OSIS_NOT_KEPT_CURRENT`); D7, D11 and
    D12; and the common body's "Tests are differential or lint-shaped".
+5. **Ben's approval of this plan, 2026-09-30.** After this plan was committed at `50ef50ee`, Ben
+   answered twelve questions in four dialogs. The questions, option labels and descriptions were
+   the second session's wording; Ben's part is his selection of each, which the live update records
+   in full under "Ben's approval of the remediation plan, 2026-09-30". His selections settle every
+   choice this plan leaves open:
+   1. The reader-facing wording, the public-data change and the lower-risk changes: approved as
+      worded.
+   2. `MAM-with-doc/LICENSE.md`: the edition sentence, the alternative under "The five product
+      `LICENSE.md` files"; `DATA-LICENSES.md`'s new paragraph takes the variant shown for it.
+   3. Flagged site 9: the "join" wording in `hbce-psalms/README.md` and `DATA-LICENSES.md`.
+   4. Flagged site 12: the Holman page's introduction is fixed.
+   5. Finding 8.1: the September 9 plan's passages and the hazard-5 re-reading are approved as they
+      stand, and findings 2.5, 28.5 and 29 apply to them as worded; the reversal list does not apply.
+   6. Hazard H6: the wording that names the worktree's home clone.
+   7. Flagged sites: all three groups approved, so sites 1 to 10 and 13 apply; site 11, the test
+      fix, applies too.
+   8. `py/tests/test_mega_coverage.py:379–381`, item 23.7 under "Python comments and docstrings":
+      "a lookup that prints one estimated page, column and line".
+   9. Execution: approved, as close-out steps 3 and 4 in a fresh task.
 
 ## Reader-facing documents: the approval surface (high risk)
 

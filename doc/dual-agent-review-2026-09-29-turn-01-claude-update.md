@@ -641,3 +641,68 @@ lower-risk changes; his choices on finding 8.1, on each group of flagged sites, 
 licence alternative, on the corrected H6 value and on the HBCE "split" and "join" wording; and his
 approval of execution. Then close-out steps 3 and 4, execution and final integration, in a fresh
 task. This update remains `State: open` while its base survives.
+
+## Ben's approval of the remediation plan, 2026-09-30
+
+Recorded by Claude on 2026-09-30, New York time, in the second step-2 session, which committed the
+plan at `50ef50ee50804ddf802e058a78d557d34d5be65a`. The session presented the plan in
+`doc/periodic-review.md`'s risk order: each reader-facing change with its current and proposed
+words, a few long passages in summary with the plan holding their full text; then the public-data
+change; then the lower-risk changes by type. Ben then answered twelve questions in four dialogs.
+The questions, option labels and descriptions quoted or summarized here were the session's
+wording; Ben's part is his selection of each.
+
+1. **Reader-facing wording.** To "Do you approve the reader-facing wording shown above (the
+   rendered-HTML and reader-facing Markdown items, including the licence files and question 5's
+   page locators)?", Ben selected "Approve (Recommended)" rather than "Not yet".
+2. **The MAM-with-doc licence file.** Ben selected "Edition sentence (Recommended)", described as
+   ""This statement applies equally to the MAM-with-doc edition, which MAM-basics publishes from
+   gh-pages/MAM-with-doc/." The file then leaves the blob the other three share.", rather than
+   "Directory sentence".
+3. **The HBCE wording, flagged site 9.** Ben selected "Join wording (Recommended)" rather than
+   "Keep "split"".
+4. **The Holman page's introduction, flagged site 12.** Ben selected "Fix it (Recommended)" rather
+   than "Leave it".
+5. **The public-data change.** To "Do you approve the one public-data change: in all 24
+   MAM-parsed/plus/*.json files, rules 5 and 6 of header.consumer_notice.critical_rules exchange
+   places (narpas rule first), every Scripture payload and book39s value unchanged?", Ben selected
+   "Approve (Recommended)".
+6. **The lower-risk changes.** To the question covering the `doc/` Markdown and update entries,
+   the Python comments and docstrings, the agent instructions and skills, and the thirteen code and
+   test defect fixes, Ben selected "Approve (Recommended)".
+7. **Finding 8.1.** Ben selected "Approve as they stand (Recommended)" rather than "Reverse".
+8. **Hazard H6.** Ben selected "Name the home clone (Recommended)" rather than "Drop the worktree
+   advice".
+9. **The flagged sites.** To "Which groups of flagged sites (same defect as an approved item, not
+   named in the package) do you approve? Unselected groups are struck.", Ben selected all three
+   groups: "Records and runbooks", "Skills" and "Python text and policy JSON".
+10. **Flagged site 11, the test fix.** Ben selected "Fix it (Recommended)" rather than "Leave it".
+11. **The accepted `NOT_IN_MEGA` reason of `py/main_uxlc_estimate_atom_loc.py`.** Ben selected
+    "Change to "page" (Recommended)" rather than "Keep as accepted".
+12. **Execution.** To "With those answers, do you approve executing the plan (close-out steps 3
+    and 4: phases 0–5 in a fresh task, including finding 30's draft shown to you before anything
+    from it is committed, final integration into main and the --sync-user-config deployment)?",
+    Ben selected "Approve execution (Recommended)".
+
+**What this records.** The plan's line 3 now reads "State: live; approved for execution 2026-09-30;
+remediation not started.", and item 5 of its "Decisions this plan follows" lists these choices.
+Ben's approval covers the plan committed at `50ef50ee`, as this commit amends it to record them and
+to give the new line numbers below. It selects no deferred semantic or policy choice beyond the
+plan's own.
+
+**The branch.** After the plan's commit, `origin/main` moved twice, first with the dual-agent review
+relay (`9988db8e`) and then with D13, the automated review protocol (`0f745369`). Each move was
+merged into the review branch without conflict, as `23f9666742f8f9f3adb2a62145bcc6833f14156d` and
+`02a20154392386a296df41011ca2d95b102e3c2f`, and pushed. Each merged tree is `origin/main`'s tree
+plus the round's eleven turn files, this update and the plan, so neither merge owed the suite or
+the mega. The merges moved passages the plan cites in five files without changing their words; the
+plan now lists the new line numbers, and its contract has the executor re-measure every cited file
+changed since its planning tree. D13 changes nothing in this close-out: it governs automated rounds,
+and manual close-out and integration keep D11's rules.
+
+**Verification of this entry.** This entry and the plan's approval edits are one commit. No source
+file, product or generator changes, and no suite, mega or generator run is owed. Before the commit,
+`git diff --check` passed, and the same four lint tests passed.
+
+**Close-out step 2 is complete; steps 3 and 4 remain**, in a fresh task that executes the plan and
+owns final integration. This update remains `State: open` while its base survives.
