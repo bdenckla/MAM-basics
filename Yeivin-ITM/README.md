@@ -82,8 +82,10 @@ The exact legacy-page differential is recorded in
 `in/yeivin_itm_legacy_differential.json` against phonetic-hbo commit
 `8da90513df1c759d8db34b135d007e79686715d3`. It permits only Ben's approved numerical
 and explanatory corrections in three pages and the landing page's font-source
-link; the other pages are byte-identical. It also pins all unchanged adaptation
-modules to their mechanically moved public source. This records branch output,
+link. Every page now also links to the shared favicon; the differential removes
+only that exact common header line before reconstructing the original bytes. The
+original page hashes and correction ranges remain unchanged. The differential also
+pins all unchanged adaptation modules to their mechanically moved public source. This records branch output,
 not a claim that Pages has been deployed.
 
 ## Data and asset terms

@@ -16,6 +16,7 @@ class WriteCtx:
     path: str
     path_to_style: str
     add_wbr: bool = False
+    icon_href: str | None = None
 
 
 def html_text(body_contents, write_ctx: WriteCtx):
@@ -26,7 +27,10 @@ def html_text(body_contents, write_ctx: WriteCtx):
     structure holding a title and an output path.
     """
     html_el = _htel_mk_html(
-        write_ctx.title, body_contents, f"{write_ctx.path_to_style}style.css"
+        write_ctx.title,
+        body_contents,
+        f"{write_ctx.path_to_style}style.css",
+        icon_href=write_ctx.icon_href,
     )
     lines = legacy_html_lines.get_lines_from_html_el(write_ctx.add_wbr, html_el)
     return "<!doctype html>\n" + "\n".join(lines)
@@ -37,13 +41,14 @@ def write_html_text_to_file(text, write_ctx: WriteCtx):
     file_io.with_tmp_openw(write_ctx.path, {}, _write_text_callback, text)
 
 
-def _htel_mk_html(title_text, body_contents, flex_css_hrefs):
+def _htel_mk_html(title_text, body_contents, flex_css_hrefs, *, icon_href=None):
     """Make an <html> element."""
     meta = htel_mk("meta", attr={"charset": "utf-8"})
     title = htel_mk("title", flex_contents=[title_text])
     strict_css_hrefs = _strictify(flex_css_hrefs)
     links_to_css = tuple(map(_link_to_css, strict_css_hrefs))
-    head_cont = meta, title, *links_to_css
+    icon = (htel_mk("link", {"rel": "icon", "href": icon_href}),) if icon_href else ()
+    head_cont = meta, title, *links_to_css, *icon
     _head = htel_mk("head", flex_contents=head_cont)
     _body = htel_mk("body", flex_contents=body_contents)
     return htel_mk("html", {"lang": "en"}, (_head, _body))

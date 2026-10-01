@@ -243,7 +243,9 @@ def page_texts(payload):
     validate(payload)
     output = {}
     for page in payload["pages"]:
-        context = legacy_html.WriteCtx(page["title"], page["filename"], "./")
+        context = legacy_html.WriteCtx(
+            page["title"], page["filename"], "./", icon_href="../favicon.svg"
+        )
         text = legacy_html.html_text(_html_nodes(page["body"]), context)
         refuse_forbidden_phonetic_marks(text, page["filename"])
         output[page["filename"]] = text

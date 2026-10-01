@@ -254,6 +254,9 @@ def _page(title, heading, contents, asset_prefix):
                 "link", {"rel": "stylesheet", "href": f"{asset_prefix}style.css"}
             ),
             html.htel_mk(
+                "link", {"rel": "icon", "href": f"{asset_prefix}../favicon.svg"}
+            ),
+            html.htel_mk(
                 "script", {"src": f"{asset_prefix}pronunciation.js", "defer": ""}
             ),
         ],

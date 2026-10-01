@@ -229,6 +229,7 @@ def _render_huge_ftnt_page(huge_ftnt_rec, pages):
 def _collect_page(pages, filename, body_contents, write_ctx):
     if filename in pages:
         raise ValueError(f"Duplicate Yeivin page: {filename}")
+    write_ctx.icon_href = "../favicon.svg"
     pages[filename] = (body_contents, write_ctx)
 
 

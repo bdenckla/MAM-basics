@@ -22,7 +22,11 @@ def _oracle():
 
 def _legacy_text(name, current):
     record = _oracle()["pages"][name]
-    lines = current.splitlines(keepends=True)
+    icon_line = '<link rel="icon" href="../favicon.svg">\n'
+    assert current.count(icon_line) == 1, name
+    head = current.split("<head>", 1)[1].split("</head>", 1)[0]
+    assert icon_line in head, name
+    lines = current.replace(icon_line, "", 1).splitlines(keepends=True)
     for change in reversed(record["changes"]):
         start = change["new_start"]
         end = start + len(change["new"])
@@ -60,6 +64,12 @@ def test_all_legacy_anchors_links_and_examples_are_preserved():
         identifiers = document.xpath("//@id")
         assert len(identifiers) == len(set(identifiers))
         assert identifiers == old.xpath("//@id")
+        icons = document.xpath("/html/head/link[@rel='icon']")
+        assert len(icons) == 1
+        icon = icons[0]
+        assert dict(icon.attrib) == {"rel": "icon", "href": "../favicon.svg"}
+        assert (paths.pages_dir() / icon.attrib["href"]).resolve().is_file()
+        icon.getparent().remove(icon)
         current_links = document.xpath("//@href")
         if name == "yeivin_itm.html":
             assert current_links.pop() == "woff2/SOURCE.txt"

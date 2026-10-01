@@ -222,6 +222,10 @@ class _HTMLInfo(HTMLParser):
                 href = attr_dict.get("href")
                 if href:
                     self.css_hrefs.append(href)
+            elif attr_dict.get("rel") == "icon":
+                href = attr_dict.get("href")
+                if href:
+                    self._categorize_href(href)
         if tag == "a":
             href = attr_dict.get("href")
             if href:
@@ -438,7 +442,17 @@ def _check_font_files(css_path: Path, docs_dir: Path) -> list[str]:
 def _check_stale_files(docs_dir: Path, *, recursive: bool) -> list[str]:
     """Flag unexpected files: 0-byte, extensionless, etc."""
     issues = []
-    expected_exts = {".html", ".css", ".js", ".txt", ".png", ".jpg", ".jpeg", ".woff2"}
+    expected_exts = {
+        ".html",
+        ".css",
+        ".js",
+        ".txt",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".woff2",
+        ".svg",
+    }
     paths_in_scope = docs_dir.rglob("*") if recursive else docs_dir.glob("*")
     for path in sorted(paths_in_scope):
         if not path.is_file():
