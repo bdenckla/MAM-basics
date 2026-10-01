@@ -34,3 +34,7 @@ MAM-parsed/historical/*.zip binary
 
 # Faithful Wikisource captures retain source-significant trailing spaces.
 in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol
+
+# This migrated page preserves the sanctioned legacy HTML byte-for-byte,
+# including its existing line-final space before the following wrapped prose.
+gh-pages/yeivin-itm/yeivin_itm-311_317.html whitespace=-blank-at-eol

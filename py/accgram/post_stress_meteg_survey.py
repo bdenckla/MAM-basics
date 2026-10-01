@@ -2,16 +2,16 @@
 
 from __future__ import annotations
 
-import json
 import re
 from collections import Counter
-from pathlib import Path
 
 from accgram import poetic_filter
 from accgram import prose_scanner
 from accgram.uni_to_marks import is_accent
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
+from phonetic_mam import analysis_reader
+from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
 from accgram.post_stress_meteg_model import (
     CANT_ALEF,
@@ -31,7 +31,6 @@ from accgram.post_stress_meteg_model import (
     _LEGACY_BASELINE,
     _SUBTYPES,
     _TYPES,
-    _VERSE_KEY,
     _accent_grammar_tokens_by_entry,
     _assert_type_2_next_filter_coverage,
     _atom_keys,
@@ -53,6 +52,7 @@ from accgram.post_stress_meteg_model import (
 )
 
 from accgram.post_stress_meteg_sources import (
+    _snapshot_written_form,
     _attach_mam_forms,
     _focus_verses,
     _mam_context_by_bcv,
@@ -70,9 +70,7 @@ from accgram.post_stress_meteg_classification import (
 )
 
 
-def _scan(
-    phon_dir: Path, cantillation: str = CANT_ALEF, *, dual_templates_only: bool = False
-) -> dict:
+def _scan(cantillation: str = CANT_ALEF, *, dual_templates_only: bool = False) -> dict:
     """Every U+05BD of one cantillation strand, optionally only inside its templates."""
     assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
     found = {
@@ -102,13 +100,10 @@ def _scan(
         "fit_for_mas_candidates": [],
         "chanted_word_occurrences": [],
     }
-    bb_of_stem = _bb_of_stem()
-    for path in sorted(phon_dir.glob("*.json")):
-        bb = bb_of_stem[path.stem]
+    for _stem, bb in sorted(_bb_of_stem().items()):
         has_legarmeh = prose_scanner.HasLegarmeh()
-        data = json.loads(path.read_text(encoding="utf-8"))
-        for vkey, verse in data.items():
-            chnu, vrnu = (int(one) for one in _VERSE_KEY.match(vkey).groups())
+        data = analysis_reader.read_book(wlc_bb_to_bk39id(bb))
+        for (chnu, vrnu), verse in data.items():
             dual = _has_dual_cantillation(verse)
             if dual_templates_only and not dual:
                 continue
@@ -181,21 +176,19 @@ def _one_verse(
         events=events,
         has_legarmeh=has_legarmeh,
     )
-    entries = [one for one in events if isinstance(one, dict)]
+    entries = [one for one in events if isinstance(one, analysis_reader.Reading)]
     scoped_entries = (
         entries
         if template_entry_ids is None
         else [one for one in entries if id(one) in template_entry_ids]
     )
-    usable = [one for one in scoped_entries if one.get("jta") and one.get("fva")]
-    all_usable = [one for one in entries if one.get("jta") and one.get("fva")]
+    usable = scoped_entries
+    all_usable = entries
     if template_entry_ids is None:
         assert source_verse is not None
         source_entries: list[dict] = []
         _chanted_words(source_verse, source_entries)
-        source_usable = [
-            one for one in source_entries if one.get("jta") and one.get("fva")
-        ]
+        source_usable = source_entries
         qamats_facts = _qamats_variant_facts(source_verse)
         assert qamats_facts["source_entries"] == (
             qamats_facts["mam_chanted_words"] + qamats_facts["duplicate_entries"]
@@ -223,13 +216,11 @@ def _one_verse(
     if not usable:
         return
     if dual:
-        found["dual_cantillation_chanted_words"][bcv] = [
-            one["fva"].split(" ")[0] for one in usable
-        ]
+        found["dual_cantillation_chanted_words"][bcv] = [one.hebrew for one in usable]
     if template_entry_ids is not None:
         found["dual_template_entries"][bcv] = usable
     if template_entry_ids is None:
-        last_word = usable[-1]["fva"].split(" ")[0]
+        last_word = usable[-1].hebrew
         if SOF_PASUQ not in last_word:
             found["last_entry_lacks_sof_pasuq"].append(
                 {
@@ -243,22 +234,20 @@ def _one_verse(
     event_index_by_entry_id = {
         id(entry): index
         for index, entry in enumerate(events)
-        if isinstance(entry, dict)
+        if isinstance(entry, analysis_reader.Reading)
     }
     for index, entry in enumerate(all_usable):
         if template_entry_ids is not None and id(entry) not in template_entry_ids:
             continue
-        word = entry["fva"].split(" ")[0]
-        jta = entry["jta"]
+        word = entry.hebrew
+        jta = entry.transcription
         previous_entry = all_usable[index - 1] if index else None
         preceding_chanted_word = (
-            previous_entry["fva"].split(" ")[0] if previous_entry is not None else ""
+            previous_entry.hebrew if previous_entry is not None else ""
         )
         next_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
-        next_chanted_word = (
-            next_entry["fva"].split(" ")[0] if next_entry is not None else None
-        )
-        next_jta = next_entry["jta"] if next_entry is not None else None
+        next_chanted_word = next_entry.hebrew if next_entry is not None else None
+        next_jta = next_entry.transcription if next_entry is not None else None
         next_jta_for_analysis = next_jta
         if next_chanted_word is not None and next_jta is not None:
             try:
@@ -310,7 +299,7 @@ def _one_verse(
                     "bcv": bcv,
                     "chanted_word": word,
                     "next_chanted_word": None,
-                    "snapshot_before_qere": entry.get("before_qfikq"),
+                    "snapshot_before_qere": _snapshot_written_form(bcv, entry),
                 }
         fit_for_mas_candidate = _fit_for_mas_candidate(
             bcv=bcv,
@@ -319,7 +308,7 @@ def _one_verse(
             word=word,
             jta=jta,
             parsed=parsed,
-            before_qere=entry.get("before_qfikq"),
+            before_qere=_snapshot_written_form(bcv, entry),
             next_chanted_word=next_chanted_word,
             next_jta=next_jta_for_analysis,
             next_accent_grammar_tokens=next_accent_grammar_tokens,
@@ -340,7 +329,7 @@ def _one_verse(
             jta=jta,
             parsed=parsed,
             found=found,
-            before_qere=entry.get("before_qfikq"),
+            before_qere=_snapshot_written_form(bcv, entry),
             preceding_chanted_word=preceding_chanted_word,
             next_chanted_word=next_chanted_word,
             next_jta=next_jta_for_analysis,
@@ -380,7 +369,7 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
     ]
     return {
         "what": (
-            "The Phonetic MAM standard set is regenerated when al-hatorah's pipeline runs,"
+            "The public Phonetic MAM release is refreshed by its export command,"
             " so it is a snapshot of MAM rather than MAM's current state. This"
             " counts U+05BD per numbered verse on both sides and names every numbered verse"
             " where they differ, so the page can say which MAM its figures describe."
@@ -394,7 +383,7 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
             " measured 2026-09-04, so no chanted verse in the comparison runs past a"
             " numbered verse's end."
         ),
-        "surveyed_snapshot": paths.display_path(paths.al_hatorah_phonetic_dir()),
+        "surveyed_snapshot": paths.display_path(paths.phonetic_mam_dir() / "data"),
         "compared_against": paths.display_path(paths.mam_simple_vtrad_mam_dir()),
         "focus_verses": _focus_verses(words_by_bcv),
         "verses_compared": len(compared),
@@ -484,9 +473,9 @@ def _dual_template_counts(found: dict) -> dict[str, int]:
 def _mam_form_for_dual_cantillation_atom(raw_atom: str, mam_atoms: list[str]) -> str:
     """The MAM atom with only the cantillation marks of ``raw_atom``'s branch.
 
-    Phonetic MAM uses U+05C8 where MAM has U+05B0 when it resolves a shewa as vocal.  The raw
-    atom therefore decides only which accent and meteg marks its cantillation branch selects;
-    its letters and points never reach the reader-facing form.
+    The generic displayed atom decides only which accent and meteg marks its
+    cantillation branch selects. Public MAM supplies the reader-facing letters
+    and points, retaining its current spelling independently of this snapshot.
     """
     candidates = [
         atom for atom in mam_atoms if _consonant_key(atom) == _consonant_key(raw_atom)
@@ -608,9 +597,9 @@ def _template_mam_forms(
     records = [
         {
             "bcv": bcv,
-            "chanted_word": entry["fva"].split(" ")[0],
+            "chanted_word": entry.hebrew,
             "next_chanted_word": None,
-            "snapshot_before_qere": entry.get("before_qfikq"),
+            "snapshot_before_qere": _snapshot_written_form(bcv, entry),
         }
         for entry in entries
     ]
@@ -694,17 +683,16 @@ def _chanted_word_count_difference(
 
 
 def build_survey() -> dict:
-    """The whole survey: every U+05BD of the Phonetic MAM standard set, classified.
+    """The whole survey: every U+05BD of the public Phonetic MAM release, classified.
 
     Raises ``SurveyProblem`` at the END of the scan rather than at the first offending mark,
     so a run that cannot finish still says everything it found.  Collecting before failing is
     what makes the list usable: a run that raises on first sight can never enumerate the rest.
     """
-    phon_dir = paths.require_al_hatorah_phonetic_dir()
-    found = _scan(phon_dir, CANT_ALEF)
-    found_bet = _scan(phon_dir, CANT_BET)
-    template_found = _scan(phon_dir, CANT_ALEF, dual_templates_only=True)
-    template_found_bet = _scan(phon_dir, CANT_BET, dual_templates_only=True)
+    found = _scan(CANT_ALEF)
+    found_bet = _scan(CANT_BET)
+    template_found = _scan(CANT_ALEF, dual_templates_only=True)
+    template_found_bet = _scan(CANT_BET, dual_templates_only=True)
     assert found["dual_cant_verses"] == found_bet["dual_cant_verses"]
     assert template_found["dual_cant_verses"] == found["dual_cant_verses"]
     assert template_found_bet["dual_cant_verses"] == found["dual_cant_verses"]
@@ -805,7 +793,8 @@ def build_survey() -> dict:
             " rather than as a meteg."
         ),
         "stress_oracle": (
-            "Phonetic MAM's jta field, whose ! marks the one stressed syllable. A U+05BD's"
+            "Phonetic MAM's displayed transcription, whose stress highlighting marks the"
+            " one stressed syllable. A U+05BD's"
             " position is never used to infer the stress. The Hebrew's nuclei are counted"
             " independently and the two counts must agree per chanted word, a furtive patax"
             " counting as a syllable on both sides."

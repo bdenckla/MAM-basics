@@ -147,15 +147,9 @@ SIBLINGS_REACHED: dict[str, str] = {
         "publishing the source repository's frozen redirect stubs."
     ),
     "MAM-private": (
-        "One route, and it reads.  paths.al_hatorah_phonetic_dir reads"
-        " MAM-private/al-hatorah's Phonetic MAM, the oracle of main_accgram.py's two"
-        " surveys -- survey-post-stress-meteg, which main_0_mega runs as its"
-        " accgram-survey-post-stress-meteg step except in a cloud session, and"
-        " survey-breuer-zaqef-units -- and of the test of accgram.final_stress."
-        "  Two other routes are gone: the vendoring audit's, given up on 2026-09-04"
-        " (abb03ec4), and main_0_mega's near-aleppo-census step, which ran the census"
-        " in MAM-private and rewrote that clone's goldens until Ben had it deleted on"
-        " 2026-09-11."
+        "The Phonetic MAM exporter invokes its private source adapter read-only."
+        " Rendering, meteg surveys, Breuer analysis and final-stress checks consume"
+        " the tracked public display release and do not reach a private checkout."
     ),
     "codex-index-aleppo": (
         "redirect_stubs/stubs.py only -- the Aleppo Pages redirect host."
@@ -185,6 +179,9 @@ SIBLINGS_REACHED: dict[str, str] = {
 # (file, literal) -> reason.  Keyed by the literal, not the line, so an edit above
 # it does not move the key; one entry covers every occurrence in that file.
 _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
+    ("py/phonetic_mam/renderer.py", "f'../{_book_stem(book_id)}.html'"): (
+        "a site-relative href from a chapter to its book index in the same site"
+    ),
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"
     ),

@@ -1,9 +1,9 @@
 """``final_stress`` against Phonetic MAM: a differential check with an independent oracle.
 
 ``accgram.final_stress`` decides whether a chanted word is stressed on its last syllable by
-counting nuclei and locating one syllable, the last.  al-hatorah's ``py/aht_phon`` decides the same
-thing with a real stress model -- full syllabification plus a hand-built table saying which accent
-of a vector bears the stress -- and has already run it over the whole Tanakh.  So the two are
+counting nuclei and locating one syllable, the last. Phonetic MAM's displayed transcription
+records the result of a separate stress model -- full syllabification plus a hand-built table
+saying which accent of a vector bears the stress -- run over the whole Tanakh. So the two are
 independent derivations of one fact, which is the shape of test this repo keeps
 (``doc/agent-planning-principles.md`` §"Generated Outputs Are the Tests").  Issue wlc-utils#48 calls
 consuming Phonetic MAM's outputs its second path; this is that path, and it is why the rule in
@@ -25,36 +25,18 @@ in the grouping.  The
 scan is rerun here rather than read out of the survey's JSON, which keeps counts and not words --
 and rerun over MAM's own versification, for which see ``_measured``.
 
-THE ORACLE'S FORM: ``io/a01-phonetic-std-set/<book>.json`` maps a short verse key to the verse's
-chanted words; each has ``fva``, whose first space-separated field is the fully pointed chanted
-word, and ``jta``, an ASCII phonetic form where ``.`` separates syllables, ``-`` separates the atoms
-of a maqaf compound, and ``!`` immediately precedes the stressed syllable.  So the stress is on the
-last syllable when nothing but that syllable follows the ``!`` -- see ``_stress_is_final`` for the
-one place the two sides count syllables differently and what is done about it.
+THE ORACLE'S FORM is the tracked Phonetic-MAM display release. The analysis reader
+selects every displayed Hebrew branch and the corresponding Sephardic transcription.
+Its ASCII spelling retains the visible syllable boundaries and marked primary stress.
+No analysis annotation or source audit field is part of this input. The public MAM spelling
+is matched through the generic perpetual-qere rules when its displayed reading differs.
 
 A DUAL-CANTILLATION chanted word has one entry per strand and the two can disagree -- Exodus 20's
 lo-yihye is stressed differently in each -- so a verdict matching either strand is agreement.  The
 survey reads one strand of MAM-simple, and which one is not a fact this test is about.
 
-A word Phonetic MAM has no entry for FAILS, and none does: the join over the prose measured set is
-exceptionless since issue wlc-utils#91, whose fix is why -- see the test's own docstring for the one word
-that used to be pinned here.  A skip is this suite's semantic channel and an environment skip mixed
-into it reports green having verified nothing; the same is why, on any machine of Ben's, the sibling
-clone is REQUIRED rather than skipped around, and a missing MAM-private fails here exactly as it
-always did.
-
-IN A CLOUD CONTAINER THE WHOLE MODULE IS SKIPPED.  Ben's decision, 2026-09-11, extending to these
-two tests the treatment ``py/main_0_mega.py`` already gave its two MAM-private steps,
-``near-aleppo-census`` and ``accgram-survey-post-stress-meteg``; the first of them was deleted
-from the mega later that day, and the second is skipped the same way still.  Until then the mega was
-MAM-private-free in the cloud and the suite was not, so a cloud session could not verify its own
-work against a green suite: measured in a container on 2026-09-11, these two were the only failures
-in 992, both raising ``FileNotFoundError`` from ``paths.require_sibling``.  The discriminator is
-``graphviz_pin.in_cloud_session()``, the same predicate the mega and ``survey_dot`` use, and it
-reads ``CLAUDE_CODE_REMOTE`` alone -- so the module is skipped in a container WHETHER OR NOT
-MAM-private is attached there, which is how the mega's survey step reads too.  What it costs is that a
-cloud run reports these 2 skips beside the semantic skips of ``test_edition_transcriptions.py``;
-the reason string below is what tells the two kinds apart under ``-rs``.
+A word Phonetic MAM has no entry for FAILS, and none does. The complete public
+release is required in every environment, including cloud sessions.
 
 Run:
     .venv/Scripts/python.exe py/main_test.py py/tests/test_final_stress_vs_phonetic_mam.py
@@ -62,38 +44,19 @@ Run:
 
 from __future__ import annotations
 
-import json
 import re
 from collections import defaultdict
 from functools import lru_cache
-
-import pytest
 
 from accgram import final_stress as fs
 from accgram import mam_simple_verse
 from accgram import maqaf_nonfinal_accents as mpa
 from accgram import prose_filter
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
-from mb_cmn import bib_locales as tbn
 
-from mb_cmn import graphviz_pin
-from mb_cmn import hebrew_points as hpo
-from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
-
-# Both tests read MAM-private's Phonetic MAM through ``_oracle``, so both are skipped in a cloud
-# container and neither is skipped anywhere else -- see this module's docstring, "IN A CLOUD
-# CONTAINER THE WHOLE MODULE IS SKIPPED", for Ben's decision of 2026-09-11 and the mega precedent
-# it follows.  ``in_cloud_session`` lives in ``graphviz_pin`` because that is where the cloud
-# skip was first needed; it is the repository's one cloud predicate, and a second one named for
-# this use would be exactly the alias that ``~/.claude/CLAUDE.md`` forbids.
-pytestmark = pytest.mark.skipif(
-    graphviz_pin.in_cloud_session(),
-    reason=(
-        "cloud container: this module reads MAM-private's Phonetic MAM, which is not"
-        " attached here -- an environment skip, not this suite's semantic skip"
-    ),
-)
+from phonetic_mam import analysis_reader
+from phonetic_mam.core import qere_from_implicit_kq
 
 # What a join key drops: the accents (U+0591..U+05AE), masora circle (U+05AF), meteg (U+05BD),
 # rafe (U+05BF), the punctuation that can sit inside a chanted word (paseq U+05C0 and sof pasuq
@@ -106,24 +69,9 @@ _NOT_IN_THE_JOIN_KEY = re.compile(
     "[\u0591-\u05af\u05bd\u05bf\u05c0\u05c3-\u05c5\u034f\ufb1e]"
 )
 
-_LEGACY_PHONETIC_MAM_ANNOTATIONS = (
-    hpo.SHEVA + hpu.MCIRC,
-    hpo.DAGOMOSD + hpu.UPDOT,
-)
-
 # What separates one syllable of a ``jta`` form from the next: ``.`` within an atom and ``-``
 # between the atoms of a maqaf compound.
 _SYLLABLE_BREAK = re.compile(r"[.\-]")
-
-
-def _phonetic_mam_join_key(word: str) -> str:
-    assert not any(
-        pair in word for pair in _LEGACY_PHONETIC_MAM_ANNOTATIONS
-    ), f"legacy Phonetic MAM annotation pair: {word!r}"
-    generic = word.replace(hpo.SHEVA_NA, hpo.SHEVA).replace(
-        hpo.DAGESH_XAZAQ, hpo.DAGOMOSD
-    )
-    return _NOT_IN_THE_JOIN_KEY.sub("", generic)
 
 
 def _mam_join_key(word: str) -> str:
@@ -145,63 +93,26 @@ def _stress_is_final(jta: str, word: str) -> bool:
     return len(_SYLLABLE_BREAK.findall(tail)) == expected
 
 
-def _chanted_words(node: object, out: list[dict]) -> None:
-    """Every chanted-word entry of one verse, the ``cb`` structures flattened.
-
-    A ``cb`` is Phonetic MAM's bracket for something other than a plain run of chanted words -- a
-    paseq, a setuma or petuxa, a qamats note, a dual-cantillation span.  Its branches hold chanted
-    words like any other, so all of them are collected and a dual span contributes both strands.
-    """
-    if isinstance(node, dict):
-        out.append(node)
-    elif isinstance(node, list):
-        for sub in node[1:] if node and node[0] == "cb" else node:
-            _chanted_words(sub, out)
-
-
-# Phonetic MAM's verse keys name the book too -- ``G1:1``, ``E20:2``, ``1S12:3`` -- and the book
-# part can itself start with a digit, so the chapter and verse are taken off the END rather than
-# the book name off the front.  Keying by the two numbers means this test needs no second
-# book-name table beside ``bib_locales``.
-_VERSE_KEY = re.compile(r"^.+?(\d+):(\d+)$")
-
-
 @lru_cache(maxsize=None)
 def _book(bb: str) -> dict[tuple[int, int], dict[str, frozenset]]:
-    """(chapter, verse) -> join key -> the stress verdicts Phonetic MAM has for that chanted word.
-
-    Two entries are indexed for one chanted word where Phonetic MAM has substituted a perpetual
-    qere: the substituted spelling, and the ``before_qfikq`` one it came from, which is what
-    MAM-simple has.  The ketiv ירושלם is the common case.
-    """
-    osdf = tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bb))
-    path = paths.require_al_hatorah_phonetic_dir() / f"{osdf}.json"
-    data = json.loads(path.read_text(encoding="utf-8"))
-    per_verse: dict[tuple[int, int], dict[str, frozenset]] = {}
-    for key, verse in data.items():
-        chnu, vrnu = _VERSE_KEY.match(key).groups()
-        entries: list[dict] = []
-        _chanted_words(verse, entries)
-        verdicts: dict[str, set] = defaultdict(set)
-        for entry in entries:
-            jta, fva = entry.get("jta"), entry.get("fva")
-            if not jta or not fva:
-                continue
-            word = fva.split(" ")[0]
-            for spelling in (word, entry.get("before_qfikq")):
-                if spelling:
-                    verdicts[_phonetic_mam_join_key(spelling)].add(
-                        _stress_is_final(jta, word)
-                    )
-        per_verse[(int(chnu), int(vrnu))] = {
-            k: frozenset(v) for k, v in verdicts.items()
-        }
+    """Index the independently displayed stress for every displayed branch."""
+    per_verse = {}
+    for key, verse in analysis_reader.read_book(wlc_bb_to_bk39id(bb)).items():
+        verdicts = defaultdict(set)
+        for reading in verse.readings():
+            verdicts[_mam_join_key(reading.hebrew)].add(
+                _stress_is_final(reading.transcription, reading.hebrew)
+            )
+        per_verse[key] = {key: frozenset(values) for key, values in verdicts.items()}
     return per_verse
 
 
 def _oracle(bcv: str, word: str) -> frozenset:
     bb, chnu, vrnu = mpa.split_bcv(bcv)
-    return _book(bb).get((chnu, vrnu), {}).get(_mam_join_key(word), frozenset())
+    verdicts = _book(bb).get((chnu, vrnu), {})
+    direct = verdicts.get(_mam_join_key(word), frozenset())
+    qere = qere_from_implicit_kq.get_qere_from_implicit_kq(word)
+    return direct | verdicts.get(_mam_join_key(qere), frozenset())
 
 
 def _measured() -> list[dict]:

@@ -88,6 +88,8 @@ _PRODUCT_DIR_NAMES = (
     "MAM-for-Sefaria",
     "MAM-with-doc",
     "MAM-OSIS",
+    "Phonetic-MAM",
+    "Yeivin-ITM",
 )
 
 _MAM_PARSED_CURRENT_FORMAT_DIR = "MAM-parsed/plus"
@@ -127,6 +129,8 @@ _GENERATOR_ENTRY_POINTS = (
     "py/main_map_changes_to_book_of_job.py",
     "py/main_multimark.py",
     "py/main_pipeline_graph.py",
+    "py/main_phonetic_mam.py",
+    "py/main_yeivin_itm.py",
     "py/main_render_uxlc_corrections.py",
     "py/main_search_final_hiriq_verse_text.py",
     "py/main_search_holam_he_qere.py",
@@ -164,6 +168,11 @@ _MEGA_WRAPPER_DELEGATES = {
     "_run_accgram_servi_xcheck": "py/main_accgram.py",
     "_run_accgram_survey_chanted_word_accents": "py/main_accgram.py",
     "_run_accgram_survey_post_stress_meteg": "py/main_accgram.py",
+    "_run_accgram_survey_meteg_before_stress": "py/main_accgram.py",
+    "_run_phonetic_mam_export": "py/main_phonetic_mam.py",
+    "_run_phonetic_mam_render": "py/main_phonetic_mam.py",
+    "_run_yeivin_itm_survey_meteg_claims": "py/main_yeivin_itm.py",
+    "_run_yeivin_itm_render": "py/main_yeivin_itm.py",
     "_run_accgram_test_fixes": "py/main_accgram.py",
     "_run_accgram_xcheck_poetic": "py/main_accgram.py",
     "_run_clc": "py/main_clc.py",
@@ -185,7 +194,7 @@ def published_tree() -> Path:
 
 
 def product_dirs() -> list[Path]:
-    """Tier 2: the five data products, each consumed by git URL as well as by Pages."""
+    """Tier 2: the declared data products, consumed by git URL as well as by Pages."""
     root = paths.repo_root()
     return [root / name for name in _PRODUCT_DIR_NAMES]
 

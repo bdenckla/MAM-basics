@@ -2,8 +2,9 @@
 
 Legacy Phonetic MAM used MASORA CIRCLE and UPPER DOT as annotations. Those codepoints
 can also belong to a source text: accept an exact independently sourced form,
-including its Hebrew context. Current Phonetic MAM uses U+05C8 and U+05C9, which
-must never appear on a published page. LOWER DOT and VARIKA are not annotations.
+including its Hebrew context. The computation's U+05C8 and U+05C9 annotations
+must never appear in the public display release or on a published page.
+LOWER DOT and VARIKA are not annotations.
 Complete-page validation covers cells, prose, literals, compositions, fallbacks
 and attributes. Survey strings and literals locate defects but do not authorize
 themselves as reference forms.

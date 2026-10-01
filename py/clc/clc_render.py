@@ -716,7 +716,7 @@ def _dt_5_13_taxton_extra(_spec, _book, notes):
 # היה/חיה-root forms), in Ben's adaptation on phonetic-hbo. House style for such deep
 # links is a "section NNN" anchor (cf. MAM-basics rocc_4_mid_word_ga3ya_with_shewa).
 _YEIVIN_ITM_355_URL = (
-    "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-345_357.html#ns355"
+    "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns355"
 )
 
 

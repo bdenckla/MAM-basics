@@ -18,6 +18,7 @@ from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
+from phonetic_mam import analysis_reader
 
 METEG = hpo.MTGOSLQ
 
@@ -185,10 +186,6 @@ _VOWEL_NAMES = {
 # between the atoms of a maqaf compound.  The same split
 # ``test_final_stress_vs_phonetic_mam`` makes, and for the same reason.
 _SYLLABLE_BREAK = re.compile(r"[.\-]")
-
-# Phonetic MAM's verse keys name the book too -- ``G1:1``, ``1S12:3`` -- and the book part can
-# itself start with a digit, so the chapter and verse are taken off the END.
-_VERSE_KEY = re.compile(r"^.+?(\d+):(\d+)$")
 
 # A vocal sheva is a syllable in ``jta`` and no nucleus in the Hebrew, so the two
 # sides are compared over the syllables that do NOT have this marker.
@@ -619,257 +616,73 @@ def _misc_subtype(
     return None
 
 
-_PHONETIC_WORD_REQUIRED_FIELDS = frozenset({"fva", "jta", "udl"})
-
-_PHONETIC_WORD_STRING_FIELDS = frozenset(
-    {
-        "adl",
-        "before_qfikq",
-        "before_rm_kol_cgj",
-        "before_rm_misc",
-        "fva",
-        "jta",
-        "phi",
-        "phonrec-musical-gaya",
-        "phonrec-musical-gaya-acc",
-        "phonrec-musical-gaya-fine",
-        "phonrec-qamats",
-        "phonrec-shureq-xxx-shewa",
-        "rep",
-        "udl",
-    }
-)
-
-_PHONETIC_WORD_ALLOWED_FIELDS = _PHONETIC_WORD_STRING_FIELDS | {
-    "phonrec-musical-gaya-ogc",
-    "phonrec-varika-but-silent",
-}
+def _chanted_words(verse: analysis_reader.Verse, out: list) -> None:
+    """Append all displayed forms, preserving branch and repeated-row multiplicity."""
+    out.extend(verse.readings())
 
 
-def _validate_phonetic_word(node: dict) -> None:
-    """Validate one current Phonetic MAM chanted-word record."""
-    actual = set(node)
-    if not _PHONETIC_WORD_REQUIRED_FIELDS <= actual:
-        missing = sorted(_PHONETIC_WORD_REQUIRED_FIELDS - actual)
-        raise SurveyProblem(
-            f"Phonetic MAM chanted word lacks fields {missing}: {node!r}"
-        )
-    if not actual <= _PHONETIC_WORD_ALLOWED_FIELDS:
-        unexpected = sorted(actual - _PHONETIC_WORD_ALLOWED_FIELDS)
-        raise SurveyProblem(
-            f"Phonetic MAM chanted word has unclassified fields {unexpected}: {node!r}"
-        )
-    for field in actual & _PHONETIC_WORD_STRING_FIELDS:
-        if not isinstance(node[field], str):
-            raise SurveyProblem(
-                f"Phonetic MAM chanted-word field {field!r} is not text: {node!r}"
-            )
-    if (
-        "phonrec-musical-gaya-ogc" in node
-        and type(node["phonrec-musical-gaya-ogc"]) is not int
-    ):
-        raise SurveyProblem(
-            "Phonetic MAM chanted-word field 'phonrec-musical-gaya-ogc' is not an"
-            f" integer: {node!r}"
-        )
-    if (
-        "phonrec-varika-but-silent" in node
-        and node["phonrec-varika-but-silent"] is not True
-    ):
-        raise SurveyProblem(
-            "Phonetic MAM chanted-word field 'phonrec-varika-but-silent' is not true:"
-            f" {node!r}"
-        )
+def _chanted_word_events(verse: analysis_reader.Verse, out: list) -> None:
+    """Append displayed forms and intervening displayed layout markers."""
+    out.extend(verse.events())
 
 
-def _chanted_words(node: object, out: list[dict]) -> None:
-    """Every chanted-word entry of one verse, the ``cb`` structures flattened.
-
-    A ``cb`` is Phonetic MAM's bracket for something other than a plain run of chanted words
-    -- a paseq, a setuma or petuxa, a qamats note, a dual-cantillation span. The census projects
-    each dual span onto one strand before calling this walk. The same walk
-    ``test_final_stress_vs_phonetic_mam._chanted_words`` makes.
-    """
-    if isinstance(node, dict):
-        _validate_phonetic_word(node)
-        out.append(node)
-    elif isinstance(node, list):
-        for sub in node[1:] if node and node[0] == "cb" else node:
-            _chanted_words(sub, out)
-    elif node is None:
-        # Phonetic MAM uses null as named non-punctuation material between entries.
-        return
-    elif not isinstance(node, str):
-        raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
+def _select_qamats_reading(verse: analysis_reader.Verse) -> analysis_reader.Verse:
+    """Select the displayed qamats-dal branch once for the MAM census."""
+    return verse.select(qamats=analysis_reader.QAMATS_DAL)
 
 
-def _chanted_word_events(node: object, out: list[object]) -> None:
-    """The same chanted-word sequence, retaining material between its entries.
-
-    ``_chanted_words`` is the broad census walk, intentionally omitting everything other than
-    entries. The individual-case page needs narrower context for a post-stress record: an
-    intervening paseq/legarmeh glyph is part of the reason its ``vayomer`` cases are distinct.
-    Retaining all other material here makes an unexpected future gap a survey failure rather than
-    an omission.
-    """
-    if isinstance(node, dict):
-        _validate_phonetic_word(node)
-        out.append(node)
-    elif isinstance(node, list):
-        for sub in node[1:] if node and node[0] == "cb" else node:
-            _chanted_word_events(sub, out)
-    elif isinstance(node, str) or node is None:
-        out.append(node)
-    else:
-        raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
-
-
-def _compound_marker(payload: object) -> str | None:
-    """The marker at the head of a Phonetic MAM compound-bracket payload."""
-    if (
-        isinstance(payload, list)
-        and payload
-        and isinstance(payload[0], list)
-        and len(payload[0]) == 1
-        and isinstance(payload[0][0], str)
-    ):
-        return payload[0][0]
-    return None
-
-
-def _qamats_variant_branches(payload: object) -> list[object]:
-    """The two validated phonetic readings in one qamats-variant row."""
-    assert _compound_marker(payload) == _CB_QAMATS_MARKER, payload
-    assert isinstance(payload, list)
-    branches = payload[1:]
-    assert len(branches) == 2, payload
-    entries_by_branch = []
-    for branch in branches:
-        entries: list[dict] = []
-        _chanted_words(branch, entries)
-        assert entries and all(
-            one.get("fva") and one.get("jta") for one in entries
-        ), payload
-        entries_by_branch.append(entries)
-    assert {one.get("phonrec-qamats") for one in entries_by_branch[0]} == {
-        "qamats-dal"
-    }, payload
-    assert {one.get("phonrec-qamats") for one in entries_by_branch[1]} == {
-        "qamats-sam"
-    }, payload
-    atom_keys_by_branch = [
-        tuple(
-            atom_key
-            for entry in entries
-            for atom_key in _atom_keys(entry["fva"].split(" ")[0])
-        )
-        for entries in entries_by_branch
-    ]
-    assert atom_keys_by_branch[0] == atom_keys_by_branch[1], payload
-    if len(entries_by_branch[0]) == len(entries_by_branch[1]):
-        for first, second in zip(*entries_by_branch, strict=True):
-            first_word = first["fva"].split(" ")[0]
-            second_word = second["fva"].split(" ")[0]
-            assert _fold_qamats_qatan(
-                _phonetic_mam_join_key(first_word)
-            ) == _fold_qamats_qatan(_phonetic_mam_join_key(second_word)), payload
-            assert (
-                _jta_syllables(first["jta"])[1] == _jta_syllables(second["jta"])[1]
-            ), payload
-    return branches
-
-
-def _select_qamats_reading(node: object) -> object:
-    """Project each qamats-variant row onto its qamats-dal reading for the MAM census.
-
-    The public Phonetic MAM page presents the two phonetic readings in one row for one MAM
-    chanted-word sequence. The census counts that sequence once. The marker is retained as an
-    event so context handling still knows that an annotation stood between neighboring entries.
-
-    Ben's decision, 2026-09-08: select exactly one of the מ:קמץ parameters, ד or ס, never
-    both. The choice need not receive a separate effect analysis; selecting ד here is
-    acceptable, analogous to selecting cant-alef for dual-cantillation templates.
-    """
-    if not isinstance(node, list):
-        return node
-    if node and node[0] == "cb":
-        out = ["cb"]
-        for payload in node[1:]:
-            if _compound_marker(payload) == _CB_QAMATS_MARKER:
-                first_branch = _qamats_variant_branches(payload)[0]
-                out.append(
-                    [
-                        "cb",
-                        [[_CB_QAMATS_MARKER]],
-                        _select_qamats_reading(first_branch),
-                    ]
-                )
-            else:
-                out.append(_select_qamats_reading(payload))
-        return out
-    return [_select_qamats_reading(one) for one in node]
-
-
-def _qamats_variant_facts(node: object) -> Counter:
-    """Counts that prove qamats alternatives are rows, not additional MAM words."""
+def _qamats_variant_facts(verse: analysis_reader.Verse) -> Counter:
+    """Count displayed qamats rows and their two reading populations."""
     facts = Counter()
-    if not isinstance(node, list):
-        return facts
-    if node and node[0] == "cb":
-        for payload in node[1:]:
-            if _compound_marker(payload) == _CB_QAMATS_MARKER:
-                branches = _qamats_variant_branches(payload)
-                entries_by_branch = []
-                for branch in branches:
-                    entries: list[dict] = []
-                    _chanted_words(branch, entries)
-                    entries_by_branch.append(entries)
-                facts["rows"] += 1
-                facts["source_entries"] += sum(map(len, entries_by_branch))
-                facts["mam_chanted_words"] += len(entries_by_branch[0])
-                facts["duplicate_entries"] += sum(
-                    len(entries) for entries in entries_by_branch[1:]
-                )
-            else:
-                facts.update(_qamats_variant_facts(payload))
-        return facts
-    for item in node:
-        facts.update(_qamats_variant_facts(item))
+    for row in verse.rows:
+        if not any(branch.qamats is not None for branch in row.branches):
+            continue
+        first, second = _qamats_branches(row)
+        facts["rows"] += 1
+        facts["source_entries"] += len(first.readings) + len(second.readings)
+        facts["mam_chanted_words"] += len(first.readings)
+        facts["duplicate_entries"] += len(second.readings)
     return facts
 
 
-def _qamats_variant_grouping_differences(node: object) -> list[dict]:
-    """Qamats rows whose two readings divide the atoms into different chanted words."""
+def _qamats_branches(row: analysis_reader.Row):
+    """Validate the two displayed qamats readings before comparing their populations."""
+    assert len(row.branches) == 2, row
+    first, second = row.branches
+    assert (first.qamats, second.qamats) == (
+        analysis_reader.QAMATS_DAL,
+        analysis_reader.QAMATS_SAM,
+    ), row
+    atom_keys = [
+        tuple(key for reading in branch.readings for key in _atom_keys(reading.hebrew))
+        for branch in row.branches
+    ]
+    assert atom_keys[0] == atom_keys[1], row
+    if len(first.readings) == len(second.readings):
+        for left, right in zip(first.readings, second.readings, strict=True):
+            assert _fold_qamats_qatan(_phonetic_mam_join_key(left.hebrew)) == (
+                _fold_qamats_qatan(_phonetic_mam_join_key(right.hebrew))
+            ), row
+            assert _jta_syllables(left.transcription)[1] == (
+                _jta_syllables(right.transcription)[1]
+            ), row
+    return first, second
+
+
+def _qamats_variant_grouping_differences(verse: analysis_reader.Verse) -> list[dict]:
+    """Displayed qamats rows whose alternatives group atoms differently."""
     out = []
-    if not isinstance(node, list):
-        return out
-    if node and node[0] == "cb":
-        for payload in node[1:]:
-            if _compound_marker(payload) == _CB_QAMATS_MARKER:
-                branches = _qamats_variant_branches(payload)
-                entries_by_branch = []
-                for branch in branches:
-                    entries: list[dict] = []
-                    _chanted_words(branch, entries)
-                    entries_by_branch.append(entries)
-                if len(entries_by_branch[0]) != len(entries_by_branch[1]):
-                    out.append(
-                        {
-                            "qamats-dal": [
-                                entry["fva"].split(" ")[0]
-                                for entry in entries_by_branch[0]
-                            ],
-                            "qamats-sam": [
-                                entry["fva"].split(" ")[0]
-                                for entry in entries_by_branch[1]
-                            ],
-                        }
-                    )
-            else:
-                out.extend(_qamats_variant_grouping_differences(payload))
-        return out
-    for item in node:
-        out.extend(_qamats_variant_grouping_differences(item))
+    for row in verse.rows:
+        if not any(branch.qamats is not None for branch in row.branches):
+            continue
+        first, second = _qamats_branches(row)
+        if len(first.readings) != len(second.readings):
+            out.append(
+                {
+                    "qamats-dal": [reading.hebrew for reading in first.readings],
+                    "qamats-sam": [reading.hebrew for reading in second.readings],
+                }
+            )
     return out
 
 
@@ -891,11 +704,11 @@ def _accent_grammar_tokens_by_entry(
     or several tokens: the three MAS types are structural conditions on the syllable after the
     one ``jta`` stress.
     """
-    entries: list[dict] = []
+    entries: list[analysis_reader.Reading] = []
     fragments: list[cwa.Frag] = []
     for event in events:
-        if isinstance(event, dict) and event.get("fva"):
-            word = _phonetic_mam_scanner_word(event["fva"].split(" ")[0])
+        if isinstance(event, analysis_reader.Reading):
+            word = event.scanner_word()
             entries.append(event)
             fragments.append(cwa.Frag(word, uni_to_marks.word_to_marks(word), True))
         elif event == _PHONETIC_MAM_PASOLEG:
@@ -942,94 +755,35 @@ def _intervening_punctuation(
     return tuple(punctuation)
 
 
-_DUALCANT_MARKER = "cb-dualcant"
+CANT_ALEF = analysis_reader.CANT_ALEF
 
-CANT_ALEF = "cant-alef"
-
-CANT_BET = "cant-bet"
+CANT_BET = analysis_reader.CANT_BET
 
 _CANTILLATION_BRANCH_INDEX = {CANT_ALEF: 0, CANT_BET: 1}
 
 
-def _has_dual_cantillation(node: object) -> bool:
-    """Whether the numbered verse has Phonetic MAM's dual-cantillation bracket.
-
-    Structural rather than a list of references: both strands' chanted words reach one entry
-    list. The two Decalogues have most of the dual-cantillation numbered verses, and Genesis
-    35:22 has the other one. A last entry need not have sof pasuq: the numbered-verse boundary
-    need not end both chanted verses.
-    """
-    if isinstance(node, str):
-        return node == _DUALCANT_MARKER
-    if isinstance(node, list):
-        return any(_has_dual_cantillation(sub) for sub in node)
-    if isinstance(node, dict):
-        _validate_phonetic_word(node)
-        return False
-    if node is None:
-        return False
-    raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
+def _has_dual_cantillation(verse: analysis_reader.Verse) -> bool:
+    """Whether a displayed row explicitly names cantillation alternatives."""
+    return any(
+        branch.cantillation is not None for row in verse.rows for branch in row.branches
+    )
 
 
-def _select_cantillation_strand(node: object, cantillation: str) -> object:
-    """Replace each dual span with its cant-alef or cant-bet cantillation strand.
-
-    Phonetic MAM's source writes the alef branch before the bet branch when it emits a
-    ``cb-dualcant`` structure. The explicit names here keep that ordering from becoming an
-    anonymous positional convention in this census.
-    """
-    branch_index = _CANTILLATION_BRANCH_INDEX[cantillation]
-    if isinstance(node, dict):
-        _validate_phonetic_word(node)
-        return node
-    if isinstance(node, str):
-        return node
-    if node is None:
-        return None
-    if not isinstance(node, list):
-        raise TypeError(f"unclassified Phonetic MAM node: {node!r}")
-    if node and node[0] == "cb":
-        out = ["cb"]
-        for payload in node[1:]:
-            if (
-                isinstance(payload, list)
-                and payload
-                and payload[0] == [_DUALCANT_MARKER]
-            ):
-                branches = payload[1:]
-                assert len(branches) == 2, len(branches)
-                out.append(
-                    _select_cantillation_strand(branches[branch_index], cantillation)
-                )
-            else:
-                out.append(_select_cantillation_strand(payload, cantillation))
-        return out
-    return [_select_cantillation_strand(one, cantillation) for one in node]
+def _select_cantillation_strand(verse, cantillation):
+    """Select the named displayed cantillation alternatives."""
+    return verse.select(cantillation=cantillation)
 
 
-def _dual_cantillation_groups(node: object) -> list[list[list[dict]]]:
-    """The two branches of each dual-cantillation group in a numbered verse."""
+def _dual_cantillation_groups(verse: analysis_reader.Verse) -> list[list[list]]:
+    """Both cantillation alternatives, including each displayed qamats alternative."""
     out = []
-    if not isinstance(node, list):
-        return out
-    if node and node[0] == "cb":
-        for payload in node[1:]:
-            if (
-                isinstance(payload, list)
-                and payload
-                and payload[0] == [_DUALCANT_MARKER]
-            ):
-                branches = []
-                for branch in payload[1:]:
-                    entries: list[dict] = []
-                    _chanted_words(_select_qamats_reading(branch), entries)
-                    branches.append(entries)
-                out.append(branches)
-            else:
-                out.extend(_dual_cantillation_groups(payload))
-    else:
-        for item in node:
-            out.extend(_dual_cantillation_groups(item))
+    for row in verse.rows:
+        if not any(branch.cantillation is not None for branch in row.branches):
+            continue
+        for qamats in dict.fromkeys(branch.qamats for branch in row.branches):
+            branches = [branch for branch in row.branches if branch.qamats == qamats]
+            assert [branch.cantillation for branch in branches] == [CANT_ALEF, CANT_BET]
+            out.append([list(branch.readings) for branch in branches])
     return out
 
 
@@ -1037,8 +791,8 @@ def _dual_template_entry_ids(verse: object, cantillation: str) -> set[int]:
     """The selected branch's entries that sit inside dual-cantillation templates.
 
     Entry identity, rather than a spelling key, keeps two equal-looking chanted words distinct
-    when a numbered verse repeats them.  The selected branch remains made of the source
-    dictionaries, so its entries have these same identities after
+    when a numbered verse repeats them.  The selected branch retains the same
+    temporary Reading objects, so its entries have these identities after
     ``_select_cantillation_strand`` projects the whole numbered verse.
     """
     assert cantillation in _CANTILLATION_BRANCH_INDEX, cantillation
@@ -1058,12 +812,8 @@ def _dual_cantillation_facts(verse: object) -> dict:
     same_groups = []
     for group in groups:
         assert len(group) == 2, len(group)
-        first = tuple(
-            _phonetic_mam_join_key(one["fva"].split(" ")[0]) for one in group[0]
-        )
-        second = tuple(
-            _phonetic_mam_join_key(one["fva"].split(" ")[0]) for one in group[1]
-        )
+        first = tuple(_phonetic_mam_join_key(one.hebrew) for one in group[0])
+        second = tuple(_phonetic_mam_join_key(one.hebrew) for one in group[1])
         if first == second:
             same_groups.append(group)
     assert (
@@ -1074,7 +824,7 @@ def _dual_cantillation_facts(verse: object) -> dict:
         "dual_group_count": len(groups),
         "same_chanted_word_group_count": len(same_groups),
         "first_same_chanted_word_group": [
-            [one["fva"].split(" ")[0] for one in branch] for branch in first_group
+            [one.hebrew for one in branch] for branch in first_group
         ],
     }
 
@@ -1115,29 +865,6 @@ _NOT_IN_THE_JOIN_KEY = re.compile(
     "[\u0591-\u05af\u05bd\u05bf\u05c0\u05c3-\u05c5\u034f\ufb1e]"
 )
 
-_LEGACY_PHONETIC_MAM_ANNOTATIONS = (
-    hpo.SHEVA + hpu.MCIRC,
-    hpo.DAGOMOSD + hpu.UPDOT,
-)
-
-
-def _fold_phonetic_mam_annotations(word: str) -> str:
-    """Fold Unicode 18 Phonetic MAM annotations to their generic points."""
-    if any(pair in word for pair in _LEGACY_PHONETIC_MAM_ANNOTATIONS):
-        raise SurveyProblem("legacy Phonetic MAM annotation pair")
-    return word.replace(hpo.SHEVA_NA, hpo.SHEVA).replace(hpo.DAGESH_XAZAQ, hpo.DAGOMOSD)
-
-
-def _phonetic_mam_scanner_word(word: str) -> str:
-    """Give the accent scanner the same mark stream as the retired annotations did.
-
-    ``uni_to_marks.word_to_marks`` dropped the old U+05B0 and U+05AF pair but retained the
-    old pair's U+05C4 as a punctum while dropping its U+05BC.  Preserve that established
-    scanner input without accepting or reconstructing either retired source pair.
-    """
-    _fold_phonetic_mam_annotations(word)
-    return word.replace(hpo.SHEVA_NA, hpo.SHEVA).replace(hpo.DAGESH_XAZAQ, hpu.UPDOT)
-
 
 def _phonetic_mam_join_key(word: str) -> str:
     """``word`` reduced to what both texts must agree on: letters, points, and the maqafs.
@@ -1145,8 +872,7 @@ def _phonetic_mam_join_key(word: str) -> str:
     Phonetic MAM's tilde for MAM's gray maqaf is folded onto the maqaf it stands for, so a
     compound joined by one matches the compound MAM has.
     """
-    generic = _fold_phonetic_mam_annotations(word)
-    return _NOT_IN_THE_JOIN_KEY.sub("", generic).replace(hpu.NU_GMAQ, MAQAF)
+    return _NOT_IN_THE_JOIN_KEY.sub("", word).replace(hpu.NU_GMAQ, MAQAF)
 
 
 def _mam_join_key(word: str) -> str:
@@ -1160,7 +886,7 @@ def _parse(word: str, jta: str) -> dict:
     Raises ``SurveyProblem`` where the two sides' syllable counts disagree, which is the check
     that makes reading a syllable off the ``jta`` and a nucleus off the Hebrew safe.
     """
-    letters = _letters(_fold_phonetic_mam_annotations(word))
+    letters = _letters(word)
     nuclei = _nuclei(letters)
     syllables, stressed = _jta_syllables(jta)
     if len(nuclei) != len(syllables):
