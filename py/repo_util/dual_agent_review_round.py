@@ -32,7 +32,11 @@ def git(repo: Path, *args: str, check: bool = True) -> subprocess.CompletedProce
     environment = os.environ.copy()
     environment.update(GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="Never")
     result = subprocess.run(
-        git_command(repo, *args), capture_output=True, env=environment, timeout=60
+        git_command(repo, *args),
+        capture_output=True,
+        env=environment,
+        timeout=60,
+        creationflags=subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0,
     )
     if check and result.returncode:
         raise ReviewError(result.stderr.decode("utf-8", errors="replace").strip())
