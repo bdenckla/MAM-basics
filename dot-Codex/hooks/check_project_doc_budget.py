@@ -117,8 +117,9 @@ def _string_list(config_path: Path, key: str, value: object) -> tuple[str, ...]:
 
 def _read_hook_input() -> dict[str, object]:
     try:
-        value = json.load(sys.stdin)
-    except (json.JSONDecodeError, OSError) as exc:
+        # Bytes, so that json decodes them as UTF-8 whatever stdin's text encoding is.
+        value = json.load(sys.stdin.buffer)
+    except (json.JSONDecodeError, UnicodeDecodeError, OSError) as exc:
         raise InstructionCheckError(f"cannot read SessionStart input: {exc}") from exc
     if not isinstance(value, dict):
         raise InstructionCheckError("SessionStart input must be a JSON object")
