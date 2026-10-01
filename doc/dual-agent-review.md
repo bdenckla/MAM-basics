@@ -357,6 +357,17 @@ relay only for an explicitly started round. Close-out and integration remain man
 The optional facts-only rule from turn 03 is recorded per round. It currently
 defaults to the existing review scope, pending Ben's separate choice.
 
+### The first automated round, 2026-10-01
+
+**Closed and remediated on main.** The first automated public exchange closed after five
+turns. Ben approved C1–C6 and the surviving remediation scope; the final merged tree passed
+1,056 tests and 60 subtests, with 5 skips, and the required 57-step mega produced no tracked
+diff. Main integration and canonical deployment succeeded. The actual home registration is
+retained inactive/manual, and the maintained round records executed close-out. The enabled
+scheduler skips that registration; PAUSE and evidence remain. The sole
+`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records dispositions and outcomes.
+The numbered turns and finished comparison are unchanged; private rollout remains separate.
+
 ### The September 10 round
 
 The September 10 exchange closed, and its remediation outcome is recorded in

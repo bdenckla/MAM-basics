@@ -5,7 +5,9 @@ the first production rollout and the approved comparison are complete. All five
 production handoffs, acknowledgment closure and a subsequent scheduled idle tick
 are independently verified on 2026-10-01. D13 and notification receipt are confirmed.
 Private readiness P7 and concrete private kickoff decisions remain pending.
-Manual close-out, review integration and remediation retain their separate procedure.
+The approved first-review remediation and manual close-out are completed on main, with
+canonical deployment and inactive/manual home registration verified. Their separate
+close-out plan and sole turn-01 update record the exact scope and results.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.

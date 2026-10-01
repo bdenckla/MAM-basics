@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: runbook; D13 and notification receipt confirmed; all five first-production handoffs, acknowledgment closure and a subsequent scheduled idle tick independently verified 2026-10-01; approved blind comparison recorded; private readiness P7 and concrete private kickoff decisions remain pending.
+State: runbook; D13 and historical notification receipt confirmed; first-production exchange, approved comparison and first-review remediation completed 2026-10-01; revised code integrated/deployed, round inactive/manual; private readiness P7 and concrete private kickoff decisions remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The initial implementation's sole development checkout was
@@ -25,6 +25,15 @@ Ben approved the first automated round's remediation scope and choices C1–C6 o
 the turn-01 update owns later dispositions. The following operations describe the revised
 implementation. Historical rollout observations below retain their original checkout and
 validation scope.
+
+The first-review remediation is completed on main. The final merged-tree suite passed 1,056
+tests and 60 subtests, with 5 skips; the 57-step mega passed with no tracked output change.
+Canonical deployment and the complete configuration check passed. The actual home registry
+retains this round inactive/manual, with PAUSE and original evidence preserved. An instrumented
+tick against that registry verified zero fetch/launch/notice/round calls; the enabled Windows
+task uses the same home source and default configuration. The sole turn-01 update is the
+actual-result receipt. These checks do not assert new live Windows notification receipt or
+private rollout readiness.
 
 `in/dual_agent_review_automation.json` sets launch rules, caps, timeouts, and CLI
 discovery; `--automation-config <absolute-path>` selects an explicit alternative.

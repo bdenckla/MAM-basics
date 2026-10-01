@@ -1,6 +1,6 @@
 # Plan: close out and remediate the first automated relay review
 
-State: live; approved remediation verified 2026-10-01; main integration, deployment and home-registry transition pending.
+State: executed 2026-10-01; approved remediation, main integration, deployment and home-registry transition completed.
 
 Codex prepared this plan on 2026-10-01 from the supplied successor prompt. The predecessor
 quoted Ben's latest instruction as: "Please give a prompt for a session that will do (or at
@@ -447,14 +447,14 @@ new decisions by Ben. Preserve the two completed September 29 reviews and Ben's 
 | Exact checkout/ancestry, current worker occupancy and round-specific pause | implemented; repeated audits found no blocker and PAUSE preserved |
 | C1 public checking capability and quoted wording | implemented; both bounded worker probes executed the exact interpreter |
 | C2 trusted-worker boundary and quoted wording | implemented in maintained plan/runbook |
-| C3 present-state lifecycle and quoted wording | implemented and verified by protocol/two-round oracles; actual home transition pending |
+| C3 present-state lifecycle and quoted wording | implemented; actual home registration inactive/manual, terminal round State recorded |
 | C4 counter-argument before acknowledgment and quoted wording | implemented and independently verified for both Agent-1 assignments |
 | C5 current nonpossessive subject and quoted wording | implemented; historical subjects preserved |
 | C6 bounded identity resolver and quoted wording | implemented; independent destination/origin split checks passed |
 | Defect fixes and approved policy implementation | implemented; focused tests and final suite passed |
 | Sole turn-01 update and exact base pointer | implemented; existing base pointer preserved, results appended to the one update |
-| Suite after final test-risky change and final mega/integration | implemented verification; final merged-tree suite and 57-step mega passed, integration pending |
-| Actual home-registry deactivation and canonical-agent deployment | active; required after main push |
+| Suite after final test-risky change and final mega/integration | implemented; final merged-tree suite and 57-step mega passed, clean home fast-forward pushed to main |
+| Actual home-registry deactivation and canonical-agent deployment | implemented; deployment/check passed, actual home tick skipped the inactive registration |
 | Preserved turns, finished comparison, console fix, manual reviews and private boundary | implemented; original 26 control-evidence hashes unchanged |
 
 **Verified executable tree, 2026-10-01:** remediation `2e120b85` and fresh-main merge
@@ -463,6 +463,18 @@ new decisions by Ben. Preserve the two completed September 29 reviews and Ben's 
 60 subtests, with 5 existing skips, and the mega passed all 57 steps. It produced no tracked
 diff. The single turn-01 update records the paths, gates and qualifications. Main integration,
 deployment, actual home deactivation and the terminal State remain pending at this entry.
+
+**Execution completed, 2026-10-01.** Verified record
+`5a5d80b853ba07ef24ff0bdbb3f8382e1604518d` fast-forwarded the clean home main and was
+pushed normally. Canonical deployment from that fresh origin/main tree succeeded, updating
+one agent file; the complete check returned zero problems. The actual home deactivate action
+retained the entry and evidence, recording inactive/manual ownership and the verified closed
+tip. The enabled Windows scheduler invokes this same home source and default configuration.
+An instrumented actual-registry tick returned zero with no fetch, launch, notification or
+round visit; registry and round-control bytes stayed unchanged. PAUSE and all 26 original
+evidence hashes were preserved. The existing follow-up was left paused. The sole turn-01
+update carries the detailed actual-result receipt; this documentation completion records the
+approved terminal State without changing the verified executable tree or generated products.
 
 **Frozen approval snapshot, 2026-10-01.** Ben approved each recommended choice C1 through C6,
 then selected "Approve; prepare a fresh-session execution prompt (Recommended)" in the

@@ -1,8 +1,8 @@
 # Updates to the first automated relay review's initial findings
 
-State: open; first entry 2026-10-01.
+State: closed; first entry and remediation completion 2026-10-01.
 
-**Remediation is verified; main integration, deployment and home deactivation remain pending.**
+**Approved remediation and close-out are completed on main; deployment and home deactivation are verified.**
 The execution entry below records the current disposition. Findings 1 and 11 remain withdrawn.
 
 ## Close-out preparation by Codex, 2026-10-01
@@ -287,3 +287,47 @@ to main will canonical deployment and the home entry point's deactivate action r
 **Effective base State, 2026-10-01:** acted on; every surviving approved finding is remediated
 and verified under its recorded qualification; findings 1 and 11 remain withdrawn. Integration
 and lifecycle completion are pending, so the maintained round still records State: live.
+
+## Completed close-out by Codex, 2026-10-01
+
+**Completed on main; every surviving approved finding is fixed under its recorded
+qualification.** Findings 1 and 11 remain withdrawn. The clean home main fast-forwarded to
+verified `5a5d80b853ba07ef24ff0bdbb3f8382e1604518d` and the normal push succeeded.
+Fresh origin/main then supplied canonical deployment: `USER_CONFIG_DEPLOYED_COUNT=1`,
+followed by `USER_CONFIG_PROBLEM_COUNT=0`. The revised canonical
+`dot-claude/agents/dual-agent-review-turn.md` is deployed; live instruction files were not
+edited directly.
+
+The revised home entry point ran `--dual-agent-review deactivate` for this exact round.
+Its actual registry retains the entry with `state: inactive`, `ownership: manual`,
+`closed_tip: 5a5d80b853ba07ef24ff0bdbb3f8382e1604518d` and stored timestamp
+`2026-10-01T18:04:47.728712-04:00`. The transition evidence is retained at
+`C:/Users/BenDe/GitRepos2/MAM-basics/.novc/dual-agent-review/2026-10-01/deactivation-1359b6e8192044f792c878b27a16802c.json`.
+PAUSE remains present; no in-flight/setup marker or dispatcher lock was removed to clear a
+gate. Both worktrees, the branch and all original control evidence remain recoverable.
+
+The instrumented tick imported the home module, asserted its actual CONTROL path and inactive
+manual registration, and forbade fetch/launch/notify/round visits. It returned zero with every
+counter zero and unchanged registry/round-control bytes. The Windows task's inspected action
+uses the home `.venv/Scripts/pythonw.exe`, home `py/main_repo_util.py`,
+`--dual-agent-review tick` and home working directory, with no alternate configuration. It
+remains Ready, enabled, with IgnoreNew. This proves inactive dispatch handling for the
+scheduler's source and registry; it does not claim a new worker exchange or notification
+receipt. The existing follow-up was left paused and received no automation update.
+
+The final ownership/evidence audit found clean home/development checkouts, no runtime
+blockers and all original 26 SHA-256 hashes unchanged. The round now records
+`State: executed 2026-10-01; close-out completed`; its parser/lint already admits this
+terminal state and it cannot dispatch. This final documentation commit records those actual
+outcomes. The executable and generated-product trees remain the verified `4251e8f6` tree,
+so the 1,056-pass/60-subtest suite and 57-step mega results remain applicable.
+The existing census and deployment lints passed on the final terminal round (2 passed,
+13 deselected) with `core.longpaths=false` and explicit-encoding checks; the final tracked
+whitespace check passed. Their public evidence is retained in
+`.novc/relay-remediation-focused-4cc8444380f7` in the development worktree.
+
+**Effective base State, 2026-10-01:** acted on; approved remediation, main integration,
+canonical deployment and manual inactive lifecycle completed. The five numbered turns,
+comparison/rehearsal evidence, both September 29 reviews, console fix and Ben's separate
+follow-up work are preserved. Private readiness/kickoff, excluded comparison proposals,
+general hardening, performance tuning and cleanup remain outside this completed scope.
