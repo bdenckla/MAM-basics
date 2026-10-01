@@ -628,7 +628,9 @@ false since 2026-08-12 (flagged site 12), and the census found eighteen more mai
 that call a page a folio or a leaf. The plan adds those to question 5's conforming edits, as it does
 the sites that the first session's later checks found, each marked as found after Ben's answer. No
 MAM-private content was read. Every assistant record of both sessions' transcripts
-gives Claude's `max` effort level; the app's session record for the second session gives `high`.
+gives Claude's `max` effort level; the app's session record for the second session gave `high` when
+read at 17:17 New York time, and "The app's effort record and the clone's checkouts, 2026-09-30",
+below, records what followed.
 
 **Verification of this entry.** This entry and the plan are one commit, and nothing else changes.
 No source file, product or generator changes, and no suite, mega or generator run is owed for these
@@ -983,3 +985,140 @@ Then the closing records: the entry "Final integration and configuration deploym
 the plan's State, finding 2's entry in the 2026-09-26 close-out record with its two in-place
 corrections, and the step-2 session's correction and entry, verified. This update remains
 `State: open` while its base survives.
+
+## The app's effort record and the clone's checkouts, 2026-09-30
+
+Recorded by Claude on 2026-10-01, New York time, in the session executing close-out steps 3 and 4,
+at the request of the second step-2 session, which drafted this entry on 2026-09-30 after the
+approval entry above was committed at `a849e068`; Ben had suggested to that session that it ask
+this session to do the writes. Ben then selected "Record it, verified", as "Approved remediation
+implemented; final gates pending, 2026-10-01" records. Every fact below was checked before it was
+written, as the last paragraph describes, which also names the draft's three corrections. All times
+are New York time.
+
+**Effort.** Every assistant record of the second step-2 session's transcript gives `max`: 768
+before its context was compacted at 22:24:11, and 28 after, through its last record at 22:33:07.
+The first step-2 session's 377 assistant records also all give `max`. The app's session record for
+the second session gave `high` when that session read it at 17:17, ten minutes after its creation
+at 17:07:26. At 22:17 Ben wrote to it: "UI says "high" just now. I set it to Max. Seems like
+something is slipping it downward.", and at 22:19: "By "I set it to Max" I meant "I set it back to
+Max" just now." The record gave `max` when the session read it at 22:18, and again at 22:27, after
+the compaction. Ben's user-level settings file, `~/.claude/settings.json`, last written at 11:43
+on 2026-09-30, sets `CLAUDE_CODE_EFFORT_LEVEL` to `max` in its `env` block, which is consistent
+with the responses running at `max` while the record gave `high`. At 22:20 Ben asked: "Perhaps it
+dropped back to high because the session is about to be compacted?" The record already gave `high`
+at 17:17, while the context was small, and it gave `max` after the compaction, so an approaching
+compaction does not explain it. What set the record to `high` is not established.
+
+**Checkouts.** The first and second step-2 sessions and the steps 3–4 session all ran in the full
+clone `C:/Users/BenDe/GitRepos2/MAM-basics`. Its reflog records five checkouts on 2026-09-30. The
+first, at 15:05:00 from the carrier to `main`, is recorded under "Detailed remediation plan
+prepared; approval pending, 2026-09-30". The other four bear on D11:
+
+1. At 15:07:34, from `main` to the carrier, about a second before the app's recorded creation of
+   the first step-2 session at 15:07:35, whose record names `dar-2026-09-29` as its source branch.
+2. At 22:14:20, from the carrier to `main`, followed in the same second by a fast-forward of `main`
+   to `0f745369`: the second step-2 session's D11 switch, issued at 22:14:19, after it pushed
+   `a849e068`.
+3. At 22:18:24, from `main` to the carrier, in the same second as the app's recorded creation of
+   the steps 3–4 session, whose record names `dar-2026-09-29` as its source branch.
+4. At 22:20:08, from the carrier to the carrier: the second step-2 session's own `git switch`,
+   issued at 22:20:06, which changed nothing.
+
+No command that any Claude transcript or Codex rollout records from 15:06:30 to 15:08:30 or from
+22:17:30 to 22:19:00 switches or checks out a branch. Checkouts 1 and 3 each coincide with the
+app's creation of a session whose record names `dar-2026-09-29` as its source branch, which is
+consistent with the app checking out a new session's source branch in that session's working
+directory; the app itself was not examined. The app's record of the second step-2 session names no
+source branch, and the reflog records no checkout when that session was created at 17:07:26. A full
+clone that D11 has returned to `main` can therefore be on the carrier again once the app creates a
+session from the carrier. The second step-2 session left the clone on the carrier, where the steps
+3–4 session was working, instead of switching it back to `main` a second time.
+
+**Two writers, briefly.** From 22:20:33 to 22:22:42 the second step-2 session had uncommitted
+edits, which it had also staged, to this update file in that clone: an earlier draft of this entry.
+The steps 3–4 session was working in the clone at the time. At 22:22:00 Ben wrote to the second
+step-2 session: "BTW the "steps 3-4" session is running concurrently with this one". By 22:22:42
+that session had saved its staged edits as a patch outside the repository and restored the file
+to `a849e068`, leaving the clone clean, and it wrote nothing in either checkout after that. The
+steps 3–4 session's transcript records no read of this file and no `git status` of that clone
+during that interval; its first edit came at 22:29.
+
+**Also corrected in place in this file**, in the entry "Detailed remediation plan prepared;
+approval pending, 2026-09-30": "the app's session record for the second session gives `high`." now
+reads "the app's session record for the second session gave `high` when read at 17:17 New York
+time, and "The app's effort record and the clone's checkouts, 2026-09-30", below, records what
+followed."
+
+**How this was verified.** The checkouts and their times come from the clone's reflog, read with
+`git reflog --date=iso`. The sessions' creation times, source branches and effort values come from
+the app's session records, read through its session-management tool on 2026-10-01, and from the
+second step-2 session's own reads of them, which its transcript records with their results. The
+settings line and the file's last-write time were read from the file on 2026-10-01. Ben's words,
+the commands, the edits and the record counts come from the transcripts of the three sessions;
+the search for checkout commands covered every Claude transcript written since 2026-09-29 and
+every Codex rollout file under `~/.codex`. Three of the draft's details are corrected here. Its
+count of "25 after, counted at 22:27" could not be reproduced: 22 records after the compaction
+precede 22:28, and 28 precede the transcript's last record, so the count above covers the whole
+transcript. Its "four checkouts on 2026-09-30" are five, the first of which the earlier entry
+records. Its end of the edit interval, 22:22:41, is given here as 22:22:42, when the restore's
+result returned.
+
+## Final integration and configuration deployment completed, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time. **Completed: final integration and the
+configuration deployment, so close-out steps 3 and 4 are complete.** This entry supersedes the
+pending items that "Approved remediation implemented; final gates pending, 2026-10-01" names in its
+first paragraph and under "What remains". Every deferral, no-action disposition and unresolved
+question there remains as recorded.
+
+**The final merge.** A fetch found `origin/main` at `c3eb743c`, five commits past the carrier's
+last merge base, `0f745369`: the review relay's toast fix and production kickoff (`1bfceff4`), its
+registered relay record (`d488f405`), the captured and translated Wikisource dagesh discussion
+(`7577b56d`, merged by `1158938e`) and the private follow-up register rule (`c3eb743c`). `e05db0c0`
+merged it into the carrier without conflict and was pushed; the one file both sides changed,
+`doc/dual-agent-review.md`, merged automatically, and its close-out paragraph reads as both sides
+wrote it.
+
+**The mega.** `./.venv/Scripts/python.exe py/main_0_mega.py`, run from the clone's root with no
+`REPOS_ROOT` at `e05db0c0`, from 07:27:06 to 07:31:33 New York time, completed all 52 steps in
+260.6 seconds with exit status 0 and left the tree clean, with no tracked or untracked change, so
+no generated-output commit was owed. Its pinned Graphviz check passed. Every output that "Outputs
+expected to stay unchanged" names therefore reproduces the committed one, and the five generated
+changes that the implementation entry explains stand as committed.
+
+**The full suite.** `./.venv/Scripts/python.exe py/main_test.py -q`, run at `e05db0c0` after the
+mega, from 07:32:00 to 07:35:03 New York time, passed 1,016 tests, with 5 skipped and 60 subtests
+passed, in 181.08 seconds, and left the tree clean. It covers `9588700f`'s test change and the
+executable changes the merge brought from `origin/main`.
+
+**Integrated and pushed.** A fetch then found `origin/dar-2026-09-29` at `e05db0c0`, exactly the
+commit the mega and the suite verified, and `origin/main` still at `c3eb743c`, its ancestor. `main`
+in `C:/Users/BenDe/GitRepos2/MAM-basics`, clean at `0f745369`, was fast-forwarded to `e05db0c0`
+and pushed normally at 07:35:27, moving `origin/main` from `c3eb743c` to `e05db0c0`. No merge in
+`main`, history rewrite or forced push was used. The push carries the changes to the distributed
+products; the changed pages under `gh-pages/` reach the published site at its next scheduled or
+dispatched publication.
+
+**Deployed and checked.** From that clone on `main`,
+`./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config` fetched and validated its
+source at `refs/remotes/origin/main@e05db0c0`, deployed 16 changed mappings and reported all 22
+mappings clean. The read-only `--sync-user-config --check` that followed, from the same freshly
+fetched source, reported all 22 clean and `USER_CONFIG_PROBLEM_COUNT=0`, with exit status 0. Live
+instructions, hooks and skills changed only through the deployment command.
+
+**Closing records.** This entry is committed with the plan's State, now "State: executed
+2026-10-01.", so the plan is a receipt; finding 2's entry "Execution rows that overstated what
+landed or later became false, 2026-10-01" in `doc/dual-agent-review-2026-09-26-turn-01-claude-update.md`,
+with its two in-place corrections; and the step-2 session's entry above, with its in-place
+correction. These records change no source, product or canonical configuration, so the suite, mega
+and deployment evidence above stands. The commit is pushed to `origin/dar-2026-09-29`, `main` is
+fast-forwarded to it and pushed, and the read-only `--sync-user-config --check` is repeated.
+
+**Preserved for separate cleanup.** Both carriers, `dar-2026-09-29` in
+`C:/Users/BenDe/GitRepos2/MAM-basics` and in `C:/Users/BenDe/GitRepos/MAM-basics`, and the remote
+branch `origin/dar-2026-09-29` remain; retiring a local carrier needs Ben's approval, and deleting
+the remote branch is separate outward-facing cleanup that needs its own authorization. The clone
+`C:/Users/BenDe/GitRepos2/MAM-basics` is left on `main`.
+
+This update remains `State: open` while its base survives.
