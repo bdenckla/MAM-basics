@@ -148,9 +148,12 @@ decision before close-out proceeds. Step 1 of
 [`doc/PLAN-close-out-review-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-close-out-review-2026-09-08.md)
 is the worked acknowledgment and closure decision.
 
-**Every turn is review only and, in this repository's series, uses public evidence only.** It
-performs no remediation and does not rewrite an earlier turn. A correction belongs in the turn that
-accepts the correction.
+**Every turn is review only and, in this repository's series, uses public evidence only.**
+"Public evidence only" means that the turn reads nothing in MAM-private: the series'
+public-only property, as `doc/periodic-review.md`, "Two standing properties of the series",
+states it. A claim that only an agent transcript can check stays out of a tracked turn under
+D11, "The shared origin branch" below. A turn performs no remediation and does not rewrite an
+earlier turn. A correction belongs in the turn that accepts the correction.
 Turn 2's initial reconciliation is the specified append to the argument, not permission to edit
 the original findings; subsequent corrections to that table are recorded in subsequent turns.
 The close-out reads the table together with those corrections and Ben's decisions.
@@ -175,8 +178,9 @@ Load `iterative-document-editing`, “Finished receipts and maintained documents
 update sibling, line-four pointer, passage identification and effective State procedure.
 Its “MAM-basics and MAM-private State conventions” section owns non-review State forms;
 “Review filenames and State lines” below owns review-specific exceptions.
-Present-state documents stay true in place. Load `mam-repository-topology`, “Manual document
-retirement”, for receipt-family retirement and Ben-authorized reclassification.
+Present-state documents stay true in place. Load
+`mam-repository-topology/references/repository-maintenance.md`, “Manual document retirement”, for
+receipt-family retirement and Ben-authorized reclassification.
 
 ### The shared origin branch — Ben's decisions, 2026-09-09, 2026-09-28 and 2026-09-29 (D11, revised)
 
@@ -342,9 +346,30 @@ turns. Turn 05 accepted every conclusion and disposition of turn 04, and archive
 [turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md) acknowledged that
 closure without an objection. Ben approved the complete close-out decision package on 2026-09-17;
 the decisions are recorded in
-`doc/dual-agent-review-2026-09-16-turn-01-claude-update.md`. The package makes the shared review
-branch subject to the backup exception recorded above and reserves all other remediation for a
-fresh-task plan with concrete editorial wording.
+`doc/dual-agent-review-2026-09-16-turn-01-claude-update.md`. The package made the shared review
+branch subject to the user-level backup exception that D11 then named; D11 now puts the review
+branch under the user-level shared-remote-branch exception instead. The package reserved all other
+remediation for a fresh-task plan with concrete editorial wording.
+
+### The September 29 round
+
+The September 29 round reviewed MAM-basics `f4d81285..7549ebf7`. Claude was Agent 1 and wrote the
+odd turns; Codex was Agent 2 and wrote the even turns. Every turn ran in the full clone
+`C:/Users/BenDe/GitRepos2/MAM-basics`, on a carrier for `origin/dar-2026-09-29`, under Ben's
+decision of 2026-09-29 that by default a review runs in whatever checkout its session is already
+in. Turn 01's session had first made a linked worktree for the round and run only the suite
+there; at Ben's instruction that session removed the worktree before any of turn 01's review
+streams started. Turns 04 to 10 also settled the times that turns 03 and 05 gave for their own
+work: turn 03's two New York times, for its writing and for its listing of an untracked file,
+fell after its own commit; turn 05's "at about 16:15" was shown neither wrong nor right; and
+the public record, meaning Git's commit times and GitHub's activity record for the branch,
+supports only an interval for each turn. Turns 09 to 11 ran at each agent's top effort level, as
+Ben decided on 2026-09-30. Turn 10 accepted every point of turn 09 and listed no unresolved
+disagreement, and turn 11 acknowledged turn 10 without an objection. Ben answered the close-out
+package's six questions and, in its seventh, approved the package on 2026-09-30; his decisions
+are recorded in `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`. The package
+reserved every fix for the fresh-task remediation plan,
+`doc/PLAN-remediate-review-findings-2026-09-29.md`.
 
 ### Remediation approvals: D7 and the risk ordering
 
