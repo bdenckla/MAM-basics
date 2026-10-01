@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 approved; production rollout pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; production enabled; scheduler registration pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -21,8 +21,8 @@ retain their recorded prerequisites.
 
 `in/dual_agent_review_automation.json` sets launch rules, caps, timeouts, and CLI
 discovery; `--automation-config <absolute-path>` selects an explicit alternative.
-`production_enabled` remains false pending visual notification receipt;
-both production kickoff and scheduler registration refuse. D13 is approved.
+`production_enabled` is true after the real-worker rehearsal, collision probe
+and Ben's confirmation of corrected notification receipt. D13 is approved.
 Claude discovery checks PATH, `.local/bin`, the ordinary app-bundled CLI, and its
 packaged-app LocalCache layout. Codex
 checks an explicit path, `CODEX_CLI_PATH` in its configuration, then the newest app
@@ -61,6 +61,12 @@ dispatcher approval record and remains a breach.
 The toast helper uses Windows PowerShell's .NET Framework WinRT support in a hidden
 process: the required WinRT types are unavailable in this machine's PowerShell 7.
 Agent shell commands and the registration command still run in PowerShell 7.
+The sender is the installed **Windows PowerShell** identity returned by
+`Get-StartApps`, so notifications appear under Windows PowerShell with the title
+**Dual-agent review**. A disabled notification setting produces `toast-error.txt`;
+a successful submission produces `toast-result.json` with its sender, setting,
+tag, group and immediate notification-history result. API acceptance and history
+evidence do not independently establish that Ben saw a notification.
 
 ## Scheduler registration
 
@@ -69,15 +75,12 @@ with limited privilege and `IgnoreNew` instance handling. `pythonw.exe` starts t
 tick without a console window. Registration remains Ben's action after live worker
 verification. This implementation does not enable an unattended task.
 
-The worker rehearsal and collision probe have passed. Ben's current check is to
-press Win+N and confirm the **Dual-agent review** notification mentioning
-MAM-basics, synthetic round **2026-10-02**, and **remote moved during the turn**.
-That alert is the expected local probe result and needs no review intervention.
-The plan's P6 requires that the toast reaches Ben; the API return alone does not
-establish receipt. After receipt is confirmed, Codex can enable production in the
-tracked configuration and supply the registration command below. The script
-currently refuses registration while that flag is false. A production round
-still requires Ben's approved future window, Agent 1 and kickoff instruction.
+The worker rehearsal, collision probe and notification receipt have passed.
+Ben confirmed the corrected **Dual-agent review** toast under **Windows PowerShell**
+and supplied a screenshot. Production is enabled and this command is ready for
+Ben to run in PowerShell 7 without elevation. The task serves only explicitly
+registered rounds; the current empty registry makes its tick idle. A production
+round still requires Ben's approved future window, Agent 1 and kickoff instruction.
 
 ```powershell
 & C:/Users/BenDe/GitRepos2/MAM-basics/misc/register-dual-agent-review-task.ps1 -Repository C:/Users/BenDe/GitRepos2/MAM-basics
@@ -87,7 +90,8 @@ still requires Ben's approved future window, Agent 1 and kickoff instruction.
 
 The changed Python passed Black. The targeted checks passed 4 tests; the final full
 suite passed 1015 tests, with 5 skips and 60 subtests, using `py/main_test.py -q`.
-The latest run reported no warning. Both PowerShell
+The latest notification-fix run passed the same counts with one warning that
+pytest could not write its local cache; no test failed. Both PowerShell
 scripts passed syntax parsing. No mega generator is reached; `gh-pages/` and all
 `MAM-*` products stayed unchanged.
 
@@ -107,7 +111,7 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 | P3: foreign-file gate | Passed against independent Git status evidence in the local check. |
 | P4: movement and failures | Passed with a real Claude worker: the local mirror advanced mid-process, the gate rejected remote movement, the checkout stayed clean at its original tip, and pause, marker, logs and notification were preserved. Independent bare-repository reads confirmed the dummy commit. The differential worker-push refusal and forced dispatcher push-failure recovery also passed. |
 | P5: closure and cap | The differential three-turn check requested acknowledgment, closed, and did not launch a fourth worker. The real four-turn rehearsal requested turn 05 acknowledgment, stopped at cap 4, and stayed idle with no further commit. The real round did not close. |
-| P6: notifications and hidden launch | Hidden WinRT notification tests returned 0. The completed real collision probe also invoked the toast without recording an error; Ben has been asked to press Win+N and confirm the alert for synthetic round 2026-10-02. Visual receipt is unconfirmed. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
+| P6: notifications and hidden launch | Passed after correcting the sender identity. The hidden helper and dispatcher test both reached Windows notification history. Ben replied "Yes, I see the corrected test" and supplied a screenshot. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
 | P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
 | P8: Codex worktree and instructions | Passed in both real Codex turns: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, and repository and required skill instructions were loaded. All three turn-02 checker reports arrived before the final revisions and dispatcher commit; completion before its first draft write is not established. |
 
@@ -215,16 +219,50 @@ the controller's injection and result receipts remain in the rehearsal home's
 intentionally paused and require no action to resume them.
 
 The source implementation registry is absent;
-no production round was started. The primary clone was not fast-forwarded. Production remains
-disabled pending visual notification receipt; Ben has approved D13. Core commit
+no production round was started. The primary clone was not fast-forwarded. Production is
+enabled after Ben's notification confirmation; Ben has approved D13. Core commit
 `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` was pushed to `main`. Main-sourced
 configuration deployment installed only the new Claude agent file; every existing
 instruction, hook and skill was already clean. The subsequent
 `--sync-user-config --check` returned zero problems.
 Worker fix commit `05e109cf579d97404ff596a1f8ff78394d077c20` is on `origin/main`;
 its complete deployment installed only the changed Claude agent definition and
-the follow-up check again returned zero problems. The latest full suite passed
+the follow-up check again returned zero problems. That implementation suite passed
 1015 tests, 5 skips and 60 subtests without a warning.
+
+## Notification correction and user receipt, 2026-09-30
+
+Fixed: the original helper submitted to `Microsoft.Windows.PowerShell`, an identity
+absent from this machine's installed app list. That notifier reported **Enabled**
+and returned without error, but Ben saw no relay notification. The corrected
+helper resolves the installed sender with `Get-StartApps` and verifies its setting.
+Windows requires a desktop notifier to use the identity of an installed shortcut;
+[Microsoft's desktop notification documentation](https://learn.microsoft.com/en-us/windows/win32/shell/enable-desktop-toast-with-appusermodelid)
+describes that requirement. The corrected hidden helper and dispatcher test
+both recorded their own tags in notification history.
+
+Ben replied "Yes, I see the corrected test" and then supplied a screenshot
+"For the record:". The screenshot shows the sender **Windows PowerShell**, the
+title **Dual-agent review**, and **Relay notification test: corrected Windows**.
+The initial missing-notification screenshot and corrected screenshot are preserved
+with verified SHA-256 copies and dispositions in this implementation clone's
+`.novc/dual-agent-review-toast-evidence-20260930/manifest.json`. The originals were
+`codex-clipboard-419e1d93-24ce-43f7-8930-1f352fc1e7ac.png` and
+`codex-clipboard-e1db891f-8261-4e5e-90bd-bc66f0f6cfb4.png` in Ben's temporary directory.
+The initial identity diagnostic is `.novc/relay-toast-identity-probe-20260930.json`;
+the corrected hidden and dispatcher receipts are in
+`.novc/dual-agent-review-toast-fixed-20260930/`. The unregistered synthetic
+notification folder `.novc/dual-agent-review/2026-10-03/` contains the dispatcher's
+`NEEDS-BEN.md` and `toast-result.json`; it is no review round and changes no Git ref.
+Production is enabled; scheduler registration and the first approved window remain
+Ben's next actions. The occupied primary clone and both ongoing reviews remain excluded.
+Black left the changed Python file clean. Both PowerShell scripts parsed without
+errors. The final suite after the helper and production-flag changes passed
+1015 tests, 5 skips and 60 subtests using `py/main_test.py -q`; its one warning was
+an inability to write pytest's local cache. The scheduler task was independently
+checked absent. No generator or product is reached by this fix.
+
+## Future review and measurement
 
 The first real automated round requires Ben's future window approval. The comparison
 measurement also needs his decision and record filename. These two prompts are

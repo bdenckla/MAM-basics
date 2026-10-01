@@ -1,7 +1,8 @@
 # Plan: automate the dual-agent review relay, and measure what the second agent adds
 
 State: live. Ben authorized implementation on 2026-09-30; core code and four real automatic
-handoffs are verified in GitRepos2. D13 is approved; production rollout remains pending.
+handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
+production is enabled, with scheduler registration and the first approved round pending.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -82,7 +83,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
-| R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; visual notification receipt is unconfirmed and registration remains Ben's action |
+| R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; Ben confirmed corrected notification receipt; production is enabled and registration remains Ben's action |
 | R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | verified in both Claude turns' launch records and both Codex turns' saved runtime contexts |
 | R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
@@ -107,8 +108,8 @@ The ongoing reviews and the occupied primary clone remain outside execution scop
 
 Ben approved the runbook's proposed D13 wording on 2026-09-30, satisfying this
 plan's requirement for approval before adoption as the review procedure. D13 is
-now adopted in `doc/dual-agent-review.md`. Production kickoff and scheduler
-registration remain disabled pending visual notification receipt. The manual
+now adopted in `doc/dual-agent-review.md`. Production is enabled after Ben
+confirmed the corrected notification; scheduler registration remains his action. The manual
 procedure continues to govern the ongoing rounds. The runbook records the final suite result
 (1015 passed, 5 skipped, 60 subtests), the local Git differential check, and probes
 P1 through P8. Ben renewed Claude login and the headless Opus 5.5 probe succeeded.
@@ -126,7 +127,16 @@ The real-worker collision probe also passed: a same-tree child commit advanced
 only the local mirror's synthetic `dar-2026-10-02` branch while Claude ran. The
 dispatcher rejected the moved remote, preserved its pause, marker and logs, and
 invoked the hidden toast without recording an error. Ben has been asked to check
-Windows notifications with Win+N; visual receipt remains unconfirmed.
+Windows notifications with Win+N. Ben reported no matching notification and
+provided a screenshot showing ChatGPT notifications. The helper's assumed sender
+`Microsoft.Windows.PowerShell` was absent from the installed app list. The
+corrected helper resolves the installed Windows PowerShell sender, checks its
+notification setting and records whether the submitted toast reached history.
+Both its hidden launch and the dispatcher path reached history. Ben replied
+"Yes, I see the corrected test" and supplied a screenshot showing Windows
+PowerShell, **Dual-agent review** and the corrected test message. This satisfies
+P6's receipt check and clears the production flag. The runbook records the fix,
+preserved screenshot manifest and remaining registration command.
 
 Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
 The complete main-sourced configuration deployment installed only the new Claude
@@ -139,6 +149,9 @@ The implemented mechanics supersede the planned mechanics below where they diffe
   round worktrees belong to the exact full clone named at kickoff.
 - Only rounds explicitly registered by `start` are polled. Existing manual branches
   are never adopted. Private logs and notifications stay in the private repository.
+- Toasts use the installed Windows PowerShell sender returned by `Get-StartApps`,
+  rather than an assumed identifier. A blocked setting raises an error; successful
+  submissions record sender, setting, tag and history evidence in `toast-result.json`.
 - Carriers update through verified `--ff-only` merges. No reset or `checkout -B` is
   used; unexpected commits and occupancy stop dispatch.
 - Default caps allow one reopening and turns 01 through 10. The first reopening is

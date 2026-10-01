@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "production_enabled": false,
+  "production_enabled": true,
   "turn_cap": 10,
   "reopening_cap": 1,
   "worker_timeout_minutes": 120,
