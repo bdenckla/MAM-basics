@@ -55,6 +55,7 @@ def almost_main(argv=None):
 
 def main():
     """Use UTF-8 for both Windows and POSIX pipes."""
+    sys.stdin.reconfigure(encoding="utf-8")
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
     return almost_main()
