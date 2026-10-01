@@ -34,9 +34,14 @@ can use their origins; the synchronizer can then hydrate that primary forest or 
 
 Existing targets must be independent full clones with matching origins, clean `main`, no Git
 operation or lock, no unpushed/diverged commits and no active writer evidence. Eligible clones
-are fetched and fast-forwarded. Ineligible clones and their environments stay untouched; other
-roster entries continue. The command never resets, stashes, switches branches, forces refs,
-deletes paths or replaces an existing environment. It does not commit or push a repository.
+are fetched and fast-forwarded. A clone that is dirty, off `main`, mid-operation, locked or
+occupied is refused before any fetch. A clone refused only because its history is ahead of or
+diverged from `origin/main` is fetched first: the fetch adds any missing objects, rewrites
+`FETCH_HEAD`, and creates or fast-forwards `refs/remotes/origin/main`. A clone whose
+`origin/main` history was rewritten is fetched and refused with that ref retained. Every refused
+clone keeps its local branches, checkout and environments; other roster entries continue. The
+command never resets, stashes, switches branches, forces refs, deletes paths or replaces an
+existing environment. It does not commit or push a repository.
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_repo_util.py --forest-status

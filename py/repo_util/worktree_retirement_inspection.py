@@ -56,9 +56,20 @@ _GIT_OPERATION_MARKERS = (
 )
 
 
-def _status_entries(worktree: Path) -> list[str]:
+def _status_entries(
+    worktree: Path,
+    *,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
+) -> list[str]:
     output = _git_ok(
-        worktree, "status", "--porcelain=v1", "-z", "--untracked-files=all"
+        worktree,
+        "status",
+        "--porcelain=v1",
+        "-z",
+        "--untracked-files=all",
+        timeout_seconds=timeout_seconds,
+        noninteractive=noninteractive,
     )
     return [entry for entry in output.split("\0") if entry]
 
@@ -421,10 +432,22 @@ def _tracked_relocation_citations(
     )
 
 
-def _operation_markers(worktree: Path) -> list[str]:
+def _operation_markers(
+    worktree: Path,
+    *,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
+) -> list[str]:
     present: list[str] = []
     for marker in _GIT_OPERATION_MARKERS:
-        path_text = _git_ok(worktree, "rev-parse", "--git-path", marker).strip()
+        path_text = _git_ok(
+            worktree,
+            "rev-parse",
+            "--git-path",
+            marker,
+            timeout_seconds=timeout_seconds,
+            noninteractive=noninteractive,
+        ).strip()
         marker_path = Path(path_text)
         if not marker_path.is_absolute():
             marker_path = worktree / marker_path

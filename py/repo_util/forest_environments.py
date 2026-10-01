@@ -15,6 +15,8 @@ from packaging.version import Version
 from product_scopes import product_dirs
 from repo_util.user_config_sync import _run_git, _command_error
 
+GIT_TIMEOUT_SECONDS = 60
+
 
 class ForestError(RuntimeError):
     """A forest cannot be synchronized without violating its declared rules."""
@@ -151,7 +153,13 @@ def _check_environment(directory: Path) -> None:
 def synchronize_environments(repo: Path, *, check: bool) -> bool:
     """Inspect development requirements, excluding distributed product inputs."""
     tracked = _run_git(
-        repo, "ls-files", "-z", "--", "requirements.txt", "**/requirements.txt"
+        repo,
+        "ls-files",
+        "-z",
+        "--",
+        "requirements.txt",
+        "**/requirements.txt",
+        timeout_seconds=GIT_TIMEOUT_SECONDS,
     )
     if tracked.returncode:
         raise ForestError(_command_error(tracked))
@@ -184,6 +192,7 @@ def synchronize_environments(repo: Path, *, check: bool) -> bool:
                 "-z",
                 "--",
                 constraints.relative_to(repo).as_posix(),
+                timeout_seconds=GIT_TIMEOUT_SECONDS,
             )
             if indexed.returncode:
                 raise ForestError(f"constraints are not tracked: {constraints}")

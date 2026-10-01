@@ -339,3 +339,22 @@ synchronization, unrelated private pipeline changes and worktree retirement. The
 session's observation that source MAM-private was clean but two commits behind origin remains
 a historical observation; this task performed no separate synchronization or fresh assertion
 about that remote state. No completed forest setup or verification was repeated.
+
+## 2026-09-30: corrections made in the 2026-09-29 review's remediation
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. The finished plan is left as written.
+
+1. The third rule for every checkout kind, "Examples are the scan archive, found through
+   `BOOK_SCANS_ROOT`" (`:171–172`): `py/mb_cmn/paths.py`'s `book_scans_root` finds the archive at
+   `$HOME/OneDrive/Documents/ScansOfBooks` unless `BOOK_SCANS_ROOT` overrides it, and by Ben's
+   decision of 2026-09-30 the common body's rule now names that default (the review's finding
+   32).
+2. "For each such clone it fetches and runs `git merge --ff-only origin/main`." and "It reports
+   every other state and leaves it untouched." (`:302` and `:310`): the synchronizer's write form
+   fetched every existing independent full clone with a matching origin before judging its
+   eligibility. Since the remediation it refuses a clone that its own state disqualifies before
+   any fetch, and an ahead or diverged clone after a fetch that changes only its objects,
+   `FETCH_HEAD` and `refs/remotes/origin/main` (the review's finding 26).
+
+The plan's rules are introduced at `:161` as "Three rules apply to every kind:".

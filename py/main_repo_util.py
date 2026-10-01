@@ -47,8 +47,9 @@ guard. Old schema-1 preflights must be prepared again with the new safety gates.
 ``--sync-forest ROOT`` uses all-repos.code-workspace, matching source origins and independent
 environments. ``--check`` fetches and reports without cloning, merging or installing.
 ``--forest-status`` discovers the account's primary and numbered secondary forests.
-Ineligible repositories are reported unchanged; no action resets, stashes, switches
-branches, forces history or deletes checkouts.
+Ineligible repositories are reported with their local branches, checkouts and environments
+unchanged, though a write run has fetched an ahead or diverged clone before refusing it; no
+action resets, stashes, switches branches, forces history or deletes checkouts.
 
 ``--sync-user-config`` does not traverse a workspace.  It fetches ``origin`` in the
 MAM-basics home clone and uses only ``refs/remotes/origin/main`` as its source.
