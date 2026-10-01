@@ -3,7 +3,8 @@
 MAM-basics holds code and data under different terms, so it takes two license declarations.
 
 **The code is GPL-3.0**, declared in [`LICENSE`](LICENSE) at the repository root. That is the
-license of MAM-basics' work in code and prose: everything under `py/`, the Pages workflow
+license of MAM-basics' work in code and prose: everything under `py/` except
+`py/yeivin_itm/content/`, the Pages workflow
 under `.github/`, the plans and notes under `doc/` — the font at `doc/woff2/` and the page crops in
 `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` excepted, since the table below
 covers them — and the generated indexes and reports under `out/` that carry no corpus
@@ -46,6 +47,7 @@ away:**
 
 | Path | Content | Terms |
 |---|---|---|
+| `py/yeivin_itm/content/` | Ben Denckla's editable adaptation of selected excerpts from Israel Yeivin's *Introduction to the Tiberian Masorah*, translated and edited by E. J. Revell, with adaptation remarks and the separately identified small 1968 Aleppo-study comment passage | Adapted by permission. The 1980 work is copyright © 1980 by the Society of Biblical Literature. Ben's 2026-09-19 decision treats the existing publication permission as extending to this editable adaptation, including the separately identified small comment passage; it does not establish a GPL sublicense or grant further rights. See [`Yeivin-ITM/README.md`](Yeivin-ITM/README.md). This exact subtree is excluded from the blanket `py/` GPL statement |
 | `in/mam-ws/` | MAM wikitext, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below |
 | `in/mam-ws-special/` | byte-verbatim wikitext for MAM's 36 declared Decalogue, song-form, and corresponding chapter pages, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below. `manifest.json` records the requested and resolved title, exact revision, byte size, and SHA-256 for each mirrored page |
 | `in/mam-ws-intro/` | the MAM introduction's thirteen pages, downloaded from Hebrew Wikisource | CC-BY-SA 4.0 — the statement below. This is the same publication as `in/mam-ws/`, which is why it takes the same terms: the introduction is what the Wikisource edition says about itself, and `manifest.json` beside the pages records the revision of each one mirrored |
