@@ -233,8 +233,9 @@ beyond link + instruction is a trap he could actually fall into.** Ben: "this is
 just can't read all this. Lots of caveats I'm just going to take as 'transcribe carefully.'"
 Collapsing the wall into a `<details>` block is not enough.
 
-**Hand him the link; open nothing.** A markdown link whose href is an absolute `file:///` URL,
-forward slashes:
+**Hand him the link; open nothing.** A markdown link whose href is an absolute `file:///` URL
+to the page in the checkout that generated it, forward slashes; from a clone in
+`$HOME/GitRepos` it reads:
 
 ```
 [maqaf-nonfinal-accents.html](file:///C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/wlc/accgram/maqaf-nonfinal-accents.html)

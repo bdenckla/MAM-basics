@@ -58,7 +58,7 @@ Tracked so far:
 | `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
 | `mam-wikisource-refresh` | The safe end-to-end workflow for refreshing MAM book data from Hebrew Wikisource, including the dependent refresh after a live bot run, auditing generated products, and regenerating change logs only after the refreshed data has been committed. |
 | `prune-claude-state` | A manual review of this repository's global Claude draft plans against live tracked state and complete relevant issues; deletes only an exact approved list. |
-| `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex folio with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
+| `verse-links` | Runs MAM-basics' `py/main_verse_links.py` for every link Ben asks for when he looks a verse or an atom up — mgketer.org, MAM-with-doc, MAM on Wikisource, masoretica.org for the Aleppo and Leningrad codices, mechon-mamre.org, tanach.us, Sefaria's image of the Leningrad Codex page with the estimator's column and line, and Chabad's CTR where MAM-basics records the chapter — and says how to present them. Added 2026-09-10 and shared with Codex, both Ben's decisions of that day. |
 
 ## Windows desktop diagnostics
 
@@ -87,8 +87,8 @@ source. The operation validates all sources first, stages all changed destinatio
 complete skill directories instead of nesting them, and rolls earlier replacements back if a
 later replacement fails.
 
-The read-only form uses the same fresh source and reports `clean`, `drift`, or `not installed` for
-every destination:
+The check form, which fetches `origin` but changes no live configuration, uses the same fresh
+source and reports `clean`, `drift`, or `not installed` for every destination:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check

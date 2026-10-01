@@ -57,10 +57,11 @@ one place the skill's "never a loose word" rule is suspended: `references/mam-ba
 §'The post-stress-meteg pages say plain "word"' records Ben's decision of 2026-09-08, and
 `py/tests/test_post_stress_meteg_plain_word.py` enforces it by forbidding "chanted" in every one.
 
-From a MAM-basics worktree, follow `AGENTS.md`, “Running tests”, and the worktree runtime
-reference. Siblings normally resolve through Git's common-directory metadata; `REPOS_ROOT`
-is an override for an unusual layout. The worktree ban withdrawn on 2026-09-09 had named a
-loud failure and a silent provenance failure; their historical dispositions follow.
+From a MAM-basics worktree, follow `AGENTS.md`, “Running tests”, and, for ChatGPT-Codex, the
+worktree runtime reference of `codex-worktree-tasks`. Siblings normally resolve through Git's
+common-directory metadata; `REPOS_ROOT` is an override for an unusual layout. The worktree ban
+withdrawn on 2026-09-09 had named a loud failure and a silent provenance failure; their
+historical dispositions follow.
 
 1. **The loud one, `mb_cmn/read_books_from_mam_parsed_plus.py`'s cwd-relative `"../MAM-parsed"`
    default, no longer tells a worktree from the repo root, because it is dead in both.** The
@@ -95,7 +96,8 @@ pages) and `py/main_accgram.py generate-html-maqaf-nonfinal-accents` (6s) each r
 tracked artifacts byte-identically, `git status --porcelain` staying empty throughout. The suite
 in that same worktree passed **983 with 5 skipped** (114s). `MAM-basics/CLAUDE.md` §"Running
 tests — always from the repo root" documents the same `REPOS_ROOT` setting for the suite, so
-while this paragraph read "Never" the skill contradicted the repo's own instruction file.
+while this reference carried the worktree ban withdrawn on 2026-09-09, which read “Never from a
+git worktree, only from that repo root”, the skill contradicted the repo's own instruction file.
 
 **Outside MAM-basics this is advice rather than a measured result**, Ben's decision of
 2026-09-09: both fixes above are MAM-basics' own — `mb_cmn/paths.py`'s override chain and
@@ -106,7 +108,8 @@ considered and rejected the same day, as a claim of breakage with no measurement
 
 Tests run from the verified repository root with the full clone's own interpreter, or a
 linked worktree's home-clone interpreter by absolute path, following
-`AGENTS.md`, “Running tests”, and the worktree runtime reference:
+`AGENTS.md`, “Running tests”, and, for ChatGPT-Codex, the worktree runtime reference of
+`codex-worktree-tasks`:
 
 ```bash
 ./.venv/Scripts/python.exe py/main_test.py
@@ -117,12 +120,15 @@ not a defect. A 2026-07-01 run from `py/` produced 17 misleading failures.
 
 In `masorah-books`, the eighteen OCR passes over Yeivin and Breuer are subcommands of one entry
 point, run with the cwd at that tree's own root —
-`C:/Users/BenDe/GitRepos/MAM-private/masorah-books` since the tree moved into `MAM-private` on
+`<forest>/MAM-private/masorah-books` since the tree moved into `MAM-private` on
 2026-08-10, never MAM-private's root — and on that tree's own `.venv`:
 
 ```bash
 .venv/Scripts/python.exe py/main_ocr.py <subcommand>
 ```
+
+`<forest>` is the directory holding the invoking checkout's home clone, `$HOME/GitRepos` or
+`$HOME/GitRepos<N>`.
 
 Since 2026-08-01 **no module there is runnable on its own**, and this is by design:
 `python py/cos/check_cos_claims.py` puts `py/cos/` on `sys.path[0]` and cannot find the shared
@@ -227,8 +233,9 @@ rule; it does not override the repository's subsequently declared cloud exceptio
 - **Files change under you mid-session.** Ben edits the same file in parallel — re-diff before
   staging, and commit only your own work.
 - **Sibling paths and test invocation follow the repository's instructions.** MAM-basics'
-  `AGENTS.md`, “Running tests”, and `codex-worktree-tasks/references/worktree-runtime.md`
-  own the current procedure; do not copy an override recipe here.
+  `AGENTS.md`, “Running tests”, owns the current procedure, with
+  `codex-worktree-tasks/references/worktree-runtime.md` for ChatGPT-Codex; do not copy an
+  override recipe here.
 - **Committing and pushing: follow the common `~/.codex/AGENTS.md` body, section "Git and
   commits", imported by Claude Code through `~/.claude/CLAUDE.md`.** This bullet cites that
   section rather than restating it. It read
