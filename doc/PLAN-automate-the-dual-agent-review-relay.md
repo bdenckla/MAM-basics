@@ -138,13 +138,21 @@ The implemented mechanics supersede the planned mechanics below where they diffe
   separate decision. Other proposed defaults are recorded in tracked configuration.
 - `dontAsk` and explicit tool allow rules include native PowerShell and ordinary
   Git reads, plus exact per-checkout trust options before the read subcommand.
-  Authentication now succeeds; required permissions and headless sub-agents still
-  need a successful live capability check. Worker-local configuration disables
+  Authentication, native Git permissions and headless sub-agents passed both live
+  capability checks. Real-turn verification remains. Worker-local configuration disables
   background checkers, and prompts require waiting for every foreground checker.
 - Codex starts a fresh `exec` process without `--ephemeral`: the first capability
   check's child could not load its parent transcript under that flag. The dispatcher
   never resumes a prior turn. Claude's exact native PowerShell Git read passed
-  independently after the permission fix; full capability checks are separate.
+  independently after the permission fix; the full capability checks also passed.
+- The header-only `Next:` parser ignores quotations in the body. The independent
+  transition oracle covers both header cardinality and raw, fenced and blockquoted
+  forms, so review prose cannot change dispatcher control state.
+- Manual mechanics in D9, D11 and `doc/periodic-review.md` explicitly point to D13's
+  automated caps, worktrees and dispatcher-owned Git operations. The approved D13
+  wording is unchanged. The planned fallback to adopting a manual round is not
+  implemented; both headless sub-agent checks passed and existing manual rounds
+  remain excluded.
 - Atomic in-flight markers record an approved tree before commit. Manual handoff can
   recover that commit or an already successful push idempotently after a failure.
 - Rehearsal setup checks every fetch and push URL before any remote query, requiring

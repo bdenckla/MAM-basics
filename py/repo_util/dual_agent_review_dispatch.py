@@ -27,6 +27,7 @@ READ_ONLY_GIT = (
     "status",
     "show",
     "diff",
+    "grep",
     "log",
     "rev-parse",
     "merge-base",
@@ -35,6 +36,7 @@ READ_ONLY_GIT = (
     "symbolic-ref",
     "hash-object",
     "check-attr",
+    "check-ignore",
 )
 
 

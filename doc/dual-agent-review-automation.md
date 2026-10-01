@@ -77,7 +77,7 @@ verification. This implementation does not enable an unattended task.
 
 The changed Python passed Black. The targeted checks passed 4 tests; the final full
 suite passed 1015 tests, with 5 skips and 60 subtests, using `py/main_test.py -q`.
-Pytest reported one cache-write permission warning; no test failed. Both PowerShell
+The latest run reported no warning. Both PowerShell
 scripts passed syntax parsing. No mega generator is reached; `gh-pages/` and all
 `MAM-*` products stayed unchanged.
 
@@ -131,6 +131,29 @@ The isolated quoted-prefix worktree probe then returned the expected tip with
 zero permission denials. Its launch command is 13,754 characters, independently
 checked below the Windows 32,767-character limit; records are in the implementation
 clone's `.novc/dual-agent-review-native-worktree-20260930/`.
+The retry completed all five foreground checker reports but exceeded the rehearsal's
+shortened twenty-minute deadline before writing a turn. The dispatcher preserved
+the in-flight marker, logs, pause and notification; its worker checkout and local
+remote stayed at `491168dd13a831be3bf5b1ef1d70beafbdbcd4db` with no turn file.
+The worker's dead-process session record was cleared by Claude's own normal startup,
+after its PID was independently verified absent; Codex did not edit the runtime
+registry. The timeout files are preserved with `-twenty-minute-timeout` names and
+`timeout-recovery.json`. The five completed checker reports remain in
+`completed-checker-evidence-from-timeout.md` under the same round directory.
+The initial argument resumed under the normal 120-minute deadline, using those
+reports as evidence and at most one fresh foreground checker.
+
+Observed denials also identified two missing read commands: `git check-ignore` and
+`git grep`. Both exact native PowerShell rules subsequently passed isolated probes
+with zero denials; records stay in this implementation clone's
+`.novc/dual-agent-review-check-ignore-20260930/` and
+`.novc/dual-agent-review-git-grep-20260930/`. The expanded launch remains below the
+Windows command limit at 16,162 characters. The `Next:` parser now counts only
+header fields; body quotations do not alter control state. Its independent model
+checks 3,200 transition, header and body combinations. D9, D11 and periodic-review
+cross-references now distinguish manual mechanics from the approved D13 mechanics.
+The approved D13 wording is unchanged.
+
 The source implementation registry is absent;
 no production round was started. The primary clone was not fast-forwarded. Production remains
 disabled until the real-worker checks pass; Ben has approved D13. Core commit

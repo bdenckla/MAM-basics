@@ -96,9 +96,10 @@ every periodic review window to use two agents or establish a blind parallel-tra
 The turn's root reviewer and any sub-agent may delegate bounded, independently checkable work to
 another sub-agent, either in parallel or as a sequential handoff. The root reviewer remains
 responsible for the turn: the root reviewer sets the scope, reconciles the reports, verifies the
-claims it adopts, and owns the tracked file and commit. Only one agent writes, stages, commits or
-pushes the round's branch at a time; other sub-agents report without editing unless writing
-responsibility is explicitly handed to one sub-agent. The one-writer rule applies even when the
+claims it adopts, and owns the tracked file. In a manual round the root reviewer also owns the
+commit; D13 assigns automated staging, commits and pushes to the dispatcher. Only one agent
+writes, stages, commits or pushes the round's branch at a time; other sub-agents report without
+editing unless writing responsibility is explicitly handed to one sub-agent. The one-writer rule applies even when the
 agents use separate checkouts. Use delegation when it can save time, protect the root reviewer's
 context or improve confidence, not merely to create another task.
 
@@ -109,7 +110,8 @@ review runs at", records).
 Before the round starts, assign the two roles. **Agent 1 reviews first and owns every odd-numbered
 turn; Agent 2 reviews second and owns every even-numbered turn. Either Claude or Codex may be Agent
 1, and the other is Agent 2.** The role names describe sequence, not which agent fills the role.
-There is no maximum number of turns; the stopping rule below ends the exchange.
+Manual rounds have no maximum number of turns; the stopping rule below ends the exchange.
+D13 additionally caps automated rounds.
 
 The round takes turns in this order:
 
@@ -128,13 +130,15 @@ The round takes turns in this order:
 
 Each turn is a tracked file named
 `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`: the two-digit number records sequence and
-the final component records the agent that actually wrote the turn. Ben supplies the next task with
-that file's path and pushed commit; the next task reads the committed file from the round's
+the final component records the agent that actually wrote the turn. In a manual round, Ben supplies
+the next task with that file's path and pushed commit; the next task reads the committed file
+from the round's
 `origin/dar-<date>` branch instead of depending on pasted chat or remembered conclusions. Verify
 the exact checkout, local branch or detached state, required commit, fetched remote-branch tip and
 clean working tree before reading. A known newer starting commit must contain the required commit
 as an ancestor; unexplained remote movement is a collision and stops the task. The naming section
-distinguishes this standard round from single-agent and blind-review filenames.
+distinguishes this standard round from single-agent and blind-review filenames. D13 assigns
+automated launches and the verified handoff to the dispatcher.
 
 **The stopping rule:** a turn that accepts everything and lists no unresolved disagreement ends
 the round. The other agent's next task reads that turn and records an acknowledgment or an
@@ -182,13 +186,15 @@ turn; otherwise Agent 1 does it before turn 01. The remote branch, not a directo
 name, is the round's shared coordination state.
 
 **By default, each turn and close-out task runs in whatever verified checkout its session is
-already in** (Ben's decision, 2026-09-29, whose words `doc/periodic-review.md`, "The checkout a
-review uses", records): a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`,
-`$HOME/GitRepos3` and so on — or a linked worktree of one of those clones, and perhaps some day a
-cloud session's checkout. A round may still use a linked worktree made for it, but no step of this
-procedure requires one. A local branch is only that checkout's carrier for `origin/dar-<date>`. It
-may use the remote branch's name when available or a checkout-specific name when, for example,
-another worktree registered to the same clone already has `dar-<date>` checked out. In a full
+already in for a manual round** (Ben's decision, 2026-09-29, whose words
+`doc/periodic-review.md`, "The checkout a review uses", records): a full clone in any forest —
+`$HOME/GitRepos`, `$HOME/GitRepos2`, `$HOME/GitRepos3` and so on — or a linked worktree of one of
+those clones, and perhaps some day a
+cloud session's checkout. A manual round may still use a linked worktree made for it, but its
+procedure requires none. D13 requires two dedicated worktrees for automated turns. A local branch
+is only that checkout's carrier for `origin/dar-<date>`. It may use the remote branch's name when
+available or a checkout-specific name when, for example, another worktree registered to the same
+clone already has `dar-<date>` checked out. In a full
 clone the carrier is temporary, under the common instruction body's “Git and commits” exception
 for a named shared branch: the clone switches back to `main` when the task ends, since
 `doc/clone-forests.md`'s synchronization check fails a full clone on any other branch. Do not create
@@ -207,13 +213,15 @@ characters, against 68 for the same path spelled `dar-2026-09-17`, and its opera
 recommendation is to go on budgeting for short paths on this machine. Every round created before
 2026-09-20 keeps its existing branch and worktree names, as the September 8 round does below.
 
-Turns are sequential even when their checkouts are separate. At the start of a turn, fetch
+Turns are sequential even when their checkouts are separate. For a manual turn, fetch
 `origin`, verify the promised handoff commit against `origin/dar-<date>`, and create the local
 carrier at that remote tip or fast-forward the clean carrier to it before editing. At the end of
 the turn, commit the complete turn, then push the exact commit with the explicit destination
 `origin HEAD:dar-<date>` and report the pushed commit. That successful push is the handoff. A
 non-fast-forward rejection, local divergence, or unexplained remote movement stops the task;
 never force-push. Only the task that owns the current turn may update the remote branch.
+For an automated turn, D13 assigns these Git operations to the dispatcher; the worker writes
+review prose and does not fetch, stage, commit or push. Manual close-out follows the rules below.
 
 Everything a later turn requires must be on the remote branch or be an explicitly identified
 external input. `.novc` files, ignored caches, local hooks, worktree locks, agent transcripts and
