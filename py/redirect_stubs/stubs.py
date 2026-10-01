@@ -66,6 +66,16 @@ rather than ``gh-pages/``; and its catch-all goes to that fixed document rather 
 inventing an hbofonts path from an unknown legacy suffix. The row declares each of those
 facts. Manifest shape never chooses semantics.
 
+Phonetic-hbo maps two legacy Tanakh trees to one maintained tree and maps Yeivin
+pages to a separate product. Its mapping targets name either ``path`` or
+``path-with-fixed-query`` explicitly. The legacy pronunciation wins over a
+conflicting incoming query; unrelated parameters and the fragment survive in
+JavaScript. Without JavaScript, each known page refreshes to its fixed target,
+losing incoming queries and fragments. The fixed 404 fallback requires a click.
+The source manifest is prepared before cutover and must be reverified against
+the clean source host immediately before publication; preparation is not a
+claim that the redirect host is live.
+
 A directory URL is covered only where the directory has an ``index.html``, which is the
 right answer rather than an accident: ``document-index/README.md`` cited ``/420422/`` and
 ``/wlc-a-notes/``, and both hold one, so both get a stub that a bare directory URL
@@ -108,10 +118,41 @@ import json
 import re
 import subprocess
 from typing import Literal
-from urllib.parse import quote, urlsplit
+from urllib.parse import quote, urlencode, urlsplit
 
 from mb_cmn import paths
 from mb_cmn.git_process import git_command
+
+
+@dataclass(frozen=True)
+class RedirectTarget:
+    """A closed page target, optionally with a legacy pronunciation that wins."""
+
+    kind: Literal["path", "path-with-fixed-query"]
+    path: str
+    query: tuple[tuple[str, str], ...] = ()
+
+    def __post_init__(self) -> None:
+        _validate_page_path("redirect target", "path", self.path)
+        if self.kind == "path":
+            if self.query:
+                raise ValueError("a path target cannot declare a fixed query")
+        elif self.kind == "path-with-fixed-query":
+            if self.query not in {
+                (("pronunciation", "sephardic"),),
+                (("pronunciation", "ashkenazic"),),
+            }:
+                raise ValueError("unsupported fixed query: expected one pronunciation")
+        else:
+            raise ValueError(f"unknown redirect target kind {self.kind!r}")
+
+    def url(self, repo: RedirectRepo) -> str:
+        suffix = quote(self.path, safe="/")
+        if self.kind == "path":
+            return repo.new_site + suffix
+        if self.kind == "path-with-fixed-query":
+            return repo.new_site + suffix + "?" + urlencode(self.query)
+        raise ValueError(f"unknown redirect target kind {self.kind!r}")
 
 
 @dataclass(frozen=True)
@@ -132,7 +173,7 @@ class RedirectRepo:
     target_site: str
     target_pages_prefix: str
     manifest_kind: Literal["prefix", "mapping"]
-    not_found_target: str | None
+    not_found_target: RedirectTarget | None
 
     def __post_init__(self) -> None:
         parsed_site = urlsplit(self.target_site)
@@ -183,9 +224,8 @@ class RedirectRepo:
                     f"{self.source_repo}: a mapping manifest must declare a fixed"
                     " not_found_target."
                 )
-            _validate_page_path(
-                self.source_repo, "not_found_target", self.not_found_target
-            )
+            if not isinstance(self.not_found_target, RedirectTarget):
+                raise ValueError("not_found_target must be a RedirectTarget")
         else:
             raise ValueError(
                 f"{self.source_repo}: unknown manifest_kind {self.manifest_kind!r}."
@@ -224,6 +264,8 @@ def _validate_page_path(repo: str, field: str, value: str) -> None:
         or value.startswith("/")
         or "\\" in value
         or path.is_absolute()
+        or "?" in value
+        or "#" in value
         or ":" in path.parts[0]
         or path.as_posix() != value
         or any(part in {".", ".."} for part in path.parts)
@@ -236,7 +278,7 @@ def _validate_page_path(repo: str, field: str, value: str) -> None:
 
 
 # The redirect-host table. Each lane adds its row only with a manifest captured at the
-# source repo's flip.
+# source host's frozen path capture, reverified before its approved flip.
 REDIRECT_REPOS = (
     RedirectRepo(
         source_repo="MAM-OSIS",
@@ -379,7 +421,24 @@ REDIRECT_REPOS = (
         target_site="https://bdenckla.github.io/hbofonts/",
         target_pages_prefix="gh-pages/",
         manifest_kind="mapping",
-        not_found_target="Taamey_D.html",
+        not_found_target=RedirectTarget(kind="path", path="Taamey_D.html"),
+    ),
+    RedirectRepo(
+        source_repo="phonetic-hbo",
+        scratch_name="phonetic-hbo",
+        old_path_prefix="/phonetic-hbo/",
+        manifest_path="in/phonetic_hbo_redirect_pages.json",
+        clone_url="https://github.com/bdenckla/phonetic-hbo.git",
+        source_published_dir="gh-pages/",
+        target_repo="MAM-basics",
+        target_site="https://bdenckla.github.io/MAM-basics/",
+        target_pages_prefix="gh-pages/",
+        manifest_kind="mapping",
+        not_found_target=RedirectTarget(
+            kind="path-with-fixed-query",
+            path="phonetic-mam/index.html",
+            query=(("pronunciation", "sephardic"),),
+        ),
     ),
 )
 
@@ -417,7 +476,7 @@ _STUB_TEMPLATE = """<!doctype html>
 <link rel="canonical" href="{target}">
 <meta http-equiv="refresh" content="0; url={target}">
 <script>
-location.replace("{target}" + location.search + location.hash);
+{script}
 </script>
 </head>
 <body>
@@ -452,7 +511,7 @@ _FIXED_NOT_FOUND_TEMPLATE = """<!doctype html>
 <meta charset="utf-8">
 <title>Moved to {target_repo}</title>
 <script>
-location.replace("{target}" + location.search + location.hash);
+{script}
 </script>
 </head>
 <body>
@@ -480,9 +539,9 @@ def source_pages_dir(repo: RedirectRepo) -> Path:
     """``repo``'s declared published tree in its source clone.
 
     The row carries both the source repository name and its clone URL, so a missing clone
-    says precisely how to create a temporary shallow clone. A redirect host is absent from
-    the normal workspace roster; its clone exists only while publishing or linting its
-    committed stubs.
+    says precisely how to create a temporary shallow clone. After a redirect host's
+    topology closeout, its clone exists only while publishing or linting stubs. A host
+    whose cutover is still being prepared can remain in the workspace roster.
     """
     clone = paths.sibling_repo(repo.source_repo)
     try:
@@ -492,7 +551,7 @@ def source_pages_dir(repo: RedirectRepo) -> Path:
     except FileNotFoundError as absent:
         raise FileNotFoundError(
             f"{absent}\n"
-            "No machine is expected to hold a clone; to get one:\n"
+            "To supply the explicitly selected source host:\n"
             f"  git clone --depth 1 {repo.clone_url} {clone}"
         ) from absent
 
@@ -515,7 +574,33 @@ def _unique_json_object(pairs: list[tuple[str, object]]) -> dict[str, object]:
     return out
 
 
-def redirect_targets(repo_root: Path, repo: RedirectRepo) -> dict[str, str]:
+def _mapping_target(raw: object) -> RedirectTarget:
+    """Validate exactly the fields owned by each explicitly named target kind."""
+    if not isinstance(raw, dict):
+        raise ValueError("a mapping target must be an object with a kind")
+    kind = raw.get("kind")
+    if kind == "path":
+        if set(raw) != {"kind", "path"}:
+            raise ValueError("a path target requires only kind and path")
+        query = ()
+    elif kind == "path-with-fixed-query":
+        if set(raw) != {"kind", "path", "query"}:
+            raise ValueError("a fixed-query target requires only kind, path and query")
+        raw_query = raw["query"]
+        if not isinstance(raw_query, dict) or set(raw_query) != {"pronunciation"}:
+            raise ValueError("unsupported fixed query key; expected pronunciation")
+        value = raw_query["pronunciation"]
+        if value not in ("sephardic", "ashkenazic"):
+            raise ValueError(f"unsupported fixed pronunciation {value!r}")
+        query = (("pronunciation", value),)
+    else:
+        raise ValueError(f"unknown redirect target kind {kind!r}")
+    if not isinstance(raw["path"], str):
+        raise ValueError("target path must be a string")
+    return RedirectTarget(kind=kind, path=raw["path"], query=query)
+
+
+def redirect_targets(repo_root: Path, repo: RedirectRepo) -> dict[str, RedirectTarget]:
     """The validated old-path-to-target-path mapping frozen for ``repo``.
 
     Prefix rows deliberately retain the original list-shaped manifest and expand it
@@ -544,17 +629,16 @@ def redirect_targets(repo_root: Path, repo: RedirectRepo) -> dict[str, str]:
             )
         if len(set(raw_pages)) != len(raw_pages):
             raise ValueError(f"{manifest} lists a page more than once.")
-        targets = {page: page for page in raw_pages}
+        targets = {page: RedirectTarget(kind="path", path=page) for page in raw_pages}
     elif repo.manifest_kind == "mapping":
         if not isinstance(raw_pages, dict) or not all(
-            isinstance(old, str) and isinstance(target, str)
-            for old, target in raw_pages.items()
+            isinstance(old, str) for old in raw_pages
         ):
             raise ValueError(
                 f"{manifest} is declared as a mapping manifest, so 'pages' must be an"
-                " object whose keys and values are strings."
+                " object whose keys are strings and values are explicit target objects."
             )
-        targets = dict(raw_pages)
+        targets = {old: _mapping_target(raw) for old, raw in raw_pages.items()}
     else:
         raise ValueError(
             f"{repo.source_repo}: unknown manifest_kind {repo.manifest_kind!r}."
@@ -565,9 +649,8 @@ def redirect_targets(repo_root: Path, repo: RedirectRepo) -> dict[str, str]:
             " program exists to write, so a run that wrote none of them would report"
             " having written the catch-all and nothing else."
         )
-    for old_path, target_path in targets.items():
+    for old_path in targets:
         _validate_page_path(repo.source_repo, "old page path", old_path)
-        _validate_page_path(repo.source_repo, "target page path", target_path)
         if old_path == NOT_FOUND_NAME:
             raise ValueError(
                 f"{manifest}: {NOT_FOUND_NAME} is reserved for the generated catch-all."
@@ -628,15 +711,45 @@ def published_pages(repo_root: Path, repo: RedirectRepo) -> list[str]:
 
 def target_url(repo_root: Path, repo: RedirectRepo, page_path: str) -> str:
     """The declared target URL for a stub at ``page_path``."""
-    target_path = redirect_targets(repo_root, repo)[page_path]
-    return repo.new_site + quote(target_path, safe="/")
+    return redirect_targets(repo_root, repo)[page_path].url(repo)
+
+
+def _redirect_script(target: RedirectTarget, repo: RedirectRepo) -> str:
+    """Incoming query and fragment survive; a declared pronunciation wins.
+
+    Without JavaScript, the per-page meta refresh and visible link retain only the
+    fixed URL. The catch-all requires clicking its visible link. Incoming queries
+    and fragments cannot survive either fixed fallback.
+    """
+    url = target.url(repo)
+    if target.kind == "path":
+        return f'location.replace("{url}" + location.search + location.hash);'
+    if target.kind == "path-with-fixed-query":
+        return (
+            f'var redirectTarget = new URL("{url}");\n'
+            "var redirectQuery = new URLSearchParams(location.search);\n"
+            'redirectQuery.set("pronunciation", '
+            f'{json.dumps(dict(target.query)["pronunciation"])});\n'
+            "redirectTarget.search = redirectQuery.toString();\n"
+            "redirectTarget.hash = location.hash;\n"
+            "location.replace(redirectTarget.href);"
+        )
+    raise ValueError(f"unknown redirect target kind {target.kind!r}")
 
 
 def render_stub(repo_root: Path, repo: RedirectRepo, page_path: str) -> str:
+    target = redirect_targets(repo_root, repo)[page_path]
+    return _render_target_stub(repo, page_path, target)
+
+
+def _render_target_stub(
+    repo: RedirectRepo, page_path: str, target: RedirectTarget
+) -> str:
     return _STUB_TEMPLATE.format(
         path=page_path,
-        target=target_url(repo_root, repo, page_path),
+        target=target.url(repo),
         target_repo=repo.target_repo,
+        script=_redirect_script(target, repo),
     )
 
 
@@ -651,7 +764,8 @@ def render_not_found(repo: RedirectRepo) -> str:
         assert repo.not_found_target is not None
         return _FIXED_NOT_FOUND_TEMPLATE.format(
             target_repo=repo.target_repo,
-            target=repo.new_site + quote(repo.not_found_target, safe="/"),
+            target=repo.not_found_target.url(repo),
+            script=_redirect_script(repo.not_found_target, repo),
         )
     raise ValueError(
         f"{repo.source_repo}: unknown manifest_kind {repo.manifest_kind!r}."
@@ -661,11 +775,12 @@ def render_not_found(repo: RedirectRepo) -> str:
 def write_stubs(repo_root: Path, repo: RedirectRepo, out_dir: Path) -> list[str]:
     """Write a stub per old URL plus ``404.html``; return the paths written, site-relative."""
     written = []
-    for page_path in redirected_pages(repo_root, repo):
+    targets = redirect_targets(repo_root, repo)
+    for page_path, target in sorted(targets.items()):
         destination = out_dir / page_path
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(
-            render_stub(repo_root, repo, page_path), encoding="utf-8", newline="\n"
+            _render_target_stub(repo, page_path, target), encoding="utf-8", newline="\n"
         )
         written.append(page_path)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -725,12 +840,12 @@ def check_problems(repo_root: Path, repo: RedirectRepo, stub_dir: Path) -> list[
         if stub_path != NOT_FOUND_NAME and stub_path not in set(expected)
     ]
     problems += [
-        f"{old_path} -> {target_path}: a frozen {repo.source_repo} URL whose target is no"
+        f"{old_path} -> {target.path}: a frozen {repo.source_repo} URL whose target is no"
         f" longer published by {repo.target_repo} under {repo.pages_prefix} -- its stub"
         " redirects to a page that is not there. Republish the target, or drop the old"
         " URL from the manifest and delete its stub"
-        for old_path, target_path in sorted(targets.items())
-        if target_path not in published
+        for old_path, target in sorted(targets.items())
+        if target.path not in published
     ]
     if NOT_FOUND_NAME not in found:
         problems.append(
@@ -743,19 +858,21 @@ def check_problems(repo_root: Path, repo: RedirectRepo, stub_dir: Path) -> list[
                 repo, (stub_dir / stub_path).read_text(encoding="utf-8")
             )
         elif stub_path in targets:
-            problems += _stub_problems(repo_root, repo, stub_dir / stub_path, stub_path)
+            problems += _stub_problems(
+                repo, stub_dir / stub_path, stub_path, targets[stub_path]
+            )
     return problems
 
 
 def _stub_problems(
-    repo_root: Path, repo: RedirectRepo, path: Path, stub_path: str
+    repo: RedirectRepo, path: Path, stub_path: str, target: RedirectTarget
 ) -> list[str]:
     text = path.read_text(encoding="utf-8")
-    expected = target_url(repo_root, repo, stub_path)
+    expected = target.url(repo)
     expected_carriers = (
         (f'rel="canonical" href="{expected}"', "canonical link"),
         (f'http-equiv="refresh" content="0; url={expected}"', "meta refresh"),
-        (f'location.replace("{expected}" +', "script"),
+        (_redirect_script(target, repo), "script"),
         (f'<a href="{expected}">', "visible fallback link"),
     )
     problems = [
@@ -802,10 +919,10 @@ def _not_found_problems(repo: RedirectRepo, text: str) -> list[str]:
         return problems
     if repo.manifest_kind == "mapping":
         assert repo.not_found_target is not None
-        expected = repo.new_site + quote(repo.not_found_target, safe="/")
+        expected = repo.not_found_target.url(repo)
         problems = []
         for fragment, description in (
-            (f'location.replace("{expected}" +', "script"),
+            (_redirect_script(repo.not_found_target, repo), "script"),
             (f'<a href="{expected}">', "visible fallback link"),
         ):
             if fragment not in text:
