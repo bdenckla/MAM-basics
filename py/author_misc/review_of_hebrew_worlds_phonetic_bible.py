@@ -24,7 +24,7 @@ The remaining changes are three, all house style rather than rewording:
   gist's spelling: the gist writes "sheva" where ``$shewa`` renders "shewa".
 * curly quotation marks and apostrophes, as every other authored page here has.
 * the eleven screenshots, which the gist hotlinked from GitHub's gist asset
-  CDN and which now live in ``MAM-with-doc/gh-pages/misc/img/hebrew_world/``.
+  CDN and which now live in ``gh-pages/MAM-with-doc/misc/img/hebrew_world/``.
 """
 
 from mb_author import author
