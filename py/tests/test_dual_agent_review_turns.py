@@ -78,13 +78,42 @@ def test_next_transitions_against_independent_state_model():
                         if acknowledgment
                         else ("continue", "acknowledgment", "Ben")
                     )
-                    text = f"# Turn\n\n{state}\n{marker}\n\n## Findings\n"
-                    accepted = True
-                    try:
-                        protocol.validate_turn(text, number, agent, agent1, previous)
-                    except protocol.ReviewError:
-                        accepted = False
-                    assert accepted == expected, (agent1, number, acknowledgment, kind)
+                    for header_markers in (
+                        (),
+                        (marker,),
+                        (marker, marker),
+                        (marker, "Next: invalid"),
+                    ):
+                        for body in (
+                            "",
+                            marker + "\n",
+                            "```text\n" + marker + "\n```\n",
+                            "> " + marker + "\n",
+                        ):
+                            # The protocol's control field belongs only to the
+                            # header; body quotations cannot alter a transition.
+                            header_text = "\n".join(header_markers)
+                            text = (
+                                f"# Turn\n\n{state}\n{header_text}\n\n"
+                                f"## Findings\n{body}"
+                            )
+                            accepted = True
+                            try:
+                                protocol.validate_turn(
+                                    text, number, agent, agent1, previous
+                                )
+                            except protocol.ReviewError:
+                                accepted = False
+                            assert accepted == (
+                                expected and len(header_markers) == 1
+                            ), (
+                                agent1,
+                                number,
+                                acknowledgment,
+                                kind,
+                                header_markers,
+                                body,
+                            )
 
 
 def lint_automated_round_headers():

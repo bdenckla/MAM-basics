@@ -23,6 +23,22 @@ from repo_util.worktree_owners import runtime_facts
 SOURCE = paths.repo_root()
 CONFIG = SOURCE / "in/dual_agent_review_automation.json"
 CONTROL = SOURCE / ".novc/dual-agent-review"
+READ_ONLY_GIT = (
+    "status",
+    "show",
+    "diff",
+    "grep",
+    "log",
+    "rev-parse",
+    "rev-list",
+    "merge-base",
+    "ls-files",
+    "ls-tree",
+    "symbolic-ref",
+    "hash-object",
+    "check-attr",
+    "check-ignore",
+)
 
 
 class LockExists(protocol.ReviewError):
@@ -329,7 +345,7 @@ def start(
     protocol.validate_date(round_date)
     if not rehearsal and not config["production_enabled"]:
         raise protocol.ReviewError(
-            "production rollout is disabled pending D13 approval and live worker rehearsal"
+            "production rollout is disabled pending live worker rehearsal"
         )
     if agent1 not in protocol.AGENTS or not instruction.strip():
         raise protocol.ReviewError(
@@ -479,13 +495,20 @@ Output: {protocol.turn_path(state['round'], number, agent)}
 Integration owner: Ben's later close-out task. The dispatcher alone commits and pushes turns.
 
 Verify checkout root, HEAD, carrier branch, and clean status before editing.
+On Windows use only native PowerShell 7, never Bash. Run each Git read in a
+separate tool call, with this exact prefix (the trust entry is process-local too):
+git -c "safe.directory={checkout.as_posix()}" -C "{checkout.as_posix()}"
+Verify with rev-parse --show-toplevel, rev-parse HEAD, symbolic-ref --short -q HEAD,
+and status --porcelain=v1 -z. Use the generated New York timestamp above as the
+time reference for this turn; no shell-version or clock probe is required.
 Read AGENTS.md (and CLAUDE.md when applicable), the predecessor from the required
 commit, and doc/dual-agent-review.md sections D9, D10, D11, D13 and Review filenames
 and State lines. Read doc/periodic-review.md, The effort a review runs at and
 Reviewing the review, with the same agent and with Ben. For a private round read
 those procedure files in {SOURCE.as_posix()}/doc/ as external public instructions.
 Review the endpoint diff {state['start']}..{state['end']}; follow the turn's assigned
-role in D9. Have read-only sub-agents check every finding and reconcile their evidence.
+role in D9. Have read-only sub-agents check every finding in the foreground.
+Wait for every checker to finish and reconcile its evidence before writing the turn.
 {scope}
 
 Write only your new turn file. Turn 02 additionally appends the reconciliation table
@@ -511,6 +534,24 @@ def worker_command(
 ) -> list[str]:
     binary = str(resolve_cli(agent, config))
     if agent == "claude":
+        # Name the exact trust options before the subcommand; no middle wildcard
+        # may grant arbitrary Git options or a different command.
+        path = checkout.as_posix()
+        trust_forms = (
+            f"-c safe.directory={path} -C {path}",
+            f'-c "safe.directory={path}" -C "{path}"',
+        )
+        allowed = list(config["claude_allowed_tools"])
+        allowed.extend(
+            f"{tool}(git {prefix}{trust} {command} *)"
+            for tool in (("PowerShell",) if os.name == "nt" else ("Bash", "PowerShell"))
+            for trust in trust_forms
+            for prefix in ("", "--no-optional-locks ")
+            for command in READ_ONLY_GIT
+        )
+        denied = list(config["claude_disallowed_tools"])
+        if os.name == "nt":
+            denied.append("Bash")
         return [
             binary,
             "-p",
@@ -528,9 +569,9 @@ def worker_command(
             "--max-turns",
             str(config["claude_max_turns"]),
             "--allowedTools",
-            *config["claude_allowed_tools"],
+            *allowed,
             "--disallowedTools",
-            *config["claude_disallowed_tools"],
+            *denied,
             "--output-format",
             "stream-json",
             "--verbose",
@@ -538,7 +579,6 @@ def worker_command(
     return [
         binary,
         "exec",
-        "--ephemeral",
         "-C",
         str(checkout),
         "-s",
@@ -561,6 +601,9 @@ def launch_worker(
 ) -> None:
     environment = os.environ.copy()
     environment.update(GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="Never")
+    environment["CLAUDE_CODE_DISABLE_BACKGROUND_TASKS"] = "1"
+    if os.name == "nt":
+        environment["CLAUDE_CODE_USE_POWERSHELL_TOOL"] = "1"
     add_windows_safe_directory(environment, checkout)
     with log.open("wb") as output:
         process = subprocess.Popen(

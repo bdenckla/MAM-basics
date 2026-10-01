@@ -14,7 +14,7 @@
   "codex_cli": null,
   "enabled_agents": ["claude", "codex"],
   "facts_only_from_turn_03": false,
-  "claude_allowed_tools": ["Read", "Grep", "Glob", "Edit", "Write", "Agent", "Skill", "Bash(pwsh *)", "Bash(git * status *)", "Bash(git * show *)", "Bash(git * diff *)", "Bash(git * log *)", "Bash(git * rev-parse *)", "Bash(git * merge-base *)", "Bash(git * ls-files *)"],
+  "claude_allowed_tools": ["Read", "Grep", "Glob", "Edit", "Write", "Agent", "Skill", "Bash(git status *)", "Bash(git show *)", "Bash(git diff *)", "Bash(git grep *)", "Bash(git log *)", "Bash(git rev-parse *)", "Bash(git rev-list *)", "Bash(git merge-base *)", "Bash(git ls-files *)", "Bash(git ls-tree *)", "Bash(git symbolic-ref *)", "Bash(git hash-object *)", "Bash(git check-attr *)", "Bash(git check-ignore *)", "PowerShell(git status *)", "PowerShell(git show *)", "PowerShell(git diff *)", "PowerShell(git grep *)", "PowerShell(git log *)", "PowerShell(git rev-parse *)", "PowerShell(git rev-list *)", "PowerShell(git merge-base *)", "PowerShell(git ls-files *)", "PowerShell(git ls-tree *)", "PowerShell(git symbolic-ref *)", "PowerShell(git hash-object *)", "PowerShell(git check-attr *)", "PowerShell(git check-ignore *)"],
   "claude_disallowed_tools": ["Bash(git commit:*)", "Bash(git push:*)", "Bash(git -C * commit:*)", "Bash(git -C * push:*)", "PowerShell(git commit:*)", "PowerShell(git push:*)"],
   "codex_binary_resolution": ["configured_path", "CODEX_CLI_PATH in config.toml", "newest app bin/codex.exe"],
   "checkout_pattern": ".claude/worktrees/dar-{round}-{agent}"

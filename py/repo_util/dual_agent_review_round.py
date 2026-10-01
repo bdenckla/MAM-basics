@@ -96,11 +96,11 @@ def field(lines: list[str], name: str) -> str:
 
 
 def parse_next(text: str) -> dict:
-    lines = text.splitlines()
+    lines = header(text)
     markers = [line for line in lines if line.startswith("Next:")]
-    if len(markers) != 1 or markers[0] not in header(text):
+    if len(markers) != 1:
         raise ReviewError("expected exactly one Next: line in the header")
-    if header(text).index(markers[0]) <= 2:
+    if lines.index(markers[0]) <= 2:
         raise ReviewError("Next: must follow the line-3 State:")
     match = NEXT.fullmatch(markers[0])
     if not match:

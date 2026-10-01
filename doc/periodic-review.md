@@ -18,7 +18,8 @@ Whether a window has one responsible reviewer or two, each review turn may be an
 multi-agent task. The root reviewer and any sub-agent may delegate bounded, independently
 checkable work to another sub-agent, either in parallel or as a sequential handoff. The root
 reviewer remains responsible for the review: the root reviewer sets the scope, reconciles the
-reports, verifies the claims it adopts, and owns the findings file and commit.
+reports, verifies the claims it adopts, and owns the findings file. The reviewer owns the commit
+in a manual review; D13 in `doc/dual-agent-review.md` assigns automated commits to the dispatcher.
 
 Within any one checkout, only one agent writes, stages or commits at a time. A procedure with a
 shared remote branch may impose a stricter one-writer rule across separate checkouts as well. Other
@@ -39,7 +40,8 @@ etc. or some worktree dependent on those (or maybe even some day a cloud session
 That checkout may be a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`,
 `$HOME/GitRepos3` and so on, as `doc/clone-forests.md` describes — or a linked worktree of one of
 those clones, and perhaps some day a cloud session's checkout. A review may still use a linked
-worktree made for it, but nothing in this procedure or in `doc/dual-agent-review.md` requires one.
+worktree made for it, but manual review procedures require none. D13 in
+`doc/dual-agent-review.md` requires two dedicated worktrees for automated dual-agent turns.
 The one-writer rule above applies to whichever checkout the review uses.
 
 ## The effort a review runs at — Ben's decision, 2026-09-30
