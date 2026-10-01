@@ -185,6 +185,9 @@ SIBLINGS_REACHED: dict[str, str] = {
 # (file, literal) -> reason.  Keyed by the literal, not the line, so an edit above
 # it does not move the key; one entry covers every occurrence in that file.
 _NOT_A_SIBLING_PATH: dict[tuple[str, str], str] = {
+    ("py/phonetic_mam/renderer.py", "f'../{_book_stem(book_id)}.html'"): (
+        "a site-relative href from a chapter to its book index in the same site"
+    ),
     ("py/author_boj_util/common_titles_etc.py", "f'../{D1D_DIR}/{sid}.html'"): (
         "a site-relative href; D1D_DIR is a directory of the published site"
     ),

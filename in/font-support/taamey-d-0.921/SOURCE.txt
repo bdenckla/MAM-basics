@@ -1,0 +1,39 @@
+Taamey D 0.921: license, source, and provenance
+================================================
+
+This directory provides the source package and notices for the unmodified
+21,148-byte Taamey_D.woff2 used by the Phonetic MAM and Yeivin ITM pages.
+Font SHA-256: 5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474
+
+Download the complete Taamey D single-font build inputs from this directory:
+  Taamey_D-0.921-source-40115a364a4e.zip
+Archive size: 77676 bytes
+Archive SHA-256: fef946da31c894f5ce6d2c35f1b8a15359bbb1366bdb6ba9b63c7b4a9d67057e
+
+Companion files in this directory:
+  FONT-NOTICE.txt: copyright, GNU GPL version 2 grant, and embedding exception
+  GPL-2.0.txt: complete GNU GPL version 2 text
+  SOURCE-INVENTORY.json: exact source-file hashes and pinned upstream identities
+  BUILD.txt: source scope, upstream build procedure, dependencies, and limitations
+
+The downloadable ZIP contains the eight unchanged upstream inputs needed for
+Taamey D, plus the four companion files listed above. It contains no font binary.
+The font and these source inputs come from the same pinned upstream commit:
+  https://github.com/bdenckla/Taamey_D/tree/40115a364a4e05f610cbd4e6a0abb76fd72b7dab
+The source subtree is:
+  https://github.com/bdenckla/Taamey_D/tree/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources
+
+The maintained MAM-basics copy of this directory is published alongside the font
+under font-sources/taamey-d-0.921/. Its purpose is to provide same-host, no-charge
+access to the source under GNU GPL version 2 section 3, rather than depending
+only on a third party's source link. Keep the source ZIP and notices publicly
+available whenever the associated font copies are distributed.
+
+The source input closure was inspected and all eight Git blob hashes verified.
+No upstream code was run. Byte-for-byte reproduction of the frozen WOFF2 has
+not been established; see BUILD.txt for the unpinned toolchain limitation.
+
+The font is GNU GPL version 2 with the exception reproduced in FONT-NOTICE.txt.
+MAM-basics does not relicense it or the upstream source bundle under GPL version 3.
+The embedding exception applies to documents using the font; redistribution of
+the font itself still requires its notices, license, and corresponding source.
