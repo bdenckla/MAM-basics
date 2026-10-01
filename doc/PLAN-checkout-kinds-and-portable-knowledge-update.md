@@ -346,7 +346,7 @@ Recorded by Claude on 2026-09-30, New York time, under the approved remediation 
 2026-09-29 dual-agent review. The finished plan is left as written.
 
 1. The third rule for every checkout kind, "Examples are the scan archive, found through
-   `BOOK_SCANS_ROOT`" (`:171–172`): `py/mb_cmn/paths.py`'s `book_scans_root` finds the archive at
+   `BOOK_SCANS_ROOT`" (`:170–172`): `py/mb_cmn/paths.py`'s `book_scans_root` finds the archive at
    `$HOME/OneDrive/Documents/ScansOfBooks` unless `BOOK_SCANS_ROOT` overrides it, and by Ben's
    decision of 2026-09-30 the common body's rule now names that default (the review's finding
    32).
@@ -356,8 +356,6 @@ Recorded by Claude on 2026-09-30, New York time, under the approved remediation 
    eligibility. Since the remediation it refuses a clone that its own state disqualifies before
    any fetch, and an ahead or diverged clone after a fetch that changes only its objects,
    `FETCH_HEAD` and `refs/remotes/origin/main` (the review's finding 26).
-
-The plan's rules are introduced at `:161` as "Three rules apply to every kind:".
 
 ## 2026-10-01: the approved public additions, now listed in a tracked record
 
