@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; scheduler registered and idle tick verified 2026-10-01; first approved production round pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first production round registered and turn 01 automatically launched 2026-10-01; production verification and the approved comparison remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -284,9 +284,9 @@ interpreter and owns further authorized main integration. This report does not
 audit either completed review's integration or retirement, and neither old round
 is adopted. Private readiness P7 is still unverified.
 
-The first real automated round requires Ben's concrete window and Agent 1 approval.
-Ben approved the comparison and its record filename on 2026-10-01, as recorded
-below. These two prompts are prepared for that kickoff; their placeholders must
+Ben approved the first production kickoff by running the supplied start command,
+as recorded below. Ben approved the comparison and its record filename on
+2026-10-01. These two prompts are prepared for that round; their placeholders must
 be filled from the approved round and their successor provenance must name the
 preparing agent, date, source checkout, required commit, development checkout and
 integration owner.
@@ -330,12 +330,12 @@ The range spans nine relay implementation commits; its endpoint diff changes
 15 paths, with 2,506 insertions and 34 deletions and no `gh-pages/`, `MAM-*` product or
 September 29 review-record changes. Claude is recommended as Agent 1. This is a
 bounded rollout review; the periodic series' carried-forward anchor is unchanged.
-The window, Agent 1, new round date and kickoff instruction await Ben's approval.
-The review branch will start from the clean home clone's then-current `main`,
-carrying current instructions while the reviewed diff stays at the approved
-endpoints. Ben runs start after the preparing conversation yields and the home
-clone is idle; start rechecks occupancy. Dispatcher-owned worker launches,
-commits and pushes then follow the registered schedule.
+The window, Agent 1, new round date and kickoff instruction were proposed for
+Ben's approval; his later start is recorded below. The review branch starts from
+the clean home clone's then-current `main`, carrying current instructions while
+the reviewed diff stays at the approved endpoints. Ben ran start after the
+preparing conversation yielded; start rechecked occupancy. Dispatcher-owned
+worker launches, commits and pushes follow the registered schedule.
 The facts-only option remains false. P7 and private kickoff remain separate.
 
 ## Approved comparison preparation, 2026-10-01
@@ -401,3 +401,63 @@ of the comparison on `main`; the dispatcher continues to own every review turn.
 > untouched. Return the comparison with both counter-arguments preserved for
 > `doc/dual-agent-review-comparison-2026-10-01.md`; the rollout Codex session
 > verifies and integrates that record on `main` with normal commit and push.
+
+## First production kickoff and queued comparison, 2026-10-01
+
+Ben ran the supplied start command and returned the successful status. Independent
+Git reads verified `origin/dar-2026-10-01` at setup commit
+`ef133e4dc79de069229754ee8dc8d5fc59b3e812`; its parent is home-clone `main`
+`870ce133048aff218484683f5ef3f569150e086b`. The round file matches the approved
+endpoints `303bf2399c1e1fc1300a75f4fb1ed335d62984d0..1bfceff4d952470618fc7584a6bca4fc5c9b2f5f`,
+Claude as Agent 1, Opus 5.5/max and `gpt-6.1-sol`/xhigh, caps 10 and 1,
+facts-only false, and production rather than rehearsal. Its kickoff instruction is:
+
+> Run the first automated MAM-basics review of the relay implementation window with Claude as Agent 1.
+
+The registry contains only this production round. The existing Windows task
+launched turn 01 at `2026-10-01T11:11:14.568068-04:00, New York time`; its
+Running state and result `267009` describe a live task rather than an idle
+failure. The dispatcher lock records PID 2276. The in-flight marker names the
+setup tip and dedicated Claude checkout, and the saved launch record pins the
+expected model and effort. The startup hook succeeded. A compound Git read with
+an appended PowerShell expression was denied; subsequent native Git reads
+succeeded. No completed production handoff or halt was established by this
+initial observation. The scheduler, not this verifying session, launches and
+hands off every review turn.
+
+Codex also queued Ben's approved one-time blind Claude counter-argument. The
+bounded operator is `.novc/run-approved-relay-comparison-20261001.py` in this home
+clone; execution session 57831 waits for the dispatcher's turn-01 handoff receipt.
+Its records are under `.novc/dual-agent-review-comparison/2026-10-01/`.
+After the verified handoff it creates
+`C:/Users/BenDe/GitRepos2/MAM-basics/.claude/worktrees/dar-comparison-2026-10-01-claude`
+detached at the exact turn-01 commit, locks it, fills the blind prompt and launches
+a fresh Opus 5.5/max process. The worker reads the original turn 01 and approved
+diff, reads no later ref, turn or worker log, and writes only its ignored
+counter-argument. The operator verifies unchanged HEAD, detached state and clean
+tracked status before recording completion. Its wait is bounded to three hours
+and its worker to 120 minutes; failure preserves its venue, output and logs.
+The independent comparison waits for both that output and Codex turn 02.
+
+Ben explicitly approved a 15-minute follow-up in the preparing Codex chat after
+automatic approval review rejected creating a recurring automation without
+explicit authorization. The active follow-up's id is
+`verify-first-production-dual-agent-review`. It verifies production handoffs and
+stopping behavior, completes the already approved comparison, and commits and
+pushes finished documentation on `main`. It stays quiet during ordinary progress
+and notifies Ben only on a halt, required decision, measurement failure or
+completed verification and comparison. It pauses when the round ends or halts
+and the comparison is recorded; if the halt prevents the comparison, it reports
+the dependency and pauses. The Windows dispatcher retains every review launch,
+commit and push. This follow-up does not override a halt, remediate or retire
+review venues.
+
+**Concurrent work:** this production round uses GitRepos2 and separate dedicated
+review worktrees. The home clone stays on `main`; Claude's worktree holds
+`dar-2026-10-01`, and Codex's worktree holds
+`dual-agent-review-2026-10-01-codex`. Concurrent work in another checkout in
+the same forest does not compete for those working trees or current branches.
+Each checkout still has one writer, and only the dispatcher writes the shared
+review branch. Changes to relay code or configuration in this home clone need
+coordination because later scheduled ticks load those files; changes in another
+clone do not change this helper's code.

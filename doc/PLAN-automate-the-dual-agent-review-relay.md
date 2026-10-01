@@ -3,7 +3,9 @@
 State: live. Ben authorized implementation on 2026-09-30; core code and four real automatic
 handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
 production is enabled, and scheduler registration and an idle tick are verified
-2026-10-01. The first approved production round remains pending.
+2026-10-01. Ben started the approved first production round on 2026-10-01;
+the scheduler launched turn 01. Production handoffs and the approved comparison
+remain to be verified.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -79,8 +81,8 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first approved production round pending |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; frozen turn-01 input and execution remain pending |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first production round registered and turn 01 automatically launched; production handoffs and stopping behavior remain pending |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process is queued for the verified turn-01 handoff; comparison remains pending |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
@@ -123,7 +125,8 @@ remained idle. The real round requested an acknowledgment; it did not close.
 Independent Git evidence confirms only the permitted turn paths changed, turn 02
 preserved turn 01's byte prefix, and metadata stayed unchanged. Closure and idle
 after closure passed separately in the differential check. A future production
-window still needs Ben's approval. This plan's full definition of done has not been met.
+window needed Ben's approval at this rehearsal stage; the production-kickoff entry
+below records his later start. This plan's full definition of done has not been met.
 The real-worker collision probe also passed: a same-tree child commit advanced
 only the local mirror's synthetic `dar-2026-10-02` branch while Claude ran. The
 dispatcher rejected the moved remote, preserved its pause, marker and logs, and
@@ -145,8 +148,8 @@ helper-clone action, three-minute repetition, interactive limited privilege and
 **IgnoreNew** setting. A scheduled tick completed with result `0`; the registry
 is absent and there are zero registered rounds. The receipt is
 `.novc/relay-scheduler-registration-20261001.json` in the implementation clone.
-No production round was started. The first window, Agent 1 and kickoff instruction
-still require Ben's approval, and the two September 29 manual rounds stay excluded.
+No production round was started at scheduler registration. Ben subsequently ran
+the approved kickoff, as recorded below. The two September 29 manual rounds stay excluded.
 
 ## First production preparation, 2026-10-01
 
@@ -165,11 +168,11 @@ The proposed first window is the endpoint diff
 nine relay implementation commits and 15 changed paths, with no product changes
 or September 29 review records. This bounded rollout review is a proposed
 selection, not a replacement for the periodic series' carried-forward anchor.
-Claude is recommended as Agent 1. The date `2026-10-01`, window, Agent 1 and
-kickoff instruction remain unapproved; the proposed remote branch, local
-carriers, worktree paths and round control directory were checked absent.
-The home clone must be idle when Ben runs start after the preparing conversation
-yields. Its startup occupancy check remains authoritative at that time.
+Claude was recommended as Agent 1. Before kickoff, the proposed remote branch,
+local carriers, worktree paths and round control directory were checked absent.
+Ben subsequently ran the supplied start command after the preparing conversation
+yielded, approving the date, window, Agent 1 and exact kickoff instruction through
+that action. The production-kickoff entry records the verified result.
 
 Ben selected "Run the comparison using that filename (Recommended)" in response
 to Codex's concrete comparison proposal. That approves one fresh Claude
@@ -191,10 +194,51 @@ or branch retirement. The review-completion wait is cleared. His follow-up work
 remains outside this task's write ownership, and neither completed manual round
 is adopted. A fresh Codex session continues in
 `C:/Users/BenDe/GitRepos2/MAM-basics`, using its own environment and owning any
-further authorized main integration. The first production window and Agent 1
-still need concrete approval under kickoff. The first-production-preparation
-entry records Ben's comparison approval; the facts-only rule remains unapproved.
+further authorized main integration. The first-production-preparation and
+production-kickoff entries record the later comparison approval and kickoff.
+The facts-only rule remains unapproved.
 Private readiness P7 remains unverified.
+
+## First production kickoff, 2026-10-01
+
+Ben ran the supplied start command and returned its status. Independent Git reads
+verified setup commit `ef133e4dc79de069229754ee8dc8d5fc59b3e812` on
+`origin/dar-2026-10-01`, based on the clean home clone's `main` at
+`870ce133048aff218484683f5ef3f569150e086b`. The recorded approved endpoints are
+`303bf2399c1e1fc1300a75f4fb1ed335d62984d0..1bfceff4d952470618fc7584a6bca4fc5c9b2f5f`,
+Claude is Agent 1, the caps are 10 and 1, and facts-only remains false.
+The exact kickoff instruction is:
+
+> Run the first automated MAM-basics review of the relay implementation window with Claude as Agent 1.
+
+The existing scheduler launched turn 01 at
+`2026-10-01T11:11:14.568068-04:00, New York time`. The task was Running, with
+its dispatcher lock, in-flight marker, prompt and launch record present.
+The launch pins Claude Opus 5.5/max; its startup hook succeeded. One compound
+PowerShell Git read was denied by the allow rules, and subsequent native Git
+reads succeeded. No handoff or halt was established by this initial observation.
+
+Under Ben's comparison approval, Codex queued the separate fresh headless Claude
+measurement with `.novc/run-approved-relay-comparison-20261001.py` in the home
+clone. It waits for the dispatcher's verified `handoff-turn-01.json`, then creates
+a separate locked checkout detached at that exact commit, fills the prepared
+prompt, and launches Claude at the round's pinned Opus 5.5/max. It neither launches
+nor commits a review turn. Its wait is bounded to three hours and its worker to
+the configured 120 minutes. The measurement's records are under
+`.novc/dual-agent-review-comparison/2026-10-01/`; failure preserves the venue and
+records for inspection. Production verification and the independent comparison
+remain unfinished. Neither completed September 29 round is adopted.
+
+Ben then selected "Approve this follow-up (Recommended)" for a 15-minute
+follow-up in the preparing chat: verify this production round, finish the
+already approved comparison, commit and push completed documentation, then stop.
+Automatic approval review had rejected creating that recurring automation without
+explicit authorization. After Ben's approval, Codex created the active chat
+follow-up `verify-first-production-dual-agent-review`. It stays quiet during
+ordinary progress, reports a halt, required decision, measurement failure or
+completion, and pauses after the round ends or halts and the comparison is
+recorded, or when a halt prevents that comparison. It does not dispatch review
+turns, override a halt or authorize close-out or remediation.
 
 Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
 The complete main-sourced configuration deployment installed only the new Claude
