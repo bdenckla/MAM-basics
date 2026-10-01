@@ -1761,17 +1761,19 @@ point to the archive at `f7229708`. The review's finding 4.2 is the first three,
    the evidentiary limit." now reads "D12 left the finished PLAN-close-out-review-2026-09-08.md
    unchanged; its live sibling PLAN-close-out-review-2026-09-08-update.md recorded that Step 7
    was complete and preserved the evidentiary limit, until `2a051ba5` retired both."
-3. In "Finding 7.1, Phase 6 map, September 8 review and close-out plan": "This entry classifies
-   only the live `.novc` references in `doc/mam-products-phase6-command-map.md`,
-   review-findings-2026-09-08.md and review-findings-2026-09-08-update.md and
-   PLAN-close-out-review-2026-09-08.md and PLAN-close-out-review-2026-09-08-update.md." now reads
+3. In "Finding 7.1, Phase 6 map, September 8 review and close-out plan: no missing `.novc`
+   dependency remains": "This entry classifies only the live `.novc` references in
+   `doc/mam-products-phase6-command-map.md`, review-findings-2026-09-08.md and
+   review-findings-2026-09-08-update.md and PLAN-close-out-review-2026-09-08.md and
+   PLAN-close-out-review-2026-09-08-update.md." now reads
    "This entry classifies only the live `.novc` references in
    `doc/mam-products-phase6-command-map.md`, `doc/review-findings-2026-09-08.md` and
    `doc/PLAN-close-out-review-2026-09-08.md`; the two sibling updates, the review's and the
    plan's, held none."
-4. In "Finding 7.1, Wikisource-derived MAM products plan", the row "“The reproducible scratch
-   scripts remain” and the experiment command": "The tracked review-differences receipt
-   preserves" now reads "The archived review-differences receipt preserves". The receipt is now
+4. In "Finding 7.1, Wikisource-derived MAM products plan: no missing `.novc` dependency
+   remains", the row "“The reproducible scratch scripts remain” and the experiment command":
+   "The tracked review-differences receipt preserves" now reads "The archived
+   review-differences receipt preserves". The receipt is now
    the ninth entry of the archive list in "2026-09-28: retired-family locations and the later
    Psalms consolidation", whose lead-in "The validation receipts and compressed evidence" now
    reads "The validation and review-differences receipts and compressed evidence".

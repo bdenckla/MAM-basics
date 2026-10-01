@@ -153,12 +153,13 @@ transient parser-stage validation boundary in `py/verify_mp/parser_stage.py`.
 ## Corrections made in the 2026-09-29 review's remediation, 2026-09-30
 
 Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
-2026-09-29 dual-agent review. The plain retirement, `87fc7141`, which the merge `ebbfa90f`
-integrated on 2026-09-28, left five passages above false. The first two now have `87fc7141`'s own
+2026-09-29 dual-agent review. The merge `ebbfa90f`, which integrated the plain retirement
+`87fc7141` on 2026-09-28, left five passages above false. The first two now have `87fc7141`'s own
 wording, which that merge dropped (the review's finding 1.3); the other three are of the same
 kind (the plan's flagged site 1).
 
-1. In "Three of the review's five findings have been fixed", item 4:
+1. In "Three of the review's five findings have been fixed, finding 3 partly, and finding 1 is
+   deferred", item 4:
    "`py/mb_cmn/plain_template_schema.py:validate_current_plain_template` checks every argument's
    identity … against `_CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES`" now reads
    "`py/mb_cmn/parser_stage_template_schema.py:validate_parser_stage_template` checks every
