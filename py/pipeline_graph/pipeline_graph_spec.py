@@ -181,6 +181,12 @@ RAW_EDGES = [
         "Wikisource pipeline",
         attrs=(("tooltip", "via automatic post-download reparse"),),
     ),
+    RawEdge(
+        "main_ws_bot__real",
+        "mpu_plus",
+        "Wikisource pipeline",
+        attrs=(("tooltip", "via automatic post-download reparse"),),
+    ),
 ]
 
 SECTION_ORDER = [
