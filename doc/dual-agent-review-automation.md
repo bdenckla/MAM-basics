@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; production enabled; scheduler registration pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; scheduler registered and idle tick verified 2026-10-01; first approved production round pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -72,19 +72,28 @@ evidence do not independently establish that Ben saw a notification.
 
 The registration script creates a task every 3 minutes, only while Ben is logged on,
 with limited privilege and `IgnoreNew` instance handling. `pythonw.exe` starts the
-tick without a console window. Registration remains Ben's action after live worker
-verification. This implementation does not enable an unattended task.
+tick without a console window. Registration is Ben's action after live worker
+verification; he completed it on 2026-10-01 in his normal PowerShell 7 window.
 
 The worker rehearsal, collision probe and notification receipt have passed.
 Ben confirmed the corrected **Dual-agent review** toast under **Windows PowerShell**
-and supplied a screenshot. Production is enabled and this command is ready for
-Ben to run in PowerShell 7 without elevation. The task serves only explicitly
-registered rounds; the current empty registry makes its tick idle. A production
-round still requires Ben's approved future window, Agent 1 and kickoff instruction.
+and supplied a screenshot. Production is enabled. Ben ran this registration
+command in PowerShell 7 without elevation and reported the task as **Ready**:
 
 ```powershell
 & C:/Users/BenDe/GitRepos2/MAM-basics/misc/register-dual-agent-review-task.ps1 -Repository C:/Users/BenDe/GitRepos2/MAM-basics
 ```
+
+Codex independently verified the registered task on 2026-10-01: the action uses
+this clone's exact `pythonw.exe`, `py/main_repo_util.py --dual-agent-review tick`
+and repository working directory. The task is enabled, **Ready**, interactive
+at limited privilege, with **IgnoreNew** and a three-minute repetition interval.
+A scheduled tick has completed with result `0`. The registry is absent, so
+there are zero registered rounds and the tick remains idle. This check neither
+started a round nor changed the task. The receipt is this implementation clone's
+`.novc/relay-scheduler-registration-20261001.json`.
+A production round still requires Ben's approved future window, Agent 1 and
+kickoff instruction; the two September 29 manual rounds remain excluded.
 
 ## Verification and remaining rollout
 
@@ -111,7 +120,7 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 | P3: foreign-file gate | Passed against independent Git status evidence in the local check. |
 | P4: movement and failures | Passed with a real Claude worker: the local mirror advanced mid-process, the gate rejected remote movement, the checkout stayed clean at its original tip, and pause, marker, logs and notification were preserved. Independent bare-repository reads confirmed the dummy commit. The differential worker-push refusal and forced dispatcher push-failure recovery also passed. |
 | P5: closure and cap | The differential three-turn check requested acknowledgment, closed, and did not launch a fourth worker. The real four-turn rehearsal requested turn 05 acknowledgment, stopped at cap 4, and stayed idle with no further commit. The real round did not close. |
-| P6: notifications and hidden launch | Passed after correcting the sender identity. The hidden helper and dispatcher test both reached Windows notification history. Ben replied "Yes, I see the corrected test" and supplied a screenshot. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
+| P6: notifications and hidden launch | Passed after correcting the sender identity. The hidden helper and dispatcher test both reached Windows notification history. Ben replied "Yes, I see the corrected test" and supplied a screenshot. Ben registered the scheduler on 2026-10-01; its exact hidden action and settings were independently verified, and a scheduled idle tick completed with result 0 and zero registered rounds. |
 | P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
 | P8: Codex worktree and instructions | Passed in both real Codex turns: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, and repository and required skill instructions were loaded. All three turn-02 checker reports arrived before the final revisions and dispatcher commit; completion before its first draft write is not established. |
 
@@ -254,13 +263,14 @@ the corrected hidden and dispatcher receipts are in
 `.novc/dual-agent-review-toast-fixed-20260930/`. The unregistered synthetic
 notification folder `.novc/dual-agent-review/2026-10-03/` contains the dispatcher's
 `NEEDS-BEN.md` and `toast-result.json`; it is no review round and changes no Git ref.
-Production is enabled; scheduler registration and the first approved window remain
-Ben's next actions. The occupied primary clone and both ongoing reviews remain excluded.
+Production is enabled; the scheduler is now registered and the first approved
+window remains Ben's next action. The primary clone and both manual reviews remain excluded.
 Black left the changed Python file clean. Both PowerShell scripts parsed without
 errors. The final suite after the helper and production-flag changes passed
 1015 tests, 5 skips and 60 subtests using `py/main_test.py -q`; its one warning was
 an inability to write pytest's local cache. The scheduler task was independently
-checked absent. No generator or product is reached by this fix.
+checked absent at that time; the later registration is recorded above. No generator
+or product is reached by this fix.
 
 ## Future review and measurement
 
