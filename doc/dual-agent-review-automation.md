@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first two production handoffs independently verified 2026-10-01; turn 03 and the blind measurement are running; later production verification and the approved comparison remain pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 and notification receipt confirmed; first three production handoffs independently verified 2026-10-01; turn 04 is running; the blind measurement is complete; later production verification and the approved comparison record remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -513,7 +513,44 @@ The runtime-context inspector is `.novc/inspect-production-codex-context-2026100
 
 The scheduler launched Claude turn 03 at
 `2026-10-01T12:26:19.948592-04:00, New York time`, with the turn-02 commit as its
-required tip. The separate blind Claude worker remains live. The independent
-comparison awaits that worker's verified completion; the pushed Codex
-counter-argument is now available. No production halt was observed, and the
-verification follow-up remains active.
+required tip. At this observation the separate blind Claude worker was live,
+and the independent comparison awaited that worker's verified completion;
+the pushed Codex counter-argument was available. No production halt was
+observed, and the verification follow-up remained active.
+
+## Third production handoff and blind completion verified, 2026-10-01
+
+Claude turn 03 is `58597c3b622e37839e97f49c86df63a9eadc3fde`, a direct child
+of turn 02, handed off at `2026-10-01T13:28:30.989900-04:00, New York time`.
+Independent Git and log checks verified the sole new turn-03 path, unchanged
+round metadata, quoted instruction, valid `Next: turn 04, codex`, Opus 5.5/max
+identity and successful terminal result. Evidence is
+`.novc/production-relay-independent-verification-20261001/turn-03.json`.
+The scheduler launched Codex turn 04 in its dedicated checkout. No halt was
+observed at `2026-10-01T13:33:52.103596-04:00, New York time`.
+
+The one-time blind operator completed successfully at
+`2026-10-01T13:14:39.678789-04:00, New York time`. Its output hash matches the
+completion receipt, and the saved reads show no detected access to turn 02
+or later review content. The fresh independent comparison agent has completed
+its read-only assessment; the parent is verifying that assessment before
+recording the approved comparison. Both original counter-arguments will be
+preserved in that record.
+
+## Suppressing dispatcher Git consoles, 2026-10-01
+
+Ben reported momentary terminal windows and asked whether they could be
+"visually suppressed, but still do their job". The dispatcher already hides
+worker and notification subprocesses, but its shared Git helper omitted the
+Windows creation flag. Codex added `CREATE_NO_WINDOW` for Windows Git launches
+in `py/repo_util/dual_agent_review_round.py`; other platforms use zero flags.
+Git arguments, captured output, refusal handling and review transitions retain
+their existing behavior. This changes later scheduled launches, while the
+already-running controller retains its loaded module. No worker was restarted.
+
+Process ancestry confirmed the active scheduled dispatcher and its Codex worker.
+A 20-second read-only observation found no visible console window, so the
+identity of every reported flash remains unproven. The diagnostic record is
+`.novc/visible-console-windows-133749531648.json`. Black left the changed source
+unchanged; the complete suite passed **1,016 tests with 5 skips in 154.11 seconds**.
+The change does not reach a mega generator or alter the historical review window.

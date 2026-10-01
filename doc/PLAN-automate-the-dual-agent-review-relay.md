@@ -4,9 +4,9 @@ State: live. Ben authorized implementation on 2026-09-30; core code and four rea
 handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
 production is enabled, and scheduler registration and an idle tick are verified
 2026-10-01. Ben started the approved first production round on 2026-10-01;
-the first two production handoffs are independently verified and turn 03 is running.
-Later production handoffs, stopping behavior and the approved comparison remain
-to be verified.
+the first three production handoffs are independently verified and turn 04 is running.
+The blind measurement is complete. Later production handoffs, stopping behavior
+and the approved comparison record remain to be verified.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -82,8 +82,8 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first two production handoffs independently verified and turn 03 running; later handoffs and stopping behavior remain pending |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process is running at the verified turn-01 commit; comparison remains pending |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first three production handoffs independently verified and turn 04 running; later handoffs and stopping behavior remain pending |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process completed at the verified turn-01 commit; fresh independent assessment completed; parent verification and comparison record remain pending |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
@@ -415,9 +415,24 @@ The worker's saved runtime context independently confirms `gpt-6.1-sol`,
 
 The scheduler launched Claude turn 03 at
 `2026-10-01T12:26:19.948592-04:00, New York time`. The separate blind Claude
-measurement is still running. The independent comparison waits only for that
-measurement's verified completion; Codex turn 02 is now available. No production
-halt was observed, and the verification follow-up remains active.
+measurement was still running at that observation. The independent comparison
+then awaited that measurement's verified completion; Codex turn 02 was available.
+No production halt was observed, and the verification follow-up remained active.
+
+## Third handoff and terminal suppression, 2026-10-01
+
+The third production handoff is `58597c3b622e37839e97f49c86df63a9eadc3fde`,
+independently verified against its receipt, exact Git parent and changed path,
+unchanged round metadata and successful Opus 5.5/max terminal result. Codex
+turn 04 is live in its dedicated worktree. The separate blind measurement
+completed successfully, and the fresh read-only comparison agent completed its
+assessment; parent verification and the finished comparison record remain.
+
+Ben asked to suppress distracting terminal windows. The Windows Git child
+launches now use `CREATE_NO_WINDOW`; workers remain running and later scheduled
+controllers load the change. The complete suite passed 1,016 tests with 5 skips
+in 154.11 seconds. The runbook's "Suppressing dispatcher Git consoles" passage
+records the exact scope and the limit of the visible-window observation.
 
 ## Context: what the relay costs
 
