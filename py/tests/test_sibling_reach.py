@@ -166,6 +166,10 @@ SIBLINGS_REACHED: dict[str, str] = {
         "redirect_stubs/stubs.py only, to publish or check the frozen redirect stubs"
         " under the source host's docs directory."
     ),
+    "phonetic-hbo": (
+        "redirect_stubs/stubs.py only, to publish or check the frozen legacy URLs."
+        " The maintained Phonetic MAM and Yeivin products use local MAM-basics paths."
+    ),
     "hbofonts": (
         "redirect_stubs/stubs.py reads the maintained target to prove each mapped"
         " Taamey_D page remains tracked under hbofonts' published gh-pages directory."

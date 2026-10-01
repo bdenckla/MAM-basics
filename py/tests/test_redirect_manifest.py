@@ -81,9 +81,9 @@ def test_every_frozen_url_has_a_published_target(repo: stubs.RedirectRepo) -> No
     if skip_reason is not None:
         pytest.skip(skip_reason)
     published = set(stubs.published_pages(paths.repo_root(), repo))
-    declared_targets = set(targets.values())
+    declared_targets = {target.path for target in targets.values()}
     if repo.not_found_target is not None:
-        declared_targets.add(repo.not_found_target)
+        declared_targets.add(repo.not_found_target.path)
     gone = sorted(target for target in declared_targets if target not in published)
     assert not gone, (
         f"{len(gone)} targets declared in {repo.manifest_path} are no longer published"
