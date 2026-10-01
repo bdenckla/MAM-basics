@@ -50,7 +50,7 @@ specific revision -- the wlc-utils#74 re-vendoring pins 3025606, the revision al
 that this contract change carries no upstream content drift and stays independently reviewable
 from any later content refresh.  Run from the repo root (pinned):
 
-    PYTHONUTF8=1 .venv/Scripts/python.exe py/main_accgram.py vendor-printed-decalogue --oldid 3025606
+    .venv/Scripts/python.exe py/main_accgram.py vendor-printed-decalogue --oldid 3025606
 """
 
 from __future__ import annotations

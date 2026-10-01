@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import multiprocessing
+import sys
 
 from foi import foi_finals
 from foi import foi_struct as fct
@@ -102,6 +103,8 @@ def almost_main(foi=None, single_threaded=False):
 
 def main():
     """Collect features of interest from MAM."""
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser()
     foi_choices = _WIKITEXT_CLARGS  # CLARG: command-line arg
     parser.add_argument("--foi", choices=foi_choices)

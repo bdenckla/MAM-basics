@@ -4,9 +4,9 @@ State: live. Ben authorized implementation on 2026-09-30; core code and four rea
 handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
 production is enabled, and scheduler registration and an idle tick are verified
 2026-10-01. Ben started the approved first production round on 2026-10-01;
-the first three production handoffs are independently verified and turn 04 is running.
-The blind measurement is complete. Later production handoffs, stopping behavior
-and the approved comparison record remain to be verified.
+the first four production handoffs are independently verified and turn 05 is running
+as the owed acknowledgment. The approved blind comparison is recorded. Later
+production handoffs and stopping behavior remain to be verified.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -82,8 +82,8 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first three production handoffs independently verified and turn 04 running; later handoffs and stopping behavior remain pending |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; the separate blind Claude process completed at the verified turn-01 commit; fresh independent assessment completed; parent verification and comparison record remain pending |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first four production handoffs independently verified and turn 05 acknowledgment running; later handoffs and stopping behavior remain pending |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | implemented for this first-round comparison in `doc/dual-agent-review-comparison-2026-10-01.md`: fresh blind Claude output, independent assessment and parent verification complete; both counter-arguments preserved; no general model ranking or standing policy inferred |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
@@ -433,6 +433,33 @@ launches now use `CREATE_NO_WINDOW`; workers remain running and later scheduled
 controllers load the change. The complete suite passed 1,016 tests with 5 skips
 in 154.11 seconds. The runbook's "Suppressing dispatcher Git consoles" passage
 records the exact scope and the limit of the visible-window observation.
+
+## Fourth handoff and comparison recorded, 2026-10-01
+
+Codex turn 04 is `900c815f646121e84c178dbb7e86d2ac3bc569b8`, a direct child
+of turn 03, handed off at `2026-10-01T13:44:48.621827-04:00, New York time`.
+Independent Git, receipt, worker-log and runtime-context checks verified the
+sole new turn-04 path, unchanged metadata, quoted instruction, pinned
+`gpt-6.1-sol`/xhigh and `Next: turn 05, claude; acknowledgment`.
+The live remote corroborated the tip. The scheduler launched the owed turn 05;
+stopping behavior remains pending its response.
+
+Ben's approved comparison is completed in
+`doc/dual-agent-review-comparison-2026-10-01.md`. The independent assessor was
+fresh, read-only, inherited no conversation and authored neither input. Parent
+verification confirmed the adopted source and instruction claims and reproduced
+the retained local probes. Both counter-arguments are preserved byte for byte.
+Codex supplied valid policy corrections and two additional findings; blind
+Claude supplied operational observations and corrections Codex missed. This
+single comparison does not choose a general model ranking or future policy.
+
+The terminal-suppression fix is on main in `0c12552b`, followed by a normal
+merge preserving Ben's newer instruction/documentation work. Eight relevant
+checks passed after that merge. An elevated read-only desktop observation
+covered the next scheduled launch at 13:47:14, New York time, and detected no
+visible console window. Its record is
+`.novc/visible-console-windows-134746619190.json`. This is bounded observation,
+not proof that every future worker child is hidden.
 
 ## Context: what the relay costs
 
