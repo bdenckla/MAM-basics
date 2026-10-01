@@ -345,6 +345,14 @@ NOT_IN_MEGA: dict[str, str] = {
         " the tracked half of the run is the parse-ws step's.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
+    "py/main_parse.py ws --write-parser-stage-grammar-lock": (
+        "Ben's decision, 2026-09-30, approving a Claude-written proposal: every"
+        " parse-ws run checks the transient parser stage against"
+        " py/verify_mp/expanded_stack_grammar_parser_stage.lock.json, so rewriting the"
+        " lock on every run would make that check pass by construction.  Run it by"
+        " hand when a legitimate new raw nesting stops parse-ws.  Recorded in"
+        " doc/PLAN-remediate-review-findings-2026-09-29.md, finding 16."
+    ),
     "py/main_diff.py mpplus --old A --new B": (
         "Claude-written, accepted by Ben on 2026-09-10: a one-off comparison of two"
         " revisions someone picks, where the diff-mpplus step rebuilds every named"
