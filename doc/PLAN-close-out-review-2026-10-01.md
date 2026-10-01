@@ -1,12 +1,14 @@
 # Plan: close out and remediate the first automated relay review
 
-State: live; decision package prepared 2026-10-01; remediation execution awaits Ben's approval.
+State: live; remediation approved 2026-10-01; execution assigned to a fresh session in the existing worktree.
 
 Codex prepared this plan on 2026-10-01 from the supplied successor prompt. The predecessor
 quoted Ben's latest instruction as: "Please give a prompt for a session that will do (or at
 least start) what remains to be done. Remediation and/or close-out?" The successor prompt's
-remaining text was the predecessor's reconstruction. This plan proposes remediation; no
-reviewer agreement or planning commit is execution approval.
+remaining text was the predecessor's reconstruction. Ben subsequently approved C1 through C6
+and the complete remediation scope, including final main integration and deployment, and
+selected a fresh-session execution prompt. The approval snapshot below records his selection;
+no reviewer agreement or planning commit supplies that authority.
 
 ## Execution frame and verified preparation
 
@@ -43,7 +45,7 @@ or any review-branch edit. Reinspection at `2026-10-01T15:54:53.549564-04:00, Ne
 confirmed PAUSE present and no marker, lock or runtime blocker. The scheduler remained
 enabled, Ready, with IgnoreNew. The existing paused follow-up must remain paused.
 The close-out executor now owns this carrier; no automated worker owns a numbered turn.
-The registry entry and round's `State: live` stay as they are pending lifecycle approval.
+The registry entry and round's `State: live` stay as they are pending approved lifecycle implementation.
 Do not resume this closed exchange, disable the global scheduler, or erase ownership records.
 
 Repeat the checkout verification before editing; these commands run from any PowerShell 7
@@ -140,10 +142,21 @@ part of this approval.
 
 Each recommendation below remains a proposal until Ben answers it. C1 was approved on
 2026-10-01 by selecting "Permit public checks (Recommended)"; its quoted wording below is
-approved. C2 through C6 and execution scope remain pending. Record answers with their
+approved. C2 was approved on the same date by selecting "Approve the documented trusted-worker
+boundary (Recommended)"; its replacement wording below is approved. C3 was approved on
+the same date by selecting "Keep present-state round plus inactive registry (Recommended)";
+its quoted lifecycle wording is approved. C4 was approved on the same date by selecting
+"Require turn 02 counter-argument before acknowledgment (Recommended)"; its quoted D13
+qualification is approved. C5 was approved on the same date by selecting "Keep current
+nonpossessive Claude form (Recommended)"; its quoted future-subject wording is approved.
+C6 was approved on the same date by selecting "Use the bounded identity resolver
+(Recommended)"; its quoted runbook wording is approved. All six policy choices are settled;
+execution scope was then approved for a fresh session. The quoted wording below is the frozen
+approved wording; reconcile a material requirement change with Ben before applying it.
+Record answers with their
 date and exact approved wording in the single turn-01 update, then freeze the approval snapshot
-here before implementation. Ask for execution scope after the decisions are settled; an answer
-about a policy alone does not imply execution or main integration.
+here before implementation. The final scope dialog expressly approved execution, final main
+integration and deployment, as recorded below; the earlier policy answers alone did not.
 
 ### C1. Public checking capability, finding 3
 
@@ -261,10 +274,10 @@ Proposed runbook wording:
 Never print credential-bearing URLs. Revalidate immediately before outbound writes and retain
 the setup-to-dispatch baseline. Probe per-worktree config independently from the home clone.
 
-## Implementation waves after approval
+## Approved implementation waves
 
-1. **Freeze approval and preserve recovery.** Record every answer and approved execution scope
-   in `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`; revise this live plan.
+1. **Confirm approval and preserve recovery.** Read every recorded answer and the frozen scope
+   in `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` and this live plan.
    Snapshot existing attempt metadata/evidence without rewriting originals. Recheck pause,
    ownership, exact HEAD, clean status, fetched tips and baseline ancestry. Merge fresh main
    in this worktree as D11 requires before subsequent edits. Do not copy the home environment.
@@ -284,7 +297,7 @@ the setup-to-dispatch baseline. Probe per-worktree config independently from the
    repeats within an unresolved episode stay quiet. Use one structured stop formatter on
    handoff and idle paths; a successful Ben stop names its reason, turn and Override route.
 
-   Proposed successful-stop notice wording, also subject to the editorial approval:
+   Approved successful-stop notice wording:
 
    > <repository>, round <date>: Ben's decision required: <worker reason>. Read <turn path>.
    > Record the decision in <turn-01 update path>; continue through an authorized Override:
@@ -429,16 +442,28 @@ new decisions by Ben. Preserve the two completed September 29 reviews and Ben's 
 |---|---|
 | One complete list, including withdrawn claims and final qualifications | implemented in planning; execution dispositions still pending |
 | Exact checkout/ancestry, current worker occupancy and round-specific pause | implemented in preparation; repeat ownership checks before every write phase |
-| C1 public checking capability and quoted wording | implemented decision: approved by Ben 2026-10-01; execution remains pending |
-| C2 through C6 concrete choices and editorial wording | unresolved; Ben's answers required |
-| Defect fixes and approved policy implementation | deferred to approved remediation |
+| C1 public checking capability and quoted wording | implemented decision: approved by Ben 2026-10-01; code execution assigned to fresh session |
+| C2 trusted-worker boundary and quoted wording | implemented decision: approved by Ben 2026-10-01; code execution assigned to fresh session |
+| C3 present-state lifecycle and quoted wording | implemented decision: approved by Ben 2026-10-01; code execution assigned to fresh session |
+| C4 counter-argument before acknowledgment and quoted wording | implemented decision: approved by Ben 2026-10-01; code execution assigned to fresh session |
+| C5 current nonpossessive subject and quoted wording | implemented decision: approved by Ben 2026-10-01; code execution assigned to fresh session |
+| C6 bounded identity resolver and quoted wording | implemented decision: approved by Ben 2026-10-01; code execution assigned to fresh session |
+| Defect fixes and approved policy implementation | active; approved 2026-10-01 for fresh-session execution |
 | Sole turn-01 update and exact base pointer | implemented for planning; append approved decisions and later results here |
 | Suite after final test-risky change and final mega/integration | deferred; no new remediation validated yet |
 | Preserved turns, finished comparison, console fix, manual reviews and private boundary | active throughout |
 
-Approval snapshot: C1 approved 2026-10-01; remaining decisions and execution not yet approved.
-Record dated decisions, approved alternatives, expected
-changed paths, any deferrals and explicit execution/final-integration scope before wave 1.
+**Frozen approval snapshot, 2026-10-01.** Ben approved each recommended choice C1 through C6,
+then selected "Approve; prepare a fresh-session execution prompt (Recommended)" in the
+complete-scope dialog. That dialog expressly included all surviving findings, wave 3's
+proposed Next: Ben notice wording, targeted checks, final suite/mega, final main integration
+and canonical-agent deployment. It expressly excluded unique comparison proposals, private
+rollout and cleanup. These choices and the expected paths, outputs and gates above constitute
+the approved execution scope. The current session performs only planning/decision write-back;
+the fresh executor accepts implementation and eventual final integration in this same worktree.
+No further general remediation or integration approval is needed within this snapshot.
+Findings 1 and 11 remain withdrawn; their optional alternatives are not execution tasks.
+The excluded proposals remain deferred and unapproved; do not silently collect them into a fix.
 Planning validation at `ef43a925aa83993400ce4c87cae93dfb47dc2930`: the protocol/census/deployment
 lint module passed 3 tests and the tracked whitespace check passed. No Python implementation
 changed in preparation, so no Black, full suite or mega is owed by this planning commit.
