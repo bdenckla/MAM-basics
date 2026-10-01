@@ -95,7 +95,9 @@ ACCGRAM_CSS_HREF = "wlc/style.css"
 
 # Hrefs below include relative paths within the deploy root and absolute URLs to
 # published pages, including MAM-with-doc and other repositories.
-# py/tests/test_site_index_links.py resolves each one against gh-pages/.
+# py/tests/test_site_index_links.py resolves each relative href, and each absolute one
+# under https://bdenckla.github.io/MAM-basics/, against the files tracked under
+# gh-pages/, and checks no other URL; it fetches nothing.
 #
 # AND IT NAMES index.html EXPLICITLY where document-index wrote a bare directory URL.
 # GitHub Pages serves both, but py/check_html_syntax_and_sanity.py does not resolve a

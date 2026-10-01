@@ -102,7 +102,6 @@ def focus_fade_img(
     viewbox_w,
     viewbox_h,
     svg_id,
-    overlay_class="scan-annot-overlay focus-fade-overlay",
     fade_color=(200, 180, 60),
     max_alpha=200,
     exponent=0.6,
@@ -261,7 +260,7 @@ def focus_fade_img(
     overlay = wlc_utils_html.svg(
         (svg_el("defs", (fade_filter, fade_mask)), tint),
         {
-            "class": overlay_class,
+            "class": "scan-annot-overlay focus-fade-overlay",
             "viewBox": f"0 0 {viewbox_w} {viewbox_h}",
             "preserveAspectRatio": "none",
             "aria-hidden": "true",
