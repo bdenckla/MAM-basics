@@ -23,8 +23,9 @@ and extra fields are empty. The reader checks the complete manifest/archive
 member set, rejects duplicate or unlisted members, validates this metadata and
 member CRCs, and reads members directly without extraction. The six
 pre-migration archives were written on 2026-09-10, from loose JSON copies of
-their files stored on 2026-09-06, by a program that was never tracked. `py/mb_diff_mpu/mpplus_archive.py` writes the MAM-basics snapshots and,
-given the members of each pre-migration archive, reproduces it byte for byte.
+their files stored on 2026-09-06, by a program that was never tracked.
+`py/mb_diff_mpu/mpplus_archive.py` writes the MAM-basics snapshots and, given
+the members of each pre-migration archive, reproduces it byte for byte.
 
 Ben's decision, 2026-09-06: common change-log generation must not require a
 sibling MAM-parsed clone. Arbitrary historical comparisons remain available
