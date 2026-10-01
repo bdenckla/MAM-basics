@@ -1598,18 +1598,19 @@ stay. The 14 deliberate lines also stay:
 - `doc/foi-mtgmtg-empty-cell.md`'s census scripts in that clone's `.novc/`;
 - the maintenance runbook's settled baseline command, which the approved plan kept.
 
-**Noticed beyond the census and not acted on:**
+**Noticed beyond the census and not acted on when this entry was written, and fixed later that
+day at Ben's request, as "The sites noticed beyond the forest census fixed, 2026-10-01" records:**
 
-1. **`MAM-OSIS/osis2mod example command.txt:7`.** It is a hand-written example command, in a
+1. **`MAM-OSIS/osis2mod example command.txt:7`.** It was a hand-written example command, in a
    distributed product directory, naming `C:/Users/BenDe/GitRepos/MAM-basics/MAM-OSIS/mapm.osis.xml`.
    The prompt left `MAM-*/` to the machine-path lint, which does not scan `MAM-OSIS/`, so the file is
    outside both.
 2. **`doc/PLAN-repo-maintenance-across-GitRepos.md:50` and `:556–558`.** These criteria for retiring
-   a standalone task clone say "the primary clone". A forest-neutral wording needs a choice about
+   a standalone task clone said "the primary clone". A forest-neutral wording needed a choice about
    which clone must hold a task clone's commit.
-3. **`hebrew-prose`'s `references/terminology.md:146`.** Its `MAM-with-doc/gh-pages/misc/` is a stale
-   layout rather than a forest pin. `doc/dual-agent-review-2026-09-16-turn-01-claude.md:1353–1356`
-   already recorded it.
+3. **`hebrew-prose`'s `references/terminology.md:146`.** Its `MAM-with-doc/gh-pages/misc/` was a
+   stale layout rather than a forest pin.
+   `doc/dual-agent-review-2026-09-16-turn-01-claude.md:1353–1356` already recorded it.
 
 **Verification.**
 
@@ -1656,5 +1657,111 @@ and no canonical skill or configuration changed, so no deployment is owed. Befor
 `git diff --check` passed, and `py/tests/test_receipt_update_links.py`,
 `py/tests/test_prose_conventions.py` and `py/tests/test_prose_mark_order.py` passed through
 `py/main_test.py`.
+
+This update remains `State: open` while its base survives.
+
+## The sites noticed beyond the forest census fixed, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in the session that recorded "Live texts pinned to
+the primary forest fixed, 2026-10-01". **Fixed: the three sites that entry lists as noticed beyond
+the census, and two more sites with the third site's defect.** That session's final report listed
+the three sites under "Noticed but not acted on (outside the approved scope):", and Ben replied to
+that list: "Go ahead and fix those (scope creep authorized)". He approved fixing the sites; the
+wording of each fix below is this session's.
+
+**The changes**, in three commits on `main`, pushed at about 12:51 New York time, which moved
+`origin/main` from `b60d5c7c` to `325a1c66`:
+
+1. `e2c1eae7`, `MAM-OSIS/osis2mod example command.txt`.
+   - The osis2mod command read `C:/Users/BenDe/GitRepos/MAM-basics/MAM-OSIS/mapm.osis.xml` and now
+     reads `<MAM-OSIS>/mapm.osis.xml`. A new closing line says "where <MAM-OSIS> is the absolute
+     path of the directory holding this file."
+   - MAM-OSIS is a distributed product, so the placeholder names the product's own directory rather
+     than a clone, which a consumer may not have.
+   - No generator writes this file: `py/main_mam_osis.py` writes `MAPM-24/`, `header.xml`,
+     `mapm.osis.xml` and the Pages index. No OSIS data changed.
+   - The file's SWORD paths under `C:/Users/BenDe/AppData/Roaming/` are machine paths, not forest
+     pins, and stay.
+2. `66582f1d`, `doc/PLAN-repo-maintenance-across-GitRepos.md`, the maintenance runbook, in its
+   criteria for retiring a standalone task clone.
+   - At `:50`, "The checked-out commit is preserved in the primary clone or remote." now reads "The
+     checked-out commit is preserved in a full clone of the repository, in any forest, or on its
+     remote."
+   - In the dated-task-folder case at `:556–560`, "already preserved in the primary clone or
+     remote" now reads "already preserved in a full clone of the repository, in any forest, or on
+     its remote".
+   - In the same case, "dangling objects that actually belong to the primary clone" now reads
+     "dangling objects that actually belong to the object store its alternates file names".
+   - No forest is globally primary, and the objects that a borrowing clone shows are in the object
+     store its `objects/info/alternates` lists. The runbook is a maintained document, so it takes no
+     dated entry of its own.
+3. `325a1c66`, the stale `MAM-with-doc/gh-pages/misc/` layout. That was the layout of the
+   `MAM-with-doc` repository before the product moved into MAM-basics. Each corrected path names a
+   file or directory that exists under `gh-pages/MAM-with-doc/misc/` in MAM-basics.
+   - `hebrew-prose`'s `references/terminology.md:146` is the site the report listed. It now places
+     the paseq and legarmeh essay at `gh-pages/MAM-with-doc/misc/he_ws_intro_to_mam_pasleg.html`.
+   - The same file's `:215` had the same layout for
+     `gh-pages/MAM-with-doc/misc/tsinnorit_and_oleh_on_ivs.html`.
+   - The docstring of `py/author_misc/review_of_hebrew_worlds_phonetic_bible.py:27` said that the
+     eleven screenshots "now live in" `MAM-with-doc/gh-pages/misc/img/hebrew_world/`. It now names
+     `gh-pages/MAM-with-doc/misc/img/hebrew_world/`.
+   - The second and third sites were not in the report's list. They have the listed site's defect,
+     and Ben's reply authorized scope creep.
+   - Every edit was applied to the files' UTF-8 bytes by a scratch script, so the Hebrew on
+     `terminology.md:146` is unchanged byte for byte.
+
+**Left.** Three more files write `MAM-with-doc/gh-pages`, and they stay:
+
+- `uxlc/doc/clc-design.md:789` and `uxlc/doc/clc-skeleton-plan.md:60`, which are design documents
+  imported from UXLC-utils;
+- `doc/dual-agent-review-2026-09-26-turn-01-claude.md:2249`, which is a finished receipt.
+
+**Configuration deployment.** `references/terminology.md` belongs to a canonical shared skill, so
+after the push this session deployed the user configuration from this clone on `main`.
+
+1. **Check.** `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check` fetched
+   and compared from `refs/remotes/origin/main@325a1c66`. It reported drift only in
+   `~/.claude/skills/hebrew-prose` and `~/.agents/skills/hebrew-prose` ("different:
+   references/terminology.md"), with every other mapping clean and `USER_CONFIG_PROBLEM_COUNT=2`.
+2. **Deployment.** `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config`, at about
+   12:52 New York time, deployed those 2 mappings from the same source and reported
+   `USER_CONFIG_DEPLOYED_COUNT=2`, with exit status 0.
+3. **Recheck.** The `--check` that followed reported `USER_CONFIG_PROBLEM_COUNT=0`, with exit
+   status 0.
+
+**Verification.**
+
+- `git diff --check` passed.
+- Black left `py/author_misc/review_of_hebrew_worlds_phonetic_bible.py` unchanged, and
+  `./.venv/Scripts/python.exe -m ruff check --no-cache py` reported "All checks passed!".
+- `./.venv/Scripts/python.exe py/main_test.py` passed 20 tests in
+  `py/tests/test_receipt_update_links.py`, `py/tests/test_prose_conventions.py`,
+  `py/tests/test_prose_mark_order.py`, `py/tests/test_h_dot_below_nfc.py`,
+  `py/tests/test_no_machine_paths_in_artifacts.py` and `py/tests/test_product_scopes.py`.
+- **Not owed.** The three commits change a product's instruction text, a runbook, a skill reference
+  and a docstring, and no program output or code, so the full suite was not owed. No changed string
+  reaches a generated file, so the mega was not owed.
+
+**Also corrected in place in this file**, in "Live texts pinned to the primary forest fixed,
+2026-10-01", in its list of sites noticed beyond the census:
+
+1. "**Noticed beyond the census and not acted on:**" now reads "**Noticed beyond the census and not
+   acted on when this entry was written, and fixed later that day at Ben's request, as "The
+   sites noticed beyond the forest census fixed, 2026-10-01" records:**".
+2. "It is a hand-written example command" now reads "It was a hand-written example command".
+3. "a standalone task clone say "the primary clone". A forest-neutral wording needs a choice" now
+   reads "a standalone task clone said "the primary clone". A forest-neutral wording needed a
+   choice".
+4. "Its `MAM-with-doc/gh-pages/misc/` is a stale" now reads "Its `MAM-with-doc/gh-pages/misc/` was a
+   stale".
+
+**Reach and acts.** The first commit reaches the distributed MAM-OSIS product's instruction text,
+not its data. The acts were a push of `main` and a configuration deployment outside Git.
+
+**Verification of this entry.** This entry and its in-place corrections are one commit on `main`,
+after `325a1c66`. They change only documentation, and no canonical skill or configuration, so the
+deployment above stands. Before the commit, `git diff --check` passed, and
+`py/tests/test_receipt_update_links.py`, `py/tests/test_prose_conventions.py` and
+`py/tests/test_prose_mark_order.py` passed through `py/main_test.py`.
 
 This update remains `State: open` while its base survives.
