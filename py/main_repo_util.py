@@ -64,8 +64,7 @@ produces findings that must not land in this public repo's tracked tree.
 maintenance -- two runs of each read-only action rather than one:
 
     ... --check-repo-standards --visibility public  --report-txt .novc/standards-public.txt
-    ... --check-repo-standards --visibility private --report-txt ^
-        C:/Users/BenDe/GitRepos/MAM-private/.novc/standards-private.txt
+    ... --check-repo-standards --visibility private --report-txt ../MAM-private/.novc/standards-private.txt
 
 The default is ``all``, which still sweeps everything; what the default cannot do
 is write its report into a file this repo tracks. See

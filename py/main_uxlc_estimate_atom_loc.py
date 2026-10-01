@@ -62,7 +62,7 @@ def main():
         print("Choose the intended number, then run")
         book_arg = f"'{book_id}'" if " " in book_id else book_id
         print(
-            "C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe"
+            "./.venv/Scripts/python.exe"
             f" py/main_verse_links.py {book_arg} {cv} --atom N"
         )
         sys.exit(1)
