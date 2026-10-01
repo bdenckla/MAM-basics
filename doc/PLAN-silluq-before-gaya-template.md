@@ -112,10 +112,10 @@ group heading comes from `_mtg_count_description` in the same module. The first 
 says the concern "turns out to be unfounded": that a verse-final word might contain a
 meteg in the narrow sense (געיה) after the mark that serves as silluq. That is the
 concern this plan exists to encode, and 1 Kings 7:37 is a case of it, so the sentence
-is false. Re-read the two defects with:
+is false. Re-read the two defects, from the root of a MAM-basics checkout, with:
 
 ```powershell
-Select-String -Path C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/MAM-with-doc/foi/foi-mtgmtg.html -Pattern 'unfounded|verse-final one'
+Select-String -Path gh-pages/MAM-with-doc/foi/foi-mtgmtg.html -Pattern 'unfounded|verse-final one'
 ```
 
 Ben settled the reading on 2026-09-09, disposing of finding 1 of
@@ -135,10 +135,10 @@ Five decisions, Ben's finding of 2026-09-09 applied to this page:
    meteg after silluq in לְכֻלָּֽהְנָֽה׃. MAM's source entry for that verse names the two
    marks in their written order, silluq then געיה: the entry reads `קווים לסילוק וגעיה`.
    That is how Ben reads it (phonetic-hbo#78, 2026-09-08: "this silluq-then-meteg is
-   not only present in MAM, it is confirmed by MAM's doc-note"). Find the entry with:
+   not only present in MAM, it is confirmed by MAM's doc-note"). Find the entry, from the same root, with:
 
    ```powershell
-   Select-String -Path C:/Users/BenDe/GitRepos/MAM-basics/in/mam-ws-intro/ch5.mediawiki -Pattern 'קווים לסילוק וגעיה'
+   Select-String -Path in/mam-ws-intro/ch5.mediawiki -Pattern 'קווים לסילוק וגעיה'
    ```
 
    Merely deleting the "unfounded" clause is rejected: it would leave the page
@@ -211,11 +211,12 @@ framing belong to the post-stress-meteg survey, which Ben settled separately on 
 
 ### Preconditions and repository isolation
 
-The primary clone is `C:/Users/BenDe/GitRepos/MAM-basics`. Work in a secondary
-worktree of it, on a worktree-required non-`main` branch, and run the primary
-clone's interpreter by absolute path,
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`. Do not create a
-venv, junction, or symlink in the worktree.
+Work in a secondary worktree of a full MAM-basics clone, in any forest, on a
+worktree-required non-`main` branch, and run that clone's interpreter by absolute
+path, `<home-clone>/.venv/Scripts/python.exe`, where `<home-clone>` is the
+worktree's home clone and `<forest>` is the directory holding it,
+`$HOME/GitRepos` or `$HOME/GitRepos<N>`. Do not create a venv, junction, or
+symlink in the worktree.
 
 **The checkout this section named until 2026-09-09 is gone, and nothing is named
 in its place.** It named
@@ -259,10 +260,10 @@ git rev-parse --show-toplevel HEAD --abbrev-ref HEAD
 git status --short --branch
 ```
 
-Re-establish primary `main` with:
+Re-establish the home clone's `main` with:
 
 ```powershell
-git -C C:/Users/BenDe/GitRepos/MAM-basics rev-parse HEAD
+git -C <home-clone> rev-parse HEAD
 ```
 
 ### Source synchronization and external documentation
@@ -286,7 +287,7 @@ diffs before proceeding.
 Use the production entry points from the MAM-basics worktree:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_download.py fr-ws-intro
+<home-clone>/.venv/Scripts/python.exe py/main_download.py fr-ws-intro
 ```
 
 Use the established Wikisource bot entry point and its documented dry-run/no-save
@@ -332,7 +333,7 @@ following MAM-simple text node supplies sof pasuq after the note.
 
 Update `py/mb_cmn/mam_xml_verses.py` (at `py/py_ac_loc/` until 2026-09-26) and the
 MAM-private consumer at
-`C:/Users/BenDe/GitRepos/MAM-private/masorah-books/py/ocr_cmn/mam.py` if their
+`MAM-private/masorah-books/py/ocr_cmn/mam.py` if their
 element allowlists would otherwise reject or omit the new public MAM-simple
 element. These consumers must flatten it to `text`; neither consumer creates a
 note or removes the post-silluq meteg.
@@ -381,7 +382,7 @@ template's handler in `py/foi/foiz_wt_mtgmtg.py`.
 Set the worktree's repository routing before generation:
 
 ```powershell
-$env:REPOS_ROOT="C:/Users/BenDe/GitRepos"
+$env:REPOS_ROOT="<forest>"
 ```
 
 ```powershell
@@ -390,7 +391,7 @@ $env:REPO_MAM_PRIVATE_DIR="C:/path/to/the/verified/MAM-private-worktree"
 
 Run the current production mega entry point from the verified MAM-basics
 worktree after inspecting its CLI help for the all-steps spelling. Do not run a
-generator, formatter, staging command, or commit in the primary MAM-basics
+generator, formatter, staging command, or commit in the MAM-basics home
 clone.
 
 ## Verification and acceptance criteria
@@ -457,7 +458,7 @@ Acceptance requires all of the following:
     a current-baseline guarantee.
 
 12. Every changed Python file has been formatted together with Black from the
-    primary clone's venv, and all unexplained generated diffs are resolved before
+    home clone's venv, and all unexplained generated diffs are resolved before
     commit.
 
 Re-derive criterion 9's five figures from the verified MAM-basics worktree root
@@ -476,13 +477,13 @@ git hash-object gh-pages/MAM-with-doc/foi/foi-mtgmtg.json
 Run Black only on changed Python files:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe -m black <changed-python-files>
+<home-clone>/.venv/Scripts/python.exe -m black <changed-python-files>
 ```
 
 Run the canonical suite from the MAM-basics worktree:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py -q
+<home-clone>/.venv/Scripts/python.exe py/main_test.py -q
 ```
 
 ## GitHub coordination, commits, and integration
@@ -513,9 +514,9 @@ Commit coherent stages on each worktree-required local branch. Do not push a
 worktree branch. Immediately before archival, integrate each participating
 repository by the established four-step procedure: merge current `main` into
 the worktree branch, resolve and commit there, run the repository's complete
-suite in the worktree, fast-forward the primary clone's `main` to the verified
+suite in the worktree, fast-forward the home clone's `main` to the verified
 branch, and push `main`. If the fast-forward refuses because `main` moved,
-return to the worktree merge rather than creating a second merge in the primary
+return to the worktree merge rather than creating a second merge in the home
 clone.
 
 After all generated artifacts and public outputs are verified and pushed, post

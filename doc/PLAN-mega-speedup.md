@@ -49,9 +49,9 @@ record's §5).
 - **Baseline suite at `bca64824`:** the repository suite passed 997 tests with 5 skipped.
   Re-run the suite at the execution baseline and record the new counts before relying on that
   baseline.
-- **Repository**: `C:/Users/BenDe/GitRepos/MAM-basics`, with every command run from its root. The
-  interpreter is `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, spelled
-  absolutely in a secondary worktree. Phase 2 uses the cloud container's own `python3`.
+- **Repository**: a full MAM-basics clone, in any forest, with every command run from its root.
+  The interpreter is that clone's own `./.venv/Scripts/python.exe`; a secondary worktree spells
+  its home clone's interpreter absolutely. Phase 2 uses the cloud container's own `python3`.
 - **Instruction files to load first**: `~/.claude/CLAUDE.md` and this repository's `CLAUDE.md`,
   in particular its sections "Integrating a worktree branch here" and "What this repository's
   products are". The `hebrew-prose` skill is not needed for Phases 1 and 2, which write only
@@ -66,7 +66,7 @@ record's §5).
   prints every step's name among the choices of `--resume-from`:
 
   ```powershell
-  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py --help
+  ./.venv/Scripts/python.exe py/main_0_mega.py --help
   ```
 
 ## What has changed since the dated record's runs
@@ -111,7 +111,7 @@ record's §5).
   mpplus commits (`fa517040`, `8b2386b0`, `cde921bf`, `7fd381db`).
 
   ```powershell
-  git -C C:/Users/BenDe/GitRepos/MAM-basics log --no-merges --format="%h %ad %s" --date=short 132f2f3e..HEAD -- py/main_mam_simple.py py/main_tmpl_survey.py py/tmpl_survey py/subcommands py/accgram py/main_accgram.py py/mb_cmn/file_io.py py/main_wlc_json_and_unicode.py py/main_fois.py py/main_mam_with_doc.py py/main_multimark.py
+  git log --no-merges --format="%h %ad %s" --date=short 132f2f3e..HEAD -- py/main_mam_simple.py py/main_tmpl_survey.py py/tmpl_survey py/subcommands py/accgram py/main_accgram.py py/mb_cmn/file_io.py py/main_wlc_json_and_unicode.py py/main_fois.py py/main_mam_with_doc.py py/main_multimark.py
   ```
 
 - **The repository phase of the archived [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md) removed two more steps**, `parse-go`
@@ -265,7 +265,7 @@ Steps:
    Unpinned:
 
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_0_mega.py
+   ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
    Pinned to logical processors 0 to 11, the performance cores of this CPU: set the launching
