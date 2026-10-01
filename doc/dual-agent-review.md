@@ -155,8 +155,10 @@ Turn 2's initial reconciliation is the specified append to the argument, not per
 the original findings; subsequent corrections to that table are recorded in subsequent turns.
 The close-out reads the table together with those corrections and Ben's decisions.
 
-After the exchange closes, follow `doc/periodic-review.md`'s `Close-out` list. A sequential
-dual-agent round additionally updates this procedure record after Ben's decisions, uses Agent 1's
+After the exchange closes, follow `doc/periodic-review.md`'s `Close-out` list and its private
+follow-up rule for MAM-private. That rule owns the maintained register and its single thin
+pointer issue; the issue does not become a reconciliation or remediation-disposition record.
+A sequential dual-agent round additionally updates this procedure record after Ben's decisions, uses Agent 1's
 turn-01 update file for later dispositions, integrates through the shared branch on `origin`, and
 retires each task-owned review worktree only after the final task using it ends. Where the window
 contains a prior round's own records, Agent 1's turn 01 states which of them it reads as a subject
