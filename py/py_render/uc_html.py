@@ -420,9 +420,9 @@ def _manuscript_location_paragraph(
         " the page breaks the UXLC's Leningrad Codex index records and the"
         " count of atoms between them." + disagreement_sentence + " The band is left"
         " out of that comparison, top, middle and bottom being a gloss that a"
-        " line number supersedes. The folio link under the line is decoded from"
-        " the page ordinal Holman's citation begins with, so the folio number"
-        " is not his either." + uncited_sentence
+        " line number supersedes. The folio link under the line is the estimate's"
+        " too; where the folio Holman's ordinal decodes to differs, the card names"
+        " it beside the estimate." + uncited_sentence
     )
 
 

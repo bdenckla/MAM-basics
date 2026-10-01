@@ -216,9 +216,9 @@ def _fields_html(case: CorrectionCase, location: AtomLocation) -> str:
     The row is shown on a case that cites no image at all as well. What it
     states is the estimate, which every case has -- ``uxlc_atom_locations``'
     ``require_full_coverage`` raises otherwise -- and a citation only ever adds
-    the "Holman gives ..." clause to it and the folio link's neighbours. The 1
+    the "Holman gives ..." clause to it and the page link's neighbours. The 1
     Samuel 28:12 message of 2026-08-23 is the first with no citation, and
-    without this the card would have lost the estimate and the folio link that
+    without this the card would have lost the estimate and the page link that
     every other card carries.
     """
     forms = forms_for_case(case)
@@ -286,17 +286,17 @@ def _field_html(label: str, value_html: str) -> str:
 
 
 def _manuscript_location_html(image_location: str, location: AtomLocation) -> str:
-    """The estimated folio, column and line, with Holman's where they differ.
+    """The estimated page, column and line, with Holman's where they differ.
 
     Holman's citation names the scan file he worked from and puts the atom in a
     band of a column of it. The file name says nothing a reader can use, so it
-    is not shown; the column and the folio his ordinal decodes to are both
+    is not shown; the column and the page his ordinal decodes to are both
     discrete facts the estimate states too, so both are compared and his reading
     is given whenever they disagree. The band is not compared: top, middle and
     bottom are a gloss that a line number supersedes, and testing them against
     equal nine-line thirds would report disagreements a line wide as real ones.
 
-    The folio was the card's own answer until 2026-08-12, when five citations
+    The page was the card's own answer until 2026-08-12, when five citations
     turned out to name a scan whose file name says outright that it cannot hold
     the case's verse. ``uxlc_manuscript_page`` names the five and records Ben's
     decision that the card stop echoing them.
@@ -312,7 +312,7 @@ def _manuscript_location_html(image_location: str, location: AtomLocation) -> st
 
 
 def _folio_link_html(location: AtomLocation) -> str:
-    """The Sefaria image of the estimated leaf.
+    """The Sefaria image of the estimated page.
 
     Every case has an estimate -- ``uxlc_atom_locations.require_full_coverage``
     raises otherwise -- so unlike the citation this once decoded, this link is
