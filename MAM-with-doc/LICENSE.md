@@ -1,5 +1,8 @@
 The statement below is preserved verbatim from the former MAM Google spreadsheet,
 which became a frozen historical archive on September 12, 2026.
+This statement applies equally to the MAM-with-doc edition, which MAM-basics publishes from
+`gh-pages/MAM-with-doc/`. So, in the text below, ignore any references to "in this spreadsheet"
+(English) or שבגליון הנתונים הזה (Hebrew).
 
 ----
 License:

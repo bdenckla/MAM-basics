@@ -2,8 +2,12 @@
 
 Checks fetch remote refs, but never change checkout files or environments. A write
 creates missing full clones, fast-forwards eligible main branches, and creates
-missing environments. Dirty, diverged, active or otherwise ineligible clones stay
-untouched. Every repository failure is reported while the remaining roster runs.
+missing environments. A write refuses a dirty, off-main, mid-operation, locked or
+occupied clone before fetching it, and an ahead or diverged clone after a fetch that
+adds any missing objects, rewrites FETCH_HEAD, and creates or fast-forwards
+refs/remotes/origin/main; either way the clone's local branches, checkout and
+environments stay untouched. Every repository failure is reported while the remaining
+roster runs.
 """
 
 from __future__ import annotations
@@ -15,6 +19,7 @@ import subprocess
 
 from mb_cmn import paths, provenance
 from repo_util.forest_environments import (
+    GIT_TIMEOUT_SECONDS,
     ForestError,
     require_unlinked,
     synchronize_environments,
@@ -28,7 +33,7 @@ _FOREST_NAME = re.compile(r"GitRepos(?:[2-9]|[1-9][0-9]+)?\Z")
 
 
 def _git(repo: Path, *arguments: str) -> str:
-    result = _run_git(repo, *arguments, timeout_seconds=60)
+    result = _run_git(repo, *arguments, timeout_seconds=GIT_TIMEOUT_SECONDS)
     if result.returncode:
         raise ForestError(_command_error(result))
     return result.stdout.strip()
@@ -90,7 +95,14 @@ def _full_clone(repo: Path) -> None:
 
 
 def _snapshot(repo: Path) -> tuple[str, str, tuple[str, ...], tuple[str, ...]]:
-    branch = _run_git(repo, "symbolic-ref", "--quiet", "--short", "HEAD")
+    branch = _run_git(
+        repo,
+        "symbolic-ref",
+        "--quiet",
+        "--short",
+        "HEAD",
+        timeout_seconds=GIT_TIMEOUT_SECONDS,
+    )
     if branch.returncode not in (0, 1):
         raise ForestError(_command_error(branch))
     locks = []
@@ -109,15 +121,26 @@ def _snapshot(repo: Path) -> tuple[str, str, tuple[str, ...], tuple[str, ...]]:
     return (
         _git(repo, "rev-parse", "HEAD"),
         branch.stdout.strip() if branch.returncode == 0 else "detached",
-        tuple(_status_entries(repo)),
-        tuple(_operation_markers(repo) + locks),
+        tuple(
+            _status_entries(
+                repo, timeout_seconds=GIT_TIMEOUT_SECONDS, noninteractive=True
+            )
+        ),
+        tuple(
+            _operation_markers(
+                repo, timeout_seconds=GIT_TIMEOUT_SECONDS, noninteractive=True
+            )
+            + locks
+        ),
     )
 
 
 def _runtime(repo: Path) -> list[str]:
     facts = runtime_facts(repo)
     blockers = list(facts["blockers"])
-    for worktree in _list_worktrees(repo):
+    for worktree in _list_worktrees(
+        repo, timeout_seconds=GIT_TIMEOUT_SECONDS, noninteractive=True
+    ):
         if worktree.path.resolve() != repo.resolve():
             external = runtime_facts(worktree.path)
             if external["blockers"]:
@@ -136,12 +159,25 @@ def _runtime(repo: Path) -> list[str]:
 def _fetch_main(repo: Path) -> str:
     """Advance the tracking ref only after proving remote ancestry."""
     reference = "refs/remotes/origin/main"
-    symbolic = _run_git(repo, "symbolic-ref", "--quiet", reference)
+    symbolic = _run_git(
+        repo,
+        "symbolic-ref",
+        "--quiet",
+        reference,
+        timeout_seconds=GIT_TIMEOUT_SECONDS,
+    )
     if symbolic.returncode == 0:
         raise ForestError("origin/main must be a direct tracking ref")
     if symbolic.returncode != 1:
         raise ForestError(_command_error(symbolic))
-    previous = _run_git(repo, "rev-parse", "--verify", "--quiet", reference)
+    previous = _run_git(
+        repo,
+        "rev-parse",
+        "--verify",
+        "--quiet",
+        reference,
+        timeout_seconds=GIT_TIMEOUT_SECONDS,
+    )
     if previous.returncode not in (0, 1):
         raise ForestError(_command_error(previous))
     old = previous.stdout.strip() if previous.returncode == 0 else None
@@ -158,7 +194,14 @@ def _fetch_main(repo: Path) -> str:
     )
     fetched = _git(repo, "rev-parse", "--verify", "FETCH_HEAD^{commit}")
     if old is not None:
-        ancestry = _run_git(repo, "merge-base", "--is-ancestor", old, fetched)
+        ancestry = _run_git(
+            repo,
+            "merge-base",
+            "--is-ancestor",
+            old,
+            fetched,
+            timeout_seconds=GIT_TIMEOUT_SECONDS,
+        )
         if ancestry.returncode == 1:
             raise ForestError(
                 "origin/main history was rewritten; tracking ref retained"
@@ -196,6 +239,26 @@ def _sync_repo(repo: Path, origin: str, *, check: bool) -> bool:
         raise ForestError(f"origin differs from the source clone: {repo}")
     before = _snapshot(repo)
     blockers = _runtime(repo)
+    head, branch, status, markers = before
+    reasons = []
+    if branch != "main":
+        reasons.append(f"branch is {branch}")
+    if status:
+        reasons.append("checkout is dirty")
+    if markers:
+        reasons.append("Git operation in progress")
+    if not check:
+        # A write judges the clone's own state before any fetch, so a clone it
+        # refuses for that state is not fetched at all.
+        reasons.extend(blockers)
+        if reasons:
+            print(
+                f"FOREST_REPO: {repo}: branch={branch} changes={len(status)} operations={','.join(markers) or 'none'}"
+            )
+            raise ForestError(
+                "; ".join(reasons)
+                + "; not fetched; checkout and environments left untouched"
+            )
     fetched = _fetch_main(repo)
     ahead, behind = (
         int(value)
@@ -207,21 +270,11 @@ def _sync_repo(repo: Path, origin: str, *, check: bool) -> bool:
             f"HEAD...{fetched}",
         ).split()
     )
-    head, branch, status, markers = before
     print(
         f"FOREST_REPO: {repo}: branch={branch} ahead={ahead} behind={behind} changes={len(status)} operations={','.join(markers) or 'none'}"
     )
-    reasons = []
-    if branch != "main":
-        reasons.append(f"branch is {branch}")
-    if status:
-        reasons.append("checkout is dirty")
-    if markers:
-        reasons.append("Git operation in progress")
     if ahead:
         reasons.append("unpushed or divergent commits")
-    if not check:
-        reasons.extend(blockers)
     if check:
         environments = synchronize_environments(repo, check=True)
         if reasons:
@@ -229,7 +282,10 @@ def _sync_repo(repo: Path, origin: str, *, check: bool) -> bool:
         return environments and behind == 0 and not reasons
     if reasons:
         raise ForestError(
-            "; ".join(reasons) + "; checkout and environments left untouched"
+            "; ".join(reasons)
+            + "; fetched origin/main (any missing objects, FETCH_HEAD, and"
+            " refs/remotes/origin/main created or fast-forwarded); local branches,"
+            " checkout and environments left untouched"
         )
     if _snapshot(repo) != before or _runtime(repo):
         raise ForestError("checkout or writer state changed during inspection")

@@ -1,6 +1,7 @@
 """Mechanical safety lint across the finite worktree-retirement implementation."""
 
 import ast
+import re
 from pathlib import Path
 
 from repo_util import worktree_retirement as retirement
@@ -15,6 +16,24 @@ _ADAPTER_MODULES = (
 )
 _ENGINE = "repo_util/worktree_retirement_execution.py"
 _RELOCATION = "repo_util/worktree_retirement_relocation.py"
+_SHORT_OPTION_CLUSTER = re.compile(r"-[A-Za-z]+")
+
+
+def _short_options(token):
+    """The option letters of a single-dash cluster such as -df; none for any other token."""
+    if isinstance(token, str) and _SHORT_OPTION_CLUSTER.fullmatch(token):
+        return frozenset(token[1:])
+    return frozenset()
+
+
+def _forces(token):
+    """--force, or a short-option cluster holding f or D: -f, -D, -df, -fd, -ff."""
+    return token == "--force" or bool(_short_options(token) & {"f", "D"})
+
+
+def _deletes_branch(token):
+    """--delete, or a short-option cluster holding d or D: -d, -D, -df, -fd."""
+    return token == "--delete" or bool(_short_options(token) & {"d", "D"})
 
 
 def _argument_tokens(node):
@@ -67,9 +86,10 @@ class _PolicyVisitor(ast.NodeVisitor):
     visit_AsyncFunctionDef = visit_FunctionDef
 
     def visit_Constant(self, node):
-        # These finite retirement modules have no use for a literal force flag.
-        # This also catches flags in separately assigned argument sequences.
-        assert node.value not in ("--force", "-f", "-D"), (
+        # These finite retirement modules have no use for a literal force flag, alone or
+        # in a short-option cluster such as -df. This also catches flags in separately
+        # assigned argument sequences.
+        assert not _forces(node.value), (
             self.module,
             node.lineno,
             node.value,
@@ -78,7 +98,7 @@ class _PolicyVisitor(ast.NodeVisitor):
     def _check_tokens(self, node, tokens):
         worktree = "worktree" in tokens
         branch_delete = "branch" in tokens and any(
-            token in tokens for token in ("-d", "--delete", "-D")
+            _deletes_branch(token) for token in tokens
         )
         assert not (worktree and "prune" in tokens), (
             self.module,
@@ -87,7 +107,7 @@ class _PolicyVisitor(ast.NodeVisitor):
         )
         worktree_remove = worktree and "remove" in tokens
         if worktree_remove or branch_delete:
-            assert not any(flag in tokens for flag in ("--force", "-f", "-D")), (
+            assert not any(_forces(token) for token in tokens), (
                 self.module,
                 node.lineno,
                 tokens,

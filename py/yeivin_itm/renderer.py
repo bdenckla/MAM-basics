@@ -1,13 +1,9 @@
-"""Render the selected adaptation as complete, unwritten HTML pages.
-
-The mechanical migration preserves the published figures while their replacement
-claim data awaits approval. This module deliberately does not publish any files.
-"""
+"""Render the selected adaptation and Ben's validated, data-backed footnotes."""
 
 import py_html.legacy_html as aht_html
 import mb_cmn.my_utils as my_utils
 from mb_cmn.my_utils import append_at_key
-from yeivin_itm import paths
+from yeivin_itm import paths, claims, claim_schema, claim_text
 from py_html import forbidden_phonetic_marks as fpmg
 import yeivin_itm.content.my_yeivin_amisc_tocsec_metadata as tsm
 import yeivin_itm.content.my_yeivin_amisc_traverse as tra
@@ -38,8 +34,10 @@ import yeivin_itm.content.my_yeivin_amisc_sec_385_footnotes as ftnts_385
 # numsec: a numbered section
 
 
-def page_texts():
-    """Return the adaptation pages without writing or approving claim data."""
+def page_texts(claim_data=None):
+    """Return complete unwritten pages, using only the tracked approved claims."""
+    claim_data = claims.read() if claim_data is None else claim_data
+    claim_schema.validate(claim_data)
     tocsec_dic_1 = {
         "tocsec-id-131": tocsec_131.TOCSEC,
         "tocsec-id-192": tocsec_192.TOCSEC,
@@ -57,7 +55,27 @@ def page_texts():
     _check_secnums(tocsec_dic_2)
     pages = {}
     _render_pages(tocsec_dic_2, pages)
-    return pages
+    resolved = {}
+    for name, (contents, write_ctx) in pages.items():
+        text = aht_html.html_text(_resolve_contents(contents, claim_data), write_ctx)
+        fpmg.refuse_forbidden_phonetic_marks(text, name)
+        resolved[name] = text
+    return resolved
+
+
+def _resolve_contents(contents, claim_data):
+    """Resolve declared HTML text before the historical serializer wraps lines."""
+    if isinstance(contents, str):
+        return claim_text.resolve(contents, claim_data)
+    if isinstance(contents, (list, tuple)):
+        return [_resolve_contents(item, claim_data) for item in contents]
+    if aht_html.is_htel(contents):
+        if "contents" not in contents:
+            return contents
+        return aht_html.htel_set_contents(
+            contents, _resolve_contents(contents["contents"], claim_data)
+        )
+    raise ValueError(f"Unknown Yeivin HTML content shape: {type(contents).__name__}")
 
 
 def _fill_in_ftnt_callouts(ts_dic):
@@ -186,6 +204,9 @@ def _render_yeivin_top_page(anchor_dic, pages):
     body_contents = [
         aht_html.heading_level_1(h1_contents),
         aht_html.unordered_list(bookpart_list_items),
+        aht_html.para(
+            aht_html.anchor("Font license and source", {"href": "woff2/SOURCE.txt"})
+        ),
     ]
     title = "Excerpts from ITM by Yeivin"
     path = paths.pages_dir() / paths.LANDING_FILENAME
@@ -208,9 +229,7 @@ def _render_huge_ftnt_page(huge_ftnt_rec, pages):
 def _collect_page(pages, filename, body_contents, write_ctx):
     if filename in pages:
         raise ValueError(f"Duplicate Yeivin page: {filename}")
-    text = aht_html.html_text(body_contents, write_ctx)
-    fpmg.refuse_forbidden_phonetic_marks(text, write_ctx.path)
-    pages[filename] = text
+    pages[filename] = (body_contents, write_ctx)
 
 
 _COPYRIGHT = aht_html.para(

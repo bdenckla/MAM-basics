@@ -73,11 +73,11 @@ def maybe_handle_cli(parser, args):
 
 def _dataset_file_paths():
     folder = str(paths.mam_parsed_dir() / "plus")
-    paths = []
+    file_paths = []
     for bk24id in tbn.ALL_BK24_IDS:
         osdf24 = tbn.ordered_short_dash_full_24(bk24id)
-        paths.append(f"{folder}/{osdf24}.json")
-    return paths
+        file_paths.append(f"{folder}/{osdf24}.json")
+    return file_paths
 
 
 def _child_stack_symbols(parent_subtype, arg_key):

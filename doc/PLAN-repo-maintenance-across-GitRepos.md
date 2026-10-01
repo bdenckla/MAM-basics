@@ -332,18 +332,18 @@ tree stayed still. What was verified then:
 
 2. **The re-vendor branch is merged and its worktree removed.** Check:
    ```
-   git -C C:/Users/BenDe/GitRepos/MAM-basics worktree list
-   git -C C:/Users/BenDe/GitRepos/MAM-basics branch --list "claude/*"
+   git worktree list
+   git branch --list "claude/*"
    ```
    A surviving `claude/gallant-meitner-68c79b` wants merging into `main` first — per Ben's
    standing rule a worktree branch is merged and `main` pushed, rather than the branch pushed.
 
 3. **Every repo is clean and pushed**, so any diff this maintenance produces is attributable:
    ```
-   foreach ($d in (Get-ChildItem -Directory C:/Users/BenDe/GitRepos)) { $n = (git -C $d.FullName status --porcelain | Measure-Object).Count; if ($n) { Write-Output "$($d.Name) dirty=$n" } }
+   foreach ($d in (Get-ChildItem -Directory ..)) { $n = (git -C $d.FullName status --porcelain | Measure-Object).Count; if ($n) { Write-Output "$($d.Name) dirty=$n" } }
    ```
 
-4. **Run from the MAIN MAM-basics clone, never from a worktree.** See hazard H6 — this is the
+4. **Run from a full MAM-basics clone, never from a worktree.** See hazard H6 — this is the
    one that silently produces wrong answers rather than an error.
 
 ---
@@ -357,11 +357,11 @@ why the cross-repo inspection exists: repositories without Python can still have
 worktrees. The historical example was wlc-utils, emptied of Python on 2026-08-01; today's
 reachable repository set comes from the workspace and repository-maintenance policy.
 
-Run everything from `C:/Users/BenDe/GitRepos/MAM-basics` with
-`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
+Run everything from the root of a full MAM-basics clone, in any forest, with that clone's own
+`./.venv/Scripts/python.exe`; a repository sweep covers that clone's forest.
 
 Actions are mutually exclusive, one per invocation. Repository sweeps use workspace selection;
-`--sync-user-config` and exact-target retirement actions do not:
+`--sync-user-config`, the forest actions and exact-target retirement actions do not:
 
 | Action | Writes? | Notes |
 |---|---|---|
@@ -372,7 +372,10 @@ Actions are mutually exclusive, one per invocation. Repository sweeps use worksp
 | `--run-black` | **REFORMATS** | its own commit, never riding along |
 | `--commit-across-repos` | **COMMITS** | do NOT use — see H3 |
 | `--sync-user-config --check` | no live configuration write | fetches `origin` and compares every declared user-level destination with `origin/main` |
-| `--sync-user-config` | **DEPLOYS OUTSIDE GIT** | run only from the primary MAM-basics clone after the canonical changes are pushed |
+| `--sync-user-config` | **DEPLOYS OUTSIDE GIT** | run from any full MAM-basics clone after the canonical changes are pushed |
+| `--sync-forest ROOT --check` | fetches; no checkout write | fetches every clone of the forest at `ROOT` and reports clone, branch, local-change, Git-operation and environment state, without cloning, merging or installing; see `doc/clone-forests.md` |
+| `--sync-forest ROOT` | **CLONES, FAST-FORWARDS AND CREATES ENVIRONMENTS** | refuses a dirty, off-`main`, mid-operation, locked or occupied clone before fetching it, and an ahead or diverged clone after fetching it; see `doc/clone-forests.md` |
+| `--forest-status` | fetches; no checkout write | runs the check form over `$HOME/GitRepos` and each `$HOME/GitRepos<N>`; see `doc/clone-forests.md` |
 | `--prepare-worktree-retirement PATH` | writes one preflight, not the target | shared audit of one ended target, with optional owner-selection guard |
 | `--execute-worktree-retirement PREFLIGHT` | **RELOCATES AND REMOVES** | first runs the mandatory operational simulation and fails closed; only then revalidates the reviewed audit, retains `.novc`, removes one target without force, and uses `branch -d` for its eligible branch |
 
@@ -405,21 +408,21 @@ the workspace file rather than typing it.
 **1. Inspect the requested worktree ownership scope.** For both owners:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_repo_util.py --inspect-worktrees --worktree-owner both --workspace-file C:/Users/BenDe/GitRepos/MAM-basics/all-repos.code-workspace
+./.venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree-owner both --workspace-file all-repos.code-workspace
 ```
 
 Use `claude` or `codex` to narrow selection. Read every candidate and blocker. Inspection
 removes nothing; `WORKTREE_PROBLEM_COUNT` reports repository-audit errors. Follow step 7 for
 reviewed per-target preparation and execution, and H8 for runtime limitations.
 
-**2–3. The two read-only checks**, in either order, from the primary MAM-basics root:
+**2–3. The two read-only checks**, in either order, from the root of a full MAM-basics clone:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
+./.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
 ```
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --workspace-file all-repos.code-workspace --report-txt <file>
+./.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --workspace-file all-repos.code-workspace --report-txt <file>
 ```
 
 Use `--report-txt` for the actual findings and keep reports in the visibility-appropriate `.novc/`.
@@ -460,7 +463,7 @@ through git rather than over the filesystem also keeps a leftover agent worktree
 same plans out of the count. Raise the candidates:
 
 ```
-git -C C:/Users/BenDe/GitRepos/MAM-basics grep -l "^State: executed" -- "*PLAN-*.md"
+git grep -l "^State: executed" -- "*PLAN-*.md"
 ```
 
 All ten carry the `State:` line as of 2026-08-29 — MAM-basics' six from the day it was
@@ -497,11 +500,11 @@ decide which purpose a walker serves. Shared helpers also hide the decisive recu
 caller's question. Do not add a low-confidence check to `check_repo_standards.py` merely because
 `.values()` or `template_param_vals` is easy to find.
 
-Run this search from `C:/Users/BenDe/GitRepos/MAM-basics`; repeat equivalent searches in any repo
+Run this search from the root of a full MAM-basics clone; repeat equivalent searches in any repo
 that has gained its own MAM/Wikisource consumer since the preceding maintenance run:
 
 ```
-git -C C:/Users/BenDe/GitRepos/MAM-basics grep -n -E "tmpl_params|template_param_vals|template_param_keys|\.values\(\)|\.items\(\)|flatten|extract|walk|visit|contents|render|text" -- "*.py"
+git grep -n -E "tmpl_params|template_param_vals|template_param_keys|\.values\(\)|\.items\(\)|flatten|extract|walk|visit|contents|render|text" -- "*.py"
 ```
 
 The exact anchors are `tmpl_params`, `template_param_vals`, `template_param_keys`, dict
@@ -688,7 +691,9 @@ cleanup mechanism.
 **H2 — Tracked references to relocated `.novc` paths require review.** Unique ignored content
 outside `.novc` blocks retirement. Every selected owner's `.novc` is inventoried, relocated and
 verified under step 7, even when small. Every tracked reference to one of those exact relative or
-absolute paths requires review; generic `.novc` policy prose does not. Later disposal is a
+absolute paths requires review; generic `.novc` policy prose does not, and neither does a spelling
+of a target's root `.novc/t` or of anything below it, the suite's disposable base-temporary tree
+on Windows. Later disposal is a
 separate recorded decision. Historical measurement on 2026-08-07 found seven spent ignored files
 in two spared MAM-basics worktrees; that observation does not establish that today's contents are
 spent.
@@ -723,8 +728,8 @@ a documentation bug: create it, or say it is missing and stop.
 to the worktree's own copy, so every sibling lookup becomes
 `.claude/worktrees/<sibling>` and finds nothing. This is the general hazard Ben's user-level
 CLAUDE.md records as "a repo path that reaches a sibling clone can break in a worktree". Run
-from the main clone; if a worktree is unavoidable, pass `--repos-root C:/Users/BenDe/GitRepos`
-explicitly.
+from a full clone; if a worktree is unavoidable, pass `--repos-root` explicitly, naming the
+worktree's home clone, against which the roster's `../<name>` folders resolve into its forest.
 
 **H7 — Repo-wide reformatting is its own commit.** If black touches files unrelated to any
 other change, that is pre-existing drift (usually a black version bump) and must not ride

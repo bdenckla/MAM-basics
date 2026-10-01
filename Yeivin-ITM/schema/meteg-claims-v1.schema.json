@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bdenckla.github.io/MAM-basics/Yeivin-ITM/schema/meteg-claims-v1.schema.json",
+  "title": "Ben's meteg claims for the selected Yeivin adaptation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "input",
+    "populations",
+    "measurements"
+  ],
+  "properties": {
+    "schema": {
+      "const": "yeivin-meteg-claims-v1"
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity",
+        "sha256"
+      ],
+      "properties": {
+        "identity": {
+          "const": "out/accgram/meteg-before-stress.json"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "populations": {
+      "type": "object",
+      "required": [
+        "fully-regular.all",
+        "fully-regular.disjunctive-without-target-meteg",
+        "fully-regular.conjunctive-with-target-meteg",
+        "fully-regular.exceptions",
+        "fully-regular.disjunctive-without-target-meteg.other-meteg",
+        "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah",
+        "fully-regular.disjunctive-without-target-meteg.merkha",
+        "fully-regular.disjunctive-without-target-meteg.metigah",
+        "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh",
+        "FR1.conjunctive-with-target-meteg",
+        "FR2.conjunctive-with-target-meteg",
+        "FR3.conjunctive-with-target-meteg",
+        "fully-regular.disjunctive-exception-rate",
+        "fully-regular.target-meteg-rate",
+        "AFR1.disjunctive-exception-rate",
+        "AFR1.target-meteg-rate",
+        "AFR4.disjunctive-exception-rate",
+        "AFR4.target-meteg-rate",
+        "XAFR1.disjunctive-with-target-meteg",
+        "XAFR1.disjunctive-without-target-meteg"
+      ],
+      "propertyNames": {
+        "enum": [
+          "fully-regular.all",
+          "fully-regular.disjunctive-without-target-meteg",
+          "fully-regular.conjunctive-with-target-meteg",
+          "fully-regular.exceptions",
+          "fully-regular.disjunctive-without-target-meteg.other-meteg",
+          "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah",
+          "fully-regular.disjunctive-without-target-meteg.merkha",
+          "fully-regular.disjunctive-without-target-meteg.metigah",
+          "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh",
+          "FR1.conjunctive-with-target-meteg",
+          "FR2.conjunctive-with-target-meteg",
+          "FR3.conjunctive-with-target-meteg",
+          "fully-regular.disjunctive-exception-rate",
+          "fully-regular.target-meteg-rate",
+          "AFR1.disjunctive-exception-rate",
+          "AFR1.target-meteg-rate",
+          "AFR4.disjunctive-exception-rate",
+          "AFR4.target-meteg-rate",
+          "XAFR1.disjunctive-with-target-meteg",
+          "XAFR1.disjunctive-without-target-meteg"
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/population"
+      }
+    },
+    "measurements": {
+      "type": "object",
+      "required": [
+        "fully-regular.all",
+        "fully-regular.disjunctive-without-target-meteg",
+        "fully-regular.conjunctive-with-target-meteg",
+        "fully-regular.exceptions",
+        "fully-regular.disjunctive-without-target-meteg.other-meteg",
+        "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah",
+        "fully-regular.disjunctive-without-target-meteg.merkha",
+        "fully-regular.disjunctive-without-target-meteg.metigah",
+        "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh",
+        "FR1.conjunctive-with-target-meteg",
+        "FR2.conjunctive-with-target-meteg",
+        "FR3.conjunctive-with-target-meteg",
+        "fully-regular.disjunctive-exception-rate",
+        "fully-regular.target-meteg-rate",
+        "AFR1.disjunctive-exception-rate",
+        "AFR1.target-meteg-rate",
+        "AFR4.disjunctive-exception-rate",
+        "AFR4.target-meteg-rate",
+        "XAFR1.disjunctive-with-target-meteg",
+        "XAFR1.disjunctive-without-target-meteg"
+      ],
+      "propertyNames": {
+        "enum": [
+          "fully-regular.all",
+          "fully-regular.disjunctive-without-target-meteg",
+          "fully-regular.conjunctive-with-target-meteg",
+          "fully-regular.exceptions",
+          "fully-regular.disjunctive-without-target-meteg.other-meteg",
+          "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah",
+          "fully-regular.disjunctive-without-target-meteg.merkha",
+          "fully-regular.disjunctive-without-target-meteg.metigah",
+          "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh",
+          "FR1.conjunctive-with-target-meteg",
+          "FR2.conjunctive-with-target-meteg",
+          "FR3.conjunctive-with-target-meteg",
+          "fully-regular.disjunctive-exception-rate",
+          "fully-regular.target-meteg-rate",
+          "AFR1.disjunctive-exception-rate",
+          "AFR1.target-meteg-rate",
+          "AFR4.disjunctive-exception-rate",
+          "AFR4.target-meteg-rate",
+          "XAFR1.disjunctive-with-target-meteg",
+          "XAFR1.disjunctive-without-target-meteg"
+        ]
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/fraction"
+      }
+    }
+  },
+  "$defs": {
+    "population": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definition",
+        "exclusions"
+      ],
+      "properties": {
+        "definition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "exclusions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "fraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator",
+        "denominator",
+        "percentage"
+      ],
+      "properties": {
+        "numerator": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "denominator": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "percentage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    }
+  }
+}

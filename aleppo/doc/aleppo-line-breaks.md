@@ -60,7 +60,7 @@ image API:
 https://ia601801.us.archive.org/BookReader/BookReaderImages.php?zip=/7/items/aleppo-codex/Aleppo%20Codex_jp2.zip&file=Aleppo%20Codex_jp2/Aleppo%20Codex_{NNNN}.jp2&id=aleppo-codex&scale={S}&rotate=0
 ```
 
-- `{NNNN}` = zero-padded page number (see leaf table below)
+- `{NNNN}` = zero-padded page number (see the Job page table below)
 - `{S}` = scale factor: `1` = hi-res (~2.5 MB), `2` = medium (~800 KB)
 
 For Job leaves (all past extra leaf 241a), the formula is:
@@ -80,10 +80,10 @@ https://www.mgketer.org/mikra/29/{chnu}/1/mg/106
 
 (Job = book 29, `chnu` = chapter number.)
 
-## Job leaf table
+## Job page table
 
 ```
-Leaf    N     Text Range
+Page    N     Text Range
 270r    540   Ps 149:1  – Job 1:16
 270v    541   Job 1:16  – Job 3:6
 271r    542   Job 3:6   – Job 5:10

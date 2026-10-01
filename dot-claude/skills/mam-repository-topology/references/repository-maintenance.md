@@ -105,7 +105,11 @@ Retirement is a destructive local act independent of product reach. First establ
    every other registered linked worktree for the exact relative or absolute paths that this
    retirement will relocate, including receipts added after the target's HEAD. Review every match
    semantically, promote a durable result or record its relocated path, and give a substantive
-   citation note. An unreadable citation is a blocker. Generic `.novc` policy prose does not gate.
+   citation note. An unreadable citation is a blocker. Generic `.novc` policy prose does not gate,
+   and neither does a spelling of the target's root `.novc/t` or of anything below it, where
+   `py/main_test.py` puts the suite's per-process base temporary directories on Windows: that
+   subtree is disposable cache, relocated with the rest of `.novc` but never a citation. Every
+   other retained child keeps gating.
 5. Inventory every `.novc` and relocate it outside the worktree using the shadow layout below.
    Verify membership, bytes and SHA-256 before Git removal. Retain its JSON provenance.
 

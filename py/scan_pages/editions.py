@@ -2,8 +2,8 @@
 
 Every edition's folder is under ``paths.book_scans_root()``, which is absolute and
 checkout-independent on purpose: the images live outside every repo and no image ever
-enters one, so nothing here may be built from repo_root().  A worktree therefore reads the
-same scans the primary clone does.
+enters one, so nothing here may be built from repo_root().  Every checkout on the machine,
+in any forest, therefore reads the same scans.
 """
 
 from pathlib import Path

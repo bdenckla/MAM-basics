@@ -428,6 +428,41 @@ In free-text comments and docstrings spell out **"the LC"** for the manuscript, 
 never "the L scanner" (the LC is a manuscript, not software). Bare "L" is widespread legacy
 across the poetic files — a pending sweep, not the standard.
 
+## A manuscript page is named as a page, never as "folio 57a"
+
+Ben's terminology, 2026-09-27: a **folio** is one leaf of a manuscript, and it has two
+**pages**, its A and B sides, a recto and a verso. A page identifier, which carries the side,
+names a page. So write "page F159A", or just "F159A", for the Leningrad Codex, never
+"folio 159A", and "page 83r" for the Aleppo Codex, never "leaf 83r". Each manuscript keeps its
+own form of page identifier: "F159A" in the Leningrad Codex, "83r" in the Aleppo Codex, "0073B"
+in Cambridge Add. 1753 and "57a" in Evr. II B 55. "Folio" and "leaf" stay the words for the leaf
+itself: a folio number, a count of folios or leaves, the two pages of one folio.
+
+Published books and web sites often write "folio 57a". Ben, the same day: *"One more note
+regarding phrases like "folio 57a". I think we should avoid them, but they are common in
+existing references in published books and web sites. They should be taken to imply a
+parenthesized meaning of "(folio 57)a""*, the A page of folio 57. A quotation or citation of
+such a source keeps its wording, as a catalog's "fol. 78b" does where the catalog is cited;
+this repository's own prose avoids the form.
+
+The decision's record is item 4 of the first entry of MAM-basics'
+`doc/dual-agent-review-2026-09-26-turn-01-claude-update.md`, which also says why Ben's first
+statement there is not quoted as exact.
+
+Swept on adoption: the maintained prose, skills and tool messages that called a page a folio
+or a leaf. **Not** swept, and worth offering when touched: the generated Holman
+UXLC-corrections page's "folio 035A" links, its "Holman cites folio …" notes and its
+introduction's "folio link" (`py/py_render/uc_case_card.py` and `py/py_render/uc_html.py`);
+the "folio col line" row label of the generated WLC a-notes full-record pages
+(`py/py_wlc_a_notes/my_wlc_a_notes_full.py`); the generated goerwitz page's "folio 009B"
+(`py/accgram/prose_ob_notes_gn.py`); the note of `holman/data/uxlc_atom_locations.json` that
+`py/main_estimate_uxlc_locations.py` writes; and the note in
+`evr-ii-b-55/evr-ii-b-55-page-index.json`. Receipts, among them the dated Holman research
+records under `holman/doc/`, and external captures keep their words, and so does wording that
+follows a source's own term or citation form: the "LC folio index" that `in/lci_recs.json`
+compiles, the "folio references" of MAM's daf-and-amud citations such as `(8ב)`, and a
+catalog's "fol." locators.
+
 ## Sheva, shewa, and `MUDGASH`
 
 - **Use `sheva` only when the text stays close to a Unicode code point.** A short lowercase name

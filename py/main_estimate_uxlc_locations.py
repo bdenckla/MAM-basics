@@ -130,7 +130,7 @@ def main() -> None:
 
 
 def _columns_on_page(book: str) -> int:
-    """How many columns a leaf of this book has, as the estimator counts them.
+    """How many columns a page of this book has, as the estimator counts them.
 
     The Sifrei Emet -- Psalms, Proverbs and Job -- are written two columns to a
     page and the rest of the manuscript three. This is the same rule
@@ -142,12 +142,12 @@ def _columns_on_page(book: str) -> int:
 
 
 def _require_column_on_page(case: CorrectionCase, guess: dict) -> None:
-    """Raise if the estimated column is not a column this book's leaves have.
+    """Raise if the estimated column is not a column this book's pages have.
 
     ``page_and_guesses`` cuts the flat line into 27-line columns, naming the
     third for anything past 55. Both directions of that arithmetic use the same
-    27 lines per column, so the cut is right for a two-column Sifrei Emet leaf
-    too, as long as the flat line stays on the leaf. What it cannot do is notice
+    27 lines per column, so the cut is right for a two-column Sifrei Emet page
+    too, as long as the flat line stays on the page. What it cannot do is notice
     when the flat line runs off the bottom: on a Psalms page it would report a
     third column, which is not a column that page has.
 
@@ -170,10 +170,10 @@ def _require_column_on_page(case: CorrectionCase, guess: dict) -> None:
     if column > columns:
         raise ValueError(
             f"{case.ref.key} is estimated at column {column} of Leningrad Codex "
-            f"folio {guess['page']}, from flat line {guess['fline-guess']}, but "
-            f"a leaf of {case.ref.book} has {columns} columns. The estimate has "
-            "run off the bottom of the leaf; work out what it should be before "
-            "letting this case reach the page."
+            f"page F{guess['page']}, from flat line {guess['fline-guess']}, but "
+            f"a page of {case.ref.book} has {columns} columns. The estimate has "
+            "run off the bottom of the page; work out what it should be before "
+            "letting this case reach the generated corrections page."
         )
 
 
@@ -223,14 +223,15 @@ def _atom_numbers(verse_tags: dict, ref: CaseRef) -> tuple[int, int]:
         raise ValueError(
             f"{ref.key} names a run of {len(elements)} ketiv and qere elements, "
             "so which of them the UXLC would number is not settled here. Decide "
-            "what the card should say before letting this case reach the page."
+            "what the card should say before letting this case reach the generated "
+            "corrections page."
         )
     standard = elements[0]
     if tags[standard - 1] == "k":
         raise ValueError(
             f"{ref.key} names a ketiv, which my_uxlc.read_all_books drops, so "
             "the estimator has no atom to be handed. Decide what to estimate "
-            "from before letting this case reach the page."
+            "from before letting this case reach the generated corrections page."
         )
     estimator = sum(1 for tag in tags[:standard] if tag in ("w", "q"))
     return standard, estimator

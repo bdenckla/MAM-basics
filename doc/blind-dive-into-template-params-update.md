@@ -39,8 +39,8 @@ of 2026-09-12.
    emitted. The external-link template `מ:קישור בהערה` still renders a link. Whether an internal
    target follows the documented strict contract or a permissive one is decision 10 of the plan.
 4. **Finding 4 has been fixed.**
-   `py/mb_cmn/plain_template_schema.py:validate_current_plain_template` checks every argument's
-   identity as well as the argument count: against `_CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES` where
+   `py/mb_cmn/parser_stage_template_schema.py:validate_parser_stage_template` checks every argument's
+   identity as well as the argument count: against `_PARSER_STAGE_NAMED_ARGUMENT_IDENTITIES` where
    that table has an entry for the template, and against positional identities otherwise.
 5. **Finding 5 has been fixed.** Each of the four paths the finding names now validates a
    template's shape before it selects parameters. `py/mpplus/mpplus_boring_tmpls.py:evaluate` calls
@@ -61,13 +61,13 @@ Recorded by Codex on 2026-09-27. The base review's description of finding 4 name
 Google Sheet edits as products reached by the weaker validator. Those paths were historical
 evidence at the reviewed commit, but the Google download, parse, comparison, and auto-edit
 pipeline was removed during the execution of the archived [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md). The survey and
-documentation-verification paths named beside them remain current.
+documentation-verification paths named beside them remained current at that checkpoint.
 
 ## The maintenance audit also found missing validation in dataset inventories
 
 Fixed by Codex during the maintenance pass of 2026-09-28: the topmost-documentation-note
-finder and the plain/plus stack-path lookup now validate recognized templates before recording
-a result or recursing. This supplements the base review's passage “several closed shape
+finder and the plain/plus stack-path lookup were made to validate recognized templates before
+recording a result or recursing. This supplements the base review's passage “several closed shape
 validators are not called on paths that discard parameters”; the inventory paths below were
 outside that passage's original list. The pass reviewed MAM-basics at
 `8c2fa6c3442997a1cdf4c08504974c5db8fbd38d`, prioritizing consumers changed after the earlier
@@ -84,11 +84,13 @@ the frozen output was preserved.
 
 `py/tmpl_survey/stack_path_lookup.py:_walk_wtel_plain` and `_walk_wtel_plus` previously
 accepted template names without the current schemas and skipped mappings that failed the
-structural template predicate. Both walkers now validate names and shapes before matching or
-recursing. The plain walker also validates the recognized custom-tag leaves. Stack discovery
+structural template predicate. Both walkers then validated names and shapes before matching or
+recursing, and the plain walker also validated the recognized custom-tag leaves; the merge
+`ebbfa90f`, which integrated the plain retirement on 2026-09-28, removed that walker, and
+`_walk_wtel_plus` keeps the validation. Stack discovery
 retains every classified branch and the existing occurrence order, limits and verbose payloads.
 The existing occurrence fixture was corrected to use a valid parameterless separator template.
-Normal and verbose CLI results for `E/נוסח` match before and after in each dataset, and a
+Normal and verbose CLI results for `E/נוסח` matched before and after in each dataset, and a
 lookup with no matching path traversed the complete plain and plus corpora successfully.
 
 Remains deferred: the semantic choices in
@@ -147,3 +149,31 @@ iterator names are likewise historical evidence about that audit's commit.
 MAM-basics no longer persists or distributes the plain representation or its
 survey. The raw template-shape and expanded-stack checks remain live at the
 transient parser-stage validation boundary in `py/verify_mp/parser_stage.py`.
+
+## Corrections made in the 2026-09-29 review's remediation, 2026-09-30
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. The merge `ebbfa90f`, which integrated the plain retirement
+`87fc7141` on 2026-09-28, left five passages above false. The first two now have `87fc7141`'s own
+wording, which that merge dropped (the review's finding 1.3); the other three are of the same
+kind (the plan's flagged site 1).
+
+1. In "Three of the review's five findings have been fixed, finding 3 partly, and finding 1 is
+   deferred", item 4:
+   "`py/mb_cmn/plain_template_schema.py:validate_current_plain_template` checks every argument's
+   identity … against `_CURRENT_PLAIN_NAMED_ARGUMENT_IDENTITIES`" now reads
+   "`py/mb_cmn/parser_stage_template_schema.py:validate_parser_stage_template` checks every
+   argument's identity … against `_PARSER_STAGE_NAMED_ARGUMENT_IDENTITIES`".
+2. In "The Google comparison product named in finding 4 was retired": "The survey and
+   documentation-verification paths named beside them remain current." now reads "… remained
+   current at that checkpoint."
+3. In "The maintenance audit also found missing validation in dataset inventories": "the
+   plain/plus stack-path lookup now validate recognized templates before recording a result or
+   recursing" now reads "… were made to validate recognized templates …".
+4. In the same entry: "Both walkers now validate names and shapes before matching or recursing.
+   The plain walker also validates the recognized custom-tag leaves." now reads "Both walkers then
+   validated names and shapes before matching or recursing, and the plain walker also validated
+   the recognized custom-tag leaves; the merge `ebbfa90f`, which integrated the plain retirement
+   on 2026-09-28, removed that walker, and `_walk_wtel_plus` keeps the validation."
+5. In the same entry: "Normal and verbose CLI results for `E/נוסח` match before and after" now
+   reads "… matched before and after …".

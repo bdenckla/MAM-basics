@@ -163,10 +163,13 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 # naming it otherwise, so a stale reason cannot outlive the step that ended it.
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
+    "py/main_yeivin_itm.py check": "Read-only claim/page/asset verification; the maintained Yeivin tests exercise the same closed validation.",
+    "py/main_phonetic_mam.py check": "Read-only release validation; the corpus differential test exercises the same closed validator.",
+    "py/main_phonetic_mam.py compute": "Ben approved this transient stdin/stdout calculation interface on 2026-10-01; it is a caller-driven service, not a product regeneration step. See doc/phonetic-mam-compute.md.",
     # --- Section 3 of doc/mega-coverage-2026-09-10.md: reasons already recorded.
     "py/main_accgram.py survey-breuer-zaqef-units": (
-        "A measurement written only to .novc/, which also reads MAM-private's Phonetic"
-        " MAM.  Recorded in py/accgram/breuer_word_length.py's docstring (\"WRITES TO"
+        "A measurement written only to .novc/, which reads the tracked public"
+        " Phonetic-MAM display release.  Recorded in py/accgram/breuer_word_length.py's docstring (\"WRITES TO"
         ' ``.novc/``, not to ``out/``") and doc/mega-coverage-2026-09-10.md §3.'
     ),
     "py/main_accgram.py vendor-printed-decalogue": _NETWORK_VENDORING,
@@ -345,6 +348,14 @@ NOT_IN_MEGA: dict[str, str] = {
         " the tracked half of the run is the parse-ws step's.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
+    "py/main_parse.py ws --write-parser-stage-grammar-lock": (
+        "Ben's decision, 2026-09-30, approving a Claude-written proposal: every"
+        " parse-ws run checks the transient parser stage against"
+        " py/verify_mp/expanded_stack_grammar_parser_stage.lock.json, so rewriting the"
+        " lock on every run would make that check pass by construction.  Run it by"
+        " hand when a legitimate new raw nesting stops parse-ws.  Recorded in"
+        " doc/PLAN-remediate-review-findings-2026-09-29.md, finding 16."
+    ),
     "py/main_diff.py mpplus --old A --new B": (
         "Claude-written, accepted by Ben on 2026-09-10: a one-off comparison of two"
         " revisions someone picks, where the diff-mpplus step rebuilds every named"
@@ -377,7 +388,7 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_uxlc_estimate_atom_loc.py": (
         "Claude-written, accepted by Ben on 2026-09-10: a lookup that prints one"
-        " estimated folio, column and line.  Proposed in doc/mega-coverage-2026-09-10.md"
+        " estimated page, column and line.  Proposed in doc/mega-coverage-2026-09-10.md"
         " §4."
     ),
     "py/main_just_render_table.py --update-issue-metadata": (
@@ -454,9 +465,9 @@ NOT_IN_MEGA: dict[str, str] = {
         " use."
     ),
     "py/main_verse_links.py": (
-        "Claude-written proposal, not yet reviewed by Ben: an on-demand lookup that"
-        " prints the links for a verse, and an atom of it, named on its command line,"
-        " and writes nothing.  Its module docstring and"
+        "Ben's decision, 2026-09-30, approving a Claude-written proposal: an on-demand"
+        " lookup that prints the links for a verse, and an atom of it, named on its"
+        " command line, and writes nothing.  Its module docstring and"
         " dot-claude/skills/verse-links/SKILL.md describe that use.  Declared when the"
         " integration of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md) merged main at 225ea3f2, which had"
         " gained the program in 5aae8465."
@@ -469,9 +480,10 @@ NOT_IN_MEGA: dict[str, str] = {
         ' hbce-psalms/README.md, under "Regenerating the outputs".'
     ),
     "py/main_hbce_psalms.py lint-receipt": (
-        "Claude-written proposal, not yet reviewed by Ben: it checks the Hebrew forms of"
-        " one dated receipt against hbce-psalms/, and writes nothing.  Recorded in"
-        " py/main_hbce_psalms.py's docstring and hbce-psalms/README.md."
+        "Ben's decision, 2026-09-30, approving a Claude-written proposal: it checks the"
+        " Hebrew forms of one dated receipt against hbce-psalms/, and writes nothing."
+        "  Recorded in py/main_hbce_psalms.py's docstring, hbce-psalms/README.md and"
+        " doc/PLAN-remediate-review-findings-2026-09-29.md."
     ),
     "py/check_all.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"

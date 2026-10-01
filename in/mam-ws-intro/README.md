@@ -34,8 +34,9 @@ Three things about it are worth knowing before you touch it:
    normalize on refresh — the files are byte-verbatim by design.
 3. **A mirror goes stale in a way `in/mam-ws/` does not.** The books move when Ben edits them;
    the introduction moves when Avi Kadish does, unannounced — five of the thirteen pages were
-   edited in August 2026 alone (the committed manifest's count; this said four until 2026-09-01,
-   from a drafting-time fetch predating the month's last two edits). `manifest.json` beside the
+   edited in August 2026 alone (the count in the manifest committed on 2026-08-31, which the
+   refresh of 2026-09-27 replaced; this said four until 2026-09-01, from a drafting-time fetch
+   predating the month's last two edits). `manifest.json` beside the
    pages records each one's revision id
    and timestamp, so staleness is checkable without a network call.
 
@@ -45,8 +46,9 @@ repository generates them.** Each page began as wikitext from a one-off generato
 on Wikisource." The published pages are that manual work. On Ben's decision of 2026-09-10 both
 generators and their outputs were removed from the repository — they "will never be run again"
 — so there is no generated form left to compare a mirrored page against.
-`git show --stat 985262e2` names every file removed; Phase 3 of
-`doc/PLAN-mega-coverage.md` records the totals.
+`git show --stat 985262e2` names every file removed. Phase 3 of the
+[retired mega-coverage plan](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md)
+records the totals.
 
 Measured before the removal, **26 (4%)** of the Aleppo generator's 700 lines survived into the
 live page, and **94 (8%)** of the Leningrad generator's 1,135. The `aleppo/aleppo-wiki/` tree

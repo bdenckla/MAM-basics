@@ -256,8 +256,9 @@ well, with five differences:
    every numbered turn of a standard alternating round, every blind counterpart, and any update
    file. None goes into this public repository or its tracker, because a public record of
    private work can disclose what a private repository exists to keep private. The first of the
-   two standing properties above, doc-only, holds there too, so a private review files no tracking
-   issue.
+   two standing properties above, doc-only, holds for each completed private review, which has
+   no individual tracking issue. Separate follow-up work uses the maintained private register
+   and its single thin pointer issue under the close-out rule below.
 2. **The window is one private repository**, whose start anchor is the previous private review's
    recorded end commit in that repository. Until 2026-09-20 the window was the private clones that
    the latest review of the public series handed to the private series, a handover that named a
@@ -432,6 +433,33 @@ After a review is written, and after any review of it:
 3. Execute remediation and put later State and every disposition in the review's one live update
    file, leaving the base's historical State untouched apart from its line-4 pointer.
 4. Run the required final integration gate.
+
+### Private follow-up after completed remediation - Ben's decision, 2026-10-01
+
+Before declaring a MAM-private close-out complete, carry its deferred proposals and declared
+open ends that still need a decision or future work into the maintained private follow-up
+register. Preserve each entry's disposition, source file and searchable passage, and the
+decision or condition needed to revisit it. Carry only the round's recorded unfinished work
+and Ben's approved deferrals, rather than collecting unrequested interesting ideas. Recording
+an entry does not authorize implementation or reopen a settled decision. The review's
+completed State and its remediation dispositions remain in their existing records.
+
+Keep the register and its single thin pointer issue in MAM-private. Before filing, read any
+issue already recorded in the register and search the tracker for an existing issue covering
+that register; reuse its open issue across rounds. Push the register to main before filing
+so the issue's document link resolves, then read the issue back and record its identity in
+the register and the review's one live update. Follow the github-issues skill for authorship,
+links and issue operations. The issue tracks triage of the register, not the completed review
+or an instruction to implement every entry. Work retained only in the register keeps the
+pointer issue open; close it only when every entry is resolved, dismissed, or moved to named
+work with separate tracking. If later close-out adds unresolved work after the pointer issue
+closes, reopen that same issue with the dated explanatory comment required by github-issues;
+do not create a second pointer issue.
+
+Ben chose eventual attention through the GitHub issue. Subsequent periodic reviews have no
+added duty to consult or re-triage the unchanged backlog; this addition creates no reminder,
+automation, or broader review window. The public procedure records the mechanism only; the
+register's contents, private paths and private issue identity stay in MAM-private.
 
 ### Verification cadence during remediation — Ben's decision, 2026-09-13
 

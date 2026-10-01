@@ -40,7 +40,7 @@ separate 1968 Hebrew study *כתר ארם־צובה: ניקודו וטעמיו*.
 ITM. Ben accepted this small comment-only passage with the editable adaptation.
 The selected adaptation is not the full OCR or a full transcription of any book.
 
-## Migration status
+## Public rendering and claim data
 
 The preparation preserves the adaptation's Python module basenames and existing
 page names, links, anchors, permission notice, and authorship caveat. Source-internal
@@ -50,7 +50,47 @@ Line-local `translit-ok` annotations preserve the adaptation's established
 romanizations under the repository's external-vocabulary lint exception.
 
 The canonical page destination is `gh-pages/yeivin-itm/`, with
-`yeivin_itm.html` as the landing page. The 17-page rendering is currently verified
-only in ignored migration scratch. This preparation does not publish pages or
-approve the workbook-era numerical claims in sections 320 and 322. A maintained
-renderer must consume approved claim data before publication is enabled.
+`yeivin_itm.html` as the landing page. All 17 existing filenames, internal links,
+and anchors are preserved. The maintained entry point is `py/main_yeivin_itm.py`:
+
+- `survey-meteg-claims` reads only `out/accgram/meteg-before-stress.json` and writes
+  `Yeivin-ITM/meteg-claims.json`
+- `render` reads the adaptation and tracked claim data and writes the pages,
+  the unchanged historical stylesheet, and the complete Taamey D font/source notices
+- `check` verifies the claim projection, prose pins, source lint, page bytes, and
+  complete asset mapping without writing
+
+All three commands run from the repository root without private inputs. The meteg
+analysis is independently owned by accgram and consumes the tracked public
+Phonetic MAM release; it is not run by the Yeivin renderer.
+
+`meteg-claims.json` follows the closed schema in
+`schema/meteg-claims-v1.schema.json`. It records the exact input identity and
+SHA-256, named populations and exclusions, integer numerators and denominators,
+and percentages derived directly from those fractions. Existing examples remain
+in the adaptation; no new source excerpts or examples are included in the data.
+The counts retain the analysis's cantillation and qamats projection, with no
+extra filters invented to reproduce historical workbook figures.
+
+Ben approved correction of his added claims and their explanatory prose on
+2026-10-01. The prose pins in `py/yeivin_itm/claim_schema.py` fix the reviewed
+fractions and input hash, so a changed corpus or population requires a fresh
+review. Numerical text is inserted from named claim references before HTML line
+wrapping. Percentages are rounded once from the original fractions.
+
+The exact legacy-page differential is recorded in
+`in/yeivin_itm_legacy_differential.json` against phonetic-hbo commit
+`8da90513df1c759d8db34b135d007e79686715d3`. It permits only Ben's approved numerical
+and explanatory corrections in three pages and the landing page's font-source
+link; the other pages are byte-identical. It also pins all unchanged adaptation
+modules to their mechanically moved public source. This records branch output,
+not a claim that Pages has been deployed.
+
+## Data and asset terms
+
+The claim data's path-specific terms are recorded in `../DATA-LICENSES.md`.
+The adaptation and its rendered pages retain the permission scope above;
+the data file makes no new grant over Yeivin's text. Taamey D is distributed under
+GPL version 2 with its font-embedding exception. The landing page links to the
+font's complete license notice and same-host corresponding-source package.
+No Jacobson image crops are part of this product.

@@ -1,8 +1,8 @@
-"""Resolve Holman's manuscript-image citations to Leningrad Codex folios.
+"""Resolve Holman's manuscript-image citations to Leningrad Codex pages.
 
 Holman cites the page he worked from as, for example,
 ``069_Exo_7.9b-8.3a / Col. 2 middle``. The leading number is a 1-based ordinal
-over page sides, counting folio 001A as 1, so
+over page sides, counting page F001A as 1, so
 
     ordinal = 2 * folio + (0 for side A, 1 for side B) - 1
 
@@ -11,7 +11,7 @@ the page starts in, which is not always the book of the case on it, so it is
 neither shown nor checked.
 
 Checked 2026-08-08: inverting all twenty ordinals in ``emails/`` and looking the
-folios up in MAM-basics' ``in/lci_recs.json`` reproduced Holman's verse range in
+pages up in MAM-basics' ``in/lci_recs.json`` reproduced Holman's verse range in
 every one. That file is derived from tanach.us's ``LCIndex.xml``, the UXLC page
 index, which is presumably where Holman's ordinals come from too. To
 re-establish the check, decode an ordinal here and compare against the
@@ -19,7 +19,7 @@ re-establish the check, decode an ordinal here and compare against the
 
 The Sefaria image URL is
 ``https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F<DDDA>.jpg``, where
-``<DDDA>`` is the folio label: three digits for the folio, then its side, as in
+``<DDDA>`` is the page label: three digits for the folio, then its side, as in
 ``035A``.
 
 The rest of a citation, ``Col. 2 middle``, is Holman's own placing of the atom
@@ -30,7 +30,7 @@ discrete fact both sources state, whereas top/middle/bottom is a loose gloss
 that an estimated line number supersedes, and checking it against equal
 nine-line thirds manufactures disagreements a line wide.
 
-Since 2026-08-12 the decoded folio is compared the same way rather than shown as
+Since 2026-08-12 the decoded page is compared the same way rather than shown as
 the card's answer, because five of the 124 citations name a scan that cannot
 hold their own verse. Each scan-file name carries its verse range, so no
 estimator is needed to see it -- ``623_Amos_9.12b-Oba_20a`` cannot hold Micah
@@ -40,7 +40,7 @@ through its MINOR PROPHETS section; Amos 8:12.8 repeats the file name of the
 case above it verbatim. Their cited ordinals run low by 2 to 4 pages, never
 high, and the other 119 agree with the estimate exactly. Ben's decision the same
 day, on being shown the five: do not keep echoing Holman's mistakes. So the card
-links ``uxlc_atom_locations``' folio and gives Holman's beside it where the two
+links the page ``uxlc_atom_locations`` estimates and gives Holman's beside it where the two
 disagree, as it already does for his column.
 """
 
@@ -68,7 +68,7 @@ class ManuscriptPage:
 
     @property
     def folio_label(self) -> str:
-        """The folio in the DDDA form the image URLs use, e.g. 035A."""
+        """The page in the DDDA form the image URLs use, e.g. 035A."""
         return f"{self.folio:03d}{self.side}"
 
     @property
@@ -77,10 +77,10 @@ class ManuscriptPage:
 
 
 def sefaria_image_url(folio_label: str) -> str:
-    """The Sefaria scan of one leaf, named in the DDDA form both sources use.
+    """The Sefaria scan of one page, named in the DDDA form both sources use.
 
     Takes the label rather than a ``ManuscriptPage`` because the card links the
-    estimated folio, which arrives as a bare string from
+    estimated page, which arrives as a bare string from
     ``uxlc_atom_locations``, and Holman's decoded ordinal is only compared
     against it.
     """

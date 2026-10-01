@@ -1,8 +1,10 @@
 # Phonetic MAM preparation
 
-The modules under `py/phonetic_mam/` prepare a unified rendering of the existing
-public Phonetic MAM pages. They are not yet a release exporter or a publishing
-command. No tracked `Phonetic-MAM/data/` release is present in this preparation.
+The modules under `py/phonetic_mam/` implement the unified rendering of the existing
+public Phonetic MAM pages. The migration branch now contains the source-independent
+algorithm core, read-only computation interface, exporter, closed display release,
+public consumers and generated target. Main integration and site deployment remain
+separate steps.
 
 ## Public display contract
 
@@ -15,9 +17,16 @@ phonological fields. Analyses must derive their working facts from the public
 display and public MAM rather than extend the release with a private record.
 
 The independent `legacy_projection` module reads only the frozen public HTML.
-It supplies a whole-output comparison for the candidate contract. A future exporter
-must also prove equality of its complete release with that public-only witness;
-matching rendered HTML alone is insufficient. No release data is approved here.
+The source-driven exporter must produce the same complete display corpus as this
+public-only projection. Matching rendered HTML alone is insufficient. Review also
+covers the combined code, metadata, example pages, analyses, fixtures and joins;
+the closed validator is only the mechanical part of that boundary.
+
+The five example pages have their own closed display-document format. Their input
+is normalized from the exact rendered HTML rather than retaining calculation
+fixtures or source-code string boundaries. The public renderer reproduces those
+pages byte-for-byte. The source adapter remains a migration dependency for their
+calculation, so later private retirement must account for that adapter.
 
 Existing alternatives can occupy different numbers of transcription columns in
 the two pronunciations. The model preserves those visible column counts. It does
@@ -35,7 +44,7 @@ normalized to Sephardic. No hidden stored preference is used.
 
 Without JavaScript, the radio control changes the current page; navigation retains
 the explicit Sephardic fallback. Browser-level CSS, printing, and no-JavaScript
-verification remains outstanding in this preparation. The corpus DOM differential
+verification remains outstanding. The corpus DOM differential
 and standalone JavaScript contract checks do not substitute for those checks.
 
 ## Font support
@@ -47,5 +56,19 @@ same-host support mapping together, without writing files. Each product publishe
 must copy the whole mapping and expose its font's `woff2/SOURCE.txt` link.
 
 The support package's input closure and source identities have been checked.
-An exact font rebuild has not been established, and no new font copy or served
-source-support tree is added by this preparation.
+An exact font rebuild has not been established. The Phonetic target includes the
+unchanged font and its complete same-host source-support tree together.
+
+## Public consumers and independent analysis
+
+The post-stress-meteg and Breuer analyses, and the final-stress differential,
+consume only the tracked public display and public MAM. Decoded working facts
+remain transient. Output forms use the generic Hebrew already displayed publicly.
+The independent pre-stress-meteg analysis lives under `py/accgram/` and
+`out/accgram/`; it is not a Phonetic MAM field or product component.
+
+Ben approved correcting his added claims to the reproducible public-MAM analysis.
+The independent analysis feeds the minimized `Yeivin-ITM/meteg-claims.json` product,
+which the Yeivin renderer validates before rendering the selected excerpts.
+The Phonetic index links to the separate Yeivin target. Both targets remain on the
+migration branch until main integration and deployment are authorized.

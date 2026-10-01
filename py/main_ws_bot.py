@@ -57,7 +57,8 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-post-download",
         action="store_true",
         help=(
-            "Skip the automatic post-run download of modified chapters " "to in/mam-ws"
+            "Skip the automatic post-run download, which refreshes the 36 declared"
+            " special pages and downloads the modified chapters to in/mam-ws"
         ),
     )
     save_mode_group = real_parser.add_mutually_exclusive_group()

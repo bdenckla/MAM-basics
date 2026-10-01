@@ -221,7 +221,7 @@ largely an act of *composition* over existing machinery, plus the new identity-r
 - **Image / atom-location guessing:**
   [py/main_uxlc_estimate_atom_loc.py](../../py/main_uxlc_estimate_atom_loc.py) +
   `uxlc_misc/my_uxlc_location.py` (`page_and_guesses`) + [py/uxlc_lci/](../../py/uxlc_lci/). Given
-  book/chapter/verse/atom, guesses the LC folio/column/line → which image to show.
+  book/chapter/verse/atom, guesses the LC page/column/line → which image to show.
 
 - **Page-break info:** [py/main_write_page_break_info.py](../../py/main_write_page_break_info.py)
   (LC line/page boundaries; builds `uxlc/data/lci_augrecs.json`).
@@ -277,7 +277,7 @@ LC-index data. The repository evacuations settled the question:
 - [uxlc/data/lci_augrecs.json](../data/lci_augrecs.json) is generated from that input and the
   UXLC corpus by [py/main_write_page_break_info.py](../../py/main_write_page_break_info.py). It
   preserves `startli` and `stopli`, the manuscript line numbers inherited from `lci_recs.json`;
-  adds `start_word_count` and `stop_word_count`, the existing cumulative per-folio estimator
+  adds `start_word_count` and `stop_word_count`, the existing cumulative per-page estimator
   counts; and adds `whole_start_verse_atom_count` and `whole_stop_verse_atom_count`, the
   estimator-counted atoms in the complete verses containing the start and stop boundaries.
 - The former sparse-vendoring relationship was retired when `codex-index-leningrad` landed under
@@ -386,7 +386,7 @@ Each is a feature this doc names, organized with grounding + open questions.
     this stays a render-time-only mechanism; the note JSON (§8) is unaffected. **Second instance:**
     Deut 5:7's elyon meteg (§7.7) — *further discussion* with no grounding role: it relegates no
     inline UXLC note (`relegated_position` is `None`, so it stays out of `_UXLC_NOTES_RELEGATED`),
-    but it does carry an LC folio-102A (col 3, line 22) detail image of יהיה, credited like the
+    but it does carry an LC F102A (col 3, line 22) detail image of יהיה, credited like the
     5:13 image to Sefaria.org. It is a one-sentence pointer to Yeivin ITM §355 on the special gaʿya
     of יהיה-type verbs, closing with an aside that the word's initial yod is itself a charitable
     reading (most of its top has flaked off). **Third through sixth instances:** the four

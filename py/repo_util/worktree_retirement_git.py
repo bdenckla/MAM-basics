@@ -29,21 +29,47 @@ class _Worktree:
 
 
 def _git(
-    repo_dir: Path, *args: str, text: bool = True
+    repo_dir: Path,
+    *args: str,
+    text: bool = True,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
 ) -> subprocess.CompletedProcess[Any]:
-    """Run Git with the exact local trust exception Windows worktrees need."""
+    """Run Git with the exact local trust exception Windows worktrees need.
+
+    ``timeout_seconds`` bounds the process, and ``noninteractive`` forbids Git and its
+    credential manager to prompt, as ``user_config_sync._run_git`` does; by default
+    neither applies.
+    """
     command = git_command(repo_dir, "--no-optional-locks", *args)
+    environment = None
+    if noninteractive:
+        environment = os.environ.copy()
+        environment["GIT_TERMINAL_PROMPT"] = "0"
+        environment["GCM_INTERACTIVE"] = "Never"
     return subprocess.run(
         command,
         capture_output=True,
         text=text,
         encoding="utf-8" if text else None,
         errors="replace" if text else None,
+        env=environment,
+        timeout=timeout_seconds,
     )
 
 
-def _git_ok(repo_dir: Path, *args: str) -> str:
-    result = _git(repo_dir, *args)
+def _git_ok(
+    repo_dir: Path,
+    *args: str,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
+) -> str:
+    result = _git(
+        repo_dir,
+        *args,
+        timeout_seconds=timeout_seconds,
+        noninteractive=noninteractive,
+    )
     if result.returncode != 0:
         message = result.stderr.strip() or result.stdout.strip() or "git failed"
         raise RetirementError(f"git {' '.join(args)}: {message}")
@@ -64,8 +90,21 @@ def _inside(path: Path, directory: Path) -> bool:
     return key == parent or key.startswith(parent + os.sep)
 
 
-def _list_worktrees(repo_dir: Path) -> list[_Worktree]:
-    output = _git_ok(repo_dir, "worktree", "list", "--porcelain", "-z")
+def _list_worktrees(
+    repo_dir: Path,
+    *,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
+) -> list[_Worktree]:
+    output = _git_ok(
+        repo_dir,
+        "worktree",
+        "list",
+        "--porcelain",
+        "-z",
+        timeout_seconds=timeout_seconds,
+        noninteractive=noninteractive,
+    )
     records: list[_Worktree] = []
     path: Path | None = None
     head: str | None = None

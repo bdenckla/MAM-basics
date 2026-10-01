@@ -436,7 +436,7 @@ product, image, issue, deployed instruction or frozen review turn.
 **Clarified the push rule in response to Ben's question.** The live
 `codex-worktree-tasks` skill's rule 4 restricts ordinary short-lived worktree backups
 and contains a long-lived exception. The repository's `doc/dual-agent-review.md`,
-"The shared worktree" (D11), explicitly requires DAR branch backups after every
+"The shared origin branch" (D11), explicitly requires DAR branch backups after every
 commit and reserves `main` integration/push for final remediation. There is no DAR
 backup prohibition. The earlier automatic-review authorization block was resolved
 by Ben's explicit September 28 permission; that permission covers this preparation
@@ -546,7 +546,7 @@ remain pending until the later evidence entry confirms them.
 | 10 | Fixed: corrections identify distinctive source words and distinguish summary passages from section leads. |
 | 11 | Fixed: 11.2–11.5 safeguards, transcription-evidence limits, searchable source locators and the long-lived backup exception are restored in canonical shared homes. All twelve 11.1 clauses remain explicitly deferred. |
 | 12 | Fixed: current section citations and wrapper guidance name current instruction homes; the cloud hook changes only its comment. No fresh cloud execution is claimed. |
-| 13 | Fixed: the budget reversal is attributed without changing 32,768 bytes; the maintained reconciliation maps all 35 H2 headings and one H3 from the old common body. Retirement of the overtaken September 9 plan remains deferred. |
+| 13 | Fixed: the budget reversal is attributed without changing 32,768 bytes; the maintained reconciliation maps all 35 H2 headings and one H3 from the old Claude body. Retirement of the overtaken September 9 plan remains deferred. |
 | 14 | Fixed: documentation/instruction exemptions depend on content; executable hooks and helpers receive their applicable checks. |
 | 15 | Fixed: the canonical refresh skill states normal Git-based sibling resolution, the unusual-layout override, conditional suite cadence and mandatory final mega. |
 | 16 | Fixed: inbound detection uses the actual retained relocation inventory, supported path spellings and exact boundaries; real temporary-checkout differentials cover later observer citations and preservation gates. No real retirement occurred. |
@@ -760,3 +760,42 @@ The receipts have been retired from the tracked tree and remain at these immutab
   and its [update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-symmetric-CLAUDE-and-AGENTS-instructions-update.md);
 - [September 16 turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md); and
 - [September 26 turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-26-turn-06-codex.md).
+
+## Execution rows that overstated what landed or later became false, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review, whose findings 1, 2, 4.4 and 35 are the source of this entry.
+
+The execution table under "Approved remediation implemented; final gates pending, 2026-09-28"
+called six findings fixed whose approved changes had not landed in full:
+
+1. Row 3: the pinned link to the retired mega-coverage plan reached only the topology reference;
+   `in/mam-ws-intro/README.md`, `py/repo_scopes.py` and
+   `py/subcommands/download_wikisource_intro.py` kept the retired plan's path.
+2. Row 5: the September 10 review's update gained base-and-update link pairs that made three of
+   its passages false, and it kept presenting retired or executed things as current.
+3. Row 6: three of the named sites survived, in `py/ac_paths.py` and in two passages of the live
+   September 9 plan.
+4. Row 11: the common body's two routings of every reader to the Codex-only
+   `codex-worktree-tasks` skill, and a third written into the live September 9 plan, were not
+   made agent-specific.
+5. Row 29: `py/author_site/post_stress_meteg.py`'s docstring kept the old account of
+   `gh-pages/style.css`.
+6. Row 30: `doc/meteg-after-silluq-snips/README.md` kept "folio **57a**", which the approved
+   plan changed to "page 57a", and "folio **307b**", which the plan's list of side-lettered
+   identifiers omitted.
+
+Row 24 was true when written; the merge `ebbfa90f`, later on 2026-09-28, restored the old
+order of the MAM-parsed plus consumer notice and so made its "narpas first-use glosses" false
+of that notice, in the 24 `MAM-parsed/plus/` files and
+`gh-pages/MAM-parsed/plus/html/mpplus.html`. The 2026-09-29 review's remediation completed
+each of these on 2026-09-30, in `4a5f9800` and `37002a28` (row 3), `37169648` (row 5),
+`8fd5b6e6` and `37002a28` (row 6), `7cf1ed21` and `8fd5b6e6` (row 11), `572e2f08` (row 29),
+`4a5f9800` (row 30) and `f62428c4` (row 24); row 11's change to the common body took effect
+when `--sync-user-config` deployed it on 2026-10-01.
+
+Also corrected in place in this file: row 13's "from the old common body" now reads "from the
+old Claude body", the file the reconciliation maps (finding 4.4); and in the paragraph
+"Clarified the push rule in response to Ben's question", in the entry "Detailed remediation
+plan prepared; execution approval pending, 2026-09-28", "The shared worktree" (D11) now reads
+"The shared origin branch", the section's present title (finding 35).

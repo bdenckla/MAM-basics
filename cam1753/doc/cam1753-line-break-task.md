@@ -6,7 +6,10 @@ marking is finished. The programs and page images it used were retired on 2026-0
 [`../../doc/PLAN-retire-codex-index-image-work.md`](../../doc/PLAN-retire-codex-index-image-work.md),
 so nothing regenerates this data. Until then this file was the marking procedure;
 `git show f4d81285:cam1753/doc/cam1753-line-break-task.md` recovers that version, and
-`git show f4d81285:<path>` recovers each retired program.
+`git show f4d81285:<path>` recovers each retired program except those that `f2a9ead4` deleted
+earlier that day. Among them is the interactive line-break editor that version describes:
+`git show 4ac4f16a:py/py_cam1753_loc/gen_line_break_editor.py` recovers it, and its wrapper,
+`py/main_cam1753_gen_line_break_editor.py`, is at the same commit.
 
 ## Manuscript
 
@@ -23,7 +26,9 @@ Cambridge University Library, MS Add. 1753 (Ketuvim). Images downloaded from arc
 
 ## Coverage
 
-- Line breaks: 27 pages, `0072B` through `0085B`, from Ps 149:7 through the end of Job.
+- Line breaks: 27 pages, `0072B` through `0085B`, from Ps 149:7 through the end of Job and on
+  into Proverbs: `0085B` ends with the first three atoms of Proverbs 1:31, closed by a
+  `verse-fragment-end` label.
   Page `0086A` is past Job and has no line-break file.
 - Column quadrilaterals: all 28 pages.
 - All 27 line-break files carry line markers. The frozen report

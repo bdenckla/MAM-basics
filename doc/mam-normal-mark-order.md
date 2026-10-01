@@ -11,9 +11,10 @@ dagesh sits:
   (U+05BC) and dagesh ḥazaq (U+05C9) at the same priority, rafe, then every
   other mark in the relative order it already had. Spelled out and implemented in
   `py/mb_cmn/uni_denorm.py` — `give_std_mark_order` is the authority, `has_std_mark_order` the
-  predicate. The code calls it "(our) standard mark order" and its combining-class table "SBL2",
-  after the appendix to the SBL Hebrew Font manual, so grep for **std mark order** and **SBL2** as
-  well as for this section's heading.
+  predicate. The code calls it "(our) standard mark order", and `py/check_mark_order.py` calls it
+  "SBL2", after the SBL Hebrew Font recommendation to which the combining-class table's comment
+  attributes the order, so grep for **std mark order** and **SBL2** as well as for this section's
+  heading.
 - **Unicode-normal order**, what `unicodedata.normalize` produces from the canonical combining
   classes (qamats 18, holam 19, dagesh 21, meteg 22). It puts the dagesh **after** the vowel.
 

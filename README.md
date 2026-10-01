@@ -70,7 +70,7 @@ This project requires Python 3 with a virtual environment. On MS-Windows:
 
 ```bash
 python -m venv .venv
-.venv/Scripts/pip.exe install -r requirements.txt
+.venv/Scripts/pip.exe install -r requirements.txt -c constraints.txt
 ```
 
 Run scripts from the repo root, not from `py/`. On MS-Windows:

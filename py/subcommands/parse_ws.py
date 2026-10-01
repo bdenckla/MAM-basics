@@ -8,15 +8,22 @@ from subcommands import parse_ws_products
 from ws import ws_get_bk_in_both_fmts as wsin
 
 
-def almost_main(bkids=None, write_fmt_1=False):
+def almost_main(bkids=None, write_fmt_1=False, write_parser_stage_grammar_lock=False):
     """
     Read in the 39 per-book JSON files from the Wikisource download and output
     them to parsed format 2 and production MAM-parsed-plus, plus optional
-    debugging format 1.
+    debugging format 1.  With write_parser_stage_grammar_lock, also rewrite the
+    parser stage's expanded stack grammar lock from all 24 book groups, after the
+    per-book outputs and before the plus groups are validated and written.
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
     bkids = tuple(bkids)
+    if write_parser_stage_grammar_lock and set(bkids) != set(tbn.ALL_BK39_IDS):
+        raise ValueError(
+            "--write-parser-stage-grammar-lock infers the grammar from every book;"
+            " it cannot be combined with a book selection."
+        )
     begin_end = "per-book output (for 39 books)"
     my_utils_fm.show_progress_g(__file__, "BEGIN", begin_end)
     parsed_books = {}
@@ -27,7 +34,11 @@ def almost_main(bkids=None, write_fmt_1=False):
             _write_outfile(".novc/mam-ws-parsed-fmt-1", bkid, wsf1_book)
         _write_outfile("out/mam-ws-parsed-fmt-2", bkid, wsf2_book)
         my_utils_fm.show_progress_g(__file__, "book", bkid)
-    plus_paths = parse_ws_products.generate_production(bkids, parsed_books)
+    plus_paths = parse_ws_products.generate_production(
+        bkids,
+        parsed_books,
+        write_parser_stage_grammar_lock=write_parser_stage_grammar_lock,
+    )
     my_utils_fm.show_progress_g(__file__, "END", begin_end)
     return plus_paths
 

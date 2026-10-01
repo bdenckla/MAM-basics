@@ -13,7 +13,7 @@ from py_html import legacy_html as html
 from py_html import legacy_html_lines
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 
-_YEIVIN_URL = "https://bdenckla.github.io/phonetic-hbo/yeivin_itm.html"
+_YEIVIN_URL = "../yeivin-itm/yeivin_itm.html"
 _SOURCE_URL = (
     "https://he.wikisource.org/wiki/"
     "%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_"

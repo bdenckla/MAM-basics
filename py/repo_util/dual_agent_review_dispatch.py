@@ -180,6 +180,11 @@ def notify(repo: Path, round_date: str, reason: str, *, toast: bool = True) -> N
                 directory / "toast-error.txt",
                 result.stderr.decode("utf-8", errors="replace"),
             )
+        else:
+            write_text(
+                directory / "toast-result.json",
+                result.stdout.decode("utf-8", errors="replace"),
+            )
 
 
 def codex_settings() -> dict:

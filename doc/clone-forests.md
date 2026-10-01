@@ -34,9 +34,14 @@ can use their origins; the synchronizer can then hydrate that primary forest or 
 
 Existing targets must be independent full clones with matching origins, clean `main`, no Git
 operation or lock, no unpushed/diverged commits and no active writer evidence. Eligible clones
-are fetched and fast-forwarded. Ineligible clones and their environments stay untouched; other
-roster entries continue. The command never resets, stashes, switches branches, forces refs,
-deletes paths or replaces an existing environment. It does not commit or push a repository.
+are fetched and fast-forwarded. A clone that is dirty, off `main`, mid-operation, locked or
+occupied is refused before any fetch. A clone refused only because its history is ahead of or
+diverged from `origin/main` is fetched first: the fetch adds any missing objects, rewrites
+`FETCH_HEAD`, and creates or fast-forwards `refs/remotes/origin/main`. A clone whose
+`origin/main` history was rewritten is fetched and refused with that ref retained. Every refused
+clone keeps its local branches, checkout and environments; other roster entries continue. The
+command never resets, stashes, switches branches, forces refs, deletes paths or replaces an
+existing environment. It does not commit or push a repository.
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_repo_util.py --forest-status
@@ -89,7 +94,8 @@ Ordinary work in any full clone commits on `main`. Fetch and merge moved `origin
 checks owed by the merged changes, and push normally; repeat if the push is refused. A worktree
 integrates into its own home clone through the repository's verified fast-forward procedure.
 Only pushed tracked state moves through `origin`. A task needing checkout-local untracked inputs
-stays in its checkout; external inputs use explicit user-level account configuration.
+stays in its checkout; external inputs are user level: the scan archive at its default location,
+which `BOOK_SCANS_ROOT` overrides, and explicit account configuration such as pywikibot's.
 
 After building a secondary forest, use that forest's MAM-basics environment to run the suite
 and mega. Require no unexplained tracked output change, then check `--forest-status` and

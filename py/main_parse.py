@@ -11,6 +11,7 @@ Examples:
     .venv/Scripts/python.exe py/main_parse.py ws
     .venv/Scripts/python.exe py/main_parse.py ws --write-fmt-1
     .venv/Scripts/python.exe py/main_parse.py ws --book39 Joshua
+    .venv/Scripts/python.exe py/main_parse.py ws --write-parser-stage-grammar-lock
 """
 
 import argparse
@@ -48,6 +49,15 @@ def _add_subcommands(subparsers) -> None:
     mutex = ws_parser.add_mutually_exclusive_group()
     mutex.add_argument("--book39")
     mutex.add_argument("--section6")
+    mutex.add_argument(
+        "--write-parser-stage-grammar-lock",
+        action="store_true",
+        help=(
+            "Infer the transient parser stage's expanded stack grammar from all 24"
+            " book groups, write its lock file, and validate the current run against"
+            " that lock."
+        ),
+    )
     ws_parser.add_argument(
         "--write-fmt-1",
         action="store_true",
@@ -71,7 +81,11 @@ def _bkids_from_args(args):
 
 
 def _run_ws(args: argparse.Namespace) -> None:
-    parse_ws.almost_main(_bkids_from_args(args), write_fmt_1=args.write_fmt_1)
+    parse_ws.almost_main(
+        _bkids_from_args(args),
+        write_fmt_1=args.write_fmt_1,
+        write_parser_stage_grammar_lock=args.write_parser_stage_grammar_lock,
+    )
 
 
 if __name__ == "__main__":

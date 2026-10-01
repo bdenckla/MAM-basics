@@ -467,8 +467,12 @@ def _check_orphan_html(
             if path_part is not None:
                 target = (source_dir / path_part).resolve()
                 linked_targets.add(target)
-    # Entry point is index.html — it doesn't need to be linked to
-    index_path = (docs_dir / "index.html").resolve()
+    # Preserve the Yeivin product's canonical historical landing filename.
+    # Every other site's directory landing remains index.html.
+    landing = "index.html"
+    if docs_dir.resolve() == (paths.gh_pages_dir() / "yeivin-itm").resolve():
+        landing = "yeivin_itm.html"
+    index_path = (docs_dir / landing).resolve()
     issues = []
     for html_file in sorted(html_files):
         resolved = html_file.resolve()

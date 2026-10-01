@@ -188,6 +188,11 @@ _EXCLUDE_DIR_PREFIXES = (
     "MAM-parsed/",
     "MAM-simple/",
     "MAM-with-doc/",
+    # Generated display data retains the existing public transcription exactly,
+    # including its decomposed Latin vowel marks. Authored README/schema stay in
+    # the main scope; this is the same generated-data boundary as out/ above.
+    "Phonetic-MAM/data/",
+    "Phonetic-MAM/examples/",
     "uxlc/",
     "aleppo/",
     "cam1753/",
@@ -279,9 +284,7 @@ _MAM_SIMPLE_EXCLUDE_FILES = frozenset({"py-examples/provenance.md"})
 _MAM_WITH_DOC_EXCLUDE_DIR_PREFIXES = ("py/",)
 _MAM_FOR_SEFARIA_EXCLUDE_DIR_PREFIXES = ("csv/", "csv-ajf/", "misc/", "py/")
 _MAM_PARSED_EXCLUDE_DIR_PREFIXES = (
-    "google/",
     "historical/",
-    "plain/",
     "plus/",
     "py-examples-out/",
 )

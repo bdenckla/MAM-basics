@@ -1,21 +1,50 @@
+from yeivin_itm.claim_text import claim_text
 import yeivin_itm.helpers as hlp
 import yeivin_itm.substitutions as sub
 import py_html.legacy_html as aht_html
 
 _TEG = "the expected $gaya"
 _TGEMOD = "the $gaya expected mainly on disjunctives"
-_SLIGHTLY_AFR1_DISJ_SURPRISE_PERCENT = "19%"
-_SLIGHTLY_AFR1_DSG_SURPRISE_COUNT = "20"
-_SLIGHTLY_AFR1_DSG_ALL_COUNT = "106"
-_SLIGHTLY_AFR4_DISJ_SURPRISE_PERCENT = "60%"
-_SLIGHTLY_AFR4_DSG_SURPRISE_COUNT = "63"
-_SLIGHTLY_AFR4_DSG_ALL_COUNT = "105"
-_SLIGHTLY_FR_DISJ_SURPRISE_PERCENT = "6%"
-_SLIGHTLY_FR_DSG_SURPRISE_COUNT = "130"
-_SLIGHTLY_FR_DSG_ALL_COUNT = "2174"
-_SLIGHTLY_GAYA_RATE_REGARDLESS_OF_ACCENT_FOR_FR = "63%"
-_SLIGHTLY_GAYA_RATE_REGARDLESS_OF_ACCENT_FOR_AFR1 = "65%"
-_SLIGHTLY_GAYA_RATE_REGARDLESS_OF_ACCENT_FOR_AFR4 = "32%"
+_SLIGHTLY_AFR1_DISJ_SURPRISE_PERCENT = claim_text(
+    "AFR1.disjunctive-exception-rate", "percentage", "percent"
+)
+_SLIGHTLY_AFR1_DSG_SURPRISE_COUNT = claim_text(
+    "AFR1.disjunctive-exception-rate", "numerator", "integer"
+)
+_SLIGHTLY_AFR1_DSG_ALL_COUNT = claim_text(
+    "AFR1.disjunctive-exception-rate", "denominator", "integer"
+)
+_SLIGHTLY_AFR4_DISJ_SURPRISE_PERCENT = claim_text(
+    "AFR4.disjunctive-exception-rate", "percentage", "percent"
+)
+_SLIGHTLY_AFR4_DSG_SURPRISE_COUNT = claim_text(
+    "AFR4.disjunctive-exception-rate", "numerator", "integer"
+)
+_SLIGHTLY_AFR4_DSG_ALL_COUNT = claim_text(
+    "AFR4.disjunctive-exception-rate", "denominator", "integer"
+)
+_SLIGHTLY_FR_DISJ_SURPRISE_PERCENT = claim_text(
+    "fully-regular.disjunctive-exception-rate", "percentage", "percent"
+)
+_SLIGHTLY_FR_DSG_SURPRISE_COUNT = claim_text(
+    "fully-regular.disjunctive-exception-rate", "numerator", "integer"
+)
+_SLIGHTLY_FR_DSG_ALL_COUNT = claim_text(
+    "fully-regular.disjunctive-exception-rate", "denominator", "integer"
+)
+_SLIGHTLY_GAYA_RATE_REGARDLESS_OF_ACCENT_FOR_FR = claim_text(
+    "fully-regular.target-meteg-rate", "percentage", "percent"
+)
+_SLIGHTLY_GAYA_RATE_REGARDLESS_OF_ACCENT_FOR_AFR1 = claim_text(
+    "AFR1.target-meteg-rate", "percentage", "percent"
+)
+_SLIGHTLY_GAYA_RATE_REGARDLESS_OF_ACCENT_FOR_AFR4 = claim_text(
+    "AFR4.target-meteg-rate", "percentage", "percent"
+)
+_XAFR1_WITH_METEG = claim_text(
+    "XAFR1.disjunctive-with-target-meteg", "numerator", "word"
+)
+_XAFR1_WITHOUT_METEG = claim_text("XAFR1.disjunctive-without-target-meteg", "numerator")
 
 _HUFT_SLIGHTLY_PARA_MY_RESEARCH_DISAGREES = [
     "My research disagrees with this claim that, "
@@ -183,21 +212,20 @@ FTNT_ON_AFR1 = sub.footnote(
         sub.afr1(),
         " include words like ",
         sub.fr2(),
-        ", we would “explain” only a single $gaya",
-        ", that in ",
+        f", we would “explain” only {_XAFR1_WITH_METEG} instances of $gaya",
+        ", including that in ",
         hlp.hboloc("אֶֽל־נְהַר־כְּבָר֙", "@Ez 3:15"),
-        ". What’s more, I find that $gaya",
-        " to be an outlier: if we let ",
+        ". These remain a small minority: if we let ",
         sub.afr1(),
         " include words like ",
         sub.fr2(),
-        ", that would add 16 disjunctively-accented ",
+        f", that would add {_XAFR1_WITHOUT_METEG} disjunctively-accented ",
         sub.afr1(),
         " words without such a $gaya",
         ", including ",
         hlp.hboloc("אֶל־נְהַר־כְּבָ֑ר", "@Ez 43:3"),
         sub.thspc(),
-        " a chanted word differing only by accent from that one “poster child.” "
+        " a chanted word differing only by accent from the example just cited. "
         "Although $itm includes ",
         sub.afr3(),
         " in the “almost fully regular” patterns, and $gaya",

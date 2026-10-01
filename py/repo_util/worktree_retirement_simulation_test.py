@@ -490,6 +490,7 @@ def _write_citation_oracle_receipt(primary, target, checkout, source, filename):
     assert len(retained) > 1 and any(path.is_file() for path in retained)
     lines = []
     expected = set()
+    suite_basetemp = (target / ".novc").resolve() / "t"
 
     def append(text, accepted=False):
         lines.append(text)
@@ -503,6 +504,7 @@ def _write_citation_oracle_receipt(primary, target, checkout, source, filename):
     lookalike = source.with_name(".novc-old")
     append(f"Lookalike root: `{lookalike.as_posix()}`.")
     for path in retained:
+        accepted = path != suite_basetemp and suite_basetemp not in path.parents
         spellings = {str(path), path.as_posix(), path.as_uri()}
         for base in (target, primary, checkout):
             try:
@@ -512,11 +514,13 @@ def _write_citation_oracle_receipt(primary, target, checkout, source, filename):
             if relative != ".novc":
                 spellings.add(relative)
         for spelling in sorted(spellings):
-            append(f"Retained evidence: `{spelling}`.", accepted=True)
-            append(f"Retained evidence: {spelling}.", accepted=True)
-            append(f"Repeated evidence: `{spelling}` and `{spelling}`.", accepted=True)
+            append(f"Retained evidence: `{spelling}`.", accepted=accepted)
+            append(f"Retained evidence: {spelling}.", accepted=accepted)
+            append(
+                f"Repeated evidence: `{spelling}` and `{spelling}`.", accepted=accepted
+            )
             if path.is_dir():
-                append(f"Retained directory: `{spelling}/`.", accepted=True)
+                append(f"Retained directory: `{spelling}/`.", accepted=accepted)
             append(f"Prefix lookalike: `x{spelling}`.")
             append(f"Suffix lookalike: `{spelling}-old`.")
             append(f"Extension lookalike: `{spelling}.bak`.")
@@ -538,6 +542,8 @@ def test_exact_relocation_citations_gate_and_survive_retirement(
         source = add_novc(target).resolve()
         (source / "space name.txt").write_bytes(b"URI-escaped fixture evidence\n")
         (source / "space directory").mkdir()
+        (source / "t" / "p1").mkdir(parents=True)
+        (source / "t" / "p1" / "basetemp.txt").write_bytes(b"suite base temp\n")
         original = tree_bytes(source)
         (primary / "policy.md").write_text(
             "A generic `.novc`, `.novc/` or `.novc/*` is not an artifact citation.\n"
@@ -630,10 +636,18 @@ def test_exact_relocation_citations_gate_and_survive_retirement(
         assert all(path.read_bytes() == data for path, data in receipt_bytes.items())
 
         reviewed_path, reviewed = prepare(tmp_path, target, f"reviewed-{owner}")
+        review_payload = {
+            key: value
+            for key, value in reviewed["citation_review"].items()
+            if key != "fingerprint"
+        }
         assert reviewed["citation_review"]["citations"] == citations
         assert reviewed["citation_review"]["reviewed"]
         assert reviewed["citation_review"]["note"] == (
             "Reviewed fixture references; retained paths are in this preflight."
+        )
+        assert reviewed["citation_review"]["fingerprint"] == preflight._fingerprint(
+            review_payload
         )
         retirement.execute_retirement(reviewed_path, confirm_task_ended=True)
         metadata = assert_retained(reviewed, original)

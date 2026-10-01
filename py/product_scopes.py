@@ -34,9 +34,12 @@ A documentation-only, comment-only, docstring-only, or instruction-text-only cha
 suite. A change that can reach tier 3 owes a mega run and a reading of every tracked
 diff it leaves. Other executable-source, test, schema, or shared-data changes owe the
 suite. A change to a hand-run generator, or an input it reads, owes every affected
-hand-run generator and inspection of its outputs. AGENTS.md's "Integrating a worktree
-branch here: run the mega unless the branch is exempt" states the final worktree
-integration gate.
+hand-run generator and inspection of its outputs. A refresh of MAM's text is the
+exception for ``py/main_mam4sef.py`` and ``py/main_mam_osis.py``, by Ben's decision of
+2026-09-30, and a change to MAM's data is the exception for
+``py/main_hbce_psalms.py compare``, by his decision of 2026-09-26; AGENTS.md's products
+section states both. AGENTS.md's "Integrating a worktree branch here: run the mega
+unless the branch is exempt" states the final worktree integration gate.
 
 TIER 3 IS THE MEGA'S STEP TABLE, AND THAT IS NOT EVERY ROUTE INTO A PRODUCT
 
@@ -50,7 +53,9 @@ writes ``MAM-OSIS/`` and ``gh-pages/MAM-OSIS/``.  Ben took both out of the mega 
 from "this change reaches no product", and reading the first as the second is the
 mistake this paragraph exists to stop.  A change to a hand-run generator, or to any
 input it reads, owes rerunning every affected generator and inspecting every tracked
-output it writes; a mega run does not do that for it.
+output it writes; a mega run does not do that for it.  The one input change exempted
+for these two programs is a refresh of MAM's text: by Ben's decision of 2026-09-30
+their products may lag it, as their READMEs say.
 
 "NOT TIER 3" IS NOT "SAFE"
 
@@ -83,6 +88,8 @@ _PRODUCT_DIR_NAMES = (
     "MAM-for-Sefaria",
     "MAM-with-doc",
     "MAM-OSIS",
+    "Phonetic-MAM",
+    "Yeivin-ITM",
 )
 
 _MAM_PARSED_CURRENT_FORMAT_DIR = "MAM-parsed/plus"
@@ -122,6 +129,8 @@ _GENERATOR_ENTRY_POINTS = (
     "py/main_map_changes_to_book_of_job.py",
     "py/main_multimark.py",
     "py/main_pipeline_graph.py",
+    "py/main_phonetic_mam.py",
+    "py/main_yeivin_itm.py",
     "py/main_render_uxlc_corrections.py",
     "py/main_search_final_hiriq_verse_text.py",
     "py/main_search_holam_he_qere.py",
@@ -159,6 +168,11 @@ _MEGA_WRAPPER_DELEGATES = {
     "_run_accgram_servi_xcheck": "py/main_accgram.py",
     "_run_accgram_survey_chanted_word_accents": "py/main_accgram.py",
     "_run_accgram_survey_post_stress_meteg": "py/main_accgram.py",
+    "_run_accgram_survey_meteg_before_stress": "py/main_accgram.py",
+    "_run_phonetic_mam_export": "py/main_phonetic_mam.py",
+    "_run_phonetic_mam_render": "py/main_phonetic_mam.py",
+    "_run_yeivin_itm_survey_meteg_claims": "py/main_yeivin_itm.py",
+    "_run_yeivin_itm_render": "py/main_yeivin_itm.py",
     "_run_accgram_test_fixes": "py/main_accgram.py",
     "_run_accgram_xcheck_poetic": "py/main_accgram.py",
     "_run_clc": "py/main_clc.py",
@@ -180,7 +194,7 @@ def published_tree() -> Path:
 
 
 def product_dirs() -> list[Path]:
-    """Tier 2: the five data products, each consumed by git URL as well as by Pages."""
+    """Tier 2: the declared data products, consumed by git URL as well as by Pages."""
     root = paths.repo_root()
     return [root / name for name in _PRODUCT_DIR_NAMES]
 

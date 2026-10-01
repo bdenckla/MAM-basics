@@ -1,3 +1,4 @@
+from yeivin_itm.claim_text import claim_text
 import yeivin_itm.helpers as hlp
 import yeivin_itm.substitutions as sub
 
@@ -18,60 +19,38 @@ _WTEGOAD = "with ", _TEG, " of a disjunctive"
 _CS_STEG = "conjunctives ", *_WTEGOAD
 _WWWEAG = "where we would expect a $gaya"
 
-# Numbers below from Excel are from the workbook named "alhatorah-musical-gaya.xlsx",
-# mainly in the sheet named "counts-main-reshaped".
+# Named projections replace the historical alhatorah-musical-gaya.xlsx counts.
+# Their populations, exclusions, and exact fractions are in Yeivin-ITM/meteg-claims.json.
+_CNT_FR_ALL = claim_text("fully-regular.all", "numerator", "comma")
+_CNT_FR_DSG = claim_text("fully-regular.disjunctive-without-target-meteg", "numerator")
+_CNT_FR_CWG = claim_text("fully-regular.conjunctive-with-target-meteg", "numerator")
+_CNT_FR_DSG_OGC = claim_text(
+    "fully-regular.disjunctive-without-target-meteg.other-meteg", "numerator"
+)
+_CNT_FR_DSG_METIGAH = claim_text(
+    "fully-regular.disjunctive-without-target-meteg.metigah", "numerator"
+)
+_CNT_FR_DSG_MERKA = claim_text(
+    "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh",
+    "numerator",
+    "word",
+)
+_CNT_FR_SURP = claim_text("fully-regular.exceptions", "numerator")
+_FR_SURPRISE_RATE = claim_text("fully-regular.exceptions", "percentage", "decimal")
+_CONJ_SURPRISE_RATE_IN_FR1 = claim_text(
+    "FR1.conjunctive-with-target-meteg", "percentage", "integer"
+)
+_CONJ_SURPRISE_RATE_IN_FR2 = claim_text(
+    "FR2.conjunctive-with-target-meteg", "percentage", "integer"
+)
+_CONJ_SURPRISE_RATE_IN_FR3 = claim_text(
+    "FR3.conjunctive-with-target-meteg", "percentage", "integer"
+)
 
-_CNT_FR_ALL = 3584  # from Excel row "FR-star" column "sum"
-_CNT_FR_DSG = 133  # from Excel row "FR-star" column "dsg"
-_CNT_FR_CWG = 222  # from Excel row "FR-star" column "cwg"
-_CNT_FR_DSG_OGC = 31  # from Excel
-_CNT_FR_DSG_METIGAH = 6  # from Excel
-_CNT_FR_DSG_MERKA = "two"  # from Excel
-# Each of the above 6 counts is a count of FR words ...
-#    of all types
-#    that are 'disj-sans-gtbs' (DSG)
-#    that are 'conj-with-gtbs' (CWG)
-#    that are 'disj-sans-gtbs' with gaya somewhere other than tbs (two before [the] stress) (DSG_OGC)
-#    that are 'disj-sans-gtbs' with metigah "instead of" gaya (DSG_METIGAH)
-#    that are 'disj-sans-gtbs' with merka "instead of" gaya (DSG_MERKA)  # translit-ok
-_CNT_FR_SURP = _CNT_FR_DSG + _CNT_FR_CWG
-#
-# How to calculate _CNT_FR_DSG_OGC:
-#     Step 1: Filter the Excel sheet named "words"
-#     to show only rows whose "phonrec-musical-gaya" column
-#     has the one of the following values:
-#         FR1-disj-sans-gtbs
-#         FR2-disj-sans-gtbs
-#         FR3-disj-sans-gtbs
-#     Step 2: Additionally filter those rows down to ones whose "ogc" column
-#     is not blank (probably this means that it has value 1)
-#     Step 3: Confirm that there are 31 rows of them.
-#
-# How to calculate _CNT_FR_DSG_METIGAH:
-#     Step 1: See Step 1 above for _CNT_FR_DSG_OGC.
-#     Step 2: Additionally filter those rows down to ones whose "acc" column
-#     has the value "(qom)"
-#     ("qom" meaning "qadma or metigah")
-#     Step 3: Confirm that these are indeed metigah not qadma
-#     and confirm that there are 6 rows of them.
-#
-#
-# How to calculate _CNT_FR_DSG_MERKA:
-#     Step 1: See Step 1 above for _CNT_FR_DSG_OGC.
-#     Step 2: Additionally filter those rows down to ones whose "acc" column
-#     has the value "(mer)"
-#     Step 3: Confirm that these are indeed merka paired with azla legarmeh  # translit-ok
-#     and confirm that there are 2 rows of them.
-#
-_FR_SURPRISE_RATE = 9.9  # from Excel row "FR-star" column "surp"
-_CONJ_SURPRISE_RATE_IN_FR1 = 28.5  # from Excel row "FR1" column "csurp"
-_CONJ_SURPRISE_RATE_IN_FR2 = 20.1  # from Excel row "FR2" column "csurp"
-_CONJ_SURPRISE_RATE_IN_FR3 = 6.7  # from Excel row "FR3" column "csurp"
-#
 _CONT_FTNT_90_PERCENT = [
     "My research agrees almost exactly with this estimate of 90%. "
-    f"I find {_CNT_FR_ALL:,} fully regular words, "
-    f"of which {_CNT_FR_SURP} ({_FR_SURPRISE_RATE:.1f}%) are exceptions to the rule, "
+    f"I find {_CNT_FR_ALL} fully regular words, "
+    f"of which {_CNT_FR_SURP} ({_FR_SURPRISE_RATE}%) are exceptions to the rule, "
     "breaking down as follows:",
     sub.unordered_list(
         [
@@ -234,11 +213,11 @@ FTNT_FOR_FEW_DOZEN = sub.footnote(
 _CONT_FTNT_200 = [
     ["My research agrees, roughly, with this estimate of 200."],
     [" I find ", f"{_CNT_FR_CWG} ", _CS_STEG, "."],
-    [" I find about", f" {_CONJ_SURPRISE_RATE_IN_FR1:.0f}% of ", sub.fr1()],
+    [" I find about", f" {_CONJ_SURPRISE_RATE_IN_FR1}% of ", sub.fr1()],
     [" conjunctives to have this $gaya,"],
-    [" about", f" {_CONJ_SURPRISE_RATE_IN_FR2:.0f}% of ", sub.fr2()],
+    [" about", f" {_CONJ_SURPRISE_RATE_IN_FR2}% of ", sub.fr2()],
     [" conjunctives to have it, and only"],
-    [" about", f" {_CONJ_SURPRISE_RATE_IN_FR3:.0f}% of ", sub.fr3()],
+    [" about", f" {_CONJ_SURPRISE_RATE_IN_FR3}% of ", sub.fr3()],
     [" conjunctives to have it."],
 ]
 

@@ -34,7 +34,8 @@ _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 
 _MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
-_PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
+_PHONETIC = "https://bdenckla.github.io/MAM-basics/phonetic-mam/"
+_YEIVIN = "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm.html"
 _TAAMEY_D = "https://bdenckla.github.io/hbofonts/Taamey_D.html"
 _GDOC = "https://docs.google.com/document/d/e"
 _REPO = "https://github.com/bdenckla/MAM-basics"
@@ -95,7 +96,9 @@ ACCGRAM_CSS_HREF = "wlc/style.css"
 
 # Hrefs below include relative paths within the deploy root and absolute URLs to
 # published pages, including MAM-with-doc and other repositories.
-# py/tests/test_site_index_links.py resolves each one against gh-pages/.
+# py/tests/test_site_index_links.py resolves each relative href, and each absolute one
+# under https://bdenckla.github.io/MAM-basics/, against the files tracked under
+# gh-pages/, and checks no other URL; it fetches nothing.
 #
 # AND IT NAMES index.html EXPLICITLY where document-index wrote a bare directory URL.
 # GitHub Pages serves both, but py/check_html_syntax_and_sanity.py does not resolve a
@@ -226,7 +229,7 @@ _POINTING_AND_CANTILLATION = Section(
                 Italic("Introduction to the Tiberian Masorah"),
                 " by Israel Yeivin",
             ),
-            f"{_PHONETIC}yeivin_itm.html",
+            _YEIVIN,
         ),
         _URWOTM,
     ),

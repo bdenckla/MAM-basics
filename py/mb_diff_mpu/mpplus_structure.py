@@ -1,8 +1,12 @@
 """Template-structure helpers for MAM-parsed-plus diffing.
 
 This is a deliberate whole-structure inventory, not a selected Scripture-text
-projection.  Every classified structural parameter is included so a change inside a
-ketiv/qere, qamats, dual-cantillation, or stress-helper alternative remains visible.
+projection.  Every classified structural parameter is included, so a template added,
+removed, reordered or moved to another parameter inside a ketiv/qere, qamats,
+dual-cantillation, or stress-helper alternative remains visible.  The inventory records
+template names and positions, not strings: a changed string inside an alternative that
+the selected Scripture projection does not take is visible only where the separate
+alternative population below compares it.
 The ``נוסח`` wrapper and its documentation parameter 2 are excluded while its
 Scripture target in parameter 1 is included.  ``מ:הערה-2`` and its historical
 predecessor likewise contribute only their target in parameter 1: parameter 2 is

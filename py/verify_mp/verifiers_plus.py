@@ -11,7 +11,6 @@ from verify_mp.corpus import (
     iter_chapters,
     iter_verses,
     iter_all_template_objects,
-    iter_template_objects,
 )
 from verify_mp import pattern_match
 

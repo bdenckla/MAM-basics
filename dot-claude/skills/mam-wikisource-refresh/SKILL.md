@@ -80,13 +80,22 @@ with dirty products.
 ## After a Wikisource bot run
 
 A live `py/main_ws_bot.py real` run that saves pages includes a download: unless
-`--no-post-download` is given, it force-downloads exactly the chapters it saved into `in/mam-ws/`
-and `in/mam-ws-revisions.json`, then reparses those books. That download takes the place of the
-one above. Ben decided on 2026-09-27 that a bot run which changes tracked book data owes the same
+`--no-post-download` is given, it calls `download_wikisource.run`, the function every
+`fr-wikisource` download runs, with a forced download. That download refetches all 36 declared
+special pages into `in/mam-ws-special/`, then force-downloads exactly the chapters the bot saved
+into `in/mam-ws/` and `in/mam-ws-revisions.json`, and reparses those books. It takes the place of
+the one above. Ben decided on 2026-09-27 that a bot run which changes tracked book data owes the same
 dependent refresh as a download, since it changes `MAM-parsed/plus` just as a download does and
 leaves MAM-private's census stale until the refresh runs. Complete the dependent refresh below.
 Its first commit is the bot run's own record, the saved chapters' regenerated outputs with a new
 entry in `py/ws/ws_bot_edit_history.md`, rather than a separate `Refresh MAM from Wikisource`.
+
+Ben decided on 2026-10-01 that the bot run's own commit also takes every change that the post-run
+download made under `in/mam-ws-special/`. The bot saves only chapter pages, and only eight of the
+36 special pages are chapter pages, so a special page that the bot changed is one of those eight
+that it saved in this run; every other change there is someone else's edit made since the mirror
+was last downloaded. The commit message names each changed special page and says whether the bot
+saved it.
 
 ## Complete the dependent refresh
 

@@ -46,17 +46,21 @@ push is a normal fast-forward with no force.
 
 Once the worktree and home clone are clean:
 
-1. In the worktree, merge `main` into the worktree branch. Resolve conflicts and make any fixes
-   on that branch.
-2. Run the repository's required broad check on the merged branch. Commit every explained
+1. In the worktree's home clone, fetch `origin`. If `origin/main` moved, fast-forward `main` with
+   `git -C <home-clone> merge --ff-only origin/main`.
+2. In the worktree, merge `main` into the worktree branch. Resolve conflicts and make any fixes on
+   that branch.
+3. Run the repository's required broad check on the merged branch. Commit every explained
    generated change there; an unexplained change is a failure.
-3. In the worktree's home clone, fast-forward `main` with
-   `git -C <home-clone> merge --ff-only <worktree-branch>`. If `main` moved, return to step 1
-   instead of creating a second merge in the worktree's home clone.
-4. Push `main` normally.
+4. In the worktree's home clone, fetch `origin` again. If `origin/main` is not an ancestor of the
+   worktree branch, merge `origin/main` into the worktree branch in the worktree and return to
+   step 3. Otherwise fast-forward `main` with `git -C <home-clone> merge --ff-only <worktree-branch>`.
+   If `main` moved, return to step 2 instead of creating a merge in the worktree's home clone.
+5. Push `main` normally. If the push is refused because `origin/main` moved, return to step 4.
 
-The worktree's home clone receives only the verified fast-forward. Removing the worktree and deleting its
-branch wait until the task has ended on Windows; never force removal around a live process.
+The worktree's home clone receives only fast-forwards: to a freshly fetched `origin/main` and to
+the verified worktree branch. Removing the worktree and deleting its branch wait until the task
+has ended on Windows; never force removal around a live process.
 
 ## Retire a completed worktree through the shared policy
 

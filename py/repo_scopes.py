@@ -26,8 +26,10 @@ would surface violations that are nobody's current business; they are deliberate
 absent. codex-index-leningrad never had them either, and its eight small modules were
 included anyway while they lasted, since they passed both checks as they stood. They
 went on 2026-09-10 with the Wikisource index generator they served, by Ben's decision
-that day; `git show --stat 985262e2` names every file removed; Phase 3 of
-`doc/PLAN-mega-coverage.md` records the totals. None of
+that day; `git show --stat 985262e2` names every file removed. Phase 3 of the retired
+mega-coverage plan,
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md,
+records the totals. None of
 that repository's Python remains. None of Cambridge 1753's remains either, and two of
 codex-index-aleppo's top-level modules do: the rest went on 2026-09-26 with the
 codex-index image work, under ``doc/PLAN-retire-codex-index-image-work.md``.

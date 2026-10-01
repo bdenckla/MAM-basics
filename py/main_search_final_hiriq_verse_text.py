@@ -22,8 +22,9 @@ TARGET_VERSE = ("Tsefaniah", 2, 9)
 # an eager constant made the suite uncollectable without that sibling.  That reason
 # lapsed with ae663ff2 (2026-09-03), since when out_dir() has named this repo's
 # holman/out/ and reaches no sibling.  Same reasoning, while it held, as
-# hkq_cmn/qere_ending_search.py's sentinels and read_books_from_mam_parsed_plain.py's
-# (0314c6e).
+# hkq_cmn/qere_ending_search.py's sentinels and the retired
+# py/py_misc/read_books_from_mam_parsed_plain.py's (0314c6e,
+# https://github.com/bdenckla/MAM-basics/blob/0314c6effbb088c46d4fe3737c4e18b73e6e7332/py/py_misc/read_books_from_mam_parsed_plain.py).
 
 
 def book_names_for_plus_file(path: Path, plus_json: dict[str, object]) -> list[str]:

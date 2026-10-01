@@ -33,7 +33,9 @@ _TITLE = "Mid-word געיה with Shewa"
 _H1_CONTENTS = "Mid-word געיה with $Shewa"
 _FNAME = "rocc_4_mid_word_ga3ya_with_shewa.html"
 _ANCHOR = author.anchor_h("document", f"./{_FNAME}")
-_Y_URL_YEIVIN = "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns335"
+_Y_URL_YEIVIN = (
+    "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns335"
+)
 _Y_ANC_YEIVIN = author.anchor_h("section 335", _Y_URL_YEIVIN)
 _X_050_CPARA = [
     ["(This document is a sort of appendix to a parent ", rocc_0.anchor(), ")"],

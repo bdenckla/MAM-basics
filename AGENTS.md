@@ -73,10 +73,11 @@ Every `py/main_download.py fr-wikisource` run maintains the 36 declared Decalogu
 song-form, and corresponding chapter pages under `in/mam-ws-special/`, even when the
 chapter selection is narrow. The `.mediawiki` files are byte-verbatim captures and
 `manifest.json` records requested and resolved titles, exact revisions, byte sizes,
-and SHA-256 hashes. `py/ws/ws_special_page_download.py` owns the literal inventory,
-checks it against the two tables in `in/mam-ws-intro/ch2.mediawiki`, and permits only
-the eight declared identities to overlap the chapter mirror. Do not hand-edit the
-mirror or its manifest.
+and SHA-256 hashes. `py/ws/ws_special_page_download.py` owns the literal inventory and
+permits only the eight declared identities to overlap the chapter mirror. It checks the
+inventory against chapter 2 of the mirrored introduction, `in/mam-ws-intro/ch2.mediawiki`:
+the Decalogue section's table and the paragraph after it, and the song-form table. Do not
+hand-edit the mirror or its manifest.
 
 ## Holman and book-of-Job work has local routing documentation
 
@@ -127,8 +128,8 @@ review records stay in MAM-private; `doc/periodic-review.md` owns the series pro
 
 Load `iterative-document-editing`, “Finished receipts and maintained documents” and
 “MAM-basics and MAM-private State conventions”, for receipt corrections and non-review State.
-Load `mam-repository-topology`, “Manual document retirement”, before retiring a receipt family
-or carrying out Ben-authorized reclassification.
+Load `mam-repository-topology/references/repository-maintenance.md`, “Manual document
+retirement”, before retiring a receipt family or carrying out Ben-authorized reclassification.
 
 ## Repository topology is task-specific
 
@@ -154,15 +155,21 @@ temporary-stub procedures, and historical traps.
 1. **Published:** `gh-pages/`, published from `main` once daily at 4:17 AM, New York time, and
    on manual dispatch.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`, and
-   `MAM-OSIS/`.
+   `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 A change that can reach a mega generator owes a mega run and an explanation of every tracked
 diff. A documentation-only change owes neither a mega run nor the suite. Any other change that
 cannot reach a mega generator owes the suite. A hand-run generator can reach a product even though
 the mega does not run it. A change to a hand-run generator, or to any input it reads, requires
-rerunning every affected hand-run generator and inspecting its tracked outputs. Product reach and
-whether an act is hard to undo are separate risk axes, as the user-level instructions explain.
+rerunning every affected hand-run generator and inspecting its tracked outputs, with two
+exceptions that Ben decided. A refresh of MAM's text does not oblige rerunning
+`py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30), so MAM-for-Sefaria
+and MAM-OSIS may lag MAM-simple, as their READMEs say; any other change to either generator or
+its inputs still does. A change to MAM's data does not oblige rerunning
+`py/main_hbce_psalms.py compare` (his decision of 2026-09-26, in the HBCE section above).
+Product reach and whether an act is hard to undo are separate risk axes, as the user-level
+instructions explain.
 
 Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository;
 MAM-private runs its own near-Aleppo census.
@@ -181,7 +188,9 @@ their zone. `py/tests/test_explicit_time_zones.py` enforces the mechanical rule.
 A code path that depends on MAM-private reads it unconditionally. Every other code path must
 fail loudly if it unexpectedly needs MAM-private; it must not probe for the private tree only
 when particular data happens to require it. Use `py/mb_cmn/paths.py`'s required-sibling helpers.
-The cloud-only suite exception is declared on the test module that reads Phonetic MAM.
+The Phonetic MAM exporter alone reads private inputs through a read-only subprocess.
+Rendering, public analyses and final-stress tests consume the tracked `Phonetic-MAM/`
+release, including in cloud sessions; they have no private-input fallback.
 
 ## Integrating a worktree branch here: run the mega unless the branch is exempt
 
@@ -230,9 +239,15 @@ local product directories do not require sibling clones.
 ## Writing tests: differential and lint-shaped only
 
 Follow the common instruction body's “Tests are differential or lint-shaped” rule.
-The `ws_bot` tests remain the deliberate exception because a live Wikisource edit is an
-outward-facing act with no regeneratable artifact. `doc/agent-planning-principles.md`,
-“Generated Outputs Are the Tests”, carries the dated evidence and rationale.
+The `ws_bot` tests remain a deliberate exception because a live Wikisource edit is an
+outward-facing act with no regeneratable artifact. By Ben's decision of 2026-09-30, the five stub
+test ids of `py/tests/test_wikisource_special_page_download.py` are a second exception. Its four
+fault-injection ids hold five cases: each checks that a bad API response or bad local metadata
+makes the special-page download raise, and all but the last, a manifest overwritten with "not
+json", also check that no mirrored file changed, a property with no regeneratable artifact. Its
+round trip is the only offline check of the download's reuse and forced refresh, neither of
+which a regenerated mirror's diff would show. `doc/agent-planning-principles.md`, “Generated
+Outputs Are the Tests”, carries the dated evidence and rationale.
 
 ## This is the only repository instruction body
 

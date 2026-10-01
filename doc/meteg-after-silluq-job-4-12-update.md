@@ -81,9 +81,10 @@ the manuscript MAM identifies by the siglum ל-א. The screenshot's SHA-256 is
 published copy is `gh-pages/img/st-petersburg-evr-ii-b-55-Job4v12-MNHV.png`.
 
 The local `doc/sigil-decoding.md` and cached MAM introduction identify ל-א as St. Petersburg
-Evr. II B 55, a manuscript of the Prophets and Writings close to the Aleppo Codex. The NLI
-presents B 55 together with its direct continuation, Evr. II B 247; they are separate shelfmarks,
-not former and current names. The cached introduction records Job 1:1–9:19 among its surviving
+Evr. II B 55, a manuscript of the Prophets and Writings close to the Aleppo Codex. The cached
+introduction's appendix calls B 55 formerly B 247 (`in/mam-ws-intro/appendices.mediawiki:78`) and
+describes B 247 as its direct continuation (`:93`); the NLI presents both shelfmarks together.
+The cached introduction records Job 1:1–9:19 among its surviving
 text. ChatGPT-Codex directly inspected the crop and saw the silluq under the mem and no later mark under
 the he. St. Petersburg Evr. II B 55 is the only manuscript represented on the published Job 4:12
 crop page that has this silluq-only form.
@@ -103,3 +104,14 @@ in the checkout now:
    the split page now.
 
 The readings section 3 records stand, and the line-break and column data it cites are retained.
+
+## 2026-09-30: corrections made in the 2026-09-29 review's remediation
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. In "2026-09-25: St. Petersburg Evr. II B 55 has the silluq alone",
+"The NLI presents B 55 together with its direct continuation, Evr. II B 247; they are separate
+shelfmarks, not former and current names." now reads "The cached introduction's appendix calls
+B 55 formerly B 247 (`in/mam-ws-intro/appendices.mediawiki:78`) and describes B 247 as its direct
+continuation (`:93`); the NLI presents both shelfmarks together." This matches the row of
+`doc/sigil-decoding.md` that the 2026-09-26 review's remediation corrected (the 2026-09-29
+review's finding 4.8).

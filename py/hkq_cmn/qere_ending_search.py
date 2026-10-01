@@ -26,7 +26,8 @@ from hkq_cmn.qere_projection import (
 # since when out_dir() has named this repo's holman/out/ and reaches no sibling.  The
 # MAM-parsed and qere-words defaults only compose a path, but they take the same
 # sentinel so the signatures read one way.  Same sentinel, and the same reason while
-# it held, as read_books_from_mam_parsed_plain.py's (0314c6e).
+# it held, as the retired py/py_misc/read_books_from_mam_parsed_plain.py's (0314c6e,
+# https://github.com/bdenckla/MAM-basics/blob/0314c6effbb088c46d4fe3737c4e18b73e6e7332/py/py_misc/read_books_from_mam_parsed_plain.py).
 
 
 @dataclass(frozen=True)

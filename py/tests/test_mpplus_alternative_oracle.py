@@ -357,7 +357,10 @@ def test_registered_alternatives_match_independent_source_values():
 
 
 class _ClusterHighlightLint(HTMLParser):
-    """Check every real Hebrew cluster across highlight/pointed-span boundaries."""
+    """Check every real Hebrew cluster across highlight/pointed-span boundaries.
+
+    Every combining mark needs a Hebrew-letter base in its own highlight context.
+    """
 
     def __init__(self):
         super().__init__()
@@ -388,7 +391,7 @@ class _ClusterHighlightLint(HTMLParser):
         context = tuple(serial for _tag, serial, highlight in self.stack if highlight)
         for character in text:
             if unicode_data.is_mark(character):
-                if self.base_context is not None and context != self.base_context:
+                if self.base_context is None or context != self.base_context:
                     self.problems.append((self.getpos(), ord(character)))
             elif "\u05d0" <= character <= "\u05ea":
                 self.base_context = context

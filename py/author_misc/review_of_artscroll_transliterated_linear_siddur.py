@@ -125,13 +125,11 @@ _URL_MAM_WITH_DOC = (
     "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c20v1"
 )
 _URL_WS_MAM = "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
-_URL_JACOBSON = "https://bdenckla.github.io/phonetic-hbo/tnkh/A2-Exodus/20.html"
+_URL_JACOBSON = "https://bdenckla.github.io/MAM-basics/phonetic-mam/tnkh/A2-Exodus/20.html?pronunciation=sephardic"
 _URL_MAM = "https://purl.archive.org/mam/hebrew-wikisource"
 _URL_MG = "https://mg.alhatorah.org/"
 _URL_CHANTING = "https://jps.org/books/chanting-the-hebrew-bible-2/"
-_URL_JACOBSON_ASHK = (
-    "https://bdenckla.github.io/phonetic-hbo/tnkh-ashkenaz/A2-Exodus/20.html"
-)
+_URL_JACOBSON_ASHK = "https://bdenckla.github.io/MAM-basics/phonetic-mam/tnkh/A2-Exodus/20.html?pronunciation=ashkenazic"
 _URL_A_LITTLE_HEBREW = "https://www.alittlehebrew.com/transliterate/"
 _URL_WS_MAM_DECALOGUE = "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%AA_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%A2%D7%A9%D7%A8%D7%AA_%D7%94%D7%93%D7%91%D7%A8%D7%95%D7%AA_%D7%91%D7%A1%D7%A4%D7%A8_%D7%A9%D7%9E%D7%95%D7%AA"
 

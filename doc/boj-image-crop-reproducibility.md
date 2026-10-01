@@ -2,7 +2,7 @@
 
 All image-cropping operations (spread-to-page splits, word-level crops, etc.) must record enough data to **reproduce the crop programmatically at any image resolution**.
 
-No program in this repository makes crops now: the crop tools were retired on 2026-09-26 by [`PLAN-retire-codex-index-image-work.md`](PLAN-retire-codex-index-image-work.md). The principles below explain the records the retained crops carry, and they still govern any crop made in future.
+No program in this repository makes manuscript crops now: the codex crop tools were retired on 2026-09-26 by [`PLAN-retire-codex-index-image-work.md`](PLAN-retire-codex-index-image-work.md). Three accgram modules still crop scans of printed editions for reading, `py/accgram/scan_page.py`, `py/accgram/zoom_line.py` and `py/accgram/transcription_editor.py`, and all three write disposable renderings under `.novc/scans/`. The principles below explain the records the retained crops carry, and they still govern any crop made in future.
 
 1. **Dual storage.** Crop coordinates are stored both (a) as metadata embedded in the output image file (PNG tEXt chunks or JPEG EXIF) and (b) in an independent JSON file (`book-of-job/out/cam1753-crops.json` for word crops). Either copy is authoritative on its own.
 

@@ -22,7 +22,10 @@ AC_TOP_LEVEL_MODULES = (
 """codex-index-aleppo's modules at the top of this repo's ``py/``: two of the
 fifteen that landed here.  Four of the other thirteen were removed on 2026-09-10: the
 Wikisource index generator and the column-coordinate plots by Ben's decision that day,
-which phase 3 of ``doc/PLAN-mega-coverage.md`` records, the kraken
+which phase 3 of
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md
+(update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md)
+records, the kraken
 baseline-segmentation wrapper ``main_ac_kraken_seg_baselines.py`` by phase 6a of the
 same plan, and ``check_ac_word_finding.py`` by phase 6b, which first made it pass
 again.  Two more, the line-break editor ``main_ac_gen_line_break_editor.py`` and its

@@ -1,9 +1,9 @@
 """Print the links a verse is looked up in, and where an atom of it is in the Leningrad Codex.
 
-Run with MAM-basics' interpreter, from any directory -- every path here is
-resolved from this file, never from the cwd:
+Run with a full MAM-basics clone's own interpreter; every path here is resolved
+from this file, never from the cwd. From the clone's root:
 
-    C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_verse_links.py <book> <c:v> [<word> | --atom N]
+    ./.venv/Scripts/python.exe py/main_verse_links.py <book> <c:v> [<word> | --atom N]
 
 <book> is a bk39 id -- Psalms, 2Samuel, Levit, Tsefaniah, "Song of Songs" -- and
 an unknown one is refused with the full list.  Name the atom by its Hebrew text,
@@ -24,8 +24,8 @@ Prints one markdown link per line, ready to paste into a reply:
       the verse at tanach.us, from hkq_cmn.uxlc_external_links.
   tica LC
       the verse at masoretica.org, in the Leningrad Codex.
-  LC <folio>
-      Sefaria's image of that Leningrad Codex folio, with the atom's estimated
+  LC F<page>
+      Sefaria's image of that Leningrad Codex page, with the atom's estimated
       column and line.
   CTR
       the chapter in Chabad's Complete Tanach with Rashi, where this repository
@@ -41,10 +41,10 @@ found.  It is neither Holman's count nor the UXLC's count of every verse child;
 py/main_estimate_uxlc_locations.py's docstring sets out all three.
 
 THE ESTIMATE.  uxlc_misc.my_uxlc_location interpolates by word count between the
-page breaks the UXLC's LC index records, so the folio is looked up and the column
+page breaks the UXLC's LC index records, so the page is looked up and the column
 and line are interpolated.  Psalms, Proverbs and Job are written two columns to a
-leaf and the rest of the manuscript three, and an estimate that runs past a
-leaf's last column is refused, as py/main_estimate_uxlc_locations.py refuses one.
+page and the rest of the manuscript three, and an estimate that runs past a
+page's last column is refused, as py/main_estimate_uxlc_locations.py refuses one.
 
 VERSIFICATION.  The reference is used as given for every link.  Where MAM's
 versification and the UXLC's differ -- the UXLC's Numbers 25:19 is MAM's 26:1,
@@ -192,9 +192,9 @@ def _leningrad_lines(
 
 
 def _estimate(uxlc, pbi, book: str, chapter: int, verse: int, atom: int):
-    """The estimator's guess for one atom, or None if it runs off the leaf.
+    """The estimator's guess for one atom, or None if it runs off the page.
 
-    Two columns to a leaf in Psalms, Proverbs and Job and three elsewhere: the
+    Two columns to a page in Psalms, Proverbs and Job and three elsewhere: the
     rule py/main_estimate_uxlc_locations.py's _require_column_on_page applies.
     """
     guess = my_uxlc_location.page_and_guesses(uxlc, pbi, (book, chapter, verse, atom))
@@ -208,15 +208,15 @@ def _place(guess: dict) -> str:
 
 def _folio_line(folio: str, where: str) -> str:
     return (
-        f"- [LC {folio}]({sefaria_image_url(folio)}): Sefaria's image of Leningrad"
-        f" Codex folio {folio}, where {where}"
+        f"- [LC F{folio}]({sefaria_image_url(folio)}): Sefaria's image of Leningrad"
+        f" Codex page F{folio}, where {where}"
     )
 
 
 def _off_the_leaf(book: str, atom: int) -> str:
     return (
-        f"- LC: the estimate for atom {atom} runs past the last column of a leaf of"
-        f" {book}, so no folio line is given; work out why before trusting it"
+        f"- LC: the estimate for atom {atom} runs past the last column of a page of"
+        f" {book}, so no LC page link is given; work out why before trusting it"
     )
 
 
