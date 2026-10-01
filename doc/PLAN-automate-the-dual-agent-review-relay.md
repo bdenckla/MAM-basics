@@ -80,7 +80,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 | Id | Requirement | Status |
 |---|---|---|
 | R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first approved production round pending |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | assessment retained; measurement prompts prepared, execution and record filename await Ben |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | Ben approved the first-round comparison and `doc/dual-agent-review-comparison-2026-10-01.md` on 2026-10-01; frozen turn-01 input and execution remain pending |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
 | R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
@@ -148,6 +148,38 @@ is absent and there are zero registered rounds. The receipt is
 No production round was started. The first window, Agent 1 and kickoff instruction
 still require Ben's approval, and the two September 29 manual rounds stay excluded.
 
+## First production preparation, 2026-10-01
+
+Codex continued in the intended full clone at clean `main`
+`61fa3d1d06311ae6567be12093809aa446e1ff52`, equal to the handoff baseline and
+the live `origin/main`. The four focused relay tests passed at that commit.
+The historical 1,015-test result below validates its stated implementation
+revision, not every change subsequently merged into this baseline.
+The scheduler's exact hidden action, three-minute interval, interactive limited
+privilege and IgnoreNew setting still match the registered configuration;
+its latest completed tick returned `0`. Production is enabled, the registry
+is absent, and no production round has been started.
+
+The proposed first window is the endpoint diff
+`303bf2399c1e1fc1300a75f4fb1ed335d62984d0..1bfceff4d952470618fc7584a6bca4fc5c9b2f5f`:
+nine relay implementation commits and 15 changed paths, with no product changes
+or September 29 review records. This bounded rollout review is a proposed
+selection, not a replacement for the periodic series' carried-forward anchor.
+Claude is recommended as Agent 1. The date `2026-10-01`, window, Agent 1 and
+kickoff instruction remain unapproved; the proposed remote branch, local
+carriers, worktree paths and round control directory were checked absent.
+The home clone must be idle when Ben runs start after the preparing conversation
+yields. Its startup occupancy check remains authoritative at that time.
+
+Ben selected "Run the comparison using that filename (Recommended)" in response
+to Codex's concrete comparison proposal. That approves one fresh Claude
+counter-argument blind to Codex turn 02 and an independent comparison, recorded
+on `main` as `doc/dual-agent-review-comparison-2026-10-01.md`. The runbook's
+"Approved comparison preparation, 2026-10-01" records the prompt frames and
+the exact turn-01 commit that must be filled before the blind worker starts.
+Facts-only from turn 03 remains false; Ben has not approved adopting that rule.
+Private readiness P7 remains unverified.
+
 ## Rollout handoff authorization, 2026-10-01
 
 Ben reported completion of both manual reviews and authorized proceeding:
@@ -160,8 +192,9 @@ remains outside this task's write ownership, and neither completed manual round
 is adopted. A fresh Codex session continues in
 `C:/Users/BenDe/GitRepos2/MAM-basics`, using its own environment and owning any
 further authorized main integration. The first production window and Agent 1
-still need concrete approval under kickoff; the facts-only rule and comparison
-measurement retain their recorded decisions. Private readiness P7 remains unverified.
+still need concrete approval under kickoff. The first-production-preparation
+entry records Ben's comparison approval; the facts-only rule remains unapproved.
+Private readiness P7 remains unverified.
 
 Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
 The complete main-sourced configuration deployment installed only the new Claude
@@ -644,8 +677,8 @@ defaults in parentheses and still need confirmation at rollout.
 3. Whether the dispatcher takes turns 01 and 02 as well (yes, if probe P1 passes).
 4. The Claude worker's production permission mode (`dontAsk` with tracked allow rules; `auto` is
    the alternative).
-5. Whether to run the measurement in the first automated round, and the name of its record file
-   (run it).
+5. The measurement in the first automated round and its record filename: Ben approved
+   it on 2026-10-01 as `doc/dual-agent-review-comparison-2026-10-01.md`.
 6. The rehearsal venue (the local bare mirror).
 7. The notification channel (a toast plus `NEEDS-BEN.md`).
 8. The Codex worktree's location: beside the Claude worktree under `.claude/worktrees/`, where
