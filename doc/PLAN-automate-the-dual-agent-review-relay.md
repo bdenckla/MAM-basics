@@ -86,7 +86,7 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 | R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
 | R6 | Dispatch from a Task Scheduler job | implemented: Ben registered the task on 2026-10-01; exact settings verified, scheduled idle tick completed with result 0; notification receipt confirmed |
 | R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | verified in both Claude turns' launch records and both Codex turns' saved runtime contexts |
-| R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
+| R8 | Finish the two rounds in flight by hand | implemented: Ben reported both September 29 reviews completed on 2026-10-01; neither was adopted or modified by the relay |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
 | R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | implemented in the verified GitRepos2 full clone |
 
@@ -148,6 +148,21 @@ is absent and there are zero registered rounds. The receipt is
 No production round was started. The first window, Agent 1 and kickoff instruction
 still require Ben's approval, and the two September 29 manual rounds stay excluded.
 
+## Rollout handoff authorization, 2026-10-01
+
+Ben reported completion of both manual reviews and authorized proceeding:
+
+> Both 09-29 reviews (MAM-private and MAM-basics) are completed. I am doing some follow-up items suggested by the MAM-basics 09-29 review but that work is not part of the review proper. So I think you can proceed, though you are approaching compaction, so perhaps give me a prompt for a new session that will proceed.
+
+This is Ben's completion report, not an independent audit of review integration
+or branch retirement. The review-completion wait is cleared. His follow-up work
+remains outside this task's write ownership, and neither completed manual round
+is adopted. A fresh Codex session continues in
+`C:/Users/BenDe/GitRepos2/MAM-basics`, using its own environment and owning any
+further authorized main integration. The first production window and Agent 1
+still need concrete approval under kickoff; the facts-only rule and comparison
+measurement retain their recorded decisions. Private readiness P7 remains unverified.
+
 Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
 The complete main-sourced configuration deployment installed only the new Claude
 agent file, and its follow-up check reported zero problems. Existing instructions,
@@ -192,8 +207,9 @@ The implemented mechanics supersede the planned mechanics below where they diffe
 - `pythonw.exe` supplies the hidden scheduler launch. A hidden Windows PowerShell
   WinRT helper supplies the toast; agent shell commands use PowerShell 7.
 - The three-turn local check uses deterministic fake workers and does not establish
-  real-model review behavior. Scheduler registration, private SSH probing, live
-  rehearsal, measurement and first adoption remain rollout work.
+  real-model review behavior. Four real turns and the real collision guard passed
+  separately, and the scheduler is registered with a verified idle tick. Private
+  SSH probing, measurement and first production adoption remain rollout work.
 
 ## Context: what the relay costs
 

@@ -121,7 +121,7 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 | P4: movement and failures | Passed with a real Claude worker: the local mirror advanced mid-process, the gate rejected remote movement, the checkout stayed clean at its original tip, and pause, marker, logs and notification were preserved. Independent bare-repository reads confirmed the dummy commit. The differential worker-push refusal and forced dispatcher push-failure recovery also passed. |
 | P5: closure and cap | The differential three-turn check requested acknowledgment, closed, and did not launch a fourth worker. The real four-turn rehearsal requested turn 05 acknowledgment, stopped at cap 4, and stayed idle with no further commit. The real round did not close. |
 | P6: notifications and hidden launch | Passed after correcting the sender identity. The hidden helper and dispatcher test both reached Windows notification history. Ben replied "Yes, I see the corrected test" and supplied a screenshot. Ben registered the scheduler on 2026-10-01; its exact hidden action and settings were independently verified, and a scheduled idle tick completed with result 0 and zero registered rounds. |
-| P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
+| P7: private SSH | Unverified. Ben reported both September 29 reviews completed on 2026-10-01, clearing the completion wait. Private readiness and an approved private kickoff remain separate rollout steps; no private fetch or push was attempted in this implementation session. |
 | P8: Codex worktree and instructions | Passed in both real Codex turns: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, and repository and required skill instructions were loaded. All three turn-02 checker reports arrived before the final revisions and dispatcher commit; completion before its first draft write is not established. |
 
 Original failed authentication logs are preserved in this implementation clone's
@@ -274,6 +274,16 @@ or product is reached by this fix.
 
 ## Future review and measurement
 
+Ben reported both September 29 reviews completed on 2026-10-01 and said:
+"So I think you can proceed, though you are approaching compaction, so perhaps
+give me a prompt for a new session that will proceed." He distinguished his
+current MAM-basics follow-up work from the completed review. The completion wait
+is cleared; that follow-up work remains outside the relay task's write ownership.
+The successor continues in `C:/Users/BenDe/GitRepos2/MAM-basics` with its own
+interpreter and owns further authorized main integration. This report does not
+audit either completed review's integration or retirement, and neither old round
+is adopted. Private readiness P7 is still unverified.
+
 The first real automated round requires Ben's future window approval. The comparison
 measurement also needs his decision and record filename. These two prompts are
 prepared for that kickoff; their placeholders must be filled from the approved round
@@ -292,6 +302,8 @@ required commit, development checkout and integration owner.
    Ben names on `main`, outside the review branch. The executing session owns that
    integration; the dispatcher never reads or writes the comparison.
 
-No production review or measurement begins in this implementation task. The local
-mirror, its unique commits, worktrees, logs and failure receipts remain preserved;
-retirement requires the repository's verified backup and retirement procedure.
+No production review or measurement was started before this handoff. The fresh
+session has Ben's authorization to proceed with rollout, subject to the concrete
+kickoff decisions above. The local mirror, its unique commits, worktrees, logs
+and failure receipts remain preserved; retirement requires the repository's
+verified backup and retirement procedure.
