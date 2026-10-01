@@ -1,6 +1,6 @@
 # Automated dual-agent review operations
 
-State: live; core implemented and verified 2026-09-30; D13 approved 2026-09-30; live rollout pending.
+State: live; four real automatic handoffs verified 2026-09-30; D13 approved; production rollout pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
 excluded both ongoing September 29 reviews. The sole development checkout is
@@ -14,14 +14,14 @@ Ben approved the proposed D13 wording on 2026-09-30 by selecting the approval
 passage in Codex's implementation report and replying "I approve". The approved
 wording now lives in `doc/dual-agent-review.md`, "Automated relay and the `Next:`
 line — Ben's decision, 2026-09-30 (D13)". The approval covers that protocol;
-the facts-only rule, measurement, real-worker rehearsal and future review window
+the facts-only rule, measurement and future review window
 retain their recorded prerequisites.
 
 ## Configuration and operation
 
 `in/dual_agent_review_automation.json` sets launch rules, caps, timeouts, and CLI
 discovery; `--automation-config <absolute-path>` selects an explicit alternative.
-`production_enabled` remains false until the real-worker rehearsal passes;
+`production_enabled` remains false pending visual notification receipt;
 both production kickoff and scheduler registration refuse. D13 is approved.
 Claude discovery checks PATH, `.local/bin`, the ordinary app-bundled CLI, and its
 packaged-app LocalCache layout. Codex
@@ -69,6 +69,16 @@ with limited privilege and `IgnoreNew` instance handling. `pythonw.exe` starts t
 tick without a console window. Registration remains Ben's action after live worker
 verification. This implementation does not enable an unattended task.
 
+The worker rehearsal and collision probe have passed. Ben's current check is to
+press Win+N and confirm the **Dual-agent review** notification mentioning
+MAM-basics, synthetic round **2026-10-02**, and **remote moved during the turn**.
+That alert is the expected local probe result and needs no review intervention.
+The plan's P6 requires that the toast reaches Ben; the API return alone does not
+establish receipt. After receipt is confirmed, Codex can enable production in the
+tracked configuration and supply the registration command below. The script
+currently refuses registration while that flag is false. A production round
+still requires Ben's approved future window, Agent 1 and kickoff instruction.
+
 ```powershell
 & C:/Users/BenDe/GitRepos2/MAM-basics/misc/register-dual-agent-review-task.ps1 -Repository C:/Users/BenDe/GitRepos2/MAM-basics
 ```
@@ -92,14 +102,14 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 
 | Probe | Verified result and remaining work |
 |---|---|
-| P1: Claude effort and sub-agents | Passed the renewed-login and full capability checks. The real turn 01 also finished at Opus 5.5/max with one completed foreground checker and no background checker, then passed the gate and automatic handoff. Its two denied Git grep calls were replaced by allowed reads; the final grep rule separately passed with zero denials. |
-| P2: Codex model and effort | Passed the full capability check after removing `--ephemeral`. Real turn 02 completed three read-only checkers and automatic handoff. Its saved `turn_context` confirms `gpt-6.1-sol`, `xhigh`, workspace-write and network disabled, in thread `01a0f4e5-5f63-7e50-8f13-9ca6b7140092`. |
+| P1: Claude effort and sub-agents | Passed the renewed-login and full capability checks, then real turns 01 and 03 at Opus 5.5/max with one and three completed foreground checkers, no background checker, and automatic handoff. Turn 01's two denied Git grep calls were replaced by allowed reads; the final grep rule separately passed with zero denials. Turn 03's denied rev-list read led to the final rule, which passed the real collision probe with zero denials. |
+| P2: Codex model and effort | Passed the full capability check after removing `--ephemeral`, then real turns 02 and 04 with three read-only checkers each and automatic handoff. Both saved runtime contexts confirm `gpt-6.1-sol`, `xhigh`, workspace-write and network disabled. |
 | P3: foreign-file gate | Passed against independent Git status evidence in the local check. |
-| P4: movement and failures | The gate rejected a worker push observed independently on the bare remote. Forced dispatcher push-failure notification and commit recovery passed. A real-worker remote-movement rehearsal remains. |
-| P5: closure | The local three-turn check requested acknowledgment, closed, and did not launch a fourth worker. |
-| P6: notifications and hidden launch | Both hidden WinRT notification tests returned 0; visual receipt is unconfirmed. Ben was asked whether he saw the notification titled Dual-agent review with Relay rehearsal notification test. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
+| P4: movement and failures | Passed with a real Claude worker: the local mirror advanced mid-process, the gate rejected remote movement, the checkout stayed clean at its original tip, and pause, marker, logs and notification were preserved. Independent bare-repository reads confirmed the dummy commit. The differential worker-push refusal and forced dispatcher push-failure recovery also passed. |
+| P5: closure and cap | The differential three-turn check requested acknowledgment, closed, and did not launch a fourth worker. The real four-turn rehearsal requested turn 05 acknowledgment, stopped at cap 4, and stayed idle with no further commit. The real round did not close. |
+| P6: notifications and hidden launch | Hidden WinRT notification tests returned 0. The completed real collision probe also invoked the toast without recording an error; Ben has been asked to press Win+N and confirm the alert for synthetic round 2026-10-02. Visual receipt is unconfirmed. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
 | P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
-| P8: Codex worktree and instructions | Passed in real turn 02: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, repository and required skill instructions were loaded, and three read-only checker reports were reconciled before writing. |
+| P8: Codex worktree and instructions | Passed in both real Codex turns: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, and repository and required skill instructions were loaded. All three turn-02 checker reports arrived before the final revisions and dispatcher commit; completion before its first draft write is not established. |
 
 Original failed authentication logs are preserved in this implementation clone's
 `.novc/dual-agent-review-probe-20260930/`; the successful renewed-login probe is in
@@ -157,17 +167,56 @@ The parser's header scope follows the plan's `Next:` specification: exactly one
 line beginning `Next:` "in its header block". Rehearsal review
 opinions do not replace that implementation requirement.
 
-The first two real turns passed automatic handoff at
+The four real turns passed automatic handoff at
 `16956671abac29445bf7a7b2c824bd10ee2a51c8` and
-`2e0a969a9306426d65cc321c1d0e807d5ad42200`. Turn 02 preserved turn 01's byte prefix
-and appended reconciliation. Turn 03 is in progress. Its attempted `git rev-list`
-commit count exposed another missing read permission; the rule is now included,
-and its real launch check is part of the pending P4 probe. With all three added
-read commands the launch is 17,366 characters, still below the Windows limit.
+`2e0a969a9306426d65cc321c1d0e807d5ad42200`, then
+`c2c5c064d91ebcd33c9438baca3f520f1c8e5a5d` and
+`aeeb021fc1b539c1449f1e8fd860fdd1f3439664`. Turn 02 preserved turn 01's byte prefix
+and appended reconciliation. Turn 04 requested turn 05 acknowledgment; cap 4
+stopped dispatch and a subsequent tick made no further commit. The independent
+receipt is `.novc/relay-real-worker-verification-20260930.json` in the implementation
+clone. The four-turn controller was `42cb46a9eefefda2d18ece69301ec5da252795f9`;
+the final parser and read-rule fixes are verified separately at
+`a13f1eab39d96c9512c501937a22d2c31f9c3bc8`. Both Codex runtime contexts confirm
+the pinned model and effort. Their startup warnings concern plugin icon paths
+and unsupported shell snapshots; neither prevented successful terminal events or handoff.
+
+Turn 02's third checker report arrived 23 milliseconds after its initial draft
+write completed. Delivery time does not establish the checker's physical completion
+time. All reports arrived before the two final revisions and dispatcher commit;
+the handed-off artifact incorporates the checker results. The evidence does not
+establish that every checker finished before the first draft.
+
+Turn 03's attempted `git rev-list` count exposed another missing read permission;
+the rule is included in the final launcher. With all three added read commands the
+launch is 17,366 characters, independently checked below the Windows limit.
+
+The first synthetic collision probe, round `2026-10-01`, used a shortened
+ten-minute deadline and timed out after its two native Git reads and checker.
+Its logs, moved local remote, clean worker tip, pause, marker and timeout alert
+remain preserved in the rehearsal home. The worker PID was verified absent;
+Claude's normal startup cleared its own dead-process record, with before-and-after
+evidence in the implementation clone's
+`.novc/dual-agent-review-owned-stale-session-final-20260930/`.
+
+The final collision probe, synthetic round `2026-10-02`, ran under the normal
+120-minute deadline with the current controller
+`a13f1eab39d96c9512c501937a22d2c31f9c3bc8`. Its real Claude worker completed
+exactly two native Git reads with zero permission denials and a successful
+terminal event. While that process ran, the local bare branch advanced from
+`be6c6bc424a2d72dd65a0cd13ef123aad1f49f72` to same-tree child
+`9fb2b071e2a9ff8e312a1409955ac3361aaff851`. The worker checkout stayed clean at
+its initial tip. The dispatcher reported **remote moved during the turn**,
+paused, and preserved its marker and notification. This capability probe wrote
+no review turn. Its independent receipt is
+`.novc/relay-live-movement-verification-20260930.json` in the implementation clone;
+the controller's injection and result receipts remain in the rehearsal home's
+`.novc/dual-agent-review/2026-10-02/`. These synthetic failure rounds are
+intentionally paused and require no action to resume them.
 
 The source implementation registry is absent;
 no production round was started. The primary clone was not fast-forwarded. Production remains
-disabled until the real-worker checks pass; Ben has approved D13. Core commit
+disabled pending visual notification receipt; Ben has approved D13. Core commit
 `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` was pushed to `main`. Main-sourced
 configuration deployment installed only the new Claude agent file; every existing
 instruction, hook and skill was already clean. The subsequent
@@ -195,4 +244,6 @@ required commit, development checkout and integration owner.
    Ben names on `main`, outside the review branch. The executing session owns that
    integration; the dispatcher never reads or writes the comparison.
 
-No live review or measurement begins in this implementation task.
+No production review or measurement begins in this implementation task. The local
+mirror, its unique commits, worktrees, logs and failure receipts remain preserved;
+retirement requires the repository's verified backup and retirement procedure.

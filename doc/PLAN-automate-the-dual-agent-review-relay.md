@@ -1,7 +1,7 @@
 # Plan: automate the dual-agent review relay, and measure what the second agent adds
 
-State: live. Ben authorized implementation on 2026-09-30; core code and local verification
-are complete in GitRepos2. D13 wording is approved 2026-09-30; live rollout remains pending.
+State: live. Ben authorized implementation on 2026-09-30; core code and four real automatic
+handoffs are verified in GitRepos2. D13 is approved; production rollout remains pending.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -77,13 +77,13 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | implemented dispatcher; real-worker rehearsal and first approved round pending |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first approved production round pending |
 | R2 | Weigh the dual-agent review against one agent iterating on its own review | assessment retained; measurement prompts prepared, execution and record filename await Ben |
 | R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
-| R4 | Choose between sub-agents and fresh sessions for taking a turn | fresh-process capability checks passed for both workers, including their foreground sub-agents; real-turn rehearsal is in progress |
-| R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30: both no-tool probes succeed after Ben renewed Claude login; real-worker checks are in progress |
-| R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; registration remains Ben's action after live rehearsal |
-| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | verified in Claude initialization and launch records and Codex saved runtime context; real-turn rehearsal is in progress |
+| R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
+| R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
+| R6 | Dispatch from a Task Scheduler job | registration script and hidden idle tick verified; visual notification receipt is unconfirmed and registration remains Ben's action |
+| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | verified in both Claude turns' launch records and both Codex turns' saved runtime contexts |
 | R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
 | R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | implemented in the verified GitRepos2 full clone |
@@ -108,17 +108,25 @@ The ongoing reviews and the occupied primary clone remain outside execution scop
 Ben approved the runbook's proposed D13 wording on 2026-09-30, satisfying this
 plan's requirement for approval before adoption as the review procedure. D13 is
 now adopted in `doc/dual-agent-review.md`. Production kickoff and scheduler
-registration remain disabled pending the real-worker rehearsal. The manual procedure
-continues to govern the ongoing rounds. The runbook records the final suite result
+registration remain disabled pending visual notification receipt. The manual
+procedure continues to govern the ongoing rounds. The runbook records the final suite result
 (1015 passed, 5 skipped, 60 subtests), the local Git differential check, and probes
 P1 through P8. Ben renewed Claude login and the headless Opus 5.5 probe succeeded.
 The isolated public-source capability check exposed denied native PowerShell Git
 reads; the launcher now names the exact checkout and read commands in its allow
 rules. Both full capability checks subsequently passed, including native Git,
-foreground sub-agents and ignored JSON writes. The capped local-mirror round is
-in progress. Real-turn verification and an approved future window are still required
-for adoption. This plan's full definition of
-done has not been met.
+foreground sub-agents and ignored JSON writes. The local-mirror round completed
+four automatic handoffs, stopped before turn 05 at its four-turn cap, and then
+remained idle. The real round requested an acknowledgment; it did not close.
+Independent Git evidence confirms only the permitted turn paths changed, turn 02
+preserved turn 01's byte prefix, and metadata stayed unchanged. Closure and idle
+after closure passed separately in the differential check. A future production
+window still needs Ben's approval. This plan's full definition of done has not been met.
+The real-worker collision probe also passed: a same-tree child commit advanced
+only the local mirror's synthetic `dar-2026-10-02` branch while Claude ran. The
+dispatcher rejected the moved remote, preserved its pause, marker and logs, and
+invoked the hidden toast without recording an error. Ben has been asked to check
+Windows notifications with Win+N; visual receipt remains unconfirmed.
 
 Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
 The complete main-sourced configuration deployment installed only the new Claude
@@ -139,7 +147,7 @@ The implemented mechanics supersede the planned mechanics below where they diffe
 - `dontAsk` and explicit tool allow rules include native PowerShell and ordinary
   Git reads, plus exact per-checkout trust options before the read subcommand.
   Authentication, native Git permissions and headless sub-agents passed both live
-  capability checks. Real-turn verification remains. Worker-local configuration disables
+  capability checks and four real turns. Worker-local configuration disables
   background checkers, and prompts require waiting for every foreground checker.
 - Codex starts a fresh `exec` process without `--ephemeral`: the first capability
   check's child could not load its parent transcript under that flag. The dispatcher
