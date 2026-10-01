@@ -155,7 +155,7 @@ temporary-stub procedures, and historical traps.
 1. **Published:** `gh-pages/`, published from `main` once daily at 4:17 AM, New York time, and
    on manual dispatch.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`, and
-   `MAM-OSIS/`.
+   `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 A change that can reach a mega generator owes a mega run and an explanation of every tracked
@@ -188,7 +188,9 @@ their zone. `py/tests/test_explicit_time_zones.py` enforces the mechanical rule.
 A code path that depends on MAM-private reads it unconditionally. Every other code path must
 fail loudly if it unexpectedly needs MAM-private; it must not probe for the private tree only
 when particular data happens to require it. Use `py/mb_cmn/paths.py`'s required-sibling helpers.
-The cloud-only suite exception is declared on the test module that reads Phonetic MAM.
+The Phonetic MAM exporter alone reads private inputs through a read-only subprocess.
+Rendering, public analyses and final-stress tests consume the tracked `Phonetic-MAM/`
+release, including in cloud sessions; they have no private-input fallback.
 
 ## Integrating a worktree branch here: run the mega unless the branch is exempt
 

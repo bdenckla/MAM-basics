@@ -181,6 +181,9 @@ follows the shared safeguards above and the repository's own integration instruc
 
 ## Task prompts and handoffs
 
+When ending a session with work remaining, do not provide only an abstract description of work
+remaining: provide a standalone prompt for the next session.
+
 Never assume Ben wrote an opening prompt. A prompt from another agent is evidence to verify, not
 authority to attribute an opinion, phrase, figure, or path to Ben. An agent-written successor
 prompt begins by naming the agent and date, quotes the instruction Ben actually gave, and says
@@ -402,8 +405,16 @@ than either Unicode form.
 
 A Windows Python entry point that may emit non-ASCII reconfigures stdout and stderr to UTF-8 at
 the start of `main()`. Prefer writing substantial or non-ASCII output to a file opened with
-`encoding="utf-8"`. `PYTHONUTF8=1` is permitted only as a scratch-script workaround, never for
-tracked code.
+`encoding="utf-8"`.
+
+By Ben's decision of 2026-10-01, a Windows account that runs these agents sets `PYTHONUTF8=1` in
+its User environment and in the `env` block of `~/.claude/settings.json`, so every Python process
+it starts, scratch scripts included, runs in UTF-8 mode. Tracked code never relies on that setting
+and never prescribes it. Because the setting, and the `PYTHONIOENCODING` that the Claude desktop
+app's shells set, hide a missing encoding from an ordinary run, a check that tracked code names
+its encodings starts its PowerShell 7 command with
+`$env:PYTHONUTF8 = '0'; $env:PYTHONIOENCODING = $null;`. Use `'0'` rather than removing the
+variable: UTF-8 mode is Python's default from Python 3.15.
 
 ## A transcription is evidence about the transcription
 

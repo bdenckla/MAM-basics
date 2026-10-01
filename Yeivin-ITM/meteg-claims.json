@@ -1,0 +1,297 @@
+{
+  "schema": "yeivin-meteg-claims-v1",
+  "input": {
+    "identity": "out/accgram/meteg-before-stress.json",
+    "sha256": "1693712e3d947d783976e47514cf610c43adc6ee35b06f2c6bed22ffe8b94170"
+  },
+  "populations": {
+    "fully-regular.all": {
+      "definition": "All classified FR1, FR2, and FR3 chanted words, both accent classes.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value.",
+        "AFR1–AFR4, XAFR1, and MISC are excluded."
+      ]
+    },
+    "fully-regular.disjunctive-without-target-meteg": {
+      "definition": "FR1–FR3 disjunctives lacking meteg on the target main syllable, over all FR1–FR3.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.conjunctive-with-target-meteg": {
+      "definition": "FR1–FR3 conjunctives with meteg on the target main syllable, over all FR1–FR3.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.exceptions": {
+      "definition": "The disjoint union of FR1–FR3 disjunctives without and conjunctives with target meteg, over all FR1–FR3.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.disjunctive-without-target-meteg.other-meteg": {
+      "definition": "FR1–FR3 disjunctives without target meteg whose other_meteg_count is nonzero, over all FR1–FR3 disjunctives without target meteg.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah": {
+      "definition": "FR1–FR3 disjunctives without target meteg whose accent_on_target equals (qom), over all FR1–FR3 disjunctives without target meteg.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.disjunctive-without-target-meteg.merkha": {
+      "definition": "FR1–FR3 disjunctives without target meteg whose accent_on_target equals (mer), over all FR1–FR3 disjunctives without target meteg.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.disjunctive-without-target-meteg.metigah": {
+      "definition": "FR1–FR3 disjunctives without target meteg, with metigah with zaqef qatan at the target, over all FR1–FR3 disjunctives without target meteg.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value.",
+        "The footnote's stated primary-accent qualification is required; other primary accents are excluded."
+      ]
+    },
+    "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh": {
+      "definition": "FR1–FR3 disjunctives without target meteg, with merkha paired with azla legarmeh at the target, over all FR1–FR3 disjunctives without target meteg.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value.",
+        "The footnote's stated primary-accent qualification is required; other primary accents are excluded."
+      ]
+    },
+    "FR1.conjunctive-with-target-meteg": {
+      "definition": "FR1 conjunctives with target meteg, over all FR1 conjunctives.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "FR2.conjunctive-with-target-meteg": {
+      "definition": "FR2 conjunctives with target meteg, over all FR2 conjunctives.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "FR3.conjunctive-with-target-meteg": {
+      "definition": "FR3 conjunctives with target meteg, over all FR3 conjunctives.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "fully-regular.disjunctive-exception-rate": {
+      "definition": "fully-regular disjunctives without target meteg, over all fully-regular disjunctives.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value.",
+        "Conjunctives and other structural patterns are excluded."
+      ]
+    },
+    "fully-regular.target-meteg-rate": {
+      "definition": "fully-regular chanted words with target meteg, over all fully-regular chanted words regardless of accent class.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "AFR1.disjunctive-exception-rate": {
+      "definition": "AFR1 disjunctives without target meteg, over all AFR1 disjunctives.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value.",
+        "Conjunctives and other structural patterns are excluded."
+      ]
+    },
+    "AFR1.target-meteg-rate": {
+      "definition": "AFR1 chanted words with target meteg, over all AFR1 chanted words regardless of accent class.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "AFR4.disjunctive-exception-rate": {
+      "definition": "AFR4 disjunctives without target meteg, over all AFR4 disjunctives.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value.",
+        "Conjunctives and other structural patterns are excluded."
+      ]
+    },
+    "AFR4.target-meteg-rate": {
+      "definition": "AFR4 chanted words with target meteg, over all AFR4 chanted words regardless of accent class.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "XAFR1.disjunctive-with-target-meteg": {
+      "definition": "XAFR1 disjunctives with target meteg, over all XAFR1 disjunctives; these remain excluded from AFR1.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    },
+    "XAFR1.disjunctive-without-target-meteg": {
+      "definition": "XAFR1 disjunctives without target meteg, over all XAFR1 disjunctives; these remain excluded from AFR1.",
+      "exclusions": [
+        "The bet cantillation strand is excluded; the alef strand is counted once.",
+        "Samekh-qamats alternatives are excluded; the ordinary dalet projection is used.",
+        "Chanted words not classified by the maintained FR/AFR algorithm are excluded.",
+        "No historical workbook exclusion is inferred or added to fit a published value."
+      ]
+    }
+  },
+  "measurements": {
+    "fully-regular.all": {
+      "numerator": 3583,
+      "denominator": 3583,
+      "percentage": 100.0
+    },
+    "fully-regular.disjunctive-without-target-meteg": {
+      "numerator": 132,
+      "denominator": 3583,
+      "percentage": 3.6840636338264026
+    },
+    "fully-regular.conjunctive-with-target-meteg": {
+      "numerator": 221,
+      "denominator": 3583,
+      "percentage": 6.1680156293608706
+    },
+    "fully-regular.exceptions": {
+      "numerator": 353,
+      "denominator": 3583,
+      "percentage": 9.852079263187273
+    },
+    "fully-regular.disjunctive-without-target-meteg.other-meteg": {
+      "numerator": 31,
+      "denominator": 132,
+      "percentage": 23.484848484848484
+    },
+    "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah": {
+      "numerator": 6,
+      "denominator": 132,
+      "percentage": 4.545454545454546
+    },
+    "fully-regular.disjunctive-without-target-meteg.merkha": {
+      "numerator": 3,
+      "denominator": 132,
+      "percentage": 2.272727272727273
+    },
+    "fully-regular.disjunctive-without-target-meteg.metigah": {
+      "numerator": 6,
+      "denominator": 132,
+      "percentage": 4.545454545454546
+    },
+    "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh": {
+      "numerator": 2,
+      "denominator": 132,
+      "percentage": 1.5151515151515151
+    },
+    "FR1.conjunctive-with-target-meteg": {
+      "numerator": 81,
+      "denominator": 284,
+      "percentage": 28.52112676056338
+    },
+    "FR2.conjunctive-with-target-meteg": {
+      "numerator": 99,
+      "denominator": 493,
+      "percentage": 20.081135902636916
+    },
+    "FR3.conjunctive-with-target-meteg": {
+      "numerator": 41,
+      "denominator": 622,
+      "percentage": 6.591639871382637
+    },
+    "fully-regular.disjunctive-exception-rate": {
+      "numerator": 132,
+      "denominator": 2184,
+      "percentage": 6.043956043956044
+    },
+    "fully-regular.target-meteg-rate": {
+      "numerator": 2273,
+      "denominator": 3583,
+      "percentage": 63.43845939157131
+    },
+    "AFR1.disjunctive-exception-rate": {
+      "numerator": 20,
+      "denominator": 107,
+      "percentage": 18.69158878504673
+    },
+    "AFR1.target-meteg-rate": {
+      "numerator": 89,
+      "denominator": 137,
+      "percentage": 64.96350364963503
+    },
+    "AFR4.disjunctive-exception-rate": {
+      "numerator": 72,
+      "denominator": 129,
+      "percentage": 55.81395348837209
+    },
+    "AFR4.target-meteg-rate": {
+      "numerator": 60,
+      "denominator": 173,
+      "percentage": 34.68208092485549
+    },
+    "XAFR1.disjunctive-with-target-meteg": {
+      "numerator": 2,
+      "denominator": 18,
+      "percentage": 11.11111111111111
+    },
+    "XAFR1.disjunctive-without-target-meteg": {
+      "numerator": 16,
+      "denominator": 18,
+      "percentage": 88.88888888888889
+    }
+  }
+}

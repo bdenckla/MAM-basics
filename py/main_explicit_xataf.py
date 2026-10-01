@@ -130,6 +130,7 @@ def _compute_counts(mappings):
 
 def almost_main():
     sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     books_mpu = plus.read_parsed_plus_bk39s(mam_parsed_path=paths.mam_parsed_path())
     all_mappings = []
     all_failures = []

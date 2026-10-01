@@ -2,13 +2,16 @@
 
 from __future__ import annotations
 
-import json
 from functools import cache
 
 from accgram import maqaf_nonfinal_accents as mna
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
+from mb_cmn import read_books_from_mam_parsed_plus
+from mb_cmn import bib_locales
+from phonetic_mam.core import qere_from_implicit_kq
+from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
 from accgram.post_stress_meteg_model import (
     MAQAF,
@@ -16,12 +19,9 @@ from accgram.post_stress_meteg_model import (
     PASOLEG,
     SurveyProblem,
     _bare,
-    _bb_of_stem,
-    _fold_phonetic_mam_annotations,
     _fold_qamats_qatan,
     _mam_join_key,
     _phonetic_mam_join_key,
-    _validate_phonetic_word,
 )
 
 # The verses the page names outside its tables, whose chanted words it therefore has to show
@@ -96,82 +96,51 @@ def _mam_context_by_bcv() -> dict[str, list[object]]:
     }
 
 
-@cache
-def _snapshot_forms() -> dict[str, tuple[str, list[str]]]:
-    """Index first fva forms to their selected snapshot spelling and source locations.
-
-    Matching needs the snapshot's first rep, or its first unannotated fva. The raw
-    classifier inputs and serialized survey stay intact. Nothing outside this module calls
-    it: the page renderer raises on a displayed record that has no MAM form rather than look
-    a spelling up here (CLAUDE.md, "A code path reads MAM-private every time it runs, or
-    never").
-    """
-    directory = paths.require_al_hatorah_phonetic_dir()
-    files = sorted(directory.glob("*.json"))
-    if {path.stem for path in files} != set(_bb_of_stem()):
-        raise SurveyProblem(f"{directory}: incomplete or unexpected snapshot file set")
-    forms = {}
-
-    def visit(node: object, location: str) -> None:
-        if isinstance(node, dict):
-            _validate_phonetic_word(node)
-            raw = node["fva"].split(" ")[0]
-            field = "rep" if node.get("rep") else "fva"
-            selected = node[field].split(" ")[0]
-            source = f"{location}/{field} (first form)"
-            if field == "fva" and _fold_phonetic_mam_annotations(selected) != selected:
-                raise SurveyProblem(f"{source}: annotated fva has no rep")
-            if raw in forms:
-                previous, sources = forms[raw]
-                if previous != selected:
-                    raise SurveyProblem(
-                        f"{source}: ambiguous snapshot spelling; also {sources}"
-                    )
-                sources.append(source)
-            else:
-                forms[raw] = (selected, [source])
-        elif isinstance(node, list):
-            for index, value in enumerate(node):
-                visit(value, f"{location}/{index}")
-        elif node is None:
-            return
-        elif not isinstance(node, str):
-            raise TypeError(f"{location}: unclassified Phonetic MAM node: {node!r}")
-
-    for path in files:
-        root = json.loads(path.read_text(encoding="utf-8"))
-        if not isinstance(root, dict):
-            raise SurveyProblem(f"{path}: Phonetic MAM book root is not an object")
-        for bcv, payload in root.items():
-            if not isinstance(bcv, str):
-                raise SurveyProblem(
-                    f"{path}: Phonetic MAM verse key is not text: {bcv!r}"
-                )
-            escaped_bcv = bcv.replace("~", "~0").replace("/", "~1")
-            visit(payload, f"{path}#/{escaped_bcv}")
-    return forms
-
-
-def _snapshot_unannotated_form(word: str) -> str:
-    """Select the source spelling; never reconstruct it by deleting Hebrew marks."""
-    forms = _snapshot_forms()
-    if word not in forms:
-        raise SurveyProblem(f"No snapshot source for first fva form {word!r}")
-    return forms[word][0]
-
-
 def _as_mam_would_write_it(word: str) -> str:
-    """The selected snapshot form with the transformations needed only for matching.
+    """Use displayed generic Hebrew, dropping VARIKA only in the matching copy."""
+    return word.replace(hpo.VARIKA, "").replace(hpu.NU_GMAQ, MAQAF)
 
-    VARIKA removal remains necessary to reproduce the existing record matching.
-    The selected form itself keeps VARIKA and every other Hebrew mark; only this copy,
-    made for matching, loses VARIKA.
+
+def _snapshot_written_form(bcv, reading):
+    """Recover a diagnostic's written form from MAM's displayed stress helper.
+
+    This index reads top-level Scripture stress helpers only. It never descends
+    into documentation, alternative qamats, or another template's parameters.
+    The ordinary MAM spelling still supplies matching through the public qere
+    rule below; the stress-helper spelling is needed only for the diagnostic.
     """
-    return (
-        _snapshot_unannotated_form(word)
-        .replace(hpo.VARIKA, "")
-        .replace(hpu.NU_GMAQ, MAQAF)
+    bb, chapter, verse = mna.split_bcv(bcv)
+    return _written_stress_helpers(bb).get((chapter, verse), {}).get(reading.hebrew)
+
+
+@cache
+def _written_stress_helpers(bb):
+    book_id = wlc_bb_to_bk39id(bb)
+    books = read_books_from_mam_parsed_plus.read_parsed_plus_bk39s(
+        (book_id,), str(paths.mam_parsed_dir())
     )
+    out = {}
+    for bcvt, row in books[book_id]["verses_plus"].items():
+        pairs = {}
+        for element in row.EP:
+            if not isinstance(element, dict) or element.get("tmpl_name") not in {
+                "מ:דחי",
+                "מ:צינור",
+            }:
+                continue
+            params = element.get("tmpl_params", {})
+            if set(params) not in ({"1"}, {"1", "2"}):
+                raise SurveyProblem("unclassified public MAM stress-helper shape")
+            written = params.get("2") or params["1"]
+            if not isinstance(written, str):
+                raise SurveyProblem("public MAM stress helper is not plain text")
+            spoken = qere_from_implicit_kq.get_qere_from_implicit_kq(written)
+            if spoken != written:
+                if spoken in pairs and pairs[spoken] != written:
+                    raise SurveyProblem("ambiguous public MAM written-form diagnostic")
+                pairs[spoken] = written
+        out[(bib_locales.bcvt_get_chnu(bcvt), bib_locales.bcvt_get_vrnu(bcvt))] = pairs
+    return out
 
 
 def _settle(matches: list[str], snapshot: str) -> tuple[str | None, str]:
@@ -214,6 +183,15 @@ def _matching_mam_words(record: dict, words: list[str]) -> tuple[list[str], str]
         ]
         if matches:
             return matches, "with qamats qatan read as qamats"
+    spoken_key = keys[0]
+    matches = [
+        word
+        for word in words
+        if _mam_join_key(qere_from_implicit_kq.get_qere_from_implicit_kq(word))
+        == spoken_key
+    ]
+    if matches:
+        return matches, "the qere it stands for"
     return [], "no match"
 
 
@@ -295,23 +273,18 @@ def _attach_mam_forms(
 ) -> list[dict]:
     """Give each record the form MAM has today, found by join key, or say why it has none.
 
-    THE PAGE SHOWS ``mam_form`` AND NOT ``chanted_word``, and this is where the difference is
-    made.  Phonetic MAM's text has two annotations absent from MAM -- U+05C8 in place of U+05B0
-    for a shewa it resolves as vocal, and U+05C9 in place of U+05BC for a dagesh it reads as
-    xazaq -- so a page showing its forms verbatim would put marks in front of a reader that
-    MAM's text does not have.  The join key drops exactly what the two sides may legitimately
-    differ in, this
-    including the survey's subject, so a chanted word that has GAINED or LOST a meteg since
-    the snapshot still matches, and the record says so in ``metegs_in_mam_today``.
+    THE PAGE SHOWS ``mam_form`` AND NOT ``chanted_word``. The former is current MAM;
+    the latter is the generic Hebrew displayed in the surveyed Phonetic MAM release.
+    Matching ignores the marks the survey compares, so a chanted word that has gained or
+    lost a meteg still matches and the record reports the difference.
 
     TWO IDENTICAL CANDIDATES ARE ONE ANSWER, and are accepted: a verse with two byte-identical
     chanted words -- Proverbs 12:1's two אֹהֵב, Psalms 135:1's two הללו -- leaves the position
     ambiguous and the FORM certain, which is all the page shows.  Two candidates that differ
     are refused, since then the form is a choice.
 
-    A record with no form is named in ``records_without_a_mam_form``.  The page renderer
-    raises if it is asked to display one, rather than look up a substitute spelling in
-    MAM-private (CLAUDE.md, "A code path reads MAM-private every time it runs, or never").
+    A record with no form is named in ``records_without_a_mam_form``. The page renderer
+    raises if it is asked to display one, rather than choosing a substitute spelling.
     """
     context_by_bcv = context_by_bcv or {}
     out = []

@@ -188,6 +188,11 @@ _EXCLUDE_DIR_PREFIXES = (
     "MAM-parsed/",
     "MAM-simple/",
     "MAM-with-doc/",
+    # Generated display data retains the existing public transcription exactly,
+    # including its decomposed Latin vowel marks. Authored README/schema stay in
+    # the main scope; this is the same generated-data boundary as out/ above.
+    "Phonetic-MAM/data/",
+    "Phonetic-MAM/examples/",
     "uxlc/",
     "aleppo/",
     "cam1753/",

@@ -70,7 +70,7 @@ are separate evidence and must not be inferred from an entry-index record.
 
 ## Decisions (proposed 2026-08-06 by the planning session unless attributed to Ben; Ben can veto the proposals)
 
-- **Home repo: MAM-basics** (`C:/Users/BenDe/GitRepos/MAM-basics`, venv at
+- **Home repo: MAM-basics** (any full clone of it, venv at
   `.venv/Scripts/python.exe`). All of Ben's Python lives here now and new issues are filed
   here. The scans themselves stay where they are and no image enters the repo; the repo
   tracks only index *metadata* (filenames, page-boundary records) — uncopyrightable
@@ -105,7 +105,7 @@ are separate evidence and must not be inferred from an entry-index record.
   record model replaced both.)
 - **Ben's decision, 2026-08-07: no page error is ever acceptable, so the data model is
   the one that makes a page error inexpressible — now MAM-basics'.** In
-  `C:/Users/BenDe/GitRepos/MAM-basics/uxlc/data/lci_augrecs.json`,
+  `uxlc/data/lci_augrecs.json`,
   every page has a record of where it starts and where it stops, down to the atom
   within the verse (`bkid`, `startc`, `startv`, `startp`, `stopc`, `stopv`, `stopp` —
   bkids in the `mb_cmn/bib_locales.py` convention, e.g. `Levit`), and consecutive pages
@@ -455,15 +455,15 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 
 ## Preconditions for the executing session
 
-- Repos: `C:/Users/BenDe/GitRepos/MAM-basics` (venv at `.venv/Scripts/python.exe`);
-  product `C:/Users/BenDe/GitRepos/MAM-basics/MAM-parsed` present (verse counts). Scans at
+- Repos: any full MAM-basics clone (venv at `.venv/Scripts/python.exe`), with its
+  product `MAM-parsed/` present (verse counts). Scans at
   `C:/Users/BenDe/OneDrive/Documents/ScansOfBooks` with the five folders named above.
 - Worktree-isolable (Ben asked 2026-08-07). Every tracked write is in MAM-basics, so a
   worktree isolates the undertaking fully; the spill is read-only. The scans path is
   absolute and checkout-independent. Since the 2026-09-06 product move,
   `mb_cmn.paths.mam_parsed_path()` selects the MAM-parsed product inside the
-  same checkout and fails if its plus inputs are absent. A worktree runs the
-  primary clone's venv by absolute path, per the global rules.
+  same checkout and fails if its plus inputs are absent. A worktree runs its
+  home clone's venv by absolute path, per the global rules.
 - Baseline: **915 passed, 5 skipped**, measured 2026-08-07 at `fc23077` from the repo root
   of the primary clone. The 320 this bullet used to cite, from `doc/metsudah-vs-ctr.md`, is
   stale by a wide margin — that figure predates the accgram and CLC code arriving on
@@ -473,7 +473,7 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
   there is now one more. **Re-measured 2026-09-10 at `f92c061c`, in a worktree with
   `REPOS_ROOT` set: 987 passed, 5 skipped, of 992 collected**, so 919 is a historical figure
   now, the suite having gained 68 tests since Phase 0's 924. Re-establish it from the repo
-  root with `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py`,
+  root with `./.venv/Scripts/python.exe py/main_test.py`,
   and re-measure rather than trust it.
 - **A worktree now runs the suite green, as of 2026-08-07 — same 919 passed, 5 skipped,
   with `REPOS_ROOT=C:/Users/BenDe/GitRepos` set.** Until that day it could not, and this
@@ -492,7 +492,7 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
     resolves the main clone through the worktree's `.git` file.
 
   So a worktree suite is trustworthy, and an unexplained failure in one is a finding rather
-  than the known background noise it used to be. Running the full suite in the primary clone
+  than the known background noise it used to be. Running the full suite in the home clone
   after merging is still worth doing, but no longer the only way to see a real result.
 - Tracked files this undertaking may touch: this doc, `py/main_scan_pages.py`,
   `py/scan_pages/*`, `in/scan-pages/*`, `py/tests/test_scan_pages_index.py`. **Nothing
@@ -512,7 +512,7 @@ keeps refusing rather than guessing, so partial progress is always safe to use.
 `py/tests/test_scan_pages_index.py`. Re-derive everything below with:
 
 ```
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_scan_pages.py survey
+./.venv/Scripts/python.exe py/main_scan_pages.py survey
 ```
 
 All **5,720** files classify, and the per-edition file counts match the ones this doc
@@ -536,7 +536,7 @@ which is Torah, which a haftarah and which one of the three full-text megillot.
 `check` re-classifies all 5,720 pages and validates all 156 records against MAM-parsed:
 
 ```
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_scan_pages.py check
+./.venv/Scripts/python.exe py/main_scan_pages.py check
 ```
 
 **What Phase 0 got wrong, and how.** Three claims failed when measured, which is the point
@@ -609,8 +609,8 @@ The method, per page, has three steps:
 1. **Render the two edge bands** with the tracked renderer, one command per band, run from
    the repo root:
    ```
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Koren Classic Tanakh" A1-G-002 --width 1400 --crop 0.05 0.03 0.95 0.19 --name koren-probe-A1-G-002-top
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Koren Classic Tanakh" A1-G-002 --width 1400 --crop 0.05 0.80 0.95 0.96 --name koren-probe-A1-G-002-bottom
+   ./.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Koren Classic Tanakh" A1-G-002 --width 1400 --crop 0.05 0.03 0.95 0.19 --name koren-probe-A1-G-002-top
+   ./.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Koren Classic Tanakh" A1-G-002 --width 1400 --crop 0.05 0.80 0.95 0.96 --name koren-probe-A1-G-002-bottom
    ```
    Each band comes out 1400 × 364 pixels: the running head and about four text lines at the
    top, about four text lines and the footer at the bottom. The fractions were chosen once,

@@ -163,10 +163,13 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 # naming it otherwise, so a stale reason cannot outlive the step that ended it.
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
+    "py/main_yeivin_itm.py check": "Read-only claim/page/asset verification; the maintained Yeivin tests exercise the same closed validation.",
+    "py/main_phonetic_mam.py check": "Read-only release validation; the corpus differential test exercises the same closed validator.",
+    "py/main_phonetic_mam.py compute": "Ben approved this transient stdin/stdout calculation interface on 2026-10-01; it is a caller-driven service, not a product regeneration step. See doc/phonetic-mam-compute.md.",
     # --- Section 3 of doc/mega-coverage-2026-09-10.md: reasons already recorded.
     "py/main_accgram.py survey-breuer-zaqef-units": (
-        "A measurement written only to .novc/, which also reads MAM-private's Phonetic"
-        " MAM.  Recorded in py/accgram/breuer_word_length.py's docstring (\"WRITES TO"
+        "A measurement written only to .novc/, which reads the tracked public"
+        " Phonetic-MAM display release.  Recorded in py/accgram/breuer_word_length.py's docstring (\"WRITES TO"
         ' ``.novc/``, not to ``out/``") and doc/mega-coverage-2026-09-10.md §3.'
     ),
     "py/main_accgram.py vendor-printed-decalogue": _NETWORK_VENDORING,

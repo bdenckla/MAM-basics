@@ -16,7 +16,7 @@
 #
 # Run this script with the repo root as the current directory, e.g.
 #
-#    PS C:/Users/BenDe/GitRepos/MAM-basics> ./misc/requirements-venv-setup-windows.ps1
+#    ./misc/requirements-venv-setup-windows.ps1
 
 param([string]$BasePython = 'python')
 

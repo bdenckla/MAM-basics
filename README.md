@@ -112,8 +112,11 @@ misc/linux-sh/   Standalone Linux bootstrap script for cloning MAM-basics
 Two declarations, because this repository holds code and data under different terms:
 
 1. **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' work in code and prose —
-   everything under `py/`, `.github/` and `doc/` except the third-party font under `doc/woff2/` and the page crops in `doc/*-snips/`,
+   everything under `py/`, `.github/` and `doc/` except the adapted excerpts under
+   `py/yeivin_itm/content/`, the third-party font under `doc/woff2/`, and the page crops in `doc/*-snips/`,
    and the generated indexes and reports under `out/` that carry no corpus text.
+   The excerpts' path-specific permission terms are in [`Yeivin-ITM/README.md`](Yeivin-ITM/README.md)
+   and [`DATA-LICENSES.md`](DATA-LICENSES.md); no GPL sublicense over them is asserted.
 2. **Data: mapped path by path** in [`DATA-LICENSES.md`](DATA-LICENSES.md). Most corpora keep the
   terms their preparers set: MAM is CC-BY-SA 4.0, attributed to Hebrew Wikisource, and several
   other corpora are reproduced under no grant at all. The accent-grammar material that is this

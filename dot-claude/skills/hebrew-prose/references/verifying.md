@@ -46,11 +46,18 @@ post-stress-meteg work lives**, so do not go looking for those pages under `accg
    `py/main_authored.py gen-site` does. It also writes `gh-pages/index.html`,
    `gh-pages/unicode-proposals.html`, and one post-silluq case page per entry of
    `site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES`; the case pages render from
-   `in/meteg_after_silluq_cases.json`, not from the survey. The survey needs the
-   MAM-private clone; `--trust-surveys` lets `gen-site` read the tracked JSON instead, which is
-   how `main_0_mega.py` renders the pages without that clone.
+   `in/meteg_after_silluq_cases.json`, not from the survey. The survey reads the
+   tracked public `Phonetic-MAM/` release and public MAM. `--trust-surveys` lets
+   `gen-site` read its tracked JSON instead of calculating the same survey twice;
+   the mega runs the public survey in cloud sessions too.
 2. **`survey-breuer-zaqef-units` writes `.novc/breuer-zaqef-units.json` and nothing tracked at
    all** — it is a measurement, so it touches neither `out/` nor `gh-pages/`.
+
+`Phonetic-MAM/README.md` and `Yeivin-ITM/README.md` own their current command
+contracts. Only the Phonetic exporter requires the private source adapter;
+rendering, the independent pre-stress analysis and the Yeivin claim/render/check
+commands consume public data. The full Yeivin OCR remains a private research
+source, distinct from the selected public adaptation.
 
 The `gh-pages/post-stress-meteg*.html` pages, those nine and the case pages alike, are also the
 one place the skill's "never a loose word" rule is suspended: `references/mam-basics.md`

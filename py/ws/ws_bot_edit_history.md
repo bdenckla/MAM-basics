@@ -229,12 +229,14 @@ infrastructure has changed enough to make them misleading examples:
 
 ## How to look up the original code
 
-All old versions live in the predecessor repo:
+All old versions live in the predecessor repo, `bdenckla/trope`. No forest keeps a clone of it
+(`in/repo_maintenance_policy.json`, `repos_to_keep_absent`), so read them from a disposable clone
+in a scratch directory outside every forest:
 
 ```
-cd ~/GitRepos/trope.old.use-mam-basics-instead
-git show <commit>:py/ws_bot_edit.py        # post-move
-git show <commit>:dir-for-pywikibot/ws_bot_edit.py  # pre-move (earliest)
+gh repo clone bdenckla/trope <scratch-directory>/trope
+git -C <scratch-directory>/trope show <commit>:py/ws_bot_edit.py        # post-move
+git -C <scratch-directory>/trope show <commit>:dir-for-pywikibot/ws_bot_edit.py  # pre-move (earliest)
 ```
 
 The move from `dir-for-pywikibot/` to `py/` happened at commit `fe60fa6c`,

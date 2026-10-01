@@ -1,0 +1,19 @@
+Taamey D font: notices and source
+================================
+
+The unmodified Taamey_D.woff2 in this directory is version 0.921, 21,148 bytes.
+SHA-256: 5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474
+
+The font is GNU GPL version 2 with the font-embedding exception. Read the
+adjacent FONT-NOTICE.txt for the copyright, license grant, and exception, and
+the adjacent GPL-2.0.txt for the full license text.
+
+Download the corresponding source from this same website:
+  ../../font-sources/taamey-d-0.921/Taamey_D-0.921-source-40115a364a4e.zip
+Source inventory, upstream commit, build procedure, and limitations:
+  ../../font-sources/taamey-d-0.921/SOURCE.txt
+
+The source bundle contains all eight editable font-source and build inputs
+from upstream commit 40115a364a4e05f610cbd4e6a0abb76fd72b7dab, whose
+docs/woff2/Taamey_D.woff2 is the identical binary. No exact rebuild is claimed.
+The source and notices must remain available whenever this font is distributed.

@@ -28,7 +28,7 @@ command to regenerate it is this file rather than a line in a test docstring.
 Run it from the repo root -- both paths below are cwd-relative, as
 `pipeline_graph.py`'s own output paths are:
 
-  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_pipeline_graph.py
+  ./.venv/Scripts/python.exe py/main_pipeline_graph.py
 """
 
 from pipeline_graph import pipeline_graph

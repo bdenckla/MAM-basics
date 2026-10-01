@@ -38,6 +38,10 @@ Subcommands:
                 out/accgram/chanted-word-accents.json.  Transcribes Yeivin's prose
                 inventory of the phenomenon beside the measurement and raises where
                 one of his closed verse lists and the data disagree.
+    survey-meteg-before-stress
+                Classify the independent FR/AFR pre-stress-meteg populations
+                from the public Phonetic MAM display release and write
+                out/accgram/meteg-before-stress.json.
     survey-post-stress-meteg
                 Classify every U+05BD in MAM by whether its syllable falls
                 before, in, or after the chanted word's primary stress, with
@@ -177,6 +181,7 @@ from accgram import dual_under_bars_page
 from accgram import fix_tester
 from accgram import grammaticality
 from accgram import maqaf_nonfinal_accents_page
+from accgram import meteg_before_stress
 from accgram import poetic_oddballs
 from accgram import post_stress_meteg
 from accgram import ps17v14_double_tsinnor
@@ -226,6 +231,10 @@ def _run_survey_chanted_word_accents(args: argparse.Namespace) -> None:
 
 def _run_survey_post_stress_meteg(args: argparse.Namespace) -> None:
     post_stress_meteg.run(args)
+
+
+def _run_survey_meteg_before_stress(args: argparse.Namespace) -> None:
+    meteg_before_stress.run(args)
 
 
 def _run_survey_breuer_zaqef_units(args: argparse.Namespace) -> None:
@@ -393,6 +402,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
     chanted_word_accents.add_args(chanted_word_parser, repo_root=_repo_root())
     chanted_word_parser.set_defaults(func=_run_survey_chanted_word_accents)
+
+    pre_stress_meteg_parser = subparsers.add_parser(
+        "survey-meteg-before-stress",
+        help=(
+            "Classify FR/AFR pre-stress-meteg populations from the public Phonetic "
+            "MAM display release and write out/accgram/meteg-before-stress.json."
+        ),
+    )
+    meteg_before_stress.add_args(pre_stress_meteg_parser, repo_root=_repo_root())
+    pre_stress_meteg_parser.set_defaults(func=_run_survey_meteg_before_stress)
 
     post_stress_meteg_parser = subparsers.add_parser(
         "survey-post-stress-meteg",

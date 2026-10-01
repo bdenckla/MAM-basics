@@ -29,7 +29,7 @@ and the retrieval time, in ISO 8601 with its offset, for provenance.  The commit
 snapshot's ``retrieved``, 2026-07-24, predates that: it is the date on the fetching machine's
 clock, with no zone.  Run from the repo root:
 
-    PYTHONUTF8=1 .venv/Scripts/python.exe py/main_accgram.py vendor-ctr-decalogue
+    .venv/Scripts/python.exe py/main_accgram.py vendor-ctr-decalogue
 
 ``--cache <dir>`` reads pre-fetched ``ctr_cache_<name>.html`` from a directory instead of
 the network, so the exact snapshot already retrieved can be re-vendored without hitting the

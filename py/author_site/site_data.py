@@ -34,7 +34,8 @@ _ELLIPSIS = "\N{HORIZONTAL ELLIPSIS}"
 
 _MWD = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/"
 _MWD_MISC = f"{_MWD}misc/"
-_PHONETIC = "https://bdenckla.github.io/phonetic-hbo/"
+_PHONETIC = "https://bdenckla.github.io/MAM-basics/phonetic-mam/"
+_YEIVIN = "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm.html"
 _TAAMEY_D = "https://bdenckla.github.io/hbofonts/Taamey_D.html"
 _GDOC = "https://docs.google.com/document/d/e"
 _REPO = "https://github.com/bdenckla/MAM-basics"
@@ -228,7 +229,7 @@ _POINTING_AND_CANTILLATION = Section(
                 Italic("Introduction to the Tiberian Masorah"),
                 " by Israel Yeivin",
             ),
-            f"{_PHONETIC}yeivin_itm.html",
+            _YEIVIN,
         ),
         _URWOTM,
     ),

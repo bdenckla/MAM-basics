@@ -48,10 +48,10 @@ to the `qr-generic-comment` list.
    variable (e.g., `_COMMENT_2702`) and reference it from the dict.
    This is already the convention for comments spanning multiple lines.
 
-5. **Run the generation script** from `C:/Users/BenDe/GitRepos/MAM-basics` to rebuild
+5. **Run the generation script** from the root of a full MAM-basics clone to rebuild
    the HTML output:
    ```powershell
-   C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
+   ./.venv/Scripts/python.exe py/main_gen_misc_authored_english_documents.py
    ```
 
 6. **Verify** the output is correct:
@@ -64,8 +64,9 @@ to the `qr-generic-comment` list.
    change.
 
 7. **Give Ben a rendered-file link; do not launch a browser or start a server.**
-   A detail page for chapter XX and verse YY is at
-   `file:///C:/Users/BenDe/GitRepos/MAM-basics/gh-pages/book-of-job/jobn-details/XXYY.html`.
+   A detail page for chapter XX and verse YY is
+   `gh-pages/book-of-job/jobn-details/XXYY.html` in the checkout that generated it;
+   the link is that file's absolute `file:///` URL.
 
 ## Style conventions
 

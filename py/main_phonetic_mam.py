@@ -1,0 +1,65 @@
+"""Closed export, rendering, validation and transient computation interfaces.
+
+Subcommands:
+    export
+        Regenerate the public display release through the private source adapter.
+    render
+        Render the tracked public display release, without private inputs.
+    check
+        Validate the complete public release without writing.
+    compute
+        Serve transient, versioned NDJSON computations on stdin and stdout.
+"""
+
+import argparse
+import sys
+
+# The compute subcommand must not create import-cache files in either repository.
+sys.dont_write_bytecode = True
+
+
+def build_parser():
+    """Describe the closed command set without running an operation."""
+    parser = argparse.ArgumentParser(description=__doc__)
+    commands = parser.add_subparsers(dest="command", required=True)
+    commands.add_parser("export", help="Export the public display release")
+    commands.add_parser("render", help="Render only the tracked public display release")
+    commands.add_parser("check", help="Validate the tracked release without writing")
+    commands.add_parser(
+        "compute", help="Serve transient NDJSON computations on stdin/stdout"
+    )
+    return parser
+
+
+def almost_main(argv=None):
+    """Dispatch one explicit operation; imports preserve the private-input boundary."""
+    args = build_parser().parse_args(argv)
+    if args.command == "compute":
+        from phonetic_mam.compute import serve
+
+        return serve()
+    if args.command == "export":
+        from phonetic_mam.exporter import export_release
+
+        return export_release()
+    if args.command == "render":
+        from phonetic_mam.publication import render
+
+        return render()
+    if args.command == "check":
+        from phonetic_mam.release import validate_complete_release
+
+        return validate_complete_release()
+    raise ValueError("unknown Phonetic MAM operation")
+
+
+def main():
+    """Use UTF-8 for both Windows and POSIX pipes."""
+    sys.stdin.reconfigure(encoding="utf-8")
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+    return almost_main()
+
+
+if __name__ == "__main__":
+    main()

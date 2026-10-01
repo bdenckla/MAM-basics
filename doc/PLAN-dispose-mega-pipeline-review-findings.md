@@ -48,7 +48,7 @@ particular.
 
 ## Preconditions
 
-- **Repository**: `C:/Users/BenDe/GitRepos/MAM-basics`. The interpreter is that clone's
+- **Repository**: a full MAM-basics clone, in any forest. The interpreter is that clone's
   `.venv/Scripts/python.exe`, spelled absolutely if the work runs in a secondary worktree.
 - **Instruction files to load before the first edit**: `~/.claude/CLAUDE.md` and this repository's
   `CLAUDE.md`. Load the **`hebrew-prose` skill** before recording a verdict on any
@@ -62,7 +62,7 @@ particular.
   subtests passed**, and a full mega run passes every step and leaves no diff.
 
   ```powershell
-  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py
+  ./.venv/Scripts/python.exe py/main_test.py
   ```
 
 ## The figures this plan rests on, and how to re-establish them

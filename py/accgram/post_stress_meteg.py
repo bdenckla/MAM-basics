@@ -9,20 +9,19 @@ Isaiah 23:12 is one such meteg, which is the occasion for the survey and not its
 Pure computation and a JSON writer -- no HTML.  ``author_site/post_stress_meteg`` renders it,
 and ``main_accgram.py survey-post-stress-meteg`` runs it standalone.
 
-THE STRESS ORACLE IS PHONETIC MAM, whose ``jta`` field marks the one stressed syllable with
-``!``.  ``py/tests/test_final_stress_vs_phonetic_mam.py`` reads the same files for the same
-reason: which syllable the stress falls on is not derivable from the pointing without a real
-stress model, and al-hatorah's ``py/aht_phon`` has one.  A U+05BD's position is NEVER used to
+THE STRESS ORACLE IS PHONETIC MAM's public displayed transcription. Its primary-stress
+span becomes ``!`` in the temporary ASCII transcription used here. The final-stress
+differential tests read the same display corpus. A U+05BD's position is NEVER used to
 infer the stress -- that would make the survey's question answer itself.
 
 THE CORPUS IS PHONETIC MAM'S TEXT, and it is a SNAPSHOT of MAM rather than MAM's current
-state.  Phonetic MAM is regenerated on al-hatorah's schedule, so the standard set
-here can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the thirty Holman
+state. Phonetic MAM is refreshed by its export command, so the public release
+can be older than the MAM-simple beside it -- and on 2026-09-04 it was, the thirty Holman
 meteg suggestions of ``doc/PLAN-holman-meteg-rollout-programme.md`` among the differences.
 ``post_stress_meteg_survey.py`` measures currency rather than assuming it away: it counts U+05BD per numbered verse on
 both sides and names every verse where the two disagree, so the page can say which MAM its
-figures describe.  Refreshing the oracle is al-hatorah's business; re-running this survey
-afterwards is one command.
+figures describe. Refreshing the release and re-running this independent survey are
+separate commands.
 
 NUCLEI, AND WHERE THIS PARTS FROM ``final_stress``.  A syllable's nucleus is a point written
 in the text, so the Hebrew's syllable count can be had without syllabifying it: a full vowel
@@ -98,12 +97,12 @@ def default_json_out_path() -> Path:
 
 
 def load_survey(path: Path | None = None) -> dict:
-    """The tracked JSON, for a caller rendering the page without the MAM-private clone."""
+    """The tracked JSON, for a caller rendering the page without rerunning the survey."""
     json_path = path or default_json_out_path()
     if not json_path.exists():
         raise SurveyProblem(
             f"{json_path} is absent; run `main_accgram.py survey-post-stress-meteg` to"
-            " write it, which needs the MAM-private clone"
+            " write it from the tracked public Phonetic MAM release"
         )
     return json.loads(json_path.read_text(encoding="utf-8"))
 

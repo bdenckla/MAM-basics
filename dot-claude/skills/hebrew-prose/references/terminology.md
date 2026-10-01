@@ -143,7 +143,7 @@ is why the shared constant in `mb_cmn/hebrew_punctuation.py` is called `PASOLEG`
 
 Canonical treatment: MAM-basics `py/author_misc/he_ws_intro_to_mam_pasleg.py` (+ its footnotes
 module), a bilingual essay adapted from Avi Kadish's introduction to *Miqra al pi ha-Masora*
-ch. 2 "פסק ולגרמיה", rendered at `MAM-with-doc/gh-pages/misc/he_ws_intro_to_mam_pasleg.html`. It
+ch. 2 "פסק ולגרמיה", rendered at `gh-pages/MAM-with-doc/misc/he_ws_intro_to_mam_pasleg.html`. It
 has the rules (legarmeh almost always precedes *revia*; the sole Biblical exception is Isa. 42:5)
 and the manuscripts' own marginal `לג׳`/`פס׳` annotations. MAM-basics `uxlc/doc/clc-design.md` §7.16 is
 the design-doc summary; note its §2 "under-bar" is a *separate* ambiguous-vertical-bar problem —
@@ -212,7 +212,7 @@ In accgram the scanners already fuse a helper into its accent, so a **token** co
 pair where a **mark** count does: `prose_scanner`'s `ZARQA` rule fuses U+0598 with U+05AE, and
 `PASHTA` and `TELISHAQETANNA` fuse the self-help cases. A survey that counts marks has to exclude
 them by hand, which is what `maqaf_nonfinal_accents.simple_exclusion` does. Also relevant:
-`MAM-with-doc/gh-pages/misc/tsinnorit_and_oleh_on_ivs.html` ("Tsinnorit & Oleh on Initial Vocal
+`gh-pages/MAM-with-doc/misc/tsinnorit_and_oleh_on_ivs.html` ("Tsinnorit & Oleh on Initial Vocal
 Shewa").
 
 ## Never "word-division"

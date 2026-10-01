@@ -164,7 +164,7 @@ def test_long_note_relegation():
         in meteg_html
     )
     assert (
-        'href="https://bdenckla.github.io/phonetic-hbo/yeivin_itm-345_357.html#ns355"'
+        'href="https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns355"'
         in meteg_html
     )
     assert 'src="../img/Deuter.5.7.2.LC-102A-col3-line22.jpg"' in meteg_html

@@ -5,9 +5,10 @@ that write into this repository's ``out/`` and ``gh-pages/wlc/`` trees. The
 ordinary sequence begins by deriving MAM-parsed plus from committed Wikisource
 input. The five downstream MAM product generators write into this
 repository after the fourth-stage Repoint steps completed on 2026-09-10. One
-step uses the MAM-private sibling, and it only reads it: the post-stress-meteg
-survey reads its Phonetic MAM. A cloud session skips that step (Ben's decision,
-2026-09-10). Elsewhere it finds the sibling through
+step uses the MAM-private sibling through a read-only source adapter: the
+Phonetic MAM exporter. That step is cloud-skipped; the renderer and both meteg
+surveys consume the tracked public release in every environment. The exporter
+finds the sibling through
 ``mb_cmn.paths.repos_root()``, which in a worktree looks beside the worktree's
 home clone, so a worktree run needs no ``REPOS_ROOT``. Until 2026-09-11 a
 second step, ``near-aleppo-census``, ran MAM-private's near-Aleppo census and
@@ -70,6 +71,8 @@ import main_tmpl_survey_toy
 # (doc/PLAN-evacuate-python-from-wlc-utils.md) and the corpus it reads and writes
 # followed on 2026-08-12 (doc/PLAN-evacuate-the-rest-of-wlc-utils.md).
 import main_accgram
+import main_phonetic_mam
+import main_yeivin_itm
 import main_find_uxlc_accent_changes
 import main_uxlc_grammar_test
 import main_wlc_a_notes
@@ -172,31 +175,43 @@ def _run_accgram_survey_chanted_word_accents():
     main_accgram.almost_main(["survey-chanted-word-accents"])
 
 
-def _run_accgram_survey_post_stress_meteg():
-    # Skipped altogether in a cloud session, whether or not MAM-private is attached there:
-    # Ben's decision, 2026-09-10, on the precedent of the SVG renders graphviz_pin skips in a
-    # cloud container.  gen-site then renders from the tracked JSON unchanged.
+def _run_phonetic_mam_export():
     if graphviz_pin.in_cloud_session():
-        step_id = "accgram-survey-post-stress-meteg"
-        reason = (
-            "it reads MAM-private's Phonetic MAM; gen-site renders the nine"
-            " post-stress-meteg pages that read the survey from the tracked"
-            " out/accgram/post-stress-meteg.json, unchanged"
-        )
+        step_id = "phonetic-mam-export"
+        reason = "it reads private source inputs; public renderers and surveys use the tracked release"
         _CLOUD_SKIPPED_STEPS.append((step_id, reason))
         print(
             f"STEP SKIPPED in this cloud session: {step_id}: {reason}", file=sys.stderr
         )
         return
+    main_phonetic_mam.almost_main(["export"])
+
+
+def _run_phonetic_mam_render():
+    main_phonetic_mam.almost_main(["render"])
+
+
+def _run_accgram_survey_meteg_before_stress():
+    main_accgram.almost_main(["survey-meteg-before-stress"])
+
+
+def _run_yeivin_itm_survey_meteg_claims():
+    main_yeivin_itm.almost_main(["survey-meteg-claims"])
+
+
+def _run_yeivin_itm_render():
+    main_yeivin_itm.almost_main(["render"])
+
+
+def _run_accgram_survey_post_stress_meteg():
     main_accgram.almost_main(["survey-post-stress-meteg"])
 
 
 def _run_gen_site():
     # --trust-surveys because accgram-survey-post-stress-meteg ran directly above and wrote
     # out/accgram/post-stress-meteg.json, so recomputing the survey here would walk the corpus
-    # a second time -- the reason accgram-generate-html is passed --trust-survey.  In a cloud
-    # session that step is skipped, and the flag is what keeps gen-site from rebuilding the
-    # survey there itself: the nine pages render from the tracked JSON unchanged.
+    # a second time -- the reason accgram-generate-html is passed --trust-survey.
+    # Both environments now run the survey against the tracked public release.
     main_authored.gen_site(trust_surveys=True)
 
 
@@ -594,10 +609,35 @@ _STEPS = [
     # json-vtrad-mam it reads (paths.mam_simple_vtrad_mam_dir).  This comment and the
     # description below said xml-vtrad-mam until 2026-09-11.
     StepRecord(
+        "phonetic-mam-export",
+        _run_phonetic_mam_export,
+        "reads private sources through a read-only adapter; writes only Phonetic-MAM; cloud-skipped",
+    ),
+    StepRecord(
+        "phonetic-mam-render",
+        _run_phonetic_mam_render,
+        "reads the tracked public release; writes the unified phonetic-mam site; runs in cloud",
+    ),
+    StepRecord(
+        "accgram-survey-meteg-before-stress",
+        _run_accgram_survey_meteg_before_stress,
+        "independent analysis of the public release; writes out/accgram/meteg-before-stress.json",
+    ),
+    StepRecord(
+        "yeivin-itm-survey-meteg-claims",
+        _run_yeivin_itm_survey_meteg_claims,
+        "projects the independent analysis into Yeivin-ITM/meteg-claims.json; runs in cloud",
+    ),
+    StepRecord(
+        "yeivin-itm-render",
+        _run_yeivin_itm_render,
+        "reads the approved tracked claims and adaptation; writes all 17 public Yeivin pages",
+    ),
+    StepRecord(
         "accgram-survey-post-stress-meteg",
         _run_accgram_survey_post_stress_meteg,
-        "reads MAM-private's Phonetic MAM and MAM-simple's json-vtrad-mam, and writes"
-        " the tracked out/accgram/post-stress-meteg.json; skipped in a cloud session;"
+        "reads public Phonetic-MAM and MAM-simple's json-vtrad-mam, and writes"
+        " the tracked out/accgram/post-stress-meteg.json; runs in a cloud session;"
         " must come before gen-site",
     ),
     # Must come after accgram-survey-post-stress-meteg, since 2026-09-10: it renders the nine
@@ -665,11 +705,9 @@ def _report_cloud_skips():
     graphviz_pin.in_cloud_session detects. A cloud container has no Graphviz, so
     the tmpl-survey step skips its renders rather than killing the run -- Ben's
     decision, 2026-09-09; graphviz_pin's docstring has the reasoning. And the one
-    step that uses MAM-private is skipped altogether, by Ben's decision of
-    2026-09-10. The accgram-survey-post-stress-meteg step reads MAM-private's
-    Phonetic MAM and is skipped on the precedent of the SVG renders, so gen-site
-    renders the nine post-stress-meteg pages that read the survey from the
-    tracked out/accgram/post-stress-meteg.json, unchanged.
+    step that uses private source inputs, phonetic-mam-export, is skipped
+    altogether. Rendering and both meteg surveys run from the tracked public
+    release, so gen-site receives the regenerated public survey in the cloud too.
 
     Such a run is CLOUD-COMPLETE, meaning that no step failed, and that every step
     either ran or was skipped for the cloud, while some SVGs may have gone
