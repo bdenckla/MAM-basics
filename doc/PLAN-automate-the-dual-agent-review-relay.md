@@ -1,6 +1,9 @@
 # Plan: automate the dual-agent review relay, and measure what the second agent adds
 
-State: live. Proposed 2026-09-30 and not approved for execution; no phase has started.
+State: live. Ben authorized implementation on 2026-09-30; core code and four real automatic
+handoffs are verified in GitRepos2. D13 and notification receipt are confirmed;
+production is enabled, and scheduler registration and an idle tick are verified
+2026-10-01. The first approved production round remains pending.
 
 Planned 2026-09-30 by Claude Fable 5.1 in a Plan Mode session started in
 `C:/Users/BenDe/GitRepos/MAM-basics` at `38a360d2`; file and line citations refer to that commit.
@@ -76,16 +79,121 @@ Everything else below is the two sessions' reconstruction. Re-verify every obser
 
 | Id | Requirement | Status |
 |---|---|---|
-| R1 | Relieve Ben of relaying each turn | active: sections 1 to 6 |
-| R2 | Weigh the dual-agent review against one agent iterating on its own review | active: the assessment answers from the records; rollout step 5 measures what they cannot |
-| R3 | Use the review branch as a mailbox, by polling or trigger | active: the tick polls the branch |
-| R4 | Choose between sub-agents and fresh sessions for taking a turn | active: a fresh process per turn for both agents, each free to use sub-agents |
-| R5 | Try the headless CLIs despite the expected authentication trouble | implemented 2026-09-30: `codex exec` works; the Claude CLI needs a login |
-| R6 | Dispatch from a Task Scheduler job | active |
-| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | active |
-| R8 | Finish the two rounds in flight by hand | active, outside this plan |
+| R1 | Relieve Ben of relaying each turn | four real automatic handoffs passed in the isolated mirror; first approved production round pending |
+| R2 | Weigh the dual-agent review against one agent iterating on its own review | assessment retained; measurement prompts prepared, execution and record filename await Ben |
+| R3 | Use the review branch as a mailbox, by polling or trigger | implemented: explicit registry and branch polling, with no adoption of manual rounds |
+| R4 | Choose between sub-agents and fresh sessions for taking a turn | both fresh-process workers completed real turns with read-only sub-agents; four handoffs passed |
+| R5 | Try the headless CLIs despite the expected authentication trouble | verified 2026-09-30 after Ben renewed Claude login: both headless workers completed two real turns |
+| R6 | Dispatch from a Task Scheduler job | implemented: Ben registered the task on 2026-10-01; exact settings verified, scheduled idle tick completed with result 0; notification receipt confirmed |
+| R7 | Pin `claude-opus-5-5` at `max` and the kickoff Sol model at `xhigh` | verified in both Claude turns' launch records and both Codex turns' saved runtime contexts |
+| R8 | Finish the two rounds in flight by hand | preserved: neither ongoing round was adopted or modified |
 | R9 | Persist the plan in `doc/` | implemented by the commit that added this file |
-| R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | active: Ben's decision of 2026-09-30 |
+| R10 | Execute in a GitRepos2 or GitRepos3 full clone, not a linked worktree | implemented in the verified GitRepos2 full clone |
+
+## Execution authorization and checkout, 2026-09-30
+
+Codex records Ben's instruction: "Implement the recent plan to try to make auto-handoffs
+in dual-agent review. I'm not sure what the plan is called." Ben then instructed:
+"don't interfere with either of the ongoing dual-agent reviews (a MAM-basics and a MAM-private)".
+The actual development checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`, clean `main`
+at `303bf2399c1e1fc1300a75f4fb1ed335d62984d0` before editing; `38a360d2` is an ancestor.
+That clone's own `.venv/Scripts/python.exe` runs all checks. Codex owns the main push.
+`doc/dual-agent-review-automation.md` holds the implementation details, D13 approval
+record, local verification results, and remaining operational prerequisites.
+Ben subsequently selected the D13 approval passage in Codex's implementation
+report and replied "I approve" on 2026-09-30. The approved wording is now in
+`doc/dual-agent-review.md`, "Automated relay and the `Next:` line" (D13).
+The ongoing reviews and the occupied primary clone remain outside execution scope.
+
+## Implementation status and choices, updated 2026-10-01
+
+Ben approved the runbook's proposed D13 wording on 2026-09-30, satisfying this
+plan's requirement for approval before adoption as the review procedure. D13 is
+now adopted in `doc/dual-agent-review.md`. Production is enabled after Ben
+confirmed the corrected notification; Ben registered the scheduler on 2026-10-01. The manual
+procedure continues to govern the ongoing rounds. The runbook records the final suite result
+(1015 passed, 5 skipped, 60 subtests), the local Git differential check, and probes
+P1 through P8. Ben renewed Claude login and the headless Opus 5.5 probe succeeded.
+The isolated public-source capability check exposed denied native PowerShell Git
+reads; the launcher now names the exact checkout and read commands in its allow
+rules. Both full capability checks subsequently passed, including native Git,
+foreground sub-agents and ignored JSON writes. The local-mirror round completed
+four automatic handoffs, stopped before turn 05 at its four-turn cap, and then
+remained idle. The real round requested an acknowledgment; it did not close.
+Independent Git evidence confirms only the permitted turn paths changed, turn 02
+preserved turn 01's byte prefix, and metadata stayed unchanged. Closure and idle
+after closure passed separately in the differential check. A future production
+window still needs Ben's approval. This plan's full definition of done has not been met.
+The real-worker collision probe also passed: a same-tree child commit advanced
+only the local mirror's synthetic `dar-2026-10-02` branch while Claude ran. The
+dispatcher rejected the moved remote, preserved its pause, marker and logs, and
+invoked the hidden toast without recording an error. Ben has been asked to check
+Windows notifications with Win+N. Ben reported no matching notification and
+provided a screenshot showing ChatGPT notifications. The helper's assumed sender
+`Microsoft.Windows.PowerShell` was absent from the installed app list. The
+corrected helper resolves the installed Windows PowerShell sender, checks its
+notification setting and records whether the submitted toast reached history.
+Both its hidden launch and the dispatcher path reached history. Ben replied
+"Yes, I see the corrected test" and supplied a screenshot showing Windows
+PowerShell, **Dual-agent review** and the corrected test message. This satisfies
+P6's receipt check and clears the production flag. The runbook records the fix,
+preserved screenshot manifest and completed registration command.
+
+Ben subsequently ran the supplied registration command and reported
+**Dual-agent review relay**, **Ready**. Codex independently verified its exact
+helper-clone action, three-minute repetition, interactive limited privilege and
+**IgnoreNew** setting. A scheduled tick completed with result `0`; the registry
+is absent and there are zero registered rounds. The receipt is
+`.novc/relay-scheduler-registration-20261001.json` in the implementation clone.
+No production round was started. The first window, Agent 1 and kickoff instruction
+still require Ben's approval, and the two September 29 manual rounds stay excluded.
+
+Core commit `1a50d4b6d132a66dcb9d54d9b9275cd62fc2d580` is on `origin/main`.
+The complete main-sourced configuration deployment installed only the new Claude
+agent file, and its follow-up check reported zero problems. Existing instructions,
+hooks and skills were already clean and were not replaced.
+
+The implemented mechanics supersede the planned mechanics below where they differ:
+
+- The helper clone is GitRepos2. It runs without updating the occupied primary clone;
+  round worktrees belong to the exact full clone named at kickoff.
+- Only rounds explicitly registered by `start` are polled. Existing manual branches
+  are never adopted. Private logs and notifications stay in the private repository.
+- Toasts use the installed Windows PowerShell sender returned by `Get-StartApps`,
+  rather than an assumed identifier. A blocked setting raises an error; successful
+  submissions record sender, setting, tag and history evidence in `toast-result.json`.
+- Carriers update through verified `--ff-only` merges. No reset or `checkout -B` is
+  used; unexpected commits and occupancy stop dispatch.
+- Default caps allow one reopening and turns 01 through 10. The first reopening is
+  permitted; a second stops. Facts-only from turn 03 remains false pending Ben's
+  separate decision. Other proposed defaults are recorded in tracked configuration.
+- `dontAsk` and explicit tool allow rules include native PowerShell and ordinary
+  Git reads, plus exact per-checkout trust options before the read subcommand.
+  Authentication, native Git permissions and headless sub-agents passed both live
+  capability checks and four real turns. Worker-local configuration disables
+  background checkers, and prompts require waiting for every foreground checker.
+- Codex starts a fresh `exec` process without `--ephemeral`: the first capability
+  check's child could not load its parent transcript under that flag. The dispatcher
+  never resumes a prior turn. Claude's exact native PowerShell Git read passed
+  independently after the permission fix; the full capability checks also passed.
+- The header-only `Next:` parser ignores quotations in the body. The independent
+  transition oracle covers both header cardinality and raw, fenced and blockquoted
+  forms, so review prose cannot change dispatcher control state.
+- Manual mechanics in D9, D11 and `doc/periodic-review.md` explicitly point to D13's
+  automated caps, worktrees and dispatcher-owned Git operations. The approved D13
+  wording is unchanged. The planned fallback to adopting a manual round is not
+  implemented; both headless sub-agent checks passed and existing manual rounds
+  remain excluded.
+- Atomic in-flight markers record an approved tree before commit. Manual handoff can
+  recover that commit or an already successful push idempotently after a failure.
+- Rehearsal setup checks every fetch and push URL before any remote query, requiring
+  one local filesystem destination of each kind. URL identity changes refuse a
+  worker result before outbound contact; launch records do not store credentials.
+- `pythonw.exe` supplies the hidden scheduler launch. A hidden Windows PowerShell
+  WinRT helper supplies the toast; agent shell commands use PowerShell 7.
+- The three-turn local check uses deterministic fake workers and does not establish
+  real-model review behavior. Scheduler registration, private SSH probing, live
+  rehearsal, measurement and first adoption remain rollout work.
 
 ## Context: what the relay costs
 
@@ -510,11 +618,12 @@ and one forced failure exercised, D13 merged, the lint green on `main`, and the 
 deployed with `--check` clean; then one real round whose every turn was dispatched, each turn file
 quoting the kickoff instruction and its effort level.
 
-### 7. Decisions still open for Ben
+### 7. Decisions for rollout
 
-Each carries its default in parentheses; confirm them at execution.
+The cap decision is approved with D13. The remaining choices carry their proposed
+defaults in parentheses and still need confirmation at rollout.
 
-1. The turn cap and the reopening cap (10 and 1).
+1. The turn cap and the reopening cap (10 and 1): approved with D13 on 2026-09-30.
 2. The facts-only rule from turn 03 (adopt it).
 3. Whether the dispatcher takes turns 01 and 02 as well (yes, if probe P1 passes).
 4. The Claude worker's production permission mode (`dontAsk` with tracked allow rules; `auto` is
