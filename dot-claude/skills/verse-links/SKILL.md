@@ -67,7 +67,7 @@ One markdown link per line, in this order:
 | `MM` | the verse at mechon-mamre.org |
 | `UXLC` | the verse at tanach.us |
 | `tica LC` | the verse at masoretica.org, in the Leningrad Codex |
-| `LC <folio>` | Sefaria's image of that Leningrad Codex folio, with the estimator's column and line for the atom; a verse crossing a page break gets two such lines |
+| `LC F<page>` | Sefaria's image of that Leningrad Codex page, with the estimator's column and line for the atom; a verse crossing a page break gets two such lines |
 | `CTR` | the chapter in Chabad's Complete Tanach with Rashi, **only where MAM-basics records Chabad's URL for it** — ten chapters on 2026-09-10: seven psalms, Proverbs 8, Exodus 20 and Deuteronomy 5. For any other chapter the line says so and gives Chabad's index of the CTR instead. |
 
 ## Presenting the links to Ben
