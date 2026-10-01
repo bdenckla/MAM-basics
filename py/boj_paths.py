@@ -105,8 +105,8 @@ Four other runnable modules were deleted:
 existed; and ``main_list_missing_aleppo_imgs.py`` later that day, under
 ``doc/PLAN-retire-codex-index-image-work.md``.
 
-They stay top-level rather than going into a package because every one of them is
-an entry point: one ``main_*``, and the ``check_*``/``fix_*`` family that
+They stay top-level rather than going into a package because every one of them
+but this library is an entry point: one ``main_*``, and the ``check_*``/``fix_*`` family that
 ``check_all`` imports by bare name and that are also run singly.  A package would
 make ``python py/<pkg>/check_mark_order.py`` put the package directory on
 ``sys.path`` instead of ``py/``, which is the import surgery this repo has none of.
@@ -184,8 +184,10 @@ def out_dir() -> Path:
 
     Six are written by ``main_gen_misc_authored_english_documents``; the seventh,
     ``cam1753_crops_path()`` below, was appended to by the manual crop-ingest step
-    until that step was deleted on 2026-09-26, and now has LF line endings like the other 700
-    retained files.
+    until that step was deleted on 2026-09-26, and now has LF line endings like the other 183
+    text files among the 701 retained under ``gh-pages/book-of-job`` and
+    ``book-of-job/out``; the remaining 517 are binary, 515 PNG images and two WOFF2 fonts
+    (measured 2026-09-30 with ``git ls-files --eol``).
     """
     return paths.repo_root() / "book-of-job" / "out"
 

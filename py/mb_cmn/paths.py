@@ -120,8 +120,8 @@ def book_scans_root() -> Path:
     """The scan archive, holding one folder per scanned book (``BOOK_SCANS_ROOT`` overrides it).
 
     By default ``~/OneDrive/Documents/ScansOfBooks``, a personal collection outside every repo,
-    so this is absolute and checkout-independent: a worktree reads the same scans the primary
-    clone does.  NOT ``scans_dir`` above, which is where renderings made from these scans are
+    so this is absolute and checkout-independent: every checkout on the machine, in any
+    forest, reads the same scans.  NOT ``scans_dir`` above, which is where renderings made from these scans are
     written.
 
     Both readers of the archive, ``accgram.scan_page`` and ``scan_pages.editions``, have
@@ -167,8 +167,8 @@ def _env_name(name: str) -> str:
 def sibling_repo(name: str) -> Path:
     """Return the path to a sibling repo, e.g. "MAM-parsed".
 
-    Precedence: per-repo ``REPO_<NAME>_DIR`` -> ``REPOS_ROOT/name`` ->
-    ``repo_root().parent/name``.
+    Precedence: per-repo ``REPO_<NAME>_DIR`` -> ``repos_root() / name``, where
+    ``repos_root`` is ``REPOS_ROOT`` or else the parent of this checkout's home clone.
     """
     per_repo = os.environ.get(_env_name(name))
     if per_repo:

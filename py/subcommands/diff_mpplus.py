@@ -46,11 +46,13 @@ is read from MAM-basics history, which a shallow clone lacks beyond its depth:
 cb95915, pinned on 2026-09-17 without a snapshot, was missing on 2026-09-28 from
 the depth-50 clone of main at 8c2fa6c3 in a Claude cloud container, whose window
 reached back only to 2026-09-22, and the mega's diff-mpplus step stopped there.
-So, by Ben's decisions of 2026-09-28, --pin stores each boundary as it pins it,
-and --all, --check, a run with no arguments and the mega refuse a boundary that
-is not stored before comparing anything (_refuse_unstored_boundaries). With both
-in place, the change log needs no MAM-basics history but HEAD, which every clone
-has.
+So, by Ben's decisions of 2026-09-28, --pin stores each boundary as it pins it;
+--all, --check and the mega refuse, before comparing anything, every boundary
+that is not stored, and a run with no arguments refuses the latest release's end,
+the one boundary it compares, if it is not stored (_refuse_unstored_boundaries).
+A run with explicit --old and --new checks no boundary, and "stored" means listed
+in MAM-parsed/historical/manifest.json. With both in place, the change log needs
+no MAM-basics history but HEAD, which every clone has.
 """
 
 import argparse

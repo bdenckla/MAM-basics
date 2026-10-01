@@ -18,7 +18,7 @@ the whole introduction.
 
 WHAT IS MIRRORED, AND WHY THE SET IS DECLARED RATHER THAN DISCOVERED.  The thirteen
 pages of ``_SLUG_TO_TITLE`` below, which on 2026-08-31 were the whole of the
-introduction: 1,852,837 bytes of wikitext, the committed manifest's sum (this line said
+introduction: 1,852,837 bytes of wikitext, the sum in the manifest committed that day (this line said
 1,852,439 until 2026-09-01 -- a drafting-time fetch predating upstream edits of
 2026-08-30 and -31 to ch4 and the appendices).  The set is written out here so the slugs
 can be ASCII and stable, and ``_assert_declared_set_is_live_set`` then FAILS if the
@@ -31,7 +31,9 @@ those generated files that they "were only ever intended to be starting points f
 manual work on Wikisource."  ``index-aleppo`` and ``index-leningrad`` here are that
 manual work as published.  Ben's decision of 2026-09-10 removed both generators and
 their outputs from this repository, since they "will never be run again"; `git show --stat
-985262e2` names every file removed; Phase 3 of `doc/PLAN-mega-coverage.md` records the totals.
+985262e2` names every file removed. Phase 3 of the retired mega-coverage plan,
+https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md,
+records the totals.
 So the mirror is a drift
 check against nothing -- an earlier draft of this docstring called it a drift check
 between generator and page, which was wrong even while the generators existed: 26 of
@@ -50,7 +52,8 @@ network call.
 THE MIRROR IS A CONVENIENCE AND CAN BE STALE, which matters more here than for the
 books under ``in/mam-ws/``: those move when Ben edits them, the introduction moves when
 Avi Kadish does, without notice.  Five of the thirteen pages were edited in August 2026
-alone (the manifest's count; this said four until 2026-09-01, for the same
+alone (the count in the manifest committed on 2026-08-31, which the refresh of
+2026-09-27 replaced; this said four until 2026-09-01, for the same
 drafting-time-fetch reason as the byte figure above).  Read ``manifest.json``'s
 timestamps before treating a copy as current.
 

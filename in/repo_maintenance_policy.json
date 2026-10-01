@@ -89,6 +89,6 @@
     "roster": "Every forest holds the all-repos.code-workspace folders under canonical repository names with matching origins; no second repository roster exists.",
     "environments": "Each full clone owns its environments. Corresponding environments use tracked requirements.txt and constraints.txt at the same commit. Linked worktrees use their home clone's environments.",
     "integration": "Ordinary full-clone work commits on main; fetch and merge moved origin/main, repeat required checks, and push normally. Retry that loop after a rejected push.",
-    "portability": "Only pushed tracked state moves through origin. A task with unpushed commits or checkout-local untracked inputs stays in its checkout. External inputs use explicit user-level configuration."
+    "portability": "Only pushed tracked state moves through origin. A task with unpushed commits or checkout-local untracked inputs stays in its checkout. External inputs are user level: the scan archive at its default location, which BOOK_SCANS_ROOT overrides, and explicit account configuration."
   }
 }

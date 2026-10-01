@@ -34,9 +34,12 @@ A documentation-only, comment-only, docstring-only, or instruction-text-only cha
 suite. A change that can reach tier 3 owes a mega run and a reading of every tracked
 diff it leaves. Other executable-source, test, schema, or shared-data changes owe the
 suite. A change to a hand-run generator, or an input it reads, owes every affected
-hand-run generator and inspection of its outputs. AGENTS.md's "Integrating a worktree
-branch here: run the mega unless the branch is exempt" states the final worktree
-integration gate.
+hand-run generator and inspection of its outputs. A refresh of MAM's text is the
+exception for ``py/main_mam4sef.py`` and ``py/main_mam_osis.py``, by Ben's decision of
+2026-09-30, and a change to MAM's data is the exception for
+``py/main_hbce_psalms.py compare``, by his decision of 2026-09-26; AGENTS.md's products
+section states both. AGENTS.md's "Integrating a worktree branch here: run the mega
+unless the branch is exempt" states the final worktree integration gate.
 
 TIER 3 IS THE MEGA'S STEP TABLE, AND THAT IS NOT EVERY ROUTE INTO A PRODUCT
 
@@ -50,7 +53,9 @@ writes ``MAM-OSIS/`` and ``gh-pages/MAM-OSIS/``.  Ben took both out of the mega 
 from "this change reaches no product", and reading the first as the second is the
 mistake this paragraph exists to stop.  A change to a hand-run generator, or to any
 input it reads, owes rerunning every affected generator and inspecting every tracked
-output it writes; a mega run does not do that for it.
+output it writes; a mega run does not do that for it.  The one input change exempted
+for these two programs is a refresh of MAM's text: by Ben's decision of 2026-09-30
+their products may lag it, as their READMEs say.
 
 "NOT TIER 3" IS NOT "SAFE"
 

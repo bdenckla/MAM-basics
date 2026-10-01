@@ -385,7 +385,7 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_uxlc_estimate_atom_loc.py": (
         "Claude-written, accepted by Ben on 2026-09-10: a lookup that prints one"
-        " estimated folio, column and line.  Proposed in doc/mega-coverage-2026-09-10.md"
+        " estimated page, column and line.  Proposed in doc/mega-coverage-2026-09-10.md"
         " §4."
     ),
     "py/main_just_render_table.py --update-issue-metadata": (
@@ -462,9 +462,9 @@ NOT_IN_MEGA: dict[str, str] = {
         " use."
     ),
     "py/main_verse_links.py": (
-        "Claude-written proposal, not yet reviewed by Ben: an on-demand lookup that"
-        " prints the links for a verse, and an atom of it, named on its command line,"
-        " and writes nothing.  Its module docstring and"
+        "Ben's decision, 2026-09-30, approving a Claude-written proposal: an on-demand"
+        " lookup that prints the links for a verse, and an atom of it, named on its"
+        " command line, and writes nothing.  Its module docstring and"
         " dot-claude/skills/verse-links/SKILL.md describe that use.  Declared when the"
         " integration of https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage.md (update https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/PLAN-mega-coverage-update.md) merged main at 225ea3f2, which had"
         " gained the program in 5aae8465."
@@ -477,9 +477,10 @@ NOT_IN_MEGA: dict[str, str] = {
         ' hbce-psalms/README.md, under "Regenerating the outputs".'
     ),
     "py/main_hbce_psalms.py lint-receipt": (
-        "Claude-written proposal, not yet reviewed by Ben: it checks the Hebrew forms of"
-        " one dated receipt against hbce-psalms/, and writes nothing.  Recorded in"
-        " py/main_hbce_psalms.py's docstring and hbce-psalms/README.md."
+        "Ben's decision, 2026-09-30, approving a Claude-written proposal: it checks the"
+        " Hebrew forms of one dated receipt against hbce-psalms/, and writes nothing."
+        "  Recorded in py/main_hbce_psalms.py's docstring, hbce-psalms/README.md and"
+        " doc/PLAN-remediate-review-findings-2026-09-29.md."
     ),
     "py/check_all.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"

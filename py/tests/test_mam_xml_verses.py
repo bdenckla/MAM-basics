@@ -1,21 +1,27 @@
-"""MAM-simple through ``mb_cmn.mam_xml_verses``: a lint over the tree and a differential.
+"""MAM-simple through ``mb_cmn.mam_xml_verses``: a lint over the tree and two differentials.
 
 ``py/mb_cmn/mam_xml_verses.py`` reads MAM-simple/xml-vtrad-mam/ for locating text in
 manuscripts, and no program the mega runs calls it: the Evr. II B 55 page index uses it
 by hand. So without these checks a new MAM-simple element, such as the planned
 silluq-before-meteg, would surface only at the next hand use. Ben chose on 2026-09-26 to
-add both checks:
+add the first two checks, and the remediation plan he approved on 2026-09-28 added the
+third:
 
 1. THE LINT: every <verse> of every tracked MAM-simple/xml-vtrad-mam/*.xml passes
    ``get_verse_atoms``, and none of its atoms is empty. ``get_verse_atoms`` splits each
    entry of ``get_verse_words`` after every maqaf, so an entry ending in a maqaf would
    give an empty atom. Until the split moved into the reader on 2026-09-26, this lint
    checked the entries for a final maqaf instead.
-2. THE DIFFERENTIAL: for every <book39> of every file, ``get_verses_in_range`` over the
-   whole book returns exactly the verses that an independent scan of that <book39> finds,
-   in document order. The scan reads each verse's chapter and verse from its osisID and
-   shares no code with the reader. Until 2026-09-26 the reader took each file's first
+2. THE RANGE DIFFERENTIAL: for every <book39> of every file, ``get_verses_in_range`` over
+   the whole book returns exactly the verses that an independent scan of that <book39>
+   finds, in document order. The scan reads each verse's chapter and verse from its osisID
+   and shares no code with the reader. Until 2026-09-26 the reader took each file's first
    <book39> whatever book it was asked for, so 15 books were unreachable.
+3. THE CONTENT DIFFERENTIAL: over the whole corpus, the atoms the reader gives, marks as
+   well as letters, match an independent walk of the source nodes the reader selects
+   (``_selected_parts``), which shares none of the reader's word joining. It came with the
+   fix of 2026-09-28 that reads the child form of ``<kq-trivial>``, keeping Psalms 10:5's
+   second atom and its legarmeh.
 
 A tracked file missing from disk fails rather than skips, and the file, book and verse
 counts are asserted non-zero, so an empty scan cannot pass.

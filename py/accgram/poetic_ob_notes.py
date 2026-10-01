@@ -20,7 +20,7 @@ report understands. The poetic report currently renders:
     Mwd/UXLC reference links.
   * ``github-issue``    -- external GitHub issue URL, linked likewise.
   * ``img``             -- a Leningrad-Codex image filename under ``gh-pages/img/``
-    (the ``LC-<folio>-col-<n>-line-<n>-<ref>.png`` form), shown with an auto-derived
+    (the ``LC-<page>-col-<n>-line-<n>-<ref>.png`` form), shown with an auto-derived
     source caption; ``Da-at Miqra img`` / ``Aleppo img`` add a captioned companion
     image (see ``rtmsr_media.render_image_paragraphs``).
 """

@@ -148,7 +148,7 @@ def test_long_note_relegation():
     assert i_short < i_img < i_credit < i_further, section_html
 
     # Deut 5:7's elyon meteg is a further-discussion long note (§7.3): softened recap, a Yeivin
-    # ITM §355 citation, an LC folio-102A detail image, a closing aside on the charitably-read
+    # ITM §355 citation, an LC F102A detail image, a closing aside on the charitably-read
     # initial yod, and — unlike 5:13 — it relegates no inline UXLC x-note (relegated_position is
     # None, so it never joins _UXLC_NOTES_RELEGATED).
     meteg_html = H.el_to_str_no_wbr(
