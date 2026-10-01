@@ -6,8 +6,8 @@ work up from here rather than from a long handoff.
 
 **The Python behind this procedure lives in the sibling repo since 2026-08-01** (`6180f8d` took
 it out of wlc-utils with the rest of the code): every `py/...` path in this doc names a file
-under `C:/Users/BenDe/GitRepos/MAM-basics/py/`, which is why every command below runs from
-`C:/Users/BenDe/GitRepos/MAM-basics`, with that repo's interpreter. The `in/`, `out/`,
+under MAM-basics' `py/`, which is why every command below runs from the root of a full
+MAM-basics clone, with that clone's own interpreter. The `in/`, `out/`,
 `gh-pages/` and `.novc/` paths still name this repo, which the code writes back into. The same
 mapping covers the module names inside the committed transcription headers under
 `in/accgram/edition_transcriptions/`: all twelve name `accgram/transcription_editor.py`, four of
@@ -46,13 +46,13 @@ for each edition's page filenames; `BOOK_SCANS_ROOT` overrides the root). Render
 first to locate the Decalogue:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py scan-page "Feldheim Simanim Tiqqun" C208 --width 1100
+./.venv/Scripts/python.exe py/main_edition_transcription.py scan-page "Feldheim Simanim Tiqqun" C208 --width 1100
 ```
 
 Then build the per-line editor. **Default to the whole page — pass no `--crop` at all:**
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py editor "Feldheim Simanim Tanakh" A5-D-0297 --name simtan_dt_taxton_p297 --width 2000 --debug
+./.venv/Scripts/python.exe py/main_edition_transcription.py editor "Feldheim Simanim Tanakh" A5-D-0297 --name simtan_dt_taxton_p297 --width 2000 --debug
 ```
 
 **A crop is worth measuring only when a foreign column has to be excluded.** That is the
@@ -213,7 +213,7 @@ keeps the relevant marks visible. Ask one independent decision at a time with th
 to answer it, following `iterative-document-editing`, “Maintain cumulative state”.
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py check $HOME/Downloads/simtiq_dt_elyon_p208-transcription.json $HOME/Downloads/simtiq_dt_elyon_p209-transcription.json --key dt elyon printed
+./.venv/Scripts/python.exe py/main_edition_transcription.py check $HOME/Downloads/simtiq_dt_elyon_p208-transcription.json $HOME/Downloads/simtiq_dt_elyon_p209-transcription.json --key dt elyon printed
 ```
 
 It reports token and chanted-verse counts, every difference region with the reference word and
@@ -241,7 +241,7 @@ For any difference, before calling it an accent difference:
   `mun-mer`; p. 246 has two.
 - **Zoom the printed line** and let Ben re-read it. Never crop at the band edge:
   ```powershell
-  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py zoom-line <export.json> 12
+  ./.venv/Scripts/python.exe py/main_edition_transcription.py zoom-line <export.json> 12
   ```
   `zoom_line` pads a full band height above, because a tight crop once cut the upper dot off a
   zaqef qatan and left something that reads exactly like a revia. It also pads *sideways* past
@@ -250,7 +250,7 @@ For any difference, before calling it an accent difference:
   the **lower** one.
 - **Check all eight strands** before concluding whose divergence it is:
   ```powershell
-  C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py check --site השבת לקדשו
+  ./.venv/Scripts/python.exe py/main_edition_transcription.py check --site השבת לקדשו
   ```
   The site is located by the skeleton of the word *and* of the word after it. Confirm all eight
   strands are **listed**, and that every zero-hit row has an explanation — the word is absent
@@ -276,7 +276,7 @@ on whether a page's trailing empty lines are dropped — which is a difference i
 committed, not in style.
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_edition_transcription.py build <stem> --export <path>... --corrections <path>
+./.venv/Scripts/python.exe py/main_edition_transcription.py build <stem> --export <path>... --corrections <path>
 ```
 
 - `--export` takes one downloaded export per page, **in page order**; more than one gets the
@@ -306,7 +306,7 @@ for it to be recorded** ([#52](https://github.com/bdenckla/wlc-utils/issues/52))
 strand its header names, so:
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe C:/Users/BenDe/GitRepos/MAM-basics/py/main_accgram.py run-printed-decalogue
+./.venv/Scripts/python.exe py/main_accgram.py run-printed-decalogue
 ```
 
 writes it into the `transcriptions` section of

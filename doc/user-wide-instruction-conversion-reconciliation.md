@@ -23,7 +23,7 @@ full wording and deferrals remain in the approved remediation plan.
 | Old heading at `71f96ca3` | Current home or exact anchor | Disposition |
 |---|---|---|
 | Two axes of risk: does the change reach a product, and is the act hard to undo | Shared body: `Risk has two independent axes` | Retained; the unverified-result clause remains deferred (11.1). |
-| Git & commits — commit at will; integrate worktrees at archival | Shared body: `Git and commits`; worktree skill: `references/task-lifecycle.md` | Retained and relocated; approved named-checkout and failed-fast-forward safeguards restored (11.2); shared-review backup exception preserved (11.5). Four legacy clauses remain deferred (11.1). |
+| Git & commits — commit at will; integrate worktrees at archival | Shared body: `Git and commits`; worktree skill: `references/task-lifecycle.md` | Retained and relocated; approved named-checkout and failed-fast-forward safeguards restored (11.2); long-lived-branch backup exception restored (11.5). Four legacy clauses remain deferred (11.1). |
 | Verification cadence for multi-session work: cheap checks per commit, broad checks at risk and integration gates | Shared body: `Verification cadence for multi-session work` | Retained. |
 | Delegate bounded work when it helps | Shared body: `Delegate bounded work when it helps` | Retained. |
 | all-repos.code-workspace is the roster: clone only what it lists | Topology skill: `Sources of truth` | Relocated to the canonical topology skill. |
@@ -34,8 +34,8 @@ full wording and deferrals remain in the approved remediation plan.
 | Prompt authorship: sign the chips you write, never assume I wrote the one you got | Shared body: `Task prompts and handoffs` | Retained. |
 | A successor session verifies its exact checkout and commit before editing | Shared body: `Linked-worktree safeguards shared by Claude and Codex`; worktree skill: `references/task-lifecycle.md` | Retained and relocated; named-checkout and lost-edit/page-recovery safeguards restored (11.2). |
 | A worktree runs the primary clone's venv, by absolute path | Shared body: `Linked-worktree safeguards shared by Claude and Codex`; worktree skill: `references/worktree-runtime.md` | Retained and relocated; different-dependency environment rule restored (11.2). |
-| Running scripts — no inline one-liners | Shared body: `Shell, scripts, and file operations` | Retained. |
-| Prefer the built-in tools to shell, and a Python script to assembled shell | Shared body: `Shell, scripts, and file operations` | Retained; exact-command harness override remains deferred (11.1). |
+| Running scripts — no inline one-liners | Shared body: `Shell, scripts, and file operations` | Retained; exact-command harness override remains deferred (11.1). |
+| Prefer the built-in tools to shell, and a Python script to assembled shell | Shared body: `Shell, scripts, and file operations` | Retained. |
 | Throwaway scripts: the lowest bar of software | Shared body: `Shell, scripts, and file operations`, passage `A throwaway scratch script` | Retained. |
 | No `sys.path` surgery — one entry point per repo, subcommands under it | Shared body: `Python entry points and imports` | Retained. |
 | Authored paths use forward slashes | Shared body: `Authored paths use forward slashes` | Retained. |
@@ -46,8 +46,8 @@ full wording and deferrals remain in the approved remediation plan.
 | Template dispatch is closed — no defaults, guesses, or blind dives | Shared body: `Template dispatch is closed` | Retained. |
 | Tests: differential and lint-shaped only | Shared body: `Tests are differential or lint-shaped` | Retained. |
 | Prose: name the referent, don't leave me to reconstruct it | Shared body: `Prose names its subject` | Retained; report-end full-statement clause remains deferred (11.1). |
-| Prose: if you announce a count, NUMBER the items — `1.`, `2.`, `3.` | Shared body: `Prose names its subject` | Retained; do-not-delete-the-count clause remains deferred (11.1). |
-| Prose: a heading NAMES ITS SUBJECT — no cute or coy titles | Shared body: `Prose names its subject` | Retained; bold-lead-ins clause remains deferred (11.1). |
+| Prose: if you announce a count, NUMBER the items — `1.`, `2.`, `3.` | Shared body: `Prose names its subject` | Retained; do-not-delete-the-count and bold-lead-ins clauses remain deferred (11.1). |
+| Prose: a heading NAMES ITS SUBJECT — no cute or coy titles | Shared body: `Prose names its subject` | Retained. |
 | Prose: a reported finding says what HAPPENED to it — "has been fixed", up front | Shared body: `Prose names its subject` | Retained. |
 | Prose: the closing message opens with an H1 HEADING that names the report | Shared body: `Final messages begin with one H1 report heading` | Retained. |
 | Unicode in source code — no orphan combining marks | Shared body: `Unicode in source and at runtime` | Retained. |

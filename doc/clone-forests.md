@@ -89,7 +89,8 @@ Ordinary work in any full clone commits on `main`. Fetch and merge moved `origin
 checks owed by the merged changes, and push normally; repeat if the push is refused. A worktree
 integrates into its own home clone through the repository's verified fast-forward procedure.
 Only pushed tracked state moves through `origin`. A task needing checkout-local untracked inputs
-stays in its checkout; external inputs use explicit user-level account configuration.
+stays in its checkout; external inputs are user level: the scan archive at its default location,
+which `BOOK_SCANS_ROOT` overrides, and explicit account configuration such as pywikibot's.
 
 After building a secondary forest, use that forest's MAM-basics environment to run the suite
 and mega. Require no unexplained tracked output change, then check `--forest-status` and
