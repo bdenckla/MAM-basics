@@ -81,9 +81,10 @@ matters; clearing one axis does not clear the other.
   detached, follow `codex-worktree-tasks` for exact checkout verification and the
   `codex-worktree-<worktree-id>` branch name. Commit there without pushing the worktree branch.
 - Integrate a worktree branch immediately before the task is archived, or earlier only when Ben
-  asks or a concrete dependency requires it. Load `codex-worktree-tasks` and follow the
-  repository's integration check. The worktree's home clone receives only a verified fast-forward, then
-  `main` is pushed.
+  asks or a concrete dependency requires it. Follow the repository's integration check and the
+  linked-worktree safeguards below; ChatGPT-Codex also loads `codex-worktree-tasks`. The
+  worktree's home clone receives only fast-forwards, to a freshly fetched `origin/main` and to
+  the verified worktree branch, and then `main` is pushed.
 - Ask before rewriting history or discarding work: force-push, amend, rebase, hard reset, branch
   deletion, stash drop, or equivalent operations.
 - Correct a false claim in a pushed commit message through a later related commit or maintained
@@ -122,17 +123,20 @@ tracked `requirements.txt` and `constraints.txt` at the same commit; installed v
 vary by forest policy. Regenerate constraints only as a deliberate committed dependency change.
 A worktree uses its own home clone as its integration target and environment provider.
 
-Before pushing a full clone's `main`, fetch `origin`, merge `origin/main` if it moved, and run
-the checks owed by the resulting changes, including the mega when owed. Push normally. If the
-push is refused because origin moved, repeat the fetch, merge and affected checks in that full
-clone. Do not rewrite history or discard work to make the push pass.
+In ordinary work in a full clone, fetch `origin` before pushing `main`, merge `origin/main` if
+it moved, and run the checks owed by the resulting changes, including the mega when owed. Push
+normally. If the push is refused because origin moved, repeat the fetch, merge and affected
+checks in that full clone. When a worktree integrates into its home clone, the home clone takes
+no merge: worktree integration follows the linked-worktree safeguards below. Do not rewrite
+history or discard work to make the push pass.
 
 A task moves between checkouts only through commits pushed to `origin`. A task needing
 checkout-local untracked inputs, such as `.novc/`, stays in the checkout that holds them.
 Unpushed work stays in its checkout until pushed; neither state permits a forest-spanning
 handoff. Inputs outside every repository are user-level inputs reachable by every forest on
-that machine, discovered through explicit account configuration such as `BOOK_SCANS_ROOT` or
-the user's pywikibot configuration.
+that machine. The scan archive is at `$HOME/OneDrive/Documents/ScansOfBooks` by default, and
+`BOOK_SCANS_ROOT` overrides that location; other such inputs, such as the user's pywikibot
+configuration, are found through explicit account configuration.
 
 ## Linked-worktree safeguards shared by Claude and Codex
 
@@ -163,9 +167,14 @@ remote branch contains the page.
 A worktree may have its own freshly created environment when its task requires
 different dependencies. State that reason; never copy or junction the home clone's environment.
 
-If the worktree's home clone refuses the final fast-forward, return to the development
-worktree, merge the new main there, and repeat the applicable checks. Do not replace
-the failed fast-forward with a merge in the worktree's home clone.
+Before integrating a worktree, fetch `origin` in its home clone and fast-forward the home
+clone's `main` if `origin/main` moved. Immediately before the final fast-forward, fetch again;
+if `origin/main` is not then an ancestor of the worktree branch, merge it in the development
+worktree and repeat the applicable checks. If the home clone refuses the final fast-forward
+because its `main` moved, or its push of `main` is refused because `origin/main` moved, return
+to the development worktree, fetch `origin`, merge the moved branch there, repeat the
+applicable checks, and fast-forward again. Do not replace a failed fast-forward or push with a
+merge in the worktree's home clone.
 
 ChatGPT-Codex loads `codex-worktree-tasks` for the full task lifecycle and runtime procedure. Claude Code
 follows the shared safeguards above and the repository's own integration instructions.
@@ -291,16 +300,16 @@ for the plan checklist, cumulative revisions, handoffs, and finished dated recor
 “Executable plans” and “Finished receipts and maintained documents” sections are the
 procedures of record.
 
-Load `mam-repository-topology`, “Manual document retirement”, before retiring a receipt family
-or carrying out Ben-authorized reclassification. The applicable repository review procedure
-owns review filenames and review State conventions.
+Load `mam-repository-topology/references/repository-maintenance.md`, “Manual document
+retirement”, before retiring a receipt family or carrying out Ben-authorized reclassification.
+The applicable repository review procedure owns review filenames and review State conventions.
 
 ## Format changed Python with Black
 
 Run Black at its defaults on every Python file changed before committing. Format only the files
-changed; a repository-wide reformat is a separate commit. In a worktree, use the worktree's home clone's
-interpreter by absolute path as `codex-worktree-tasks` specifies. Never prefix Black or a tracked
-script with `PYTHONUTF8=1`.
+changed; a repository-wide reformat is a separate commit. In a worktree, use the worktree's home
+clone's interpreter by absolute path, as the linked-worktree safeguards say. Never prefix Black or
+a tracked script with `PYTHONUTF8=1`.
 
 In a full clone, a missing `.venv` means the clone is not hydrated; create the environment or
 stop. A linked worktree normally has no `.venv` and uses its home clone's environment. Do not fall
