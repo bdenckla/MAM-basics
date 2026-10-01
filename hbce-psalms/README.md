@@ -34,10 +34,13 @@ Room. They are reproduced here unchanged, under that license.
 
 The catalogue responses and robots.txt under `in/metadata/` state no terms, and no grant is made or
 implied here. The outputs under `out/` quote MAM, which keeps its CC-BY-SA 4.0 terms, and forms
-from HBCE's transcriptions, which keep CC BY 4.0 with the attribution above; the outputs change
-those forms only by splitting them into chanted words and, in `out/research_queue.md`, by putting
-their marks in MAM-normal order. [`../DATA-LICENSES.md`](../DATA-LICENSES.md) records the same
-terms.
+from HBCE's transcriptions, which keep CC BY 4.0 with the attribution above. The outputs change
+those forms only in these ways: they join each form that ends in a maqaf to the form after it,
+so that each form they quote is a chanted word; they replace U+05BA HEBREW POINT HOLAM HASER
+FOR VAV with U+05B9 HEBREW POINT HOLAM; they insert a space before a U+05C0 HEBREW PUNCTUATION
+PASEQ that ends one of HBCE's `<w>` elements; and, in `out/research_queue.md`, they put the
+forms' marks in MAM-normal order. [`../DATA-LICENSES.md`](../DATA-LICENSES.md) records the
+same terms.
 
 ## Files
 
@@ -59,10 +62,11 @@ The program is [`../py/main_hbce_psalms.py`](../py/main_hbce_psalms.py) and the 
 
 ## Regenerating the outputs
 
-From the repository root:
+From the root of a full MAM-basics clone, with its own environment (a linked worktree
+uses its home clone's interpreter by absolute path):
 
 ```powershell
-C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_hbce_psalms.py compare
+./.venv/Scripts/python.exe py/main_hbce_psalms.py compare
 ```
 
 It reads only this directory and this repository's MAM-simple, `MAM-parsed/plus/`, mirrored

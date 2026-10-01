@@ -1,3 +1,18 @@
+"""Tests of the special-page download, ``py/ws/ws_special_page_download.py``.
+
+The first test is lint-shaped: it checks the declared inventory against the mirrored
+chapter-2 introduction, ``in/mam-ws-intro/ch2.mediawiki``.
+
+BLESSED EXAMPLE-BASED BAND.  The other five test ids run the download over a stub API
+that this module builds, and are kept under the exception Ben decided on 2026-09-30,
+which ``AGENTS.md``, "Writing tests: differential and lint-shaped only", records.  The
+four fault-injection ids hold five cases.  Every case checks that a bad API response or
+bad local metadata makes the download raise, and every case but the last, a manifest
+overwritten with "not json", also checks that no mirrored file changed: a property with
+no regeneratable artifact.  The round trip is the only offline check of the download's
+reuse and forced refresh, neither of which a regenerated mirror's diff would show.
+"""
+
 import json
 from pathlib import Path
 import tempfile
@@ -249,8 +264,9 @@ def test_wrong_or_malformed_local_metadata_replaces_no_special_file():
             )
         assert {path.name: path.read_bytes() for path in out_dir.iterdir()} == before
 
+        _write_chapter_manifest(chapter_manifest_path, endpoint, downloader.identities)
         manifest_path.write_text("not json", encoding="utf-8")
-        with pytest.raises(ValueError):
+        with pytest.raises(ValueError, match="special-page manifest"):
             _download(
                 _CompleteInventoryDownloader(),
                 endpoint,

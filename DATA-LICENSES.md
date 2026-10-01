@@ -79,7 +79,7 @@ away:**
 | `gh-pages/MAM-simple/`, except `woff2/Taamey_D.woff2` | MAM-simple's generated index, HTML documentation, and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-simple product |
 | `MAM-for-Sefaria/` | MAM-for-Sefaria's standard and AJF CSV exports, Unicode-name listings, license, README, and source metadata | MAM's CC-BY-SA 4.0, as `MAM-for-Sefaria/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-for-Sefaria/` | MAM-for-Sefaria's generated index and stylesheets | MAM's CC-BY-SA 4.0, inherited from the MAM-for-Sefaria product |
-| `MAM-parsed/` | MAM-parsed's plain and plus JSON, historical release snapshots, documentation, license, and example program | MAM's CC-BY-SA 4.0, as `MAM-parsed/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
+| `MAM-parsed/` | MAM-parsed's plus JSON, historical release snapshots, documentation, license, and example program | MAM's CC-BY-SA 4.0, as `MAM-parsed/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-parsed/`, except `woff2/Taamey_D.woff2` | MAM-parsed's generated documentation, call graphs, and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-parsed product |
 | `MAM-with-doc/` | the MAM-with-doc product README, license, repository attributes, and ignore rules | MAM's CC-BY-SA 4.0, as `MAM-with-doc/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-with-doc/`, except `misc/img/` and every Taamey D font copy below it | MAM-with-doc's generated edition and documentation pages, stylesheets, scripts, and release-difference reports | MAM's CC-BY-SA 4.0, inherited from the MAM-with-doc product |
@@ -96,7 +96,7 @@ away:**
 | `evr-ii-b-55/` | a partial page index of National Library of Russia Evr. II B 55, read from the National Library of Israel's images of the codex by Claude sessions for Ben Denckla, with a table of the NLI's file ids for images 1–495 of the record's volume 2, the README and the images' provenance record. No image is tracked | Ben Denckla's compilation; **no grant is made or implied here.** The index cites and locates manuscript material without acquiring a blanket GPL-3.0 grant from its location |
 | `hbce-psalms/in/transcriptions/` | 35 TEI transcriptions of Aleppo Codex and Leningrad Codex pages, Psalms 1–51, by the Critical Edition of the Hebrew Psalter project, byte for byte as the INTF's Virtual Manuscript Room served them on 2026-09-26. `hbce-psalms/README.md` records how they were obtained, and why no more may be obtained that way | CC BY 4.0, as each file's header states beside "(C) 2026 Institut für Neutestamentliche Textforschung". Attribution: the Critical Edition of the Hebrew Psalter project, co-directed by Brent Strawn and Drew Longacre at Duke University, and the INTF. The files are unchanged |
 | `hbce-psalms/in/metadata/` | the Virtual Manuscript Room's catalogue responses for those documents, and the site's robots.txt | the INTF's; **no grant is made or implied here.** Neither the responses nor robots.txt states terms |
-| `hbce-psalms/out/` | script-regenerable comparisons of those transcriptions with MAM, and the research queue built from them | MAM's CC-BY-SA 4.0, inherited: the outputs quote MAM's text and doc-notes. The forms they quote from HBCE's transcriptions keep CC BY 4.0, with the attribution above; the outputs change those forms only by splitting them into chanted words and, in the research queue, by putting their marks in MAM-normal order |
+| `hbce-psalms/out/` | script-regenerable comparisons of those transcriptions with MAM, and the research queue built from them | MAM's CC-BY-SA 4.0, inherited: the outputs quote MAM's text and doc-notes. The forms they quote from HBCE's transcriptions keep CC BY 4.0, with the attribution above; the outputs change those forms only by joining each form that ends in a maqaf to the form after it, so that each form they quote is a chanted word, by replacing U+05BA HEBREW POINT HOLAM HASER FOR VAV with U+05B9 HEBREW POINT HOLAM, by inserting a space before a U+05C0 HEBREW PUNCTUATION PASEQ that ends one of HBCE's `<w>` elements, and, in the research queue, by putting their marks in MAM-normal order |
 | `hbce-psalms/README.md` | the directory's provenance, license and file map, Claude-written | MAM-basics' own work, so GPL-3.0 |
 | `doc/meteg-after-silluq-snips/` and `doc/lam-2-3-akhla-snips/` | the unpublished Second Rabbinic Bible crop and its source notes for the meteg-after-silluq work, plus crops from the Leningrad Codex, Cambridge Add. 1753 and Codex Sassoon 1053 for the Lamentations work; the published post-stress-meteg crops are under `gh-pages/img/` | **each rights holder's; no grant is made or implied here.** The crops are reproduced as evidence for the facts about each manuscript and edition documented beside them |
 | `in/diffable-pointed-hebrew-short-name-overrides.json` | the former diffable-pointed-hebrew product's nine short Unicode-name assignments, made by Ben Denckla | CC0 1.0 — the dedication at the end of this file. Until 2026-09-13 the file sat in `diffable-pointed-hebrew/` under that product's MIT `LICENSE`. The MAM-basics entry point under `py/` remains under this repository's GPL-3.0 license. |
@@ -127,20 +127,16 @@ sentence false.
 ## The MAM statement, repeated verbatim
 
 What follows is the license and attribution statement from the former MAM Google spreadsheet,
-which became a frozen historical archive on September 12, 2026. The statement is copied without
-change. The same file stands as `LICENSE.md` in the landed `MAM-parsed/`, `MAM-simple/`,
-`MAM-with-doc/`, `MAM-for-Sefaria/`, and `MAM-OSIS/` product directories. The historical
-`MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/` files retain the separate CC-BY-SA 3.0
-notice recorded above. Where the statement says "the data in this GitHub repository",
-read it as the MAM paths named in the table above, not as everything in MAM-basics.
-
-----
-
-We here repeat, in English & Hebrew, the licence & attribution information
-from the MAM Google spreadsheet.
-This information applies equally to the data in this GitHub repository.
-So, in the text below, ignore any references to "in this spreadsheet" (English)
-or שבגליון הנתונים הזה (Hebrew).
+which became a frozen historical archive on September 12, 2026. The statement is copied
+without change. Here it applies to the MAM paths named in the table above, not to everything
+in MAM-basics; in it, ignore the references to "in this spreadsheet" (English)
+and שבגליון הנתונים הזה (Hebrew). Each of the landed `MAM-parsed/`, `MAM-simple/`,
+`MAM-with-doc/`, `MAM-for-Sefaria/`, and `MAM-OSIS/` product directories holds a `LICENSE.md`
+that repeats the statement after a short preface saying that it applies equally to the data
+in that directory, or, for `MAM-with-doc/`, the edition MAM-basics publishes from
+`gh-pages/MAM-with-doc/`. The preface in `MAM-OSIS/LICENSE.md` excepts the historical
+`MAM-OSIS/MAPM-orig/` and `MAM-OSIS/MAPM-orig-24/` files, which retain the separate
+CC-BY-SA 3.0 notice recorded above.
 
 ----
 License:

@@ -14,7 +14,8 @@ onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move 
 and this page's corpus is MAM rather than WLC.
 
 IT LINKS TWO STYLESHEETS, and the second is the accgram one.  ``gh-pages/style.css`` is the
-deploy-root stylesheet, whose whole job is the light/dark switching; ``gh-pages/wlc/style.css``
+deploy-root stylesheet, which supplies light/dark switching, the bounded text measure and
+book-title italics; ``gh-pages/wlc/style.css``
 supplies the ``lang="hbo"`` font at the size that makes accents legible, the italic for a
 romanized accent name, and the numeric-cell alignment.  A stylesheet's ``@font-face`` URL
 resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font from here too.

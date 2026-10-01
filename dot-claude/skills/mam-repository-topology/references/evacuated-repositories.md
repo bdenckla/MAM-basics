@@ -58,8 +58,13 @@ time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely
 needs no clone. It raises with the command that fixes it:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/wlc-utils.git C:/Users/BenDe/GitRepos/wlc-utils
+git clone --depth 1 https://github.com/bdenckla/wlc-utils.git <forest>/wlc-utils
 ```
+
+In this command and the four below, `<forest>` is the directory holding the invoking
+checkout's home clone, `$HOME/GitRepos` or `$HOME/GitRepos<N>`, which is where
+`py/redirect_stubs/stubs.py`'s `source_pages_dir` looks, through `paths.sibling_repo`; the
+program's own message prints the exact path.
 
 **The stub set is frozen at `in/wlc_redirect_pages.json`, the 154 URLs wlc-utils published at the
 2026-08-17 move, and it can only shrink.** Until 2026-08-22 both subcommands derived it from the
@@ -103,7 +108,7 @@ MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
 publication still requires a temporary source host. Only when that work is selected:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git C:/Users/BenDe/GitRepos/MAM-OSIS
+git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git <forest>/MAM-OSIS
 ```
 
 From MAM-basics, run `py/main_redirect_stubs.py build --repo MAM-OSIS --publish`
@@ -133,7 +138,7 @@ machine.
 After Phase 4, only explicitly selected redirect-host work wants a temporary clone:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/Taamey_D.git C:/Users/BenDe/GitRepos/Taamey_D
+git clone --depth 1 https://github.com/bdenckla/Taamey_D.git <forest>/Taamey_D
 ```
 
 From MAM-basics, run `py/main_redirect_stubs.py build --repo Taamey_D --publish` and
@@ -198,7 +203,7 @@ without a source clone. If an old Holman page is renamed or dropped, temporarily
 redirect host with:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git C:/Users/BenDe/GitRepos/holman-ketiv-qere
+git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git <forest>/holman-ketiv-qere
 ```
 
 Then publish and check the frozen stubs with `--repo holman-ketiv-qere`, and remove the temporary
@@ -218,7 +223,7 @@ without a source clone. If an old UXLC page is renamed or dropped, temporarily r
 redirect host with:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/UXLC-utils.git C:/Users/BenDe/GitRepos/UXLC-utils
+git clone --depth 1 https://github.com/bdenckla/UXLC-utils.git <forest>/UXLC-utils
 ```
 
 Then publish and check the frozen stubs with `--repo UXLC-utils`, and remove the temporary clone

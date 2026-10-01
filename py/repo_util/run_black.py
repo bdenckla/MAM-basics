@@ -28,8 +28,8 @@ def _select_black_command(
         return [path_black, *tail]
     # Last resort: the base interpreter's own Scripts directory. Several
     # workspace repos deliberately have no .venv -- Ben's decision of
-    # 2026-08-31, whose reasoning is recorded in this project's auto-memory as
-    # venv-roster-2026-08-31.md -- and black is installed into the base Python
+    # 2026-08-31, whose reasoning no tracked record holds -- and black is installed
+    # into the base Python
     # for them, reached through Ben's persisted USER PATH. An agent shell does
     # not inherit that PATH, so shutil.which above returns None there and the
     # sweep would report every such repo as a problem when black is in fact

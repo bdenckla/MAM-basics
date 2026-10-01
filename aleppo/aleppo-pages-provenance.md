@@ -24,7 +24,7 @@ BookReader API at scale=2.
 
 ## Scope
 
-Leaves 270r through 281v (24 pages), covering the Book of Job in the
+Pages 270r through 281v, 24 in all, covering the Book of Job in the
 Aleppo Codex, and 13 more pages: 001r through 006r, and 148r and 148v.
 
 ## Naming convention

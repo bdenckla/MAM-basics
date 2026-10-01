@@ -1,7 +1,8 @@
-"""Download revision-checked MAM chapters and rebuild affected production books.
+"""Download MAM's declared special pages and revision-checked chapters, and rebuild affected production books.
 
 Run from the repository root with main_download.py fr-wikisource. All existing
-book/chapter selectors apply; --force-download retrieves every selected chapter.
+book/chapter selectors apply; --force-download retrieves every selected chapter and all
+36 declared special pages.
 """
 
 import time
@@ -16,7 +17,7 @@ from ws import ws_special_page_download as special_pages
 
 
 def run(book_plans, *, force_download=False):
-    """Download selected chapters, then always run the affected-book product hook."""
+    """Refresh the 36 declared special pages and download the selected chapters, then always run the affected-book product hook."""
     book_plans = [(he_bn_sbn, list(selected)) for he_bn_sbn, selected in book_plans]
     start = time.monotonic()
     session = api.CountingSession()

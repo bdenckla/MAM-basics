@@ -68,19 +68,21 @@ work. The old Claude body is historical evidence; the current Claude user-level 
 
 ## 1. Preconditions and setup for the session that executes this plan
 
-1. **Which checkout.** Use the verified MAM-basics development checkout named by the
-   execution task, with one writer. A linked worktree uses the primary clone's interpreter
-   `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`, while scripts, checks, staging
-   and commits run in that development checkout. Integrate and push `main` before deployment.
-   The complete user-configuration deployment runs only from the primary clone,
-   `C:/Users/BenDe/GitRepos/MAM-basics`, and installs from fresh `origin/main`; do not
-   substitute a worktree path into that deployment. Load `codex-worktree-tasks` for a linked
-   worktree's verification and integration procedure.
+1. **Which checkout.** Use the verified MAM-basics development checkout named by the execution
+   task, with one writer. A full clone uses its own interpreter, `./.venv/Scripts/python.exe`
+   from its root; a linked worktree uses its home clone's interpreter by absolute path, while
+   scripts, checks, staging and commits run in that development checkout. Integrate and push
+   `main` before deployment. The complete user-configuration deployment runs from any full
+   MAM-basics clone, never from a worktree, and installs from fresh `origin/main`. A linked
+   worktree's verification and integration follow the common body's linked-worktree
+   safeguards and the repository's integration check; ChatGPT-Codex also loads
+   `codex-worktree-tasks`.
 2. **Canonical-first order, for every deployed file.** Edit `dot-Codex/user-wide-AGENTS.md`,
    the tracked Claude wrapper, or the appropriate canonical skill in the verified MAM-basics
    development checkout. Commit, integrate and push `main`, then run the complete
-   `py/main_repo_util.py --sync-user-config` deployment from the primary clone and its read-only
-   `--check`. Never edit a live destination first. Follow the current deployment READMEs and
+   `py/main_repo_util.py --sync-user-config` deployment from a full clone, and its `--check`,
+   which fetches and compares without changing live configuration. Never edit a live
+   destination first. Follow the current deployment READMEs and
    skills rather than the superseded copy-back commands in this plan's historical proposals.
 3. **Load the `hebrew-prose` skill before editing its five files.** Its `when_to_use` covers any
    file whose text discusses accents, which its own files do. Nothing in this plan changes an
@@ -468,11 +470,15 @@ still need a decision.**
    wlc-utils (`25a7800`, `51e2748`, `cda21f9`, `ee21ebb`, `80ca0df`, `9c95cf9`), one each in
    mgketer (`efa95ccf`), al-hatorah (`cab47317`) and breuer-cos (`54440aa`) — with the dates the
    prose gives (`python .novc/review-2026-09-09/resolve_shas.py` → `shas_report.txt`).
-2. **Sections.** All 13 `§"…"` citations resolve, as do `clc-design.md` §2 and §7.16,
-   `PLAN-near-aleppo.md` §3 rule 7 and its step-40 row, the maintenance runbook's step 7,
-   `edition-transcription-workflow.md` §2, `review-findings-2026-07-29.md` item 14,
-   `mgketer/CLAUDE.md` §"UTF-8 Everywhere" rule 6, and finding 5.6 and row 22 of
-   `review-findings-2026-09-08.md` (`final_checks.py`).
+2. **Sections.** On 2026-09-09 all 13 `§"…"` citations resolved, as did `clc-design.md` §2 and
+   §7.16, `PLAN-near-aleppo.md` §3 rule 7 and its step-40 row, the maintenance runbook's step 7,
+   `edition-transcription-workflow.md` §2,
+   [`review-findings-2026-07-29.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-07-29.md)
+   item 14, `mgketer/CLAUDE.md` §"UTF-8 Everywhere" rule 6, and finding 5.6 and row 22 of
+   [`review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md)
+   (`final_checks.py`); `2a051ba5` later retired both reviews, and
+   [the 2026-09-08 review's update](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08-update.md)
+   with them.
 3. **Identifiers.** 87 cited identifiers, subcommands and phrases exist in MAM-basics or
    MAM-private; the only absences are the ones the prose asserts (`--line-length` in
    `run_black.py`, `pypdf` in any venv, `WLC_SIBLINGS_ROOT` outside its rename docstring) and M8–M9.
@@ -517,10 +523,10 @@ still need a decision.**
 8. **Integrate**: merge current `main` into the development branch and run the repository's
    applicable required gates there. Commit every explained generated change. A linked worktree
    receives the repository's mandatory final mega unless its branch is content-exempt; preserve
-   a still-relevant full-suite result under item 4. The primary checkout receives only a verified
-   `--ff-only` integration, followed by a normal `main` push. Run the complete
-   `py/main_repo_util.py --sync-user-config` deployment and its read-only `--check` from the
-   primary clone after the normal `main` push.
+   a still-relevant full-suite result under item 4. The worktree's home clone receives only
+   verified `--ff-only` integration, followed by a normal `main` push. Run the complete
+   `py/main_repo_util.py --sync-user-config` deployment and its `--check` from a full clone after
+   the normal `main` push.
 
 ## 6. The review's scripts and outputs, and how to run them
 
@@ -593,9 +599,10 @@ convention of record for both properties is the "The doc/ directory standard" se
    a misreading.** "Doc-only since 2026-09-01" (`5b89033`) says where a review is RECORDED: the
    thin tracking issue each review used to file is retired, and the `State:` line in the doc now
    carries the open/closed state that issue held. It says nothing about which files a review may
-   read. The reviews settle it themselves — `doc/review-findings-2026-09-08.md` is headed "review
-   of the public repos", counts 99 commits across two repositories and 513 changed paths, and reads
-   Python, pages and data throughout. **So `dot-claude/` and `dot-Codex/` need neither a scope
+   read. The reviews settle it themselves —
+   [`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-09-08.md),
+   retired by `2a051ba5`, is headed "review of the public repos", counts 99 commits across two
+   repositories and 513 changed paths, and reads Python, pages and data throughout. **So `dot-claude/` and `dot-Codex/` need neither a scope
    widening nor a deliberate exception: a doc-only review already reaches any tracked file in a
    public repository.** This is worth stating because two documents written on 2026-09-09 both read
    "doc-only" the other way, and either reading would have sent a future session to Ben for a

@@ -1,6 +1,6 @@
 ---
 name: hebrew-prose
-description: Ben's house rules for writing, editing, or reviewing any prose about Hebrew accentuation or cantillation, including rendered pages, docstrings, comments, commit messages, issue text, and chat. Use whenever text discusses accents, cantillation, maqaf, meteg, paseq or legarmeh, strands, Decalogue readings, or the prose and poetic systems. Also use for manuscript-versus-transcription prose beyond accentuation.
+description: Ben's house rules for writing, editing, or reviewing any prose about Hebrew accentuation or cantillation, including rendered pages, docstrings, comments, commit messages, issue text, and chat. Use whenever text discusses accents, cantillation, maqaf, meteg, paseq or legarmeh, strands, Decalogue readings, or the prose and poetic systems. Also use for manuscript-versus-transcription prose beyond accentuation, and for any prose that names a manuscript page or folio, such as "page F159A".
 ---
 
 # Hebrew accentuation prose
@@ -45,6 +45,8 @@ the repository-specific reference before writing. Load only the references neede
 - **General writing rules, corpus choice, and the checklist's reasoning:** read
   `references/core-rules.md`.
 - **A precise term, transliteration, name, or exemption:** read `references/terminology.md`.
+- **A manuscript page or folio locator, such as "page F159A":** read `references/terminology.md`,
+  “A manuscript page is named as a page, never as "folio 57a"”.
 - **Rendered HTML, tables, captions, headings, tooltips, or alt text:** read
   `references/rendered-prose.md`. Every table cell holding Hebrew is `dir="rtl"` unless the
   whole table already is.

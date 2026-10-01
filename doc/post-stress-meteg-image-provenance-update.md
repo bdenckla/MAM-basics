@@ -1,6 +1,6 @@
 # Post-stress-meteg image provenance: updates
 
-State: open; the finished base remains tracked.
+State: open, first entry 2026-09-28.
 
 Written by ChatGPT-Codex on 2026-09-28 under Ben's approved September 26 remediation plan.
 
@@ -41,3 +41,10 @@ current source and page links use the new names.
 | `st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-nexoshet.png` | `st-petersburg-evr-ii-b-55-f57a-image120-1S17v5-NXJF.png` |
 | `st-petersburg-evr-ii-b-55-image186-1K14v14-atta.png` | `st-petersburg-evr-ii-b-55-image186-1K14v14-G603FH.png` |
 | `urj-2005-Num23v26-eeseh.png` | `urj-2005-Num23v26-A3JH.png` |
+
+## Corrections made in the 2026-09-29 review's remediation, 2026-09-30
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. Line 3, "State: open; the finished base remains tracked.", now
+reads "State: open, first entry 2026-09-28.", the recorded form of an update's State (finding
+9.1).

@@ -29,7 +29,9 @@ attested illicit pair is mahapakh + tipexa (lv25:20); two accents stacked on one
 make the fault intrinsic to the letter -- an alphabet error, not an illegal grammatical
 sequence (which the grammar would otherwise flag as ``tipexa_phrase -> ERROR``, the
 wrong rationale).  The general guard supersedes the earlier mahapakh+tipexa-only check
-(output-neutral today, but future-proof; cf. memory parse-rate-not-a-goal).
+(output-neutral today, but future-proof; a checker's acceptance rate is diagnostic,
+not the objective: doc/agent-planning-principles.md, "Keep Verification Close To The
+Workflow").
 
 Prose-only is intentional and burns no bridge: a bare ``82`` is *valid* in the
 poetic accent system (tsinnorit, >200 uses), but the genre split already happens

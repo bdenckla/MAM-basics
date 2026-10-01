@@ -30,7 +30,7 @@ def _plus_header(header):
     """Return a plus-format header from legacy or already-unified input.
 
     Legacy plain headers used a dict for sub_book_names and included
-    book24_name inside each chapter_counts entry. Current plain headers
+    book24_name inside each chapter_counts entry. Current parser-stage headers
     already match plus shape for these fields.
     """
     out_header = dict(header)

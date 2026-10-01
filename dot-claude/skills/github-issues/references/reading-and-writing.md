@@ -60,12 +60,13 @@ them merely because an issue links them; inspect only within the authorized task
       resolves only once the plan has been pushed to `main`. When the plan's `State:` line comes
       to read `executed`, close the issue with a comment saying so
       (`references/state-changes.md`, section `Closing, reopening, relabelling and reassigning`).
-   2. **A `doc/review-findings-*.md` file gets no issue.** Its `State:` line carries open or
-      closed. The thin tracking issues the reviews used to file were retired on 2026-09-01, and
-      `doc/dual-agent-review.md`, “Review filenames and State lines”, owns the review State
-      rule; `check_repo_standards.py` retains the dated rationale. A review that finds work somebody must do still files a real
-      issue with a real body, as MAM-basics #233 is; the test is whether the issue says anything
-      the review file does not.
+   2. **A review file gets no issue**, whether it is a single-agent or blind review file or a
+      numbered dual-agent turn. Its line-3 `State:` follows `doc/dual-agent-review.md`, “Review
+      filenames and State lines”, and later remediation State and every disposition belong in
+      the first review file's single live update file. The thin tracking issues the reviews used
+      to file were retired on 2026-09-01; `check_repo_standards.py` retains the dated rationale.
+      A review that finds work somebody must do still files a real issue with a real body, as
+      MAM-basics #233 is; the test is whether the issue says anything the review file does not.
 5. **The title names the work or the question**, as a heading names its subject: "Retire the MAM
    Google Sheet pipeline", "Give the poetic scanner the prose scanner's fast path, about 5 s a
    mega run".

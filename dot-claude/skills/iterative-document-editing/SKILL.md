@@ -67,7 +67,8 @@ that passage's own words, rather than only a finding number or line number.
 The latest dated State declaration in the update is the effective State of its base; the update's
 own State remains open while the base is tracked. A base and its optional one update form one
 retirement family. A numbered sibling in Git history is historical evidence and does not
-authorize another numbered sibling. Load `mam-repository-topology`, “Manual document retirement”,
+authorize another numbered sibling. Load
+`mam-repository-topology/references/repository-maintenance.md`, “Manual document retirement”,
 for retirement references and Ben-authorized reclassification.
 
 Present-state documents, instructions, README files, comments, docstrings and plans still being

@@ -117,7 +117,7 @@ is a byte-for-byte copy: 31,812 bytes and 176 × 134 pixels.
 Ben identifies the source as Part B image 120, FL48718013. Opened fresh, the [National Library
 of Israel viewer](https://www.nli.org.il/en/manuscripts/NNL_ALEPH990000991240205171/NLI?volumeItem=2#$FL48718013)
 shows volume 2 and “Page 120.” The folio number 57 appears at the bottom of the image, so Ben
-identifies the page as folio **57a**.
+identifies the page as page **57a**.
 
 The whole verse occupies main-text lines 1–7 of the middle column, column 2 of 3 counting from
 the right. The verse-final chanted word is a single atom and is the first atom on line 7. No page
@@ -164,7 +164,7 @@ this final hand-crop on 2026-09-26. Its original filename is
 `21B4833733419862AA86979B28F9A950BFB116F11AE19D4C39B1CE0138C5FB76`. The published PNG is a
 byte-for-byte copy: 90,994 bytes and 308 × 200 pixels.
 
-The hand-crop comes from the [whole-folio photograph at
+The hand-crop comes from the [whole-page photograph at
 Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F195B.jpg). Daniel Holman's
 UXLC change proposal `2022.08.31-17`, which also credits Sefaria, records the transcription
 history; it is not the source of the published crop. Ben's inspection establishes what the
@@ -243,7 +243,7 @@ is `83FE2304070EEC24F85030A09C29C7CDF13AC87C3D73B3806CDF477C9CE3BD2B`. The track
 byte-for-byte copy with the same hash, dimensions 334 × 178 pixels, and no cropping, resizing,
 resampling, or re-encoding.
 
-The [whole-folio photograph at
+The [whole-page photograph at
 Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F377B.jpg) is a locator. The
 source site of the supplied screenshot is not recorded, and no column or line has been
 established from the crop.
@@ -317,7 +317,7 @@ The image was not cropped, resized, resampled, rotated, or sharpened; its 226 ×
 pixels, sRGB intent, gamma, and resolution metadata are unchanged. The tracked PNG's SHA-256 is
 `5A0170707F6978DEDC581D4852ABAD2C82168BDE491A2DC140607CB2AE737D94`.
 
-The [whole-folio photograph at
+The [whole-page photograph at
 Sefaria](https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F379B.jpg) is a locator. The
 source site of the supplied screenshot is not recorded, and no column or line has been
 established from the crop.
@@ -364,7 +364,7 @@ is a byte-for-byte copy: 31,904 bytes and 212 × 132 pixels.
 The crop comes from image file 632 at
 `C:/Users/BenDe/OneDrive/Documents/Tanakh/L-A_EVR-II-B-247_55/Ms. EVR II B 247, 55 Part B נביאים וכתובים (מזרחית, מאה י-יא; החסר בקהיר 22), סנקט פטרבורג, רוסיה - MOST KETUVIM/B247, B55 B (Large)-632-FL48719471.jpg`.
 The preceding scan, image file 631, is marked `307` on the page itself. Ben identifies `307` as a
-folio number and image file 632 as its second side, so this source image is recorded as folio
+folio number and image file 632 as its second side, so this source image is recorded as page
 **307b**.
 
 **St. Petersburg Evr. II B 55 has the silluq alone:** the crop has the stroke under the shin and
@@ -413,7 +413,7 @@ column 2, line 5.5 — two and a half lines low against the line 3 Ben read off 
 {'page': '380A', 'fline-guess': '32.5', 'line-guess': '5.5', 'column-guess': 2}
 ```
 
-The folio is right and the column is not independently confirmed: Ben named the line only, and
+The page is right and the column is not independently confirmed: Ben named the line only, and
 the column in this file's name is the estimator's.
 
 ## [cam1753-unlocated-Ps72v15-YBRKNHV.png](../../gh-pages/img/cam1753-unlocated-Ps72v15-YBRKNHV.png)
@@ -462,7 +462,7 @@ mgketer.org's image of Job 4.
 
 **The Aleppo Codex has two meteg/silluq strokes on this word, one under the mem and one under the
 he** — confirmed by Ben from this image on 2026-09-10. The Internet Archive's photograph of the
-leaf has the same two strokes at its resolution. This repository held that photograph as
+page has the same two strokes at its resolution. This repository held that photograph as
 `aleppo/aleppo-pages/271r.jpg` until 2026-09-26;
 `git show 1fba91fe:aleppo/aleppo-pages/271r.jpg` recovers it.
 

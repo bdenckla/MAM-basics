@@ -9,7 +9,7 @@ from mb_author import author
 _claim_def = _claims_core.claim_def
 
 # ---------------------------------------------------------------------------
-# JSON snippets shared by plain and plus common-templates sections
+# JSON snippets for the plus common-templates sections
 # ---------------------------------------------------------------------------
 
 JSON_KQ_PLUS = jsnip.read_text("mp_cmn_examples_and_file_naming", "kq_plus.json")

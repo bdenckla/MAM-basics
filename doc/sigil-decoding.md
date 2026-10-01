@@ -537,7 +537,9 @@ The key change in judgment is that Wikisource now carries much more weight than 
 
 **Resolved 2026-08-27: `ב2` is `ת451`.** They are two sigils for one manuscript, and the corpus
 now has `ת451` alone. It was repointed the same day, 32 occurrences over six chapters of Daniel;
-`doc/PLAN-replace-sigil-b2-with-t451.md` is the record of that work, and "Retired sigla" above is
+the retired
+[`doc/PLAN-replace-sigil-b2-with-t451.md`](https://github.com/bdenckla/MAM-basics/blob/4f3fed2dcb1e21835ad73a31ea8e5e472f4960d7/doc/PLAN-replace-sigil-b2-with-t451.md)
+is the record of that work, and "Retired sigla" above is
 the short decoder for text written before it.
 
 Avi Kadish, MAM's editor, gave the account on #259 on 2026-04-09. He chose `ב2` first, for its

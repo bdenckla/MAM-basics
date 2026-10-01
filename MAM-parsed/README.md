@@ -8,6 +8,13 @@ in the Wikisource-derived MAM-parsed-plus format under `plus/`.
 `plus/` contains one JSON file for each of the 24 books of the Miqra. Hebrew
 Wikisource supplies the source data.
 
+Until 2026-09-28 this directory also held a second format, MAM-parsed plain, under `plain/`. It was
+retired that day and is no longer generated or distributed. Git history keeps it:
+[`52f1f6bf`](https://github.com/bdenckla/MAM-basics/tree/52f1f6bfce902b1493a6738979aac959841e8f0d/MAM-parsed/plain),
+the last commit `main` pointed to before the retirement, holds its 24 book files. A link to a
+`plain/` file on `main` no longer resolves; pin such a link to that commit, or read the `plus/`
+file for the same books, whose format differs.
+
 Each JSON file represents its corresponding book in a format that is easier for a program to read than the source Wikitext.
 (It is easier for a *program* to read, that is. It is not very human-readable.)
 

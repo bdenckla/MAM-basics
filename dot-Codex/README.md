@@ -120,8 +120,8 @@ freshly updated `refs/remotes/origin/main`. It stages complete replacements and 
 replacements back if a later replacement fails. The former manual, live-first copy commands are
 retired.
 
-The read-only form reports `clean`, `drift`, or `not installed` for every Claude and Codex
-destination:
+The check form, which fetches `origin` but changes no live configuration, reports `clean`,
+`drift`, or `not installed` for every Claude and Codex destination:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check

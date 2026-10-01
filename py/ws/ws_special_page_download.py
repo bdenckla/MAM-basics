@@ -3,8 +3,10 @@
 The mirror is independent from the chapter JSON under ``in/mam-ws/``.  It keeps
 byte-verbatim Wikitext for the four Decalogue pages, the twenty-four song-form
 pages, and the eight chapter pages that carry the same layouts.  The literal
-inventory is checked against the two source tables in the local chapter-2
-introduction mirror before any network result can replace a file.
+inventory is checked against chapter 2 of the local introduction mirror before any
+network result can replace a file: the table in its Decalogue section gives three of
+the titles, the paragraph after that table gives the fourth, and its song-form table
+gives the other thirty-two.
 """
 
 from __future__ import annotations
@@ -135,7 +137,7 @@ def _links(text):
 
 
 def titles_from_intro(intro_text):
-    """Extract the inventory independently from chapter 2's two named tables."""
+    """Extract the inventory independently from chapter 2's Decalogue section and song-form table."""
     decalogue_start = intro_text.index("==עשרת הדברות: תצוגת מערכת הטעמים הכפולה==")
     decalogue_end = intro_text.index('==עיצוב טעמי אמ"ת במהדורתנו==', decalogue_start)
     decalogue_block = intro_text[decalogue_start:decalogue_end]
@@ -438,7 +440,18 @@ def download(
     chapter_metadata_path,
     force_download,
 ):
-    """Validate, retrieve, and atomically replace the special-page mirror."""
+    """Validate, retrieve, and replace the special-page mirror, one file at a time.
+
+    Every response is validated before anything is written.  Then each fetched page whose
+    bytes changed is replaced atomically through ``file_io.with_tmp_path``, and
+    ``manifest.json`` is replaced last; the mirror as a whole is not replaced atomically.
+    If writing a page's temporary file fails, ``with_tmp_path`` removes it and leaves the
+    page as it was, and a later run refetches any page whose bytes disagree with the
+    manifest.  If the final replacement fails, ``<slug>.tmp.mediawiki`` is left behind,
+    which Git ignores and ``_validate_existing_files`` rejects, so every later run, a
+    saving bot run's post-run download included, stops before any request until a person
+    deletes it.
+    """
     assert_declared_inventory()
     out_dir = Path(out_path)
     _validate_existing_files(out_dir)

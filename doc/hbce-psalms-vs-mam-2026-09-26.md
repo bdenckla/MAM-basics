@@ -1,6 +1,7 @@
 # HBCE Psalms versus MAM: the digital differences, and the manuscript questions they raise
 
 Claude-written on 2026-09-26 for Ben Denckla, who has not reviewed it.
+Updates and later status: [hbce-psalms-vs-mam-2026-09-26-update.md](hbce-psalms-vs-mam-2026-09-26-update.md).
 
 Claude Fable 5.1 drafted this report on 2026-09-26 as an untracked scratch file, and Claude Opus
 5.5 revised it the same day, when the comparison moved into this repository. Everything it cites

@@ -32,8 +32,9 @@ written as `../masorah-books/...` now resolves conceptually to
 `../MAM-private/masorah-books/...`; a path written as `../al-hatorah/...` now resolves
 conceptually to `../MAM-private/al-hatorah/...`. Ben chose on 2026-08-10 to document the eight
 stale `../masorah-books/...` citations rather than edit them. His 2026-08-11 al-hatorah decision
-covered seven historical accgram citations and one test site; only three of those eight sites
-literally used `../al-hatorah/...`. Those historical source citations remain as written. For live source research, use the
+named seven sites, six historical accgram citations and one test site; a re-measurement on
+2026-09-12 found an eighth, `post_stress_meteg.py:15`, written after the decision, and only three
+of the eight literally used `../al-hatorah/...`. Those historical source citations remain as written. For live source research, use the
 current MAM-private
 paths in `references/sources-and-corpora.md` and search the full Yeivin OCR before concluding that
 Yeivin is silent.

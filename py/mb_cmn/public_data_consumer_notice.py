@@ -76,8 +76,8 @@ def mam_parsed_notice() -> dict[str, object]:
                 "array, template, and element boundaries are not segmentation "
                 "boundaries."
             ),
-            MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
             NARPAS_GROUPING_RULE,
+            MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
             (
                 "Source boundary records such as the 0 and triple-tav pseudo-verses "
                 "are absent; the remaining structures still require documented role "

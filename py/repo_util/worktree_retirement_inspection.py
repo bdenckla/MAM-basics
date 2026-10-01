@@ -32,6 +32,17 @@ from repo_util.worktree_retirement_git import (
 _DISPOSABLE_CACHE_DIRS = frozenset(
     {"__pycache__", ".pytest_cache", ".ruff_cache", ".mypy_cache"}
 )
+# py/main_test.py's _add_windows_basetemp puts pytest's per-process base temporary
+# directories below this child of a checkout's root .novc on Windows. Retirement
+# relocates it with the rest of that .novc, but it is disposable cache: no spelling
+# of it, or of anything below it, is a citation that gates retirement.
+_SUITE_BASETEMP_NOVC_CHILD = "t"
+
+
+def _is_suite_basetemp(relative: str) -> bool:
+    return PurePosixPath(relative).parts[:1] == (_SUITE_BASETEMP_NOVC_CHILD,)
+
+
 _COMPARE_FILE_BUDGET = 500
 _GIT_OPERATION_MARKERS = (
     "MERGE_HEAD",
@@ -45,9 +56,20 @@ _GIT_OPERATION_MARKERS = (
 )
 
 
-def _status_entries(worktree: Path) -> list[str]:
+def _status_entries(
+    worktree: Path,
+    *,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
+) -> list[str]:
     output = _git_ok(
-        worktree, "status", "--porcelain=v1", "-z", "--untracked-files=all"
+        worktree,
+        "status",
+        "--porcelain=v1",
+        "-z",
+        "--untracked-files=all",
+        timeout_seconds=timeout_seconds,
+        noninteractive=noninteractive,
     )
     return [entry for entry in output.split("\0") if entry]
 
@@ -289,12 +311,17 @@ def _citation_references(
             raise RetirementError(
                 f".novc source is outside the retirement target: {source}"
             )
+        root_novc = _same_path(source, retirement_target / ".novc")
         retained = [(source, True)]
         retained.extend(
-            (source / relative, True) for relative in item["inventory"]["directories"]
+            (source / relative, True)
+            for relative in item["inventory"]["directories"]
+            if not (root_novc and _is_suite_basetemp(relative))
         )
         retained.extend(
-            (source / file["path"], False) for file in item["inventory"]["files"]
+            (source / file["path"], False)
+            for file in item["inventory"]["files"]
+            if not (root_novc and _is_suite_basetemp(file["path"]))
         )
         for path, directory in retained:
             spellings = [
@@ -405,10 +432,22 @@ def _tracked_relocation_citations(
     )
 
 
-def _operation_markers(worktree: Path) -> list[str]:
+def _operation_markers(
+    worktree: Path,
+    *,
+    timeout_seconds: int | None = None,
+    noninteractive: bool = False,
+) -> list[str]:
     present: list[str] = []
     for marker in _GIT_OPERATION_MARKERS:
-        path_text = _git_ok(worktree, "rev-parse", "--git-path", marker).strip()
+        path_text = _git_ok(
+            worktree,
+            "rev-parse",
+            "--git-path",
+            marker,
+            timeout_seconds=timeout_seconds,
+            noninteractive=noninteractive,
+        ).strip()
         marker_path = Path(path_text)
         if not marker_path.is_absolute():
             marker_path = worktree / marker_path

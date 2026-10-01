@@ -99,9 +99,13 @@ Every approved disposition has the following outcome:
    integration. The retirement's later execution completed that move; it is no longer pending.
 10. **Counter-finding C2's repository work was implemented later by the Google-Sheet retirement.**
     The independent 36-page special-page mirror and identity checks now belong to every
-    `fr-wikisource` run. The overall retirement remains incomplete until Ben applies and reports
-    the manual frozen-Sheet and Hebrew Wikisource documentation edits and the required live
-    results are verified. The September 14 remediation-plan update records that distinction.
+    `fr-wikisource` run. The retirement was completed on 2026-09-27: the
+    [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md)
+    records the frozen Sheet, the five Hebrew Wikisource documentation edits and both live
+    verifications as complete (`c450060e`). The update of the
+    [September 14 remediation plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14.md),
+    [PLAN-remediate-review-findings-2026-09-14-update.md](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14-update.md),
+    recorded the distinction while the retirement was incomplete; `e4934b6e` retired both.
 11. **Finding 9:** MAM-basics issue #278's obsolete hand-authored-directory example was removed
     without replacement. The issue remained open with its state, labels and assignment preserved,
     and received the required dated Codex note and agent-written comment.
@@ -148,3 +152,16 @@ Recorded by ChatGPT-Codex on 2026-09-29, at Ben's request. References in the fro
 turn records to `doc/PLAN-retire-google-sheet.md` are historical evidence, not current guidance.
 The completed receipt has been retired from the tracked tree and remains as the archived
 [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md).
+
+## 2026-09-30: corrections made in the 2026-09-29 review's remediation
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. In "Remediation completed and integrated on 2026-09-16", item 10,
+"The overall retirement remains incomplete until Ben applies and reports the manual frozen-Sheet
+and Hebrew Wikisource documentation edits and the required live results are verified. The
+September 14 remediation-plan update records that distinction." now reads "The retirement was
+completed on 2026-09-27: the Google Sheet retirement plan records the frozen Sheet, the five
+Hebrew Wikisource documentation edits and both live verifications as complete (`c450060e`). The
+update of the September 14 remediation plan, PLAN-remediate-review-findings-2026-09-14-update.md,
+recorded the distinction while the retirement was incomplete; `e4934b6e` retired both." Its links
+point to the archived family at `eea4c583` (the review's finding 4.1).

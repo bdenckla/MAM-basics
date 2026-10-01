@@ -1,6 +1,6 @@
 ---
 name: verse-links
-description: Build the links Ben asks for when he looks a verse or an atom up — mgketer.org and masoretica.org for the Aleppo Codex; tanach.us, masoretica.org and Sefaria's image of the Leningrad Codex folio with the atom's estimated column and line; MAM-with-doc and MAM on Hebrew Wikisource; and the rarer mechon-mamre.org and Chabad CTR links — by running MAM-basics' py/main_verse_links.py, never by writing a URL by hand.
+description: Build the links Ben asks for when he looks a verse or an atom up — mgketer.org and masoretica.org for the Aleppo Codex; tanach.us, masoretica.org and Sefaria's image of the Leningrad Codex page with the atom's estimated column and line; MAM-with-doc and MAM on Hebrew Wikisource; and the rarer mechon-mamre.org and Chabad CTR links — by running MAM-basics' py/main_verse_links.py, never by writing a URL by hand.
 when_to_use: Load when Ben asks for any of those links, or for where an atom is in the Leningrad Codex — "the masoretica and mgketer links for 2 Chronicles 28:23", "a sefaria link and the atom estimate" — and before any message that names a verse for Ben to look up in a manuscript or an edition. Not needed for links a generated page already has, such as the mgketer diff cards'.
 ---
 
@@ -67,13 +67,13 @@ One markdown link per line, in this order:
 | `MM` | the verse at mechon-mamre.org |
 | `UXLC` | the verse at tanach.us |
 | `tica LC` | the verse at masoretica.org, in the Leningrad Codex |
-| `LC <folio>` | Sefaria's image of that Leningrad Codex folio, with the estimator's column and line for the atom; a verse crossing a page break gets two such lines |
+| `LC F<page>` | Sefaria's image of that Leningrad Codex page, with the estimator's column and line for the atom; a verse crossing a page break gets two such lines |
 | `CTR` | the chapter in Chabad's Complete Tanach with Rashi, **only where MAM-basics records Chabad's URL for it** — ten chapters on 2026-09-10: seven psalms, Proverbs 8, Exodus 20 and Deuteronomy 5. For any other chapter the line says so and gives Chabad's index of the CTR instead. |
 
 ## Presenting the links to Ben
 
-1. **Links, not downloads.** Ben, 2026-09-10, when a session offered to download a leaf of each
-   codex: *"Normally i'm more interested in getting an mgketer.org link than an image since for
+1. **Links, not downloads.** Ben, 2026-09-10, when a session offered to download a page image
+   from each codex: *"Normally i'm more interested in getting an mgketer.org link than an image since for
    one thing I don't think its aleppo images are easy (or allowed?) to download. for leningrad
    images, i'm more interested in a sefaria image link plus an estimate of the atom location, or
    a tanach.us link for the verse (which will take me to the sefaria link and give me its own %
@@ -85,14 +85,14 @@ One markdown link per line, in this order:
    retyped. Ben asked for this of printed-edition lookups on 2026-09-10 — *"You didn't show me to
    the Zech 13:3 final word to confirm what I'm looking for (please do in future)"* — and his
    reason, that he confirms by the form that the atom he has found is the one meant, holds for a
-   manuscript folio as well. Where the client can render an inline widget, show pointed Hebrew in
+   manuscript page as well. Where the client can render an inline widget, show pointed Hebrew in
    one at twice the chat's text size and regular weight, never as a markdown heading, which is
    bold: *"many fonts don't show pointed Hebrew well in bold"* (Ben, 2026-09-10).
 4. **Say which count an atom number is in.** The `LC` line's "atom 11 of 11" counts the UXLC's
    atoms, as item 3 of the previous section describes; do not present it as MAM's atom number,
    which can differ.
 5. **Present the line as an estimate, and leave what the manuscript has for Ben to read.** The
-   folio comes from the UXLC's page index, and the column and line are interpolated by word
+   page comes from the UXLC's page index, and the column and line are interpolated by word
    count. The column agreed with Holman's own on 117 of 124 atoms, measured 2026-08-12
    (`py/main_estimate_uxlc_locations.py`). The line has been checked against the image twice,
    and both times the estimate put the atom lower on the page than it is: Lamentations 2:3 was

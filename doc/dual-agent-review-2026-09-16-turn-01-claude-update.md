@@ -88,8 +88,8 @@ remediation plan must present separately.
     review window; the reviewed repository trees require no correction from this finding.
 
 At the time of this decision entry, the fresh-task remediation plan with concrete editorial
-wording was the next close-out phase. The plan was subsequently written and executed on
-2026-09-18. This decision entry performed only the procedure-record update required after Ben's
+wording was the next close-out phase. The plan was subsequently written on 2026-09-17 and
+executed on 2026-09-18. This decision entry performed only the procedure-record update required after Ben's
 decisions.
 
 Product axis: this decision record and the procedure-record update reach no repository product.
@@ -267,3 +267,12 @@ from the tracked tree and remain at these immutable locations:
   and its [update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-remediate-review-findings-2026-09-14-update.md);
 - [Google Sheet retirement plan](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-retire-google-sheet.md); and
 - [September 16 turn 06](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/dual-agent-review-2026-09-16-turn-06-codex.md).
+
+## 2026-09-30: corrections made in the 2026-09-29 review's remediation
+
+Recorded by Claude on 2026-09-30, New York time, under the approved remediation plan for the
+2026-09-29 dual-agent review. In "Ben approved the complete close-out decision package on
+2026-09-17", "The plan was subsequently written and executed on 2026-09-18." now reads "The plan
+was subsequently written on 2026-09-17 and executed on 2026-09-18." `49c7b1c9` wrote the plan at
+2026-09-17 17:30:41, New York time, and `f3bd280a` set its State to "executed 2026-09-18" (the
+review's finding 4.7).

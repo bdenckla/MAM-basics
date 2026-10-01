@@ -52,8 +52,10 @@ pywikibot directory:
 
 ## Post-run download behavior
 
-By default, after `main_ws_bot.py real` completes its live edits, it
-automatically downloads the modified chapters into `in/mam-ws` and
+By default, after `main_ws_bot.py real` completes its live edits, it runs
+the same download function as `py/main_download.py fr-wikisource`, with a
+forced download: it refetches all 36 declared special pages into
+`in/mam-ws-special/`, downloads the modified chapters into `in/mam-ws` and
 reparses affected books.
 
 That download changes tracked book data just as

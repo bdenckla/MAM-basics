@@ -36,16 +36,28 @@ def run(args):
     return generate(output_dir)
 
 
-def generate_production(bkids, parsed_books):
+def generate_production(bkids, parsed_books, write_parser_stage_grammar_lock=False):
     """Write affected production groups, support files, and documentation."""
-    plus_paths = generate(paths.mam_parsed_dir(), bkids, parsed_books)
+    plus_paths = generate(
+        paths.mam_parsed_dir(),
+        bkids,
+        parsed_books,
+        write_parser_stage_grammar_lock=write_parser_stage_grammar_lock,
+    )
     mam_parsed_copy_py_files.copy_support_files()
     main_authored.cmd_gen_mam_parsed_docs(None)
     return plus_paths
 
 
-def generate(output_dir, bkids=None, parsed_books=None):
-    """Write complete affected book24 groups and return their plus paths."""
+def generate(
+    output_dir, bkids=None, parsed_books=None, write_parser_stage_grammar_lock=False
+):
+    """Write complete affected book24 groups and return their plus paths.
+
+    With write_parser_stage_grammar_lock, the parser stage's expanded stack grammar
+    lock is first rewritten from all 24 in-memory groups; every group is then
+    validated against the new lock, as on every run.
+    """
     selected_bkids = tuple(tbn.ALL_BK39_IDS if bkids is None else bkids)
     affected_bk24ids = {tbn.bk24id(bkid) for bkid in selected_bkids}
     parsed_books = parsed_books or {}
@@ -61,9 +73,17 @@ def generate(output_dir, bkids=None, parsed_books=None):
             names.BK39ID_TO_MAM_HBNP[bkid]
         ] = light_book
         print(f"Parsed Wikisource {bkid}", flush=True)
+    parser_stages = {
+        bk24id: mam_parser_stage.add_header(light_books)
+        for bk24id, light_books in grouped.items()
+    }
+    if write_parser_stage_grammar_lock:
+        assert set(parser_stages) == set(tbn.ALL_BK24_IDS), sorted(parser_stages)
+        parser_stage_validation.write_expanded_stack_grammar_lock(
+            parser_stages.values()
+        )
     plus_paths = []
-    for bk24id, light_books in grouped.items():
-        parser_stage = mam_parser_stage.add_header(light_books)
+    for bk24id, parser_stage in parser_stages.items():
         validation = parser_stage_validation.validate(parser_stage)
         plus = mam_parsed_plus.add_plus_stuff(parser_stage)
         parser_stage_validation.validate_plus_conversion(parser_stage, validation, plus)

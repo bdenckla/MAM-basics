@@ -146,7 +146,7 @@ KNOWN_FIELD_LABELS = frozenset(FIRST_FIELD_LABELS + OTHER_FIELD_LABELS)
 # The Psalms and Proverbs messages split that citation across two lines, the
 # scan file under "Image" and the column under "Location" or "Location R/L",
 # where every other message puts both on one. ``image_location`` joins whichever
-# of these a case has, so the two halves reach the folio and column readers as
+# of these a case has, so the two halves reach the page and column readers as
 # the single string they are everywhere else.
 IMAGE_LOCATION_LABELS = frozenset(
     (

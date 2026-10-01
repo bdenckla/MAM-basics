@@ -43,7 +43,7 @@
   has ונברכו בו with a space: WLC's **bracket-U** note there says outright that it agrees with
   both BHS 1997 and BHQ on an unexpected reading. That settles that the space is at least as old
   as BHS and is not WLC's alone — and settles nothing about the LC, which is why the verse is
-  `st-source: tbd` pending a look at folio 009B rather than `lc`. What DOES corroborate is
+  `st-source: tbd` pending a look at page F009B rather than `lc`. What DOES corroborate is
   someone reading the manuscript: je 37:10, the same shape, is `lc` because UXLC's note reports
   no maqaf in the image.
 - **Sibling corpora are not WLC 4.22.** A UXLC feature is UXLC-real, not WLC-4.22-real; verify
