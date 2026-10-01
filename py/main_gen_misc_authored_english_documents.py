@@ -1,5 +1,7 @@
 """Generate HTML documentation for this project."""
 
+import sys
+
 import boj_paths
 from boj_paths import D1D_DIR
 from author_boj_util import author
@@ -24,6 +26,8 @@ __all__ = ["main"]
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
 
     jobn_top = boj_paths.jobn_dir()
     # Delete all HTML and CSS files to avoid stale files when output names change

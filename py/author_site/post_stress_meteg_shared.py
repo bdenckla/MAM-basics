@@ -51,7 +51,7 @@ _NEXT_CONJUNCTIVE_FNAME = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_FNAME
 
 _NEXT_CONJUNCTIVE_TITLE = site_data.POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE
 
-_PHONETIC_MAM_URL = "https://bdenckla.github.io/phonetic-hbo/"
+_PHONETIC_MAM_URL = "https://bdenckla.github.io/MAM-basics/phonetic-mam/"
 
 _POST_SILLUQ_FOOTNOTE_ID = "footnote-1"
 
@@ -537,10 +537,10 @@ _CHRONICLES_8_11_LENINGRAD_GLOSSES = {
 }
 
 _ITM_ADAPTATION_URL_BY_SECTION = {
-    325: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns325",
-    332: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns332",
-    338: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-318_344.html#ns338",
-    354: "https://bdenckla.github.io/phonetic-hbo/yeivin_itm-345_357.html#ns354",
+    325: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns325",
+    332: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns332",
+    338: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-318_344.html#ns338",
+    354: "https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns354",
 }
 
 _ITM_SECTION_REFERENCE = re.compile(r"§(?P<section>[0-9]+)")

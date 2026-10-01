@@ -45,7 +45,7 @@ import urllib.error
 import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
 
 import boj_paths
 from mb_cmn import paths
@@ -222,6 +222,10 @@ class _HTMLInfo(HTMLParser):
                 href = attr_dict.get("href")
                 if href:
                     self.css_hrefs.append(href)
+            elif attr_dict.get("rel") == "icon":
+                href = attr_dict.get("href")
+                if href:
+                    self._categorize_href(href)
         if tag == "a":
             href = attr_dict.get("href")
             if href:
@@ -251,11 +255,11 @@ class _HTMLInfo(HTMLParser):
             # The server percent-decodes the path to find the file, so a file whose
             # name has a space, like MAM-with-doc's "E1-Song of Songs.html", is linked
             # with %20 in its place.
-            if "#" in href:
-                path_part, frag = href.split("#", 1)
-                self.internal_hrefs.append((unquote(path_part) or None, frag))
-            else:
-                self.internal_hrefs.append((unquote(href), None))
+            # A query selects page state; it is not part of the local filename.
+            # Split before decoding so an encoded question mark remains in a path.
+            parsed = urlsplit(href)
+            fragment = parsed.fragment if "#" in href else None
+            self.internal_hrefs.append((unquote(parsed.path) or None, fragment))
 
 
 def _parse_html(path: Path) -> _HTMLInfo:
@@ -438,7 +442,17 @@ def _check_font_files(css_path: Path, docs_dir: Path) -> list[str]:
 def _check_stale_files(docs_dir: Path, *, recursive: bool) -> list[str]:
     """Flag unexpected files: 0-byte, extensionless, etc."""
     issues = []
-    expected_exts = {".html", ".css", ".png", ".jpg", ".jpeg", ".woff2"}
+    expected_exts = {
+        ".html",
+        ".css",
+        ".js",
+        ".txt",
+        ".png",
+        ".jpg",
+        ".jpeg",
+        ".woff2",
+        ".svg",
+    }
     paths_in_scope = docs_dir.rglob("*") if recursive else docs_dir.glob("*")
     for path in sorted(paths_in_scope):
         if not path.is_file():
@@ -467,8 +481,12 @@ def _check_orphan_html(
             if path_part is not None:
                 target = (source_dir / path_part).resolve()
                 linked_targets.add(target)
-    # Entry point is index.html — it doesn't need to be linked to
-    index_path = (docs_dir / "index.html").resolve()
+    # Preserve the Yeivin product's canonical historical landing filename.
+    # Every other site's directory landing remains index.html.
+    landing = "index.html"
+    if docs_dir.resolve() == (paths.gh_pages_dir() / "yeivin-itm").resolve():
+        landing = "yeivin_itm.html"
+    index_path = (docs_dir / landing).resolve()
     issues = []
     for html_file in sorted(html_files):
         resolved = html_file.resolve()

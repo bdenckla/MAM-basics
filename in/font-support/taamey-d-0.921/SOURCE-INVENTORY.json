@@ -1,0 +1,92 @@
+{
+  "font": "Taamey D",
+  "version": "0.921",
+  "upstream_repository": "https://github.com/bdenckla/Taamey_D",
+  "upstream_commit": "40115a364a4e05f610cbd4e6a0abb76fd72b7dab",
+  "upstream_tag": "v0.921-2",
+  "upstream_sources_tree": "a14958c735b0bad0c65d741605364f972f8118ac",
+  "upstream_sources_url": "https://github.com/bdenckla/Taamey_D/tree/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources",
+  "binary": {
+    "filename": "Taamey_D.woff2",
+    "size": 21148,
+    "sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474",
+    "git_blob": "2aefa36f1a4154d86739be475d1dcd8e2d362ae8",
+    "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/docs/woff2/Taamey_D.woff2"
+  },
+  "source_scope": "All eight inputs of the upstream single-font Taamey D build path; unrelated fonts and their all-three-font driver are omitted.",
+  "source_files": [
+    {
+      "path": "sources/font-m-TaD/Taamey_D-nofea.sym.sfd",
+      "size": 164649,
+      "sha256": "439706f6a8bc8dfb2adc8cd4432798a5ad679d886cb0ad515b5ddcf637590e18",
+      "git_blob": "e45c324f532fa8caa857eeb796099be23fb4e9c0",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/font-m-TaD/Taamey_D-nofea.sym.sfd"
+    },
+    {
+      "path": "sources/font-m-TaD/Taamey_D.sym.fea",
+      "size": 32869,
+      "sha256": "efe3c35f8a5f23fdfc1fceecd95b15a4300cf24f0a1d42735e321e6ad0983343",
+      "git_blob": "988e7736d6c82e0b6ab22cfc34eab5988cea9d9c",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/font-m-TaD/Taamey_D.sym.fea"
+    },
+    {
+      "path": "sources/font-m-TaD/ffscript_generate_sfd_n_ttf.py",
+      "size": 437,
+      "sha256": "eb3e6c1ca7039c50824b4badd400a865c823babf0d63830abf2eb2670d8c3478",
+      "git_blob": "30e64817258c833a9b46d117fd2388f2899a626a",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/font-m-TaD/ffscript_generate_sfd_n_ttf.py"
+    },
+    {
+      "path": "sources/font-m-TaD/license.sym.txt",
+      "size": 37,
+      "sha256": "4da1233fb44bd05cfe777e363620563bc32c665611d824958b4fe55553c41d11",
+      "git_blob": "142a5d3517cb4246be92ea460900750d4ce24586",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/font-m-TaD/license.sym.txt"
+    },
+    {
+      "path": "sources/main_fill_in_template.py",
+      "size": 14239,
+      "sha256": "c25e9623a7254a9a0d95f874c40096451e013b653be8b9c50ac0a015bdc05ab5",
+      "git_blob": "8be96f3229941463e95c1844ef1d41d6c4baccde",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/main_fill_in_template.py"
+    },
+    {
+      "path": "sources/my_font_version.py",
+      "size": 18,
+      "sha256": "04f333249ea80c10df84c958af3a3abc03e8c9af47532c78ea18db6e662ee95a",
+      "git_blob": "8e393d08134be961c76dc36bc50d68ce695352a8",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/my_font_version.py"
+    },
+    {
+      "path": "sources/my_open.py",
+      "size": 1581,
+      "sha256": "ac8cd9de7afe4e7497c16879c9ebf1386fa9d7f3309fb6aa5159c03108aae199",
+      "git_blob": "d241bf4fb23d286400fe41a39d7e0cc93895774e",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/my_open.py"
+    },
+    {
+      "path": "sources/ps1_ffscript_generate_sfd_n_ttf_solo.ps1",
+      "size": 850,
+      "sha256": "c5eb1ede8c1264d52d491bc6318e5bfde2057d00840d610a67f45328814a5db9",
+      "git_blob": "18d17312a935fa4187f6e5b03ad298298465ed73",
+      "upstream_url": "https://github.com/bdenckla/Taamey_D/blob/40115a364a4e05f610cbd4e6a0abb76fd72b7dab/sources/ps1_ffscript_generate_sfd_n_ttf_solo.ps1"
+    }
+  ],
+  "font_notice": {
+    "origin": "OpenType name ID 0 of the exact frozen binary",
+    "extracted_utf8_sha256": "a9f90ba574cebfe67c6941706daf03eaf5c49159c082c44adf3dc7b997060d62",
+    "packaged_sha256": "25f37bd8a9785e2112994bb0583e6068aab610546b195dfbeb8b93c4ef79b9e1",
+    "formatting": "Removed whitespace on otherwise blank lines and added a final LF; all copyright and license wording preserved."
+  },
+  "gpl_text": {
+    "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+    "size": 17984,
+    "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+  },
+  "checks": {
+    "source_git_blob_hashes": "All eight verified against the pinned GitHub tree",
+    "source_input_closure": "Static inspection of script imports, driver file paths, and font-source includes",
+    "upstream_source_execution": "None",
+    "exact_binary_rebuild": "Not established"
+  }
+}

@@ -1,0 +1,75 @@
+Taamey D 0.921 source package
+===========================
+
+This package supplies the eight unmodified Taamey D-specific and shared build
+inputs from bdenckla/Taamey_D commit
+40115a364a4e05f610cbd4e6a0abb76fd72b7dab (tag v0.921-2).
+SOURCE-INVENTORY.json records every upstream file's exact size, SHA-256,
+Git blob identity, and pinned public URL.
+
+Build-input scope
+-----------------
+
+sources/font-m-TaD/Taamey_D-nofea.sym.sfd contains the editable glyph outlines.
+sources/font-m-TaD/Taamey_D.sym.fea contains the editable OpenType features.
+sources/font-m-TaD/license.sym.txt is the copyright/license template.
+sources/main_fill_in_template.py expands the templates using the shared
+sources/my_font_version.py and sources/my_open.py helpers.
+sources/ps1_ffscript_generate_sfd_n_ttf_solo.ps1 drives template expansion and
+sources/font-m-TaD/ffscript_generate_sfd_n_ttf.py uses FontForge to merge the
+features into the outlines and emit SFD, TTF, WOFF, and WOFF2 files.
+
+Static inspection found no further local imports, feature include files, or
+external outline files required by this single-font build path. The separate
+Shofar D and Taamey B font inputs and all-three-font driver are intentionally
+omitted. This is the Taamey D input closure, not the complete upstream repository.
+
+Upstream build procedure and dependencies
+----------------------------------------
+
+The unmodified driver targets Windows. From the extracted sources directory,
+the upstream command is:
+
+  ./ps1_ffscript_generate_sfd_n_ttf_solo.ps1 ./font-m-TaD Taamey_D
+
+The driver invokes python from PATH, Windows attrib, and FontForge's batch file
+under ProgramFilesX86/FontForgeBuilds/fontforge.bat. It therefore expects Python,
+PowerShell, Windows, and a FontForge installation with its Python module and
+WOFF2 support. These general-purpose tools are not included. The other Python
+imports are standard-library modules: argparse, string, os, pathlib, and json.
+
+No upstream build script was executed when this package was assembled. Upstream
+does not pin a complete build environment in these files. The package has not
+been rebuilt or tested for byte-for-byte reproducibility; the exact compiler,
+FontForge, compression-library, and runtime versions used for the frozen WOFF2
+have not been established. FontForge regenerates the font from the included
+editable inputs; reproducing identical binary bytes is not claimed here.
+
+Binary association
+------------------
+
+The frozen Taamey_D.woff2 is 21,148 bytes, version 0.921, SHA-256
+5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474,
+and Git blob 2aefa36f1a4154d86739be475d1dcd8e2d362ae8. That exact blob is
+docs/woff2/Taamey_D.woff2 at the pinned upstream commit above. The eight source
+files accompany that binary in the same commit, and my_font_version.py declares
+0.921. This association and static input review are the basis for providing this
+source package; they are not a claim of an independently verified exact rebuild.
+
+The separately advertised upstream release ZIP has different WOFF2 bytes.
+This source package is not that release ZIP and contains no font binary.
+
+License and notices
+-------------------
+
+FONT-NOTICE.txt transcribes the copyright, GNU GPL version 2 grant, and font-
+embedding exception from the frozen font's OpenType name table. Only whitespace
+on otherwise blank lines and the final newline differ from that extracted text.
+GPL-2.0.txt is the full, unmodified GNU GPL version 2 text from
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt.
+
+The source files retain their upstream bytes and notices. They are supplied as
+the corresponding editable font source and build inputs under the font's GNU
+GPL version 2 terms. No new GPL version 3 or CC0 grant is made over upstream
+material, and the document-embedding exception is not a release from the
+redistribution obligations for the font itself.

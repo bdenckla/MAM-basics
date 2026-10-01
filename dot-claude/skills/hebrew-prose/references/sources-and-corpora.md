@@ -65,12 +65,12 @@ Two homes, and they are not the same:
   2026-07-31, when it was renamed and CoS was merged in, so ITM and CoS share one tree; that tree
   moved out of its own clone into `MAM-private` on 2026-08-10, which is why the path carries that
   extra directory.
-- `../MAM-private/al-hatorah/py/itm/` — Ben's **partial adaptation**;
-  `my_yeivin_amisc_sec_not_yet_transcribed.py` names what is missing. That tree moved out of its
-  own clone into `MAM-private` on 2026-08-10 and the clone came off the disk on 2026-08-11, which
-  is why the path carries that extra directory; `bdenckla/al-hatorah` keeps a breadcrumb
-  `README.md` and its 124 issues, so an `al-hatorah#NN` citation still resolves. The body text
-  there is
+- `MAM-basics/py/yeivin_itm/content/` — Ben's **partial adaptation**;
+  `my_yeivin_amisc_sec_not_yet_transcribed.py` names what is missing. The 2026-10-01
+  evacuation work branch moves this selected source and its renderer to MAM-basics;
+  the old `MAM-private/al-hatorah/py/itm/` copy remains until the later retirement
+  gates pass. This does not move or replace the full OCR above. Historical
+  `al-hatorah#NN` citations keep their original tracker. The body text there is
   Yeivin's and Revell's, **not Ben's voice** (his footnotes in it are his) — exclude it when
   treating "Ben's own writing" as a style corpus.
 

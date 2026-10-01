@@ -106,6 +106,11 @@ def novc_dir() -> Path:
     return repo_root() / ".novc"
 
 
+def phonetic_mam_dir() -> Path:
+    """The tracked public display corpus, independent of any sibling checkout."""
+    return repo_root() / "Phonetic-MAM"
+
+
 def scans_dir() -> Path:
     """Where page renderings from the scan archive are written (``<novc_dir>/scans``).
 
@@ -207,7 +212,7 @@ def require_sibling(name: str, path: Path) -> Path:
 def display_path(path) -> str:
     """``path`` as a repo-qualified, machine-independent string, for recording in an artifact.
 
-    ``MAM-private/al-hatorah/io/a01-phonetic-std-set`` and
+    ``Phonetic-MAM/data`` and
     ``MAM-basics/MAM-simple/xml-vtrad-mam``: the repo's name, then the path within it,
     forward-slashed on every platform.
 
@@ -318,61 +323,3 @@ def require_mam_parsed_plus_dir() -> Path:
     if not path.is_dir():
         raise FileNotFoundError(f"MAM-parsed's landed plus JSON is absent: {path}")
     return path
-
-
-def al_hatorah_phonetic_dir() -> Path:
-    """al-hatorah's ``io/a01-phonetic-std-set``: Phonetic MAM, one JSON per book.
-
-    Each chanted word has a ``jta`` field whose ``!`` immediately precedes the stressed
-    syllable, which is what makes this an independent oracle for ``accgram.final_stress``.  The
-    engine behind it is al-hatorah's ``py/aht_phon``, which cannot be imported here -- issue wlc-utils#48
-    calls consuming these outputs its second path, and this is that path.
-
-    READ ``rep`` FOR MAM'S SPELLING OF A CHANTED WORD, NOT ``fva``.  A record's ``fva`` is
-    three space-separated forms -- full, vowels-only, accents-only -- and the full one has
-    Phonetic MAM's annotations on it, which MAM's text does not have. U+05C8 HEBREW POINT
-    SHEVA NA MUDGASH says a shewa is vocal, and U+05C9 HEBREW POINT DAGESH HAZAQ MUDGASH
-    says a dagesh is xazaq. ``rep``, where a record has one, is two space-separated forms whose
-    first is exactly that full form with U+05C8 and U+05C9 folded to U+05B0 and U+05BC -- so
-    MAM's Hebrew is already in the record and needs no stripping.  Measured 2026-09-09 under the pre-Unicode-18 annotation relation across
-    all 39 books, 263,320 records:
-    a record has a non-null ``rep`` exactly when its ``fva`` full form is annotated (122,555
-    either way), and no record contradicted either half. The present folding relation
-    was not remeasured here.  A session that read ``fva`` and took
-    an upper dot for an extraordinary point is why this paragraph is here.
-
-    DO NOT PASTE A FORM OUT OF THIS DATA -- lift it.  These files are in al-hatorah's mark
-    order, not NFC. Never normalize Hebrew, including this data.
-
-    PHONETIC MAM CANNOT REPRESENT AN EXTRAORDINARY POINT, which matters to any join against
-    this data. ``aht_read_handlers_cmn.phon_s_han_for_str`` deletes every U+05C4 the AHT
-    source has before the phonetic annotation is applied -- 98 of them, at the 15 classical
-    loci. So
-    Phonetic MAM's Hebrew differs from MAM's at those sites, and a chanted word with a genuine
-    extraordinary point cannot be matched on those marks; ``accgram.post_stress_meteg_sources._settle`` already handles that case with a second test.  al-hatorah's
-    ``io/a01-phonetic-std-set/README.md`` is the fuller statement of all three paragraphs.
-
-    A CODE PATH CALLS THIS EVERY TIME IT RUNS, OR NEVER.  Ben's rule, 2026-09-10, stated in
-    CLAUDE.md's section of that name: a path that finds it needs something from MAM-private
-    fails loudly instead of reaching for it.  A survey builder that needs Phonetic MAM's data
-    calls this unconditionally; a renderer working from a tracked survey never calls it.  The
-    post-stress-meteg renderer broke the rule until 2026-09-10: a displayed record with no MAM
-    form made it look up a spelling here, under ``--trust-surveys`` as well.
-
-    A subdirectory of MAM-private since 2026-08-10, not a sibling clone of its own: the
-    private evacuation programme moved every tracked file of ``bdenckla/al-hatorah``
-    under ``MAM-private/al-hatorah/`` and empties that repo to a breadcrumb README
-    (``MAM-private/doc/PLAN-evacuate-private-repos.md``, phases R.0-R.4).  So the env
-    override that moves this tree is now ``REPO_MAM_PRIVATE_DIR``; ``REPO_AL_HATORAH_DIR``
-    no longer reaches it, there being no sibling by that name to resolve.
-    """
-    return sibling_repo("MAM-private") / "al-hatorah" / "io" / "a01-phonetic-std-set"
-
-
-def require_al_hatorah_phonetic_dir() -> Path:
-    """``al_hatorah_phonetic_dir``, checked -- see ``require_sibling`` for why this is not a skip.
-
-    The clone named is MAM-private, not al-hatorah, so the failure advertises
-    ``REPO_MAM_PRIVATE_DIR`` -- the override that actually moves this tree.
-    """
-    return require_sibling("MAM-private", al_hatorah_phonetic_dir())

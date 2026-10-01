@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mam:phonetic-mam-public-v1",
+  "title": "Phonetic MAM public display book",
+  "description": "Only the generic Hebrew and display structure of the sanctioned pages. Shape validation does not replace the complete-output disclosure assessment.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "book",
+    "chapters"
+  ],
+  "properties": {
+    "schema": {
+      "const": "phonetic-mam-public-v1"
+    },
+    "book": {
+      "enum": [
+        "Genesis",
+        "Exodus",
+        "Levit",
+        "Numbers",
+        "Deuter",
+        "Joshua",
+        "Judges",
+        "1Samuel",
+        "2Samuel",
+        "1Kings",
+        "2Kings",
+        "Isaiah",
+        "Jeremiah",
+        "Ezekiel",
+        "Hosea",
+        "Joel",
+        "Amos",
+        "Obadiah",
+        "Jonah",
+        "Micah",
+        "Nahum",
+        "Habakkuk",
+        "Tsefaniah",
+        "Haggai",
+        "Zechariah",
+        "Malachi",
+        "Psalms",
+        "Proverbs",
+        "Job",
+        "Song of Songs",
+        "Ruth",
+        "Lamentations",
+        "Ecclesiastes",
+        "Esther",
+        "Daniel",
+        "Ezra",
+        "Nehemiah",
+        "1Chronicles",
+        "2Chronicles"
+      ]
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "number",
+          "verses"
+        ],
+        "properties": {
+          "number": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "verses": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/verse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^<>\\u05af\\u05c4\\u05c8\\u05c9]+$",
+      "not": {
+        "pattern": "\\\\[uU]"
+      }
+    },
+    "readingLabel": {
+      "enum": [
+        "קמץ-ד",
+        "קמץ-ס",
+        "טעם פשוטה",
+        "טעם מדרשית",
+        "טעם תחתון",
+        "טעם עליון",
+        "טעם תחתון, קמץ-ד",
+        "טעם עליון, קמץ-ד",
+        "טעם תחתון, קמץ-ס",
+        "טעם עליון, קמץ-ס"
+      ]
+    },
+    "implicitMaqaf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "const": "implicit-maqaf"
+        }
+      }
+    },
+    "superscriptE": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "const": "superscript-e"
+        }
+      }
+    },
+    "plainHebrew": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/text"
+          },
+          {
+            "$ref": "#/$defs/implicitMaqaf"
+          }
+        ]
+      }
+    },
+    "plainTranscription": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/text"
+          },
+          {
+            "$ref": "#/$defs/superscriptE"
+          }
+        ]
+      }
+    },
+    "stress": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "content"
+      ],
+      "properties": {
+        "kind": {
+          "const": "stressed"
+        },
+        "content": {
+          "$ref": "#/$defs/plainTranscription"
+        }
+      }
+    },
+    "unlabelledTranscription": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/text"
+          },
+          {
+            "$ref": "#/$defs/superscriptE"
+          },
+          {
+            "$ref": "#/$defs/stress"
+          }
+        ]
+      }
+    },
+    "hebrewReading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "label",
+        "content"
+      ],
+      "properties": {
+        "kind": {
+          "const": "reading"
+        },
+        "label": {
+          "$ref": "#/$defs/readingLabel"
+        },
+        "content": {
+          "$ref": "#/$defs/plainHebrew"
+        }
+      }
+    },
+    "transcriptionReading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "label",
+        "content"
+      ],
+      "properties": {
+        "kind": {
+          "const": "reading"
+        },
+        "label": {
+          "$ref": "#/$defs/readingLabel"
+        },
+        "content": {
+          "$ref": "#/$defs/unlabelledTranscription"
+        }
+      }
+    },
+    "hebrewCell": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/text"
+              },
+              {
+                "$ref": "#/$defs/implicitMaqaf"
+              },
+              {
+                "$ref": "#/$defs/hebrewReading"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "transcriptionCell": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/text"
+              },
+              {
+                "$ref": "#/$defs/superscriptE"
+              },
+              {
+                "$ref": "#/$defs/stress"
+              },
+              {
+                "$ref": "#/$defs/transcriptionReading"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "transcriptionColumns": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 4,
+      "items": {
+        "$ref": "#/$defs/transcriptionCell"
+      }
+    },
+    "row": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "hebrew",
+        "transcriptions"
+      ],
+      "properties": {
+        "hebrew": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/hebrewCell"
+          }
+        },
+        "transcriptions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sephardic",
+            "ashkenazic"
+          ],
+          "properties": {
+            "sephardic": {
+              "$ref": "#/$defs/transcriptionColumns"
+            },
+            "ashkenazic": {
+              "$ref": "#/$defs/transcriptionColumns"
+            }
+          }
+        }
+      }
+    },
+    "verse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "number",
+        "hebrew_columns",
+        "transcription_columns",
+        "rows"
+      ],
+      "properties": {
+        "number": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hebrew_columns": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "transcription_columns": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sephardic",
+            "ashkenazic"
+          ],
+          "properties": {
+            "sephardic": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "ashkenazic": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/row"
+          }
+        }
+      }
+    }
+  }
+}

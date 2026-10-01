@@ -34,14 +34,12 @@ naive one, and is reported as one figure under ``syllable_count`` rather than as
 cross-tabulation.  How badly the naive count reads his own SHORT list is re-derived by
 ``pin_breuer_examples`` and reported there, not stated here.
 
-THE ORACLE IS PHONETIC MAM, al-hatorah's ``io/a01-phonetic-std-set``, whose ``jta`` field marks
-the syllable boundaries and the stress.  Issue wlc-utils#48 asks for syllabification, open and
-closed syllables and vowel length derived from the pointing, and says to reuse that output
-rather than build one; this is that second path.  ``jta`` alone will not do for Breuer's big
-and small vowels -- it writes both patax and qamats gadol ``a``, and both qubuts and shuruq
-``u`` -- so the ``udl`` field, which keeps them apart, is lined up against it nucleus by
-nucleus.  The alphabets are read off al-hatorah's ``py/aht_phon/jtech_ascii.py`` and
-``deep_latin.py``.
+THE ORACLE IS PHONETIC MAM's public display corpus. Its transcription supplies
+syllable boundaries and primary stress; generic displayed Hebrew distinguishes the
+vowels needed by Breuer's criteria. The analysis reader combines these two public
+inputs transiently. Neither source audit records nor a stored quality-annotation layer
+is an input. Issue wlc-utils#48's second path is the use of Phonetic MAM's independently
+computed transcription rather than replacing it with this survey's stress model.
 
 THE CORPUS IS MAM, because a claim about what the accentuation DOES takes a consensus text.
 There is no committed tree corpus over MAM and there need not be one: a tree is what
@@ -85,6 +83,7 @@ import json
 import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from functools import cache
 from pathlib import Path
 
 from accgram import chanted_word_accents_units as cwa
@@ -94,15 +93,17 @@ from accgram import prose_filter
 from accgram.prose_ply_grammar import LOCATION_ONLY, build_parser, parse_tokens
 from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import tree_to_obj
-from mb_cmn import bib_locales as tbn
 from mb_cmn import file_io
 from mb_cmn import hebrew_punctuation as hpunc
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_cmn import hebrew_points as hpo
+from phonetic_mam import analysis_reader
+from phonetic_mam.core import vowar_and_accar, qere_from_implicit_kq
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
 # ---------------------------------------------------------------------------
-# The two phonetic alphabets, read off al-hatorah's py/aht_phon.
+# The transcription and temporary nucleus alphabets used by the shared core.
 # ---------------------------------------------------------------------------
 
 # jta nucleus characters (jtech_ascii.py's _JTECH_SEFARAD_FROM_UDL).  No consonant maps to any
@@ -113,7 +114,7 @@ JTA_REDUCED = JTA_HATAF | frozenset(
     "^"
 )  # Breuer's sheva na': a simple one, and every hataf
 
-# udl nucleus characters (deep_latin.py), written as named escapes and \u form because a bare
+# Core nucleus characters (deep_latin.py), written as named escapes and \u form because a bare
 # combining or exotic literal is unreadable in source.
 SHEVA_NA = "ə"  # LATIN SMALL LETTER SCHWA
 VARIKA_CW = "^"
@@ -220,7 +221,7 @@ UDL_NAME = {
 
 
 class Syllable:
-    """One jta syllable of a chanted word, with the udl nucleus that says which vowel it is."""
+    """One displayed syllable with its temporarily decoded vowel nucleus."""
 
     __slots__ = ("jta", "vowel", "udl", "stressed", "closed")
 
@@ -237,16 +238,13 @@ class Syllable:
         return self.vowel in JTA_HATAF
 
 
-def syllabify(jta: str, udl: str) -> list[Syllable]:
-    """Phonetic MAM's syllables for one chanted word, each with its true vowel.
+def syllabify(jta: str, udl: str, hebrew: str) -> list[Syllable]:
+    """Displayed syllables aligned with vowels decoded from public Hebrew and transcription.
 
-    ``jta`` carries the syllable boundaries -- ``.`` within an atom, ``-`` between the atoms of
-    a maqaf compound -- and the stress, ``!`` immediately before the stressed syllable.  What it
-    does not carry is the difference between patax and qamats gadol, or between qubuts and
-    shuruq, and Breuer's criteria 2 and 3 turn on exactly that.  ``udl`` keeps them apart, and
-    jta is generated from udl nucleus by nucleus, so the two hold the same nuclei in the same
-    order and are lined up here.  A count that does not line up RAISES: a silent mis-pairing
-    would attribute the wrong vowel to the syllable the verdict is read off.
+    The transcription retains the visible boundaries and stress. The temporary
+    core calculation distinguishes vowels with the same transcription, such as
+    patax and qamats gadol, using their generic Hebrew points. A nucleus-count
+    disagreement raises rather than assigning a vowel to the wrong syllable.
     """
     syllables: list[Syllable] = []
     for piece in re.split(r"[.\-]", jta):
@@ -264,6 +262,13 @@ def syllabify(jta: str, udl: str) -> list[Syllable]:
     ), f"{jta!r} / {udl!r}: {len(nuclei)} udl nuclei against {len(syllables)} syllables"
     for syllable, nucleus in zip(syllables, nuclei):
         syllable.udl = nucleus
+    if hpo.VARIKA in hebrew:
+        reading = analysis_reader.Reading(hebrew, jta)
+        source_syllables = [one for atom in reading.syllables() for one in atom]
+        assert len(source_syllables) == len(syllables)
+        for syllable, source in zip(syllables, source_syllables, strict=True):
+            if hpo.VARIKA in source["sylrec-fva"][0]:
+                syllable.udl = VARIKA_CW
     assert (
         sum(1 for s in syllables if s.stressed) == 1
     ), f"{jta!r}: stress not marked once"
@@ -373,10 +378,10 @@ PER_VOWEL = "one_syllable_per_vowel"
 CONVENTIONS = (BREUER, NO_CONNECTIVE_VAV_CLAUSE, PER_VOWEL)
 
 
-def analyse(jta: str, udl: str) -> dict:
+def analyse(reading: analysis_reader.Reading) -> dict:
     """Every count and every verdict for one chanted word."""
-    syllables = syllabify(jta, udl)
-    out: dict = {"jta": jta}
+    syllables = syllabify(reading.transcription, reading.decoded(), reading.hebrew)
+    out: dict = {"jta": reading.transcription}
     for name, groups in (
         (BREUER, fat_groups(syllables, breuer_vav=True)),
         (NO_CONNECTIVE_VAV_CLAUSE, fat_groups(syllables, breuer_vav=False)),
@@ -399,9 +404,6 @@ def analyse(jta: str, udl: str) -> dict:
 # Phonetic MAM
 # ---------------------------------------------------------------------------
 
-# Phonetic MAM's verse keys name the book too -- G1:1, E20:2, 1S12:3 -- and the book part can
-# itself start with a digit, so the chapter and verse come off the END.
-_VERSE_KEY = re.compile(r"^.+?(\d+):(\d+)$")
 # Numeric escapes because a character class wants range endpoints and because a bare combining
 # mark in a literal is unreadable and un-diffable.  U+05D0..U+05EA is alef through tav, the
 # five final forms included; U+05BE is maqaf; U+0591..U+05AE are the accents proper, which is
@@ -425,85 +427,17 @@ def accents_of(word: str) -> str:
     return "".join(_ACCENT.findall(word))
 
 
-_PHONETIC_MAM_LAYOUT_MARKERS = frozenset((None, "סס", "ססס", "פפ", "פפפ", "מ:פסק"))
-_CB_QAMATS = "cb-qamats"
-_CB_DUAL_CANTILLATION = "cb-dualcant"
-
-
-def _qamats_branch_labels(node: object) -> set[str]:
-    """Read the declared qamats label throughout one qamats alternative branch."""
-    if isinstance(node, dict):
-        label = node.get("phonrec-qamats")
-        return {label} if isinstance(label, str) else set()
-    if isinstance(node, list):
-        labels: set[str] = set()
-        for child in node:
-            labels.update(_qamats_branch_labels(child))
-        return labels
-    if isinstance(node, str) or node is None:
-        return set()
-    raise TypeError(f"unclassified Phonetic MAM qamats node: {type(node).__name__}")
-
-
-def _flatten(node: object, out: list[dict]) -> None:
-    """Flatten the historically included Phonetic MAM branches.
-
-    Concatenating alternative branches is not a valid single Phonetic MAM stream,
-    but rejecting that representation does not choose its replacement.  Ben
-    deferred the replacement in
-    ``doc/PLAN-deferred-template-projection-decisions.md``.  This closed dispatch
-    validates the current brackets while preserving the behavior on main.
-    """
-    if isinstance(node, dict):
-        out.append(node)
-        return
-    if isinstance(node, str):
-        if node in _PHONETIC_MAM_LAYOUT_MARKERS:
-            return
-        raise ValueError(f"unclassified Phonetic MAM marker: {node!r}")
-    if node is None:
-        return
-    if not isinstance(node, list):
-        raise TypeError(f"unclassified Phonetic MAM node: {type(node).__name__}")
-    if not node:
-        return
-    if node[0] == "cb":
-        for sub in node[1:]:
-            _flatten(sub, out)
-        return
-    if node[0] == [_CB_QAMATS]:
-        branches = node[1:]
-        labels = [_qamats_branch_labels(branch) for branch in branches]
-        if labels != [{"qamats-dal"}, {"qamats-sam"}]:
-            raise ValueError(f"unexpected {_CB_QAMATS} branches: {node!r}")
-        for branch in branches:
-            _flatten(branch, out)
-        return
-    if node[0] == [_CB_DUAL_CANTILLATION]:
-        branches = node[1:]
-        if len(branches) != 2:
-            raise ValueError(f"unexpected {_CB_DUAL_CANTILLATION} branches: {node!r}")
-        for branch in branches:
-            _flatten(branch, out)
-        return
-    for sub in node:
-        _flatten(sub, out)
-
-
 def load_phonetic_book(bb: str, cache: dict) -> dict:
+    """Read every displayed branch, preserving this survey's historical population.
+
+    The deferred projection decision does not change in this migration: alternative
+    branches are concatenated in their displayed order, including equal forms.
+    """
     if bb not in cache:
-        osdf = tbn.ordered_short_dash_full_39(wlc_bb_to_bk39id(bb))
-        path = paths.require_al_hatorah_phonetic_dir() / f"{osdf}.json"
-        data = json.loads(path.read_text(encoding="utf-8"))
-        per_verse: dict[tuple[int, int], list[dict]] = {}
-        for key, verse in data.items():
-            chnu, vrnu = _VERSE_KEY.match(key).groups()
-            entries: list[dict] = []
-            _flatten(verse, entries)
-            per_verse[(int(chnu), int(vrnu))] = [
-                e for e in entries if e.get("jta") and e.get("fva") and e.get("udl")
-            ]
-        cache[bb] = per_verse
+        cache[bb] = {
+            key: verse.readings()
+            for key, verse in analysis_reader.read_book(wlc_bb_to_bk39id(bb)).items()
+        }
     return cache[bb]
 
 
@@ -878,11 +812,11 @@ BREUER_EXAMPLES: tuple[BreuerExample, ...] = (
 )
 
 
-def _example_entry(example: BreuerExample, cache: dict) -> dict:
+def _example_entry(example: BreuerExample, cache: dict) -> analysis_reader.Reading:
     bb, chnu, vrnu = mna.split_bcv(example.bcv)
     words = load_phonetic_book(bb, cache).get((chnu, vrnu)) or []
     for entry in words:
-        if letters_and_maqaf(entry["fva"].split(" ")[0]) == example.letters:
+        if letters_and_maqaf(entry.hebrew) == example.letters:
             return entry
     raise AssertionError(f"{example.bcv} has no {example.letters} in Phonetic MAM")
 
@@ -908,7 +842,7 @@ def pin_breuer_examples() -> dict:
     per_vowel_calls_long = 0
     for example in BREUER_EXAMPLES:
         entry = _example_entry(example, cache)
-        analysis = analyse(entry["jta"], entry["udl"])
+        analysis = analyse(entry)
         breuer = analysis[BREUER]
         got = (
             _TWO_SYLLABLES
@@ -1127,6 +1061,23 @@ def scan_wlc_units(stats: Counter, notes: dict) -> list[dict]:
     return rows
 
 
+@cache
+def _written_forms_by_reading() -> dict:
+    """Public MAM spellings indexed by their perpetual-qere reading in the same verse."""
+    mam_dir = paths.require_mam_simple_vtrad_mam_dir()
+    references = mam_simple_verse.mam_simple_refs(mam_dir)
+    words_by_verse = mna.mam_words_for_cantillation(references, "cant-alef", mam_dir)
+    out = {}
+    for bcv, words in words_by_verse.items():
+        spellings = defaultdict(set)
+        for word in words:
+            spoken = qere_from_implicit_kq.get_qere_from_implicit_kq(word)
+            if spoken != word:
+                spellings[letters_and_maqaf(spoken)].add(letters_and_maqaf(word))
+        out[bcv] = spellings
+    return out
+
+
 def join_phonetic_mam(rows: list[dict], stats: Counter) -> list[dict]:
     """Attach Phonetic MAM's syllabification to each unit; return the units that will not join.
 
@@ -1147,23 +1098,21 @@ def join_phonetic_mam(rows: list[dict], stats: Counter) -> list[dict]:
             continue
         found = []
         for which in ("first", "zaqef"):
-            want = letters_and_maqaf(row[f"{which}_word_pointed"])
+            wanted_form = row[f"{which}_word_pointed"]
+            want = letters_and_maqaf(wanted_form)
+            written_forms = _written_forms_by_reading().get(
+                f"{bb}{row['mam_ref'][0]}:{row['mam_ref'][1]}", {}
+            )
             index = row[f"index_{which}"]
             hit = None
-            if (
-                index < len(words)
-                and letters_and_maqaf(words[index]["fva"].split(" ")[0]) == want
-            ):
+            if index < len(words) and letters_and_maqaf(words[index].hebrew) == want:
                 hit = words[index]
             else:
                 candidates = [
                     (abs(j - index), j, entry)
                     for j, entry in enumerate(words)
-                    if letters_and_maqaf(entry["fva"].split(" ")[0]) == want
-                    or (
-                        entry.get("before_qfikq")
-                        and letters_and_maqaf(entry["before_qfikq"]) == want
-                    )
+                    if letters_and_maqaf(entry.hebrew) == want
+                    or want in written_forms.get(letters_and_maqaf(entry.hebrew), ())
                 ]
                 if candidates:
                     hit = min(candidates)[2]
@@ -1172,17 +1121,15 @@ def join_phonetic_mam(rows: list[dict], stats: Counter) -> list[dict]:
             row["mam"] = "Phonetic MAM has no such chanted word in that verse"
             unaligned.append(row)
             continue
-        row["mam_first"] = found[0]["fva"].split(" ")[2]
-        row["mam_zaqef"] = found[1]["fva"].split(" ")[2]
-        row["mam_zaqef_pointed"] = found[1]["fva"].split(" ")[0]
+        row["mam_first"] = vowar_and_accar.vowar_and_accar(found[0].hebrew)[1]
+        row["mam_zaqef"] = vowar_and_accar.vowar_and_accar(found[1].hebrew)[1]
+        row["mam_zaqef_pointed"] = found[1].hebrew
         row["mam_agrees"] = bool(
-            accents_of(row["first_word_pointed"])
-            == accents_of(found[0]["fva"].split(" ")[0])
-            and accents_of(row["zaqef_word_pointed"])
-            == accents_of(found[1]["fva"].split(" ")[0])
+            accents_of(row["first_word_pointed"]) == accents_of(found[0].hebrew)
+            and accents_of(row["zaqef_word_pointed"]) == accents_of(found[1].hebrew)
         )
-        row["first_analysis"] = analyse(found[0]["jta"], found[0]["udl"])
-        row["analysis"] = analyse(found[1]["jta"], found[1]["udl"])
+        row["first_analysis"] = analyse(found[0])
+        row["analysis"] = analyse(found[1])
         stats["units joined to Phonetic MAM"] += 1
         stats["units where MAM has the same accents"] += row["mam_agrees"]
     return unaligned

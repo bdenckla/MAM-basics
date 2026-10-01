@@ -3,6 +3,8 @@ Generate the MAM-with-doc HTML output — two-column pages showing the MAM
 text alongside its Wikisource documentation notes, one HTML file per book.
 """
 
+import sys
+
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import ren_tag_survey as rts
@@ -61,6 +63,8 @@ def almost_main(bkids=None):
 
 def main():
     """Create MAM's HTML edition with its documentation notes."""
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
     bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     almost_main(bkids)
 

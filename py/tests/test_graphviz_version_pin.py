@@ -31,7 +31,7 @@ A MISSING INPUT FAILS, IT DOES NOT SKIP, and there are two ways this scan could
 quietly read nothing. `git ls-files` runs with cwd at the repo root, so a wrong
 root yields an empty list rather than an error; `_MIN_STAMPED` is the floor that
 turns that into a failure. And a Graphviz SVG that somehow lost its stamp would
-otherwise pass by looking like the one hand-made SVG here, so the unstamped set
+otherwise pass by looking like the known hand-made SVGs here, so the unstamped set
 is asserted to be exactly `_EXPECTED_UNSTAMPED` rather than merely tolerated.
 
 Run it inside the suite, or on its own:
@@ -48,14 +48,16 @@ from mb_cmn import graphviz_pin
 # py/tests/test_graphviz_version_pin.py -> tests -> py -> the repo root.
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
-# The one tracked SVG that Graphviz did not make. "MAM process original --
+# The historical SVG that Graphviz did not make. "MAM process original --
 # provenance.md" beside it records that it was exported from a Google Drawing
 # which is "no longer considered definitive", MAM-process.dot having replaced it
 # as the source. It is kept as the historical original, carries no Graphviz
-# stamp, and never will.
+# stamp, and never will. The shared site favicon is also hand-authored rather
+# than Graphviz output; its SVG contains only the icon's geometry and colors.
 _EXPECTED_UNSTAMPED = frozenset(
     {
         "doc/process-documentation/MAM process original.svg",
+        "gh-pages/favicon.svg",
     }
 )
 
@@ -112,7 +114,7 @@ class TestGraphvizVersionPin(unittest.TestCase):
             f"that regeneration on its own: {offenders}",
         )
 
-    def test_only_the_known_hand_made_svg_lacks_a_stamp(self):
+    def test_only_the_known_hand_made_svgs_lack_a_stamp(self):
         unstamped = frozenset(
             rel for rel, stamp in self.stamps.items() if stamp is None
         )

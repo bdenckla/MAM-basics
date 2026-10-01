@@ -1,0 +1,341 @@
+{
+  "schema": "yeivin-itm-legacy-differential-v1",
+  "legacy_commit": "8da90513df1c759d8db34b135d007e79686715d3",
+  "public_source_baseline": "4b12bc411cd852e9691c7337f37d9795532fa404",
+  "description": "Every old page is recovered byte-for-byte by reversing only the listed font-source link or Ben-approved claim corrections. Other adaptation modules remain byte-identical.",
+  "pages": {
+    "yeivin_itm-131_135.html": {
+      "old_sha256": "072b69c862ab1298a750c5d8e8a42cc3e392643af863cb042009fcc1a3d08881",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-192_206.html": {
+      "old_sha256": "1b7550a8776c5eb2a5baea9c56ac58699d97f3e0a066b97548d054f9d6024459",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-207_285.html": {
+      "old_sha256": "4af4e403531469f030f6bff67a20051ac87ff707932b9658bd0ce91e7b677ce8",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-307_310.html": {
+      "old_sha256": "8d6c342521f7a4bce533ffabf026f3cf01241ec3de358f1a7ead750d0f0ba874",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-311_317.html": {
+      "old_sha256": "e51a77f709fee617aa1981b4ba4951b3be6d181c09eee186a5d29896d6d413c7",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-318_344.html": {
+      "old_sha256": "e46e2e7a23bb713aa2b5b073f5f6961b4259e60d83215736962063546bcc2d9e",
+      "change_kind": "approved-ben-claims",
+      "changes": [
+        {
+          "new_start": 537,
+          "old": [
+            "I find 3,584 fully regular words, of which 355 (9.9%) are exceptions to the rule, breaking down as\n"
+          ],
+          "new": [
+            "I find 3,583 fully regular words, of which 353 (9.9%) are exceptions to the rule, breaking down as\n"
+          ]
+        },
+        {
+          "new_start": 539,
+          "old": [
+            "<li>133 disjunctives without the expected <span class=\"romanized\">gaʿya</span>.</li>\n",
+            "<li>222 conjunctives with the expected <span class=\"romanized\">gaʿya</span> of a disjunctive.</li>\n"
+          ],
+          "new": [
+            "<li>132 disjunctives without the expected <span class=\"romanized\">gaʿya</span>.</li>\n",
+            "<li>221 conjunctives with the expected <span class=\"romanized\">gaʿya</span> of a disjunctive.</li>\n"
+          ]
+        },
+        {
+          "new_start": 550,
+          "old": [
+            "find 222 conjunctives with the expected <span class=\"romanized\">gaʿya</span> of a disjunctive. I\n",
+            "find about 28% of <abbr title=\"fully regular pattern #1: מִתְקַטְּלִים\">FR1</abbr> conjunctives to\n"
+          ],
+          "new": [
+            "find 221 conjunctives with the expected <span class=\"romanized\">gaʿya</span> of a disjunctive. I\n",
+            "find about 29% of <abbr title=\"fully regular pattern #1: מִתְקַטְּלִים\">FR1</abbr> conjunctives to\n"
+          ]
+        },
+        {
+          "new_start": 986,
+          "old": [
+            "<abbr title=\"fully regular pattern #2: מִתְפַּלְפְּלִים\">FR2</abbr>, we would “explain” only a\n",
+            "single <span class=\"romanized\">gaʿya</span>, that in\n",
+            "<bdi lang=\"hbo\" data-bk-ch-vr=\"@Ez 3:15\" title=\"Ez 3:15\">אֶֽל־נְהַר־כְּבָר֙</bdi>. What’s more, I\n",
+            "find that <span class=\"romanized\">gaʿya</span> to be an outlier: if we let\n",
+            "<abbr title=\"almost fully regular pattern #1\">AFR1</abbr> include words like\n",
+            "<abbr title=\"fully regular pattern #2: מִתְפַּלְפְּלִים\">FR2</abbr>, that would add 16\n"
+          ],
+          "new": [
+            "<abbr title=\"fully regular pattern #2: מִתְפַּלְפְּלִים\">FR2</abbr>, we would “explain” only two\n",
+            "instances of <span class=\"romanized\">gaʿya</span>, including that in\n",
+            "<bdi lang=\"hbo\" data-bk-ch-vr=\"@Ez 3:15\" title=\"Ez 3:15\">אֶֽל־נְהַר־כְּבָר֙</bdi>. These remain a\n",
+            "small minority: if we let <abbr title=\"almost fully regular pattern #1\">AFR1</abbr> include words\n",
+            "like <abbr title=\"fully regular pattern #2: מִתְפַּלְפְּלִים\">FR2</abbr>, that would add 16\n"
+          ]
+        },
+        {
+          "new_start": 994,
+          "old": [
+            "word differing only by accent from that one “poster child.” Although\n"
+          ],
+          "new": [
+            "word differing only by accent from the example just cited. Although\n"
+          ]
+        }
+      ]
+    },
+    "yeivin_itm-345_357.html": {
+      "old_sha256": "4c5e921aeeb5d0cb28ab21dfa7de233277672b99a8f479787dd2f38eb3cfb10b",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-358_374.html": {
+      "old_sha256": "7492e03209a9419dbb03dfc0559307cc14bb8bc227ad6be5d3d4dd52e6ab42e3",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-375_375.html": {
+      "old_sha256": "9c5c098b7054fb6d2a9f3f2096aea8726c9c443454d403c4b801d615b79d512d",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-376_393.html": {
+      "old_sha256": "59520702aa365bf7c791705437e3323915a847e265d2a1328b129b5713f9e357",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-394_416.html": {
+      "old_sha256": "c83c0d6cc170919992c02d7167921b934b6643b1edfa38aa94c40eabc5542dbb",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-huge-ftnt-320.html": {
+      "old_sha256": "3fb16b8ba0e00570dd43c71f8a307f28408ad5229f6fd4ec9e28e2e60e4efada",
+      "change_kind": "approved-ben-claims",
+      "changes": [
+        {
+          "new_start": 11,
+          "old": [
+            "<p>My research disagrees with this estimate of a few dozen. I find 133 disjunctives without the\n"
+          ],
+          "new": [
+            "<p>My research disagrees with this estimate of a few dozen. I find 132 disjunctives without the\n"
+          ]
+        },
+        {
+          "new_start": 69,
+          "old": [
+            "133 disjunctives without the expected <span class=\"romanized\">gaʿya</span> nonetheless have a\n"
+          ],
+          "new": [
+            "132 disjunctives without the expected <span class=\"romanized\">gaʿya</span> nonetheless have a\n"
+          ]
+        },
+        {
+          "new_start": 82,
+          "old": [
+            "the expected <span class=\"romanized\">gaʿya</span>? I find that 6 of the 133 disjunctives without the\n"
+          ],
+          "new": [
+            "the expected <span class=\"romanized\">gaʿya</span>? I find that 6 of the 132 disjunctives without the\n"
+          ]
+        }
+      ]
+    },
+    "yeivin_itm-huge-ftnt-322.html": {
+      "old_sha256": "bb482c95b2f0b2915c1e6a9723aa59ef374f59d4a208a77305f38ce6e32a4cc5",
+      "change_kind": "approved-ben-claims",
+      "changes": [
+        {
+          "new_start": 34,
+          "old": [
+            "<p>While I find that about 6% of FR disjunctives (130 out of 2174) lack the expected\n"
+          ],
+          "new": [
+            "<p>While I find that about 6% of FR disjunctives (132 out of 2184) lack the expected\n"
+          ]
+        },
+        {
+          "new_start": 40,
+          "old": [
+            "(20 out of 106) lack the expected <span class=\"romanized\">gaʿya</span>. Although this shows that\n"
+          ],
+          "new": [
+            "(20 out of 107) lack the expected <span class=\"romanized\">gaʿya</span>. Although this shows that\n"
+          ]
+        },
+        {
+          "new_start": 45,
+          "old": [
+            "<li>I find that about 60% of <abbr title=\"almost fully regular pattern #4\">AFR4</abbr> disjunctives\n",
+            "(63 out of 105) lack the expected <span class=\"romanized\">gaʿya</span>. This is just plain\n"
+          ],
+          "new": [
+            "<li>I find that about 56% of <abbr title=\"almost fully regular pattern #4\">AFR4</abbr> disjunctives\n",
+            "(72 out of 129) lack the expected <span class=\"romanized\">gaʿya</span>. This is just plain\n"
+          ]
+        },
+        {
+          "new_start": 65,
+          "old": [
+            "same (65%) is true for AFR1, and AFR4 is once again wildly different, with only about 32% of words\n"
+          ],
+          "new": [
+            "same (65%) is true for AFR1, and AFR4 is once again wildly different, with only about 35% of words\n"
+          ]
+        }
+      ]
+    },
+    "yeivin_itm-huge-ftnt-385-2.html": {
+      "old_sha256": "bbc95411ddb320c7506b8eb54a5babfbd94338d084919aadeabf27718628c1cd",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-huge-ftnt-385-4.html": {
+      "old_sha256": "2d71337e4822fc09854ac7e0690d8d3468fb35fdbc407b1f5dd3f96f9c253a52",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm-huge-ftnt-385-5.html": {
+      "old_sha256": "3d9a0b83ed7cca4a41c2568ab011bec20d30dfce80eac6e90c7c81b68de0aa2b",
+      "change_kind": "unchanged",
+      "changes": []
+    },
+    "yeivin_itm.html": {
+      "old_sha256": "fee11d95f4a89eee7b79450211cf3a49c65b20f9cb2fb044b9054fce82551b6e",
+      "change_kind": "font-source-provenance",
+      "changes": [
+        {
+          "new_start": 29,
+          "old": [],
+          "new": [
+            "<p><a href=\"woff2/SOURCE.txt\">Font license and source</a></p>\n"
+          ]
+        }
+      ]
+    }
+  },
+  "unchanged_content_sha256": {
+    "my_yeivin_amisc_helpers_for_bibrefs.py": "fb19f12c96293f9d691316cdc297b32750815881f80d0dcbbb48f2d13a22eb89",
+    "my_yeivin_amisc_helpers_for_locales.py": "dde0d2509db8d193a248216734397bbbb9006abbfe332bd66337d34b45bb1f6e",
+    "my_yeivin_amisc_helpers_private.py": "17671a5e66bcf53b92beb1fda3e25c3ec05e41734e50952c4c57f8fe27b0ade1",
+    "my_yeivin_amisc_manuscripts.py": "fca1eed515c57b10044fa700f2f99035e5f11e7e78f740d08f9206879a3f749f",
+    "my_yeivin_amisc_sec_385_footnotes.py": "ac7a408ccfcc02b790656db7c0d98a81aa49887bc998eb30e48b902008a7454a",
+    "my_yeivin_amisc_sec_not_yet_transcribed.py": "dce300f78dece4b5efe8ee9c526eb7e97c7b1471392360dd7a40331051d0091d",
+    "my_yeivin_amisc_substitutions_private.py": "ca847d651b85bff0472fe8d2ac6f2a3c8692ef993b6b487db9d8d094804d5e69",
+    "my_yeivin_amisc_tocsec_metadata.py": "be5746b09fe1624f71512c395930aed4bd17cfbd0cd4fa0f5741f1e8fcd87146",
+    "my_yeivin_amisc_traverse.py": "d383e99587efdda57341c9496ee92cc0c3c99ce93c8740592aca4075b8a3f754",
+    "my_yeivin_amisc_typed_table.py": "3588ebb535de0f19551dbee06e445b0f7bc2532e844697fd3d29bab97fc52e32",
+    "my_yeivin_sec_239.py": "6b10088ee44d06e1e59399814576853c4a57d2d9b62dcef2e155eb4e9a8ad4e5",
+    "my_yeivin_sec_282.py": "a7d50e71302fd4789742c8cb1f0dee8d11215cf4c3cec7f050759bcdbabe5e42",
+    "my_yeivin_sec_311.py": "5865fdb58279e23ae2568e5f8d7c2334c72335529e2069acf50b4c5b820755c8",
+    "my_yeivin_sec_312.py": "6dd5c340ae85f4568e126b676b13c247a7df3ead9eea5fd5b33412e23e24cdca",
+    "my_yeivin_sec_313.py": "77f555289d244ba6058a3ef1f2ee41f20d6deb4139fd960c370e5f3816d48131",
+    "my_yeivin_sec_314.py": "36a9fd4541db5b3f4589998bfb9467623ffbe2c567f6fc94392e4cf481f1768a",
+    "my_yeivin_sec_315.py": "76a952a8636555f0d7dc325c65bd8f7d440a8732e8b18530ca477eae7f52afac",
+    "my_yeivin_sec_316.py": "f8d2544f46269104782251f625fdec93cd8e053b0f83c883b1a9615fcd185d2a",
+    "my_yeivin_sec_317.py": "9ea2f3529a0be05733337a336fbaac05709537f00f7ff513c200af8b2d7d79ba",
+    "my_yeivin_sec_318.py": "937c838d62b232e2319851e17dcb5c9f0b4f4aba88d8ce9df9078821a0f99a4a",
+    "my_yeivin_sec_319.py": "454318c47523a78e6433569928bed937b6a20739e0c18c73592a7fcb784cafbd",
+    "my_yeivin_sec_320.py": "30ee25a689109e128be6ef884036c23238d256ee62401e5114192f3e2d193738",
+    "my_yeivin_sec_321.py": "e7e1bee51f4958674232fa934029d1039cab9a895c93fbc8763de371c5928843",
+    "my_yeivin_sec_322.py": "50c4c310ed7f3e7c82940b98f6ecbe8979be59897bf0c8af712b51483ff472f1",
+    "my_yeivin_sec_323.py": "f10f11f13ba1da0ed87bb78b2c963ee145b2f9e86ddc4603e7c68d6f002e9532",
+    "my_yeivin_sec_324.py": "17d8a197758a14014a88a9388873b18c037230511d392917da223df71f9906bc",
+    "my_yeivin_sec_325.py": "a10c9f83b2c415b248c7390b3dc39c3bfcaa0eee2077b1fb2997572cd896f540",
+    "my_yeivin_sec_326.py": "a867bb62b83e0382b199bb396258addd151b5e5809572c2e3f19077d76af68b5",
+    "my_yeivin_sec_327.py": "9d4765eed37b8576104b694bcf5a9dbea929cd80c761a598a8e5b467a17da507",
+    "my_yeivin_sec_328.py": "06eb783b856de0635303a99b803edda6a3c00d39508c56f4bfd3fb3476dfb53f",
+    "my_yeivin_sec_329.py": "91ffb5678744fde7ee9daba027f1271e7d7270c7c0d1b072b23dd20bd1cc2454",
+    "my_yeivin_sec_330.py": "aa0a793a22d62d66a3f48327a2656fa54a48667e7d98987e01f72d3eabd64dd4",
+    "my_yeivin_sec_331.py": "090ba03939ad52cda8cd99526501de9da4c2a9bffab5436ecd1189080cb00fb8",
+    "my_yeivin_sec_332.py": "2d9e3df3b71d2455dc0448214d368e6acc2250be313f4916d9ef58e5410bd5e7",
+    "my_yeivin_sec_333.py": "d5f239302fa541c97d57c31da15f0d4ae898a34a86887c7b5f917bffd8a2479f",
+    "my_yeivin_sec_334.py": "2fffa45236f57f5e27b48e8aaa7b6a6ee86fdd76d3c00cb4e834f649df1e4e90",
+    "my_yeivin_sec_335.py": "2d2bc2fb3c4f6b88d94a16a573ee485a9ebd8f086080793d9e01c195f6d8705e",
+    "my_yeivin_sec_336.py": "24493babed7cae15b291c91c8440ff8c139861663ed7190f3b59229f2d8f4e85",
+    "my_yeivin_sec_337.py": "780a9ee6e6d17bd0fbfefb43be073a218170fa479281a5b4395a76be898e34ac",
+    "my_yeivin_sec_338.py": "a53c9c5fa7d4f1dc63e8aa3a881e43df51352e5e7608c29ff0e69bbaf30b80b6",
+    "my_yeivin_sec_339.py": "8b3fb198ffeaec1ba50f5a22e27eeb9a3f849b2a12e6f80df8cda9a4fa1e5ad4",
+    "my_yeivin_sec_340.py": "dc3cc009bbbc3cc4e8feaf915bda5925b931f1eae65d1412b33aa99aa38432b0",
+    "my_yeivin_sec_341.py": "5400f028fc05eb7b4acc2e49a543a1a0f6992e5997419960319a31e908705fe8",
+    "my_yeivin_sec_342.py": "78f3ef637c020587943440faf4ac552929ab0dc51d3d1696ad9e94788381e83f",
+    "my_yeivin_sec_343.py": "ae8cdf576feecc8d38010fc8562b84a7b3381b89b22e3d3c3aaaef9e0db367ce",
+    "my_yeivin_sec_344.py": "cc70c66414cf783c386cec33d4ebdc5319ef6870e10e4865d83130512f596044",
+    "my_yeivin_sec_345.py": "ad856a7bd15efa4eb55ba094852359e85fb1a2c8e85222283473edb4775d48d0",
+    "my_yeivin_sec_346.py": "d54eaa3add998fe1c9ebd2d9c1f0972b1eac40362b3d452c05848ec9f5926527",
+    "my_yeivin_sec_347.py": "103b42643209a81a3f4b8d42d576a4b2fc4ab4eb180439ef89d8faa1cb46fa76",
+    "my_yeivin_sec_348.py": "a285327d5c98ee7a6fdfc868ca9fe93cae72c9d5fbb113eab73d8196a876d46b",
+    "my_yeivin_sec_349.py": "3ee308ff6380cd410d9fd37754d385459af9f2be59f8e9be65789c85ba379e3b",
+    "my_yeivin_sec_350.py": "9c92eedcad1ffc9a0e77e0f7ad2cd9fdd55b7bd2d2b3be2d832ef873aa7d0b99",
+    "my_yeivin_sec_351.py": "2fd3de3f6455b2d53d031dfb09e1178aba79ba8c1f5e0d07dafb09fb76627af5",
+    "my_yeivin_sec_352.py": "fac1ba91b2a2aeaa20283e3778d9b03d2af9c40d17dc71c75b7a5e127faccca9",
+    "my_yeivin_sec_353.py": "ef6af1d945ca12c9632e56bb30287d4a339483d0778520502cd9f7fd6104e089",
+    "my_yeivin_sec_354.py": "a1597f47c977751fad93f440c7ea1de7a0f7b25e48c25c6a8b1e3b4a5c07f873",
+    "my_yeivin_sec_355.py": "5472015c6a0a174dd56c6ab422db412eb6a49216048dc016ac92230b5905f232",
+    "my_yeivin_sec_356.py": "b9e18dbe49bae8fe727720477020faf08cf222c87d491a157b41b6a4b5c85ca3",
+    "my_yeivin_sec_357.py": "945e47bbd730f6fe49bcdbdb257f9ce17eafbd61ce312c38ce7f1b6167a2a782",
+    "my_yeivin_sec_375.py": "6e14ea36b19aa4ba0aab90719abf996d83d0688ea87cd89ffb849c2e9621c3a7",
+    "my_yeivin_sec_376.py": "6a8bb601f512faeed9afeb19f2ec0e0f1eaa73f18aeb1d92d731c19c01c992b8",
+    "my_yeivin_sec_377.py": "844075a0fa897c92208ace10f332952c14df0fdead91e830eda997326375d674",
+    "my_yeivin_sec_378.py": "a52eb082e86566f7d1375c050c1e2dbe0ff182de2126ac46651cde75fed0d894",
+    "my_yeivin_sec_379.py": "aa65ac90e7458527ce002159dc9b34c14330c8c2b332b69dff9283a0871b6cc1",
+    "my_yeivin_sec_380.py": "554ec2cabe50a81cfa0e8c95337117b1aaa675c80a1aa7e2226d1867b961c2f9",
+    "my_yeivin_sec_381.py": "a7ac89d2067ea9a143bf369ff6ccf6469b176734150e2072cf4980443bcb93be",
+    "my_yeivin_sec_382.py": "2f4a4d7ad667d19966e317116c6fe8aaf3c04bc487b65b1b3450c9c7c1fc7d20",
+    "my_yeivin_sec_383.py": "ebdf85ed795aedce173887eea90ca3bcb65ab66405981e6979c91a8a3c92b2f8",
+    "my_yeivin_sec_384.py": "f2073d25aadc5a75aec7b5c4d120c3295d1242355b6f23e8a0313ac0514fedc7",
+    "my_yeivin_sec_385.py": "d23ee13306f299cb273831670f2d553c69b23d726ac5ba4570761b974302d9cc",
+    "my_yeivin_sec_386.py": "c574494d2e293bbf1e88a7ccc6f1224547291a6dc1bc39edc6022750b8b5d1bf",
+    "my_yeivin_sec_387.py": "3b299f09b0382c2b50e2ac0e2233f6e609c0dd8181e2d2c89d25232596852354",
+    "my_yeivin_sec_388.py": "9e263593677151c7d95c01061a5f3801dd7ce0f9b78bd548791f5e2d4d5d286d",
+    "my_yeivin_sec_389.py": "973e698e065bd6b8335f09e346dd2d00c546b221a135e88adf227ed869eedda6",
+    "my_yeivin_sec_390.py": "abb8bd29705c93c811191e5684b7779c3016415ed289b6d1b835de0f5a3c4161",
+    "my_yeivin_sec_391.py": "3d1e9690c409a0438903ce1e2ea55820248258019d7ecc6ccc96da5cbcf3c29a",
+    "my_yeivin_sec_392.py": "c88aa4eb9721555fd88b2178479b3a11ffef85f7e19f38bcb945639faa5a222a",
+    "my_yeivin_sec_393.py": "7708de246ff82d45a17aaf91b3d3a5973d12d68f76884bfd2a0c9868c20cad04",
+    "my_yeivin_sec_394.py": "56dd42e86bd704040b8b9576c3a11ba9a7a89b2678105f284fcd4ce2f246a6c4",
+    "my_yeivin_sec_395.py": "4f2956aa7904739d9e71fe66c4c88357ba04fadaff76400f0ef45a42288edafc",
+    "my_yeivin_sec_396.py": "f54f0064b1a877083ba2dc61de94b8743e8973d54ebeb16690a2d6d6797ac20a",
+    "my_yeivin_sec_397.py": "74676634240d81937b91d4fcf160b8300a546234f05db57f06372accbd2b11f3",
+    "my_yeivin_sec_398.py": "1c8f452957afb4b9e127eee6ca7b1bfe5b05b956d6092b8bef383b4a9df4fe1e",
+    "my_yeivin_sec_399.py": "92380f85c62dbee3022e2b45d66fb906f1de0faf112e53c18c2407205ebfd733",
+    "my_yeivin_sec_400.py": "7752703c38f3418738442cd081021c9796adf9ef9c44310fa65dd734dd2ffaf1",
+    "my_yeivin_sec_401.py": "c2e98144920668b1d09bb8075f6f52a3d152c7d1ddf2fa2907721180156612ff",
+    "my_yeivin_sec_402.py": "6245f7985d5ab4e571a38f88f4e931e7f920c3bd4c9c01a1f272bcdbc83a9fc1",
+    "my_yeivin_sec_403.py": "4a9f1b0f498ba56c1e4cb271c091f04182b810088693f77af73e847333b31993",
+    "my_yeivin_sec_404.py": "065b09275518cac8742ea9e4f332dca68524d0e364f6c55701ad7fe43bd7103e",
+    "my_yeivin_sec_405.py": "35c2080dfbac408746fd0a7f586a9a5265cd68a0a07b5f32cfa507c21cdce594",
+    "my_yeivin_sec_406.py": "990eba29d34b31dee95b3a077af85cb2b5e4b5eef423bcbad5f67ad5f1494515",
+    "my_yeivin_sec_407.py": "81a8b2f2ba808eed3a8a1b8acf66a99d79237bb1ec9549b695f74afa2dc8bc65",
+    "my_yeivin_sec_408.py": "859401191eccc94014633df50e89471bbfb8f3ca17375a3ec763b55f1553ec28",
+    "my_yeivin_sec_409.py": "471966e0bf20a6842b2ef989206d59a912d885f06028e9017597bf37be695b23",
+    "my_yeivin_sec_410.py": "f64ef7e68ae25c932326ef9de3d76081b36c523b05dad20cdbd4e5e28f01c7e7",
+    "my_yeivin_sec_411.py": "c7699aec2fa00cde4864c11b3f91ace4d281c6a0901d28411495cca159e1d20f",
+    "my_yeivin_sec_412.py": "8a420de8512d44520fd591bdf18ba5db61aa788f0ee63e10ee1261985002426c",
+    "my_yeivin_sec_413.py": "8e3b89f0d0953f976c079e751a1ea0476aa1fa2cc74a744f258122c1c872c5b2",
+    "my_yeivin_sec_414.py": "851aeb0552932a1b4c9ec57133b3a3082f017b0ba3eba66f98b0ba78f0fdc9d3",
+    "my_yeivin_sec_415.py": "3245f721034826bd95cb576e4e99c1b868576bc249e4aeb22dcd96be6514f266",
+    "my_yeivin_sec_416.py": "c0cc313a6199c06b8036b979ff3d767faf8b7da45ae5b6a3be00f61ee3af6c30",
+    "my_yeivin_tocsec_131_to_135.py": "cc42b3ef4eaf3a1e122a2f6895662956d2a4fc38a27a18bd7e241c4dc85bb4a9",
+    "my_yeivin_tocsec_192_to_206.py": "d39c545e9e057820eae98904c3643bbd34b44b4361ea94a47287762b17125542",
+    "my_yeivin_tocsec_207_to_285.py": "0bf305b1c918311d0959a81c52a0b410e726de33091860c3c1c2f549d5860e03",
+    "my_yeivin_tocsec_307_to_310.py": "bad1871551d4169e9958473149df353fe06055b91284ab9d7d534eea14d24cf7",
+    "my_yeivin_tocsec_311_to_317.py": "6d0aacf72cc4a1d310cadf4c27ec4954a54f5c3cd189c661fe8e81097130d0cd",
+    "my_yeivin_tocsec_318_to_344.py": "8598438ff4ebd90183e8cc6e356ce191e9dff7ad18b36235e191b578110faf68",
+    "my_yeivin_tocsec_345_to_357.py": "dc6e48a741fed0887deb92632ed63a0c979dd8280da78280d7188ae4e7386f6d",
+    "my_yeivin_tocsec_358_to_374.py": "533f7508a98ca5bab7c350b1e96a360bb3355cdfe96b41802ac03ae9aee7919f",
+    "my_yeivin_tocsec_375_to_375.py": "1c59007ddcdfa9f19f8df0e8464ef3438d5a85a1ee66a0b835ce2af54c513d11",
+    "my_yeivin_tocsec_376_to_393.py": "bef275671739a8cc68cdf73e90c960c614523c5db0494138701a6b749ce9ad3f",
+    "my_yeivin_tocsec_394_to_416.py": "5aaf04d39282c4d4b5b3f0a83fcb6919559aee013b44453a148e829dfa8441c4"
+  }
+}
