@@ -101,8 +101,8 @@ destructive operation or rewrite a receipt beyond its authorized update pointer.
 
 Recorded by Codex on 2026-09-18, New York time, after the substantive remediation head
 `61aa48ee730a3cff222f28886298c6a06079586e` was backed up to the existing review branch,
-fast-forwarded to `main`, pushed, and used to deploy the canonical user configuration. These are
-the final dispositions of the twenty findings:
+fast-forwarded to `main`, pushed, and used to deploy the canonical user configuration. These were
+the dispositions of the twenty findings on 2026-09-18:
 
 1. **Finding 1 was fixed by `4e30b0f4`.** The two snips READMEs now distinguish their general crop
    naming from the approved Leningrad-specific preservation rule.
@@ -276,3 +276,20 @@ Recorded by Claude on 2026-09-30, New York time, under the approved remediation 
 was subsequently written on 2026-09-17 and executed on 2026-09-18." `49c7b1c9` wrote the plan at
 2026-09-17 17:30:41, New York time, and `f3bd280a` set its State to "executed 2026-09-18" (the
 review's finding 4.7).
+
+## 2026-10-01: finding 13.4 fixed
+
+Recorded by Claude on 2026-10-01, New York time. "Remediation completed on 2026-09-18" records
+that "conditional finding 13.4 required no hook change under the approved stop rule". On
+2026-10-01 Ben decided to fix it anyway: the defect needs three unlikely conditions together, but
+the fix is neither hard nor risky. `0b7c77b1` makes `dot-Codex/hooks/check_project_doc_budget.py`
+read the SessionStart input with `json.load(sys.stdin.buffer)`, so that `json` decodes the bytes
+as UTF-8, or as UTF-16 or UTF-32 when it detects them, whatever stdin's text encoding is. It
+reports undecodable input as "cannot read SessionStart input". A scratch run with UTF-8 mode off
+and no `PYTHONIOENCODING` fed the old and new hooks the same raw UTF-8 JSON for a working
+directory named with ü and a Hebrew alef. The old hook reported "SessionStart cwd is not a
+directory", the path garbled as finding 13.4 describes; the new hook found no problem. The fix
+was deployed with `--sync-user-config`, whose check reported `USER_CONFIG_PROBLEM_COUNT=0`.
+
+In "Remediation completed on 2026-09-18", the lead-in "These are the final dispositions of the
+twenty findings:" now reads "These were the dispositions of the twenty findings on 2026-09-18:".
