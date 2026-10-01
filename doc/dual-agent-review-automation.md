@@ -92,14 +92,14 @@ dispatcher; it is not the plan's three-turn real-worker rehearsal.
 
 | Probe | Verified result and remaining work |
 |---|---|
-| P1: Claude effort and sub-agents | Passed the renewed-login and full capability checks. Opus 5.5 at max verified root, HEAD, branch and NUL status, completed one foreground Explore checker, and wrote the ignored capability JSON. Terminal statistics confirm one completed checker, zero background checkers and no nested child. The native PowerShell Git rules passed; an optional shell-version expression was denied and its ineffective allow rule was removed. Real turns are in progress. |
-| P2: Codex model and effort | Passed the full capability check after removing `--ephemeral`: native Git reads, one completed checker and native JSON write succeeded. The saved `turn_context` confirms `gpt-6.1-sol`, `xhigh`, workspace-write and network disabled. Its thread is `01a0f49c-77ad-7841-9f6d-b1de819b4f5a`. Real-turn verification remains. |
+| P1: Claude effort and sub-agents | Passed the renewed-login and full capability checks. The real turn 01 also finished at Opus 5.5/max with one completed foreground checker and no background checker, then passed the gate and automatic handoff. Its two denied Git grep calls were replaced by allowed reads; the final grep rule separately passed with zero denials. |
+| P2: Codex model and effort | Passed the full capability check after removing `--ephemeral`. Real turn 02 completed three read-only checkers and automatic handoff. Its saved `turn_context` confirms `gpt-6.1-sol`, `xhigh`, workspace-write and network disabled, in thread `01a0f4e5-5f63-7e50-8f13-9ca6b7140092`. |
 | P3: foreign-file gate | Passed against independent Git status evidence in the local check. |
 | P4: movement and failures | The gate rejected a worker push observed independently on the bare remote. Forced dispatcher push-failure notification and commit recovery passed. A real-worker remote-movement rehearsal remains. |
 | P5: closure | The local three-turn check requested acknowledgment, closed, and did not launch a fourth worker. |
 | P6: notifications and hidden launch | Both hidden WinRT notification tests returned 0; visual receipt is unconfirmed. Ben was asked whether he saw the notification titled Dual-agent review with Relay rehearsal notification test. The hidden `pythonw.exe` idle tick exited 0 with an empty registry. The scheduled task has not been registered. |
 | P7: private SSH | Deferred until both ongoing reviews finish and Ben approves private rollout. No private fetch or push was attempted. |
-| P8: Codex worktree and instructions | Passed instructions, clean HEAD and branch, and foreground checker verification in the full rehearsal clone. Worktree verification awaits its real turn. |
+| P8: Codex worktree and instructions | Passed in real turn 02: the runtime CWD is the dedicated Codex worktree, native PowerShell verified root/HEAD/carrier/NUL status, repository and required skill instructions were loaded, and three read-only checker reports were reconciled before writing. |
 
 Original failed authentication logs are preserved in this implementation clone's
 `.novc/dual-agent-review-probe-20260930/`; the successful renewed-login probe is in
@@ -153,6 +153,17 @@ header fields; body quotations do not alter control state. Its independent model
 checks 3,200 transition, header and body combinations. D9, D11 and periodic-review
 cross-references now distinguish manual mechanics from the approved D13 mechanics.
 The approved D13 wording is unchanged.
+The parser's header scope follows the plan's `Next:` specification: exactly one
+line beginning `Next:` "in its header block". Rehearsal review
+opinions do not replace that implementation requirement.
+
+The first two real turns passed automatic handoff at
+`16956671abac29445bf7a7b2c824bd10ee2a51c8` and
+`2e0a969a9306426d65cc321c1d0e807d5ad42200`. Turn 02 preserved turn 01's byte prefix
+and appended reconciliation. Turn 03 is in progress. Its attempted `git rev-list`
+commit count exposed another missing read permission; the rule is now included,
+and its real launch check is part of the pending P4 probe. With all three added
+read commands the launch is 17,366 characters, still below the Windows limit.
 
 The source implementation registry is absent;
 no production round was started. The primary clone was not fast-forwarded. Production remains

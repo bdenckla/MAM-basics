@@ -30,6 +30,7 @@ READ_ONLY_GIT = (
     "grep",
     "log",
     "rev-parse",
+    "rev-list",
     "merge-base",
     "ls-files",
     "ls-tree",
