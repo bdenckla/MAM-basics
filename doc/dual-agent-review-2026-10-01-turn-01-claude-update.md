@@ -43,3 +43,25 @@ performance tuning, private readiness/kickoff and cleanup remain outside executi
 
 **Effective base State, 2026-10-01:** not yet acted on; close-out plan prepared; remediation
 awaiting Ben's decisions and execution approval.
+
+## Ben's C1 decision, 2026-10-01
+
+**Approved; implementation remains pending execution scope.** Ben selected "Permit public
+checks (Recommended)" in the dialog for **C1. Public checking capability, finding 3**.
+The dialog named both workers, relevant public-only checks and scratch probes, the home
+interpreter, preservation of tracked inputs/products, scratch in the worker checkout, and
+manual handling of private-input checks. It expressly separated capability-policy approval
+from the execution approval that follows the remaining choices.
+
+The approved editorial wording is:
+
+> Both workers may run relevant public-only scripts and targeted checks with the named home
+> clone's interpreter from their own checkout. Before running a check, verify that its inputs
+> stay within the round's evidence scope and that it preserves tracked inputs and products.
+> Checks write only ignored scratch; workers do not run generators that rewrite tracked output.
+> Scratch probes stay in that checkout's ignored directory. A denied or unavailable required
+> check is reported as unchecked. Full-suite checks
+> that require private inputs belong to manual remediation, outside a public review turn.
+
+The live plan's C1 passage retains the same wording. C2 through C6 and implementation/final
+integration scope remain pending. No launcher, worker instruction or implementation changed.

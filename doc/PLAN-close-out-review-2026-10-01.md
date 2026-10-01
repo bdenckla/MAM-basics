@@ -138,7 +138,9 @@ part of this approval.
 
 ## Decisions and concrete editorial wording
 
-All six recommendations below remain proposals until Ben answers. Record answers with their
+Each recommendation below remains a proposal until Ben answers it. C1 was approved on
+2026-10-01 by selecting "Permit public checks (Recommended)"; its quoted wording below is
+approved. C2 through C6 and execution scope remain pending. Record answers with their
 date and exact approved wording in the single turn-01 update, then freeze the approval snapshot
 here before implementation. Ask for execution scope after the decisions are settled; an answer
 about a policy alone does not imply execution or main integration.
@@ -427,13 +429,15 @@ new decisions by Ben. Preserve the two completed September 29 reviews and Ben's 
 |---|---|
 | One complete list, including withdrawn claims and final qualifications | implemented in planning; execution dispositions still pending |
 | Exact checkout/ancestry, current worker occupancy and round-specific pause | implemented in preparation; repeat ownership checks before every write phase |
-| C1 through C6 concrete choices and editorial wording | unresolved; Ben's answers required |
+| C1 public checking capability and quoted wording | implemented decision: approved by Ben 2026-10-01; execution remains pending |
+| C2 through C6 concrete choices and editorial wording | unresolved; Ben's answers required |
 | Defect fixes and approved policy implementation | deferred to approved remediation |
 | Sole turn-01 update and exact base pointer | implemented for planning; append approved decisions and later results here |
 | Suite after final test-risky change and final mega/integration | deferred; no new remediation validated yet |
 | Preserved turns, finished comparison, console fix, manual reviews and private boundary | active throughout |
 
-Approval snapshot: not yet approved. Record dated decisions, approved alternatives, expected
+Approval snapshot: C1 approved 2026-10-01; remaining decisions and execution not yet approved.
+Record dated decisions, approved alternatives, expected
 changed paths, any deferrals and explicit execution/final-integration scope before wave 1.
 Planning validation at `ef43a925aa83993400ce4c87cae93dfb47dc2930`: the protocol/census/deployment
 lint module passed 3 tests and the tracked whitespace check passed. No Python implementation
