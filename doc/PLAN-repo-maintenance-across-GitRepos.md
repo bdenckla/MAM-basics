@@ -318,6 +318,11 @@ tree stayed still. What was verified then:
 - MAM-basics: 0 worktrees, 0 `claude/*` branches, `main` at `4afa1e8`.
 - Every repo in GitRepos clean and pushed.
 
+Run every command in this section from the root of a full MAM-basics clone, as section 1 says of
+the whole runbook. Precondition 2 inspects the repository containing the current directory, and
+precondition 3 every directory in that directory's parent, which from the clone's root is the
+clone's forest.
+
 1. **Two chip sessions launched 2026-08-07 must have ENDED.** They were:
    - *"Fix #218: 3 prose oddballs block generate-html"* — ran in the MAIN clone
      `C:/Users/BenDe/GitRepos/MAM-basics`, committing to `main`.

@@ -962,11 +962,13 @@ names.
    `doc/memory-retirement-and-instruction-consolidation-2026-09-28-update.md` names its line-3
    correction by former and new words but not by its number, flagged site 13, which the plan's
    general rule for dated entries asks for; `b8700f12`'s message names the site.
-8. Left unfixed, because a fix would change wording Ben approved: in the maintenance runbook,
-   preconditions 2 and 3 now run cwd-relative commands, `git worktree list`,
-   `git branch --list "claude/*"` and a loop over `Get-ChildItem -Directory ..`, and only
-   precondition 4 and section 1 then say to run from the root of a full MAM-basics clone. Before
-   the remediation the commands named the primary forest's clone.
+8. Left unfixed when this entry was written, because a fix would change wording Ben approved, and
+   fixed on 2026-10-01 with wording he approved, as "Ben's wording for where the maintenance
+   runbook's preconditions run, 2026-10-01" records: in the maintenance runbook, preconditions 2
+   and 3 now run cwd-relative commands, `git worktree list`, `git branch --list "claude/*"` and a
+   loop over `Get-ChildItem -Directory ..`, and until that fix only precondition 4 and section 1,
+   both later in the runbook, said where to run those commands. Before the remediation the
+   commands named the primary forest's clone.
 9. Left unfixed because the approved plan does not cover it: `ruff check --no-cache py` reports
    E731, a lambda assigned to a name, at `py/tests/test_dual_agent_review_dispatch.py:42`, which
    `1a50d4b6` added after the plan was written.
@@ -1072,7 +1074,9 @@ configuration deployment, so close-out steps 3 and 4 are complete.** This entry 
 pending items that "Approved remediation implemented; final gates pending, 2026-10-01" names in its
 first paragraph and under "What remains". Every deferral, no-action disposition and unresolved
 question there remains as recorded, apart from finding 23's question, which Ben decided later that
-day, as "Ben's decision on the commit for a bot run's special-page changes, 2026-10-01" records.
+day, as "Ben's decision on the commit for a bot run's special-page changes, 2026-10-01" records,
+and item 8 of "Corrections to the plan and to this branch's records", fixed later that day, as
+"Ben's wording for where the maintenance runbook's preconditions run, 2026-10-01" records.
 
 **The final merge.** A fetch found `origin/main` at `c3eb743c`, five commits past the carrier's
 last merge base, `0f745369`: the review relay's toast fix and production kickoff (`1bfceff4`), its
@@ -1285,5 +1289,102 @@ passed, the counts of "Final integration and configuration deployment completed,
 change reaches a mega generator, but that generator's two outputs are documentation outside the
 published and distributed products. This entry, the spec's edge and the two regenerated files are
 one commit on `main`.
+
+This update remains `State: open` while its base survives.
+
+## Ben's wording for where the maintenance runbook's preconditions run, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in a session in the full clone
+`C:/Users/BenDe/GitRepos3/MAM-basics` that worked from a handoff prompt that Claude prepared that
+day in the session that executed close-out steps 3 and 4, and that Ben pasted in. The prompt quotes
+Ben's instruction to that session, a request for a prompt for a session that would address the item
+numbered 2 among the "Left for you" items in that session's final report; the rest of the prompt is
+that session's reconstruction, which this session checked against the tree. **Fixed: item 8 of
+"Corrections to the plan and to this branch's records", in "Approved remediation implemented; final
+gates pending, 2026-10-01".** In `doc/PLAN-repo-maintenance-across-GitRepos.md`, section "0.
+Preconditions — check all four before doing anything", preconditions 2 and 3 run commands relative
+to the current directory, and the runbook said where to run them only afterwards, in precondition 4
+and section 1. Now a paragraph before precondition 1 says where to run them.
+
+**Checkout.** This session verified the clone clean on `main` at `eea4c583`, fast-forwarded it to
+`origin/main` at `24b39715`, which contains `3bd8d24c`, and made no edit until Ben's selection. No
+other session of the Claude desktop app had the clone as its working directory, and `HEAD` was
+unchanged when this session rechecked it before editing and before staging.
+
+**The facts the question showed**, established read-only at `24b39715` before it was asked:
+
+1. **Precondition 2.** `git worktree list` and `git branch --list "claude/*"` inspect the repository
+   containing the current directory. MAM-basics' root, its subdirectories and its linked worktrees
+   share one worktree registry and one set of branches, so all of them give the same answer. From
+   another clone's root the commands report that clone without an error: run in
+   `C:/Users/BenDe/GitRepos3/hbofonts`, `git worktree list` listed only hbofonts' own checkout.
+   Outside every repository, as in `C:/Users/BenDe`, Git fails with "not a git repository".
+2. **Precondition 3.** The loop inspects every directory in the current directory's parent. From a
+   clone's root that is the clone's forest: from `C:/Users/BenDe/GitRepos3/MAM-basics`, the
+   directories hbofonts, MAM-basics, MAM-private and phonetic-hbo. From the clone's `py/` it is the
+   clone's own 27 top-level directories, each of which reports MAM-basics' own status. From a Claude
+   worktree, `<home clone>/.claude/worktrees/<name>`, it is that clone's Claude worktrees, and from a
+   Codex worktree, `.codex/worktrees/<id>/MAM-basics`, it is only that task's directory. No linked
+   worktree existed in any of the three MAM-basics clones, so those two cases follow from the
+   layouts that the `mam-repository-topology` skill's `references/repository-maintenance.md` and the
+   `codex-worktree-tasks` skill's `references/worktree-runtime.md` describe. A directory outside
+   every repository gives Git's error and a count of zero. So from a subdirectory or a worktree, a
+   run that prints nothing looks like a clean forest.
+3. **Citations by number.** `git grep -n -i "precondition" -- doc dot-claude dot-Codex py AGENTS.md`
+   finds the runbook's preconditions cited by number only in item 8; turn 07,
+   `doc/dual-agent-review-2026-09-29-turn-07-claude.md`, cites section "0. Preconditions" by line
+   number. A search of the whole tree for "0. Preconditions" and for the runbook's filename finds no
+   other citation of section 0.
+4. **Skills.** `dot-claude/skills/mam-repository-topology/references/repository-maintenance.md`
+   already says to run a sweep "from any full MAM-basics clone" and restates none of the
+   preconditions, so no canonical skill needed a change.
+
+**Ben's selection.** The question and its three options were this session's wording; Ben's part is
+the selection, made at about 09:07 New York time on 2026-10-01. To "Which wording should fix
+section 0 of the maintenance runbook, where preconditions 2 and 3 run commands relative to the
+current directory before anything says where to run them? Selecting an option approves its text
+exactly as shown in the preview.", Ben selected "Lead paragraph (Recommended)", whose preview showed
+the paragraph now in the runbook, between the list of what was verified on 2026-08-07 and
+precondition 1. The other two options were "Move precondition 4 first", which would have moved
+precondition 4 to the first position with "the root of" added and renumbered the other three, and
+"Commands name checkout", which would have written the commands of preconditions 2 and 3 with
+`git -C` and `$HOME/GitRepos`, to be replaced by `$HOME/GitRepos<N>` for a secondary forest.
+
+**The change.** The runbook gains this paragraph directly before precondition 1:
+
+> Run every command in this section from the root of a full MAM-basics clone, as section 1 says of
+> the whole runbook. Precondition 2 inspects the repository containing the current directory, and
+> precondition 3 every directory in that directory's parent, which from the clone's root is the
+> clone's forest.
+
+No command, precondition or other sentence of the runbook changed, and nothing was renumbered. The
+runbook is a maintained document, so it takes no dated entry of its own.
+
+**Also corrected in place in this file:**
+
+1. In "Approved remediation implemented; final gates pending, 2026-10-01", item 8 of "Corrections
+   to the plan and to this branch's records": "Left unfixed, because a fix would change wording Ben
+   approved:" now reads "Left unfixed when this entry was written, because a fix would change
+   wording Ben approved, and fixed on 2026-10-01 with wording he approved, as "Ben's wording for
+   where the maintenance runbook's preconditions run, 2026-10-01" records:"; and "and only
+   precondition 4 and section 1 then say to run from the root of a full MAM-basics clone." now
+   reads "and until that fix only precondition 4 and section 1, both later in the runbook, said
+   where to run those commands."
+2. In "Final integration and configuration deployment completed, 2026-10-01": "apart from finding
+   23's question, which Ben decided later that day, as "Ben's decision on the commit for a bot
+   run's special-page changes, 2026-10-01" records." now reads "apart from finding 23's question,
+   which Ben decided later that day, as "Ben's decision on the commit for a bot run's special-page
+   changes, 2026-10-01" records, and item 8 of "Corrections to the plan and to this branch's
+   records", fixed later that day, as "Ben's wording for where the maintenance runbook's
+   preconditions run, 2026-10-01" records."
+
+The plan, `doc/PLAN-remediate-review-findings-2026-09-29.md`, is a receipt and stays as written.
+
+**Verification of this entry.** This entry, its two in-place corrections and the runbook's new
+paragraph are one commit on `main`. They change only documentation, so neither the suite nor the
+mega is owed, and no canonical skill or configuration changed, so no deployment is owed. Before the
+commit, `git diff --check` passed, and `py/tests/test_receipt_update_links.py`,
+`py/tests/test_prose_conventions.py` and `py/tests/test_prose_mark_order.py` passed through
+`py/main_test.py`.
 
 This update remains `State: open` while its base survives.
