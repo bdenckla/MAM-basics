@@ -90,6 +90,13 @@ leaves MAM-private's census stale until the refresh runs. Complete the dependent
 Its first commit is the bot run's own record, the saved chapters' regenerated outputs with a new
 entry in `py/ws/ws_bot_edit_history.md`, rather than a separate `Refresh MAM from Wikisource`.
 
+Ben decided on 2026-10-01 that the bot run's own commit also takes every change that the post-run
+download made under `in/mam-ws-special/`. The bot saves only chapter pages, and only eight of the
+36 special pages are chapter pages, so a special page that the bot changed is one of those eight
+that it saved in this run; every other change there is someone else's edit made since the mirror
+was last downloaded. The commit message names each changed special page and says whether the bot
+saved it.
+
 ## Complete the dependent refresh
 
 When chapter data or chapter metadata changed, read and follow

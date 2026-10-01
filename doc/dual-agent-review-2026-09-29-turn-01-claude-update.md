@@ -793,7 +793,7 @@ Ben's part is his selection of each, made at 06:54 New York time on 2026-10-01.
 | 20 | Implemented with flagged site 9's "join" wording: `hbce-psalms/README.md` in `4a5f9800` and `DATA-LICENSES.md` in `aef596c7`. |
 | 21 | Implemented in `37169648`: the new `doc/hbce-psalms-vs-mam-2026-09-26-update.md` and the base's line-4 pointer. Deferred, as the plan records: the heading fix in `py/hbce_psalms/compare.py`. `hbce-psalms/out/` is unchanged. |
 | 22 | Deferred: no MAM-basics change; the next dependent refresh checks that the variant reaches phonetic-hbo's page and the survey. |
-| 23 | Implemented: the `mam-wikisource-refresh` skill in `1c0cf3f8` and `py/ws/pywikibot-setup.md` in `8fd5b6e6`, with flagged site 2 in `37002a28`. Unresolved, for Ben: the question the plan leaves open under "The `mam-wikisource-refresh` skill (finding 23)", which commit takes a special page that the post-bot download changes. |
+| 23 | Implemented: the `mam-wikisource-refresh` skill in `1c0cf3f8` and `py/ws/pywikibot-setup.md` in `8fd5b6e6`, with flagged site 2 in `37002a28`. Unresolved when this entry was written, and decided by Ben on 2026-10-01, as "Ben's decision on the commit for a bot run's special-page changes, 2026-10-01" records: the question the plan leaves open under "The `mam-wikisource-refresh` skill (finding 23)", which commit takes a special page that the post-bot download changes. |
 | 24 | Implemented: 24.1 and 24.2 in `MAM-parsed/historical/README.md` (`4a5f9800`, rewrapped by `71214987`) and the module docstring of `py/subcommands/diff_mpplus.py` (`37002a28`). |
 | 25 | Implemented in `3a1b9a7c`, with the new lint `py/tests/test_forest_subprocess_bounds.py`, which `9588700f` extends to calls through imported modules. |
 | 26 | Implemented in `3a1b9a7c`, with its texts; `174357eb` restores the approved wording of flagged site 5.5's entry. The write form was not run. |
@@ -1071,7 +1071,8 @@ Recorded by Claude on 2026-10-01, New York time. **Completed: final integration 
 configuration deployment, so close-out steps 3 and 4 are complete.** This entry supersedes the
 pending items that "Approved remediation implemented; final gates pending, 2026-10-01" names in its
 first paragraph and under "What remains". Every deferral, no-action disposition and unresolved
-question there remains as recorded.
+question there remains as recorded, apart from finding 23's question, which Ben decided later that
+day, as "Ben's decision on the commit for a bot run's special-page changes, 2026-10-01" records.
 
 **The final merge.** A fetch found `origin/main` at `c3eb743c`, five commits past the carrier's
 last merge base, `0f745369`: the review relay's toast fix and production kickoff (`1bfceff4`), its
@@ -1161,5 +1162,96 @@ commit. `git diff --check` passed, and `py/main_test.py` with
 `py/tests/test_receipt_update_links.py`, `py/tests/test_prose_conventions.py` and
 `py/tests/test_prose_mark_order.py` passed. No source, product, generator or canonical
 configuration changes, so no suite, mega, generator run or deployment is owed.
+
+This update remains `State: open` while its base survives.
+
+## Ben's decision on the commit for a bot run's special-page changes, 2026-10-01
+
+Recorded by Claude on 2026-10-01, New York time, in a session that worked from a handoff prompt
+that Claude prepared that day in the session that executed close-out steps 3 and 4, and that Ben
+pasted in. The prompt quotes Ben's instruction to that session, a request for a prompt for a
+session that would address the first of the five "Left for you" items in that session's final
+report; the rest of the prompt is that session's reconstruction, which this session checked
+against the tree. **Resolved: finding 23's open question, which commit takes a special page that
+the post-bot download changes.** Ben selected the rule that the bot run's own commit takes every
+such change. The rule is the new last paragraph of "## After a Wikisource bot run" in
+`dot-claude/skills/mam-wikisource-refresh/SKILL.md`, beginning "Ben decided on 2026-10-01 that the
+bot run's own commit also takes every change", and is committed with this entry. No other file
+needed a change: step 1 of the skill's `references/dependent-refresh.md` already commits "the bot
+run's own commit that `SKILL.md` describes", and `py/ws/pywikibot-setup.md`, "Post-run download
+behavior", sends the reader to the skill's section.
+
+**The facts the question showed**, established from the code and Git history before it was asked:
+
+1. **The post-run download.** `py/subcommands/ws_bot_real.py` runs it only when the bot saved at
+   least one chapter and none of `--no-post-download`, `--no-save` and `--identity-run` was given.
+   `download_wikisource.run` refreshes the special pages before the saved chapters: it fetches the
+   36 pages' metadata, checks that the eight special pages that are chapter pages have the page IDs
+   and resolved titles of their chapter records, comparing no revision IDs, and with
+   `force_download` fetches all 36 pages' content. It writes a page file, and then `manifest.json`,
+   only when the bytes differ. It then force-downloads the saved chapters into `in/mam-ws/` and
+   `in/mam-ws-revisions.json` and reparses their books.
+2. **When the mirror changes.** The bot edits only chapter pages, so of the 36 special pages it can
+   change only the eight that are chapter pages, and a page among them that it saves lands in both
+   mirrors at the same revision. Every other change is someone else's edit made since the last
+   download, and any new revision changes its page's manifest record even when the bytes are
+   unchanged. A forced refetch of unchanged pages writes nothing: the manifest holds no fetch-time
+   field, its stored key order is the order the code builds, and
+   `test_special_mirror_matches_complete_api_oracle_reuse_and_force` asserts the unchanged bytes.
+   The bot run of 2026-09-03, `031b4306`, saved Judges 5, one of the eight. The mirror's
+   `judges-5` record holds revision 3080379, timestamped seven minutes before that run's commit,
+   and Judges 5's record in `in/mam-ws-revisions.json` holds the same revision.
+3. **Precedent.** `a41fbcdd` is the only commit on any ref that touches `in/mam-ws-special/`. It is
+   not an ancestor of the last recorded bot run, `298958d3`; the merge `85cb7acd` joined their two
+   lines, and no commit that `main` gained after that merge touches `in/mam-ws/`,
+   `in/mam-ws-revisions.json`, `in/mam-ws-special/` or `py/ws/ws_bot_edit_history.md`. No
+   recorded bot run has yet happened with the mirror present.
+4. **The bot run's own commit.** `298958d3` holds the saved chapters' books in `in/mam-ws/` and
+   `in/mam-ws-revisions.json`, the outputs of the reparse and the full mega, and the new entry in
+   `py/ws/ws_bot_edit_history.md`; the change logs followed in `cf8e7be7`.
+5. **Products.** No product generator reads the mirror; under `py/`, only the download, its test,
+   the setup guide and the pipeline graph name it.
+
+**Ben's selection.** The question and its three options were this session's wording; Ben's part
+is the selection, made at about 08:03 New York time on 2026-10-01. To "After a live bot run, which
+commit should take the changes that the post-run download makes under in/mam-ws-special/?
+Selecting an option approves its wording as shown in the preview.", Ben selected "Bot run's commit
+(Recommended)", whose preview showed the paragraph now in the skill. The other two options were
+"Separate commit first", which would have put every special-page change in a special-page refresh
+committed before the bot run's commit, and "Split by cause", which would have put the pages the
+bot saved in the bot run's commit and the other changed pages in a special-page refresh committed
+first. Both "Separate commit first" and "Split by cause" would also have added a sentence to step 1
+of `references/dependent-refresh.md`, because a commit made first moves `HEAD` before that step
+checks that `HEAD` still equals the recorded starting commit.
+
+**A second writer in the clone.** This session verified the clone shortly after 07:46 New York
+time, clean on `main` at `3bd8d24c`, and made no edit until Ben's selection. At 08:00:19 the second
+step-2 session committed `a36aa24a` in the same clone and pushed it, with the entry above. Every
+edit of this session came after Ben's selection and was made on top of that commit; this session's
+recheck of `HEAD` before staging found the new commit, and its own commit follows it.
+
+**Also corrected in place in this file:**
+
+1. In "Approved remediation implemented; final gates pending, 2026-10-01", finding 23's row:
+   "Unresolved, for Ben: the question the plan leaves open" now reads "Unresolved when this entry
+   was written, and decided by Ben on 2026-10-01, as "Ben's decision on the commit for a bot run's
+   special-page changes, 2026-10-01" records: the question the plan leaves open".
+2. In "Final integration and configuration deployment completed, 2026-10-01": "Every deferral,
+   no-action disposition and unresolved question there remains as recorded." now reads "Every
+   deferral, no-action disposition and unresolved question there remains as recorded, apart from
+   finding 23's question, which Ben decided later that day, as "Ben's decision on the commit for a
+   bot run's special-page changes, 2026-10-01" records."
+
+The plan, `doc/PLAN-remediate-review-findings-2026-09-29.md`, is a receipt and stays as written.
+
+**Verification of this entry.** This entry, its two in-place corrections and the skill's new
+paragraph are one commit on `main`. It changes no source file, product or generator, so neither the
+suite nor the mega is owed. Before the commit, `git diff --check` passed, and
+`py/tests/test_receipt_update_links.py`, `py/tests/test_prose_conventions.py` and
+`py/tests/test_prose_mark_order.py` passed through `py/main_test.py`. No test reads the skill:
+under `py/tests`, `git grep` finds `dot-claude/skills` only in two strings of
+`py/tests/test_mega_coverage.py` and in the module docstring of
+`py/tests/test_prose_conventions.py`, and `mam-wikisource-refresh` nowhere. The live copies of the
+skill change only when `--sync-user-config` deploys this commit from `origin/main`.
 
 This update remains `State: open` while its base survives.
