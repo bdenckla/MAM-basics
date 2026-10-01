@@ -3,17 +3,18 @@
 State: runbook; D13 and notification receipt confirmed; all five first-production handoffs, acknowledgment closure and a subsequent scheduled idle tick independently verified 2026-10-01; approved blind comparison recorded; private readiness P7 and concrete private kickoff decisions remain pending.
 
 Ben authorized `doc/PLAN-automate-the-dual-agent-review-relay.md` on 2026-09-30 and
-excluded both ongoing September 29 reviews. The sole development checkout is
+excluded both ongoing September 29 reviews. The initial implementation's sole development checkout was
 `C:/Users/BenDe/GitRepos2/MAM-basics`, starting on clean `main` at
-`303bf2399c1e1fc1300a75f4fb1ed335d62984d0`. Its own environment runs all commands.
-Codex owns implementation, verification, and pushing `main`.
+`303bf2399c1e1fc1300a75f4fb1ed335d62984d0`. Its own environment ran those commands.
+Codex owned that implementation, verification, and main push. The first review's remediation
+uses its existing development worktree and home interpreter under the frozen close-out plan.
 
 ## Approved D13 protocol
 
 Ben approved the proposed D13 wording on 2026-09-30 by selecting the approval
 passage in Codex's implementation report and replying "I approve". The approved
 wording now lives in `doc/dual-agent-review.md`, "Automated relay and the `Next:`
-line — Ben's decision, 2026-09-30 (D13)". The approval covers that protocol;
+line — Ben's decisions, 2026-09-30 and 2026-10-01 (D13)". The initial approval covered that protocol;
 the facts-only rule, measurement and future review window
 retain their recorded prerequisites.
 

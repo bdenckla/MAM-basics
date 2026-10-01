@@ -2,7 +2,7 @@
 
 State: open; first entry 2026-10-01.
 
-**Remediation is implemented; final verification and main integration remain pending.**
+**Remediation is verified; main integration, deployment and home deactivation remain pending.**
 The execution entry below records the current disposition. Findings 1 and 11 remain withdrawn.
 
 ## Close-out preparation by Codex, 2026-10-01
@@ -251,3 +251,39 @@ The original 26 home-control evidence files were snapshotted by SHA-256 in
 The five numbered turns, finished comparison/rehearsal evidence, both September 29 reviews,
 Ben's separate work and private rollout boundary remain preserved. The single base pointer
 already exists and needs no rewrite.
+
+## Final executable verification by Codex, 2026-10-01
+
+**Verified; main integration, deployment and actual home deactivation remain pending.**
+Remediation commit `2e120b851d43607bf21b19eadeea27fce114b3b8` was pushed to
+`origin/dar-2026-10-01`. Fresh origin/main had advanced to
+`5e2fe24295ebd3bce75babc510920f30bf8d8b8c` with independently developed redirect
+preparation. The clean home clone fast-forwarded to that tip. The development carrier merged
+it without conflict as `4251e8f6e141639cbf07205e480e9277f60715f9`, and that coherent
+merge was pushed to the same shared branch. No intermediate remediation reached main.
+
+The first full suite passed 1,054 tests and 60 subtests, with 5 skips. Because incoming main
+changed executable source/tests, the full suite was repeated after the merge with the same
+options: 1,056 tests and 60 subtests passed, with the same 5 skips. The required mega then
+passed all 57 steps at that exact merged commit. The post-mega NUL-delimited status and
+tracked diff were empty: there is no generated diff to explain or commit. Both final gates
+used `core.longpaths=false`, UTF-8 mode disabled and no `PYTHONIOENCODING`; persistent Git
+configuration stayed unchanged. Full logs and result JSON are retained privately in
+`MAM-private/.novc/relay-remediation-suite-81b160adf334`,
+`MAM-private/.novc/relay-remediation-suite-c06c3890051f` and
+`MAM-private/.novc/relay-remediation-mega-137e3a59bc57`.
+
+The fresh implementation/coverage audits found no remaining material in-scope gap after the
+two final repairs. Fake workers/local notices verify dispatcher behavior; they do not
+establish live Windows notification receipt. Automatic Claude discovery was unavailable in
+this installation, so the capability probe used the already-supported explicit CLI setting;
+CLI-discovery redesign remains outside this approved package.
+
+The actual home registry is still the retained legacy active entry at this point, PAUSE is
+present, no marker/lock or runtime blocker exists, and all original 26 evidence hashes match.
+The Windows task is Ready, enabled, with IgnoreNew. Only after the verified tree is pushed
+to main will canonical deployment and the home entry point's deactivate action run.
+
+**Effective base State, 2026-10-01:** acted on; every surviving approved finding is remediated
+and verified under its recorded qualification; findings 1 and 11 remain withdrawn. Integration
+and lifecycle completion are pending, so the maintained round still records State: live.
