@@ -60,8 +60,7 @@ affecting the code, data and products. Record minor wording or plan inconsistenc
 do not grow them into separate process-remediation projects without a consequential reason.
 This is a next-review trial, not a commitment to two reviewers for every later window. It
 requires no new relay implementation or private automated rollout, and leaves the existing relay
-code and historical evidence in place. Do not expand relay features merely to
-prepare this trial.
+code and historical evidence in place. Do not expand relay features merely to prepare this trial.
 
 ### Running a trial review
 
@@ -77,10 +76,10 @@ file or relay.
    carried-forward end anchor as its start and `origin/main` as its end. Ben names the owner and
    decides which records of earlier rounds, and which other already-reviewed content inside the
    window, are evidence rather than subject, a decision that `doc/periodic-review.md`, "A prior
-   round's own records inside a successor window", would otherwise leave to each reviewer. The kickoff
-   session records the window, the owner, the reviewers, their checkouts and Ben's decisions in
-   a dated section below, commits and pushes `main`, and gives Ben one standalone prompt per
-   reviewer; a private window's kickoff is recorded in MAM-private instead. Each prompt quotes
+   round's own records inside a successor window", would otherwise leave to each reviewer. The
+   kickoff session records the window, the owner, the reviewers, their checkouts and Ben's
+   decisions in a dated section below, commits and pushes `main`, and gives Ben one standalone
+   prompt per reviewer; a private window's kickoff is recorded in MAM-private instead. Each prompt quotes
    Ben's instruction and names the kickoff commit, the window, the evidence-only paths, and the
    reviewer's checkout, output path, line-3 `State:` and effort level. It offers no view of the
    window's content. Ben starts each reviewer's session with its prompt.
