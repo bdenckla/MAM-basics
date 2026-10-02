@@ -75,14 +75,13 @@ _GENCOM_2 = [
 _EZEKIEL_COMPARISON = [
     "The similar כתיב/קרי word-boundary shifts have different mark attachments in μA.",
     " In the Job case that is our main focus here, the פתח in question clearly belongs to the ה.",
-    " In $Ezekiel_42_9, however, the פתח is unattached.",
-    " Its ה survives: the כתיב has ",
+    " In $Ezekiel_42_9, however, the פתח is unattached;",
+    " despite a seemingly-available “mobile ה” to attach it to, the $naqdan avoids doing so.",
+    " (We use “mobile ה” to describe the relationship between the כתיב, which is ",
     author.span_unpointed_tanakh("ומתחתה לשכות"),
-    " and the קרי has ",
+    ", and the קרי, which is ",
     author.span_unpointed_tanakh("ומתחת הלשכות"),
-    ". As in the Job case, the ה is at the end of the first word in the כתיב",
-    " and at the beginning of the second in the קרי.",
-    " The unattached פתח is between the two written words.",
+    ".)",
 ]
 _EZEKIEL_IMG = "../jobn/img/Aleppo-Ezekiel-reference.png"
 _EZEKIEL_FIGURE = boj_html.div(
