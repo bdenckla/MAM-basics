@@ -123,9 +123,9 @@ _EZEKIEL_FIGURE = boj_html.div(
 )
 _SAMUEL_IMG = "../jobn/img/Aleppo-2Samuel-c5v2.png"
 _SAMUEL_COMPARISON = [
-    "In $2Samuel_5_2, the corresponding forms are the כתיב ",
+    "In $2Samuel_5_2, the corresponding word-pairs are the כתיב of ",
     author.span_unpointed_tanakh("הייתה מוציא"),
-    " and the קרי ",
+    " and the קרי of ",
     author.span_unpointed_tanakh("היית המוציא"),
     ". Here, as in Job, the פתח belongs to the final ה of the first written word.",
     " It is not orphaned between the two words as it is in Ezekiel.",
