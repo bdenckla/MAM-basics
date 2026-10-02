@@ -43,6 +43,11 @@ _GENCOM_1 = [
         author.span_unpointed_tanakh("ומתחתה לשכות"),
         ").",
     ],
+    " ",
+    boj_html.anchor(
+        "φ1",
+        {"href": "#patah-comparison", "id": "patah-comparison-callout"},
+    ),
     " In contrast to the consensus, in going from כתיב to קרי,",
     [" μL can be thought of as having ", boj_html.bold("copied")],
     " the ה to the second word rather than moving it.",
@@ -68,16 +73,16 @@ _GENCOM_2 = [
     [" For more on orphan pointing, see my ", d5_anchor("../jobn")],
 ]
 _EZEKIEL_COMPARISON = [
-    "$Ezekiel_42_9 illustrates that manuscript precedent in μA itself.",
+    "The similar כתיב/קרי word-boundary shifts have different mark attachments in μA.",
+    " In the Job passage, the פתח clearly belongs to the ה.",
+    " In $Ezekiel_42_9, however, the פתח is unattached.",
     " Its ה survives: the כתיב has ",
     author.span_unpointed_tanakh("ומתחתה לשכות"),
     " and the קרי has ",
     author.span_unpointed_tanakh("ומתחת הלשכות"),
     ". As in the Job passage, the ה is at the end of the first word in the כתיב",
     " and at the beginning of the second in the קרי.",
-    " Yet in Ezekiel the פתח is unattached, between the two written words;",
-    " in Job it clearly belongs to the ה.",
-    " The analogous word-boundary shifts thus have different manuscript mark attachments.",
+    " The unattached פתח is between the two written words.",
 ]
 _EZEKIEL_IMG = "../jobn/img/Aleppo-Ezekiel-reference.png"
 _EZEKIEL_FIGURE = boj_html.div(
@@ -117,6 +122,50 @@ _EZEKIEL_FIGURE = boj_html.div(
         "aria-label": "Ezekiel manuscript comparison",
     },
 )
+_SAMUEL_IMG = "../jobn/img/Aleppo-2Samuel-c5v2.png"
+_SAMUEL_COMPARISON = [
+    "In $2Samuel_5_2, the corresponding forms are the כתיב ",
+    author.span_unpointed_tanakh("הייתה מוציא"),
+    " and the קרי ",
+    author.span_unpointed_tanakh("היית המוציא"),
+    ". Here, as in Job, the פתח belongs to the final ה of the first written word.",
+    " It is not orphaned between the two words as it is in Ezekiel.",
+]
+_SAMUEL_FIGURE = boj_html.div(
+    [
+        boj_html.anchor_h(
+            boj_html.img(
+                {
+                    "src": _SAMUEL_IMG,
+                    "alt": "Aleppo Codex, 2 Samuel 5:2: the patah belongs to the final"
+                    " he of the first written word, not to the gap between the words.",
+                    "width": "858",
+                    "height": "208",
+                    "style": "max-width:100%;height:auto",
+                }
+            ),
+            _SAMUEL_IMG,
+        ),
+        boj_html.para(
+            [
+                "μA, 2 Samuel 5:2, page 58r. The פתח belongs to the final ה of ",
+                author.span_unpointed_tanakh("הייתה"),
+                ". ",
+                boj_html.anchor_h(
+                    "View in Masoretica",
+                    "https://www.masoretica.org/?book=2+Samuel&chapter=5"
+                    "&manuscript=aleppo&verse=2",
+                ),
+                "; select the image for full size.",
+            ]
+        ),
+    ],
+    {
+        "class": "center",
+        "role": "figure",
+        "aria-label": "2 Samuel manuscript comparison",
+    },
+)
 _BHQ_COMMENT_3812_B = [
     "$BHS does not catch this quirk in μL: it reflects the consensus rather than μL.",
     " $BHQ half-fixes the error in $BHS:",
@@ -134,8 +183,19 @@ RECORD_3812_YD3F_HJXR = {
     "qr-generic-comment": [
         author.para(_GENCOM_1),
         author.para(_GENCOM_2),
+    ],
+    "qr-footnotes": [
+        boj_html.heading_level_2(
+            "φ1 — Attachment of the פתח in the parallel passages",
+            {"id": "patah-comparison"},
+        ),
         author.para(_EZEKIEL_COMPARISON),
         _EZEKIEL_FIGURE,
+        author.para(_SAMUEL_COMPARISON),
+        _SAMUEL_FIGURE,
+        boj_html.para(
+            boj_html.anchor_h("Return to the discussion", "#patah-comparison-callout")
+        ),
     ],
     "qr-highlight-lc-proposed": 5,
     "qr-lc-loc": {"page": "408A", "column": 1, "line": -11},

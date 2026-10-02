@@ -227,6 +227,10 @@
       "count": 2
     },
     {
+      "field": "qr-footnotes",
+      "count": 1
+    },
+    {
       "field": "qr-ignore-g3yh-diff-in-consensus",
       "count": 1
     },

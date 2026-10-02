@@ -356,6 +356,7 @@ def _make_details_html(quirkrec, img_prefix="img"):
         *_maybe_rel_paras(quirkrec),
         _img(quirkrec["qr-lc-img"], img_prefix, scale=lc_scale),
         *_maybe_imgs(quirkrec, img_prefix),
+        *quirkrec.get("qr-footnotes", []),
     ]
 
 
