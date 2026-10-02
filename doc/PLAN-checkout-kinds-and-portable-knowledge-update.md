@@ -87,7 +87,7 @@ still depend on unavailable private inputs or an unsupported API.
 | `mam-repository-topology` | The roster and evacuated-repository rules are useful in a shallow cloud checkout. Forest sweeps and retirement require other checkouts, runtime ownership records and local recovery facilities described in its references. | Install with an explicit clause distinguishing a cloud checkout from a full clone forest; preserve unavailable-operation limits. |
 | `verse-links` | “Running the command” requires the selected checkout and says the command needs only tracked MAM-basics data, with no network or sibling. `py/main_verse_links.py` and its imports read that data. The skill still shows a Windows `.venv/Scripts/python.exe` command; Python and required packages must be present in the cloud environment. | Install with a Linux interpreter recipe and environment discovery; keep link generation through the existing entry point. |
 | `github-issues` | Citation, authorship, issue-routing and state-change rules are portable. The prescribed full read and `py/github_issue_edit.py` use `gh issue view`; the body edit uses `gh issue edit`. Access is limited to attached repositories, and the current cloud proxy has GraphQL restrictions. | Install with a cloud transport/capability clause. Support a complete REST read, including all comment pages. Keep body edits unavailable under the restricted proxy while the required helper has no REST transport; preserve the helper requirement and report the limitation. |
-| `mam-wikisource-refresh` | Public downloading needs the checkout's Python dependencies and Wikisource network access. A changed chapter requires the full MAM-basics → MAM-private → phonetic-hbo → MAM-basics loop in `references/dependent-refresh.md`, including owned downstream checkouts and their environments. The ordinary one-repository cloud checkout cannot complete that loop. | Install with a preflight that stops before starting a chapter refresh when the required dependency loop is unavailable. A cloud mega with declared skips does not establish refresh completion. Correct the remaining desktop-only active command recipes. |
+| `mam-wikisource-refresh` | Public downloading needs the checkout's Python dependencies and Wikisource network access. A changed chapter requires the full MAM-basics → MAM-private → MAM-basics loop in `references/dependent-refresh.md`, including owned downstream checkouts and their environments. The ordinary one-repository cloud checkout cannot complete that loop. | Install with a preflight that stops before starting a chapter refresh when the required dependency loop is unavailable. A cloud mega with declared skips does not establish refresh completion. Correct the remaining desktop-only active command recipes. |
 
 `py/subcommands/download_wikisource.py`, `run`, calls `parse_ws.almost_main` after the
 downloads. Starting a download can therefore regenerate local products before the later
@@ -366,3 +366,11 @@ proposal this plan names, are now defined in
 [the memory-retirement record's update](memory-retirement-and-instruction-consolidation-2026-09-28-update.md),
 under "the approved public additions, listed". The full public triage and the private
 dispositions stay in their untracked proposal files.
+
+## Phonetic refresh authority closeout, 2026-10-02
+
+**Implemented:** the paired evacuation closeout removes phonetic-hbo from routine
+refresh and clone ownership. The current cloud-limit row now names the two-repository
+loop. MAM-private is still required for the read-only exporter and private regeneration;
+a cloud mega with skips still does not prove complete changed-data refresh. The finished
+base remains historical.

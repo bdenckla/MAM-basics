@@ -6,9 +6,6 @@
     "MAM-basics": {
       "visibility": "public"
     },
-    "phonetic-hbo": {
-      "visibility": "public"
-    },
     "hbofonts": {
       "visibility": "private",
       "comment": "Font sources and build scripts."

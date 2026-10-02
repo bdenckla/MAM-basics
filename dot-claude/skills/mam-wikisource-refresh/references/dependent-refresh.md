@@ -2,149 +2,102 @@
 
 Use this procedure only after `SKILL.md`'s download step, or the post-run download of a live
 Wikisource bot run, leaves audited tracked changes in the verified MAM-basics development
-checkout. It coordinates existing repository entry points; it does not authorize a new
-orchestrator or a push that the surrounding instructions do not allow.
+checkout. Coordinate the existing entry points under the surrounding authorization.
 
 ## Preconditions
 
-- Read each repository's instruction file before writing in that repository. Load the applicable
-  worktree procedure when any development checkout is a linked worktree.
-- Record the absolute top level, branch, `HEAD`, remote relationship, and NUL-delimited status of
-  every checkout used. Recheck the recorded `HEAD` and task-owned status before each commit.
-- Use the interpreter belonging to each full clone, or a worktree's home clone. Run each
-  command from the repository root whose files the command changes. The commands below show
-  the full-clone form; substitute the home clone's absolute interpreter path in a worktree.
-- Require the same forest's full MAM-private and phonetic-hbo checkouts to be on `main`, current
-  enough for the refresh, clean, and unambiguously assigned to this workflow before either
-  checkout is written. A clean status
-  alone does not establish ownership. A known active task,
-  an unexplained worktree association, or the absence of a clear handoff is ambiguous ownership.
-- Do not push any repository until all three repositories have completed their local work and
-  passed their required gates.
+- Read the instructions of MAM-basics and MAM-private and the applicable worktree procedure.
+- Record every selected checkout's absolute path, branch, HEAD, remote relationship and
+  NUL-delimited status. Recheck HEAD and task-owned status before each commit.
+- Use each full clone's own environment, or the development worktree's home-clone environment.
+  Run each command from the root whose files it changes.
+- Assign a clean, current MAM-private development checkout before the first public mega,
+  which reads its adapter, and recheck that assignment before every private write.
+  A known active writer or ambiguous ownership requires a handoff. A linked private worktree
+  is supported: all retained private generators write within MAM-private.
+- Select the public input checkout through `REPO_MAM_BASICS_DIR` for private commands.
+  The public exporter selects the corresponding private checkout through
+  `REPO_MAM_PRIVATE_DIR`. Required sources and owning interpreters must exist.
+- Do not push either repository until the local dependency loop and its gates pass.
+  phonetic-hbo is a frozen redirect and historical issue host; this refresh never reads,
+  preflights, writes or restores its clone.
 
 ## Refresh sequence
 
-1. **Commit the MAM-basics refresh locally.** In the verified MAM-basics development checkout,
-   run the complete product pipeline:
+1. **Commit the public refresh locally.** In the MAM-basics development checkout, run:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
-   Read and explain every tracked diff, including generated products. Run `git diff --check`,
-   verify that `HEAD` still equals the recorded starting commit, stage only the audited refresh
-   paths, inspect the cached diff, run `git diff --cached --check`, and commit locally as
-   `Refresh MAM from Wikisource`, or, after a bot run, as the bot run's own commit that
-   `SKILL.md` describes. Do not push. This commit is required because later change-log
-   generation cannot compare against dirty `MAM-parsed/plus` data.
+   The public mega exports `Phonetic-MAM/` through the retained read-only private source
+   adapter, then renders and analyzes the tracked public release. Audit every generated diff,
+   run whitespace checks, verify the recorded HEAD and commit only the audited refresh paths.
+   Use `Refresh MAM from Wikisource`, or the saving bot run's own record as `SKILL.md` specifies.
+   This local commit precedes change-log generation, which compares committed data.
 
-2. **Clear both downstream checkouts before writing either one.** Perform the MAM-private and
-   phonetic-hbo preflight in full. If either checkout is dirty, stale in a way that would make
-   the inputs ambiguous, or owned by another task, stop before running the MAM-private profile.
-   Require a handoff or cleanup; do not borrow, stash, discard, or work around another task's
-   state.
+2. **Recheck private ownership and inputs before writing.** Require the selected private
+   checkout clean and assigned to this workflow. `REPO_MAM_BASICS_DIR` must name the just
+   committed public checkout. Stop on stale input or an unrelated writer; do not borrow,
+   stash or discard another task's state.
 
-3. **Regenerate MAM-private.** MAM-private reads MAM-basics from the same forest's full clone,
-   never from a linked worktree, and requires the census inputs committed there. When step 1's
-   commit is on a linked worktree's branch, first
-   fast-forward the clean home clone to that verified commit, locally; nothing is pushed
-   before step 7. From the same forest's full MAM-private root, run its refresh profile with its
-   repository interpreter:
+3. **Regenerate retained private products.** From the MAM-private development root, run:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_0_mega.py --profile mam-refresh
    ```
 
-   Read every MAM-private diff, run the repository's required checks, and commit every explained
-   tracked change on `main`. Do not push yet. An unexplained diff or a
-   stale MAM-basics input stops the workflow.
+   Use the private home-clone interpreter by absolute path in a worktree. This updates private
+   source diagnostics, comparisons, research and census products. Audit every diff and run
+   the repository's required checks. Commit explained changes locally; a legitimate no-op
+   needs no empty commit. The profile has no publication ownership in phonetic-hbo.
 
-4. **Audit phonetic-hbo Pages output.** Inspect the resulting changes in
-   the same forest's phonetic-hbo checkout, run that repository's required checks, and commit the
-   explained Pages changes on `main`. If regeneration legitimately
-   produced no phonetic-hbo diff, record the no-op and continue without an empty commit. An
-   unexplained diff or evidence that the output did not use the just-committed MAM-private state
-   stops the workflow.
-
-5. **Return to MAM-basics and close the dependency loop.** Normal linked worktrees resolve
-   siblings through Git common-directory metadata. `REPOS_ROOT` remains a supported
-   override for unusual layouts; ordinary managed worktrees need no override.
-
-   Rerun the post-stress survey:
-
-   ```powershell
-   ./.venv/Scripts/python.exe py/main_accgram.py survey-post-stress-meteg
-   ```
-
-   Generate the authored pages from that survey:
-
-   ```powershell
-   ./.venv/Scripts/python.exe py/main_authored.py gen-site --trust-surveys
-   ```
-
-   Then run the required complete product pipeline again:
+4. **Close the public dependency loop.** From the MAM-basics development root, run its mega
+   again with `REPO_MAM_PRIVATE_DIR` selecting the verified private development checkout:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
-   Audit every diff. Expected survey or page movement is dependent regeneration, not a census
-   failure. Commit explained dependent-output changes if any exist; do not create an empty
-   commit. A stale MAM-private or phonetic-hbo input, a failed categorical survey claim, or an
-   unexplained generated change stops the workflow.
+   The exporter is the routine public pipeline's only private dependency. Phonetic rendering,
+   both meteg surveys, the Breuer survey and the Yeivin claims/rendering consume public data.
+   Audit every diff and commit explained dependent changes. Failed gates, stale inputs and
+   unexplained output changes stop the workflow.
 
-6. **Generate MAM change logs from the final committed MAM-basics state.** The prior MAM-basics
-   work must be committed before this command:
+5. **Generate change logs from final committed public data.** Run:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_diff.py mpplus --all
    ```
 
-   Read every change-log diff. Changes to reports for named historical releases are unexpected.
-   Run the freshness guard:
+   Audit every change-log diff; named historical-release reports must remain unchanged.
+   Then run:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_diff.py mpplus --check
    ```
 
-   Require current artifacts. If the refresh changed book data but produced no change-log diff,
-   treat that as unexpected and stop before pushing; do not create an empty change-log commit.
-   Otherwise stage only the audited change-log paths, inspect the cached diff, run
-   `git diff --cached --check`, and commit them separately as `Regenerate MAM change logs`. Run
-   the freshness guard again.
+   If book data changed but no change-log diff results, stop and resolve the discrepancy.
+   Otherwise commit audited logs separately as `Regenerate MAM change logs` and repeat the
+   freshness guard. Do not create an empty commit.
 
-7. **Run final gates, integrate, and push in dependency order.** If MAM-basics work ran in a
-   linked worktree, merge current `main` into the worktree branch according to the repository's
-   worktree procedure, rerun every required final gate there, and fast-forward the clean home
-   clone only after the gates pass. Run the full suite after the last executable-source,
-   test, schema, shared-data or cross-repository-path change likely to break it. A still-relevant
-   suite result is not repeated merely for integration; later documentation, comment, record or
-   instruction-text changes do not expire it. Every generator/data branch still requires the
-   final mega after merging current main:
+6. **Run final gates, integrate and push.** Follow both repositories' current integration
+   rules. Merge moved origin/main in the development worktree, repeat affected checks and
+   fast-forward its clean home clone only after gates pass. Run the full suite after the last
+   change likely to break it; later documentation does not expire that result. Generator/data
+   branches still owe the final mega after current main is incorporated. Require clean,
+   explained results in both repositories. Push normal fast-forwards in dependency order:
+   MAM-private, then MAM-basics. If a push rejects, incorporate the moved origin in development,
+   repeat affected generators and checks, and audit new diffs before retrying.
 
-   ```powershell
-   ./.venv/Scripts/python.exe py/main_0_mega.py
-   ```
-
-   Run `git diff --check` through the checkout's required exact-path Git invocation. Require
-   clean, explained results in MAM-private and phonetic-hbo under their own instruction files as
-   well. Only after all gates pass, push normal fast-forwards in this order:
-   MAM-private, phonetic-hbo, MAM-basics. Never force-push. If a push rejects or a remote moves,
-   incorporate the new state, rerun the affected generators and gates, and audit every new diff
-   before retrying.
-
-8. **Verify the final state.** Fetch the three remotes and require each full clone to be
-   clean, on `main`, and at the same commit as `origin/main`. A local commit
-   left ahead, a remote commit left ahead, or any tracked residue means the workflow is not
-   complete.
+7. **Verify completion.** Fetch both origins. Require each home clone clean on main and equal
+   to origin/main. Any ahead/behind commit or tracked residue means the refresh is incomplete.
 
 ## Required scenario behavior
 
-1. When no Wikisource data changed, `SKILL.md` stops after the download without downstream
-   writes.
-2. When relevant data changed and both downstream repositories are available, the workflow
-   completes the entire dependency loop before any push.
-3. When a downstream checkout is dirty or actively owned, the workflow stops before the first
-   downstream write and requires a handoff.
-4. When a downstream generator legitimately produces no diff, the workflow continues without an
-   empty commit.
+1. Unchanged Wikisource data stops after the download, without downstream writes.
+2. Changed chapter data requires the complete two-repository loop before any push.
+3. A dirty or actively owned private checkout stops before the first public mega reads it.
+4. A legitimate generator no-op continues without an empty commit.
+5. A one-repository cloud checkout still lacks the private adapter and regeneration inputs;
+   cloud-skipped mega steps do not establish completion of a changed-data refresh.

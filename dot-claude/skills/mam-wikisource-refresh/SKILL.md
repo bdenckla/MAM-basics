@@ -28,8 +28,8 @@ generator and integration capability needed for its complete dependency loop. Th
 command also reparses affected books and can write products. A successful public API request
 does not establish that the full refresh can finish.
 
-The ordinary one-repository cloud checkout lacks MAM-private and phonetic-hbo, so stop before
-the download and report the unavailable dependency loop. Installing this skill supplies its
+The ordinary one-repository cloud checkout lacks the private adapter and regeneration inputs,
+so stop before the download and report the unavailable dependency loop. Installing this skill supplies its
 rules without enabling a partial refresh. A mega run with declared cloud skips does not
 verify the missing private regeneration or satisfy the complete refresh procedure. Keep
 pywikibot account configuration and authorization separate from this public download workflow.
@@ -101,16 +101,17 @@ saved it.
 
 When chapter data or chapter metadata changed, read and follow
 [references/dependent-refresh.md](references/dependent-refresh.md) before running a generator.
-That reference governs the complete MAM-basics → MAM-private → phonetic-hbo → MAM-basics
-dependency loop, the separate change-log commit, final gates, push order, and clean remote-state
-check.
+That reference governs the complete MAM-basics → MAM-private → MAM-basics dependency
+loop, the public Phonetic-MAM release, the separate change-log commit, final gates, push
+order and clean remote-state check. phonetic-hbo remains a frozen redirect and historical
+issue host; dependent refresh does not restore or write its clone.
 
 When only `in/mam-ws-special/` changed, inspect its manifest and all changed raw pages, run the
 suite, and commit the special-page refresh without entering the dependent product loop. The
 special-page mirror is archival input and no product generator reads it.
 
-The downstream preflight happens before any downstream write. A clean checkout is necessary but
-does not prove that the checkout is unowned: if MAM-private or phonetic-hbo is dirty, is attached
+The downstream preflight happens before the first public exporter read and before every private
+write. A clean checkout is necessary but does not prove that the checkout is unowned: if MAM-private is dirty, is attached
 to another active task, or cannot be assigned unambiguously to this refresh, stop and require a
 handoff. Expected dependent regeneration is regeneration, not a failed census. A dependent
 generator that legitimately produces no diff needs no commit; never create an empty commit.

@@ -338,10 +338,15 @@ element allowlists would otherwise reject or omit the new public MAM-simple
 element. These consumers must flatten it to `text`; neither consumer creates a
 note or removes the post-silluq meteg.
 
-The mega pipeline's near-Aleppo step must continue to reach MAM-private through
-`mb_cmn.paths` and the explicit `REPO_MAM_PRIVATE_DIR` override in a worktree.
-Extend the sibling-reach lint if the new consumer path adds a discoverable
-dependency. Do not use a cwd-relative sibling path.
+**Private dependency disposition, 2026-10-02:** MAM-private's own root pipeline
+now owns the near-Aleppo census. The public mega's private dependency is the
+Phonetic MAM exporter, which reads the retained private adapter through
+`mb_cmn.paths` and the explicit `REPO_MAM_PRIVATE_DIR` override. Run the private
+consumer checks from the selected private checkout with `REPO_MAM_BASICS_DIR`
+selecting this public worktree. Extend the sibling-reach lint if the planned
+template introduces a discoverable dependency; do not use a cwd-relative sibling
+path. This ownership correction leaves phonetic-hbo#78 and this plan's template
+and product behavior work live and outside the evacuation closeout.
 
 ### The mtgmtg feature-of-interest page's authored prose
 

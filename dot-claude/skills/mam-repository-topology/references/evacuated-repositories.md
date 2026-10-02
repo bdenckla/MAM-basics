@@ -279,3 +279,30 @@ before treating one as a peer whose files need syncing.
 `doc/PLAN-evacuate-the-rest-of-wlc-utils.md` shrank that file to redirect-host facts — the
 disposition that plan's Phase 0 recorded for it. The note lives on because the transcripts do,
 and because all wlc work now happens in this repo.)
+
+## phonetic-hbo is an unarchived redirect and historical issue host
+
+Ben's paired Phonetic MAM and Yeivin ITM closeout removes phonetic-hbo from
+`all-repos.code-workspace` and its roster-only `repo_visibility` classification.
+A phonetic-hbo clone belongs on no machine. The unarchived GitHub repository keeps
+its history, accepted Pages redirects and historical issues; routine setup,
+maintenance, product generation and issue work do not restore its clone.
+
+MAM-basics owns `Phonetic-MAM/`, `Yeivin-ITM/` and their generated Pages subtrees.
+The frozen `in/phonetic_hbo_redirect_pages.json` maps the original 1,959 HTML paths
+to those targets and cannot grow. The retained assets and unknown-path fallback
+remain part of the accepted host. The manifest and target lint need no host clone.
+
+Only explicitly selected redirect-stub publication uses a temporary shallow clone.
+From the selected MAM-basics full clone's root, create its forest sibling:
+
+```powershell
+git clone --depth 1 https://github.com/bdenckla/phonetic-hbo.git ../phonetic-hbo
+```
+
+From MAM-basics, run `py/main_redirect_stubs.py build --repo phonetic-hbo --publish`
+and `check --repo phonetic-hbo`, commit and push the explained host changes, verify
+the host's Pages deployment, then recovery-check and recycle the temporary clone.
+Keep the clone out of every workspace roster. A scratch build/check uses `--out`
+and `--dir` and needs no host clone. Existing issue citations retain their tracker;
+new public product issues belong in MAM-basics.

@@ -1765,3 +1765,16 @@ deployment above stands. Before the commit, `git diff --check` passed, and
 `py/tests/test_prose_mark_order.py` passed through `py/main_test.py`.
 
 This update remains `State: open` while its base survives.
+
+## Deferred refresh finding 22: current target ownership, 2026-10-02
+
+**Superseded target, recorded by OpenAI Codex under Ben's paired evacuation
+closeout instruction:** the disposition saying "the next dependent refresh
+checks that the variant reaches phonetic-hbo's page and the survey" now names
+a frozen redirect host. The historical September 29 observation and September 30
+disposition remain evidence of their dates. The next dependent refresh checks
+`Phonetic-MAM/data/BD-2Kings.json`, the corresponding public page
+`gh-pages/phonetic-mam/tnkh/BD-2Kings/22.html`, and the post-stress-meteg survey.
+The public release supplies the survey's Phonetic MAM input. Finding 22 remains
+deferred; this closeout neither refreshes Wikisource data nor resolves the
+variant's behavior or replaces the historical `variant_rows` measurement.

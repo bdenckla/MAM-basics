@@ -384,6 +384,15 @@ override, so a worktree does not break it; another machine does
 (`python .novc/review-2026-09-09/remeasure2.py`). Decide: drop the example, or reword it as the
 other-machine case.
 
+**D5 superseded, 2026-10-02:** the paired evacuation replaced the hardcoded
+old-host path with `MAM-private/masorah-books/py/ocr_cmn/repo_paths.py`'s required
+MAM-basics accessor and its explicit `REPO_MAM_BASICS_DIR` override. Public
+`py/yeivin_itm/content/` and `gh-pages/yeivin-itm/` are the source and output
+authorities; private integration `5c526cac8fb2da5287cee5719ee3cb161edc1db6`
+removed the duplicate adaptation after the consumer gates passed. The historical
+D5 observation no longer requires a drop-or-reword choice. This disposition
+leaves the rest of this plan live.
+
 **D6 — Class 4. `SKILL.md`'s frontmatter description names five repos where no prose is written
 any more** — UXLC-utils, al-hatorah, book-of-job, mgketer, codex-index-aleppo (each evacuated,
 archived or a redirect host per `MAM-basics/CLAUDE.md`'s repo-location sections and mgketer's

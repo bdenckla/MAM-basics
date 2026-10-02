@@ -200,3 +200,13 @@ files that repo tracks are free of `#NN` in every shape, issue numbers and hex c
 there is nothing there for a reader to have to disambiguate. **So the four evacuated repos split
 two and two**: wlc-utils' `doc/` and `in/` copies and UXLC-utils' `uxlc/doc/` copies are the two
 standing exceptions in this repository, and holman-ketiv-qere and book-of-job need none.
+
+## Phonetic MAM and Yeivin ITM tracker routing after evacuation
+
+The public Phonetic MAM and selected Yeivin ITM adaptation are owned by MAM-basics.
+New public product work is filed here. Existing phonetic-hbo and masorah-books issues
+retain their trackers and qualified citations; the move does not transfer numbers.
+Read, comment on and close those existing issues through their named repositories.
+phonetic-hbo remains an unarchived redirect and historical issue host, with no routine
+clone requirement. The separate phonetic-hbo#78 behavior plan remains live and outside
+the two masorah-books issue closures in the evacuation closeout.
