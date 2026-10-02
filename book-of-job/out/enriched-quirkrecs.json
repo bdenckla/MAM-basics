@@ -8090,6 +8090,96 @@
           },
           ", “Orphan pointing.”"
         ]
+      },
+      {
+        "_htel_tag": "p",
+        "contents": [
+          "Ezekiel 42:9 illustrates that manuscript precedent in μA itself. Its ה survives: the כתיב has ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "unpointed-tanakh"
+            },
+            "contents": [
+              "ומתחתה לשכות"
+            ]
+          },
+          " and the קרי has ",
+          {
+            "_htel_tag": "span",
+            "attr": {
+              "class": "unpointed-tanakh"
+            },
+            "contents": [
+              "ומתחת הלשכות"
+            ]
+          },
+          ". As in the Job passage, the ה is at the end of the first word in the כתיב and at the beginning of the second in the קרי. Yet in Ezekiel the פתח is unattached, between the two written words; in Job it clearly belongs to the ה. The analogous word-boundary shifts thus have different manuscript mark attachments."
+        ]
+      },
+      {
+        "_htel_tag": "div",
+        "attr": {
+          "class": "center",
+          "role": "figure",
+          "aria-label": "Ezekiel manuscript comparison"
+        },
+        "contents": [
+          {
+            "_htel_tag": "a",
+            "attr": {
+              "href": "../jobn/img/Aleppo-Ezekiel-reference.png"
+            },
+            "contents": [
+              {
+                "_htel_tag": "img",
+                "attr": {
+                  "src": "../jobn/img/Aleppo-Ezekiel-reference.png",
+                  "alt": "Aleppo Codex, Ezekiel 42:9: the he is visible at the end of the first written word; the patah floats in the gap before the next.",
+                  "width": "988",
+                  "height": "192",
+                  "style": "max-width:100%;height:auto"
+                }
+              }
+            ]
+          },
+          {
+            "_htel_tag": "p",
+            "contents": [
+              "μA, Ezekiel 42:9, page 186r. The unattached פתח is visible between ",
+              {
+                "_htel_tag": "span",
+                "attr": {
+                  "class": "unpointed-tanakh"
+                },
+                "contents": [
+                  "ומתחתה"
+                ]
+              },
+              " and ",
+              {
+                "_htel_tag": "span",
+                "attr": {
+                  "class": "unpointed-tanakh"
+                },
+                "contents": [
+                  "לשכות"
+                ]
+              },
+              ". ",
+              {
+                "_htel_tag": "a",
+                "attr": {
+                  "href": "https://www.masoretica.org/?book=Ezekiel&chapter=42&manuscript=aleppo&verse=9"
+                },
+                "contents": [
+                  "View in Masoretica"
+                ]
+              },
+              "; select the image for full size."
+            ]
+          }
+        ]
       }
     ],
     "qr-highlight-lc-proposed": 5,

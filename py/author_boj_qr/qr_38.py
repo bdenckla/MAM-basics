@@ -67,6 +67,56 @@ _GENCOM_2 = [
     #
     [" For more on orphan pointing, see my ", d5_anchor("../jobn")],
 ]
+_EZEKIEL_COMPARISON = [
+    "$Ezekiel_42_9 illustrates that manuscript precedent in μA itself.",
+    " Its ה survives: the כתיב has ",
+    author.span_unpointed_tanakh("ומתחתה לשכות"),
+    " and the קרי has ",
+    author.span_unpointed_tanakh("ומתחת הלשכות"),
+    ". As in the Job passage, the ה is at the end of the first word in the כתיב",
+    " and at the beginning of the second in the קרי.",
+    " Yet in Ezekiel the פתח is unattached, between the two written words;",
+    " in Job it clearly belongs to the ה.",
+    " The analogous word-boundary shifts thus have different manuscript mark attachments.",
+]
+_EZEKIEL_IMG = "../jobn/img/Aleppo-Ezekiel-reference.png"
+_EZEKIEL_FIGURE = boj_html.div(
+    [
+        boj_html.anchor_h(
+            boj_html.img(
+                {
+                    "src": _EZEKIEL_IMG,
+                    "alt": "Aleppo Codex, Ezekiel 42:9: the he is visible at the end of"
+                    " the first written word; the patah floats in the gap before the next.",
+                    "width": "988",
+                    "height": "192",
+                    "style": "max-width:100%;height:auto",
+                }
+            ),
+            _EZEKIEL_IMG,
+        ),
+        boj_html.para(
+            [
+                "μA, Ezekiel 42:9, page 186r. The unattached פתח is visible between ",
+                author.span_unpointed_tanakh("ומתחתה"),
+                " and ",
+                author.span_unpointed_tanakh("לשכות"),
+                ". ",
+                boj_html.anchor_h(
+                    "View in Masoretica",
+                    "https://www.masoretica.org/?book=Ezekiel&chapter=42"
+                    "&manuscript=aleppo&verse=9",
+                ),
+                "; select the image for full size.",
+            ],
+        ),
+    ],
+    {
+        "class": "center",
+        "role": "figure",
+        "aria-label": "Ezekiel manuscript comparison",
+    },
+)
 _BHQ_COMMENT_3812_B = [
     "$BHS does not catch this quirk in μL: it reflects the consensus rather than μL.",
     " $BHQ half-fixes the error in $BHS:",
@@ -84,6 +134,8 @@ RECORD_3812_YD3F_HJXR = {
     "qr-generic-comment": [
         author.para(_GENCOM_1),
         author.para(_GENCOM_2),
+        author.para(_EZEKIEL_COMPARISON),
+        _EZEKIEL_FIGURE,
     ],
     "qr-highlight-lc-proposed": 5,
     "qr-lc-loc": {"page": "408A", "column": 1, "line": -11},
