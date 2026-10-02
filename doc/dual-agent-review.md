@@ -12,6 +12,19 @@ window. **For the next review, Ben selected the simplified independent-review tr
 Read this before starting a dual-agent review. It records the next-review trial and the retained
 alternating, Design A and Design B procedures.
 
+**Codex already reviews this repository, in a different series.** The staged review of
+`py/main_0_mega.py`'s 42 registered steps ran in Codex review forests under
+`C:/Users/BenDe/Documents/Codex/ReviewForests/` and produced
+`doc/mega-pipeline-review-phase-*-2026-09-01.md`. This document instead pairs Codex with Claude on
+the **periodic** review — the `doc/review-findings-<date>.md` series. That series was Claude-only
+through 2026-09-01; the 2026-09-04 window is its first paired review. Do not read the earlier
+Claude-only history more broadly than that.
+
+**The periodic review itself is described in `doc/periodic-review.md`**, split out of this
+document on 2026-09-12: the series, its two standing properties, what a review file contains,
+and the remediation rules D7 and the risk ordering. A citation written before that date may
+name this document for material that is now there.
+
 ## Next review: independent reviews and one disposition list — Ben's decision, 2026-10-02
 
 **Use this simplified process for the next review in each of MAM-basics and MAM-private.**
@@ -45,23 +58,102 @@ usual scope, effort, evidence, one-writer and remediation safeguards.
 The purpose is to reduce time spent on review process and concentrate on substantive defects
 affecting the code, data and products. Record minor wording or plan inconsistencies briefly;
 do not grow them into separate process-remediation projects without a consequential reason.
-This is a next-review trial, not a commitment to two reviewers for every later window. It starts
-no review, requires no new relay implementation or private automated rollout, and leaves the
-existing relay code and historical evidence in place. Do not expand relay features merely to
+This is a next-review trial, not a commitment to two reviewers for every later window. It
+requires no new relay implementation or private automated rollout, and leaves the existing relay
+code and historical evidence in place. Do not expand relay features merely to
 prepare this trial.
 
-**Codex already reviews this repository, in a different series.** The staged review of
-`py/main_0_mega.py`'s 42 registered steps ran in Codex review forests under
-`C:/Users/BenDe/Documents/Codex/ReviewForests/` and produced
-`doc/mega-pipeline-review-phase-*-2026-09-01.md`. This document instead pairs Codex with Claude on
-the **periodic** review — the `doc/review-findings-<date>.md` series. That series was Claude-only
-through 2026-09-01; the 2026-09-04 window is its first paired review. Do not read the earlier
-Claude-only history more broadly than that.
+### Running a trial review
 
-**The periodic review itself is described in `doc/periodic-review.md`**, split out of this
-document on 2026-09-12: the series, its two standing properties, what a review file contains,
-and the remediation rules D7 and the risk ordering. A citation written before that date may
-name this document for material that is now there.
+Ben, 2026-10-02, asking a Claude session to start the first trial review: "start a new review,
+using the very-new (just committed) simplified dual agent process, which is not fully fleshed out
+so I guess that will be part of this review, to fully flesh it out." He added that the process
+"reserves back-and-forth for rare circumstances and if it is needed, I will coordinate it rather
+than some giant piece of 'relay' software like unfortunately we've written (but I hope we'll soon
+discard.)" The five steps below flesh the trial out. They add no review branch, turn file, round
+file or relay.
+
+1. **Kickoff.** A kickoff session fetches `origin` and proposes the window: the series'
+   carried-forward end anchor as its start and `origin/main` as its end. Ben names the owner and
+   decides which records of earlier rounds, and which other already-reviewed content inside the
+   window, are evidence rather than subject, a decision that `doc/periodic-review.md`, "A prior
+   round's own records inside a successor window", would otherwise leave to each reviewer. The kickoff
+   session records the window, the owner, the reviewers, their checkouts and Ben's decisions in
+   a dated section below, commits and pushes `main`, and gives Ben one standalone prompt per
+   reviewer; a private window's kickoff is recorded in MAM-private instead. Each prompt quotes
+   Ben's instruction and names the kickoff commit, the window, the evidence-only paths, and the
+   reviewer's checkout, output path, line-3 `State:` and effort level. It offers no view of the
+   window's content. Ben starts each reviewer's session with its prompt.
+2. **Two independent reviews.** Each reviewer is a new session working in its own verified
+   checkout. Two reviewers running at once never share a checkout, and neither uses the owner's.
+   A reviewer reviews the endpoint diff, reading files as of the end commit, and does not open
+   the other reviewer's report, even after a fetch brings it into the clone. The report takes
+   the shape that `doc/periodic-review.md`, "What a review file contains", describes. The Claude
+   reviewer writes `doc/review-findings-<date>.md` with `State: not yet acted on`; the Codex
+   reviewer writes `doc/codex-review-findings-<date>.md` with
+   `State: completed <date>; review only`, dated the day that report is completed. Both
+   filenames use the kickoff date. No blanket per-finding sub-agent check is owed before
+   committing. A reviewer may run checks but commits only its report: it commits that one file on
+   `main`, merges `origin/main` if it moved, pushes, and tells Ben the pushed commit.
+3. **The owner's disposition list.** When both reports are on `origin/main`, the owner verifies
+   that both reviewed the kickoff's window, inserts into the Claude report the pointer line that
+   `iterative-document-editing` prescribes, and creates that report's one live update file,
+   `doc/review-findings-<date>-update.md`. The update file's first entry is the disposition list.
+   Every finding of both reports appears in it once; a finding both reports make shares one
+   entry citing both, with Claude finding `n` cited as `C<n>` and Codex finding `n` as `X<n>`.
+   Each entry leads with one of four dispositions: accepted and unfixed; fixed, naming the commit
+   the owner verified; rejected, with the reason; or an unresolved question for Ben. The owner
+   checks every substantive unique finding and every conflicting claim against the code, data or
+   other evidence, delegating targeted read-only checks when useful. Agreement between the two
+   reports is not itself evidence, and an owner who wrote one of the reports checks its own
+   claims against the evidence rather than against its report. A minor wording or plan
+   inconsistency gets a one-line entry.
+4. **Follow-up only when consequential.** An uncertainty that the owner's checks cannot settle,
+   and that would change a disposition, goes to Ben as a question at the end of the list. When
+   Ben wants another agent's view, he starts that session with a targeted question himself, and
+   the owner records the answer in the update file; no further review file is written.
+5. **Close-out.** The disposition list is the one list of close-out step 1 in
+   `doc/periodic-review.md`, "Close-out: from findings to dispositions". Ben's decisions, the
+   remediation plan, the remediation and the integration gate follow that section, and their
+   records go in the same update file.
+
+### The MAM-basics trial review, kicked off 2026-10-02
+
+Kicked off in `C:/Users/BenDe/GitRepos2/MAM-basics` at Ben's instruction quoted above.
+
+1. **Window:** MAM-basics
+   `7549ebf706ca6a098478fe0ea5e6a8cfd90866c0..db59ef5e22bbfb60dce7d398c63b837d98a74339`. The
+   start is the end commit that the September 29 round recorded. The October 1 automated round
+   reviewed only the relay's own window, `303bf239..1bfceff4`, and left the series' anchor
+   unchanged. The end was `origin/main` at kickoff.
+2. **Owner:** the kickoff session, Claude Opus 5.5 at `max` in the Claude desktop app, working in
+   `C:/Users/BenDe/GitRepos2/MAM-basics`. It writes neither report. Ben's choice: "Fresh Claude
+   reviews; I own (Recommended)".
+3. **Reviewers**, who may run in parallel: a fresh Claude session at `max` in
+   `C:/Users/BenDe/GitRepos/MAM-basics`, writing `doc/review-findings-2026-10-02.md`, and a Codex
+   session at `xhigh` in `C:/Users/BenDe/GitRepos3/MAM-basics`, writing
+   `doc/codex-review-findings-2026-10-02.md`.
+4. **Evidence, not subject.** Ben's choice: "Evidence only; skip relay (Recommended)". Both
+   reviewers treat the following as evidence. Everything else in the window is subject, including
+   the September 29 round's remediation of other code, data and documents.
+   - The earlier rounds' 22 records in the window: the September 29 round's
+     `doc/dual-agent-review-2026-09-29-turn-01-claude.md` through
+     `doc/dual-agent-review-2026-09-29-turn-11-claude.md`,
+     `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md` and
+     `doc/PLAN-remediate-review-findings-2026-09-29.md`; and the October 1 round's
+     `doc/dual-agent-review-2026-10-01-round.md`, its turns 01 to 05,
+     `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`,
+     `doc/PLAN-close-out-review-2026-10-01.md` and `doc/dual-agent-review-comparison-2026-10-01.md`.
+   - The relay software, which the October 1 round reviewed and which Ben hopes to discard soon:
+     `py/repo_util/dual_agent_review_dispatch.py`, `py/repo_util/dual_agent_review_round.py`,
+     `py/tests/test_dual_agent_review_dispatch.py`, `py/tests/test_dual_agent_review_turns.py`,
+     `doc/dual-agent-review-automation.md`, `doc/PLAN-automate-the-dual-agent-review-relay.md`,
+     `in/dual_agent_review_automation.json`, `misc/dual-agent-review-toast.ps1`,
+     `misc/register-dual-agent-review-task.ps1` and `dot-claude/agents/dual-agent-review-turn.md`;
+     the hunks that the relay's commits `1a50d4b6` and `2e120b85` contributed to
+     `py/main_repo_util.py`, `py/repo_util/user_config_sync.py` and `dot-claude/README.md`, whose
+     other window changes are subject; and the passages of this document and
+     `doc/periodic-review.md` that describe the automated relay.
 
 ## What Codex joined
 
