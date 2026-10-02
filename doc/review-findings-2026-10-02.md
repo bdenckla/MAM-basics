@@ -1,6 +1,7 @@
 # Findings of the 2026-10-02 review of MAM-basics since 2026-09-29
 
 State: not yet acted on
+Updates and later status: [review-findings-2026-10-02-update.md](review-findings-2026-10-02-update.md).
 
 Written on 2026-10-02, from about 14:57 to about 16:15 New York time, by a fresh Claude session
 (Claude Opus 5.5 at `max` in the Claude desktop app) as the Claude reviewer of the MAM-basics trial
