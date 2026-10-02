@@ -3,13 +3,52 @@
 This document records a recommendation Claude made on 2026-09-01, in a session titled "Claude and
 Codex complementary workflows", and first written down on 2026-09-03 because until then the
 recommendation existed only in that session's transcript and had to be recovered by searching
-transcripts. **The alternating argument, counter-argument and rebuttal round is the standard
-dual-agent review, by Ben's decision of 2026-09-09 (D9).** The September 8 review was its worked
+transcripts. The alternating argument, counter-argument and rebuttal round became the standard
+dual-agent review by Ben's decision of 2026-09-09 (D9). The September 8 review was its worked
 case. Design A was the default from 2026-09-07 to 2026-09-09 and was first run on the September 4
-window; Design B remains the blind alternative by explicit request.
+window. **For the next review, Ben selected the simplified independent-review trial below on
+2026-10-02.**
 
-Read this before starting a dual-agent review. It records the standard round, its shared branch on
-`origin`, its close-out, and the earlier Design A and Design B procedures.
+Read this before starting a dual-agent review. It records the next-review trial and the retained
+alternating, Design A and Design B procedures.
+
+## Next review: independent reviews and one disposition list — Ben's decision, 2026-10-02
+
+**Use this simplified process for the next review in each of MAM-basics and MAM-private.**
+Ben asked to record his desire to try the following process, leaving the size of the
+documentation change to Codex's judgment:
+
+1. Two fresh reviewers examine the same frozen commit range, with neither reading the other
+   reviewer's report.
+2. One owner reads both reports, removes duplicates, and checks substantive unique findings and
+   conflicting claims against the code or other evidence.
+3. That owner produces one disposition list. A consequential uncertainty gets a targeted
+   follow-up check or a decision from Ben.
+
+Name the owner, repository and exact start/end commits at kickoff. Parallel or serial execution
+is fine; each reviewer completes the independent report before reading the other report.
+Keep each repository's window and evidence separate, and keep private reports in MAM-private.
+Use the existing Design B filenames, `doc/review-findings-<date>.md` for Claude and
+`doc/codex-review-findings-<date>.md` for Codex. The owner's single disposition list belongs in
+the Claude report's one live update file; distinguish accepted unfixed findings, verified fixes,
+rejected claims with reasons, and consequential unresolved questions there.
+
+For this trial, these instructions take precedence over the older alternating and Design B
+procedures below. No mandatory rebuttal, acknowledgment, four-bucket comparison, fresh third
+review, shared relay branch, dedicated relay worktrees or automated relay is required. An
+ordinary focused follow-up suffices for a consequential disagreement; completion depends on
+checked dispositions, not agreement between reviewers. The owner's verification replaces the
+blanket per-finding sub-agent rechecks under `doc/periodic-review.md`, **Reviewing the review,
+with the same agent and with Ben**; delegate targeted checks when useful. Keep that document's
+usual scope, effort, evidence, one-writer and remediation safeguards.
+
+The purpose is to reduce time spent on review process and concentrate on substantive defects
+affecting the code, data and products. Record minor wording or plan inconsistencies briefly;
+do not grow them into separate process-remediation projects without a consequential reason.
+This is a next-review trial, not a commitment to two reviewers for every later window. It starts
+no review, requires no new relay implementation or private automated rollout, and leaves the
+existing relay code and historical evidence in place. Do not expand relay features merely to
+prepare this trial.
 
 **Codex already reviews this repository, in a different series.** The staged review of
 `py/main_0_mega.py`'s 42 registered steps ran in Codex review forests under

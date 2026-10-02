@@ -1,6 +1,6 @@
 # Updates to the first automated relay review's initial findings
 
-State: closed; first entry and remediation completion 2026-10-01.
+State: open; first entry 2026-10-01.
 
 **Approved remediation and close-out are completed on main; deployment and home deactivation are verified.**
 The execution entry below records the current disposition. Findings 1 and 11 remain withdrawn.
@@ -331,3 +331,10 @@ canonical deployment and manual inactive lifecycle completed. The five numbered 
 comparison/rehearsal evidence, both September 29 reviews, console fix and Ben's separate
 follow-up work are preserved. Private readiness/kickoff, excluded comparison proposals,
 general hardening, performance tuning and cleanup remain outside this completed scope.
+
+## Update-State correction by Codex, 2026-10-02
+
+**Corrected the update's own State; remediation remains complete.** The former
+`State: closed; first entry and remediation completion 2026-10-01` confused the update's State
+with its base review's effective State. The update stays open while its base is tracked, as
+`iterative-document-editing` requires. The completed effective base State recorded above stands.

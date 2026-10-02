@@ -9,8 +9,12 @@ here**; such citations are left as written, as the stale `../masorah-books/` and
 paths in `py/accgram/` are.
 
 Read this before starting a periodic review. Read `doc/dual-agent-review.md` as well only when the
-window is to be reviewed by two agents; D9 there chooses the procedure for such a window, and does
-not require any window to have two.
+window is to be reviewed by two agents. Its **Next review: independent reviews and one
+disposition list** section records Ben's 2026-10-02 choice for the next review in each of
+MAM-basics and MAM-private and takes precedence over D9's alternating procedure for that trial.
+The trial's owner verifies the findings in place of the blanket per-finding sub-agent rechecks
+below; targeted delegation remains available.
+This choice does not require every later window to have two reviewers.
 
 ## Delegation during a periodic review — Ben's decision, 2026-09-15
 
