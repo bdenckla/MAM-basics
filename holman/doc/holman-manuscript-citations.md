@@ -1,8 +1,7 @@
 # Holman's manuscript-image citations, and the five that name the wrong scan
 
-Measured 2026-08-12, on `holman-ketiv-qere` at `bc2ce42`. Everything here is
-re-establishable from what MAM-basics now tracks, including the UXLC data under
-`uxlc/` for the change-record section.
+Measured 2026-08-12, on `holman-ketiv-qere` at `bc2ce42`. Everything here is re-establishable from what MAM-basics now tracks, including the UXLC data under `uxlc/` for the change-record section.
+Updates and later status: [holman-manuscript-citations-update.md](holman-manuscript-citations-update.md).
 
 Each of Daniel Holman's suggested-correction cases has an `Image` field
 naming the Leningrad Codex scan he worked from and where on it he found the
