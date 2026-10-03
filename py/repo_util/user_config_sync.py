@@ -36,7 +36,6 @@ _GENERATED_USER_AGENTS_FINGERPRINT = Path(".generated/expected-user-wide-AGENTS.
 _ARCHIVE_PATHS = (
     Path("dot-claude/user-wide-CLAUDE.md"),
     Path("dot-claude/skills"),
-    Path("dot-claude/agents/dual-agent-review-turn.md"),
     Path("dot-Codex/user-wide-AGENTS.md"),
     Path("dot-Codex/hooks.json"),
     Path("dot-Codex/hooks/check_project_doc_budget.py"),
@@ -298,11 +297,6 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
         codex_instructions,
         hook_script,
         ConfigMapping(
-            Path("dot-claude/agents/dual-agent-review-turn.md"),
-            Path(".claude/agents/dual-agent-review-turn.md"),
-            "file",
-        ),
-        ConfigMapping(
             _GENERATED_USER_AGENTS_FINGERPRINT,
             Path(".codex/hooks/expected-user-wide-AGENTS.sha256"),
             "file",
@@ -344,9 +338,6 @@ def _build_mappings(source_root: Path) -> tuple[ConfigMapping, ...]:
         for name in retired_skills
     )
     mappings.append(hook_config)
-    for mapping in mappings:
-        if mapping.kind != "absent":
-            _require_source(source_root / mapping.source_rel, mapping.kind)
     _reject_duplicate_destinations(mappings)
     return tuple(mappings)
 

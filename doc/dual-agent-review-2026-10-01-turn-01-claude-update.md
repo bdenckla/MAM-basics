@@ -2,8 +2,8 @@
 
 State: open; first entry 2026-10-01.
 
-**Approved remediation and close-out are completed on main; deployment and home deactivation are verified.**
-The execution entry below records the current disposition. Findings 1 and 11 remain withdrawn.
+**Approved remediation and close-out were completed on main on 2026-10-01; the relay was retired on 2026-10-03.**
+"Relay retired, 2026-10-03" below records the current disposition. Findings 1 and 11 remain withdrawn.
 
 ## Close-out preparation by Codex, 2026-10-01
 
@@ -295,30 +295,32 @@ qualification.** Findings 1 and 11 remain withdrawn. The clean home main fast-fo
 verified `5a5d80b853ba07ef24ff0bdbb3f8382e1604518d` and the normal push succeeded.
 Fresh origin/main then supplied canonical deployment: `USER_CONFIG_DEPLOYED_COUNT=1`,
 followed by `USER_CONFIG_PROBLEM_COUNT=0`. The revised canonical
-`dot-claude/agents/dual-agent-review-turn.md` is deployed; live instruction files were not
-edited directly.
+`dot-claude/agents/dual-agent-review-turn.md` was deployed; live instruction files were not
+edited directly. "Relay retired, 2026-10-03" below records the deployed copy's later
+disposition.
 
 The revised home entry point ran `--dual-agent-review deactivate` for this exact round.
-Its actual registry retains the entry with `state: inactive`, `ownership: manual`,
+Its actual registry retained the entry with `state: inactive`, `ownership: manual`,
 `closed_tip: 5a5d80b853ba07ef24ff0bdbb3f8382e1604518d` and stored timestamp
-`2026-10-01T18:04:47.728712-04:00`. The transition evidence is retained at
+`2026-10-01T18:04:47.728712-04:00`. The transition evidence was retained at
 `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/dual-agent-review/2026-10-01/deactivation-1359b6e8192044f792c878b27a16802c.json`.
-PAUSE remains present; no in-flight/setup marker or dispatcher lock was removed to clear a
-gate. Both worktrees, the branch and all original control evidence remain recoverable.
+PAUSE remained present; no in-flight/setup marker or dispatcher lock was removed to clear a
+gate. When this entry was written, both worktrees, the branch and all original control evidence
+remained recoverable; "Relay retired, 2026-10-03" below records what became of them.
 
 The instrumented tick imported the home module, asserted its actual CONTROL path and inactive
 manual registration, and forbade fetch/launch/notify/round visits. It returned zero with every
 counter zero and unchanged registry/round-control bytes. The Windows task's inspected action
-uses the home `.venv/Scripts/pythonw.exe`, home `py/main_repo_util.py`,
+used the home `.venv/Scripts/pythonw.exe`, home `py/main_repo_util.py`,
 `--dual-agent-review tick` and home working directory, with no alternate configuration. It
-remains Ready, enabled, with IgnoreNew. This proves inactive dispatch handling for the
+remained Ready, enabled, with IgnoreNew when this entry was written. This proves inactive dispatch handling for the
 scheduler's source and registry; it does not claim a new worker exchange or notification
 receipt. The existing follow-up was left paused and received no automation update.
 
 The final ownership/evidence audit found clean home/development checkouts, no runtime
 blockers and all original 26 SHA-256 hashes unchanged. The round now records
-`State: executed 2026-10-01; close-out completed`; its parser/lint already admits this
-terminal state and it cannot dispatch. This final documentation commit records those actual
+`State: executed 2026-10-01; close-out completed`; the relay's parser and lint then admitted
+this terminal state, and the round could not dispatch. This final documentation commit records those actual
 outcomes. The executable and generated-product trees remain the verified `4251e8f6` tree,
 so the 1,056-pass/60-subtest suite and 57-step mega results remain applicable.
 The existing census and deployment lints passed on the final terminal round (2 passed,
@@ -338,3 +340,59 @@ general hardening, performance tuning and cleanup remain outside this completed 
 `State: closed; first entry and remediation completion 2026-10-01` confused the update's State
 with its base review's effective State. The update stays open while its base is tracked, as
 `iterative-document-editing` requires. The completed effective base State recorded above stands.
+
+## Relay retired, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, executing items R1 to R7 of
+`doc/PLAN-remediate-review-findings-2026-10-02.md` in `C:/Users/BenDe/GitRepos2/MAM-basics` on the
+machine `LAPTOP-DBLE8UKA`.
+
+**Retired: the relay that this round reviewed and remediated was removed from the tree on
+2026-10-03; this round's records stay unchanged.** Ben's selection on 2026-10-03, verbatim, was
+"Retire the relay now" (`doc/review-findings-2026-10-02-update.md`, "Ben's close-out decisions,
+2026-10-03", item 3). The commit that added this entry removed the relay's ten files, among them
+`py/repo_util/dual_agent_review_dispatch.py`, `py/repo_util/dual_agent_review_round.py`, their two
+test modules, `doc/dual-agent-review-automation.md` and
+`doc/PLAN-automate-the-dual-agent-review-relay.md`, together with the `--dual-agent-review`
+action of `py/main_repo_util.py` and the agent file's deployment in
+`py/repo_util/user_config_sync.py` and `dot-claude/README.md`. Its parent,
+[`cbd405b11ef990040031ccf19699db54a69a489d`](https://github.com/bdenckla/MAM-basics/tree/cbd405b11ef990040031ccf19699db54a69a489d),
+is the last commit whose tree holds every removed file; each path and line that this round's
+records cite in those files resolves there. D13 in `doc/dual-agent-review.md` is now a dated
+retirement note.
+
+The round file, the five numbered turns, `doc/PLAN-close-out-review-2026-10-01.md` and
+`doc/dual-agent-review-comparison-2026-10-01.md` are unchanged. In the round file, "This
+present-state file identifies an automated round" and "PAUSE, worktrees, branch and evidence are
+retained" describe the round as of 2026-10-01; no dispatcher reads the file now. This entry's
+commit corrected five present-tense passages above in place:
+
+1. The bold lead under the State line read "Approved remediation and close-out are completed on
+   main; deployment and home deactivation are verified." and was followed by "The execution entry
+   below records the current disposition." They now read "Approved remediation and close-out were
+   completed on main on 2026-10-01; the relay was retired on 2026-10-03." and ""Relay retired,
+   2026-10-03" below records the current disposition."
+2. In "Completed close-out by Codex, 2026-10-01", "The revised canonical
+   `dot-claude/agents/dual-agent-review-turn.md` is deployed; live instruction files were not
+   edited directly." now reads "… was deployed; live instruction files were not edited directly.
+   "Relay retired, 2026-10-03" below records the deployed copy's later disposition."
+3. In the same entry, the passage from "Its actual registry retains the entry" to "all original
+   control evidence remain recoverable." is now in the past tense: "retains" became "retained",
+   "The transition evidence is retained at" became "… was retained at", "PAUSE remains present"
+   became "PAUSE remained present", and "Both worktrees, the branch and all original control
+   evidence remain recoverable." became "When this entry was written, both worktrees, the branch
+   and all original control evidence remained recoverable; "Relay retired, 2026-10-03" below
+   records what became of them."
+4. In the same entry, "The Windows task's inspected action uses" became "… used", and "It remains
+   Ready, enabled, with IgnoreNew." became "It remained Ready, enabled, with IgnoreNew when this
+   entry was written."
+5. In the same entry, "its parser/lint already admits this terminal state and it cannot dispatch"
+   became "the relay's parser and lint then admitted this terminal state, and the round could not
+   dispatch".
+
+Ben authorized in advance, on 2026-10-03, the acts outside the repository that the remediation
+plan lists under "Acts outside the repository"; later dated entries here record each one's
+outcome as it is done, and `origin/dar-2026-10-01` stays by his choice.
+
+**Effective base State, 2026-10-03:** acted on; the approved remediation completed on 2026-10-01
+stands as recorded above, and the relay it remediated was retired on 2026-10-03.
