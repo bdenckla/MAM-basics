@@ -135,7 +135,7 @@ def _export_images(
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--eml-dir", type=Path, default=hkq_paths.mam_eml_dir())

@@ -226,8 +226,10 @@ rule; it does not override the repository's subsequently declared cloud exceptio
   surrogate then throws on re-encode — that once silently pushed an empty body to a GitHub issue.
 - **UTF-8 stdio.** On Windows, redirected stdout encodes with cp1252 and the first Hebrew
   `print()` dies. Reconfigure at the top of `main()`:
-  `sys.stdout.reconfigure(encoding="utf-8")`, same for stderr. Better still, keep non-ASCII off
-  stdout entirely — write it to a file opened with `encoding="utf-8"` and read it back.
+  `sys.stdout.reconfigure(encoding="utf-8")`, and for stderr
+  `sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")`, since an encoding given
+  without `errors` resets stderr's handler to `strict`. Better still, keep non-ASCII off stdout
+  entirely — write it to a file opened with `encoding="utf-8"` and read it back.
 - **No orphan combining marks in source.** Never a bare diacritic in a string literal; use
   `"\N{HEBREW POINT METEG}"`, `"\N{COMBINING GRAPHEME JOINER}"`. A mark anchored on a base letter,
   and real Hebrew text data, are fine.

@@ -709,11 +709,111 @@ finding-22 entry waits for this remediation's mega, as the plan says.
 
 ### Noticed outside the plan
 
-1. Unfixed, because the review and the plan scope C15.4 to the eleven programs of `33470e2d`: 34
-   other entry points under `py/` still call `sys.stderr.reconfigure(encoding="utf-8")` with no
-   error handler, which resets stderr's `backslashreplace` to `strict`.
+1. Unfixed when this entry was written, because the review and the plan scope C15.4 to the eleven
+   programs of `33470e2d`: 34 other entry points under `py/` called
+   `sys.stderr.reconfigure(encoding="utf-8")` with no error handler, which resets stderr's
+   `backslashreplace` to `strict`. "Two observations of the executor's report addressed,
+   2026-10-03" below records their fix.
 
 **What remains.** Final integration as the plan's "Final integration" describes: merging the current
 `origin/main`, the mega, the fast-forward and push of `main`, then A3, A2 and A10 on this machine;
 then the closing records; then the relay-machine session on the relay machine. This update remains
 `State: open` while its base survives.
+
+## Final integration completed, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session, at step 6 of the
+plan's "Final integration". **Completed: the remediation is on `main` at
+`e9c72f2b2e7c81b457d66852b0faace839525e1e`; this machine's live configuration is deployed from it,
+its deployed agent file is retired, and the remediation branch is deleted. The relay machine's acts
+remain.**
+
+1. **The full suite** passed at `7bd5ee8c` with 1,047 passed, 5 skipped and 60 subtests passed, as
+   the entry above explains. The one later commit, `e9c72f2b`, changes only documentation and the
+   wrapping of one skill reference, so that result stands.
+2. **The merge.** A fetch found `origin/main` still at `074af13a`, an ancestor of the branch, so the
+   merge of `origin/main` made no commit.
+3. **The mega.** `./.venv/Scripts/python.exe py/main_0_mega.py`, with no `REPOS_ROOT`, ran at
+   `e9c72f2b` from 14:15:59 to 14:26:05 New York time and exited 0: 57 steps in 600.9 seconds, with
+   Graphviz confirmed as the pinned 16.0.0 (20260814.1018). It left no tracked diff and no untracked
+   file. Its `phonetic-mam-export` step re-exported the release through the private adapter in
+   107.3 seconds and left `Phonetic-MAM/` unchanged, `BD-2Kings.json` included.
+4. **Integration.** After a fetch, `origin/remediate-review-2026-10-02` was exactly `e9c72f2b`, the
+   mega-verified commit. The clone switched to `main`, fast-forwarded it from `074af13a` to
+   `e9c72f2b`, and pushed it at 14:26:33 New York time, never forced. The push reaches the published
+   Pages tree at the next 04:17 deployment and the distributed products at once.
+5. **A3 on `LAPTOP-DBLE8UKA`.** `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config`
+   deployed from `refs/remotes/origin/main` at `e9c72f2b` and reported
+   `USER_CONFIG_DEPLOYED_COUNT=8`: the four changed skills, `github-issues`, `hebrew-prose`,
+   `mam-repository-topology` and `mam-wikisource-refresh`, in both `~/.claude/skills/` and
+   `~/.agents/skills/`, whose directories that run recreated. `--sync-user-config --check` then
+   reported `USER_CONFIG_PROBLEM_COUNT=0`.
+6. **A2 on `LAPTOP-DBLE8UKA`.** The deployed `$HOME/.claude/agents/dual-agent-review-turn.md`, SHA-256
+   `2CB3B50A719FF019162C9BF7B0684094106A99EE22AE0E60A9CD5ACA907E4308` and 2,494 bytes, byte-identical
+   to its canonical blob at the archive commit `cbd405b1`, was moved at 14:27:21 New York time to
+   `$HOME/relay-retirement-2026-10/dual-agent-review-turn.md`, which keeps that hash. The old path no
+   longer exists, and the retention folder holds only that file.
+7. **A10.** With `origin/main` at the branch's tip `e9c72f2b`, `git push origin --delete
+   remediate-review-2026-10-02` and `git branch -d remediate-review-2026-10-02` deleted both at
+   14:27:37 New York time. Undo: push the recorded tip again.
+
+**The closing records** are the commit that adds this entry, made directly on `main`: this entry;
+"Relay retirement acts on LAPTOP-DBLE8UKA, 2026-10-03" in the October 1 round's update; the
+sentence that item 5 of "The MAM-basics trial review, kicked off 2026-10-02" in
+`doc/dual-agent-review.md` gains; C5.2's sentence in the finding-22 entry of the September 29
+round's update; and the plan's State. They change no source, product or canonical configuration,
+so the suite, mega and deployment evidence above stands.
+
+**Effective base State, 2026-10-03:** acted on; the remediation of the 64 accepted findings, with the
+citation of Ben's finding-14 decision and the relay's retirement in the repository, was integrated
+on `main` at `e9c72f2b` on 2026-10-03. The base report's line 3 stays as written.
+
+**What remains:** the relay-machine session, which Ben starts on the machine that ran the relay with
+the prompt in the plan's section of that name. It performs A0, A1, A7, A3, A2, A4, A5 and A8 there,
+records their outcomes, and sets the plan's State to executed. A9 stays Ben's, in the Codex app, and
+Ben may delete `$HOME/relay-retirement-2026-10/` on this machine whenever he wants the space. This
+update remains `State: open` while its base survives.
+
+## A3 repeated on LAPTOP-DBLE8UKA after origin/main moved, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session. The fetch before
+the push of the closing records, `aa92b8fb`, found `origin/main` at `f0c50473`: another session had
+merged `e9c72f2b` with its own `d168e22e`, "Keep user request files separate from agent revision
+records", a change to the canonical `iterative-document-editing` skill. `main` merged it as
+`6f53a603`, the three Markdown lints passed, and `main` was pushed at 14:31:02 New York time.
+`--sync-user-config --check` then reported that skill's two live copies as drift, which only a
+deployment from `origin/main` clears, so A3 ran again in its planned form, from `origin/main` at
+`6f53a603`, at 14:32 New York time: it deployed those two copies (`USER_CONFIG_DEPLOYED_COUNT=2`),
+and `--sync-user-config --check` reported `USER_CONFIG_PROBLEM_COUNT=0`. No session on this machine
+held that skill's work at the time: the only live Claude sessions were this one and the idle
+plan-preparing session, and no Codex writer lease existed.
+
+## Two observations of the executor's report addressed, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session, which Ben asked,
+after its report, to address two of the report's observations: "Go ahead and address these
+findings 3 and 4".
+
+1. **Fixed: every reconfiguration of stderr keeps its `backslashreplace` error handler.** Item 1
+   of "Noticed outside the plan" above counted 34 entry points under `py/`; a census of every
+   tracked Python file found 36 sites in all. The commit that adds this entry gives the 34, and
+   the canonical Codex hook `dot-Codex/hooks/check_project_doc_budget.py`, the form
+   `sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")`.
+   `py/wlc_cmn/utf8_io.py`'s `force_utf8_io`, which the mega and seven other programs call,
+   reconfigured both streams in a loop through `getattr`; it now names each stream, and stderr
+   keeps `backslashreplace`. The `hebrew-prose` skill's `references/verifying.md`, whose "same
+   for stderr" taught the one-argument form, now gives the stderr call in full. The new lint
+   `py/tests/test_stderr_error_handler.py` requires every `reconfigure` call in tracked Python to
+   name `sys.stdin`, `sys.stdout` or `sys.stderr`, and every stderr call to pass
+   `errors="backslashreplace"`; at the parent commit it reports 37 problems, the 35 one-argument
+   calls and `force_utf8_io`'s two. The full suite passed with 1,048 tests, the new lint the one
+   added, with 5 skipped and 60 subtests passed. The mega was not run, at Ben's direction: the 35
+   one-line changes are in `main()` or a `__main__` block, which no mega step runs, and the one
+   change that the mega runs, `force_utf8_io`, changes only what stderr does with a lone
+   surrogate, which no tracked output depends on. No hand-run program was rerun, for the same
+   reason; `py/main_hbce_psalms.py compare` also keeps its frozen record.
+2. **Fixed: `C:/Users/BenDe/GitRepos2/hbofonts` was behind its origin.** It was clean on `main` at
+   `812ff746`; a fetch and `git merge --ff-only origin/main` brought it to `6eb3ee0e`, "Retire
+   Taamey D evacuation receipt", which deletes `doc/PLAN-evacuate-Taamey_D-into-hbofonts.md` and
+   edits hbofonts' `AGENTS.md`. Nothing in MAM-basics names the deleted file, and the full suite
+   above, which reads hbofonts, ran after the fast-forward.

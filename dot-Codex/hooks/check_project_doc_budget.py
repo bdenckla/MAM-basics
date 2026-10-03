@@ -282,7 +282,7 @@ def _print_maintenance_report(
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = _parse_args()
     try:
         hook_input = {} if args.cwd is not None else _read_hook_input()

@@ -80,7 +80,7 @@ _VERSE_CHILD_HANDLERS = {
 def main():
     """Writes UXLC features of interest to per-FOI JSON files."""
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     uxlc = my_uxlc.read_all_books(_VERSE_CHILD_HANDLERS)
     fois = {
         "kq": fois_kq_foi.init(),

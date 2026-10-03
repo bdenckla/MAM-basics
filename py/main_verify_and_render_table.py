@@ -60,7 +60,7 @@ def persist_verify_summary(
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(
         description="Verify and render Holman's tracked ketiv/qere review data."
     )

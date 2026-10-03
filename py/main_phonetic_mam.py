@@ -66,7 +66,7 @@ def main():
     sys.dont_write_bytecode = True
     sys.stdin.reconfigure(encoding="utf-8", errors="surrogateescape")
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     return almost_main()
 
 

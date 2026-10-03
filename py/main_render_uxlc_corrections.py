@@ -38,7 +38,7 @@ DEFAULT_JSON_OUTPUT = hkq_paths.uxlc_corrections_json_path()
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--emails-dir", type=Path, default=DEFAULT_EMAILS_DIR)

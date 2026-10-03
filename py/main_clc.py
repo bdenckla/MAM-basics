@@ -103,7 +103,7 @@ def almost_main(argv: list[str]) -> None:
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     almost_main(sys.argv[1:])
 
 

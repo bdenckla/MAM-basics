@@ -211,7 +211,7 @@ def run_rebuild() -> bool:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = _parse_args()
     ok = True
     tests_ok = True

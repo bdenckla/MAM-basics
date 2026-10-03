@@ -1794,4 +1794,5 @@ both (`doc/review-findings-2026-10-02-update.md`, C5.2). The review also reporte
 re-exported the release from the current MAM-parsed without a byte of difference, so a refresh alone
 would not bring the variant in; that report rests on the private adapter, and the owner did not
 re-derive it. `Phonetic-MAM/README.md`, "How the Hebrew differs from MAM's text", now discloses the
-difference.
+difference. This remediation's mega re-exported the release at `e9c72f2b` and left
+`Phonetic-MAM/data/BD-2Kings.json` unchanged, which re-derives that report.

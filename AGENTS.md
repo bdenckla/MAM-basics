@@ -158,10 +158,13 @@ temporary-stub procedures, and historical traps.
    `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
-A change that can reach a mega generator owes a mega run and an explanation of every tracked
-diff. A documentation-only change owes neither a mega run nor the suite. Any other change that
-cannot reach a mega generator owes the suite. A hand-run generator can reach a product even though
-the mega does not run it. A change to a hand-run generator, or to any input it reads, requires
+Before pushing `main` to `origin`, run the mega and the suite. Like most rules this one has
+exceptions: skip either when you judge the changes reasonably likely to be safe, or unlikely to
+have a problem that it would catch, and say what you skipped, and why, in the message of the last
+commit you push. Committing to or integrating into a local `main` needs no such check until that
+`main` is pushed. When the mega runs, a failing step or an unexplained tracked diff is a failure.
+The mega does not run the hand-run generators, so a hand-run generator can reach a product that
+no mega run checks. A change to a hand-run generator, or to any input it reads, requires
 rerunning every affected hand-run generator and inspecting its tracked outputs, with two
 exceptions that Ben decided. A refresh of MAM's text does not oblige rerunning
 `py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30), so MAM-for-Sefaria
@@ -192,24 +195,20 @@ The Phonetic MAM exporter alone reads private inputs through a read-only subproc
 Rendering, public analyses and final-stress tests consume the tracked `Phonetic-MAM/`
 release, including in cloud sessions; they have no private-input fallback.
 
-## Integrating a worktree branch here: run the mega unless the branch is exempt
+## Integrating a worktree branch here
 
-For final worktree integration, after merging the home clone's `main` into the worktree branch,
-run from the worktree root using the home clone's interpreter by absolute path. The full-clone
-form is:
+A worktree's integration fast-forwards its home clone's `main` and then pushes it, so the
+products section's rule for a push decides whether the mega and the suite run. Run whatever that
+push needs before the fast-forward: after merging the home clone's `main` into the worktree branch,
+run from the worktree root using the home clone's interpreter by absolute path, and commit each
+explained generated change on the worktree branch, since the home clone takes only fast-forwards.
+The full-clone form of the mega is:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_0_mega.py
 ```
 
-A failing step or unexplained tracked diff is a failure. Commit each explained generated change
-on the worktree branch before the worktree's home clone is fast-forwarded. Running the suite too is
-optional. A branch changing only documentation, comments, docstrings, or instruction text needs neither a mega run
-nor the suite. This exemption describes the changed content, not its directory.
-Executable hooks and helpers, tests, schemas, shared data, and execution-changing
-configuration receive the applicable checks even below `doc/`, `dot-claude/`, or
-`dot-Codex/`. Generator or product changes still require their applicable generator checks. The user-level
-Git section gives the remaining integration order.
+The user-level Git section gives the remaining integration order.
 
 ## Running tests: use the one entrypoint from the repository root
 

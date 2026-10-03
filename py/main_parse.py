@@ -36,7 +36,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = build_parser().parse_args()
     args.func(args)
 
