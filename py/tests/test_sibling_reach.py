@@ -209,8 +209,9 @@ _INERT_RESOLVER_TESTS = frozenset({"py/tests/test_mb_cmn_paths.py"})
 
 # paths.py IS the resolver: its `repos_root() / name` is the mechanism rather than a
 # call site, and its `name` is a parameter no in-file lookup can resolve.  Only the
-# repos_root recognizer skips it; its sibling_repo("MAM-private") call is a real reach
-# and is counted.
+# repos_root recognizer skips it.  paths.py has named no sibling since 9a67d51b deleted
+# its al_hatorah_phonetic_dir: MAM-private's one reach is the exporter's call in
+# py/phonetic_mam/exporter.py's _adapter_location, which the scan counts like any other.
 _PATHS_MODULE = "py/mb_cmn/paths.py"
 
 _SELF = "py/tests/test_sibling_reach.py"

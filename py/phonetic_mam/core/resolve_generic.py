@@ -1,6 +1,5 @@
 import re
 import phonetic_mam.core.deep_latin as deeplat
-import phonetic_mam.core.udl_char_classes as cc
 import phonetic_mam.core.resolve_common as pra
 
 

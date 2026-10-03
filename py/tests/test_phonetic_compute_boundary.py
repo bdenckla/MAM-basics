@@ -1,7 +1,6 @@
 """Mechanical ownership and no-file-I/O checks for the transient compute core."""
 
 import ast
-from pathlib import Path
 
 from mb_cmn.paths import repo_root
 
