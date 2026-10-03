@@ -8,17 +8,13 @@ from pathlib import Path
 from urllib.parse import quote
 
 from mb_cmn import bib_locales
+from mb_misc import mam_attribution
 from phonetic_mam import display_schema
 from py_html import legacy_html as html
 from py_html import legacy_html_lines
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 
 _YEIVIN_URL = "../yeivin-itm/yeivin_itm.html"
-_SOURCE_URL = (
-    "https://he.wikisource.org/wiki/"
-    "%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_"
-    "%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94"
-)
 _ASSETS = Path(__file__).with_name("assets")
 
 
@@ -47,7 +43,10 @@ def render_index():
                     {"href": "https://creativecommons.org/licenses/by-sa/4.0/"},
                 ),
                 ". Source attribution: ",
-                html.anchor("Hebrew Wikisource", {"href": _SOURCE_URL}),
+                html.anchor(
+                    "Hebrew Wikisource",
+                    {"href": mam_attribution.ENGLISH_ATTRIBUTION_URL},
+                ),
                 " and ",
                 html.anchor(
                     "Al-Hatorah Mikraot Gedolot", {"href": "https://mg.alhatorah.org"}
