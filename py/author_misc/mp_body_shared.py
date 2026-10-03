@@ -282,7 +282,7 @@ def verse_structure_prelude(
                     claim_id,
                     "Each verse is a 3-element array for the separator, verse label,"
                     " and verse proper. These positions retain the C, D, and E names"
-                    " used by $MAM's tabular data.",
+                    " used by a now-obsolete spreadsheet version of $MAM.",
                     kind="struct",
                     subject=subject,
                     data={"shape": ["sep", "label", "text"], "length": 3},
