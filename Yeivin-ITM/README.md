@@ -78,15 +78,41 @@ fractions and input hash, so a changed corpus or population requires a fresh
 review. Numerical text is inserted from named claim references before HTML line
 wrapping. Percentages are rounded once from the original fractions.
 
-The exact legacy-page differential is recorded in
-`in/yeivin_itm_legacy_differential.json` against phonetic-hbo commit
-`8da90513df1c759d8db34b135d007e79686715d3`. It permits only Ben's approved numerical
-and explanatory corrections in three pages and the landing page's font-source
-link. Every page now also links to the shared favicon; the differential removes
-only that exact common header line before reconstructing the original bytes. The
-original page hashes and correction ranges remain unchanged. The differential also
-pins all unchanged adaptation modules to their mechanically moved public source. This records branch output,
-not a claim that Pages has been deployed.
+`in/yeivin_itm_legacy_differential.json` is the frozen record of the migration from
+phonetic-hbo commit `8da90513df1c759d8db34b135d007e79686715d3`. From the pages and
+adaptation modules as of `75a1127b5310f0dd4ed2827ad93c687178960f8e`, it reconstructed
+each page that phonetic-hbo commit published, after removing the shared favicon line
+and reversing only Ben's approved numerical and explanatory corrections in three
+pages and the landing page's font-source link, and it pinned every other adaptation
+module to its mechanically moved public source. No test reads it now.
+
+## Editing the adaptation
+
+The adaptation under `py/yeivin_itm/content/` is editable source, and Ben approves
+each change to it. After editing a module, regenerate the pages and run the
+product's tests from the repository root:
+
+```powershell
+./.venv/Scripts/python.exe py/main_yeivin_itm.py render
+```
+
+```powershell
+./.venv/Scripts/python.exe py/main_test.py py/tests/test_yeivin_itm.py
+```
+
+The regenerated pages are the test: read every changed line under
+`gh-pages/yeivin-itm/` before committing, and name in the commit message the
+approval of Ben's that the change carries out. The tests require the tracked pages
+to equal regeneration and every internal link and fragment to resolve. Ben's
+numerical claims are not edited in the pages; they come from `meteg-claims.json`
+under the pins described above.
+
+`in/yeivin_itm_published_anchors.json` lists the 345 fragment identifiers that the
+17 pages had at the end of the migration, the same identifiers as the pages
+phonetic-hbo published. phonetic-hbo's redirect pages forward old addresses,
+fragments included, to these pages, so the tests require every listed identifier to
+remain. An edit may add identifiers; removing one is Ben's decision and updates that
+record in the same commit.
 
 ## Data and asset terms
 
