@@ -110,9 +110,10 @@ product's tests from the repository root:
 The regenerated pages are the test: read every changed line under
 `gh-pages/yeivin-itm/` before committing, and name in the commit message the
 approval of Ben's that the change carries out. The tests require the tracked pages
-to equal regeneration and every internal link and fragment to resolve. Ben's
-numerical claims are not edited in the pages; they come from `meteg-claims.json`
-under the pins described above.
+to equal regeneration, every internal link and fragment to resolve, and every
+biblical reference to name a verse in one of the three versifications that
+MAM-simple ships. Ben's numerical claims are not edited in the pages; they come
+from `meteg-claims.json` under the pins described above.
 
 `in/yeivin_itm_published_anchors.json` lists the 345 fragment identifiers that the
 17 pages had at the end of the migration, the same identifiers as the pages

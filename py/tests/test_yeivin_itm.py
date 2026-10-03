@@ -1,8 +1,10 @@
 """Differential publication checks and claim/source-shape lints for Yeivin ITM."""
 
 import ast
+from collections import Counter
 from hashlib import sha256
 import json
+import re
 import subprocess
 import sys
 from urllib.parse import urlsplit
@@ -11,8 +13,10 @@ from lxml import html
 import pytest
 
 from mb_cmn import paths as repo_paths
+from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 from yeivin_itm import claims, claim_schema, paths, publication, renderer, source_lint
+from yeivin_itm.content import my_yeivin_amisc_helpers_for_locales as locales
 
 
 def test_complete_rendering_matches_tracked_pages():
@@ -67,6 +71,77 @@ def test_every_published_fragment_identifier_remains():
             identifier for identifier in identifiers if identifier not in current
         ]
         assert not missing, (name, missing)
+
+
+_REFERENCE = re.compile(r"@(\S+) (\d+):(\d+)")
+
+
+def _verse_osis_ids():
+    """Every verse osisID in the three versifications that MAM-simple ships."""
+    root = repo_paths.repo_root() / "MAM-simple"
+    files = [
+        path
+        for name in ("json-vtrad-mam", "json-vtrad-bhs", "json-vtrad-sef")
+        for path in sorted((root / name).glob("*.json"))
+    ]
+    assert files, "MAM-simple's verse lists are missing"
+    verses = set()
+
+    def collect(node):
+        if isinstance(node, dict):
+            osis = node.get("osisID")
+            if isinstance(osis, str) and osis.count(".") == 2:
+                verses.add(osis)
+            for value in node.values():
+                collect(value)
+        elif isinstance(node, list):
+            for value in node:
+                collect(value)
+
+    for path in files:
+        collect(json.loads(path.read_text(encoding="utf-8")))
+    assert len(verses) >= 23000, len(verses)
+    return verses
+
+
+def test_every_biblical_reference_names_an_existing_verse():
+    """A lint: each reference on the pages or in the source names a verse MAM has.
+
+    It proves that the verse exists in one of MAM-simple's versifications, not that
+    the verse holds the form the adaptation cites there.
+    """
+    counts = Counter(ybkid for ybkid, _bkid in locales.YBKID_AND_STD_BKID_PAIRS)
+    books = {
+        ybkid: bkid
+        for ybkid, bkid in locales.YBKID_AND_STD_BKID_PAIRS
+        if counts[ybkid] == 1
+    }
+    references = set()
+    pages = sorted(paths.pages_dir().glob("*.html"))
+    assert len(pages) == 17
+    for path in pages:
+        document = html.fromstring(path.read_text(encoding="utf-8"))
+        references.update(document.xpath("//@data-bk-ch-vr | //@data-bk-ch-vr-2"))
+    source_root = repo_paths.repo_root() / "py" / "yeivin_itm"
+    for path in sorted(source_root.rglob("*.py")):
+        for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
+            if (
+                isinstance(node, ast.Constant)
+                and isinstance(node.value, str)
+                and _REFERENCE.fullmatch(node.value)
+            ):
+                references.add(node.value)
+    assert len(references) >= 700, len(references)
+    verses = _verse_osis_ids()
+    unknown = []
+    for reference in sorted(references):
+        match = _REFERENCE.fullmatch(reference)
+        assert match, reference
+        bkid = books.get(match[1])
+        osis = bkid and f"{BOOK_ABBREVS[bkid]}.{int(match[2])}.{int(match[3])}"
+        if osis not in verses:
+            unknown.append(reference)
+    assert not unknown, unknown
 
 
 def test_approved_claim_schema_matches_the_tracked_data_and_named_pins():

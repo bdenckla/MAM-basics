@@ -5,7 +5,7 @@ _MSS_L_C = sub.ms_lenin(), " and ", sub.ms_cairo()
 _NOT_REPEATED_EXAMPLES = [
     [hlp.hboloc("מִזְבֵּחַ֙", "@Is 19:19"), ","],
     [" ", hlp.hboloc("הֱטִיבֹתָ֙", "@2K 10:30"), ","],
-    [" ", hlp.hboloc("יְרוּשָׁלַ͏ִם֙", "@2K 52:1"), ", and"],
+    [" ", hlp.hboloc("יְרוּשָׁלַ͏ִם֙", "@Is 52:1"), ", and"],
     [" ", hlp.hboloc("וְשַׁתִּהָ֙", "@Ho 2:5")],
 ]
 _QIMXI_BLOCKQUOTE_CONT = [
