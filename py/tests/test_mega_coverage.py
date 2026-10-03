@@ -88,6 +88,7 @@ from __future__ import annotations
 
 import ast
 import functools
+import re
 import subprocess
 from dataclasses import dataclass
 
@@ -251,9 +252,9 @@ NOT_IN_MEGA: dict[str, str] = {
     ),
     "py/main_download.py fr-wikisource": (
         "A network download from Hebrew Wikisource, run when the upstream moves."
-        '  Recorded in doc/process-documentation/pipeline.dot ("External prerequisites'
-        " (not part of _STEPS)\"), the closing comment of py/main_0_mega.py's main(),"
-        " and doc/mega-coverage-2026-09-10.md §3."
+        "  Recorded in py/pipeline_graph/pipeline_graph_spec.py, which draws it dashed as"
+        " a program the mega does not run, the closing comment of py/main_0_mega.py's"
+        " main(), and doc/mega-coverage-2026-09-10.md §3."
     ),
     "py/main_download.py fr-ws-intro": (
         "A network download of Hebrew Wikisource's introduction to MAM, which nothing"
@@ -1148,3 +1149,54 @@ def test_no_declared_program_is_run_by_the_mega() -> None:
         "A program that NOT_IN_MEGA declares as left out of the mega is one the mega"
         " runs.\n  " + "\n  ".join(ran)
     )
+
+
+# The one program the pipeline graph draws that the README's "Core pipeline" does not name.
+_PIPELINE_GRAPH_BOT = "py/main_ws_bot.py real"
+
+
+def test_pipeline_graph_draws_the_core_pipeline() -> None:
+    """The pipeline graph's programs agree with _STEPS, NOT_IN_MEGA and the README.
+
+    A program node that names steps names ``_STEPS`` ids whose runners run that program
+    or one of its subcommands; a program node that names none is a NOT_IN_MEGA key; and
+    the drawn programs other than the Wikisource bot are the backticked ``main_*.py``
+    commands of the root README's "### Core pipeline" section.  The graph's edges are
+    hand-entered, and nothing here checks them.
+    """
+    from pipeline_graph import pipeline_graph_spec as spec
+
+    nodes = spec.PROGRAM_NODES
+    assert nodes, "the pipeline graph draws no program"
+    scan = _scan_mega()
+    step_ids = {step_id for step_id, _runner, _line in _steps(_tree(_MEGA), [])}
+    problems = []
+    for node in nodes:
+        if not node.step_ids:
+            if node.program not in NOT_IN_MEGA:
+                problems.append(
+                    f"{node.program} is drawn dashed but not in NOT_IN_MEGA"
+                )
+            continue
+        for step_id in node.step_ids:
+            if step_id not in step_ids:
+                problems.append(f"{node.program} names {step_id}, not a step of _STEPS")
+                continue
+            ran = {run.program for run in scan.runs if run.step_id == step_id}
+            if not any(
+                program == node.program or program.startswith(node.program + " ")
+                for program in ran
+            ):
+                problems.append(f"step {step_id} does not run {node.program}: {ran}")
+    assert not problems, "\n".join(problems)
+    readme = (paths.repo_root() / "README.md").read_text(encoding="utf-8")
+    assert "### Core pipeline" in readme, "README.md has no Core pipeline section"
+    section = readme.split("### Core pipeline", 1)[1].split("\n#", 1)[0]
+    named = {
+        f"py/{command}"
+        for command in re.findall(r"`(main_\w+\.py(?: [\w-]+)?)`", section)
+    }
+    assert named, "README.md's Core pipeline section names no program"
+    drawn = {node.program for node in nodes}
+    assert _PIPELINE_GRAPH_BOT in drawn
+    assert drawn - {_PIPELINE_GRAPH_BOT} == named
