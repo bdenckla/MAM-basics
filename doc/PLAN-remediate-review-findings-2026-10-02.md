@@ -1,6 +1,6 @@
 # Remediate the October 2, 2026 trial review of MAM-basics
 
-State: live; Ben's choices and his advance authorization of every act recorded 2026-10-03; execution not yet started
+State: live; Ben's choices and advance authorization recorded 2026-10-03; execution started 2026-10-03
 
 Prepared by Claude on 2026-10-03, New York time, as close-out step 2 of the 2026-10-02 trial review
 (`doc/periodic-review.md`, "Close-out: from findings to dispositions"). The session ran as Claude
