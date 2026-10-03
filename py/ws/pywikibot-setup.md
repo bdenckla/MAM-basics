@@ -69,12 +69,46 @@ automatic local refresh:
 
        .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
 
-For process/idempotence checks, use `--identity-run`:
+## Dry runs before a save
+
+Neither `--no-save` nor `--identity-run` saves a live page, and each turns
+off the post-run download.
+
+`--no-save` is the dry run for an edit file. Give it the edit file and the
+selector that the save will use:
+
+       .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
+
+It fetches every selected chapter, applies the edits in memory, writes each
+resulting chapter to the run's `chapters/` directory, and saves nothing.
+Before a save it is expected to exit non-zero: after the last chapter it
+stops with "no-save run found chapters that would change" and lists each
+chapter that the save would change. That list should name exactly the
+chapters that the edit file targets. Any other failure, such as an
+`AssertionError` from an edit's guard or "Selector includes chapters outside
+this edit spec target set", must be resolved before saving. An exit of zero
+before a save means that no selected chapter would change, so the edit file
+or the selector is wrong.
+
+Run again after the save, with the same edit file and selector, `--no-save`
+checks idempotence only for an edit kind that is idempotent, one that leaves
+its own output unchanged: `kq-trivial-to-kq-trivial-2`,
+`kq-trivial-2-rename-extra-alef-sug` and `kuk-special-callsite-migration`.
+For those kinds an exit of zero confirms that every selected chapter already
+has the edited text. The other kinds are one-shot. `meteg-removal` and
+`explicit-replacement` require each `old` string to occur exactly once, and
+`sigil-b2-to-t451` requires a per-chapter count of the old sigil, so after
+the save a re-run fails at the first chapter whose guard it checks. That
+failure shows that the old text is gone, not that the saved text is right;
+compare the saving run's `chapters/` files with the dry run's instead.
+
+`--identity-run` is a null bot. It reads no edit file, although the parser
+still requires `--edits`; it gives each selected chapter back its own text
+and saves nothing, so it cannot fail on a change. Use it only to exercise a
+run's plumbing: the pywikibot configuration, the selector, the page reads
+and the run's artifact directory.
 
        .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
-
-`--identity-run` does **not** save live pages. It processes chapters and
-fails at the end if any chapter text would change.
 
 ## Real-run artifact layout
 
