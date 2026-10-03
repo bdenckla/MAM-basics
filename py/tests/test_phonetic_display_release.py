@@ -5,7 +5,7 @@ import json
 from lxml import html
 
 from mb_cmn import bib_locales, paths
-from phonetic_mam import display_schema, projection_check, release, test_page_display
+from phonetic_mam import display_schema, example_display, projection_check, release
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 
 
@@ -41,7 +41,7 @@ def test_unified_site_controls_and_public_output_boundary():
         document = html.fromstring(text)
         ids = document.xpath("//@id")
         assert len(ids) == len(set(ids)), path
-        if path.name in test_page_display.PAGE_NAMES:
+        if path.name in example_display.PAGE_NAMES:
             continue
         assert [
             value.strip() for value in document.xpath("//fieldset/legend/text()")
@@ -59,7 +59,7 @@ def test_unified_site_controls_and_public_output_boundary():
 
 
 def test_example_pages_match_their_display_input():
-    expected = test_page_display.page_texts(release.read_examples())
+    expected = example_display.page_texts(release.read_examples())
     site = paths.gh_pages_dir() / "phonetic-mam"
     for name, text in expected.items():
         assert (site / name).read_text(encoding="utf-8") == text

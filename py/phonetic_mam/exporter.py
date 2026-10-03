@@ -13,7 +13,7 @@ import tempfile
 import threading
 
 from mb_cmn import bib_locales, paths, provenance
-from phonetic_mam import display_projection, display_schema, test_page_display
+from phonetic_mam import display_projection, display_schema, example_display
 
 _ADAPTER_RELATIVE_PATH = Path("al-hatorah/py/main_phonetic_mam_source.py")
 _MAX_BOOK_CHARS = 64 * 1024 * 1024
@@ -260,14 +260,14 @@ def source_test_pages():
         name = page["filename"]
         display_schema.require(isinstance(name, str), "test-page name must be text")
         display_schema.require(name not in by_name, "duplicate test-page input")
-        by_name[name] = test_page_display.page_from_html(name, page["html"])
+        by_name[name] = example_display.page_from_html(name, page["html"])
     display_schema.require(
-        set(by_name) == set(test_page_display.PAGE_NAMES), "test-page set differs"
+        set(by_name) == set(example_display.PAGE_NAMES), "test-page set differs"
     )
-    return test_page_display.validate(
+    return example_display.validate(
         {
-            "schema": test_page_display.SCHEMA_ID,
-            "pages": [by_name[name] for name in test_page_display.PAGE_NAMES],
+            "schema": example_display.SCHEMA_ID,
+            "pages": [by_name[name] for name in example_display.PAGE_NAMES],
         }
     )
 
@@ -296,7 +296,7 @@ def export_release():
     display_schema.require(
         tuple(payloads) == tuple(bib_locales.ALL_BK39_IDS), "incomplete export"
     )
-    test_bytes = test_page_display.canonical_bytes(source_test_pages())
+    test_bytes = example_display.canonical_bytes(source_test_pages())
     output = paths.repo_root() / "Phonetic-MAM" / "data"
     output.mkdir(parents=True, exist_ok=True)
     names = {
