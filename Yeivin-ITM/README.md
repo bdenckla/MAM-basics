@@ -73,7 +73,8 @@ The counts retain the analysis's cantillation and qamats projection, with no
 extra filters invented to reproduce historical workbook figures.
 
 Ben approved correction of his added claims and their explanatory prose on
-2026-10-01. The prose pins in `py/yeivin_itm/claim_schema.py` fix the reviewed
+2026-10-01, and the 11 fractions that the oleh-weyored correction changed on
+2026-10-03. The prose pins in `py/yeivin_itm/claim_schema.py` fix the reviewed
 fractions and input hash, so a changed corpus or population requires a fresh
 review. Numerical text is inserted from named claim references before HTML line
 wrapping. Percentages are rounded once from the original fractions.

@@ -9,27 +9,27 @@ import re
 SCHEMA = "yeivin-meteg-claims-v1"
 INPUT_IDENTITY = "out/accgram/meteg-before-stress.json"
 APPROVED_INPUT_SHA256 = (
-    "1693712e3d947d783976e47514cf610c43adc6ee35b06f2c6bed22ffe8b94170"
+    "cae1356aeff00afe96844dacddeb495587ad3aa9923f156e2c75ec37da0c9973"
 )
 
 # Exact reviewed fractions, including the primary-accent qualifications in §320.
 APPROVED_FRACTIONS = {
     "fully-regular.all": (3583, 3583),
-    "fully-regular.disjunctive-without-target-meteg": (132, 3583),
-    "fully-regular.conjunctive-with-target-meteg": (221, 3583),
-    "fully-regular.exceptions": (353, 3583),
-    "fully-regular.disjunctive-without-target-meteg.other-meteg": (31, 132),
-    "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah": (6, 132),
-    "fully-regular.disjunctive-without-target-meteg.merkha": (3, 132),
-    "fully-regular.disjunctive-without-target-meteg.metigah": (6, 132),
+    "fully-regular.disjunctive-without-target-meteg": (134, 3583),
+    "fully-regular.conjunctive-with-target-meteg": (210, 3583),
+    "fully-regular.exceptions": (344, 3583),
+    "fully-regular.disjunctive-without-target-meteg.other-meteg": (33, 134),
+    "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah": (6, 134),
+    "fully-regular.disjunctive-without-target-meteg.merkha": (3, 134),
+    "fully-regular.disjunctive-without-target-meteg.metigah": (6, 134),
     "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh": (
         2,
-        132,
+        134,
     ),
-    "FR1.conjunctive-with-target-meteg": (81, 284),
+    "FR1.conjunctive-with-target-meteg": (80, 283),
     "FR2.conjunctive-with-target-meteg": (99, 493),
-    "FR3.conjunctive-with-target-meteg": (41, 622),
-    "fully-regular.disjunctive-exception-rate": (132, 2184),
+    "FR3.conjunctive-with-target-meteg": (31, 610),
+    "fully-regular.disjunctive-exception-rate": (134, 2197),
     "fully-regular.target-meteg-rate": (2273, 3583),
     "AFR1.disjunctive-exception-rate": (20, 107),
     "AFR1.target-meteg-rate": (89, 137),

@@ -1,9 +1,18 @@
 """Independent pre-stress-meteg survey of the public Phonetic MAM display corpus.
 
-The FR/AFR classification preserves the existing algorithm's syllable grouping,
-vowel-length convention, structural table, accent buckets, and case selection.
 Reduced syllables are grouped with their following main syllable; the target is
-the main part of the syllable two before primary stress in that grouping.
+the main part of the grouped syllable two before primary stress. The syllable
+grouping, vowel-length convention, structural table, accent buckets and case
+selection were written to follow this survey's private predecessor, but no tracked
+record compares the two. py/tests/test_meteg_before_stress.py checks the accent
+class against accgram's prose and poetic scanners and the target meteg against an
+independent nucleus locator.
+
+In a poetic verse, U+05A5 on the stressed syllable is the conjunctive merkha unless
+it is the yored of oleh-weyored, which is disjunctive. The yored is identified when
+the chanted word's accent vector has U+05AB, the oleh, before its final U+05A5. A
+candidate whose U+05A5 follows an oleh on the previous chanted word is refused
+rather than classified.
 
 Only generic displayed Hebrew and the visible Sephardic transcription enter the
 analysis. Its transient syllable facts are never included in the survey output.
@@ -53,6 +62,9 @@ class ChantedWordFacts:
     primary_accent: str
     cantillation_system: str
     accents: str
+    accent_vector: tuple[str, ...]
+    primary_index: int
+    previous_accent_vector: tuple[str, ...]
 
 
 @dataclass
@@ -91,7 +103,6 @@ def classify(facts: ChantedWordFacts) -> dict | None:
     if structure is None:
         return None
     coarse, fine = structure
-    conjunctive = facts.primary_accent in ha.CONJUNCTIVES_BCC[facts.cantillation_system]
     meteg_present = hpo.MTGOSLQ in target.main.accents
     other_count = (
         facts.accents.count(hpo.MTGOSLQ)
@@ -101,12 +112,40 @@ def classify(facts: ChantedWordFacts) -> dict | None:
     return {
         "pattern": coarse,
         "fine_pattern": fine,
-        "accent_class": "conj" if conjunctive else "disj",
+        "accent_class": _accent_class(facts),
         "target_meteg": meteg_present,
         "accent_on_target": _accent(target.main.accents),
         # The former record omitted zero before its output projection restored null.
         "other_meteg_count": other_count or None,
     }
+
+
+_POETIC = cantsys.get_cantsys_from_is_poetcant(True)
+
+
+def _accent_class(facts: ChantedWordFacts) -> str:
+    """Conjunctive or disjunctive, with the yored of oleh-weyored named explicitly.
+
+    In a poetic verse U+05A5 is merkha, a conjunctive, unless it is the yored of
+    oleh-weyored, which is disjunctive. The yored is identified when U+05A5 is the
+    last and primary accent of the chanted word's accent vector and U+05AB, the oleh,
+    comes before it there: the stress table's (oleh, yored), (atnax hafukh, oleh,
+    yored) and (merkha, oleh, yored). A primary U+05A5 after an unpaired oleh on the
+    previous chanted word is refused rather than classified.
+    """
+    vector = facts.accent_vector
+    if facts.cantillation_system == _POETIC and facts.primary_accent == ha.MER:
+        if facts.primary_index == len(vector) - 1 and ha.OLE in vector[:-1]:
+            return "disj"
+        previous = facts.previous_accent_vector
+        if ha.OLE in previous and ha.MER not in previous[previous.index(ha.OLE) :]:
+            raise ValueError(
+                "A poetic U+05A5 after an oleh on the previous chanted word needs an"
+                " oleh-weyored analysis"
+            )
+    if facts.primary_accent in ha.CONJUNCTIVES_BCC[facts.cantillation_system]:
+        return "conj"
+    return "disj"
 
 
 def _accent(accents: str) -> str | None:
@@ -237,8 +276,12 @@ def select_cases(cases: list[dict]) -> dict:
     return out
 
 
-def facts_from_reading(reading, bcvt) -> ChantedWordFacts:
-    """Derive only the classifier's temporary facts from a public display pair."""
+def facts_from_reading(reading, bcvt, previous=None) -> ChantedWordFacts:
+    """Derive only the classifier's temporary facts from a public display pair.
+
+    ``previous`` is the displayed reading before ``reading`` in its own qamats
+    sequence, or None at the start of the verse; only its accent vector is kept.
+    """
     from phonetic_mam.core import deep_latin as dl
     from phonetic_mam.core import udl_char_classes as cc
     from phonetic_mam.core import vowar_and_accar
@@ -280,9 +323,47 @@ def facts_from_reading(reading, bcvt) -> ChantedWordFacts:
                     accents=syllable["sylrec-fva"][2],
                 )
             )
+    previous_bccvec = ()
+    if previous is not None:
+        _previous_vowels, previous_accents = vowar_and_accar.vowar_and_accar(
+            previous.hebrew
+        )
+        _previous_letters, previous_bccvec = separate_accents.get_sepacc(
+            system, previous_accents
+        )
     return ChantedWordFacts(
-        tuple(syllables), stress_index, bccvec[accent_index], system, accents
+        tuple(syllables),
+        stress_index,
+        bccvec[accent_index],
+        system,
+        accents,
+        bccvec,
+        range(len(bccvec))[accent_index],
+        previous_bccvec,
     )
+
+
+def _previous_readings(verse) -> dict[int, object]:
+    """Each displayed reading's predecessor in its own qamats sequence, or None.
+
+    Keyed by the reading's identity, since one verse can display the same chanted
+    word twice and equal readings compare equal. An unlabelled reading belongs to
+    both qamats sequences and takes its predecessor from the ordinary one, where a
+    qamats-dal alternative stands; a qamats-sam alternative follows the samekh
+    sequence, whose readings outside the alternatives are the unlabelled ones.
+    """
+    from phonetic_mam import analysis_reader
+
+    last = {analysis_reader.QAMATS_DAL: None, analysis_reader.QAMATS_SAM: None}
+    previous = {}
+    for row in verse.rows:
+        for branch in row.branches:
+            sequences = (branch.qamats,) if branch.qamats else tuple(last)
+            for reading in branch.readings:
+                previous[id(reading)] = last[sequences[0]]
+                for sequence in sequences:
+                    last[sequence] = reading
+    return previous
 
 
 def analyze_books(books, *, input_identity: dict) -> dict:
@@ -296,10 +377,16 @@ def analyze_books(books, *, input_identity: dict) -> dict:
         for (chapter, verse_number), verse in verses.items():
             bcvt = bib_locales.mk_bcvtmam(book_id, chapter, verse_number)
             bcv = bib_locales.short_bcv_of_bcvt(bcvt)
-            for reading in verse.select(
-                cantillation=analysis_reader.CANT_ALEF
-            ).readings():
-                result = classify(facts_from_reading(reading, bcvt))
+            selected = verse.select(cantillation=analysis_reader.CANT_ALEF)
+            previous_readings = _previous_readings(selected)
+            for reading in selected.readings():
+                facts = facts_from_reading(
+                    reading, bcvt, previous_readings[id(reading)]
+                )
+                try:
+                    result = classify(facts)
+                except ValueError as error:
+                    raise ValueError(f"{bcv} {reading.hebrew!r}: {error}") from error
                 if result is None:
                     continue
                 case = {
