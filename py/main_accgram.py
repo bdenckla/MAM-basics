@@ -45,11 +45,12 @@ Subcommands:
     survey-post-stress-meteg
                 Classify every U+05BD in MAM by whether its syllable falls
                 before, in, or after the chanted word's primary stress, with
-                Phonetic MAM as the stress oracle, and write
-                out/accgram/post-stress-meteg.json.  Needs the MAM-private
-                clone.  main_0_mega.py runs it as a step, except in a cloud
-                session, and py/author_site/post_stress_meteg.py renders the
-                page from the JSON it writes.
+                the public Phonetic MAM display release as the stress oracle,
+                and write out/accgram/post-stress-meteg.json.  It needs no
+                MAM-private clone and runs in a cloud session too.
+                main_0_mega.py runs it as a step, and
+                py/author_site/post_stress_meteg.py renders the page from the
+                JSON it writes.
     survey-breuer-zaqef-units
                 Measure how well Breuer's long/short/tiny (CoS Instructions for the
                 Reader) predicts whether a two-chanted-word zaqef realm is divided by
@@ -417,8 +418,8 @@ def build_parser() -> argparse.ArgumentParser:
         "survey-post-stress-meteg",
         help=(
             "Classify every U+05BD in MAM by its position relative to the chanted word's "
-            "primary stress, with Phonetic MAM as the stress oracle, and write "
-            "out/accgram/post-stress-meteg.json. Needs the MAM-private clone."
+            "primary stress, with the public Phonetic MAM display release as the stress "
+            "oracle, and write out/accgram/post-stress-meteg.json."
         ),
     )
     post_stress_meteg.add_args(post_stress_meteg_parser, repo_root=_repo_root())
