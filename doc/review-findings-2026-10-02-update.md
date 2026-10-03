@@ -428,3 +428,45 @@ verbatim:
 **Next: close-out step 2.** A fresh-task remediation plan, with concrete editorial wording and
 presented by public-facing risk, now including the relay's retirement. Later State and the
 remediation's dispositions are recorded in this file.
+
+## Remediation plan prepared; approval pending, 2026-10-03
+
+Recorded on 2026-10-03 by the close-out step-2 session: Claude Opus 5.5 at `max` in the Claude
+desktop app, on the machine `LAPTOP-DBLE8UKA`, working in `C:/Users/BenDe/GitRepos2/MAM-basics` on
+clean `main` at `644a6c9c` after a fetch. The session worked from a prompt that the trial's owner
+session wrote on 2026-10-03 and Ben pasted in; the prompt quotes Ben's instruction that started the
+review and his selections recorded above, and is otherwise the owner session's reconstruction. Eight
+read-only sub-agents gathered the evidence; the session verified what the plan rests on.
+
+**The plan** is [`PLAN-remediate-review-findings-2026-10-02.md`](PLAN-remediate-review-findings-2026-10-02.md),
+State "live". It covers the 64 accepted items, the citation of Ben's finding-14 decision at the
+exemption in `py/tests/test_h_dot_below_nfc.py`, and the relay's retirement. It presents the changes
+in `doc/periodic-review.md`'s risk order: published pages and distributed data, then reader-facing
+documents, then the rest. It keeps reproducible defects apart from editorial proposals, with current
+and proposed wording for each; names eleven acts outside the repository, A0 to A10, as separate
+authorization points; and orders the work in waves with their checks and the integration sequence.
+It executes nothing.
+
+**Found while planning:**
+
+1. **The relay ran on another machine.** The scheduled task, the dispatcher's registry and evidence,
+   the three locked worktrees and their branches are, by the tracked records, on the machine that
+   ran the relay, which those records do not name. They are not on `LAPTOP-DBLE8UKA`, whose
+   GitRepos2 clone dates from 2026-09-29 and never held a relay commit. Only the deployed agent file
+   is on both. The plan's acts outside the repository are written for that.
+2. **C9.1's trigger outlives the relay.** Read-only Git objects remain under every clone's `.novc/t`
+   from relay tests already run, and agent scratch repositories in a `.novc` add more, so C9.1's and
+   C9.5's error handler is still needed.
+3. **Four of the notes above are inexact,** and the plan uses the corrected figures:
+   - C10.3: `9a67d51b` removed five of the eight al-hatorah citation sites, not one; three remain.
+   - C12.2: the "25 records that the survey gets right" hold only for `Reading.scanner_word()`
+     input; with the plain displayed Hebrew, 18 disagreements remain after C2's fix.
+   - C15.25: on 2026-08-27 Ben deferred the framing and that session kept "Five"
+     (`97b559b0`); the choice now stays Ben's, as the list says.
+   - C2: the last changed line of `yeivin_itm-318_344.html` is 556; line 557 ends the FR3 sentence
+     unchanged.
+
+**What waits for Ben:** his approval of the plan's wording and execution, and the thirteen choices
+in its "Choices for Ben": C2's corrected prose; C6.1's intended verse; C15.15; C4.4; C4.5; C11; C1's
+gate design; C6.2; C8; C12.4; C15.25; C15.29; and C15.31. Until C1 lands, a Wikisource refresh that
+changes MAM's text still stops the mega at `yeivin-itm-survey-meteg-claims`.
