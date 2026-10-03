@@ -397,3 +397,24 @@ outcome as it is done, and `origin/dar-2026-10-01` stays by his choice.
 
 **Effective base State, 2026-10-03:** acted on; the approved remediation completed on 2026-10-01
 stands as recorded above, and the relay it remediated was retired on 2026-10-03.
+
+## Relay retirement acts on LAPTOP-DBLE8UKA, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session of
+`doc/PLAN-remediate-review-findings-2026-10-02.md`, after its final integration pushed `main` at
+`e9c72f2b2e7c81b457d66852b0faace839525e1e`. `LAPTOP-DBLE8UKA` is not the machine that ran the relay
+and holds none of its state, so its acts are A3 and A2 only; A10 retired the remediation branch, as
+`doc/review-findings-2026-10-02-update.md`, "Final integration completed, 2026-10-03", records.
+
+1. **A3: done.** `--sync-user-config` deployed from `origin/main` at `e9c72f2b`, so the deployed
+   configuration no longer names the agent file; `--sync-user-config --check` reported
+   `USER_CONFIG_PROBLEM_COUNT=0`.
+2. **A2: done.** `$HOME/.claude/agents/dual-agent-review-turn.md` (SHA-256
+   `2CB3B50A719FF019162C9BF7B0684094106A99EE22AE0E60A9CD5ACA907E4308`, 2,494 bytes, byte-identical to
+   its canonical blob at `cbd405b1`) was moved at 14:27:21 New York time to
+   `$HOME/relay-retirement-2026-10/dual-agent-review-turn.md`. The old path no longer exists, so
+   Claude sessions on this machine no longer list a `dual-agent-review-turn` agent type once they
+   start afresh. Undo: move the file back.
+
+The relay machine's acts, A0, A1, A7, A3, A2, A4, A5 and A8, remain for the relay-machine session,
+which records them in a later dated entry here; A9 is Ben's, and A6 is not done.

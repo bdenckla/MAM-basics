@@ -160,7 +160,10 @@ Kicked off in `C:/Users/BenDe/GitRepos2/MAM-basics` at Ben's instruction quoted 
 5. **Outcome:** both reports were pushed on 2026-10-02, the Claude report as `58df29bd` and the
    Codex report as `09be20b3`. The owner's disposition list and Ben's close-out decisions of
    2026-10-03 are in `doc/review-findings-2026-10-02-update.md`, together with what the trial
-   showed. Ben's approved changes to the steps above came from this trial.
+   showed. Ben's approved changes to the steps above came from this trial. On 2026-10-03 Ben
+   accepted the recommendations of the remediation plan,
+   `doc/PLAN-remediate-review-findings-2026-10-02.md`, and authorized its acts in advance; its
+   remediation reached `main` on 2026-10-03, and the update file records the dispositions.
 
 ## What Codex joined
 
