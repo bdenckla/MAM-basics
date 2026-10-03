@@ -54,9 +54,9 @@ def header_rows():
             mb_html.code("consumer_notice"),
             "object",
             [
-                "A warning label for consumers, with a summary, a nonempty array of ",
+                "Guidance for people and programs using the data, with a summary, a nonempty array of ",
                 mb_html.code("critical_rules"),
-                ", and the absolute URL of this format guide.",
+                ", and the absolute URL of the notes for applications.",
             ],
         ],
     ]

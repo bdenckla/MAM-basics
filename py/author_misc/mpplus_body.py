@@ -3,7 +3,6 @@
 
 import json
 
-from mb_cmn import public_data_consumer_notice as consumer_notice
 from mb_misc import mb_html
 from mb_author import author
 from mb_author import json_block
@@ -107,7 +106,7 @@ def _json_top_level_skel(*, claims: ClaimCollection):
 
 def _json_header(*, claims: ClaimCollection):
     data = json.loads(thb.JSON_HEADER)
-    data["consumer_notice"] = consumer_notice.mam_parsed_notice()
+    data["consumer_notice"] = {"__verify_mp_any_dict__": True}
     return _emit_claim_payload(
         claims,
         "mp.plus.example.header-job",
@@ -120,7 +119,7 @@ def _json_header(*, claims: ClaimCollection):
 
 def _json_header_composite(*, claims: ClaimCollection):
     data = json.loads(thb.JSON_HEADER_COMPOSITE)
-    data["consumer_notice"] = consumer_notice.mam_parsed_notice()
+    data["consumer_notice"] = {"__verify_mp_any_dict__": True}
     return _emit_claim_payload(
         claims,
         "mp.plus.example.header-samuel",
@@ -199,6 +198,8 @@ def s_intro():
                 " (c) removing some inconveniences."
                 " Of course, what is considered an inconvenience and what is considered a convenience"
                 " can only be determined relative to a particular application."
+                " Nonetheless, we’ve tried to make $MAM-parsed-plus convenient to use"
+                " for a broad variety of applications."
                 " This document covers:",
             ]
         ),
@@ -209,6 +210,13 @@ def s_intro():
                 "Structure of a book39, chapter, and verse",
                 "Template format",
                 "Selected templates",
+            ]
+        ),
+        author.para(
+            [
+                "For guidance when writing code to use the data, see ",
+                author.anchor_h("Notes for applications", "#consumer-notice"),
+                ".",
             ]
         ),
     ]

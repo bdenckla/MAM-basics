@@ -72,14 +72,22 @@ def consumer_notice_block():
     """Render the canonical notice and give its embedded URL a stable target."""
     notice = consumer_notice.mam_parsed_notice()
     return [
-        author.heading_level_2("Consumer notice", {"id": "consumer-notice"}),
+        author.heading_level_2("Notes for applications", {"id": "consumer-notice"}),
+        author.para(
+            [
+                "These notes are for people and programs that read or transform the JSON data."
+                " These are the consumers named by the ",
+                mb_html.code("header.consumer_notice"),
+                " field.",
+            ]
+        ),
         mb_html.para(notice["summary"]),
         mb_html.unordered_list(notice["critical_rules"]),
         author.para(
             [
                 "Every generated ",
                 mb_html.code("MAM-parsed/plus/*.json"),
-                " file embeds this warning in ",
+                " file includes these notes in ",
                 mb_html.code("header.consumer_notice"),
                 ". Its ",
                 mb_html.code("documentation"),

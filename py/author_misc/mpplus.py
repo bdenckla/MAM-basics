@@ -35,12 +35,12 @@ def build_body(*, claims: ClaimCollection):
     return [
         mb_html.heading_level_1(_TITLE),
         *body.s_intro(),
-        *body_shared.consumer_notice_block(),
         *cmn.s_file_naming(file_naming_rows=file_naming_rows),
         *body.s_top_level(claims=claims),
         *body.s_book39(claims=claims),
         *body.s_chapter_verse(claims=claims),
         *body.s_common_templates(claims=claims),
+        *body_shared.consumer_notice_block(),
     ]
 
 
