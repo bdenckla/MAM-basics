@@ -15,9 +15,6 @@ Subcommands:
 import argparse
 import sys
 
-# The check operation is write-neutral, including Python import caches.
-sys.dont_write_bytecode = True
-
 
 def build_parser():
     """Describe the closed command set without running an operation."""
@@ -58,6 +55,10 @@ def almost_main(argv=None):
 
 def main():
     """Use UTF-8 for both Windows and POSIX pipes."""
+    # The check operation is write-neutral, including Python import caches. Set
+    # here, before almost_main imports anything, rather than at import, so that an
+    # importer such as py/main_0_mega.py keeps its own bytecode caching.
+    sys.dont_write_bytecode = True
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
     return almost_main()

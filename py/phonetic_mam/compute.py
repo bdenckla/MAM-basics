@@ -8,9 +8,6 @@ Callers own their input adapters and any separately authorized output projection
 import json
 import sys
 
-# A compute invocation is write-neutral, including Python's import cache.
-sys.dont_write_bytecode = True
-
 from mb_cmn import bib_locales
 from phonetic_mam.core import bccvecs_that_are_known as knowns
 from phonetic_mam.core import deep_latin
@@ -293,13 +290,20 @@ def _reject_constant(_value):
 
 
 def serve(stdin=None, stdout=None):
-    """Serve one response per NDJSON line until EOF; retain no request state."""
+    """Serve one response per NDJSON line until EOF; retain no request state.
+
+    ``main_phonetic_mam.main`` reads standard input with the ``surrogateescape``
+    handler, so a line that is not valid UTF-8 arrives with its undecodable bytes
+    escaped; decoding it again here rejects that line like any other malformed
+    request, with a ``UnicodeDecodeError`` reply, and the next line is read.
+    """
     stdin = sys.stdin if stdin is None else stdin
     stdout = sys.stdout if stdout is None else stdout
     while line := stdin.readline(MAX_REQUEST_CHARS + 1):
         if len(line) > MAX_REQUEST_CHARS:
             raise ProtocolError("request exceeds the computation limit")
         try:
+            line = line.encode("utf-8", "surrogateescape").decode("utf-8")
             request = json.loads(
                 line, object_pairs_hook=_unique_object, parse_constant=_reject_constant
             )

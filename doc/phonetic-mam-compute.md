@@ -15,7 +15,8 @@ separate closed release projection and its disclosure checks.
 
 Every request has exactly `schema`, `operation`, and `arguments`. The schema is
 `phonetic-mam-compute-v1`. An unknown operation, field, enum value, duplicate JSON key,
-or malformed structure is rejected. Non-finite numbers are not JSON input. A request
+or malformed structure is rejected. Non-finite numbers are not JSON input. A line
+that is not valid UTF-8 is rejected like any other malformed request. A request
 line is limited to 16 Mi characters; an oversized request terminates the stream.
 
 Success replies have exactly `schema` and `result`. Failure replies have exactly
