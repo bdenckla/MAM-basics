@@ -16,10 +16,10 @@ This lint proves that the declared mega entry points and wrappers match ``_STEPS
 validate prose counts, discover a product left behind by a removed mega step, or infer which
 hand-run generators read a changed upstream input.
 
-1. Every declared path exists and is tracked -- the published tree, the five product
-   directories, and every tier-3 entry point.  A product directory renamed or dropped
-   fails here rather than leaving the declaration quietly describing a tree that is
-   gone.
+1. Every declared path exists and is tracked -- the published tree, every product
+   directory ``_PRODUCT_DIR_NAMES`` declares, and every tier-3 entry point.  A product
+   directory renamed or dropped fails here rather than leaving the declaration quietly
+   describing a tree that is gone.
 2. The declared tier-3 set equals the set of entry points the runners of ``_STEPS``
    in ``py/main_0_mega.py`` name, with the ``_run_*`` wrappers defined in that file
    resolved through ``product_scopes.mega_wrapper_delegates()``.  A new mega step

@@ -154,7 +154,7 @@ temporary-stub procedures, and historical traps.
 
 1. **Published:** `gh-pages/`, published from `main` once daily at 4:17 AM, New York time, and
    on manual dispatch.
-2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`, and
+2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`,
    `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 

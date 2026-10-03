@@ -19,11 +19,11 @@ THE THREE TIERS
    is the act that makes that true, so a change reaching this tier is outward-facing
    in the ordinary sense.
 2. DISTRIBUTED DATA.  ``MAM-parsed/`` (whose current parsed payload is
-   ``MAM-parsed/plus/``), ``MAM-simple/``, ``MAM-for-Sefaria/``, ``MAM-with-doc/``
-   and ``MAM-OSIS/``. These are consumed by git URL whether or not
-   Pages serves them, so "not published" is not the same as "not distributed": a
-   consumer pinning a path in one of these trees sees a change here without any
-   deploy at all.
+   ``MAM-parsed/plus/``), ``MAM-simple/``, ``MAM-for-Sefaria/``, ``MAM-with-doc/``,
+   ``MAM-OSIS/``, ``Phonetic-MAM/`` and ``Yeivin-ITM/``. These are consumed by git URL
+   whether or not Pages serves them, so "not published" is not the same as "not
+   distributed": a consumer pinning a path in one of these trees sees a change here
+   without any deploy at all.
 3. GENERATORS.  The entry points listed in ``_GENERATOR_ENTRY_POINTS`` below.  This
    is the routine route into tiers 1 and 2; declared hand-run generators are the
    other route.
