@@ -75,10 +75,11 @@ def consumer_notice_block():
         author.heading_level_2("Notes for applications", {"id": "consumer-notice"}),
         author.para(
             [
-                "These notes are for people and programs that read or transform the JSON data."
-                " These are the consumers named by the ",
+                "The notes below are for writers of programs that read "
+                '("consume") the JSON data. Such programs are the "consumers" '
+                "named by the ",
                 mb_html.code("header.consumer_notice"),
-                " field.",
+                " field. The notes are as follows:",
             ]
         ),
         mb_html.para(notice["summary"]),
