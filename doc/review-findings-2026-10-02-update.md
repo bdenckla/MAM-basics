@@ -771,3 +771,17 @@ the prompt in the plan's section of that name. It performs A0, A1, A7, A3, A2, A
 records their outcomes, and sets the plan's State to executed. A9 stays Ben's, in the Codex app, and
 Ben may delete `$HOME/relay-retirement-2026-10/` on this machine whenever he wants the space. This
 update remains `State: open` while its base survives.
+
+## A3 repeated on LAPTOP-DBLE8UKA after origin/main moved, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session. The fetch before
+the push of the closing records, `aa92b8fb`, found `origin/main` at `f0c50473`: another session had
+merged `e9c72f2b` with its own `d168e22e`, "Keep user request files separate from agent revision
+records", a change to the canonical `iterative-document-editing` skill. `main` merged it as
+`6f53a603`, the three Markdown lints passed, and `main` was pushed at 14:31:02 New York time.
+`--sync-user-config --check` then reported that skill's two live copies as drift, which only a
+deployment from `origin/main` clears, so A3 ran again in its planned form, from `origin/main` at
+`6f53a603`, at 14:32 New York time: it deployed those two copies (`USER_CONFIG_DEPLOYED_COUNT=2`),
+and `--sync-user-config --check` reported `USER_CONFIG_PROBLEM_COUNT=0`. No session on this machine
+held that skill's work at the time: the only live Claude sessions were this one and the idle
+plan-preparing session, and no Codex writer lease existed.
