@@ -82,3 +82,8 @@ def test_no_public_record_quality_layer():
     assert (
         tuple(schema["$defs"]["readingLabel"]["enum"]) == display_schema.READING_LABELS
     )
+    # The schema's text pattern refuses exactly the marks the validator refuses.
+    forbidden = "".join(
+        f"\\u{ord(mark):04x}" for mark in sorted(display_schema._FORBIDDEN)
+    )
+    assert schema["$defs"]["text"]["pattern"] == f"^[^<>{forbidden}]+$"

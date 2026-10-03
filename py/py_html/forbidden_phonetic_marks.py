@@ -2,8 +2,9 @@
 
 Published HTML exposes generic Hebrew points and Latin transcription, never the intermediate
 annotation points U+05C8 and U+05C9. The guard also retains the earlier protection against
-U+05AF and U+05C4: those retired carriers must not reappear, and a genuine source dot requires
-an independently validated path rather than passing through these generators unnoticed.
+U+05AF and U+05C4: those retired carriers must not reappear. It refuses U+05C5 as well, so
+that neither extraordinary point passes through these generators unnoticed: a genuine source
+dot requires an independently validated path.
 
 The guard checks a page's complete text before writing it, so a page that fails is never
 written and whatever page was already at that path is left as it was. The refusal is a named
@@ -15,7 +16,7 @@ import mb_cmn.hebrew_points as hpo
 import mb_cmn.hebrew_punctuation as hpu
 
 FORBIDDEN_PHONETIC_MARKS = frozenset(
-    (hpu.MCIRC, hpu.UPDOT, hpo.SHEVA_NA, hpo.DAGESH_XAZAQ)
+    (hpu.MCIRC, hpu.UPDOT, hpu.LODOT, hpo.SHEVA_NA, hpo.DAGESH_XAZAQ)
 )
 
 

@@ -2,9 +2,11 @@
 
 Every payload value must be independently obtainable from the sanctioned pages
 and public MAM. This validator is a necessary shape check, not that disclosure
-proof: release approval additionally compares the complete output with the
-independent public-only projection. Do not add analysis-only alignments or
-source-quality fields to avoid decoding the displayed text in a consumer.
+proof: the release was approved after its complete output was compared with the
+independent public-only projection of the previously published pages, whose
+frozen hashes ``projection_check`` still compares for every chapter whose input
+is unchanged. Do not add analysis-only alignments or source-quality fields to
+avoid decoding the displayed text in a consumer.
 """
 
 from mb_cmn import bib_locales
@@ -24,7 +26,9 @@ READING_LABELS = (
     "טעם עליון, קמץ-ס",
 )
 LAYOUT_MARKERS = ("מ:פסק", "סס", "פפ", "ססס", "פפפ")
-_FORBIDDEN = frozenset(map(chr, (0x05AF, 0x05C4, 0x05C8, 0x05C9)))
+# The computation's annotation points, the retired carriers U+05AF and U+05C4, and
+# U+05C5: the release has neither extraordinary point (Phonetic-MAM/README.md).
+_FORBIDDEN = frozenset(map(chr, (0x05AF, 0x05C4, 0x05C5, 0x05C8, 0x05C9)))
 
 
 class PublicReleaseError(ValueError):
