@@ -4,8 +4,9 @@ The modules under `py/phonetic_mam/` implement the unified rendering of the exis
 public Phonetic MAM pages. The source-independent algorithm core, read-only
 computation interface, exporter, closed display release, public consumers and
 generated target were integrated and pushed to `main` on 2026-10-01 in
-`2b92117ab909f74481cd0be4dbbc9d85204295ee`. Site deployment and live URL
-verification remain separate publication steps.
+`2b92117ab909f74481cd0be4dbbc9d85204295ee`. The Pages run for `38c0116f`, a
+descendant of that merge, deployed the generated site; it finished at 15:39:45 New
+York time on 2026-10-01.
 
 ## Public display contract
 
@@ -57,7 +58,7 @@ the explicit Sephardic fallback. Local Edge acceptance on 2026-10-01 passed
 the browser-level CSS, printing, no-JavaScript, navigation, focus, font/image,
 and console/network checks after the explicit favicon links were added. At a
 390-pixel viewport, wider tables require horizontal scrolling. These results
-verify the integrated local pages; live deployment still requires its own checks.
+verify the integrated local pages, not the deployed site.
 
 ## Font support
 
@@ -83,5 +84,6 @@ Ben approved correcting his added claims to the reproducible public-MAM analysis
 The independent analysis feeds the minimized `Yeivin-ITM/meteg-claims.json` product,
 which the Yeivin renderer validates before rendering the selected excerpts.
 The Phonetic index links to the separate Yeivin target. Both targets are on
-integrated `main`; target deployment and the coordinated legacy redirect
-cutover remain separate steps.
+integrated `main`, and the Pages run for `38c0116f` deployed them on 2026-10-01.
+The coordinated legacy redirect cutover followed that day: phonetic-hbo's
+redirects, from its commit `2ca51088`, deployed at 17:10:52 New York time.

@@ -87,7 +87,9 @@ the searchable anchors.
 
 The earlier 131,072-byte budget was reversed by
 `51a4120c5d08218798e023ba14b8d3dec34e2e8a` on September 15, which restored the 32,768-byte default.
-The symmetric-instructions plan's update records this later result. This reconciliation changes
+The archived
+[symmetric-instructions plan's update](https://github.com/bdenckla/MAM-basics/blob/eea4c583f12ee90f75003dd4c75be5d6d52f7c85/doc/PLAN-symmetric-CLAUDE-and-AGENTS-instructions-update.md),
+which `e4934b6e` retired on 2026-09-29, records this later result. This reconciliation changes
 no configuration and does not execute or retire the separate September 9 instruction-pruning
 plan.
 
