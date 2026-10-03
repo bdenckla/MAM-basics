@@ -58,11 +58,12 @@ time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely
 needs no clone. It raises with the command that fixes it:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/wlc-utils.git <forest>/wlc-utils
+git clone --depth 1 https://github.com/bdenckla/wlc-utils.git $HOME/GitRepos/wlc-utils
 ```
 
-In this command and the four below, `<forest>` is the directory holding the invoking
-checkout's home clone, `$HOME/GitRepos` or `$HOME/GitRepos<N>`, which is where
+This command and the five like it below clone into the primary forest, `$HOME/GitRepos`.
+From a checkout whose home clone is in a secondary forest, write that forest instead, for
+example `$HOME/GitRepos2`. The forest holding the invoking checkout's home clone is where
 `py/redirect_stubs/stubs.py`'s `source_pages_dir` looks, through `paths.sibling_repo`; the
 program's own message prints the exact path.
 
@@ -108,7 +109,7 @@ MAM-OSIS declaration in `py/tests/test_sibling_reach.py`: explicit future stub
 publication still requires a temporary source host. Only when that work is selected:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git <forest>/MAM-OSIS
+git clone --depth 1 https://github.com/bdenckla/MAM-OSIS.git $HOME/GitRepos/MAM-OSIS
 ```
 
 From MAM-basics, run `py/main_redirect_stubs.py build --repo MAM-OSIS --publish`
@@ -138,7 +139,7 @@ machine.
 After Phase 4, only explicitly selected redirect-host work wants a temporary clone:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/Taamey_D.git <forest>/Taamey_D
+git clone --depth 1 https://github.com/bdenckla/Taamey_D.git $HOME/GitRepos/Taamey_D
 ```
 
 From MAM-basics, run `py/main_redirect_stubs.py build --repo Taamey_D --publish` and
@@ -203,7 +204,7 @@ without a source clone. If an old Holman page is renamed or dropped, temporarily
 redirect host with:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git <forest>/holman-ketiv-qere
+git clone --depth 1 https://github.com/bdenckla/holman-ketiv-qere.git $HOME/GitRepos/holman-ketiv-qere
 ```
 
 Then publish and check the frozen stubs with `--repo holman-ketiv-qere`, and remove the temporary
@@ -223,7 +224,7 @@ without a source clone. If an old UXLC page is renamed or dropped, temporarily r
 redirect host with:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/UXLC-utils.git <forest>/UXLC-utils
+git clone --depth 1 https://github.com/bdenckla/UXLC-utils.git $HOME/GitRepos/UXLC-utils
 ```
 
 Then publish and check the frozen stubs with `--repo UXLC-utils`, and remove the temporary clone
@@ -293,11 +294,12 @@ The frozen `in/phonetic_hbo_redirect_pages.json` maps the original 1,959 HTML pa
 to those targets and cannot grow. The retained assets and unknown-path fallback
 remain part of the accepted host. The manifest and target lint need no host clone.
 
-Only explicitly selected redirect-stub publication uses a temporary shallow clone.
-From the selected MAM-basics full clone's root, create its forest sibling:
+Only explicitly selected redirect-stub publication uses a temporary shallow clone, a
+sibling of the selected MAM-basics full clone; from a secondary forest, write that
+forest in place of `$HOME/GitRepos`:
 
 ```powershell
-git clone --depth 1 https://github.com/bdenckla/phonetic-hbo.git ../phonetic-hbo
+git clone --depth 1 https://github.com/bdenckla/phonetic-hbo.git $HOME/GitRepos/phonetic-hbo
 ```
 
 From MAM-basics, run `py/main_redirect_stubs.py build --repo phonetic-hbo --publish`

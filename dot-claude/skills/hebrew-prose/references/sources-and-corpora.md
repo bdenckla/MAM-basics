@@ -67,11 +67,13 @@ Two homes, and they are not the same:
   extra directory.
 - `MAM-basics/py/yeivin_itm/content/` — Ben's **partial adaptation**;
   `my_yeivin_amisc_sec_not_yet_transcribed.py` names what is missing. The 2026-10-01
-  evacuation work branch moves this selected source and its renderer to MAM-basics;
-  the old `MAM-private/al-hatorah/py/itm/` copy remains until the later retirement
-  gates pass. This does not move or replace the full OCR above. Historical
-  `al-hatorah#NN` citations keep their original tracker. The body text there is
-  Yeivin's and Revell's, **not Ben's voice** (his footnotes in it are his) — exclude it when
+  evacuation moved this selected source and its renderer to MAM-basics. The old
+  `MAM-private/al-hatorah/py/itm/` copy is gone: MAM-basics'
+  `doc/PLAN-remediate-instruction-file-review-findings-2026-09-09.md`, “D5 superseded,
+  2026-10-02”, records that private integration `5c526cac` removed that duplicate adaptation
+  after the consumer gates passed. Neither change moved or replaced the full OCR above.
+  Historical `al-hatorah#NN` citations keep their original tracker. The adaptation's body text
+  is Yeivin's and Revell's, **not Ben's voice** (his footnotes in it are his) — exclude it when
   treating "Ben's own writing" as a style corpus.
 
 A 2026-07-26 session searched only the adaptation and wrongly reported that Yeivin says nothing
