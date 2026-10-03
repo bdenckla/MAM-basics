@@ -7,6 +7,8 @@ repository code or a claim of an independently reproduced font build.
 """
 
 import hashlib
+import io
+import zipfile
 
 from mb_cmn import paths
 
@@ -22,6 +24,18 @@ _SHARED_FILES = (
     "BUILD.txt",
     "SOURCE.txt",
 )
+# Support files that the hash-checked source archive also holds: each must equal its copy there.
+_ARCHIVED_COMPANIONS = (
+    "FONT-NOTICE.txt",
+    "GPL-2.0.txt",
+    "SOURCE-INVENTORY.json",
+    "BUILD.txt",
+)
+# The two support files that neither the archive nor its inventory records.
+_UNARCHIVED_SHA256 = {
+    "SOURCE.txt": "6e4497069cb52456348480bb75964019ae4cbcb0c4bbf839e8d24b9adc699c37",
+    "PRODUCT-WOFF2-SOURCE.txt": "5da2baf9ac4cc80596e21149d8b876aecd5268376b6c98301167a2bbf233278f",
+}
 
 
 def product_font_assets(product):
@@ -36,15 +50,24 @@ def product_font_assets(product):
     shared = {name: (support / name).read_bytes() for name in _SHARED_FILES}
     if hashlib.sha256(shared[_ARCHIVE]).hexdigest() != _ARCHIVE_HASH:
         raise ValueError("Taamey D source archive differs from its reviewed input")
-    if any(not data for data in shared.values()):
-        raise ValueError("Taamey D source support contains an empty file")
+    with zipfile.ZipFile(io.BytesIO(shared[_ARCHIVE])) as archive:
+        for name in _ARCHIVED_COMPANIONS:
+            member = f"{_ARCHIVE.removesuffix('.zip')}/{name}"
+            if archive.read(member) != shared[name]:
+                raise ValueError(
+                    f"Taamey D {name} differs from its copy in the archive"
+                )
+    unarchived = {
+        "SOURCE.txt": shared["SOURCE.txt"],
+        "PRODUCT-WOFF2-SOURCE.txt": (support / "PRODUCT-WOFF2-SOURCE.txt").read_bytes(),
+    }
+    for name, data in unarchived.items():
+        if hashlib.sha256(data).hexdigest() != _UNARCHIVED_SHA256[name]:
+            raise ValueError(f"Taamey D {name} differs from its recorded SHA-256")
     assets = {f"font-sources/{_VERSION}/{name}": data for name, data in shared.items()}
     prefix = f"{product}/woff2"
     assets[f"{prefix}/Taamey_D.woff2"] = font
     for name in ("FONT-NOTICE.txt", "GPL-2.0.txt"):
         assets[f"{prefix}/{name}"] = shared[name]
-    source = (support / "PRODUCT-WOFF2-SOURCE.txt").read_bytes()
-    if not source:
-        raise ValueError("Taamey D product source notice is empty")
-    assets[f"{prefix}/SOURCE.txt"] = source
+    assets[f"{prefix}/SOURCE.txt"] = unarchived["PRODUCT-WOFF2-SOURCE.txt"]
     return assets
