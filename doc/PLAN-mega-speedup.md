@@ -1,7 +1,8 @@
 # PLAN — make the mega run faster
 
 State: live. Phase 2 executed 2026-09-14; the Google Sheet retirement was incorporated
-2026-09-27; no other phase has started.
+2026-09-27. The separate 2026-10-03 serial investigation implements item 3 on an
+isolated branch, pending integration; no other numbered phase has started.
 
 Written by a Claude session on 2026-09-14. Ben's instructions that day, said of the changes to the
 mega since 2026-09-11 that the session had just listed for him: "Should other updates you mention
@@ -138,8 +139,12 @@ of the code the item names.
    record's §7 both say, and #278 could use the same list; see "Related plans and issues" below.
 2. **Take `near-aleppo-census` out of the mega.** Saving: 17.6 s in run 1, 19.4 s pinned. **Done
    in `d32a17b8`** on 2026-09-11, so that the mega writes nothing outside this repository.
-3. **Give the poetic scanner the prose scanner's fast path.** Estimated saving: about 5 s of the
-   7.54 s the poetic scanner took over five steps. Risk: low. **Filed as #273, open, not started.**
+3. **Give the poetic scanner the prose scanner's fast path.** The historical estimate was about
+   5 s of 7.54 s over five steps. **Implemented on `perf/serial-mega-20261003`, pending
+   integration; #273 remains open.** The current all-call differential found identical tokens
+   and positions on 26,804 calls, with instrumented scanner time 4.56 s before and 1.59 s after.
+   Repeated generator timings and verification are in
+   [the serial performance record](mega-serial-performance-2026-10-03.md).
 4. **Scan the chanted-word survey's three corpora at the same time, in three processes.**
    Estimated saving: about 5 s. Risk: medium. Not started, not filed.
 5. **Render `tmpl-survey`'s twelve SVGs at the same time, on a pool of threads.** Estimated

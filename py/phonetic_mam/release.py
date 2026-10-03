@@ -27,10 +27,11 @@ def read_book(book_id):
     book = json.loads(
         path.read_text(encoding="utf-8"), object_pairs_hook=_unique_object
     )
-    display_schema.validate_book(book)
+    # canonical_bytes validates before serialization; do not walk the book twice.
+    canonical = display_schema.canonical_bytes(book)
     display_schema.require(book["book"] == book_id, "filename/book identity differs")
     display_schema.require(
-        path.read_bytes() == display_schema.canonical_bytes(book),
+        path.read_bytes() == canonical,
         f"noncanonical JSON representation: {path.name}",
     )
     return book

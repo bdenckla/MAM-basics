@@ -78,6 +78,7 @@ ends with ('SOFPASUQ', 'sof pasuq').
 from __future__ import annotations
 
 import re
+from functools import lru_cache
 from dataclasses import dataclass
 
 from accgram import accent_marks as am
@@ -463,6 +464,14 @@ def _reclassify_revia(types: list[str]) -> list[str]:
     return out
 
 
+@lru_cache(maxsize=1)
+def _alternation_for(rules: tuple) -> re.Pattern[str] | None:
+    """Keep a poetic rule snapshot separate from the prose scanner's cache."""
+    from accgram.prose_scanner import _build_alternation
+
+    return _build_alternation(rules)
+
+
 def scan_accent_tokens(body: str) -> list[Token]:
     """Scan one poetic verse body into positioned grammar tokens.
 
@@ -475,19 +484,26 @@ def scan_accent_tokens(body: str) -> list[Token]:
     # below preserve length and index order, so these stay aligned.
     pos = 0
     n = len(body)
+    rules = tuple(_POETIC_GG_RULES)
+    alternation = _alternation_for(rules)
     while pos < n:
         best_len = 0
         best_type: str | None = None
         matched = False
-        for regex, ttype in _POETIC_GG_RULES:
-            m = regex.match(body, pos)
-            if m is None:
-                continue
-            length = m.end() - m.start()
-            if length > best_len:
-                best_len = length
-                best_type = ttype
-                matched = True
+        if alternation is not None and alternation.match(body, pos) is None:
+            # Only the one-character, token-free catch-all can match here.
+            best_len = 1
+            matched = True
+        else:
+            for regex, ttype in rules:
+                m = regex.match(body, pos)
+                if m is None:
+                    continue
+                length = m.end() - m.start()
+                if length > best_len:
+                    best_len = length
+                    best_type = ttype
+                    matched = True
         assert matched, f"no rule matched at position {pos} in {body!r}"
         if best_type is not None:
             if best_type == pan.BANG_PAIR:

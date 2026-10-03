@@ -1,0 +1,863 @@
+{
+  "record_type": "serial-mega-performance-experiment",
+  "baseline_commit": "d8b6e1d7ace2baaeabfd03c6cc16366db7374286",
+  "python": "3.13.15",
+  "platform": "Linux",
+  "cpu_quota": "400000 100000",
+  "full_runs": {
+    "before": {
+      "wall": 403.165608731,
+      "load": [
+        1.0,
+        0.78076171875,
+        0.39111328125
+      ],
+      "steps": [
+        {
+          "step_id": "parse-ws",
+          "seconds": 8.546411355000004,
+          "raised": null
+        },
+        {
+          "step_id": "foi-features-of-interest",
+          "seconds": 9.922050468999998,
+          "raised": null
+        },
+        {
+          "step_id": "mam-with-doc",
+          "seconds": 4.290222647000007,
+          "raised": null
+        },
+        {
+          "step_id": "diff-mpplus",
+          "seconds": 5.998610006999996,
+          "raised": null
+        },
+        {
+          "step_id": "diff-ctr-vs-mam",
+          "seconds": 0.06159236199999896,
+          "raised": null
+        },
+        {
+          "step_id": "tmpl-survey",
+          "seconds": 0.5123982370000135,
+          "raised": null
+        },
+        {
+          "step_id": "tmpl-survey-toy",
+          "seconds": 0.006468096000020296,
+          "raised": null
+        },
+        {
+          "step_id": "vendored-tmpl-survey-toy",
+          "seconds": 0.028110548999990215,
+          "raised": null
+        },
+        {
+          "step_id": "mam-simple",
+          "seconds": 6.583793122999992,
+          "raised": null
+        },
+        {
+          "step_id": "mam-simple-docs",
+          "seconds": 0.07722518599999262,
+          "raised": null
+        },
+        {
+          "step_id": "letter-small-job",
+          "seconds": 0.003061166999998477,
+          "raised": null
+        },
+        {
+          "step_id": "vendored-letter-small-job",
+          "seconds": 0.027589156000004778,
+          "raised": null
+        },
+        {
+          "step_id": "decnreub",
+          "seconds": 0.03641812200001482,
+          "raised": null
+        },
+        {
+          "step_id": "multimark",
+          "seconds": 9.409311256999985,
+          "raised": null
+        },
+        {
+          "step_id": "wordlist",
+          "seconds": 0.7427864059999933,
+          "raised": null
+        },
+        {
+          "step_id": "search-final-hiriq-verse-text",
+          "seconds": 0.2964643429999967,
+          "raised": null
+        },
+        {
+          "step_id": "search-holam-he-qere",
+          "seconds": 0.8323336610000069,
+          "raised": null
+        },
+        {
+          "step_id": "explicit-xataf",
+          "seconds": 0.3268290219999983,
+          "raised": null
+        },
+        {
+          "step_id": "ws-bot-proto",
+          "seconds": 2.9855489599999885,
+          "raised": null
+        },
+        {
+          "step_id": "gen-misc",
+          "seconds": 0.44944163799999615,
+          "raised": null
+        },
+        {
+          "step_id": "wlc-json-and-unicode",
+          "seconds": 13.248884891000017,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-prose",
+          "seconds": 5.793835734999988,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-test-fixes",
+          "seconds": 0.9457395760000225,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-dual-cant",
+          "seconds": 0.25360232099998825,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-poetic",
+          "seconds": 1.4998220979999815,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-xcheck-poetic",
+          "seconds": 1.196101341000002,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-servi-xcheck",
+          "seconds": 1.0533970940000188,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-grammaticality",
+          "seconds": 1.39016627700002,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-printed-decalogue",
+          "seconds": 0.14205496599998924,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-survey-chanted-word-accents",
+          "seconds": 13.822563040000006,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-generate-html",
+          "seconds": 9.62699360100001,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-check-changes",
+          "seconds": 0.5092368489999899,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-fois",
+          "seconds": 9.916350429999994,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-write-page-break-info",
+          "seconds": 0.3676263259999928,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-amb-early-mtg",
+          "seconds": 0.8777291920000039,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-word-list",
+          "seconds": 0.6414903870000046,
+          "raised": null
+        },
+        {
+          "step_id": "clc",
+          "seconds": 0.5737715730000161,
+          "raised": null
+        },
+        {
+          "step_id": "estimate-uxlc-locations",
+          "seconds": 0.6456137289999901,
+          "raised": null
+        },
+        {
+          "step_id": "render-uxlc-corrections",
+          "seconds": 0.03668481100001486,
+          "raised": null
+        },
+        {
+          "step_id": "verify-and-render-table",
+          "seconds": 0.5134796929999936,
+          "raised": null
+        },
+        {
+          "step_id": "book-of-job-site",
+          "seconds": 1.1055966290000185,
+          "raised": null
+        },
+        {
+          "step_id": "map-changes-to-book-of-job",
+          "seconds": 0.01510435900001994,
+          "raised": null
+        },
+        {
+          "step_id": "find-uxlc-accent-changes",
+          "seconds": 0.027244263000000046,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-grammar-test",
+          "seconds": 0.7368935470000224,
+          "raised": null
+        },
+        {
+          "step_id": "wlc-diffs-420422",
+          "seconds": 0.3718033700000092,
+          "raised": null
+        },
+        {
+          "step_id": "wlc-a-notes",
+          "seconds": 0.038752633000001424,
+          "raised": null
+        },
+        {
+          "step_id": "sigil-inventory",
+          "seconds": 0.7897245009999949,
+          "raised": null
+        },
+        {
+          "step_id": "phonetic-mam-export",
+          "seconds": 60.71652337499998,
+          "raised": null
+        },
+        {
+          "step_id": "phonetic-mam-render",
+          "seconds": 37.67956283500001,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-survey-meteg-before-stress",
+          "seconds": 40.90915830399996,
+          "raised": null
+        },
+        {
+          "step_id": "yeivin-itm-survey-meteg-claims",
+          "seconds": 0.03237501000000975,
+          "raised": null
+        },
+        {
+          "step_id": "yeivin-itm-render",
+          "seconds": 0.4528910100000303,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-survey-post-stress-meteg",
+          "seconds": 140.80082531300002,
+          "raised": null
+        },
+        {
+          "step_id": "gen-site",
+          "seconds": 4.786610502999906,
+          "raised": null
+        },
+        {
+          "step_id": "diffable-pointed-hebrew",
+          "seconds": 0.0010606519999782904,
+          "raised": null
+        },
+        {
+          "step_id": "ac-gen-index-flat-annotated",
+          "seconds": 0.0026937290000432768,
+          "raised": null
+        },
+        {
+          "step_id": "pipeline-graph",
+          "seconds": 0.050035303999948155,
+          "raised": null
+        }
+      ]
+    },
+    "after": {
+      "wall": 374.655749412,
+      "load": [
+        1.005859375,
+        1.0,
+        0.85791015625
+      ],
+      "steps": [
+        {
+          "step_id": "parse-ws",
+          "seconds": 8.782816873000002,
+          "raised": null
+        },
+        {
+          "step_id": "foi-features-of-interest",
+          "seconds": 10.697930241999984,
+          "raised": null
+        },
+        {
+          "step_id": "mam-with-doc",
+          "seconds": 4.272743404000039,
+          "raised": null
+        },
+        {
+          "step_id": "diff-mpplus",
+          "seconds": 5.935257899999897,
+          "raised": null
+        },
+        {
+          "step_id": "diff-ctr-vs-mam",
+          "seconds": 0.05264401399995222,
+          "raised": null
+        },
+        {
+          "step_id": "tmpl-survey",
+          "seconds": 0.34175629099991056,
+          "raised": null
+        },
+        {
+          "step_id": "tmpl-survey-toy",
+          "seconds": 0.005898205999983475,
+          "raised": null
+        },
+        {
+          "step_id": "vendored-tmpl-survey-toy",
+          "seconds": 0.02449682099995698,
+          "raised": null
+        },
+        {
+          "step_id": "mam-simple",
+          "seconds": 6.478849937000177,
+          "raised": null
+        },
+        {
+          "step_id": "mam-simple-docs",
+          "seconds": 0.07788961100004599,
+          "raised": null
+        },
+        {
+          "step_id": "letter-small-job",
+          "seconds": 0.0030287340000541008,
+          "raised": null
+        },
+        {
+          "step_id": "vendored-letter-small-job",
+          "seconds": 0.028905289000022094,
+          "raised": null
+        },
+        {
+          "step_id": "decnreub",
+          "seconds": 0.03675135799994678,
+          "raised": null
+        },
+        {
+          "step_id": "multimark",
+          "seconds": 9.296771463000141,
+          "raised": null
+        },
+        {
+          "step_id": "wordlist",
+          "seconds": 0.7130551200000355,
+          "raised": null
+        },
+        {
+          "step_id": "search-final-hiriq-verse-text",
+          "seconds": 0.28496894899990366,
+          "raised": null
+        },
+        {
+          "step_id": "search-holam-he-qere",
+          "seconds": 0.7600932939999439,
+          "raised": null
+        },
+        {
+          "step_id": "explicit-xataf",
+          "seconds": 0.3071394329999748,
+          "raised": null
+        },
+        {
+          "step_id": "ws-bot-proto",
+          "seconds": 2.788568239000142,
+          "raised": null
+        },
+        {
+          "step_id": "gen-misc",
+          "seconds": 0.44962678299998515,
+          "raised": null
+        },
+        {
+          "step_id": "wlc-json-and-unicode",
+          "seconds": 12.974165422999931,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-prose",
+          "seconds": 5.877477524000142,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-test-fixes",
+          "seconds": 0.9861104330000217,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-dual-cant",
+          "seconds": 0.2654917730001216,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-poetic",
+          "seconds": 1.1439425399998981,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-xcheck-poetic",
+          "seconds": 0.7564109590000498,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-servi-xcheck",
+          "seconds": 0.6197197849999156,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-grammaticality",
+          "seconds": 1.4309618790000513,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-run-printed-decalogue",
+          "seconds": 0.13808656299988797,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-survey-chanted-word-accents",
+          "seconds": 13.570442325000158,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-generate-html",
+          "seconds": 9.358570666000105,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-check-changes",
+          "seconds": 0.5251813339998535,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-fois",
+          "seconds": 10.0005672960001,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-write-page-break-info",
+          "seconds": 0.39895987699992475,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-amb-early-mtg",
+          "seconds": 0.907976028000121,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-word-list",
+          "seconds": 0.6460703519999242,
+          "raised": null
+        },
+        {
+          "step_id": "clc",
+          "seconds": 0.5946250800000143,
+          "raised": null
+        },
+        {
+          "step_id": "estimate-uxlc-locations",
+          "seconds": 0.701326409000103,
+          "raised": null
+        },
+        {
+          "step_id": "render-uxlc-corrections",
+          "seconds": 0.04090180100001817,
+          "raised": null
+        },
+        {
+          "step_id": "verify-and-render-table",
+          "seconds": 0.5040630820001297,
+          "raised": null
+        },
+        {
+          "step_id": "book-of-job-site",
+          "seconds": 1.1391527129999304,
+          "raised": null
+        },
+        {
+          "step_id": "map-changes-to-book-of-job",
+          "seconds": 0.01519188999986909,
+          "raised": null
+        },
+        {
+          "step_id": "find-uxlc-accent-changes",
+          "seconds": 0.02721824899981584,
+          "raised": null
+        },
+        {
+          "step_id": "uxlc-grammar-test",
+          "seconds": 0.7620582130000457,
+          "raised": null
+        },
+        {
+          "step_id": "wlc-diffs-420422",
+          "seconds": 0.3722741919998498,
+          "raised": null
+        },
+        {
+          "step_id": "wlc-a-notes",
+          "seconds": 0.04370821900010924,
+          "raised": null
+        },
+        {
+          "step_id": "sigil-inventory",
+          "seconds": 0.790102109999907,
+          "raised": null
+        },
+        {
+          "step_id": "phonetic-mam-export",
+          "seconds": 60.683810814000026,
+          "raised": null
+        },
+        {
+          "step_id": "phonetic-mam-render",
+          "seconds": 30.35818697800005,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-survey-meteg-before-stress",
+          "seconds": 39.033685690000084,
+          "raised": null
+        },
+        {
+          "step_id": "yeivin-itm-survey-meteg-claims",
+          "seconds": 0.033310857999822474,
+          "raised": null
+        },
+        {
+          "step_id": "yeivin-itm-render",
+          "seconds": 0.47561090999988664,
+          "raised": null
+        },
+        {
+          "step_id": "accgram-survey-post-stress-meteg",
+          "seconds": 123.46554643199988,
+          "raised": null
+        },
+        {
+          "step_id": "gen-site",
+          "seconds": 4.590119531000028,
+          "raised": null
+        },
+        {
+          "step_id": "diffable-pointed-hebrew",
+          "seconds": 0.001143666999951165,
+          "raised": null
+        },
+        {
+          "step_id": "ac-gen-index-flat-annotated",
+          "seconds": 0.0028243960000509105,
+          "raised": null
+        },
+        {
+          "step_id": "pipeline-graph",
+          "seconds": 0.05327070799989997,
+          "raised": null
+        }
+      ]
+    }
+  },
+  "focused_trial_order": [
+    "old1",
+    "new1",
+    "new2",
+    "old2",
+    "old3",
+    "new3"
+  ],
+  "focused_runs": {
+    "old": [
+      {
+        "accgram-run-poetic": {
+          "wall": 1.6313641469998856,
+          "cpu": 1.6304609710000002
+        },
+        "accgram-xcheck-poetic": {
+          "wall": 1.129026592000173,
+          "cpu": 1.128882564
+        },
+        "accgram-servi-xcheck": {
+          "wall": 1.0771518880001167,
+          "cpu": 1.0769667650000003
+        },
+        "accgram-generate-html": {
+          "wall": 9.31919009100011,
+          "cpu": 9.316941979
+        },
+        "phonetic-mam-render": {
+          "wall": 33.10483782699998,
+          "cpu": 33.101139974000006
+        }
+      },
+      {
+        "accgram-run-poetic": {
+          "wall": 1.5702286060000006,
+          "cpu": 1.569784447
+        },
+        "accgram-xcheck-poetic": {
+          "wall": 1.1483393999999407,
+          "cpu": 1.1482693270000004
+        },
+        "accgram-servi-xcheck": {
+          "wall": 1.0681343430001107,
+          "cpu": 1.0680421799999995
+        },
+        "accgram-generate-html": {
+          "wall": 9.28865724100001,
+          "cpu": 9.287811637
+        },
+        "phonetic-mam-render": {
+          "wall": 32.79654711399985,
+          "cpu": 32.793938019
+        }
+      },
+      {
+        "accgram-run-poetic": {
+          "wall": 1.593011492999949,
+          "cpu": 1.592862466
+        },
+        "accgram-xcheck-poetic": {
+          "wall": 1.1482259460001387,
+          "cpu": 1.148098122
+        },
+        "accgram-servi-xcheck": {
+          "wall": 1.1072394139998778,
+          "cpu": 1.1071375890000001
+        },
+        "accgram-generate-html": {
+          "wall": 9.572824756000045,
+          "cpu": 9.571662906
+        },
+        "phonetic-mam-render": {
+          "wall": 33.809617103000164,
+          "cpu": 33.806096156
+        }
+      }
+    ],
+    "new": [
+      {
+        "accgram-run-poetic": {
+          "wall": 1.1190012140000363,
+          "cpu": 1.1189039050000003
+        },
+        "accgram-xcheck-poetic": {
+          "wall": 0.6901245679998738,
+          "cpu": 0.6900812360000002
+        },
+        "accgram-servi-xcheck": {
+          "wall": 0.5981424720000632,
+          "cpu": 0.5980812820000003
+        },
+        "accgram-generate-html": {
+          "wall": 8.936517651000031,
+          "cpu": 8.935579303
+        },
+        "phonetic-mam-render": {
+          "wall": 27.34848418699994,
+          "cpu": 27.346910903999998
+        }
+      },
+      {
+        "accgram-run-poetic": {
+          "wall": 1.1785580689997914,
+          "cpu": 1.177670832
+        },
+        "accgram-xcheck-poetic": {
+          "wall": 0.7167321429999447,
+          "cpu": 0.7161647599999998
+        },
+        "accgram-servi-xcheck": {
+          "wall": 0.601936243999944,
+          "cpu": 0.6015987590000003
+        },
+        "accgram-generate-html": {
+          "wall": 8.884555654999986,
+          "cpu": 8.881986426000001
+        },
+        "phonetic-mam-render": {
+          "wall": 26.106070676999934,
+          "cpu": 26.102397683
+        }
+      },
+      {
+        "accgram-run-poetic": {
+          "wall": 1.2107284740000068,
+          "cpu": 1.2105814409999998
+        },
+        "accgram-xcheck-poetic": {
+          "wall": 0.6969822219998605,
+          "cpu": 0.696895349
+        },
+        "accgram-servi-xcheck": {
+          "wall": 0.6029533250000441,
+          "cpu": 0.6028421669999999
+        },
+        "accgram-generate-html": {
+          "wall": 8.991310654000017,
+          "cpu": 8.989506575
+        },
+        "phonetic-mam-render": {
+          "wall": 26.90973318300007,
+          "cpu": 26.90780918
+        }
+      }
+    ]
+  },
+  "text_predicate": {
+    "strings": 1539529,
+    "results": [
+      {
+        "round": 0,
+        "method": "set",
+        "wall": 0.5803508320000219,
+        "cpu": 0.579985078
+      },
+      {
+        "round": 0,
+        "method": "isdisjoint",
+        "wall": 0.3630707289999009,
+        "cpu": 0.3626593739999997
+      },
+      {
+        "round": 0,
+        "method": "regex",
+        "wall": 0.2276397600001019,
+        "cpu": 0.2274427569999995
+      },
+      {
+        "round": 0,
+        "method": "contains",
+        "wall": 0.5592159020000054,
+        "cpu": 0.5588246950000002
+      },
+      {
+        "round": 1,
+        "method": "contains",
+        "wall": 0.5706747079998422,
+        "cpu": 0.5703503349999997
+      },
+      {
+        "round": 1,
+        "method": "regex",
+        "wall": 0.24125943900003222,
+        "cpu": 0.2409951140000004
+      },
+      {
+        "round": 1,
+        "method": "isdisjoint",
+        "wall": 0.3953841529998954,
+        "cpu": 0.39504573099999973
+      },
+      {
+        "round": 1,
+        "method": "set",
+        "wall": 0.5859428550002121,
+        "cpu": 0.5855621580000001
+      },
+      {
+        "round": 2,
+        "method": "set",
+        "wall": 0.5769321389998368,
+        "cpu": 0.5765761930000002
+      },
+      {
+        "round": 2,
+        "method": "isdisjoint",
+        "wall": 0.3589215859999513,
+        "cpu": 0.3585769370000005
+      },
+      {
+        "round": 2,
+        "method": "regex",
+        "wall": 0.2238025210001524,
+        "cpu": 0.22364675599999906
+      },
+      {
+        "round": 2,
+        "method": "contains",
+        "wall": 0.5722810429999754,
+        "cpu": 0.5719158950000001
+      }
+    ]
+  },
+  "scanner_differential": {
+    "calls": 26804,
+    "old_seconds": 4.556937617997846,
+    "new_seconds": 1.5891210879892697
+  },
+  "profiled_stage_times": {
+    "phonetic-mam-render": {
+      "wall": 90.39446445299996,
+      "cpu": 90.374525755
+    },
+    "accgram-survey-meteg-before-stress": {
+      "wall": 103.33826726400002,
+      "cpu": 103.329461845
+    },
+    "yeivin-itm-render": {
+      "wall": 0.7225126409999802,
+      "cpu": 0.7224850640000113
+    },
+    "accgram-survey-post-stress-meteg": {
+      "wall": 331.53870165399996,
+      "cpu": 331.51296128399997
+    }
+  },
+  "verification": {
+    "tracked_manifest_files": 4538,
+    "before_after_manifest_sha256": "ddaf03e574d02193ecd230621ec7f8e2a9aeef9a9e133cbed1c837a9d02b9c68",
+    "baseline_svg_differences": [
+      "doc/process-documentation/MAM-process.dot.svg",
+      "doc/process-documentation/pipeline.svg",
+      "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+      "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+      "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+      "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+      "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+      "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+    ],
+    "svg_patch_sha256": "6467d7167fe55ee8704860053aa8c5eb92f62e8e6fd8013bce98e699092e1096",
+    "svg_disposition": "Baseline-only host geometry/font alias differences reproduced, archived, then restored to HEAD.",
+    "tests": "1058 passed, 5 skipped, 60 subtests passed in 211.58s",
+    "full_run_timer": "perf_counter around main after imports; includes Graphviz preflight; step-loop totals exclude preflight."
+  }
+}
