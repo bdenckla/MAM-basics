@@ -329,9 +329,19 @@ def write_expanded_stack_grammar_lock(sections):
     )
 
 
+# The keys of every transient parser-stage node.  node_type_and_subtype admits a node only
+# through ws_tmpl1.dic_is_template, whose keys are the two template encodings ("tmpl" and
+# "stmpl", which ws_tmpl1.simplify_wtel writes), or ws_tmpl1.is_abtag, whose key is the
+# custom-tag encoding ("custom_tag", which ws_abtag_parser and ws_plain write).  Plus has
+# templates as {"tmpl_name": ..., "tmpl_params": ...} and no custom tag, so a dict in plus
+# with any of these keys is a parser-stage node that the conversion left behind.
+PARSER_STAGE_NODE_KEYS = frozenset({"tmpl", "stmpl", "custom_tag"})
+
+
 def _validate_no_parser_stage_encoding(node):
     if isinstance(node, dict):
-        assert "stmpl" not in node
+        leaked = PARSER_STAGE_NODE_KEYS & set(node)
+        assert not leaked, f"plus holds a parser-stage node: {node!r}"
         for value in node.values():
             _validate_no_parser_stage_encoding(value)
     elif isinstance(node, (list, tuple)):
