@@ -13,15 +13,18 @@ WHAT IS CHECKED: every chanted word of MAM's PROSE verses the maqaf-non-final-ac
 a final-stress verdict for -- the simple two-accent chanted words and the concentrators, minus the
 ones the survey excludes, minus the ones whose last mark is written at the chanted word's edge and
 so says nothing about stress.  MAM, because Phonetic MAM is MAM; prose, because the page the
-measurement is for is about prose verses and because a poetic chanted word's atoms really are
-grouped differently on the two sides -- MAM has a gray maqaf in 113 places where Phonetic MAM keeps
-two chanted words, and those 113 are nearly the whole of what will not join anywhere in MAM's
-Tanakh.  The rest of it, 11 more (issue wlc-utils#91), is outside this test's reach for reasons of its own:
-8 dually-cantillated chanted words in the two Decalogues, whose ``cant-combined`` projection is
-neither strand; Deuteronomy 32:6, where MAM's large ה stands apart from לְיְהֹוָה֙ and Phonetic MAM
-has one entry for the two atoms; and 2 Chronicles 25:17, where Phonetic MAM has לְךָ֖ against the
-qere לְכָ֖ה that MAM-simple and WLC 4.22 both have, which is a difference in the text rather than
-in the grouping.  The
+measurement is for is about prose verses, and because only poetic verses have MAM's gray maqaf,
+which this test's join cannot match.  Phonetic MAM has each of MAM's gray-maqaf compounds as one
+entry, 113 of them, and ``analysis_reader`` spells that maqaf as a tilde where ``mam_simple_verse``
+gives it as U+05BE; the join key keeps both marks, so none of the 113 joins, and they are most of
+what will not join anywhere in MAM's Tanakh.  The rest, 12 chanted words in prose verses, are
+outside this test's reach for reasons of their own (issue wlc-utils#91): 8 dually-cantillated
+chanted words in the two Decalogues, whose ``cant-combined`` projection is neither strand; the two
+chanted words of Deuteronomy 32:6, where MAM's large ה stands apart from לְיְהֹוָה֙ and Phonetic
+MAM has one entry for the two atoms; 2 Kings 22:1, where Phonetic MAM has only מִבָּֽצְקַֽת׃ and
+MAM-simple has the other qamats alternative, מִבׇּֽצְקַֽת׃; and 2 Chronicles 25:17, where Phonetic
+MAM has לְךָ֖ against the qere לְכָ֖ה that MAM-simple and WLC 4.22 both have.  Those last two are
+differences in the text rather than in the grouping.  The
 scan is rerun here rather than read out of the survey's JSON, which keeps counts and not words --
 and rerun over MAM's own versification, for which see ``_measured``.
 
