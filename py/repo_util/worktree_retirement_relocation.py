@@ -13,6 +13,7 @@ import shutil
 from pathlib import Path
 from typing import Any
 
+from repo_util.common import clear_read_only_and_retry
 from repo_util.worktree_retirement_git import RetirementError
 from repo_util.worktree_retirement_inspection import _inventory
 from repo_util.worktree_retirement_preflight import _update_sidecar, _write_sidecar
@@ -129,7 +130,7 @@ def _relocate_novc(
                 raise RetirementError(
                     f"cross-volume source changed; source retained at {source}"
                 )
-            shutil.rmtree(source)
+            shutil.rmtree(source, onexc=clear_read_only_and_retry)
     except Exception as exc:
         if (
             method == "same-volume-rename"

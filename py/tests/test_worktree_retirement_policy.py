@@ -17,6 +17,10 @@ _ADAPTER_MODULES = (
 _ENGINE = "repo_util/worktree_retirement_execution.py"
 _RELOCATION = "repo_util/worktree_retirement_relocation.py"
 _SHORT_OPTION_CLUSTER = re.compile(r"-[A-Za-z]+")
+# Git writes object and pack files read-only, which Windows will not delete, so the one
+# admitted keyword is the shared handler that clears that attribute and retries;
+# ignore_errors, onerror and any other handler stay refused.
+_READ_ONLY_RETRY = "repo_util.common.clear_read_only_and_retry"
 
 
 def _short_options(token):
@@ -26,14 +30,30 @@ def _short_options(token):
     return frozenset()
 
 
+def _long_option(token, option):
+    """Whether Git reads ``token`` as the long ``option``.
+
+    Git accepts the whole name or any prefix that no other option of the command
+    shares: ``git worktree remove`` reads ``--f`` to ``--forc`` as ``--force``, and
+    ``git branch`` reads ``--d`` to ``--delet`` as ``--delete`` and ``--forc`` as
+    ``--force``.  A prefix that Git finds ambiguous is refused here as well.
+    """
+    return (
+        isinstance(token, str)
+        and len(token) > 2
+        and token.startswith("--")
+        and option.startswith(token)
+    )
+
+
 def _forces(token):
-    """--force, or a short-option cluster holding f or D: -f, -D, -df, -fd, -ff."""
-    return token == "--force" or bool(_short_options(token) & {"f", "D"})
+    """--force or an abbreviation of it, or a short-option cluster holding f or D."""
+    return _long_option(token, "--force") or bool(_short_options(token) & {"f", "D"})
 
 
 def _deletes_branch(token):
-    """--delete, or a short-option cluster holding d or D: -d, -D, -df, -fd."""
-    return token == "--delete" or bool(_short_options(token) & {"d", "D"})
+    """--delete or an abbreviation of it, or a short-option cluster holding d or D."""
+    return _long_option(token, "--delete") or bool(_short_options(token) & {"d", "D"})
 
 
 def _argument_tokens(node):
@@ -152,10 +172,19 @@ class _PolicyVisitor(ast.NodeVisitor):
                 node.lineno,
                 name,
             )
-            assert len(node.args) == 1 and not node.keywords, (
+            assert len(node.args) == 1 and [k.arg for k in node.keywords] == [
+                "onexc"
+            ], (
                 self.module,
                 function,
                 node.lineno,
+            )
+            handler = _qualified_name(node.keywords[0].value, self.imports)
+            assert handler == _READ_ONLY_RETRY, (
+                self.module,
+                function,
+                node.lineno,
+                handler,
             )
             assert isinstance(node.args[0], ast.Name) and node.args[0].id == expected, (
                 self.module,
