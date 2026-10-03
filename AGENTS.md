@@ -239,15 +239,17 @@ local product directories do not require sibling clones.
 ## Writing tests: differential and lint-shaped only
 
 Follow the common instruction body's “Tests are differential or lint-shaped” rule.
-The `ws_bot` tests remain a deliberate exception because a live Wikisource edit is an
-outward-facing act with no regeneratable artifact. By Ben's decision of 2026-09-30, the five stub
-test ids of `py/tests/test_wikisource_special_page_download.py` are a second exception. Its four
+`doc/agent-planning-principles.md`, “Generated Outputs Are the Tests”, carries that rule's dated
+evidence and rationale. The `ws_bot` tests remain a deliberate exception because a live
+Wikisource edit is an outward-facing act with no regeneratable artifact. By Ben's decision of
+2026-09-30, which `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md` records under
+“Ben's decisions and approval of the package, 2026-09-30”, the five stub test ids of
+`py/tests/test_wikisource_special_page_download.py` are a second exception. Its four
 fault-injection ids hold five cases: each checks that a bad API response or bad local metadata
 makes the special-page download raise, and all but the last, a manifest overwritten with "not
 json", also check that no mirrored file changed, a property with no regeneratable artifact. Its
 round trip is the only offline check of the download's reuse and forced refresh, neither of
-which a regenerated mirror's diff would show. `doc/agent-planning-principles.md`, “Generated
-Outputs Are the Tests”, carries the dated evidence and rationale.
+which a regenerated mirror's diff would show.
 
 ## This is the only repository instruction body
 
