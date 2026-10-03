@@ -64,7 +64,7 @@ def almost_main(bkids=None):
 def main():
     """Create MAM's HTML edition with its documentation notes."""
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     almost_main(bkids)
 

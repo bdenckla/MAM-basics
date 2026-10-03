@@ -27,7 +27,7 @@ __all__ = ["main"]
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
 
     jobn_top = boj_paths.jobn_dir()
     # Delete all HTML and CSS files to avoid stale files when output names change

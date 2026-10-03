@@ -272,7 +272,7 @@ def build_parser():
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = build_parser().parse_args()
     if args.subcommand == "gen-site":
         cmd_gen_site(args)

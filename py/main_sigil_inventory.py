@@ -6,7 +6,6 @@ from sigils import inventory
 
 
 def almost_main():
-    sys.stdout.reconfigure(encoding="utf-8")
     out_path = "out/sigil-inventory.json"
     result = inventory.write_inventory(out_path)
     counts = json.dumps(result["header"]["counts"], ensure_ascii=False, indent=2)
@@ -15,6 +14,8 @@ def almost_main():
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     almost_main()
 
 

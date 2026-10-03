@@ -46,7 +46,7 @@ _SKIP_DIRS = {".venv", "__pycache__", ".novc", ".git", "node_modules"}
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     all_violations = []
 
     files = sorted(_scoped_files())
