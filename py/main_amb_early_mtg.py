@@ -13,7 +13,7 @@ import uxlc_misc.uxlc_utils_html as uxlc_utils_html
 def main():
     """Writes amb-early-mtg records to HTML files."""
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     records = amb_early_mtg.RECORDS
     #
     amb_early_mtg_three_and_beyond.find()

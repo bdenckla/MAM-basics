@@ -30,7 +30,7 @@ def main() -> None:
     # those streams encode as cp1252 and the report dies of UnicodeEncodeError
     # instead of being read.
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = build_parser()
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):

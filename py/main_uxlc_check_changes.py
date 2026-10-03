@@ -95,7 +95,7 @@ def main():
     Convert various Changes files to JSON format.
     """
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     changes = _get_all_changes()
     check_results_f = changes_loc.check(changes)
     #

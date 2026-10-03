@@ -88,7 +88,7 @@ def find_final_hiriq_hits() -> tuple[list[dict[str, object]], list[str]]:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     hits, target_tokens = find_final_hiriq_hits()
 
     target_verse_str = f"{TARGET_VERSE[0]} {TARGET_VERSE[1]}:{TARGET_VERSE[2]}"

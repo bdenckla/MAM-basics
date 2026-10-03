@@ -24,7 +24,7 @@ def main():
     Example: .venv/Scripts/python.exe py/main_uxlc_estimate_atom_loc.py Genesis 27:7 "צַ֛יִד"
     """
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = sys.argv[1:]
     if len(args) != 3:
         print(

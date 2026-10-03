@@ -105,7 +105,7 @@ def main():
     see UXLC_DOWNLOAD_HOST -- and the guard compares against the DOWNLOAD host.
     """
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = _parse_args()
     with polite_download.PoliteDownloader(_UXLC_DOWNLOAD_CONFIG) as session:
         _download_latest_uxlc(session, args.host)

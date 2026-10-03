@@ -87,7 +87,7 @@ _COUNTED_VERSE_CHILD_TAGS = ("w", "k", "q", "x", "pe", "samekh", "reversednun")
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--emails-dir", type=Path, default=DEFAULT_EMAILS_DIR)

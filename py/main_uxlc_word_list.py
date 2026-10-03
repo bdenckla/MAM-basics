@@ -70,7 +70,7 @@ def _annotate_word(fragile_word):
 def main():
     """Extracts two word list files (all, fragile) from UXLC sources."""
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     words_all = set()
     for book_id in tbn.ALL_BK39_IDS:
         for chapter in my_uxlc.read(book_id):

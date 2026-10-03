@@ -50,7 +50,7 @@ import github_issue_edit
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = _build_parser().parse_args()
     replacements, note = _read_edits(Path(args.edits))
     body = github_issue_edit.fetch_body(args.issue, repo=args.repo)

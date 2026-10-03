@@ -82,7 +82,7 @@ _CTR_INDEX_URL = (
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = _build_parser()
     args = parser.parse_args()
     if args.book not in tbn.ALL_BK39_IDS:

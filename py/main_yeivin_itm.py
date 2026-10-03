@@ -60,7 +60,7 @@ def main():
     # importer such as py/main_0_mega.py keeps its own bytecode caching.
     sys.dont_write_bytecode = True
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     return almost_main()
 
 

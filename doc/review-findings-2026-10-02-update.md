@@ -709,9 +709,11 @@ finding-22 entry waits for this remediation's mega, as the plan says.
 
 ### Noticed outside the plan
 
-1. Unfixed, because the review and the plan scope C15.4 to the eleven programs of `33470e2d`: 34
-   other entry points under `py/` still call `sys.stderr.reconfigure(encoding="utf-8")` with no
-   error handler, which resets stderr's `backslashreplace` to `strict`.
+1. Unfixed when this entry was written, because the review and the plan scope C15.4 to the eleven
+   programs of `33470e2d`: 34 other entry points under `py/` called
+   `sys.stderr.reconfigure(encoding="utf-8")` with no error handler, which resets stderr's
+   `backslashreplace` to `strict`. "Two observations of the executor's report addressed,
+   2026-10-03" below records their fix.
 
 **What remains.** Final integration as the plan's "Final integration" describes: merging the current
 `origin/main`, the mega, the fast-forward and push of `main`, then A3, A2 and A10 on this machine;
@@ -785,3 +787,33 @@ deployment from `origin/main` clears, so A3 ran again in its planned form, from 
 and `--sync-user-config --check` reported `USER_CONFIG_PROBLEM_COUNT=0`. No session on this machine
 held that skill's work at the time: the only live Claude sessions were this one and the idle
 plan-preparing session, and no Codex writer lease existed.
+
+## Two observations of the executor's report addressed, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session, which Ben asked,
+after its report, to address two of the report's observations: "Go ahead and address these
+findings 3 and 4".
+
+1. **Fixed: every reconfiguration of stderr keeps its `backslashreplace` error handler.** Item 1
+   of "Noticed outside the plan" above counted 34 entry points under `py/`; a census of every
+   tracked Python file found 36 sites in all. The commit that adds this entry gives the 34, and
+   the canonical Codex hook `dot-Codex/hooks/check_project_doc_budget.py`, the form
+   `sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")`.
+   `py/wlc_cmn/utf8_io.py`'s `force_utf8_io`, which the mega and seven other programs call,
+   reconfigured both streams in a loop through `getattr`; it now names each stream, and stderr
+   keeps `backslashreplace`. The `hebrew-prose` skill's `references/verifying.md`, whose "same
+   for stderr" taught the one-argument form, now gives the stderr call in full. The new lint
+   `py/tests/test_stderr_error_handler.py` requires every `reconfigure` call in tracked Python to
+   name `sys.stdin`, `sys.stdout` or `sys.stderr`, and every stderr call to pass
+   `errors="backslashreplace"`; at the parent commit it reports 37 problems, the 35 one-argument
+   calls and `force_utf8_io`'s two. The full suite passed with 1,048 tests, the new lint the one
+   added, with 5 skipped and 60 subtests passed. The mega was not run, at Ben's direction: the 35
+   one-line changes are in `main()` or a `__main__` block, which no mega step runs, and the one
+   change that the mega runs, `force_utf8_io`, changes only what stderr does with a lone
+   surrogate, which no tracked output depends on. No hand-run program was rerun, for the same
+   reason; `py/main_hbce_psalms.py compare` also keeps its frozen record.
+2. **Fixed: `C:/Users/BenDe/GitRepos2/hbofonts` was behind its origin.** It was clean on `main` at
+   `812ff746`; a fetch and `git merge --ff-only origin/main` brought it to `6eb3ee0e`, "Retire
+   Taamey D evacuation receipt", which deletes `doc/PLAN-evacuate-Taamey_D-into-hbofonts.md` and
+   edits hbofonts' `AGENTS.md`. Nothing in MAM-basics names the deleted file, and the full suite
+   above, which reads hbofonts, ran after the fast-forward.

@@ -53,7 +53,7 @@ from mb_cmn import paths
 
 def main(argv=None):
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = argparse.ArgumentParser(
         description="Lint the generated HTML files in gh-pages/.",
     )

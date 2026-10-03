@@ -51,7 +51,7 @@ def build_report() -> dict[str, object]:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     output_path, report = write_ending_pattern_report(SEARCH_SPEC)
     print(str(output_path))
     print(json.dumps(report["summary"], ensure_ascii=False, indent=2))

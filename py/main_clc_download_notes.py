@@ -93,7 +93,7 @@ def main():
     note-surfacing seed clc_collect.NOTED_CODES -- see the module docstring.
     """
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = _parse_args()
     if args.book_id is not None:
         assert args.book_id in tbn.ALL_BK39_IDS, f"unknown book id: {args.book_id!r}"
