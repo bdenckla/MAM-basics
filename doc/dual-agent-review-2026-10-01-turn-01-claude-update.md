@@ -350,12 +350,12 @@ machine `LAPTOP-DBLE8UKA`.
 **Retired: the relay that this round reviewed and remediated was removed from the tree on
 2026-10-03; this round's records stay unchanged.** Ben's selection on 2026-10-03, verbatim, was
 "Retire the relay now" (`doc/review-findings-2026-10-02-update.md`, "Ben's close-out decisions,
-2026-10-03", item 3). The commit that added this entry removed the relay's ten files, among them
-`py/repo_util/dual_agent_review_dispatch.py`, `py/repo_util/dual_agent_review_round.py`, their two
-test modules, `doc/dual-agent-review-automation.md` and
-`doc/PLAN-automate-the-dual-agent-review-relay.md`, together with the `--dual-agent-review`
-action of `py/main_repo_util.py` and the agent file's deployment in
-`py/repo_util/user_config_sync.py` and `dot-claude/README.md`. Its parent,
+2026-10-03", item 3). Commit `4573b0070be6eab2d31257a1cdf766b60ae766af`, which added this entry,
+removed the relay's ten files, among them `py/repo_util/dual_agent_review_dispatch.py`,
+`py/repo_util/dual_agent_review_round.py`, their two test modules,
+`doc/dual-agent-review-automation.md` and `doc/PLAN-automate-the-dual-agent-review-relay.md`,
+together with the `--dual-agent-review` action of `py/main_repo_util.py` and the agent file's
+deployment in `py/repo_util/user_config_sync.py` and `dot-claude/README.md`. Its parent,
 [`cbd405b11ef990040031ccf19699db54a69a489d`](https://github.com/bdenckla/MAM-basics/tree/cbd405b11ef990040031ccf19699db54a69a489d),
 is the last commit whose tree holds every removed file; each path and line that this round's
 records cite in those files resolves there. D13 in `doc/dual-agent-review.md` is now a dated
@@ -364,7 +364,7 @@ retirement note.
 The round file, the five numbered turns, `doc/PLAN-close-out-review-2026-10-01.md` and
 `doc/dual-agent-review-comparison-2026-10-01.md` are unchanged. In the round file, "This
 present-state file identifies an automated round" and "PAUSE, worktrees, branch and evidence are
-retained" describe the round as of 2026-10-01; no dispatcher reads the file now. This entry's
+retained" describe the round as of 2026-10-01; no dispatcher reads the file now. The same
 commit corrected five present-tense passages above in place:
 
 1. The bold lead under the State line read "Approved remediation and close-out are completed on
