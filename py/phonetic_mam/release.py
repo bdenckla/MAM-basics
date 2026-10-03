@@ -58,6 +58,7 @@ def validate_complete_release():
     """Check closed shapes, canonical bytes, identities and every required book."""
     root = paths.phonetic_mam_dir()
     expected = {
+        root / "LICENSE.md",
         root / "README.md",
         root / "schema" / "phonetic-mam-public-v1.schema.json",
         root / "examples" / "display.json",

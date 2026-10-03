@@ -6,7 +6,7 @@ This document translates the Hebrew Wikisource Village Pump discussion titled
 “הצלחנו עם השווא נע – עכשיו תורו של הדגש החזק” (“We succeeded with vocal shewa — now
 it is dagesh ḥazaq’s turn”). It preserves all ten signed comments in their source
 order, through Yosef Ometz’s comment at 13:08 IDT on 2026-10-01. The initial proposal
-rests on a misunderstanding that Dovi subsequently corrects: the request for a
+rests on a misunderstanding that Mo Yu Hu corrects first, citing an earlier discussion on the same page, and that Dovi then confirms and explains, crediting Mo Yu Hu: the request for a
 distinct dagesh ḥazaq character had already succeeded alongside the vocal shewa
 request.
 

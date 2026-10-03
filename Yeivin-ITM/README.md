@@ -3,7 +3,9 @@
 This product contains Ben Denckla's editable adaptation of selected excerpts from
 Israel Yeivin's *Introduction to the Tiberian Masorah*, translated and edited by
 E. J. Revell. The Python-shaped adaptation is under `py/yeivin_itm/content/`;
-the renderer and its helpers are under `py/yeivin_itm/`.
+the renderer and its helpers are under `py/yeivin_itm/`, apart from six
+rendering-helper modules that sit beside the adaptation in
+`py/yeivin_itm/content/`.
 
 ## Permission and authorship
 
@@ -18,10 +20,11 @@ generally placed in footnotes, but that distinction is not exhaustive.
 Ben's decision of 2026-09-19 treats the existing permission to publish the adapted
 excerpts as extending to their editable source. That decision does not establish
 a GPL sublicense or grant additional reuse rights over the adapted material.
-The exact `py/yeivin_itm/content/` subtree is excluded from the repository's
-blanket GPL statement. [`../DATA-LICENSES.md`](../DATA-LICENSES.md) records the
-path-specific terms. The renderer outside that subtree remains repository code
-under GPL-3.0.
+The adaptation and remark modules of `py/yeivin_itm/content/` are excluded from
+the repository's blanket GPL statement. [`../DATA-LICENSES.md`](../DATA-LICENSES.md)
+records the path-specific terms. The renderer, and the six rendering-helper modules
+that `../DATA-LICENSES.md` names in that subtree, are repository code under
+GPL-3.0.
 
 ## Bibliographic scope
 
@@ -37,7 +40,9 @@ These three publications are distinct:
 The comment block labelled `Yeivin Keter 5729 (1968)` in
 `py/yeivin_itm/content/my_yeivin_sec_320.py` identifies section 12.9, page 99, of Yeivin's
 separate 1968 Hebrew study *כתר ארם־צובה: ניקודו וטעמיו*. It is not an edition of
-ITM. Ben accepted this small comment-only passage with the editable adaptation.
+ITM. The permission above names only the 1980 work, and the repository records no
+permission for the 1968 study and no rights holder of it. Ben accepted this small
+comment-only passage with the editable adaptation.
 The selected adaptation is not the full OCR or a full transcription of any book.
 
 ## Public rendering and claim data

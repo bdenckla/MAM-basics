@@ -16,7 +16,12 @@ from yeivin_itm import paths, claim_schema
 
 def read():
     """Read and pin the minimized tracked product, without reading the analysis."""
-    allowed = {"README.md", "meteg-claims.json", "schema/meteg-claims-v1.schema.json"}
+    allowed = {
+        "LICENSE.md",
+        "README.md",
+        "meteg-claims.json",
+        "schema/meteg-claims-v1.schema.json",
+    }
     found = {
         path.relative_to(paths.product_dir()).as_posix()
         for path in paths.product_dir().rglob("*")

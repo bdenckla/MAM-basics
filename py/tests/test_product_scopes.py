@@ -130,6 +130,19 @@ def test_every_product_dir_exists_and_is_tracked() -> None:
     )
 
 
+def test_every_product_dir_has_a_tracked_license() -> None:
+    dirs = product_scopes.product_dirs()
+    assert dirs, "py/product_scopes.py declares no product directory"
+    missing = [
+        rel for rel in (_rel(d) for d in dirs) if f"{rel}/LICENSE.md" not in _tracked()
+    ]
+    assert not missing, (
+        f"These declared product directories have no tracked LICENSE.md: {missing}."
+        " A product consumed by git URL carries its terms with it;"
+        " DATA-LICENSES.md says what each product's LICENSE.md holds."
+    )
+
+
 def test_mam_parsed_current_format_exists_and_is_tracked() -> None:
     current_format = product_scopes.mam_parsed_current_format_dir()
     rel = _rel(current_format)

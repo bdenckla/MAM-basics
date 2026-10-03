@@ -1,12 +1,9 @@
 The statement below is preserved verbatim from the former MAM Google spreadsheet,
 which became a frozen historical archive on September 12, 2026.
-This statement applies equally to the MAM-with-doc edition, which MAM-basics publishes from
-`gh-pages/MAM-with-doc/`, except the crops under its `misc/img/`, which remain each rights
-holder's, and the four copies of the Taamey D font in its `woff2/`, `change-log/woff2/`,
-`foi/woff2/` and `misc/woff2/`, which keep the font's GNU GPL version 2 terms with its
-font-embedding exception; `DATA-LICENSES.md` at the repository root records both. So, in the
-text below, ignore any references to "in this spreadsheet"
-(English) or שבגליון הנתונים הזה (Hebrew).
+This statement applies equally to the MAM text and its derivative display in `data/`.
+`DATA-LICENSES.md` at the repository root records the terms of this directory's other files,
+and no new grant is made here over other source material. So, in the text below, ignore any
+references to "in this spreadsheet" (English) or שבגליון הנתונים הזה (Hebrew).
 
 ----
 License:

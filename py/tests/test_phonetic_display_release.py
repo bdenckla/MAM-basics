@@ -68,6 +68,7 @@ def test_example_pages_match_their_display_input():
 def test_no_public_record_quality_layer():
     root = paths.phonetic_mam_dir()
     allowed = {
+        root / "LICENSE.md",
         root / "README.md",
         root / "schema/phonetic-mam-public-v1.schema.json",
         root / "examples/display.json",
