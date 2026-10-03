@@ -418,3 +418,117 @@ and holds none of its state, so its acts are A3 and A2 only; A10 retired the rem
 
 The relay machine's acts, A0, A1, A7, A3, A2, A4, A5 and A8, remain for the relay-machine session,
 which records them in a later dated entry here; A9 is Ben's, and A6 is not done.
+
+## Relay retirement acts on BENS-HP-MINI, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the relay-machine session of
+`doc/PLAN-remediate-review-findings-2026-10-02.md`, which Ben started with the prompt in that plan's
+section "The relay-machine session", in the full clone `C:/Users/BenDe/GitRepos2/MAM-basics` on the
+machine `BENS-HP-MINI`. **`BENS-HP-MINI` is the relay machine. A0, A7, A3, A2 and A8 are done. A1 is
+left to Ben, because this session's permission rules refused it. A4 is blocked for each of the three
+worktrees, which are locked again with their blockers as the reasons, and Git refused A5 because
+both branches are still checked out in two of those worktrees.** Nothing was deleted; everything
+kept is in the retention folder `C:/Users/BenDe/relay-retirement-2026-10/`.
+
+1. **A0: done.** The clone was clean on `main` at `db59ef5e`, 70 commits behind `origin/main`, where
+   the plan's line 3 began "State: live; remediation integrated on main". The scheduled task
+   `\Dual-agent review relay` was registered: Ready and enabled, repeating every three minutes from
+   2026-10-01T06:50:13-04:00 with IgnoreNew, run as `BenDe` without elevation, and running this
+   clone's `.venv/Scripts/pythonw.exe` on its `py/main_repo_util.py --dual-agent-review tick`. Its
+   run at 18:23:14 New York time had returned 0. The three worktrees of A4 were registered and
+   locked, `.novc/` held `dual-agent-review/` and the relay's other evidence, and the rehearsal home
+   and the deployed agent file existed. The retention folder did not.
+2. **A1: left to Ben, because this session's permission rules refused it.** Claude Code's auto-mode
+   classifier denied `Unregister-ScheduledTask -TaskPath '\' -TaskName 'Dual-agent review relay' -Confirm:$false`
+   as an irreversible deletion, and the session did not seek the same result another way, so the
+   task is still registered and still runs every three minutes. Since item 4's fast-forward, each run
+   fails at once and writes nothing, as the plan expected: the run at 19:08:14 New York time returned
+   1, and `.novc/dual-agent-review/` has not changed since 18:59:14. For Ben to run, in PowerShell 7
+   without elevation, the plan's two commands: that `Unregister-ScheduledTask` command, then
+   `@(Get-ScheduledTask -TaskPath '\' | Where-Object TaskName -eq 'Dual-agent review relay').Count`,
+   which must print `0`.
+3. **A7: done.** A scratch script copied 89 of the 120 top-level entries of `.novc/` to `novc/` in
+   the retention folder at 2026-10-03T19:00:54-04:00, between two runs of the task, keeping each
+   relative path and overwriting nothing: 153 files in 17 directories, 22,313,017 bytes. It wrote
+   `novc-manifest.json` beside that folder (42,908 bytes, SHA-256
+   `81F888468213BE3B5BA8BF1F9CEBA602517625F722B2C8B6674EE2BED6324F01`), which lists every file with its
+   bytes and SHA-256, and then found the copy's membership complete and every copy's SHA-256 equal to
+   its source's. The 89 are `dual-agent-review/` (32 files, 14,845,364 bytes: `rounds.json` with the
+   round's inactive entry, the round's `PAUSE`, its deactivation record, its dispatch, launch, prompt
+   and log files, the empty `scheduler.log`, and under `2026-10-03/` a notification test of
+   2026-09-30); 80 other entries whose names contain `relay` or `dual-agent-review`; and 8 that the
+   relay's runbook or plan at `cbd405b1`, or the October 1 round's records, name:
+   `closeout-20261001-occupancy.py`, `comparison-parent-probe-verification-20261001.json`,
+   `inspect-production-codex-context-20261001.py`, `verify-comparison-counts-20261001.py`,
+   `verify-production-handoffs-20261001.py`, `verify-production-stop-20261001.py` and the two
+   `visible-console-windows-*.json`. The October 1 round's records were read as the plan names them:
+   the round file, turns 01 to 05, this update, `doc/PLAN-close-out-review-2026-10-01.md` and
+   `doc/dual-agent-review-comparison-2026-10-01.md`, each at `cbd405b1` and at `origin/main`. Not
+   copied: `t` and 30 other entries that the plan's selection does not name. The originals stay for
+   maintenance's next wipe. No file in `.novc/dual-agent-review/` has changed since 2026-10-01, so the
+   copy holds the control directory's final state.
+4. **The fast-forward: done.** `git merge --ff-only origin/main` took `main` from `db59ef5e` to
+   `25ff446f60e23d040f30adb79d2c670f6e189f39`, which contains `4573b007`.
+5. **A3: done.** `--sync-user-config` deployed from `origin/main` at `25ff446f` and reported
+   `USER_CONFIG_DEPLOYED_COUNT=3`: `hebrew-prose` in both `~/.claude/skills/` and `~/.agents/skills/`,
+   and `~/.codex/hooks/check_project_doc_budget.py`. The other skills that the remediation changed
+   were already current here, from an earlier deployment that this session did not make.
+   `--sync-user-config --check` then reported `USER_CONFIG_PROBLEM_COUNT=0`.
+6. **A2: done.** The deployed `$HOME/.claude/agents/dual-agent-review-turn.md`, SHA-256
+   `2CB3B50A719FF019162C9BF7B0684094106A99EE22AE0E60A9CD5ACA907E4308` and 2,494 bytes, byte-identical
+   to its canonical blob at `cbd405b1`, was moved at about 19:02 New York time to
+   `$HOME/relay-retirement-2026-10/dual-agent-review-turn.md`, which keeps that hash. The old path no
+   longer exists. Undo: move the file back.
+7. **A4: blocked for all three worktrees; no `.novc` path was relocated and nothing was removed.**
+   Each worktree was unlocked, as the act's first step requires, and locked again with
+   `git worktree lock --reason "relay retirement blocked: <blocker>"` when its blocker appeared.
+   1. `.claude/worktrees/dar-2026-10-01-claude` (branch `dar-2026-10-01`): `--inspect-worktrees`
+      could not inventory its `.novc`, because two pytest base directories there, `.novc/t/p6238`
+      and `.novc/t/p8fdc`, created on 2026-10-01 at 17:11 and 17:15 New York time, deny this
+      account access. The lock's reason: ".novc/t/p6238 and .novc/t/p8fdc are unreadable (Access is
+      denied), so the retirement inventory fails closed".
+   2. `.claude/worktrees/dar-2026-10-01-codex` (branch `dual-agent-review-2026-10-01-codex`): the
+      same failure, for four such directories, `.novc/t/p3728`, `p3d8c`, `p6174` and `p892c`,
+      created on 2026-10-01 between 12:08 and 13:35 New York time. The lock's reason:
+      ".novc/t/p3728, p3d8c, p6174 and p892c are unreadable (Access is denied), so the retirement
+      inventory fails closed".
+   3. `.claude/worktrees/dar-comparison-2026-10-01-claude` (detached at `dd50e9b9`): the audit
+      passed, and preparation wrote `preflight-dar-comparison-2026-10-01-claude.json` to the
+      retention folder, not ready for execution. It would relocate 3 files, 38,279 bytes:
+      `.novc/dual-agent-review-comparison-2026-10-01-claude.md` (38,232 bytes, SHA-256
+      `1489F5B7276D1F8AEF1E4A64808D1FCB68A820A845EA139630B4E5D66B121F5D`, the hash that the
+      comparison record gives the blind Claude counter-argument) and `check-a.md` and `check-b.md`
+      in `.novc/dar-comparison-scratch/`. It reported 11 tracked references to them: 8 in
+      `doc/dual-agent-review-comparison-2026-10-01.md`, at lines 31, 441, 485 and 486 in the home
+      clone and in `dar-2026-10-01-claude`; and 3 in the retired runbook
+      `doc/dual-agent-review-automation.md` as checked out in the three worktrees, at line 379 in
+      `dar-comparison-2026-10-01-claude` and in `dar-2026-10-01-codex` and at line 467 in
+      `dar-2026-10-01-claude`. The plan allows the citations-reviewed preparation only when every
+      reference is in the October 1 round's records, and its citation note would be false for the
+      runbook's three, so the session did not prepare again. The lock's reason: "3 of the 11 tracked
+      references to its relocated .novc are in doc/dual-agent-review-automation.md, outside the
+      October 1 records that the plan's citation note covers".
+8. **A5: refused by Git; both branches remain.** Their recorded tips: `dar-2026-10-01` at
+   `db59ef5e22bbfb60dce7d398c63b837d98a74339` and `dual-agent-review-2026-10-01-codex` at
+   `900c815f646121e84c178dbb7e86d2ac3bc569b8`, each contained in `main`. `git branch -d` refused each
+   branch as "used by worktree at" its worktree of A4. The refusals were not overridden.
+9. **A8: done.** The rehearsal home `C:/Users/BenDe/GitRepos-rehearsal/` held one top-level entry,
+   `dual-agent-review-20260930`: the rehearsal MAM-basics clone, with its `.git` and six linked
+   worktrees under its own `.claude/worktrees/`. It held 41,384 files in 3,187 directories,
+   5,972,893,323 bytes, with nothing unreadable and no link or junction, and no worktree of A0's
+   list lay inside it. It was moved at about 19:10 New York time to
+   `$HOME/relay-retirement-2026-10/GitRepos-rehearsal`, where the same counts were measured again.
+   The rehearsal clone's worktree links name absolute paths below the old location, so they work
+   again only if the home is moved back. Undo: move it back.
+
+**The retention folder** `C:/Users/BenDe/relay-retirement-2026-10/` holds 41,540 files,
+5,995,271,744 bytes: `GitRepos-rehearsal/` (A8), `novc/` and `novc-manifest.json` (A7),
+`dual-agent-review-turn.md` (A2) and `preflight-dar-comparison-2026-10-01-claude.json` (A4). Ben may
+delete it whenever he wants the space.
+
+**What remains for Ben.** A1, with the two commands of item 2. A4 for each worktree once its blocker
+is settled, and then A5: this account cannot read the six pytest base directories, and the
+maintenance procedure leaves elevation to Ben's choice; and the preparation of
+`dar-comparison-2026-10-01-claude` needs his decision on the runbook's three references. A9 in the
+Codex app, if the follow-up `verify-first-production-dual-agent-review` is still listed.
+`origin/dar-2026-10-01` stays, by his choice (A6).

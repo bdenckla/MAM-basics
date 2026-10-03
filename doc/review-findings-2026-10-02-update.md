@@ -817,3 +817,15 @@ findings 3 and 4".
    Taamey D evacuation receipt", which deletes `doc/PLAN-evacuate-Taamey_D-into-hbofonts.md` and
    edits hbofonts' `AGENTS.md`. Nothing in MAM-basics names the deleted file, and the full suite
    above, which reads hbofonts, ran after the fast-forward.
+
+## The relay-machine session's acts on BENS-HP-MINI, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the relay-machine session of the
+remediation plan, on `BENS-HP-MINI`, which is the relay machine. "Relay retirement acts on
+BENS-HP-MINI, 2026-10-03" in `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records each
+act's outcome. **A0, A7, A3, A2 and A8 are done. A1 is left to Ben, because this session's
+permission rules refused it. A4 is blocked for all three relay worktrees, which stay locked with
+their blockers as the reasons, and Git refused A5 because both branches are still checked out
+there.** The session fast-forwarded that machine's `C:/Users/BenDe/GitRepos2/MAM-basics` to
+`25ff446f` before A3, and the commit that adds this entry sets the plan's State to executed, naming
+the acts left to Ben. A9 stays Ben's, in the Codex app.
