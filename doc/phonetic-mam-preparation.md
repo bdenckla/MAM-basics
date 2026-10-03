@@ -17,11 +17,19 @@ The contract has no source annotations, source-position tables, or analysis-only
 phonological fields. Analyses must derive their working facts from the public
 display and public MAM rather than extend the release with a private record.
 
-The independent `legacy_projection` module reads only the frozen public HTML.
-The source-driven exporter must produce the same complete display corpus as this
-public-only projection. Matching rendered HTML alone is insufficient. Review also
-covers the combined code, metadata, example pages, analyses, fixtures and joins;
-the closed validator is only the mechanical part of that boundary.
+Until 2026-10-03, the independent `legacy_projection` module projected the frozen
+public HTML of phonetic-hbo commit `8da90513` into the release schema, and the
+source-driven exporter had to produce the same complete display corpus; matching
+rendered HTML alone was insufficient. The 2026-10-02 review ran that module by hand
+and found all 39 books equal. The module was removed on 2026-10-03 because it reads
+only the two old page families, which no generator can now produce and no
+maintained clone holds; Git history keeps it at
+`c17de1756c785682162f805e27600c9c67462990`. For chapters whose MAM-parsed input is
+unchanged, the frozen projection hashes in
+`in/phonetic_mam_legacy_projection_sha256.json` remain the comparison with those
+pages. Review also covers the combined code, metadata, example pages, analyses,
+fixtures and joins; the closed validator is only the mechanical part of that
+boundary.
 
 The five example pages have their own closed display-document format. Their input
 is normalized from the exact rendered HTML rather than retaining calculation

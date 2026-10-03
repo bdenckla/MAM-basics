@@ -1,15 +1,22 @@
 """Closed claim contract and pins for the statements Ben approved.
 
 The fraction pins are review gates for the existing prose, not survey inputs.
-Changing the corpus or a population requires inspecting both the data and prose.
+Changing a fraction or a record of the claim population requires inspecting both
+the data and prose.
 """
 
 import re
 
 SCHEMA = "yeivin-meteg-claims-v1"
 INPUT_IDENTITY = "out/accgram/meteg-before-stress.json"
-APPROVED_INPUT_SHA256 = (
-    "cae1356aeff00afe96844dacddeb495587ad3aa9923f156e2c75ec37da0c9973"
+
+# The claim population: every ordinary-qamats record of the analysis whose pattern is one
+# of these, the records the claims and their footnotes are drawn from.  Its SHA-256, which
+# claims.population_sha256 computes, is pinned; the claim file's input SHA-256 identifies
+# the whole analysis file as provenance and is not a pin.
+CLAIM_PATTERNS = ("FR1", "FR2", "FR3", "AFR1", "AFR4", "XAFR1")
+APPROVED_POPULATION_SHA256 = (
+    "452c78e4aab25cefc932bd3f6eb0aafa1e36e5f272fcb7240ce63dd008322653"
 )
 
 # Exact reviewed fractions, including the primary-accent qualifications in §320.
@@ -47,6 +54,12 @@ def _keys(value, expected, where):
 
 def validate(claims):
     """Reject unknown fields, malformed fractions, and prose-disagreeing data."""
+    validate_shape(claims)
+    pin_claims(claims)
+
+
+def validate_shape(claims):
+    """Reject unknown fields and malformed fractions, whatever their values."""
     _keys(claims, ("schema", "input", "populations", "measurements"), "root")
     if claims["schema"] != SCHEMA:
         raise ValueError("Unknown Yeivin meteg claim schema")
@@ -87,16 +100,17 @@ def validate(claims):
             or any(not isinstance(item, str) or not item for item in exclusions)
         ):
             raise ValueError(f"Missing population exclusions: {name}")
-    pin_claims(claims)
 
 
 def pin_claims(claims):
-    """Fail if a new input or fraction would silently alter the approved argument."""
-    if claims["input"]["sha256"] != APPROVED_INPUT_SHA256:
-        raise ValueError(
-            "The independent meteg analysis has changed; review Ben's claims"
-        )
+    """Fail if a new fraction would silently alter the approved argument."""
     for name, expected in APPROVED_FRACTIONS.items():
         value = claims["measurements"][name]
         if (value["numerator"], value["denominator"]) != expected:
             raise ValueError(f"Ben's prose pin changed: {name}; review the footnotes")
+
+
+def pin_population(population_sha256):
+    """Fail if a claim-population record changed, was added or was removed."""
+    if population_sha256 != APPROVED_POPULATION_SHA256:
+        raise ValueError("The claim population has changed; review Ben's claims")

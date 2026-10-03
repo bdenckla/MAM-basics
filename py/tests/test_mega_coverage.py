@@ -164,6 +164,12 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
     "py/main_yeivin_itm.py check": "Read-only claim/page/asset verification; the maintained Yeivin tests exercise the same closed validation.",
+    "py/main_yeivin_itm.py review-claims": (
+        "A read-only report for Ben's review, run by hand when a text refresh stops the mega"
+        " at yeivin-itm-survey-meteg-claims; it writes nothing and approves nothing."
+        " Recorded in dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md,"
+        ' "Gates that a text change can trip".'
+    ),
     "py/main_phonetic_mam.py check": "Read-only release validation; the corpus differential test exercises the same closed validator.",
     "py/main_phonetic_mam.py compute": "Ben approved this transient stdin/stdout calculation interface on 2026-10-01; it is a caller-driven service, not a product regeneration step. See doc/phonetic-mam-compute.md.",
     # --- Section 3 of doc/mega-coverage-2026-09-10.md: reasons already recorded.

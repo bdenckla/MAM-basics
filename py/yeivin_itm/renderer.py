@@ -35,9 +35,14 @@ import yeivin_itm.content.my_yeivin_amisc_sec_385_footnotes as ftnts_385
 
 
 def page_texts(claim_data=None):
-    """Return complete unwritten pages, using only the tracked approved claims."""
+    """Return complete unwritten pages, by default from the tracked approved claims.
+
+    ``claims.read`` enforces the approved pins on the tracked claims; claim data given
+    explicitly, as ``publication.review_claims`` gives a projection under review, is
+    checked for shape only.
+    """
     claim_data = claims.read() if claim_data is None else claim_data
-    claim_schema.validate(claim_data)
+    claim_schema.validate_shape(claim_data)
     tocsec_dic_1 = {
         "tocsec-id-131": tocsec_131.TOCSEC,
         "tocsec-id-192": tocsec_192.TOCSEC,

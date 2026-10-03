@@ -1,10 +1,11 @@
 """Publish the selected adaptation and the complete font-license asset set."""
 
+import difflib
 from pathlib import Path
 
 from mb_cmn import paths as repo_paths
 from py_html.taamey_d_assets import product_font_assets
-from yeivin_itm import claims, paths, renderer, source_lint
+from yeivin_itm import claim_schema, claims, paths, renderer, source_lint
 
 
 def assets():
@@ -60,3 +61,43 @@ def check():
     }
     if found != expected:
         raise ValueError(f"Unexpected Yeivin output files: {found ^ expected}")
+
+
+def review_claims():
+    """Report what the current analysis would change in Ben's approved claims.
+
+    Prints whether the claim population changed, each fraction pin with its approved
+    and projected values, and each page line whose text would change, before and
+    after, all computed in memory. It writes nothing and approves nothing: only Ben
+    approves new pins.
+    """
+    projected, population = claims.projection()
+    report = []
+    if population != claim_schema.APPROVED_POPULATION_SHA256:
+        report.append(
+            "The claim population has changed: approved SHA-256"
+            f" {claim_schema.APPROVED_POPULATION_SHA256}, projected {population}."
+        )
+    for name, (numerator, denominator) in claim_schema.APPROVED_FRACTIONS.items():
+        value = projected["measurements"][name]
+        if (value["numerator"], value["denominator"]) != (numerator, denominator):
+            report.append(
+                f"Pin {name}: approved {numerator}/{denominator},"
+                f" projected {value['numerator']}/{value['denominator']}."
+            )
+    current = renderer.page_texts()
+    proposed = renderer.page_texts(projected)
+    for name in sorted(current):
+        report.extend(
+            difflib.unified_diff(
+                current[name].splitlines(),
+                proposed[name].splitlines(),
+                f"gh-pages/yeivin-itm/{name} (approved)",
+                f"gh-pages/yeivin-itm/{name} (projected)",
+                n=0,
+                lineterm="",
+            )
+        )
+    if not report:
+        report.append("No approved pin or page line would change.")
+    print("\n".join(report))

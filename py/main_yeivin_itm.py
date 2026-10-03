@@ -7,6 +7,9 @@ Subcommands:
         Project the independent public meteg analysis into the minimized claims.
     check
         Check the claims, pages, and assets without writing.
+    review-claims
+        Report the claim population, pins, and page lines that the current
+        analysis would change, without writing.
 """
 
 import argparse
@@ -25,6 +28,9 @@ def build_parser():
         "survey-meteg-claims", help="Project the independent public meteg analysis"
     )
     commands.add_parser("check", help="Check data and outputs without writing")
+    commands.add_parser(
+        "review-claims", help="Report what a changed analysis would change"
+    )
     return parser
 
 
@@ -43,6 +49,10 @@ def almost_main(argv=None):
         from yeivin_itm.publication import check
 
         return check()
+    if args.command == "review-claims":
+        from yeivin_itm.publication import review_claims
+
+        return review_claims()
     raise ValueError("Unknown Yeivin operation")
 
 

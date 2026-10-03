@@ -9,9 +9,15 @@ pages use a separate closed display-document format in `examples/display.json`.
 The display does not contain source-quality annotations, source records,
 source-position tables or an additional phonological verdict layer. A consumer
 derives its needed working facts from the display; it does not receive a renamed
-source intermediate. Complete-output comparison with the previously published
-pages and assessment of all artifacts together are required before a release is
-approved. Schema validation and rendered-page parity alone are insufficient.
+source intermediate. The release's complete output was compared with the pages
+that phonetic-hbo published at the commit named below, and all artifacts were
+assessed together; schema validation and rendered-page parity alone were not
+enough. Those pages cannot be produced again, so the comparison cannot be
+repeated for text that MAM has changed since. The suite compares each rendered
+chapter with the old pages' frozen projection hashes only while the chapter's
+MAM-parsed input matches its fingerprint in
+`in/phonetic_mam_legacy_projection_inputs.json`; a chapter that a refresh changes
+leaves that comparison, and its diff is reviewed instead.
 
 ## Commands
 

@@ -74,9 +74,15 @@ extra filters invented to reproduce historical workbook figures.
 
 Ben approved correction of his added claims and their explanatory prose on
 2026-10-01, and the 11 fractions that the oleh-weyored correction changed on
-2026-10-03. The prose pins in `py/yeivin_itm/claim_schema.py` fix the reviewed
-fractions and input hash, so a changed corpus or population requires a fresh
-review. Numerical text is inserted from named claim references before HTML line
+2026-10-03. The prose pins in `py/yeivin_itm/claim_schema.py` fix the 20 reviewed
+fractions and a SHA-256 of the claim population: every record in the ordinary
+population of `out/accgram/meteg-before-stress.json` whose pattern is FR1, FR2,
+FR3, AFR1, AFR4 or XAFR1. A changed fraction, or a changed, added or removed
+record in that population, therefore requires Ben's fresh review; a change
+elsewhere in the Phonetic MAM release does not. Until he approves new pins,
+`survey-meteg-claims` and `check` raise and write nothing. The claim file's input
+SHA-256 identifies the whole analysis file that it was projected from; it is not a
+pin. Numerical text is inserted from named claim references before HTML line
 wrapping. Percentages are rounded once from the original fractions.
 
 `in/yeivin_itm_legacy_differential.json` is the frozen record of the migration from

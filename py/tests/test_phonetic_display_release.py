@@ -17,7 +17,17 @@ def test_complete_release_and_unified_projection():
             encoding="utf-8"
         )
     )
-    projection_check.verify_site(root / "gh-pages/phonetic-mam", oracle)
+    inputs = json.loads(
+        (root / "in/phonetic_mam_legacy_projection_inputs.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    projection_check.verify_site(
+        root / "gh-pages/phonetic-mam",
+        oracle,
+        inputs,
+        projection_check.input_fingerprints(paths.mam_parsed_plus_dir()),
+    )
 
 
 def test_unified_site_controls_and_public_output_boundary():

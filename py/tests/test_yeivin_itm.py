@@ -77,7 +77,6 @@ def test_approved_claim_schema_matches_the_tracked_data_and_named_pins():
     assert set(data) == set(schema["required"]) == set(schema["properties"])
     assert schema["additionalProperties"] is False
     assert data["schema"] == schema["properties"]["schema"]["const"]
-    assert data["input"]["sha256"] == claim_schema.APPROVED_INPUT_SHA256
     for name in ("populations", "measurements"):
         spec = schema["properties"][name]
         assert (

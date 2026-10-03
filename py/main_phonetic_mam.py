@@ -6,7 +6,8 @@ Subcommands:
     render
         Render the tracked public display release, without private inputs.
     check
-        Validate the complete public release without writing.
+        Validate the complete public release without writing, and list the
+        chapters that have left the legacy projection comparison.
     compute
         Serve transient, versioned NDJSON computations on stdin and stdout.
 """
@@ -47,9 +48,11 @@ def almost_main(argv=None):
 
         return render()
     if args.command == "check":
+        from phonetic_mam.projection_check import report_chapters_left
         from phonetic_mam.release import validate_complete_release
 
-        return validate_complete_release()
+        validate_complete_release()
+        return report_chapters_left()
     raise ValueError("unknown Phonetic MAM operation")
 
 
