@@ -1,0 +1,71 @@
+{
+  "environment": {
+    "platform": "Linux",
+    "python": "3.13.15",
+    "usable_cpus": 4,
+    "available_memory_mib": 15703.45703125,
+    "method": "Three alternating legacy/budget pairs, sequential invocations, same source with choose_workers substituted for legacy counts. 50 ms process-session aggregate RSS sampling; shared pages counted more than once. Timing includes process startup and sampling overhead."
+  },
+  "measurements": [
+    {
+      "name": "foi",
+      "mode": "legacy",
+      "repetition": 0,
+      "seconds": 3.90034755600027,
+      "peak_rss_mib": 437.7421875,
+      "peak_processes": 9,
+      "returncode": 0,
+      "workers": 8
+    },
+    {
+      "name": "foi",
+      "mode": "budget",
+      "repetition": 0,
+      "seconds": 4.379046903999551,
+      "peak_rss_mib": 214.875,
+      "peak_processes": 4,
+      "returncode": 0,
+      "workers": 3
+    },
+    {
+      "name": "foi",
+      "mode": "budget",
+      "repetition": 1,
+      "seconds": 4.233377446998929,
+      "peak_rss_mib": 214.1796875,
+      "peak_processes": 4,
+      "returncode": 0,
+      "workers": 3
+    },
+    {
+      "name": "foi",
+      "mode": "legacy",
+      "repetition": 1,
+      "seconds": 3.884512649001408,
+      "peak_rss_mib": 438.33984375,
+      "peak_processes": 9,
+      "returncode": 0,
+      "workers": 8
+    },
+    {
+      "name": "foi",
+      "mode": "legacy",
+      "repetition": 2,
+      "seconds": 3.8044426060005208,
+      "peak_rss_mib": 438.90234375,
+      "peak_processes": 9,
+      "returncode": 0,
+      "workers": 8
+    },
+    {
+      "name": "foi",
+      "mode": "budget",
+      "repetition": 2,
+      "seconds": 4.387385326001095,
+      "peak_rss_mib": 214.7890625,
+      "peak_processes": 4,
+      "returncode": 0,
+      "workers": 3
+    }
+  ]
+}
