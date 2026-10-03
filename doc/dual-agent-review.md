@@ -79,10 +79,14 @@ file or relay.
    round's own records inside a successor window", would otherwise leave to each reviewer. The
    kickoff session records the window, the owner, the reviewers, their checkouts and Ben's
    decisions in a dated section below, commits and pushes `main`, and gives Ben one standalone
-   prompt per reviewer; a private window's kickoff is recorded in MAM-private instead. Each prompt quotes
-   Ben's instruction and names the kickoff commit, the window, the evidence-only paths, and the
-   reviewer's checkout, output path, line-3 `State:` and effort level. It offers no view of the
-   window's content. Ben starts each reviewer's session with its prompt.
+   prompt per reviewer; a private window's kickoff is recorded in MAM-private instead. Each
+   prompt quotes Ben's instruction and names the kickoff commit, the window, the evidence-only
+   paths, the reviewer's checkout, output path, line-3 `State:` and effort level, and the private
+   repositories it must not read, as `in/repo_maintenance_policy.json`'s `repo_visibility` lists
+   them. It offers no view of the window's content. Both prompts set the same reporting bar:
+   defects that the window introduced, and older defects that the window carries forward or that
+   the reviewer notices, each labelled as one or the other, with each minor wording item in one
+   line. Ben starts each reviewer's session with its prompt.
 2. **Two independent reviews.** Each reviewer is a new session working in its own verified
    checkout. Two reviewers running at once never share a checkout, and neither uses the owner's.
    A reviewer reviews the endpoint diff, reading files as of the end commit, and does not open
@@ -103,10 +107,10 @@ file or relay.
    Each entry leads with one of four dispositions: accepted and unfixed; fixed, naming the commit
    the owner verified; rejected, with the reason; or an unresolved question for Ben. The owner
    checks every substantive unique finding and every conflicting claim against the code, data or
-   other evidence, delegating targeted read-only checks when useful. Agreement between the two
-   reports is not itself evidence, and an owner who wrote one of the reports checks its own
-   claims against the evidence rather than against its report. A minor wording or plan
-   inconsistency gets a one-line entry.
+   other evidence, delegating targeted read-only checks when useful. A finding that both reports
+   make needs no further check unless their accounts differ, and an owner who wrote one of the
+   reports checks its own claims against the evidence rather than against its report. A minor
+   wording or plan inconsistency gets a one-line entry.
 4. **Follow-up only when consequential.** An uncertainty that the owner's checks cannot settle,
    and that would change a disposition, goes to Ben as a question at the end of the list. When
    Ben wants another agent's view, he starts that session with a targeted question himself, and
@@ -153,6 +157,10 @@ Kicked off in `C:/Users/BenDe/GitRepos2/MAM-basics` at Ben's instruction quoted 
      `py/main_repo_util.py`, `py/repo_util/user_config_sync.py` and `dot-claude/README.md`, whose
      other window changes are subject; and the passages of this document and
      `doc/periodic-review.md` that describe the automated relay.
+5. **Outcome:** both reports were pushed on 2026-10-02, the Claude report as `58df29bd` and the
+   Codex report as `09be20b3`. The owner's disposition list and Ben's close-out decisions of
+   2026-10-03 are in `doc/review-findings-2026-10-02-update.md`, together with what the trial
+   showed. Ben's approved changes to the steps above came from this trial.
 
 ## What Codex joined
 

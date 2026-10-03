@@ -352,7 +352,8 @@ chanted word's geminate dagesh as U+05C4, which the oleh-to-yored pattern
 
 ### Proposed procedure changes, for Ben's approval
 
-Not applied. Each changes `doc/dual-agent-review.md`, "Running a trial review".
+Ben approved all three on 2026-10-03, and they were applied that day; see "Ben's close-out
+decisions, 2026-10-03" below. Each changes `doc/dual-agent-review.md`, "Running a trial review".
 
 1. **Correct a kickoff sentence.** In step 3, replace "Agreement between the two reports is not
    itself evidence, and an owner who wrote one of the reports checks its own claims against the
@@ -375,6 +376,8 @@ Not applied. Each changes `doc/dual-agent-review.md`, "Running a trial review".
 
 ### Questions for Ben
 
+Ben answered all three on 2026-10-03; see "Ben's close-out decisions, 2026-10-03" below.
+
 1. **Finding 14, decomposed Latin vowel marks in Phonetic MAM.** There are two options:
    - keep the release's decomposed acute and breve vowels as the legacy bytes, as the exemption
      that `9a67d51b` wrote does;
@@ -387,3 +390,41 @@ Not applied. Each changes `doc/dual-agent-review.md`, "Running a trial review".
    remediation retire the relay, removing both causes, or fix both in place and leave the relay for
    later?
 3. **The three procedure changes above.** Approve all three, some, or none?
+
+## Ben's close-out decisions, 2026-10-03
+
+Recorded on 2026-10-03, at about 01:00 New York time, by the trial's owner, the kickoff session.
+Ben answered close-out step 1's questions in the desktop app's dialog, which put four questions:
+the three above, and first, whether he approved the list as the close-out package. His selections,
+verbatim:
+
+1. **The package: "Approve as listed (Recommended)".** Ben approved the disposition list above as
+   the close-out package. The 64 accepted findings are fixed later, in remediation; C3 stands as
+   fixed and C15.1 as rejected. The approval records dispositions only. It does not execute
+   remediation, and it does not approve wording that the remediation plan must present under
+   `doc/periodic-review.md`, "Separate defects from editorial proposals", in particular C1's gate
+   design and C2's corrected Yeivin prose.
+2. **Finding 14: "Keep the legacy bytes".** C14 is resolved with no change to the release, the
+   pages or `py/phonetic_mam/analysis_reader.py`. The decomposed acute and breve vowels of
+   `Phonetic-MAM/` and `gh-pages/phonetic-mam/` stay as the legacy bytes, and the exemption at
+   `py/tests/test_h_dot_below_nfc.py:191–195` is now Ben's decision of 2026-10-03. Remediation
+   cites this decision at the exemption, so that a later review does not raise the forms again.
+3. **The relay: "Retire the relay now".** The remediation adds the retirement of the automated
+   dual-agent review relay. That covers its code, tests, runbook, plan, configuration, agent file
+   and deployed copy, its registered scheduled task, and the procedure text that describes it.
+   The retirement removes C9.1's trigger, the relay tests' read-only Git objects, and C9.2's F841,
+   which is in a relay test file. The plan settles three further points:
+   - whether C9.1's plain `rmtree`, and C9.5's, still need an error handler once the trigger is
+     gone;
+   - how the relay's historical round records are kept;
+   - each act the retirement needs outside the repository, such as unregistering the scheduled
+     task and removing the deployed agent file, named separately so that each can be authorized
+     on its own.
+4. **The procedure: "1: fix the kickoff sentence,2: one reporting bar,3: name private repos".**
+   All three proposed changes were applied to `doc/dual-agent-review.md`, "Running a trial
+   review", with the wording proposed above, in the commit that records this entry. Step 1's
+   paragraph was rewrapped as well.
+
+**Next: close-out step 2.** A fresh-task remediation plan, with concrete editorial wording and
+presented by public-facing risk, now including the relay's retirement. Later State and the
+remediation's dispositions are recorded in this file.
