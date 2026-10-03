@@ -31,6 +31,8 @@ hbce-psalms/out/*.tsv whitespace=-trailing-space
 *.pdf  binary
 *.woff2 binary
 MAM-parsed/historical/*.zip binary
+in/font-support/taamey-d-0.921/*.zip binary
+gh-pages/font-sources/taamey-d-0.921/*.zip binary
 
 # Faithful Wikisource captures retain source-significant trailing spaces.
 in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol
