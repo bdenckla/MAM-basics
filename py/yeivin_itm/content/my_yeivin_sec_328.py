@@ -22,7 +22,7 @@ _TABLE_2 = hlp.table_std(_TABLE_2_DATA, coldirs=["ltr", "rtl", "ltr"])
 _TABLE_3 = hlp.table_std_rtl(
     [
         [*hlp.lns("@Ez 42:5", "מֵֽהַתַּחְתֹּנ֛וֹת", "מֵֽ-הַ-תַּחְ-תֹּ-נ֛וֹת")],
-        # MAM lacks gaʿya on מ; see https://github.com/bdenckla/trope/issues/380
+        # MAM lacks gaʿya on מ; see trope#380 (private tracker)
     ]
 )
 _TABLE_4 = hlp.table_std_rtl(
