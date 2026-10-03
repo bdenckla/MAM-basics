@@ -6,13 +6,16 @@ missing environments. A write refuses a dirty, off-main, mid-operation, locked o
 occupied clone before fetching it, and an ahead or diverged clone after a fetch that
 adds any missing objects, rewrites FETCH_HEAD, and creates or fast-forwards
 refs/remotes/origin/main; either way the clone's local branches, checkout and
-environments stay untouched. Every repository failure is reported while the remaining
-roster runs.
+environments stay untouched. A clone that only the calling Claude session occupies is
+not refused: a write skips it unfetched and does not count it as a failure, since that
+session updates its own checkout. Every repository failure is reported while the
+remaining roster runs.
 """
 
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -25,7 +28,7 @@ from repo_util.forest_environments import (
     synchronize_environments,
 )
 from repo_util.user_config_sync import _run_git, _command_error
-from repo_util.worktree_owners import runtime_facts
+from repo_util.worktree_owners import inside, runtime_facts
 from repo_util.worktree_retirement_git import RetirementError, _list_worktrees
 from repo_util.worktree_retirement_inspection import _operation_markers, _status_entries
 
@@ -156,6 +159,37 @@ def _runtime(repo: Path) -> list[str]:
     return blockers
 
 
+def _calling_session_blocker(repo: Path) -> str | None:
+    """The blocker ``runtime_facts`` gives for the calling Claude session's own record.
+
+    Claude Code gives its tool processes ``CLAUDE_CODE_SESSION_ID`` and ``CLAUDE_PID``,
+    which equal the ``sessionId`` and ``pid`` of that session's record.  The blocker is
+    returned only when both are set and exactly one record matches both with its ``cwd``
+    in the clone; otherwise, or on any read error, the result is None.
+    """
+    session = os.environ.get("CLAUDE_CODE_SESSION_ID")
+    pid = os.environ.get("CLAUDE_PID")
+    if not session or not pid:
+        return None
+    sessions = Path.home() / ".claude" / "sessions"
+    try:
+        records = [
+            json.loads(record.read_text(encoding="utf-8"))
+            for record in sorted(sessions.iterdir())
+            if record.suffix == ".json"
+        ]
+        matches = [
+            data
+            for data in records
+            if str(data.get("sessionId")) == session and str(data.get("pid")) == pid
+        ]
+        if len(matches) != 1 or not inside(matches[0]["cwd"], repo):
+            return None
+    except (OSError, ValueError, KeyError, TypeError, AttributeError):
+        return None
+    return f"running Claude session {session}"
+
+
 def _fetch_main(repo: Path) -> str:
     """Advance the tracking ref only after proving remote ancestry."""
     reference = "refs/remotes/origin/main"
@@ -250,11 +284,17 @@ def _sync_repo(repo: Path, origin: str, *, check: bool) -> bool:
     if not check:
         # A write judges the clone's own state before any fetch, so a clone it
         # refuses for that state is not fetched at all.
+        unfetched = f"FOREST_REPO: {repo}: branch={branch} changes={len(status)} operations={','.join(markers) or 'none'}"
+        if len(blockers) == 1 and blockers[0] == _calling_session_blocker(repo):
+            print(unfetched)
+            print(
+                f"FOREST_REPO_SKIPPED: {repo}: the calling Claude session's own clone;"
+                " not fetched; checkout and environments left untouched"
+            )
+            return True
         reasons.extend(blockers)
         if reasons:
-            print(
-                f"FOREST_REPO: {repo}: branch={branch} changes={len(status)} operations={','.join(markers) or 'none'}"
-            )
+            print(unfetched)
             raise ForestError(
                 "; ".join(reasons)
                 + "; not fetched; checkout and environments left untouched"
