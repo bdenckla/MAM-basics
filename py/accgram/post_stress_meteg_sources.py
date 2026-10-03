@@ -10,6 +10,7 @@ from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus
 from mb_cmn import bib_locales
+from mb_cmn import template_names as tmpln
 from phonetic_mam.core import qere_from_implicit_kq
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -104,13 +105,34 @@ def _as_mam_would_write_it(word: str) -> str:
 def _snapshot_written_form(bcv, reading):
     """Recover a diagnostic's written form from MAM's displayed stress helper.
 
-    This index reads top-level Scripture stress helpers only. It never descends
-    into documentation, alternative qamats, or another template's parameters.
-    The ordinary MAM spelling still supplies matching through the public qere
-    rule below; the stress-helper spelling is needed only for the diagnostic.
+    This index reads only the stress-helper templates, מ:דחי and מ:צינור, that stand at the
+    top level of a verse's E cell, and it reads their parameter 2, the form that has the
+    helper. It descends into no template: not into parameter 1 of נוסח, the Scripture that a
+    documentation note annotates; not into either alternative of מ:קמץ; and not into a
+    ketiv/qere template. So snapshot_before_qere exists only for a chanted word whose
+    stress-helper template is at the top level. On 2026-10-03, 68 of the 2,373 stress helpers
+    in MAM-parsed/plus were nested so. One of them, at Psalms 15:1, inside נוסח, has a written
+    form that differs from its qere, and no survey record falls in that verse.
+    The ordinary MAM spelling still supplies matching through the public qere rule below; the
+    stress-helper spelling is needed only for the diagnostic.
     """
     bb, chapter, verse = mna.split_bcv(bcv)
     return _written_stress_helpers(bb).get((chapter, verse), {}).get(reading.hebrew)
+
+
+# What this index does with each current plus template at the top level of a verse's E
+# cell.  It indexes a stress helper there and descends into no template: see
+# _snapshot_written_form for what that leaves out.  validate_current_plus_template raises
+# on a template outside CURRENT_PLUS_TMPL_NAMES or of another shape.
+_INDEX = "index this stress helper"
+_DO_NOT_DESCEND = "do not descend"
+_TOP_LEVEL_POLICY = {
+    **{name: _INDEX for name in tmpln.STRESS_HELPER_TMPL_NAMES},
+    **{
+        name: _DO_NOT_DESCEND
+        for name in tmpln.CURRENT_PLUS_TMPL_NAMES - tmpln.STRESS_HELPER_TMPL_NAMES
+    },
+}
 
 
 @cache
@@ -123,14 +145,13 @@ def _written_stress_helpers(bb):
     for bcvt, row in books[book_id]["verses_plus"].items():
         pairs = {}
         for element in row.EP:
-            if not isinstance(element, dict) or element.get("tmpl_name") not in {
-                "מ:דחי",
-                "מ:צינור",
-            }:
+            if isinstance(element, str):
                 continue
-            params = element.get("tmpl_params", {})
-            if set(params) not in ({"1"}, {"1", "2"}):
-                raise SurveyProblem("unclassified public MAM stress-helper shape")
+            params = tmpln.validate_current_plus_template(element)
+            # Look the policy up by the name as validate_current_plus_template normalizes it.
+            name = element["tmpl_name"].replace('"', "\N{HEBREW PUNCTUATION GERSHAYIM}")
+            if _TOP_LEVEL_POLICY[name] == _DO_NOT_DESCEND:
+                continue
             written = params.get("2") or params["1"]
             if not isinstance(written, str):
                 raise SurveyProblem("public MAM stress helper is not plain text")
