@@ -146,8 +146,8 @@ cited by its report section.
 10. **C4.7. Accepted, unfixed; reader-facing documents.** `README.md:114–117` and
     `DATA-LICENSES.md:5–11` place all of `doc/` under GPL-3.0. That reaches
     `doc/wikisource-dagesh-discussion-2026-10-01.mediawiki`, a CC BY-SA 4.0 capture, and its
-    translation. Wording correction: the source is a section of the Wikisource Village Pump,
-    ויקיטקסט:מזנון, not a talk page.
+    translation. Wording correction: the source is a section of the Wikisource
+    Village Pump, ויקיטקסט:מזנון, not a talk page.
 11. **C4.8. Accepted, unfixed; reader-facing document.** The root README's "Product and corpus
     directories" omits `Phonetic-MAM/`, `Yeivin-ITM/` and their entry points.
 12. **C5.1. Accepted, unfixed; distributed data and its README.** `Phonetic-MAM/README.md` does not
@@ -443,9 +443,9 @@ State "live". It covers the 64 accepted items, the citation of Ben's finding-14 
 exemption in `py/tests/test_h_dot_below_nfc.py`, and the relay's retirement. It presents the changes
 in `doc/periodic-review.md`'s risk order: published pages and distributed data, then reader-facing
 documents, then the rest. It keeps reproducible defects apart from editorial proposals, with current
-and proposed wording for each; names eleven acts outside the repository, A0 to A10, as separate
-authorization points; and orders the work in waves with their checks and the integration sequence.
-It executes nothing.
+and proposed wording for each; names eleven acts outside the repository, A0 to A10, which were
+separate authorization points until Ben authorized them in advance (next entry); and orders the work
+in waves with their checks and the integration sequence. It executes nothing.
 
 **Found while planning:**
 
@@ -466,7 +466,44 @@ It executes nothing.
    - C2: the last changed line of `yeivin_itm-318_344.html` is 556; line 557 ends the FR3 sentence
      unchanged.
 
-**What waits for Ben:** his approval of the plan's wording and execution, and the thirteen choices
-in its "Choices for Ben": C2's corrected prose; C6.1's intended verse; C15.15; C4.4; C4.5; C11; C1's
-gate design; C6.2; C8; C12.4; C15.25; C15.29; and C15.31. Until C1 lands, a Wikisource refresh that
-changes MAM's text still stops the mega at `yeivin-itm-survey-meteg-claims`.
+**What waited for Ben,** until the next entry: his approval of the plan's wording and execution, and
+the thirteen choices in its "Choices for Ben": C2's corrected prose; C6.1's intended verse; C15.15;
+C4.4; C4.5; C11; C1's gate design; C6.2; C8; C12.4; C15.25; C15.29; and C15.31. Until C1 lands, a
+Wikisource refresh that changes MAM's text still stops the mega at `yeivin-itm-survey-meteg-claims`.
+
+## Ben's choices and advance authorization, 2026-10-03
+
+Recorded on 2026-10-03, at about 09:30 New York time, by the close-out step-2 session that prepared
+the plan, after `286d2e8c` pushed it. Ben's words in that session, verbatim: "Regarding my choices, I
+accept all your recommendations. Are there any choices for which you had no recommendation?" The
+session then named six items for which the plan stated no recommendation, recommended one course for
+each, and said that accepting them would not authorize the acts outside the repository in advance.
+His reply, in one message: "I accept all those recommendations as well." and "Please authorize those
+acts in advance. I want this all to be as unattended as possible."
+
+1. **The thirteen choices:** the recommended option of each, which the plan's "Choices for Ben,
+   answered 2026-10-03" names: C2's figures-only correction, keeping "roughly"; "Is 52:1" for C6.1;
+   option 1 for C15.15, C4.4, C4.5, C8, C12.4, C15.25, C15.29 and C15.31; option 2 for C11; Gate B
+   and Oracle A for C1; and option C for C6.2.
+2. **The six further items:** the flagged addition under C15.13 is made; A5, A8, A9 and A10 are
+   done; A6 is not, so `origin/dar-2026-10-01` stays.
+3. **The acts outside the repository, A0 to A10, are authorized in advance,** read as all of them,
+   since Ben asked for everything to be as unattended as possible.
+
+**The plan, revised to match in the commit that records this entry**
+([`PLAN-remediate-review-findings-2026-10-02.md`](PLAN-remediate-review-findings-2026-10-02.md)):
+its State; "Decisions this plan follows", item 4, which quotes Ben; an "Unattended" rule in the
+executor contract; the chosen option named in the ledger, the waves and the expected outputs; C2's
+prose and C15.13's addition marked approved; a read-only visibility check of `bdenckla/trope` before
+C15.31's label is used; "Final integration" and "Records" reordered for an unattended run; and "Acts
+outside the repository" rewritten as authorized, with a new section, "The relay-machine session". In
+that rewrite the acts changed only toward caution. No act deletes anything: A2 and A8 move the agent
+file and the rehearsal home into the retention folder `$HOME/relay-retirement-2026-10/`, since a
+plain deletion would be permanent and a recycling without confirmation dialogs can delete
+permanently a folder too large for the Recycle Bin. A7's selection is spelled out, and A9 is left to
+Ben in the Codex app, since the plan has no verified command that deletes a Codex follow-up.
+
+**What remains for Ben:** starting the executor's session on `LAPTOP-DBLE8UKA`, and after its final
+integration, the relay-machine session on the relay machine, with the prompt in the plan's section
+of that name; deleting the paused Codex follow-up in the Codex app if it is still listed (A9); and
+deleting `$HOME/relay-retirement-2026-10/` on a machine whenever he wants the space.

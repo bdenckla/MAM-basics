@@ -1,6 +1,6 @@
 # Remediate the October 2, 2026 trial review of MAM-basics
 
-State: live
+State: live; Ben's choices and his advance authorization of every act recorded 2026-10-03; execution not yet started
 
 Prepared by Claude on 2026-10-03, New York time, as close-out step 2 of the 2026-10-02 trial review
 (`doc/periodic-review.md`, "Close-out: from findings to dispositions"). The session ran as Claude
@@ -18,11 +18,13 @@ this step, and this plan attributes none of it to Ben.
 **What is approved and what is not.** Ben approved the disposition list as the close-out package on
 2026-10-03. As the update records, that approval "records dispositions only. It does not execute
 remediation, and it does not approve wording that the remediation plan must present", in particular
-C1's gate design and C2's corrected Yeivin prose. This plan proposes the remediation's concrete
-wording and its execution for his approval, with thirteen choices that are his alone, listed under
-"Choices for Ben" and numbered there as questions. Preparing, committing or pushing this plan
-implements none of it, and Ben's approval of it does not by itself authorize any act outside the
-repository: each of those has its own authorization point, under "Acts outside the repository".
+C1's gate design and C2's corrected Yeivin prose. This plan proposed the remediation's concrete
+wording and its execution, with thirteen choices that were his alone. Later on 2026-10-03, after it
+was pushed, Ben accepted every recommendation in it and, for six items that it had left without
+one, the recommendation that its preparing session then gave; he also authorized every act outside
+the repository in advance, asking for execution "as unattended as possible". "Decisions this plan
+follows", item 4, quotes him. Execution begins when Ben starts the executor's session; preparing,
+committing or pushing this plan implemented none of it.
 
 **How it was prepared.** Eight read-only sub-agents, each given one group of items, re-read the files
 at `644a6c9c`, quoted the current wording, drafted the proposals and demonstrated each mechanism in
@@ -48,21 +50,30 @@ and then its path replaces this one throughout. Work happens on a local branch
 `main` is fast-forwarded to it and pushed only at final integration. This plan names that branch
 under the "Git and commits" exception of the common instruction body, for two reasons: a push of
 `main` that carries a generator change owes the mega first, and Pages deploys `main` daily at 04:17
-New York time, so the remediation's intermediate states must not reach `main`; and the work will
+New York time, so the remediation's intermediate states must not reach `main`; and the work may
 span sessions, which hand off only through commits pushed to `origin`. A session that ends before
 final integration pushes its last commit to the branch and switches the clone back to `main`,
 because `doc/clone-forests.md`'s synchronization check fails a full clone on any other branch.
 Create no linked worktree. One agent writes at a time; read-only sub-agents may investigate and
 check. The executor of final integration owns it and pushes `main`.
 
+**Unattended.** Ben has answered every choice and authorized every act outside the repository in
+advance ("Decisions this plan follows", item 4). Do not ask him again for a choice or an act that
+this plan settles; implement each chosen option and no other. Stop only on the stop conditions
+below, on a failing check, or on a fact that contradicts this plan or that it does not settle, and
+then report with a standalone continuation prompt.
+
 **Not the relay machine's GitRepos2 before A1.** The relay's scheduled task runs the GitRepos2 clone
 of the machine that ran the relay every three minutes ("The relay's retirement", below). If the
 executor works on that machine, act A1 must be done before the first relay-retirement edit there.
+The default executor works on `LAPTOP-DBLE8UKA`, which holds no relay state; the relay machine's acts
+belong to the separate session that "The relay-machine session" describes.
 
 **Baselines.** Before any edit, require each of these to be an ancestor of `HEAD`, with
-`git -C <checkout> merge-base --is-ancestor <commit> HEAD`: `644a6c9c3203e12e5fe7bdad75b165c16bb9aab5`,
-the commit that adds this plan, and the commit that records Ben's approval of this plan in the
-update file (find it with
+`git -C <checkout> merge-base --is-ancestor <commit> HEAD`: `644a6c9c3203e12e5fe7bdad75b165c16bb9aab5`;
+`286d2e8cce69b1cc798b67302b80a91f4c6c161a`, the commit that adds this plan; and the commit "Record
+Ben's choices and advance authorization for the 2026-10-02 remediation", which records them in the
+update file and revises this plan to match (find it with
 `git -C <checkout> log --format="%H %s" -- doc/review-findings-2026-10-02-update.md`). Record the
 checkout's path and the exact `HEAD` at which editing begins in the update entry that "Records"
 describes. The reviewed window, `7549ebf7..db59ef5e`, is a historical anchor, not a baseline.
@@ -103,13 +114,13 @@ any commit that merge made. Re-measure any passage this plan cites in a file cha
 `644a6c9c` (`git -C <checkout> diff --stat 644a6c9c HEAD`).
 
 **Not authorized:** amending, rebasing, force-pushing, resetting, dropping a stash, discarding work;
-deleting a branch or worktree except as an authorization point below permits; retiring or
-reclassifying a document other than the two relay documents of R1, or the two Holman records if
-Ben chooses option 2 of question 12; any GitHub issue operation beyond the read-only audit; any
-Wikisource edit or refresh; running `py/main_mam4sef.py`, `py/main_mam_osis.py` or
-`py/main_hbce_psalms.py compare`; the write form of `--sync-forest`; reading MAM-private or hbofonts
-beyond what the suite and the mega's documented steps read; editing a live deployed instruction,
-skill or agent file except through the authorization points.
+deleting a branch or worktree except as "Acts outside the repository" below permits; retiring or
+reclassifying a document other than the two relay documents of R1; any GitHub issue operation
+beyond the read-only audit; any Wikisource edit or refresh; running `py/main_mam4sef.py`,
+`py/main_mam_osis.py` or `py/main_hbce_psalms.py compare`; the write form of `--sync-forest`; reading
+MAM-private or hbofonts beyond what the suite and the mega's documented steps read; editing a live
+deployed instruction, skill or agent file except through acts A2 and A3; deleting permanently
+anything that Git history does not keep.
 
 **Do not refresh MAM from Wikisource before C1 lands.** Until then a refresh that changes MAM's text
 changes the Phonetic MAM release and stops the mega at `yeivin-itm-survey-meteg-claims` (the update,
@@ -147,13 +158,41 @@ entry 1). This is a caution for Ben's own refreshes as well as the executor's.
    - The common instruction body's "Tests are differential or lint-shaped": no item adds an
      example-based test; where none is admissible, the item names a scratch demonstration instead.
    - `doc/periodic-review.md`'s D7 and risk ordering, which shape this plan.
+4. **Ben's choices and advance authorization, 2026-10-03,** given in this plan's preparing session
+   after the plan was pushed at `286d2e8c`. His words, verbatim: "Regarding my choices, I accept all
+   your recommendations. Are there any choices for which you had no recommendation?" The session
+   then named six items without a stated recommendation, recommended one course for each, and said
+   that accepting them would not authorize the acts in advance, since the executor would still ask
+   him for each act at its turn. His reply, in one message: "I accept all those recommendations as
+   well." and "Please authorize those acts in advance. I want this all to be as unattended as
+   possible." So:
+   1. Every recommended option of the thirteen questions under "Choices for Ben" is chosen; the
+      executor implements that option and no other.
+   2. The six further items: the flagged addition under C15.13 is made; A5, A8, A9 and A10 are done;
+      A6 is not done, so `origin/dar-2026-10-01` stays, as the other round branches on origin do.
+   3. Every act outside the repository, A0 to A10, is authorized in advance in the form this plan
+      gives it. This plan reads "those acts" as all of them, since Ben asked for everything to be
+      as unattended as possible. Each outcome is still recorded.
+   4. Every other proposal in this plan stands as written, R5 included.
+   5. In recording this, the preparing session revised the acts only toward caution. No act deletes
+      anything: A2 and A8 move the agent file and the rehearsal home into a retention folder, which
+      Ben may delete whenever he wants the space. A plain deletion would be permanent, and a
+      recycling that runs without confirmation dialogs can delete permanently a folder too large
+      for the Recycle Bin; the rehearsal home holds a whole clone with its environment. A7's
+      selection of entries is spelled out. A9 is left to Ben in the Codex app, since this plan has
+      no verified command that deletes a Codex follow-up. A new section, "The relay-machine
+      session", gives the relay machine's acts to a session that Ben starts there, since the
+      executor works on another machine.
 
-## Choices for Ben
+## Choices for Ben, answered 2026-10-03
 
-These are the only decisions this plan leaves open. Each names the item where its options are
-written out in full, with their wording. They are in the order of `doc/periodic-review.md`, "Present
-remediation by public-facing risk"; the recommended option is listed first. Any other proposal in
-this plan is Ben's to approve, strike or reword when he approves the plan.
+These were the decisions this plan left to Ben. Each names the item where its options are written
+out in full, with their wording. They are in the order of `doc/periodic-review.md`, "Present
+remediation by public-facing risk"; the recommended option is listed first. **On 2026-10-03 Ben
+accepted every recommended option** ("Decisions this plan follows", item 4), so the executor
+implements: for 1, the figures-only correction, keeping "roughly"; for 2, "Is 52:1"; for 3, 4, 5, 9,
+10, 11, 12 and 13, option 1 of each item; for 6, option 2; for 7, Gate B and Oracle A; and for 8,
+option C. Text elsewhere in this plan that applies only under an option Ben did not choose is moot.
 
 1. **C2's corrected Yeivin prose.** Approve the figures-only correction of nine sentences on three
    published pages and the 11 corrected fractions in `Yeivin-ITM/meteg-claims.json`; or reword. A
@@ -292,9 +331,9 @@ The numbers reach the pages only through the `claim_text` placeholders of the tw
 source module changes and no module hash breaks. Every new figure has the same width as the old, so
 the wrapping is unchanged.
 
-**The corrected prose, for Ben's approval (question 1).** The proposal changes figures only; every
-qualitative sentence stays true ("agrees almost exactly with this estimate of 90%": 90.4% follow the
-rule; "far more than could be called a few dozen": 134; "in two cases": unchanged).
+**The corrected prose, approved by Ben on 2026-10-03 (question 1).** The proposal changes figures
+only; every qualitative sentence stays true ("agrees almost exactly with this estimate of 90%": 90.4%
+follow the rule; "far more than could be called a few dozen": 134; "in two cases": unchanged).
 1. `gh-pages/yeivin-itm/yeivin_itm-318_344.html:539–540`, footnote φ1 of §320. Current: "I find 3,583
    fully regular words, of which 353 (9.9%) are exceptions to the rule, breaking down as follows:"
    Corrected: "… of which 344 (9.6%) are exceptions …"
@@ -1045,10 +1084,10 @@ request." C4.7 edits the licence statements about this file, not the file itself
 1. **Code and tests (D7: defects).** C1's two gates and a dead module (question 7); C6.2's Yeivin
    migration gate (question 8); C9.1 to C9.5; C12.1 to C12.4; C13.1; C15.3; C15.4; C15.11; C15.12;
    C15.18 to C15.20; C15.28; and the relay's removal. New lints or checks come with C4.3, C5.1, C6.1,
-   C6.2 (option C), C9.4, C11 (options 1 and 2), C12.1, C12.2 and the relay's turn files (R5). No
+   C6.2 (option C), C9.4, C11 (option 2), C12.1, C12.2 and the relay's turn files (R5). No
    other generated output changes beyond those listed under "Outputs expected to change".
 2. **Agent instructions and skills.** `AGENTS.md` (C10.4, C15.23), which takes effect when
-   committed; the skills `hebrew-prose` (C10.3, and C15.15 under option 1),
+   committed; the skills `hebrew-prose` (C10.3, C15.15),
    `mam-wikisource-refresh` (C1.3, C8), `mam-repository-topology` (C15.24) and `github-issues`
    (C15.25), which take effect when deployed (act A3); and the bot guide (C7).
 3. **Markdown under `doc/` and update entries.** C10.2, C15.2, C15.13, C15.26 and C15.29; C9.3's
@@ -2107,12 +2146,12 @@ the captures (`py/tests/test_prose_mark_order.py:108–111`, `:128–137`). Add 
 > `doc/wikisource-dagesh-discussion-translation.md`, says not to reorder the capture's marks, and
 > gives its own Hebrew examples in MAM-normal order.
 
-Found while planning, flagged for approval or striking: the same list also lacks
+Found while planning, and approved by Ben on 2026-10-03: the same list also lacks
 `in/mam-ws-special/`, the declared special pages that every chapter download mirrors byte for byte,
 added on 2026-09-27 with 5,369 clusters in the other order in 25 of its 36 `.mediawiki` files; it did
-not change in the window. If approved, add: "`in/mam-ws-special/`, the declared special pages that
-every Wikisource chapter download mirrors byte for byte, was added 2026-09-27 with 5,369 clusters in
-the other order in 25 of its 36 `.mediawiki` files."
+not change in the window. Add: "`in/mam-ws-special/`, the declared special pages that every
+Wikisource chapter download mirrors byte for byte, was added 2026-09-27 with 5,369 clusters in the
+other order in 25 of its 36 `.mediawiki` files."
 
 **C15.29, two Holman research records edited in place, and a missing "Recorded by" (question 12).**
 On 2026-10-01 `cb5bcda1` rewrote the last sentence of `holman/doc/holman-manuscript-citations.md`
@@ -2381,9 +2420,11 @@ under `repos_to_keep_absent` with no visibility). `AGENTS.md`, "Issue citations 
 appear in a public file but not "paths inside them, file names of theirs". What replaces the links is
 Ben's call:
 1. **Option 1 (recommended): `trope#NN (private tracker)`.** For example, `:33` becomes
-   "# MAM has gaʿya on yod; see closed issue trope#374 (private tracker)." The label assumes Ben
-   confirms that trope is private. It keeps the provenance in the form `AGENTS.md` prescribes, and an
-   issue number is an identifier, not a path.
+   "# MAM has gaʿya on yod; see closed issue trope#374 (private tracker)." The label assumes that
+   trope is private, an assumption stated when Ben accepted this option on 2026-10-03. The executor
+   re-checks it first with `gh repo view bdenckla/trope --json visibility --jq .visibility`, a
+   read-only query that must print `PRIVATE`, and stops if it does not. The label keeps the
+   provenance in the form `AGENTS.md` prescribes, and an issue number is an identifier, not a path.
 2. **Option 2: delete the reference.** Delete "; see [closed issue] <URL>" and keep each line's final
    punctuation; for example "# MAM has gaʿya on yod."
 3. **Option 3: keep each URL and add "(private)".** Not recommended: it keeps paths inside the private
@@ -2428,7 +2469,7 @@ relay: "its code, tests, runbook, plan, configuration, agent file and deployed c
 registered scheduled task, and the procedure text that describes it". This section is the plan for
 all of it. Everything in the repository is lower risk on product reach: no page, product or mega
 generator reads the relay, so the removal owes the suite and not the mega. The acts outside the
-repository are listed last, each as its own authorization point.
+repository are listed last; Ben authorized them in advance on 2026-10-03.
 
 ### Where the relay's state is
 
@@ -2520,8 +2561,8 @@ relay module: it lists tracked files with `git ls-files -z`, keeps those matchin
 none match, groups rounds dated 2026-09-16 or later, and asserts the same numbering, alternation
 and `State:` shapes (turn 01's line 3 starts with "State: "; every later turn's line 3 matches
 `State: completed \d{4}-\d{2}-\d{2}; review only`). It drops the comparison with the relay module's
-`census`, `lint_automated_round_headers` and the `Next:`-transition test. If Ben strikes R5 when
-approving this plan, the lint goes with the module.
+`census`, `lint_automated_round_headers` and the `Next:`-transition test. Ben's acceptance of
+2026-10-03 covers R5, so the lint is kept.
 
 **R6. Procedure text: current and proposed wording.** Most proposals restore the words that the
 relay's commits replaced; `git show a92b2ebe -- doc/dual-agent-review.md doc/periodic-review.md`
@@ -2686,8 +2727,9 @@ The dated entry, filled in by the executor:
 > retained" describe the round as of 2026-10-01; no dispatcher reads the file now. <The five
 > in-place corrections above, each with its former and new words.>
 >
-> Acts outside the repository, each authorized separately by Ben: <A1, A2 and each optional act
-> with its outcome, as "Acts outside the repository" in the remediation plan lists them>.
+> Ben authorized in advance, on 2026-10-03, the acts outside the repository that the remediation
+> plan lists under "Acts outside the repository"; later dated entries here record each one's
+> outcome as it is done, and `origin/dar-2026-10-01` stays by his choice.
 >
 > **Effective base State, <DATE>:** acted on; the approved remediation completed on 2026-10-01
 > stands as recorded above, and the relay it remediated was retired on <DATE>.
@@ -2712,7 +2754,7 @@ repository's tracked tree for `dual-agent-review-automation`, `--dual-agent-revi
   `py/main_test.py py/tests/test_review_turn_files.py py/tests/test_worktree_retirement_policy.py py/tests/test_mega_coverage.py py/tests/test_entry_point_subcommands.py py/tests/test_receipt_update_links.py py/tests/test_prose_conventions.py py/tests/test_tracked_filenames.py`;
   `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check` from the carrier, which
   reads `origin/main` and must still report no problem while `origin/main` keeps the agent file.
-- **After the push, every full clone on both machines still running the old code fails
+- **After the push, every full clone on every machine still running the old code fails
   `--sync-user-config --check`**, because its `_ARCHIVE_PATHS` names a file that `origin/main` no
   longer has; that failure writes nothing. Each clone is fine once fast-forwarded, which Ben's
   ordinary synchronization does. Until then, routine maintenance's configuration step in such a
@@ -2720,13 +2762,24 @@ repository's tracked tree for `dual-agent-review-automation`, `--dual-agent-revi
 
 ### Acts outside the repository
 
-Each act below is its own authorization point: the executor asks Ben for it when its turn comes,
-and approving this plan authorizes none of them. Who performs an act on the relay machine is Ben, or
-a session there that he authorizes for that act. Record each outcome, done or declined, in the dated
-entry of R7 and in this review's update file.
+Ben authorized every act below in advance on 2026-10-03 ("Decisions this plan follows", item 4), so
+no session asks him for any of them. The executor performs A3, A2 and A10 on its own machine,
+`LAPTOP-DBLE8UKA`, as steps 4 and 5 of "Final integration". A session that Ben starts on the relay
+machine performs A0, A1, A7, A3, A2, A4, A5 and A8 there, in the order that "The relay-machine
+session" gives; A9 is Ben's own, and A6 is not done. **No act deletes anything:** each removal moves
+its object into the retention folder `$HOME/relay-retirement-2026-10/` on its machine, and A4's
+retirement tooling relocates its evidence there too; Ben may delete that folder whenever he wants the
+space. Whoever performs an act records its outcome (done; unnecessary, because A0 did not find its
+object; or blocked, with the blocker) as "Records" and "The relay-machine session" describe. A
+session whose own rules refuse an act skips that act only, records it with the exact command for Ben
+to run, and goes on with the rest.
 
-1. **A0, read-only: find and inventory the relay machine.** Ben names the machine. On it, in a normal
-   PowerShell 7 window:
+1. **A0, read-only: inventory the relay machine,** the machine on which Ben starts the relay-machine
+   session. In PowerShell 7:
+
+   ```powershell
+   $env:COMPUTERNAME
+   ```
 
    ```powershell
    Get-ScheduledTaskInfo -TaskPath '\' -TaskName 'Dual-agent review relay' | Format-List LastRunTime, LastTaskResult, NextRunTime
@@ -2748,9 +2801,15 @@ entry of R7 and in this review's update file.
    Test-Path -LiteralPath $HOME/.claude/agents/dual-agent-review-turn.md
    ```
 
-   This reads only. It tells the remaining acts what exists there.
-2. **A1: unregister the scheduled task `\Dual-agent review relay`** on the relay machine, in a normal
-   (non-elevated) PowerShell 7 window, as Ben registered it on 2026-10-01:
+   ```powershell
+   Test-Path -LiteralPath $HOME/relay-retirement-2026-10
+   ```
+
+   This reads only. If A0 finds none of the scheduled task, `.novc/dual-agent-review/` and A4's three
+   worktrees, the machine is not the relay machine, and "The relay-machine session" says what happens
+   then. Nothing already in the retention folder is ever overwritten.
+2. **A1: unregister the scheduled task `\Dual-agent review relay`** on the relay machine, without
+   elevation, as Ben registered it on 2026-10-01:
 
    ```powershell
    Unregister-ScheduledTask -TaskPath '\' -TaskName 'Dual-agent review relay' -Confirm:$false
@@ -2760,67 +2819,174 @@ entry of R7 and in this review's update file.
    @(Get-ScheduledTask -TaskPath '\' | Where-Object TaskName -eq 'Dual-agent review relay').Count
    ```
 
-   The second command must print `0`. **Order:** before the push of `main` that removes the relay,
-   and in any case before that machine's GitRepos2 clone holds a commit without the relay's code;
-   otherwise every tick fails, silently, since under `pythonw` both standard streams are `None` and
-   the fallback that R2 removes is what opened a log for them. A1 also precedes A7, since each tick
-   recreates `.novc/dual-agent-review/`. Undo: re-register with the deleted script from
-   `<ARCHIVE-SHA>`.
-3. **A2: remove the deployed agent file on each machine,** after the push of `main` that removes the
-   relay and after A3 on that machine, so that no deployment from older code reinstalls it. On
-   `LAPTOP-DBLE8UKA` the file exists (SHA-256 `2CB3B50A…`, equal to the canonical file); on the relay
-   machine A0 says.
+   The second command must print `0`. **Order:** before that machine's GitRepos2 clone is
+   fast-forwarded past the relay's removal, and before A7, since a tick can recreate
+   `.novc/dual-agent-review/`. The task runs that clone's working tree with `pythonw`. Once the
+   removal is checked out there, each tick raises at once and writes nothing, because both standard
+   streams are `None` and R2 removes the fallback that opened a log for them. That is harmless: the
+   push of `main` need not wait for A1, and a session that may not run A1 still goes on with the
+   fast-forward. Undo: re-register with the deleted script from `<ARCHIVE-SHA>`.
+3. **A2: retire the deployed agent file on each machine,** after that machine's A3, so that the
+   configuration deployed there no longer names it. On `LAPTOP-DBLE8UKA` the file exists (SHA-256
+   `2CB3B50A…`, equal to the canonical file); on the relay machine A0 says. Record its hash, then move
+   it into the retention folder:
 
    ```powershell
    Get-FileHash -Algorithm SHA256 -LiteralPath "$HOME/.claude/agents/dual-agent-review-turn.md"
    ```
 
    ```powershell
-   Remove-Item -LiteralPath "$HOME/.claude/agents/dual-agent-review-turn.md"
+   New-Item -ItemType Directory -Force -Path "$HOME/relay-retirement-2026-10"
    ```
 
-   Undo: copy the file from `<ARCHIVE-SHA>`. Until A2, Claude sessions on that machine still list a
-   `dual-agent-review-turn` agent type.
+   ```powershell
+   Move-Item -LiteralPath "$HOME/.claude/agents/dual-agent-review-turn.md" -Destination "$HOME/relay-retirement-2026-10/dual-agent-review-turn.md"
+   ```
+
+   `Test-Path` on the old path must then print `False`. Undo: move it back. Until A2, Claude sessions
+   on that machine still list a `dual-agent-review-turn` agent type.
 4. **A3: deploy the changed canonical instructions and skills on each machine,** from a full clone
    whose `main` holds the integrated remediation, as the common body requires after a canonical
    change: `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config`, then
    `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check`, which must report
-   `USER_CONFIG_PROBLEM_COUNT=0`. The remediation changes the skills `hebrew-prose` (C10.3, and C15.15
-   under option 1), `mam-wikisource-refresh` (C1, C8), `mam-repository-topology` (C15.24) and
-   `github-issues` (C15.25), and stops deploying the agent file. On the executor's machine A3 is part
-   of final integration; on the other machine it follows the next synchronization of a full clone
-   there.
-
-**Optional acts, outside the retirement that Ben listed.** Each is a destructive local act or an
-outward-facing one, needs its own authorization, and may simply not be done:
-
-5. **A4: retire the relay's three worktrees on the relay machine:** `.claude/worktrees/dar-2026-10-01-claude`
-   (branch `dar-2026-10-01`), `.claude/worktrees/dar-2026-10-01-codex` (branch
+   `USER_CONFIG_PROBLEM_COUNT=0`. The remediation changes the skills `hebrew-prose` (C10.3, C15.15),
+   `mam-wikisource-refresh` (C1, C8), `mam-repository-topology` (C15.24) and `github-issues`
+   (C15.25), and stops deploying the agent file. On `LAPTOP-DBLE8UKA` it is step 4 of "Final
+   integration"; on the relay machine the relay-machine session does it. Any other machine of Ben's
+   that has the agent file needs A3 and A2 as well, which the relay-machine session's prompt also
+   does there (its step 3).
+5. **A4: retire the relay's three worktrees on the relay machine,** each below
+   `C:/Users/BenDe/GitRepos2/MAM-basics`: `.claude/worktrees/dar-2026-10-01-claude` (branch
+   `dar-2026-10-01`) and `.claude/worktrees/dar-2026-10-01-codex` (branch
    `dual-agent-review-2026-10-01-codex`), both locked with the reason "active automated dual-agent
    review 2026-10-01", and `.claude/worktrees/dar-comparison-2026-10-01-claude`, detached at
-   `dd50e9b9` and locked by the comparison operator. Recommended: retire them through
-   `py/main_repo_util.py --inspect-worktrees`, `--prepare-worktree-retirement` and
-   `--execute-worktree-retirement` (`mam-repository-topology/references/repository-maintenance.md`,
-   "Completed linked worktrees"), after unlocking each, which that procedure's gate 1 requires,
-   and after C9.1's handler has landed. Their `.novc` evidence is relocated, not deleted; expect the
-   citation review to cover the October 1 update's references to it.
+   `dd50e9b9` and locked by the comparison operator. Every task that used them ended on 2026-10-01.
+   Follow `mam-repository-topology/references/repository-maintenance.md`, "Completed linked
+   worktrees", only once that clone runs code with C9.1's handler, from the clone's root with its own
+   interpreter. For each worktree, with `<W>` its absolute path and `<name>` its last path component:
+   1. `git -C C:/Users/BenDe/GitRepos2/MAM-basics worktree unlock <W>`, since that procedure's gate 1
+      refuses a locked worktree.
+   2. `./.venv/Scripts/python.exe py/main_repo_util.py --inspect-worktrees --worktree "<W>"`.
+   3. `./.venv/Scripts/python.exe py/main_repo_util.py --prepare-worktree-retirement "<W>" --task-ended --retirement-root "$HOME/relay-retirement-2026-10/worktree-retirements" --preflight-file "$HOME/relay-retirement-2026-10/preflight-<name>.json"`.
+      If it reports tracked references to `.novc` paths that it will relocate, and every one of them
+      is in the October 1 round's records (`doc/dual-agent-review-2026-10-01-*.md`,
+      `doc/PLAN-close-out-review-2026-10-01.md` and `doc/dual-agent-review-comparison-2026-10-01.md`),
+      prepare again to the new file `preflight-<name>-2.json` in the same folder, adding
+      `--citations-reviewed --citation-note "Historical citations in the finished records of the October 1, 2026 relay round; each relocated path is recorded in the retirement sidecar and in the relay-machine session's dated entry in doc/dual-agent-review-2026-10-01-turn-01-claude-update.md."`,
+      and record each relocated path in that entry.
+   4. Read the newest preflight, then run
+      `./.venv/Scripts/python.exe py/main_repo_util.py --execute-worktree-retirement "<preflight>" --task-ended`.
+
+   Any other blocker that the procedure reports, a session record or runtime lease among them, stops
+   this act for that worktree: record the blocker and lock the worktree again with
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics worktree lock --reason "relay retirement blocked: <blocker>" <W>`.
+   Never bypass a gate, remove a lease or force a removal. The tooling keeps both branches, since
+   neither name has an agent prefix; A5 deletes them.
 6. **A5: delete the two local branches** `dar-2026-10-01` and `dual-agent-review-2026-10-01-codex` on
-   the relay machine, after A4, with `git branch -d` only (both are contained in `main`).
-7. **A6: delete the remote branch `origin/dar-2026-10-01`**, an outward-facing act; its tip, `db59ef5e`,
-   is contained in `main`. No recommendation: keeping it costs nothing.
-8. **A7: dispose of the relay's control state and evidence** under the relay machine's
-   `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/`: `dual-agent-review/` (the registry, the round's
-   `PAUSE`, the deactivation record and `scheduler.log`), the `relay-*` receipts, the probe folders
-   and the related scripts. Routine maintenance's `.novc` wipe would delete all of it, so the choice is
-   real: recommended, copy it once to a retained location outside the clone, as the retirement
-   procedure defaults to keeping such material, then let maintenance clear it.
-9. **A8: the rehearsal home `C:/Users/BenDe/GitRepos-rehearsal/`** on the relay machine, if A0 finds
-   it: retire it under `mam-repository-topology`, which the relay plan expected and its runbook
-   deferred.
-10. **A9: the paused Codex follow-up `verify-first-production-dual-agent-review`** on the relay
-    machine, if it still exists: delete it in Codex.
-11. **A10: delete `origin/remediate-review-2026-10-02`** after final integration, an outward-facing
-    act; `main` then contains it.
+   the relay machine, after A4. Record each tip with
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics rev-parse <branch>`, then delete it with
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics branch -d <branch>` only. Both are contained in `main`;
+   `-d` refuses a branch that is unmerged or still checked out in a worktree that A4 left in place,
+   and such a refusal is recorded, never overridden. Undo: recreate the branch at its recorded tip.
+7. **A6: not done.** `origin/dar-2026-10-01`, whose tip `db59ef5e` is contained in `main`, stays, as
+   the other round branches on origin do.
+8. **A7: keep the relay's control state and evidence outside the clone,** after A1, since routine
+   maintenance's wipe of `.novc/` would delete them. Copy these top-level entries of the relay
+   machine's `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/`, where present, to
+   `$HOME/relay-retirement-2026-10/novc/`, keeping each relative path and overwriting nothing:
+   `dual-agent-review/` (the registry, the round's `PAUSE`, the deactivation record and
+   `scheduler.log`); every entry whose name contains `relay` or `dual-agent-review`; and every other
+   entry that the relay's runbook or plan at `<ARCHIVE-SHA>`, or the October 1 round's records, name
+   with the pattern `[.]novc/[A-Za-z0-9_.-]+`; but not `t`, the suite's disposable temporary root.
+   Use a scratch Python script in the session's scratch directory. It also writes
+   `$HOME/relay-retirement-2026-10/novc-manifest.json`, with the source root, the copy's time with its
+   UTC offset, and each file's relative path, bytes and SHA-256, and then verifies every copy's hash
+   against its source. Leave the originals for maintenance's next wipe.
+9. **A8: retire the rehearsal home `C:/Users/BenDe/GitRepos-rehearsal/`,** if A0 finds it. It holds
+   the relay's rehearsal fixtures: a public-source MAM-basics clone with its own environment, its
+   local bare origin and their evidence. Record its top-level entries, file count and total bytes,
+   and check that no worktree in A0's list lies inside it; then, with the retention folder created
+   as in A2, move the home there on the same volume:
+
+   ```powershell
+   Move-Item -LiteralPath C:/Users/BenDe/GitRepos-rehearsal -Destination $HOME/relay-retirement-2026-10/GitRepos-rehearsal
+   ```
+
+   If the move fails, record why and leave the home where it is. Undo: move it back.
+10. **A9, Ben's: the paused Codex follow-up `verify-first-production-dual-agent-review`.** Ben
+    approved it in a Codex chat on 2026-10-01, and it was paused after the round's verification
+    (`doc/dual-agent-review-automation.md` at `<ARCHIVE-SHA>`). It lives in the Codex app's own state,
+    for which this plan has no verified command, so no session touches it: if the Codex app still
+    lists it, Ben deletes it there. While paused it runs nothing.
+11. **A10: delete `origin/remediate-review-2026-10-02` and the local branch,** at step 5 of "Final
+    integration", once `origin/main` contains the branch's tip. Record the tip; check with
+    `git -C <checkout> merge-base --is-ancestor origin/remediate-review-2026-10-02 origin/main`; then
+    run `git -C <checkout> push origin --delete remediate-review-2026-10-02` and
+    `git -C <checkout> branch -d remediate-review-2026-10-02`. Undo: push the recorded tip again.
+
+### The relay-machine session
+
+Ben starts this session on the relay machine after the executor's final integration, with the prompt
+below, in the full clone `C:/Users/BenDe/GitRepos2/MAM-basics` itself rather than a new worktree. It
+uses that clone's own `./.venv/Scripts/python.exe` from the clone's root, and in the repository it
+writes only step 8's records. Ben may start the same prompt on any other machine of his that has the
+agent file; step 3 covers that case.
+
+1. Load `AGENTS.md`, `mam-repository-topology` with `references/repository-maintenance.md`, and
+   this plan's "The relay's retirement", reading the plan from `origin/main` after step 2's fetch.
+2. Verify with separate commands. `git rev-parse --show-toplevel` in the session's working directory
+   must print `C:/Users/BenDe/GitRepos2/MAM-basics`;
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics branch --show-current` must print `main`; and
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics status --porcelain=v1 -z` must print nothing. Then
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics fetch origin`. Line 3 of this plan at `origin/main`
+   (`git -C C:/Users/BenDe/GitRepos2/MAM-basics show origin/main:doc/PLAN-remediate-review-findings-2026-10-02.md`)
+   must begin "State: live; remediation integrated on main"; if it does not, the executor has not
+   finished, so stop and report without acting. Read `<REMOVAL-SHA>` and `<ARCHIVE-SHA>`, its parent,
+   from the entry "Relay retired, <date>" of `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`
+   at `origin/main`.
+3. A0. If A0 finds none of the scheduled task, `.novc/dual-agent-review/` and A4's three worktrees,
+   this is not the relay machine: fast-forward as in step 5; do A3, and A2 if the agent file exists;
+   record that in step 8's entries without changing this plan's State; and report, so that Ben can
+   start this session on the relay machine.
+4. A1, then A7.
+5. Fast-forward with `git -C C:/Users/BenDe/GitRepos2/MAM-basics merge --ff-only origin/main`. The new
+   `HEAD` must contain `<REMOVAL-SHA>`, which the October 1 update's entry "Relay retired, <date>"
+   names: `git -C C:/Users/BenDe/GitRepos2/MAM-basics merge-base --is-ancestor <REMOVAL-SHA> HEAD`.
+6. A3, then A2.
+7. A4, then A5; then A8.
+8. Records: a dated entry "Relay retirement acts on <machine>, <date>" in
+   `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`, naming the machine and recording each
+   act's outcome, each relocated `.novc` path, the branches' recorded tips and the retention folder's
+   contents; a dated entry pointing to it in `doc/review-findings-2026-10-02-update.md`; and, on the
+   relay machine, this plan's line 3 set to "State: executed <date>", naming any act left blocked or
+   to Ben. Run
+   `./.venv/Scripts/python.exe py/main_test.py py/tests/test_receipt_update_links.py py/tests/test_prose_conventions.py py/tests/test_prose_mark_order.py`,
+   `git -C C:/Users/BenDe/GitRepos2/MAM-basics diff --check`, and once more
+   `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check`, which must report
+   `USER_CONFIG_PROBLEM_COUNT=0`. Commit on `main` with a message file; fetch, merging `origin/main`
+   if it moved; and push `main`. These records change no source or product, so nothing else is owed.
+9. The final report begins with "# Report:" and gives each act's outcome, the retention folder's path
+   and size, and what is left to Ben: A9 in the Codex app, if the follow-up is still listed; deleting
+   the retention folder whenever he wants the space; and the exact command for any act that the
+   session's rules refused.
+
+The prompt that starts it, for Ben to paste:
+
+> Written by Claude Opus 5.5 on 2026-10-03, New York time, in the MAM-basics session on
+> `LAPTOP-DBLE8UKA` that prepared `doc/PLAN-remediate-review-findings-2026-10-02.md`. Ben's
+> instructions in that session, verbatim: "Regarding my choices, I accept all your
+> recommendations."; "I accept all those recommendations as well."; and "Please authorize those acts
+> in advance. I want this all to be as unattended as possible." The rest of this prompt is that
+> session's reconstruction, not Ben's words.
+>
+> Run unattended, at max effort. You are "The relay-machine session" of that plan. Your working
+> directory must be the full MAM-basics clone `C:/Users/BenDe/GitRepos2/MAM-basics` on this machine
+> itself, not a new worktree. Fetch `origin`, read the plan from `origin/main`, and carry out its
+> section "The relay-machine session" exactly, with the acts under "Acts outside the repository"
+> that it names. Ben authorized every one of them in advance: do not ask him again. You own the
+> records commit on `main` and its push. Stop on a failing check or a fact that contradicts the
+> plan, record what was done, and report with a standalone continuation prompt. Begin your final
+> message with "# Report:".
 
 ## Finite execution ledger
 
@@ -2831,24 +2997,24 @@ risk".
 
 | Item | Status, kind and scope | Risk | Wave | Question |
 |---|---|---|---|---|
-| C1.1 | Active. D: the claims gate's trigger; E: `Yeivin-ITM/README.md`. | lower; blocks the next refresh | 3 | 7 |
-| C1.2 | Active. D: the frozen legacy projection oracle; E: `Phonetic-MAM/README.md`. | lower; blocks the next refresh | 3 | 7 |
+| C1.1 | Active. D: the claims gate's trigger (Gate B); E: `Yeivin-ITM/README.md`. | lower; blocks the next refresh | 3 | 7 |
+| C1.2 | Active. D: the frozen legacy projection oracle (Oracle A); E: `Phonetic-MAM/README.md`. | lower; blocks the next refresh | 3 | 7 |
 | C1.3 | Active. D: `py/phonetic_mam/legacy_projection.py` removed (wave 3); E: the refresh procedure's re-approval text (wave 6). | lower | 3, 6 | 7 |
-| C2 | Active. D: the classifier, the survey, the claims and pins; E: the corrected prose on three pages. | published pages, distributed data | 3 | 1 |
+| C2 | Active. D: the classifier, the survey, the claims and pins; E: the corrected prose on three pages, figures only, keeping "roughly". | published pages, distributed data | 3 | 1 |
 | C4.1 | Active. E: the font row's link. | reader-facing | 5 | — |
 | C4.2 | Active. E: the font row's duties sentence; no published change. | reader-facing | 5 | — |
 | C4.3 | Active. E: two `LICENSE.md` files and three rows; D: three closed file sets; a recurrence lint. | distributed data, reader-facing | 5 | — |
-| C4.4 | Active. E: `MAM-with-doc/LICENSE.md`, or no change. | reader-facing | 5 | 4 |
-| C4.5 | Active. E (options 1, 3) or a module move (option 2). | reader-facing | 5 (3 under option 2) | 5 |
+| C4.4 | Active. E: the exception in `MAM-with-doc/LICENSE.md` (option 1). | reader-facing | 5 | 4 |
+| C4.5 | Active. E: the six modules declared GPL-3.0 code (option 1). | reader-facing | 5 | 5 |
 | C4.6 | Active. E: `DATA-LICENSES.md:58`, `Yeivin-ITM/README.md:37–40`. | reader-facing | 5 | — |
 | C4.7 | Active. E: the README and `DATA-LICENSES.md` exceptions and two rows. | reader-facing | 5 | — |
 | C4.8 | Active. E: two README list items. | reader-facing | 5 | — |
 | C5.1 | Active. E: `Phonetic-MAM/README.md`; D: the U+05C5 guard. | distributed data (README) | 4 | — |
 | C5.2 | Active. E: the README's disclosure of two text differences. | distributed data (README) | 4 | — |
-| C6.1 | Active. D/E: the citation, and a reference lint. | published page | 3 | 2 |
-| C6.2 | Active. D: the migration gate; E: the editing procedure. | lower (README reader-facing) | 2 | 8 |
+| C6.1 | Active. D/E: the citation, "Is 52:1" (option 1), and a reference lint. | published page | 3 | 2 |
+| C6.2 | Active. D: the migration gate (option C); E: the editing procedure. | lower (README reader-facing) | 2 | 8 |
 | C7 | Active. E: the bot guide. | lower | 6 | — |
-| C8 | Active. E: the refresh skill's steps 4 and 5. | lower | 6 | 9 |
+| C8 | Active. E: the refresh skill's steps 4 and 5 (option 1). | lower | 6 | 9 |
 | C9.1 | Active. D: the handler, the guarded wipe and the lint. | lower | 7 | — |
 | C9.2 | Active. D: two imports in wave 4, three content fixes in wave 3, E402 by C15.18, F841 by R1. | lower | 1, 3, 4 | (8) |
 | C9.3 | Active. D: skip the caller's own clone; E: two runbook passages. | lower | 7 | — |
@@ -2858,11 +3024,11 @@ risk".
 | C10.2 | Active. E: `doc/phonetic-mam-preparation.md`. | lower | 8 | — |
 | C10.3 | Active. E: two `hebrew-prose` references. | lower | 8 | — |
 | C10.4 | Active. E: two docstrings and `AGENTS.md`. | lower | 8 | — |
-| C11 | Active. D: the floor fix; E/D: per question 6. | reader-facing (diagram) | 6 | 6 |
+| C11 | Active. D: the floor fix; E/D: the core pipeline, marked and linted (option 2). | reader-facing (diagram) | 6 | 6 |
 | C12.1 | Active. D: the encoding check and a lint. | lower | 6 | — |
 | C12.2 | Active. D: an independent oracle; E: the docstring. | lower | 3 | — |
 | C12.3 | Active. D: two untangler tests. | lower | 4 | — |
-| C12.4 | Active. D: a closed dispatch, per question 10. | lower | 6 | 10 |
+| C12.4 | Active. D: a closed dispatch that declines nested helpers (option 1). | lower | 6 | 10 |
 | C13.1 | Active. D: the compute stream. | lower | 4 | — |
 | C13.2 | Active. D: the `:has()` fallback. | published pages | 4 | — |
 | C14 | Resolved by Ben ("Keep the legacy bytes"). Active: the citation at the exemption. | lower | 4 | — |
@@ -2879,7 +3045,7 @@ risk".
 | C15.12 | Active. D: two attribute lines. | lower | 5 | — |
 | C15.13 | Active. E; one flagged addition. | lower | 8 | — |
 | C15.14 | Active. E: a README sentence; the `$id` stays. | distributed data (README) | 3 | — |
-| C15.15 | Active. E, per question 3. | lower (option 1) or distributed data (option 2) | 3 or 8 | 3 |
+| C15.15 | Active. E: `hebrew-prose`'s rule scoped; the claim data unchanged (option 1). | lower | 8 | 3 |
 | C15.16 | Active. E. | distributed data (README) | 3 | — |
 | C15.17 | Active. E: a step note. | lower | 3 | — |
 | C15.18 | Active. D. | lower | 4 | — |
@@ -2889,17 +3055,17 @@ risk".
 | C15.22 | Active. E. | lower | 4 | — |
 | C15.23 | Active. E: `AGENTS.md`. | lower | 8 | — |
 | C15.24 | Active. E: six commands. | lower | 8 | — |
-| C15.25 | Active. E, per question 11. | lower | 8 | 11 |
+| C15.25 | Active. E: "Five" kept, with a paragraph on the two routed trackers (option 1). | lower | 8 | 11 |
 | C15.26 | Active. E. | lower | 7 | — |
 | C15.27 | Active. E: a comment. | lower | 7 | — |
 | C15.28 | Active. D: the lint. | lower | 7 | — |
-| C15.29 | Active. E, per question 12, and a "Recorded by" line. | lower | 8 | 12 |
+| C15.29 | Active. E: two update files (option 1), and a "Recorded by" line. | lower | 8 | 12 |
 | C15.30 | Active. E: one credit. | reader-facing | 5 | — |
-| C15.31 | Active. E, per question 13. | lower | 3 | 13 |
+| C15.31 | Active. E: `trope#NN (private tracker)` (option 1). | lower | 3 | 13 |
 | C3 | Fixed after the review, by deployment; no action. The residue phonetic-hbo clone stays Ben's decision. | — | — | — |
 | C15.1 | Rejected; no action. | — | — | — |
 | R1–R7 | Active: the relay's retirement in the repository. | lower | 1 | — |
-| A0–A10 | Each its own authorization point; A0 to A3 are the retirement's, A4 to A10 optional. | outside the repository | 1, 9 | — |
+| A0–A10 | Authorized in advance on 2026-10-03; A6 not done. The executor does A2, A3 and A10 on `LAPTOP-DBLE8UKA`; the relay-machine session does the rest. | outside the repository | 9, 10 | — |
 
 The items of the update's "Not findings" paragraph (the six items noticed outside the diff, the
 seven declared open ends and the oleh-weyored at Psalms 44:4) get no action here.
@@ -2913,30 +3079,27 @@ Any other diff in a generated output is a finding and blocks integration until e
      `Yeivin-ITM/meteg-claims.json` (line 5 and the 11 corrected measurements) and eleven lines of
      three Yeivin pages (`yeivin_itm-318_344.html:539`, `:541`, `:542`, `:552`, `:553`, `:556`;
      `yeivin_itm-huge-ftnt-320.html:13`, `:70`, `:71`, `:84`; `yeivin_itm-huge-ftnt-322.html:36`);
-   - C6.1: two lines of `gh-pages/yeivin-itm/yeivin_itm-207_285.html` under question 2's option 1,
-     or the footnote's lines and ids under option 2;
-   - C15.15 under question 3's option 2 only: the 20 exclusion lines of `Yeivin-ITM/meteg-claims.json`;
+   - C6.1: two lines of `gh-pages/yeivin-itm/yeivin_itm-207_285.html`;
    - C13.2: `gh-pages/phonetic-mam/style.css` and `gh-pages/phonetic-mam/pronunciation.js`;
    - C15.8: one line each of `gh-pages/phonetic-mam/index.html` and `gh-pages/MAM-with-doc/index.html`;
-   - C11: `doc/process-documentation/pipeline.dot` and `pipeline.svg` (deleted under question 6's
-     option 3).
+   - C11: `doc/process-documentation/pipeline.dot` and `pipeline.svg`.
 2. **Authored or frozen files this plan adds or removes:** the two product `LICENSE.md` files (C4.3);
-   `in/phonetic_mam_legacy_projection_inputs.json` under question 7's Oracle A;
-   `in/yeivin_itm_published_anchors.json` under question 8's option C; `py/mb_misc/mam_attribution.py`
-   (C15.8); the new lints and tests the items name; the relay's ten files and
-   `py/phonetic_mam/legacy_projection.py`, removed; and, under question 12's option 1, two update files
-   under `holman/doc/`.
+   `in/phonetic_mam_legacy_projection_inputs.json` (C1.2, Oracle A);
+   `in/yeivin_itm_published_anchors.json` (C6.2, option C); `py/mb_misc/mam_attribution.py` (C15.8);
+   the new lints and tests the items name; the relay's ten files and
+   `py/phonetic_mam/legacy_projection.py`, removed; and two update files under `holman/doc/` (C15.29,
+   option 1).
 3. **Unchanged:** every other file under `gh-pages/`, including the other 14 Yeivin pages, every other
    Phonetic MAM page, every change log under `gh-pages/MAM-with-doc/change-log/` and every other
    MAM-with-doc page; `Phonetic-MAM/data/` and `Phonetic-MAM/examples/display.json` (C14 keeps the
    legacy bytes, and C5.2 discloses rather than changes); `MAM-parsed/`, `MAM-simple/`,
-   `MAM-for-Sefaria/` and `MAM-OSIS/`; `MAM-with-doc/` apart from `LICENSE.md` under question 4;
-   `out/accgram/post-stress-meteg.json` (C12.4); `in/mam-ws/`, `in/mam-ws-special/` and
-   `in/mam-ws-intro/`; `in/phonetic_mam_legacy_projection_sha256.json`, which is never regenerated;
-   `in/yeivin_itm_legacy_differential.json` apart from C15.16's description and, while a test still
-   reads it, C2's rewritten change records (in option B's v2 form under that option);
-   `hbce-psalms/out/`; and every finished base receipt, apart from the
-   line-4 pointers that C15.29's option 1 adds to the two Holman records.
+   `MAM-for-Sefaria/` and `MAM-OSIS/`; `MAM-with-doc/` apart from `LICENSE.md` (C4.4);
+   `out/accgram/post-stress-meteg.json` (C12.4); `Yeivin-ITM/meteg-claims.json` apart from C2's
+   changes (C15.15's option 1 leaves its exclusion strings alone); `in/mam-ws/`, `in/mam-ws-special/`
+   and `in/mam-ws-intro/`; `in/phonetic_mam_legacy_projection_sha256.json`, which is never
+   regenerated; `in/yeivin_itm_legacy_differential.json` apart from C15.16's description and, while a
+   test still reads it, C2's rewritten change records; `hbce-psalms/out/`; and every finished base
+   receipt, apart from the line-4 pointers that C15.29 adds to the two Holman records.
 4. **Not touched:** MAM-private and hbofonts, which only the suite's and the mega's documented steps
    read, and C15.20's export check through the same adapter; and the live deployed instructions,
    skills and agent file, until acts A2 and A3.
@@ -2945,25 +3108,25 @@ Any other diff in a generated output is a finding and blocks integration until e
 
 ### Waves
 
-The waves order the work by dependency; they do not permit implementing only part of the plan. An
-item whose question Ben has not answered waits, and the waves around it go on. Within a wave the
-executor may choose smaller coherent commits and read-only sub-agents, keeping one writer.
+The waves order the work by dependency; they do not permit implementing only part of the plan. Ben
+has answered every question, so no item waits on him. Within a wave the executor may choose smaller
+coherent commits and read-only sub-agents, keeping one writer.
 
 1. **Wave 0, the start.** The checks and the branch under "Standalone executor contract". The first
-   commit sets this plan's line 3 to "State: live; approved for execution <date>; remediation in
-   progress." unless the approval record already did.
-2. **Wave 1, the relay's retirement (R1 to R7).** One commit holds R1 to R4, R6 and R7, because the D13
-   note and the October 1 update's entry cite that commit's parent as `<ARCHIVE-SHA>`; R5's lint goes in
-   the same commit or the next. If the executor is on the relay machine, A1 comes first. This wave
-   also removes C9.2's F841.
-3. **Wave 2, the Yeivin migration gate.** Question 8 (C6.2), since C6.1, C9.2's content-module
-   fixes, C15.31 and C4.5's option 2 cannot pass today's Yeivin tests.
+   commit sets this plan's line 3 to "State: live; Ben's choices and advance authorization recorded
+   2026-10-03; execution started <date>".
+2. **Wave 1, the relay's retirement in the repository (R1 to R7).** One commit holds R1 to R4, R6 and
+   R7, because the D13 note and the October 1 update's entry cite that commit's parent as
+   `<ARCHIVE-SHA>`; R5's lint goes in the same commit or the next. This wave also removes C9.2's
+   F841. An executor working on the relay machine itself would do A1 first.
+3. **Wave 2, the Yeivin migration gate.** C6.2's option C (question 8), since C6.1, C9.2's
+   content-module fixes and C15.31 cannot pass today's Yeivin tests.
 4. **Wave 3, the survey, the gates and the Yeivin product.** C2 and C12.2 first (question 1), under
-   today's claims gate, as C2's "Order" gives them; then C1.1 and C1.2 (question 7), whose new
-   records are set from the corrected survey and the unchanged MAM-parsed input, with C1.3's removal
-   of `py/phonetic_mam/legacy_projection.py` and its dated record; then C6.1 (question 2); C15.31
-   (question 13); C9.2's three content-module fixes; C4.5 under option 2 only; C15.15 under option 2
-   only; C15.14; C15.16; and C15.17 in one commit with C10.1's item 8.
+   today's claims gate, as C2's "Order" gives them; then C1.1 and C1.2 (question 7: Gate B and Oracle
+   A), whose new records are set from the corrected survey and the unchanged MAM-parsed input, with
+   C1.3's removal of `py/phonetic_mam/legacy_projection.py` and its dated record; then C6.1 (question
+   2); C15.31 (question 13); C9.2's three content-module fixes; C15.14; C15.16; and C15.17 in one
+   commit with C10.1's item 8.
 5. **Wave 4, Phonetic MAM.** C13.2 and C15.8 with their regenerated pages; C5.1, C5.2 and C15.7 in
    `Phonetic-MAM/README.md`, with C5.1's guard and the finding-22 pointer; C13.1 and C15.18 in one
    commit (C15.18 removes C9.2's eleven E402); C15.19; C15.20, with its export check at once; C12.3;
@@ -2977,9 +3140,13 @@ executor may choose smaller coherent commits and read-only sub-agents, keeping o
    designs.
 8. **Wave 7, repository tooling.** C9.1 and C9.5 with their handler and lint; C9.3; C9.4; C15.3; C15.4;
    C15.5; C15.26; C15.27; C15.28.
-9. **Wave 8, stale descriptions and records.** C10.1 to C10.4 (C10.1's item 8 went in wave 3), C15.2,
-   C15.13, C15.23, C15.24, C15.25 (question 11) and C15.29 (question 12).
-10. **Wave 9, the full suite, final integration, the closing records and the acts after the push.**
+9. **Wave 8, stale descriptions, instructions and records.** C10.1 to C10.4 (C10.1's item 8 went in
+   wave 3), C15.2, C15.13 with its approved addition, C15.15 (question 3), C15.23, C15.24, C15.25
+   (question 11) and C15.29 (question 12); then the first entry of "Records", item 1.
+10. **Wave 9, on `LAPTOP-DBLE8UKA`: the full suite and final integration,** with A3, A2 and A10 there
+    and the closing records.
+11. **Wave 10, on the relay machine: "The relay-machine session",** which Ben starts after wave 9's
+    push of `main`.
 
 ### Checks for every commit
 
@@ -3008,41 +3175,53 @@ unchanged unless an entry above says otherwise.
 
 ### Final integration
 
-1. **A1 is done**, or Ben has said in writing that the push may precede it.
-2. In the checkout, fetch `origin` and merge current `origin/main` into the branch. Resolve any
+1. In the checkout, fetch `origin` and merge current `origin/main` into the branch. Resolve any
    conflict there, and repeat the checks whose inputs the merge changed.
-3. Run the mega from the checkout's root with no `REPOS_ROOT`:
+2. Run the mega from the checkout's root with no `REPOS_ROOT`:
    `./.venv/Scripts/python.exe py/main_0_mega.py`. A failing step or an unexplained tracked diff is a
    failure. Since every wave committed its own regenerated outputs, the expected diff is empty; read
    and explain any line it shows, commit each explained change, and push the branch.
-4. Fetch with `git -C <checkout> fetch origin` and verify that `origin/remediate-review-2026-10-02` is
+3. Fetch with `git -C <checkout> fetch origin` and verify that `origin/remediate-review-2026-10-02` is
    exactly the mega-verified commit. Switch with `git -C <checkout> switch main`, fast-forward with
    `git -C <checkout> merge --ff-only origin/remediate-review-2026-10-02`, and push with
    `git -C <checkout> push origin main`. This push reaches the published Pages tree at the next
-   04:17 deployment and the distributed products at once; it is an outward-facing act that Ben's
-   approval of this plan covers. If the fast-forward or the push is refused because `origin/main`
-   moved, switch back to the branch, merge the new `origin/main`, repeat the owed checks and the
-   mega if a generator input moved, push the branch, and retry. Never merge in `main` and never force.
-5. Act A3 on this machine, then A2 on this machine, each when Ben authorizes it.
-6. Commit the closing records ("Records" below) on the branch, push it, fast-forward `main` and push
-   it again as in step 4. These records change no source, product or canonical configuration, so
-   the suite, mega and deployment evidence stands.
-7. Leave the clone on `main`. The branch on `origin` stays until A10.
+   04:17 deployment and the distributed products at once; it is outward-facing, and it is the
+   integration that Ben accepted with this plan on 2026-10-03. It need not wait for A1 ("Acts
+   outside the repository"). If the fast-forward or the push is refused because `origin/main` moved,
+   switch back to the branch, merge the new `origin/main`, repeat the owed checks and the mega if a
+   generator input moved, push the branch, and retry. Never merge in `main` here and never force.
+4. **A3, then A2, on this machine,** as "Acts outside the repository" gives them. A3 deploys from the
+   `origin/main` just pushed, and its `--check` must report `USER_CONFIG_PROBLEM_COUNT=0`.
+5. **A10,** once `origin/main` contains the branch's tip. The clone stays on `main`.
+6. **The closing records** ("Records" below), committed directly on `main`: they change no source,
+   product or canonical configuration, so the suite, mega and deployment evidence stands. Run the
+   checks for Markdown, fetch, and if `origin/main` moved merge it into `main` under the ordinary
+   full-clone rule (step 3's rule protects only the mega-verified integration); then push `main`.
+7. Leave the clone on clean `main`. The final report gives the outcome of every wave and act, and ends
+   with the prompt under "The relay-machine session" for Ben to start on the relay machine.
 
 ### Records
 
 1. In `doc/review-findings-2026-10-02-update.md`, dated entries on the model of the September 29
-   round's: "Remediation implemented; final gates pending, <date>", recording the checkout's path and
-   the `HEAD` at which editing began, Ben's answers to the thirteen questions, and a disposition for
-   every row of the ledger above, mapped onto `implemented`, `superseded`, `deferred` or
-   `unresolved`; then "Final integration completed, <date>", with the suite counts, the mega result,
-   the commits, the deployment check and each act's outcome, and the effective base State. The Claude
-   report's own line 3 stays as written.
-2. In `doc/dual-agent-review.md`, item 5 of "The MAM-basics trial review, kicked off 2026-10-02" gains
-   the sentence: "Ben approved the remediation plan, `doc/PLAN-remediate-review-findings-2026-10-02.md`,
-   on <date>, and its remediation reached `main` on <date>; the update file records the
+   round's: "Remediation implemented; final gates pending, <date>", committed on the branch after
+   wave 8, recording the checkout's path and the `HEAD` at which editing began, the option
+   implemented under each of Ben's thirteen answers, and a disposition for every row of the ledger
+   above, mapped onto `implemented`, `superseded`, `deferred` or `unresolved`; then "Final
+   integration completed, <date>", committed at step 6 of "Final integration", with the suite
+   counts, the mega result, the commits, the deployment check, the outcomes of A2, A3 and A10 on
+   `LAPTOP-DBLE8UKA`, and the relay machine's acts still to come. The Claude report's own line 3
+   stays as written. In the same commit, `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`
+   gains a dated entry "Relay retirement acts on LAPTOP-DBLE8UKA, <date>", with the outcomes of A3
+   and A2 there.
+2. In `doc/dual-agent-review.md`, item 5 of "The MAM-basics trial review, kicked off 2026-10-02" gains,
+   in the closing records' commit, the sentence: "On 2026-10-03 Ben accepted the recommendations of
+   the remediation plan, `doc/PLAN-remediate-review-findings-2026-10-02.md`, and authorized its acts
+   in advance; its remediation reached `main` on <date>, and the update file records the
    dispositions."
-3. In the commit of the closing record, this plan's line 3 becomes "State: executed <date>."; it is
-   then a receipt, corrected later only through a single update file.
+3. In the closing records' commit, this plan's line 3 becomes "State: live; remediation integrated on
+   main <date>; the relay machine's acts remain, under "The relay-machine session"". That session's
+   records commit makes it "State: executed <date>", naming any act left blocked or to Ben; the plan
+   is then a receipt, corrected later only through a single update file.
 4. The dated entries that individual items write into other update files (R7's October 1 entry,
-   C5.2's finding-22 pointer, C15.2's and C15.29's) belong to their items' commits.
+   C5.2's finding-22 pointer, C15.2's and C15.29's) belong to their items' commits, and the
+   relay-machine session's entries to its records commit.
