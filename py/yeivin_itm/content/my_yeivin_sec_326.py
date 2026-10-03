@@ -32,7 +32,7 @@ _TABLE_1 = hlp.table_std(
 _TABLE_2 = hlp.table_std_rtl(
     [
         ["i", *hlp.lns("@Gen 22:14", "יֵֽאָמֵ֣ר", hlp.sy4ps("יֵֽ-אָ-מֵ֣ר"))],
-        # MAM lacks ITM's gaʿya; see https://github.com/bdenckla/trope/issues/377
+        # MAM lacks ITM's gaʿya; see trope#377 (private tracker)
         [
             sub.saa(),
             *hlp.lns("@Gen 22:17", "כִּֽי־בָרֵ֣ךְ", hlp.sy4ps("כִּֽי־-בָ-רֵ֣ךְ")),
@@ -45,16 +45,16 @@ _TABLE_2 = hlp.table_std_rtl(
             ),
         ],
         ["ii", *hlp.lns("@Gen 21:30", "בַּֽעֲבוּר֙", hlp.sy4ps("בַּֽ--עֲבוּר֙"))],
-        # MAM lacks ITM's gaʿya; see https://github.com/bdenckla/trope/issues/377
+        # MAM lacks ITM's gaʿya; see trope#377 (private tracker)
         [sub.saa(), *hlp.lns("@Ez 37:14", "כִּֽי־אֲנִ֧י", hlp.sy4ps("כִּֽי־--אֲנִ֧י"))],
         ["iii", *hlp.lns("@Gen 22:12", "יָֽדְךָ֙", hlp.sy4ps("יָֽדְ--ךָ֙"))],
         [sub.saa(), *hlp.lns("@Gen 22:5", "נֵֽלְכָ֖ה", hlp.sy4ps("נֵֽלְ--כָ֖ה"))],
-        # MAM lacks ITM's gaʿya; see https://github.com/bdenckla/trope/issues/377
+        # MAM lacks ITM's gaʿya; see trope#377 (private tracker)
         [
             sub.saa(),
             *hlp.lns("@Gen 47:4", "וַיֹּֽאמְר֣וּ", hlp.sy4("וַ-יֹּֽאמְ--ר֣וּ")),
         ],
-        # MAM lacks ITM's gaʿya; see https://github.com/bdenckla/trope/issues/377
+        # MAM lacks ITM's gaʿya; see trope#377 (private tracker)
         [
             sub.saa(),
             *hlp.lns("@Gen 22:12", "כִּֽי־יְרֵ֤א", hlp.sy4ps("כִּֽי־יְ--רֵ֤א")),

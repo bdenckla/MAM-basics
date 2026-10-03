@@ -18,21 +18,21 @@ _TABLE_1 = hlp.table_std_rtl(
                 _DLOC_TWO_IN_EX_27, "הָֽעַמֻּדִ֛ים", hlp.sy6pspe("הָֽ-עַ_-מֻּ-דִ֛ים")
             ),
         ],
-        # MAM lacks gaʿya on ה in 27:10 but not 11; see https://github.com/bdenckla/trope/issues/378
+        # MAM lacks gaʿya on ה in 27:10 but not 11; see trope#378 (private tracker)
         [
             sub.saa(),
             *hlp.lns(
                 "@1S 26:19", "מֵֽהִסְתַּפֵּ֜חַ", hlp.sy6ps("מֵֽ-הִסְ-תַּ-פֵּ֜-חַ")
             ),
         ],
-        # MAM lacks gaʿya on מ; see https://github.com/bdenckla/trope/issues/379
+        # MAM lacks gaʿya on מ; see trope#379 (private tracker)
         [
             sub.saa(),
             *hlp.lns(
                 "@Ez 42:5", "מֵֽהַתַּחְתֹּנ֛וֹת", hlp.sy6pe("מֵֽ-הַ-תַּחְ-תֹּ-נ֛וֹת")
             ),
         ],
-        # MAM lacks gaʿya on מ; see https://github.com/bdenckla/trope/issues/380
+        # MAM lacks gaʿya on מ; see trope#380 (private tracker)
         [
             sub.saa(),
             *hlp.lns(
@@ -46,7 +46,7 @@ _TABLE_1 = hlp.table_std_rtl(
                 "@Gen 23:19", "וְאַֽחֲרֵי־כֵן֩", hlp.sy6pspe("וְאַֽ--חֲרֵי־-כֵן֩")
             ),
         ],
-        # MAM lacks gaʿya on א; see https://github.com/bdenckla/trope/issues/381
+        # MAM lacks gaʿya on א; see trope#381 (private tracker)
         [
             sub.saa(),
             *hlp.lns("@Gen 23:11", "לֹֽא־אֲדֹנִ֣י", hlp.sy6pspe("לֹֽא־--אֲדֹ-נִ֣י")),
@@ -67,7 +67,7 @@ _TABLE_1 = hlp.table_std_rtl(
             sub.saa(),
             *hlp.lns("@Gen 21:3", "יָֽלְדָה־לּ֥וֹ", hlp.sy6pspe("יָֽלְ--דָה־-לּ֥וֹ")),
         ],
-        # MAM lacks gaʿya on yod; see https://github.com/bdenckla/trope/issues/382
+        # MAM lacks gaʿya on yod; see trope#382 (private tracker)
         # XXX turn the comment below into a footnote?
         # I removed the אֲשֶׁר־ prefix to save space
     ]

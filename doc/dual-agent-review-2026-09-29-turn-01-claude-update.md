@@ -1778,3 +1778,20 @@ disposition remain evidence of their dates. The next dependent refresh checks
 The public release supplies the survey's Phonetic MAM input. Finding 22 remains
 deferred; this closeout neither refreshes Wikisource data nor resolves the
 variant's behavior or replaces the historical `variant_rows` measurement.
+
+## Deferred refresh finding 22: evidence from the 2026-10-02 review, 2026-10-03
+
+Recorded on 2026-10-03 by Claude Opus 5.5 at `max` in the Claude desktop app, in the executor
+session of the remediation plan on `LAPTOP-DBLE8UKA`, executing item C5.2 of
+`doc/PLAN-remediate-review-findings-2026-10-02.md`. Finding 22 remains deferred; this entry adds a
+pointer and resolves nothing.
+
+The 2026-10-02 review checked the public release that the entry above names
+(`doc/review-findings-2026-10-02.md`, finding 5.2). `Phonetic-MAM/data/BD-2Kings.json` lacks MAM's
+qamats alternative at 2 Kings 22:1, and 2 Kings 22:1 is the only one of the 357 verses with
+a `מ:קמץ` template whose display has no qamats-labelled forms; the owner's verification re-derived
+both (`doc/review-findings-2026-10-02-update.md`, C5.2). The review also reported that its mega
+re-exported the release from the current MAM-parsed without a byte of difference, so a refresh alone
+would not bring the variant in; that report rests on the private adapter, and the owner did not
+re-derive it. `Phonetic-MAM/README.md`, "How the Hebrew differs from MAM's text", now discloses the
+difference.

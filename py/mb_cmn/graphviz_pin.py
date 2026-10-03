@@ -55,13 +55,15 @@ it raises, exactly as before.
 A skipped run is CLOUD-COMPLETE, which means no step failed and every step either
 ran or was skipped for the cloud, while some SVGs went unrendered. It is
 deliberately not called incomplete -- Ben's wording, 2026-09-09. Since 2026-09-10
-the mega also skips a whole step in a cloud session, the post-stress-meteg
-survey, and ``py/main_0_mega.py``'s ``_report_cloud_skips`` reports both kinds of
-skip. It skipped the near-Aleppo census too, until that step was deleted on
-2026-09-11. The one hazard an SVG skip
-leaves is that the ``.dot`` beside a skipped ``.svg`` IS rewritten, so the
-tracked pair can drift apart; the mega's end-of-run banner says so, and says not
-to commit a changed ``.dot`` without its ``.svg``.
+the mega also skips a whole step in a cloud session, and ``py/main_0_mega.py``'s
+``_report_cloud_skips`` reports both kinds of skip. The skipped step was the
+post-stress-meteg survey until 2026-10-01, when ``9a67d51b`` moved the survey
+onto the tracked ``Phonetic-MAM/`` release; since then it is
+``phonetic-mam-export``, the one step that reads private source inputs. The mega
+skipped the near-Aleppo census too, until that step was deleted on 2026-09-11.
+The one hazard an SVG skip leaves is that the ``.dot`` beside a skipped ``.svg``
+IS rewritten, so the tracked pair can drift apart; the mega's end-of-run banner
+says so, and says not to commit a changed ``.dot`` without its ``.svg``.
 
 HELVETICA, WHICH GRAPHVIZ DRAWS WITH ARIAL, IS THE ONE FONT THE GENERATED GRAPHS
 NAME, so rendering them needs the pinned Graphviz and no font installed beyond

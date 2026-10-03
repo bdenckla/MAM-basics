@@ -58,9 +58,9 @@ usual scope, effort, evidence, one-writer and remediation safeguards.
 The purpose is to reduce time spent on review process and concentrate on substantive defects
 affecting the code, data and products. Record minor wording or plan inconsistencies briefly;
 do not grow them into separate process-remediation projects without a consequential reason.
-This is a next-review trial, not a commitment to two reviewers for every later window. It
-requires no new relay implementation or private automated rollout, and leaves the existing relay
-code and historical evidence in place. Do not expand relay features merely to prepare this trial.
+This is a next-review trial, not a commitment to two reviewers for every later window, and it
+uses no relay software: by Ben's decision of 2026-10-03 the automated relay is retired, as D13
+below records.
 
 ### Running a trial review
 
@@ -234,10 +234,9 @@ every periodic review window to use two agents or establish a blind parallel-tra
 The turn's root reviewer and any sub-agent may delegate bounded, independently checkable work to
 another sub-agent, either in parallel or as a sequential handoff. The root reviewer remains
 responsible for the turn: the root reviewer sets the scope, reconciles the reports, verifies the
-claims it adopts, and owns the tracked file. In a manual round the root reviewer also owns the
-commit; D13 assigns automated staging, commits and pushes to the dispatcher. Only one agent
-writes, stages, commits or pushes the round's branch at a time; other sub-agents report without
-editing unless writing responsibility is explicitly handed to one sub-agent. The one-writer rule applies even when the
+claims it adopts, and owns the tracked file and commit. Only one agent writes, stages, commits or
+pushes the round's branch at a time; other sub-agents report without editing unless writing
+responsibility is explicitly handed to one sub-agent. The one-writer rule applies even when the
 agents use separate checkouts. Use delegation when it can save time, protect the root reviewer's
 context or improve confidence, not merely to create another task.
 
@@ -248,8 +247,7 @@ review runs at", records).
 Before the round starts, assign the two roles. **Agent 1 reviews first and owns every odd-numbered
 turn; Agent 2 reviews second and owns every even-numbered turn. Either Claude or Codex may be Agent
 1, and the other is Agent 2.** The role names describe sequence, not which agent fills the role.
-Manual rounds have no maximum number of turns; the stopping rule below ends the exchange.
-D13 additionally caps automated rounds.
+There is no maximum number of turns; the stopping rule below ends the exchange.
 
 The round takes turns in this order:
 
@@ -270,15 +268,13 @@ The round takes turns in this order:
 
 Each turn is a tracked file named
 `doc/dual-agent-review-<date>-turn-<NN>-<claude|codex>.md`: the two-digit number records sequence and
-the final component records the agent that actually wrote the turn. In a manual round, Ben supplies
-the next task with that file's path and pushed commit; the next task reads the committed file
-from the round's
+the final component records the agent that actually wrote the turn. Ben supplies the next task with
+that file's path and pushed commit; the next task reads the committed file from the round's
 `origin/dar-<date>` branch instead of depending on pasted chat or remembered conclusions. Verify
 the exact checkout, local branch or detached state, required commit, fetched remote-branch tip and
 clean working tree before reading. A known newer starting commit must contain the required commit
 as an ancestor; unexplained remote movement is a collision and stops the task. The naming section
-distinguishes this standard round from single-agent and blind-review filenames. D13 assigns
-automated launches and the verified handoff to the dispatcher.
+distinguishes this standard round from single-agent and blind-review filenames.
 
 **The stopping rule:** a turn that accepts everything and lists no unresolved disagreement ends
 the round. The other agent's next task reads that turn and records an acknowledgment or an
@@ -331,29 +327,26 @@ publishes it as `origin/dar-<date>`. A setup-only session may do that without pe
 turn; otherwise Agent 1 does it before turn 01. The remote branch, not a directory or local branch
 name, is the round's shared coordination state.
 
-**By default, each turn and close-out task runs in whatever verified checkout its session is
-already in for a manual round** (Ben's decision, 2026-09-29, whose words
-`doc/periodic-review.md`, "The checkout a review uses", records): a full clone in any forest —
-`$HOME/GitRepos`, `$HOME/GitRepos2`, `$HOME/GitRepos3` and so on — or a linked worktree of one of
-those clones, and perhaps some day a
-cloud session's checkout. A manual round may still use a linked worktree made for it, but its
-procedure requires none. D13 requires two dedicated worktrees for automated turns. A local branch
-is only that checkout's carrier for `origin/dar-<date>`. It may use the remote branch's name when
-available or a checkout-specific name when, for example, another worktree registered to the same
-clone already has `dar-<date>` checked out. In a full
-clone the carrier is temporary, under the common instruction body's “Git and commits” exception
-for a named shared branch: the clone switches back to `main` when the task ends, since
-`doc/clone-forests.md`'s synchronization check fails a full clone on any other branch. When the
-Claude desktop app creates a session whose recorded source branch is the carrier, it checks that
-branch out in the session's working directory, as two checkouts in `$HOME/GitRepos2/MAM-basics` on
-2026-09-30 indicate. A full clone that a task has returned to `main` can therefore be on the
-carrier again when a later session starts. Each task verifies the branch before acting, and only
-the task that owns the current turn switches the clone back to `main` (Ben's decision, 2026-10-01,
-whose words `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`, "Ben's approval of D11's
-sentences on the app's checkouts, 2026-10-01", records). Do not create
-a second remote review branch to match a local carrier branch. A linked worktree uses the
-worktree's home clone's venv by absolute path; development commands, edits, staging and commits
-run in the checkout that owns the current turn.
+**By default, each turn and close-out task runs in whatever verified checkout its session is already
+in** (Ben's decision, 2026-09-29, whose words `doc/periodic-review.md`, "The checkout a review
+uses", records): a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`, `$HOME/GitRepos3`
+and so on — or a linked worktree of one of those clones, and perhaps some day a cloud session's
+checkout. A round may still use a linked worktree made for it, but no step of this procedure
+requires one. A local branch is only that checkout's carrier for `origin/dar-<date>`. It may use the
+remote branch's name when available or a checkout-specific name when, for example, another worktree
+registered to the same clone already has `dar-<date>` checked out. In a full clone the carrier is
+temporary, under the common instruction body's “Git and commits” exception for a named shared
+branch: the clone switches back to `main` when the task ends, since `doc/clone-forests.md`'s
+synchronization check fails a full clone on any other branch. When the Claude desktop app creates a
+session whose recorded source branch is the carrier, it checks that branch out in the session's
+working directory, as two checkouts in `$HOME/GitRepos2/MAM-basics` on 2026-09-30 indicate. A full
+clone that a task has returned to `main` can therefore be on the carrier again when a later session
+starts. Each task verifies the branch before acting, and only the task that owns the current turn
+switches the clone back to `main` (Ben's decision, 2026-10-01, whose words
+`doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`, "Ben's approval of D11's sentences on
+the app's checkouts, 2026-10-01", records). Do not create a second remote review branch to match a
+local carrier branch. A linked worktree uses the worktree's home clone's venv by absolute path;
+development commands, edits, staging and commits run in the checkout that owns the current turn.
 
 **`dar` abbreviates `dual-agent-review` in the remote branch name and, when used, a
 worktree-folder name, and nowhere else.** Ben's instruction, 2026-09-20, while setting up window 2
@@ -366,15 +359,13 @@ characters, against 68 for the same path spelled `dar-2026-09-17`, and its opera
 recommendation is to go on budgeting for short paths on this machine. Every round created before
 2026-09-20 keeps its existing branch and worktree names, as the September 8 round does below.
 
-Turns are sequential even when their checkouts are separate. For a manual turn, fetch
+Turns are sequential even when their checkouts are separate. At the start of a turn, fetch
 `origin`, verify the promised handoff commit against `origin/dar-<date>`, and create the local
 carrier at that remote tip or fast-forward the clean carrier to it before editing. At the end of
 the turn, commit the complete turn, then push the exact commit with the explicit destination
 `origin HEAD:dar-<date>` and report the pushed commit. That successful push is the handoff. A
 non-fast-forward rejection, local divergence, or unexplained remote movement stops the task;
 never force-push. Only the task that owns the current turn may update the remote branch.
-For an automated turn, D13 assigns these Git operations to the dispatcher; the worker writes
-review prose and does not fetch, stage, commit or push. Manual close-out follows the rules below.
 
 Everything a later turn requires must be on the remote branch or be an explicitly identified
 external input. `.novc` files, ignored caches, local hooks, worktree locks, agent transcripts and
@@ -423,88 +414,38 @@ of both agents and the close-out used it. Ben's judgment on 2026-09-09 was that 
 worktree had been a good idea, but its path and branch read as Codex's. The approved naming makes
 the shared purpose explicit. The September 8 worktree and branch keep their existing names.
 
-### Automated relay and the `Next:` line — Ben's decisions, 2026-09-30 and 2026-10-01 (D13)
+### D13, the automated relay — Ben's decisions, 2026-09-30 and 2026-10-01; retired by his decision of 2026-10-03
 
-**Automated relay and the `Next:` line.** Ben may start an automated round through
-`py/main_repo_util.py --dual-agent-review start`. Setup creates a new `dar-<date>`
-remote branch from the named full clone's clean `main` HEAD, which must contain the
-review window's end commit. The start and end commits define the reviewed diff;
-the branch baseline carries current instructions. Setup refuses an existing remote
-branch, carrier, or worktree. Existing manual rounds are never adopted.
+**The automated relay is retired.** Ben's selection on 2026-10-03, verbatim, was "Retire the
+relay now" (`doc/review-findings-2026-10-02-update.md`, "Ben's close-out decisions,
+2026-10-03", item 3). D13, approved on 2026-09-30 and qualified on 2026-10-01, let Ben start a
+round with `py/main_repo_util.py --dual-agent-review start`. A Windows scheduled task then ran
+a dispatcher every three minutes; the dispatcher launched each turn's worker in one of two
+dedicated worktrees, read the `Next:` line that every automated turn carried, and alone
+staged, committed and pushed each turn to `origin/dar-<date>`. The October 1 round below was
+its only round. No round is started that way now: a dual-agent round follows D9 and D11, and
+Ben starts each turn's session himself.
 
-Setup first commits `doc/dual-agent-review-<date>-round.md`. This present-state
-document records protocol version 1, Agent 1, endpoint commits, Ben's kickoff
-instruction verbatim, pinned models and efforts, caps, and two dedicated checkouts.
-The workers are Claude Opus 5.5 at `max` and the Sol model selected in Codex's
-configuration at kickoff, pinned at `xhigh`. Agent 1 owns odd turns; Agent 2 owns
-even turns. Each worker starts with fresh context and uses read-only sub-agents
-to check its findings.
+The relay's code, tests, configuration, scripts, agent file, runbook and plan were removed on
+2026-10-03. `cbd405b11ef990040031ccf19699db54a69a489d` is the last commit whose tree holds them; there are
+[D13's full text](https://github.com/bdenckla/MAM-basics/blob/cbd405b11ef990040031ccf19699db54a69a489d/doc/dual-agent-review.md),
+in the section "Automated relay and the `Next:` line",
+[the runbook](https://github.com/bdenckla/MAM-basics/blob/cbd405b11ef990040031ccf19699db54a69a489d/doc/dual-agent-review-automation.md)
+and [the plan](https://github.com/bdenckla/MAM-basics/blob/cbd405b11ef990040031ccf19699db54a69a489d/doc/PLAN-automate-the-dual-agent-review-relay.md).
+The October 1 round's records stay in `doc/`, and
+`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records the retirement.
 
-Every automated turn has exactly one `Next:` line after its line-3 `State:` and
-before its first `##` heading. Five forms are valid:
+### The October 1 round
 
-1. `Next: turn <NN>, <claude|codex>` names the next number and other agent.
-2. `Next: turn <NN>, <claude|codex>; acknowledgment` accepts everything and
-   requests the owed acknowledgment.
-3. `Next: none; round closed` closes only an owed acknowledgment with no objection.
-4. `Next: Ben; <reason>` stops for a decision or an incomplete turn.
-5. `Next: turn <NN>, <claude|codex>; objection` is allowed only in an owed
-   acknowledgment and identifies the disputed claim and necessary evidence.
-
-An acknowledgment request is permitted only from turn 02 onward, after a predecessor's
-claims have been assessed under D9. Turn 01 names turn 02 for the counter-argument or stops
-for Ben; turn 02 always supplies its reconciliation append. The earliest owed acknowledgment
-is turn 03. A counter-argument to turn 01 does not consume a reopening.
-
-D10's State rules remain: turn 01 records `State: not yet acted on`; later turns
-record `State: completed <date>; review only`. Default caps permit 10 turns and
-1 reopening: the first reopening is allowed; a second stops dispatch. The dispatcher
-stops before turn 11. Ben may raise caps or record
-`Override: next turn <NN>, <agent>` in the round header after a pause. A persistent
-override is consumed once its named turn exists.
-
-Workers write only their new turn and, for turn 02, the reconciliation append to
-turn 01. The dispatcher verifies unchanged HEAD, carrier, and live remote tip;
-the exact permitted path set; turn 01's preserved prefix; and a valid header
-transition. Only the dispatcher stages, commits, and pushes
-`origin HEAD:dar-<date>`. The verified push supplies the next worker's required
-commit. Refusals, remote movement, timeouts, authentication or usage failures pause
-the round and preserve its checkout for inspection.
-
-Both workers may run relevant public-only scripts and targeted checks with the named home
-clone's interpreter from their own checkout. Before running a check, verify that its inputs
-stay within the round's evidence scope and that it preserves tracked inputs and products.
-Checks write only ignored scratch; workers do not run generators that rewrite tracked output.
-Scratch probes stay in that checkout's ignored directory. A denied or unavailable required
-check is reported as unchecked. Full-suite checks
-that require private inputs belong to manual remediation, outside a public review turn.
-
-On acknowledgment closure, the dispatcher marks that round inactive before later ticks can
-fetch or launch it. Manual close-out begins only after a round-specific pause and verification
-that no worker is live. A deactivate action records manual ownership for an already-closed
-round without deleting its registry entry, checkout or evidence. The round file stays live
-while close-out work remains. After approved remediation is verified and main integration
-has actually succeeded, it records `State: executed <date>; close-out completed`. The parser
-and tracked-round lint accept that terminal State, and terminal rounds are never dispatchable.
-
-Only new rounds in the dispatcher's explicit local registry are eligible. The
-dispatcher never updates a home clone's `main`, remediates, retires worktrees, or
-deletes branches. Manual rounds retain Ben's relay; automated guards replace that
-relay only for an explicitly started round. Close-out and integration remain manual.
-
-The optional facts-only rule from turn 03 is recorded per round. It currently
-defaults to the existing review scope, pending Ben's separate choice.
-
-### The first automated round, 2026-10-01
-
-**Closed and remediated on main.** The first automated public exchange closed after five
-turns. Ben approved C1–C6 and the surviving remediation scope; the final merged tree passed
-1,056 tests and 60 subtests, with 5 skips, and the required 57-step mega produced no tracked
-diff. Main integration and canonical deployment succeeded. The actual home registration is
-retained inactive/manual, and the maintained round records executed close-out. The enabled
-scheduler skips that registration; PAUSE and evidence remain. The sole
-`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records dispositions and outcomes.
-The numbered turns and finished comparison are unchanged; private rollout remains separate.
+The October 1 round, the only round run under D13, reviewed the relay's own implementation
+window, MAM-basics `303bf239..1bfceff4`, with Claude as Agent 1, and closed after five turns.
+Ben approved C1–C6 and the surviving remediation scope, and the remediation reached `main` on
+2026-10-01: the final merged tree passed 1,056 tests and 60 subtests, with 5 skips, and the
+required 57-step mega produced no tracked diff.
+`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records the dispositions, the
+outcomes and the relay's retirement. The round file `doc/dual-agent-review-2026-10-01-round.md`,
+the five numbered turns and the finished comparison `doc/dual-agent-review-comparison-2026-10-01.md`
+are unchanged.
 
 ### The September 10 round
 
@@ -770,11 +711,8 @@ For future reviews, the filenames and states follow these rules:
    `doc/review-findings-*.md` glob in the standard's history names only the unprefixed series.
    Preserve historical filenames and `State:` lines, including September 4's Codex "acted on",
    September 8's turns under a Codex-prefixed stem, and September 14's mixed old and numbered
-   naming.
-5. **Automated rounds additionally follow D13:** setup records
-   `doc/dual-agent-review-<date>-round.md`, and each turn has the `Next:` header
-   defined in "Automated relay and the `Next:` line" above. Manual rounds keep
-   their existing relay and State conventions.
+   naming, and the October 1 round's `doc/dual-agent-review-2026-10-01-round.md` and the `Next:`
+   lines of its turns, which follow the retired D13.
 
 For the single-agent and blind conventions, the asymmetry reads correctly: the unprefixed name is
 the incumbent, and the prefixed name announces its difference. Repository instructions say that an
@@ -880,9 +818,9 @@ fetches and installs only from fresh `origin/main`. Verify afterward with
 
 1. **Whether every periodic window should have a blind parallel review.** Design B's calibration
    addresses that cadence; D9 already settles the standard dual-agent procedure.
-2. **Manual Codex launches.** D13, approved 2026-09-30, defines the automated relay;
-   `doc/dual-agent-review-automation.md` records the implemented launcher, verified probes
-   and remaining live prerequisites. Invocation outside automated rounds remains unspecified here.
+2. **How to run Codex on this machine.** No command line is given here. Codex demonstrably runs
+   here — see the provenance section — but this document has not examined how it is invoked, and
+   guessing a spelling would be worse than the omission.
 
 ## Provenance and caveat
 
@@ -926,6 +864,3 @@ document warns against** — neither agent ever answered the other directly. Ben
 2026-09-04: that fresh-session safeguard belongs to Design B, where bucket 4 compares independent
 reviews. Under Design A, the Codex review is the comparison, so the Codex reviewer writes the short
 reconciliation while the comparison context is still present.
-
-The provenance above describes manual rounds. D13, approved 2026-09-30, replaces
-Ben's relay with dispatcher guards only for explicitly started automated rounds.

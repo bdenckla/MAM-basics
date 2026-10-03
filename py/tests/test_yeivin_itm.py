@@ -1,8 +1,10 @@
 """Differential publication checks and claim/source-shape lints for Yeivin ITM."""
 
 import ast
+from collections import Counter
 from hashlib import sha256
 import json
+import re
 import subprocess
 import sys
 from urllib.parse import urlsplit
@@ -11,77 +13,34 @@ from lxml import html
 import pytest
 
 from mb_cmn import paths as repo_paths
+from mb_misc.osis_book_abbrevs import BOOK_ABBREVS
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 from yeivin_itm import claims, claim_schema, paths, publication, renderer, source_lint
+from yeivin_itm.content import my_yeivin_amisc_helpers_for_locales as locales
 
 
-def _oracle():
-    path = repo_paths.in_dir() / "yeivin_itm_legacy_differential.json"
-    return json.loads(path.read_text(encoding="utf-8"))
-
-
-def _legacy_text(name, current):
-    record = _oracle()["pages"][name]
-    icon_line = '<link rel="icon" href="../favicon.svg">\n'
-    assert current.count(icon_line) == 1, name
-    head = current.split("<head>", 1)[1].split("</head>", 1)[0]
-    assert icon_line in head, name
-    lines = current.replace(icon_line, "", 1).splitlines(keepends=True)
-    for change in reversed(record["changes"]):
-        start = change["new_start"]
-        end = start + len(change["new"])
-        assert lines[start:end] == change["new"], name
-        lines[start:end] = change["old"]
-    legacy = "".join(lines)
-    assert sha256(legacy.encode("utf-8")).hexdigest() == record["old_sha256"], name
-    return legacy
-
-
-def test_complete_rendering_matches_tracked_pages_and_approved_legacy_diff():
+def test_complete_rendering_matches_tracked_pages():
     pages = renderer.page_texts()
-    oracle = _oracle()
     assert len(pages) == 17
-    assert set(pages) == set(oracle["pages"])
-    assert oracle["legacy_commit"] == "8da90513df1c759d8db34b135d007e79686715d3"
-    assert {name for name, record in oracle["pages"].items() if record["changes"]} == {
-        "yeivin_itm.html",
-        "yeivin_itm-318_344.html",
-        "yeivin_itm-huge-ftnt-320.html",
-        "yeivin_itm-huge-ftnt-322.html",
-    }
     for name, text in pages.items():
         assert (paths.pages_dir() / name).read_bytes() == text.encode("utf-8")
-        _legacy_text(name, text)
         refuse_forbidden_phonetic_marks(text, name)
         assert "{{meteg:" not in text
 
 
-def test_all_legacy_anchors_links_and_examples_are_preserved():
+def test_identifiers_favicon_links_and_fragments_resolve():
     pages = renderer.page_texts()
     documents = {name: html.fromstring(text) for name, text in pages.items()}
     for name, document in documents.items():
-        old = html.fromstring(_legacy_text(name, pages[name]))
         identifiers = document.xpath("//@id")
         assert len(identifiers) == len(set(identifiers))
-        assert identifiers == old.xpath("//@id")
         icons = document.xpath("/html/head/link[@rel='icon']")
         assert len(icons) == 1
         icon = icons[0]
         assert dict(icon.attrib) == {"rel": "icon", "href": "../favicon.svg"}
         assert (paths.pages_dir() / icon.attrib["href"]).resolve().is_file()
         icon.getparent().remove(icon)
-        current_links = document.xpath("//@href")
-        if name == "yeivin_itm.html":
-            assert current_links.pop() == "woff2/SOURCE.txt"
-        assert current_links == old.xpath("//@href")
-        for node, old_node in zip(
-            document.xpath("//bdi[@lang='hbo']"),
-            old.xpath("//bdi[@lang='hbo']"),
-            strict=True,
-        ):
-            assert node.attrib == old_node.attrib
-            assert node.text_content() == old_node.text_content()
-        for target in current_links:
+        for target in document.xpath("//@href"):
             url = urlsplit(target)
             if url.scheme or url.netloc:
                 continue
@@ -93,15 +52,96 @@ def test_all_legacy_anchors_links_and_examples_are_preserved():
                 assert url.fragment in destination.xpath("//@id")
 
 
-def test_unedited_content_modules_are_byte_identical_to_moved_source():
-    content = repo_paths.repo_root() / "py" / "yeivin_itm" / "content"
-    hashes = _oracle()["unchanged_content_sha256"]
-    assert len(hashes) == 112
-    assert {path.name for path in content.glob("*.py")} == (
-        set(hashes) | set(source_lint.FOOTNOTE_MODULES)
-    )
-    for name, expected in hashes.items():
-        assert sha256((content / name).read_bytes()).hexdigest() == expected
+def test_every_published_fragment_identifier_remains():
+    """phonetic-hbo's redirect pages forward old addresses, fragments included, here.
+
+    in/yeivin_itm_published_anchors.json records the fragment identifiers that the
+    pages had at the end of the migration; an edit may add identifiers but may not
+    remove a recorded one.
+    """
+    path = repo_paths.in_dir() / "yeivin_itm_published_anchors.json"
+    record = json.loads(path.read_text(encoding="utf-8"))
+    assert record["schema"] == "yeivin-itm-published-anchors-v1"
+    recorded = record["pages"]
+    assert sum(map(len, recorded.values())), "the published-anchor record is empty"
+    pages = renderer.page_texts()
+    for name, identifiers in recorded.items():
+        current = set(html.fromstring(pages[name]).xpath("//@id"))
+        missing = [
+            identifier for identifier in identifiers if identifier not in current
+        ]
+        assert not missing, (name, missing)
+
+
+_REFERENCE = re.compile(r"@(\S+) (\d+):(\d+)")
+
+
+def _verse_osis_ids():
+    """Every verse osisID in the three versifications that MAM-simple ships."""
+    root = repo_paths.repo_root() / "MAM-simple"
+    files = [
+        path
+        for name in ("json-vtrad-mam", "json-vtrad-bhs", "json-vtrad-sef")
+        for path in sorted((root / name).glob("*.json"))
+    ]
+    assert files, "MAM-simple's verse lists are missing"
+    verses = set()
+
+    def collect(node):
+        if isinstance(node, dict):
+            osis = node.get("osisID")
+            if isinstance(osis, str) and osis.count(".") == 2:
+                verses.add(osis)
+            for value in node.values():
+                collect(value)
+        elif isinstance(node, list):
+            for value in node:
+                collect(value)
+
+    for path in files:
+        collect(json.loads(path.read_text(encoding="utf-8")))
+    assert len(verses) >= 23000, len(verses)
+    return verses
+
+
+def test_every_biblical_reference_names_an_existing_verse():
+    """A lint: each reference on the pages or in the source names a verse MAM has.
+
+    It proves that the verse exists in one of MAM-simple's versifications, not that
+    the verse holds the form the adaptation cites there.
+    """
+    counts = Counter(ybkid for ybkid, _bkid in locales.YBKID_AND_STD_BKID_PAIRS)
+    books = {
+        ybkid: bkid
+        for ybkid, bkid in locales.YBKID_AND_STD_BKID_PAIRS
+        if counts[ybkid] == 1
+    }
+    references = set()
+    pages = sorted(paths.pages_dir().glob("*.html"))
+    assert len(pages) == 17
+    for path in pages:
+        document = html.fromstring(path.read_text(encoding="utf-8"))
+        references.update(document.xpath("//@data-bk-ch-vr | //@data-bk-ch-vr-2"))
+    source_root = repo_paths.repo_root() / "py" / "yeivin_itm"
+    for path in sorted(source_root.rglob("*.py")):
+        for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
+            if (
+                isinstance(node, ast.Constant)
+                and isinstance(node.value, str)
+                and _REFERENCE.fullmatch(node.value)
+            ):
+                references.add(node.value)
+    assert len(references) >= 700, len(references)
+    verses = _verse_osis_ids()
+    unknown = []
+    for reference in sorted(references):
+        match = _REFERENCE.fullmatch(reference)
+        assert match, reference
+        bkid = books.get(match[1])
+        osis = bkid and f"{BOOK_ABBREVS[bkid]}.{int(match[2])}.{int(match[3])}"
+        if osis not in verses:
+            unknown.append(reference)
+    assert not unknown, unknown
 
 
 def test_approved_claim_schema_matches_the_tracked_data_and_named_pins():
@@ -112,7 +152,6 @@ def test_approved_claim_schema_matches_the_tracked_data_and_named_pins():
     assert set(data) == set(schema["required"]) == set(schema["properties"])
     assert schema["additionalProperties"] is False
     assert data["schema"] == schema["properties"]["schema"]["const"]
-    assert data["input"]["sha256"] == claim_schema.APPROVED_INPUT_SHA256
     for name in ("populations", "measurements"):
         spec = schema["properties"][name]
         assert (

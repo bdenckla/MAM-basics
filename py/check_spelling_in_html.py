@@ -263,7 +263,7 @@ def check_spelling(html_files: list[Path], custom_dict_path: Path):
 
 def main(*, verbose=False):
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     # Two locations remain distinct: the pages are under gh-pages/book-of-job and
     # the custom dictionary stays beside this module under py/. One Path(__file__).parent
     # stood for both until Phase 1 of the evacuation plan.

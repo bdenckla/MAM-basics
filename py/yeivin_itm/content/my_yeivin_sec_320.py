@@ -30,7 +30,7 @@ _TABLE_1 = hlp.table_std_rtl(
             sub.fr1(),
         ],
         [*hlp.lns("@Gen 34:3", "וַיֶּאֱהַב֙", hlp.sy4pe("וַ_-יֶּ-אֱהַב֙")), sub.fr3()],
-        # MAM has gaʿya on yod; see closed issue https://github.com/bdenckla/trope/issues/374.
+        # MAM has gaʿya on yod; see closed issue trope#374 (private tracker).
         [*hlp.lns("@Jud 16:3", "וַיֶּאֱחֹ֞ז", hlp.sy4pe("וַ_-יֶּ-אֱחֹ֞ז")), sub.fr3()],
         [
             *hlp.lns(_LEV_AND_DT, "וְאֶת־הַ֠חֲזִ֠יר", hlp.sy4pe("וְאֶת־-הַ֠-חֲזִ֠יר")),

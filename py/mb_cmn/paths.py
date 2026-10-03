@@ -212,7 +212,7 @@ def require_sibling(name: str, path: Path) -> Path:
 def display_path(path) -> str:
     """``path`` as a repo-qualified, machine-independent string, for recording in an artifact.
 
-    ``Phonetic-MAM/data`` and
+    ``MAM-basics/Phonetic-MAM/data`` and
     ``MAM-basics/MAM-simple/xml-vtrad-mam``: the repo's name, then the path within it,
     forward-slashed on every platform.
 

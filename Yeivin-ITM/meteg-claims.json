@@ -2,7 +2,7 @@
   "schema": "yeivin-meteg-claims-v1",
   "input": {
     "identity": "out/accgram/meteg-before-stress.json",
-    "sha256": "1693712e3d947d783976e47514cf610c43adc6ee35b06f2c6bed22ffe8b94170"
+    "sha256": "cae1356aeff00afe96844dacddeb495587ad3aa9923f156e2c75ec37da0c9973"
   },
   "populations": {
     "fully-regular.all": {
@@ -199,49 +199,49 @@
       "percentage": 100.0
     },
     "fully-regular.disjunctive-without-target-meteg": {
-      "numerator": 132,
+      "numerator": 134,
       "denominator": 3583,
-      "percentage": 3.6840636338264026
+      "percentage": 3.739882779793469
     },
     "fully-regular.conjunctive-with-target-meteg": {
-      "numerator": 221,
+      "numerator": 210,
       "denominator": 3583,
-      "percentage": 6.1680156293608706
+      "percentage": 5.8610103265420035
     },
     "fully-regular.exceptions": {
-      "numerator": 353,
+      "numerator": 344,
       "denominator": 3583,
-      "percentage": 9.852079263187273
+      "percentage": 9.600893106335473
     },
     "fully-regular.disjunctive-without-target-meteg.other-meteg": {
-      "numerator": 31,
-      "denominator": 132,
-      "percentage": 23.484848484848484
+      "numerator": 33,
+      "denominator": 134,
+      "percentage": 24.62686567164179
     },
     "fully-regular.disjunctive-without-target-meteg.qadma-or-metigah": {
       "numerator": 6,
-      "denominator": 132,
-      "percentage": 4.545454545454546
+      "denominator": 134,
+      "percentage": 4.477611940298507
     },
     "fully-regular.disjunctive-without-target-meteg.merkha": {
       "numerator": 3,
-      "denominator": 132,
-      "percentage": 2.272727272727273
+      "denominator": 134,
+      "percentage": 2.2388059701492535
     },
     "fully-regular.disjunctive-without-target-meteg.metigah": {
       "numerator": 6,
-      "denominator": 132,
-      "percentage": 4.545454545454546
+      "denominator": 134,
+      "percentage": 4.477611940298507
     },
     "fully-regular.disjunctive-without-target-meteg.merkha-with-azla-legarmeh": {
       "numerator": 2,
-      "denominator": 132,
-      "percentage": 1.5151515151515151
+      "denominator": 134,
+      "percentage": 1.492537313432836
     },
     "FR1.conjunctive-with-target-meteg": {
-      "numerator": 81,
-      "denominator": 284,
-      "percentage": 28.52112676056338
+      "numerator": 80,
+      "denominator": 283,
+      "percentage": 28.268551236749115
     },
     "FR2.conjunctive-with-target-meteg": {
       "numerator": 99,
@@ -249,14 +249,14 @@
       "percentage": 20.081135902636916
     },
     "FR3.conjunctive-with-target-meteg": {
-      "numerator": 41,
-      "denominator": 622,
-      "percentage": 6.591639871382637
+      "numerator": 31,
+      "denominator": 610,
+      "percentage": 5.081967213114754
     },
     "fully-regular.disjunctive-exception-rate": {
-      "numerator": 132,
-      "denominator": 2184,
-      "percentage": 6.043956043956044
+      "numerator": 134,
+      "denominator": 2197,
+      "percentage": 6.099226217569413
     },
     "fully-regular.target-meteg-rate": {
       "numerator": 2273,

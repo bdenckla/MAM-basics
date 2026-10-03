@@ -1,5 +1,4 @@
 import yeivin_itm.substitutions as sub
-import yeivin_itm.helpers as hlp
 
 _PARA_CONTENTS = [
     ["The names “heavy $gaya” and “light $gaya”"],

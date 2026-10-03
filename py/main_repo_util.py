@@ -13,13 +13,6 @@ Usage examples:
     .venv/Scripts/python.exe py/main_repo_util.py --execute-worktree-retirement <preflight> --task-ended
     .venv/Scripts/python.exe py/main_repo_util.py --sync-user-config --check
     .venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review status --repo <full-clone> --round YYYY-MM-DD
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review start --repo <full-clone> --round YYYY-MM-DD --agent-1 claude --start <commit> --end <commit> --instruction "Ben's kickoff"
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review tick
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review pause --repo <full-clone> --round YYYY-MM-DD
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review resume --repo <full-clone> --round YYYY-MM-DD
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review handoff --repo <full-clone> --round YYYY-MM-DD
-    .venv/Scripts/python.exe py/main_repo_util.py --dual-agent-review deactivate --repo <full-clone> --round YYYY-MM-DD
     .venv/Scripts/python.exe py/main_repo_util.py --commit-across-repos --message-file .novc/commit_msg_shared.txt --dry-run
 
 ``--workspace-file all-repos.code-workspace`` is what widens any of these past the
@@ -170,33 +163,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="Fetch and check GitRepos and every numbered GitReposN forest",
     )
     action_group.add_argument("--commit-across-repos", action="store_true")
-    action_group.add_argument(
-        "--dual-agent-review",
-        choices=("status", "start", "tick", "pause", "resume", "handoff", "deactivate"),
-        help="Operate an explicitly registered automated review; never adopt a manual round",
-    )
-    parser.add_argument("--repo", help="Exact full clone for one automated round")
-    parser.add_argument("--round", help="Automated review date, YYYY-MM-DD")
-    parser.add_argument(
-        "--agent",
-        choices=("claude", "codex"),
-        help="Optional owner check for a manual handoff",
-    )
-    parser.add_argument("--agent-1", choices=("claude", "codex"))
-    parser.add_argument("--start", help="Review window's start commit")
-    parser.add_argument(
-        "--end",
-        help="Review window's end commit; branch baseline is the home clone's main HEAD",
-    )
-    parser.add_argument("--instruction", help="Ben's kickoff instruction, verbatim")
-    parser.add_argument(
-        "--rehearsal",
-        action="store_true",
-        help="Require a local filesystem remote and request short worker turns",
-    )
-    parser.add_argument(
-        "--automation-config", help="Explicit automation configuration JSON"
-    )
 
     parser.add_argument(
         "--check",
@@ -384,23 +350,6 @@ def build_parser() -> argparse.ArgumentParser:
 def _validate_action_specific_args(
     parser: argparse.ArgumentParser, args: argparse.Namespace
 ) -> None:
-    if (
-        any(
-            (
-                args.repo,
-                args.round,
-                args.agent,
-                args.agent_1,
-                args.start,
-                args.end,
-                args.instruction,
-                args.rehearsal,
-                args.automation_config,
-            )
-        )
-        and not args.dual_agent_review
-    ):
-        parser.error("review options apply only to --dual-agent-review")
     if args.session_ended and not args.clean_worktrees:
         parser.error("--session-ended only applies to --clean-worktrees")
     if args.check and not (
@@ -508,13 +457,6 @@ def _run_worktree_retirement_simulation() -> None:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    if sys.stdout is None or sys.stderr is None:
-        review_log = REPO_ROOT / ".novc/dual-agent-review/scheduler.log"
-        review_log.parent.mkdir(parents=True, exist_ok=True)
-        if sys.stdout is None:
-            sys.stdout = review_log.open("a", encoding="utf-8", newline="\n")
-        if sys.stderr is None:
-            sys.stderr = review_log.open("a", encoding="utf-8", newline="\n")
     sys.stdout.reconfigure(encoding="utf-8", line_buffering=True)
     sys.stderr.reconfigure(encoding="utf-8")
     parser = build_parser()
@@ -581,10 +523,6 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     if args.sync_user_config:
         return 0 if run_user_config_sync(check=args.check) else 1
-    if args.dual_agent_review:
-        from repo_util.dual_agent_review_dispatch import run_action
-
-        return run_action(args)
     if args.sync_forest:
         return 0 if run_forest_sync(Path(args.sync_forest), check=args.check) else 1
     if args.forest_status:

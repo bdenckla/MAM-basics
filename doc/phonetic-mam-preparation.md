@@ -4,8 +4,9 @@ The modules under `py/phonetic_mam/` implement the unified rendering of the exis
 public Phonetic MAM pages. The source-independent algorithm core, read-only
 computation interface, exporter, closed display release, public consumers and
 generated target were integrated and pushed to `main` on 2026-10-01 in
-`2b92117ab909f74481cd0be4dbbc9d85204295ee`. Site deployment and live URL
-verification remain separate publication steps.
+`2b92117ab909f74481cd0be4dbbc9d85204295ee`. The Pages run for `38c0116f`, a
+descendant of that merge, deployed the generated site; it finished at 15:39:45 New
+York time on 2026-10-01.
 
 ## Public display contract
 
@@ -17,11 +18,19 @@ The contract has no source annotations, source-position tables, or analysis-only
 phonological fields. Analyses must derive their working facts from the public
 display and public MAM rather than extend the release with a private record.
 
-The independent `legacy_projection` module reads only the frozen public HTML.
-The source-driven exporter must produce the same complete display corpus as this
-public-only projection. Matching rendered HTML alone is insufficient. Review also
-covers the combined code, metadata, example pages, analyses, fixtures and joins;
-the closed validator is only the mechanical part of that boundary.
+Until 2026-10-03, the independent `legacy_projection` module projected the frozen
+public HTML of phonetic-hbo commit `8da90513` into the release schema, and the
+source-driven exporter had to produce the same complete display corpus; matching
+rendered HTML alone was insufficient. The 2026-10-02 review ran that module by hand
+and found all 39 books equal. The module was removed on 2026-10-03 because it reads
+only the two old page families, which no generator can now produce and no
+maintained clone holds; Git history keeps it at
+`c17de1756c785682162f805e27600c9c67462990`. For chapters whose MAM-parsed input is
+unchanged, the frozen projection hashes in
+`in/phonetic_mam_legacy_projection_sha256.json` remain the comparison with those
+pages. Review also covers the combined code, metadata, example pages, analyses,
+fixtures and joins; the closed validator is only the mechanical part of that
+boundary.
 
 The five example pages have their own closed display-document format. Their input
 is normalized from the exact rendered HTML rather than retaining calculation
@@ -49,7 +58,7 @@ the explicit Sephardic fallback. Local Edge acceptance on 2026-10-01 passed
 the browser-level CSS, printing, no-JavaScript, navigation, focus, font/image,
 and console/network checks after the explicit favicon links were added. At a
 390-pixel viewport, wider tables require horizontal scrolling. These results
-verify the integrated local pages; live deployment still requires its own checks.
+verify the integrated local pages, not the deployed site.
 
 ## Font support
 
@@ -75,5 +84,6 @@ Ben approved correcting his added claims to the reproducible public-MAM analysis
 The independent analysis feeds the minimized `Yeivin-ITM/meteg-claims.json` product,
 which the Yeivin renderer validates before rendering the selected excerpts.
 The Phonetic index links to the separate Yeivin target. Both targets are on
-integrated `main`; target deployment and the coordinated legacy redirect
-cutover remain separate steps.
+integrated `main`, and the Pages run for `38c0116f` deployed them on 2026-10-01.
+The coordinated legacy redirect cutover followed that day: phonetic-hbo's
+redirects, from its commit `2ca51088`, deployed at 17:10:52 New York time.

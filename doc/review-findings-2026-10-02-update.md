@@ -507,3 +507,213 @@ Ben in the Codex app, since the plan has no verified command that deletes a Code
 integration, the relay-machine session on the relay machine, with the prompt in the plan's section
 of that name; deleting the paused Codex follow-up in the Codex app if it is still listed (A9); and
 deleting `$HOME/relay-retirement-2026-10/` on a machine whenever he wants the space.
+
+## Remediation implemented; final gates pending, 2026-10-03
+
+Recorded by Claude Opus 5.5 on 2026-10-03, New York time, in the executor session of the
+remediation plan: Claude Opus 5.5 at `max` in the Claude desktop app on `LAPTOP-DBLE8UKA`. It worked
+from a prompt that the plan-preparing session wrote on 2026-10-03 and Ben pasted in; that prompt
+quotes the three instructions of Ben's that "Ben's choices and advance authorization, 2026-10-03"
+records, and is otherwise that session's reconstruction, which this session checked against the
+plan and the tree. **Implemented: every row of the plan's "Finite execution ledger" that the
+repository holds**: R1 to R7, the 64 accepted items, and the citation of Ben's finding-14 decision,
+in waves 0 to 8 as the plan orders them, apart from the departures listed below. The full suite
+passed at `7bd5ee8c`, after the last executable change: 1,047 tests passed, with 5 skipped and 60
+subtests passed. Pending: final integration, meaning the merge of the current `origin/main`, the
+mega and the push of `main`; acts A3, A2 and A10 on this machine; the closing records; and then
+the relay-machine session.
+
+**Checkout and baseline.** The development and integration checkout is the full clone
+`C:/Users/BenDe/GitRepos2/MAM-basics` on `LAPTOP-DBLE8UKA`, on the branch
+`remediate-review-2026-10-02`. Editing began there at `074af13a78789ffe8c6c3b1cc88b13aa3d422da2`,
+equal to `origin/main` after a fetch, with the tree clean and `644a6c9c`, `286d2e8c` and `074af13a`
+ancestors of `HEAD`. Wave 0's `cbd405b11ef990040031ccf19699db54a69a489d` is the archive commit, the
+last whose tree holds every file that the relay's removal deleted, and
+`4573b0070be6eab2d31257a1cdf766b60ae766af` is the removal commit. Each of the 40 commits before this
+entry was pushed to `origin/remediate-review-2026-10-02` as soon as it was made, never forced. This
+session was the only writer. The plan-preparing session's session record also named this clone;
+`HEAD` was verified before every commit and moved only by this session's commits.
+
+**Ben's thirteen answers, as implemented,** numbered as the plan's "Choices for Ben, answered
+2026-10-03" numbers them:
+
+1. C2's corrected Yeivin prose: the figures-only correction, keeping "roughly", in `c17de175`.
+2. C6.1's intended verse: "Is 52:1", on MAM's evidence, in `f2774cea`. Yeivin's printed text was
+   not read.
+3. C15.15: option 1, in `7bd5ee8c`. No file under `Yeivin-ITM/` changed.
+4. C4.4: option 1, the exception in `MAM-with-doc/LICENSE.md`, in `007f9f31`.
+5. C4.5: option 1, the six rendering-helper modules declared GPL-3.0 code, in `007f9f31`.
+6. C11: option 2, the core pipeline that the root README names, marked and linted, with the floor
+   fix, in `8ad4c1d2`.
+7. C1: Gate B and Oracle A, in `a363e5ce`.
+8. C6.2: option C, in `59e41a99`.
+9. C8: option 1, in `d875e0b1`.
+10. C12.4: option 1, in `4039acd3`.
+11. C15.25: option 1, in `7bd5ee8c`.
+12. C15.29: option 1, in `b7f7e204`.
+13. C15.31: option 1, in `d1d8d1ce`, after `gh repo view bdenckla/trope --json visibility` printed
+    `PRIVATE`.
+
+Of the six further items, C15.13's flagged addition is made, in `1ad77de0`. A10 falls to final
+integration, A5 and A8 to the relay-machine session, and A9 to Ben; A6 is not done.
+
+### Dispositions of the ledger's rows
+
+| Item | Execution disposition |
+|---|---|
+| C1.1 | Implemented in `a363e5ce`: Gate B, with `Yeivin-ITM/README.md`. |
+| C1.2 | Implemented in `a363e5ce`: Oracle A, with `in/phonetic_mam_legacy_projection_inputs.json` and `Phonetic-MAM/README.md`. |
+| C1.3 | Implemented in `a363e5ce`: `py/phonetic_mam/legacy_projection.py` removed, and the refresh procedure's text, in wave 3 rather than wave 6 (departure 3); `d875e0b1` keeps its pointer. |
+| C2 | Implemented in `c17de175`: the classifier, the survey, the claims, the pins and the three pages. |
+| C4.1 to C4.8 | Implemented in `007f9f31`, with every `DATA-LICENSES.md` change in one sequence. |
+| C5.1 | Implemented in `82235e8c`, with the U+05C5 guard. |
+| C5.2 | Implemented in `82235e8c`, with the finding-22 pointer in the September 29 update; the sentence that the plan adds to it if this remediation's mega leaves `Phonetic-MAM/data/BD-2Kings.json` unchanged waits for that mega. |
+| C6.1 | Implemented in `f2774cea`, with the reference lint and the README clause that wave 2 held back (departure 1). |
+| C6.2 | Implemented in `59e41a99`. |
+| C7 | Implemented in `6c303371`. |
+| C8 | Implemented in `d875e0b1`. |
+| C9.1 | Implemented in `a1c4a746`. |
+| C9.2 | Implemented: the F841 by the relay's removal, `4573b007`; the three content-module findings in `88f35055`; the eleven E402 by C15.18, in `38cf30ea`; and the two unused imports in `e2d71ac7`. `ruff check py` reports "All checks passed!". |
+| C9.3 | Implemented in `00974386`. The write form was not run against a real forest. |
+| C9.4 | Implemented in `936d7b45`. |
+| C9.5 | Implemented in `a1c4a746`. |
+| C10.1 | Implemented: item 8 in `db700ec6`, items 1 to 7 and 9 in `41196f57`. |
+| C10.2 | Implemented in `1ad77de0`. |
+| C10.3 | Implemented in `7bd5ee8c`. |
+| C10.4 | Implemented in `9595d3aa`. |
+| C11 | Implemented in `8ad4c1d2`. |
+| C12.1 | Implemented in `1c42c5b1`. |
+| C12.2 | Implemented in `c17de175`. |
+| C12.3 | Implemented in `ac25adc9`. |
+| C12.4 | Implemented in `4039acd3`; `out/accgram/post-stress-meteg.json` is unchanged. |
+| C13.1 | Implemented in `38cf30ea`. |
+| C13.2 | Implemented in `582cd783`. |
+| C14 | Implemented in `e2d71ac7`: the citation of Ben's decision at the exemption. The legacy bytes stay. |
+| C15.2 | Implemented in `1ad77de0`. |
+| C15.3, C15.4 | Implemented in `750844b9`. |
+| C15.5 | Implemented in `6a55f8e0`. |
+| C15.6 | Implemented in `8a12d906`. |
+| C15.7 | Implemented in `82235e8c`. |
+| C15.8 | Implemented in `7f4c147f`. |
+| C15.9, C15.10 | Implemented in `007f9f31`. |
+| C15.11 | Implemented in `498dc333`. |
+| C15.12 | Implemented in `6581e5a4`. |
+| C15.13 | Implemented in `1ad77de0`, with the addition Ben approved. |
+| C15.14 | Implemented in `7a571cc7`. |
+| C15.15 | Implemented in `7bd5ee8c`. |
+| C15.16 | Implemented in `59e41a99`, in wave 2 rather than wave 3 (departure 2). |
+| C15.17 | Implemented in `db700ec6`. |
+| C15.18 | Implemented in `38cf30ea`. |
+| C15.19 | Implemented in `95683791`. |
+| C15.20 | Implemented in `55226123`, completed by `e0717e63` (departure 6), with the export check through the adapter. |
+| C15.21, C15.22 | Implemented in `e2d71ac7`. |
+| C15.23 | Implemented in `e88f2f55`. |
+| C15.24, C15.25 | Implemented in `7bd5ee8c`. |
+| C15.26, C15.27 | Implemented in `6a55f8e0`. |
+| C15.28 | Implemented in `a1c4a746`. |
+| C15.29 | Implemented in `b7f7e204`. |
+| C15.30 | Implemented in `007f9f31`. |
+| C15.31 | Implemented in `d1d8d1ce`. |
+| C3 | Superseded: fixed after the review, by a deployment; no action. The residue phonetic-hbo clone stays Ben's decision. |
+| C15.1 | Superseded: rejected in the disposition list that Ben approved; no action. |
+| R1 to R7 | Implemented in `4573b007`; `75a1127b` names the removal commit in R7's entry (departure 11). |
+| A0 to A10 | Deferred: A3, A2 and A10 to final integration on this machine; A0, A1, A7, A3, A2, A4, A5 and A8 to the relay-machine session; A9 to Ben in the Codex app. A6 is not done, by Ben's choice. |
+
+The items of this file's "Not findings" paragraph get no action, as the plan says.
+
+### Departures from the plan, and corrections
+
+1. Wave 2 held back C6.1's reference lint and the README clause that names it, since the lint fails
+   until "@2K 52:1" is corrected; both landed with C6.1, in `f2774cea`.
+2. C15.16, planned for wave 3, went into wave 2's `59e41a99`, since the gate's retirement rewrote the
+   passages it corrects.
+3. C1.3's procedure text, planned for wave 6, landed in wave 3's `a363e5ce`, so that the references
+   that commit adds resolve. That commit also adds one precision to the plan's README and refresh
+   texts: the claim population is drawn from the survey's ordinary population, as the plan's design
+   states.
+4. Conforming edits that the plan did not list: `82235e8c` corrects the docstring of
+   `py/phonetic_mam/display_schema.py`, which still said that release approval compares the output
+   with the projection module that wave 3 removed, and in `py/py_html/forbidden_phonetic_marks.py`
+   puts the plan's sentence in place of the old clause about a genuine source dot rather than
+   beside it; `7a571cc7` names "The claim file" where C15.14's insertion made "It" ambiguous.
+5. C15.21's comment names the exporter's call by its function, `_adapter_location`, rather than by
+   the plan's `py/phonetic_mam/exporter.py:34-35`, since C15.19 had moved it (`e2d71ac7`).
+6. `55226123` committed C15.20's rename without the fifteen importer updates that its message
+   describes, because one pathspec of the staging command failed, so that commit alone does not
+   import. `e0717e63` completes it, and every later commit chains staging and committing so that a
+   failed `git add` stops the commit.
+7. C15.20's export check needs the private adapter, which this forest's MAM-private clone,
+   `C:/Users/BenDe/GitRepos2/MAM-private`, lacked: it was clean on `main` at `3dfbc5ed`, from
+   2026-09-29. The executor fetched that clone and fast-forwarded it to its `origin/main`,
+   `ccd80315`, before the export: an act outside this repository that the plan's list does not
+   name. The adapter wrote nothing there, and that clone is clean on `main`.
+8. C13.2's browser check used a short-lived static server on `127.0.0.1`, stopped afterwards,
+   because the in-app browser's page tools cannot act on a `file://` page.
+9. C10.2's two deployment times were re-read with `gh run list`, a read-only query of the Actions
+   runs of MAM-basics and phonetic-hbo.
+10. The executor's repetition of the retirement's reference audit scanned 296 issues and pull
+    requests and 312 comments, where the planning scan counted 295 issues and pull requests; issue
+    296 was created at 06:17:53 UTC on 2026-10-03, after that scan. Neither scan found a relay
+    name.
+11. R7's entry was written in the removal commit, which cannot name its own hash; `75a1127b` names
+    it. The entry also carries a "Recorded by" line, as this repository's update entries do.
+12. The plan calls C2's survey diff "an 82-line diff". `git show -U0` prints 84 lines for it, 62 of
+    them changed lines (19 removed, 43 added) in 18 hunks, and the changes are exactly those the
+    plan lists.
+13. The Markdown checks owed by `00974386` and `6a55f8e0` ran at `6a55f8e0`, after both commits, and
+    passed.
+14. The full suite ran after wave 8 and before this entry, rather than in wave 9, so that a failure
+    could still be fixed before this record; no executable, test, schema or shared-data change
+    follows it.
+15. `88f35055`, which edited three adaptation modules, names its plan item, C9.2, but not the
+    approval of Ben's that it carries out, as `Yeivin-ITM/README.md`'s editing procedure asks: his
+    approval on 2026-10-03 of the disposition list, which accepted C9.2, and his acceptance that day
+    of the plan's recommendations. The pushed message stays as it is; the other commits that edited
+    adaptation modules, `f2774cea` and `d1d8d1ce`, name Ben's choice.
+16. Wrapping only, with no word changed: where a replacement changed a line's length, the rest of
+    its paragraph was rewrapped (C10.1's items 6, 7 and 9, and C15.24's explanation). The commit
+    that records this entry rewraps two lines of `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`
+    that R7's corrections 4 and 5 had lengthened to 115 and 107 columns, and one line of the
+    refresh skill's `references/dependent-refresh.md` that C1.3's insertion had lengthened to 131
+    columns; that skill change takes effect with the rest at act A3.
+
+### Verification before final integration
+
+Each commit's message records its own checks: `git diff --check`; Black on every changed Python
+file and ruff, with `ruff check py` reporting "All checks passed!" since `e2d71ac7`; the three
+Markdown lints on every Markdown, update and instruction commit; and each item's own verification
+as the plan gives it, with the scratch demonstrations that the message describes. Every generated
+diff was read line by line and explained in its commit: C2's survey, claims and three Yeivin pages
+(`c17de175`), C6.1's two lines of `yeivin_itm-207_285.html` (`f2774cea`), C13.2's `style.css` and
+`pronunciation.js` (`582cd783`), C15.8's two index lines (`7f4c147f`) and C11's `pipeline.dot` and
+`pipeline.svg` (`8ad4c1d2`). Every Hebrew form that the remediation added was lifted from its source
+by a script.
+
+**The full suite.** `./.venv/Scripts/python.exe py/main_test.py` ran at `7bd5ee8c`, the last commit
+before this entry and later than every executable, test, schema and shared-data change; it ended at
+13:56:04 New York time with 1,047 passed and 5 skipped, in 369.11 seconds. Run again with `-q`,
+which the subtest count needs, it ended at 14:04:16 New York time with 1,047 passed, 5 skipped and
+60 subtests passed, in 388.57 seconds. Against `644a6c9c`'s 1,056 passed, 5 skipped and 60 subtests: the relay's
+removal took 15 tests (11 dispatch and 4 turn tests) and R5 added the turn-file lint; C12.2 added two
+oracle tests, and C6.1, C4.3, C11 and C12.1 one lint each; C12.3 removed one test; and wave 2
+removed the module-pin test and added the anchor test: 1,056 − 15 + 1 + 2 + 4 − 1 − 1 + 1 = 1,047.
+The skips and subtests are unchanged.
+
+**Read-only verification of the whole plan.** Four read-only sub-agents each checked one part of the
+plan against the committed tree at `7bd5ee8c`: the published pages and distributed data; the
+reader-facing documents; the code and test defects; and the editorial proposals with the relay's
+retirement in the repository. Each found every item of its part as the plan words it, every output
+that the plan says must not change unchanged, and no change that no item accounts for. Their
+points of process are departures 3, 7, 15 and 16 above; C5.2's conditional sentence in the
+finding-22 entry waits for this remediation's mega, as the plan says.
+
+### Noticed outside the plan
+
+1. Unfixed, because the review and the plan scope C15.4 to the eleven programs of `33470e2d`: 34
+   other entry points under `py/` still call `sys.stderr.reconfigure(encoding="utf-8")` with no
+   error handler, which resets stderr's `backslashreplace` to `strict`.
+
+**What remains.** Final integration as the plan's "Final integration" describes: merging the current
+`origin/main`, the mega, the fast-forward and push of `main`, then A3, A2 and A10 on this machine;
+then the closing records; then the relay-machine session on the relay machine. This update remains
+`State: open` while its base survives.

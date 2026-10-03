@@ -189,8 +189,11 @@ _EXCLUDE_DIR_PREFIXES = (
     "MAM-simple/",
     "MAM-with-doc/",
     # Generated display data retains the existing public transcription exactly,
-    # including its decomposed Latin vowel marks. Authored README/schema stay in
-    # the main scope; this is the same generated-data boundary as out/ above.
+    # including its decomposed acute and breve vowels. Keeping those legacy bytes,
+    # here and in gh-pages/phonetic-mam/, is Ben's decision of 2026-10-03, "Keep the
+    # legacy bytes": doc/review-findings-2026-10-02-update.md, "Ben's close-out
+    # decisions, 2026-10-03", item 2. Authored README/schema stay in the main
+    # scope; this is the same generated-data boundary as out/ above.
     "Phonetic-MAM/data/",
     "Phonetic-MAM/examples/",
     "uxlc/",

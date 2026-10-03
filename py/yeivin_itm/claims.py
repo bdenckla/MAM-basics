@@ -16,7 +16,12 @@ from yeivin_itm import paths, claim_schema
 
 def read():
     """Read and pin the minimized tracked product, without reading the analysis."""
-    allowed = {"README.md", "meteg-claims.json", "schema/meteg-claims-v1.schema.json"}
+    allowed = {
+        "LICENSE.md",
+        "README.md",
+        "meteg-claims.json",
+        "schema/meteg-claims-v1.schema.json",
+    }
     found = {
         path.relative_to(paths.product_dir()).as_posix()
         for path in paths.product_dir().rglob("*")
@@ -31,15 +36,45 @@ def read():
 
 def from_analysis():
     """Project the independent public input, then enforce the approved prose pins."""
+    result, population = projection()
+    claim_schema.validate(result)
+    claim_schema.pin_population(population)
+    return result
+
+
+def projection():
+    """The claims projected from the analysis and its claim population's SHA-256.
+
+    Neither is checked against the approved pins: ``from_analysis`` enforces them, and
+    ``publication.review_claims`` reports how a changed analysis would differ.
+    """
     source = paths.product_dir().parent / claim_schema.INPUT_IDENTITY
     data = source.read_bytes()
+    survey = _read_json(data)
     result = compute(
-        _read_json(data),
+        survey,
         input_identity=claim_schema.INPUT_IDENTITY,
         input_sha256=sha256(data).hexdigest(),
     )
-    claim_schema.validate(result)
-    return result
+    claim_schema.validate_shape(result)
+    return result, population_sha256(survey)
+
+
+def population_sha256(survey: dict) -> str:
+    """SHA-256 of the canonical JSON of the claim population, every field included.
+
+    The claim population is every ordinary-qamats record whose pattern is one of
+    ``claim_schema.CLAIM_PATTERNS``, in the analysis's order.
+    """
+    records = [
+        case
+        for case in survey["ordinary"]["cases"]
+        if case["pattern"] in claim_schema.CLAIM_PATTERNS
+    ]
+    if not records:
+        raise ValueError("Empty claim population")
+    canonical = json.dumps(records, sort_keys=True, separators=(",", ":"))
+    return sha256(canonical.encode("utf-8")).hexdigest()
 
 
 def survey():

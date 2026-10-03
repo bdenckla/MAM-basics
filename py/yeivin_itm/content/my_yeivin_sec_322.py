@@ -137,7 +137,7 @@ _AFR3_TABLE_OF_EXCEPTIONS_WHERE_GAYA_IS_INDEED_MARKED = hlp.table_std_rtl(
         # XXX turn the comment below into a footnote?
         # Actually Dt 30:14 is וּבִֽלְבָבְךָ֖ so better example locales for בִּֽלְבָבְךָ֖ would have been
         # one of these four: 1C 17:2, 1S 9:19, 2S 7:3, or Ezek 3:10.
-        # MAM lacks gaʿya on D9:4 בִּלְבָבְךָ֗; see https://github.com/bdenckla/trope/issues/376.
+        # MAM lacks gaʿya on D9:4 בִּלְבָבְךָ֗; see trope#376 (private tracker).
         # (D9:4 בִּלְבָבְךָ֗ is one of the "and elsewhere" cases.)
         [*hlp.lns(hlp.make_aeloc("@Lev 19:5"), "לִֽרְצֹנְכֶ֖ם", "לִֽרְ-צֹ-נְכֶ֖ם")],
         # XXX turn the comment below into a footnote?

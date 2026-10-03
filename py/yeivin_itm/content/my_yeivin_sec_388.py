@@ -1,6 +1,5 @@
 import yeivin_itm.helpers as hlp
 import yeivin_itm.substitutions as sub
-import mb_cmn.str_defs as sd
 
 
 def _subsec_for_table_1():

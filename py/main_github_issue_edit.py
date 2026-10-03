@@ -1,7 +1,9 @@
 """Correct a stale fact in an open GitHub issue's body: fetch, replace, push, in one process.
 
-Run with a full MAM-basics clone's own interpreter; every path here is resolved
-from this file, never from the cwd. From the clone's root:
+Run with a full MAM-basics clone's own interpreter. The output path under this
+repository's .novc/ is resolved from this file, never from the cwd; the --edits
+path is resolved from the working directory, as any command-line path is. From
+the clone's root:
 
     ./.venv/Scripts/python.exe py/main_github_issue_edit.py --repo <repo> --issue <number> --edits <file> [--dry-run]
 

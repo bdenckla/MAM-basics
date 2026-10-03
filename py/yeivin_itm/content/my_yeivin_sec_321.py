@@ -25,7 +25,7 @@ _TABLE_1_ROWS = [
         hlp.lhbo(hlp.make_dloc("@Ex 7:13", "@Ex 9:35"), "וַיֶּחֱזַק֙"),
         ["bN has ", sub.gaya()],
     ],
-    # MAM has vav sans gaʿya, yod with gaʿya in both E7:13 & 9:35; see closed issue https://github.com/bdenckla/trope/issues/375.
+    # MAM has vav sans gaʿya, yod with gaʿya in both E7:13 & 9:35; see closed issue trope#375 (private tracker).
     [
         hlp.lhbo("@Lev 13:56", "מִן־הַשְּׁתִ֖י"),
         [sub.saa(), " ", _FTNT_LEV_13_56, ", ", _FTNT_ABOUT_ARROW],

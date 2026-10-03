@@ -3,11 +3,27 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 from pathlib import Path
+import stat
 import subprocess
 from typing import Any, Sequence
 
 from mb_cmn.git_process import git_command
+
+
+def clear_read_only_and_retry(function: Any, path: str, exc: BaseException) -> None:
+    """``shutil.rmtree``'s ``onexc`` handler for read-only files.
+
+    Git writes its object and pack files read-only, and Windows refuses to delete
+    a read-only file, so a plain ``rmtree`` stops partway through any tree that
+    holds a Git repository.  This clears the attribute and retries the one failed
+    removal.  Any other failure, and a retry that fails again, propagates.
+    """
+    if not isinstance(exc, PermissionError) or function not in (os.unlink, os.rmdir):
+        raise exc
+    os.chmod(path, stat.S_IWRITE)
+    function(path)
 
 
 def run_cmd(

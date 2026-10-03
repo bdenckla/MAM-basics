@@ -380,7 +380,7 @@ Actions are mutually exclusive, one per invocation. Repository sweeps use worksp
 | `--sync-user-config --check` | no live configuration write | fetches `origin` and compares every declared user-level destination with `origin/main` |
 | `--sync-user-config` | **DEPLOYS OUTSIDE GIT** | run from any full MAM-basics clone after the canonical changes are pushed |
 | `--sync-forest ROOT --check` | fetches; no checkout write | fetches every clone of the forest at `ROOT` and reports clone, branch, local-change, Git-operation and environment state, without cloning, merging or installing; see `doc/clone-forests.md` |
-| `--sync-forest ROOT` | **CLONES, FAST-FORWARDS AND CREATES ENVIRONMENTS** | refuses a dirty, off-`main`, mid-operation, locked or occupied clone before fetching it, and an ahead or diverged clone after fetching it; see `doc/clone-forests.md` |
+| `--sync-forest ROOT` | **CLONES, FAST-FORWARDS AND CREATES ENVIRONMENTS** | refuses a dirty, off-`main`, mid-operation, locked or occupied clone before fetching it, and an ahead or diverged clone after fetching it; skips, unfetched, a clone that only the calling Claude session occupies; see `doc/clone-forests.md` |
 | `--forest-status` | fetches; no checkout write | runs the check form over `$HOME/GitRepos` and each `$HOME/GitRepos<N>`; see `doc/clone-forests.md` |
 | `--prepare-worktree-retirement PATH` | writes one preflight, not the target | shared audit of one ended target, with optional owner-selection guard |
 | `--execute-worktree-retirement PREFLIGHT` | **RELOCATES AND REMOVES** | first runs the mandatory operational simulation and fails closed; only then revalidates the reviewed audit, retains `.novc`, removes one target without force, and uses `branch -d` for its eligible branch |

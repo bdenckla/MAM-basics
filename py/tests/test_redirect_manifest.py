@@ -34,13 +34,15 @@ decision, 2026-09-26. The Taamey_D row's declared target repository is hbofonts,
 sibling that ``stubs.published_pages`` reads through ``paths.require_sibling``, and a cloud
 container cannot clone it: a container run of the suite on 2026-09-25, recorded in the message
 of ``ee0d66d5``, failed that row and no other test. So in a container the row still reads and
-validates its manifest, which is tracked here, and skips only before reading hbofonts. This
-follows ``py/tests/test_final_stress_vs_phonetic_mam.py``, which skips in a container the tests
-that read MAM-private. Like that module, it asks ``graphviz_pin.in_cloud_session()``, the
-repository's one cloud predicate, so the read is skipped in a container whether or not hbofonts
-is attached there. On any machine of Ben's the sibling stays REQUIRED, and a missing hbofonts
-fails here as before. The rows whose target is MAM-basics read only this repository and run
-everywhere. The skip's reason string is what tells it apart from a semantic skip under ``-rs``.
+validates its manifest, which is tracked here, and skips only before reading hbofonts. It
+asks ``graphviz_pin.in_cloud_session()``, the repository's one cloud predicate, so the read is
+skipped in a container whether or not hbofonts is attached there. When this skip was added it
+followed ``py/tests/test_final_stress_vs_phonetic_mam.py``, which then skipped in a container
+the tests that read MAM-private; since ``9a67d51b`` (2026-10-01) that module reads the tracked
+``Phonetic-MAM/`` release and runs everywhere. On any machine of Ben's the sibling stays
+REQUIRED, and a missing hbofonts fails here as before. The rows whose target is MAM-basics read
+only this repository and run everywhere. The skip's reason string is what tells it apart from a
+semantic skip under ``-rs``.
 """
 
 from __future__ import annotations

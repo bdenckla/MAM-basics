@@ -52091,7 +52091,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": false,
     "accent_on_target": null,
     "other_meteg_count": 1
@@ -53159,7 +53159,7 @@
     "qamats_variant": null,
     "pattern": "FR1",
     "fine_pattern": "FR1m",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -53207,7 +53207,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -53459,7 +53459,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": false,
     "accent_on_target": null,
     "other_meteg_count": 1
@@ -55511,7 +55511,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55547,7 +55547,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55583,7 +55583,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55619,7 +55619,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55655,7 +55655,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55703,7 +55703,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55715,7 +55715,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55763,7 +55763,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -55847,7 +55847,7 @@
     "qamats_variant": null,
     "pattern": "FR3",
     "fine_pattern": "FR3",
-    "accent_class": "conj",
+    "accent_class": "disj",
     "target_meteg": true,
     "accent_on_target": null,
     "other_meteg_count": null
@@ -72885,9 +72885,9 @@
   ],
   "reshaped_counts": {
    "FR1": {
-    "cwg": 81,
+    "cwg": 80,
     "csg": 203,
-    "dwg": 418,
+    "dwg": 419,
     "dsg": 20
    },
    "FR2": {
@@ -72897,10 +72897,10 @@
     "dsg": 35
    },
    "FR3": {
-    "cwg": 41,
-    "csg": 581,
-    "dwg": 1015,
-    "dsg": 77
+    "cwg": 31,
+    "csg": 579,
+    "dwg": 1025,
+    "dsg": 79
    },
    "AFR1": {
     "cwg": 2,
@@ -74736,6 +74736,18 @@
     "other_meteg_count": null
    },
    {
+    "bcv": "Ps4:5",
+    "hebrew": "וְֽאַל־תֶּ֫חֱטָ֥אוּ",
+    "transcription": "v^.'al-te.x6.!ta.'u",
+    "qamats_variant": null,
+    "pattern": "FR3",
+    "fine_pattern": "FR3",
+    "accent_class": "disj",
+    "target_meteg": false,
+    "accent_on_target": null,
+    "other_meteg_count": 1
+   },
+   {
     "bcv": "Ps5:8",
     "hebrew": "אֶל־הֵֽיכַל־קׇ֝דְשְׁךָ֗",
     "transcription": "'el-hE.khal-kod.sh^.!kha",
@@ -74806,6 +74818,18 @@
     "target_meteg": false,
     "accent_on_target": "(dex)",
     "other_meteg_count": null
+   },
+   {
+    "bcv": "Ps50:3",
+    "hebrew": "וְֽאַל־יֶ֫חֱרַ֥שׁ",
+    "transcription": "v^.'al-ye.x6.!rash",
+    "qamats_variant": null,
+    "pattern": "FR3",
+    "fine_pattern": "FR3",
+    "accent_class": "disj",
+    "target_meteg": false,
+    "accent_on_target": null,
+    "other_meteg_count": 1
    },
    {
     "bcv": "Ps69:16",

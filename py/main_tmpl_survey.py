@@ -165,7 +165,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main():
     """Survey the use of templates in MAM-parsed-plus."""
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     parser = build_parser()
     args = parser.parse_args()
     if stack_path_lookup.maybe_handle_cli(parser, args):

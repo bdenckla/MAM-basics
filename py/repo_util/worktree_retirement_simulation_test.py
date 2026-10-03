@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import sqlite3
+import stat
 import subprocess
 import tempfile
 from datetime import datetime
@@ -136,6 +137,8 @@ def add_novc(target):
     (source / "nested").mkdir()
     (source / "evidence.bin").write_bytes(bytes(range(256)))
     (source / "nested" / "notes.txt").write_bytes(b"review evidence\n")
+    # Git writes object and pack files read-only; Windows refuses to delete them.
+    os.chmod(source / "evidence.bin", stat.S_IREAD)
     return source
 
 

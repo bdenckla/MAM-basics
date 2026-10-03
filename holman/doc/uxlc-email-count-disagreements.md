@@ -1,10 +1,7 @@
 # Where Holman's messages disagree with themselves about their count
 
-Three of Daniel Holman's thirteen suggested-UXLC-correction messages state a number of
-corrections that something else in the same message contradicts. Two of the three are
-disagreements between the cases written up and the images attached, and are the reason
-`../../py/hkq_cmn/uxlc_attachment_notes.py` has an `IMAGES_WITH_NO_CASE` table at all. The
-third is a preamble sentence reused from an earlier message.
+Three of Daniel Holman's thirteen suggested-UXLC-correction messages state a number of corrections that something else in the same message contradicts. Two of the three are disagreements between the cases written up and the images attached, and are the reason `../../py/hkq_cmn/uxlc_attachment_notes.py` has an `IMAGES_WITH_NO_CASE` table at all. The third is a preamble sentence reused from an earlier message.
+Updates and later status: [uxlc-email-count-disagreements-update.md](uxlc-email-count-disagreements-update.md).
 
 Measured 2026-08-12, against holman-ketiv-qere `636213d` and the thirteen messages in
 `emails/`. The messages themselves do not change once ingested, so the figures below are

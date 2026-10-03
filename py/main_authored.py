@@ -14,8 +14,8 @@ Subcommands:
                 site_data.POST_STRESS_METEG_POST_SILLUQ_IMAGE_PAGES.
                 --trust-surveys lets the post-stress pages that read the survey
                 load it from the tracked out/accgram/post-stress-meteg.json
-                instead of recomputing it, which needs the MAM-private clone;
-                only main_0_mega.py passes it.
+                instead of recomputing it from the tracked Phonetic-MAM
+                release; only main_0_mega.py passes it.
     gen-mam-parsed-docs
                 Write index.html to gh-pages/MAM-parsed and the plus docs to
                 gh-pages/MAM-parsed/plus/html. Runs the claim verification
@@ -132,14 +132,14 @@ def cmd_gen_misc(_args):
 # one report: this one starts with a member and is expected to grow, and a second member added
 # to a scalar would have had to become this anyway.
 #
-# WHY ANY PAGE NEEDS IT: post-stress-meteg's survey reads Phonetic MAM, which lives in
-# MAM-private.  py/main_0_mega.py runs the survey as a step of its own just before gen-site,
-# and the survey writes the tracked out/accgram/post-stress-meteg.json, so the mega renders all
-# nine pages from that JSON rather than walking the corpus a second time.  In a cloud session
-# the mega skips the survey step, and the pages render from the tracked JSON unchanged.
-# Recomputing from the corpus is what a standalone run does.  The JSON's absence FAILS rather
-# than falling back, so a mega that quietly published a page from nothing is not a state this
-# can reach.
+# WHY ANY PAGE NEEDS IT: py/main_0_mega.py runs post-stress-meteg's survey as a step of its
+# own just before gen-site, and the survey writes the tracked out/accgram/post-stress-meteg.json,
+# so the mega renders all nine pages from that JSON rather than walking the corpus a second
+# time.  The survey reads the tracked Phonetic-MAM release, so the mega runs it in a cloud
+# session too; until 2026-10-01 it read MAM-private's Phonetic MAM, and a cloud session
+# skipped it and rendered the pages from the tracked JSON unchanged.  Recomputing from the
+# corpus is what a standalone run does.  The JSON's absence FAILS rather than falling back, so
+# a mega that quietly published a page from nothing is not a state this can reach.
 _SURVEY_READING_PAGES = frozenset(
     {
         site_data.POST_STRESS_METEG_FNAME,
@@ -241,8 +241,7 @@ def build_parser():
         action="store_true",
         help=(
             "Let a page that has one read its tracked survey JSON instead of recomputing it."
-            " Passed by main_0_mega.py, which runs the survey as a step of its own,"
-            " except in a cloud session."
+            " Passed by main_0_mega.py, which runs the survey as a step of its own."
         ),
     )
     sub.add_parser(
@@ -272,7 +271,7 @@ def build_parser():
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = build_parser().parse_args()
     if args.subcommand == "gen-site":
         cmd_gen_site(args)

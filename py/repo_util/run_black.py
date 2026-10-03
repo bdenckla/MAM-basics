@@ -29,12 +29,11 @@ def _select_black_command(
     # Last resort: the base interpreter's own Scripts directory. Several
     # workspace repos deliberately have no .venv -- Ben's decision of
     # 2026-08-31, whose reasoning no tracked record holds -- and black is installed
-    # into the base Python
-    # for them, reached through Ben's persisted USER PATH. An agent shell does
-    # not inherit that PATH, so shutil.which above returns None there and the
-    # sweep would report every such repo as a problem when black is in fact
-    # present. sys.base_prefix is the base installation root inside a venv and
-    # equals sys.prefix outside one, so no venv-detection branch is needed.
+    # into the base Python for them, reached through Ben's persisted USER PATH. An
+    # agent shell does not inherit that PATH, so shutil.which above returns None
+    # there and the sweep would report every such repo as a problem when black is
+    # in fact present. sys.base_prefix is the base installation root inside a venv
+    # and equals sys.prefix outside one, so no venv-detection branch is needed.
     base_black = Path(sys.base_prefix) / "Scripts" / "black.exe"
     if base_black.is_file():
         return [str(base_black), *tail]

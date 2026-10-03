@@ -88,7 +88,7 @@ _KEEP_AS_ESCAPE.update(range(0x0000, 0x0080))
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
-    sys.stderr.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     root = boj_paths.code_dir()
     all_violations = []
 

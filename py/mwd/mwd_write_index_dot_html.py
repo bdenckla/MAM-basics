@@ -2,8 +2,8 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import my_utils
 from mb_cmn import provenance
 from py_misc import mwd_utils as mwdu
+from mb_misc import mam_attribution
 from mb_misc import mb_html
-from mb_misc import ws_urls
 
 
 def write_index_dot_html(edition, css_hrefs, out_path):
@@ -38,7 +38,9 @@ def _cc_by_sa_license():
     anchor_cc_by_sa = mb_html.anchor_h(
         "CC-BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"
     )
-    anchor_he_wikisource = mb_html.anchor_h("Hebrew Wikisource", ws_urls.HEBREW)
+    anchor_he_wikisource = mb_html.anchor_h(
+        "Hebrew Wikisource", mam_attribution.ENGLISH_ATTRIBUTION_URL
+    )
     return (
         mb_html.heading_level_1((f"{eng_title} ({heb_title})")),
         mb_html.para(

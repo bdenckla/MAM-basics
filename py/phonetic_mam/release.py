@@ -3,7 +3,7 @@
 import json
 
 from mb_cmn import bib_locales, paths
-from phonetic_mam import display_schema, test_page_display
+from phonetic_mam import display_schema, example_display
 
 
 def data_path(book_id):
@@ -58,6 +58,7 @@ def validate_complete_release():
     """Check closed shapes, canonical bytes, identities and every required book."""
     root = paths.phonetic_mam_dir()
     expected = {
+        root / "LICENSE.md",
         root / "README.md",
         root / "schema" / "phonetic-mam-public-v1.schema.json",
         root / "examples" / "display.json",
@@ -85,7 +86,7 @@ def read_examples():
         path.read_text(encoding="utf-8"), object_pairs_hook=_unique_object
     )
     display_schema.require(
-        path.read_bytes() == test_page_display.canonical_bytes(payload),
+        path.read_bytes() == example_display.canonical_bytes(payload),
         "noncanonical example display data",
     )
     return payload

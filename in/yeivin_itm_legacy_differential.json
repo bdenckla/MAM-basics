@@ -2,7 +2,7 @@
   "schema": "yeivin-itm-legacy-differential-v1",
   "legacy_commit": "8da90513df1c759d8db34b135d007e79686715d3",
   "public_source_baseline": "4b12bc411cd852e9691c7337f37d9795532fa404",
-  "description": "Every old page is recovered byte-for-byte by reversing only the listed font-source link or Ben-approved claim corrections. Other adaptation modules remain byte-identical.",
+  "description": "Every old page is recovered byte-for-byte by removing the shared favicon line from its head and then reversing only the listed font-source link or Ben-approved claim corrections. Other adaptation modules remain byte-identical. Frozen record: this held for the pages and modules as of 75a1127b5310f0dd4ed2827ad93c687178960f8e, and no test reads it now.",
   "pages": {
     "yeivin_itm-131_135.html": {
       "old_sha256": "072b69c862ab1298a750c5d8e8a42cc3e392643af863cb042009fcc1a3d08881",

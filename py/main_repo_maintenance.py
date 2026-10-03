@@ -81,6 +81,7 @@ import sys
 
 from mb_cmn import paths
 from repo_util import git_worktree_cleanup
+from repo_util.common import clear_read_only_and_retry
 from repo_util.user_config_sync import run_user_config_sync
 
 _REPO = paths.repo_root()
@@ -137,7 +138,7 @@ def _clean_one_novc(novc, label: str) -> None:
         print(f"{label} .novc: nothing to clean (directory does not exist)")
         return
     removed = sorted(p.name for p in novc.iterdir())
-    shutil.rmtree(novc)
+    shutil.rmtree(novc, onexc=clear_read_only_and_retry)
     novc.mkdir()
     if removed:
         print(f"{label} .novc: removed {len(removed)} entries: {', '.join(removed)}")
@@ -216,7 +217,11 @@ def main() -> None:
     tests_ok = True
 
     if not args.skip_novc:
-        clean_novc()
+        try:
+            clean_novc()
+        except OSError as exc:
+            print(f"MAM-basics .novc: FAILED ({exc})")
+            ok = False
 
     if not args.skip_worktrees:
         ok = clean_worktrees() and ok

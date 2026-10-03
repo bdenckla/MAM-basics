@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:mam:phonetic-mam-public-v1",
   "title": "Phonetic MAM public display book",
-  "description": "Only the generic Hebrew and display structure of the sanctioned pages. Shape validation does not replace the complete-output disclosure assessment.",
+  "description": "Only the generic Hebrew and display structure of the sanctioned pages. README.md, \"How the Hebrew differs from MAM's text\", defines generic Hebrew and lists how it differs from MAM's text. Shape validation does not replace the complete-output disclosure assessment.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -87,7 +87,7 @@
     "text": {
       "type": "string",
       "minLength": 1,
-      "pattern": "^[^<>\\u05af\\u05c4\\u05c8\\u05c9]+$",
+      "pattern": "^[^<>\\u05af\\u05c4\\u05c5\\u05c8\\u05c9]+$",
       "not": {
         "pattern": "\\\\[uU]"
       }

@@ -369,6 +369,11 @@ dispositions stay in their untracked proposal files.
 
 ## Phonetic refresh authority closeout, 2026-10-02
 
+Recorded by OpenAI Codex on 2026-10-02, New York time, under Ben's paired evacuation closeout
+instruction, in `d0c660c9`. This line was added on 2026-10-03 under the remediation of the
+2026-10-02 review (item C15.29); the other entry that `d0c660c9` wrote, in
+`doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`, names that recorder.
+
 **Implemented:** the paired evacuation closeout removes phonetic-hbo from routine
 refresh and clone ownership. The current cloud-limit row now names the two-repository
 loop. MAM-private is still required for the read-only exporter and private regeneration;

@@ -10,12 +10,91 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import threading
 
 from mb_cmn import bib_locales, paths, provenance
-from phonetic_mam import display_projection, display_schema, test_page_display
+from phonetic_mam import display_projection, display_schema, example_display
 
 _ADAPTER_RELATIVE_PATH = Path("al-hatorah/py/main_phonetic_mam_source.py")
 _MAX_BOOK_CHARS = 64 * 1024 * 1024
+# A failing adapter's error names the end of its standard error, which is kept in
+# memory only, so that nothing that may quote private data is written to disk.
+_STDERR_TAIL_BYTES = 4096
+# The whole export step took 229.2 seconds when this limit was set; a hung adapter
+# is stopped rather than blocking the export.
+_ADAPTER_TIME_LIMIT_SECONDS = 1800
+
+
+def _tail_text(data):
+    """The last ``_STDERR_TAIL_BYTES`` of an adapter's standard error, as text."""
+    if not data:
+        return "(nothing)"
+    if isinstance(data, str):
+        data = data.encode("utf-8", "replace")
+    tail = bytes(data[-_STDERR_TAIL_BYTES:]).decode("utf-8", "replace").strip()
+    return tail or "(nothing)"
+
+
+class _StderrTail:
+    """Drain a child's standard error on a daemon thread, keeping only its tail."""
+
+    def __init__(self, stream):
+        self._stream = stream
+        self._tail = bytearray()
+        self._lock = threading.Lock()
+        self._thread = threading.Thread(target=self._drain, daemon=True)
+        self._thread.start()
+
+    def _drain(self):
+        try:
+            while chunk := self._stream.read1(65536):
+                with self._lock:
+                    self._tail += chunk
+                    del self._tail[:-_STDERR_TAIL_BYTES]
+        except (OSError, ValueError):
+            # The pipe was closed under the reader; the tail kept so far stands.
+            return
+
+    def join(self):
+        self._thread.join(timeout=5)
+
+    def text(self):
+        self.join()
+        with self._lock:
+            return _tail_text(self._tail)
+
+
+class _Watchdog:
+    """Kill a child that outlives the adapter time limit, and remember doing so."""
+
+    def __init__(self, process):
+        self.fired = False
+        self._process = process
+        self._timer = threading.Timer(_ADAPTER_TIME_LIMIT_SECONDS, self._fire)
+        self._timer.daemon = True
+        self._timer.start()
+
+    def _fire(self):
+        self.fired = True
+        self._process.kill()
+
+    def cancel(self):
+        self._timer.cancel()
+
+
+def _adapter_error(process, watchdog, stderr, failure):
+    """The release error for a failed streaming run, with its status and stderr tail."""
+    if process.poll() is None:
+        process.kill()
+    status = process.wait()
+    if watchdog.fired:
+        failure = (
+            f"source adapter exceeded its {_ADAPTER_TIME_LIMIT_SECONDS}-second limit"
+            " and was stopped"
+        )
+    return display_schema.PublicReleaseError(
+        f"{failure} (exit status {status}); its stderr ended with:\n{stderr.text()}"
+    )
 
 
 def _unique_object(pairs):
@@ -88,17 +167,22 @@ def iter_source_books(book_ids=None):
         env=environment,
         stdin=subprocess.DEVNULL,
         stdout=subprocess.PIPE,
-        stderr=subprocess.DEVNULL,
+        stderr=subprocess.PIPE,
         text=True,
         encoding="utf-8",
     ) as process:
+        stderr = _StderrTail(process.stderr.buffer)
+        watchdog = _Watchdog(process)
         try:
             for book_id in expected:
                 line = process.stdout.readline(_MAX_BOOK_CHARS + 1)
-                display_schema.require(
-                    bool(line) and len(line) <= _MAX_BOOK_CHARS and line.endswith("\n"),
-                    "source adapter ended early or exceeded its book limit",
-                )
+                if not (line and len(line) <= _MAX_BOOK_CHARS and line.endswith("\n")):
+                    raise _adapter_error(
+                        process,
+                        watchdog,
+                        stderr,
+                        "source adapter ended early or exceeded its book limit",
+                    )
                 value = json.loads(
                     line,
                     object_pairs_hook=_unique_object,
@@ -113,28 +197,45 @@ def iter_source_books(book_ids=None):
             display_schema.require(
                 not process.stdout.read(1), "unexpected adapter output"
             )
-            display_schema.require(process.wait() == 0, "source adapter failed")
+            if process.wait() != 0 or watchdog.fired:
+                raise _adapter_error(process, watchdog, stderr, "source adapter failed")
         finally:
+            watchdog.cancel()
+            # Kill rather than terminate: with the watchdog cancelled, a wait for a
+            # child that ignores termination would have no bound.
             if process.poll() is None:
-                process.terminate()
+                process.kill()
                 process.wait()
+            stderr.join()
 
 
 def source_test_pages():
     """Parse the adapter's five rendered pages through the public-only parser."""
     root, command, environment = _adapter_command("test-pages")
-    result = subprocess.run(
-        command,
-        cwd=root / "al-hatorah",
-        env=environment,
-        stdin=subprocess.DEVNULL,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.DEVNULL,
-        text=True,
-        encoding="utf-8",
-        check=False,
-    )
-    display_schema.require(result.returncode == 0, "test-page source adapter failed")
+    try:
+        result = subprocess.run(
+            command,
+            cwd=root / "al-hatorah",
+            env=environment,
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            encoding="utf-8",
+            check=False,
+            timeout=_ADAPTER_TIME_LIMIT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as expired:
+        raise display_schema.PublicReleaseError(
+            "test-page source adapter exceeded its"
+            f" {_ADAPTER_TIME_LIMIT_SECONDS}-second limit and was stopped;"
+            f" its stderr ended with:\n{_tail_text(expired.stderr)}"
+        ) from None
+    if result.returncode != 0:
+        raise display_schema.PublicReleaseError(
+            f"test-page source adapter failed (exit status {result.returncode});"
+            f" its stderr ended with:\n{_tail_text(result.stderr)}"
+        )
     display_schema.require(
         len(result.stdout) <= _MAX_BOOK_CHARS, "test-page input too large"
     )
@@ -159,14 +260,14 @@ def source_test_pages():
         name = page["filename"]
         display_schema.require(isinstance(name, str), "test-page name must be text")
         display_schema.require(name not in by_name, "duplicate test-page input")
-        by_name[name] = test_page_display.page_from_html(name, page["html"])
+        by_name[name] = example_display.page_from_html(name, page["html"])
     display_schema.require(
-        set(by_name) == set(test_page_display.PAGE_NAMES), "test-page set differs"
+        set(by_name) == set(example_display.PAGE_NAMES), "test-page set differs"
     )
-    return test_page_display.validate(
+    return example_display.validate(
         {
-            "schema": test_page_display.SCHEMA_ID,
-            "pages": [by_name[name] for name in test_page_display.PAGE_NAMES],
+            "schema": example_display.SCHEMA_ID,
+            "pages": [by_name[name] for name in example_display.PAGE_NAMES],
         }
     )
 
@@ -195,7 +296,7 @@ def export_release():
     display_schema.require(
         tuple(payloads) == tuple(bib_locales.ALL_BK39_IDS), "incomplete export"
     )
-    test_bytes = test_page_display.canonical_bytes(source_test_pages())
+    test_bytes = example_display.canonical_bytes(source_test_pages())
     output = paths.repo_root() / "Phonetic-MAM" / "data"
     output.mkdir(parents=True, exist_ok=True)
     names = {

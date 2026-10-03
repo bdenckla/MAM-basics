@@ -47,6 +47,16 @@ HBCE's TEI transcriptions of Psalms, added 2026-09-26 with 126 clusters in the o
 TSV and `.txt` outputs under `hbce-psalms/out/` quote those forms in HBCE's order by design, 60
 clusters on the same date; `hbce-psalms/README.md` describes both trees.
 
+`doc/wikisource-dagesh-discussion-2026-10-01.mediawiki` is another capture tracked after that
+scan: the exact UTF-8 section text that the MediaWiki revisions API returned on 2026-10-01 for a
+Hebrew Wikisource Village Pump discussion, with 5 clusters in the other order. Its translation,
+`doc/wikisource-dagesh-discussion-translation.md`, says not to reorder the capture's marks, and
+gives its own Hebrew examples in MAM-normal order.
+
+`in/mam-ws-special/`, the declared special pages that every Wikisource chapter download mirrors
+byte for byte, was added 2026-09-27 with 5,369 clusters in the other order in 25 of its 36
+`.mediawiki` files.
+
 **The other 7,247 clusters, in 152 files, are unclassified.** Nobody has established, file by
 file, whether each is a capture, an upstream intermediate, or a paste that should have been in
 MAM-normal order. The largest shares are in `uxlc/in/` and `uxlc/out/` (3,890), `in/accgram/`

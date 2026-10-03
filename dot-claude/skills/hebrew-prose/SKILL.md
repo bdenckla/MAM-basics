@@ -30,11 +30,14 @@ the repository-specific reference before writing. Load only the references neede
    interchangeable. Do not call any of them a "witness" unless the task is expressly about
    textual criticism. A grammatical claim takes MAM as its corpus unless another corpus is
    explicitly named; WLC is a comparison text, not a substitute corpus.
-7. **Use the established names.** Write "the Simanim Tiqqun", not bare "Simanim". Keep strand
-   names in Hebrew letters in reader-facing prose. Distinguish narrow-sense meteg from secondary
-   stress, and do not infer vowels from secondary-stress placement. Treat stress-helper templates
-   as choices among strands, not as a license to traverse all branches. Reserve `MUDGASH` and
-   `mudgash` for literal Unicode code-point names.
+7. **Use the established names.** Write "the Simanim Tiqqun", not bare "Simanim". On the
+   printed-Decalogue pages, keep the strand names תחתון and עליון in Hebrew letters in
+   reader-facing prose; `references/rendered-prose.md` gives that rule's scope and its exempt
+   registers. Elsewhere, keep the strand names a page or data product already uses, such as
+   MAM-simple's `cant-alef` and `cant-bet` strands. Distinguish narrow-sense meteg from
+   secondary stress, and do not infer vowels from secondary-stress placement. Treat
+   stress-helper templates as choices among strands, not as a license to traverse all
+   branches. Reserve `MUDGASH` and `mudgash` for literal Unicode code-point names.
 8. **Show the Hebrew form in Unicode.** Do not replace the form with a transliteration or an
    English gloss. In mixed-direction prose, the first strong character of a line must be Latin;
    give Hebrew an English runway or its own RTL table cell. A section sign and a backtick are

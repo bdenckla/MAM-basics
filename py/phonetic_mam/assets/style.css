@@ -35,6 +35,13 @@ h2.verse-number { font-size: 14pt; font-weight: normal; }
 .pronunciation-controls label { margin-right: 1em; }
 .pronunciation-controls input:focus-visible + label { outline: 2px solid currentColor; }
 .pronunciation-ashkenazic, .column-ashkenazic-only { display: none; }
+/* pronunciation.js keeps body.ashkenazic-selected in step with the radio group, for a
+   browser without :has(). Its rules stay apart from the :has() rules, because a browser
+   that does not know :has() drops every rule whose selector list holds it. */
+body.ashkenazic-selected .pronunciation-sephardic,
+body.ashkenazic-selected .column-sephardic-only { display: none; }
+body.ashkenazic-selected .pronunciation-ashkenazic { display: inline; }
+body.ashkenazic-selected .column-ashkenazic-only { display: table-cell; }
 body:has(#pronunciation-ashkenazic:checked) .pronunciation-sephardic,
 body:has(#pronunciation-ashkenazic:checked) .column-sephardic-only { display: none; }
 body:has(#pronunciation-ashkenazic:checked) .pronunciation-ashkenazic { display: inline; }

@@ -209,4 +209,4 @@ def _insert_numsec_selflink_3(num_of_sec, contents0):
 def _numsec_selflink(num_of_sec):
     id_of_sec = id_of_numsec(num_of_sec)
     attr = {"href": f"#{id_of_sec}"}
-    return aht_html.anchor(f"#", attr)
+    return aht_html.anchor("#", attr)

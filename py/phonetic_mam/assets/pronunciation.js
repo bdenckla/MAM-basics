@@ -9,6 +9,8 @@
         for (const choice of choices) {
             choice.checked = choice.value === pronunciation;
         }
+        // style.css's fallback for a browser without :has().
+        document.body.classList.toggle("ashkenazic-selected", pronunciation === "ashkenazic");
         if (replaceURL) {
             const current = new URL(window.location.href);
             current.searchParams.set("pronunciation", pronunciation);
