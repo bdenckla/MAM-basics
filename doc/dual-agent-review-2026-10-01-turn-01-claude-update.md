@@ -313,16 +313,17 @@ manual registration, and forbade fetch/launch/notify/round visits. It returned z
 counter zero and unchanged registry/round-control bytes. The Windows task's inspected action
 used the home `.venv/Scripts/pythonw.exe`, home `py/main_repo_util.py`,
 `--dual-agent-review tick` and home working directory, with no alternate configuration. It
-remained Ready, enabled, with IgnoreNew when this entry was written. This proves inactive dispatch handling for the
-scheduler's source and registry; it does not claim a new worker exchange or notification
-receipt. The existing follow-up was left paused and received no automation update.
+remained Ready, enabled, with IgnoreNew when this entry was written. This proves inactive
+dispatch handling for the scheduler's source and registry; it does not claim a new worker
+exchange or notification receipt. The existing follow-up was left paused and received no
+automation update.
 
 The final ownership/evidence audit found clean home/development checkouts, no runtime
 blockers and all original 26 SHA-256 hashes unchanged. The round now records
 `State: executed 2026-10-01; close-out completed`; the relay's parser and lint then admitted
-this terminal state, and the round could not dispatch. This final documentation commit records those actual
-outcomes. The executable and generated-product trees remain the verified `4251e8f6` tree,
-so the 1,056-pass/60-subtest suite and 57-step mega results remain applicable.
+this terminal state, and the round could not dispatch. This final documentation commit records
+those actual outcomes. The executable and generated-product trees remain the verified `4251e8f6`
+tree, so the 1,056-pass/60-subtest suite and 57-step mega results remain applicable.
 The existing census and deployment lints passed on the final terminal round (2 passed,
 13 deselected) with `core.longpaths=false` and explicit-encoding checks; the final tracked
 whitespace check passed. Their public evidence is retained in

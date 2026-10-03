@@ -34,7 +34,8 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
    adapter, then renders and analyzes the tracked public release. Audit every generated diff,
    run whitespace checks, verify the recorded HEAD and commit only the audited refresh paths.
    If the mega stops at `yeivin-itm-survey-meteg-claims`, follow "Gates that a text change can
-   trip", item 1, before committing. Use `Refresh MAM from Wikisource`, or the saving bot run's own record as `SKILL.md` specifies.
+   trip", item 1, before committing.
+   Use `Refresh MAM from Wikisource`, or the saving bot run's own record as `SKILL.md` specifies.
    This local commit precedes change-log generation, which compares committed data.
 
 2. **Recheck private ownership and inputs before writing.** Require the selected private
