@@ -158,10 +158,12 @@ temporary-stub procedures, and historical traps.
    `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
-A change that can reach a mega generator owes a mega run and an explanation of every tracked
-diff. A documentation-only change owes neither a mega run nor the suite. Any other change that
-cannot reach a mega generator owes the suite. A hand-run generator can reach a product even though
-the mega does not run it. A change to a hand-run generator, or to any input it reads, requires
+A change that can alter what a mega generator writes owes a mega run and an explanation of every
+tracked diff; code that no mega step runs, such as a `main()` that the mega bypasses through
+`almost_main`, does not reach a generator. A documentation-only change owes neither a mega run nor
+the suite. Any other change owes the tests and lints that exercise what it touches, and the full
+suite when it has a meaningful chance of breaking something they don't cover. A hand-run generator
+can reach a product even though the mega does not run it. A change to a hand-run generator, or to any input it reads, requires
 rerunning every affected hand-run generator and inspecting its tracked outputs, with two
 exceptions that Ben decided. A refresh of MAM's text does not oblige rerunning
 `py/main_mam4sef.py` or `py/main_mam_osis.py` (his decision of 2026-09-30), so MAM-for-Sefaria
