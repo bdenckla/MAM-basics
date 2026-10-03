@@ -600,14 +600,6 @@ _STEPS = [
         main_sigil_inventory.almost_main,
         "reads MAM-parsed's plus/ tree; writes the tracked out/sigil-inventory.json",
     ),
-    # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a
-    # worktree run finds MAM-private beside its home clone with no REPOS_ROOT (516a4a1a), and
-    # a cloud run skips the survey altogether, which its runner does.  Until then nothing
-    # routine rewrote out/accgram/post-stress-meteg.json; the survey was run by hand from
-    # main_accgram.py when the corpus moved.  Placed immediately before gen-site, which
-    # renders from the JSON it writes, and so after every step that writes MAM-simple, whose
-    # json-vtrad-mam it reads (paths.mam_simple_vtrad_mam_dir).  This comment and the
-    # description below said xml-vtrad-mam until 2026-09-11.
     StepRecord(
         "phonetic-mam-export",
         _run_phonetic_mam_export,
@@ -631,8 +623,23 @@ _STEPS = [
     StepRecord(
         "yeivin-itm-render",
         _run_yeivin_itm_render,
-        "reads the approved tracked claims and adaptation; writes all 17 public Yeivin pages",
+        "reads the approved tracked claims, the adaptation and"
+        " py/yeivin_itm/assets/style.css, and the frozen font inputs doc/woff2/ and"
+        " in/font-support/taamey-d-0.921/; writes the 17 public Yeivin pages,"
+        " gh-pages/yeivin-itm/style.css, the four files of gh-pages/yeivin-itm/woff2/"
+        " and the shared gh-pages/font-sources/taamey-d-0.921/ package, which"
+        " phonetic-mam-render also writes",
     ),
+    # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a
+    # worktree run finds MAM-private beside its home clone with no REPOS_ROOT (516a4a1a), and
+    # a cloud run skips the survey altogether.  Until then nothing routine rewrote
+    # out/accgram/post-stress-meteg.json; the survey was run by hand from main_accgram.py when
+    # the corpus moved.  Since 9a67d51b (2026-10-01) the survey reads the tracked Phonetic-MAM
+    # release rather than MAM-private, so neither condition concerns it any more: it runs in a
+    # cloud session too, and the cloud skip belongs to phonetic-mam-export.  Placed immediately
+    # before gen-site, which renders from the JSON it writes, and so after every step that
+    # writes MAM-simple, whose json-vtrad-mam it reads (paths.mam_simple_vtrad_mam_dir).  This
+    # comment and the description below said xml-vtrad-mam until 2026-09-11.
     StepRecord(
         "accgram-survey-post-stress-meteg",
         _run_accgram_survey_post_stress_meteg,
