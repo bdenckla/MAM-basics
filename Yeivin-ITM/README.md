@@ -65,9 +65,13 @@ analysis is independently owned by accgram and consumes the tracked public
 Phonetic MAM release; it is not run by the Yeivin renderer.
 
 `meteg-claims.json` follows the closed schema in
-`schema/meteg-claims-v1.schema.json`. It records the exact input identity and
-SHA-256, named populations and exclusions, integer numerators and denominators,
-and percentages derived directly from those fractions. Existing examples remain
+`schema/meteg-claims-v1.schema.json`. The schema's `$id`,
+`https://bdenckla.github.io/MAM-basics/Yeivin-ITM/schema/meteg-claims-v1.schema.json`,
+identifies the schema; it is not where the schema is served, since Pages publishes
+only `gh-pages/`. Read the schema from this directory. The claim file records the
+exact input identity and SHA-256, named populations and exclusions, integer
+numerators and denominators, and percentages derived directly from those
+fractions. Existing examples remain
 in the adaptation; no new source excerpts or examples are included in the data.
 The counts retain the analysis's cantillation and qamats projection, with no
 extra filters invented to reproduce historical workbook figures.
