@@ -14,6 +14,20 @@ Keep planning, approval, execution, and handoff explicit while a document's requ
 - Reconcile every visible user message, annotation, and supplied input before declaring the
   specification or plan complete.
 
+## Preserve ownership of request files
+
+- Ben owns a file used to collect requested edits, comments or annotations. Read it
+  without changing its text, identifiers or organization unless Ben explicitly
+  authorizes editing that request file. Authorization to revise the target document
+  does not authorize editing the request file.
+- Keep agent-written statuses, responses, proposals, implementation notes and
+  verification records in a separate agent-maintained file. Reuse an existing
+  companion; otherwise choose a clearly named companion such as
+  `<request-stem>-status.md` and tell Ben its path.
+- Maintain the cumulative revision ledger in that companion and refer to Ben's
+  request identifiers. Reconcile later request-file edits into the ledger without
+  marking up, reformatting or reorganizing Ben's file.
+
 ## Maintain cumulative state
 
 - Keep one compact cumulative revision ledger. Mark each requirement `active`, `superseded`,
