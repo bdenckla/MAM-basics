@@ -30,19 +30,10 @@ THE THREE TIERS
 
 WHAT A CHANGE OWES
 
-A documentation-only, comment-only, docstring-only, or instruction-text-only change owes neither the mega nor the
-suite. A change that can alter what a mega generator writes owes a mega run and a
-reading of every tracked diff it leaves; code that no mega step runs, such as a
-``main()`` that the mega bypasses through ``almost_main``, does not reach a generator.
-Any other executable-source, test, schema, or shared-data change owes the tests and
-lints that exercise what it touches, and the full suite when it has a meaningful chance
-of breaking something they don't cover. A change to a hand-run generator, or an input it reads, owes every affected
-hand-run generator and inspection of its outputs. A refresh of MAM's text is the
-exception for ``py/main_mam4sef.py`` and ``py/main_mam_osis.py``, by Ben's decision of
-2026-09-30, and a change to MAM's data is the exception for
-``py/main_hbce_psalms.py compare``, by his decision of 2026-09-26; AGENTS.md's products
-section states both. AGENTS.md's "Integrating a worktree branch here: run the mega
-unless the branch is exempt" states the final worktree integration gate.
+AGENTS.md states it, in "What this repository's products are, and which check a change
+owes" and "Integrating a worktree branch here"; this docstring does not restate it, so
+the two cannot drift apart.  The next paragraph says why a mega run does not cover the
+hand-run generators.
 
 TIER 3 IS THE MEGA'S STEP TABLE, AND THAT IS NOT EVERY ROUTE INTO A PRODUCT
 
