@@ -28,7 +28,7 @@ EVR_INDEX_DOCUMENTATION = (
 )
 
 NARPAS_GROUPING_RULE = (
-    "Narpas (narrow-sense paseq, ׀) forms no compound of any kind: only maqaf "
+    "Narpas (narrow-sense paseq, מ:פסק) forms no compound of any kind: only maqaf "
     "joins atoms into a chanted word. Within the Scripture stream, MAM encodes "
     "no whitespace before or after narpas; that absence expresses neither "
     "grouping nor a display-spacing preference. An edition chooses whether to "

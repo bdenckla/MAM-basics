@@ -83,7 +83,7 @@ The following rules protect distinctions that a generic tree walk would erase:
   punctuation, or structural-node boundary defines neither unit; in particular, a
   separate `<lp-legarmeih>` or `<lp-paseq>` node represents a mark that belongs with
   the preceding atom.
-- Narpas (narrow-sense paseq, ׀) forms no compound of any kind; only maqaf joins atoms
+- Narpas (narrow-sense paseq, מ:פסק) forms no compound of any kind; only maqaf joins atoms
   into a chanted word. MAM encodes no text whitespace before or after narpas to avoid
   prescribing display spacing, not to group the surrounding text. An edition decides
   whether to display spacing before and/or after narpas; an analytical consumer need
