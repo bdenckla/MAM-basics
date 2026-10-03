@@ -19,7 +19,8 @@ always comes from `all-repos.code-workspace`; sweep selection flags do not narro
 
 This fetches remote refs and reports clone, branch, local-change, Git-operation and environment
 state. It does not clone, merge or install packages. A missing clone or environment, a dirty
-checkout, a branch other than `main`, ahead/diverged history or dependency drift returns failure.
+checkout, a branch other than `main`, a Git operation in progress or a Git lock file, history
+behind, ahead of or diverged from `origin/main`, or dependency drift returns failure.
 Runtime occupancy is reported separately; checking an occupied clone is permitted.
 
 ```powershell
