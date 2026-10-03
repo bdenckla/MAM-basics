@@ -62,7 +62,11 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
 
    The exporter is the routine public pipeline's only private dependency. Phonetic rendering,
    both meteg surveys, the Breuer survey and the Yeivin claims/rendering consume public data.
-   Audit every diff and commit explained dependent changes. Failed gates, stale inputs and
+   The mega's `diff-mpplus` step rewrites the MAM change log under
+   `gh-pages/MAM-with-doc/change-log/` from committed `HEAD`, which now includes step 1's
+   commit, so this run leaves the change-log diff that step 5 audits and commits. Audit every
+   other diff and commit the explained dependent changes, leaving every path under
+   `gh-pages/MAM-with-doc/change-log/` uncommitted for step 5. Failed gates, stale inputs and
    unexplained output changes stop the workflow; "Gates that a text change can trip" says how
    the Yeivin claim pins and the legacy display projection are resolved.
 
@@ -72,8 +76,11 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
    ./.venv/Scripts/python.exe py/main_diff.py mpplus --all
    ```
 
-   Audit every change-log diff; named historical-release reports must remain unchanged.
-   Then run:
+   This rewrites the change log from committed `HEAD`, so it reproduces what step 4's mega
+   left uncommitted. Audit every change-log diff; named historical-release reports must
+   remain unchanged. In an ordinary refresh only `unpinned-latest.html` and
+   `unpinned-latest.json` change, with `index.html` when the count of unreleased changes
+   moves. Then run:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_diff.py mpplus --check
