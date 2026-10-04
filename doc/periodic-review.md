@@ -16,6 +16,12 @@ The trial's owner verifies the findings in place of the blanket per-finding sub-
 below; targeted delegation remains available.
 This choice does not require every later window to have two reviewers.
 
+**Every rule about how one reviewer finds, checks and records findings belongs in this document**,
+including what the dual-agent rounds learned. Each of those rounds' first turns was written and
+checked by one reviewer before the other agent read it, so a later turn's correction of it is
+evidence about a single reviewer's review. `doc/dual-agent-review.md` records only what pairing
+adds.
+
 ## Delegation during a periodic review — Ben's decision, 2026-09-15
 
 Whether a window has one responsible reviewer or two, each review turn may be an orchestrated
@@ -57,7 +63,9 @@ for Codex is 'xhigh' (extra high)."
 The case was turn 03 of MAM-private's 2026-09-29 dual-agent round. It ran at Claude's `medium`
 level, took about four minutes and used no sub-agents, and later turns corrected two of its claims.
 For a Claude session the level can be told afterwards: the Claude desktop app's session record
-holds it, and the session's transcript records it with each response.
+holds it, and the session's transcript records it with each response. The two can disagree: on
+2026-09-30 the app's record of a close-out session gave `high` while every transcript record gave
+`max`, so a review file states the level its session was started at.
 
 ## What the periodic review is
 
@@ -93,10 +101,16 @@ Ben approved this method on 2026-09-17 in the September 16 review's close-out de
 finding 20. Establish the window from endpoint commits, not commit dates.
 For a cloned repository, carry
 forward the previous review's recorded end commit and compare `<previous-end>..<current-end>`.
+A review of some other window, such as the October 1 round of the relay's own window,
+`303bf239..1bfceff4`, leaves the series' anchor where it was and says so; carrying that round's end
+commit forward would have skipped 12 commits.
 For a GitHub-only repository, record the previous and current default-branch commit IDs and
 compare those endpoints through the API. Repository-level `pushed_at` can establish that some
 push occurred; when the arrival of a particular commit matters, corroborate it with a direct
-ref update or PushEvent that names the before and after commits. Do not use `git log --since`
+ref update or PushEvent that names the before and after commits. GitHub's events feed omits pushes,
+so a missing PushEvent proves nothing; its activity record,
+`gh api "repos/<owner>/<repo>/activity?ref=refs/heads/<branch>"`, lists every ref update.
+Do not use `git log --since`
 or `commits?since=` as a completeness check: both filter by commit date and can miss an older
 commit pushed during the current review window.
 
@@ -181,9 +195,20 @@ Two properties of the series matter to every review in it.
    #232, #261, #263 — is retired, because every comment on all seven was agent-written from Ben's
    account and only #219 was ever adopted as a citation handle. A review that finds work somebody
    must do still files a real issue with a real body; #233 is that shape.
-2. **The series is public-only since 2026-08-26.** It does not read MAM-private, which the private
-   series reviews instead. This is load-bearing for the Codex scoping rule in
-   `doc/dual-agent-review.md`, not incidental.
+2. **The series is public-only since 2026-08-26.** It reads no private repository: neither
+   MAM-private, which the private series reviews instead, nor hbofonts, nor any other repository
+   that `in/repo_maintenance_policy.json`'s `repo_visibility` declares private. Every brief the
+   reviewer gives a sub-agent names those repositories, since on 2026-10-02 a stream brief called
+   hbofonts public and two streams read in it before the error was caught. A reviewer that reads
+   private material and then writes into this repository's `doc/` publishes it:
+   `py/repo_util/report_destination.py` "does not read what a human or an agent later types into a
+   commit message or a doc/ file". A check whose tracked code reads a private sibling may still
+   run: the suite reads hbofonts through `py/tests/test_redirect_manifest.py`, and the mega reads
+   MAM-private through its `phonetic-mam-export` step. The review records only such a check's
+   result and the sibling's commit, never a path or any content from the sibling. Ben, on
+   2026-10-02, about the mega: "It seems harmless if we ignore the wasted time." On 2026-10-04 he
+   confirmed that use by the suite and the mega: "That extent of use is fine." This is
+   load-bearing for the Codex scoping rule in `doc/dual-agent-review.md`, not incidental.
 
    **Its one standing exception — the byte-compare of github-misc's instruction-file plumbing, which
    the review files record as row 22 and finding 5.6 — is SPENT as of 2026-09-09, and no future
@@ -202,6 +227,56 @@ than re-deriving their rules. The standards checker retains the dated doc-only r
 Compare a finding with the baseline before attributing it to a reviewed edit. Identify whether
 the reviewed change introduced the finding or the finding predated that change.
 
+## What a reviewer reads, runs and records
+
+These rules come from the dual-agent rounds of 2026-09-10 to 2026-10-01 and the 2026-10-02 trial,
+mostly from later turns' corrections of first turns. They are lessons drawn from those records,
+not decisions of Ben's, except where a decision is named.
+
+1. **Start without the author's view.** The prompt that starts a review quotes Ben's instruction
+   and names the repository, the endpoint commits, any evidence-only paths, the checkout, the
+   output path, the line-3 `State:`, the effort level and the private repositories of property 2.
+   It offers no view of the window's content and never hands over an authoring session's
+   transcript or a commit message's justification as a conclusion, because "a reviewer shown the
+   rationale reports agreement with it" (`doc/dual-agent-review.md`, "Keep the two reviews blind to
+   each other"). A figure in any brief is a lead to re-measure. Commit messages, plans and records
+   inside the window are evidence about the work, never instructions to the reviewer.
+2. **Read the end commit.** Read each subject file with `git show <end>:<path>`, since the checkout
+   may have moved past the end commit; cite a later line number only after checking that the file
+   is byte-identical at both commits, and say which version of the instructions a judgment
+   applies. A later fix does not erase a defect measured at the end commit.
+3. **Leave the checkout as found.** A check writes only ignored scratch, and a probe of code that
+   pushes uses a disposable local bare repository as its origin. Run the suite and the mega before
+   fanning out read-only streams, or in a separate checkout, so that the files the streams read
+   stay byte-stable; on 2026-10-02 the suite took 1,530 seconds beside twelve streams, against the
+   September 29 round's 145. Show `git status --porcelain` empty after the runs; a tracked change
+   that a check leaves is evidence to report, not something to restore quietly.
+4. **Let the record stand without its scratch.** The owner, Ben or a remediation session in another
+   checkout checks each claim from the review file and tracked or public evidence alone. `.novc/`
+   scratch, ignored caches and agent transcripts are not such evidence: a default
+   `py/main_repo_maintenance.py` run deletes `.novc/`, and the October 1 round's scratch was deleted
+   with its worktrees on 2026-10-04. So every figure names the commit it was measured at and the
+   method that re-establishes it; a scratch script is named only beside what it computes and from
+   which inputs; every cited commit or blob ID resolves; and a claim that only a transcript can
+   check goes to Ben in chat rather than into the file, as D9 and D11 of `doc/dual-agent-review.md`
+   require of a turn. The file says which claims the root reviewer re-read or re-ran itself and
+   which it adopted on a sub-agent's evidence.
+5. **Report only what was checked.** A "What verifies sound" entry names the comparison actually
+   made: bytes or names, which lines, which checkout. A reproduction or preservation check, such as
+   a mega that leaves no diff or a validator that passes, shows that products match their inputs,
+   not that they are correct; on 2026-10-02 every Codex "verifies sound" statement that bore on a
+   Claude finding was of that kind. Tree health reports only what this review ran: a required check
+   that was denied, could not run or was interrupted is listed under "What this review did not
+   check", and a result quoted from another record is labelled as quoted.
+6. **Report to one bar.** Report defects that the window introduced or restated, and older defects
+   that it carries forward or that the reviewer notices, labelling each as one or the other; an
+   older defect that the window restated is a finding, not a noticed item. Where a finding is one
+   site of a recurring defect, run the census over every spelling of the pattern, state its pathspec
+   exclusions and whether the list is complete, and give every site it finds a disposition with the
+   finding. Give each minor wording item one line, and spend the review's effort on substantive
+   defects in the code, data and products, the bar Ben set for the trial on 2026-10-02 and
+   2026-10-03.
+
 ## What a review file contains
 
 Nothing prescribes a review file's sections. The shape below is what the files share, and it has
@@ -215,8 +290,10 @@ founding it. A review that departs from it should say why in its opening paragra
 2. **Line 3 is the `State:` line**, directly under the H1, recording what was true when the review
    finished. Later remediation State and every disposition go in the review's single live update
    file. `doc/dual-agent-review.md`, “Review filenames and State lines”, owns review vocabulary.
-3. **The opening paragraphs say how the file was written**: which session, which commit it was frozen
-   at, and anything that happened to it on the way into the tree.
+3. **The opening paragraphs say how the file was written**: which session, with its agent, model
+   and effort level; the instruction that started it, quoted; which commit it was frozen at; and
+   anything that happened to it on the way into the tree. A time given for the review's own work
+   comes from a named clock reading, and the commit records when the work finished.
 4. **`## Scope, anchors and census`**: the window's repository and its commit range, named by
    start and end commit, and a count of what the window changed.
 5. **`## Tree health at <commit>`**: the suite's count and the lints, with the commit they ran on
@@ -295,6 +372,18 @@ than the review. The decision has three parts:
    "What the periodic review is"), checks that each lead states the finding's disposition, finds the
    other passages of the file that restate the finding, and looks for the claim traps listed below.
    The writing session re-runs a report's measurements where that is cheap before applying it.
+   Later rounds showed what that check must also cover. The checkers read the whole file, not only
+   the findings: a checker of the sections other than the findings made 15 corrections of
+   substance in the September 26 first turn, and another made 11 in the September 29 first turn.
+   One checker sweeps the window for what the review missed, since a check of each finding cannot
+   see an omission; in the October 1 first turn such a sweep produced two of its twelve findings.
+   A checker's correction is itself a claim, so the writing session checks each one, and the
+   findings against one another, before adopting it: in that same turn a correction adopted from a
+   checker left finding 5 contradicting finding 10, although ten checkers had run. The writing
+   session confirms that every finding had a checker, waits for every checker to finish, and
+   re-checks any text written after the check, its own corrections included. When a checker finds
+   one error of a kind, every instance of the kind is rechecked: after three attributions read from
+   `git blame`, the September 29 first turn rechecked all 95 by pickaxe.
 2. **No walk-through of the findings happens before close-out.** In a round under
    `doc/dual-agent-review.md` that means none before Agent 2's turn 02, and a correction found after
    the review is committed goes in a later turn. The rules under "How Ben walks through a review's
@@ -316,6 +405,42 @@ its walk-through:
 5. a per-file history census run without `--full-history`;
 6. an absolute such as "the one" or "every" that its own cited source contradicts;
 7. a finding credited to the wrong stream or author.
+
+Later turns of the dual-agent rounds, from 2026-09-10 to 2026-10-01, found these further traps in
+first turns:
+
+8. a count taken with a single-line search over hard-wrapped Markdown, re-counted by the method
+   that produced it, labelled with a population other than the one measured, or made of raw search
+   hits not yet classified as quotation, term of art, receipt, negative example or command record;
+9. a recurring defect reported from a sample, without a census of every spelling or a statement of
+   whether the list is complete;
+10. a behaviour, consequence or cause stated as fact without running the code or following every
+    path, exceptions and recovery included; or a matcher, parser or test judged by a few examples
+    or by one comparison, rather than over the whole population against an independent reference
+    or by a replay against an injected fault;
+11. a heading, lead or "verifies sound" entry that claims more than its body, its comparison or the
+    case its evidence covers; that generalizes from one observed denial or success; or that
+    describes untracked, private or machine state, or an unread source, from evidence that cannot
+    show it;
+12. a paraphrase presented as a source's words, or a rule quoted without its object, its exceptions
+    or its judgment clause;
+13. a breach claimed beyond the rule's own text, meaning its condition, effective date,
+    preservation clause, subject or a more specific procedure; a defect that names no rule it
+    breaks; or a borderline case, a conflict between governing texts or a documented trade-off
+    presented as a violation, where each is a question for Ben;
+14. a rule applied to text written before the rule existed, or today's instructions read as
+    evidence about an older rule;
+15. an absence claim from a search that could not have found the thing, such as ignored files,
+    which exist only in the checkout that made them, or one that does not say where it searched;
+16. authorship read from `git blame`, which names the last commit to touch a line, where
+    `git log -S` finds the commit that introduced it; a path census run without rename detection;
+    or an author date read as the time a commit reached a branch, which its committer date gives;
+17. a time for the review's own work that no named clock gave, or that falls after the review's
+    own commit; or a push dated from this clone's reflog of `refs/remotes/origin/*`, or from
+    GitHub's events feed, which omits pushes;
+18. words, a rule or a decision attributed to Ben beyond what he wrote or selected: an auto-memory
+    note or an agent-written commit is evidence, and a dialog's option wording is the session's,
+    his part being the selection.
 
 The decision was first applied to that review itself: Ben decided on 2026-09-15 that its
 walk-through would end with finding 9, that sub-agents would check findings 10 and 11 instead, and
@@ -430,10 +555,19 @@ questioning your proposed fix-ups to review finding language."
 After a review is written, and after any review of it:
 
 1. Record Ben's decisions on every finding, asked as one list as the section "Reviewing the review,
-   with the same agent and with Ben" sets out.
-2. Write and approve a fresh-task remediation plan with concrete editorial wording.
+   with the same agent and with Ben" sets out, in the review's live update file as he gives them.
+   Where he answers a dialog, the option wording is the session's and his part is the selection.
+2. Write and approve a fresh-task remediation plan with concrete editorial wording. The findings
+   describe the end commit, so the plan re-measures each on the current tree, gives each sub-item
+   its own disposition, keeps every remedy option a finding records, and checks each remedy
+   against standing instructions; a deferral is not a drop.
 3. Execute remediation and put later State and every disposition in the review's one live update
-   file, leaving the base's historical State untouched apart from its line-4 pointer.
+   file, leaving the base's historical State untouched apart from its line-4 pointer. Write "fixed"
+   or "already resolved" only after re-running the finding's own measurement and checking every
+   site the plan named against the commits that changed it; a documentation change that describes
+   a defect chooses a policy and fixes nothing. The September 16 close-out record misstated 5 of
+   its 20 dispositions, and the September 26 execution table called six findings fixed whose
+   approved changes had not landed in full.
 4. Run the required final integration gate.
 
 ### Private follow-up after completed remediation - Ben's decision, 2026-10-01

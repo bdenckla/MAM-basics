@@ -23,7 +23,8 @@ Claude-only history more broadly than that.
 **The periodic review itself is described in `doc/periodic-review.md`**, split out of this
 document on 2026-09-12: the series, its two standing properties, what a review file contains,
 and the remediation rules D7 and the risk ordering. A citation written before that date may
-name this document for material that is now there.
+name this document for material that is now there. A rule about how one reviewer finds, checks
+or records findings goes there too, even when a dual-agent round taught it.
 
 ## Next review: independent reviews and one disposition list — Ben's decision, 2026-10-02
 
