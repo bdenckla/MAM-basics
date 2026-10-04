@@ -1,6 +1,7 @@
 # Remediate the October 2, 2026 trial review of MAM-basics
 
 State: executed 2026-10-03; left to Ben: A1, refused by the relay-machine session's permission rules; A4 and A5, blocked on the relay machine; and A9
+Updates and later status: [PLAN-remediate-review-findings-2026-10-02-update.md](PLAN-remediate-review-findings-2026-10-02-update.md).
 
 Prepared by Claude on 2026-10-03, New York time, as close-out step 2 of the 2026-10-02 trial review
 (`doc/periodic-review.md`, "Close-out: from findings to dispositions"). The session ran as Claude

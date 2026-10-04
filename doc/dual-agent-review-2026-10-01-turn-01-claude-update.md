@@ -2,8 +2,10 @@
 
 State: open; first entry 2026-10-01.
 
-**Approved remediation and close-out were completed on main on 2026-10-01; the relay was retired on 2026-10-03.**
-"Relay retired, 2026-10-03" below records the current disposition. Findings 1 and 11 remain withdrawn.
+**Approved remediation and close-out were completed on main on 2026-10-01; the relay was retired on
+2026-10-03, and its worktrees, branches and scheduled task were removed on 2026-10-04.** "Relay
+retired, 2026-10-03" and "The relay's end on BENS-HP-MINI, 2026-10-04" below record the current
+disposition. Findings 1 and 11 remain withdrawn.
 
 ## Close-out preparation by Codex, 2026-10-01
 
@@ -428,7 +430,9 @@ machine `BENS-HP-MINI`. **`BENS-HP-MINI` is the relay machine. A0, A7, A3, A2 an
 left to Ben, because this session's permission rules refused it. A4 is blocked for each of the three
 worktrees, which are locked again with their blockers as the reasons, and Git refused A5 because
 both branches are still checked out in two of those worktrees.** Nothing was deleted; everything
-kept is in the retention folder `C:/Users/BenDe/relay-retirement-2026-10/`.
+kept went to the retention folder `C:/Users/BenDe/relay-retirement-2026-10/`. This entry describes
+the state when it was written; "The relay's end on BENS-HP-MINI, 2026-10-04" below records what
+became of the acts left open and of the retention folder.
 
 1. **A0: done.** The clone was clean on `main` at `db59ef5e`, 70 commits behind `origin/main`, where
    the plan's line 3 began "State: live; remediation integrated on main". The scheduled task
@@ -532,3 +536,48 @@ maintenance procedure leaves elevation to Ben's choice; and the preparation of
 `dar-comparison-2026-10-01-claude` needs his decision on the runbook's three references. A9 in the
 Codex app, if the follow-up `verify-first-production-dual-agent-review` is still listed.
 `origin/dar-2026-10-01` stays, by his choice (A6).
+
+## The relay's end on BENS-HP-MINI, 2026-10-04
+
+Recorded by Claude Opus 5.5 on 2026-10-04, New York time, in the relay-machine session. **Done: the
+relay's scheduled task, its three worktrees, its two local branches and the retention folder are
+gone from `BENS-HP-MINI`, and Ben removed each of them himself. Only A9 is left, in the Codex app,
+and A6 is not done, by Ben's choice.** At 08:25 New York time `git worktree list` named only the
+home clone, the two branches and the four directories were absent, and no task named
+`Dual-agent review relay` remained.
+
+1. **The retention folder: deleted by Ben.** His words: "FYI I just deleted the retention folder".
+   It was absent at 08:01 New York time. With it went A7's copy of the relay's `.novc` state and its
+   manifest, A2's copy of the agent file, whose canonical blob remains at `cbd405b1`, and A8's
+   rehearsal home. The relay's control state and evidence now remain only in the home clone's
+   `.novc/`, until maintenance's next wipe.
+2. **A1: done by Ben.** He unregistered the scheduled task himself; it was absent when checked, last
+   at 08:25 New York time.
+3. **A4's blocker in the two round worktrees: deleted by Ben.** He asked for "a single command to
+   delete the parent folder", and ran `Remove-Item -Recurse -Force` on the `.novc/t` folders of
+   `dar-2026-10-01-claude` and `dar-2026-10-01-codex`, which removed the six unreadable pytest base
+   directories with them. Both worktrees' `.novc` were then readable.
+4. **A4 and A5: done by Ben, summarily, at his direction.** The session unlocked
+   `dar-2026-10-01-claude` again; its audit passed, and its preparation with the plan's citation
+   note found 12 tracked references, all in this round's records, and was ready. The session
+   started the execution, and Ben then wrote: "delete worktrees related to this "relay abandonment"
+   task with impunity. Delete them summarily. Don't be careful." The session stopped the execution
+   during its mandatory simulation, before it read the preflight or changed anything, and gave Ben
+   three commands, which he ran: `git worktree remove --force --force` for each of the three
+   worktrees; `git branch -D dar-2026-10-01 dual-agent-review-2026-10-01-codex`, whose tips,
+   `db59ef5e` and `900c815f`, are contained in `main`; and `Remove-Item` on the retention folder,
+   which the session had recreated to hold its two preflights. Each worktree's untracked `.novc` was
+   deleted with it rather than relocated: 39 files (264,968 bytes) in `dar-2026-10-01-claude`, 411
+   files (414,505 bytes) in `dar-2026-10-01-codex` and 3 files (38,279 bytes) in
+   `dar-comparison-2026-10-01-claude`, among them `.novc/dual-agent-review-comparison-2026-10-01-claude.md`,
+   the blind Claude counter-argument whose SHA-256 `1489F5B7…` the comparison record gives. Every
+   tracked reference to those `.novc` paths is in this round's records, which stay unchanged; the
+   files they name no longer exist.
+5. **Corrected in place by the commit that adds this entry.** The bold lead under the State line
+   read "… the relay was retired on 2026-10-03." and ""Relay retired, 2026-10-03" below records the
+   current disposition."; it now reads "… the relay was retired on 2026-10-03, and its worktrees,
+   branches and scheduled task were removed on 2026-10-04." and ""Relay retired, 2026-10-03" and
+   "The relay's end on BENS-HP-MINI, 2026-10-04" below record the current disposition." In "Relay
+   retirement acts on BENS-HP-MINI, 2026-10-03", "everything kept is in the retention folder" now
+   reads "everything kept went to the retention folder", followed by a sentence dating that entry's
+   statements to when it was written.

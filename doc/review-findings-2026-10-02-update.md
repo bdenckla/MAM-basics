@@ -829,3 +829,13 @@ their blockers as the reasons, and Git refused A5 because both branches are stil
 there.** The session fast-forwarded that machine's `C:/Users/BenDe/GitRepos2/MAM-basics` to
 `25ff446f` before A3, and the commit that adds this entry sets the plan's State to executed, naming
 the acts left to Ben. A9 stays Ben's, in the Codex app.
+
+## The relay's end on BENS-HP-MINI, 2026-10-04
+
+Recorded by Claude Opus 5.5 on 2026-10-04, New York time, in the relay-machine session. **Done: Ben
+removed the relay's scheduled task (A1) and, at his direction, its three worktrees (A4) and two
+local branches (A5) summarily, without the retirement procedure; he also deleted the retention
+folder.** "The relay's end on BENS-HP-MINI, 2026-10-04" in
+`doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records the details, and the plan's new
+update, `doc/PLAN-remediate-review-findings-2026-10-02-update.md`, records its later State. Only A9
+is left to Ben, in the Codex app; A6 is not done, by his choice.
