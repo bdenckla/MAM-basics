@@ -541,8 +541,8 @@ Codex app, if the follow-up `verify-first-production-dual-agent-review` is still
 
 Recorded by Claude Opus 5.5 on 2026-10-04, New York time, in the relay-machine session. **Done: the
 relay's scheduled task, its three worktrees, its two local branches and the retention folder are
-gone from `BENS-HP-MINI`, and Ben removed each of them himself. Only A9 is left, in the Codex app,
-and A6 is not done, by Ben's choice.** At 08:25 New York time `git worktree list` named only the
+gone from `BENS-HP-MINI`, and Ben removed each of them himself. A9 was found already done, since
+the Codex automation no longer exists, and A6 is not done, by Ben's choice.** At 08:25 New York time `git worktree list` named only the
 home clone, the two branches and the four directories were absent, and no task named
 `Dual-agent review relay` remained.
 

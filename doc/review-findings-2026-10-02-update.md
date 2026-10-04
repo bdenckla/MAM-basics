@@ -837,5 +837,5 @@ removed the relay's scheduled task (A1) and, at his direction, its three worktre
 local branches (A5) summarily, without the retirement procedure; he also deleted the retention
 folder.** "The relay's end on BENS-HP-MINI, 2026-10-04" in
 `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records the details, and the plan's new
-update, `doc/PLAN-remediate-review-findings-2026-10-02-update.md`, records its later State. Only A9
-is left to Ben, in the Codex app; A6 is not done, by his choice.
+update, `doc/PLAN-remediate-review-findings-2026-10-02-update.md`, records its later State. A9 was
+found already done, since the Codex automation no longer exists; A6 is not done, by his choice.
