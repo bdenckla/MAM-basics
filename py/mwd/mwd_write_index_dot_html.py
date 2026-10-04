@@ -5,6 +5,14 @@ from py_misc import mwd_utils as mwdu
 from mb_misc import mam_attribution
 from mb_misc import mb_html
 
+_INDEX_STYLE = """\
+body {
+  max-width: 52em;
+  margin: 0 auto;
+  padding: 0 16px 4em;
+}
+"""
+
 
 def write_index_dot_html(edition, css_hrefs, out_path):
     foi_anchor = mb_html.anchor_h("Features of interest", "foi/index.html")
@@ -26,6 +34,7 @@ def write_index_dot_html(edition, css_hrefs, out_path):
     write_ctx = mb_html.WriteCtx(
         edition + ": Book Links",
         out_path,
+        head_style=_INDEX_STYLE,
         css_hrefs=css_hrefs,
         html_comment=provenance.generated_html_comment(__file__),
     )
