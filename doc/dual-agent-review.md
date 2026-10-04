@@ -767,7 +767,7 @@ private material permanently, and no mechanism prevents it.
 `py/repo_util/report_destination.py`'s guard makes it mechanically impossible for
 `main_repo_util.py` to write a private-covering report into a public tree, but that guard's
 docstring names what it deliberately does not cover: "what a human or an agent later types into a
-`doc/` file". A Codex reviewer writing into `doc/` is exactly that uncovered case.
+commit message or a doc/ file". A Codex reviewer writing into `doc/` is exactly that uncovered case.
 
 The public-only scope this repository's series has run under since 2026-08-26 removes this
 structurally. Keep the Codex reviewer of a window of this repository's series inside that scope.
