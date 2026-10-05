@@ -59,6 +59,11 @@ consumer joining this release to MAM must allow for these differences:
    note there reports that the Aleppo Codex has לְךָ֖ with no qere note, so this
    release has the form that MAM's note attributes to that manuscript. That is
    MAM's report; the manuscript itself has not been checked.
+7. **Rafe.** This release's book files have none of MAM's rafe, U+05BF, which
+   `MAM-simple/` has.
+8. **Ketiv and qere.** Where MAM has a ketiv and a qere, `MAM-simple/`'s `kq`,
+   this release has only the qere, apart from item 6's verse. It has none of the
+   8 ketivs that MAM writes but does not read, `MAM-simple/`'s `kq-k-velo-q`.
 
 The transcriptions have each acute or breve vowel decomposed, as a base letter
 followed by U+0301 or U+0306, while their ḥ is the precomposed U+1E25. Elsewhere
