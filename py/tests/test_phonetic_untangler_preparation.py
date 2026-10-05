@@ -45,6 +45,8 @@ def test_preparation_operation_runs_without_file_access(monkeypatch):
         raise AssertionError("computation attempted file access")
 
     monkeypatch.setattr("builtins.open", denied)
+    monkeypatch.setattr("io.open", denied)
+    monkeypatch.setattr("os.open", denied)
     monkeypatch.setattr("pathlib.Path.open", denied)
     for verses in books:
         result = compute.execute(

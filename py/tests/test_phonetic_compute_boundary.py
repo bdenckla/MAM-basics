@@ -86,5 +86,14 @@ def test_compute_dispatch_is_literal_and_filesystem_free():
     assert len(keys) == len(dispatch[0].keys) == len(set(keys)) > 0
     assert all(isinstance(value, ast.Name) for value in dispatch[0].values)
     for node in ast.walk(tree):
-        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
-            assert node.func.id not in {"open", "eval", "exec", "getattr", "__import__"}
+        if not isinstance(node, ast.Call):
+            continue
+        # A bare name such as open(...), or an attribute such as io.open(...).
+        if isinstance(node.func, ast.Name):
+            called = node.func.id
+        elif isinstance(node.func, ast.Attribute):
+            called = node.func.attr
+        else:
+            continue
+        forbidden = called in {"open", "eval", "exec", "getattr", "__import__"}
+        assert not forbidden, node.lineno

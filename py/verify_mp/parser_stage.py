@@ -358,6 +358,8 @@ def _validate_plus_structure_and_collect(parser_stage_section, plus_section):
     for parser_stage_book39, plus_book39 in zip(parser_stage_book39s, plus_book39s):
         assert plus_book39["book24_name"] == parser_stage_book39["book24_name"]
         assert plus_book39["sub_book_name"] == parser_stage_book39["sub_book_name"]
+        # The verse cells and good_ending_plus are the only wikitext in plus.
+        _validate_no_parser_stage_encoding(plus_book39["good_ending_plus"])
         parser_stage_chapters = parser_stage_book39["chapters"]
         plus_chapters = plus_book39["chapters"]
         assert tuple(plus_chapters) == tuple(parser_stage_chapters)

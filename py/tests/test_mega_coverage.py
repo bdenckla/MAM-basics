@@ -1159,10 +1159,10 @@ def test_pipeline_graph_draws_the_core_pipeline() -> None:
     """The pipeline graph's programs agree with _STEPS, NOT_IN_MEGA and the README.
 
     A program node that names steps names ``_STEPS`` ids whose runners run that program
-    or one of its subcommands; a program node that names none is a NOT_IN_MEGA key; and
-    the drawn programs other than the Wikisource bot are the backticked ``main_*.py``
-    commands of the root README's "### Core pipeline" section.  The graph's edges are
-    hand-entered, and nothing here checks them.
+    or one of its subcommands, and every node names every such step; a program node that
+    names none is a NOT_IN_MEGA key; and the drawn programs other than the Wikisource bot
+    are the backticked ``main_*.py`` commands of the root README's "### Core pipeline"
+    section.  The graph's edges are hand-entered, and nothing here checks them.
     """
     from pipeline_graph import pipeline_graph_spec as spec
 
@@ -1172,6 +1172,14 @@ def test_pipeline_graph_draws_the_core_pipeline() -> None:
     step_ids = {step_id for step_id, _runner, _line in _steps(_tree(_MEGA), [])}
     problems = []
     for node in nodes:
+        running = {
+            run.step_id
+            for run in scan.runs
+            if run.program == node.program or run.program.startswith(node.program + " ")
+        }
+        unnamed = sorted(running - set(node.step_ids))
+        if unnamed:
+            problems.append(f"{node.program} does not name {unnamed}, which run it")
         if not node.step_ids:
             if node.program not in NOT_IN_MEGA:
                 problems.append(
