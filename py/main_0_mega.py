@@ -608,7 +608,12 @@ _STEPS = [
     StepRecord(
         "phonetic-mam-render",
         _run_phonetic_mam_render,
-        "reads the tracked public release; writes the unified phonetic-mam site; runs in cloud",
+        "reads the tracked public release, its stylesheet and script in"
+        " py/phonetic_mam/assets/, the five example images in in/phonetic-mam-images/,"
+        " and the frozen font inputs doc/woff2/ and in/font-support/taamey-d-0.921/;"
+        " writes the unified phonetic-mam site and the shared"
+        " gh-pages/font-sources/taamey-d-0.921/ package, which yeivin-itm-render also"
+        " writes; runs in cloud",
     ),
     StepRecord(
         "accgram-survey-meteg-before-stress",

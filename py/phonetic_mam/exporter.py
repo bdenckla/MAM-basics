@@ -212,6 +212,9 @@ def iter_source_books(book_ids=None):
 def source_test_pages():
     """Parse the adapter's five rendered pages through the public-only parser."""
     root, command, environment = _adapter_command("test-pages")
+    # Both pipes are read as bytes: _tail_text decodes stderr with "replace", as the
+    # streaming run does, and stdout is decoded strictly only after a clean exit, so
+    # that output that is not UTF-8 raises a UnicodeDecodeError.
     try:
         result = subprocess.run(
             command,
@@ -220,8 +223,6 @@ def source_test_pages():
             stdin=subprocess.DEVNULL,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True,
-            encoding="utf-8",
             check=False,
             timeout=_ADAPTER_TIME_LIMIT_SECONDS,
         )
@@ -236,11 +237,10 @@ def source_test_pages():
             f"test-page source adapter failed (exit status {result.returncode});"
             f" its stderr ended with:\n{_tail_text(result.stderr)}"
         )
-    display_schema.require(
-        len(result.stdout) <= _MAX_BOOK_CHARS, "test-page input too large"
-    )
+    stdout = result.stdout.decode("utf-8")
+    display_schema.require(len(stdout) <= _MAX_BOOK_CHARS, "test-page input too large")
     value = json.loads(
-        result.stdout, object_pairs_hook=_unique_object, parse_constant=_reject_constant
+        stdout, object_pairs_hook=_unique_object, parse_constant=_reject_constant
     )
     display_schema.require(
         isinstance(value, dict)

@@ -57,14 +57,16 @@ def main():
     """Use UTF-8 for both Windows and POSIX pipes.
 
     Standard input keeps an undecodable byte as an escape, so that the compute
-    stream rejects only the line that holds it (``compute.serve``).
+    stream rejects only the line that holds it (``compute.serve``), and ends a line
+    only at LF, so that a carriage return, which JSON allows between tokens, does
+    not split a request line in two on Windows.
     """
     # No command-line run writes import caches into either repository, as
     # doc/phonetic-mam-compute.md promises of compute. Set here, before almost_main
     # imports anything, rather than at import, so that an importer such as
     # py/main_0_mega.py keeps its own bytecode caching.
     sys.dont_write_bytecode = True
-    sys.stdin.reconfigure(encoding="utf-8", errors="surrogateescape")
+    sys.stdin.reconfigure(encoding="utf-8", errors="surrogateescape", newline="\n")
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     return almost_main()
