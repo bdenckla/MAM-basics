@@ -108,6 +108,11 @@ LEMMA_FROM_STR = {
     " ": ("__",),
     "__": ("__",),
     hpu.SOPA: ("סוף פסוק",),
+    # near-aleppo: the near-aleppo dataset writes מ:פסק as the paseq glyph, and ten
+    # of its targets are that glyph and the space after it, which
+    # render_wikitext_handlers._less_one_trailing_space leaves as the glyph alone.
+    # Such a target is labelled as MAM-with-doc labels MAM's מ:פסק.
+    hpu.PASOLEG: ("פסק",),
 }
 LEMMA_FROM_TMPL = {
     # When the doc target is a template, in some cases we want to

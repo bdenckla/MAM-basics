@@ -8,24 +8,32 @@ from mb_cmn.my_utils import sum_of_dics
 from mb_cmn.my_utils import init_at_key
 
 
-def read_parsed_plus_bk39s(bk39ids=None, mam_parsed_path="../MAM-parsed"):
+def read_parsed_plus_bk39s(
+    bk39ids=None, mam_parsed_path="../MAM-parsed", load_json=None
+):
     """Read all bk24s covering bk39ids"""
     real_bk39ids = bk39ids or tbn.ALL_BK39_IDS
 
     def mapfunc(bk24id):
-        return read_parsed_plus_bk24(bk24id, mam_parsed_path)
+        return read_parsed_plus_bk24(bk24id, mam_parsed_path, load_json)
 
     lis_books_out_dics = sl_map(mapfunc, _bk24ids(real_bk39ids))
     return sum_of_dics(lis_books_out_dics)
 
 
-def read_parsed_plus_bk24(bk24id, mam_parsed_path="../MAM-parsed"):
+def read_parsed_plus_bk24(bk24id, mam_parsed_path="../MAM-parsed", load_json=None):
     """Read MAM-parsed JSON at in_path into io_books."""
     # bk39: a book in the "1 of 39" division of books
     osdf24 = tbn.ordered_short_dash_full_24(bk24id)
     in_path = f"{mam_parsed_path}/plus/{osdf24}.json"
-    with open(in_path, encoding="utf-8") as json_in_fp:
-        in_bk24 = json.load(json_in_fp)
+    # near-aleppo: load_json, when given, reads the book file by its path in place of
+    # the file system, as the near-aleppo edition's check reads MAM-parsed-plus from
+    # MAM-basics' object store at a fixed commit.
+    if load_json is not None:
+        in_bk24 = load_json(in_path)
+    else:
+        with open(in_path, encoding="utf-8") as json_in_fp:
+            in_bk24 = json.load(json_in_fp)
     mpplus_guard.assert_no_non_targeted_scrdff_in_plus(in_bk24, in_path)
     last_real_bcvt = None
     books_out = {}

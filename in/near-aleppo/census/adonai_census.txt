@@ -1,0 +1,29 @@
+=== atoms whose letters end in אדני, by the vowel on the nun ===
+   divine title (qamats on nun)           438
+   ordinary 'my lord' (hiriq on nun)      200
+   other (05B5)                           6
+   other (05B5 05A3)                      4
+   other (05B5 0596)                      3
+   other (05B5 05A5)                      2
+   other (05B7 0597)                      1
+   other (05B5 05A8)                      1
+   other (05B5 05A4)                      1
+   TOTAL 656
+
+=== the divine title: holam on the dalet ===
+   holam=True: 438
+   bare אדני vs prefixed: 420 bare, 18 prefixed
+
+=== divine-title atoms WITHOUT a holam: 0 ===
+
+=== divine title by book (25 books) ===
+   Ezekiel      222
+   Psalms       55
+   Isaiah       48
+   Amos         25
+   Jeremiah     14
+   Lamentations 14
+   Daniel       11
+   Genesis      9
+   Exodus       6
+   2Samuel      6

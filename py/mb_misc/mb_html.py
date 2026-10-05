@@ -1,5 +1,6 @@
 """Exports various HTML utilities"""
 
+import io  # near-aleppo: for html_text
 import xml.etree.ElementTree as ET
 import re
 from dataclasses import dataclass
@@ -39,6 +40,19 @@ def write_html_to_file(body_contents, wc: WriteCtx):
     file_io.with_tmp_openw(
         wc.path, {}, _write_callback, wc.add_wbr, wc.html_comment, html_el
     )
+
+
+def html_text(body_contents, wc: WriteCtx):
+    """
+    Return the text that write_html_to_file writes for the same inputs, writing
+    nothing; wc.path is not read.
+    """
+    # Render pages in memory so callers can check them before writing.
+    other = {"head_style": wc.head_style, "body_class": wc.body_class}
+    html_el = html_el2(wc.title, body_contents, wc.css_hrefs, other=other)
+    out_fp = io.StringIO()
+    _write_callback(wc.add_wbr, wc.html_comment, html_el, out_fp)
+    return out_fp.getvalue()
 
 
 def el_to_str_for_sef(html_el):

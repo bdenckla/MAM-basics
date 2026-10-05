@@ -1,0 +1,1134 @@
+{
+  "schema_version": 4,
+  "census_input_ids": {
+    "MAM-parsed/plus": "612b667282c197a65e85bef3d624b4d970d7b084",
+    "aleppo/index-flat-annotated.json": "b59014f825721227192749a00d4822f8c20881aa"
+  },
+  "phase2_counts": {
+    "מ:קמץ": 371,
+    "מ:דחי": 2306,
+    "מ:צינור": 56,
+    "מ:לגרמיה-2": 1785,
+    "מ:פסק": 508,
+    "מ:מקף אפור": 116,
+    "נוסח": 3595,
+    "מ:הערה-2": 27,
+    "מ:כפול": 34,
+    "מ:קו״כ-אם-2": 149,
+    "כו״ק": 884,
+    "קו״כ": 126,
+    "מ:כו״ק מיוחד": 37,
+    "כתיב ולא קרי": 8,
+    "קרי ולא כתיב": 9,
+    "special letter word flattened": 46,
+    "special letter word kept, large": 1,
+    "special letter word kept, suspended": 4,
+    "מ:קמץ (unselected parameter)": 1,
+    "מ:דחי (unselected parameter)": 4,
+    "מ:לגרמיה-2 (unselected parameter)": 1,
+    "special letter word flattened (unselected parameter)": 1
+  },
+  "phase3_counts": {
+    "HEBREW POINT QAMATS QATAN changed to HEBREW POINT QAMATS": 7431,
+    "HEBREW POINT QAMATS QATAN changed to HEBREW POINT QAMATS (unselected parameter)": 1,
+    "Elohim reading: sheva for the hataf segol on the yod": 304,
+    "Elohim reading: sheva for the hataf segol on the yod (unselected parameter)": 0,
+    "Elohim reading: yod with no vowel, unchanged": 1,
+    "Elohim reading: yod with no vowel, unchanged (unselected parameter)": 0,
+    "Adonai reading: holam on the first he stripped": 6517,
+    "Adonai reading: holam on the first he stripped (unselected parameter)": 0,
+    "Adonai reading: holam kept where a note records the codex's": 5,
+    "Adonai reading: holam kept where a note records the codex's (unselected parameter)": 0,
+    "divine title: holam on the dalet stripped": 437,
+    "divine title: holam on the dalet stripped (unselected parameter)": 0,
+    "divine title: holam kept where a note records the codex's": 1,
+    "divine title: holam kept where a note records the codex's (unselected parameter)": 0,
+    "atom ending in אדני without a qamats on the nun, unchanged": 218,
+    "atom ending in אדני without a qamats on the nun, unchanged (unselected parameter)": 0,
+    "revia mugrash: revia removed from the geresh muqdam's letter": 252,
+    "revia mugrash: revia removed from the geresh muqdam's letter (unselected parameter)": 0,
+    "revia mugrash: revia kept where chapter 5 records the codex's": 7,
+    "revia mugrash: revia kept where chapter 5 records the codex's (unselected parameter)": 0,
+    "revia mugrash: geresh muqdam moved to the compound's first atom": 1,
+    "revia mugrash: geresh muqdam moved to the compound's first atom (unselected parameter)": 0,
+    "geresh muqdam with the revia on another letter, unchanged": 2703,
+    "geresh muqdam with the revia on another letter, unchanged (unselected parameter)": 3,
+    "revia mugrash: removal agreeing with a codex form its note quotes": 230,
+    "revia mugrash: removal whose note's codex form lacks the geresh muqdam too": 0,
+    "ole on the yored's letter: ole removed": 13,
+    "ole on the yored's letter: ole removed (unselected parameter)": 0,
+    "ole on a letter without the yored, unchanged": 410,
+    "ole on a letter without the yored, unchanged (unselected parameter)": 0,
+    "ole on the yored's letter: removal agreeing with the codex form its note quotes": 12,
+    "ketiv/qere apparatus: template replaced by the codex form its note quotes": 13,
+    "ketiv/qere apparatus: template replaced by its pointed ketiv": 4,
+    "ketiv/qere apparatus: template replaced by its pointed qere, the spelling its note's prose gives the codex": 1,
+    "ketiv/qere apparatus: template replaced by MAM's ketiv pointed by the transplant": 2,
+    "ketiv/qere apparatus: template kept where the codex form is doubt-marked": 1,
+    "ketiv/qere apparatus: transplant agreeing with the codex form a note quotes": 12,
+    "ketiv/qere apparatus: transplant agreeing with MAM's pointed ketiv": 4,
+    "ketiv/qere apparatus: pointed qere equal to the form its note's prose gives the codex, less the form's masorah circles": 1,
+    "hataf on a non-guttural: sheva and varika replaced by a hataf patah": 616,
+    "hataf on a non-guttural: sheva and varika replaced by a hataf qamats": 50,
+    "hataf on a non-guttural: varika replaced by a hiriq, the sheva kept": 5,
+    "hataf on a non-guttural: restoration agreeing with a form its note quotes": 671,
+    "stress helpers: pashta's stress helper stripped": 197,
+    "stress helpers: pashta's stress helper kept, a letter standing between": 3627,
+    "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 0,
+    "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 0,
+    "stress helpers: segolta's stress helper stripped": 168,
+    "stress helpers: segolta's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 0,
+    "stress helpers: segolta's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 0,
+    "stress helpers: telisha qetanah's stress helper stripped": 325,
+    "stress helpers: telisha qetanah's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 5,
+    "stress helpers: telisha qetanah's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 3,
+    "stress helpers: telisha gedolah's stress helper stripped": 997,
+    "stress helpers: telisha gedolah's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 1,
+    "stress helpers: telisha gedolah's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 1,
+    "stress helpers: zarqa's stress helper stripped": 179,
+    "stress helpers: zarqa's stress helper kept by a note whose agreeing clause cites the codex for the doubling": 1,
+    "stress helpers: zarqa's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex": 0,
+    "stress helpers: pashta's stress helper stripped (unselected parameter)": 0,
+    "stress helpers: pashta's stress helper kept, a letter standing between (unselected parameter)": 0,
+    "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites the codex for the doubling (unselected parameter)": 0,
+    "stress helpers: pashta's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex (unselected parameter)": 0,
+    "stress helpers: segolta's stress helper stripped (unselected parameter)": 0,
+    "stress helpers: segolta's stress helper kept by a note whose agreeing clause cites the codex for the doubling (unselected parameter)": 0,
+    "stress helpers: segolta's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex (unselected parameter)": 0,
+    "stress helpers: telisha qetanah's stress helper stripped (unselected parameter)": 0,
+    "stress helpers: telisha qetanah's stress helper kept by a note whose agreeing clause cites the codex for the doubling (unselected parameter)": 0,
+    "stress helpers: telisha qetanah's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex (unselected parameter)": 0,
+    "stress helpers: telisha gedolah's stress helper stripped (unselected parameter)": 0,
+    "stress helpers: telisha gedolah's stress helper kept by a note whose agreeing clause cites the codex for the doubling (unselected parameter)": 0,
+    "stress helpers: telisha gedolah's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex (unselected parameter)": 0,
+    "stress helpers: zarqa's stress helper stripped (unselected parameter)": 0,
+    "stress helpers: zarqa's stress helper kept by a note whose agreeing clause cites the codex for the doubling (unselected parameter)": 0,
+    "stress helpers: zarqa's stress helper kept by a note whose agreeing clause cites ל for the doubling, no clause citing the codex (unselected parameter)": 0,
+    "stress helpers: geresh or gershayim removed with a telisha gedolah's stress helper": 2,
+    "stress helpers: geresh or gershayim removed with a telisha gedolah's stress helper (unselected parameter)": 0,
+    "stress helpers: telisha-gedolah word equal to the form its table names": 2,
+    "stress helpers: stripped stress helper's atom equal to a codex form its note quotes": 9,
+    "stress helpers: kept stress helper's atom doubled in a codex form its note quotes": 6,
+    "maqaf: maqafs added": 8,
+    "maqaf: clause form has a maqaf inside one target atom": 4,
+    "maqaf: clause form has a space where the target had a maqaf": 5,
+    "maqaf: undoubted clauses applied": 8,
+    "maqaf: bang-marked clauses applied": 5
+  },
+  "phase3_sites": {
+    "Elohim reading: yod with no vowel, unchanged": [
+      [
+        "D1-Psalms",
+        "68",
+        "21"
+      ]
+    ],
+    "Adonai reading: holam kept where a note records the codex's": [
+      [
+        "BA-Samuel שמ\"א",
+        "15",
+        "1"
+      ],
+      [
+        "BC-Kings מל\"ב",
+        "20",
+        "9"
+      ],
+      [
+        "C1-Isaiah",
+        "30",
+        "1"
+      ],
+      [
+        "C3-Ezekiel",
+        "3",
+        "12"
+      ],
+      [
+        "D1-Psalms",
+        "26",
+        "12"
+      ]
+    ],
+    "divine title: holam kept where a note records the codex's": [
+      [
+        "D1-Psalms",
+        "110",
+        "5"
+      ]
+    ],
+    "revia mugrash: revia kept where chapter 5 records the codex's": [
+      [
+        "D1-Psalms",
+        "7",
+        "1"
+      ],
+      [
+        "D1-Psalms",
+        "25",
+        "21"
+      ],
+      [
+        "D1-Psalms",
+        "27",
+        "12"
+      ],
+      [
+        "D1-Psalms",
+        "35",
+        "14"
+      ],
+      [
+        "D1-Psalms",
+        "77",
+        "17"
+      ],
+      [
+        "D1-Psalms",
+        "105",
+        "2"
+      ],
+      [
+        "D2-Proverbs",
+        "19",
+        "26"
+      ]
+    ],
+    "revia mugrash: geresh muqdam moved to the compound's first atom": [
+      [
+        "D3-Job",
+        "19",
+        "16"
+      ]
+    ],
+    "revia mugrash: removal whose note's codex form lacks the geresh muqdam too": [],
+    "ole on the yored's letter: ole removed": [
+      [
+        "D1-Psalms",
+        "30",
+        "12"
+      ],
+      [
+        "D1-Psalms",
+        "42",
+        "3"
+      ],
+      [
+        "D1-Psalms",
+        "55",
+        "20"
+      ],
+      [
+        "D1-Psalms",
+        "68",
+        "20"
+      ],
+      [
+        "D1-Psalms",
+        "86",
+        "2"
+      ],
+      [
+        "D1-Psalms",
+        "109",
+        "16"
+      ],
+      [
+        "D1-Psalms",
+        "125",
+        "2"
+      ],
+      [
+        "D2-Proverbs",
+        "24",
+        "24"
+      ],
+      [
+        "D2-Proverbs",
+        "30",
+        "15"
+      ],
+      [
+        "D3-Job",
+        "8",
+        "6"
+      ],
+      [
+        "D3-Job",
+        "9",
+        "22"
+      ],
+      [
+        "D3-Job",
+        "29",
+        "25"
+      ],
+      [
+        "D3-Job",
+        "34",
+        "20"
+      ]
+    ],
+    "ole on the yored's letter: removal in no note's target": [
+      [
+        "D1-Psalms",
+        "42",
+        "3"
+      ]
+    ],
+    "ketiv/qere apparatus: template replaced by the codex form its note quotes": [
+      [
+        "A5-Deuter",
+        "32",
+        "13"
+      ],
+      [
+        "BA-Samuel שמ\"א",
+        "10",
+        "7"
+      ],
+      [
+        "C1-Isaiah",
+        "18",
+        "4"
+      ],
+      [
+        "C1-Isaiah",
+        "44",
+        "17"
+      ],
+      [
+        "C1-Isaiah",
+        "58",
+        "14"
+      ],
+      [
+        "C3-Ezekiel",
+        "21",
+        "28"
+      ],
+      [
+        "C3-Ezekiel",
+        "24",
+        "2"
+      ],
+      [
+        "C3-Ezekiel",
+        "44",
+        "3"
+      ],
+      [
+        "CA-The-12-Minor-Prophets נחום",
+        "1",
+        "3"
+      ],
+      [
+        "CA-The-12-Minor-Prophets נחום",
+        "2",
+        "1"
+      ],
+      [
+        "D1-Psalms",
+        "89",
+        "29"
+      ],
+      [
+        "FC-Chronicles דה\"ב",
+        "25",
+        "17"
+      ],
+      [
+        "FC-Chronicles דה\"ב",
+        "34",
+        "22"
+      ]
+    ],
+    "ketiv/qere apparatus: template replaced by its pointed ketiv": [
+      [
+        "B1-Joshua",
+        "3",
+        "4"
+      ],
+      [
+        "C3-Ezekiel",
+        "40",
+        "24"
+      ],
+      [
+        "C3-Ezekiel",
+        "40",
+        "25"
+      ],
+      [
+        "C3-Ezekiel",
+        "40",
+        "26"
+      ]
+    ],
+    "ketiv/qere apparatus: template replaced by its pointed qere, the spelling its note's prose gives the codex": [
+      [
+        "C3-Ezekiel",
+        "40",
+        "24"
+      ]
+    ],
+    "ketiv/qere apparatus: template replaced by MAM's ketiv pointed by the transplant": [
+      [
+        "C1-Isaiah",
+        "26",
+        "20"
+      ],
+      [
+        "CA-The-12-Minor-Prophets צפניה",
+        "2",
+        "9"
+      ]
+    ],
+    "ketiv/qere apparatus: template kept where the codex form is doubt-marked": [
+      [
+        "C2-Jeremiah",
+        "33",
+        "26"
+      ]
+    ],
+    "hataf on a non-guttural: varika replaced by a hiriq, the sheva kept": [
+      [
+        "BC-Kings מל\"א",
+        "17",
+        "11"
+      ],
+      [
+        "D1-Psalms",
+        "14",
+        "1"
+      ],
+      [
+        "D1-Psalms",
+        "14",
+        "1"
+      ],
+      [
+        "D1-Psalms",
+        "53",
+        "2"
+      ],
+      [
+        "D1-Psalms",
+        "53",
+        "2"
+      ]
+    ],
+    "hataf on a non-guttural: vowel from the clause headed ל, the forms disagreeing": [
+      [
+        "C2-Jeremiah",
+        "31",
+        "32"
+      ]
+    ],
+    "hataf on a non-guttural: vowel from the forms of the note's agreeing clause": [
+      [
+        "D1-Psalms",
+        "17",
+        "14"
+      ]
+    ],
+    "stress helpers: kept by a note citing the codex": [
+      [
+        "B2-Judges",
+        "18",
+        "19"
+      ],
+      [
+        "BC-Kings מל\"א",
+        "17",
+        "13"
+      ],
+      [
+        "C2-Jeremiah",
+        "2",
+        "2"
+      ],
+      [
+        "C2-Jeremiah",
+        "3",
+        "12"
+      ],
+      [
+        "C2-Jeremiah",
+        "44",
+        "27"
+      ],
+      [
+        "C3-Ezekiel",
+        "5",
+        "15"
+      ],
+      [
+        "FC-Chronicles דה\"ב",
+        "28",
+        "23"
+      ]
+    ],
+    "stress helpers: kept by a note citing ל": [
+      [
+        "A1-Genesis",
+        "48",
+        "7"
+      ],
+      [
+        "A5-Deuter",
+        "21",
+        "13"
+      ],
+      [
+        "BC-Kings מל\"ב",
+        "17",
+        "24"
+      ],
+      [
+        "E5-Esther",
+        "6",
+        "13"
+      ]
+    ],
+    "stress helpers: stripped in the target of a note whose agreeing clause speaks of doubling": [
+      [
+        "A4-Numbers",
+        "11",
+        "8"
+      ],
+      [
+        "BA-Samuel שמ\"א",
+        "30",
+        "15"
+      ],
+      [
+        "BA-Samuel שמ\"ב",
+        "3",
+        "8"
+      ],
+      [
+        "C2-Jeremiah",
+        "11",
+        "10"
+      ],
+      [
+        "FC-Chronicles דה\"ב",
+        "19",
+        "2"
+      ],
+      [
+        "FC-Chronicles דה\"ב",
+        "33",
+        "14"
+      ]
+    ],
+    "stress helpers: geresh or gershayim removed with a telisha gedolah's stress helper": [
+      [
+        "A3-Levit",
+        "10",
+        "4"
+      ],
+      [
+        "C3-Ezekiel",
+        "48",
+        "10"
+      ]
+    ],
+    "stress helpers: kept pashta's stress helper whose note quotes the codex's pashta alone": [
+      [
+        "A5-Deuter",
+        "29",
+        "28"
+      ],
+      [
+        "BA-Samuel שמ\"ב",
+        "11",
+        "25"
+      ],
+      [
+        "BC-Kings מל\"ב",
+        "14",
+        "7"
+      ],
+      [
+        "C1-Isaiah",
+        "44",
+        "8"
+      ],
+      [
+        "FC-Chronicles דה\"א",
+        "6",
+        "45"
+      ],
+      [
+        "FC-Chronicles דה\"א",
+        "21",
+        "12"
+      ],
+      [
+        "FC-Chronicles דה\"ב",
+        "6",
+        "20"
+      ]
+    ],
+    "maqaf: maqafs added": [
+      ["BA-Samuel שמ\"א", "14", "49"],
+      ["CA-The-12-Minor-Prophets מיכה", "5", "2"],
+      ["D1-Psalms", "75", "4"],
+      ["D3-Job", "18", "15"],
+      ["D3-Job", "23", "5"],
+      ["FC-Chronicles דה\"א", "9", "39"],
+      ["FC-Chronicles דה\"א", "10", "2"],
+      ["FC-Chronicles דה\"א", "18", "17"]
+    ],
+    "maqaf: clause form has a maqaf inside one target atom": [
+      ["BA-Samuel שמ\"א", "14", "49"],
+      ["D3-Job", "18", "15"],
+      ["FC-Chronicles דה\"א", "9", "39"],
+      ["FC-Chronicles דה\"א", "10", "2"]
+    ],
+    "maqaf: clause form has a space where the target had a maqaf": [
+      ["BA-Samuel שמ\"ב", "12", "1"],
+      ["CA-The-12-Minor-Prophets יואל", "2", "25"],
+      ["D1-Psalms", "106", "48"],
+      ["D1-Psalms", "107", "18"],
+      ["D3-Job", "21", "15"]
+    ],
+    "maqaf: undoubted clauses applied": [
+      ["BA-Samuel שמ\"א", "14", "49"],
+      ["CA-The-12-Minor-Prophets מיכה", "5", "2"],
+      ["D3-Job", "18", "15"],
+      ["D3-Job", "21", "15"],
+      ["D3-Job", "23", "5"],
+      ["FC-Chronicles דה\"א", "9", "39"],
+      ["FC-Chronicles דה\"א", "10", "2"],
+      ["FC-Chronicles דה\"א", "18", "17"]
+    ],
+    "maqaf: bang-marked clauses applied": [
+      ["BA-Samuel שמ\"ב", "12", "1"],
+      ["CA-The-12-Minor-Prophets יואל", "2", "25"],
+      ["D1-Psalms", "75", "4"],
+      ["D1-Psalms", "106", "48"],
+      ["D1-Psalms", "107", "18"]
+    ]
+  },
+  "phase5_counts": {
+    "codex readings: notes walked": 3595,
+    "codex readings: empty clauses in note bodies": 1,
+    "codex readings: direct codex siglum elements": 1150,
+    "codex readings: direct differing clauses": 1142,
+    "codex readings: verses with a direct differing clause": 1062,
+    "codex readings: prose-led heads ending in a codex siglum, held pending": 16,
+    "codex readings: apply-candidate (single-pointed-form)": 980,
+    "codex readings: apply-candidate (single-pointed-form), bang-marked": 85,
+    "codex readings: do-not-apply (doubt-siglum)": 46,
+    "codex readings: do-not-apply (doubt-siglum), bang-marked": 0,
+    "codex readings: do-not-apply (prose-description)": 31,
+    "codex readings: do-not-apply (prose-description), bang-marked": 0,
+    "codex readings: do-not-apply (doubt-form)": 8,
+    "codex readings: do-not-apply (doubt-form), bang-marked": 0,
+    "codex readings: policy-pending (ketiv-qere-plane)": 73,
+    "codex readings: policy-pending (ketiv-qere-plane), bang-marked": 2,
+    "codex readings: policy-pending (candidate-form-punctuation)": 3,
+    "codex readings: policy-pending (candidate-form-punctuation), bang-marked": 0,
+    "codex readings: policy-pending (candidate-form-count-0)": 1,
+    "codex readings: policy-pending (candidate-form-count-0), bang-marked": 0,
+    "codex readings: apply-candidate already in place": 849,
+    "codex readings: apply-candidate already in place, bang-marked": 7,
+    "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target": 2,
+    "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target, bang-marked": 0,
+    "codex readings: applied, the form replacing the whole of a plain target": 116,
+    "codex readings: applied, the form replacing the whole of a plain target, bang-marked": 76,
+    "codex readings: applied, the form replacing named atoms of a plain target": 2,
+    "codex readings: applied, the form replacing named atoms of a plain target, bang-marked": 1,
+    "codex readings: applied, the form written into the selected parameter of the one kept template that is the target": 2,
+    "codex readings: applied, the form written into the selected parameter of the one kept template that is the target, bang-marked": 1,
+    "codex readings: ketiv/qere plane reading in place in a qere parameter": 4,
+    "codex readings: ketiv/qere plane reading in place in a qere parameter, bang-marked": 0,
+    "codex readings: ketiv/qere plane reading in place through phase 3's ketiv/qere apparatus": 3,
+    "codex readings: ketiv/qere plane reading in place through phase 3's ketiv/qere apparatus, bang-marked": 0,
+    "codex readings: pointed ketiv written as the form stands": 63,
+    "codex readings: pointed ketiv written as the form stands, bang-marked": 1,
+    "codex readings: pointed ketiv written with a named adjustment": 5,
+    "codex readings: pointed ketiv written with a named adjustment, bang-marked": 1,
+    "codex readings: ketiv/qere plane reading pending by name": 3,
+    "codex readings: ketiv/qere plane reading pending by name, bang-marked": 0,
+    "codex readings: ketiv/qere plane reading at a one-sided template, left for later work": 2,
+    "codex readings: ketiv/qere plane reading at a one-sided template, left for later work, bang-marked": 0,
+    "codex readings: pointed ketiv ending in the qere's trailing maqaf": 5,
+    "codex readings: pending, the form stopping at the codex's space for a qere without ketiv": 1,
+    "codex readings: pending, the form stopping at the codex's space for a qere without ketiv, bang-marked": 0,
+    "codex readings: not applied, and flagged": 1,
+    "codex readings: not applied, and flagged, bang-marked": 0,
+    "codex readings: note targets changed": 189,
+    "codex readings: note targets changed, bang-marked": 80,
+    "codex readings: applied readings with a configuration a phase 3 policy removes": 3,
+    "codex readings: differing clauses whose head names שיטת-א": 13,
+    "codex readings: differing clauses whose head names שיטת-א, the head being prose": 2,
+    "codex readings: שיטת-א reading already in place": 11,
+    "codex readings: שיטת-א reading not applied": 1,
+    "codex readings: שיטת-א reading applied, the whole of a plain target": 1
+  },
+  "phase5_sites": {
+    "codex readings: empty clauses in note bodies": [
+      ["A2-Exodus", "39", "10"]
+    ],
+    "codex readings: apply-candidate in place, its form lacking the paseq glyph that ends the target": [
+      ["D1-Psalms", "40", "13"],
+      ["E2-Ruth", "3", "13"]
+    ],
+    "codex readings: applied, the form replacing the whole of a plain target": [
+      ["A5-Deuter", "29", "25"],
+      ["A5-Deuter", "32", "10"],
+      ["B1-Joshua", "21", "5"],
+      ["B1-Joshua", "21", "22"],
+      ["B1-Joshua", "23", "7"],
+      ["B2-Judges", "2", "12"],
+      ["B2-Judges", "2", "17"],
+      ["B2-Judges", "9", "48"],
+      ["B2-Judges", "18", "22"],
+      ["BA-Samuel שמ\"א", "11", "3"],
+      ["BA-Samuel שמ\"א", "15", "11"],
+      ["BA-Samuel שמ\"א", "17", "34"],
+      ["BA-Samuel שמ\"א", "18", "8"],
+      ["BA-Samuel שמ\"א", "19", "17"],
+      ["BA-Samuel שמ\"א", "21", "2"],
+      ["BA-Samuel שמ\"א", "29", "6"],
+      ["BA-Samuel שמ\"ב", "1", "19"],
+      ["BA-Samuel שמ\"ב", "8", "16"],
+      ["BA-Samuel שמ\"ב", "11", "11"],
+      ["BA-Samuel שמ\"ב", "11", "25"],
+      ["BA-Samuel שמ\"ב", "11", "26"],
+      ["BA-Samuel שמ\"ב", "12", "11"],
+      ["BA-Samuel שמ\"ב", "19", "42"],
+      ["BA-Samuel שמ\"ב", "22", "7"],
+      ["BA-Samuel שמ\"ב", "23", "13"],
+      ["BA-Samuel שמ\"ב", "23", "24"],
+      ["BA-Samuel שמ\"ב", "24", "2"],
+      ["BA-Samuel שמ\"ב", "24", "3"],
+      ["BC-Kings מל\"א", "2", "21"],
+      ["BC-Kings מל\"א", "4", "7"],
+      ["BC-Kings מל\"א", "6", "8"],
+      ["BC-Kings מל\"א", "6", "29"],
+      ["BC-Kings מל\"א", "7", "33"],
+      ["BC-Kings מל\"א", "8", "7"],
+      ["BC-Kings מל\"א", "8", "33"],
+      ["BC-Kings מל\"א", "10", "24"],
+      ["BC-Kings מל\"א", "14", "3"],
+      ["BC-Kings מל\"א", "17", "12"],
+      ["BC-Kings מל\"א", "18", "33"],
+      ["BC-Kings מל\"א", "18", "43"],
+      ["BC-Kings מל\"ב", "5", "12"],
+      ["BC-Kings מל\"ב", "8", "6"],
+      ["BC-Kings מל\"ב", "10", "10"],
+      ["BC-Kings מל\"ב", "20", "11"],
+      ["C1-Isaiah", "11", "2"],
+      ["C1-Isaiah", "14", "11"],
+      ["C1-Isaiah", "17", "9"],
+      ["C1-Isaiah", "27", "5"],
+      ["C1-Isaiah", "44", "8"],
+      ["C1-Isaiah", "55", "5"],
+      ["C2-Jeremiah", "2", "12"],
+      ["C2-Jeremiah", "24", "9"],
+      ["C2-Jeremiah", "49", "28"],
+      ["C2-Jeremiah", "52", "22"],
+      ["C3-Ezekiel", "16", "33"],
+      ["C3-Ezekiel", "28", "17"],
+      ["C3-Ezekiel", "28", "22"],
+      ["C3-Ezekiel", "32", "20"],
+      ["C3-Ezekiel", "35", "15"],
+      ["C3-Ezekiel", "39", "5"],
+      ["C3-Ezekiel", "46", "8"],
+      ["C3-Ezekiel", "46", "9"],
+      ["CA-The-12-Minor-Prophets נחום", "3", "17"],
+      ["CA-The-12-Minor-Prophets זכריה", "12", "13"],
+      ["CA-The-12-Minor-Prophets מלאכי", "2", "7"],
+      ["D1-Psalms", "5", "2"],
+      ["D1-Psalms", "6", "3"],
+      ["D1-Psalms", "11", "1"],
+      ["D1-Psalms", "27", "5"],
+      ["D1-Psalms", "32", "10"],
+      ["D1-Psalms", "37", "17"],
+      ["D1-Psalms", "50", "23"],
+      ["D1-Psalms", "52", "9"],
+      ["D1-Psalms", "56", "5"],
+      ["D1-Psalms", "57", "5"],
+      ["D1-Psalms", "64", "8"],
+      ["D1-Psalms", "68", "21"],
+      ["D1-Psalms", "85", "9"],
+      ["D1-Psalms", "89", "6"],
+      ["D1-Psalms", "94", "12"],
+      ["D1-Psalms", "98", "7"],
+      ["D1-Psalms", "98", "8"],
+      ["D1-Psalms", "99", "5"],
+      ["D1-Psalms", "106", "19"],
+      ["D1-Psalms", "106", "43"],
+      ["D1-Psalms", "107", "5"],
+      ["D1-Psalms", "108", "7"],
+      ["D1-Psalms", "118", "10"],
+      ["D1-Psalms", "119", "138"],
+      ["D1-Psalms", "137", "7"],
+      ["D1-Psalms", "144", "7"],
+      ["D2-Proverbs", "5", "19"],
+      ["D2-Proverbs", "10", "13"],
+      ["D2-Proverbs", "12", "23"],
+      ["D2-Proverbs", "21", "30"],
+      ["D2-Proverbs", "30", "9"],
+      ["E1-Song of Songs", "2", "17"],
+      ["FC-Chronicles דה\"א", "4", "9"],
+      ["FC-Chronicles דה\"א", "5", "41"],
+      ["FC-Chronicles דה\"א", "6", "45"],
+      ["FC-Chronicles דה\"א", "17", "6"],
+      ["FC-Chronicles דה\"א", "21", "12"],
+      ["FC-Chronicles דה\"א", "21", "29"],
+      ["FC-Chronicles דה\"א", "22", "10"],
+      ["FC-Chronicles דה\"א", "25", "31"],
+      ["FC-Chronicles דה\"א", "28", "10"],
+      ["FC-Chronicles דה\"א", "28", "17"],
+      ["FC-Chronicles דה\"ב", "6", "16"],
+      ["FC-Chronicles דה\"ב", "6", "20"],
+      ["FC-Chronicles דה\"ב", "6", "42"],
+      ["FC-Chronicles דה\"ב", "9", "24"],
+      ["FC-Chronicles דה\"ב", "10", "10"],
+      ["FC-Chronicles דה\"ב", "25", "1"],
+      ["FC-Chronicles דה\"ב", "30", "21"],
+      ["FC-Chronicles דה\"ב", "33", "25"],
+      ["FC-Chronicles דה\"ב", "36", "23"]
+    ],
+    "codex readings: applied, the form replacing named atoms of a plain target": [
+      ["A5-Deuter", "29", "28"],
+      ["C3-Ezekiel", "28", "22"]
+    ],
+    "codex readings: applied, the form written into the selected parameter of the one kept template that is the target": [
+      ["A3-Levit", "19", "16"],
+      ["BC-Kings מל\"ב", "14", "7"]
+    ],
+    "codex readings: ketiv/qere plane reading in place in a qere parameter": [
+      ["D1-Psalms", "11", "1"],
+      ["D1-Psalms", "90", "8"],
+      ["D2-Proverbs", "17", "27"],
+      ["FC-Chronicles דה\"א", "9", "4"]
+    ],
+    "codex readings: ketiv/qere plane reading in place through phase 3's ketiv/qere apparatus": [
+      ["D1-Psalms", "89", "29"],
+      ["FC-Chronicles דה\"ב", "25", "17"],
+      ["FC-Chronicles דה\"ב", "34", "22"]
+    ],
+    "codex readings: pointed ketiv written as the form stands": [
+      ["A5-Deuter", "28", "27"],
+      ["A5-Deuter", "28", "30"],
+      ["A5-Deuter", "29", "22"],
+      ["B2-Judges", "19", "3"],
+      ["BA-Samuel שמ\"א", "5", "6"],
+      ["BA-Samuel שמ\"א", "5", "12"],
+      ["BA-Samuel שמ\"א", "14", "27"],
+      ["BA-Samuel שמ\"א", "19", "18"],
+      ["BA-Samuel שמ\"א", "19", "19"],
+      ["BA-Samuel שמ\"א", "19", "22"],
+      ["BA-Samuel שמ\"א", "19", "23"],
+      ["BA-Samuel שמ\"א", "19", "23"],
+      ["BA-Samuel שמ\"א", "27", "8"],
+      ["BA-Samuel שמ\"ב", "12", "24"],
+      ["BA-Samuel שמ\"ב", "18", "12"],
+      ["BA-Samuel שמ\"ב", "19", "7"],
+      ["BA-Samuel שמ\"ב", "20", "14"],
+      ["BA-Samuel שמ\"ב", "24", "16"],
+      ["BA-Samuel שמ\"ב", "24", "18"],
+      ["BC-Kings מל\"א", "7", "45"],
+      ["BC-Kings מל\"א", "9", "9"],
+      ["BC-Kings מל\"ב", "2", "16"],
+      ["BC-Kings מל\"ב", "4", "2"],
+      ["BC-Kings מל\"ב", "4", "3"],
+      ["BC-Kings מל\"ב", "4", "7"],
+      ["BC-Kings מל\"ב", "4", "7"],
+      ["BC-Kings מל\"ב", "10", "27"],
+      ["BC-Kings מל\"ב", "11", "2"],
+      ["BC-Kings מל\"ב", "21", "12"],
+      ["C1-Isaiah", "9", "6"],
+      ["C1-Isaiah", "32", "7"],
+      ["C1-Isaiah", "36", "12"],
+      ["C1-Isaiah", "37", "30"],
+      ["C2-Jeremiah", "2", "24"],
+      ["C2-Jeremiah", "3", "2"],
+      ["C2-Jeremiah", "15", "4"],
+      ["C2-Jeremiah", "24", "9"],
+      ["C2-Jeremiah", "31", "38"],
+      ["C2-Jeremiah", "34", "17"],
+      ["C2-Jeremiah", "50", "6"],
+      ["C2-Jeremiah", "50", "15"],
+      ["C3-Ezekiel", "6", "3"],
+      ["C3-Ezekiel", "9", "11"],
+      ["C3-Ezekiel", "14", "14"],
+      ["C3-Ezekiel", "14", "20"],
+      ["C3-Ezekiel", "28", "3"],
+      ["C3-Ezekiel", "36", "14"],
+      ["C3-Ezekiel", "42", "16"],
+      ["CA-The-12-Minor-Prophets עמוס", "8", "8"],
+      ["D1-Psalms", "9", "19"],
+      ["D1-Psalms", "73", "2"],
+      ["D1-Psalms", "79", "10"],
+      ["D1-Psalms", "145", "6"],
+      ["D2-Proverbs", "22", "8"],
+      ["D2-Proverbs", "22", "11"],
+      ["D2-Proverbs", "22", "14"],
+      ["D2-Proverbs", "23", "26"],
+      ["D3-Job", "38", "12"],
+      ["FC-Chronicles דה\"א", "1", "46"],
+      ["FC-Chronicles דה\"א", "3", "24"],
+      ["FC-Chronicles דה\"א", "18", "10"],
+      ["FC-Chronicles דה\"א", "27", "29"],
+      ["FC-Chronicles דה\"ב", "29", "8"]
+    ],
+    "codex readings: pointed ketiv written with a named adjustment": [
+      ["BA-Samuel שמ\"ב", "5", "2"],
+      ["BA-Samuel שמ\"ב", "21", "12"],
+      ["C1-Isaiah", "36", "12"],
+      ["C1-Isaiah", "44", "24"],
+      ["D2-Proverbs", "3", "30"]
+    ],
+    "codex readings: ketiv/qere plane reading pending by name": [
+      ["BC-Kings מל\"ב", "18", "27"],
+      ["C2-Jeremiah", "48", "20"],
+      ["FC-Chronicles דה\"א", "9", "4"]
+    ],
+    "codex readings: ketiv/qere plane reading at a one-sided template, left for later work": [
+      ["BC-Kings מל\"ב", "5", "18"],
+      ["C2-Jeremiah", "50", "29"]
+    ],
+    "codex readings: pointed ketiv ending in the qere's trailing maqaf": [
+      ["C3-Ezekiel", "36", "14"],
+      ["D2-Proverbs", "22", "8"],
+      ["D2-Proverbs", "22", "11"],
+      ["D2-Proverbs", "22", "14"],
+      ["FC-Chronicles דה\"א", "18", "10"]
+    ],
+    "codex readings: pending, the form stopping at the codex's space for a qere without ketiv": [
+      ["C2-Jeremiah", "31", "37"]
+    ],
+    "codex readings: not applied, and flagged": [
+      ["A4-Numbers", "22", "5"]
+    ],
+    "codex readings: applied readings with a configuration a phase 3 policy removes": [
+      ["C3-Ezekiel", "28", "22"],
+      ["D1-Psalms", "11", "1"],
+      ["D1-Psalms", "56", "5"]
+    ],
+    "codex readings: שיטת-א reading already in place": [
+      ["D1-Psalms", "16", "1"],
+      ["D1-Psalms", "17", "6"],
+      ["D1-Psalms", "17", "10"],
+      ["D1-Psalms", "17", "14"],
+      ["D1-Psalms", "18", "7"],
+      ["D1-Psalms", "18", "12"],
+      ["D1-Psalms", "18", "31"],
+      ["D1-Psalms", "18", "32"],
+      ["D1-Psalms", "20", "9"],
+      ["D1-Psalms", "22", "21"],
+      ["D1-Psalms", "23", "3"]
+    ],
+    "codex readings: שיטת-א reading not applied": [
+      ["A3-Levit", "10", "4"]
+    ],
+    "codex readings: שיטת-א reading applied, the whole of a plain target": [
+      ["E1-Song of Songs", "8", "4"]
+    ]
+  },
+  "phase6_counts": {
+    "נוסח: notes reached": 3595,
+    "מ:הערה-2: notes reached": 27,
+    "נוסח: notes given MAM's target": 1543,
+    "מ:הערה-2: notes given MAM's target": 5
+  },
+  "flag_counts": {
+    "qualification 2: doubt-marked clauses by codex siglum": 46,
+    "qualification 2: notes flagged": 52,
+    "qualification 2: clauses flagged": 53,
+    "flagged-not-applied": 66,
+    "qualification 2: clauses whose reading is already in the target": 1,
+    "named apparatus-silence sites": 12,
+    "qualification 3: named agreeing clauses": 3,
+    "applied-and-flagged": 90,
+    "qualification 2: doubt-marked clauses by quoted form": 8,
+    "qualification 3: differing clauses already applied": 87,
+    "named doubtful agreeing clause": 1,
+    "named codex reading phase 5 does not apply": 1
+  },
+  "flag_sites": {
+    "qualification 2: doubt-marked clauses by codex siglum": [
+      "A5-Deuter|5|7", "A5-Deuter|5|23", "B1-Joshua|1|7", "B1-Joshua|7|13",
+      "B1-Joshua|8|15", "B1-Joshua|14|7", "B2-Judges|7|17",
+      "BA-Samuel שמ\"א|8|20", "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7",
+      "BA-Samuel שמ\"ב|22|40", "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29",
+      "C1-Isaiah|14|2", "C1-Isaiah|59|19", "C1-Isaiah|59|19",
+      "C3-Ezekiel|29|7", "C3-Ezekiel|31|11", "C3-Ezekiel|44|12",
+      "CA-The-12-Minor-Prophets הושע|4|18", "CA-The-12-Minor-Prophets הושע|6|11",
+      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
+      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
+      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
+      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
+      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
+      "D2-Proverbs|11|13", "D3-Job|41|22", "E2-Ruth|2|22",
+      "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
+      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
+      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+    ],
+    "qualification 2: notes flagged": [
+      "A5-Deuter|5|7", "B1-Joshua|1|7", "B1-Joshua|7|13", "B1-Joshua|8|15",
+      "B1-Joshua|14|7", "B2-Judges|7|17", "BA-Samuel שמ\"א|8|20",
+      "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7", "BA-Samuel שמ\"ב|22|40",
+      "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29", "C1-Isaiah|10|15",
+      "C1-Isaiah|14|2", "C1-Isaiah|45|6", "C1-Isaiah|59|19",
+      "C2-Jeremiah|33|26", "C2-Jeremiah|48|22", "C3-Ezekiel|10|11",
+      "C3-Ezekiel|12|12", "C3-Ezekiel|29|7", "C3-Ezekiel|31|11",
+      "C3-Ezekiel|35|9", "C3-Ezekiel|44|12",
+      "CA-The-12-Minor-Prophets הושע|4|18", "CA-The-12-Minor-Prophets הושע|6|11",
+      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
+      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
+      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
+      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
+      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
+      "D2-Proverbs|11|13", "D3-Job|16|8", "D3-Job|41|22", "E2-Ruth|2|22",
+      "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
+      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
+      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+    ],
+    "qualification 2: clauses flagged": [
+      "A5-Deuter|5|7", "B1-Joshua|1|7", "B1-Joshua|7|13", "B1-Joshua|8|15",
+      "B1-Joshua|14|7", "B2-Judges|7|17", "BA-Samuel שמ\"א|8|20",
+      "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7", "BA-Samuel שמ\"ב|22|40",
+      "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29", "C1-Isaiah|10|15",
+      "C1-Isaiah|14|2", "C1-Isaiah|45|6", "C1-Isaiah|59|19", "C1-Isaiah|59|19",
+      "C2-Jeremiah|33|26", "C2-Jeremiah|48|22", "C3-Ezekiel|10|11",
+      "C3-Ezekiel|12|12", "C3-Ezekiel|29|7", "C3-Ezekiel|31|11",
+      "C3-Ezekiel|35|9", "C3-Ezekiel|44|12",
+      "CA-The-12-Minor-Prophets הושע|4|18", "CA-The-12-Minor-Prophets הושע|6|11",
+      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
+      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
+      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
+      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
+      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
+      "D2-Proverbs|11|13", "D3-Job|16|8", "D3-Job|41|22", "E2-Ruth|2|22",
+      "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
+      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
+      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+    ],
+    "flagged-not-applied": [
+      "A4-Numbers|22|5", "A5-Deuter|5|7", "A5-Deuter|29|22", "B1-Joshua|1|7",
+      "B1-Joshua|7|13", "B1-Joshua|8|15", "B1-Joshua|14|7", "B2-Judges|7|17",
+      "BA-Samuel שמ\"א|8|20", "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7",
+      "BA-Samuel שמ\"ב|11|24", "BA-Samuel שמ\"ב|11|24", "BA-Samuel שמ\"ב|13|33",
+      "BA-Samuel שמ\"ב|22|40", "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29",
+      "BC-Kings מל\"ב|14|12", "C1-Isaiah|10|15", "C1-Isaiah|14|2",
+      "C1-Isaiah|45|6", "C1-Isaiah|59|19", "C2-Jeremiah|2|3",
+      "C2-Jeremiah|32|35", "C2-Jeremiah|33|26", "C2-Jeremiah|48|22",
+      "C2-Jeremiah|51|9", "C3-Ezekiel|10|11", "C3-Ezekiel|12|12",
+      "C3-Ezekiel|29|7", "C3-Ezekiel|31|11", "C3-Ezekiel|35|9",
+      "C3-Ezekiel|40|37", "C3-Ezekiel|44|12", "C3-Ezekiel|47|8",
+      "C3-Ezekiel|48|18", "C3-Ezekiel|48|21",
+      "CA-The-12-Minor-Prophets הושע|4|18",
+      "CA-The-12-Minor-Prophets הושע|6|11",
+      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
+      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
+      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
+      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
+      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
+      "D2-Proverbs|11|13", "D2-Proverbs|19|26", "D3-Job|16|8", "D3-Job|41|22",
+      "E2-Ruth|2|22", "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
+      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
+      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+    ],
+    "qualification 2: clauses whose reading is already in the target": [
+      "A5-Deuter|5|23"
+    ],
+    "named apparatus-silence sites": [
+      "A5-Deuter|29|22", "BA-Samuel שמ\"ב|11|24", "BA-Samuel שמ\"ב|11|24",
+      "BA-Samuel שמ\"ב|13|33", "BC-Kings מל\"ב|14|12", "C2-Jeremiah|2|3",
+      "C2-Jeremiah|32|35", "C2-Jeremiah|51|9", "C3-Ezekiel|40|37",
+      "C3-Ezekiel|47|8", "C3-Ezekiel|48|18", "C3-Ezekiel|48|21"
+    ],
+    "qualification 3: named agreeing clauses": [
+      "BA-Samuel שמ\"א|23|17", "D1-Psalms|25|21", "D1-Psalms|35|14"
+    ],
+    "applied-and-flagged": [
+      "A5-Deuter|28|30", "B1-Joshua|21|22", "B2-Judges|9|48", "B2-Judges|18|22",
+      "BA-Samuel שמ\"א|15|11", "BA-Samuel שמ\"א|17|34", "BA-Samuel שמ\"א|18|8",
+      "BA-Samuel שמ\"א|19|17", "BA-Samuel שמ\"א|21|2", "BA-Samuel שמ\"א|23|17",
+      "BA-Samuel שמ\"א|29|6", "BA-Samuel שמ\"ב|1|19", "BA-Samuel שמ\"ב|8|16",
+      "BA-Samuel שמ\"ב|11|11", "BA-Samuel שמ\"ב|12|1", "BA-Samuel שמ\"ב|19|42",
+      "BA-Samuel שמ\"ב|22|7", "BA-Samuel שמ\"ב|23|13", "BA-Samuel שמ\"ב|23|24",
+      "BA-Samuel שמ\"ב|24|2", "BA-Samuel שמ\"ב|24|3", "BC-Kings מל\"א|2|21",
+      "BC-Kings מל\"א|4|7", "BC-Kings מל\"א|6|29", "BC-Kings מל\"א|7|33",
+      "BC-Kings מל\"א|10|24", "BC-Kings מל\"א|14|3", "BC-Kings מל\"ב|5|12",
+      "BC-Kings מל\"ב|10|10", "BC-Kings מל\"ב|14|7", "BC-Kings מל\"ב|20|11",
+      "C2-Jeremiah|24|9", "C3-Ezekiel|28|17", "C3-Ezekiel|28|22",
+      "C3-Ezekiel|28|22", "C3-Ezekiel|35|15",
+      "CA-The-12-Minor-Prophets יואל|2|25",
+      "CA-The-12-Minor-Prophets זכריה|12|13",
+      "CA-The-12-Minor-Prophets מלאכי|2|7", "D1-Psalms|5|2", "D1-Psalms|7|1",
+      "D1-Psalms|11|1", "D1-Psalms|25|21", "D1-Psalms|27|5", "D1-Psalms|32|10",
+      "D1-Psalms|35|14", "D1-Psalms|37|17", "D1-Psalms|50|23", "D1-Psalms|56|5",
+      "D1-Psalms|57|5", "D1-Psalms|64|8", "D1-Psalms|68|21", "D1-Psalms|75|4",
+      "D1-Psalms|85|9", "D1-Psalms|89|6", "D1-Psalms|98|7", "D1-Psalms|98|8",
+      "D1-Psalms|106|43", "D1-Psalms|106|48", "D1-Psalms|107|5",
+      "D1-Psalms|107|18", "D1-Psalms|108|7", "D1-Psalms|118|10",
+      "D1-Psalms|119|138", "D1-Psalms|137|7", "D2-Proverbs|3|30",
+      "D2-Proverbs|10|13", "D2-Proverbs|12|23", "D2-Proverbs|21|30",
+      "D2-Proverbs|30|9", "D3-Job|19|16", "E1-Song of Songs|2|17",
+      "FC-Chronicles דה\"א|4|9", "FC-Chronicles דה\"א|5|41",
+      "FC-Chronicles דה\"א|6|45", "FC-Chronicles דה\"א|17|6",
+      "FC-Chronicles דה\"א|21|12", "FC-Chronicles דה\"א|21|29",
+      "FC-Chronicles דה\"א|22|10", "FC-Chronicles דה\"א|25|31",
+      "FC-Chronicles דה\"א|28|10", "FC-Chronicles דה\"א|28|17",
+      "FC-Chronicles דה\"ב|6|16", "FC-Chronicles דה\"ב|6|20",
+      "FC-Chronicles דה\"ב|9|24", "FC-Chronicles דה\"ב|10|10",
+      "FC-Chronicles דה\"ב|25|1", "FC-Chronicles דה\"ב|30|21",
+      "FC-Chronicles דה\"ב|33|25", "FC-Chronicles דה\"ב|36|23"
+    ],
+    "qualification 2: doubt-marked clauses by quoted form": [
+      "C1-Isaiah|10|15", "C1-Isaiah|45|6", "C2-Jeremiah|33|26",
+      "C2-Jeremiah|48|22", "C3-Ezekiel|10|11", "C3-Ezekiel|12|12",
+      "C3-Ezekiel|35|9", "D3-Job|16|8"
+    ],
+    "qualification 3: differing clauses already applied": [
+      "A5-Deuter|28|30", "B1-Joshua|21|22", "B2-Judges|9|48", "B2-Judges|18|22",
+      "BA-Samuel שמ\"א|15|11", "BA-Samuel שמ\"א|17|34", "BA-Samuel שמ\"א|18|8",
+      "BA-Samuel שמ\"א|19|17", "BA-Samuel שמ\"א|21|2", "BA-Samuel שמ\"א|29|6",
+      "BA-Samuel שמ\"ב|1|19", "BA-Samuel שמ\"ב|8|16", "BA-Samuel שמ\"ב|11|11",
+      "BA-Samuel שמ\"ב|12|1", "BA-Samuel שמ\"ב|19|42", "BA-Samuel שמ\"ב|22|7",
+      "BA-Samuel שמ\"ב|23|13", "BA-Samuel שמ\"ב|23|24", "BA-Samuel שמ\"ב|24|2",
+      "BA-Samuel שמ\"ב|24|3", "BC-Kings מל\"א|2|21", "BC-Kings מל\"א|4|7",
+      "BC-Kings מל\"א|6|29", "BC-Kings מל\"א|7|33", "BC-Kings מל\"א|10|24",
+      "BC-Kings מל\"א|14|3", "BC-Kings מל\"ב|5|12", "BC-Kings מל\"ב|10|10",
+      "BC-Kings מל\"ב|14|7", "BC-Kings מל\"ב|20|11", "C2-Jeremiah|24|9",
+      "C3-Ezekiel|28|17", "C3-Ezekiel|28|22", "C3-Ezekiel|28|22",
+      "C3-Ezekiel|35|15", "CA-The-12-Minor-Prophets יואל|2|25",
+      "CA-The-12-Minor-Prophets זכריה|12|13",
+      "CA-The-12-Minor-Prophets מלאכי|2|7", "D1-Psalms|5|2", "D1-Psalms|7|1",
+      "D1-Psalms|11|1", "D1-Psalms|27|5", "D1-Psalms|32|10", "D1-Psalms|37|17",
+      "D1-Psalms|50|23", "D1-Psalms|56|5", "D1-Psalms|57|5", "D1-Psalms|64|8",
+      "D1-Psalms|68|21", "D1-Psalms|75|4", "D1-Psalms|85|9", "D1-Psalms|89|6",
+      "D1-Psalms|98|7", "D1-Psalms|98|8", "D1-Psalms|106|43",
+      "D1-Psalms|106|48", "D1-Psalms|107|5", "D1-Psalms|107|18",
+      "D1-Psalms|108|7", "D1-Psalms|118|10", "D1-Psalms|119|138",
+      "D1-Psalms|137|7", "D2-Proverbs|3|30", "D2-Proverbs|10|13",
+      "D2-Proverbs|12|23", "D2-Proverbs|21|30", "D2-Proverbs|30|9",
+      "D3-Job|19|16", "E1-Song of Songs|2|17", "FC-Chronicles דה\"א|4|9",
+      "FC-Chronicles דה\"א|5|41", "FC-Chronicles דה\"א|6|45",
+      "FC-Chronicles דה\"א|17|6", "FC-Chronicles דה\"א|21|12",
+      "FC-Chronicles דה\"א|21|29", "FC-Chronicles דה\"א|22|10",
+      "FC-Chronicles דה\"א|25|31", "FC-Chronicles דה\"א|28|10",
+      "FC-Chronicles דה\"א|28|17", "FC-Chronicles דה\"ב|6|16",
+      "FC-Chronicles דה\"ב|6|20", "FC-Chronicles דה\"ב|9|24",
+      "FC-Chronicles דה\"ב|10|10", "FC-Chronicles דה\"ב|25|1",
+      "FC-Chronicles דה\"ב|30|21", "FC-Chronicles דה\"ב|33|25",
+      "FC-Chronicles דה\"ב|36|23"
+    ],
+    "named doubtful agreeing clause": [
+      "D2-Proverbs|19|26"
+    ],
+    "named codex reading phase 5 does not apply": [
+      "A4-Numbers|22|5"
+    ]
+  }
+}

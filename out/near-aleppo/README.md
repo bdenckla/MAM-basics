@@ -1,0 +1,32 @@
+# near-Aleppo dataset
+
+This is a version of MAM-parsed-plus whose Scripture text is nearer to the Aleppo
+Codex's body text. It retains MAM's source notes and distinguishes MAM's original
+targets from changed near-Aleppo targets. It is structured data: use the closed,
+role-aware template rules in each book's consumer notice.
+
+The 24 book files are in `plus/`. The example edition and documentation are in
+`gh-pages/near-aleppo/`. The build reads local MAM-parsed-plus, the Aleppo coverage
+index, and the sealed runtime inputs in `in/near-aleppo/`. The research archive and
+approval records are retained separately in MAM-private.
+
+From the repository root:
+
+```powershell
+./.venv/Scripts/python.exe py/main_near_aleppo.py
+./.venv/Scripts/python.exe py/main_near_aleppo.py --check
+./.venv/Scripts/python.exe py/main_near_aleppo.py --check-note-review
+```
+
+The first command regenerates five MAM population checks, then the dataset and
+HTML. The checks fail on changed input identities, unknown template variants,
+changed pointing guards, moved populations, or unreviewed note presentations.
+No private repository or scan archive is a build dependency.
+
+The shared MAM-with-doc renderer also renders the example edition. Every HTML run
+checks its MAM mode against 62 independently tracked MAM-with-doc files at public
+commit `6343c7bb62be0721b4ed4239077d37126f9bbbd1`.
+
+The dataset is derived from [Miqra according to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning)
+at Hebrew Wikisource, prepared by Seth (Avi) Kadish with technical assistance from
+Erel Segal-Halevi and Benjamin Denckla. See [LICENSE.md](LICENSE.md).

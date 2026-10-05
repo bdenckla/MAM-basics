@@ -6,6 +6,7 @@ Exports:
 
 from py_misc import get_cvm_rec_from_bcvt as gcrfb
 from py_misc import mam_doc_utils as doc_utils
+from py_misc import near_aleppo_params as nap  # near-aleppo
 from py_misc import true_gershayim as true_g2
 from py_misc import unbury_doc_parts as unbury
 from mb_cmn import bib_locales as tbn
@@ -16,6 +17,8 @@ from mb_cmn import str_defs as sd
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
+from render_wt import doc_note_presentations as presentations  # near-aleppo
+from render_wt import render_wikitext_added_lines as added_lines  # near-aleppo
 from render_wt import render_wikitext_dispatch as dispatch
 from render_wt import render_wikitext_handlers_for_qamats as qamats_variation
 from render_wt import render_wikitext_helpers as wt_help
@@ -38,20 +41,72 @@ def col_c_hctx(hctx: wt_help.Hctx):
 
 
 def _handle_doc(hctx, tmpl):
-    assert wtp.template_len(tmpl) >= 3
+    # near-aleppo: this handles the near-aleppo dataset's RENAMED_DOC as well as
+    # נוסח. Numbered parameters contain the dataset's target and original MAM parts.
+    # A reviewed literal
+    # clause may follow the near lemma; MAM's preserved target introduces the
+    # remaining source clauses. Flags follow them.
+    numbered, added = nap.split_doc_params(tmpl)
+    assert len(numbered) >= 2
     doc_target_wtseq = wtp.template_param_val(tmpl, "1")
     doc_target_renseq = wt_help.render_wtseq(hctx, doc_target_wtseq)
     if wt_help.get_renopt(hctx, "ro_no_doc"):
         return doc_target_renseq
     tr_space, doc_target_stripped = spacing.isolate_trailing(doc_target_renseq)
-    doc_parts_wtseqs = wtp.template_param_vals(tmpl)[1:]
+    doc_parts_wtseqs = [wtp.template_param_val(tmpl, key) for key in numbered[1:]]
     doc_parts_wtseqs = unbury.unbury_parts(doc_parts_wtseqs)
+    doc_parts = _reviewed_doc_parts(
+        hctx, tmpl, added, doc_target_wtseq, doc_parts_wtseqs
+    )
     main_out = renel.mk_ren_el_tc_and_doc(
         doc_target_stripped,
         _doc_lemma_subhandler(hctx, doc_target_wtseq),
-        _doc_parts_subhandler(hctx, doc_parts_wtseqs),
+        doc_parts + _added_lines(hctx, tmpl, added),
     )
     return main_out, tr_space
+
+
+def _reviewed_doc_parts(hctx, tmpl, added, target, parts):
+    # near-aleppo: recipes come only from reviewed, provenance-pinned inputs.
+    if nap.MAM_TARGET in added:
+        key = presentations.signature(
+            target, wtp.template_param_val(tmpl, nap.MAM_TARGET), parts
+        )
+        recipes = wt_help.get_renopt(hctx, "ro_doc_note_recipes") or {}
+        mam_line = _mam_target_line(hctx, tmpl)
+        if key in recipes:
+            promoted, remaining = presentations.project(parts, target, recipes[key])
+            wt_help.get_renopt(hctx, "ro_doc_note_recipes_seen").add(key)
+            near_line = _doc_parts_subhandler(hctx, [promoted])[0]
+            rest = _doc_parts_subhandler(hctx, remaining) if remaining else ()
+            mam_parts = ((*mam_line, " ", *rest[0]), *rest[1:]) if rest else (mam_line,)
+            return (near_line, *mam_parts)
+        rendered = _doc_parts_subhandler(hctx, parts)
+        return ((*mam_line, " ", *rendered[0]), *rendered[1:])
+    return _doc_parts_subhandler(hctx, parts)
+
+
+def _added_lines(hctx, tmpl, added):
+    """
+    near-aleppo: flags in the template's order, after the original source clauses.
+    MAM_TARGET introduces those clauses in _reviewed_doc_parts.
+    """
+    lines = []
+    for key in added:
+        if key == nap.MAM_TARGET:
+            continue
+        else:
+            parts_hctx = hctx.mk_new_with_handler(_DOC_PARTS_HANDLERS)
+            lines.extend(added_lines.flag_lines(hctx, key, tmpl, parts_hctx))
+    return tuple(lines)
+
+
+def _mam_target_line(hctx, tmpl):
+    # near-aleppo: MAM's text in Scripture context, with nested notes suppressed.
+    renopts = {**(hctx.renopts or {}), "ro_no_doc": True}
+    verse_hctx = wt_help.Hctx(_GEN_WT_HANDLERS, hctx.bcvt, renopts, hctx.io_renlog)
+    mam_text = wt_help.render_named_param_val(verse_hctx, tmpl, nap.MAM_TARGET)
+    return added_lines.labelled_line(nap.MAM_TARGET, mam_text, separator="=")
 
 
 def _handle_bold(hctx, tmpl):
@@ -98,6 +153,35 @@ def _fail_non_targeted_scrdff(_hctx, _tmpl):
     raise RuntimeError(
         "Unexpected non-targeted scroll-difference template "
         f"{tmpln.SCRDFF_NO_TAR} in plus rendering"
+    )
+
+
+def _fail_unconverted_renamed_scrdfftar(_hctx, _tmpl):
+    # near-aleppo: the near-aleppo dataset's RENAMED_SCRDFFTAR has MAM_TARGET, which
+    # _handle_scrdfftar has no place for. It is shown as MAM-with-doc shows מ:הערה-2,
+    # by ro_scrdfftar_to_doc, which makes it a note first, as the near-aleppo edition
+    # always does, so reaching this handler means that option is not set.
+    raise RuntimeError(
+        f"{nap.RENAMED_SCRDFFTAR} reached without ro_scrdfftar_to_doc, which alone "
+        "shows it"
+    )
+
+
+def _handle_marks_without_letter(_hctx, tmpl):
+    # Show explicit artificial carriers in double guillemets. The shared
+    # guard validates GA and GV shapes; the discriminator is metadata.
+    params = {
+        key: first_and_only_and_str(wtp.template_param_val(tmpl, key))
+        for key in wtp.template_param_keys(tmpl)
+    }
+    carriers = nap.orphan_marks.carriers(
+        {"tmpl_name": wtp.template_name(tmpl), "tmpl_params": params},
+        "orphan-mark display",
+    )
+    return (
+        "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+        + carriers
+        + "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}"
     )
 
 
@@ -226,6 +310,7 @@ def _ren_el_for_cant(hctx, tmpl, cant_dab):
 def _doc_lemma_subhandler(hctx: wt_help.Hctx, doc_target_wtseq):
     # XXX TODO Above, would it be better to return something like '{רווח}'?
     # See https://github.com/bdenckla/MAM-for-Acc/issues/33.
+    doc_target_wtseq = _less_one_trailing_space(doc_target_wtseq)
     if doc_lemma := _map_doc_target_to_doc_lemma(doc_target_wtseq):
         return doc_lemma
     tmp_hctx = hctx.mk_new_with_handler(_DOC_LEMMA_HANDLERS)
@@ -233,6 +318,22 @@ def _doc_lemma_subhandler(hctx: wt_help.Hctx, doc_target_wtseq):
     assert doc_lemma and doc_lemma != (" ",)
     assert not spacing.general_endswith(doc_lemma[-1], " ")
     return doc_lemma
+
+
+def _less_one_trailing_space(doc_target_wtseq):
+    """Label a longer target without its final space.
+
+    A target consisting of one space retains its existing label.
+    Scripture text and the stored target remain unchanged.
+    """
+    if list(doc_target_wtseq) == [" "]:
+        return doc_target_wtseq
+    last = doc_target_wtseq[-1] if doc_target_wtseq else None
+    if not (isinstance(last, str) and last.endswith(" ")):
+        return doc_target_wtseq
+    if last == " ":
+        return list(doc_target_wtseq[:-1])
+    return [*doc_target_wtseq[:-1], last[:-1]]
 
 
 def _map_doc_target_to_doc_lemma(doc_target_wtseq):
@@ -438,7 +539,27 @@ def _ren_el_abst_for_inverted_nun(add_tr_space):
 def _handle_wikitext_str(hctx, string):
     if wt_help.get_renopt(hctx, "ro_no_varika"):
         return string.translate(hpo.DROP_VARIKA)
+    # near-aleppo: with ro_paseq_glyph_as_legarmeih, each paseq glyph is shown as
+    # _handle_legarmeih_2 shows a legarmeh, a thin space and then the glyph, since
+    # the near-aleppo dataset writes both as the glyph and does not tell them apart:
+    # Only the near-aleppo edition sets it; a note part keeps the glyph as it is.
+    if (
+        wt_help.get_renopt(hctx, "ro_paseq_glyph_as_legarmeih")
+        and hpu.PASOLEG in string
+    ):
+        return _paseq_glyphs_as_legarmeih(string)
     return string
+
+
+def _paseq_glyphs_as_legarmeih(string):
+    # near-aleppo: see _handle_wikitext_str.
+    out = []
+    for index, piece in enumerate(string.split(hpu.PASOLEG)):
+        if index:
+            out.extend((_THSP, hpu.PASOLEG))
+        if piece:
+            out.append(piece)
+    return tuple(out)
 
 
 def _handle_wikitext_str_in_doc_part(_hctx, string):
@@ -506,6 +627,11 @@ _HANDLER_SPECS_FOR_MISC = {
     "נוסח": {_MASK_EC: _handle_doc},
     tmpln.SCRDFF_NO_TAR: {_MASK_EC: _fail_non_targeted_scrdff},
     tmpln.SCRDFF_TAR: {_MASK_EC: _handle_scrdfftar},
+    # near-aleppo: the near-aleppo dataset's own names for MAM's two note templates,
+    # and its explicit artificial-carrier template.
+    nap.RENAMED_DOC: {_MASK_EC: _handle_doc},
+    nap.RENAMED_SCRDFFTAR: {_MASK_EC: _fail_unconverted_renamed_scrdfftar},
+    nap.MARKS_WITHOUT_LETTER: {_MASK_EL: _handle_marks_without_letter},
     tmpln.SLH_WORD: {_MASK_ELP: _handle_slh_word},
     "מ:לגרמיה-2": {_MASK_ELP: _handle_legarmeih_2},
     "מ:פסק": {_MASK_ELP: _handle_paseq},

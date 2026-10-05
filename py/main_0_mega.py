@@ -63,6 +63,7 @@ import main_sigil_inventory
 import main_tmpl_survey
 import main_wordlist
 import main_mam_with_doc
+import main_near_aleppo
 import main_mam_simple
 import main_letter_small_job
 import main_tmpl_survey_toy
@@ -111,6 +112,20 @@ class StepRecord:
     step_id: str
     runner: Callable[[], object]
     note: str | None
+
+
+def _run_near_aleppo_census():
+    main_near_aleppo.almost_main(["--census"])
+
+
+def _run_near_aleppo_build():
+    main_near_aleppo.almost_main(["--build", "--refresh-expectations"])
+
+
+def _run_near_aleppo_html():
+    main_near_aleppo.almost_main(["--refresh-note-review"])
+    main_near_aleppo.almost_main(["--check-note-review"])
+    main_near_aleppo.almost_main(["--html"])
 
 
 def _run_vendored_tmpl_survey_toy():
@@ -695,6 +710,21 @@ _STEPS = [
         " default paths: reads only the committed, hand-corrected"
         " aleppo/aleppo-wiki/index-flat-corrected.json; writes"
         " aleppo/index-flat-annotated.json",
+    ),
+    StepRecord(
+        "near-aleppo-census",
+        _run_near_aleppo_census,
+        "five MAM-only population baselines; after parse-ws and the Aleppo coverage index",
+    ),
+    StepRecord(
+        "near-aleppo-build",
+        _run_near_aleppo_build,
+        "local MAM plus sealed pointings; writes out/near-aleppo/plus after the census",
+    ),
+    StepRecord(
+        "near-aleppo-html",
+        _run_near_aleppo_html,
+        "checks every changed-note presentation and MAM-mode equivalence; writes gh-pages/near-aleppo after the build",
     ),
     StepRecord(
         "pipeline-graph",

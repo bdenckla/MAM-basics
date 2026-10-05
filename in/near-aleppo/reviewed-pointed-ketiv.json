@@ -1,0 +1,3985 @@
+{
+  "format": "near-aleppo-reviewed-pointing-v1",
+  "input_sha256": {
+    "A1-Genesis.json": "443fb743f2a13de04798925f75335aeafe35a269b99c7a91046957bc2907dd6b",
+    "A2-Exodus.json": "1276563bdfe74603a765d2b79ae0e74bde8350d2cb8a79ecb094c9b3a7f15391",
+    "A3-Levit.json": "e2159715c998110d8ff7a61c95c97c0b1d603322c475b44d15a7abf7ebf0fc29",
+    "A4-Numbers.json": "8c6324b8ee2a49194d0fd20d1d927c81b904d97d29baecfd29cd7f34282c5e45",
+    "A5-Deuter.json": "6eae49d8e860a01272152a8ec40b555d96d71fa47e4331c31bbeb228890b2a46",
+    "B1-Joshua.json": "8c5030941247685755eb65df1ff0e461945e63f96ba9b91b20d4af233a5307be",
+    "B2-Judges.json": "0f2dccdf66b669156e4e92f72705ae396e464dc5437ed8129cd1b66e43bbda83",
+    "BA-Samuel.json": "e9b126058453cfa72f855250ad62dedfd92045ff8b822544f02352a61f983d23",
+    "BC-Kings.json": "c041cb1a0989083a5e8d8ffdf6c67816071242d18cc967f3483e5297d1abda5a",
+    "C1-Isaiah.json": "be2574ba98e272843b1cbbc9e32858c182a8c13ef8a705d3b8950e228fcc1e9f",
+    "C2-Jeremiah.json": "085c4bc486f9138d214378d362f3c9010e9df85de6aefa93ff950ba84a823788",
+    "C3-Ezekiel.json": "17f6c8ea18a8047141f046cba53f37275c808bedf4322b0561fe5445e9b5abd9",
+    "CA-The-12-Minor-Prophets.json": "f42bf68af52db7e0619eff230ca0e68f4928b58cc40cf3ff9cf8e80f243bbd00",
+    "D1-Psalms.json": "b20f27b16cf4489a85c1bd35c3f8fb9c254dd544b1faabdae094a125cd16723a",
+    "D2-Proverbs.json": "ae2228d6a48fe795e60abe2d24c692cf6e8a18f1a9e646de4743e3a66794bf1a",
+    "D3-Job.json": "2aa3eb09abacb88b98b23e2f6612e0ef7898f17b723249432454dc0b86fd35cc",
+    "E1-Song of Songs.json": "be96227073bf14e52a8e5764caaf8e9afbed15d2b00cf436cd47a2c51e71afcd",
+    "E2-Ruth.json": "fb0a92803350eb3c0a383b262bf13524a3f32c19dd0d868923613527b67361b0",
+    "E3-Lamentations.json": "1ec2781b8898f8564476fc6801315fab38c0134795ec107fb0b5ea207a2823f7",
+    "E4-Ecclesiastes.json": "a3bbdc6712668235c181235dfb80004ba8ce1d3d9506ac4991784ff60599f153",
+    "E5-Esther.json": "a93c106356dc16f32d7ef3719b7edde93cb82a958ec413f29e968ddb24abf235",
+    "F1-Daniel.json": "43fcc78c2bfe85bb86291e6845470949d784fdd36bec78520c130ad630857704",
+    "FA-Ezra-Nexemiah.json": "e1fab9e242844f76877cad59b16678678dc0481791fcfbb94bb3c512213b4739",
+    "FC-Chronicles.json": "37bb4651184b058746b3587605b70a94a4c9cdd3a2678dc1f157c07ab14b7db1"
+  },
+  "records": [
+    {
+      "id": "A1-Genesis:14:2:0",
+      "verse": [
+        "A1-Genesis",
+        "14",
+        "2"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "d6b819a49e7a3924ed5225f60219cc3d740f197189f17da826fc03f4525272ce",
+      "value": [
+        "צְב",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יִ֔ים"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "A1-Genesis:14:8:0",
+      "verse": [
+        "A1-Genesis",
+        "14",
+        "8"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "d6b819a49e7a3924ed5225f60219cc3d740f197189f17da826fc03f4525272ce",
+      "value": [
+        "צְב",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יִ֔ים"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "A1-Genesis:24:33:0",
+      "verse": [
+        "A1-Genesis",
+        "24",
+        "33"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "485a748dda3eeeb19cea4f000fd84ee8e7c984332e5f887f55da312fba75d0ca",
+      "value": "וַיֻּישַׂ֤ם",
+      "atoms": 1
+    },
+    {
+      "id": "A1-Genesis:25:23:0",
+      "verse": [
+        "A1-Genesis",
+        "25",
+        "23"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c603dc6c078653b80a8ab4d428e09ec60fce11d52ea3a5204ae4e29de78e3a1a",
+      "value": [
+        "ג",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ייִם֙"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "A1-Genesis:27:29:0",
+      "verse": [
+        "A1-Genesis",
+        "27",
+        "29"
+      ],
+      "path": [
+        2
+      ],
+      "expected_sha256": "7aea42317fcf2a92fd9010b0b3b6684d09f364629a59b2af8e8d983517004c95",
+      "value": "וְיִֽשְׁתַּחֲוֻ֤",
+      "atoms": 1
+    },
+    {
+      "id": "A2-Exodus:16:2:0",
+      "verse": [
+        "A2-Exodus",
+        "16",
+        "2"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "0bccaeb8f9d0a4fd1e2869aac0f7b12d13122c59ab07b4c3175e60c70b11eab4",
+      "value": "וַיִּלֹּ֜ינוּ",
+      "atoms": 1
+    },
+    {
+      "id": "A2-Exodus:21:8:0",
+      "verse": [
+        "A2-Exodus",
+        "21",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "1aa0a6b897c325d40ca23ad70b1dd6e4bdece239e64feae7a5fa81f788807d76",
+      "value": "לֹ֥א",
+      "atoms": 1
+    },
+    {
+      "id": "A3-Levit:11:21:0",
+      "verse": [
+        "A3-Levit",
+        "11",
+        "21"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "7efcf09f567f9c0838bf42057d0b740cbac98f8b540648b0a8923f554db38913",
+      "value": "לֹ֤א",
+      "atoms": 1
+    },
+    {
+      "id": "A3-Levit:21:5:0",
+      "verse": [
+        "A3-Levit",
+        "21",
+        "5"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "fb80c49314c820c67d949b77235b2f46cad72564b7980d07dc1838bc75c3eea6",
+      "value": "יִקְרְחֻ֤ה",
+      "atoms": 1
+    },
+    {
+      "id": "A3-Levit:25:30:0",
+      "verse": [
+        "A3-Levit",
+        "25",
+        "30"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "ea64dc83d011b5d3321dfab64eab2b4b9450d5892346f44cd3d5b9bbbab0d27d",
+      "value": "לֹ֣א",
+      "atoms": 1
+    },
+    {
+      "id": "A4-Numbers:21:32:0",
+      "verse": [
+        "A4-Numbers",
+        "21",
+        "32"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9a153bb027914e18effa0955e64bff33b4bab14ca18f4f182a972cf2e20f72b5",
+      "value": "וַיֹּ֖ירֶשׁ",
+      "atoms": 1
+    },
+    {
+      "id": "A4-Numbers:34:4:0",
+      "verse": [
+        "A4-Numbers",
+        "34",
+        "4"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9d2dc922a9b489c0fa9a3944aaf6c23e400022d910f4c8f0d06403f8d8f7818a",
+      "value": "וְהָיֻה֙",
+      "atoms": 1
+    },
+    {
+      "id": "A5-Deuter:21:7:0",
+      "verse": [
+        "A5-Deuter",
+        "21",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3ba5da82766780345b568bd57c636e1b4398dc6236b518614f9b38efa69ff587",
+      "value": "שָֽׁפְכֻה֙",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:2:13:0",
+      "verse": [
+        "B1-Joshua",
+        "2",
+        "13"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "d6b3be7fa4279da1862759f2f18ffb3ec5f09e83e6a642a001c1d14e15a60e8d",
+      "value": "אַחְוֹתַ֔י",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:15:4:0",
+      "verse": [
+        "B1-Joshua",
+        "15",
+        "4"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "4183b2fc3b5b064ca479e1d9117a5a0b1680561f8ffcb9faeec3882a8488b851",
+      "value": "וְהָיֻ֛ה",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:18:12:0",
+      "verse": [
+        "B1-Joshua",
+        "18",
+        "12"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9d2dc922a9b489c0fa9a3944aaf6c23e400022d910f4c8f0d06403f8d8f7818a",
+      "value": "וְהָיֻה֙",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:18:14:0",
+      "verse": [
+        "B1-Joshua",
+        "18",
+        "14"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8d1055f3b745aad452bb823a5a1d6d52a7a1cc902a1511e4d981081e8998a3db",
+      "value": "וְהָיֻ֣ה",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:18:19:0",
+      "verse": [
+        "B1-Joshua",
+        "18",
+        "19"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "67b027e60313af63418340d4ac662e1f5829b65c3fc31734ffe03fd572fd5289",
+      "value": "וְהָיֻ֣ה׀",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:20:8:0",
+      "verse": [
+        "B1-Joshua",
+        "20",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3e930bbac5a33aa5f639c307607403dd15c79700a96677b4846329a970b8e8ca",
+      "value": "גֹּלָ֥ון",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:21:27:0",
+      "verse": [
+        "B1-Joshua",
+        "21",
+        "27"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "962ed57102fa6a2259f02c66191136aafeaddf92648d001dbf7247d18b3a47a1",
+      "value": "גֹּלָ֤ון",
+      "atoms": 1
+    },
+    {
+      "id": "B1-Joshua:24:3:0",
+      "verse": [
+        "B1-Joshua",
+        "24",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "6747ad4a43cfe5c0972a4583b7fd4da57f744b8c8160bdcb35a30330b53e0f0e",
+      "value": "וָֽאַרְבֶּ֙",
+      "atoms": 1
+    },
+    {
+      "id": "B2-Judges:4:11:0",
+      "verse": [
+        "B2-Judges",
+        "4",
+        "11"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "faf8eb36fe210a1e8721163800e671f40ce18f0dac0ec996ab896066a6b766ba",
+      "value": "בְּצַעֲנַיִ֖ם",
+      "atoms": 1
+    },
+    {
+      "id": "B2-Judges:11:37:0",
+      "verse": [
+        "B2-Judges",
+        "11",
+        "37"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c82107f5d02d6bb80a95cc52ff837ea5809ae299cb5723202936e7914a794f5a",
+      "value": [
+        "וְרֵע",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יתָֽי"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "B2-Judges:16:26:0",
+      "verse": [
+        "B2-Judges",
+        "16",
+        "26"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "aa5d70de9ecbc519bc3d14d0a4bb75ad6e3712fb4dda18fa96a345177b5e6587",
+      "value": "וַהֲימִשֵׁ֙נִי֙",
+      "atoms": 1
+    },
+    {
+      "id": "B2-Judges:21:20:0",
+      "verse": [
+        "B2-Judges",
+        "21",
+        "20"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "5e92df0084176eb7f460203b10c3dda6d6109ec15c7e3bf49a4b09cae952c3ac",
+      "value": "וַיְצַוֻּ֕",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:2:3:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "2",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "a224fddd6e07c9b1f3c0d863a258d581e1b48232f79b571a65728dd15d02c07d",
+      "value": "וְלֹ֥א",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:7:9:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "7",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b23652b24ff7f080b594cafc6e0861cc6425d798c6d212fe9f59f8176857cd9f",
+      "value": "וַיַּעֲלֵ֧הֻ",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:12:10:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "12",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "5802731cf3401c7b2324b3e63e29b40e9f0f9144d21a46ca0917c5e8fd42540c",
+      "value": "וַיֹּאמְרֻ֣",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:13:8:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "13",
+        "8"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "1ac35b4e9efec54a6b2ed58cd8866d3b3e2b7b9f549de6bbc4f42429b55eee0f",
+      "value": [
+        "וַיּ֣",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יחֶל׀"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:13:19:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "13",
+        "19"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e3f7df8e5da9994e6cf3c4308a599fee468a4de59c1d3f5ed7a7ee98e8400b51",
+      "value": "אָמְרֻ֣",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:17:23:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "17",
+        "23"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "a40e4a611b3bba0b897838cf1bf4b562d798f6199c93ccdfc4a062a993c19768",
+      "value": [
+        "מִמַּעַרְ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "א֣"
+          }
+        },
+        "וֹת"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:18:1:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "18",
+        "1"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "57c8b4c90861166e336a681783456b507901ca4cff97999eb3f2b8662658e201",
+      "value": "וַיֶּאֱהָבֵ֥וּ",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:18:9:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "18",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e25b7c575208499fc7fe2ff3449f52b2dd97c80360b42f4cebb7b7722b7817e5",
+      "value": "עֹוֵ֣ן",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:24:18:0",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "24",
+        "18"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "83bd87ac20ea9b1eadd10ff38afd59ccd3e157f381f6940e0bb2a7625a972cdc",
+      "value": "וְאַתָּ֙",
+      "atoms": 1
+    },
+    {
+      "id": "BA-1Samuel:25:18:1",
+      "verse": [
+        "BA-Samuel שמ\"א",
+        "25",
+        "18"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "846ad3403d835a91f8023fe8ae3b0e2a75bebb4f56d2f8bfc08a274ed719ff22",
+      "value": "עֲשׂוּוֹת֙",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:3:2:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "3",
+        "2"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "d0cf1e4baf955a167854e510791e455772e95b199a583bc490eb936f0eab4002",
+      "value": "וַיִָּלְד֧וּ",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:3:25:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "3",
+        "25"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "aaeb74078656b8dfb33e88e70f5db4991283c828f3d563dd0cb068cf459e7d33",
+      "value": "מֹ֣בָואֶ֔ךָ",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:5:8:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "5",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "d0273c15bf7088702e5a0902b4b91b5155fa3ef31d7a870b4f688fa299f5a591",
+      "value": "שְׂנֻאֵ֖ו",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:8:3:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "8",
+        "3"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "ce564703a09ee3a7d2dfe680566827b1ee40b3922e5936e985e434485e569f5e",
+      "value": "בִּֽנְהַר",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:14:30:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "14",
+        "30"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "77a08d51b5e6a77aee500a679a5284e54875fbfeb3026ee39064db2174f6e032",
+      "value": "וְהַוצִּת֣יּהָ",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:15:8:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "15",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "afede6bdd039bbcd2f57d6df57dd056720f1fb5eba969758e606dc7415c219d3",
+      "value": "יָשֹׁ֨יב",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:15:20:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "15",
+        "20"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8f66a7f8fc3edd8aeaff6a1d80ff664837f2dac1c8d14e42338318a687ae4e37",
+      "value": "אֲנִועֲךָ֤",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:16:18:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "16",
+        "18"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b66df15c2b68bfd9cd17615015cbcd3aa2ce235728a7d99a722cf9845b9af9e8",
+      "value": "לֹ֥א",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:18:3:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "18",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "cffd3b18534b88f984bc979a33d1343f8d6ae78445d3f98e672a3d9faf362186",
+      "value": [
+        "לַעְזֽ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יר"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:18:8:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "18",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3ad25c0aa195077d04115cd80cd97d150d0fba0875d0434f599da7e5819b5392",
+      "value": "נָפֹ֖צֶות",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:19:41:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "19",
+        "41"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "4d13e4a211669e7dfe104a089d6814aebdd34972b39497ae607648a230bf79f3",
+      "value": "וֶיעֱבִ֣רוּ",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:20:5:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "20",
+        "5"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c1cffc72bb2d922dc58c4ced766b9af8db3d52eeafdff27a682c24c52e18676a",
+      "value": [
+        "וַיּ֕",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יחֶר"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:20:23:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "20",
+        "23"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "173b9a09d4094a1651b49e1cc047fac92915067e5cef90c82b6d03fdcd1d327f",
+      "value": "הַכְּרֵיִ֖",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:21:4:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "21",
+        "4"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b1890310f0cfde6b0dab7330044018c033285f8858de1f94029468f4c8bf6fe2",
+      "value": "לָ֜יּ",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:21:9:2",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "21",
+        "9"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "a12ea55c779b6a45c7af167f2792fdaade02cb831f927b6627a3aa48bfb7c030",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אִ"
+          }
+        },
+        "תְחִלַּ֖ת"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:21:20:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "21",
+        "20"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "80d50f7377bd6f98e37baf7311e7061c136a4fabdef5569424032adc305ea115",
+      "value": [
+        "מָד֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ין"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:22:8:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "22",
+        "8"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "49fb64d5b2e2cd0725d7a2250a0511092f94fadaef6733a0f6bb9e2d2f3c3730",
+      "value": [
+        "וַ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אִ"
+          }
+        },
+        "תְגָּעַ֤שׁ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:22:51:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "22",
+        "51"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "9aa5270bf9225faaec0e9c66ed51821752f1dcf12738b0b23f1f8d5bdc471a2a",
+      "value": [
+        "מִגְדּ֖",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יל"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:23:8:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "23",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3cd7ccef10b3e057e7bbebd2cad42c237f14b1cdc62288ebad83dbe413a6e148",
+      "value": "הָעֶצְנִ֔ו",
+      "atoms": 1
+    },
+    {
+      "id": "BB-2Samuel:23:9:0",
+      "verse": [
+        "BA-Samuel שמ\"ב",
+        "23",
+        "9"
+      ],
+      "path": [
+        2
+      ],
+      "expected_sha256": "2528d4f533a716130beb63ebcf2a1aeb31928a299b14ac2f4b023e95b5506f09",
+      "value": [
+        "דֹּד֖",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "י"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BC-1Kings:2:24:0",
+      "verse": [
+        "BC-Kings מל\"א",
+        "2",
+        "24"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3c13cb9011ce433c90401eb2cbfe57a007867a76bead685ab2c43fbb2a1d71bd",
+      "value": "וַיּוֹשִׁיבַ֙ינִי֙",
+      "atoms": 1
+    },
+    {
+      "id": "BC-1Kings:12:7:0",
+      "verse": [
+        "BC-Kings מל\"א",
+        "12",
+        "7"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "714535978953bcb2e61132d6a741626293c6ba29a33a578c449674430d463571",
+      "value": "וַיְדַבְּרֻ֨",
+      "atoms": 1
+    },
+    {
+      "id": "BC-1Kings:16:26:0",
+      "verse": [
+        "BC-Kings מל\"א",
+        "16",
+        "26"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "4505095d09a4e29561f727e942a447c2533c9c0437f7ed48dae554198333f6b6",
+      "value": [
+        "וּ֨בְחַטָּאת֔",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יו"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BC-1Kings:22:49:1",
+      "verse": [
+        "BC-Kings מל\"א",
+        "22",
+        "49"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "3c568cea2970f8c3d83696a41bcb151a9180f2b5adf3c7a72ca0c8bf12a0d3f9",
+      "value": "נִשְׁבְּרֻ֥ה",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:4:5:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "4",
+        "5"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "95f6331fbc3349f68d62fdede0e189e67ea3dead2eb41194d5e4340bf72355df",
+      "value": [
+        "מ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יצָֽקֶת"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:6:25:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "6",
+        "25"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1",
+        0
+      ],
+      "expected_sha256": "a4d84972d8ed090bf7e50cbfd74222984c3b7883f586c010dd45a33842ea12fa",
+      "value": "חִרי־",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:7:13:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "7",
+        "13"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "2932c4b36c065c169b9ad8db21728b616d240541d316101aea8d892820951a92",
+      "value": "ההֲמ֤וֹן",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:8:10:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "8",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "893ace5453dae55622fc9c45d6ecbd7745308fe8b06e86eb69a8ccf3d8dfaf1a",
+      "value": "לֹ֖א",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:9:33:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "9",
+        "33"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "7217429c153b5c758abf72f2bdca53a5e546022e66fb191a5ad7823bffcf4a0b",
+      "value": "שִׁמְטֻ֖הָו",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:11:4:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "11",
+        "4"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9e7c5ccead1ef06c4fc8ec3abbecd3592982b14c15346fdb302e1962b14e5338",
+      "value": [
+        "הַמֵּא֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יות"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:11:9:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "11",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9e7c5ccead1ef06c4fc8ec3abbecd3592982b14c15346fdb302e1962b14e5338",
+      "value": [
+        "הַמֵּא֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יות"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:11:10:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "11",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9e7c5ccead1ef06c4fc8ec3abbecd3592982b14c15346fdb302e1962b14e5338",
+      "value": [
+        "הַמֵּא֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יות"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:11:15:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "11",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b1aa91898f2e495ca4244b684e4776b902ba249df50997cbcbf380bc6761fa0e",
+      "value": [
+        "הַמֵּא֣",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יות׀"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:12:12:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "12",
+        "12"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "e21d97289d3449dff45a3686f7baebe6470d018ffcee27726cd669e9407d568b",
+      "value": "יְדֵ֙",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:12:12:1",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "12",
+        "12"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "f1473a3ac16bead08229f5ffb0c9404f4034878482ec7de3022a5c90d196d39c",
+      "value": [
+        "הַ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אֻ"
+          }
+        },
+        "פְקָדִ֖ים"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:14:6:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "14",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e975097deb69510ad37d7c7ec98d2a0d90491fb246b88d811c4737c285141637",
+      "value": "יֻמָֽות",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:18:27:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "18",
+        "27"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "2715e16e98d8c29141d939a55e200f6e9e170be887ef8e9b0fcc546cb4906db6",
+      "value": "חֹרָיהָ֗ם",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:18:27:1",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "18",
+        "27"
+      ],
+      "path": [
+        5,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "1e15a25c89baba267c2d3b2c06978e4e9474a91badb2ed2d0e42dc8b806dc40d",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אֵ"
+          }
+        },
+        "שֵ֥נַיְ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אֵ"
+          }
+        },
+        "הֶ֖ם"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:20:4:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "20",
+        "4"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "755b3fa6ac27b0863433e8b1fe90c462b7f8c8b0ab9c6dd2ca757d5600bded3b",
+      "value": "הָעֵ֖יר",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:20:18:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "20",
+        "18"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c9a6d741818429553fe3bb9a8ad2212e8e793f9a1567b9a51d3d4e5c92bca8a2",
+      "value": "יִקָּ֑חֻ",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:22:5:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "22",
+        "5"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "40632c5e36ee6ac68b10d8b8050fdd4bf9c73fc911c9148446c2087fb6075587",
+      "value": "וְיִתְּנֻ֗הֻ",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:22:5:1",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "22",
+        "5"
+      ],
+      "path": [
+        2
+      ],
+      "expected_sha256": "6923e37389afad7528e81b9416b7169e4d809f12c90009a9e00d886841af47ad",
+      "value": "בבֵּ֣ית",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:24:10:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "24",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "35d4db3d9f6a3277d49d885b49616cf89b6245777065f17356d4702a70beac79",
+      "value": "עָלֻ֗ה",
+      "atoms": 1
+    },
+    {
+      "id": "BD-2Kings:25:17:0",
+      "verse": [
+        "BC-Kings מל\"ב",
+        "25",
+        "17"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8812ad16c3cb7daa093430857a60460595b3288bf5a0be5a80ef94bb3fd8222a",
+      "value": "אַמֹּה֒",
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:3:16:0",
+      "verse": [
+        "C1-Isaiah",
+        "3",
+        "16"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "82a45ec9ab24f3a0de40879a2fdf71f25d8da1751769eabb05c023af5e3432aa",
+      "value": [
+        "נְטוּ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "א֣"
+          }
+        },
+        "וֹת"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:9:2:0",
+      "verse": [
+        "C1-Isaiah",
+        "9",
+        "2"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "207d60e6fa3b6a747d41d5ec816ba4ea2ce4580f5959ca6b591174358f05133b",
+      "value": "לֹ֖א",
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:25:10:0",
+      "verse": [
+        "C1-Isaiah",
+        "25",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "85700dacbfa739c2a80ba3baba17cbc5771e6c112528d1b4baea310edae39dcb",
+      "value": [
+        "בְּמ֥",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "י"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:26:20:0",
+      "verse": [
+        "C1-Isaiah",
+        "26",
+        "20"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "2fc4cd154a9f6da43762919848228f52e1b46779ec0b05acd706c716485a7b78",
+      "value": "דְּלָתְיךָ֖",
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:28:15:0",
+      "verse": [
+        "C1-Isaiah",
+        "28",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "6f7005f26978b0facc10f4ee3b5bf0d84a061f8f6dca24ab7bd04eeff673f136",
+      "value": "שֹׁ֣יט",
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:28:15:1",
+      "verse": [
+        "C1-Isaiah",
+        "28",
+        "15"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "2dfe4de589f4bfbfcd164c218c2b57c75dfe989395093971fd2bc7c1bdcc4070",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אַֽ"
+          }
+        },
+        "עֲבֹר֙"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:42:20:0",
+      "verse": [
+        "C1-Isaiah",
+        "42",
+        "20"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "854a6a8071a86506a5e97f0bb843c7dd10d582096820817b3222c87ceb96a8d8",
+      "value": [
+        "רָא֥",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ית"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:49:5:0",
+      "verse": [
+        "C1-Isaiah",
+        "49",
+        "5"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "92db74bfcf188c1d1049efc15b922bb1e3716b6535e818f8ff37acef65a33e96",
+      "value": "לֹ֣א",
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:55:13:0",
+      "verse": [
+        "C1-Isaiah",
+        "55",
+        "13"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e3e4db8d9898d9d80ad1ab06dfcbe0628e416f90da603f95f6c8dde790d234a7",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "תַ֥חַת"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:63:9:0",
+      "verse": [
+        "C1-Isaiah",
+        "63",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "92db74bfcf188c1d1049efc15b922bb1e3716b6535e818f8ff37acef65a33e96",
+      "value": "לֹ֣א",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:2:15:0",
+      "verse": [
+        "C2-Jeremiah",
+        "2",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "ebf2a9a5a6ce26be8fc11c696980eb0885a702e07fdbc4834bedd20641eaa857",
+      "value": "נִצְּתֻ֖ה",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:2:16:0",
+      "verse": [
+        "C2-Jeremiah",
+        "2",
+        "16"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "2e2bbdd8aacef4ca1724b08f6dc6d9e1a6d5d778ddec358f7559112c6bf340e0",
+      "value": "וְתַחְפַּנְסֵ֑",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:2:25:0",
+      "verse": [
+        "C2-Jeremiah",
+        "2",
+        "25"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8a9d40228dbfa3ee5b0301457c6d1046786c43b25044262e59bb4dfb1fe2a36c",
+      "value": "וּגְורֹנֵ֖ךְ",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:4:19:0",
+      "verse": [
+        "C2-Jeremiah",
+        "4",
+        "19"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8a65c9cfd854a237e13871dc4cd0b004d0d1aea245bf8057c2cbce098be6579e",
+      "value": "אֹחִ֜ולָה",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:5:24:0",
+      "verse": [
+        "C2-Jeremiah",
+        "5",
+        "24"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8b3174a6d36e3937c5f6a9233a1acd91bcc97a5c6005d6de0b560f286dc1816d",
+      "value": "ויֹרֶ֥ה",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:8:1:0",
+      "verse": [
+        "C2-Jeremiah",
+        "8",
+        "1"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "2819b18fcdd9b3213a5c83627d18a935165bf5d739b7f3f716c2777db4eb8f02",
+      "value": "ויֹצִ֣יאוּ",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:8:6:0",
+      "verse": [
+        "C2-Jeremiah",
+        "8",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9b2c616fcc8b8c28c0176e1f3bc677193810c7085f1682a68983d0eeb5a7c866",
+      "value": "בִּמְרֻ֣צָותָ֔ם",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:9:7:0",
+      "verse": [
+        "C2-Jeremiah",
+        "9",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "966ba474da874673d8c96391bd883c9cce1da835b297e97edc6ed765c0cae170",
+      "value": "שָׁוחֻ֛ט",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:14:3:0",
+      "verse": [
+        "C2-Jeremiah",
+        "14",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e7005f14c7a30e69461f4832119c1fd9a63e80f26b89423c8161177acc667102",
+      "value": "צְעִורֵיהֶ֖ם",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:17:8:0",
+      "verse": [
+        "C2-Jeremiah",
+        "17",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "91a9ad2cf9e1873709b9c74d30644ab02a6de2a3e3903306e83d61534254fe53",
+      "value": "יִרְאֶ֙",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:18:3:0",
+      "verse": [
+        "C2-Jeremiah",
+        "18",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "d1eeb2d2996a93477d8503f1ecd65492ae076230319ba62623e556e676cf1639",
+      "value": "וְהִנֵּה֛וּ",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:18:16:0",
+      "verse": [
+        "C2-Jeremiah",
+        "18",
+        "16"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "bc93b6eca2cc8b042a6082130a39b78ec28722dd93eff05f3b03ac9b90067d99",
+      "value": "שְׁרִוקֹ֣ת",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:22:6:0",
+      "verse": [
+        "C2-Jeremiah",
+        "22",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "976b558a2ae451737045d880cbc82445e8b37eb43e9c30fbe2292ac43efb4eab",
+      "value": "נוֹשָֽׁבֻה",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:23:18:0",
+      "verse": [
+        "C2-Jeremiah",
+        "23",
+        "18"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "58b67964d9452f2810c06f5710612597a5d899f3d2bfcddf95dd908094104169",
+      "value": "דְּבָרֹ֖י",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:25:7:0",
+      "verse": [
+        "C2-Jeremiah",
+        "25",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "0e358cf9955dfe1128a7c31c75f89c192491d83d4d10d3674c774fb99a96be3b",
+      "value": "הַכְעִסֵ֛ונִי",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:29:23:0",
+      "verse": [
+        "C2-Jeremiah",
+        "29",
+        "23"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "7f97e3f0557f8aaa32c6881c7ab575dec485cbb77e807b8a49a2da6ea2b8e2aa",
+      "value": [
+        "הַוּ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ידֵ֥עַ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:32:23:0",
+      "verse": [
+        "C2-Jeremiah",
+        "32",
+        "23"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "69c61f5bc2104d5d29fbd279395514d9dff88588c09b3d463724d621e67bff07",
+      "value": "וּבְתֹרָותְךָ֣",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:42:6:0",
+      "verse": [
+        "C2-Jeremiah",
+        "42",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "49e451e539022e66cdfdc020b52afee66942dd337cdc470edb5530d771e3071a",
+      "value": [
+        "אֲנַ֜",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "וּ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:42:20:0",
+      "verse": [
+        "C2-Jeremiah",
+        "42",
+        "20"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "70b4bec2b2ed872d34a795c6772b963c59baf8292eaf4907f095a30f687198f0",
+      "value": "הִתְעֵתֶים֮",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:48:7:0",
+      "verse": [
+        "C2-Jeremiah",
+        "48",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9a669f4e429d0ac3a4b255a1b885743791a8d5043e1c49f908db6bbfec03f8c6",
+      "value": [
+        "כְמ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ישׁ֙"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:50:6:0",
+      "verse": [
+        "C2-Jeremiah",
+        "50",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "13eb8cba8dbdfeaf5f8809b4ebd5bf35f7a2875c98effde3d5e9ccbe72afec82",
+      "value": "הָיֻ֣ה",
+      "atoms": 1
+    },
+    {
+      "id": "C2-Jeremiah:52:11:0",
+      "verse": [
+        "C2-Jeremiah",
+        "52",
+        "11"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "4a36fef0ae7977f8904495ddcbbc885d03b969a404e4f3de4ff55e7bfb205f87",
+      "value": "בבֵֽית־",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:7:21:0",
+      "verse": [
+        "C3-Ezekiel",
+        "7",
+        "21"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "008a4b80f656ca5c2f32be14f813372f8e79eddfacc12206c0e521516fe3812f",
+      "value": "וְחִלְּלֽוּהֻ",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:8:6:0",
+      "verse": [
+        "C3-Ezekiel",
+        "8",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "db872784689a31e053e3cb2cacfa17a4141998dd0ebe5d2e380871653da54f86",
+      "value": "מָ֣הֵ֣ם",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:23:43:1",
+      "verse": [
+        "C3-Ezekiel",
+        "23",
+        "43"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "3236ceba4c183990a8cffd3189c860b7339ed15031215cf9c084eacbfb79c994",
+      "value": "יִזְנֻ֥ה",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:35:12:0",
+      "verse": [
+        "C3-Ezekiel",
+        "35",
+        "12"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8d136f8628e6b7664fef22e1aa84cd06cb0501f5993b8cd9a04a3fb0c35014db",
+      "value": "שָׁמֵ֑מֻה",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:36:13:1",
+      "verse": [
+        "C3-Ezekiel",
+        "36",
+        "13"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "9a6e1dd6a2ea39c92ef8e5245e44495354ded3339123a7ee3cdebd1da6f35113",
+      "value": [
+        "גּוֹיַ֖",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אִ"
+          }
+        },
+        "ךְ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:36:14:0",
+      "verse": [
+        "C3-Ezekiel",
+        "36",
+        "14"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "23c07e4dccc3ba6d6ffb430c23d2cd6d99ddbbfcd6a62b55ef327ff56e8223ef",
+      "value": [
+        "וְגוֹיַ֖",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אִ"
+          }
+        },
+        "ךְ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:36:15:0",
+      "verse": [
+        "C3-Ezekiel",
+        "36",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "7d8205971cb37a7e17da05268e14cb3d995e567352384a3e55f11a8a6b7d31de",
+      "value": [
+        "וְגוֹיַ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אִ"
+          }
+        },
+        "ךְ֙"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:37:22:0",
+      "verse": [
+        "C3-Ezekiel",
+        "37",
+        "22"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e232a064b4a127026881d0579dea990f4d9f33de1aefd5ed8a2298ed551318df",
+      "value": "יִֽהְיֻה־",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:40:15:0",
+      "verse": [
+        "C3-Ezekiel",
+        "40",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "60a27d86d5c828edc1627de6a9119710eff66766ec49bbb45d796434830d48ac",
+      "value": "הָיאִת֔וֹן",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:43:15:0",
+      "verse": [
+        "C3-Ezekiel",
+        "43",
+        "15"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "6e2def6cb2d3f39611ee4612e82494258609a5b8805a74c27ee8b33196286a75",
+      "value": "וּמֵהָאֲרִאֵ֣יל",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:43:16:0",
+      "verse": [
+        "C3-Ezekiel",
+        "43",
+        "16"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "48c1a7247a465144eab7b2d45501a96d9f719f54dc5c0faedd989f2e9f433c91",
+      "value": "וְהָאֲרִאֵ֗יל",
+      "atoms": 1
+    },
+    {
+      "id": "C3-Ezekiel:44:24:1",
+      "verse": [
+        "C3-Ezekiel",
+        "44",
+        "24"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "1ebcbd0ecbf4656df01765690e0885f05fe87a57ff88921a8880db35b35c73be",
+      "value": "וִשְׁפְּטֻ֑הוּ",
+      "atoms": 1
+    },
+    {
+      "id": "CA-Hosea:10:10:0",
+      "verse": [
+        "CA-The-12-Minor-Prophets הושע",
+        "10",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "dc1485a32f670f905fb21f8fe25ab725eb3b1e1fd1528a34b0564b2339e70419",
+      "value": [
+        "ע",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ינֹתָֽם"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "CF-Micah:1:8:0",
+      "verse": [
+        "CA-The-12-Minor-Prophets מיכה",
+        "1",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b2626d713d7c2d55ddfc1c387c32ea0d36d86f50e8fe66da9654495888e9e454",
+      "value": "שֹׁילָ֖ל",
+      "atoms": 1
+    },
+    {
+      "id": "CG-Nahum:2:6:0",
+      "verse": [
+        "CA-The-12-Minor-Prophets נחום",
+        "2",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c11a9ff10c1e891e65e187636425087266b7b385d1acf91250e1a47b0cc2b5a9",
+      "value": "בַּהֲלִכָותָ֑ם",
+      "atoms": 1
+    },
+    {
+      "id": "CK-Zechariah:1:4:0",
+      "verse": [
+        "CA-The-12-Minor-Prophets זכריה",
+        "1",
+        "4"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "ce79a1df6226ff09e66731d411d3eb61f991d3624eb9a3956d340c140ec4ac7a",
+      "value": "וּמַֽעַלְילֵיכֶ֖ם",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:56:7:0",
+      "verse": [
+        "D1-Psalms",
+        "56",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "8379326930940c52843feec26a97e936e1d9583053566dd65f62ccc2465bb6fd",
+      "value": [
+        "יִצְפּ֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ינוּ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:72:17:0",
+      "verse": [
+        "D1-Psalms",
+        "72",
+        "17"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "827d7fc883a36e74f8a184544d4fe6d7e011b5707b912f272075e079d528c643",
+      "value": [
+        "יִנּ֢",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ין"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:73:2:1",
+      "verse": [
+        "D1-Psalms",
+        "73",
+        "2"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "136d32d4ee70f79463fba53215c2f4a1b77e48324b46d0bf85e3c888b2ae1228",
+      "value": "שֻׁפְּכֻ֥ה",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:77:12:0",
+      "verse": [
+        "D1-Psalms",
+        "77",
+        "12"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "98f80577ef94bde7d7f730517e4e85fa4e658aaca219f660dce548fc2312a4db",
+      "value": "אֶזְכֹּ֥יר",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:100:3:0",
+      "verse": [
+        "D1-Psalms",
+        "100",
+        "3"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "446000fd91bfc420741e2597f5e5d8c09b3ca5c5912966e05e35ff042ec529c1",
+      "value": "וְלֹ֣א",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:105:18:0",
+      "verse": [
+        "D1-Psalms",
+        "105",
+        "18"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "859be904f29c8d5079479e36163a1ecce5b4a39310b2d8a13f4f23c59e13c1fc",
+      "value": "רַגְלֹ֑יו",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:105:28:0",
+      "verse": [
+        "D1-Psalms",
+        "105",
+        "28"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "bbe0682f6d1c08ee7fd210bf5e5386e816de4ce28a8d0cb0a65264da8e3247ba",
+      "value": "דְּבָרֹֽיו",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:139:6:0",
+      "verse": [
+        "D1-Psalms",
+        "139",
+        "6"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "b413f98fd24d20ffd54a8be7d2309e117c8a77474d1aa797c04723b50175f514",
+      "value": "פְּלִ֣אָֽיה",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:139:16:0",
+      "verse": [
+        "D1-Psalms",
+        "139",
+        "16"
+      ],
+      "path": [
+        6
+      ],
+      "expected_sha256": "ace756edc24c00d591dcbe7c9978e9df6f9b4e53f4566bd8679f8c6b33aace7a",
+      "value": "וְלֹ֖א",
+      "atoms": 1
+    },
+    {
+      "id": "D1-Psalms:140:11:0",
+      "verse": [
+        "D1-Psalms",
+        "140",
+        "11"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "8f1b2367d64cf7ec7ae6da463e39727ff861f2cd44f25c1b1da08e8beab22551",
+      "value": [
+        "יִמּ֥",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יטוּ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:1:27:0",
+      "verse": [
+        "D2-Proverbs",
+        "1",
+        "27"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "16fdf46b7beecd6fb19cf83c09187292ebeba9a0df8bb43ff420eacd0a8fb919",
+      "value": "כְשֹׁאָ֨וה׀",
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:3:15:0",
+      "verse": [
+        "D2-Proverbs",
+        "3",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "4acd8528bbc4e968ddb0d2d322ed5c4b5d267bebe12b5e01319eb396ae8c1f69",
+      "value": "מִפְּנִיִ֑ים",
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:13:20:0",
+      "verse": [
+        "D2-Proverbs",
+        "13",
+        "20"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "b8b40f9b814451934cc7261fbf52deac3fa9f67cc9aa06978b25ef9fc45f502d",
+      "value": "הֹלֵ֣וךְ",
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:16:27:0",
+      "verse": [
+        "D2-Proverbs",
+        "16",
+        "27"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "daab00af30bb288461aef87ef7c1ab6cec921cd84b5ccf25df7758a7240b791b",
+      "value": [
+        "שְׂ֝פָת֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יו"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:19:7:0",
+      "verse": [
+        "D2-Proverbs",
+        "19",
+        "7"
+      ],
+      "path": [
+        7
+      ],
+      "expected_sha256": "315a540553d1f1cdf0425545eb330bbe0de5781e4ffc6970469f6a2e937211e9",
+      "value": "לֹא־",
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:19:16:0",
+      "verse": [
+        "D2-Proverbs",
+        "19",
+        "16"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "cdf721ac81dd0133ac178279db3bf0719abf3c3b243cd7a1cf75df134139d5ca",
+      "value": "יָומֻֽת",
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:21:29:0",
+      "verse": [
+        "D2-Proverbs",
+        "21",
+        "29"
+      ],
+      "path": [
+        3,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "233afe43b2a94217c436d425713e7e5fd0a8b4cfc585299f866987de5b3602f4",
+      "value": "יָכִ֬ין דַּרְכֹּֽיו",
+      "atoms": 2
+    },
+    {
+      "id": "D2-Proverbs:23:24:1",
+      "verse": [
+        "D2-Proverbs",
+        "23",
+        "24"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "0547cbda341fb8138355d67eba51c6c11b203be62bdde4b166aafaf2bf64de89",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "יוֹלֵ֥ד"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:23:31:0",
+      "verse": [
+        "D2-Proverbs",
+        "23",
+        "31"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "dd0dd44206b4de7161a63437da0371ed6daaef33cd097497a34c9981463c4b57",
+      "value": [
+        "בַּכּ֣",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יס"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:26:2:0",
+      "verse": [
+        "D2-Proverbs",
+        "26",
+        "2"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "92db74bfcf188c1d1049efc15b922bb1e3716b6535e818f8ff37acef65a33e96",
+      "value": "לֹ֣א",
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:27:24:0",
+      "verse": [
+        "D2-Proverbs",
+        "27",
+        "24"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "dd39e4a6e6377740287f9eba35fced3ba0f01d4a02179a1260ea73040e7edf15",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אָ"
+          }
+        },
+        "דֽוֹר"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D2-Proverbs:31:27:0",
+      "verse": [
+        "D2-Proverbs",
+        "31",
+        "27"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b489e525590441d977fc179eec4460a2f4d824f83fc91d33a721ee9de5e80e29",
+      "value": "הֲילִכ֣וֹת",
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:2:7:0",
+      "verse": [
+        "D3-Job",
+        "2",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "fff76f1eb89c452c7625912ad4ad2817a3f811b5446ff2c7ebee4b10340dee81",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "עַ֥ד"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:13:15:0",
+      "verse": [
+        "D3-Job",
+        "13",
+        "15"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "92db74bfcf188c1d1049efc15b922bb1e3716b6535e818f8ff37acef65a33e96",
+      "value": "לֹ֣א",
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:16:16:0",
+      "verse": [
+        "D3-Job",
+        "16",
+        "16"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "1c531645004f4f8d2edc7f90c6a8cad0f845126a9b8a3ee09a7332840d7813cb",
+      "value": "חֳ֭מַרְמְרֻה",
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:24:6:0",
+      "verse": [
+        "D3-Job",
+        "24",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "42c4080ae4e8a4386320a0546659258ddef60fd24fd39e932c27946d308f11fb",
+      "value": [
+        "יִקְצ֑",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ירוּ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:26:12:0",
+      "verse": [
+        "D3-Job",
+        "26",
+        "12"
+      ],
+      "path": [
+        2
+      ],
+      "expected_sha256": "088e56fbd9a77e411511a63fd1b8ff5cde37a12230140f75a98889c5cfe1c06f",
+      "value": "וּ֝בִתְובֻנָת֗וֹ",
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:30:22:0",
+      "verse": [
+        "D3-Job",
+        "30",
+        "22"
+      ],
+      "path": [
+        4
+      ],
+      "expected_sha256": "0628af6b1e4bcf971891789a2a6e2063fc03a7cf0e13d32ca4a6c7bf438abf76",
+      "value": "תֻּשִׁוָּֽה",
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:33:19:0",
+      "verse": [
+        "D3-Job",
+        "33",
+        "19"
+      ],
+      "path": [
+        2
+      ],
+      "expected_sha256": "f6146518f914ace0a9189ab466711e240030fa96048230686879c3e70fdc19f4",
+      "value": [
+        "וְר֖",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יב"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:33:28:0",
+      "verse": [
+        "D3-Job",
+        "33",
+        "28"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "a480cee709a7636094f8e88cee82ed74ac768ddd63bd057bdb55ffb21b6984f0",
+      "value": [
+        "נַ֭פְשׁ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "י"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:33:28:1",
+      "verse": [
+        "D3-Job",
+        "33",
+        "28"
+      ],
+      "path": [
+        4
+      ],
+      "expected_sha256": "aa9eb7f4d443e5fbcbe709d60a13d65fcf9bf7db1830626a65e4b159f5ce587d",
+      "value": [
+        "וְ֝חַיָּת֗",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "י"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "D3-Job:41:4:0",
+      "verse": [
+        "D3-Job",
+        "41",
+        "4"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "315a540553d1f1cdf0425545eb330bbe0de5781e4ffc6970469f6a2e937211e9",
+      "value": "לֹא־",
+      "atoms": 1
+    },
+    {
+      "id": "E1-Song of Songs:2:13:0",
+      "verse": [
+        "E1-Song of Songs",
+        "2",
+        "13"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "86274da12f4a2935cad5b2fa2140900cc87f910905dcc306f74efe02d12cc311",
+      "value": "לָ֛כְי",
+      "atoms": 1
+    },
+    {
+      "id": "E2-Ruth:2:1:0",
+      "verse": [
+        "E2-Ruth",
+        "2",
+        "1"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "a5e716a39ea080e0390fdbfe95bc3cc8dc39c472eb222b11f5c3320092e9bc0f",
+      "value": [
+        "מ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ידָ֣ע"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E2-Ruth:4:4:0",
+      "verse": [
+        "E2-Ruth",
+        "4",
+        "4"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "038740593dd83989efe5a98c910f0fb70689bb11468b481d5ad7d578dc8a5317",
+      "value": "וְאֵֽדְעָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:1:18:0",
+      "verse": [
+        "E3-Lamentations",
+        "1",
+        "18"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e1a7eb5630abf4e09c3c7e2628cc29615bc66eb4675eebd84f2e30d399399137",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אָֽ"
+          }
+        },
+        "עַמִּ֗ים"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:2:2:0",
+      "verse": [
+        "E3-Lamentations",
+        "2",
+        "2"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "12f450d3c623575a0cc6ca431fb1cd954ff2ee24c15c2e69d3160fb750711a84",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "לֹ֣א"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:3:20:0",
+      "verse": [
+        "E3-Lamentations",
+        "3",
+        "20"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "71090152e88462bbc505e6090b0fb48982b36d8dd75b54b52c3ec685d02c1971",
+      "value": [
+        "וְתָשׁ֥",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יחַ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:4:17:0",
+      "verse": [
+        "E3-Lamentations",
+        "4",
+        "17"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "8592e10a83ca3d168550835666a41b84a0d344dd87ac753ea564d0ea01b231d2",
+      "value": "עוֹדֵ֙ינֻה֙",
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:5:3:0",
+      "verse": [
+        "E3-Lamentations",
+        "5",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "9a72c7d3287a3d5f75ef31d2a999dc0df3f9ffb86e713a776315e0e824afb1c2",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "אֵ֣ין"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:5:5:0",
+      "verse": [
+        "E3-Lamentations",
+        "5",
+        "5"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "f6d541fd6b72507e8eb72500a30397311ca4dd82092b29a5c7d18fcc839cf453",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "לֹ֥א"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:5:7:0",
+      "verse": [
+        "E3-Lamentations",
+        "5",
+        "7"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1",
+        0
+      ],
+      "expected_sha256": "8a18e8162e65c94297bf6fdd11b21ad7986fe300f94a365b22a1d356bb5ffbc9",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "אֵינָ֔ם"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:5:7:1",
+      "verse": [
+        "E3-Lamentations",
+        "5",
+        "7"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1",
+        2
+      ],
+      "expected_sha256": "4981607d63f8dd7d564444200d6962b81452f78d9c34fa1a7b63f05d272665e4",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אַ"
+          }
+        },
+        "אֲנַ֖חְנוּ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E4-Ecclesiastes:4:8:0",
+      "verse": [
+        "E4-Ecclesiastes",
+        "4",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "5139646cf211fdd40e3a281f0eae383e475131b6eae174f29ea796c8c97a8bc4",
+      "value": [
+        "עֵינ֖",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יו"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "E5-Esther:1:16:0",
+      "verse": [
+        "E5-Esther",
+        "1",
+        "16"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "b7d47c71c4244f2dbaa741166802697f989b9e23549161d1920b903d86bd8c82",
+      "value": "מְומֻכָ֗ן",
+      "atoms": 1
+    },
+    {
+      "id": "E5-Esther:9:27:0",
+      "verse": [
+        "E5-Esther",
+        "9",
+        "27"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "5d163b67f187e7226567f4b1425802fd10e5fdf0a9d7516fa1a23a4f25a3bc70",
+      "value": "וְקִבְּלֻ֣",
+      "atoms": 1
+    },
+    {
+      "id": "E5-Esther:10:1:0",
+      "verse": [
+        "E5-Esther",
+        "10",
+        "1"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "99ca75c4a9c058551f35e089afee54d3333b43a2a15cd4dadec73bc54c6f98e9",
+      "value": [
+        "אֲחַשְׁ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אֵ"
+          }
+        },
+        "רֹ֧שׁ"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:5:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "5"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "6814145f48e0b223e364f0fd41087a70da993a6193efad166ee9702e3d63ca38",
+      "value": "לְכַשְׂדָּיאֵ֔",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:9:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "a0d41d57111f8645239f4e6a1fc3dae38f6692e3ff1b7423ac390a4f13b27b9e",
+      "value": [
+        "הִזְ",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "מִנְתּוּן֙"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:10:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "1f9c19d340b2f5e61da9f655a30439c4f5f6a4b1d5e3b1dcc2ef2e465b1b810f",
+      "value": "כַשְׂדָּיאֵ֤",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:22:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "22"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "6a95b1b608fe5aa3caa9e1aac0705e6f786290b003def8db76889d68c31ff894",
+      "value": [
+        "וּנְה",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "ירָ֖א"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:26:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "26"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "803c652ddc6b27cebb854e51526b15f3c25f574e0aae9cae618f0639628c6f9e",
+      "value": "הַֽאִיתָ֣יךְ",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:38:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "38"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e997ac939010787129c7b5d8c2ece06613b7be9934a0911a0e5665ecedeaa5ea",
+      "value": "דָֽאְרִ֣ין",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:39:1",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "39"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "55ff1b148085e540a245df50824e2d9a5c2b11378ebab843fbf6c044a1911993",
+      "value": "תְלִיתָיאָ֤",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:2:43:0",
+      "verse": [
+        "F1-Daniel",
+        "2",
+        "43"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "1e32eaee63e8f84dfed09a2722519c358872495995d420419b011ef3a354a290",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְ"
+          }
+        },
+        "דִ֣י"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:5:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "5"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "d5448c95c51f7034361964b98ff01030cf3b8de7459b9a1c83709344239fb10e",
+      "value": "קַיתְרֹ֨ס",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:7:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "7"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "c522782cead40e0a3512a77f169290446b3ce514b4ff36aa9cc41526461e310e",
+      "value": "קַיתְרֹ֤ס",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:10:1",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "10"
+      ],
+      "path": [
+        2,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "d5448c95c51f7034361964b98ff01030cf3b8de7459b9a1c83709344239fb10e",
+      "value": "קַיתְרֹ֨ס",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:15:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "15"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "aab57f279af6338f445c79f235f4f104a5861e350934d76554c8ada83b818cff",
+      "value": "קַיתְרֹ֣ס",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:25:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "25"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "1c9cf703b37fb4d4d2bab395663633d54201a1c48b679a0873ef4144e368cb1c",
+      "value": "רְֽבִיעָיאָ֔",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:26:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "26"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "59a4c4098b2a31ebe8a25b121a02f400cce560b97b48168c8a4fe4e75adf846a",
+      "value": "עִלָּיאָ֖",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:29:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "29"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c37ea96d3b71626529021624d805dc12506b6d6bc5c9c10d9f42cbf1ccf11488",
+      "value": "שָׁלֻה֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:3:32:0",
+      "verse": [
+        "F1-Daniel",
+        "3",
+        "32"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "abf05cc9016503c7425d8ccb7e7f661813d79032fabeafac4c616bad5ef0fdfe",
+      "value": "עִלָּיאָ֑",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:4:0",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "4"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "5e94ec258b0e95d2ff446b7c7df8ce55a8732be451e38e2bb8635848fa667d35",
+      "value": "עָלִּ֗לין",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:4:1",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "4"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "98bdc12b964e738d321023071e7094ac2312f508278a18b626423522a5c37e0c",
+      "value": "כַּשְׂדָּיאֵ֖",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:9:0",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "14213db19fb3248d1400a247fbca37514a23a4aa4099546b8348e8f778ffe970",
+      "value": "יְדֻרָון֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:14:0",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "14"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "847c086a2703c4f6f16f527787774cfc6b78149481ba439e18a655923720acb8",
+      "value": "עִלָּיאָ֜",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:16:0",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "16"
+      ],
+      "path": [
+        7
+      ],
+      "expected_sha256": "9289fbb8ee87834206f5174b72ad322e7c05262a47bec4c308d04e1142ab79b3",
+      "value": "לְשָׂנְאָ֖יךְ",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:21:0",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "21"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "daf3f7373f32e477831120085d6d4ae90983748259760f61c19f760591601eca",
+      "value": "עִלָּיאָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:22:1",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "22"
+      ],
+      "path": [
+        3,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "daf3f7373f32e477831120085d6d4ae90983748259760f61c19f760591601eca",
+      "value": "עִלָּיאָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:29:1",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "29"
+      ],
+      "path": [
+        3,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "daf3f7373f32e477831120085d6d4ae90983748259760f61c19f760591601eca",
+      "value": "עִלָּיאָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:4:31:0",
+      "verse": [
+        "F1-Daniel",
+        "4",
+        "31"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "293b7f9ef2e9792ae814f99b59d6a0894341939c160361ca3fd8402e5f439c7b",
+      "value": "וּלְעִלָּיאָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:7:0",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "7"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "98bdc12b964e738d321023071e7094ac2312f508278a18b626423522a5c37e0c",
+      "value": "כַּשְׂדָּיאֵ֖",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:8:0",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "8"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "d2fee4365716a094433bff7ba827a7149dbda07fa3b5471f8f43479c5be0f2a5",
+      "value": "עָֽלִּ֔לין",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:10:0",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "10"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3f4cfe8177f37b1ae5688bad6168d1e464173b360a59b01735682f86302b5532",
+      "value": "עַלַּ֑לת",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:16:1",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "16"
+      ],
+      "path": [
+        3,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "ba642a2ed455175e19baccc11ba1434f1facbeea9cb6985e594962ba5c7cff5a",
+      "value": "תִוכֻּ֥ל",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:16:2",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "16"
+      ],
+      "path": [
+        5,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "62b57f4d84debbf97de1da126c0663afecafb5e0158aa99956423dae73ab4dfb",
+      "value": "תִּוכֻּ֨ל",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:16:3",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "16"
+      ],
+      "path": [
+        9
+      ],
+      "expected_sha256": "3ff0f8028fefe0ea9a7b7902080f898c302a65810a6df7cba823bed624afbb7f",
+      "value": "וְהַֽמְונִכָ֤א",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:18:1",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "18"
+      ],
+      "path": [
+        2
+      ],
+      "expected_sha256": "2a142ce777d3b8a5b45535c0c06d51ea24e38ab69a2b8d5dfee228e582ccdb7b",
+      "value": "עִלָּיאָ֔",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:21:1",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "21"
+      ],
+      "path": [
+        5
+      ],
+      "expected_sha256": "daf3f7373f32e477831120085d6d4ae90983748259760f61c19f760591601eca",
+      "value": "עִלָּיאָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:5:30:0",
+      "verse": [
+        "F1-Daniel",
+        "5",
+        "30"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e183623cc9672b239a42f155ece1c2a681b793525413bbb9250c5447d4aada97",
+      "value": "כַשְׂדָּיאָֽ",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:6:1:0",
+      "verse": [
+        "F1-Daniel",
+        "6",
+        "1"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "2f9782573dcfce2d9494f1281779e068aced1ed8b5b98b2394165f4a326fc19a",
+      "value": "מָֽדָיאָ֔",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:6:27:0",
+      "verse": [
+        "F1-Daniel",
+        "6",
+        "27"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "c0c4de5407def56652d178b156533196c9562fb5e4cde1bbc3751db397f6898a",
+      "value": "זָאְעִין֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:6:29:0",
+      "verse": [
+        "F1-Daniel",
+        "6",
+        "29"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "66f9baf02c27e4856524695104fea69b87d114a95927ec29bc48ddb7e6100cf9",
+      "value": "פָּרְסָיאָֽ",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:7:25:0",
+      "verse": [
+        "F1-Daniel",
+        "7",
+        "25"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "daf3f7373f32e477831120085d6d4ae90983748259760f61c19f760591601eca",
+      "value": "עִלָּיאָ֙",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:8:11:0",
+      "verse": [
+        "F1-Daniel",
+        "8",
+        "11"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "920a88942a91361f32227a27d1cb0a50bf8996060bcff2113b025145beaa468a",
+      "value": "הֻרַ֣ים",
+      "atoms": 1
+    },
+    {
+      "id": "F1-Daniel:9:12:0",
+      "verse": [
+        "F1-Daniel",
+        "9",
+        "12"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "4d0d7bd1ba75d4e1dbc5a500f4fdeda70fd4f276cb942937cc5903192e541eca",
+      "value": [
+        "דְּבָר֣",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יו׀"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "FA-Ezra:3:3:0",
+      "verse": [
+        "FA-Ezra-Nexemiah עזרא",
+        "3",
+        "3"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "a6011ff7dd7c559e1caa938827843ffbf32138efd96c9eb490f719a29df85dee",
+      "value": "וַיַּעֲלֻ֨",
+      "atoms": 1
+    },
+    {
+      "id": "FA-Ezra:4:2:0",
+      "verse": [
+        "FA-Ezra-Nexemiah עזרא",
+        "4",
+        "2"
+      ],
+      "path": [
+        7
+      ],
+      "expected_sha256": "3e311b43364d7070b00e4078d0399eed6cd55a9f9fc71b2fd693f4354d8f619e",
+      "value": "וְלֹ֣א׀",
+      "atoms": 1
+    },
+    {
+      "id": "FA-Ezra:4:12:1",
+      "verse": [
+        "FA-Ezra-Nexemiah עזרא",
+        "4",
+        "12"
+      ],
+      "path": [
+        5,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "e55413c768aab454c72e0df2761a51800dff6259ebc61fb3b9503856c1c04916",
+      "value": "אשַׁכְלִ֔לוּ",
+      "atoms": 1
+    },
+    {
+      "id": "FA-Ezra:5:12:0",
+      "verse": [
+        "FA-Ezra-Nexemiah עזרא",
+        "5",
+        "12"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "00974ab0c25d8d8c4323929dc2c6de44046bdfc42e5fbc228e72373a4137da42",
+      "value": "כַּסְדָּיאָ֑",
+      "atoms": 1
+    },
+    {
+      "id": "FA-Ezra:6:17:0",
+      "verse": [
+        "FA-Ezra-Nexemiah עזרא",
+        "6",
+        "17"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "0714512ab7c8686ae8fb27f6016d9c0837969363fbaea933ea2eeec7e7dbdd9f",
+      "value": "לְחַטָּיאָ֤",
+      "atoms": 1
+    },
+    {
+      "id": "FB-Nehemiah:1:9:0",
+      "verse": [
+        "FA-Ezra-Nexemiah נחמיה",
+        "1",
+        "9"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3d56d870eb9e662cebabb25c0b2059cc7880d2f91a22a8fda4e72ea4e62d37b1",
+      "value": "וַהֲבִֽואֹתִים֙",
+      "atoms": 1
+    },
+    {
+      "id": "FB-Nehemiah:4:7:0",
+      "verse": [
+        "FA-Ezra-Nexemiah נחמיה",
+        "4",
+        "7"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "7b24bb86199b622b552281ff8ce3482b7ce8299fb6b5f49892d966038802b94f",
+      "value": "בַּצְּחִחִ֑יים",
+      "atoms": 1
+    },
+    {
+      "id": "FB-Nehemiah:5:9:0",
+      "verse": [
+        "FA-Ezra-Nexemiah נחמיה",
+        "5",
+        "9"
+      ],
+      "path": [
+        0,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "f2c79da5ed1186dd11c544b1788c5972f047f15d3bfa6bdada6899f4c1f25733",
+      "value": "וָיאֹמַ֕ר",
+      "atoms": 1
+    },
+    {
+      "id": "FB-Nehemiah:12:16:0",
+      "verse": [
+        "FA-Ezra-Nexemiah נחמיה",
+        "12",
+        "16"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "eef3cad0541bf5ccd0fea4e0a0e27af4fd564ad221511ef351db93f650d4b0c9",
+      "value": [
+        "לְעִדּ֥",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יא"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "FB-Nehemiah:12:46:0",
+      "verse": [
+        "FA-Ezra-Nexemiah נחמיה",
+        "12",
+        "46"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "7ffcd5bfa6997d2d2131fa6c4a14c8a9a81f27e3727af6c5c17c7aa21d182cdb",
+      "value": "רָאשֵׁ֙",
+      "atoms": 1
+    },
+    {
+      "id": "FC-1Chronicles:11:20:0",
+      "verse": [
+        "FC-Chronicles דה\"א",
+        "11",
+        "20"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "382f805b311ec94a53620f47e204221a6b9784e4d4fcf9d9a8709c31e9cdf0ca",
+      "value": "וְלֹא־",
+      "atoms": 1
+    },
+    {
+      "id": "FC-1Chronicles:12:16:0",
+      "verse": [
+        "FC-Chronicles דה\"א",
+        "12",
+        "16"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "34545b55b8a422a994986be05cc3f7f9267c646bbd8e4ff599818aaaec7d2049",
+      "value": [
+        "גְּד",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "יתָ֑יו"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "FC-1Chronicles:15:24:0",
+      "verse": [
+        "FC-Chronicles דה\"א",
+        "15",
+        "24"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "2cef3ef8e117ff362e0d303ffe9c0ae88753a1091e6fde04760ad789b098d0a9",
+      "value": "מַחְצְצרִים֙",
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:5:12:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "5",
+        "12"
+      ],
+      "path": [
+        3
+      ],
+      "expected_sha256": "077d679911a60ccfb3fe28c4197a56954d9b70aef5c092885fd7c79518fbd4de",
+      "value": "מַחְצְרִ֖רים",
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:5:13:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "5",
+        "13"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "998bb9080208904ec92b211e876c955eb27acf5a0163ee8f0ffb2c6fa347333a",
+      "value": "לַמְחַצְּצרִ֨ים",
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:7:6:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "7",
+        "6"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "39bbf28a580bd37631855fdf1caba5cda2b7617d777672dcaee826b607a2ccb9",
+      "value": "מַחְצְצרִ֣ים",
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:9:29:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "9",
+        "29"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "61530eac76491d2534b2ea0ee7f1c5fa5c64afe7f9ef47cd5f875db7aecd5eba",
+      "value": [
+        "יֶעְדּ֣",
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "וֹ",
+            "carrier": "holam-male-vav"
+          }
+        },
+        "י"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:13:14:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "13",
+        "14"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "3ba7265319338730069a658f2abe649c397510f0b602c3de9b968f2e616d8767",
+      "value": "מַחְצְצרִ֖ים",
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:17:8:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "17",
+        "8"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "e79edbaa676747aafc9f4a0976abf1e2fdedbb8f5102a6a9e2d3d6a33df7e694",
+      "value": "וּשְׁמִרָימ֡וֹת",
+      "atoms": 1
+    },
+    {
+      "id": "FD-2Chronicles:29:28:0",
+      "verse": [
+        "FC-Chronicles דה\"ב",
+        "29",
+        "28"
+      ],
+      "path": [
+        1
+      ],
+      "expected_sha256": "ae06d1785ea61802824f1f159f69d3f6577e142fdb247d1ac69588bcc702b88e",
+      "value": "מַחְצְצרִ֑ים",
+      "atoms": 1
+    },
+    {
+      "id": "E3-Lamentations:4:16:0",
+      "verse": [
+        "E3-Lamentations",
+        "4",
+        "16"
+      ],
+      "path": [
+        1,
+        "tmpl_params",
+        "1"
+      ],
+      "expected_sha256": "920b529f330804ffff33038943820fb5af33ba82f6538bd3486038dcbf2f837d",
+      "value": [
+        {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אֻ"
+          }
+        },
+        "זְקֵנִ֖ים"
+      ],
+      "atoms": 1
+    },
+    {
+      "id": "C1-Isaiah:54:16:0",
+      "verse": [
+        "C1-Isaiah",
+        "54",
+        "16"
+      ],
+      "path": [
+        0
+      ],
+      "expected_sha256": "54da262c362a3c3559936a49a2de39d7bbe3e687f895135c55517cb3f678f5cf",
+      "value": "הִןֵּ֤",
+      "atoms": 1
+    }
+  ]
+}

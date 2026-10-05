@@ -2,6 +2,8 @@
 
 from typing import Union
 
+from py_misc import near_aleppo_params as nap  # near-aleppo
+
 
 def _dic_of_c_to_tc(tag, classes):
     return {c: (tag, c) for c in classes}
@@ -80,6 +82,14 @@ HT_TAC_FOR_RT_FOR_MAM_WITH_DOC: dict[str, tuple[str, Union[str, None]]] = {
     **_dic_of_c_to_tc("br", _HT_BRS_FOR_MAM_WITH_DOC),
     "mam-bold": ("b", None),
     "mam-anchor": ("a", None),
+}
+# near-aleppo: the near-aleppo edition's mapping, MAM-with-doc's and the tags of the
+# lines it adds to a note, py_misc/near_aleppo_params.py's: a parameter's name, and a
+# flag's fixed English sentence, each isolated.
+HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION: dict[str, tuple[str, Union[str, None]]] = {
+    **HT_TAC_FOR_RT_FOR_MAM_WITH_DOC,
+    nap.LABEL_TAG: ("bdi", nap.LABEL_TAG),
+    nap.ENGLISH_TAG: ("bdi", None),
 }
 HT_TAC_FOR_RT_FOR_SLH_WORD_FOI = {
     **_HT_TAC_FOR_RT_FOR_SPECIAL_SPACES,

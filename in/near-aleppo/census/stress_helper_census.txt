@@ -1,0 +1,25 @@
+pashta atoms with a stress helper: extant 2487, lost 1337, total 3824
+  of those, with the stress helper on the second-to-last letter: extant 135, lost 62, total 197
+segolta atoms with a stress helper: extant 79, lost 89, total 168
+telisha gedolah atoms with a stress helper: extant 623, lost 376, total 999
+telisha qetanah atoms with a stress helper: extant 227, lost 106, total 333
+zarqa atoms with a stress helper, Unicode ZARQA with Unicode ZINOR: extant 116, lost 64, total 180
+notes whose agreeing clause speaks of a doubled accent: 18
+  Genesis 48:7, lost: =ל,ש1 (טעם כפול בכתב־היד)
+  Numbers 11:8, lost: =סימון של טעם כפול מלעיל לפי כללי הדקדוק, וכן הכריעו במהדורת קורן ובתיקון קוראים חורב (ובקריאתו של הרב ירמיהו וידר).
+  Deuter 21:13, lost: =ל,ל9 (טעם כפול בכתב־היד)
+  Judges 18:19, extant: =א,ל (טעם כפול בכתבי־היד) וכן ברויאר ומג"ה
+  1Samuel 30:15, extant: =ל,ק,ש1 בהטעמה כפולה מלעיל, וכך הוא במהדורות בער, דותן (ע"פ כתי"ל), קורן וסימנים
+  2Samuel 3:8, extant: =ל (טעם כפול בכתב־היד)
+  1Kings 17:13, extant: =א,ל,ק (טעם כפול בכתבי־היד); וכן הכריעו ברויאר ומג"ה בתוספת הטעם הכפול (וכך בסימנים).
+  2Kings 17:24, lost: =ל,ש1 (טעם כפול בכתבי־היד) וכן דעתם של ייבין, ברויאר ודותן
+  Jeremiah 2:2, extant: =א (טעם כפול בכתב־היד)
+  Jeremiah 3:12, extant: =א (טעם כפול בכתב־היד)
+  Jeremiah 11:10, extant: =ל (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו)
+  Jeremiah 44:27, extant: =א (טעם כפול בכתב־היד)
+  Ezekiel 5:15, extant: =א,ל (טעם כפול בכתבי־היד)
+  Psalms 49:15, extant: =ק13,ת (טעם כפול בכתב־היד בהברה המוטעמת, להורות על מקום הטעם במקום שאפשר לטעות בו); וראו ייבין, המסורה למקרא 328 (עמ' 195), והשוו תהלים עג,ט וראו במ"ש.
+  Esther 6:13, lost: =ל (טעם כפול בכתב־היד כדי להבליט את הטעם מלעיל [נסוג אחור] ולמנוע טעות).
+  2Chronicles 19:2, extant: =ל (טעם כפול בכתב־היד)
+  2Chronicles 28:23, extant: =א (טעם כפול בכתב־היד)
+  2Chronicles 33:14, extant: =ל (טעם כפול בכתב־היד)

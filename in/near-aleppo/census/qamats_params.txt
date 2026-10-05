@@ -1,0 +1,15 @@
+מ:קמץ templates (settled walk): 371
+parameter-key shapes:
+   ('ד', 'ס'): 371
+
+U+05C7 in the whole base text taking ד: 7434
+U+05C7 inside a מ:קמץ ד parameter: 386
+U+05C7 elsewhere in the base text: 7048
+
+how ד and ס differ BEFORE the collapse (chars only in ד, chars only in ס):
+    190  only in ד: HEBREW POINT QAMATS QATAN   |   only in ס: (none)
+    166  only in ד: HEBREW POINT QAMATS QATAN   |   only in ס: HEBREW POINT QAMATS
+      8  only in ד: (none)   |   only in ס: HEBREW POINT QAMATS
+      7  only in ד: (none)   |   only in ס: (none)
+
+after collapsing U+05C7 to U+05B8: identical 371, differing 0

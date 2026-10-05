@@ -164,6 +164,8 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 # naming it otherwise, so a stale reason cannot outlive the step that ended it.
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
+    "py/main_near_aleppo.py --check": "Read-only differential validation of local census, dataset and pages; generation is in the mega. See out/near-aleppo/README.md.",
+    "py/main_near_aleppo.py --instrument": "One census subprocess selected by the local five-instrument runner; the mega runs the complete census. See py/main_near_aleppo.py.",
     "py/main_yeivin_itm.py check": "Read-only claim/page/asset verification; the maintained Yeivin tests exercise the same closed validation.",
     "py/main_yeivin_itm.py review-claims": (
         "A read-only report for Ben's review, run by hand when a text refresh stops the mega"

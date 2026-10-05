@@ -15,13 +15,25 @@ body {
 
 
 def write_index_dot_html(edition, css_hrefs, out_path):
+    """Write the MAM-with-doc index using its established presentation."""
+    write_ctx = _index_write_ctx(edition, css_hrefs, out_path)
+    mb_html.write_html_to_file(_index_body_contents(), write_ctx)
+
+
+def render_index_dot_html(edition, css_hrefs):
+    """Return the index text without writing a file."""
+    write_ctx = _index_write_ctx(edition, css_hrefs, "index.html")
+    return mb_html.html_text(_index_body_contents(), write_ctx)
+
+
+def _index_body_contents():
     foi_anchor = mb_html.anchor_h("Features of interest", "foi/index.html")
     sigil_anchor = mb_html.anchor_h("Sigil decoding", "sigil-decoding.html")
     aliyot_anchor = mb_html.anchor_h("Notes on aliyot", "misc/notes_on_aliyot.html")
     changelog_anchor = mb_html.anchor_h("Change log", "change-log/index.html")
     body_contents = (
         *_cc_by_sa_license(),
-        _unordered_list_of_sections(),
+        unordered_list_of_sections(),
         mb_html.horizontal_rule(),
         foi_anchor,
         mb_html.horizontal_rule(),
@@ -31,36 +43,44 @@ def write_index_dot_html(edition, css_hrefs, out_path):
         mb_html.horizontal_rule(),
         changelog_anchor,
     )
-    write_ctx = mb_html.WriteCtx(
+    return body_contents
+
+
+def _index_write_ctx(edition, css_hrefs, out_path):
+    return mb_html.WriteCtx(
         edition + ": Book Links",
         out_path,
         head_style=_INDEX_STYLE,
         css_hrefs=css_hrefs,
         html_comment=provenance.generated_html_comment(__file__),
     )
-    mb_html.write_html_to_file(body_contents, write_ctx)
 
 
 def _cc_by_sa_license():
     eng_title = "Miqra according to the Masorah (MAM)"
     heb_title = "מקרא על פי המסורה"
+    return (
+        mb_html.heading_level_1((f"{eng_title} ({heb_title})")),
+        license_para(),
+    )
+
+
+def license_para():
+    """MAM licensing and attribution shared by edition indexes."""
     anchor_cc_by_sa = mb_html.anchor_h(
         "CC-BY-SA 4.0", "https://creativecommons.org/licenses/by-sa/4.0/"
     )
     anchor_he_wikisource = mb_html.anchor_h(
         "Hebrew Wikisource", mam_attribution.ENGLISH_ATTRIBUTION_URL
     )
-    return (
-        mb_html.heading_level_1((f"{eng_title} ({heb_title})")),
-        mb_html.para(
-            (
-                "License: ",
-                anchor_cc_by_sa,
-                ". ",
-                "Source attribution: ",
-                anchor_he_wikisource,
-            )
-        ),
+    return mb_html.para(
+        (
+            "License: ",
+            anchor_cc_by_sa,
+            ". ",
+            "Source attribution: ",
+            anchor_he_wikisource,
+        )
     )
 
 
@@ -70,6 +90,9 @@ def _licont_for_section(secid):  # licont: list item contents
     return secid, ": ", *book_list
 
 
-def _unordered_list_of_sections():
+def unordered_list_of_sections():
     liconts_for_sections = tuple(map(_licont_for_section, tbn.ALL_SECIDS))
     return mb_html.unordered_list(liconts_for_sections)
+
+
+_unordered_list_of_sections = unordered_list_of_sections

@@ -84,6 +84,7 @@ _PRODUCT_DIR_NAMES = (
     "MAM-OSIS",
     "Phonetic-MAM",
     "Yeivin-ITM",
+    "out/near-aleppo",
 )
 
 _MAM_PARSED_CURRENT_FORMAT_DIR = "MAM-parsed/plus"
@@ -120,6 +121,7 @@ _GENERATOR_ENTRY_POINTS = (
     # with that reason, which is where a hand-run generator belongs.
     "py/main_mam_simple.py",
     "py/main_mam_with_doc.py",
+    "py/main_near_aleppo.py",
     "py/main_map_changes_to_book_of_job.py",
     "py/main_multimark.py",
     "py/main_pipeline_graph.py",
@@ -152,6 +154,9 @@ _GENERATOR_ENTRY_POINTS = (
 # skipping it, so a wrapper added without an entry here fails rather than passing
 # unclassified.
 _MEGA_WRAPPER_DELEGATES = {
+    "_run_near_aleppo_census": "py/main_near_aleppo.py",
+    "_run_near_aleppo_build": "py/main_near_aleppo.py",
+    "_run_near_aleppo_html": "py/main_near_aleppo.py",
     "_run_ac_gen_index_flat_annotated": "py/main_ac_gen_index_flat_annotated.py",
     "_run_accgram_dual_cant": "py/main_accgram.py",
     "_run_accgram_generate_html": "py/main_accgram.py",

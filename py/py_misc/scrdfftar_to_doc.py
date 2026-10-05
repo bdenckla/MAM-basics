@@ -2,6 +2,7 @@
 
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import template_names as tmpln
+from py_misc import near_aleppo_params as nap  # near-aleppo
 from py_misc import unbury_doc_parts as unbury
 from py_misc import true_gershayim as true_g2
 from mb_cmn import my_utils
@@ -34,16 +35,27 @@ def _convert(wtel):
     return wtel
 
 
-def _make_doc_tmpl(scrdfftar, existing_doc_parts):
+def _make_doc_tmpl(scrdfftar, existing_doc_parts, existing_added=None):
+    # near-aleppo: a scroll-difference note of the near-aleppo dataset's own name,
+    # RENAMED_SCRDFFTAR, becomes a note of its own name, RENAMED_DOC, keeping its
+    # MAM_TARGET; existing_added are the enclosing note's added parameters, which
+    # follow. render_wikitext_handlers._handle_doc shows each as a line of the note.
+    scrdfftar_keys, scrdfftar_added = nap.split_params(
+        scrdfftar, _SCRDFFTAR_KEYS, _SCRDFFTAR_ADDED[wtp.template_name(scrdfftar)]
+    )
+    assert len(scrdfftar_keys) == 3, scrdfftar_keys
     scrdfftar_targ = wtp.template_element(scrdfftar, wtp.SDT_EL_IDX_FOR_TARG)
     scrdfftar_note = wtp.template_element(scrdfftar, wtp.SDT_EL_IDX_FOR_NOTE)
     # In this context, we don't care about starpos
-    new_doc_tmpl_els = [["נוסח"], scrdfftar_targ]
+    doc_name = _DOC_NAME_FOR[wtp.template_name(scrdfftar)]  # near-aleppo
+    new_doc_tmpl_els = [[doc_name], scrdfftar_targ]
     new_doc_tmpl_els.append(_tweak_scrdfftar_text(scrdfftar_note))
     if existing_doc_parts:
         existing_doc_parts = unbury.unbury_parts(existing_doc_parts)
         new_doc_tmpl_els.extend(existing_doc_parts)
-    return wtp.mktmpl(new_doc_tmpl_els, ignore_equals=True)
+    new_doc = wtp.mktmpl(new_doc_tmpl_els, ignore_equals=True)
+    new_doc = nap.with_params(new_doc, nap.raw_params(scrdfftar, scrdfftar_added))
+    return nap.with_params(new_doc, existing_added or {})  # near-aleppo
 
 
 def _tweak_scrdfftar_text(scrdfftar_text):
@@ -62,9 +74,40 @@ def _convert_doc_of_scrdfftar(doc_tmpl):
     #         scrdfftar_text,
     #         doc_part1,
     #         doc_part2, ...)
-    doc_tmpl_pvs = wtp.template_param_vals(doc_tmpl)
+    #
+    # near-aleppo: the note's own numbered parameters, apart from those the near-aleppo
+    # dataset adds, which the new note keeps as they are, after the scroll-difference
+    # note's. A note of the dataset's own name, RENAMED_DOC, holds one of its own name,
+    # RENAMED_SCRDFFTAR, and each has MAM_TARGET: the note's is MAM's מ:הערה-2, and
+    # that one's target is the other's MAM_TARGET, which the new note keeps.
+    numbered, added = nap.split_doc_params(doc_tmpl)
+    doc_tmpl_pvs = [wtp.template_param_val(doc_tmpl, key) for key in numbered]
     scrdfftar = my_utils.first_and_only(doc_tmpl_pvs[0])
-    return _make_doc_tmpl(scrdfftar, doc_tmpl_pvs[1:])
+    doc_name, scrdfftar_name = wtp.template_name(doc_tmpl), wtp.template_name(scrdfftar)
+    if _DOC_NAME_FOR[scrdfftar_name] != doc_name:
+        raise ValueError(f"{doc_name} of {scrdfftar_name}")
+    if nap.MAM_TARGET in added:
+        _assert_mam_targets_agree(doc_tmpl, scrdfftar)
+        added = [key for key in added if key != nap.MAM_TARGET]
+    return _make_doc_tmpl(scrdfftar, doc_tmpl_pvs[1:], nap.raw_params(doc_tmpl, added))
+
+
+def _assert_mam_targets_agree(doc_tmpl, scrdfftar):
+    # near-aleppo: the note's MAM_TARGET is MAM's מ:הערה-2, whose own parameters are
+    # the renamed one's, but for its target, MAM's, the renamed one's MAM_TARGET.
+    (mam_scrdfftar,) = wtp.template_param_val(doc_tmpl, nap.MAM_TARGET)
+    mam_params = mam_scrdfftar["tmpl_params"]
+    own = scrdfftar["tmpl_params"]
+    expected = {**{key: own[key] for key in _SCRDFFTAR_KEYS}, "1": own[nap.MAM_TARGET]}
+    if wtp.template_name(mam_scrdfftar) != tmpln.SCRDFF_TAR or mam_params != expected:
+        raise ValueError(f"MAM's targets disagree: {mam_scrdfftar!r} and {scrdfftar!r}")
+
+
+# near-aleppo: the note that each scroll-difference note becomes, and the parameters
+# the near-aleppo dataset adds to each.
+_DOC_NAME_FOR = {tmpln.SCRDFF_TAR: "נוסח", nap.RENAMED_SCRDFFTAR: nap.RENAMED_DOC}
+_SCRDFFTAR_KEYS = ("1", "2", "3")
+_SCRDFFTAR_ADDED = {tmpln.SCRDFF_TAR: (), nap.RENAMED_SCRDFFTAR: (nap.MAM_TARGET,)}
 
 
 def _assert_no_non_targeted_scrdff_at_top_level(wtseq):
@@ -77,14 +120,15 @@ def _assert_no_non_targeted_scrdff_at_top_level(wtseq):
 
 
 def _is_doc_of_scrdfftar(wtel):
-    if not wtp.is_doc_template(wtel):
+    if not nap.is_doc_template(wtel):  # near-aleppo: either note name
         return False
     doc1 = wtp.template_element(wtel, 1)
     return len(doc1) == 1 and _is_scrdfftar_tmpl(doc1[0])
 
 
 def _is_scrdfftar_tmpl(wtel):
-    return wtp.is_template_with_name(wtel, tmpln.SCRDFF_TAR)
+    # near-aleppo: either scroll-difference note name
+    return wtp.is_template_with_name_in(wtel, _DOC_NAME_FOR)
 
 
 def _add_provenance(scrdfftar_text):

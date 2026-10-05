@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import my_utils
+from mb_cmn import file_io
 from mb_cmn import provenance
 
 from mb_misc import mb_html
@@ -24,6 +25,8 @@ class _ExtendedWriteCtx:
 
 
 def _pair_of_write_ctxs(ecb, out_paths):
+    # near-aleppo: out_paths are the pages' names, which key the pages render_book
+    # returns, since the page is rendered in memory and never written here.
     edition, css_hrefs, bkid = ecb
     path_for_main, path_for_bido = out_paths
     title_for_main = f"{edition}: {bkid}"
@@ -56,14 +59,15 @@ def _para_for_chap_ancs(bkid, books_mpu):
     return mb_html.para(my_utils.intersperse(" ", anchors))
 
 
-def _extended_write_ctx(ecb, books_mpu, out_paths):
+def _extended_write_ctx(ecb, books_mpu, out_paths, ht_tac_for_ren_tag):
+    # The mapping selects MAM-with-doc or the near-Aleppo edition's added tags.
     bkid = ecb[2]
     powc = _pair_of_write_ctxs(ecb, out_paths)
     return _ExtendedWriteCtx(
         bkid,
         powc[0],
         powc[1],
-        hfr.HfrCtx(hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC),
+        hfr.HfrCtx(ht_tac_for_ren_tag),
         _para_for_chap_ancs(bkid, books_mpu),
     )
 
@@ -114,34 +118,55 @@ def _html_for_book(wrae: _ExtendedWriteCtx, ver_ndds):
     }
 
 
-def _write_three_col_html(wrae: _ExtendedWriteCtx, ver_ndds):
-    """Write 3-column HTML main file and maybe a "big docs" file"""
+def _render_three_col_html(wrae: _ExtendedWriteCtx, ver_ndds):
+    """Render 3-column HTML main page and maybe a "big docs" page"""
+    # Return pages by path beside the render-tag survey.
     html_for_book = _html_for_book(wrae, ver_ndds)
     body_for_main = wrae.para_for_chap_ancs, *html_for_book["body_for_main"]
-    mb_html.write_html_to_file(body_for_main, wrae.wc_for_main)
+    pages = {wrae.wc_for_main.path: mb_html.html_text(body_for_main, wrae.wc_for_main)}
     body_for_bido = html_for_book["body_for_bido"]
     if body_for_bido:
-        mb_html.write_html_to_file(body_for_bido, wrae.wc_for_bido)
-    return html_for_book["survey"]
+        pages[wrae.wc_for_bido.path] = mb_html.html_text(
+            body_for_bido, wrae.wc_for_bido
+        )
+    return html_for_book["survey"], pages
 
 
-def write_book(ecb, books_mpu, out_paths):
+def render_book(ecb, books_mpu, out_paths, renopts, ht_tac_for_ren_tag):
+    """Return the survey and page text for the selected edition, without writes."""
     bkid = ecb[2]
     my_utils_fm.show_progress_g(__file__, "book", bkid)
     io_renlog = {}
-    bcvt_to_veraf = rwt.render(bkid, books_mpu, _RENOPTS_MAM_WITH_DOC, io_renlog)
+    bcvt_to_veraf = rwt.render(bkid, books_mpu, renopts, io_renlog)
     bcvts = tuple(bcvt_to_veraf.keys())
     verafs = bcvt_to_veraf.values()
     nondoc = rwt.map_over_verafs(doc_utils.mark_doc_targets, verafs)
     doc = rwt.map_over_verafs(doc_utils.extract_docs, verafs)
     ver_ndd_part_triples = tuple(my_utils.szip(bcvts, nondoc, doc))
     ver_ndds = tuple(mwdu.VerseNdd(*triple) for triple in ver_ndd_part_triples)
-    ewc = _extended_write_ctx(ecb, books_mpu, out_paths)
-    survey = _write_three_col_html(ewc, ver_ndds)
+    ewc = _extended_write_ctx(ecb, books_mpu, out_paths, ht_tac_for_ren_tag)
+    return _render_three_col_html(ewc, ver_ndds)
+
+
+def write_book(ecb, books_mpu, out_paths):
+    """Write MAM-with-doc pages and return their render-tag survey."""
+    survey, pages = render_book(
+        ecb,
+        books_mpu,
+        out_paths,
+        RENOPTS_MAM_WITH_DOC,
+        hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC,
+    )
+    for path, page_text in pages.items():
+        file_io.with_tmp_openw(path, {}, _write_page_text, page_text)
     return survey
 
 
-_RENOPTS_MAM_WITH_DOC = {
+def _write_page_text(page_text, out_fp):
+    out_fp.write(page_text)
+
+
+RENOPTS_MAM_WITH_DOC = {
     "ro_no_slh_word": True,
     "ro_trivial_ketiv_qere_to_doc": True,
     "ro_scrdfftar_to_doc": True,

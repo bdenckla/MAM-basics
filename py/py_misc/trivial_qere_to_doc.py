@@ -1,6 +1,8 @@
 """Exports convert"""
 
 from mb_cmn import ws_tmpl2 as wtp
+from mb_cmn import template_names as tmpln  # near-aleppo
+from py_misc import near_aleppo_params as nap  # near-aleppo
 from py_misc import unbury_doc_parts as unbury
 from mb_cmn import my_utils
 from mb_cmn import shrink
@@ -32,19 +34,28 @@ def _convert(bcvt, io_renlog, wtel):
     return wtel
 
 
-def _make_doc_tmpl(tkq_idx, existing_doc_targ, existing_doc_parts):
+def _make_doc_tmpl(
+    tkq_idx, existing_doc_targ, existing_doc_parts, doc_name="נוסח", doc_added=None
+):
+    # near-aleppo: doc_name and doc_added are the enclosing note's name and the
+    # parameters the near-aleppo dataset adds to it, which the new note keeps, after
+    # the trivial ketiv/qere's own added parameters, its flags. Each is shown as a
+    # line of the note (render_wikitext_handlers._handle_doc).
     trivial_ketiv_qere = existing_doc_targ[tkq_idx]
+    _tkq_keys, tkq_added = nap.split_params(trivial_ketiv_qere, _TKQ_KEYS, nap.FLAGS)
     tkq_targ = wtp.template_param_val(trivial_ketiv_qere, "1")
     new_doc_targ = (
         existing_doc_targ[0:tkq_idx] + tkq_targ + existing_doc_targ[tkq_idx + 1 :]
     )
-    new_doc_tmpl_els = [["נוסח"], new_doc_targ]
+    new_doc_tmpl_els = [[doc_name], new_doc_targ]
     prov = _add_provenance(trivial_ketiv_qere)
     new_doc_tmpl_els.append(prov)
     if existing_doc_parts:
         unburied = unbury.unbury_parts(existing_doc_parts)
         new_doc_tmpl_els.extend(unburied)
-    return wtp.mktmpl(new_doc_tmpl_els, ignore_equals=True)
+    new_doc = wtp.mktmpl(new_doc_tmpl_els, ignore_equals=True)
+    new_doc = nap.with_params(new_doc, doc_added or {})
+    return nap.with_params(new_doc, nap.raw_params(trivial_ketiv_qere, tkq_added))
 
 
 def _convert_doc_of_trivial_ketiv_qere(bcvt, io_renlog, doc_tmpl):
@@ -59,15 +70,25 @@ def _convert_doc_of_trivial_ketiv_qere(bcvt, io_renlog, doc_tmpl):
     #         tkq_pseudo_doc,
     #         doc_part1,
     #         doc_part2, ...)
-    doc_tmpl_pvs = wtp.template_param_vals(doc_tmpl)
+    #
+    # near-aleppo: the note's own numbered parameters, apart from those the near-aleppo
+    # dataset adds, which the new note keeps under the note's own name.
+    numbered, added = nap.split_doc_params(doc_tmpl)
+    doc_tmpl_pvs = [wtp.template_param_val(doc_tmpl, key) for key in numbered]
     doc_tmpl_pv0 = doc_tmpl_pvs[0]
     _log(bcvt, io_renlog, doc_tmpl_pv0)
     tkq_idx = _find_index_of_trivial_ketiv_qere_within_doc_targ(doc_tmpl)
-    return _make_doc_tmpl(tkq_idx, doc_tmpl_pv0, doc_tmpl_pvs[1:])
+    return _make_doc_tmpl(
+        tkq_idx,
+        doc_tmpl_pv0,
+        doc_tmpl_pvs[1:],
+        wtp.template_name(doc_tmpl),
+        nap.raw_params(doc_tmpl, added),
+    )
 
 
 def _is_doc_whose_targ_includes_trivial_ketiv_qere(wtel):
-    if not wtp.is_doc_template(wtel):
+    if not nap.is_doc_template(wtel):  # near-aleppo: either note name
         return False
     tkq_idx = _find_index_of_trivial_ketiv_qere_within_doc_targ(wtel)
     return tkq_idx is not None
@@ -85,6 +106,11 @@ def _find_index_of_trivial_ketiv_qere_within_doc_targ(doc_wtel):
 
 def _is_trivial_ketiv_qere_tmpl(wtel):
     return wtp.is_template_with_name(wtel, "מ:קו״כ-אם-2")
+
+
+# near-aleppo: MAM's parameters of the trivial ketiv/qere, as MAM-basics'
+# mb_cmn/template_names.py's CURRENT_PLUS_PARAM_POLICY allows them.
+_TKQ_KEYS = tmpln.CURRENT_PLUS_PARAM_POLICY[tmpln.TRIVIAL_QERE][1]
 
 
 def _add_provenance(trivial_ketiv_qere_2):

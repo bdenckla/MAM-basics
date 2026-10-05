@@ -12,8 +12,14 @@ from pathlib import Path
 _CSS_SOURCE_PATH = Path(__file__).with_name("styles_mam_with_doc.css")
 
 
+def css_for_mwd():
+    # near-aleppo: the stylesheet's text, for the near-aleppo edition, whose pages
+    # are rendered in memory and written by its caller.
+    return _CSS_SOURCE_PATH.read_text(encoding="utf-8")
+
+
 def make_css_file_for_mwd(out_path):
-    css = _CSS_SOURCE_PATH.read_text(encoding="utf-8")
+    css = css_for_mwd()
     # Force LF: the deployed copies are LF, and a plain text-mode write would emit
     # CRLF on Windows and churn them.
     with open(out_path, "w", encoding="utf-8", newline="") as out_fp:

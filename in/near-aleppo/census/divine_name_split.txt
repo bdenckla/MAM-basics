@@ -1,0 +1,34 @@
+=== divine-name atoms by reading ===
+   Adonai (qamats on vav)     6522
+   Elohim (hiriq on vav)      305
+   TOTAL 6827
+
+=== holam on the FIRST HE, by reading ===
+   Adonai (qamats on vav)     holam=True  6522
+   Elohim (hiriq on vav)      holam=True  305
+
+=== vowel on the YOD, by reading (step 24) ===
+   Adonai (qamats on vav)     none/other   790
+   Adonai (qamats on vav)     sheva        5732
+   Elohim (hiriq on vav)      hataf segol  304
+   Elohim (hiriq on vav)      none/other   1
+
+=== Elohim reading by book (16 books) ===
+   Ezekiel      217
+   Isaiah       25
+   Amos         21
+   Jeremiah     14
+   Psalms       8
+   2Samuel      6
+   Genesis      2
+   Deuter       2
+   Judges       2
+   1Kings       2
+   Joshua       1
+   Obadiah      1
+   Micah        1
+   Habakkuk     1
+   Tsefaniah    1
+   Zechariah    1
+
+=== atoms whose last four letters are not י-ה-ו-ה: 0 ===
