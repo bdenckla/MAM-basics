@@ -839,3 +839,23 @@ folder.** "The relay's end on BENS-HP-MINI, 2026-10-04" in
 `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records the details, and the plan's new
 update, `doc/PLAN-remediate-review-findings-2026-10-02-update.md`, records its later State. A9 was
 found already done, since the Codex automation no longer exists; A6 is not done, by his choice.
+
+## The Codex report's statements that the suite read MAM-private, 2026-10-04
+
+Recorded by Claude Opus 5.5 on 2026-10-04, New York time, in the session that ported the dual-agent
+rounds' general review lessons into `doc/periodic-review.md` (`4b795109`). **Corrected here: the
+full suite reads hbofonts but not MAM-private, so the Codex report's two statements that it read
+MAM-private do not hold.** Below its tree-health table, `doc/codex-review-findings-2026-10-02.md`
+says "The earlier suite attempt at `699c7b17` read MAM-private" and "The resumed suite read
+MAM-private", each with a MAM-private commit. At both suite commits, `699c7b17` and `c23d8522`, the
+one reach into MAM-private in tracked code is `py/phonetic_mam/exporter.py:35`'s
+`paths.sibling_repo("MAM-private")`. Only the `export` branch of `py/main_phonetic_mam.py` imports
+that module, and no test runs that command; `py/tests/test_sibling_reach.py` declares the same
+single reach, and `py/tests/test_mb_cmn_paths.py:130` only maps an environment value to a path. The
+suite's reach into a private sibling is hbofonts: `py/tests/test_redirect_manifest.py` calls
+`stubs.published_pages`, which calls `paths.require_sibling("hbofonts", …)`. The report's
+statement that the mega read MAM-private holds, since the mega's `phonetic-mam-export` step runs
+MAM-private's adapter. The disposition list above did not address the suite statements, and this
+correction changes no finding or disposition. Method: `git grep` at both commits for
+`sibling_repo("MAM-private")`, `require_sibling(`, the exporter's import and `main_phonetic_mam`,
+read beside the reaches that `py/tests/test_sibling_reach.py` declares.

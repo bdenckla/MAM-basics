@@ -23,7 +23,8 @@ Claude-only history more broadly than that.
 **The periodic review itself is described in `doc/periodic-review.md`**, split out of this
 document on 2026-09-12: the series, its two standing properties, what a review file contains,
 and the remediation rules D7 and the risk ordering. A citation written before that date may
-name this document for material that is now there.
+name this document for material that is now there. A rule about how one reviewer finds, checks
+or records findings goes there too, even when a dual-agent round taught it.
 
 ## Next review: independent reviews and one disposition list — Ben's decision, 2026-10-02
 
@@ -766,7 +767,7 @@ private material permanently, and no mechanism prevents it.
 `py/repo_util/report_destination.py`'s guard makes it mechanically impossible for
 `main_repo_util.py` to write a private-covering report into a public tree, but that guard's
 docstring names what it deliberately does not cover: "what a human or an agent later types into a
-`doc/` file". A Codex reviewer writing into `doc/` is exactly that uncovered case.
+commit message or a doc/ file". A Codex reviewer writing into `doc/` is exactly that uncovered case.
 
 The public-only scope this repository's series has run under since 2026-08-26 removes this
 structurally. Keep the Codex reviewer of a window of this repository's series inside that scope.
