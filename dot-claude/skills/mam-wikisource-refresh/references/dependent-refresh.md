@@ -134,8 +134,12 @@ agent approves the Yeivin pins.
    `in/phonetic_mam_legacy_projection_sha256.json` only while the chapter's MAM-parsed input
    matches its fingerprint in `in/phonetic_mam_legacy_projection_inputs.json`.
    `./.venv/Scripts/python.exe py/main_phonetic_mam.py check` lists the chapters that have left
-   the comparison. Require each listed chapter to be one whose data a committed refresh changed,
-   and audit each newly listed chapter's rendered diff in both pronunciations. A mismatch in a
+   the comparison. A chapter's fingerprint also covers the verse before it and the verse after
+   it in the same plus file, so a change to a chapter's first verse also makes the chapter
+   before it leave, and a change to its last verse the chapter after it. Require each listed
+   chapter to be one whose data a committed refresh changed, or the chapter before one whose
+   first verse it changed or after one whose last verse it changed, and audit each newly listed
+   chapter's rendered diff in both pronunciations. A mismatch in a
    chapter whose input is unchanged is a regression: stop and resolve it. Never regenerate
    either file; no source exists for the old pages' display of new text.
 

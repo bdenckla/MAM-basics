@@ -22,7 +22,11 @@ def build_parser():
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("export", help="Export the public display release")
     commands.add_parser("render", help="Render only the tracked public display release")
-    commands.add_parser("check", help="Validate the tracked release without writing")
+    commands.add_parser(
+        "check",
+        help="Validate the tracked release without writing, and list the chapters"
+        " that have left the legacy projection comparison",
+    )
     commands.add_parser(
         "compute", help="Serve transient NDJSON computations on stdin/stdout"
     )

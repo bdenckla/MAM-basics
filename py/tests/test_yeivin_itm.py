@@ -105,7 +105,11 @@ def _verse_osis_ids():
 
 
 def test_every_biblical_reference_names_an_existing_verse():
-    """A lint: each reference on the pages or in the source names a verse MAM has.
+    """A lint: each reference that it reads names a verse MAM has.
+
+    It reads the references in the pages' data-bk-ch-vr and data-bk-ch-vr-2 attributes
+    and each source string that is wholly a reference, not a reference written only in
+    a page's visible text.
 
     It proves that the verse exists in one of MAM-simple's versifications, not that
     the verse holds the form the adaptation cites there.

@@ -17,7 +17,10 @@ repeated for text that MAM has changed since. The suite compares each rendered
 chapter with the old pages' frozen projection hashes only while the chapter's
 MAM-parsed input matches its fingerprint in
 `in/phonetic_mam_legacy_projection_inputs.json`; a chapter that a refresh changes
-leaves that comparison, and its diff is reviewed instead.
+leaves that comparison, and its diff is reviewed instead. A chapter's fingerprint
+also covers the verse before it and the verse after it in the same MAM-parsed
+plus file, so a change to a chapter's first verse also makes the chapter before it
+leave, and a change to its last verse the chapter after it.
 
 ## How the Hebrew differs from MAM's text
 
@@ -73,7 +76,8 @@ Run the repository's `py/main_phonetic_mam.py` entry point from MAM-basics:
   `in/phonetic-mam-images/`, and the Taamey D font in `doc/woff2/` with its
   source support in `in/font-support/`; it writes `gh-pages/phonetic-mam/` and
   the shared font-source package in `gh-pages/font-sources/`
-- `check` validates the complete public release without writing
+- `check` validates the complete public release without writing, and lists the
+  chapters that have left the legacy projection comparison
 - `compute` serves explicitly versioned, read-only computations over stdin/stdout;
   this local transport is not a release-data format and saves no inputs or results
 

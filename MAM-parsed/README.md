@@ -34,7 +34,7 @@ For detailed documentation of the file structures, see:
 * [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
 The [consumer cautions](#consumer-cautions) below cover whitespace templates and text
-spacing around narpas (narrow-sense paseq, ׀).
+spacing around narpas (narrow-sense paseq, מ:פסק).
 
 This product directory also contains a toy sample application
 [`main_tmpl_survey_toy_example.py`](py-examples/main_tmpl_survey_toy_example.py),

@@ -15,7 +15,7 @@ Another product that, like MAM-simple, has `MAM-parsed/plus/` as its source is t
 
 Two diagrams show this pipeline:
 
-1. [`doc/process-documentation/pipeline.svg`](doc/process-documentation/pipeline.svg) draws the programs named above and the Wikisource bot, with the directories they read and write. A solid box is a step of `py/main_0_mega.py`; a dashed box is a program run by hand.
+1. [`doc/process-documentation/pipeline.svg`](doc/process-documentation/pipeline.svg) draws the programs named above and the Wikisource bot, with Hebrew Wikisource and the directories they read and write. A solid box is a program that `py/main_0_mega.py` runs, labelled with its step ids; a dashed box is a program run by hand.
 2. [`doc/process-documentation/MAM-process.dot.svg`](doc/process-documentation/MAM-process.dot.svg)
 
 ### Product and corpus directories

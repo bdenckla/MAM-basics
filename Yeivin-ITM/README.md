@@ -64,8 +64,10 @@ and anchors are preserved. The maintained entry point is `py/main_yeivin_itm.py`
   the unchanged historical stylesheet, and the complete Taamey D font/source notices
 - `check` verifies the claim projection, prose pins, source lint, page bytes, and
   complete asset mapping without writing
+- `review-claims` reports the claim population, pins, and page lines that the
+  current analysis would change, without writing
 
-All three commands run from the repository root without private inputs. The meteg
+All four commands run from the repository root without private inputs. The meteg
 analysis is independently owned by accgram and consumes the tracked public
 Phonetic MAM release; it is not run by the Yeivin renderer.
 
@@ -120,8 +122,9 @@ The regenerated pages are the test: read every changed line under
 `gh-pages/yeivin-itm/` before committing, and name in the commit message the
 approval of Ben's that the change carries out. The tests require the tracked pages
 to equal regeneration, every internal link and fragment to resolve, and every
-biblical reference to name a verse in one of the three versifications that
-MAM-simple ships. Ben's numerical claims are not edited in the pages; they come
+biblical reference that a page's `data-bk-ch-vr` or `data-bk-ch-vr-2` attribute
+holds, or that a source string holds as its whole value, to name a verse in one of
+the three versifications that MAM-simple ships. Ben's numerical claims are not edited in the pages; they come
 from `meteg-claims.json` under the pins described above.
 
 `in/yeivin_itm_published_anchors.json` lists the 345 fragment identifiers that the
