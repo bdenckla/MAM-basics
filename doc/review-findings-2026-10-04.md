@@ -1,6 +1,7 @@
 # Findings of the 2026-10-04 review of MAM-basics since 2026-10-02
 
 State: not yet acted on
+Updates and later status: [review-findings-2026-10-04-update.md](review-findings-2026-10-04-update.md).
 
 Written on 2026-10-04, from 15:00 New York time, by a Claude session (Claude Opus 5.5 at `max` in
 the Claude desktop app; the app's session record gives `max`, the level the session was started at)
