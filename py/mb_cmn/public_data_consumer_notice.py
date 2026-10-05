@@ -63,7 +63,7 @@ def mam_parsed_notice() -> dict[str, object]:
             ),
             (
                 "Choose one documented branch of each choice-bearing structure, "
-                "including ketiv/qere, dual cantillation, qamats, and stress-helper "
+                "including ketiv/qere, dual cantillation, qamats, and poetic stress-helper "
                 "alternatives where present; do not concatenate the branches."
             ),
             (
@@ -78,11 +78,6 @@ def mam_parsed_notice() -> dict[str, object]:
             ),
             NARPAS_GROUPING_RULE,
             MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
-            (
-                "Source boundary records such as the 0 and triple-tav pseudo-verses "
-                "are absent; the remaining structures still require documented role "
-                "and choice handling."
-            ),
             (
                 "For literal search, byte comparison, or MAM-compatible output, "
                 "preserve MAM mark order or transform both sides deliberately; "
