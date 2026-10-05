@@ -56,7 +56,7 @@ def _cc_by_sa_license():
             (
                 "License: ",
                 anchor_cc_by_sa,
-                " ",
+                ". ",
                 "Source attribution: ",
                 anchor_he_wikisource,
             )

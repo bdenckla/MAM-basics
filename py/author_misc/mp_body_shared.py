@@ -61,7 +61,7 @@ def build_top_level_section(
         json_block.json_block_raw_html(top_level_skel_fn(claims=claims)),
         author.heading_level_2("Header"),
         tblh.key_type_desc_table(header_rows),
-        author.para("Here’s the header for Job, a book24 has no sub-books:"),
+        author.para("Here’s the header for Job, a book24 that has no sub-books:"),
         json_block.json_block_raw_html(header_fn(claims=claims)),
         author.para("Here’s the header for Samuel, a book24 that has sub-books:"),
         json_block.json_block_raw_html(header_composite_fn(claims=claims)),

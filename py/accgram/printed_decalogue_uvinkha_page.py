@@ -483,12 +483,12 @@ _MUNAX_AND_MAQAF = (
         (
             _Crop(
                 "Minxat-Shai-Ex-Dec-Shabbat-uvinkha-1-of-2.png",
-                "Minhat Shai: the two column headings",
+                "Minḥat Shai: the two column headings",
                 "The two column headings: לקורא ביחיד on the right, לקורא בצבור on the left.",
             ),
             _Crop(
                 "Minxat-Shai-Ex-Dec-Shabbat-uvinkha-2-of-2.png",
-                "Minhat Shai: the two columns' text at uvinkha uvitekha",
+                "Minḥat Shai: the two columns' text at uvinkha uvitekha",
                 "The two columns' text at the same place.",
             ),
         ),
