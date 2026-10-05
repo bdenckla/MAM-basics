@@ -356,9 +356,13 @@ def run_forest_sync(root: Path, *, check: bool, source: Path | None = None) -> b
             origin = _git(source_repo, "remote", "get-url", "origin")
             if not _sync_repo(root / name, origin, check=check):
                 problems += 1
-                print(
-                    f"FOREST_REPO_FAILED: {root / name}: behind origin/main or environment drift"
+                # A write that returns False has failed only on an environment.
+                causes = (
+                    "behind origin/main or environment drift"
+                    if check
+                    else "environment drift"
                 )
+                print(f"FOREST_REPO_FAILED: {root / name}: {causes}")
         except (
             OSError,
             ValueError,

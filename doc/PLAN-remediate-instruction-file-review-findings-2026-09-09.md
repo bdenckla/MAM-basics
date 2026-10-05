@@ -90,9 +90,9 @@ work. The old Claude body is historical evidence; the current Claude user-level 
 4. **The shared interpreter and applicable checks.** Use the interpreter in item 1 from the
    development root. Each commit gets `git diff --check` and directly relevant checks, including
    the prose-convention and prose-mark-order lints for canonical text. Format changed Python
-   with Black at defaults if a selected item changes Python. Apply the current content-based
-   verification exemption and full-suite cadence; Markdown-only work owes no full suite or
-   mega. Executable changes receive their applicable gates. Do not repeat an unexpired suite
+   with Black at defaults if a selected item changes Python. Apply `AGENTS.md`'s current rule
+   for when a push of `main` runs the mega and the suite, and the full-suite cadence.
+   Executable changes receive their applicable gates. Do not repeat an unexpired suite
    result solely for a later instruction-text change. The historical September 9 baseline was
    983 passed, 5 skipped and 65 subtests passed, about 84 seconds. Normal linked worktrees
    resolve siblings through Git metadata; `REPOS_ROOT` remains an unusual-layout override.
@@ -530,9 +530,9 @@ still need a decision.**
 7. **Commit messages** state each defect, its evidence and Ben's dated decision, and carry the
    disposition "has been fixed" up front, per the canonical common body's "Prose names its subject".
 8. **Integrate**: merge current `main` into the development branch and run the repository's
-   applicable required gates there. Commit every explained generated change. A linked worktree
-   receives the repository's mandatory final mega unless its branch is content-exempt; preserve
-   a still-relevant full-suite result under item 4. The worktree's home clone receives only
+   applicable required gates there. Commit every explained generated change. A linked worktree's
+   integration runs the mega and the suite as `AGENTS.md`'s rule for a push of `main` decides;
+   preserve a still-relevant full-suite result under item 4. The worktree's home clone receives only
    verified `--ff-only` integration, followed by a normal `main` push. Run the complete
    `py/main_repo_util.py --sync-user-config` deployment and its `--check` from a full clone after
    the normal `main` push.

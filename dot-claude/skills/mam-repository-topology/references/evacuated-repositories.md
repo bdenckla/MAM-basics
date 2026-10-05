@@ -55,7 +55,8 @@ missing source clone. **Nothing schedules the program**: it is in no pipeline â€
 `py/main_0_mega.py` and
 `py/pipeline_graph/pipeline_graph_spec.py` never name it â€” and the one check that runs all the
 time, `py/tests/test_redirect_manifest.py`, was hoisted into the suite precisely because it
-needs no clone. It raises with the command that fixes it:
+needs no clone. Without the clone, `py/main_redirect_stubs.py` raises, through
+`source_pages_dir`, with the command that fixes it:
 
 ```powershell
 git clone --depth 1 https://github.com/bdenckla/wlc-utils.git $HOME/GitRepos/wlc-utils

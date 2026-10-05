@@ -27,6 +27,8 @@ hand-run generators read a changed upstream input.
    otherwise grow without anyone noticing.
 3. Every entry of the wrapper table is still used by a step, so a wrapper deleted
    from ``py/main_0_mega.py`` does not leave a dead entry behind.
+4. Every declared product directory has a tracked ``LICENSE.md``, since a product
+   consumed by git URL carries its terms with it.
 
 HOW IT DIFFERS FROM py/tests/test_mega_coverage.py, WHICH ALSO READS _STEPS
 

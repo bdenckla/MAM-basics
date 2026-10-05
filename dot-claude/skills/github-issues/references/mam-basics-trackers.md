@@ -130,8 +130,8 @@ the retired [review-findings-2026-08-26.md](https://github.com/bdenckla/MAM-basi
 the public Phonetic MAM and Yeivin ITM products left phonetic-hbo's and masorah-books' existing
 issues in their own trackers, as the four moves above left theirs. The section “Phonetic MAM
 and Yeivin ITM tracker routing after evacuation”, added on 2026-10-02, routes them and records
-no number collisions for them. By Ben's decision of 2026-10-03, this section's name still counts
-the five settled on 2026-08-27.
+one number collision for them, phonetic-hbo#78, whose number MAM-basics #78 shares. By Ben's
+decision of 2026-10-03, this section's name still counts the five settled on 2026-08-27.
 
 **This section has had four names.** It was "Two issue trackers" until 2026-08-18, "Three issue
 trackers" for part of that same day, "Four issue trackers" from later that day until 2026-08-22,

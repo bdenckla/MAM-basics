@@ -11,8 +11,8 @@ independent nucleus locator.
 In a poetic verse, U+05A5 on the stressed syllable is the conjunctive merkha unless
 it is the yored of oleh-weyored, which is disjunctive. The yored is identified when
 the chanted word's accent vector has U+05AB, the oleh, before its final U+05A5. A
-candidate whose U+05A5 follows an oleh on the previous chanted word is refused
-rather than classified.
+candidate whose U+05A5 follows an unpaired oleh on the previous chanted word, one
+with no U+05A5 after it there, is refused rather than classified.
 
 Only generic displayed Hebrew and the visible Sephardic transcription enter the
 analysis. Its transient syllable facts are never included in the survey output.

@@ -56,7 +56,8 @@ By default, after `main_ws_bot.py real` completes its live edits, it runs
 the same download function as `py/main_download.py fr-wikisource`, with a
 forced download: it refetches all 36 declared special pages into
 `in/mam-ws-special/`, downloads the modified chapters into `in/mam-ws` and
-reparses affected books.
+reparses affected books. It does so only when the run changed a chapter;
+otherwise it downloads nothing.
 
 That download changes tracked book data just as
 `py/main_download.py fr-wikisource` does, so a saving run owes the same

@@ -35,7 +35,7 @@ stale `../masorah-books/...` citations rather than edit them. His 2026-08-11 al-
 named seven sites, six historical accgram citations and one test site; a re-measurement on
 2026-09-12 found an eighth, `post_stress_meteg.py:15`, written after the decision, and only three
 of the eight literally used `../al-hatorah/...`. On 2026-10-01 `9a67d51b` rewrote the docstrings
-that held the other five, when the Breuer and post-stress-meteg analyses and the final-stress
+and the one comment that held the other five, when the Breuer and post-stress-meteg analyses and the final-stress
 test moved to the public Phonetic MAM release. The three that remain are
 `chanted_word_accents_inventory.py`'s `../al-hatorah/py/itm/`, `final_stress.py`'s
 `../al-hatorah/py/aht_phon` and `maqaf_nonfinal_accents.py`'s

@@ -6,8 +6,9 @@ call sites, each of which encoded its own magic depth number. Every
 sibling-repo path should be built by /-chaining off repo_root() or
 repos_root() instead.
 
-MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, and MAM-OSIS are landed products
-under this repository, so their paths chain directly from ``repo_root()``. Cross-repo
+MAM-simple, MAM-parsed, MAM-for-Sefaria, MAM-with-doc, MAM-OSIS, Phonetic-MAM, and
+Yeivin-ITM are landed products under this repository, so their paths chain directly from
+``repo_root()``. Cross-repo
 dependencies such as MAM-private, and temporary redirect-host clones, are by default
 looked up as siblings of this checkout's HOME CLONE, under a common parent directory.
 The home clone is the checkout itself in an ordinary clone, and in a git worktree the

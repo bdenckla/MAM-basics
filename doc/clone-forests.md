@@ -19,9 +19,11 @@ always comes from `all-repos.code-workspace`; sweep selection flags do not narro
 
 This fetches remote refs and reports clone, branch, local-change, Git-operation and environment
 state. It does not clone, merge or install packages. A missing clone or environment, a dirty
-checkout, a branch other than `main`, a Git operation in progress or a Git lock file, history
-behind, ahead of or diverged from `origin/main`, or dependency drift returns failure.
-Runtime occupancy is reported separately; checking an occupied clone is permitted.
+checkout, a branch other than `main`, a Git operation in progress or one of five named Git lock
+files (`index.lock`, `HEAD.lock`, `config.lock`, `refs/heads/main.lock` and
+`refs/remotes/origin/main.lock`), history behind, ahead of or diverged from `origin/main`, or
+dependency drift returns failure. Runtime occupancy is reported separately; checking an
+occupied clone is permitted.
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_repo_util.py --sync-forest $HOME/GitRepos2
@@ -50,8 +52,9 @@ session occupies. The write form recognizes that session when the `CLAUDE_CODE_S
 of a session record whose working directory is in the clone. The write form reports that clone
 as `FOREST_REPO_SKIPPED`, leaves it unfetched and untouched, and does not count it as a problem,
 so the command exits 0 when every other clone succeeds. The session updates its own clone with
-ordinary Git. Any other session, lease or worktree occupancy in the same clone keeps the
-refusal.
+ordinary Git. A calling session that works in a linked worktree under the clone, such as one
+under `.claude/worktrees/`, also counts as that worktree's occupancy, so the write form refuses
+the clone. Any other session, lease or worktree occupancy in the same clone keeps the refusal.
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_repo_util.py --forest-status

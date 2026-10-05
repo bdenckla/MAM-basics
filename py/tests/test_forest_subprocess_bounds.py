@@ -27,9 +27,12 @@ Any other launcher fails it: a ``subprocess`` function other than ``run``;
 a function of ``repo_util.user_config_sync``, ``repo_util.worktree_retirement_git`` or
 ``repo_util.worktree_retirement_inspection`` other than ``_run_git``, ``_command_error``
 and the three helpers.  Each of these is recognized whether it is called by a name
-that ``from ... import`` binds or through an imported module or package, such as
-``g._git`` after ``from repo_util import worktree_retirement_git as g`` or
-``repo_util.user_config_sync._run_git`` after ``import repo_util.user_config_sync``.
+that a ``from ... import`` names explicitly or through a module or package that an
+import statement binds, such as ``g._git`` after
+``from repo_util import worktree_retirement_git as g`` or
+``repo_util.user_config_sync._run_git`` after ``import repo_util.user_config_sync``;
+a name that a star import binds, and a module reached through ``getattr``,
+``__import__`` or ``importlib``, are not recognized.
 A relative import is resolved against the scanned file's package, so in
 ``repo_util`` both ``from .user_config_sync import _run_git`` and
 ``from . import user_config_sync`` name ``repo_util.user_config_sync``.

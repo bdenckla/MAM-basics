@@ -30,9 +30,15 @@ hbce-psalms/out/*.tsv whitespace=-trailing-space
 *.jpg  binary
 *.pdf  binary
 *.woff2 binary
+
+# Further binary files, declared here rather than copied from wlc-utils.
 MAM-parsed/historical/*.zip binary
 in/font-support/taamey-d-0.921/*.zip binary
 gh-pages/font-sources/taamey-d-0.921/*.zip binary
+aleppo/aleppo-wiki/precursors/*.docx binary
+aleppo/aleppo-wiki/precursors/*.xlsx binary
+gh-pages/MAM-with-doc/misc/img/*.gif binary
+in/Tanach-26.0--UXLC-1.0--2020-04-01/Images/Background binary
 
 # Faithful Wikisource captures retain source-significant trailing spaces.
 in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol
