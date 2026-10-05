@@ -36,8 +36,9 @@ def _list_item(eqr):
 
 
 def _comments_mention_mu_y(eqr):
-    return _field_mentions_mu_y(eqr, "qr-generic-comment") or _field_mentions_mu_y(
-        eqr, "qr-bhq-comment"
+    return any(
+        _field_mentions_mu_y(eqr, field)
+        for field in ("qr-generic-comment", "qr-bhq-comment", "qr-footnotes")
     )
 
 

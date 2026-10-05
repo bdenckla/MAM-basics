@@ -6,8 +6,8 @@ Those paths replaced the Book-of-Job source clone on 2026-09-03.
 
 ## Artifacts no program recreates
 
-The preserved Book-of-Job artifact set has 701 files. The site generator writes
-183 files; the other 518 must not be deleted on the assumption that a command
+The preserved Book-of-Job artifact set has 703 files. The site generator writes
+183 files; the other 520 must not be deleted on the assumption that a command
 will restore them.
 
 | Files | Status |
@@ -17,7 +17,7 @@ will restore them.
 | 160 PNG under `gh-pages/book-of-job/jobn/img/Aleppo/` | Hand-made, one crop at a time |
 | 160 PNG under `gh-pages/book-of-job/jobn/img/Lenin/` | Hand-made screenshots assembled into crops |
 | 30 PNG under `gh-pages/book-of-job/jobn/img-orphans/` | Hand-made |
-| 5 PNG directly under `gh-pages/book-of-job/jobn/img/` | Hand-made |
+| 7 PNG directly under `gh-pages/book-of-job/jobn/img/` | Hand-made |
 | 2 woff2 fonts | Vendored assets |
 | `book-of-job/out/cam1753-crops.json` | Appended by manual crop ingest until that step was deleted on 2026-09-26; never fully regenerated, and no program writes it now |
 

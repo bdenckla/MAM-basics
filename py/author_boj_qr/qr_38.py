@@ -91,7 +91,7 @@ _EZEKIEL_FIGURE = boj_html.div(
                 {
                     "src": _EZEKIEL_IMG,
                     "alt": "Aleppo Codex, Ezekiel 42:9: the he is visible at the end of"
-                    " the first written word; the patah floats in the gap before the next.",
+                    " the first written word; the pataḥ floats in the gap before the next.",
                     "width": "988",
                     "height": "192",
                     "style": "max-width:100%;height:auto",
@@ -136,7 +136,7 @@ _SAMUEL_FIGURE = boj_html.div(
             boj_html.img(
                 {
                     "src": _SAMUEL_IMG,
-                    "alt": "Aleppo Codex, 2 Samuel 5:2: the patah belongs to the final"
+                    "alt": "Aleppo Codex, 2 Samuel 5:2: the pataḥ belongs to the final"
                     " he of the first written word, not to the gap between the words.",
                     "width": "858",
                     "height": "208",

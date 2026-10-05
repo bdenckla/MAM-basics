@@ -13,6 +13,9 @@ Each quirkrec dict can have these comment fields:
   place to discuss observations about μL, μA, or any other codex.
 - **`qr-bhq-comment`** — commentary specifically about $BHQ's treatment.
   Same string-or-list-of-strings format.
+- **`qr-footnotes`** — a list of HTML elements, such as a heading, paragraphs
+  and figures, that the details page places after its images; a footnote
+  callout in `qr-generic-comment` can link to it, as Job 38:12's does.
 
 ## When to use `qr-generic-comment`
 

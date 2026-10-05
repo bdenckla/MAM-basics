@@ -7,19 +7,22 @@ def enrich_one_qr_by_flattening_strs(quirkrec):
 
     Args:
         quirkrec: partially-enriched quirkrec dict. The fields
-            qr-what-is-weird, qr-generic-comment, and qr-bhq-comment
-            are flattened if present.
+            qr-what-is-weird, qr-generic-comment, qr-bhq-comment, and
+            qr-footnotes are flattened if present.
     """
     wiw = quirkrec["qr-what-is-weird"]
     gencom = quirkrec.get("qr-generic-comment")
     bhqcom = quirkrec.get("qr-bhq-comment")
+    footnotes = quirkrec.get("qr-footnotes")
     flat_wiw = _flatten_yyycom(wiw)
     flat_gencom = gencom and _flatten_yyycom(gencom)
     flat_bhqcom = bhqcom and _flatten_yyycom(bhqcom)
+    flat_footnotes = footnotes and _flatten_yyycom(footnotes)
     new_wiw = {"qr-what-is-weird": flat_wiw} if flat_wiw else {}
     new_gencom = {"qr-generic-comment": flat_gencom} if flat_gencom else {}
     new_bhqcom = {"qr-bhq-comment": flat_bhqcom} if flat_bhqcom else {}
-    return {**quirkrec, **new_wiw, **new_gencom, **new_bhqcom}
+    new_footnotes = {"qr-footnotes": flat_footnotes} if flat_footnotes else {}
+    return {**quirkrec, **new_wiw, **new_gencom, **new_bhqcom, **new_footnotes}
 
 
 def _flatten_yyycom(yyycom):

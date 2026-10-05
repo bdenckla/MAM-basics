@@ -172,8 +172,8 @@ def code_paths() -> list[Path]:
 def gh_pages_dir() -> Path:
     """Published-HTML tree at MAM-basics' ``gh-pages/book-of-job`` subtree.
 
-    The MAM-basics Pages workflow deploys its parent ``gh-pages`` tree. 515 of this
-    subtree's 694 files are PNGs that no program writes, so a full regeneration
+    The MAM-basics Pages workflow deploys its parent ``gh-pages`` tree. 517 of this
+    subtree's 696 files are PNGs that no program writes, so a full regeneration
     rewrites a minority of it; see the Phase 4 execution record for the split.
     """
     return paths.gh_pages_dir() / "book-of-job"
@@ -205,7 +205,7 @@ def jobn_dir() -> Path:
 
 
 def jobn_img_dir() -> Path:
-    """The main document's image tree (``<jobn_dir>/img``), 485 tracked PNGs.
+    """The main document's image tree (``<jobn_dir>/img``), 487 tracked PNGs.
 
     Retained inputs with no maintained producer: the programs that made the codex crops
     were retired on 2026-09-26, and the authoring pipeline reads the images through
