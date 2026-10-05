@@ -148,7 +148,8 @@ Kicked off in `C:/Users/BenDe/GitRepos2/MAM-basics` at Ben's instruction quoted 
      `doc/dual-agent-review-2026-10-01-round.md`, its turns 01 to 05,
      `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`,
      `doc/PLAN-close-out-review-2026-10-01.md` and `doc/dual-agent-review-comparison-2026-10-01.md`.
-   - The relay software, which the October 1 round reviewed and which Ben hopes to discard soon:
+   - The relay software, which the October 1 round reviewed and which Ben then hoped to discard
+     soon (D13 below records its removal on 2026-10-03):
      `py/repo_util/dual_agent_review_dispatch.py`, `py/repo_util/dual_agent_review_round.py`,
      `py/tests/test_dual_agent_review_dispatch.py`, `py/tests/test_dual_agent_review_turns.py`,
      `doc/dual-agent-review-automation.md`, `doc/PLAN-automate-the-dual-agent-review-relay.md`,
@@ -427,11 +428,13 @@ round with `py/main_repo_util.py --dual-agent-review start`. A Windows scheduled
 a dispatcher every three minutes; the dispatcher launched each turn's worker in one of two
 dedicated worktrees, read the `Next:` line that every automated turn carried, and alone
 staged, committed and pushed each turn to `origin/dar-<date>`. The October 1 round below was
-its only round. No round is started that way now: a dual-agent round follows D9 and D11, and
-Ben starts each turn's session himself.
+its only production round; the runbook at `cbd405b1` also records an isolated rehearsal round
+and two synthetic probe rounds. No round is started that way now: a dual-agent round follows D9
+and D11, and Ben starts each turn's session himself.
 
 The relay's code, tests, configuration, scripts, agent file, runbook and plan were removed on
-2026-10-03. `cbd405b11ef990040031ccf19699db54a69a489d` is the last commit whose tree holds them; there are
+2026-10-03. `cbd405b11ef990040031ccf19699db54a69a489d`, the parent of the commit that removed
+them, holds them all; there are
 [D13's full text](https://github.com/bdenckla/MAM-basics/blob/cbd405b11ef990040031ccf19699db54a69a489d/doc/dual-agent-review.md),
 in the section "Automated relay and the `Next:` line",
 [the runbook](https://github.com/bdenckla/MAM-basics/blob/cbd405b11ef990040031ccf19699db54a69a489d/doc/dual-agent-review-automation.md)
@@ -441,11 +444,11 @@ The October 1 round's records stay in `doc/`, and
 
 ### The October 1 round
 
-The October 1 round, the only round run under D13, reviewed the relay's own implementation
-window, MAM-basics `303bf239..1bfceff4`, with Claude as Agent 1, and closed after five turns.
-Ben approved C1–C6 and the surviving remediation scope, and the remediation reached `main` on
-2026-10-01: the final merged tree passed 1,056 tests and 60 subtests, with 5 skips, and the
-required 57-step mega produced no tracked diff.
+The October 1 round, the only production round run under D13, reviewed the relay's own
+implementation window, MAM-basics `303bf239..1bfceff4`, with Claude as Agent 1, and closed after
+five turns. Ben approved C1–C6 and the surviving remediation scope, and the remediation reached
+`main` on 2026-10-01: the final merged tree passed 1,056 tests and 60 subtests, with 5 skips, and
+the required 57-step mega produced no tracked diff.
 `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md` records the dispositions, the
 outcomes and the relay's retirement. The round file `doc/dual-agent-review-2026-10-01-round.md`,
 the five numbered turns and the finished comparison `doc/dual-agent-review-comparison-2026-10-01.md`
@@ -715,8 +718,8 @@ For future reviews, the filenames and states follow these rules:
    `doc/review-findings-*.md` glob in the standard's history names only the unprefixed series.
    Preserve historical filenames and `State:` lines, including September 4's Codex "acted on",
    September 8's turns under a Codex-prefixed stem, and September 14's mixed old and numbered
-   naming, and the October 1 round's `doc/dual-agent-review-2026-10-01-round.md` and the `Next:`
-   lines of its turns, which follow the retired D13.
+   naming, and the October 1 round's `doc/dual-agent-review-2026-10-01-round.md`; preserve too
+   the `Next:` lines of that round's turns, which follow the retired D13.
 
 For the single-agent and blind conventions, the asymmetry reads correctly: the unprefixed name is
 the incumbent, and the prefixed name announces its difference. Repository instructions say that an

@@ -4,7 +4,9 @@ D9 and D10 in doc/dual-agent-review.md give a round's turn files their numbering
 alternation between the two agents and their line-3 State shapes. This lint checks those
 three properties over the tracked tree, manual and automated rounds alike. It took over
 test_turn_census_and_sequences from the relay's own test module when the relay was
-retired, without that module's comparison against the relay's census.
+retired, without two of that module's checks: its comparison against the relay's census,
+and lint_automated_round_headers, which parsed each automated round file and validated
+its turns' headers, their Next: lines included.
 """
 
 from collections import defaultdict

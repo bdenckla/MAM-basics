@@ -859,3 +859,26 @@ MAM-private's adapter. The disposition list above did not address the suite stat
 correction changes no finding or disposition. Method: `git grep` at both commits for
 `sibling_repo("MAM-private")`, `require_sibling(`, the exporter's import and `main_phonetic_mam`,
 read beside the reaches that `py/tests/test_sibling_reach.py` declares.
+
+## The stated reason for skipping the mega at `b246e05e`, 2026-10-05
+
+Recorded by Claude Opus 5.5 on 2026-10-05, New York time, for one-line item 17 of
+`doc/review-findings-2026-10-04.md`. **Corrected here: the reason that item 1 of "Two observations
+of the executor's report addressed, 2026-10-03" gives for skipping the mega is false for 11 of the
+35 lines; the conclusion stands.** That item says "the 35 one-line changes are in `main()` or a
+`__main__` block, which no mega step runs, and the one change that the mega runs, `force_utf8_io`,
+changes only what stderr does with a lone surrogate", and `b246e05e`'s commit message gives the
+same reason. At `b246e05e`, `py/main_0_mega.py` runs eleven of those `main()` functions in process,
+each as the runner of a step: those of `main_search_final_hiriq_verse_text`,
+`main_search_holam_he_qere`, `main_uxlc_check_changes`, `main_fois`, `main_write_page_break_info`,
+`main_amb_early_mtg`, `main_uxlc_word_list`, `main_estimate_uxlc_locations`,
+`main_render_uxlc_corrections`, `main_verify_and_render_table` and
+`main_map_changes_to_book_of_job`, each under `py/`. So the mega runs those eleven changed lines as
+well as `force_utf8_io`'s change. The other 24 lines are in programs that the mega does not import,
+or whose `almost_main` alone it calls, or under `__main__`. The conclusion stands because each of
+the eleven makes the same change as the other 24, adding `errors="backslashreplace"` to stderr's
+reconfiguration, which, like `force_utf8_io`'s change, alters only what stderr does with a lone
+surrogate, and no tracked output depends on that. Method: `git show --stat b246e05e` and its
+diffs, read beside the step runners in `py/main_0_mega.py` at `b246e05e`; a read-only sub-agent
+placed every one of the 35 lines in its function, and the root session re-checked the eleven
+runners and two of the functions.

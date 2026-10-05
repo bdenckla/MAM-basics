@@ -328,8 +328,9 @@ those actual outcomes. The executable and generated-product trees remain the ver
 tree, so the 1,056-pass/60-subtest suite and 57-step mega results remain applicable.
 The existing census and deployment lints passed on the final terminal round (2 passed,
 13 deselected) with `core.longpaths=false` and explicit-encoding checks; the final tracked
-whitespace check passed. Their public evidence is retained in
-`.novc/relay-remediation-focused-4cc8444380f7` in the development worktree.
+whitespace check passed. Their public evidence was retained in
+`.novc/relay-remediation-focused-4cc8444380f7` in the development worktree until that worktree,
+with its `.novc`, was removed on 2026-10-04.
 
 **Effective base State, 2026-10-01:** acted on; approved remediation, main integration,
 canonical deployment and manual inactive lifecycle completed. The five numbered turns,
@@ -360,8 +361,8 @@ removed the relay's ten files, among them `py/repo_util/dual_agent_review_dispat
 together with the `--dual-agent-review` action of `py/main_repo_util.py` and the agent file's
 deployment in `py/repo_util/user_config_sync.py` and `dot-claude/README.md`. Its parent,
 [`cbd405b11ef990040031ccf19699db54a69a489d`](https://github.com/bdenckla/MAM-basics/tree/cbd405b11ef990040031ccf19699db54a69a489d),
-is the last commit whose tree holds every removed file; each path and line that this round's
-records cite in those files resolves there. D13 in `doc/dual-agent-review.md` is now a dated
+holds every removed file; each path and line that this round's records cite in those files
+resolves there. D13 in `doc/dual-agent-review.md` is now a dated
 retirement note.
 
 The round file, the five numbered turns, `doc/PLAN-close-out-review-2026-10-01.md` and
@@ -581,3 +582,29 @@ home clone, the two branches and the four directories were absent, and no task n
    retirement acts on BENS-HP-MINI, 2026-10-03", "everything kept is in the retention folder" now
    reads "everything kept went to the retention folder", followed by a sentence dating that entry's
    statements to when it was written.
+
+## Three corrections, 2026-10-05
+
+Recorded by Claude Opus 5.5 on 2026-10-05, New York time, for one-line items 28, 29 and 33 of
+`doc/review-findings-2026-10-04.md`. A read-only sub-agent measured the citation figures below;
+the root session re-checked them on a sample, as noted.
+
+1. **Corrected in place: a stale present-tense claim about the archive commit.** In "Relay retired,
+   2026-10-03", "Its parent, `cbd405b1…`, is the last commit whose tree holds every removed file"
+   now reads "Its parent, `cbd405b1…`, holds every removed file". The sentence was true of
+   `main`'s history when `4573b007` wrote it, but `d168e22e`, committed later that day with the
+   same parent `074af13a`, holds all ten too, and `f0c50473` then merged it into `main`.
+2. **Corrected in place: evidence no longer retained.** In "Completed close-out by Codex,
+   2026-10-01", "Their public evidence is retained in `.novc/relay-remediation-focused-4cc8444380f7`
+   in the development worktree" now says that the evidence was retained there until that worktree,
+   with its `.novc`, was removed on 2026-10-04, as item 4 of "The relay's end on BENS-HP-MINI,
+   2026-10-04" records.
+3. **Corrected here: the cited lines do not resolve at `cbd405b1`.** The same sentence of "Relay
+   retired, 2026-10-03" goes on: "each path and line that this round's records cite in those files
+   resolves there." Every path does, but the line numbers mostly do not. Of the 311 line citations
+   that this round's records make into the ten removed files, 303 point at other text at
+   `cbd405b1`, because the remediation's `2e120b85` rewrote those files after the round's window.
+   For example, `py/repo_util/dual_agent_review_dispatch.py` has 1,066 lines at the window's end,
+   `1bfceff4`, where turn 01's "(659-743)" is `gate`, and 1,547 at `cbd405b1`, where `gate` starts
+   at line 940 and line 659 holds other code (re-checked here). Each citation describes its lines
+   correctly at the commit its record measured them at, which for most is the window's end.
