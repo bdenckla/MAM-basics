@@ -39,10 +39,12 @@ SILLUQ_RULE = (
 # atom boundaries inside one chanted word, and neither is a nucleus.
 _BOUNDARIES = frozenset((MAQAF, hpu.NU_GMAQ))
 
-# Phonetic MAM puts this token between two chanted words at a paseq/legarmeh glyph. It is
-# converted to MAM's U+05C0 only after the survey has located it structurally, never by treating
-# the label as Hebrew text to display. Phonetic MAM does not encode the grammatical distinction;
-# MAM-simple supplies that distinction when the survey attaches the current forms.
+# Phonetic MAM puts this token, as a row of its own, between two chanted words at a narrow-sense
+# paseq; it spells a legarmeh as U+05C0 inside the chanted word's Hebrew. The token is converted
+# to MAM's U+05C0 only after the survey has located it structurally, never by treating the label
+# as Hebrew text to display. That conversion gives both the one glyph, so the survey's token
+# stream does not keep the release's distinction; MAM-simple supplies that distinction when the
+# survey attaches the current forms.
 _PHONETIC_MAM_PASOLEG = (
     "\N{HEBREW LETTER MEM}:\N{HEBREW LETTER PE}\N{HEBREW LETTER SAMEKH}"
     "\N{HEBREW LETTER QOF}"
@@ -737,11 +739,12 @@ def _intervening_punctuation(
 ) -> tuple[str, ...]:
     """The paseq/legarmeh glyphs between two entries, with annotations omitted.
 
-    Phonetic MAM's source token does not distinguish paseq from legarmeh. MAM-simple supplies
-    that category later. Setuma and petuxa markers describe layout, while a qamats marker
-    introduces alternative phonetic readings of one MAM template row; none of those
-    three annotation kinds is punctuation between the chanted words. Anything else is a new
-    source shape and remains fatal.
+    Phonetic MAM's source token marks a narrow-sense paseq only, since the release spells a
+    legarmeh as U+05C0 inside the chanted word's Hebrew; the glyph returned here does not keep
+    that distinction, and MAM-simple supplies the category later. Setuma and petuxa markers
+    describe layout, while a qamats marker introduces alternative phonetic readings of one MAM
+    template row; none of those three annotation kinds is punctuation between the chanted
+    words. Anything else is a new source shape and remains fatal.
     """
     punctuation = []
     for item in material:
