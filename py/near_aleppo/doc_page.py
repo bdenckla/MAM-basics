@@ -215,7 +215,11 @@ def _what(numbers):
                 "Near-Aleppo is ",
                 numbers.fig("dataset_files"),
                 " JSON files in this repository's ",
-                link(code("near-aleppo/out/plus/"), "../out/plus/"),
+                link(
+                    code("out/near-aleppo/plus/"),
+                    "https://github.com/bdenckla/MAM-basics/tree/main/"
+                    "out/near-aleppo/plus/",
+                ),
                 ", one for each of MAM-parsed-plus's book files, in its layout and "
                 "its serialization. Of its ",
                 numbers.fig("verses"),
