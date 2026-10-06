@@ -16,17 +16,10 @@
   --template-name: light-dark(#974600, #ffc18a);
 }
 
-[lang="hbo"] {
-  font-family: "Taamey D", "SBL Hebrew", "Ezra SIL", serif;
-}
-
 .pointed {
+  font-family: "Taamey D", "SBL Hebrew", "Ezra SIL", serif;
   font-size: 20pt;
   line-height: 1.7;
-}
-
-.name {
-  font-size: 1.15em;
 }
 
 .table-wrap {

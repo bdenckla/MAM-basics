@@ -3,8 +3,8 @@
 The pages load MAM-parsed's shared stylesheet first for English typography.
 This stylesheet adds the Hebrew examples, template notation and specialized
 tables. Pointed Hebrew uses 20pt Taamey D from the page set's font copy.
-Unpointed template and parameter names are slightly larger than surrounding
-English. The HTML isolates bidirectional runs with bdi elements.
+Unpointed Hebrew inherits the surrounding text's default font and size.
+The HTML isolates bidirectional runs with bdi elements.
 """
 
 
@@ -32,17 +32,10 @@ _CSS_TEMPLATE = """\
   --template-name: light-dark(#974600, #ffc18a);
 }
 
-[lang="hbo"] {
-  font-family: "Taamey D", "SBL Hebrew", "Ezra SIL", serif;
-}
-
 .pointed {
+  font-family: "Taamey D", "SBL Hebrew", "Ezra SIL", serif;
   font-size: 20pt;
   line-height: 1.7;
-}
-
-.name {
-  font-size: 1.15em;
 }
 
 .table-wrap {
