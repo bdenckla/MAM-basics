@@ -3,6 +3,7 @@
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
+from posixpath import normpath
 from typing import Union
 import html
 
@@ -30,7 +31,14 @@ def write_html_to_file(body_contents, write_ctx: WriteCtx, path_to_style):
             * a title
             * an output path
     """
-    html_el = html_el2(write_ctx.title, body_contents, f"{path_to_style}style.css")
+    html_el = html_el2(
+        write_ctx.title,
+        body_contents,
+        (
+            normpath(f"{path_to_style}../document.css"),
+            f"{path_to_style}style.css",
+        ),
+    )
     my_open.with_tmp_openw(
         write_ctx.path, {"newline": ""}, _write_callback, html_el, write_ctx.add_wbr
     )

@@ -4,6 +4,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import hkq_paths
+from mb_misc.report_stylesheet import prepare_report_stylesheet
 
 # The authored CSS uses ``light-dark()`` custom-property pairs under one
 # ``color-scheme: light dark`` declaration. Keep dark values in those pairs;
@@ -49,7 +50,13 @@ def write_report_assets(
     css_output_path: Path,
     js_output_path: Path,
     finding_ids: list[str],
-) -> None:
+    *,
+    report_css_href: str | None = "../report.css",
+) -> str:
+    base_href = prepare_report_stylesheet(
+        css_output_path.parent,
+        shared_href=report_css_href,
+    )
     color_rules = "\n".join(
         f".cat-{finding_id} {{ background: {PALETTE[idx % len(PALETTE)]}; }}"
         for idx, finding_id in enumerate(finding_ids)
@@ -63,3 +70,4 @@ def write_report_assets(
     js_output_path.parent.mkdir(parents=True, exist_ok=True)
     css_output_path.write_text(css_text, encoding="utf-8", newline="")
     js_output_path.write_text(js_text, encoding="utf-8", newline="")
+    return base_href

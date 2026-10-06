@@ -99,6 +99,7 @@ def generated_artifact_names() -> tuple[str, ...]:
             "index.html",
             "style.css",
             "filter.js",
+            "woff2/Taamey_D.woff2",
         )
     )
     return tuple(names)
@@ -193,7 +194,14 @@ def default_output_path(old_rev, new_rev):
     return f"{CHANGE_LOG_DIR}/{slug}.html"
 
 
-def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
+def generate_report(
+    old_rev,
+    new_rev,
+    output,
+    *,
+    write_when_empty=True,
+    report_css_href: str | None = "../../report.css",
+):
     """Generate one diff report. Returns the expanded diff count.
 
     The report never records a revision as given. Until 2026-09-11 it recorded
@@ -225,12 +233,18 @@ def generate_report(old_rev, new_rev, output, *, write_when_empty=True):
         )
     old = mpplus_revisions.resolve(old_rev)
     new = mpplus_revisions.resolve(new_rev)
-    os.makedirs(os.path.dirname(output), exist_ok=True)
+    os.makedirs(os.path.dirname(output) or ".", exist_ok=True)
     json_path = output.removesuffix(".html") + ".json"
     mpplus_json.write_json(diffs, old.label, new.label, json_path)
     print(f"  JSON written to {json_path}")
     total = mpplus_html.write_report(
-        diffs, old.label, new.label, output, old.date, new.date
+        diffs,
+        old.label,
+        new.label,
+        output,
+        old.date,
+        new.date,
+        report_css_href=report_css_href,
     )
     print(f"  Report written to {output}")
     return total, old.date
@@ -603,7 +617,10 @@ def run_from_args(args: argparse.Namespace) -> None:
         old_rev = prefix + args.old
         new_rev = prefix + args.new
         output = args.output or default_output_path(old_rev, new_rev)
-        generate_report(old_rev, new_rev, output)
+        if args.output:
+            generate_report(old_rev, new_rev, output, report_css_href=None)
+        else:
+            generate_report(old_rev, new_rev, output)
         return
     if args.output:
         raise SystemExit("--output requires --old and --new")

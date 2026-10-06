@@ -35,14 +35,8 @@ from py_misc import ren_tag_survey as rts
 # must reproduce.
 PIN = "6343c7bb62be0721b4ed4239077d37126f9bbbd1"
 CSS_NAME = "two_col_style.css"
+EDITION_CSS_HREF = "../../MAM-with-doc/two_col_style.css"
 INDEX_NAME = "index.html"
-_INDEX_STYLE = """\
-body {
-  max-width: 52em;
-  margin: 0 auto;
-  padding: 0 16px 4em;
-}
-"""
 
 
 @dataclass(frozen=True)
@@ -173,7 +167,7 @@ def _edition_index(edition, css_hrefs):
     write_ctx = mb_html.WriteCtx(
         edition + ": Book Links",
         INDEX_NAME,
-        head_style=_INDEX_STYLE,
+        head_style=mwdwidh.INDEX_STYLE,
         css_hrefs=css_hrefs,
         html_comment=provenance.generated_html_comment(__file__),
     )
@@ -211,11 +205,13 @@ NEAR_ALEPPO_MODE = Mode(
 )
 
 
-def render(mode, books_mpu):
-    """Every page of ``mode`` for ``books_mpu``, as text, keyed by its name."""
-    css_hrefs = (CSS_NAME,)
+def render(mode, books_mpu, *, css_hrefs, css_outputs):
+    """Every page of ``mode`` for ``books_mpu``, as text, keyed by its name.
+
+    The caller supplies stylesheet links and the stylesheet files it owns.
+    """
     pages = {
-        CSS_NAME: styles_mam_with_doc.css_for_mwd(),
+        **css_outputs,
         INDEX_NAME: mode.index(mode.edition, css_hrefs),
     }
     survey = rts.make()
@@ -238,10 +234,13 @@ def render_edition():
     _assert_names_are_the_builds()
     dataset_parent = build_paths.dataset_dir().parent
     books_mpu = plus.read_parsed_plus_bk39s(tbn.ALL_BK39_IDS, str(dataset_parent))
-    pages = render(NEAR_ALEPPO_MODE, books_mpu)
+    pages = render(
+        NEAR_ALEPPO_MODE,
+        books_mpu,
+        css_hrefs=(EDITION_CSS_HREF,),
+        css_outputs={},
+    )
     for name, text in pages.items():
-        if name == CSS_NAME:
-            continue
         comment = text.split("\n")[1]
         if comment != _edition_comment(name):
             raise AssertionError(f"{name}: {comment}")
@@ -307,7 +306,12 @@ def check_mam_mode():
     books_mpu = plus.read_parsed_plus_bk39s(
         tbn.ALL_BK39_IDS, "MAM-parsed", load_json=load_json
     )
-    pages = render(MAM_MODE, books_mpu)
+    pages = render(
+        MAM_MODE,
+        books_mpu,
+        css_hrefs=(CSS_NAME,),
+        css_outputs={CSS_NAME: styles_mam_with_doc.css_for_mwd()},
+    )
     problems = []
     if missing := sorted(set(tracked_names) - set(pages)):
         problems.append(f"MAM-with-doc has pages MAM mode does not write: {missing}")

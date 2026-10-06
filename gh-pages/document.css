@@ -1,0 +1,35 @@
+/* Shared prose styles for this site's HTML documents.
+   This hand-authored tracked file is the source of truth. Document families
+   link it before their own styles for Hebrew, examples and specialized tables. */
+:root { color-scheme: light dark; }
+body {
+    max-width: 40em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14pt;
+    color: light-dark(black, white);
+    background-color: light-dark(white, black);
+}
+body.wide { max-width: 80em; }
+.element {
+    color: light-dark(black, white);
+    background-color: light-dark(white, black);
+}
+span.romanized { font-style: italic; }
+.book-title { font-style: italic; }
+*[lang="he"] span.book-title { font-weight: bold; font-style: normal; }
+p, li, blockquote { text-align: justify; }
+*.extra-letter-spacing { letter-spacing: 0.1em; }
+*.gray { color: gray; }
+/* Keep an explicit big form larger than a family's language font-size rule. */
+body .big { font-size: 250%; }
+table.border-collapse { border-collapse: collapse; }
+table.center { margin-left: auto; margin-right: auto; }
+p.center { text-align: center; }
+p.center-and-spaced { text-align: center; word-spacing: 1.5em; }
+img.width10em { width: 10em; }
+img.width5em { width: 5em; }
+th, td { padding-right: 0.4em; padding-left: 0.4em; }
+img { max-width: 100%; }
+code { font-size: 0.85em; }

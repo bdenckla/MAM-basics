@@ -69,7 +69,11 @@ def render():
 
 
 def _documentation_html(title, body, comment):
-    html_el = mb_html.html_el2(title, body, css_hrefs=(_SHARED_STYLESHEET, _STYLESHEET))
+    html_el = mb_html.html_el2(
+        title,
+        body,
+        css_hrefs=("../document.css", _SHARED_STYLESHEET, _STYLESHEET),
+    )
     policy = mb_html._HGL_POLICY
     options = {
         **policy,

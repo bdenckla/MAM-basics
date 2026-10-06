@@ -1,13 +1,5 @@
-:root { color-scheme: light dark; }
-body {
-    max-width: 40em;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 14pt;
-    color: light-dark(black, white);
-    background-color: light-dark(white, black);
-}
+/* UXLC document extensions; load ../document.css first. This hand-authored
+   tracked file is the source of truth. */
 *[lang="hbo"] {
     font-family: "Taamey D WOFF2";
     font-size: 140%;
@@ -16,7 +8,6 @@ body {
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");
 }
-span.romanized { font-style: italic; }
 span.cluster-highlight {
     background-color: light-dark(#f3e3a4, #5a4a1f);
     border-radius: 0.15em;
@@ -31,21 +22,10 @@ span.abbrev-tooltip {
     text-decoration-style: dotted;
     text-underline-offset: 0.14em;
 }
-p { max-width: 40em; text-align: justify}
-blockquote { max-width: 40em; }
 td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
-td.big { font-size: 250%; }
 table.limited-width { max-width: 40em; }
-table.border-collapse { border-collapse: collapse; }
-th, td {
-    padding-right: 0.4em;
-    padding-left: 0.4em;
-}
 tr:nth-of-type(odd) td {
     background-color: light-dark(#eee, #222);
-}
-img {
-    max-width: 100%;
 }
 
 /* CLC (Charitable Leningrad Codex) — 3-column always-link pages (gh-pages/clc) */

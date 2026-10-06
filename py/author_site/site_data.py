@@ -78,9 +78,10 @@ POST_STRESS_METEG_NEXT_CONJUNCTIVE_TITLE = (
 
 # The stylesheet the deploy-root pages link, written by Ben and tracked as
 # gh-pages/style.css -- a sibling of every deploy-root page, so its href needs no
-# prefix. It supplies light/dark switching, the bounded text measure, and book-title
-# italics. The post-stress-meteg pages also link gh-pages/wlc/style.css for pointed
-# Hebrew, romanizations, and tables; its font URL resolves relative to that stylesheet.
+# prefix. The pages first load gh-pages/document.css for English prose, and style.css
+# preserves the root indexes' browser-default font size. The post-stress-meteg pages
+# also link gh-pages/wlc/style.css for pointed Hebrew, tables and controls; its font
+# URL resolves relative to that stylesheet.
 # Ben asked for the switching on
 # 2026-08-31, having noticed the two deploy-root pages that existed then staying white on a
 # dark display.
@@ -88,9 +89,9 @@ CSS_HREF = "style.css"
 
 # The accgram stylesheet, linked BESIDE the one above by the post-stress-meteg pages that show
 # pointed Hebrew or accent-name romanizations. It supplies the
-# lang="hbo" font at the size that makes accents legible, the italic for span.romanized, and
-# the numeric-cell alignment, none of which a page of links has any use for and none of which
-# is therefore in style.css.  Its @font-face URL is relative to the stylesheet, so the font
+# lang="hbo" font at the size that makes accents legible and the numeric-cell
+# alignment. Romanizations inherit the shared document.css rule.
+# Its @font-face URL is relative to the stylesheet, so the font
 # resolves from the deploy root as it does from gh-pages/wlc/.
 ACCGRAM_CSS_HREF = "wlc/style.css"
 

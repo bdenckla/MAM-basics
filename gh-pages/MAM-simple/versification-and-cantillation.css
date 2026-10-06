@@ -5,28 +5,8 @@
    <link rel="stylesheet">. Edit this file, then regenerate (do not edit the copy
    under gh-pages/).
 
-   Light/dark theming uses the browser-native color-scheme + light-dark() idiom
-   — the same lightweight, pure-CSS mechanism the standard MAM-basics generator
-   uses (see py/mb_misc/styles_authored.py). */
-:root { color-scheme: light dark; }
-body {
-  max-width: 46rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.55;
-  color: light-dark(#1a1a1a, #e6e6e6);
-  background: light-dark(#ffffff, #161616);
-}
-h1, h2, h3 { line-height: 1.25; }
-h1 { font-size: 1.9rem; }
-h2 { margin-top: 2rem; }
-code {
-  background: light-dark(#f0f0f0, #2a2a2a);
-  padding: 0.1em 0.3em;
-  border-radius: 3px;
-  font-size: 0.9em;
-}
+   The page first links ../document.css for shared English prose. This stylesheet
+   adds its Hebrew forms, tables and examples. */
 table { border-collapse: collapse; margin: 1rem 0; }
 th, td { border: 1px solid light-dark(#ccc, #444); padding: 0.3rem 0.6rem; text-align: start; }
 th { background: light-dark(#f5f5f5, #242424); }
@@ -42,7 +22,7 @@ th abbr[title] { text-decoration: underline dotted; cursor: help; }
 table[dir="rtl"] th { text-align: center; }
 table[dir="rtl"] tr.cv td { text-align: center; }
 /* Let the transposed ETMBet strand-and-number tables (all rtl) spill wider than the
-   46rem prose column. Their Hebrew example words, taken across the row, can run wider
+   shared prose column. Their Hebrew example words, taken across the row, can run wider
    than the body text — most of all the five-column early-split table — and squeezing
    them to prose width wraps cells and cramps the layout. width:max-content lets each
    table grow as wide as its cells want (no cap — as wide as it "wants"); the body
@@ -54,12 +34,6 @@ table[dir="rtl"] {
   width: max-content;
   margin-left: 50%;
   transform: translateX(-50%);
-}
-blockquote {
-  border-inline-start: 4px solid light-dark(#ddd, #444);
-  margin: 1rem 0;
-  padding: 0.2rem 1rem;
-  color: light-dark(#333, #c9c9c9);
 }
 /* A quoted Hebrew verse. "Right-aligned and centered" are not contradictory here:
    the box shrink-wraps to its widest line (fit-content) and is centered on the page
@@ -74,7 +48,6 @@ blockquote.verse {
   border-inline-start: none;
   padding-inline-start: 0;
 }
-a { color: light-dark(#0645ad, #6ea8fe); }
 
 /* Pointed Hebrew — the house block, matching the accgram island (wlc-utils gh-pages/style.css)
    and this repo's own mb_misc/styles_authored.css. Taamey D is the point: this page's payload is
@@ -86,16 +59,15 @@ a { color: light-dark(#0645ad, #6ea8fe); }
    שמור/זכור, …). They need no accent-legible font, and lang="hbo" here is that font's hook. This
    is a decision, not an oversight — don't "fix" it.
 
-   On the size: unlike wlc-utils, we need no per-table override. It tunes its bordered range cells
-   down to 120% because 140% of its 14pt body is too tall there. Our body sets no font-size, so
-   140% is of the 16px default = 22.4px — exactly wlc-utils's 120% of 14pt. Same pixels, different
-   arithmetic.
+   The explicit 22.4px preserves this page's Hebrew display size after its English
+   adopts the shared 14pt body. The former 140% of a 16px body was also 22.4px.
+   WLC's bordered range cells use 120% of 14pt, the same display size.
 
    The attribute selector matches only the tagged element (it is not :lang()), so the .vc-* spans
-   nested inside a tagged cell don't re-match and the 140% does not compound. */
+   nested inside a tagged cell don't re-match. */
 *[lang="hbo"] {
   font-family: "Taamey D WOFF2";
-  font-size: 140%;
+  font-size: 22.4px;
   font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
   font-style: normal; /* never italicize Hebrew, even inside italic context */
 }
@@ -105,12 +77,6 @@ a { color: light-dark(#0645ad, #6ea8fe); }
   font-family: "Taamey D WOFF2";
   src: url("woff2/Taamey_D.woff2");
 }
-
-/* Romanized (transliterated) Hebrew terms — etnaḥta, sof pasuq, petuḥah, taḥton, … —
-   emitted by doc.py's _romanized() as <span class="romanized">. Italic, matching the
-   repo's other generated docs (mb_misc/styles_authored.css, sibling gh-pages/*.css). Not
-   <em>: these words are transliterated, not emphasized. */
-span.romanized { font-style: italic; }
 
 /* Deuteronomy appendix: anti-highlighting. Hue marks a chanted verse's role
    (vc-start = green "start", vc-stop = red "stop", vc-mid = neutral interior);

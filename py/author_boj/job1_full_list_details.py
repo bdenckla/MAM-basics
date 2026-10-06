@@ -13,7 +13,7 @@ def gen_html_files(ov_and_de):
     """
     out_dir = boj_paths.jobn_details_dir()
     out_dir.mkdir(parents=True, exist_ok=True)
-    css_href = "../jobn/style.css"
+    css_hrefs = ("../../document.css", "../style.css")
     items = list(ov_and_de.items())
     for idx, (row_key, od) in enumerate(items):
         sid = row_key.removeprefix("row-")
@@ -26,7 +26,7 @@ def gen_html_files(ov_and_de):
         nav = _nav_bar(prev_sid, next_sid)
         body = [*od["od-details"], nav, _nav_key_script(prev_sid, next_sid)]
         out_path = out_dir / f"{sid}.html"
-        write_ctx = boj_html.WriteCtx(title, out_path, css_hrefs=(css_href,))
+        write_ctx = boj_html.WriteCtx(title, out_path, css_hrefs=css_hrefs)
         boj_html.write_html_to_file(body, write_ctx)
 
 

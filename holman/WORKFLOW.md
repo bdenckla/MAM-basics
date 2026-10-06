@@ -26,7 +26,9 @@ availability do not belong in a disposition.
 
 The four authored Holman CSS and JavaScript assets live under `holman/assets/`.
 Edit those files rather than their generated copies under `gh-pages/holman/`.
-Every authored CSS theme declares `color-scheme: light dark` on `:root`, and every
+The hand-authored shared theme is `gh-pages/report.css`; the Holman assets retain
+their specialized grids, controls, Hebrew displays, and report-specific colors.
+The shared theme declares `color-scheme: light dark` on `:root`, and every
 theme custom property that stores a color uses a `light-dark(<light>, <dark>)` pair.
 Fixed badge foregrounds and backgrounds remain literal colors. Do not add an
 `@media (prefers-color-scheme: dark)` block.

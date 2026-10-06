@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 import struct
 
+from mb_misc.report_stylesheet import copy_report_font, prepare_report_stylesheet
 from py_render.rt_assets import PALETTE
 from py_render.uc_case_card import (
     case_card_html,
@@ -109,6 +110,7 @@ def render_uxlc_corrections_html(
     assets_dir: Path,
     data_dir: Path,
     json_output_path: Path,
+    report_css_href: str | None = "../report.css",
 ) -> dict[str, object]:
     emails, cases = apply_bracketed_corrections(*read_emails(emails_dir, image_dir))
     locations = read_locations(data_dir)
@@ -120,10 +122,11 @@ def render_uxlc_corrections_html(
     _require_commented_cases_exist(cases)
 
     rendered = _rendered_cases(cases, image_dir, output_html_path)
-    _write_assets(
+    base_href = _write_assets(
         assets_dir=assets_dir,
         output_html_path=output_html_path,
         filter_ids=all_filter_ids(cases),
+        report_css_href=report_css_href,
     )
     _write_page(
         emails=emails,
@@ -132,6 +135,7 @@ def render_uxlc_corrections_html(
         standard_atoms=standard_atoms,
         rendered=rendered,
         output_html_path=output_html_path,
+        base_href=base_href,
     )
     return _write_json(
         emails=emails,
@@ -187,8 +191,17 @@ def _png_size(path: Path) -> tuple[int, int]:
 
 
 def _write_assets(
-    *, assets_dir: Path, output_html_path: Path, filter_ids: list[str]
-) -> None:
+    *,
+    assets_dir: Path,
+    output_html_path: Path,
+    filter_ids: list[str],
+    report_css_href: str | None,
+) -> str:
+    base_href = prepare_report_stylesheet(
+        output_html_path.parent,
+        shared_href=report_css_href,
+    )
+    copy_report_font(output_html_path.parent)
     colour_rules = "\n".join(
         f".cat-{filter_id} {{ background: {PALETTE[index % len(PALETTE)]}; }}"
         for index, filter_id in enumerate(filter_ids)
@@ -203,6 +216,7 @@ def _write_assets(
         encoding="utf-8",
         newline="",
     )
+    return base_href
 
 
 def _write_page(
@@ -213,6 +227,7 @@ def _write_page(
     standard_atoms: dict[str, int],
     rendered: list[RenderedCase],
     output_html_path: Path,
+    base_href: str,
 ) -> None:
     email_by_key = {source_email.key: source_email for source_email in emails}
     cards = "\n".join(
@@ -239,6 +254,7 @@ def _write_page(
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{escape(PAGE_TITLE)}</title>
+<link rel="stylesheet" href="{escape(base_href)}">
 <link rel="stylesheet" href="{css_href}">
 </head>
 <body>

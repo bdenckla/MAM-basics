@@ -250,6 +250,17 @@ def _page(title, heading, contents, asset_prefix):
             ),
             html.htel_mk("title", flex_contents=title),
             html.htel_mk(
+                "link",
+                {"rel": "stylesheet", "href": f"{asset_prefix}../document.css"},
+            ),
+            html.htel_mk(
+                "link",
+                {
+                    "rel": "stylesheet",
+                    "href": f"{asset_prefix}../yeivin-itm/style.css",
+                },
+            ),
+            html.htel_mk(
                 "link", {"rel": "stylesheet", "href": f"{asset_prefix}style.css"}
             ),
             html.htel_mk(

@@ -81,6 +81,8 @@ def render_table_data_findings_html(
     table_json_path: Path,
     output_html_path: Path,
     mam_suggestions_json_path: Path | None = None,
+    *,
+    report_css_href: str | None = "../report.css",
 ) -> Path:
     """Render the findings report from the ketiv/qere extract and the MAM suggestions.
 
@@ -119,10 +121,11 @@ def render_table_data_findings_html(
 
     css_output_path = output_html_path.with_suffix(".css")
     js_output_path = output_html_path.with_suffix(".js")
-    write_report_assets(
+    base_href = write_report_assets(
         css_output_path=css_output_path,
         js_output_path=js_output_path,
         finding_ids=list(finding_ids.values()),
+        report_css_href=report_css_href,
     )
 
     suggestions_path = (
@@ -149,6 +152,7 @@ def render_table_data_findings_html(
         output_html_path=output_html_path,
         css_output_path=css_output_path,
         js_output_path=js_output_path,
+        base_href=base_href,
         repo_root=table_json_path.parent.parent,
         main_output_path=output_html_path,
         suppressed_output_path=suppressed_output_path,
@@ -169,6 +173,7 @@ def render_table_data_findings_html(
         output_html_path=suppressed_output_path,
         css_output_path=css_output_path,
         js_output_path=js_output_path,
+        base_href=base_href,
         repo_root=table_json_path.parent.parent,
         main_output_path=output_html_path,
         suppressed_output_path=suppressed_output_path,
@@ -193,6 +198,7 @@ def _write_report_page(
     output_html_path: Path,
     css_output_path: Path,
     js_output_path: Path,
+    base_href: str,
     repo_root: Path,
     main_output_path: Path,
     suppressed_output_path: Path,
@@ -299,6 +305,7 @@ def _write_report_page(
 {redirect_script_html}
 <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 <title>{escape(page_title)}</title>
+<link rel=\"stylesheet\" href=\"{escape(base_href)}\">
 <link rel=\"stylesheet\" href=\"{css_href}\">
 </head>
 <body>

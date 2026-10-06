@@ -6,6 +6,7 @@ from html.parser import HTMLParser
 import inspect
 import json
 from pathlib import Path
+import re
 import tempfile
 import unittest
 from unittest import mock
@@ -122,6 +123,8 @@ def test_registered_report_tree_declares_every_checked_artifact():
     assert releases, "releases.json must name at least one release"
     directory = Path(diff_mpplus.CHANGE_LOG_DIR)
     expected = {"index.html"}
+    shared_base = (directory / "../../report.css").resolve()
+    assert shared_base.is_file(), shared_base
     for name in [*(entry["name"] for entry in releases), "unpinned-latest"]:
         report = directory / f"{name}.html"
         serialized = directory / f"{name}.json"
@@ -131,21 +134,88 @@ def test_registered_report_tree_declares_every_checked_artifact():
         assets = _ReportAssets()
         assets.feed(report.read_text(encoding="utf-8"))
         assert assets.assets, f"no shared assets declared by {report}"
+        assert "../../report.css" in assets.assets, report
         for asset in assets.assets:
+            if asset == "../../report.css":
+                assert (report.parent / asset).resolve() == shared_base
+                continue
             assert (
                 Path(asset).name == asset
             ), f"unexpected nonlocal shared asset {asset!r}"
             assert (directory / asset).is_file(), asset
             expected.add(asset)
+            if asset.endswith(".css"):
+                css = (directory / asset).read_text(encoding="utf-8")
+                fonts = re.findall(r'url\("([^\"]+\.woff2)"\)', css)
+                assert fonts, f"no Hebrew font declared by {asset}"
+                for font in fonts:
+                    font_path = (directory / font).resolve()
+                    assert font_path.is_relative_to(directory.resolve()), font
+                    assert font_path.is_file(), font
+                    expected.add(font)
+    index_assets = _ReportAssets()
+    index_assets.feed((directory / "index.html").read_text(encoding="utf-8"))
+    assert index_assets.assets == {"../../report.css", "style.css"}
     checked = diff_mpplus.generated_artifact_names()
     assert len(checked) == len(set(checked)), "duplicate checked artifact"
     assert set(checked) == expected
 
 
 def test_registered_outputs_match_real_regeneration():
+    published = Path(diff_mpplus.CHANGE_LOG_DIR)
+    before = {
+        path: path.read_bytes() for path in published.rglob("*") if path.is_file()
+    }
+    base = published / "../../report.css"
+    base_before = base.read_bytes()
     with tempfile.TemporaryDirectory(prefix="mam-real-release-test-") as generated:
         diff_mpplus.run_all(generated)
         assert not diff_mpplus._generated_artifact_problems(generated)
+    assert base.read_bytes() == base_before
+    assert {
+        path: path.read_bytes() for path in published.rglob("*") if path.is_file()
+    } == before
+
+
+def test_standalone_release_reports_match_published_reports():
+    """Compare every registered release's standalone package with its published report."""
+    published = Path(diff_mpplus.CHANGE_LOG_DIR)
+    releases = json.loads(Path(diff_mpplus.RELEASES_JSON).read_text(encoding="utf-8"))[
+        "releases"
+    ]
+    assert releases, "releases.json must name at least one release"
+    with tempfile.TemporaryDirectory(
+        prefix="mam-standalone-release-test-"
+    ) as generated:
+        directory = Path(generated)
+        for entry in releases:
+            name = entry["name"]
+            args = argparse.Namespace(
+                check=False,
+                all=False,
+                old=entry["old"],
+                new=entry["new"],
+                legacy_history=False,
+                output=str(directory / f"{name}.html"),
+                archive=None,
+                pin=None,
+            )
+            diff_mpplus.run_from_args(args)
+            expected_html = (
+                (published / f"{name}.html")
+                .read_bytes()
+                .replace(b'href="../../report.css"', b'href="report-assets/report.css"')
+            )
+            assert (directory / f"{name}.html").read_bytes() == expected_html
+            for asset in (f"{name}.json", "style.css", "filter.js"):
+                assert (directory / asset).read_bytes() == (
+                    published / asset
+                ).read_bytes()
+            font = Path("woff2/Taamey_D.woff2")
+            assert (directory / font).read_bytes() == (published / font).read_bytes()
+            assert (directory / "report-assets" / "report.css").read_bytes() == (
+                published / "../../report.css"
+            ).read_bytes()
 
 
 def test_check_conflict_guard_covers_every_declared_selector():

@@ -159,7 +159,13 @@ def test_dataset_only_renderer_matches_prior_edition_from_the_same_baseline_inpu
         _DATA.removesuffix("/plus/"),
         load_json=books.__getitem__,
     )
-    pages = edition.render(edition.NEAR_ALEPPO_MODE, books_mpu)
+    # The independent HTML fixture keeps its historical stylesheet location.
+    pages = edition.render(
+        edition.NEAR_ALEPPO_MODE,
+        books_mpu,
+        css_hrefs=(edition.CSS_NAME,),
+        css_outputs={},
+    )
     assert {
         name for name in pages if name.endswith(".html") and name != "index.html"
     } == {path.removeprefix(_HTML) for path in paths}

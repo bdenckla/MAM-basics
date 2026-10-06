@@ -1,29 +1,10 @@
-/* Shared styles for the MAM-parsed and near-Aleppo authored docs.
+/* Additional styles for the MAM-parsed and near-Aleppo authored docs.
    Source of truth: py/mb_misc/styles_mam_parsed.css in MAM-basics; copied verbatim
    into the docs tree by styles_mam_parsed.make_css_file_for_mam_parsed(). Edit this
-   source and regenerate; do not edit deployed copies. */
-:root {
-  color-scheme: light dark;
-}
-.element {
-  color: light-dark(black, white);
-  background-color: light-dark(white, black);
-}
-body {
-    max-width: 40em;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 14pt;
-}
-body.wide {
-    max-width: 80em;
-}
+   source and regenerate; do not edit deployed copies. The pages load the shared
+   document.css first for English prose. */
 em { font-style: normal; font-weight: bold; }
-span.romanized { font-style: italic; }
-*[lang="he"] span.book-title { font-weight: bold; font-style: normal; }
 *[lang="hbo"] { direction: rtl; }
-span.book-title { font-style: italic; }
 abbr[title] {
     text-decoration: none;
 }
@@ -33,21 +14,7 @@ abbr[title] {
     text-underline-offset: 0.14em;
     cursor: help;
 }
-p { text-align: justify; }
-li { text-align: justify; }
-blockquote { text-align: justify; }
-*.extra-letter-spacing { letter-spacing: 0.1em; } /* span or bdi */
-*.gray { color: gray; }
-*.big { font-size: 250%; }
-table.border-collapse { border-collapse: collapse; }
-table.center { margin-left: auto; margin-right: auto; }
-p.center { text-align: center; }
-p.center-and-spaced { text-align: center; word-spacing: 1.5em; }
-img.width10em { width: 10em; }
-img.width5em { width: 5em; }
 th, td {
-    padding-right: 0.4em;
-    padding-left: 0.4em;
     padding-top: 0.45em;
     padding-bottom: 0.45em;
 }
@@ -56,11 +23,7 @@ table tbody tr:nth-child(even) td {
 }
 td.wide-col, th.wide-col { max-width: 20em; overflow-wrap: break-word; }
 td.template-col, th.template-col { text-align: right; }
-img { max-width: 100%; }
 
-code {
-    font-size: 0.85em;
-}
 pre.json-block {
     font-family: Consolas, "Courier New", monospace;
     font-size: 0.85em;
