@@ -409,11 +409,12 @@ def _own_templates(numbers):
         mb_html.para(
             [
                 "Two are MAM's note templates under names specific to near-Aleppo. "
-                "Where near-Aleppo's text of a note's target differs from MAM's, the "
-                "preserved note body remains about MAM's text, and the note "
-                "keeps MAM's target in an added parameter, ",
+                "Where near-Aleppo changes a note's target, the JSON dataset keeps "
+                "MAM's original note body unchanged and stores MAM's target in an "
+                "added parameter, ",
                 he_name(MAM_TARGET_PARAMETER),
-                ". Such a note is renamed, so that a consumer who knows only MAM's "
+                ". The original note body still describes MAM's target. Such a "
+                "note is renamed, so that a consumer who knows only MAM's "
                 "templates fails on it rather than misreading it: a ",
                 he_name("נוסח"),
                 " is named ",
@@ -429,6 +430,14 @@ def _own_templates(numbers):
                 ". Their other parameters are MAM's. So every template of MAM's "
                 "that near-Aleppo has keeps MAM's meaning.",
             ]
+        ),
+        mb_html.para(
+            "The example HTML edition presents those stored notes differently. "
+            "A reviewed clause quoting near-Aleppo's complete form can be recast "
+            "as an agreement with that form, retaining its explanations and "
+            "qualifications. The remaining original clauses follow MAM's "
+            "labelled form. Where a recast would require uncertain interpretation, "
+            "the complete original note follows MAM's labelled form."
         ),
         mb_html.para(
             [
