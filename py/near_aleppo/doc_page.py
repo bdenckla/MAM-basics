@@ -40,7 +40,7 @@ from near_aleppo.phase6_rename import RENAMED_NOTES
 
 TITLE = "The near-Aleppo dataset"
 
-MPPLUS_DOC = "https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html"
+MPPLUS_DOC = "../MAM-parsed/plus/html/mpplus.html"
 SIGIL_DECODING = (
     "https://bdenckla.github.io/MAM-basics/MAM-with-doc/sigil-decoding.html"
 )
