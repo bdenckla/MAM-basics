@@ -40,7 +40,7 @@ EDITION_SEPARATOR_TEMPLATE_NAMES = {
 
 # Each value names the one child, if any, that belongs to the projected
 # Scripture stream. The selected branches are:
-# qamats ד, deḥi/tsinnor parameter 1, and the combined כפול presentation.  A
+# qamats ד, dexi/tsinnor parameter 1, and the combined כפול presentation.  A
 # pointed qere is the temporary pointing proxy for the ordinary ketiv/qere
 # families; phase 4 will synthesize the edition's pointed ketiv from it.
 _EDITION_KEYS = {
