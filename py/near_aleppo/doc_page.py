@@ -247,15 +247,6 @@ def _what(numbers):
                 "from near-Aleppo.",
             ]
         ),
-        mb_html.para(
-            "The example edition places MAM's notes beside each book's text. "
-            "Where a note's target differs, a reviewed source clause can follow "
-            "near-Aleppo's form, with its explanations and qualifications. "
-            "MAM's labelled form introduces the remaining original clauses. "
-            "Where a recast would require uncertain interpretation, the complete "
-            "original note follows MAM's labelled form. This applies in surviving "
-            "and missing sections alike."
-        ),
     ]
 
 
