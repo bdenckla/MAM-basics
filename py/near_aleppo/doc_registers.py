@@ -233,17 +233,7 @@ def _limitations(numbers):
                 "the codex's margin rather than its text.",
             ],
         ],
-        [
-            "The Decalogues and Genesis 35",
-            "No leaf of the codex survives at either Decalogue or at Genesis 35, "
-            "although photographs taken before 1947 cover the Decalogue of "
-            "Deuteronomy, and near-Aleppo counts them as the codex. Near-Aleppo "
-            "keeps MAM's numbering, which differs there from Koren's and from every "
-            "older printing's.",
-        ],
     ]
-    if not numbers.fig_value("decalogues_and_genesis_35_lost"):
-        raise AssertionError("the page says no leaf survives at the Decalogues")
     numbers.require_sites(
         "flag_sites", ("qualification 2: clauses flagged",), ('BC-Kings מל"א|20|29',)
     )
