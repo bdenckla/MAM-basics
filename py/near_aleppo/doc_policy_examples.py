@@ -3,7 +3,7 @@
 Each lookup requires one complete span of chanted words. The source projection
 uses the existing phase-2 resolver; final text uses the closed dataset walk.
 Pins check the stated difference without normalizing or retyping Hebrew marks.
-Note examples also verify the unchanged body and preserved original target.
+Note examples also verify the preserved original target and explicit clause roles.
 """
 
 import json
@@ -17,6 +17,7 @@ from mb_misc import mb_html
 from near_aleppo.phase2_templates import Resolver
 from near_aleppo.phase3_policies import _clauses, _selected_text
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
+from py_misc import near_aleppo_params as nap
 from near_aleppo.phase6_rename import RENAMED_NOTES
 
 _HOLAM = "\N{HEBREW POINT HOLAM}"
@@ -175,8 +176,8 @@ def _notes(ref, target):
         results.append(matches[0])
     mam, near = results
     first, second = mam["tmpl_params"], near["tmpl_params"]
-    if first["2"] != second["2"]:
-        raise AssertionError(f"{ref}: example note body changed")
+    if first["1"] == second["1"] and first["2"] != second["2"]:
+        raise AssertionError(f"{ref}: unchanged-target example note body changed")
     if first["1"] != second["1"] and (
         near["tmpl_name"] != RENAMED_NOTES["נוסח"]
         or second[MAM_TARGET_PARAMETER] != first["1"]
@@ -223,9 +224,9 @@ def flag_examples():
         _comparison(mam["1"], near["1"]),
         mb_html.para(
             "The flag value copies the original clause, including its exclamation "
-            "mark. The complete MAM note remains unchanged in parameter 2. The "
-            "edition may recast a matching clause as agreement with near-Aleppo, "
-            "while retaining the remaining source clauses with MAM's target."
+            "mark. Parameter 2 already contains the reviewed agreement with "
+            "near-Aleppo. The remaining original clauses are stored separately "
+            "with MAM's target."
         ),
         mb_html.para(
             [
@@ -295,7 +296,8 @@ def apparatus_example():
         len(notes) != 1
         or notes[0][MAM_TARGET_PARAMETER] != ["עַל־", templates[0]]
         or not any(
-            clause.startswith(f"א=<{after}>") for clause in _clauses(notes[0]["2"], ref)
+            clause.startswith(f"א=<{after}>")
+            for clause in _clauses(notes[0][nap.MAM_NOTE], ref)
         )
     ):
         raise AssertionError("Deuteronomy example must quote its retained source note")

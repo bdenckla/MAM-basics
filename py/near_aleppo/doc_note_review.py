@@ -1,7 +1,7 @@
 """Validate the public presentation ledger for changed MAM notes.
 
-Original source bodies remain unchanged in the dataset. Input hashes and a
-full-source inventory differential guard the presentation recipes. Refresh
+Original source bodies and decisions remain in this ledger. Input hashes and a
+pre-bake full-source inventory differential guard the published note content. Refresh
 retains dispositions only for unchanged evidence. Unresolved presentations
 keep explicit MAM context rather than speculating about a new subject.
 """
@@ -20,6 +20,7 @@ from near_aleppo.editorial_ketiv import EditorialPointing
 from near_aleppo.reviewed_ketiv import ReviewedPointing
 from near_aleppo.frozen_ketiv import FrozenPointing, digest
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER, _notes
+from near_aleppo.phase6_rename import LEGACY_NOTES
 from py_misc import unbury_doc_parts as unbury
 from render_wt import doc_note_presentations as presentations
 
@@ -39,10 +40,7 @@ _BODY = {"נוסח": "2", "מ:הערה-2": "2"}
 def input_hashes():
     """Content identities, with portable keys rather than checkout-local paths."""
     paths = {}
-    for name, directory in (
-        ("MAM-parsed-plus", build_paths.mam_parsed_plus_dir()),
-        ("near-aleppo", build_paths.dataset_dir()),
-    ):
+    for name, directory in (("MAM-parsed-plus", build_paths.mam_parsed_plus_dir()),):
         books = sorted(directory.glob("*.json"))
         if len(books) != 24:
             raise AssertionError(f"{directory}: expected 24 books, found {len(books)}")
@@ -147,7 +145,7 @@ def _data_notes(value, ref, strip_added=False):
                 walk(child)
             return
         name = node["tmpl_name"]
-        mam_name = doc_figures._MAM_NAMES.get(name, name)
+        mam_name = {new: old for old, new in LEGACY_NOTES.items()}.get(name, name)
         rule = phase2._RULES.get(mam_name)
         if rule is None:
             raise AssertionError(f"{ref}: unknown template {name}")
@@ -179,7 +177,11 @@ def _data_notes(value, ref, strip_added=False):
 
 def inventory():
     """Replay the maintained build for exact per-note phase provenance."""
-    corpus = doc_figures._Corpus()
+    # Replay the source build before note-content baking. Published files are
+    # outputs of these decisions, never inputs to their provenance validation.
+    from near_aleppo import main_build
+
+    corpus = doc_figures._Corpus(main_build.build(bake_notes=False)[0])
     index = json.loads(build_paths.aleppo_index().read_text(encoding="utf-8"))
     resolver, policies, readings = (
         phase2.Resolver(),
@@ -364,7 +366,10 @@ def _check_review(row):
 
 
 def recipes(ledger):
-    """Reviewed renderer recipes, rejecting conflicting dispositions for one input."""
+    """Validate consistent historical review dispositions for identical inputs.
+
+    This accounting runs during build validation; edition rendering never reads it.
+    """
     result, dispositions = {}, {}
     for row in ledger["notes"]:
         target = _sequence(row["near_target"])

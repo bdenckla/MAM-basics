@@ -119,12 +119,12 @@ def _run_near_aleppo_census():
 
 
 def _run_near_aleppo_build():
+    main_near_aleppo.almost_main(["--refresh-note-review"])
+    main_near_aleppo.almost_main(["--check-note-review"])
     main_near_aleppo.almost_main(["--build", "--refresh-expectations"])
 
 
 def _run_near_aleppo_html():
-    main_near_aleppo.almost_main(["--refresh-note-review"])
-    main_near_aleppo.almost_main(["--check-note-review"])
     main_near_aleppo.almost_main(["--html"])
 
 
@@ -719,12 +719,12 @@ _STEPS = [
     StepRecord(
         "near-aleppo-build",
         _run_near_aleppo_build,
-        "local MAM plus sealed pointings; writes out/near-aleppo/plus after the census",
+        "local MAM plus sealed pointings; validates every changed-note review before baking and writing out/near-aleppo/plus after the census",
     ),
     StepRecord(
         "near-aleppo-html",
         _run_near_aleppo_html,
-        "checks every changed-note presentation and MAM-mode equivalence; writes gh-pages/near-aleppo after the build",
+        "formats stored notes and checks MAM-mode equivalence; writes gh-pages/near-aleppo after the build",
     ),
     StepRecord(
         "pipeline-graph",

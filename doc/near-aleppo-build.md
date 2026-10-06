@@ -11,7 +11,7 @@ typography. Their own `style.css` adds the Hebrew examples, template notation
 and specialized tables; its source is `py/near_aleppo/doc_style.py`.
 
 The build resolves templates through a closed dispatch table. Each structure
-has explicitly selected Scripture fields; notes retain their original bodies,
+has explicitly selected Scripture fields; notes retain their original bodies until the final note-content phase,
 and unselected apparatus fields retain their documented roles. Unknown names
 and unexpected parameter sets fail before writing.
 
@@ -30,11 +30,17 @@ editorial choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
 accepts only its declared carrier and exact mark shape.
 
-The build preserves C and D columns, qeres, source note bodies, atom boundaries
+The build preserves C and D columns, qeres, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It
 copies the original MAM target into every changed note, then adds evidence flags
-and gives those notes distinct near-Aleppo names. Consumers can distinguish the
-dataset's Scripture from the preserved MAM apparatus subject.
+and gives those notes distinct near-Aleppo names. Its final phase stores the
+reviewed near-Aleppo clause in parameter 2 and the remaining original MAM
+clauses in `הערת מקרא על פי המסורה`. When the complete note remains about MAM,
+parameter 2 is an empty array and that added parameter preserves the original
+body. `מקרא על פי המסורה` is the original structured MAM target. Scroll-note
+parameter 3 and flags retain their existing roles. The template names are
+`נוסח עם הקשר מקרא על פי המסורה` and `הערה-2 עם הקשר מקרא על פי המסורה`.
+Consumers render these stored roles without editorial clause transformations.
 
 Five independent MAM instruments supply the mechanically refreshable population
 counts. The census checks clean tracked input identities before and after its
@@ -44,8 +50,12 @@ decisions. A changed source guard, population or presentation stops the build fo
 review rather than choosing a replacement.
 
 The presentation ledger contains the source evidence and substantive reviewed
-clause dispositions needed by the renderer. A fresh full-source enumeration must
-match all 1,548 changed-note entries. The shared renderer serves both MAM-with-doc
+clause dispositions used during the build. A fresh pre-bake source replay must
+match all 1,548 changed-note entries before any dataset file is written. Review
+provenance reads source inputs and never hashes published book files, avoiding
+an output dependency cycle. The maintained refresh command preserves reviews
+only when every row's evidence agrees. The edition renderer reads stored note
+roles from the book JSON without loading the ledger. The shared renderer serves both MAM-with-doc
 and near-Aleppo. Every near-Aleppo HTML run compares its MAM mode against 62
 independent tracked MAM-with-doc files at the public commit named in `edition.PIN`.
 Sealed Hebrew source strings retain their own codepoints; display projection

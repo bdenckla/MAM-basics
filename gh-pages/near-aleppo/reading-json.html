@@ -99,10 +99,12 @@ suspended letters, at 4, and for the large he of Deuteronomy 32:6, at 1, the cod
 </ul>
 <p>In <bdi lang="hbo" class="name">נוסח</bdi> and <bdi lang="hbo" class="name">מ:הערה-2</bdi>, the
 target is the first parameter. Templates within the target are evaluated away or kept unevaluated by
-the same rules as templates in the verse itself. The note body, the second parameter, is copied
-unchanged into the dataset, including any templates within it. Templates evaluated away in the verse
-remain unevaluated in the dataset's note body. This preserves MAM's quotations of readings from
-other editions. The HTML edition renders those retained templates when displaying the note.</p>
+the same rules as templates in the verse itself. Notes whose targets remain unchanged keep their
+source body in parameter 2. Changed notes store the reviewed near-Aleppo clause in parameter 2 and
+the remaining original clauses in their MAM-note parameter, including templates within them.
+Templates evaluated away in the verse remain unevaluated in those stored source clauses. This
+preserves MAM's quotations of readings from other editions. The HTML edition renders those retained
+templates when displaying the note.</p>
 <p>In the ketiv/qere templates in this list, templates within every parameter follow the verse's
 rules for evaluation or retention, including parameters for readings that near-Aleppo does not
 select.</p>
@@ -182,26 +184,30 @@ target have them.</p>
 does not tell the two apart. The note bodies, which near-Aleppo keeps verbatim, still have both
 templates.</p>
 <h3 id="own-templates">Templates specific to near-Aleppo</h3>
-<p>Near-Aleppo defines four added templates, which MAM's text never has. Each name is specific to
-the near-Aleppo dataset, and none has the prefix <bdi lang="hbo" class="name">מ:</bdi> that marks
-many of MAM's.</p>
-<p>Two are MAM's note templates under names specific to near-Aleppo. Where near-Aleppo's text of a
-note's target differs from MAM's, the preserved note body remains about MAM's text, and the note
-keeps MAM's target in an added parameter, <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi>. Such
-a note is renamed, so that a consumer who knows only MAM's templates fails on it rather than
-misreading it: a <bdi lang="hbo" class="name">נוסח</bdi> is named <bdi lang="hbo" class="name">נוסח
-למקרא על פי המסורה</bdi>, at 1,543 notes, and a <bdi lang="hbo" class="name">מ:הערה-2</bdi> is named
-<bdi lang="hbo" class="name">הערה-2 למקרא על פי המסורה</bdi>, at 5. Their other parameters are
-MAM's. So every template of MAM's that near-Aleppo has keeps MAM's meaning.</p>
-<p>The other two templates describe marks without a written letter. The first is supported; the
-second is defined but unused and unsupported. Their positions, accepted carrier forms, and display
-are explained in <a href="#gav-display">GAV notation and display</a>.</p>
+<p>Near-Aleppo uses three added templates, which MAM's text never has. Each name is specific to the
+near-Aleppo dataset, and none has the prefix <bdi lang="hbo" class="name">מ:</bdi> that marks many
+of MAM's.</p>
+<p>Two are MAM's note templates under names specific to near-Aleppo. Where near-Aleppo changes a
+note's target, the JSON dataset stores the reviewed near-Aleppo clause in parameter 2 and MAM's
+target in an added parameter, <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi>. The remaining
+original clauses are stored in <bdi lang="hbo" class="name">הערת מקרא על פי המסורה</bdi> and
+describe that MAM target. Such a note is renamed, so that a consumer who knows only MAM's templates
+fails on it rather than misreading it: a <bdi lang="hbo" class="name">נוסח</bdi> is named
+<bdi lang="hbo" class="name">נוסח עם הקשר מקרא על פי המסורה</bdi>, at 1,543 notes, and a
+<bdi lang="hbo" class="name">מ:הערה-2</bdi> is named <bdi lang="hbo" class="name">הערה-2 עם הקשר
+מקרא על פי המסורה</bdi>, at 5. Scroll-note parameter 3 and the evidence flags keep their existing
+roles. So every template of MAM's that near-Aleppo has keeps MAM's meaning.</p>
+<p>The stored near-Aleppo clause is already recast as an agreement with that form, retaining its
+explanations and qualifications. Where a recast would require uncertain interpretation, parameter 2
+is an empty array and the complete original note is stored in the MAM-note parameter. Consumers can
+render both note roles directly from the book JSON; no review-ledger lookup or clause transformation
+is required. The example HTML edition displays the near-Aleppo clause beside its form, then MAM's
+labelled form and the stored MAM clauses.</p>
+<p>The third template represents marks without a written letter. Its position, accepted carrier
+forms, and display are explained in <a href="#gav-display">GAV notation and display</a>.</p>
 <h3 id="gav-display">GAV notation and display</h3>
 <p>Position: the near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות</bdi> represents
-marks at a position of nonzero width; <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> is
-defined for a zero-width position at the join inside a maqaf compound. The names distinguish
-positions, not alef from vav. The build and example renderer support the first template. The second
-is unused and unsupported.</p>
+marks at a position of nonzero width. Its name describes the position, not the carrier letter.</p>
 <p>Carrier forms: the supported template accepts GA
 <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> or GV
 <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">וֹ</bdi>","carrier":"holam-male-vav"}</code>
@@ -293,8 +299,7 @@ space.</p>
 <a href="edition/FB-Nehemiah.html#c12v16">Nehemiah 12:16</a>;
 <a href="edition/FC-1Chronicles.html#c12v16">1 Chronicles 12:16</a>;
 <a href="edition/FD-2Chronicles.html#c9v29">2 Chronicles 9:29</a>,
-<a href="edition/FD-2Chronicles.html#c18v8">18:8</a>, inside the pointed ketivs. No occurrence uses
-the defined zero-width template.</p>
+<a href="edition/FD-2Chronicles.html#c18v8">18:8</a>, inside the pointed ketivs.</p>
 <p>The original GA example, at <a href="edition/C1-Isaiah.html#c36v12">Isaiah 36:12</a>, is
 <bdi lang="hbo" class="pointed">«אֵאֵ֥»</bdi>. Near-Aleppo encodes the bracketed alef carriers
 supplied in MAM's note; they are not written ketiv letters.</p>
@@ -320,16 +325,16 @@ role. A hypothetical letter-independent holam-male dot could make that intention
 yod. The mismatch concerns encoded meaning, not a general Unicode ban on nonstandard letter-mark
 sequences.</p>
 <h3 id="added-parameters">The parameters near-Aleppo adds</h3>
-<p>Near-Aleppo adds five parameters to templates. Four follow MAM's parameters, which remain as MAM
-has them; the fifth identifies the explicit GV variant of near-Aleppo's own orphan-mark
-template.</p>
+<p>Near-Aleppo adds six parameters to templates. Five accompany MAM's parameters; the sixth
+identifies the explicit GV variant of near-Aleppo's own orphan-mark template.</p>
 <p>The parameter <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi>, MAM's name for its text,
 holds MAM's target. Every note whose target near-Aleppo changes has it, and is renamed, as the
-previous subsection says: 1,548 notes. Every clause of such a note has MAM's text as its subject. A
-clause opening with <code>=</code>, which says that the sources it names agree with MAM, would
-otherwise seem to say that they agree with near-Aleppo's text. The parameter holds MAM-parsed-plus's
-target verbatim, templates included, so it has templates that occur nowhere else in near-Aleppo:
-<bdi lang="hbo" class="name">מ:קמץ</bdi>, <bdi lang="hbo" class="name">מ:דחי</bdi>,
+previous subsection says: 1,548 notes. The original clauses in <bdi lang="hbo" class="name">הערת
+מקרא על פי המסורה</bdi> have MAM's text as their subject. A clause opening with <code>=</code> in
+that parameter says that the sources it names agree with MAM. A clause opening with the same sign in
+parameter 2 instead describes agreement with near-Aleppo's target. The MAM-target parameter holds
+MAM-parsed-plus's target verbatim, templates included, so it has templates that occur nowhere else
+in near-Aleppo: <bdi lang="hbo" class="name">מ:קמץ</bdi>, <bdi lang="hbo" class="name">מ:דחי</bdi>,
 <bdi lang="hbo" class="name">מ:צינור</bdi>, and <bdi lang="hbo" class="name">מ:מקף אפור</bdi>.</p>
 <p>The two flags mark a reading of the codex that one of MAM's notes gives and that near-Aleppo
 treats specially. <code>applied-and-flagged</code> marks a reading near-Aleppo takes although the
@@ -360,9 +365,9 @@ MAM form:</p>
 </tr>
 </table>
 </div>
-<p>The flag value copies the original clause, including its exclamation mark. The complete MAM note
-remains unchanged in parameter 2. The edition may recast a matching clause as agreement with
-near-Aleppo, while retaining the remaining source clauses with MAM's target.</p>
+<p>The flag value copies the original clause, including its exclamation mark. Parameter 2 already
+contains the reviewed agreement with near-Aleppo. The remaining original clauses are stored
+separately with MAM's target.</p>
 <p>At <a href="edition/BC-1Kings.html#c20v29">1 Kings 20:29</a>, the
 <code>flagged-not-applied</code> value copies a doubt-marked clause. Near-Aleppo retains the
 target's maqaf and meteg; the alternative has a space and merkha:</p>
@@ -408,25 +413,27 @@ and choose a projection wherever the payload presents alternatives.</p>
 <ul>
 <li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
 fields, and fail on an unknown template instead of guessing from its parameters or skipping it.
-Beside MAM's templates, near-Aleppo defines four added templates: <bdi lang="hbo" class="name">נוסח
-למקרא על פי המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2 למקרא על פי המסורה</bdi>, which are
-MAM's <bdi lang="hbo" class="name">נוסח</bdi> and <bdi lang="hbo" class="name">מ:הערה-2</bdi> where
-near-Aleppo has changed the note's target, the note's clauses then being about MAM's text; and
-<bdi lang="hbo" class="name">ניקוד בלי אות</bdi> and <bdi lang="hbo" class="name">ניקוד בלי אות ובלי
-רווח</bdi>, which are the two defined templates for marks without a written letter. Their names
-distinguish a position of nonzero width from a zero-width position at the join inside a maqaf
-compound, not alef from vav. Only the first is supported by the build and example renderer; the
-second is defined, unused, and unsupported. The first accepts GA: one or more artificial alefs, each
-followed by permitted marks; or GV: parameter 1 exactly VAV + HOLAM, with carrier=holam-male-vav.
-Neither carrier permits a dagesh. Carrier letters are not written ketiv consonants. JSON stores the
-carrier payload; the example edition supplies guillemets, retaining an adopted GV as VAV + HOLAM.
-Converting it to ALEF + HOLAM loses the chosen holam-male distinction. Surrounding separators remain
-explicit; no automatic space is inserted.</li>
-<li>Near-Aleppo adds five parameters. Four are not Scripture: <bdi lang="hbo" class="name">מקרא על
-פי המסורה</bdi>, on the two renamed notes, holds MAM's target, which the note's clauses are about;
-and applied-and-flagged and flagged-not-applied, on a note or a ketiv/qere template, are apparatus;
-carrier, on the explicitly licensed orphan-mark variant, is semantic metadata identifying its
-artificial carrier. Use it to interpret the payload; do not collect it as Scripture text. The fifth,
+Beside MAM's templates, near-Aleppo uses three added templates: <bdi lang="hbo" class="name">נוסח עם
+הקשר מקרא על פי המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2 עם הקשר מקרא על פי
+המסורה</bdi>, which are MAM's <bdi lang="hbo" class="name">נוסח</bdi> and
+<bdi lang="hbo" class="name">מ:הערה-2</bdi> where near-Aleppo has changed the note's target. Their
+parameter 1 is near-Aleppo Scripture, and parameter 2 already contains the reviewed near-Aleppo
+clause, or an empty array when the complete original note remains in MAM context.
+<bdi lang="hbo" class="name">הערת מקרא על פי המסורה</bdi> holds the remaining original MAM clauses,
+in their original order, or that complete note. Consumers need no review ledger or editorial
+recasting to render these roles. The third added template is <bdi lang="hbo" class="name">ניקוד בלי
+אות</bdi>, which holds marks without a written letter at a position of nonzero width. It accepts GA:
+one or more artificial alefs, each followed by permitted marks; or GV: parameter 1 exactly VAV +
+HOLAM, with carrier=holam-male-vav. Neither carrier permits a dagesh. Carrier letters are not
+written ketiv consonants. JSON stores the carrier payload; the example edition supplies guillemets,
+retaining an adopted GV as VAV + HOLAM. Converting it to ALEF + HOLAM loses the chosen holam-male
+distinction. Surrounding separators remain explicit; no automatic space is inserted.</li>
+<li>Near-Aleppo adds six parameters. Five are not Scripture: <bdi lang="hbo" class="name">מקרא על פי
+המסורה</bdi>, on the two renamed notes, holds MAM's target; <bdi lang="hbo" class="name">הערת מקרא
+על פי המסורה</bdi> contains the source clauses about that target; and applied-and-flagged and
+flagged-not-applied, on a note or a ketiv/qere template, are apparatus; carrier, on the explicitly
+licensed orphan-mark variant, is semantic metadata identifying its artificial carrier. Use it to
+interpret the payload; do not collect it as Scripture text. The sixth,
 <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, on a ketiv/qere template, holds a pointed ketiv from
 MAM's notes or the approved frozen inference from MAM's ketiv and pointed qere, or an individually
 adjudicated codex reading, or a sealed reviewed portable decision, and is Scripture.</li>

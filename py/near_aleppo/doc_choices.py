@@ -194,7 +194,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks at a position of no width",
-        "Marks the codex has at a position of no width, at the join inside a maqaf compound, have a second template, `ניקוד בלי אות ובלי רווח`, specific to the near-Aleppo dataset, meant for 2 Samuel 18:20, which no site of near-Aleppo uses yet.",
+        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its intended use at 2 Samuel 18:20 remains pending.",
         ("A parameter of the one template",),
     ),
     Choice(
@@ -837,6 +837,22 @@ _CHOICES = (
         "Ben's GV extension of 2026-10-05 accepts the artificial VAV + HOLAM carrier tagged carrier=holam-male-vav in the template specific to the near-Aleppo dataset, `ניקוד בלי אות`. This records the chosen holam-male meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example edition displays it between double guillemets.",
         (
             "Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning",
+        ),
+    ),
+    Choice(
+        "2026-10-06",
+        _BEN,
+        "Where reviewed note transformations are stored",
+        "The book JSON contains the reviewed note transformations so that consumers need not repeat editorial transformations. Original source notes and review reasoning remain in their existing records.",
+        ("Leaving reviewed note transformations to each edition's renderer",),
+    ),
+    Choice(
+        "2026-10-06",
+        _EDITORIAL,
+        "The schema for stored near-Aleppo and MAM note roles",
+        "The earlier names `נוסח למקרא על פי המסורה` and `הערה-2 למקרא על פי המסורה` are replaced by `נוסח עם הקשר מקרא על פי המסורה` and `הערה-2 עם הקשר מקרא על פי המסורה`. Parameter 1 remains the near-Aleppo target; parameter 2 stores the reviewed near-Aleppo clause or an empty array. `מקרא על פי המסורה` preserves MAM's original structured target, and `הערת מקרא על פי המסורה` holds the remaining original clauses or complete source body. Scroll-note parameter 3 and flags keep their roles. Display formatting remains each edition's choice.",
+        (
+            "Keeping a template name whose contract described only MAM's original note body",
         ),
     ),
 )

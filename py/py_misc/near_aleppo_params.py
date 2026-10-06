@@ -1,7 +1,8 @@
 """Parameters and templates added by the near-Aleppo dataset.
 
 MAM's input does not contain these names. A renamed note keeps MAM's original
-target in MAM_TARGET, while its numbered parameters preserve the note's clauses.
+target in MAM_TARGET. Parameter 2 is the reviewed near-Aleppo clause; MAM_NOTE
+contains the remaining source clauses with their original MAM subject.
 POINTED_KETIV carries the pointed ketiv shown alongside MAM's pointed qere.
 FLAGS identify the edition's evidence clauses. MARKS_WITHOUT_LETTER explicitly
 identifies artificial carriers used for marks without a written consonant.
@@ -13,12 +14,13 @@ from mb_cmn import ws_tmpl2 as wtp
 from py_misc import orphan_marks
 
 MAM_TARGET = "מקרא על פי המסורה"
+MAM_NOTE = "הערת מקרא על פי המסורה"
 APPLIED_AND_FLAGGED = "applied-and-flagged"
 FLAGGED_NOT_APPLIED = "flagged-not-applied"
 FLAGS = (APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED)
 POINTED_KETIV = "כתיב מנוקד"
-RENAMED_DOC = "נוסח למקרא על פי המסורה"
-RENAMED_SCRDFFTAR = "הערה-2 למקרא על פי המסורה"
+RENAMED_DOC = "נוסח עם הקשר מקרא על פי המסורה"
+RENAMED_SCRDFFTAR = "הערה-2 עם הקשר מקרא על פי המסורה"
 MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
 
 # The render tags of the lines the edition adds to a note: a parameter's name, and a
@@ -61,18 +63,44 @@ def split_doc_params(tmpl):
 
     A note of MAM's text has two, its target and its body, and a note that
     MAM-with-doc's conversions make has more. The dataset adds the flags to either
-    name, and MAM_TARGET, which RENAMED_DOC always has and נוסח never does.
+    name. RENAMED_DOC additionally requires both MAM_TARGET and MAM_NOTE.
     """
     name = wtp.template_name(tmpl)
     keys = list(wtp.template_param_keys(tmpl))
     numbered = [key for key in keys if key.isdigit()]
     if numbered != [str(index) for index in range(1, 1 + len(numbered))]:
         raise ValueError(f"{name}: numbered parameters {numbered}")
-    added_keys = FLAGS + ((MAM_TARGET,) if name == RENAMED_DOC else ())
+    if name not in _DOC_NAMES:
+        raise ValueError(f"Unknown note template {name}")
+    added_keys = FLAGS + ((MAM_TARGET, MAM_NOTE) if name == RENAMED_DOC else ())
     mam, added = split_params(tmpl, numbered, added_keys)
-    if name == RENAMED_DOC and MAM_TARGET not in added:
-        raise ValueError(f"{name} without {MAM_TARGET}")
+    if name == RENAMED_DOC:
+        validate_baked_note(tmpl)
     return mam, added
+
+
+def validate_baked_note(tmpl):
+    """Validate the complete explicit parameter contract of either baked note."""
+    name = wtp.template_name(tmpl)
+    if name not in (RENAMED_DOC, RENAMED_SCRDFFTAR):
+        raise ValueError(f"Unknown baked note {name}")
+    keys = set(wtp.template_param_keys(tmpl))
+    numbered = {"1", "2", "3"} if name == RENAMED_SCRDFFTAR else {"1", "2"}
+    required = numbered | {MAM_TARGET, MAM_NOTE}
+    if (
+        not required <= keys
+        or keys - required - set(FLAGS)
+        or len(keys & set(FLAGS)) > 1
+    ):
+        raise ValueError(f"{name}: invalid parameters {sorted(keys)}")
+    params = tmpl["tmpl_params"]
+    if not (isinstance(params["2"], str) or params["2"] == []):
+        raise ValueError(f"{name}: near-Aleppo clause must be text or an empty array")
+    if name == RENAMED_SCRDFFTAR and params["3"] not in ("*אאא", "אאא*"):
+        raise ValueError(f"{name}: invalid scroll-note marker position")
+    for key in required | (keys & set(FLAGS)):
+        if not isinstance(params[key], (str, list, dict)):
+            raise ValueError(f"{name}: invalid content for {key}")
 
 
 def raw_params(tmpl, keys):

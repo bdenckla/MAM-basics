@@ -17,10 +17,12 @@ from near_aleppo.phase2_templates import POINTED_KETIV_PARAMETER
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 from near_aleppo.phase6_rename import RENAMED_NOTES
 from py_misc import orphan_marks
+from py_misc.near_aleppo_params import MAM_NOTE
 
-# Rule 8's template for marks at a position of no width, at the join inside a maqaf
-# compound, specific to the near-Aleppo dataset as its other template,
-# MARKS_WITHOUT_LETTER, is. No site uses it yet, so phase 2 has no rule for it.
+# Rule 8's planned template for marks at a position of no width, at the join inside
+# a maqaf compound, specific to the near-Aleppo dataset. The pending-work section
+# and original decision retain its name; the current consumer notice omits it.
+# No site uses it yet, so phase 2 has no rule for it.
 MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
 
 # The SHA-256 of MAM-parsed-plus's notice, serialized as a book file serializes it,
@@ -46,15 +48,17 @@ NOTICE = {
             "Use a closed, role-aware template dispatch: recurse only through "
             "documented Scripture-bearing fields, and fail on an unknown template "
             "instead of guessing from its parameters or skipping it. Beside MAM's "
-            f"templates, near-Aleppo defines four added templates: {_NOTE} and {_NOTE_2}, "
+            f"templates, near-Aleppo uses three added templates: {_NOTE} and {_NOTE_2}, "
             "which are MAM's נוסח and מ:הערה-2 where near-Aleppo has changed the "
-            "note's target, the note's clauses then being about MAM's text; and "
-            f"{MARKS_WITHOUT_LETTER} and {MARKS_WITHOUT_LETTER_OR_SPACE}, which "
-            "are the two defined templates for marks without a written letter. "
-            "Their names distinguish a position of nonzero width from a zero-width "
-            "position at the join inside a maqaf compound, not alef from vav. "
-            "Only the first is supported by the build and example renderer; "
-            "the second is defined, unused, and unsupported. The first accepts "
+            "note's target. Their parameter 1 is near-Aleppo Scripture, and "
+            "parameter 2 already contains the reviewed near-Aleppo clause, or an "
+            "empty array when the complete original note remains in MAM context. "
+            f"{MAM_NOTE} holds the remaining original MAM clauses, in their "
+            "original order, or that complete note. Consumers need no review "
+            "ledger or editorial recasting to render these roles. The third "
+            "added template is "
+            f"{MARKS_WITHOUT_LETTER}, which holds marks without a written letter "
+            "at a position of nonzero width. It accepts "
             "GA: one or more artificial alefs, each followed by permitted marks; "
             "or GV: parameter 1 exactly VAV + HOLAM, with "
             f"{orphan_marks.GV_PARAMETER}={orphan_marks.GV_VARIANT}. Neither carrier "
@@ -65,14 +69,15 @@ NOTICE = {
             "separators remain explicit; no automatic space is inserted."
         ),
         (
-            "Near-Aleppo adds five parameters. Four are not Scripture: "
+            "Near-Aleppo adds six parameters. Five are not Scripture: "
             f"{MAM_TARGET_PARAMETER}, on the two renamed notes, holds MAM's "
-            f"target, which the note's clauses are about; and {APPLIED_AND_FLAGGED} "
+            f"target; {MAM_NOTE} contains the source clauses about that target; "
+            f"and {APPLIED_AND_FLAGGED} "
             f"and {FLAGGED_NOT_APPLIED}, on a note or a ketiv/qere template, are "
             f"apparatus; {orphan_marks.GV_PARAMETER}, on the explicitly licensed "
             "orphan-mark variant, is semantic metadata identifying its artificial "
             "carrier. Use it to interpret the payload; do not collect it as "
-            "Scripture text. The fifth, "
+            "Scripture text. The sixth, "
             f"{POINTED_KETIV_PARAMETER}, on a ketiv/qere "
             "template, holds a pointed ketiv from MAM's notes or the approved "
             "frozen inference from MAM's ketiv and pointed qere, or an individually "

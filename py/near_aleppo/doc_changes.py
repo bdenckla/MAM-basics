@@ -218,10 +218,12 @@ def _templates(numbers):
                 he_name("מ:הערה-2"),
                 ", the target is the first parameter. Templates within the target "
                 "are evaluated away or kept unevaluated by the same rules as templates "
-                "in the verse itself. The note body, the second parameter, is copied "
-                "unchanged into the dataset, including any templates within it. "
+                "in the verse itself. Notes whose targets remain unchanged keep "
+                "their source body in parameter 2. Changed notes store the reviewed "
+                "near-Aleppo clause in parameter 2 and the remaining original "
+                "clauses in their MAM-note parameter, including templates within them. "
                 "Templates evaluated away in the verse remain unevaluated "
-                "in the dataset's note body. This preserves MAM's quotations of "
+                "in those stored source clauses. This preserves MAM's quotations of "
                 "readings from other editions. The HTML edition renders those retained "
                 "templates when displaying the note.",
             ]

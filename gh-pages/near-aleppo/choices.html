@@ -164,10 +164,10 @@ says that they are specific to the near-Aleppo dataset.</td>
 <td>The <bdi lang="hbo" class="name">מ:</bdi> prefix that MAM's templates have</td>
 </tr>
 <tr>
-<td><b>Marks at a position of no width.</b> Marks the codex has at a position of no width, at the
-join inside a maqaf compound, have a second template, <bdi lang="hbo" class="name">ניקוד בלי אות
-ובלי רווח</bdi>, specific to the near-Aleppo dataset, meant for 2 Samuel 18:20, which no site of
-near-Aleppo uses yet.</td>
+<td><b>Marks at a position of no width.</b> The decision reserves the name
+<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> for a planned template specific to
+near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf
+compound. Its intended use at 2 Samuel 18:20 remains pending.</td>
 <td>A parameter of the one template</td>
 </tr>
 <tr>
@@ -775,6 +775,24 @@ dataset, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>. This recor
 meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example
 edition displays it between double guillemets.</td>
 <td>Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning</td>
+</tr>
+<tr>
+<td><b>Where reviewed note transformations are stored.</b> The book JSON contains the reviewed note
+transformations so that consumers need not repeat editorial transformations. Original source notes
+and review reasoning remain in their existing records.</td>
+<td>Leaving reviewed note transformations to each edition's renderer</td>
+</tr>
+<tr>
+<td><b>The schema for stored near-Aleppo and MAM note roles.</b> The earlier names
+<bdi lang="hbo" class="name">נוסח למקרא על פי המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2
+למקרא על פי המסורה</bdi> are replaced by <bdi lang="hbo" class="name">נוסח עם הקשר מקרא על פי
+המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2 עם הקשר מקרא על פי המסורה</bdi>. Parameter 1
+remains the near-Aleppo target; parameter 2 stores the reviewed near-Aleppo clause or an empty
+array. <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi> preserves MAM's original structured
+target, and <bdi lang="hbo" class="name">הערת מקרא על פי המסורה</bdi> holds the remaining original
+clauses or complete source body. Scroll-note parameter 3 and flags keep their roles. Display
+formatting remains each edition's choice.</td>
+<td>Keeping a template name whose contract described only MAM's original note body</td>
 </tr>
 </table>
 </div>

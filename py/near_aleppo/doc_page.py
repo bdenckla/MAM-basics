@@ -35,6 +35,7 @@ from near_aleppo.phase3_policies import _clauses
 from near_aleppo.phase6_flags import _MAQAF_SILENCE
 from near_aleppo.phase6_flags import _QERE_SILENCE
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
+from py_misc import near_aleppo_params as nap
 from near_aleppo.phase6_rename import RENAMED_NOTES
 
 TITLE = "The near-Aleppo dataset"
@@ -92,7 +93,12 @@ def page(numbers):
         mb_html.heading_level_1(TITLE),
         mb_html.para(
             [
-                "The near-Aleppo dataset is similar to MAM-parsed-plus (mpplus). "
+                "The ",
+                link(
+                    "near-Aleppo dataset",
+                    "https://github.com/bdenckla/MAM-basics/tree/main/out/near-aleppo/",
+                ),
+                " is similar to MAM-parsed-plus (mpplus). "
                 "This page describes what near-Aleppo changes relative "
                 "to mpplus. For what is in common with mpplus, see ",
                 link("the documentation for mpplus", MPPLUS_DOC),
@@ -215,7 +221,11 @@ def _what(numbers):
                 "Near-Aleppo is ",
                 numbers.fig("dataset_files"),
                 " JSON files in this repository's ",
-                link(code("near-aleppo/out/plus/"), "../out/plus/"),
+                link(
+                    code("out/near-aleppo/plus/"),
+                    "https://github.com/bdenckla/MAM-basics/tree/main/"
+                    "out/near-aleppo/plus/",
+                ),
                 ", one for each of MAM-parsed-plus's book files, in its layout and "
                 "its serialization. Of its ",
                 numbers.fig("verses"),
@@ -237,15 +247,6 @@ def _what(numbers):
                 " to show one kind of human-readable edition that can be made "
                 "from near-Aleppo.",
             ]
-        ),
-        mb_html.para(
-            "The example edition places MAM's notes beside each book's text. "
-            "Where a note's target differs, a reviewed source clause can follow "
-            "near-Aleppo's form, with its explanations and qualifications. "
-            "MAM's labelled form introduces the remaining original clauses. "
-            "Where a recast would require uncertain interpretation, the complete "
-            "original note follows MAM's labelled form. This applies in surviving "
-            "and missing sections alike."
         ),
     ]
 
@@ -271,7 +272,11 @@ def _note_example():
     params = []
     for directory, name, keys in (
         (build_paths.mam_parsed_plus_dir(), "נוסח", {"1", "2"}),
-        (build_paths.dataset_dir(), _NOTE, {"1", "2", MAM_TARGET_PARAMETER}),
+        (
+            build_paths.dataset_dir(),
+            _NOTE,
+            {"1", "2", MAM_TARGET_PARAMETER, nap.MAM_NOTE},
+        ),
     ):
         with (directory / "C1-Isaiah.json").open(encoding="utf-8") as stream:
             book = json.load(stream)
@@ -291,8 +296,8 @@ def _note_example():
         raise AssertionError("Isaiah 27:5 example targets must be strings")
     if mam["1"] != "בְּמָעוּזִּ֔י" or data[MAM_TARGET_PARAMETER] != mam["1"]:
         raise AssertionError("Isaiah 27:5 example must preserve the MAM target")
-    if data["2"] != mam["2"]:
-        raise AssertionError("Isaiah 27:5 example must preserve the MAM note body")
+    if data["2"] != '=א (חסר דגש באות זי"ן)':
+        raise AssertionError("Isaiah 27:5 example must contain the reviewed agreement")
     aleppo_clause = f'א={data["1"]} (חסר דגש באות זי"ן)'
     if aleppo_clause not in _clauses(mam["2"], ref):
         raise AssertionError(
@@ -395,7 +400,7 @@ def _own_templates(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo defines four added templates, which MAM's text never "
+                "Near-Aleppo uses three added templates, which MAM's text never "
                 "has. Each name is specific to the near-Aleppo dataset, and none has "
                 "the prefix ",
                 he_name("מ:"),
@@ -405,11 +410,14 @@ def _own_templates(numbers):
         mb_html.para(
             [
                 "Two are MAM's note templates under names specific to near-Aleppo. "
-                "Where near-Aleppo's text of a note's target differs from MAM's, the "
-                "preserved note body remains about MAM's text, and the note "
-                "keeps MAM's target in an added parameter, ",
+                "Where near-Aleppo changes a note's target, the JSON dataset stores "
+                "the reviewed near-Aleppo clause in parameter 2 and MAM's target in an "
+                "added parameter, ",
                 he_name(MAM_TARGET_PARAMETER),
-                ". Such a note is renamed, so that a consumer who knows only MAM's "
+                ". The remaining original clauses are stored in ",
+                he_name(nap.MAM_NOTE),
+                " and describe that MAM target. Such a "
+                "note is renamed, so that a consumer who knows only MAM's "
                 "templates fails on it rather than misreading it: a ",
                 he_name("נוסח"),
                 " is named ",
@@ -422,15 +430,26 @@ def _own_templates(numbers):
                 he_name(_NOTE_2),
                 ", at ",
                 numbers.snap("phase6_counts", "מ:הערה-2: notes given MAM's target"),
-                ". Their other parameters are MAM's. So every template of MAM's "
+                ". Scroll-note parameter 3 and the evidence flags keep their "
+                "existing roles. So every template of MAM's "
                 "that near-Aleppo has keeps MAM's meaning.",
             ]
         ),
         mb_html.para(
+            "The stored near-Aleppo clause is already recast "
+            "as an agreement with that form, retaining its explanations and "
+            "qualifications. Where a recast would require uncertain interpretation, "
+            "parameter 2 is an empty array and the complete original note is "
+            "stored in the MAM-note parameter. Consumers can render both note "
+            "roles directly from the book JSON; no review-ledger lookup or "
+            "clause transformation is required. The example HTML edition displays "
+            "the near-Aleppo clause beside its form, then MAM's labelled form and "
+            "the stored MAM clauses."
+        ),
+        mb_html.para(
             [
-                "The other two templates describe marks without a written letter. "
-                "The first is supported; the second is defined but unused and "
-                "unsupported. Their positions, accepted carrier forms, and display "
+                "The third template represents marks without a written letter. "
+                "Its position, accepted carrier forms, and display "
                 "are explained in ",
                 link("GAV notation and display", "#gav-display"),
                 ".",
@@ -452,12 +471,8 @@ def _gav_display(numbers):
             [
                 "Position: the near-Aleppo dataset's ",
                 he_name(MARKS_WITHOUT_LETTER),
-                " represents marks at a position of nonzero width; ",
-                he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                " is defined for a zero-width position at the join inside a maqaf "
-                "compound. The names distinguish positions, not alef from vav. "
-                "The build and example renderer support the first template. "
-                "The second is unused and unsupported.",
+                " represents marks at a position of nonzero width. Its name "
+                "describes the position, not the carrier letter.",
             ]
         ),
         mb_html.para(
@@ -501,8 +516,7 @@ def _gav_display(numbers):
             [
                 "The supported nonzero-width template occurs at ",
                 verse_refs(first),
-                ", inside the pointed ketivs. No occurrence uses the defined "
-                "zero-width template.",
+                ", inside the pointed ketivs.",
             ]
         ),
         mb_html.para(
@@ -571,8 +585,8 @@ def _added_parameters(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo adds five parameters to templates. Four follow MAM's "
-                "parameters, which remain as MAM has them; the fifth identifies "
+                "Near-Aleppo adds six parameters to templates. Five accompany MAM's "
+                "parameters; the sixth identifies "
                 "the explicit GV variant of near-Aleppo's own orphan-mark template.",
             ]
         ),
@@ -593,11 +607,13 @@ def _added_parameters(numbers):
                     "phase6_counts: the sum of the two counts of notes given MAM's "
                     "target",
                 ),
-                " notes. Every clause of such a note has MAM's text as its subject. "
-                "A clause opening with ",
+                " notes. The original clauses in ",
+                he_name(nap.MAM_NOTE),
+                " have MAM's text as their subject. " "A clause opening with ",
                 code("="),
-                ", which says that the sources it names agree with MAM, would "
-                "otherwise seem to say that they agree with near-Aleppo's text. The "
+                " in that parameter says that the sources it names agree with MAM. "
+                "A clause opening with the same sign in parameter 2 instead "
+                "describes agreement with near-Aleppo's target. The MAM-target "
                 "parameter holds MAM-parsed-plus's target verbatim, templates "
                 "included, so it has templates that occur nowhere else in "
                 "near-Aleppo: ",
