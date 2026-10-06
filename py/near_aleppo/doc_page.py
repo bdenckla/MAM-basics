@@ -92,7 +92,12 @@ def page(numbers):
         mb_html.heading_level_1(TITLE),
         mb_html.para(
             [
-                "The near-Aleppo dataset is similar to MAM-parsed-plus (mpplus). "
+                "The ",
+                link(
+                    "near-Aleppo dataset",
+                    "https://github.com/bdenckla/MAM-basics/tree/main/out/near-aleppo/",
+                ),
+                " is similar to MAM-parsed-plus (mpplus). "
                 "This page describes what near-Aleppo changes relative "
                 "to mpplus. For what is in common with mpplus, see ",
                 link("the documentation for mpplus", MPPLUS_DOC),
