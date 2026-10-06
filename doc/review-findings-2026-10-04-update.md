@@ -345,5 +345,25 @@ No item names these, so this work left them as they are.
 
 **Effective base State, 2026-10-05:** partly acted on. The items that needed no decision were fixed
 and pushed to `origin/main`, at `379f046a`, on 2026-10-05, as listed above; every item marked
-"awaiting Ben's decision" remains for him. The base report's line 3 stays as written. This update remains `State: open` while its base
-survives.
+"awaiting Ben's decision" remains for him. The base report's line 3 stays as written. This update
+remains `State: open` while its base survives.
+
+## A noticed item withdrawn: the qere-first order is MAM's own, 2026-10-05
+
+Recorded by Claude Opus 5.5 on 2026-10-05, New York time, in the session that wrote the entry
+above. **Withdrawn: item 3 of that entry's "Noticed while fixing, not acted on" reports no
+defect.** Ben asked of it the same day: "Who said that's an error? Trace back to the source
+templates and I think you'll see that a separate template is used for that ordering, which for
+those particular words is viewed as better than the standard k-then-q ordering."
+
+Traced: the 1,047 `kq` elements of `MAM-simple/json-vtrad-mam/` correspond, verse by verse and in
+order, to the 1,047 ketiv/qere templates in the E column of `MAM-parsed/plus/`: 884 `כו״ק`, 126
+`קו״כ` and 37 `מ:כו״ק מיוחד`. The 129 elements that list `kq-q` first are the 126 `קו״כ` and the
+three `מ:כו״ק מיוחד` whose `סוג` names a qere-first type: at 2 Kings 18:27 and Isaiah 36:12,
+`קו"כ קרי שונה מהכתיב בשתי מילים`, and at Nehemiah 2:13, `קו"כ כתיב מילה חדה וקרי תרתין מילין`.
+`py/mb_cmn/template_names.py` records that `קו״כ`'s arguments are in ketiv/qere order but are
+rendered qere first, and `py/render_wt/render_wikitext_kq.py`'s `_PUT_KETIV_1ST` carries that order
+into MAM-simple. So the order is MAM's choice of template for those words, which by Ben's account
+is viewed as better there than the standard ketiv-then-qere order. The item repeated a read-only
+sub-agent's reading, that a consumer relying on the children's position would swap them, without
+this trace.
