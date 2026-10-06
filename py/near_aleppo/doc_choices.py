@@ -194,7 +194,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks at a position of no width",
-        "Marks the codex has at a position of no width, at the join inside a maqaf compound, have a second template, `ניקוד בלי אות ובלי רווח`, specific to the near-Aleppo dataset, meant for 2 Samuel 18:20, which no site of near-Aleppo uses yet.",
+        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its intended use at 2 Samuel 18:20 remains pending.",
         ("A parameter of the one template",),
     ),
     Choice(

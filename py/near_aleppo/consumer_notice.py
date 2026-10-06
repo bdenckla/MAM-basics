@@ -18,9 +18,10 @@ from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 from near_aleppo.phase6_rename import RENAMED_NOTES
 from py_misc import orphan_marks
 
-# Rule 8's template for marks at a position of no width, at the join inside a maqaf
-# compound, specific to the near-Aleppo dataset as its other template,
-# MARKS_WITHOUT_LETTER, is. No site uses it yet, so phase 2 has no rule for it.
+# Rule 8's planned template for marks at a position of no width, at the join inside
+# a maqaf compound, specific to the near-Aleppo dataset. The pending-work section
+# and original decision retain its name; the current consumer notice omits it.
+# No site uses it yet, so phase 2 has no rule for it.
 MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
 
 # The SHA-256 of MAM-parsed-plus's notice, serialized as a book file serializes it,
@@ -46,15 +47,11 @@ NOTICE = {
             "Use a closed, role-aware template dispatch: recurse only through "
             "documented Scripture-bearing fields, and fail on an unknown template "
             "instead of guessing from its parameters or skipping it. Beside MAM's "
-            f"templates, near-Aleppo defines four added templates: {_NOTE} and {_NOTE_2}, "
+            f"templates, near-Aleppo uses three added templates: {_NOTE} and {_NOTE_2}, "
             "which are MAM's נוסח and מ:הערה-2 where near-Aleppo has changed the "
             "note's target, the note's clauses then being about MAM's text; and "
-            f"{MARKS_WITHOUT_LETTER} and {MARKS_WITHOUT_LETTER_OR_SPACE}, which "
-            "are the two defined templates for marks without a written letter. "
-            "Their names distinguish a position of nonzero width from a zero-width "
-            "position at the join inside a maqaf compound, not alef from vav. "
-            "Only the first is supported by the build and example renderer; "
-            "the second is defined, unused, and unsupported. The first accepts "
+            f"{MARKS_WITHOUT_LETTER}, which holds marks without a written letter "
+            "at a position of nonzero width. It accepts "
             "GA: one or more artificial alefs, each followed by permitted marks; "
             "or GV: parameter 1 exactly VAV + HOLAM, with "
             f"{orphan_marks.GV_PARAMETER}={orphan_marks.GV_VARIANT}. Neither carrier "

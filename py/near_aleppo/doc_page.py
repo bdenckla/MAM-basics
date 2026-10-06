@@ -395,7 +395,7 @@ def _own_templates(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo defines four added templates, which MAM's text never "
+                "Near-Aleppo uses three added templates, which MAM's text never "
                 "has. Each name is specific to the near-Aleppo dataset, and none has "
                 "the prefix ",
                 he_name("מ:"),
@@ -437,9 +437,8 @@ def _own_templates(numbers):
         ),
         mb_html.para(
             [
-                "The other two templates describe marks without a written letter. "
-                "The first is supported; the second is defined but unused and "
-                "unsupported. Their positions, accepted carrier forms, and display "
+                "The third template represents marks without a written letter. "
+                "Its position, accepted carrier forms, and display "
                 "are explained in ",
                 link("GAV notation and display", "#gav-display"),
                 ".",
@@ -461,12 +460,8 @@ def _gav_display(numbers):
             [
                 "Position: the near-Aleppo dataset's ",
                 he_name(MARKS_WITHOUT_LETTER),
-                " represents marks at a position of nonzero width; ",
-                he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                " is defined for a zero-width position at the join inside a maqaf "
-                "compound. The names distinguish positions, not alef from vav. "
-                "The build and example renderer support the first template. "
-                "The second is unused and unsupported.",
+                " represents marks at a position of nonzero width. Its name "
+                "describes the position, not the carrier letter.",
             ]
         ),
         mb_html.para(
@@ -510,8 +505,7 @@ def _gav_display(numbers):
             [
                 "The supported nonzero-width template occurs at ",
                 verse_refs(first),
-                ", inside the pointed ketivs. No occurrence uses the defined "
-                "zero-width template.",
+                ", inside the pointed ketivs.",
             ]
         ),
         mb_html.para(

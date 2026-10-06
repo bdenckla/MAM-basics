@@ -301,11 +301,14 @@ def _pending(numbers):
                     he_name("קרי ולא כתיב"),
                     ", at ",
                     numbers.snap(_P2, "קרי ולא כתיב"),
-                    " sites, it is MAM's pointed qere, where the codex writes nothing, "
-                    "or, at 2 Samuel 18:20, the marks alone, between two words of a "
-                    "maqaf compound, for which the near-Aleppo dataset has an added template ",
+                    " sites, near-Aleppo still displays MAM's pointed qere. "
+                    "The planned body text is empty where no letters or marks are "
+                    "written. At 2 Samuel 18:20, MAM's note records tsere and merkha "
+                    "without letters or space, at the join inside a maqaf compound. "
+                    "A planned template specific to near-Aleppo, ",
                     he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                    ", unused as yet.",
+                    ", would represent those marks. The build and example renderer "
+                    "do not yet implement it.",
                 ],
                 [
                     "The readings of the codex that wait for that work: ",

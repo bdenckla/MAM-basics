@@ -40,3 +40,41 @@ clauses with MAM's labelled form. Genesis 1:1 in `out/near-aleppo/plus/A1-Genesi
 
 The mega and full suite were skipped because the change clarifies rendered prose without
 changing data or rendering logic.
+
+## Annotation 1 — Planned template for marks without letters or space
+
+**Status:** implemented by Codex, 2026-10-06; approved by Ben on the same date.
+
+**Authorized scope:** Ben asked Codex to implement its recommendation to retain the original
+decision and one concrete explanation under pending work, while removing the planned template
+`ניקוד בלי אות ובלי רווח` from instructions for consuming the current dataset. Describe it as
+a planned template for an outstanding case. The execution baseline is MAM-basics `a287e556`;
+the source, development and integration checkout is `C:/Users/BenDe/GitRepos/MAM-basics`.
+
+**Expected changes:** Update the shared consumer notice and generated JSON headers, the JSON
+reference, the decision record, and the pending-work section. Refresh the presentation ledger's
+input hashes through the maintained command. Scripture, note bodies, reviewed note dispositions,
+sealed pointing inputs and example edition book pages must remain unchanged. Codex owns
+verification, the commit and the normal push of `main`.
+
+**Change:** The JSON reference and all 24 book notices now describe the three templates the
+dataset uses. The original decision describes the reserved name as a planned template. The
+pending-work section explains the intended use at 2 Samuel 18:20: MAM's note records tsere and
+merkha without letters or space at the join inside a maqaf compound, while the current edition
+still displays the full qere. The build and renderer still await that implementation.
+
+**Verification:** Black passed on the four changed Python files. The dataset rebuild and
+HTML regeneration passed, including the shared renderer's comparison against the 62 pinned
+MAM-with-doc files. A comparison against `a287e556` verified that all 24 dataset changes are
+confined to consumer notices; all 1,548 presentation-ledger entries are unchanged; and only
+the ledger's 24 near-Aleppo input hashes changed. The only changed generated pages are
+`reading-json.html`, `choices.html` and `coverage-and-status.html`. The planned template has
+no mention in the JSON reference or book notices and one mention each in the decision record
+and pending-work section. `git diff --check` passed.
+
+The full suite, `./.venv/Scripts/python.exe py/main_test.py -q`, passed: 1,051 tests and
+60 subtests passed, with 5 skips and one warning about permission to write pytest's cache.
+
+The mega is skipped because the change is confined to near-Aleppo documentation and consumer
+notice strings. The affected generator outputs were regenerated and inspected; build and
+rendering algorithms did not change.
