@@ -67,7 +67,7 @@ def at_path(value, path):
 
 
 def validate_value(value):
-    """Runtime values are text or existing orphan templates, with no metadata."""
+    """Runtime values are text or existing orphan templates, with no provenance metadata."""
     parts = value if isinstance(value, list) else [value]
     if not parts:
         raise ValueError("Empty pointing payload")

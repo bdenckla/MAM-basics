@@ -146,12 +146,13 @@ def _edition_index(edition, css_hrefs):
                 " or ",
                 _english(phase2.FLAGGED_NOT_APPLIED),
                 " gives one of near-Aleppo's flags. Vowels and accents that the codex "
-                "writes under no letter are shown on artificial alefs, or an "
-                "explicitly licensed VAV + HOLAM carrier, between double guillemets. "
-                "The carriers are not written ketiv consonants. See ",
+                "writes under no letter have GA artificial alef carriers or the "
+                "GV artificial VAV + HOLAM carrier. The edition displays both "
+                "between double guillemets, retaining their stored carrier meaning. "
+                "The carriers are not written ketiv letters. See ",
                 mb_html.anchor_h(
                     "GAV notation and display in practice",
-                    "../ketiv-qere-mobile-he.html#gav-display",
+                    "../reading-json.html#gav-display",
                 ),
                 " for other editions' display options. Every paseq glyph is shown as "
                 "MAM-with-doc shows a legarmeh, a thin space and then the glyph, since "

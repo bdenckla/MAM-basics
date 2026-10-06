@@ -19,6 +19,7 @@ from near_aleppo.doc_html import code
 from near_aleppo.doc_html import english_book
 from near_aleppo.doc_html import he_name
 from near_aleppo.doc_html import he_display
+from near_aleppo.doc_html import he_pointed
 from near_aleppo.doc_html import isolated
 from near_aleppo.doc_html import link
 from near_aleppo.doc_html import table
@@ -66,13 +67,14 @@ WHAT = ("what-the-dataset-is", "What near-Aleppo is")
 READING = ("reading-the-json", "How to read the JSON")
 NOTICE = ("consumer-notice", "Notes for applications")
 OWN_TEMPLATES = ("own-templates", "Templates specific to near-Aleppo")
+GAV = ("gav-display", "GAV notation and display")
 ADDED = ("added-parameters", "The parameters near-Aleppo adds")
 CHARACTERS = ("characters", "A character MAM-parsed-plus has only in a note body")
 SURVIVES = ("where-the-codex-survives", "Where the codex survives")
 
 _SECTIONS = (
     (WHAT, ()),
-    (READING, (OWN_TEMPLATES, ADDED, CHARACTERS, NOTICE)),
+    (READING, (OWN_TEMPLATES, GAV, ADDED, CHARACTERS, NOTICE)),
     (SURVIVES, ()),
     (doc_changes.SECTION, doc_changes.SUBSECTIONS),
     (doc_registers.KEPT, ()),
@@ -357,6 +359,8 @@ def _reading(numbers):
         ),
         subsection_heading(OWN_TEMPLATES),
         *_own_templates(numbers),
+        subsection_heading(GAV),
+        *_gav_display(numbers),
         subsection_heading(ADDED),
         *_added_parameters(numbers),
         subsection_heading(CHARACTERS),
@@ -388,18 +392,10 @@ def _reading(numbers):
 
 
 def _own_templates(numbers):
-    rule8 = numbers.fig_value("rule8_sites")
-    first = rule8[MARKS_WITHOUT_LETTER]
-    second = rule8[consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE]
-    if not first or second:
-        raise AssertionError(
-            "the page says that the first of the near-Aleppo dataset's rule-8 templates is used and the "
-            "second is not"
-        )
     return [
         mb_html.para(
             [
-                "Near-Aleppo has four added templates, which MAM's text never "
+                "Near-Aleppo defines four added templates, which MAM's text never "
                 "has. Each name is specific to the near-Aleppo dataset, and none has "
                 "the prefix ",
                 he_name("מ:"),
@@ -432,30 +428,131 @@ def _own_templates(numbers):
         ),
         mb_html.para(
             [
-                "The other two hold marks that the codex writes where no letter is "
-                "written: ",
+                "The other two templates describe marks without a written letter. "
+                "The first is supported; the second is defined but unused and "
+                "unsupported. Their positions, accepted carrier forms, and display "
+                "are explained in ",
+                link("GAV notation and display", "#gav-display"),
+                ".",
+            ]
+        ),
+    ]
+
+
+def _gav_display(numbers):
+    rule8 = numbers.fig_value("rule8_sites")
+    first = rule8[MARKS_WITHOUT_LETTER]
+    second = rule8[consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE]
+    if not first or second:
+        raise AssertionError(
+            "Only the supported nonzero-width orphan template has occurrences"
+        )
+    return [
+        mb_html.para(
+            [
+                "Position: the near-Aleppo dataset's ",
                 he_name(MARKS_WITHOUT_LETTER),
-                ", for marks standing in a space of some width, and ",
+                " represents marks at a position of nonzero width; ",
                 he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                ", for marks at a position of no width, at the join inside a maqaf "
-                "compound. Each original shape has one parameter, a string of alefs each followed by "
-                "the marks the codex writes there, the alef being only a carrier, "
-                "which never has a dagesh. The first is used at ",
-                verse_refs(first),
-                ", inside the pointed ketivs there. The first also has an explicit "
-                "carrier=holam-male-vav variant whose parameter 1 is exactly VAV + "
-                "HOLAM, an artificial GV carrier; no site uses the second template yet.",
+                " is defined for a zero-width position at the join inside a maqaf "
+                "compound. The names distinguish positions, not alef from vav. "
+                "The build and example renderer support the first template. "
+                "The second is unused and unsupported.",
             ]
         ),
         mb_html.para(
             [
-                "The alefs and the explicitly licensed vav are raw-data carriers. ",
-                link(
-                    "GAV notation and display in practice",
-                    "ketiv-qere-mobile-he.html#gav-display",
+                "Carrier forms: the supported template accepts GA ",
+                mb_html.code(['{"1":"', he_pointed("אֵ"), '"}'], {"dir": "ltr"}),
+                " or GV ",
+                mb_html.code(
+                    ['{"1":"', he_pointed("וֹ"), '","carrier":"holam-male-vav"}'],
+                    {"dir": "ltr"},
                 ),
-                " explains the artificial alef/vav display carriers and how an "
-                "edition can display orphan marks while preserving their semantics.",
+                " as its ",
+                code("tmpl_params"),
+                ". GA permits one or more artificial alefs, each followed by "
+                "permitted marks. GV requires exactly VAV + HOLAM and the ",
+                code("carrier=holam-male-vav"),
+                " discriminator. Neither carrier permits a dagesh. The ",
+                code("carrier"),
+                " parameter is semantic metadata; it identifies the holam-male "
+                "carrier and is not Scripture text.",
+            ]
+        ),
+        mb_html.para(
+            [
+                "Display: GAV (guillemet-alef-vav) notation identifies artificial "
+                "carriers, which are not written ketiv letters. JSON stores the "
+                "template payload; the example edition supplies guillemets, as in ",
+                he_pointed("«אֵ»"),
+                " and ",
+                he_pointed("«וֹ»"),
+                ". An adopted GV retains ",
+                he_pointed("«וֹ»"),
+                "; converting it to ",
+                he_pointed("«אֹ»"),
+                " loses the chosen holam-male distinction. Surrounding separators "
+                "remain explicit strings or whitespace templates; an orphan "
+                "template inserts no automatic space.",
+            ]
+        ),
+        mb_html.para(
+            [
+                "The supported nonzero-width template occurs at ",
+                verse_refs(first),
+                ", inside the pointed ketivs. No occurrence uses the defined "
+                "zero-width template.",
+            ]
+        ),
+        mb_html.para(
+            [
+                "The original GA example, at ",
+                *verse_refs((("C1-Isaiah", "36", "12"),)),
+                ", is ",
+                he_pointed("«אֵאֵ֥»"),
+                ". Near-Aleppo encodes the bracketed alef carriers supplied in "
+                "MAM's note; they are not written ketiv letters.",
+            ]
+        ),
+        mb_html.para(
+            "For an orphan holam associated with a qere vav where the ketiv has "
+            "yod, an edition can choose among these display options:"
+        ),
+        mb_html.unordered_list(
+            [
+                "Show GAV directly, retaining the GV carrier before the ketiv yod.",
+                "Collapse the holam backwards onto the consonant before the ketiv yod.",
+                "Attach U+05B9 HEBREW POINT HOLAM to the ketiv yod as a rendering "
+                "accommodation, without asserting that the yod owns the mark.",
+            ]
+        ),
+        mb_html.para(
+            "These display accommodations preserve the stored carrier meaning. "
+            "Their visual acceptability depends on the "
+            "font and rendering system. Prepared markup could let CSS select "
+            "among display forms or position the dot. CSS alone does not reorder "
+            "the Unicode text, and hiding a carrier does not reliably reattach "
+            "its combining mark to another letter."
+        ),
+        mb_html.para(
+            [
+                "Unicode's ",
+                link(
+                    "Hebrew specification, “Holam Male and Holam Haser”",
+                    "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-9/",
+                ),
+                " uses U+05B9 for holam male on vav when the distinction is made. "
+                "U+05BA HEBREW POINT HOLAM HASER FOR VAV distinguishes holam on "
+                "consonantal vav; its use on other base letters is undefined. "
+                "U+05B9 is also the ordinary holam on other letters. Unicode thus "
+                "has no separate, letter-independent holam-male dot that would "
+                "express the qere-vav role when attached to ketiv yod. Applying "
+                "U+05B9 to yod can display the dot, but does not encode that role. "
+                "A hypothetical letter-independent holam-male dot could make "
+                "that intention explicit even on yod. The mismatch concerns "
+                "encoded meaning, not a general Unicode ban on nonstandard "
+                "letter-mark sequences.",
             ]
         ),
     ]

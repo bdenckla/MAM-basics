@@ -4,6 +4,7 @@
   "reading-the-json": "reading-json.html#reading-the-json",
   "templates": "reading-json.html#templates",
   "own-templates": "reading-json.html#own-templates",
+  "gav-display": "reading-json.html#gav-display",
   "added-parameters": "reading-json.html#added-parameters",
   "characters": "reading-json.html#characters",
   "consumer-notice": "reading-json.html#consumer-notice",

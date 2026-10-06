@@ -171,7 +171,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks the codex has where no letter is written",
-        "Where the codex has vowels and accents with no letter under them, near-Aleppo has them on artificial carriers in a template specific to near-Aleppo, `ניקוד בלי אות`, first used at Isaiah 36:12 and also used for proven orphan nodes in the approved frozen inference. Its original alef-carrier shape remains unchanged; new qualified holam-male choices use the explicit carrier=holam-male-vav variant, with parameter 1 exactly VAV + HOLAM.",
+        "The original decision puts vowels and accents that the codex has with no letter under them on artificial alef carriers in a template specific to near-Aleppo, `ניקוד בלי אות`, first used at Isaiah 36:12.",
         (
             "An empty body text at every `קרי ולא כתיב`, with 2 Samuel 18:20's marks documented as marks near-Aleppo cannot hold",
         ),
@@ -180,7 +180,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "The carrier letter of the templates for marks without a letter",
-        "The marks of these templates, specific to the near-Aleppo dataset, sit on alefs, an arbitrary carrier by convention, and not on a letter matching the unwritten word.",
+        "The original GA convention puts the marks on alefs, an arbitrary carrier, rather than on a letter matching the unwritten word. The later GV extension is recorded separately below.",
         ("A placeholder matching the unwritten word, such as a bet at 2 Samuel 18:20",),
     ),
     Choice(
@@ -830,6 +830,15 @@ _CHOICES = (
         "Near-Aleppo retains the dagesh on the final nun. Ben reported that he inspected an Aleppo image that day and saw the dot. This observation is attributed to Ben. This unusual final-nun dagesh is a case-specific choice and establishes no general legality rule.",
         ("Omitting the dagesh on the final nun",),
     ),
+    Choice(
+        "2026-10-05",
+        _BEN,
+        "The later GV carrier extension",
+        "Ben's GV extension of 2026-10-05 accepts the artificial VAV + HOLAM carrier tagged carrier=holam-male-vav in the template specific to the near-Aleppo dataset, `ניקוד בלי אות`. This records the chosen holam-male meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example edition displays it between double guillemets.",
+        (
+            "Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning",
+        ),
+    ),
 )
 
 
@@ -862,7 +871,7 @@ def section(numbers):
                 "choices while retaining the orphan marks' semantics; see ",
                 link(
                     "GAV notation and display in practice",
-                    "ketiv-qere-mobile-he.html#gav-display",
+                    "reading-json.html#gav-display",
                 ),
                 ".",
             ]

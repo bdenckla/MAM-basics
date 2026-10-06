@@ -21,6 +21,7 @@ _PAGES = {
             "reading-the-json",
             "templates",
             "own-templates",
+            "gav-display",
             "added-parameters",
             "characters",
             "consumer-notice",

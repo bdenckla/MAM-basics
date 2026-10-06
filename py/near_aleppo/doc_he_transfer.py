@@ -83,7 +83,17 @@ def section():
             ]
         ),
     ]
-    out.extend(_gav_display())
+    out.append(
+        mb_html.para(
+            [
+                "For the general GAV explanation, display alternatives, and "
+                "Unicode discussion, see ",
+                link("GAV notation and display", "reading-json.html#gav-display"),
+                ".",
+            ],
+            {"id": "gav-display"},
+        )
+    )
     for book, chapter, verse, ketiv, filename, url_book in _EXAMPLES:
         stem, _, sub = book.partition(" ")
         data = json.loads(
@@ -130,68 +140,3 @@ def section():
             ]
         )
     return out
-
-
-def _gav_display():
-    return [
-        mb_html.heading_level_3("GAV notation and display in practice"),
-        mb_html.para(
-            "GAV (guillemet-alef-vav) notation is a human-readable semantic "
-            "representation of orphan marks: marks without a written letter. "
-            "GA uses an artificial alef carrier generally; GV uses "
-            "an artificial vav for holam. The guillemets identify the carrier "
-            "as artificial. For example, an orphan holam in GV is:",
-            {"id": "gav-display"},
-        ),
-        he_display("«וֹ»"),
-        mb_html.para(
-            "This vav is a notation carrier, not a ketiv consonant. The example "
-            "explains the notation; it is not an additional reading of the "
-            "mobile-he cases. The raw JSON's "
-            "marks-without-letter template preserves its original alef-carrier "
-            "shape, including its existing holam carriers. New explicitly licensed "
-            "GV choices use the separate carrier=holam-male-vav variant with "
-            "parameter 1 exactly VAV + HOLAM. GV is not converted to ALEF + HOLAM: "
-            "that would lose the chosen holam-male distinction."
-        ),
-        mb_html.para(
-            "For an orphan holam associated with a qere vav where the ketiv has "
-            "yod, an edition can choose among these display options:"
-        ),
-        mb_html.unordered_list(
-            [
-                "Show GAV directly, retaining the GV carrier before the ketiv yod.",
-                "Collapse the holam backwards onto the consonant before the ketiv yod.",
-                "Attach U+05B9 HEBREW POINT HOLAM to the ketiv yod as a rendering "
-                "accommodation, without asserting that the yod owns the mark.",
-            ]
-        ),
-        mb_html.para(
-            "These are late display choices, not changes to the underlying "
-            "semantic representation. Their visual acceptability depends on the "
-            "font and rendering system. Prepared markup could let CSS select "
-            "among display forms or position the dot. CSS alone does not reorder "
-            "the Unicode text, and hiding a carrier does not reliably reattach "
-            "its combining mark to another letter."
-        ),
-        mb_html.para(
-            [
-                "Unicode's ",
-                link(
-                    "Hebrew specification, “Holam Male and Holam Haser”",
-                    "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-9/",
-                ),
-                " uses U+05B9 for holam male on vav when the distinction is made. "
-                "U+05BA HEBREW POINT HOLAM HASER FOR VAV distinguishes holam on "
-                "consonantal vav; its use on other base letters is undefined. "
-                "U+05B9 is also the ordinary holam on other letters. Unicode thus "
-                "has no separate, letter-independent holam-male dot that would "
-                "express the qere-vav role when attached to ketiv yod. Applying "
-                "U+05B9 to yod can display the dot, but does not encode that role. "
-                "A hypothetical letter-independent holam-male dot could make "
-                "that intention explicit even on yod. The mismatch concerns "
-                "encoded meaning, not a general Unicode ban on nonstandard "
-                "letter-mark sequences.",
-            ]
-        ),
-    ]
