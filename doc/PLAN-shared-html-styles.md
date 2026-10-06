@@ -1,6 +1,6 @@
 # Shared HTML styles
 
-State: live
+State: executed 2026-10-06
 
 Codex execution plan, 2026-10-06. Ben authorized implementation: “Can you go ahead
 and do this, using your judgment (or flipping a coin, if no one alternative seems
@@ -66,7 +66,7 @@ The baseline inventory is supported by these authoritative sources:
 | Identical edition copies | implemented | FOI, OSIS and near-Aleppo share unchanged MAM-with-doc CSS; canonical bytes, PIN and 62-file oracle are unchanged; Book of Job shares its root family sheet; four deployed duplicates and one unused source duplicate are retired |
 | Remaining prose families | implemented | WLC/UXLC, MAM-simple, root pages and indexes join the base; the full mega regenerated the WLC/UXLC families; ten static compatibility pages also load the base |
 | Related reports | implemented | Holman and change logs share hand-authored report.css; standalone bundles package the base under report-assets to avoid sibling specialty filename collisions |
-| Verification and delivery | active | Regenerate affected products, inspect every tracked diff, run final gates, commit and push main |
+| Verification and delivery | implemented | Full mega and required OSIS run completed; generated diffs and all 1,056 tests are verified; implementation commit ac0e0e2a and refresh commit 52546470 are on origin/main |
 
 ## Verification and integration
 
@@ -111,10 +111,15 @@ passed. The full suite passed 1,051 tests and 60 subtests, with five skips; its 
 file-census failures all named the removed duplicate Python module, which the
 unstaged Git index still listed. After staging the reviewed additions and
 deletions, all five affected lints passed, including a final `--lf` run. No source
-change or weakened lint was needed. All 1,056 tests are verified. Final delivery
-remains active.
+change or weakened lint was needed. All 1,056 tests are verified.
 
-The final combined tree owes these commands from the development root:
+The implementation is committed as
+`ac0e0e2ac389b2d811653c45ed44fd318368622f`, and its normal push to `origin/main`
+succeeded. The checkout was clean after that push. The earlier OSIS refresh
+commit is also on origin. This closure changes only the execution record; the
+verified source and generated products have not changed since their checks.
+
+The combined tree was checked with these commands from the development root:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_0_mega.py
@@ -128,8 +133,7 @@ Also verify the local stylesheet/font dependency graph and unchanged visible HTM
 text against the baseline. A missing asset fails. Add only differential or
 mechanical lint checks. Keep the existing edition oracle independent and passing.
 
-Commit finished stages to `main`. Before pushing, fetch `origin`, merge if it moved,
-and rerun checks owed by the combined changes. Push normally; repeat fetch, merge
-and affected checks if origin moves again. No history rewriting or work discards.
-At completion, reconcile every ledger row, mark this plan executed, and report the
-final commit, checks and any explicit limitation.
+Origin was fetched before pushing. Its `main` remained at the required baseline,
+so no merge was needed. Every ledger row is reconciled, with no deferred work or
+unresolved finding. No history was rewritten or work discarded. The maintained
+ownership and regeneration guide is `doc/html-styles.md`.
