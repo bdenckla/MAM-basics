@@ -245,29 +245,6 @@ def flag_examples():
     ]
 
 
-def kept_example():
-    ref = ("D1-Psalms", "40", "13")
-    before = _span(
-        _cell(build_paths.mam_parsed_plus_dir(), ref), ref, "עונתי", source=True
-    )
-    after = _span(_cell(build_paths.dataset_dir(), ref), ref, "עונתי")
-    if (
-        before != after
-        or after.count("\N{HEBREW POINT HOLAM HASER FOR VAV}") != 1
-        or after.count("\N{HEBREW ACCENT DEHI}") != 1
-    ):
-        raise AssertionError("Kept example must retain both MAM code points")
-    return [
-        mb_html.para(
-            ["For example, at ", *verse_refs((ref,)), ", both datasets have:"]
-        ),
-        he_display(after),
-        mb_html.para(
-            "The deḥi (U+05AD) and the holam haser for vav (U+05BA) are retained."
-        ),
-    ]
-
-
 def apparatus_example():
     ref = ("A5-Deuter", "32", "13")
     source = _cell(build_paths.mam_parsed_plus_dir(), ref)

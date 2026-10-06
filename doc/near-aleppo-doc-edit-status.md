@@ -120,3 +120,56 @@ the full mega's 60 steps. The full suite passed: 1,054 tests and 60 subtests, wi
 and one warning about permission to write pytest's cache. Unrelated products remained
 unchanged. `doc/PLAN-near-aleppo-note-content.md` is marked executed and records the completed
 gates and the documentation-only origin update encountered during integration.
+
+## A97–A101 — Retained-feature list and example, 2026-10-06
+
+**Status:** implemented by Codex, 2026-10-06; authorized by Ben's instruction to process the
+request file through A101.
+A96 remains implemented by the stored-note-content work recorded above.
+
+**Authorized scope:** Remove A97's tsinnorit/tsinnor list item, A98's assertion that the
+holam-haser-for-vav code point records the manuscript's dot placement, A99's deḥi list item,
+A100's tipeḥa/tarḥa list item, and A101's corresponding Psalms 40:13 example. Ben's request
+file remains verbatim. No new manuscript judgment is needed for these removals.
+
+**Checkout and baseline:** Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos2/MAM-basics`, a full clone on `main` at
+`e47c7440abb4f28e713cc0a7bf9a38d0c031e5ae` before editing. The only existing modification
+is Ben's updated request file. Codex owns the edits, verification, commit and normal push.
+Commands run from this checkout's root with its own `.venv/Scripts/python.exe`.
+
+**Expected changes and verification:** Change `py/near_aleppo/doc_registers.py`, remove the
+unused example from `py/near_aleppo/doc_policy_examples.py`, and regenerate
+`gh-pages/near-aleppo/editorial-policies.html`. Record each request's disposition here and
+include Ben's verbatim request-file update in the commit. All datasets, source evidence,
+review ledgers, edition book pages and other generated files must remain unchanged.
+Format both changed Python files with Black, run `py/main_near_aleppo.py --html`, inspect
+the generated diff and removed passages, and run `git diff --check`. The mega and full suite
+are skipped because the edits remove documentation content and its unused example helper;
+the actual HTML generator checks the affected surface and shared-renderer compatibility.
+
+**Completed dispositions:**
+
+| Request | Status | Change |
+| --- | --- | --- |
+| A97 | implemented | Removed the tsinnorit/tsinnor list item. |
+| A98 | implemented | Removed the claim about the manuscript's dot placement; retained the holam-haser-for-vav item and its figures. |
+| A99 | implemented | Removed the deḥi list item. |
+| A100 | implemented | Removed the tipeḥa/tarḥa list item. |
+| A101 | implemented | Removed the corresponding Psalms 40:13 example and its unused helper and import. |
+
+**Verification:** Black passed on both changed Python files. HTML regeneration passed,
+including the shared renderer's comparison with the 62 pinned MAM-with-doc files.
+`editorial-policies.html` is the only changed generated file; its diff contains exactly the
+requested removals and the joining punctuation in A98's retained item. All datasets, source
+evidence, review ledgers, edition book pages and other generated files are unchanged. A search
+of the affected source and page found none of the removed passages or the unused helper.
+`git diff --check` passed. The mega and full suite were skipped for the documentation-only
+scope explained above.
+
+## A102 — Deferred beyond this task's cutoff
+
+**Status:** deferred. Ben added A102 while A97–A101 were being implemented; the current
+instruction authorizes processing through A101. A102's requested removal of “The sparseness
+of the ketiv/qere” remains for a later instruction. The request-file update is preserved
+verbatim, with no agent-written annotations.
