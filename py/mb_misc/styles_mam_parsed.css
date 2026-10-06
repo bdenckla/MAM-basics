@@ -1,4 +1,4 @@
-/* Styles for the MAM-parsed authored docs.
+/* Shared styles for the MAM-parsed and near-Aleppo authored docs.
    Source of truth: py/mb_misc/styles_mam_parsed.css in MAM-basics; copied verbatim
    into the docs tree by styles_mam_parsed.make_css_file_for_mam_parsed(). Edit this
    source and regenerate; do not edit deployed copies. */
@@ -33,7 +33,6 @@ abbr[title] {
     text-underline-offset: 0.14em;
     cursor: help;
 }
-abbr.small-caps { text-transform: lowercase; font-variant: small-caps; }
 p { text-align: justify; }
 li { text-align: justify; }
 blockquote { text-align: justify; }
@@ -60,7 +59,6 @@ td.template-col, th.template-col { text-align: right; }
 img { max-width: 100%; }
 
 code {
-    font-family: Consolas, "Courier New", monospace;
     font-size: 0.85em;
 }
 pre.json-block {

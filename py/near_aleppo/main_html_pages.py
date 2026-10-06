@@ -35,6 +35,7 @@ from mb_cmn import provenance
 from mb_misc import mb_html
 from mb_misc import mb_html_get_lines
 
+_SHARED_STYLESHEET = "../MAM-parsed/style.css"
 _STYLESHEET = "style.css"
 _EDITION = "edition/"
 _FONTS = ("woff2/Taamey_D.woff2", _EDITION + "woff2/Taamey_D.woff2")
@@ -69,7 +70,7 @@ def render():
 
 
 def _documentation_html(title, body, comment):
-    html_el = mb_html.html_el2(title, body, css_hrefs=(_STYLESHEET,))
+    html_el = mb_html.html_el2(title, body, css_hrefs=(_SHARED_STYLESHEET, _STYLESHEET))
     policy = mb_html._HGL_POLICY
     options = {
         **policy,

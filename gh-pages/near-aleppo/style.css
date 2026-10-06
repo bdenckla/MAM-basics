@@ -6,11 +6,6 @@
 }
 
 :root {
-  color-scheme: light dark;
-  --text: light-dark(#1d1d1f, #e8e8ea);
-  --background: light-dark(#ffffff, #141416);
-  --link: light-dark(#0b57d0, #8ab4f8);
-  --link-visited: light-dark(#6b3fa0, #c9a7f5);
   --rule: light-dark(#c9cad0, #45464d);
   --table-head: light-dark(#f1f2f5, #232429);
   --code-background: light-dark(#f3f3f5, #202126);
@@ -19,36 +14,6 @@
   --example-difference: light-dark(#006b5f, #75dacb);
   --template-syntax: light-dark(#5c3aa4, #cbb7ff);
   --template-name: light-dark(#974600, #ffc18a);
-}
-
-body {
-  font-size: 13pt;
-  line-height: 1.55;
-  color: var(--text);
-  background-color: var(--background);
-  max-width: 52em;
-  margin: 0 auto;
-  padding: 0 16px 4em;
-}
-
-a {
-  color: var(--link);
-}
-
-a:visited {
-  color: var(--link-visited);
-}
-
-h1,
-h2,
-h3 {
-  line-height: 1.25;
-}
-
-h2 {
-  margin-top: 2em;
-  padding-top: 0.4em;
-  border-top: 1px solid var(--rule);
 }
 
 [lang="hbo"] {
@@ -62,13 +27,6 @@ h2 {
 
 .name {
   font-size: 1.15em;
-}
-
-code {
-  font-size: 0.92em;
-  background-color: var(--code-background);
-  padding: 0 0.25em;
-  border-radius: 3px;
 }
 
 .table-wrap {
@@ -161,8 +119,4 @@ td.bcv {
 td.num {
   text-align: end;
   white-space: nowrap;
-}
-
-li {
-  margin-bottom: 0.35em;
 }
