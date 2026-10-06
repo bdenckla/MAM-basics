@@ -50,20 +50,11 @@ _OB_1_2_EXPECTED_TREE = (
     "      silluq \n"
 )
 
-_OB_1_2_EXPECTED_VERSE = "Obadiah 1:2\n" + _OB_1_2_EXPECTED_TREE
-
 
 def test_print_tree_ob_1_2():
     """print_tree() output matches the oracle byte-for-byte."""
     got = print_tree(_ob_1_2_tree(), indent_level=0)
     assert got == _OB_1_2_EXPECTED_TREE
-
-
-def test_verse_output_ob_1_2():
-    """Reference line + print_tree() matches the full oracle verse block."""
-    ref_line = "Obadiah 1:2"
-    verse_output = f"{ref_line}\n" + print_tree(_ob_1_2_tree(), indent_level=0)
-    assert verse_output == _OB_1_2_EXPECTED_VERSE
 
 
 _OB_1_2_EXPECTED_OBJ = {
