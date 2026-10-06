@@ -149,6 +149,7 @@ _DATASETS = Section(
         _entry("MAM-simple", f"{_REPO_MAIN}/MAM-simple/README.md"),
         _entry("MAM-for-Sefaria", f"{_REPO_MAIN}/MAM-for-Sefaria/README.md"),
         _entry("MAM-OSIS", f"{_REPO_MAIN}/MAM-OSIS/README.md"),
+        _entry("The near-Aleppo dataset", "near-aleppo/index.html"),
     ),
 )
 
