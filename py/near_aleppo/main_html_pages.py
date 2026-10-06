@@ -47,7 +47,6 @@ _FONT_SHA256 = "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474
 
 def render():
     """The pages this entry point writes, by path within html-pages/, as bytes."""
-    note_recipes = doc_note_review.recipes(doc_note_review.load())
     snapshot = build_expectations.load()
     numbers = Numbers(snapshot, doc_figures.figures(snapshot))
     # Both modes render in memory. Documentation adds explicit layout policy for
@@ -61,7 +60,7 @@ def render():
     }
     for name, (title, body) in doc_pages.pages(numbers).items():
         pages[name] = _documentation_html(title, body, comment).encode("utf-8")
-    for name, text in edition.render_edition(note_recipes).items():
+    for name, text in edition.render_edition().items():
         pages[_EDITION + name] = text.encode("utf-8")
     pages.update(doc_he_transfer.assets())
     pages.update(doc_daniel_sheva.assets())

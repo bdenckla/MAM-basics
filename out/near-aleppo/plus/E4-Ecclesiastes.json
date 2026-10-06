@@ -11,8 +11,8 @@
     "consumer_notice": {
       "summary": "The near-Aleppo dataset is similar to MAM-parsed-plus. The Hebrew of near-Aleppo is nearer to the Aleppo Codex's body text than the Hebrew of MAM-parsed-plus. Like MAM-parsed-plus, it is a structured dataset, not ready-to-display Scripture; interpret each structure by its documented role and choose a projection wherever the payload presents alternatives.",
       "critical_rules": [
-        "Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it. Beside MAM's templates, near-Aleppo uses three added templates: נוסח למקרא על פי המסורה and הערה-2 למקרא על פי המסורה, which are MAM's נוסח and מ:הערה-2 where near-Aleppo has changed the note's target, the note's clauses then being about MAM's text; and ניקוד בלי אות, which holds marks without a written letter at a position of nonzero width. It accepts GA: one or more artificial alefs, each followed by permitted marks; or GV: parameter 1 exactly VAV + HOLAM, with carrier=holam-male-vav. Neither carrier permits a dagesh. Carrier letters are not written ketiv consonants. JSON stores the carrier payload; the example edition supplies guillemets, retaining an adopted GV as VAV + HOLAM. Converting it to ALEF + HOLAM loses the chosen holam-male distinction. Surrounding separators remain explicit; no automatic space is inserted.",
-        "Near-Aleppo adds five parameters. Four are not Scripture: מקרא על פי המסורה, on the two renamed notes, holds MAM's target, which the note's clauses are about; and applied-and-flagged and flagged-not-applied, on a note or a ketiv/qere template, are apparatus; carrier, on the explicitly licensed orphan-mark variant, is semantic metadata identifying its artificial carrier. Use it to interpret the payload; do not collect it as Scripture text. The fifth, כתיב מנוקד, on a ketiv/qere template, holds a pointed ketiv from MAM's notes or the approved frozen inference from MAM's ketiv and pointed qere, or an individually adjudicated codex reading, or a sealed reviewed portable decision, and is Scripture.",
+        "Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it. Beside MAM's templates, near-Aleppo uses three added templates: נוסח עם הקשר מקרא על פי המסורה and הערה-2 עם הקשר מקרא על פי המסורה, which are MAM's נוסח and מ:הערה-2 where near-Aleppo has changed the note's target. Their parameter 1 is near-Aleppo Scripture, and parameter 2 already contains the reviewed near-Aleppo clause, or an empty array when the complete original note remains in MAM context. הערת מקרא על פי המסורה holds the remaining original MAM clauses, in their original order, or that complete note. Consumers need no review ledger or editorial recasting to render these roles. The third added template is ניקוד בלי אות, which holds marks without a written letter at a position of nonzero width. It accepts GA: one or more artificial alefs, each followed by permitted marks; or GV: parameter 1 exactly VAV + HOLAM, with carrier=holam-male-vav. Neither carrier permits a dagesh. Carrier letters are not written ketiv consonants. JSON stores the carrier payload; the example edition supplies guillemets, retaining an adopted GV as VAV + HOLAM. Converting it to ALEF + HOLAM loses the chosen holam-male distinction. Surrounding separators remain explicit; no automatic space is inserted.",
+        "Near-Aleppo adds six parameters. Five are not Scripture: מקרא על פי המסורה, on the two renamed notes, holds MAM's target; הערת מקרא על פי המסורה contains the source clauses about that target; and applied-and-flagged and flagged-not-applied, on a note or a ketiv/qere template, are apparatus; carrier, on the explicitly licensed orphan-mark variant, is semantic metadata identifying its artificial carrier. Use it to interpret the payload; do not collect it as Scripture text. The sixth, כתיב מנוקד, on a ketiv/qere template, holds a pointed ketiv from MAM's notes or the approved frozen inference from MAM's ketiv and pointed qere, or an individually adjudicated codex reading, or a sealed reviewed portable decision, and is Scripture.",
         "Choose one documented branch of each choice-bearing structure; do not concatenate the branches. Near-Aleppo has evaluated away MAM's templates for dual cantillation, qamats, and poetic stress-helper alternatives, so the branches left in near-Aleppo's text are those of the ketiv/qere templates, כתיב מנוקד among them, and of the special-letter words it keeps. A copy of MAM's target in מקרא על פי המסורה keeps all of MAM's alternatives.",
         "A special-letter template's interrupted spelling and uninterrupted word-form are two representations of one word-form; select one text representation rather than collecting both.",
         "Reassemble text fragments before identifying words or maqaf compounds; array, template, and element boundaries are not segmentation boundaries.",
@@ -89,10 +89,12 @@
             [
               "מַה־יִּתְר֖וֹן לָֽאָדָ֑ם ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "בְּכָ֨ל־עֲמָל֔וֹ",
-                  "2": [
+                  "2": [],
+                  "מקרא על פי המסורה": "בְּכׇ֨ל־עֲמָל֔וֹ",
+                  "הערת מקרא על פי המסורה": [
                     "=ק-מ ושיטת-א",
                     {
                       "tmpl_name": "ש"
@@ -102,8 +104,7 @@
                       "tmpl_name": "ש"
                     },
                     "קורן, ברויאר, סימנים, מכון ממרא"
-                  ],
-                  "מקרא על פי המסורה": "בְּכׇ֨ל־עֲמָל֔וֹ"
+                  ]
                 }
               },
               " שֶֽׁיַּעֲמֹ֖ל תַּ֥חַת הַשָּֽׁמֶשׁ׃"
@@ -455,17 +456,12 @@
             [
               "וְרָאִ֣יתִי אָ֔נִי שֶׁיֵּ֥שׁ יִתְר֛וֹן לַֽחָכְמָ֖ה מִן־הַסִּכְל֑וּת ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "כִּֽיתֲר֥וֹן",
-                  "2": [
-                    "=ל,פטרבורג-EVR-II-B-34 ובדפוסים (אין חטף)",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "ש1,ק13,ש2=כִּֽיתֲר֥וֹן (חטף), כשיטת-א וכך במג\"ה; לגבי ניקוד האות כ\"ף בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392."
-                  ],
-                  "מקרא על פי המסורה": "כִּֽיתְﬞר֥וֹן"
+                  "2": "=ש1,ק13,ש2 (חטף), כשיטת-א וכך במג\"ה; לגבי ניקוד האות כ\"ף בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.",
+                  "מקרא על פי המסורה": "כִּֽיתְﬞר֥וֹן",
+                  "הערת מקרא על פי המסורה": "=ל,פטרבורג-EVR-II-B-34 ובדפוסים (אין חטף)"
                 }
               },
               " הָא֖וֹר מִן־הַחֹֽשֶׁךְ׃"
@@ -1348,10 +1344,12 @@
             [
               "אִם־עֹ֣שֶׁק רָ֠שׁ וְגֵ֨זֶל מִשְׁפָּ֤ט וָצֶ֙דֶק֙ תִּרְאֶ֣ה בַמְּדִינָ֔ה אַל־תִּתְמַ֖הּ עַל־הַחֵ֑פֶץ כִּ֣י גָבֹ֜הַּ מֵעַ֤ל ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "גָּבֹהַּ֙",
-                  "2": [
+                  "2": [],
+                  "מקרא על פי המסורה": "גָּבֹ֙הַּ֙",
+                  "הערת מקרא על פי המסורה": [
                     "=ש1,ק-מ ובדפוסים",
                     {
                       "tmpl_name": "ש"
@@ -1361,8 +1359,7 @@
                       "tmpl_name": "ש"
                     },
                     "הערת דותן"
-                  ],
-                  "מקרא על פי המסורה": "גָּבֹ֙הַּ֙"
+                  ]
                 }
               },
               " שֹׁמֵ֔ר וּגְבֹהִ֖ים עֲלֵיהֶֽם׃"
@@ -1475,10 +1472,12 @@
             [
               "הִנֵּ֞ה אֲשֶׁר־רָאִ֣יתִי אָ֗נִי ט֣וֹב אֲשֶׁר־יָפֶ֣ה ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "לֶֽאֱכוֹל־וְ֠לִשְׁתּוֹת",
-                  "2": [
+                  "2": [],
+                  "מקרא על פי המסורה": "לֶֽאֱכוֹל־וְ֠לִשְׁתּ֠וֹת",
+                  "הערת מקרא על פי המסורה": [
                     "=ש1,ק-מ ובדפוסים",
                     {
                       "tmpl_name": "ש"
@@ -1492,8 +1491,7 @@
                       "tmpl_name": "ש"
                     },
                     "קורן, דותן, ברויאר, מכון ממרא, סימנים"
-                  ],
-                  "מקרא על פי המסורה": "לֶֽאֱכוֹל־וְ֠לִשְׁתּ֠וֹת"
+                  ]
                 }
               },
               " וְלִרְא֨וֹת טוֹבָ֜ה בְּכָל־עֲמָל֣וֹ׀ שֶׁיַּעֲמֹ֣ל תַּֽחַת־הַשֶּׁ֗מֶשׁ מִסְפַּ֧ר יְמֵי־",
@@ -1549,11 +1547,12 @@
             [
               "אִ֣ישׁ אֲשֶׁ֣ר יִתֶּן־ל֣וֹ הָאֱלֹהִ֡ים עֹשֶׁר֩ וּנְכָסִ֨ים וְכָב֜וֹד וְֽאֵינֶ֨נּוּ חָסֵ֥ר לְנַפְשׁ֣וֹ׀ מִכֹּ֣ל אֲשֶׁר־יִתְאַוֶּ֗ה וְלֹֽא־יַשְׁלִיטֶ֤נּוּ הָֽאֱלֹהִים֙ לֶאֱכֹ֣ל מִמֶּ֔נּוּ כִּ֛י אִ֥ישׁ נָכְרִ֖י ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "יֹֽאכֲלֶ֑נּוּ",
-                  "2": "ל=יֹֽאכֲלֶ֑נּוּ (חטף)",
-                  "מקרא על פי המסורה": "יֹֽאכְﬞלֶ֑נּוּ"
+                  "2": "=ל (חטף)",
+                  "מקרא על פי המסורה": "יֹֽאכְﬞלֶ֑נּוּ",
+                  "הערת מקרא על פי המסורה": []
                 }
               },
               " ",
@@ -1676,7 +1675,7 @@
             [
               "מַה־שֶּֽׁהָיָ֗ה כְּבָר֙ נִקְרָ֣א שְׁמ֔וֹ וְנוֹדָ֖ע אֲשֶׁר־ה֣וּא אָדָ֑ם וְלֹא־יוּכַ֣ל לָדִ֔ין עִ֥ם ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": {
                     "tmpl_name": "כו״ק",
@@ -1686,7 +1685,15 @@
                       "כתיב מנוקד": "שֶׁהתַּקִּ֖יף"
                     }
                   },
-                  "2": [
+                  "2": [],
+                  "מקרא על פי המסורה": {
+                    "tmpl_name": "כו״ק",
+                    "tmpl_params": {
+                      "1": "שהתקיף",
+                      "2": "שֶׁתַּקִּ֖יף"
+                    }
+                  },
+                  "הערת מקרא על פי המסורה": [
                     "=ל,ל-מערבאי ומ\"ג דפוס ונציה ובדפוסים (וכן הכריעו במג\"ה)",
                     {
                       "tmpl_name": "ש"
@@ -1696,14 +1703,7 @@
                       "tmpl_name": "ש"
                     },
                     "קורן, דותן, סימנים, מג\"ה"
-                  ],
-                  "מקרא על פי המסורה": {
-                    "tmpl_name": "כו״ק",
-                    "tmpl_params": {
-                      "1": "שהתקיף",
-                      "2": "שֶׁתַּקִּ֖יף"
-                    }
-                  }
+                  ]
                 }
               },
               " מִמֶּֽנּוּ׃"
@@ -1748,16 +1748,10 @@
             ],
             [
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "ט֥וֹב",
-                  "2": [
-                    "=מסורה ומ\"ש (ובדפוסים וקורן)",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "ל=ט֥וֹב (אין אות גדולה)"
-                  ],
+                  "2": "=ל (אין אות גדולה)",
                   "מקרא על פי המסורה": {
                     "tmpl_name": "מ:אות-מיוחדת-במילה",
                     "tmpl_params": {
@@ -1775,7 +1769,8 @@
                       "4": "ג",
                       "5": "ט/ג"
                     }
-                  }
+                  },
+                  "הערת מקרא על פי המסורה": "=מסורה ומ\"ש (ובדפוסים וקורן)"
                 }
               },
               " שֵׁ֖ם מִשֶּׁ֣מֶן ט֑וֹב וְי֣וֹם הַמָּ֔וֶת מִיּ֖וֹם הִוָּלְדֽוֹ׃"
@@ -2420,7 +2415,7 @@
             [
               "כִּי־מִי֙ אֲשֶׁ֣ר ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": {
                     "tmpl_name": "כו״ק",
@@ -2430,20 +2425,21 @@
                       "כתיב מנוקד": "יְבַּחֻ֔ר"
                     }
                   },
-                  "2": [
-                    "=ש1,ק-מ ובדפוסים וכן בקורן וברויאר ומג\"ה",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "ל-כתיב?!=יְבֻחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
-                  ],
+                  "2": [],
                   "מקרא על פי המסורה": {
                     "tmpl_name": "כו״ק",
                     "tmpl_params": {
                       "1": "יבחר",
                       "2": "יְחֻבַּ֔ר"
                     }
-                  }
+                  },
+                  "הערת מקרא על פי המסורה": [
+                    "=ש1,ק-מ ובדפוסים וכן בקורן וברויאר ומג\"ה",
+                    {
+                      "tmpl_name": "ש"
+                    },
+                    "ל-כתיב?!=יְבֻחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
+                  ]
                 }
               },
               " אֶ֥ל כָּל־הַחַיִּ֖ים יֵ֣שׁ בִּטָּח֑וֹן כִּֽי־לְכֶ֤לֶב חַי֙ ה֣וּא ט֔וֹב מִן־הָאַרְיֵ֖ה הַמֵּֽת׃"
@@ -2485,15 +2481,13 @@
             [
               "לֵ֣ךְ אֱכֹ֤ל בְּשִׂמְחָה֙ לַחְמֶ֔ךָ ",
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "וּֽשֲׁתֵ֥ה",
-                  "2": [
+                  "2": "=ל (חטף)",
+                  "מקרא על פי המסורה": "וּֽשְׁﬞתֵ֥ה",
+                  "הערת מקרא על פי המסורה": [
                     "=דפוסים וקורן",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "ל=וּֽשֲׁתֵ֥ה (חטף)",
                     {
                       "tmpl_name": "ש"
                     },
@@ -2502,8 +2496,7 @@
                       "tmpl_name": "ש"
                     },
                     "קורן, ברויאר, סימנים, מכון ממרא"
-                  ],
-                  "מקרא על פי המסורה": "וּֽשְׁﬞתֵ֥ה"
+                  ]
                 }
               },
               " בְלֶב־ט֖וֹב יֵינֶ֑ךָ כִּ֣י כְבָ֔ר רָצָ֥ה הָאֱלֹהִ֖ים אֶֽת־מַעֲשֶֽׂיךָ׃"
@@ -3281,24 +3274,10 @@
             [],
             [
               {
-                "tmpl_name": "נוסח למקרא על פי המסורה",
+                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
                 "tmpl_params": {
                   "1": "ס֥וֹף",
-                  "2": [
-                    "=מ\"ס-ל ומ\"ש (ובדפוסים וקורן)",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "ל=ס֥וֹף (אין אות גדולה)",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "הערת ברויאר",
-                    {
-                      "tmpl_name": "ש"
-                    },
-                    "קורן, ברויאר, סימנים, מכון ממרא"
-                  ],
+                  "2": "=ל (אין אות גדולה)",
                   "מקרא על פי המסורה": {
                     "tmpl_name": "מ:אות-מיוחדת-במילה",
                     "tmpl_params": {
@@ -3316,7 +3295,18 @@
                       "4": "ג",
                       "5": "ס/ג"
                     }
-                  }
+                  },
+                  "הערת מקרא על פי המסורה": [
+                    "=מ\"ס-ל ומ\"ש (ובדפוסים וקורן)",
+                    {
+                      "tmpl_name": "ש"
+                    },
+                    "הערת ברויאר",
+                    {
+                      "tmpl_name": "ש"
+                    },
+                    "קורן, ברויאר, סימנים, מכון ממרא"
+                  ]
                 }
               },
               " דָּבָ֖ר הַכֹּ֣ל נִשְׁמָ֑ע אֶת־הָאֱלֹהִ֤ים יְרָא֙ וְאֶת־מִצְוֺתָ֣יו שְׁמ֔וֹר כִּי־זֶ֖ה כָּל־הָאָדָֽם׃"

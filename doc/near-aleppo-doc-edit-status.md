@@ -78,3 +78,45 @@ The full suite, `./.venv/Scripts/python.exe py/main_test.py -q`, passed: 1,051 t
 The mega is skipped because the change is confined to near-Aleppo documentation and consumer
 notice strings. The affected generator outputs were regenerated and inspected; build and
 rendering algorithms did not change.
+
+## A96 — Superseded by stored reviewed note content, 2026-10-06
+
+**Status:** the earlier A96 implementation is superseded; baked note content is implemented
+and verified.
+
+**Authorization:** Ben instructed Codex on 2026-10-06: “Please make a plan to bake the
+transformations in and execute it across whatever set of sessions and/or sub-agents it needs.”
+The undertaking is recorded in `doc/PLAN-near-aleppo-note-content.md`. Ben's request file
+remains unchanged.
+
+**Change:** All 1,548 changed notes now contain the reviewed content in the book JSON.
+Parameter 1 remains the near-Aleppo Scripture target. Parameter 2 contains the reviewed
+near-Aleppo clause at 1,047 notes; it is an empty array at the 501 notes whose complete
+original body remains in MAM context. `מקרא על פי המסורה` preserves the original
+structured MAM target. `הערת מקרא על פי המסורה` contains the remaining original
+clauses, or the complete original body. Scroll-note parameter 3 and flags retain their roles.
+Codex's schema implementation uses `נוסח עם הקשר מקרא על פי המסורה` and
+`הערה-2 עם הקשר מקרא על פי המסורה` so that consumers recognize the changed contract.
+
+**Evidence:** `py/near_aleppo/note_content.py`, `NoteContent.apply`, matches each
+review's complete source evidence and stores its approved parts. `doc_note_review.py`,
+`inventory`, replays the pre-bake build from source inputs, keeping the historical nested
+template names solely for the review's evidence identities. Every review is complete and
+matches a fresh inventory before dataset writes. The renderer's `_stored_doc_parts` formats
+the two stored roles; `edition.render_edition` reads no presentation recipe or review ledger.
+
+**Verification:** Black passed on changed Python files. Dataset and HTML regeneration passed,
+and the complete near-Aleppo check passed. All 1,548 ledger rows, including source evidence,
+decisions and reasoning, compare exactly with baseline `a9c45ee1`; maintained metadata
+removes the 24 published-output hashes and updates only the hash of the clarified pre-bake
+MAM-target module. Six targeted differential and source-lint checks passed, including all
+book-content invariants, all prior edition book and long-note pages, the 62-file independent
+MAM-with-doc oracle, and removal of renderer review dependencies. The only generated HTML
+changes explain the new contract in `reading-json.html`, `choices.html` and
+`edition/index.html`. Scripture, C and D cells, flags, original MAM targets, sealed pointings and
+edition book/long-note HTML remain unchanged. Root Codex independently passed the complete
+near-Aleppo check, a three-check migration comparison against the execution baseline, and
+the full mega's 60 steps. The full suite passed: 1,054 tests and 60 subtests, with five skips
+and one warning about permission to write pytest's cache. Unrelated products remained
+unchanged. `doc/PLAN-near-aleppo-note-content.md` is marked executed and records the completed
+gates and the documentation-only origin update encountered during integration.

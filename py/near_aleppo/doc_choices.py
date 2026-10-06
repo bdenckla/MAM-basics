@@ -839,6 +839,22 @@ _CHOICES = (
             "Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning",
         ),
     ),
+    Choice(
+        "2026-10-06",
+        _BEN,
+        "Where reviewed note transformations are stored",
+        "The book JSON contains the reviewed note transformations so that consumers need not repeat editorial transformations. Original source notes and review reasoning remain in their existing records.",
+        ("Leaving reviewed note transformations to each edition's renderer",),
+    ),
+    Choice(
+        "2026-10-06",
+        _EDITORIAL,
+        "The schema for stored near-Aleppo and MAM note roles",
+        "The earlier names `נוסח למקרא על פי המסורה` and `הערה-2 למקרא על פי המסורה` are replaced by `נוסח עם הקשר מקרא על פי המסורה` and `הערה-2 עם הקשר מקרא על פי המסורה`. Parameter 1 remains the near-Aleppo target; parameter 2 stores the reviewed near-Aleppo clause or an empty array. `מקרא על פי המסורה` preserves MAM's original structured target, and `הערת מקרא על פי המסורה` holds the remaining original clauses or complete source body. Scroll-note parameter 3 and flags keep their roles. Display formatting remains each edition's choice.",
+        (
+            "Keeping a template name whose contract described only MAM's original note body",
+        ),
+    ),
 )
 
 

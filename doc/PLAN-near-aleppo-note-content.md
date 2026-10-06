@@ -1,6 +1,6 @@
 # PLAN: Bake reviewed near-Aleppo note content into the dataset
 
-State: live
+State: executed 2026-10-06
 
 ## Authorization and scope
 
@@ -136,3 +136,49 @@ discard work. After the final verified change, set this plan to `executed 2026-1
 same commit as its completed execution record. If another session is needed, leave an exact
 standalone handoff naming agent/date, Ben's quoted authorization, required commit, checkout,
 remaining scope and root Codex's integration ownership.
+
+## Execution record, 2026-10-06
+
+Root Codex executed the plan in the declared full clone after committing the plan as
+`b5abc283f4e0b09e1c1ea6d09f119cb38cbdb669`. Read-only design and compatibility audits
+ran alongside one implementation writer. Root resumed write ownership after that writer
+finished, inspected the source and generated diffs, and completed the verification gates.
+
+The build now validates reviews against an in-memory pre-bake source replay before writing
+the dataset. Its final note-content phase stores the reviewed clauses under the frozen
+contract above. The edition renderer reads those roles directly from the book JSON and has
+no review-ledger or presentation-recipe dependency. Shared scroll-note and trivial-qere
+conversions preserve the explicit MAM context. The README, build guide, JSON reference,
+edition index, decision record and companion status ledger describe the resulting contract.
+
+All 1,548 review rows, including source evidence, dispositions and reasoning, are identical
+to baseline `a9c45ee1ef1c2a4843cb2442840c074fac629d85`. The dataset contains recast clauses
+at 1,047 notes and complete original bodies under MAM context at 501 notes. Maintained ledger
+metadata removes the 24 output-file hashes and updates only the hash of the clarified
+pre-bake MAM-target module. The original source notes and sealed pointing inputs are unchanged.
+
+Verification completed from the repository root with its own environment:
+
+- Black passed on all 19 changed Python files; `git diff HEAD --check` passed.
+- The complete near-Aleppo check passed: five census baselines, all 24 book files, fresh
+  review validation, 81 generated files and two font copies. The shared renderer matched
+  the 62 independently tracked MAM-with-doc files.
+- The full suite passed: 1,054 tests and 60 subtests, with five skips and one warning about
+  permission to write pytest's cache.
+- The full mega passed all 60 steps. Its generated diffs were confined to the expected
+  near-Aleppo outputs; unrelated products remained unchanged.
+- A separate three-check migration comparison against the execution baseline passed.
+  All 24 books preserve their content outside changed note bodies, template names and
+  consumer notices. All prior edition book and long-note HTML pages match byte for byte.
+  The only changed generated HTML explains the contract in `reading-json.html`,
+  `choices.html` and `edition/index.html`.
+
+After the mega, root corrected one grammar error in the pre-bake module's docstring and
+split the README's commands into separate fences. Root refreshed the maintained ledger
+hash, then ran the complete near-Aleppo check and full suite on that final state. These
+prose-only corrections did not expire the mega result.
+
+Origin advanced during execution to `149d0fe8c2f5300e1d3d24e329a4ac21f9064a3f`.
+Root inspected its complete diff: it only appends a separate review record in
+`doc/review-findings-2026-10-04-update.md`, without a source or product change. That
+non-colliding documentation addition does not expire the verification results.

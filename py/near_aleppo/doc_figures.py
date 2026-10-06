@@ -24,6 +24,7 @@ from near_aleppo import phase5_readings as phase5
 from near_aleppo import phase6_flags
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 from near_aleppo.phase6_rename import RENAMED_NOTES
+from py_misc import near_aleppo_params as nap
 
 # Each book as main_build.py names it, with the name the codex index gives it, as the
 # census's aleppo_extant_conventions.py spells the index's names. A book whose name
@@ -200,16 +201,24 @@ class _Verse(NamedTuple):
 class _Corpus:
     """Every verse of the dataset, in its order, with MAM-parsed-plus's beside it."""
 
-    def __init__(self):
+    def __init__(self, dataset=None):
         mam_paths = sorted(build_paths.mam_parsed_plus_dir().glob("*.json"))
-        data_paths = sorted(build_paths.dataset_dir().glob("*.json"))
+        data_paths = (
+            sorted(build_paths.dataset_dir().glob("*.json"))
+            if dataset is None
+            else [build_paths.dataset_dir() / name for name in sorted(dataset)]
+        )
         if [p.name for p in mam_paths] != [p.name for p in data_paths]:
             raise AssertionError("the dataset's book files are not MAM-parsed-plus's")
         self.files = len(data_paths)
         self.verses = []
         for mam_path, data_path in zip(mam_paths, data_paths):
             mam_book = json.loads(mam_path.read_text(encoding="utf-8"))
-            data_book = json.loads(data_path.read_text(encoding="utf-8"))
+            data_book = json.loads(
+                data_path.read_text(encoding="utf-8")
+                if dataset is None
+                else dataset[data_path.name]
+            )
             if len(mam_book["book39s"]) != len(data_book["book39s"]):
                 raise AssertionError(f"{data_path.name}: the books differ")
             for mam39, data39 in zip(mam_book["book39s"], data_book["book39s"]):
@@ -273,6 +282,9 @@ def _rename_back(value, verse):
                 "lacks it where it is"
             )
         value["tmpl_name"] = mam_name
+        if name != mam_name:
+            nap.validate_baked_note({**value, "tmpl_name": name})
+            params.pop(nap.MAM_NOTE)
         _rename_back(params[_TARGET], verse)
     elif rule.action == phase2._KEEP_KQ:
         for key, item in params.items():
@@ -330,10 +342,12 @@ def _walk(value, verse, side, visit, path=(), zone=_TEXT):
             )
 
     if rule.action == phase2._KEEP_NOTE:
-        added = keys & ({MAM_TARGET_PARAMETER} | _FLAGS)
+        added = keys & ({MAM_TARGET_PARAMETER, nap.MAM_NOTE} | _FLAGS)
         if side == _MAM and added:
             raise AssertionError(f"{verse}: MAM's {name!r} has {sorted(added)}")
         renamed_right = (name != mam_name) == (MAM_TARGET_PARAMETER in keys)
+        if name != mam_name:
+            nap.validate_baked_note(value)
         if (
             keys - added not in rule.keysets
             or len(added & _FLAGS) > 1
@@ -583,7 +597,9 @@ def _testimony(corpus, index, snapshot):
     totals = {"elements": 0, "clauses": 0, "verses": set()}
     citations = clauses = 0
     for verse in corpus.verses:
-        cell = _with_mam_names(verse.data[_E], verse.ref)
+        # These are counts of original source clauses. Published recasts have
+        # already changed clause subjects and cannot serve as source evidence.
+        cell = corpus.resolved_mam_e(verse)
         for number, note in enumerate(phase5.notes(cell, verse.ref), 1):
             for clause in _direct_clauses(note, number, verse.ref):
                 totals["elements"] += len(clause.sigla)
