@@ -7,9 +7,9 @@ occupied clone before fetching it, and an ahead or diverged clone after a fetch 
 adds any missing objects, rewrites FETCH_HEAD, and creates or fast-forwards
 refs/remotes/origin/main; either way the clone's local branches, checkout and
 environments stay untouched. A clone that only the calling Claude session occupies is
-not refused: a write skips it unfetched and does not count it as a failure, since that
-session updates its own checkout. Every repository failure is reported while the
-remaining roster runs.
+not refused, even when it is dirty, off main, mid-operation or locked: a write skips it
+unfetched and does not count it as a failure, since that session updates its own
+checkout. Every repository failure is reported while the remaining roster runs.
 """
 
 from __future__ import annotations

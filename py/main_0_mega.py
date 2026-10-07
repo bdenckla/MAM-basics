@@ -658,14 +658,16 @@ _STEPS = [
     # release rather than MAM-private, so neither condition concerns it any more: it runs in a
     # cloud session too, and the cloud skip belongs to phonetic-mam-export.  Placed immediately
     # before gen-site, which renders from the JSON it writes, and so after every step that
-    # writes MAM-simple, whose json-vtrad-mam it reads (paths.mam_simple_vtrad_mam_dir).  This
+    # writes MAM-simple, whose json-vtrad-mam it reads (paths.mam_simple_vtrad_mam_dir).  It
+    # also reads MAM-parsed's plus/ tree, which parse-ws writes far earlier
+    # (py/accgram/post_stress_meteg_sources.py, through read_books_from_mam_parsed_plus).  This
     # comment and the description below said xml-vtrad-mam until 2026-09-11.
     StepRecord(
         "accgram-survey-post-stress-meteg",
         _run_accgram_survey_post_stress_meteg,
-        "reads public Phonetic-MAM and MAM-simple's json-vtrad-mam, and writes"
-        " the tracked out/accgram/post-stress-meteg.json; runs in a cloud session;"
-        " must come before gen-site",
+        "reads public Phonetic-MAM, MAM-simple's json-vtrad-mam and MAM-parsed's"
+        " plus/ tree, and writes the tracked out/accgram/post-stress-meteg.json;"
+        " runs in a cloud session; must come before gen-site",
     ),
     # Must come after accgram-survey-post-stress-meteg, since 2026-09-10: it renders the nine
     # post-stress-meteg pages that read the survey from the JSON that step writes.  It also

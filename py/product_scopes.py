@@ -45,11 +45,7 @@ writes ``MAM-OSIS/`` and ``gh-pages/MAM-OSIS/``.  Ben took both out of the mega 
 2026-09-12, and ``py/tests/test_mega_coverage.py`` declares each, with that reason, in
 ``NOT_IN_MEGA``.  So "this program is not a mega step" answers a different question
 from "this change reaches no product", and reading the first as the second is the
-mistake this paragraph exists to stop.  A change to a hand-run generator, or to any
-input it reads, owes rerunning every affected generator and inspecting every tracked
-output it writes; a mega run does not do that for it.  The one input change exempted
-for these two programs is a refresh of MAM's text: by Ben's decision of 2026-09-30
-their products may lag it, as their READMEs say.
+mistake this paragraph exists to stop.
 
 "NOT TIER 3" IS NOT "SAFE"
 

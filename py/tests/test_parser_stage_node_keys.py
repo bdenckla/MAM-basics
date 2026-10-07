@@ -5,6 +5,13 @@ key in ``PARSER_STAGE_NODE_KEYS``.  ``node_type_and_subtype`` admits a parser-st
 through ``ws_tmpl1.is_template``, which is ``dic_is_template``, and ``ws_tmpl1.is_abtag``, so
 the keys those two predicates test, read here from their source, must be exactly that set.
 A missing function or a second ``return`` fails rather than reading as agreement.
+
+The lint reads only the tests of ``node_type_and_subtype``'s top-level ``if`` statements
+and the string constants in the ``return`` of ``dic_is_template`` and of ``is_abtag``, so a
+node admitted through an ``elif``, an ``else``, another kind of statement or a change to
+``is_template``, whose body it does not read, passes it.  Nor does the lint read the body of
+``_validate_no_parser_stage_encoding``: it pins only the key set, so a refusal that tests
+fewer keys passes it too.
 """
 
 import ast
