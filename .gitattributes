@@ -46,3 +46,6 @@ in/mam-ws-special/*.mediawiki whitespace=-blank-at-eol
 # This migrated page preserves the sanctioned legacy HTML byte-for-byte,
 # including its existing line-final space before the following wrapped prose.
 gh-pages/yeivin-itm/yeivin_itm-311_317.html whitespace=-blank-at-eol
+
+# Preserve this frozen review's exact bytes, including its line-final spaces.
+doc/yod-holam-review-20261007.html -text whitespace=-blank-at-eol
