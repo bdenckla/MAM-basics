@@ -184,8 +184,7 @@ its inputs still does. A change to MAM's data does not oblige rerunning
 Product reach and whether an act is hard to undo are separate risk axes, as the user-level
 instructions explain.
 
-Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository;
-MAM-private runs its own near-Aleppo census.
+Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository.
 
 ## Generated clock dates and timestamps shown on pages use New York time and say so
 

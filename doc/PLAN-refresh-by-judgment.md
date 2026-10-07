@@ -75,9 +75,14 @@ All on 2026-10-07, in this session.
    vendored Decalogue capture to the download mirror. After the session restated the three in
    prose, he wrote: "I reviewed your review of decisions made under the suspect interface and those
    all look fine to me ... I confirm my approvals."
-4. **No `AGENTS.md` changes.** "for the moment I've soured on any changes to agents.md. I think
-   they're a waste of time and tokens." The approved `AGENTS.md` sentence is therefore not added;
-   the rule lives in the refresh skill only.
+4. **No new guidance in `AGENTS.md`; false statements in it are fixed.** "for the moment I've
+   soured on any changes to agents.md. I think they're a waste of time and tokens." The approved
+   `AGENTS.md` sentence is therefore not added; the rule lives in the refresh skill only. He then
+   added: "Absolutely fix false things in AGENTS.md. You are over-generalizing my pessimism about
+   whether it is wortg putting advice/guidance into AGENTS.md. It feels to me like fixing false
+   statements is quite another thing, and should obviously be done (either by removing them or
+   correcting them, whichever seems most appropriate on a case-by-case basis)". If executing this
+   plan makes a statement in `AGENTS.md` false, correct or remove it in the same wave.
 5. **A changed ketiv or qere at a stored pointed ketiv waits for Ben.** "Just let's go with the
    more invasive thing that if any [qere] changes in MAM, just stop the whole world and bug me about
    it. It is more work to design a process to try to be smart than to just be dumb and give me the
@@ -693,7 +698,8 @@ generators over the full corpus.
 
 ## Wave 7. The refresh skill and the texts that describe the old checks
 
-No `AGENTS.md` change (decision 4).
+No new guidance goes into `AGENTS.md` (decision 4); a statement there that this plan has made
+false is corrected or removed.
 
 1. **`dot-claude/skills/mam-wikisource-refresh/SKILL.md`.**
    - Insert the approved section "Judge every diff: the expected changes, and only them" (above,
@@ -833,13 +839,14 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R13 | Test pins replaced by rules or deleted | 5 | active |
 | R14 | Every reader of the Decalogue capture moves to the mirror | 5 | active |
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | active |
-| R16 | Refresh skill and reference rewritten; no `AGENTS.md` change | 7 | active |
+| R16 | Refresh skill and reference rewritten; no new `AGENTS.md` guidance | 7 | active |
 | R17 | Skill deployment and this plan's record | 8 | active |
 
 ## Noticed, not acted on
 
 1. **2 Kings 14:7** is the GitRepos3 session's (Coordination, item 1).
-2. **`AGENTS.md`** ends its products section with "MAM-private runs its own near-Aleppo census",
-   although the mega has also run a local near-Aleppo census since 2026-10-05; it stays, under
-   Ben's decision 4. (`3bd11204` added `out/near-aleppo/` to that section's list of distributed
-   data.)
+2. **Fixed after this plan was first pushed:** `AGENTS.md`'s products section ended with the false
+   "MAM-private runs its own near-Aleppo census", and `py/main_0_mega.py`'s docstring said
+   "MAM-private's own mega runs the census now", though near-Aleppo's census has run in this
+   repository since 2026-10-05. The commit that recorded Ben's clarification of decision 4
+   removed the first and corrected the second.

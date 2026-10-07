@@ -13,8 +13,9 @@ finds the sibling through
 home clone, so a worktree run needs no ``REPOS_ROOT``. Until 2026-09-11 a
 second step, ``near-aleppo-census``, ran MAM-private's near-Aleppo census and
 rewrote that clone's tracked goldens. Ben had it deleted that day, so that this
-run writes nothing outside this repository; MAM-private's own mega runs the
-census now. Since 2026-10-05 a step of the same name has run near-Aleppo's
+run writes nothing outside this repository; MAM-private's own mega then ran the
+census until near-Aleppo's census moved into this repository, and it no longer
+does. Since 2026-10-05 a step of the same name has run near-Aleppo's
 local census, ``py/main_near_aleppo.py --census``, which reads only this
 repository's MAM-parsed plus and Aleppo coverage index and writes
 ``in/near-aleppo/census/``.
