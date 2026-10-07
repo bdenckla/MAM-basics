@@ -846,15 +846,21 @@ passage that the plan quotes still read as quoted.
    none of which this remediation changed;
 9. `bea27331`, which puts five lines of hand-authored Hebrew into MAM's mark order after the final
    gate's first suite run failed on them ("Checks and the final gate", item 4);
-10. the commit that adds this entry and sets the plan's State, and a last commit that adds the push
-    and the deployment to "Checks and the final gate".
+10. `41a65acb`, which added this entry and set the plan's State;
+11. `a11e1dfc`, which merged the ten commits that reached `origin/main` while the gate ran,
+    `0067293b` to `cfb3a284`. They rename four post-maqaf ketiv/qere templates to `קו"כ` on Hebrew
+    Wikisource and regenerate what depends on them, re-seal near-Aleppo, give the same five lines
+    as `bea27331` MAM's mark order (`efe58d21`), and add the entry before this session's two. The
+    one conflict was this file, where both sides had appended;
+12. the commit that brings this entry up to date with the gate on `a11e1dfc`, and a last commit
+    that adds the push and the deployment to "Checks and the final gate".
 
 **How each disposition was established.** Each wave's commit message records the measurement that
 it re-ran for its items on the committed code, and every commit had `git diff --check` and, for its
-changed Python files, Black and ruff. On the final tree, `bea27331`, a scratch script read every
+changed Python files, Black and ruff. On the final tree, `a11e1dfc`, a scratch script read every
 site that the plan names from the commit's tree, in 90 checks that include the changed lines of the
 three corrected chapter pages: each site has its approved text and lacks the text it replaced, and
-`git log 2af21b46..bea27331` names, for each site's file, the commit given below. The release's
+`git log 2af21b46..a11e1dfc` names, for each site's file, the commit given below. The release's
 three changed book files and the two files that hash them are covered instead by the analysis
 reader's measurement below and by the gate's mega, which regenerated them with no diff. After the
 final gate, every measurement that is more than a reading was re-run on the same tree, with the
@@ -873,7 +879,7 @@ the policy file's comments. No item is left unfixed.
 
 1. **1.3, with the MAM-simple half of 1.2: fixed in `65a744d3`.** MAM-simple's consumer notice
    names `lp-paseq`, and its README and two reading guides say "(narrow-sense paseq,
-   `<lp-paseq>`)"; MAM-parsed's notice, README and guide keep `מ:פסק`. Re-measured at `bea27331`:
+   `<lp-paseq>`)"; MAM-parsed's notice, README and guide keep `מ:פסק`. Re-measured at `a11e1dfc`:
    the notice's narpas rule names `lp-paseq` in all 70 of MAM-simple's data files, 35 JSON and 35
    XML, and the template in all 24 of MAM-parsed's plus files. The regeneration changed one line in
    each of the 70 files and nothing else, and the hand-run generators showed no product change
@@ -900,12 +906,12 @@ the policy file's comments. No item is left unfixed.
 ### Finding 4: Phonetic MAM
 
 1. **4.1's question: fixed in `2efd5de5`.** `Phonetic-MAM/README.md` lists the inverted nuns as
-   departure 9. Re-measured at `bea27331`: 9 `spi-invnun` in `MAM-simple/json-vtrad-mam/`, 2 in
+   departure 9. Re-measured at `a11e1dfc`: 9 `spi-invnun` in `MAM-simple/json-vtrad-mam/`, 2 in
    Numbers and 7 in Psalms, and no U+05C6 in the release's book files.
 2. **4.4: fixed in `1ba7bfa3`.** The refresh procedure, `dependent-refresh.md`, says to stop and ask
    Ben whether to retire the legacy projection comparison when the suite fails with "every chapter
    left the comparison", the message that `py/phonetic_mam/projection_check.py` gives.
-3. **4.5: fixed in `82cab117`.** Re-measured at `bea27331` with pm-code's fake adapters in place of
+3. **4.5: fixed in `82cab117`.** Re-measured at `a11e1dfc` with pm-code's fake adapters in place of
    `_adapter_command`, the limit patched to 5 s and a grandchild sleeping 20 s, nothing reaching
    MAM-private: for both the books and the test pages, a grandchild that holds stderr, stdout or
    both, or holds stdout after the adapter has written everything and exited, ends the run at 10.0
@@ -917,16 +923,18 @@ the policy file's comments. No item is left unfixed.
 4. **4.6: fixed in `26c33edd`.** The four narrow-sense paseq marker rows of Exodus 20:3 and
    Deuteronomy 5:7 have the strand label `טעם עליון` in both pronunciations, from the ב parameter of
    MAM-parsed's dual-cantillation template, so the analysis reader counts them in that strand
-   alone. Re-measured at `bea27331` through the analysis reader: at both verses the two marker rows
+   alone. Re-measured at `a11e1dfc` through the analysis reader: at both verses the two marker rows
    have the strand `cant-bet`, the reader's name for that label, a `cant-alef` selection lists no
    narrow-sense paseq and a `cant-bet` selection lists both, and these four are the only labelled
    marker rows in the 39 books.
 5. **4.7: fixed in `26c33edd`.** `in/phonetic_mam_display_corrections.json` lists the three
    corrected chapters, each with Ben's approval and the reason; `verify_site` leaves them out of the
    frozen comparison, as it does a refreshed chapter; and `check` lists them. Re-measured at
-   `bea27331`: `py/main_phonetic_mam.py check` reports that 0 of the 929 chapters have left the
-   comparison by a change of input, and lists the 3 that have left it by an approved correction,
-   Genesis 35, Exodus 20 and Deuteronomy 5; the suite's comparison of the other 926 passes.
+   `a11e1dfc`: `py/main_phonetic_mam.py check` lists the 3 chapters that have left the comparison
+   by an approved correction, Genesis 35, Exodus 20 and Deuteronomy 5, and the 4 that the merged
+   template rename made leave it by a change of MAM-parsed input, 2 Samuel 20, Jeremiah 48, Ezekiel
+   39 and 2 Chronicles 13; at `bea27331`, before that merge, it listed no such chapter. The suite's
+   comparison of the other 922 passes.
 
 ### Finding 5: texts that `AGENTS.md`'s new push rule left behind
 
@@ -967,13 +975,13 @@ the policy file's comments. No item is left unfixed.
    mid-operation or locked, as the code's skip, which returns before those reasons are consulted,
    does.
 4. **7.6: left as it is.**
-5. **7.8: fixed in `3e0c383f`.** Re-measured at `bea27331` in memory, every side effect stubbed: a
+5. **7.8: fixed in `3e0c383f`.** Re-measured at `a11e1dfc` in memory, every side effect stubbed: a
    missing default branch, an unreadable branch ref and a Git that cannot be launched each print
    `worktrees: FAILED (...)`, steps 1 and 3 to 7 still run, and the run exits 1, as it does when
    step 1 fails; a clean audit exits 0. The catch takes `OSError` as well as the disposition's
    `RetirementError`, as the plan records, since a Git that cannot be launched is the audit's other
    failure.
-6. **7.11: fixed in `1a2456da`.** Re-measured at `bea27331` by subprocess, with `PYTHONUTF8=0` and
+6. **7.11: fixed in `1a2456da`.** Re-measured at `a11e1dfc` by subprocess, with `PYTHONUTF8=0` and
    no `PYTHONIOENCODING`: one stream of 14 lines, seven requests that each carry the escaped lone
    surrogate `"\ud800"`, each followed by a good request, gets 14 replies and exit status 0. The two
    routes that echo it, a `phrase` request's untangler key and an `accents` value after a word's
@@ -985,7 +993,7 @@ the policy file's comments. No item is left unfixed.
 1. **8.1: fixed in `e52e0e6d`, the footnote, and `1ba7bfa3`, the skill.** The Job 38:12 footnote and
    its Ezekiel caption say "orphaned" where they said "unattached", and `hebrew-prose`'s
    `references/terminology.md` defines "orphaned" as a point that belongs to no letter, naming the
-   cases in which the word is wrong. Re-measured at `bea27331`: `git grep` finds "unattached" in
+   cases in which the word is wrong. Re-measured at `a11e1dfc`: `git grep` finds "unattached" in
    none of `py/author_boj_qr/`, `gh-pages/book-of-job/` and `book-of-job/out/`, and the gate's mega
    left the regenerated page unchanged.
 2. **8.2: left as it is.**
@@ -996,7 +1004,7 @@ the policy file's comments. No item is left unfixed.
 5. **8.5: fixed in `2efd5de5`.** `Phonetic-MAM/LICENSE.md`, row 56 and the preface to the MAM
    statement give MAM's terms to the MAM Hebrew that `Phonetic-MAM/examples/display.json` quotes.
 6. **8.6: fixed in `2efd5de5`.** `Yeivin-ITM/README.md`'s two sentences are in the past tense.
-7. **8.7: fixed in `72fc4097`.** Re-measured at `bea27331`: `py/main_0_mega.py` skips one step in a
+7. **8.7: fixed in `72fc4097`.** Re-measured at `a11e1dfc`: `py/main_0_mega.py` skips one step in a
    cloud session, `phonetic-mam-export`.
 8. **8.8: fixed in `1ba7bfa3`.** The common body names stderr's `backslashreplace` handler, as
    `hebrew-prose`'s `references/verifying.md` requires; deployed as "Checks and the final gate"
@@ -1013,12 +1021,12 @@ the policy file's comments. No item is left unfixed.
    `Yeivin-ITM/LICENSE.md`'s restatement follows.
 3. **9.8's README half: fixed in `2efd5de5`.** `README.md`'s "Code: GPL-3.0" item sets its
    exceptions between dashes.
-4. **9.22: fixed in `1ba7bfa3`, `72fc4097` and `2efd5de5`.** Re-measured at `bea27331`: every
+4. **9.22: fixed in `1ba7bfa3`, `72fc4097` and `2efd5de5`.** Re-measured at `a11e1dfc`: every
    `powershell` fence in tracked Markdown, 236 in 302 files, parses with PowerShell's parser, and
    so does the unlabelled block after "Re-establish with:" in
    `doc/PLAN-repo-maintenance-across-GitRepos.md`.
 5. **9.39: the document fixed in `72fc4097`; the limit is unchanged.** Re-measured by subprocess at
-   `bea27331`, with the limit at 16,777,216 characters: a request of that many characters is
+   `a11e1dfc`, with the limit at 16,777,216 characters: a request of that many characters is
    answered when unterminated and ends the stream when an LF ends it, and one a character shorter
    is answered when an LF ends it and ends the stream when CR and LF end it. So the limit counts
    the line terminator, as the document now says.
@@ -1027,7 +1035,7 @@ the policy file's comments. No item is left unfixed.
 ### The review's "Noticed outside the diff"
 
 1. **Issue #296: left as it is**, with no outward act.
-2. **N2, `_reference_matches`: fixed in `0f047b4f`.** Re-measured at `bea27331` in memory, against
+2. **N2, `_reference_matches`: fixed in `0f047b4f`.** Re-measured at `a11e1dfc` in memory, against
    `aef25641`'s copy, with tool-code's 29 cases in relative and absolute spellings: `path:3`,
    `path:3:`, `path:3-5`, `path:3–5` and `path#L3`, bare or followed by text or punctuation, now
    count as citations; every near miss, such as `path:3:7`, a longer name, `:3x`, `#L`,
@@ -1037,7 +1045,7 @@ the policy file's comments. No item is left unfixed.
 3. **N3, the break markers: assessed, and corrected in `26c33edd` under item 4.7's path.** The
    plan's D3 found that at Genesis 35:22, Exodus 20:13 and Deuteronomy 5:17 the release had the
    same kind of break as MAM-parsed, MAM-simple and MAM's special page, but not MAM's form of it,
-   and Ben approved the correction with the plan. Re-measured at `bea27331` through the analysis
+   and Ben approved the correction with the plan. Re-measured at `a11e1dfc` through the analysis
    reader: the marker row of Genesis 35:22 is `פפ`, and the second marker row of Exodus 20:13 and
    of Deuteronomy 5:17 is `ססס`, MAM-parsed's forms, each in both strands' selections.
 
@@ -1086,13 +1094,15 @@ pages alone, so the rest is a separate decision of his; nothing here starts it.
    name and `AGENTS.md`'s rule on mark order requires; it changes no visible character and no
    generated file; one of the five lines was this remediation's own, and the other four would have
    blocked any push of `main`. So this session applied the remedy in `bea27331` rather than
-   stopping, and ran the suite again ("Checks and the final gate", item 4).
+   stopping, and ran the suite again ("Checks and the final gate", item 4). Another session's
+   `efe58d21`, pushed while the gate ran, gave the same five lines the same order, and `a11e1dfc`
+   merged the two changes as one.
 
 **A false claim in a pushed commit message.** `2af21b46`'s message says that the mega and the suite
 were skipped because "the commit adds one planning document under doc/, which no generator, product
 or test reads". `py/tests/test_prose_mark_order.py` reads every hand-authored prose file, the plan
-among them, and failed on the plan's line 492. `bea27331`'s message and this entry correct the
-claim; the historical message stays as written.
+among them, and failed on the plan's line 491 at `2af21b46`, in D4's item 3. `bea27331`'s message
+and this entry correct the claim; the historical message stays as written.
 
 ### Noticed while planning, not acted on
 
@@ -1130,23 +1140,27 @@ No item names these, so each stays as it is; the plan's "Not in this remediation
    re-exporting the release through the private adapter in 118.9 s. It left no tracked diff and no
    untracked file, so every output it regenerates, the corrected release, its pages and the surveys
    that read it among them, equals the committed one. Wave 6 had run the mega from
-   `phonetic-mam-export` on, as `26c33edd`'s message records.
+   `phonetic-mam-export` on, as `26c33edd`'s message records. After the second merge the mega ran
+   again, on `a11e1dfc`, from 00:38 to 00:50, New York time: all 60 steps exited 0 in 674.3 s of
+   steps, the claims check again at 51 passed, 0 failed and 0 pending, and `phonetic-mam-export` in
+   102.0 s; it too left no tracked diff and no untracked file.
 4. **The suite** first ran on `03b01e85` from 00:04 to 00:12, New York time: 1,053 passed, 5 skipped
    and 2 failed in 450.80 s. Both failures were mark-order lints, `test_mam_simple_mark_order.py`
    and `test_prose_mark_order.py`, on five lines whose Hebrew had its marks in Unicode's order
    rather than MAM's: four lines of the Lamentations 1:18 example in MAM-simple's JSON and XML
    reading guides, which `abded326` added on 2026-10-06 with the suite skipped at Ben's
-   instruction, so that `origin/main` had failed both lints since then; and the plan's line 492,
-   which `2af21b46` added. `bea27331` passed the five lines through
+   instruction, so that `origin/main` failed both lints from then until `efe58d21`; and a line of
+   the plan's D4, item 3, which `2af21b46` added. `bea27331` passed the five lines through
    `uni_denorm.give_std_mark_order`, the remedy that both lints prescribe: each line keeps its
    characters, with only the order of the marks within a letter's cluster changed, and each
    reordered word now occurs verbatim in `MAM-simple/xml-vtrad-mam`, the data quoted. No generator
    reads those three files, so the mega's result stands for `bea27331`. The suite then ran on
    `bea27331` from 00:15 to 00:22, New York time: 1,055 passed and 5 skipped in 432.41 s, with
-   nothing failing.
+   nothing failing. After the second merge it ran on `a11e1dfc` from 00:50 to 00:58: 1,055 passed
+   and 5 skipped in 428.51 s, again with nothing failing.
 
 **Effective base State, 2026-10-07:** acted on. The remediation of the 39 items is integrated on
-`main` at `bea27331`, which passed the final gate, every item fixed or recorded as above. The 16
+`main` at `a11e1dfc`, which passed the final gate, every item fixed or recorded as above. The 16
 items left as they are need nothing more, and item 8.10 stays deferred until Ben starts its cleanup
 task. The base report's line 3 stays as written, and this update remains `State: open` while its
 base survives.
