@@ -48,6 +48,10 @@ ALEPPO_INDEX = (
     "https://github.com/bdenckla/MAM-basics/blob/main/aleppo/"
     "index-flat-annotated.json"
 )
+# The source and terms that aleppo/aleppo-wiki/LICENSE.txt gives for the index
+# that ALEPPO_INDEX corrects and annotates.
+STARK_INDEX = "https://learn.jdavidstark.com/aleppoindex"
+CC_BY_4 = "https://creativecommons.org/licenses/by/4.0/"
 EDITION_INDEX = "edition/index.html"
 
 _NOTE = RENAMED_NOTES["נוסח"]
@@ -737,7 +741,11 @@ def _survives(numbers):
                 numbers.percent(lost, verses, "doc_figures: lost_verses / verses"),
                 "), as MAM-basics' ",
                 link("index of the codex's surviving text", ALEPPO_INDEX),
-                " gives them, each of its ranges read as including both its ends. "
+                ", which corrects and annotates ",
+                link("J. David Stark's Aleppo Codex Index", STARK_INDEX),
+                " (",
+                link("CC BY 4.0", CC_BY_4),
+                "), gives them, each of its ranges read as including both its ends. "
                 "The codex is lost entire in ",
                 numbers.record(len(lost_entire), "doc_figures: books_lost_entire"),
                 " books, ",
