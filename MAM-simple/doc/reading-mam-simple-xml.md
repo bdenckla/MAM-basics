@@ -239,12 +239,12 @@ have the qere first: the pairs marked with MAM's קו״כ template, and three ma
 template of the same kind. These pairs follow a maqaf or, in three verses, a narrow-sense
 paseq. MAM's introduction gives the reason for the maqaf case:
 the reading should not break after the maqaf. In Lam.1.18, for example, the qere completes the
-maqaf compound כׇל־הָֽעַמִּ֗ים:
+maqaf compound כׇל־הָֽעַמִּ֗ים:
 
 ```xml
-<text text="… שִׁמְעוּ־נָ֣א כׇל־"/>
+<text text="… שִׁמְעוּ־נָ֣א כׇל־"/>
 <kq>
-  <kq-q text="הָֽעַמִּ֗ים"/>
+  <kq-q text="הָֽעַמִּ֗ים"/>
   <kq-k text="עמים"/>
 </kq>
 ```
