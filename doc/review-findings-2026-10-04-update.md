@@ -1158,6 +1158,15 @@ No item names these, so each stays as it is; the plan's "Not in this remediation
    `bea27331` from 00:15 to 00:22, New York time: 1,055 passed and 5 skipped in 432.41 s, with
    nothing failing. After the second merge it ran on `a11e1dfc` from 00:50 to 00:58: 1,055 passed
    and 5 skipped in 428.51 s, again with nothing failing.
+5. **Push and deployment.** A fetch found `origin/main` still at `cfb3a284`, and `main` went to
+   `origin` as `1989be57` at 01:05 on 2026-10-07, New York time. From this clone,
+   `./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config` then deployed from
+   `refs/remotes/origin/main` at `1989be57` and reported `USER_CONFIG_DEPLOYED_COUNT=8`: the
+   common body, `~/.codex/AGENTS.md`, and its expected hash (item 8.8), and `hebrew-prose` (items
+   8.1 and 8.9), `mam-wikisource-refresh` (items 4.4 and 4.7) and `mam-repository-topology` (item
+   9.22), each in both `~/.claude/skills/` and `~/.agents/skills/`. Its `--check` reported
+   `USER_CONFIG_PROBLEM_COUNT=0`, and the live copies read back with the new text and without
+   `rendered-prose.md`'s "Cross-repo rule".
 
 **Effective base State, 2026-10-07:** acted on. The remediation of the 39 items is integrated on
 `main` at `a11e1dfc`, which passed the final gate, every item fixed or recorded as above. The 16
