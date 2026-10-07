@@ -11,7 +11,7 @@ The near-Aleppo edition checks these shared declarations against its build.
 """
 
 from mb_cmn import ws_tmpl2 as wtp
-from py_misc import orphan_marks
+from py_misc import orphan_marks as orphan_marks  # re-exported for the shared renderer
 
 MAM_TARGET = "מקרא על פי המסורה"
 MAM_NOTE = "הערת מקרא על פי המסורה"

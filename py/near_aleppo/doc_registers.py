@@ -12,8 +12,6 @@ from near_aleppo.doc_html import link
 from near_aleppo.doc_html import table
 from near_aleppo.doc_html import verse_refs
 from mb_misc import mb_html
-from near_aleppo.phase2_templates import POINTED_KETIV_FAMILIES
-from near_aleppo.phase2_templates import POINTED_KETIV_PARAMETER
 from near_aleppo.phase2_templates import _RULES
 from near_aleppo.phase2_templates import _VERBATIM
 from near_aleppo.phase6_flags import _MAQAF_SILENCE

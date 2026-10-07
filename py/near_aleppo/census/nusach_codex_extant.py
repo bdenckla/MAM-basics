@@ -7,11 +7,8 @@ source entries remain source statements; the marker does not change coverage.
 
 import json
 import sys
-from collections import Counter
 
 from near_aleppo.census import census_paths
-from mb_cmn import bib_locales as tbn
-from near_aleppo.census import nusach_aleppo_readings as nar
 
 sys.stdout.reconfigure(encoding="utf-8")
 
