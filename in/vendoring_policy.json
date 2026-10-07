@@ -1,5 +1,5 @@
 {
-  "comment": "What the black sweep leaves alone. py/main_repo_util.py --run-black reads this file through py/repo_util/maintenance_policy.py and applies it to every swept repo except MAM-basics, which formats its own originals: a vendored copy is maintained in its source repo, so reformatting the copy would only make the next sync noisier. global.source_pkg_dirs: each key is a package name that black skips as a directory at any depth, and only the keys are read. overrides: single files copied out of MAM-basics to paths of their own; there are none. foreign_vendored: files copied into a swept repo from a source repo other than MAM-basics. Among the directories the package names cover are MAM-private's copies mgketer/py/mb_cmn and mgketer/py/mb_diff_mpu, made by MAM-private/mgketer/py/main_update_vendored_files.py, and al-hatorah/py/mb_cmn, made by MAM-private/al-hatorah/py/main_update_vendored_files.py, each script copying by intersection with this repo's package of the same name. Nothing measures whether those copies have drifted.",
+  "comment": "What the black sweep leaves alone. py/main_repo_util.py --run-black reads this file through py/repo_util/maintenance_policy.py and applies it to every swept repo except MAM-basics, which formats its own originals: a vendored copy is maintained in its source repo, so reformatting the copy would only make the next sync noisier. global.source_pkg_dirs: each key is a package name that black skips as a directory at any depth, and only the keys are read. overrides: single files copied out of MAM-basics to paths of their own; there are none. foreign_vendored: files copied into a swept repo from a source repo other than MAM-basics. Its one entry is MAM-private's frozen pointed-ketiv archive, whose README says its algorithm modules are copied byte for byte from an earlier MAM-private commit and whose source-manifest.json pins each module's SHA-256; Black would rewrite nine of the ten, which the 2026-10-07 maintenance sweep did before the change was reverted. Among the directories the package names cover are MAM-private's copies mgketer/py/mb_cmn and mgketer/py/mb_diff_mpu, made by MAM-private/mgketer/py/main_update_vendored_files.py, and al-hatorah/py/mb_cmn, made by MAM-private/al-hatorah/py/main_update_vendored_files.py, each script copying by intersection with this repo's package of the same name. Nothing measures whether those copies have drifted.",
   "global": {
     "comment": null,
     "source_pkg_dirs": {
@@ -13,5 +13,21 @@
     }
   },
   "overrides": [],
-  "foreign_vendored": []
+  "foreign_vendored": [
+    {
+      "dest_repo": "MAM-private",
+      "dest_paths": [
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/canonical_ketiv.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/compact.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/confidence.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/export_snapshot.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/holam_carriers.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/normalization.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/orphan_carriers.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/rules.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/suffix_carriers.py",
+        "near-aleppo/research/frozen-pointed-ketiv-848b45a/algorithm/transfer_policy.py"
+      ]
+    }
+  ]
 }
