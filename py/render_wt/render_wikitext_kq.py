@@ -145,7 +145,6 @@ def _pointing_display_order(value):
     """
     if isinstance(value, str):
         result = uni_denorm.give_std_mark_order(value)
-        result = _POINTED_KETIV_DISPLAY_FORMS.get(result, result)
         if _cluster_inventory(result) != _cluster_inventory(value):
             raise ValueError("Display ordering changed the pointed-ketiv content")
         return result
@@ -172,14 +171,6 @@ def _cluster_inventory(string):
         else:
             clusters.append((char, Counter()))
     return clusters
-
-
-# Preserve the established display of this one sealed literal form. This exact
-# projection moves holam before qadma on the same shin; it does not establish a
-# general priority for vowels or accents, or alter the stored source form.
-_POINTED_KETIV_DISPLAY_FORMS = {
-    "\u05d9\u05b8\u05e9\u05c1\u05a8\u05b9\u05d9\u05d1": "\u05d9\u05b8\u05e9\u05c1\u05b9\u05a8\u05d9\u05d1",
-}
 
 
 # near-aleppo: MAM's parameters of each ketiv/qere template these handlers show, as
