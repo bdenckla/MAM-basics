@@ -223,8 +223,8 @@ rendering surface. Main integration remains deferred.
 
 ## Ruby size and qamats investigation — 2026-10-07
 
-**Status:** Size change implemented; the difference in Ben's screenshots remains
-under investigation.
+**Status:** Size change implemented; the difference in Ben's screenshots is deferred
+under the integration instruction below.
 
 **Decision:** Ben requested 100% ruby text, matching CLC's `ruby.clc-kq rt` rule in
 `gh-pages/uxlc/style.css`. The execution baseline is `37606647d246b588cbe71e9855db382124cff59e`
@@ -252,3 +252,51 @@ offsets qof's below-mark anchor 120 font units to the right of its advance midpo
 itself explain the apparent difference between Ben's screenshots. The early claim about
 ordinary text is not a settled diagnosis of his browser's display. Genesis 3:11 was
 provided as a reference with an ordinary final tav carrying qamats for Ben's comparison.
+
+## Vertical ruby gap and main integration — 2026-10-07
+
+**Status:** Gap implemented and verification complete; main integration authorized by
+Ben's instruction to apply the package without waiting for the qamats investigation,
+and to add vertical space between qere and ketiv.
+This instruction supersedes the earlier deferments of main integration.
+
+**Checkout and baseline:** Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos2/MAM-basics`, a full clone using its own environment.
+The review branch began this phase at `726d906a559073ccc81d10734b4fb28b616b89a8`,
+with a clean checkout. Current main, `0cf3f380a5f8d5dbbcbf7db2a2cd230c2c5ff46d`,
+merged cleanly into the review branch as `8ba308a86a541d31c30da15347f88b09a94066ae`.
+Codex owns the focused checks, commit, normal branch push, fast-forward of main and
+normal push of main. The qamats diagnosis and trailing-space hypothesis are deferred.
+
+**Gap decision and scope:** A CSS prototype in the extract confirmed that 0.2em of
+padding below the ruby annotation leaves a visible gap while keeping the two readings
+at equal size. The same source stylesheet serves the edition and extract. Regenerate
+the stylesheet, index explanation and review HTML. Reading forms, external punctuation,
+the selection, pointing data, book pages and plain-text companion remain unchanged
+by this gap change. The complete integration includes the earlier final-punctuation
+additions, the special separator correction, ketiv on the baseline, full-size qere above
+it, and the sorted review extract with context and notes.
+
+**Verification and integration sequence:** Use Black on changed Python, the maintained
+HTML and extract generators, focused near-Aleppo and shared-HTML checks, the corpus
+differential, browser checks and `git diff --check`. The review trial leaves the mega
+and full suite to nightly checks. Immediately before integration, fetch origin again;
+merge any moved main into the review branch and repeat affected checks. Then fast-forward
+this clone's main to origin/main and the verified review branch, and push normally.
+
+**Completed verification:** Six focused tests passed on the combined branch, with the
+existing pytest-cache permission warning. An independent comparison against current
+origin/main found exactly 36 added final maqafs and five added final pasolegs, with no
+other frozen-record changes and an unchanged reviewed-pointing file. The corpus
+differential preserved ketiv forms, ordinary qere forms and text outside the displays;
+trivial qere forms matched their stored arguments. HTML generation and the extract's
+read-only comparison passed. Gap measurements across all 98 extract ruby units were
+4 px at size 20, 6 px at size 30, and approximately 9.6 px at size 48, with equal
+baseline and annotation sizes. Browser checks passed for sorting, embedded fonts,
+source text, sliders, narrow layout and print controls, with no extract network
+requests or script errors. Actual edition checks passed for Numbers, 1 Chronicles,
+Daniel and Ruth. Screenshots were inspected. MAM-with-doc regenerated without any
+tracked change. The gap's generated differences are only its stylesheet, index
+explanation and review HTML; book pages, data and the plain-text companion are unchanged.
+Black and `git diff --check` passed. The mega and full suite remain deferred under
+the approved trial; these focused checks cover the package and the combined branch.

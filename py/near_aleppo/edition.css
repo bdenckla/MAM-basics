@@ -11,6 +11,7 @@ ruby.near-aleppo-kq > rt {
     font-size: 100%;
     line-height: 1.8;
     font-weight: normal;
+    padding-bottom: 0.2em;
 }
 ruby.near-aleppo-kq .near-aleppo-kq-none {
     font-size: 70%;
