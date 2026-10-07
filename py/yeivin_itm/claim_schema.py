@@ -1,23 +1,12 @@
 """Closed claim contract and pins for the statements Ben approved.
 
 The fraction pins are review gates for the existing prose, not survey inputs.
-Changing a fraction or a record of the claim population requires inspecting both
-the data and prose.
+Changing a fraction requires inspecting both the data and the prose. The forms that
+the footnotes quote are checked by claims.quoted_form_failures (quoted_forms.py).
 """
 
-import re
-
-SCHEMA = "yeivin-meteg-claims-v1"
+SCHEMA = "yeivin-meteg-claims-v2"
 INPUT_IDENTITY = "out/accgram/meteg-before-stress.json"
-
-# The claim population: every ordinary-qamats record of the analysis whose pattern is one
-# of these, the records the claims and their footnotes are drawn from.  Its SHA-256, which
-# claims.population_sha256 computes, is pinned; the claim file's input SHA-256 identifies
-# the whole analysis file as provenance and is not a pin.
-CLAIM_PATTERNS = ("FR1", "FR2", "FR3", "AFR1", "AFR4", "XAFR1")
-APPROVED_POPULATION_SHA256 = (
-    "452c78e4aab25cefc932bd3f6eb0aafa1e36e5f272fcb7240ce63dd008322653"
-)
 
 # Exact reviewed fractions, including the primary-accent qualifications in §320.
 APPROVED_FRACTIONS = {
@@ -63,12 +52,9 @@ def validate_shape(claims):
     _keys(claims, ("schema", "input", "populations", "measurements"), "root")
     if claims["schema"] != SCHEMA:
         raise ValueError("Unknown Yeivin meteg claim schema")
-    _keys(claims["input"], ("identity", "sha256"), "input")
-    source = claims["input"]
-    if source["identity"] != INPUT_IDENTITY or not isinstance(source["sha256"], str):
+    _keys(claims["input"], ("identity",), "input")
+    if claims["input"]["identity"] != INPUT_IDENTITY:
         raise ValueError("Invalid independent meteg analysis identity")
-    if not re.fullmatch(r"[0-9a-f]{64}", source["sha256"]):
-        raise ValueError("Invalid independent meteg analysis hash")
     _keys(claims["populations"], APPROVED_FRACTIONS, "populations")
     _keys(claims["measurements"], APPROVED_FRACTIONS, "measurements")
     for name, fraction in claims["measurements"].items():
@@ -108,9 +94,3 @@ def pin_claims(claims):
         value = claims["measurements"][name]
         if (value["numerator"], value["denominator"]) != expected:
             raise ValueError(f"Ben's prose pin changed: {name}; review the footnotes")
-
-
-def pin_population(population_sha256):
-    """Fail if a claim-population record changed, was added or was removed."""
-    if population_sha256 != APPROVED_POPULATION_SHA256:
-        raise ValueError("The claim population has changed; review Ben's claims")

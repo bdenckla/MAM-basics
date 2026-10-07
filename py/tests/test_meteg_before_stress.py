@@ -88,7 +88,6 @@ def test_cases_have_only_public_display_and_independent_classification_fields():
     survey = _tracked()
     assert set(survey) == {
         "schema",
-        "input",
         "projection",
         "ordinary",
         "samekh",
@@ -253,7 +252,7 @@ def test_target_meteg_agrees_with_accgram_nucleus_parser():
 def test_approved_claims_reproduce_exact_public_analysis_fractions():
     comparison = claims.from_analysis()
     assert comparison == claims.read()
-    assert comparison["schema"] == "yeivin-meteg-claims-v1"
+    assert comparison["schema"] == "yeivin-meteg-claims-v2"
     assert set(comparison["measurements"]) == set(comparison["populations"])
     for name, fraction in comparison["measurements"].items():
         assert type(fraction["numerator"]) is int

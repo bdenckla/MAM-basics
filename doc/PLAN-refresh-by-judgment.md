@@ -852,8 +852,8 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R8 | Genesis 43:28 and consumer-notice hashes become readable | 2 | implemented |
 | R9 | Near-Aleppo's two checks over old commits are retired | 2 | implemented |
 | R10 | Phonetic MAM legacy comparison retired; page set replaces the 974 pin | 3 | implemented |
-| R11 | Yeivin population hash goes; quoted-form check added | 4 | active |
-| R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | active |
+| R11 | Yeivin population hash goes; quoted-form check added | 4 | implemented |
+| R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | implemented |
 | R13 | Test pins replaced by rules or deleted | 5 | active |
 | R14 | Every reader of the Decalogue capture moves to the mirror | 5 | active |
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | active |

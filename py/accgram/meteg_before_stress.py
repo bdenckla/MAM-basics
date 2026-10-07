@@ -23,9 +23,7 @@ from __future__ import annotations
 
 from collections import Counter
 from dataclasses import dataclass
-from hashlib import sha256
 from itertools import product
-import json
 from pathlib import Path
 import re
 
@@ -366,7 +364,7 @@ def _previous_readings(verse) -> dict[int, object]:
     return previous
 
 
-def analyze_books(books, *, input_identity: dict) -> dict:
+def analyze_books(books) -> dict:
     """Analyze canonical public-book views while retaining their row multiplicity."""
     from phonetic_mam import analysis_reader
 
@@ -406,7 +404,6 @@ def analyze_books(books, *, input_identity: dict) -> dict:
         )
     return {
         "schema": "meteg-before-stress-v1",
-        "input": input_identity,
         "projection": {
             "cantillation": "cant-alef",
             "ordinary_qamats": "dalet; includes unlabelled ordinary readings",
@@ -426,27 +423,11 @@ def build_survey() -> dict:
 
     release.require_complete_book_set()
     data_dir = paths.phonetic_mam_dir() / "data"
-    files = sorted(data_dir.glob("*.json"))
-    if not files:
+    if not any(data_dir.glob("*.json")):
         raise FileNotFoundError(f"Missing public Phonetic MAM release: {data_dir}")
-    manifest = [
-        {"path": path.name, "sha256": sha256(path.read_bytes()).hexdigest()}
-        for path in files
-    ]
-    identity = {
-        "product": "Phonetic-MAM",
-        "schema": "phonetic-mam-public-v1",
-        "files": manifest,
-        "sha256": sha256(
-            json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode("utf-8")
-        ).hexdigest(),
-    }
     return analyze_books(
-        (
-            (book_id, analysis_reader.read_book(book_id))
-            for book_id in bib_locales.ALL_BK39_IDS
-        ),
-        input_identity=identity,
+        (book_id, analysis_reader.read_book(book_id))
+        for book_id in bib_locales.ALL_BK39_IDS
     )
 
 

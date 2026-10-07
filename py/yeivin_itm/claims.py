@@ -6,12 +6,25 @@ the minimized tracked claim product. No workbook-era filters are inferred.
 
 from __future__ import annotations
 
-from hashlib import sha256
 import json
+from typing import NamedTuple
 
 from accgram.meteg_before_stress import FULLY_REGULAR
 from mb_cmn import bib_locales, cantsys, hebrew_accents as ha
-from yeivin_itm import paths, claim_schema
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import uni_denorm
+from yeivin_itm import paths, claim_schema, quoted_forms
+
+
+class Measurement(NamedTuple):
+    """One named fraction: its numerator and denominator records, as the analysis
+    holds them, its definition and its own exclusions."""
+
+    name: str
+    numerator: list
+    denominator: list
+    definition: str
+    exclusions: tuple
 
 
 def read():
@@ -20,7 +33,7 @@ def read():
         "LICENSE.md",
         "README.md",
         "meteg-claims.json",
-        "schema/meteg-claims-v1.schema.json",
+        "schema/meteg-claims-v2.schema.json",
     }
     found = {
         path.relative_to(paths.product_dir()).as_posix()
@@ -35,50 +48,106 @@ def read():
 
 
 def from_analysis():
-    """Project the independent public input, then enforce the approved prose pins."""
-    result, population = projection()
+    """Project the independent public input, then enforce the approved prose pins
+    and Ben's quoted forms."""
+    result, failures = projection()
     claim_schema.validate(result)
-    claim_schema.pin_population(population)
+    if failures:
+        raise ValueError(
+            "Ben's quoted forms no longer hold; review his footnotes: "
+            + "; ".join(failures)
+        )
     return result
 
 
 def projection():
-    """The claims projected from the analysis and its claim population's SHA-256.
+    """The claims projected from the analysis, and how Ben's quoted forms fail of it.
 
     Neither is checked against the approved pins: ``from_analysis`` enforces them, and
     ``publication.review_claims`` reports how a changed analysis would differ.
     """
     source = paths.product_dir().parent / claim_schema.INPUT_IDENTITY
-    data = source.read_bytes()
-    survey = _read_json(data)
-    result = compute(
-        survey,
-        input_identity=claim_schema.INPUT_IDENTITY,
-        input_sha256=sha256(data).hexdigest(),
-    )
+    survey = _read_json(source.read_bytes())
+    measurements = measured(survey)
+    result = _claims(measurements, input_identity=claim_schema.INPUT_IDENTITY)
     claim_schema.validate_shape(result)
-    return result, population_sha256(survey)
+    return result, quoted_form_failures(survey, measurements)
 
 
-def population_sha256(survey: dict) -> str:
-    """SHA-256 of the canonical JSON of the claim population, every field included.
+def quoted_form_failures(survey, measurements):
+    """Each way that Ben's quoted forms fail of the analysis, as one line of text.
 
-    The claim population is every ordinary-qamats record whose pattern is one of
-    ``claim_schema.CLAIM_PATTERNS``, in the analysis's order.
+    For each of quoted_forms.QUOTED_FORMS, exactly one ordinary record at its verse
+    must have its form. Both are compared in MAM-normal mark order, the record's gray
+    maqaf read as a maqaf, since the footnote at Psalms 137:1 quotes a maqaf there.
+    That record must have the form's pattern, and be in the numerator of each
+    measurement of its ``member_of`` and of none of its ``not_member_of``.
+    ``measurements`` is what ``measured(survey)`` returns. The forms that enumerate
+    a measurement must be exactly that measurement's numerator records.
     """
-    records = [
-        case
-        for case in survey["ordinary"]["cases"]
-        if case["pattern"] in claim_schema.CLAIM_PATTERNS
-    ]
-    if not records:
-        raise ValueError("Empty claim population")
-    canonical = json.dumps(records, sort_keys=True, separators=(",", ":"))
-    return sha256(canonical.encode("utf-8")).hexdigest()
+    cases = survey["ordinary"]["cases"]
+    numerators = {
+        measurement.name: measurement.numerator for measurement in measurements
+    }
+    failures = []
+    for quoted in quoted_forms.QUOTED_FORMS:
+        where = f"quoted form {quoted.module} {quoted.sloc} {quoted.form}"
+        verse = quoted_forms.verse(quoted.sloc)
+        at_verse = [case for case in cases if _verse(case) == verse]
+        found = [
+            case
+            for case in at_verse
+            if _record_form(case) == uni_denorm.give_std_mark_order(quoted.form)
+        ]
+        if len(found) != 1:
+            failures.append(
+                f"{where}: {len(found)} ordinary records at the verse have the form, "
+                f"not 1; the verse's records are {[c['hebrew'] for c in at_verse]}"
+            )
+            continue
+        (case,) = found
+        if case["pattern"] != quoted.pattern:
+            failures.append(
+                f"{where}: its pattern is {case['pattern']}, not {quoted.pattern}"
+            )
+        for name in quoted.member_of:
+            if not any(record is case for record in numerators[name]):
+                failures.append(f"{where}: not counted in {name}")
+        for name in quoted.not_member_of:
+            if any(record is case for record in numerators[name]):
+                failures.append(f"{where}: counted in {name}")
+    enumerated = sorted(
+        {quoted.enumerates for quoted in quoted_forms.QUOTED_FORMS if quoted.enumerates}
+    )
+    for name in enumerated:
+        listed = {
+            (
+                quoted_forms.verse(quoted.sloc),
+                uni_denorm.give_std_mark_order(quoted.form),
+            )
+            for quoted in quoted_forms.QUOTED_FORMS
+            if quoted.enumerates == name
+        }
+        counted = {(_verse(case), _record_form(case)) for case in numerators[name]}
+        if listed != counted:
+            failures.append(
+                f"enumerated measurement {name}: the footnote lists "
+                f"{sorted(listed)}, the analysis counts {sorted(counted)}"
+            )
+    return failures
+
+
+def _verse(case):
+    return bib_locales.parse_short_bcv(case["bcv"])
+
+
+def _record_form(case):
+    """A record's chanted word in MAM-normal mark order, its gray maqaf a maqaf."""
+    return uni_denorm.give_std_mark_order(case["hebrew"].replace(hpu.NU_GMAQ, hpu.MAQ))
 
 
 def survey():
-    """Write only the minimized claim file after all pins have passed."""
+    """Write only the minimized claim file after all pins and quoted forms pass."""
     result = from_analysis()
     destination = paths.product_dir() / "meteg-claims.json"
     data = (json.dumps(result, ensure_ascii=False, indent=2) + "\n").encode("utf-8")
@@ -141,30 +210,48 @@ _COMMON_EXCLUSIONS = (
 )
 
 
-def compute(survey: dict, *, input_identity: str, input_sha256: str) -> dict:
-    """Project named populations and exact integer fractions from the survey."""
+def _claims(measurements, *, input_identity: str) -> dict:
+    """The claim file's value: named populations and exact integer fractions."""
+    populations = {}
+    fractions = {}
+    for measurement in measurements:
+        n_count, d_count = len(measurement.numerator), len(measurement.denominator)
+        if not d_count:
+            raise ValueError(f"Empty claim population: {measurement.name}")
+        populations[measurement.name] = {
+            "definition": measurement.definition,
+            "exclusions": [*_COMMON_EXCLUSIONS, *measurement.exclusions],
+        }
+        fractions[measurement.name] = {
+            "numerator": n_count,
+            "denominator": d_count,
+            "percentage": 100 * n_count / d_count,
+        }
+    return {
+        "schema": claim_schema.SCHEMA,
+        "input": {"identity": input_identity},
+        "populations": populations,
+        "measurements": fractions,
+    }
+
+
+def measured(survey: dict) -> list:
+    """Every named measurement of the survey, in order, with its records.
+
+    The one list feeds both the claim file and the check of Ben's quoted forms.
+    """
     if survey["schema"] != "meteg-before-stress-v1":
         raise ValueError("Unknown independent pre-stress-meteg survey schema")
     cases = survey["ordinary"]["cases"]
     fr = _select(cases, FULLY_REGULAR)
     fr_dsg = _select(cases, FULLY_REGULAR, accent="disj", meteg=False)
     fr_cwg = _select(cases, FULLY_REGULAR, accent="conj", meteg=True)
-    populations = {}
-    measurements = {}
+    measurements = []
 
     def add(name, numerator, denominator, definition, *, exclusions=()):
-        n_count, d_count = len(numerator), len(denominator)
-        if not d_count:
-            raise ValueError(f"Empty claim population: {name}")
-        populations[name] = {
-            "definition": definition,
-            "exclusions": [*_COMMON_EXCLUSIONS, *exclusions],
-        }
-        measurements[name] = {
-            "numerator": n_count,
-            "denominator": d_count,
-            "percentage": 100 * n_count / d_count,
-        }
+        measurements.append(
+            Measurement(name, numerator, denominator, definition, tuple(exclusions))
+        )
 
     add(
         "fully-regular.all",
@@ -265,9 +352,4 @@ def compute(survey: dict, *, input_identity: str, input_sha256: str) -> dict:
             _select(cases, ("XAFR1",), accent="disj"),
             f"XAFR1 disjunctives {state} target meteg, over all XAFR1 disjunctives; these remain excluded from AFR1.",
         )
-    return {
-        "schema": "yeivin-meteg-claims-v1",
-        "input": {"identity": input_identity, "sha256": input_sha256},
-        "populations": populations,
-        "measurements": measurements,
-    }
+    return measurements
