@@ -75,7 +75,7 @@ _GENCOM_2 = [
 _EZEKIEL_COMPARISON = [
     "The similar כתיב/קרי word-boundary shifts have different mark attachments in μA.",
     " In the Job case that is our main focus here, the פתח in question clearly belongs to the ה.",
-    " In $Ezekiel_42_9, however, the פתח is unattached;",
+    " In $Ezekiel_42_9, however, the פתח is orphaned;",
     " despite a seemingly-available “mobile ה” to attach it to, the $naqdan avoids doing so.",
     " (We use “mobile ה” to describe the relationship between the כתיב, which is ",
     author.span_unpointed_tanakh("ומתחתה לשכות"),
@@ -101,7 +101,7 @@ _EZEKIEL_FIGURE = boj_html.div(
         ),
         boj_html.para(
             [
-                "μA, Ezekiel 42:9, page 186r. The unattached פתח is visible between ",
+                "μA, Ezekiel 42:9, page 186r. The orphaned פתח is visible between ",
                 author.span_unpointed_tanakh("ומתחתה"),
                 " and ",
                 author.span_unpointed_tanakh("לשכות"),
@@ -185,7 +185,7 @@ RECORD_3812_YD3F_HJXR = {
     ],
     "qr-footnotes": [
         boj_html.heading_level_2(
-            "φ1 — Attachment of the פתח in the parallel passages",
+            "φ1 — Attachment of the פתח in the similar cases",
             {"id": "patah-comparison"},
         ),
         author.para(_EZEKIEL_COMPARISON),
