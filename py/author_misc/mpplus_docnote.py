@@ -37,10 +37,10 @@ def build_body(*, claims: ClaimCollection):
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(["Documentation template (", author.hbo("נוסח"), ")"]),
-        author.para(["<- Back to ", plus_back_link]),
+        author.para(["← Back to ", plus_back_link]),
         author.para(
             [
-                "Its first parameter is the \u201ctarget\u201d - what is being documented."
+                "Its first parameter is the \u201ctarget\u201d — what is being documented."
                 " The second parameter contains the documentation"
                 " (anomalous forms, variant readings, uncertain readings, etc.).",
             ]
@@ -93,11 +93,11 @@ def build_body(*, claims: ClaimCollection):
             "As mentioned above, consumers must accept a target consisting of exactly"
             " one ASCII space"
             " (U+0020), preserving it without trimming it to an empty string or"
-            " rejecting it as empty. The current plus data has six such targets,"
+            " rejecting it as empty. The current mpplus data has six such targets,"
             " all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69;"
             " and Nehemiah 3:2, 3:10, and 7:68."
         ),
-        author.para("For example, Deuteronomy 23:8 has this target:"),
+        author.para("For example, Deuteronomy 23:8 has this note targeting a space:"),
         json_block.json_block_raw_html(
             json.dumps(
                 {

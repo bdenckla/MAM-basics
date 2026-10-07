@@ -9,9 +9,8 @@
 </head>
 <body>
 <h1>Documentation template (<bdi lang="hbo">נוסח</bdi>)</h1>
-<p>&lt;- Back to <a href="mpplus.html">Reading
-<abbr class="small-caps">MAM</abbr>-parsed-plus</a></p>
-<p>Its first parameter is the “target” - what is being documented. The second parameter contains the
+<p>← Back to <a href="mpplus.html">Reading <abbr class="small-caps">MAM</abbr>-parsed-plus</a></p>
+<p>Its first parameter is the “target” — what is being documented. The second parameter contains the
 documentation (anomalous forms, variant readings, uncertain readings, etc.).</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -37,9 +36,9 @@ C.</li>
 <p>A target can also wrap one of these forms in <bdi lang="hbo">מ:הערה-2</bdi>.</p>
 <p>As mentioned above, consumers must accept a target consisting of exactly one ASCII space
 (U+0020), preserving it without trimming it to an empty string or rejecting it as empty. The current
-plus data has six such targets, all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69; and
+mpplus data has six such targets, all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69; and
 Nehemiah 3:2, 3:10, and 7:68.</p>
-<p>For example, Deuteronomy 23:8 has this target:</p>
+<p>For example, Deuteronomy 23:8 has this note targeting a space:</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;נוסח&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
 <span class="tok-punct">  </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-punct"></span>
