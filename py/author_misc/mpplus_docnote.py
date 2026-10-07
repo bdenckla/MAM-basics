@@ -97,7 +97,7 @@ def build_body(*, claims: ClaimCollection):
             " all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69;"
             " and Nehemiah 3:2, 3:10, and 7:68."
         ),
-        author.para("For example, Deuteronomy 23:8 has this target:"),
+        author.para("For example, Deuteronomy 23:8 has this note targeting a space:"),
         json_block.json_block_raw_html(
             json.dumps(
                 {
