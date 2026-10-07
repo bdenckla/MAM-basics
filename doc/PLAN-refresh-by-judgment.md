@@ -1,6 +1,6 @@
 # Judge a Wikisource refresh by its diffs, not by pinned hashes
 
-State: live; approved by Ben on 2026-10-07; executing since 2026-10-07 on his instruction.
+State: executed 2026-10-07; approved by Ben on 2026-10-07 and executed on his instruction.
 
 Written on 2026-10-07, New York time, by a Claude session (Claude Opus 5.5 in the Claude desktop
 app). The session worked in the full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, whose clean
@@ -858,7 +858,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R14 | Every reader of the Decalogue capture moves to the mirror | 5 | implemented |
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | implemented |
 | R16 | Refresh skill and reference rewritten | 7 | implemented |
-| R17 | Skill deployment and this plan's record | 8 | active |
+| R17 | Skill deployment and this plan's record | 8 | implemented |
 | R18 | `AGENTS.md` sentence, accepted by Ben on 2026-10-07 | 7 | implemented |
 
 ## Noticed, not acted on
