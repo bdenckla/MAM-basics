@@ -13,17 +13,12 @@ source intermediate. Phonetic MAM's complete output was compared with the pages
 that phonetic-hbo published at the commit named below, and all artifacts were
 assessed together; schema validation and rendered-page parity alone were not
 enough. Those pages cannot be produced again, so the comparison cannot be
-repeated for text that MAM has changed since. The suite compares each rendered
-chapter with the old pages' frozen projection hashes only while the chapter's
-MAM-parsed input matches its fingerprint in
-`in/phonetic_mam_legacy_projection_inputs.json`; a chapter that a refresh changes
-leaves that comparison, and its diff is reviewed instead. A chapter's fingerprint
-also covers the verse before it and the verse after it in the same MAM-parsed
-plus file, so a change to a chapter's first verse also makes the chapter before it
-leave, and a change to its last verse the chapter after it. A chapter whose display
-has been deliberately corrected leaves the comparison too, and its diff is reviewed
-instead: `in/phonetic_mam_display_corrections.json` lists each such chapter with the
-approval and the reason, and `py/main_phonetic_mam.py check` lists it.
+repeated for text that MAM has changed since. Until 2026-10-07 the suite compared
+each rendered chapter whose MAM-parsed input was unchanged with the old pages'
+frozen projection hashes; Ben retired that comparison that day, and a change to
+the display now shows in the diff of the regenerated release and pages, which is
+reviewed. `in/phonetic_mam_display_corrections.json` lists each chapter whose
+display has been deliberately corrected, with the approval and the reason.
 
 ## How the Hebrew differs from MAM's text
 
@@ -100,8 +95,7 @@ Run the repository's `py/main_phonetic_mam.py` entry point from MAM-basics:
   `in/phonetic-mam-images/`, and the Taamey D font in `doc/woff2/` with its
   source support in `in/font-support/`; it writes `gh-pages/phonetic-mam/` and
   the shared font-source package in `gh-pages/font-sources/`
-- `check` validates all of Phonetic MAM without writing, and lists the
-  chapters that have left the legacy projection comparison
+- `check` validates all of Phonetic MAM without writing
 - `compute` serves explicitly versioned, read-only computations over stdin/stdout;
   this local transport is not a Phonetic MAM data format and saves no inputs or results
 
@@ -127,5 +121,6 @@ third-party material are granted. The font is accompanied by its notices, full
 GPL v2 text, embedding exception and corresponding-source support.
 
 The historical display oracle is `bdenckla/phonetic-hbo` commit
-`8da90513df1c759d8db34b135d007e79686715d3`. The compact projection hashes are
-tracked at `in/phonetic_mam_legacy_projection_sha256.json` in MAM-basics.
+`8da90513df1c759d8db34b135d007e79686715d3`. Its compact projection hashes were
+tracked in MAM-basics, at `in/phonetic_mam_legacy_projection_sha256.json`, until
+2026-10-07.

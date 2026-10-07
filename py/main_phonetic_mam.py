@@ -6,8 +6,7 @@ Subcommands:
     render
         Render the tracked public display release, without private inputs.
     check
-        Validate the complete public release without writing, and list the
-        chapters that have left the legacy projection comparison.
+        Validate the complete public release without writing.
     compute
         Serve transient, versioned NDJSON computations on stdin and stdout.
 """
@@ -22,11 +21,7 @@ def build_parser():
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("export", help="Export the public display release")
     commands.add_parser("render", help="Render only the tracked public display release")
-    commands.add_parser(
-        "check",
-        help="Validate the tracked release without writing, and list the chapters"
-        " that have left the legacy projection comparison",
-    )
+    commands.add_parser("check", help="Validate the tracked release without writing")
     commands.add_parser(
         "compute", help="Serve transient NDJSON computations on stdin/stdout"
     )
@@ -49,11 +44,9 @@ def almost_main(argv=None):
 
         return render()
     if args.command == "check":
-        from phonetic_mam.projection_check import report_chapters_left
         from phonetic_mam.release import validate_complete_release
 
-        validate_complete_release()
-        return report_chapters_left()
+        return validate_complete_release()
     raise ValueError("unknown Phonetic MAM operation")
 
 

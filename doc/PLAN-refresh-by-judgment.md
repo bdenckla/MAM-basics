@@ -851,7 +851,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R7 | Readable pointing records; digests and manifest constants go | 2 | implemented |
 | R8 | Genesis 43:28 and consumer-notice hashes become readable | 2 | implemented |
 | R9 | Near-Aleppo's two checks over old commits are retired | 2 | implemented |
-| R10 | Phonetic MAM legacy comparison retired; page set replaces the 974 pin | 3 | active |
+| R10 | Phonetic MAM legacy comparison retired; page set replaces the 974 pin | 3 | implemented |
 | R11 | Yeivin population hash goes; quoted-form check added | 4 | active |
 | R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | active |
 | R13 | Test pins replaced by rules or deleted | 5 | active |

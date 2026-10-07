@@ -25,12 +25,14 @@ rendered HTML alone was insufficient. The 2026-10-02 review ran that module by h
 and found all 39 books equal. The module was removed on 2026-10-03 because it reads
 only the two old page families, which no generator can now produce and no
 maintained clone holds; Git history keeps it at
-`c17de1756c785682162f805e27600c9c67462990`. For chapters whose MAM-parsed input is
+`c17de1756c785682162f805e27600c9c67462990`. For chapters whose MAM-parsed input was
 unchanged, the frozen projection hashes in
-`in/phonetic_mam_legacy_projection_sha256.json` remain the comparison with those
-pages. Review also covers the combined code, metadata, example pages, analyses,
-fixtures and joins; the closed validator is only the mechanical part of that
-boundary.
+`in/phonetic_mam_legacy_projection_sha256.json` remained the comparison with those
+pages until 2026-10-07, when they were retired, with their input record
+`in/phonetic_mam_legacy_projection_inputs.json`, by Ben's decision of that day;
+`9972e6c076cc3e5844258e176ccc4266571f5a69` holds their last copies. Review also
+covers the combined code, metadata, example pages, analyses, fixtures and joins;
+the closed validator is only the mechanical part of that boundary.
 
 The five example pages have their own closed display-document format. Their input
 is normalized from the exact rendered HTML rather than retaining calculation
