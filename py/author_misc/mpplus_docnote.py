@@ -83,8 +83,7 @@ def build_body(*, claims: ClaimCollection):
         ),
         author.para(
             [
-                "Template names and descriptive parameters do not count as letters"
-                " of the target text. A target can also wrap one of these forms in ",
+                "A target can also wrap one of these forms in ",
                 author.hbo("מ:הערה-2"),
                 ". A note can separately target a verse label (",
                 author.hbo("מ:פסוק"),
