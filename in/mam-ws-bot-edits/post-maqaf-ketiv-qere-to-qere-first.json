@@ -1,0 +1,38 @@
+{
+  "summary": "Use template קו\"כ, not כו\"ק, where the qere directly follows a maqaf, as MAM's introduction prescribes: 2 Sam 20:23, Jer 48:21, Ezek 39:25 and 2 Chr 13:19",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "2Samuel": [
+      {
+        "ch": "כ",
+        "old": "עַל־{{כו\"ק|הכרי|הַכְּרֵתִ֖י}}",
+        "new": "עַל־{{קו\"כ|הכרי|הַכְּרֵתִ֖י}}",
+        "comment": "2 Samuel 20:23"
+      }
+    ],
+    "Jeremiah": [
+      {
+        "ch": "מח",
+        "old": "וְעַל־{{כו\"ק|מופעת|מֵיפָֽעַת}}",
+        "new": "וְעַל־{{קו\"כ|מופעת|מֵיפָֽעַת}}",
+        "comment": "Jeremiah 48:21"
+      }
+    ],
+    "Ezekiel": [
+      {
+        "ch": "לט",
+        "old": "אֶת־{{כו\"ק|שבית|שְׁב֣וּת}}",
+        "new": "אֶת־{{קו\"כ|שבית|שְׁב֣וּת}}",
+        "comment": "Ezekiel 39:25"
+      }
+    ],
+    "2Chronicles": [
+      {
+        "ch": "יג",
+        "old": "וְאֶת־{{כו\"ק|עפרון|עֶפְרַ֖יִן}}",
+        "new": "וְאֶת־{{קו\"כ|עפרון|עֶפְרַ֖יִן}}",
+        "comment": "2 Chronicles 13:19"
+      }
+    ]
+  }
+}
