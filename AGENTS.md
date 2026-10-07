@@ -14,9 +14,11 @@ dagesh ḥazaq (U+05C9), and rafe. The two dagesh code points share a priority w
 preserving the other marks' relative order. `py/mb_cmn/uni_denorm.py` is the authority:
 `give_std_mark_order` applies the order and `has_std_mark_order` checks it.
 
-**Never call `unicodedata.normalize` in any form on Hebrew.** When two Hebrew strings that should
-match do not, compare them through `give_std_mark_order`; do not normalize them. Hebrew copied
-from a browser is especially suspect because the two orders render identically.
+`unicodedata.normalize` puts Hebrew marks in Unicode's order, not MAM's. So don't use it to
+produce Hebrew that belongs in MAM's order, or to hide a mark-order mismatch that matters;
+`give_std_mark_order` is the tool for both. A call that only asks what normalization would do,
+as the fragility test in `py/mb_cmn/uni_norm_fragile.py` does, is fine. Hebrew copied from a
+browser is especially suspect because the two orders render identically.
 
 Do not “repair” faithful external captures or intermediates upstream of the pipeline's deliberate
 denormalization. Known examples include `in/mam-ws/`, its faithful intermediates, and verbatim

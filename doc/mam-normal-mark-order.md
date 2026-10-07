@@ -2,7 +2,7 @@
 
 This current reference carries the detailed repository-specific evidence and scope. The always-loaded rule remains in `AGENTS.md`.
 
-## Hebrew marks go in MAM-normal order, not Unicode-normal order — never run NFC over them
+## Hebrew marks go in MAM-normal order, not Unicode-normal order
 
 Two orders exist for the combining marks of one base-letter cluster, and they differ on where the
 dagesh sits:
@@ -18,10 +18,12 @@ dagesh sits:
 - **Unicode-normal order**, what `unicodedata.normalize` produces from the canonical combining
   classes (qamats 18, holam 19, dagesh 21, meteg 22). It puts the dagesh **after** the vowel.
 
-**Never call `unicodedata.normalize` (NFC, NFD, any form) on Hebrew.** When two strings that should
-match do not, put both through `give_std_mark_order`; do not paper over it by normalizing. The two
-orders render identically, so nothing looks wrong on the page and the defect surfaces only where
-something compares bytes.
+`unicodedata.normalize` puts Hebrew marks in Unicode's order, not MAM's. So don't use it to
+produce Hebrew that belongs in MAM's order, or to hide a mark-order mismatch that matters;
+`give_std_mark_order` is the tool for both. A call that only asks what normalization would do,
+as the fragility test in `py/mb_cmn/uni_norm_fragile.py` does, is fine. The two orders render
+identically, so nothing looks wrong on the page and the defect surfaces only where something
+compares bytes.
 
 MAM's shipped data is entirely in MAM-normal order — checked 2026-08-04, `has_std_mark_order` true
 for all 63 files now retained under `MAM-parsed/plus/` and `MAM-for-Sefaria/csv/`. So a cluster

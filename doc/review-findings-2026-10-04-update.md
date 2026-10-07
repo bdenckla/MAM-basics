@@ -1173,3 +1173,83 @@ No item names these, so each stays as it is; the plan's "Not in this remediation
 items left as they are need nothing more, and item 8.10 stays deferred until Ben starts its cleanup
 task. The base report's line 3 stays as written, and this update remains `State: open` while its
 base survives.
+
+## Item 8.10 resolved by rewording the normalization rule, 2026-10-07
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-07, New York
+time, in the full clone `C:/Users/BenDe/GitRepos/MAM-basics` on `main`, which began at `08fcae33`,
+then `origin/main`. It worked from the prompt that the session of the previous entry wrote for
+item 8.10's cleanup task. That prompt planned to replace the nine NFC calls with comparisons
+through `give_std_mark_order` and to put the three NFKD calls to Ben as a possible recorded
+exception; Ben's decision below replaced the plan.
+
+**The review's measurement, re-run at `08fcae33`.** A `git grep` for `unicodedata.normalize` in
+tracked Python finds the twelve calls on eleven lines that finding 8, item 10, names, each at the
+line it gives, and the composability probe at `py/tests/test_transliterations.py:130`, which
+passes Hebrew pairs as the item says; the seven other calls receive no Hebrew. Scratch scripts
+outside the checkout put `give_std_mark_order` in place of each call in memory, without calling
+`unicodedata.normalize` themselves, and measured what a replacement would do:
+
+1. The Decalogue comparison, `py/accgram/decalogue_m_trad.py:154`, and its test,
+   `py/tests/test_decalogue_m_trad.py:113`, would find the same: no difference in any strand, and
+   all 284 chanted-word pairs whose bytes differ are equal under `give_std_mark_order`.
+2. The holam-he check, `py/py_render/rt_validate_holam_he.py:170`, gives the same result on all 77
+   rows of `holman/docs-not-served/table_data.json` under either key, and with no normalization at
+   all.
+3. The WLC-vs-UXLC report that `py/py_wlc_json_and_unicode/wlc_compare_mdc_with_uxlc.py:51–52`
+   writes, `out/diff_mx_wlc420_uxlc.json`, would keep its 15 entries and gain 8. Each is an atom in
+   which WLC 4.20 and UXLC put the same two marks on one letter in opposite orders, which NFC
+   treats as the same text: meteg and munah at Exodus 20:3, 20:4 and 20:10 (twice) and
+   Deuteronomy 5:8; atnah and silluq at Exodus 20:14, in WLC's numbering; geresh and patah at
+   Exodus 20:4; and sheva and holam at 2 Kings 21:26.
+4. With `give_std_mark_order`, the fragility test in `py/mb_cmn/uni_norm_fragile.py` would lose its
+   meaning, because the test first drops four of the five marks that `give_std_mark_order` moves:
+   the UXLC list that `py/main_uxlc_word_list.py` writes would fall from 7 words to 0, and the
+   assertion in `py/py_misc/uni_check.py` over what MAM-simple's generator renders, which follows
+   a check of MAM's order, could never fail.
+5. The NFKD calls, `py/hkq_cmn/extract_docx_notes.py:52` and
+   `py/tests/test_extract_docx_notes.py:89` and `:95`, decompose single presentation-form code
+   points into a table that only the tests have applied since `ae663ff2` deleted the docx pipeline
+   on 2026-09-03. Two of its 43 entries, U+FB2C and U+FB2D, put the dagesh before the shin or sin
+   dot, which is Unicode's order.
+
+**Where the absolute wording came from.** The rule's earliest form in this repository's history,
+in the Copilot instructions of `d86e5779` (2026-03-09), read "Never apply Unicode normalization
+(NFC, NFD, etc.) to Hebrew text in this project" and gave its reason: NFC "reorders combining marks
+into canonical order, which destroys the project's intentional mark order". The Claude session
+that restored the rule on 2026-08-04, in `2b671ae1`, wrote "Never call `unicodedata.normalize`
+(NFC, NFD, any form) on Hebrew", which forbids any call rather than any change to Hebrew text. The
+review counted calls against that wording.
+
+**Ben's decision, 2026-10-07.** The session proposed leaving the twelve calls as they are and
+rewording the rule. Ben wrote: "For now, please just ignore the categoricality of that language, or
+perhaps de-categoricalize it rather than scurrying around the code base listing exceptions to a
+supposedly ironclad rule", and, of the proposal, "What you suggest is fine".
+
+**8.10: resolved in the rule's text, with the twelve calls unchanged.** In `AGENTS.md`, "**Never
+call `unicodedata.normalize` in any form on Hebrew.** When two Hebrew strings that should match do
+not, compare them through `give_std_mark_order`; do not normalize them." now reads
+"`unicodedata.normalize` puts Hebrew marks in Unicode's order, not MAM's. So don't use it to produce
+Hebrew that belongs in MAM's order, or to hide a mark-order mismatch that matters;
+`give_std_mark_order` is the tool for both. A call that only asks what normalization would do, as
+the fragility test in `py/mb_cmn/uni_norm_fragile.py` does, is fine." In
+`doc/mam-normal-mark-order.md`, "**Never call `unicodedata.normalize` (NFC, NFD, any form) on
+Hebrew.** When two strings that should match do not, put both through `give_std_mark_order`; do not
+paper over it by normalizing." now reads the same, and the section heading has lost "— never run
+NFC over them". Under the new wording none of the twelve calls conflicts with the rule: none
+produces Hebrew that belongs in MAM's order, and the eight orders that the WLC-vs-UXLC report does
+not show are the same text in both editions.
+
+**Checks.** `git diff --check` passed. The suite ran on the edited tree, before this paragraph was
+added, from 08:30 to 08:37 on 2026-10-07, New York time: 1,055 passed and 5 skipped, with 60
+subtests passed and nothing failing. With this paragraph in place, the suite's ten tests that scan
+tracked prose or the whole tree passed again: `test_prose_mark_order.py`,
+`test_prose_conventions.py`, `test_h_dot_below_nfc.py`, `test_no_machine_paths_in_artifacts.py`,
+`test_receipt_update_links.py`, `test_explicit_time_zones.py`, `test_review_turn_files.py`,
+`test_sibling_reach.py`, `test_sigil_b2_not_a_sigil_anywhere.py` and `test_transliterations.py`.
+The mega did not run: no generator reads `AGENTS.md`, `doc/mam-normal-mark-order.md` or this
+file.
+
+**Effective base State, 2026-10-07:** acted on, with nothing deferred: item 8.10 is resolved as
+above, and every other item stands as the entries above record. The base report's line 3 stays as
+written, and this update remains `State: open` while its base survives.
