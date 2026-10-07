@@ -6,9 +6,10 @@ renderer writes the 39-book example edition and its long-note pages.
 
 The output tree is gh-pages/near-aleppo. Generation owns its complete contents
 except two hash-checked copies of Taamey D. Pages render entirely in memory before
-writing. The public presentation ledger preserves source notes and reviewed
-clause dispositions, with each note's evidence hash and a full-build inventory
-differential.
+writing. Beside them it writes out/render-tags-unused/near-aleppo.json, the render tags
+the edition handles that no page uses. The public presentation ledger preserves
+source notes and reviewed clause dispositions, with each note's evidence hash and a
+full-build inventory differential.
 
 Use py/main_near_aleppo.py --html, or add --check for a read-only comparison.
 --refresh-note-review refreshes inventory and retains reviews only for unchanged
@@ -18,6 +19,7 @@ reviewed and equal to a fresh source enumeration.
 
 import argparse
 import hashlib
+import json
 import sys
 
 from near_aleppo import build_expectations
@@ -30,9 +32,11 @@ from near_aleppo import doc_style
 from near_aleppo import edition
 from near_aleppo import doc_note_review
 from near_aleppo.doc_html import Numbers
+from mb_cmn import file_io
 from mb_cmn import provenance
 from mb_misc import mb_html
 from mb_misc import mb_html_get_lines
+from py_misc import ren_tag_survey as rts
 
 _SHARED_STYLESHEET = "../MAM-parsed/style.css"
 _STYLESHEET = "style.css"
@@ -43,10 +47,13 @@ _FONTS = ("woff2/Taamey_D.woff2", _EDITION + "woff2/Taamey_D.woff2")
 # at the shared renderer's pin, bfab23cbfd0d1928892dd23aab31da826d8836b3, as the re-pin of
 # 2026-09-27 measured. Nothing here reads the font at the pin, so a re-pin compares it.
 _FONT_SHA256 = "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
+# The render tags the edition handles that no page uses, written beside the pages.
+_UNUSED_TAGS_REPORT = rts.unused_report_path("near-aleppo")
 
 
 def render():
-    """The pages this entry point writes, by path within html-pages/, as bytes."""
+    """The pages this entry point writes, by path within html-pages/, as bytes, and the
+    render tags the edition handles that no page uses."""
     snapshot = build_expectations.load()
     numbers = Numbers(snapshot, doc_figures.figures(snapshot))
     # Both modes render in memory. Documentation adds explicit layout policy for
@@ -60,11 +67,12 @@ def render():
     }
     for name, (title, body) in doc_pages.pages(numbers).items():
         pages[name] = _documentation_html(title, body, comment).encode("utf-8")
-    for name, text in edition.render_edition().items():
+    edition_pages, unused_tags = edition.render_edition()
+    for name, text in edition_pages.items():
         pages[_EDITION + name] = text.encode("utf-8")
     pages.update(doc_he_transfer.assets())
     pages.update(doc_daniel_sheva.assets())
-    return pages
+    return pages, unused_tags
 
 
 def _documentation_html(title, body, comment):
@@ -120,7 +128,7 @@ def _font_problems():
     return problems
 
 
-def write(pages):
+def write(pages, unused_tags):
     out_dir = build_paths.html_pages_dir()
     problems = [f"unexpected {name}" for name in _unexpected(pages)]
     problems += _font_problems()
@@ -131,9 +139,10 @@ def write(pages):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(data)
     print(f"Wrote {len(pages)} files to {out_dir}")
+    file_io.json_dump_to_file_path(unused_tags, str(_UNUSED_TAGS_REPORT))
 
 
-def check(pages):
+def check(pages, unused_tags):
     out_dir = build_paths.html_pages_dir()
     problems = []
     for name, data in pages.items():
@@ -142,6 +151,10 @@ def check(pages):
             problems.append(f"missing {name}")
         elif path.read_bytes() != data:
             problems.append(f"differs {name}")
+    if not _UNUSED_TAGS_REPORT.is_file():
+        problems.append(f"missing {_UNUSED_TAGS_REPORT}")
+    elif json.loads(_UNUSED_TAGS_REPORT.read_text(encoding="utf-8")) != unused_tags:
+        problems.append(f"differs {_UNUSED_TAGS_REPORT}")
     problems += [f"unexpected {name}" for name in _unexpected(pages)]
     problems += _font_problems()
     if problems:
@@ -186,7 +199,7 @@ def main(argv=None):
     if args.check_note_review:
         doc_note_review.check()
         return
-    pages = render()
+    pages, unused_tags = render()
     if args.check:
-        return check(pages)
-    write(pages)
+        return check(pages, unused_tags)
+    write(pages, unused_tags)

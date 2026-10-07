@@ -23,18 +23,14 @@ def _out_path(filename):
 
 
 def _handle_survey_results(bkids, survey):
+    """Report the render tags MAM-with-doc handles and no page uses; only a full run can."""
     if bkids != tbn.ALL_BK39_IDS:
         return
-    ren_tags_seen = rts.get_ren_tags_seen(survey)
-    ren_tags_wets = set(hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC)
-    _survey_results_helper(ren_tags_seen, ren_tags_wets, "render tags")
-
-
-def _survey_results_helper(seen, wets, name):
-    diff = wets - seen
-    if diff:
-        print(f"{name} expected but not seen: ", sorted(diff))
-    assert not diff
+    rts.write_unused_report(
+        "mam-with-doc",
+        hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC,
+        rts.get_ren_tags_seen(survey),
+    )
 
 
 def _get_out_paths(bkid):

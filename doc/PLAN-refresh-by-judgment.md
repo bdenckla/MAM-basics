@@ -856,7 +856,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | implemented |
 | R13 | Test pins replaced by rules or deleted | 5 | implemented |
 | R14 | Every reader of the Decalogue capture moves to the mirror | 5 | implemented |
-| R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | active |
+| R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | implemented |
 | R16 | Refresh skill and reference rewritten | 7 | active |
 | R17 | Skill deployment and this plan's record | 8 | active |
 | R18 | `AGENTS.md` sentence, accepted by Ben on 2026-10-07 | 7 | active |
@@ -875,3 +875,10 @@ wave 4), and every other generated file. Any other diff is a finding.
    which has been false since wlc-utils#74 added `faithful_chanted_verses`, and those and other
    transcription comments still call the Wikisource strands "vendored". Wave 5 reworded
    docstrings and documentation, not the transcription files.
+4. **The good-ending template is in no declared template group.** Wave 6, item 2 says to take
+   the corpus's template names "with `good_ending_plus`", after checking that they agree with the
+   survey's. The good endings add one name, the good-ending template, which the survey never
+   walked and no `mp.plus.templates.*.set` claim declares, so
+   `all-groups-cover-all-observed` fails with it. The verifiers therefore read the verses'
+   names, which equal the survey's 42 (`67f29c02`). Whether that template should join a declared
+   group, a change to MAM-parsed's documentation, is Ben's decision.

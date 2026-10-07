@@ -41,53 +41,20 @@ class Mode:
     renopts: dict
     ht_tac_for_ren_tag: dict  # each render tag's HTML tag and class
     index: Callable  # (edition, css_hrefs) -> the index page's text
-    check_tags: Callable  # (render tags seen) -> raises unless they are as expected
+    unused_tags: Callable  # (render tags seen) -> the handled ones not seen, sorted
 
 
-# The render tags that the edition produces, measured on 2026-09-25 when the edition
-# was first rendered, and pinned: a tag gained or lost is a change in what the pages
-# show, and raises until this set is updated deliberately. That day it was every tag
-# of MAM-with-doc's mapping and the two of the lines the edition adds to a note.
-_EDITION_RENDER_TAGS = frozenset(
-    (
-        "mam-anchor",
-        "mam-bold",
-        "mam-br-after-pe",
-        "mam-br-before-good-ending",
-        "mam-doc-callout",
-        "mam-doc-target-without-callout",
-        "mam-dqq-stressed",
-        "mam-dqq-unstressed",
-        "mam-good-ending",
-        "mam-implicit-maqaf",
-        "mam-kq",
-        "mam-kq-k",
-        "mam-kq-k-velo-q",
-        "mam-kq-k-velo-q-maq",
-        "mam-kq-q",
-        "mam-kq-q-velo-k",
-        "mam-letter-hung",
-        "mam-letter-large",
-        "mam-letter-small",
-        "mam-spi-invnun",
-        "mam-spi-pe",
-        "mam-spi-samekh",
-        "near-aleppo-english",
-        "near-aleppo-label",
-        "ren-tag-no-break-space",
-        "ren-tag-octo-space",
-        "ren-tag-thin-space",
-    )
-)
+# The render tags the edition handles: every tag of MAM-with-doc's mapping and the two of
+# the lines the edition adds to a note.  One that no page uses is reported, in
+# out/render-tags-unused/near-aleppo.json, rather than raised.
+_EDITION_RENDER_TAGS = frozenset(hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC) | {
+    nap.LABEL_TAG,
+    nap.ENGLISH_TAG,
+}
 
 
-def _check_edition_tags(seen):
-    if seen != _EDITION_RENDER_TAGS:
-        raise AssertionError(
-            "the edition's render tags have changed: gained "
-            f"{sorted(seen - _EDITION_RENDER_TAGS)}, lost "
-            f"{sorted(_EDITION_RENDER_TAGS - seen)}"
-        )
+def _unused_edition_tags(seen):
+    return rts.unused_ren_tags(_EDITION_RENDER_TAGS, seen)
 
 
 def _edition_index(edition, css_hrefs):
@@ -181,12 +148,13 @@ NEAR_ALEPPO_MODE = Mode(
     },
     hfrm.HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION,
     _edition_index,
-    _check_edition_tags,
+    _unused_edition_tags,
 )
 
 
 def render(mode, books_mpu, *, css_hrefs):
-    """Every page of ``mode`` for ``books_mpu``, as text, keyed by its name.
+    """Every page of ``mode`` for ``books_mpu``, as text, keyed by its name, and the render
+    tags the mode handles that no page uses.
 
     The caller supplies the stylesheet links.
     """
@@ -202,21 +170,23 @@ def render(mode, books_mpu, *, css_hrefs):
         if clash := set(pages) & set(book_pages):
             raise AssertionError(f"pages rendered twice: {sorted(clash)}")
         pages.update(book_pages)
-    mode.check_tags(rts.get_ren_tags_seen(survey))
-    return pages
+    return pages, mode.unused_tags(rts.get_ren_tags_seen(survey))
 
 
 def render_edition():
-    """The edition's pages, from near-Aleppo, each page's provenance comment checked."""
+    """The edition's pages, from near-Aleppo, each page's provenance comment checked, and
+    the render tags the edition handles that no page uses."""
     _assert_names_are_the_builds()
     dataset_parent = build_paths.dataset_dir().parent
     books_mpu = plus.read_parsed_plus_bk39s(tbn.ALL_BK39_IDS, str(dataset_parent))
-    pages = render(NEAR_ALEPPO_MODE, books_mpu, css_hrefs=(EDITION_CSS_HREF,))
+    pages, unused_tags = render(
+        NEAR_ALEPPO_MODE, books_mpu, css_hrefs=(EDITION_CSS_HREF,)
+    )
     for name, text in pages.items():
         comment = text.split("\n")[1]
         if comment != _edition_comment(name):
             raise AssertionError(f"{name}: {comment}")
-    return pages
+    return pages, unused_tags
 
 
 def _edition_comment(name):

@@ -20,19 +20,12 @@ def render_to_xml(books_mpu, bkid):
 
 
 def handle_survey_results(bkids, survey):
-    """Handle the results of the render tag survey."""
+    """Report the render tags MAM-simple's XML handles and no verse uses; only a full run can."""
     if len(bkids) != 39:
         return
-    ren_tags_seen = rts.get_ren_tags_seen(survey)
-    ren_tags_wets = set(_HT_TAC_FOR_RT_FOR_MAM_XML)
-    _survey_results_helper(ren_tags_seen, ren_tags_wets, "render tags")
-
-
-def _survey_results_helper(seen, wets, name):
-    diff = wets - seen
-    if diff:
-        print(f"{name} expected but not seen: ", sorted(diff))
-    assert not diff
+    rts.write_unused_report(
+        "mam-simple", _HT_TAC_FOR_RT_FOR_MAM_XML, rts.get_ren_tags_seen(survey)
+    )
 
 
 _RENOPTS_MAM_XML = {
