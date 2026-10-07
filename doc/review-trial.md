@@ -59,8 +59,12 @@ Later detection accepts some regressions on main until the nightly run and provi
 of pre-publication protection. Private source paths, findings, logs, commit anchors and reports
 stay in the private repository; public checks record only allowed results and input commit IDs.
 
-Ben's separate Claude session owns the near-Aleppo sealing simplification. Do not preserve or
-reintroduce retired sealing/replay gates. Use the resulting maintained commands and proportionate
+Ben's separate Claude sessions own the near-Aleppo sealing simplification and the lighter
+Wikisource-update process. Follow their resulting maintained update rules. Source refreshes or
+mpplus hash movement alone are not defects or approval gates; triage actual failures and
+unexplained output changes without automatically rolling back new source data. Preserve
+maintained source integrity checks for concrete corruption. Do not preserve or reintroduce
+retired hash/sealing/replay gates. Use the resulting maintained commands and proportionate
 confidence evidence rather than replacement process machinery. No review relay is introduced.
 
 ## Anchors, receipts and the seven-night trial
@@ -79,7 +83,7 @@ receipts remain immutable with their single update; change State when the phase 
 repeating it in every entry. Trial setup/receipt changes are evidence unless they expose a
 consequential defect; ordinary code and data repairs remain reviewable window content.
 
-Run seven nights at 2 a.m. America/New_York, then give one compact assessment of Ben's time,
+Run seven nights around 2 a.m. America/New_York, then give one compact assessment of Ben's time,
 meaningful defects, unnecessary changes, and evidence adequacy. Decide further scheduling from
 that assessment; do not automatically resurrect the old machinery. The scheduler is configured
 separately; this document creates no automation.
