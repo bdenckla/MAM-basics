@@ -11,6 +11,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import time
 
 from mb_cmn import bib_locales, paths, provenance
 from phonetic_mam import display_projection, display_schema, example_display
@@ -23,6 +24,11 @@ _STDERR_TAIL_BYTES = 4096
 # The whole export step took 229.2 seconds when this limit was set; a hung adapter
 # is stopped rather than blocking the export.
 _ADAPTER_TIME_LIMIT_SECONDS = 1800
+# A descendant of the adapter that inherited one of its pipes can hold the pipe
+# open after the adapter has ended. Once the adapter has ended, or the limit has
+# passed, its pipes are waited for at most this long and then left to the threads
+# reading them, so that the limit holds whatever the adapter starts.
+_PIPE_GRACE_SECONDS = 5
 
 
 def _tail_text(data):
@@ -36,7 +42,11 @@ def _tail_text(data):
 
 
 class _StderrTail:
-    """Drain a child's standard error on a daemon thread, keeping only its tail."""
+    """Drain a child's standard error on a daemon thread, keeping only its tail.
+
+    The thread holds the stream as the child's ``Popen`` gives it, text or binary,
+    so that a stream left to the thread is not finalized under its pending read.
+    """
 
     def __init__(self, stream):
         self._stream = stream
@@ -46,8 +56,10 @@ class _StderrTail:
         self._thread.start()
 
     def _drain(self):
+        # A text stream is read through its binary buffer.
+        read1 = getattr(self._stream, "buffer", self._stream).read1
         try:
-            while chunk := self._stream.read1(65536):
+            while chunk := read1(65536):
                 with self._lock:
                     self._tail += chunk
                     del self._tail[:-_STDERR_TAIL_BYTES]
@@ -55,20 +67,68 @@ class _StderrTail:
             # The pipe was closed under the reader; the tail kept so far stands.
             return
 
-    def join(self):
-        self._thread.join(timeout=5)
+    def reading(self):
+        return self._thread.is_alive()
 
-    def text(self):
-        self.join()
+    def join(self, deadline):
+        self._thread.join(max(0.0, deadline - time.monotonic()))
+
+    def text(self, deadline):
+        self.join(deadline)
         with self._lock:
             return _tail_text(self._tail)
 
 
+class _PipeReads:
+    """Make each blocking read of a child's pipe on a daemon thread.
+
+    A read is waited for only until a deadline. Past it the read is left to its
+    thread, which holds the stream until the read ends: a descendant of the
+    adapter that inherited the pipe can hold it open after the adapter has
+    ended, and the read then ends only with that descendant.
+    """
+
+    def __init__(self, stream):
+        self._stream = stream
+        self._thread = None
+
+    def read(self, deadline, size=-1, *, line=False):
+        """What the read returns, or None if the deadline passes first."""
+        read = self._stream.readline if line else self._stream.read
+        outcome = []
+
+        def run():
+            try:
+                outcome.append(read(size))
+            except Exception as error:  # Raised again in the caller's thread.
+                outcome.append(error)
+
+        self._thread = threading.Thread(target=run, daemon=True)
+        self._thread.start()
+        self._thread.join(max(0.0, deadline - time.monotonic()))
+        if not outcome:
+            return None
+        if isinstance(outcome[0], Exception):
+            raise outcome[0]
+        return outcome[0]
+
+    def reading(self):
+        return self._thread is not None and self._thread.is_alive()
+
+
 class _Watchdog:
-    """Kill a child that outlives the adapter time limit, and remember doing so."""
+    """Kill a child that outlives the adapter time limit, and remember doing so.
+
+    Its deadline bounds every wait on the child's pipes: the time limit and then
+    the grace period, or only the grace period once the child is seen to end,
+    after which the watchdog has nothing to stop.
+    """
 
     def __init__(self, process):
         self.fired = False
+        self.deadline = (
+            time.monotonic() + _ADAPTER_TIME_LIMIT_SECONDS + _PIPE_GRACE_SECONDS
+        )
         self._process = process
         self._timer = threading.Timer(_ADAPTER_TIME_LIMIT_SECONDS, self._fire)
         self._timer.daemon = True
@@ -77,6 +137,10 @@ class _Watchdog:
     def _fire(self):
         self.fired = True
         self._process.kill()
+
+    def ended(self):
+        self.cancel()
+        self.deadline = min(self.deadline, time.monotonic() + _PIPE_GRACE_SECONDS)
 
     def cancel(self):
         self._timer.cancel()
@@ -87,14 +151,37 @@ def _adapter_error(process, watchdog, stderr, failure):
     if process.poll() is None:
         process.kill()
     status = process.wait()
+    watchdog.ended()
     if watchdog.fired:
         failure = (
             f"source adapter exceeded its {_ADAPTER_TIME_LIMIT_SECONDS}-second limit"
             " and was stopped"
         )
+    tail = stderr.text(watchdog.deadline)
     return display_schema.PublicReleaseError(
-        f"{failure} (exit status {status}); its stderr ended with:\n{stderr.text()}"
+        f"{failure} (exit status {status}); its stderr ended with:\n{tail}"
     )
+
+
+def _stop(process, watchdog, stdout, stderr):
+    """End an adapter run, leaving any pipe still being read to its reader.
+
+    Popen.__exit__ closes both pipes, and closing a stream waits for a read
+    pending on another thread, so a pipe that a descendant of the adapter holds
+    open past the deadline is taken from the ``Popen`` instead.
+    """
+    watchdog.cancel()
+    # Kill rather than terminate: with the watchdog cancelled, a wait for a
+    # child that ignores termination would have no bound.
+    if process.poll() is None:
+        process.kill()
+        process.wait()
+    watchdog.ended()
+    stderr.join(watchdog.deadline)
+    if stdout.reading():
+        process.stdout = None
+    if stderr.reading():
+        process.stderr = None
 
 
 def _unique_object(pairs):
@@ -171,11 +258,12 @@ def iter_source_books(book_ids=None):
         text=True,
         encoding="utf-8",
     ) as process:
-        stderr = _StderrTail(process.stderr.buffer)
+        stdout = _PipeReads(process.stdout)
+        stderr = _StderrTail(process.stderr)
         watchdog = _Watchdog(process)
         try:
             for book_id in expected:
-                line = process.stdout.readline(_MAX_BOOK_CHARS + 1)
+                line = stdout.read(watchdog.deadline, _MAX_BOOK_CHARS + 1, line=True)
                 if not (line and len(line) <= _MAX_BOOK_CHARS and line.endswith("\n")):
                     raise _adapter_error(
                         process,
@@ -194,19 +282,15 @@ def iter_source_books(book_ids=None):
                     book["book"] == book_id, "adapter book sequence differs"
                 )
                 yield book
+            # A read past the deadline returns None and passes this check: the
+            # watchdog has fired by then, and the next check names the limit.
             display_schema.require(
-                not process.stdout.read(1), "unexpected adapter output"
+                not stdout.read(watchdog.deadline, 1), "unexpected adapter output"
             )
             if process.wait() != 0 or watchdog.fired:
                 raise _adapter_error(process, watchdog, stderr, "source adapter failed")
         finally:
-            watchdog.cancel()
-            # Kill rather than terminate: with the watchdog cancelled, a wait for a
-            # child that ignores termination would have no bound.
-            if process.poll() is None:
-                process.kill()
-                process.wait()
-            stderr.join()
+            _stop(process, watchdog, stdout, stderr)
 
 
 def source_test_pages():
@@ -215,32 +299,39 @@ def source_test_pages():
     # Both pipes are read as bytes: _tail_text decodes stderr with "replace", as the
     # streaming run does, and stdout is decoded strictly only after a clean exit, so
     # that output that is not UTF-8 raises a UnicodeDecodeError.
-    try:
-        result = subprocess.run(
-            command,
-            cwd=root / "al-hatorah",
-            env=environment,
-            stdin=subprocess.DEVNULL,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            check=False,
-            timeout=_ADAPTER_TIME_LIMIT_SECONDS,
-        )
-    except subprocess.TimeoutExpired as expired:
+    with subprocess.Popen(
+        command,
+        cwd=root / "al-hatorah",
+        env=environment,
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    ) as process:
+        stdout = _PipeReads(process.stdout)
+        stderr = _StderrTail(process.stderr)
+        watchdog = _Watchdog(process)
+        try:
+            data = stdout.read(watchdog.deadline)
+            status = process.wait()
+            watchdog.ended()
+            tail = stderr.text(watchdog.deadline)
+        finally:
+            _stop(process, watchdog, stdout, stderr)
+    if data is None or watchdog.fired:
         raise display_schema.PublicReleaseError(
             "test-page source adapter exceeded its"
             f" {_ADAPTER_TIME_LIMIT_SECONDS}-second limit and was stopped;"
-            f" its stderr ended with:\n{_tail_text(expired.stderr)}"
-        ) from None
-    if result.returncode != 0:
-        raise display_schema.PublicReleaseError(
-            f"test-page source adapter failed (exit status {result.returncode});"
-            f" its stderr ended with:\n{_tail_text(result.stderr)}"
+            f" its stderr ended with:\n{tail}"
         )
-    stdout = result.stdout.decode("utf-8")
-    display_schema.require(len(stdout) <= _MAX_BOOK_CHARS, "test-page input too large")
+    if status != 0:
+        raise display_schema.PublicReleaseError(
+            f"test-page source adapter failed (exit status {status});"
+            f" its stderr ended with:\n{tail}"
+        )
+    text = data.decode("utf-8")
+    display_schema.require(len(text) <= _MAX_BOOK_CHARS, "test-page input too large")
     value = json.loads(
-        stdout, object_pairs_hook=_unique_object, parse_constant=_reject_constant
+        text, object_pairs_hook=_unique_object, parse_constant=_reject_constant
     )
     display_schema.require(
         isinstance(value, dict)
