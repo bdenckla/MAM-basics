@@ -27,10 +27,12 @@
 #
 # One check does NOT have that weakness, because nothing in the harness prompted it.  The
 # transcription marks each vertical stroke as either munax legarmeh ("mun_leg") or narrow-sense
-# paseq ("[paseq]"), a distinction the vendored data cannot express -- its fetch folds both
-# Wikisource templates onto U+05C0.  All seven positions match the reference's placement, and
-# all seven match the rule that legarmeh precedes revia: the two read as paseq stand before a
-# pazer, and the five read as legarmeh each stand before a revia with one munax between.
+# paseq ("[paseq]"), a distinction the folded chanted verses cannot express but the faithful
+# form of the Wikisource page keeps (issue wlc-utils#74), so all seven are checked against the
+# reference's own kinds, and all seven agree.  All seven positions match the reference's
+# placement, and all seven match the rule that legarmeh precedes revia: the two read as paseq
+# stand before a pazer, and the five read as legarmeh each stand before a revia with one
+# munax between.
 #
 # Conventions in force for this file:
 #   * One token per ACCENT.  Normally that is one per chanted word, a maqaf compound being
@@ -41,8 +43,8 @@
 #     and once as a stress helper -- is ONE accent, so ONE token.
 #   * meteg is NOT transcribed: it is not a first-class mark of the accent system.
 #   * narrow-sense paseq is likewise not transcribed as an accent, but IS recorded as the
-#     aside "[paseq]" after the token it follows, so that a future legarmeh-vs-paseq check has
-#     something to check.  The parser drops bracketed asides.
+#     aside "[paseq]" after the token it follows, so that the legarmeh-vs-paseq check has
+#     something to check.  The parser leaves bracketed asides out of the accent tokens.
 #
 # Shorthand: etn etnaxta / zaq zaqef qatan / tip tipexa / rev revia / zar zarqa / pash pashta /
 # yet yetiv / tev tevir / ger geresh / ger2 gershayim / tg telisha gedola / tq telisha qetana /

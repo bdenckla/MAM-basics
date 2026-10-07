@@ -50,9 +50,10 @@
 # the physical book, recorded nowhere else -- hence the pasoleg_kinds header field).  So the
 # one vertical stroke on this Decalogue, on אתה in the Shabbat commandment, is written
 # "[pasoleg]": a pasoleg stands here, this edition does not say which kind.  Writing "mun_leg"
-# or "[paseq]" would assert something the book does not.  Note this is NOT the same limit as
-# the vendored data's -- that folds both Wikisource templates onto U+05C0 -- so the position
-# stays kind-blind on both sides, independently, and would stay so even after a re-vendoring.
+# or "[paseq]" would assert something the book does not.  The limit is this edition's alone:
+# the reference states the kind, its faithful form keeping the Wikisource legarmeh and paseq
+# templates apart (issue wlc-utils#74), but "[pasoleg]" states none, so the check of kinds has
+# nothing to compare here.
 #
 # RESULT: 142 reference tokens vs 142 transcribed, 13 chanted verses vs 13, and NO divergence.
 # The pasoleg lands on its exact reference position (token 80, אתה).
