@@ -22,7 +22,12 @@ def handle_kq(hctx, tmpl):
     q_renseq_1 = wt_help.render_wtseq(hctx, q_wtseq)
     k_renseq_2 = _maybe_paren(hctx, k_renseq_1)
     q_renseq_2 = _maybe_sqbrac(hctx, q_renseq_1)
-    kq_separator, kq_tag = _maybe_kq_separator(hctx, kq_type)
+    pointed_final_maqaf = (
+        nap.POINTED_KETIV in wtp.template_param_keys(tmpl)
+        and isinstance(k_wtseq[-1], str)
+        and k_wtseq[-1].endswith(hpu.MAQ)
+    )
+    kq_separator, kq_tag = _maybe_kq_separator(hctx, kq_type, pointed_final_maqaf)
     kq_contents = (
         renel.mk_ren_el_tc("mam-kq-k", k_renseq_2),
         *kq_separator,
@@ -89,9 +94,11 @@ def _style_is_abstract(hctx):
     return style == "abstract"
 
 
-def _maybe_kq_separator(hctx, kq_type):
+def _maybe_kq_separator(hctx, kq_type, pointed_final_maqaf):
     ketiv_maqaf = set(("k1q1-mcom", "k1q2-sr-bcom"))
-    sep_is_maq = kq_type in ketiv_maqaf
+    # A pointed ketiv's stored final maqaf is already inside its parentheses.
+    # Keep the readings separated without adding another maqaf outside them.
+    sep_is_maq = kq_type in ketiv_maqaf and not pointed_final_maqaf
     dic = {
         True: (hpu.MAQ, "mam-kq-sep-maqaf"),
         False: (" ", "mam-kq-sep-space"),

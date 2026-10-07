@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "42c11634f0d12afc512f7f9d47eb04c0b515e3c1d0169e33b4f005191b51ccd1",
+  "inventory_sha256": "64f567aa99f2e3a07845a1afb93c8df6a9276213372f9fdf5860ac3e3bc180ae",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -12116,7 +12116,7 @@
           "tmpl_params": {
             "1": "לך",
             "2": "לְכָה־",
-            "כתיב מנוקד": "לְךָ"
+            "כתיב מנוקד": "לְךָ־"
           }
         },
         "נָּ֨א"
@@ -12135,7 +12135,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "589dc5b843890d64e98b18e1266b3a91dc19b5502d96ac3190e560d9396f09e7",
+      "evidence_sha256": "cf62712e6ebe6887d1248b8db630c184f5f3657ae7523fbc5e1ef3afe6cde934",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -34275,7 +34275,7 @@
           "tmpl_params": {
             "1": "אסלוח",
             "2": "אֶֽסְלַֽח־",
-            "כתיב מנוקד": "אֶֽסְלַֽוח"
+            "כתיב מנוקד": "אֶֽסְלַֽוח־"
           }
         },
         "לָ֔ךְ"
@@ -34296,7 +34296,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "280c18308e801c21b7b8993c2d8eb5a1f2350d96d45dbadae27268d3c86d299d",
+      "evidence_sha256": "7bcb9ab2a0d378b35909445c316af482c690f4e1d7b675d291bd20c33537d4e4",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -42444,7 +42444,7 @@
           "tmpl_params": {
             "1": "אכתוב",
             "2": "אֶ֨כְתָּב־",
-            "כתיב מנוקד": "אֶ֨כְתָּוב"
+            "כתיב מנוקד": "אֶ֨כְתָּוב־"
           }
         },
         "ל֔וֹ"
@@ -42466,7 +42466,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "9450c0d540e13b49c906617fb1dc071ec84bbd42cdc42dfffc706d65edf856d2",
+      "evidence_sha256": "2063eb7b8b312a237d551faf0396577c84b15734e32b4d48731bcafec3666523",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -48319,7 +48319,7 @@
         "tmpl_params": {
           "1": "מיורדי",
           "2": "מִיָּֽרְדִי־",
-          "כתיב מנוקד": "מִיָּֽורְדִי"
+          "כתיב מנוקד": "מִיָּֽורְדִי־"
         }
       },
       "original_body": [
@@ -48347,7 +48347,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "43010c741fb75466820dea5e64aeb9e2e74e79e7fb1b976c7c5d4c8ac7c5dead",
+      "evidence_sha256": "069834a3e2c512dcc0bdbb87d51f72105b37b2f1160da4851259000a0b68d804",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -49814,7 +49814,7 @@
           "tmpl_params": {
             "1": "רדופי",
             "2": "רָֽדְפִי־",
-            "כתיב מנוקד": "רָֽדְופִי"
+            "כתיב מנוקד": "רָֽדְופִי־"
           }
         },
         "טֽוֹב"
@@ -49837,7 +49837,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "f75de290d1cdddff5e99ed12f62049f2a5d5214e13a4557cf929ecdd0871e2d1",
+      "evidence_sha256": "5245927cf9606cff43a68031727f6177cc0ffb0a3b54f433f2282e2e48d7e91f",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -69058,7 +69058,7 @@
           "tmpl_params": {
             "1": "וקר",
             "2": "יְקַר־",
-            "כתיב מנוקד": "וְקַר"
+            "כתיב מנוקד": "וְקַר־"
           }
         },
         "ר֝וּחַ"
@@ -69080,7 +69080,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "96b940ca31f9e73aa2a223f466bce884b6ce1ea123ed1ca2c5f61668d34d2588",
+      "evidence_sha256": "0f45f930b405fe96a97a1df0afcaeada6417b5fd582d9932add9e77d494af4c9",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -81285,7 +81285,7 @@
           "tmpl_params": {
             "1": "אנתה",
             "2": "אַ֨נְתְּ־",
-            "כתיב מנוקד": "אַ֨נְתְּה"
+            "כתיב מנוקד": "אַ֨נְתְּה־"
           }
         },
         "ה֔וּא"
@@ -81321,7 +81321,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "a34064a21f3d6de15da8b1066f3576c6412cc86517dbbf8c10e0867ea0caee35",
+      "evidence_sha256": "024929fec348e9248437a63fc5ef903f8ff7df8b04eb34dc07af44ba1bd1a35b",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -87905,7 +87905,7 @@
           "1": "בנימן",
           "2": "בָּנִ֔י מִן־",
           "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים",
-          "כתיב מנוקד": "בָּנִ֔ימִן"
+          "כתיב מנוקד": "בָּנִ֔ימִן־"
         }
       },
       "original_body": [
@@ -87931,7 +87931,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "49a48a670129aee85ad4bf964d81a025ef2976e7b32b6af6b5c922d13e9d4653",
+      "evidence_sha256": "4a76d33d4761ab01fbbb5c6d786ccc725888b68f3bcae6835586534c84972efe",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",

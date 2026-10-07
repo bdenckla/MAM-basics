@@ -41,6 +41,24 @@ repository or scan archive is a build dependency.
 
 The shared MAM-with-doc renderer also renders the example edition.
 
+The offline final-punctuation review extract is
+`review/ketiv-final-punctuation.html`, with a plain-text companion. It shows the
+requested 42 maqaf cases and 12 pasoleg cases in separate sections, including
+already-present punctuation, complete notes and neighboring verses. Psalm 10:5
+uses the trivial ketiv/qere template's pointed ketiv and qere parameters.
+The selection is tracked in `in/near-aleppo/final-punctuation-review-selection.json`;
+`py/near_aleppo/punctuation_review.py` renders it from the current edition data
+and shared renderer. Reproduce it from the repository root:
+
+```powershell
+./.venv/Scripts/python.exe py/main_near_aleppo.py --punctuation-review
+```
+
+Append `--check` to regenerate in memory and compare both tracked review files.
+The HTML embeds the edition font, its notices and license, styles, exact rendered
+text and input selection; it needs no network access. The unchanged font's source
+package and notices remain in `in/font-support/taamey-d-0.921/`.
+
 The dataset is derived from [Miqra according to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning)
 at Hebrew Wikisource, prepared by Seth (Avi) Kadish with technical assistance from
 Erel Segal-Halevi and Benjamin Denckla. See [LICENSE.md](LICENSE.md).

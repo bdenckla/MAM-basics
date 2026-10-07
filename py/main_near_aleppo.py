@@ -8,6 +8,7 @@ and the HTML, in that order. Use --check to compare all products without writing
 or select one step with --census, --build or --html. --refresh-note-review
 refreshes the note-review ledger, and --check-note-review verifies every
 changed-note presentation against a fresh enumeration of MAM's notes.
+--punctuation-review separately generates the requested offline edition extract.
 """
 
 import argparse
@@ -62,6 +63,7 @@ def almost_main(argv=None):
     selection.add_argument("--census", action="store_true")
     selection.add_argument("--build", action="store_true")
     selection.add_argument("--html", action="store_true")
+    selection.add_argument("--punctuation-review", action="store_true")
     selection.add_argument("--instrument", choices=_INSTRUMENTS, help=argparse.SUPPRESS)
     selection.add_argument("--check-note-review", action="store_true")
     selection.add_argument("--refresh-note-review", action="store_true")
@@ -71,6 +73,11 @@ def almost_main(argv=None):
         help="Compare against tracked output; write nothing.",
     )
     args = parser.parse_args(argv)
+    if args.punctuation_review:
+        from near_aleppo import punctuation_review
+
+        punctuation_review.main(check=args.check)
+        return 0
     if args.instrument:
         importlib.import_module("near_aleppo.census." + args.instrument).main()
         return 0
