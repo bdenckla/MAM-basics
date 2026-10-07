@@ -198,8 +198,9 @@ checks, a differential comparison of both reading forms, browser layout checks a
 `git diff --check`. The review trial leaves the mega and full suite to nightly checks.
 
 **Change:** Both review sections now follow MAM's book order and numeric chapter and
-verse, with change status retained as a label. The edition and extract show ketiv on
-the baseline and pointed qere above it at 75% of the baseline size. Trivial templates
+verse, with change status retained as a label. The initial display at `37606647` showed
+ketiv on the baseline and pointed qere above it at 75% of the baseline size; the later
+size decision below supersedes that percentage. Trivial templates
 use their pointed ketiv and pointed qere arguments; their source metadata is retained
 on the annotation's hover. One-sided templates use CLC's editorial placeholders in
 the missing reading's position. Existing unread-ketiv callouts and external punctuation
@@ -219,3 +220,35 @@ with no network requests or script errors. Desktop, narrow-layout and edition-ro
 screenshots were inspected. Black and `git diff --check` passed. The mega and full suite
 were deferred under the approved review trial; these focused checks cover the changed
 rendering surface. Main integration remains deferred.
+
+## Ruby size and qamats investigation — 2026-10-07
+
+**Status:** Size change implemented; the difference in Ben's screenshots remains
+under investigation.
+
+**Decision:** Ben requested 100% ruby text, matching CLC's `ruby.clc-kq rt` rule in
+`gh-pages/uxlc/style.css`. The execution baseline is `37606647d246b588cbe71e9855db382124cff59e`
+in `C:/Users/BenDe/GitRepos2/MAM-basics` on the existing review branch. The checkout was
+clean before editing. Main integration remains deferred.
+
+**Change and verification:** The edition's annotation is now the same size as its
+baseline. The edition index and dataset README explain the equal size. HTML and review
+regeneration changed only the edition index, its ruby stylesheet and the review HTML;
+book pages, the plain-text companion and data stayed unchanged. Browser checks confirmed
+equal sizes at the default and slider endpoints, above-baseline placement, narrow layout
+and print behavior. The corpus differential continued to preserve reading forms and text
+outside the displays. Actual edition browser checks passed for Numbers, 1 Chronicles,
+Daniel and Ruth. Black and `git diff --check` passed. Broad checks remain deferred under
+the approved review trial for this CSS and explanatory-prose change.
+
+**Qamats disposition:** No font position was changed. The MAM-with-doc and near-Aleppo
+font files in this clone, and MAM-with-doc's font in the primary forest, have identical
+SHA-256 hashes. Controlled Edge Chromium comparisons of the same form at the same size
+did not show a change in mark placement when square brackets were added or removed,
+or when ruby alignment and kerning were varied. The vendored font source explicitly
+offsets qof's below-mark anchor 120 font units to the right of its advance midpoint
+(`sources/main_fill_in_template.py`, `A4_qof`, in the font's source archive under
+`in/font-support/taamey-d-0.921/`). That is relevant font evidence, but it does not by
+itself explain the apparent difference between Ben's screenshots. The early claim about
+ordinary text is not a settled diagnosis of his browser's display. Genesis 3:11 was
+provided as a reference with an ordinary final tav carrying qamats for Ben's comparison.

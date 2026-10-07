@@ -74,9 +74,9 @@ def _edition_index(edition, css_hrefs):
                 "These pages are an example HTML edition of the near-Aleppo "
                 "dataset. The edition has each book's text with MAM's notes "
                 "beside it, as MAM-with-doc does. ",
-                "Ketiv is the primary text; pointed qere appears above it in a smaller "
-                "ruby annotation. The edition uses each stored pointed ketiv where one "
-                "is available. An absent reading has the editorial label “no ketiv” "
+                "Ketiv is the primary text; pointed qere appears above it in a ruby "
+                "annotation at the same size. The edition uses each stored pointed ketiv "
+                "where one is available. An absent reading has the editorial label “no ketiv” "
                 "or “no qere” in its own position. ",
                 "See the ",
                 mb_html.anchor_h(

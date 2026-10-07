@@ -41,7 +41,7 @@ repository or scan archive is a build dependency.
 
 The shared MAM-with-doc renderer also renders the example edition. Near-Aleppo
 selects ketiv as the primary text, using each stored pointed ketiv where available,
-and shows pointed qere above it in a smaller HTML ruby annotation. Trivial
+and shows pointed qere above it in an HTML ruby annotation at the same size. Trivial
 ketiv/qere templates use their own pointed ketiv and qere parameters. Missing
 readings have the same editorial labels as CLC in the missing reading's position.
 Existing notes remain beside the text; the ruby display does not synthesize qere
