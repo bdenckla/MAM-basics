@@ -1,9 +1,10 @@
-"""Build the near-Aleppo dataset from local MAM-parsed-plus and sealed pointings.
+"""Build the near-Aleppo dataset from local MAM-parsed-plus and stored pointings.
 
 The pipeline resolves E-column templates, applies representation policies and
 readings quoted in MAM's notes, then adds frozen, individual and reviewed
-pointings in that priority order. All prior pointings are guarded against changed
-source data. Original MAM targets are copied into changed notes before flags and
+pointings in that priority order. Each stored pointing records the ketiv and qere
+it was made for, and the build stops, naming the record, where the template no
+longer has them. Original MAM targets are copied into changed notes before flags and
 reviewed note-content baking. C and D columns are preserved. Changed notes carry
 reviewed near-Aleppo clauses and the remaining original clauses in MAM context.
 
@@ -63,9 +64,9 @@ def build(bake_notes=True):
     mam_targets = MamTargets()
     flags = Flags()
     renames = Renames(source_replay=not bake_notes)
-    frozen = FrozenPointing(in_dir)
+    frozen = FrozenPointing()
     editorial = EditorialPointing()
-    reviewed = ReviewedPointing(in_dir)
+    reviewed = ReviewedPointing()
     out = {}
     for path in paths:
         book = json.loads(path.read_text(encoding="utf-8"))
@@ -88,7 +89,6 @@ def build(bake_notes=True):
                     mam_cell = copy.deepcopy(cells[2])
                     resolved = resolver.resolve_e_cell(cells[2], ref)
                     cells[2] = policies.apply_e_cell(resolved, ref)
-                    frozen.check_source(cells[2], ref)
                     cells[2] = readings.apply_e_cell(cells[2], ref)
                     flag_evidence = (
                         copy.deepcopy(cells[2])

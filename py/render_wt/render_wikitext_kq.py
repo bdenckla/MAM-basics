@@ -138,7 +138,7 @@ def _ht_kq_unpack_args(tmpl):
 
 
 def _pointing_display_order(value):
-    """Order display marks without changing the sealed pointed-ketiv input.
+    """Order display marks without changing the stored pointed-ketiv input.
 
     Only the added pointed-ketiv branch is processed. Template boundaries and the
     exact marks on each letter are preserved; MAM templates take their own branch.

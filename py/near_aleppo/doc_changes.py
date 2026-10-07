@@ -942,7 +942,9 @@ def _pointed_ketiv(numbers):
                 "agreements admitted under the approved plan only after checking "
                 "current targets, notes, prior pointings, written letters and atom "
                 "boundaries. It preserves current qeres and edition punctuation, "
-                "and includes only the sealed pointings and target guards. "
+                "and includes only the pointings, each with the ketiv and whole qere "
+                "it was made for, which the template must still have when the build "
+                "writes the pointing. "
                 "All retained paired ketiv/qere templates now have an adopted "
                 "pointing. Prior note-derived, frozen and individual "
                 "pointings retain priority.",

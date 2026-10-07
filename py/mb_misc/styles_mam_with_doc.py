@@ -3,9 +3,8 @@
 The CSS is static (no interpolation), so its source of truth is a real .css file
 beside this module (styles_mam_with_doc.css), not a Python string.
 make_css_file_for_mwd copies it verbatim to gh-pages/MAM-with-doc; the other
-families link that shared deployment. The pinned MAM-mode differential also
-compares its bytes. The versification-and-cantillation doc uses this same
-real-.css approach.
+families link that shared deployment. The versification-and-cantillation doc
+uses this same real-.css approach.
 """
 
 from pathlib import Path
@@ -14,7 +13,6 @@ _CSS_SOURCE_PATH = Path(__file__).with_name("styles_mam_with_doc.css")
 
 
 def css_for_mwd():
-    # The MAM-mode differential includes the canonical stylesheet's text.
     return _CSS_SOURCE_PATH.read_text(encoding="utf-8")
 
 

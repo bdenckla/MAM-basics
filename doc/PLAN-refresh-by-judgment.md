@@ -848,9 +848,9 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R4 | Named-site statements replace population pins | 1 | implemented |
 | R5 | Verse-count pin goes; book set becomes closed dispatch | 1 | implemented |
 | R6 | Mega near-Aleppo steps and their texts | 1 | implemented |
-| R7 | Readable pointing records; digests and manifest constants go | 2 | active |
-| R8 | Genesis 43:28 and consumer-notice hashes become readable | 2 | active |
-| R9 | Near-Aleppo's two checks over old commits are retired | 2 | active |
+| R7 | Readable pointing records; digests and manifest constants go | 2 | implemented |
+| R8 | Genesis 43:28 and consumer-notice hashes become readable | 2 | implemented |
+| R9 | Near-Aleppo's two checks over old commits are retired | 2 | implemented |
 | R10 | Phonetic MAM legacy comparison retired; page set replaces the 974 pin | 3 | active |
 | R11 | Yeivin population hash goes; quoted-form check added | 4 | active |
 | R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | active |

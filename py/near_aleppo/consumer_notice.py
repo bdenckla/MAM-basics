@@ -1,14 +1,13 @@
 """The near-Aleppo consumer notice shared by dataset headers and documentation.
 
 The notice describes the dataset's template roles, projections, spacing and mark
-order. set_in_header checks the source MAM notice hash before replacing it, so
-upstream consumer rules require a deliberate update rather than disappearing.
+order. set_in_header checks that MAM-parsed-plus's notice is still _MAM_NOTICE, the
+copy that NOTICE was adapted from, before replacing it, so that a change to MAM's
+consumer rules is carried into NOTICE deliberately rather than disappearing.
 The documentation renders the same NOTICE object used in every book header.
 """
 
 import copy
-import hashlib
-import json
 
 from near_aleppo.phase2_templates import APPLIED_AND_FLAGGED
 from near_aleppo.phase2_templates import FLAGGED_NOT_APPLIED
@@ -25,12 +24,64 @@ from py_misc.near_aleppo_params import MAM_NOTE
 # No site uses it yet, so phase 2 has no rule for it.
 MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
 
-# The SHA-256 of MAM-parsed-plus's notice, serialized as a book file serializes it,
-# derived again on 2026-10-05: all 24 input notices now qualify poetic stress-helper
-# alternatives and omit the redundant parser-boundary rule. NOTICE reflects those
-# changes and the current documented template and projection roles.
-# The selected MAM-parsed/plus tree is 612b667282c197a65e85bef3d624b4d970d7b084.
-_MAM_NOTICE_SHA256 = "a372309e14dfc5c623a29ae7f3ef2e7f043a5be9876a357e5601548625bac959"
+# MAM-parsed-plus's notice, the same in all 24 books, copied by script: the notice
+# that NOTICE was last adapted from, on 2026-10-05, when all 24 input notices began
+# to qualify poetic stress-helper alternatives and omitted the redundant
+# parser-boundary rule.
+_MAM_NOTICE = {
+    "summary": (
+        "This is a structured dataset, not ready-to-display Scripture; interpret "
+        "each structure by its documented role and choose a projection wherever "
+        "the payload presents alternatives."
+    ),
+    "critical_rules": [
+        (
+            "Use a closed, role-aware template dispatch: recurse only through "
+            "documented Scripture-bearing fields, and fail on an unknown template "
+            "instead of guessing from its parameters or skipping it."
+        ),
+        (
+            "Choose one documented branch of each choice-bearing structure, "
+            "including ketiv/qere, dual cantillation, qamats, and poetic "
+            "stress-helper alternatives where present; do not concatenate the "
+            "branches."
+        ),
+        (
+            "A special-letter template's interrupted spelling and uninterrupted "
+            "atom-form are two representations of one atom-form; select one text "
+            "representation rather than collecting both."
+        ),
+        (
+            "Reassemble text fragments before identifying atoms or chanted words; "
+            "array, template, and element boundaries are not segmentation "
+            "boundaries."
+        ),
+        (
+            "Narpas (narrow-sense paseq, מ:פסק) forms no compound of any kind: only "
+            "maqaf joins atoms into a chanted word. Within the Scripture stream, MAM "
+            "encodes no whitespace before or after narpas; that absence expresses "
+            "neither grouping nor a display-spacing preference. An edition chooses "
+            "whether to display spacing before and/or after narpas, while an "
+            "analytical consumer need not make a display-spacing decision."
+        ),
+        (
+            "A whitespace template can be the only separator between adjacent "
+            "Scripture strings: for example, מ:ששש and ססס can have no literal "
+            "whitespace at that boundary. Do not drop the template or collect a "
+            "descriptive parameter as Scripture. A plain-text projection that does "
+            "not preserve layout must supply a separator; a layout-preserving "
+            "renderer must implement the documented space or break. This rule does "
+            "not apply to narpas, whose missing literal whitespace prescribes no "
+            "display spacing."
+        ),
+        (
+            "For literal search, byte comparison, or MAM-compatible output, preserve "
+            "MAM mark order or transform both sides deliberately; Unicode-normalized "
+            "text can look identical while comparing differently."
+        ),
+    ],
+    "documentation": "https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html#consumer-notice",
+}
 
 _NOTE, _NOTE_2 = RENAMED_NOTES["נוסח"], RENAMED_NOTES["מ:הערה-2"]
 
@@ -144,15 +195,12 @@ NOTICE = {
 def set_in_header(header, label):
     """Replace MAM-parsed-plus's notice in ``header`` by NOTICE, in place.
 
-    ``label`` names the book file in the error raised when MAM's notice is not the
-    one NOTICE was derived from.
+    ``label`` names the book file in the error raised when MAM's notice is not
+    _MAM_NOTICE, the one NOTICE was adapted from.
     """
-    serialized = json.dumps(header["consumer_notice"], ensure_ascii=False, indent=2)
-    digest = hashlib.sha256(serialized.encode("utf-8")).hexdigest()
-    if digest != _MAM_NOTICE_SHA256:
+    if header["consumer_notice"] != _MAM_NOTICE:
         raise AssertionError(
-            f"{label}: MAM-parsed-plus's consumer notice is not the one "
-            "consumer_notice.py was derived from; re-derive NOTICE from it and "
-            "update _MAM_NOTICE_SHA256"
+            f"{label}: MAM-parsed-plus's consumer notice differs from _MAM_NOTICE in "
+            "consumer_notice.py; carry the change into NOTICE, then update the copy"
         )
     header["consumer_notice"] = copy.deepcopy(NOTICE)

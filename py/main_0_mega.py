@@ -730,7 +730,7 @@ _STEPS = [
     StepRecord(
         "near-aleppo-html",
         _run_near_aleppo_html,
-        "formats stored notes and checks MAM-mode equivalence; writes gh-pages/near-aleppo after the build",
+        "formats stored notes; writes gh-pages/near-aleppo after the build",
     ),
     StepRecord(
         "pipeline-graph",

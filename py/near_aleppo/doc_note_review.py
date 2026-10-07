@@ -161,9 +161,9 @@ def inventory():
         phase5.Readings(),
     )
     frozen, editorial, reviewed = (
-        FrozenPointing(build_paths.mam_parsed_plus_dir()),
+        FrozenPointing(),
         EditorialPointing(),
-        ReviewedPointing(build_paths.mam_parsed_plus_dir()),
+        ReviewedPointing(),
     )
     rows = []
     for verse in corpus.verses:
@@ -173,7 +173,6 @@ def inventory():
         cell = resolver.resolve_e_cell(copy.deepcopy(verse.mam[2]), ref)
         stages.append(_targets(cell, ref))
         cell = policies.apply_e_cell(cell, ref)
-        frozen.check_source(cell, ref)
         stages.append(_targets(cell, ref))
         cell = readings.apply_e_cell(cell, ref)
         stages.append(_targets(cell, ref))

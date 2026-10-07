@@ -5,7 +5,6 @@ import json
 from near_aleppo import build_paths
 from near_aleppo import doc_figures
 from near_aleppo import editorial_ketiv
-from near_aleppo import frozen_ketiv
 from near_aleppo.doc_html import he_display, he_name, link, verse_refs
 from mb_misc import mb_html
 
@@ -15,7 +14,27 @@ CHOSEN = "וַיִּֽשְׁתַּחֲוּֽ"
 MAM_QERE = "וַיִּֽשְׁתַּחֲוֽוּ"
 ALTERNATIVE_QERE = "וַיִּֽשְׁתַּחֲוּֽוּ"
 LENINGRAD_KETIV = "וַיִּֽשְׁתַּחֲוֻּֽ"
-NOTE_SHA256 = "70bf441e8ff7b55d0a4bc36aae5f8158726505c44dbf8f2f596edd63700fe6dc"
+# The body of MAM's note at Genesis 43:28, which the section summarizes, copied
+# from MAM-parsed-plus by script.
+NOTE_BODY = [
+    (
+        '=ב,ש,ש1,ו ובדפוסים (כתיב חסר וי"ו, ונקודת שורוק בלבד באות וי"ו '
+        'האחרונה); לכן ב,ש,ש1,ו=וַיִּֽשְׁתַּחֲוֽוּ קרי (אין נקודה בוי"ו '
+        "עיצורית), וכמו כן בדפוסים."
+    ),
+    {
+        "tmpl_name": "ש",
+    },
+    (
+        'ל,לו,ק3=וַיִּֽשְׁתַּחֲוֻּֽ (כתיב חסר וי"ו, וניקוד של קובוץ ונקודת שורוק '
+        'ביח באות וי"ו האחרונה); ולכן ל,ל1,ק3=וַיִּֽשְׁתַּחֲוּֽוּ קרי (נקודה '
+        'בוי"ו עיצורית).'
+    ),
+    {
+        "tmpl_name": "ש",
+    },
+    "הערות ברויאר ודותן והמקליד",
+]
 MAM_URL = "https://bdenckla.github.io/MAM-basics/MAM-with-doc/A1-Genesis.html#c43v28"
 
 
@@ -30,7 +49,9 @@ def section():
         if row["id"] == IDENTIFIER
     )
     if (
-        frozen_ketiv.digest(note) != NOTE_SHA256
+        note["tmpl_name"] != "נוסח"
+        or set(note["tmpl_params"]) != {"1", "2"}
+        or note["tmpl_params"]["2"] != NOTE_BODY
         or note["tmpl_params"]["1"]["tmpl_params"] != {"1": "וישתחו", "2": MAM_QERE}
         or chosen != CHOSEN
         or doc_figures._CodexIndex().extant(VERSE)

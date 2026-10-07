@@ -1,7 +1,12 @@
-"""Import an approved, immutable MAM-derived pointing payload after Readings.
+"""Import an approved MAM-derived pointing payload after Readings.
 
-Runtime reads only the sealed payload and current MAM input books. Archival
-ownership evidence and approval diagnostics are not runtime dependencies.
+Each record stores, beside its pointed ketiv, the parameters of the ketiv/qere
+template it points, its ketiv and whole qere, as the build has them where the
+pointing is written, after the representation policies and readings. There,
+checked_target requires the template's parameters to be the record's still, so
+that a changed ketiv, or a changed letter or mark of the qere, stops the build at
+the record it concerns, while a renamed template does not. Runtime reads only the payload and current MAM input books.
+Archival ownership evidence and approval diagnostics are not runtime dependencies.
 """
 
 from collections import defaultdict
@@ -14,14 +19,10 @@ import re
 from near_aleppo import phase2_templates as phase2
 
 MANIFEST = build_paths.input_dir() / "frozen-pointed-ketiv.json"
-# Target fingerprints refreshed for MAM-basics 3c58d087, which renamed four
-# post-maqaf ketiv/qere calls from כו״ק to קו״כ. Every approved record and source
-# identity is unchanged; full-file guards remain.
-MANIFEST_SHA256 = "3a8214cf789253797c0c84c1025ba4e5bb06ffa419ec392864eb58d8bd76a472"
-SITES = 723
-ATOMS = 733
-_HEX = re.compile(r"[0-9a-f]{64}\Z")
 _FORBIDDEN = re.compile(r"baseline-\d+|mgketer|https?://", re.IGNORECASE)
+# The parameters a record's ketiv/qere template may have: MAM's ketiv and pointed
+# qere, and the סוג of a מ:כו״ק מיוחד.
+_TARGET_KEYS = frozenset({"1", "2", "סוג"})
 
 
 def digest(value):
@@ -82,92 +83,95 @@ def validate_value(value):
             raise ValueError("Non-source metadata in pointing payload")
 
 
+def validate_target_params(row):
+    """Require a record's tmpl_params to hold "1" and "2", and at most also סוג,
+    each a string."""
+    params = row["tmpl_params"]
+    if (
+        not isinstance(params, dict)
+        or not {"1", "2"} <= set(params) <= _TARGET_KEYS
+        or not all(isinstance(value, str) for value in params.values())
+    ):
+        raise ValueError(f"{row['id']}: unexpected recorded target parameters")
+
+
+def checked_target(cell, row):
+    """The ketiv/qere template at ``row``'s path in ``cell``, checked against ``row``.
+
+    The path must resolve to a template of phase2.POINTED_KETIV_FAMILIES that has no
+    pointed ketiv yet, and the template's parameters must equal the record's. The
+    template's name is not compared, so a rename such as כו״ק to קו״כ passes; a
+    change to the ketiv, to any letter or mark of the qere, or to סוג raises.
+    """
+    try:
+        target = at_path(cell, row["path"])
+    except (IndexError, KeyError, TypeError) as error:
+        raise ValueError(f"{row['id']}: the record's path does not resolve") from error
+    if (
+        not isinstance(target, dict)
+        or target.get("tmpl_name") not in phase2.POINTED_KETIV_FAMILIES
+    ):
+        raise ValueError(
+            f"{row['id']}: the record's path does not reach a template of "
+            f"{phase2.POINTED_KETIV_FAMILIES}"
+        )
+    params = target["tmpl_params"]
+    if phase2.POINTED_KETIV_PARAMETER in params:
+        raise ValueError(
+            f"{row['id']}: the target already has a pointed ketiv, which takes priority"
+        )
+    if params != row["tmpl_params"]:
+        raise ValueError(
+            f"{row['id']}: target parameters differ from the record: recorded "
+            f"{_sorted_json(row['tmpl_params'])}, current {_sorted_json(params)}"
+        )
+    return target
+
+
+def _sorted_json(value):
+    return json.dumps(value, ensure_ascii=False, sort_keys=True)
+
+
 def validate_manifest(data):
-    required = {
-        "format",
-        "algorithm_commit",
-        "mam_input_commit",
-        "target_mam_commit",
-        "input_sha256",
-        "records",
-    }
-    if set(data) != required or data["format"] != "near-aleppo-frozen-pointing-v1":
+    required = {"format", "algorithm_commit", "mam_input_commit", "records"}
+    if set(data) != required or data["format"] != "near-aleppo-frozen-pointing-v2":
         raise ValueError("Unexpected frozen pointing manifest schema")
     if _FORBIDDEN.search(json.dumps(data, ensure_ascii=False)):
         raise ValueError("Attribution, baseline identity or URL in runtime manifest")
     ids, addresses = set(), set()
-    fields = {
-        "id",
-        "verse",
-        "path",
-        "before_sha256",
-        "after_sha256",
-        "canonical_sha256",
-        "value",
-        "atoms",
-    }
+    fields = {"id", "verse", "path", "tmpl_params", "value"}
     for row in data["records"]:
         if set(row) != fields:
             raise ValueError("Unexpected metadata in frozen pointing record")
-        if any(
-            not _HEX.fullmatch(row[key])
-            for key in ("before_sha256", "after_sha256", "canonical_sha256")
-        ):
-            raise ValueError("Invalid frozen pointing digest")
+        validate_target_params(row)
         address = (tuple(row["verse"]), tuple(row["path"]))
         if row["id"] in ids or address in addresses:
             raise ValueError("Duplicate frozen pointing target")
         ids.add(row["id"])
         addresses.add(address)
         validate_value(row["value"])
-    if len(ids) != SITES or sum(row["atoms"] for row in data["records"]) != ATOMS:
-        raise ValueError("Approved frozen pointing population changed")
     return data
 
 
 def load():
-    raw = MANIFEST.read_bytes()
-    if sha256(raw).hexdigest() != MANIFEST_SHA256:
-        raise ValueError("Frozen pointing manifest differs from the sealed hash")
-    return validate_manifest(json.loads(raw))
+    return validate_manifest(json.loads(MANIFEST.read_text(encoding="utf-8")))
 
 
 class FrozenPointing:
-    def __init__(self, input_dir):
+    def __init__(self):
         self.data = load()
-        actual = {
-            p.name: sha256(p.read_bytes()).hexdigest()
-            for p in sorted(input_dir.glob("*.json"))
-        }
-        if actual != self.data["input_sha256"]:
-            raise ValueError("MAM inputs differ from the sealed pointing target")
         self.by_verse = defaultdict(list)
         for row in self.data["records"]:
             self.by_verse[tuple(row["verse"])].append(row)
         self.seen = set()
 
-    def check_source(self, cell, verse):
-        for row in self.by_verse[verse]:
-            target = at_path(cell, row["path"])
-            if digest(target) != row["before_sha256"]:
-                raise ValueError(f"{row['id']}: phase-3 source target changed")
-
     def apply(self, cell, verse):
-        # Validate every target in this verse before mutating any of them.
+        # Check every target in this verse before writing to any of them.
         targets = []
         for row in self.by_verse[verse]:
-            target = at_path(cell, row["path"])
-            if target["tmpl_name"] not in phase2.POINTED_KETIV_FAMILIES:
-                raise ValueError(f"{row['id']}: unsupported target family")
-            if phase2.POINTED_KETIV_PARAMETER in target["tmpl_params"]:
-                raise ValueError(
-                    f"{row['id']}: existing note pointing takes priority; import conflict"
-                )
-            if digest(target) != row["after_sha256"] or row["id"] in self.seen:
-                raise ValueError(
-                    f"{row['id']}: changed or repeated post-Readings target"
-                )
-            targets.append((row, target))
+            if row["id"] in self.seen:
+                raise ValueError(f"{row['id']}: frozen pointing applied twice")
+            targets.append((row, checked_target(cell, row)))
         for row, target in targets:
             target["tmpl_params"][phase2.POINTED_KETIV_PARAMETER] = copy.deepcopy(
                 row["value"]

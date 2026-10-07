@@ -84,7 +84,7 @@ _ONE_SIDED_PLANE_READINGS and Jeremiah 31:37; the forms with exceptional punctua
 the clauses with no form, the prose-led heads and the prose descriptions, which the
 prose-description policy leaves without automatic treatment.
 
-Subsequent sealed pointing imports supply retained ketiv/qere sites beyond this
+Subsequent stored pointing imports supply retained ketiv/qere sites beyond this
 note-derived set, without overwriting it.
 
 The step runs after phase 3's policies and before phase6_mam_targets.py, which gives

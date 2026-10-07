@@ -16,7 +16,7 @@ The public deliverable is `out/near-aleppo/plus/`, a version of MAM-parsed-plus
 whose text is nearer to what the Aleppo Codex contains, with its example edition
 and documentation under `gh-pages/near-aleppo/`. Its local entry point is
 `py/main_near_aleppo.py`; `out/near-aleppo/README.md` gives the build and check
-commands. The public build reads local MAM data and sealed pointing inputs.
+commands. The public build reads local MAM data and stored pointing inputs.
 
 The mega runs the five local MAM population checks, dataset build and HTML
 rendering. These steps write only this checkout. The broader research census,

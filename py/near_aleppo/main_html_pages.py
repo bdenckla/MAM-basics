@@ -2,9 +2,7 @@
 
 Documentation figures come from the build's population file or are computed
 from local MAM, near-Aleppo and the Aleppo coverage index. The shared MAM-with-doc
-renderer writes the 39-book example edition and its long-note pages. Every render
-also checks its MAM mode against independently tracked MAM-with-doc files at the
-public commit named by edition.PIN.
+renderer writes the 39-book example edition and its long-note pages.
 
 The output tree is gh-pages/near-aleppo. Generation owns its complete contents
 except two hash-checked copies of Taamey D. Pages render entirely in memory before
@@ -95,17 +93,6 @@ def _documentation_html(title, body, comment):
     return f"<!doctype html>\n<!-- {comment} -->\n" + "\n".join(lines)
 
 
-def _mam_mode_problems():
-    """How the shared the renderer, as MAM-with-doc, differs from MAM-with-doc."""
-    problems, count = edition.check_mam_mode()
-    if not problems:
-        print(
-            f"The shared renderer gives MAM-with-doc's {count} files "
-            f"at MAM-basics {edition.PIN[:8]}"
-        )
-    return [f"MAM-with-doc check: {problem}" for problem in problems]
-
-
 def _unexpected(pages):
     """The files in html-pages/ that are neither a page written here nor a font."""
     out_dir = build_paths.html_pages_dir()
@@ -135,8 +122,7 @@ def _font_problems():
 
 def write(pages):
     out_dir = build_paths.html_pages_dir()
-    problems = _mam_mode_problems()
-    problems += [f"unexpected {name}" for name in _unexpected(pages)]
+    problems = [f"unexpected {name}" for name in _unexpected(pages)]
     problems += _font_problems()
     if problems:
         raise AssertionError(f"{out_dir}: " + "; ".join(problems))
@@ -149,7 +135,7 @@ def write(pages):
 
 def check(pages):
     out_dir = build_paths.html_pages_dir()
-    problems = _mam_mode_problems()
+    problems = []
     for name, data in pages.items():
         path = out_dir / name
         if not path.exists():
