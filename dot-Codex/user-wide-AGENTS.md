@@ -208,6 +208,12 @@ normally the handoff partner, not a precondition failure; prove non-collision th
 
 ## Verification cadence for multi-session work
 
+For the approved 2026-10-07 trial, MAM-basics, MAM-private and hbofonts follow the controlling
+amendment in MAM-basics' `doc/review-trial.md`: ordinary focused checks and nightly broad checks,
+with immediate broad checks only for a specific consequence that cannot accept the delay.
+That amendment also authorizes bounded routine repairs and agent exception PRs. The cadence
+below continues to govern other work.
+
 1. Every commit gets cheap checks matched to the changed surface: `git diff --check`, the
    repository formatter on changed source files, and directly relevant targeted tests or lints.
 2. Run the full suite after the last change with a meaningful likelihood of breaking it.

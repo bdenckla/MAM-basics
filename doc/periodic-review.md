@@ -1,5 +1,9 @@
 # The periodic review: one repository, one commit window, one responsible reviewer, one findings file
 
+The approved [2026-10-07 trial](review-trial.md) controls current review, repair and checking
+work. Its agent triage replaces the obligatory Ben dispositions, separate remediation-plan
+approval and blanket per-finding rechecks below. Preserve the older records and private boundaries.
+
 This document describes the periodic review as a procedure in its own right: what the series is,
 what a review file contains, how a review is checked before it is acted on, and how its findings
 reach dispositions. It was split out of `doc/dual-agent-review.md` on 2026-09-12 (Ben's

@@ -1,5 +1,11 @@
 # AGENTS.md
 
+## Approved review and testing trial, 2026-10-07
+
+Follow [doc/review-trial.md](doc/review-trial.md) for ordinary verification, review triage,
+routine repair authority and exception PRs. It controls the older review and broad-check
+requirements during this trial; focused regeneration and product/privacy safeguards still apply.
+
 ## Compatibility note for historical instruction citations
 
 `AGENTS.md` is the common repository instruction body. Codex loads it directly, and Claude Code

@@ -1,5 +1,9 @@
 # Running the periodic review with both Claude and Codex
 
+The approved [2026-10-07 trial](review-trial.md) controls current review and remediation work,
+including broad-check timing. Use targeted independent checks when useful; no standing dual
+process or relay is required. Preserve this document's historical evidence and receipt conventions.
+
 This document records a recommendation Claude made on 2026-09-01, in a session titled "Claude and
 Codex complementary workflows", and first written down on 2026-09-03 because until then the
 recommendation existed only in that session's transcript and had to be recovered by searching
