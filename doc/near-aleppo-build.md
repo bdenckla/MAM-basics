@@ -59,8 +59,7 @@ roles from the book JSON without loading the ledger. The shared renderer serves 
 and near-Aleppo. Every near-Aleppo HTML run compares its MAM mode against 62
 independent tracked MAM-with-doc files at the public commit named in `edition.PIN`.
 Sealed Hebrew source strings retain their own codepoints; display projection
-uses MAM-normal mark order and one explicit exceptional ordering, without Unicode
-normalization.
+uses MAM-normal mark order without Unicode normalization.
 
 The broader research census, source captures, comparison programs, scan archive,
 adoption handoffs and approval records remain private. They are not inputs to any
