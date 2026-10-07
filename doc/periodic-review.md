@@ -9,9 +9,12 @@ here**; such citations are left as written, as the stale `../masorah-books/` and
 paths in `py/accgram/` are.
 
 Read this before starting a periodic review. Read `doc/dual-agent-review.md` as well only when the
-window is to be reviewed by two agents. Its **Next review: independent reviews and one
-disposition list** section records Ben's 2026-10-02 choice for the next review in each of
-MAM-basics and MAM-private and takes precedence over D9's alternating procedure for that trial.
+window is to be reviewed by two agents, apart from two rules there that every review follows: D10's
+filename and State rules, in "Review filenames and State lines", and D12's rule for correcting a
+finished dated document. Its **Next review: independent reviews and one disposition list** section
+records Ben's 2026-10-02 choice for the next review in each of MAM-basics and MAM-private and takes
+precedence over D9's alternating procedure for that trial. MAM-basics' instance ran on 2026-10-02;
+the procedure for a later two-agent window of MAM-basics is Ben's choice when he starts one.
 The trial's owner verifies the findings in place of the blanket per-finding sub-agent rechecks
 below; targeted delegation remains available.
 This choice does not require every later window to have two reviewers.
@@ -20,7 +23,8 @@ This choice does not require every later window to have two reviewers.
 including what the dual-agent rounds learned. Each of those rounds' first turns was written and
 checked by one reviewer before the other agent read it, so a later turn's correction of it is
 evidence about a single reviewer's review. `doc/dual-agent-review.md` records only what pairing
-adds.
+adds, apart from two rules that every review follows and that other instructions cite there: D10's
+filename and State rules and D12's rule for correcting a finished dated document.
 
 ## Delegation during a periodic review — Ben's decision, 2026-09-15
 
@@ -197,10 +201,12 @@ Two properties of the series matter to every review in it.
    must do still files a real issue with a real body; #233 is that shape.
 2. **The series is public-only since 2026-08-26.** It reads no private repository: neither
    MAM-private, which the private series reviews instead, nor hbofonts, nor any other repository
-   that `in/repo_maintenance_policy.json`'s `repo_visibility` declares private. Every brief the
-   reviewer gives a sub-agent names those repositories, since on 2026-10-02 a stream brief called
-   hbofonts public and two streams read in it before the error was caught. A reviewer that reads
-   private material and then writes into this repository's `doc/` publishes it:
+   that `in/repo_maintenance_policy.json`'s `repo_visibility` declares private, nor a private
+   repository outside the workspace that the tree cites, today `bdenckla/trope` and
+   `bdenckla/al-hatorah`. Every brief the reviewer gives a sub-agent names those repositories,
+   since on 2026-10-02 a stream brief called hbofonts public and two streams read in it before the
+   error was caught. A reviewer that reads private material and then writes into this repository's
+   `doc/` publishes it:
    `py/repo_util/report_destination.py` "does not read what a human or an agent later types into a
    commit message or a doc/ file". A check whose tracked code reads a private sibling may still
    run: the suite reads hbofonts through `py/tests/test_redirect_manifest.py`, and the mega reads
@@ -258,9 +264,9 @@ not decisions of Ben's, except where a decision is named.
    with its worktrees on 2026-10-04. So every figure names the commit it was measured at and the
    method that re-establishes it; a scratch script is named only beside what it computes and from
    which inputs; every cited commit or blob ID resolves; and a claim that only a transcript can
-   check goes to Ben in chat rather than into the file, as D9 and D11 of `doc/dual-agent-review.md`
-   require of a turn. The file says which claims the root reviewer re-read or re-ran itself and
-   which it adopted on a sub-agent's evidence.
+   check goes to Ben in chat rather than into the file; D9 and D11 of `doc/dual-agent-review.md`
+   likewise keep such a claim out of a tracked turn. The file says which claims the root reviewer
+   re-read or re-ran itself and which it adopted on a sub-agent's evidence.
 5. **Report only what was checked.** A "What verifies sound" entry names the comparison actually
    made: bytes or names, which lines, which checkout. A reproduction or preservation check, such as
    a mega that leaves no diff or a validator that passes, shows that products match their inputs,

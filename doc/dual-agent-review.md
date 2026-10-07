@@ -7,7 +7,8 @@ transcripts. The alternating argument, counter-argument and rebuttal round becam
 dual-agent review by Ben's decision of 2026-09-09 (D9). The September 8 review was its worked
 case. Design A was the default from 2026-09-07 to 2026-09-09 and was first run on the September 4
 window. **For the next review, Ben selected the simplified independent-review trial below on
-2026-10-02.**
+2026-10-02.** Its MAM-basics instance ran on 2026-10-02; the procedure for a later two-agent window
+of MAM-basics is Ben's choice when he starts one.
 
 Read this before starting a dual-agent review. It records the next-review trial and the retained
 alternating, Design A and Design B procedures.
@@ -24,12 +25,16 @@ Claude-only history more broadly than that.
 document on 2026-09-12: the series, its two standing properties, what a review file contains,
 and the remediation rules D7 and the risk ordering. A citation written before that date may
 name this document for material that is now there. A rule about how one reviewer finds, checks
-or records findings goes there too, even when a dual-agent round taught it.
+or records findings goes there too, even when a dual-agent round taught it, apart from D10's
+filename and State rules and D12's rule for correcting a finished dated document, which every
+review follows and which other instructions cite here.
 
 ## Next review: independent reviews and one disposition list — Ben's decision, 2026-10-02
 
 **Use this simplified process for the next review in each of MAM-basics and MAM-private.**
-Ben asked to record his desire to try the following process, leaving the size of the
+MAM-basics' instance ran on 2026-10-02, as "The MAM-basics trial review, kicked off 2026-10-02"
+below records; for a later two-agent window of MAM-basics, the procedure is Ben's choice when he
+starts one. Ben asked to record his desire to try the following process, leaving the size of the
 documentation change to Codex's judgment:
 
 1. Two fresh reviewers examine the same frozen commit range, with neither reading the other
@@ -83,8 +88,10 @@ file or relay.
    prompt per reviewer; a private window's kickoff is recorded in MAM-private instead. Each
    prompt quotes Ben's instruction and names the kickoff commit, the window, the evidence-only
    paths, the reviewer's checkout, output path, line-3 `State:` and effort level, and the private
-   repositories it must not read, as `in/repo_maintenance_policy.json`'s `repo_visibility` lists
-   them. It offers no view of the window's content. Both prompts set the same reporting bar:
+   repositories it must not read: those that `in/repo_maintenance_policy.json`'s `repo_visibility`
+   lists, and the private repositories outside the workspace that the tree cites, today
+   `bdenckla/trope` and `bdenckla/al-hatorah`. It offers no view of the window's content. Both
+   prompts set the same reporting bar:
    defects that the window introduced, and older defects that the window carries forward or that
    the reviewer notices, each labelled as one or the other, with each minor wording item in one
    line. Ben starts each reviewer's session with its prompt.
@@ -290,9 +297,9 @@ decision before close-out proceeds. Step 1 of
 is the worked acknowledgment and closure decision.
 
 **Every turn is review only and, in this repository's series, uses public evidence only.**
-"Public evidence only" means that the turn reads nothing in MAM-private: the series'
-public-only property, as `doc/periodic-review.md`, "Two standing properties of the series",
-states it. A claim that only an agent transcript can check stays out of a tracked turn under
+"Public evidence only" means that the turn reads no repository that the series' public-only
+property, property 2 of `doc/periodic-review.md`, "Two standing properties of the series", names
+as private. A claim that only an agent transcript can check stays out of a tracked turn under
 D11, "The shared origin branch" below. A turn performs no remediation and does not rewrite an
 earlier turn. A correction belongs in the turn that accepts the correction.
 Turn 2's initial reconciliation is the specified append to the argument, not permission to edit
@@ -400,7 +407,8 @@ remediation task integrates once: merge current `origin/main` into the review br
 worktree's home-clone interpreter by absolute path from the integration
 checkout with no `REPOS_ROOT`, read its Git diff, commit every explained generated change, and push
 the verified commit to `origin/dar-<date>`. An unexplained generated change or a failing mega step
-is a failure. Then fetch in the designated full integration clone, fast-forward its clean `main` with
+is a failure. Run the suite there too, or record a judged skip, as `AGENTS.md`'s rule for a push of
+`main` asks. Then fetch in the designated full integration clone, fast-forward its clean `main` with
 `--ff-only` to `origin/dar-<date>`, and push `main`. If the fast-forward or push refuses because
 `origin/main` moved, merge current `origin/main` and verify again in the integration checkout, then
 update the remote review branch before retrying. Retire each task-owned worktree and merged local
