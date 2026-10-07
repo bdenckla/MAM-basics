@@ -13,6 +13,11 @@ ruby.near-aleppo-kq > rt {
     font-weight: normal;
     padding-bottom: 0.2em;
 }
+/* Keep the qere's final marks positioned as in ordinary text. */
+ruby.near-aleppo-kq > rt > span {
+    display: inline-block;
+    line-height: normal;
+}
 ruby.near-aleppo-kq .near-aleppo-kq-none {
     font-size: 70%;
     color: light-dark(#777, #999);

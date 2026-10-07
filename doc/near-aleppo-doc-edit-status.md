@@ -308,3 +308,57 @@ and both local HEAD and origin/main were verified at `2f301311` with a clean che
 The complete package is on origin/main. The qamats diagnosis and trailing-space
 experiment remain deferred; no font positioning or speculative spacing workaround
 was included. This completion entry is a documentation-only follow-up on main.
+
+## NAEE final-mark investigation and ruby correction — 2026-10-07
+
+**Status:** The broader final-mark displacement is reproduced and fixed in the
+near-Aleppo example edition (NAEE) and punctuation extract. This investigation
+supersedes the earlier qamats deferment.
+
+**Authorization and baseline:** Ben asked to examine qere with other final marks
+below and above once ruby was used throughout NAEE. The narrow CSS repair follows
+the existing display policy and routine-repair authority in `doc/review-trial.md`.
+Source, development and integration checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`,
+a full clone on main at `c9a589d84f3bc0ad563e0ba7f5c44b80024137e5`, clean before
+editing. Codex owns verification, the commit and normal push of main.
+
+**Survey and finding:** The 39 main book pages contain 1,185 Scripture qere
+annotations, excluding note lemmas. Of these, 309 have marks below or above their
+final Hebrew letter, representing 19 distinct Unicode code points. For multi-atom
+qere, this survey examines the final atom; trailing punctuation and stored mark
+order are preserved. In controlled Edge comparisons against the same qere HTML
+outside ruby, 101 of these 309 annotations differ beyond one pixel of raster
+rounding at both the normal edition size, 26.133333 px, and an enlarged size of
+48 px. Representative differences include tevir and merkha below, and pashta and
+zaqef qatan above. The effect therefore extends beyond qamats.
+
+**Correction:** `py/near_aleppo/edition.css`, at the selector
+`ruby.near-aleppo-kq > rt > span`, makes the annotation's span an inline block
+with normal line height. Changing only this layout rule removes every detected
+discrepancy in the 309 annotations at both sizes. The earlier font-anchor evidence
+does not explain the ruby-versus-ordinary-text difference; the early ordinary-text
+claim was too broad. The controlled comparison supports a ruby-layout diagnosis;
+the browser engine's internal cause remains unverified. Forcing mark features or
+adding a trailing space inside the qere span did not repair the representative
+cases. No font file or Hebrew text was changed.
+
+**Verification and product scope:** HTML and extract regeneration passed. Their
+only tracked generated changes are the deployed NAEE stylesheet and the extract's
+embedded copy of that stylesheet. Book pages, datasets, selection data,
+MAM-with-doc, external punctuation and the plain-text companion remain unchanged.
+The corpus differential again preserved reading forms and text outside the ruby
+displays across 69,606 verse fields. Extract checks preserved section order, source
+panels, embedded fonts, slider sizes, narrow layout and print controls, with no
+script errors. Actual edition checks passed for Numbers, 1 Chronicles, Daniel
+and Ruth. All 98 extract ruby units retain equal reading sizes and gaps of 4 px
+at size 20, 6 px at size 30, and approximately 9.6 px at size 48.
+
+A local comparison page shows original ruby, corrected ruby and ordinary qere
+for 31 representative cases covering all 19 mark types. Its corrected cases
+match ordinary controls within one pixel, with identical text and size, loaded
+fonts and no script errors or network requests. The page's screenshot was
+inspected. The decisive comparison registers each whole glyph raster before
+comparing the positions of marks relative to letters. `git diff --check` passed.
+The mega and full suite are deferred to nightly checks under the approved trial;
+the change is confined to CSS and the focused differential and browser checks
+cover its effects.
