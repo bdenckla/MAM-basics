@@ -857,9 +857,9 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R13 | Test pins replaced by rules or deleted | 5 | implemented |
 | R14 | Every reader of the Decalogue capture moves to the mirror | 5 | implemented |
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | implemented |
-| R16 | Refresh skill and reference rewritten | 7 | active |
+| R16 | Refresh skill and reference rewritten | 7 | implemented |
 | R17 | Skill deployment and this plan's record | 8 | active |
-| R18 | `AGENTS.md` sentence, accepted by Ben on 2026-10-07 | 7 | active |
+| R18 | `AGENTS.md` sentence, accepted by Ben on 2026-10-07 | 7 | implemented |
 
 ## Noticed, not acted on
 

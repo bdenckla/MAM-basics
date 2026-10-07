@@ -184,6 +184,13 @@ its inputs still does. A change to MAM's data does not oblige rerunning
 Product reach and whether an act is hard to undo are separate risk axes, as the user-level
 instructions explain.
 
+A product derived from MAM's text takes each Wikisource refresh through the
+`mam-wikisource-refresh` runbook's judgment of every diff, so it gets no hashes, fingerprints
+or pinned populations of its inputs. A deterministic check is closed dispatch, or it tests
+that a hand-made statement about the data still holds and covers exactly what that statement
+depends on: a stored pointed ketiv's check covers its ketiv and its whole qere, letters and
+every mark, and not its template's name.
+
 Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository.
 
 ## Generated clock dates and timestamps shown on pages use New York time and say so

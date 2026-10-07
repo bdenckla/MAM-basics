@@ -61,8 +61,9 @@ otherwise it downloads nothing.
 
 That download changes tracked book data just as
 `py/main_download.py fr-wikisource` does, so a saving run owes the same
-dependent refresh: the public mega and Phonetic-MAM release, retained MAM-private
-products, the final public mega, and MAM change logs. The `mam-wikisource-refresh`
+dependent refresh: the bot run's own record, committed as the source change before
+the public mega and Phonetic-MAM release, then retained MAM-private products, the
+final public mega, and MAM change logs. The `mam-wikisource-refresh`
 skill's section "After a Wikisource bot run" gives the procedure.
 
 Use `--no-post-download` only when you intentionally want to skip this

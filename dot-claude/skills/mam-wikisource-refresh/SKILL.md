@@ -7,10 +7,11 @@ description: Refresh MAM chapter and declared special-page data from Hebrew Wiki
 
 Use this workflow for MAM chapter and declared special-page downloads from Hebrew Wikisource.
 Every `fr-wikisource` run refreshes the selected chapters and all 36 special pages. Coordinate the
-repositories' existing entry points; do not create a new orchestration program. A changed chapter
-refresh is committed before dependent regeneration, and MAM change logs are committed only after
-the dependency loop returns to its final MAM-basics state. The change-log generator compares the
-latest release with committed `HEAD`; dirty `MAM-parsed/plus` data is invisible to that comparison.
+repositories' existing entry points; do not create a new orchestration program. The source change
+is committed before the mega runs, as "Judge every diff: the expected changes, and only them"
+says, and MAM change logs are committed only after the dependency loop returns to its final
+MAM-basics state. The change-log generator compares the latest release with committed `HEAD`;
+dirty `MAM-parsed/plus` data is invisible to that comparison.
 
 The commands below run from the verified MAM-basics development checkout. A full clone uses
 its own interpreter; a linked worktree names its home clone's interpreter by absolute path.
@@ -85,10 +86,12 @@ A live `py/main_ws_bot.py real` run that saves pages includes a download: unless
 special pages into `in/mam-ws-special/`, then force-downloads exactly the chapters the bot saved
 into `in/mam-ws/` and `in/mam-ws-revisions.json`, and reparses those books. It takes the place of
 the one above. Ben decided on 2026-09-27 that a bot run which changes tracked book data owes the same
-dependent refresh as a download, since it changes `MAM-parsed/plus` just as a download does and
-leaves MAM-private's census stale until the refresh runs. Complete the dependent refresh below.
-Its first commit is the bot run's own record, the saved chapters' regenerated outputs with a new
-entry in `py/ws/ws_bot_edit_history.md`, rather than a separate `Refresh MAM from Wikisource`.
+dependent refresh as a download, since it changes `MAM-parsed/plus` just as a download does.
+Complete the dependent refresh below. Its first commit is the bot run's own record, rather than a
+separate `Refresh MAM from Wikisource`: the post-run download's chapters, revisions and reparse,
+with a new entry in `py/ws/ws_bot_edit_history.md`. That record is the source change that "Judge
+every diff: the expected changes, and only them" commits before the mega runs; the mega's
+products follow in commits of their own.
 
 Ben decided on 2026-10-01 that the bot run's own commit also takes every change that the post-run
 download made under `in/mam-ws-special/`. The bot saves only chapter pages, and only eight of the
@@ -96,6 +99,31 @@ download made under `in/mam-ws-special/`. The bot saves only chapter pages, and 
 that it saved in this run; every other change there is someone else's edit made since the mirror
 was last downloaded. The commit message names each changed special page and says whether the bot
 saved it.
+
+## Judge every diff: the expected changes, and only them
+
+The agent's judgment keeps a refresh honest; no hash, fingerprint or pinned population
+does. Ben chose this standard on 2026-10-07 as "a good use of AI's approximate
+not-quite-reasoning".
+
+1. **Commit the source change first.** Commit the download's chapters, revisions and
+   reparse, or a saving bot run's record, before the mega runs.
+2. **Predict.** Read the change verse by verse with `py/main_diff.py mpplus --old
+   <starting HEAD> --new HEAD --output <scratch path>`. Write down what it should cause:
+   which verses, in which products, of what kind (a renamed template, a reordered
+   ketiv/qere pair, a changed accent), and which counts move, by how much.
+3. **Judge.** After each regeneration, read every tracked diff and check (a) that every
+   predicted change is present and (b) that nothing else changed. Explain anything else,
+   or stop.
+4. **Record.** Each regeneration commit's message states the prediction and confirms (a)
+   and (b), product by product.
+
+The checks that remain are closed dispatch, and checks that a hand-made statement about
+the data still holds: a prose claim, a quoted form, a stored pointed ketiv. Such a
+statement does not change when the data does, so no diff shows it going stale. When one
+fails, repair the statement, or the derived record and what it records, in one
+reviewable edit. When the statement is Ben's published claim, stop for his approval and
+let the rest of the refresh proceed.
 
 ## Complete the dependent refresh
 
@@ -107,8 +135,13 @@ order and clean remote-state check. phonetic-hbo remains a frozen redirect and h
 issue host; dependent refresh does not restore or write its clone.
 
 When only `in/mam-ws-special/` changed, inspect its manifest and all changed raw pages, run the
-suite, and commit the special-page refresh without entering the dependent product loop. The
-special-page mirror is archival input and no product generator reads it.
+suite, and commit the special-page refresh without entering the dependent product loop. One
+generator family reads the mirror: the printed-Decalogue data and the accgram pages built on it
+read `decalogue-base.mediawiki`. When that page changed, run
+`./.venv/Scripts/python.exe py/main_accgram.py run-printed-decalogue` and
+`./.venv/Scripts/python.exe py/main_accgram.py generate-html` after the special-page commit,
+judge their diffs as "Judge every diff: the expected changes, and only them" says, and commit the
+explained products in a commit of their own.
 
 The downstream preflight happens before the first public exporter read and before every private
 write. A clean checkout is necessary but does not prove that the checkout is unowned: if MAM-private is dirty, is attached
@@ -116,9 +149,10 @@ to another active task, or cannot be assigned unambiguously to this refresh, sto
 handoff. Expected dependent regeneration is regeneration, not a failed census. A dependent
 generator that legitimately produces no diff needs no commit; never create an empty commit.
 
-Any unexplained diff, failed gate, stale input, changed recorded `HEAD`, or ambiguous ownership
-stops the workflow before pushing. The surrounding user and repository instructions govern
-integration and push authority; this skill does not grant them.
+Any unexplained diff, unresolved failed check, stale input, changed recorded `HEAD`, or
+ambiguous ownership stops the workflow before pushing; a check that awaits Ben's approval holds
+only the push. The surrounding user and repository instructions govern integration and push
+authority; this skill does not grant them.
 
 ## Separate workflows
 

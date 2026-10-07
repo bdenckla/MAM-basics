@@ -24,19 +24,35 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
 
 ## Refresh sequence
 
-1. **Commit the public refresh locally.** In the MAM-basics development checkout, run:
+1. **Commit the source change, then run the public mega.** In the MAM-basics development
+   checkout, commit the source change first: `Refresh MAM from Wikisource`, or the saving bot
+   run's own record as `SKILL.md` specifies. It also takes every change the download made under
+   `in/mam-ws-special/`, as a bot run's record does. Write the prediction, reading the change
+   with:
+
+   ```powershell
+   ./.venv/Scripts/python.exe py/main_diff.py mpplus --old <starting HEAD> --new HEAD --output <absolute .html path in a scratch directory>
+   ```
+
+   A bare filename raises, and the report covers only MAM-parsed plus, so predict special-page
+   and revision-metadata changes from `git diff`. Then run:
 
    ```powershell
    ./.venv/Scripts/python.exe py/main_0_mega.py
    ```
 
    The public mega exports `Phonetic-MAM/` through the retained read-only private source
-   adapter, then renders and analyzes the tracked public release. Audit every generated diff,
-   run whitespace checks, verify the recorded HEAD and commit only the audited refresh paths.
-   If the mega stops at `yeivin-itm-survey-meteg-claims`, follow "Gates that a text change can
-   trip", item 1, before committing.
-   Use `Refresh MAM from Wikisource`, or the saving bot run's own record as `SKILL.md` specifies.
-   This local commit precedes change-log generation, which compares committed data.
+   adapter, then renders and analyzes the tracked public release. Judge every diff against the
+   prediction, run whitespace checks, verify the recorded HEAD and commit the explained products
+   as `Regenerate MAM products from the Wikisource refresh`, with the prediction and its
+   confirmation in the message. If the mega stops at a check, "Checks that a text change can
+   trip" says what to do before committing. The mega's `diff-mpplus` step rewrites
+   `gh-pages/MAM-with-doc/change-log/` from committed `HEAD`, which now holds the source change:
+   after the product commit, restore those paths
+   (`git restore -- gh-pages/MAM-with-doc/change-log/`) so that the public checkout is clean for
+   steps 2 and 3; step 4's mega rewrites them and step 5 commits them. Between the source commit
+   and step 5, `py/tests/test_diff_mpplus_unpinned_latest.py` and
+   `py/tests/test_mpplus_alternative_oracle.py` fail by design.
 
 2. **Recheck private ownership and inputs before writing.** Require the selected private
    checkout clean and assigned to this workflow. `REPO_MAM_BASICS_DIR` must name the just
@@ -50,8 +66,8 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
    ```
 
    Use the private home-clone interpreter by absolute path in a worktree. This updates private
-   source diagnostics, comparisons, research and census products. Audit every diff and run
-   the repository's required checks. Commit explained changes locally; a legitimate no-op
+   source diagnostics, comparisons and research products. Judge every diff and run the
+   repository's required checks. Commit explained changes locally; a legitimate no-op
    needs no empty commit. The profile has no publication ownership in phonetic-hbo.
 
 4. **Close the public dependency loop.** From the MAM-basics development root, run its mega
@@ -65,11 +81,11 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
    both meteg surveys, the Breuer survey and the Yeivin claims/rendering consume public data.
    The mega's `diff-mpplus` step rewrites the MAM change log under
    `gh-pages/MAM-with-doc/change-log/` from committed `HEAD`, which now includes step 1's
-   commit, so this run leaves the change-log diff that step 5 audits and commits. Audit every
-   other diff and commit the explained dependent changes, leaving every path under
-   `gh-pages/MAM-with-doc/change-log/` uncommitted for step 5. Failed gates, stale inputs and
-   unexplained output changes stop the workflow; "Gates that a text change can trip" says how
-   the Yeivin claim pins and the legacy display projection are resolved.
+   commit, so this run leaves the change-log diff that step 5 audits and commits. Judge every
+   other diff against step 1's prediction and commit the explained dependent changes, leaving
+   every path under `gh-pages/MAM-with-doc/change-log/` uncommitted for step 5. Unresolved
+   failed checks, stale inputs and unexplained output changes stop the workflow; "Checks that a
+   text change can trip" says how each is resolved.
 
 5. **Generate change logs from final committed public data.** Run:
 
@@ -103,50 +119,47 @@ checkout. Coordinate the existing entry points under the surrounding authorizati
 7. **Verify completion.** Fetch both origins. Require each home clone clean on main and equal
    to origin/main. Any ahead/behind commit or tracked residue means the refresh is incomplete.
 
-## Gates that a text change can trip
+## Checks that a text change can trip
 
-Two checks compare current output with records that no generator rewrites. A refresh that
-changes MAM's text can trip both. Approval of the refresh does not approve either record, and no
-agent approves the Yeivin pins.
+A refresh is judged by its diffs, as `SKILL.md`'s "Judge every diff: the expected changes, and
+only them" says. These checks remain, and a refresh that changes MAM's text can trip each of
+them. Approval of the refresh approves nothing that they protect.
 
-1. **The Yeivin claim pins.** `py/yeivin_itm/claim_schema.py` pins the 20 fractions that Ben
-   approved and a SHA-256 of the claim population, which is every record in the ordinary
-   population of `out/accgram/meteg-before-stress.json` whose pattern is FR1, FR2, FR3, AFR1,
-   AFR4 or XAFR1. When a pinned fraction or a claim-population record changes, the mega stops
-   at `yeivin-itm-survey-meteg-claims`, and `py/main_yeivin_itm.py survey-meteg-claims` and
-   `check` raise without writing.
-   1. Leave `py/yeivin_itm/claim_schema.py`, `Yeivin-ITM/meteg-claims.json` and
-      `gh-pages/yeivin-itm/` unchanged.
-   2. Run `./.venv/Scripts/python.exe py/main_yeivin_itm.py review-claims`, which writes
-      nothing, and give Ben its report: each changed fraction with its approved and new
-      values, and each page line whose text would change, before and after. Add the
-      claim-population records that `git diff -- out/accgram/meteg-before-stress.json` shows
-      added, removed or changed.
-   3. Stop until Ben approves the new pins in his own message. Without that approval the
-      refresh ends before any push.
-   4. With his approval, change only the pins he approved and run
-      `./.venv/Scripts/python.exe py/main_0_mega.py --resume-from yeivin-itm-survey-meteg-claims`.
-      Audit the regenerated claim file and pages. Commit step 1's refresh paths first, then the
-      pins, the claim file and the changed pages in a commit of their own whose message quotes
-      Ben's approval.
-2. **The legacy display projection.** `test_complete_release_and_unified_projection` compares a
-   rendered Phonetic MAM chapter with its frozen hashes in
-   `in/phonetic_mam_legacy_projection_sha256.json` only while the chapter's MAM-parsed input
-   matches its fingerprint in `in/phonetic_mam_legacy_projection_inputs.json`.
-   `./.venv/Scripts/python.exe py/main_phonetic_mam.py check` lists the chapters that have left
-   the comparison. A chapter's fingerprint also covers the verse before it and the verse after
-   it in the same plus file, so a change to a chapter's first verse also makes the chapter
-   before it leave, and a change to its last verse the chapter after it. Require each listed
-   chapter to be one whose data a committed refresh changed, or the chapter before one whose
-   first verse it changed or after one whose last verse it changed, and audit each newly listed
-   chapter's rendered diff in both pronunciations. A mismatch in a
-   chapter whose input is unchanged is a regression: stop and resolve it. Never regenerate
-   either file; no source exists for the old pages' display of new text. If every chapter has
-   left the comparison, the suite fails with "every chapter left the comparison": stop, and ask
-   Ben whether to retire the legacy projection comparison. A chapter whose display Ben approved
-   correcting is listed, with his approval, in `in/phonetic_mam_display_corrections.json`; it
-   has left the comparison too, and `check` lists it apart from the chapters whose input
-   changed. Add a chapter there only with Ben's approval of that correction.
+1. **Closed dispatch.** A parser, renderer, survey or build raises on a template or shape that it
+   does not recognize. Stop: the repair is code, a new case in the named dispatch whose semantics
+   come from an existing explicit policy or from Ben. If the download's parse stops at
+   `py/ws/ws_get_bk_in_fmt_2.py`'s header or category assertion, a chapter page no longer names
+   the chapter it was fetched as: inspect the page, then record a deliberate layout change in a
+   reviewed commit of its own, or report the page on Wikisource and download again once it is
+   fixed; commit nothing from the stopped run.
+2. **The two grammar locks**, closed dispatch over template nesting: the parser-stage lock
+   (`py/verify_mp/expanded_stack_grammar_parser_stage.lock.json`, Ben, 2026-09-30) and the
+   plus-survey lock (`py/tmpl_survey/expanded_stack_grammar_plus.lock.json`, accepted
+   2026-09-10). When one stops on an edge: read the edge and its example stack from the error
+   (for the plus lock, `--find-stack-path <stack>` lists where it occurs); decide whether the
+   nesting is legitimate MAM markup that every dispatcher handles; if it is, rewrite that lock
+   with `./.venv/Scripts/python.exe py/main_parse.py ws --write-parser-stage-grammar-lock` or
+   `./.venv/Scripts/python.exe py/main_tmpl_survey.py --write-expanded-stack-grammar-lock`,
+   confirm that the lock's diff adds only that edge, commit it on its own with the reason, and
+   rerun; if it is not, report the page on Wikisource.
+3. **Statement checks**: the MAM-parsed claims that `doc/mp-claims.md` indexes, the accgram and
+   post-stress-meteg page checks, Holman's table, and the like. Repair the statement, or the
+   derived record and what it records, in one reviewable edit, naming in the commit message the
+   change in MAM's text that made it false.
+4. **Ben's published claims wait for him.** (a) The Yeivin fraction pins and quoted forms: if the
+   mega stops at `yeivin-itm-survey-meteg-claims`, leave `claim_schema.py`, `quoted_forms.py`,
+   the footnote modules, `Yeivin-ITM/meteg-claims.json` and `gh-pages/yeivin-itm/` unchanged,
+   give Ben `py/main_yeivin_itm.py review-claims`'s report, and finish the refresh locally with
+   `./.venv/Scripts/python.exe py/main_0_mega.py --resume-from yeivin-itm-render`; until he
+   approves new pins or footnote edits in his own message, `check` and the Yeivin tests that
+   compare the claims with the analysis fail, and nothing is pushed; with his approval, change only what he approved, rerun with
+   `--resume-from yeivin-itm-survey-meteg-claims`, and commit those changes on their own, quoting
+   his approval. (b) Near-Aleppo's stored pointed ketivs (Ben, 2026-10-07): when the build stops
+   because a target's ketiv or qere differs from its record, ask Ben, giving the verse, the
+   recorded and current ketiv and qere, the stored pointed ketiv, and the Aleppo Codex links that
+   the `verse-links` skill produces. Do not write a new pointed ketiv yourself. After his
+   decision, change the record's value and parameters as he says, in a commit of their own
+   quoting him, and resume from `near-aleppo-build`.
 
 ## Required scenario behavior
 
@@ -156,5 +169,8 @@ agent approves the Yeivin pins.
 4. A legitimate generator no-op continues without an empty commit.
 5. A one-repository cloud checkout still lacks the private adapter and regeneration inputs;
    cloud-skipped mega steps do not establish completion of a changed-data refresh.
-6. A changed claim-population record or Yeivin fraction stops the refresh until Ben approves
-   new pins.
+6. A moved Yeivin fraction, a broken quoted form in Ben's footnotes, or a changed ketiv or
+   qere at a stored near-Aleppo pointed ketiv waits for Ben's approval before the push; the
+   rest of the refresh proceeds.
+7. A failed statement check on a record that is not Ben's published claim is repaired, with
+   what it records, in one reviewable edit, and the refresh continues.
