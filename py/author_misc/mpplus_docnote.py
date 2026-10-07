@@ -9,9 +9,12 @@ To regenerate the output HTML, run from the repo root::
 Output goes to gh-pages/MAM-parsed/plus/html/mpplus_docnote.html.
 """
 
+import json
+
 from mb_author import author
 from mb_author import json_block
 from mb_author.claim import ClaimCollection
+from mb_misc import mb_html
 from author_misc import mp_cmn as cmn
 
 _FNAME = "mpplus_docnote.html"
@@ -43,6 +46,73 @@ def build_body(*, claims: ClaimCollection):
             ]
         ),
         json_block.json_block_raw_html(json_docnote_plus),
+        author.para(
+            "A target need not contain letters of Scripture text."
+            " The current target types without such letters are:"
+        ),
+        author.unordered_list(
+            [
+                [
+                    "Spaces: ",
+                    mb_html.code('" "'),
+                    " in column E, or ",
+                    mb_html.code('"__"'),
+                    " in column C.",
+                ],
+                [
+                    "Paragraph and poetic-spacing markers: ",
+                    author.hbo("סס, ססס, פפ, פפפ, ר0, ר1, ר3, ר4"),
+                    ".",
+                ],
+                [
+                    "Explicit absence of a paragraph break: ",
+                    author.hbo("מ:אין פרשה בתחילת פרק"),
+                    " or ",
+                    author.hbo("מ:אין פרשה בתחילת פרק בספרי אמ״ת"),
+                    ".",
+                ],
+                [
+                    "Punctuation: the literal string ",
+                    author.hbo("׃"),
+                    " or the template ",
+                    author.hbo("מ:פסק"),
+                    ".",
+                ],
+                ["Inverted-$nun signs: ", author.hbo("מ:נו״ן הפוכה"), "."],
+            ]
+        ),
+        author.para(
+            [
+                "Template names and descriptive parameters do not count as letters"
+                " of the target text. A target can also wrap one of these forms in ",
+                author.hbo("מ:הערה-2"),
+                ". A note can separately target a verse label (",
+                author.hbo("מ:פסוק"),
+                ", column D); that label may contain Hebrew letters without being"
+                " Scripture text.",
+            ]
+        ),
+        author.para(
+            "Consumers must accept a target consisting of exactly one ASCII space"
+            " (U+0020), preserving it without trimming it to an empty string or"
+            " rejecting it as empty. The current plus data has six such targets,"
+            " all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69;"
+            " and Nehemiah 3:2, 3:10, and 7:68."
+        ),
+        author.para("For example, Deuteronomy 23:8 has this target:"),
+        json_block.json_block_raw_html(
+            json.dumps(
+                {
+                    "tmpl_name": "נוסח",
+                    "tmpl_params": {
+                        "1": " ",
+                        "2": "ל=פסקא באמצע פסוק (פרשה סתומה)",
+                    },
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        ),
     ]
 
 
