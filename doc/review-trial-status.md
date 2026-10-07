@@ -2,8 +2,8 @@
 
 State: live; prepared 2026-10-07
 
-Policy: [review-trial.md](review-trial.md). Seven nightly runs around 2 a.m. America/New_York;
-the scheduler has not been created by this setup task.
+Policy: [review-trial.md](review-trial.md). One confirmed automation, `Review MAM changes`,
+schedules seven daily runs on 2026-10-08 through 2026-10-14, around 2 a.m. America/New_York.
 
 | Anchor | Commit/result |
 | --- | --- |
@@ -19,7 +19,7 @@ the repair commit; a passing suite or no-diff mega is not proof of the underlyin
 
 | Run/repair | Frozen commit and allowed input IDs | Result, disposition and evidence |
 | --- | --- | --- |
-| Setup, 2026-10-07 | Adopted baseline above | No retrospective review or broad-check run; procedure integration approved. Scheduler configured separately |
+| Setup, 2026-10-07 | Adopted baseline above | No retrospective review or broad-check run; procedure integrated and seven-night schedule confirmed |
 
 After night seven, record the compact assessment of Ben's time, meaningful defects,
 unnecessary changes and adequacy of evidence here.
