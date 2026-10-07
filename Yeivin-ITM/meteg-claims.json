@@ -2,7 +2,7 @@
   "schema": "yeivin-meteg-claims-v1",
   "input": {
     "identity": "out/accgram/meteg-before-stress.json",
-    "sha256": "cae1356aeff00afe96844dacddeb495587ad3aa9923f156e2c75ec37da0c9973"
+    "sha256": "f78906e6f02e37cf78533798c93d26b7a06faffb7c3ba016c9bacc90d8369d2c"
   },
   "populations": {
     "fully-regular.all": {

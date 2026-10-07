@@ -147,6 +147,8 @@ class Branch:
 class Row:
     branches: tuple[Branch, ...] = ()
     marker: str | None = None
+    # The one strand whose layout marker this is, or None for a marker of both.
+    marker_cantillation: str | None = None
 
 
 @dataclass(frozen=True)
@@ -154,7 +156,10 @@ class Verse:
     rows: tuple[Row, ...]
 
     def select(self, *, qamats=None, cantillation=None):
-        """Select named displayed alternatives, leaving ordinary rows unchanged."""
+        """Select named displayed alternatives, leaving ordinary rows unchanged.
+
+        A layout marker of one strand is dropped from another strand's selection.
+        """
         return Verse(
             tuple(
                 replace(
@@ -165,6 +170,12 @@ class Verse:
                         if branch.qamats in (None, qamats) or qamats is None
                         if branch.cantillation in (None, cantillation)
                         or cantillation is None
+                    ),
+                    marker=(
+                        row.marker
+                        if row.marker_cantillation in (None, cantillation)
+                        or cantillation is None
+                        else None
                     ),
                 )
                 for row in self.rows
@@ -201,7 +212,9 @@ def _row(source):
     ]
     if not hebrew_cells:
         display_schema.require(len(trans_cells) == 1, "layout marker shape")
-        return Row(marker=trans_cells[0][1])
+        (qamats, cantillation), marker = trans_cells[0]
+        display_schema.require(qamats is None, "layout marker with a qamats label")
+        return Row(marker=marker, marker_cantillation=cantillation)
     transcriptions = dict(trans_cells)
     display_schema.require(
         len(transcriptions) == len(trans_cells), "duplicate transcription labels"

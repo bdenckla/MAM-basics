@@ -143,7 +143,10 @@ agent approves the Yeivin pins.
    chapter whose input is unchanged is a regression: stop and resolve it. Never regenerate
    either file; no source exists for the old pages' display of new text. If every chapter has
    left the comparison, the suite fails with "every chapter left the comparison": stop, and ask
-   Ben whether to retire the legacy projection comparison.
+   Ben whether to retire the legacy projection comparison. A chapter whose display Ben approved
+   correcting is listed, with his approval, in `in/phonetic_mam_display_corrections.json`; it
+   has left the comparison too, and `check` lists it apart from the chapters whose input
+   changed. Add a chapter there only with Ben's approval of that correction.
 
 ## Required scenario behavior
 

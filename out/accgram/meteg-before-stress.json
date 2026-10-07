@@ -6,11 +6,11 @@
   "files": [
    {
     "path": "A1-Genesis.json",
-    "sha256": "fa89dd39611f764c4f56e67d9bf87a8b213719798885e1d0c24b112be3babe5b"
+    "sha256": "f96f3aa2921ea0ab3fa56e7896e752d813ce762809d0040ad3634c227301d367"
    },
    {
     "path": "A2-Exodus.json",
-    "sha256": "d83f34cf6ca78b795b0cb1d52e382b0523bc87261812002bf3e3ac6dc050cec6"
+    "sha256": "f7354c616ed485faeb86a76de6cc353a19520014053c2968f6b8a07578521839"
    },
    {
     "path": "A3-Levit.json",
@@ -22,7 +22,7 @@
    },
    {
     "path": "A5-Deuter.json",
-    "sha256": "42de62294c7d3c92a379b079615ac1c14fe45cbe56df44cba1ba66c052f556a2"
+    "sha256": "7cd5f0c21f483d63668193adcf1b20eaedd658236fc70e4af2bcdf6d2adcdb4c"
    },
    {
     "path": "B1-Joshua.json",
@@ -161,7 +161,7 @@
     "sha256": "708535bc32ee248fa22e0307021d7b1b29888cace40ae6421472a0793798c1ce"
    }
   ],
-  "sha256": "2eaa6bda894675fe52e28c339aad3efa8184f9e6c9a3fd5115b0738ec268b7c5"
+  "sha256": "621210efb939df745fced076085410de1e2c849fa4bd95fd7115edc0e674ade9"
  },
  "projection": {
   "cantillation": "cant-alef",

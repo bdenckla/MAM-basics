@@ -8,7 +8,10 @@ The old pages cannot be produced again, so they are evidence only for text that 
 has not changed since. A chapter is compared only while its MAM-parsed plus input
 matches the fingerprint recorded in in/phonetic_mam_legacy_projection_inputs.json
 when the frozen hashes still held; a chapter whose input a refresh has changed
-leaves the comparison, and ``chapters_left`` names it. No code writes either record.
+leaves the comparison, and ``chapters_left`` names it. A chapter whose display Ben
+approved correcting, which in/phonetic_mam_display_corrections.json lists with that
+approval, leaves it too (``display_corrections``). No code writes any of the three
+records.
 """
 
 import hashlib
@@ -169,6 +172,7 @@ def input_fingerprints(plus_dir):
 def report_chapters_left():
     """Print the chapter pages that have left the legacy projection comparison."""
     from mb_cmn import paths
+    from phonetic_mam import display_corrections
 
     inputs = json.loads(
         (paths.in_dir() / "phonetic_mam_legacy_projection_inputs.json").read_text(
@@ -183,6 +187,23 @@ def report_chapters_left():
     )
     for relative in left:
         print(f"  {relative}")
+    corrected = corrected_chapters(display_corrections.read(), inputs)
+    print(
+        f"{len(corrected)} chapters have left it by a display correction that Ben"
+        " approved, which in/phonetic_mam_display_corrections.json lists."
+    )
+    for relative in corrected:
+        print(f"  {relative}")
+
+
+def corrected_chapters(corrections, inputs):
+    """The chapter pages that an approved display correction takes out of the comparison."""
+    corrected = sorted(corrections["chapters"])
+    require(
+        set(corrected) <= set(inputs["chapters"]),
+        "a corrected chapter is not a recorded chapter page",
+    )
+    return corrected
 
 
 def chapters_left(inputs, fingerprints):
@@ -198,11 +219,13 @@ def chapters_left(inputs, fingerprints):
     return sorted(path for path in recorded if fingerprints[path] != recorded[path])
 
 
-def verify_site(site, oracle, inputs, fingerprints):
+def verify_site(site, oracle, inputs, fingerprints, corrections):
     """Compare each unified chapter whose input is unchanged to both frozen projections.
 
     Returns the chapter pages that have left the comparison because a refresh changed
-    their input; a chapter whose input is unchanged must still match.
+    their input; a chapter whose input is unchanged must still match, unless an
+    approved display correction (``corrections``, the validated record of
+    ``display_corrections``) has taken it out of the comparison.
     """
     require(set(oracle) == {"schema", "source", "chapters"}, "unknown oracle fields")
     require(oracle["schema"] == "phonetic-mam-projection-sha256-v1", "unknown oracle")
@@ -210,8 +233,8 @@ def verify_site(site, oracle, inputs, fingerprints):
         set(oracle["chapters"]) == set(PRONUNCIATIONS), "missing oracle pronunciation"
     )
     left = chapters_left(inputs, fingerprints)
-    require(len(left) < len(inputs["chapters"]), "every chapter left the comparison")
-    skipped = set(left)
+    skipped = set(left) | set(corrected_chapters(corrections, inputs))
+    require(len(skipped) < len(inputs["chapters"]), "every chapter left the comparison")
     expected_paths = None
     for pronunciation in PRONUNCIATIONS:
         chapter_hashes = oracle["chapters"][pronunciation]

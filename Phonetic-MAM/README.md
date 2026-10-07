@@ -20,7 +20,10 @@ MAM-parsed input matches its fingerprint in
 leaves that comparison, and its diff is reviewed instead. A chapter's fingerprint
 also covers the verse before it and the verse after it in the same MAM-parsed
 plus file, so a change to a chapter's first verse also makes the chapter before it
-leave, and a change to its last verse the chapter after it.
+leave, and a change to its last verse the chapter after it. A chapter whose display
+has been deliberately corrected leaves the comparison too, and its diff is reviewed
+instead: `in/phonetic_mam_display_corrections.json` lists each such chapter with the
+approval and the reason, and `py/main_phonetic_mam.py check` lists it.
 
 ## How the Hebrew differs from MAM's text
 

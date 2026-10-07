@@ -1,8 +1,10 @@
 """Project transient display inputs into the closed public page model.
 
-Only generic display Hebrew and the existing transcriptions enter this module.
-The table widths, labels, and equality-based sharing preserve the old renderer.
-No calculation state or adapter input is persisted.
+Only generic display Hebrew, the existing transcriptions and, from public MAM-parsed,
+the strand of a layout marker that one strand of a dual-cantillation template has
+alone enter this module, with the approved corrections of a layout marker's label
+(``display_corrections``). The table widths, labels, and equality-based sharing
+preserve the old renderer. No calculation state or adapter input is persisted.
 """
 
 import re
@@ -136,7 +138,7 @@ def _qamats_reading(book, element, pronunciation, label):
     return _label(label, he), _label(label, tr)
 
 
-def _row(book, element, pronunciation):
+def _row(book, element, pronunciation, strand):
     schema.require(isinstance(element, dict), "unknown display element")
     kind = element.get("kind")
     if kind == "word":
@@ -145,7 +147,10 @@ def _row(book, element, pronunciation):
     if kind == "layout":
         _keys(element, ("kind", "label"))
         schema.require(element["label"] in schema.LAYOUT_MARKERS, "unknown layout")
-        return {}, {0: [element["label"]]}
+        if strand is None:
+            return {}, {0: [element["label"]]}
+        schema.require(book in _CANT_NAMES, "unexpected strand-specific layout book")
+        return {}, {0: _label(f"טעם {_CANT_NAMES[book][strand]}", [element["label"]])}
     if kind == "dualcant":
         ha, hb, ta, tb = _dualcant(element, pronunciation)
         schema.require(book in _CANT_NAMES, "unexpected paired-reading book")
@@ -174,13 +179,59 @@ def _row(book, element, pronunciation):
     raise schema.PublicReleaseError("unknown display element kind")
 
 
-def _verse(book, verse):
+def _layout_positions(elements):
+    return [
+        index
+        for index, item in enumerate(elements)
+        if isinstance(item, dict) and item.get("kind") == "layout"
+    ]
+
+
+def _with_marker_labels(elements, corrections, where):
+    """The elements with each approved correction of a layout marker's label applied."""
+    elements = list(elements)
+    positions = _layout_positions(elements)
+    for correction in corrections:
+        schema.require(
+            correction["marker"] < len(positions),
+            f"{where}: no layout element {correction['marker']} to correct",
+        )
+        index = positions[correction["marker"]]
+        schema.require(
+            elements[index].get("label") == correction["from"],
+            f"{where}: layout element {correction['marker']} is not {correction['from']}",
+        )
+        elements[index] = {**elements[index], "label": correction["to"]}
+    return elements
+
+
+def _layout_strand(elements, strands, where):
+    """Which strand, 0 or 1, the verse's layout markers belong to, or None for both.
+
+    ``strands`` gives the layout templates of the two strands of the verse's
+    dual-cantillation templates (``strand_layouts``). Only one shape of difference is
+    projected: one strand has none, and the verse's layout markers are, in order, the
+    other's. Any other difference has no projection yet and raises.
+    """
+    if strands is None or strands[0] == strands[1]:
+        return None
+    labels = [elements[index].get("label") for index in _layout_positions(elements)]
+    for strand in (0, 1):
+        if not strands[1 - strand] and labels == list(strands[strand]):
+            return strand
+    raise schema.PublicReleaseError(f"{where}: unsupported strand-specific layout")
+
+
+def _verse(book, verse, strands, corrections):
     _keys(verse, ("chapter", "number", "elements"))
     schema.require(
         isinstance(verse["elements"], list) and verse["elements"], "empty verse"
     )
+    where = f"{book} {verse['chapter']}:{verse['number']}"
+    elements = _with_marker_labels(verse["elements"], corrections, where)
+    strand = _layout_strand(elements, strands, where)
     projections = {
-        pronunciation: [_row(book, item, pronunciation) for item in verse["elements"]]
+        pronunciation: [_row(book, item, pronunciation, strand) for item in elements]
         for pronunciation in schema.PRONUNCIATIONS
     }
     first, second = (projections[p] for p in schema.PRONUNCIATIONS)
@@ -214,8 +265,13 @@ def _verse(book, verse):
     }
 
 
-def project_book(value):
-    """Consume one transient adapter book and return its closed display model."""
+def project_book(value, *, strand_layouts, marker_labels):
+    """Consume one transient adapter book and return its closed display model.
+
+    ``strand_layouts`` is ``strand_layouts.read``'s map of every book, and
+    ``marker_labels`` the corrections record's list for every book; each correction
+    for this book must apply to one of its verses.
+    """
     _keys(value, ("schema", "book", "verses"))
     schema.require(value["schema"] == ADAPTER_SCHEMA, "unknown adapter schema")
     book = value["book"]
@@ -223,6 +279,12 @@ def project_book(value):
     schema.require(
         isinstance(value["verses"], list) and value["verses"], "empty adapter book"
     )
+    strands_by_verse = strand_layouts.get(book, {})
+    corrections_by_verse = {}
+    for correction in marker_labels:
+        if correction["book"] == book:
+            key = (correction["chapter"], correction["verse"])
+            corrections_by_verse.setdefault(key, []).append(correction)
     chapters = []
     for verse in value["verses"]:
         _keys(verse, ("chapter", "number", "elements"))
@@ -231,7 +293,19 @@ def project_book(value):
         if not chapters or chapters[-1]["number"] != number:
             schema.require(number == len(chapters) + 1, "noncanonical chapter sequence")
             chapters.append({"number": number, "verses": []})
-        chapters[-1]["verses"].append(_verse(book, verse))
+        key = (number, verse["number"])
+        chapters[-1]["verses"].append(
+            _verse(
+                book,
+                verse,
+                strands_by_verse.get(key),
+                corrections_by_verse.pop(key, []),
+            )
+        )
+    schema.require(
+        not corrections_by_verse,
+        f"{book}: marker-label corrections for no verse: {sorted(corrections_by_verse)}",
+    )
     return schema.validate_book(
         {"schema": schema.SCHEMA_ID, "book": book, "chapters": chapters}
     )

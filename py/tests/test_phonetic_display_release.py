@@ -5,7 +5,13 @@ import json
 from lxml import html
 
 from mb_cmn import bib_locales, paths
-from phonetic_mam import display_schema, example_display, projection_check, release
+from phonetic_mam import (
+    display_corrections,
+    display_schema,
+    example_display,
+    projection_check,
+    release,
+)
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 
 
@@ -27,6 +33,7 @@ def test_complete_release_and_unified_projection():
         oracle,
         inputs,
         projection_check.input_fingerprints(paths.mam_parsed_plus_dir()),
+        display_corrections.read(),
     )
 
 

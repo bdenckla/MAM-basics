@@ -1,0 +1,13 @@
+{
+  "schema": "phonetic-mam-display-corrections-v1",
+  "chapters": {
+    "tnkh/A1-Genesis/35.html": "Genesis 35:22's only marker row becomes פפ, the open parashah with a blank line that MAM-parsed has, where the release had פפפ (the review's third item under \"Noticed outside the diff\", N3). doc/review-findings-2026-10-04.md and its update record the finding; approved by Ben on 2026-10-06 with doc/PLAN-remediate-review-findings-2026-10-04.md.",
+    "tnkh/A2-Exodus/20.html": "Exodus 20:3's two narrow-sense paseq marker rows take the טעם עליון strand, the only strand of MAM-parsed's dual-cantillation template that has them (item 4.6), and 20:13's second marker row becomes ססס, the closed parashah in mid-line that MAM-parsed has, where the release had סס (N3). doc/review-findings-2026-10-04.md and its update record the findings; approved by Ben on 2026-10-06 with doc/PLAN-remediate-review-findings-2026-10-04.md.",
+    "tnkh/A5-Deuter/05.html": "Deuteronomy 5:7's two narrow-sense paseq marker rows take the טעם עליון strand, the only strand of MAM-parsed's dual-cantillation template that has them (item 4.6), and 5:17's second marker row becomes ססס, the closed parashah in mid-line that MAM-parsed has, where the release had סס (N3). doc/review-findings-2026-10-04.md and its update record the findings; approved by Ben on 2026-10-06 with doc/PLAN-remediate-review-findings-2026-10-04.md."
+  },
+  "marker_labels": [
+    {"book": "Genesis", "chapter": 35, "verse": 22, "marker": 0, "from": "פפפ", "to": "פפ"},
+    {"book": "Exodus", "chapter": 20, "verse": 13, "marker": 1, "from": "סס", "to": "ססס"},
+    {"book": "Deuter", "chapter": 5, "verse": 17, "marker": 1, "from": "סס", "to": "ססס"}
+  ]
+}

@@ -6,7 +6,8 @@ proof: the release was approved after its complete output was compared with the
 independent public-only projection of the previously published pages, whose
 frozen hashes ``projection_check`` still compares for every chapter whose input
 is unchanged. Do not add analysis-only alignments or source-quality fields to
-avoid decoding the displayed text in a consumer.
+avoid decoding the displayed text in a consumer. A layout marker that one strand
+of a dual-cantillation template has alone carries that strand's label.
 """
 
 from mb_cmn import bib_locales
@@ -25,7 +26,15 @@ READING_LABELS = (
     "טעם תחתון, קמץ-ס",
     "טעם עליון, קמץ-ס",
 )
+# The reading labels that name a strand alone, the labels a layout marker may carry.
+CANTILLATION_LABELS = ("טעם פשוטה", "טעם מדרשית", "טעם תחתון", "טעם עליון")
 LAYOUT_MARKERS = ("מ:פסק", "סס", "פפ", "ססס", "פפפ")
+# A marker row's cell: the marker alone, or labelled with the one strand that has it.
+_MARKER_CELLS = [[marker] for marker in LAYOUT_MARKERS] + [
+    [{"kind": "reading", "label": label, "content": [marker]}]
+    for label in CANTILLATION_LABELS
+    for marker in LAYOUT_MARKERS
+]
 # The computation's annotation points, the retired carriers U+05AF and U+05C4, and
 # U+05C5: the release has neither extraordinary point (Phonetic-MAM/README.md).
 _FORBIDDEN = frozenset(map(chr, (0x05AF, 0x05C4, 0x05C5, 0x05C8, 0x05C9)))
@@ -146,7 +155,7 @@ def validate_book(book):
                     for pronunciation in PRONUNCIATIONS:
                         cells = row["transcriptions"][pronunciation]
                         require(
-                            cells[0] in [[marker] for marker in LAYOUT_MARKERS]
+                            cells[0] in _MARKER_CELLS
                             and all(cell is None for cell in cells[1:]),
                             "unknown layout marker",
                         )

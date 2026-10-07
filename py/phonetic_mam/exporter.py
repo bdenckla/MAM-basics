@@ -14,7 +14,13 @@ import threading
 import time
 
 from mb_cmn import bib_locales, paths, provenance
-from phonetic_mam import display_projection, display_schema, example_display
+from phonetic_mam import (
+    display_corrections,
+    display_projection,
+    display_schema,
+    example_display,
+    strand_layouts,
+)
 
 _ADAPTER_RELATIVE_PATH = Path("al-hatorah/py/main_phonetic_mam_source.py")
 _MAX_BOOK_CHARS = 64 * 1024 * 1024
@@ -237,6 +243,9 @@ def iter_source_books(book_ids=None):
 
     A subset is useful for differential checks. A production export always uses
     the complete canonical set. Neither this reader nor its adapter writes data.
+    The strand of a layout marker that one strand of a dual-cantillation template
+    has alone comes from public MAM-parsed, and the approved corrections of a
+    marker's label from in/phonetic_mam_display_corrections.json.
     """
     expected = tuple(bib_locales.ALL_BK39_IDS if book_ids is None else book_ids)
     display_schema.require(
@@ -245,6 +254,8 @@ def iter_source_books(book_ids=None):
         and all(book in bib_locales.ALL_BK39_IDS for book in expected),
         "unknown or duplicate requested book",
     )
+    layouts = strand_layouts.read(paths.mam_parsed_plus_dir())
+    marker_labels = display_corrections.read()["marker_labels"]
     root, command, environment = _adapter_command("books")
     for book in expected:
         command.extend(("--book39", book))
@@ -276,7 +287,9 @@ def iter_source_books(book_ids=None):
                     object_pairs_hook=_unique_object,
                     parse_constant=_reject_constant,
                 )
-                book = display_projection.project_book(value)
+                book = display_projection.project_book(
+                    value, strand_layouts=layouts, marker_labels=marker_labels
+                )
                 del value
                 display_schema.require(
                     book["book"] == book_id, "adapter book sequence differs"
