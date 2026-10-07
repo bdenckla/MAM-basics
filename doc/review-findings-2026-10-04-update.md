@@ -762,3 +762,25 @@ template, and only MAM's rendered pages have the qere first. The five documents 
 rendered pages on Hebrew Wikisource, and MAM-simple's README and XML guide state the
 difference. MAM-parsed's guide gives the parameters' ketiv-first order in the same sentence as
 its "MAM has the qere first", so its sense is clear there, and it is unchanged.
+
+## Ben's approval of the remediation plan, 2026-10-06
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-06, New York
+time, in the full clone `C:/Users/BenDe/GitRepos/MAM-basics` on `main`: the session that wrote
+`doc/PLAN-remediate-review-findings-2026-10-04.md`, pushed as `2af21b46`, as close-out step 2.
+
+**Ben's message**, verbatim, in reply to the session's presentation of the plan by public-facing
+risk: "approved; execute". As the plan's "Ben's part" sets out, that reply approves:
+
+1. every wording in the plan, including item 8.4's narrower scope: the credit goes on the nine pages
+   that the disposition above names, and the census of the other English pages that quote MAM is
+   recorded rather than acted on, for the reasons the plan's R8 gives;
+2. its public data changes, including two display corrections under item 4.7's approved-exception
+   path: the strand of the narrow-sense paseq rows at Exodus 20:3 and Deuteronomy 5:7 (item 4.6),
+   and the break forms at Genesis 35:22, Exodus 20:13 and Deuteronomy 5:17 (the review's third item
+   under "Noticed outside the diff, not findings", which the plan calls N3);
+3. the execution, in the plan's waves.
+
+**Effective base State, 2026-10-06:** partly acted on; close-out steps 1 and 2 complete, the
+remediation plan approved; remediation in progress. The base report's line 3 stays as written, and
+this update remains `State: open` while its base survives.

@@ -1,6 +1,6 @@
 # Remediate the 2026-10-04 review of MAM-basics
 
-State: live; written 2026-10-06 and awaiting Ben's approval; nothing in it has been executed
+State: live; approved by Ben on 2026-10-06; executing
 
 Written on 2026-10-06, New York time, by a Claude session (Claude Opus 5.5 in the Claude desktop
 app) as close-out step 2 of the 2026-10-04 review (`doc/periodic-review.md`, "Close-out: from
@@ -22,7 +22,8 @@ are that session's recommendations, adopted under his instruction above without 
 This plan gives the concrete wording and mechanism for the 39 items whose disposition changes a file
 or assesses one, and asks Ben to approve all of it in one message ("Ben's part", below). Writing,
 committing or pushing this plan implements none of it; execution begins only when Ben explicitly
-says to execute.
+says to execute. **He did so on 2026-10-06**, replying "approved; execute", which the update file's
+entry "Ben's approval of the remediation plan, 2026-10-06" records.
 
 **How it was prepared.** The root session re-read every passage and the code that each item cites,
 on the tree at `aef25641`, and re-ran the measurements that decide a disposition. Six read-only
