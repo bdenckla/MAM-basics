@@ -177,3 +177,73 @@ kind (the plan's flagged site 1).
    on 2026-09-28, removed that walker, and `_walk_wtel_plus` keeps the validation."
 5. In the same entry: "Normal and verbose CLI results for `E/נוסח` match before and after" now
    reads "… matched before and after …".
+
+## The 2026-10-07 maintenance audit found no undeclared projection in new or changed walkers
+
+Recorded by Claude on 2026-10-07, New York time, during repository maintenance, under step 6 of
+`doc/PLAN-repo-maintenance-across-GitRepos.md`. A delegated read-only review covered every Python
+file added, renamed or changed between the previous audit's commit
+`e5f5045d34bf1cede1f8b25c2a75e000645b0056` and `61ab4e3b3f8c9eec5ee4d1f618a34b92c3abb020`, 474
+files over 410 commits. It screened them with an AST scan for recursion and the runbook's anchors
+and a scan of added lines for new calls to shared walker helpers, then read every hit. The
+recording session re-read the three latent items below in the code and re-measured the first one's
+counts at `72c698939af4b89dd2025a761cb4a85f21e5af56`. No confirmed undeclared projection was found,
+and the deferred decisions in `doc/PLAN-deferred-template-projection-decisions.md` were not
+re-raised.
+
+| Source and searchable function anchors | Classification and disposition |
+|---|---|
+| `py/near_aleppo/phase2_templates.py`: `Resolver._sequence`, `_template`, `_kept`, `_special_letter_word`, `selected_keys`, `_flatten`, `_assert_marks_flattenable` | Closed dispatch on `_RULES` with measured key sets; the docstring declares the selected parameters. |
+| `py/near_aleppo/phase2_templates.py`: `assert_templates_absent`, `_contains_mark`, `_assert_no_marks`, `_replace_marks` | Valid structural checks and transforms. |
+| `py/near_aleppo/phase3_policies.py`: `Policies._value`, `_template`, `_selected_text`, `_clauses`, `_ketiv_qere_apparatus` | Closed dispatch; `_clauses` is the closed note-prose reader and raises on an unrecognized template. |
+| `py/near_aleppo/phase5_readings.py`: `_walk`, `notes`, `_side_keys`, `_direct_ketiv_qere_target`, `Readings._apply` | Closed dispatch. |
+| `py/near_aleppo/phase6_mam_targets.py`: `_walk`; `phase6_rename.py`: `Renames._walk`; `phase6_flags.py`: `Flags._walk` | Closed dispatch. |
+| `py/near_aleppo/frozen_ketiv.py`: `sites`; `editorial_ketiv.py`; `reviewed_ketiv.py`; `note_content.py`; `doc_note_review.py`: `_data_notes`; `doc_template_examples.py`: `_wikitext`; `doc_policy_examples.py`; `doc_page.py`; `doc_he_transfer.py` | Closed dispatch or named selections. |
+| `py/near_aleppo/census/edition_projection.py` and the `render`, `find` and `each_nusach` walkers of `qamats_params.py`, `stress_helper_census.py`, `adonai_census.py`, `divine_name_split.py` and `nusach_aleppo_readings.py` | Declared single-stream projection table that fails fast; latent items 1 and 3 below. |
+| `py/near_aleppo/census/template_inventory.py`: `walk_raw`, `walk_settled` | Declared raw inventory and declared population; `walk_settled` checks names, and the build's phase 2 checks key sets. |
+| `py/near_aleppo/doc_figures.py`: `_walk`, `_templates`, `_characters`, `_new_characters`, `_selected_text`, `_mam_selected_text` | Zone-classified full inventory; `_new_characters` declares its population, which includes alternatives and the ketiv/qere apparatus parameters; the two selected-text readers are closed. |
+| `py/render_wt/render_wikitext_handlers.py`: `_handle_doc`, now through `split_doc_params`, `_stored_doc_parts`, `_added_lines`, `_mam_target_line`, `_handle_marks_without_letter` | Closed renderer handlers with named roles. |
+| `py/render_wt/render_wikitext_kq.py`: `_ht_kq_unpack_args`, `_pointing_display_order`, `handle_kq_trivial_ruby`, `_flagged`; `py/render_wt/render_wikitext_added_lines.py`; `py/py_misc/near_aleppo_params.py`; `py/py_misc/orphan_marks.py`: `carriers`; `py/py_misc/scrdfftar_to_doc.py`; `py/py_misc/trivial_qere_to_doc.py` | Closed dispatch. |
+| `py/verify_mp/parser_stage.py`: `_validate_node`, `_validate_no_parser_stage_encoding`; `py/verify_mp/kq_qere_first_contexts.py`: `_scan`; `py/verify_mp/corpus.py`: `template_names_called` | Structural validation; `_scan` is a maximal structural search that fails on a target in a non-text parameter. |
+| `py/phonetic_mam/strand_layouts.py`: `_strand`, `_dual_count`; `py/phonetic_mam/core/dualcant_templates.py`: `validate_template`; `py/phonetic_mam/core/dualcant_arguments.py`: `_get_dcargs_for_wtel`; `py/phonetic_mam/core/dualcant_prepare.py`: `prepare`; `py/phonetic_mam/display_projection.py`: `_row`, `_verse` | Closed dispatch and structural counts; qamats alternatives stay an explicit pair, and display branches stay labelled. |
+| `py/phonetic_mam/display_schema.py`: `validate_tokens`; `py/phonetic_mam/core/distinguished.py`: `reject_legacy_annotations` | Valid structural validation. |
+| `py/phonetic_mam/analysis_reader.py`: `Verse.readings`, `Verse.events`, `select` | Every branch unless the caller selects. Its callers declare their choice: `py/accgram/meteg_before_stress.py`: `analyze_books` records the projection in its output; `py/accgram/post_stress_meteg_survey.py`: `_scan` names its selectors in the survey's scope field; `py/tests/test_final_stress_vs_phonetic_mam.py`: `_book` is a declared all-branch oracle; `py/accgram/breuer_word_length.py`: `load_phonetic_book` is deferred decision 3. |
+| `py/accgram/post_stress_meteg_sources.py`: `_written_stress_helpers`; `py/accgram/breuer_word_length.py`: `_written_forms_by_reading`; `py/accgram/decalogue_m_trad.py`: `_flatten_template`; `py/accgram/printed_decalogue_fetch.py`: `_resolve_templates` | Closed dispatch; `_written_forms_by_reading` names the `cant-alef` strand, and `_resolve_templates` raises on any template left over. |
+| `py/accgram/maqaf_nonfinal_accents.py`: `_mam_simple_gray_maqafs_by_verse` | Structural count of every implicit-maqaf node, held equal to the hits along `flatten_ep_for_diff`'s selected stream, so a divergence raises. |
+| Recursion unchanged since the previous audit: `py/tmpl_survey/stack_path_lookup.py`: `_walk_wtel_plus`; `py/tmpl_survey/stack_path_verbose_payload.py`; `py/tmpl_survey/survey_plus.py`; `py/tmpl_survey/nesting_normal_form.py`; `py/mb_diff_mpu/mpplus_structure.py`; `py/mpplus/mpplus_boring_tmpls.py`; `py/verify_mp/verifiers_templates.py`: `_iter_template_occurrences_with_ancestors` | Seen again; only the plain retirement and docstrings changed them. |
+
+Three latent items remain unfixed. None changes a tracked output today; each is recorded so that a
+later change cannot make it live unnoticed. The census and phase-6 code they concern were under
+active near-Aleppo development on the audit's day, so maintenance changed none of them.
+
+1. **The stress-helper census reads note prose through the Scripture projection.** In
+   `py/near_aleppo/census/nusach_aleppo_readings.py`, `clauses`, which
+   `py/near_aleppo/census/stress_helper_census.py` calls, flattens each non-separator template
+   with `flatten(..., projected=True)`. The census therefore drops the display text of the link
+   templates `מ:קישור בהערה` and `מ:קישור פנימי בהערה`, since their edition keys in
+   `py/near_aleppo/census/edition_projection.py` are empty. The legarmeh template `מ:לגרמיה-2` and
+   the narrow-sense paseq template `מ:פסק` become spaces, since that table lists them as
+   separators. The build's note-prose reader, `py/near_aleppo/phase3_policies.py`: `_clauses`,
+   keeps the link text, writes Unicode PASEQ (U+05C0) for both of the latter templates, and raises
+   on any template it does not name. At `72c69893`, the note bodies that the census's `each_nusach`
+   walk reaches hold 32 and 2 of the two link templates, 31 of `מ:לגרמיה-2` and 9 of `מ:פסק`. None
+   of them is in any of the 18 clauses that `in/near-aleppo/census/stress_helper_census.txt`
+   reports, so the census does not depend on the difference today. Whether the census should read
+   note prose as phase 3 does is a choice for Ben; until then the projection is undeclared.
+2. **Uncalled code in the same module.** In `py/near_aleppo/census/nusach_aleppo_readings.py`,
+   `collect` and `keys_for` have no callers, `text_of` is called only by `collect`, and no caller
+   passes `projected=False` to `flatten`, whose `False` branch walks every parameter of every
+   template without validation. It would become a blind dive only if something called it again.
+3. **Silent fallbacks with no input that reaches them.** The `render` functions of
+   `qamats_params.py`, `stress_helper_census.py`, `adonai_census.py` and `divine_name_split.py`,
+   under `py/near_aleppo/census/`, return an empty string for a mapping that is not a template, and
+   `each_nusach`, `walk_raw` and `walk_settled` skip one. `py/near_aleppo/phase6_flags.py`:
+   `_matching_templates` returns without recursing for a template that `phase2._RULES` does not
+   name, and does nothing for a rule action other than the three it handles. The review's scan
+   found no non-template mapping in any plus cell at `61ab4e3b`, and `_matching_templates` sees
+   only note targets that phase 3's closed walk has accepted, with its result held to an exact
+   count. Closed dispatch would raise in each case.
+
+Verification for this audit: the full suite (1,047 passed, five skipped) and all 60 mega steps,
+with no tracked diff, ran at `61ab4e3b`; `py/main_near_aleppo.py --check` reported the five census
+baselines, the dataset and the pages current at `72c69893`.
