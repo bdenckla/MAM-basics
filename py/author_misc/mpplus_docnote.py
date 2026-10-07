@@ -87,8 +87,7 @@ def build_body(*, claims: ClaimCollection):
                 author.hbo("מ:הערה-2"),
                 ". A note can separately target a verse label (",
                 author.hbo("מ:פסוק"),
-                ", column D); that label may contain Hebrew letters without being"
-                " Scripture text.",
+                ", column D).",
             ]
         ),
         author.para(
