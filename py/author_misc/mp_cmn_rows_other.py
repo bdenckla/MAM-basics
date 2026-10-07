@@ -164,6 +164,8 @@ CLAIM_DEFS = (
                 "נוסח",
                 "מודגש",
                 "ש",
+                # Called in the books' good endings.
+                "מ:סיום בטוב",
             ]
         },
     ),
