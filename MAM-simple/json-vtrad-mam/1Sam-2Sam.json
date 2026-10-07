@@ -12761,12 +12761,12 @@
                   "type": "kq",
                   "contents": [
                     {
-                      "type": "kq-k",
-                      "text": "הכרי"
-                    },
-                    {
                       "type": "kq-q",
                       "text": "הַכְּרֵתִ֖י"
+                    },
+                    {
+                      "type": "kq-k",
+                      "text": "הכרי"
                     }
                   ]
                 },

@@ -234,7 +234,7 @@ display-spacing decision.
 unpointed and the qere is pointed.
 
 The two children are in the order that MAM's rendered pages on Hebrew Wikisource have. Those
-pages have the ketiv first, except in 129 of the 1,047 pairs, counted on 2026-10-05, where they
+pages have the ketiv first, except in 133 of the 1,047 pairs, counted on 2026-10-06, where they
 have the qere first: the pairs marked with MAM's קו״כ template, and three marked with a special
 template of the same kind. These pairs follow a maqaf or, in three verses, a narrow-sense
 paseq. MAM's introduction gives the reason for the maqaf case:

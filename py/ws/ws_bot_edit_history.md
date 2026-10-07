@@ -194,7 +194,7 @@ infrastructure has changed enough to make them misleading examples:
   two JSON files stay as records, and
   `git show c3417599:py/ws/holman_meteg_edit_spec.py` recovers the builder.
 
-### Note links: one link template renamed, four bare links templated — current
+### Note links: one link template renamed, four bare links templated
 - **Purpose:** Fix five links in documentation notes that MAM-with-doc
   rendered wrongly. Leviticus 10:6 cited an archive.org page through the
   internal-link template `{{מ:קישור פנימי בהערה}}`, whose first parameter
@@ -226,6 +226,51 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/lev-10-6-external-link-template.json`,
   `in/mam-ws-bot-edits/bare-links-to-external-link-template.json` and its
   selector, `bare-links-to-external-link-template.chapters.json`
+
+### Post-maqaf ketiv/qere: four calls given the qere-first template — current
+- **Purpose:** Give the template `קו"כ` to the four ketiv/qere whose qere directly
+  follows a maqaf but whose call was `כו"ק`: 2 Samuel 20:23, Jeremiah 48:21,
+  Ezekiel 39:25 and 2 Chronicles 13:19. MAM's introduction prescribes `קו"כ` where
+  the qere directly follows a maqaf: `in/mam-ws-intro/ch2.mediawiki`, line 75, with
+  line 64, and `appendices.mediawiki`, line 366. Both templates take the ketiv as
+  parameter 1 and the qere as parameter 2, so each call kept its arguments and
+  changed only its name, and MAM's rendered pages now have the qere first at the
+  four. A read-only Claude Code session found the four on 2026-10-06 and wrote the
+  prompt for the session that wrote the file and ran it the same day, after Ben's
+  go-ahead for the save. Run 2026-10-06: 4 chapters saved — 2 Samuel 20, revision
+  3008002 → 3087504; Jeremiah 48, 3010625 → 3087505; Ezekiel 39, 2988075 → 3087506;
+  and 2 Chronicles 13, 2988488 → 3087507.
+- **The four were an artifact of a 2015–16 automatic update,** according to the four
+  pages' histories, read through the API on 2026-10-06. The 2011 import by Erel
+  Import Bot wrote all four as `{{כתיב וקרי|…|אחרי מקף=1}}`, as it wrote the same
+  ketiv/qere pair after a maqaf at Ezekiel 16:53. The same bot's automatic update
+  gave the four `כו"ק`: 2 Samuel 20 on 2015-10-02, Ezekiel 39 and Jeremiah 48 on
+  2015-11-08, and 2 Chronicles 13 on 2016-01-04. In the 2015-11-08 sweep it gave
+  Ezekiel 16:53 the template `קו"כ` at 06:03:48 UTC and, 58 seconds later, gave
+  Ezekiel 39:25 the template `כו"ק`, with 27 other Ezekiel chapters edited in
+  between. No later edit touched the four calls.
+- **Scope:** a call counted if its opening braces directly followed a maqaf, or if
+  it began the first parameter of a `{{נוסח}}` call that directly followed one. By
+  that definition, `in/mam-ws/` as of 298958d3 had these four `כו"ק` and no others.
+  The two ketiv-first `{{מ:כו"ק מיוחד}}` calls between two maqafs, at Isaiah 26:20
+  and 1 Chronicles 9:4, which the introduction prescribes, were left alone.
+- **Safety rule:** a script cut each `old` string from the page text rebuilt from
+  `in/mam-ws/`: the atom before the maqaf, the maqaf and the whole call, so
+  `edit_page_text`'s exactly-once assertion also checked that the call still
+  followed the maqaf. The `--no-save` dry run's edited chapters equalled that
+  capture with the replacements applied, codepoint for codepoint. The saving run's
+  chapters equalled the dry run's, and the post-run download equalled both.
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-10-06,
+  immediately after the run: a `--no-save` re-run raised on 2 Samuel 20.
+- **Near-Aleppo seals:** `in/near-aleppo/frozen-pointed-ketiv.json` seals Jeremiah
+  48:21, Ezekiel 39:25 and 2 Chronicles 13:19, and `reviewed-pointed-ketiv.json`
+  seals 2 Samuel 20:23, each with digests of a target whose template name is part
+  of what is hashed, and both pin every MAM-parsed plus book's file hash. Ben chose
+  on 2026-10-06 to re-seal them mechanically, in a commit of its own after this
+  run's record, which proves that each target changed in its name alone.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/post-maqaf-ketiv-qere-to-qere-first.json` and
+  its selector, `post-maqaf-ketiv-qere-to-qere-first.chapters.json`
 
 ## How to look up the original code
 

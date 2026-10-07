@@ -11311,12 +11311,12 @@
                   "type": "kq",
                   "contents": [
                     {
-                      "type": "kq-k",
-                      "text": "עפרון"
-                    },
-                    {
                       "type": "kq-q",
                       "text": "עֶפְרַ֖יִן"
+                    },
+                    {
+                      "type": "kq-k",
+                      "text": "עפרון"
                     }
                   ]
                 },

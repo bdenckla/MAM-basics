@@ -40882,12 +40882,12 @@ b,·,∵,n.,-,y,:,h,(mun),v,o,y,a,d,a,(zaq_q),3
 SPACE
 3,_,l,-
 START kq
-START kq-k
-h,k,r,y
-STOP kq-k
 START kq-q
 h,_,k,·,:,r,‥,τ,i,(tip),y
 STOP kq-q
+START kq-k
+h,k,r,y
+STOP kq-k
 STOP kq
 SPACE
 v,:,3,_,l,-,h,_,p,·,:,l,‥,τ,i,(mos),y,(sopa)

@@ -28222,12 +28222,12 @@ v,:,α,∵,τ,-,b,·,:,n,v,o,τ,∵,(atn),y,h,a
 SPACE
 v,:,α,∵,τ,-
 START kq
-START kq-k
-3,p,r,v,n.
-STOP kq-k
 START kq-q
 3,∵,p,:,r,_,(tip),y,i,n.
 STOP kq-q
+START kq-k
+3,p,r,v,n.
+STOP kq-k
 STOP kq
 SPACE
 v,·,b,:,n,o,τ,∵,(mos),y,h,a,(sopa)
