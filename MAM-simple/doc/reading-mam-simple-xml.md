@@ -222,11 +222,11 @@ So MAM-simple has already made a judgement a bare glyph leaves open, and a reade
 maps both tags onto one output throws that judgement away.
 
 MAM encodes no text whitespace before or after `<lp-paseq>`. That omission does not
-group the surrounding text. Narpas (narrow-sense paseq, מ:פסק) forms no compound of any kind;
-only maqaf joins atoms into a chanted word. Nor does the omission prescribe how the
-glyph should be spaced in an edition: an edition decides whether to display spacing
-before and/or after narpas, while an analytical consumer need not make a
-display-spacing decision.
+group the surrounding text. Narpas (narrow-sense paseq, `<lp-paseq>`)
+forms no compound of any kind; only maqaf joins atoms into a chanted word. Nor does the
+omission prescribe how the glyph should be spaced in an edition: an edition decides
+whether to display spacing before and/or after narpas, while an analytical consumer need
+not make a display-spacing decision.
 
 ### Ketiv/Qere
 

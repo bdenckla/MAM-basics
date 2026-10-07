@@ -27,14 +27,22 @@ EVR_INDEX_DOCUMENTATION = (
     "evr-ii-b-55/README.md#consumer-guide"
 )
 
-NARPAS_GROUPING_RULE = (
-    "Narpas (narrow-sense paseq, מ:פסק) forms no compound of any kind: only maqaf "
-    "joins atoms into a chanted word. Within the Scripture stream, MAM encodes "
-    "no whitespace before or after narpas; that absence expresses neither "
-    "grouping nor a display-spacing preference. An edition chooses whether to "
-    "display spacing before and/or after narpas, while an analytical consumer "
-    "need not make a display-spacing decision."
-)
+
+def _narpas_grouping_rule(label: str) -> str:
+    """The narpas rule, naming narrow-sense paseq as the product itself has it."""
+    return (
+        f"Narpas (narrow-sense paseq, {label}) forms no compound of any kind: only "
+        "maqaf joins atoms into a chanted word. Within the Scripture stream, MAM "
+        "encodes no whitespace before or after narpas; that absence expresses "
+        "neither grouping nor a display-spacing preference. An edition chooses "
+        "whether to display spacing before and/or after narpas, while an analytical "
+        "consumer need not make a display-spacing decision."
+    )
+
+
+# MAM-parsed has the template מ:פסק; MAM-simple has the element lp-paseq instead.
+MAM_PARSED_NARPAS_GROUPING_RULE = _narpas_grouping_rule("מ:פסק")
+MAM_SIMPLE_NARPAS_GROUPING_RULE = _narpas_grouping_rule("lp-paseq")
 
 MAM_PARSED_WHITESPACE_TEMPLATE_RULE = (
     "A whitespace template can be the only separator between adjacent Scripture "
@@ -76,7 +84,7 @@ def mam_parsed_notice() -> dict[str, object]:
                 "array, template, and element boundaries are not segmentation "
                 "boundaries."
             ),
-            NARPAS_GROUPING_RULE,
+            MAM_PARSED_NARPAS_GROUPING_RULE,
             MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
             (
                 "For literal search, byte comparison, or MAM-compatible output, "
@@ -121,7 +129,7 @@ def mam_simple_notice() -> dict[str, object]:
                 "the preceding atom, and structural boundaries do not define units of "
                 "cantillation."
             ),
-            NARPAS_GROUPING_RULE,
+            MAM_SIMPLE_NARPAS_GROUPING_RULE,
             (
                 "The free parashah marker and the adjacent starts-with-sampe and "
                 "ends-with-sampe attributes describe one break, not three."

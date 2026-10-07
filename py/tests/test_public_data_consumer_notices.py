@@ -84,8 +84,8 @@ def _assert_notice(actual, expected, source: Path):
     ), f"{source}: consumer_notice drifted from its canonical value"
 
 
-def _assert_narpas_rule(actual, source: Path | str):
-    assert notice.NARPAS_GROUPING_RULE in actual["critical_rules"], (
+def _assert_narpas_rule(actual, rule: str, source: Path | str):
+    assert rule in actual["critical_rules"], (
         f"{source}: consumer_notice omits the canonical rule that narpas forms "
         "no compound and encodes no grouping or display-spacing preference"
     )
@@ -149,7 +149,9 @@ def test_mam_parsed_notices_and_complete_file_sets():
     assert files, "no MAM-parsed-plus payloads discovered"
     assert len(files) == 24, f"expected 24 MAM-parsed-plus payloads, found {len(files)}"
     expected_notice = notice.mam_parsed_notice()
-    _assert_narpas_rule(expected_notice, "MAM-parsed/plus")
+    _assert_narpas_rule(
+        expected_notice, notice.MAM_PARSED_NARPAS_GROUPING_RULE, "MAM-parsed/plus"
+    )
     _assert_mam_parsed_whitespace_rule(expected_notice, "MAM-parsed/plus")
     for path in files:
         payload = _load_json(path)
@@ -181,7 +183,9 @@ def _mam_simple_files(fmt: str, vtrad: str) -> list[Path]:
 
 def test_mam_simple_json_and_xml_notices_and_complete_file_sets():
     expected_notice = notice.mam_simple_notice()
-    _assert_narpas_rule(expected_notice, "MAM-simple")
+    _assert_narpas_rule(
+        expected_notice, notice.MAM_SIMPLE_NARPAS_GROUPING_RULE, "MAM-simple"
+    )
     for vtrad in MAM_SIMPLE_COUNTS:
         json_files = _mam_simple_files("json", vtrad)
         xml_files = _mam_simple_files("xml", vtrad)

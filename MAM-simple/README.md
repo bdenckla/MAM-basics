@@ -41,7 +41,7 @@ The JSON format mirrors the XML structure: it has the same hierarchy and element
 For a detailed guide to the hierarchy and element types of both formats,
 see [Reading MAM-simple](doc/reading-mam-simple.md).
 The [consumer cautions](#consumer-cautions) below cover MAM mark order, the order of a
-ketiv/qere pair, and text spacing around narpas (narrow-sense paseq, ׀).
+ketiv/qere pair, and text spacing around narpas (narrow-sense paseq, `<lp-paseq>`).
 
 For the versification and cantillation choices behind this extract, the two Decalogues
 above all, see
