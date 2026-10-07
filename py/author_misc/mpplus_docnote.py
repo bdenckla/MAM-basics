@@ -93,7 +93,8 @@ def build_body(*, claims: ClaimCollection):
             ]
         ),
         author.para(
-            "Consumers must accept a target consisting of exactly one ASCII space"
+            "As mentioned above, consumers must accept a target consisting of exactly"
+            " one ASCII space"
             " (U+0020), preserving it without trimming it to an empty string or"
             " rejecting it as empty. The current plus data has six such targets,"
             " all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69;"
