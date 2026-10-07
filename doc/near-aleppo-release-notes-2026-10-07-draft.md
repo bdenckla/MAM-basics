@@ -1,22 +1,22 @@
-# Near-Aleppo release notes — 2026-10-07 (draft)
+# Near-Aleppo (NA) release notes — 2026-10-07 (draft)
 
 State: live; release-notes dry run, not an announced release
 
 This draft describes a hypothetical release from MAM-basics commit
 `2f3013113b3c2abfa23a7cea30bb10b4eb5c441d`. The main change since the first
 announcement is a new JSON contract for notes whose targets differ from MAM's:
-the dataset now includes the reviewed near-Aleppo clauses. Pointed ketivs now
+the dataset now includes the NA-adjusted clauses. Pointed ketivs now
 retain final punctuation at additional sites, and the example edition has ketiv
 as its primary text with pointed qere above it.
 
 ## Dataset changes
 
-### Reviewed note content is included in the JSON
+### NA-adjusted note content is included in the JSON
 
-All 1,548 notes whose targets differ from MAM's now store the reviewed
-near-Aleppo content and the original MAM context separately. Previously the
+All 1,548 notes whose targets differ from MAM's now store the NA-adjusted
+note content and the original MAM context separately. Previously the
 dataset kept the original note body in parameter 2, and the example edition's
-renderer supplied the reviewed presentation. Consumers can now render the
+renderer supplied the NA-adjusted presentation. Consumers can now render the
 stored roles directly, without consulting a review ledger or repeating the
 editorial transformations.
 
@@ -32,11 +32,11 @@ Their parameters have these roles:
 | Parameter | Role |
 | --- | --- |
 | Parameter `1` | Near-Aleppo's Scripture target. |
-| Parameter `2` | The reviewed near-Aleppo clause, or an empty array. |
+| Parameter `2` | The NA-adjusted clause, or an empty array. |
 | Parameter `מקרא על פי המסורה` | MAM's original structured target. |
 | Parameter `הערת מקרא על פי המסורה` | The remaining original MAM clauses, in their original order, or the complete original note. |
 
-There is a reviewed near-Aleppo clause in 1,047 notes. In the remaining 501,
+There is an NA-adjusted clause in 1,047 notes. In the remaining 501,
 parameter 2 is empty and the complete original note remains in MAM context.
 Scroll-note parameter 3 and evidence flags keep their existing roles.
 
@@ -108,7 +108,7 @@ at the same size, with a small vertical gap. Trivial ketiv/qere templates also
 have both readings in ruby, with their qere source metadata available on hover.
 An absent reading has an editorial label in its own position. Existing notes
 remain beside the text, and the ruby display adds no synthesized qere notes.
-The note-content migration preserves the reviewed clauses' presentation.
+The note-content migration preserves the NA-adjusted clauses' presentation.
 
 ## Release contents and remaining work
 
