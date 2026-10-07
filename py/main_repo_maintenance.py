@@ -35,6 +35,7 @@ Seven independent steps, in order:
    Prepare each ended target with `py/main_repo_util.py --prepare-worktree-retirement`,
    review its preflight and .novc citations, then execute separately with
    `--execute-worktree-retirement`. All owners use the same safety and .novc policy.
+   A refused audit sets the overall exit status but does not block later steps.
 3. Fetch ``origin`` in the MAM-basics home clone and compare both live
    instruction files, the user-level Codex hook, its origin-derived instruction
    fingerprint and every tracked user-level skill destination with
@@ -83,6 +84,7 @@ from mb_cmn import paths
 from repo_util import git_worktree_cleanup
 from repo_util.common import clear_read_only_and_retry
 from repo_util.user_config_sync import run_user_config_sync
+from repo_util.worktree_retirement import RetirementError
 
 _REPO = paths.repo_root()
 _NOVC = paths.novc_dir()
@@ -224,7 +226,11 @@ def main() -> None:
             ok = False
 
     if not args.skip_worktrees:
-        ok = clean_worktrees() and ok
+        try:
+            ok = clean_worktrees() and ok
+        except (RetirementError, OSError) as exc:
+            print(f"worktrees: FAILED ({exc})")
+            ok = False
 
     if not args.skip_user_config_check:
         ok = run_user_config_check() and ok
