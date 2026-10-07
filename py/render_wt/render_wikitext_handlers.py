@@ -17,7 +17,6 @@ from mb_cmn import str_defs as sd
 from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
-from render_wt import doc_note_presentations as presentations  # near-aleppo
 from render_wt import render_wikitext_added_lines as added_lines  # near-aleppo
 from render_wt import render_wikitext_dispatch as dispatch
 from render_wt import render_wikitext_handlers_for_qamats as qamats_variation
@@ -42,10 +41,8 @@ def col_c_hctx(hctx: wt_help.Hctx):
 
 def _handle_doc(hctx, tmpl):
     # near-aleppo: this handles the near-aleppo dataset's RENAMED_DOC as well as
-    # נוסח. Numbered parameters contain the dataset's target and original MAM parts.
-    # A reviewed literal
-    # clause may follow the near lemma; MAM's preserved target introduces the
-    # remaining source clauses. Flags follow them.
+    # נוסח. Stored near-Aleppo clauses follow the near lemma; the explicit MAM
+    # target introduces the stored MAM clauses. Flags follow them.
     numbered, added = nap.split_doc_params(tmpl)
     assert len(numbered) >= 2
     doc_target_wtseq = wtp.template_param_val(tmpl, "1")
@@ -55,9 +52,7 @@ def _handle_doc(hctx, tmpl):
     tr_space, doc_target_stripped = spacing.isolate_trailing(doc_target_renseq)
     doc_parts_wtseqs = [wtp.template_param_val(tmpl, key) for key in numbered[1:]]
     doc_parts_wtseqs = unbury.unbury_parts(doc_parts_wtseqs)
-    doc_parts = _reviewed_doc_parts(
-        hctx, tmpl, added, doc_target_wtseq, doc_parts_wtseqs
-    )
+    doc_parts = _stored_doc_parts(hctx, tmpl, added, doc_parts_wtseqs)
     main_out = renel.mk_ren_el_tc_and_doc(
         doc_target_stripped,
         _doc_lemma_subhandler(hctx, doc_target_wtseq),
@@ -66,34 +61,27 @@ def _handle_doc(hctx, tmpl):
     return main_out, tr_space
 
 
-def _reviewed_doc_parts(hctx, tmpl, added, target, parts):
-    # near-aleppo: recipes come only from reviewed, provenance-pinned inputs.
+def _stored_doc_parts(hctx, tmpl, added, parts):
+    """Format stored clause roles without consulting editorial review decisions."""
     if nap.MAM_TARGET in added:
-        key = presentations.signature(
-            target, wtp.template_param_val(tmpl, nap.MAM_TARGET), parts
-        )
-        recipes = wt_help.get_renopt(hctx, "ro_doc_note_recipes") or {}
         mam_line = _mam_target_line(hctx, tmpl)
-        if key in recipes:
-            promoted, remaining = presentations.project(parts, target, recipes[key])
-            wt_help.get_renopt(hctx, "ro_doc_note_recipes_seen").add(key)
-            near_line = _doc_parts_subhandler(hctx, [promoted])[0]
-            rest = _doc_parts_subhandler(hctx, remaining) if remaining else ()
-            mam_parts = ((*mam_line, " ", *rest[0]), *rest[1:]) if rest else (mam_line,)
-            return (near_line, *mam_parts)
-        rendered = _doc_parts_subhandler(hctx, parts)
-        return ((*mam_line, " ", *rendered[0]), *rendered[1:])
+        near = _doc_parts_subhandler(hctx, [part for part in parts if part])
+        stored = wtp.template_param_val(tmpl, nap.MAM_NOTE)
+        remaining = unbury.unbury_parts([stored]) if stored else []
+        rest = _doc_parts_subhandler(hctx, remaining) if remaining else ()
+        mam_parts = ((*mam_line, " ", *rest[0]), *rest[1:]) if rest else (mam_line,)
+        return (*near, *mam_parts)
     return _doc_parts_subhandler(hctx, parts)
 
 
 def _added_lines(hctx, tmpl, added):
     """
     near-aleppo: flags in the template's order, after the original source clauses.
-    MAM_TARGET introduces those clauses in _reviewed_doc_parts.
+    MAM_TARGET introduces those clauses in _stored_doc_parts.
     """
     lines = []
     for key in added:
-        if key == nap.MAM_TARGET:
+        if key in (nap.MAM_TARGET, nap.MAM_NOTE):
             continue
         else:
             parts_hctx = hctx.mk_new_with_handler(_DOC_PARTS_HANDLERS)

@@ -48,6 +48,21 @@ def _make_doc_tmpl(scrdfftar, existing_doc_parts, existing_added=None):
     scrdfftar_note = wtp.template_element(scrdfftar, wtp.SDT_EL_IDX_FOR_NOTE)
     # In this context, we don't care about starpos
     doc_name = _DOC_NAME_FOR[wtp.template_name(scrdfftar)]  # near-aleppo
+    if doc_name == nap.RENAMED_DOC:
+        nap.validate_baked_note(scrdfftar)
+        if scrdfftar_note != [] or any(existing_doc_parts):
+            raise ValueError(
+                "Changed scroll-note conversions require framed MAM content"
+            )
+        mam_body = wtp.template_param_val(scrdfftar, nap.MAM_NOTE)
+        mam_parts = [_tweak_scrdfftar_text(mam_body)]
+        extra = dict(existing_added or {})
+        if nap.MAM_NOTE in extra:
+            mam_parts.extend(unbury.unbury_parts([_sequence(extra.pop(nap.MAM_NOTE))]))
+        new_doc = wtp.mktmpl([[doc_name], scrdfftar_targ, []], ignore_equals=True)
+        added = nap.raw_params(scrdfftar, scrdfftar_added)
+        added[nap.MAM_NOTE] = _body(mam_parts)
+        return nap.with_params(nap.with_params(new_doc, added), extra)
     new_doc_tmpl_els = [[doc_name], scrdfftar_targ]
     new_doc_tmpl_els.append(_tweak_scrdfftar_text(scrdfftar_note))
     if existing_doc_parts:
@@ -98,7 +113,7 @@ def _assert_mam_targets_agree(doc_tmpl, scrdfftar):
     (mam_scrdfftar,) = wtp.template_param_val(doc_tmpl, nap.MAM_TARGET)
     mam_params = mam_scrdfftar["tmpl_params"]
     own = scrdfftar["tmpl_params"]
-    expected = {**{key: own[key] for key in _SCRDFFTAR_KEYS}, "1": own[nap.MAM_TARGET]}
+    expected = {"1": own[nap.MAM_TARGET], "2": own[nap.MAM_NOTE], "3": own["3"]}
     if wtp.template_name(mam_scrdfftar) != tmpln.SCRDFF_TAR or mam_params != expected:
         raise ValueError(f"MAM's targets disagree: {mam_scrdfftar!r} and {scrdfftar!r}")
 
@@ -107,7 +122,23 @@ def _assert_mam_targets_agree(doc_tmpl, scrdfftar):
 # the near-aleppo dataset adds to each.
 _DOC_NAME_FOR = {tmpln.SCRDFF_TAR: "נוסח", nap.RENAMED_SCRDFFTAR: nap.RENAMED_DOC}
 _SCRDFFTAR_KEYS = ("1", "2", "3")
-_SCRDFFTAR_ADDED = {tmpln.SCRDFF_TAR: (), nap.RENAMED_SCRDFFTAR: (nap.MAM_TARGET,)}
+_SCRDFFTAR_ADDED = {
+    tmpln.SCRDFF_TAR: (),
+    nap.RENAMED_SCRDFFTAR: (nap.MAM_TARGET, nap.MAM_NOTE, *nap.FLAGS),
+}
+
+
+def _sequence(value):
+    return value if isinstance(value, list) else [value]
+
+
+def _body(parts):
+    elements = []
+    for index, part in enumerate(parts):
+        if index:
+            elements.append({"tmpl_name": "ש"})
+        elements.extend(part)
+    return elements[0] if len(elements) == 1 else elements
 
 
 def _assert_no_non_targeted_scrdff_at_top_level(wtseq):

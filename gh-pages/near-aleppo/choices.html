@@ -4,6 +4,8 @@
 <head>
 <meta charset="utf-8">
 <title>Choices and alternatives</title>
+<link rel="stylesheet" href="../document.css">
+<link rel="stylesheet" href="../MAM-parsed/style.css">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -774,6 +776,24 @@ dataset, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>. This recor
 meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example
 edition displays it between double guillemets.</td>
 <td>Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning</td>
+</tr>
+<tr>
+<td><b>Where reviewed note transformations are stored.</b> The book JSON contains the reviewed note
+transformations so that consumers need not repeat editorial transformations. Original source notes
+and review reasoning remain in their existing records.</td>
+<td>Leaving reviewed note transformations to each edition's renderer</td>
+</tr>
+<tr>
+<td><b>The schema for stored near-Aleppo and MAM note roles.</b> The earlier names
+<bdi lang="hbo" class="name">נוסח למקרא על פי המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2
+למקרא על פי המסורה</bdi> are replaced by <bdi lang="hbo" class="name">נוסח עם הקשר מקרא על פי
+המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2 עם הקשר מקרא על פי המסורה</bdi>. Parameter 1
+remains the near-Aleppo target; parameter 2 stores the reviewed near-Aleppo clause or an empty
+array. <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi> preserves MAM's original structured
+target, and <bdi lang="hbo" class="name">הערת מקרא על פי המסורה</bdi> holds the remaining original
+clauses or complete source body. Scroll-note parameter 3 and flags keep their roles. Display
+formatting remains each edition's choice.</td>
+<td>Keeping a template name whose contract described only MAM's original note body</td>
 </tr>
 </table>
 </div>

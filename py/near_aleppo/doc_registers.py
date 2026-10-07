@@ -5,7 +5,6 @@ sources for readers to inspect by eye; those links are navigation, not inputs.
 """
 
 from near_aleppo import consumer_notice
-from near_aleppo import doc_policy_examples
 from near_aleppo.doc_html import code
 from near_aleppo.doc_html import he_name
 from near_aleppo.doc_html import itm
@@ -54,9 +53,6 @@ def _kept(numbers):
     items = [
         "Both U+05A2 HEBREW ACCENT ATNAH HAFUKH and U+05AA HEBREW ACCENT YERAH BEN "
         "YOMO, the galgal: the codex tells the two apart.",
-        "Both U+0598 HEBREW ACCENT ZARQA and U+05AE HEBREW ACCENT ZINOR, which in a "
-        "poetic verse are the tsinnorit and the tsinnor, two accents that the codex "
-        "tells apart.",
         [
             "Every rafe of MAM's, U+05BF HEBREW POINT RAFE, all ",
             numbers.fig("rafe_mam"),
@@ -79,21 +75,10 @@ def _kept(numbers):
         [
             "U+05BA HEBREW POINT HOLAM HASER FOR VAV wherever MAM has it, all ",
             numbers.fig("holam_haser_for_vav_mam"),
-            " of them, for it records where the codex puts the dot, not merely a "
-            "spelling; near-Aleppo has ",
+            " of them; near-Aleppo has ",
             numbers.fig("holam_haser_for_vav"),
             " in all, the others coming with readings of the codex.",
         ],
-        [
-            "U+05AD HEBREW ACCENT DEHI, which MAM has for the deḥi of a poetic "
-            "verse, all ",
-            numbers.fig("deḥi_mam"),
-            " of them; near-Aleppo has ",
-            numbers.fig("deḥi"),
-            " in all, the others coming with readings of the codex.",
-        ],
-        "U+0596 HEBREW ACCENT TIPEHA for both the tipeḥa and the tarḥa, as MAM has "
-        "it.",
         "MAM's order of the marks on a letter, and its COMBINING GRAPHEME JOINERs: no "
         "normalization is run over MAM's strings.",
         [
@@ -115,7 +100,6 @@ def _kept(numbers):
             "near-Aleppo away from the codex:"
         ),
         mb_html.unordered_list(items),
-        *doc_policy_examples.kept_example(),
     ]
 
 
@@ -233,17 +217,7 @@ def _limitations(numbers):
                 "the codex's margin rather than its text.",
             ],
         ],
-        [
-            "The Decalogues and Genesis 35",
-            "No leaf of the codex survives at either Decalogue or at Genesis 35, "
-            "although photographs taken before 1947 cover the Decalogue of "
-            "Deuteronomy, and near-Aleppo counts them as the codex. Near-Aleppo "
-            "keeps MAM's numbering, which differs there from Koren's and from every "
-            "older printing's.",
-        ],
     ]
-    if not numbers.fig_value("decalogues_and_genesis_35_lost"):
-        raise AssertionError("the page says no leaf survives at the Decalogues")
     numbers.require_sites(
         "flag_sites", ("qualification 2: clauses flagged",), ('BC-Kings מל"א|20|29',)
     )

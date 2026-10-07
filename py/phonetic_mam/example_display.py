@@ -244,7 +244,11 @@ def page_texts(payload):
     output = {}
     for page in payload["pages"]:
         context = legacy_html.WriteCtx(
-            page["title"], page["filename"], "./", icon_href="../favicon.svg"
+            page["title"],
+            page["filename"],
+            "./",
+            icon_href="../favicon.svg",
+            css_hrefs=("../document.css", "../yeivin-itm/style.css", "style.css"),
         )
         text = legacy_html.html_text(_html_nodes(page["body"]), context)
         refuse_forbidden_phonetic_marks(text, page["filename"])

@@ -1,13 +1,14 @@
 /* Generated file - DO NOT EDIT DIRECTLY.
    Edit py/mb_diff_mpu/mpplus_assets.py in MAM-basics and regenerate. */
 :root {
-  color-scheme: light dark;
-  --bg: light-dark(#fafafa, #1e1c1a); --card-bg: light-dark(#fff, #272421);
-  --border: light-dark(#ddd, #3d3836); --text: light-dark(#333, #e8e4e0);
-  --muted-text: light-dark(#666, #9a938c); --detail-text: light-dark(#555, #b7b0aa);
-  --link: light-dark(#4a90d9, #5ba3cb); --table-heading-bg: light-dark(#f0f0f0, #2a2724);
-  --row-hover-bg: light-dark(#f5f5f5, #2e2b28); --active-bg: light-dark(#4a90d9, #25547a); --active-text: #fff;
-  --button-bg: light-dark(#fff, #272421); --button-hover-bg: light-dark(#eee, #2e2b28);
+  --muted-text: var(--muted);
+  --detail-text: light-dark(#555, #b7b0aa);
+  --link: var(--accent);
+  --table-heading-bg: var(--th-bg);
+  --row-hover-bg: var(--hover-bg);
+  --active-text: var(--text);
+  --button-bg: var(--card-bg);
+  --button-hover-bg: var(--hover-bg);
   --old-bg: light-dark(#fdd, #4a2424); --new-bg: light-dark(#dfd, #203d2a);
   --old-mark-bg: light-dark(#f9a0a0, #7a3636); --new-mark-bg: light-dark(#a0d8a0, #326342);
   --note-border: light-dark(#f9a825, #fbc02d); --note-bg: light-dark(#fffde7, #3a3216); --note-label: light-dark(#f57f17, #ffb74d);
@@ -28,14 +29,6 @@
   --cat-template-change: #795548;
   --cat-misc: #37474f;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font: 15px/1.6 "Segoe UI", system-ui, sans-serif;
-  background: var(--bg); color: var(--text);
-  padding: 0 2rem 1.5rem; max-width: 1100px; margin: 0 auto;
-}
-h1 { font-size: 1.5rem; margin-bottom: .3rem; margin-top: 1rem; }
-h2 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: .5rem; }
 .subtitle { color: var(--muted-text); font-size: .9rem; margin-bottom: 1.5rem; }
 table.subtitle {
   border-collapse: collapse; margin-bottom: .5rem; max-width: 420px;
@@ -70,11 +63,7 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .filter-btn.active {
   background: var(--active-bg); color: var(--active-text); border-color: var(--active-bg);
 }
-.diff-card {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 6px; padding: .5rem .8rem; margin-bottom: .4rem;
-}
-.diff-card.hidden { display: none; }
+.diff-card { margin-bottom: .4rem; }
 .verse-ref { display: flex; align-items: baseline; gap: .4rem; flex-wrap: wrap; }
 .ref-text { font-weight: 600; font-size: .9rem; }
 .ref-link {
@@ -148,6 +137,10 @@ ruby.kq-pair rt {
 .kq-k { color: var(--ketiv); }
 .kq-q { color: var(--qere); }
 .gray-maqaf { color: var(--gray-maqaf); }
+
+.change-log-index h1 { margin-bottom: 1rem; }
+.change-log-index ul { padding-left: 1.5rem; }
+.change-log-index li { margin: .3rem 0; }
 .cat-meteg-removal { background: var(--cat-meteg-removal); }
 .cat-meteg-addition { background: var(--cat-meteg-addition); }
 .cat-rafeh { background: var(--cat-rafeh); }

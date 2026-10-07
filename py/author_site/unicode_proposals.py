@@ -144,7 +144,7 @@ def gen_html_file(out_dir: Path | None = None) -> str:
     write_ctx = mb_html.WriteCtx(
         _TITLE,
         out_path,
-        css_hrefs=(site_data.CSS_HREF,),
+        css_hrefs=("document.css", site_data.CSS_HREF),
         html_comment=f"{provenance.generated_html_comment(__file__)} {_ORIGIN_COMMENT}",
     )
     mb_html.write_html_to_file(build_body(), write_ctx)

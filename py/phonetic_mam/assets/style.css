@@ -1,35 +1,4 @@
-body {
-    max-width: 40em;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 14pt;
-}
-*[lang="hbo"] { font-family: "Taamey D WOFF2"; font-size: 140%; }
-@font-face { font-family: "Taamey D WOFF2"; src: url("woff2/Taamey_D.woff2"); }
-em { font-style: normal; font-weight: bold; }
-*.pre-or-post { color: gray; }
-span.mam-implicit-maqaf { color: gray; }
-span.ghostly-first-part-of-geminate { color: gray; }
-span.invisible-but-takes-space { visibility: hidden; }
-span.romanized { font-style: italic; }
-span.book-title { font-style: italic; }
-span.jt-stressed { text-transform: uppercase; font-weight: bold; } /* "jt" stands for Jacobson technical [transliteration style] */
-span.yeivin-pseudo-heading { background-color: yellow; }
-span.highlighted { background-color: lightblue }
-abbr.small-caps { text-transform: lowercase; font-variant: small-caps; }
-p { text-align: justify; }
-li { text-align: justify; }
-blockquote { text-align: justify; }
-*.extra-letter-spacing { letter-spacing: 0.1em; } /* span or bdi */
-td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left; }
-td.big { font-size: 250%; }
-td[rowspan="2"] { vertical-align: middle; }
-table.border-collapse { border-collapse: collapse; }
-table.center { margin-left: auto; margin-right: auto; }
-th, td { padding-right: 0.4em; padding-left: 0.4em; }
-tr:nth-of-type(odd) td { background-color: #eee; }
-img { max-width: 100%; }
-h2.verse-number { font-size: 14pt; font-weight: normal; }
+/* Pronunciation controls added to document.css and yeivin-itm/style.css. */
 
 .pronunciation-controls { margin: 1em 0; }
 .pronunciation-controls label { margin-right: 1em; }

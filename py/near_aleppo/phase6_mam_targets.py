@@ -1,7 +1,7 @@
 """Phase 6 of near-aleppo: MAM's own target, in an added parameter of each changed note.
 
-The public build guide is ``doc/near-aleppo-build.md``. Note bodies remain
-verbatim: a clause opening with "=" has MAM's text as its implicit subject. A
+The public build guide is ``doc/near-aleppo-build.md``. At this pre-bake stage,
+note bodies remain verbatim: a clause opening with "=" has MAM's text as its implicit subject. A
 changed target could otherwise make that clause appear to assert agreement with
 the dataset's text. Every changed נוסח or מ:הערה-2 therefore gains an added
 parameter holding MAM's original target. MAM_TARGET_PARAMETER names that parameter
@@ -23,12 +23,13 @@ parameter to skip. The name is defined here rather than in phase2_templates.py
 because this module imports phase2_templates.py for its rule table, and
 phase2_templates.py must not import this module.
 
-The step compares the build's output with its input, so it covers every change a
-later phase makes to a target, provided it stays the last step that changes cell
-text. ``phase6_flags.py`` runs after it, adding parameters only and none inside a
-note's target, and ``phase6_rename.py`` last, giving each note that has the
+The step compares the build's output with its input, so it covers every change an
+earlier phase makes to a Scripture reading. ``phase6_flags.py`` runs after it,
+adding parameters only and none inside a note's target, then ``phase6_rename.py`` gives each note that has the
 parameter a name specific to the near-aleppo dataset. MAM-parsed-plus cannot already have the parameter: phase 2 raises on
 a note template whose parameters are other than those its rule table lists.
+The final ``note_content.py`` phase stores reviewed near-Aleppo clauses and
+remaining original clauses in separate roles without changing Scripture readings.
 """
 
 import copy

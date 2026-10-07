@@ -13,13 +13,15 @@ from mb_author import dollar_sub_g
 
 def help_gen_html_file(py_file, tdm_ch, fname, title, cbody, body_class=None):
     assert_stem_eq(py_file, fname)
-    top_dir, css_href = tdm_ch
+    top_dir, css_hrefs = tdm_ch
+    if isinstance(css_hrefs, str):
+        css_hrefs = (css_hrefs,)
     out_path = f"{top_dir}/{fname}"
     comment = provenance.generated_html_comment(py_file)
     write_ctx = mb_html.WriteCtx(
         title,
         out_path,
-        css_hrefs=(css_href,),
+        css_hrefs=css_hrefs,
         body_class=body_class,
         html_comment=comment,
     )
@@ -167,7 +169,7 @@ def para_for_img(img_path, widthclass=None, width_em=None):
 
     widthclass picks one of the stylesheet's fixed width classes. width_em
     instead states this image's own width, which is what an import from a
-    source with its own page geometry needs: styles_authored.css caps width
+    source with its own page geometry needs: document.css caps width
     at 100% but never sets it, so without this an image renders at whatever
     intrinsic size it happens to have been downloaded at.
     """

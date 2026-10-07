@@ -367,3 +367,149 @@ into MAM-simple. So the order is MAM's choice of template for those words, which
 is viewed as better there than the standard ketiv-then-qere order. The item repeated a read-only
 sub-agent's reading, that a consumer relying on the children's position would swap them, without
 this trace.
+
+## Ben's decisions on the open items, 2026-10-06
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-06, New York
+time, in the full clone `C:/Users/BenDe/GitRepos/MAM-basics` on `main`, from `97fbec01`.
+
+**Ben's instruction.** Ben opened this session with a prompt that the session of the two entries
+above wrote at his request. That session records his instruction to it, on 2026-10-05, as: "Give
+me a prompt for a session that will walk me through all the needed decisions that are needed to
+proceed with acting on the findings of the review". This entry is close-out step 1 of
+`doc/periodic-review.md` for every item that the first entry above marks "Awaiting Ben's
+decision".
+
+**How the decisions were taken.** Each item was put to Ben in the app's dialogs, in order of
+public-facing risk. The option wording is this session's; Ben's part is the selection, quoted
+below by the selected option's label, with any words he added. Where an option changes wording a
+reader sees, the entry gives the text that the option proposed, which is the text Ben selected.
+Before each question, this session or one of three read-only sub-agents re-read every passage the
+item cites on the tree at `97fbec01`; none had gone stale or been resolved. Every fix goes to the
+remediation phase, the fresh-task plan of close-out step 2, unless an item says otherwise, and
+nothing was implemented here.
+
+### Finding 1: MAM-simple's narpas label
+
+1. **1.3, and with it the MAM-simple half of 1.2: "Name lp-paseq".** MAM-simple's notice, in all 70
+   files, its two reading guides and its README name the element that MAM-simple contains, and
+   MAM-parsed's notice and README keep `מ:פסק`. The selected text: the MAM-simple notice's narpas
+   rule opens "Narpas (narrow-sense paseq, lp-paseq) forms no compound of any kind: only maqaf joins
+   atoms into a chanted word.", the rest of the rule unchanged; the bullet in
+   `MAM-simple/doc/reading-mam-simple.md` and the sentence in `reading-mam-simple-xml.md` say
+   "Narpas (narrow-sense paseq, `<lp-paseq>`) forms no compound of any kind"; and
+   `MAM-simple/README.md`'s pointer to its cautions ends "around narpas (narrow-sense paseq,
+   `<lp-paseq>`)." The option said that the change reaches the 70 files' public data, and that the
+   hand-run generators are then rerun, with no product change expected.
+
+### Finding 2: `DATA-LICENSES.md`
+
+1. **2.1: "Own row, CC-BY-SA".** Row 79 keeps `in/accgram/edition_transcriptions/` under CC0, as
+   "Ben Denckla's hand transcriptions of the accentuation of printed Decalogue editions", and a new
+   row after it reads: "| `in/accgram/printed_decalogue_teamim.json` | a capture of MAM's eight
+   Decalogue versions from the Hebrew Wikisource page עשרת הדברות בסיס/טעמים, at the revision its
+   `provenance` block records, with a folded form derived from it for the scanners | CC-BY-SA 4.0 —
+   the statement below. It is the same page as one of `in/mam-ws-special/`'s, and what is derived
+   from MAM carries MAM's terms |".
+2. **2.2: "Credit each source".** The terms of row 84, `out/accgram/`, end "The biblical Hebrew
+   each file quotes keeps the terms of its source above: the WLC's and the UXLC's, or, where a file
+   quotes MAM, as the printed-Decalogue outputs do, MAM's CC-BY-SA 4.0", and those of row 91,
+   `gh-pages/wlc/`, end "The biblical Hebrew the pages display keeps the terms of its source above:
+   the WLC's and the UXLC's, or, where a page quotes MAM, as the printed-Decalogue pages do, MAM's
+   CC-BY-SA 4.0".
+
+### Finding 4: Phonetic MAM
+
+1. **4.1's question, the inverted nuns: "Add as item 9".** `Phonetic-MAM/README.md`'s list of
+   departures gains: "9. **Inverted nuns.** This release has none of MAM's 9 inverted nuns,
+   `MAM-simple/`'s `spi-invnun`, though it keeps MAM's parashah breaks and narrow-sense paseqs as
+   rows of their own." Recounted here: 9 `spi-invnun` in `MAM-simple/json-vtrad-mam/`, 2 in
+   Numbers and 7 in Psalms.
+2. **4.6: "Correct the data".** The display contract gains a way to give a marker row its strand;
+   the four marker rows, two in each verse, get the `טעם עליון` strand; and Exodus 20 and
+   Deuteronomy 5 are regenerated, data and pages. The release then agrees with MAM there, so the
+   README needs no note. It is a change to public data and published pages, and it takes item
+   4.7's path past the frozen comparison.
+3. **4.7: "Approved exception".** The freeze stays for every other chapter. A display correction
+   that Ben approves is recorded in a tracked list of corrected chapters, which leave the
+   comparison as refreshed chapters do, and their rendered diffs are reviewed instead.
+4. **4.4: "Stop and ask Ben".** The suite's failure stays as the stop, and
+   `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md` adds, after "Never
+   regenerate either file": "If every chapter has left the comparison, the suite fails with "every
+   chapter left the comparison": stop, and ask Ben whether to retire the legacy projection
+   comparison."
+5. **4.5: "Bound it in code".** After the watchdog stops the adapter, the exporter stops waiting on
+   the adapter's pipes after a short grace period, so that the limit holds whatever the adapter
+   starts.
+
+### Finding 8: questions for Ben
+
+1. **8.1: "orphaned", in Ben's own words.** Ben first selected "Use "unattached"", which changed the
+   footnote's "It is not orphaned between the two words as it is in Ezekiel." to "It is not left
+   unattached between the two words, as it is in Ezekiel." After this session set out the context,
+   that the same page sends its reader to his "Orphan pointing" page, he wrote: "Basically what I
+   was saying is that I don't know why I restricted "orphaned" to describe the xiriq of ירושלם
+   words; perhaps I had some other case or cases in mind where it was inappropriate but in that
+   case I should have named those cases instead of forbidding all cases except xiriq-in-ירושלם
+   ones. Nothing wrong with "unattached" except I don't like using two words for the same thing so
+   I'd rather stick with "orphaned"". So the Job 38:12 footnote and its Ezekiel caption in
+   `py/author_boj_qr/qr_38.py` use "orphaned" where they now say "unattached": "the פתח is
+   unattached;" becomes "the פתח is orphaned;", and "The unattached פתח is visible between"
+   becomes "The orphaned פתח is visible between"; the 2 Samuel sentence keeps "orphaned"; and the
+   details page is regenerated. The `hebrew-prose` skill's reservation in
+   `references/terminology.md`, "**orphaned** is RESERVED for the ḥiriq of the implicit yod
+   in ירושלם-style spellings.", stops forbidding every other case. Its replacement is not yet
+   worded. The plan drafts it for Ben's approval, naming any case in which "orphaned" is wrong
+   rather than allowing a single one. This session's draft defines the word by the sense that
+   both uses share: "**orphaned** = a point that belongs to no letter, such as the ḥiriq of the
+   implicit yod in ירושלם-style spellings, or a point left between two written words."
+2. **8.3: "Add Phonetic-MAM".** The landing page's "MAM datasets and technical documentation" list
+   gains an entry "Phonetic-MAM", linking
+   `https://github.com/bdenckla/MAM-basics/blob/main/Phonetic-MAM/README.md`, after MAM-OSIS,
+   through `py/author_site/site_data.py`. Re-read after Ben's near-Aleppo commits of 2026-10-05 and
+   2026-10-06, which added a near-Aleppo entry to that list: the item still holds.
+3. **8.4: "Add the prescribed credit".** Each of the eight pages keeps its link to the source it
+   quotes and gains, after its existing credit, "Source attribution: Hebrew Wikisource, under
+   CC-BY-SA 4.0.", with "Hebrew Wikisource" linking
+   `https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning` and
+   "CC-BY-SA 4.0" linking `https://creativecommons.org/licenses/by-sa/4.0/`, as the two index
+   pages that C15.8 corrected attribute MAM. The same line goes on
+   `gh-pages/wlc/accgram/printed-decalogue-uvinkha.html`, which names Hebrew Wikisource with no
+   link, and the remediation plan's census adds any other English page that quotes MAM material.
+4. **8.5: "State MAM's terms".** `Phonetic-MAM/LICENSE.md`'s third line becomes "This statement
+   applies equally to the MAM text and its derivative display in `data/`, and to the MAM Hebrew
+   that `examples/display.json` quotes."; the terms of `DATA-LICENSES.md`'s row for
+   `Phonetic-MAM/examples/display.json` gain "The pointed Hebrew forms the tables quote are MAM's
+   text and keep MAM's CC-BY-SA 4.0 terms above."; and the Phonetic-MAM clause of that file's
+   preface to the MAM statement ends "the MAM text and its derivative display in
+   `Phonetic-MAM/data/` and the MAM Hebrew that `Phonetic-MAM/examples/display.json` quotes".
+5. **8.6: "Both to past tense".** In `Yeivin-ITM/README.md`, "Its source is pinned to MAM-private
+   commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`." becomes "The migration took its source from
+   MAM-private commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`; no test pins the adaptation to it
+   now.", and "All 17 existing filenames, internal links, and anchors are preserved." becomes "The
+   migration preserved all 17 existing filenames, internal links, and anchors.", C6.2 option A's
+   wording.
+
+### Finding 9: one-line items
+
+1. **9.2: ""the similar cases"".** The heading in `py/author_boj_qr/qr_38.py`, "φ1 — Attachment of
+   the פתח in the parallel passages", becomes "φ1 — Attachment of the פתח in the similar cases", the
+   name that the calling discussion and the footnote's body use, and the details page is
+   regenerated.
+2. **9.4: "Add to the README rows".** In `DATA-LICENSES.md`, row 52 becomes "|
+   `Yeivin-ITM/README.md`, `Yeivin-ITM/LICENSE.md`, `Yeivin-ITM/schema/` | the product's README,
+   with the adaptation's permission notice and bibliographic scope, its licence statement, and the
+   closed JSON Schema of its claim data | MAM-basics' own work, so GPL-3.0. The adaptation the
+   README describes keeps the terms of the `py/yeivin_itm/content/` row below |", and row 57
+   becomes "|
+   `Phonetic-MAM/README.md`, `Phonetic-MAM/LICENSE.md`, `Phonetic-MAM/schema/` | the product's
+   README, its licence statement, and the closed JSON Schema of its display data | MAM-basics' own
+   work, so GPL-3.0, apart from the MAM statement that `LICENSE.md` repeats verbatim |".
+   `Yeivin-ITM/LICENSE.md`'s restatement of row 52 follows.
+3. **9.8, its README half: "Dashes, as DATA-LICENSES".** `README.md`'s "Code: GPL-3.0" item reads
+   "This covers MAM-basics' work in code and prose: everything under `py/`, `.github/` and `doc/` —
+   except the adapted excerpts and their remarks under `py/yeivin_itm/content/`, the third-party
+   font under `doc/woff2/`, and the page crops in `doc/*-snips/` and the Hebrew Wikisource Village
+   Pump discussion captured and translated in `doc/wikisource-dagesh-discussion-*` — and the
+   generated indexes and reports under `out/` that carry no corpus text.", its following sentences
+   unchanged.

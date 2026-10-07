@@ -8,7 +8,11 @@ corpus is the only input; the one-time migration oracles are not test inputs.
 """
 
 from collections import Counter
+from functools import lru_cache
 import json
+from types import MappingProxyType
+
+import pytest
 
 from accgram import chanted_word_accents_units as cwa
 from accgram import meteg_before_stress
@@ -51,6 +55,23 @@ _DECLARED_ACCENT_CLASS_DISAGREEMENTS = (
     ("ordinary", "Jb32:13", ("DEXI_DEXI", "MUNAX")),
     ("samekh", "Jb11:17", ("DEXI_DEXI",)),
 )
+
+
+@pytest.fixture(scope="module", autouse=True)
+def _shared_public_display_corpus():
+    """Load each book once; keep all classifier and oracle comparisons separate."""
+    read_book = analysis_reader.read_book
+
+    @lru_cache(maxsize=len(bib_locales.ALL_BK39_IDS))
+    def cached_book(book):
+        return MappingProxyType(read_book(book))
+
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr(analysis_reader, "read_book", cached_book)
+        try:
+            yield
+        finally:
+            cached_book.cache_clear()
 
 
 def _tracked():

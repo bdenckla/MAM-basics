@@ -35,11 +35,12 @@ from near_aleppo.phase3_policies import _clauses
 from near_aleppo.phase6_flags import _MAQAF_SILENCE
 from near_aleppo.phase6_flags import _QERE_SILENCE
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
+from py_misc import near_aleppo_params as nap
 from near_aleppo.phase6_rename import RENAMED_NOTES
 
 TITLE = "The near-Aleppo dataset"
 
-MPPLUS_DOC = "https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html"
+MPPLUS_DOC = "../MAM-parsed/plus/html/mpplus.html"
 SIGIL_DECODING = (
     "https://bdenckla.github.io/MAM-basics/MAM-with-doc/sigil-decoding.html"
 )
@@ -271,7 +272,11 @@ def _note_example():
     params = []
     for directory, name, keys in (
         (build_paths.mam_parsed_plus_dir(), "נוסח", {"1", "2"}),
-        (build_paths.dataset_dir(), _NOTE, {"1", "2", MAM_TARGET_PARAMETER}),
+        (
+            build_paths.dataset_dir(),
+            _NOTE,
+            {"1", "2", MAM_TARGET_PARAMETER, nap.MAM_NOTE},
+        ),
     ):
         with (directory / "C1-Isaiah.json").open(encoding="utf-8") as stream:
             book = json.load(stream)
@@ -291,8 +296,8 @@ def _note_example():
         raise AssertionError("Isaiah 27:5 example targets must be strings")
     if mam["1"] != "בְּמָעוּזִּ֔י" or data[MAM_TARGET_PARAMETER] != mam["1"]:
         raise AssertionError("Isaiah 27:5 example must preserve the MAM target")
-    if data["2"] != mam["2"]:
-        raise AssertionError("Isaiah 27:5 example must preserve the MAM note body")
+    if data["2"] != '=א (חסר דגש באות זי"ן)':
+        raise AssertionError("Isaiah 27:5 example must contain the reviewed agreement")
     aleppo_clause = f'א={data["1"]} (חסר דגש באות זי"ן)'
     if aleppo_clause not in _clauses(mam["2"], ref):
         raise AssertionError(
@@ -405,11 +410,13 @@ def _own_templates(numbers):
         mb_html.para(
             [
                 "Two are MAM's note templates under names specific to near-Aleppo. "
-                "Where near-Aleppo changes a note's target, the JSON dataset keeps "
-                "MAM's original note body unchanged and stores MAM's target in an "
+                "Where near-Aleppo changes a note's target, the JSON dataset stores "
+                "the reviewed near-Aleppo clause in parameter 2 and MAM's target in an "
                 "added parameter, ",
                 he_name(MAM_TARGET_PARAMETER),
-                ". The original note body still describes MAM's target. Such a "
+                ". The remaining original clauses are stored in ",
+                he_name(nap.MAM_NOTE),
+                " and describe that MAM target. Such a "
                 "note is renamed, so that a consumer who knows only MAM's "
                 "templates fails on it rather than misreading it: a ",
                 he_name("נוסח"),
@@ -423,17 +430,21 @@ def _own_templates(numbers):
                 he_name(_NOTE_2),
                 ", at ",
                 numbers.snap("phase6_counts", "מ:הערה-2: notes given MAM's target"),
-                ". Their other parameters are MAM's. So every template of MAM's "
+                ". Scroll-note parameter 3 and the evidence flags keep their "
+                "existing roles. So every template of MAM's "
                 "that near-Aleppo has keeps MAM's meaning.",
             ]
         ),
         mb_html.para(
-            "The example HTML edition presents those stored notes differently. "
-            "A reviewed clause quoting near-Aleppo's complete form can be recast "
+            "The stored near-Aleppo clause is already recast "
             "as an agreement with that form, retaining its explanations and "
-            "qualifications. The remaining original clauses follow MAM's "
-            "labelled form. Where a recast would require uncertain interpretation, "
-            "the complete original note follows MAM's labelled form."
+            "qualifications. Where a recast would require uncertain interpretation, "
+            "parameter 2 is an empty array and the complete original note is "
+            "stored in the MAM-note parameter. Consumers can render both note "
+            "roles directly from the book JSON; no review-ledger lookup or "
+            "clause transformation is required. The example HTML edition displays "
+            "the near-Aleppo clause beside its form, then MAM's labelled form and "
+            "the stored MAM clauses."
         ),
         mb_html.para(
             [
@@ -574,8 +585,8 @@ def _added_parameters(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo adds five parameters to templates. Four follow MAM's "
-                "parameters, which remain as MAM has them; the fifth identifies "
+                "Near-Aleppo adds six parameters to templates. Five accompany MAM's "
+                "parameters; the sixth identifies "
                 "the explicit GV variant of near-Aleppo's own orphan-mark template.",
             ]
         ),
@@ -596,11 +607,13 @@ def _added_parameters(numbers):
                     "phase6_counts: the sum of the two counts of notes given MAM's "
                     "target",
                 ),
-                " notes. Every clause of such a note has MAM's text as its subject. "
-                "A clause opening with ",
+                " notes. The original clauses in ",
+                he_name(nap.MAM_NOTE),
+                " have MAM's text as their subject. " "A clause opening with ",
                 code("="),
-                ", which says that the sources it names agree with MAM, would "
-                "otherwise seem to say that they agree with near-Aleppo's text. The "
+                " in that parameter says that the sources it names agree with MAM. "
+                "A clause opening with the same sign in parameter 2 instead "
+                "describes agreement with near-Aleppo's target. The MAM-target "
                 "parameter holds MAM-parsed-plus's target verbatim, templates "
                 "included, so it has templates that occur nowhere else in "
                 "near-Aleppo: ",

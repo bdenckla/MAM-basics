@@ -3,13 +3,15 @@ CSS and JS asset generation for MAM-parsed-plus diff reports.
 
 Exports:
     CATEGORY_INFO       — category key → (display label, color)
-    css                 — return the full CSS string
+    css                 — return the change-log-specific CSS string
     js                  — return the full JS string
     write_shared_assets — write style.css and filter.js into a directory
 """
 
 import os
-import shutil
+from pathlib import Path
+
+from mb_misc.report_stylesheet import copy_report_font, prepare_report_stylesheet
 
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
@@ -30,69 +32,30 @@ CATEGORY_INFO = {
 
 
 def css():
-    """Return the full CSS string for diff reports."""
-    lines = []
-    lines.append("/* Generated file - DO NOT EDIT DIRECTLY.")
-    lines.append(
-        "   Edit py/mb_diff_mpu/mpplus_assets.py in MAM-basics and regenerate. */"
-    )
-    lines.append(":root {")
-    lines.append("  color-scheme: light dark;")
-    lines.append(
-        "  --bg: light-dark(#fafafa, #1e1c1a);" " --card-bg: light-dark(#fff, #272421);"
-    )
-    lines.append(
-        "  --border: light-dark(#ddd, #3d3836);" " --text: light-dark(#333, #e8e4e0);"
-    )
-    lines.append(
-        "  --muted-text: light-dark(#666, #9a938c);"
-        " --detail-text: light-dark(#555, #b7b0aa);"
-    )
-    lines.append(
-        "  --link: light-dark(#4a90d9, #5ba3cb);"
-        " --table-heading-bg: light-dark(#f0f0f0, #2a2724);"
-    )
-    lines.append(
-        "  --row-hover-bg: light-dark(#f5f5f5, #2e2b28);"
-        " --active-bg: light-dark(#4a90d9, #25547a);"
-        " --active-text: #fff;"
-    )
-    lines.append(
-        "  --button-bg: light-dark(#fff, #272421);"
-        " --button-hover-bg: light-dark(#eee, #2e2b28);"
-    )
-    lines.append(
-        "  --old-bg: light-dark(#fdd, #4a2424);" " --new-bg: light-dark(#dfd, #203d2a);"
-    )
-    lines.append(
-        "  --old-mark-bg: light-dark(#f9a0a0, #7a3636);"
-        " --new-mark-bg: light-dark(#a0d8a0, #326342);"
-    )
-    lines.append(
-        "  --note-border: light-dark(#f9a825, #fbc02d);"
-        " --note-bg: light-dark(#fffde7, #3a3216);"
-        " --note-label: light-dark(#f57f17, #ffb74d);"
-    )
-    lines.append(
-        "  --arrow: light-dark(#888, #aaa);" " --ruby-text: light-dark(#888, #aaa);"
-    )
-    lines.append(
-        "  --ketiv: light-dark(#6a1b9a, #ce93d8);"
-        " --qere: light-dark(#1565c0, #64b5f6);"
-        " --gray-maqaf: light-dark(gray, #aaa);"
-    )
+    """Return change-log-specific CSS layered over the shared report base."""
+    lines = [
+        """/* Generated file - DO NOT EDIT DIRECTLY.
+   Edit py/mb_diff_mpu/mpplus_assets.py in MAM-basics and regenerate. */
+:root {
+  --muted-text: var(--muted);
+  --detail-text: light-dark(#555, #b7b0aa);
+  --link: var(--accent);
+  --table-heading-bg: var(--th-bg);
+  --row-hover-bg: var(--hover-bg);
+  --active-text: var(--text);
+  --button-bg: var(--card-bg);
+  --button-hover-bg: var(--hover-bg);
+  --old-bg: light-dark(#fdd, #4a2424); --new-bg: light-dark(#dfd, #203d2a);
+  --old-mark-bg: light-dark(#f9a0a0, #7a3636); --new-mark-bg: light-dark(#a0d8a0, #326342);
+  --note-border: light-dark(#f9a825, #fbc02d); --note-bg: light-dark(#fffde7, #3a3216); --note-label: light-dark(#f57f17, #ffb74d);
+  --arrow: light-dark(#888, #aaa); --ruby-text: light-dark(#888, #aaa);
+  --ketiv: light-dark(#6a1b9a, #ce93d8); --qere: light-dark(#1565c0, #64b5f6); --gray-maqaf: light-dark(gray, #aaa);"""
+    ]
     for cat, (_, color) in CATEGORY_INFO.items():
         lines.append(f"  --cat-{cat}: {color};")
     lines.append("}")
-    lines.append("""* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font: 15px/1.6 "Segoe UI", system-ui, sans-serif;
-  background: var(--bg); color: var(--text);
-  padding: 0 2rem 1.5rem; max-width: 1100px; margin: 0 auto;
-}
-h1 { font-size: 1.5rem; margin-bottom: .3rem; margin-top: 1rem; }
-h2 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: .5rem; }
-.subtitle { color: var(--muted-text); font-size: .9rem; margin-bottom: 1.5rem; }
+    lines.append(
+        """.subtitle { color: var(--muted-text); font-size: .9rem; margin-bottom: 1.5rem; }
 table.subtitle {
   border-collapse: collapse; margin-bottom: .5rem; max-width: 420px;
 }
@@ -126,11 +89,7 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .filter-btn.active {
   background: var(--active-bg); color: var(--active-text); border-color: var(--active-bg);
 }
-.diff-card {
-  background: var(--card-bg); border: 1px solid var(--border);
-  border-radius: 6px; padding: .5rem .8rem; margin-bottom: .4rem;
-}
-.diff-card.hidden { display: none; }
+.diff-card { margin-bottom: .4rem; }
 .verse-ref { display: flex; align-items: baseline; gap: .4rem; flex-wrap: wrap; }
 .ref-text { font-weight: 600; font-size: .9rem; }
 .ref-link {
@@ -187,8 +146,8 @@ table.summary tr.total-row { font-weight: 600; cursor: default; }
 .letter-hung { vertical-align: super; font-size: 85%; }
 @media (max-width: 700px) {
   .change-display { flex-direction: column; align-items: flex-start; }
-}""")
-    lines.append("""ruby.paseq-ruby {
+}
+ruby.paseq-ruby {
   ruby-position: over;
 }
 ruby.paseq-ruby rt {
@@ -203,7 +162,12 @@ ruby.kq-pair rt {
 }
 .kq-k { color: var(--ketiv); }
 .kq-q { color: var(--qere); }
-.gray-maqaf { color: var(--gray-maqaf); }""")
+.gray-maqaf { color: var(--gray-maqaf); }
+
+.change-log-index h1 { margin-bottom: 1rem; }
+.change-log-index ul { padding-left: 1.5rem; }
+.change-log-index li { margin: .3rem 0; }"""
+    )
     for cat in CATEGORY_INFO:
         lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
     lines.append("""@font-face {
@@ -300,22 +264,15 @@ def js():
 
 
 def _copy_woff2(out_dir):
-    """Copy Taamey_D.woff2 into out_dir/woff2/ from a sibling docs folder."""
-    woff2_dir = os.path.join(out_dir, "woff2")
-    dst = os.path.join(woff2_dir, "Taamey_D.woff2")
-    # Source: sibling "misc" folder's copy (same docs tree)
-    src = os.path.join(out_dir, "..", "misc", "woff2", "Taamey_D.woff2")
-    src = os.path.normpath(src)
-    if not os.path.isfile(src):
-        return  # font not available in this tree
-    if os.path.isfile(dst) and os.path.getsize(dst) == os.path.getsize(src):
-        return  # already up to date
-    os.makedirs(woff2_dir, exist_ok=True)
-    shutil.copy2(src, dst)
+    """Copy the repository's canonical font into the report's output bundle."""
+    copy_report_font(Path(out_dir))
 
 
-def write_shared_assets(out_dir):
-    """Write style.css, filter.js, and woff2 font into out_dir."""
+def write_shared_assets(
+    out_dir, *, report_css_href: str | None = "../../report.css"
+) -> str:
+    """Write local specialty assets and return the shared or packaged base href."""
+    base_href = prepare_report_stylesheet(Path(out_dir), shared_href=report_css_href)
     css_path = os.path.join(out_dir, "style.css")
     js_path = os.path.join(out_dir, "filter.js")
     css_content = css()
@@ -329,3 +286,4 @@ def write_shared_assets(out_dir):
             with open(path, "w", encoding="utf-8", newline="") as f:
                 f.write(content)
     _copy_woff2(out_dir)
+    return base_href

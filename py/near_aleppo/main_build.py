@@ -4,7 +4,8 @@ The pipeline resolves E-column templates, applies representation policies and
 readings quoted in MAM's notes, then adds frozen, individual and reviewed
 pointings in that priority order. All prior pointings are guarded against changed
 source data. Original MAM targets are copied into changed notes before flags and
-renaming. C and D columns and all source note bodies are preserved.
+reviewed note-content baking. C and D columns are preserved. Changed notes carry
+reviewed near-Aleppo clauses and the remaining original clauses in MAM context.
 
 Every book is built and checked in memory before any output is written. The
 population snapshot is in in/near-aleppo/build-populations.json. A successful
@@ -40,8 +41,13 @@ _BOOK_FILE_COUNT = 24
 _VERSE_COUNT = 23202  # "verses in MAM", baseline section 7
 
 
-def build():
+def build(bake_notes=True):
     """Return the serialized dataset and the population-recording build state."""
+    if bake_notes:
+        from near_aleppo import doc_note_review
+        from near_aleppo.note_content import NoteContent
+
+        notes = NoteContent(doc_note_review.check())
     in_dir = build_paths.mam_parsed_plus_dir()
     paths = sorted(in_dir.glob("*.json"))
     if len(paths) != _BOOK_FILE_COUNT:
@@ -53,7 +59,7 @@ def build():
     readings = Readings()
     mam_targets = MamTargets()
     flags = Flags()
-    renames = Renames()
+    renames = Renames(source_replay=not bake_notes)
     frozen = FrozenPointing(in_dir)
     editorial = EditorialPointing()
     reviewed = ReviewedPointing(in_dir)
@@ -92,7 +98,7 @@ def build():
                     cells[2] = frozen.apply(cells[2], ref)
                     cells[2] = editorial.apply(cells[2], ref)
                     cells[2] = reviewed.apply(cells[2], ref)
-                    # MAM-target copying stays the last text-changing step. The
+                    # MAM-target copying follows the last Scripture-reading change. The
                     # flags step after it adds parameters only, none inside a
                     # note's target, and the rename after the verse loop changes
                     # only the names of notes.
@@ -101,10 +107,12 @@ def build():
                     book_verses.append((cells, ref))
                     verses += 1
         assert_templates_absent(book, path.name, MAM_TARGET_PARAMETER)
-        # The rename is the last step, after assert_templates_absent, which knows a
-        # note by MAM's name; it changes only the names of notes.
+        # Rename after assert_templates_absent, which knows MAM's note names,
+        # then bake reviewed content. Both preserve Scripture readings.
         for cells, ref in book_verses:
             renames.rename_e_cell(cells[2], ref)
+            if bake_notes:
+                notes.apply(cells[2], ref)
         consumer_notice.set_in_header(book["header"], path.name)
         text = json.dumps(book, indent=2, ensure_ascii=False) + "\n"
         out[path.name] = text.encode("utf-8")
@@ -113,6 +121,8 @@ def build():
     frozen.finish()
     editorial.finish()
     reviewed.finish()
+    if bake_notes:
+        notes.finish()
     return out, resolver, policies, readings, mam_targets, flags, renames
 
 

@@ -1,9 +1,18 @@
 # near-Aleppo dataset
 
 This is a version of MAM-parsed-plus whose Scripture text is nearer to the Aleppo
-Codex's body text. It retains MAM's source notes and distinguishes MAM's original
-targets from changed near-Aleppo targets. It is structured data: use the closed,
+Codex's body text. It includes reviewed near-Aleppo note clauses and distinguishes
+MAM's original targets from changed near-Aleppo targets. It is structured data: use the closed,
 role-aware template rules in each book's consumer notice.
+
+The changed-note templates are `נוסח עם הקשר מקרא על פי המסורה` and
+`הערה-2 עם הקשר מקרא על פי המסורה`. Parameter 1 is the near-Aleppo target;
+parameter 2 is its reviewed clause, or an empty array. `מקרא על פי המסורה`
+holds the original structured MAM target, and `הערת מקרא על פי המסורה`
+holds the remaining original clauses or the complete source body. The book
+JSON contains the note transformations: consumers need no review-ledger lookup.
+Display formatting remains the consumer's choice. Original source notes and
+review reasoning remain in MAM-parsed-plus and the public review ledger.
 
 The 24 book files are in `plus/`. The example edition and documentation are in
 `gh-pages/near-aleppo/`. The build reads local MAM-parsed-plus, the Aleppo coverage
@@ -14,7 +23,13 @@ From the repository root:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py
+```
+
+```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --check
+```
+
+```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --check-note-review
 ```
 

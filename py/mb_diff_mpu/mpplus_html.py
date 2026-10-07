@@ -394,7 +394,16 @@ def _render_cards(diffs):
     return "\n".join(parts)
 
 
-def write_report(diffs, old_label, new_label, out_path, old_date="", new_date=""):
+def write_report(
+    diffs,
+    old_label,
+    new_label,
+    out_path,
+    old_date="",
+    new_date="",
+    *,
+    report_css_href: str | None = "../../report.css",
+):
     """Write the full HTML report to out_path.
 
     ``old_label`` and ``new_label`` are ``mpplus_revisions.Revision.label`` pairs. The
@@ -404,8 +413,8 @@ def write_report(diffs, old_label, new_label, out_path, old_date="", new_date=""
     """
     import os
 
-    out_dir = os.path.dirname(out_path)
-    write_shared_assets(out_dir)
+    out_dir = os.path.dirname(out_path) or "."
+    base_href = write_shared_assets(out_dir, report_css_href=report_css_href)
     diffs = _expand_diffs(diffs)
     counts = Counter(d["category"] for d in diffs)
     total = len(diffs)
@@ -423,6 +432,7 @@ def write_report(diffs, old_label, new_label, out_path, old_date="", new_date=""
         "<head>",
         '<meta charset="utf-8">',
         f"<title>{_esc(title)} (MAM-parsed-plus diff)</title>",
+        f'<link rel="stylesheet" href="{_esc(base_href)}">',
         '<link rel="stylesheet" href="style.css">',
         "</head>",
         "<body>",

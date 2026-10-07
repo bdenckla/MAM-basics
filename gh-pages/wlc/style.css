@@ -1,11 +1,7 @@
-:root {
-    color-scheme: light dark;
-}
-body {
-    font-size: 14pt;
-    color: light-dark(black, white);
-    background-color: light-dark(white, black);
-}
+/* WLC document extensions; load ../document.css first. This hand-authored
+   tracked file is the source of truth. */
+body { max-width: none; width: auto; margin: 8px; }
+body.post-stress-meteg-page { width: 90%; }
 /* Centered page layout (issue #57): center the content column on the page, but let wide
    tables break out of the text measure and be as wide as they want, still centered. Opt-in
    via <body class="centered-page"> (WriteCtx.centered) — used by printed-decalogue,
@@ -93,17 +89,14 @@ span.post-stress-meteg-not-fit-failure { color: light-dark(#b00000, #ff9b9b); }
     font-family: "Taamey D WOFF2";
     src: url("woff2/Taamey_D.woff2");
 }
-span.romanized { font-style: italic; }
 /* Emphasis in running prose, where accgram pages used to shout in ALL CAPS.  Bold rather than
-   the browser's default italic: italic is already spoken for by span.romanized above and by the
+   the browser's default italic: italic is already spoken for by the shared span.romanized rule and by the
    plain <em> that ps17v14-double-tsinnor.html uses for book titles and for terms like mafsik, so
    an unclassed <em> must keep its italic and only this one turns bold. */
 em.emphasis { font-style: normal; font-weight: bold; }
-p { max-width: 40em; text-align: justify}
-p.center { text-align: center; }
+p { max-width: 40em; }
 blockquote { max-width: 40em; }
 td.big-for-amb-early-mtg { font-size: 250%; letter-spacing: 0.1em; text-align: left;}
-td.big { font-size: 250%; }
 table.limited-width { max-width: 40em; }
 /* Counts and other numbers: right-justified, so digits line up on the units column. */
 th.numeric, td.numeric { text-align: right; }
@@ -188,7 +181,6 @@ figcaption.goerwitz-tms-image-caption {
     text-align: center;
     font-size: 90%;
 }
-table.border-collapse { border-collapse: collapse; }
 table.goerwitz-tms-sat {
     margin-left: auto;
     margin-right: auto;
@@ -266,15 +258,8 @@ span.poetic-auto-summary-label {
     font-size: 90%;
     color: light-dark(#555, #aaa);
 }
-th, td {
-    padding-right: 0.4em;
-    padding-left: 0.4em;
-}
 tr:nth-of-type(odd) td {
     background-color: light-dark(#eee, #2b2b2b);
-}
-img {
-    max-width: 100%;
 }
 /* Psalms 17:14 deep-dive pages (ps17v14-mam-doc-notes.html,
    ps17v14-double-tsinnor.html), generated from their former hand-authored

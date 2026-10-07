@@ -49,6 +49,18 @@ def _make_doc_tmpl(
     )
     new_doc_tmpl_els = [[doc_name], new_doc_targ]
     prov = _add_provenance(trivial_ketiv_qere)
+    if doc_name == nap.RENAMED_DOC:
+        if any(existing_doc_parts):
+            raise ValueError(
+                "Changed trivial-qere conversions require framed MAM content"
+            )
+        extra = dict(doc_added or {})
+        stored = extra.pop(nap.MAM_NOTE)
+        stored = stored if isinstance(stored, list) else [stored]
+        extra[nap.MAM_NOTE] = [*prov, {"tmpl_name": "ש"}, *stored]
+        new_doc = wtp.mktmpl([[doc_name], new_doc_targ, []], ignore_equals=True)
+        new_doc = nap.with_params(new_doc, extra)
+        return nap.with_params(new_doc, nap.raw_params(trivial_ketiv_qere, tkq_added))
     new_doc_tmpl_els.append(prov)
     if existing_doc_parts:
         unburied = unbury.unbury_parts(existing_doc_parts)
