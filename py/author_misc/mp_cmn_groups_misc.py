@@ -4,6 +4,7 @@
 from mb_cmn import template_names as tmpln
 from mb_misc import mb_html
 from author_misc import mp_cmn_claims_core as _claims_core
+from mb_cmn import mam_bknas as bknas
 from mb_author import author
 
 _claim_def = _claims_core.claim_def
@@ -25,10 +26,21 @@ def _first_verse_two_line_label(base_label: str, full_label: str):
     )
 
 
+# Their figures are checked by the claims mp.plus.templates.new-book.at-each-book-start and
+# mp.plus.templates.no-par-weekly.where.
+_NEW_BOOK_ROW_TEXT = (
+    "New-book marker. Placed at the start of each of the 24 books."
+    " Parameter is the book name."
+)
+_NO_PAR_WEEKLY_ROW_TEXT = (
+    "No-$parashah weekly-portion start. Used only at Gen 47:28"
+    " (the only Torah weekly portion that begins without a $parashah)."
+)
+
 STRUCTURAL_ROWS = [
     [
         author.hbo("מ:ספר חדש"),
-        "New-book marker. Placed at the start of each of the 24 books. Parameter is the book name.",
+        _NEW_BOOK_ROW_TEXT,
         # The text above used to conclude with the following, but I deemed it implied already
         # and I wanted to keep the text short:
         # Not used for 2 Sam., 2 Kgs., Neh., 2 Chr., nor for the 11 Minor Prophets after Hosea.
@@ -74,7 +86,7 @@ STRUCTURAL_ROWS = [
             _NO_PAR_AT_STA_OF_WEEKLY_ABBREV,
             tmpln.NO_PAR_AT_STA_OF_WEEKLY,
         ),
-        "No-$parashah weekly-portion start. Used only at Gen 47:28 (the only Torah weekly portion that begins without a $parashah).",
+        _NO_PAR_WEEKLY_ROW_TEXT,
     ],
     [
         author.hbo("מ:עלייה"),
@@ -171,6 +183,23 @@ ALL_GROUPS_COVER_ALL_OBSERVED = (
 )
 
 CLAIM_DEFS = (
+    _claim_def(
+        "mp.plus.templates.new-book.at-each-book-start",
+        _NEW_BOOK_ROW_TEXT,
+        kind="struct",
+        subject="mp:plus",
+        data={"template": "מ:ספר חדש", "books": 24},
+    ),
+    _claim_def(
+        "mp.plus.templates.no-par-weekly.where",
+        _NO_PAR_WEEKLY_ROW_TEXT,
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "template": tmpln.NO_PAR_AT_STA_OF_WEEKLY,
+            "where": [[*bknas.BS_GENESIS, "47", "28"]],
+        },
+    ),
     _claim_def(
         "mp.plus.templates.structural.set",
         STRUCTURAL_ROWS,

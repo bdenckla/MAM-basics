@@ -132,16 +132,17 @@ THE GRAY MAQAF COUNTS AS A MAQAF, and only MAM has one.  A compound is found her
 and in poetic verses the maqaf after a secondary mark is customarily left unwritten while the atom
 still counts as joined -- so a scan of written maqafs alone reaches only part of the poetic
 phenomenon.  MAM's answer to that is the gray maqaf (מקף אפור), its mark for a maqaf the
-manuscript leaves unwritten where the chanted word needs one, and MAM-simple has all 116 of them
-as ``implicit-maqaf`` nodes, which ``mam_simple_verse`` puts on the atom before (issue wlc-utils#91).  Ben,
-2026-07-31, on what the survey then counts: a gray maqaf is a maqaf.  That took MAM's poetic hits
-from 17 to 130, while WLC's and UXLC's, those texts having no such mark, stay floors -- so MAM's
-poetic figure is incomparable with theirs on top of no poetic figure being comparable with a prose
-one.
+manuscript leaves unwritten where the chanted word needs one, and MAM-simple has every one of them
+as an ``implicit-maqaf`` node, which ``mam_simple_verse`` puts on the atom before (issue
+wlc-utils#91).  Ben, 2026-07-31, on what the survey then counts: a gray maqaf is a maqaf.  That
+took MAM's poetic hits from 17 to 130, while WLC's and UXLC's, those texts having no such mark,
+stay floors -- so MAM's poetic figure is incomparable with theirs on top of no poetic figure being
+comparable with a prose one.
 
 ``gray_maqaf_survey`` counts the mark separately all the same, and reads MAM-parsed-plus for it.
-NOT because MAM-simple lacks it: the two agree exactly, 116 occurrences in the same verses, none
-outside Psalms, Proverbs and Job, and MAM-basics maps the ``מ:מקף אפור`` template to the
+NOT because MAM-simple lacks it: the two agree exactly, verse by verse, as ``gray_maqaf_survey``
+checks, with none outside Psalms, Proverbs and Job, and MAM-basics maps
+the ``מ:מקף אפור`` template to the
 ``implicit-maqaf`` node (``../MAM-basics/py/foi/foiz_wt_rare_tmpls.py``).  Two wrong claims fell at
 issue wlc-utils#91 and neither should come back.  This docstring and the tracked JSON's ``source`` string
 both said MAM-simple DROPS the mark, which is what sent the survey to a second corpus for it.  And
@@ -167,7 +168,8 @@ from pathlib import Path
 from accgram import accent_marks as am
 from accgram import final_stress as fs
 from accgram import poetic_filter, prose_filter, rtms_data
-from wlc_cmn.wlc_book_codes import wlc_bb_codes
+from mb_misc import osis_book_abbrevs as oba
+from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 from mb_cmn import file_io
 from mb_cmn import paths
 from mb_cmn import provenance
@@ -1032,6 +1034,39 @@ def _gray_maqaf_hits(plus_dir: Path) -> list[dict]:
     return hits
 
 
+def _mam_simple_gray_maqafs_by_verse() -> Counter:
+    """How many ``implicit-maqaf`` nodes each verse of MAM-simple has, keyed as a hit's ``bcv``.
+
+    Read from every book of MAM-simple's MAM-versification tree, the numbering MAM-parsed-plus
+    has, so a gray maqaf outside the books ``_GRAY_MAQAF_BOOKS`` names would be counted here and
+    be missing from the hits.
+    """
+    bb_of_osis_book = {
+        oba.BOOK_ABBREVS[wlc_bb_to_bk39id(bb)]: bb
+        for bb in wlc_bb_codes()
+        if wlc_bb_to_bk39id(bb) in oba.BOOK_ABBREVS
+    }
+    counts: Counter = Counter()
+
+    def walk(node: object, bcv: str | None) -> None:
+        if isinstance(node, dict):
+            if node.get("type") == "verse":
+                osis_book, chnu, vrnu = node["osisID"].split(".")
+                bcv = f"{bb_of_osis_book[osis_book]}{int(chnu)}:{int(vrnu)}"
+            elif node.get("type") == "implicit-maqaf":
+                assert bcv is not None, node
+                counts[bcv] += 1
+            for child in node.values():
+                walk(child, bcv)
+        elif isinstance(node, list):
+            for child in node:
+                walk(child, bcv)
+
+    for json_path in sorted(paths.mam_simple_vtrad_mam_dir().glob("*.json")):
+        walk(json.loads(json_path.read_text(encoding="utf-8")), None)
+    return counts
+
+
 def gray_maqaf_survey() -> dict:
     """MAM's gray maqafs: the compounds its poetic verses join without a written maqaf.
 
@@ -1053,6 +1088,12 @@ def gray_maqaf_survey() -> dict:
         fields = hit["shape"].split("-")
         assert fields[0] != "0" and "+" not in fields[0], hit
         assert any(field != "0" for field in fields[1:]), hit
+    # The source string says that MAM-simple has the same gray maqafs in the same verses.
+    in_plus = Counter(hit["bcv"] for hit in hits)
+    in_simple = _mam_simple_gray_maqafs_by_verse()
+    assert in_simple == in_plus, sorted(
+        ((in_simple - in_plus) + (in_plus - in_simple)).items()
+    )
     return {
         "what": (
             "MAM's מקף אפור: a maqaf the manuscript leaves unwritten where the chanted word"
@@ -1061,9 +1102,10 @@ def gray_maqaf_survey() -> dict:
             " pointed as though the maqaf were there."
         ),
         "source": (
-            "MAM-parsed-plus (the מ:מקף אפור template). MAM-simple has the same 116, in the"
-            " same verses, as its implicit-maqaf node, and the corpus counts above read them"
-            " as maqafs; this count is here for the two-kind split beside them, not because"
+            "MAM-parsed-plus (the מ:מקף אפור template). MAM-simple has the same"
+            f" {len(hits)}, in the same verses, as its implicit-maqaf node, and the corpus"
+            " counts above read them as maqafs; this count is here for the two-kind split"
+            " beside them, not because"
             " one of the two texts has the mark and the other has not."
         ),
         "total": len(hits),

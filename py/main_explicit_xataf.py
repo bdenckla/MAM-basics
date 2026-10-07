@@ -77,7 +77,11 @@ def _read_manual_overrides():
 
 
 def _apply_manual_overrides(all_mappings, all_failures):
-    """Merge manual overrides: add to mappings, remove from failures."""
+    """Merge manual overrides: add to mappings, remove from failures.
+
+    An override stands in for one extraction failure, so one that matches no current
+    failure raises: either the extraction now handles that word or MAM no longer has it.
+    """
     manual = _read_manual_overrides()
     manual_by_ref_word = {(m["ref"], m["varika_word"]): m for m in manual}
     remaining_failures = []
@@ -87,8 +91,11 @@ def _apply_manual_overrides(all_mappings, all_failures):
             all_mappings.append(manual_by_ref_word.pop(key))
         else:
             remaining_failures.append(failure)
-    for m in manual_by_ref_word.values():
-        all_mappings.append(m)
+    if manual_by_ref_word:
+        raise ValueError(
+            "in/explicit-xataf-manual.json overrides no current extraction failure for"
+            f" {sorted(manual_by_ref_word)}"
+        )
     return remaining_failures
 
 

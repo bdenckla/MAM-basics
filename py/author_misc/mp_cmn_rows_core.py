@@ -3,6 +3,7 @@
 
 from mb_cmn import template_names as tmpln
 from author_misc import mp_cmn_claims_core as _claims_core
+from mb_cmn import mam_bknas as bknas
 from mb_author import author
 from mb_misc import mb_html
 
@@ -273,11 +274,14 @@ def accent_rows_for_templates(template_names):
     return rows
 
 
+# Its figures are checked by the claim mp.plus.templates.r1.in-column-c.
+_R1_ROW_TEXT = (
+    "Following stich on its own line, one indent."
+    " In 2 cases (Ps 70, 108) represents a closed $parashah."
+)
+
 POETIC_ROWS = [
-    [
-        author.hbo("ר1"),
-        "Following stich on its own line, one indent. In 2 cases (Ps 70, 108) represents a closed $parashah.",
-    ],
+    [author.hbo("ר1"), _R1_ROW_TEXT],
     [author.hbo("ר2"), "Following stich on its own line, two indents."],
     [author.hbo("ר3"), "Following stich at line start, no indent."],
     [author.hbo("ר4"), "New verse at line start, no indent."],
@@ -312,6 +316,17 @@ def poetic_rows_for_templates(template_names):
 
 
 CLAIM_DEFS = (
+    _claim_def(
+        "mp.plus.templates.r1.in-column-c",
+        _R1_ROW_TEXT,
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "template": "ר1",
+            "column": 0,
+            "where": [[*bknas.BS_PSALMS, "70"], [*bknas.BS_PSALMS, "108"]],
+        },
+    ),
     _claim_def(
         "mp.plus.templates.kq.set",
         KQ_ROWS,

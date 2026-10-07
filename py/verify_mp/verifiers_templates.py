@@ -2,6 +2,8 @@
 """MAM-parsed-plus template and file-naming claim verifiers."""
 
 import glob
+import re
+from collections import Counter
 from pathlib import Path
 from typing import Callable
 
@@ -403,7 +405,163 @@ def verify_mp_plus_templates_all_groups_cover_all_observed(
     ), f"observed templates not covered by any declared group: {sorted(uncovered)}"
 
 
+# ---------------------------------------------------------------------------
+# Figures the documentation states in words
+# ---------------------------------------------------------------------------
+
+
+def _template_sites(ctx: Context, template_name: str):
+    """Yield ((book24, sub-book, chapter, verse, column index), template) for every call."""
+    for book39, ch_key, v_key, verse in iter_verses(ctx.corpus):
+        for column_index, column in enumerate(verse):
+            for tmpl in iter_template_objects(column):
+                if tmpl["tmpl_name"] == template_name:
+                    site = (
+                        book39["book24_name"],
+                        book39["sub_book_name"],
+                        ch_key,
+                        v_key,
+                        column_index,
+                    )
+                    yield site, tmpl
+
+
+def _param_text(tmpl: dict, key: str):
+    """A parameter's value as text, whether stored as a string or as a one-string list."""
+    value = tmpl.get("tmpl_params", {}).get(key)
+    if isinstance(value, list) and len(value) == 1 and isinstance(value[0], str):
+        return value[0]
+    return value
+
+
+def _assert_sites(observed: Counter, declared, what: str) -> None:
+    """Assert that the observed sites are the declared ones, each as often as declared."""
+    expected = Counter(tuple(site) for site in declared)
+    assert observed == expected, (
+        f"{what}: at {sorted(observed.items(), key=repr)},"
+        f" declared at {sorted(expected.items(), key=repr)}"
+    )
+
+
+def verify_mp_plus_templates_r1_in_column_c(record: ClaimRecord, ctx: Context) -> None:
+    """The template stands in column C once in each declared chapter and nowhere else."""
+    data = record.data
+    observed = Counter(
+        (book24, sub_book, chapter)
+        for (book24, sub_book, chapter, _verse, column), _tmpl in _template_sites(
+            ctx, data["template"]
+        )
+        if column == data["column"]
+    )
+    _assert_sites(observed, data["where"], f"{data['template']} in column C")
+
+
+def verify_mp_plus_templates_shirah_divider_sections(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """The song-section divider is in exactly the declared number of chapters.
+
+    A section is counted by its chapter: the divider need not mark every verse of a song,
+    so a run of consecutive verses with the divider is not a section.
+    """
+    data = record.data
+    chapters = {
+        (book24, sub_book, chapter)
+        for (book24, sub_book, chapter, _verse, _column), _tmpl in _template_sites(
+            ctx, data["template"]
+        )
+    }
+    assert len(chapters) == data["sections"], (
+        f"{data['template']} is in {len(chapters)} chapters, not {data['sections']}:"
+        f" {sorted(chapters, key=repr)}"
+    )
+
+
+def verify_mp_plus_templates_new_book_at_each_book_start(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """The new-book marker opens each book, once, at the first verse of its first book39."""
+    data = record.data
+    starts = {}
+    for book39 in ctx.corpus.book39s:
+        chapter = next(iter(book39["chapters"]))
+        verse = next(iter(book39["chapters"][chapter]))
+        starts.setdefault(
+            book39["book24_name"], (book39["sub_book_name"], chapter, verse)
+        )
+    assert len(starts) == data["books"], f"{len(starts)} books, not {data['books']}"
+    observed = Counter(
+        (book24, sub_book, chapter, verse)
+        for (book24, sub_book, chapter, verse, _column), _tmpl in _template_sites(
+            ctx, data["template"]
+        )
+    )
+    _assert_sites(
+        observed,
+        [(book24, *start) for book24, start in starts.items()],
+        data["template"],
+    )
+
+
+def verify_mp_plus_templates_no_par_weekly_where(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """The template is called exactly at the declared verses, once each."""
+    data = record.data
+    observed = Counter(
+        (book24, sub_book, chapter, verse)
+        for (book24, sub_book, chapter, verse, _column), _tmpl in _template_sites(
+            ctx, data["template"]
+        )
+    )
+    _assert_sites(observed, data["where"], data["template"])
+
+
+def verify_mp_plus_template_haarah_2_star_first_where(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """The declared parameter value is given exactly at the declared verses, once each."""
+    data = record.data
+    observed = Counter(
+        (book24, sub_book, chapter, verse)
+        for (book24, sub_book, chapter, verse, _column), tmpl in _template_sites(
+            ctx, data["template"]
+        )
+        if _param_text(tmpl, data["param"]) == data["value"]
+    )
+    _assert_sites(
+        observed,
+        data["where"],
+        f"{data['template']} with {data['param']}={data['value']}",
+    )
+
+
+def verify_mp_plus_templates_meteg_accent_one_letter_wikisource_cases(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """The Wikisource download calls the template exactly the declared number of times.
+
+    Counted in in/mam-ws/ rather than in the plus corpus, because the parse resolves the
+    template into the marks it stands for.
+    """
+    del ctx  # This check reads the Wikisource download directly.
+    data = record.data
+    call = re.compile(re.escape("{{" + data["template"]) + r"\s*[|}]")
+    files = sorted((paths.in_dir() / "mam-ws").glob("*.json"))
+    assert files, "no Wikisource download under in/mam-ws/"
+    count = sum(len(call.findall(path.read_text(encoding="utf-8"))) for path in files)
+    assert (
+        count == data["cases"]
+    ), f"{data['template']}: {count} calls, not {data['cases']}"
+
+
 REGISTRY: dict[str, VerifierFn] = {
+    "mp.plus.template.haarah-2.star-first-where": verify_mp_plus_template_haarah_2_star_first_where,
+    "mp.plus.templates.meteg-accent-one-letter.wikisource-cases": verify_mp_plus_templates_meteg_accent_one_letter_wikisource_cases,
+    "mp.plus.templates.new-book.at-each-book-start": verify_mp_plus_templates_new_book_at_each_book_start,
+    "mp.plus.templates.no-par-weekly.where": verify_mp_plus_templates_no_par_weekly_where,
+    "mp.plus.templates.r1.in-column-c": verify_mp_plus_templates_r1_in_column_c,
+    "mp.plus.templates.shirah-divider.sections": verify_mp_plus_templates_shirah_divider_sections,
     "mp.plus.file-naming.book24-prefixes": verify_mp_plus_file_naming_book24_prefixes,
     "mp.plus.templates.accents.set": verify_mp_plus_templates_accents_set,
     "mp.plus.templates.all-groups-cover-all-observed": verify_mp_plus_templates_all_groups_cover_all_observed,

@@ -104,6 +104,12 @@ def emit_common_templates_claim_prelude(
     structural_rows = cmn.emit_claim_by_id(
         claims=claims, claim_id="mp.plus.templates.structural.set"
     )
+    cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.plus.templates.new-book.at-each-book-start"
+    )
+    cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.plus.templates.no-par-weekly.where"
+    )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.navigation.set")
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.note-links.set")
     cmn.emit_claim_by_id(
@@ -119,6 +125,13 @@ def emit_common_templates_claim_prelude(
         claim_id="mp.plus.templates.all-groups-cover-all-observed",
     )
     cmn.emit_claim_by_id(claims=claims, claim_id="mp.plus.templates.other.set")
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.plus.templates.meteg-accent-one-letter.wikisource-cases",
+    )
+    cmn.emit_claim_by_id(
+        claims=claims, claim_id="mp.plus.templates.shirah-divider.sections"
+    )
     cmn.emit_claim_by_id(
         claims=claims,
         claim_id="mp.plus.templates.sampe.pabp-arg-value",

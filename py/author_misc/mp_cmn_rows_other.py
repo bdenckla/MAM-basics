@@ -51,6 +51,18 @@ def _good_ending_row(good_ending_doc):
     ]
 
 
+# Their figures are checked by the claims
+# mp.plus.templates.meteg-accent-one-letter.wikisource-cases and
+# mp.plus.templates.shirah-divider.sections.
+_METEG_ACCENT_ROW_TEXT = (
+    "Normalization-robust $meteg for 10 cases where a below-accent and $meteg share"
+    " one letter."
+)
+_SHIRAH_ROW_TEXT = (
+    "$Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books;"
+    " analogous to ססס."
+)
+
 OTHER_ROWS = [
     [
         [author.hbo("פפ"), " / ", author.hbo("סס")],
@@ -63,7 +75,7 @@ OTHER_ROWS = [
     _good_ending_row(_GOOD_ENDING_TMPL_DOC),
     [
         author.hbo("מ:טעם ומתג באות אחת"),
-        "Normalization-robust $meteg for 10 cases where a below-accent and $meteg share one letter.",
+        _METEG_ACCENT_ROW_TEXT,
     ],
     [
         author.hbo("מ:גרש ותלישא גדולה"),
@@ -87,7 +99,7 @@ OTHER_ROWS = [
     ],
     [
         author.hbo("מ:ששש"),
-        "$Setumah-like section divider for the 8 shirah (song) sections in the 21 prose books; analogous to ססס.",
+        _SHIRAH_ROW_TEXT,
     ],
     [
         author.hbo("מ:כל קמץ קטן מרכא"),
@@ -123,6 +135,20 @@ PABP_ARG_VALUE_STRUCT = (
 )
 
 CLAIM_DEFS = (
+    _claim_def(
+        "mp.plus.templates.meteg-accent-one-letter.wikisource-cases",
+        _METEG_ACCENT_ROW_TEXT,
+        kind="struct",
+        subject="mp:plus",
+        data={"template": "מ:טעם ומתג באות אחת", "cases": 10},
+    ),
+    _claim_def(
+        "mp.plus.templates.shirah-divider.sections",
+        _SHIRAH_ROW_TEXT,
+        kind="struct",
+        subject="mp:plus",
+        data={"template": "מ:ששש", "sections": 8},
+    ),
     _claim_def(
         "mp.plus.templates.other.set",
         OTHER_ROWS,

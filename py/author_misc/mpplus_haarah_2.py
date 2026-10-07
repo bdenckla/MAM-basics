@@ -13,6 +13,7 @@ from mb_misc import mb_html
 from mb_author import author
 from mb_author import json_block
 from mb_author.claim import ClaimCollection
+from mb_cmn import mam_bknas as bknas
 from author_misc import mp_cmn_json_snippets as jsnip
 
 _FNAME = "mpplus_haarah_2.html"
@@ -43,6 +44,25 @@ def build_body(*, claims: ClaimCollection):
             "allowed_mark_positions": ["אאא*", "*אאא"],
         },
     )
+    # The verifier of this claim checks its "only Deut 22:6".
+    mark_position = claims.claim(
+        "mp.plus.template.haarah-2.star-first-where",
+        [
+            "Mark position: ",
+            mb_html.code('"אאא*"'),
+            " means the note marker (star) comes after the target; ",
+            mb_html.code('"*אאא"'),
+            " means it comes before (only Deut 22:6).",
+        ],
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "template": "מ:הערה-2",
+            "param": "3",
+            "value": "*אאא",
+            "where": [[*bknas.BS_DEUTER, "22", "6"]],
+        },
+    )
     return [
         author.heading_level_1(
             ["Targeted scroll-difference note — ", author.hbo("מ:הערה-2")]
@@ -55,13 +75,7 @@ def build_body(*, claims: ClaimCollection):
             [
                 "The target word (the word the note applies to)",
                 "The note content (the scroll-difference description)",
-                [
-                    "Mark position: ",
-                    mb_html.code('"אאא*"'),
-                    " means the note marker (star) comes after the target; ",
-                    mb_html.code('"*אאא"'),
-                    " means it comes before (only Deut 22:6).",
-                ],
+                mark_position,
             ]
         ),
         author.para(
