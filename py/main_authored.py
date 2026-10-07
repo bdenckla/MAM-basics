@@ -68,7 +68,6 @@ from author_site import site_index
 from author_site import unicode_proposals
 from verify_mp import claims_doc
 from verify_mp import driver as verify_driver
-from verify_mp import survey_artifact
 from verify_mp.corpus import Context, load_plus_corpus
 
 
@@ -191,14 +190,8 @@ def cmd_gen_site(args):
 
 
 def _run_verify_mp(*, claims) -> None:
-    """Run MAM-parsed claim verification against corpus + survey artifacts."""
-    corpus = load_plus_corpus()
-    survey = survey_artifact.load()
-    ctx = Context(
-        corpus=corpus,
-        survey=survey,
-    )
-    verify_driver.run(ctx, claims=claims)
+    """Run MAM-parsed claim verification against the loaded plus corpus."""
+    verify_driver.run(Context(corpus=load_plus_corpus()), claims=claims)
 
 
 def cmd_gen_mam_parsed_docs(_args):

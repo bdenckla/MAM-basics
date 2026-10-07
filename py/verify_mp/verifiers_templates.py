@@ -7,7 +7,6 @@ from typing import Callable
 
 from mb_author.claim import ClaimRecord
 from mb_cmn import paths
-from verify_mp import survey_artifact
 from verify_mp import kq_qere_first_contexts
 from verify_mp import kq_special_counts
 from verify_mp.corpus import (
@@ -66,7 +65,7 @@ def verify_mp_plus_file_naming_book24_prefixes(
 def _verify_template_set_observed(
     record: ClaimRecord, ctx: Context, *, key: str = "templates"
 ) -> None:
-    """Assert that every declared template appears in the plus survey.
+    """Assert that every declared template appears in the plus corpus.
 
     key: the record.data key holding the name(s). If the value is a list,
     every element is checked. If it is a string (e.g. key="template"), it is
@@ -80,42 +79,36 @@ def _verify_template_set_observed(
         declared = frozenset(declared_raw)
     else:
         declared = frozenset([declared_raw])
-    observed = survey_artifact.template_names_observed(ctx.survey)
-    missing = declared - observed
+    missing = declared - ctx.template_names
     assert (
         not missing
-    ), f"declared templates not found in plus corpus survey: {sorted(missing)}"
+    ), f"declared templates not found in plus corpus: {sorted(missing)}"
 
 
 def verify_mp_plus_templates_kq_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared kq-family template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Every declared kq-family template appears at least once in the plus corpus."""
     _verify_template_set_observed(record, ctx)
 
 
 def verify_mp_plus_templates_special_letters_set(
     record: ClaimRecord, ctx: Context
 ) -> None:
-    """Every declared special-letters template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Every declared special-letters template appears at least once in the plus corpus."""
     _verify_template_set_observed(record, ctx)
 
 
 def verify_mp_plus_templates_accents_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared accents template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Every declared accents template appears at least once in the plus corpus."""
     _verify_template_set_observed(record, ctx)
 
 
 def verify_mp_plus_templates_poetic_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared poetic template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Every declared poetic template appears at least once in the plus corpus."""
     _verify_template_set_observed(record, ctx)
 
 
 def verify_mp_plus_templates_other_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared other template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Every declared other template appears at least once in the plus corpus."""
     _verify_template_set_observed(record, ctx)
 
 
@@ -305,8 +298,7 @@ def verify_mp_plus_templates_structural_set(record: ClaimRecord, ctx: Context) -
 
 
 def verify_mp_plus_templates_navigation_set(record: ClaimRecord, ctx: Context) -> None:
-    """Every declared navigation template appears at least once in the plus corpus
-    (per the precomputed tmpl-survey artifact)."""
+    """Every declared navigation template appears at least once in the plus corpus."""
     _verify_template_set_observed(record, ctx)
 
 
@@ -383,10 +375,10 @@ def verify_mp_plus_templates_kq_qere_first_contexts(
 def verify_mp_plus_templates_all_groups_cover_all_observed(
     record: ClaimRecord, ctx: Context
 ) -> None:
-    """Every template observed in the plus survey is covered by a declared group.
+    """Every template the plus corpus's verses call is covered by a declared group.
 
     Collects all declared template names from mp.plus.templates.*.set and
-    mp.plus.templates.note claims, then checks the plus survey against their union.
+    mp.plus.templates.note claims, then checks the verses' templates against their union.
     """
     assert (
         ctx.claim_records is not None
@@ -405,8 +397,7 @@ def verify_mp_plus_templates_all_groups_cover_all_observed(
             declared.update(d["templates"])
         if "template" in d:
             declared.add(d["template"])
-    observed = survey_artifact.template_names_observed(ctx.survey)
-    uncovered = observed - declared
+    uncovered = ctx.template_names - declared
     assert (
         not uncovered
     ), f"observed templates not covered by any declared group: {sorted(uncovered)}"

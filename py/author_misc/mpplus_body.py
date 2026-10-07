@@ -249,11 +249,7 @@ def s_book39(*, claims: ClaimCollection):
         ],
         kind="struct",
         subject="mp:plus",
-        data={
-            "book39_keys": [*thb.BOOK39_KEYS_COMMON, "good_ending_plus"],
-            "good_ending_plus_nonnull_count": 4,
-            "good_ending_plus_nonnull_book39s": good_ending_nonnull_book39s,
-        },
+        data={"book39_keys": [*thb.BOOK39_KEYS_COMMON, "good_ending_plus"]},
     )
     _emit_claim_payload(
         claims,

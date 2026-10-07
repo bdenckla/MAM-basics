@@ -4,6 +4,7 @@
 import glob
 import json
 from dataclasses import dataclass, field
+from functools import cached_property
 from typing import Iterator, Mapping, TYPE_CHECKING
 
 from mb_cmn import mpplus_schema_guard as mpplus_guard
@@ -29,11 +30,15 @@ class Corpus:
 
 @dataclass
 class Context:
-    """Everything a verifier may need: the plus corpus and survey artifact."""
+    """Everything a verifier may need: the plus corpus and the claims."""
 
     corpus: Corpus
-    survey: dict  # loaded plus.json from out/tmpl-survey-plus/
     claim_records: Mapping[str, "ClaimRecord"] | None = None
+
+    @cached_property
+    def template_names(self) -> frozenset[str]:
+        """The name of every template the plus corpus's verses call (template_names_called)."""
+        return template_names_called(self.corpus)
 
 
 def load_plus_corpus() -> Corpus:
@@ -92,3 +97,16 @@ def iter_all_template_objects(corpus: Corpus) -> Iterator[dict]:
     for _book39, _ch_key, _v_key, verse in iter_verses(corpus):
         for col in verse:
             yield from iter_template_objects(col)
+
+
+def template_names_called(corpus: Corpus) -> frozenset[str]:
+    """The name of every template the corpus's verses call.
+
+    Read from the loaded corpus rather than from out/tmpl-survey-plus/plus.json, which the
+    Wikisource download does not rewrite and the mega rewrites only after parse-ws.  Like
+    that survey, this leaves out the books' good endings: the good-ending template they call
+    is in no declared template group, and the claims about it are
+    mp.plus.good-ending-plus.nested-in-docnote and
+    mp.plus.book39.good-ending-plus.nonnull-book39s.
+    """
+    return frozenset(tmpl["tmpl_name"] for tmpl in iter_all_template_objects(corpus))

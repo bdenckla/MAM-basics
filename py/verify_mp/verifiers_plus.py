@@ -23,28 +23,22 @@ def verify_mp_plus_templates_plus_specific_set(
     record: ClaimRecord, ctx: Context
 ) -> None:
     """Every declared plus-specific template appears in the plus corpus."""
-    from verify_mp import survey_artifact
-
     declared = frozenset(record.data["templates"])
-    observed = survey_artifact.template_names_observed(ctx.survey)
-    missing = declared - observed
+    missing = declared - ctx.template_names
     assert (
         not missing
-    ), f"declared templates not found in plus corpus survey: {sorted(missing)}"
+    ), f"declared templates not found in plus corpus: {sorted(missing)}"
 
 
 def verify_mp_plus_docs_common_templates_templates_in_plus_survey(
     record: ClaimRecord, ctx: Context
 ) -> None:
-    """Every template listed in mpplus common-template tables appears in plus survey."""
-    from verify_mp import survey_artifact
-
+    """Every template listed in mpplus common-template tables appears in the plus corpus."""
     declared = frozenset(record.data["templates"])
-    observed = survey_artifact.template_names_observed(ctx.survey)
-    missing = declared - observed
+    missing = declared - ctx.template_names
     assert (
         not missing
-    ), f"mpplus docs list templates not found in plus survey: {sorted(missing)}"
+    ), f"mpplus docs list templates not found in plus corpus: {sorted(missing)}"
 
 
 def verify_mp_plus_verse_is_3_tuple(record: ClaimRecord, ctx: Context) -> None:
@@ -94,7 +88,12 @@ def verify_mp_plus_template_tmpl_params_omitted_when_empty(
 
 
 def verify_mp_plus_verse_c_col_semantics(record: ClaimRecord, ctx: Context) -> None:
-    """Top 4 most frequent C-column items match the declared list."""
+    """The first declared C-column item outnumbers all others together; the rest come next.
+
+    The prose says that ``__`` is "by far the most common value", which this reads as
+    outnumbering every other value together, and that other common values are calls to the
+    three templates declared after it, which must be the next three values in some order.
+    """
     counts: Counter = Counter()
     for _book39, _ch_key, _v_key, verse in iter_verses(ctx.corpus):
         c_col = verse[0]
@@ -107,11 +106,19 @@ def verify_mp_plus_verse_c_col_semantics(record: ClaimRecord, ctx: Context) -> N
                 counts[item["tmpl_name"]] += 1
             else:
                 assert False, f"unexpected C-column item type: {type(item).__name__}"
-    expected = record.data["top4"]
-    actual = [k for k, _ in counts.most_common(len(expected))]
-    assert actual == expected, (
-        f"C-column top-{len(expected)} items mismatch:"
-        f" expected {expected!r}, got {actual!r}"
+    dominant, *common = record.data["top4"]
+    ranked = counts.most_common(1 + len(common))
+    top, top_count = ranked[0]
+    assert top == dominant, f"C column: most common is {top!r}, not {dominant!r}"
+    others = sum(counts.values()) - top_count
+    assert top_count > others, (
+        f"C column: {dominant!r} has {top_count}, not more than the {others}"
+        " of every other value together"
+    )
+    following = {k for k, _ in ranked[1:]}
+    assert following == set(common), (
+        f"C column: the next {len(common)} values are {sorted(following)!r},"
+        f" not {sorted(common)!r}"
     )
 
 
@@ -213,36 +220,17 @@ def verify_mp_plus_verse_e_col_semantics(record: ClaimRecord, ctx: Context) -> N
 
 
 def verify_mp_plus_book39_fields(record: ClaimRecord, ctx: Context) -> None:
-    """Every book39 object has declared keys and expected good-ending distribution."""
+    """Every book39 object has the declared keys.
+
+    Which book39s have a non-null good ending is the claim
+    mp.plus.book39.good-ending-plus.nonnull-book39s, checked by its own verifier.
+    """
     expected = frozenset(record.data["book39_keys"])
-    nonnull_good_endings = []
     for book39 in ctx.corpus.book39s:
         actual = frozenset(book39.keys())
         assert actual == expected, (
             f"book39 {book39.get('book24_name')!r}:"
             f" keys {sorted(actual)} != expected {sorted(expected)}"
-        )
-        if book39["good_ending_plus"] is not None:
-            nonnull_good_endings.append(book39)
-
-    expected_nonnull_count = record.data.get("good_ending_plus_nonnull_count")
-    if expected_nonnull_count is not None:
-        assert len(nonnull_good_endings) == expected_nonnull_count, (
-            f"good_ending_plus non-null count {len(nonnull_good_endings)}"
-            f" != expected {expected_nonnull_count}"
-        )
-
-    expected_book39s = record.data.get("good_ending_plus_nonnull_book39s")
-    if expected_book39s is not None:
-        observed_book39s = frozenset(
-            (b39["book24_name"], b39["sub_book_name"]) for b39 in nonnull_good_endings
-        )
-        expected_book39s_set = frozenset(
-            (row["book24_name"], row["sub_book_name"]) for row in expected_book39s
-        )
-        assert observed_book39s == expected_book39s_set, (
-            f"book39 set with non-null good_ending_plus"
-            f" {sorted(observed_book39s)} != expected {sorted(expected_book39s_set)}"
         )
 
 

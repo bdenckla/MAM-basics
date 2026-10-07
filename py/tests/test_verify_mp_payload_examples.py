@@ -21,7 +21,6 @@ def _make_record(*, claim_id: str, payload, subject: str = "mp:plus"):
 def _ctx(*, plus_files=None):
     return Context(
         corpus=Corpus(files=[] if plus_files is None else plus_files, book39s=[]),
-        survey={},
     )
 
 
