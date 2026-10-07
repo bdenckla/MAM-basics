@@ -23,7 +23,6 @@ import lxml.etree as lxml_etree
 
 from mb_misc import mb_html
 from mb_cmn import bib_locales as tbn
-from mb_misc import styles_mam_with_doc
 from mb_misc import osis_book_abbrevs
 from mb_cmn import my_utils
 from mb_cmn import file_io
@@ -218,8 +217,7 @@ def _write_index_dot_html(paths):
     # Write into the repository's GitHub Pages publish directory.
     title = "MAM OSIS: features present and features absent"
     out_dir_path = paths["index_html_dir"]
-    css_href = "two_col_style.css"
-    styles_mam_with_doc.make_css_file_for_mwd(f"{out_dir_path}/{css_href}")
+    css_href = "../MAM-with-doc/two_col_style.css"
     write_ctx = mb_html.WriteCtx(
         title,
         f"{out_dir_path}/index.html",

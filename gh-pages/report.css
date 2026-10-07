@@ -1,0 +1,53 @@
+/* Shared base for Holman proposal reports and MAM change-log reports.
+   This stylesheet is hand-authored; generators link to it without rewriting it. */
+:root {
+  color-scheme: light dark;
+  --bg: light-dark(#f7f6f2, #1e1c1a);
+  --card-bg: light-dark(#ffffff, #272421);
+  --border: light-dark(#d9d3c9, #3d3836);
+  --text: light-dark(#2d2a27, #e8e4e0);
+  --muted: light-dark(#666059, #9a938c);
+  --accent: light-dark(#1f5f8b, #5ba3cb);
+  --img-bg: light-dark(#f3efe8, #2a2724);
+  --hover-bg: light-dark(#f3f0ea, #2e2b28);
+  --active-bg: light-dark(#dcebf5, #1a3349);
+  --th-bg: light-dark(#ede8df, #2a2724);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-size: 15px;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+a { color: var(--accent); }
+code { font-size: .85em; }
+h1 { font-size: 1.6rem; margin-bottom: .5rem; }
+h2 { font-size: 1.2rem; margin: 1.5rem 0 .5rem; }
+p { margin: .3rem 0; }
+.subtitle { color: var(--muted); margin-bottom: 1rem; }
+.top-nav { display: flex; gap: .55rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.nav-link { color: var(--muted); text-decoration: none; border: 1px solid var(--border); background: var(--card-bg); border-radius: 999px; padding: .2rem .7rem; }
+.nav-link:hover { background: var(--hover-bg); color: var(--text); }
+.nav-link.active { border-color: var(--accent); background: var(--active-bg); color: var(--text); }
+.meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .5rem; margin-bottom: 1rem; }
+.meta-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .7rem; }
+.meta-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.meta-value { font-size: 1.2rem; font-weight: 600; }
+.section-title { font-size: 1.1rem; margin: 1.4rem 0 .5rem; }
+.summary-group { min-width: 0; }
+.summary-group-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .35rem; }
+.cat-swatch { width: 11px; height: 11px; display: inline-block; border-radius: 2px; margin-right: .45rem; vertical-align: middle; }
+.records { display: grid; gap: .65rem; }
+.record-card, .source-email, .diff-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .65rem .8rem; }
+.record-card.hidden, .source-email.hidden, .diff-card.hidden { display: none; }
+.record-head { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
+.record-ref { font-weight: 600; color: inherit; text-decoration: none; }
+.record-ref:hover { text-decoration: underline; color: var(--accent); }
+.record-verse { color: var(--muted); }
+.record-verse a { color: inherit; }
+.record-verse a:hover { color: var(--accent); }
+.finding-badge { color: #fff; border-radius: 999px; padding: .12rem .55rem; font-size: .72rem; }

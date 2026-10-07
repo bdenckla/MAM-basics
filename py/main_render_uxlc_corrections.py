@@ -52,6 +52,12 @@ def main() -> None:
     summary = render_uxlc_corrections_html(
         emails_dir=args.emails_dir,
         output_html_path=args.output_html_path,
+        report_css_href=(
+            "../report.css"
+            if args.output_html_path.resolve().parent
+            == DEFAULT_OUTPUT_HTML.resolve().parent
+            else None
+        ),
         image_dir=args.image_dir,
         assets_dir=args.assets_dir,
         data_dir=args.data_dir,

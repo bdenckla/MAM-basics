@@ -235,6 +235,7 @@ def _collect_page(pages, filename, body_contents, write_ctx):
     if filename in pages:
         raise ValueError(f"Duplicate Yeivin page: {filename}")
     write_ctx.icon_href = "../favicon.svg"
+    write_ctx.css_hrefs = ("../document.css", "style.css")
     pages[filename] = (body_contents, write_ctx)
 
 

@@ -38,9 +38,8 @@ def main():
     boj_two_col_css_styles.make_css_file_for_authored(
         boj_paths.gh_pages_dir() / css_href
     )
-    boj_two_col_css_styles.make_css_file_for_authored(jobn_top / css_href)
     #
-    tdm_ch = jobn_top, css_href
+    tdm_ch = jobn_top, ("../../document.css", "../style.css")
     #
     eqrs = get_enriched_quirkrecs(jobn_top, boj_paths.out_dir())
     ov_and_de = make_ov_and_de(eqrs)
@@ -52,7 +51,7 @@ def main():
     job4_quirks_in_mu_a.gen_html_file(aq)
     job5_orphan_qere_points.gen_html_file(tdm_ch)
     job6_cam1753_mentions.gen_html_file(tdm_ch, eqrs)
-    _write_index_dot_html((css_href,), boj_paths.index_html_path())
+    _write_index_dot_html(("../document.css", css_href), boj_paths.index_html_path())
     check_spelling_in_html.main()
 
 

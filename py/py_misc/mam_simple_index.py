@@ -32,11 +32,8 @@ _OUTPUT_PATH = paths.repo_root() / "gh-pages" / "MAM-simple" / "index.html"
 
 _README_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/README.md"
 
-# No stylesheet link, which is the one way this departs from MAM-parsed's index.html.
-# That one links a site-wide style.css; gh-pages/MAM-simple/ has no site-wide
-# stylesheet, versification-and-cantillation.css being that one page's own, deployed
-# beside it by versification_and_cantillation/generate_doc.py.  A heading and one
-# two sentences do not earn a second stylesheet.
+# The product index shares the site's prose stylesheet; its documentation page
+# also links its own Hebrew and table styles.
 _TEMPLATE = """\
 <!doctype html>
 <!-- {comment} -->
@@ -45,6 +42,7 @@ _TEMPLATE = """\
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MAM-simple</title>
+<link rel="stylesheet" href="../document.css">
 </head>
 <body>
 <h1>MAM-simple</h1>

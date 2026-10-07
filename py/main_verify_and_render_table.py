@@ -106,6 +106,12 @@ def main() -> None:
     render_table_data_findings_html(
         table_json_path=args.table_json_path,
         output_html_path=args.findings_html_path,
+        report_css_href=(
+            "../report.css"
+            if args.findings_html_path.resolve().parent
+            == DEFAULT_FINDINGS_HTML_PATH.resolve().parent
+            else None
+        ),
     )
 
     verify_summary = verify_report["summary"]
