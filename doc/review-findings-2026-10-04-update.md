@@ -441,3 +441,75 @@ nothing was implemented here.
 5. **4.5: "Bound it in code".** After the watchdog stops the adapter, the exporter stops waiting on
    the adapter's pipes after a short grace period, so that the limit holds whatever the adapter
    starts.
+
+### Finding 8: questions for Ben
+
+1. **8.1: "orphaned", in Ben's own words.** Ben first selected "Use "unattached"", which changed the
+   footnote's "It is not orphaned between the two words as it is in Ezekiel." to "It is not left
+   unattached between the two words, as it is in Ezekiel." After this session set out the context,
+   that the same page sends its reader to his "Orphan pointing" page, he wrote: "Basically what I
+   was saying is that I don't know why I restricted "orphaned" to describe the xiriq of ירושלם
+   words; perhaps I had some other case or cases in mind where it was inappropriate but in that
+   case I should have named those cases instead of forbidding all cases except xiriq-in-ירושלם
+   ones. Nothing wrong with "unattached" except I don't like using two words for the same thing so
+   I'd rather stick with "orphaned"". So the Job 38:12 footnote and its Ezekiel caption in
+   `py/author_boj_qr/qr_38.py` use "orphaned" where they now say "unattached": "the פתח is
+   unattached;" becomes "the פתח is orphaned;", and "The unattached פתח is visible between"
+   becomes "The orphaned פתח is visible between"; the 2 Samuel sentence keeps "orphaned"; and the
+   details page is regenerated. The `hebrew-prose` skill's reservation in
+   `references/terminology.md`, "**orphaned** is RESERVED for the ḥiriq of the implicit yod
+   in ירושלם-style spellings.", stops forbidding every other case. Its replacement is not yet
+   worded. The plan drafts it for Ben's approval, naming any case in which "orphaned" is wrong
+   rather than allowing a single one. This session's draft defines the word by the sense that
+   both uses share: "**orphaned** = a point that belongs to no letter, such as the ḥiriq of the
+   implicit yod in ירושלם-style spellings, or a point left between two written words."
+2. **8.3: "Add Phonetic-MAM".** The landing page's "MAM datasets and technical documentation" list
+   gains an entry "Phonetic-MAM", linking
+   `https://github.com/bdenckla/MAM-basics/blob/main/Phonetic-MAM/README.md`, after MAM-OSIS,
+   through `py/author_site/site_data.py`. Re-read after Ben's near-Aleppo commits of 2026-10-05 and
+   2026-10-06, which added a near-Aleppo entry to that list: the item still holds.
+3. **8.4: "Add the prescribed credit".** Each of the eight pages keeps its link to the source it
+   quotes and gains, after its existing credit, "Source attribution: Hebrew Wikisource, under
+   CC-BY-SA 4.0.", with "Hebrew Wikisource" linking
+   `https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning` and
+   "CC-BY-SA 4.0" linking `https://creativecommons.org/licenses/by-sa/4.0/`, as the two index
+   pages that C15.8 corrected attribute MAM. The same line goes on
+   `gh-pages/wlc/accgram/printed-decalogue-uvinkha.html`, which names Hebrew Wikisource with no
+   link, and the remediation plan's census adds any other English page that quotes MAM material.
+4. **8.5: "State MAM's terms".** `Phonetic-MAM/LICENSE.md`'s third line becomes "This statement
+   applies equally to the MAM text and its derivative display in `data/`, and to the MAM Hebrew
+   that `examples/display.json` quotes."; the terms of `DATA-LICENSES.md`'s row for
+   `Phonetic-MAM/examples/display.json` gain "The pointed Hebrew forms the tables quote are MAM's
+   text and keep MAM's CC-BY-SA 4.0 terms above."; and the Phonetic-MAM clause of that file's
+   preface to the MAM statement ends "the MAM text and its derivative display in
+   `Phonetic-MAM/data/` and the MAM Hebrew that `Phonetic-MAM/examples/display.json` quotes".
+5. **8.6: "Both to past tense".** In `Yeivin-ITM/README.md`, "Its source is pinned to MAM-private
+   commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`." becomes "The migration took its source from
+   MAM-private commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`; no test pins the adaptation to it
+   now.", and "All 17 existing filenames, internal links, and anchors are preserved." becomes "The
+   migration preserved all 17 existing filenames, internal links, and anchors.", C6.2 option A's
+   wording.
+
+### Finding 9: one-line items
+
+1. **9.2: ""the similar cases"".** The heading in `py/author_boj_qr/qr_38.py`, "φ1 — Attachment of
+   the פתח in the parallel passages", becomes "φ1 — Attachment of the פתח in the similar cases", the
+   name that the calling discussion and the footnote's body use, and the details page is
+   regenerated.
+2. **9.4: "Add to the README rows".** In `DATA-LICENSES.md`, row 52 becomes "|
+   `Yeivin-ITM/README.md`, `Yeivin-ITM/LICENSE.md`, `Yeivin-ITM/schema/` | the product's README,
+   with the adaptation's permission notice and bibliographic scope, its licence statement, and the
+   closed JSON Schema of its claim data | MAM-basics' own work, so GPL-3.0. The adaptation the
+   README describes keeps the terms of the `py/yeivin_itm/content/` row below |", and row 57
+   becomes "|
+   `Phonetic-MAM/README.md`, `Phonetic-MAM/LICENSE.md`, `Phonetic-MAM/schema/` | the product's
+   README, its licence statement, and the closed JSON Schema of its display data | MAM-basics' own
+   work, so GPL-3.0, apart from the MAM statement that `LICENSE.md` repeats verbatim |".
+   `Yeivin-ITM/LICENSE.md`'s restatement of row 52 follows.
+3. **9.8, its README half: "Dashes, as DATA-LICENSES".** `README.md`'s "Code: GPL-3.0" item reads
+   "This covers MAM-basics' work in code and prose: everything under `py/`, `.github/` and `doc/` —
+   except the adapted excerpts and their remarks under `py/yeivin_itm/content/`, the third-party
+   font under `doc/woff2/`, and the page crops in `doc/*-snips/` and the Hebrew Wikisource Village
+   Pump discussion captured and translated in `doc/wikisource-dagesh-discussion-*` — and the
+   generated indexes and reports under `out/` that carry no corpus text.", its following sentences
+   unchanged.
