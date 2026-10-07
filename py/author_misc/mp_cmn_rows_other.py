@@ -54,7 +54,7 @@ def _good_ending_row(good_ending_doc):
 OTHER_ROWS = [
     [
         [author.hbo("פפ"), " / ", author.hbo("סס")],
-        "$Parashah $petuxah / $setumah (primarily in D column)",
+        "$Parashah $petuxah / $setumah (in column C, the verse separator, or column E, the verse proper; never in column D)",
     ],
     [
         author.hbo("מ:אות מנוקדת"),
@@ -115,7 +115,9 @@ SH_ONLY_IN_DOCNOTE_PARAM2 = (
 PABP_ARG_VALUE_STRUCT = (
     "Argument value passed as the first positional parameter to"
     " סס, ססס, פפ, or פפפ"
-    " when the parashah division appears within a verse rather than between verses."
+    " when it marks a parashah break within a verse rather than between verses;"
+    " the guide's row for these templates gives the structural reasons"
+    " why some breaks in column E lack it."
     " This is a parameter value, not a template name."
     " Verified by corpus assertions in survey_plus.py."
 )
@@ -215,8 +217,34 @@ def whitespace_rows_shared():
             ],
             [
                 "$Parashah $petuxah / $setumah variants."
-                " When any of these appears within a verse (rather than between verses),",
-                [" it takes the argument ", author.hbo("פסקא באמצע פסוק"), "."],
+                " When one of these marks a $parashah break within a verse"
+                " (rather than between verses),",
+                [
+                    " it takes the argument ",
+                    author.hbo("פסקא באמצע פסוק"),
+                    ", with three rule-based exceptions in column E:",
+                ],
+                author.unordered_list(
+                    [
+                        [
+                            "a ",
+                            author.hbo("ססס"),
+                            " between the items of a list"
+                            " (as in 2 Samuel 23; noted in $MAM's Introduction)",
+                        ],
+                        [
+                            "a break inside ",
+                            author.hbo("מ:כפול"),
+                            ", tagged only in the strand where it falls within a verse",
+                        ],
+                        [
+                            "the ",
+                            author.hbo("ססס"),
+                            " beside an inverted $nun, at the edge of a verse"
+                            " (Numbers 10:35–36)",
+                        ],
+                    ]
+                ),
             ],
         ],
         OTHER_ROW_BY_TEMPLATE["מ:ששש"],

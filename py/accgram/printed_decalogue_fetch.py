@@ -1,22 +1,26 @@
-r"""Author tool: vendor the eight Decalogue accentuations from he.wikisource (issue wlc-utils#52).
+r"""Read the eight Decalogue accentuations of he.wikisource's base page (issue wlc-utils#52).
 
-Fetches ``עשרת הדברות בסיס/טעמים`` -- the base page every printed-vs-manuscript
-comparison table on Wikisource transcludes -- and writes the readings to
-``in/accgram/printed_decalogue_teamim.json`` for the grammaticality checker
-(``printed_decalogue.py``) and the transcription harness (``edition_transcription.py``).
+``build_payload`` reads the readings out of ``עשרת הדברות בסיס/טעמים`` -- the base page
+every printed-vs-manuscript comparison table on Wikisource transcludes -- for the
+grammaticality checker (``printed_decalogue.py``) and the transcription harness
+(``edition_transcription.py``). ``printed_decalogue.load_source`` gives it the page as
+the Wikisource download mirrors it, ``in/mam-ws-special/decalogue-base.mediawiki``.
+Until 2026-10-07 a network subcommand of this module wrote the payload to a vendored
+``in/accgram/printed_decalogue_teamim.json``; by Ben's decision of that day every
+reader moved to the mirror, the same page at the same revision.
 
 The base page spells out, fully accented, all eight versions:
 
     {שמות, דברים} × {טעם תחתון, טעם עליון} × {(טבריה), (דפוסים)}
     = {Exodus, Deuteronomy} × {taxton (lower), elyon (upper)} × {manuscript, printed}
 
-TWO REPRESENTATIONS PER VERSION, and the distinction between them is the whole point of the
-wlc-utils#74 re-vendoring:
+TWO REPRESENTATIONS PER VERSION, and the distinction between them is the whole point of issue
+wlc-utils#74:
 
   * ``chanted_verses`` -- the FOLDED, scanner-ready form.  Every wiki template is resolved to
     plain pointed text (see ``_resolve_templates``), so what a consumer reads is exactly what
-    the old single-representation fetch produced.  This field is byte-for-byte unchanged by
-    the re-vendoring, so every existing consumer keeps its behaviour.
+    the old single-representation fetch produced.  Issue wlc-utils#74 left this field
+    byte-for-byte unchanged, so every existing consumer kept its behaviour.
   * ``faithful_chanted_verses`` -- the FAITHFUL form.  Only the ``<קטע>`` section tags are
     stripped; the templates below are left in place, so it preserves three distinctions the
     fold discards.  ``chanted_verses`` is *derived* from it (``_fold_verse``), and the build
@@ -44,32 +48,18 @@ The three distinctions the fold discards and the faithful field keeps:
     display choice, not a masoretic fact the harness checks), so the faithful field keeps the
     template only incidentally, as the least-processing rule that also keeps the three above.
 
-This is a network tool run by hand to refresh the vendored snapshot; the committed JSON
-records the source page's revision id and revision timestamp for provenance.  ``--oldid`` pins a
-specific revision -- the wlc-utils#74 re-vendoring pins 3025606, the revision already vendored, so
-that this contract change carries no upstream content drift and stays independently reviewable
-from any later content refresh.  Run from the repo root (pinned):
-
-    .venv/Scripts/python.exe py/main_accgram.py vendor-printed-decalogue --oldid 3025606
+The payload records the source page's revision id and revision timestamp for provenance,
+which ``printed_decalogue.load_source`` takes from the mirror's manifest.
 """
 
 from __future__ import annotations
 
-import argparse
-import json
 import re
-import urllib.parse
-import urllib.request
-from pathlib import Path
-
-from mb_cmn import file_io
-from mb_cmn import paths
 
 PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 SOF_PASUQ = "\N{HEBREW PUNCTUATION SOF PASUQ}"
 
-_PAGE_TITLE = "עשרת הדברות בסיס/טעמים"
-_USER_AGENT = "wlc-utils/printed-decalogue (issue #52)"
+PAGE_TITLE = "עשרת הדברות בסיס/טעמים"
 
 # (book, reading, tradition, wikisource section name).  ``book`` is the WLC 2-char code.
 _SECTIONS: tuple[tuple[str, str, str, str], ...] = (
@@ -82,51 +72,6 @@ _SECTIONS: tuple[tuple[str, str, str, str], ...] = (
     ("dt", "taxton", "printed", "דברים טעם תחתון (דפוסים)"),
     ("dt", "elyon", "printed", "דברים טעם עליון (דפוסים)"),
 )
-
-
-def default_out_path() -> Path:
-    return paths.in_dir() / "accgram" / "printed_decalogue_teamim.json"
-
-
-def _fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": _USER_AGENT})
-    with urllib.request.urlopen(req) as resp:
-        return resp.read().decode("utf-8")
-
-
-def fetch_wikitext_and_revision(
-    oldid: int | None = None,
-) -> tuple[str, dict[str, object]]:
-    """The page wikitext and its provenance.  ``oldid`` pins a specific revision; without it,
-    the latest revision is fetched (and its revid recorded, so a later refresh is reviewable
-    against whatever it turns out to be)."""
-    quoted = urllib.parse.quote(_PAGE_TITLE)
-    if oldid is None:
-        wikitext = _fetch(f"https://he.wikisource.org/wiki/{quoted}?action=raw")
-        api = (
-            "https://he.wikisource.org/w/api.php?action=query&format=json&prop=revisions"
-            f"&rvprop=ids|timestamp&titles={quoted}"
-        )
-    else:
-        wikitext = _fetch(
-            f"https://he.wikisource.org/w/index.php?title={quoted}"
-            f"&oldid={oldid}&action=raw"
-        )
-        api = (
-            "https://he.wikisource.org/w/api.php?action=query&format=json&prop=revisions"
-            f"&rvprop=ids|timestamp&revids={oldid}"
-        )
-    meta = json.loads(_fetch(api))
-    page = next(iter(meta["query"]["pages"].values()))
-    rev = page["revisions"][0]
-    provenance = {
-        "source_page": _PAGE_TITLE,
-        "url": f"https://he.wikisource.org/wiki/{quoted}",
-        "pageid": page.get("pageid"),
-        "oldid": rev["revid"],
-        "revision_timestamp": rev["timestamp"],
-    }
-    return wikitext, provenance
 
 
 def _extract_section(text: str, name: str) -> str:
@@ -214,7 +159,7 @@ def build_payload(wikitext: str, provenance: dict[str, object]) -> dict[str, obj
         faithful_chanted_verses = _faithful_verses(section)
         # The faithful field must fold back to the folded one exactly, or ``chanted_verses``
         # -- the field every existing consumer reads -- would no longer be the derived twin of
-        # what we vendored.  Build-fails-on-drift, in the style of resolve_readings.
+        # the page's text.  Build-fails-on-drift, in the style of resolve_readings.
         refolded = [_fold_verse(fv) for fv in faithful_chanted_verses]
         if refolded != chanted_verses:
             raise ValueError(
@@ -242,37 +187,3 @@ def build_payload(wikitext: str, provenance: dict[str, object]) -> dict[str, obj
         "it by folding. Both split into chanted verses at sof pasuq."
     )
     return {"provenance": provenance, "versions": versions}
-
-
-def add_args(parser: argparse.ArgumentParser, repo_root: Path) -> None:
-    # repo_root is unused: the vendored snapshot's location comes from
-    # ``default_out_path``, which asks ``mb_cmn.paths`` itself.  The parameter is here so the
-    # entry point wires every subcommand the same way.
-    del repo_root
-    parser.add_argument("--out", type=Path, default=default_out_path())
-    parser.add_argument(
-        "--oldid",
-        type=int,
-        default=None,
-        help="pin a specific Wikisource revision (the wlc-utils#74 re-vendoring uses 3025606); "
-        "omit to fetch the latest",
-    )
-
-
-def run(args: argparse.Namespace) -> None:
-    wikitext, provenance = fetch_wikitext_and_revision(args.oldid)
-    payload = build_payload(wikitext, provenance)
-    out_path: Path = args.out
-    # file_io: temp-file write, PermissionError retry, and it makes the directory.
-    # build_payload records the Wikisource revision itself, so no generator_file=.
-    file_io.json_dump_to_file_path(payload, str(out_path))
-    n_cv = sum(len(v["chanted_verses"]) for v in payload["versions"])
-    n_strokes = sum(
-        fv.count("{{מ:לגרמיה}}") + fv.count("{{מ:פסק}}")
-        for v in payload["versions"]
-        for fv in v["faithful_chanted_verses"]
-    )
-    print(
-        f"printed-decalogue: {len(payload['versions'])} versions, {n_cv} chanted verses, "
-        f"{n_strokes} legarmeh/paseq strokes preserved (oldid {provenance['oldid']}) -> {out_path}"
-    )

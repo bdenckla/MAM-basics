@@ -14,6 +14,7 @@ from types import MappingProxyType
 
 import pytest
 
+from accgram import accent_marks as am
 from accgram import chanted_word_accents_units as cwa
 from accgram import meteg_before_stress
 from accgram import poetic_accent_names as pan
@@ -31,30 +32,10 @@ from yeivin_itm import claims
 
 _POPULATIONS = ("ordinary", "samekh")
 
-# The records whose accent class the scanners give differently from the survey, keyed by
-# population, verse and the chanted word's scanner tokens. In each the survey's disjunctive
-# is right: the chanted word has a dexi and its stress helper, and the poetic scanner reads
-# the two dexi marks as the pair DEXI_DEXI, which is not a grammar token.
-_DECLARED_ACCENT_CLASS_DISAGREEMENTS = (
-    ("ordinary", "Ps24:7", ("DEXI_DEXI",)),
-    ("ordinary", "Ps37:36", ("DEXI_DEXI",)),
-    ("ordinary", "Ps77:20", ("DEXI_DEXI",)),
-    ("ordinary", "Ps78:31", ("DEXI_DEXI",)),
-    ("ordinary", "Ps78:35", ("DEXI_DEXI",)),
-    ("ordinary", "Ps78:57", ("DEXI_DEXI",)),
-    ("ordinary", "Ps94:20", ("DEXI_DEXI",)),
-    ("ordinary", "Ps99:5", ("DEXI_DEXI",)),
-    ("ordinary", "Ps99:9", ("DEXI_DEXI",)),
-    ("ordinary", "Ps105:3", ("DEXI_DEXI",)),
-    ("ordinary", "Ps106:24", ("DEXI_DEXI",)),
-    ("ordinary", "Ps107:25", ("DEXI_DEXI",)),
-    ("ordinary", "Ps136:18", ("DEXI_DEXI",)),
-    ("ordinary", "Jb11:17", ("DEXI_DEXI",)),
-    ("ordinary", "Jb16:8", ("DEXI_DEXI",)),
-    ("ordinary", "Jb22:4", ("DEXI_DEXI", "MUNAX")),
-    ("ordinary", "Jb32:13", ("DEXI_DEXI", "MUNAX")),
-    ("samekh", "Jb11:17", ("DEXI_DEXI",)),
-)
+# A chanted word with a dexi and its stress helper has the dexi on two letters, which
+# the poetic scanner reads as one bang pair, a token that no grammar rule takes. The
+# chanted word is disjunctive, as the dexi is, so the comparison counts that token as one.
+_DEXI_WITH_HELPER = poetic_scanner._bang_pair_token(am.DEXI + am.DEXI)[0]
 
 
 @pytest.fixture(scope="module", autouse=True)
@@ -88,7 +69,6 @@ def test_cases_have_only_public_display_and_independent_classification_fields():
     survey = _tracked()
     assert set(survey) == {
         "schema",
-        "input",
         "projection",
         "ordinary",
         "samekh",
@@ -172,7 +152,7 @@ def _scanner_tokens(book, chapter, verse_number, verse, has_legarmeh):
         yield entry, tuple(token.type for token in word_tokens), disjunctives
 
 
-def test_accent_class_agrees_with_accgram_scanners_but_for_declared_records():
+def test_accent_class_agrees_with_accgram_scanners():
     survey = _tracked()
     cases = {population: survey[population]["cases"] for population in _POPULATIONS}
     matched = Counter()
@@ -211,13 +191,15 @@ def test_accent_class_agrees_with_accgram_scanners_but_for_declared_records():
                     ):
                         continue
                     matched[population] += 1
-                    scanner_disjunctive = bool(set(tokens) & disjunctives)
+                    scanner_disjunctive = (
+                        bool(set(tokens) & disjunctives) or _DEXI_WITH_HELPER in tokens
+                    )
                     if scanner_disjunctive != (case["accent_class"] == "disj"):
                         disagreements.append((population, bcv, tokens))
     for population, population_cases in cases.items():
         assert population_cases, f"no {population} records to compare"
         assert matched[population] == len(population_cases), population
-    assert sorted(disagreements) == sorted(_DECLARED_ACCENT_CLASS_DISAGREEMENTS)
+    assert not disagreements
 
 
 def test_target_meteg_agrees_with_accgram_nucleus_parser():
@@ -253,7 +235,7 @@ def test_target_meteg_agrees_with_accgram_nucleus_parser():
 def test_approved_claims_reproduce_exact_public_analysis_fractions():
     comparison = claims.from_analysis()
     assert comparison == claims.read()
-    assert comparison["schema"] == "yeivin-meteg-claims-v1"
+    assert comparison["schema"] == "yeivin-meteg-claims-v2"
     assert set(comparison["measurements"]) == set(comparison["populations"])
     for name, fraction in comparison["measurements"].items():
         assert type(fraction["numerator"]) is int

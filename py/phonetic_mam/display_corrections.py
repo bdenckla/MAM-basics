@@ -2,12 +2,12 @@
 
 ``in/phonetic_mam_display_corrections.json`` lists each chapter page whose display
 Ben approved correcting while its MAM-parsed input was unchanged, with the approval
-and the reason (the 2026-10-04 review's item 4.7). A listed chapter leaves the legacy
-projection comparison, as a chapter whose input a refresh changed does
-(``projection_check``), and its rendered diff is reviewed instead. The record's
-``marker_labels`` are the approved corrections of a layout marker's label, which the
-export applies: each names a verse's layout element, counted from 0, the label the
-adapter gives it and the label MAM-parsed has. No code writes the record.
+and the reason (the 2026-10-04 review's item 4.7). Until Ben retired the legacy
+projection comparison on 2026-10-07, a listed chapter left that comparison and its
+rendered diff was reviewed instead; the list now records his approvals. The
+record's ``marker_labels`` are the approved corrections of a layout marker's label,
+which the export applies: each names a verse's layout element, counted from 0, the
+label the adapter gives it and the label MAM-parsed has. No code writes the record.
 """
 
 import json
@@ -20,7 +20,7 @@ _MARKER_LABEL_FIELDS = {"book", "chapter", "verse", "marker", "from", "to"}
 
 
 def chapter_page(book, chapter):
-    """A chapter page's path in the site, as the comparison's records key it."""
+    """A chapter page's path in the site, as the record's chapters key it."""
     return f"tnkh/{bib_locales.ordered_short_dash_full_39(book)}/{chapter:02d}.html"
 
 

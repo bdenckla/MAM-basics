@@ -66,18 +66,13 @@ def check():
 def review_claims():
     """Report what the current analysis would change in Ben's approved claims.
 
-    Prints whether the claim population changed, each fraction pin with its approved
-    and projected values, and each page line whose text would change, before and
-    after, all computed in memory. It writes nothing and approves nothing: only Ben
-    approves new pins.
+    Prints each fraction pin whose projected value differs from its approved one,
+    each way a form that Ben's footnotes quote fails of the analysis, and each page
+    line whose text would change, before and after, all computed in memory. It
+    writes nothing and approves nothing: only Ben approves new pins or footnote edits.
     """
-    projected, population = claims.projection()
+    projected, failures = claims.projection()
     report = []
-    if population != claim_schema.APPROVED_POPULATION_SHA256:
-        report.append(
-            "The claim population has changed: approved SHA-256"
-            f" {claim_schema.APPROVED_POPULATION_SHA256}, projected {population}."
-        )
     for name, (numerator, denominator) in claim_schema.APPROVED_FRACTIONS.items():
         value = projected["measurements"][name]
         if (value["numerator"], value["denominator"]) != (numerator, denominator):
@@ -85,6 +80,7 @@ def review_claims():
                 f"Pin {name}: approved {numerator}/{denominator},"
                 f" projected {value['numerator']}/{value['denominator']}."
             )
+    report.extend(f"Failing {failure}." for failure in failures)
     current = renderer.page_texts()
     proposed = renderer.page_texts(projected)
     for name in sorted(current):
@@ -99,5 +95,5 @@ def review_claims():
             )
         )
     if not report:
-        report.append("No approved pin or page line would change.")
+        report.append("No approved pin, quoted form or page line would change.")
     print("\n".join(report))

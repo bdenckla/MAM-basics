@@ -40,10 +40,11 @@ census's ``clusters()`` does, so that they find the populations the census count
 an atom ends at a space or a maqaf, each mark belongs to the letter before it, and
 any other character is passed over.
 
-Each population is re-derived on every build and a mismatch raises. A note's
+Each population is re-derived on every build and recorded in
+in/near-aleppo/build-populations.json, whose diff shows any change. A note's
 quotation of the codex is independent of the list or the criterion a policy
 follows, so the removals of the revia mugrash and of the ole on the yored's letter
-are also checked against the notes whose targets hold them, and the ketiv/qere
+are checked against the notes whose targets hold them, and the ketiv/qere
 apparatus's transplant is checked against the codex forms its notes quote and
 against MAM's pointed ketiv, and the pointed qere it takes at one site against the
 form the note there gives the codex in prose. The hataf on a non-guttural reads
@@ -168,8 +169,8 @@ _CODEX_SIGLA = frozenset({"א", "א-קרי", "שיטת-א"})
 # "Like": in a clause, the sigla after this word have the clause's form too.
 _LIKE = "כמו"
 # The committed MAM refresh of 2026-09-17 includes the geresh muqdam in
-# Psalms 73:6's quoted form. No note now needs the former exception; the
-# population snapshot pins its count and site list at zero and empty.
+# Psalms 73:6's quoted form. No note now needs the former exception, so the table
+# is empty; a note that needed it would make _check_revia_removals raise.
 _NOTE_FORM_WITHOUT_GERESH_MUQDAM_VERSES = ()
 
 # The ole on the yored's letter. Chapter 5 of MAM's introduction,
@@ -216,6 +217,15 @@ _KQ_FORM_FROM_NOTE_VERSES = (
     (("D1-Psalms", "89", "29"), "כו״ק"),
     (('FC-Chronicles דה"ב', "25", "17"), "כו״ק"),
     (('FC-Chronicles דה"ב', "34", "22"), "קו״כ"),
+)
+# The census counts MAM's text before the apparatus. At each of these three
+# form-from-note verses, the apparatus's replacement has one HEBREW POINT QAMATS
+# QATAN fewer than the template it replaces, so one fewer reaches the qamats-size
+# policy than the census counts; everywhere else the apparatus removes none.
+_KQ_QAMATS_QATAN_REMOVED_VERSES = (
+    ("C1-Isaiah", "44", "17"),
+    ("C3-Ezekiel", "24", "2"),
+    ("D1-Psalms", "89", "29"),
 )
 # The form has the ketiv's letters at each of those verses but this one, where the
 # note's א clause gives the codex the qere's letters and denies an explicit qere
@@ -444,10 +454,10 @@ _JOB_POETIC = ((3, 2), (42, 6))
 # A note can override sub-rules 1 and 2: retain MAM's stress helper where an
 # agreeing clause says the Aleppo Codex doubles the accent, or cites the Leningrad
 # Codex for doubling and no clause cites the Aleppo Codex. These phrases identify
-# that statement. The population snapshot pins the verses reached through ל.
-# MAM-parsed-plus is the Scripture-and-note input; extantness is checked by the
-# public census against aleppo/index-flat-annotated.json. The named ל sites are
-# in lost portions of the Aleppo Codex.
+# that statement. The build records the verses reached through ל in
+# in/near-aleppo/build-populations.json. The documentation says the codex is lost
+# at each of them, and doc_changes.py checks that against
+# aleppo/index-flat-annotated.json before it renders the page.
 _DOUBLING_PHRASES = ("טעם כפול", "הטעמה כפולה")
 # The sigla of rule 4 for the codex's text and for testimony to its lost parts, as
 # _clause_sigla reads them, each less any "!" or "?".
@@ -678,20 +688,20 @@ _KQ_SITES = _sites_by_verse(
     + [(verse, _KQ_KEPT, _KQ_KEPT_FAMILY, None) for verse in _KQ_KEPT_VERSES]
 )
 
-# Expected counts and site lists live in in/near-aleppo/build-populations.json.
-# The five public MAM instruments independently supply template, qamats,
-# divine-name, Adonai and stress-helper populations. build_expectations.py maps
-# only their mechanically supported counters into an input refresh.
+# The build records these counts and site lists in
+# in/near-aleppo/build-populations.json, pinning none of them. The five public MAM
+# census instruments count the template, qamats, divine-name, Adonai and
+# stress-helper populations independently, and
+# build_expectations.assert_census_agrees requires the build's counts of those
+# populations to agree with theirs.
 #
-# Policy effects have separate fixed checks: the three qamats-qatan removals
-# caused by the ketiv/qere apparatus; the revia and ole exceptions; note evidence
-# for apparatus replacements, restored hataf vowels and stress-helper decisions;
-# selected-versus-unselected populations; and the maqaf table's outcomes.
-# Every named note check re-derives its evidence from current MAM-parsed-plus.
-# Reading dispositions, sensitive site lists and added-target counts are not
-# inferred from these five census totals and remain fixed for review.
+# Policy effects have checks of their own: the qamats qatan that the ketiv/qere
+# apparatus removes at the verses of _KQ_QAMATS_QATAN_REMOVED_VERSES; the revia and
+# ole exceptions; note evidence for apparatus replacements, restored hataf vowels
+# and stress-helper decisions; and the maqaf table's outcomes. Every named note
+# check re-derives its evidence from current MAM-parsed-plus.
 
-# The snapshot's site lists use main_build.py's verse names and build order.
+# The file's site lists use main_build.py's verse names and build order.
 
 
 class Policies:
@@ -705,6 +715,8 @@ class Policies:
         # How many templates the apparatus replaced or kept in the current verse for
         # each of the verse's sites in _KQ_SITES.
         self._ketiv_qere_sites = Counter()
+        # The qamats qatan the apparatus removed from the current verse.
+        self._kq_qamats_qatan_removed = 0
         # Notes in the current verse whose target the maqaf policy replaced.
         self._maqaf_notes = 0
         # The vowels a note decided for the varikas of its target that the walk has
@@ -726,11 +738,18 @@ class Policies:
         """Return one verse's E cell, as phase 2 resolved it, with the policies applied."""
         self._revia_mugrash_letters = 0
         self._ketiv_qere_sites = Counter()
+        self._kq_qamats_qatan_removed = 0
         self._maqaf_notes = 0
         self._hataf_table_uses = Counter()
         self._telisha_gedola_words = 0
         self._pashta_for_phase_5 = 0
         cell = self._value(cell, verse, _SELECTED, None)
+        removals = 1 if verse in _KQ_QAMATS_QATAN_REMOVED_VERSES else 0
+        if self._kq_qamats_qatan_removed != removals:
+            raise AssertionError(
+                f"{verse}: the ketiv/qere apparatus removed "
+                f"{self._kq_qamats_qatan_removed} qamats qatan, not {removals}"
+            )
         if verse in _TELISHA_GEDOLA_WORDS and self._telisha_gedola_words != 1:
             raise AssertionError(
                 f"{verse}: named in the telisha-gedolah word table, but "
@@ -770,21 +789,6 @@ class Policies:
             )
         return cell
 
-    def assert_expected_counts(self, expected_counts, expected_sites):
-        """Require the populations in the provenance-bound expectation snapshot."""
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        drift += [
-            f"{label}: expected at {expected}, build at {self.sites[label]}"
-            for label, expected in expected_sites.items()
-            if self.sites[label] != expected
-        ]
-        if drift:
-            raise AssertionError("Phase 3 populations drifted: " + "; ".join(drift))
-
     def _value(self, value, verse, mode, note):
         """``note`` is the body of the innermost נוסח whose target holds ``value``."""
         if isinstance(value, str):
@@ -814,7 +818,10 @@ class Policies:
             # other policies walk the target those two leave.
             if mode == _SELECTED and verse in _KQ_SITES:
                 params = dict(params)
+                before = _selected_text(params["1"], verse).count(QAMATS_QATAN)
                 params["1"] = self._ketiv_qere_apparatus(params["1"], note, verse)
+                after = _selected_text(params["1"], verse).count(QAMATS_QATAN)
+                self._kq_qamats_qatan_removed += before - after
             if mode == _SELECTED:
                 maqaf_target = self._maqaf_note(params["1"], note, verse)
                 if maqaf_target != params["1"]:
@@ -889,7 +896,7 @@ class Policies:
 
         MAM's introduction gives a sheva on the yod as the manuscripts' custom, the
         pointing of the Adonai reading. An Elohim-reading atom whose yod has no
-        vowel, which is Psalms 68:21's alone, has no hataf segol to replace.
+        vowel has no hataf segol to replace and stays as it is.
         """
         edits = {}
         for atom in _atoms(text):
@@ -945,7 +952,7 @@ class Policies:
         qamats on the nun; with any other vowel there the atom is the ordinary
         word, whose holam is a plain vowel and stays. Where a note on the atom
         opens with _CODEX_TITLE_HOLAM_NOTE, MAM records the codex's holam, and the
-        holam stays: at Psalms 110:5 alone.
+        holam stays.
         """
         edits = {}
         recorded = _note_opening(note).startswith(_CODEX_TITLE_HOLAM_NOTE)

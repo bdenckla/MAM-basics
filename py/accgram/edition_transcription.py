@@ -1,16 +1,16 @@
-"""Compare a hand transcription of a printed edition's Decalogue against a vendored strand.
+"""Compare a hand transcription of a printed edition's Decalogue against a mirrored strand.
 
 The pages in this family (``printed_decalogue_page`` and its Simanim / Koren satellites) place
 real editions among the four IDEALIZED Wikisource strands.  Until now that placement rested on
 SIGNAL WORDS -- a handful of accents that identify a strand -- which is enough to settle which
 strand an edition follows but says nothing about whether it follows it in every accent.  This
 module supports the stronger, accent-by-accent claim, by diffing a hand transcription of the
-printed accents against the vendored ``in/accgram/printed_decalogue_teamim.json``.
+printed accents against the mirrored ``in/mam-ws-special/decalogue-base.mediawiki``.
 
 A transcription is primary observation, read off the printed page (see
 ``in/accgram/edition_transcriptions/``).  It cannot be derived from anything in the repo, so it
 is committed input, not generated output.  What this module adds is that the comparison becomes
-mechanical and therefore repeatable: a re-vendoring or an upstream Wikisource revision that
+mechanical and therefore repeatable: a refresh of the mirror or an upstream Wikisource revision that
 moves an accent fails the test rather than silently invalidating prose on a page.
 
 WHAT COUNTS AS ONE TOKEN (the conventions the transcriptions are written to):
@@ -31,8 +31,8 @@ WHAT COUNTS AS ONE TOKEN (the conventions the transcriptions are written to):
 * Narrow-sense paseq is not an accent either.  Munax legarmeh is, but in the ACCENT TOKEN
   stream the two are folded together: a munax + U+05C0 is normalized to a plain munax on both
   sides (see ``_LEGARMEH_TOKENS``), so a legarmeh-vs-paseq difference is neither agreement nor
-  disagreement THERE.  The kind is checked separately, off to the side of the token diff.  The
-  wlc-utils#74 re-vendoring added ``faithful_chanted_verses`` to the source, which keeps the two
+  disagreement THERE.  The kind is checked separately, off to the side of the token diff.
+  Issue wlc-utils#74 added ``faithful_chanted_verses`` to the source, which keeps the two
   Wikisource templates distinct where the folded ``chanted_verses`` collapses both to U+05C0;
   ``reference_pasoleg_kinds`` reads the reference kind of each stroke back out, so a
   transcription's own legarmeh/paseq claims can be checked against the strand's OWN reference
@@ -57,7 +57,7 @@ joined לא of לא־יהיה and of לא־תעשה, whose second atoms have mer
 one chanted word, where its own Wikisource strand, ws/ex/taxton/printed, has a meteg on the
 joined לא and no accent.  (That one strand only: the eight do not agree at these sites -- the
 four elyon strands have לא as a free chanted word with a munax, for one -- so read what another
-strand has off the vendored data, not off this note.)  Those differences are two rungs up,
+strand has off the mirrored data, not off this note.)  Those differences are two rungs up,
 in the accents themselves, and an earlier version of this note asserted they could not occur.
 Neither they nor the elyon's pair touch the disjunctive skeleton or the chanted verse
 boundaries, which is the claim that has survived every transcription so far.
@@ -301,8 +301,9 @@ HEBREW_MODIFIERS = {
 
 # The bracketed asides a transcription may carry, each mapped onto the way the .txt spells it
 # and the pasoleg KIND it records.  An aside is not an accent and is dropped from both token
-# streams; what it adds is the one fact the vendored data cannot hold, since that fetch folds
-# {{מ:לגרמיה}} and {{מ:פסק}} alike onto U+05C0 -- WHICH kind of stroke stands there.
+# streams; what it adds is the one fact the folded chanted verses cannot hold, since
+# printed_decalogue_fetch.build_payload folds {{מ:לגרמיה}} and {{מ:פסק}} alike onto U+05C0 --
+# WHICH kind of stroke stands there.
 #
 # Three kinds, not two, because an edition may not draw the distinction at all.  Koren has
 # the stroke without saying which it is, so writing either מונ_לג (asserting legarmeh) or
@@ -436,16 +437,16 @@ def transcriptions_dir() -> Path:
 
 
 def strand_name(key: tuple[str, str, str]) -> str:
-    """One vendored strand's display name: ``ws/ex/taxton/printed``.
+    """One mirrored strand's display name: ``ws/ex/taxton/printed``.
 
     The ``(book, reading, tradition)`` triple alone was only sort of clear from context.  The
     ``ws/`` prefix says outright that the strand is one of the eight IDEALIZED Wikisource
-    strands vendored in ``in/accgram/printed_decalogue_teamim.json``, and it earns its keep
+    strands mirrored in ``in/mam-ws-special/decalogue-base.mediawiki``, and it earns its keep
     most on the manuscript triples, where ``ws/dt/elyon/manuscript`` reads plainly as a
-    Wikisource-vendored idealization OF the manuscript tradition rather than as a manuscript.
+    Wikisource-mirrored idealization OF the manuscript tradition rather than as a manuscript.
 
     DISPLAY ONLY.  The data keys -- the triple itself, and the ``book``/``reading``/
-    ``tradition`` fields in the vendored JSON -- keep the bare form.  CTR is a separately
+    ``tradition`` fields of the loaded source -- keep the bare form.  CTR is a separately
     vendored strand (issue wlc-utils#73) and is never named this way.
     """
     return "/".join(("ws",) + tuple(key))
@@ -647,7 +648,7 @@ def _hebrew_chunk(chunk: str) -> str:
 
 
 def _accent_tokens(verses: list[str]) -> tuple[list[str], list[str], list[str]]:
-    """(tokens, words, pasoleg_words) for a vendored strand's chanted verses.
+    """(tokens, words, pasoleg_words) for a mirrored strand's chanted verses.
 
     ``words[k]`` is the chanted word token ``k`` sits on, so a caller can see whether a
     difference is at the maqaf rather than in an accent.
@@ -706,7 +707,8 @@ def reference_pasoleg_kinds(source: dict, key: tuple[str, str, str]) -> list[str
     """The kind of each U+05C0 stroke in a strand's reference, in reading order.
 
     ``legarmeh`` or ``paseq``, read from the version's ``faithful_chanted_verses`` -- the
-    distinction the folded ``chanted_verses`` cannot express, vendored by the wlc-utils#74 re-vendor.
+    distinction the folded ``chanted_verses`` cannot express, which
+    ``printed_decalogue_fetch.build_payload`` keeps (issue wlc-utils#74).
     Aligned with the reference pasoleg positions ``_accent_tokens`` finds in the folded text:
     the k-th kind is the k-th pasoleg in reading order, which is what lets ``transcription_check``
     map a transcribed stroke to a reference kind.  A count mismatch means the faithful and
@@ -716,8 +718,8 @@ def reference_pasoleg_kinds(source: dict, key: tuple[str, str, str]) -> list[str
     faithful = version.get("faithful_chanted_verses")
     if faithful is None:
         raise ValueError(
-            f"{strand_name(key)}: vendored source has no faithful_chanted_verses -- re-vendor "
-            "via printed_decalogue_fetch.py (issue wlc-utils#74)"
+            f"{strand_name(key)}: mirrored source has no faithful_chanted_verses, which "
+            "printed_decalogue_fetch.build_payload writes (issue wlc-utils#74)"
         )
     kinds = [kind for fv in faithful for kind in _faithful_pasoleg_kinds(fv)]
     _, _, pasoleg = _accent_tokens(version["chanted_verses"])
@@ -761,7 +763,7 @@ def load_all_transcriptions() -> list[Transcription]:
 
 
 def compare(source: dict, transcription: Transcription) -> list[Difference]:
-    """Every region where ``transcription`` disagrees with its vendored strand."""
+    """Every region where ``transcription`` disagrees with its mirrored strand."""
     ref, words, _ = reference_tokens(source, transcription.key)
     got = [normalize_token(t) for t in transcription.tokens]
     matcher = difflib.SequenceMatcher(a=ref, b=got, autojunk=False)

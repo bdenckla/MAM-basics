@@ -6,7 +6,7 @@ per-cell check that a word's sof pasuq agrees with whether its strand ends a cha
 there), that the two signal words identify the strands, and that ``_strip_pointing`` keeps the
 cantillation signal (accents + sof pasuq) while dropping vowels, MAM-simple style.
 
-The vendored source JSON is committed here, so these FAIL rather than skip if it is absent --
+The mirrored source page is committed here, so these FAIL rather than skip if it is absent --
 see ``test_printed_decalogue``'s docstring and ``paths.require_sibling``.
 
 Run:

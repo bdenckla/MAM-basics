@@ -23,7 +23,7 @@ it for Ben's decisions about the page, in docstrings and comments beside the cod
 and its functions are short.  The page's tables share one display vocabulary --
 ``_ACCENT_DISPLAY``, the cell attributes, ``_cell_abbr`` -- and the comments that give its
 reasons are written about those tables.  The one part with an input of its own, the printed
-cases lifted from the vendored strands together with their table and their scans, reads that
+cases lifted from the mirrored strands together with their table and their scans, reads that
 vocabulary too, so moving it out would take a third module for the vocabulary, apart from the
 tables its comments are about.  Other modules also cite ``_find_span`` and ``pin_claims`` here
 by name.
@@ -929,9 +929,9 @@ def _accents(atom: str) -> list[str]:
 
 @lru_cache(maxsize=None)
 def _p_trad_strand(book: str, reading: str) -> dict:
-    """The one vendored p-trad strand for a book and a strand name.
+    """The one mirrored p-trad strand for a book and a strand name.
 
-    Cached because ``load_source`` re-reads and re-parses the whole vendored file every call, and
+    Cached because ``load_source`` re-reads and re-parses the whole mirrored page every call, and
     the four strands here are asked for once per case and once per claim pinned.
 
     EVERY strand this page reads is the p-trad one, which is why the tradition is fixed here
@@ -1019,7 +1019,7 @@ def _koren_case() -> dict:
     """Koren's לא־תעשה, beside both Deuteronomy strands.
 
     An accent typed by hand into a page module is a claim with no oracle behind it, and this one
-    is the page's whole subject, so every form here is lifted from a vendored strand.  Koren's
+    is the page's whole subject, so every form here is lifted from a mirrored strand.  Koren's
     own cell is CONSTRUCTED: the עליון has the two atoms as two chanted words at the Sabbath
     commandment (Deuteronomy 5:14), Koren's appendix page has the same two atoms with the same
     two accents as one maqaf compound, and the maqaf is the whole of the difference -- so the
@@ -1027,8 +1027,8 @@ def _koren_case() -> dict:
 
     The תחתון has those atoms as one compound at that same commandment, which is what lets the
     prose raise a carry-over, and its own accent is asserted here: the compound's joined לא has
-    no accent and its תעשה a qadma.  A re-vendoring that moved either mark fails the build rather
-    than put a cell on the page that no longer contrasts with the cells beside it.
+    no accent and its תעשה a qadma.  A refresh of the mirror that moved either mark fails the
+    build rather than put a cell on the page that no longer contrasts with the cells beside it.
 
     The accented-alike answer the intro gives rests on Koren's two accents being ONE accent
     twice, so that is asserted too rather than left to the reader of ``unprecedented_pairs``.
@@ -1139,9 +1139,9 @@ def unprecedented_pairs() -> tuple[tuple[str, str], ...]:
 
     Derived from the very forms the table shows -- Koren's from the two atoms it joins, the
     Simanim Tiqqun's from the munaḥ that construction puts on the joined לא and the accent
-    ``_SIMTIQ_CASES`` names on the second atom.  So a re-vendoring that changed any of the three
-    would change what ``pin_claims`` looks for, rather than leaving the page asserting the absence
-    of a pair it no longer shows.
+    ``_SIMTIQ_CASES`` names on the second atom.  So a refresh of the mirror that changed any of
+    the three would change what ``pin_claims`` looks for, rather than leaving the page asserting
+    the absence of a pair it no longer shows.
     """
     return tuple(case["pair"] for case in printed_cases())
 
@@ -1150,7 +1150,7 @@ def _mark_display(mark: str) -> str:
     """One mark codepoint as the page's own romanization -- ``maqaf``, ``munaḥ``.
 
     An accent goes through ``_ACCENT_DISPLAY``, the same route ``_pair_in_words`` takes, so a
-    re-vendoring that changed which accent an edition adds renders that accent's real name
+    refresh of the mirror that changed which accent an edition adds renders that accent's real name
     rather than a name typed in beside it -- and an accent the page has no romanization for
     raises rather than reaching a reader as a code identifier.  The maqaf is not an accent and
     so is not in that table; ``ROM_MAQAF`` is its single source, as ``ROM_*`` is for the rest.
@@ -1167,8 +1167,9 @@ def _added_mark(case: dict) -> str:
     (meaning “munaḥ added”) as appropriate.  Which of the two a case takes is DERIVED from the
     two forms the table already shows rather than typed in per case: the Strange row's cell and
     the Reference row's cell, differenced as multisets of characters.  So the row cannot come to
-    disagree with the two rows it summarizes, and a re-vendoring that changed either form fails
-    the build here rather than leaving a “+maqaf” standing over a column that no longer has one.
+    disagree with the two rows it summarizes, and a refresh of the mirror that changed either form
+    fails the build here rather than leaving a “+maqaf” standing over a column that no longer
+    has one.
 
     SPACES ARE DROPPED BEFORE DIFFERENCING, which is what makes Koren's case come out as an
     addition at all: its Wikisource עליון has לא and תעשה as two chanted words, Koren has them as
@@ -1218,8 +1219,8 @@ def pin_claims(survey: dict) -> None:
 
     The counts on this page are spliced from the survey, so they cannot drift.  Its
     ARGUMENT cannot be spliced, and every sentence of it rests on a handful of facts that a
-    re-vendoring or a corpus bump could quietly overturn.  So they are pinned here, and this
-    raises rather than warns -- the same build-fails-on-data-drift behavior
+    refresh of the mirror or a corpus bump could quietly overturn.  So they are pinned here, and
+    this raises rather than warns -- the same build-fails-on-data-drift behavior
     ``printed_decalogue_strands.resolve_readings`` has, and for the same reason: a warning in
     a generator's output is a warning nobody reads.
     """
@@ -1691,7 +1692,7 @@ def _printed_case_table(cases: tuple[dict, ...]) -> object:
 
     SHOW IT IN UNICODE (Ben, 2026-07-29: "I can't process all the verbosity, I need to just see
     this using actual unicode. You've fallen into the trap of not giving me Unicode").  Every
-    cell of the three form rows is a form lifted or constructed from a vendored strand,
+    cell of the three form rows is a form lifted or constructed from a mirrored strand,
     letters and accents only; naming an accent in prose is not a substitute for showing the form,
     which is why the paragraphs this replaced are down to two sentences.
 
@@ -1768,7 +1769,7 @@ _SIMTIQ_P246_BOXES: tuple[mhi.Box, ...] = (
 def _scans_appendix_section() -> tuple[object, ...]:
     """The scans behind the intro's table, as an appendix at the page's foot.
 
-    Every cell of that table is lifted or constructed from a vendored Wikisource strand, so the
+    Every cell of that table is lifted or constructed from a mirrored Wikisource strand, so the
     table states the page's claim about each edition without ever showing the printing.  These two
     figures are the printing those claims are read off -- each a crop of one or two printed lines,
     with the strange spreaders boxed.  The heading says "cropped, highlighted scans" for that
@@ -1790,7 +1791,7 @@ def _scans_appendix_section() -> tuple[object, ...]:
 
     ONE CLAUSE PER CAPTION (Ben, 2026-07-31): which edition, which Decalogue, which strand, which
     page, and what is highlighted.  Each caption used to splice the forms themselves out of the
-    vendored strands and then say in prose that each has an accent on both atoms, and the Tiqqun's
+    mirrored strands and then say in prose that each has an accent on both atoms, and the Tiqqun's
     added a sentence about the printed line break falling inside its לא־תעשה.  All of that is
     already in front of the reader: the intro's printed-case table shows the same forms, derived
     the same way, and the boxes on the scan show where they are and that one of them is in two

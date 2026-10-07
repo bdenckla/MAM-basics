@@ -356,6 +356,9 @@ generated output is the test. A missing input fails rather than skips, and an em
 parametrization must not report green. Do not enforce this judgment mechanically in a repository
 standards test.
 
+Do not write software that reads old commits to show that nothing changed. Regenerate the tracked
+outputs and judge their diff when committing; Git's history is the record of what changed.
+
 ## Delegate bounded work when it helps
 
 Root agents and sub-agents are explicitly authorized to spawn further sub-agents in every
@@ -378,6 +381,13 @@ unfinished files.
 Begin every final message with `# Report: <subject>`, with nothing above it, and use no other H1
 in the turn. Put the direct answer immediately below that heading. The heading names the report's
 subject rather than using a bare `# Report`.
+
+### Claude Code only: decisions go in the chat message
+
+Put each decision Ben must make in the chat message itself: what raises it, what each choice
+would do, and any recommendation with its reason. Claude Code's multiple-choice dialog may show
+Ben only short labels, so do not use it for a decision that needs context; ask him to answer in
+his own words.
 
 ## Prose names its subject
 

@@ -158,7 +158,7 @@ def test_every_biblical_reference_names_an_existing_verse():
 def test_approved_claim_schema_matches_the_tracked_data_and_named_pins():
     data = claims.read()
     schema = json.loads(
-        (paths.product_dir() / "schema/meteg-claims-v1.schema.json").read_text("utf-8")
+        (paths.product_dir() / "schema/meteg-claims-v2.schema.json").read_text("utf-8")
     )
     assert set(data) == set(schema["required"]) == set(schema["properties"])
     assert schema["additionalProperties"] is False

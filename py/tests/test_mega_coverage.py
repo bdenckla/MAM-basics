@@ -117,9 +117,9 @@ _HOLMAN_MAILBOX = (
     " doc/mega-coverage-2026-09-10.md §3."
 )
 _NETWORK_VENDORING = (
-    "A network tool that refreshes a vendored snapshot, from Hebrew Wikisource or from"
-    " chabad.org.  Recorded in py/main_accgram.py's docstring (\"NETWORK AUTHOR TOOL,"
-    ' run by hand") and doc/mega-coverage-2026-09-10.md §3.'
+    "A network tool that refreshes a vendored snapshot, from chabad.org.  Recorded in"
+    ' py/main_accgram.py\'s docstring ("NETWORK AUTHOR TOOL, run by hand") and'
+    " doc/mega-coverage-2026-09-10.md §3."
 )
 _REDIRECT_STUBS = (
     "Frozen redirect stubs, with or without --publish; publishing needs a temporary"
@@ -166,6 +166,7 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 NOT_IN_MEGA: dict[str, str] = {
     "py/main_near_aleppo.py --check": "Read-only differential validation of local census, dataset and pages; generation is in the mega. See out/near-aleppo/README.md.",
     "py/main_near_aleppo.py --instrument": "One census subprocess selected by the local five-instrument runner; the mega runs the complete census. See py/main_near_aleppo.py.",
+    "py/main_near_aleppo.py --check-note-review": "Read-only check of every changed-note review against a fresh source enumeration; the near-aleppo-build step's --build runs the same check before baking notes. See py/near_aleppo/main_build.py.",
     "py/main_yeivin_itm.py check": "Read-only claim/page/asset verification; the maintained Yeivin tests exercise the same closed validation.",
     "py/main_yeivin_itm.py review-claims": (
         "A read-only report for Ben's review, run by hand when a text refresh stops the mega"
@@ -173,7 +174,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " Recorded in dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md,"
         ' "Gates that a text change can trip".'
     ),
-    "py/main_phonetic_mam.py check": "Read-only release validation; the corpus differential test exercises the same closed validator.",
+    "py/main_phonetic_mam.py check": "Read-only release validation; py/tests/test_phonetic_display_release.py exercises the same closed validator.",
     "py/main_phonetic_mam.py compute": "Ben approved this transient stdin/stdout calculation interface on 2026-10-01; it is a caller-driven service, not a product regeneration step. See doc/phonetic-mam-compute.md.",
     # --- Section 3 of doc/mega-coverage-2026-09-10.md: reasons already recorded.
     "py/main_accgram.py survey-breuer-zaqef-units": (
@@ -181,7 +182,6 @@ NOT_IN_MEGA: dict[str, str] = {
         " Phonetic-MAM display release.  Recorded in py/accgram/breuer_word_length.py's docstring (\"WRITES TO"
         ' ``.novc/``, not to ``out/``") and doc/mega-coverage-2026-09-10.md §3.'
     ),
-    "py/main_accgram.py vendor-printed-decalogue": _NETWORK_VENDORING,
     "py/main_accgram.py vendor-ctr-decalogue": _NETWORK_VENDORING,
     "py/main_accgram.py generate-html without --trust-survey": (
         "The batch the accgram-generate-html step runs, except that its residue page"
@@ -545,8 +545,10 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
 
 # Scripts a step runs by subprocess that are not programs of this repository.  Naming
 # them here is what keeps a script path the scan cannot match a failure everywhere else.
-# Empty since 2026-09-11, when the near-aleppo-census step, which ran MAM-private's
-# near-aleppo/census/run_all.py in that clone, was deleted from the mega.
+# Empty since 2026-09-11, when the near-aleppo-census step that ran MAM-private's
+# near-aleppo/census/run_all.py in that clone was deleted from the mega. The step
+# that has had its name since 2026-10-05 runs this repository's local census,
+# py/main_near_aleppo.py --census.
 _EXTERNAL_SCRIPTS: dict[str, str] = {}
 
 _MEGA = "py/main_0_mega.py"

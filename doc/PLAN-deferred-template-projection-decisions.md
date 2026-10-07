@@ -406,7 +406,7 @@ stream:
 6. Run Black at its defaults on every changed Python file, using the home
    clone's interpreter from the worktree:
 
-       <home-clone>/.venv/Scripts/python.exe -m black <changed Python files>
+       & "<home-clone>/.venv/Scripts/python.exe" -m black "<changed Python files>"
 
 7. Run each affected generator, inspect the complete generated diff, and commit
    only explained changes on the worktree branch.

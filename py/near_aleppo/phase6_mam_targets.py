@@ -49,7 +49,8 @@ _REACHED = ": notes reached"
 _ADDED = ": notes given MAM's target"
 
 # The notes reached are the notes phase 2 counts: both phases use the same walk,
-# so the reached-note expectations follow phase 2.
+# and build_expectations.assert_census_agrees requires each count of notes reached
+# to equal the census's count of its template.
 #
 # A MAM-only census cannot count notes given MAM's target, because those counts
 # depend on the difference between the finished dataset and MAM's input text.
@@ -58,10 +59,9 @@ _ADDED = ": notes given MAM's target"
 # by several phases is counted once. Nested changed notes each receive their own
 # copy; MAM's source structures inside those copies remain unchanged.
 #
-# The counts live in in/near-aleppo/build-populations.json. An input refresh may
-# advance reached-note expectations with phase 2. The two added-target counts
-# remain fixed, and both target copying and final renaming must reproduce them;
-# a changed count fails for review.
+# The build records the counts in in/near-aleppo/build-populations.json, pinning
+# none of them. Final renaming must rename exactly the notes this pass gave MAM's
+# target, which main_build.py checks against this pass's counts.
 
 
 class MamTargets:
@@ -114,15 +114,6 @@ class MamTargets:
         for name, mam_target, params in changed:
             params[MAM_TARGET_PARAMETER] = copy.deepcopy(mam_target)
             self.counts[name + _ADDED] += 1
-
-    def assert_expected_counts(self, expected_counts):
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        if drift:
-            raise AssertionError("Phase 6 populations drifted: " + "; ".join(drift))
 
 
 def _notes(value, verse):

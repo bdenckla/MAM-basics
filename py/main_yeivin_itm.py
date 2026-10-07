@@ -8,7 +8,7 @@ Subcommands:
     check
         Check the claims, pages, and assets without writing.
     review-claims
-        Report the claim population, pins, and page lines that the current
+        Report the pins, quoted forms, and page lines that the current
         analysis would change, without writing.
 """
 

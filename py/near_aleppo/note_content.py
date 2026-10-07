@@ -23,7 +23,7 @@ def body_from_parts(parts):
 
 
 def evidence_target(value, ref):
-    """The pre-bake target spelling sealed in the historical review evidence."""
+    """The pre-bake target spelling that the review ledger's evidence records."""
     value = copy.deepcopy(value)
 
     def walk(node):

@@ -1,5 +1,5 @@
 r"""Shared computation for the two printed-Decalogue pages: the four cantillation strands
-of the Exodus Decalogue's opening אנכי...מצותי span, resolved live from the vendored data.
+of the Exodus Decalogue's opening אנכי...מצותי span, resolved live from the mirrored data.
 
 This module is pure computation -- no HTML, no display/editorial vocabulary in its *return
 values* -- so both companion pages can depend on it without either depending on the other:
@@ -10,7 +10,7 @@ values* -- so both companion pages can depend on it without either depending on 
     printed-tradition edition and links back to the four-strands table on the main page.
 
 Each of the four Exodus readings (m-trad / p-trad x taḥton / elyon) is read from
-``in/accgram/printed_decalogue_teamim.json`` (Hebrew Wikisource data): the leading chanted verses
+``in/mam-ws-special/decalogue-base.mediawiki`` (Hebrew Wikisource data): the leading chanted verses
 covering the אנכי...מצותי span are pulled from the data, and the accents on אנכי, עבדים and
 על־פני are derived from the marks, so the strands can never drift from the data.
 ``resolve_readings`` pins each derivation against ``READING_SPECS`` / ``STRUCTURE`` and raises
@@ -213,7 +213,7 @@ ROM_QADMA = "qadma"
 # of לא־תעשה, and its munax on the joined לא -- where every taxton strand has a meteg and no
 # accent, and every elyon strand has לא as a free chanted word with a munax of its own -- makes
 # one conjunctive too many before the pashta.  The same munax one chanted verse earlier, before a
-# tevir, costs nothing.  The per-strand facts are re-derived from the vendored strands by that
+# tevir, costs nothing.  The per-strand facts are re-derived from the mirrored strands by that
 # page's _pin_lo_taase_strand_facts; the sentence this comment echoes said "all eight strands
 # have a meteg and no accent" until 2026-07-29, which is false of the four elyon strands (item 1
 # of doc/review-findings-2026-07-29.md).
@@ -397,7 +397,7 @@ def render_reading_name(name: str) -> tuple[object, ...]:
 
 
 # --------------------------------------------------------------------------- #
-# Deriving the four readings live from the vendored data
+# Deriving the four readings live from the mirrored data
 # --------------------------------------------------------------------------- #
 def base_skeleton(word: str) -> str:
     return "".join(ch for ch in word if is_base_letter(ch))
@@ -471,7 +471,7 @@ def _span_verses(vr: pd.VersionResult) -> list[pd.ChantedVerseResult]:
             return out
     raise AssertionError(
         f"{vr.book} {vr.reading} {vr.tradition}: no chanted verse ends at {MITSVOTAI!r} "
-        "-- the vendored readings drifted"
+        "-- the mirrored readings drifted"
     )
 
 
@@ -528,7 +528,7 @@ READING_SPECS = (
 # Per-strand opening structure: (first-verse span as short right-to-left notation, the
 # letter skeleton of that first verse's last word, the number of chanted verses the
 # strand divides the Exodus Decalogue into).  ``end_skel`` and ``n_verses`` are pinned
-# against the vendored data in resolve_readings so a moved boundary fails the build rather
+# against the mirrored data in resolve_readings so a moved boundary fails the build rather
 # than silently mislabelling.  (span endpoints from the data: אנכי…על־פני / …עבדים / …מצותי.)
 STRUCTURE: dict[str, tuple[str, str, int]] = {
     "m-trad taḥton": ("אנכי…על־פני", "עלפני", 12),
@@ -560,13 +560,14 @@ def resolve_readings(results: list[pd.VersionResult]) -> list[Reading]:
         if derived != expected:
             raise AssertionError(
                 f"{name}: derived {derived} from the data, "
-                f"expected {expected} -- the vendored readings drifted"
+                f"expected {expected} -- the mirrored readings drifted"
             )
         _, end_skel, n_verses = STRUCTURE[name]
         if (r.first_verse_end, r.n_verses) != (end_skel, n_verses):
             raise AssertionError(
                 f"{name}: derived first-verse end {r.first_verse_end!r} / {r.n_verses} verses "
-                f"from the data, expected {end_skel!r} / {n_verses} -- the vendored readings drifted"
+                f"from the data, expected {end_skel!r} / {n_verses} -- the mirrored "
+                "readings drifted"
             )
         # The pages claim the (עבדים, על־פני) pair identifies the strand in BOTH books, but
         # tabulate only Exodus; check the Deuteronomy counterpart derives the same pair.
@@ -580,7 +581,7 @@ def resolve_readings(results: list[pd.VersionResult]) -> list[Reading]:
         if dt_pair != (r.avadim_accent, r.penei_accent):
             raise AssertionError(
                 f"{name}: Deuteronomy signal pair {dt_pair} differs from Exodus's "
-                f"{(r.avadim_accent, r.penei_accent)} -- the vendored readings drifted"
+                f"{(r.avadim_accent, r.penei_accent)} -- the mirrored readings drifted"
             )
         readings.append(r)
     # The page's headline claim: no two strands share the signal pair, so the pair alone places a
@@ -590,7 +591,7 @@ def resolve_readings(results: list[pd.VersionResult]) -> list[Reading]:
         raise AssertionError(
             "the four strands no longer have pairwise-distinct (עבדים, על־פני) signal pairs: "
             f"{[(r.name, r.avadim_accent, r.penei_accent) for r in readings]} "
-            "-- the vendored readings drifted"
+            "-- the mirrored readings drifted"
         )
     return readings
 
@@ -624,7 +625,7 @@ _PAUSAL_PINS: dict[tuple[str, str], tuple[str, str]] = {
 
 # The data's own reading keys -> the Hebrew strand words.  Distinct from _STRAND_HEB, which is
 # keyed by the display names, which spell that strand's name with an h-with-dot-below where the
-# vendored source spells it "taxton".
+# mirrored source spells it "taxton".
 _STRAND_HEB_BY_READING: dict[str, str] = {"taxton": TAHTON, "elyon": ELYON}
 
 
@@ -657,7 +658,7 @@ def resolve_pausal(results: list[pd.VersionResult]) -> tuple[PausalForm, ...]:
             if derived != expected:
                 raise AssertionError(
                     f"{vr.book} {vr.reading} {vr.tradition}: derived {derived} at {skeleton!r} "
-                    f"({word!r}), expected {expected} -- the vendored readings drifted"
+                    f"({word!r}), expected {expected} -- the mirrored readings drifted"
                 )
             if (vr.book, vr.tradition) == ("ex", "manuscript"):
                 forms[(skeleton, vr.reading)] = PausalForm(
@@ -671,7 +672,7 @@ def resolve_pausal(results: list[pd.VersionResult]) -> tuple[PausalForm, ...]:
     missing = [key for key in ordered if key not in forms]
     if missing:
         raise AssertionError(
-            f"no Exodus manuscript reading supplied {missing} -- the vendored readings drifted"
+            f"no Exodus manuscript reading supplied {missing} -- the mirrored readings drifted"
         )
     return tuple(forms[key] for key in ordered)
 
@@ -709,5 +710,5 @@ def check_tirtsax(results: list[pd.VersionResult]) -> None:
         if derived != expected:
             raise AssertionError(
                 f"{vr.book} {vr.reading} {vr.tradition}: derived {derived} at {TIRTSAX!r} "
-                f"({word!r}), expected {expected} -- the vendored readings drifted"
+                f"({word!r}), expected {expected} -- the mirrored readings drifted"
             )

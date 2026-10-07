@@ -8,7 +8,7 @@ elements. A nested dual template requires a separately reviewed traversal policy
 from mb_cmn import ws_tmpl2
 
 # Exact parameter identities, in the input order used by the existing pipeline.
-# These are the current EP shapes in the three books that contain dual templates.
+# validate_template raises on any template name or parameter identity not listed here.
 _SHAPES = {
     "כו״ק": (("1", "2"),),
     "מ:אות-ג": (("1",),),

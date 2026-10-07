@@ -1,7 +1,11 @@
-"""Individually adjudicated pointings, independent of the frozen inference set."""
+"""Individually adjudicated pointings, independent of the frozen inference set.
+
+Each record stores the parameters of the ketiv/qere template it points, which
+frozen_ketiv.checked_target compares with the template where the pointing is
+written.
+"""
 
 import copy
-from hashlib import sha256
 import json
 from near_aleppo import build_paths
 
@@ -9,7 +13,6 @@ from near_aleppo import frozen_ketiv
 from near_aleppo import phase2_templates as phase2
 
 MANIFEST = build_paths.input_dir() / "editorial-pointed-ketiv.json"
-MANIFEST_SHA256 = "4bb888b3d1107b928dbecc3d6da3c8cf351c3ea8a10a233dbf08898c75678eb2"
 
 
 def ga(value):
@@ -22,20 +25,22 @@ def ga(value):
 
 
 def load():
-    raw = MANIFEST.read_bytes()
-    if sha256(raw).hexdigest() != MANIFEST_SHA256:
-        raise ValueError("Editorial pointing manifest differs from the reviewed hash")
-    data = json.loads(raw)
+    data = json.loads(MANIFEST.read_text(encoding="utf-8"))
     if (
         set(data) != {"format", "records"}
-        or data["format"] != "near-aleppo-editorial-pointing-v1"
+        or data["format"] != "near-aleppo-editorial-pointing-v2"
     ):
         raise ValueError("Unexpected editorial pointing manifest schema")
-    if len(data["records"]) != 5:
-        raise ValueError("Editorial pointing population changed")
+    # EditorialPointing keys the records by verse, so two in one verse are refused.
+    identities, verses = set(), set()
     for row in data["records"]:
-        if set(row) != {"id", "verse", "path", "expected_sha256", "ga", "value"}:
+        if set(row) != {"id", "verse", "path", "tmpl_params", "ga", "value"}:
             raise ValueError("Unexpected editorial record schema")
+        if row["id"] in identities or tuple(row["verse"]) in verses:
+            raise ValueError("Duplicate editorial pointing record or verse")
+        identities.add(row["id"])
+        verses.add(tuple(row["verse"]))
+        frozen_ketiv.validate_target_params(row)
         if ga(row["value"]) != row["ga"]:
             raise ValueError("Editorial GA differs from its runtime representation")
     return data
@@ -50,13 +55,9 @@ class EditorialPointing:
         if verse not in self.by_verse:
             return cell
         row = self.by_verse[verse]
-        target = frozen_ketiv.at_path(cell, row["path"])
-        if target["tmpl_name"] not in phase2.POINTED_KETIV_FAMILIES:
-            raise ValueError("Unsupported editorial target family")
-        if phase2.POINTED_KETIV_PARAMETER in target["tmpl_params"]:
-            raise ValueError("Existing pointing conflicts with editorial import")
-        if frozen_ketiv.digest(target) != row["expected_sha256"] or verse in self.seen:
-            raise ValueError("Changed or repeated editorial target")
+        if verse in self.seen:
+            raise ValueError(f"{row['id']}: editorial pointing applied twice")
+        target = frozen_ketiv.checked_target(cell, row)
         target["tmpl_params"][phase2.POINTED_KETIV_PARAMETER] = copy.deepcopy(
             row["value"]
         )

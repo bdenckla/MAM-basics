@@ -2,8 +2,8 @@
 
 The near-Aleppo build and example edition are local MAM-basics products. The
 entry point is `py/main_near_aleppo.py`. Its inputs are the tracked
-`MAM-parsed/plus/` books, `aleppo/index-flat-annotated.json`, and the sealed
-runtime data in `in/near-aleppo/`. Its outputs are `out/near-aleppo/plus/` and
+`MAM-parsed/plus/` books, `aleppo/index-flat-annotated.json`, and the runtime
+data in `in/near-aleppo/`. Its outputs are `out/near-aleppo/plus/` and
 `gh-pages/near-aleppo/`. The product README gives the CLI commands and license.
 
 The documentation pages load `../document.css` for their shared English
@@ -20,14 +20,18 @@ Representation policies then apply the declared near-Aleppo conventions. Source
 relations are read from MAM's clause heads, including testimony and doubt
 qualifiers. Direct readings quoted in MAM notes are applied only where their
 classified form and target meet the code's explicit requirements. Ambiguous
-readings remain pending or flagged. Policy-sensitive populations and site lists
-are checked against the tracked build snapshot.
+readings remain pending or flagged. The build records every population and site
+list in `in/near-aleppo/build-populations.json`, pinning none, so that the file's
+diff shows what a change to MAM's text or to the build moved.
 
 Pointings are applied in priority order: note-derived readings, the frozen
 MAM-derived set, individual editorial decisions, then reviewed portable
-pointings. The latter stages cannot overwrite an earlier pointing. Sealed file
-hashes and per-site source guards reject drift; importing a payload makes no new
-editorial choice. Artificial carriers preserve orphan marks and their positions
+pointings. The latter stages cannot overwrite an earlier pointing. Each stored
+pointing records the ketiv/qere template's parameters, its ketiv and whole qere,
+as the build has them where the pointing is written. Where the template no longer
+has them, the build stops with an error that names the record and shows both; a
+renamed template does not stop it. Importing a payload makes no new editorial
+choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
 accepts only its declared carrier and exact mark shape.
 
@@ -43,23 +47,22 @@ parameter 3 and flags retain their existing roles. The template names are
 `נוסח עם הקשר מקרא על פי המסורה` and `הערה-2 עם הקשר מקרא על פי המסורה`.
 Consumers render these stored roles without editorial clause transformations.
 
-Five independent MAM instruments supply the mechanically refreshable population
-counts. The census checks clean tracked input identities before and after its
-run, gathers every result before writing, and records the input object IDs.
-Automatic expectation refresh cannot change sensitive site lists or editorial
-decisions. A changed source guard, population or presentation stops the build for
-review rather than choosing a replacement.
+Five independent MAM instruments, the census, count populations from MAM's text
+alone and write `in/near-aleppo/census/`. The census gathers every result before
+writing any. Each population it counts must agree with the build's own count of
+the same population. A changed ketiv or qere at a stored pointing, or an
+unreviewed presentation, stops the build for review rather than choosing a
+replacement.
 
 The presentation ledger contains the source evidence and substantive reviewed
 clause dispositions used during the build. A fresh pre-bake source replay must
-match all 1,548 changed-note entries before any dataset file is written. Review
+match every changed-note entry before any dataset file is written. Review
 provenance reads source inputs and never hashes published book files, avoiding
 an output dependency cycle. The maintained refresh command preserves reviews
 only when every row's evidence agrees. The edition renderer reads stored note
 roles from the book JSON without loading the ledger. The shared renderer serves both MAM-with-doc
-and near-Aleppo. Every near-Aleppo HTML run compares its MAM mode against 62
-independent tracked MAM-with-doc files at the public commit named in `edition.PIN`.
-Sealed Hebrew source strings retain their own codepoints; display projection
+and near-Aleppo; MAM-with-doc's own regenerated pages show any change it makes
+there. Stored Hebrew source strings retain their own codepoints; display projection
 uses MAM-normal mark order without Unicode normalization.
 
 The broader research census, source captures, comparison programs, scan archive,

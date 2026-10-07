@@ -3,10 +3,10 @@
 Every payload value must be independently obtainable from the sanctioned pages
 and public MAM. This validator is a necessary shape check, not that disclosure
 proof: the release was approved after its complete output was compared with the
-independent public-only projection of the previously published pages, whose
-frozen hashes ``projection_check`` still compares for every chapter whose input
-is unchanged. Do not add analysis-only alignments or source-quality fields to
-avoid decoding the displayed text in a consumer. A layout marker that one strand
+independent public-only projection of the previously published pages. Ben retired
+that projection's frozen hashes on 2026-10-07; a later change to the display shows
+in the regenerated release's diff. Do not add analysis-only alignments or
+source-quality fields to avoid decoding the displayed text in a consumer. A layout marker that one strand
 of a dual-cantillation template has alone carries that strand's label.
 """
 

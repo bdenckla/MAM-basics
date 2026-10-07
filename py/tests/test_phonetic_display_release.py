@@ -1,4 +1,4 @@
-"""Complete-corpus differential and mechanical lints for the public display."""
+"""Complete-release validation and mechanical lints for the public display."""
 
 import json
 
@@ -9,38 +9,31 @@ from phonetic_mam import (
     display_corrections,
     display_schema,
     example_display,
-    projection_check,
     release,
+    renderer,
 )
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
 
 
-def test_complete_release_and_unified_projection():
+def test_complete_release_and_display_corrections():
     release.validate_complete_release()
-    root = paths.repo_root()
-    oracle = json.loads(
-        (root / "in/phonetic_mam_legacy_projection_sha256.json").read_text(
-            encoding="utf-8"
-        )
-    )
-    inputs = json.loads(
-        (root / "in/phonetic_mam_legacy_projection_inputs.json").read_text(
-            encoding="utf-8"
-        )
-    )
-    projection_check.verify_site(
-        root / "gh-pages/phonetic-mam",
-        oracle,
-        inputs,
-        projection_check.input_fingerprints(paths.mam_parsed_plus_dir()),
-        display_corrections.read(),
-    )
+    display_corrections.read()
 
 
 def test_unified_site_controls_and_public_output_boundary():
     site = paths.gh_pages_dir() / "phonetic-mam"
     pages = list(site.rglob("*.html"))
-    assert len(pages) == 974
+    # The site's pages are exactly those the renderer names, so that a stale page,
+    # which publication.render never deletes, fails too.
+    expected = {"index.html", *example_display.PAGE_NAMES}
+    for book in release.iter_books():
+        stem = renderer._book_stem(book["book"])
+        expected.add(f"tnkh/{stem}.html")
+        expected.update(
+            f"tnkh/{stem}/{renderer._chapter_filename(chapter['number'])}"
+            for chapter in book["chapters"]
+        )
+    assert {path.relative_to(site).as_posix() for path in pages} == expected
     assert not (site / "tnkh-ashkenaz").exists()
     for path in pages:
         text = path.read_text(encoding="utf-8")

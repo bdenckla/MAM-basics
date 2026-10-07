@@ -12,17 +12,30 @@ sof pasuq on ישראל) and opens a second on the suffix; its bet strand runs t
 numbered verse as one chanted verse (atnaX on ישראל, no sof pasuq).  This is exactly what
 the detangler segments on.
 
+The tests check two rules.  Over every verse of Genesis, Exodus and Deuteronomy, a verse has
+two strand streams exactly where it has a ``cant-all-three`` span, and those two streams share
+their letters.  And each Decalogue strand MAM-simple loads is MAM-parsed-plus's, mark for mark.
+
 Run:
     .venv/Scripts/python.exe -m pytest py/tests/test_mam_simple_dualcant_loader.py -v
 """
 
 from __future__ import annotations
 
+import json
+
 import pytest
 
-from accgram import accent_marks as am
-from accgram.mam_simple_verse import load_mam_simple_for_refs
+from accgram import decalogue_m_trad as dmt
+from accgram import prose_filter
+from accgram.mam_simple_verse import load_mam_simple_for_refs, mam_simple_json_path
 from mb_cmn import paths
+from mb_cmn.uni_denorm import give_std_mark_order
+from mb_misc import osis_book_abbrevs as oba
+from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
+
+# The books of issue wlc-utils#36's three dually-cantillated loci.
+_BOOKS = ("gn", "ex", "dt")
 
 
 def _verse(bb: str, chnu: int, vrnu: int) -> dict[str, object]:
@@ -43,7 +56,33 @@ def _skels(vels: list[object]) -> list[str]:
     ]
 
 
-def test_strands_exposed_separately_and_differ_on_dual_word():
+def _nodes(value: object):
+    """Every dictionary in a raw MAM-simple structure, at any depth."""
+    if isinstance(value, dict):
+        yield value
+        for child in value.values():
+            yield from _nodes(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from _nodes(child)
+
+
+def _raw_verses(bb: str) -> dict[tuple[int, int], dict]:
+    """Every verse node of one book in its MAM-simple file, by (chapter, verse)."""
+    bk39id = wlc_bb_to_bk39id(bb)
+    prefix = f"{oba.BOOK_ABBREVS[bk39id]}."
+    path = mam_simple_json_path(paths.mam_simple_dir(), bk39id)
+    verses: dict[tuple[int, int], dict] = {}
+    for node in _nodes(json.loads(path.read_text(encoding="utf-8"))):
+        osis_id = node.get("osisID")
+        if node.get("type") == "verse" and str(osis_id).startswith(prefix):
+            _, chnu, vrnu = osis_id.split(".")
+            verses[(int(chnu), int(vrnu))] = node
+    assert verses, f"{path}: no {bb} verse"
+    return verses
+
+
+def test_strands_exposed_separately():
     verse = _verse("gn", 35, 22)
     assert set(verse) == {"vels", "vels_cant_alef", "vels_cant_bet"}
 
@@ -51,47 +90,63 @@ def test_strands_exposed_separately_and_differ_on_dual_word():
     bet = verse["vels_cant_bet"]
 
     # No longer the pre-wlc-utils#36 triple-concatenation: each strand is one word sequence
-    # (single-cant prefix + its span words + single-cant suffix), 19 tokens for Gen 35:22.
+    # (single-cant prefix + its span words + single-cant suffix).
     assert all(isinstance(tok, str) for tok in alef)
     assert all(isinstance(tok, str) for tok in bet)
     assert _skels(alef) == _skels(bet)  # same letters
-    assert len(alef) == 19
 
-    # The strands disagree on the dual span: ראובן carries zaqef qatan (U+0594) in the
-    # alef/pashut strand but revia (U+0597) in the bet/midrashit strand.
-    alef_reuven = next(
-        tok for tok in alef if "ראוב" in "".join(c for c in tok if "א" <= c <= "ת")
+
+@pytest.mark.parametrize("bb", _BOOKS)
+def test_strands_differ_exactly_where_a_verse_has_a_dual_span(bb):
+    """Without a ``cant-all-three`` span a verse has one stream; with one, two.
+
+    Without a span, the two strands and ``vels`` are the same stream.  With one, the strands
+    differ, but their letters, joined across the verse, are the same.
+    """
+    raw = _raw_verses(bb)
+    loaded = load_mam_simple_for_refs(
+        paths.mam_simple_dir(), {bb: set(raw)}, include_strands=True
     )
-    bet_reuven = next(
-        tok for tok in bet if "ראוב" in "".join(c for c in tok if "א" <= c <= "ת")
+    spans = 0
+    for (chnu, vrnu), node in sorted(raw.items()):
+        verse = loaded[f"{bb}{chnu}:{vrnu}"]["mam_simple_verse"]
+        alef, bet = verse["vels_cant_alef"], verse["vels_cant_bet"]
+        where = f"{bb} {chnu}:{vrnu}"
+        if any(n.get("type") == "cant-all-three" for n in _nodes(node)):
+            spans += 1
+            assert alef != bet, where
+            assert "".join(_skels(alef)) == "".join(_skels(bet)), where
+        else:
+            assert alef == bet == verse["vels"], where
+    assert spans, f"{bb}: no cant-all-three span"
+
+
+@pytest.mark.parametrize(
+    "bb, chnu, start, end", sorted(prose_filter._BHS_RANGE_EXCLUSIONS)
+)
+@pytest.mark.parametrize(
+    "reading, key", (("taxton", "vels_cant_alef"), ("elyon", "vels_cant_bet"))
+)
+def test_decalogue_strands_are_mam_parsed_plus_strands(
+    bb, chnu, start, end, reading, key
+):
+    """Each Decalogue strand MAM-simple loads is MAM-parsed-plus's, mark for mark.
+
+    Over the BHS range ``prose_filter`` excludes, joined without whitespace, which sets aside
+    where each source breaks its text into tokens, and with both put in MAM's standard mark
+    order by ``give_std_mark_order``.
+    """
+    refs = {(chnu, vrnu) for vrnu in range(start, end + 1)}
+    loaded = load_mam_simple_for_refs(
+        paths.mam_simple_dir(), {bb: refs}, include_strands=True
     )
-    assert am.ZAQEF_QATAN in alef_reuven and am.REVIA not in alef_reuven
-    assert am.REVIA in bet_reuven and am.ZAQEF_QATAN not in bet_reuven
-
-
-def test_per_strand_sof_pasuq_placement_drives_segmentation():
-    verse = _verse("gn", 35, 22)
-    alef = [tok for tok in verse["vels_cant_alef"] if isinstance(tok, str)]
-    bet = [tok for tok in verse["vels_cant_bet"] if isinstance(tok, str)]
-
-    # alef closes a chanted verse mid–numbered-verse (on ישראל) -> two tokens carry sof pasuq.
-    alef_sofs = [i for i, tok in enumerate(alef) if am.SOF_PASUQ in tok]
-    assert len(alef_sofs) == 2
-    assert "ישרא" in "".join(c for c in alef[alef_sofs[0]] if "א" <= c <= "ת")
-
-    # bet runs the whole numbered verse as one chanted verse: only the final token carries
-    # sof pasuq, and its ישראל (mid-verse) carries atnaX, not sof pasuq.
-    bet_sofs = [i for i, tok in enumerate(bet) if am.SOF_PASUQ in tok]
-    assert bet_sofs == [len(bet) - 1]
-    bet_israel = bet[alef_sofs[0]]
-    assert am.ATNAX in bet_israel and am.SOF_PASUQ not in bet_israel
-
-
-def test_single_cantillation_verse_in_range_yields_shared_strands():
-    # Exod 20:7 is single-cantillation (a flat-text verse) even though it sits inside
-    # the Decalogue range: both strands must be identical (no split to invent).
-    verse = _verse("ex", 20, 7)
-    assert verse["vels_cant_alef"] == verse["vels_cant_bet"] == verse["vels"]
+    simple = "".join(
+        tok
+        for vrnu in range(start, end + 1)
+        for tok in loaded[f"{bb}{chnu}:{vrnu}"]["mam_simple_verse"][key]
+    )
+    plus = "".join(dmt.from_mam_plus(bb, reading).words)
+    assert give_std_mark_order(simple) == give_std_mark_order(plus)
 
 
 if __name__ == "__main__":  # pragma: no cover

@@ -207,16 +207,6 @@ class Resolver:
         _check_mark_spacing(_flatten(resolved, other_side=True), verse)
         return _replace_marks(resolved)
 
-    def assert_expected_counts(self, expected_counts):
-        """Require the populations in the provenance-bound expectation snapshot."""
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        if drift:
-            raise AssertionError("Phase 2 populations drifted: " + "; ".join(drift))
-
     def _count(self, label, selected):
         self.counts[label if selected else label + _UNSELECTED] += 1
 

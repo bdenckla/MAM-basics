@@ -163,7 +163,7 @@ temporary-stub procedures, and historical traps.
 1. **Published:** `gh-pages/`, published from `main` once daily at 4:17 AM, New York time, and
    on manual dispatch.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`,
-   `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
+   `MAM-OSIS/`, `Phonetic-MAM/`, `Yeivin-ITM/`, and `out/near-aleppo/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 Before pushing `main` to `origin`, run the mega and the suite. Like most rules this one has
@@ -184,8 +184,7 @@ its inputs still does. A change to MAM's data does not oblige rerunning
 Product reach and whether an act is hard to undo are separate risk axes, as the user-level
 instructions explain.
 
-Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository;
-MAM-private runs its own near-Aleppo census.
+Ben decided on 2026-09-11 that `py/main_0_mega.py` writes nothing outside this repository.
 
 ## Generated clock dates and timestamps shown on pages use New York time and say so
 

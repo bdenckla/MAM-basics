@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://bdenckla.github.io/MAM-basics/Yeivin-ITM/schema/meteg-claims-v1.schema.json",
+  "$id": "https://bdenckla.github.io/MAM-basics/Yeivin-ITM/schema/meteg-claims-v2.schema.json",
   "title": "Ben's meteg claims for the selected Yeivin adaptation",
   "type": "object",
   "additionalProperties": false,
@@ -12,22 +12,17 @@
   ],
   "properties": {
     "schema": {
-      "const": "yeivin-meteg-claims-v1"
+      "const": "yeivin-meteg-claims-v2"
     },
     "input": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "identity",
-        "sha256"
+        "identity"
       ],
       "properties": {
         "identity": {
           "const": "out/accgram/meteg-before-stress.json"
-        },
-        "sha256": {
-          "type": "string",
-          "pattern": "^[0-9a-f]{64}$"
         }
       }
     },

@@ -887,10 +887,13 @@ the policy file's comments. No item is left unfixed.
 
 ### Finding 2: `DATA-LICENSES.md`
 
-1. **2.1: fixed in `2efd5de5`.** `in/accgram/printed_decalogue_teamim.json` has its own CC-BY-SA
+1. **2.1: fixed in `2efd5de5`.** `in/accgram/printed_decalogue_teamim.json` had its own CC-BY-SA
    4.0 row, and row 79 keeps Ben's hand transcriptions alone under CC0. Re-measured: the file's
-   `provenance` names page id 344500 and revision 3025606, which `in/mam-ws-special/manifest.json`
-   records for the same page.
+   `provenance` named page id 344500 and revision 3025606, which `in/mam-ws-special/manifest.json`
+   records for the same page. Later on 2026-10-07 the file and its row were deleted, and its
+   readers moved to that page's mirror, `in/mam-ws-special/decalogue-base.mediawiki`, which the
+   `in/mam-ws-special/` row covers ([PLAN-refresh-by-judgment.md](PLAN-refresh-by-judgment.md),
+   wave 5, item 2).
 2. **2.2: fixed in `2efd5de5`.** Rows 84 and 91 give MAM's CC-BY-SA 4.0 to the Hebrew that a file or
    page quotes from MAM.
 
@@ -1253,3 +1256,61 @@ file.
 **Effective base State, 2026-10-07:** acted on, with nothing deferred: item 8.10 is resolved as
 above, and every other item stands as the entries above record. The base report's line 3 stays as
 written, and this update remains `State: open` while its base survives.
+
+## The remediation's five noticed items, decided and fixed, 2026-10-07
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-07, New York
+time. It presented to Ben the five items of "Noticed while planning, not acted on" in the entry
+"Remediation executed, 2026-10-07", re-measured at `08fcae33`; three read-only sub-agents measured
+items 3 to 5, and the session re-checked their figures. At Ben's direction ("please don't use a
+worktree; why not use GitRepos3 for example") it made its changes on `main` in the full clone
+`C:/Users/BenDe/GitRepos3/MAM-basics`, brought to `origin/main` by a fast-forward-only forest sync.
+The approved trial, `doc/review-trial.md`, governed verification: each commit had the focused checks
+that its message records, and the mega and the full suite are left to the nightly run. Ben's words
+are quoted verbatim; the option wording is the session's.
+
+1. **Item 5, `DATA-LICENSES.md`: fixed in `c63019f6`.** Ben chose to add rows, then left the wording
+   to the session: "I really don't care to get involved in license questions. Period. Just do what
+   you think is best." Four rows cover near-Aleppo's dataset, its pages, its four crops and its
+   build inputs. They name J. David Stark's Aleppo Codex index, CC BY 4.0, as the source of its
+   coverage data, which `gh-pages/near-aleppo/coverage-and-status.html` now credits too. The font
+   row counts sixteen copies, fifteen published. `out/near-aleppo/LICENSE.md` keeps its paraphrase
+   of MAM's statement, which gives the attribution that the statement requires.
+2. **Item 3, Phonetic MAM's `ססס` at MAM's shirah spacing: documented in `00c5adbb`.** Phonetic MAM
+   has `ססס` at all 328 uses of `מ:ששש`, in the eight passages that MAM lays out in song form, and
+   its other break rows agree with MAM-parsed's at all 23,202 verses. Ben: "I approve of your
+   documentation of the triple shin versus triple samech issue, and I approve of changing this
+   release to be phonetic ma'am." `Phonetic-MAM/README.md` has entry 10 and says "Phonetic MAM" in
+   the 20 places where it said "this release" or "the release"; the data is unchanged.
+3. **Item 4, the break-template rows of "Reading MAM-parsed-plus": fixed in `dec4b27f`.** The row
+   that said "(primarily in D column)" renders on no page. The page's own row said that a break
+   within a verse "takes the argument פסקא באמצע פסוק", which 94 of the 185 breaks in column E
+   lack: the 78 `ססס` between the items of a list, which MAM's introduction says it has not tagged
+   throughout; the 14 inside `מ:כפול`, tagged only in the strand where the break falls within a
+   verse; and the two beside the inverted nuns of Numbers 10:35–36. Ben asked that the wording show
+   "that this is not some arbitrary alternation", suggested "rules-based exceptions" and the list
+   clause, asked for a bulleted list, and approved: "But yes, please apply the edit we're talking
+   about. And I believe there were two other similar edits in comments in Python code. Please do
+   those as well." The row gives the rule and its three exceptions as bullets, and the two strings
+   that no page shows agree with it.
+4. **Item 2, the runbook's `--sync-forest ROOT` row: fixed in `2929240b`**, a routine repair under
+   the trial. The row names the skip of the calling session's own clone first, as
+   `doc/clone-forests.md` and the code have it.
+5. **Item 1, the unquoted placeholder commands: fixed in `2929240b`**, a routine repair. The two
+   lines of `doc/PLAN-silluq-before-gaya-template.md` and the indented block at line 409 of
+   `doc/PLAN-deferred-template-projection-decisions.md` begin
+   `& "<home-clone>/.venv/Scripts/python.exe"`, item 9.22's form.
+
+**Found while re-measuring, and fixed.**
+
+1. `AGENTS.md`'s distributed-data list and `py/product_scopes.py`'s docstring omitted
+   `out/near-aleppo/`; fixed in `2929240b`.
+2. `py/main_0_mega.py`'s docstring and a comment said that the `near-aleppo-census` step was
+   deleted, though a local census has run under that name since 2026-10-05; fixed in `2929240b`.
+3. `DATA-LICENSES.md` had no row for `gh-pages/document.css`, `report.css`, `style.css` and
+   `favicon.svg`, MAM-basics' own work; they take GPL-3.0 in `92dcc38a`, under Ben's licence
+   delegation in item 1 above.
+
+**Effective base State, 2026-10-07:** acted on, with nothing deferred: the five items noticed while
+planning are fixed or documented as above. The base report's line 3 stays as written, and this
+update remains `State: open` while its base survives.

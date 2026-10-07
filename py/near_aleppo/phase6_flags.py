@@ -49,10 +49,11 @@ from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 APPLIED_AND_FLAGGED = phase2.APPLIED_AND_FLAGGED
 FLAGGED_NOT_APPLIED = phase2.FLAGGED_NOT_APPLIED
 
-# ``nusach_aleppo_readings.py`` is the census authority for the qualified
-# clause populations, and ``doubt_marked_forms.py`` is the authority for the
-# unqualified clauses whose quoted form ends in a question mark. The build
-# snapshot pins both their counts and their exact verse sites.
+# ``census/nusach_aleppo_readings.py`` is the census authority for the qualified
+# clause populations, and MAM-private's near-Aleppo research has the authority for
+# the unqualified clauses whose quoted form ends in a question mark. The build
+# records both their counts and their exact verse sites in
+# in/near-aleppo/build-populations.json, pinning neither.
 
 _QERE_SILENCE = "MAM's apparatus does not say whether the codex has a qere note here"
 _MAQAF_SILENCE = "MAM's apparatus does not say whether the codex has the maqaf here"
@@ -166,15 +167,23 @@ _AGREEING_BANG_VERSES = (
     ("D1-Psalms", "25", "21"),
     ("D1-Psalms", "35", "14"),
 )
+# Each verse these two tables name must have exactly one note to which its rule
+# applies, as each silence site must be found once.
+_NAMED_TABLES = {
+    _NAMED_DOUBT: _NAMED_DOUBT_VERSES,
+    _BANG_AGREEING: _AGREEING_BANG_VERSES,
+}
 
 
 class Flags:
-    """Add flags verse by verse and record every asserted population."""
+    """Add flags verse by verse and record every population."""
 
     def __init__(self):
         self.counts = Counter()
         self.sites = defaultdict(list)
         self._silence_found = Counter()
+        # How many notes each rule of _NAMED_TABLES applied to, by (rule, verse).
+        self._named_found = Counter()
         # Each נוסח of the current verse by its identity, with its position among the
         # verse's notes as phase 5 numbers them, which the in-place test takes.
         self._note_numbers = {}
@@ -210,22 +219,13 @@ class Flags:
                     f"{verse}: silence table site {site[1:4]} was found "
                     f"{self._silence_found[site]} times, not 1"
                 )
+        for label, verses in _NAMED_TABLES.items():
+            if verse in verses and self._named_found[label, verse] != 1:
+                raise AssertionError(
+                    f"{verse}: the {label!r} rule applied to "
+                    f"{self._named_found[label, verse]} notes, not 1"
+                )
         return cell
-
-    def assert_expected_counts(self, expected_counts, expected_sites):
-        """Require the populations in the provenance-bound expectation snapshot."""
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        drift += [
-            f"{label}: expected at {expected}, build at {self.sites[label]}"
-            for label, expected in expected_sites.items()
-            if self.sites[label] != expected
-        ]
-        if drift:
-            raise AssertionError("Flag populations drifted: " + "; ".join(drift))
 
     def _walk(self, value, verse, note_depth):
         if isinstance(value, str):
@@ -323,6 +323,7 @@ class Flags:
         if verse in _NAMED_DOUBT_VERSES:
             value = _one_agreeing_clause(clauses, verse, "?")
             self._found(_NAMED_DOUBT, verse)
+            self._named_found[_NAMED_DOUBT, verse] += 1
             _merge_flag(flags, FLAGGED_NOT_APPLIED, value, verse)
         if verse in _AGREEING_BANG_VERSES:
             if MAM_TARGET_PARAMETER in params:
@@ -331,6 +332,7 @@ class Flags:
                 )
             value = _one_agreeing_clause(clauses, verse, "!")
             self._found(_BANG_AGREEING, verse)
+            self._named_found[_BANG_AGREEING, verse] += 1
             _merge_flag(flags, APPLIED_AND_FLAGGED, value, verse)
         not_applied = phase5.NOT_APPLIED_READINGS.get(verse)
         if not_applied is not None and not_applied.note == number:

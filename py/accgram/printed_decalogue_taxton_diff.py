@@ -5,7 +5,7 @@ counted it its own way with no stated criterion -- 3 on the hub, 5 on the Koren 
 ``tests/test_edition_transcriptions.py`` -- so no two of the three agreed and none could be
 checked.  A 2026-07-25 claim-extraction audit of the rendered prose found the hub's "three"
 flatly false against the table printed directly beneath it.  This module is the answer: ONE
-criterion, applied once, with the counts derived from the vendored data instead of typed into
+criterion, applied once, with the counts derived from the mirrored data instead of typed into
 three prose sites.
 
 **The criterion.**  A difference SITE is one chanted word at which the two strands' text
@@ -35,8 +35,8 @@ and nothing in its Sabbath commandment at all, which is why the Koren and Simani
 Exodus Decalogue cannot adjudicate the Shabbat commandment.
 
 Pure computation, like ``printed_decalogue_strands``: no HTML, and every accessor raises rather
-than returns a wrong answer, so a re-vendoring that moved a difference fails at page-generation
-time instead of leaving three pages' prose describing the old set.
+than returns a wrong answer, so a refresh of the mirror that moved a difference fails at
+page-generation time instead of leaving three pages' prose describing the old set.
 """
 
 from __future__ import annotations
@@ -74,8 +74,9 @@ def diff_sites(m_words: tuple[str, ...], p_words: tuple[str, ...]) -> list[Site]
     advance past it together.  This alignment is where the trio's "counted once, at the atom whose
     marking changed" rule is actually implemented.
 
-    Raises if the skeletons cannot be reconciled or a side runs out of chanted words -- the strands would
-    then no longer be the same text, which is a re-vendoring to look at rather than to render.
+    Raises if the skeletons cannot be reconciled or a side runs out of chanted words -- the
+    strands would then no longer be the same text, which is a refresh of the mirror to look at
+    rather than to render.
     """
     sites: list[Site] = []
     i = j = 0
@@ -97,7 +98,7 @@ def diff_sites(m_words: tuple[str, ...], p_words: tuple[str, ...]) -> list[Site]
                 raise AssertionError(
                     "cannot align the two תחתון strands at m-trad word "
                     f"{i} / p-trad word {j}: skeletons {skel_m!r} vs {skel_p!r} "
-                    "-- the vendored readings drifted"
+                    "-- the mirrored readings drifted"
                 )
             if grow_m:
                 take_m += 1
@@ -142,7 +143,7 @@ def sabbath_verse_words(
     if len(sabbath) != 1:
         raise AssertionError(
             f"dt taxton {tradition}: expected exactly 1 Sabbath verse (skeleton "
-            f"{_SABBATH_SKELETON}), found {len(sabbath)} -- the vendored readings drifted"
+            f"{_SABBATH_SKELETON}), found {len(sabbath)} -- the mirrored readings drifted"
         )
     return sabbath[0].words
 
@@ -210,7 +211,7 @@ def dt_taxton_diff_counts(results: list[pd.VersionResult]) -> dict[str, int]:
     if counts != DT_TAXTON_DECOMPOSITION:
         raise AssertionError(
             f"the two dt תחתון strands now part at {counts}, not "
-            f"{DT_TAXTON_DECOMPOSITION} -- the vendored readings drifted, and the prose of all "
+            f"{DT_TAXTON_DECOMPOSITION} -- the mirrored readings drifted, and the prose of all "
             "three printed-Decalogue pages states these numbers"
         )
     in_sabbath = len(
@@ -229,7 +230,7 @@ def dt_taxton_diff_counts(results: list[pd.VersionResult]) -> dict[str, int]:
     if ex_counts != EX_TAXTON_DECOMPOSITION:
         raise AssertionError(
             f"the two ex תחתון strands now part at {ex_counts}, not "
-            f"{EX_TAXTON_DECOMPOSITION} -- the vendored readings drifted, and the Koren and "
+            f"{EX_TAXTON_DECOMPOSITION} -- the mirrored readings drifted, and the Koren and "
             "Simanim pages say an Exodus Decalogue reaches no Shabbat difference"
         )
     return counts

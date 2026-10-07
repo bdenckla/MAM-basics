@@ -1,5 +1,5 @@
 {
-  "format": "near-aleppo-editorial-pointing-v1",
+  "format": "near-aleppo-editorial-pointing-v2",
   "records": [
     {
       "id": "C3-Ezekiel:42:9:0",
@@ -11,7 +11,11 @@
       "path": [
         0
       ],
-      "expected_sha256": "5344d2b9755652a5e25521ff22eb58ec5deb3ffa1ff3751953f269822dfb2df3",
+      "tmpl_params": {
+        "1": "ומתחתה לשכות",
+        "2": "וּמִתַּ֖חַת הַלְּשָׁכ֣וֹת",
+        "סוג": "כו\"ק של שתי מילים בהערה אחת"
+      },
       "ga": "וּמִתַּ֖חַתה «אַ»לְּשָׁכ֣וֹת",
       "value": [
         "וּמִתַּ֖חַתה ",
@@ -36,7 +40,10 @@
         "tmpl_params",
         "1"
       ],
-      "expected_sha256": "fff970407a103e357fd5929f653527cf8a40d7c29d136bd75f3b3a3d51cef900",
+      "tmpl_params": {
+        "1": "שוי",
+        "2": "שַׁוִּ֗יו"
+      },
       "ga": "שַׁוִּ֗י",
       "value": "שַׁוִּ֗י"
     },
@@ -52,7 +59,10 @@
         "tmpl_params",
         "1"
       ],
-      "expected_sha256": "6dfccff86e2d547500bc3b129e8c732c8a0224b2c1e629606c62cde6ca443cb1",
+      "tmpl_params": {
+        "1": "והמנוכא",
+        "2": "וְהַֽמְנִיכָ֤א"
+      },
       "ga": "וְהַֽמְנִוכָ֤א",
       "value": "וְהַֽמְנִוכָ֤א"
     },
@@ -68,7 +78,10 @@
         "tmpl_params",
         "1"
       ],
-      "expected_sha256": "2d053b64a67cbc3f8861a4f436d7dc0327f0d337b09092669cc792ad4b5a1883",
+      "tmpl_params": {
+        "1": "והמנוכא",
+        "2": "וְהַֽמְנִיכָ֥א"
+      },
       "ga": "וְהַֽמְנִוכָ֥א",
       "value": "וְהַֽמְנִוכָ֥א"
     },
@@ -84,7 +97,10 @@
         "tmpl_params",
         "1"
       ],
-      "expected_sha256": "75cdff21a61c8612d5534ce4dce6fb4e6f07f8601b299f959057fc88b25b3cbc",
+      "tmpl_params": {
+        "1": "וישתחו",
+        "2": "וַיִּֽשְׁתַּחֲוֽוּ"
+      },
       "ga": "וַיִּֽשְׁתַּחֲוּֽ",
       "value": "וַיִּֽשְׁתַּחֲוּֽ"
     }

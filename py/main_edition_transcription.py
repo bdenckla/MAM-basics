@@ -30,7 +30,7 @@ Subcommands:
                 band comes from the export's own px_source coordinates, so the zoom is
                 anchored to what was transcribed.
     check
-                Check a hand transcription against its vendored Wikisource strand, before
+                Check a hand transcription against its mirrored Wikisource strand, before
                 it is committed: name the editor's downloaded export(s) as paths and the
                 strand with --key BOOK STRAND KIND, or name an already committed
                 transcription with --stem, which takes its strand from the .txt header.
@@ -158,7 +158,7 @@ def build_parser() -> argparse.ArgumentParser:
     check_parser = subparsers.add_parser(
         "check",
         help=(
-            "Check a hand transcription against its vendored Wikisource strand. Name the "
+            "Check a hand transcription against its mirrored Wikisource strand. Name the "
             "editor's export(s) as paths with --key BOOK STRAND KIND, or a committed "
             "transcription with --stem; --site SKELETON NEXT_SKELETON instead reports "
             "what every strand does at one site."

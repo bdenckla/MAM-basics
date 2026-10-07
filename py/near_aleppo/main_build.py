@@ -1,20 +1,21 @@
-"""Build the near-Aleppo dataset from local MAM-parsed-plus and sealed pointings.
+"""Build the near-Aleppo dataset from local MAM-parsed-plus and stored pointings.
 
 The pipeline resolves E-column templates, applies representation policies and
 readings quoted in MAM's notes, then adds frozen, individual and reviewed
-pointings in that priority order. All prior pointings are guarded against changed
-source data. Original MAM targets are copied into changed notes before flags and
+pointings in that priority order. Each stored pointing records the ketiv and qere
+it was made for, and the build stops, naming the record, where the template no
+longer has them. Original MAM targets are copied into changed notes before flags and
 reviewed note-content baking. C and D columns are preserved. Changed notes carry
 reviewed near-Aleppo clauses and the remaining original clauses in MAM context.
 
 Every book is built and checked in memory before any output is written. The
-population snapshot is in in/near-aleppo/build-populations.json. A successful
-local census may refresh only its mechanically supported counts; sensitive site
-lists and added-target populations stay pinned and require review when they move.
+counts that the local census also reports must agree with it
+(build_expectations.py). The build then writes its counts, with the verses where
+it recorded them, to in/near-aleppo/build-populations.json beside the dataset, so
+that their diff shows what a change moved; no count or site there is pinned.
 
 Use py/main_near_aleppo.py --build, or add --check to compare the 24 book files
-under out/near-aleppo/plus without writing. --refresh-expectations is the
-census-following mega mode and does not authorize new editorial decisions.
+under out/near-aleppo/plus and the population file without writing.
 """
 
 import argparse
@@ -22,6 +23,7 @@ import copy
 import json
 import sys
 
+from mb_cmn import bib_locales as tbn
 from near_aleppo import build_paths
 from near_aleppo import build_expectations
 from near_aleppo import consumer_notice
@@ -37,8 +39,8 @@ from near_aleppo.frozen_ketiv import FrozenPointing
 from near_aleppo.editorial_ketiv import EditorialPointing
 from near_aleppo.reviewed_ketiv import ReviewedPointing
 
-_BOOK_FILE_COUNT = 24
-_VERSE_COUNT = 23202  # "verses in MAM", baseline section 7
+# The stem of each of MAM-parsed-plus's 24 book files.
+_BOOK_STEMS = frozenset(tbn.ordered_short_dash_full_24(b) for b in tbn.ALL_BK24_IDS)
 
 
 def build(bake_notes=True):
@@ -50,9 +52,11 @@ def build(bake_notes=True):
         notes = NoteContent(doc_note_review.check())
     in_dir = build_paths.mam_parsed_plus_dir()
     paths = sorted(in_dir.glob("*.json"))
-    if len(paths) != _BOOK_FILE_COUNT:
+    stems = {path.stem for path in paths}
+    if stems != _BOOK_STEMS:
         raise AssertionError(
-            f"Expected {_BOOK_FILE_COUNT} book files in {in_dir}, found {len(paths)}"
+            f"{in_dir}: books missing {sorted(_BOOK_STEMS - stems)}, unknown files "
+            f"{sorted(stems - _BOOK_STEMS)}"
         )
     resolver = Resolver()
     policies = Policies()
@@ -60,10 +64,9 @@ def build(bake_notes=True):
     mam_targets = MamTargets()
     flags = Flags()
     renames = Renames(source_replay=not bake_notes)
-    frozen = FrozenPointing(in_dir)
+    frozen = FrozenPointing()
     editorial = EditorialPointing()
-    reviewed = ReviewedPointing(in_dir)
-    verses = 0
+    reviewed = ReviewedPointing()
     out = {}
     for path in paths:
         book = json.loads(path.read_text(encoding="utf-8"))
@@ -86,7 +89,6 @@ def build(bake_notes=True):
                     mam_cell = copy.deepcopy(cells[2])
                     resolved = resolver.resolve_e_cell(cells[2], ref)
                     cells[2] = policies.apply_e_cell(resolved, ref)
-                    frozen.check_source(cells[2], ref)
                     cells[2] = readings.apply_e_cell(cells[2], ref)
                     flag_evidence = (
                         copy.deepcopy(cells[2])
@@ -105,7 +107,6 @@ def build(bake_notes=True):
                     mam_targets.add_to_e_cell(mam_cell, cells[2], ref)
                     flags.add_to_e_cell(cells[2], ref, evidence_cell=flag_evidence)
                     book_verses.append((cells, ref))
-                    verses += 1
         assert_templates_absent(book, path.name, MAM_TARGET_PARAMETER)
         # Rename after assert_templates_absent, which knows MAM's note names,
         # then bake reviewed content. Both preserve Scripture readings.
@@ -116,8 +117,6 @@ def build(bake_notes=True):
         consumer_notice.set_in_header(book["header"], path.name)
         text = json.dumps(book, indent=2, ensure_ascii=False) + "\n"
         out[path.name] = text.encode("utf-8")
-    if verses != _VERSE_COUNT:
-        raise AssertionError(f"Expected {_VERSE_COUNT} verses, read {verses}")
     frozen.finish()
     editorial.finish()
     reviewed.finish()
@@ -126,7 +125,8 @@ def build(bake_notes=True):
     return out, resolver, policies, readings, mam_targets, flags, renames
 
 
-def write(dataset):
+def write(dataset, populations):
+    """Write the dataset's book files, then ``populations``, the population file."""
     out_dir = build_paths.dataset_dir()
     out_dir.mkdir(parents=True, exist_ok=True)
     extra = sorted(p.name for p in out_dir.iterdir() if p.name not in dataset)
@@ -135,9 +135,11 @@ def write(dataset):
     for name, data in dataset.items():
         (out_dir / name).write_bytes(data)
     print(f"Wrote {len(dataset)} files to {out_dir}")
+    build_expectations.write(populations)
 
 
-def check(dataset):
+def check(dataset, populations):
+    """Compare the dataset and ``populations`` with the tracked files."""
     out_dir = build_paths.dataset_dir()
     problems = []
     for name, data in dataset.items():
@@ -152,12 +154,20 @@ def check(dataset):
             for p in sorted(out_dir.iterdir())
             if p.name not in dataset
         ]
+    populations_path = build_expectations.POPULATIONS_PATH
+    if not populations_path.exists():
+        problems.append(f"missing {populations_path}")
+    elif populations_path.read_bytes() != populations.encode("utf-8"):
+        problems.append(f"differs {populations_path}")
     if problems:
-        print(f"The dataset in {out_dir} is not current:")
+        print(f"The dataset in {out_dir} or its population file is not current:")
         for problem in problems:
             print(f"  {problem}")
         return 1
-    print(f"The dataset in {out_dir} is current ({len(dataset)} files)")
+    print(
+        f"The dataset in {out_dir} is current ({len(dataset)} files), "
+        f"and so is {populations_path.name}"
+    )
     return 0
 
 
@@ -168,49 +178,19 @@ def main(argv=None):
     parser.add_argument(
         "--check",
         action="store_true",
-        help="Rebuild in memory and compare with the tracked dataset; write nothing.",
-    )
-    parser.add_argument(
-        "--refresh-expectations",
-        action="store_true",
         help=(
-            "After a successful current census, accept only its mechanically "
-            "supported input-driven population changes and rebuild the dataset."
+            "Rebuild in memory and compare with the tracked dataset and population "
+            "file; write nothing."
         ),
     )
     args = parser.parse_args(argv)
-    if args.check and args.refresh_expectations:
-        parser.error("--check and --refresh-expectations are mutually exclusive")
-
-    in_dir = build_paths.mam_parsed_plus_dir()
-    current_ids = build_expectations.current_census_input_ids(in_dir)
-    snapshot = build_expectations.load()
-    refresh = not build_expectations.is_current(snapshot, current_ids)
-    if refresh and not args.refresh_expectations:
-        raise RuntimeError(
-            "The build-population snapshot is stale against the current, "
-            "provenance-checked census. Run the root mega regeneration, which "
-            "invokes this build with --refresh-expectations."
-        )
-    expected = (
-        build_expectations.refreshed(snapshot, current_ids) if refresh else snapshot
-    )
 
     dataset, resolver, policies, readings, mam_targets, flags, renames = build()
-    resolver.assert_expected_counts(expected["phase2_counts"])
-    policies.assert_expected_counts(
-        expected["phase3_counts"], build_expectations.phase3_sites(expected)
+    build_expectations.assert_census_agrees(resolver, policies, readings, mam_targets)
+    renames.assert_expected_counts(mam_targets.counts)
+    populations = build_expectations.render(
+        resolver, policies, readings, mam_targets, flags
     )
-    readings.assert_expected_counts(
-        expected["phase5_counts"], build_expectations.phase5_sites(expected)
-    )
-    mam_targets.assert_expected_counts(expected["phase6_counts"])
-    flags.assert_expected_counts(
-        expected["flag_counts"], build_expectations.flag_sites(expected)
-    )
-    renames.assert_expected_counts(expected["phase6_counts"])
     if args.check:
-        return check(dataset)
-    if args.refresh_expectations:
-        build_expectations.write(expected)
-    write(dataset)
+        return check(dataset, populations)
+    write(dataset, populations)

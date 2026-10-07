@@ -2,8 +2,9 @@
 edition rather than a hand transcription.
 
 CTR (``ctr_decalogue_fetch.py``) is a VENDORED STRAND: digital, accent-exact Hebrew, so its
-marks are compared mechanically against the reference ``printed_decalogue_teamim.json`` rather
-than read off a page.  What it turns out to follow is the surprise this module finds:
+marks are compared mechanically against the reference strands in
+``in/mam-ws-special/decalogue-base.mediawiki`` rather than read off a page.  What it turns out
+to follow is the surprise this module finds:
 
 * CTR's **Exodus 20** has the ta'am **elyon** accents (not the taxton the running text was
   expected to hold) under a punctuation that is NEITHER strand's: sixteen sof pasuqs, the exact

@@ -84,6 +84,7 @@ U+0323 to U+1E25/U+1E24 is a simple, unambiguous Latin-script composition.
 """
 
 import io
+import json
 import subprocess
 import tokenize
 import unicodedata
@@ -155,6 +156,25 @@ _EXCLUDE_FILES = {
     "in/accgram/uxlc_accent_changes.json",
 }
 
+# Byte-verbatim captures of Hebrew Wikisource pages beside hand-written files, so excluded
+# by name (AGENTS.md: never repair them): the mirrored introduction's manifest and every
+# page it lists, which the introduction's refresh rewrites, and one section of the
+# Village Pump, captured once.  The README beside the introduction's pages stays in scope.
+_INTRO_MANIFEST = "in/mam-ws-intro/manifest.json"
+
+
+def _capture_files() -> frozenset[str]:
+    manifest = json.loads(
+        (paths.repo_root() / _INTRO_MANIFEST).read_text(encoding="utf-8")
+    )
+    pages = {f"in/mam-ws-intro/{slug}.mediawiki" for slug in manifest["pages"]}
+    assert pages, f"{_INTRO_MANIFEST} lists no page"
+    return frozenset(
+        {_INTRO_MANIFEST, "doc/wikisource-dagesh-discussion-2026-10-01.mediawiki"}
+        | pages
+    )
+
+
 # External/generated directory prefixes: out/ (generated) and external
 # Bible-text import snapshots under in/ (Sefaria, Mechon Mamre CSV exports,
 # Chabad.org, Wikisource-derived edit specs).
@@ -176,6 +196,8 @@ _EXCLUDE_DIR_PREFIXES = (
     "in/mam-from-Sefaria-2021-11-23/",
     "in/mam-ws/",
     "in/mam-ws-bot-edits/",
+    # Byte-verbatim captures that downloads rewrite; AGENTS.md: never repair them.
+    "in/mam-ws-special/",
     "in/chabad-ctr/",
     "in/UXLC-39/",
     "in/UXLC-misc/",
@@ -321,7 +343,9 @@ def _scopes() -> tuple[_Scope, ...]:
             label="MAM-basics",
             root=paths.repo_root(),
             exclude_dir_prefixes=_EXCLUDE_DIR_PREFIXES,
-            exclude_files=frozenset(_EXCLUDE_189_FILES | _EXCLUDE_FILES),
+            exclude_files=frozenset(
+                _EXCLUDE_189_FILES | _EXCLUDE_FILES | _capture_files()
+            ),
             floor=100,
         ),
         _Scope(

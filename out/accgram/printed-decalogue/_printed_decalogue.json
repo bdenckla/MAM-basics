@@ -15,7 +15,7 @@
     "pageid": 344500,
     "oldid": 3025606,
     "revision_timestamp": "2026-07-20T12:59:22Z",
-    "resolution_notes": "Two representations per version. chanted_verses is the FOLDED, scanner-ready form: {{מ:לגרמיה}}/{{מ:פסק}} -> U+05C0 paseq folded onto the preceding word; {{מ:קמץ|ד=X|ס=Y}} -> X; {{כו\"ק|ketiv|qere}} -> qere; paragraph/pisqa markers dropped; inner <קטע> tags stripped. faithful_chanted_verses strips ONLY the <קטע> tags, keeping those templates in place, so legarmeh vs narrow-sense paseq, ketiv/qere and the setumah/petuxah breaks are preserved (issue #74); chanted_verses is derived from it by folding. Both split into chanted verses at sof pasuq."
+    "resolution_notes": "Two representations per version. chanted_verses is the FOLDED, scanner-ready form: {{מ:לגרמיה}}/{{מ:פסק}} -> U+05C0 paseq folded onto the preceding word; {{מ:קמץ|ד=X|ס=Y}} -> X; {{כו\"ק|ketiv|qere}} -> qere; paragraph/pisqa markers dropped; inner <קטע> tags stripped. faithful_chanted_verses strips ONLY the <קטע> tags, keeping those templates in place, so legarmeh vs narrow-sense paseq, ketiv/qere and the setumah/petuxah breaks are preserved (issue wlc-utils#74); chanted_verses is derived from it by folding. Both split into chanted verses at sof pasuq."
   },
   "versions": [
     {

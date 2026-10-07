@@ -4,7 +4,7 @@ grammaticality report (issue wlc-utils#52).
 Companion to the dual-cantillation work of issue wlc-utils#36 (which grammar-checks the *manuscript*
 taxton/elyon strands by detangling WLC): this page reports whether the *printed tradition*'s
 (דפוסים) taxton and elyon accentuations of the two Decalogues parse under the same prose
-grammar checker.  It renders live from ``printed_decalogue.check_all`` over the vendored
+grammar checker.  It renders live from ``printed_decalogue.check_all`` over the mirrored
 readings, so it can never drift from the checker's real behaviour.
 
 It also lays out the four cantillation strands of the opening אנכי...מצותי span (manuscript /
@@ -25,7 +25,7 @@ documented; the hub must not assert what a satellite does not.
 
 The appendix cataloguing how the two taxton strands differ states counts, and every one of them
 is derived: ``printed_decalogue_taxton_diff`` re-counts the whole Deuteronomy divergence set from
-the vendored words on each generation and raises unless it still decomposes as pinned there.  A
+the mirrored words on each generation and raises unless it still decomposes as pinned there.  A
 2026-07-25 claim audit found the appendix asserting "three" against a table showing seven, which
 is why no number in it is typed any more.
 
@@ -464,7 +464,7 @@ def _word_at(r: pds.Reading, skeleton: str) -> str:
             return word
     raise AssertionError(
         f"{r.name}: no word with skeleton {skeleton!r} in its אנכי…מצותי span"
-        " -- the vendored readings drifted"
+        " -- the mirrored readings drifted"
     )
 
 
@@ -481,7 +481,7 @@ def _span_cells(r: pds.Reading) -> list[object]:
         if ends_verse != (hpunc.SOPA in word):
             raise AssertionError(
                 f"{r.name}: {skel!r} ends a chanted verse = {ends_verse}, but its sof pasuq"
-                f" says otherwise -- the vendored readings drifted"
+                f" says otherwise -- the mirrored readings drifted"
             )
         # Column 0 is אנכי, the shared start, and is never verse-final in any strand -- so the
         # green start and a red stop can never collide in one cell.
@@ -1044,7 +1044,7 @@ _ACCENT_HI = ord("\N{HEBREW ACCENT ZINOR}")  # U+05AE, last (meteg U+05BD is exc
 # disjunctive accent in both — the only kind of point where a break keeps the m-trad and p-trad
 # lines aligned. These three (of the stretch's shared disjunctive boundaries) give three ~even
 # pairs. _split_into_lines asserts each lands, in order, and is genuinely disjunctive, so any drift
-# in the vendored accents fails the build instead of silently mis-breaking.
+# in the mirrored accents fails the build instead of silently mis-breaking.
 _SABBATH_LINE_ENDS: tuple[str, ...] = ("כלמלאכה", "ועבדךואמתך", "וכלבהמתך")
 
 
@@ -1079,7 +1079,7 @@ def _differing_span(
 def _split_into_lines(words: list[str], line_ends: tuple[str, ...]) -> list[list[str]]:
     """Split ``words`` into the successive line groups ending at each skeleton in ``line_ends``.
     Asserts every break lands, in order, consumes the whole stretch, and ends on a word that really
-    carries a disjunctive accent — so any drift in the vendored words/accents fails the build.
+    carries a disjunctive accent — so any drift in the mirrored words/accents fails the build.
     """
     lines: list[list[str]] = []
     cur: list[str] = []
@@ -1096,7 +1096,7 @@ def _split_into_lines(words: list[str], line_ends: tuple[str, ...]) -> list[list
     if cur or pending:
         raise AssertionError(
             f"sabbath line split: leftover words {cur!r} / unconsumed line-ends {pending!r}"
-            " -- the vendored readings drifted"
+            " -- the mirrored readings drifted"
         )
     return lines
 
@@ -1175,7 +1175,7 @@ def _pausal_table(results: list[pd.VersionResult]) -> object:
     two words differ by strand and not by tradition (which ``pds.resolve_pausal`` checks against
     all eight readings before handing back a single form).
 
-    Every cell is derived: the pointed word comes from the vendored data and its vowel and accent
+    Every cell is derived: the pointed word comes from the mirrored data and its vowel and accent
     are read off its marks, so the table cannot claim a vowel or an accent the text does not have.
     Vowel names render plain and accent names italic, matching the vocalization table above and the
     page's prose respectively."""
@@ -1215,7 +1215,7 @@ def _pausal_table(results: list[pd.VersionResult]) -> object:
 # in miniature. State the two words' case flatly; let the contrast land when תרצח arrives.
 #
 # (2) EVERY FACTUAL CLAIM IS DERIVED OR PINNED. The vowels and accents in the table come off the
-# vendored marks (pds.resolve_pausal), which additionally checks all eight readings agree at both
+# mirrored marks (pds.resolve_pausal), which additionally checks all eight readings agree at both
 # words -- the "by strand, not by tradition" claim. The prose's claims about תרצח in the עליון are
 # pinned by pds.check_tirtsax, called below for exactly that reason: a 2026-07-25 claim audit found
 # this appendix asserting things its own tables contradicted, and prose about a fourth word is
@@ -1295,7 +1295,7 @@ def _pausal_paras(results: list[pd.VersionResult]) -> tuple[object, ...]:
 
 def _appendix_section(results: list[pd.VersionResult]) -> tuple[object, ...]:
     # Every number in this appendix is DERIVED, and the derivation raises on drift: this one call
-    # re-counts the whole Deuteronomy divergence set from the vendored words and fails the build
+    # re-counts the whole Deuteronomy divergence set from the mirrored words and fails the build
     # unless it still decomposes as printed_decalogue_taxton_diff pins it (12 = 4 boundary + 7
     # Sabbath + 1 vocalization), and unless the seven really do all fall inside the Sabbath chanted
     # verse. That last check is what licenses the prose's "a single stretch".

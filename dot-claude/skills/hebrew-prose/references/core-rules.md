@@ -164,7 +164,7 @@ and drops vowels, dagesh and the sin/shin dots. Ben, same day, on a first pass t
 vowels in such discussions."* The exception is a table where the vowel **is** the point (the
 `printed-decalogue-vowel-diff` and pausal tables), which says so in its own comment.
 
-**Never retype an accent**: lift the form from the vendored data at generation time, with an
+**Never retype an accent**: lift the form from the mirrored data at generation time, with an
 assertion that the lookup still finds exactly one match. A hand-typed accent is a claim with no
 oracle behind it. The pattern is `maqaf_nonfinal_accents_page`'s `_find_span()` / `_render_span()`
 pair (2026-07-29, replacing the `lo_taase_atoms()` / `simtiq_lo_compounds()` this line used to

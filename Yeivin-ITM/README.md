@@ -63,23 +63,24 @@ internal links, and anchors. The maintained entry point is `py/main_yeivin_itm.p
   `Yeivin-ITM/meteg-claims.json`
 - `render` reads the adaptation and tracked claim data and writes the pages,
   the unchanged historical stylesheet, and the complete Taamey D font/source notices
-- `check` verifies the claim projection, prose pins, source lint, page bytes, and
-  complete asset mapping without writing
-- `review-claims` reports the claim population, pins, and page lines that the
-  current analysis would change, without writing
+- `check` verifies the claim projection, prose pins, quoted forms, source lint,
+  page bytes, and complete asset mapping without writing
+- `review-claims` reports the pins, quoted forms, and page lines that the current
+  analysis would change, without writing
 
 All four commands run from the repository root without private inputs. The meteg
 analysis is independently owned by accgram and consumes the tracked public
 Phonetic MAM release; it is not run by the Yeivin renderer.
 
 `meteg-claims.json` follows the closed schema in
-`schema/meteg-claims-v1.schema.json`. The schema's `$id`,
-`https://bdenckla.github.io/MAM-basics/Yeivin-ITM/schema/meteg-claims-v1.schema.json`,
+`schema/meteg-claims-v2.schema.json`. The schema's `$id`,
+`https://bdenckla.github.io/MAM-basics/Yeivin-ITM/schema/meteg-claims-v2.schema.json`,
 identifies the schema; it is not where the schema is served, since Pages publishes
-only `gh-pages/`. Read the schema from this directory. The claim file records the
-exact input identity and SHA-256, named populations and exclusions, integer
-numerators and denominators, and percentages derived directly from those
-fractions. Existing examples remain
+only `gh-pages/`. Read the schema from this directory. Version 1, which also
+recorded the analysis file's SHA-256, was replaced on 2026-10-07. The claim file
+records the path of the analysis it was projected from, named populations and
+exclusions, integer numerators and denominators, and percentages derived directly
+from those fractions. Existing examples remain
 in the adaptation; no new source excerpts or examples are included in the data.
 The counts retain the analysis's cantillation and qamats projection, with no
 extra filters invented to reproduce historical workbook figures.
@@ -87,15 +88,17 @@ extra filters invented to reproduce historical workbook figures.
 Ben approved correction of his added claims and their explanatory prose on
 2026-10-01, and the 11 fractions that the oleh-weyored correction changed on
 2026-10-03. The prose pins in `py/yeivin_itm/claim_schema.py` fix the 20 reviewed
-fractions and a SHA-256 of the claim population: every record in the ordinary
-population of `out/accgram/meteg-before-stress.json` whose pattern is FR1, FR2,
-FR3, AFR1, AFR4 or XAFR1. A changed fraction, or a changed, added or removed
-record in that population, therefore requires Ben's fresh review; a change
-elsewhere in the Phonetic MAM release does not. Until he approves new pins,
-`survey-meteg-claims` and `check` raise and write nothing. The claim file's input
-SHA-256 identifies the whole analysis file that it was projected from; it is not a
-pin. Numerical text is inserted from named claim references before HTML line
-wrapping. Percentages are rounded once from the original fractions.
+fractions. `py/yeivin_itm/quoted_forms.py` lists the 13 forms that the two
+survey-backed footnotes quote, each with the pattern and populations that the
+footnote's prose gives it, and the projection checks each against
+`out/accgram/meteg-before-stress.json`: one record at the verse has the form, with
+that pattern and in those populations. Where a footnote lists the records of a
+measurement beside its count, the list must be exactly that measurement's
+records. A changed fraction or a failing quoted form therefore requires Ben's
+fresh review; any other change in the Phonetic MAM release does not. Until he
+approves new pins or footnote edits, `survey-meteg-claims` and `check` raise and
+write nothing. Numerical text is inserted from named claim references before HTML
+line wrapping. Percentages are rounded once from the original fractions.
 
 `in/yeivin_itm_legacy_differential.json` is the frozen record of the migration from
 phonetic-hbo commit `8da90513df1c759d8db34b135d007e79686715d3`. From the pages and
@@ -126,7 +129,7 @@ to equal regeneration, every internal link and fragment to resolve, and every
 biblical reference that a page's `data-bk-ch-vr` or `data-bk-ch-vr-2` attribute
 holds, or that a source string holds as its whole value, to name a verse in one of
 the three versifications that MAM-simple ships. Ben's numerical claims are not edited in the pages; they come
-from `meteg-claims.json` under the pins described above.
+from `meteg-claims.json` under the pins and quoted-form check described above.
 
 `in/yeivin_itm_published_anchors.json` lists the 345 fragment identifiers that the
 17 pages had at the end of the migration, the same identifiers as the pages

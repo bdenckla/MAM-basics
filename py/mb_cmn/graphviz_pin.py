@@ -60,7 +60,9 @@ the mega also skips a whole step in a cloud session, and ``py/main_0_mega.py``'s
 post-stress-meteg survey until 2026-10-01, when ``9a67d51b`` moved the survey
 onto the tracked ``Phonetic-MAM/`` release; since then it is
 ``phonetic-mam-export``, the one step that reads private source inputs. The mega
-skipped the near-Aleppo census too, until that step was deleted on 2026-09-11.
+skipped MAM-private's near-Aleppo census too, until that step was deleted on
+2026-09-11; the step that has had its name since 2026-10-05 runs this repository's
+local census, which a cloud session does not skip.
 The one hazard an SVG skip leaves is that the ``.dot`` beside a skipped ``.svg``
 IS rewritten, so the tracked pair can drift apart; the mega's end-of-run banner
 says so, and says not to commit a changed ``.dot`` without its ``.svg``.

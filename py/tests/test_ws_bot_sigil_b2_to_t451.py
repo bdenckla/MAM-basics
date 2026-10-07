@@ -5,30 +5,20 @@ edit is irreversible and outward-facing, and there is no regeneratable artifact
 to diff after the fact, so pinning the payload before it is sent is worth its
 cost here in a way an example-based unit test generally is not.
 
-The strongest of these is test_real_daniel_corpus_replaces_exactly_as_counted,
-which is differential rather than example-based: it runs the transform over the
-real in/mam-ws/F1-Daniel.json and checks the outcome against the corpus itself,
-including that no chapter OUTSIDE the count table carries the sigil. The
-synthetic fixtures beside it exist to cover the shapes the sigil takes -- a
-comma list, the two uncertainty-marker forms, an occurrence followed by "=" --
-one shape at a time, and to exercise the two guards, which real data cannot
-exercise because real data does not violate them.
+The synthetic fixtures below cover the shapes the sigil takes -- a comma list, the two
+uncertainty-marker forms, an occurrence followed by "=" -- one shape at a time, and exercise
+the two guards, which real data cannot exercise because real data does not violate them.
 
-That differential test is written for TWO corpus states, and deliberately: the
-count table describes the pre-edit corpus, and Phase 3 of the retired
-doc/PLAN-replace-sigil-b2-with-t451.md, whose last version is at
+Phase 3 of the retired doc/PLAN-replace-sigil-b2-with-t451.md, whose last version is at
 https://github.com/bdenckla/MAM-basics/blob/4f3fed2dcb1e21835ad73a31ea8e5e472f4960d7/doc/PLAN-replace-sigil-b2-with-t451.md,
-re-downloaded the six edited chapters into that same file. So the invariant that
-holds across the whole plan is "each table chapter holds either its counted ב2 and no ת451, or no ב2 and its counted ת451",
-and that is what is asserted. A single-state assertion would have gone red at
-Phase 3 -- a test destroying itself halfway through the plan it was written for.
+sent the edit, and a31d0ec9 committed the six re-downloaded chapters of
+in/mam-ws/F1-Daniel.json. Each later download's diff of that file shows any change to them,
+so no test here reads the corpus.
 """
 
-import json
 import unittest
 
 from mb_cmn import bib_locales as tbn
-from mb_cmn import paths
 from ws import ws_bot_edit_sigil_b2_to_t451 as mod
 
 _B2 = "\N{HEBREW LETTER BET}2"
@@ -50,11 +40,6 @@ _ALIYAH_CALL = "{{מ:עלייה|א=בראשית|ב0=בראשית|ב1=ראשון|
 # Chapters picked off the count table by how many occurrences each expects.
 _CHAPTER_EXPECTING_1 = "יב"
 _CHAPTER_EXPECTING_2 = "ח"
-
-
-def _daniel_chapters():
-    path = paths.repo_root() / "in" / "mam-ws" / "F1-Daniel.json"
-    return json.loads(path.read_text(encoding="utf-8"))
 
 
 class WsBotSigilB2ToT451Tests(unittest.TestCase):
@@ -148,39 +133,6 @@ class WsBotSigilB2ToT451Tests(unittest.TestCase):
             mod.edit_page_text(tbn.BK_DANIEL, _CHAPTER_EXPECTING_1, page_text)
 
         self.assertIn("found 2", str(caught.exception))
-
-    def test_real_daniel_corpus_replaces_exactly_as_counted(self):
-        chapters = _daniel_chapters()
-        table = mod.expected_counts(tbn.BK_DANIEL)
-        self.assertTrue(set(table) <= set(chapters), "table names a missing chapter")
-
-        for he_chnu, expected in sorted(table.items()):
-            with self.subTest(chapter=he_chnu):
-                text = "\n".join(chapters[he_chnu])
-                if not text.count(_B2):
-                    # Post-edit: Phase 3's re-download has landed.
-                    self.assertEqual(text.count(_T451), expected)
-                    continue
-                # Pre-edit: the state Phase 2 rehearses and Phase 3 sends.
-                self.assertEqual(text.count(_B2), expected)
-                self.assertEqual(text.count(_T451), 0)
-                out = mod.edit_page_text(tbn.BK_DANIEL, he_chnu, text)
-                self.assertEqual(out.count(_B2), 0)
-                self.assertEqual(out.count(_T451), expected)
-                self.assertEqual(len(out), len(text) + expected * 2)
-
-    def test_no_daniel_chapter_outside_the_table_carries_the_sigil(self):
-        """The table is a skip list, so a chapter missing from it is silently
-        left alone. This is what would catch a new occurrence appearing in one
-        of Daniel's other six chapters, or a mistyped table key."""
-        chapters = _daniel_chapters()
-        table = mod.expected_counts(tbn.BK_DANIEL)
-        offenders = {
-            he_chnu: "\n".join(lines).count(_B2)
-            for he_chnu, lines in chapters.items()
-            if he_chnu not in table and _B2 in "\n".join(lines)
-        }
-        self.assertEqual(offenders, {})
 
 
 if __name__ == "__main__":

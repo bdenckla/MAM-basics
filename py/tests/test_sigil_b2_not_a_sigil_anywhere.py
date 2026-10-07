@@ -9,11 +9,11 @@ parameter -- rather than trying to describe the sigil, which is what makes it
 decidable from the source text alone. That is the second of the two sanctioned
 test shapes: a mechanical lint over a decidable property of the corpus.
 
-The 216 aliyah parameters across the five Torah books are asserted present as
-well as unflagged, so that a filter which quietly stopped reading the Torah
-files could not pass this test by finding nothing at all.
+The scan reads every file Git tracks under in/mam-ws/, as UTF-8, and one test asserts that
+there is such a file, so that finding no sigils cannot mean finding nothing.
 """
 
+import subprocess
 import unittest
 
 from mb_cmn import paths
@@ -27,20 +27,18 @@ _PARAM_SUFFIX = "="
 # The whole of the scanned corpus: the Wikisource download.
 _SCANNED_DIRS = ("in/mam-ws",)
 
-# Aliyah parameters counted 2026-08-27: 216 in in/mam-ws/ -- Genesis 48, Exodus
-# 44, Leviticus 40, Numbers 40, Deuteronomy 44. This is a FLOOR rather than that
-# total, deliberately: its job is to catch a scan that
-# has stopped reading the Torah files and so finds no sigils by finding nothing
-# at all, not to pin a number that a Sheet refresh could legitimately move.
-_MIN_ALIYAH_PARAMS = 216
-
 
 def _scanned_files():
+    """Every file Git tracks under the scanned directories, by repository-relative name."""
     root = paths.repo_root()
-    for rel_dir in _SCANNED_DIRS:
-        for path in sorted((root / rel_dir).rglob("*")):
-            if path.is_file():
-                yield path.relative_to(root).as_posix(), path
+    result = subprocess.run(
+        ["git", "ls-files", "-z", "--", *_SCANNED_DIRS],
+        cwd=root,
+        capture_output=True,
+        encoding="utf-8",
+        check=True,
+    )
+    return [(name, root / name) for name in result.stdout.split("\0") if name]
 
 
 def _occurrences(text):
@@ -63,22 +61,17 @@ def _line_no(text, i):
 class SigilB2NotASigilAnywhereTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        cls.scanned = _scanned_files()
         cls.sigils = []
-        cls.aliyah_params = 0
-        for rel, path in _scanned_files():
-            try:
-                text = path.read_text(encoding="utf-8")
-            except UnicodeDecodeError:
-                continue
+        for rel, path in cls.scanned:
+            text = path.read_text(encoding="utf-8")
             for i in _occurrences(text):
-                if _is_aliyah_param(text, i):
-                    cls.aliyah_params += 1
-                else:
+                if not _is_aliyah_param(text, i):
                     cls.sigils.append(f"{rel}:{_line_no(text, i)}")
 
-    def test_the_scan_reaches_the_torah_aliyah_parameters(self):
-        """A floor, so that finding no sigils cannot mean finding nothing."""
-        self.assertGreaterEqual(self.aliyah_params, _MIN_ALIYAH_PARAMS)
+    def test_the_scan_reads_tracked_files(self):
+        """So that finding no sigils cannot mean finding nothing."""
+        self.assertTrue(self.scanned)
 
     def test_no_occurrence_of_b2_is_a_sigil(self):
         summary = f"{len(self.sigils)} sigil-shaped occurrence(s)"

@@ -8,8 +8,9 @@ too, for both Exodus 20 and Deuteronomy 5?
 
 Unlike wlc-utils#36 -- which must *detangle* WLC's two-accents-per-word source -- the printed and
 manuscript readings are already single-cantillation, spelled out word-for-word on
-he.wikisource ``עשרת הדברות בסיס/טעמים`` (vendored by ``printed_decalogue_fetch.py`` to
-``in/accgram/printed_decalogue_teamim.json``).  So this module simply feeds each chanted
+he.wikisource ``עשרת הדברות בסיס/טעמים``, which the Wikisource download mirrors in
+``in/mam-ws-special/decalogue-base.mediawiki`` and ``load_source`` reads through
+``printed_decalogue_fetch.build_payload``.  So this module simply feeds each chanted
 verse through the shared pipeline wlc-utils#36 uses -- ``uni_to_marks.verse_to_marks`` -> a leading
 ``TILDE`` + ``prose_scanner.scan_accents`` -> ``prose_ply_grammar.parse_tokens`` -- and
 records clean / ungrammatical per chanted verse.
@@ -39,17 +40,20 @@ used to make conflated verdict agreement with token identity (item 9 of
 ``doc/review-findings-2026-07-29.md``).  ``run`` records the transcription verdicts as the
 output file's ``transcriptions`` section, beside the strands' ``versions``.
 
-Pure computation (no I/O); the driver (``run``) loads the vendored JSON, parses, and writes
+Pure computation (no I/O); the driver (``run``) loads the mirrored page, parses, and writes
 ``out/accgram/printed-decalogue/_printed_decalogue.json``.  The gh-pages report is rendered
 separately by ``printed_decalogue_page``.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
+import urllib.parse
 from dataclasses import dataclass
 from pathlib import Path
 
+from accgram import printed_decalogue_fetch
 from accgram import uni_to_marks
 
 # Aliased because ``ChantedVerseResult`` has a field of the module's own name, and an
@@ -66,8 +70,13 @@ from mb_cmn import provenance
 _PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 
 
+# The base page's slug in the Wikisource download's mirror of MAM's special pages.
+_MIRROR_SLUG = "decalogue-base"
+
+
 def default_source_path() -> Path:
-    return paths.in_dir() / "accgram" / "printed_decalogue_teamim.json"
+    """The mirrored wikitext of the base page, at the revision its manifest records."""
+    return paths.in_dir() / "mam-ws-special" / f"{_MIRROR_SLUG}.mediawiki"
 
 
 def default_out_path() -> Path:
@@ -185,8 +194,30 @@ def _parse_chanted_verse(
 
 
 def load_source(source_path: Path | None = None) -> dict:
+    """The eight Decalogue versions, read out of the mirrored base page.
+
+    The page's bytes must have the SHA-256 that the mirror's manifest records for it,
+    and that record supplies the revision provenance the payload carries.
+    """
     path = source_path or default_source_path()
-    return json.loads(path.read_text(encoding="utf-8"))
+    manifest = json.loads((path.parent / "manifest.json").read_text(encoding="utf-8"))
+    record = manifest["pages"][_MIRROR_SLUG]
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != record["sha256"]:
+        raise ValueError(f"{path} differs from its manifest record")
+    title = record["resolved_title"]
+    if title != printed_decalogue_fetch.PAGE_TITLE:
+        raise ValueError(f"{path} mirrors {title!r}, not the Decalogue base page")
+    return printed_decalogue_fetch.build_payload(
+        raw.decode("utf-8"),
+        {
+            "source_page": title,
+            "url": f"https://he.wikisource.org/wiki/{urllib.parse.quote(title)}",
+            "pageid": record["page_id"],
+            "oldid": record["revision_id"],
+            "revision_timestamp": record["revision_timestamp"],
+        },
+    )
 
 
 def check_all(source: dict, parser=None) -> list[VersionResult]:

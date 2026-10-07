@@ -39,7 +39,7 @@ in error, and a clean rate is not the objective.
 
 WHAT IT DOES NOT ADD is the legarmeh-vs-paseq distinction, which was once the reason to want
 it.  The scanner's LEGARMEH call is purely POSITIONAL -- a munax + U+05C0 before a revia --
-so it is blind to which kind an edition prints, exactly as the pre-wlc-utils#74 vendored data was.
+so it is blind to which kind an edition prints, exactly as the source data was until wlc-utils#74.
 The converse is what is worth having: BECAUSE the call is positional, the scanner supplies a
 kind where an edition withholds one, which is the whole stroke inventory of the four Koren
 transcriptions (Koren has the bar without saying which it is, so every one of its strokes
@@ -280,7 +280,7 @@ def check_all(
         strand = by_key.get(transcription.key)
         if strand is None:
             raise AssertionError(
-                f"{transcription.path.stem}: no vendored strand "
+                f"{transcription.path.stem}: no mirrored strand "
                 f"{et.strand_name(transcription.key)} to compare against"
             )
         out.append(check_one(transcription, strand, parser))

@@ -80,11 +80,11 @@ conflict; phase6_flags.py gives the note a flagged-not-applied parameter holding
 to keep fonts from treating the he's patah as a furtive patah.
 
 What stays for later work: the plane readings of _PENDING_PLANE_READINGS; those of
-_ONE_SIDED_PLANE_READINGS and Jeremiah 31:37; the 3 forms with exceptional punctuation, the
-one clause with no form, the 16 prose-led heads and the 31 prose descriptions, which
-the prose-description policy leaves without automatic treatment.
+_ONE_SIDED_PLANE_READINGS and Jeremiah 31:37; the forms with exceptional punctuation,
+the clauses with no form, the prose-led heads and the prose descriptions, which the
+prose-description policy leaves without automatic treatment.
 
-Subsequent sealed pointing imports supply retained ketiv/qere sites beyond this
+Subsequent stored pointing imports supply retained ketiv/qere sites beyond this
 note-derived set, without overwriting it.
 
 The step runs after phase 3's policies and before phase6_mam_targets.py, which gives
@@ -444,11 +444,9 @@ _PLANE_ONE_SIDED = (
 # Pointed ketivs ending in the qere's trailing maqaf, retained as part of the pointing.
 _TRAILING_MAQAF = "codex readings: pointed ketiv ending in the qere's trailing maqaf"
 
-# Expected counts and site lists live in in/near-aleppo/build-populations.json.
-# An automatic input refresh does not advance reading-disposition expectations:
-# the census classifies MAM's source populations, while phase 3 also determines
-# which forms are already in place. A changed disposition count or site list
-# therefore fails for review.
+# The build records these counts and site lists in
+# in/near-aleppo/build-populations.json, pinning none of them, so that a changed
+# disposition count or site list shows in that file's diff.
 #
 # The build classifies direct source clauses and derives their outcomes: forms
 # already in place, forms written to whole targets or named atoms, forms written
@@ -458,8 +456,8 @@ _TRAILING_MAQAF = "codex readings: pointed ketiv ending in the qere's trailing m
 # phase 3's apparatus and is an ordinary apply-candidate, not an added pointing.
 # The shitat-Alef table is checked separately against current source clauses.
 #
-# The one empty clause, at Exodus 39:10, has no codex clause after it, so no
-# clause's number depends on how empty clauses are counted.
+# An empty clause takes no number: a Site's clause counts the note's non-empty
+# clauses only, as the oracle numbers them.
 
 
 class _Clause(NamedTuple):
@@ -511,35 +509,6 @@ class Readings:
                     "times at the verse, not 1"
                 )
         return cell
-
-    def assert_expected_counts(self, expected_counts, expected_sites):
-        """Require the populations in the provenance-bound expectation snapshot.
-
-        A label counted or given sites that the snapshot does not list is drift too,
-        since some reasons' labels are built from the data.
-        """
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        drift += [
-            f"{label}: build {count}, a label the snapshot does not list"
-            for label, count in self.counts.items()
-            if label not in expected_counts
-        ]
-        drift += [
-            f"{label}: expected at {expected}, build at {self.sites[label]}"
-            for label, expected in expected_sites.items()
-            if self.sites[label] != expected
-        ]
-        drift += [
-            f"{label}: build at {verses}, a label the snapshot does not list"
-            for label, verses in self.sites.items()
-            if label not in expected_sites
-        ]
-        if drift:
-            raise AssertionError("Phase 5 populations drifted: " + "; ".join(drift))
 
     def _note(self, note, number, verse):
         """Classify one note's differing clauses, apply its reading, and return the
@@ -1017,8 +986,8 @@ def notes(cell, verse):
     The walk follows phase 2's rule table along each kept template's selected
     parameters, as phase2.selected_keys names them, and stops at each נוסח, entering
     neither its target nor its body, as the census's each_nusach does. It meets the
-    notes-walked population recorded in build-populations.json, in the census's
-    order; none is in the target of another. A template that phase 2 dissolves, or
+    notes in the census's order, as many as the census counts, which
+    build_expectations.assert_census_agrees checks; none is in the target of another. A template that phase 2 dissolves, or
     replaces by a placeholder, cannot be
     in an E cell that phase 3 returns, and raises. The near-Aleppo dataset's rule-8 template, which a pointed
     ketiv can hold, holds no note.

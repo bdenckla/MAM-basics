@@ -13,8 +13,12 @@ finds the sibling through
 home clone, so a worktree run needs no ``REPOS_ROOT``. Until 2026-09-11 a
 second step, ``near-aleppo-census``, ran MAM-private's near-Aleppo census and
 rewrote that clone's tracked goldens. Ben had it deleted that day, so that this
-run writes nothing outside this repository; MAM-private's own mega runs the
-census now.
+run writes nothing outside this repository; MAM-private's own mega then ran the
+census until near-Aleppo's census moved into this repository, and it no longer
+does. Since 2026-10-05 a step of the same name has run near-Aleppo's
+local census, ``py/main_near_aleppo.py --census``, which reads only this
+repository's MAM-parsed plus and Aleppo coverage index and writes
+``in/near-aleppo/census/``.
 
 Since 2026-09-10 the sequence also runs the five UXLC steps that
 ``py/main_uxlc_mega.py`` ran until it was folded in here, from
@@ -120,8 +124,7 @@ def _run_near_aleppo_census():
 
 def _run_near_aleppo_build():
     main_near_aleppo.almost_main(["--refresh-note-review"])
-    main_near_aleppo.almost_main(["--check-note-review"])
-    main_near_aleppo.almost_main(["--build", "--refresh-expectations"])
+    main_near_aleppo.almost_main(["--build"])
 
 
 def _run_near_aleppo_html():
@@ -471,7 +474,7 @@ _STEPS = [
     StepRecord(
         "accgram-run-printed-decalogue",
         _run_accgram_printed_decalogue,
-        "reads only committed inputs (the vendored in/accgram/printed_decalogue_teamim.json"
+        "reads only committed inputs (the mirrored in/mam-ws-special/decalogue-base.mediawiki"
         " and in/accgram/edition_transcriptions), so nothing above it feeds it",
     ),
     StepRecord(
@@ -601,7 +604,8 @@ _STEPS = [
     # The sigil inventory reads MAM-parsed's plus/ tree, so it belongs after parse-ws and
     # after everything else that writes MAM-parsed.  Added 2026-08-27, for the reason
     # accgram-test-fixes was added on 2026-08-04 (and near-aleppo-census on 2026-08-26, a
-    # step deleted on 2026-09-11) -- py/main_sigil_inventory.py
+    # step deleted on 2026-09-11 whose name a local census took on 2026-10-05) --
+    # py/main_sigil_inventory.py
     # was imported by nothing, so nothing routine rewrote its tracked artifact.  This one had
     # already gone stale, and provably so twice over: out/sigil-inventory.json had exactly one
     # commit in its history, c14122a of 2026-04-07, and d205dbb changed this generator's own
@@ -721,12 +725,12 @@ _STEPS = [
     StepRecord(
         "near-aleppo-build",
         _run_near_aleppo_build,
-        "local MAM plus sealed pointings; validates every changed-note review before baking and writing out/near-aleppo/plus after the census",
+        "refreshes the note-review ledger, then builds from local MAM plus the stored pointings; validates every changed-note review before baking, checks its counts against the census, and writes out/near-aleppo/plus and in/near-aleppo/build-populations.json after the census",
     ),
     StepRecord(
         "near-aleppo-html",
         _run_near_aleppo_html,
-        "formats stored notes and checks MAM-mode equivalence; writes gh-pages/near-aleppo after the build",
+        "formats stored notes; writes gh-pages/near-aleppo after the build",
     ),
     StepRecord(
         "pipeline-graph",

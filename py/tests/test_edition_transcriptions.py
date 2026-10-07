@@ -1,15 +1,15 @@
-"""Pin each committed hand transcription against its vendored Wikisource strand.
+"""Pin each committed hand transcription against its mirrored Wikisource strand.
 
 These tests turn "edition X follows strand Y in every accent" from prose on a page into a
 machine-checked claim.  Each transcription's divergences from its Wikisource strand are pinned
 exactly:
-a re-vendoring, an upstream Wikisource revision, or a corrected transcription that changes
+a refresh of the mirror, an upstream Wikisource revision, or a corrected transcription that changes
 the divergence set fails here instead of quietly falsifying a page.
 
 ``pytest.skip`` in this file means ONE thing, and it is a finding, not an absence: a page that
 diverges from its Wikisource strand, for which the token-stream control below has no knowable
 answer.  Five
-cases skip on a clean run, all of them that.  Nothing here skips on missing data -- the vendored
+cases skip on a clean run, all of them that.  Nothing here skips on missing data -- the mirrored
 strand JSON and all twelve transcriptions and their exports are committed under ``in/accgram``,
 so an absent one is a deleted tracked file and fails.  See ``paths.require_sibling``.
 
@@ -112,8 +112,8 @@ _EXPECTED_DIVERGENCES = {
     # SimTiq's Deuteronomy main Decalogue (elyon, pp. 208-209) diverges NOWHERE: 164 reference
     # tokens against 164 transcribed, agreeing at every one.  It is the first transcription for
     # which "follows the p-trad with respect to every accent" is actually true, and pinning the
-    # empty list is what keeps it honest -- a re-vendoring that moved any accent in this strand
-    # would break this test rather than quietly weaken the claim to nothing.
+    # empty list is what keeps it honest -- a refresh of the mirror that moved any accent in this
+    # strand would break this test rather than quietly weaken the claim to nothing.
     #
     # How it was reached bears on how much it is worth, and the .txt header says so at length:
     # the harness flags only positions where the two disagree, so only those were re-read.
@@ -179,7 +179,7 @@ _EXPECTED_DIVERGENCES = {
     # Koren's Exodus APPENDIX Decalogue (elyon, p. 38) is the FIRST Koren page to diverge:
     # 142 reference tokens against 144, at TWO points.  Both are MAQAF differences -- the bottom
     # rung of the one scale, not a second ledger -- rather than tradition ones: at two points
-    # where the vendored ws/ex/elyon/printed strand has a maqaf joining two atoms into one
+    # where the mirrored ws/ex/elyon/printed strand has a maqaf joining two atoms into one
     # chanted word, Koren has the two atoms separately accented:
     #   * לֹא יִהְיֶה לְךָ (20:3): Koren gives יהיה its own munax where the reference joins
     #     יהיה־לך (so יהיה carries only a meteg).  The region anchors at the reference word לא,
@@ -190,8 +190,8 @@ _EXPECTED_DIVERGENCES = {
     # Both inserted accents are conjunctive (munax), so the disjunctive skeleton is untouched
     # (koren_ex_elyon is in _SKELETON_UNTOUCHED below).  The ובנך split is corroborated: the two
     # ex/taxton strands separate ובנך with a munax too, and simtiq_ex_elyon pins the identical
-    # region -- two independently transcribed elyon editions splitting where the vendored elyon
-    # strand joins.  The יהיה split is Koren-alone: no vendored strand separates יהיה־לך and
+    # region -- two independently transcribed elyon editions splitting where the mirrored elyon
+    # strand joins.  The יהיה split is Koren-alone: no mirrored strand separates יהיה־לך and
     # simtiq_ex_elyon does not either.  The .txt header states that asymmetry rather than hiding
     # it.  The chanted verse boundary at עבדים stays p-trad (9 verses, pinned below).
     "koren_ex_elyon": [
@@ -200,7 +200,7 @@ _EXPECTED_DIVERGENCES = {
     ],
     # Koren's Deuteronomy APPENDIX Decalogue (elyon, p. 39) diverges NOWHERE: 164 reference tokens
     # vs 164, agreeing at every accent.  It is the counterpart to koren_ex_elyon, and the contrast
-    # is the point.  Where the Exodus elyon page SPLITS two maqaf compounds the vendored strand
+    # is the point.  Where the Exodus elyon page SPLITS two maqaf compounds the mirrored strand
     # joins (יהיה־לך and ובנך־ובתך), printing each atom as its own accented word, this page JOINS
     # both, matching ws/dt/elyon/printed -- so that split is a fact about Koren's Exodus page, not
     # a house style.  Checked against all eight strands: none of them SPLITS THE COMPOUND יהיה־לך,
@@ -234,7 +234,7 @@ _EXPECTED_DIVERGENCES = {
     # etnaxta), and מבית עבדים (munax + etnaxta / merkha + silsof, the verse boundary pinned
     # below at 12).  This transcription takes the m-trad side of all three; the other 133 tokens
     # are identical in both traditions and so say nothing about which one the page follows.
-    # A re-vendoring that moved any of the three fails here rather than quietly turning the
+    # A refresh of the mirror that moved any of the three fails here rather than quietly turning the
     # m-trad verdict into an unsupported one.
     "simtan_ex_taxton": [],
     # SimTan's Deuteronomy main Decalogue (taxton, pp. 297-298), the second m-trad pin
@@ -248,7 +248,7 @@ _EXPECTED_DIVERGENCES = {
     # five, plus the maqaf at לא תעשה, plus the stroke count" -- which is seven, and
     # double-counts, the stroke on אתה being one of the five.  Both counts are superseded: the
     # criterion and the decomposition are single-sourced in
-    # accgram/printed_decalogue_taxton_diff.py, which derives them from the vendored words on every
+    # accgram/printed_decalogue_taxton_diff.py, which derives them from the mirrored words on every
     # page generation.  Take the number from there rather than recounting here.
     #
     # qadma on ויום (5:13) where ws/dt/taxton/manuscript -- and every other taxton strand -- has
@@ -420,7 +420,7 @@ _UNCERTAIN_READINGS = {
 
 
 def test_every_transcription_names_a_real_strand() -> None:
-    """Each transcription's (book, reading, tradition) triple resolves in the vendored data.
+    """Each transcription's (book, reading, tradition) triple resolves in the mirrored data.
 
     The stem set is asserted before the loop, and not only for its own sake.
     ``load_all_transcriptions`` globs, so a deleted tracked .txt comes back as a shorter list
@@ -492,7 +492,7 @@ def test_deuteronomy_taxton_does_touch_the_disjunctive_skeleton() -> None:
     """The Shabbat departure swaps disjunctive for disjunctive, and that is the point.
 
     Pinned in the positive direction so the distinction cannot erode from either end: if a
-    re-vendoring or a corrected transcription ever made these divergences conjunctive-only,
+    refresh of the mirror or a corrected transcription ever made these divergences conjunctive-only,
     this fails rather than letting the page keep calling p. 247 an m-trad departure.  Every
     other transcription's divergences leave the skeleton alone; this one's must not.
     """
@@ -515,7 +515,7 @@ def test_simtan_deuteronomy_drops_one_disjunctive() -> None:
     simtiq_dt_taxton above swaps disjunctive FOR disjunctive across a whole commandment, which
     is what makes it a tradition difference.  This one replaces a single pashta with a qadma, so
     it REMOVES a disjunctive and adds nothing -- an edition's own departure, not a tradition's.
-    Pinned positively for the same reason as that test: a re-vendoring that made this
+    Pinned positively for the same reason as that test: a refresh of the mirror that made this
     conjunctive-only, or a re-read that made the divergence vanish, should fail here rather than
     quietly turning "follows ws/dt/taxton/manuscript except at one word" into an unqualified claim.
     """
@@ -880,15 +880,15 @@ def test_deuteronomy_taxton_pasoleg_is_transcribed_128_reference_127() -> None:
     assert pds.base_skeleton(words[84]) == "אתה"
 
 
-# The kind of each U+05C0 stroke in each vendored strand, in reading order -- the distinction
-# the folded chanted_verses cannot express and the wlc-utils#74 re-vendor preserves in
-# faithful_chanted_verses.  These are the numbers issue wlc-utils#69's results turned on, now readable
+# The kind of each U+05C0 stroke in each mirrored strand, in reading order -- the distinction
+# the folded chanted_verses cannot express and faithful_chanted_verses keeps (issue
+# wlc-utils#74).  These are the numbers issue wlc-utils#69's results turned on, now readable
 # from the strand's OWN reference rather than only cross-tradition from MAM-parsed-plus: the
 # elyon strands split 2 narrow paseq (פסל, בשמים) + N legarmeh (Deuteronomy adds צוך, היית,
 # למען to Exodus's במים, שבת), and each taxton has only legarmeh (ex one on אתה; ws/dt/taxton/printed
-# two, on אתה and למען, the second of which is the p-trad's alone).  Pinned so a future re-vendor
-# that dropped or swapped the templates fails here rather than silently un-checking every
-# transcription's legarmeh/paseq claim.
+# two, on אתה and למען, the second of which is the p-trad's alone).  Pinned so a future refresh
+# of the mirror that dropped or swapped the templates fails here rather than silently
+# un-checking every transcription's legarmeh/paseq claim.
 _REFERENCE_PASOLEG_KINDS = {
     ("ex", "taxton", "manuscript"): ["legarmeh"],
     ("ex", "elyon", "manuscript"): ["paseq", "paseq", "legarmeh", "legarmeh"],
@@ -918,13 +918,14 @@ _REFERENCE_PASOLEG_KINDS = {
 
 
 @pytest.mark.parametrize("key", sorted(_REFERENCE_PASOLEG_KINDS))
-def test_vendored_reference_preserves_the_pasoleg_kinds(key: tuple) -> None:
-    """The re-vendor kept legarmeh vs narrow-sense paseq, and it round-trips out of the file.
+def test_mirrored_reference_preserves_the_pasoleg_kinds(key: tuple) -> None:
+    """The source keeps legarmeh vs narrow-sense paseq, and it round-trips through the load.
 
     ``reference_pasoleg_kinds`` reads the kind of each stroke from ``faithful_chanted_verses``;
-    pinning its result per strand is the direct check that the wlc-utils#74 re-vendoring vendored the
-    distinction faithfully.  It also proves the alignment the accessor asserts -- a stroke count
-    that disagreed with the folded ``chanted_verses`` would raise before reaching this compare.
+    pinning its result per strand is the direct check that ``build_payload`` keeps the
+    distinction faithfully (issue wlc-utils#74).  It also proves the alignment the accessor
+    asserts -- a stroke count that disagreed with the folded ``chanted_verses`` would raise
+    before reaching this compare.
     """
     source = pd.load_source()
     assert et.reference_pasoleg_kinds(source, key) == _REFERENCE_PASOLEG_KINDS[key]
@@ -933,11 +934,11 @@ def test_vendored_reference_preserves_the_pasoleg_kinds(key: tuple) -> None:
 def test_faithful_verses_fold_to_the_folded_chanted_verses() -> None:
     """``chanted_verses`` is exactly the fold of ``faithful_chanted_verses``, verse for verse.
 
-    The re-vendor stores both forms; the folded one is what every existing consumer reads, so
-    it must stay the derived twin of the faithful one.  The fetch asserts this at build time;
-    pinning it here holds the committed file to it too, so a hand-edit to either field that
-    broke the correspondence fails rather than silently making the folded form claim something
-    the faithful form does not.
+    ``printed_decalogue_fetch.build_payload`` builds both forms from the mirrored page; the
+    folded one is what every existing consumer reads, so it must stay the derived twin of the
+    faithful one.  ``build_payload`` asserts this as it builds them; this test repeats the check
+    on what ``load_source`` returns, so that a change to either fold fails rather than silently
+    making the folded form claim something the faithful form does not.
     """
     source = pd.load_source()
     for version in source["versions"]:
@@ -945,14 +946,14 @@ def test_faithful_verses_fold_to_the_folded_chanted_verses() -> None:
         key = (version["book"], version["reading"], version["tradition"])
         assert faithful is not None, (
             f"{et.strand_name(key)}: no faithful_chanted_verses"
-            " -- re-vendor via printed_decalogue_fetch.py (issue wlc-utils#74)"
+            ", which printed_decalogue_fetch.build_payload writes (issue wlc-utils#74)"
         )
         refolded = [pdf._fold_verse(fv) for fv in faithful]
         assert refolded == version["chanted_verses"], et.strand_name(key)
 
 
 # How many strokes each transcription states a DEFINITE kind for that maps exactly onto a
-# reference position -- i.e. how many legarmeh/paseq claims the re-vendor now lets us check
+# reference position -- i.e. how many legarmeh/paseq claims the faithful form now lets us check
 # against the strand's own reference.  Koren does not distinguish the two (every stroke is
 # "unspecified"), so nothing is compared and the count is 0; the Simanim editions do, and every
 # one of their claims agrees with the reference (the mismatch list is empty for all).  This is
@@ -1010,7 +1011,7 @@ def test_transcription_pasoleg_kinds_round_trip_against_the_reference(
 ) -> None:
     """Every legarmeh/paseq claim a transcription makes agrees with the strand's reference.
 
-    The check the re-vendor unblocks.  Before it, a transcription's ``mun_leg`` / ``[paseq]``
+    The check the faithful form unblocks.  Before it, a transcription's ``mun_leg`` / ``[paseq]``
     could only be read against glyph shape and grammar; now the p-trad strand's OWN reference
     states the kind, so the claim is machine-checkable.  Both halves are pinned: no mismatch
     anywhere, AND the exact number of strokes compared, so a regression that quietly stopped
@@ -1131,7 +1132,7 @@ def _parser():
 
 @functools.lru_cache(maxsize=1)
 def _strand_results() -> dict:
-    """Every vendored strand's own grammaticality result, keyed by (book, reading, tradition)."""
+    """Every mirrored strand's own grammaticality result, keyed by (book, reading, tradition)."""
     return {
         (vr.book, vr.reading, vr.tradition): vr
         for vr in pd.check_all(pd.load_source(), _parser())
@@ -1212,7 +1213,7 @@ def test_each_page_is_as_grammatical_as_its_strand_except_where_pinned(
 
     Both halves matter.  A departure appearing where none is pinned means an edition prints an
     accent sequence the prose grammar rejects and nobody has looked at it; a pinned departure
-    going away means a re-vendoring or a corrected reading has quietly changed the finding.
+    going away means a refresh of the mirror or a corrected reading has quietly changed the finding.
     The chanted verse COUNTS are asserted first, since a status list compared across a boundary
     shift would line up by position and mean nothing.
     """
@@ -1233,7 +1234,7 @@ def test_the_exodus_appendix_taxton_prints_an_ungrammatical_chanted_verse() -> N
     Pinned in the positive direction, like the two skeleton tests above: the finding is that a
     page whose divergences are conjunctive-only, and whose disjunctive skeleton is therefore
     intact, nonetheless prints a chanted verse the prose grammar rejects.  If a re-read or a
-    re-vendoring ever made this parse clean, that should fail here rather than silently
+    refresh of the mirror ever made this parse clean, that should fail here rather than silently
     strengthening what the transcription is taken to show.
 
     The mechanism, isolated: the page accents BOTH atoms of לא־תעשה (20:4), a munax on the
@@ -1339,11 +1340,12 @@ _SCANNER_PASOLEG_STROKES = {
 def test_the_scanner_determines_every_stroke_kind_and_agrees_with_the_reference(
     stem: str,
 ) -> None:
-    """The scanner's POSITIONAL legarmeh call, stroke by stroke, against the vendored kind.
+    """The scanner's POSITIONAL legarmeh call, stroke by stroke, against the mirrored kind.
 
     Two independent determinations of the same fact: Wikisource's own ``{{מ:לגרמיה}}`` /
-    ``{{מ:פסק}}`` templates, vendored by wlc-utils#74, and the scanner's rule that a munax + stroke
-    before a revia is a legarmeh.  They agree at every stroke of every transcription.
+    ``{{מ:פסק}}`` templates, which the faithful form keeps (wlc-utils#74), and the scanner's rule
+    that a munax + stroke before a revia is a legarmeh.  They agree at every stroke of every
+    transcription.
 
     The agreement is expected rather than surprising -- legarmeh almost always precedes revia,
     and neither Decalogue holds an exception -- so what this pins is not a discovery but a
@@ -1378,7 +1380,7 @@ def test_the_scanner_supplies_the_stroke_kinds_koren_declines_to_state(
     transcribed ``[pasoleg]`` -- kind unspecified, asserting nothing the book does not -- and
     ``test_transcription_pasoleg_kinds_round_trip_against_the_reference`` therefore compares
     ZERO strokes for all four Koren stems.  The scanner's positional rule determines all
-    fourteen, and they agree with the vendored reference.  Both facts are asserted here: that
+    fourteen, and they agree with the mirrored reference.  Both facts are asserted here: that
     the transcription states no kind, so the determination is not a restatement of one, and
     that the round trip really does compare nothing for this stem.
     """

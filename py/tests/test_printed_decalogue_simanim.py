@@ -1,12 +1,12 @@
 """Issue wlc-utils#62: the Simanim-Decalogue page (printed-decalogue-simanim.html).
 
-The four cantillation strands of the opening אנכי…מצותי span are derived live from the vendored
-``in/accgram/printed_decalogue_teamim.json`` by the shared ``printed_decalogue_strands`` module:
+The four cantillation strands of the opening אנכי…מצותי span are derived live from the mirrored
+``in/mam-ws-special/decalogue-base.mediawiki`` by the shared ``printed_decalogue_strands`` module:
 for each Exodus reading it reads the first chanted verse and derives the accent on אנכי (first
 word) and עבדים.  These tests pin that derivation (which now lives on the strands module, not on
 this page) and confirm the Simanim page body renders.
 
-The vendored source JSON is committed here, so these FAIL rather than skip if it is absent --
+The mirrored source page is committed here, so these FAIL rather than skip if it is absent --
 see ``test_printed_decalogue``'s docstring and ``paths.require_sibling``.
 
 Run:

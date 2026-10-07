@@ -1,6 +1,6 @@
 """Issue wlc-utils#52: grammar-check the printed-tradition Decalogue accentuations.
 
-Feeds the eight vendored Decalogue readings ({Exodus, Deuteronomy} x {taxton, elyon} x
+Feeds the eight mirrored Decalogue readings ({Exodus, Deuteronomy} x {taxton, elyon} x
 {manuscript, printed}) through the prose grammar and pins the verdict, and then pins the
 ``transcriptions`` section in which the output file records the same verdict for the twelve
 hand-transcribed real editions:
@@ -12,8 +12,8 @@ hand-transcribed real editions:
     single verse (nine verses total vs the manuscript's ten). That merged verse is far the
     longest of its version.
 
-The vendored source JSON is committed here as ``in/accgram/printed_decalogue_teamim.json``, so
-these FAIL rather than skip if it is absent -- printed_decalogue_fetch.py regenerates it, but a
+The mirrored source page is committed here as ``in/mam-ws-special/decalogue-base.mediawiki``, so
+these FAIL rather than skip if it is absent -- the Wikisource download regenerates it, but a
 tracked file being gone is a deletion to shout about, not an optional dependency.  See
 ``paths.require_sibling`` for the argument.
 
@@ -117,7 +117,7 @@ def test_the_transcriptions_section_records_every_page_against_its_strand() -> N
     and the Simanim Tanakh's Deuteronomy main Decalogue taḥton, chanted verse 8, each
     ungrammatical where its Wikisource strand is clean -- and the other ten must show none, which
     is the
-    half that would fail if a re-vendoring quietly made some other page depart.
+    half that would fail if a refresh of the mirror quietly made some other page depart.
     """
     results = _results()
     section = tp.payload_objs(tp.check_all(results))
