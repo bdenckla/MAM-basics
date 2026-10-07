@@ -57,4 +57,4 @@ def test_preparation_operation_runs_without_file_access(monkeypatch):
             }
         )
         # Each reply must encode as compute.serve encodes it.
-        assert json.dumps(result, ensure_ascii=False, allow_nan=False)
+        assert json.dumps(result, ensure_ascii=False, allow_nan=False).encode("utf-8")

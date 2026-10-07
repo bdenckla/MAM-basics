@@ -295,7 +295,8 @@ def serve(stdin=None, stdout=None):
     ``main_phonetic_mam.main`` reads standard input with the ``surrogateescape``
     handler, so a line that is not valid UTF-8 arrives with its undecodable bytes
     escaped; decoding it again here rejects that line like any other malformed
-    request, with a ``UnicodeDecodeError`` reply, and the next line is read.
+    request, with a ``UnicodeDecodeError`` reply, and the next line is read. A
+    result that cannot be encoded as UTF-8 gets a ``UnicodeEncodeError`` reply.
     """
     stdin = sys.stdin if stdin is None else stdin
     stdout = sys.stdout if stdout is None else stdout
@@ -310,6 +311,10 @@ def serve(stdin=None, stdout=None):
             result = execute(request)
             response = {"schema": SCHEMA, "result": result}
             encoded = json.dumps(response, ensure_ascii=False, allow_nan=False)
+            # Standard output is strict UTF-8. A result that echoes a lone
+            # surrogate, which a request's JSON can escape, is rejected here,
+            # whichever operation echoes it, rather than ending the stream.
+            encoded.encode("utf-8")
         except Exception as exc:  # The pipe boundary must not echo a source value.
             encoded = json.dumps(
                 {
