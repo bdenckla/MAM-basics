@@ -330,26 +330,6 @@ _VAYOMER_CONSONANTS = (
     "\N{HEBREW LETTER RESH}"
 )
 
-# The 2026-09-03 census, whose report is ``doc/post-stress-meteg-census-2026-09-03.md``.  Its
-# script is untracked and defective at the silluq boundary, so these are a comparison baseline
-# and not a second measurement: ``legacy_baseline`` below reports every difference from them.
-_LEGACY_BASELINE = {
-    SYSTEM_PROSE: {
-        "chanted words checked": 233715,
-        "meteg before the stressed syllable": 13131,
-        "meteg after the stressed syllable": 177,
-        "silluq": 18779,
-        "meteg sharing a letter with a non-stress-marking accent": 27,
-    },
-    SYSTEM_POETIC: {
-        "chanted words checked": 29605,
-        "meteg before the stressed syllable": 1814,
-        "meteg after the stressed syllable": 54,
-        "silluq": 4486,
-        "meteg sharing a letter with a non-stress-marking accent": 119,
-    },
-}
-
 _COUNT_CATEGORIES = (
     "chanted words checked",
     "meteg before the stressed syllable",

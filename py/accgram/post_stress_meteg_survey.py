@@ -28,7 +28,6 @@ from accgram.post_stress_meteg_model import (
     _CANTILLATION_BRANCH_INDEX,
     _COUNT_CATEGORIES,
     _DUAL_CANTILLATION_COMPARISON_CATEGORIES,
-    _LEGACY_BASELINE,
     _SUBTYPES,
     _TYPES,
     _accent_grammar_tokens_by_entry,
@@ -396,31 +395,6 @@ def _currency(found: dict, words_by_bcv: dict[str, list[str]]) -> dict:
     }
 
 
-def _legacy_baseline(counts: Counter) -> dict:
-    """Every difference between this run and the 2026-09-03 census, category by category."""
-    differences = [
-        {
-            "system": system,
-            "category": category,
-            "census_2026_09_03": baseline,
-            "measured": counts[(system, category)],
-            "difference": counts[(system, category)] - baseline,
-        }
-        for system, categories in _LEGACY_BASELINE.items()
-        for category, baseline in categories.items()
-        if counts[(system, category)] != baseline
-    ]
-    return {
-        "what": (
-            "The 2026-09-03 census, doc/post-stress-meteg-census-2026-09-03.md, whose script"
-            " is untracked and treats a verse's last parsed entry as verse-final whether or"
-            " not it has sof pasuq. A comparison baseline, not a second measurement."
-        ),
-        "baseline": _LEGACY_BASELINE,
-        "differences": differences,
-    }
-
-
 def _problems(found: dict) -> list[str]:
     """What makes a run unable to finish honestly, all of it, rather than the first of it."""
     out = []
@@ -520,6 +494,11 @@ def _extra_metegs_before_stress(records: list[dict], other: list[dict]) -> list[
     return out
 
 
+def _atom_count(chanted_words: list[str]) -> int:
+    """How many atoms the chanted words have together."""
+    return sum(len(re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)) for word in chanted_words)
+
+
 def _meteg_before_stress_difference(
     found_alef: dict,
     found_bet: dict,
@@ -555,7 +534,9 @@ def _meteg_before_stress_difference(
         if target_atom_keys
         & {_consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)}
     ]
-    assert len(alef_counterparts) == 2, alef_counterparts
+    # The page states the difference as three atoms, without a meteg in cant-alef and with
+    # one in cant-bet.
+    assert _atom_count(alef_counterparts) == 3, alef_counterparts
     assert all(METEG not in word for word in alef_counterparts), alef_counterparts
     counterpart_atom_keys = {
         _consonant_key(atom)
@@ -568,7 +549,8 @@ def _meteg_before_stress_difference(
         if counterpart_atom_keys
         & {_consonant_key(atom) for atom in re.split(f"[{MAQAF}{hpu.NU_GMAQ}]", word)}
     ]
-    assert len(bet_counterparts) == 2, bet_counterparts
+    assert _atom_count(bet_counterparts) == 3, bet_counterparts
+    assert sum(word.count(METEG) for word in bet_counterparts) == 1, bet_counterparts
     assert bet_record["chanted_word"] in bet_counterparts, bet_counterparts
     return {
         "bcv": bcv,
@@ -900,6 +882,5 @@ def build_survey() -> dict:
                 for one in unjoined
             ],
         },
-        "legacy_baseline": _legacy_baseline(counts),
         "currency": _currency(found, words_by_bcv),
     }

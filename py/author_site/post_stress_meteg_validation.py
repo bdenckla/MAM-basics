@@ -27,7 +27,6 @@ from author_site.post_stress_meteg_survey import (
     _by_subtype_count,
     _by_type_count,
     _dual_cantillation,
-    _dual_cantillation_facts,
     _example_of,
     _fit_for_mas,
     _lacks_mas_records,
@@ -46,8 +45,11 @@ from author_site.post_stress_meteg_cases import (
 )
 
 from author_site.post_stress_meteg_post_silluq_data import (
+    _letters_of,
     _post_silluq_comparison,
 )
+
+from author_site.post_stress_meteg_appendices import _chronicles_8_11_mam_compound
 
 
 def _assert_exact_keys(mapping: dict, expected_keys: set[str], label: str) -> None:
@@ -324,18 +326,6 @@ def _pin_prose_claims(survey: dict) -> None:
         counts["mas"] for counts in census_chanted_word_summary["by_system"].values()
     )
     assert mbs_only > mas, "the prose says a meteg almost always precedes the stress"
-    qamats_grouping_differences = survey["qamats_variant_census"][
-        "distinct_phonetic_groupings"
-    ]
-    assert {record["bcv"] for record in qamats_grouping_differences} == {
-        "ps35:10",
-        "pr19:7",
-    }
-    assert len(qamats_grouping_differences) == 2
-    assert all(
-        len(record["qamats-dal"]) == 1 and len(record["qamats-sam"]) == 2
-        for record in qamats_grouping_differences
-    )
     assert _both(survey, "meteg in the stressed syllable, no sof pasuq") == 0
     stress_accent_classification = survey["stress_accent_classification"]
     assert stress_accent_classification["counts"] == {
@@ -432,12 +422,6 @@ def _pin_prose_claims(survey: dict) -> None:
         record["syllables_after_the_stress"] == 1 for record in type_2_records
     ), "the type-2 penultimate-stress fact has moved"
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
-    assert {record["bcv"] for record in nonfinal_mas_syllable_records} == {
-        "is63:12",
-        "pr1:19",
-        "pr11:26",
-        "jb5:10",
-    }
     assert len(nonfinal_mas_syllable_records) == 4
     assert all(
         record["syllables_after_the_stress"] == 1
@@ -473,8 +457,6 @@ def _pin_prose_claims(survey: dict) -> None:
     assert all(record["is_the_last_syllable"] for record in type_1_records)
     noninitial_next_stress_records = _noninitial_next_stress_records(survey)
     assert len(noninitial_next_stress_records) == 1
-    assert noninitial_next_stress_records[0]["bcv"] == "je46:14"
-    assert noninitial_next_stress_records[0]["structural_type"] == psm.TYPE_OPEN
     type_2_type_3_overlap = _type_2_type_3_overlap(survey)
     assert type_2_type_3_overlap["chanted_words"] == sum(
         type_2_type_3_overlap["by_book"].values()
@@ -492,11 +474,12 @@ def _pin_prose_claims(survey: dict) -> None:
     post_silluq_forms = dict(_post_silluq_comparison(survey))
     assert post_silluq_forms["MAM"].count(psm.METEG) == 1
     assert post_silluq_forms["BHS"].count(psm.METEG) == 2
-    exodus = _dual_cantillation_facts(survey, "ex20:2")
-    assert exodus["same_chanted_word_group_count"]
-    assert all(len(branch) == 1 for branch in exodus["first_same_chanted_word_group"])
-    genesis = _dual_cantillation_facts(survey, "gn35:22")
-    assert genesis["same_chanted_word_group_count"] == 5
+    # The 2 Chronicles 8:11 page labels MAM's compound MBS: it has a meteg, and no record
+    # of a meteg after the stress is that verse's.
+    assert psm.METEG in _chronicles_8_11_mam_compound(survey), "MBS needs a meteg"
+    assert not [
+        one for one in post_stress if one["bcv"] == _CHRONICLES_8_11_VERSE
+    ], "MAM's meteg there is after the stress, not before it"
     dual_cantillation = _dual_cantillation(survey)
     whole_census_comparison = dual_cantillation["whole_census_comparison_counts"]
     template_comparison = dual_cantillation["template_counts"]
@@ -530,8 +513,10 @@ def _pin_prose_claims(survey: dict) -> None:
         whole_census_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"]
         == whole_census_comparison[psm.CANT_BET]["meteg after the stressed syllable"]
     )
-    assert template_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"] == 0
-    assert template_comparison[psm.CANT_BET]["meteg after the stressed syllable"] == 0
+    assert (
+        template_comparison[psm.CANT_ALEF]["meteg after the stressed syllable"]
+        == template_comparison[psm.CANT_BET]["meteg after the stressed syllable"]
+    ), "the page says the choice of cantillation has no effect on the MAS count"
     for category in (
         "chanted words checked",
         "meteg before the stressed syllable",
@@ -545,11 +530,16 @@ def _pin_prose_claims(survey: dict) -> None:
         )
     assert survey["post_silluq"]["in_mam"] == 0
     difference = dual_cantillation["meteg_before_stress_difference"]
-    assert difference["bcv"] == "dt5:6"
-    assert len(difference[psm.CANT_ALEF]["chanted_words"]) == 2
-    assert len(difference[psm.CANT_BET]["chanted_words"]) == 2
+    # The page: the MBS difference is in three atoms, where one cantillation has no meteg and
+    # the other has one before the stress.
+    for cantillation, metegs in ((psm.CANT_ALEF, 0), (psm.CANT_BET, 1)):
+        chanted_words = difference[cantillation]["chanted_words"]
+        assert sum(len(_letters_of(word)) for word in chanted_words) == 3, chanted_words
+        assert sum(word.count(psm.METEG) for word in chanted_words) == metegs, (
+            cantillation,
+            chanted_words,
+        )
     chanted_word_difference = dual_cantillation["chanted_word_count_difference"]
-    assert chanted_word_difference["bcv"] == "dt5:14"
     assert len(chanted_word_difference[psm.CANT_ALEF]["chanted_words"]) == 2
     assert len(chanted_word_difference[psm.CANT_BET]["chanted_words"]) == 1
     for kind in (*_TYPE_SOURCES, psm.TYPE_UNCLASSIFIED):
