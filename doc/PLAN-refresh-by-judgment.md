@@ -83,9 +83,10 @@ All on 2026-10-07, in this session.
    removing them or correcting them, whichever seems most appropriate on a case-by-case basis)";
    and then: "I wouldn't say "no new guidance". I was just venting. Please suggest guidance,
    although I may reject a lot of those suggestions." The `AGENTS.md` sentence of decision 2 was
-   therefore suggested to him again on 2026-10-07, and wave 7 adds it only if he accepts it. If
-   executing this plan makes a statement in `AGENTS.md` false, correct or remove it in the same
-   wave.
+   therefore suggested to him again, and he accepted it the same day ("accept 1, 2 and 3"). It
+   says that products derived from MAM's text have no hashes of their inputs, which is false until
+   this plan has run, so wave 7 adds it. If executing this plan makes a statement in `AGENTS.md`
+   false, correct or remove it in the same wave.
 5. **A changed ketiv or qere at a stored pointed ketiv waits for Ben.** "Just let's go with the
    more invasive thing that if any [qere] changes in MAM, just stop the whole world and bug me about
    it. It is more work to design a process to try to be smart than to just be dumb and give me the
@@ -701,8 +702,8 @@ generators over the full corpus.
 
 ## Wave 7. The refresh skill and the texts that describe the old checks
 
-`AGENTS.md` gains the sentence below only if Ben accepts it (decision 4); a statement there that
-this plan has made false is corrected or removed.
+`AGENTS.md` gains the sentence Ben accepted (decision 4); a statement there that this plan has made
+false is corrected or removed.
 
 1. **`dot-claude/skills/mam-wikisource-refresh/SKILL.md`.**
    - Insert the approved section "Judge every diff: the expected changes, and only them" (above,
@@ -791,9 +792,9 @@ this plan has made false is corrected or removed.
      records, in one reviewable edit, and the refresh continues."
 3. **`py/ws/pywikibot-setup.md`** (`:63-65`, "the public mega and Phonetic-MAM release"): the
    dependent refresh now begins with the source commit.
-4. **`AGENTS.md`, only if Ben accepts it** (decision 4): in "What this repository's products are,
-   and which check a change owes", add as its own paragraph, after "Product reach and whether an
-   act is hard to undo are separate risk axes, as the user-level instructions explain.":
+4. **`AGENTS.md`** (decision 4): in "What this repository's products are, and which check a change
+   owes", add as its own paragraph, after "Product reach and whether an act is hard to undo are
+   separate risk axes, as the user-level instructions explain.":
 
    > A product derived from MAM's text takes each Wikisource refresh through the
    > `mam-wikisource-refresh` runbook's judgment of every diff, so it gets no hashes, fingerprints
@@ -854,7 +855,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | active |
 | R16 | Refresh skill and reference rewritten | 7 | active |
 | R17 | Skill deployment and this plan's record | 8 | active |
-| R18 | `AGENTS.md` sentence, suggested again on 2026-10-07 | 7 | unresolved: Ben's answer pending; blocks no other item |
+| R18 | `AGENTS.md` sentence, accepted by Ben on 2026-10-07 | 7 | active |
 
 ## Noticed, not acted on
 
