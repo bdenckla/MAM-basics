@@ -380,14 +380,32 @@ proceed with acting on the findings of the review". This entry is close-out step
 `doc/periodic-review.md` for every item that the first entry above marks "Awaiting Ben's
 decision".
 
-**How the decisions were taken.** Each item was put to Ben in the app's dialogs, in order of
-public-facing risk. The option wording is this session's; Ben's part is the selection, quoted
-below by the selected option's label, with any words he added. Where an option changes wording a
-reader sees, the entry gives the text that the option proposed, which is the text Ben selected.
-Before each question, this session or one of three read-only sub-agents re-read every passage the
-item cites on the tree at `97fbec01`; none had gone stale or been resolved. Every fix goes to the
-remediation phase, the fresh-task plan of close-out step 2, unless an item says otherwise, and
-nothing was implemented here.
+**How the decisions were taken.** The first four batches were put to Ben in the app's dialogs, in
+order of public-facing risk. The option wording is this session's; Ben's part is the selection,
+quoted below by the selected option's label, with any words he added. Where an option changes
+wording a reader sees, the entry gives the text that the option proposed, which is the text Ben
+selected. This session or one of three read-only sub-agents re-read every passage that each item
+cites on the tree at `97fbec01`, and none had gone stale or been resolved; items whose files Ben's
+commits of 2026-10-05 and 2026-10-06 later changed were re-read again, as their entries say.
+Every fix goes to the remediation phase, the fresh-task plan of close-out step 2, unless an item
+says otherwise, and nothing was implemented here.
+
+**Ben's instruction for the rest.** Four batches of dialogs settled 16 items: 1.3, 2.1 and 2.2,
+finding 4's open items, and the reader-facing items 8.1, 8.3 to 8.6, 9.2, 9.4 and the README half
+of 9.8. Ben then wrote: "I had little or no idea what I was agreeing to but I don't really care.
+This was not what I had in mind with "walking me through" these decisions. You always provide
+either too much or too little information. In this case too little." After this session set out
+item 8.1 in full, he changed that item in his own words, recorded under finding 8. Asked how to
+present the remaining 40 items, and whether to keep the earlier selections with his remark
+recorded, he wrote: "Is this all documentation? Just do what you recommend. I don't have time for
+any of this and it feels low stakes. I need this review to end". As this session had recommended,
+the 16 selections therefore stand as he made them, his remark recorded here, but they are not
+considered approvals of each wording: the remediation plan puts each wording to him again. Every
+disposition below that is marked "recommended, adopted", or that stands in a section saying so,
+is this session's recommendation, adopted under that instruction without Ben's reading it, and
+each gives its reason. Weighing "low stakes" and "I need this review to end", the
+session recommended a fix where an item's text or behaviour is wrong and the fix is small, and
+leaving an item as it is where the defect is latent, debatable or not worth its cost.
 
 ### Finding 1: MAM-simple's narpas label
 
@@ -418,6 +436,31 @@ nothing was implemented here.
    the WLC's and the UXLC's, or, where a page quotes MAM, as the printed-Decalogue pages do, MAM's
    CC-BY-SA 4.0".
 
+### Finding 3: public files that carry private-repository material
+
+Each disposition here is the session's recommendation, adopted under Ben's instruction above.
+
+1. **The governing question: the 2026-08-27 rule governs what a public-only session judges.** The
+   document inside MAM-private that `in/repo_maintenance_policy.json`'s `MAM-private` entry names
+   governs sessions that may read MAM-private. A public-only session, such as one of the public
+   review series, cannot read it and judges by the 2026-08-27 rule in the same file's
+   `repo_visibility` comment. The `MAM-private` entry's comment gains a sentence that says so.
+2. **3.5: the rule applies to text written from now on, with stated exemptions.** It does not reach
+   agent routing in skills and instructions, code comments and docstrings, dated records, or the
+   policy and manifest files under `in/`, which name private paths for sessions that can read them
+   or record what happened. Elsewhere, existing text is left as written. The `repo_visibility`
+   comment gains a sentence recording this scope. Reason: the census's hits are paths and file
+   names, not findings, and a retroactive sweep of more than a hundred lines costs more than it
+   protects.
+3. **3.1: leave as is**, as existing text under item 3.5's disposition. What the update entry names
+   of hbofonts is not sensitive, and Git history keeps it whatever the current text says.
+4. **3.2: leave as is**, as existing text under item 3.5's disposition: the link into MAM-private in
+   `doc/dual-agent-review.md` and the MAM-private issue link in
+   `doc/PLAN-silluq-before-gaya-template.md`.
+5. **3.3: leave as is**, as existing text under item 3.5's disposition; besides, the lookup that
+   `py/ws/ws_bot_edit_history.md` describes cannot work without naming the files it reads.
+6. **3.4: no sweep**, under item 3.5's disposition.
+
 ### Finding 4: Phonetic MAM
 
 1. **4.1's question, the inverted nuns: "Add as item 9".** `Phonetic-MAM/README.md`'s list of
@@ -442,6 +485,73 @@ nothing was implemented here.
    the adapter's pipes after a short grace period, so that the limit holds whatever the adapter
    starts.
 
+### Finding 5: texts that `AGENTS.md`'s new push rule left behind
+
+Each disposition here is the session's recommendation, adopted under Ben's instruction above.
+
+1. **5.2: fix.** D11's final integration in `doc/dual-agent-review.md` gains, before "Then fetch in
+   the designated full integration clone": "Run the suite there too, or record a judged skip, as
+   `AGENTS.md`'s rule for a push of `main` asks."
+2. **5.3: fix.** `AGENTS.md`'s rule for a push of `main` gains: "If that decision follows the last
+   commit, as when a worktree branch is fast-forwarded unchanged, push an empty commit
+   (`git commit --allow-empty`) whose message says it, rather than amending."
+3. **5.4: fix.** `py/product_scopes.py`'s docstring loses its restatement of the hand-run rule, from
+   "A change to a hand-run generator" to "as their READMEs say.", so that its "this docstring does
+   not restate it" is true. The restatement had already drifted: it names one exemption where
+   `AGENTS.md` now has two. Re-read after Ben's commits of 2026-10-06: the item still holds.
+4. **5.5: leave as is.** The judged skip stays available for a change to tracked product files. The
+   consumer-notice commits of 2026-10-05, `fe85cd55` and `d8435412`, used it, and the second
+   regenerated the change log that finding 1 found stale.
+
+### Finding 6: the review procedure documents
+
+Each disposition here is the session's recommendation, adopted under Ben's instruction above. The
+wording of items 6.2, 6.4 and 6.5 is Ben's approved wording of 2026-10-03, so the plan gives each
+replacement in full.
+
+1. **6.1: fix.** Both documents say that the MAM-basics instance of the 2026-10-02 trial ran on
+   2026-10-02, and that the procedure for a later two-agent window of MAM-basics is Ben's choice
+   when he starts one: `doc/periodic-review.md`'s opening paragraph, and
+   `doc/dual-agent-review.md`'s opening and its section "Next review: independent reviews and one
+   disposition list". What they say of MAM-private's instance is unchanged.
+2. **6.2: fix by narrowing.** The two sentences saying that `doc/dual-agent-review.md` records only
+   what pairing adds gain an exception for D10's filename and State rules and D12's rule for
+   correcting a finished document, which every review follows and which other instructions cite
+   there; `doc/periodic-review.md`'s "Read `doc/dual-agent-review.md` as well only when the window
+   is to be reviewed by two agents" gains the same exception. No section moves.
+3. **6.3: fix.** The rule that a brief names the private repositories, in both documents, names
+   beside `repo_visibility`'s list the private repositories outside the workspace that the tree
+   cites, today `bdenckla/trope` and `bdenckla/al-hatorah`.
+4. **6.4: fix.** `doc/periodic-review.md`'s sentence keeps "goes to Ben in chat rather than into the
+   file" and credits D9 and D11 only with what they say: that such a claim stays out of a tracked
+   turn.
+5. **6.5: fix.** D9's gloss of "public evidence only" follows property 2 of
+   `doc/periodic-review.md`: the turn reads no repository that property 2 names as private.
+
+### Finding 7: checks and tools that do less than they say
+
+Each disposition here is the session's recommendation, adopted under Ben's instruction above.
+
+1. **7.2: fix the docstring only.** `py/tests/test_parser_stage_node_keys.py`'s docstring says that
+   the lint reads only the classifier's top-level `if` tests and the two predicates' return
+   constants, and that it does not check the refusal's body. No injection test is added, as the
+   approved plan decided.
+2. **7.4: leave as is.** It is latent: both word-form claims are 2, and the smallest of the
+   denominators is 18. The error that ends the command names the claim, which is what the refresh
+   must take to Ben in either case.
+3. **7.5's second half: the code stands, and the documents follow it.** `doc/clone-forests.md` and
+   `py/repo_util/forest_sync.py`'s module docstring say that the clone that only the calling
+   session occupies is skipped whatever its state: the write form leaves it untouched either way,
+   and that session is working in it.
+4. **7.6: leave as is.** `repository-maintenance.md` already makes a failed relocation stop for
+   inspection; a repair procedure can be written if a relocation ever fails.
+5. **7.8: fix in code.** `py/main_repo_maintenance.py` catches step 2's `RetirementError`, reports
+   the step as failed and goes on, as it does for step 1's `OSError`, so that "Seven independent
+   steps" holds.
+6. **7.11: fix by rejecting.** A compute reply that cannot be encoded as UTF-8 gets the ordinary
+   error reply, "computation rejected", and the stream goes on, as `doc/phonetic-mam-compute.md`
+   promises.
+
 ### Finding 8: questions for Ben
 
 1. **8.1: "orphaned", in Ben's own words.** Ben first selected "Use "unattached"", which changed the
@@ -463,12 +573,15 @@ nothing was implemented here.
    rather than allowing a single one. This session's draft defines the word by the sense that
    both uses share: "**orphaned** = a point that belongs to no letter, such as the ḥiriq of the
    implicit yod in ירושלם-style spellings, or a point left between two written words."
-2. **8.3: "Add Phonetic-MAM".** The landing page's "MAM datasets and technical documentation" list
+2. **8.2: leave as is (recommended, adopted).** `doc/boj-image-crop-reproducibility.md`'s principles
+   govern crops that a program makes, as its text says, and a crop supplied as a finished image
+   records what is known of it in its commit message, as `6004709e` and `a1bbce52` do.
+3. **8.3: "Add Phonetic-MAM".** The landing page's "MAM datasets and technical documentation" list
    gains an entry "Phonetic-MAM", linking
    `https://github.com/bdenckla/MAM-basics/blob/main/Phonetic-MAM/README.md`, after MAM-OSIS,
    through `py/author_site/site_data.py`. Re-read after Ben's near-Aleppo commits of 2026-10-05 and
    2026-10-06, which added a near-Aleppo entry to that list: the item still holds.
-3. **8.4: "Add the prescribed credit".** Each of the eight pages keeps its link to the source it
+4. **8.4: "Add the prescribed credit".** Each of the eight pages keeps its link to the source it
    quotes and gains, after its existing credit, "Source attribution: Hebrew Wikisource, under
    CC-BY-SA 4.0.", with "Hebrew Wikisource" linking
    `https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning` and
@@ -476,19 +589,34 @@ nothing was implemented here.
    pages that C15.8 corrected attribute MAM. The same line goes on
    `gh-pages/wlc/accgram/printed-decalogue-uvinkha.html`, which names Hebrew Wikisource with no
    link, and the remediation plan's census adds any other English page that quotes MAM material.
-4. **8.5: "State MAM's terms".** `Phonetic-MAM/LICENSE.md`'s third line becomes "This statement
+5. **8.5: "State MAM's terms".** `Phonetic-MAM/LICENSE.md`'s third line becomes "This statement
    applies equally to the MAM text and its derivative display in `data/`, and to the MAM Hebrew
    that `examples/display.json` quotes."; the terms of `DATA-LICENSES.md`'s row for
    `Phonetic-MAM/examples/display.json` gain "The pointed Hebrew forms the tables quote are MAM's
    text and keep MAM's CC-BY-SA 4.0 terms above."; and the Phonetic-MAM clause of that file's
    preface to the MAM statement ends "the MAM text and its derivative display in
    `Phonetic-MAM/data/` and the MAM Hebrew that `Phonetic-MAM/examples/display.json` quotes".
-5. **8.6: "Both to past tense".** In `Yeivin-ITM/README.md`, "Its source is pinned to MAM-private
+6. **8.6: "Both to past tense".** In `Yeivin-ITM/README.md`, "Its source is pinned to MAM-private
    commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`." becomes "The migration took its source from
    MAM-private commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`; no test pins the adaptation to it
    now.", and "All 17 existing filenames, internal links, and anchors are preserved." becomes "The
    migration preserved all 17 existing filenames, internal links, and anchors.", C6.2 option A's
    wording.
+7. **8.7: fix (recommended, adopted).** In `doc/PLAN-mega-speedup.md`, items 1 and 3 of the list
+   that the plan carries forward say that a cloud run now runs `accgram-survey-post-stress-meteg`
+   and skips only `phonetic-mam-export`; the executed Phase 2 steps stay as written.
+8. **8.8: fix (recommended, adopted).** The Unicode section of the common body,
+   `dot-Codex/user-wide-AGENTS.md`, says that such an entry point "reconfigures stdout to UTF-8,
+   and stderr to UTF-8 with `errors="backslashreplace"`, at the start of `main()`", and the change
+   is deployed with `--sync-user-config`.
+9. **8.9: fix (recommended, adopted).** `hebrew-prose`'s `references/rendered-prose.md` drops
+   "Cross-repo rule; cf. MAM-basics `py/versification_and_cantillation/doc.py`.", so that it calls
+   the strand-name rule trio-only throughout, as its SCOPE paragraph and the module it cited agree.
+10. **8.10: deferred (recommended, adopted).** A separate cleanup task, outside this review's
+    remediation, replaces the nine NFC calls on Hebrew text with comparisons through
+    `give_std_mark_order`, and decides whether the three NFKD calls on Hebrew presentation forms, a
+    different operation, become a recorded exception. None of the twelve is in the window's added
+    lines; each came with copied or vendored code.
 
 ### Finding 9: one-line items
 
@@ -501,11 +629,10 @@ nothing was implemented here.
    with the adaptation's permission notice and bibliographic scope, its licence statement, and the
    closed JSON Schema of its claim data | MAM-basics' own work, so GPL-3.0. The adaptation the
    README describes keeps the terms of the `py/yeivin_itm/content/` row below |", and row 57
-   becomes "|
-   `Phonetic-MAM/README.md`, `Phonetic-MAM/LICENSE.md`, `Phonetic-MAM/schema/` | the product's
-   README, its licence statement, and the closed JSON Schema of its display data | MAM-basics' own
-   work, so GPL-3.0, apart from the MAM statement that `LICENSE.md` repeats verbatim |".
-   `Yeivin-ITM/LICENSE.md`'s restatement of row 52 follows.
+   becomes "| `Phonetic-MAM/README.md`, `Phonetic-MAM/LICENSE.md`, `Phonetic-MAM/schema/` | the
+   product's README, its licence statement, and the closed JSON Schema of its display data |
+   MAM-basics' own work, so GPL-3.0, apart from the MAM statement that `LICENSE.md` repeats
+   verbatim |". `Yeivin-ITM/LICENSE.md`'s restatement of row 52 follows.
 3. **9.8, its README half: "Dashes, as DATA-LICENSES".** `README.md`'s "Code: GPL-3.0" item reads
    "This covers MAM-basics' work in code and prose: everything under `py/`, `.github/` and `doc/` —
    except the adapted excerpts and their remarks under `py/yeivin_itm/content/`, the third-party
@@ -513,3 +640,78 @@ nothing was implemented here.
    Pump discussion captured and translated in `doc/wikisource-dagesh-discussion-*` — and the
    generated indexes and reports under `out/` that carry no corpus text.", its following sentences
    unchanged.
+4. **9.12: leave as is (recommended, adopted).** The field table's "Guidance for people and programs
+   using the data" describes the notice embedded in the data, and "The notes below are for writers
+   of programs" describes the guide's own notes: they name the audiences of two different texts.
+5. **9.13: leave as is (recommended, adopted).** The two sentences state what a dry run and a re-run
+   show for a targeted edit, the case the bot guide is written for; the uncommon cases, an
+   untargeted kind, a narrower selector or an edit that changes nothing, are low stakes.
+6. **9.18: leave as is (recommended, adopted).** In the mega, the step's reconfiguration repeats
+   what the mega's `force_utf8_io` has already set, so it changes nothing.
+7. **9.21: leave as is (recommended, adopted).** `py/main_uxlc_grammar_test.py` is outside the
+   default collection, and `py/repo_util/check_repo_standards.py` excludes `main_` files by name and
+   names this one.
+8. **9.22: fix (recommended, adopted).** Every listed block is made to parse with the least change:
+   a placeholder for which one value always works takes that value, as C15.24 did; any other is
+   quoted, with PowerShell's call operator where it stands for a command's path; and the unlabelled
+   one-liner after "Re-establish with:" in `doc/PLAN-repo-maintenance-across-GitRepos.md` gets the
+   least change that makes it parse. The plan gives each block's text.
+9. **9.36: leave as is (recommended, adopted).** The handler's callers, repository maintenance and
+   worktree retirement, run on Ben's Windows machines, and a POSIX change could not be run here.
+10. **9.38: leave as is (recommended, adopted).** The message already names both causes, "ended
+    early or exceeded its book limit"; only the exit status it adds misleads, and only on Windows.
+11. **9.39: fix in the document (recommended, adopted).** `doc/phonetic-mam-compute.md`'s "A request
+    line is limited to 16 Mi characters" becomes "A request line, including its line terminator, is
+    limited to 16 Mi characters".
+12. **9.42: leave as is (recommended, adopted).** `main()` sets `sys.dont_write_bytecode` itself,
+    and the test covers the tracked files; a test that could catch import caches would need a
+    different design for little gain. Re-read after Ben's commits of 2026-10-06, which changed
+    `py/tests/test_yeivin_itm.py`: the item still holds.
+
+### The review's "Noticed outside the diff"
+
+Each disposition here is the session's recommendation, adopted under Ben's instruction above.
+
+1. **Issue #296: leave as is, so no outward act.** The issue is a low-priority investigation note,
+   its body names the Codex session that wrote it, and GitHub records when it was opened.
+2. **`_reference_matches`: fix.** A `path:line`, `path:line:`, `path:first-last` or `path#Lline`
+   form counts as a citation of the file. A missed citation can let a worktree's retirement treat
+   cited `.novc` evidence as uncited, and widening the match only retains more.
+3. **The break markers at Genesis 35:22, Exodus 20:13 and Deuteronomy 5:17: assess with item 4.6.**
+   The remediation that corrects item 4.6's rows in Exodus 20 and Deuteronomy 5 compares the
+   release's break markers with MAM-parsed's at these three verses. Where the release misrepresents
+   MAM, a correction takes item 4.7's path, which needs Ben's approval; otherwise nothing changes.
+
+### "Noticed while fixing", items 1 and 2
+
+Each disposition here is the session's recommendation, adopted under Ben's instruction above.
+
+1. **Fix in place.** Two stale claims in live update files are corrected in place, as items 9.28 and
+   9.33 were elsewhere. In `doc/review-findings-2026-10-02-update.md`'s entry "Remediation
+   implemented; final gates pending, 2026-10-03": "the archive commit, the last whose tree holds
+   every file that the relay's removal deleted", since `d168e22e` holds them too. In
+   `doc/dual-agent-review-2026-10-01-turn-01-claude-update.md`'s entry "Remediation execution by
+   Codex, 2026-10-01": "Public verification evidence is retained under this worktree's ignored
+   `.novc/`", since that worktree and its `.novc` were removed on 2026-10-04. `4573b007`'s commit
+   message stays as written.
+2. **Fix.** The `accgram-survey-post-stress-meteg` step record in `py/main_0_mega.py`, and the
+   comment above it, name `MAM-parsed/plus/` among the survey's inputs. Re-read after Ben's commits
+   of 2026-10-06: the record still omits it.
+
+### Every open item has a disposition
+
+Checked against the first entry above: every item it marks "Awaiting Ben's decision", and both of
+its optional "Noticed while fixing" items, has a disposition here, 56 in all. Ben selected 16 in
+the dialogs, and replaced one of those selections, item 8.1's, in his own words. The other 40
+carry this session's recommendation, adopted under his instruction: 23 go to the remediation
+plan, 16 are left as they are, and one, item 8.10, is deferred to the separate cleanup task that
+its disposition describes.
+
+**Effective base State, 2026-10-06:** partly acted on; close-out step 1 complete, every item
+having a disposition; remediation pending. Close-out step 2 now needs a fresh-task remediation
+plan, with concrete wording, for the 39 items whose disposition changes a file or assesses one:
+the 16 that Ben selected and 23 of the recommended dispositions. The plan re-measures each on the
+current tree, presents them by public-facing risk, and puts each wording to Ben before it is
+applied. The 16 items left as they are need nothing more. Item 8.10 stays deferred until Ben
+starts its cleanup task. The base report's line 3 stays as written, and this update remains
+`State: open` while its base survives.
