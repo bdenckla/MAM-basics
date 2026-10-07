@@ -12253,7 +12253,7 @@
       "wtel_subtype": "כו״ק",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 884
+      "count_E": 880
     },
     {
       "wtel_type": "tmpl",
@@ -12491,7 +12491,7 @@
       "wtel_subtype": "קו״כ",
       "count_C": 0,
       "count_D": 0,
-      "count_E": 126
+      "count_E": 130
     },
     {
       "wtel_type": "tmpl",
@@ -12670,7 +12670,7 @@
     },
     {
       "stack": "E/כו״ק",
-      "count": 741
+      "count": 737
     },
     {
       "stack": "E/כו״ק/מ:דחי",
@@ -13002,7 +13002,7 @@
     },
     {
       "stack": "E/קו״כ",
-      "count": 108
+      "count": 112
     },
     {
       "stack": "E/קו״כ/מ:לגרמיה-2",
@@ -13033,7 +13033,7 @@
     {
       "wtel_subtype": "כו״ק",
       "arg_count": 2,
-      "count": 884,
+      "count": 880,
       "variations": 1
     },
     {
@@ -13315,7 +13315,7 @@
     {
       "wtel_subtype": "קו״כ",
       "arg_count": 2,
-      "count": 126,
+      "count": 130,
       "variations": 1
     },
     {

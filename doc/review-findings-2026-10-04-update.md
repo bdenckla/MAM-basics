@@ -763,6 +763,40 @@ rendered pages on Hebrew Wikisource, and MAM-simple's README and XML guide state
 difference. MAM-parsed's guide gives the parameters' ketiv-first order in the same sentence as
 its "MAM has the qere first", so its sense is clear there, and it is unchanged.
 
+## The four post-maqaf ketiv-first templates renamed on Wikisource, 2026-10-06
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-06, New York
+time, in the full clone `C:/Users/BenDe/GitRepos2/MAM-basics` on `main`. It worked from a prompt
+that a read-only Claude session wrote the same day after finding the four, the work that "Carried
+by other sessions" above gives to one session. That prompt quotes Ben's instruction to its
+session as: "Give a prompt for a session that will write a bot to fix all four of these to use
+the appropriate post-maqaf ketiv/qere template."
+
+**Done.** BDencklaBot gave the template `קו"כ` to the four ketiv/qere whose qere directly follows
+a maqaf but whose call was `כו"ק`: 2 Samuel 20:23, Jeremiah 48:21, Ezekiel 39:25 and 2 Chronicles
+13:19. Ben approved the save and its edit summary in the app's dialog after seeing the dry run.
+The edit file is `0067293b`, and `3c58d087` is the run's record, where
+`py/ws/ws_bot_edit_history.md` describes the run and the page histories behind it. The near-Aleppo
+build's sealed pointings named the four targets, and Ben chose in the same dialog to re-seal them
+mechanically: `e5cd5997` re-sealed them and `a1ab20f8` regenerated near-Aleppo.
+
+**Counts that moved.** Two measurements in the entries of 2026-10-05 were true when taken and stay
+as written: "129 of the 1,047 `kq` elements list `kq-q` before `kq-k`", under "Noticed while
+fixing, not acted on", and "884 `כו״ק`, 126 `קו״כ` and 37 `מ:כו״ק מיוחד`", with "The 129 elements
+that list `kq-q` first", in the withdrawal entry. Since `3c58d087` the figures are 133 of 1,047,
+and 880, 130 and 37. The 133 are the 130 `קו״כ` and the same three `מ:כו״ק מיוחד`.
+`MAM-simple/doc/reading-mam-simple-xml.md` now says "133 of the 1,047 pairs, counted on
+2026-10-06". The other documents that the entry above names say "about one pair in eight", which
+remains true.
+
+**Also fixed.** The Lamentations 1:18 example that the entry above added to
+`MAM-simple/doc/reading-mam-simple-xml.md` and `reading-mam-simple-json.md` had its Hebrew in
+Unicode's normal mark order, not MAM's, so `test_prose_mark_order.py` and
+`test_mam_simple_mark_order.py` failed on four of its lines. `efe58d21` gave them MAM's order, and
+line 491 of `doc/PLAN-remediate-review-findings-2026-10-04.md` the same.
+
+The effective base State above is unchanged.
+
 ## Ben's approval of the remediation plan, 2026-10-06
 
 Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-06, New York

@@ -33837,12 +33837,12 @@ v,:,α,∵,l,-,y,_,(tip),h,:,c,a,h
 SPACE
 v,:,3,_,l,-
 START kq
-START kq-k
-m,v,p,3,τ
-STOP kq-k
 START kq-q
 m,‥,y,p,a,(mos),3,_,τ
 STOP kq-q
+START kq-k
+m,v,p,3,τ
+STOP kq-k
 STOP kq
 (sopa)
 

@@ -11092,12 +11092,12 @@
                   "type": "kq",
                   "contents": [
                     {
-                      "type": "kq-k",
-                      "text": "מופעת"
-                    },
-                    {
                       "type": "kq-q",
                       "text": "מֵיפָֽעַת"
+                    },
+                    {
+                      "type": "kq-k",
+                      "text": "מופעת"
                     }
                   ]
                 },

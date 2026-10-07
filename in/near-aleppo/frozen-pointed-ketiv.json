@@ -2,7 +2,7 @@
   "format": "near-aleppo-frozen-pointing-v1",
   "algorithm_commit": "848b45a0418c2ab8f38d263df6dc4b9f7f406a20",
   "mam_input_commit": "303bf2399c1e1fc1300a75f4fb1ed335d62984d0",
-  "target_mam_commit": "d843541233bc86d0dc16a29eed5ec490b5d0829e",
+  "target_mam_commit": "3c58d0871210fc01298979f286e19bac9d11d58d",
   "input_sha256": {
     "A1-Genesis.json": "443fb743f2a13de04798925f75335aeafe35a269b99c7a91046957bc2907dd6b",
     "A2-Exodus.json": "1276563bdfe74603a765d2b79ae0e74bde8350d2cb8a79ecb094c9b3a7f15391",
@@ -11,11 +11,11 @@
     "A5-Deuter.json": "6eae49d8e860a01272152a8ec40b555d96d71fa47e4331c31bbeb228890b2a46",
     "B1-Joshua.json": "8c5030941247685755eb65df1ff0e461945e63f96ba9b91b20d4af233a5307be",
     "B2-Judges.json": "0f2dccdf66b669156e4e92f72705ae396e464dc5437ed8129cd1b66e43bbda83",
-    "BA-Samuel.json": "e9b126058453cfa72f855250ad62dedfd92045ff8b822544f02352a61f983d23",
+    "BA-Samuel.json": "29ba5bf9d0e1ed56b57463930ecb6831ad2d73face02b4b0c700b7b192119a93",
     "BC-Kings.json": "c041cb1a0989083a5e8d8ffdf6c67816071242d18cc967f3483e5297d1abda5a",
     "C1-Isaiah.json": "be2574ba98e272843b1cbbc9e32858c182a8c13ef8a705d3b8950e228fcc1e9f",
-    "C2-Jeremiah.json": "085c4bc486f9138d214378d362f3c9010e9df85de6aefa93ff950ba84a823788",
-    "C3-Ezekiel.json": "17f6c8ea18a8047141f046cba53f37275c808bedf4322b0561fe5445e9b5abd9",
+    "C2-Jeremiah.json": "a44cdd8bcbc60a08e46dfe3b9792e21e9914d43382319f6c6c9f82620062bdcc",
+    "C3-Ezekiel.json": "262798c1c6a5b352f8754fdafb3c800ed266fd344fc77207d0bd0e9803b95d6f",
     "CA-The-12-Minor-Prophets.json": "f42bf68af52db7e0619eff230ca0e68f4928b58cc40cf3ff9cf8e80f243bbd00",
     "D1-Psalms.json": "b20f27b16cf4489a85c1bd35c3f8fb9c254dd544b1faabdae094a125cd16723a",
     "D2-Proverbs.json": "ae2228d6a48fe795e60abe2d24c692cf6e8a18f1a9e646de4743e3a66794bf1a",
@@ -27,7 +27,7 @@
     "E5-Esther.json": "a93c106356dc16f32d7ef3719b7edde93cb82a958ec413f29e968ddb24abf235",
     "F1-Daniel.json": "43fcc78c2bfe85bb86291e6845470949d784fdd36bec78520c130ad630857704",
     "FA-Ezra-Nexemiah.json": "e1fab9e242844f76877cad59b16678678dc0481791fcfbb94bb3c512213b4739",
-    "FC-Chronicles.json": "37bb4651184b058746b3587605b70a94a4c9cdd3a2678dc1f157c07ab14b7db1"
+    "FC-Chronicles.json": "9e6c06b8513ec9219130376810de0eb561c630ff75e34da243ae2ed20bf629b9"
   },
   "records": [
     {
@@ -4847,8 +4847,8 @@
       "path": [
         1
       ],
-      "before_sha256": "c3669269d98895102a6d69d5a1e692ec56fab7f990a2ac2d1c7050d1679dd748",
-      "after_sha256": "c3669269d98895102a6d69d5a1e692ec56fab7f990a2ac2d1c7050d1679dd748",
+      "before_sha256": "0bd68f35b6ea274dbe4995ec754e651da55c9f9fcce073ae61ebb97ffd5766b8",
+      "after_sha256": "0bd68f35b6ea274dbe4995ec754e651da55c9f9fcce073ae61ebb97ffd5766b8",
       "canonical_sha256": "7166180e7f8af357cc2e99e47b3127714380f54f43fdc38e103faf384b9d0ec9",
       "value": "מֵופָֽעַת",
       "atoms": 1
@@ -5975,8 +5975,8 @@
       "path": [
         1
       ],
-      "before_sha256": "75c328b396be24be7d6c15485e9a30f035ecea9f178d40e8fae607e13e950fa3",
-      "after_sha256": "75c328b396be24be7d6c15485e9a30f035ecea9f178d40e8fae607e13e950fa3",
+      "before_sha256": "8a5e884ef93a0c0148e331febc0a5604265fa6f8a6596c0af454ede66b0ae1d2",
+      "after_sha256": "8a5e884ef93a0c0148e331febc0a5604265fa6f8a6596c0af454ede66b0ae1d2",
       "canonical_sha256": "29652f78e5591fb68dd28d9f38f602e39bd95879f45be410731aa976ef2c53e7",
       "value": "שְׁב֣יּת",
       "atoms": 1
@@ -11636,8 +11636,8 @@
       "path": [
         1
       ],
-      "before_sha256": "7ec72b5af983201b3399cbca443cdba0616b6fd36a992bfdf0f80f833a3686e2",
-      "after_sha256": "7ec72b5af983201b3399cbca443cdba0616b6fd36a992bfdf0f80f833a3686e2",
+      "before_sha256": "5a72946c1d6bcbda262777150029104c27388c06b09a8384b4c2397390d0bafd",
+      "after_sha256": "5a72946c1d6bcbda262777150029104c27388c06b09a8384b4c2397390d0bafd",
       "canonical_sha256": "fe16c5303fa762de9fb56d2d51b640682f91e3d1c1757ab60453aa5d844af0c3",
       "value": "עֶפְרַ֖וִן",
       "atoms": 1

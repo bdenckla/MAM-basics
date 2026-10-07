@@ -190,7 +190,11 @@ def _baseline_pointing_order_corrections(baseline):
     """Apply approved source-order corrections to the historical replay input.
 
     The independent HTML oracle stays untouched. Only mark order may differ:
-    source guards, site membership, letters and each letter's marks must agree.
+    site membership, letters and each letter's marks must agree, and a record
+    whose value changed must keep its source guard. A record re-sealed for a
+    later change to MAM's text, as e5cd5997 re-sealed 2 Samuel 20:23 after a
+    ketiv/qere template's rename, has a new source guard and the same value,
+    so it carries no correction into the replay of the baseline's inputs.
     """
     previous = {row["id"]: row for row in baseline["records"]}
     current = {row["id"]: row for row in reviewed_ketiv.load()["records"]}
@@ -198,11 +202,12 @@ def _baseline_pointing_order_corrections(baseline):
     corrections = {}
     for identity, row in current.items():
         prior = previous[identity]
-        assert {k: v for k, v in prior.items() if k != "value"} == {
-            k: v for k, v in row.items() if k != "value"
-        }
+        assert {
+            k: v for k, v in prior.items() if k not in ("value", "expected_sha256")
+        } == {k: v for k, v in row.items() if k not in ("value", "expected_sha256")}
         before, after = prior["value"], row["value"]
         if before != after:
+            assert prior["expected_sha256"] == row["expected_sha256"], identity
             assert isinstance(before, str) and isinstance(after, str)
             assert render_wikitext_kq._cluster_inventory(
                 before

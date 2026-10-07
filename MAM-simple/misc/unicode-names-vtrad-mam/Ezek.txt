@@ -27371,12 +27371,12 @@ SPACE
 SPACE
 α,∵,τ,-
 START kq
-START kq-k
-$,b,y,τ
-STOP kq-k
 START kq-q
 $,·sh,:,b,(mun),v,·,τ
 STOP kq-q
+START kq-k
+$,b,y,τ
+STOP kq-k
 STOP kq
 SPACE
 y,_,3,:_,q,o,(zaq_q),b

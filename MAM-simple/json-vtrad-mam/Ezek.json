@@ -8421,12 +8421,12 @@
                   "type": "kq",
                   "contents": [
                     {
-                      "type": "kq-k",
-                      "text": "שבית"
-                    },
-                    {
                       "type": "kq-q",
                       "text": "שְׁב֣וּת"
+                    },
+                    {
+                      "type": "kq-k",
+                      "text": "שבית"
                     }
                   ]
                 },

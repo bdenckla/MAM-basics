@@ -14,9 +14,10 @@ import re
 from near_aleppo import phase2_templates as phase2
 
 MANIFEST = build_paths.input_dir() / "frozen-pointed-ketiv.json"
-# Target fingerprints refreshed for MAM-basics d8435412's notice-only correction.
-# Every approved record and source identity is unchanged; full-file guards remain.
-MANIFEST_SHA256 = "77d38e6a9626dd71f51abf55af3e367d7f888ec9f21d4e24dd0c526425528b89"
+# Target fingerprints refreshed for MAM-basics 3c58d087, which renamed four
+# post-maqaf ketiv/qere calls from כו״ק to קו״כ. Every approved record and source
+# identity is unchanged; full-file guards remain.
+MANIFEST_SHA256 = "3a8214cf789253797c0c84c1025ba4e5bb06ffa419ec392864eb58d8bd76a472"
 SITES = 723
 ATOMS = 733
 _HEX = re.compile(r"[0-9a-f]{64}\Z")
