@@ -58,6 +58,31 @@ def persist_verify_summary(
     write_json(table_json_path, table_data)
 
 
+def _failing_rows(
+    verify_report: dict[str, object], uxlc_verify_report: dict[str, object]
+) -> list[str]:
+    """One line per failed row check, naming the check, the row's verse and its word."""
+    lines = []
+    for check, key in (
+        ("not in any MAM-parsed-plus file", "missing_any_plus"),
+        ("not in its MAM-parsed-plus verse", "missing_mpu_verse_text_rows"),
+        (
+            "a supported qere wrapper with no matching template argument",
+            "rows_supported_qere_wrapper_mismatch",
+        ),
+    ):
+        for row in verify_report[key]:
+            lines.append(
+                f"row {row['row_number']}, {row['verse']}, {row['word']}: {check}"
+            )
+    for row in uxlc_verify_report["rows_missing_claims"]:
+        lines.append(
+            f"row {row['row_number']}, {row['verse']}, ketiv {row['ketiv_claim']}"
+            f" and qere {row['qere_claim']}: a claim not found in UXLC"
+        )
+    return lines
+
+
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
@@ -98,6 +123,23 @@ def main() -> None:
         table_json_path=args.table_json_path,
         uxlc_utils_path=args.uxlc_utils_path,
     )
+
+    verify_summary = verify_report["summary"]
+    uxlc_verify_summary = uxlc_verify_report["summary"]
+    if not isinstance(verify_summary, dict) or not isinstance(
+        uxlc_verify_summary, dict
+    ):
+        raise ValueError("review-data verification summary is invalid")
+    # Verify before writing anything, so that a failed row leaves the table and page as they
+    # were rather than recording the failure in both.
+    failing = _failing_rows(verify_report, uxlc_verify_report)
+    if failing:
+        print("\n".join(failing), file=sys.stderr)
+        raise ValueError(
+            f"review-data verification failed for {len(failing)} row check(s);"
+            " nothing was written"
+        )
+
     persist_verify_summary(
         table_json_path=args.table_json_path,
         verify_report=verify_report,
@@ -114,29 +156,8 @@ def main() -> None:
         ),
     )
 
-    verify_summary = verify_report["summary"]
-    uxlc_verify_summary = uxlc_verify_report["summary"]
-    if not isinstance(verify_summary, dict) or not isinstance(
-        uxlc_verify_summary, dict
-    ):
-        raise ValueError("review-data verification summary is invalid")
-
-    failures = {
-        "missing_any_plus_count": verify_summary["missing_any_plus_count"],
-        "missing_mpu_verse_text_count": verify_summary["missing_mpu_verse_text_count"],
-        "rows_supported_qere_wrapper_mismatch_count": verify_summary[
-            "rows_supported_qere_wrapper_mismatch_count"
-        ],
-        "rows_missing_uxlc_claim_count": uxlc_verify_summary[
-            "rows_missing_claim_count"
-        ],
-    }
-    if any(failures.values()):
-        formatted = ", ".join(f"{name}={count}" for name, count in failures.items())
-        raise ValueError(f"review-data verification failed: {formatted}")
-
     print(
-        "Verified and rendered the 77-row Holman review: "
+        f"Verified and rendered the {verify_summary['row_count']}-row Holman review: "
         f"{args.findings_html_path.as_posix()}"
     )
 

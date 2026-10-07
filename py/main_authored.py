@@ -19,7 +19,8 @@ Subcommands:
     gen-mam-parsed-docs
                 Write index.html to gh-pages/MAM-parsed and the plus docs to
                 gh-pages/MAM-parsed/plus/html. Runs the claim verification
-                afterwards unless --skip-verify-mp says not to.
+                first, on the docs as built in memory, and writes nothing if
+                a claim fails, unless --skip-verify-mp says not to verify.
     verify-mp
                 Run MAM-parsed claim verification without rewriting
                 MAM-parsed authored HTML/CSS outputs.
@@ -196,13 +197,14 @@ def _run_verify_mp(*, claims) -> None:
 
 def cmd_gen_mam_parsed_docs(_args):
     out_dir = str(paths.gh_pages_dir() / "MAM-parsed")
-    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
-
     skip_verify = bool(getattr(_args, "skip_verify_mp", False)) if _args else False
     if not skip_verify:
+        # Verify the claims of the documents as built in memory, so that a failed claim
+        # leaves the written documents and claims index as they were.
         print("Running MAM-parsed verification...")
-        _run_verify_mp(claims=claims)
+        _run_verify_mp(claims=mam_parsed_docs_build.collect_explicit_claims())
 
+    claims = mam_parsed_docs_build.build_docs_with_explicit_claims(out_dir)
     claims_path = claims_doc.write_output(claims)
     print(f"Generated MAM-parsed docs in {out_dir}")
     print(f"Generated claims index in {claims_path}")
@@ -247,7 +249,7 @@ def build_parser():
     ).add_argument(
         "--skip-verify-mp",
         action="store_true",
-        help="Skip running claim verification after generating MAM-parsed docs.",
+        help="Skip the claim verification that runs before the MAM-parsed docs are written.",
     )
     sub.add_parser(
         "gen-mp-claims-index",
