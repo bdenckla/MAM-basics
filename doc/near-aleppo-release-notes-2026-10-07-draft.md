@@ -27,24 +27,16 @@ The two changed-note template names have changed:
 | Note `נוסח למקרא על פי המסורה` | Note `נוסח עם הקשר מקרא על פי המסורה` |
 | Note `הערה-2 למקרא על פי המסורה` | Note `הערה-2 עם הקשר מקרא על פי המסורה` |
 
-Their parameters have these roles:
+The [NA JSON reference](https://bdenckla.github.io/MAM-basics/near-aleppo/reading-json.html#consumer-notice)
+documents the parameter roles and how to interpret NA-adjusted clauses alongside
+the original MAM context.
 
-| Parameter | Role |
-| --- | --- |
-| Parameter `1` | Near-Aleppo's Scripture target. |
-| Parameter `2` | The NA-adjusted clause, or an empty array. |
-| Parameter `מקרא על פי המסורה` | MAM's original structured target. |
-| Parameter `הערת מקרא על פי המסורה` | The remaining original MAM clauses, in their original order, or the complete original note. |
-
-There is an NA-adjusted clause in 1,047 notes. In the remaining 501,
-parameter 2 is empty and the complete original note remains in MAM context.
-Scroll-note parameter 3 and evidence flags keep their existing roles.
+There is an NA-adjusted clause in 1,047 notes. The remaining 501 keep the
+complete original note in MAM context.
 
 **Consumer action:** Update the closed template dispatch for the new names and
-parameter sets. Interpret an agreement in parameter 2 as agreement with
-near-Aleppo; interpret an agreement in the MAM-note parameter as agreement with
-MAM. Keep the preserved MAM target and note clauses out of the Scripture
-projection. The consumer notices in all 24 book files explain the new contract.
+parameter sets, following the JSON reference. The consumer notices in all
+24 book files also explain the new contract.
 
 ### Final punctuation in pointed ketivs
 
