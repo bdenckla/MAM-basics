@@ -37,10 +37,10 @@ def build_body(*, claims: ClaimCollection):
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(["Documentation template (", author.hbo("נוסח"), ")"]),
-        author.para(["<- Back to ", plus_back_link]),
+        author.para(["← Back to ", plus_back_link]),
         author.para(
             [
-                "Its first parameter is the \u201ctarget\u201d - what is being documented."
+                "Its first parameter is the \u201ctarget\u201d — what is being documented."
                 " The second parameter contains the documentation"
                 " (anomalous forms, variant readings, uncertain readings, etc.).",
             ]
@@ -55,7 +55,7 @@ def build_body(*, claims: ClaimCollection):
                 [
                     "Spaces: ",
                     mb_html.code('" "'),
-                    " in column E, or ",
+                    " (U+0020, ASCII space) in column E, or ",
                     mb_html.code('"__"'),
                     " in column C.",
                 ],
@@ -74,32 +74,30 @@ def build_body(*, claims: ClaimCollection):
                 [
                     "Punctuation: the literal string ",
                     author.hbo("׃"),
-                    " or the template ",
+                    " (U+05C3, Hebrew punctuation $sof_pasuq) or the template ",
                     author.hbo("מ:פסק"),
                     ".",
                 ],
                 ["Inverted-$nun signs: ", author.hbo("מ:נו״ן הפוכה"), "."],
+                ["Verse labels: ", author.hbo("מ:פסוק"), " in column D."],
             ]
         ),
         author.para(
             [
-                "Template names and descriptive parameters do not count as letters"
-                " of the target text. A target can also wrap one of these forms in ",
+                "A target can also wrap one of these forms in ",
                 author.hbo("מ:הערה-2"),
-                ". A note can separately target a verse label (",
-                author.hbo("מ:פסוק"),
-                ", column D); that label may contain Hebrew letters without being"
-                " Scripture text.",
+                ".",
             ]
         ),
         author.para(
-            "Consumers must accept a target consisting of exactly one ASCII space"
+            "As mentioned above, consumers must accept a target consisting of exactly"
+            " one ASCII space"
             " (U+0020), preserving it without trimming it to an empty string or"
-            " rejecting it as empty. The current plus data has six such targets,"
+            " rejecting it as empty. The current mpplus data has six such targets,"
             " all in column E: Deuteronomy 23:8; 2 Samuel 23:24; Ezra 2:69;"
             " and Nehemiah 3:2, 3:10, and 7:68."
         ),
-        author.para("For example, Deuteronomy 23:8 has this target:"),
+        author.para("For example, Deuteronomy 23:8 has this note targeting a space:"),
         json_block.json_block_raw_html(
             json.dumps(
                 {

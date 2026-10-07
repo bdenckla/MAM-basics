@@ -9,7 +9,7 @@
 # Bracketed asides carry no accent.  ONE PAGE: the Koren appendix prints the whole elyon
 # Decalogue on p. 38 (the appendix is its own scan sequence, V-038, not the Torah's A{n}-...).
 #
-# This is the FIRST Koren page to diverge from its vendored strand.  Both Koren taxton pages
+# This is the FIRST Koren page to diverge from its Wikisource strand.  Both Koren taxton pages
 # (Exodus main pp. 113-114, Deuteronomy main pp. 280-281) matched ws/ex/taxton/printed and
 # ws/dt/taxton/printed in every accent; this elyon page does not match ws/ex/elyon/printed in
 # every accent.
@@ -22,7 +22,7 @@
 # 75 שבת).
 #
 # THE TWO DIVERGENCES ARE WORD-DIVISION differences, not tradition differences: at two maqaf
-# compounds the vendored ws/ex/elyon/printed strand writes as a single chanted word, Koren prints
+# compounds the ws/ex/elyon/printed strand writes as a single chanted word, Koren prints
 # the two atoms as SEPARATE chanted words, each accented.  Both inserted accents are a munax, a
 # conjunctive, so the disjunctive skeleton is untouched (see the skeleton test) -- this is the
 # same KIND of divergence as SimTiq's Exodus elyon ובנך ובתך, not the accent-swap SimTiq's
@@ -43,9 +43,9 @@
 #     a munax (וּבִנְךָ֣); only the ex/elyon strands join it.  So Koren's elyon takes the taxton
 #     maqaf placement here.  And it is the SAME divergence, token for token, that
 #     simtiq_ex_elyon already pins -- ("", "mun", "ובנךובתך") -- so two independently
-#     transcribed elyon editions separate ובנך where the vendored elyon strand joins it.  That
-#     points at the vendored elyon strand as the outlier, not at Koren.
-#   * יהיה is KOREN-ALONE.  No vendored strand -- taxton or elyon, manuscript or printed --
+#     transcribed elyon editions separate ובנך where the Wikisource elyon strand joins it.  That
+#     points at the Wikisource elyon strand as the outlier, not at Koren.
+#   * יהיה is KOREN-ALONE.  No Wikisource strand -- taxton or elyon, manuscript or printed --
 #     separates יהיה־לך; all eight join it, and simtiq_ex_elyon agrees with the join (it has
 #     no divergence there).  Koren is the only witness on this page that splits it.  Recorded
 #     on Ben's confirmed reading, with its uniqueness stated so the claim's strength is plain.

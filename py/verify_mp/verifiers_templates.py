@@ -377,10 +377,10 @@ def verify_mp_plus_templates_kq_qere_first_contexts(
 def verify_mp_plus_templates_all_groups_cover_all_observed(
     record: ClaimRecord, ctx: Context
 ) -> None:
-    """Every template the plus corpus's verses call is covered by a declared group.
+    """Every template the plus corpus calls is covered by a declared group.
 
     Collects all declared template names from mp.plus.templates.*.set and
-    mp.plus.templates.note claims, then checks the verses' templates against their union.
+    mp.plus.templates.note claims, then checks the corpus's templates against their union.
     """
     assert (
         ctx.claim_records is not None

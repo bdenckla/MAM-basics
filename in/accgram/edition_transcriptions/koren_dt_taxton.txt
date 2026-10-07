@@ -24,7 +24,7 @@
 # that commandment. The two dt/taxton strands part at TWELVE chanted words, and this transcription
 # takes the p-trad side of every one it can reach.  TAKE THAT NUMBER, AND ITS DECOMPOSITION INTO
 # 4 boundary + 7 Sabbath + 1 vocalization, FROM accgram/printed_decalogue_taxton_diff.py, which
-# derives them from the vendored words on every page generation -- never from a fresh count here.
+# derives them from the strands' words on every page generation -- never from a fresh count here.
 # This note said "FIVE independent ways" until the 2026-07-25 claim audit: a number with no stated
 # criterion, and unreconcilable with the hub's "three" and test_edition_transcriptions.py's own
 # "eight" for the same set.  Five of the twelve are the ones this page reads most directly:
@@ -86,9 +86,10 @@
 # the physical book, recorded nowhere else -- hence the pasoleg_kinds header field).  So both
 # vertical strokes here, on אתה and on למען, are written "[pasoleg]": a pasoleg stands here,
 # this edition does not say which kind.  Writing "mun_leg" or "[paseq]" would assert something
-# the book does not.  Note this is NOT the same limit as the vendored data's -- that folds both
-# Wikisource templates onto U+05C0 -- so the position stays kind-blind on both sides,
-# independently, and would stay so even after a re-vendoring.
+# the book does not.  The limit is this edition's alone: the reference states the kind, its
+# faithful form keeping the Wikisource legarmeh and paseq templates apart (issue
+# wlc-utils#74), but "[pasoleg]" states none, so the check of kinds has nothing to compare at
+# either stroke.
 #
 # And the usual caution about the agreeing majority: the harness flags only positions where the
 # two already disagree, so only those were re-read.  "No divergences" means no divergence

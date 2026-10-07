@@ -37,7 +37,7 @@ class Context:
 
     @cached_property
     def template_names(self) -> frozenset[str]:
-        """The name of every template the plus corpus's verses call (template_names_called)."""
+        """The name of every template the plus corpus calls (see template_names_called)."""
         return template_names_called(self.corpus)
 
 
@@ -100,13 +100,18 @@ def iter_all_template_objects(corpus: Corpus) -> Iterator[dict]:
 
 
 def template_names_called(corpus: Corpus) -> frozenset[str]:
-    """The name of every template the corpus's verses call.
+    """The name of every template the corpus calls, in its verses or a book's good ending.
 
     Read from the loaded corpus rather than from out/tmpl-survey-plus/plus.json, which the
-    Wikisource download does not rewrite and the mega rewrites only after parse-ws.  Like
-    that survey, this leaves out the books' good endings: the good-ending template they call
-    is in no declared template group, and the claims about it are
-    mp.plus.good-ending-plus.nested-in-docnote and
-    mp.plus.book39.good-ending-plus.nonnull-book39s.
+    Wikisource download does not rewrite, the mega rewrites only after parse-ws, and which does
+    not walk the good endings.
     """
-    return frozenset(tmpl["tmpl_name"] for tmpl in iter_all_template_objects(corpus))
+    names = {tmpl["tmpl_name"] for tmpl in iter_all_template_objects(corpus)}
+    for book39 in corpus.book39s:
+        good_ending = book39["good_ending_plus"]
+        if good_ending is not None:
+            names.update(
+                tmpl["tmpl_name"]
+                for tmpl in iter_template_objects(good_ending["wikitext_element"])
+            )
+    return frozenset(names)

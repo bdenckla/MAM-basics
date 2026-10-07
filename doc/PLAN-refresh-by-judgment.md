@@ -1,6 +1,7 @@
 # Judge a Wikisource refresh by its diffs, not by pinned hashes
 
 State: executed 2026-10-07; approved by Ben on 2026-10-07 and executed on his instruction.
+Updates and later status: [PLAN-refresh-by-judgment-update.md](PLAN-refresh-by-judgment-update.md).
 
 Written on 2026-10-07, New York time, by a Claude session (Claude Opus 5.5 in the Claude desktop
 app). The session worked in the full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, whose clean
