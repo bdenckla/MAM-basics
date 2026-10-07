@@ -39,13 +39,21 @@ checks fail on unknown template variants, changed pointing guards, populations
 that disagree with the census, or unreviewed note presentations. No private
 repository or scan archive is a build dependency.
 
-The shared MAM-with-doc renderer also renders the example edition.
+The shared MAM-with-doc renderer also renders the example edition. Near-Aleppo
+selects ketiv as the primary text, using each stored pointed ketiv where available,
+and shows pointed qere above it in a smaller HTML ruby annotation. Trivial
+ketiv/qere templates use their own pointed ketiv and qere parameters. Missing
+readings have the same editorial labels as CLC in the missing reading's position.
+Existing notes remain beside the text; the ruby display does not synthesize qere
+notes. Trivial-template qere source metadata is available on the annotation's hover.
 
 The offline final-punctuation review extract is
 `review/ketiv-final-punctuation.html`, with a plain-text companion. It shows the
 requested 42 maqaf cases and 12 pasoleg cases in separate sections, including
 already-present punctuation, complete notes and neighboring verses. Psalm 10:5
 uses the trivial ketiv/qere template's pointed ketiv and qere parameters.
+Each section is sorted by MAM's book order, then numeric chapter and verse,
+interleaving added and already-present cases.
 The selection is tracked in `in/near-aleppo/final-punctuation-review-selection.json`;
 `py/near_aleppo/punctuation_review.py` renders it from the current edition data
 and shared renderer. Reproduce it from the repository root:

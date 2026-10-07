@@ -1,13 +1,14 @@
 """Render the near-Aleppo edition through MAM-with-doc's shared renderer.
 
-NEAR_ALEPPO_MODE supplies edition titles, its index, added apparatus labels and
-the selected paseq display. Closed data dispatch recognizes the additional
-templates and pointings. The mode returns page text in memory for checking
+NEAR_ALEPPO_MODE supplies edition titles, its index, added apparatus labels,
+ruby with ketiv on the baseline and the selected paseq display. Closed data dispatch
+recognizes the additional templates and pointings. The mode returns page text in memory for checking
 before writing. The same shared modules serve the ordinary MAM-with-doc CLI,
 whose own generated pages show any change the shared renderer makes there.
 """
 
 from dataclasses import dataclass
+from pathlib import Path
 from typing import Callable
 
 from near_aleppo import build_paths
@@ -44,13 +45,14 @@ class Mode:
     unused_tags: Callable  # (render tags seen) -> the handled ones not seen, sorted
 
 
-# The render tags the edition handles: every tag of MAM-with-doc's mapping and the two of
-# the lines the edition adds to a note.  One that no page uses is reported, in
+# The edition mapping includes MAM-with-doc's tags, added note lines and ruby.
+# A tag that no page uses is reported, in
 # out/render-tags-unused/near-aleppo.json, rather than raised.
-_EDITION_RENDER_TAGS = frozenset(hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC) | {
-    nap.LABEL_TAG,
-    nap.ENGLISH_TAG,
-}
+_EDITION_RENDER_TAGS = frozenset(hfrm.HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION)
+
+
+def ruby_css():
+    return Path(__file__).with_name("edition.css").read_text(encoding="utf-8")
 
 
 def _unused_edition_tags(seen):
@@ -72,6 +74,10 @@ def _edition_index(edition, css_hrefs):
                 "These pages are an example HTML edition of the near-Aleppo "
                 "dataset. The edition has each book's text with MAM's notes "
                 "beside it, as MAM-with-doc does. ",
+                "Ketiv is the primary text; pointed qere appears above it in a smaller "
+                "ruby annotation. The edition uses each stored pointed ketiv where one "
+                "is available. An absent reading has the editorial label “no ketiv” "
+                "or “no qere” in its own position. ",
                 "See the ",
                 mb_html.anchor_h(
                     "documentation for the near-Aleppo dataset", "../index.html"
@@ -140,6 +146,8 @@ NEAR_ALEPPO_MODE = Mode(
     "near-Aleppo edition",
     {
         **mwdwb.RENOPTS_MAM_WITH_DOC,
+        "ro_trivial_ketiv_qere_to_doc": False,
+        "ro_ketiv_qere_ruby": True,
         "ro_paseq_glyph_as_legarmeih": True,
         "ro_english_flag_values": (
             phase6_flags._QERE_SILENCE,
@@ -180,7 +188,7 @@ def render_edition():
     dataset_parent = build_paths.dataset_dir().parent
     books_mpu = plus.read_parsed_plus_bk39s(tbn.ALL_BK39_IDS, str(dataset_parent))
     pages, unused_tags = render(
-        NEAR_ALEPPO_MODE, books_mpu, css_hrefs=(EDITION_CSS_HREF,)
+        NEAR_ALEPPO_MODE, books_mpu, css_hrefs=(EDITION_CSS_HREF, "ketiv-qere.css")
     )
     for name, text in pages.items():
         comment = text.split("\n")[1]

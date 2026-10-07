@@ -1,0 +1,18 @@
+/* Near-Aleppo's ketiv baseline and secondary pointed-qere ruby annotation.
+   Source: py/near_aleppo/edition.css; deployed by main_near_aleppo.py --html. */
+ruby.near-aleppo-kq {
+    ruby-position: over;
+    ruby-align: center;
+    direction: rtl;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+}
+ruby.near-aleppo-kq > rt {
+    font-size: 75%;
+    line-height: 1.8;
+    font-weight: normal;
+}
+ruby.near-aleppo-kq .near-aleppo-kq-none {
+    font-size: 70%;
+    color: light-dark(#777, #999);
+}

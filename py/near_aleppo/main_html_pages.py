@@ -56,14 +56,14 @@ def render():
     render tags the edition handles that no page uses."""
     snapshot = build_expectations.load()
     numbers = Numbers(snapshot, doc_figures.figures(snapshot))
-    # Both modes render in memory. Documentation adds explicit layout policy for
-    # navigation and the external script; the pinned serializer
-    # and the edition's renderer remain unchanged.
+    # Both modes render in memory. Documentation has its own navigation layout;
+    # the edition adds its ruby stylesheet to MAM-with-doc's shared styles.
     comment = provenance.generated_html_comment(__file__)
     stylesheet = doc_style.css(comment)
     pages = {
         _STYLESHEET: stylesheet.encode("utf-8"),
         doc_pages.script_name(): doc_pages.redirect_script(comment).encode("utf-8"),
+        _EDITION + "ketiv-qere.css": edition.ruby_css().encode("utf-8"),
     }
     for name, (title, body) in doc_pages.pages(numbers).items():
         pages[name] = _documentation_html(title, body, comment).encode("utf-8")

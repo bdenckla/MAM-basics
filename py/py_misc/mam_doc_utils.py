@@ -61,6 +61,22 @@ def _mark_doc_target(doc_target, doc_lemma):
 def _does_not_need_callout(doc_lemma):
     if _has_pointed_string_within(doc_lemma):
         return True
+    # Ruby changes the display, not the existing unread-ketiv callout decision.
+    if (
+        len(doc_lemma) == 1
+        and isinstance(doc_lemma[0], dict)
+        and renel.get_ren_el_tag(doc_lemma[0]) == "near-aleppo-kq"
+    ):
+        baseline, _opening, annotation, _closing = renel.get_ren_el_contents(
+            doc_lemma[0]
+        )
+        missing_qere = (renel.mk_ren_el_tc("near-aleppo-kq-none", "[אין קרי]"),)
+        if renel.get_ren_el_contents(annotation) == missing_qere:
+            ketiv = renel.get_ren_el_contents(baseline)
+            legacy_lemma = renel.mk_ren_el_tc(
+                "mam-kq-k-velo-q", shrink.shrink(("(", *ketiv, ")"))
+            )
+            return _does_not_need_callout((legacy_lemma,))
     if doc_lemma in _LEMMAS_FOR_WHICH_TARGET_DOES_NOT_NEED_CALLOUT:
         return True
     if doc_lemma in _LEMMAS_FOR_WHICH_TARGET_NEEDS_CALLOUT:

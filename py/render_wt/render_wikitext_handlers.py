@@ -345,6 +345,8 @@ def _handle_kq_trivial(hctx, tmpl):
     Handle a trivial ketiv/qere (מ:קו״כ-אם-2): a pointed ketiv, unpointed
     ketiv, and pointed qere.
     """
+    if kq.ruby_enabled(hctx):
+        return kq.handle_kq_trivial_ruby(hctx, tmpl)
     # Optional named params (e.g. מקורות, סוג) may extend template length.
     assert wtp.template_len(tmpl) in (3, 4, 5, 6)
     pointed_ketiv = wt_help.render_tmpl_el(hctx, tmpl, 1)

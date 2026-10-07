@@ -182,7 +182,17 @@ def _resolved_targets(records):
             )
         bkid = bkn.MAM_HBNP_TO_BK39ID[(part["book24_name"], part["sub_book_name"])]
         resolved.append((row, bkid, tbn.mk_bcvtmam(bkid, int(chapter), int(number))))
-    return resolved
+    book_rank = {bkid: rank for rank, bkid in enumerate(tbn.ALL_BK39_IDS)}
+    group_rank = {kind: rank for rank, kind in enumerate(_GROUPS)}
+    return sorted(
+        resolved,
+        key=lambda item: (
+            group_rank[item[0]["group"]],
+            book_rank[item[1]],
+            int(item[0]["verse"][1]),
+            int(item[0]["verse"][2]),
+        ),
+    )
 
 
 def render():
@@ -238,6 +248,7 @@ def render():
         )
     root = build_paths.mam_basics_dir()
     css = (root / "py/mb_misc/styles_mam_with_doc.css").read_text(encoding="utf-8")
+    css += "\n" + edition.ruby_css()
     font = (root / "gh-pages/near-aleppo/edition/woff2/Taamey_D.woff2").read_bytes()
     css = css.replace(
         'url("woff2/Taamey_D.woff2")',
@@ -260,7 +271,8 @@ def render():
         "connect-src 'none'\">"
         f"<title>{title}</title><style>{css}\n{_CSS}</style></head><body>"
         f"<header><h1>{title}</h1><p>42 maqaf cases and 12 pasoleg cases, "
-        "with verse context and notes.</p>"
+        "with verse context and notes. Each section follows book, chapter and verse "
+        "order. Ketiv is the primary text; pointed qere appears above it.</p>"
         '<label for="hebrew-size">Hebrew size </label>'
         '<input id="hebrew-size" type="range" min="20" max="48" step="1" value="30">'
         '<output id="size-value" for="hebrew-size">30 px</output></header><main>'

@@ -90,6 +90,10 @@ HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION: dict[str, tuple[str, Union[str, None]]] =
     **HT_TAC_FOR_RT_FOR_MAM_WITH_DOC,
     nap.LABEL_TAG: ("bdi", nap.LABEL_TAG),
     nap.ENGLISH_TAG: ("bdi", None),
+    "near-aleppo-kq": ("ruby", "near-aleppo-kq"),
+    "near-aleppo-kq-q": ("rt", None),
+    "near-aleppo-kq-rp": ("rp", None),
+    "near-aleppo-kq-none": ("span", "near-aleppo-kq-none"),
 }
 HT_TAC_FOR_RT_FOR_SLH_WORD_FOI = {
     **_HT_TAC_FOR_RT_FOR_SPECIAL_SPACES,

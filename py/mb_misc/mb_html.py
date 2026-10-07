@@ -451,6 +451,9 @@ _LB2 = {
     **{tag: "\n" for tag in _NOCLOSE_TUPLE},
     #
     "bdi": "",
+    "ruby": "",
+    "rt": "",
+    "rp": "",
     "a": "",
     "span": "",
     "abbr": "",

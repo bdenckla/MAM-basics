@@ -20,6 +20,9 @@ def handle_kq(hctx, tmpl):
     k_wtseq, q_wtseq = _ht_kq_unpack_args(tmpl)
     k_renseq_1 = wt_help.render_wtseq(hctx, k_wtseq)
     q_renseq_1 = wt_help.render_wtseq(hctx, q_wtseq)
+    if ruby_enabled(hctx):
+        ruby = _ruby(k_renseq_1, q_renseq_1)
+        return _flagged(hctx, tmpl, ruby, (ruby,))
     k_renseq_2 = _maybe_paren(hctx, k_renseq_1)
     q_renseq_2 = _maybe_sqbrac(hctx, q_renseq_1)
     pointed_final_maqaf = (
@@ -46,8 +49,11 @@ def handle_kq_ketiv_velo_qere(hctx, tmpl):
     mam_keys, _flags = nap.split_params(tmpl, _KVLQ_KEYS, nap.FLAGS)
     assert 1 + len(mam_keys) in (3, 4)
     ketiv_1 = wt_help.render_tmpl_el(hctx, tmpl, 2)
-    ketiv_2 = _maybe_paren(hctx, ketiv_1)
-    main_part = renel.mk_ren_el_tc("mam-kq-k-velo-q", ketiv_2)
+    if ruby_enabled(hctx):
+        main_part = _ruby(ketiv_1, None)
+    else:
+        ketiv_2 = _maybe_paren(hctx, ketiv_1)
+        main_part = renel.mk_ren_el_tc("mam-kq-k-velo-q", ketiv_2)
     if 1 + len(mam_keys) == 3:
         return _flagged(hctx, tmpl, (main_part,), (main_part,))  # near-aleppo
     assert wtp.template_i0(tmpl, 3) == hpu.MAQ
@@ -64,9 +70,63 @@ def handle_kq_qere_velo_ketiv(hctx, tmpl):
     mam_keys, _flags = nap.split_params(tmpl, _QVLK_KEYS, nap.FLAGS)
     assert 1 + len(mam_keys) == 3
     qere_1 = wt_help.render_tmpl_el(hctx, tmpl, 2)
-    qere_2 = _maybe_sqbrac(hctx, qere_1)
-    qvlk = renel.mk_ren_el_tc("mam-kq-q-velo-k", qere_2)
+    if ruby_enabled(hctx):
+        qvlk = _ruby(None, qere_1)
+    else:
+        qere_2 = _maybe_sqbrac(hctx, qere_1)
+        qvlk = renel.mk_ren_el_tc("mam-kq-q-velo-k", qere_2)
     return _flagged(hctx, tmpl, (qvlk,), (qvlk,))  # near-aleppo
+
+
+def ruby_enabled(hctx):
+    return wt_help.get_renopt(hctx, "ro_ketiv_qere_ruby")
+
+
+def handle_kq_trivial_ruby(hctx, tmpl):
+    """Keep the trivial template's pointed ketiv below its pointed qere."""
+    keys, _flags = nap.split_params(tmpl, _TRIVIAL_KEYS, nap.FLAGS)
+    if not {"1", "2", "3"}.issubset(keys):
+        raise ValueError("Trivial ketiv/qere lacks a reading parameter")
+    ketiv = wt_help.render_tmpl_el(hctx, tmpl, 1)
+    qere = wt_help.render_tmpl_el(hctx, tmpl, 3)
+    annotation_attrs = {"dir": "rtl", "title": "Qere"}
+    if "מקורות" in keys:
+        sources = wtp.template_param_val(tmpl, "מקורות")
+        if not all(isinstance(item, str) for item in sources):
+            raise ValueError("Trivial ketiv/qere sources must be text")
+        annotation_attrs["title"] = "Qere; sources: " + "".join(sources)
+    ruby = _ruby(ketiv, qere, annotation_attrs)
+    return _flagged(hctx, tmpl, ruby, (ruby,))
+
+
+def _ruby(ketiv, qere, annotation_attrs=None):
+    """CLC's ruby structure with ketiv on the baseline and qere above it.
+
+    Missing readings have CLC's explicit editorial placeholders in their own slots.
+    Reading contents, including final punctuation, are rendered without serial
+    separators. Punctuation outside the template remains outside the ruby.
+    """
+    baseline = (
+        renel.mk_ren_el_tc_and_attr("mam-kq-k", ketiv, {"title": "Ketiv"})
+        if ketiv is not None
+        else renel.mk_ren_el_tc("near-aleppo-kq-none", "[אין כתיב]")
+    )
+    annotation = (
+        renel.mk_ren_el_tc("mam-kq-q", qere)
+        if qere is not None
+        else renel.mk_ren_el_tc("near-aleppo-kq-none", "[אין קרי]")
+    )
+    contents = (
+        baseline,
+        renel.mk_ren_el_tc("near-aleppo-kq-rp", "("),
+        renel.mk_ren_el_tc_and_attr(
+            "near-aleppo-kq-q",
+            (annotation,),
+            annotation_attrs or {"dir": "rtl", "title": "Qere"},
+        ),
+        renel.mk_ren_el_tc("near-aleppo-kq-rp", ")"),
+    )
+    return renel.mk_ren_el_tc_and_attr("near-aleppo-kq", contents, {"dir": "rtl"})
 
 
 def _flagged(hctx, tmpl, rendered, lemma):
@@ -75,11 +135,10 @@ def _flagged(hctx, tmpl, rendered, lemma):
     near-aleppo dataset, as the target of a note whose parts are the flags' lines,
     labelled ``lemma``. A ketiv/qere template has a flag only where no note is about
     the site, so this note is the only place the flag is shown, and the flag's value
-    is one of the dataset's fixed English sentences. At 2 Samuel 13:33, the one such
-    template that the edition has so, a מ:קו״כ-אם-2 being made a note by
-    ro_trivial_ketiv_qere_to_doc, the flag is about the maqaf after an unread ketiv:
-    the note's target is the ketiv and the maqaf, labelled by the ketiv, as
-    MAM-with-doc labels the ketiv of Ruth 3:12's כתיב ולא קרי.
+    is one of the dataset's fixed English sentences. The same wrapper preserves
+    flags when near-Aleppo displays a trivial ketiv/qere as ruby rather than
+    converting its qere to a note. Punctuation outside an unread ketiv remains
+    part of the target but outside the lemma.
     """
     flags = [key for key in wtp.template_param_keys(tmpl) if key in nap.FLAGS]
     if not flags:
@@ -128,8 +187,8 @@ _PUT_KETIV_1ST = {
 def _ht_kq_unpack_args(tmpl):
     # near-aleppo: a parameter that is neither MAM's nor one the near-aleppo dataset
     # adds raises. The dataset's POINTED_KETIV, where a
-    # template has it, is shown where MAM-with-doc shows the ketiv, in parentheses,
-    # the qere staying in square brackets; a flag is shown by _flagged.
+    # template has it, supplies the ketiv display. MAM-with-doc keeps parentheses
+    # and square brackets; near-Aleppo selects ruby. A flag is shown by _flagged.
     name = wtp.template_name(tmpl)
     mam_keys, added = nap.split_params(
         tmpl, _KQ_KEYS[name], (nap.POINTED_KETIV, *nap.FLAGS)
@@ -187,6 +246,7 @@ _KQ_KEYS = {
 }
 _KVLQ_KEYS = tmpln.CURRENT_PLUS_PARAM_POLICY["כתיב ולא קרי"][1]
 _QVLK_KEYS = tmpln.CURRENT_PLUS_PARAM_POLICY["קרי ולא כתיב"][1]
+_TRIVIAL_KEYS = tmpln.CURRENT_PLUS_PARAM_POLICY[tmpln.TRIVIAL_QERE][1]
 
 
 def _sug_text_if_present(tmpl):
