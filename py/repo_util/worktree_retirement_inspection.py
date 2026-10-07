@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import stat
 from pathlib import Path, PurePosixPath
 from typing import Any, Sequence
@@ -261,6 +262,13 @@ def _normalized_reference(path: Path) -> str:
     return os.path.normcase(str(path.resolve())).replace("\\", "/")
 
 
+# A file citation may end in a line locator: path:3, path:3-5 (hyphen or en dash) or
+# path#L3.  The colon that ends path:3: is trailing punctuation, which the boundary
+# test below already admits.  normcase lowercases the line on Windows, so the L of
+# path#L3 may arrive as l.
+_LINE_LOCATOR = re.compile(r":[0-9]+(?:[-\N{EN DASH}][0-9]+)?|#[Ll][0-9]+")
+
+
 def _reference_matches(line: str, reference: str, *, directory: bool) -> bool:
     normalized_line = os.path.normcase(line).replace("\\", "/")
     path_characters = frozenset("._~-:/%")
@@ -275,6 +283,8 @@ def _reference_matches(line: str, reference: str, *, directory: bool) -> bool:
             and (len(tail) == 1 or tail[1] in delimiters or tail[1] in ".!")
         ):
             tail = tail[1:]
+        if not directory and (locator := _LINE_LOCATOR.match(tail)):
+            tail = tail[locator.end() :]
         punctuation = 0
         while punctuation < len(tail) and tail[punctuation] in ".!?:":
             punctuation += 1
