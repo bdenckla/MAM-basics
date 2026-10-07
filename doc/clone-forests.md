@@ -46,10 +46,11 @@ clone keeps its local branches, checkout and environments; other roster entries 
 command never resets, stashes, switches branches, forces refs, deletes paths or replaces an
 existing environment. It does not commit or push a repository.
 
-One occupied clone is skipped rather than refused: the clone that only the calling Claude
-session occupies. The write form recognizes that session when the `CLAUDE_CODE_SESSION_ID` and
-`CLAUDE_PID` variables that Claude Code gives its tool processes match the `sessionId` and `pid`
-of a session record whose working directory is in the clone. The write form reports that clone
+One occupied clone is skipped rather than refused, even when it is dirty, off `main`,
+mid-operation or locked: the clone that only the calling Claude session occupies. The write form
+recognizes that session when the `CLAUDE_CODE_SESSION_ID` and `CLAUDE_PID` variables that Claude
+Code gives its tool processes match the `sessionId` and `pid` of a session record whose working
+directory is in the clone. The write form reports that clone
 as `FOREST_REPO_SKIPPED`, leaves it unfetched and untouched, and does not count it as a problem,
 so the command exits 0 when every other clone succeeds. The session updates its own clone with
 ordinary Git. A calling session that works in a linked worktree under the clone, such as one

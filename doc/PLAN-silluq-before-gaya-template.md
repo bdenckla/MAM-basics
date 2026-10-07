@@ -263,7 +263,7 @@ git status --short --branch
 Re-establish the home clone's `main` with:
 
 ```powershell
-git -C <home-clone> rev-parse HEAD
+git -C "<home-clone>" rev-parse HEAD
 ```
 
 ### Source synchronization and external documentation
@@ -482,7 +482,7 @@ git hash-object gh-pages/MAM-with-doc/foi/foi-mtgmtg.json
 Run Black only on changed Python files:
 
 ```powershell
-<home-clone>/.venv/Scripts/python.exe -m black <changed-python-files>
+& "<home-clone>/.venv/Scripts/python.exe" -m black "<changed-python-files>"
 ```
 
 Run the canonical suite from the MAM-basics worktree:

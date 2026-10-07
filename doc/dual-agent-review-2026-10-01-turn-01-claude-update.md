@@ -238,7 +238,8 @@ assertion; those failures were corrected without relocating the checkout or chan
 settings. Root retained sole writing ownership; delegated audits were read-only and the
 bounded test-writing handoff returned ownership before further root edits.
 
-Public verification evidence is retained under this worktree's ignored `.novc/`:
+Public verification evidence was retained under this worktree's ignored `.novc/`, until the
+worktree and its `.novc/` were removed on 2026-10-04:
 `relay-remediation-focused-7c8322d6f416`, `relay-remediation-focused-862b21ffc0ec`,
 `relay-capability-claude-26d30d24db7a`, `relay-capability-claude-ee65fb02ad5e` and
 `relay-capability-codex-8f840da99a3c`. Claude's probe used an explicit current packaged

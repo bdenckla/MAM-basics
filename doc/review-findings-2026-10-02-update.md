@@ -528,7 +528,7 @@ the relay-machine session.
 `remediate-review-2026-10-02`. Editing began there at `074af13a78789ffe8c6c3b1cc88b13aa3d422da2`,
 equal to `origin/main` after a fetch, with the tree clean and `644a6c9c`, `286d2e8c` and `074af13a`
 ancestors of `HEAD`. Wave 0's `cbd405b11ef990040031ccf19699db54a69a489d` is the archive commit, the
-last whose tree holds every file that the relay's removal deleted, and
+removal commit's parent, whose tree holds every file that the relay's removal deleted, and
 `4573b0070be6eab2d31257a1cdf766b60ae766af` is the removal commit. Each of the 40 commits before this
 entry was pushed to `origin/remediate-review-2026-10-02` as soon as it was made, never forced. This
 session was the only writer. The plan-preparing session's session record also named this clone;

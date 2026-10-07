@@ -241,7 +241,7 @@ For any difference, before calling it an accent difference:
   `mun-mer`; p. 246 has two.
 - **Zoom the printed line** and let Ben re-read it. Never crop at the band edge:
   ```powershell
-  ./.venv/Scripts/python.exe py/main_edition_transcription.py zoom-line <export.json> 12
+  ./.venv/Scripts/python.exe py/main_edition_transcription.py zoom-line "<export.json>" 12
   ```
   `zoom_line` pads a full band height above, because a tight crop once cut the upper dot off a
   zaqef qatan and left something that reads exactly like a revia. It also pads *sideways* past
@@ -276,7 +276,7 @@ on whether a page's trailing empty lines are dropped — which is a difference i
 committed, not in style.
 
 ```powershell
-./.venv/Scripts/python.exe py/main_edition_transcription.py build <stem> --export <path>... --corrections <path>
+./.venv/Scripts/python.exe py/main_edition_transcription.py build "<stem>" --export "<path>..." --corrections "<path>"
 ```
 
 - `--export` takes one downloaded export per page, **in page order**; more than one gets the

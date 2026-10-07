@@ -334,17 +334,19 @@ This phase calls `doc/mega-timing-cloud-2026-09-14.md` the cloud record and
 are worth carrying here:
 
 1. **Normalizing for the cloud's skips does matter**, against the guess in Ben's instruction that
-   it might not: the one step a cloud run skips, `accgram-survey-post-stress-meteg`, is the
-   mega's most expensive on Ben's machine at 40.9 s, or 16.5% of a comparable run there. Step 5's
-   "compare step by step, never by total" is the whole of the normalization needed.
+   it might not: the one step a cloud run skipped in these runs, `accgram-survey-post-stress-meteg`,
+   was the mega's most expensive on Ben's machine at 40.9 s, or 16.5% of a comparable run there.
+   Since `9a67d51b` (2026-10-01) a cloud run runs that survey, which reads the public Phonetic MAM
+   release, and skips only `phonetic-mam-export`. Step 5's "compare step by step, never by total" is
+   the whole of the normalization needed.
 2. **Like for like the container is 1.04 times Ben's pinned machine** over the 52 steps that
    completed in both, and **0.93 times** his unpinned run, so a container is within a few percent
    of his performance cores and ahead of his machine unpinned. (On 3.11 those ratios read 1.13 and
    1.01, which is what the cloud record states.)
 3. **A container is markedly more repeatable than Ben's machine**, each pair of warm runs agreeing
    to within 0.6 s on every step, so it is the better place to attribute a speedup — for every
-   step but the one it skips. A first run in a fresh container is a cold-cache run and should be
-   discarded.
+   step but the one it skips, now `phonetic-mam-export`. A first run in a fresh container is a
+   cold-cache run and should be discarded.
 4. **One finding, raised in this phase and not fixed in it, has been fixed since by `b5dd2ffb`.**
    Git treats each commit a shallow clone lists in `.git/shallow` as having no parents, so every
    file in it looks added, and the path-filtered walk that dated unpinned-latest returned such a

@@ -95,10 +95,11 @@ plan.
 
 ## Reproduce the old heading inventory
 
-Run this read-only command from any PowerShell 7 working directory, with `<clone>` replaced by the
-absolute path, in forward slashes, of any full MAM-basics clone. It reads only that repository at
-the pinned commit; it does not require the obsolete full live Claude body.
+Run this read-only command from any PowerShell 7 working directory. It names the primary forest's
+clone, `$HOME/GitRepos/MAM-basics`, which every machine has; the absolute path, in forward slashes,
+of any other full MAM-basics clone may replace it. It reads only that repository at the pinned
+commit; it does not require the obsolete full live Claude body.
 
 ```powershell
-(git -c safe.directory=<clone> -C <clone> show 71f96ca3801863f6fa64c1fd0e75ccfde773439b:dot-claude/user-wide-CLAUDE.md).Where({ $_ -match '^#{2,3} ' })
+(git -c safe.directory=$HOME/GitRepos/MAM-basics -C $HOME/GitRepos/MAM-basics show 71f96ca3801863f6fa64c1fd0e75ccfde773439b:dot-claude/user-wide-CLAUDE.md).Where({ $_ -match '^#{2,3} ' })
 ```

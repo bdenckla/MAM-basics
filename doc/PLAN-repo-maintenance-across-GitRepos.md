@@ -424,11 +424,11 @@ reviewed per-target preparation and execution, and H8 for runtime limitations.
 **2–3. The two read-only checks**, in either order, from the root of a full MAM-basics clone:
 
 ```powershell
-./.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt <file>
+./.venv/Scripts/python.exe py/main_repo_util.py --check-repo-standards --workspace-file all-repos.code-workspace --report-txt "<file>"
 ```
 
 ```powershell
-./.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --workspace-file all-repos.code-workspace --report-txt <file>
+./.venv/Scripts/python.exe py/main_repo_util.py --audit-line-terms --workspace-file all-repos.code-workspace --report-txt "<file>"
 ```
 
 Use `--report-txt` for the actual findings and keep reports in the visibility-appropriate `.novc/`.
@@ -767,7 +767,7 @@ time has passed.
 
 Re-establish with:
 ```
-$frozen = @('breuer-cos','CCAR-Psalms','MAM-for-Acc','MAM-for-CCAR','MAM-for-JPS','TMC'); $ws = Get-Content "C:/Users/BenDe/GitRepos/MAM-basics/all-repos.code-workspace" -Raw | ConvertFrom-Json; foreach ($f in $ws.folders) { $name = if ($f.path -eq '.') { 'MAM-basics' } else { $f.path -replace '^\.\./','' }; $p = "C:/Users/BenDe/GitRepos/$name"; if (-not (Test-Path $p)) { continue }; $py = (git -C $p ls-files "*.py" | Measure-Object).Count; $wt = ((git -C $p worktree list | Measure-Object).Count - 1); $cb = (git -C $p branch --list "claude/*" | Measure-Object).Count; [PSCustomObject]@{Repo=$name; Frozen=($frozen -contains $name); PyFiles=$py; Venv=(Test-Path "$p/.venv/Scripts/python.exe"); Worktrees=$wt; ClaudeBr=$cb} } | Format-Table -AutoSize
+$frozen = @('breuer-cos','CCAR-Psalms','MAM-for-Acc','MAM-for-CCAR','MAM-for-JPS','TMC'); $ws = Get-Content "C:/Users/BenDe/GitRepos/MAM-basics/all-repos.code-workspace" -Raw | ConvertFrom-Json; $(foreach ($f in $ws.folders) { $name = if ($f.path -eq '.') { 'MAM-basics' } else { $f.path -replace '^\.\./','' }; $p = "C:/Users/BenDe/GitRepos/$name"; if (-not (Test-Path $p)) { continue }; $py = (git -C $p ls-files "*.py" | Measure-Object).Count; $wt = ((git -C $p worktree list | Measure-Object).Count - 1); $cb = (git -C $p branch --list "claude/*" | Measure-Object).Count; [PSCustomObject]@{Repo=$name; Frozen=($frozen -contains $name); PyFiles=$py; Venv=(Test-Path "$p/.venv/Scripts/python.exe"); Worktrees=$wt; ClaudeBr=$cb} }) | Format-Table -AutoSize
 ```
 
 Findings from that run, worth carrying forward:
