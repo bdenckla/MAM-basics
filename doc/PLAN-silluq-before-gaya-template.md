@@ -287,7 +287,7 @@ diffs before proceeding.
 Use the production entry points from the MAM-basics worktree:
 
 ```powershell
-<home-clone>/.venv/Scripts/python.exe py/main_download.py fr-ws-intro
+& "<home-clone>/.venv/Scripts/python.exe" py/main_download.py fr-ws-intro
 ```
 
 Use the established Wikisource bot entry point and its documented dry-run/no-save
@@ -488,7 +488,7 @@ Run Black only on changed Python files:
 Run the canonical suite from the MAM-basics worktree:
 
 ```powershell
-<home-clone>/.venv/Scripts/python.exe py/main_test.py -q
+& "<home-clone>/.venv/Scripts/python.exe" py/main_test.py -q
 ```
 
 ## GitHub coordination, commits, and integration

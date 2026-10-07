@@ -163,7 +163,7 @@ temporary-stub procedures, and historical traps.
 1. **Published:** `gh-pages/`, published from `main` once daily at 4:17 AM, New York time, and
    on manual dispatch.
 2. **Distributed data:** `MAM-parsed/`, `MAM-simple/`, `MAM-for-Sefaria/`, `MAM-with-doc/`,
-   `MAM-OSIS/`, `Phonetic-MAM/`, and `Yeivin-ITM/`.
+   `MAM-OSIS/`, `Phonetic-MAM/`, `Yeivin-ITM/`, and `out/near-aleppo/`.
 3. **Generators:** the entry points run by `py/main_0_mega.py`.
 
 Before pushing `main` to `origin`, run the mega and the suite. Like most rules this one has
