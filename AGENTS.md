@@ -161,8 +161,10 @@ temporary-stub procedures, and historical traps.
 Before pushing `main` to `origin`, run the mega and the suite. Like most rules this one has
 exceptions: skip either when you judge the changes reasonably likely to be safe, or unlikely to
 have a problem that it would catch, and say what you skipped, and why, in the message of the last
-commit you push. Committing to or integrating into a local `main` needs no such check until that
-`main` is pushed. When the mega runs, a failing step or an unexplained tracked diff is a failure.
+commit you push. If that decision follows the last commit, as when a worktree branch is
+fast-forwarded unchanged, push an empty commit (`git commit --allow-empty`) whose message says it,
+rather than amending. Committing to or integrating into a local `main` needs no such check until
+that `main` is pushed. When the mega runs, a failing step or an unexplained tracked diff is a failure.
 The mega does not run the hand-run generators, so a hand-run generator can reach a product that
 no mega run checks. A change to a hand-run generator, or to any input it reads, requires
 rerunning every affected hand-run generator and inspecting its tracked outputs, with two

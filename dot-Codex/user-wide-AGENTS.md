@@ -403,9 +403,9 @@ Ben's repositories use NFC for Latin letters with diacritics. Write precomposed 
 `h` plus COMBINING DOT BELOW. In `#` comments about Hebrew sounds, use ASCII `x` or `X` rather
 than either Unicode form.
 
-A Windows Python entry point that may emit non-ASCII reconfigures stdout and stderr to UTF-8 at
-the start of `main()`. Prefer writing substantial or non-ASCII output to a file opened with
-`encoding="utf-8"`.
+A Windows Python entry point that may emit non-ASCII reconfigures stdout to UTF-8, and stderr to
+UTF-8 with `errors="backslashreplace"`, at the start of `main()`. Prefer writing substantial or
+non-ASCII output to a file opened with `encoding="utf-8"`.
 
 By Ben's decision of 2026-10-01, a Windows account that runs these agents sets `PYTHONUTF8=1` in
 its User environment and in the `env` block of `~/.claude/settings.json`, so every Python process

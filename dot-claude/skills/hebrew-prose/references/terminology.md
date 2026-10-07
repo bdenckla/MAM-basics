@@ -377,7 +377,11 @@ field and dataclass attribute, `dual_cant_readings`' grouped chanted verse,
   bet/עליון/midrashit). Precedent: MAM-basics' "singly-accented strands." Never "thread."
 - **unpaired** = a stress-helper written without its fusion partner. Never "stranded."
 - **marooned** = an accent or verse number displaced by BHS versification.
-- **orphaned** is RESERVED for the ḥiriq of the implicit yod in ירושלם-style spellings.
+- **orphaned** = a point that belongs to no letter: the ḥiriq of the implicit yod in ירושלם-style
+  spellings, a qere point that no letter of the ketiv carries, or a point left between two written
+  words. Never "unattached", a second name for the same thing. A stress-helper written without its
+  fusion partner is unpaired, and an accent or verse number displaced by BHS versification is
+  marooned; neither is orphaned.
 
 The point is **search hygiene**: a grep for one sense must not turn up the other. Python
 `threading` and the weaving-sense "thread … together" are unrelated and stay.

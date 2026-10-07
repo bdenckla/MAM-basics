@@ -21,7 +21,7 @@ below-letter accents, which is *not* what the names mean, and for a reader who d
 terms no gloss beats a misleading one. The full `טעם תחתון` / `טעם עליון` appears ONLY at first
 mention; after that drop the טעם — bare עליון reads as "the [טעם] עליון". Render via the `TAHTON`
 / `ELYON` constants or `render_reading_name`. Verbatim quoted source Hebrew keeps whatever it
-says. Cross-repo rule; cf. MAM-basics `py/versification_and_cantillation/doc.py`.
+says.
 
 Romanized "taḥton"/"elyon" survive only as **internal keys** and inside **attributes**.
 

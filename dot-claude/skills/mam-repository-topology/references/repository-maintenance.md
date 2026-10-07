@@ -15,7 +15,7 @@ Run a sweep from any full MAM-basics clone, using its own environment and worksp
 The sweep covers that clone's forest. The MAM-basics Black wrapper is:
 
 ```powershell
-./.venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace --repos <repo>
+./.venv/Scripts/python.exe py/main_repo_util.py --run-black --workspace-file all-repos.code-workspace --repos "<repo>"
 ```
 
 Omit `--repos` only for a requested full sweep. The action reformats files, so do not run it to

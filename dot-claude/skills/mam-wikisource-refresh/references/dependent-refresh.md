@@ -141,7 +141,9 @@ agent approves the Yeivin pins.
    first verse it changed or after one whose last verse it changed, and audit each newly listed
    chapter's rendered diff in both pronunciations. A mismatch in a
    chapter whose input is unchanged is a regression: stop and resolve it. Never regenerate
-   either file; no source exists for the old pages' display of new text.
+   either file; no source exists for the old pages' display of new text. If every chapter has
+   left the comparison, the suite fails with "every chapter left the comparison": stop, and ask
+   Ben whether to retire the legacy projection comparison.
 
 ## Required scenario behavior
 

@@ -141,7 +141,7 @@ Ben's undated rule, already present when MAM-basics became the canonical configu
 | legarmeh; broad-sense paseq / Unicode PASEQ | an unqualified "paseq" for the glyph |
 | punctuation / grouping | "word-division" |
 | accent | "cantillation accent" |
-| strand; unpaired; marooned; orphaned | thread; stranded |
+| strand; unpaired; marooned; orphaned | thread; stranded; unattached |
 | the Wikisource strand; "all four strands" | a bare "the strand" / "the strands" where nothing settles which |
 | the LC (manuscript), WLC (digital text) | bare "L" |
 | SimTiq / SimTan in code; "the Simanim Tiqqun" in prose | a bare "Simanim" where both editions are in play |
