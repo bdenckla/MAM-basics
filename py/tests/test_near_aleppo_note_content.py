@@ -8,14 +8,17 @@ from near_aleppo import (
     build_paths,
     doc_note_review,
     edition,
+    frozen_ketiv,
     phase2_templates,
     main_build,
+    reviewed_ketiv,
 )
 from near_aleppo.note_content import NoteContent
 from near_aleppo.phase6_rename import LEGACY_NOTES, RENAMED_NOTES
 from py_misc import near_aleppo_params as nap
 from mb_cmn import bib_locales as tbn
 from mb_cmn import read_books_from_mam_parsed_plus as plus
+from render_wt import render_wikitext_kq
 
 _BASELINE = "a9c45ee1ef1c2a4843cb2442840c074fac629d85"
 _DATA = "out/near-aleppo/plus/"
@@ -134,7 +137,11 @@ def test_dataset_only_renderer_matches_prior_edition_from_the_same_baseline_inpu
     ]
     data_paths = _names(_DATA)
     review_path = "in/near-aleppo/doc-note-review.json"
-    originals = _blobs([*paths, *data_paths, review_path])
+    pointing_path = "in/near-aleppo/reviewed-pointed-ketiv.json"
+    originals = _blobs([*paths, *data_paths, review_path, pointing_path])
+    pointing_orders = _baseline_pointing_order_corrections(
+        json.loads(originals[pointing_path])
+    )
     ledger = json.loads(originals[review_path])
     for row in ledger["notes"]:
         assert row["review"]["status"] == "reviewed"
@@ -151,6 +158,12 @@ def test_dataset_only_renderer_matches_prior_edition_from_the_same_baseline_inpu
                 for verse, cells in verses.items():
                     ref = name, chapter, verse
                     _upgrade_baseline_names(cells[2], ref)
+                    for target_path, before, after in pointing_orders.get(ref, []):
+                        params = frozen_ketiv.at_path(cells[2], target_path)[
+                            "tmpl_params"
+                        ]
+                        assert params[nap.POINTED_KETIV] == before
+                        params[nap.POINTED_KETIV] = after
                     notes.apply(cells[2], ref)
         books[path] = book
     notes.finish()
@@ -171,6 +184,33 @@ def test_dataset_only_renderer_matches_prior_edition_from_the_same_baseline_inpu
     } == {path.removeprefix(_HTML) for path in paths}
     for path in paths:
         assert pages[path.removeprefix(_HTML)].encode("utf-8") == originals[path], path
+
+
+def _baseline_pointing_order_corrections(baseline):
+    """Apply approved source-order corrections to the historical replay input.
+
+    The independent HTML oracle stays untouched. Only mark order may differ:
+    source guards, site membership, letters and each letter's marks must agree.
+    """
+    previous = {row["id"]: row for row in baseline["records"]}
+    current = {row["id"]: row for row in reviewed_ketiv.load()["records"]}
+    assert set(previous) == set(current)
+    corrections = {}
+    for identity, row in current.items():
+        prior = previous[identity]
+        assert {k: v for k, v in prior.items() if k != "value"} == {
+            k: v for k, v in row.items() if k != "value"
+        }
+        before, after = prior["value"], row["value"]
+        if before != after:
+            assert isinstance(before, str) and isinstance(after, str)
+            assert render_wikitext_kq._cluster_inventory(
+                before
+            ) == render_wikitext_kq._cluster_inventory(after)
+            corrections.setdefault(tuple(row["verse"]), []).append(
+                (row["path"], before, after)
+            )
+    return corrections
 
 
 def _upgrade_baseline_names(value, ref):
