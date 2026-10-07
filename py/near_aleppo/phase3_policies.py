@@ -217,6 +217,15 @@ _KQ_FORM_FROM_NOTE_VERSES = (
     (('FC-Chronicles דה"ב', "25", "17"), "כו״ק"),
     (('FC-Chronicles דה"ב', "34", "22"), "קו״כ"),
 )
+# The census counts MAM's text before the apparatus. At each of these three
+# form-from-note verses, the apparatus's replacement has one HEBREW POINT QAMATS
+# QATAN fewer than the template it replaces, so one fewer reaches the qamats-size
+# policy than the census counts; everywhere else the apparatus removes none.
+_KQ_QAMATS_QATAN_REMOVED_VERSES = (
+    ("C1-Isaiah", "44", "17"),
+    ("C3-Ezekiel", "24", "2"),
+    ("D1-Psalms", "89", "29"),
+)
 # The form has the ketiv's letters at each of those verses but this one, where the
 # note's א clause gives the codex the qere's letters and denies an explicit qere
 # note.
@@ -705,6 +714,8 @@ class Policies:
         # How many templates the apparatus replaced or kept in the current verse for
         # each of the verse's sites in _KQ_SITES.
         self._ketiv_qere_sites = Counter()
+        # The qamats qatan the apparatus removed from the current verse.
+        self._kq_qamats_qatan_removed = 0
         # Notes in the current verse whose target the maqaf policy replaced.
         self._maqaf_notes = 0
         # The vowels a note decided for the varikas of its target that the walk has
@@ -726,11 +737,18 @@ class Policies:
         """Return one verse's E cell, as phase 2 resolved it, with the policies applied."""
         self._revia_mugrash_letters = 0
         self._ketiv_qere_sites = Counter()
+        self._kq_qamats_qatan_removed = 0
         self._maqaf_notes = 0
         self._hataf_table_uses = Counter()
         self._telisha_gedola_words = 0
         self._pashta_for_phase_5 = 0
         cell = self._value(cell, verse, _SELECTED, None)
+        removals = 1 if verse in _KQ_QAMATS_QATAN_REMOVED_VERSES else 0
+        if self._kq_qamats_qatan_removed != removals:
+            raise AssertionError(
+                f"{verse}: the ketiv/qere apparatus removed "
+                f"{self._kq_qamats_qatan_removed} qamats qatan, not {removals}"
+            )
         if verse in _TELISHA_GEDOLA_WORDS and self._telisha_gedola_words != 1:
             raise AssertionError(
                 f"{verse}: named in the telisha-gedolah word table, but "
@@ -814,7 +832,10 @@ class Policies:
             # other policies walk the target those two leave.
             if mode == _SELECTED and verse in _KQ_SITES:
                 params = dict(params)
+                before = _selected_text(params["1"], verse).count(QAMATS_QATAN)
                 params["1"] = self._ketiv_qere_apparatus(params["1"], note, verse)
+                after = _selected_text(params["1"], verse).count(QAMATS_QATAN)
+                self._kq_qamats_qatan_removed += before - after
             if mode == _SELECTED:
                 maqaf_target = self._maqaf_note(params["1"], note, verse)
                 if maqaf_target != params["1"]:
@@ -889,7 +910,7 @@ class Policies:
 
         MAM's introduction gives a sheva on the yod as the manuscripts' custom, the
         pointing of the Adonai reading. An Elohim-reading atom whose yod has no
-        vowel, which is Psalms 68:21's alone, has no hataf segol to replace.
+        vowel has no hataf segol to replace and stays as it is.
         """
         edits = {}
         for atom in _atoms(text):
@@ -945,7 +966,7 @@ class Policies:
         qamats on the nun; with any other vowel there the atom is the ordinary
         word, whose holam is a plain vowel and stays. Where a note on the atom
         opens with _CODEX_TITLE_HOLAM_NOTE, MAM records the codex's holam, and the
-        holam stays: at Psalms 110:5 alone.
+        holam stays.
         """
         edits = {}
         recorded = _note_opening(note).startswith(_CODEX_TITLE_HOLAM_NOTE)

@@ -80,9 +80,9 @@ conflict; phase6_flags.py gives the note a flagged-not-applied parameter holding
 to keep fonts from treating the he's patah as a furtive patah.
 
 What stays for later work: the plane readings of _PENDING_PLANE_READINGS; those of
-_ONE_SIDED_PLANE_READINGS and Jeremiah 31:37; the 3 forms with exceptional punctuation, the
-one clause with no form, the 16 prose-led heads and the 31 prose descriptions, which
-the prose-description policy leaves without automatic treatment.
+_ONE_SIDED_PLANE_READINGS and Jeremiah 31:37; the forms with exceptional punctuation,
+the clauses with no form, the prose-led heads and the prose descriptions, which the
+prose-description policy leaves without automatic treatment.
 
 Subsequent sealed pointing imports supply retained ketiv/qere sites beyond this
 note-derived set, without overwriting it.
@@ -458,8 +458,8 @@ _TRAILING_MAQAF = "codex readings: pointed ketiv ending in the qere's trailing m
 # phase 3's apparatus and is an ordinary apply-candidate, not an added pointing.
 # The shitat-Alef table is checked separately against current source clauses.
 #
-# The one empty clause, at Exodus 39:10, has no codex clause after it, so no
-# clause's number depends on how empty clauses are counted.
+# An empty clause takes no number: a Site's clause counts the note's non-empty
+# clauses only, as the oracle numbers them.
 
 
 class _Clause(NamedTuple):

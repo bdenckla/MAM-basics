@@ -166,6 +166,12 @@ _AGREEING_BANG_VERSES = (
     ("D1-Psalms", "25", "21"),
     ("D1-Psalms", "35", "14"),
 )
+# Each verse these two tables name must have exactly one note to which its rule
+# applies, as each silence site must be found once.
+_NAMED_TABLES = {
+    _NAMED_DOUBT: _NAMED_DOUBT_VERSES,
+    _BANG_AGREEING: _AGREEING_BANG_VERSES,
+}
 
 
 class Flags:
@@ -175,6 +181,8 @@ class Flags:
         self.counts = Counter()
         self.sites = defaultdict(list)
         self._silence_found = Counter()
+        # How many notes each rule of _NAMED_TABLES applied to, by (rule, verse).
+        self._named_found = Counter()
         # Each נוסח of the current verse by its identity, with its position among the
         # verse's notes as phase 5 numbers them, which the in-place test takes.
         self._note_numbers = {}
@@ -209,6 +217,12 @@ class Flags:
                 raise AssertionError(
                     f"{verse}: silence table site {site[1:4]} was found "
                     f"{self._silence_found[site]} times, not 1"
+                )
+        for label, verses in _NAMED_TABLES.items():
+            if verse in verses and self._named_found[label, verse] != 1:
+                raise AssertionError(
+                    f"{verse}: the {label!r} rule applied to "
+                    f"{self._named_found[label, verse]} notes, not 1"
                 )
         return cell
 
@@ -323,6 +337,7 @@ class Flags:
         if verse in _NAMED_DOUBT_VERSES:
             value = _one_agreeing_clause(clauses, verse, "?")
             self._found(_NAMED_DOUBT, verse)
+            self._named_found[_NAMED_DOUBT, verse] += 1
             _merge_flag(flags, FLAGGED_NOT_APPLIED, value, verse)
         if verse in _AGREEING_BANG_VERSES:
             if MAM_TARGET_PARAMETER in params:
@@ -331,6 +346,7 @@ class Flags:
                 )
             value = _one_agreeing_clause(clauses, verse, "!")
             self._found(_BANG_AGREEING, verse)
+            self._named_found[_BANG_AGREEING, verse] += 1
             _merge_flag(flags, APPLIED_AND_FLAGGED, value, verse)
         not_applied = phase5.NOT_APPLIED_READINGS.get(verse)
         if not_applied is not None and not_applied.note == number:

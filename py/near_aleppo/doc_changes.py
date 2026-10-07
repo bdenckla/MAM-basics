@@ -14,6 +14,7 @@ from near_aleppo.doc_html import verse_refs
 from near_aleppo.doc_html import HEBREW_CELL
 from near_aleppo.doc_html import NUMBER_CELL
 from mb_misc import mb_html
+from near_aleppo import doc_figures
 from near_aleppo import doc_he_transfer
 from near_aleppo import doc_daniel_sheva
 from near_aleppo import doc_genesis_ketiv
@@ -630,6 +631,19 @@ def _stress(numbers):
     )
     kept_codex = "stress helpers: kept by a note citing the codex"
     kept_l = "stress helpers: kept by a note citing ל"
+    # The page says the codex is lost at each verse where a note citing ל keeps a
+    # stress helper; the policy itself does not ask.
+    index = doc_figures._CodexIndex()
+    extant = [
+        site
+        for site in numbers.snap_sites(_P3S, kept_l)
+        if index.extant(verse_key(site))
+    ]
+    if extant:
+        raise AssertionError(
+            f"the page says the codex is lost at each site of {kept_l!r}, but a leaf "
+            f"survives at {extant}"
+        )
     kept_keys = [
         f"stress helpers: {accent}'s stress helper kept by a note whose agreeing "
         f"clause {cites} for the doubling{rest}"

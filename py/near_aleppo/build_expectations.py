@@ -32,13 +32,6 @@ _CENSUS_INPUTS = (
     "aleppo/index-flat-annotated.json",
 )
 
-# The census projects MAM's text before the ketiv/qere apparatus policy. That
-# policy supplies forms with qamats at Isaiah 44:17, Ezekiel 24:2 and Psalms 89:29,
-# where MAM's qere has qamats qatan. These three no longer reach the qamats-size
-# policy. Keep this reviewed difference pinned; a changed difference must fail
-# the build rather than be accepted by an automatic input refresh.
-_KQ_QAMATS_QATAN_REMOVALS = 3
-
 # These phase-2 counters are the settled column of template_inventory.py. The
 # remaining counters in the snapshot describe selected-versus-unselected or
 # policy-sensitive subpopulations that the census does not independently print;
@@ -272,13 +265,10 @@ def refreshed(snapshot, current_ids):
         candidate["phase2_counts"][label] = inventory[label]["settled"]
 
     phase3_counts = candidate["phase3_counts"]
-    phase3_counts[phase3._QAMATS_QATAN] = (
-        _single_int(
-            _CENSUS_EXPECTED / "qamats_params.txt",
-            r"^U\+05C7 in the whole base text taking ד: (\d+)$",
-        )
-        - _KQ_QAMATS_QATAN_REMOVALS
-    )
+    phase3_counts[phase3._QAMATS_QATAN] = _single_int(
+        _CENSUS_EXPECTED / "qamats_params.txt",
+        r"^U\+05C7 in the whole base text taking ד: (\d+)$",
+    ) - len(phase3._KQ_QAMATS_QATAN_REMOVED_VERSES)
 
     divine_path = _CENSUS_EXPECTED / "divine_name_split.txt"
     adonai_total = _single_int(divine_path, r"^\s*Adonai \(qamats on vav\)\s+(\d+)$")
