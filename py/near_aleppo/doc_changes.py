@@ -1,8 +1,8 @@
 """Describe near-Aleppo's template, representation and reading differences from MAM.
 
-doc_page.py assembles these sections. Counts come from the asserted population
-snapshot through doc_html.Numbers. Named examples are checked against source
-templates or snapshot site lists, and preserve their source attribution.
+doc_page.py assembles these sections. Counts come from the build's population file
+through doc_html.Numbers. Named examples are checked against source templates or
+the file's site lists, and preserve their source attribution.
 """
 
 from near_aleppo.doc_html import he_name

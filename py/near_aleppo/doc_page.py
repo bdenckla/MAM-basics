@@ -2,7 +2,7 @@
 
 doc_pages.py assigns headings to the overview and reference pages. Prose comes
 from this module and its section modules; measured figures come through
-doc_html.Numbers from the asserted snapshot or doc_figures.py. The overview
+doc_html.Numbers from the build's population file or doc_figures.py. The overview
 describes near-Aleppo's differences and links MAM-parsed-plus for shared roles.
 """
 

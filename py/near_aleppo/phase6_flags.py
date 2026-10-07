@@ -49,10 +49,11 @@ from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 APPLIED_AND_FLAGGED = phase2.APPLIED_AND_FLAGGED
 FLAGGED_NOT_APPLIED = phase2.FLAGGED_NOT_APPLIED
 
-# ``nusach_aleppo_readings.py`` is the census authority for the qualified
-# clause populations, and ``doubt_marked_forms.py`` is the authority for the
-# unqualified clauses whose quoted form ends in a question mark. The build
-# snapshot pins both their counts and their exact verse sites.
+# ``census/nusach_aleppo_readings.py`` is the census authority for the qualified
+# clause populations, and MAM-private's near-Aleppo research has the authority for
+# the unqualified clauses whose quoted form ends in a question mark. The build
+# records both their counts and their exact verse sites in
+# in/near-aleppo/build-populations.json, pinning neither.
 
 _QERE_SILENCE = "MAM's apparatus does not say whether the codex has a qere note here"
 _MAQAF_SILENCE = "MAM's apparatus does not say whether the codex has the maqaf here"
@@ -175,7 +176,7 @@ _NAMED_TABLES = {
 
 
 class Flags:
-    """Add flags verse by verse and record every asserted population."""
+    """Add flags verse by verse and record every population."""
 
     def __init__(self):
         self.counts = Counter()
@@ -225,21 +226,6 @@ class Flags:
                     f"{self._named_found[label, verse]} notes, not 1"
                 )
         return cell
-
-    def assert_expected_counts(self, expected_counts, expected_sites):
-        """Require the populations in the provenance-bound expectation snapshot."""
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        drift += [
-            f"{label}: expected at {expected}, build at {self.sites[label]}"
-            for label, expected in expected_sites.items()
-            if self.sites[label] != expected
-        ]
-        if drift:
-            raise AssertionError("Flag populations drifted: " + "; ".join(drift))
 
     def _walk(self, value, verse, note_depth):
         if isinstance(value, str):

@@ -13,7 +13,7 @@ Hebrew runs, verse references, and figures.
   the anchor MAM-with-doc gives each verse. ``verse_refs`` is the one place that
   makes such a link; a reference typed in the prose stays plain text.
 - Every figure the page states goes through Numbers, which formats it and records
-  where it came from: the build's asserted snapshot,
+  where it came from: the build's population file,
   ``in/near-aleppo/build-populations.json``, read by exact key so that a renamed key
   raises, or a figure ``doc_figures.py`` computes. The page's modules state no count
   as a literal.
@@ -81,8 +81,8 @@ def english_book(book):
 def verse_key(verse):
     """``verse`` as a (book, chapter, verse) tuple.
 
-    It is a tuple or list, as main_build.py and the snapshot's phase sites name a
-    verse, or a string ``book|chapter|verse``, as the snapshot's flag sites do.
+    It is a tuple or list, as main_build.py and the snapshot's site lists name a
+    verse, or a string ``book|chapter|verse``, as a page's require_sites call may.
     """
     if isinstance(verse, str):
         parts = verse.split("|")

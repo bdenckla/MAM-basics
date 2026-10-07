@@ -124,8 +124,7 @@ def _run_near_aleppo_census():
 
 def _run_near_aleppo_build():
     main_near_aleppo.almost_main(["--refresh-note-review"])
-    main_near_aleppo.almost_main(["--check-note-review"])
-    main_near_aleppo.almost_main(["--build", "--refresh-expectations"])
+    main_near_aleppo.almost_main(["--build"])
 
 
 def _run_near_aleppo_html():
@@ -726,7 +725,7 @@ _STEPS = [
     StepRecord(
         "near-aleppo-build",
         _run_near_aleppo_build,
-        "local MAM plus sealed pointings; validates every changed-note review before baking and writing out/near-aleppo/plus after the census",
+        "refreshes the note-review ledger, then builds from local MAM plus the stored pointings; validates every changed-note review before baking, checks its counts against the census, and writes out/near-aleppo/plus and in/near-aleppo/build-populations.json after the census",
     ),
     StepRecord(
         "near-aleppo-html",

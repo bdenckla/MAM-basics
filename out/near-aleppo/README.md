@@ -33,10 +33,11 @@ From the repository root:
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --check-note-review
 ```
 
-The first command regenerates five MAM population checks, then the dataset and
-HTML. The checks fail on changed input identities, unknown template variants,
-changed pointing guards, moved populations, or unreviewed note presentations.
-No private repository or scan archive is a build dependency.
+The first command regenerates the five-instrument MAM census, then the dataset,
+its population file `in/near-aleppo/build-populations.json`, and the HTML. The
+checks fail on unknown template variants, changed pointing guards, populations
+that disagree with the census, or unreviewed note presentations. No private
+repository or scan archive is a build dependency.
 
 The shared MAM-with-doc renderer also renders the example edition. Every HTML run
 checks its MAM mode against 62 independently tracked MAM-with-doc files at public

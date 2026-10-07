@@ -444,11 +444,9 @@ _PLANE_ONE_SIDED = (
 # Pointed ketivs ending in the qere's trailing maqaf, retained as part of the pointing.
 _TRAILING_MAQAF = "codex readings: pointed ketiv ending in the qere's trailing maqaf"
 
-# Expected counts and site lists live in in/near-aleppo/build-populations.json.
-# An automatic input refresh does not advance reading-disposition expectations:
-# the census classifies MAM's source populations, while phase 3 also determines
-# which forms are already in place. A changed disposition count or site list
-# therefore fails for review.
+# The build records these counts and site lists in
+# in/near-aleppo/build-populations.json, pinning none of them, so that a changed
+# disposition count or site list shows in that file's diff.
 #
 # The build classifies direct source clauses and derives their outcomes: forms
 # already in place, forms written to whole targets or named atoms, forms written
@@ -511,35 +509,6 @@ class Readings:
                     "times at the verse, not 1"
                 )
         return cell
-
-    def assert_expected_counts(self, expected_counts, expected_sites):
-        """Require the populations in the provenance-bound expectation snapshot.
-
-        A label counted or given sites that the snapshot does not list is drift too,
-        since some reasons' labels are built from the data.
-        """
-        drift = [
-            f"{label}: expected {expected}, build {self.counts[label]}"
-            for label, expected in expected_counts.items()
-            if self.counts[label] != expected
-        ]
-        drift += [
-            f"{label}: build {count}, a label the snapshot does not list"
-            for label, count in self.counts.items()
-            if label not in expected_counts
-        ]
-        drift += [
-            f"{label}: expected at {expected}, build at {self.sites[label]}"
-            for label, expected in expected_sites.items()
-            if self.sites[label] != expected
-        ]
-        drift += [
-            f"{label}: build at {verses}, a label the snapshot does not list"
-            for label, verses in self.sites.items()
-            if label not in expected_sites
-        ]
-        if drift:
-            raise AssertionError("Phase 5 populations drifted: " + "; ".join(drift))
 
     def _note(self, note, number, verse):
         """Classify one note's differing clauses, apply its reading, and return the
@@ -1017,8 +986,8 @@ def notes(cell, verse):
     The walk follows phase 2's rule table along each kept template's selected
     parameters, as phase2.selected_keys names them, and stops at each נוסח, entering
     neither its target nor its body, as the census's each_nusach does. It meets the
-    notes-walked population recorded in build-populations.json, in the census's
-    order; none is in the target of another. A template that phase 2 dissolves, or
+    notes in the census's order, as many as the census counts, which
+    build_expectations.assert_census_agrees checks; none is in the target of another. A template that phase 2 dissolves, or
     replaces by a placeholder, cannot be
     in an E cell that phase 3 returns, and raises. The near-Aleppo dataset's rule-8 template, which a pointed
     ketiv can hold, holds no note.

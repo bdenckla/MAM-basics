@@ -20,8 +20,9 @@ Representation policies then apply the declared near-Aleppo conventions. Source
 relations are read from MAM's clause heads, including testimony and doubt
 qualifiers. Direct readings quoted in MAM notes are applied only where their
 classified form and target meet the code's explicit requirements. Ambiguous
-readings remain pending or flagged. Policy-sensitive populations and site lists
-are checked against the tracked build snapshot.
+readings remain pending or flagged. The build records every population and site
+list in `in/near-aleppo/build-populations.json`, pinning none, so that the file's
+diff shows what a change to MAM's text or to the build moved.
 
 Pointings are applied in priority order: note-derived readings, the frozen
 MAM-derived set, individual editorial decisions, then reviewed portable
@@ -43,16 +44,15 @@ parameter 3 and flags retain their existing roles. The template names are
 `נוסח עם הקשר מקרא על פי המסורה` and `הערה-2 עם הקשר מקרא על פי המסורה`.
 Consumers render these stored roles without editorial clause transformations.
 
-Five independent MAM instruments supply the mechanically refreshable population
-counts. The census checks clean tracked input identities before and after its
-run, gathers every result before writing, and records the input object IDs.
-Automatic expectation refresh cannot change sensitive site lists or editorial
-decisions. A changed source guard, population or presentation stops the build for
-review rather than choosing a replacement.
+Five independent MAM instruments, the census, count populations from MAM's text
+alone and write `in/near-aleppo/census/`. The census gathers every result before
+writing any. Each population it counts must agree with the build's own count of
+the same population. A changed source guard or an unreviewed presentation stops
+the build for review rather than choosing a replacement.
 
 The presentation ledger contains the source evidence and substantive reviewed
 clause dispositions used during the build. A fresh pre-bake source replay must
-match all 1,548 changed-note entries before any dataset file is written. Review
+match every changed-note entry before any dataset file is written. Review
 provenance reads source inputs and never hashes published book files, avoiding
 an output dependency cycle. The maintained refresh command preserves reviews
 only when every row's evidence agrees. The edition renderer reads stored note

@@ -1,9 +1,5 @@
 {
-  "schema_version": 4,
-  "census_input_ids": {
-    "MAM-parsed/plus": "7a4784247acd2ee4d09691f8c2519a85114aec8b",
-    "aleppo/index-flat-annotated.json": "b59014f825721227192749a00d4822f8c20881aa"
-  },
+  "schema_version": 5,
   "phase2_counts": {
     "מ:קמץ": 371,
     "מ:דחי": 2306,
@@ -26,7 +22,19 @@
     "מ:קמץ (unselected parameter)": 1,
     "מ:דחי (unselected parameter)": 4,
     "מ:לגרמיה-2 (unselected parameter)": 1,
-    "special letter word flattened (unselected parameter)": 1
+    "special letter word flattened (unselected parameter)": 1,
+    "מ:אות-מיוחדת-במילה": 51,
+    "מ:אות-מיוחדת-במילה (unselected parameter)": 1,
+    "מ:נו״ן הפוכה": 9,
+    "מ:ששש": 228,
+    "סס": 41,
+    "ססס": 106,
+    "פפ": 9,
+    "פפפ": 15,
+    "ר0": 536,
+    "ר1": 4618,
+    "ר2": 568,
+    "ר3": 170
   },
   "phase3_counts": {
     "HEBREW POINT QAMATS QATAN changed to HEBREW POINT QAMATS": 7431,
@@ -117,460 +125,128 @@
   },
   "phase3_sites": {
     "Elohim reading: yod with no vowel, unchanged": [
-      [
-        "D1-Psalms",
-        "68",
-        "21"
-      ]
+      ["D1-Psalms", "68", "21"]
     ],
     "Adonai reading: holam kept where a note records the codex's": [
-      [
-        "BA-Samuel שמ\"א",
-        "15",
-        "1"
-      ],
-      [
-        "BC-Kings מל\"ב",
-        "20",
-        "9"
-      ],
-      [
-        "C1-Isaiah",
-        "30",
-        "1"
-      ],
-      [
-        "C3-Ezekiel",
-        "3",
-        "12"
-      ],
-      [
-        "D1-Psalms",
-        "26",
-        "12"
-      ]
+      ["BA-Samuel שמ\"א", "15", "1"],
+      ["BC-Kings מל\"ב", "20", "9"],
+      ["C1-Isaiah", "30", "1"],
+      ["C3-Ezekiel", "3", "12"],
+      ["D1-Psalms", "26", "12"]
     ],
     "divine title: holam kept where a note records the codex's": [
-      [
-        "D1-Psalms",
-        "110",
-        "5"
-      ]
+      ["D1-Psalms", "110", "5"]
     ],
     "revia mugrash: revia kept where chapter 5 records the codex's": [
-      [
-        "D1-Psalms",
-        "7",
-        "1"
-      ],
-      [
-        "D1-Psalms",
-        "25",
-        "21"
-      ],
-      [
-        "D1-Psalms",
-        "27",
-        "12"
-      ],
-      [
-        "D1-Psalms",
-        "35",
-        "14"
-      ],
-      [
-        "D1-Psalms",
-        "77",
-        "17"
-      ],
-      [
-        "D1-Psalms",
-        "105",
-        "2"
-      ],
-      [
-        "D2-Proverbs",
-        "19",
-        "26"
-      ]
+      ["D1-Psalms", "7", "1"],
+      ["D1-Psalms", "25", "21"],
+      ["D1-Psalms", "27", "12"],
+      ["D1-Psalms", "35", "14"],
+      ["D1-Psalms", "77", "17"],
+      ["D1-Psalms", "105", "2"],
+      ["D2-Proverbs", "19", "26"]
     ],
     "revia mugrash: geresh muqdam moved to the compound's first atom": [
-      [
-        "D3-Job",
-        "19",
-        "16"
-      ]
+      ["D3-Job", "19", "16"]
     ],
     "revia mugrash: removal whose note's codex form lacks the geresh muqdam too": [],
     "ole on the yored's letter: ole removed": [
-      [
-        "D1-Psalms",
-        "30",
-        "12"
-      ],
-      [
-        "D1-Psalms",
-        "42",
-        "3"
-      ],
-      [
-        "D1-Psalms",
-        "55",
-        "20"
-      ],
-      [
-        "D1-Psalms",
-        "68",
-        "20"
-      ],
-      [
-        "D1-Psalms",
-        "86",
-        "2"
-      ],
-      [
-        "D1-Psalms",
-        "109",
-        "16"
-      ],
-      [
-        "D1-Psalms",
-        "125",
-        "2"
-      ],
-      [
-        "D2-Proverbs",
-        "24",
-        "24"
-      ],
-      [
-        "D2-Proverbs",
-        "30",
-        "15"
-      ],
-      [
-        "D3-Job",
-        "8",
-        "6"
-      ],
-      [
-        "D3-Job",
-        "9",
-        "22"
-      ],
-      [
-        "D3-Job",
-        "29",
-        "25"
-      ],
-      [
-        "D3-Job",
-        "34",
-        "20"
-      ]
+      ["D1-Psalms", "30", "12"],
+      ["D1-Psalms", "42", "3"],
+      ["D1-Psalms", "55", "20"],
+      ["D1-Psalms", "68", "20"],
+      ["D1-Psalms", "86", "2"],
+      ["D1-Psalms", "109", "16"],
+      ["D1-Psalms", "125", "2"],
+      ["D2-Proverbs", "24", "24"],
+      ["D2-Proverbs", "30", "15"],
+      ["D3-Job", "8", "6"],
+      ["D3-Job", "9", "22"],
+      ["D3-Job", "29", "25"],
+      ["D3-Job", "34", "20"]
     ],
     "ole on the yored's letter: removal in no note's target": [
-      [
-        "D1-Psalms",
-        "42",
-        "3"
-      ]
+      ["D1-Psalms", "42", "3"]
     ],
     "ketiv/qere apparatus: template replaced by the codex form its note quotes": [
-      [
-        "A5-Deuter",
-        "32",
-        "13"
-      ],
-      [
-        "BA-Samuel שמ\"א",
-        "10",
-        "7"
-      ],
-      [
-        "C1-Isaiah",
-        "18",
-        "4"
-      ],
-      [
-        "C1-Isaiah",
-        "44",
-        "17"
-      ],
-      [
-        "C1-Isaiah",
-        "58",
-        "14"
-      ],
-      [
-        "C3-Ezekiel",
-        "21",
-        "28"
-      ],
-      [
-        "C3-Ezekiel",
-        "24",
-        "2"
-      ],
-      [
-        "C3-Ezekiel",
-        "44",
-        "3"
-      ],
-      [
-        "CA-The-12-Minor-Prophets נחום",
-        "1",
-        "3"
-      ],
-      [
-        "CA-The-12-Minor-Prophets נחום",
-        "2",
-        "1"
-      ],
-      [
-        "D1-Psalms",
-        "89",
-        "29"
-      ],
-      [
-        "FC-Chronicles דה\"ב",
-        "25",
-        "17"
-      ],
-      [
-        "FC-Chronicles דה\"ב",
-        "34",
-        "22"
-      ]
+      ["A5-Deuter", "32", "13"],
+      ["BA-Samuel שמ\"א", "10", "7"],
+      ["C1-Isaiah", "18", "4"],
+      ["C1-Isaiah", "44", "17"],
+      ["C1-Isaiah", "58", "14"],
+      ["C3-Ezekiel", "21", "28"],
+      ["C3-Ezekiel", "24", "2"],
+      ["C3-Ezekiel", "44", "3"],
+      ["CA-The-12-Minor-Prophets נחום", "1", "3"],
+      ["CA-The-12-Minor-Prophets נחום", "2", "1"],
+      ["D1-Psalms", "89", "29"],
+      ["FC-Chronicles דה\"ב", "25", "17"],
+      ["FC-Chronicles דה\"ב", "34", "22"]
     ],
     "ketiv/qere apparatus: template replaced by its pointed ketiv": [
-      [
-        "B1-Joshua",
-        "3",
-        "4"
-      ],
-      [
-        "C3-Ezekiel",
-        "40",
-        "24"
-      ],
-      [
-        "C3-Ezekiel",
-        "40",
-        "25"
-      ],
-      [
-        "C3-Ezekiel",
-        "40",
-        "26"
-      ]
+      ["B1-Joshua", "3", "4"],
+      ["C3-Ezekiel", "40", "24"],
+      ["C3-Ezekiel", "40", "25"],
+      ["C3-Ezekiel", "40", "26"]
     ],
     "ketiv/qere apparatus: template replaced by its pointed qere, the spelling its note's prose gives the codex": [
-      [
-        "C3-Ezekiel",
-        "40",
-        "24"
-      ]
+      ["C3-Ezekiel", "40", "24"]
     ],
     "ketiv/qere apparatus: template replaced by MAM's ketiv pointed by the transplant": [
-      [
-        "C1-Isaiah",
-        "26",
-        "20"
-      ],
-      [
-        "CA-The-12-Minor-Prophets צפניה",
-        "2",
-        "9"
-      ]
+      ["C1-Isaiah", "26", "20"],
+      ["CA-The-12-Minor-Prophets צפניה", "2", "9"]
     ],
     "ketiv/qere apparatus: template kept where the codex form is doubt-marked": [
-      [
-        "C2-Jeremiah",
-        "33",
-        "26"
-      ]
+      ["C2-Jeremiah", "33", "26"]
     ],
     "hataf on a non-guttural: varika replaced by a hiriq, the sheva kept": [
-      [
-        "BC-Kings מל\"א",
-        "17",
-        "11"
-      ],
-      [
-        "D1-Psalms",
-        "14",
-        "1"
-      ],
-      [
-        "D1-Psalms",
-        "14",
-        "1"
-      ],
-      [
-        "D1-Psalms",
-        "53",
-        "2"
-      ],
-      [
-        "D1-Psalms",
-        "53",
-        "2"
-      ]
+      ["BC-Kings מל\"א", "17", "11"],
+      ["D1-Psalms", "14", "1"],
+      ["D1-Psalms", "14", "1"],
+      ["D1-Psalms", "53", "2"],
+      ["D1-Psalms", "53", "2"]
     ],
     "hataf on a non-guttural: vowel from the clause headed ל, the forms disagreeing": [
-      [
-        "C2-Jeremiah",
-        "31",
-        "32"
-      ]
+      ["C2-Jeremiah", "31", "32"]
     ],
     "hataf on a non-guttural: vowel from the forms of the note's agreeing clause": [
-      [
-        "D1-Psalms",
-        "17",
-        "14"
-      ]
+      ["D1-Psalms", "17", "14"]
     ],
     "stress helpers: kept by a note citing the codex": [
-      [
-        "B2-Judges",
-        "18",
-        "19"
-      ],
-      [
-        "BC-Kings מל\"א",
-        "17",
-        "13"
-      ],
-      [
-        "C2-Jeremiah",
-        "2",
-        "2"
-      ],
-      [
-        "C2-Jeremiah",
-        "3",
-        "12"
-      ],
-      [
-        "C2-Jeremiah",
-        "44",
-        "27"
-      ],
-      [
-        "C3-Ezekiel",
-        "5",
-        "15"
-      ],
-      [
-        "FC-Chronicles דה\"ב",
-        "28",
-        "23"
-      ]
+      ["B2-Judges", "18", "19"],
+      ["BC-Kings מל\"א", "17", "13"],
+      ["C2-Jeremiah", "2", "2"],
+      ["C2-Jeremiah", "3", "12"],
+      ["C2-Jeremiah", "44", "27"],
+      ["C3-Ezekiel", "5", "15"],
+      ["FC-Chronicles דה\"ב", "28", "23"]
     ],
     "stress helpers: kept by a note citing ל": [
-      [
-        "A1-Genesis",
-        "48",
-        "7"
-      ],
-      [
-        "A5-Deuter",
-        "21",
-        "13"
-      ],
-      [
-        "BC-Kings מל\"ב",
-        "17",
-        "24"
-      ],
-      [
-        "E5-Esther",
-        "6",
-        "13"
-      ]
+      ["A1-Genesis", "48", "7"],
+      ["A5-Deuter", "21", "13"],
+      ["BC-Kings מל\"ב", "17", "24"],
+      ["E5-Esther", "6", "13"]
     ],
     "stress helpers: stripped in the target of a note whose agreeing clause speaks of doubling": [
-      [
-        "A4-Numbers",
-        "11",
-        "8"
-      ],
-      [
-        "BA-Samuel שמ\"א",
-        "30",
-        "15"
-      ],
-      [
-        "BA-Samuel שמ\"ב",
-        "3",
-        "8"
-      ],
-      [
-        "C2-Jeremiah",
-        "11",
-        "10"
-      ],
-      [
-        "FC-Chronicles דה\"ב",
-        "19",
-        "2"
-      ],
-      [
-        "FC-Chronicles דה\"ב",
-        "33",
-        "14"
-      ]
+      ["A4-Numbers", "11", "8"],
+      ["BA-Samuel שמ\"א", "30", "15"],
+      ["BA-Samuel שמ\"ב", "3", "8"],
+      ["C2-Jeremiah", "11", "10"],
+      ["FC-Chronicles דה\"ב", "19", "2"],
+      ["FC-Chronicles דה\"ב", "33", "14"]
     ],
     "stress helpers: geresh or gershayim removed with a telisha gedolah's stress helper": [
-      [
-        "A3-Levit",
-        "10",
-        "4"
-      ],
-      [
-        "C3-Ezekiel",
-        "48",
-        "10"
-      ]
+      ["A3-Levit", "10", "4"],
+      ["C3-Ezekiel", "48", "10"]
     ],
     "stress helpers: kept pashta's stress helper whose note quotes the codex's pashta alone": [
-      [
-        "A5-Deuter",
-        "29",
-        "28"
-      ],
-      [
-        "BA-Samuel שמ\"ב",
-        "11",
-        "25"
-      ],
-      [
-        "BC-Kings מל\"ב",
-        "14",
-        "7"
-      ],
-      [
-        "C1-Isaiah",
-        "44",
-        "8"
-      ],
-      [
-        "FC-Chronicles דה\"א",
-        "6",
-        "45"
-      ],
-      [
-        "FC-Chronicles דה\"א",
-        "21",
-        "12"
-      ],
-      [
-        "FC-Chronicles דה\"ב",
-        "6",
-        "20"
-      ]
+      ["A5-Deuter", "29", "28"],
+      ["BA-Samuel שמ\"ב", "11", "25"],
+      ["BC-Kings מל\"ב", "14", "7"],
+      ["C1-Isaiah", "44", "8"],
+      ["FC-Chronicles דה\"א", "6", "45"],
+      ["FC-Chronicles דה\"א", "21", "12"],
+      ["FC-Chronicles דה\"ב", "6", "20"]
     ],
     "maqaf: maqafs added": [
       ["BA-Samuel שמ\"א", "14", "49"],
@@ -956,179 +632,448 @@
   },
   "flag_sites": {
     "qualification 2: doubt-marked clauses by codex siglum": [
-      "A5-Deuter|5|7", "A5-Deuter|5|23", "B1-Joshua|1|7", "B1-Joshua|7|13",
-      "B1-Joshua|8|15", "B1-Joshua|14|7", "B2-Judges|7|17",
-      "BA-Samuel שמ\"א|8|20", "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7",
-      "BA-Samuel שמ\"ב|22|40", "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29",
-      "C1-Isaiah|14|2", "C1-Isaiah|59|19", "C1-Isaiah|59|19",
-      "C3-Ezekiel|29|7", "C3-Ezekiel|31|11", "C3-Ezekiel|44|12",
-      "CA-The-12-Minor-Prophets הושע|4|18", "CA-The-12-Minor-Prophets הושע|6|11",
-      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
-      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
-      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
-      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
-      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
-      "D2-Proverbs|11|13", "D3-Job|41|22", "E2-Ruth|2|22",
-      "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
-      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
-      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+      ["A5-Deuter", "5", "7"],
+      ["A5-Deuter", "5", "23"],
+      ["B1-Joshua", "1", "7"],
+      ["B1-Joshua", "7", "13"],
+      ["B1-Joshua", "8", "15"],
+      ["B1-Joshua", "14", "7"],
+      ["B2-Judges", "7", "17"],
+      ["BA-Samuel שמ\"א", "8", "20"],
+      ["BA-Samuel שמ\"א", "31", "2"],
+      ["BA-Samuel שמ\"ב", "3", "7"],
+      ["BA-Samuel שמ\"ב", "22", "40"],
+      ["BC-Kings מל\"א", "2", "28"],
+      ["BC-Kings מל\"א", "20", "29"],
+      ["C1-Isaiah", "14", "2"],
+      ["C1-Isaiah", "59", "19"],
+      ["C1-Isaiah", "59", "19"],
+      ["C3-Ezekiel", "29", "7"],
+      ["C3-Ezekiel", "31", "11"],
+      ["C3-Ezekiel", "44", "12"],
+      ["CA-The-12-Minor-Prophets הושע", "4", "18"],
+      ["CA-The-12-Minor-Prophets הושע", "6", "11"],
+      ["CA-The-12-Minor-Prophets חבקוק", "2", "7"],
+      ["D1-Psalms", "39", "6"],
+      ["D1-Psalms", "44", "7"],
+      ["D1-Psalms", "44", "27"],
+      ["D1-Psalms", "57", "9"],
+      ["D1-Psalms", "69", "29"],
+      ["D1-Psalms", "86", "7"],
+      ["D1-Psalms", "107", "17"],
+      ["D1-Psalms", "108", "3"],
+      ["D1-Psalms", "124", "6"],
+      ["D1-Psalms", "138", "3"],
+      ["D1-Psalms", "139", "7"],
+      ["D2-Proverbs", "6", "3"],
+      ["D2-Proverbs", "6", "24"],
+      ["D2-Proverbs", "7", "13"],
+      ["D2-Proverbs", "8", "34"],
+      ["D2-Proverbs", "11", "13"],
+      ["D3-Job", "41", "22"],
+      ["E2-Ruth", "2", "22"],
+      ["FC-Chronicles דה\"א", "8", "6"],
+      ["FC-Chronicles דה\"א", "17", "20"],
+      ["FC-Chronicles דה\"א", "18", "4"],
+      ["FC-Chronicles דה\"א", "27", "12"],
+      ["FC-Chronicles דה\"ב", "4", "8"],
+      ["FC-Chronicles דה\"ב", "11", "23"]
     ],
     "qualification 2: notes flagged": [
-      "A5-Deuter|5|7", "B1-Joshua|1|7", "B1-Joshua|7|13", "B1-Joshua|8|15",
-      "B1-Joshua|14|7", "B2-Judges|7|17", "BA-Samuel שמ\"א|8|20",
-      "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7", "BA-Samuel שמ\"ב|22|40",
-      "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29", "C1-Isaiah|10|15",
-      "C1-Isaiah|14|2", "C1-Isaiah|45|6", "C1-Isaiah|59|19",
-      "C2-Jeremiah|33|26", "C2-Jeremiah|48|22", "C3-Ezekiel|10|11",
-      "C3-Ezekiel|12|12", "C3-Ezekiel|29|7", "C3-Ezekiel|31|11",
-      "C3-Ezekiel|35|9", "C3-Ezekiel|44|12",
-      "CA-The-12-Minor-Prophets הושע|4|18", "CA-The-12-Minor-Prophets הושע|6|11",
-      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
-      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
-      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
-      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
-      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
-      "D2-Proverbs|11|13", "D3-Job|16|8", "D3-Job|41|22", "E2-Ruth|2|22",
-      "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
-      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
-      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+      ["A5-Deuter", "5", "7"],
+      ["B1-Joshua", "1", "7"],
+      ["B1-Joshua", "7", "13"],
+      ["B1-Joshua", "8", "15"],
+      ["B1-Joshua", "14", "7"],
+      ["B2-Judges", "7", "17"],
+      ["BA-Samuel שמ\"א", "8", "20"],
+      ["BA-Samuel שמ\"א", "31", "2"],
+      ["BA-Samuel שמ\"ב", "3", "7"],
+      ["BA-Samuel שמ\"ב", "22", "40"],
+      ["BC-Kings מל\"א", "2", "28"],
+      ["BC-Kings מל\"א", "20", "29"],
+      ["C1-Isaiah", "10", "15"],
+      ["C1-Isaiah", "14", "2"],
+      ["C1-Isaiah", "45", "6"],
+      ["C1-Isaiah", "59", "19"],
+      ["C2-Jeremiah", "33", "26"],
+      ["C2-Jeremiah", "48", "22"],
+      ["C3-Ezekiel", "10", "11"],
+      ["C3-Ezekiel", "12", "12"],
+      ["C3-Ezekiel", "29", "7"],
+      ["C3-Ezekiel", "31", "11"],
+      ["C3-Ezekiel", "35", "9"],
+      ["C3-Ezekiel", "44", "12"],
+      ["CA-The-12-Minor-Prophets הושע", "4", "18"],
+      ["CA-The-12-Minor-Prophets הושע", "6", "11"],
+      ["CA-The-12-Minor-Prophets חבקוק", "2", "7"],
+      ["D1-Psalms", "39", "6"],
+      ["D1-Psalms", "44", "7"],
+      ["D1-Psalms", "44", "27"],
+      ["D1-Psalms", "57", "9"],
+      ["D1-Psalms", "69", "29"],
+      ["D1-Psalms", "86", "7"],
+      ["D1-Psalms", "107", "17"],
+      ["D1-Psalms", "108", "3"],
+      ["D1-Psalms", "124", "6"],
+      ["D1-Psalms", "138", "3"],
+      ["D1-Psalms", "139", "7"],
+      ["D2-Proverbs", "6", "3"],
+      ["D2-Proverbs", "6", "24"],
+      ["D2-Proverbs", "7", "13"],
+      ["D2-Proverbs", "8", "34"],
+      ["D2-Proverbs", "11", "13"],
+      ["D3-Job", "16", "8"],
+      ["D3-Job", "41", "22"],
+      ["E2-Ruth", "2", "22"],
+      ["FC-Chronicles דה\"א", "8", "6"],
+      ["FC-Chronicles דה\"א", "17", "20"],
+      ["FC-Chronicles דה\"א", "18", "4"],
+      ["FC-Chronicles דה\"א", "27", "12"],
+      ["FC-Chronicles דה\"ב", "4", "8"],
+      ["FC-Chronicles דה\"ב", "11", "23"]
     ],
     "qualification 2: clauses flagged": [
-      "A5-Deuter|5|7", "B1-Joshua|1|7", "B1-Joshua|7|13", "B1-Joshua|8|15",
-      "B1-Joshua|14|7", "B2-Judges|7|17", "BA-Samuel שמ\"א|8|20",
-      "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7", "BA-Samuel שמ\"ב|22|40",
-      "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29", "C1-Isaiah|10|15",
-      "C1-Isaiah|14|2", "C1-Isaiah|45|6", "C1-Isaiah|59|19", "C1-Isaiah|59|19",
-      "C2-Jeremiah|33|26", "C2-Jeremiah|48|22", "C3-Ezekiel|10|11",
-      "C3-Ezekiel|12|12", "C3-Ezekiel|29|7", "C3-Ezekiel|31|11",
-      "C3-Ezekiel|35|9", "C3-Ezekiel|44|12",
-      "CA-The-12-Minor-Prophets הושע|4|18", "CA-The-12-Minor-Prophets הושע|6|11",
-      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
-      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
-      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
-      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
-      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
-      "D2-Proverbs|11|13", "D3-Job|16|8", "D3-Job|41|22", "E2-Ruth|2|22",
-      "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
-      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
-      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+      ["A5-Deuter", "5", "7"],
+      ["B1-Joshua", "1", "7"],
+      ["B1-Joshua", "7", "13"],
+      ["B1-Joshua", "8", "15"],
+      ["B1-Joshua", "14", "7"],
+      ["B2-Judges", "7", "17"],
+      ["BA-Samuel שמ\"א", "8", "20"],
+      ["BA-Samuel שמ\"א", "31", "2"],
+      ["BA-Samuel שמ\"ב", "3", "7"],
+      ["BA-Samuel שמ\"ב", "22", "40"],
+      ["BC-Kings מל\"א", "2", "28"],
+      ["BC-Kings מל\"א", "20", "29"],
+      ["C1-Isaiah", "10", "15"],
+      ["C1-Isaiah", "14", "2"],
+      ["C1-Isaiah", "45", "6"],
+      ["C1-Isaiah", "59", "19"],
+      ["C1-Isaiah", "59", "19"],
+      ["C2-Jeremiah", "33", "26"],
+      ["C2-Jeremiah", "48", "22"],
+      ["C3-Ezekiel", "10", "11"],
+      ["C3-Ezekiel", "12", "12"],
+      ["C3-Ezekiel", "29", "7"],
+      ["C3-Ezekiel", "31", "11"],
+      ["C3-Ezekiel", "35", "9"],
+      ["C3-Ezekiel", "44", "12"],
+      ["CA-The-12-Minor-Prophets הושע", "4", "18"],
+      ["CA-The-12-Minor-Prophets הושע", "6", "11"],
+      ["CA-The-12-Minor-Prophets חבקוק", "2", "7"],
+      ["D1-Psalms", "39", "6"],
+      ["D1-Psalms", "44", "7"],
+      ["D1-Psalms", "44", "27"],
+      ["D1-Psalms", "57", "9"],
+      ["D1-Psalms", "69", "29"],
+      ["D1-Psalms", "86", "7"],
+      ["D1-Psalms", "107", "17"],
+      ["D1-Psalms", "108", "3"],
+      ["D1-Psalms", "124", "6"],
+      ["D1-Psalms", "138", "3"],
+      ["D1-Psalms", "139", "7"],
+      ["D2-Proverbs", "6", "3"],
+      ["D2-Proverbs", "6", "24"],
+      ["D2-Proverbs", "7", "13"],
+      ["D2-Proverbs", "8", "34"],
+      ["D2-Proverbs", "11", "13"],
+      ["D3-Job", "16", "8"],
+      ["D3-Job", "41", "22"],
+      ["E2-Ruth", "2", "22"],
+      ["FC-Chronicles דה\"א", "8", "6"],
+      ["FC-Chronicles דה\"א", "17", "20"],
+      ["FC-Chronicles דה\"א", "18", "4"],
+      ["FC-Chronicles דה\"א", "27", "12"],
+      ["FC-Chronicles דה\"ב", "4", "8"],
+      ["FC-Chronicles דה\"ב", "11", "23"]
     ],
     "flagged-not-applied": [
-      "A4-Numbers|22|5", "A5-Deuter|5|7", "A5-Deuter|29|22", "B1-Joshua|1|7",
-      "B1-Joshua|7|13", "B1-Joshua|8|15", "B1-Joshua|14|7", "B2-Judges|7|17",
-      "BA-Samuel שמ\"א|8|20", "BA-Samuel שמ\"א|31|2", "BA-Samuel שמ\"ב|3|7",
-      "BA-Samuel שמ\"ב|11|24", "BA-Samuel שמ\"ב|11|24", "BA-Samuel שמ\"ב|13|33",
-      "BA-Samuel שמ\"ב|22|40", "BC-Kings מל\"א|2|28", "BC-Kings מל\"א|20|29",
-      "BC-Kings מל\"ב|14|12", "C1-Isaiah|10|15", "C1-Isaiah|14|2",
-      "C1-Isaiah|45|6", "C1-Isaiah|59|19", "C2-Jeremiah|2|3",
-      "C2-Jeremiah|32|35", "C2-Jeremiah|33|26", "C2-Jeremiah|48|22",
-      "C2-Jeremiah|51|9", "C3-Ezekiel|10|11", "C3-Ezekiel|12|12",
-      "C3-Ezekiel|29|7", "C3-Ezekiel|31|11", "C3-Ezekiel|35|9",
-      "C3-Ezekiel|40|37", "C3-Ezekiel|44|12", "C3-Ezekiel|47|8",
-      "C3-Ezekiel|48|18", "C3-Ezekiel|48|21",
-      "CA-The-12-Minor-Prophets הושע|4|18",
-      "CA-The-12-Minor-Prophets הושע|6|11",
-      "CA-The-12-Minor-Prophets חבקוק|2|7", "D1-Psalms|39|6", "D1-Psalms|44|7",
-      "D1-Psalms|44|27", "D1-Psalms|57|9", "D1-Psalms|69|29", "D1-Psalms|86|7",
-      "D1-Psalms|107|17", "D1-Psalms|108|3", "D1-Psalms|124|6",
-      "D1-Psalms|138|3", "D1-Psalms|139|7", "D2-Proverbs|6|3",
-      "D2-Proverbs|6|24", "D2-Proverbs|7|13", "D2-Proverbs|8|34",
-      "D2-Proverbs|11|13", "D2-Proverbs|19|26", "D3-Job|16|8", "D3-Job|41|22",
-      "E2-Ruth|2|22", "FC-Chronicles דה\"א|8|6", "FC-Chronicles דה\"א|17|20",
-      "FC-Chronicles דה\"א|18|4", "FC-Chronicles דה\"א|27|12",
-      "FC-Chronicles דה\"ב|4|8", "FC-Chronicles דה\"ב|11|23"
+      ["A4-Numbers", "22", "5"],
+      ["A5-Deuter", "5", "7"],
+      ["A5-Deuter", "29", "22"],
+      ["B1-Joshua", "1", "7"],
+      ["B1-Joshua", "7", "13"],
+      ["B1-Joshua", "8", "15"],
+      ["B1-Joshua", "14", "7"],
+      ["B2-Judges", "7", "17"],
+      ["BA-Samuel שמ\"א", "8", "20"],
+      ["BA-Samuel שמ\"א", "31", "2"],
+      ["BA-Samuel שמ\"ב", "3", "7"],
+      ["BA-Samuel שמ\"ב", "11", "24"],
+      ["BA-Samuel שמ\"ב", "11", "24"],
+      ["BA-Samuel שמ\"ב", "13", "33"],
+      ["BA-Samuel שמ\"ב", "22", "40"],
+      ["BC-Kings מל\"א", "2", "28"],
+      ["BC-Kings מל\"א", "20", "29"],
+      ["BC-Kings מל\"ב", "14", "12"],
+      ["C1-Isaiah", "10", "15"],
+      ["C1-Isaiah", "14", "2"],
+      ["C1-Isaiah", "45", "6"],
+      ["C1-Isaiah", "59", "19"],
+      ["C2-Jeremiah", "2", "3"],
+      ["C2-Jeremiah", "32", "35"],
+      ["C2-Jeremiah", "33", "26"],
+      ["C2-Jeremiah", "48", "22"],
+      ["C2-Jeremiah", "51", "9"],
+      ["C3-Ezekiel", "10", "11"],
+      ["C3-Ezekiel", "12", "12"],
+      ["C3-Ezekiel", "29", "7"],
+      ["C3-Ezekiel", "31", "11"],
+      ["C3-Ezekiel", "35", "9"],
+      ["C3-Ezekiel", "40", "37"],
+      ["C3-Ezekiel", "44", "12"],
+      ["C3-Ezekiel", "47", "8"],
+      ["C3-Ezekiel", "48", "18"],
+      ["C3-Ezekiel", "48", "21"],
+      ["CA-The-12-Minor-Prophets הושע", "4", "18"],
+      ["CA-The-12-Minor-Prophets הושע", "6", "11"],
+      ["CA-The-12-Minor-Prophets חבקוק", "2", "7"],
+      ["D1-Psalms", "39", "6"],
+      ["D1-Psalms", "44", "7"],
+      ["D1-Psalms", "44", "27"],
+      ["D1-Psalms", "57", "9"],
+      ["D1-Psalms", "69", "29"],
+      ["D1-Psalms", "86", "7"],
+      ["D1-Psalms", "107", "17"],
+      ["D1-Psalms", "108", "3"],
+      ["D1-Psalms", "124", "6"],
+      ["D1-Psalms", "138", "3"],
+      ["D1-Psalms", "139", "7"],
+      ["D2-Proverbs", "6", "3"],
+      ["D2-Proverbs", "6", "24"],
+      ["D2-Proverbs", "7", "13"],
+      ["D2-Proverbs", "8", "34"],
+      ["D2-Proverbs", "11", "13"],
+      ["D2-Proverbs", "19", "26"],
+      ["D3-Job", "16", "8"],
+      ["D3-Job", "41", "22"],
+      ["E2-Ruth", "2", "22"],
+      ["FC-Chronicles דה\"א", "8", "6"],
+      ["FC-Chronicles דה\"א", "17", "20"],
+      ["FC-Chronicles דה\"א", "18", "4"],
+      ["FC-Chronicles דה\"א", "27", "12"],
+      ["FC-Chronicles דה\"ב", "4", "8"],
+      ["FC-Chronicles דה\"ב", "11", "23"]
     ],
     "qualification 2: clauses whose reading is already in the target": [
-      "A5-Deuter|5|23"
+      ["A5-Deuter", "5", "23"]
     ],
     "named apparatus-silence sites": [
-      "A5-Deuter|29|22", "BA-Samuel שמ\"ב|11|24", "BA-Samuel שמ\"ב|11|24",
-      "BA-Samuel שמ\"ב|13|33", "BC-Kings מל\"ב|14|12", "C2-Jeremiah|2|3",
-      "C2-Jeremiah|32|35", "C2-Jeremiah|51|9", "C3-Ezekiel|40|37",
-      "C3-Ezekiel|47|8", "C3-Ezekiel|48|18", "C3-Ezekiel|48|21"
+      ["A5-Deuter", "29", "22"],
+      ["BA-Samuel שמ\"ב", "11", "24"],
+      ["BA-Samuel שמ\"ב", "11", "24"],
+      ["BA-Samuel שמ\"ב", "13", "33"],
+      ["BC-Kings מל\"ב", "14", "12"],
+      ["C2-Jeremiah", "2", "3"],
+      ["C2-Jeremiah", "32", "35"],
+      ["C2-Jeremiah", "51", "9"],
+      ["C3-Ezekiel", "40", "37"],
+      ["C3-Ezekiel", "47", "8"],
+      ["C3-Ezekiel", "48", "18"],
+      ["C3-Ezekiel", "48", "21"]
     ],
     "qualification 3: named agreeing clauses": [
-      "BA-Samuel שמ\"א|23|17", "D1-Psalms|25|21", "D1-Psalms|35|14"
+      ["BA-Samuel שמ\"א", "23", "17"],
+      ["D1-Psalms", "25", "21"],
+      ["D1-Psalms", "35", "14"]
     ],
     "applied-and-flagged": [
-      "A5-Deuter|28|30", "B1-Joshua|21|22", "B2-Judges|9|48", "B2-Judges|18|22",
-      "BA-Samuel שמ\"א|15|11", "BA-Samuel שמ\"א|17|34", "BA-Samuel שמ\"א|18|8",
-      "BA-Samuel שמ\"א|19|17", "BA-Samuel שמ\"א|21|2", "BA-Samuel שמ\"א|23|17",
-      "BA-Samuel שמ\"א|29|6", "BA-Samuel שמ\"ב|1|19", "BA-Samuel שמ\"ב|8|16",
-      "BA-Samuel שמ\"ב|11|11", "BA-Samuel שמ\"ב|12|1", "BA-Samuel שמ\"ב|19|42",
-      "BA-Samuel שמ\"ב|22|7", "BA-Samuel שמ\"ב|23|13", "BA-Samuel שמ\"ב|23|24",
-      "BA-Samuel שמ\"ב|24|2", "BA-Samuel שמ\"ב|24|3", "BC-Kings מל\"א|2|21",
-      "BC-Kings מל\"א|4|7", "BC-Kings מל\"א|6|29", "BC-Kings מל\"א|7|33",
-      "BC-Kings מל\"א|10|24", "BC-Kings מל\"א|14|3", "BC-Kings מל\"ב|5|12",
-      "BC-Kings מל\"ב|10|10", "BC-Kings מל\"ב|14|7", "BC-Kings מל\"ב|20|11",
-      "C2-Jeremiah|24|9", "C3-Ezekiel|28|17", "C3-Ezekiel|28|22",
-      "C3-Ezekiel|28|22", "C3-Ezekiel|35|15",
-      "CA-The-12-Minor-Prophets יואל|2|25",
-      "CA-The-12-Minor-Prophets זכריה|12|13",
-      "CA-The-12-Minor-Prophets מלאכי|2|7", "D1-Psalms|5|2", "D1-Psalms|7|1",
-      "D1-Psalms|11|1", "D1-Psalms|25|21", "D1-Psalms|27|5", "D1-Psalms|32|10",
-      "D1-Psalms|35|14", "D1-Psalms|37|17", "D1-Psalms|50|23", "D1-Psalms|56|5",
-      "D1-Psalms|57|5", "D1-Psalms|64|8", "D1-Psalms|68|21", "D1-Psalms|75|4",
-      "D1-Psalms|85|9", "D1-Psalms|89|6", "D1-Psalms|98|7", "D1-Psalms|98|8",
-      "D1-Psalms|106|43", "D1-Psalms|106|48", "D1-Psalms|107|5",
-      "D1-Psalms|107|18", "D1-Psalms|108|7", "D1-Psalms|118|10",
-      "D1-Psalms|119|138", "D1-Psalms|137|7", "D2-Proverbs|3|30",
-      "D2-Proverbs|10|13", "D2-Proverbs|12|23", "D2-Proverbs|21|30",
-      "D2-Proverbs|30|9", "D3-Job|19|16", "E1-Song of Songs|2|17",
-      "FC-Chronicles דה\"א|4|9", "FC-Chronicles דה\"א|5|41",
-      "FC-Chronicles דה\"א|6|45", "FC-Chronicles דה\"א|17|6",
-      "FC-Chronicles דה\"א|21|12", "FC-Chronicles דה\"א|21|29",
-      "FC-Chronicles דה\"א|22|10", "FC-Chronicles דה\"א|25|31",
-      "FC-Chronicles דה\"א|28|10", "FC-Chronicles דה\"א|28|17",
-      "FC-Chronicles דה\"ב|6|16", "FC-Chronicles דה\"ב|6|20",
-      "FC-Chronicles דה\"ב|9|24", "FC-Chronicles דה\"ב|10|10",
-      "FC-Chronicles דה\"ב|25|1", "FC-Chronicles דה\"ב|30|21",
-      "FC-Chronicles דה\"ב|33|25", "FC-Chronicles דה\"ב|36|23"
+      ["A5-Deuter", "28", "30"],
+      ["B1-Joshua", "21", "22"],
+      ["B2-Judges", "9", "48"],
+      ["B2-Judges", "18", "22"],
+      ["BA-Samuel שמ\"א", "15", "11"],
+      ["BA-Samuel שמ\"א", "17", "34"],
+      ["BA-Samuel שמ\"א", "18", "8"],
+      ["BA-Samuel שמ\"א", "19", "17"],
+      ["BA-Samuel שמ\"א", "21", "2"],
+      ["BA-Samuel שמ\"א", "23", "17"],
+      ["BA-Samuel שמ\"א", "29", "6"],
+      ["BA-Samuel שמ\"ב", "1", "19"],
+      ["BA-Samuel שמ\"ב", "8", "16"],
+      ["BA-Samuel שמ\"ב", "11", "11"],
+      ["BA-Samuel שמ\"ב", "12", "1"],
+      ["BA-Samuel שמ\"ב", "19", "42"],
+      ["BA-Samuel שמ\"ב", "22", "7"],
+      ["BA-Samuel שמ\"ב", "23", "13"],
+      ["BA-Samuel שמ\"ב", "23", "24"],
+      ["BA-Samuel שמ\"ב", "24", "2"],
+      ["BA-Samuel שמ\"ב", "24", "3"],
+      ["BC-Kings מל\"א", "2", "21"],
+      ["BC-Kings מל\"א", "4", "7"],
+      ["BC-Kings מל\"א", "6", "29"],
+      ["BC-Kings מל\"א", "7", "33"],
+      ["BC-Kings מל\"א", "10", "24"],
+      ["BC-Kings מל\"א", "14", "3"],
+      ["BC-Kings מל\"ב", "5", "12"],
+      ["BC-Kings מל\"ב", "10", "10"],
+      ["BC-Kings מל\"ב", "14", "7"],
+      ["BC-Kings מל\"ב", "20", "11"],
+      ["C2-Jeremiah", "24", "9"],
+      ["C3-Ezekiel", "28", "17"],
+      ["C3-Ezekiel", "28", "22"],
+      ["C3-Ezekiel", "28", "22"],
+      ["C3-Ezekiel", "35", "15"],
+      ["CA-The-12-Minor-Prophets יואל", "2", "25"],
+      ["CA-The-12-Minor-Prophets זכריה", "12", "13"],
+      ["CA-The-12-Minor-Prophets מלאכי", "2", "7"],
+      ["D1-Psalms", "5", "2"],
+      ["D1-Psalms", "7", "1"],
+      ["D1-Psalms", "11", "1"],
+      ["D1-Psalms", "25", "21"],
+      ["D1-Psalms", "27", "5"],
+      ["D1-Psalms", "32", "10"],
+      ["D1-Psalms", "35", "14"],
+      ["D1-Psalms", "37", "17"],
+      ["D1-Psalms", "50", "23"],
+      ["D1-Psalms", "56", "5"],
+      ["D1-Psalms", "57", "5"],
+      ["D1-Psalms", "64", "8"],
+      ["D1-Psalms", "68", "21"],
+      ["D1-Psalms", "75", "4"],
+      ["D1-Psalms", "85", "9"],
+      ["D1-Psalms", "89", "6"],
+      ["D1-Psalms", "98", "7"],
+      ["D1-Psalms", "98", "8"],
+      ["D1-Psalms", "106", "43"],
+      ["D1-Psalms", "106", "48"],
+      ["D1-Psalms", "107", "5"],
+      ["D1-Psalms", "107", "18"],
+      ["D1-Psalms", "108", "7"],
+      ["D1-Psalms", "118", "10"],
+      ["D1-Psalms", "119", "138"],
+      ["D1-Psalms", "137", "7"],
+      ["D2-Proverbs", "3", "30"],
+      ["D2-Proverbs", "10", "13"],
+      ["D2-Proverbs", "12", "23"],
+      ["D2-Proverbs", "21", "30"],
+      ["D2-Proverbs", "30", "9"],
+      ["D3-Job", "19", "16"],
+      ["E1-Song of Songs", "2", "17"],
+      ["FC-Chronicles דה\"א", "4", "9"],
+      ["FC-Chronicles דה\"א", "5", "41"],
+      ["FC-Chronicles דה\"א", "6", "45"],
+      ["FC-Chronicles דה\"א", "17", "6"],
+      ["FC-Chronicles דה\"א", "21", "12"],
+      ["FC-Chronicles דה\"א", "21", "29"],
+      ["FC-Chronicles דה\"א", "22", "10"],
+      ["FC-Chronicles דה\"א", "25", "31"],
+      ["FC-Chronicles דה\"א", "28", "10"],
+      ["FC-Chronicles דה\"א", "28", "17"],
+      ["FC-Chronicles דה\"ב", "6", "16"],
+      ["FC-Chronicles דה\"ב", "6", "20"],
+      ["FC-Chronicles דה\"ב", "9", "24"],
+      ["FC-Chronicles דה\"ב", "10", "10"],
+      ["FC-Chronicles דה\"ב", "25", "1"],
+      ["FC-Chronicles דה\"ב", "30", "21"],
+      ["FC-Chronicles דה\"ב", "33", "25"],
+      ["FC-Chronicles דה\"ב", "36", "23"]
     ],
     "qualification 2: doubt-marked clauses by quoted form": [
-      "C1-Isaiah|10|15", "C1-Isaiah|45|6", "C2-Jeremiah|33|26",
-      "C2-Jeremiah|48|22", "C3-Ezekiel|10|11", "C3-Ezekiel|12|12",
-      "C3-Ezekiel|35|9", "D3-Job|16|8"
+      ["C1-Isaiah", "10", "15"],
+      ["C1-Isaiah", "45", "6"],
+      ["C2-Jeremiah", "33", "26"],
+      ["C2-Jeremiah", "48", "22"],
+      ["C3-Ezekiel", "10", "11"],
+      ["C3-Ezekiel", "12", "12"],
+      ["C3-Ezekiel", "35", "9"],
+      ["D3-Job", "16", "8"]
     ],
     "qualification 3: differing clauses already applied": [
-      "A5-Deuter|28|30", "B1-Joshua|21|22", "B2-Judges|9|48", "B2-Judges|18|22",
-      "BA-Samuel שמ\"א|15|11", "BA-Samuel שמ\"א|17|34", "BA-Samuel שמ\"א|18|8",
-      "BA-Samuel שמ\"א|19|17", "BA-Samuel שמ\"א|21|2", "BA-Samuel שמ\"א|29|6",
-      "BA-Samuel שמ\"ב|1|19", "BA-Samuel שמ\"ב|8|16", "BA-Samuel שמ\"ב|11|11",
-      "BA-Samuel שמ\"ב|12|1", "BA-Samuel שמ\"ב|19|42", "BA-Samuel שמ\"ב|22|7",
-      "BA-Samuel שמ\"ב|23|13", "BA-Samuel שמ\"ב|23|24", "BA-Samuel שמ\"ב|24|2",
-      "BA-Samuel שמ\"ב|24|3", "BC-Kings מל\"א|2|21", "BC-Kings מל\"א|4|7",
-      "BC-Kings מל\"א|6|29", "BC-Kings מל\"א|7|33", "BC-Kings מל\"א|10|24",
-      "BC-Kings מל\"א|14|3", "BC-Kings מל\"ב|5|12", "BC-Kings מל\"ב|10|10",
-      "BC-Kings מל\"ב|14|7", "BC-Kings מל\"ב|20|11", "C2-Jeremiah|24|9",
-      "C3-Ezekiel|28|17", "C3-Ezekiel|28|22", "C3-Ezekiel|28|22",
-      "C3-Ezekiel|35|15", "CA-The-12-Minor-Prophets יואל|2|25",
-      "CA-The-12-Minor-Prophets זכריה|12|13",
-      "CA-The-12-Minor-Prophets מלאכי|2|7", "D1-Psalms|5|2", "D1-Psalms|7|1",
-      "D1-Psalms|11|1", "D1-Psalms|27|5", "D1-Psalms|32|10", "D1-Psalms|37|17",
-      "D1-Psalms|50|23", "D1-Psalms|56|5", "D1-Psalms|57|5", "D1-Psalms|64|8",
-      "D1-Psalms|68|21", "D1-Psalms|75|4", "D1-Psalms|85|9", "D1-Psalms|89|6",
-      "D1-Psalms|98|7", "D1-Psalms|98|8", "D1-Psalms|106|43",
-      "D1-Psalms|106|48", "D1-Psalms|107|5", "D1-Psalms|107|18",
-      "D1-Psalms|108|7", "D1-Psalms|118|10", "D1-Psalms|119|138",
-      "D1-Psalms|137|7", "D2-Proverbs|3|30", "D2-Proverbs|10|13",
-      "D2-Proverbs|12|23", "D2-Proverbs|21|30", "D2-Proverbs|30|9",
-      "D3-Job|19|16", "E1-Song of Songs|2|17", "FC-Chronicles דה\"א|4|9",
-      "FC-Chronicles דה\"א|5|41", "FC-Chronicles דה\"א|6|45",
-      "FC-Chronicles דה\"א|17|6", "FC-Chronicles דה\"א|21|12",
-      "FC-Chronicles דה\"א|21|29", "FC-Chronicles דה\"א|22|10",
-      "FC-Chronicles דה\"א|25|31", "FC-Chronicles דה\"א|28|10",
-      "FC-Chronicles דה\"א|28|17", "FC-Chronicles דה\"ב|6|16",
-      "FC-Chronicles דה\"ב|6|20", "FC-Chronicles דה\"ב|9|24",
-      "FC-Chronicles דה\"ב|10|10", "FC-Chronicles דה\"ב|25|1",
-      "FC-Chronicles דה\"ב|30|21", "FC-Chronicles דה\"ב|33|25",
-      "FC-Chronicles דה\"ב|36|23"
+      ["A5-Deuter", "28", "30"],
+      ["B1-Joshua", "21", "22"],
+      ["B2-Judges", "9", "48"],
+      ["B2-Judges", "18", "22"],
+      ["BA-Samuel שמ\"א", "15", "11"],
+      ["BA-Samuel שמ\"א", "17", "34"],
+      ["BA-Samuel שמ\"א", "18", "8"],
+      ["BA-Samuel שמ\"א", "19", "17"],
+      ["BA-Samuel שמ\"א", "21", "2"],
+      ["BA-Samuel שמ\"א", "29", "6"],
+      ["BA-Samuel שמ\"ב", "1", "19"],
+      ["BA-Samuel שמ\"ב", "8", "16"],
+      ["BA-Samuel שמ\"ב", "11", "11"],
+      ["BA-Samuel שמ\"ב", "12", "1"],
+      ["BA-Samuel שמ\"ב", "19", "42"],
+      ["BA-Samuel שמ\"ב", "22", "7"],
+      ["BA-Samuel שמ\"ב", "23", "13"],
+      ["BA-Samuel שמ\"ב", "23", "24"],
+      ["BA-Samuel שמ\"ב", "24", "2"],
+      ["BA-Samuel שמ\"ב", "24", "3"],
+      ["BC-Kings מל\"א", "2", "21"],
+      ["BC-Kings מל\"א", "4", "7"],
+      ["BC-Kings מל\"א", "6", "29"],
+      ["BC-Kings מל\"א", "7", "33"],
+      ["BC-Kings מל\"א", "10", "24"],
+      ["BC-Kings מל\"א", "14", "3"],
+      ["BC-Kings מל\"ב", "5", "12"],
+      ["BC-Kings מל\"ב", "10", "10"],
+      ["BC-Kings מל\"ב", "14", "7"],
+      ["BC-Kings מל\"ב", "20", "11"],
+      ["C2-Jeremiah", "24", "9"],
+      ["C3-Ezekiel", "28", "17"],
+      ["C3-Ezekiel", "28", "22"],
+      ["C3-Ezekiel", "28", "22"],
+      ["C3-Ezekiel", "35", "15"],
+      ["CA-The-12-Minor-Prophets יואל", "2", "25"],
+      ["CA-The-12-Minor-Prophets זכריה", "12", "13"],
+      ["CA-The-12-Minor-Prophets מלאכי", "2", "7"],
+      ["D1-Psalms", "5", "2"],
+      ["D1-Psalms", "7", "1"],
+      ["D1-Psalms", "11", "1"],
+      ["D1-Psalms", "27", "5"],
+      ["D1-Psalms", "32", "10"],
+      ["D1-Psalms", "37", "17"],
+      ["D1-Psalms", "50", "23"],
+      ["D1-Psalms", "56", "5"],
+      ["D1-Psalms", "57", "5"],
+      ["D1-Psalms", "64", "8"],
+      ["D1-Psalms", "68", "21"],
+      ["D1-Psalms", "75", "4"],
+      ["D1-Psalms", "85", "9"],
+      ["D1-Psalms", "89", "6"],
+      ["D1-Psalms", "98", "7"],
+      ["D1-Psalms", "98", "8"],
+      ["D1-Psalms", "106", "43"],
+      ["D1-Psalms", "106", "48"],
+      ["D1-Psalms", "107", "5"],
+      ["D1-Psalms", "107", "18"],
+      ["D1-Psalms", "108", "7"],
+      ["D1-Psalms", "118", "10"],
+      ["D1-Psalms", "119", "138"],
+      ["D1-Psalms", "137", "7"],
+      ["D2-Proverbs", "3", "30"],
+      ["D2-Proverbs", "10", "13"],
+      ["D2-Proverbs", "12", "23"],
+      ["D2-Proverbs", "21", "30"],
+      ["D2-Proverbs", "30", "9"],
+      ["D3-Job", "19", "16"],
+      ["E1-Song of Songs", "2", "17"],
+      ["FC-Chronicles דה\"א", "4", "9"],
+      ["FC-Chronicles דה\"א", "5", "41"],
+      ["FC-Chronicles דה\"א", "6", "45"],
+      ["FC-Chronicles דה\"א", "17", "6"],
+      ["FC-Chronicles דה\"א", "21", "12"],
+      ["FC-Chronicles דה\"א", "21", "29"],
+      ["FC-Chronicles דה\"א", "22", "10"],
+      ["FC-Chronicles דה\"א", "25", "31"],
+      ["FC-Chronicles דה\"א", "28", "10"],
+      ["FC-Chronicles דה\"א", "28", "17"],
+      ["FC-Chronicles דה\"ב", "6", "16"],
+      ["FC-Chronicles דה\"ב", "6", "20"],
+      ["FC-Chronicles דה\"ב", "9", "24"],
+      ["FC-Chronicles דה\"ב", "10", "10"],
+      ["FC-Chronicles דה\"ב", "25", "1"],
+      ["FC-Chronicles דה\"ב", "30", "21"],
+      ["FC-Chronicles דה\"ב", "33", "25"],
+      ["FC-Chronicles דה\"ב", "36", "23"]
     ],
     "named doubtful agreeing clause": [
-      "D2-Proverbs|19|26"
+      ["D2-Proverbs", "19", "26"]
     ],
     "named codex reading phase 5 does not apply": [
-      "A4-Numbers|22|5"
+      ["A4-Numbers", "22", "5"]
     ]
   }
 }

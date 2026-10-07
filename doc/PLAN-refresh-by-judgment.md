@@ -843,11 +843,11 @@ wave 4), and every other generated file. Any other diff is a finding.
 | Id | Requirement | Wave | Status |
 |---|---|---|---|
 | R1 | Ledger loses its whole-file hashes; per-note evidence stays | 1 | implemented |
-| R2 | Census provenance and uncommitted-input refusal go; census agrees with build | 1 | active |
-| R3 | The build writes the population file | 1 | active |
-| R4 | Named-site statements replace population pins | 1 | active |
-| R5 | Verse-count pin goes; book set becomes closed dispatch | 1 | active |
-| R6 | Mega near-Aleppo steps and their texts | 1 | active |
+| R2 | Census provenance and uncommitted-input refusal go; census agrees with build | 1 | implemented |
+| R3 | The build writes the population file | 1 | implemented |
+| R4 | Named-site statements replace population pins | 1 | implemented |
+| R5 | Verse-count pin goes; book set becomes closed dispatch | 1 | implemented |
+| R6 | Mega near-Aleppo steps and their texts | 1 | implemented |
 | R7 | Readable pointing records; digests and manifest constants go | 2 | active |
 | R8 | Genesis 43:28 and consumer-notice hashes become readable | 2 | active |
 | R9 | Near-Aleppo's two checks over old commits are retired | 2 | active |

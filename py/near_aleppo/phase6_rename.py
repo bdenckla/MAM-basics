@@ -5,7 +5,7 @@ target copies retain their source names. The final note-content phase then assig
 reviewed clauses to the near-Aleppo and MAM roles of the renamed templates.
 
 Source replay alone uses historical names, keeping nested targets byte-identical
-to the sealed review evidence. Distributed data uses only RENAMED_NOTES.
+to the evidence the review ledger records. Distributed data uses only RENAMED_NOTES.
 """
 
 from collections import Counter

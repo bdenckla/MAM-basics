@@ -1,6 +1,6 @@
 """Render near-Aleppo documentation and example edition with the shared renderer.
 
-Documentation figures come from the asserted population snapshot or are computed
+Documentation figures come from the build's population file or are computed
 from local MAM, near-Aleppo and the Aleppo coverage index. The shared MAM-with-doc
 renderer writes the 39-book example edition and its long-note pages. Every render
 also checks its MAM mode against independently tracked MAM-with-doc files at the
@@ -9,7 +9,8 @@ public commit named by edition.PIN.
 The output tree is gh-pages/near-aleppo. Generation owns its complete contents
 except two hash-checked copies of Taamey D. Pages render entirely in memory before
 writing. The public presentation ledger preserves source notes and reviewed
-clause dispositions, with source hashes and a full-build inventory differential.
+clause dispositions, with each note's evidence hash and a full-build inventory
+differential.
 
 Use py/main_near_aleppo.py --html, or add --check for a read-only comparison.
 --refresh-note-review refreshes inventory and retains reviews only for unchanged
@@ -182,7 +183,10 @@ def main(argv=None):
     operation.add_argument(
         "--refresh-note-review",
         action="store_true",
-        help="Refresh only the provenance-pinned changed-note inventory.",
+        help=(
+            "Refresh only the changed-note inventory, keeping each review whose "
+            "evidence is unchanged."
+        ),
     )
     operation.add_argument(
         "--check-note-review",
