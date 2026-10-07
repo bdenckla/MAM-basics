@@ -106,63 +106,67 @@ The following rules protect distinctions that a generic tree walk would erase:
 
 ## Reading MAM-simple from Python
 
-Nothing beyond the standard library is needed. This program writes the plain text of
-Job 34 to a file, and it handles every element type MAM-simple has:
+Nothing beyond the standard library is needed. Run from the MAM-simple directory, this
+program writes the plain text of Job 34 to `py-examples-out/job-34.txt`. It handles only
+the elements Job 34 has, and raises on any other rather than guess:
 
 ```python
 import xml.etree.ElementTree as ET
 
-# Elements whose children are alternatives rather than a stretch of running text.
-_CHOOSE = {"kq": "kq-q", "cant-all-three": "cant-combined", "scrdfftar": "sdt-target"}
-_SKIP = ("good-ending",)  # a repetition after the last verse, not running text
+PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
+MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
+
+# What each element of Job 34 other than <text> contributes to a verse's plain text.
+# This program handles only the elements Job 34 has, and raises on any other.
+_CONTRIBUTION = {
+    "lp-legarmeih": PASEQ,  # the text after it starts with a space
+    "implicit-maqaf": MAQAF,  # MAM's gray maqaf, with no space on either side
+}
 
 
-def element_text(el):
-    """The plain text of one element, assembled recursively."""
-    if "text" in el.attrib:  # a text attribute and children never co-occur
-        return el.attrib["text"]
-    chosen = _CHOOSE.get(el.tag)
-    if chosen is not None:
-        return element_text(el.find(chosen))
-    return "".join(element_text(k) for k in el if k.tag not in _SKIP)
-
-
-def verses_of(xml_path):
-    """Yield (osisID, plain text) for each verse of one MAM-simple XML file."""
-    for book39 in ET.parse(xml_path).getroot():
-        if book39.tag != "book39":
-            continue  # a parashah marker between books
-        for chapter in book39:
-            if chapter.tag != "chapter":
-                continue  # a parashah marker between chapters
-            for verse in chapter:
-                if verse.tag != "verse":
-                    continue  # a parashah marker between verses
-                yield verse.attrib["osisID"], element_text(verse)
+def verse_text(verse):
+    """The plain text of one verse of Job 34."""
+    if "text" in verse.attrib:  # a text attribute and children never co-occur
+        return verse.attrib["text"]
+    parts = []
+    for el in verse:
+        if el.tag == "text":
+            parts.append(el.attrib["text"])
+        elif el.tag in _CONTRIBUTION:
+            parts.append(_CONTRIBUTION[el.tag])
+        else:
+            raise ValueError(f"{verse.attrib['osisID']}: unhandled <{el.tag}>")
+    return "".join(parts)
 
 
 def main():
+    book = ET.parse("xml-vtrad-mam/Job.xml")
+    chapter = book.find("book39/chapter[@osisID='Job.34']")
     with open("py-examples-out/job-34.txt", "w", encoding="utf-8") as out:
-        for osis_id, text in verses_of("xml-vtrad-mam/Job.xml"):
-            if osis_id.startswith("Job.34."):
-                out.write(f"{osis_id}: {text}\n")
+        for verse in chapter:
+            if verse.tag != "verse":
+                raise ValueError(f"Job.34: unhandled <{verse.tag}>")
+            out.write(f"{verse.attrib['osisID']}: {verse_text(verse)}\n")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
-Three points in it are easy to get wrong:
+Two points in it are easy to get wrong:
 
-- **The recursion is not optional.** Plain text sits below `<kq>`, `<slh-word>` and
-  others, so a walk that reads only the `<text>` children of a verse drops every
-  ketiv/qere and every suspended-letter word, and drops them silently.
-- **`_CHOOSE` picks among alternatives.** Concatenating the children of `<kq>` would
-  give you the ketiv and the qere run together. Which child to choose is the caller's
-  decision; `kq-q` above is one reasonable answer, not the only one.
+- **An element without text can still contribute.** `<lp-legarmeih>` contributes the
+  glyph U+05C0, and `<implicit-maqaf>` MAM's gray maqaf as an ordinary maqaf. MAM
+  encodes no space around `<implicit-maqaf>`, so a program that gives it nothing runs
+  two atoms together: Job 34:10 would read שִׁמְע֫וּלִ֥י instead of שִׁמְע֫וּ־לִ֥י.
 - **Write non-ASCII to a file, not to stdout.** On Windows, Python encodes a redirected
   stdout with the locale code page, and printing Hebrew there raises
   `UnicodeEncodeError`. If you do want it on stdout, call
   `sys.stdout.reconfigure(encoding="utf-8")` first.
 
-For the element and attribute names the program relies on, see
-[the XML format](reading-mam-simple-xml.md).
+To read another chapter, add a branch for each element the program raises on;
+[Extracting the plain text of a verse](reading-mam-simple-xml.md#extracting-the-plain-text-of-a-verse)
+says which elements need recursion and which hold alternatives to choose among.
 
 ## The `py-examples/` Program, and the Two That Were Retired
 
