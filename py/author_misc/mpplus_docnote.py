@@ -79,15 +79,14 @@ def build_body(*, claims: ClaimCollection):
                     ".",
                 ],
                 ["Inverted-$nun signs: ", author.hbo("מ:נו״ן הפוכה"), "."],
+                ["Verse labels: ", author.hbo("מ:פסוק"), " in column D."],
             ]
         ),
         author.para(
             [
                 "A target can also wrap one of these forms in ",
                 author.hbo("מ:הערה-2"),
-                ". A note can separately target a verse label (",
-                author.hbo("מ:פסוק"),
-                ", column D).",
+                ".",
             ]
         ),
         author.para(
