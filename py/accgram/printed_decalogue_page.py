@@ -62,6 +62,7 @@ from mb_cmn import hebrew_punctuation as hpunc
 from mb_cmn.new_york_time import labelled, new_york_date
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_misc import mam_attribution
 
 from py_html import wlc_utils_html as H
 from py_html.my_html_span_romanized import rmn
@@ -948,6 +949,12 @@ def _provenance_section(source: dict) -> tuple[object, ...]:
                 " verses are split at ",
                 _ROM_SOF_PASUQ,
                 ".",
+            )
+        ),
+        H.para(
+            tuple(
+                text if url is None else link(text, url)
+                for text, url in mam_attribution.ENGLISH_ATTRIBUTION_PARTS
             )
         ),
         H.para(

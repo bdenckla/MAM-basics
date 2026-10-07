@@ -19,6 +19,7 @@ reviewed the translation.
 
 from dataclasses import dataclass
 
+from mb_misc import mam_attribution
 from mb_misc import mb_html
 from mb_author import author
 
@@ -755,6 +756,12 @@ _PROVENANCE = author.para(
         " (2026-08-26). The English translation is original to this project.",
     ]
 )
+_MAM_ATTRIBUTION = author.para(
+    [
+        text if url is None else author.anchor_h(text, url)
+        for text, url in mam_attribution.ENGLISH_ATTRIBUTION_PARTS
+    ]
+)
 _FTNT_TRIPLES = [
     _ftnt_triple(n, h, e) for n, (h, e) in enumerate(zip(_FTNTS_H, _FTNTS_E))
 ]
@@ -762,6 +769,7 @@ _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
     _CAVEAT,
     _PROVENANCE,
+    _MAM_ATTRIBUTION,
     author.he_en_table_wct(_TRIPLES),
     author.heading_level_2(f"Footnotes (B={_FN_BASE})"),
     author.he_en_table_wct(_FTNT_TRIPLES),

@@ -11,6 +11,7 @@ A copy of the Wikisource markup is kept in he_ws_intro_to_mam_pasleg.mediawiki.
 The English translation is original to this project.
 """
 
+from mb_misc import mam_attribution
 from mb_misc import mb_html
 from mb_author import author
 from author_misc import he_ws_intro_to_mam_pasleg_foi_url as plfoi
@@ -1265,6 +1266,12 @@ _PROVENANCE = author.para(
         ". The English translation is original to this project.",
     ]
 )
+_MAM_ATTRIBUTION = author.para(
+    [
+        text if url is None else author.anchor_h(text, url)
+        for text, url in mam_attribution.ENGLISH_ATTRIBUTION_PARTS
+    ]
+)
 
 
 def _ftnt_render_parts(marker, parts, para_fn, bq_fn):
@@ -1305,6 +1312,7 @@ _FTNT_TRIPLES = [
 _CBODY = [
     author.heading_level_1(_H1_CONTENTS),
     _PROVENANCE,
+    _MAM_ATTRIBUTION,
     author.he_en_table_wct(_TRIPLES),
     author.heading_level_2(f"Footnotes (B={_FN_BASE})"),
     author.he_en_table_wct(_FTNT_TRIPLES),

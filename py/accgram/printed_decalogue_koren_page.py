@@ -118,6 +118,7 @@ from accgram import transcription_verdict_column as tvc
 from accgram.almost_errors_html_shared import accents_and_letters, hbo, link
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_misc import mam_attribution
 
 from py_html import my_html_for_img as mhi
 from py_html import wlc_utils_html as H
@@ -324,6 +325,12 @@ def _intro(source: dict) -> tuple[object, ...]:
                 link("Hebrew Wikisource's p-trad", _wikisource_ptrad_href(source)),
                 ". The two scans below show enough of"
                 ' Koren\'s Exodus Decalogues to "diagnose" them both as p-trad.',
+            )
+        ),
+        H.para(
+            tuple(
+                text if url is None else link(text, url)
+                for text, url in mam_attribution.ENGLISH_ATTRIBUTION_PARTS
             )
         ),
         *_body_scans(),

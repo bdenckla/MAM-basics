@@ -122,6 +122,7 @@ from accgram.almost_errors_html_shared import accents_and_letters, cos, hbo, itm
 from accgram.uni_to_marks import is_accent, is_base_letter
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_misc import mam_attribution
 
 from py_html import wlc_utils_html as H
 from py_html import my_html_for_img as mhi
@@ -381,6 +382,12 @@ def _intro(source: dict) -> tuple[object, ...]:
                 ". The two scans below show enough of"
                 ' the Tiqqun\'s Exodus Decalogues to "diagnose" them both as p-trad by their'
                 " signal words.",
+            )
+        ),
+        H.para(
+            tuple(
+                text if url is None else link(text, url)
+                for text, url in mam_attribution.ENGLISH_ATTRIBUTION_PARTS
             )
         ),
         *_body_scans(),

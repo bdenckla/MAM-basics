@@ -43,6 +43,7 @@ from mb_cmn import hebrew_accent_strip as has
 from mb_cmn import hebrew_punctuation as hpunc
 from mb_cmn import paths
 from mb_cmn import provenance
+from mb_misc import mam_attribution
 from py_html import wlc_utils_html as H
 from py_html.my_html_span_romanized import rmn
 
@@ -647,6 +648,12 @@ def _intro(rows: tuple[_LapRow, ...]) -> tuple[object, ...]:
                 " on ובנך and no ",
                 _ROM_MAQAF,
                 ": two chanted words.",
+            )
+        ),
+        H.para(
+            tuple(
+                text if url is None else link(text, url)
+                for text, url in mam_attribution.ENGLISH_ATTRIBUTION_PARTS
             )
         ),
         # Ask the question outright. An earlier draft opened "The question is asked, and argued
