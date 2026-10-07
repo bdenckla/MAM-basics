@@ -14,7 +14,7 @@ from near_aleppo import frozen_ketiv
 from near_aleppo import phase2_templates as phase2
 
 MANIFEST = build_paths.input_dir() / "reviewed-pointed-ketiv.json"
-MANIFEST_SHA256 = "299f152e0b4c1d30cfc590957959a76a8c55e7c39048bfbaa42dd4866cf92ee4"
+MANIFEST_SHA256 = "34bfdcbb5d4c571ccc3daf93708e9364bffbcad87196bc2515eb181ba187f883"
 SITES = 236
 ATOMS = 237
 
