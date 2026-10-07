@@ -76,8 +76,9 @@ KQ_SPECIAL_ROWS = [
     [
         author.hbo("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
         [
-            "1-atom $ketiv, 2-atom $qere, following $maqaf."
-            " See the rows of FOI section ",
+            "1-atom $ketiv, 2-atom $qere, following a $maqaf. As with ",
+            author.hbo("קו״כ"),
+            ", $MAM shows the $qere first. See the rows of FOI section ",
             _kq_simple_foi_link_for_sug("קו״כ כתיב מילה חדה וקרי תרתין מילין"),
             " labelled k1q2-sr-qqk.",
         ],
@@ -95,7 +96,9 @@ KQ_SPECIAL_ROWS = [
         author.hbo("קו״כ קרי שונה מהכתיב בשתי מילים"),
         [
             "1-atom $ketiv not strongly related to its 2-atom $qere,"
-            " following $maqaf. See FOI section ",
+            " following a $maqaf. As with ",
+            author.hbo("קו״כ"),
+            ", $MAM shows the $qere first. See FOI section ",
             _kq_simple_foi_link_for_sug("קו״כ קרי שונה מהכתיב בשתי מילים"),
             ".",
         ],

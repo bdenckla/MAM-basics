@@ -51,8 +51,8 @@ CLAIM_DEFS = (
         kind="example",
         subject="mp:plus",
         data={
-            "tmpl_name": "קו״כ",
-            "tmpl_params": {"1": "את", "2": "אַ֠תָּ֠ה"},
+            "tmpl_name": "כו״ק",
+            "tmpl_params": {"1": "הוצא", "2": "הַיְצֵ֣א"},
         },
     ),
     _claim_def(
