@@ -1,41 +1,17 @@
 :root {
-  color-scheme: light dark;
-  --bg: light-dark(#f7f6f2, #1e1c1a);
-  --card-bg: light-dark(#ffffff, #272421);
-  --border: light-dark(#d9d3c9, #3d3836);
-  --text: light-dark(#2d2a27, #e8e4e0);
-  --muted: light-dark(#666059, #9a938c);
-  --accent: light-dark(#1f5f8b, #5ba3cb);
-  --img-bg: light-dark(#f3efe8, #2a2724);
-  --hover-bg: light-dark(#f3f0ea, #2e2b28);
-  --active-bg: light-dark(#dcebf5, #1a3349);
   --comment-bg: light-dark(#f4f1e8, #232a2e);
   --comment-rule: light-dark(#c8bfae, #4a5a63);
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font: 15px/1.5 "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text); max-width: 1180px; margin: 0 auto; padding: 1rem; }
-a { color: var(--accent); }
-code { font-family: Consolas, "SFMono-Regular", monospace; font-size: .85em; }
-.top-nav { display: flex; gap: .55rem; flex-wrap: wrap; margin-bottom: .8rem; }
-.nav-link { color: var(--muted); text-decoration: none; border: 1px solid var(--border); background: var(--card-bg); border-radius: 999px; padding: .2rem .7rem; }
-.nav-link:hover { background: var(--hover-bg); color: var(--text); }
-.nav-link.active { border-color: var(--accent); background: var(--active-bg); color: var(--text); }
-h1 { font-size: 1.6rem; margin-bottom: .5rem; }
-p { margin: .3rem 0; }
+
 .intro { max-width: 68ch; color: var(--muted); margin-bottom: 1rem; }
 .intro p + p { margin-top: .5rem; }
-.meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: .5rem; margin-bottom: 1rem; }
-.meta-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .7rem; }
-.meta-label { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
-.meta-value { font-size: 1.2rem; font-weight: 600; }
-.section-title { font-size: 1.1rem; margin: 1.4rem 0 .5rem; }
+
 .section-note { color: var(--muted); margin-bottom: .6rem; max-width: 68ch; }
 /* One column, Book, since the "What Holman asks for" one was dropped on
    2026-08-11. Still a grid rather than a bare block so that a second column,
    should one be wanted again, needs only the column count back. */
 .summary-columns { display: grid; grid-template-columns: minmax(0, 1fr); gap: .75rem; margin-bottom: 1rem; align-items: start; }
-.summary-group { min-width: 0; }
-.summary-group-title { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 0 0 .35rem; }
+
 .summary { width: 100%; border-collapse: collapse; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; table-layout: fixed; }
 .summary th, .summary td { text-align: left; padding: .45rem .65rem; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
 .summary td:last-child { width: 3.2rem; text-align: right; color: var(--muted); }
@@ -46,18 +22,12 @@ p { margin: .3rem 0; }
    pointer that made it. */
 .summary tr[data-filter-id].active { background: var(--active-bg); }
 .summary tr:last-child td { border-bottom: none; }
-.cat-swatch { width: 11px; height: 11px; display: inline-block; border-radius: 2px; margin-right: .45rem; vertical-align: middle; }
-.records { display: grid; gap: .65rem; }
-.record-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .65rem .8rem; }
-.record-card.hidden, .source-email.hidden { display: none; }
-.record-head { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
-.record-ref { font-weight: 600; color: inherit; text-decoration: none; }
-.record-ref:hover { text-decoration: underline; color: var(--accent); }
-.record-verse { color: var(--muted); display: flex; gap: .45rem; flex-wrap: wrap; align-items: baseline; }
-.record-verse a { color: inherit; font-size: .8rem; }
-.record-verse a:hover { color: var(--accent); }
+
+.record-verse { display: flex; gap: .45rem; flex-wrap: wrap; align-items: baseline; }
+.record-verse a { font-size: .8rem; }
+
 .category-badges { display: flex; gap: .35rem; flex-wrap: wrap; margin-left: auto; }
-.finding-badge { color: #fff; border-radius: 999px; padding: .12rem .55rem; font-size: .72rem; white-space: nowrap; }
+.finding-badge { white-space: nowrap; }
 .record-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: .8rem; margin-top: .5rem; }
 /* Taamey D, served from this repo rather than asked of the reader's machine, so
    the accents look the same here as they do in the change items this page links
@@ -90,7 +60,7 @@ p { margin: .3rem 0; }
 .comment + .comment { margin-top: .45rem; }
 .comment-byline { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .source-emails { display: grid; gap: .65rem; }
-.source-email { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: .65rem .8rem; }
+
 .source-email h3 { font-size: 1rem; }
 .email-headers { font-size: .8rem; color: var(--muted); }
 .case-link.unreachable { color: var(--muted); text-decoration: line-through; pointer-events: none; }

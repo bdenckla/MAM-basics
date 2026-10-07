@@ -12,6 +12,50 @@ _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
 _DUALCANT_DOC = "mpplus_dualcant.html"
 _TWO_ACCENTS_OF_QUPO_ABBREV = "שני טעמים ..."
 
+# The verses where MAM's קו״כ follows a narrow-sense paseq (מ:פסק) rather than a
+# maqaf. The קו״כ row names them, and the claim
+# mp.plus.templates.kq.qere-first-contexts lists them for a verifier that
+# re-derives them from the plus corpus.
+_QK_AFTER_NARROW_SENSE_PASEQ = (
+    (
+        "1 Samuel 2:16",
+        {
+            "book24_name": "ספר שמואל",
+            "sub_book_name": 'שמ"א',
+            "chapter": "2",
+            "verse": "16",
+        },
+    ),
+    (
+        "Jeremiah 4:19",
+        {
+            "book24_name": "ספר ירמיהו",
+            "sub_book_name": None,
+            "chapter": "4",
+            "verse": "19",
+        },
+    ),
+    (
+        "Ezekiel 35:12",
+        {
+            "book24_name": "ספר יחזקאל",
+            "sub_book_name": None,
+            "chapter": "35",
+            "verse": "12",
+        },
+    ),
+)
+_QK_AFTER_PASEQ_LABELS = [label for label, _where in _QK_AFTER_NARROW_SENSE_PASEQ]
+assert len(_QK_AFTER_PASEQ_LABELS) == 3, "the קו״כ row says three verses"
+_QK_AFTER_PASEQ_TEXT = (
+    f"{', '.join(_QK_AFTER_PASEQ_LABELS[:-1])} and {_QK_AFTER_PASEQ_LABELS[-1]}"
+)
+
+KQ_QERE_FIRST_CONTEXTS = (
+    "For each qere-first ketiv/qere, verify that it follows a maqaf or, at the"
+    " declared verses, a narrow-sense paseq."
+)
+
 KQ_ROWS = [
     [
         author.hbo("כו״ק"),
@@ -23,9 +67,15 @@ KQ_ROWS = [
     [
         author.hbo("קו״כ"),
         [
-            "Post-$maqaf $ketiv_qere. Same params as ",
+            "$Qere-first $ketiv_qere. Param 1 = unpointed $ketiv,"
+            " param 2 = pointed $qere, as in ",
             author.hbo("כו״ק"),
-            " but used when the pair follows a $maqaf.",
+            ", but $MAM's rendered Wikisource page has the $qere first, then"
+            " the $ketiv."
+            " Used where the pair follows a $maqaf, and in three verses"
+            " where the pair follows a narrow-sense $paseq (",
+            author.hbo("מ:פסק"),
+            f"): {_QK_AFTER_PASEQ_TEXT}.",
         ],
     ],
     [
@@ -276,6 +326,25 @@ CLAIM_DEFS = (
                 "קרי ולא כתיב",
                 "מ:כו״ק מיוחד",
             ]
+        },
+    ),
+    _claim_def(
+        "mp.plus.templates.kq.qere-first-contexts",
+        KQ_QERE_FIRST_CONTEXTS,
+        kind="struct",
+        subject="mp:plus",
+        data={
+            "template": "קו״כ",
+            "special_template": "מ:כו״ק מיוחד",
+            "special_qere_first_sug_values": [
+                "קו״כ כתיב מילה חדה וקרי תרתין מילין",
+                "קו״כ קרי שונה מהכתיב בשתי מילים",
+            ],
+            "text_wrapper": {"template": "נוסח", "param": "1"},
+            "paseq_template": "מ:פסק",
+            "after_narrow_sense_paseq": [
+                where for _label, where in _QK_AFTER_NARROW_SENSE_PASEQ
+            ],
         },
     ),
     _claim_def(

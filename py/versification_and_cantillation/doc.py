@@ -6,7 +6,7 @@ output stays in lockstep with the source text.
 
 The document is a standalone HTML page (it is served via GitHub Pages at
 https://bdenckla.github.io/MAM-basics/MAM-simple/versification-and-cantillation.html),
-so it carries its own <head> and links its own stylesheet
+so it carries its own <head> and links the shared document.css plus its extension
 (versification-and-cantillation.css, deployed alongside it by generate_doc.py)
 rather than relying on GitHub's Markdown viewer.
 
@@ -79,10 +79,9 @@ _PRINTED_DECALOGUE_URL = (
 # rest of this template already uses.
 #
 # Centralizing the wrapper keeps the markup *choice* in one place. It emits a
-# <span class="romanized"> — styled italic via span.romanized in the CSS (see
-# versification-and-cantillation.css) — matching how the repo's other generated docs mark
-# romanized Hebrew (mb_author/author.py, mb_misc/styles_authored.css, and the sibling
-# gh-pages stylesheets). An <em> gloss was the earlier form here, but it was never semantic:
+# <span class="romanized"> — styled italic via span.romanized in
+# gh-pages/document.css — matching how the repo's other generated docs mark
+# romanized Hebrew (mb_author/author.py). An <em> gloss was the earlier form here, but it was never semantic:
 # we are not emphasizing these words, only marking them as transliterated. (Genuine emphasis
 # in the prose still uses <em> directly.)
 #
@@ -638,6 +637,7 @@ def render_full_html(books_mpu):
         '<meta charset="utf-8">\n'
         '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
         "<title>Versification and Cantillation</title>\n"
+        '<link rel="stylesheet" href="../document.css">\n'
         f'<link rel="stylesheet" href="{CSS_FILENAME}">\n'
         "</head>\n"
         "<body>\n"

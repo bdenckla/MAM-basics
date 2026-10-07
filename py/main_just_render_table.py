@@ -46,6 +46,12 @@ def main() -> None:
     output_path = render_table_data_findings_html(
         table_json_path=args.table_json_path,
         output_html_path=args.output_html_path,
+        report_css_href=(
+            "../report.css"
+            if args.output_html_path.resolve().parent
+            == hkq_paths.findings_html_path().resolve().parent
+            else None
+        ),
     )
     print(output_path.as_posix())
 

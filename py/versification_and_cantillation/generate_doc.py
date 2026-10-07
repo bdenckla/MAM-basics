@@ -25,12 +25,8 @@ _OUTPUT_PATH = (
 # next to the HTML in gh-pages/. Its source of truth is a hand-authored .css beside
 # doc.py, which we copy verbatim so the two stay identical.
 #
-# Deliberately unlike the repo's other CSS: styles_authored.py / styles_mam_*.py /
-# mpplus_assets.py all keep their CSS as a Python *string* and write it out (with a
-# "DO NOT EDIT - edit the .py" banner). Here the CSS is static (no interpolation) and
-# we prefer a real .css source for editor/linter support, so the source *is* a .css
-# file. So deploying it is a verbatim file-copy, not a string-emit like the
-# make_css_file_* helpers — as is the woff2 copy just below.
+# The family extension is static CSS, copied verbatim. The page also links the
+# hand-authored shared gh-pages/document.css without rewriting that base.
 _CSS_SOURCE_PATH = Path(doc.__file__).with_name(doc.CSS_FILENAME)
 _CSS_OUTPUT_PATH = _OUTPUT_PATH.with_name(doc.CSS_FILENAME)
 # A third deployed file: the Hebrew font the CSS's @font-face names (issue #203, C1). The page's
@@ -39,10 +35,8 @@ _CSS_OUTPUT_PATH = _OUTPUT_PATH.with_name(doc.CSS_FILENAME)
 # system-font stack most visitors would not resolve. Deployed at the product path the CSS's
 # url("woff2/Taamey_D.woff2") resolves to; the former MAM-simple Pages tree had no binary asset before this.
 #
-# Copied verbatim from the in-repo font, deployed by the same read-compare-write shape the .css
-# above uses (just bytes-wise). mpplus_assets._copy_woff2 is the nearest precedent but a poor
-# model: its source path is destination-relative and would look in a nonexistent MAM-simple/misc/,
-# it compares only st_size, and it skips silently when the source is missing.
+# Copied verbatim from the canonical in-repo font, with full-byte comparison and
+# an explicit missing-source failure, as report_stylesheet.copy_report_font does.
 _WOFF2_SOURCE_PATH = paths.repo_root() / "doc" / "woff2" / "Taamey_D.woff2"
 _WOFF2_OUTPUT_PATH = _OUTPUT_PATH.parent / "woff2" / _WOFF2_SOURCE_PATH.name
 
@@ -61,8 +55,7 @@ def _css_source_text() -> str:
 
 
 def _woff2_source_bytes() -> bytes:
-    # Unlike mpplus_assets._copy_woff2, which returns quietly when the font is absent: here a
-    # missing source must fail loudly. Swallowing it would let check_output_matches() report
+    # A missing source must fail loudly. Swallowing it would let check_output_matches() report
     # "up to date" for a deployed page whose @font-face points at a file we never wrote.
     return _WOFF2_SOURCE_PATH.read_bytes()
 
@@ -93,8 +86,7 @@ def _matches(path, expected: str) -> bool:
 
 
 def _matches_bytes(path, expected: bytes) -> bool:
-    # Compares bytes, not st_size as mpplus_assets._copy_woff2 does: a same-size but different
-    # font would read as up to date.
+    # Compare all bytes so a same-size but different font is detected.
     return path.exists() and path.read_bytes() == expected
 
 

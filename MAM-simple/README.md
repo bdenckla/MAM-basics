@@ -40,8 +40,8 @@ The JSON format mirrors the XML structure: it has the same hierarchy and element
 
 For a detailed guide to the hierarchy and element types of both formats,
 see [Reading MAM-simple](doc/reading-mam-simple.md).
-The [consumer cautions](#consumer-cautions) below cover MAM mark order and text spacing
-around narpas (narrow-sense paseq, ׀).
+The [consumer cautions](#consumer-cautions) below cover MAM mark order, the order of a
+ketiv/qere pair, and text spacing around narpas (narrow-sense paseq, ׀).
 
 For the versification and cantillation choices behind this extract, the two Decalogues
 above all, see
@@ -106,6 +106,17 @@ different output contract may transform deliberately, but should transform both 
 before comparison.
 For the full statement, including what the guarantee does and does not cover, see
 [Three invariants worth relying on](doc/reading-mam-simple-xml.md#three-invariants-worth-relying-on).
+
+### Ketiv/qere order
+
+A ketiv/qere pair is a `<kq>` element with two children, `<kq-k>` (the ketiv) and `<kq-q>`
+(the qere), in the order that MAM's rendered pages on Hebrew Wikisource have.
+Those pages usually have the ketiv first, but they have the qere first in about one pair in
+eight, mostly where the pair follows a maqaf.
+MAM's wikitext, and so MAM-parsed, differ: every ketiv/qere template there lists the ketiv
+first, and the template's name says which order the rendered page has.
+Identify the two by element type, never by position.
+See [Ketiv/Qere](doc/reading-mam-simple-xml.md#ketivqere).
 
 ### Narpas and text spacing
 

@@ -7,6 +7,7 @@ import json
 import re
 import subprocess
 import sys
+from types import MappingProxyType
 from urllib.parse import urlsplit
 
 from lxml import html
@@ -19,8 +20,14 @@ from yeivin_itm import claims, claim_schema, paths, publication, renderer, sourc
 from yeivin_itm.content import my_yeivin_amisc_helpers_for_locales as locales
 
 
-def test_complete_rendering_matches_tracked_pages():
-    pages = renderer.page_texts()
+@pytest.fixture(scope="module")
+def rendered_pages():
+    """Share one immutable rendering; each check keeps its own comparison."""
+    return MappingProxyType(renderer.page_texts())
+
+
+def test_complete_rendering_matches_tracked_pages(rendered_pages):
+    pages = rendered_pages
     assert len(pages) == 17
     for name, text in pages.items():
         assert (paths.pages_dir() / name).read_bytes() == text.encode("utf-8")
@@ -28,8 +35,8 @@ def test_complete_rendering_matches_tracked_pages():
         assert "{{meteg:" not in text
 
 
-def test_identifiers_favicon_links_and_fragments_resolve():
-    pages = renderer.page_texts()
+def test_identifiers_favicon_links_and_fragments_resolve(rendered_pages):
+    pages = rendered_pages
     documents = {name: html.fromstring(text) for name, text in pages.items()}
     for name, document in documents.items():
         identifiers = document.xpath("//@id")
@@ -52,7 +59,7 @@ def test_identifiers_favicon_links_and_fragments_resolve():
                 assert url.fragment in destination.xpath("//@id")
 
 
-def test_every_published_fragment_identifier_remains():
+def test_every_published_fragment_identifier_remains(rendered_pages):
     """phonetic-hbo's redirect pages forward old addresses, fragments included, here.
 
     in/yeivin_itm_published_anchors.json records the fragment identifiers that the
@@ -64,7 +71,7 @@ def test_every_published_fragment_identifier_remains():
     assert record["schema"] == "yeivin-itm-published-anchors-v1"
     recorded = record["pages"]
     assert sum(map(len, recorded.values())), "the published-anchor record is empty"
-    pages = renderer.page_texts()
+    pages = rendered_pages
     for name, identifiers in recorded.items():
         current = set(html.fromstring(pages[name]).xpath("//@id"))
         missing = [

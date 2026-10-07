@@ -96,3 +96,23 @@ Parashah-marker objects can appear:
 - as a child of a `book39` `contents` array, between chapters
 - as a child of a `chapter` `contents` array, between verses
 - as a child of a `verse` `contents` array, within a verse
+
+## Ketiv/qere objects
+
+A ketiv/qere pair is a `kq` object whose `contents` holds a `kq-k` object (the ketiv) and a
+`kq-q` object (the qere), in the order that MAM's rendered pages on Hebrew Wikisource have.
+Those pages usually have the ketiv first, but they have the qere first in about one pair in
+eight, as at Lam.1.18:
+
+```json
+{
+  "type": "kq",
+  "contents": [
+    { "type": "kq-q", "text": "הָֽעַמִּ֗ים" },
+    { "type": "kq-k", "text": "עמים" }
+  ]
+}
+```
+
+Identify the two by `type`, never by position; see
+[Ketiv/Qere](reading-mam-simple-xml.md#ketivqere) in the XML guide.

@@ -11,9 +11,11 @@ from author_boj_util import dollar_sub_g
 
 
 def help_gen_html_file(tdm_ch, fname, title, cbody):
-    top_dir, css_href = tdm_ch
+    top_dir, css_hrefs = tdm_ch
+    if isinstance(css_hrefs, str):
+        css_hrefs = (css_hrefs,)
     out_path = top_dir / fname
-    write_ctx = boj_html.WriteCtx(title, out_path, css_hrefs=(css_href,))
+    write_ctx = boj_html.WriteCtx(title, out_path, css_hrefs=css_hrefs)
     boj_html.write_html_to_file(cbody, write_ctx)
 
 

@@ -1,6 +1,7 @@
 """Exports various HTMl utilities."""
 
 from dataclasses import dataclass
+from posixpath import normpath
 from typing import Union
 
 import mb_cmn.file_io as file_io
@@ -32,7 +33,10 @@ def write_html_to_file(body_contents, write_ctx: WriteCtx, path_to_style):
     html_el = html_el2(
         write_ctx.title,
         body_contents,
-        f"{path_to_style}style.css",
+        (
+            normpath(f"{path_to_style}../document.css"),
+            f"{path_to_style}style.css",
+        ),
         centered=write_ctx.centered,
     )
     file_io.with_tmp_openw(

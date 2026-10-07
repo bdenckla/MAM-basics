@@ -6,8 +6,9 @@ entry point is `py/main_near_aleppo.py`. Its inputs are the tracked
 runtime data in `in/near-aleppo/`. Its outputs are `out/near-aleppo/plus/` and
 `gh-pages/near-aleppo/`. The product README gives the CLI commands and license.
 
-The documentation pages load `../MAM-parsed/style.css` for their shared English
-typography. Their own `style.css` adds the Hebrew examples, template notation
+The documentation pages load `../document.css` for their shared English
+typography, followed by `../MAM-parsed/style.css` for parsed-document examples.
+Their own `style.css` adds the Hebrew examples, template notation
 and specialized tables; its source is `py/near_aleppo/doc_style.py`.
 
 The build resolves templates through a closed dispatch table. Each structure

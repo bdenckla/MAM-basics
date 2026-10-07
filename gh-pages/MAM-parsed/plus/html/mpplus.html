@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <title>Reading MAM-parsed-plus</title>
+<link rel="stylesheet" href="../../../document.css">
 <link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -306,9 +307,14 @@ named params include <bdi lang="hbo">סדר=</bdi> (seder number) and <bdi lang=
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">קו״כ</bdi></td>
-<td class="wide-col">Post-<span class="romanized">maqaf</span>
-<span class="romanized">ketiv/qere</span>. Same params as <bdi lang="hbo">כו״ק</bdi> but used when
-the pair follows a <span class="romanized">maqaf</span>.</td>
+<td class="wide-col"><span class="romanized">Qere</span>-first
+<span class="romanized">ketiv/qere</span>. Param 1 = unpointed <span class="romanized">ketiv</span>,
+param 2 = pointed <span class="romanized">qere</span>, as in <bdi lang="hbo">כו״ק</bdi>, but
+<abbr class="small-caps">MAM</abbr>'s rendered Wikisource page has the
+<span class="romanized">qere</span> first, then the <span class="romanized">ketiv</span>. Used where
+the pair follows a <span class="romanized">maqaf</span>, and in three verses where the pair follows
+a narrow-sense <span class="romanized">paseq</span> (<bdi lang="hbo">מ:פסק</bdi>): 1 Samuel 2:16,
+Jeremiah 4:19 and Ezekiel 35:12.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:קו״כ-אם-2</bdi></td>
@@ -333,10 +339,10 @@ dedicated page</a>.</td>
 <a href="mpplus_kq_special.html">its dedicated page</a>.</td>
 </tr>
 </table>
-<p>Example of standard <span class="romanized">ketiv/qere</span>:</p>
+<p>Example of standard <span class="romanized">ketiv/qere</span> (Genesis 8:17):</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;קו״כ&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
-<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;את&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;אַ֠תָּ֠ה&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כו״ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
+<span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_params&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-punct">{</span><span class="tok-key">&quot;1&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;הוצא&quot;</span><span class="tok-punct">,</span><span class="tok-punct"> </span><span class="tok-key">&quot;2&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb pointed">&quot;הַיְצֵ֣א&quot;</span><span class="tok-punct">}</span><span class="tok-punct"></span>
 <span class="tok-punct">}</span><span class="tok-punct"></span></pre><h3>Special
 letter templates</h3>
 <table class="center">

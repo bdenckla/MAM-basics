@@ -9,7 +9,7 @@ from yeivin_itm import claim_schema, claims, paths, renderer, source_lint
 
 
 def assets():
-    """Return the byte-identical historical stylesheet and licensed font mapping."""
+    """Return the shared family stylesheet and licensed font mapping."""
     result = product_font_assets("yeivin-itm")
     result["yeivin-itm/style.css"] = (
         Path(__file__).with_name("assets") / "style.css"

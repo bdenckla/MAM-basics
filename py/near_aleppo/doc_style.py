@@ -1,6 +1,6 @@
 """Additional styles for near-Aleppo documentation under gh-pages/near-aleppo/.
 
-The pages load MAM-parsed's shared stylesheet first for English typography.
+The pages load document.css for English typography, then MAM-parsed's extension.
 This stylesheet adds the Hebrew examples, template notation and specialized
 tables. Pointed Hebrew uses 20pt Taamey D from the page set's font copy.
 Unpointed Hebrew inherits the surrounding text's default font and size.

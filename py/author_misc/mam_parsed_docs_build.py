@@ -71,8 +71,8 @@ def build_docs_with_explicit_claims(
     plus_html_dir.mkdir(parents=True, exist_ok=True)
 
     styles_mam_parsed.make_css_file_for_mam_parsed(str(out_dir_path / css_href))
-    tdm_ch_root = str(out_dir_path), css_href
-    tdm_ch_plus = str(plus_html_dir), "../../style.css"
+    tdm_ch_root = str(out_dir_path), ("../document.css", css_href)
+    tdm_ch_plus = str(plus_html_dir), ("../../../document.css", "../../style.css")
     _run_mam_parsed_authored_traversal(
         claims=claims,
         tdm_ch_root=tdm_ch_root,

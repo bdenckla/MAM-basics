@@ -17,6 +17,7 @@ class WriteCtx:
     path_to_style: str
     add_wbr: bool = False
     icon_href: str | None = None
+    css_hrefs: tuple[str, ...] | None = None
 
 
 def html_text(body_contents, write_ctx: WriteCtx):
@@ -26,10 +27,15 @@ def html_text(body_contents, write_ctx: WriteCtx):
     is touched.  The inputs are a body contents and a "write context"
     structure holding a title and an output path.
     """
+    css_hrefs = (
+        (f"{write_ctx.path_to_style}style.css",)
+        if write_ctx.css_hrefs is None
+        else write_ctx.css_hrefs
+    )
     html_el = _htel_mk_html(
         write_ctx.title,
         body_contents,
-        f"{write_ctx.path_to_style}style.css",
+        css_hrefs,
         icon_href=write_ctx.icon_href,
     )
     lines = legacy_html_lines.get_lines_from_html_el(write_ctx.add_wbr, html_el)

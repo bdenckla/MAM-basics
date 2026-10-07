@@ -13,11 +13,9 @@ under ``gh-pages/wlc/``: that prefix exists so wlc-utils' frozen redirect stubs 
 onto ``MAM-basics/wlc/<path>``, a page published here after the 2026-08-17 move earns no stub,
 and this page's corpus is MAM rather than WLC.
 
-IT LINKS TWO STYLESHEETS, and the second is the accgram one.  ``gh-pages/style.css`` is the
-deploy-root stylesheet, which supplies light/dark switching, the bounded text measure and
-book-title italics; ``gh-pages/wlc/style.css``
-supplies the ``lang="hbo"`` font at the size that makes accents legible, the italic for a
-romanized accent name, and the numeric-cell alignment.  A stylesheet's ``@font-face`` URL
+The pages link ``gh-pages/document.css`` for English prose, ``gh-pages/style.css`` for
+the deploy-root extension, and ``gh-pages/wlc/style.css`` for the Hebrew font, specialized
+tables and controls. A stylesheet's ``@font-face`` URL
 resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font from here too.
 
 WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and accents alone.
@@ -304,7 +302,7 @@ def _write_page(path: Path, title: str, body: list) -> str:
     write_ctx = mb_html.WriteCtx(
         title,
         str(path),
-        css_hrefs=(site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
+        css_hrefs=("document.css", site_data.CSS_HREF, site_data.ACCGRAM_CSS_HREF),
         body_class=(
             "centered-page post-stress-meteg-page " f"{_HEBREW_SPACING_BODY_CLASS}"
         ),

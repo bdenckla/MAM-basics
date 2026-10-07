@@ -8,6 +8,7 @@ from typing import Callable
 from mb_author.claim import ClaimRecord
 from mb_cmn import paths
 from verify_mp import survey_artifact
+from verify_mp import kq_qere_first_contexts
 from verify_mp import kq_special_counts
 from verify_mp.corpus import (
     Context,
@@ -366,6 +367,14 @@ def verify_mp_plus_templates_kq_am2_sug_values(
     _verify_named_param_values_subset(record, ctx)
 
 
+def verify_mp_plus_templates_kq_qere_first_contexts(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Every qere-first ketiv/qere follows a maqaf, except at the declared verses,
+    where a קו״כ follows a narrow-sense paseq."""
+    kq_qere_first_contexts.verify(record, ctx)
+
+
 # ---------------------------------------------------------------------------
 # Global coverage check (B1)
 # ---------------------------------------------------------------------------
@@ -410,6 +419,7 @@ REGISTRY: dict[str, VerifierFn] = {
     "mp.plus.templates.kq-am2.sug-values": verify_mp_plus_templates_kq_am2_sug_values,
     "mp.plus.templates.kq-special.subtype-counts": verify_mp_plus_templates_kq_special_subtype_counts,
     "mp.plus.templates.kq-special.subtypes": verify_mp_plus_templates_kq_special_subtypes,
+    "mp.plus.templates.kq.qere-first-contexts": verify_mp_plus_templates_kq_qere_first_contexts,
     "mp.plus.templates.kq.set": verify_mp_plus_templates_kq_set,
     "mp.plus.templates.modag.only-in-docnote-param2": verify_mp_plus_templates_modag_only_in_docnote_param2,
     "mp.plus.templates.note-link-external.only-in-docnote-param2": verify_mp_plus_templates_note_link_external_only_in_docnote_param2,

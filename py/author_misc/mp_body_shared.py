@@ -151,6 +151,10 @@ def build_kq_rows(*, claims: ClaimCollection, kq_am2_doc: str, kq_special_doc: s
         claims=claims,
         claim_id="mp.plus.templates.kq-special.subtype-counts",
     )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.plus.templates.kq.qere-first-contexts",
+    )
     return kq_rows
 
 
@@ -222,7 +226,7 @@ def ketiv_qere_block(*, kq_rows, json_kq):
     return [
         author.heading_level_3("$icap_Ketiv_qere templates"),
         tblh.tmpl_purp_table(kq_rows),
-        author.para("Example of standard $ketiv_qere:"),
+        author.para("Example of standard $ketiv_qere (Genesis 8:17):"),
         json_block.json_block_raw_html(json_kq),
     ]
 

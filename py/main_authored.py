@@ -81,6 +81,7 @@ def _gen_index_html(top_dir_misc, index_entries):
     write_ctx = mb_html.WriteCtx(
         "Miscellaneous Documents",
         f"{top_dir_misc}/index.html",
+        css_hrefs=("../../document.css",),
         html_comment=provenance.generated_html_comment(__file__),
     )
     mb_html.write_html_to_file(cbody, write_ctx)
@@ -95,8 +96,8 @@ def almost_main():
     css_href = "style.css"
     styles_authored.make_css_file_for_authored(f"{top_dir_misc}/{css_href}")
     #
-    tdm_ch = top_dir_misc, css_href
-    tdm_ch_aliyot = top_dir_misc, "aliyot-styles.css"
+    tdm_ch = top_dir_misc, ("../../document.css", css_href)
+    tdm_ch_aliyot = top_dir_misc, ("../../document.css", "aliyot-styles.css")
     #
     # notes_on_aliyot is linked from the top level, not from misc/index.html
     notes_on_aliyot.gen_html_file(tdm_ch_aliyot)  # return intentionally ignored
