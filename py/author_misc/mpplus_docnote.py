@@ -55,7 +55,7 @@ def build_body(*, claims: ClaimCollection):
                 [
                     "Spaces: ",
                     mb_html.code('" "'),
-                    " in column E, or ",
+                    " (U+0020, ASCII space) in column E, or ",
                     mb_html.code('"__"'),
                     " in column C.",
                 ],
@@ -74,7 +74,7 @@ def build_body(*, claims: ClaimCollection):
                 [
                     "Punctuation: the literal string ",
                     author.hbo("׃"),
-                    " or the template ",
+                    " (U+05C3, Hebrew punctuation $sof_pasuq) or the template ",
                     author.hbo("מ:פסק"),
                     ".",
                 ],
