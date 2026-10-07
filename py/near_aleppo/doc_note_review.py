@@ -1,13 +1,12 @@
 """Validate the public presentation ledger for changed MAM notes.
 
-Original source bodies and decisions remain in this ledger. Input hashes and a
-pre-bake full-source inventory differential guard the published note content. Refresh
-retains dispositions only for unchanged evidence. Unresolved presentations
-keep explicit MAM context rather than speculating about a new subject.
+Original source bodies and decisions remain in this ledger. Each note's evidence
+hash and a pre-bake full-source inventory differential guard the published note
+content. Refresh retains dispositions only for unchanged evidence. Unresolved
+presentations keep explicit MAM context rather than speculating about a new subject.
 """
 
 import copy
-import hashlib
 import json
 from collections import Counter
 
@@ -35,35 +34,8 @@ _STAGES = (
     "reviewed portable pointing",
 )
 _BODY = {"נוסח": "2", "מ:הערה-2": "2"}
-
-
-def input_hashes():
-    """Content identities, with portable keys rather than checkout-local paths."""
-    paths = {}
-    for name, directory in (("MAM-parsed-plus", build_paths.mam_parsed_plus_dir()),):
-        books = sorted(directory.glob("*.json"))
-        if len(books) != 24:
-            raise AssertionError(f"{directory}: expected 24 books, found {len(books)}")
-        paths.update({f"{name}/{p.name}": p for p in books})
-    paths["aleppo/index-flat-annotated.json"] = build_paths.aleppo_index()
-    for path in sorted((build_paths.input_dir()).rglob("*.json")):
-        if path != _LEDGER:
-            paths[path.relative_to(_ROOT).as_posix()] = path
-    for name in (
-        "phase2_templates.py",
-        "phase3_policies.py",
-        "phase5_readings.py",
-        "frozen_ketiv.py",
-        "editorial_ketiv.py",
-        "reviewed_ketiv.py",
-        "phase6_mam_targets.py",
-    ):
-        paths[f"py/near_aleppo/{name}"] = _ROOT / "py/near_aleppo" / name
-    paths["py/py_misc/orphan_marks.py"] = _ROOT / "py/py_misc/orphan_marks.py"
-    return {
-        key: hashlib.sha256(path.read_bytes()).hexdigest()
-        for key, path in paths.items()
-    }
+_VERSION = 2
+_KEYS = {"version", "inventory_sha256", "notes"}
 
 
 def _coverage(ref, index):
@@ -279,8 +251,7 @@ def refresh():
                 "reason": "Shared correction; individual clause review pending.",
             }
     ledger = {
-        "version": 1,
-        "input_sha256": input_hashes(),
+        "version": _VERSION,
         "inventory_sha256": digest([r["evidence_sha256"] for r in rows]),
         "notes": rows,
     }
@@ -298,11 +269,12 @@ def refresh():
 
 
 def load(require_reviewed=False):
-    """Load current evidence, failing on moved inputs or an incomplete final review."""
+    """Load the ledger, failing on an unknown shape, edited evidence or an
+    incomplete final review."""
     ledger = json.loads(_LEDGER.read_text(encoding="utf-8"))
-    if ledger.get("version") != 1 or ledger["input_sha256"] != input_hashes():
+    if set(ledger) != _KEYS or ledger["version"] != _VERSION:
         raise AssertionError(
-            "Doc-note review inputs changed; refresh and re-review affected notes."
+            f"{_LEDGER}: expected the keys {sorted(_KEYS)} and version {_VERSION}"
         )
     ids = [row["id"] for row in ledger["notes"]]
     if not ids or len(ids) != len(set(ids)):

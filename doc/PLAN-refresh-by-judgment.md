@@ -1,6 +1,6 @@
 # Judge a Wikisource refresh by its diffs, not by pinned hashes
 
-State: live; approved by Ben on 2026-10-07; execution awaits his explicit instruction.
+State: live; approved by Ben on 2026-10-07; executing since 2026-10-07 on his instruction.
 
 Written on 2026-10-07, New York time, by a Claude session (Claude Opus 5.5 in the Claude desktop
 app). The session worked in the full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, whose clean
@@ -13,7 +13,9 @@ this session are quoted under "Ben's decisions".
 
 **What is approved and what is not.** Ben approved the rule, the dispositions and the skill text
 below on 2026-10-07 and asked for this plan. Writing, committing or pushing this plan implements
-none of it. Execution begins only when Ben explicitly says to execute.
+none of it. Execution begins only when Ben explicitly says to execute. He did so the same day, in a
+fresh Claude Code session (Claude Opus 5.5) in the same clone: "Yes, execute waves 0 to 8 as
+written."
 
 **How it was prepared.** Twelve read-only sub-agents, some with read-only helpers of their own,
 worked under the session's scratch directory, outside the checkout, each reporting
@@ -183,13 +185,15 @@ quotation of Ben's message to the bot-run session; Ben approved this text with i
 
 ## Coordination
 
-1. **2 Kings 14:7.** A session in `C:/Users/BenDe/GitRepos3/MAM-basics` is working, with Ben, on
-   near-Aleppo's stored pointed ketiv at 2 Kings 14:7 (frozen record `BD-2Kings:14:7:0`), whose
-   two pashtas appear to contradict the Aleppo reading that near-Aleppo applies to that qere. Its
-   prompt tells it to change the record in whatever format `origin/main` has and to push
-   promptly. Wave 2's conversion runs on the tree current at execution, so it carries that
-   session's change if it has landed; if it lands after wave 2 is pushed, that session edits the
-   converted record.
+1. **2 Kings 14:7.** Near-Aleppo's stored pointed ketiv at 2 Kings 14:7 (frozen record
+   `BD-2Kings:14:7:0`) has two pashtas, which appear to contradict the Aleppo reading that
+   near-Aleppo applies to that qere. Ben asked the planning session for a prompt to take it up in
+   a session in `C:/Users/BenDe/GitRepos3/MAM-basics`, and the planning session wrote one, but no
+   session took it up: when execution began, that clone held nothing beyond `origin/main`, and no
+   session but the planning session's had named the record. Wave 2's conversion runs on the tree
+   current at execution; whoever later takes up 2 Kings 14:7 edits the converted record. Ben chose
+   the same day that the executing session write a fresh prompt for it once wave 2 is pushed:
+   "Yes, wait for a fresh prompt."
 2. **`unicodedata.normalize`.** `d66a3faf` reworded `AGENTS.md`'s rule on it and closed review
    item 8.10 without changing `py/tests/test_decalogue_m_trad.py` (`:113-115`, `:124`) or
    `py/accgram/decalogue_m_trad.py:154`. Leave those calls as they are.
@@ -838,7 +842,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 
 | Id | Requirement | Wave | Status |
 |---|---|---|---|
-| R1 | Ledger loses its whole-file hashes; per-note evidence stays | 1 | active |
+| R1 | Ledger loses its whole-file hashes; per-note evidence stays | 1 | implemented |
 | R2 | Census provenance and uncommitted-input refusal go; census agrees with build | 1 | active |
 | R3 | The build writes the population file | 1 | active |
 | R4 | Named-site statements replace population pins | 1 | active |
@@ -859,7 +863,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 
 ## Noticed, not acted on
 
-1. **2 Kings 14:7** is the GitRepos3 session's (Coordination, item 1).
+1. **2 Kings 14:7** is outside this plan (Coordination, item 1).
 2. **Fixed after this plan was first pushed:** `AGENTS.md`'s products section ended with the false
    "MAM-private runs its own near-Aleppo census", and `py/main_0_mega.py`'s docstring said
    "MAM-private's own mega runs the census now", though near-Aleppo's census has run in this
