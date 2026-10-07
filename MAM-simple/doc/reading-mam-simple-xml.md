@@ -160,7 +160,7 @@ these a reader has to choose among the children instead of concatenating them:
 
 | Element | The choice |
 |---------|-----------|
-| `<kq>` | `<kq-k>` (ketiv, unpointed) or `<kq-q>` (qere, pointed) |
+| `<kq>` | `<kq-k>` (ketiv, unpointed) or `<kq-q>` (qere, pointed), in either order |
 | `<cant-all-three>` | `<cant-combined>`, `<cant-alef>`, or `<cant-bet>` |
 | `<scrdfftar>` | `<sdt-target>` is the text; `<sdt-note>` is a note about it |
 | `<good-ending>` | an added repetition, not part of the running text |
@@ -232,6 +232,26 @@ display-spacing decision.
 
 `<kq>` has exactly two children, `<kq-k>` (ketiv) and `<kq-q>` (qere). The ketiv is
 unpointed and the qere is pointed.
+
+The two children are in MAM's order. MAM has the ketiv first, except in 129 of its 1,047
+pairs, counted on 2026-10-05, where it has the qere first: those that use its קו״כ template,
+and three that use a special template of the same kind. These pairs follow a maqaf or, in
+three verses, a narrow-sense paseq. MAM's introduction gives the reason for the maqaf case:
+the reading should not break after the maqaf. In Lam.1.18, for example, the qere completes the
+maqaf compound כׇל־הָֽעַמִּ֗ים:
+
+```xml
+<text text="… שִׁמְעוּ־נָ֣א כׇל־"/>
+<kq>
+  <kq-q text="הָֽעַמִּ֗ים"/>
+  <kq-k text="עמים"/>
+</kq>
+```
+
+MAM-simple marks these pairs only by the order of their children, so identify the ketiv and
+the qere by element type, never by position. A reader that wants MAM's order keeps the
+document order; one with its own convention, such as the ketiv first throughout, can impose
+it. In MAM-parsed, the template's name gives the order: `קו״כ`, or a `סוג` beginning `קו״כ`.
 
 Both children usually have a `text` attribute, but not always:
 

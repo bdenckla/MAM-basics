@@ -74,6 +74,8 @@ The following rules protect distinctions that a generic tree walk would erase:
   note, or a `<good-ending>` repetition with running text. MAM-simple has already
   resolved or removed some choices retained by MAM-parsed, so absence here does not
   establish absence in MAM-parsed.
+- Identify the two children of `<kq>` by element type, not by position. They are in MAM's
+  order, which has the qere first in about one pair in eight.
 - The children of `<slh-word>` spell one atom-form. Its `slhw-desc-0` attribute repeats
   the uninterrupted atom-form without the letter formatting; the attribute is not
   additional Scripture.

@@ -715,3 +715,42 @@ current tree, presents them by public-facing risk, and puts each wording to Ben 
 applied. The 16 items left as they are need nothing more. Item 8.10 stays deferred until Ben
 starts its cleanup task. The base report's line 3 stays as written, and this update remains
 `State: open` while its base survives.
+
+## The qere-first order: Ben's decision and the documentation, 2026-10-06
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-06, New York
+time, in the full clone `C:/Users/BenDe/GitRepos/MAM-basics` on `main`. Working from a prompt
+that the session of the withdrawal entry above wrote, this session discussed whether
+MAM-simple's encoding or documentation should change so that no reader takes the first child of
+a `kq` to be its ketiv. It set out the options: a distinct element for the 129 qere-first pairs,
+an attribute or `class` value on `kq`, a fixed child order with the order in an attribute, or
+documentation alone.
+
+**Ben's decision, 2026-10-06: no change to MAM-simple's data.** He wrote: "upon thinking about
+it, I don't want to make any changes to the MAM-simple data", and then, of the documentation
+changes this session proposed: "Just do it all, please, using your best judgment and asking no
+questions as long as this is all documentation and won't change "goldens" like MAM-with-doc HTML
+files."
+
+**Done.** The documentation now says that a pair's two children are in MAM's order, which has
+the qere first in about one pair in eight, and that a reader identifies them by element type:
+- `MAM-simple/README.md`, in a new caution, "Ketiv/qere order";
+- `MAM-simple/doc/reading-mam-simple-xml.md`, in "Ketiv/Qere", with Lamentations 1:18 as its
+  example, and in its table of alternatives;
+- `MAM-simple/doc/reading-mam-simple.md`, in "Consumer notice";
+- `MAM-simple/doc/reading-mam-simple-json.md`, in a new section, "Ketiv/qere objects";
+- `MAM-for-Sefaria/README.md`, which adds that the files under `csv-ajf/` have the ketiv first
+  throughout.
+
+The README's sentence pointing to its cautions keeps its ending, "around narpas (narrow-sense
+paseq, ׀).", which item 1.3's disposition above rewrites. The notice embedded in MAM-simple's 70
+data files is unchanged, being part of the data, and no generated file changed. The mega and
+the suite were not run, at Ben's instruction: "Don't run the test suite and please Lord don't
+run mega. This is all just documentation."
+
+**Carried by other sessions, from prompts this session wrote at Ben's request.** MAM-parsed's
+guide now says that MAM has the qere first (`9e64d3b4`, `d6b19241`). One session shows Ben the
+four ketiv-first templates that directly follow a maqaf, at 2 Samuel 20:23, 2 Chronicles 13:19,
+Jeremiah 48:21 and Ezekiel 39:25; another makes the example program in
+`MAM-simple/doc/reading-mam-simple.md` fail on an unknown element. The effective base State
+above is unchanged.
