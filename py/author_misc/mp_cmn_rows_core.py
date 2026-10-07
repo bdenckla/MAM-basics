@@ -70,7 +70,7 @@ KQ_ROWS = [
             "$Qere-first $ketiv_qere. Param 1 = unpointed $ketiv,"
             " param 2 = pointed $qere, as in ",
             author.hbo("כו״ק"),
-            ", but $MAM shows the $qere first, then the $ketiv."
+            ", but $MAM has the $qere first, then the $ketiv."
             " Used where the pair follows a $maqaf, and in three verses"
             " where the pair follows a narrow-sense $paseq (",
             author.hbo("מ:פסק"),

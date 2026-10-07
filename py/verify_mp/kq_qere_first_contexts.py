@@ -1,6 +1,6 @@
 """Verify what each qere-first ketiv/qere template follows in the plus corpus.
 
-MAM shows the qere before the ketiv at every קו״כ and at the מ:כו״ק מיוחד types
+MAM has the qere before the ketiv at every קו״כ and at the מ:כו״ק מיוחד types
 whose סוג the claim names. The plus guide says where MAM uses them: after a
 maqaf and, at the verses the claim lists, a קו״כ after a narrow-sense paseq
 (מ:פסק). This re-derives both statements from the corpus.
