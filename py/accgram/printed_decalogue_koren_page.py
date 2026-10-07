@@ -3,7 +3,7 @@ printed or the manuscript Decalogue tradition?  Answer: the printed tradition.
 
 Companion to ``printed_decalogue_simanim_page``: the same question, asked of Koren instead of
 Simanim's Tiqqun.  The four cantillation strands of the opening אנכי…מצותי span are derived live
-from the vendored ``in/accgram/printed_decalogue_teamim.json`` by the shared
+from the mirrored ``in/mam-ws-special/decalogue-base.mediawiki`` by the shared
 ``printed_decalogue_strands`` module and tabulated on the ``printed-decalogue`` companion page;
 this page links to that table rather than duplicating it, and serves only to document Koren's
 place in the p-trad camp -- plus one Koren note that shows the same editorial self-awareness the
@@ -16,7 +16,7 @@ body text is asserted here, not transcribed word-for-word (only shown as scans).
 
 Since issue wlc-utils#69 the claim rests on more than a spot-check: all FOUR Koren Decalogues have a
 committed hand transcription of every printed accent (``in/accgram/edition_transcriptions/
-koren_*.txt``), diffed against the vendored strand and pinned by
+koren_*.txt``), diffed against the mirrored strand and pinned by
 ``tests/test_edition_transcriptions.py``.  TWO of the four match their Wikisource strand mark
 for mark; the other two -- both appendix ones -- differ from it only at the maqaf, the Exodus
 one splitting two compounds that strand joins and the Deuteronomy one joining one it leaves
@@ -219,7 +219,7 @@ _ROM_TEVIR = rmn(pds.ROM_TEVIR)
 _ROM_MUNAX = rmn(pds.ROM_MUNAX)
 
 # The p-trad Decalogue on Hebrew Wikisource sits in the printed-tradition (נוסח הדפוסים) section of
-# the very page these four strands are vendored from -- so its base URL is single-sourced from the
+# the very page these four strands are mirrored from -- so its base URL is single-sourced from the
 # data's own provenance, and we append only the section anchor here. (Same rule as the Simanim
 # page; see its ``_wikisource_ptrad_href``.)
 _WIKISOURCE_PTRAD_SECTION = "הטעם התחתון מול הטעם העליון (לפי נוסח הדפוסים)"
@@ -825,7 +825,7 @@ def render_body_contents(
     verdicts: dict[str, tp.TranscriptionResult],
 ) -> tuple[object, ...]:
     # ``results`` is here only for this call, and it is the reason the verdict table can state how
-    # many ways the two Deuteronomy תחתון strands part: the count is re-derived from the vendored
+    # many ways the two Deuteronomy תחתון strands part: the count is re-derived from the mirrored
     # words on every generation and raises unless the divergence set is still the pinned one. It
     # was a typed "five" until the 2026-07-25 claim audit found no two pages of the trio agreeing
     # on it -- see printed_decalogue_taxton_diff.

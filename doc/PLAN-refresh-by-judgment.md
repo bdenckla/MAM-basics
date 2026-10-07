@@ -855,7 +855,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R11 | Yeivin population hash goes; quoted-form check added | 4 | implemented |
 | R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | implemented |
 | R13 | Test pins replaced by rules or deleted | 5 | active |
-| R14 | Every reader of the Decalogue capture moves to the mirror | 5 | active |
+| R14 | Every reader of the Decalogue capture moves to the mirror | 5 | implemented |
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | active |
 | R16 | Refresh skill and reference rewritten | 7 | active |
 | R17 | Skill deployment and this plan's record | 8 | active |

@@ -78,11 +78,11 @@ _ROM_TELISHA_GEDOLAH = rmn(pds.ROM_TELISHA_GEDOLAH)
 # The LAP table (letters, accents, and accent-coupled punctuation)
 # --------------------------------------------------------------------------- #
 # Ben, 2026-07-27: prose about this disagreement is a welcome supplement to the LAP, not a
-# substitute for it -- so show the marks.  Every glyph in both rows comes out of the vendored
+# substitute for it -- so show the marks.  Every glyph in both rows comes out of the mirrored
 # strands; nothing here is typed.  The Wikisource row is one strand's own three atoms.  The
 # editions' row has to be ASSEMBLED, because a transcription records which accent stands on
 # which chanted word and not the pointed letters, so there is no pointed Koren or SimTiq text in
-# the repo to quote.  It is assembled only from vendored atoms: the p-trad עליון's own אתה and
+# the repo to quote.  It is assembled only from mirrored atoms: the p-trad עליון's own אתה and
 # ובתך (which both transcriptions match) and the p-trad תחתון's own ובנך, which is the very
 # thing the transcriptions record -- a munax on ובנך standing as its own chanted word.  Every
 # step is pinned in _pinned_lap_rows, which raises rather than render a row it cannot justify.
@@ -134,12 +134,12 @@ def _version(source: dict, reading: str, tradition: str) -> dict:
             tradition,
         ):
             return version
-    raise AssertionError(f"no ex/{reading}/{tradition} version in the vendored source")
+    raise AssertionError(f"no ex/{reading}/{tradition} version in the mirrored source")
 
 
 def _stretch(version: dict) -> tuple[str, str, str]:
     """One strand's אתה / ובנך / ובתך atoms. Raises unless the Exodus Decalogue has exactly one
-    such run -- so a re-vendoring that moves or duplicates the stretch fails the build.
+    such run -- so a refresh of the mirror that moves or duplicates the stretch fails the build.
     """
     found: list[tuple[str, str, str]] = []
     for chanted_verse in version["chanted_verses"]:

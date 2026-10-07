@@ -1,4 +1,4 @@
-"""Check a hand transcription against its vendored Wikisource strand, before it is committed.
+"""Check a hand transcription against its mirrored Wikisource strand, before it is committed.
 
 Usage:
     # a transcription still in progress, from the editor's downloaded exports

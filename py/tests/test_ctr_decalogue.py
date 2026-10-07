@@ -16,10 +16,12 @@ against a re-fetch or a re-vendoring that would quietly change it:
 Every residual difference from the followed strand is CONJUNCTIVE -- the disjunctive skeleton,
 which is what wlc-utils#69 claims survives, is intact in both books.
 
-Both vendored JSONs are committed here under ``in/accgram``, so these FAIL rather than skip if
-one is absent: the fetch scripts are how the file is regenerated, not a dependency a runner may
-be missing, and a tracked file having been deleted is the last moment to go quiet.  ``load_ctr``
-and ``load_source`` already raise naming the file, which is the whole of what a guard could say.
+CTR's vendored JSON is committed here under ``in/accgram``, and the reference strands' mirrored
+Wikisource page under ``in/mam-ws-special``, so these FAIL rather than skip if one is absent: the
+fetch script and the Wikisource download are how the files are regenerated, not a dependency a
+runner may be missing, and a tracked file having been deleted is the last moment to go quiet.
+``load_ctr`` and ``load_source`` already raise naming the file, which is the whole of what a guard
+could say.
 See ``paths.require_sibling`` for the argument.
 
 ONE BLESSED EXAMPLE-BASED TEST (issue wlc-utils#88): ``clean_verse`` against a hand-built HTML string,

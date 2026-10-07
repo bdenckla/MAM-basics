@@ -25,7 +25,7 @@ how aware SimTiq is of having made the older, printed-tradition choice.
 Since issue wlc-utils#69 the finding rests on more than that comparison.  All EIGHT Decalogues on this page
 -- the Tiqqun's four and the Simanim *Tanakh*'s four -- have a committed hand transcription of
 every printed accent (``in/accgram/edition_transcriptions/simtiq_*.txt`` and ``simtan_*.txt``),
-diffed against the vendored strand and pinned by
+diffed against the mirrored strand and pinned by
 ``tests/test_edition_transcriptions.py``.  ``_tiqqun_verdict_table``
 and ``_tanakh_verdict_table`` render them, one row per Decalogue -- never one per edition, since
 p. 247's Shabbat departure and pp. 208-209's exact agreement cannot share a sentence.
@@ -63,8 +63,8 @@ The accent transcriptions above are the other sense: a token per printed accent,
 and never displayed as Hebrew.  On first mention call those "hand transcriptions of the printed
 accents"; where both senses appear in one section, the older one is "the note transcriptions".
 
-The four cantillation strands of the opening אנכי...מצותי span are derived live from the vendored
-``in/accgram/printed_decalogue_teamim.json`` by the shared ``printed_decalogue_strands`` module
+The four cantillation strands of the opening אנכי...מצותי span are derived live from the mirrored
+``in/mam-ws-special/decalogue-base.mediawiki`` by the shared ``printed_decalogue_strands`` module
 and tabulated on the companion page; this page links to that table rather than duplicating it.
 
 The trio frames that span around its two SIGNAL WORDS, עבדים and על־פני, whose accent pair
@@ -262,7 +262,7 @@ _ROM_GERESH = rmn(pds.ROM_GERESH)
 # the prose checker rejects: the munax on the joined לא of לא־תעשה makes a third conjunctive
 # before the pashta, where a tevir would have allowed it.  Every taxton strand has a meteg and no
 # accent on that joined לא, and every elyon strand has לא as a free chanted word with a munax --
-# _pin_lo_taase_strand_facts re-derives both facts from the vendored strands.  ("Where all eight
+# _pin_lo_taase_strand_facts re-derives both facts from the mirrored strands.  ("Where all eight
 # strands have a meteg and no accent" stood here until 2026-07-29, and the עליון half of it is
 # false; item 1 of doc/review-findings-2026-07-29.md.)
 _ROM_MUNAX = rmn(pds.ROM_MUNAX)
@@ -273,7 +273,7 @@ _ROM_METEG = rmn(pds.ROM_METEG)
 _ROM_TEVIR = rmn(pds.ROM_TEVIR)
 
 # The p-trad Decalogue on Hebrew Wikisource sits in the printed-tradition (נוסח הדפוסים) section
-# of the very page these four strands are vendored from -- so its base URL is single-sourced from
+# of the very page these four strands are mirrored from -- so its base URL is single-sourced from
 # the data's own provenance, and we append only the section anchor here.
 # That Exodus section holds BOTH p-trad strands (תחתון and עליון), which is exactly what the
 # spot-check compares against.  Wikisource forms a heading's anchor id by replacing spaces with
@@ -940,9 +940,9 @@ def _pin_lo_taase_strand_facts(source: dict) -> None:
     The paragraph on p. 246's third chanted verse says every תחתון strand has a meteg and no
     accent on the joined לא of לא־תעשה, and every עליון strand has לא as a free chanted word
     with a munax.  Until 2026-07-29 the sentence said "all eight strands have a meteg and no
-    accent", which the vendored strands refute: the four עליון strands have no joined לא there
+    accent", which the mirrored strands refute: the four עליון strands have no joined לא there
     at all (item 1 of ``doc/review-findings-2026-07-29.md``).  Both quantifiers are re-derived
-    here from ``in/accgram/printed_decalogue_teamim.json`` at build time, raising rather than
+    here from ``in/mam-ws-special/decalogue-base.mediawiki`` at build time, raising rather than
     warning, like ``maqaf_nonfinal_accents_page.pin_claims`` and for the same reason: a warning
     in a generator's output is a warning nobody reads.
     """
@@ -974,7 +974,7 @@ _VAYOM_HASHEVII = (("ויום",), ("השביעי",))
 def _vayom_forms(source: dict) -> tuple[str, str]:
     """The two pairs the p. 298 paragraph shows: the תחתון strands' ויום השביעי, and p. 298's.
 
-    Both are lifted from ``in/accgram/printed_decalogue_teamim.json`` and rendered through
+    Both are lifted from ``in/mam-ws-special/decalogue-base.mediawiki`` and rendered through
     ``accents_and_letters``, which drops the vowels; a hand-typed accent would be a claim with no
     oracle behind it.  p. 298 has no pointed Hebrew of its own -- its transcription is a token
     per printed accent -- so its pair is assembled from the two strands that supply its two
@@ -1085,10 +1085,10 @@ def _conclusion(
             )
         ),
         # GUARDRAIL (item 1 of doc/review-findings-2026-07-29.md). "Where all eight strands have
-        # a meteg and no accent" stood in this paragraph until 2026-07-29, and the vendored
+        # a meteg and no accent" stood in this paragraph until 2026-07-29, and the mirrored
         # strands refute it: only the four תחתון strands have that. The four עליון strands have
         # לא as a free chanted word with a munax -- the very mark p. 246 has on its joined לא.
-        # Both quantifiers below are re-derived from the vendored strands by
+        # Both quantifiers below are re-derived from the mirrored strands by
         # _pin_lo_taase_strand_facts, which raises on drift.
         H.para(
             (

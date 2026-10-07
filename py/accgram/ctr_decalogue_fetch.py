@@ -5,8 +5,9 @@ CTR is the "Complete Tanach with Rashi", the Chabad.org web edition of the Hebre
 Decalogues of wlc-utils#69 -- each a HAND TRANSCRIPTION, primary observation read off a printed
 page -- CTR is DIGITAL: its accents are already Unicode, so it is fetched and diffed
 rather than read and typed.  It is therefore a VENDORED STRAND, not a transcription; this
-tool is the network author-tool that refreshes the vendored snapshot, exactly as
-``printed_decalogue_fetch.py`` does for the eight idealized Wikisource strands.
+tool is the network author-tool that refreshes the vendored snapshot, as
+``printed_decalogue_fetch.py`` did for the eight idealized Wikisource strands until 2026-10-07,
+when they moved to the Wikisource download's mirror of their page.
 
 CHAPTERS.  Only the two running-text Decalogues exist on the web -- Exodus 20 and
 Deuteronomy 5 -- so this fetches those two chapters and keeps the Decalogue span of each

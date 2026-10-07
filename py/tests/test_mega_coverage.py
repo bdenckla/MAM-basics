@@ -117,9 +117,9 @@ _HOLMAN_MAILBOX = (
     " doc/mega-coverage-2026-09-10.md §3."
 )
 _NETWORK_VENDORING = (
-    "A network tool that refreshes a vendored snapshot, from Hebrew Wikisource or from"
-    " chabad.org.  Recorded in py/main_accgram.py's docstring (\"NETWORK AUTHOR TOOL,"
-    ' run by hand") and doc/mega-coverage-2026-09-10.md §3.'
+    "A network tool that refreshes a vendored snapshot, from chabad.org.  Recorded in"
+    ' py/main_accgram.py\'s docstring ("NETWORK AUTHOR TOOL, run by hand") and'
+    " doc/mega-coverage-2026-09-10.md §3."
 )
 _REDIRECT_STUBS = (
     "Frozen redirect stubs, with or without --publish; publishing needs a temporary"
@@ -182,7 +182,6 @@ NOT_IN_MEGA: dict[str, str] = {
         " Phonetic-MAM display release.  Recorded in py/accgram/breuer_word_length.py's docstring (\"WRITES TO"
         ' ``.novc/``, not to ``out/``") and doc/mega-coverage-2026-09-10.md §3.'
     ),
-    "py/main_accgram.py vendor-printed-decalogue": _NETWORK_VENDORING,
     "py/main_accgram.py vendor-ctr-decalogue": _NETWORK_VENDORING,
     "py/main_accgram.py generate-html without --trust-survey": (
         "The batch the accgram-generate-html step runs, except that its residue page"

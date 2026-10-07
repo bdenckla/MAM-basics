@@ -887,10 +887,13 @@ the policy file's comments. No item is left unfixed.
 
 ### Finding 2: `DATA-LICENSES.md`
 
-1. **2.1: fixed in `2efd5de5`.** `in/accgram/printed_decalogue_teamim.json` has its own CC-BY-SA
+1. **2.1: fixed in `2efd5de5`.** `in/accgram/printed_decalogue_teamim.json` had its own CC-BY-SA
    4.0 row, and row 79 keeps Ben's hand transcriptions alone under CC0. Re-measured: the file's
-   `provenance` names page id 344500 and revision 3025606, which `in/mam-ws-special/manifest.json`
-   records for the same page.
+   `provenance` named page id 344500 and revision 3025606, which `in/mam-ws-special/manifest.json`
+   records for the same page. Later on 2026-10-07 the file and its row were deleted, and its
+   readers moved to that page's mirror, `in/mam-ws-special/decalogue-base.mediawiki`, which the
+   `in/mam-ws-special/` row covers ([PLAN-refresh-by-judgment.md](PLAN-refresh-by-judgment.md),
+   wave 5, item 2).
 2. **2.2: fixed in `2efd5de5`.** Rows 84 and 91 give MAM's CC-BY-SA 4.0 to the Hebrew that a file or
    page quotes from MAM.
 

@@ -474,7 +474,7 @@ _STEPS = [
     StepRecord(
         "accgram-run-printed-decalogue",
         _run_accgram_printed_decalogue,
-        "reads only committed inputs (the vendored in/accgram/printed_decalogue_teamim.json"
+        "reads only committed inputs (the mirrored in/mam-ws-special/decalogue-base.mediawiki"
         " and in/accgram/edition_transcriptions), so nothing above it feeds it",
     ),
     StepRecord(

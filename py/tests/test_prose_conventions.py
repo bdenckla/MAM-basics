@@ -70,7 +70,7 @@ BEFORE its rule can be switched on, and a sweep is not a lint's job:
   dominated by the MARK name "sof pasuq", which stays; no anchored pattern
   separating the two survived review.
 * the nameless possessive ``its strand`` / ``their strand`` (2026-07-27) --
-  where a printed edition is compared against the vendored reference, NAME the
+  where a printed edition is compared against the mirrored reference, NAME the
   reference: "Koren's Exodus תחתון has no difference from Wikisource", never
   "from its strand", which reads as though the edition owned a strand or as
   though which strand is "its" were settled rather than the finding under test.

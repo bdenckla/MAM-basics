@@ -223,14 +223,14 @@ index different token streams and an insertion upstream of a pasoleg would other
 off its reference position. Run it on a partly typed page too — a problem then shows up before
 the rest is typed.
 
-The **kind** is comparable because the vendored source keeps `{{מ:לגרמיה}}` and `{{מ:פסק}}` apart
+The **kind** is comparable because the mirrored source keeps `{{מ:לגרמיה}}` and `{{מ:פסק}}` apart
 in `faithful_chanted_verses` ([#74](https://github.com/bdenckla/wlc-utils/issues/74)), beside the
 folded `chanted_verses` that collapses both to U+05C0 and that every other consumer reads;
 `edition_transcription.reference_pasoleg_kinds` reads them back out. So a transcribed `mun_leg`
 or `[paseq]` is checked against the strand's **own** reference rather than against glyph shape
 and grammar, and `[pasoleg]` asserts no kind and leaves nothing to compare. Both halves are
 pinned in `test_edition_transcriptions.py`: the reference kinds per strand
-(`test_vendored_reference_preserves_the_pasoleg_kinds`) and every kind claim each transcription
+(`test_mirrored_reference_preserves_the_pasoleg_kinds`) and every kind claim each transcription
 makes (`test_transcription_pasoleg_kinds_round_trip_against_the_reference`, which pins the number
 of strokes compared too, so a regression that quietly stopped comparing cannot pass vacuously).
 
@@ -355,7 +355,7 @@ comparison against the strand runs only for the seven stems that diverge nowhere
 distinction is not checked at all: Koren prints the stroke without saying which kind it is, so all
 fourteen of its strokes are written `[pasoleg]` and the round trip compares none of them.
 `transcription_parse.scanner_pasoleg_kinds` does determine all fourteen — the scanner's
-positional rule, a munaḥ + stroke before a revia — and agrees with the vendored reference at
+positional rule, a munaḥ + stroke before a revia — and agrees with the mirrored reference at
 every one; but that is the grammar's answer rather than the book's, and being positional it is
 blind to what is printed, so it can supply a kind an edition withholds and could never
 corroborate one an edition states. A stroke landing inside a difference region has no exact
@@ -364,7 +364,7 @@ prints `in a difference region at ref N` where it would. And the kinds have a se
 independent source only for the m-trad: MAM-parsed-plus carries them per stroke (cell E, the two
 strands split by `מ:כפול` א/ב) and `test_decalogue_m_trad` pins that the two sources agree stroke
 for stroke, but the plus tree holds no printed tradition, so the four p-trad strands rest on the
-single vendored copy — see [#68](https://github.com/bdenckla/wlc-utils/issues/68).
+single mirrored copy — see [#68](https://github.com/bdenckla/wlc-utils/issues/68).
 
 ## Digital sources (fetched, not transcribed)
 

@@ -27,9 +27,10 @@ Subcommands:
                 accentuations against the manuscript baseline -- both books,
                 taxton and elyon -- and write
                 out/accgram/printed-decalogue/_printed_decalogue.json (issue wlc-utils#52).
-                Reads the vendored in/accgram/printed_decalogue_teamim.json that
-                vendor-printed-decalogue refreshes, plus the committed hand
-                transcriptions under in/accgram/edition_transcriptions, whose own
+                Reads the Wikisource page עשרת הדברות בסיס/טעמים as the Wikisource
+                download mirrors it, in/mam-ws-special/decalogue-base.mediawiki, plus
+                the committed hand transcriptions under
+                in/accgram/edition_transcriptions, whose own
                 verdicts against the strand each follows go in the file's
                 transcriptions section.
     survey-chanted-word-accents
@@ -144,15 +145,6 @@ Subcommands:
                 CHANGED / UNTESTABLE.  Cross-checks each verdict against the
                 prose_ob_notes claim and writes out/accgram/fix-tester/_fix_tester.{txt,json}.
                 Run run-prose first.
-    vendor-printed-decalogue
-                NETWORK AUTHOR TOOL, run by hand.  Refresh the vendored snapshot of the
-                eight Wikisource Decalogue accentuations ({Exodus, Deuteronomy} × {taxton,
-                elyon} × {manuscript, printed}) from he.wikisource's
-                עשרת הדברות בסיס/טעמים, and overwrite
-                in/accgram/printed_decalogue_teamim.json.  Each version is stored twice:
-                the folded scanner-ready chanted verses, and the faithful ones that keep
-                the legarmeh/paseq, ketiv/qere and setumah/petuxah templates (issue wlc-utils#74).
-                --oldid pins a revision; the committed snapshot is 3025606.
     vendor-ctr-decalogue
                 NETWORK AUTHOR TOOL, run by hand.  Refresh the vendored snapshot of CTR's
                 two Decalogues -- Exodus 20:2-14 and Deuteronomy 5:6-18 of the Complete
@@ -191,7 +183,6 @@ from accgram import research_tao
 from accgram import prose_run
 from accgram import poetic_run
 from accgram import printed_decalogue
-from accgram import printed_decalogue_fetch
 from accgram import printed_decalogue_koren_page
 from accgram import printed_decalogue_page
 from accgram import printed_decalogue_simanim_page
@@ -256,10 +247,6 @@ def _run_fix_tester(args: argparse.Namespace) -> None:
 
 def _run_grammaticality(args: argparse.Namespace) -> None:
     grammaticality.run(args)
-
-
-def _run_vendor_printed_decalogue(args: argparse.Namespace) -> None:
-    printed_decalogue_fetch.run(args)
 
 
 def _run_vendor_ctr_decalogue(args: argparse.Namespace) -> None:
@@ -385,7 +372,7 @@ def build_parser() -> argparse.ArgumentParser:
             "Grammar-check the printed-tradition (דפוסים) Decalogue accentuations "
             "against the manuscript baseline -- both books, taxton and elyon -- and write "
             "out/accgram/printed-decalogue/_printed_decalogue.json (issue wlc-utils#52). Reads the "
-            "vendored in/accgram/printed_decalogue_teamim.json, plus the committed hand "
+            "mirrored in/mam-ws-special/decalogue-base.mediawiki, plus the committed hand "
             "transcriptions under in/accgram/edition_transcriptions, whose own verdicts "
             "against the strand each follows go in the file's transcriptions section."
         ),
@@ -518,22 +505,8 @@ def build_parser() -> argparse.ArgumentParser:
             func=lambda a, m=module: _generate_one_html_from_args(m, a)
         )
 
-    # The two network author-tools, kept last because they are the only subcommands that
-    # reach off the machine and the only ones that overwrite a vendored input under in/.
-    vendor_printed_decalogue_parser = subparsers.add_parser(
-        "vendor-printed-decalogue",
-        help=(
-            "NETWORK AUTHOR TOOL, run by hand: re-fetch the eight Wikisource Decalogue "
-            "accentuations (both books, taxton and elyon, manuscript and printed) and "
-            "overwrite the vendored in/accgram/printed_decalogue_teamim.json. --oldid pins "
-            "a revision; the committed snapshot is 3025606."
-        ),
-    )
-    printed_decalogue_fetch.add_args(
-        vendor_printed_decalogue_parser, repo_root=_repo_root()
-    )
-    vendor_printed_decalogue_parser.set_defaults(func=_run_vendor_printed_decalogue)
-
+    # The network author-tool, kept last because it is the only subcommand that reaches
+    # off the machine and the only one that overwrites a vendored input under in/.
     vendor_ctr_decalogue_parser = subparsers.add_parser(
         "vendor-ctr-decalogue",
         help=(

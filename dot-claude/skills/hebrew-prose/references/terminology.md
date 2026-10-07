@@ -386,7 +386,7 @@ field and dataclass attribute, `dual_cant_readings`' grouped chanted verse,
 The point is **search hygiene**: a grep for one sense must not turn up the other. Python
 `threading` and the weaving-sense "thread … together" are unrelated and stay.
 
-Vendored Wikisource strands are written **`ws/ex/taxton/printed`** — a display prefix, never a
+The Wikisource strands are written **`ws/ex/taxton/printed`** — a display prefix, never a
 change to the data keys, and **full triples only** (a bare `ex/taxton` pair stays as it is).
 Render via `edition_transcription.strand_name(key)`, not open-coded joins. No `ws/` on the CTR
 strand; `p-trad`/`m-trad` are tradition abbreviations, not strand names.

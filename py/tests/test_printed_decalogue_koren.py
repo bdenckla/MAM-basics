@@ -4,7 +4,7 @@ Companion to ``test_printed_decalogue_simanim``. The four-strands derivation its
 that test and by ``printed_decalogue_strands``; here we only confirm the Koren page body renders
 and that its scans are committed.
 
-The vendored source JSON is committed here, so these FAIL rather than skip if it is absent --
+The mirrored source page is committed here, so these FAIL rather than skip if it is absent --
 see ``test_printed_decalogue``'s docstring and ``paths.require_sibling``.
 
 Run:

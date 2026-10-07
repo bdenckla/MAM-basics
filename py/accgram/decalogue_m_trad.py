@@ -4,7 +4,7 @@ The repo holds MAM's manuscript-tradition taxton and elyon Decalogue readings tw
 and the printed-Decalogue page trio takes the m-trad as its authoritative baseline, so the
 two copies had better agree:
 
-* the vendored Hebrew Wikisource data ``in/accgram/printed_decalogue_teamim.json``
+* the mirrored Hebrew Wikisource data ``in/mam-ws-special/decalogue-base.mediawiki``
   (``tradition: "manuscript"``), which the pages read live; and
 * the landed MAM-parsed product's ``plus`` subtree, MAM's own parse of its own text.
 
@@ -21,12 +21,12 @@ alone) and ``ב`` (the elyon strand alone).  Text outside any ``מ:כפול`` is
 strands.  Deciding which of ``א``/``ב`` is which needs no appeal to tradition: at Exod 20:2
 the ``א`` reading closes on עֲבָדִ֑ים with atnaX and runs on, while ``ב`` closes it with
 silluq and sof pasuq -- the taxton and elyon behaviours respectively, and the same pair of
-signal accents ``printed_decalogue_strands`` pins the vendored side against.
+signal accents ``printed_decalogue_strands`` pins the mirrored side against.
 
 THE VERTICAL STROKE IS TEMPLATE-BORNE ON BOTH SIDES, NOT LITERAL.  Neither Decalogue holds
 a literal U+05C0 anywhere in cell E: every stroke is a ``מ:לגרמיה-2`` (legarmeh) or a
 ``מ:פסק`` (narrow-sense paseq) template, so the distinction the glyph cannot express is
-carried by template identity.  The vendored ``faithful_chanted_verses`` keeps the same
+carried by template identity.  The mirrored ``faithful_chanted_verses`` keeps the same
 distinction with its own ``{{מ:לגרמיה}}`` / ``{{מ:פסק}}`` (issue wlc-utils#74), where the folded
 ``chanted_verses`` collapses both to U+05C0.  So the two sources can be checked against
 each other at full precision rather than folded together, which is why this module reads
@@ -40,7 +40,7 @@ five things, four of them identically on both sides:
   the reading, not the spelling.
 * **The qamats variant is resolved to the ד form.**  ``מ:קמץ`` offers a qamats-qatan
   spelling (``ד``) and a plain-qamats one (``ס``); both sides take ``ד``, which is also what
-  the vendored folding does.
+  the mirrored folding does.
 * **Section divisions are dropped.**  Setumah/petuXah/pisqa markers survive on both sides
   but in different vocabularies (plus writes ``סס``/``ססס``/``פפ``, several of them in cell C
   rather than cell E; the Wikisource base page writes ``{{סס2}}``/``{{ססס}}``/``{{פפ}}``
@@ -107,7 +107,7 @@ _SPAN_ANCHORS: dict[str, tuple[str, str]] = {
 # מ:כפול's single-strand params: ``א`` is the taxton, ``ב`` the elyon.
 _STRAND_PARAM: dict[str, str] = {"taxton": "א", "elyon": "ב"}
 
-# The vertical-stroke templates and the kind each asserts.  ``מ:לגרמיה`` is the vendored
+# The vertical-stroke templates and the kind each asserts.  ``מ:לגרמיה`` is the mirrored
 # page's spelling and ``מ:לגרמיה-2`` the plus tree's; mpplus_flatten handles both too.
 _STROKE_KINDS: dict[str, str] = {
     "מ:לגרמיה-2": "legarmeh",
@@ -115,9 +115,9 @@ _STROKE_KINDS: dict[str, str] = {
     "מ:פסק": "paseq",
 }
 
-# The vendored page's section-division templates.  ``סס2`` is its own; the rest are the
+# The mirrored page's section-division templates.  ``סס2`` is its own; the rest are the
 # names mpplus_flatten's is_parashah_template already knows.
-_VENDORED_DIVISIONS = frozenset({"סס2"})
+_MIRRORED_DIVISIONS = frozenset({"סס2"})
 
 _TEMPLATE_RE = re.compile(r"\{\{([^{}]*)\}\}")
 
@@ -126,7 +126,7 @@ _TEMPLATE_RE = re.compile(r"\{\{([^{}]*)\}\}")
 class Strand:
     """One (book, reading) m-trad strand, from whichever source produced it."""
 
-    source: str  # "MAM-parsed-plus" / "vendored"
+    source: str  # "MAM-parsed-plus" / "mirrored"
     book: str  # "ex" / "dt"
     reading: str  # "taxton" / "elyon"
     verses: tuple[tuple[str, ...], ...]  # chanted verses of chanted words
@@ -164,12 +164,12 @@ class Difference:
     scope: str  # chanted_verse_count / verse_lengths / words / stroke_kinds
     where: str  # human-readable position
     mam_plus: str
-    vendored: str
+    mirrored: str
 
     def describe(self) -> str:
         return (
             f"{self.strand} {self.scope} at {self.where}: "
-            f"MAM-parsed-plus {self.mam_plus} vs vendored {self.vendored}"
+            f"MAM-parsed-plus {self.mam_plus} vs mirrored {self.mirrored}"
         )
 
 
@@ -320,7 +320,7 @@ def from_mam_plus(book: str, reading: str, plus_dir: Path | None = None) -> Stra
 
 
 # --------------------------------------------------------------------------- #
-# Source 2: the vendored teamim JSON's faithful_chanted_verses
+# Source 2: the mirrored page's faithful_chanted_verses
 # --------------------------------------------------------------------------- #
 def _resolve_wiki_template(body: str, kinds: list[str]) -> str:
     """One ``{{...}}`` body -> its contribution to the strand's text."""
@@ -333,14 +333,14 @@ def _resolve_wiki_template(body: str, kinds: list[str]) -> str:
     if name in _STROKE_KINDS:
         kinds.append(_STROKE_KINDS[name])
         return _padded_stroke()
-    if name in _VENDORED_DIVISIONS or is_parashah_template(name):
+    if name in _MIRRORED_DIVISIONS or is_parashah_template(name):
         return " "  # a section division; dropped, see the module docstring
     if name == "מ:קמץ":
         return named["ד"]
     if is_std_kq_template(name):
         return positional[1]  # the qere
     raise AssertionError(
-        f"{name}: no rule for this template in the vendored faithful text -- the "
+        f"{name}: no rule for this template in the mirrored faithful text -- the "
         "Wikisource base page grew a construct this module does not know how to read"
     )
 
@@ -348,11 +348,11 @@ def _resolve_wiki_template(body: str, kinds: list[str]) -> str:
 def _resolve_faithful(verse: str, kinds: list[str]) -> str:
     out = _TEMPLATE_RE.sub(lambda m: _resolve_wiki_template(m.group(1), kinds), verse)
     if "{" in out or "}" in out:
-        raise AssertionError(f"unresolved markup in vendored faithful text: {out!r}")
+        raise AssertionError(f"unresolved markup in mirrored faithful text: {out!r}")
     return out
 
 
-def _vendored_version(source: dict, book: str, reading: str) -> dict:
+def _mirrored_version(source: dict, book: str, reading: str) -> dict:
     return next(
         v
         for v in source["versions"]
@@ -360,14 +360,14 @@ def _vendored_version(source: dict, book: str, reading: str) -> dict:
     )
 
 
-def from_vendored(source: dict, book: str, reading: str) -> Strand:
-    """One m-trad Decalogue strand, read from the vendored ``faithful_chanted_verses``."""
-    version = _vendored_version(source, book, reading)
+def from_mirrored(source: dict, book: str, reading: str) -> Strand:
+    """One m-trad Decalogue strand, read from the mirrored ``faithful_chanted_verses``."""
+    version = _mirrored_version(source, book, reading)
     faithful = version.get("faithful_chanted_verses")
     if faithful is None:
         raise ValueError(
-            f"{book}/{reading}: the vendored source has no faithful_chanted_verses -- "
-            "re-vendor via printed_decalogue_fetch.py (issue wlc-utils#74)"
+            f"{book}/{reading}: the mirrored source has no faithful_chanted_verses, "
+            "which printed_decalogue_fetch.build_payload writes (issue wlc-utils#74)"
         )
     kinds: list[str] = []
     verses: list[tuple[str, ...]] = []
@@ -380,7 +380,7 @@ def from_vendored(source: dict, book: str, reading: str) -> Strand:
             )
         verses.append(resolved[0])
     return Strand(
-        source="vendored",
+        source="mirrored",
         book=book,
         reading=reading,
         verses=tuple(verses),
@@ -392,23 +392,23 @@ def from_vendored(source: dict, book: str, reading: str) -> Strand:
 # The comparison
 # --------------------------------------------------------------------------- #
 def mark_order_differences(
-    plus: Strand, vendored: Strand
+    plus: Strand, mirrored: Strand
 ) -> list[tuple[int, str, str]]:
-    """``(1-based word index, plus word, vendored word)`` wherever the raw words differ.
+    """``(1-based word index, plus word, mirrored word)`` wherever the raw words differ.
 
     Raw, i.e. before the canonical reordering ``compare`` applies -- so a caller can check
     for itself that reordering really is all that separates the two, rather than take
     ``compare``'s silence on trust.  Requires the two to have the same word count, which
     ``compare`` is what actually establishes.
     """
-    if len(plus.words) != len(vendored.words):
+    if len(plus.words) != len(mirrored.words):
         raise ValueError(
-            f"{plus.label}: {len(plus.words)} plus words vs {len(vendored.words)} "
-            "vendored -- compare() first"
+            f"{plus.label}: {len(plus.words)} plus words vs {len(mirrored.words)} "
+            "mirrored -- compare() first"
         )
     return [
         (i, a, b)
-        for i, (a, b) in enumerate(zip(plus.words, vendored.words), start=1)
+        for i, (a, b) in enumerate(zip(plus.words, mirrored.words), start=1)
         if a != b
     ]
 
@@ -422,7 +422,7 @@ def _word_locations(strand: Strand) -> list[str]:
 
 
 def _aligned_differences(
-    label: str, scope: str, plus: list[str], vendored: list[str], where: list[str]
+    label: str, scope: str, plus: list[str], mirrored: list[str], where: list[str]
 ) -> list[Difference]:
     """Positional comparison, for sequences already known to be the same length.
 
@@ -431,17 +431,17 @@ def _aligned_differences(
     reports a reclassified stroke at two positions neither of which is the stroke.
     """
     return [
-        Difference(strand=label, scope=scope, where=at, mam_plus=a, vendored=b)
-        for a, b, at in zip(plus, vendored, where)
+        Difference(strand=label, scope=scope, where=at, mam_plus=a, mirrored=b)
+        for a, b, at in zip(plus, mirrored, where)
         if a != b
     ]
 
 
 def _opcode_differences(
-    label: str, scope: str, plus: list[str], vendored: list[str], where: list[str]
+    label: str, scope: str, plus: list[str], mirrored: list[str], where: list[str]
 ) -> list[Difference]:
     out: list[Difference] = []
-    matcher = difflib.SequenceMatcher(a=plus, b=vendored, autojunk=False)
+    matcher = difflib.SequenceMatcher(a=plus, b=mirrored, autojunk=False)
     for tag, i1, i2, j1, j2 in matcher.get_opcodes():
         if tag == "equal":
             continue
@@ -452,54 +452,54 @@ def _opcode_differences(
                 scope=scope,
                 where=at,
                 mam_plus=" ".join(plus[i1:i2]) or "(nothing)",
-                vendored=" ".join(vendored[j1:j2]) or "(nothing)",
+                mirrored=" ".join(mirrored[j1:j2]) or "(nothing)",
             )
         )
     return out
 
 
-def compare(plus: Strand, vendored: Strand) -> list[Difference]:
+def compare(plus: Strand, mirrored: Strand) -> list[Difference]:
     """Every disagreement between the two sources' reading of one strand.
 
     Words are read in canonical mark order; see ``Strand.canonical_verses``.
     """
-    if plus.key != vendored.key:
-        raise ValueError(f"comparing {plus.label} against {vendored.label}")
+    if plus.key != mirrored.key:
+        raise ValueError(f"comparing {plus.label} against {mirrored.label}")
     label = plus.label
-    plus_verses, vendored_verses = plus.canonical_verses, vendored.canonical_verses
+    plus_verses, mirrored_verses = plus.canonical_verses, mirrored.canonical_verses
     out: list[Difference] = []
-    if len(plus_verses) != len(vendored_verses):
+    if len(plus_verses) != len(mirrored_verses):
         out.append(
             Difference(
                 strand=label,
                 scope="chanted_verse_count",
                 where="the strand",
                 mam_plus=str(len(plus_verses)),
-                vendored=str(len(vendored_verses)),
+                mirrored=str(len(mirrored_verses)),
             )
         )
     out += _opcode_differences(
         label,
         "words",
         [w for verse in plus_verses for w in verse],
-        [w for verse in vendored_verses for w in verse],
+        [w for verse in mirrored_verses for w in verse],
         _word_locations(plus),
     )
     out += _opcode_differences(
         label,
         "verse_lengths",
         [str(len(v)) for v in plus_verses],
-        [str(len(v)) for v in vendored_verses],
+        [str(len(v)) for v in mirrored_verses],
         [f"chanted verse {i}" for i, _ in enumerate(plus_verses, start=1)],
     )
-    plus_kinds, vendored_kinds = list(plus.stroke_kinds), list(vendored.stroke_kinds)
+    plus_kinds, mirrored_kinds = list(plus.stroke_kinds), list(mirrored.stroke_kinds)
     kind_where = [f"stroke {i}" for i, _ in enumerate(plus_kinds, start=1)]
     differ = (
         _aligned_differences
-        if len(plus_kinds) == len(vendored_kinds)
+        if len(plus_kinds) == len(mirrored_kinds)
         else _opcode_differences
     )
-    out += differ(label, "stroke_kinds", plus_kinds, vendored_kinds, kind_where)
+    out += differ(label, "stroke_kinds", plus_kinds, mirrored_kinds, kind_where)
     return out
 
 
@@ -510,6 +510,6 @@ def compare_all(source: dict, plus_dir: Path | None = None) -> list[Difference]:
         for book in BOOKS
         for reading in READINGS
         for d in compare(
-            from_mam_plus(book, reading, plus_dir), from_vendored(source, book, reading)
+            from_mam_plus(book, reading, plus_dir), from_mirrored(source, book, reading)
         )
     ]
