@@ -151,6 +151,10 @@ def build_kq_rows(*, claims: ClaimCollection, kq_am2_doc: str, kq_special_doc: s
         claims=claims,
         claim_id="mp.plus.templates.kq-special.subtype-counts",
     )
+    cmn.emit_claim_by_id(
+        claims=claims,
+        claim_id="mp.plus.templates.kq.qere-first-contexts",
+    )
     return kq_rows
 
 
