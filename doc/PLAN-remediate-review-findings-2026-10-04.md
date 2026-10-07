@@ -488,7 +488,7 @@ tracked file byte for byte, and then with item 4.6's data and code patched:
    `APPROVED_POPULATION_SHA256`, all 20 fraction pins pass, and no Yeivin page changes, so the
    refresh procedure's stop for new pins does not arise.
 3. `out/accgram/post-stress-meteg.json` does not change. In the `cant-alef` scans the two chanted
-   words before the paseqs, פֶ֙סֶל֙ and בַּשָּׁמַ֙יִם֙, lose the paseq from their intervening punctuation,
+   words before the paseqs, פֶ֙סֶל֙ and בַּשָּׁמַ֙יִם֙, lose the paseq from their intervening punctuation,
    but neither is a record of the survey, which needs a meteg after the stress, and neither has a
    meteg. N3's forms are read alike, as a setumah or a petuḥah.
 4. The final-stress comparison of `py/tests/test_final_stress_vs_phonetic_mam.py`, the

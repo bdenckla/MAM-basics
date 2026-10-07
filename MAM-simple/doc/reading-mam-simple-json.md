@@ -108,7 +108,7 @@ eight, as at Lam.1.18:
 {
   "type": "kq",
   "contents": [
-    { "type": "kq-q", "text": "הָֽעַמִּ֗ים" },
+    { "type": "kq-q", "text": "הָֽעַמִּ֗ים" },
     { "type": "kq-k", "text": "עמים" }
   ]
 }
