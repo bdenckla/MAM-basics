@@ -40,7 +40,7 @@ def build_body(*, claims: ClaimCollection):
         author.para(["← Back to ", plus_back_link]),
         author.para(
             [
-                "Its first parameter is the \u201ctarget\u201d - what is being documented."
+                "Its first parameter is the \u201ctarget\u201d — what is being documented."
                 " The second parameter contains the documentation"
                 " (anomalous forms, variant readings, uncertain readings, etc.).",
             ]
