@@ -368,8 +368,10 @@ def pin_claims(survey: dict, rows: list[dict]) -> None:
         f" MAM {len(mam_left)}, WLC {len(rows)}"
     )
     telisha = [r for r in rows if r["sequence"] in _TELISHA_GERESH_PAIRS]
-    assert len(telisha) == 5, (
-        "the page says five of the rows are the already-whitelisted telisha gedolah words;"
+    # The page splices how many of the rows are the already-whitelisted telisha gedolah words,
+    # and speaks of them in the plural.
+    assert len(telisha) >= 2, (
+        "the page speaks of the already-whitelisted telisha gedolah words in the plural;"
         f" the data now has {len(telisha)}"
     )
     assert all(

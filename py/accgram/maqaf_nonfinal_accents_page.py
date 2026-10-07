@@ -1312,16 +1312,20 @@ def pin_claims(survey: dict) -> None:
     # their numbers is spliced; everything else they say is a stated-in-words claim about the
     # data, so each is pinned here.
     #
-    # (1) "Most of these pairs are covered in [six ITM sections and six CoS ones]", against the
-    # second paragraph's two.  Both counts are the table's rows sorted into the two constants, so
-    # a corpus bump adding a ninth row would leave the paragraphs describing a table that has
-    # neither count, and one that emptied a row would leave the second naming a pair the table no
-    # longer has.
+    # (1) "Most of these pairs are covered in [six ITM sections and six CoS ones]", and the
+    # second paragraph's two named rows.  So every pair the sections cover and both named rows
+    # must still have a spreader, and the covered pairs must be more than half of the table's
+    # pairs.  A corpus bump adding a ninth row leaves both paragraphs true while the covered
+    # pairs stay a majority; one emptying a cited row would leave a paragraph naming a pair the
+    # table no longer has.
     spreaders = _spreaders_by_pair(survey)
     inventoried, after_gaya = set(_INVENTORIED_PAIRS), set(_MAQAF_AFTER_GAYA_ROWS)
     assert not inventoried & after_gaya, sorted(inventoried & after_gaya)
-    assert set(spreaders) == inventoried | after_gaya, sorted(
-        set(spreaders).symmetric_difference(inventoried | after_gaya)
+    absent = sorted((inventoried | after_gaya) - set(spreaders))
+    assert not absent, f"pairs the paragraphs cite that have no spreader: {absent}"
+    assert 2 * len(inventoried) > len(spreaders), (
+        "the first paragraph says most of the table's pairs are covered in the sections it"
+        f" cites, {len(inventoried)} of {len(spreaders)}"
     )
 
     # (2) "are covered in [ITM] §357 and [CoS] ch. 1 §43, because they are quite a different
@@ -1879,7 +1883,8 @@ def _scans_appendix_section() -> tuple[object, ...]:
 # second paragraph says, in the same sentence that names them rather than a paragraph later.
 #
 # The split is a constant rather than a phrase in the paragraph so ``pin_claims`` can defend
-# "Most" and the two named rows against a corpus bump that added a ninth row or emptied one.
+# what the two paragraphs say: that every cited pair and both named rows still have a spreader,
+# and that the cited pairs are "Most" of the table's.
 #
 # §224 IS THIS PAGE'S CITATION AND THE SIBLING SURVEY'S IS §223, which is a discrepancy this
 # comment reports rather than settles.  ``maqaf_nonfinal_accents``' ``_NAMED_CONFIGURATIONS``
