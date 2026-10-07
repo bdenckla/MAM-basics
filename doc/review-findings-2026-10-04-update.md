@@ -784,3 +784,335 @@ risk: "approved; execute". As the plan's "Ben's part" sets out, that reply appro
 **Effective base State, 2026-10-06:** partly acted on; close-out steps 1 and 2 complete, the
 remediation plan approved; remediation in progress. The base report's line 3 stays as written, and
 this update remains `State: open` while its base survives.
+
+## Remediation executed, 2026-10-07
+
+Recorded by a Claude session (Claude Opus 5.5 in the Claude desktop app) on 2026-10-07, New York
+time: the session that wrote `doc/PLAN-remediate-review-findings-2026-10-04.md` and the entry above,
+which then executed the plan, as close-out step 3 of `doc/periodic-review.md`, under Ben's
+"approved; execute" of 2026-10-06. It worked in the full clone `C:/Users/BenDe/GitRepos/MAM-basics`
+on `main`. Editing began at `2af21b46`, the commit that added the plan, once `aef25641` and
+`2af21b46` were confirmed ancestors of `HEAD`; since `aef25641` only the plan had changed, so every
+passage that the plan quotes still read as quoted.
+
+**Commits**, in the plan's waves:
+
+1. wave 0, Ben's approval: `9b654fd4`;
+2. wave 1, text outside the products: `e66ce85b` (procedure documents), `1ba7bfa3` (instructions,
+   skills and policy comments), `72fc4097` (maintained documents and records) and `ca6f818b`
+   (docstrings and comments);
+3. wave 2, code: `1a2456da` (item 7.11), `3e0c383f` (7.8), `0f047b4f` (N2) and `82cab117` (4.5);
+4. wave 3, reader-facing documents that no program generates: `2efd5de5`;
+5. wave 4, generated pages: `e52e0e6d` (items 8.1 and 9.2), `0eb6ed17` (8.3) and `41f3d2bf` (8.4);
+6. wave 5, MAM-simple's notice: `65a744d3`;
+7. wave 6, the Phonetic MAM correction: `26c33edd`;
+8. `03b01e85`, which merged, with no conflict, the two commits that reached `origin/main`
+   meanwhile: `20d2c7bd`, which stores holam before qadma in the 2 Samuel 15:8 pointed ketiv, and
+   its merge `8f225663`. They touch only near-Aleppo files and `py/render_wt/render_wikitext_kq.py`,
+   none of which this remediation changed;
+9. `bea27331`, which puts five lines of hand-authored Hebrew into MAM's mark order after the final
+   gate's first suite run failed on them ("Checks and the final gate", item 4);
+10. the commit that adds this entry and sets the plan's State, and a last commit that adds the push
+    and the deployment to "Checks and the final gate".
+
+**How each disposition was established.** Each wave's commit message records the measurement that
+it re-ran for its items on the committed code, and every commit had `git diff --check` and, for its
+changed Python files, Black and ruff. On the final tree, `bea27331`, a scratch script read every
+site that the plan names from the commit's tree, in 90 checks that include the changed lines of the
+three corrected chapter pages: each site has its approved text and lacks the text it replaced, and
+`git log 2af21b46..bea27331` names, for each site's file, the commit given below. The release's
+three changed book files and the two files that hash them are covered instead by the analysis
+reader's measurement below and by the gate's mega, which regenerated them with no diff. After the
+final gate, every measurement that is more than a reading was re-run on the same tree, with the
+results given below; the code items' demonstrations among them reuse harnesses that the planning
+sub-agents pm-code and tool-code wrote, re-read before use. No sub-agent ran during execution.
+Nothing in MAM-private or hbofonts was read except by tracked code: the suite, and the megas of
+wave 6 and of the final gate, whose `phonetic-mam-export` step re-exports the Phonetic MAM release
+through the private adapter. A change that makes a text say what code does fixes the text, not
+the behaviour, and the dispositions of items 7.2, 7.5 and 9.39 say so.
+
+**Summary.** Of the 39 items, 34 are fixed; items 7.2, 7.5 and 9.39 have their text fixed and the
+behaviour it describes unchanged, as each disposition chose; and items G and 3.5 record a policy in
+the policy file's comments. No item is left unfixed.
+
+### Finding 1: MAM-simple's narpas label
+
+1. **1.3, with the MAM-simple half of 1.2: fixed in `65a744d3`.** MAM-simple's consumer notice
+   names `lp-paseq`, and its README and two reading guides say "(narrow-sense paseq,
+   `<lp-paseq>`)"; MAM-parsed's notice, README and guide keep `מ:פסק`. Re-measured at `bea27331`:
+   the notice's narpas rule names `lp-paseq` in all 70 of MAM-simple's data files, 35 JSON and 35
+   XML, and the template in all 24 of MAM-parsed's plus files. The regeneration changed one line in
+   each of the 70 files and nothing else, and the hand-run generators showed no product change
+   ("Checks and the final gate", item 2).
+
+### Finding 2: `DATA-LICENSES.md`
+
+1. **2.1: fixed in `2efd5de5`.** `in/accgram/printed_decalogue_teamim.json` has its own CC-BY-SA
+   4.0 row, and row 79 keeps Ben's hand transcriptions alone under CC0. Re-measured: the file's
+   `provenance` names page id 344500 and revision 3025606, which `in/mam-ws-special/manifest.json`
+   records for the same page.
+2. **2.2: fixed in `2efd5de5`.** Rows 84 and 91 give MAM's CC-BY-SA 4.0 to the Hebrew that a file or
+   page quotes from MAM.
+
+### Finding 3: public files that carry private-repository material
+
+1. **G, the governing question: recorded in `1ba7bfa3`.** The `MAM-private` entry's comment in
+   `in/repo_maintenance_policy.json` says that the document it names governs a session that may
+   read MAM-private, and that a public-only session judges by the 2026-08-27 rule.
+2. **3.5: recorded in `1ba7bfa3`.** The `repo_visibility` comment records that rule's scope. The
+   policy file parses as JSON, and `py/tests/test_repo_visibility_declared.py` passes.
+3. **3.1 to 3.4: left as they are**, under item 3.5's disposition.
+
+### Finding 4: Phonetic MAM
+
+1. **4.1's question: fixed in `2efd5de5`.** `Phonetic-MAM/README.md` lists the inverted nuns as
+   departure 9. Re-measured at `bea27331`: 9 `spi-invnun` in `MAM-simple/json-vtrad-mam/`, 2 in
+   Numbers and 7 in Psalms, and no U+05C6 in the release's book files.
+2. **4.4: fixed in `1ba7bfa3`.** The refresh procedure, `dependent-refresh.md`, says to stop and ask
+   Ben whether to retire the legacy projection comparison when the suite fails with "every chapter
+   left the comparison", the message that `py/phonetic_mam/projection_check.py` gives.
+3. **4.5: fixed in `82cab117`.** Re-measured at `bea27331` with pm-code's fake adapters in place of
+   `_adapter_command`, the limit patched to 5 s and a grandchild sleeping 20 s, nothing reaching
+   MAM-private: for both the books and the test pages, a grandchild that holds stderr, stdout or
+   both, or holds stdout after the adapter has written everything and exited, ends the run at 10.0
+   to 10.2 s, the limit plus the grace, where `aef25641` took 20.15 to 20.19 s; an adapter that
+   exits 1 at once while its grandchild holds stderr ends it at 5.1 to 5.3 s; and five normal runs
+   of each return their results, leaving no thread, warning or open pipe, with the handle count back
+   at its baseline. The harness's stub of `display_projection.project_book` had first to accept the
+   two keyword arguments that wave 6 added.
+4. **4.6: fixed in `26c33edd`.** The four narrow-sense paseq marker rows of Exodus 20:3 and
+   Deuteronomy 5:7 have the strand label `טעם עליון` in both pronunciations, from the ב parameter of
+   MAM-parsed's dual-cantillation template, so the analysis reader counts them in that strand
+   alone. Re-measured at `bea27331` through the analysis reader: at both verses the two marker rows
+   have the strand `cant-bet`, the reader's name for that label, a `cant-alef` selection lists no
+   narrow-sense paseq and a `cant-bet` selection lists both, and these four are the only labelled
+   marker rows in the 39 books.
+5. **4.7: fixed in `26c33edd`.** `in/phonetic_mam_display_corrections.json` lists the three
+   corrected chapters, each with Ben's approval and the reason; `verify_site` leaves them out of the
+   frozen comparison, as it does a refreshed chapter; and `check` lists them. Re-measured at
+   `bea27331`: `py/main_phonetic_mam.py check` reports that 0 of the 929 chapters have left the
+   comparison by a change of input, and lists the 3 that have left it by an approved correction,
+   Genesis 35, Exodus 20 and Deuteronomy 5; the suite's comparison of the other 926 passes.
+
+### Finding 5: texts that `AGENTS.md`'s new push rule left behind
+
+1. **5.2: fixed in `e66ce85b`.** D11's final integration runs the suite there too, or records a
+   judged skip.
+2. **5.3: fixed in `1ba7bfa3`.** `AGENTS.md` sends a skip decision that follows the last commit to
+   an empty commit rather than an amend.
+3. **5.4: fixed in `ca6f818b`.** `py/product_scopes.py`'s docstring no longer restates the hand-run
+   rule, so its "this docstring does not restate it" holds; `test_product_scopes.py` passes.
+4. **5.5: left as it is.**
+
+### Finding 6: the review procedure documents
+
+1. **6.1: fixed in `e66ce85b`.** Both documents say that MAM-basics' instance of the 2026-10-02
+   trial ran, and that the procedure for a later two-agent window is Ben's choice when he starts
+   one.
+2. **6.2: fixed in `e66ce85b`.** The two sentences saying that `doc/dual-agent-review.md` records
+   only what pairing adds, and `doc/periodic-review.md`'s advice to read that document only for a
+   two-agent window, make an exception of D10's filename and State rules and D12's rule for
+   correcting a finished dated document.
+3. **6.3: fixed in `e66ce85b`.** In both documents a brief names the private repositories outside
+   the workspace that the tree cites, today `bdenckla/trope` and `bdenckla/al-hatorah`.
+4. **6.4: fixed in `e66ce85b`.** `doc/periodic-review.md` credits D9 and D11 only with keeping a
+   transcript-only claim out of a tracked turn.
+5. **6.5: fixed in `e66ce85b`.** D9 glosses "public evidence only" by property 2 of
+   `doc/periodic-review.md`: the turn reads no repository that property 2 names as private.
+
+### Finding 7: checks and tools that do less than they say
+
+1. **7.2: the docstring fixed in `ca6f818b`; the lint's two gaps are documented, not closed.** The
+   docstring now says that the lint reads only `node_type_and_subtype`'s top-level `if` tests and
+   the return constants of the two predicates, and not the refusal's body. The lint is unchanged, as
+   the disposition chose.
+2. **7.4: left as it is.**
+3. **7.5's second half: the two texts fixed in `72fc4097` and `ca6f818b`; the code is unchanged.**
+   `doc/clone-forests.md` and `py/repo_util/forest_sync.py`'s module docstring say that the clone
+   that only the calling session occupies is skipped even when it is dirty, off `main`,
+   mid-operation or locked, as the code's skip, which returns before those reasons are consulted,
+   does.
+4. **7.6: left as it is.**
+5. **7.8: fixed in `3e0c383f`.** Re-measured at `bea27331` in memory, every side effect stubbed: a
+   missing default branch, an unreadable branch ref and a Git that cannot be launched each print
+   `worktrees: FAILED (...)`, steps 1 and 3 to 7 still run, and the run exits 1, as it does when
+   step 1 fails; a clean audit exits 0. The catch takes `OSError` as well as the disposition's
+   `RetirementError`, as the plan records, since a Git that cannot be launched is the audit's other
+   failure.
+6. **7.11: fixed in `1a2456da`.** Re-measured at `bea27331` by subprocess, with `PYTHONUTF8=0` and
+   no `PYTHONIOENCODING`: one stream of 14 lines, seven requests that each carry the escaped lone
+   surrogate `"\ud800"`, each followed by a good request, gets 14 replies and exit status 0. The two
+   routes that echo it, a `phrase` request's untangler key and an `accents` value after a word's
+   letters, get the error reply `UnicodeEncodeError`, "computation rejected"; every good line gets
+   its result.
+
+### Finding 8: questions for Ben
+
+1. **8.1: fixed in `e52e0e6d`, the footnote, and `1ba7bfa3`, the skill.** The Job 38:12 footnote and
+   its Ezekiel caption say "orphaned" where they said "unattached", and `hebrew-prose`'s
+   `references/terminology.md` defines "orphaned" as a point that belongs to no letter, naming the
+   cases in which the word is wrong. Re-measured at `bea27331`: `git grep` finds "unattached" in
+   none of `py/author_boj_qr/`, `gh-pages/book-of-job/` and `book-of-job/out/`, and the gate's mega
+   left the regenerated page unchanged.
+2. **8.2: left as it is.**
+3. **8.3: fixed in `0eb6ed17`.** The landing page lists Phonetic-MAM among the MAM datasets.
+4. **8.4: fixed in `41f3d2bf` on the nine pages that the disposition names, the scope Ben
+   approved.** Each has the credit line once, after its existing credit. "Item 8.4's census" below
+   records the other English pages that quote MAM.
+5. **8.5: fixed in `2efd5de5`.** `Phonetic-MAM/LICENSE.md`, row 56 and the preface to the MAM
+   statement give MAM's terms to the MAM Hebrew that `Phonetic-MAM/examples/display.json` quotes.
+6. **8.6: fixed in `2efd5de5`.** `Yeivin-ITM/README.md`'s two sentences are in the past tense.
+7. **8.7: fixed in `72fc4097`.** Re-measured at `bea27331`: `py/main_0_mega.py` skips one step in a
+   cloud session, `phonetic-mam-export`.
+8. **8.8: fixed in `1ba7bfa3`.** The common body names stderr's `backslashreplace` handler, as
+   `hebrew-prose`'s `references/verifying.md` requires; deployed as "Checks and the final gate"
+   records.
+9. **8.9: fixed in `1ba7bfa3`.** `rendered-prose.md` calls the strand-name rule trio-only
+   throughout; deployed likewise.
+10. **8.10: deferred**, unchanged.
+
+### Finding 9: one-line items
+
+1. **9.2: fixed in `e52e0e6d`.** The footnote's heading says "the similar cases"; `git grep` finds
+   "parallel passages" in none of the three places that item 8.1's search covers.
+2. **9.4: fixed in `2efd5de5`.** Rows 52 and 57 cover the two products' `LICENSE.md` files, and
+   `Yeivin-ITM/LICENSE.md`'s restatement follows.
+3. **9.8's README half: fixed in `2efd5de5`.** `README.md`'s "Code: GPL-3.0" item sets its
+   exceptions between dashes.
+4. **9.22: fixed in `1ba7bfa3`, `72fc4097` and `2efd5de5`.** Re-measured at `bea27331`: every
+   `powershell` fence in tracked Markdown, 236 in 302 files, parses with PowerShell's parser, and
+   so does the unlabelled block after "Re-establish with:" in
+   `doc/PLAN-repo-maintenance-across-GitRepos.md`.
+5. **9.39: the document fixed in `72fc4097`; the limit is unchanged.** Re-measured by subprocess at
+   `bea27331`, with the limit at 16,777,216 characters: a request of that many characters is
+   answered when unterminated and ends the stream when an LF ends it, and one a character shorter
+   is answered when an LF ends it and ends the stream when CR and LF end it. So the limit counts
+   the line terminator, as the document now says.
+6. **9.12, 9.13, 9.18, 9.21, 9.36, 9.38 and 9.42: left as they are.**
+
+### The review's "Noticed outside the diff"
+
+1. **Issue #296: left as it is**, with no outward act.
+2. **N2, `_reference_matches`: fixed in `0f047b4f`.** Re-measured at `bea27331` in memory, against
+   `aef25641`'s copy, with tool-code's 29 cases in relative and absolute spellings: `path:3`,
+   `path:3:`, `path:3-5`, `path:3–5` and `path#L3`, bare or followed by text or punctuation, now
+   count as citations; every near miss, such as `path:3:7`, a longer name, `:3x`, `#L`,
+   `#section` or `::3`, stays rejected; all 58 results match their expectations; a directory
+   reference followed by `:3` stays rejected; and lines 488 and 489 of
+   `doc/dual-agent-review-comparison-2026-10-01.md` now count as citations of their `.novc` file.
+3. **N3, the break markers: assessed, and corrected in `26c33edd` under item 4.7's path.** The
+   plan's D3 found that at Genesis 35:22, Exodus 20:13 and Deuteronomy 5:17 the release had the
+   same kind of break as MAM-parsed, MAM-simple and MAM's special page, but not MAM's form of it,
+   and Ben approved the correction with the plan. Re-measured at `bea27331` through the analysis
+   reader: the marker row of Genesis 35:22 is `פפ`, and the second marker row of Exodus 20:13 and
+   of Deuteronomy 5:17 is `ססס`, MAM-parsed's forms, each in both strands' selections.
+
+### "Noticed while fixing", items 1 and 2
+
+1. **W1: fixed in place in `72fc4097`.** The archive commit is "the removal commit's parent", and
+   the Codex remediation's evidence "was retained ... until the worktree and its `.novc/` were
+   removed on 2026-10-04".
+2. **W2: fixed in `ca6f818b`.** The step record and its comment name MAM-parsed's `plus/` tree,
+   which `py/accgram/post_stress_meteg_sources.py` reads through
+   `read_books_from_mam_parsed_plus`.
+
+### Item 8.4's census and the approved scope
+
+The planning sub-agent attrib read all 1,653 tracked pages under `gh-pages/` at `aef25641`, 1,650 of
+them English, and classified each generated family by what its generator renders. Apart from the
+nine pages above, no page credits Hebrew Wikisource with a he.wikisource link. About 1,105 English
+pages quote MAM material with no credit on the page: the MAM-with-doc edition's 60 pages, the
+near-Aleppo edition's 65 and its 8 documentation pages, the Phonetic MAM release's 929 chapter pages
+and 4 example pages, and about 40 more in a dozen families (the 23 FOI pages, 7 change logs, 9
+post-stress-meteg pages, mpplus guides, misc pages, accgram pages that quote MAM forms, an UXLC
+survey and two Holman pages). About 1,066 of them belong to the MAM-with-doc, near-Aleppo and
+Phonetic MAM sites, whose index pages already have the prescribed credit. Eight more credit MAM's
+source in another form: `gh-pages/MAM-OSIS/index.html`, `gh-pages/MAM-for-Sefaria/index.html`,
+`gh-pages/MAM-parsed/plus/html/mpplus.html` and `mpplus_kq_special.html` name Wikisource with no
+link; `urwotm_2` names it before two screenshots; `maqaf-nonfinal-accents.html` names it only in
+hover text; and `telg-doc-notes.html` and `ps17v14-mam-doc-notes.html` credit MAM-with-doc. The
+credit on all of them would touch about a dozen generators and four HTML builders, move the
+near-Aleppo check's `PIN`, need a place outside `<main>` on every Phonetic MAM chapter page, and,
+for `gh-pages/MAM-OSIS/index.html`, need a rerun of `py/main_mam_osis.py` that would also publish
+the lag behind MAM-simple that Ben accepted on 2026-09-30. Ben approved the credit on the nine
+pages alone, so the rest is a separate decision of his; nothing here starts it.
+
+### Departures from the plan
+
+1. **R9 was missing from wave 3's list**, though the plan gave its wording; `2efd5de5` carried it,
+   and corrected the plan's wave 3 to name it.
+2. **Item 8.4's line has one source for its words as well as its links.** Beside `LICENSE_URL`,
+   `py/mb_misc/mam_attribution.py` has `ENGLISH_ATTRIBUTION_PARTS`, the line as (text, link or
+   `None`) parts, which the seven generators render through their own HTML builders.
+3. **Item 4.7's record is validated in a module of its own,**
+   `py/phonetic_mam/display_corrections.py`, which `projection_check.corrected_chapters` and the
+   exporter both use, where the plan put the validation in `projection_check`.
+4. **A failing check did not stop the gate.** The plan's stop conditions include a failing check.
+   The final suite's two failures, both Hebrew mark-order lints, had one remedy, which the lints
+   name and `AGENTS.md`'s rule on mark order requires; it changes no visible character and no
+   generated file; one of the five lines was this remediation's own, and the other four would have
+   blocked any push of `main`. So this session applied the remedy in `bea27331` rather than
+   stopping, and ran the suite again ("Checks and the final gate", item 4).
+
+**A false claim in a pushed commit message.** `2af21b46`'s message says that the mega and the suite
+were skipped because "the commit adds one planning document under doc/, which no generator, product
+or test reads". `py/tests/test_prose_mark_order.py` reads every hand-authored prose file, the plan
+among them, and failed on the plan's line 492. `bea27331`'s message and this entry correct the
+claim; the historical message stays as written.
+
+### Noticed while planning, not acted on
+
+No item names these, so each stays as it is; the plan's "Not in this remediation" records them.
+
+1. `doc/PLAN-silluq-before-gaya-template.md:290` and `:491` begin with an unquoted
+   `<home-clone>/.venv/Scripts/python.exe`, which parses only because the parser reads `<` as a
+   command name, so item 9.22's parse-based census missed them.
+2. `doc/PLAN-repo-maintenance-across-GitRepos.md:383` describes the forest write's refusal and its
+   caller-only skip in the order that `doc/clone-forests.md` had before item 7.5.
+3. The release has `ססס` for each of MAM's 328 song dividers, `מ:ששש`, which no README or schema
+   describes; `py/author_misc/mp_cmn_rows_other.py:89–90` calls the divider "analogous to ססס".
+4. `py/author_misc/mp_cmn_rows_other.py:57` says that `פפ` and `סס` appear "primarily in D column",
+   where MAM-parsed's C cells hold them and its D cells hold none.
+5. `DATA-LICENSES.md` has no row for `gh-pages/near-aleppo/` or `out/near-aleppo/`, which arrived on
+   2026-10-05, after the review's window.
+
+### Checks and the final gate
+
+1. **Each commit** had the checks its message records: `git diff --check`; Black and ruff on its
+   changed Python files; and the targeted tests that the plan names for its wave, all passing.
+2. **The hand-run generators, for item 1.3.** `git archive` extracted the trees of `41f3d2bf`, the
+   commit before wave 5, and of `65a744d3` into two scratch directories outside the checkout. In
+   each, from its root and with this clone's interpreter, `py/main_mam4sef.py`,
+   `py/main_mam4sef.py --just-ajf` and `py/main_mam_osis.py` exited 0. The two trees' outputs, 164
+   files under `MAM-for-Sefaria/`, 59 under `MAM-OSIS/`, 29 under `gh-pages/MAM-OSIS/` and 3 under
+   `gh-pages/MAM-for-Sefaria/`, are identical apart from the provenance line that names the
+   extraction folder, in four `_provenance.md` files and `gh-pages/MAM-OSIS/index.html`, since, as
+   the review found, the Sefaria reader ignores the notice and the OSIS reader drops XML comments.
+   So the change reaches neither product, and their tracked files are left as they are, with the
+   lag Ben accepted on 2026-09-30.
+3. **The mega** ran on `03b01e85` from 23:51 on 2026-10-06 to 00:04 on 2026-10-07, New York time:
+   all 60 steps exited 0 in 755.1 s of steps, with Graphviz the pinned 16.0.0 (20260814.1018), the
+   claims check at 51 passed, 0 failed and 0 pending, and the `phonetic-mam-export` step
+   re-exporting the release through the private adapter in 118.9 s. It left no tracked diff and no
+   untracked file, so every output it regenerates, the corrected release, its pages and the surveys
+   that read it among them, equals the committed one. Wave 6 had run the mega from
+   `phonetic-mam-export` on, as `26c33edd`'s message records.
+4. **The suite** first ran on `03b01e85` from 00:04 to 00:12, New York time: 1,053 passed, 5 skipped
+   and 2 failed in 450.80 s. Both failures were mark-order lints, `test_mam_simple_mark_order.py`
+   and `test_prose_mark_order.py`, on five lines whose Hebrew had its marks in Unicode's order
+   rather than MAM's: four lines of the Lamentations 1:18 example in MAM-simple's JSON and XML
+   reading guides, which `abded326` added on 2026-10-06 with the suite skipped at Ben's
+   instruction, so that `origin/main` had failed both lints since then; and the plan's line 492,
+   which `2af21b46` added. `bea27331` passed the five lines through
+   `uni_denorm.give_std_mark_order`, the remedy that both lints prescribe: each line keeps its
+   characters, with only the order of the marks within a letter's cluster changed, and each
+   reordered word now occurs verbatim in `MAM-simple/xml-vtrad-mam`, the data quoted. No generator
+   reads those three files, so the mega's result stands for `bea27331`. The suite then ran on
+   `bea27331` from 00:15 to 00:22, New York time: 1,055 passed and 5 skipped in 432.41 s, with
+   nothing failing.
+
+**Effective base State, 2026-10-07:** acted on. The remediation of the 39 items is integrated on
+`main` at `bea27331`, which passed the final gate, every item fixed or recorded as above. The 16
+items left as they are need nothing more, and item 8.10 stays deferred until Ben starts its cleanup
+task. The base report's line 3 stays as written, and this update remains `State: open` while its
+base survives.

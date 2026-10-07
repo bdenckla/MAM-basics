@@ -1,6 +1,6 @@
 # Remediate the 2026-10-04 review of MAM-basics
 
-State: live; approved by Ben on 2026-10-06; executing
+State: executed 2026-10-07; approved by Ben on 2026-10-06.
 
 Written on 2026-10-06, New York time, by a Claude session (Claude Opus 5.5 in the Claude desktop
 app) as close-out step 2 of the 2026-10-04 review (`doc/periodic-review.md`, "Close-out: from
