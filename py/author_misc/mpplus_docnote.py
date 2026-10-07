@@ -37,7 +37,7 @@ def build_body(*, claims: ClaimCollection):
     plus_back_link = author.anchor_h("Reading $MAM-parsed-plus", _PLUS_DOC)
     return [
         author.heading_level_1(["Documentation template (", author.hbo("נוסח"), ")"]),
-        author.para(["<- Back to ", plus_back_link]),
+        author.para(["← Back to ", plus_back_link]),
         author.para(
             [
                 "Its first parameter is the \u201ctarget\u201d - what is being documented."
