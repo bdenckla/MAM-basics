@@ -854,7 +854,7 @@ wave 4), and every other generated file. Any other diff is a finding.
 | R10 | Phonetic MAM legacy comparison retired; page set replaces the 974 pin | 3 | implemented |
 | R11 | Yeivin population hash goes; quoted-form check added | 4 | implemented |
 | R12 | Recorded input hashes go (analysis file, claim file v2) | 4 | implemented |
-| R13 | Test pins replaced by rules or deleted | 5 | active |
+| R13 | Test pins replaced by rules or deleted | 5 | implemented |
 | R14 | Every reader of the Decalogue capture moves to the mirror | 5 | implemented |
 | R15 | Statement checks, figures, check-before-write, render-tag reports | 6 | active |
 | R16 | Refresh skill and reference rewritten | 7 | active |
@@ -869,3 +869,9 @@ wave 4), and every other generated file. Any other diff is a finding.
    "MAM-private's own mega runs the census now", though near-Aleppo's census has run in this
    repository since 2026-10-05. The commit that recorded Ben's clarification of decision 4
    removed the first and corrected the second.
+3. **Three transcriptions' comments predate wlc-utils#74.** The comments of
+   `in/accgram/edition_transcriptions/simtiq_dt_elyon.txt`, `koren_ex_taxton.txt` and
+   `koren_dt_taxton.txt` say that the reference data cannot tell legarmeh from narrow-sense paseq,
+   which has been false since wlc-utils#74 added `faithful_chanted_verses`, and those and other
+   transcription comments still call the Wikisource strands "vendored". Wave 5 reworded
+   docstrings and documentation, not the transcription files.

@@ -3,6 +3,7 @@ import unittest
 from mb_cmn import bib_locales as tbn
 from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
+from mb_cmn import ws_tmpl2 as wtp
 from versification_and_cantillation import doc as vc_doc
 from versification_and_cantillation import generate_doc as vc_generate_doc
 from versification_and_cantillation import strands as vc_strands
@@ -46,39 +47,35 @@ class TestStrandWordExtraction(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        books = plus.read_parsed_plus_bk39s(
-            (tbn.BK_EXODUS, tbn.BK_DEUTER), paths.mam_parsed_path()
+        cls.books = plus.read_parsed_plus_bk39s(
+            (tbn.BK_EXODUS, tbn.BK_NUMBERS, tbn.BK_DEUTER), paths.mam_parsed_path()
         )
-        cls.exo = books[tbn.BK_EXODUS]["verses_plus"]
-        cls.deu = books[tbn.BK_DEUTER]["verses_plus"]
 
-    def _last(self, vp, bk, ch, vr, param):
-        # _strand_words already returns a word list (see _strand_word_text().split()).
-        return vc_strands._strand_words(vp, bk, ch, vr, param)[-1]
-
-    def test_deut_5_9_last_word_is_the_qere_not_the_sof_pasuq(self):
-        # Before the fix this returned the bare "׃": the top-level כו״ק holding the qere
-        # מִצְוֺתָֽי fell through _strand_word_text and vanished from the strand.
-        expected = "מִצְוֺתָֽי׃"  # qere מִצְוֺתָֽי + the trailing sof pasuq
-        for param in (vc_strands._TAXTON, vc_strands._ELYON):
-            with self.subTest(param=param):
-                self.assertEqual(
-                    self._last(self.deu, tbn.BK_DEUTER, 5, 9, param), expected
-                )
-
-    def test_exodus_20_5_and_deut_5_9_agree_at_the_verse_end(self):
-        # The whole point of the bug report: the two Decalogues in fact agree at this endpoint
-        # (both read the qere), so a correct extraction makes them equal — the earlier "Exodus
-        # vs Deuteronomy differ" was purely the dropped-template artifact.
-        for param in (vc_strands._TAXTON, vc_strands._ELYON):
-            with self.subTest(param=param):
-                ex_last = self._last(self.exo, tbn.BK_EXODUS, 20, 5, param)
-                de_last = self._last(self.deu, tbn.BK_DEUTER, 5, 9, param)
-                self.assertEqual(de_last, ex_last)
-                self.assertEqual(
-                    vc_strands._strip_pointing(de_last),
-                    vc_strands._strip_pointing(ex_last),
-                )
+    def test_every_strand_word_of_a_dual_cant_verse_has_letters(self):
+        # The rule that failure broke: a dropped word leaves a token with no letters, such as
+        # that bare sof pasuq.  Checked in both strands of every verse that holds a מ:כפול
+        # unit, and no wider: elsewhere a top-level נוסח still awaits Ben's projection decision
+        # (doc/PLAN-deferred-template-projection-decisions.md, "7. Versification-and-cantillation
+        # page Scripture projection").
+        dual_verses = 0
+        for book in self.books.values():
+            vp = book["verses_plus"]
+            for bcvt, minirow in vp.items():
+                if not any(
+                    wtp.is_template_with_name(wtel, vc_strands._DUALCANT)
+                    for wtel in minirow.EP
+                ):
+                    continue
+                dual_verses += 1
+                bk, chnu, vrnu = tbn.bcvt_get_bcv_triple(bcvt)
+                for param in (vc_strands._TAXTON, vc_strands._ELYON):
+                    with self.subTest(verse=(bk, chnu, vrnu), param=param):
+                        words = vc_strands._strand_words(vp, bk, chnu, vrnu, param)
+                        self.assertTrue(words)
+                        self.assertEqual(
+                            [w for w in words if not vc_strands._skel(w)], []
+                        )
+        self.assertTrue(dual_verses)
 
 
 class TestStrandBalancer(unittest.TestCase):
@@ -102,8 +99,7 @@ class TestStrandBalancer(unittest.TestCase):
         # check gather_examples' balanced_pair enforces inline; running it here over the whole
         # column list makes any future silent letter-inequality a test failure.
         columns = vc_strands.build_columns(self.books)
-        # early 5 + Sabbath 4 + late 4 + Deut-Sabbath 4 + Deut-late 4 = 21 columns.
-        self.assertEqual(len(columns), 21)
+        self.assertTrue(columns)
         for col in columns:
             with self.subTest(column=col["label"]):
                 t_first, t_last, e_first, e_last = vc_strands._balanced_sides(
@@ -111,20 +107,6 @@ class TestStrandBalancer(unittest.TestCase):
                 )
                 self.assertEqual(_joined_skel(t_first), _joined_skel(e_first))
                 self.assertEqual(_joined_skel(t_last), _joined_skel(e_last))
-
-    def test_balancer_pulls_the_leading_lo_columns(self):
-        # The two columns that actually diverge (MAM Exod 20:2b and 20:3): each pulls one word
-        # inward on both sides so the taxton's maqaf-joined לֹא and the elyon's free לֹא align.
-        columns = {c["label"]: c for c in vc_strands.build_columns(self.books)}
-        for label in ("early 20:2b", "early 20:3"):
-            with self.subTest(column=label):
-                col = columns[label]
-                t_first, _, e_first, _ = vc_strands._balanced_sides(
-                    col["t_words"], col["e_words"], label=label
-                )
-                self.assertEqual(len(t_first), 2)
-                self.assertEqual(len(e_first), 2)
-                self.assertEqual(_joined_skel(t_first), _joined_skel(e_first))
 
     def test_balancer_raises_loudly_on_irreconcilable_input(self):
         # Two strands that share no letter prefix cannot be letter-equalized by pulling;
