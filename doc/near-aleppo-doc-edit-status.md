@@ -255,7 +255,7 @@ provided as a reference with an ordinary final tav carrying qamats for Ben's com
 
 ## Vertical ruby gap and main integration — 2026-10-07
 
-**Status:** Gap implemented and verification complete; main integration authorized by
+**Status:** Implemented, integrated and pushed to main, 2026-10-07; authorized by
 Ben's instruction to apply the package without waiting for the qamats investigation,
 and to add vertical space between qere and ketiv.
 This instruction supersedes the earlier deferments of main integration.
@@ -300,3 +300,11 @@ tracked change. The gap's generated differences are only its stylesheet, index
 explanation and review HTML; book pages, data and the plain-text companion are unchanged.
 Black and `git diff --check` passed. The mega and full suite remain deferred under
 the approved trial; these focused checks cover the package and the combined branch.
+
+**Integration result:** The verified review branch's `2f3013113b3c2abfa23a7cea30bb10b4eb5c441d`
+was pushed as its backup. Fresh origin/main remained `0cf3f380`; this clone's main
+fast-forwarded first to origin/main and then to `2f301311`. The normal push succeeded,
+and both local HEAD and origin/main were verified at `2f301311` with a clean checkout.
+The complete package is on origin/main. The qamats diagnosis and trailing-space
+experiment remain deferred; no font positioning or speculative spacing workaround
+was included. This completion entry is a documentation-only follow-up on main.
