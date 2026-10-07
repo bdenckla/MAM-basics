@@ -29,8 +29,8 @@ Other versions/formats of MAM (each with their tradeoffs) include:
 
 MAM-basics publishes the [documentation of the MAM-for-Sefaria encoding](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/).
 
-The files under `csv/` keep MAM's order of each ketiv/qere pair, which has the qere first in
-about one pair in eight, mostly where the pair follows a maqaf; the files under `csv-ajf/` have
-the ketiv first throughout.
+The files under `csv/` keep the order of each ketiv/qere pair that MAM's rendered pages on
+Hebrew Wikisource have: the qere first in about one pair in eight, mostly where the pair follows
+a maqaf. The files under `csv-ajf/` have the ketiv first throughout.
 
 Questions? Email maintainer@miqra.simplelogin.com.

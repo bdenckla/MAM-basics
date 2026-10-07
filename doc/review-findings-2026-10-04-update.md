@@ -732,8 +732,9 @@ changes this session proposed: "Just do it all, please, using your best judgment
 questions as long as this is all documentation and won't change "goldens" like MAM-with-doc HTML
 files."
 
-**Done.** The documentation now says that a pair's two children are in MAM's order, which has
-the qere first in about one pair in eight, and that a reader identifies them by element type:
+**Done.** The documentation now says that a pair's two children are in the order that MAM's
+rendered pages on Hebrew Wikisource have, which is qere first in about one pair in eight, and
+that a reader identifies them by element type:
 - `MAM-simple/README.md`, in a new caution, "Ketiv/qere order";
 - `MAM-simple/doc/reading-mam-simple-xml.md`, in "Ketiv/Qere", with Lamentations 1:18 as its
   example, and in its table of alternatives;
@@ -754,3 +755,10 @@ four ketiv-first templates that directly follow a maqaf, at 2 Samuel 20:23, 2 Ch
 Jeremiah 48:21 and Ezekiel 39:25; another makes the example program in
 `MAM-simple/doc/reading-mam-simple.md` fail on an unknown element. The effective base State
 above is unchanged.
+
+**Corrected the same day.** Ben asked whether "MAM has the qere first" made clear which MAM it
+meant. It did not: MAM's wikitext and MAM-parsed list the ketiv first in every ketiv/qere
+template, and only MAM's rendered pages have the qere first. The five documents now name MAM's
+rendered pages on Hebrew Wikisource, and MAM-simple's README and XML guide state the
+difference. MAM-parsed's guide gives the parameters' ketiv-first order in the same sentence as
+its "MAM has the qere first", so its sense is clear there, and it is unchanged.

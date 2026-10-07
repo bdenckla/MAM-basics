@@ -233,10 +233,11 @@ display-spacing decision.
 `<kq>` has exactly two children, `<kq-k>` (ketiv) and `<kq-q>` (qere). The ketiv is
 unpointed and the qere is pointed.
 
-The two children are in MAM's order. MAM has the ketiv first, except in 129 of its 1,047
-pairs, counted on 2026-10-05, where it has the qere first: those that use its קו״כ template,
-and three that use a special template of the same kind. These pairs follow a maqaf or, in
-three verses, a narrow-sense paseq. MAM's introduction gives the reason for the maqaf case:
+The two children are in the order that MAM's rendered pages on Hebrew Wikisource have. Those
+pages have the ketiv first, except in 129 of the 1,047 pairs, counted on 2026-10-05, where they
+have the qere first: the pairs marked with MAM's קו״כ template, and three marked with a special
+template of the same kind. These pairs follow a maqaf or, in three verses, a narrow-sense
+paseq. MAM's introduction gives the reason for the maqaf case:
 the reading should not break after the maqaf. In Lam.1.18, for example, the qere completes the
 maqaf compound כׇל־הָֽעַמִּ֗ים:
 
@@ -249,9 +250,11 @@ maqaf compound כׇל־הָֽעַמִּ֗ים:
 ```
 
 MAM-simple marks these pairs only by the order of their children, so identify the ketiv and
-the qere by element type, never by position. A reader that wants MAM's order keeps the
-document order; one with its own convention, such as the ketiv first throughout, can impose
-it. In MAM-parsed, the template's name gives the order: `קו״כ`, or a `סוג` beginning `קו״כ`.
+the qere by element type, never by position. A reader that wants the rendered pages' order
+keeps the document order; one with its own convention, such as the ketiv first throughout, can
+impose it. MAM's wikitext, and so MAM-parsed, differ: every ketiv/qere template there lists the
+ketiv first, and only the template's name, `קו״כ` or a `סוג` beginning `קו״כ`, says that the
+rendered page has the qere first.
 
 Both children usually have a `text` attribute, but not always:
 

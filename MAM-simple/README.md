@@ -110,9 +110,11 @@ For the full statement, including what the guarantee does and does not cover, se
 ### Ketiv/qere order
 
 A ketiv/qere pair is a `<kq>` element with two children, `<kq-k>` (the ketiv) and `<kq-q>`
-(the qere), in MAM's order.
-MAM usually has the ketiv first, but it has the qere first in about one pair in eight,
-mostly where the pair follows a maqaf.
+(the qere), in the order that MAM's rendered pages on Hebrew Wikisource have.
+Those pages usually have the ketiv first, but they have the qere first in about one pair in
+eight, mostly where the pair follows a maqaf.
+MAM's wikitext, and so MAM-parsed, differ: every ketiv/qere template there lists the ketiv
+first, and the template's name says which order the rendered page has.
 Identify the two by element type, never by position.
 See [Ketiv/Qere](doc/reading-mam-simple-xml.md#ketivqere).
 

@@ -100,8 +100,9 @@ Parashah-marker objects can appear:
 ## Ketiv/qere objects
 
 A ketiv/qere pair is a `kq` object whose `contents` holds a `kq-k` object (the ketiv) and a
-`kq-q` object (the qere), in MAM's order. MAM usually has the ketiv first, but it has the qere
-first in about one pair in eight, as at Lam.1.18:
+`kq-q` object (the qere), in the order that MAM's rendered pages on Hebrew Wikisource have.
+Those pages usually have the ketiv first, but they have the qere first in about one pair in
+eight, as at Lam.1.18:
 
 ```json
 {
