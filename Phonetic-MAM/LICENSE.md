@@ -1,6 +1,7 @@
 The statement below is preserved verbatim from the former MAM Google spreadsheet,
 which became a frozen historical archive on September 12, 2026.
-This statement applies equally to the MAM text and its derivative display in `data/`.
+This statement applies equally to the MAM text and its derivative display in `data/`, and to the
+MAM Hebrew that `examples/display.json` quotes.
 `DATA-LICENSES.md` at the repository root records the terms of this directory's other files,
 and no new grant is made here over other source material. So, in the text below, ignore any
 references to "in this spreadsheet" (English) or שבגליון הנתונים הזה (Hebrew).

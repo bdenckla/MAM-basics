@@ -113,11 +113,11 @@ misc/linux-sh/   Standalone Linux bootstrap script for cloning MAM-basics
 
 Two declarations, because this repository holds code and data under different terms:
 
-1. **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' work in code and prose —
-   everything under `py/`, `.github/` and `doc/` except the adapted excerpts and their remarks under
-   `py/yeivin_itm/content/`, the third-party font under `doc/woff2/`, and the page crops in
+1. **Code: GPL-3.0**, in [`LICENSE`](LICENSE). This covers MAM-basics' work in code and prose:
+   everything under `py/`, `.github/` and `doc/` — except the adapted excerpts and their remarks
+   under `py/yeivin_itm/content/`, the third-party font under `doc/woff2/`, and the page crops in
    `doc/*-snips/` and the Hebrew Wikisource Village Pump discussion captured and translated in
-   `doc/wikisource-dagesh-discussion-*`, and the generated indexes and reports under `out/` that
+   `doc/wikisource-dagesh-discussion-*` — and the generated indexes and reports under `out/` that
    carry no corpus text. Six rendering-helper modules beside the excerpts are GPL-3.0 code;
    [`DATA-LICENSES.md`](DATA-LICENSES.md) names them.
    The excerpts' path-specific permission terms are in [`Yeivin-ITM/README.md`](Yeivin-ITM/README.md)

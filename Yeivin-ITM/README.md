@@ -49,14 +49,15 @@ The selected adaptation is not the full OCR or a full transcription of any book.
 
 The preparation preserves the adaptation's Python module basenames and existing
 page names, links, anchors, permission notice, and authorship caveat. Source-internal
-comments are omitted where necessary; the adaptation's MAM remarks are preserved. Its source
-is pinned to MAM-private commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`.
+comments are omitted where necessary; the adaptation's MAM remarks are preserved. The migration
+took its source from MAM-private commit `84c3ddbcfbc338f6a2d261cf01e8400b5027ef75`; no test pins
+the adaptation to it now.
 Line-local `translit-ok` annotations preserve the adaptation's established
 romanizations under the repository's external-vocabulary lint exception.
 
 The canonical page destination is `gh-pages/yeivin-itm/`, with
-`yeivin_itm.html` as the landing page. All 17 existing filenames, internal links,
-and anchors are preserved. The maintained entry point is `py/main_yeivin_itm.py`:
+`yeivin_itm.html` as the landing page. The migration preserved all 17 existing filenames,
+internal links, and anchors. The maintained entry point is `py/main_yeivin_itm.py`:
 
 - `survey-meteg-claims` reads only `out/accgram/meteg-before-stress.json` and writes
   `Yeivin-ITM/meteg-claims.json`

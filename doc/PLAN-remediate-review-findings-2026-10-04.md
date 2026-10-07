@@ -1001,8 +1001,10 @@ MAM-private and nothing of repository maintenance run for real. Checks: for 4.5 
 `py/main_test.py py/tests/test_phonetic_compute_boundary.py py/tests/test_phonetic_untangler_preparation.py py/tests/test_phonetic_display_release.py`;
 for 7.8 and N2, `py/main_test.py py/tests/test_worktree_retirement_policy.py`.
 
-**Wave 3: reader-facing documents that no program generates,** one commit: R2, R3, R4's item 1 and
-R5. Check: `py/main_test.py py/tests/test_product_scopes.py py/tests/test_phonetic_display_release.py`.
+**Wave 3: reader-facing documents that no program generates,** one commit: R2, R3, R4's item 1, R5
+and R9. Check: `py/main_test.py py/tests/test_product_scopes.py py/tests/test_phonetic_display_release.py`,
+and R9's three blocks parse. (R9 was missing from this list when Ben approved the plan; its wording
+was in R9, and wave 1's check showed its three blocks still failing.)
 
 **Wave 4: generated pages,** three commits.
 

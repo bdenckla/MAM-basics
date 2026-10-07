@@ -62,7 +62,7 @@ To pin a release ending at HEAD, commit `MAM-parsed/plus/` and run, from the
 MAM-basics root:
 
 ```powershell
-.venv/Scripts/python.exe py/main_diff.py mpplus --pin <name>
+.venv/Scripts/python.exe py/main_diff.py mpplus --pin "<name>"
 ```
 
 The command appends `{"old": <the latest release's end>, "new": <HEAD's
@@ -93,13 +93,13 @@ pinned without `--pin`, run this in a clone that has the boundary's commit, then
 run `--all`:
 
 ```powershell
-.venv/Scripts/python.exe py/main_diff.py mpplus --archive <boundary>
+.venv/Scripts/python.exe py/main_diff.py mpplus --archive "<boundary>"
 ```
 
 A shallow clone that lacks the commit can fetch it once by its full hash:
 
 ```powershell
-git fetch --depth=1 origin <full hash>
+git fetch --depth=1 origin "<full hash>"
 ```
 
 For an arbitrary pre-migration comparison, supply both revisions and opt
