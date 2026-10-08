@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "1ca24759c5bbe005dae9ca5a12cfb089040e9d70f98fb97839100884550b3e7d",
+  "inventory_sha256": "61398cd9646bc6f857b9c94fe2ce99b3794396f7d0ce8dd650e0f6622b58f37e",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -28566,7 +28566,7 @@
         "tmpl_params": {
           "1": "המלח",
           "2": "מֶלַח֙",
-          "כתיב מנוקד": "המֶ֙לַח֙"
+          "כתיב מנוקד": "המֶלַח֙"
         }
       },
       "original_body": [
@@ -28598,7 +28598,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "5cd425fa6de6270676e375c125c410b48ce84e3fb40d6924c24ea85c258864f0",
+      "evidence_sha256": "8a7fbfd6c7ffbb1c9723a4aa5577efd8c85352267cd046b012cbdc6db8eb81e5",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
