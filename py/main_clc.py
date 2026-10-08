@@ -11,11 +11,14 @@ optional 1-based chapter number to limit output to that chapter (e.g.
 ``python py/main_clc.py Exodus 20`` for the Decalogue) — handy for focusing on a
 dual-cant chapter without the rest of the book.
 
-Writes, under ``gh-pages/uxlc/clc/`` (``<label>`` is ``<book>`` for a whole book,
+Writes, under ``gh-pages/clc/`` (``<label>`` is ``<book>`` for a whole book,
 ``<book>-<chapter>`` if limited):
     <label>.html             the 3-column always-link page
     <label>-notes.json       the CLC notes as plain data (feeds §7.9 later)
     <label>-long-notes.html  this job's long notes (§7.3), only if it has any
+
+The all/default build also writes index.html and redirects for the seven HTML
+pages that previously lived under gh-pages/uxlc/clc/.
 """
 
 import argparse
@@ -24,20 +27,21 @@ import sys
 import mb_cmn.file_io as my_open
 import mb_cmn.bib_locales as tbn
 import clc.clc_collect as clc_collect
+import clc.clc_index as clc_index
 import clc.clc_long_note as clc_long_note
 import clc.clc_render as clc_render
 import uxlc_paths
 
 # The pilot pages currently checked into gh-pages/clc/: three whole pilot books
-# (Genesis is a single poetic book carrying both ``m`` and ``d`` under-bar notes, so
+# (Genesis carries both ``m`` and ``d`` under-bar notes, so
 # both seed paths render — build-order step 5; Proverbs and 2Samuel are the other two
 # pilots) plus the two Decalogue dual-cant demo chapters.
 _ALL_JOBS = [
     (tbn.BK_GENESIS, None),
-    (tbn.BK_PROV, None),
-    (tbn.BK_SND_SAM, None),
-    (tbn.BK_DEUTER, {5}),
     (tbn.BK_EXODUS, {20}),
+    (tbn.BK_DEUTER, {5}),
+    (tbn.BK_SND_SAM, None),
+    (tbn.BK_PROV, None),
 ]
 
 
@@ -58,6 +62,7 @@ def _build_one(book_id, chapters):
             label, disp, long_notes, main_page_href=f"{label}.html"
         )
         print(f"  wrote {long_notes_path} ({len(long_notes)} long note(s))")
+    return bool(long_notes)
 
 
 def _build_parser() -> argparse.ArgumentParser:
@@ -94,8 +99,12 @@ def almost_main(argv: list[str]) -> None:
     if args.book_id == "all":
         if args.chapter is not None:
             parser.error("a chapter number needs a BookId; the all form takes none")
-        for book_id, chapters in _ALL_JOBS:
-            _build_one(book_id, chapters)
+        pages = [
+            (book_id, chapters, _build_one(book_id, chapters))
+            for book_id, chapters in _ALL_JOBS
+        ]
+        print(f"  wrote {clc_index.write_index(pages)}")
+        clc_index.write_legacy_redirects()
     else:
         chapters = {args.chapter} if args.chapter is not None else None
         _build_one(args.book_id, chapters)

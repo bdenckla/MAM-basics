@@ -67,6 +67,7 @@ def write_page(page_label, disp, entries, main_page_href):
         return None
     body = [
         H.heading_level_1(f"Charitable Leningrad Codex — {disp} — longer notes"),
+        H.para(H.anchor("CLC index", {"href": "index.html"})),
         H.para(
             [
                 "Notes relegated here from the ",
@@ -80,7 +81,7 @@ def write_page(page_label, disp, entries, main_page_href):
     write_ctx = H.WriteCtx(
         title=f"CLC — {disp} — longer notes", path=out_path, add_wbr=True
     )
-    H.write_html_to_file(body, write_ctx, "../")
+    H.write_html_to_file(body, write_ctx, "../uxlc/")
     return out_path
 
 

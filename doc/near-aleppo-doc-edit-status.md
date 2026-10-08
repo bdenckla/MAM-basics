@@ -526,3 +526,35 @@ describes the corrected display. `git diff --check` passed. The mega and full
 suite remain deferred to nightly checks under the approved trial; these focused
 regeneration, style, reading-form and generated-output differentials cover the
 shared-renderer change.
+
+## Two additional k/q guide entries — 2026-10-08
+
+**Status:** Implemented by Codex. Ben requested Isaiah 26:20, subject to checking
+the reference, and the similar case with ketiv בנימן inside a maqaf compound.
+The references are confirmed in the stored near-Aleppo data and its rendered
+edition: Isaiah 26:20 and 1 Chronicles 9:4.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, on main at
+`4a43d330de4369d627927698ffbcb42b3b8ec9de`, clean before editing. Codex owns
+the focused verification, commit and normal push using this clone's environment.
+
+**Change:** Append the two entries to `py/near_aleppo/features_of_interest.py`.
+Isaiah 26:20 highlights the yod in ketiv דלתיך that is absent from qere דלתך;
+1 Chronicles 9:4 highlights the single ketiv atom בנימן with its two-atom qere
+inside a longer maqaf compound. Both entries show the complete rendered verse
+and link the BCV in the heading to NAEE. The first four groups keep their order.
+
+**Verification and scope:** Black passed. HTML regeneration wrote all 83 owned
+pages; only `gh-pages/near-aleppo/foi/interesting-ketiv-qere.html` changed.
+The HTML read-only comparison passed for all 83 pages and both font copies.
+The generated diff consists of the two contents links and two verse sections.
+A browser differential matched all seven verse displays to NAEE and checked
+all seven heading links. At widths 1400, 500 and 390 px, fonts loaded, reading
+sizes agreed, vertical gaps were positive, and there was no annotation overlap,
+horizontal overflow or script error. Desktop and narrow screenshots were
+inspected. Five focused source-hygiene, mark-literal and stylesheet checks
+passed. The dataset, book pages, punctuation review and shared styles remain
+unchanged. The full mega and suite remain on the nightly cadence under the
+approved trial; focused regeneration and the whole-verse differential cover
+this guide-only addition.
