@@ -27,6 +27,7 @@ from PIL import Image, ImageChops, ImageFilter
 from playwright.sync_api import sync_playwright
 
 from mb_cmn import paths
+import uxlc_paths
 
 ROOT = paths.repo_root()
 OUT = paths.novc_dir() / "clc-ruby-final-mark"
@@ -202,7 +203,7 @@ def main():
             ),
         )
         corpus = []
-        for path in sorted((ROOT / "gh-pages/uxlc/clc").glob("*.html")):
+        for path in sorted(uxlc_paths.clc_pages_dir().glob("*.html")):
             page.goto("http://localhost:8765/" + path.relative_to(ROOT).as_posix())
             page.evaluate("document.fonts.ready")
             units = page.evaluate(COLLECT, "td.clc-text ruby.clc-kq")
