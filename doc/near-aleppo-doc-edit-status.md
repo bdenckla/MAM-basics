@@ -409,6 +409,34 @@ warning. `git diff --check` passed. The mega and full suite are deferred to
 nightly checks under the approved trial; focused regeneration, the edition
 differential and the mechanical checks cover this navigation and guide change.
 
+## Notes for applications — 2026-10-08
+
+**Status:** Implemented by Codex, authorized by Ben's correction that this section
+is for "quick mentions of the most common pitfalls, with a link to more extensive
+documentation" rather than detailed template specifications.
+
+**Checkout and baseline:** Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos/MAM-basics`, a full clone on main at
+`c0fa37c0f80af9b1b2098df83a34b326898cca15`, clean before editing.
+
+**Change:** Shortened the shared notice's first two bullets to the closed-dispatch
+and Scripture-versus-metadata pitfalls. The added marks template gets only a
+passing mention. The section introduction links to the template definitions,
+GAV notation and display, and added-parameter roles. Those detailed sections
+already contained the specifications and remain unchanged. The release-notes
+draft now links directly to the detailed template and parameter sections.
+
+**Verification:** Black and the focused unused-import check passed on both changed
+Python files. Dataset and HTML regeneration passed. An independent comparison of
+all 24 book files found changes only to the first two consumer-notice rules;
+all other headers, Scripture and note content are unchanged. The generated
+`reading-json.html` changes only under "Notes for applications", with all three
+links targeting existing sections. No other generated page, pointing input,
+population file or note-review ledger changed. The three existing prose lints
+passed, and `git diff --check` passed. The mega and full suite are deferred under
+the approved trial; focused regeneration and differential checks cover this
+documentation and dataset-header change.
+
 ## Full verses and linked headings in the k/q guide — 2026-10-08
 
 **Status:** Implemented by Codex. Ben requested entire verses for the four

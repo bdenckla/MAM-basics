@@ -404,9 +404,9 @@ U+200C ZERO WIDTH NON-JOINER, at <a href="edition/D3-Job.html#c38v12">Job 38:12<
 ketiv that the note there gives the codex, between the ketiv's tav and he. The note's form has it,
 and it is there to keep fonts from treating the he's patah as a furtive patah.</p>
 <h3 id="consumer-notice">Notes for applications</h3>
-<p>The notes below are for writers of programs that read ("consume") the JSON data. Such programs
-are the "consumers" named by the <code>header.consumer_notice</code> field. The notes are as
-follows:</p>
+<p>The notes below highlight common pitfalls when consuming the JSON data. For the full rules, see
+<a href="#own-templates">template definitions</a>, <a href="#gav-display">GAV notation and
+display</a>, and <a href="#added-parameters">parameter roles</a>.</p>
 <p>The near-Aleppo dataset is similar to MAM-parsed-plus. The Hebrew of near-Aleppo is nearer to the
 Aleppo Codex's body text than the Hebrew of MAM-parsed-plus. Like MAM-parsed-plus, it is a
 structured dataset, not ready-to-display Scripture; interpret each structure by its documented role
@@ -414,30 +414,11 @@ and choose a projection wherever the payload presents alternatives.</p>
 <ul>
 <li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
 fields, and fail on an unknown template instead of guessing from its parameters or skipping it.
-Beside MAM's templates, near-Aleppo uses three added templates: <bdi lang="hbo" class="name">נוסח עם
-הקשר מקרא על פי המסורה</bdi> and <bdi lang="hbo" class="name">הערה-2 עם הקשר מקרא על פי
-המסורה</bdi>, which are MAM's <bdi lang="hbo" class="name">נוסח</bdi> and
-<bdi lang="hbo" class="name">מ:הערה-2</bdi> where near-Aleppo has changed the note's target. Their
-parameter 1 is near-Aleppo Scripture, and parameter 2 already contains the reviewed near-Aleppo
-clause, or an empty array when the complete original note remains in MAM context.
-<bdi lang="hbo" class="name">הערת מקרא על פי המסורה</bdi> holds the remaining original MAM clauses,
-in their original order, or that complete note. Consumers need no review ledger or editorial
-recasting to render these roles. The third added template is <bdi lang="hbo" class="name">ניקוד בלי
-אות</bdi>, which holds marks without a written letter at a position of nonzero width. It accepts GA:
-one or more artificial alefs, each followed by permitted marks; or GV: parameter 1 exactly VAV +
-HOLAM, with carrier=holam-male-vav. Neither carrier permits a dagesh. Carrier letters are not
-written ketiv consonants. JSON stores the carrier payload; the example edition supplies guillemets,
-retaining an adopted GV as VAV + HOLAM. Converting it to ALEF + HOLAM loses the chosen holam-male
-distinction. Surrounding separators remain explicit; no automatic space is inserted.</li>
-<li>Near-Aleppo adds six parameters. Five are not Scripture: <bdi lang="hbo" class="name">מקרא על פי
-המסורה</bdi>, on the two renamed notes, holds MAM's target; <bdi lang="hbo" class="name">הערת מקרא
-על פי המסורה</bdi> contains the source clauses about that target; and applied-and-flagged and
-flagged-not-applied, on a note or a ketiv/qere template, are apparatus; carrier, on the explicitly
-licensed orphan-mark variant, is semantic metadata identifying its artificial carrier. Use it to
-interpret the payload; do not collect it as Scripture text. The sixth,
-<bdi lang="hbo" class="name">כתיב מנוקד</bdi>, on a ketiv/qere template, holds a pointed ketiv from
-MAM's notes or the approved frozen inference from MAM's ketiv and pointed qere, or an individually
-adjudicated codex reading, or a sealed reviewed portable decision, and is Scripture.</li>
+Near-Aleppo adds note templates and <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>; follow their
+documented roles.</li>
+<li>Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture.
+The stored pointed ketiv, <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, is a Scripture
+alternative.</li>
 <li>Choose one documented branch of each choice-bearing structure; do not concatenate the branches.
 Near-Aleppo has evaluated away MAM's templates for dual cantillation, qamats, and poetic
 stress-helper alternatives, so the branches left in near-Aleppo's text are those of the ketiv/qere

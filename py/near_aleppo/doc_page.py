@@ -377,11 +377,14 @@ def _reading(numbers):
         subsection_heading(NOTICE),
         mb_html.para(
             [
-                "The notes below are for writers of programs that read "
-                '("consume") the JSON data. Such programs are the "consumers" '
-                "named by the ",
-                code("header.consumer_notice"),
-                " field. The notes are as follows:",
+                "The notes below highlight common pitfalls when consuming the "
+                "JSON data. For the full rules, see ",
+                link("template definitions", "#own-templates"),
+                ", ",
+                link("GAV notation and display", "#gav-display"),
+                ", and ",
+                link("parameter roles", "#added-parameters"),
+                ".",
             ]
         ),
         mb_html.para(isolated(notice["summary"])),
