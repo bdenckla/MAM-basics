@@ -20,6 +20,7 @@ the repair commit; a passing suite or no-diff mega is not proof of the underlyin
 | Run/repair | Frozen commit and allowed input IDs | Result, disposition and evidence |
 | --- | --- | --- |
 | Setup, 2026-10-07 | Adopted baseline above | No retrospective review or broad-check run; procedure integrated and seven-night schedule confirmed |
+| Run 1, 2026-10-08 | `275ed4683a6b71b4cba33f99c0ed57740e92c292`; no runtime sibling inputs selected | Blocked before execution: shell setup returned `helper_unknown_error: setup refresh had errors` twice, including a minimal clock read. HP process inventory, isolated checkout and home-environment verification were unavailable; mega and suite were not started, so there are no test durations or results. GitHub endpoint inventory found 61 incoming commits; full code/data review remains incomplete. Reviewed-through and last-tested anchors stay unchanged. |
 
 After night seven, record the compact assessment of Ben's time, meaningful defects,
 unnecessary changes and adequacy of evidence here.
