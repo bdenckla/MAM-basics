@@ -64,8 +64,8 @@ one place the skill's "never a loose word" rule is suspended: `references/mam-ba
 §'The post-stress-meteg pages say plain "word"' records Ben's decision of 2026-09-08, and
 `py/tests/test_post_stress_meteg_plain_word.py` enforces it by forbidding "chanted" in every one.
 
-From a MAM-basics worktree, follow `AGENTS.md`, “Running tests”, and, for ChatGPT-Codex, the
-worktree runtime reference of `codex-worktree-tasks`. Siblings normally resolve through Git's
+From a MAM-basics worktree, follow `AGENTS.md`, “Running tests”, and the `linked-worktrees`
+skill. Siblings normally resolve through Git's
 common-directory metadata; `REPOS_ROOT` is an override for an unusual layout. The worktree ban
 withdrawn on 2026-09-09 had named a loud failure and a silent provenance failure; their
 historical dispositions follow.
@@ -115,8 +115,7 @@ considered and rejected the same day, as a claim of breakage with no measurement
 
 Tests run from the verified repository root with the full clone's own interpreter, or a
 linked worktree's home-clone interpreter by absolute path, following
-`AGENTS.md`, “Running tests”, and, for ChatGPT-Codex, the worktree runtime reference of
-`codex-worktree-tasks`:
+`AGENTS.md`, “Running tests”, and the `linked-worktrees` skill:
 
 ```bash
 ./.venv/Scripts/python.exe py/main_test.py
@@ -242,9 +241,8 @@ rule; it does not override the repository's subsequently declared cloud exceptio
 - **Files change under you mid-session.** Ben edits the same file in parallel — re-diff before
   staging, and commit only your own work.
 - **Sibling paths and test invocation follow the repository's instructions.** MAM-basics'
-  `AGENTS.md`, “Running tests”, owns the current procedure, with
-  `codex-worktree-tasks/references/worktree-runtime.md` for ChatGPT-Codex; do not copy an
-  override recipe here.
+  `AGENTS.md`, “Running tests”, owns the current procedure, with the `linked-worktrees` skill
+  for a worktree; do not copy an override recipe here.
 - **Committing and pushing: follow the common `~/.codex/AGENTS.md` body, section "Git and
   commits", imported by Claude Code through `~/.claude/CLAUDE.md`.** This bullet cites that
   section rather than restating it. It read

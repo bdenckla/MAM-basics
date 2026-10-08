@@ -104,7 +104,8 @@ def main():
             found = []
             nar.each_nusach(list(minirow.EP), found)
             for tmpl in found:
-                for clause in nar.clauses(wtp.template_param_val(tmpl, "2")):
+                note_body = wtp.template_param_val(tmpl, "2")
+                for clause in nar.clauses(note_body, nar.ref(bcvt)):
                     shape, _, _ = nar.split_clause(clause)
                     if shape == "agree" and any(p in clause for p in PHRASES):
                         bk, ch, vr = tbn.bcvt_get_bcv_triple(bcvt)

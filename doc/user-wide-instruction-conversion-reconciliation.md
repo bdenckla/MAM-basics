@@ -11,7 +11,7 @@ The conversion is `d695966be8daea270f85424cb77d06f3b92a873d`; the approved remed
 `1a92af88c82aecec0e637eddf23942c2c7c52377`, and its execution handoff is
 `93fe8704a61cdc7fb7b60d2391a6f4e54ab73ed4`. “Shared body” below means
 [`dot-Codex/user-wide-AGENTS.md`](../dot-Codex/user-wide-AGENTS.md). Shared skill paths are
-canonical paths beneath `dot-claude/skills/`; the worktree skill is canonical under
+canonical paths beneath `dot-claude/skills/`; the Codex worktree skill is canonical under
 `dot-Codex/skills/codex-worktree-tasks/`. Live copies are deployed destinations.
 
 ## Section-level coverage
@@ -23,17 +23,17 @@ full wording and deferrals remain in the approved remediation plan.
 | Old heading at `71f96ca3` | Current home or exact anchor | Disposition |
 |---|---|---|
 | Two axes of risk: does the change reach a product, and is the act hard to undo | Shared body: `Risk has two independent axes` | Retained; the unverified-result clause remains deferred (11.1). |
-| Git & commits — commit at will; integrate worktrees at archival | Shared body: `Git and commits`; worktree skill: `references/task-lifecycle.md` | Retained and relocated; approved named-checkout and failed-fast-forward safeguards restored (11.2); long-lived-branch backup exception restored (11.5). Four legacy clauses remain deferred (11.1). |
+| Git & commits — commit at will; integrate worktrees at archival | Shared body: `Git and commits`; `linked-worktrees` skill: `Rules that apply throughout` and `references/integration.md` | Retained and relocated; approved named-checkout and failed-fast-forward safeguards restored (11.2) and moved to the `linked-worktrees` skill on 2026-10-08 (below); long-lived-branch backup exception restored (11.5). Four legacy clauses remain deferred (11.1). |
 | Verification cadence for multi-session work: cheap checks per commit, broad checks at risk and integration gates | Shared body: `Verification cadence for multi-session work` | Retained. |
 | Delegate bounded work when it helps | Shared body: `Delegate bounded work when it helps` | Retained. |
 | all-repos.code-workspace is the roster: clone only what it lists | Topology skill: `Sources of truth` | Relocated to the canonical topology skill. |
 | Periodic repository maintenance also retires completed Codex task folders | Topology skill: `references/repository-maintenance.md`, `Completed Codex task folders`, `Completed linked worktrees`, and `Claude cache and temporary data` | Relocated to the canonical topology skill. |
 | Never change an issue's state without a comment saying why | Shared body: `Load task-specific skills`; GitHub issue skill: `references/state-changes.md` | Retained as routing; detailed procedure relocated. |
 | No GitHub issue for an idea, and no offer to file one | Shared body: `Load task-specific skills`; GitHub issue skill: `references/reading-and-writing.md`, `Filing an issue` | Retained and relocated. |
-| Handing off to a task chip: be archivable BEFORE you spawn it | Shared body: `Claude Code only: task-chip handoffs`; worktree skill: `references/task-lifecycle.md`, `Prepare a successor last` | Retained and relocated; session-budget and genuinely-ending clauses remain deferred (11.1). |
+| Handing off to a task chip: be archivable BEFORE you spawn it | Shared body: `Claude Code only: task-chip handoffs`; Codex worktree skill: `references/task-lifecycle.md`, `Prepare a successor last` | Retained and relocated; session-budget and genuinely-ending clauses remain deferred (11.1). |
 | Prompt authorship: sign the chips you write, never assume I wrote the one you got | Shared body: `Task prompts and handoffs` | Retained. |
-| A successor session verifies its exact checkout and commit before editing | Shared body: `Linked-worktree safeguards shared by Claude and Codex`; worktree skill: `references/task-lifecycle.md` | Retained and relocated; named-checkout and lost-edit/page-recovery safeguards restored (11.2). |
-| A worktree runs the primary clone's venv, by absolute path | Shared body: `Linked-worktree safeguards shared by Claude and Codex`; worktree skill: `references/worktree-runtime.md` | Retained and relocated; different-dependency environment rule restored (11.2). |
+| A successor session verifies its exact checkout and commit before editing | Shared body: `Linked worktrees`; `linked-worktrees` skill: `Successors, lost edits and generated pages`; Codex worktree skill: `references/task-lifecycle.md` | Retained and relocated; named-checkout and lost-edit/page-recovery safeguards restored (11.2) and moved to the `linked-worktrees` skill on 2026-10-08 (below). |
+| A worktree runs the primary clone's venv, by absolute path | Shared body: `Linked worktrees`; `linked-worktrees` skill: `Use the home clone's Python environment` | Retained and relocated; different-dependency environment rule restored (11.2) and moved to the `linked-worktrees` skill on 2026-10-08 (below). |
 | Running scripts — no inline one-liners | Shared body: `Shell, scripts, and file operations` | Retained; exact-command harness override remains deferred (11.1). |
 | Prefer the built-in tools to shell, and a Python script to assembled shell | Shared body: `Shell, scripts, and file operations` | Retained. |
 | Throwaway scripts: the lowest bar of software | Shared body: `Shell, scripts, and file operations`, passage `A throwaway scratch script` | Retained. |
@@ -82,6 +82,22 @@ the searchable anchors.
 10. Lines 1109–1113, `Bold lead-ins`: bold lead-ins do not replace a subject-naming heading.
 11. Lines 1118–1120, `count`: preserving an announced count rather than deleting it.
 12. Lines 1342–1345, `py/foi/`: the location of three meteg data modules.
+
+## Ben reopened finding 11.2 on 2026-10-08
+
+Recorded by Claude on 2026-10-08, executing `doc/PLAN-maintenance-follow-up-2026-10-08.md`,
+workstream B, in a Claude cloud session. Finding 11.2 had put five safeguards in the shared
+body's “Linked-worktree safeguards shared by Claude and Codex”. Ben's reply to the 2026-10-07
+maintenance report, "pursue all of those trims", approved moving that section and the
+worktree items of `Git and commits` into a skill both agents load. The five safeguards now
+live in the shared `linked-worktrees` skill: the named-checkout successor, lost-edit and
+generated-page rules under “Successors, lost edits and generated pages”, the
+different-dependency environment under “Use the home clone's Python environment”, and the
+failed-fast-forward return under `references/integration.md`. The shared body keeps a short
+“Linked worktrees” section: verify the exact checkout, use the home clone's interpreter by
+absolute path, never junction, symlink or copy an environment, and load the skill. The
+agent-neutral rules that `codex-worktree-tasks` repeated moved to the same skill, so each
+rule has one home.
 
 ## The instruction budget changed later
 

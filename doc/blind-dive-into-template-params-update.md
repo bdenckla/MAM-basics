@@ -212,8 +212,9 @@ re-raised.
 | `py/accgram/maqaf_nonfinal_accents.py`: `_mam_simple_gray_maqafs_by_verse` | Structural count of every implicit-maqaf node, held equal to the hits along `flatten_ep_for_diff`'s selected stream, so a divergence raises. |
 | Recursion unchanged since the previous audit: `py/tmpl_survey/stack_path_lookup.py`: `_walk_wtel_plus`; `py/tmpl_survey/stack_path_verbose_payload.py`; `py/tmpl_survey/survey_plus.py`; `py/tmpl_survey/nesting_normal_form.py`; `py/mb_diff_mpu/mpplus_structure.py`; `py/mpplus/mpplus_boring_tmpls.py`; `py/verify_mp/verifiers_templates.py`: `_iter_template_occurrences_with_ancestors` | Seen again; only the plain retirement and docstrings changed them. |
 
-Three latent items remain unfixed. None changes a tracked output today; each is recorded so that a
-later change cannot make it live unnoticed. The census and phase-6 code they concern were under
+The audit left three latent items unfixed; the 2026-10-08 entry below fixes item 1 and part of
+item 2, and item 3 and the rest of item 2 remain unfixed. None changed a tracked output on the
+audit's day; each is recorded so that a later change cannot make it live unnoticed. The census and phase-6 code they concern were under
 active near-Aleppo development on the audit's day, so maintenance changed none of them.
 
 1. **The stress-helper census reads note prose through the Scripture projection.** In
@@ -229,11 +230,13 @@ active near-Aleppo development on the audit's day, so maintenance changed none o
    walk reaches hold 32 and 2 of the two link templates, 31 of `מ:לגרמיה-2` and 9 of `מ:פסק`. None
    of them is in any of the 18 clauses that `in/near-aleppo/census/stress_helper_census.txt`
    reports, so the census does not depend on the difference today. Whether the census should read
-   note prose as phase 3 does is a choice for Ben; until then the projection is undeclared.
+   note prose as phase 3 does was a choice for Ben; he chose on 2026-10-08 that it should, and the
+   entry below records the change.
 2. **Uncalled code in the same module.** In `py/near_aleppo/census/nusach_aleppo_readings.py`,
    `collect` and `keys_for` have no callers, `text_of` is called only by `collect`, and no caller
    passes `projected=False` to `flatten`, whose `False` branch walks every parameter of every
    template without validation. It would become a blind dive only if something called it again.
+   The 2026-10-08 entry below deletes `keys_for` and the `False` branch and keeps `collect`.
 3. **Silent fallbacks with no input that reaches them.** The `render` functions of
    `qamats_params.py`, `stress_helper_census.py`, `adonai_census.py` and `divine_name_split.py`,
    under `py/near_aleppo/census/`, return an empty string for a mapping that is not a template, and
@@ -247,3 +250,38 @@ active near-Aleppo development on the audit's day, so maintenance changed none o
 Verification for this audit: the full suite (1,047 passed, five skipped) and all 60 mega steps,
 with no tracked diff, ran at `61ab4e3b`; `py/main_near_aleppo.py --check` reported the five census
 baselines, the dataset and the pages current at `72c69893`.
+
+## The census reads note prose with phase 3's reader, 2026-10-08
+
+Ben's decision on latent item 1 of the 2026-10-07 entry above, given on 2026-10-08 in reply to
+that maintenance's report: "sure, let's do that". `doc/PLAN-maintenance-follow-up-2026-10-08.md`,
+workstream A, carried it out from `ba3e0d483c94fa484a54f797d7381fe5db23aa52` in a Claude cloud
+session.
+
+1. **Item 1 is fixed.** `py/near_aleppo/census/nusach_aleppo_readings.py`: `clauses` now takes a
+   verse reference and reads the note body with `py/near_aleppo/phase3_policies.py`: `_clauses`,
+   keeping its own rule of dropping empty clauses. Link templates now contribute their display
+   text, `מ:לגרמיה-2` and `מ:פסק` contribute HEBREW PUNCTUATION PASEQ as phase 3 writes them,
+   and any template that reader does not name raises with the census's verse reference.
+   `py/near_aleppo/census/stress_helper_census.py`: `main` passes `nar.ref(bcvt)`.
+2. **Item 2 is partly fixed.** `keys_for` is deleted, and so is `flatten`'s `projected` keyword
+   with its unvalidated branch that walked every parameter; `flatten` now has only the edition
+   projection, which `text_of` uses for a note's Scripture target. `collect` and `text_of` are
+   kept, unfixed, for a reason the plan did not foresee. `collect` is the only user of `text_of`
+   and `flatten`, of six siglum helpers (`split_outside_brackets`, `normalize`, `expand`,
+   `classify`, `head_is_prose` and `prose_head_last_siglum`), and of `CODEX_TEXT`,
+   `CODEX_TESTIMONY`, `NOT_THE_TEXT` and `PAREN_LIST`. Comments in
+   `py/near_aleppo/phase6_flags.py` and at `py/near_aleppo/phase3_policies.py`'s `_head_sigla` and
+   `_TESTIMONY_LIST` name this module as the census's authority for how sigla are read. Deleting
+   `collect` therefore means deleting or rehoming that authority and correcting those three
+   comments, in code another session edits most days. That is put to Ben rather than done. The
+   same measurement found that `reading_head`, the `BRACKETED` pattern it uses, and the `HEBREW`
+   and `POINTED` patterns have no user at all; they are left for the same decision.
+3. **Outputs.** `py/main_near_aleppo.py --check` reported all five census baselines byte for
+   byte, the dataset, `build-populations.json` and the pages current after the change. A scratch
+   run of `collect` over the whole corpus, which also feeds every reachable note body through
+   phase 3's reader, raised nothing and gave the same summary counts before and after: 3,595
+   notes, 6,879 clauses, of which 2,140 agree, 3,487 differ and 1,252 have no equals sign.
+4. **Checks.** `py/main_test.py py/tests/test_near_aleppo.py
+   py/tests/test_near_aleppo_note_content.py` passed five tests; Black left both changed files
+   unchanged; `python -m ruff check py` passed.

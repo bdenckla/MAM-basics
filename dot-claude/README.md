@@ -54,6 +54,7 @@ Tracked so far:
 | `github-issues` | The rules for touching a GitHub issue in Ben's repositories — reading one in full, filing one, commenting on one, correcting a stale fact in an open issue's body with MAM-basics' `py/main_github_issue_edit.py`, closing, reopening, relabelling or reassigning one with a comment saying why, and citing issues. Took over the former user-wide section "Never change an issue's state without a comment saying why" and two MAM-basics memory notes; the common body's "Load task-specific skills" section now routes issue work here. Added and shared with Codex by Ben's 2026-09-14 decisions. Ben superseded that day's cloud exclusion on 2026-09-29: install the rules with explicit transport limits, including the current body-editor restriction. |
 | `hebrew-prose` | The canonical, on-demand consolidation of the rules for writing and editing prose about Hebrew accentuation and cantillation (atom vs. chanted word, the one-scale maqaf rule, corpus choice, primary-source locations, verification). Supersedes the former scattered copies in the old full `~/.claude/CLAUDE.md`, `wlc-utils/CLAUDE.md`, `printed_decalogue_strands.py`'s docstring and the wlc-utils auto-memory — current instruction bodies keep routing pointers, and a rule change goes into the skill first. |
 | `iterative-document-editing` | The shared workflow for evolving multi-turn or multi-session documents, including cumulative revisions, planning and execution separation, and one-writer handoff. |
+| `linked-worktrees` | The agent-neutral rules for a linked worktree: its branch and when to push it, the home clone's environment, successors, lost-edit diagnosis, generated-page verification, and fast-forward integration. Built on 2026-10-08 from `codex-worktree-tasks` and the common body's former “Linked-worktree safeguards shared by Claude and Codex”, under Ben's decision that day to trim the common body, and shared with Codex. |
 | `mam-repository-topology` | The on-demand rules for GitRepos setup and maintenance, evacuated repositories, redirect hosts and frozen manifests, sibling-repository locations, and clone-retirement traps. The repository keeps a short routing pointer in `AGENTS.md`; detailed current and historical dispositions live with the skill. |
 | `mam-wikisource-refresh` | The safe end-to-end workflow for refreshing MAM book data from Hebrew Wikisource, including the dependent refresh after a live bot run, auditing generated products, and regenerating change logs only after the refreshed data has been committed. |
 | `prune-claude-state` | A manual review of this repository's global Claude draft plans against live tracked state and complete relevant issues; deletes only an exact approved list. |
@@ -100,8 +101,9 @@ steps.
 The cloud SessionStart hook is the explicit exception. A cloud session gets the user-level
 configuration from its checked-out branch, not from `main` unless `main` is the checked-out
 branch. The hook remains network-free and does not overwrite a file already present in the cloud
-home. By Ben's 2026-09-29 decision it reads `shared-skills.txt` and installs all six declared
-shared skill trees, including their references. It fills missing files in an incomplete tree
+home. By Ben's 2026-09-29 decision it reads `shared-skills.txt` and installs every declared
+shared skill tree, including its references; the declaration grew from six skills to seven on
+2026-10-08, when `linked-worktrees` took the common body's worktree rules. It fills missing files in an incomplete tree
 while preserving existing files, and reports each resource independently. Claude-only pruning
 and Codex-only skills remain outside its inventory. Installation supplies rules, without
 provisioning environments, siblings, credentials or permissions. The skills require the
@@ -124,8 +126,8 @@ configuration.
 `dot-claude/skills/` is the canonical source for Claude skills. Every directory there deploys to
 `~/.claude/skills/`. `dot-claude/shared-skills.txt` names the skills that also deploy to
 `~/.agents/skills/`; the declaration currently names `github-issues`, `hebrew-prose`,
-`iterative-document-editing`, `mam-repository-topology`, `mam-wikisource-refresh` and
-`verse-links`.
+`iterative-document-editing`, `linked-worktrees`, `mam-repository-topology`,
+`mam-wikisource-refresh` and `verse-links`.
 `dot-Codex/skills/` is the canonical source for Codex-specific skills and deploys only to
 `~/.agents/skills/`.
 
