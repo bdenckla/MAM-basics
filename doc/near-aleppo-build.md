@@ -35,6 +35,13 @@ choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
 accepts only its declared carrier and exact mark shape.
 
+After the last pointing import, before any output is written, a Scripture-target
+check requires each supplied ordinary or trivial pointed ketiv to retain its
+written ketiv consonants, excluding artificial carriers. Raw combining marks
+require a written-letter owner, while explicit orphan templates use the existing
+GA/GV contract. The check inspects values without changing them. It does not
+judge vowel combinations, manuscript ownership or whole-atom grammar.
+
 The build preserves C and D columns, qeres, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It
 copies the original MAM target into every changed note, then adds evidence flags

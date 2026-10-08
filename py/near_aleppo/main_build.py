@@ -27,6 +27,7 @@ from mb_cmn import bib_locales as tbn
 from near_aleppo import build_paths
 from near_aleppo import build_expectations
 from near_aleppo import consumer_notice
+from near_aleppo import ketiv_checks
 from near_aleppo.phase2_templates import Resolver
 from near_aleppo.phase2_templates import assert_templates_absent
 from near_aleppo.phase3_policies import Policies
@@ -100,6 +101,7 @@ def build(bake_notes=True):
                     cells[2] = frozen.apply(cells[2], ref)
                     cells[2] = editorial.apply(cells[2], ref)
                     cells[2] = reviewed.apply(cells[2], ref)
+                    ketiv_checks.check_e_cell(cells[2], ref)
                     # MAM-target copying follows the last Scripture-reading change. The
                     # flags step after it adds parameters only, none inside a
                     # note's target, and the rename after the verse loop changes
