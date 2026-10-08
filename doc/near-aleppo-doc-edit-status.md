@@ -558,3 +558,48 @@ passed. The dataset, book pages, punctuation review and shared styles remain
 unchanged. The full mega and suite remain on the nightly cadence under the
 approved trial; focused regeneration and the whole-verse differential cover
 this guide-only addition.
+
+## Ruby box vertical clearance — 2026-10-08
+
+**Status:** Corrected by Codex after Ben reported a box with excess space below
+the ketiv and asked whether the upper border could collide with qere accents.
+The rendered 1 Kings 22:49 and Job 1:10 examples confirm upper marks touching
+the old border. This supersedes the earlier inline-block wrapper layout while
+retaining CLC's border appearance and horizontal spacing.
+
+**Checkout and baseline:** Development and integration remain in the full clone
+`C:/Users/BenDe/GitRepos2/MAM-basics`, on main at
+`6d09c8862e1f1aaf9eac43dbec701d8611651b06`, clean before editing. Codex owns
+the focused verification, commit and normal push using this clone's environment.
+
+**Cause and correction:** The wrapper inherited its surrounding line height.
+In the FOI that left 21 px below the ketiv text rectangle versus 1 px above
+the qere rectangle. `py/near_aleppo/edition.css` now gives the wrapper normal
+line height, inline-flex layout and 0.15em padding on all sides. Flex layout
+includes the annotation within the upper padding; adding padding to the old
+inline-block wrapper enlarged only the space below it. The FOI's corresponding
+text-rectangle clearances are now 5 px above and 6 px below. CLC's border,
+corners, horizontal padding and margins remain; reading sizes, horizontal
+widths and the gap between readings are unchanged. The style differential now
+compares those borrowed properties while leaving wrapper layout and vertical
+padding to NAEE. The README describes this clearance.
+
+**Verification and scope:** HTML and punctuation-review regeneration passed.
+An independent comparison with the baseline verified all 85 NAEE assets:
+only the deployed ruby stylesheet differs. The review HTML differs only by
+the same CSS replacement; its data, rendered content and plain-text companion
+remain unchanged. Font copies, edition pages, FOI content, notes, Scripture,
+CLC and MAM-with-doc are unchanged.
+
+Browser checks measured 1,714 boxes across 68 edition, FOI and extract pages,
+including 880 qere displays whose ink extends above the plain letters. The
+loaded font's measured upper ink clearance improved from a minimum of -1 px
+to about 2.9 px inside the border; minimum lower clearance is about 6.9 px.
+All readings retain their font sizes, widths and positive gap. The seven FOI
+verses still match their edition displays and all heading links resolve.
+Desktop, 500 px and 390 px checks passed without overlaps, page overflow or
+script errors; screenshots of the guide and the two upper-mark cases were
+inspected. Three focused CLC-style, stylesheet/font and extract checks passed,
+and Black passed on the changed Python test. The mega and full suite remain
+on the nightly cadence under the approved trial; focused regeneration,
+content comparisons and browser geometry checks cover this CSS correction.
