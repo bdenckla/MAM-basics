@@ -142,7 +142,7 @@ def test_long_note_relegation():
     # The manuscript detail image sits between the short-note recap and the further
     # discussion it illustrates, with its source's own credit line carried forward.
     i_short = section_html.index("Inline note (repeated from")
-    i_img = section_html.index('src="../img/Deuter.5.13.2-t.jpg"')
+    i_img = section_html.index('src="../uxlc/img/Deuter.5.13.2-t.jpg"')
     i_credit = section_html.index("Credit: Sefaria.org.")
     i_further = section_html.index("Further discussion:")
     assert i_short < i_img < i_credit < i_further, section_html
@@ -167,7 +167,7 @@ def test_long_note_relegation():
         'href="https://bdenckla.github.io/MAM-basics/yeivin-itm/yeivin_itm-345_357.html#ns355"'
         in meteg_html
     )
-    assert 'src="../img/Deuter.5.7.2.LC-102A-col3-line22.jpg"' in meteg_html
+    assert 'src="../uxlc/img/Deuter.5.7.2.LC-102A-col3-line22.jpg"' in meteg_html
     assert "Credit: Sefaria.org." in meteg_html
     # The radically-shortened note keeps only a Yeivin pointer + the yod aside; the old
     # in-prose précis (roots, "slurred over", the initially-stressed litigation) is gone.
@@ -184,7 +184,7 @@ def test_long_note_relegation():
     # Image sits between the short-note recap and the further discussion it illustrates.
     assert (
         meteg_html.index("Inline note (repeated from")
-        < meteg_html.index('src="../img/Deuter.5.7.2.LC-102A-col3-line22.jpg"')
+        < meteg_html.index('src="../uxlc/img/Deuter.5.7.2.LC-102A-col3-line22.jpg"')
         < meteg_html.index("Further discussion:")
         < meteg_html.index("Aside:")
     ), meteg_html

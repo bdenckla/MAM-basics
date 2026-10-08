@@ -100,7 +100,7 @@ def handle_kq_trivial_ruby(hctx, tmpl):
 
 
 def _ruby(ketiv, qere, annotation_attrs=None):
-    """CLC's ruby structure with ketiv on the baseline and qere above it.
+    """CLC's boxed ruby structure with ketiv on the baseline and qere above it.
 
     Missing readings have CLC's explicit editorial placeholders in their own slots.
     Reading contents, including final punctuation, are rendered without serial
@@ -126,7 +126,8 @@ def _ruby(ketiv, qere, annotation_attrs=None):
         ),
         renel.mk_ren_el_tc("near-aleppo-kq-rp", ")"),
     )
-    return renel.mk_ren_el_tc_and_attr("near-aleppo-kq", contents, {"dir": "rtl"})
+    ruby = renel.mk_ren_el_tc_and_attr("near-aleppo-kq", contents, {"dir": "rtl"})
+    return renel.mk_ren_el_tc("near-aleppo-kq-box", (ruby,))
 
 
 def _flagged(hctx, tmpl, rendered, lemma):

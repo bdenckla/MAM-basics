@@ -278,6 +278,7 @@ _REVIEWS = Section(
 _WLC_AND_UXLC = Section(
     heading="WLC and UXLC",
     entries=(
+        _entry("Charitable Leningrad Codex (CLC)", "clc/index.html"),
         _entry(
             "All changes in Westminster Leningrad Codex (WLC) version 4.22",
             "wlc/420422/index.html",

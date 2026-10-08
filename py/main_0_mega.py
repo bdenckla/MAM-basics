@@ -27,7 +27,8 @@ Since 2026-09-10 the sequence also runs the five UXLC steps that
 
 Six more steps joined on 2026-09-10, when Ben agreed to add the other offline
 generators of tracked files, from ``clc`` to ``map-changes-to-book-of-job``.
-They write into ``gh-pages/uxlc/clc/``, ``holman/``, ``gh-pages/holman/``,
+They write into ``gh-pages/clc/`` (plus legacy HTML redirects under
+``gh-pages/uxlc/clc/``), ``holman/``, ``gh-pages/holman/``,
 ``gh-pages/book-of-job/``, ``book-of-job/out/`` and ``uxlc/in/UXLC-misc/``.
 Three of them fail the run on purpose, as their notes say:
 ``render-uxlc-corrections``, ``verify-and-render-table`` and
@@ -541,7 +542,7 @@ _STEPS = [
         _run_clc,
         "py/main_clc.py all: reads in/UXLC-39 and the note pages and change logs"
         " under uxlc/in/; writes the five pilot jobs' pages, notes JSON and"
-        " long-notes pages under gh-pages/uxlc/clc/",
+        " long-notes pages and index under gh-pages/clc/",
     ),
     StepRecord(
         "estimate-uxlc-locations",

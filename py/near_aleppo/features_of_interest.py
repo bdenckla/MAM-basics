@@ -41,7 +41,7 @@ class Case:
         return self.label
 
 
-# Ben's first four entries, in the order requested on 2026-10-08.
+# Ben's first four entries keep their requested order; later additions follow.
 CASES = (
     Case(
         "2-samuel-8-3",
@@ -69,6 +69,22 @@ CASES = (
         "NAEE puts the editorial label “no ketiv” on the baseline. "
         "That label occupies space beneath the qere.",
         ((tbn.BK_RUTH, 3, 5), (tbn.BK_JUDGES, 20, 13)),
+    ),
+    Case(
+        "isaiah-26-20",
+        "a yod in the ketiv",
+        "The ketiv דלתיך has a yod absent from the qere דלתך. "
+        "Compare the pointing and width of the two readings.",
+        ((tbn.BK_ISAIAH, 26, 20),),
+    ),
+    Case(
+        "1-chronicles-9-4",
+        "a two-atom qere inside a maqaf compound",
+        "The single ketiv atom בנימן has a two-atom qere. "
+        "The pair sits inside a longer maqaf compound, with maqafs on both sides; "
+        "inspect the space between the qere atoms and the connections "
+        "to neighboring atoms.",
+        ((tbn.BK_FST_CHR, 9, 4),),
     ),
 )
 
@@ -192,7 +208,8 @@ def render():
         mb_html.heading_level_1(kq_title),
         _navigation(),
         mb_html.para(
-            "Ketiv is the primary text, with pointed qere above it at the same size. "
+            "Ketiv is the primary text, with pointed qere above it at the same size "
+            "and CLC's box around the pair. "
             "When qere is wider, the shorter ketiv is centered beneath it. "
             "Each heading's verse reference opens the verse in NAEE, "
             "with its surrounding text and notes."

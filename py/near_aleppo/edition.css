@@ -1,5 +1,21 @@
 /* Near-Aleppo's ketiv baseline and secondary pointed-qere ruby annotation.
    Source: py/near_aleppo/edition.css; deployed by main_near_aleppo.py --html. */
+/* Borrow CLC's border and horizontal spacing from gh-pages/uxlc/style.css.
+   Give the two pointed readings their own line height and vertical clearance.
+   A flex wrapper includes the annotation within its top and bottom padding. */
+span.near-aleppo-kq-box {
+    display: inline-flex;
+    line-height: normal;
+    border: 1px solid light-dark(#bbb, #555);
+    border-radius: 0.25em;
+    padding: 0.15em;
+    margin: 0 0.05em;
+}
+/* Keep the apparatus unit together, as CLC does. The shared page writer
+   adds optional breaks after maqafs, including those inside a reading. */
+span.near-aleppo-kq-box wbr {
+    display: none;
+}
 ruby.near-aleppo-kq {
     ruby-position: over;
     ruby-align: center;
@@ -17,6 +33,7 @@ ruby.near-aleppo-kq > rt {
 ruby.near-aleppo-kq > rt > span {
     display: inline-block;
     line-height: normal;
+    white-space: nowrap;
 }
 ruby.near-aleppo-kq .near-aleppo-kq-none {
     font-size: 70%;

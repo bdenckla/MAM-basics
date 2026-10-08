@@ -8,7 +8,7 @@ for zebra shading to tie the two together). The text column is running verse
 text; every noted word is an always-link (no MAM short-inline / long-link
 threshold) to its note in the doc column of the same row. CLC defines its own
 ``clc-*`` CSS vocabulary parallel
-to MAM's ``mam-doc-*`` (design doc §8); the rules live in gh-pages/style.css.
+to MAM's ``mam-doc-*`` (design doc §8); the rules live in gh-pages/uxlc/style.css.
 """
 
 from dataclasses import dataclass
@@ -73,7 +73,7 @@ def write_book(book_id, book, notes, chapters=None):
     body = _body_wrapper(disp, table)
     out_path = uxlc_paths.clc_pages_dir() / f"{label}.html"
     write_ctx = H.WriteCtx(title=f"CLC — {disp}", path=out_path, add_wbr=True)
-    H.write_html_to_file(body, write_ctx, "../")
+    H.write_html_to_file(body, write_ctx, "../uxlc/")
     return out_path
 
 
@@ -105,7 +105,7 @@ def _dual_cant_rows(book_id, ch, v, verse, notes_by_atom, page_label):
     # combined (C), strand alef (א), strand bet (ב). The combined row keeps the
     # full always-link behaviour (its notes/anchors); the strand rows show the
     # strictly-split text plain, with only a short strand label in the doc
-    # column. CSS ties the three into one verse block (gh-pages/style.css).
+    # column. CSS ties the three into one verse block (gh-pages/uxlc/style.css).
     views = clc_dual_cant.strand_views(book_id, ch, v, verse)
     strands = [vw for vw in views if vw.suffix != clc_dual_cant.SUFFIX_COMBINED]
     rows = []
@@ -1021,12 +1021,12 @@ def _build_long_note_entry(spec, book, notes, chapters):
 
 def _long_note_image(spec):
     # The image sits between the short-note recap and the further discussion it
-    # illustrates. gh-pages/clc/<label>-long-notes.html -> gh-pages/img/ is one level up.
+    # illustrates. Images remain in gh-pages/uxlc/img/ beside the UXLC assets.
     return H.div(
         [
             H.img(
                 {
-                    "src": f"../img/{spec.image_filename}",
+                    "src": f"../uxlc/img/{spec.image_filename}",
                     "alt": f"Manuscript detail for {spec.book_id} {spec.ch}:{spec.v}",
                     "class": "clc-long-note-img",
                 }
@@ -1048,14 +1048,15 @@ def _find_strand_note(strands, strand, kind):
 
 
 def _body_wrapper(book_id, table):
-    # The "clc-main-page" class is a hook for gh-pages/style.css to widen <body> itself
+    # The "clc-main-page" class is a hook for gh-pages/uxlc/style.css to widen <body> itself
     # (past its site-wide 40em cap) on these pages only -- the long-notes page carries no
     # such class, so it stays at the site-wide width. Widening the page is what actually
-    # lets td.clc-doc's own wider max-width (gh-pages/style.css) render wider, instead of
+    # lets td.clc-doc's own wider max-width (gh-pages/uxlc/style.css) render wider, instead of
     # squeezing the text/ref columns to make room.
     style = "max-width: 60rem; margin-left: auto; margin-right: auto"
     contents = [
         H.heading_level_1(f"Charitable Leningrad Codex — {book_id}"),
+        H.para(H.anchor("CLC index", {"href": "index.html"})),
         clc_attribution.top_credit(),
         table,
     ]
