@@ -749,3 +749,14 @@ isolating exactly this task's notices and Isaiah payload. The combined tree's
 the HTML read-only comparison passed for 88 files and both font copies.
 The carrier implementation files and reviewed Isaiah payload are unchanged
 from `b9c4dd09`. Mega and full suite remain on the approved nightly cadence.
+
+
+**Final incoming main:** Origin advanced again to `df5519d4`, adding instruction
+updates and the census note-reader refactor. The normal merge was clean.
+The complete maintained `py/main_near_aleppo.py --check` passed: all five
+census baselines, 24 dataset files and their population metadata, 1,548 source
+note reviews, 88 HTML files and both font copies agree. The task differential
+passed again against `df5519d4`; the final carrier implementation is unchanged.
+The directly relevant dataset and note-content tests passed after this merge.
+No additional generated differences arose. The full mega and suite remain
+on the approved nightly cadence, as the final commit message records.
