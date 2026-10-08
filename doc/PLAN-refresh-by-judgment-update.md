@@ -82,3 +82,13 @@ parent is `ebaae10f`.
    `_PASHTA_STRESS_HELPER_FOR_PHASE_5` names, among them 2 Kings 14:7. At Song of Songs 3:5, where
    a letterless hiriq stands between the two letters as in this ketiv, MAM's note says that the
    codex writes יְרוּשָׁלַ͏ִם֙ with a single pashta, which it calls the codex's method.
+
+   Nobody has yet checked the 20 against the codex images. The ten in surviving parts of the codex
+   are Deuteronomy 30:20, Joshua 9:4 and 9:13, 1 Samuel 25:37, 2 Samuel 13:28, Isaiah 58:11,
+   Jeremiah 35:8 and 48:33, Song of Songs 1:10, and 2 Chronicles 2:14; the ten in lost parts are
+   Genesis 49:11 and 49:26, Exodus 26:3, Deuteronomy 5:14, 14:26, 15:15, 24:18 and 28:13, and
+   Nehemiah 2:1 and 5:15. These figures come from a throwaway scan on 2026-10-08 of MAM-parsed-plus
+   at `9a456f5b`, through the edition projection of `py/near_aleppo/census/`, with coverage from
+   its `nusach_codex_extant`, which counts a partly surviving verse as surviving.
+   `py/main_verse_links.py <book> <c:v>` prints a verse's links, including its Aleppo Codex
+   links at mgketer.org and masoretica.org.
