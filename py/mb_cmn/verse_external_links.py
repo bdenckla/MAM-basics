@@ -86,6 +86,19 @@ def mam_with_doc_url(bk39id: str, chapter: int, verse: int) -> str:
     )
 
 
+def near_aleppo_href(bk39id: str, chapter: int, verse: int) -> str:
+    """The NAEE verse, relative to gh-pages/near-aleppo/."""
+    page = quote(f"{tbn.ordered_short_dash_full_39(bk39id)}.html")
+    return f"edition/{page}#c{chapter}v{verse}"
+
+
+def near_aleppo_url(bk39id: str, chapter: int, verse: int) -> str:
+    """The verse in the published near-Aleppo example edition (NAEE)."""
+    return "https://bdenckla.github.io/MAM-basics/near-aleppo/" + near_aleppo_href(
+        bk39id, chapter, verse
+    )
+
+
 def wikisource_url(bk39id: str, chapter: int) -> str:
     """The chapter's page of MAM on Hebrew Wikisource."""
     return he_taamim_url(he_bk39_name(bk39id), hvn.INT_TO_STR_DIC[chapter])

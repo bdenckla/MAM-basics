@@ -126,6 +126,8 @@ def _contents(identifiers, sections):
 
 def _overview_extra():
     return [
+        mb_html.heading_level_2("Features of interest"),
+        mb_html.para(link("Features of interest in NAEE", "foi/index.html")),
         mb_html.heading_level_2("Documentation"),
         mb_html.unordered_list(
             [

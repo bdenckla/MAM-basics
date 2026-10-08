@@ -362,3 +362,49 @@ comparing the positions of marks relative to letters. `git diff --check` passed.
 The mega and full suite are deferred to nightly checks under the approved trial;
 the change is confined to CSS and the focused differential and browser checks
 cover its effects.
+
+## Features of interest and verse links — 2026-10-08
+
+**Status:** Implemented by Codex, authorized by Ben's request for a near-Aleppo
+features-of-interest document whose first entry is interesting ketiv/qere,
+starting with the four entries from the preceding reply.
+
+**Checkout and baseline:** Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos2/MAM-basics`, a full clone on main at
+`f9d817b1d292babf1ed742cba32b6cd183f6d4c7`, clean before editing. Codex owns
+the generation, focused checks, commit and normal push. The clone's own
+`.venv/Scripts/python.exe` runs each command from the repository root.
+
+**Change:** `gh-pages/near-aleppo/foi/index.html` starts with a link to
+`interesting-ketiv-qere.html`. The guide begins with 2 Samuel 8:3, Isaiah 54:16,
+Genesis 30:11 and a qere-without-ketiv entry containing Ruth 3:5 and Judges 20:13.
+Each entry shows the current NAEE ruby and links to its verse with context and
+notes. Relative links work from either a local page or the website; separate
+published links use the shared verse-link builder. The dataset overview and
+edition index link to the FOI index.
+
+**Maintained source and reproduction:** `py/near_aleppo/features_of_interest.py`
+owns the ordered selection and explanations. It selects ruby from Scripture
+rendered with the existing NAEE policy, excluding note lemmas; no copied Hebrew
+forms or new template interpretations are introduced. The ordinary
+`./.venv/Scripts/python.exe py/main_near_aleppo.py --html` command regenerates
+both pages. The README records that command. `py/main_verse_links.py` now accepts
+`--near-aleppo` to print a verse's local file URL for the calling checkout and
+its published URL, without changing the default link output.
+
+**Verification and scope:** Black passed on the six changed Python files. HTML
+generation and its read-only comparison passed for all 83 owned output files.
+The only changed existing generated pages are the dataset overview and edition
+index, each adding FOI navigation. All book pages, datasets, review files and
+MAM-with-doc remain unchanged. A differential browser check matched all five
+guide examples to their main Scripture displays in the actual edition. Every
+verse link landed on its unique anchor; the shared NAEE builders also matched
+all 39 edition filenames and first-verse anchors, including the filename with
+spaces. The optional CLI links matched the guide, and the default CLI output
+matched the committed source's output. The requested entry order, equal reading
+sizes, vertical gap, fonts and narrow layout passed, with no script errors.
+Desktop and narrow screenshots were inspected. Ten existing stylesheet/font
+and source-hygiene checks passed, with the existing pytest-cache permission
+warning. `git diff --check` passed. The mega and full suite are deferred to
+nightly checks under the approved trial; focused regeneration, the edition
+differential and the mechanical checks cover this navigation and guide change.

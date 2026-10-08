@@ -87,6 +87,9 @@ def _edition_index(edition, css_hrefs):
             ]
         ),
         mb_html.para(
+            mb_html.anchor_h("Features of interest in NAEE", "../foi/index.html")
+        ),
+        mb_html.para(
             [
                 "Where near-Aleppo's text of a note's target differs from MAM's, the "
                 "dataset already stores a reviewed source agreement with near-Aleppo's "

@@ -30,6 +30,7 @@ from near_aleppo import doc_daniel_sheva
 from near_aleppo import doc_pages
 from near_aleppo import doc_style
 from near_aleppo import edition
+from near_aleppo import features_of_interest
 from near_aleppo import doc_note_review
 from near_aleppo.doc_html import Numbers
 from mb_cmn import file_io
@@ -70,6 +71,7 @@ def render():
     edition_pages, unused_tags = edition.render_edition()
     for name, text in edition_pages.items():
         pages[_EDITION + name] = text.encode("utf-8")
+    pages.update(features_of_interest.render())
     pages.update(doc_he_transfer.assets())
     pages.update(doc_daniel_sheva.assets())
     return pages, unused_tags

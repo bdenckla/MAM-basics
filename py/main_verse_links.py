@@ -15,7 +15,10 @@ a maqaf.  A bare consonantal form always uses that letters-only pass and works
 only when its letters occur once in the verse; repeated letters require --atom.
 With neither, the Leningrad Codex line gives the verse's first atom and its last.
 
-Prints one markdown link per line, ready to paste into a reply:
+With --near-aleppo, print only local and published links to the verse in the
+near-Aleppo example edition (NAEE). The local link uses this checkout.
+
+Otherwise prints one markdown link per line, ready to paste into a reply:
 
   mgketer, MwD, MAM-ws, tica, MM
       mb_cmn.verse_external_links, in the order the mgketer diff card has them;
@@ -61,6 +64,7 @@ import argparse
 import json
 import re
 import sys
+from urllib.parse import unquote, urlsplit
 
 from hkq_cmn import uxlc_external_links
 from hkq_cmn.uxlc_manuscript_page import sefaria_image_url
@@ -97,6 +101,15 @@ def main() -> None:
         parser.error("name the atom by its word or by --atom, not both")
     book, chapter, verse = args.book, int(cv.group(1)), int(cv.group(2))
 
+    if args.near_aleppo:
+        address = urlsplit(vel.near_aleppo_href(book, chapter, verse))
+        local_page = paths.gh_pages_dir() / "near-aleppo" / unquote(address.path)
+        local_url = local_page.as_uri() + "#" + address.fragment
+        print(f"{uxlc_external_links.book_display_name(book)} {chapter}:{verse}")
+        print(f"- [NAEE local]({local_url})")
+        print(f"- [NAEE published]({vel.near_aleppo_url(book, chapter, verse)})")
+        return
+
     lc_lines, lc_placed = _leningrad_lines(book, chapter, verse, args.word, args.atom)
     print(f"{uxlc_external_links.book_display_name(book)} {chapter}:{verse}")
     for link in _links(book, chapter, verse):
@@ -117,6 +130,11 @@ def _build_parser() -> argparse.ArgumentParser:
     parser.add_argument("word", nargs="?", help="the atom's Hebrew text")
     parser.add_argument(
         "--atom", type=int, help="the atom's number, counted as THE ATOM NUMBER says"
+    )
+    parser.add_argument(
+        "--near-aleppo",
+        action="store_true",
+        help="Print only local and published NAEE verse links, using this checkout.",
     )
     return parser
 

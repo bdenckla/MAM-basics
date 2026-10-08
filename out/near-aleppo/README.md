@@ -48,6 +48,23 @@ readings have the same editorial labels as CLC in the missing reading's position
 Existing notes remain beside the text; the ruby display does not synthesize qere
 notes. Trivial-template qere source metadata is available on the annotation's hover.
 
+The example edition's [features of interest](../../gh-pages/near-aleppo/foi/index.html)
+start with [interesting ketiv/qere cases](../../gh-pages/near-aleppo/foi/interesting-ketiv-qere.html).
+These selected examples use the current edition's ruby renderer and link to their
+verses locally and on the website. Regenerate both pages with:
+
+```powershell
+./.venv/Scripts/python.exe py/main_near_aleppo.py --html
+```
+
+The selection and explanations are maintained in
+`py/near_aleppo/features_of_interest.py`. To print a verse's local and published
+NAEE links from the current checkout, use, for example:
+
+```powershell
+./.venv/Scripts/python.exe py/main_verse_links.py 2Samuel 8:3 --near-aleppo
+```
+
 The offline final-punctuation review extract is
 `review/ketiv-final-punctuation.html`, with a plain-text companion. It shows the
 requested 42 maqaf cases and 12 pasoleg cases in separate sections, including
