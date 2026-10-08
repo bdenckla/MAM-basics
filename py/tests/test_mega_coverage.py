@@ -164,6 +164,11 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 # naming it otherwise, so a stale reason cannot outlive the step that ended it.
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
+    "py/main_clc_ruby_review.py": (
+        "A manual browser raster measurement for the CLC ruby repair, requiring an"
+        " explicitly selected browser and baseline; writes only .novc/ evidence."
+        " It regenerates no product. See uxlc/doc/clc-ruby-final-marks-2026-10-08.md."
+    ),
     "py/main_near_aleppo.py --check": "Read-only differential validation of local census, dataset and pages; generation is in the mega. See out/near-aleppo/README.md.",
     "py/main_near_aleppo.py --instrument": "One census subprocess selected by the local five-instrument runner; the mega runs the complete census. See py/main_near_aleppo.py.",
     "py/main_near_aleppo.py --check-note-review": "Read-only check of every changed-note review against a fresh source enumeration; the near-aleppo-build step's --build runs the same check before baking notes. See py/near_aleppo/main_build.py.",
