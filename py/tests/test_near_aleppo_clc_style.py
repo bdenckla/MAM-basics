@@ -26,7 +26,7 @@ def test_naee_borrows_clc_box_size_and_placeholder_styles():
     pairs = (
         ("span.clc-kq-box", "span.near-aleppo-kq-box"),
         ("ruby.clc-kq", "ruby.near-aleppo-kq"),
-        ("ruby.clc-kq rt", "ruby.near-aleppo-kq > rt"),
+        ("ruby.clc-kq > rt", "ruby.near-aleppo-kq > rt"),
         ("ruby.clc-kq span.clc-kq-none", "ruby.near-aleppo-kq .near-aleppo-kq-none"),
     )
     for source, target in pairs:
