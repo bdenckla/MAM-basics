@@ -7,36 +7,11 @@ overrides.
 
 ## Canonical user configuration
 
-The single canonical user-level instruction body is `dot-Codex/user-wide-AGENTS.md` in
-MAM-basics. `dot-claude/user-wide-CLAUDE.md` is only the tracked Claude Code wrapper and imports
-the live common body. The live files `~/.codex/AGENTS.md` and `~/.claude/CLAUDE.md` are deployed
-copies; never edit either live file directly. Edit the canonical common body or wrapper in the
-applicable MAM-basics development checkout, commit the change, integrate and push `main`, then
-deploy from any full MAM-basics clone, using its own environment from its repository root:
-
-```powershell
-./.venv/Scripts/python.exe py/main_repo_util.py --sync-user-config
-```
-
-The deployment fetches `origin`, validates all canonical sources, and installs only from the
-fresh `refs/remotes/origin/main` tree. Its `--check` mode fetches and compares without changing
-live configuration. The common body must not import the Claude wrapper; that would create an
-import cycle.
-
-Shared skills are canonical under `dot-claude/skills/` and declared for Codex in
-`dot-claude/shared-skills.txt`. Codex-only skills are canonical under `dot-Codex/skills/`.
-`~/.agents/skills/` is only a live destination. Change canonical skills, commit and integrate
-them, then use the same complete deployment. `dot-Codex/README.md` and
-`dot-claude/README.md` define the full mapping.
-
-### Claude Code only: cloud SessionStart installation
-
-In a Claude cloud session, MAM-basics' hook installs the common body, Claude wrapper, and
-every shared skill declared in `dot-claude/shared-skills.txt` from the session's checked-out
-branch rather than from local `origin/main`. The skills state their cloud runtime limits;
-installation does not establish workflow dependencies, credentials or permissions.
-The checked-out branch is not necessarily `main`, and the hook never overwrites an existing live
-file.
+Never edit a live copy of this body, the Claude wrapper or a skill. The canonical copies are
+in MAM-basics: `dot-Codex/user-wide-AGENTS.md`, `dot-claude/user-wide-CLAUDE.md`,
+`dot-claude/skills/` with `dot-claude/shared-skills.txt`, and `dot-Codex/skills/`.
+`dot-claude/README.md`, “Main-sourced deployment and check”, and `dot-Codex/README.md` hold
+the deployment procedure and its Claude cloud-session exception.
 
 ## Memory retirement
 
@@ -77,14 +52,6 @@ matters; clearing one axis does not clear the other.
   shared branch on `origin`, such as a dual-agent review round, is an exception: a full clone
   may temporarily use a local carrier for that branch under the procedure's handoff and integration
   rules.
-- A secondary worktree uses its existing local branch. If a new Codex-managed worktree is
-  detached, follow `codex-worktree-tasks` for exact checkout verification and the
-  `codex-worktree-<worktree-id>` branch name. Commit there without pushing the worktree branch.
-- Integrate a worktree branch immediately before the task is archived, or earlier only when Ben
-  asks or a concrete dependency requires it. Follow the repository's integration check and the
-  linked-worktree safeguards below; ChatGPT-Codex also loads `codex-worktree-tasks`. The
-  worktree's home clone receives only fast-forwards, to a freshly fetched `origin/main` and to
-  the verified worktree branch, and then `main` is pushed.
 - Ask before rewriting history or discarding work: force-push, amend, rebase, hard reset, branch
   deletion, stash drop, or equivalent operations.
 - Correct a false claim in a pushed commit message through a later related commit or maintained
@@ -101,14 +68,6 @@ matters; clearing one axis does not clear the other.
 A readiness question carries permission to do one or two small, obviously correct finishing
 steps, such as filling a simple plan gap, updating a stale copy, or committing finished work. A
 choice requiring judgment remains Ben's decision.
-
-An ordinary secondary worktree commits locally without pushing its branch. A long-lived branch
-whose integration awaits Ben's request is an exception: push the worktree branch to origin after
-every commit as a backup, without pushing main. A procedure may instead name a shared branch on
-`origin` as its coordination boundary. In that case, every authorized checkout may use its own
-local carrier branch, and each completed handoff commit is pushed to the one named remote branch;
-the local branch name and checkout path are not shared state. Follow the branch's explicit
-authorization and integration procedure.
 
 ## Clone forests and portable work
 
@@ -127,7 +86,7 @@ In ordinary work in a full clone, fetch `origin` before pushing `main`, merge `o
 it moved, and run the checks owed by the resulting changes, including the mega when owed. Push
 normally. If the push is refused because origin moved, repeat the fetch, merge and affected
 checks in that full clone. When a worktree integrates into its home clone, the home clone takes
-no merge: worktree integration follows the linked-worktree safeguards below. Do not rewrite
+no merge: worktree integration follows the `linked-worktrees` skill. Do not rewrite
 history or discard work to make the push pass.
 
 A task moves between checkouts only through commits pushed to `origin`. A task needing
@@ -138,46 +97,14 @@ that machine. The scan archive is at `$HOME/OneDrive/Documents/ScansOfBooks` by 
 `BOOK_SCANS_ROOT` overrides that location; other such inputs, such as the user's pywikibot
 configuration, are found through explicit account configuration.
 
-## Linked-worktree safeguards shared by Claude and Codex
+## Linked worktrees
 
-- Before editing, verify the exact checkout with `git rev-parse --show-toplevel`, `git rev-parse
-  HEAD`, the branch or detached state, and `git status --porcelain`. A required source commit must
-  equal `HEAD` or be its ancestor. Recheck `HEAD` and task-owned status before staging.
-- A secondary worktree is the development checkout. Use the worktree's home clone's Python interpreter
-  by absolute path, but run scripts, formatters, tests, generators, staging, and commits in the
-  worktree. Use a repository-supported sibling-path override when the worktree layout requires
-  one.
-- Never junction or symlink the worktree's home clone's virtual environment into a worktree: worktree
-  removal can follow the junction and empty the real environment. Do not copy the environment as
-  a shortcut because Windows console scripts retain the source interpreter's absolute path.
-
-A successor continuing work in a named worktree uses that checkout directly. Create
-additional isolation only when Ben asks or concurrent editing requires it, and state
-the reason. A Claude task chip that creates a fresh worktree is the wrong handoff
-vehicle when the work must continue in a named checkout.
-
-Before diagnosing lost edits, refresh HEAD, task-owned status, recent commits,
-reflogs, and the relevant diffs. Compare the actual provenance before consulting
-stashes or unreachable commits; a matching path alone does not establish lost work.
-
-When Ben reviews a generated local page, identify and verify the exact page path,
-checkout, and commit. A worktree commit does not establish that the worktree's home clone or
-remote branch contains the page.
-
-A worktree may have its own freshly created environment when its task requires
-different dependencies. State that reason; never copy or junction the home clone's environment.
-
-Before integrating a worktree, fetch `origin` in its home clone and fast-forward the home
-clone's `main` if `origin/main` moved. Immediately before the final fast-forward, fetch again;
-if `origin/main` is not then an ancestor of the worktree branch, merge it in the development
-worktree and repeat the applicable checks. If the home clone refuses the final fast-forward
-because its `main` moved, or its push of `main` is refused because `origin/main` moved, return
-to the development worktree, fetch `origin`, merge the moved branch there, repeat the
-applicable checks, and fast-forward again. Do not replace a failed fast-forward or push with a
-merge in the worktree's home clone.
-
-ChatGPT-Codex loads `codex-worktree-tasks` for the full task lifecycle and runtime procedure. Claude Code
-follows the shared safeguards above and the repository's own integration instructions.
+Before editing any checkout, verify it with `git rev-parse --show-toplevel`, `git rev-parse
+HEAD`, the branch or detached state, and `git status --porcelain`. A required source commit
+must equal `HEAD` or be its ancestor. In a linked worktree, run everything in the worktree
+but use the home clone's Python interpreter by absolute path. Never junction, symlink or copy
+the home clone's environment into a worktree. Load `linked-worktrees` for any worktree work:
+its branch, push, handoff, diagnosis and integration rules live there.
 
 ## Task prompts and handoffs
 
@@ -317,7 +244,7 @@ The applicable repository review procedure owns review filenames and review Stat
 
 Run Black at its defaults on every Python file changed before committing. Format only the files
 changed; a repository-wide reformat is a separate commit. In a worktree, use the worktree's home
-clone's interpreter by absolute path, as the linked-worktree safeguards say. Never prefix Black or
+clone's interpreter by absolute path, as “Linked worktrees” says. Never prefix Black or
 a tracked script with `PYTHONUTF8=1`.
 
 In a full clone, a missing `.venv` means the clone is not hydrated; create the environment or

@@ -3,6 +3,7 @@
 github-issues
 hebrew-prose
 iterative-document-editing
+linked-worktrees
 mam-repository-topology
 mam-wikisource-refresh
 verse-links

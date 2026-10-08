@@ -39,7 +39,7 @@ Tracked Codex-only skills:
 
 | Skill | Purpose |
 | --- | --- |
-| `codex-worktree-tasks` | Verify, use, recover, hand off, and archive ordinary Codex-managed worktree tasks, including branch naming, shared virtual environments, exact checkout identity, and final integration. |
+| `codex-worktree-tasks` | Create, fork, recover, hand off, and archive Codex tasks that use worktrees, including a managed worktree's branch name and Windows Git trust. It loads the shared `linked-worktrees` skill, which since 2026-10-08 holds the agent-neutral worktree rules. |
 | `prune-Codex-state` (`skills/prune-claude-state/`) | Review this repository's Codex draft plans against live tracked state and complete relevant issues, with exact deletion approval. |
 
 Ben retired `worktree-forest` on 2026-09-29 when adopting full clone forests. Existing review
@@ -51,7 +51,8 @@ It never removes an unlisted personal skill. Forest layout and synchronization a
 in `doc/clone-forests.md` and `in/repo_maintenance_policy.json`, `clone_forests`.
 
 The cross-agent `github-issues`, `hebrew-prose`, `iterative-document-editing`,
-`mam-repository-topology`, `mam-wikisource-refresh` and `verse-links` skills remain canonical
+`linked-worktrees`, `mam-repository-topology`, `mam-wikisource-refresh` and `verse-links`
+skills remain canonical
 under `dot-claude/skills`; `dot-claude/shared-skills.txt` declares their live Codex destinations
 under `~/.agents/skills`. The two state-pruning
 skills are deliberately separate: Claude's `prune-claude-state` remains canonical

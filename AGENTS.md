@@ -43,29 +43,11 @@ filenames remain possible. `py/tests/test_tracked_filenames.py` enforces both ru
 
 ## Invoke the `hebrew-prose` skill before accentuation prose
 
-Before writing, editing, or reviewing prose about Hebrew accentuation or cantillation, load the
-user-level `hebrew-prose` skill. This includes rendered text, headings, tables, tooltips, alt
-text, docstrings, comments, commit messages, issue text, and chat. The skill covers atom versus
-chanted word, the one-scale maqaf rule, paseq versus legarmeh, silluq versus meteg, prose and
-poetic verses, corpus choice, primary sources, rendered-prose conventions, and verification.
-
-For MAM-basics work, the skill requires its `references/mam-basics.md` reference. That reference
-carries this repository's exceptions and page-specific rules, including the deliberate plain
-“word” terminology on the post-stress-meteg pages and the accgram rendered-prose rules.
-
-The canonical shared skill is `dot-claude/skills/hebrew-prose/`; the live copies under
-`~/.claude/skills/` and `~/.agents/skills/` are what the agents load. `dot-claude/` and
-`dot-Codex/` are version-controlled storage, not project instruction trees. Edit a canonical
-copy, commit and integrate it, then deploy from any full MAM-basics clone with the
-`--sync-user-config` procedure in `dot-claude/README.md`. Never edit a live copy.
-
-### Claude Code cloud SessionStart installation
-
-`.claude/hooks/install-user-config.sh` supplies a Claude Code cloud session from the session's
-checked-out branch because the machine-level files do not travel with the clone. The hook is
-network-free, reports what it installed, and exits without reading anything on Ben's machines.
-Codex does not run this Claude hook. The checked-out branch, not necessarily `main`, is the
-cloud source. `doc/user-level-config-in-cloud-sessions-update.md` carries the current diagnosis.
+Before writing, editing, or reviewing prose about Hebrew accentuation or cantillation, in any
+register from rendered pages to chat, load the user-level `hebrew-prose` skill and its
+`references/mam-basics.md`, which carries this repository's exceptions. The skill's canonical
+copy is `dot-claude/skills/hebrew-prose/`; never edit a live copy. `dot-claude/README.md`
+gives the deployment and the cloud SessionStart hook, `.claude/hooks/install-user-config.sh`.
 
 ## The MAM introduction is mirrored locally
 
@@ -224,7 +206,7 @@ The full-clone form of the mega is:
 ./.venv/Scripts/python.exe py/main_0_mega.py
 ```
 
-The user-level Git section gives the remaining integration order.
+The `linked-worktrees` skill's `references/integration.md` gives the remaining integration order.
 
 ## Running tests: use the one entrypoint from the repository root
 
