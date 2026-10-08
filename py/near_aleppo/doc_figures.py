@@ -786,10 +786,9 @@ def _pointed_ketiv(corpus):
 def _rule8(corpus):
     """The verses of each of the near-Aleppo dataset's two rule-8 templates.
 
-    The walk finds phase2.MARKS_WITHOUT_LETTER wherever it is; phase 2 has no rule for
-    the other, which no site uses, and the walk would raise on it. A count of each name
-    in the book files' serialized text, every zone and column included, checks that
-    the walk saw every occurrence.
+    The closed walk validates GA, GV and the no-space GD variant through the shared
+    carrier guard. A count of each name in the book files' serialized text, every
+    zone and column included, checks that the walk saw every occurrence.
     """
     names = (phase2.MARKS_WITHOUT_LETTER, consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE)
     sites = {name: [] for name in names}

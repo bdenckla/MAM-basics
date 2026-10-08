@@ -157,7 +157,7 @@ def _fail_unconverted_renamed_scrdfftar(_hctx, _tmpl):
 
 def _handle_marks_without_letter(_hctx, tmpl):
     # Show explicit artificial carriers in double guillemets. The shared
-    # guard validates GA and GV shapes; the discriminator is metadata.
+    # guard validates GA, GV and GD shapes; the discriminator is metadata.
     params = {
         key: first_and_only_and_str(wtp.template_param_val(tmpl, key))
         for key in wtp.template_param_keys(tmpl)
@@ -622,6 +622,7 @@ _HANDLER_SPECS_FOR_MISC = {
     nap.RENAMED_DOC: {_MASK_EC: _handle_doc},
     nap.RENAMED_SCRDFFTAR: {_MASK_EC: _fail_unconverted_renamed_scrdfftar},
     nap.MARKS_WITHOUT_LETTER: {_MASK_EL: _handle_marks_without_letter},
+    nap.MARKS_WITHOUT_LETTER_OR_SPACE: {_MASK_EL: _handle_marks_without_letter},
     tmpln.SLH_WORD: {_MASK_ELP: _handle_slh_word},
     "מ:לגרמיה-2": {_MASK_ELP: _handle_legarmeih_2},
     "מ:פסק": {_MASK_ELP: _handle_paseq},

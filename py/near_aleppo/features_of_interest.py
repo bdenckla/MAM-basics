@@ -51,8 +51,10 @@ CASES = (
     ),
     Case(
         "isaiah-54-16",
-        "a wider single-atom qere",
-        "The qere is a single atom wider than the ketiv beneath it.",
+        "a final dalet carrier",
+        "The single-atom qere has an additional he. The ketiv's final-nun "
+        "dagesh, tsere and mahapakh are displayed on an artificial dalet carrier "
+        "immediately after the nun, without a space.",
         ((tbn.BK_ISAIAH, 54, 16),),
     ),
     Case(

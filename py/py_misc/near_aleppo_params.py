@@ -6,6 +6,7 @@ contains the remaining source clauses with their original MAM subject.
 POINTED_KETIV carries the pointed ketiv shown alongside MAM's pointed qere.
 FLAGS identify the edition's evidence clauses. MARKS_WITHOUT_LETTER explicitly
 identifies artificial carriers used for marks without a written consonant.
+MARKS_WITHOUT_LETTER_OR_SPACE licenses the final dalet font accommodation.
 
 The near-Aleppo edition checks these shared declarations against its build.
 """
@@ -21,7 +22,8 @@ FLAGS = (APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED)
 POINTED_KETIV = "כתיב מנוקד"
 RENAMED_DOC = "נוסח עם הקשר מקרא על פי המסורה"
 RENAMED_SCRDFFTAR = "הערה-2 עם הקשר מקרא על פי המסורה"
-MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
+MARKS_WITHOUT_LETTER = orphan_marks.MARKS_WITHOUT_LETTER
+MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
 
 # The render tags of the lines the edition adds to a note: a parameter's name, and a
 # fixed English sentence that is a flag's value.

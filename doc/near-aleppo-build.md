@@ -33,7 +33,13 @@ has them, the build stops with an error that names the record and shows both; a
 renamed template does not stop it. Importing a payload makes no new editorial
 choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
-accepts only its declared carrier and exact mark shape.
+accepts only its declared carrier and exact mark shape. The no-space template
+`ניקוד בלי אות ובלי רווח` accepts only `carrier=final-nun-dalet`, with exactly
+DALET + DAGESH + TSERE + MAHAPAKH (GD). At Isaiah 54:16 it immediately follows
+the final nun without a space, accommodating that nun's marks without adding a
+ketiv consonant. GA and GV still forbid dagesh. This is the first final carrier
+case; earlier carriers were initial or medial. The dalet accommodation makes
+no claim that the manuscript has ownerless marks.
 
 The build preserves C and D columns, qeres, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It

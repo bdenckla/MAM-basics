@@ -407,7 +407,7 @@ def _own_templates(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo uses three added templates, which MAM's text never "
+                "Near-Aleppo uses four added templates, which MAM's text never "
                 "has. Each name is specific to the near-Aleppo dataset, and none has "
                 "the prefix ",
                 he_name("מ:"),
@@ -455,8 +455,9 @@ def _own_templates(numbers):
         ),
         mb_html.para(
             [
-                "The third template represents marks without a written letter. "
-                "Its position, accepted carrier forms, and display "
+                "The two carrier templates represent marks without a written letter "
+                "or accommodate marks associated with a written letter. "
+                "Their positions, accepted carrier forms, and display "
                 "are explained in ",
                 link("GAV notation and display", "#gav-display"),
                 ".",
@@ -469,10 +470,6 @@ def _gav_display(numbers):
     rule8 = numbers.fig_value("rule8_sites")
     first = rule8[MARKS_WITHOUT_LETTER]
     second = rule8[consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE]
-    if not first or second:
-        raise AssertionError(
-            "Only the supported nonzero-width orphan template has occurrences"
-        )
     return [
         mb_html.para(
             [
@@ -504,7 +501,8 @@ def _gav_display(numbers):
         ),
         mb_html.para(
             [
-                "Display: GAV (guillemet-alef-vav) notation identifies artificial "
+                "Display: GAV (guillemet-alef-vav) notation, with the GD dalet extension, "
+                "identifies artificial "
                 "carriers, which are not written ketiv letters. JSON stores the "
                 "template payload; the example edition supplies guillemets, as in ",
                 he_pointed("«אֵ»"),
@@ -534,6 +532,33 @@ def _gav_display(numbers):
                 he_pointed("«אֵאֵ֥»"),
                 ". Near-Aleppo encodes the bracketed alef carriers supplied in "
                 "MAM's note; they are not written ketiv letters.",
+            ]
+        ),
+        mb_html.para(
+            [
+                "The no-space template ",
+                he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
+                " accepts only GD, ",
+                mb_html.code(
+                    ['{"1":"', he_pointed("דֵּ֤"), '","carrier":"final-nun-dalet"}'],
+                    {"dir": "ltr"},
+                ),
+                ". This explicit variant requires exactly DALET + DAGESH + TSERE + "
+                "MAHAPAKH. Its permitted dagesh does not relax GA or GV validation. "
+                "It occurs at ",
+                verse_refs(second),
+                ": ",
+                he_pointed("הִן«דֵּ֤»"),
+                ". The carrier immediately follows the final nun without a space. "
+                "This is the first final carrier case; earlier carriers were initial "
+                "or medial. The dalet is a font accommodation for the final nun's "
+                "marks, which remain associated with that nun. It adds no ketiv "
+                "consonant and makes no claim that the manuscript has ownerless marks. "
+                "An edition that supports the original combination can display ",
+                he_pointed("הִןֵּ֤"),
+                " directly, retaining all three marks and the qere ",
+                he_pointed("הִנֵּ֤ה"),
+                ".",
             ]
         ),
         mb_html.para(
@@ -594,7 +619,7 @@ def _added_parameters(numbers):
             [
                 "Near-Aleppo adds six parameters to templates. Five accompany MAM's "
                 "parameters; the sixth identifies "
-                "the explicit GV variant of near-Aleppo's own orphan-mark template.",
+                "the explicit GV and GD variants of near-Aleppo's carrier templates.",
             ]
         ),
         mb_html.para(
@@ -682,7 +707,11 @@ def _added_parameters(numbers):
             "The parameter carrier=holam-male-vav identifies the narrowly licensed "
             "GV variant of the orphan-mark template. Its parameter 1 must be exactly "
             "VAV + HOLAM. The carrier parameter is metadata; the artificial vav "
-            "represents orphan holam and is not a written ketiv consonant."
+            "represents orphan holam and is not a written ketiv consonant. "
+            "The same parameter with value final-nun-dalet identifies GD in the "
+            "no-space template, whose parameter 1 must be exactly DALET + DAGESH + "
+            "TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is "
+            "not a written ketiv consonant."
         ),
     ]
 

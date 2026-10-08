@@ -180,7 +180,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "The carrier letter of the templates for marks without a letter",
-        "The original GA convention puts the marks on alefs, an arbitrary carrier, rather than on a letter matching the unwritten word. The later GV extension is recorded separately below.",
+        "The original GA convention puts the marks on alefs, an arbitrary carrier, rather than on a letter matching the unwritten word. The later GV and final GD extensions are recorded separately below.",
         ("A placeholder matching the unwritten word, such as a bet at 2 Samuel 18:20",),
     ),
     Choice(
@@ -194,7 +194,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks at a position of no width",
-        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its intended use at 2 Samuel 18:20 remains pending.",
+        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its intended use at 2 Samuel 18:20 remains pending; the later final-dalet font accommodation is recorded separately below.",
         ("A parameter of the one template",),
     ),
     Choice(
@@ -211,7 +211,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "A dagesh on a carrier alef",
-        "A dagesh is outside the templates for marks without a letter, specific to the near-Aleppo dataset, and the build refuses one on a carrier alef; Ben read the codex at 2 Samuel 18:20 and found no dagesh among the marks there.",
+        "The original GA convention excludes dagesh, and the build still refuses one on a carrier alef; Ben read the codex at 2 Samuel 18:20 and found no dagesh among the marks there.",
         (),
     ),
     Choice(
@@ -827,7 +827,7 @@ _CHOICES = (
         "2026-10-05",
         _BEN,
         "The final-nun dagesh at Isaiah 54:16",
-        "Near-Aleppo retains the dagesh on the final nun. Ben reported that he inspected an Aleppo image that day and saw the dot. This observation is attributed to Ben. This unusual final-nun dagesh is a case-specific choice and establishes no general legality rule.",
+        "Near-Aleppo retains the dagesh associated with the final nun. Ben reported that he inspected an Aleppo image that day and saw the dot. This observation is attributed to Ben. This unusual final-nun dagesh is a case-specific choice and establishes no general legality rule.",
         ("Omitting the dagesh on the final nun",),
     ),
     Choice(
@@ -854,6 +854,13 @@ _CHOICES = (
         (
             "Keeping a template name whose contract described only MAM's original note body",
         ),
+    ),
+    Choice(
+        "2026-10-08",
+        _BEN,
+        "The final dalet font accommodation at Isaiah 54:16",
+        "Ben requested an artificial dalet carrying all three final-nun marks in `ניקוד בלי אות ובלי רווח`. The explicit GD variant, carrier=final-nun-dalet, accepts exactly DALET + DAGESH + TSERE + MAHAPAKH immediately after the ketiv final nun, with no space. The marks remain associated with that nun; the dalet is not a ketiv consonant, and this font accommodation supplies no claim of ownerless manuscript marks. This is the first final carrier case; earlier carriers were initial or medial. GA and GV retain their meanings and dagesh prohibition, and the whole qere is unchanged.",
+        ("Omitting a mark to accommodate the font", "Allowing dagesh on GA or GV"),
     ),
 )
 

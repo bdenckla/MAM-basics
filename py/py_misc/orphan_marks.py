@@ -1,12 +1,19 @@
 """Closed artificial-carrier shapes used by the near-Aleppo dataset.
 
 The original GA shape remains unchanged. The explicit GV variant retains the
-chosen artificial VAV + HOLAM; neither carrier letter is a ketiv consonant.
+chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet for the
+final-nun marks at Isaiah 54:16, without a space. No carrier is a ketiv consonant.
 Build validation and edition display use the same carrier validation.
 """
 
 MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
+MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
 GV_PARAMETER = "carrier"
+GD_VARIANT = "final-nun-dalet"
+GD_CARRIER = (
+    "\N{HEBREW LETTER DALET}\N{HEBREW POINT DAGESH OR MAPIQ}"
+    "\N{HEBREW POINT TSERE}\N{HEBREW ACCENT MAHAPAKH}"
+)
 GV_VARIANT = "holam-male-vav"
 GV_CARRIER = "\N{HEBREW LETTER VAV}\N{HEBREW POINT HOLAM}"
 _ALEF = "\N{HEBREW LETTER ALEF}"
@@ -24,10 +31,21 @@ _MARKS = (
 
 
 def carriers(tmpl, label):
-    """Return validated carriers from an explicitly named GA or GV shape."""
+    """Return validated carriers from an explicitly named GA, GV or GD shape."""
     if set(tmpl) != {"tmpl_name", "tmpl_params"}:
         raise AssertionError(f"{label}: unexpected orphan-template fields")
     params = tmpl["tmpl_params"]
+    if tmpl["tmpl_name"] == MARKS_WITHOUT_LETTER_OR_SPACE:
+        if (
+            set(params) != {"1", GV_PARAMETER}
+            or params[GV_PARAMETER] != GD_VARIANT
+            or params["1"] != GD_CARRIER
+        ):
+            raise AssertionError(
+                f"{label}: GD requires final-nun-dalet and exactly "
+                "artificial DALET + DAGESH + TSERE + MAHAPAKH"
+            )
+        return GD_CARRIER
     if tmpl["tmpl_name"] != MARKS_WITHOUT_LETTER or set(params) not in (
         {"1"},
         {"1", GV_PARAMETER},

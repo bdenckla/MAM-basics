@@ -277,10 +277,11 @@ def _pending(numbers):
                     "The planned body text is empty where no letters or marks are "
                     "written. At 2 Samuel 18:20, MAM's note records tsere and merkha "
                     "without letters or space, at the join inside a maqaf compound. "
-                    "A planned template specific to near-Aleppo, ",
+                    "The template specific to near-Aleppo, ",
                     he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                    ", would represent those marks. The build and example renderer "
-                    "do not yet implement it.",
+                    ", is now supported for the final-dalet font accommodation at "
+                    "Isaiah 54:16. Its intended use for these marks at "
+                    "2 Samuel 18:20 still awaits an explicit variant and implementation.",
                 ],
                 [
                     "The readings of the codex that wait for that work: ",

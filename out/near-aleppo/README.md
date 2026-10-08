@@ -14,6 +14,14 @@ JSON contains the note transformations: consumers need no review-ledger lookup.
 Display formatting remains the consumer's choice. Original source notes and
 review reasoning remain in MAM-parsed-plus and the public review ledger.
 
+Artificial carriers are not ketiv consonants. GA and GV keep their existing
+meanings and prohibit dagesh. The no-space template `ניקוד בלי אות ובלי רווח`
+licenses only `carrier=final-nun-dalet`, with DALET + DAGESH + TSERE + MAHAPAKH
+(GD), immediately after the final nun at Isaiah 54:16. All three marks remain
+associated with that nun, and the whole qere is preserved. This first final
+carrier case is a font accommodation; earlier carriers were initial or medial.
+It makes no claim of ownerless manuscript marks.
+
 The 24 book files are in `plus/`. The example edition and documentation are in
 `gh-pages/near-aleppo/`. The build reads local MAM-parsed-plus, the Aleppo coverage
 index, and the runtime inputs in `in/near-aleppo/`. The research archive and

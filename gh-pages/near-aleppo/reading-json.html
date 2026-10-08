@@ -185,7 +185,7 @@ target have them.</p>
 does not tell the two apart. The note bodies, which near-Aleppo keeps verbatim, still have both
 templates.</p>
 <h3 id="own-templates">Templates specific to near-Aleppo</h3>
-<p>Near-Aleppo uses three added templates, which MAM's text never has. Each name is specific to the
+<p>Near-Aleppo uses four added templates, which MAM's text never has. Each name is specific to the
 near-Aleppo dataset, and none has the prefix <bdi lang="hbo" class="name">מ:</bdi> that marks many
 of MAM's.</p>
 <p>Two are MAM's note templates under names specific to near-Aleppo. Where near-Aleppo changes a
@@ -204,8 +204,9 @@ is an empty array and the complete original note is stored in the MAM-note param
 render both note roles directly from the book JSON; no review-ledger lookup or clause transformation
 is required. The example HTML edition displays the near-Aleppo clause beside its form, then MAM's
 labelled form and the stored MAM clauses.</p>
-<p>The third template represents marks without a written letter. Its position, accepted carrier
-forms, and display are explained in <a href="#gav-display">GAV notation and display</a>.</p>
+<p>The two carrier templates represent marks without a written letter or accommodate marks
+associated with a written letter. Their positions, accepted carrier forms, and display are explained
+in <a href="#gav-display">GAV notation and display</a>.</p>
 <h3 id="gav-display">GAV notation and display</h3>
 <p>Position: the near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות</bdi> represents
 marks at a position of nonzero width. Its name describes the position, not the carrier letter.</p>
@@ -216,10 +217,11 @@ as its <code>tmpl_params</code>. GA permits one or more artificial alefs, each f
 marks. GV requires exactly VAV + HOLAM and the <code>carrier=holam-male-vav</code> discriminator.
 Neither carrier permits a dagesh. The <code>carrier</code> parameter is semantic metadata; it
 identifies the holam-male carrier and is not Scripture text.</p>
-<p>Display: GAV (guillemet-alef-vav) notation identifies artificial carriers, which are not written
-ketiv letters. JSON stores the template payload; the example edition supplies guillemets, as in
-<bdi lang="hbo" class="pointed">«אֵ»</bdi> and <bdi lang="hbo" class="pointed">«וֹ»</bdi>. An
-adopted GV retains <bdi lang="hbo" class="pointed">«וֹ»</bdi>; converting it to
+<p>Display: GAV (guillemet-alef-vav) notation, with the GD dalet extension, identifies artificial
+carriers, which are not written ketiv letters. JSON stores the template payload; the example edition
+supplies guillemets, as in <bdi lang="hbo" class="pointed">«אֵ»</bdi> and
+<bdi lang="hbo" class="pointed">«וֹ»</bdi>. An adopted GV retains
+<bdi lang="hbo" class="pointed">«וֹ»</bdi>; converting it to
 <bdi lang="hbo" class="pointed">«אֹ»</bdi> loses the chosen holam-male distinction. Surrounding
 separators remain explicit strings or whitespace templates; an orphan template inserts no automatic
 space.</p>
@@ -304,6 +306,17 @@ space.</p>
 <p>The original GA example, at <a href="edition/C1-Isaiah.html#c36v12">Isaiah 36:12</a>, is
 <bdi lang="hbo" class="pointed">«אֵאֵ֥»</bdi>. Near-Aleppo encodes the bracketed alef carriers
 supplied in MAM's note; they are not written ketiv letters.</p>
+<p>The no-space template <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts only GD,
+<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">דֵּ֤</bdi>","carrier":"final-nun-dalet"}</code>.
+This explicit variant requires exactly DALET + DAGESH + TSERE + MAHAPAKH. Its permitted dagesh does
+not relax GA or GV validation. It occurs at <a href="edition/C1-Isaiah.html#c54v16">Isaiah
+54:16</a>: <bdi lang="hbo" class="pointed">הִן«דֵּ֤»</bdi>. The carrier immediately follows the
+final nun without a space. This is the first final carrier case; earlier carriers were initial or
+medial. The dalet is a font accommodation for the final nun's marks, which remain associated with
+that nun. It adds no ketiv consonant and makes no claim that the manuscript has ownerless marks. An
+edition that supports the original combination can display
+<bdi lang="hbo" class="pointed">הִןֵּ֤</bdi> directly, retaining all three marks and the qere
+<bdi lang="hbo" class="pointed">הִנֵּ֤ה</bdi>.</p>
 <p>For an orphan holam associated with a qere vav where the ketiv has yod, an edition can choose
 among these display options:</p>
 <ul>
@@ -327,7 +340,7 @@ yod. The mismatch concerns encoded meaning, not a general Unicode ban on nonstan
 sequences.</p>
 <h3 id="added-parameters">The parameters near-Aleppo adds</h3>
 <p>Near-Aleppo adds six parameters to templates. Five accompany MAM's parameters; the sixth
-identifies the explicit GV variant of near-Aleppo's own orphan-mark template.</p>
+identifies the explicit GV and GD variants of near-Aleppo's carrier templates.</p>
 <p>The parameter <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi>, MAM's name for its text,
 holds MAM's target. Every note whose target near-Aleppo changes has it, and is renamed, as the
 previous subsection says: 1,548 notes. The original clauses in <bdi lang="hbo" class="name">הערת
@@ -397,7 +410,10 @@ Near-Aleppo has it at 1,032 templates, in 922 verses: 869 <bdi lang="hbo" class=
 מיוחד</bdi>.</p>
 <p>The parameter carrier=holam-male-vav identifies the narrowly licensed GV variant of the
 orphan-mark template. Its parameter 1 must be exactly VAV + HOLAM. The carrier parameter is
-metadata; the artificial vav represents orphan holam and is not a written ketiv consonant.</p>
+metadata; the artificial vav represents orphan holam and is not a written ketiv consonant. The same
+parameter with value final-nun-dalet identifies GD in the no-space template, whose parameter 1 must
+be exactly DALET + DAGESH + TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is
+not a written ketiv consonant.</p>
 <h3 id="characters">A character MAM-parsed-plus has only in a note body</h3>
 <p>One character of near-Aleppo's text is a character that MAM-parsed-plus has only in a note body:
 U+200C ZERO WIDTH NON-JOINER, at <a href="edition/D3-Job.html#c38v12">Job 38:12</a>, in the pointed
@@ -414,11 +430,17 @@ and choose a projection wherever the payload presents alternatives.</p>
 <ul>
 <li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
 fields, and fail on an unknown template instead of guessing from its parameters or skipping it.
-Near-Aleppo adds note templates and <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>; follow their
-documented roles.</li>
+Near-Aleppo adds note templates, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>, and
+<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi>; follow their documented roles.</li>
 <li>Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture.
 The stored pointed ketiv, <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, is a Scripture
 alternative.</li>
+<li>GA and GV artificial carriers are not ketiv consonants. The no-space template
+<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts only carrier=final-nun-dalet with
+DALET + DAGESH + TSERE + MAHAPAKH (GD). It immediately follows the final nun at Isaiah 54:16 without
+a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence
+of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier
+as a ketiv consonant or insert a separator at a carrier-template boundary.</li>
 <li>Choose one documented branch of each choice-bearing structure; do not concatenate the branches.
 Near-Aleppo has evaluated away MAM's templates for dual cantillation, qamats, and poetic
 stress-helper alternatives, so the branches left in near-Aleppo's text are those of the ketiv/qere

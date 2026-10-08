@@ -109,7 +109,12 @@ def _edition_index(edition, css_hrefs):
                 "writes under no letter have GA artificial alef carriers or the "
                 "GV artificial VAV + HOLAM carrier. The edition displays both "
                 "between double guillemets, retaining their stored carrier meaning. "
-                "The carriers are not written ketiv letters. See ",
+                "At Isaiah 54:16, GD instead displays the final nun's dagesh, tsere "
+                "and mahapakh on an artificial dalet between double guillemets, "
+                "immediately after the nun without a space. The marks remain "
+                "associated with the nun; this is a font accommodation, not a claim "
+                "of ownerless manuscript marks. The carriers are not written ketiv "
+                "letters. See ",
                 mb_html.anchor_h(
                     "GAV notation and display in practice",
                     "../reading-json.html#gav-display",
@@ -222,6 +227,7 @@ def _assert_names_are_the_builds():
         (nap.RENAMED_DOC, RENAMED_NOTES["נוסח"]),
         (nap.RENAMED_SCRDFFTAR, RENAMED_NOTES["מ:הערה-2"]),
         (nap.MARKS_WITHOUT_LETTER, phase2.MARKS_WITHOUT_LETTER),
+        (nap.MARKS_WITHOUT_LETTER_OR_SPACE, phase2.MARKS_WITHOUT_LETTER_OR_SPACE),
     )
     for copy_name, build_name in pairs:
         if copy_name != build_name:

@@ -38,7 +38,9 @@ POINTED_KETIV_PARAMETER, MAM's parameters staying as they are.
 Rule 8's template for marks written where no letter is, MARKS_WITHOUT_LETTER, is
 specific to the near-Aleppo dataset. MAM's text never has it, so phase 2 raises if
 it meets it; phase 5 writes it inside a pointed ketiv, and the walks after phase 5
-keep it whole.
+keep it whole. MARKS_WITHOUT_LETTER_OR_SPACE has the same phase-2 rejection
+and later validation, with an explicit dalet variant for the final-nun marks
+at Isaiah 54:16. The dalet is a font accommodation, not a written consonant.
 
 Legarmeh, paseq and gray maqaf are first written as private-use placeholders, so
 that the spacing each replacement assumes can be checked on the verse's flattened
@@ -72,7 +74,7 @@ _KEEP_KQ = "keep-kq"  # kept; templates resolved in every parameter
 _VERBATIM = "verbatim"  # kept whole: a layout or separator template
 _MARK = "mark"  # replaced by a placeholder, then by its final text
 _COLLAPSE_WORD = "collapse-word"  # a special-letter word, flattened or kept whole
-_CARRIERS = "carriers"  # the near-Aleppo dataset's rule-8 marks on carrier alefs
+_CARRIERS = "carriers"  # the near-Aleppo dataset's validated artificial carriers
 
 _SPECIAL_LETTER_WORD = "מ:אות-מיוחדת-במילה"
 _SUSPENDED_KIND = "ת"
@@ -119,9 +121,12 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # each followed by the marks at that position, with alef as an arbitrary carrier.
 # An alef carrier cannot carry dagesh. The GV extension has an explicit carrier
 # discriminator and exactly artificial VAV + HOLAM; the original alef schema remains.
+# The no-space template licenses only GD, artificial DALET + DAGESH + TSERE +
+# MAHAPAKH for the final nun at Isaiah 54:16, without a manuscript-spacing claim.
 # The edition renders the marks in double guillemets; the dataset and the in-place
 # test read them in square brackets, as MAM's notes write them.
-MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
+MARKS_WITHOUT_LETTER = orphan_marks.MARKS_WITHOUT_LETTER
+MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
 
 
 class _Rule(NamedTuple):
@@ -180,6 +185,9 @@ _RULES = {
     "פפפ": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:נו״ן הפוכה": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:קישור בהערה": _Rule(_VERBATIM, (), _keysets(("1", "2"))),
+    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
+        _CARRIERS, (), _keysets(("1", orphan_marks.GV_PARAMETER))
+    ),
     MARKS_WITHOUT_LETTER: _Rule(
         _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
     ),
@@ -351,7 +359,7 @@ def selected_keys(tmpl, verse):
 
 
 def carriers_text(tmpl, verse):
-    """Validated GA or explicit GV carriers in the build's bracket notation."""
+    """Validated GA, GV or GD carriers in the build's bracket notation."""
     return "[" + orphan_marks.carriers(tmpl, verse) + "]"
 
 

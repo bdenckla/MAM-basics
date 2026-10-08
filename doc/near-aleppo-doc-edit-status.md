@@ -603,3 +603,89 @@ inspected. Three focused CLC-style, stylesheet/font and extract checks passed,
 and Black passed on the changed Python test. The mega and full suite remain
 on the nightly cadence under the approved trial; focused regeneration,
 content comparisons and browser geometry checks cover this CSS correction.
+
+
+## Final dalet carrier at Isaiah 54:16 — 2026-10-08
+
+**Status:** implemented by Codex, 2026-10-08.
+
+**Authorized scope:** Ben requested all three final-nun marks on an artificial
+dalet using the template `ניקוד בלי אות ובלי רווח`, updated documentation,
+a font comparison, and an issue in the hbofonts tracker about Taamey D's
+detached dagesh. This fresh session executes the supplied Codex handoff.
+Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos2/MAM-basics`, clean on main at required baseline
+`ebaae10fbdfcda32e91f054f0739b2f10d9a4f54`, using its own environment.
+
+**Expected changes:** One reviewed pointed-ketiv value, explicit dalet validation
+and closed dispatch, consumer notices, carrier and edition explanations,
+editorial decisions, and their generated consequences. Ketiv letters, qere,
+GA/GV payloads and validation, all other Scripture forms, and MAM-with-doc
+remain unchanged. The artificial dalet carries dagesh, tsere and mahapakh
+immediately after the final nun with no space. The marks remain associated
+with the final nun; this font accommodation supplies no ownerless-mark
+manuscript claim. The planned use at 2 Samuel 18:20 remains pending.
+
+**Verification scope:** Focused build and HTML regeneration, affected extract
+regeneration, shared-renderer comparison, corpus differential, mechanical
+source checks, Black on changed Python, and actual-font browser inspection.
+Full mega and suite remain on the approved nightly cadence.
+
+
+**Implemented encoding:** Reviewed record `C1-Isaiah:54:16:0` now stores
+`["הִן", {"tmpl_name":"ניקוד בלי אות ובלי רווח",
+"tmpl_params":{"1":"דֵּ֤","carrier":"final-nun-dalet"}}]`.
+The new template has an explicit `_CARRIERS` build dispatch and shared renderer
+dispatch. The central guard accepts exactly this GD discriminator and mark
+shape; GA/GV guards are unchanged. The existing k/q display-order helper already
+uses that central guard. The edition renders `הִן«דֵּ֤»` with no space, under the
+unchanged qere `הִנֵּ֤ה`. Carrier documentation, consumer rules, decisions,
+edition explanation, build guide and README now describe GD. The `gav-display`
+anchor remains. The pending 2 Samuel 18:20 use requires its own future variant.
+
+**Filed:** [hbofonts issue 123](https://github.com/bdenckla/hbofonts/issues/123)
+requests direct Taamey D support. The issue records agent authorship, the supplied
+handoff's quotation of Ben's instruction, exact codepoints and a rendering
+reproduction. Full reads of hbofonts issues 99 and 33 found no duplicate of
+this case; the issue was read back after filing. The frozen 0.921 source explicitly
+omits final-nun+dagesh composition by design, while its GPOS has an attachment
+anchor. The issue distinguishes composition from all attachment support.
+
+**Font comparison:** The local artifact is
+`.novc/isaiah54-16-font-comparison-20261008.html`, with companion
+`.novc/isaiah54-16-font-evidence-20261008.json` and five screenshots.
+The sheet compares source original, actual regenerated carrier markup and
+ordinary-nun qere, in ordinary text and actual NAEE ruby markup/CSS, at 32,
+48 and 72 px and CSS weight 400, with synthetic bold disabled. Font files,
+name-table versions and SHA-256 hashes appear in the sheet and evidence JSON.
+
+The tested installed versions are Taamey D 0.921 (its sole face is named Medium,
+used at CSS weight 400), SBL Hebrew 1.56a Build 016, Ezra SIL 2.51 (2007),
+Times New Roman 7.12 and Arial 7.06. Headless Edge 154.0.4258.62 on
+Windows 11 Pro 10.0.26200 x64 rendered at viewport 1280 × 1000 CSS pixels,
+DPR 1. CDP actual-font evidence checked 27 reading spans per font and the
+edition's frozen 0.921 webfont separately. Every Hebrew span used the requested
+font. Taamey D lacks guillemets; their explicit Arial fallback is identified.
+No requested font was missing. The newer sibling hbofonts build 0.931 was not
+substituted. All six screenshots were inspected: the original's dagesh is
+detached in every tested font, while GD places the dot with dalet in ordinary
+text and ruby. These findings describe the tested environment and versions.
+
+**Verification:** Black passed on all eleven changed Python files; focused tests
+passed, 19 tests with the existing pytest-cache permission warning. Build,
+HTML and punctuation-extract regeneration passed. MAM-with-doc regenerated
+byte-identically. The corpus differential against the baseline found exactly
+24 changed consumer notices and one pointed-ketiv value; all ketiv consonants,
+whole qeres, notes and other Scripture text are unchanged. The Isaiah edition HTML differs only in the one ketiv display. The FOI
+guide additionally updates that case's title and explanation: the artificial
+dalet and guillemets make the old “wider qere” description false. Actual
+rendered widths were 56.875 CSS pixels for the ketiv display and 35.171875 for
+the qere. The guide now explains the additional qere he and final carrier. The four changed
+generated documentation pages contain only the documented GD consequences.
+Build populations, note-review ledger, punctuation extract and render-tag
+reports remain unchanged. Validation differentials agree with the baseline
+over all 64 stored GA/GV templates, retaining their dagesh prohibition.
+A mechanical check rejects 106 altered GD payloads or parameter shapes.
+No earlier stored carrier is final. Read-only product comparison and
+`git diff --check` passed. Full mega and suite remain on the nightly cadence
+under `doc/review-trial.md`; no consequence requires immediate broad checks.
