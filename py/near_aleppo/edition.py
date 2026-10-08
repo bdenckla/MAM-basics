@@ -75,7 +75,8 @@ def _edition_index(edition, css_hrefs):
                 "dataset. The edition has each book's text with MAM's notes "
                 "beside it, as MAM-with-doc does. ",
                 "Ketiv is the primary text; pointed qere appears above it in a ruby "
-                "annotation at the same size, with a small vertical gap between the forms. "
+                "annotation at the same size, with CLC's box around each pair and a small "
+                "vertical gap between the forms. "
                 "The edition uses each stored pointed ketiv "
                 "where one is available. An absent reading has the editorial label “no ketiv” "
                 "or “no qere” in its own position. ",
