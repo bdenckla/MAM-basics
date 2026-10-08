@@ -1,6 +1,7 @@
 # CLC ruby final marks and the effective CSS property
 
 State: executed 2026-10-08; isolated branch repair, awaiting main integration
+Updates and later status: [clc-ruby-final-marks-2026-10-08-update.md](clc-ruby-final-marks-2026-10-08-update.md).
 
 **Fixed on the review branch:** CLC has the same kind of final-mark displacement
 as the near-Aleppo example edition (NAEE), but its pointed qere is the ruby base.

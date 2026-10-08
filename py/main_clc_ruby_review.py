@@ -5,6 +5,8 @@ pre-fix commit and --browser with a Chromium/Edge executable; optionally supply
 --comparison-font with another Hebrew TTF. Writes self-contained HTML, PNG and
 JSON evidence only to .novc/clc-ruby-final-mark/. This is a manual differential
 instrument, not a product generator or a test-suite entry point.
+The current column uses the working checkout's complete stylesheet so spacing
+changes are included in the ordinary-text regression comparison.
 """
 
 import argparse
@@ -35,6 +37,7 @@ VARIANTS = {
     "display": "display:inline-block;",
     "line": "line-height:normal;",
     "both": "display:inline-block;line-height:normal;",
+    "current": "",
 }
 COLLECT = """selector => [...document.querySelectorAll(selector)].map((r,i) => {
   const rt = r.querySelector('rt');
@@ -96,7 +99,7 @@ def font_face(family, path, fmt):
     return f'@font-face{{font-family:"{family}";src:url(data:font/{fmt};base64,{encoded}) format("{fmt}");}}'
 
 
-def review_html(samples, family, size, family_css, side, comparison_font):
+def review_html(samples, family, size, family_css, side, comparison_font, current_css):
     selector = {
         "clc-qere": "ruby.clc-kq span.clc-kq-q",
         "clc-ketiv": "ruby.clc-kq span.clc-kq-k",
@@ -105,6 +108,16 @@ def review_html(samples, family, size, family_css, side, comparison_font):
     css = (
         ROOT.joinpath("gh-pages/document.css").read_text(encoding="utf-8") + family_css
     )
+    current_css = re.sub(r"/\*.*?\*/", "", current_css, flags=re.S)
+    current_css = re.sub(r"@font-face\s*\{[^}]*\}", "", current_css)
+    css += re.sub(
+        r"(^|\})(\s*)([^{}]+)\{",
+        lambda m: m[1]
+        + m[2]
+        + ", ".join(".current " + selector.strip() for selector in m[3].split(","))
+        + " {",
+        current_css,
+    )
     css += font_face(
         "Taamey D WOFF2", ROOT / "gh-pages/uxlc/woff2/Taamey_D.woff2", "woff2"
     )
@@ -112,7 +125,7 @@ def review_html(samples, family, size, family_css, side, comparison_font):
         css += font_face("Comparison Hebrew", comparison_font, "truetype")
     # Equal black foregrounds make the threshold independent of editorial colors.
     # The other ruby side is hidden without changing its layout or the text.
-    css += f'body{{max-width:none;margin:0;width:{CELL_WIDTH * 5}px;color:black;background:white;}} .row{{display:flex;height:{CELL_HEIGHT}px;}} .cell{{box-sizing:border-box;width:{CELL_WIDTH}px;height:{CELL_HEIGHT}px;position:relative;color:black;}} .glyph{{position:absolute;top:75px;right:35px;white-space:nowrap;direction:rtl;line-height:normal;font-family:"{family}";font-size:{size}px;}} .glyph *{{color:black!important;}} .clc-kq-box{{border-color:transparent!important;}} .label{{font:12px sans-serif;position:absolute;top:0;left:4px;}}'
+    css += f'body{{max-width:none;margin:0;width:{CELL_WIDTH * (len(VARIANTS) + 1)}px;color:black;background:white;}} .row{{display:flex;height:{CELL_HEIGHT}px;}} .cell{{box-sizing:border-box;width:{CELL_WIDTH}px;height:{CELL_HEIGHT}px;position:relative;color:black;}} .glyph{{position:absolute;top:75px;right:35px;white-space:nowrap;direction:rtl;line-height:normal;font-family:"{family}";font-size:{size}px;}} .glyph *{{color:black!important;}} .clc-kq-box{{border-color:transparent!important;}} .label{{font:12px sans-serif;position:absolute;top:0;left:4px;}}'
     for name, rule in VARIANTS.items():
         css += f".{name} {selector}{{{rule}}}"
     css += ".ordinary span.clc-kq-none{font-size:70%;}"
@@ -150,6 +163,7 @@ def main():
     parser.add_argument("--baseline", required=True, help="pre-fix MAM-basics commit")
     parser.add_argument("--browser", required=True, help="Chromium/Edge executable")
     parser.add_argument("--comparison-font", type=Path, help="optional Hebrew TTF")
+    parser.add_argument("--sizes", nargs="+", type=float, default=[26.1333333333, 48])
     args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     baseline = subprocess.check_output(
@@ -162,7 +176,9 @@ def main():
         cwd=ROOT,
         encoding="utf-8",
     )
-    na_css = (ROOT / "py/near_aleppo/edition.css").read_text(encoding="utf-8")
+    current_clc_css = (ROOT / "gh-pages/uxlc/style.css").read_text(encoding="utf-8")
+    current_na_css = (ROOT / "py/near_aleppo/edition.css").read_text(encoding="utf-8")
+    na_css = current_na_css
     na_css, removed = re.subn(
         r"ruby\.near-aleppo-kq > rt > span\s*\{[^}]*\}", "", na_css
     )
@@ -172,7 +188,7 @@ def main():
     with sync_playwright() as p:
         browser = p.chromium.launch(executable_path=args.browser, headless=True)
         page = browser.new_page(
-            viewport={"width": CELL_WIDTH * 5, "height": 900},
+            viewport={"width": CELL_WIDTH * (len(VARIANTS) + 1), "height": 900},
             device_scale_factor=1,
             color_scheme="light",
         )
@@ -250,11 +266,21 @@ def main():
             if args.comparison_font:
                 families.append("Comparison Hebrew")
             for family in families:
-                for size in (26.1333333333, 48):
+                for size in args.sizes:
                     for batch_index in range(0, len(samples), 30):
                         batch = samples[batch_index : batch_index + 30]
                         review = review_html(
-                            batch, family, size, css, side, args.comparison_font
+                            batch,
+                            family,
+                            size,
+                            css,
+                            side,
+                            args.comparison_font,
+                            (
+                                current_clc_css
+                                if side.startswith("clc")
+                                else current_na_css
+                            ),
                         )
                         stem = f"{side}-{family.split()[0]}-{size:g}-{batch_index}"
                         (OUT / f"{stem}.html").write_text(review, encoding="utf-8")
@@ -279,9 +305,9 @@ def main():
                             # Labels are outside this crop; only the visible glyph side remains.
                             control = raster.crop(
                                 (
-                                    CELL_WIDTH * 4,
+                                    CELL_WIDTH * len(VARIANTS),
                                     i * CELL_HEIGHT + 20,
-                                    CELL_WIDTH * 5,
+                                    CELL_WIDTH * (len(VARIANTS) + 1),
                                     (i + 1) * CELL_HEIGHT,
                                 )
                             )
