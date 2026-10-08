@@ -104,8 +104,8 @@ def lci_recs_path() -> Path:
 
 
 def clc_pages_dir() -> Path:
-    """The CLC edition's published pages under ``gh-pages/uxlc/clc/``."""
-    return gh_pages_dir() / "clc"
+    """The CLC edition's published pages under ``gh-pages/clc/``."""
+    return paths.gh_pages_dir() / "clc"
 
 
 def fois_pages_dir() -> Path:
