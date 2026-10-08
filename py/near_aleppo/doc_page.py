@@ -469,24 +469,25 @@ def _gav_display(numbers):
     rule8 = numbers.fig_value("rule8_sites")
     first = rule8[MARKS_WITHOUT_LETTER]
     second = rule8[consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE]
-    if not first or second:
-        raise AssertionError(
-            "Only the supported nonzero-width orphan template has occurrences"
-        )
     return [
         mb_html.para(
             [
                 "Position: the near-Aleppo dataset's ",
                 he_name(MARKS_WITHOUT_LETTER),
                 " represents marks at a position of nonzero width. Its name "
-                "describes the position, not the carrier letter.",
+                "describes the position, not the carrier letter. The near-Aleppo "
+                "dataset's ",
+                he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
+                " represents marks at a position of no width, including a medial "
+                "position within a written atom. It inserts no separator. Existing "
+                "pointings have not all been migrated to this positional distinction.",
             ]
         ),
         mb_html.para(
             [
-                "Carrier forms: the supported template accepts GA ",
+                "Carrier forms: both templates accept GA ",
                 mb_html.code(['{"1":"', he_pointed("אֵ"), '"}'], {"dir": "ltr"}),
-                " or GV ",
+                ". The original template also accepts GV ",
                 mb_html.code(
                     ['{"1":"', he_pointed("וֹ"), '","carrier":"holam-male-vav"}'],
                     {"dir": "ltr"},
@@ -524,6 +525,9 @@ def _gav_display(numbers):
                 "The supported nonzero-width template occurs at ",
                 verse_refs(first),
                 ", inside the pointed ketivs.",
+                " The zero-width template occurs at ",
+                verse_refs(second),
+                ", with its GA carrier inside the written atom.",
             ]
         ),
         mb_html.para(

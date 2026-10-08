@@ -1,11 +1,13 @@
 """Closed artificial-carrier shapes used by the near-Aleppo dataset.
 
-The original GA shape remains unchanged. The explicit GV variant retains the
+Both orphan names accept the original GA shape. The explicit GV variant retains the
 chosen artificial VAV + HOLAM; neither carrier letter is a ketiv consonant.
+The zero-width name accepts GA only.
 Build validation and edition display use the same carrier validation.
 """
 
 MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
+MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
 GV_PARAMETER = "carrier"
 GV_VARIANT = "holam-male-vav"
 GV_CARRIER = "\N{HEBREW LETTER VAV}\N{HEBREW POINT HOLAM}"
@@ -28,10 +30,13 @@ def carriers(tmpl, label):
     if set(tmpl) != {"tmpl_name", "tmpl_params"}:
         raise AssertionError(f"{label}: unexpected orphan-template fields")
     params = tmpl["tmpl_params"]
-    if tmpl["tmpl_name"] != MARKS_WITHOUT_LETTER or set(params) not in (
-        {"1"},
-        {"1", GV_PARAMETER},
-    ):
+    name = tmpl["tmpl_name"]
+    keysets = (
+        ({"1"}, {"1", GV_PARAMETER})
+        if name == MARKS_WITHOUT_LETTER
+        else ({"1"},) if name == MARKS_WITHOUT_LETTER_OR_SPACE else ()
+    )
+    if set(params) not in keysets:
         raise AssertionError(f"{label}: unsupported orphan-template shape")
     value = params["1"]
     if GV_PARAMETER in params:

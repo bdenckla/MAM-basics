@@ -22,6 +22,7 @@ POINTED_KETIV = "כתיב מנוקד"
 RENAMED_DOC = "נוסח עם הקשר מקרא על פי המסורה"
 RENAMED_SCRDFFTAR = "הערה-2 עם הקשר מקרא על פי המסורה"
 MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
+MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
 
 # The render tags of the lines the edition adds to a note: a parameter's name, and a
 # fixed English sentence that is a flag's value.

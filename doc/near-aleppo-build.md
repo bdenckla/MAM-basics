@@ -34,6 +34,10 @@ renamed template does not stop it. Importing a payload makes no new editorial
 choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
 accepts only its declared carrier and exact mark shape.
+The near-Aleppo dataset's zero-width sibling, `ניקוד בלי אות ובלי רווח`,
+accepts the same single-parameter GA shape. Both render carriers in guillemets;
+neither inserts a separator. Existing pointings retain their template names
+except where an individual editorial decision changes them.
 
 After the last pointing import, before any output is written, a Scripture-target
 check requires each supplied ordinary or trivial pointed ketiv to retain its

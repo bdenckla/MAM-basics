@@ -855,6 +855,13 @@ _CHOICES = (
             "Keeping a template name whose contract described only MAM's original note body",
         ),
     ),
+    Choice(
+        "2026-10-08",
+        _BEN,
+        "Orphan vowels at five reviewed ketiv sites",
+        "At 2 Samuel 3:2, qamats follows yod on a medial GA carrier. At 2 Kings 4:7, qubuts is on a leading GA carrier by Ben's preference for uniform representation, without a new manuscript inspection; the CGJ formerly between qubuts and qamats on bet is omitted from the adopted form. At Ezekiel 14:14, 14:20 and 28:3, only tsere follows nun on a medial GA carrier; the accents stay on nun. The medial forms use the near-Aleppo dataset's `ניקוד בלי אות ובלי רווח` with its defined single-parameter GA shape. Original MAM notes retain their source forms. Other orphan-template names are unchanged.",
+        ("Retaining both vowels on the same written letter at these sites",),
+    ),
 )
 
 

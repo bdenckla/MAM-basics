@@ -10,14 +10,9 @@ The documentation renders the same NOTICE object used in every book header.
 import copy
 
 from near_aleppo.phase2_templates import MARKS_WITHOUT_LETTER
+from near_aleppo.phase2_templates import MARKS_WITHOUT_LETTER_OR_SPACE
 from near_aleppo.phase2_templates import POINTED_KETIV_PARAMETER
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
-
-# Rule 8's planned template for marks at a position of no width, at the join inside
-# a maqaf compound, specific to the near-Aleppo dataset. The pending-work section
-# and original decision retain its name; the current consumer notice omits it.
-# No site uses it yet, so phase 2 has no rule for it.
-MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
 
 # MAM-parsed-plus's notice, the same in all 24 books, copied by script: the notice
 # that NOTICE was last adapted from, on 2026-10-05, when all 24 input notices began
@@ -92,7 +87,8 @@ NOTICE = {
             "Use a closed, role-aware template dispatch: recurse only through "
             "documented Scripture-bearing fields, and fail on an unknown template "
             "instead of guessing from its parameters or skipping it. Near-Aleppo "
-            f"adds note templates and {MARKS_WITHOUT_LETTER}; follow their "
+            f"adds note templates, {MARKS_WITHOUT_LETTER} and "
+            f"{MARKS_WITHOUT_LETTER_OR_SPACE}; follow their "
             "documented roles."
         ),
         (

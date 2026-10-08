@@ -222,6 +222,7 @@ def _assert_names_are_the_builds():
         (nap.RENAMED_DOC, RENAMED_NOTES["נוסח"]),
         (nap.RENAMED_SCRDFFTAR, RENAMED_NOTES["מ:הערה-2"]),
         (nap.MARKS_WITHOUT_LETTER, phase2.MARKS_WITHOUT_LETTER),
+        (nap.MARKS_WITHOUT_LETTER_OR_SPACE, phase2.MARKS_WITHOUT_LETTER_OR_SPACE),
     )
     for copy_name, build_name in pairs:
         if copy_name != build_name:

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "64f567aa99f2e3a07845a1afb93c8df6a9276213372f9fdf5860ac3e3bc180ae",
+  "inventory_sha256": "1ca24759c5bbe005dae9ca5a12cfb089040e9d70f98fb97839100884550b3e7d",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -27424,7 +27424,15 @@
         "tmpl_params": {
           "1": "בניכי",
           "2": "וּבָנַ֔יִךְ",
-          "כתיב מנוקד": "בֻ͏ָנַ֔יִכי"
+          "כתיב מנוקד": [
+            {
+              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_params": {
+                "1": "אֻ"
+              }
+            },
+            "בָנַ֔יִכי"
+          ]
         }
       },
       "original_body": "א-כתיב=בֻ͏ָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)",
@@ -27443,11 +27451,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "384e2949c368e2204682c52e928d815fb7e4a117188554a50ec4f813ae7a0d77",
+      "evidence_sha256": "127828acd380f32eda0a76888d214b8991e41b4e338d03595d2fcf5af58ec10c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -38428,7 +38436,16 @@
         "tmpl_params": {
           "1": "דנאל",
           "2": "דָּנִיֵּ֣אל",
-          "כתיב מנוקד": "דָּנִֵּ֣אל"
+          "כתיב מנוקד": [
+            "דָּנִּ֣",
+            {
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
+              "tmpl_params": {
+                "1": "אֵ"
+              }
+            },
+            "אל"
+          ]
         }
       },
       "original_body": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה)",
@@ -38447,11 +38464,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "3d34ba63474e6f91f7daa7ccaaf8658f49632f729d2c73807a4323a2899264d3",
+      "evidence_sha256": "67fa1e6cb9d0a4c0385ad0c01e49dc9227537fd94f5057be00a031f1e095d0ef",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -38491,7 +38508,16 @@
         "tmpl_params": {
           "1": "דנאל",
           "2": "דָּנִיֵּ֣אל",
-          "כתיב מנוקד": "דָּנִֵּ֣אל"
+          "כתיב מנוקד": [
+            "דָּנִּ֣",
+            {
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
+              "tmpl_params": {
+                "1": "אֵ"
+              }
+            },
+            "אל"
+          ]
         }
       },
       "original_body": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה; אך המונח נדחף לגמרי מתחת לאות אל\"ף כזה: דָּנִֵּא֣ל)",
@@ -38510,11 +38536,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "b803032194a17b89aa5bc18dba75e33e8a644f9d617ff930b8500202b59f0e16",
+      "evidence_sha256": "556d3e3626ecf150313f90d36fc12339edc96ba8aeb9f8eb592b59113faa374e",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -39649,7 +39675,16 @@
         "tmpl_params": {
           "1": "מדנאל",
           "2": "מִדָּנִיֵּ֑אל",
-          "כתיב מנוקד": "מִדָּנִֵּ֑אל"
+          "כתיב מנוקד": [
+            "מִדָּנִּ֑",
+            {
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
+              "tmpl_params": {
+                "1": "אֵ"
+              }
+            },
+            "אל"
+          ]
         }
       },
       "original_body": "א-כתיב=מִדָּנִֵּ֑אל (חיריק, צירה, ואתנחתא מתחת לנו\"ן, בסדר הזה)",
@@ -39668,11 +39703,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "cf20c3ee138bb3cbc2d5018b6f4e83320d845cf60308491f407e90d5aefc4589",
+      "evidence_sha256": "46e28499769db0fddc315efa5f99d1e1016f650aa77da2c995b1c5130f257ce1",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [

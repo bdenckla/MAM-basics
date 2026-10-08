@@ -40,6 +40,20 @@ def test_requested_punctuation_extract_matches_edition_renderer():
             ],
             "GV requires exactly",
         ),
+        (
+            [
+                "א",
+                {
+                    "tmpl_name": orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE,
+                    "tmpl_params": {
+                        "1": orphan_marks.GV_CARRIER,
+                        "carrier": orphan_marks.GV_VARIANT,
+                    },
+                },
+                "ב",
+            ],
+            "unsupported orphan-template shape",
+        ),
     ),
 )
 def test_producer_rejects_corrupted_pointings_without_changing_them(pointing, error):

@@ -35,10 +35,10 @@ note, and phase 2 still meets and counts every one. Where MAM's notes
 give the codex's pointed ketiv, ``phase5_readings.py`` adds it to the template in
 POINTED_KETIV_PARAMETER, MAM's parameters staying as they are.
 
-Rule 8's template for marks written where no letter is, MARKS_WITHOUT_LETTER, is
-specific to the near-Aleppo dataset. MAM's text never has it, so phase 2 raises if
-it meets it; phase 5 writes it inside a pointed ketiv, and the walks after phase 5
-keep it whole.
+Rule 8's templates for marks written where no letter is, MARKS_WITHOUT_LETTER and
+MARKS_WITHOUT_LETTER_OR_SPACE, are specific to the near-Aleppo dataset. MAM's text
+never has them, so phase 2 raises if it meets them; later steps write them inside
+pointed ketivs, and the subsequent walks keep them whole.
 
 Legarmeh, paseq and gray maqaf are first written as private-use placeholders, so
 that the spacing each replacement assumes can be checked on the verse's flattened
@@ -122,6 +122,7 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # The edition renders the marks in double guillemets; the dataset and the in-place
 # test read them in square brackets, as MAM's notes write them.
 MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
+MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
 
 
 class _Rule(NamedTuple):
@@ -183,6 +184,7 @@ _RULES = {
     MARKS_WITHOUT_LETTER: _Rule(
         _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
     ),
+    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(_CARRIERS, (), _keysets(("1",))),
 }
 
 # Templates that phase 2 removes wherever they occur, so that none remains
@@ -355,9 +357,10 @@ def carriers_text(tmpl, verse):
     return "[" + orphan_marks.carriers(tmpl, verse) + "]"
 
 
-def marks_without_letter(carriers, verse):
+def marks_without_letter(carriers, verse, *, without_space=False):
     """The near-Aleppo dataset's rule-8 template holding ``carriers``, which carriers_text checks."""
-    tmpl = {"tmpl_name": MARKS_WITHOUT_LETTER, "tmpl_params": {"1": carriers}}
+    name = MARKS_WITHOUT_LETTER_OR_SPACE if without_space else MARKS_WITHOUT_LETTER
+    tmpl = {"tmpl_name": name, "tmpl_params": {"1": carriers}}
     carriers_text(tmpl, verse)
     return tmpl
 

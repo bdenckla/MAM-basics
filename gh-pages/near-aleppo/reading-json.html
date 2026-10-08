@@ -208,9 +208,13 @@ labelled form and the stored MAM clauses.</p>
 forms, and display are explained in <a href="#gav-display">GAV notation and display</a>.</p>
 <h3 id="gav-display">GAV notation and display</h3>
 <p>Position: the near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות</bdi> represents
-marks at a position of nonzero width. Its name describes the position, not the carrier letter.</p>
-<p>Carrier forms: the supported template accepts GA
-<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> or GV
+marks at a position of nonzero width. Its name describes the position, not the carrier letter. The
+near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> represents marks at
+a position of no width, including a medial position within a written atom. It inserts no separator.
+Existing pointings have not all been migrated to this positional distinction.</p>
+<p>Carrier forms: both templates accept GA
+<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code>. The original template also
+accepts GV
 <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">וֹ</bdi>","carrier":"holam-male-vav"}</code>
 as its <code>tmpl_params</code>. GA permits one or more artificial alefs, each followed by permitted
 marks. GV requires exactly VAV + HOLAM and the <code>carrier=holam-male-vav</code> discriminator.
@@ -239,9 +243,10 @@ space.</p>
 <a href="edition/BC-1Kings.html#c7v20">7:20</a>, <a href="edition/BC-1Kings.html#c9v18">9:18</a>,
 <a href="edition/BC-1Kings.html#c15v18">15:18</a>,
 <a href="edition/BC-1Kings.html#c16v26">16:26</a>; <a href="edition/BD-2Kings.html#c4v5">2 Kings
-4:5</a>, <a href="edition/BD-2Kings.html#c5v25">5:25</a>,
-<a href="edition/BD-2Kings.html#c9v15">9:15</a>, <a href="edition/BD-2Kings.html#c11v4">11:4</a>,
-<a href="edition/BD-2Kings.html#c11v9">11:9</a>, <a href="edition/BD-2Kings.html#c11v10">11:10</a>,
+4:5</a>, <a href="edition/BD-2Kings.html#c4v7">4:7</a>,
+<a href="edition/BD-2Kings.html#c5v25">5:25</a>, <a href="edition/BD-2Kings.html#c9v15">9:15</a>,
+<a href="edition/BD-2Kings.html#c11v4">11:4</a>, <a href="edition/BD-2Kings.html#c11v9">11:9</a>,
+<a href="edition/BD-2Kings.html#c11v10">11:10</a>,
 <a href="edition/BD-2Kings.html#c11v15">11:15</a>,
 <a href="edition/BD-2Kings.html#c11v20">11:20</a>,
 <a href="edition/BD-2Kings.html#c12v12">12:12</a>,
@@ -300,7 +305,11 @@ space.</p>
 <a href="edition/FB-Nehemiah.html#c12v16">Nehemiah 12:16</a>;
 <a href="edition/FC-1Chronicles.html#c12v16">1 Chronicles 12:16</a>;
 <a href="edition/FD-2Chronicles.html#c9v29">2 Chronicles 9:29</a>,
-<a href="edition/FD-2Chronicles.html#c18v8">18:8</a>, inside the pointed ketivs.</p>
+<a href="edition/FD-2Chronicles.html#c18v8">18:8</a>, inside the pointed ketivs. The zero-width
+template occurs at <a href="edition/BB-2Samuel.html#c3v2">2 Samuel 3:2</a>;
+<a href="edition/C3-Ezekiel.html#c14v14">Ezekiel 14:14</a>,
+<a href="edition/C3-Ezekiel.html#c14v20">14:20</a>,
+<a href="edition/C3-Ezekiel.html#c28v3">28:3</a>, with its GA carrier inside the written atom.</p>
 <p>The original GA example, at <a href="edition/C1-Isaiah.html#c36v12">Isaiah 36:12</a>, is
 <bdi lang="hbo" class="pointed">«אֵאֵ֥»</bdi>. Near-Aleppo encodes the bracketed alef carriers
 supplied in MAM's note; they are not written ketiv letters.</p>
@@ -414,8 +423,8 @@ and choose a projection wherever the payload presents alternatives.</p>
 <ul>
 <li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
 fields, and fail on an unknown template instead of guessing from its parameters or skipping it.
-Near-Aleppo adds note templates and <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>; follow their
-documented roles.</li>
+Near-Aleppo adds note templates, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi> and
+<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi>; follow their documented roles.</li>
 <li>Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture.
 The stored pointed ketiv, <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, is a Scripture
 alternative.</li>
