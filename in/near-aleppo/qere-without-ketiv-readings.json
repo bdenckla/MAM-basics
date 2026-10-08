@@ -1,0 +1,236 @@
+{
+  "format": "near-aleppo-qere-without-ketiv-readings-v1",
+  "cases": [
+    {
+      "id": "Ju20-13",
+      "reference": [
+        "Judges",
+        20,
+        13
+      ],
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-08",
+        "qere": "בְּנֵ֣י",
+        "below_marks": [
+          "sheva",
+          "tsere",
+          "munaḥ"
+        ],
+        "letters_present": false,
+        "space_above_marks": true,
+        "dagesh_present": false,
+        "mark_groups": [
+          "ְ",
+          "ֵ֣"
+        ],
+        "display_text": " ְ ֵ֣",
+        "display_convention": "An ASCII SPACE anchors each mark group; the anchors do not measure manuscript spacing.",
+        "line_position": "end of a manuscript line",
+        "line_position_basis": "Ben Denckla's manuscript-image observation, 2026-10-08",
+        "spacing_hypothesis": {
+          "status": "hypothesis",
+          "attribution": "Ben Denckla, 2026-10-08",
+          "text": "The line ending may have provided space for the marks, possibly accidentally."
+        }
+      },
+      "observation": "The below-marks of בְּנֵ֣י (sheva, tsere, munaḥ) are present without letters, with space above them. No dagesh. The orphan marks are at the end of a manuscript line. The line ending may have provided space for the marks, possibly accidentally.",
+      "romanized": [
+        "sheva",
+        "tsere",
+        "munaḥ",
+        "dagesh"
+      ],
+      "documentation_notes": [
+        "A masorah circle is above the marks; it is documented but not encoded.",
+        "The standalone review's blank SPACE anchors are display conventions, not measurements of manuscript spacing or a proposed template design."
+      ],
+      "crop": {
+        "filename": "aleppo-Ju20-13.png",
+        "source_screenshot": "Screenshot 2026-10-08 105138.png"
+      }
+    },
+    {
+      "id": "2S16-23",
+      "reference": [
+        "2Samuel",
+        16,
+        23
+      ],
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-08",
+        "qere": "אִ֖ישׁ",
+        "space_assessment": "fairly generous, even after the maqaf",
+        "pointing_present": false,
+        "room_for_qere_letters": false,
+        "room_for_qere_below_marks": true,
+        "room_for_below_mark_names": [
+          "ḥiriq",
+          "tipeḥa"
+        ],
+        "source_note_assessment": "Ben questions whether MAM's description 'narrow' fits the space.",
+        "reviewed_mam_note": {
+          "reviewed_date": "2026-10-08",
+          "quotation": "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
+        }
+      },
+      "observation": "The space is fairly generous even after the maqaf, with no pointing for אִ֖ישׁ. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). Ben questions whether the description “narrow” in MAM’s note reviewed on 2026-10-08 fits this space.",
+      "romanized": [
+        "maqaf",
+        "ḥiriq",
+        "tipeḥa"
+      ],
+      "documentation_notes": [],
+      "crop": {
+        "filename": "aleppo-2S16-23.png",
+        "source_screenshot": "Screenshot 2026-10-08 105548.png"
+      }
+    },
+    {
+      "id": "2S18-20",
+      "reference": [
+        "2Samuel",
+        18,
+        20
+      ],
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-08",
+        "qere": "כֵּ֥ן",
+        "agreement_with_mam_note": true,
+        "space_above_marks": false,
+        "qere_letters_present": false,
+        "below_marks_present": [
+          "tsere",
+          "merkha"
+        ],
+        "below_mark_position": "below, between the surrounding written atoms",
+        "dagesh_present": false,
+        "reviewed_mam_note": {
+          "reviewed_date": "2026-10-08",
+          "quotation": "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה."
+        }
+      },
+      "observation": "The tsere and merkha of כֵּ֥ן are written below, between the surrounding written atoms, without the qere letters or dagesh. There is no space above these marks. Ben agrees with MAM’s note as reviewed on 2026-10-08.",
+      "romanized": [
+        "tsere",
+        "merkha",
+        "dagesh"
+      ],
+      "documentation_notes": [],
+      "crop": {
+        "filename": "aleppo-2S18-20.png",
+        "source_screenshot": "Screenshot 2026-10-08 110056.png"
+      }
+    },
+    {
+      "id": "2K19-31",
+      "reference": [
+        "2Kings",
+        19,
+        31
+      ],
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-08",
+        "qere": "צְבָא֖וֹת",
+        "space_assessment": "very generous",
+        "room_for_qere_letters": {
+          "status": "tentative",
+          "assessment": "Perhaps the qere letters could have fit."
+        },
+        "below_marks_present": [
+          "sheva",
+          "qamats",
+          "tipeḥa"
+        ],
+        "xolam_male_dot": {
+          "status": "tentative",
+          "assessment": "A ḥolam male dot seems to be represented."
+        }
+      },
+      "observation": "There is very generous spacing for צְבָא֖וֹת; perhaps the qere letters could have fit. All its below-marks are present (sheva, qamats, and tipeḥa). A ḥolam male dot also seems to be represented.",
+      "romanized": [
+        "sheva",
+        "qamats",
+        "tipeḥa",
+        "ḥolam male"
+      ],
+      "documentation_notes": [],
+      "crop": {
+        "filename": "aleppo-2K19-31.png",
+        "source_screenshot": "Screenshot 2026-10-08 110419.png"
+      }
+    },
+    {
+      "id": "2K19-37",
+      "reference": [
+        "2Kings",
+        19,
+        37
+      ],
+      "reading": null,
+      "observation": null,
+      "romanized": [],
+      "documentation_notes": [],
+      "crop": null
+    },
+    {
+      "id": "Je31-37",
+      "reference": [
+        "Jeremiah",
+        31,
+        37
+      ],
+      "reading": null,
+      "observation": null,
+      "romanized": [],
+      "documentation_notes": [],
+      "crop": null
+    },
+    {
+      "id": "Je50-29",
+      "reference": [
+        "Jeremiah",
+        50,
+        29
+      ],
+      "reading": null,
+      "observation": null,
+      "romanized": [],
+      "documentation_notes": [],
+      "crop": null
+    },
+    {
+      "id": "R3-5",
+      "reference": [
+        "Ruth",
+        3,
+        5
+      ],
+      "reading": null,
+      "observation": null,
+      "romanized": [],
+      "documentation_notes": [],
+      "crop": null
+    },
+    {
+      "id": "R3-17",
+      "reference": [
+        "Ruth",
+        3,
+        17
+      ],
+      "reading": null,
+      "observation": null,
+      "romanized": [],
+      "documentation_notes": [],
+      "crop": null
+    }
+  ]
+}

@@ -604,6 +604,52 @@ and Black passed on the changed Python test. The mega and full suite remain
 on the nightly cadence under the approved trial; focused regeneration,
 content comparisons and browser geometry checks cover this CSS correction.
 
+## Qere-without-ketiv manuscript study — 2026-10-08
+
+**Status:** Implemented by Codex as the first draft Ben approved: “what you
+propose seems fine, at least as a first draft.” Further discussion continues
+alongside implementation.
+
+**Checkout and baseline:** Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos/MAM-basics`, a full clone on main at
+`5eab49e09093556373054fd2a6b3458dab9b8c8b`, clean before editing.
+
+**Change:** The FOI index and existing ketiv/qere guide now link to
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html`. Its nine entries show current
+NAEE verses, current MAM qere and attached notes, and generated verse lookup links.
+Ben's four dated image readings and supplied crops are displayed inline; the five
+entries awaiting image readings are labelled accordingly. The Samuel assessments
+identify the notes reviewed on 2026-10-08, with their exact quotations retained in
+the reading metadata. Tentative readings and the Judges line-ending hypothesis
+remain qualified.
+
+**Maintained home:** `in/near-aleppo/qere-without-ketiv-readings.json` owns the
+observations and crop provenance; `in/near-aleppo/img/qere-without-ketiv/` owns the
+unchanged PNGs. The shared renderer supplies current Scripture and notes.
+`doc/near-aleppo-qere-without-ketiv/README.md` documents maintenance and provenance.
+The preserved Downloads bundle's generator README points to this tracked study.
+Book datasets, pointing inputs, template policy and Ben's requested-edit file
+remain unchanged.
+
+**Verification:** Black passed on both changed Python files. HTML regeneration
+and read-only comparison passed for all 88 owned files and both font copies.
+An independent artifact differential matched all nine complete NAEE verses and
+ruby trees, all nine MAM qere displays and six attached MAM notes. All local links
+resolve, and the four supplied, canonical and generated crops have identical
+bytes. The six focused test files passed (16 tests); the stylesheet lint passed
+again after the final note-font adjustment. A read-only agent review found no
+remaining material fidelity issue. The generated page was read, all existing
+generated diffs were inspected, and `git diff --check` passed. The mega and full
+suite are deferred to nightly checks under the approved trial; focused generation,
+the artifact differential and mechanical lints cover this FOI and documentation
+change.
+
+**Integration:** Origin advanced to `ba3e0d483c94fa484a54f797d7381fe5db23aa52`
+before the push. The normal merge preserves the incoming boxed NAEE rendering,
+separate guide additions and all live-ledger entries. The study was regenerated
+with that renderer; HTML comparison and the nine-entry artifact differential
+passed again. Three focused CLC-style, stylesheet and prose-order checks passed.
+Relative to incoming main, the study changes no book dataset or pointing input.
 
 ## Final dalet carrier at Isaiah 54:16 — 2026-10-08
 
@@ -689,3 +735,17 @@ A mechanical check rejects 106 altered GD payloads or parameter shapes.
 No earlier stored carrier is final. Read-only product comparison and
 `git diff --check` passed. Full mega and suite remain on the nightly cadence
 under `doc/review-trial.md`; no consequence requires immediate broad checks.
+
+
+**Integration:** The carrier implementation was committed as `b9c4dd09`.
+Fetched origin/main advanced to `7c82b5df6deeee66568830bf63b7ba0a2cee1350`.
+The normal full-clone merge preserves the incoming 2 Kings 14:7 pointing,
+qere-without-ketiv study, Ezekiel decision record and both live-ledger entries.
+Only the ledger's concurrent append needed manual resolution. The combined
+build and all 88 HTML products regenerated without additional differences.
+The corpus and GA/GV/GD differentials passed again against incoming main,
+isolating exactly this task's notices and Isaiah payload. The combined tree's
+19 focused tests passed again with the existing cache-permission warning;
+the HTML read-only comparison passed for 88 files and both font copies.
+The carrier implementation files and reviewed Isaiah payload are unchanged
+from `b9c4dd09`. Mega and full suite remain on the approved nightly cadence.
