@@ -15,8 +15,8 @@ from near_aleppo.census import census_paths
 from near_aleppo.census.edition_projection import (
     EDITION_SEPARATOR_TEMPLATE_NAMES,
     edition_parameter_keys,
-    edition_parameter_keys_for,
 )
+from near_aleppo import phase3_policies as phase3
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import ws_tmpl2 as wtp
 
@@ -86,50 +86,36 @@ def each_nusach(wtel, out):
         each_nusach(wtp.template_param_val(wtel, k), out)
 
 
-def keys_for(name, keys):
-    """Compatibility entry point for apparatus surveys that reuse this walk."""
-    return edition_parameter_keys_for(name, keys)
-
-
-def flatten(wtel, out, *, projected):
+def flatten(wtel, out):
+    """The Scripture text of ``wtel`` under the edition projection, a separator
+    template as a space."""
     if isinstance(wtel, str):
         out.append(wtel)
     elif isinstance(wtel, (list, tuple)):
         for x in wtel:
-            flatten(x, out, projected=projected)
+            flatten(x, out)
     elif wtp.is_template(wtel):
-        name = wtp.template_name(wtel)
-        if name in EDITION_SEPARATOR_TEMPLATE_NAMES:
+        if wtp.template_name(wtel) in EDITION_SEPARATOR_TEMPLATE_NAMES:
             out.append(" ")
-            if projected:
-                return
-        keys = (
-            edition_parameter_keys(wtel) if projected else wtp.template_param_keys(wtel)
-        )
-        for k in keys:
-            flatten(wtp.template_param_val(wtel, k), out, projected=projected)
+            return
+        for k in edition_parameter_keys(wtel):
+            flatten(wtp.template_param_val(wtel, k), out)
 
 
 def text_of(val):
     out = []
-    flatten(val, out, projected=True)
+    flatten(val, out)
     return "".join(out).strip()
 
 
-def clauses(val):
-    """The note body split at its ש separators; each clause flattened to a string."""
-    items = val if isinstance(val, (list, tuple)) else [val]
-    out = [""]
-    for it in items:
-        if isinstance(it, str):
-            out[-1] += it
-        elif wtp.is_template(it) and wtp.template_name(it) == "ש":
-            out.append("")
-        else:
-            body = []
-            flatten(it, body, projected=True)
-            out[-1] += "".join(body)
-    return [c for c in out if c.strip()]
+def clauses(val, verse):
+    """The note body's non-empty clauses, read by the build's note-prose reader.
+
+    That reader, phase 3's ``_clauses``, keeps a link's display text, writes
+    HEBREW PUNCTUATION PASEQ for the legarmeh and paseq templates, and raises on a
+    template it does not name. ``verse`` appears only in that error.
+    """
+    return [c for c in phase3._clauses(val, verse) if c]
 
 
 def split_clause(clause):
@@ -289,7 +275,7 @@ def collect():
                     malformed.append((bcvt, keys, wtp.template_param_val(t, "1")))
                     continue
                 target = text_of(wtp.template_param_val(t, "1"))
-                for clause in clauses(wtp.template_param_val(t, "2")):
+                for clause in clauses(wtp.template_param_val(t, "2"), ref(bcvt)):
                     n_clauses += 1
                     shape, head, reading = split_clause(clause)
                     shape_counts[shape] += 1
