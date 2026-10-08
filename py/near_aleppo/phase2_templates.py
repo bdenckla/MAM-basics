@@ -184,7 +184,9 @@ _RULES = {
     MARKS_WITHOUT_LETTER: _Rule(
         _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
     ),
-    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(_CARRIERS, (), _keysets(("1",))),
+    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
+        _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
+    ),
 }
 
 # Templates that phase 2 removes wherever they occur, so that none remains

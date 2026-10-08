@@ -35,9 +35,11 @@ choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
 accepts only its declared carrier and exact mark shape.
 The near-Aleppo dataset's zero-width sibling, `ניקוד בלי אות ובלי רווח`,
-accepts the same single-parameter GA shape. Both render carriers in guillemets;
-neither inserts a separator. Existing pointings retain their template names
-except where an individual editorial decision changes them.
+accepts the same GA and explicit holam-male-vav GV shapes. Both render carriers
+in guillemets; neither inserts a separator. By Ben's decision of 2026-10-08,
+medial orphans between written letters with no adjacent literal separator use
+the zero-width name. Leading orphans and existing explicit separators retain
+their representations. Carrier parameters and all Hebrew codepoints are unchanged.
 
 After the last pointing import, before any output is written, a Scripture-target
 check requires each supplied ordinary or trivial pointed ketiv to retain its

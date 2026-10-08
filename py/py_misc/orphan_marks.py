@@ -1,8 +1,7 @@
 """Closed artificial-carrier shapes used by the near-Aleppo dataset.
 
-Both orphan names accept the original GA shape. The explicit GV variant retains the
+Both orphan names accept the original GA shape and the explicit GV variant, retaining the
 chosen artificial VAV + HOLAM; neither carrier letter is a ketiv consonant.
-The zero-width name accepts GA only.
 Build validation and edition display use the same carrier validation.
 """
 
@@ -33,8 +32,8 @@ def carriers(tmpl, label):
     name = tmpl["tmpl_name"]
     keysets = (
         ({"1"}, {"1", GV_PARAMETER})
-        if name == MARKS_WITHOUT_LETTER
-        else ({"1"},) if name == MARKS_WITHOUT_LETTER_OR_SPACE else ()
+        if name in (MARKS_WITHOUT_LETTER, MARKS_WITHOUT_LETTER_OR_SPACE)
+        else ()
     )
     if set(params) not in keysets:
         raise AssertionError(f"{label}: unsupported orphan-template shape")

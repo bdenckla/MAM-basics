@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "61398cd9646bc6f857b9c94fe2ce99b3794396f7d0ce8dd650e0f6622b58f37e",
+  "inventory_sha256": "7103a98a91d6a8f32348bbd6a81c2c23fa85cdb77d37ec844e25c77a23bebc79",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -1466,7 +1466,7 @@
           "כתיב מנוקד": [
             "צְב",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
                 "1": "וֹ",
                 "carrier": "holam-male-vav"
@@ -1502,11 +1502,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "505ab830bb8a997b187b82fb6571c72969ec8a26270a18ba4373e693aead5956",
+      "evidence_sha256": "99ffe7a74659260f2f79bab5105fa520612b54db647bff428d4d038ccba5a53b",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "The complete note compares written forms, accent positions, manuscript annotations and transcription testimony in MAM's apparatus. Keep its three clauses after the labelled original MAM target; do not treat an agreement head as a claim about the new orphan-carrier display.",
+        "reason": "The complete note compares written forms, accent positions, manuscript annotations and transcription testimony in MAM's apparatus. Keep its three clauses after the labelled original MAM target; do not treat an agreement head as a claim about the new orphan-carrier display. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -1661,7 +1661,7 @@
           "כתיב מנוקד": [
             "צְב",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
                 "1": "וֹ",
                 "carrier": "holam-male-vav"
@@ -1685,11 +1685,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "9cc384145335f2da958377ae72729dcf83feab2259805b83968dfe34f6670091",
+      "evidence_sha256": "8006e987abf45920788082f6f0287c84063225c37fbae73906a7a1dec1145ee0",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "The single clause records cited written forms and hiriq/accent placement. Its cross-references and source attribution belong to the labelled original MAM target, not the new GV representation.",
+        "reason": "The single clause records cited written forms and hiriq/accent placement. Its cross-references and source attribution belong to the labelled original MAM target, not the new GV representation. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -28931,7 +28931,7 @@
             },
             "שֵ֥נַיְ",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
                 "1": "אֵ"
               }
@@ -28973,11 +28973,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "71deb9c765d41018c89abdf19e828e2a5b7f10e502baeb03401f9cb36f5c26f8",
+      "evidence_sha256": "a2863d48f21b79a006e2c590803d1d37457fba5cc468d840e628520b006ece6b",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "The note compares orphan-tsere placement, written/qere spellings and meteg choices across sources. Retain all four clauses with the labelled MAM target so the new two-carrier representation does not become the subject of the source's literal graphical descriptions.",
+        "reason": "The note compares orphan-tsere placement, written/qere spellings and meteg choices across sources. Retain all four clauses with the labelled MAM target so the new two-carrier representation does not become the subject of the source's literal graphical descriptions. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -78306,7 +78306,7 @@
           "כתיב מנוקד": [
             "מ",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
                 "1": "וֹ",
                 "carrier": "holam-male-vav"
@@ -78339,11 +78339,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "1d39744bfbd319cfdd1e88f1082b9c2ef897adfd4419742fbc311da83471193a",
+      "evidence_sha256": "9dfa612e6da8c4de77143f3f8d5d6c5ec43248f5b3ed36885be658cb9ef01f55",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Both clauses compare qere qamats and patah across sources. Full MAM framing retains their qere subject while the new ketiv uses an artificial VAV+HOLAM carrier and retains qamats on dalet.",
+        "reason": "Both clauses compare qere qamats and patah across sources. Full MAM framing retains their qere subject while the new ketiv uses an artificial VAV+HOLAM carrier and retains qamats on dalet. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [

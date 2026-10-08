@@ -47,12 +47,12 @@ def test_requested_punctuation_extract_matches_edition_renderer():
                     "tmpl_name": orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE,
                     "tmpl_params": {
                         "1": orphan_marks.GV_CARRIER,
-                        "carrier": orphan_marks.GV_VARIANT,
+                        "carrier": "unapproved",
                     },
                 },
                 "ב",
             ],
-            "unsupported orphan-template shape",
+            "GV requires exactly",
         ),
     ),
 )

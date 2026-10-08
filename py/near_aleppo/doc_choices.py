@@ -862,6 +862,13 @@ _CHOICES = (
         "At 2 Samuel 3:2, qamats follows yod on a medial GA carrier. At 2 Kings 4:7, qubuts is on a leading GA carrier by Ben's preference for uniform representation, without a new manuscript inspection; the CGJ formerly between qubuts and qamats on bet is omitted from the adopted form. At Ezekiel 14:14, 14:20 and 28:3, only tsere follows nun on a medial GA carrier; the accents stay on nun. The medial forms use the near-Aleppo dataset's `ניקוד בלי אות ובלי רווח` with its defined single-parameter GA shape. Original MAM notes retain their source forms. Other orphan-template names are unchanged.",
         ("Retaining both vowels on the same written letter at these sites",),
     ),
+    Choice(
+        "2026-10-08",
+        _BEN,
+        "Medial orphan-template names",
+        "Ben approved migrating the remaining medial orphan instances without adjacent literal separators from `ניקוד בלי אות` to `ניקוד בלי אות ובלי רווח`. The name change preserves every carrier parameter, mark, written letter and separator. Both names accept the existing GA and explicit holam-male-vav GV contracts; a GV remains artificial VAV + HOLAM with its discriminator. Leading orphans retain the original name. No new manuscript adjudication or pointing change is made.",
+        ("Keeping the older name at these medial orphan positions",),
+    ),
 )
 
 

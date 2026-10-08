@@ -479,15 +479,16 @@ def _gav_display(numbers):
                 "dataset's ",
                 he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
                 " represents marks at a position of no width, including a medial "
-                "position within a written atom. It inserts no separator. Existing "
-                "pointings have not all been migrated to this positional distinction.",
+                "position within a written atom. It inserts no separator. Medial "
+                "orphans without adjacent literal separators use this name; leading "
+                "orphans and explicit separators retain their representations.",
             ]
         ),
         mb_html.para(
             [
                 "Carrier forms: both templates accept GA ",
                 mb_html.code(['{"1":"', he_pointed("אֵ"), '"}'], {"dir": "ltr"}),
-                ". The original template also accepts GV ",
+                " and GV ",
                 mb_html.code(
                     ['{"1":"', he_pointed("וֹ"), '","carrier":"holam-male-vav"}'],
                     {"dir": "ltr"},
@@ -527,7 +528,7 @@ def _gav_display(numbers):
                 ", inside the pointed ketivs.",
                 " The zero-width template occurs at ",
                 verse_refs(second),
-                ", with its GA carrier inside the written atom.",
+                ", with its GA or GV carrier inside the written atom.",
             ]
         ),
         mb_html.para(
