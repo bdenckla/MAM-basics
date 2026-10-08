@@ -117,3 +117,26 @@ outer line-height/padding declarations used here; its annotation adds explicit
 only CLC CSS, the existing manual review instrument and this receipt family.
 The branch is pushed for review; main integration and deployment remain outside
 this task's authorization.
+
+## 2026-10-08 — Preserve the concurrent CLC page move
+
+**Adapted to current main:** During the branch push, main advanced to
+`4a43d330de4369d627927698ffbcb42b3b8ec9de`, moving the reading and longer-note
+pages to `gh-pages/clc/` and adding their index and legacy redirects. That
+completed work is imported unchanged into this review branch. The renderer
+remains `py/clc/clc_render.py`; the authoritative CSS remains
+`gh-pages/uxlc/style.css`. The original receipt's published-page paths now name
+redirects rather than the actual renderer output.
+
+The existing review instrument now finds CLC pages through
+`uxlc_paths.clc_pages_dir()` instead of a literal old path. No new test instrument
+is introduced. All 176 collected units, their reading markup and computed styles
+are identical to the units measured above, apart from each record's source path.
+The three-size, two-font regression results are retained in
+`.novc/clc-ruby-final-mark/results-all-sizes-before-page-move.json`. A fresh
+20 px run of the adjusted instrument passes in both fonts. The complete
+wide/narrow actual-page comparison at all three sizes is repeated on the new
+canonical pages; verse and ruby HTML match the earlier page evidence exactly.
+Regeneration at the new paths, including index and redirects, is byte-identical.
+The same 14 focused tests, Black and whitespace checks pass again. The CSS
+declarations and measured clearance/layout limits above are unchanged.
