@@ -471,3 +471,43 @@ the FOI index, the two navigation indexes, review files and shared styles remain
 unchanged. `git diff --check` passed. The mega and full suite remain deferred
 to nightly checks under the approved trial; regeneration and the full-verse
 and layout differential cover this guide-only change.
+
+## Qere-without-ketiv manuscript study — 2026-10-08
+
+**Status:** Implemented by Codex as the first draft Ben approved: “what you
+propose seems fine, at least as a first draft.” Further discussion continues
+alongside implementation.
+
+**Checkout and baseline:** Source, development and integration checkout is
+`C:/Users/BenDe/GitRepos/MAM-basics`, a full clone on main at
+`5eab49e09093556373054fd2a6b3458dab9b8c8b`, clean before editing.
+
+**Change:** The FOI index and existing ketiv/qere guide now link to
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html`. Its nine entries show current
+NAEE verses, current MAM qere and attached notes, and generated verse lookup links.
+Ben's four dated image readings and supplied crops are displayed inline; the five
+entries awaiting image readings are labelled accordingly. The Samuel assessments
+identify the notes reviewed on 2026-10-08, with their exact quotations retained in
+the reading metadata. Tentative readings and the Judges line-ending hypothesis
+remain qualified.
+
+**Maintained home:** `in/near-aleppo/qere-without-ketiv-readings.json` owns the
+observations and crop provenance; `in/near-aleppo/img/qere-without-ketiv/` owns the
+unchanged PNGs. The shared renderer supplies current Scripture and notes.
+`doc/near-aleppo-qere-without-ketiv/README.md` documents maintenance and provenance.
+The preserved Downloads bundle's generator README points to this tracked study.
+Book datasets, pointing inputs, template policy and Ben's requested-edit file
+remain unchanged.
+
+**Verification:** Black passed on both changed Python files. HTML regeneration
+and read-only comparison passed for all 88 owned files and both font copies.
+An independent artifact differential matched all nine complete NAEE verses and
+ruby trees, all nine MAM qere displays and six attached MAM notes. All local links
+resolve, and the four supplied, canonical and generated crops have identical
+bytes. The six focused test files passed (16 tests); the stylesheet lint passed
+again after the final note-font adjustment. A read-only agent review found no
+remaining material fidelity issue. The generated page was read, all existing
+generated diffs were inspected, and `git diff --check` passed. The mega and full
+suite are deferred to nightly checks under the approved trial; focused generation,
+the artifact differential and mechanical lints cover this FOI and documentation
+change.

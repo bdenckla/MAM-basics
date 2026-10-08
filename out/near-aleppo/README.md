@@ -52,7 +52,10 @@ The example edition's [features of interest](../../gh-pages/near-aleppo/foi/inde
 start with [interesting ketiv/qere cases](../../gh-pages/near-aleppo/foi/interesting-ketiv-qere.html).
 These selected examples show whole verses with the current edition's ruby
 display. The BCV in each heading links to the verse in NAEE; relative links work
-locally and on the website. Regenerate both pages with:
+locally and on the website. The [qere-without-ketiv study](../../gh-pages/near-aleppo/foi/qere-without-ketiv.html)
+adds current MAM notes, Ben's dated manuscript observations, and supplied crops.
+Its [source note](../../doc/near-aleppo-qere-without-ketiv/README.md) identifies the
+maintained records and crop provenance. Regenerate the FOI pages and images with:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --html
