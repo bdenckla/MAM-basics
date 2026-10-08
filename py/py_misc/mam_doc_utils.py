@@ -61,6 +61,12 @@ def _mark_doc_target(doc_target, doc_lemma):
 def _does_not_need_callout(doc_lemma):
     if _has_pointed_string_within(doc_lemma):
         return True
+    if (
+        len(doc_lemma) == 1
+        and isinstance(doc_lemma[0], dict)
+        and renel.get_ren_el_tag(doc_lemma[0]) == "near-aleppo-kq-box"
+    ):
+        return _does_not_need_callout(renel.get_ren_el_contents(doc_lemma[0]))
     # Ruby changes the display, not the existing unread-ketiv callout decision.
     if (
         len(doc_lemma) == 1
