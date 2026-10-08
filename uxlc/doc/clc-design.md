@@ -126,8 +126,10 @@ the way `mb_cmn` is already vendored, or call it cross-repo? (See §5 vendoring 
 ## 4. Scope / relationship to UXLC
 
 - **Home (decided): CLC lives *in this repo*, not a separate one.** Python goes in **`py/clc/`**
-  and the HTML/CSS/JS output goes in **`gh-pages/uxlc/clc/`** — alongside the existing
-  `gh-pages/uxlc/amb-early-mtg/` and `gh-pages/uxlc/fois/`. Consequence: the existing assets in §5 are
+  and the HTML and note JSON go in **`gh-pages/clc/`**. Ben requested the move from
+  `gh-pages/uxlc/clc/` on 2026-10-08. Shared CSS, fonts and images remain under
+  `gh-pages/uxlc/`; the seven former HTML paths redirect to the new pages and preserve
+  incoming verse fragments in JavaScript. Consequence: the existing assets in §5 are
   **directly importable** (e.g. `import uxlc_amb_early_mtg…`, `uxlc_fois…`, `uxlc_changes…`,
   `uxlc_lci…`, `mb_cmn…`) rather than vendored. The only thing still arriving cross-repo is the
   accent-grammar engine from `wlc-utils` (see §9 #1).
@@ -368,8 +370,8 @@ Each is a feature this doc names, organized with grounding + open questions.
     ([`_note_block`](../../py/clc/clc_render.py#L197-L205)), regardless of length.
   - **Landed, case-by-case (not MAM's length threshold):** a note can be relegated to a long-notes
     page ([`clc_long_note.py`](../../py/clc/clc_long_note.py)) instead of rendering inline — one per main
-    page (`gh-pages/uxlc/clc/<label>-long-notes.html`, e.g.
-    [`gh-pages/uxlc/clc/Deuter-5-long-notes.html`](../../gh-pages/uxlc/clc/Deuter-5-long-notes.html)), written only
+    page (`gh-pages/clc/<label>-long-notes.html`, e.g.
+    [`gh-pages/clc/Deuter-5-long-notes.html`](../../gh-pages/clc/Deuter-5-long-notes.html)), written only
     for a job with any long notes to hold, so its own intro can link back to that one main page
     unambiguously. The highlighted word then becomes a link pointing across to that page's anchored
     body (the sole surviving link — same-page bodies are not linked, only highlighted). **Deliberate
@@ -720,9 +722,9 @@ reading**, the **difference type**, prose/poetic, and a link out to the full not
   ("MAM book order" likely tracks the printed order too, which is exactly why manuscript order has
   to be its own thing here.)
 
-**Implementation sketch:** one generated page under `gh-pages/uxlc/clc/`, backed by a JSON array of
+**Implementation sketch:** one generated page under `gh-pages/clc/`, backed by a JSON array of
 difference records, with **client-side JS** doing the sort/filter (this is the "JS" part of the
-gh-pages/uxlc/clc output). Keep the records as plain data so the *same* JSON drives both this index and
+gh-pages/clc output). Keep the records as plain data so the *same* JSON drives both this index and
 the per-verse note rendering.
 
 ### 7.10 Introductory prose — editorial principles & feature tour *(front matter)*
@@ -742,13 +744,17 @@ Characteristics:
   restoration (§7.2), change-records & FOIs as notes (§7.4–7.5), the detangled Decalogues + Gen
   35:22 (§7.7), versification (§7.8) — and link prominently to the differences-from-UXLC index
   (§7.9) as "see exactly what we changed."
-- Lives as the **`gh-pages/uxlc/clc/` landing page** (`index.html`) — the front door of the edition.
+- Lives as the **`gh-pages/clc/` landing page** (`index.html`) — the front door of the edition.
 
 Pairs with §7.9: the intro **argues** charity; the index **shows the receipts**.
 
-**Status: not started.** No `gh-pages/uxlc/clc/index.html` exists yet. The only front-matter so far is a
-short **per-book intro paragraph** at the top of each generated page
-([`_intro_para`](../../py/clc/clc_render.py)) describing the skeleton — not the editorial-principles essay.
+**Status: landing page implemented; editorial-principles essay not started.** Ben requested
+the landing page on 2026-10-08. `py/main_clc.py all` generates
+[`gh-pages/clc/index.html`](../../gh-pages/clc/index.html), listing Genesis, Exodus 20,
+Deuteronomy 5, 2 Samuel and Proverbs, with links to the two longer-notes pages. The
+MAM-basics homepage links to this index; every CLC reading and longer-notes page links
+back to it. The requested page directory is implemented; the essay described above
+remains future work.
 
 ### 7.11 BHL agreement: body vs. Appendix A *(a correctness fix, not a preference)*
 A reading that **agrees with the BHL body but is flagged in BHL Appendix A** should count as
@@ -957,9 +963,9 @@ Tracked in [#36](https://github.com/bdenckla/UXLC-utils/issues/36), closed.
 ---
 
 ## 8. Presentation / tech notes
-- Output is a static site under **`gh-pages/uxlc/clc/`** (same pattern as `gh-pages/uxlc/amb-early-mtg/`
+- Output is a static site under **`gh-pages/clc/`** (same pattern as `gh-pages/uxlc/amb-early-mtg/`
   and `gh-pages/uxlc/fois/`, and as MAM).
-- Reuse the Taamey font (`gh-pages/woff2/Taamey_D.woff2`) + `style.css`.
+- Reuse the Taamey font (`gh-pages/uxlc/woff2/Taamey_D.woff2`) and `gh-pages/uxlc/style.css`.
 - Borrow MAM's 3-column CSS vocabulary (`mam-doc-*`) or define a parallel `clc-doc-*` set.
 - **Note-body placement (see §7.3):** short notes inline in the doc column, **long notes relegated
   to a separate "big-doc" page** (MAM-with-doc model, §5); the always-link points to wherever the
@@ -1033,7 +1039,7 @@ and `dual-cant-added-punct`. The dual-cant **"added out of thin air"** (supplied
 8. **WLC-vs-UXLC per-word diff** to gate bracket-note application (§7.2) — tracked in
    [#33](https://github.com/bdenckla/UXLC-utils/issues/33); `wlc-utils/py/accgram/wlc_uxlc_diff.py`
    exists but needs a bracket-note-eligibility decision layer added on top (exact match only).
-9. ~~**Where does CLC live?**~~ **Decided:** in this repo — `py/clc/` + `gh-pages/uxlc/clc/` (§4).
+9. ~~**Where does CLC live?**~~ **Decided:** in this repo — `py/clc/` + `gh-pages/clc/` (§4).
 10. **LC manuscript book order** must be encoded for the difference-index sort (§7.9). The code
     only has standard printed order today. *(Verse-level prose/poetic, by contrast, is **already**
     available — `cantsys` + `_is_prose_section_of_job`; not an open question.)*
@@ -1060,21 +1066,21 @@ A loose sense of what unblocks what, without committing to phases:
 A snapshot of where the code (`py/clc/`, build driver `py/main_clc.py` + the separate offline
 note-downloader `py/main_clc_download_notes.py`) stands against the §7 feature list. The **walking
 skeleton (doc/clc-skeleton-plan.md) is complete and exceeded**; output exists for three pilot books
-(Genesis, Proverbs, 2 Samuel) under `gh-pages/uxlc/clc/`. Everything under the table is built but was
+(Genesis, Proverbs, 2 Samuel) under `gh-pages/clc/`. Everything under the table is built but was
 **not** named in §7.
 
 | feature | status | where / note |
 |---|---|---|
 | §7.1 charitable under-bar | **seed only** | m/d under-bar (+ t transcription-uncertainty) notes *surfaced* (clc_collect); no accent grammar / resolution — `is_uxlc_departure` always False, except the one §7.4 pending-change instance (Deut 5:8.2) |
 | §7.2 bracket-note restoration | not started | plan written up: [#33](https://github.com/bdenckla/UXLC-utils/issues/33) (attachment + UXLC-vs-WLC diff gate), [#34](https://github.com/bdenckla/UXLC-utils/issues/34) (MAM enrichment, depends on #33) |
-| §7.3 MAM-style highlighted notes | **done (skeleton form)** | 3-col `text \| ref \| doc` renderer (clc_render); noted words highlighted (`clc-doc-target`), same-page anchors dropped (issue #6 reversal) — only off-page notes link; most bodies inline, six case-by-case relegated to a long-notes page, one per main page (`clc_render._LONG_NOTE_SPECS`, `gh-pages/uxlc/clc/<label>-long-notes.html`) |
+| §7.3 MAM-style highlighted notes | **done (skeleton form)** | 3-col `text \| ref \| doc` renderer (clc_render); noted words highlighted (`clc-doc-target`), same-page anchors dropped (issue #6 reversal) — only off-page notes link; most bodies inline, six case-by-case relegated to a long-notes page, one per main page (`clc_render._LONG_NOTE_SPECS`, `gh-pages/clc/<label>-long-notes.html`) |
 | §7.4 change records as notes | **first instance** | change log used only for the consistency guard, not as a note, EXCEPT one instance: Deut 5:8.2-t's stale note is suppressed in favor of a link to the superseding 2026.10.19 change #10 (`clc_collect._NOTES_SUPERSEDED_BY_UXLC_CHANGE`, `ClcNote.superseding_uxlc_change`) |
 | §7.5 FOIs as notes | **partial** | ketiv/qere rendered as a boxed ruby (clc_kq); other FOIs not surfaced |
 | §7.6 images / Sefaria links | not started | — |
 | §7.7 dual-cant strands | **done** | Gen 35:22 + every Decalogue divergence verse encoded (`clc_dual_cant_oracle._ORACLE`: ex 20:2–6,8–10,13–15; dt 5:6–10,12–15,17–19 — 23 verses; the other 9 verses in the two passage ranges genuinely don't diverge and correctly carry no entry) — pure-accent + sof-pasuq suppression, supplied maqaf/sof-pasuq, rafe/dagesh by the faithful policy, omitted-accent notes (accents NOTED, never supplied), the QUPO vowel split (patax/qamats on one letter), and Unicode-PASEQ tokenization (a MAM tokenization-convention fold, no new runtime mechanism). [#20](https://github.com/bdenckla/UXLC-utils/issues/20) closed. The rafe/dagesh and QUPO splits — previously resolved silently — now each emit a reader-facing note on the combined (`-C`) row naming both strands, and the divergence set was proven closed against every `_ORACLE` atom ([#47](https://github.com/bdenckla/UXLC-utils/issues/47)). No §7.9 departure rows yet. MAM's per-witness sof-pasuq + two-marks-on-one-letter doc-notes independently corroborate the supplied taḥton sof-pasuqs and the QUPO vowel split ([#43](https://github.com/bdenckla/UXLC-utils/issues/43)/[#44](https://github.com/bdenckla/UXLC-utils/issues/44), validation only — nothing rendered or embedded); MAM's legarmeh/paseq tags + pisqah-be'emtsa-pasuq markings likewise corroborate the pasoleg subtraction and the coveting-verse internal breaks ([#42](https://github.com/bdenckla/UXLC-utils/issues/42), also validation only — see §7.16) |
 | §7.8 versification | **done (validation-only)** | Primary vtrad-BHS. The MAM↔BHS Decalogue verse map is hand-encoded in `clc_versification.py` (4 merge groups → `clc_to_mam` etc.; MAM = taḥton-strand boundaries, so `MAM Ex 20:2`=BHS 20:2+3, `Ex 20:12`=BHS 20:13–16, `Dt 5:6`=BHS 5:6+7, `Dt 5:16`=BHS 5:17–20). No new rendered surface: §7.7 already renders the overlay (MAM's versification *is* the taḥton strand), proven 1:1 against `clc_dual_cant_oracle._ORACLE` in `clc_versification_test`. MAM consulted as signal, embedded nowhere at runtime (hand-encoded once vs. `.novc/mam_decalogue_versemap.json`, all 53 verses). `clc_to_mam` is the shared CLC→MAM helper [#38](https://github.com/bdenckla/UXLC-utils/issues/38) needs. [#45](https://github.com/bdenckla/UXLC-utils/issues/45) closed |
 | §7.9 differences-from-UXLC index | not started | the page itself is unbuilt, still blocked on LC manuscript order (§9 #10); one real `is_uxlc_departure` instance now exists to drive it (Deut 5:8.2, §7.4) |
-| §7.10 intro essay / landing page | not started | per-book `_intro_para` only; no `gh-pages/uxlc/clc/index.html` |
+| §7.10 intro essay / landing page | **landing page done; essay not started** | `gh-pages/clc/index.html` lists the five reading pages and two longer-notes pages; the MAM-basics homepage links to it (Ben, 2026-10-08) |
 | §7.11 BHL body vs. Appendix A | not started | Appendix A ingested for Psalms only (pre-CLC) |
 | §7.12 harvesting other editions | not started | — |
 | §7.13 drop early/medial meteg | not started | — |
