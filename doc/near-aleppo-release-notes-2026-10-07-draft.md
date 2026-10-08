@@ -27,9 +27,10 @@ The two changed-note template names have changed:
 | Note `נוסח למקרא על פי המסורה` | Note `נוסח עם הקשר מקרא על פי המסורה` |
 | Note `הערה-2 למקרא על פי המסורה` | Note `הערה-2 עם הקשר מקרא על פי המסורה` |
 
-The [NA JSON reference](https://bdenckla.github.io/MAM-basics/near-aleppo/reading-json.html#consumer-notice)
-documents the parameter roles and how to interpret NA-adjusted clauses alongside
-the original MAM context.
+The NA JSON reference's
+[template definitions](https://bdenckla.github.io/MAM-basics/near-aleppo/reading-json.html#own-templates)
+and [parameter roles](https://bdenckla.github.io/MAM-basics/near-aleppo/reading-json.html#added-parameters)
+document how to interpret NA-adjusted clauses alongside the original MAM context.
 
 There is an NA-adjusted clause in 1,047 notes. The remaining 501 keep the
 complete original note in MAM context.
