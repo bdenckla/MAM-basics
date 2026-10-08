@@ -50,8 +50,9 @@ notes. Trivial-template qere source metadata is available on the annotation's ho
 
 The example edition's [features of interest](../../gh-pages/near-aleppo/foi/index.html)
 start with [interesting ketiv/qere cases](../../gh-pages/near-aleppo/foi/interesting-ketiv-qere.html).
-These selected examples use the current edition's ruby renderer and link to their
-verses locally and on the website. Regenerate both pages with:
+These selected examples show whole verses with the current edition's ruby
+display. The BCV in each heading links to the verse in NAEE; relative links work
+locally and on the website. Regenerate both pages with:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --html

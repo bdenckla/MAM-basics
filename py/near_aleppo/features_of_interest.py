@@ -1,7 +1,7 @@
 """Selected NAEE features, rendered from Scripture with the edition's policy.
 
 The ordered cases are a reading guide, not an exhaustive template survey.
-Examples select ruby units from the rendered Scripture, excluding note lemmas.
+Examples show complete rendered verses, excluding note lemmas.
 The shared renderer owns closed template dispatch and both reading forms.
 Run py/main_near_aleppo.py --html to regenerate these pages.
 """
@@ -9,46 +9,55 @@ Run py/main_near_aleppo.py --html to regenerate these pages.
 import copy
 from dataclasses import dataclass
 
+from hkq_cmn import uxlc_external_links
 from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import verse_external_links as vel
 from mb_misc import mb_html
-from near_aleppo import build_paths, doc_html, edition
+from near_aleppo import build_paths, edition
 from py_misc import mam_doc_utils, mwd_utils
 from py_misc import ren_html_for_renel as hfr
 from render_wt import render_wikitext as rwt
 
 INDEX = "foi/index.html"
 KETIV_QERE = "foi/interesting-ketiv-qere.html"
+# Leave room for ruby annotations on adjacent wrapped lines of the verse.
+_GUIDE_STYLE = ".pointed.foi-verse { line-height: 2.7; }"
 
 
 @dataclass(frozen=True)
 class Case:
     identifier: str
-    title: str
+    label: str
     description: str
     references: tuple
+
+    @property
+    def title(self):
+        if len(self.references) == 1:
+            return f"{_reference_text(self.references[0])} — {self.label}"
+        return self.label
 
 
 # Ben's first four entries, in the order requested on 2026-10-08.
 CASES = (
     Case(
         "2-samuel-8-3",
-        "2 Samuel 8:3 — a wide qere",
+        "a wide qere",
         "The qere is a maqaf compound above a shorter ketiv atom. "
         "Look at the space reserved for the pair in the verse.",
         ((tbn.BK_SND_SAM, 8, 3),),
     ),
     Case(
         "isaiah-54-16",
-        "Isaiah 54:16 — a wider single-atom qere",
+        "a wider single-atom qere",
         "The qere is a single atom wider than the ketiv beneath it.",
         ((tbn.BK_ISAIAH, 54, 16),),
     ),
     Case(
         "genesis-30-11",
-        "Genesis 30:11 — two qere atoms",
+        "two qere atoms",
         "The qere has two atoms separated by a space above one ketiv atom.",
         ((tbn.BK_GENESIS, 30, 11),),
     ),
@@ -74,7 +83,7 @@ def _rubies(node):
     return _rubies(node.get("contents") or ())
 
 
-def _examples():
+def _verses():
     bkids = tuple(dict.fromkeys(ref[0] for case in CASES for ref in case.references))
     books = plus.read_parsed_plus_bk39s(bkids, str(build_paths.dataset_dir().parent))
     mode = edition.NEAR_ALEPPO_MODE
@@ -93,7 +102,7 @@ def _examples():
             rubies = _rubies(scripture)
             if not rubies:
                 raise ValueError(f"FOI case has no Scripture ruby: {reference}")
-            examples[reference] = rubies
+            examples[reference] = scripture
     return examples
 
 
@@ -109,32 +118,37 @@ def _navigation():
     )
 
 
-def _case_table(case, examples):
-    rows = []
+def _reference_text(reference):
+    book, chapter, verse = reference
+    return f"{uxlc_external_links.book_display_name(book)} {chapter}:{verse}"
+
+
+def _reference_link(reference):
+    return mb_html.anchor_h(
+        _reference_text(reference), "../" + vel.near_aleppo_href(*reference)
+    )
+
+
+def _case_contents(case, verses):
+    title = (
+        [_reference_link(case.references[0]), " — ", case.label]
+        if len(case.references) == 1
+        else case.label
+    )
+    contents = [
+        mb_html.heading_level_2(title, {"id": case.identifier}),
+        mb_html.para(case.description),
+    ]
     for reference in case.references:
-        bkid, chapter, verse = reference
-        bcvt = tbn.mk_bcvtmam(bkid, chapter, verse)
-        rows.append(
-            (
-                examples[reference],
-                mb_html.anchor_h(
-                    tbn.short_bcv_of_bcvt(bcvt),
-                    "../" + vel.near_aleppo_href(bkid, chapter, verse),
-                ),
-                mb_html.anchor_h(
-                    "Published", vel.near_aleppo_url(bkid, chapter, verse)
-                ),
+        if len(case.references) > 1:
+            contents.append(mb_html.heading_level_3(_reference_link(reference)))
+        contents.append(
+            mb_html.para(
+                verses[reference],
+                {"dir": "rtl", "lang": "hbo", "class": "pointed foi-verse"},
             )
         )
-    return doc_html.table(
-        ("Ketiv with qere above", "Verse in NAEE", "Website"),
-        rows,
-        (
-            {"dir": "rtl", "lang": "hbo", "class": "pointed"},
-            doc_html.BCV_CELL,
-            None,
-        ),
-    )
+    return contents
 
 
 def render():
@@ -154,7 +168,7 @@ def render():
             ]
         ),
     ]
-    examples = _examples()
+    verses = _verses()
     kq_title = "Interesting ketiv/qere cases in NAEE"
     kq_body = [
         mb_html.heading_level_1(kq_title),
@@ -162,21 +176,15 @@ def render():
         mb_html.para(
             "Ketiv is the primary text, with pointed qere above it at the same size. "
             "When qere is wider, the shorter ketiv is centered beneath it. "
-            "Use the verse reference to open this copy of NAEE, or “Published” "
-            "to open the website. The verse includes surrounding text and notes."
+            "Each heading's verse reference opens the verse in NAEE, "
+            "with its surrounding text and notes."
         ),
         mb_html.ordered_list(
             [mb_html.anchor_h(case.title, "#" + case.identifier) for case in CASES]
         ),
     ]
     for case in CASES:
-        kq_body.extend(
-            [
-                mb_html.heading_level_2(case.title, {"id": case.identifier}),
-                mb_html.para(case.description),
-                _case_table(case, examples),
-            ]
-        )
+        kq_body.extend(_case_contents(case, verses))
     comment = provenance.generated_html_comment(__file__)
     pages = {}
     for path, title, body in (
@@ -193,6 +201,7 @@ def render():
                 "../edition/ketiv-qere.css",
             ),
             html_comment=comment,
+            head_style=_GUIDE_STYLE if path == KETIV_QERE else None,
         )
         pages[path] = mb_html.html_text(body, ctx).encode("utf-8")
     return pages
