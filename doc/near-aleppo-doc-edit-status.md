@@ -378,15 +378,15 @@ the generation, focused checks, commit and normal push. The clone's own
 **Change:** `gh-pages/near-aleppo/foi/index.html` starts with a link to
 `interesting-ketiv-qere.html`. The guide begins with 2 Samuel 8:3, Isaiah 54:16,
 Genesis 30:11 and a qere-without-ketiv entry containing Ruth 3:5 and Judges 20:13.
-Each entry shows the current NAEE ruby and links to its verse with context and
-notes. Relative links work from either a local page or the website; separate
-published links use the shared verse-link builder. The dataset overview and
-edition index link to the FOI index.
+The initial guide showed each current NAEE ruby in a table, with relative verse
+links and separate published links from the shared verse-link builder. The
+full-verse layout revision below supersedes that presentation. The dataset
+overview and edition index link to the FOI index.
 
 **Maintained source and reproduction:** `py/near_aleppo/features_of_interest.py`
-owns the ordered selection and explanations. It selects ruby from Scripture
-rendered with the existing NAEE policy, excluding note lemmas; no copied Hebrew
-forms or new template interpretations are introduced. The ordinary
+owns the ordered selection and explanations. It uses Scripture rendered with
+the existing NAEE policy, excluding note lemmas; no copied Hebrew forms or new
+template interpretations are introduced. The ordinary
 `./.venv/Scripts/python.exe py/main_near_aleppo.py --html` command regenerates
 both pages. The README records that command. `py/main_verse_links.py` now accepts
 `--near-aleppo` to print a verse's local file URL for the calling checkout and
@@ -408,3 +408,38 @@ and source-hygiene checks passed, with the existing pytest-cache permission
 warning. `git diff --check` passed. The mega and full suite are deferred to
 nightly checks under the approved trial; focused regeneration, the edition
 differential and the mechanical checks cover this navigation and guide change.
+
+## Full verses and linked headings in the k/q guide — 2026-10-08
+
+**Status:** Implemented by Codex. Ben requested entire verses for the four
+existing groups, removal of the published URLs and tables, and a verse link on
+the BCV portion of each heading. This supersedes the initial table presentation.
+
+**Checkout and baseline:** Development and integration remain in the full clone
+`C:/Users/BenDe/GitRepos2/MAM-basics`, on main at
+`c0fa37c0f80af9b1b2098df83a34b326898cca15`, clean before editing. Codex owns
+the focused checks, commit and normal push using this clone's environment.
+
+**Change:** The guide now shows the complete rendered Scripture verse in an RTL
+paragraph for each reference. The BCVs in the first three headings are links;
+Ruth 3:5 and Judges 20:13 have separate linked subheadings within the fourth
+group. The heading links open the corresponding NAEE verses with surrounding
+text and notes. Tables and separate published URLs are removed. The selection
+and group order are unchanged. Guide-specific line spacing leaves room for
+full-size qere annotations when verses wrap. The README describes the current
+layout; its existing HTML command regenerates the guide.
+
+**Verification and scope:** Black passed. HTML regeneration and read-only
+comparison passed for all 83 owned files. The only changed generated page is
+`gh-pages/near-aleppo/foi/interesting-ketiv-qere.html`. Its text was read, and
+desktop and narrow screenshots were inspected. A browser differential matched
+all five complete verse displays to the corresponding Scripture cells in the
+actual NAEE book pages. Every linked heading landed on its unique verse anchor.
+At widths 1400, 500 and 390 px, annotations had a positive vertical gap, equal
+reading sizes where both readings exist, no overlap with adjacent wrapped lines,
+and no horizontal page overflow. Fonts loaded and no script errors occurred.
+The guide has no tables or external published links. Book pages, datasets,
+the FOI index, the two navigation indexes, review files and shared styles remain
+unchanged. `git diff --check` passed. The mega and full suite remain deferred
+to nightly checks under the approved trial; regeneration and the full-verse
+and layout differential cover this guide-only change.
