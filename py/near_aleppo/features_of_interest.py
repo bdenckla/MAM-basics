@@ -174,7 +174,8 @@ def render():
         mb_html.heading_level_1(kq_title),
         _navigation(),
         mb_html.para(
-            "Ketiv is the primary text, with pointed qere above it at the same size. "
+            "Ketiv is the primary text, with pointed qere above it at the same size "
+            "and CLC's box around the pair. "
             "When qere is wider, the shorter ketiv is centered beneath it. "
             "Each heading's verse reference opens the verse in NAEE, "
             "with its surrounding text and notes."
