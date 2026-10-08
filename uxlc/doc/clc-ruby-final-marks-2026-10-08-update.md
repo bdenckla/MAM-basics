@@ -114,7 +114,8 @@ Concurrent main commit `eb0f9c1b1eaeb4d373f098740a4acdb277c78db4` was merged
 unchanged into this review branch. Its near-Aleppo boxing work retains the same
 outer line-height/padding declarations used here; its annotation adds explicit
 `nowrap`, which CLC inherits from its ruby. The follow-up's owned diff contains
-only CLC CSS, the existing manual review instrument and this receipt family.
+only CLC CSS, the existing manual review instrument, the corresponding selector
+in the shared presentation test and this receipt family.
 The branch is pushed for review; main integration and deployment remain outside
 this task's authorization.
 
@@ -140,3 +141,26 @@ canonical pages; verse and ruby HTML match the earlier page evidence exactly.
 Regeneration at the new paths, including index and redirects, is byte-identical.
 The same 14 focused tests, Black and whitespace checks pass again. The CSS
 declarations and measured clearance/layout limits above are unchanged.
+
+## 2026-10-08 — Check the boxed near-Aleppo target
+
+**Verified against the current boxed presentation:** The same-pair NAEE
+formatting control now uses `span.near-aleppo-kq-box` with its actual rules from
+`d390a35d1d211500a2eb01b9be13ec0d314ee602`, rather than an unstyled wrapper.
+The repeated CLC ink measurements and the boxed control retain the same minimum
+gaps and text-line geometry. The actual boxed Ruth 4:5 reading in
+`gh-pages/near-aleppo/edition/E2-Ruth.html` is also loaded at all three sizes
+and both widths: RTL, loaded font, full annotation size, normal inner line,
+outer line height 1.8 and padding 0.2em are checked. This keeps NAEE's ketiv
+baseline and qere annotation; CLC's reversed roles remain intact. That NAEE
+reading has 7, 9 and 15–16 px of thresholded ink clearance at the three sizes,
+with no detected overlap; the gap differs from CLC because the actual readings
+and their marks differ. It is a targeted comparison, not a full NAEE resurvey.
+
+The existing `py/tests/test_near_aleppo_clc_style.py` now names CLC's actual
+`ruby.clc-kq > rt` selector instead of the old descendant selector. Its
+declaration comparison passes, including the newly shared line height and
+padding; no new test infrastructure is added. All 15 focused tests pass with
+that comparison included, and Black and whitespace checks pass. Later main
+commit `6d09c8862e1f1aaf9eac43dbec701d8611651b06` only extends the NAEE guide;
+it changes none of the checked CLC or spacing sources and is left to its owner.
