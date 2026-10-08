@@ -16,6 +16,7 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import verse_external_links as vel
 from mb_misc import mb_html
 from near_aleppo import build_paths, edition
+from near_aleppo import foi_qere_without_ketiv
 from py_misc import mam_doc_utils, mwd_utils
 from py_misc import ren_html_for_renel as hfr
 from render_wt import render_wikitext as rwt
@@ -99,26 +100,26 @@ def _rubies(node):
     return _rubies(node.get("contents") or ())
 
 
-def _verses():
-    bkids = tuple(dict.fromkeys(ref[0] for case in CASES for ref in case.references))
+def _verses(references=None):
+    references = references or tuple(ref for case in CASES for ref in case.references)
+    bkids = tuple(dict.fromkeys(ref[0] for ref in references))
     books = plus.read_parsed_plus_bk39s(bkids, str(build_paths.dataset_dir().parent))
     mode = edition.NEAR_ALEPPO_MODE
     ctx = hfr.HfrCtx(mode.ht_tac_for_ren_tag)
     rendered = {bkid: rwt.render(bkid, books, mode.renopts, {}) for bkid in bkids}
     examples = {}
-    for case in CASES:
-        for reference in case.references:
-            bkid, chapter, verse = reference
-            bcvt = tbn.mk_bcvtmam(bkid, chapter, verse)
-            veraf = rendered[bkid][bcvt]
-            nondoc = veraf.map_over(mam_doc_utils.mark_doc_targets)
-            docs = veraf.map_over(mam_doc_utils.extract_docs)
-            ver_ndd = mwd_utils.VerseNdd(bcvt, nondoc, docs)
-            scripture = mwd_utils._html_for_nondoc(ctx, ver_ndd).verse
-            rubies = _rubies(scripture)
-            if not rubies:
-                raise ValueError(f"FOI case has no Scripture ruby: {reference}")
-            examples[reference] = scripture
+    for reference in references:
+        bkid, chapter, verse = reference
+        bcvt = tbn.mk_bcvtmam(bkid, chapter, verse)
+        veraf = rendered[bkid][bcvt]
+        nondoc = veraf.map_over(mam_doc_utils.mark_doc_targets)
+        docs = veraf.map_over(mam_doc_utils.extract_docs)
+        ver_ndd = mwd_utils.VerseNdd(bcvt, nondoc, docs)
+        scripture = mwd_utils._html_for_nondoc(ctx, ver_ndd).verse
+        rubies = _rubies(scripture)
+        if not rubies:
+            raise ValueError(f"FOI case has no Scripture ruby: {reference}")
+        examples[reference] = scripture
     return examples
 
 
@@ -155,6 +156,15 @@ def _case_contents(case, verses):
         mb_html.heading_level_2(title, {"id": case.identifier}),
         mb_html.para(case.description),
     ]
+    if case.identifier == "qere-without-ketiv":
+        contents.append(
+            mb_html.para(
+                mb_html.anchor_h(
+                    "Qere without ketiv: manuscript readings and crops",
+                    "qere-without-ketiv.html",
+                )
+            )
+        )
     for reference in case.references:
         if len(case.references) > 1:
             contents.append(mb_html.heading_level_3(_reference_link(reference)))
@@ -168,7 +178,7 @@ def _case_contents(case, verses):
 
 
 def render():
-    """Return the FOI index and its selected k/q guide as UTF-8 page bytes."""
+    """Return the FOI pages and their evidence images as bytes."""
     index_title = "Near-Aleppo features of interest"
     index_body = [
         mb_html.heading_level_1(index_title),
@@ -180,11 +190,19 @@ def render():
             [
                 mb_html.anchor_h(
                     "Interesting ketiv/qere cases", "interesting-ketiv-qere.html"
-                )
+                ),
+                mb_html.anchor_h("Qere without ketiv", "qere-without-ketiv.html"),
             ]
         ),
     ]
-    verses = _verses()
+    study_records = foi_qere_without_ketiv.records()
+    references = tuple(
+        dict.fromkeys(
+            [ref for case in CASES for ref in case.references]
+            + [tuple(row["reference"]) for row in study_records]
+        )
+    )
+    verses = _verses(references)
     kq_title = "Interesting ketiv/qere cases in NAEE"
     kq_body = [
         mb_html.heading_level_1(kq_title),
@@ -221,4 +239,5 @@ def render():
             head_style=_GUIDE_STYLE if path == KETIV_QERE else None,
         )
         pages[path] = mb_html.html_text(body, ctx).encode("utf-8")
+    pages.update(foi_qere_without_ketiv.render(verses, study_records))
     return pages

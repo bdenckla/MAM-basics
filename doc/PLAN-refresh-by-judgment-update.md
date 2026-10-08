@@ -55,9 +55,40 @@ parent is `ebaae10f`.
    is unchanged. `py/main_near_aleppo.py --check` and `--punctuation-review --check` pass, and so
    do the six tests of `py/tests/test_near_aleppo.py`, `py/tests/test_near_aleppo_note_content.py`
    and `py/tests/test_near_aleppo_clc_style.py`.
-5. **Not investigated: Ezekiel 36:15.** A read-only scan of all 964 stored pointed ketivs (723
-   frozen, 236 reviewed, 5 editorial) for the five stress-helper configurations that
-   `in/near-aleppo/census/stress_helper_census.txt` counts, run with this change applied, found no
-   pointed ketiv with a stress helper that its qere lacks. At Ezekiel 36:15 the mismatch runs the
-   other way: the qere וְגוֹיַ֙יִךְ֙ has a pashta stress helper, and the reviewed pointed ketiv
-   has none.
+5. **Ezekiel 36:15: kept as it is, by Ben's decision the same day.** A read-only scan of all 964
+   stored pointed ketivs (723 frozen, 236 reviewed, 5 editorial) for the five stress-helper
+   configurations that `in/near-aleppo/census/stress_helper_census.txt` counts, run with this
+   change applied, found no pointed ketiv with a stress helper that its qere lacks. At Ezekiel 36:15
+   the mismatch runs the other way: the qere וְגוֹיַ֙יִךְ֙ has a pashta stress helper on its first
+   yod, and the reviewed pointed ketiv, which has the patah on the yod and the hiriq on an
+   artificial carrier, has only the final pashta. Ben read the codex image: "there's only one
+   pashta in the manuscript. It is, of course, the word-final one, i.e. the real pashta." He
+   decided: "So, in summary, I stand by near-aleppo's choices. this is one case where the pointed
+   qere, justifiably, has a mark not present in the pointed ketiv." His reason is that
+   near-Aleppo's pointed qere shows the qere as the naqdan would point it if it stood in the body
+   text, an editorial decision on which, he notes, reasonable people could differ.
+
+   Both forms follow the codex's convention as Yeivin §239 describes it, which phase 3's sub-rule
+   1 applies to MAM's text: the pashta is repeated only where a letter stands between the two
+   letters that would carry it. In the qere the second yod stands between them; in the ketiv only
+   the letterless hiriq does. No body-text occurrence of this word can test the qere's form, since
+   MAM has this plural only as the qere at Ezekiel 36:13, 36:14 and 36:15. In MAM's text, 20
+   body-text pashta atoms have penultimate stress and end in a yod carrying the stressed vowel, a
+   second yod and a final letter, as Song of Songs 1:10's לְחָיַ֙יִךְ֙ does, and all 20 have the
+   helper on the first yod; the 15 other body-text pashta atoms ending in two yods and a letter
+   have final stress and no helper. Ten of the 20 are in surviving parts of the codex, and MAM's
+   notes report no missing helper at any of those ten, though they report the codex without the
+   helper, a letter standing between, at the seven places that phase 3's
+   `_PASHTA_STRESS_HELPER_FOR_PHASE_5` names, among them 2 Kings 14:7. At Song of Songs 3:5, where
+   a letterless hiriq stands between the two letters as in this ketiv, MAM's note says that the
+   codex writes יְרוּשָׁלַ͏ִם֙ with a single pashta, which it calls the codex's method.
+
+   Nobody has yet checked the 20 against the codex images. The ten in surviving parts of the codex
+   are Deuteronomy 30:20, Joshua 9:4 and 9:13, 1 Samuel 25:37, 2 Samuel 13:28, Isaiah 58:11,
+   Jeremiah 35:8 and 48:33, Song of Songs 1:10, and 2 Chronicles 2:14; the ten in lost parts are
+   Genesis 49:11 and 49:26, Exodus 26:3, Deuteronomy 5:14, 14:26, 15:15, 24:18 and 28:13, and
+   Nehemiah 2:1 and 5:15. These figures come from a throwaway scan on 2026-10-08 of MAM-parsed-plus
+   at `9a456f5b`, through the edition projection of `py/near_aleppo/census/`, with coverage from
+   its `nusach_codex_extant`, which counts a partly surviving verse as surviving.
+   `py/main_verse_links.py <book> <c:v>` prints a verse's links, including its Aleppo Codex
+   links at mgketer.org and masoretica.org.
