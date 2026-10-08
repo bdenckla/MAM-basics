@@ -82,10 +82,22 @@ span.clc-kq-box {
     padding: 0 0.15em;
     margin: 0 0.05em;
 }
-ruby.clc-kq { ruby-position: over; }
+/* Keep each reading together, including the editorial absence placeholder. */
+ruby.clc-kq { ruby-position: over; white-space: nowrap; }
 /* Keep the ketiv full-size: it is set off by being unpointed and above, never by
    smallness — so override the browser-default shrunk <rt>. */
-ruby.clc-kq rt { font-size: 100%; }
+/* Match near-Aleppo's annotation line height and clearance between readings. */
+ruby.clc-kq > rt {
+    font-size: 100%;
+    line-height: 1.8;
+    font-weight: normal;
+    padding-bottom: 0.2em;
+}
+/* Keep the annotation's own text line normal, as in near-Aleppo. */
+ruby.clc-kq > rt > span {
+    display: inline-block;
+    line-height: normal;
+}
 /* Keep the pointed qere's final marks positioned as in ordinary text. */
 ruby.clc-kq span.clc-kq-q { display: inline-block; }
 /* Dual-cant additive detangling (§7.7): a maqaf/sof-pasuq SUPPLIED to clarify ONE
