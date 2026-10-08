@@ -2,7 +2,8 @@
 
 State: live; written 2026-10-08. Workstream A executed 2026-10-08 except the deletion of
 `collect` and `text_of`, which awaits Ben. Workstream B executed 2026-10-08; its live deployment
-on Ben's Windows machines remains. Workstream C has not started.
+on Ben's Windows machines remains. Workstream C's public audit was done 2026-10-08; its deletions
+and corrections await Ben's approval of the list in “C1. Public audit result, 2026-10-08”.
 
 Written by Claude (Opus 5.5) on 2026-10-08, New York time, in the session that ran the
 2026-10-07 maintenance from `C:/Users/BenDe/GitRepos2/MAM-basics`. Ben had to switch that
@@ -129,3 +130,51 @@ For each family, find the last commit whose tree holds every member, as a full S
 evidence, and prepare the permalink corrections through each citing receipt's single update
 file. Bring Ben the exact deletion list with those corrections; delete only after he approves
 it.
+
+### C1. Public audit result, 2026-10-08
+
+Recorded by Claude in the cloud session that executed workstreams A and B, from a read-only
+sub-agent audit whose reference census the session re-ran on the merge of `origin/main` at
+`7c82b5df6deeee66568830bf63b7ba0a2cee1350`. MAM-private and every tracker but MAM-basics' were
+unreachable, so their citations remain for the private half. Nothing blocks retirement.
+
+1. **Last changes.** `doc/PLAN-shared-html-styles.md` last changed in
+   `43740def00c9bd8ed5858bb78a48076fe924d224`; `doc/PLAN-retire-mam-parsed-plain.md` in
+   `1e14a8a17accb81cd6f3ef6f3f7427c230546a61`; the 2026-09-26 family's update in
+   `1ad77de0d1a416e771ef12ed1a5b54550136f758` and its base in `e4934b6e`. Neither of the first
+   two ever had an update. This clone is shallow at `9b654fd4`, so these came from GitHub's REST
+   commit history; every member is byte-identical from its last change through `7c82b5df`.
+2. **Permalink commit.** Following `e4934b6e`'s retirement, the corrections link the parent of
+   the deleting commit, which holds every member. Record that parent's full SHA when the
+   deletion is made; `7c82b5df` qualifies today.
+3. **Current guidance.** Only this plan cites any member; correct it in place in the deleting
+   commit. The plan's claim that only finished review records cite the plain retirement plan is
+   slightly narrow: the executed `doc/PLAN-remediate-review-findings-2026-09-29.md` and
+   `doc/blind-dive-into-template-params-update.md` also cite it.
+4. **Historical citers and where each correction goes.**
+   - `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`: one appended “Archived receipt
+     references” entry covers that round's turns 01, 03, 07, 08, 09, 10 and 11 and the update
+     itself, per `doc/dual-agent-review.md`'s single-update rule. It notes that turns 01 and 09
+     count the 2026-09-26 base's lines before its line-4 pointer, as at `8c2fa6c3`.
+   - `doc/PLAN-remediate-review-findings-2026-09-29.md`: a new
+     `doc/PLAN-remediate-review-findings-2026-09-29-update.md`, with the one pointer line below
+     the base's line 3.
+   - `doc/blind-dive-into-template-params-update.md`, `doc/PLAN-remediate-review-findings-2026-10-02-update.md`,
+     `doc/review-findings-2026-10-02-update.md` and `doc/review-findings-2026-10-04-update.md`:
+     one appended entry each.
+   - `doc/dual-agent-review-2026-09-26-turn-01-claude-update.md`: its two relative links to the
+     2026-09-26 plan, in the passages beginning “uses the recovered” and “The live [remediation
+     plan]”, become permalinks in place, with an appended entry; its link at `1a92af88` stays.
+5. **Issues.** A repository-scoped REST download of 301 issues and pull requests and 313
+   comments found no reference to any member. Issue 288's comment naming “the 2026-09-26
+   review-remediation session” names a session, not a file.
+6. **Deferrals.** Every item of the 2026-09-26 plan's “Explicit deferral and no-action ledger”
+   appears in `doc/dual-agent-review-2026-09-26-turn-01-claude-update.md`. Two details appear only
+   in the plan: 31.8's “Do not silently add an EVR reading to the Psalms 72 report” and 35.4's
+   “The optional three undated-rule label clarifications are left unimplemented because this plan
+   proposes no finite replacement for them.” Whether that update's entry repeats them is Ben's
+   choice.
+7. **Proposed deletion list.** `doc/PLAN-shared-html-styles.md`,
+   `doc/PLAN-retire-mam-parsed-plain.md`, `doc/PLAN-remediate-review-findings-2026-09-26.md` and
+   `doc/PLAN-remediate-review-findings-2026-09-26-update.md`. The successor `doc/html-styles.md`
+   stays.
