@@ -1,8 +1,8 @@
 # PLAN — follow-up to the 2026-10-07 repository maintenance
 
 State: live; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09; Ben decided on
-2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; its live deployment
-on Ben's Windows machines remains. Workstream C's public half executed 2026-10-09, after Ben
+2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; Ben reported on
+2026-10-09 that its live deployment on his Windows machines is done. Workstream C's public half executed 2026-10-09, after Ben
 approved the list in “C1. Public audit result, 2026-10-08”; the private half remains.
 
 Written by Claude (Opus 5.5) on 2026-10-08, New York time, in the session that ran the
