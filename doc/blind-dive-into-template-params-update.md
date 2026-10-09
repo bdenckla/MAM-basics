@@ -212,10 +212,11 @@ re-raised.
 | `py/accgram/maqaf_nonfinal_accents.py`: `_mam_simple_gray_maqafs_by_verse` | Structural count of every implicit-maqaf node, held equal to the hits along `flatten_ep_for_diff`'s selected stream, so a divergence raises. |
 | Recursion unchanged since the previous audit: `py/tmpl_survey/stack_path_lookup.py`: `_walk_wtel_plus`; `py/tmpl_survey/stack_path_verbose_payload.py`; `py/tmpl_survey/survey_plus.py`; `py/tmpl_survey/nesting_normal_form.py`; `py/mb_diff_mpu/mpplus_structure.py`; `py/mpplus/mpplus_boring_tmpls.py`; `py/verify_mp/verifiers_templates.py`: `_iter_template_occurrences_with_ancestors` | Seen again; only the plain retirement and docstrings changed them. |
 
-The audit left three latent items unfixed; the 2026-10-08 entry below fixes item 1 and part of
-item 2, and item 3 and the rest of item 2 remain unfixed. None changed a tracked output on the
-audit's day; each is recorded so that a later change cannot make it live unnoticed. The census and phase-6 code they concern were under
-active near-Aleppo development on the audit's day, so maintenance changed none of them.
+The audit left three latent items unfixed. The 2026-10-08 and 2026-10-09 entries below fix item
+1 and dispose of item 2; item 3 remains unfixed. None changed a tracked output on the audit's
+day; each is recorded so that a later change cannot make it live unnoticed. The census and
+phase-6 code they concern were under active near-Aleppo development on the audit's day, so
+maintenance changed none of them.
 
 1. **The stress-helper census reads note prose through the Scripture projection.** In
    `py/near_aleppo/census/nusach_aleppo_readings.py`, `clauses`, which
@@ -236,7 +237,8 @@ active near-Aleppo development on the audit's day, so maintenance changed none o
    `collect` and `keys_for` have no callers, `text_of` is called only by `collect`, and no caller
    passes `projected=False` to `flatten`, whose `False` branch walks every parameter of every
    template without validation. It would become a blind dive only if something called it again.
-   The 2026-10-08 entry below deletes `keys_for` and the `False` branch and keeps `collect`.
+   The 2026-10-08 entry below deletes `keys_for` and the `False` branch, and the 2026-10-09
+   entry records Ben's decision to keep `collect`.
 3. **Silent fallbacks with no input that reaches them.** The `render` functions of
    `qamats_params.py`, `stress_helper_census.py`, `adonai_census.py` and `divine_name_split.py`,
    under `py/near_aleppo/census/`, return an empty string for a mapping that is not a template, and
@@ -274,9 +276,10 @@ session.
    `py/near_aleppo/phase6_flags.py` and at `py/near_aleppo/phase3_policies.py`'s `_head_sigla` and
    `_TESTIMONY_LIST` name this module as the census's authority for how sigla are read. Deleting
    `collect` therefore means deleting or rehoming that authority and correcting those three
-   comments, in code another session edits most days. That is put to Ben rather than done. The
-   same measurement found that `reading_head`, the `BRACKETED` pattern it uses, and the `HEBREW`
-   and `POINTED` patterns have no user at all; they are left for the same decision.
+   comments, in code another session edits most days. That was put to Ben; the 2026-10-09 entry
+   below records his decision. The same measurement found that `reading_head`, the `BRACKETED`
+   pattern it uses, and the `HEBREW` and `POINTED` patterns had no user at all; the 2026-10-09
+   entry deletes them.
 3. **Outputs.** `py/main_near_aleppo.py --check` reported all five census baselines byte for
    byte, the dataset, `build-populations.json` and the pages current after the change. A scratch
    run of `collect` over the whole corpus, which also feeds every reachable note body through
@@ -285,3 +288,16 @@ session.
 4. **Checks.** `py/main_test.py py/tests/test_near_aleppo.py
    py/tests/test_near_aleppo_note_content.py` passed five tests; Black left both changed files
    unchanged; `python -m ruff check py` passed.
+
+## `collect` is kept as the census's declared population code, 2026-10-09
+
+Ben's decision on 2026-10-09, accepting the recommendation of the session that executed
+workstream A: keep `collect`, since comments at `py/near_aleppo/phase3_policies.py`'s
+`_head_sigla` and `_TESTIMONY_LIST` and in `py/near_aleppo/phase6_flags.py` name
+`py/near_aleppo/census/nusach_aleppo_readings.py` as the census's authority for how sigla are
+read. `collect`'s docstring now declares it that module's population code for the qualified
+clauses and records the decision. With `text_of` and `flatten`, which only `collect` uses, it is
+no longer unfixed but declared. `reading_head`, `BRACKETED`, `HEBREW` and `POINTED`, which nothing
+used, are deleted. Latent item 2 is thereby disposed of. `py/main_near_aleppo.py --check`
+reported the five census baselines, the dataset and the pages current afterwards; Black and
+`python -m ruff check py` passed.

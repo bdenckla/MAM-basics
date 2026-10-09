@@ -1,7 +1,7 @@
 # PLAN — follow-up to the 2026-10-07 repository maintenance
 
-State: live; written 2026-10-08. Workstream A executed 2026-10-08 except the deletion of
-`collect` and `text_of`, which awaits Ben. Workstream B executed 2026-10-08; its live deployment
+State: live; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09; Ben decided on
+2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; its live deployment
 on Ben's Windows machines remains. Workstream C's public audit was done 2026-10-08; its deletions
 and corrections await Ben's approval of the list in “C1. Public audit result, 2026-10-08”.
 
