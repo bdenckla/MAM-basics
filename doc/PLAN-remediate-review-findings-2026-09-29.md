@@ -1,6 +1,7 @@
 # Remediate the September 29, 2026 dual-agent review of MAM-basics
 
 State: executed 2026-10-01.
+Updates and later status: [PLAN-remediate-review-findings-2026-09-29-update.md](PLAN-remediate-review-findings-2026-09-29-update.md).
 
 Prepared by Claude on 2026-09-30, New York time, as close-out step 2 of the round, in two sessions.
 The first drafted this plan from a handoff prompt that the close-out step-1 session prepared that

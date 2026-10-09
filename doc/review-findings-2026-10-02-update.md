@@ -882,3 +882,13 @@ surrogate, and no tracked output depends on that. Method: `git show --stat b246e
 diffs, read beside the step runners in `py/main_0_mega.py` at `b246e05e`; a read-only sub-agent
 placed every one of the 35 lines in its function, and the root session re-checked the eleven
 runners and two of the functions.
+
+## Archived receipt references, 2026-10-09
+
+Recorded by Claude on 2026-10-09, New York time, in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`, after Ben approved its
+deletion list and corrections that day. In "The owner's disposition list, 2026-10-02", row 15.2's "The same miss recurs at
+`doc/PLAN-remediate-review-findings-2026-09-26.md:621` and `:728`." cites a receipt since
+retired from the tracked tree. It remains, with that line numbering, at
+[September 26 remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md),
+with its [update](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26-update.md).

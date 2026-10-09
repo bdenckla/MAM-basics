@@ -1796,3 +1796,24 @@ would not bring the variant in; that report rests on the private adapter, and th
 re-derive it. `Phonetic-MAM/README.md`, "How the Hebrew differs from MAM's text", now discloses the
 difference. This remediation's mega re-exported the release at `e9c72f2b` and left
 `Phonetic-MAM/data/BD-2Kings.json` unchanged, which re-derives that report.
+
+## Archived receipt references, 2026-10-09
+
+Recorded by Claude on 2026-10-09, New York time, in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`, after Ben approved its
+deletion list and corrections that day. References to `doc/PLAN-retire-mam-parsed-plain.md` and
+`doc/PLAN-remediate-review-findings-2026-09-26.md` in this round's frozen turn records (turns
+01, 03, 07, 08, 09, 10 and 11) and in this update (the moved-lines item beginning
+"`doc/PLAN-remediate-review-findings-2026-09-26.md`: every line from 4 on rises by one", and the
+rows for findings 9.2, 14.3 and 17) are historical evidence, not current guidance. Both
+receipts have been retired from the tracked tree and remain at these immutable locations:
+
+- [MAM-parsed plain retirement plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-retire-mam-parsed-plain.md), which never had an update; and
+- [September 26 remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26-update.md).
+
+The turn records' line numbers in the September 26 plan, such as turn 01's `:297` and `:484`
+and turn 09's `:502`, count the base before its line-4 pointer, as it stands at
+[`8c2fa6c3442997a1cdf4c08504974c5db8fbd38d`](https://github.com/bdenckla/MAM-basics/blob/8c2fa6c3442997a1cdf4c08504974c5db8fbd38d/doc/PLAN-remediate-review-findings-2026-09-26.md);
+at the archive each is one higher. This update's `:308–309` and `:319–320` count the archived
+base. Line numbers in the plain retirement plan are unchanged at the archive.

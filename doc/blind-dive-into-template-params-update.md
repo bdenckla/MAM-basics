@@ -301,3 +301,12 @@ no longer unfixed but declared. `reading_head`, `BRACKETED`, `HEBREW` and `POINT
 used, are deleted. Latent item 2 is thereby disposed of. `py/main_near_aleppo.py --check`
 reported the five census baselines, the dataset and the pages current afterwards; Black and
 `python -m ruff check py` passed.
+
+## Archived receipt references, 2026-10-09
+
+Recorded by Claude on 2026-10-09, New York time, in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`, after Ben approved its
+deletion list and corrections that day. The entry "The persisted plain product and survey have been retired" says it was
+"Recorded by Codex on 2026-09-28 during execution of `doc/PLAN-retire-mam-parsed-plain.md`".
+That completed receipt has been retired from the tracked tree and remains at
+[MAM-parsed plain retirement plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-retire-mam-parsed-plain.md).

@@ -2,8 +2,8 @@
 
 State: live; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09; Ben decided on
 2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; its live deployment
-on Ben's Windows machines remains. Workstream C's public audit was done 2026-10-08; its deletions
-and corrections await Ben's approval of the list in “C1. Public audit result, 2026-10-08”.
+on Ben's Windows machines remains. Workstream C's public half executed 2026-10-09, after Ben
+approved the list in “C1. Public audit result, 2026-10-08”; the private half remains.
 
 Written by Claude (Opus 5.5) on 2026-10-08, New York time, in the session that ran the
 2026-10-07 maintenance from `C:/Users/BenDe/GitRepos2/MAM-basics`. Ben had to switch that
@@ -178,3 +178,12 @@ unreachable, so their citations remain for the private half. Nothing blocks reti
    `doc/PLAN-retire-mam-parsed-plain.md`, `doc/PLAN-remediate-review-findings-2026-09-26.md` and
    `doc/PLAN-remediate-review-findings-2026-09-26-update.md`. The successor `doc/html-styles.md`
    stays.
+
+### C2. Public retirement executed, 2026-10-09
+
+Ben approved the C1 list and its corrections on 2026-10-09, including the repetition of the two
+deferral details of item 6. The retiring commit deleted the four files of item 7 and made the
+corrections item 4 lists, linking the families at
+`38a8db9ae851b83d43b5c5ad42c007943b54d724`, the last commit on `origin/main` whose tree holds
+every member, with the member blobs the audit recorded. The citations of these families from
+MAM-private, and MAM-private's own two families, remain for the private half.

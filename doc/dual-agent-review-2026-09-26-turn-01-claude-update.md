@@ -416,7 +416,7 @@ steps 2 through 4 remain pending. This update remains `State: open` while its ba
 ## Detailed remediation plan prepared; execution approval pending, 2026-09-28
 
 Recorded by Codex on 2026-09-28, New York time. The standalone
-[remediation plan](PLAN-remediate-review-findings-2026-09-26.md) uses the recovered
+[remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md) uses the recovered
 managed DAR checkout and requires the approval record at
 `8ab079afbac0a6648385f725e51057c2f0fd293f`. It covers all approved active findings,
 retains every approved deferral/no-action disposition, and presents exact public
@@ -453,7 +453,7 @@ its base survives.
 Recorded by ChatGPT-Codex on 2026-09-28, New York time. Ben observed that
 "Codex agent" could still mean an agent working on a manuscript and suggested
 "ChatGPT-Codex" or "OpenAI-Codex". The live
-[remediation plan](PLAN-remediate-review-findings-2026-09-26.md) selects
+[remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md) selects
 "ChatGPT-Codex" for new agent attributions and finding 34.5, superseding the
 earlier "the Codex agent" proposal. Manuscript names, historical quotations,
 source anchors and product identifiers retain their spellings.
@@ -799,3 +799,21 @@ old Claude body", the file the reconciliation maps (finding 4.4); and in the par
 "Clarified the push rule in response to Ben's question", in the entry "Detailed remediation
 plan prepared; execution approval pending, 2026-09-28", "The shared worktree" (D11) now reads
 "The shared origin branch", the section's present title (finding 35).
+
+## Archived receipt references, 2026-10-09
+
+Recorded by Claude on 2026-10-09, New York time, in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`, after Ben approved its
+deletion list and corrections that day. The remediation plan and its update have been retired from the tracked tree and
+remain at [September 26 remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md)
+and its [update](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26-update.md). The relative "remediation plan" links in two passages now point
+to that archive: "The standalone remediation plan uses the recovered managed DAR checkout", in
+"Detailed remediation plan prepared; execution approval pending, 2026-09-28", and "The live
+remediation plan selects "ChatGPT-Codex"", in "Agent naming revised in the live plan,
+2026-09-28". The approval-snapshot link at `1a92af88` is unchanged.
+
+By Ben's decision of 2026-10-09, two details of the plan's "Explicit deferral and no-action
+ledger" that this update's tables do not repeat are recorded here: 31.8's "Do not silently add
+an EVR reading to the Psalms 72 report", and 35.4's "The optional three undated-rule label
+clarifications are left unimplemented because this plan proposes no finite replacement for
+them."

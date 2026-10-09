@@ -1314,3 +1314,13 @@ are quoted verbatim; the option wording is the session's.
 **Effective base State, 2026-10-07:** acted on, with nothing deferred: the five items noticed while
 planning are fixed or documented as above. The base report's line 3 stays as written, and this
 update remains `State: open` while its base survives.
+
+## Archived receipt references, 2026-10-09
+
+Recorded by Claude on 2026-10-09, New York time, in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`, after Ben approved its
+deletion list and corrections that day. The base's "five lines in four dated records, which stay as written: four with the
+comma form (`doc/PLAN-remediate-review-findings-2026-09-26.md:131`," cites a receipt since
+retired from the tracked tree. It remains, with that line numbering, at
+[September 26 remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md),
+with its [update](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26-update.md).
