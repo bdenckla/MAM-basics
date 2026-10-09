@@ -177,7 +177,9 @@ user-explicit verification requirements take precedence.
 
 Prefer available built-in read, write, edit, search, and file-listing tools over equivalent shell
 work. Use exact-string editing for a known replacement and a real Python script for algorithmic
-work. Do not use `sed` or `awk`.
+work. On Windows, do not use `sed` or `awk`: their Windows ports, and the Git Bash around them,
+were suspected of causing problems. In a real Unix shell, such as a Linux cloud session or WSL,
+they are fine.
 
 Never put a substantial script in `python -c`, `node -e`, a here-document, a PowerShell
 here-string, or a pipeline into an inline interpreter. Put it in a uniquely named UTF-8 file in a
