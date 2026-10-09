@@ -15,7 +15,9 @@ Literature.
 
 This is Ben Denckla's loose adaptation of Yeivin and Revell. Some sections are
 faithfully rendered; others take substantial liberties. Ben's own ideas are
-generally placed in footnotes, but that distinction is not exhaustive.
+generally placed in footnotes, but that distinction is not exhaustive. When prose
+distinguishes Ben's additions from Yeivin's authorship, it calls him Ben rather
+than "the adapter", as in "Ben-added claims".
 
 Ben's decision of 2026-09-19 treats the existing permission to publish the adapted
 excerpts as extending to their editable source. That decision does not establish
