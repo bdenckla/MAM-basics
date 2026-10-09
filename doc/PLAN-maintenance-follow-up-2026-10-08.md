@@ -43,9 +43,18 @@ in MAM-private.
 | Delete merged branches, sparing `codex/near-aleppo-ketiv-final-maqaf-20261007` | "I concur, please delete those branches" | Done 2026-10-08: 8 MAM-basics, 10 MAM-private and 1 hbofonts remote branches, each leased at its audited tip, and the local `dar-2026-09-29` with `git branch -d` |
 | Permanently delete the two large Claude scratchpads | "Permanently/immediately delete, i.e. non-recycle-bin delete them, please" | Ben's own act: agent safety policy forbids an agent's permanent deletion |
 
-Still open: Ben asked what retiring the 2026-09-29 review's records requires. The skipped
-`.novc/` wipe in `GitRepos2/MAM-basics` waits on that, because tracked records of that review
-cite `.novc/review-2026-09-29/`. The wipe is a local act, not a cloud one.
+Ben asked what retiring the 2026-09-29 review's records requires; answered 2026-10-09 from a
+read-only audit. The review and its remediation are finished, but the turn-01 update's
+disposition table is the only tracked home of ten deferrals: finding 21's heading fix in
+`py/hbce_psalms/compare.py`, finding 22's next-refresh check, items 36.3 to 36.8, item 36.10's
+suite run of `lint-receipt`, and item 36.11. Retirement first needs Ben's ruling on each, a
+maintained home or a dismissal. One deleting commit would then link the 14 records at its
+parent: in place for current guidance (`AGENTS.md`'s test-exception passage, D11 in
+`doc/dual-agent-review.md`, two reasons in `py/tests/test_mega_coverage.py` and this plan) and
+through single updates for the historical citers. No tracker cites a member. The skipped
+`.novc/` wipe in `GitRepos2/MAM-basics` does not wait on retirement: no code reads that scratch,
+and `doc/periodic-review.md`'s item 4 says it is not evidence. `py/main_repo_maintenance.py`
+deletes `.novc/` permanently, so the wipe is Ben's own act unless an agent recycles it instead.
 
 ## A. Read the census's note prose with phase 3's closed reader
 
