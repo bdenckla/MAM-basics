@@ -2,8 +2,9 @@
 
 State: live; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09; Ben decided on
 2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; Ben reported on
-2026-10-09 that its live deployment on his Windows machines is done. Workstream C's public half executed 2026-10-09, after Ben
-approved the list in “C1. Public audit result, 2026-10-08”; the private half remains.
+2026-10-09 that its live deployment on his Windows machines is done. Workstream C executed
+2026-10-09: the public half after Ben approved the list in “C1. Public audit result,
+2026-10-08”, and the private half the same day.
 
 Written by Claude (Opus 5.5) on 2026-10-08, New York time, in the session that ran the
 2026-10-07 maintenance from `C:/Users/BenDe/GitRepos2/MAM-basics`. Ben had to switch that
@@ -185,5 +186,16 @@ Ben approved the C1 list and its corrections on 2026-10-09, including the repeti
 deferral details of item 6. The retiring commit deleted the four files of item 7 and made the
 corrections item 4 lists, linking the families at
 `38a8db9ae851b83d43b5c5ad42c007943b54d724`, the last commit on `origin/main` whose tree holds
-every member, with the member blobs the audit recorded. The citations of these families from
-MAM-private, and MAM-private's own two families, remain for the private half.
+every member, with the member blobs the audit recorded. The private half's audit, on
+2026-10-09, searched every tracker this audit could not reach, MAM-private's included, and
+found no reference to any member. It repointed MAM-private's one citation of the 2026-09-26
+family to this archive, and on Ben's approval retired MAM-private's own two families that day.
+
+Ben approved three public follow-ups of the private half's report the same day. MAM-basics
+`545e0c96378be0ac5d0a30700246ba6509d52110` gave his naming preference a home in
+`Yeivin-ITM/README.md`, “Permission and authorship”. phonetic-hbo
+`fefc401ffadb3dab3843ef465bb2c75814558d9f` restored its README's link to the former
+masorah-books repository, which the 2026-10-02 redirect conversion had dropped against his
+decision of 2026-09-30; the deployed `gh-pages/` tree is unchanged. Two leftover phonetic-hbo
+clones on the machine that ran the 2026-10-07 maintenance, and the temporary clone used for that
+README commit, went to the Recycle Bin after recovery checks.
