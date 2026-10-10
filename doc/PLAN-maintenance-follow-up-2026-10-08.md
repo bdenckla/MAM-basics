@@ -56,6 +56,25 @@ through single updates for the historical citers. No tracker cites a member. The
 and `doc/periodic-review.md`'s item 4 says it is not evidence. `py/main_repo_maintenance.py`
 deletes `.novc/` permanently, so the wipe is Ben's own act unless an agent recycles it instead.
 
+Ben's decision of 2026-10-09 on that answer and the private half's other recommendations:
+"Follow all your recommendations, but perhaps in a fresh session (via a prompt you give me)
+because this session's context is pretty full". Each item awaits that session unless marked:
+
+1. Recycle all of `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/` after an inventory.
+2. Retire the 2026-09-29 review's records. First move finding 22's next-refresh check into
+   `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, and dismiss
+   the other deferrals under `doc/review-trial.md`'s "No retrospective giant backlog is
+   opened". Item 36.8, Ben's own Wikisource edit, is kept only if he still means to make it;
+   ask him if no answer is recorded. Then make one deleting commit with the corrections above.
+3. Delete the merged local branch `dar-2026-09-29`, at `b8700f12`, in
+   `C:/Users/BenDe/GitRepos/MAM-basics`, with `git branch -d`.
+4. Append to `dot-Codex/user-wide-AGENTS.md`, “Task prompts and handoffs”, after "provide a
+   standalone prompt for the next session.": "Work that waits only on Ben's answers to
+   decisions asked in the same report is not work for another session: ask them, and continue
+   here once he answers. Write the prompt only for work that must move to another session,
+   after the decisions it depends on are recorded." Then deploy it.
+5. Leave the unoffered opportunities that workstream B lists: done, no action.
+
 ## A. Read the census's note prose with phase 3's closed reader
 
 Load `hebrew-prose` before writing about these templates. The 2026-10-07 audit entry in
