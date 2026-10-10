@@ -64,8 +64,9 @@ because this session's context is pretty full". Each item awaits that session un
 2. Retire the 2026-09-29 review's records. First move finding 22's next-refresh check into
    `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, and dismiss
    the other deferrals under `doc/review-trial.md`'s "No retrospective giant backlog is
-   opened". Item 36.8, Ben's own Wikisource edit, is kept only if he still means to make it;
-   ask him if no answer is recorded. Then make one deleting commit with the corrections above.
+   opened". Item 36.8, the English Decalogue page's surviving Sheet link, is kept: on
+   2026-10-10 Ben had it filed as #303, which also records that only a Hebrew Wikisource
+   administrator can edit that page. Then make one deleting commit with the corrections above.
 3. Delete the merged local branch `dar-2026-09-29`, at `b8700f12`, in
    `C:/Users/BenDe/GitRepos/MAM-basics`, with `git branch -d`.
 4. Append to `dot-Codex/user-wide-AGENTS.md`, “Task prompts and handoffs”, after "provide a
