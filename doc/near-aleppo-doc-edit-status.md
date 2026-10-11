@@ -1106,3 +1106,32 @@ HTML diff was read; the focused prose/Python mark lints passed (three tests),
 and `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused generation, the artifact differential and the lints cover
 this clarification and vertical-layout display.
+
+## Jeremiah 50:29 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+generous horizontal space without niqqud, containing a masorah circle, with the
+preceding maqaf extending into the space.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a78b684874d9448fc162f6cb3e0238022b5f27ad` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now records the space, absent qere letters and
+niqqud, masorah circle, and maqaf extending into the space at לָהּ֙. Its intended
+body encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 122253.png` and copied its unchanged bytes to
+`in/near-aleppo/img/qere-without-ketiv/aleppo-Je50-29.png`; the HTML build copies
+the crop for inline display. Ruth 3:5 and Ruth 3:17 still await image readings.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+93 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere and notes, current source notation
+and links. All eight canonical/generated crop pairs have identical bytes; the
+new crop also matches the supplied screenshot. The generated HTML diff was
+read. The prose mark-order lint passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+lint cover this observation and crop update.

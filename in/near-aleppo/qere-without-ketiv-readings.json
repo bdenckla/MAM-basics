@@ -278,12 +278,31 @@
         50,
         29
       ],
-      "intended_encoding": null,
-      "reading": null,
-      "observation": null,
-      "romanized": [],
+      "intended_encoding": {
+        "kind": "empty-body",
+        "explanation": "No qere letters or niqqud are written in the body text. A masorah circle occupies the generous space, and the preceding maqaf extends into it."
+      },
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-11",
+        "qere": "לָהּ֙",
+        "qere_letters_present": false,
+        "pointing_present": false,
+        "space_assessment": "generous horizontal space between the surrounding written atoms",
+        "masorah_circle_present": true,
+        "masorah_circle_position": "within the generous space",
+        "maqaf_extends_into_space": true
+      },
+      "observation": "For לָהּ֙, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud, only a masorah circle. The preceding maqaf extends into that space.",
+      "romanized": [
+        "maqaf"
+      ],
       "documentation_notes": [],
-      "crop": null
+      "crop": {
+        "filename": "aleppo-Je50-29.png",
+        "source_screenshot": "Screenshot 2026-10-11 122253.png"
+      }
     },
     {
       "id": "R3-5",
