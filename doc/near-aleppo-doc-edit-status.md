@@ -2185,3 +2185,18 @@ validation still checks one correctly shaped source call per case and agreement
 of its whole qere with MAM. All source and generated diffs and the regenerated
 displays were read. `git diff --check` passed. Mega and full suite remain on the
 approved nightly cadence for this presentation change.
+
+## Remove “there” from the Judges 20:13 remarks — 2026-10-11
+
+**Status:** Implemented. Ben requested changing “are never included there” to
+“are never included”. The maintained observation, source README and generated
+study now use that wording. No other reading or study content changed.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`d83046d48a55227e394e72f6bef162d0c459df43` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. The source
+and generated diffs and generated sentence were read; the only product change
+is the requested word removal and line wrapping. No Python file changed.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.

@@ -303,7 +303,7 @@ line. Ben's hypothesis is that the line ending may have provided that space,
 possibly accidentally.
 
 There is no dagesh for the qere in the body text, as expected. Ben's clarification
-is that dagesh marks are never included there in cases of qere without ketiv.
+is that dagesh marks are never included in cases of qere without ketiv.
 
 The historical review page,
 `qere-without-ketiv-all-cases.html` in the Downloads editing bundle, displayed
