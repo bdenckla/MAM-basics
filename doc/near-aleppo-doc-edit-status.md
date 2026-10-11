@@ -760,3 +760,34 @@ passed again against `df5519d4`; the final carrier implementation is unchanged.
 The directly relevant dataset and note-content tests passed after this merge.
 No additional generated differences arose. The full mega and suite remain
 on the approved nightly cadence, as the final commit message records.
+
+## Isaiah 26:20 guide correction — 2026-10-11
+
+**Status:** Corrected by Codex after Ben questioned the reference and identified
+the intended case as ketiv/qere in the middle of a three-atom maqaf compound.
+The BCV was correct. The earlier entry's passage “Isaiah 26:20 highlights the
+yod in ketiv דלתיך” selected the verse's separate, ordinary pair rather than
+the intended MAM ketiv יעבור and qere יַעֲבׇר.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, clean on main at
+`2265bf9cde517502571b6f848c950c3c0394feaa` before editing.
+
+**Correction:** The guide's Isaiah entry now identifies MAM's compound
+עַד־יַעֲבׇר־זָֽעַם and links to its MAM-with-doc display. It explains NAEE's
+existing display עַד־יַעֲבָור־זָֽעַם without qere above the middle atom:
+MAM's note reports the ketiv and no qere note in the Aleppo Codex, and NAEE's
+existing policy infers the ketiv's pointing from the qere. This correction
+attributes the manuscript report to MAM's note; no manuscript image was
+consulted. The description distinguishes the earlier boxed דלתיך / דלתך pair.
+
+**Verification and scope:** Black passed. HTML regeneration changed only the
+guide among the 88 generated files. An independent comparison confirmed that
+all seven guide verse paragraphs are byte-identical to the baseline, all guide
+links and anchors resolve against the local published products, and the MAM
+and NAEE datasets support the corrected description. The 12 focused source
+hygiene, accent-mark literal and prose mark-order checks passed, with the
+existing pytest-cache permission warning. Scripture, pointing inputs, edition
+book pages and shared styles are unchanged. The full mega and suite remain
+on the approved nightly cadence; focused regeneration and the artifact
+comparison cover this guide correction.
