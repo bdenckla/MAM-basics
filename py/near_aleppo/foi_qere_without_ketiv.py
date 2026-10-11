@@ -112,14 +112,27 @@ def records():
             ):
                 raise ValueError(f"Invalid {key}: {identity}")
         crop = row["crop"]
-        if crop is not None and (
-            not isinstance(crop, dict)
-            or set(crop) != {"filename", "source_screenshot"}
-            or not re.fullmatch(r"[A-Za-z0-9._-]+\.png", crop["filename"])
-            or not isinstance(crop["source_screenshot"], str)
-        ):
-            raise ValueError(f"Invalid crop record: {identity}")
+        if crop is not None:
+            _validate_crop(crop, identity, allow_marginal_note=True)
     return rows
+
+
+def _validate_crop(crop, identity, *, allow_marginal_note):
+    """Validate a body crop and its optional, explicitly named marginal crop."""
+    fields = {"filename", "source_screenshot"}
+    shapes = (
+        (fields, fields | {"marginal_qere_note"}) if allow_marginal_note else (fields,)
+    )
+    if (
+        not isinstance(crop, dict)
+        or set(crop) not in shapes
+        or not isinstance(crop["filename"], str)
+        or not re.fullmatch(r"[A-Za-z0-9._-]+\.png", crop["filename"])
+        or not isinstance(crop["source_screenshot"], str)
+    ):
+        raise ValueError(f"Invalid crop record: {identity}")
+    if allow_marginal_note and "marginal_qere_note" in crop:
+        _validate_crop(crop["marginal_qere_note"], identity, allow_marginal_note=False)
 
 
 def _qere_nodes(value):
@@ -355,20 +368,23 @@ def _links(reference):
     return mb_html.para(result)
 
 
-def _crop(row, reference, outputs):
-    crop = row["crop"]
+def _crop(crop, reference, outputs, *, label=None):
     filename = crop["filename"]
     raw = (build_paths.asset_dir() / "qere-without-ketiv" / filename).read_bytes()
     if raw[:8] != b"\x89PNG\r\n\x1a\n":
         raise ValueError(f"Study crop is not PNG: {filename}")
     width, height = struct.unpack(">II", raw[16:24])
     outputs["img/qere-without-ketiv/" + filename] = raw
+    subject = label or "the qere-without-ketiv site"
+    caption = f"Aleppo Codex — {_reference_text(reference)}"
+    if label:
+        caption += f", {label}"
     return [
         mb_html.para(
             mb_html.img(
                 {
                     "src": "../img/qere-without-ketiv/" + filename,
-                    "alt": f"Aleppo Codex crop at {_reference_text(reference)}: the qere-without-ketiv site",
+                    "alt": f"Aleppo Codex crop at {_reference_text(reference)}: {subject}",
                     "width": str(width),
                     "height": str(height),
                     "class": "qvlk-crop",
@@ -376,7 +392,7 @@ def _crop(row, reference, outputs):
             )
         ),
         mb_html.para(
-            f"Aleppo Codex — {_reference_text(reference)}.",
+            caption + ".",
             {"class": "qvlk-caption"},
         ),
     ]
@@ -467,7 +483,19 @@ def render(verses, rows):
                 mb_html.para(_prose(note)) for note in row["documentation_notes"]
             )
         if row["crop"]:
-            contents.extend(_crop(row, reference, outputs))
+            crop = row["crop"]
+            if "marginal_qere_note" in crop:
+                contents.extend(_crop(crop, reference, outputs, label="body text"))
+                contents.extend(
+                    _crop(
+                        crop["marginal_qere_note"],
+                        reference,
+                        outputs,
+                        label="marginal qere note",
+                    )
+                )
+            else:
+                contents.extend(_crop(crop, reference, outputs))
         contents.append(_links(reference))
         body.append(mb_html.div(contents, {"id": row["id"], "class": "qvlk-case"}))
     ctx = mb_html.WriteCtx(

@@ -1043,3 +1043,37 @@ The prose mark-order check passed (one test), and `git diff --check` passed.
 Production datasets are unchanged. Mega and full suite remain on the approved
 nightly cadence; focused generation, the artifact differential and the prose
 check cover this observation and crop update.
+
+## Jeremiah 31:37 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied body-text and marginal-note
+crops. Ben read a rather generous horizontal space with no niqqud and a masorah
+circle in the space. The marginal qere note is partly cut off by damage, so some
+of its letters are inferred.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a7d936b3db3514c5138a14b71275292926d7fb76` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record preserves the body-text observation for בָּאִ֖ים
+and the qualification about the damaged marginal qere note. Its intended body
+encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 121352.png` and `Screenshot 2026-10-11 121420.png` and
+copied their unchanged bytes to `aleppo-Je31-37.png` and
+`aleppo-Je31-37-marginal-qere.png` under the study's canonical image directory.
+The primary crop record now supports one explicitly named, optional
+`marginal_qere_note` crop. Both shapes are validated, and both images receive
+distinct captions and alt text. Three selected cases still await image readings.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 92 owned files and both font copies. An
+independent baseline differential confirmed that all eight other case records
+and HTML sections are unchanged, along with the target's Scripture, MAM qere
+and notes, current source notation and links. All seven canonical/generated
+crop pairs have identical bytes, and both new crops match the supplied
+screenshots. The generated HTML diff was read. The prose mark-order and Python
+accent-mark lints passed (three tests); `git diff --check` passed. Production
+datasets are unchanged. Mega and full suite remain on the approved nightly
+cadence; focused generation, the artifact differential and the lints cover
+this observation and the paired crop display.

@@ -17,6 +17,11 @@ file as Ben supplies further readings or revises an assessment. A case without a
 image reading has `reading`, `observation`, and `crop` set to `null`; the page
 states that an image reading has not yet been recorded.
 
+The primary `crop` records the body-text image. It may also contain the explicitly
+named `marginal_qere_note` crop, with its own filename and supplied screenshot.
+The renderer validates both crop records and displays the body text and marginal
+note with separate captions.
+
 [`py/near_aleppo/foi_qere_without_ketiv.py`](../../py/near_aleppo/foi_qere_without_ketiv.py)
 renders the study through the existing HTML build. The shared renderer supplies
 current NAEE Scripture from `out/near-aleppo/plus/`, and current qere and attached
@@ -51,7 +56,7 @@ The study's v2 record format adds `intended_encoding`: either `null` for an
 entry awaiting a manuscript-based assessment, or an object with `kind` and
 `explanation`. The three closed kinds are `marks-with-space`,
 `marks-without-space` and `empty-body`. These are document assessments, not build
-instructions. All five reviewed cases have pending assessments; the four entries
+instructions. All six reviewed cases have pending assessments; the three entries
 awaiting image readings have `null`. Existing observations and crop provenance
 are preserved.
 
@@ -61,9 +66,10 @@ Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 take the intended template with
 space above the marks. The tentative holam reading at 2 Kings 19:31 leaves its
 payload unsettled.
 The intended template without space above the marks at 2 Samuel 18:20 still
-awaits its own variant and implementation. The intended body text at
-2 Samuel 16:23 is empty. Complete notation is shown only for current encodings;
-no pending carrier payload is invented. Dataset implementation remains separate.
+awaits its own variant and implementation. The intended body text is empty at
+2 Samuel 16:23 and Jeremiah 31:37. Complete notation is shown only for current
+encodings; no pending carrier payload is invented. Dataset implementation remains
+separate.
 
 ## Link presentation trial, 2026-10-11
 
@@ -157,7 +163,7 @@ The corresponding read-only comparison is:
 ## Crop provenance
 
 Ben supplied and interpreted the first four Aleppo manuscript crops below on
-2026-10-08 and the 2 Kings 19:37 crop on 2026-10-11.
+2026-10-08, and the 2 Kings 19:37 and Jeremiah 31:37 crops on 2026-10-11.
 Codex inspected the supplied crops. The canonical PNG files are under
 [`in/near-aleppo/img/qere-without-ketiv/`](../../in/near-aleppo/img/qere-without-ketiv/),
 and the HTML build copies their unchanged bytes under
@@ -174,6 +180,8 @@ or line coordinate is inferred from a screenshot filename.
 | 2 Samuel 18:20 | [aleppo-2S18-20.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2S18-20.png) | `Screenshot 2026-10-08 110056.png` |
 | 2 Kings 19:31 | [aleppo-2K19-31.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2K19-31.png) | `Screenshot 2026-10-08 110419.png` |
 | 2 Kings 19:37 | [aleppo-2K19-37.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2K19-37.png) | `Screenshot 2026-10-11 120243.png` |
+| Jeremiah 31:37, body text | [aleppo-Je31-37.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-Je31-37.png) | `Screenshot 2026-10-11 121352.png` |
+| Jeremiah 31:37, marginal qere note | [aleppo-Je31-37-marginal-qere.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-Je31-37-marginal-qere.png) | `Screenshot 2026-10-11 121420.png` |
 
 ## Judges 20:13
 
@@ -220,9 +228,18 @@ the surrounding written atoms. Ben's hypothesis is that the letter-scribe
 presumably left this space intentionally. The intended encoding assessment uses
 the template with space above the marks; dataset implementation remains pending.
 
+## Jeremiah 31:37
+
+Ben read a rather generous horizontal space for בָּאִ֖ים between the surrounding
+written atoms, with no qere letters or niqqud. A masorah circle is present in
+that space. The marginal qere note is partly cut off by damage, so some of its
+letters are inferred. Both supplied crops are preserved and displayed separately.
+The intended body encoding assessment is empty; dataset implementation remains
+pending.
+
 ## Entries awaiting image readings
 
-The study also includes Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5,
+The study also includes Jeremiah 50:29, Ruth 3:5,
 and Ruth 3:17. Their current NAEE verses, qere, and any attached MAM notes are
 displayed. No new image reading or crop has yet been supplied for these entries.
 
