@@ -910,7 +910,7 @@ def render(verses, rows):
                     "class": "pointed foi-verse qvlk-hebrew-display",
                 },
             ),
-            mb_html.heading_level_3("Current MAM doc-note"),
+            mb_html.heading_level_3("MAM doc-note"),
         ]
         if example["notes"]:
             contents.append(

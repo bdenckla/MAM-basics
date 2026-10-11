@@ -2299,3 +2299,19 @@ table values, images and metadata. The existing source and excerpt agreement
 checks remain unchanged. All source and generated diffs and the regenerated
 case sections were read. `git diff --check` passed. Mega and full suite remain
 on the approved nightly cadence for this presentation-only change.
+
+## Remove “Current” from the MAM doc-note headings — 2026-10-11
+
+**Status:** Implemented. Ben requested removal of “Current” unless the headings
+contrast existing notes with proposed notes. No such distinction is intended.
+All nine case headings now read “MAM doc-note”. Notes and all other study
+content are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`7be816f109503ccc6c0f9a915ec2cc649fbd896d` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the nine generated
+headings were read; the only product change is their wording. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+heading-only change. Codex owns commit and normal push.
