@@ -52,10 +52,10 @@ link helper with the website root as its page directory. Its source remains
 `py/author_site/site_index.py`; regenerate it with `py/main_authored.py gen-site`.
 Other deploy-root pages retain their existing link presentation.
 
-The maintained offline final-punctuation extract embeds the same stylesheet.
-Its content security policy permits data images for the inline SVG masks;
-the extract's assets remain self-contained. Regenerate both `--html` and
-`--punctuation-review` through `py/main_near_aleppo.py` when changing these rules.
+Regenerate the near-Aleppo pages with `py/main_near_aleppo.py --html` when
+changing these rules, and regenerate the top-level index with
+`py/main_authored.py gen-site`. The completed offline final-punctuation review
+extract was retired on 2026-10-11.
 
 ## Reports and standalone bundles
 

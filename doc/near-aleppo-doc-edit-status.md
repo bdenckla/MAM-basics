@@ -927,3 +927,42 @@ automated visual and keyboard checks retain the previously documented local
 preview restriction. Mega and full suite remain on the approved nightly cadence.
 The real generators, complete-page differential and focused lints cover this
 extension; no consequence requires immediate broad checks.
+
+## Retirement of the completed punctuation extract — 2026-10-11
+
+**Status:** Retired by Codex after Ben proposed removing the page and asked
+whether it reviewed the completed legarmeh/maqaf additions.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`dc57597b8b797d7f1ac9a7747cbee5c8af1b6859` before editing. Codex owns the
+retirement, focused verification, commit and normal push.
+
+**Completion evidence:** “Vertical ruby gap and main integration” above records
+the completed 2026-10-07 package at `2f301311`: 36 added final maqafs and five
+added final U+05C0 signs in stored pointed ketivs. The extract also displayed
+already-present punctuation, for 42 maqaf and 12 paseq/legarmeh cases in total.
+Its read-only comparison passed against the current dataset immediately before
+retirement. The earlier qamats question was superseded by the final-mark ruby
+correction recorded below the integration entry; it does not require this page.
+
+**Retired scope:** Removed the HTML extract, its plain-text companion, its
+dedicated generator, and its selection JSON. Removed the `--punctuation-review`
+CLI branch and the differential check that existed solely for these outputs.
+Updated current README and styling instructions, and marked the extract as
+retired in the study's source note and the live release-notes draft. The draft's
+commit-specific link still preserves the historical site list. Git history keeps
+all four removed files; historical verification entries remain as dated evidence.
+The actual frozen and reviewed pointing inputs, edition renderer, book datasets,
+population metadata, note reviews and published HTML remain unchanged.
+
+**Verification:** The extract's read-only check passed before removal. Black
+passed on the changed entry point and test file. Both remaining near-Aleppo
+differential tests passed, covering the census, dataset/population baselines and
+source-note review inventory. The HTML read-only comparison passed for all 89
+owned files and both font copies. The CLI help no longer offers the retired
+command; a search found no extract dependencies in current Python or published
+products. A complete changed-path audit and direct Git comparison confirm that
+the production pointing inputs, datasets and published pages are unchanged.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; this retirement has focused checks and changes no production reading.

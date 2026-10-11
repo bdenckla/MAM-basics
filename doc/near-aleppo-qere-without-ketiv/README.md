@@ -84,11 +84,13 @@ approved the presentation; no automated browser pass is claimed.
 ## Shared near-Aleppo link presentation, 2026-10-11
 
 The shared rules now cover all 77 HTML pages under `gh-pages/near-aleppo/`,
-including documentation, FOI pages, edition pages and their long notes, plus the
-maintained standalone final-punctuation review extract. The authored sources are
+including documentation, FOI pages, edition pages and their long notes. The
+completed standalone final-punctuation review extract also received these rules
+before its retirement on 2026-10-11. The authored sources are
 [`py/near_aleppo/link_presentation.py`](../../py/near_aleppo/link_presentation.py)
 and [`py/near_aleppo/link_presentation.css`](../../py/near_aleppo/link_presentation.css).
-The HTML build writes one shared stylesheet; the offline extract embeds it.
+The HTML build writes one shared stylesheet. The top-level MAM-basics index
+also uses this stylesheet.
 
 Same-page links use an up arrow when the target precedes the link in document
 order, and a down arrow when the target follows it. This direction is assigned
@@ -103,8 +105,8 @@ The rollout preserves Hebrew order, RTL markup, page text, link labels and URLs,
 observations, crops, datasets and template policy. Verification compares every
 page's body byte-for-byte after removing only the presentation attributes,
 checks every local fragment and arrow direction, validates the self-contained
-SVGs, and runs the real HTML and standalone-extract comparisons. Automated visual
-and keyboard checks retain the browser-policy limitation described above.
+SVGs, and runs the real HTML comparison. Automated visual and keyboard checks
+retain the browser-policy limitation described above.
 
 ## Reproduction
 
