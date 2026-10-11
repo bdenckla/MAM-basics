@@ -748,14 +748,6 @@ def _encoding(row):
     return mb_html.div(
         [
             mb_html.heading_level_3("Near-Aleppo encoding"),
-            mb_html.para(
-                [
-                    mb_html.bold("Current encoding — implemented:"),
-                    " The dataset uses ",
-                    _template_name(_QERE_TEMPLATE),
-                    ".",
-                ]
-            ),
             mb_html.para(intention),
         ],
         {"class": "qvlk-encoding"},

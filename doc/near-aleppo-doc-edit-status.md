@@ -2749,3 +2749,19 @@ were verified unchanged against origin and its maintained preservation record.
 The two focused prose/time checks then passed. The correction's 15 focused
 checks and complete regeneration comparison remain applicable; the incoming
 commits change no runtime code or products.
+
+## Remove the repeated current-encoding paragraph — 2026-10-11
+
+**Status:** Implemented at Ben's request. Removed “Current encoding —
+implemented: The dataset uses קרי ולא כתיב.” from all nine cases. Each
+case retains its additional body-template description, and the introduction
+continues to state the shared qere-call convention once.
+
+**Verification:** The checkout was clean on main at
+`9a77ac71b850c7412974366fba1cb37f57628b75`. Black passed on the changed study
+generator, and `py/main_near_aleppo.py --html` regenerated the pages. A byte
+comparison confirmed exactly nine paragraph removals and no other change to
+the study; all nine additional-template descriptions remain. No other generated
+file changed. `git diff --check` passed. Dataset encodings, qere calls, images,
+translations and excerpts are unchanged. Mega and the full suite remain on the
+approved nightly cadence for this static presentation edit.

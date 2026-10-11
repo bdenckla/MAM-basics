@@ -163,8 +163,10 @@ Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Ben later
 requested that every case begin with its images on 2026-10-11. “Near-Aleppo
 encoding” now follows the images, before the NAEE excerpt and manuscript
-discussion. Current qere calls and implemented additional templates have
-separate labels. Ben requested removal of the repeated source-notation blocks
+discussion. Each case describes its additional body template. The repeated
+“Current encoding — implemented” paragraph identifying `קרי ולא כתיב`
+was removed at Ben's request on 2026-10-11; the introduction states the common
+qere-call convention once. Ben requested removal of the repeated source-notation blocks
 on 2026-10-11 because they add no independent information beyond the MAM qere.
 The separate MAM qere displays were subsequently removed after a comparison
 confirmed agreement with the NAEE qere in all cases.
