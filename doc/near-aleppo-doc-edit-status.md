@@ -1365,3 +1365,35 @@ read and contains only the nine heading changes and two date removals in prose.
 The date search found no remaining dates in the page. `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence; regeneration and
 the inspected diff cover this prose-only revision.
+
+## Consolidated sentence-prose batch — 2026-10-11
+
+**Status:** Implemented. Ben's chat messages are the request source; Codex records
+the consolidated batch in this existing tracked ledger. Earlier document requests
+are implemented in the entries above. This batch combines Ben's requests to:
+
+1. Use sentences in place of “No dagesh.” and throughout the document's English
+   prose: “Please let's use sentences here and throughout the document.”
+2. Qualify the absence of dagesh with “as expected, since dagesh marks are never
+   included in cases of qere without ketiv”, with the body-text scope explicit.
+
+The prose pass revised English descriptions, list items, encoding summaries,
+translation fragments and captions. Hebrew source quotations, qere readings,
+template notation and structural headings retain their existing contents.
+Codex uses this ledger to consolidate chat requests before implementation and
+record each batch's implemented, deferred or unresolved dispositions at completion.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`648efbaf72485ab5a1b4b1965ef8e6625dd79de5` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The full generated diff
+was read; Scripture, Hebrew sources, current source calls, readings, inferred
+marginal words, links and crops are preserved. Dates remain hidden, and the
+previous spacing, circle and damage qualifications remain intact. A read-only
+reviewer found no material prose or translation defects. The three focused prose
+and mark lints passed, and `git diff --check` passed. Mega and full suite remain
+on the approved nightly cadence; focused regeneration, source reconciliation,
+inspection, review and lints cover this consolidated prose batch.

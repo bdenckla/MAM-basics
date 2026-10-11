@@ -57,7 +57,7 @@
             [
               {
                 "kind": "prose",
-                "text": "Aleppo Codex: There is no space for כֵּ֥ן, which is read but not written, but the tsere and merkha are written below, between the surrounding written atoms (not the dagesh, as expected)."
+                "text": "In the Aleppo Codex, there is no space for כֵּ֥ן, which is read but not written, but the tsere and merkha are written below, between the surrounding written atoms (not the dagesh, as expected)."
               }
             ]
           ]
@@ -115,7 +115,7 @@
             [
               {
                 "kind": "prose",
-                "text": "Aleppo Codex:"
+                "text": "The Aleppo Codex has the following body text:"
               },
               {
                 "kind": "hebrew",
@@ -129,13 +129,13 @@
             [
               {
                 "kind": "prose",
-                "text": "Breuer's note."
+                "text": "MAM cites Breuer's note."
               }
             ],
             [
               {
                 "kind": "prose",
-                "text": "Koren, Breuer, the Simanim Tanakh, Mechon Mamre."
+                "text": "MAM lists Koren, Breuer, the Simanim Tanakh, and Mechon Mamre."
               }
             ]
           ]
@@ -164,7 +164,7 @@
             [
               {
                 "kind": "prose",
-                "text": "Aleppo Codex ketiv:"
+                "text": "The Aleppo Codex has the following ketiv:"
               },
               {
                 "kind": "hebrew",
@@ -172,7 +172,7 @@
               },
               {
                 "kind": "prose",
-                "text": "An empty space without vowel points or cantillation marks, with a masorah circle above."
+                "text": "There is an empty space without vowel points or cantillation marks, with a masorah circle above."
               }
             ]
           ]

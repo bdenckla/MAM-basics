@@ -13,6 +13,8 @@ these letters are written in a marginal note. Ben treats the presence of a
 masorah circle as common to these cases. The study notes that shared feature
 once in the introduction; the per-case distinctions concern niqqud and horizontal
 space. Complete MAM quotations and translations retain their circle references.
+English descriptions, list items, encoding summaries, translations and image
+captions use complete sentences.
 
 ## Maintained inputs and rendering
 
@@ -248,6 +250,9 @@ Ben read the below-marks of בְּנֵ֣י: sheva, tsere, and munaḥ, without l
 dagesh, with space above the marks. The orphan marks are at the end of a manuscript
 line. Ben's hypothesis is that the line ending may have provided that space,
 possibly accidentally.
+
+There is no dagesh for the qere in the body text, as expected. Ben's clarification
+is that dagesh marks are never included there in cases of qere without ketiv.
 
 The historical review page,
 `qere-without-ketiv-all-cases.html` in the Downloads editing bundle, displayed

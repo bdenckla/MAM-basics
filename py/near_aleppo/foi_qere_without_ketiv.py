@@ -459,17 +459,16 @@ def _encoding_guide():
             mb_html.unordered_list(
                 [
                     [
-                        "Niqqud with horizontal space above the marks: ",
+                        "For niqqud with horizontal space above the marks, a candidate is ",
                         _template_name(MARKS_WITHOUT_LETTER),
-                        " (niqqud without a letter), a candidate for this supplement.",
+                        " (niqqud without a letter).",
                     ],
                     [
-                        "Niqqud without horizontal space above the marks: ",
+                        "For niqqud without horizontal space above the marks, a candidate is ",
                         _template_name(MARKS_WITHOUT_LETTER_OR_SPACE),
-                        " (niqqud without a letter and without space), "
-                        "a candidate for this supplement.",
+                        " (niqqud without a letter and without space).",
                     ],
-                    "Horizontal space without niqqud: a new supplement whose "
+                    "Horizontal space without niqqud requires a new supplement whose "
                     "name and syntax remain open.",
                 ]
             ),
@@ -518,9 +517,9 @@ def _encoding(row, source):
             mb_html.bold("Intended supplement — pending:"),
             " ",
             (
-                ["candidate ", _template_name(name)]
+                ["The proposed supplemental template is ", _template_name(name)]
                 if name is not None
-                else "a new template for horizontal space without niqqud"
+                else "The supplement requires a new template for horizontal space without niqqud"
             ),
             ". ",
             *_prose(intended["explanation"], row["romanized"]),
@@ -531,9 +530,9 @@ def _encoding(row, source):
             mb_html.para(
                 [
                     mb_html.bold("Current encoding — implemented:"),
-                    " ",
+                    " The dataset uses ",
                     _template_name(_QERE_TEMPLATE),
-                    ". The dataset retains the pointed qere; NAEE displays it "
+                    " and retains the pointed qere. NAEE displays it "
                     "above the editorial “no ketiv” label.",
                 ]
             ),
@@ -599,9 +598,10 @@ def _crop(crop, reference, outputs, *, label=None):
     width, height = struct.unpack(">II", raw[16:24])
     outputs["img/qere-without-ketiv/" + filename] = raw
     subject = label or "the qere-without-ketiv site"
-    caption = f"Aleppo Codex — {_reference_text(reference)}"
-    if label:
-        caption += f", {label}"
+    caption = (
+        f"This Aleppo Codex image shows the {label or 'body text'} "
+        f"at {_reference_text(reference)}."
+    )
     return [
         mb_html.para(
             mb_html.img(
@@ -615,7 +615,7 @@ def _crop(crop, reference, outputs, *, label=None):
             )
         ),
         mb_html.para(
-            caption + ".",
+            caption,
             {"class": "qvlk-caption"},
         ),
     ]
@@ -648,9 +648,9 @@ def render(verses, rows):
         mb_html.para("The verses below show:"),
         mb_html.unordered_list(
             [
-                "the current near-Aleppo example edition (NAEE) contents for the case at hand",
-                "any MAM notes regarding the case at hand",
-                "the Aleppo images showing the case at hand",
+                "The page shows the current near-Aleppo example edition (NAEE) contents for the case at hand.",
+                "The page includes any MAM notes regarding the case at hand.",
+                "The page includes Aleppo images showing the case at hand.",
             ]
         ),
         mb_html.para("Image readings are attributed to Ben Denckla."),
@@ -722,7 +722,9 @@ def render(verses, rows):
             marginal_lines = _inferred_marginal_lines(row)
             if marginal_lines is not None:
                 contents.append(
-                    mb_html.para("Inferred marginal qere note, one word per line:")
+                    mb_html.para(
+                        "The marginal qere note is inferred to have one word per line:"
+                    )
                 )
                 contents.append(
                     mb_html.div(
