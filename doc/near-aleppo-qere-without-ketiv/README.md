@@ -22,8 +22,8 @@ i.e. letterless niqqud.)
 The study states the common features in the opening paragraph and lists all
 three varying features together.
 Complete MAM quotations and translations retain their circle references.
-English descriptions, encoding summaries, translations and image
-captions use complete sentences.
+English descriptions, encoding summaries and image captions use complete
+sentences. Translations retain the source's fragments and lists.
 The opening feature list completes its lead-in.
 The study uses an unnamed authorial voice. Reading provenance and contribution
 history remain in the source records and this maintained note.
@@ -79,6 +79,7 @@ including every letter and mark. Quoted MAM notes retain their original text
 and brackets.
 Inline Hebrew with marks uses pointed styling. Unpointed Hebrew in prose inherits
 the surrounding font while retaining Hebrew language metadata and RTL isolation.
+Each Hebrew phrase, including its internal spaces, has one RTL isolation.
 
 “NAEE excerpt” retains the complete chanted word containing the QVLK
 and one neighboring chanted word on each side. A maqaf compound stays whole.
@@ -111,7 +112,9 @@ manuscript remarks; agreements and summaries of facts present in only one
 description are omitted. The v2 note-review format uses a `null` comparison
 when no discrepancy requires a separate entry. Discrepancy blocks and their
 summary appear only when entries exist. The three cases without an attached MAM
-note are labelled accordingly. Hebrew examples and marginal-note quotations remain in RTL blocks.
+note are labelled accordingly. Hebrew body-text examples remain in RTL blocks.
+The Ruth marginal-note quotations stay inline at their source position, in
+ordinary prose styling, without a separate explanatory paraphrase.
 The manuscript sigla follow the mirrored introduction's source roster:
 `א` is the Aleppo Codex, `ל` the Leningrad Codex, and `ק` the Cairo Codex of the
 Prophets. The roster's `סימנים` is the Simanim Tanakh, as specified in

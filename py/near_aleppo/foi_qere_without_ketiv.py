@@ -52,7 +52,8 @@ _LINE_POSITIONS = {
     "between written words": "BW",
     "end of a manuscript line": "EOL",
 }
-_HEBREW = re.compile(r"([\u0590-\u05ff]+)")
+# Keep spaces between Hebrew words inside one RTL isolation.
+_HEBREW = re.compile(r"([\u0590-\u05ff]+(?: +[\u0590-\u05ff]+)*)")
 # Match the mark classification in accgram/almost_errors_html_shared.py.
 # Maqaf, paseq and sof pasuq are spacing punctuation, not pointing.
 _HEBREW_MARK = re.compile(r"[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7-\u05c9]")
@@ -736,7 +737,7 @@ def _encoding(row):
 
 
 def _prose(text, names=()):
-    """Isolate Hebrew runs, style marked runs and italicize named romanizations."""
+    """Isolate Hebrew phrases, style marked phrases and italicize romanizations."""
     parts = [text]
     if names:
         pattern = r"(?<!\w)(" + "|".join(re.escape(name) for name in names) + r")(?!\w)"

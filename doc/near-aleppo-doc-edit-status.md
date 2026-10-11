@@ -2411,3 +2411,25 @@ preserved. All source and generated diffs and the beginning of every case
 were read. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence for this presentation-only change. Codex owns commit and
 normal push.
+
+## Keep the Ruth marginal-note quotations inline — 2026-10-11
+
+**Status:** Implemented. Ben requested the quotation immediately after
+“referring to the marginal note” in both Ruth translations. The Ruth 3:5 quotation
+is “אלי קרי”; the Ruth 3:17 quotation is “אלי קרי ולא כתב”. The separate pointed displays
+and the added paraphrases beginning “The marginal note says” are removed.
+Each unpointed quotation is one inline RTL phrase in ordinary prose styling,
+including its internal spaces. The original Hebrew notes remain unchanged.
+The source README reflects inline quotations and the previously approved
+source fragments and edition lists.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`b0316df37505d3759330eb3a96c76e1a2bc4131e` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95
+files and both font copies. All source and generated diffs and both generated
+paragraphs were read. The generated changes are confined to the two translations;
+both inline quotations have RTL isolation and no pointed class.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this translation and presentation change. Codex owns commit and
+normal push.

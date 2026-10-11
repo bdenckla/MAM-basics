@@ -187,15 +187,7 @@
             [
               {
                 "kind": "prose",
-                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note, but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
-              },
-              {
-                "kind": "hebrew",
-                "text": "אלי קרי"
-              },
-              {
-                "kind": "prose",
-                "text": "The marginal note says to read אלי."
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note \"אלי קרי\", but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
               }
             ]
           ]
@@ -228,15 +220,7 @@
             [
               {
                 "kind": "prose",
-                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note, but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
-              },
-              {
-                "kind": "hebrew",
-                "text": "אלי קרי ולא כתב"
-              },
-              {
-                "kind": "prose",
-                "text": "The marginal note says that אלי is read but not written."
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note \"אלי קרי ולא כתב\", but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
               }
             ]
           ]
