@@ -1,8 +1,9 @@
-"""Authored manuscript readings beside current MAM notes and NAEE Scripture.
+"""Encoding choices and manuscript readings beside current MAM and NAEE text.
 
-The shared renderer owns template dispatch. This module selects qere-only render
-elements and the documentation whose rendered lemma contains that element; it
-does not traverse source-template parameters or change the dataset's policy.
+The shared renderer supplies Scripture and MAM notes. The existing closed
+dataset walk selects current qere-only source fragments, excluding note bodies
+and copied MAM lemmas. Authored intended encodings are documentation, not changes
+to the dataset's policy or its current source.
 """
 
 import json
@@ -17,7 +18,11 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import verse_external_links as vel
 from mb_misc import mb_html
 from mwd import mwd_write_book
-from near_aleppo import build_paths
+from near_aleppo import build_paths, doc_figures
+from near_aleppo.phase2_templates import (
+    MARKS_WITHOUT_LETTER,
+    MARKS_WITHOUT_LETTER_OR_SPACE,
+)
 from py_misc import mam_doc_utils, mwd_utils
 from py_misc import ren_html_for_renel as hfr
 from py_misc import ren_html_from_ren_el_mapping as hfrm
@@ -26,8 +31,14 @@ from render_wt import render_wikitext as rwt
 
 PAGE = "foi/qere-without-ketiv.html"
 TITLE = "Qere without ketiv in near-Aleppo"
-_FORMAT = "near-aleppo-qere-without-ketiv-readings-v1"
+_FORMAT = "near-aleppo-qere-without-ketiv-readings-v2"
 _QERE_TAG = "mam-kq-q-velo-k"
+_QERE_TEMPLATE = "קרי ולא כתיב"
+_INTENDED_TEMPLATES = {
+    "marks-with-space": MARKS_WITHOUT_LETTER,
+    "marks-without-space": MARKS_WITHOUT_LETTER_OR_SPACE,
+    "empty-body": None,
+}
 _HEBREW = re.compile(r"([\u0590-\u05ff]+)")
 
 
@@ -45,6 +56,7 @@ def records():
         if set(row) != {
             "id",
             "reference",
+            "intended_encoding",
             "reading",
             "observation",
             "romanized",
@@ -79,6 +91,21 @@ def records():
             or not row["observation"]
         ):
             raise ValueError(f"Incomplete image reading: {identity}")
+        intended = row["intended_encoding"]
+        if intended is None:
+            if row["reading"] is not None:
+                raise ValueError(
+                    f"Reviewed case lacks an encoding assessment: {identity}"
+                )
+        elif (
+            row["reading"] is None
+            or not isinstance(intended, dict)
+            or set(intended) != {"kind", "explanation"}
+            or intended["kind"] not in _INTENDED_TEMPLATES
+            or not isinstance(intended["explanation"], str)
+            or not intended["explanation"]
+        ):
+            raise ValueError(f"Invalid intended encoding: {identity}")
         for key in ("romanized", "documentation_notes"):
             if not isinstance(row[key], list) or not all(
                 isinstance(value, str) and value for value in row[key]
@@ -164,6 +191,127 @@ def mam_examples(rows):
     return result
 
 
+def _near_aleppo_encodings(rows, examples):
+    """Read one current Scripture fragment per case through the closed walk."""
+    bkids = tuple(dict.fromkeys(row["reference"][0] for row in rows))
+    books = plus.read_parsed_plus_bk39s(bkids, str(build_paths.dataset_dir().parent))
+    result = {}
+    for row in rows:
+        reference = tuple(row["reference"])
+        book, chapter, verse = reference
+        bcvt = tbn.mk_bcvtmam(book, chapter, verse)
+        scripture = books[book]["verses_plus"][bcvt].EP
+        matches = [
+            template
+            for _, template in doc_figures._templates(
+                list(scripture), reference, doc_figures._DATASET
+            )
+            if template["tmpl_name"] == _QERE_TEMPLATE
+        ]
+        if len(matches) != 1:
+            raise ValueError(f"Expected one current qere-only encoding: {reference}")
+        (template,) = matches
+        params = template.get("tmpl_params")
+        if (
+            set(template) != {"tmpl_name", "tmpl_params"}
+            or not isinstance(params, dict)
+            or set(params) != {"1", "2"}
+            or not all(isinstance(value, str) and value for value in params.values())
+        ):
+            raise ValueError(f"Unexpected qere-only source shape: {reference}")
+        if params["2"] != examples[reference]["qere"]:
+            raise ValueError(f"Reconcile the dataset's whole qere: {reference}")
+        # Both parameters are literal text. Preserve their complete source values;
+        # the HTML writer escapes this string as text, not raw markup.
+        result[reference] = (
+            "{{" + _QERE_TEMPLATE + "|" + params["1"] + "|" + params["2"] + "}}"
+        )
+    return result
+
+
+def _template_name(name):
+    return mb_html.bdi(name, {"dir": "rtl", "lang": "hbo", "class": "name"})
+
+
+def _encoding_guide():
+    return mb_html.div(
+        [
+            mb_html.heading_level_2("Encoding conventions"),
+            mb_html.unordered_list(
+                [
+                    [
+                        "With space above the marks: ",
+                        _template_name(MARKS_WITHOUT_LETTER),
+                        " (niqqud without a letter).",
+                    ],
+                    [
+                        "Without space above the marks: ",
+                        _template_name(MARKS_WITHOUT_LETTER_OR_SPACE),
+                        " (niqqud without a letter and without space).",
+                    ],
+                ]
+            ),
+            mb_html.para(
+                "These templates are specific to near-Aleppo. Their payloads use "
+                "artificial carrier letters to hold the marks; those carriers "
+                "are not written manuscript letters. The original convention "
+                "uses alef carriers. A carrier payload for an unsettled case "
+                "is left open here."
+            ),
+            mb_html.para(
+                [
+                    "Current status: every site below still uses ",
+                    _template_name(_QERE_TEMPLATE),
+                    " (qere without ketiv). Neither marks template is applied "
+                    "at these sites. Intended encodings are labelled pending, "
+                    "separately from the complete current source notation.",
+                ]
+            ),
+        ],
+        {"class": "qvlk-encoding-guide"},
+    )
+
+
+def _encoding(row, source):
+    intended = row["intended_encoding"]
+    if intended is None:
+        intention = [
+            mb_html.bold("Intended encoding — assessment open:"),
+            " ",
+            "A manuscript-based encoding assessment has not yet been recorded.",
+        ]
+    else:
+        name = _INTENDED_TEMPLATES[intended["kind"]]
+        intention = [
+            mb_html.bold("Intended encoding — pending:"),
+            " ",
+            _template_name(name) if name is not None else "empty body text",
+            ". ",
+            *_prose(intended["explanation"], row["romanized"]),
+        ]
+    return mb_html.div(
+        [
+            mb_html.heading_level_3("Near-Aleppo encoding"),
+            mb_html.para(
+                [
+                    mb_html.bold("Current encoding — implemented:"),
+                    " ",
+                    _template_name(_QERE_TEMPLATE),
+                    ". The dataset retains the pointed qere; NAEE displays it "
+                    "above the editorial “no ketiv” label.",
+                ]
+            ),
+            mb_html.para(intention),
+            mb_html.para(mb_html.bold("Current source notation:")),
+            mb_html.para(
+                mb_html.code(mb_html.bdi(source, {"dir": "rtl"})),
+                {"dir": "rtl", "lang": "hbo", "class": "pointed qvlk-source"},
+            ),
+        ],
+        {"class": "qvlk-encoding"},
+    )
+
+
 def _prose(text, names=()):
     """Isolate Hebrew runs and italicize the record's named romanizations."""
     parts = [text]
@@ -237,6 +385,7 @@ def _crop(row, reference, outputs):
 def render(verses, rows):
     """Return the study page and unchanged crop bytes owned by the HTML build."""
     examples = mam_examples(rows)
+    encodings = _near_aleppo_encodings(rows, examples)
     outputs = {}
     body = [
         mb_html.heading_level_1(TITLE),
@@ -258,6 +407,7 @@ def render(verses, rows):
             "the MAM notes and the recorded Aleppo image readings have their own labels. "
             "Image readings are attributed to Ben Denckla."
         ),
+        _encoding_guide(),
         mb_html.ordered_list(
             [
                 mb_html.anchor_h(_reference_text(row["reference"]), "#" + row["id"])
@@ -274,6 +424,7 @@ def render(verses, rows):
                     _reference_text(reference), "../" + vel.near_aleppo_href(*reference)
                 )
             ),
+            _encoding(row, encodings[reference]),
             mb_html.heading_level_3("Current NAEE verse"),
             mb_html.para(
                 verses[reference],

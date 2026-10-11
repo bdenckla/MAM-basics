@@ -966,3 +966,49 @@ products. A complete changed-path audit and direct Git comparison confirm that
 the production pointing inputs, datasets and published pages are unchanged.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; this retirement has focused checks and changes no production reading.
+
+## Prominent qere-without-ketiv encoding — 2026-10-11
+
+**Status:** Implemented by Codex after Ben explicitly requested implementation
+of the document-only plan. Ben chose readable encoding summaries followed by
+curly-brace notation, with dataset implementation left for separate work.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`17b79fd70c6e0173b192193b5d67868a2aa5298f` before editing. The planning baseline
+`6e793c906e2275d0df51e0631849b0c38ba95b94` is its ancestor. The intervening link
+presentation rollout and removal of the obsolete display-space paragraph are
+preserved. Codex owns implementation, focused verification, commit and push.
+
+**Change:** The study explains the two near-Aleppo-specific marks templates and
+the artificial carrier convention. Each entry puts “Near-Aleppo encoding” before
+its full verse. Current encodings are labelled implemented; intended encodings
+are labelled pending or assessment open. The generator reads complete current
+source fragments from the dataset through the existing closed Scripture walk,
+excluding note bodies and copied MAM lemmas, validates both literal parameters
+and the whole qere, and lets the HTML writer escape the notation as text.
+
+The study's v2 metadata records four intended assessments: the template with
+space above the marks at Judges 20:13 and 2 Kings 19:31, empty body text at
+2 Samuel 16:23, and the template without space above the marks at 2 Samuel 18:20.
+The five entries awaiting image readings keep their encoding assessments open.
+The 2 Kings holam reading remains tentative; the 2 Samuel 18:20 use still awaits
+its own variant and implementation. No pending payload is fabricated. All nine
+current source fragments still use `קרי ולא כתיב`; neither marks template is
+applied at these sites.
+
+**Verification:** Black passed on the changed Python file. Real HTML generation
+and its read-only comparison passed for all 89 owned files and both font copies.
+An independent check read the dataset JSON and matched all nine displayed source
+fragments, confirmed that encoding precedes every verse, and checked the pending
+labels and RTL source isolation. After removing only the added encoding sections,
+the original page body is byte-identical to the baseline. Existing manuscript
+metadata is unchanged after removing the new intended-encoding field. Only the
+study page changed among generated products; datasets, edition pages, crop bytes
+and existing link presentation are unchanged. The generated HTML was read,
+the read-only agent review found no material defect, and `git diff --check` passed.
+
+**Verification limits:** Automated browser inspection retains the local-preview
+restriction recorded in the study README; no browser pass is claimed. Mega and
+full suite remain on the approved nightly cadence. Focused generation and the
+complete source and artifact comparisons cover this document-only revision.

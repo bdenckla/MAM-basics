@@ -12,16 +12,21 @@ Implementation and further discussion of the readings proceed together.
 
 [`in/near-aleppo/qere-without-ketiv-readings.json`](../../in/near-aleppo/qere-without-ketiv-readings.json)
 owns the selected references, Ben's dated image observations, their qualifications,
-and crop provenance. Update that file as Ben supplies further readings or revises
-an assessment. A case without an image reading has `reading`, `observation`, and
-`crop` set to `null`; the page states that an image reading has not yet been recorded.
+and crop provenance, together with the intended encoding assessments. Update that
+file as Ben supplies further readings or revises an assessment. A case without an
+image reading has `reading`, `observation`, and `crop` set to `null`; the page
+states that an image reading has not yet been recorded.
 
 [`py/near_aleppo/foi_qere_without_ketiv.py`](../../py/near_aleppo/foi_qere_without_ketiv.py)
 renders the study through the existing HTML build. The shared renderer supplies
 current NAEE Scripture from `out/near-aleppo/plus/`, and current qere and attached
 MAM doc-notes from `MAM-parsed/plus/`. It owns closed template dispatch. The FOI
 selects semantic qere-only render elements and notes whose rendered lemma contains
-that element; it does not interpret raw template parameters independently.
+that element. The existing closed dataset walk also selects the current qere-only
+source fragment from Scripture, excluding note bodies and copied MAM lemmas.
+The study validates that fragment's two literal parameters and agreement of its
+whole qere with MAM, then shows both parameters in complete curly-brace notation.
+The ordinary HTML writer escapes the notation as text.
 
 An image reading's subject is its whole recorded qere, including every letter
 and mark. A changed current qere requires reconciling that reading's subject.
@@ -32,6 +37,32 @@ the reading records even if the current notes later change.
 The study's observations do not change the near-Aleppo source text or decide a
 template design. Actual near-Aleppo source decisions remain in their existing
 maintained inputs and procedures.
+
+## Encoding presentation, 2026-10-11
+
+Ben requested that the encoding choices be prominent, then selected readable
+summaries followed by source notation and a document-only revision. Each entry
+now starts with “Near-Aleppo encoding”, before the full verse and manuscript
+discussion. Current encoding and pending intended encoding have separate labels.
+All current source fragments are read afresh from `out/near-aleppo/plus/`; they
+are not copied into the study metadata.
+
+The study's v2 record format adds `intended_encoding`: either `null` for an
+entry awaiting a manuscript-based assessment, or an object with `kind` and
+`explanation`. The three closed kinds are `marks-with-space`,
+`marks-without-space` and `empty-body`. These are document assessments, not build
+instructions. All four reviewed cases have pending assessments; the five entries
+awaiting image readings have `null`. Existing observations and crop provenance
+are preserved.
+
+The introduction explains the near-Aleppo-specific templates `ניקוד בלי אות`
+and `ניקוד בלי אות ובלי רווח`, including the artificial carrier convention.
+Judges 20:13 and 2 Kings 19:31 take the intended template with space above the
+marks. The tentative holam reading at 2 Kings 19:31 leaves its payload unsettled.
+The intended template without space above the marks at 2 Samuel 18:20 still
+awaits its own variant and implementation. The intended body text at
+2 Samuel 16:23 is empty. Complete notation is shown only for current encodings;
+no pending carrier payload is invented. Dataset implementation remains separate.
 
 ## Link presentation trial, 2026-10-11
 

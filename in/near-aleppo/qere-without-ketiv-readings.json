@@ -1,5 +1,5 @@
 {
-  "format": "near-aleppo-qere-without-ketiv-readings-v1",
+  "format": "near-aleppo-qere-without-ketiv-readings-v2",
   "cases": [
     {
       "id": "Ju20-13",
@@ -8,6 +8,10 @@
         20,
         13
       ],
+      "intended_encoding": {
+        "kind": "marks-with-space",
+        "explanation": "The intended payload carries sheva, tsere, and munaḥ, with no dagesh. There is space above these marks."
+      },
       "reading": {
         "manuscript": "Aleppo Codex",
         "basis": "Ben Denckla's direct reading of the manuscript image",
@@ -57,6 +61,10 @@
         16,
         23
       ],
+      "intended_encoding": {
+        "kind": "empty-body",
+        "explanation": "No letters or pointing are written for the qere. Available space does not supply missing marks."
+      },
       "reading": {
         "manuscript": "Aleppo Codex",
         "basis": "Ben Denckla's direct reading of the manuscript image",
@@ -95,6 +103,10 @@
         18,
         20
       ],
+      "intended_encoding": {
+        "kind": "marks-without-space",
+        "explanation": "The intended payload carries tsere and merkha, with no dagesh or space above the marks. This use still requires an explicit variant and implementation."
+      },
       "reading": {
         "manuscript": "Aleppo Codex",
         "basis": "Ben Denckla's direct reading of the manuscript image",
@@ -133,6 +145,10 @@
         19,
         31
       ],
+      "intended_encoding": {
+        "kind": "marks-with-space",
+        "explanation": "The below-marks are sheva, qamats, and tipeḥa, with space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
+      },
       "reading": {
         "manuscript": "Aleppo Codex",
         "basis": "Ben Denckla's direct reading of the manuscript image",
@@ -173,6 +189,7 @@
         19,
         37
       ],
+      "intended_encoding": null,
       "reading": null,
       "observation": null,
       "romanized": [],
@@ -186,6 +203,7 @@
         31,
         37
       ],
+      "intended_encoding": null,
       "reading": null,
       "observation": null,
       "romanized": [],
@@ -199,6 +217,7 @@
         50,
         29
       ],
+      "intended_encoding": null,
       "reading": null,
       "observation": null,
       "romanized": [],
@@ -212,6 +231,7 @@
         3,
         5
       ],
+      "intended_encoding": null,
       "reading": null,
       "observation": null,
       "romanized": [],
@@ -225,6 +245,7 @@
         3,
         17
       ],
+      "intended_encoding": null,
       "reading": null,
       "observation": null,
       "romanized": [],

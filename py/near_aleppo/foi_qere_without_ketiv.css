@@ -5,3 +5,5 @@
 .qvlk-study .qvlk-crop { max-width: 100%; height: auto; }
 .qvlk-study .qvlk-caption { font-size: 0.9em; }
 .qvlk-study .romanized { font-style: italic; }
+.qvlk-study .qvlk-source { line-height: 1.8; }
+.qvlk-study .qvlk-source code { font-family: inherit; overflow-wrap: anywhere; }
