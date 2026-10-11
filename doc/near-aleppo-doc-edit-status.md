@@ -1290,3 +1290,20 @@ material translation or document defects. The three focused prose and mark
 lints passed, the generated diff was read, and `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence; focused regeneration,
 source reconciliation, the artifact differential and lints cover these revisions.
+
+## Body-text wording — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. The introductory sentence now
+reads “The space and marks in the body text of the manuscript can nevertheless
+differ.” This replaces the vague “at the manuscript site”.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`b711ceaaf73c865ff3c89ab61340c6fe8112c0d5` before editing. Codex owns the wording
+change, focused verification, commit and normal push.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 95 files and both font copies. The generated
+diff contains only the requested sentence replacement and paragraph wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; regeneration and the inspected diff cover this prose-only correction.

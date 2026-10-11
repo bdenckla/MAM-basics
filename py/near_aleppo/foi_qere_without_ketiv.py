@@ -635,7 +635,7 @@ def render(verses, rows):
         mb_html.para(
             "Qere without ketiv has no letters for the qere written in the "
             "body text, though these letters are written in a marginal note. "
-            "The space and marks at the manuscript site can nevertheless differ. "
+            "The space and marks in the body text of the manuscript can nevertheless differ. "
             "The verses below show the current near-Aleppo example edition (NAEE); "
             "the MAM notes and the recorded Aleppo image readings have their own labels. "
             "Image readings are attributed to Ben Denckla."
