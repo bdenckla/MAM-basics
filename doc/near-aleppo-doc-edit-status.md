@@ -1565,3 +1565,26 @@ change only these three English descriptions of absent pointing. Original Hebrew
 notes and Scripture are preserved. `git diff --check` passed. Mega and full
 suite remain on the approved nightly cadence; focused regeneration and diff
 inspection cover this wording-only change.
+
+## Use one name for the additional template — 2026-10-11
+
+**Status:** Implemented. Ben requested consistent reference to the “additional
+template”, rather than rotating between that phrase and “supplement”. Use
+“additional template” throughout the study's introduction, encoding labels,
+case explanations and maintained source note. Preserve the distinction between
+the existing qere call and the proposed additional template.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`93a6727e5774334e4332db5d5cbb82396c16fe7b` before editing. Codex owns the consistent
+wording, regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The source and generated
+diffs were read. “Supplement” and “supplemental” no longer name the additional
+template in the study or its maintained description; all references to the
+renamed private generator constant were reconciled. Recorded readings, template
+classifications, Hebrew text, notes and current dataset calls are preserved.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration, terminology searches and diff inspection cover
+this wording change and matching private identifier rename.

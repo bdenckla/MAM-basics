@@ -99,7 +99,8 @@ There is no attached MAM note at Judges 20:13,
 Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Each entry
 now starts with “Near-Aleppo encoding”, before the full verse and manuscript
-discussion. Current encoding and pending intended supplements have separate labels.
+discussion. Current encoding and pending intended additional templates have
+separate labels.
 All current source fragments are read afresh from `out/near-aleppo/plus/`; they
 are not copied into the study metadata.
 
@@ -113,19 +114,21 @@ preserved.
 
 Ben clarified on 2026-10-11 that every existing `קרי ולא כתיב` call is to be
 retained and supplemented with one additional template describing how the qere
-site is represented in the body text. That supplement records the niqqud present
-and whether horizontal space is present. It does not replace the existing call
-or remove the qere. The earlier “empty body text” assessment is superseded by
-“horizontal space without niqqud”; an unpointed space still needs a supplement.
+site is represented in the body text. The additional template records the niqqud
+present and whether horizontal space is present. The additional template does
+not replace the existing call or remove the qere. The earlier “empty body text”
+assessment is superseded by “horizontal space without niqqud”; an unpointed space
+still needs an additional template.
 
 The introduction describes the near-Aleppo-specific templates `ניקוד בלי אות`
 and `ניקוד בלי אות ובלי רווח`, including the artificial carrier convention, as
-candidates for supplements where marks are present. Judges 20:13, 2 Kings 19:31
-and 2 Kings 19:37 have horizontal space above the marks. The tentative ḥolam male
-reading at 2 Kings 19:31 leaves its payload unsettled. The candidate without
-space above the marks at 2 Samuel 18:20 still awaits an explicit variant for that
-use. The supplement at 2 Samuel 16:23, Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5
-and Ruth 3:17 must record horizontal space without niqqud. Its name and syntax
+candidates for additional templates where marks are present. Judges 20:13,
+2 Kings 19:31 and 2 Kings 19:37 have horizontal space above the marks. The tentative
+ḥolam male reading at 2 Kings 19:31 leaves the carrier payload unsettled. The
+additional template without space above the marks at 2 Samuel 18:20 still awaits
+an explicit variant for that use. The additional template at 2 Samuel 16:23,
+Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5 and Ruth 3:17 must record horizontal space
+without niqqud. The additional template's name and syntax
 remain open. Complete notation is shown only for current encodings; pending
 names, parameter shapes and call placement remain to be designed. Dataset
 implementation remains separate.
@@ -298,7 +301,7 @@ tentative; the record does not promote the dot to a confirmed manuscript reading
 Ben read the marks of בָּנָיו֙: qamats, qamats, and pashta, without letters,
 with space above the marks. The marks occupy a large horizontal space between
 the surrounding written atoms. Ben's hypothesis is that the letter-scribe
-presumably left this space intentionally. The intended supplement records
+presumably left this space intentionally. The intended additional template records
 niqqud with horizontal space above the marks; dataset implementation remains pending.
 
 ## Jeremiah 31:37
@@ -320,28 +323,28 @@ Ben infers the following vertical layout, recorded exactly as supplied:
 </div>
 
 Both supplied crops are preserved and displayed separately. The intended
-supplement records horizontal space without niqqud; dataset implementation
+additional template records horizontal space without niqqud; dataset implementation
 remains pending.
 
 ## Jeremiah 50:29
 
 Ben read a generous horizontal space for לָהּ֙ between the surrounding written
 atoms, with no qere letters or niqqud. The preceding maqaf extends into that
-space. The intended supplement records horizontal space without niqqud;
+space. The intended additional template records horizontal space without niqqud;
 dataset implementation remains pending.
 
 ## Ruth 3:5
 
 Ben read a generous horizontal space for אֵלַ֖י between the surrounding written
-atoms, with no qere letters or niqqud. The intended supplement records horizontal
-space without niqqud; dataset implementation remains pending.
+atoms, with no qere letters or niqqud. The intended additional template records
+horizontal space without niqqud; dataset implementation remains pending.
 
 ## Ruth 3:17
 
 Ben read a generous horizontal space for אֵלַ֔י at the end of a manuscript line,
 with no qere letters or niqqud. Ben's hypothesis is that
 the line ending may account for the generous space, possibly accidentally.
-The intended supplement records horizontal space without niqqud; dataset
+The intended additional template records horizontal space without niqqud; dataset
 implementation remains pending.
 
 ## Historical standalone review

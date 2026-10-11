@@ -10,7 +10,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The supplement records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks."
+        "explanation": "The additional template records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -63,7 +63,7 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The supplement records horizontal space without niqqud. Available space does not supply missing marks."
+        "explanation": "The additional template records horizontal space without niqqud. Available space does not supply missing marks."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -105,7 +105,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-without-space",
-        "explanation": "The supplement records tsere and merkha, with no dagesh or horizontal space above the marks. The marks template still requires an explicit variant for this use."
+        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. The additional template still requires an explicit variant for this use."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -147,7 +147,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The supplement records sheva, qamats, and tipeḥa, with horizontal space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
+        "explanation": "The additional template records sheva, qamats, and tipeḥa, with horizontal space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -191,7 +191,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The supplement records two qamats marks and pashta, with horizontal space above the marks."
+        "explanation": "The additional template records two qamats marks and pashta, with horizontal space above the marks."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -232,7 +232,7 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The supplement records the generous horizontal space without niqqud."
+        "explanation": "The additional template records the generous horizontal space without niqqud."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -280,7 +280,7 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The supplement records the generous horizontal space without niqqud. The preceding maqaf extends into the space."
+        "explanation": "The additional template records the generous horizontal space without niqqud. The preceding maqaf extends into the space."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -313,7 +313,7 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The supplement records the generous horizontal space without niqqud."
+        "explanation": "The additional template records the generous horizontal space without niqqud."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -343,7 +343,7 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The supplement records the generous horizontal space at the end of the manuscript line, without niqqud."
+        "explanation": "The additional template records the generous horizontal space at the end of the manuscript line, without niqqud."
       },
       "reading": {
         "manuscript": "Aleppo Codex",

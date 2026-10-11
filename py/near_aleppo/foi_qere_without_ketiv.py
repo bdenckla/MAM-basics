@@ -40,7 +40,7 @@ _COMPARISON_LABELS = {
     "agreement": "Agreement",
     "no-note": "No attached MAM note",
 }
-_SUPPLEMENT_TEMPLATES = {
+_ADDITIONAL_TEMPLATES = {
     "marks-with-space": MARKS_WITHOUT_LETTER,
     "marks-without-space": MARKS_WITHOUT_LETTER_OR_SPACE,
     "space-without-marks": None,
@@ -107,7 +107,7 @@ def records():
             row["reading"] is None
             or not isinstance(intended, dict)
             or set(intended) != {"kind", "explanation"}
-            or intended["kind"] not in _SUPPLEMENT_TEMPLATES
+            or intended["kind"] not in _ADDITIONAL_TEMPLATES
             or not isinstance(intended["explanation"], str)
             or not intended["explanation"]
         ):
@@ -460,9 +460,9 @@ def _encoding_guide():
                     _template_name(_QERE_TEMPLATE),
                     " call and its qere, and supplements that call with one "
                     "additional template describing the body text. The "
-                    "supplement records which niqqud are present and whether "
+                    "additional template records which niqqud are present and whether "
                     "horizontal space is present. The cases below require "
-                    "three kinds of supplement:",
+                    "three kinds of additional template:",
                 ]
             ),
             mb_html.unordered_list(
@@ -477,7 +477,7 @@ def _encoding_guide():
                         _template_name(MARKS_WITHOUT_LETTER_OR_SPACE),
                         " (niqqud without a letter and without space).",
                     ],
-                    "Horizontal space without niqqud requires a new supplement whose "
+                    "Horizontal space without niqqud requires an additional template whose "
                     "name and syntax remain open.",
                 ]
             ),
@@ -500,10 +500,10 @@ def _encoding_guide():
                 [
                     "Current status: every site below still uses ",
                     _template_name(_QERE_TEMPLATE),
-                    " (qere without ketiv). No supplemental template is applied "
-                    "at these sites yet. The supplemental calls' exact names, "
-                    "parameter shapes and placement remain to be designed. "
-                    "Intended supplements are labelled pending, separately "
+                    " (qere without ketiv). No additional template is applied "
+                    "at these sites yet. The additional templates' exact names, "
+                    "parameter shapes and call placement remain to be designed. "
+                    "Intended additional templates are labelled pending, separately "
                     "from the complete current source notation.",
                 ]
             ),
@@ -516,19 +516,19 @@ def _encoding(row, source):
     intended = row["intended_encoding"]
     if intended is None:
         intention = [
-            mb_html.bold("Intended supplement — assessment open:"),
+            mb_html.bold("Intended additional template — assessment open:"),
             " ",
             "A manuscript-based encoding assessment has not yet been recorded.",
         ]
     else:
-        name = _SUPPLEMENT_TEMPLATES[intended["kind"]]
+        name = _ADDITIONAL_TEMPLATES[intended["kind"]]
         intention = [
-            mb_html.bold("Intended supplement — pending:"),
+            mb_html.bold("Intended additional template — pending:"),
             " ",
             (
-                ["The proposed supplemental template is ", _template_name(name)]
+                ["The proposed additional template is ", _template_name(name)]
                 if name is not None
-                else "The supplement requires a new template for horizontal space without niqqud"
+                else "The additional template for horizontal space without niqqud has not yet been named"
             ),
             ". ",
             *_prose(intended["explanation"], row["romanized"]),
@@ -670,7 +670,7 @@ def render(verses, rows):
         mb_html.para(
             "A masorah circle appears to be present in every case below. "
             "Circle presence is noted here once because it does not distinguish "
-            "the cases or require different supplemental templates. MAM's notes "
+            "the cases or require different additional templates. MAM's notes "
             "and their complete translations retain their references to circles.",
             {"class": "qvlk-common-observation"},
         ),
