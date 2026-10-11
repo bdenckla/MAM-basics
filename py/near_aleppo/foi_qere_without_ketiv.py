@@ -492,8 +492,8 @@ def _encoding_guide():
             mb_html.para(
                 "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
                 "artificial carrier letters to hold the marks; those carriers "
-                "are not written manuscript letters. The original convention "
-                "uses alef carriers. A carrier payload for an unsettled case "
+                "are not written manuscript letters. The carrier can be alef, "
+                "vav, or, rarely, dalet. A carrier payload for an unsettled case "
                 "is left open here."
             ),
             mb_html.para(

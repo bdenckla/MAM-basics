@@ -1622,3 +1622,21 @@ comparison passed for all 95 files and both font copies. The generated diff was
 read and changes only “marks” to “niqqud” in the requested phrase.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Describe the current carrier convention — 2026-10-11
+
+**Status:** Implemented. Ben requested the current carrier choices instead of the
+historical statement “The original convention uses alef carriers.” State that
+the carrier can be alef, vav, or, rarely, dalet.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`bef8252784d2f667d62185dea711dc7ffac2cdf3` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The current validator
+recognizes alef, vav and dalet carriers. The generated diff was read and replaces
+only the historical sentence with the current carrier choices.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
