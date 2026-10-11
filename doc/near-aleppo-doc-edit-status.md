@@ -1239,3 +1239,54 @@ confirmed that only this qualification changed in the records and page. The
 generated diff was read, and `git diff --check` passed. Mega and full suite remain
 on the approved nightly cadence; regeneration and the exact comparison cover
 this prose clarification.
+
+## MAM note translations and comparisons — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request for English translations of
+MAM doc-notes and discrepancies between his descriptions and MAM's.
+
+**Checkout and baseline:** Source, development and integration use the full
+clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`9a8b64fd600764bb702b69393de7551dcaae8ee5` before this work. Codex owns the
+document revision, focused verification, commit and normal push.
+
+**Change:** The maintained English-note input supplies six complete translations
+and nine comparisons. The generator reconciles each translation with its whole
+current MAM lemma and note parts, and each comparison with the observation and
+documentation text it assesses. Hebrew examples remain in RTL blocks. Source
+sigla and the Simanim Tanakh title were checked against the local mirrored MAM
+introduction. A discrepancy summary appears near the top of the study.
+
+**Discrepancy:** At 2 Samuel 16:23, MAM describes only a narrow space; Ben
+describes a fairly generous space even after the maqaf, insufficient for letters
+but ample for below-marks. Both descriptions say that pointing is absent. The
+other attached notes agree where the descriptions overlap; additional surrounding
+text, marginal-note quotations and spacing hypotheses are identified as additions.
+Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 have no attached MAM note to compare.
+
+## Supplemental encoding and body-text definition — 2026-10-11
+
+**Status:** Corrected by Codex at Ben's request. Every existing `קרי ולא כתיב`
+call and its qere are to be retained and supplemented by one body-text template.
+The earlier presentation suggesting replacement, including “empty body text”,
+is superseded. Dataset implementation remains deferred while the document evolves.
+
+**Change:** Pending supplements distinguish niqqud with horizontal space,
+niqqud without horizontal space above the marks, and horizontal space without
+niqqud. Existing marks templates are candidates; supplemental names, parameter
+shapes and call placement remain to be designed. The study now qualifies its
+opening definition: qere letters are absent from the body text and written in a
+marginal note. Shared masorah-circle presence is noted once at the top, while
+complete MAM notes and translations retain their source references. Circle
+positions remain in reading metadata; authored per-case repetitions are removed.
+
+**Verification for both revisions:** Black passed on the changed generator.
+HTML regeneration and read-only comparison passed for 95 files and both font
+copies. An independent baseline differential verified all six translations,
+nine comparisons, the one discrepancy and nine unchanged current source calls.
+Scripture, Hebrew notes, manuscript readings, inferred marginal words, crops,
+links and production datasets are preserved. A read-only reviewer found no
+material translation or document defects. The three focused prose and mark
+lints passed, the generated diff was read, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+source reconciliation, the artifact differential and lints cover these revisions.

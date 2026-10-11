@@ -34,10 +34,16 @@ TITLE = "Qere without ketiv in near-Aleppo"
 _FORMAT = "near-aleppo-qere-without-ketiv-readings-v2"
 _QERE_TAG = "mam-kq-q-velo-k"
 _QERE_TEMPLATE = "קרי ולא כתיב"
-_INTENDED_TEMPLATES = {
+_NOTE_REVIEW_FORMAT = "near-aleppo-qere-without-ketiv-mam-notes-en-v1"
+_COMPARISON_LABELS = {
+    "discrepancy": "Discrepancy",
+    "agreement": "Agreement",
+    "no-note": "No attached MAM note",
+}
+_SUPPLEMENT_TEMPLATES = {
     "marks-with-space": MARKS_WITHOUT_LETTER,
     "marks-without-space": MARKS_WITHOUT_LETTER_OR_SPACE,
-    "empty-body": None,
+    "space-without-marks": None,
 }
 _HEBREW = re.compile(r"([\u0590-\u05ff]+)")
 
@@ -101,7 +107,7 @@ def records():
             row["reading"] is None
             or not isinstance(intended, dict)
             or set(intended) != {"kind", "explanation"}
-            or intended["kind"] not in _INTENDED_TEMPLATES
+            or intended["kind"] not in _SUPPLEMENT_TEMPLATES
             or not isinstance(intended["explanation"], str)
             or not intended["explanation"]
         ):
@@ -222,6 +228,13 @@ def mam_examples(rows):
             "qere": qere_text,
             "qere_html": hfr.html_for_ren_el(ctx, qeres[0]),
             "notes": note_html,
+            "note_sources": [
+                {
+                    "lemma": _text(note["doc_lemma"]),
+                    "parts": [_text(part) for part in note["doc_parts"]],
+                }
+                for note in docs.verse
+            ],
         }
     return result
 
@@ -264,6 +277,166 @@ def _near_aleppo_encodings(rows, examples):
     return result
 
 
+def _mam_note_reviews(rows, examples):
+    """Reconcile authored translations with their whole note and description."""
+    path = build_paths.input_dir() / "qere-without-ketiv-mam-notes-en.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if set(data) != {"format", "cases"} or data["format"] != _NOTE_REVIEW_FORMAT:
+        raise ValueError(f"Unexpected MAM note review format: {path}")
+    reviews = data["cases"]
+    if not isinstance(reviews, list) or not reviews:
+        raise ValueError("The study requires MAM note reviews")
+    result = {}
+    for review in reviews:
+        if not isinstance(review, dict) or set(review) != {
+            "id",
+            "source_description",
+            "notes",
+            "comparison",
+        }:
+            raise ValueError(f"Invalid MAM note review: {review}")
+        identity = review["id"]
+        if not isinstance(identity, str) or identity in result:
+            raise ValueError(f"Invalid or duplicate MAM note review: {identity}")
+        result[identity] = review
+        comparison = review["comparison"]
+        if (
+            not isinstance(comparison, dict)
+            or set(comparison) != {"status", "text"}
+            or comparison["status"] not in _COMPARISON_LABELS
+            or not isinstance(comparison["text"], str)
+            or not comparison["text"]
+            or not isinstance(review["notes"], list)
+        ):
+            raise ValueError(f"Invalid MAM comparison: {identity}")
+        for note in review["notes"]:
+            if not isinstance(note, dict) or set(note) != {"source", "translation"}:
+                raise ValueError(f"Invalid translated MAM note: {identity}")
+            source, translation = note["source"], note["translation"]
+            if (
+                not isinstance(source, dict)
+                or set(source) != {"lemma", "parts"}
+                or not isinstance(source["lemma"], str)
+                or not isinstance(source["parts"], list)
+                or not source["parts"]
+                or not all(isinstance(part, str) for part in source["parts"])
+                or not isinstance(translation, list)
+                or len(translation) != len(source["parts"])
+            ):
+                raise ValueError(f"Incomplete translated MAM note: {identity}")
+            for part in translation:
+                if not isinstance(part, list) or not part:
+                    raise ValueError(f"Empty translated MAM note part: {identity}")
+                for block in part:
+                    if (
+                        not isinstance(block, dict)
+                        or set(block) != {"kind", "text"}
+                        or block["kind"] not in {"prose", "hebrew"}
+                        or not isinstance(block["text"], str)
+                        or not block["text"]
+                    ):
+                        raise ValueError(f"Invalid MAM translation block: {identity}")
+    if set(result) != {row["id"] for row in rows}:
+        raise ValueError("Reconcile MAM note reviews with the study selection")
+    for row in rows:
+        identity = row["id"]
+        review = result[identity]
+        source = examples[tuple(row["reference"])]["note_sources"]
+        if [note["source"] for note in review["notes"]] != source:
+            raise ValueError(f"Reconcile the whole translated MAM note at {identity}")
+        description = (
+            {
+                "observation": row["observation"],
+                "documentation_notes": row["documentation_notes"],
+            }
+            if source
+            else None
+        )
+        if review["source_description"] != description:
+            raise ValueError(
+                f"Reconcile the MAM comparison with Ben's description at {identity}"
+            )
+        if (review["comparison"]["status"] == "no-note") != (not source):
+            raise ValueError(f"Invalid MAM note availability assessment: {identity}")
+    return result
+
+
+def _translation_blocks(blocks, names):
+    result = []
+    for block in blocks:
+        if block["kind"] == "prose":
+            result.append(mb_html.para(_prose(block["text"], names)))
+        elif block["kind"] == "hebrew":
+            result.append(
+                mb_html.para(
+                    block["text"], {"dir": "rtl", "lang": "hbo", "class": "pointed"}
+                )
+            )
+        else:
+            raise ValueError(f"Unknown MAM translation block: {block['kind']}")
+    return result
+
+
+def _english_note(review, names):
+    contents = [mb_html.heading_level_3("English translation of the MAM doc-note")]
+    for note in review["notes"]:
+        parts = note["translation"]
+        contents.extend(_translation_blocks(parts[0], names))
+        if len(parts) > 1:
+            contents.append(
+                mb_html.unordered_list(
+                    [_translation_blocks(part, names) for part in parts[1:]]
+                )
+            )
+    return mb_html.div(contents, {"class": "qvlk-mam-english"})
+
+
+def _comparison(review, names):
+    comparison = review["comparison"]
+    return mb_html.div(
+        [
+            mb_html.heading_level_3("Comparison with MAM"),
+            mb_html.para(
+                [
+                    mb_html.bold(_COMPARISON_LABELS[comparison["status"]] + ":"),
+                    " ",
+                    *_prose(comparison["text"], names),
+                ]
+            ),
+        ],
+        {"class": "qvlk-mam-comparison"},
+    )
+
+
+def _comparison_summary(rows, reviews):
+    differences = []
+    for row in rows:
+        comparison = reviews[row["id"]]["comparison"]
+        if comparison["status"] == "discrepancy":
+            differences.append(
+                [
+                    mb_html.anchor_h(
+                        _reference_text(row["reference"]), "#" + row["id"]
+                    ),
+                    " — ",
+                    *_prose(comparison["text"], row["romanized"]),
+                ]
+            )
+    return mb_html.div(
+        [
+            mb_html.heading_level_2("Discrepancies with MAM"),
+            (
+                mb_html.unordered_list(differences)
+                if differences
+                else mb_html.para(
+                    "No discrepancy is recorded in the comparisons below."
+                )
+            ),
+        ],
+        {"class": "qvlk-mam-summary"},
+    )
+
+
 def _template_name(name):
     return mb_html.bdi(name, {"dir": "rtl", "lang": "hbo", "class": "name"})
 
@@ -272,22 +445,36 @@ def _encoding_guide():
     return mb_html.div(
         [
             mb_html.heading_level_2("Encoding conventions"),
+            mb_html.para(
+                [
+                    "The intended encoding retains each ",
+                    _template_name(_QERE_TEMPLATE),
+                    " call and its qere, and supplements that call with one "
+                    "additional template describing the body text. The "
+                    "supplement records which niqqud are present and whether "
+                    "horizontal space is present. The cases below require "
+                    "three kinds of supplement:",
+                ]
+            ),
             mb_html.unordered_list(
                 [
                     [
-                        "With space above the marks: ",
+                        "Niqqud with horizontal space above the marks: ",
                         _template_name(MARKS_WITHOUT_LETTER),
-                        " (niqqud without a letter).",
+                        " (niqqud without a letter), a candidate for this supplement.",
                     ],
                     [
-                        "Without space above the marks: ",
+                        "Niqqud without horizontal space above the marks: ",
                         _template_name(MARKS_WITHOUT_LETTER_OR_SPACE),
-                        " (niqqud without a letter and without space).",
+                        " (niqqud without a letter and without space), "
+                        "a candidate for this supplement.",
                     ],
+                    "Horizontal space without niqqud: a new supplement whose "
+                    "name and syntax remain open.",
                 ]
             ),
             mb_html.para(
-                "These templates are specific to near-Aleppo. Their payloads use "
+                "The existing marks templates are specific to near-Aleppo. Their payloads use "
                 "artificial carrier letters to hold the marks; those carriers "
                 "are not written manuscript letters. The original convention "
                 "uses alef carriers. A carrier payload for an unsettled case "
@@ -297,9 +484,11 @@ def _encoding_guide():
                 [
                     "Current status: every site below still uses ",
                     _template_name(_QERE_TEMPLATE),
-                    " (qere without ketiv). Neither marks template is applied "
-                    "at these sites. Intended encodings are labelled pending, "
-                    "separately from the complete current source notation.",
+                    " (qere without ketiv). No supplemental template is applied "
+                    "at these sites yet. The supplemental calls' exact names, "
+                    "parameter shapes and placement remain to be designed. "
+                    "Intended supplements are labelled pending, separately "
+                    "from the complete current source notation.",
                 ]
             ),
         ],
@@ -311,16 +500,20 @@ def _encoding(row, source):
     intended = row["intended_encoding"]
     if intended is None:
         intention = [
-            mb_html.bold("Intended encoding — assessment open:"),
+            mb_html.bold("Intended supplement — assessment open:"),
             " ",
             "A manuscript-based encoding assessment has not yet been recorded.",
         ]
     else:
-        name = _INTENDED_TEMPLATES[intended["kind"]]
+        name = _SUPPLEMENT_TEMPLATES[intended["kind"]]
         intention = [
-            mb_html.bold("Intended encoding — pending:"),
+            mb_html.bold("Intended supplement — pending:"),
             " ",
-            _template_name(name) if name is not None else "empty body text",
+            (
+                ["candidate ", _template_name(name)]
+                if name is not None
+                else "a new template for horizontal space without niqqud"
+            ),
             ". ",
             *_prose(intended["explanation"], row["romanized"]),
         ]
@@ -424,6 +617,7 @@ def render(verses, rows):
     """Return the study page and unchanged crop bytes owned by the HTML build."""
     examples = mam_examples(rows)
     encodings = _near_aleppo_encodings(rows, examples)
+    reviews = _mam_note_reviews(rows, examples)
     outputs = {}
     body = [
         mb_html.heading_level_1(TITLE),
@@ -439,12 +633,21 @@ def render(verses, rows):
             ]
         ),
         mb_html.para(
-            "Qere without ketiv has no written letters for the qere. "
+            "Qere without ketiv has no letters for the qere written in the "
+            "body text, though these letters are written in a marginal note. "
             "The space and marks at the manuscript site can nevertheless differ. "
             "The verses below show the current near-Aleppo example edition (NAEE); "
             "the MAM notes and the recorded Aleppo image readings have their own labels. "
             "Image readings are attributed to Ben Denckla."
         ),
+        mb_html.para(
+            "A masorah circle appears to be present in every case below. "
+            "Circle presence is noted here once because it does not distinguish "
+            "the cases or require different supplemental templates. MAM's notes "
+            "and their complete translations retain their references to circles.",
+            {"class": "qvlk-common-observation"},
+        ),
+        _comparison_summary(rows, reviews),
         _encoding_guide(),
         mb_html.ordered_list(
             [
@@ -456,6 +659,7 @@ def render(verses, rows):
     for row in rows:
         reference = tuple(row["reference"])
         example = examples[reference]
+        review = reviews[row["id"]]
         contents = [
             mb_html.heading_level_2(
                 mb_html.anchor_h(
@@ -487,6 +691,8 @@ def render(verses, rows):
                     "MAM has no doc-note attached to this qere-without-ketiv site."
                 )
             )
+        if review["notes"]:
+            contents.append(_english_note(review, row["romanized"]))
         reading_title = (
             "Aleppo manuscript reading"
             if row["reading"] is None
@@ -520,6 +726,7 @@ def render(verses, rows):
                         },
                     )
                 )
+        contents.append(_comparison(review, row["romanized"]))
         if row["crop"]:
             crop = row["crop"]
             if "marginal_qere_note" in crop:

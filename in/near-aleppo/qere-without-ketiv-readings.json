@@ -10,7 +10,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The intended payload carries sheva, tsere, and munaḥ, with no dagesh. There is space above these marks."
+        "explanation": "The supplement records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -37,7 +37,9 @@
           "status": "hypothesis",
           "attribution": "Ben Denckla, 2026-10-08",
           "text": "The line ending may have provided space for the marks, possibly accidentally."
-        }
+        },
+        "masorah_circle_present": true,
+        "masorah_circle_position": "above the marks"
       },
       "observation": "The below-marks of בְּנֵ֣י (sheva, tsere, munaḥ) are present without letters, with space above them. No dagesh. The orphan marks are at the end of a manuscript line. The line ending may have provided space for the marks, possibly accidentally.",
       "romanized": [
@@ -46,9 +48,7 @@
         "munaḥ",
         "dagesh"
       ],
-      "documentation_notes": [
-        "A masorah circle is above the marks; it is documented but not encoded."
-      ],
+      "documentation_notes": [],
       "crop": {
         "filename": "aleppo-Ju20-13.png",
         "source_screenshot": "Screenshot 2026-10-08 105138.png"
@@ -62,8 +62,8 @@
         23
       ],
       "intended_encoding": {
-        "kind": "empty-body",
-        "explanation": "No letters or pointing are written for the qere. Available space does not supply missing marks."
+        "kind": "space-without-marks",
+        "explanation": "The supplement records horizontal space without niqqud. Available space does not supply missing marks."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -105,7 +105,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-without-space",
-        "explanation": "The intended payload carries tsere and merkha, with no dagesh or space above the marks. This use still requires an explicit variant and implementation."
+        "explanation": "The supplement records tsere and merkha, with no dagesh or horizontal space above the marks. The marks template still requires an explicit variant for this use."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -147,7 +147,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The below-marks are sheva, qamats, and tipeḥa, with space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
+        "explanation": "The supplement records sheva, qamats, and tipeḥa, with horizontal space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -191,7 +191,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The intended payload carries two qamats marks and pashta, with space above the marks."
+        "explanation": "The supplement records two qamats marks and pashta, with horizontal space above the marks."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -231,8 +231,8 @@
         37
       ],
       "intended_encoding": {
-        "kind": "empty-body",
-        "explanation": "The body text has no qere letters or niqqud; the generous space contains a masorah circle."
+        "kind": "space-without-marks",
+        "explanation": "The supplement records the generous horizontal space without niqqud."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -257,7 +257,7 @@
           ]
         }
       },
-      "observation": "For בָּאִ֖ים, the body text has a rather generous horizontal space between the surrounding written atoms, with no qere letters or niqqud. A masorah circle is present in that space.",
+      "observation": "For בָּאִ֖ים, the body text has a rather generous horizontal space between the surrounding written atoms, with no qere letters or niqqud.",
       "romanized": [],
       "documentation_notes": [
         "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
@@ -279,8 +279,8 @@
         29
       ],
       "intended_encoding": {
-        "kind": "empty-body",
-        "explanation": "No qere letters or niqqud are written in the body text. A masorah circle occupies the generous space, and the preceding maqaf extends into it."
+        "kind": "space-without-marks",
+        "explanation": "The supplement records the generous horizontal space without niqqud. The preceding maqaf extends into the space."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -294,7 +294,7 @@
         "masorah_circle_position": "within the generous space",
         "maqaf_extends_into_space": true
       },
-      "observation": "For לָהּ֙, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud, only a masorah circle. The preceding maqaf extends into that space.",
+      "observation": "For לָהּ֙, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud. The preceding maqaf extends into that space.",
       "romanized": [
         "maqaf"
       ],
@@ -312,8 +312,8 @@
         5
       ],
       "intended_encoding": {
-        "kind": "empty-body",
-        "explanation": "The body text has no qere letters or niqqud; the generous space contains only a masorah circle."
+        "kind": "space-without-marks",
+        "explanation": "The supplement records the generous horizontal space without niqqud."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -326,7 +326,7 @@
         "masorah_circle_present": true,
         "masorah_circle_position": "within the generous space"
       },
-      "observation": "For אֵלַ֖י, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud, only a masorah circle.",
+      "observation": "For אֵלַ֖י, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud.",
       "romanized": [],
       "documentation_notes": [],
       "crop": {
@@ -342,8 +342,8 @@
         17
       ],
       "intended_encoding": {
-        "kind": "empty-body",
-        "explanation": "The body text has no qere letters or niqqud; the generous end-of-line space contains only a masorah circle."
+        "kind": "space-without-marks",
+        "explanation": "The supplement records the generous horizontal space at the end of the manuscript line, without niqqud."
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -363,7 +363,7 @@
           "text": "The space may be accidentally generous because it is at the end of the manuscript line."
         }
       },
-      "observation": "For אֵלַ֔י, there is a generous horizontal space at the end of a manuscript line, with no qere letters or niqqud, only a masorah circle. The line ending may account for the generous space, possibly accidentally.",
+      "observation": "For אֵלַ֔י, there is a generous horizontal space at the end of a manuscript line, with no qere letters or niqqud. The line ending may account for the generous space, possibly accidentally.",
       "romanized": [],
       "documentation_notes": [],
       "crop": {

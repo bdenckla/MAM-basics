@@ -8,6 +8,12 @@ It is linked from the near-Aleppo FOI index and the existing ketiv/qere guide.
 Ben approved this first draft on 2026-10-08: “what you propose seems fine, at least as a first draft.”
 Implementation and further discussion of the readings proceed together.
 
+Qere without ketiv has no letters for the qere written in the body text, though
+these letters are written in a marginal note. Ben treats the presence of a
+masorah circle as common to these cases. The study notes that shared feature
+once in the introduction; the per-case distinctions concern niqqud and horizontal
+space. Complete MAM quotations and translations retain their circle references.
+
 ## Maintained inputs and rendering
 
 [`in/near-aleppo/qere-without-ketiv-readings.json`](../../in/near-aleppo/qere-without-ketiv-readings.json)
@@ -35,6 +41,23 @@ The study validates that fragment's two literal parameters and agreement of its
 whole qere with MAM, then shows both parameters in complete curly-brace notation.
 The ordinary HTML writer escapes the notation as text.
 
+[`in/near-aleppo/qere-without-ketiv-mam-notes-en.json`](../../in/near-aleppo/qere-without-ketiv-mam-notes-en.json)
+owns the English translations of attached MAM notes and the comparisons with
+Ben's descriptions. Each translation identifies its whole current MAM lemma and
+all note parts. Each comparison with a note identifies the current observation
+and documentation text it assesses. The HTML build requires these subjects to
+match and raises if a note or description needs reconciliation. These readable
+source quotations are the subjects of the authored translations and comparisons.
+
+The page places the English translation below each attached Hebrew note and a
+comparison below each manuscript description. A summary near the top lists
+recorded discrepancies. The three cases without an attached MAM note are labelled
+accordingly. Hebrew examples and marginal-note quotations remain in RTL blocks.
+The manuscript sigla follow the mirrored introduction's source roster:
+`א` is the Aleppo Codex, `ל` the Leningrad Codex, and `ק` the Cairo Codex of the
+Prophets. The roster's `סימנים` is the Simanim Tanakh, as specified in
+`in/mam-ws-intro/appendices.mediawiki`, “סימנים=תנ"ך סימנים”.
+
 An image reading's subject is its whole recorded qere, including every letter
 and mark. A changed current qere requires reconciling that reading's subject.
 There are no input hashes or fixed-population gates. The dated Samuel comparisons
@@ -45,33 +68,56 @@ The study's observations do not change the near-Aleppo source text or decide a
 template design. Actual near-Aleppo source decisions remain in their existing
 maintained inputs and procedures.
 
+## MAM comparisons, 2026-10-11
+
+The only recorded discrepancy is the assessment of the space at 2 Samuel 16:23:
+MAM says that there is only a narrow space; Ben describes a fairly generous space
+even after the maqaf, insufficient for the letters but ample for the below-marks.
+Both descriptions say that pointing is absent.
+
+The other attached notes agree with Ben's descriptions where their subjects
+overlap. MAM's Jeremiah 31:37 illustration additionally reports surrounding text
+that Ben has not assessed here. MAM's Ruth notes additionally quote the marginal
+notes. Ben's Ruth 3:17 line-ending hypothesis is additional to MAM's description
+of a noticeable space; MAM does not assess whether that space was intentional.
+There is no attached MAM note at Judges 20:13,
+2 Kings 19:31 or 2 Kings 19:37 to compare with Ben's description.
+
 ## Encoding presentation, 2026-10-11
 
 Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Each entry
 now starts with “Near-Aleppo encoding”, before the full verse and manuscript
-discussion. Current encoding and pending intended encoding have separate labels.
+discussion. Current encoding and pending intended supplements have separate labels.
 All current source fragments are read afresh from `out/near-aleppo/plus/`; they
 are not copied into the study metadata.
 
 The study's v2 record format adds `intended_encoding`: either `null` for an
 entry awaiting a manuscript-based assessment, or an object with `kind` and
 `explanation`. The three closed kinds are `marks-with-space`,
-`marks-without-space` and `empty-body`. These are document assessments, not build
+`marks-without-space` and `space-without-marks`. These are document assessments, not build
 instructions. All nine selected cases now have recorded image readings and
 pending encoding assessments. Existing observations and crop provenance are
 preserved.
 
-The introduction explains the near-Aleppo-specific templates `ניקוד בלי אות`
-and `ניקוד בלי אות ובלי רווח`, including the artificial carrier convention.
-Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 take the intended template with
-space above the marks. The tentative holam reading at 2 Kings 19:31 leaves its
-payload unsettled.
-The intended template without space above the marks at 2 Samuel 18:20 still
-awaits its own variant and implementation. The intended body text is empty at
-2 Samuel 16:23, Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5 and Ruth 3:17. Complete
-notation is shown only for current encodings; no pending carrier payload is
-invented. Dataset implementation remains separate.
+Ben clarified on 2026-10-11 that every existing `קרי ולא כתיב` call is to be
+retained and supplemented with one additional template describing how the qere
+site is represented in the body text. That supplement records the niqqud present
+and whether horizontal space is present. It does not replace the existing call
+or remove the qere. The earlier “empty body text” assessment is superseded by
+“horizontal space without niqqud”; an unpointed space still needs a supplement.
+
+The introduction describes the near-Aleppo-specific templates `ניקוד בלי אות`
+and `ניקוד בלי אות ובלי רווח`, including the artificial carrier convention, as
+candidates for supplements where marks are present. Judges 20:13, 2 Kings 19:31
+and 2 Kings 19:37 have horizontal space above the marks. The tentative ḥolam male
+reading at 2 Kings 19:31 leaves its payload unsettled. The candidate without
+space above the marks at 2 Samuel 18:20 still awaits an explicit variant for that
+use. The supplement at 2 Samuel 16:23, Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5
+and Ruth 3:17 must record horizontal space without niqqud. Its name and syntax
+remain open. Complete notation is shown only for current encodings; pending
+names, parameter shapes and call placement remain to be designed. Dataset
+implementation remains separate.
 
 ## Link presentation trial, 2026-10-11
 
@@ -195,8 +241,7 @@ dagesh, with space above the marks. The orphan marks are at the end of a manuscr
 line. Ben's hypothesis is that the line ending may have provided that space,
 possibly accidentally.
 
-Ben also reported a masorah circle above the marks. The circle is documented but
-not encoded in the written-form record. The historical review page,
+The historical review page,
 `qere-without-ketiv-all-cases.html` in the Downloads editing bundle, displayed
 each group of combining marks on an ASCII space (U+0020). The spaces' count and
 width are display conventions, not measurements of physical manuscript spacing
@@ -230,14 +275,14 @@ tentative; the record does not promote the dot to a confirmed manuscript reading
 Ben read the marks of בָּנָיו֙: qamats, qamats, and pashta, without letters,
 with space above the marks. The marks occupy a large horizontal space between
 the surrounding written atoms. Ben's hypothesis is that the letter-scribe
-presumably left this space intentionally. The intended encoding assessment uses
-the template with space above the marks; dataset implementation remains pending.
+presumably left this space intentionally. The intended supplement records
+niqqud with horizontal space above the marks; dataset implementation remains pending.
 
 ## Jeremiah 31:37
 
 Ben read a rather generous horizontal space for בָּאִ֖ים between the surrounding
-written atoms, with no qere letters or niqqud. A masorah circle is present in
-that space. Ben describes the marginal-note damage as looking as if opaque tape
+written atoms, with no qere letters or niqqud. Ben describes the marginal-note
+damage as looking as if opaque tape
 had been laid parallel to the right margin, obscuring approximately the first
 letter of each inferred word on its own line. The cause of the damage is unknown.
 The tape comparison describes how the damage looks; it does not propose a
@@ -251,29 +296,30 @@ Ben infers the following vertical layout, recorded exactly as supplied:
 כתב
 </div>
 
-Both supplied crops are preserved and displayed separately. The intended body
-encoding assessment is empty; dataset implementation remains pending.
+Both supplied crops are preserved and displayed separately. The intended
+supplement records horizontal space without niqqud; dataset implementation
+remains pending.
 
 ## Jeremiah 50:29
 
 Ben read a generous horizontal space for לָהּ֙ between the surrounding written
-atoms, with no qere letters or niqqud, only a masorah circle. The preceding maqaf
-extends into that space. The intended body encoding assessment is empty;
+atoms, with no qere letters or niqqud. The preceding maqaf extends into that
+space. The intended supplement records horizontal space without niqqud;
 dataset implementation remains pending.
 
 ## Ruth 3:5
 
 Ben read a generous horizontal space for אֵלַ֖י between the surrounding written
-atoms, with no qere letters or niqqud, only a masorah circle. The intended body
-encoding assessment is empty; dataset implementation remains pending.
+atoms, with no qere letters or niqqud. The intended supplement records horizontal
+space without niqqud; dataset implementation remains pending.
 
 ## Ruth 3:17
 
 Ben read a generous horizontal space for אֵלַ֔י at the end of a manuscript line,
-with no qere letters or niqqud, only a masorah circle. Ben's hypothesis is that
+with no qere letters or niqqud. Ben's hypothesis is that
 the line ending may account for the generous space, possibly accidentally.
-The intended body encoding assessment is empty; dataset implementation remains
-pending.
+The intended supplement records horizontal space without niqqud; dataset
+implementation remains pending.
 
 ## Historical standalone review
 

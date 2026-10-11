@@ -1,0 +1,275 @@
+{
+  "format": "near-aleppo-qere-without-ketiv-mam-notes-en-v1",
+  "cases": [
+    {
+      "id": "Ju20-13",
+      "source_description": null,
+      "notes": [],
+      "comparison": {
+        "status": "no-note",
+        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description here to compare with Ben's reading."
+      }
+    },
+    {
+      "id": "2S16-23",
+      "source_description": {
+        "observation": "The space is fairly generous even after the maqaf, with no pointing for אִ֖ישׁ. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). Ben questions whether the description “narrow” in MAM’s note reviewed on 2026-10-08 fits this space.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "יִשְׁאַל־[אִ֖ישׁ]",
+            "parts": [
+              "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "There is only a narrow space, and no pointing for אִ֖ישׁ, which is read but not written."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": {
+        "status": "discrepancy",
+        "text": "MAM calls the space \"only a narrow space\"; Ben calls it \"fairly generous, even after the maqaf\", insufficient for the qere letters but ample for its below-marks. The discrepancy concerns the assessment of the space. Both descriptions say that pointing is absent."
+      }
+    },
+    {
+      "id": "2S18-20",
+      "source_description": {
+        "observation": "The tsere and merkha of כֵּ֥ן are written below, between the surrounding written atoms, without the qere letters or dagesh. There is no space above these marks. Ben agrees with MAM’s note as reviewed on 2026-10-08.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "[כֵּ֥ן]",
+            "parts": [
+              "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "Aleppo Codex: There is no space for כֵּ֥ן, which is read but not written, but the tsere and merkha are written below, between the surrounding written atoms (not the dagesh, as expected)."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": {
+        "status": "agreement",
+        "text": "Both descriptions have tsere and merkha below, no qere letters or dagesh, and no space above the marks."
+      }
+    },
+    {
+      "id": "2K19-31",
+      "source_description": null,
+      "notes": [],
+      "comparison": {
+        "status": "no-note",
+        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description here to compare with Ben's reading."
+      }
+    },
+    {
+      "id": "2K19-37",
+      "source_description": null,
+      "notes": [],
+      "comparison": {
+        "status": "no-note",
+        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description here to compare with Ben's reading."
+      }
+    },
+    {
+      "id": "Je31-37",
+      "source_description": {
+        "observation": "For בָּאִ֖ים, the body text has a rather generous horizontal space between the surrounding written atoms, with no qere letters or niqqud.",
+        "documentation_notes": [
+          "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
+        ]
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "יָמִ֥ים [בָּאִ֖ים] נְאֻם־יְהֹוָ֑ה",
+            "parts": [
+              "=לק ובדפוסים",
+              "א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+              "הערת ברויאר",
+              "קורן, ברויאר, סימנים, מכון ממרא"
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "MAM's displayed text agrees with the Leningrad Codex, the Cairo Codex of the Prophets, and the printed editions."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "Aleppo Codex:"
+              },
+              {
+                "kind": "hebrew",
+                "text": "הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה"
+              },
+              {
+                "kind": "prose",
+                "text": "Pointing is missing from the space intended for \"qere without ketiv\"."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "Breuer's note."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "Koren, Breuer, the Simanim Tanakh, Mechon Mamre."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": {
+        "status": "agreement",
+        "text": "Both descriptions say that pointing is absent at the qere site. Ben additionally describes the generous spacing and damaged marginal note. MAM also gives surrounding text that Ben has not assessed here: its Aleppo illustration omits נְאֻם־ and has יְהֹוָֽה. Those additional MAM statements do not establish a disagreement with Ben."
+      }
+    },
+    {
+      "id": "Je50-29",
+      "source_description": {
+        "observation": "For לָהּ֙, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud. The preceding maqaf extends into that space.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "אַל־יְהִי־[לָהּ֙] פְּלֵיטָ֔ה",
+            "parts": [
+              "א-כתיב=אַל־יְהִי־[֯] פְּלֵיטָ֔ה (רווח ריק בלי ניקוד וטעמים, ולמעלה עיגול מסורה)"
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "Aleppo Codex ketiv:"
+              },
+              {
+                "kind": "hebrew",
+                "text": "אַל־יְהִי־[֯] פְּלֵיטָ֔ה"
+              },
+              {
+                "kind": "prose",
+                "text": "An empty space without vowel points or cantillation marks, with a masorah circle above."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": {
+        "status": "agreement",
+        "text": "Both descriptions have an empty unpointed space. Ben additionally assesses the space as generous and describes the maqaf extending into it."
+      }
+    },
+    {
+      "id": "R3-5",
+      "source_description": {
+        "observation": "For אֵלַ֖י, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "[אֵלַ֖י]",
+            "parts": [
+              "=ל-קרי",
+              "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "MAM's qere agrees with the Leningrad Codex's qere."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note, but the vowel points and cantillation marks for the qere, which is read but not written, are missing."
+              },
+              {
+                "kind": "hebrew",
+                "text": "אלי קרי"
+              },
+              {
+                "kind": "prose",
+                "text": "The marginal note says to read אלי."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": {
+        "status": "agreement",
+        "text": "MAM’s \"noticeable space\" is compatible with Ben’s \"generous horizontal space\". Both descriptions have no pointing. MAM additionally quotes the marginal note, which Ben has not described here."
+      }
+    },
+    {
+      "id": "R3-17",
+      "source_description": {
+        "observation": "For אֵלַ֔י, there is a generous horizontal space at the end of a manuscript line, with no qere letters or niqqud. The line ending may account for the generous space, possibly accidentally.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "[אֵלַ֔י]",
+            "parts": [
+              "=ל-קרי",
+              "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי ולא כתב\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "MAM's qere agrees with the Leningrad Codex's qere."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note, but the vowel points and cantillation marks for the qere, which is read but not written, are missing."
+              },
+              {
+                "kind": "hebrew",
+                "text": "אלי קרי ולא כתב"
+              },
+              {
+                "kind": "prose",
+                "text": "The marginal note says that אלי is read but not written."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": {
+        "status": "agreement",
+        "text": "MAM’s \"noticeable space\" is compatible with Ben’s \"generous end-of-line space\". Both descriptions have no pointing. Ben’s suggestion that the line ending may explain the generosity accidentally is an added hypothesis; MAM does not assess whether the space was intentional. MAM additionally quotes the marginal note, which Ben has not described here."
+      }
+    }
+  ]
+}
