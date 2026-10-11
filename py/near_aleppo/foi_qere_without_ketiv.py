@@ -501,9 +501,9 @@ def _encoding_guide():
             ),
             mb_html.para(
                 [
-                    "Current status: every site below still uses ",
+                    "Current status: every site below uses ",
                     _template_name(_QERE_TEMPLATE),
-                    " (qere without ketiv). No additional template is applied "
+                    " and will continue to do so. No additional template is applied "
                     "at these sites yet. The additional templates' exact names, "
                     "parameter shapes and call placement remain to be designed. "
                     "Intended additional templates are labelled pending, separately "

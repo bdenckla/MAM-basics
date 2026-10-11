@@ -1658,3 +1658,22 @@ read and names 2 Kings 19:31 and the tentative ḥolam male reading, with the
 existing romanization styling. The maintained reading supports that explanation.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration and diff inspection cover this prose clarification.
+
+## State that the existing qere calls will remain — 2026-10-11
+
+**Status:** Implemented. Ben reaffirmed that every existing `קרי ולא כתיב` call
+will remain. Replace “still uses” with “uses … and will continue to do so”
+and remove the parenthetical English gloss in that sentence. The additional
+template supplements the existing call.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`53e7aa829b0b213cff2e7a854c03cbf2c29b131d` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and changes only the requested wording and resulting line wrapping; every
+existing qere call and all pending additional-template assessments are preserved.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
