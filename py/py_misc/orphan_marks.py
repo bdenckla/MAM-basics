@@ -2,7 +2,9 @@
 
 The original GA shape remains unchanged. The explicit GV variant retains the
 chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet for the
-final-nun marks at Isaiah 54:16, without a space. No carrier is a ketiv consonant.
+final-nun marks at Isaiah 54:16, without a space. The mixed alef/vav variant
+at 2 Kings 19:31 retains three alef carriers followed by VAV + HOLAM.
+No carrier is a ketiv consonant.
 Build validation and edition display use the same carrier validation.
 The explicit orphan-marks-alef variant carries tsere and merkha without space
 at 2 Samuel 18:20. A separate parameterless template records space without marks.
@@ -23,6 +25,8 @@ GD_CARRIER = (
 )
 GV_VARIANT = "holam-male-vav"
 GV_CARRIER = "\N{HEBREW LETTER VAV}\N{HEBREW POINT HOLAM}"
+GAV_VARIANT = "alef-and-holam-male-vav"
+GAV_CARRIER = "אְאָא֖וֹ"
 _ALEF = "\N{HEBREW LETTER ALEF}"
 _DAGESH = "\N{HEBREW POINT DAGESH OR MAPIQ}"
 _MARKS = (
@@ -38,7 +42,7 @@ _MARKS = (
 
 
 def carriers(tmpl, label):
-    """Return validated GA, GV, GD or explicit no-space orphan-alef carriers."""
+    """Return validated GA, GV, GD, mixed alef/vav or no-space alef carriers."""
     if set(tmpl) != {"tmpl_name", "tmpl_params"}:
         raise AssertionError(f"{label}: unexpected orphan-template fields")
     params = tmpl["tmpl_params"]
@@ -62,8 +66,14 @@ def carriers(tmpl, label):
         raise AssertionError(f"{label}: unsupported orphan-template shape")
     value = params["1"]
     if GV_PARAMETER in params:
-        if params[GV_PARAMETER] != GV_VARIANT or value != GV_CARRIER:
-            raise AssertionError(f"{label}: GV requires exactly artificial VAV + HOLAM")
+        variants = {GV_VARIANT: GV_CARRIER, GAV_VARIANT: GAV_CARRIER}
+        if (
+            params[GV_PARAMETER] not in variants
+            or value != variants[params[GV_PARAMETER]]
+        ):
+            raise AssertionError(
+                f"{label}: unsupported or mismatched alef/vav carrier variant"
+            )
         return value
     if not isinstance(value, str) or not value.startswith(_ALEF):
         raise AssertionError(f"{label}: GA does not open with a carrier alef")

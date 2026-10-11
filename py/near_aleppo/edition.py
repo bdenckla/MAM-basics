@@ -111,6 +111,8 @@ def _edition_index(edition, css_hrefs):
                 "writes under no letter have GA artificial alef carriers or the "
                 "GV artificial VAV + HOLAM carrier. The edition displays both "
                 "between double guillemets, retaining their stored carrier meaning. "
+                "At 2 Kings 19:31 the mixed variant retains three alef carriers "
+                "followed by the artificial VAV + HOLAM carrier. "
                 "At Isaiah 54:16, GD instead displays the final nun's dagesh, tsere "
                 "and mahapakh on an artificial dalet between double guillemets, "
                 "immediately after the nun without a space. The marks remain "

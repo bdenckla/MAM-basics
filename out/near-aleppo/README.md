@@ -34,6 +34,12 @@ projection selects the body template, and a reading projection selects the
 qere. The example edition displays the body below the qere in one box;
 carrier and box widths do not measure manuscript spacing.
 
+At 2 Kings 19:31, `ניקוד בלי אות` uses the explicit
+`carrier=alef-and-holam-male-vav` variant, requiring exactly `אְאָא֖וֹ`:
+three marked alefs followed by the artificial VAV + HOLAM carrier. The final
+vav retains the ḥolam male carrier meaning and is not a written body-text letter.
+The original GA and single-carrier GV contracts remain unchanged.
+
 The 24 book files are in `plus/`. The example edition and documentation are in
 `gh-pages/near-aleppo/`. The build reads local MAM-parsed-plus, the Aleppo coverage
 index, and the runtime inputs in `in/near-aleppo/`. The research archive and

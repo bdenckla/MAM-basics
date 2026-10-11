@@ -695,7 +695,7 @@ def _encoding_guide():
                     "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
                     "artificial carrier letters to hold the marks; those carriers "
                     "are not written manuscript letters. The carrier can be alef, "
-                    "vav, or, rarely, dalet. At 2 Kings 19:31, an artificial alef "
+                    "vav, or, rarely, dalet. At 2 Kings 19:31, an artificial vav "
                     "carries the orphan ḥolam dot.",
                     ("ḥolam",),
                 )

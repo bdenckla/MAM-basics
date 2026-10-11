@@ -192,8 +192,9 @@ The introduction describes the near-Aleppo-specific templates `ניקוד בלי
 `ניקוד בלי אות ובלי רווח` and `רווח בלי ניקוד`. The additional template
 immediately precedes the unchanged qere call in the same sequence, with no
 intervening separator. Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 use
-artificial alefs for marks with horizontal space. At 2 Kings 19:31 the payload
-includes the confirmed orphan ḥolam dot. The no-space template's explicit
+artificial carriers for marks with horizontal space. At 2 Kings 19:31 the payload
+is `אְאָא֖וֹ`: three marked alefs followed by VAV + HOLAM, with the explicit
+`carrier=alef-and-holam-male-vav` discriminator. The no-space template's explicit
 `carrier=orphan-marks-alef` variant represents ALEF + TSERE + MERKHA at
 2 Samuel 18:20, without dagesh. The existing `carrier=final-nun-dalet` contract
 at Isaiah 54:16 remains unchanged. The parameterless `רווח בלי ניקוד`
@@ -460,7 +461,9 @@ clear that the letter-scribe intended to leave a large gap, perhaps even one
 large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת
 are present: sheva, qamats, and tipeḥa. Ben resolved the visible dot as an
 orphan ḥolam on 2026-10-11, without tentative qualification. The body encoding
-includes all four mark groups on artificial alefs. The separate letter-fit
+includes the three below-mark groups on artificial alefs and the ḥolam dot
+on an artificial vav. Ben corrected the fourth carrier on 2026-10-11; the mixed
+variant preserves the ḥolam male carrier meaning. The separate letter-fit
 assessment remains tentative.
 
 Ben clarified on 2026-10-11 that no masorah circle is present. The source reading

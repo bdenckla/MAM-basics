@@ -2705,3 +2705,35 @@ current. The incoming change alters only the introduction's prose and its
 generated page; the dataset and qere implementation are unchanged by the merge.
 The focused prose-mark-order and explicit-time-zone checks also passed again
 after the merge (2 tests). Mega and the full suite remain on the nightly cadence.
+
+## Correct the fourth carrier at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Fixed. Ben corrected the fourth carrier in `אְאָא֖אֹ`: it must be
+vav. The current payload is `אְאָא֖וֹ`. Codex's original alef carrier missed
+the established VAV + HOLAM convention for ḥolam male.
+
+**Change:** The explicit `carrier=alef-and-holam-male-vav` variant of
+`ניקוד בלי אות` requires exactly three marked alefs followed by VAV + HOLAM
+at this site. Closed validation keeps the original GA, single-carrier GV,
+Isaiah 54:16 GD and 2 Samuel 18:20 no-space contracts unchanged. The study,
+dataset consumer notices, build guide, product README and carrier documentation
+now identify the final vav. The manuscript reading of the orphan dot, including
+its confirmed status and the separate tentative letter-fit assessment, is unchanged.
+
+**Scope and verification:** Work began in the clean full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` on main at
+`70e5358c842789183bf46e26ee39dff981296fac`. The real near-Aleppo regeneration and
+`--check` passed. A separate JSON comparison confirms that only this body template
+changes within Scripture, that the qere call and surrounding text remain exact,
+and that C and D remain unchanged. Other book changes are the shared consumer
+notice. A separate HTML comparison confirms `«אְאָא֖וֹ»` below the unchanged
+`צְבָא֖וֹת`, with all eight other case sections and all images unchanged.
+Population counts, MAM-only census, note-review ledger and source MAM data remain
+unchanged. The change reaches the distributed near-Aleppo data, published pages
+and generator/shared-renderer code; the normal main push is outward-facing.
+
+**Focused checks:** All 15 tests in the implementation's focused entry-point
+command passed again. MAM-with-doc regenerated completely without a tracked
+diff. Black passed on all six changed Python files, and `git diff --check`
+passed. Mega and the full suite remain on the approved nightly cadence; no
+specific consequence requires an immediate broad run for this correction.
