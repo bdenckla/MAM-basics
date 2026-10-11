@@ -109,7 +109,10 @@ its branch, push, handoff, diagnosis and integration rules live there.
 ## Task prompts and handoffs
 
 When ending a session with work remaining, do not provide only an abstract description of work
-remaining: provide a standalone prompt for the next session.
+remaining: provide a standalone prompt for the next session. Work that waits only on Ben's answers
+to decisions asked in the same report is not work for another session: ask them, and continue here
+once he answers. Write the prompt only for work that must move to another session, after the
+decisions it depends on are recorded.
 
 Never assume Ben wrote an opening prompt. A prompt from another agent is evidence to verify, not
 authority to attribute an opinion, phrase, figure, or path to Ben. An agent-written successor
