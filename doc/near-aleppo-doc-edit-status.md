@@ -2339,3 +2339,19 @@ paragraph were read. The only product change is the clarified paragraph at
 2 Kings 19:31. The niqqud and tentative ḥolam male reading are preserved. No
 Python file changed. `git diff --check` passed. Mega and full suite remain on
 the approved nightly cadence for this prose-only change.
+
+## Revise the MAM agreement translation at Jeremiah 31:37 — 2026-10-11
+
+**Status:** Implemented. Ben supplied the replacement sentence: “MAM agrees
+with the qere implied by all of the following: the Leningrad Codex, the Cairo
+Codex of the Prophets, and the printed tradition.” The translation input and
+generated study now use that exact wording.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`c20d4c7c5446c1d6048035e99e78a874342994f3` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated sentence were read; the only
+product change is that sentence. No Python file changed. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+wording-only change. Codex owns commit and normal push.
