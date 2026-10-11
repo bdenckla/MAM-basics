@@ -2588,3 +2588,21 @@ were read. Eliding the bracketed insertion restores the preceding wording.
 The only product change moves the closing bracket. `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence for this punctuation
 change. Codex owns commit and normal push.
+
+## File the Jeremiah 31:37 illustration omission — 2026-10-11
+
+**Status:** Filed as [MAM-basics issue 304](https://github.com/bdenckla/MAM-basics/issues/304),
+at Ben's request, to restore נְאֻם־ in MAM's Aleppo body-text illustration.
+Duplicate searches found no matching issue. The issue quotes the captured MAM
+note and its lemma, links immutable source evidence, and records Codex authorship
+and Ben's instruction. Hebrew was copied from the maintained source through a
+UTF-8 file, and the complete posted title and body were read back and verified
+identical. The upstream note correction remains work for the issue; the study's
+bracketed annotation is preserved.
+
+**Checkout and verification:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` was clean on main at
+`5a9f53b72805b3b5ed976ac45bb8e5e207c1e3bb` before this issue-filing task.
+Only this live ledger changes locally. `git diff --check` passed. Mega and full
+suite remain on the approved nightly cadence for this record-only change.
+Codex owns commit and normal push.
