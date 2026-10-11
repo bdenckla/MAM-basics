@@ -56,7 +56,10 @@ the recorded below-marks already establish niqqud presence.
 The primary `crop` records the body-text image. It may also contain the explicitly
 named `marginal_qere_note` crop, with its own filename and supplied screenshot.
 The renderer validates both crop records and displays the body text and marginal
-note with separate captions.
+note with separate captions. Each case starts with its image or images and their
+captions, immediately after the verse heading, before any encoding summary,
+NAEE excerpt, MAM note or manuscript discussion. When both images are present,
+the body-text image precedes the marginal-note image.
 The reading's `marginal_qere_note.inferred_lines` records an inferred vertical
 layout, displayed in an RTL block with one word per line.
 
@@ -142,8 +145,9 @@ The three cases without an attached MAM note retain their full remarks.
 ## Encoding presentation, 2026-10-11
 
 Ben requested that the encoding choices be prominent, then selected readable
-summaries followed by source notation and a document-only revision. Each entry
-now starts with “Near-Aleppo encoding”, before the NAEE excerpt and manuscript
+summaries followed by source notation and a document-only revision. Ben later
+requested that every case begin with its images on 2026-10-11. “Near-Aleppo
+encoding” now follows the images, before the NAEE excerpt and manuscript
 discussion. Current encoding and pending intended additional templates have
 separate labels. Ben requested removal of the repeated source-notation blocks
 on 2026-10-11 because they add no independent information beyond the MAM qere.

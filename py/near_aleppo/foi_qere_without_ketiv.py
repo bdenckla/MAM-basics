@@ -866,9 +866,9 @@ def render(verses, rows):
         ),
         mb_html.unordered_list(
             [
+                "Aleppo images of the case.",
                 "How the case looks in the near-Aleppo example edition (NAEE).",
                 "Any MAM notes about the case.",
-                "Aleppo images of the case.",
             ]
         ),
         mb_html.para(
@@ -900,18 +900,36 @@ def render(verses, rows):
                     _reference_text(reference), "../" + vel.near_aleppo_href(*reference)
                 )
             ),
-            _encoding(row),
-            mb_html.heading_level_3("NAEE excerpt"),
-            mb_html.para(
-                _naee_excerpt(verses[reference], example["qere"], reference),
-                {
-                    "dir": "rtl",
-                    "lang": "hbo",
-                    "class": "pointed foi-verse qvlk-hebrew-display",
-                },
-            ),
-            mb_html.heading_level_3("MAM doc-note"),
         ]
+        if row["crop"]:
+            crop = row["crop"]
+            if "marginal_qere_note" in crop:
+                contents.extend(_crop(crop, reference, outputs, label="body text"))
+                contents.extend(
+                    _crop(
+                        crop["marginal_qere_note"],
+                        reference,
+                        outputs,
+                        label="marginal qere note",
+                    )
+                )
+            else:
+                contents.extend(_crop(crop, reference, outputs))
+        contents.extend(
+            [
+                _encoding(row),
+                mb_html.heading_level_3("NAEE excerpt"),
+                mb_html.para(
+                    _naee_excerpt(verses[reference], example["qere"], reference),
+                    {
+                        "dir": "rtl",
+                        "lang": "hbo",
+                        "class": "pointed foi-verse qvlk-hebrew-display",
+                    },
+                ),
+                mb_html.heading_level_3("MAM doc-note"),
+            ]
+        )
         if example["notes"]:
             contents.append(
                 mb_html.div(
@@ -974,20 +992,6 @@ def render(verses, rows):
                 )
         if review["comparison"] is not None:
             contents.append(_comparison(review, row["romanized"]))
-        if row["crop"]:
-            crop = row["crop"]
-            if "marginal_qere_note" in crop:
-                contents.extend(_crop(crop, reference, outputs, label="body text"))
-                contents.extend(
-                    _crop(
-                        crop["marginal_qere_note"],
-                        reference,
-                        outputs,
-                        label="marginal qere note",
-                    )
-                )
-            else:
-                contents.extend(_crop(crop, reference, outputs))
         contents.append(_links(reference))
         body.append(mb_html.div(contents, {"id": row["id"], "class": "qvlk-case"}))
     ctx = mb_html.WriteCtx(

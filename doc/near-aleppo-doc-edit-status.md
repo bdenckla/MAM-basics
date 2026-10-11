@@ -2389,3 +2389,25 @@ source and generated diffs and the generated sentence were read; the only
 product change is that sentence. No Python file changed. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence for this
 wording-only change. Codex owns commit and normal push.
+
+## Put the Aleppo images first in every case — 2026-10-11
+
+**Status:** Implemented. Ben requested each image before the text discussing
+it. All nine cases now begin with their images and captions immediately after
+the verse heading, before encoding, the NAEE excerpt, MAM notes and manuscript
+remarks. Jeremiah 31:37 begins with both supplied images, retaining body text
+before the marginal note. The introductory list now puts images first. The
+source README states the revised order. This supersedes the encoding-first
+case layout.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`275ef7acf6a1a4d6de3bd67c1304c8957b966b50` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95
+files and both font copies. A differential comparison with the baseline
+verified that all nine cases begin with their ten image-and-caption blocks:
+only those blocks and the introductory list moved, with every other byte
+preserved. All source and generated diffs and the beginning of every case
+were read. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this presentation-only change. Codex owns commit and
+normal push.
