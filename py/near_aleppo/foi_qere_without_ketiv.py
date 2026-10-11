@@ -464,6 +464,104 @@ def _template_name(name):
     return mb_html.bdi(name, {"dir": "rtl", "lang": "hbo", "class": "name"})
 
 
+def _naee_excerpt(scripture, qere, reference):
+    """Keep the QVLK's complete chanted word and neighboring chanted words.
+
+    Project only plain Scripture and the recognized documentation-target spans.
+    The validated QVLK box is opaque: its editorial label and ruby annotation
+    do not create chanted word boundaries. Slice original nodes without retyping marks.
+    """
+    marker = "\N{OBJECT REPLACEMENT CHARACTER}"
+
+    def projection(value):
+        if isinstance(value, str):
+            if marker in value:
+                raise ValueError(f"Excerpt marker occurs in Scripture: {reference}")
+            return value
+        if isinstance(value, (tuple, list)):
+            return "".join(projection(child) for child in value)
+        if not isinstance(value, dict) or mb_html.htel_get_tag(value) != "span":
+            raise ValueError(f"Unsupported excerpt element: {reference}")
+        role = value.get("attr", {}).get("class")
+        contents = value.get("contents") or ()
+        if role == "mam-doc-target-without-callout":
+            return projection(contents)
+        if role != "near-aleppo-kq-box" or len(contents) != 1:
+            raise ValueError(f"Unsupported excerpt span role: {reference}: {role}")
+        ruby = contents[0]
+        if not isinstance(ruby, dict) or mb_html.htel_get_tag(ruby) != "ruby":
+            raise ValueError(f"Excerpt box is not a ruby: {reference}")
+        parts = ruby.get("contents") or ()
+        if (
+            len(parts) != 4
+            or any(not isinstance(part, dict) for part in parts)
+            or [mb_html.htel_get_tag(part) for part in parts]
+            != ["span", "rp", "rt", "rp"]
+            or parts[0].get("attr", {}).get("class") != "near-aleppo-kq-none"
+        ):
+            raise ValueError(f"Excerpt requires a qere-only ruby: {reference}")
+        annotation = parts[2].get("contents") or ()
+        if (
+            len(annotation) != 1
+            or not isinstance(annotation[0], dict)
+            or mb_html.htel_get_tag(annotation[0]) != "span"
+            or annotation[0].get("attr", {}).get("class") != "mam-kq-q"
+            or annotation[0].get("contents") != [qere]
+            or re.search(r"\s", qere)
+        ):
+            raise ValueError(f"Reconcile the excerpt's whole qere: {reference}")
+        return marker
+
+    def cut(value, start, end):
+        text = projection(value)
+        if end <= 0 or start >= len(text):
+            return []
+        if start <= 0 and end >= len(text):
+            return value
+        if isinstance(value, str):
+            return value[max(0, start) : end]
+        if isinstance(value, (tuple, list)):
+            result, offset = [], 0
+            for child in value:
+                part = cut(child, start - offset, end - offset)
+                if part != [] and part != "":
+                    result.append(part)
+                offset += len(projection(child))
+            return result
+        if value["attr"]["class"] != "mam-doc-target-without-callout":
+            raise ValueError(f"Excerpt cuts through the QVLK box: {reference}")
+        return {**value, "contents": cut(value["contents"], start, end)}
+
+    text = projection(scripture)
+    if text.count(marker) != 1:
+        raise ValueError(f"Excerpt requires one QVLK: {reference}")
+    words = [
+        match
+        for match in re.finditer(r"\S+", text)
+        if marker in match.group() or re.search(r"[\u05d0-\u05ea]", match.group())
+    ]
+    target = next(index for index, word in enumerate(words) if marker in word.group())
+    if target == 0:
+        before, after = 0, 2
+    elif target == len(words) - 1:
+        before, after = 2, 0
+    else:
+        before, after = 1, 1
+    first = max(0, target - before)
+    last = min(len(words) - 1, target + after)
+    start = words[first].start()
+    # Retain punctuation following the final selected chanted word, including
+    # a separately spaced paseq glyph. Punctuation is not another chanted word.
+    end = words[last + 1].start() if last + 1 < len(words) else len(text)
+    while end > start and text[end - 1].isspace():
+        end -= 1
+    return [
+        "… " if text[:start].strip() else "",
+        cut(scripture, start, end),
+        " …" if text[end:].strip() else "",
+    ]
+
+
 def _case_summary(rows):
     """Summarize recorded body-text features with explicit presence and position roles."""
     header = mb_html.table_row(
@@ -777,10 +875,14 @@ def render(verses, rows):
                 )
             ),
             _encoding(row, encodings[reference]),
-            mb_html.heading_level_3("Current NAEE verse"),
+            mb_html.heading_level_3("Current NAEE excerpt"),
             mb_html.para(
-                verses[reference],
-                {"dir": "rtl", "lang": "hbo", "class": "pointed foi-verse"},
+                _naee_excerpt(verses[reference], example["qere"], reference),
+                {
+                    "dir": "rtl",
+                    "lang": "hbo",
+                    "class": "pointed foi-verse qvlk-hebrew-display",
+                },
             ),
             mb_html.heading_level_3("MAM qere"),
             mb_html.para(

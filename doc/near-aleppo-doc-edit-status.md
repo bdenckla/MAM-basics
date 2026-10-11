@@ -1708,3 +1708,33 @@ current dataset calls and tentative ḥolam male qualification are preserved.
 The three focused prose and mark lints passed, and `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence; focused regeneration,
 image reconciliation, review and lints cover this study-table change.
+
+## Show chanted-word context instead of whole verses — 2026-10-11
+
+**Status:** Implemented. Ben requested one chanted word before the QVLK and one
+after it, with two on the available side for a verse-final or verse-initial
+QVLK, and ellipses for omitted text. Preserve the complete chanted word containing
+the QVLK when the QVLK is in a maqaf compound, then retain the neighboring
+chanted words. Rename the display heading to “Current NAEE excerpt” and center
+these short Hebrew displays. Keep the qere, its box, marks and target ink intact.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`c020675419d3c31d83239d1926bbb66929568f96` before editing. Codex owns implementation,
+regeneration, focused verification, commit and normal push. A read-only reviewer
+independently checks the nine context selections and ellipsis placement.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The source and generated
+diffs were read. All nine excerpts retain the independently checked neighboring
+chanted words and intact maqaf compounds. Every excerpt has a leading ellipsis;
+seven have a trailing ellipsis. The other two, 2 Kings 19:31 and Ruth 3:5, reach
+the verse ending and retain sof pasuq. No current QVLK is verse-initial or
+verse-final; the renderer's explicit endpoint branches retain two neighbors on
+the available side. The independent final review found no material defects in
+the selections, original-node preservation or endpoint logic. The headings,
+centering and dataset README now describe excerpts. All MAM notes, translations,
+table entries, qere glyphs, target ink, images and dataset calls are preserved.
+The three focused prose and mark lints passed, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+independent context review, source inspection and lints cover this excerpt change.

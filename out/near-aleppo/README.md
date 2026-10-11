@@ -63,7 +63,8 @@ start with [interesting ketiv/qere cases](../../gh-pages/near-aleppo/foi/interes
 These selected examples show whole verses with the current edition's ruby
 display. The BCV in each heading links to the verse in NAEE; relative links work
 locally and on the website. The [qere-without-ketiv study](../../gh-pages/near-aleppo/foi/qere-without-ketiv.html)
-adds current MAM notes, Ben's dated manuscript observations, and supplied crops.
+shows short NAEE excerpts, current MAM notes, recorded manuscript observations,
+and supplied crops.
 Its [source note](../../doc/near-aleppo-qere-without-ketiv/README.md) identifies the
 maintained records and crop provenance. Regenerate the FOI pages and images with:
 

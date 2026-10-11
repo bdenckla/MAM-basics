@@ -57,6 +57,17 @@ The study validates that fragment's two literal parameters and agreement of its
 whole qere with MAM, then shows both parameters in complete curly-brace notation.
 The ordinary HTML writer escapes the notation as text.
 
+“Current NAEE excerpt” retains the complete chanted word containing the QVLK
+and one neighboring chanted word on each side. A maqaf compound stays whole.
+A verse-initial or verse-final QVLK instead retains two chanted words on the
+available side. Ellipses appear only where text has been omitted; the original
+sof pasuq remains when the excerpt reaches the verse ending. The short Hebrew
+excerpt is centered. The renderer selects boundaries in plain Scripture and
+recognized documentation-target spans, treating the validated qere-only ruby
+as an opaque display. The original Hebrew, target ink and ruby nodes are retained.
+The nine current QVLKs are neither verse-initial nor verse-final. Three occur
+inside maqaf compounds: 2 Samuel 16:23, 2 Samuel 18:20 and Jeremiah 50:29.
+
 [`in/near-aleppo/qere-without-ketiv-mam-notes-en.json`](../../in/near-aleppo/qere-without-ketiv-mam-notes-en.json)
 owns the English translations and explanations of attached MAM notes and the
 comparisons with Ben's descriptions. The English versions expand abbreviated
@@ -110,7 +121,7 @@ There is no attached MAM note at Judges 20:13,
 
 Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Each entry
-now starts with “Near-Aleppo encoding”, before the full verse and manuscript
+now starts with “Near-Aleppo encoding”, before the NAEE excerpt and manuscript
 discussion. Current encoding and pending intended additional templates have
 separate labels.
 All current source fragments are read afresh from `out/near-aleppo/plus/`; they
