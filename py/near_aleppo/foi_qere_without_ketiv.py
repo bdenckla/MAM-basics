@@ -114,7 +114,29 @@ def records():
         crop = row["crop"]
         if crop is not None:
             _validate_crop(crop, identity, allow_marginal_note=True)
+        _inferred_marginal_lines(row)
     return rows
+
+
+def _inferred_marginal_lines(row):
+    """Read the explicitly recorded, inferred vertical layout of a marginal note."""
+    reading = row["reading"]
+    if reading is None or "marginal_qere_note" not in reading:
+        return None
+    note = reading["marginal_qere_note"]
+    if not isinstance(note, dict):
+        raise ValueError(f"Invalid marginal qere note: {row['id']}")
+    lines = note.get("inferred_lines")
+    if (
+        not isinstance(lines, list)
+        or not lines
+        or not all(
+            isinstance(line, str) and line and "\n" not in line and "\r" not in line
+            for line in lines
+        )
+    ):
+        raise ValueError(f"Invalid inferred marginal lines: {row['id']}")
+    return lines
 
 
 def _validate_crop(crop, identity, *, allow_marginal_note):
@@ -482,6 +504,22 @@ def render(verses, rows):
             contents.extend(
                 mb_html.para(_prose(note)) for note in row["documentation_notes"]
             )
+            marginal_lines = _inferred_marginal_lines(row)
+            if marginal_lines is not None:
+                contents.append(
+                    mb_html.para("Inferred marginal qere note, one form per line:")
+                )
+                contents.append(
+                    mb_html.div(
+                        [mb_html.div(line) for line in marginal_lines],
+                        {
+                            "dir": "rtl",
+                            "lang": "hbo",
+                            "class": "pointed qvlk-marginal-lines",
+                            "style": "width: fit-content;",
+                        },
+                    )
+                )
         if row["crop"]:
             crop = row["crop"]
             if "marginal_qere_note" in crop:

@@ -21,6 +21,8 @@ The primary `crop` records the body-text image. It may also contain the explicit
 named `marginal_qere_note` crop, with its own filename and supplied screenshot.
 The renderer validates both crop records and displays the body text and marginal
 note with separate captions.
+The reading's `marginal_qere_note.inferred_lines` records an inferred vertical
+layout, displayed in an RTL block with one form per line.
 
 [`py/near_aleppo/foi_qere_without_ketiv.py`](../../py/near_aleppo/foi_qere_without_ketiv.py)
 renders the study through the existing HTML build. The shared renderer supplies
@@ -232,10 +234,20 @@ the template with space above the marks; dataset implementation remains pending.
 
 Ben read a rather generous horizontal space for בָּאִ֖ים between the surrounding
 written atoms, with no qere letters or niqqud. A masorah circle is present in
-that space. The marginal qere note is partly cut off by damage, so some of its
-letters are inferred. Both supplied crops are preserved and displayed separately.
-The intended body encoding assessment is empty; dataset implementation remains
-pending.
+that space. Ben describes the marginal-note damage as looking as if opaque tape
+had been laid parallel to the right margin, obscuring approximately the first
+letter of each inferred form on its own line. The cause of the damage is unknown.
+Ben infers the following vertical layout, recorded exactly as supplied:
+
+<div dir="rtl" lang="hbo">
+באים<br>
+קרי<br>
+ולם<br>
+כתב
+</div>
+
+Both supplied crops are preserved and displayed separately. The intended body
+encoding assessment is empty; dataset implementation remains pending.
 
 ## Entries awaiting image readings
 

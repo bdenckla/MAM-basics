@@ -1048,7 +1048,7 @@ check cover this observation and crop update.
 
 **Status:** Recorded by Codex from Ben's supplied body-text and marginal-note
 crops. Ben read a rather generous horizontal space with no niqqud and a masorah
-circle in the space. The marginal qere note is partly cut off by damage, so some
+circle in the space. The marginal qere note is partly obscured by damage, so some
 of its letters are inferred.
 
 **Checkout and baseline:** Source, development and integration checkout is the
@@ -1077,3 +1077,32 @@ accent-mark lints passed (three tests); `git diff --check` passed. Production
 datasets are unchanged. Mega and full suite remain on the approved nightly
 cadence; focused generation, the artifact differential and the lints cover
 this observation and the paired crop display.
+
+## Jeremiah 31:37 marginal-note damage and layout — 2026-10-11
+
+**Status:** Clarified by Codex from Ben's further image reading. The damage looks
+as if opaque tape had been laid parallel to the right margin, obscuring
+approximately the first letter of each inferred form on its own line. Ben does
+not know the cause; the tape comparison describes appearance, not material.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`cd4c7140ea8cb72f62987b062a14905274cf4ece` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now describes obscured letters and unknown cause.
+Its `marginal_qere_note.inferred_lines` preserves Ben's four supplied forms in
+their exact order, including the third line as supplied. The study and source
+note show the inferred vertical layout in an RTL block with one form per line.
+The generator validates a nonempty list of nonempty, single-line strings.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 92 owned files and both font copies. An
+independent baseline differential confirmed the exact inferred forms, order and
+RTL markup. All eight other cases, the target's body reading and both encoding
+assessments, Scripture, MAM qere and notes, source notation, links and crop
+markup are unchanged. All seven crop pairs retain identical bytes. The generated
+HTML diff was read; the focused prose/Python mark lints passed (three tests),
+and `git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused generation, the artifact differential and the lints cover
+this clarification and vertical-layout display.

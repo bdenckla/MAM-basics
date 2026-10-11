@@ -245,14 +245,22 @@
         "masorah_circle_present": true,
         "masorah_circle_position": "within the generous space",
         "marginal_qere_note": {
-          "partly_cut_off_by_damage": true,
-          "some_letters_inferred": true
+          "partly_obscured_by_damage": true,
+          "some_letters_inferred": true,
+          "damage_description": "The damage looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred form on its own line.",
+          "cause_unknown": true,
+          "inferred_lines": [
+            "באים",
+            "קרי",
+            "ולם",
+            "כתב"
+          ]
         }
       },
       "observation": "For בָּאִ֖ים, the body text has a rather generous horizontal space between the surrounding written atoms, with no qere letters or niqqud. A masorah circle is present in that space.",
       "romanized": [],
       "documentation_notes": [
-        "The marginal qere note is partly cut off by damage, so some of its letters are inferred."
+        "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred form on its own line. The cause of the damage is unknown."
       ],
       "crop": {
         "filename": "aleppo-Je31-37.png",
