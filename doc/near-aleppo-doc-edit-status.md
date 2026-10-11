@@ -1474,3 +1474,28 @@ change, focused verification, commit and normal push.
 “with no” to “yet there is no” in the requested sentence. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence; regeneration
 and the inspected diff cover this prose-only correction.
+
+## Anonymous voice and the meaning of narrow — 2026-10-11
+
+**Status:** Implemented. Ben requested an unnamed authorial voice throughout the study
+and a more substantive discussion of MAM's “narrow” at 2 Samuel 16:23. The possible
+interpretation is narrow relative to the room required for letters, rather than
+for points alone. Named-contributor references are removed from the rendered
+prose, and the summary and comparison describe an apparent discrepancy with
+this possible reconciliation. Source provenance remains in the maintained metadata.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`cdb7b0b9f8a4b175561b40266aeca04f486a016b` before editing. Codex owns the prose
+revision, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated and input
+diffs were read; MAM notes and translations, qere glyphs, inferred words, styles,
+images and source provenance are preserved. The source-note assessment now records
+the possible interpretation of “narrow”. The rendered page has no contributor-name
+references or dates. A read-only reviewer found no material voice or interpretation
+defects and confirmed the hypotheses and damage qualifications are preserved.
+The three focused prose and mark lints passed, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+source reconciliation, inspection, review and lints cover this prose revision.

@@ -15,6 +15,8 @@ once in the introduction; the per-case distinctions concern niqqud and horizonta
 space. Complete MAM quotations and translations retain their circle references.
 English descriptions, list items, encoding summaries, translations and image
 captions use complete sentences.
+The study uses an unnamed authorial voice. Reading provenance and contribution
+history remain in the source records and this maintained note.
 
 ## Maintained inputs and rendering
 
@@ -73,9 +75,11 @@ maintained inputs and procedures.
 
 ## MAM comparisons, 2026-10-11
 
-The only recorded discrepancy is the assessment of the space at 2 Samuel 16:23:
-MAM says that there is only a narrow space; Ben describes a fairly generous space
+The apparent discrepancy is the assessment of the space at 2 Samuel 16:23:
+MAM says that there is only a narrow space; the space appears fairly generous
 even after the maqaf, insufficient for the letters but ample for the below-marks.
+MAM may mean narrow relative to the room needed for the letters rather than
+for the points alone. This is a possible interpretation of MAM's wording.
 Both descriptions say that pointing is absent.
 
 The other attached notes agree with Ben's descriptions where their subjects
@@ -266,8 +270,10 @@ mark order as historical documentation.
 Ben read a fairly generous space even after the maqaf, with no pointing for
 אִ֖ישׁ. The space is insufficient for the letters of איש, but ample for its
 below-marks, ḥiriq and tipeḥa. Available room does not establish the marks as present.
-Ben questions whether “narrow” fits the space described in the MAM note reviewed
-on 2026-10-08. That dated quotation is stored in `reading.reviewed_mam_note`.
+MAM's characterization of the space as “narrow” is slightly puzzling. Perhaps
+“narrow” refers to the room needed for the letters rather than the room needed
+for the points alone. The dated MAM quotation is stored in
+`reading.reviewed_mam_note`.
 
 ## 2 Samuel 18:20
 

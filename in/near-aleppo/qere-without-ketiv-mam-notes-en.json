@@ -7,13 +7,13 @@
       "notes": [],
       "comparison": {
         "status": "no-note",
-        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description here to compare with Ben's reading."
+        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description to compare with the manuscript reading."
       }
     },
     {
       "id": "2S16-23",
       "source_description": {
-        "observation": "The space is fairly generous even after the maqaf, yet there is no pointing for אִ֖ישׁ. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). Ben questions whether the description “narrow” in MAM’s note fits this space.",
+        "observation": "The space is fairly generous even after the maqaf, yet there is no pointing for אִ֖ישׁ. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). MAM's characterization of the space as “narrow” is slightly puzzling. Perhaps “narrow” refers to the room needed for the letters rather than the room needed for the points alone.",
         "documentation_notes": []
       },
       "notes": [
@@ -36,13 +36,13 @@
       ],
       "comparison": {
         "status": "discrepancy",
-        "text": "MAM calls the space \"only a narrow space\"; Ben calls it \"fairly generous, even after the maqaf\", insufficient for the qere letters but ample for its below-marks. The discrepancy concerns the assessment of the space. Both descriptions say that pointing is absent."
+        "text": "MAM calls the space \"only a narrow space\", although the space appears fairly generous even after the maqaf. The space is insufficient for the qere letters but ample for its below-marks. MAM may mean narrow relative to the room needed for the letters rather than for the points alone. Both the manuscript description and MAM's note say that pointing is absent."
       }
     },
     {
       "id": "2S18-20",
       "source_description": {
-        "observation": "The tsere and merkha of כֵּ֥ן are written below, between the surrounding written atoms, without the qere letters or dagesh. There is no space above these marks. Ben agrees with MAM’s note.",
+        "observation": "The tsere and merkha of כֵּ֥ן are written below, between the surrounding written atoms, without the qere letters or dagesh. There is no space above these marks. This reading agrees with MAM’s note.",
         "documentation_notes": []
       },
       "notes": [
@@ -74,7 +74,7 @@
       "notes": [],
       "comparison": {
         "status": "no-note",
-        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description here to compare with Ben's reading."
+        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description to compare with the manuscript reading."
       }
     },
     {
@@ -83,7 +83,7 @@
       "notes": [],
       "comparison": {
         "status": "no-note",
-        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description here to compare with Ben's reading."
+        "text": "No MAM doc-note is attached to this qere-without-ketiv site, so there is no MAM description to compare with the manuscript reading."
       }
     },
     {
@@ -143,7 +143,7 @@
       ],
       "comparison": {
         "status": "agreement",
-        "text": "Both descriptions say that pointing is absent at the qere site. Ben additionally describes the generous spacing and damaged marginal note. MAM also gives surrounding text that Ben has not assessed here: its Aleppo illustration omits נְאֻם־ and has יְהֹוָֽה. Those additional MAM statements do not establish a disagreement with Ben."
+        "text": "The manuscript description and MAM's note agree that pointing is absent at the qere site. The manuscript description also records the generous spacing and damaged marginal note. MAM reports surrounding text that has not been assessed here: its Aleppo illustration omits נְאֻם־ and has יְהֹוָֽה. Those additional details do not establish a disagreement with the manuscript description."
       }
     },
     {
@@ -180,7 +180,7 @@
       ],
       "comparison": {
         "status": "agreement",
-        "text": "Both descriptions have an empty unpointed space. Ben additionally assesses the space as generous and describes the maqaf extending into it."
+        "text": "The manuscript description and MAM's note agree that there is an empty unpointed space. The manuscript description adds the generous width and the maqaf extending into the space."
       }
     },
     {
@@ -224,7 +224,7 @@
       ],
       "comparison": {
         "status": "agreement",
-        "text": "MAM’s \"noticeable space\" is compatible with Ben’s \"generous horizontal space\". Both descriptions have no pointing. MAM additionally quotes the marginal note, which Ben has not described here."
+        "text": "MAM’s \"noticeable space\" is compatible with the generous horizontal space described here. The manuscript description and MAM's note agree that pointing is absent. MAM also quotes the marginal note."
       }
     },
     {
@@ -268,7 +268,7 @@
       ],
       "comparison": {
         "status": "agreement",
-        "text": "MAM’s \"noticeable space\" is compatible with Ben’s \"generous end-of-line space\". Both descriptions have no pointing. Ben’s suggestion that the line ending may explain the generosity accidentally is an added hypothesis; MAM does not assess whether the space was intentional. MAM additionally quotes the marginal note, which Ben has not described here."
+        "text": "MAM’s \"noticeable space\" is compatible with the generous end-of-line space described here. The manuscript description and MAM's note agree that pointing is absent. The line ending may explain the generous space accidentally; this is a hypothesis. MAM does not assess whether the space was intentional and also quotes the marginal note."
       }
     }
   ]

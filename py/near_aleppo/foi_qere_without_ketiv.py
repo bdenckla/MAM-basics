@@ -36,7 +36,7 @@ _QERE_TAG = "mam-kq-q-velo-k"
 _QERE_TEMPLATE = "קרי ולא כתיב"
 _NOTE_REVIEW_FORMAT = "near-aleppo-qere-without-ketiv-mam-notes-en-v1"
 _COMPARISON_LABELS = {
-    "discrepancy": "Discrepancy",
+    "discrepancy": "Apparent discrepancy",
     "agreement": "Agreement",
     "no-note": "No attached MAM note",
 }
@@ -354,7 +354,7 @@ def _mam_note_reviews(rows, examples):
         )
         if review["source_description"] != description:
             raise ValueError(
-                f"Reconcile the MAM comparison with Ben's description at {identity}"
+                f"Reconcile the MAM comparison with the manuscript description at {identity}"
             )
         if (review["comparison"]["status"] == "no-note") != (not source):
             raise ValueError(f"Invalid MAM note availability assessment: {identity}")
@@ -429,12 +429,12 @@ def _comparison_summary(rows, reviews):
             )
     return mb_html.div(
         [
-            mb_html.heading_level_2("Discrepancies with MAM"),
+            mb_html.heading_level_2("Apparent discrepancies with MAM"),
             (
                 mb_html.unordered_list(differences)
                 if differences
                 else mb_html.para(
-                    "No discrepancy is recorded in the comparisons below."
+                    "No apparent discrepancy is recorded in the comparisons below."
                 )
             ),
         ],
@@ -658,7 +658,6 @@ def render(verses, rows):
                 "The page includes Aleppo images showing the case at hand.",
             ]
         ),
-        mb_html.para("Image readings are attributed to Ben Denckla."),
         mb_html.para(
             "A masorah circle appears to be present in every case below. "
             "Circle presence is noted here once because it does not distinguish "
