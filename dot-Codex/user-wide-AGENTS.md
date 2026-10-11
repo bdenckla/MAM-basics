@@ -109,7 +109,10 @@ its branch, push, handoff, diagnosis and integration rules live there.
 ## Task prompts and handoffs
 
 When ending a session with work remaining, do not provide only an abstract description of work
-remaining: provide a standalone prompt for the next session.
+remaining: provide a standalone prompt for the next session. Work that waits only on Ben's answers
+to decisions asked in the same report is not work for another session: ask them, and continue here
+once he answers. Write the prompt only for work that must move to another session, after the
+decisions it depends on are recorded.
 
 Never assume Ben wrote an opening prompt. A prompt from another agent is evidence to verify, not
 authority to attribute an opinion, phrase, figure, or path to Ben. An agent-written successor
@@ -177,7 +180,9 @@ user-explicit verification requirements take precedence.
 
 Prefer available built-in read, write, edit, search, and file-listing tools over equivalent shell
 work. Use exact-string editing for a known replacement and a real Python script for algorithmic
-work. Do not use `sed` or `awk`.
+work. On Windows, do not use `sed` or `awk`: their Windows ports, and the Git Bash around them,
+were suspected of causing problems. In a real Unix shell, such as a Linux cloud session or WSL,
+they are fine.
 
 Never put a substantial script in `python -c`, `node -e`, a here-document, a PowerShell
 here-string, or a pipeline into an inline interpreter. Put it in a uniquely named UTF-8 file in a

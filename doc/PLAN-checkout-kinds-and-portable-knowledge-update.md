@@ -379,3 +379,17 @@ refresh and clone ownership. The current cloud-limit row now names the two-repos
 loop. MAM-private is still required for the read-only exporter and private regeneration;
 a cloud mega with skips still does not prove complete changed-data refresh. The finished
 base remains historical.
+
+## Archived receipt references, 2026-10-11
+
+Recorded by Claude on 2026-10-11, New York time, in the session that executed item 2 of the list
+under "Ben's decision of 2026-10-09 on that answer" in
+`doc/PLAN-maintenance-follow-up-2026-10-08.md`. The entry "Phonetic refresh authority closeout,
+2026-10-02" says that "the other entry that `d0c660c9` wrote, in
+`doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`, names that recorder". That update
+has been retired from the tracked tree with the rest of the 2026-09-29 review's records. The entry
+it means, "Deferred refresh finding 22: current target ownership, 2026-10-02", remains in the
+archived
+[update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md)
+of that review's
+[turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md).

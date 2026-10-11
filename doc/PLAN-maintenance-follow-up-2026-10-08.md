@@ -1,9 +1,10 @@
 # PLAN — follow-up to the 2026-10-07 repository maintenance
 
-State: live; written 2026-10-08. Workstream A executed 2026-10-08 except the deletion of
-`collect` and `text_of`, which awaits Ben. Workstream B executed 2026-10-08; its live deployment
-on Ben's Windows machines remains. Workstream C's public audit was done 2026-10-08; its deletions
-and corrections await Ben's approval of the list in “C1. Public audit result, 2026-10-08”.
+State: live; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09; Ben decided on
+2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; Ben reported on
+2026-10-09 that its live deployment on his Windows machines is done. Workstream C executed
+2026-10-09: the public half after Ben approved the list in “C1. Public audit result,
+2026-10-08”, and the private half the same day.
 
 Written by Claude (Opus 5.5) on 2026-10-08, New York time, in the session that ran the
 2026-10-07 maintenance from `C:/Users/BenDe/GitRepos2/MAM-basics`. Ben had to switch that
@@ -40,11 +41,50 @@ in MAM-private.
 | Retire the evacuated phonetic-hbo clone in `GitRepos2` | "delete it please" | Done 2026-10-08: moved to the Recycle Bin after a recheck found no unique work |
 | Add `project_doc_max_bytes = 32768` to that machine's `~/.codex/config.toml` | "go ahead and add the key please" | Done 2026-10-08; the file parses. Other machines still need the key, per `dot-Codex/README.md`, “Machine-local project-instruction budget” |
 | Delete merged branches, sparing `codex/near-aleppo-ketiv-final-maqaf-20261007` | "I concur, please delete those branches" | Done 2026-10-08: 8 MAM-basics, 10 MAM-private and 1 hbofonts remote branches, each leased at its audited tip, and the local `dar-2026-09-29` with `git branch -d` |
-| Permanently delete the two large Claude scratchpads | "Permanently/immediately delete, i.e. non-recycle-bin delete them, please" | Ben's own act: agent safety policy forbids an agent's permanent deletion |
+| Permanently delete the two large Claude scratchpads | "Permanently/immediately delete, i.e. non-recycle-bin delete them, please" | Ben's own act: agent safety policy forbids an agent's permanent deletion. On 2026-10-11 none remained on the laptop that ran the maintenance: no Claude temporary or scratch directory there reached 1 GiB, and the Recycle Bin held none |
 
-Still open: Ben asked what retiring the 2026-09-29 review's records requires. The skipped
-`.novc/` wipe in `GitRepos2/MAM-basics` waits on that, because tracked records of that review
-cite `.novc/review-2026-09-29/`. The wipe is a local act, not a cloud one.
+Ben asked what retiring the 2026-09-29 review's records requires; answered 2026-10-09 from a
+read-only audit. The review and its remediation are finished, but the turn-01 update's
+disposition table is the only tracked home of ten deferrals: finding 21's heading fix in
+`py/hbce_psalms/compare.py`, finding 22's next-refresh check, items 36.3 to 36.8, item 36.10's
+suite run of `lint-receipt`, and item 36.11. Retirement first needs Ben's ruling on each, a
+maintained home or a dismissal. One deleting commit would then link the 14 records at its
+parent: in place for current guidance (`AGENTS.md`'s test-exception passage, D11 in
+`doc/dual-agent-review.md`, two reasons in `py/tests/test_mega_coverage.py` and this plan) and
+through single updates for the historical citers. No tracker cites a member. The skipped
+`.novc/` wipe in `GitRepos2/MAM-basics` does not wait on retirement: no code reads that scratch,
+and `doc/periodic-review.md`'s item 4 says it is not evidence. `py/main_repo_maintenance.py`
+deletes `.novc/` permanently, so the wipe is Ben's own act unless an agent recycles it instead.
+
+Ben's decision of 2026-10-09 on that answer and the private half's other recommendations:
+"Follow all your recommendations, but perhaps in a fresh session (via a prompt you give me)
+because this session's context is pretty full". Each item awaits that session unless marked:
+
+1. Recycle all of `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/` after an inventory.
+2. Retire the 2026-09-29 review's records. First move finding 22's next-refresh check into
+   `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, and dismiss
+   the other deferrals under `doc/review-trial.md`'s "No retrospective giant backlog is
+   opened". Item 36.8, the English Decalogue page's surviving Sheet link, is kept: on
+   2026-10-10 Ben had it filed as #303, which also records that only a Hebrew Wikisource
+   administrator can edit that page. Then make one deleting commit with the corrections above.
+   **Done 2026-10-11.** `be9c03961dcd970a620cd66b861b6aeaf0d58af3` moved the check and recorded
+   the ten dispositions in the turn-01 update. The commit after it deleted the 14 records and made
+   the corrections above, linking the records at `be9c0396`, its parent, whose member blobs its
+   message lists. Besides the passages those corrections cover, the census found only name-only
+   mentions, which stay: C1's below and the 2026-10-02 trial review's evidence list in
+   `doc/dual-agent-review.md`. Every MAM-private hit names MAM-private's own 2026-09-29 review
+   records, and hbofonts has none. The answer above's "No tracker cites a member" predates #303,
+   whose body links turn 01 and its update at `3982871623dab43c84f163f5090d1d24a894d4ff`; those
+   permalinks stay valid, and no other issue, pull request or comment updated in Ben's trackers
+   since 2026-10-08 names a member.
+3. Delete the merged local branch `dar-2026-09-29`, at `b8700f12`, in
+   `C:/Users/BenDe/GitRepos/MAM-basics`, with `git branch -d`.
+4. Append to `dot-Codex/user-wide-AGENTS.md`, “Task prompts and handoffs”, after "provide a
+   standalone prompt for the next session.": "Work that waits only on Ben's answers to
+   decisions asked in the same report is not work for another session: ask them, and continue
+   here once he answers. Write the prompt only for work that must move to another session,
+   after the decisions it depends on are recorded." Then deploy it.
+5. Leave the unoffered opportunities that workstream B lists: done, no action.
 
 ## A. Read the census's note prose with phase 3's closed reader
 
@@ -178,3 +218,23 @@ unreachable, so their citations remain for the private half. Nothing blocks reti
    `doc/PLAN-retire-mam-parsed-plain.md`, `doc/PLAN-remediate-review-findings-2026-09-26.md` and
    `doc/PLAN-remediate-review-findings-2026-09-26-update.md`. The successor `doc/html-styles.md`
    stays.
+
+### C2. Public retirement executed, 2026-10-09
+
+Ben approved the C1 list and its corrections on 2026-10-09, including the repetition of the two
+deferral details of item 6. The retiring commit deleted the four files of item 7 and made the
+corrections item 4 lists, linking the families at
+`38a8db9ae851b83d43b5c5ad42c007943b54d724`, the last commit on `origin/main` whose tree holds
+every member, with the member blobs the audit recorded. The private half's audit, on
+2026-10-09, searched every tracker this audit could not reach, MAM-private's included, and
+found no reference to any member. It repointed MAM-private's one citation of the 2026-09-26
+family to this archive, and on Ben's approval retired MAM-private's own two families that day.
+
+Ben approved three public follow-ups of the private half's report the same day. MAM-basics
+`545e0c96378be0ac5d0a30700246ba6509d52110` gave his naming preference a home in
+`Yeivin-ITM/README.md`, “Permission and authorship”. phonetic-hbo
+`fefc401ffadb3dab3843ef465bb2c75814558d9f` restored its README's link to the former
+masorah-books repository, which the 2026-10-02 redirect conversion had dropped against his
+decision of 2026-09-30; the deployed `gh-pages/` tree is unchanged. Two leftover phonetic-hbo
+clones on the machine that ran the 2026-10-07 maintenance, and the temporary clone used for that
+README commit, went to the Recycle Bin after recovery checks.

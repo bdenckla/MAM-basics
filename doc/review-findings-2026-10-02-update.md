@@ -882,3 +882,38 @@ surrogate, and no tracked output depends on that. Method: `git show --stat b246e
 diffs, read beside the step runners in `py/main_0_mega.py` at `b246e05e`; a read-only sub-agent
 placed every one of the 35 lines in its function, and the root session re-checked the eleven
 runners and two of the functions.
+
+## Archived receipt references, 2026-10-09
+
+Recorded by Claude on 2026-10-09, New York time, in the cloud session that executed
+workstream C of `doc/PLAN-maintenance-follow-up-2026-10-08.md`, after Ben approved its
+deletion list and corrections that day. In "The owner's disposition list, 2026-10-02", row 15.2's "The same miss recurs at
+`doc/PLAN-remediate-review-findings-2026-09-26.md:621` and `:728`." cites a receipt since
+retired from the tracked tree. It remains, with that line numbering, at
+[September 26 remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md),
+with its [update](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26-update.md).
+
+## Archived receipt references, 2026-10-11
+
+Recorded by Claude on 2026-10-11, New York time, in the session that executed item 2 of the list
+under "Ben's decision of 2026-10-09 on that answer" in
+`doc/PLAN-maintenance-follow-up-2026-10-08.md`. The base's evidence list, "the September 29
+round's turn files 01 to 11, its turn-01 update file and
+`doc/PLAN-remediate-review-findings-2026-09-29.md`", and its citations of those records in "Ben
+approved the edition sentence on 2026-09-30", "its record was retargeted on 2026-10-02" and "the
+remediation plan's acceptance check injected only `stmpl`", with C4.4's "Correction: Ben's approval
+is recorded at" in "The owner's disposition list, 2026-10-02" above, name records since retired
+from the tracked tree. They remain at these immutable locations, with turns 02 to 11 beside turn 01:
+
+- [turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md); and
+- the [September 29 remediation plan](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29-update.md).
+
+The cited `:186–187`, `:540–550` and `:773–779` of the September 29 plan count it before its
+line-4 pointer, as at
+[`38a8db9a`](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-29.md);
+at the archive each is one higher. Turn 01's update's `:1769–1780` is unchanged there, and the
+check that its entry records now lives in
+`dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, "Phonetic MAM's
+missing qamats alternative at 2 Kings 22:1".

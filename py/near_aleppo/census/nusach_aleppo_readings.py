@@ -39,29 +39,7 @@ CODEX_TESTIMONY = {"א(ו)", "א(ס)", "א(ע)", "א(ק)", "א(ר)", "א(ציל�
 # Not the text: an inference, and the margin.
 NOT_THE_TEXT = {"שיטת-א", "מסורת-א", 'א-מ"ק', 'מ"ק-א'}
 
-HEBREW = re.compile(r"[א-ת]")
 PAREN_LIST = re.compile(r"^א\(([^)]*)\)$")
-# Points and accents.  Written as codepoint escapes because a bare combining mark in a
-# character class is an invisible literal, which the user-level instructions ban outright.
-# U+0591..U+05BD accents through meteg, U+05BF rafe, U+05C1/U+05C2 the shin and sin dots,
-# U+05C4/U+05C5 the upper and lower dots, U+05C7 qamats qatan.  DELIBERATELY EXCLUDED:
-# U+05BE maqaf, U+05C0 paseq, U+05C3 sof pasuq and U+05C6 nun hafukha, each of which a
-# prose description can carry without quoting a form.
-POINTED = re.compile("[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7]")
-BRACKETED = re.compile(r"<([^>]*)>")
-
-
-def reading_head(reading):
-    """The quoted form a clause offers, before its parenthetical description.
-
-    MAM has either ``<form>`` in angle brackets or a bare form followed by
-    ``" ("`` and a description.
-    """
-    inner = BRACKETED.findall(reading)
-    if inner:
-        return " ".join(inner)
-    cut = reading.find(" (")
-    return reading[:cut] if cut >= 0 else reading
 
 
 def ref(bcvt):
@@ -234,7 +212,13 @@ def prose_head_last_siglum(head):
 
 
 def collect():
-    """The walk, and the buckets it fills."""
+    """The walk, and the buckets it fills.
+
+    This is the census's declared population code for the qualified clauses: the
+    comments at phase 3's ``_head_sigla`` and ``_TESTIMONY_LIST`` and in
+    ``phase6_flags.py`` name this module as the census's authority for how sigla
+    are read. No tracked code calls it; Ben decided on 2026-10-09 to keep it.
+    """
     books = plus.read_parsed_plus_bk39s(mam_parsed_path=census_paths.mam_parsed_path())
 
     n_nusach = 0
