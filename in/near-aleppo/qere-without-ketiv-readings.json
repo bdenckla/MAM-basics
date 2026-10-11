@@ -26,7 +26,7 @@
           "ֵ֣"
         ],
         "display_text": " ְ ֵ֣",
-        "display_convention": "An ASCII SPACE anchors each mark group; the anchors do not measure manuscript spacing.",
+        "display_convention": "An ASCII space (U+0020) carries each group of combining marks for display; these spaces do not measure manuscript spacing.",
         "line_position": "end of a manuscript line",
         "line_position_basis": "Ben Denckla's manuscript-image observation, 2026-10-08",
         "spacing_hypothesis": {
@@ -43,8 +43,7 @@
         "dagesh"
       ],
       "documentation_notes": [
-        "A masorah circle is above the marks; it is documented but not encoded.",
-        "The standalone review's blank SPACE anchors are display conventions, not measurements of manuscript spacing or a proposed template design."
+        "A masorah circle is above the marks; it is documented but not encoded."
       ],
       "crop": {
         "filename": "aleppo-Ju20-13.png",

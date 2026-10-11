@@ -149,10 +149,12 @@ line. Ben's hypothesis is that the line ending may have provided that space,
 possibly accidentally.
 
 Ben also reported a masorah circle above the marks. The circle is documented but
-not encoded in the written-form record. The standalone review used blank SPACE
-anchors for the marks. Their count and width are display conventions, not
-measurements of physical manuscript spacing or a proposed template design. The
-record preserves that display text and its mark order as historical documentation.
+not encoded in the written-form record. The historical review page,
+`qere-without-ketiv-all-cases.html` in the Downloads editing bundle, displayed
+each group of combining marks on an ASCII space (U+0020). The spaces' count and
+width are display conventions, not measurements of physical manuscript spacing
+or a proposed template design. The record preserves that display text and its
+mark order as historical documentation.
 
 ## 2 Samuel 16:23
 
