@@ -2315,3 +2315,27 @@ and both font copies. All source and generated diffs and the nine generated
 headings were read; the only product change is their wording. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence for this
 heading-only change. Codex owns commit and normal push.
+
+## Clarify the generous gap at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Implemented. Ben clarified that “very generous spacing” compares the gap
+with the manuscript's usual small or nonexistent spacing between written atoms,
+rather than with the room needed for צְבָא֖וֹת. The letter-scribe clearly intended
+to leave a large gap. The study, source reading and README now state the
+comparison and intention explicitly. “Perhaps the qere letters could have fit”
+remains tentative. The reading record attributes this clarification to Ben.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`d62198522ed455b14fc6fd15be5646bd3689bb91` before editing. Codex owns the reading
+record, source README, regeneration, focused verification, commit and normal
+push. Run the real HTML build and read-only comparison, read all source and
+generated diffs and the generated paragraph, and run `git diff --check`.
+Mega and full suite remain on the approved nightly cadence for this prose change.
+
+**Verification:** The real HTML build and read-only comparison passed for all
+95 files and both font copies. All source and generated diffs and the generated
+paragraph were read. The only product change is the clarified paragraph at
+2 Kings 19:31. The niqqud and tentative ḥolam male reading are preserved. No
+Python file changed. `git diff --check` passed. Mega and full suite remain on
+the approved nightly cadence for this prose-only change.

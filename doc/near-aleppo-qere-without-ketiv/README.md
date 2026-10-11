@@ -337,10 +337,13 @@ quotation is stored in `reading.reviewed_mam_note`.
 
 ## 2 Kings 19:31
 
-Ben read very generous spacing for צְבָא֖וֹת, with all its below-marks present:
-sheva, qamats, and tipeḥa. Perhaps the qere letters could have fit. A ḥolam male dot
-also seems to be represented. The letter-fit assessment and the dot reading remain
-tentative; the record does not promote the dot to a confirmed manuscript reading.
+Ben clarified on 2026-10-11 that the gap is very generous compared with the
+manuscript's usual small or nonexistent spaces between written atoms. The
+letter-scribe clearly intended to leave a large gap; perhaps the qere letters
+could have fit. All the below-marks of צְבָא֖וֹת are present: sheva, qamats, and
+tipeḥa. A ḥolam male dot also seems to be represented. The letter-fit assessment
+and the dot reading remain tentative; the record does not promote the dot to a
+confirmed manuscript reading.
 
 Ben clarified on 2026-10-11 that no masorah circle is present. The source reading
 records that absence and its provenance; the study names this exception once

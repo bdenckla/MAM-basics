@@ -160,7 +160,8 @@
         "qere": "צְבָא֖וֹת",
         "line_position": "between written words",
         "line_position_basis": "Codex inspection of the supplied manuscript image, 2026-10-11",
-        "space_assessment": "very generous",
+        "space_assessment": "very generous compared with the manuscript's usual small or nonexistent spaces between written atoms; the letter-scribe clearly intended to leave a large gap",
+        "space_assessment_basis": "Ben Denckla's manuscript-image clarification, 2026-10-11",
         "room_for_qere_letters": {
           "status": "tentative",
           "assessment": "Perhaps the qere letters could have fit."
@@ -177,7 +178,7 @@
           "assessment": "A ḥolam male dot seems to be represented."
         }
       },
-      "observation": "There is very generous spacing for צְבָא֖וֹת; perhaps the qere letters could have fit. All its below-marks are present (sheva, qamats, and tipeḥa). A ḥolam male dot also seems to be represented.",
+      "observation": "The gap here is very generous compared with the manuscript's usual small or nonexistent spaces between written atoms. The letter-scribe clearly intended to leave a large gap; perhaps the qere letters could have fit. All the below-marks of צְבָא֖וֹת are present (sheva, qamats, and tipeḥa). A ḥolam male dot also seems to be represented.",
       "romanized": [
         "sheva",
         "qamats",
