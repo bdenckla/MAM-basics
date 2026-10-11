@@ -1817,3 +1817,40 @@ and turn 09's `:502`, count the base before its line-4 pointer, as it stands at
 [`8c2fa6c3442997a1cdf4c08504974c5db8fbd38d`](https://github.com/bdenckla/MAM-basics/blob/8c2fa6c3442997a1cdf4c08504974c5db8fbd38d/doc/PLAN-remediate-review-findings-2026-09-26.md);
 at the archive each is one higher. This update's `:308–309` and `:319–320` count the archived
 base. Line numbers in the plain retirement plan are unchanged at the archive.
+
+## Dispositions of the remaining deferrals, 2026-10-11
+
+Recorded by Claude on 2026-10-11, New York time, in the session executing the list under "Ben's
+decision of 2026-10-09 on that answer" in `doc/PLAN-maintenance-follow-up-2026-10-08.md`, before
+that list's item 2 retires this round's records. The plan's paragraph beginning "Ben asked what
+retiring the 2026-09-29 review's records requires" found that this update's disposition tables
+were the only tracked home of ten deferrals. Ben's decision of 2026-10-09, "Follow all your
+recommendations", disposes of each of them; dismissed means dismissed under
+`doc/review-trial.md`'s "No retrospective giant backlog is opened":
+
+1. **Finding 21's code fix: dismissed.** The row for finding 21 under "Dispositions of findings 1
+   to 36, C1, E1 and the round record" deferred "the heading fix in `py/hbce_psalms/compare.py`".
+2. **Finding 22's check: moved.** The row for finding 22 there, "the next dependent refresh checks
+   that the variant reaches phonetic-hbo's page and the survey", with its retargeting in "Deferred
+   refresh finding 22: current target ownership, 2026-10-02", now lives in
+   `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, "Phonetic MAM's
+   missing qamats alternative at 2 Kings 22:1", which every dependent refresh follows.
+3. **Item 36.3: dismissed.** It deferred "whether an in-place correction of a claim that was false
+   when written needs a dated note".
+4. **Item 36.4: dismissed.** It deferred rewording attributions because "only Ben can supply the
+   words of his 2026-09-28 decisions".
+5. **Item 36.5: dismissed.** It deferred "judgment on the published memory topics and MAM-private
+   metadata".
+6. **Item 36.6: dismissed.** It deferred "differential tests of the forest modules and of the
+   freshness guard's failure path".
+7. **Item 36.7: dismissed.** It deferred "whether a loanword like "taamim" or "haazinu" is a
+   Hebrew filename component".
+8. **Item 36.8: kept, as #303.** Its subject, "the Sheet link on the English Decalogue page", is
+   the subject of #303, which a Claude session filed on 2026-10-10 at Ben's instruction and which
+   records that only a Hebrew Wikisource administrator can edit that page.
+9. **Item 36.10's suite run: dismissed.** Its row says "Deferred: running `lint-receipt` in the
+   suite."
+10. **Item 36.11: dismissed.** It deferred "whether a validator must itself dispatch over every
+    recognized template".
+
+No deferral of this round remains in this update.
