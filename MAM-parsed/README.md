@@ -5,8 +5,8 @@ This MAM-basics product directory contains
 in the Wikisource-derived MAM-parsed-plus format under `plus/`.
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
 
-`plus/` contains one JSON file for each of the 24 books of the Miqra. Hebrew
-Wikisource supplies the source data.
+The `plus/` folder contains one JSON file for each of the 24 books of the Miqra.
+Hebrew Wikisource supplies the source data.
 
 Until 2026-09-28 this directory also held a second format, MAM-parsed plain, under `plain/`. It was
 retired that day and is no longer generated or distributed. Git history keeps it:
@@ -26,8 +26,8 @@ parse trees that "know" about the Wikitext template format.
 
 The format adds conveniences for consumers, including a `good_ending_plus` key
 in each `book39` object, targeted scroll-difference notes, and an explicit
-template for each atom with special letters. Source boundary records such as the
-0 (zero) and תתת (triple-tav) pseudo-verses are absent.
+template for each atom with special letters. The 0 (zero) and תתת (triple-tav)
+pseudo-verses are absent.
 
 For detailed documentation of the file structures, see:
 
