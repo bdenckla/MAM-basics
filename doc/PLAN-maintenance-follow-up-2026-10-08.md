@@ -1,10 +1,13 @@
 # PLAN — follow-up to the 2026-10-07 repository maintenance
 
-State: live; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09; Ben decided on
-2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; Ben reported on
-2026-10-09 that its live deployment on his Windows machines is done. Workstream C executed
-2026-10-09: the public half after Ben approved the list in “C1. Public audit result,
-2026-10-08”, and the private half the same day.
+State: executed 2026-10-11; written 2026-10-08. Workstream A executed 2026-10-08 and 2026-10-09;
+Ben decided on 2026-10-09 to keep `collect` and `text_of`. Workstream B executed 2026-10-08; Ben
+reported on 2026-10-09 that its live deployment on his Windows machines is done. Workstream C
+executed 2026-10-09: the public half after Ben approved the list in “C1. Public audit result,
+2026-10-08”, and the private half the same day. The list under Ben's decision of 2026-10-09
+executed 2026-10-11. Only acts on Ben's other Windows machines remain, his to run: item 4's
+`--sync-user-config`, and the `project_doc_max_bytes` key that the decision table leaves to
+other machines.
 
 Written by Claude (Opus 5.5) on 2026-10-08, New York time, in the session that ran the
 2026-10-07 maintenance from `C:/Users/BenDe/GitRepos2/MAM-basics`. Ben had to switch that
@@ -61,6 +64,13 @@ Ben's decision of 2026-10-09 on that answer and the private half's other recomme
 because this session's context is pretty full". Each item awaits that session unless marked:
 
 1. Recycle all of `C:/Users/BenDe/GitRepos2/MAM-basics/.novc/` after an inventory.
+   **Done 2026-10-11.** The clone was clean on `main` at `38a8db9a`, with no stash or other
+   worktree, and no process's command line named it. The inventory found 9,949 files in 8,908
+   directories, 179,592,067 bytes in all, 177,030,722 of them under `review-2026-09-29/`, with no
+   reparse point and no path longer than 183 characters. `.novc/` went to the Recycle Bin at 08:51
+   New York time, and its payload,
+   `C:/$RECYCLE.BIN/S-1-5-21-784094513-2382945211-1761994834-1001/$RB458H5.novc`, matches the
+   inventory's file, directory and byte counts.
 2. Retire the 2026-09-29 review's records. First move finding 22's next-refresh check into
    `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, and dismiss
    the other deferrals under `doc/review-trial.md`'s "No retrospective giant backlog is
@@ -68,22 +78,30 @@ because this session's context is pretty full". Each item awaits that session un
    2026-10-10 Ben had it filed as #303, which also records that only a Hebrew Wikisource
    administrator can edit that page. Then make one deleting commit with the corrections above.
    **Done 2026-10-11.** `be9c03961dcd970a620cd66b861b6aeaf0d58af3` moved the check and recorded
-   the ten dispositions in the turn-01 update. The commit after it deleted the 14 records and made
-   the corrections above, linking the records at `be9c0396`, its parent, whose member blobs its
-   message lists. Besides the passages those corrections cover, the census found only name-only
-   mentions, which stay: C1's below and the 2026-10-02 trial review's evidence list in
-   `doc/dual-agent-review.md`. Every MAM-private hit names MAM-private's own 2026-09-29 review
-   records, and hbofonts has none. The answer above's "No tracker cites a member" predates #303,
-   whose body links turn 01 and its update at `3982871623dab43c84f163f5090d1d24a894d4ff`; those
-   permalinks stay valid, and no other issue, pull request or comment updated in Ben's trackers
-   since 2026-10-08 names a member.
+   the ten dispositions in the turn-01 update. `9200f5559256987178842e782303c0b1a7f3cbbd` deleted
+   the 14 records and made the corrections above, linking the records at `be9c0396`, its parent,
+   whose member blobs its message lists; GitHub serves each member there with that blob. Besides
+   the passages those corrections cover, the census found only name-only mentions, which stay:
+   C1's below and the 2026-10-02 trial review's evidence list in `doc/dual-agent-review.md`.
+   Every MAM-private hit names MAM-private's own 2026-09-29 review records, and hbofonts has none.
+   The answer above's "No tracker cites a member" predates #303, whose body links turn 01 and its
+   update at `3982871623dab43c84f163f5090d1d24a894d4ff`; those permalinks stay valid, and no other
+   issue, pull request or comment updated in Ben's trackers since 2026-10-08 names a member.
 3. Delete the merged local branch `dar-2026-09-29`, at `b8700f12`, in
-   `C:/Users/BenDe/GitRepos/MAM-basics`, with `git branch -d`.
+   `C:/Users/BenDe/GitRepos/MAM-basics`, with `git branch -d`. **Done 2026-10-11.** It was still
+   at `b8700f122298c6e070737a13c9a6b5e80aad33dc`, an ancestor of `main`, and `git branch -d`
+   deleted it. Its upstream branch was already gone from GitHub; the clone keeps a stale
+   remote-tracking ref for it, at `3bd8d24c`, until a pruning fetch.
 4. Append to `dot-Codex/user-wide-AGENTS.md`, “Task prompts and handoffs”, after "provide a
    standalone prompt for the next session.": "Work that waits only on Ben's answers to
    decisions asked in the same report is not work for another session: ask them, and continue
    here once he answers. Write the prompt only for work that must move to another session,
-   after the decisions it depends on are recorded." Then deploy it.
+   after the decisions it depends on are recorded." Then deploy it. **Done 2026-10-11.**
+   `79c923957188007a2ffd70dd6ece60103cbeec97` appended it. After the push, `--sync-user-config`
+   on the laptop that ran the 2026-10-07 maintenance deployed four destinations from `origin/main`
+   at that commit, among them both homes of the refresh skill that item 2 changed, and `--check`
+   reported `USER_CONFIG_PROBLEM_COUNT=0`. Ben's other Windows machine still needs the same sync;
+   that run is his.
 5. Leave the unoffered opportunities that workstream B lists: done, no action.
 
 ## A. Read the census's note prose with phase 3's closed reader
