@@ -905,7 +905,7 @@ def _pointed_ketiv(numbers):
                 "alef at 2 Kings 4:7, omitting the adopted form's CGJ now that "
                 "qubuts and qamats have separate hosts. It places only the tsere "
                 "on a medial artificial alef at Ezekiel 14:14, 14:20 and 28:3; "
-                "munah and atnah remain on nun. All four original MAM clauses "
+                "munaḥ and atnaḥ remain on nun. All four original MAM clauses "
                 "remain verbatim in the notes. Of the "
                 "forms, ",
                 numbers.snap(
