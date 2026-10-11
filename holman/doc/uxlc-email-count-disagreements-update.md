@@ -30,3 +30,16 @@ sentence, the second of its paragraph: before `cb5bcda1` the sentence read "The 
 `C:/Users/BenDe/GitRepos/MAM-basics` with that repository's venv:", and it now reads "The
 method, run from the root of a full MAM-basics clone with that clone's own venv:". The rest of
 that entry stands.
+
+## 2026-10-11: the cited review update is archived
+
+Recorded by Claude on 2026-10-11, New York time, in the session that executed item 2 of the list
+under "Ben's decision of 2026-10-09 on that answer" in
+`doc/PLAN-maintenance-follow-up-2026-10-08.md`. The 2026-10-03 entry above says that Ben selected
+the wording "among the census fixes that `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`
+records under "Live texts pinned to the primary forest fixed, 2026-10-01"". That update has been
+retired from the tracked tree with the rest of the 2026-09-29 review's records; the section remains
+in the archived
+[update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md)
+of that review's
+[turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md).

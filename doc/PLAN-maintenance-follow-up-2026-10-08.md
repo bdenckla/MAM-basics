@@ -67,6 +67,16 @@ because this session's context is pretty full". Each item awaits that session un
    opened". Item 36.8, the English Decalogue page's surviving Sheet link, is kept: on
    2026-10-10 Ben had it filed as #303, which also records that only a Hebrew Wikisource
    administrator can edit that page. Then make one deleting commit with the corrections above.
+   **Done 2026-10-11.** `be9c03961dcd970a620cd66b861b6aeaf0d58af3` moved the check and recorded
+   the ten dispositions in the turn-01 update. The commit after it deleted the 14 records and made
+   the corrections above, linking the records at `be9c0396`, its parent, whose member blobs its
+   message lists. Besides the passages those corrections cover, the census found only name-only
+   mentions, which stay: C1's below and the 2026-10-02 trial review's evidence list in
+   `doc/dual-agent-review.md`. Every MAM-private hit names MAM-private's own 2026-09-29 review
+   records, and hbofonts has none. The answer above's "No tracker cites a member" predates #303,
+   whose body links turn 01 and its update at `3982871623dab43c84f163f5090d1d24a894d4ff`; those
+   permalinks stay valid, and no other issue, pull request or comment updated in Ben's trackers
+   since 2026-10-08 names a member.
 3. Delete the merged local branch `dar-2026-09-29`, at `b8700f12`, in
    `C:/Users/BenDe/GitRepos/MAM-basics`, with `git branch -d`.
 4. Append to `dot-Codex/user-wide-AGENTS.md`, “Task prompts and handoffs”, after "provide a

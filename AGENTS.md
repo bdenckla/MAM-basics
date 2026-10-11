@@ -239,8 +239,9 @@ Follow the common instruction body's “Tests are differential or lint-shaped”
 `doc/agent-planning-principles.md`, “Generated Outputs Are the Tests”, carries that rule's dated
 evidence and rationale. The `ws_bot` tests remain a deliberate exception because a live
 Wikisource edit is an outward-facing act with no regeneratable artifact. By Ben's decision of
-2026-09-30, which `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md` records under
-“Ben's decisions and approval of the package, 2026-09-30”, the five stub test ids of
+2026-09-30, which the 2026-09-29 review's archived
+[turn-01 update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md)
+records under “Ben's decisions and approval of the package, 2026-09-30”, the five stub test ids of
 `py/tests/test_wikisource_special_page_download.py` are a second exception. Its four
 fault-injection ids hold five cases: each checks that a bad API response or bad local metadata
 makes the special-page download raise, and all but the last, a manifest overwritten with "not

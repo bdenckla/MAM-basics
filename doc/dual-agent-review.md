@@ -358,9 +358,11 @@ session whose recorded source branch is the carrier, it checks that branch out i
 working directory, as two checkouts in `$HOME/GitRepos2/MAM-basics` on 2026-09-30 indicate. A full
 clone that a task has returned to `main` can therefore be on the carrier again when a later session
 starts. Each task verifies the branch before acting, and only the task that owns the current turn
-switches the clone back to `main` (Ben's decision, 2026-10-01, whose words
-`doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`, "Ben's approval of D11's sentences on
-the app's checkouts, 2026-10-01", records). Do not create a second remote review branch to match a
+switches the clone back to `main` (Ben's decision, 2026-10-01, whose words the 2026-09-29
+review's archived
+[turn-01 update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md),
+"Ben's approval of D11's sentences on the app's checkouts, 2026-10-01", records). Do not create a
+second remote review branch to match a
 local carrier branch. A linked worktree uses the worktree's home clone's venv by absolute path;
 development commands, edits, staging and commits run in the checkout that owns the current turn.
 
@@ -508,9 +510,18 @@ supports only an interval for each turn. Turns 09 to 11 ran at each agent's top 
 Ben decided on 2026-09-30. Turn 10 accepted every point of turn 09 and listed no unresolved
 disagreement, and turn 11 acknowledged turn 10 without an objection. Ben answered the close-out
 package's six questions and, in its seventh, approved the package on 2026-09-30; his decisions
-are recorded in `doc/dual-agent-review-2026-09-29-turn-01-claude-update.md`. The package
-reserved every fix for the fresh-task remediation plan,
-`doc/PLAN-remediate-review-findings-2026-09-29.md`.
+are recorded in turn 01's update. The package reserved every fix for the fresh-task remediation
+plan.
+
+The round's 14 records, its eleven turns, turn 01's update and the remediation plan with its
+update, were removed on 2026-10-11, once turn 01's update had recorded, by Ben's decision of
+2026-10-09, the disposition of each deferral that only it held.
+`be9c03961dcd970a620cd66b861b6aeaf0d58af3`, the parent of the commit that removed them, holds them
+all; there are
+[turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md),
+its [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md),
+the [remediation plan](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29.md)
+and the plan's [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29-update.md).
 
 ### Remediation approvals: D7 and the risk ordering
 

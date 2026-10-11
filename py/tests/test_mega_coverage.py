@@ -363,7 +363,7 @@ NOT_IN_MEGA: dict[str, str] = {
         " py/verify_mp/expanded_stack_grammar_parser_stage.lock.json, so rewriting the"
         " lock on every run would make that check pass by construction.  Run it by"
         " hand when a legitimate new raw nesting stops parse-ws.  Recorded in"
-        " doc/PLAN-remediate-review-findings-2026-09-29.md, finding 16."
+        " https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29.md (update https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29-update.md), finding 16."
     ),
     "py/main_diff.py mpplus --old A --new B": (
         "Claude-written, accepted by Ben on 2026-09-10: a one-off comparison of two"
@@ -492,7 +492,7 @@ NOT_IN_MEGA: dict[str, str] = {
         "Ben's decision, 2026-09-30, approving a Claude-written proposal: it checks the"
         " Hebrew forms of one dated receipt against hbce-psalms/, and writes nothing."
         "  Recorded in py/main_hbce_psalms.py's docstring, hbce-psalms/README.md and"
-        " doc/PLAN-remediate-review-findings-2026-09-29.md."
+        " https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29.md (update https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29-update.md)."
     ),
     "py/check_all.py": (
         "Claude-written, accepted by Ben on 2026-09-10: it is book-of-job's register"

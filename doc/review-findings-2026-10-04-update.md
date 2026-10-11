@@ -1324,3 +1324,26 @@ comma form (`doc/PLAN-remediate-review-findings-2026-09-26.md:131`," cites a rec
 retired from the tracked tree. It remains, with that line numbering, at
 [September 26 remediation plan](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26.md),
 with its [update](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-26-update.md).
+
+## Archived receipt references, 2026-10-11
+
+Recorded by Claude on 2026-10-11, New York time, in the session that executed item 2 of the list
+under "Ben's decision of 2026-10-09 on that answer" in
+`doc/PLAN-maintenance-follow-up-2026-10-08.md`. The base's "five lines in four dated records,
+which stay as written" also cites `doc/PLAN-remediate-review-findings-2026-09-29.md:213` and
+`:561` and `doc/dual-agent-review-2026-09-29-turn-01-claude.md:417`, and its "The September 29
+round's finding 22 stays deferred" cites
+`doc/dual-agent-review-2026-09-29-turn-01-claude-update.md:1782–1798`. Those records have been
+retired from the tracked tree and remain at these immutable locations:
+
+- [turn 01](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/dual-agent-review-2026-09-29-turn-01-claude-update.md); and
+- the [September 29 remediation plan](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29.md)
+  and its [update](https://github.com/bdenckla/MAM-basics/blob/be9c03961dcd970a620cd66b861b6aeaf0d58af3/doc/PLAN-remediate-review-findings-2026-09-29-update.md).
+
+The plan's `:213` and `:561` count it before its line-4 pointer, as at
+[`38a8db9a`](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-29.md);
+at the archive they are `:214` and `:562`. Turn 01's `:417` and its update's `:1782–1798` are
+unchanged there. Finding 22's check, which that base item keeps deferred, now lives in
+`dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, "Phonetic MAM's
+missing qamats alternative at 2 Kings 22:1".
