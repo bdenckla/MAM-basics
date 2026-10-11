@@ -1397,3 +1397,21 @@ reviewer found no material prose or translation defects. The three focused prose
 and mark lints passed, and `git diff --check` passed. Mega and full suite remain
 on the approved nightly cadence; focused regeneration, source reconciliation,
 inspection, review and lints cover this consolidated prose batch.
+
+## Center manuscript images — 2026-10-11
+
+**Status:** Implemented. Ben requested “Center images.” All ten manuscript crops,
+including the marginal-note crop, and their captions are centered in the
+study through its shared CSS rules.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`212e9c0ccf5598aa868265ac599994c76dc97792` before editing. Codex owns the layout
+change, focused verification, commit and normal push.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 files and both font copies. All ten image elements use the shared centering
+rule. The generated diff was read and changes only the two CSS rules; the page
+body and images are unchanged. `git diff --check` passed. Mega and full suite
+remain on the approved nightly cadence; regeneration and stylesheet inspection
+cover this layout-only change.
