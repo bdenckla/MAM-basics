@@ -910,11 +910,6 @@ def render(verses, rows):
                     "class": "pointed foi-verse qvlk-hebrew-display",
                 },
             ),
-            mb_html.heading_level_3("MAM qere"),
-            mb_html.para(
-                mb_html.span(example["qere"], {"class": _QERE_TAG}),
-                {"dir": "rtl", "lang": "hbo", "class": "pointed qvlk-hebrew-display"},
-            ),
             mb_html.heading_level_3("Current MAM doc-note"),
         ]
         if example["notes"]:

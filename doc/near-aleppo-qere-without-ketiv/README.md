@@ -70,8 +70,10 @@ source fragment from Scripture, excluding note bodies and copied MAM lemmas.
 The study validates that fragment's two literal parameters and agreement of its
 whole qere with MAM. The current source notation is omitted because every selected
 call's first parameter is the bracketed qere and its second parameter is the qere.
-The standalone “MAM qere” displays retain all qere letters and marks without the
-MAM-with-doc brackets; quoted MAM notes retain their original text and brackets.
+The separate “MAM qere” displays are also omitted because they repeat the qere
+in each NAEE excerpt. The excerpt renderer requires exact agreement with MAM,
+including every letter and mark. Quoted MAM notes retain their original text
+and brackets.
 Inline Hebrew with marks uses pointed styling. Unpointed Hebrew in prose inherits
 the surrounding font while retaining Hebrew language metadata and RTL isolation.
 
@@ -143,6 +145,8 @@ now starts with “Near-Aleppo encoding”, before the NAEE excerpt and manuscri
 discussion. Current encoding and pending intended additional templates have
 separate labels. Ben requested removal of the repeated source-notation blocks
 on 2026-10-11 because they add no independent information beyond the MAM qere.
+The separate MAM qere displays were subsequently removed after a comparison
+confirmed agreement with the NAEE qere in all cases.
 All current source fragments are read afresh from `out/near-aleppo/plus/`; they
 are not copied into the study metadata.
 

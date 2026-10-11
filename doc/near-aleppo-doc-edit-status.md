@@ -2266,3 +2266,36 @@ and both font copies. All source and generated diffs and the nine generated
 headings were read; the only product change is their wording. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence for this
 heading-only change. Codex owns commit and normal push.
+
+## Remove the duplicate MAM qere displays — 2026-10-11
+
+**Status:** Implemented. Ben requested removal of the “MAM qere” sections if their
+qere agrees with the NAEE qere in every case. A direct comparison of the displayed
+forms confirms exact agreement in all nine cases, including every letter and mark.
+The existing excerpt renderer independently requires this agreement. The revision
+removes the nine standalone headings and displays, retaining the MAM qere values
+and checks used by the renderer. “Current source notation” remains removed. The
+NAEE excerpts, quoted MAM notes, translations and all other study content are
+preserved. The source README is updated. This supersedes the standalone MAM
+qere display requirement.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`8949d95161e8b2b8ff66efd7d3ce2c3ca5c92b3e` before editing. Codex owns the
+generator edit, README, regeneration, focused verification, commit and normal
+push. Source readings, dataset calls, deferred work and Ben's request file remain
+unchanged. Run Black, the real HTML build and read-only comparison, compare the
+regenerated page with the baseline after only the duplicate-section removals,
+read all diffs and generated content, and run `git diff --check`. Mega and full
+suite remain on the approved nightly cadence for this presentation change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. Before editing, a direct comparison
+of the nine displayed MAM and NAEE qere pairs confirmed identical letters and
+marks, without normalization. After regeneration, a differential comparison
+confirmed removal of all nine standalone MAM qere sections and preservation of
+every other byte of the page. This includes all excerpts, notes, translations,
+table values, images and metadata. The existing source and excerpt agreement
+checks remain unchanged. All source and generated diffs and the regenerated
+case sections were read. `git diff --check` passed. Mega and full suite remain
+on the approved nightly cadence for this presentation-only change.
