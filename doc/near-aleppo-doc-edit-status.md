@@ -2058,3 +2058,34 @@ were read, and the generated lead-in and bullets were read back. The only
 product change is the requested lead-in and three bullets; all other study
 content remains unchanged. `git diff --check` passed. Mega and full suite
 remain on the approved nightly cadence for this prose-only revision.
+
+## Explain agreement wording in MAM note translations — 2026-10-11
+
+**Status:** Implemented. Ben supplied a replacement translation paragraph explaining
+the presentation of Hebrew notes and English translations, expanded abbreviated
+wording, and the ambiguity of the example note "=ל-קרי". The paragraph quotes
+the current “agrees” translation and describes “is consistent with” as more
+conservative, relating the implied qere to body niqqud, if any, and marginal
+qere letters. The revision uses the supplied wording, adds the missing opening
+quotation mark before the final suggested translation, and isolates the Hebrew
+note for direction. This supersedes the previous introductory translation paragraph;
+the case translations themselves remain unchanged.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`d55532b2d18404e7599aa490236a083517d9ada0` before editing. Codex owns the
+generator edit, regeneration, focused verification, commit and normal push.
+Only `py/near_aleppo/foi_qere_without_ketiv.py`,
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html` and this ledger change.
+All other study content and deferred work remain unchanged; Ben's request file
+remains read-only. Run Black, the real HTML build and read-only comparison,
+inspect the generated paragraph and all diffs, and run `git diff --check`.
+Mega and full suite remain on the approved nightly cadence for this prose change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read, and the generated paragraph was read back. The only product change
+is the requested introductory paragraph, with the quotation mark correction
+described above; all case translations and other study content are unchanged.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this prose-only revision.
