@@ -369,7 +369,12 @@ def _translation_blocks(blocks, names):
         elif block["kind"] == "hebrew":
             result.append(
                 mb_html.para(
-                    block["text"], {"dir": "rtl", "lang": "hbo", "class": "pointed"}
+                    block["text"],
+                    {
+                        "dir": "rtl",
+                        "lang": "hbo",
+                        "class": "pointed qvlk-hebrew-display",
+                    },
                 )
             )
         else:
@@ -688,7 +693,8 @@ def render(verses, rows):
             ),
             mb_html.heading_level_3("MAM qere"),
             mb_html.para(
-                example["qere_html"], {"dir": "rtl", "lang": "hbo", "class": "pointed"}
+                example["qere_html"],
+                {"dir": "rtl", "lang": "hbo", "class": "pointed qvlk-hebrew-display"},
             ),
             mb_html.heading_level_3("Current MAM doc-note"),
         ]

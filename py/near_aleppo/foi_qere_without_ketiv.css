@@ -6,4 +6,6 @@
 .qvlk-study .qvlk-caption { font-size: 0.9em; text-align: center; }
 .qvlk-study .romanized { font-style: italic; }
 .qvlk-study .qvlk-source { line-height: 1.8; }
+.qvlk-study .qvlk-hebrew-display, .qvlk-study .qvlk-source { text-align: center; }
+.qvlk-study .qvlk-marginal-lines { margin-inline: auto; }
 .qvlk-study .qvlk-source code { font-family: inherit; overflow-wrap: anywhere; }

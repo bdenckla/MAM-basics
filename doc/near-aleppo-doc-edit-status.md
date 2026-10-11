@@ -1415,3 +1415,24 @@ rule. The generated diff was read and changes only the two CSS rules; the page
 body and images are unchanged. `git diff --check` passed. Mega and full suite
 remain on the approved nightly cadence; regeneration and stylesheet inspection
 cover this layout-only change.
+
+## Center short Hebrew displays — 2026-10-11
+
+**Status:** Implemented. Ben requested centering short displayed Hebrew, specifically
+the MAM qere and current source-notation values. This batch centers those values
+and the Hebrew quotations in English translations. The inferred marginal-note
+block is centered as a whole while preserving its RTL layout and one word per line.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a1296f9faf50d49711965355d9c84a02eb093c33` before editing. Codex owns the layout
+change, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and contains only centering rules and display-class assignments. The nine
+qere values, nine source-notation values, four translated Hebrew quotations and
+one inferred marginal-note block use the centering rules. Text, marks, RTL
+attributes, word order, images and manuscript observations are preserved.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; regeneration and stylesheet/markup inspection cover this layout-only change.
