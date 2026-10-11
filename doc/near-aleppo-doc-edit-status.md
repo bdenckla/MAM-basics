@@ -1677,3 +1677,34 @@ read and changes only the requested wording and resulting line wrapping; every
 existing qere call and all pending additional-template assessments are preserved.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Summarize the cases in a compact table — 2026-10-11
+
+**Status:** Implemented. Ben requested a table instead of the numbered verse list,
+with narrow columns and defined abbreviations. At minimum the table must record
+niqqud presence and horizontal-space presence, independently of whether niqqud
+occupy or lie beneath that space. Use N and H with +/− values, and a position
+column with BW for between written words and EOL for the end of a manuscript line.
+Preserve the verse links to the full case discussions and the shared statement
+about masorah circles. The table summarizes manuscript readings, not current
+dataset encodings.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a833ad895408061c30d4a40562175d80f2c6ec66` before editing. Codex owns implementation,
+regeneration, focused verification, commit and normal push. A read-only reviewer
+owns independent reconciliation of the nine readings and body-text crops.
+
+**Verification:** Black passed on the generator. The initial render rejected the
+unsupported caption element; the table now uses a supported section heading,
+explicit table label and linked legend, with no shared HTML-writer changes.
+HTML regeneration and read-only comparison passed for all 95 files and both font
+copies. The source and generated diffs were read. The table's nine values and
+positions agree with the image readings; an independent reviewer inspected all
+nine body-text crops and found no mismatches or consequential implementation
+defects. Codex also inspected the seven crops used for the newly explicit BW
+positions. The existing verse links, Scripture, MAM notes, translations, images,
+current dataset calls and tentative ḥolam male qualification are preserved.
+The three focused prose and mark lints passed, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+image reconciliation, review and lints cover this study-table change.

@@ -27,6 +27,18 @@ file as Ben supplies further readings or revises an assessment. A case without a
 image reading has `reading`, `observation`, and `crop` set to `null`; the page
 states that an image reading has not yet been recorded.
 
+The linked case summary table replaces the numbered verse list. Its narrow
+columns use N for niqqud presence, H for horizontal space in the line
+of letters, and Pos. for position. The legend defines +/− as present/absent and
+BW/EOL as between written words/end of a manuscript line. The presence values
+come from the three closed `intended_encoding.kind` classifications of the
+recorded manuscript readings, rather than the current dataset calls. The
+position comes from each reading's explicit `line_position`; a reviewed reading
+without a recognized position fails the build. Unreviewed cases show question
+marks, with that meaning added to the legend only when needed. The table does
+not promote the tentative ḥolam male at 2 Kings 19:31 to a confirmed reading:
+the recorded below-marks already establish niqqud presence.
+
 The primary `crop` records the body-text image. It may also contain the explicitly
 named `marginal_qere_note` crop, with its own filename and supplied screenshot.
 The renderer validates both crop records and displays the body text and marginal

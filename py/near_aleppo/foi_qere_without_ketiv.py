@@ -45,6 +45,15 @@ _ADDITIONAL_TEMPLATES = {
     "marks-without-space": MARKS_WITHOUT_LETTER_OR_SPACE,
     "space-without-marks": None,
 }
+_SUMMARY_PRESENCE = {
+    "marks-with-space": ("+", "+"),
+    "marks-without-space": ("+", "−"),
+    "space-without-marks": ("−", "+"),
+}
+_LINE_POSITIONS = {
+    "between written words": "BW",
+    "end of a manuscript line": "EOL",
+}
 _HEBREW = re.compile(r"([\u0590-\u05ff]+)")
 
 
@@ -97,6 +106,11 @@ def records():
             or not row["observation"]
         ):
             raise ValueError(f"Incomplete image reading: {identity}")
+        if (
+            row["reading"] is not None
+            and row["reading"].get("line_position") not in _LINE_POSITIONS
+        ):
+            raise ValueError(f"Invalid or missing line position: {identity}")
         intended = row["intended_encoding"]
         if intended is None:
             if row["reading"] is not None:
@@ -450,6 +464,77 @@ def _template_name(name):
     return mb_html.bdi(name, {"dir": "rtl", "lang": "hbo", "class": "name"})
 
 
+def _case_summary(rows):
+    """Summarize recorded body-text features with explicit presence and position roles."""
+    header = mb_html.table_row(
+        [
+            mb_html.table_header("Verse", {"scope": "col"}),
+            mb_html.table_header(
+                mb_html.abbr("N", {"title": "Niqqud in the body text"}),
+                {"scope": "col"},
+            ),
+            mb_html.table_header(
+                mb_html.abbr("H", {"title": "Horizontal space in the line of letters"}),
+                {"scope": "col"},
+            ),
+            mb_html.table_header(
+                mb_html.abbr("Pos.", {"title": "Position in the manuscript line"}),
+                {"scope": "col"},
+            ),
+        ]
+    )
+    table_rows = []
+    for row in rows:
+        intended = row["intended_encoding"]
+        if intended is None:
+            niqqud, space, position = "?", "?", "?"
+        else:
+            niqqud, space = _SUMMARY_PRESENCE[intended["kind"]]
+            line_position = row["reading"]["line_position"]
+            position = mb_html.abbr(
+                _LINE_POSITIONS[line_position], {"title": line_position}
+            )
+        table_rows.append(
+            mb_html.table_row(
+                [
+                    mb_html.table_header(
+                        mb_html.anchor_h(
+                            _reference_text(row["reference"]), "#" + row["id"]
+                        ),
+                        {"scope": "row"},
+                    ),
+                    mb_html.table_datum(niqqud),
+                    mb_html.table_datum(space),
+                    mb_html.table_datum(position),
+                ]
+            )
+        )
+    legend = (
+        "N records whether any niqqud are present in the body text. "
+        "H records whether horizontal space is present in the line of letters, "
+        "with or without niqqud in or under that space. A plus sign (+) means "
+        "present, and a minus sign (−) means absent. Pos. records position: "
+        "BW means between written words, and EOL means at the end of a manuscript line."
+    )
+    if any(row["reading"] is None for row in rows):
+        legend += " A question mark (?) means that a reading has not yet been recorded."
+    return [
+        mb_html.heading_level_2("Case summary"),
+        mb_html.div(
+            mb_html.table(
+                [header, *table_rows],
+                {
+                    "class": "qvlk-case-summary",
+                    "aria-label": "Case summary",
+                    "aria-describedby": "qvlk-summary-key",
+                },
+            ),
+            {"class": "table-wrap"},
+        ),
+        mb_html.para(legend, {"id": "qvlk-summary-key", "class": "qvlk-summary-key"}),
+    ]
+
+
 def _encoding_guide():
     return mb_html.div(
         [
@@ -679,12 +764,7 @@ def render(verses, rows):
         ),
         _comparison_summary(rows, reviews),
         _encoding_guide(),
-        mb_html.ordered_list(
-            [
-                mb_html.anchor_h(_reference_text(row["reference"]), "#" + row["id"])
-                for row in rows
-            ]
-        ),
+        *_case_summary(rows),
     ]
     for row in rows:
         reference = tuple(row["reference"])
