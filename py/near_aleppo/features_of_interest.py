@@ -33,6 +33,7 @@ class Case:
     label: str
     description: str
     references: tuple
+    compare_mam: bool = False
 
     @property
     def title(self):
@@ -74,10 +75,16 @@ CASES = (
     ),
     Case(
         "isaiah-26-20",
-        "a yod in the ketiv",
-        "The ketiv דלתיך has a yod absent from the qere דלתך. "
-        "Compare the pointing and width of the two readings.",
+        "MAM ketiv/qere inside a three-atom maqaf compound",
+        "In MAM, the ketiv יעבור and qere יַעֲבׇר occupy the middle atom "
+        "of the compound עַד־יַעֲבׇר־זָֽעַם. "
+        "NAEE displays עַד־יַעֲבָור־זָֽעַם, with no qere above the middle atom. "
+        "This follows MAM's note, which reports the ketiv and no qere note "
+        "in the Aleppo Codex. In forming the near-Aleppo dataset, we inferred "
+        "the ketiv's pointing from the qere. "
+        "The boxed דלתיך / דלתך earlier in the verse is a separate pair.",
         ((tbn.BK_ISAIAH, 26, 20),),
+        compare_mam=True,
     ),
     Case(
         "1-chronicles-9-4",
@@ -158,6 +165,15 @@ def _case_contents(case, verses):
         mb_html.heading_level_2(title, {"id": case.identifier}),
         mb_html.para(case.description),
     ]
+    if case.compare_mam:
+        contents.append(
+            mb_html.para(
+                mb_html.anchor_h(
+                    "Compare this verse in MAM-with-doc",
+                    vel.mam_with_doc_url(*case.references[0]),
+                )
+            )
+        )
     if case.identifier == "qere-without-ketiv":
         contents.append(
             mb_html.para(
