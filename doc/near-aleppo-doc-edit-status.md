@@ -776,9 +776,9 @@ full clone `C:/Users/BenDe/GitRepos2/MAM-basics`, clean on main at
 **Correction:** The guide's Isaiah entry now identifies MAM's compound
 עַד־יַעֲבׇר־זָֽעַם and links to its MAM-with-doc display. It explains NAEE's
 existing display עַד־יַעֲבָור־זָֽעַם without qere above the middle atom:
-MAM's note reports the ketiv and no qere note in the Aleppo Codex, and NAEE's
-existing policy infers the ketiv's pointing from the qere. This correction
-attributes the manuscript report to MAM's note; no manuscript image was
+MAM's note reports the ketiv and no qere note in the Aleppo Codex. In forming
+the near-Aleppo dataset, we inferred the ketiv's pointing from the qere. This
+correction attributes the manuscript report to MAM's note; no manuscript image was
 consulted. The description distinguishes the earlier boxed דלתיך / דלתך pair.
 
 **Verification and scope:** Black passed. HTML regeneration changed only the
@@ -791,3 +791,10 @@ existing pytest-cache permission warning. Scripture, pointing inputs, edition
 book pages and shared styles are unchanged. The full mega and suite remain
 on the approved nightly cadence; focused regeneration and the artifact
 comparison cover this guide correction.
+
+**Wording correction, 2026-10-11:** Corrected by Codex at Ben's request.
+The guide now says “In forming the near-Aleppo dataset, we inferred the ketiv's
+pointing from the qere” rather than attributing the inference to NAEE.
+Black and HTML regeneration passed; the generated diff changes only that
+sentence and its line wrapping. The live ledger's description is corrected
+in place. Data and verse displays are unchanged.

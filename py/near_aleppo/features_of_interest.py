@@ -80,7 +80,8 @@ CASES = (
         "of the compound עַד־יַעֲבׇר־זָֽעַם. "
         "NAEE displays עַד־יַעֲבָור־זָֽעַם, with no qere above the middle atom. "
         "This follows MAM's note, which reports the ketiv and no qere note "
-        "in the Aleppo Codex; NAEE infers the ketiv's pointing from the qere. "
+        "in the Aleppo Codex. In forming the near-Aleppo dataset, we inferred "
+        "the ketiv's pointing from the qere. "
         "The boxed דלתיך / דלתך earlier in the verse is a separate pair.",
         ((tbn.BK_ISAIAH, 26, 20),),
         compare_mam=True,
