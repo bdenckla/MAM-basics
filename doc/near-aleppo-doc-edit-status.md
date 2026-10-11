@@ -2089,3 +2089,18 @@ is the requested introductory paragraph, with the quotation mark correction
 described above; all case translations and other study content are unchanged.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this prose-only revision.
+
+## Name the existing qere template explicitly — 2026-10-11
+
+**Status:** Implemented. Ben requested “every site below uses the קרי ולא כתיב
+template and will continue to do so”. The generator and study now use that
+wording. All other study content and deferred work remain unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`54bc4297756f072d080341f24b13caf76958ff76` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. The source and generated diffs and generated sentence
+were read; the only product change is the requested wording and line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.
