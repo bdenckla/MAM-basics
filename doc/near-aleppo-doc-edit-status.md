@@ -1825,3 +1825,84 @@ is removed. The source README now states the same common and varying features.
 All case discussions, notes, images, table entries and dataset calls are
 unchanged. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence because this change affects only introductory prose.
+
+## Rewrite the per-case lead-in and bullets; continue in a new chat — 2026-10-11
+
+**Status:** Active for the successor chat. Ben requested that the lead-in and
+bullets describe each case's section, rather than the page as a whole. The
+current lead-in, “The verses below show:”, introduces three bullets beginning
+“The page shows” or “The page includes”. Ben called both the lead-in and the
+repeated bullet openings awkward. Ben suggested a lead-in along the lines of
+“For each case of qere without ketiv, below we show the following”. The intended
+list contents remain the current NAEE excerpt, any relevant MAM notes, and the
+Aleppo Codex images. Write natural complete sentences, without “The page” as
+the subject of each bullet. Choose the precise wording in the successor chat;
+no additional decision from Ben is needed for this authorized prose edit.
+
+Ben also wrote: “Please record all queued request and start a new session.”
+Codex records the queue here and transfers execution after committing and
+pushing this handoff record. The rendered lead-in and bullets are unchanged
+by this handoff commit.
+
+**Queue reconciliation:** All earlier qere-study edit requests in this run
+are implemented or superseded by later requests. The latest opening paragraph
+at `a1661834d4a2186bef4a04640ddd251b23f08dc0` states the shared marginal note
+and masorah circle first, then the varying niqqud and horizontal space.
+The possible “narrow” discrepancy appears once within the additional manuscript
+remarks; separate comparisons now contain only discrepancies and have no
+entries. Manuscript remarks add only facts beyond MAM's notes. The confirmed
+omission of נְאֻם־ in MAM's Jeremiah 31:37 illustration is an observation about
+MAM's description, not a discrepancy with Ben's remarks; the original quoted
+note and its translation remain unchanged. The historical A102 request remains
+deferred under the earlier cutoff: its “The sparseness of the ketiv/qere” row
+is still present in `py/near_aleppo/doc_registers.py` and
+`gh-pages/near-aleppo/coverage-and-status.html`. Preserve that separate deferred
+request; this handoff does not extend the qere-study task to A102.
+
+**Deferred dataset decisions:** Every existing `קרי ולא כתיב` call will remain.
+The planned additional template describes niqqud and horizontal space. Dataset
+implementation is separate from this prose task. Names, syntax and call placement
+remain to be designed; `רווח בלי ניקוד` was a chat suggestion, not an approved
+design. The no-space variant for 2 Samuel 18:20 and the tentative ḥolam male
+carrier payload for 2 Kings 19:31 remain open. The official dataset README
+already links to the study. Do not implement dataset changes through this handoff.
+
+**Verified source and intended development checkout:**
+`C:/Users/BenDe/GitRepos/MAM-basics`, full clone on main, clean at
+`a1661834d4a2186bef4a04640ddd251b23f08dc0` before this ledger-only commit.
+The successor continues locally in this exact checkout from the pushed handoff
+commit supplied in its opening prompt. Codex in the successor chat owns the
+prose edit, focused verification, commit and normal push of main. This chat
+stops writing after dispatch, so there is one writer. No worktree is requested.
+
+**Files and retained requirements:** Edit
+`py/near_aleppo/foi_qere_without_ketiv.py` and regenerate
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html`. Update this ledger in place;
+Ben owns `doc/near-aleppo-requested-doc-edits.md`, which remains read-only.
+The source README is `doc/near-aleppo-qere-without-ketiv/README.md`; the study
+inputs are `in/near-aleppo/qere-without-ketiv-readings.json` and
+`in/near-aleppo/qere-without-ketiv-mam-notes-en.json`. Preserve all nine cases,
+six complete Hebrew MAM notes and English translations, centered images and
+short Hebrew displays, colored note targets, inferred marginal-note layout,
+summary-table values, excerpts, qere letters and marks, provenance and uncertainty.
+Keep the unnamed authorial voice, consistent terminology, complete sentences
+and absence of recording dates in the rendered study.
+
+**Successor checks and completion:** Read `AGENTS.md`, `doc/review-trial.md`,
+the Hebrew prose skill and its MAM-basics/rendered-prose references, and the
+iterative document editing skill. Verify exact root, HEAD, branch and status
+before edits and before staging. Use PowerShell 7 and this clone's interpreter
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` from its root.
+Run Black on the changed generator, then `py/main_near_aleppo.py --html` and
+`py/main_near_aleppo.py --html --check`. Inspect all generated diffs and run
+`git diff --check`. The expected product diff is only the study's lead-in and
+three bullets. Mega and full suite remain on the approved nightly cadence for
+this prose-only change. Commit finished work on main, fetch origin, merge if
+needed under the full-clone rules, and push normally. Record check scope in the
+commit message. Do not open a browser or launch an app preview; verify generated
+content by reading it and give an absolute file link.
+
+**Handoff verification:** The only edit in this chat is this ledger entry.
+The source and pending passages were read, and the queue was reconciled with
+the maintained ledger and request file. `git diff --check` is required before
+commit. No generator, mega or suite run is owed by this record-only change.
