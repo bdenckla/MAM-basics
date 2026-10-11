@@ -1151,14 +1151,46 @@ letters or niqqud at אֵלַ֖י and the masorah circle within the space. Its i
 body encoding assessment is `empty-body`, pending implementation. Codex inspected
 `Screenshot 2026-10-11 122537.png` and copied its unchanged bytes to
 `in/near-aleppo/img/qere-without-ketiv/aleppo-R3-5.png`; the HTML build copies
-the crop for inline display. Ruth 3:17 remains the final selected case awaiting
-an image reading.
+the crop for inline display. At that revision, Ruth 3:17 was the final selected
+case awaiting an image reading.
 
 **Verification:** HTML regeneration and read-only comparison passed for all
 94 owned files and both font copies. An independent baseline differential
 confirmed that all eight other case records and HTML sections are unchanged,
 along with the target's Scripture, MAM qere and notes, current source notation
 and links. All nine canonical/generated crop pairs have identical bytes; the
+new crop also matches the supplied screenshot. The generated HTML diff was
+read. The prose mark-order lint passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+lint cover this observation and crop update.
+
+## Ruth 3:17 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+generous space at the end of a manuscript line without niqqud, containing only
+a masorah circle. The possibility that the line ending accounts for the generous
+space accidentally remains Ben's hypothesis. All nine selected cases now have
+dated image readings and crops; dataset implementation remains pending.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a5a0e976af55940f2aed9f2c68523a3dfdda935f` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now records the generous end-of-line space
+without qere letters or niqqud at אֵלַ֔י and the masorah circle within the space.
+The spacing hypothesis is separately attributed to Ben. Its intended body
+encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 122806.png` and copied its unchanged bytes to
+`in/near-aleppo/img/qere-without-ketiv/aleppo-R3-17.png`; the HTML build copies
+the crop for inline display. The source note now covers all nine selected cases.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere and notes, current source notation
+and links. All ten canonical/generated crop pairs have identical bytes; the
 new crop also matches the supplied screenshot. The generated HTML diff was
 read. The prose mark-order lint passed (one test), and `git diff --check` passed.
 Production datasets are unchanged. Mega and full suite remain on the approved
