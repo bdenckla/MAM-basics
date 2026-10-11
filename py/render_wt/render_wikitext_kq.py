@@ -82,6 +82,16 @@ def ruby_enabled(hctx):
     return wt_help.get_renopt(hctx, "ro_ketiv_qere_ruby")
 
 
+def handle_qere_with_body(hctx, tmpl, body):
+    """Keep a qere's recorded body marks or blank in the same ruby box."""
+    mam_keys, _flags = nap.split_params(tmpl, _QVLK_KEYS, nap.FLAGS)
+    if set(mam_keys) != {"1", "2"}:
+        raise ValueError("Qere-with-body requires the complete qere-only call")
+    qere = wt_help.render_tmpl_el(hctx, tmpl, 2)
+    ruby = _ruby(body, qere, baseline_title="Body text")
+    return _flagged(hctx, tmpl, (ruby,), (ruby,))
+
+
 def handle_kq_trivial_ruby(hctx, tmpl):
     """Keep the trivial template's pointed ketiv below its pointed qere."""
     keys, _flags = nap.split_params(tmpl, _TRIVIAL_KEYS, nap.FLAGS)
@@ -99,7 +109,7 @@ def handle_kq_trivial_ruby(hctx, tmpl):
     return _flagged(hctx, tmpl, ruby, (ruby,))
 
 
-def _ruby(ketiv, qere, annotation_attrs=None):
+def _ruby(ketiv, qere, annotation_attrs=None, *, baseline_title="Ketiv"):
     """CLC's boxed ruby structure with ketiv on the baseline and qere above it.
 
     Missing readings have CLC's explicit editorial placeholders in their own slots.
@@ -107,7 +117,7 @@ def _ruby(ketiv, qere, annotation_attrs=None):
     separators. Punctuation outside the template remains outside the ruby.
     """
     baseline = (
-        renel.mk_ren_el_tc_and_attr("mam-kq-k", ketiv, {"title": "Ketiv"})
+        renel.mk_ren_el_tc_and_attr("mam-kq-k", ketiv, {"title": baseline_title})
         if ketiv is not None
         else renel.mk_ren_el_tc("near-aleppo-kq-none", "[אין כתיב]")
     )

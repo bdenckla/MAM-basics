@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "phase2_counts": {
     "מ:קמץ": 371,
     "מ:דחי": 2306,
@@ -613,7 +613,7 @@
   "phase6_counts": {
     "נוסח: notes reached": 3595,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1543,
+    "נוסח: notes given MAM's target": 1548,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {
@@ -1074,6 +1074,28 @@
     ],
     "named codex reading phase 5 does not apply": [
       ["A4-Numbers", "22", "5"]
+    ]
+  },
+  "qere_without_ketiv_counts": {
+    "qere-without-ketiv body: marks-with-space": 3,
+    "qere-without-ketiv body: marks-without-space": 1,
+    "qere-without-ketiv body: space-without-marks": 5
+  },
+  "qere_without_ketiv_sites": {
+    "qere-without-ketiv body: marks-with-space": [
+      ["B2-Judges", "20", "13"],
+      ["BC-Kings מל\"ב", "19", "31"],
+      ["BC-Kings מל\"ב", "19", "37"]
+    ],
+    "qere-without-ketiv body: marks-without-space": [
+      ["BA-Samuel שמ\"ב", "18", "20"]
+    ],
+    "qere-without-ketiv body: space-without-marks": [
+      ["BA-Samuel שמ\"ב", "16", "23"],
+      ["C2-Jeremiah", "31", "37"],
+      ["C2-Jeremiah", "50", "29"],
+      ["E2-Ruth", "3", "17"],
+      ["E2-Ruth", "3", "5"]
     ]
   }
 }

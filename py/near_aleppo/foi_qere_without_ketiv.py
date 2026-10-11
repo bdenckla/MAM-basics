@@ -2,8 +2,8 @@
 
 The shared renderer supplies Scripture and MAM notes. The existing closed
 dataset walk validates current qere-only source fragments, excluding note bodies
-and copied MAM lemmas. Authored intended encodings are documentation, not changes
-to the dataset's policy or its current source.
+and copied MAM lemmas. Recorded body templates drive the build, and the study
+checks its implemented labels against the current dataset.
 """
 
 import json
@@ -18,7 +18,8 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import verse_external_links as vel
 from mb_misc import mb_html
 from mwd import mwd_write_book
-from near_aleppo import build_paths, doc_figures
+from near_aleppo import build_paths, doc_figures, qere_without_ketiv
+from py_misc import orphan_marks
 from near_aleppo.phase2_templates import (
     MARKS_WITHOUT_LETTER,
     MARKS_WITHOUT_LETTER_OR_SPACE,
@@ -31,7 +32,7 @@ from render_wt import render_wikitext as rwt
 
 PAGE = "foi/qere-without-ketiv.html"
 TITLE = "Qere without ketiv in near-Aleppo"
-_FORMAT = "near-aleppo-qere-without-ketiv-readings-v3"
+_FORMAT = "near-aleppo-qere-without-ketiv-readings-v4"
 _QERE_TAG = "mam-kq-q-velo-k"
 _QERE_TEMPLATE = "קרי ולא כתיב"
 _NOTE_REVIEW_FORMAT = "near-aleppo-qere-without-ketiv-mam-notes-en-v2"
@@ -41,7 +42,7 @@ _COMPARISON_LABELS = {
 _ADDITIONAL_TEMPLATES = {
     "marks-with-space": MARKS_WITHOUT_LETTER,
     "marks-without-space": MARKS_WITHOUT_LETTER_OR_SPACE,
-    "space-without-marks": None,
+    "space-without-marks": orphan_marks.SPACE_WITHOUT_MARKS,
 }
 _SUMMARY_PRESENCE = {
     "marks-with-space": ("+", "+"),
@@ -124,12 +125,13 @@ def records():
         elif (
             row["reading"] is None
             or not isinstance(intended, dict)
-            or set(intended) != {"kind", "explanation"}
+            or set(intended) != {"kind", "explanation", "template"}
             or intended["kind"] not in _ADDITIONAL_TEMPLATES
             or not isinstance(intended["explanation"], str)
             or not intended["explanation"]
         ):
             raise ValueError(f"Invalid intended encoding: {identity}")
+        qere_without_ketiv.validate_encoding(row)
         for key in ("romanized", "documentation_notes"):
             if not isinstance(row[key], list) or not all(
                 isinstance(value, str) and value for value in row[key]
@@ -285,6 +287,18 @@ def _validate_near_aleppo_encodings(rows, examples):
             raise ValueError(f"Unexpected qere-only source shape: {reference}")
         if params["2"] != examples[reference]["qere"]:
             raise ValueError(f"Reconcile the dataset's whole qere: {reference}")
+        bodies = [
+            template
+            for _, template in doc_figures._templates(
+                list(scripture), reference, doc_figures._DATASET
+            )
+            if template["tmpl_name"] in _ADDITIONAL_TEMPLATES.values()
+        ]
+        expected = (
+            row["intended_encoding"]["template"] if row["intended_encoding"] else None
+        )
+        if bodies != ([expected] if expected is not None else []):
+            raise ValueError(f"Reconcile the dataset's body encoding: {reference}")
 
 
 def _mam_note_reviews(rows, examples):
@@ -497,7 +511,8 @@ def _naee_excerpt(scripture, qere, reference):
             or any(not isinstance(part, dict) for part in parts)
             or [mb_html.htel_get_tag(part) for part in parts]
             != ["span", "rp", "rt", "rp"]
-            or parts[0].get("attr", {}).get("class") != "near-aleppo-kq-none"
+            or parts[0].get("attr", {}).get("class")
+            not in ("near-aleppo-kq-none", "mam-kq-k")
         ):
             raise ValueError(f"Excerpt requires a qere-only ruby: {reference}")
         annotation = parts[2].get("contents") or ()
@@ -639,7 +654,7 @@ def _encoding_guide():
             mb_html.heading_level_2("Encoding conventions"),
             mb_html.para(
                 [
-                    "The intended encoding retains each ",
+                    "The encoding retains each ",
                     _template_name(_QERE_TEMPLATE),
                     " call and its qere, and supplements that call with one "
                     "additional template describing the body text. The "
@@ -651,17 +666,20 @@ def _encoding_guide():
             mb_html.unordered_list(
                 [
                     [
-                        "For niqqud with horizontal space above the marks, a candidate is ",
+                        "For niqqud with horizontal space above the marks, the dataset uses ",
                         _template_name(MARKS_WITHOUT_LETTER),
                         " (niqqud without a letter).",
                     ],
                     [
-                        "For niqqud without horizontal space above the marks, a candidate is ",
+                        "For niqqud without horizontal space above the marks, the dataset uses ",
                         _template_name(MARKS_WITHOUT_LETTER_OR_SPACE),
                         " (niqqud without a letter and without space).",
                     ],
-                    "Horizontal space without niqqud requires an additional template whose "
-                    "name and syntax remain open.",
+                    [
+                        "For horizontal space without niqqud, the dataset uses ",
+                        _template_name(orphan_marks.SPACE_WITHOUT_MARKS),
+                        " (space without niqqud), with no parameters.",
+                    ],
                 ]
             ),
             mb_html.para(
@@ -677,20 +695,20 @@ def _encoding_guide():
                     "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
                     "artificial carrier letters to hold the marks; those carriers "
                     "are not written manuscript letters. The carrier can be alef, "
-                    "vav, or, rarely, dalet. The carrier payload for 2 Kings 19:31 "
-                    "remains unsettled because the ḥolam male reading is tentative.",
-                    ("ḥolam male",),
+                    "vav, or, rarely, dalet. At 2 Kings 19:31, an artificial alef "
+                    "carries the orphan ḥolam dot.",
+                    ("ḥolam",),
                 )
             ),
             mb_html.para(
                 [
                     "Current status: every site below uses the ",
                     _template_name(_QERE_TEMPLATE),
-                    " template and will continue to do so. No additional template is applied "
-                    "at these sites yet. The additional templates' exact names, "
-                    "parameter shapes and call placement remain to be designed. "
-                    "Intended additional templates are labelled pending, separately "
-                    "from the current encoding.",
+                    " template. Each implemented additional template immediately precedes "
+                    "that unchanged call, with no intervening separator. The example edition "
+                    "displays the body marks or blank space below the qere in the same box. "
+                    "The box and artificial carriers are editorial display conventions; "
+                    "their widths do not measure manuscript spacing.",
                 ]
             ),
         ],
@@ -708,14 +726,22 @@ def _encoding(row):
         ]
     else:
         name = _ADDITIONAL_TEMPLATES[intended["kind"]]
+        implemented = intended["template"] is not None
         intention = [
-            mb_html.bold("Intended additional template — pending:"),
-            " ",
-            (
-                ["The proposed additional template is ", _template_name(name)]
-                if name is not None
-                else "The additional template for horizontal space without niqqud has not yet been named"
+            mb_html.bold(
+                "Additional template — implemented:"
+                if implemented
+                else "Intended additional template — pending:"
             ),
+            " ",
+            [
+                (
+                    "The additional template is "
+                    if implemented
+                    else "The proposed additional template is "
+                ),
+                _template_name(name),
+            ],
             ". ",
             *_prose(intended["explanation"], row["romanized"]),
         ]

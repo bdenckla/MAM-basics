@@ -18,6 +18,7 @@ from near_aleppo import phase5_readings as phase5
 from near_aleppo.editorial_ketiv import EditorialPointing
 from near_aleppo.reviewed_ketiv import ReviewedPointing
 from near_aleppo.frozen_ketiv import FrozenPointing, digest
+from near_aleppo.qere_without_ketiv import BodyEncodings
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER, _notes
 from near_aleppo.phase6_rename import LEGACY_NOTES
 from py_misc import unbury_doc_parts as unbury
@@ -32,6 +33,7 @@ _STAGES = (
     "frozen inferred pointing",
     "individual editorial pointing",
     "reviewed portable pointing",
+    "qere-without-ketiv body encoding",
 )
 _BODY = {"נוסח": "2", "מ:הערה-2": "2"}
 _VERSION = 2
@@ -166,6 +168,7 @@ def inventory():
         ReviewedPointing(),
     )
     rows = []
+    bodies = BodyEncodings()
     for verse in corpus.verses:
         ref = verse.ref
         original = _notes(verse.mam[2], ref)
@@ -181,6 +184,8 @@ def inventory():
         cell = editorial.apply(cell, ref)
         stages.append(_targets(cell, ref))
         cell = reviewed.apply(cell, ref)
+        stages.append(_targets(cell, ref))
+        cell = bodies.apply(cell, ref)
         stages.append(_targets(cell, ref))
         data_notes = _data_notes(verse.data[2], ref)
         compare_cell = copy.deepcopy(verse.data[2])
@@ -231,6 +236,7 @@ def inventory():
     frozen.finish()
     editorial.finish()
     reviewed.finish()
+    bodies.finish()
     return rows
 
 

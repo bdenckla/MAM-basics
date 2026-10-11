@@ -16,11 +16,23 @@ review reasoning remain in MAM-parsed-plus and the public review ledger.
 
 Artificial carriers are not ketiv consonants. GA and GV keep their existing
 meanings and prohibit dagesh. The no-space template `ניקוד בלי אות ובלי רווח`
-licenses only `carrier=final-nun-dalet`, with DALET + DAGESH + TSERE + MAHAPAKH
+retains `carrier=final-nun-dalet`, with DALET + DAGESH + TSERE + MAHAPAKH
 (GD), immediately after the final nun at Isaiah 54:16. All three marks remain
 associated with that nun, and the whole qere is preserved. This first final
 carrier case is a font accommodation; earlier carriers were initial or medial.
 It makes no claim of ownerless manuscript marks.
+
+Each selected qere-without-ketiv site retains its complete `קרי ולא כתיב`
+call. An additional body template immediately precedes the qere call in the
+same sequence, with no intervening separator. `ניקוד בלי אות` records marks
+with horizontal space; `ניקוד בלי אות ובלי רווח` with
+`carrier=orphan-marks-alef` records exactly ALEF + TSERE + MERKHA, without
+dagesh or horizontal space, at 2 Samuel 18:20. The parameterless
+`רווח בלי ניקוד` records horizontal space without marks. These body
+templates and their following qere calls describe the same site: a body
+projection selects the body template, and a reading projection selects the
+qere. The example edition displays the body below the qere in one box;
+carrier and box widths do not measure manuscript spacing.
 
 The 24 book files are in `plus/`. The example edition and documentation are in
 `gh-pages/near-aleppo/`. The build reads local MAM-parsed-plus, the Aleppo coverage

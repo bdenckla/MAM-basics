@@ -194,7 +194,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks at a position of no width",
-        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its intended use at 2 Samuel 18:20 remains pending; the later final-dalet font accommodation is recorded separately below.",
+        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its use at 2 Samuel 18:20 was implemented on 2026-10-11 with the explicit orphan-marks-alef variant; the later final-dalet font accommodation is recorded separately below.",
         ("A parameter of the one template",),
     ),
     Choice(

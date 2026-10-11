@@ -14,7 +14,7 @@ from py_misc import trivial_qere_to_doc
 from mb_cmn import ws_tmpl2 as wtp
 from mb_cmn import shrink
 from py_misc import uni_check
-from mb_cmn import my_utils
+from py_misc import orphan_marks
 
 
 @dataclass
@@ -38,11 +38,42 @@ def render_wtseq(hctx: Hctx, wtseq):
         newseq = scrdfftar_to_doc.convert(newseq)
     if get_renopt(hctx, "ro_trivial_ketiv_qere_to_doc"):
         newseq = trivial_qere_to_doc.convert(hctx.bcvt, newseq, hctx.io_renlog)
-    handled_elements = my_utils.st_map((_handle_wikitext_element, hctx), newseq)
+    handled_elements = _handle_sequence(hctx, newseq)
     het = map(_tuplify, handled_elements)
     out = shrink.shrink(sum(het, tuple()))
     uni_check.check(out)
     return out
+
+
+def _handle_sequence(hctx, sequence):
+    """Pair explicit body templates with their adjacent qere only in ruby mode."""
+    from render_wt import render_wikitext_kq as kq
+
+    result = []
+    index = 0
+    while index < len(sequence):
+        element = sequence[index]
+        if (
+            kq.ruby_enabled(hctx)
+            and isinstance(element, dict)
+            and element["tmpl_name"]
+            in (
+                orphan_marks.MARKS_WITHOUT_LETTER,
+                orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE,
+                orphan_marks.SPACE_WITHOUT_MARKS,
+            )
+            and index + 1 < len(sequence)
+            and isinstance(sequence[index + 1], dict)
+            and sequence[index + 1]["tmpl_name"] == "קרי ולא כתיב"
+        ):
+            orphan_marks.validate_body(element, hctx.bcvt)
+            body = _tuplify(_handle_wikitext_element(hctx, element))
+            result.append(kq.handle_qere_with_body(hctx, sequence[index + 1], body))
+            index += 2
+        else:
+            result.append(_handle_wikitext_element(hctx, element))
+            index += 1
+    return result
 
 
 def render_tmpl_el(hctx, tmpl, index):

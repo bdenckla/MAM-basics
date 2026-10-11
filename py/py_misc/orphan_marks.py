@@ -4,11 +4,18 @@ The original GA shape remains unchanged. The explicit GV variant retains the
 chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet for the
 final-nun marks at Isaiah 54:16, without a space. No carrier is a ketiv consonant.
 Build validation and edition display use the same carrier validation.
+The explicit orphan-marks-alef variant carries tsere and merkha without space
+at 2 Samuel 18:20. A separate parameterless template records space without marks.
 """
 
 MARKS_WITHOUT_LETTER = "ניקוד בלי אות"
 MARKS_WITHOUT_LETTER_OR_SPACE = "ניקוד בלי אות ובלי רווח"
+SPACE_WITHOUT_MARKS = "רווח בלי ניקוד"
 GV_PARAMETER = "carrier"
+ORPHAN_ALEF_VARIANT = "orphan-marks-alef"
+ORPHAN_ALEF_CARRIER = (
+    "\N{HEBREW LETTER ALEF}\N{HEBREW POINT TSERE}\N{HEBREW ACCENT MERKHA}"
+)
 GD_VARIANT = "final-nun-dalet"
 GD_CARRIER = (
     "\N{HEBREW LETTER DALET}\N{HEBREW POINT DAGESH OR MAPIQ}"
@@ -31,21 +38,23 @@ _MARKS = (
 
 
 def carriers(tmpl, label):
-    """Return validated carriers from an explicitly named GA, GV or GD shape."""
+    """Return validated GA, GV, GD or explicit no-space orphan-alef carriers."""
     if set(tmpl) != {"tmpl_name", "tmpl_params"}:
         raise AssertionError(f"{label}: unexpected orphan-template fields")
     params = tmpl["tmpl_params"]
     if tmpl["tmpl_name"] == MARKS_WITHOUT_LETTER_OR_SPACE:
-        if (
-            set(params) != {"1", GV_PARAMETER}
-            or params[GV_PARAMETER] != GD_VARIANT
-            or params["1"] != GD_CARRIER
-        ):
+        variants = {
+            GD_VARIANT: GD_CARRIER,
+            ORPHAN_ALEF_VARIANT: ORPHAN_ALEF_CARRIER,
+        }
+        if set(params) != {"1", GV_PARAMETER} or params[GV_PARAMETER] not in variants:
+            raise AssertionError(f"{label}: unsupported no-space carrier variant")
+        expected = variants[params[GV_PARAMETER]]
+        if params["1"] != expected:
             raise AssertionError(
-                f"{label}: GD requires final-nun-dalet and exactly "
-                "artificial DALET + DAGESH + TSERE + MAHAPAKH"
+                f"{label}: {params[GV_PARAMETER]} requires exactly {expected!r}"
             )
-        return GD_CARRIER
+        return expected
     if tmpl["tmpl_name"] != MARKS_WITHOUT_LETTER or set(params) not in (
         {"1"},
         {"1", GV_PARAMETER},
@@ -69,3 +78,24 @@ def carriers(tmpl, label):
                 f"{label}: {char!r} is neither a carrier alef nor a mark"
             )
     return value
+
+
+def validate_space(tmpl, label):
+    """The body-space template has no marks, carrier or child Scripture."""
+    if tmpl != {"tmpl_name": SPACE_WITHOUT_MARKS}:
+        raise AssertionError(f"{label}: unexpected space-without-marks shape")
+
+
+def validate_body(tmpl, label):
+    """Validate one explicitly selected qere-without-ketiv body template."""
+    name = tmpl["tmpl_name"]
+    if name == SPACE_WITHOUT_MARKS:
+        validate_space(tmpl, label)
+    elif name == MARKS_WITHOUT_LETTER:
+        carriers(tmpl, label)
+    elif name == MARKS_WITHOUT_LETTER_OR_SPACE:
+        carriers(tmpl, label)
+        if tmpl["tmpl_params"][GV_PARAMETER] != ORPHAN_ALEF_VARIANT:
+            raise AssertionError(f"{label}: GD is not a qere-without-ketiv body")
+    else:
+        raise AssertionError(f"{label}: unknown body template {name!r}")

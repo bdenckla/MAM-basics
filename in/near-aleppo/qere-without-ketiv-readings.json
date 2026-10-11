@@ -1,5 +1,5 @@
 {
-  "format": "near-aleppo-qere-without-ketiv-readings-v3",
+  "format": "near-aleppo-qere-without-ketiv-readings-v4",
   "cases": [
     {
       "id": "Ju20-13",
@@ -10,7 +10,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks."
+        "explanation": "The additional template records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְאֵ֣"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -63,7 +69,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records horizontal space without niqqud. Available space does not supply missing marks."
+        "explanation": "The additional template records horizontal space without niqqud. Available space does not supply missing marks.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -110,7 +119,14 @@
       ],
       "intended_encoding": {
         "kind": "marks-without-space",
-        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. The additional template still requires an explicit variant for this use."
+        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. The explicit orphan-marks-alef variant uses an artificial alef carrying both marks.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות ובלי רווח",
+          "tmpl_params": {
+            "1": "אֵ֥",
+            "carrier": "orphan-marks-alef"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -154,7 +170,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records sheva, qamats, and tipeḥa, with horizontal space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
+        "explanation": "The additional template records sheva, qamats, tipeḥa, and an orphan ḥolam dot, with horizontal space above the marks. Artificial alefs carry all four mark groups.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְאָא֖אֹ"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -176,17 +198,19 @@
         ],
         "masorah_circle_present": false,
         "masorah_circle_basis": "Ben Denckla's manuscript-image correction, 2026-10-11",
-        "xolam_male_dot": {
-          "status": "tentative",
-          "assessment": "A ḥolam male dot seems to be represented."
+        "orphan_xolam_dot": {
+          "status": "confirmed",
+          "assessment": "The visible dot is an orphan ḥolam dot.",
+          "attribution": "Ben Denckla, 2026-10-11",
+          "decision": "Let's go ahead and assume that dot visible in the manuscript is an orphan xolam dot, non-tentatively."
         }
       },
-      "observation": "The gap here is generous compared with the manuscript's usual small or nonexistent spaces between atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת are present (sheva, qamats, and tipeḥa). A ḥolam male dot also seems to be represented.",
+      "observation": "The gap here is generous compared with the manuscript's usual small or nonexistent spaces between atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת are present (sheva, qamats, and tipeḥa). An orphan ḥolam dot is also present.",
       "romanized": [
         "sheva",
         "qamats",
         "tipeḥa",
-        "ḥolam male"
+        "ḥolam"
       ],
       "documentation_notes": [],
       "crop": {
@@ -203,7 +227,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records two qamats marks and pashta, with horizontal space above the marks."
+        "explanation": "The additional template records two qamats marks and pashta, with horizontal space above the marks.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אָאָא֙"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -246,7 +276,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space without niqqud."
+        "explanation": "The additional template records the generous horizontal space without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -296,7 +329,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space without niqqud. The preceding maqaf extends into the space."
+        "explanation": "The additional template records the generous horizontal space without niqqud. The preceding maqaf extends into the space.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -331,7 +367,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space without niqqud."
+        "explanation": "The additional template records the generous horizontal space without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -363,7 +402,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space at the end of the manuscript line, without niqqud."
+        "explanation": "The additional template records the generous horizontal space at the end of the manuscript line, without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",

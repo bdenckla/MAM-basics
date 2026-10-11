@@ -36,7 +36,7 @@ and crop provenance, together with the intended encoding assessments. Update tha
 file as Ben supplies further readings or revises an assessment. A case without an
 image reading has `reading`, `observation`, and `crop` set to `null`; the page
 states that an image reading has not yet been recorded.
-The v3 record format also permits a reviewed case's `observation` to be `null`
+The v4 record format also permits a reviewed case's `observation` to be `null`
 when its remarks add nothing beyond the attached MAM note. Full structured image
 readings and provenance remain in `reading`; only displayed prose is trimmed.
 Cases with an attached MAM note display only additional manuscript remarks.
@@ -49,9 +49,9 @@ come from the three closed `intended_encoding.kind` classifications of the
 recorded manuscript readings, rather than the current dataset calls. The
 position comes from each reading's explicit `line_position`; a reviewed reading
 without a recognized position fails the build. Unreviewed cases show question
-marks, with that meaning added to the legend only when needed. The table does
-not promote the tentative ḥolam male at 2 Kings 19:31 to a confirmed reading:
-the recorded below-marks already establish niqqud presence.
+marks, with that meaning added to the legend only when needed. Ben confirmed
+the visible dot at 2 Kings 19:31 as an orphan ḥolam on
+2026-10-11; the table's niqqud classification includes that settled reading.
 
 The primary `crop` records the body-text image. It may also contain the explicitly
 named `marginal_qere_note` crop, with its own filename and supplied screenshot.
@@ -137,9 +137,10 @@ identify the MAM notes reviewed on 2026-10-08; their verbatim quotations remain 
 the reading records even if the current notes later change. Recording and review
 dates remain in the source metadata and are not displayed in the study.
 
-The study's observations do not change the near-Aleppo source text or decide a
-template design. Actual near-Aleppo source decisions remain in their existing
-maintained inputs and procedures.
+The explicit body templates in the reading records now drive the near-Aleppo
+build. Observations and crop provenance remain separate from those authored
+encoding choices. The build checks each reading's whole qere before applying
+the additional template.
 
 ## Additional manuscript remarks, 2026-10-11
 
@@ -162,7 +163,7 @@ Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Ben later
 requested that every case begin with its images on 2026-10-11. “Near-Aleppo
 encoding” now follows the images, before the NAEE excerpt and manuscript
-discussion. Current encoding and pending intended additional templates have
+discussion. Current qere calls and implemented additional templates have
 separate labels. Ben requested removal of the repeated source-notation blocks
 on 2026-10-11 because they add no independent information beyond the MAM qere.
 The separate MAM qere displays were subsequently removed after a comparison
@@ -171,12 +172,13 @@ All current source fragments are read afresh from `out/near-aleppo/plus/`; they
 are not copied into the study metadata.
 
 The study's `intended_encoding` is either `null` for an
-entry awaiting a manuscript-based assessment, or an object with `kind` and
-`explanation`. The three closed kinds are `marks-with-space`,
-`marks-without-space` and `space-without-marks`. These are document assessments, not build
-instructions. All nine selected cases now have recorded image readings and
-pending encoding assessments. Existing observations and crop provenance are
-preserved.
+entry awaiting a manuscript-based assessment, or an object with `kind`,
+`explanation` and `template`. The three closed kinds are `marks-with-space`,
+`marks-without-space` and `space-without-marks`. The v4 `template` supplies
+one exact body encoding to the build; a null template means an explicitly
+pending decision. All nine selected cases have implemented body templates.
+Existing observations and crop provenance are preserved except for Ben's
+confirmed orphan-ḥolam decision recorded below.
 
 Ben clarified on 2026-10-11 that every existing `קרי ולא כתיב` call is to be
 retained and supplemented with one additional template describing how the qere
@@ -186,18 +188,19 @@ not replace the existing call or remove the qere. The earlier “empty body text
 assessment is superseded by “horizontal space without niqqud”; an unpointed space
 still needs an additional template.
 
-The introduction describes the near-Aleppo-specific templates `ניקוד בלי אות`
-and `ניקוד בלי אות ובלי רווח`, including the artificial carrier convention, as
-candidates for additional templates where marks are present. Judges 20:13,
-2 Kings 19:31 and 2 Kings 19:37 have horizontal space above the marks. The tentative
-ḥolam male reading at 2 Kings 19:31 leaves the carrier payload unsettled. The
-additional template without space above the marks at 2 Samuel 18:20 still awaits
-an explicit variant for that use. The additional template at 2 Samuel 16:23,
-Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5 and Ruth 3:17 must record horizontal space
-without niqqud. The additional template's name and syntax
-remain open. Current encodings are summarized without repeated source notation;
-pending names, parameter shapes and call placement remain to be designed. Dataset
-implementation remains separate.
+The introduction describes the near-Aleppo-specific templates `ניקוד בלי אות`,
+`ניקוד בלי אות ובלי רווח` and `רווח בלי ניקוד`. The additional template
+immediately precedes the unchanged qere call in the same sequence, with no
+intervening separator. Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 use
+artificial alefs for marks with horizontal space. At 2 Kings 19:31 the payload
+includes the confirmed orphan ḥolam dot. The no-space template's explicit
+`carrier=orphan-marks-alef` variant represents ALEF + TSERE + MERKHA at
+2 Samuel 18:20, without dagesh. The existing `carrier=final-nun-dalet` contract
+at Isaiah 54:16 remains unchanged. The parameterless `רווח בלי ניקוד`
+records horizontal space without marks at 2 Samuel 16:23, Jeremiah 31:37,
+Jeremiah 50:29, Ruth 3:5 and Ruth 3:17. The example edition shows the body
+marks or blank below the qere in one box. Editorial carrier and box widths do
+not measure manuscript spacing.
 
 “Space above the marks” means horizontal space in the line of letters, left
 between words or at the end of a manuscript line. At a line ending, the space
@@ -242,7 +245,7 @@ selected site. The recorded cases are:
 | Judges 20:13 | Marks with horizontal space | sheva, tsere, munaḥ; no dagesh |
 | 2 Samuel 16:23 | Horizontal space without marks | None |
 | 2 Samuel 18:20 | Marks without horizontal space | tsere, merkha; no dagesh |
-| 2 Kings 19:31 | Marks with horizontal space | sheva, qamats, tipeḥa; ḥolam dot remains tentative |
+| 2 Kings 19:31 | Marks with horizontal space | sheva, qamats, tipeḥa, confirmed orphan ḥolam dot |
 | 2 Kings 19:37 | Marks with horizontal space | qamats, qamats, pashta |
 | Jeremiah 31:37 | Horizontal space without marks | None |
 | Jeremiah 50:29 | Horizontal space without marks | None |
@@ -250,18 +253,17 @@ selected site. The recorded cases are:
 | Ruth 3:17 | Horizontal space without marks | None |
 
 Use `in/near-aleppo/qere-without-ketiv-readings.json` as the full source of each
-reading and its qualifications. These body classifications are settled; some
-implementation details remain open:
+reading and its qualifications. These body classifications and their
+implementation are settled:
 
-- The exact additional-template names, parameter shapes and placement need
-  design. “רווח בלי ניקוד” was a suggestion, not an approved name.
-- The existing no-space template accepts only the final-nun-dalet carrier used
-  at Isaiah 54:16. The 2 Samuel 18:20 use needs an explicit suitable variant;
-  preserve the existing carrier contract.
-- At 2 Kings 19:31 the tentative question is whether a ḥolam dot is present in
-  the body text. Resolve the reading with Ben before treating it as confirmed
-  or choosing a payload that silently omits it. The other below-marks are
-  confirmed. Technical design can proceed while this question is resolved.
+- The additional body template immediately precedes the unchanged qere call,
+  without a separator. The exact names and shapes are documented above.
+- The no-space template retains the existing final-nun-dalet contract and
+  adds the explicit orphan-marks-alef variant for 2 Samuel 18:20.
+- Ben resolved the 2 Kings 19:31 dot on 2026-10-11: “Let's go ahead and assume
+  that dot visible in the manuscript is an orphan xolam dot, non-tentatively.”
+  The payload includes the orphan ḥolam. The separate letter-fit assessment
+  remains tentative.
 
 Investigate the existing build and renderer contracts, make the implementation
 choices concrete and reviewable, and ask Ben only for unresolved Hebrew-reading
@@ -456,10 +458,10 @@ Ben clarified on 2026-10-11 that the gap is generous compared with the
 manuscript's usual small or nonexistent spaces between atoms, so it is pretty
 clear that the letter-scribe intended to leave a large gap, perhaps even one
 large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת
-are present: sheva, qamats, and tipeḥa. A ḥolam male dot also seems to be
-represented. The letter-fit assessment and the dot reading remain tentative;
-the record does not promote the dot to a
-confirmed manuscript reading.
+are present: sheva, qamats, and tipeḥa. Ben resolved the visible dot as an
+orphan ḥolam on 2026-10-11, without tentative qualification. The body encoding
+includes all four mark groups on artificial alefs. The separate letter-fit
+assessment remains tentative.
 
 Ben clarified on 2026-10-11 that no masorah circle is present. The source reading
 records that absence and its provenance; the study names this exception once
@@ -470,8 +472,8 @@ in the introduction.
 Ben read the marks of בָּנָיו֙: qamats, qamats, and pashta, without letters,
 with space above the marks. The marks occupy a large horizontal space between
 the surrounding written atoms. Ben's hypothesis is that the letter-scribe
-presumably left this space intentionally. The intended additional template records
-niqqud with horizontal space above the marks; dataset implementation remains pending.
+presumably left this space intentionally. The additional template records
+niqqud with horizontal space above the marks; the body template is implemented.
 
 ## Jeremiah 31:37
 
@@ -491,30 +493,30 @@ Ben infers the following vertical layout, recorded exactly as supplied:
 כתב
 </div>
 
-Both supplied crops are preserved and displayed separately. The intended
-additional template records horizontal space without niqqud; dataset implementation
-remains pending.
+Both supplied crops are preserved and displayed separately. The
+additional template records horizontal space without niqqud; the body template is
+implemented.
 
 ## Jeremiah 50:29
 
 Ben read a generous horizontal space for לָהּ֙ between the surrounding written
 atoms, with no qere letters or niqqud. The preceding maqaf extends into that
-space. The intended additional template records horizontal space without niqqud;
-dataset implementation remains pending.
+space. The additional template records horizontal space without niqqud;
+the body template is implemented.
 
 ## Ruth 3:5
 
 Ben read a generous horizontal space for אֵלַ֖י between the surrounding written
-atoms, with no qere letters or niqqud. The intended additional template records
-horizontal space without niqqud; dataset implementation remains pending.
+atoms, with no qere letters or niqqud. The additional template records
+horizontal space without niqqud; the body template is implemented.
 
 ## Ruth 3:17
 
 Ben read a generous horizontal space for אֵלַ֔י at the end of a manuscript line,
 with no qere letters or niqqud. Ben's hypothesis is that
 the line ending may account for the generous space, possibly accidentally.
-The intended additional template records horizontal space without niqqud; dataset
-implementation remains pending.
+The additional template records horizontal space without niqqud; the body template is
+implemented.
 
 ## Historical standalone review
 
@@ -522,3 +524,35 @@ The Downloads editing bundle remains a historical snapshot. Its frozen source
 packets, delivered HTML, reconstructed generator, and later local edits were not
 deleted. Ongoing manuscript observations are now maintained in the tracked FOI
 records and this source note. The standalone generator's README points here.
+
+## Dataset implementation, 2026-10-11
+
+Implementation uses `C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main
+at the required handoff commit `54a8137908bd844d0dc1abe7f1f6661b77be9b9e`.
+Codex owns the single writer, focused verification, commit and normal push.
+Ben's implementation request and the settled body classifications form the
+approval snapshot; his orphan-ḥolam decision resolves its last reading question.
+
+`py/near_aleppo/qere_without_ketiv.py` applies the explicit body records after
+reviewed pointings and before MAM-target copying. Each original qere call,
+including both parameters and every letter and mark, remains unchanged.
+`in/near-aleppo/build-populations.json` records the body classifications in
+separate counts and sites, without changing the MAM-only census. The independent
+note replay includes the new phase. The six changed attached-note targets retain
+every original MAM clause in explicit MAM context. The Jeremiah sic annotation,
+images, translations, image-first order and ordinary unpointed-Hebrew styling
+remain intact. Deferred A102 work remains separate.
+
+The shared ruby renderer pairs only explicit body templates with an immediately
+following qere call. Space without marks displays an empty span one em wide;
+artificial carrier payloads retain the edition's double guillemets. The no-space
+variant inserts no separator in the dataset or renderer. These display widths
+are editorial, and do not reconstruct the manuscript's measured spacing.
+
+Verification completed: the full near-Aleppo regeneration and `--check` pass;
+the focused entry-point command recorded in the cumulative ledger passes 15
+tests. All nine rendered cases and every generated diff were inspected.
+An independent comparison confirms unchanged qere calls, MAM notes,
+translations, images and marginal-note layout. MAM-with-doc's complete
+regeneration has no tracked diff. Black and `git diff --check` pass.
+Mega and the full suite remain on the approved nightly cadence.

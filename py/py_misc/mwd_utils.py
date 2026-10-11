@@ -350,6 +350,7 @@ def _length_of_doc(doc_ren_el):
 _DOC_LENGTH = {
     "ren-tag-thin-space": 1,  # 0 would also be reasonable
     "ren-tag-no-break-space": 1,
+    "near-aleppo-body-space": 1,
     "mam-kq-k-velo-q-maq": 1,
 }
 

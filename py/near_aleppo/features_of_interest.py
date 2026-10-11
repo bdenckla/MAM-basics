@@ -69,8 +69,8 @@ CASES = (
         "qere-without-ketiv",
         "Qere without ketiv",
         "Ruth 3:5 and Judges 20:13 show qere without ketiv. "
-        "NAEE puts the editorial label “no ketiv” on the baseline. "
-        "That label occupies space beneath the qere.",
+        "NAEE displays the recorded body encoding on the baseline: blank space "
+        "at Ruth 3:5 and artificial carriers for the orphan marks at Judges 20:13.",
         ((tbn.BK_RUTH, 3, 5), (tbn.BK_JUDGES, 20, 13)),
     ),
     Case(

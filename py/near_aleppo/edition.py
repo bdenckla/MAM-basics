@@ -79,7 +79,9 @@ def _edition_index(edition, css_hrefs):
                 "vertical gap between the forms. "
                 "The edition uses each stored pointed ketiv "
                 "where one is available. An absent reading has the editorial label “no ketiv” "
-                "or “no qere” in its own position. ",
+                "or “no qere” in its own position. A qere-without-ketiv site with "
+                "a recorded body encoding instead shows its artificial carriers or "
+                "blank space below the qere. ",
                 "See the ",
                 mb_html.anchor_h(
                     "documentation for the near-Aleppo dataset", "../index.html"
@@ -228,6 +230,7 @@ def _assert_names_are_the_builds():
         (nap.RENAMED_SCRDFFTAR, RENAMED_NOTES["מ:הערה-2"]),
         (nap.MARKS_WITHOUT_LETTER, phase2.MARKS_WITHOUT_LETTER),
         (nap.MARKS_WITHOUT_LETTER_OR_SPACE, phase2.MARKS_WITHOUT_LETTER_OR_SPACE),
+        (nap.SPACE_WITHOUT_MARKS, phase2.SPACE_WITHOUT_MARKS),
     )
     for copy_name, build_name in pairs:
         if copy_name != build_name:

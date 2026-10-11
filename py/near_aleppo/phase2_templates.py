@@ -121,12 +121,14 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # each followed by the marks at that position, with alef as an arbitrary carrier.
 # An alef carrier cannot carry dagesh. The GV extension has an explicit carrier
 # discriminator and exactly artificial VAV + HOLAM; the original alef schema remains.
-# The no-space template licenses only GD, artificial DALET + DAGESH + TSERE +
-# MAHAPAKH for the final nun at Isaiah 54:16, without a manuscript-spacing claim.
+# The no-space template licenses explicit orphan-marks-alef (ALEF + TSERE +
+# MERKHA) and GD (DALET + DAGESH + TSERE + MAHAPAKH) variants. GD accommodates
+# the final nun at Isaiah 54:16, without a manuscript-spacing claim.
 # The edition renders the marks in double guillemets; the dataset and the in-place
 # test read them in square brackets, as MAM's notes write them.
 MARKS_WITHOUT_LETTER = orphan_marks.MARKS_WITHOUT_LETTER
 MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
+SPACE_WITHOUT_MARKS = orphan_marks.SPACE_WITHOUT_MARKS
 
 
 class _Rule(NamedTuple):
@@ -185,6 +187,7 @@ _RULES = {
     "פפפ": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:נו״ן הפוכה": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:קישור בהערה": _Rule(_VERBATIM, (), _keysets(("1", "2"))),
+    SPACE_WITHOUT_MARKS: _Rule(_VERBATIM, (), _keysets(())),
     MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
         _CARRIERS, (), _keysets(("1", orphan_marks.GV_PARAMETER))
     ),
@@ -233,7 +236,7 @@ class Resolver:
         rule = _RULES.get(name)
         if rule is None:
             raise AssertionError(f"{verse}: no phase 2 rule for template {name!r}")
-        if rule.action == _CARRIERS:
+        if rule.action == _CARRIERS or name == SPACE_WITHOUT_MARKS:
             raise AssertionError(
                 f"{verse}: {name!r}, a template specific to the near-Aleppo dataset, "
                 "in MAM's text"
@@ -359,7 +362,7 @@ def selected_keys(tmpl, verse):
 
 
 def carriers_text(tmpl, verse):
-    """Validated GA, GV or GD carriers in the build's bracket notation."""
+    """Validated artificial carriers in the build's bracket notation."""
     return "[" + orphan_marks.carriers(tmpl, verse) + "]"
 
 

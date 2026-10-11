@@ -12,6 +12,7 @@ import copy
 from near_aleppo.phase2_templates import MARKS_WITHOUT_LETTER
 from near_aleppo.phase2_templates import MARKS_WITHOUT_LETTER_OR_SPACE
 from near_aleppo.phase2_templates import POINTED_KETIV_PARAMETER
+from near_aleppo.phase2_templates import SPACE_WITHOUT_MARKS
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 
 # MAM-parsed-plus's notice, the same in all 24 books, copied by script: the notice
@@ -88,7 +89,7 @@ NOTICE = {
             "documented Scripture-bearing fields, and fail on an unknown template "
             "instead of guessing from its parameters or skipping it. Near-Aleppo "
             f"adds note templates, {MARKS_WITHOUT_LETTER}, and "
-            f"{MARKS_WITHOUT_LETTER_OR_SPACE}; follow their "
+            f"{MARKS_WITHOUT_LETTER_OR_SPACE}, and {SPACE_WITHOUT_MARKS}; follow their "
             "documented roles."
         ),
         (
@@ -98,13 +99,20 @@ NOTICE = {
         ),
         (
             "GA and GV artificial carriers are not ketiv consonants. The no-space "
-            f"template {MARKS_WITHOUT_LETTER_OR_SPACE} accepts only "
+            f"template {MARKS_WITHOUT_LETTER_OR_SPACE} accepts "
             "carrier=final-nun-dalet with DALET + DAGESH + TSERE + MAHAPAKH (GD). "
-            "It immediately follows the final nun at Isaiah 54:16 without a space. "
+            "GD immediately follows the final nun at Isaiah 54:16 without a space. "
             "Its marks remain associated with that nun; the dalet is a font "
             "accommodation, not evidence of ownerless manuscript marks. GA and GV "
             "still forbid dagesh. Never collect any artificial carrier as a ketiv "
-            "consonant or insert a separator at a carrier-template boundary."
+            "consonant or insert a separator at a carrier-template boundary. "
+            "The explicit carrier=orphan-marks-alef variant accepts exactly "
+            "ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel 18:20. "
+            f"The parameterless {SPACE_WITHOUT_MARKS} records horizontal space "
+            "without marks. Each qere-without-ketiv body template immediately "
+            "precedes the unchanged קרי ולא כתיב call in the same sequence; "
+            "the body template and qere call describe the same site. A body "
+            "projection uses the first template; a reading projection uses the qere."
         ),
         (
             "Choose one documented branch of each choice-bearing structure; do not "

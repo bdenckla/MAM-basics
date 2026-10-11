@@ -1,6 +1,7 @@
 """Differential checks for the local near-Aleppo products."""
 
 import main_near_aleppo
+from near_aleppo import doc_figures, qere_without_ketiv
 
 
 def test_dataset_and_population_baselines_are_current():
@@ -10,3 +11,45 @@ def test_dataset_and_population_baselines_are_current():
 
 def test_all_changed_note_presentations_match_the_source_inventory():
     assert main_near_aleppo.almost_main(["--check-note-review"]) == 0
+
+
+def test_qere_only_calls_and_body_templates_match_independent_sources():
+    """Compare complete qere calls with MAM and body templates with image records."""
+    rows = qere_without_ketiv.records()
+    by_ref = {qere_without_ketiv.build_reference(row["reference"]): row for row in rows}
+    assert len(by_ref) == len(rows)
+    seen = set()
+    for verse in doc_figures._Corpus().verses:
+        source = [
+            template
+            for _, template in doc_figures._templates(
+                verse.mam[2], verse.ref, doc_figures._MAM
+            )
+            if template["tmpl_name"] == qere_without_ketiv.QERE_TEMPLATE
+        ]
+        data = [
+            template
+            for _, template in doc_figures._templates(
+                verse.data[2], verse.ref, doc_figures._DATASET
+            )
+        ]
+        qeres = [
+            template
+            for template in data
+            if template["tmpl_name"] == qere_without_ketiv.QERE_TEMPLATE
+        ]
+        assert qeres == source, verse.ref
+        if verse.ref not in by_ref:
+            continue
+        row = by_ref[verse.ref]
+        assert len(source) == 1, verse.ref
+        assert source[0]["tmpl_params"]["2"] == row["reading"]["qere"]
+        expected = row["intended_encoding"]["template"]
+        bodies = [
+            template
+            for template in data
+            if template["tmpl_name"] in qere_without_ketiv.BODY_NAMES.values()
+        ]
+        assert bodies == ([expected] if expected is not None else []), verse.ref
+        seen.add(verse.ref)
+    assert seen == set(by_ref)

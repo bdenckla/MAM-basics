@@ -173,6 +173,13 @@ def _handle_marks_without_letter(_hctx, tmpl):
     )
 
 
+def _handle_space_without_marks(_hctx, tmpl):
+    nap.orphan_marks.validate_space(tmpl, "body-space display")
+    return renel.mk_ren_el_tc_and_attr(
+        "near-aleppo-body-space", (), {"style": "display: inline-block; width: 1em;"}
+    )
+
+
 def _handle_scrdfftar(hctx, tmpl):
     """
     This is displayed on Wikisource as a footnote.
@@ -623,6 +630,7 @@ _HANDLER_SPECS_FOR_MISC = {
     nap.RENAMED_SCRDFFTAR: {_MASK_EC: _fail_unconverted_renamed_scrdfftar},
     nap.MARKS_WITHOUT_LETTER: {_MASK_EL: _handle_marks_without_letter},
     nap.MARKS_WITHOUT_LETTER_OR_SPACE: {_MASK_EL: _handle_marks_without_letter},
+    nap.SPACE_WITHOUT_MARKS: {_MASK_EL: _handle_space_without_marks},
     tmpln.SLH_WORD: {_MASK_ELP: _handle_slh_word},
     "מ:לגרמיה-2": {_MASK_ELP: _handle_legarmeih_2},
     "מ:פסק": {_MASK_ELP: _handle_paseq},

@@ -34,12 +34,27 @@ renamed template does not stop it. Importing a payload makes no new editorial
 choice. Artificial carriers preserve orphan marks and their positions
 without adding written ketiv consonants. The explicit holam-male-vav variant
 accepts only its declared carrier and exact mark shape. The no-space template
-`ניקוד בלי אות ובלי רווח` accepts only `carrier=final-nun-dalet`, with exactly
+`ניקוד בלי אות ובלי רווח` retains `carrier=final-nun-dalet`, with exactly
 DALET + DAGESH + TSERE + MAHAPAKH (GD). At Isaiah 54:16 it immediately follows
 the final nun without a space, accommodating that nun's marks without adding a
 ketiv consonant. GA and GV still forbid dagesh. This is the first final carrier
 case; earlier carriers were initial or medial. The dalet accommodation makes
 no claim that the manuscript has ownerless marks.
+
+Recorded qere-without-ketiv body encodings are applied after the pointings and
+before MAM-target copying. The build reads the explicit `intended_encoding.template`
+in `in/near-aleppo/qere-without-ketiv-readings.json`, checks its whole qere
+against the unchanged `קרי ולא כתיב` call, and inserts the body template
+immediately before that call without a separator. `ניקוד בלי אות` holds marks
+with horizontal space. The no-space template's `carrier=orphan-marks-alef`
+variant requires exactly ALEF + TSERE + MERKHA, without dagesh, at 2 Samuel 18:20.
+The parameterless `רווח בלי ניקוד` records horizontal space without marks.
+Build populations record these body classifications separately from the MAM-only
+census. The independent note replay applies the same phase. The example edition
+pairs each body template with its following qere, displaying body marks or a
+blank below the qere; editorial box and carrier widths do not measure manuscript
+spacing. The artificial alef carrying the confirmed orphan ḥolam at 2 Kings 19:31
+adds no written consonant or claim that a vav is present in the body.
 
 The build preserves C and D columns, qeres, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It

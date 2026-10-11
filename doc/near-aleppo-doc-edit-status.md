@@ -2609,12 +2609,13 @@ Codex owns commit and normal push.
 
 ## Authorize a successor to implement the body encodings — 2026-10-11
 
-**Status:** Active; implementation is authorized in a new chat. Ben requested a
-new session to implement the encodings described in the study. Codex found no
+**Status:** Implemented by the successor; see “Qere-without-ketiv body encodings” below.
+Ben requested a new session to implement the encodings described in the study. Codex found no
 separate encoding plan; the requirements reside in the generated study, source
-README and this ledger. The README's “Dataset implementation handoff” now records
-the settled classifications, open design and ḥolam questions, exact checkout,
-ownership and focused verification commands. This supersedes the earlier
+README and this ledger. The README's “Dataset implementation handoff” recorded
+the settled classifications, then-open design and ḥolam questions, exact checkout,
+ownership and focused verification commands; the implementation entry records
+their resolution. This supersedes the earlier
 prose-only scope for the successor's task. The source classifications and
 current dataset are unchanged by the handoff.
 
@@ -2626,3 +2627,70 @@ project at this same path. The successor verifies the committed handoff HEAD
 and owns implementation, checks, commits and normal pushes to main. The
 predecessor stops writing before dispatch. `git diff --check` passed; mega and
 full suite remain on the approved nightly cadence for this handoff-only change.
+
+## Qere-without-ketiv body encodings — 2026-10-11
+
+**Status:** Implemented by Codex. All nine selected sites retain the complete
+`קרי ולא כתיב` call and every qere letter and mark. An additional body
+template immediately precedes that call in the same sequence, with no separator.
+
+**Decision:** Ben instructed, “Let's go ahead and assume that dot visible in the
+manuscript is an orphan xolam dot, non-tentatively.” The 2 Kings 19:31 payload
+includes the confirmed orphan ḥolam alongside sheva, qamats and tipeḥa. Its
+reading status, attribution, observation and encoding explanation are reconciled.
+The separate assessment that the implied qere letters might fit in the gap
+remains tentative.
+
+**Design and scope:** The existing `ניקוד בלי אות` records marks with
+horizontal space at Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37.
+`ניקוד בלי אות ובלי רווח` adds `carrier=orphan-marks-alef`, requiring
+exactly ALEF + TSERE + MERKHA, without dagesh, at 2 Samuel 18:20. Its
+Isaiah 54:16 final-nun-dalet contract remains unchanged. The new parameterless
+`רווח בלי ניקוד` records horizontal space without marks at 2 Samuel 16:23,
+Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5 and Ruth 3:17. Every added shape has
+closed build and renderer validation. The shared ruby renderer displays the
+body below the unchanged qere in one box. Carrier, blank-span and box widths
+are editorial, rather than measured manuscript spacing.
+
+**Build and notes:** The added phase follows reviewed pointings and precedes
+MAM-target copying. The independent note replay includes the phase. Population
+schema 6 records three marks-with-space sites, one marks-without-space site and
+five space-without-marks sites, separately from the unchanged MAM-only census.
+The six changed attached-note targets retain all original MAM clauses in explicit
+MAM context; the five newly changed notes account for the added MAM-target copies.
+The study's implemented labels are checked against the actual dataset. Images,
+translations, image-first order, ordinary unpointed-Hebrew styling and the
+Jeremiah sic annotation are preserved. Ben's request file and deferred A102 work
+remain unchanged.
+
+**Checkout and product reach:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` was verified clean on main at the required
+handoff commit `54a8137908bd844d0dc1abe7f1f6661b77be9b9e`. The changes reach
+the distributed near-Aleppo dataset, published near-Aleppo pages and their
+generator. The shared MAM-with-doc renderer is also exercised. The normal push
+to main is an outward-facing act; no history rewriting or destructive local
+operation is part of this work.
+
+**Verification:** `py/main_near_aleppo.py` regenerated the census, dataset and
+HTML, and `py/main_near_aleppo.py --check` confirmed the dataset, populations,
+95 pages/assets and two font copies are current. The source inventory and all
+six changed note reviews passed. All nine rendered case sections were read;
+a separate comparison confirmed their original MAM notes, translations, images,
+image-first order and marginal-note layout are preserved. A JSON comparison
+confirmed that the only changed Scripture cells are the nine selected verses,
+that C and D are unchanged, and that all book-header changes are the shared
+consumer notice. Existing GA, GV and Isaiah 54:16 GD data and pages are unchanged.
+
+The focused entry-point command passed **15 tests**:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py py/tests/test_near_aleppo.py py/tests/test_near_aleppo_note_content.py py/tests/test_near_aleppo_clc_style.py py/tests/test_prose_mark_order.py py/tests/test_tracked_filenames.py py/tests/test_explicit_time_zones.py py/tests/test_mb_cmn_kq_special_templates.py -q
+```
+
+`py/main_mam_with_doc.py` regenerated its complete output without a tracked
+diff. The MAM-only census and Ben's request file are unchanged. Black passed on
+every changed Python file, and `git diff --check` passed. The focused tests used
+normal escalation after the sandbox denied Windows resolution of the repository
+root before collection. Mega and the full suite remain on the approved nightly
+cadence; this change has no identified consequence requiring an immediate broad
+run.
