@@ -895,3 +895,35 @@ on local `file:` previews; no automated browser pass is claimed. The full mega
 and suite remain on the approved nightly cadence. Focused generation, complete
 artifact comparisons and mechanical link checks cover this presentation rollout;
 no consequence requires immediate broad checks.
+
+## Arrow links on the top-level index — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request to apply the arrow
+link convention to `gh-pages/index.html`.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`b8a4e72256950749bd5554f2cc7bbba6f651eb27` before editing. Codex owns the
+implementation, focused verification, commit and normal push.
+
+**Change and scope:** `py/author_site/site_index.py` applies the existing shared
+helper and loads `near-aleppo/link-presentation.css`. The helper now accepts an
+explicit page directory so the top-level index is located at the website root;
+near-Aleppo callers retain their default. The index has no same-page anchors;
+its 28 links to MAM-basics pages use right arrows and its 15 links to external
+destinations use boxed outward arrows.
+
+**Verification:** Black passed on both changed Python files, and the maintained
+`py/main_authored.py gen-site` completed. An independent comparison confirmed
+the complete index is byte-identical to the baseline after removing only
+presentation attributes and the shared stylesheet reference; all 43 link cues
+match their destinations. The existing index and shared-stylesheet lints passed,
+four tests. Near-Aleppo HTML and standalone-extract read-only comparisons passed
+without generated differences. All other root pages, Hebrew and RTL markup,
+datasets and study inputs are unchanged. `git diff --check` passed.
+
+**Verification limits:** The unchanged styles use Ben's approved presentation;
+automated visual and keyboard checks retain the previously documented local
+preview restriction. Mega and full suite remain on the approved nightly cadence.
+The real generators, complete-page differential and focused lints cover this
+extension; no consequence requires immediate broad checks.

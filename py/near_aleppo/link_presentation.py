@@ -1,4 +1,4 @@
-"""Add the approved near-Aleppo link cues without reserializing the HTML.
+"""Add the approved arrow link cues without reserializing the HTML.
 
 Only anchor attributes and the stylesheet declaration are inserted. Scripture,
 documentation, source-data scripts, URLs and Hebrew mark order remain untouched.
@@ -20,7 +20,6 @@ from mb_cmn import provenance
 STYLESHEET = "link-presentation.css"
 _SITE_HOST = "bdenckla.github.io"
 _SITE_ROOT = "/MAM-basics/"
-_PAGE_ROOT = _SITE_ROOT + "near-aleppo/"
 _VOID = frozenset(
     "area base br col embed hr img input link meta param source track wbr".split()
 )
@@ -60,7 +59,7 @@ class _Scan(HTMLParser):
             self.targets.setdefault(identifier, start)
         if tag == "a" and "href" in attrs:
             if "data-na-link" in attrs:
-                raise ValueError("Near-Aleppo link presentation was applied twice")
+                raise ValueError("Arrow link presentation was applied twice")
             raw = self.get_starttag_text()
             end = start + len(raw) - (2 if raw.endswith("/>") else 1)
             parents = tuple(value for _, ids in self._stack for value in ids)
@@ -81,9 +80,8 @@ class _Scan(HTMLParser):
                 break
 
 
-def _kind(page, link, targets):
+def _kind(current, link, targets):
     address = urlsplit(link.href)
-    current = _PAGE_ROOT + page
     if address.scheme or address.netloc:
         if (
             address.scheme not in {"http", "https"}
@@ -117,15 +115,20 @@ def stylesheet():
     return comment + "\n" + source
 
 
-def apply(document, page, *, css_href=None):
-    """Decorate a freshly rendered page; omit css_href for an offline export."""
+def apply(document, page, *, css_href=None, site_directory="near-aleppo"):
+    """Decorate a freshly rendered page; omit css_href for an offline export.
+
+    page is relative to site_directory within the MAM-basics website. The landing
+    page passes an empty directory; existing near-Aleppo callers use the default.
+    """
     scan = _Scan(document)
+    current = posixpath.normpath(posixpath.join(_SITE_ROOT, site_directory, page))
     edits = [
-        (link.insertion, f' data-na-link="{_kind(page, link, scan.targets)}"')
+        (link.insertion, f' data-na-link="{_kind(current, link, scan.targets)}"')
         for link in scan.links
     ]
     if document.count("</head>") != 1:
-        raise ValueError(f"Near-Aleppo HTML requires one head element: {page}")
+        raise ValueError(f"Arrow link HTML requires one head element: {page}")
     style = (
         f'<link rel="stylesheet" href="{escape(css_href, quote=True)}">\n'
         if css_href is not None
