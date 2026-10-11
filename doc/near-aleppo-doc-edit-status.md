@@ -2510,3 +2510,22 @@ source and generated diffs and the generated paragraph were read; the only
 product change is the requested replacement and line wrapping. No Python file
 changed. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence for this prose-only change. Codex owns commit and normal push.
+
+## Revise the discussion of MAM's “narrow” at 2 Samuel 16:23 — 2026-10-11
+
+**Status:** Implemented. Ben supplied a single replacement sentence about MAM's
+description of the space as “narrow”. The study uses Ben's exact wording and
+quotation marks, distinguishing space
+needed for the (implied) letters from the smaller space needed for below-marks.
+The reading's source-note assessment, displayed observation, note-review
+description and source README are synchronized. The preceding naqdan sentence
+is unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`7412e4c50ecfb493e514907e0bbd36401e0e1913` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated paragraph were read; the only
+product change is the requested replacement and line wrapping. No Python file
+changed. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this wording-only change. Codex owns commit and normal push.
