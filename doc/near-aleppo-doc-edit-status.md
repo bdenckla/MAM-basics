@@ -1082,7 +1082,7 @@ this observation and the paired crop display.
 
 **Status:** Clarified by Codex from Ben's further image reading. The damage looks
 as if opaque tape had been laid parallel to the right margin, obscuring
-approximately the first letter of each inferred form on its own line. Ben does
+approximately the first letter of each inferred word on its own line. Ben does
 not know the cause; the tape comparison describes appearance, not material.
 
 **Checkout and baseline:** Source, development and integration checkout is the
@@ -1091,14 +1091,14 @@ full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
 focused verification, commit and normal push.
 
 **Change:** The reading record now describes obscured letters and unknown cause.
-Its `marginal_qere_note.inferred_lines` preserves Ben's four supplied forms in
+Its `marginal_qere_note.inferred_lines` preserves Ben's four supplied words in
 their exact order, including the third line as supplied. The study and source
-note show the inferred vertical layout in an RTL block with one form per line.
+note show the inferred vertical layout in an RTL block with one word per line.
 The generator validates a nonempty list of nonempty, single-line strings.
 
 **Verification:** Black passed on the changed generator. HTML regeneration and
 read-only comparison passed for all 92 owned files and both font copies. An
-independent baseline differential confirmed the exact inferred forms, order and
+independent baseline differential confirmed the exact inferred words, order and
 RTL markup. All eight other cases, the target's body reading and both encoding
 assessments, Scripture, MAM qere and notes, source notation, links and crop
 markup are unchanged. All seven crop pairs retain identical bytes. The generated
@@ -1196,3 +1196,26 @@ read. The prose mark-order lint passed (one test), and `git diff --check` passed
 Production datasets are unchanged. Mega and full suite remain on the approved
 nightly cadence; focused generation, the artifact differential and the prose
 lint cover this observation and crop update.
+
+## Marginal-note words — 2026-10-11
+
+**Status:** Corrected by Codex at Ben's request: “these are words, just call them
+words!” These are words in a marginal note.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`2ec93ab625a180c200f2584b61400a6edd677f23` before editing. Codex owns the correction,
+focused verification, commit and normal push.
+
+**Change:** The study now says “one word per line” and “each inferred word”. The
+generator, reading metadata, source note and maintained descriptions use the same
+wording. The inferred Hebrew words, their order, and their qualifications are
+unchanged.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 95 owned files and both font copies. An
+exact baseline comparison confirmed only the requested English replacements in
+the generator, metadata, source note and generated page. The generated diff was
+read, and `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence; regeneration and the exact wording comparison cover this
+terminology correction.

@@ -507,7 +507,7 @@ def render(verses, rows):
             marginal_lines = _inferred_marginal_lines(row)
             if marginal_lines is not None:
                 contents.append(
-                    mb_html.para("Inferred marginal qere note, one form per line:")
+                    mb_html.para("Inferred marginal qere note, one word per line:")
                 )
                 contents.append(
                     mb_html.div(
