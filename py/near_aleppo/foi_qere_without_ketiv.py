@@ -986,7 +986,7 @@ def render(verses, rows):
                         {
                             "dir": "rtl",
                             "lang": "hbo",
-                            "class": "pointed qvlk-marginal-lines",
+                            "class": "qvlk-marginal-lines",
                             "style": "width: fit-content;",
                         },
                     )

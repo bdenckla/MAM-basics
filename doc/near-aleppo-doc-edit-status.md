@@ -2457,3 +2457,20 @@ All source and generated diffs and the generated annotation were read. The
 only product change is the added bracketed paragraph. No Python file changed.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this translation-only change. Codex owns commit and normal push.
+
+## Use ordinary styling for the inferred marginal-note layout — 2026-10-11
+
+**Status:** Implemented. Ben identified pointed-Hebrew styling on the unpointed
+one-word-per-line marginal note at Jeremiah 31:37. The layout now uses ordinary
+prose styling. All four recorded words, their order, RTL direction, Hebrew
+language metadata and centering remain unchanged. The source README is aligned.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`4e6cbe8e34efebe74c2935a547058193b3e99390` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated layout
+were read. The only product change removes the layout's pointed class; the
+stylesheets give its remaining class no font or size override.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this presentation-only change. Codex owns commit and normal push.

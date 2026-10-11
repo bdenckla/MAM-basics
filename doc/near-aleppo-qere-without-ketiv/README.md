@@ -61,7 +61,8 @@ captions, immediately after the verse heading, before any encoding summary,
 NAEE excerpt, MAM note or manuscript discussion. When both images are present,
 the body-text image precedes the marginal-note image.
 The reading's `marginal_qere_note.inferred_lines` records an inferred vertical
-layout, displayed in an RTL block with one word per line.
+layout, displayed in an RTL block with one word per line. This unpointed layout
+uses ordinary prose styling, without the pointed-Hebrew font or enlargement.
 
 [`py/near_aleppo/foi_qere_without_ketiv.py`](../../py/near_aleppo/foi_qere_without_ketiv.py)
 renders the study through the existing HTML build. The shared renderer supplies
