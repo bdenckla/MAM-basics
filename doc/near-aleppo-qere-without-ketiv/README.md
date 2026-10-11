@@ -139,8 +139,9 @@ maintained inputs and procedures.
 ## Additional manuscript remarks, 2026-10-11
 
 Ben requested remarks limited to additional facts, beyond what MAM's note
-already says. At 2 Samuel 16:23, retain the generous space after the maqaf and
-the distinction between room for letters and room for niqqud. MAM's “narrow”
+already says. At 2 Samuel 16:23, retain Ben's assessment that the below-marks
+could have easily fit underneath the maqaf and/or the space after it, but the
+naqdan declined to provide them. MAM's “narrow”
 is only a possible discrepancy because its relative measure is unspecified;
 the qualification stays in the remarks, without a separate comparison entry.
 At Jeremiah 31:37, retain generous inter-word spacing and the qualified damage
@@ -334,9 +335,10 @@ mark order as historical documentation.
 
 ## 2 Samuel 16:23
 
-Ben read a fairly generous space even after the maqaf, with no pointing for
-אִ֖ישׁ. The space is insufficient for the letters of איש, but ample for its
-below-marks, ḥiriq and tipeḥa. Available room does not establish the marks as present.
+Ben clarified on 2026-10-11 that the below-marks of איש (ḥiriq and tipeḥa)
+could have easily fit underneath the maqaf and/or the space after it, but the
+naqdan declined to provide those below-marks. The reading record attributes
+this assessment to Ben and preserves the earlier space and letter-fit readings.
 MAM's characterization of the space as “narrow” is slightly puzzling. Perhaps
 “narrow” refers to the room needed for the letters rather than the room needed
 for the points alone. The dated MAM quotation is stored in

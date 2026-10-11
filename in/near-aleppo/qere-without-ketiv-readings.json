@@ -80,15 +80,18 @@
           "ḥiriq",
           "tipeḥa"
         ],
+        "below_marks_omission_assessment": {
+          "attribution": "Ben Denckla, 2026-10-11",
+          "text": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks."
+        },
         "source_note_assessment": "MAM's characterization of the space as “narrow” is slightly puzzling. Perhaps “narrow” refers to the room needed for the letters rather than the room needed for the points alone.",
         "reviewed_mam_note": {
           "reviewed_date": "2026-10-08",
           "quotation": "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
         }
       },
-      "observation": "The space is fairly generous even after the maqaf. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). MAM's characterization of the space as “narrow” is slightly puzzling. This is only a possible discrepancy: “narrow” may refer to the room needed for the letters rather than the much smaller space needed to fit the niqqud comfortably.",
+      "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM's characterization of the space as “narrow” is slightly puzzling. This is only a possible discrepancy: “narrow” may refer to the room needed for the letters rather than the much smaller space needed to fit the niqqud comfortably.",
       "romanized": [
-        "maqaf",
         "ḥiriq",
         "tipeḥa"
       ],

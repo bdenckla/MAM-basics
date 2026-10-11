@@ -2489,3 +2489,24 @@ and both font copies. All source and generated diffs and the generated opening
 were read; the only product change is the two requested replacements and line
 wrapping. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence for this wording-only change. Codex owns commit and normal push.
+
+## Revise the room-for-marks remarks at 2 Samuel 16:23 — 2026-10-11
+
+**Status:** Implemented. Ben replaced the two sentences about generous spacing
+and room for letters with: “The below-marks of איש (ḥiriq and tipeḥa) could have
+easily fit underneath the maqaf and/or the space after it, but the naqdan declined
+to provide those below-marks.” The study uses that exact wording, with ḥiriq and
+tipeḥa italic and maqaf plain as supplied. Unpointed איש retains ordinary prose
+styling. The following qualified discussion of MAM's “narrow” is unchanged.
+The reading record attributes the new assessment to Ben, preserves earlier
+structured readings, and matches the updated note-review description. The source
+README is aligned.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`cba8370e28d02c81d69c668292285316ad23c2b0` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated paragraph were read; the only
+product change is the requested replacement and line wrapping. No Python file
+changed. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this prose-only change. Codex owns commit and normal push.
