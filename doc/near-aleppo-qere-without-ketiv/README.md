@@ -299,8 +299,8 @@ or line coordinate is inferred from a screenshot filename.
 
 Ben read the below-marks of בְּנֵ֣י: sheva, tsere, and munaḥ, without letters or
 dagesh, with space above the marks. The orphan marks are at the end of a manuscript
-line. Ben's hypothesis is that the line ending may have provided that space,
-possibly accidentally.
+line. The line ending provided space for the marks, possibly accidentally,
+as Ben clarified on 2026-10-11.
 
 There is no dagesh for the qere in the body text, as expected. Ben's clarification
 is that dagesh marks are never included in cases of qere without ketiv.

@@ -35,13 +35,13 @@
         "line_position_basis": "Ben Denckla's manuscript-image observation, 2026-10-08",
         "spacing_hypothesis": {
           "status": "hypothesis",
-          "attribution": "Ben Denckla, 2026-10-08",
-          "text": "The line ending may have provided space for the marks, possibly accidentally."
+          "attribution": "Ben Denckla, 2026-10-08; clarified 2026-10-11",
+          "text": "The line ending provided space for the marks, possibly accidentally."
         },
         "masorah_circle_present": true,
         "masorah_circle_position": "above the marks"
       },
-      "observation": "The below-marks of בְּנֵ֣י (sheva, tsere, munaḥ) are present without letters, with space above them. There is no dagesh for this qere in the body text, as expected, since dagesh marks are never included in cases of qere without ketiv. The orphan marks are at the end of a manuscript line. The line ending may have provided space for the marks, possibly accidentally.",
+      "observation": "The below-marks of בְּנֵ֣י (sheva, tsere, munaḥ) are present without letters, with space above them. There is no dagesh for this qere in the body text, as expected, since dagesh marks are never included in cases of qere without ketiv. The orphan marks are at the end of a manuscript line. The line ending provided space for the marks, possibly accidentally.",
       "romanized": [
         "sheva",
         "tsere",

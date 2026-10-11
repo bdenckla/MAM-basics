@@ -2200,3 +2200,20 @@ and generated diffs and generated sentence were read; the only product change
 is the requested word removal and line wrapping. No Python file changed.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this wording-only change. Codex owns commit and normal push.
+
+## Clarify the line ending's role at Judges 20:13 — 2026-10-11
+
+**Status:** Implemented. Ben requested “The line ending provided space for the
+marks, possibly accidentally.” The observation, spacing-hypothesis text and
+source README now use that wording. The uncertainty concerns whether the space
+was accidental. The source attribution records this clarification while retaining
+the original reading date. The generated study contains no new recording date.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`11da3551cbd811ca74cdda76ab5da8692f36206c` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All source
+and generated diffs and the generated sentence were read; the only product change
+is the requested sentence and line wrapping. No Python file changed.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording change. Codex owns commit and normal push.
