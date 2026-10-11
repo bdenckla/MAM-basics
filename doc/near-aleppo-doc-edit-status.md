@@ -2355,3 +2355,22 @@ source and generated diffs and the generated sentence were read; the only
 product change is that sentence. No Python file changed. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence for this
 wording-only change. Codex owns commit and normal push.
+
+## Correct the translation voice at Jeremiah 31:37 — 2026-10-11
+
+**Status:** Implemented. Ben identified “MAM cites Breuer's note” and “MAM lists
+Koren, Breuer, …” as descriptions of the note rather than translations. The
+English entries now read “Breuer's note.” and “Koren, Breuer, the Simanim Tanakh,
+and Mechon Mamre.” The source fragments are retained as fragments and a list.
+All six translated notes were reviewed for the same narration problem; no
+additional such revision was needed. The source README records that translations
+use the note's voice.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`cbe96963a384ac4acdfeb6311018bbdd39b57d36` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and both generated entries were read; the only
+product changes are those entries. No Python file changed. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+translation-only change. Codex owns commit and normal push.

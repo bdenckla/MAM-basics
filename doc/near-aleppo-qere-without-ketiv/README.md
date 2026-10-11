@@ -91,9 +91,11 @@ inside maqaf compounds: 2 Samuel 16:23, 2 Samuel 18:20 and Jeremiah 50:29.
 [`in/near-aleppo/qere-without-ketiv-mam-notes-en.json`](../../in/near-aleppo/qere-without-ketiv-mam-notes-en.json)
 owns the English translations and explanations of attached MAM notes and the
 comparisons with Ben's descriptions. The English versions expand abbreviated
-wording. A qere's agreement with a manuscript is expressed as agreement with the
-qere implied by that manuscript. The brief agreement statements do not specify
-whether they concern letters in the margin, niqqud in the body text, or both;
+wording and use the note's voice. Bibliographic fragments remain fragments, and
+lists of editions remain lists. A qere's agreement with a manuscript is expressed
+as agreement with the qere implied by that manuscript. The brief agreement
+statements do not specify whether they concern letters in the margin, niqqud in
+the body text, or both;
 the study preserves that uncertainty. Each translation identifies its whole
 current MAM lemma and all note parts. Each note review identifies the
 current observation and documentation text it assesses. The HTML build requires these subjects to
