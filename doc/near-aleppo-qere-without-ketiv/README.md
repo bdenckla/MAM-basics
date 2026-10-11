@@ -8,9 +8,9 @@ It is linked from the near-Aleppo FOI index and the existing ketiv/qere guide.
 Ben approved this first draft on 2026-10-08: “what you propose seems fine, at least as a first draft.”
 Implementation and further discussion of the readings proceed together.
 
-Every case of קרי ולא כתיב discussed here has a marginal note containing the
-qere letters. As expected, by definition, neither qere nor ketiv letters are
-present in the body text. The cases differ in whether, in the body text:
+Every case of קרי ולא כתיב discussed here has the expected marginal note
+containing the qere letters. Also as expected, neither qere nor ketiv letters
+are present in the body text. The cases differ in whether, in the body text:
 
 - niqqud marks are present (only four of the nine cases have niqqud)
 - horizontal space is present (only 1 case lacks it: 2 Samuel 18:20)

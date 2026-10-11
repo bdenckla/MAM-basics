@@ -842,8 +842,8 @@ def render(verses, rows):
             [
                 "Every case of ",
                 _template_name(_QERE_TEMPLATE),
-                " discussed here has a marginal note containing the qere letters. "
-                "As expected, by definition, neither qere nor ketiv letters are "
+                " discussed here has the expected marginal note containing the qere letters. "
+                "Also as expected, neither qere nor ketiv letters are "
                 "present in the body text. The cases differ in whether, in the body text:",
             ]
         ),

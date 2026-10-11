@@ -2474,3 +2474,18 @@ were read. The only product change removes the layout's pointed class; the
 stylesheets give its remaining class no font or size override.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this presentation-only change. Codex owns commit and normal push.
+
+## Revise the opening's expected features — 2026-10-11
+
+**Status:** Implemented. Ben requested “has the expected marginal note” and
+“Also as expected, neither qere nor ketiv letters”. The opening paragraph in
+the generator, study and source README now uses both exact replacements.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`bdfc8cbc77918e8f7af786d624d2eebba422649c` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated opening
+were read; the only product change is the two requested replacements and line
+wrapping. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this wording-only change. Codex owns commit and normal push.
