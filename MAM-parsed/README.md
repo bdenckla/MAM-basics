@@ -5,8 +5,8 @@ This MAM-basics product directory contains
 in the Wikisource-derived MAM-parsed-plus format under `plus/`.
 <!-- No non-Dovi equivalent currently exists for this page on en.wikisource.org. -->
 
-`plus/` contains one JSON file for each of the 24 books of the Miqra. Hebrew
-Wikisource supplies the source data.
+The `plus/` folder contains one JSON file for each of the 24 books of the Miqra.
+Hebrew Wikisource supplies the source data.
 
 Until 2026-09-28 this directory also held a second format, MAM-parsed plain, under `plain/`. It was
 retired that day and is no longer generated or distributed. Git history keeps it:
