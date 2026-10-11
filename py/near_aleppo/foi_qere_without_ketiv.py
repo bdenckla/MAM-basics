@@ -460,7 +460,7 @@ def _encoding_guide():
                     _template_name(_QERE_TEMPLATE),
                     " call and its qere, and supplements that call with one "
                     "additional template describing the body text. The "
-                    "additional template records which niqqud are present and whether "
+                    "additional template records which niqqud, if any, are present and whether "
                     "horizontal space is present. The cases below require "
                     "three kinds of additional template:",
                 ]

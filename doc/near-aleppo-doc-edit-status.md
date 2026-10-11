@@ -1588,3 +1588,20 @@ classifications, Hebrew text, notes and current dataset calls are preserved.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration, terminology searches and diff inspection cover
 this wording change and matching private identifier rename.
+
+## Qualify whether niqqud are present — 2026-10-11
+
+**Status:** Implemented. Ben requested “if any” in the encoding-conventions sentence.
+Use “The additional template records which niqqud, if any, are present” to
+state explicitly that the body text may have no niqqud.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`18936e5b27461d28f9b1dd6c0e5b508a1856c094` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and changes only the requested qualification and resulting line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
