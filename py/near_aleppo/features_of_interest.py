@@ -1,7 +1,7 @@
 """Selected NAEE features, rendered from Scripture with the edition's policy.
 
 The ordered cases are a reading guide, not an exhaustive template survey.
-Examples show complete rendered verses, excluding note lemmas.
+Examples use rendered Scripture, excluding note lemmas.
 The shared renderer owns closed template dispatch and both reading forms.
 Run py/main_near_aleppo.py --html to regenerate these pages.
 """
@@ -81,8 +81,7 @@ CASES = (
         "NAEE displays עַד־יַעֲבָור־זָֽעַם, with no qere above the middle atom. "
         "This follows MAM's note, which reports the ketiv and no qere note "
         "in the Aleppo Codex. In forming the near-Aleppo dataset, we inferred "
-        "the ketiv's pointing from the qere. "
-        "The boxed דלתיך / דלתך earlier in the verse is a separate pair.",
+        "the ketiv's pointing from the qere.",
         ((tbn.BK_ISAIAH, 26, 20),),
         compare_mam=True,
     ),
@@ -155,6 +154,32 @@ def _reference_link(reference):
     )
 
 
+def _isaiah_26_20_excerpt(scripture):
+    """Omit the first half and color the final compound in rendered Scripture."""
+    prefix, middle, ending = scripture[-3:]
+    if not isinstance(prefix, str) or not isinstance(ending, str):
+        raise ValueError("Isaiah 26:20 excerpt boundaries are not plain text")
+    before, separator, first = prefix.rpartition(" ")
+    boundary, space, remaining = before.lstrip().partition(" ")
+    maqaf = "\N{HEBREW PUNCTUATION MAQAF}"
+    sof_pasuq = "\N{HEBREW PUNCTUATION SOF PASUQ}"
+    if (
+        not separator
+        or not space
+        or "\N{HEBREW ACCENT ETNAHTA}" not in boundary
+        or not first.endswith(maqaf)
+        or not ending.endswith(sof_pasuq)
+        or not isinstance(middle, dict)
+        or mb_html.htel_get_tag(middle) != "span"
+    ):
+        raise ValueError("Isaiah 26:20 excerpt no longer has the expected boundaries")
+    compound = mb_html.span(
+        [first, middle, ending.removesuffix(sof_pasuq)],
+        {"class": "example-difference"},
+    )
+    return ["… ", remaining, " ", compound, sof_pasuq]
+
+
 def _case_contents(case, verses):
     title = (
         [_reference_link(case.references[0]), " — ", case.label]
@@ -186,9 +211,12 @@ def _case_contents(case, verses):
     for reference in case.references:
         if len(case.references) > 1:
             contents.append(mb_html.heading_level_3(_reference_link(reference)))
+        scripture = verses[reference]
+        if case.identifier == "isaiah-26-20":
+            scripture = _isaiah_26_20_excerpt(scripture)
         contents.append(
             mb_html.para(
-                verses[reference],
+                scripture,
                 {"dir": "rtl", "lang": "hbo", "class": "pointed foi-verse"},
             )
         )

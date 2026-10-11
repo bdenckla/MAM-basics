@@ -779,7 +779,8 @@ existing display עַד־יַעֲבָור־זָֽעַם without qere above the m
 MAM's note reports the ketiv and no qere note in the Aleppo Codex. In forming
 the near-Aleppo dataset, we inferred the ketiv's pointing from the qere. This
 correction attributes the manuscript report to MAM's note; no manuscript image was
-consulted. The description distinguishes the earlier boxed דלתיך / דלתך pair.
+consulted. The initial description distinguished the earlier boxed דלתיך / דלתך pair;
+the later excerpt change below omits that pair and removes its explanation.
 
 **Verification and scope:** Black passed. HTML regeneration changed only the
 guide among the 88 generated files. An independent comparison confirmed that
@@ -798,3 +799,22 @@ pointing from the qere” rather than attributing the inference to NAEE.
 Black and HTML regeneration passed; the generated diff changes only that
 sentence and its line wrapping. The live ledger's description is corrected
 in place. Data and verse displays are unchanged.
+
+**Excerpt and ink correction, 2026-10-11:** Implemented by Codex at Ben's
+request. The Isaiah display now replaces the first half, through the
+atom בַּעֲדֶ֑ךָ, with an ellipsis. The displayed second half comes from
+the existing rendered verse, and the entire final three-atom compound uses
+the existing teal `example-difference` ink color in light and dark mode.
+The ordinary ketiv/qere is no longer displayed; its explanatory sentence
+is removed. The edition book page and dataset are unchanged.
+
+Black and HTML regeneration passed; only the guide changed among the 88
+generated files. An independent artifact comparison confirmed that the six
+other guide verse displays are byte-identical and that the excerpt matches
+the complete second half in NAEE's book page. Headless Edge checks passed
+at 1100 and 390 px in light and dark mode: the whole compound inherits the
+contrasting ink, Hebrew fonts load, direction is RTL, and no page overflow
+or script error occurs. All four screenshots were inspected, and the three
+focused accent-literal and prose mark-order checks passed. Broad checks
+remain on the approved nightly cadence; the focused artifact differential
+and visual checks cover this presentation change.
