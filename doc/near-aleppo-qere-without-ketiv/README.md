@@ -8,8 +8,8 @@ It is linked from the near-Aleppo FOI index and the existing ketiv/qere guide.
 Ben approved this first draft on 2026-10-08: “what you propose seems fine, at least as a first draft.”
 Implementation and further discussion of the readings proceed together.
 
-Qere without ketiv has no letters for the qere written in the body text, though
-these letters are written in a marginal note. Ben treats the presence of a
+In each case of qere without ketiv, the body text contains no letters for the
+qere; those letters are written in a marginal note. Ben treats the presence of a
 masorah circle as common to these cases. The study notes that shared feature
 once in the introduction; the per-case distinctions concern niqqud and horizontal
 space. Complete MAM quotations and translations retain their circle references.

@@ -1779,3 +1779,24 @@ diffs were read, and `git diff --check` passed. This revision supersedes the
 earlier agreement comparisons and duplicated manuscript prose. Mega and full
 suite remain on the approved nightly cadence; focused regeneration, preservation
 comparison, independent review and lints cover this presentation change.
+
+## Clarify the opening definition — 2026-10-11
+
+**Status:** Implemented. Ben requested a less awkward opening and an unambiguous
+relationship between the qere letters and the body text. Use: “In each case of
+qere without ketiv, the body text contains no letters for the qere; those letters
+are written in a marginal note.” Apply the same wording to the source README.
+
+**Checkout and verification scope:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` is clean on main at
+`f5c43013038b14a85add49aaa040d838cf947c2d` before editing. Codex owns the wording,
+regeneration, diff inspection, commit and normal push. Run Black on the changed
+generator and the real HTML build/comparison. Mega and full suite remain on the
+approved nightly cadence for this wording-only change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read; the rendered change is confined to the opening sentence and its
+line wrapping. The source README uses the same definition. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence because
+this edit changes only explanatory wording.

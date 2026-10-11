@@ -839,8 +839,8 @@ def render(verses, rows):
             ]
         ),
         mb_html.para(
-            "Qere without ketiv has no letters for the qere written in the "
-            "body text, though these letters are written in a marginal note. "
+            "In each case of qere without ketiv, the body text contains no "
+            "letters for the qere; those letters are written in a marginal note. "
             "The space and marks in the body text of the manuscript can nevertheless differ."
         ),
         mb_html.para("The verses below show:"),
