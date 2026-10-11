@@ -21,9 +21,11 @@ from __future__ import annotations
 from pathlib import Path
 import re
 
+from mb_cmn import file_io
 from mb_cmn import paths
 from mb_cmn import provenance
 from mb_misc import mb_html
+from near_aleppo import link_presentation
 
 from author_site import site_data
 from author_site.entries import Anchor, Entry, EntryGroup, Italic, Part, Text
@@ -49,7 +51,13 @@ def gen_html_file(out_dir: Path | None = None) -> str:
         css_hrefs=("document.css", site_data.CSS_HREF),
         html_comment=provenance.generated_html_comment(__file__),
     )
-    mb_html.write_html_to_file(build_body(), write_ctx)
+    page = link_presentation.apply(
+        mb_html.html_text(build_body(), write_ctx),
+        _FNAME,
+        css_href="near-aleppo/" + link_presentation.STYLESHEET,
+        site_directory="",
+    )
+    file_io.with_tmp_openw(out_path, {}, lambda out_fp: out_fp.write(page))
     return out_path
 
 

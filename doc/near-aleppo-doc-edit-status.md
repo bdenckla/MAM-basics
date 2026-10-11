@@ -823,7 +823,8 @@ and visual checks cover this presentation change.
 
 **Status:** Implemented by Codex, authorized by Ben's request to research
 Wikisource, other approaches and MAM-basics precedents, then implement an
-experiment in `qere-without-ketiv.html`. Broader adoption awaits Ben's assessment.
+experiment in `qere-without-ketiv.html`. Ben's subsequent approval and the broader
+rollout are recorded under “Shared arrow links across near-Aleppo pages” below.
 Development and integration use the full clone `C:/Users/BenDe/GitRepos/MAM-basics`
 on main at `79c923957188007a2ffd70dd6ece60103cbeec97`, clean before editing.
 
@@ -850,3 +851,1778 @@ because `file:` URLs are disallowed. Visual layout and keyboard behavior await
 Ben's local review; no passing browser check is claimed. Mega and full suite
 remain on the approved nightly cadence. Focused generation and offline
 content/style checks cover this reversible page-specific experiment.
+
+## Shared arrow links across near-Aleppo pages — 2026-10-11
+
+**Status:** Implemented by Codex after Ben approved the study's arrow links and
+requested the presentation across near-Aleppo-related pages. Ben also asked
+whether a same-page link to an earlier anchor would use an up arrow.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`97cb7825cd6b3b1991e9300a7bf5913690e504a7` before editing. Codex owns the
+implementation, verification, commit and normal push. A read-only agent
+inventoried the affected pages and reviewed the integration.
+
+**Change:** All 77 HTML pages under `gh-pages/near-aleppo/` and the maintained
+standalone final-punctuation extract use the approved link presentation.
+`py/near_aleppo/link_presentation.py` inserts presentation attributes into the
+original rendered HTML and assigns up/down arrows by comparing each same-page
+link with its target in document order. Other MAM-basics pages retain a right
+arrow; destinations outside MAM-basics retain a boxed outward arrow. The shared
+authored stylesheet is `py/near_aleppo/link_presentation.css`; publication uses
+one generated copy, and the offline extract embeds it. The extract permits data
+images in its content security policy for the self-contained SVG masks. The
+study's private CSS now owns only its layout.
+
+**Verification:** Black passed on all four changed Python files. The actual
+HTML and extract generators and their read-only comparisons passed: 89 owned
+HTML-build files, both font copies and both extract files are current. Three
+focused renderer, CLC-style and shared-stylesheet tests passed. An independent
+artifact differential confirmed all 78 page bodies are byte-identical to the
+baseline after removing only presentation attributes. All 2,533 links retain
+their labels and destinations; every local fragment resolves and its arrow
+matches document order. The three upward links occur under “Notes for
+applications” in `reading-json.html`. All three SVG masks parse without remote
+dependencies. Hebrew order, RTL markup, source-data scripts, book datasets,
+pointing inputs, observations, crops and the plain-text extract are unchanged.
+The read-only agent review found no material integration issue, and
+`git diff --check` passed.
+
+**Verification limits:** Ben reviewed and approved the original presentation.
+Automated visual and keyboard checks retain the earlier browser-policy block
+on local `file:` previews; no automated browser pass is claimed. The full mega
+and suite remain on the approved nightly cadence. Focused generation, complete
+artifact comparisons and mechanical link checks cover this presentation rollout;
+no consequence requires immediate broad checks.
+
+## Arrow links on the top-level index — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request to apply the arrow
+link convention to `gh-pages/index.html`.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`b8a4e72256950749bd5554f2cc7bbba6f651eb27` before editing. Codex owns the
+implementation, focused verification, commit and normal push.
+
+**Change and scope:** `py/author_site/site_index.py` applies the existing shared
+helper and loads `near-aleppo/link-presentation.css`. The helper now accepts an
+explicit page directory so the top-level index is located at the website root;
+near-Aleppo callers retain their default. The index has no same-page anchors;
+its 28 links to MAM-basics pages use right arrows and its 15 links to external
+destinations use boxed outward arrows.
+
+**Verification:** Black passed on both changed Python files, and the maintained
+`py/main_authored.py gen-site` completed. An independent comparison confirmed
+the complete index is byte-identical to the baseline after removing only
+presentation attributes and the shared stylesheet reference; all 43 link cues
+match their destinations. The existing index and shared-stylesheet lints passed,
+four tests. Near-Aleppo HTML and standalone-extract read-only comparisons passed
+without generated differences. All other root pages, Hebrew and RTL markup,
+datasets and study inputs are unchanged. `git diff --check` passed.
+
+**Verification limits:** The unchanged styles use Ben's approved presentation;
+automated visual and keyboard checks retain the previously documented local
+preview restriction. Mega and full suite remain on the approved nightly cadence.
+The real generators, complete-page differential and focused lints cover this
+extension; no consequence requires immediate broad checks.
+
+## Retirement of the completed punctuation extract — 2026-10-11
+
+**Status:** Retired by Codex after Ben proposed removing the page and asked
+whether it reviewed the completed legarmeh/maqaf additions.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`dc57597b8b797d7f1ac9a7747cbee5c8af1b6859` before editing. Codex owns the
+retirement, focused verification, commit and normal push.
+
+**Completion evidence:** “Vertical ruby gap and main integration” above records
+the completed 2026-10-07 package at `2f301311`: 36 added final maqafs and five
+added final U+05C0 signs in stored pointed ketivs. The extract also displayed
+already-present punctuation, for 42 maqaf and 12 paseq/legarmeh cases in total.
+Its read-only comparison passed against the current dataset immediately before
+retirement. The earlier qamats question was superseded by the final-mark ruby
+correction recorded below the integration entry; it does not require this page.
+
+**Retired scope:** Removed the HTML extract, its plain-text companion, its
+dedicated generator, and its selection JSON. Removed the `--punctuation-review`
+CLI branch and the differential check that existed solely for these outputs.
+Updated current README and styling instructions, and marked the extract as
+retired in the study's source note and the live release-notes draft. The draft's
+commit-specific link still preserves the historical site list. Git history keeps
+all four removed files; historical verification entries remain as dated evidence.
+The actual frozen and reviewed pointing inputs, edition renderer, book datasets,
+population metadata, note reviews and published HTML remain unchanged.
+
+**Verification:** The extract's read-only check passed before removal. Black
+passed on the changed entry point and test file. Both remaining near-Aleppo
+differential tests passed, covering the census, dataset/population baselines and
+source-note review inventory. The HTML read-only comparison passed for all 89
+owned files and both font copies. The CLI help no longer offers the retired
+command; a search found no extract dependencies in current Python or published
+products. A complete changed-path audit and direct Git comparison confirm that
+the production pointing inputs, datasets and published pages are unchanged.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; this retirement has focused checks and changes no production reading.
+
+## Prominent qere-without-ketiv encoding — 2026-10-11
+
+**Status:** Implemented by Codex after Ben explicitly requested implementation
+of the document-only plan. Ben chose readable encoding summaries followed by
+curly-brace notation, with dataset implementation left for separate work.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`17b79fd70c6e0173b192193b5d67868a2aa5298f` before editing. The planning baseline
+`6e793c906e2275d0df51e0631849b0c38ba95b94` is its ancestor. The intervening link
+presentation rollout and removal of the obsolete display-space paragraph are
+preserved. Codex owns implementation, focused verification, commit and push.
+
+**Change:** The study explains the two near-Aleppo-specific marks templates and
+the artificial carrier convention. Each entry puts “Near-Aleppo encoding” before
+its full verse. Current encodings are labelled implemented; intended encodings
+are labelled pending or assessment open. The generator reads complete current
+source fragments from the dataset through the existing closed Scripture walk,
+excluding note bodies and copied MAM lemmas, validates both literal parameters
+and the whole qere, and lets the HTML writer escape the notation as text.
+
+The study's v2 metadata records four intended assessments: the template with
+space above the marks at Judges 20:13 and 2 Kings 19:31, empty body text at
+2 Samuel 16:23, and the template without space above the marks at 2 Samuel 18:20.
+The five entries awaiting image readings keep their encoding assessments open.
+The 2 Kings holam reading remains tentative; the 2 Samuel 18:20 use still awaits
+its own variant and implementation. No pending payload is fabricated. All nine
+current source fragments still use `קרי ולא כתיב`; neither marks template is
+applied at these sites.
+
+**Verification:** Black passed on the changed Python file. Real HTML generation
+and its read-only comparison passed for all 89 owned files and both font copies.
+An independent check read the dataset JSON and matched all nine displayed source
+fragments, confirmed that encoding precedes every verse, and checked the pending
+labels and RTL source isolation. After removing only the added encoding sections,
+the original page body is byte-identical to the baseline. Existing manuscript
+metadata is unchanged after removing the new intended-encoding field. Only the
+study page changed among generated products; datasets, edition pages, crop bytes
+and existing link presentation are unchanged. The generated HTML was read,
+the read-only agent review found no material defect, and `git diff --check` passed.
+
+**Verification limits:** Automated browser inspection retains the local-preview
+restriction recorded in the study README; no browser pass is claimed. Mega and
+full suite remain on the approved nightly cadence. Focused generation and the
+complete source and artifact comparisons cover this document-only revision.
+
+## 2 Kings 19:37 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+“marks without letters (qamats, qamats, pashta) with space above.” Ben described
+a large horizontal space, presumably left intentionally by the letter-scribe;
+that intention remains an attributed hypothesis.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`ec505454b0677ad6dc231d6f87440099d56acbbe` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The maintained reading record now records the two qamats marks and
+pashta of בָּנָיו֙, without letters and with space above. The existing intended
+encoding assessment uses `marks-with-space`; implementation remains pending.
+Codex inspected `Screenshot 2026-10-11 120243.png` and copied its unchanged bytes
+to `in/near-aleppo/img/qere-without-ketiv/aleppo-2K19-37.png`. The HTML build
+copies that crop for inline display. The source note records provenance and
+the reading; four selected cases still await image readings.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+90 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere, current source notation and links.
+All five canonical/generated crop pairs have identical bytes; the new crop
+also matches the supplied screenshot. The generated HTML diff was read.
+The prose mark-order check passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+check cover this observation and crop update.
+
+## Jeremiah 31:37 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied body-text and marginal-note
+crops. Ben read a rather generous horizontal space with no niqqud and a masorah
+circle in the space. The marginal qere note is partly obscured by damage, so some
+of its letters are inferred.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a7d936b3db3514c5138a14b71275292926d7fb76` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record preserves the body-text observation for בָּאִ֖ים
+and the qualification about the damaged marginal qere note. Its intended body
+encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 121352.png` and `Screenshot 2026-10-11 121420.png` and
+copied their unchanged bytes to `aleppo-Je31-37.png` and
+`aleppo-Je31-37-marginal-qere.png` under the study's canonical image directory.
+The primary crop record now supports one explicitly named, optional
+`marginal_qere_note` crop. Both shapes are validated, and both images receive
+distinct captions and alt text. Three selected cases still await image readings.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 92 owned files and both font copies. An
+independent baseline differential confirmed that all eight other case records
+and HTML sections are unchanged, along with the target's Scripture, MAM qere
+and notes, current source notation and links. All seven canonical/generated
+crop pairs have identical bytes, and both new crops match the supplied
+screenshots. The generated HTML diff was read. The prose mark-order and Python
+accent-mark lints passed (three tests); `git diff --check` passed. Production
+datasets are unchanged. Mega and full suite remain on the approved nightly
+cadence; focused generation, the artifact differential and the lints cover
+this observation and the paired crop display.
+
+## Jeremiah 31:37 marginal-note damage and layout — 2026-10-11
+
+**Status:** Clarified by Codex from Ben's further image reading. The damage looks
+as if opaque tape had been laid parallel to the right margin, obscuring
+approximately the first letter of each inferred word on its own line. Ben does
+not know the cause. The tape comparison describes how the damage looks; it does
+not propose a mechanism.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`cd4c7140ea8cb72f62987b062a14905274cf4ece` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now describes obscured letters and unknown cause.
+Its `marginal_qere_note.inferred_lines` preserves Ben's four supplied words in
+their exact order, including the third line as supplied. The study and source
+note show the inferred vertical layout in an RTL block with one word per line.
+The generator validates a nonempty list of nonempty, single-line strings.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 92 owned files and both font copies. An
+independent baseline differential confirmed the exact inferred words, order and
+RTL markup. All eight other cases, the target's body reading and both encoding
+assessments, Scripture, MAM qere and notes, source notation, links and crop
+markup are unchanged. All seven crop pairs retain identical bytes. The generated
+HTML diff was read; the focused prose/Python mark lints passed (three tests),
+and `git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused generation, the artifact differential and the lints cover
+this clarification and vertical-layout display.
+
+## Jeremiah 50:29 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+generous horizontal space without niqqud, containing a masorah circle, with the
+preceding maqaf extending into the space.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a78b684874d9448fc162f6cb3e0238022b5f27ad` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now records the space, absent qere letters and
+niqqud, masorah circle, and maqaf extending into the space at לָהּ֙. Its intended
+body encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 122253.png` and copied its unchanged bytes to
+`in/near-aleppo/img/qere-without-ketiv/aleppo-Je50-29.png`; the HTML build copies
+the crop for inline display. Ruth 3:5 and Ruth 3:17 still await image readings.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+93 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere and notes, current source notation
+and links. All eight canonical/generated crop pairs have identical bytes; the
+new crop also matches the supplied screenshot. The generated HTML diff was
+read. The prose mark-order lint passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+lint cover this observation and crop update.
+
+## Ruth 3:5 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+generous horizontal space without niqqud, containing only a masorah circle.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`f2ae390cbeacc4a77dbb2411d14b2893cfc41070` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now records the generous space without qere
+letters or niqqud at אֵלַ֖י and the masorah circle within the space. Its intended
+body encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 122537.png` and copied its unchanged bytes to
+`in/near-aleppo/img/qere-without-ketiv/aleppo-R3-5.png`; the HTML build copies
+the crop for inline display. At that revision, Ruth 3:17 was the final selected
+case awaiting an image reading.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+94 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere and notes, current source notation
+and links. All nine canonical/generated crop pairs have identical bytes; the
+new crop also matches the supplied screenshot. The generated HTML diff was
+read. The prose mark-order lint passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+lint cover this observation and crop update.
+
+## Ruth 3:17 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+generous space at the end of a manuscript line without niqqud, containing only
+a masorah circle. The possibility that the line ending accounts for the generous
+space accidentally remains Ben's hypothesis. All nine selected cases now have
+dated image readings and crops; dataset implementation remains pending.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a5a0e976af55940f2aed9f2c68523a3dfdda935f` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The reading record now records the generous end-of-line space
+without qere letters or niqqud at אֵלַ֔י and the masorah circle within the space.
+The spacing hypothesis is separately attributed to Ben. Its intended body
+encoding assessment is `empty-body`, pending implementation. Codex inspected
+`Screenshot 2026-10-11 122806.png` and copied its unchanged bytes to
+`in/near-aleppo/img/qere-without-ketiv/aleppo-R3-17.png`; the HTML build copies
+the crop for inline display. The source note now covers all nine selected cases.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere and notes, current source notation
+and links. All ten canonical/generated crop pairs have identical bytes; the
+new crop also matches the supplied screenshot. The generated HTML diff was
+read. The prose mark-order lint passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+lint cover this observation and crop update.
+
+## Marginal-note words — 2026-10-11
+
+**Status:** Corrected by Codex at Ben's request: “these are words, just call them
+words!” These are words in a marginal note.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`2ec93ab625a180c200f2584b61400a6edd677f23` before editing. Codex owns the correction,
+focused verification, commit and normal push.
+
+**Change:** The study now says “one word per line” and “each inferred word”. The
+generator, reading metadata, source note and maintained descriptions use the same
+wording. The inferred Hebrew words, their order, and their qualifications are
+unchanged.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 95 owned files and both font copies. An
+exact baseline comparison confirmed only the requested English replacements in
+the generator, metadata, source note and generated page. The generated diff was
+read, and `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence; regeneration and the exact wording comparison cover this
+terminology correction.
+
+## Tape comparison describes appearance — 2026-10-11
+
+**Status:** Amplified by Codex at Ben's request. The cause of the damage remains
+unknown. The tape comparison describes how the damage looks; it does not propose
+a mechanism.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`1a76228b225d8ee5e4c4129db09030d6466387e4` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change and verification:** Added the qualification to the reading metadata,
+source note and generated study. HTML regeneration and read-only comparison
+passed for all 95 owned files and both font copies. An exact baseline comparison
+confirmed that only this qualification changed in the records and page. The
+generated diff was read, and `git diff --check` passed. Mega and full suite remain
+on the approved nightly cadence; regeneration and the exact comparison cover
+this prose clarification.
+
+## MAM note translations and comparisons — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request for English translations of
+MAM doc-notes and discrepancies between his descriptions and MAM's.
+
+**Checkout and baseline:** Source, development and integration use the full
+clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`9a8b64fd600764bb702b69393de7551dcaae8ee5` before this work. Codex owns the
+document revision, focused verification, commit and normal push.
+
+**Change:** The maintained English-note input supplies six complete translations
+and nine comparisons. The generator reconciles each translation with its whole
+current MAM lemma and note parts, and each comparison with the observation and
+documentation text it assesses. Hebrew examples remain in RTL blocks. Source
+sigla and the Simanim Tanakh title were checked against the local mirrored MAM
+introduction. A discrepancy summary appears near the top of the study.
+
+**Discrepancy:** At 2 Samuel 16:23, MAM describes only a narrow space; Ben
+describes a fairly generous space even after the maqaf, insufficient for letters
+but ample for below-marks. Both descriptions say that pointing is absent. The
+other attached notes agree where the descriptions overlap; additional surrounding
+text, marginal-note quotations and spacing hypotheses are identified as additions.
+Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 have no attached MAM note to compare.
+
+## Supplemental encoding and body-text definition — 2026-10-11
+
+**Status:** Corrected by Codex at Ben's request. Every existing `קרי ולא כתיב`
+call and its qere are to be retained and supplemented by one body-text template.
+The earlier presentation suggesting replacement, including “empty body text”,
+is superseded. Dataset implementation remains deferred while the document evolves.
+
+**Change:** Pending supplements distinguish niqqud with horizontal space,
+niqqud without horizontal space above the marks, and horizontal space without
+niqqud. Existing marks templates are candidates; supplemental names, parameter
+shapes and call placement remain to be designed. The study now qualifies its
+opening definition: qere letters are absent from the body text and written in a
+marginal note. Shared masorah-circle presence is noted once at the top, while
+complete MAM notes and translations retain their source references. Circle
+positions remain in reading metadata; authored per-case repetitions are removed.
+
+**Verification for both revisions:** Black passed on the changed generator.
+HTML regeneration and read-only comparison passed for 95 files and both font
+copies. An independent baseline differential verified all six translations,
+nine comparisons, the one discrepancy and nine unchanged current source calls.
+Scripture, Hebrew notes, manuscript readings, inferred marginal words, crops,
+links and production datasets are preserved. A read-only reviewer found no
+material translation or document defects. The three focused prose and mark
+lints passed, the generated diff was read, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+source reconciliation, the artifact differential and lints cover these revisions.
+
+## Body-text wording — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. The introductory sentence now
+reads “The space and marks in the body text of the manuscript can nevertheless
+differ.” This replaces the vague “at the manuscript site”.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`b711ceaaf73c865ff3c89ab61340c6fe8112c0d5` before editing. Codex owns the wording
+change, focused verification, commit and normal push.
+
+**Verification:** Black passed on the changed generator. HTML regeneration and
+read-only comparison passed for all 95 files and both font copies. The generated
+diff contains only the requested sentence replacement and paragraph wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; regeneration and the inspected diff cover this prose-only correction.
+
+## Introductory list of case contents — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. “Have their own labels” meant
+the HTML document's headings, but the phrase was vague. The introduction now
+lists the current NAEE contents, any MAM notes, and the Aleppo images for each
+case using Ben's proposed wording. The image-reading attribution remains.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`8f7aa4f0ff5084ee0337a4f50cc9d270ce23d9fb` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and contains only this introduction revision. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; regeneration and
+the inspected diff cover this prose-only revision.
+
+## Horizontal space and line position — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. “Encoding conventions” now
+defines “space above the marks” as horizontal space in the line of letters,
+between words or at the end of a manuscript line. End-of-line space may have
+been left on purpose or may be accidental. Judges 20:13 and Ruth 3:17 are the
+two end-of-line cases; none of the cases in this study is at the start of a line.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`7253552845aa6a9687992b28d6a5f1210afe84fc` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Codex consulted the recorded observations and all nine
+body-text crops for the line-position statement. Black passed on the generator.
+HTML regeneration and read-only comparison passed for all 95 files and both
+font copies. The generated diff was read and adds only the requested paragraph.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; image inspection, regeneration and the inspected diff cover this
+prose-only clarification.
+
+## Remove displayed recording and review dates — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. All nine “Aleppo manuscript
+reading” headings now omit their recording dates. The two Samuel descriptions
+also omit the date on which MAM's note was reviewed. No dates remain in the
+rendered study; source provenance dates remain in the reading metadata.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`120ecb4abcac7fe6f1a3667e92547b1937f8484d` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and contains only the nine heading changes and two date removals in prose.
+The date search found no remaining dates in the page. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; regeneration and
+the inspected diff cover this prose-only revision.
+
+## Consolidated sentence-prose batch — 2026-10-11
+
+**Status:** Implemented. Ben's chat messages are the request source; Codex records
+the consolidated batch in this existing tracked ledger. Earlier document requests
+are implemented in the entries above. This batch combines Ben's requests to:
+
+1. Use sentences in place of “No dagesh.” and throughout the document's English
+   prose: “Please let's use sentences here and throughout the document.”
+2. Qualify the absence of dagesh with “as expected, since dagesh marks are never
+   included in cases of qere without ketiv”, with the body-text scope explicit.
+
+The prose pass revised English descriptions, list items, encoding summaries,
+translation fragments and captions. Hebrew source quotations, qere readings,
+template notation and structural headings retain their existing contents.
+Codex uses this ledger to consolidate chat requests before implementation and
+record each batch's implemented, deferred or unresolved dispositions at completion.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`648efbaf72485ab5a1b4b1965ef8e6625dd79de5` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The full generated diff
+was read; Scripture, Hebrew sources, current source calls, readings, inferred
+marginal words, links and crops are preserved. Dates remain hidden, and the
+previous spacing, circle and damage qualifications remain intact. A read-only
+reviewer found no material prose or translation defects. The three focused prose
+and mark lints passed, and `git diff --check` passed. Mega and full suite remain
+on the approved nightly cadence; focused regeneration, source reconciliation,
+inspection, review and lints cover this consolidated prose batch.
+
+## Center manuscript images — 2026-10-11
+
+**Status:** Implemented. Ben requested “Center images.” All ten manuscript crops,
+including the marginal-note crop, and their captions are centered in the
+study through its shared CSS rules.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`212e9c0ccf5598aa868265ac599994c76dc97792` before editing. Codex owns the layout
+change, focused verification, commit and normal push.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 files and both font copies. All ten image elements use the shared centering
+rule. The generated diff was read and changes only the two CSS rules; the page
+body and images are unchanged. `git diff --check` passed. Mega and full suite
+remain on the approved nightly cadence; regeneration and stylesheet inspection
+cover this layout-only change.
+
+## Center short Hebrew displays — 2026-10-11
+
+**Status:** Implemented. Ben requested centering short displayed Hebrew, specifically
+the MAM qere and current source-notation values. This batch centers those values
+and the Hebrew quotations in English translations. The inferred marginal-note
+block is centered as a whole while preserving its RTL layout and one word per line.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a1296f9faf50d49711965355d9c84a02eb093c33` before editing. Codex owns the layout
+change, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and contains only centering rules and display-class assignments. The nine
+qere values, nine source-notation values, four translated Hebrew quotations and
+one inferred marginal-note block use the centering rules. Text, marks, RTL
+attributes, word order, images and manuscript observations are preserved.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; regeneration and stylesheet/markup inspection cover this layout-only change.
+
+## Color MAM note targets — 2026-10-11
+
+**Status:** Implemented. Ben requested coloring the ink of the targets in “Current
+MAM doc-note” entries, following MAM-with-doc and near-Aleppo. The target markup
+is already present; the study now uses the matching blue/light-blue color rules
+for note lemmas and target passages in the displayed verses.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`427e4e89ea13097a7b938f466e1131784556ee4c` before editing. Codex owns the styling
+change, focused verification, commit and normal push.
+
+**Verification:** The color matches `py/mb_misc/styles_mam_with_doc.css`, which
+supplies MAM-with-doc and near-Aleppo's edition styling. All six attached note
+lemmas use the target class. HTML regeneration and read-only comparison passed
+for all 95 files and both font copies. The generated diff was read and adds
+only the target-ink rule and its source comment; markup, text and images are
+unchanged. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence; regeneration and the checked stylesheet precedent cover this
+styling-only change.
+
+## Contrast spacing with absent pointing — 2026-10-11
+
+**Status:** Implemented. Ben requested “yet” in the 2 Samuel 16:23 description:
+“The space is fairly generous even after the maqaf, yet there is no pointing
+for אִ֖ישׁ.” The comparison's subject text is reconciled with that wording.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`72c9078cc35c92e561cf81ec46c0fb46f3b72104` before editing. Codex owns the wording
+change, focused verification, commit and normal push.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 files and both font copies. The generated diff was read and changes only
+“with no” to “yet there is no” in the requested sentence. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence; regeneration
+and the inspected diff cover this prose-only correction.
+
+## Anonymous voice and the meaning of narrow — 2026-10-11
+
+**Status:** Implemented. Ben requested an unnamed authorial voice throughout the study
+and a more substantive discussion of MAM's “narrow” at 2 Samuel 16:23. The possible
+interpretation is narrow relative to the room required for letters, rather than
+for points alone. Named-contributor references are removed from the rendered
+prose, and the summary and comparison describe an apparent discrepancy with
+this possible reconciliation. Source provenance remains in the maintained metadata.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`cdb7b0b9f8a4b175561b40266aeca04f486a016b` before editing. Codex owns the prose
+revision, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated and input
+diffs were read; MAM notes and translations, qere glyphs, inferred words, styles,
+images and source provenance are preserved. The source-note assessment now records
+the possible interpretation of “narrow”. The rendered page has no contributor-name
+references or dates. A read-only reviewer found no material voice or interpretation
+defects and confirmed the hypotheses and damage qualifications are preserved.
+The three focused prose and mark lints passed, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+source reconciliation, inspection, review and lints cover this prose revision.
+
+## Remove generic qere display explanation — 2026-10-11
+
+**Status:** Implemented. Ben requested removal of the generic explanation that the
+dataset retains the pointed qere and NAEE displays it above the editorial
+“no ketiv” label. The shared generator included that explanation in all nine
+case entries; there is no case-specific reason to retain it at 2 Samuel 18:20.
+The current template identification and the intended supplemental encoding
+remain intact.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`82a248cdbedfadafc0b07035e8c0286efa166327` before editing. Codex owns the removal,
+focused regeneration, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and removes only the generic explanation in all nine case entries.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and the inspected diff cover this prose-only change.
+
+## Explain agreement with an implied qere — 2026-10-11
+
+**Status:** Implemented. Ben requested “the qere implied by the Leningrad Codex”
+in place of “the Leningrad Codex's qere” and comparable clarification elsewhere.
+The English versions translate and expand MAM's abbreviated notes. Their
+statements of agreement must preserve the uncertainty about whether the agreement
+concerns letters in the margin, niqqud in the body text, or both.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`ed4fb323756452bc6ef6321499a7acb94549e445` before editing. Codex owns the explanatory
+prose, regeneration, focused verification, commit and normal push.
+
+**Change:** Both Ruth translations now use the requested implied-qere wording.
+Jeremiah 31:37 likewise attributes the reported agreement to the readings implied
+by the manuscripts. The six English-section headings identify translation and
+explanation, and one introductory paragraph records the unresolved scope of the
+brief agreement statements. The maintained source note describes this treatment.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The source and generated
+diffs were read; only the requested explanatory prose and headings change.
+Original MAM notes, Hebrew text, comparisons, manuscript readings and encodings
+are preserved. `git diff --check` passed. Mega and full suite remain on the
+approved nightly cadence; focused regeneration, note-source reconciliation and
+diff inspection cover this prose-only clarification.
+
+## Describe absent pointing neutrally — 2026-10-11
+
+**Status:** Implemented. Ben questioned “missing” in the Ruth translations and
+suggested “not written” or “not present”. The Hebrew חסרים supports “missing”
+or “absent”, but does not establish a cause for the absence. Use “not present”
+in both Ruth notes and the comparable Jeremiah 31:37 translation of חסר.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`99d018732732930d74bb8a158002a1b304289cb9` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 files and both font copies. The source and generated diffs were read and
+change only these three English descriptions of absent pointing. Original Hebrew
+notes and Scripture are preserved. `git diff --check` passed. Mega and full
+suite remain on the approved nightly cadence; focused regeneration and diff
+inspection cover this wording-only change.
+
+## Use one name for the additional template — 2026-10-11
+
+**Status:** Implemented. Ben requested consistent reference to the “additional
+template”, rather than rotating between that phrase and “supplement”. Use
+“additional template” throughout the study's introduction, encoding labels,
+case explanations and maintained source note. Preserve the distinction between
+the existing qere call and the proposed additional template.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`93a6727e5774334e4332db5d5cbb82396c16fe7b` before editing. Codex owns the consistent
+wording, regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The source and generated
+diffs were read. “Supplement” and “supplemental” no longer name the additional
+template in the study or its maintained description; all references to the
+renamed private generator constant were reconciled. Recorded readings, template
+classifications, Hebrew text, notes and current dataset calls are preserved.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration, terminology searches and diff inspection cover
+this wording change and matching private identifier rename.
+
+## Qualify whether niqqud are present — 2026-10-11
+
+**Status:** Implemented. Ben requested “if any” in the encoding-conventions sentence.
+Use “The additional template records which niqqud, if any, are present” to
+state explicitly that the body text may have no niqqud.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`18936e5b27461d28f9b1dd6c0e5b508a1856c094` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and changes only the requested qualification and resulting line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Name the existing niqqud templates — 2026-10-11
+
+**Status:** Implemented. Ben requested “The existing niqqud templates” in place of
+“The existing marks templates” to avoid the possible English-verb reading of
+“marks”.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a9513424352c44ea8bca662164f237f7aaf2658a` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and changes only “marks” to “niqqud” in the requested phrase.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Describe the current carrier convention — 2026-10-11
+
+**Status:** Implemented. Ben requested the current carrier choices instead of the
+historical statement “The original convention uses alef carriers.” State that
+the carrier can be alef, vav, or, rarely, dalet.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`bef8252784d2f667d62185dea711dc7ffac2cdf3` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The current validator
+recognizes alef, vav and dalet carriers. The generated diff was read and replaces
+only the historical sentence with the current carrier choices.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Name the unsettled carrier payload — 2026-10-11
+
+**Status:** Implemented. Ben requested the verse instead of “an unsettled case”.
+Name 2 Kings 19:31 and explain that its tentative ḥolam male reading leaves
+the carrier payload unsettled, as the maintained reading already records.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`02db015b258686eb94bea305e38083d9323fc03c` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and names 2 Kings 19:31 and the tentative ḥolam male reading, with the
+existing romanization styling. The maintained reading supports that explanation.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this prose clarification.
+
+## State that the existing qere calls will remain — 2026-10-11
+
+**Status:** Implemented. Ben reaffirmed that every existing `קרי ולא כתיב` call
+will remain. Replace “still uses” with “uses … and will continue to do so”
+and remove the parenthetical English gloss in that sentence. The additional
+template supplements the existing call.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`53e7aa829b0b213cff2e7a854c03cbf2c29b131d` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and changes only the requested wording and resulting line wrapping; every
+existing qere call and all pending additional-template assessments are preserved.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Summarize the cases in a compact table — 2026-10-11
+
+**Status:** Implemented. Ben requested a table instead of the numbered verse list,
+with narrow columns and defined abbreviations. At minimum the table must record
+niqqud presence and horizontal-space presence, independently of whether niqqud
+occupy or lie beneath that space. Use N and H with +/− values, and a position
+column with BW for between written words and EOL for the end of a manuscript line.
+Preserve the verse links to the full case discussions and the shared statement
+about masorah circles. The table summarizes manuscript readings, not current
+dataset encodings.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a833ad895408061c30d4a40562175d80f2c6ec66` before editing. Codex owns implementation,
+regeneration, focused verification, commit and normal push. A read-only reviewer
+owns independent reconciliation of the nine readings and body-text crops.
+
+**Verification:** Black passed on the generator. The initial render rejected the
+unsupported caption element; the table now uses a supported section heading,
+explicit table label and linked legend, with no shared HTML-writer changes.
+HTML regeneration and read-only comparison passed for all 95 files and both font
+copies. The source and generated diffs were read. The table's nine values and
+positions agree with the image readings; an independent reviewer inspected all
+nine body-text crops and found no mismatches or consequential implementation
+defects. Codex also inspected the seven crops used for the newly explicit BW
+positions. The existing verse links, Scripture, MAM notes, translations, images,
+current dataset calls and tentative ḥolam male qualification are preserved.
+The three focused prose and mark lints passed, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+image reconciliation, review and lints cover this study-table change.
+
+## Show chanted-word context instead of whole verses — 2026-10-11
+
+**Status:** Implemented. Ben requested one chanted word before the QVLK and one
+after it, with two on the available side for a verse-final or verse-initial
+QVLK, and ellipses for omitted text. Preserve the complete chanted word containing
+the QVLK when the QVLK is in a maqaf compound, then retain the neighboring
+chanted words. Rename the display heading to “Current NAEE excerpt” and center
+these short Hebrew displays. Keep the qere, its box, marks and target ink intact.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`c020675419d3c31d83239d1926bbb66929568f96` before editing. Codex owns implementation,
+regeneration, focused verification, commit and normal push. A read-only reviewer
+independently checks the nine context selections and ellipsis placement.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The source and generated
+diffs were read. All nine excerpts retain the independently checked neighboring
+chanted words and intact maqaf compounds. Every excerpt has a leading ellipsis;
+seven have a trailing ellipsis. The other two, 2 Kings 19:31 and Ruth 3:5, reach
+the verse ending and retain sof pasuq. No current QVLK is verse-initial or
+verse-final; the renderer's explicit endpoint branches retain two neighbors on
+the available side. The independent final review found no material defects in
+the selections, original-node preservation or endpoint logic. The headings,
+centering and dataset README now describe excerpts. All MAM notes, translations,
+table entries, qere glyphs, target ink, images and dataset calls are preserved.
+The three focused prose and mark lints passed, and `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; focused regeneration,
+independent context review, source inspection and lints cover this excerpt change.
+
+## Keep only discrepancies and additional manuscript remarks — 2026-10-11
+
+**Status:** Implemented. Ben requested that comparisons with MAM record only
+discrepancies, excluding agreements and summaries of facts supplied by only one
+description. Trim the displayed manuscript remarks to facts beyond MAM's note.
+Keep the qualified interpretation of “narrow” at 2 Samuel 16:23 in those remarks,
+without a separate discrepancy entry: the comparison depends on whether the
+space is assessed relative to the letters or the niqqud.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`b6a38a3f37fbed2024236a2086631142af27204e` before editing. Codex owns the
+source edits, regeneration, focused verification, commit and normal push.
+A read-only reviewer checks the trimming against all six MAM notes.
+
+**Execution scope:** Preserve full structured image readings, provenance, all
+Hebrew notes and translations, images, summary-table values, NAEE excerpts and
+dataset calls. Allow no separate remarks where everything duplicates MAM, and
+no comparison block where no discrepancy remains. Update the maintained source
+README. Run Black on the changed generator, the real HTML build and comparison,
+the focused prose/mark lints and diff checks. Mega and full suite remain on the
+approved nightly cadence.
+
+**Verification:** Black passed on the generator. The real HTML build and
+read-only comparison passed for all 95 files and both font copies. The generated
+diff removes the discrepancy summary and all nine comparison blocks; the
+qualified “narrow” discussion appears once in the additional remarks. Separate
+remarks at 2 Samuel 18:20 and Ruth 3:5 are omitted because they duplicate MAM.
+The other remarks retain only the additional details, and the three cases
+without attached notes retain their full remarks. Nullable displayed remarks
+and comparisons are explicit in the revised source formats and renderer.
+An independent reviewer found no material defects in the trimming or renderer.
+A differential comparison with the baseline confirmed that full structured
+readings, all six Hebrew notes and English translations, nine excerpts and qere
+displays, source notation, table, images and inferred marginal-note layout are
+preserved. The three focused prose and mark lints passed. The source and rendered
+diffs were read, and `git diff --check` passed. This revision supersedes the
+earlier agreement comparisons and duplicated manuscript prose. Mega and full
+suite remain on the approved nightly cadence; focused regeneration, preservation
+comparison, independent review and lints cover this presentation change.
+
+## Clarify the opening definition — 2026-10-11
+
+**Status:** Implemented. Ben requested a less awkward opening and an unambiguous
+relationship between the qere letters and the body text. Use: “In each case of
+qere without ketiv, the body text contains no letters for the qere; those letters
+are written in a marginal note.” Apply the same wording to the source README.
+
+**Checkout and verification scope:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` is clean on main at
+`f5c43013038b14a85add49aaa040d838cf947c2d` before editing. Codex owns the wording,
+regeneration, diff inspection, commit and normal push. Run Black on the changed
+generator and the real HTML build/comparison. Mega and full suite remain on the
+approved nightly cadence for this wording-only change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read; the rendered change is confined to the opening sentence and its
+line wrapping. The source README uses the same definition. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence because
+this edit changes only explanatory wording.
+
+## Rework the opening around shared and varying features — 2026-10-11
+
+**Status:** Implemented. Ben requested a full paragraph rewrite: first state the
+features shared by every case, then name the features that vary. State that
+each case discussed here has qere letters in a marginal note and a masorah
+circle in the body text, where the qere letters are absent. Then state that
+niqqud presence and horizontal-space presence differ from case to case. Fold
+the later circle-presence paragraph into this opening so the common feature
+is stated once. This supersedes the preceding opening-sentence revision.
+
+**Checkout and verification scope:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` is clean on main at
+`a33521dd1f0aba6642b62ee86daff2d940a9faa5` before editing. Codex owns the prose,
+source README, regeneration, diff inspection, commit and normal push. Run Black
+on the changed generator and the real HTML build/comparison. Mega and full
+suite remain on the approved nightly cadence for this prose-only revision.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read: the opening paragraph is replaced, and the later circle paragraph
+is removed. The source README now states the same common and varying features.
+All case discussions, notes, images, table entries and dataset calls are
+unchanged. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence because this change affects only introductory prose.
+
+## Rewrite the per-case lead-in and bullets; continue in a new chat — 2026-10-11
+
+**Status:** Implemented in the successor chat. Ben requested that the lead-in and
+bullets describe each case's section, rather than the page as a whole. The
+prior lead-in, “The verses below show:”, introduced three bullets beginning
+“The page shows” or “The page includes”. Ben called both the lead-in and the
+repeated bullet openings awkward. Ben suggested a lead-in along the lines of
+“For each case of qere without ketiv, below we show the following”. The intended
+list contents remain the current NAEE excerpt, any relevant MAM notes, and the
+Aleppo Codex images. The revision uses natural complete sentences, without
+“The page” as the subject of each bullet. Codex selected the precise wording
+under the existing authorization; no additional decision from Ben was needed.
+
+Ben also wrote: “Please record all queued request and start a new session.”
+Codex recorded the queue here and transferred execution after committing and
+pushing the handoff record. The rendered lead-in and bullets were unchanged
+by the handoff commit.
+
+**Queue reconciliation:** All earlier qere-study edit requests in this run
+are implemented or superseded by later requests. The latest opening paragraph
+at `a1661834d4a2186bef4a04640ddd251b23f08dc0` states the shared marginal note
+and masorah circle first, then the varying niqqud and horizontal space.
+The possible “narrow” discrepancy appears once within the additional manuscript
+remarks; separate comparisons now contain only discrepancies and have no
+entries. Manuscript remarks add only facts beyond MAM's notes. The confirmed
+omission of נְאֻם־ in MAM's Jeremiah 31:37 illustration is an observation about
+MAM's description, not a discrepancy with Ben's remarks. At this handoff, the
+original quoted note and its translation were left unchanged, and the observation
+was not retained on the page. The later “Restore the Jeremiah 31:37 omission
+annotation” correction below adds a bracketed translator's note. The historical
+A102 request remains deferred under the earlier cutoff: its “The sparseness of the ketiv/qere” row
+is still present in `py/near_aleppo/doc_registers.py` and
+`gh-pages/near-aleppo/coverage-and-status.html`. Preserve that separate deferred
+request; this handoff does not extend the qere-study task to A102.
+
+**Deferred dataset decisions:** Every existing `קרי ולא כתיב` call will remain.
+The planned additional template describes niqqud and horizontal space. Dataset
+implementation is separate from this prose task. Names, syntax and call placement
+remain to be designed; `רווח בלי ניקוד` was a chat suggestion, not an approved
+design. The no-space variant for 2 Samuel 18:20 and the tentative ḥolam male
+carrier payload for 2 Kings 19:31 remain open. The official dataset README
+already links to the study. Do not implement dataset changes through this handoff.
+
+**Verified source and intended development checkout:**
+`C:/Users/BenDe/GitRepos/MAM-basics`, full clone on main, clean at
+`a1661834d4a2186bef4a04640ddd251b23f08dc0` before this ledger-only commit.
+The successor continues locally in this exact checkout from the pushed handoff
+commit supplied in its opening prompt. Codex in the successor chat owns the
+prose edit, focused verification, commit and normal push of main. This chat
+stops writing after dispatch, so there is one writer. No worktree is requested.
+
+**Files and retained requirements:** Edit
+`py/near_aleppo/foi_qere_without_ketiv.py` and regenerate
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html`. Update this ledger in place;
+Ben owns `doc/near-aleppo-requested-doc-edits.md`, which remains read-only.
+The source README is `doc/near-aleppo-qere-without-ketiv/README.md`; the study
+inputs are `in/near-aleppo/qere-without-ketiv-readings.json` and
+`in/near-aleppo/qere-without-ketiv-mam-notes-en.json`. Preserve all nine cases,
+six complete Hebrew MAM notes and English translations, centered images and
+short Hebrew displays, colored note targets, inferred marginal-note layout,
+summary-table values, excerpts, qere letters and marks, provenance and uncertainty.
+Keep the unnamed authorial voice, consistent terminology, complete sentences
+and absence of recording dates in the rendered study.
+
+**Successor checks and completion:** Read `AGENTS.md`, `doc/review-trial.md`,
+the Hebrew prose skill and its MAM-basics/rendered-prose references, and the
+iterative document editing skill. Verify exact root, HEAD, branch and status
+before edits and before staging. Use PowerShell 7 and this clone's interpreter
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe` from its root.
+Run Black on the changed generator, then `py/main_near_aleppo.py --html` and
+`py/main_near_aleppo.py --html --check`. Inspect all generated diffs and run
+`git diff --check`. The expected product diff is only the study's lead-in and
+three bullets. Mega and full suite remain on the approved nightly cadence for
+this prose-only change. Commit finished work on main, fetch origin, merge if
+needed under the full-clone rules, and push normally. Record check scope in the
+commit message. Do not open a browser or launch an app preview; verify generated
+content by reading it and give an absolute file link.
+
+**Handoff verification:** The only edit in this chat is this ledger entry.
+The source and pending passages were read, and the queue was reconciled with
+the maintained ledger and request file. `git diff --check` is required before
+commit. No generator, mega or suite run is owed by this record-only change.
+
+**Successor implementation and verification:** The exact development and
+integration checkout was verified as `C:/Users/BenDe/GitRepos/MAM-basics`,
+clean on main at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551` before editing.
+The lead-in now reads: “For each case of qere without ketiv, we present the
+following in a separate section below:”. The three complete-sentence bullets
+describe the current NAEE excerpt in context, relevant MAM notes with English
+translations and explanations, and Aleppo Codex images of the case.
+Black passed on the changed generator. The real HTML build and read-only
+comparison passed for all 95 files and both font copies. The source and
+generated diffs were read, and the generated introduction was read back.
+The only product change is the lead-in and three bullets; the opening
+paragraph and all case content remain unchanged. The request file and
+deferred dataset and A102 work remain unchanged. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence because this
+revision changes only introductory prose.
+
+## Correct masorah-circle presence at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Implemented; Ben approved the push on 2026-10-11. Ben corrected the image reading: “No masorah circle is
+present in 2 Kings 19:31.” Replace the universal circle-presence statement with
+“A masorah circle is present in every case except 2 Kings 19:31.” Record the
+absence and its provenance in the 2 Kings 19:31 source reading. The presence of
+niqqud and horizontal space and the tentative ḥolam male reading are unchanged.
+The opening paragraph and source README must state the exception consistently.
+
+**Checkout and one-writer resumption:** The successor chat finished its lead-in
+and bullet edit and is idle. Its local commit is
+`1f4f5b2e3850d86a658a8b999b47b30e5b307789`; the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` is clean on main at that commit before
+this correction. Codex in this chat resumes as sole writer for Ben's new
+correction. The supplied `aleppo-2K19-31.png` crop was consulted. Ben's earlier
+objection to “Image readings are attributed to Ben Denckla.” needs no edit:
+the current source and rendered study already omit that sentence and contributor
+names. The unnamed rendered voice remains in force; provenance remains in source
+records.
+
+**Earlier push rejection:** The successor's push of `1f4f5b2e` to `origin/main` was rejected
+by automatic approval review because main can publish the site and the handoff
+was not accepted as authorization for that push. At the start of this correction,
+origin/main was at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551`. The correction
+was completed and verified locally before asking Ben to approve pushing both
+local commits. The rejected push was not retried before approval. The changed product is the
+published study page; the change can be revised through a later commit, while
+the push is an outward-facing publication step.
+
+**Verification scope:** Use this clone's environment for Black on the changed
+generator, the real HTML build/comparison and focused prose/mark lints. Read all
+source and generated diffs and run `git diff --check`. The expected product diff
+against `1f4f5b2e` is only the opening paragraph. Preserve the successor's lead-in
+and bullets, all cases, notes, translations, excerpts, table and crops. Mega and
+full suite remain on the approved nightly cadence.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The three focused prose and
+Hebrew-mark lints passed. The source and generated diffs were read: the only
+product change against the successor's commit is the opening paragraph.
+The input change explicitly records absent circle presence and Ben's correction
+as its basis; no other reading data or encoding assessment changed. The source
+README states the exception in its opening and reading record. The successor's
+lead-in and bullets and all notes, translations, excerpts, table values and crops
+are preserved. `git diff --check` passed. Mega and full suite remain on the
+approved nightly cadence for this study-specific correction.
+
+**Standalone push handoff (approval granted):** Codex prepared this instruction on
+2026-10-11. Ben's authorized content change was: “No masorah circle is present
+in 2 Kings 19:31.” The remaining instruction is Codex's reconstruction of the
+pending publication step. After Ben explicitly approves the push, continue in
+the source, development and integration checkout
+`C:/Users/BenDe/GitRepos/MAM-basics`, using its own environment. Verify clean
+main and that required baseline `1f4f5b2e3850d86a658a8b999b47b30e5b307789`
+is an ancestor of HEAD and the final local commit is “Correct the masorah-circle
+exception in the qere study”. The executor owns final integration and push.
+Fetch origin; if origin/main moved, merge normally in this full clone and repeat
+the checks owed by the resulting changes. The ledger records the completed
+focused checks and the nightly broad-check exception. Push main normally,
+including both the successor's lead-in rewrite and this correction; never
+force-push or rewrite history. Verify HEAD against origin/main and clean status,
+then report the pushed commit. Until Ben approves, retain both local commits
+and do not repeat the rejected push.
+
+**Approval and readiness, 2026-10-11:** Ben wrote: “Yes, push the circle
+correction and the lead-in rewrite to origin/main.” The approval condition in
+the preceding handoff is fulfilled. The exact full clone was verified clean
+on main at `e2864dfcb873d808310db7aa680a061657309d35`. A fresh fetch confirmed
+origin/main remains at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551` and is an
+ancestor of HEAD, so no merge or new product checks are required. This approval
+record changes only the maintained ledger; the prior focused verification
+remains applicable. Record-only diff checks are owed before the normal push.
+
+## Define absent letters and list the varying body-text features — 2026-10-11
+
+**Status:** Implemented. Ben supplied replacement opening prose using קרי ולא כתיב,
+stating that neither qere nor ketiv letters are present in the body text, and
+retaining the masorah-circle exception at 2 Kings 19:31. The opening now introduces
+two varying features as bullets: whether "orphan" (letterless) niqqud are present
+and whether horizontal space is present. The revision uses Ben's supplied wording
+and the sentence-completing bullets. This supersedes the preceding opening prose;
+the per-case lead-in and contents list remain unchanged.
+
+**Checkout and execution scope:** Source, development and integration use the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`f73c7f799daab18f8f0ae980166ee476a1250da7` before editing; origin/main matches.
+Codex owns the generator edit, matching source README, HTML regeneration,
+focused verification, commit and normal push. Edit
+`py/near_aleppo/foi_qere_without_ketiv.py`,
+`doc/near-aleppo-qere-without-ketiv/README.md`, this ledger and the generated
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html`. Preserve all case content,
+notes, translations, readings, excerpts, table values, images and dataset calls.
+The request file remains read-only; dataset implementation and A102 remain deferred.
+
+**Verification scope:** Use this clone's interpreter from the repository root
+for Black on the changed generator, `py/main_near_aleppo.py --html` and
+`py/main_near_aleppo.py --html --check`. Read every generated diff and the
+generated opening; the expected product change is only the opening paragraph
+and its new two-item feature list. Run `git diff --check`. Mega and full suite
+remain on the approved nightly cadence for this introductory-prose change.
+
+**Verification:** Black passed on the changed generator. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. The
+source and generated diffs were read, and the generated opening was read back:
+Ben's supplied wording and two bullets appear, with the Hebrew phrase isolated
+for direction. The only product change is the opening paragraph and feature
+list. The matching source README and this ledger are updated; all case content
+and deferred work remain unchanged. `git diff --check` passed. Mega and full
+suite remain on the approved nightly cadence for this prose-only change.
+
+## Simplify the per-case contents list — 2026-10-11
+
+**Status:** Implemented. Ben supplied the lead-in “For each case of קרי ולא כתיב,
+we show the following:” and three replacement bullets about the NAEE display,
+MAM notes and Aleppo images. The revision uses that wording exactly, with the
+Hebrew phrase isolated for direction. This supersedes the earlier per-case wording.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`5fbc7b48d413600f31aab1ac1bef5d8b1dbab6b5` before editing. Codex owns the
+generator edit, regeneration, focused verification, commit and normal push.
+Only `py/near_aleppo/foi_qere_without_ketiv.py`,
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html` and this ledger change.
+Preserve the opening, all case content and deferred work.
+Ben's request file remains read-only. Run Black, the real HTML build and
+read-only comparison, inspect the generated diff and content, and run
+`git diff --check`. Mega and full suite remain on the approved nightly cadence
+for this introductory-prose change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read, and the generated lead-in and bullets were read back. The only
+product change is the requested lead-in and three bullets; all other study
+content remains unchanged. `git diff --check` passed. Mega and full suite
+remain on the approved nightly cadence for this prose-only revision.
+
+## Explain agreement wording in MAM note translations — 2026-10-11
+
+**Status:** Implemented. Ben supplied a replacement translation paragraph explaining
+the presentation of Hebrew notes and English translations, expanded abbreviated
+wording, and the ambiguity of the example note "=ל-קרי". The paragraph quotes
+the current “agrees” translation and describes “is consistent with” as more
+conservative, relating the implied qere to body niqqud, if any, and marginal
+qere letters. The revision uses the supplied wording, adds the missing opening
+quotation mark before the final suggested translation, and isolates the Hebrew
+note for direction. This supersedes the previous introductory translation paragraph;
+the case translations themselves remain unchanged.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`d55532b2d18404e7599aa490236a083517d9ada0` before editing. Codex owns the
+generator edit, regeneration, focused verification, commit and normal push.
+Only `py/near_aleppo/foi_qere_without_ketiv.py`,
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html` and this ledger change.
+All other study content and deferred work remain unchanged; Ben's request file
+remains read-only. Run Black, the real HTML build and read-only comparison,
+inspect the generated paragraph and all diffs, and run `git diff --check`.
+Mega and full suite remain on the approved nightly cadence for this prose change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read, and the generated paragraph was read back. The only product change
+is the requested introductory paragraph, with the quotation mark correction
+described above; all case translations and other study content are unchanged.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this prose-only revision.
+
+## Name the existing qere template explicitly — 2026-10-11
+
+**Status:** Implemented. Ben requested “every site below uses the קרי ולא כתיב
+template and will continue to do so”. The generator and study now use that
+wording. All other study content and deferred work remain unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`54bc4297756f072d080341f24b13caf76958ff76` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. The source and generated diffs and generated sentence
+were read; the only product change is the requested wording and line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.
+
+## Name the summary-table columns in the legend — 2026-10-11
+
+**Status:** Implemented. Ben requested the explicit subjects “The "N" column”,
+“The "H" column” and “The "Pos." column” before “records” in the summary
+legend. The generator and study now use that wording. Definitions, table values
+and all other study content remain unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`16f8bb323c0fb419ffb87a23b40fe90e5f3cdf88` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. The source and generated diffs and generated legend were
+read; the only product change is the requested wording and line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.
+
+## List and count all three varying body-text features — 2026-10-11
+
+**Status:** Implemented. Ben supplied a three-item replacement feature list:
+niqqud are present in four of nine cases; horizontal space is absent only at
+2 Samuel 18:20; a masorah circle is absent only at 2 Kings 19:31. The revision
+moves the circle exception from the opening paragraph into this list and follows
+the list with Ben's parenthetical definition of present niqqud as “orphan”, or
+letterless, niqqud. It uses the supplied wording and numerals. This supersedes
+the two-item feature list.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`df31de3702c21e6cc53cd0abbc23bc89370fb91d` before editing. Codex owns the
+generator edit, matching source README, regeneration, verification, commit
+and normal push. All case records, translations, excerpts, summary table values,
+crops and deferred work remain unchanged; Ben's request file remains read-only.
+
+**Verification:** Black passed on the generator. The real HTML build and
+read-only comparison passed for all 95 files and both font copies. The source
+and generated diffs were read, and the regenerated introduction and table were
+read back. The table confirms four niqqud-present rows among nine and only
+2 Samuel 18:20 without horizontal space. The source reading records the circle
+absence at 2 Kings 19:31. The only product change is the requested opening
+feature passage and parenthetical explanation. The source README matches.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this prose-only change.
+
+## Remove repeated source notation and standalone qere brackets — 2026-10-11
+
+**Status:** Implemented. Ben authorized removing every “Current source notation”
+subsection if the notation adds nothing beyond the MAM qere display, and requested
+removal of square brackets from those displays. The nine current calls each have
+the bracketed qere as their first parameter and the same qere as their second
+parameter; the introduction already identifies the template. Codex agrees that
+these source blocks add no independent case information. The revision removes
+the blocks and their unused display plumbing and styles, while retaining source
+validation. Each standalone MAM qere appears without brackets; quoted MAM notes
+retain their original text and brackets. The source README and stale notation
+wording are updated.
+This supersedes the earlier source-notation presentation requirement.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`4c81f0d7ddd283627f2694b26aaf97ab417299a0` before editing. Codex owns the generator,
+study CSS, matching source README, regeneration, verification, commit and normal
+push. All qere letters and marks, current and pending encoding summaries,
+excerpts, notes, translations, readings, table values, crops and deferred work
+are preserved. Ben's request file remains read-only. Run Black, the real HTML
+build and read-only comparison, compare the page with the baseline after only
+the authorized presentation changes, inspect all diffs and run `git diff --check`.
+Mega and full suite remain on the approved nightly cadence for this presentation change.
+
+**Verification:** Black passed on the generator. The real HTML build and
+read-only comparison passed for all 95 files and both font copies. A differential
+comparison with the baseline, normalizing HTML line wrapping, confirmed all nine
+source blocks duplicate their MAM qere and all nine standalone displays lose only
+their brackets. Every other page element and its content are preserved, apart
+from the unused source styles and the guide's stale notation wording. This
+includes all qere letters and marks, quoted MAM notes and their brackets, English
+translations, encoding summaries, excerpts, table values and images. The source
+validation still checks one correctly shaped source call per case and agreement
+of its whole qere with MAM. All source and generated diffs and the regenerated
+displays were read. `git diff --check` passed. Mega and full suite remain on the
+approved nightly cadence for this presentation change.
+
+## Remove “there” from the Judges 20:13 remarks — 2026-10-11
+
+**Status:** Implemented. Ben requested changing “are never included there” to
+“are never included”. The maintained observation, source README and generated
+study now use that wording. No other reading or study content changed.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`d83046d48a55227e394e72f6bef162d0c459df43` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. The source
+and generated diffs and generated sentence were read; the only product change
+is the requested word removal and line wrapping. No Python file changed.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.
+
+## Clarify the line ending's role at Judges 20:13 — 2026-10-11
+
+**Status:** Implemented. Ben requested “The line ending provided space for the
+marks, possibly accidentally.” The observation, spacing-hypothesis text and
+source README now use that wording. The uncertainty concerns whether the space
+was accidental. The source attribution records this clarification while retaining
+the original reading date. The generated study contains no new recording date.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`11da3551cbd811ca74cdda76ab5da8692f36206c` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All source
+and generated diffs and the generated sentence were read; the only product change
+is the requested sentence and line wrapping. No Python file changed.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording change. Codex owns commit and normal push.
+
+## Use ordinary prose styling for unpointed Hebrew — 2026-10-11
+
+**Status:** Implemented. Ben requested ordinary styling for unpointed איש in
+“There is insufficient room for the letters of איש”. The study's prose helper
+previously gave every Hebrew run the pointed class. The revision applies the
+existing rendered-prose policy: runs with Hebrew marks use pointed styling;
+unpointed prose inherits the surrounding font. Hebrew language metadata and
+RTL isolation remain. The mark classification matches
+`py/accgram/almost_errors_html_shared.py` and excludes spacing punctuation.
+The unpointed introductory note example receives the same correction. All text,
+Hebrew marks and display blocks are preserved.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`293a357d29553590224dbfb61a1643f3cc9347b6` before editing. Codex owns the generator
+edit, source README, regeneration, focused verification, commit and normal push.
+Readings and Ben's request file remain unchanged. Run Black, the real HTML build
+and read-only comparison, inspect all diffs and generated markup, compare with
+the baseline to verify that only unpointed inline styling changes, and run
+`git diff --check`. Mega and full suite remain on the approved nightly cadence
+for this presentation change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. A differential page comparison,
+using Unicode mark categories as an independent oracle for the current inline
+forms and normalizing HTML wrapping, confirmed four removals of the pointed
+class: the requested איש, the introductory note example, and the two unpointed
+inline אלי quotations. Every text value, Hebrew mark, language and direction
+attribute, and other page element remains unchanged. Pointed forms retain their
+styling. The source and generated diffs and the generated target were read.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this presentation-only change.
+
+## Remove “Current” from the NAEE excerpt headings — 2026-10-11
+
+**Status:** Implemented. Ben questioned “Current NAEE excerpt” and instructed
+that the document be treated as up to date, without implying that the representation
+will change. All nine case headings now read “NAEE excerpt”. The source README
+uses the same heading name. Excerpts and all other study content are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`e69618c17300a99217dfecda4c834b321c733037` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the nine generated
+headings were read; the only product change is their wording. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+heading-only change. Codex owns commit and normal push.
+
+## Remove the duplicate MAM qere displays — 2026-10-11
+
+**Status:** Implemented. Ben requested removal of the “MAM qere” sections if their
+qere agrees with the NAEE qere in every case. A direct comparison of the displayed
+forms confirms exact agreement in all nine cases, including every letter and mark.
+The existing excerpt renderer independently requires this agreement. The revision
+removes the nine standalone headings and displays, retaining the MAM qere values
+and checks used by the renderer. “Current source notation” remains removed. The
+NAEE excerpts, quoted MAM notes, translations and all other study content are
+preserved. The source README is updated. This supersedes the standalone MAM
+qere display requirement.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`8949d95161e8b2b8ff66efd7d3ce2c3ca5c92b3e` before editing. Codex owns the
+generator edit, README, regeneration, focused verification, commit and normal
+push. Source readings, dataset calls, deferred work and Ben's request file remain
+unchanged. Run Black, the real HTML build and read-only comparison, compare the
+regenerated page with the baseline after only the duplicate-section removals,
+read all diffs and generated content, and run `git diff --check`. Mega and full
+suite remain on the approved nightly cadence for this presentation change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. Before editing, a direct comparison
+of the nine displayed MAM and NAEE qere pairs confirmed identical letters and
+marks, without normalization. After regeneration, a differential comparison
+confirmed removal of all nine standalone MAM qere sections and preservation of
+every other byte of the page. This includes all excerpts, notes, translations,
+table values, images and metadata. The existing source and excerpt agreement
+checks remain unchanged. All source and generated diffs and the regenerated
+case sections were read. `git diff --check` passed. Mega and full suite remain
+on the approved nightly cadence for this presentation-only change.
+
+## Remove “Current” from the MAM doc-note headings — 2026-10-11
+
+**Status:** Implemented. Ben requested removal of “Current” unless the headings
+contrast existing notes with proposed notes. No such distinction is intended.
+All nine case headings now read “MAM doc-note”. Notes and all other study
+content are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`7be816f109503ccc6c0f9a915ec2cc649fbd896d` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the nine generated
+headings were read; the only product change is their wording. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+heading-only change. Codex owns commit and normal push.
+
+## Clarify the generous gap at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Implemented. Ben clarified that “very generous spacing” compares the gap
+with the manuscript's usual small or nonexistent spacing between written atoms,
+rather than with the room needed for צְבָא֖וֹת. The letter-scribe clearly intended
+to leave a large gap. The study, source reading and README now state the
+comparison and intention explicitly. “Perhaps the qere letters could have fit”
+remains tentative. The reading record attributes this clarification to Ben.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`d62198522ed455b14fc6fd15be5646bd3689bb91` before editing. Codex owns the reading
+record, source README, regeneration, focused verification, commit and normal
+push. Run the real HTML build and read-only comparison, read all source and
+generated diffs and the generated paragraph, and run `git diff --check`.
+Mega and full suite remain on the approved nightly cadence for this prose change.
+
+**Verification:** The real HTML build and read-only comparison passed for all
+95 files and both font copies. All source and generated diffs and the generated
+paragraph were read. The only product change is the clarified paragraph at
+2 Kings 19:31. The niqqud and tentative ḥolam male reading are preserved. No
+Python file changed. `git diff --check` passed. Mega and full suite remain on
+the approved nightly cadence for this prose-only change.
+
+## Revise the MAM agreement translation at Jeremiah 31:37 — 2026-10-11
+
+**Status:** Implemented. Ben supplied the replacement sentence: “MAM agrees
+with the qere implied by all of the following: the Leningrad Codex, the Cairo
+Codex of the Prophets, and the printed tradition.” The translation input and
+generated study now use that exact wording.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`c20d4c7c5446c1d6048035e99e78a874342994f3` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated sentence were read; the only
+product change is that sentence. No Python file changed. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+wording-only change. Codex owns commit and normal push.
+
+## Correct the translation voice at Jeremiah 31:37 — 2026-10-11
+
+**Status:** Implemented. Ben identified “MAM cites Breuer's note” and “MAM lists
+Koren, Breuer, …” as descriptions of the note rather than translations. The
+English entries now read “Breuer's note.” and “Koren, Breuer, the Simanim Tanakh,
+and Mechon Mamre.” The source fragments are retained as fragments and a list.
+All six translated notes were reviewed for the same narration problem; no
+additional such revision was needed. The source README records that translations
+use the note's voice.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`cbe96963a384ac4acdfeb6311018bbdd39b57d36` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and both generated entries were read; the only
+product changes are those entries. No Python file changed. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+translation-only change. Codex owns commit and normal push.
+
+## Clarify pointed ketiv in the Jeremiah 50:29 translation — 2026-10-11
+
+**Status:** Implemented. Ben requested “The Aleppo Codex has the following
+pointed ketiv, i.e. the following body text:”. The translation input and
+generated study now use that exact wording.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`89fe992e69fb3c3b2ea7625a79fa8723223dd2f4` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated sentence were read; the only
+product change is that sentence. No Python file changed. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+wording-only change. Codex owns commit and normal push.
+
+## Put the Aleppo images first in every case — 2026-10-11
+
+**Status:** Implemented. Ben requested each image before the text discussing
+it. All nine cases now begin with their images and captions immediately after
+the verse heading, before encoding, the NAEE excerpt, MAM notes and manuscript
+remarks. Jeremiah 31:37 begins with both supplied images, retaining body text
+before the marginal note. The introductory list now puts images first. The
+source README states the revised order. This supersedes the encoding-first
+case layout.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`275ef7acf6a1a4d6de3bd67c1304c8957b966b50` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95
+files and both font copies. A differential comparison with the baseline
+verified that all nine cases begin with their ten image-and-caption blocks:
+only those blocks and the introductory list moved, with every other byte
+preserved. All source and generated diffs and the beginning of every case
+were read. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this presentation-only change. Codex owns commit and
+normal push.
+
+## Keep the Ruth marginal-note quotations inline — 2026-10-11
+
+**Status:** Implemented. Ben requested the quotation immediately after
+“referring to the marginal note” in both Ruth translations. The Ruth 3:5 quotation
+is “אלי קרי”; the Ruth 3:17 quotation is “אלי קרי ולא כתב”. The separate pointed displays
+and the added paraphrases beginning “The marginal note says” are removed.
+Each unpointed quotation is one inline RTL phrase in ordinary prose styling,
+including its internal spaces. The original Hebrew notes remain unchanged.
+The source README reflects inline quotations and the previously approved
+source fragments and edition lists.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`b0316df37505d3759330eb3a96c76e1a2bc4131e` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95
+files and both font copies. All source and generated diffs and both generated
+paragraphs were read. The generated changes are confined to the two translations;
+both inline quotations have RTL isolation and no pointed class.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this translation and presentation change. Codex owns commit and
+normal push.
+
+## Restore the Jeremiah 31:37 omission annotation — 2026-10-11
+
+**Status:** Implemented. Ben asked what happened to the observation that MAM's
+body-text illustration omits נְאֻם־ and suggested a bracketed annotation in the
+English translation. Git history confirms that `f5c43013` removed the observation
+with a comparison paragraph while trimming redundant comparisons. The handoff
+record retained the observation but left it off the page. The translation now
+adds “[sic, missing נְאֻם־ in MAM's illustration]” immediately after the quoted
+illustration. The source quotation is unchanged. The wording attributes the
+omission to MAM's illustration. The source README and earlier handoff status
+are reconciled with this correction.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`f30d59d339bf2fa2aaf2e801c22d00a6cc8b3503` before editing. The MAM lemma and
+NAEE excerpt contain נְאֻם־; MAM's quoted illustration does not. The real HTML
+build and read-only comparison passed for all 95 files and both font copies.
+All source and generated diffs and the generated annotation were read. The
+only product change is the added bracketed paragraph. No Python file changed.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this translation-only change. Codex owns commit and normal push.
+
+## Use ordinary styling for the inferred marginal-note layout — 2026-10-11
+
+**Status:** Implemented. Ben identified pointed-Hebrew styling on the unpointed
+one-word-per-line marginal note at Jeremiah 31:37. The layout now uses ordinary
+prose styling. All four recorded words, their order, RTL direction, Hebrew
+language metadata and centering remain unchanged. The source README is aligned.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`4e6cbe8e34efebe74c2935a547058193b3e99390` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated layout
+were read. The only product change removes the layout's pointed class; the
+stylesheets give its remaining class no font or size override.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this presentation-only change. Codex owns commit and normal push.
+
+## Revise the opening's expected features — 2026-10-11
+
+**Status:** Implemented. Ben requested “has the expected marginal note” and
+“Also as expected, neither qere nor ketiv letters”. The opening paragraph in
+the generator, study and source README now uses both exact replacements.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`bdfc8cbc77918e8f7af786d624d2eebba422649c` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated opening
+were read; the only product change is the two requested replacements and line
+wrapping. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this wording-only change. Codex owns commit and normal push.
+
+## Revise the room-for-marks remarks at 2 Samuel 16:23 — 2026-10-11
+
+**Status:** Implemented. Ben replaced the two sentences about generous spacing
+and room for letters with: “The below-marks of איש (ḥiriq and tipeḥa) could have
+easily fit underneath the maqaf and/or the space after it, but the naqdan declined
+to provide those below-marks.” The study uses that exact wording, with ḥiriq and
+tipeḥa italic and maqaf plain as supplied. Unpointed איש retains ordinary prose
+styling. The following qualified discussion of MAM's “narrow” is unchanged.
+The reading record attributes the new assessment to Ben, preserves earlier
+structured readings, and matches the updated note-review description. The source
+README is aligned.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`cba8370e28d02c81d69c668292285316ad23c2b0` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated paragraph were read; the only
+product change is the requested replacement and line wrapping. No Python file
+changed. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this prose-only change. Codex owns commit and normal push.
+
+## Revise the discussion of MAM's “narrow” at 2 Samuel 16:23 — 2026-10-11
+
+**Status:** Implemented. Ben supplied a single replacement sentence about MAM's
+description of the space as “narrow”. The study uses Ben's exact wording and
+quotation marks, distinguishing space
+needed for the (implied) letters from the smaller space needed for below-marks.
+The reading's source-note assessment, displayed observation, note-review
+description and source README are synchronized. The preceding naqdan sentence
+is unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`7412e4c50ecfb493e514907e0bbd36401e0e1913` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated paragraph were read; the only
+product change is the requested replacement and line wrapping. No Python file
+changed. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this wording-only change. Codex owns commit and normal push.
+
+## Revise the gap wording at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Implemented. Ben supplied one sentence replacing the opening two
+sentences of the manuscript reading. The study now says the gap is generous
+compared with the usual spacing between atoms, making the letter-scribe's intent
+pretty clear, perhaps with enough space for the (implied) qere letters. The
+replacement uses Ben's exact wording and retains the existing terminal period.
+The structured space and letter-fit assessments and source README are aligned.
+The following marks and tentative ḥolam male observations are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`8ea9a8875bd1fd07eea48387c0dd3fe4a545b658` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated paragraph were read; the only
+product change is the requested replacement and line wrapping. No Python file
+changed. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this wording-only change. Codex owns commit and normal push.
+
+## Define “agrees” as consistency in the translation introduction — 2026-10-11
+
+**Status:** Implemented. Ben replaced the suggestion to use a more conservative
+translation with an explanation that “agrees” means “is consistent with” rather
+than “equals”. Codex initially removed the closing bracket after “of the”,
+incorrectly interpreting it as the stray bracket. The later “Correct the
+bracketed expansion's scope” entry records Ben's semantic correction. The source
+README states the same meaning of “agrees”. This supersedes the earlier
+conservative-wording explanation. The case translations are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`a8c8df9bc40c678889d705ef341608dfd4d01726` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated paragraph
+were read; the only product change is the requested explanation and line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.
+
+## Correct the bracketed expansion's scope — 2026-10-11
+
+**Status:** Implemented. Ben clarified that the bracket scope must agree with
+the preceding version of the sentence. Codex had removed the wrong closing
+bracket in `94587adb`. The expansion now reads “the qere implied by the [body
+niqqud (if any) and marginal qere letters of the] Leningrad Codex”. Removing the
+bracketed insertion leaves “the qere implied by the Leningrad Codex”. The source
+README states this relation, and the earlier status entry records the correction
+to Codex's initial interpretation. The pushed commit's historical message remains
+unchanged; this entry and the correcting commit supersede its bracket claim.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`94587adb1e5a7767f3890222c73436cde09b4330` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated sentence
+were read. Eliding the bracketed insertion restores the preceding wording.
+The only product change moves the closing bracket. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence for this punctuation
+change. Codex owns commit and normal push.
+
+## File the Jeremiah 31:37 illustration omission — 2026-10-11
+
+**Status:** Filed as [MAM-basics issue 304](https://github.com/bdenckla/MAM-basics/issues/304),
+at Ben's request, to restore נְאֻם־ in MAM's Aleppo body-text illustration.
+Duplicate searches found no matching issue. The issue quotes the captured MAM
+note and its lemma, links immutable source evidence, and records Codex authorship
+and Ben's instruction. Hebrew was copied from the maintained source through a
+UTF-8 file, and the complete posted title and body were read back and verified
+identical. The upstream note correction remains work for the issue; the study's
+bracketed annotation is preserved.
+
+**Checkout and verification:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` was clean on main at
+`5a9f53b72805b3b5ed976ac45bb8e5e207c1e3bb` before this issue-filing task.
+Only this live ledger changes locally. `git diff --check` passed. Mega and full
+suite remain on the approved nightly cadence for this record-only change.
+Codex owns commit and normal push.
+
+## Authorize a successor to implement the body encodings — 2026-10-11
+
+**Status:** Active; implementation is authorized in a new chat. Ben requested a
+new session to implement the encodings described in the study. Codex found no
+separate encoding plan; the requirements reside in the generated study, source
+README and this ledger. The README's “Dataset implementation handoff” now records
+the settled classifications, open design and ḥolam questions, exact checkout,
+ownership and focused verification commands. This supersedes the earlier
+prose-only scope for the successor's task. The source classifications and
+current dataset are unchanged by the handoff.
+
+**Checkout and handoff:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` was verified clean on main at
+`2618f5070069e85304d7489ca1535eb932bac481` before this preparation. Codex commits
+and pushes the handoff, then creates the successor in the saved MAM-basics
+project at this same path. The successor verifies the committed handoff HEAD
+and owns implementation, checks, commits and normal pushes to main. The
+predecessor stops writing before dispatch. `git diff --check` passed; mega and
+full suite remain on the approved nightly cadence for this handoff-only change.

@@ -1,0 +1,236 @@
+{
+  "format": "near-aleppo-qere-without-ketiv-mam-notes-en-v2",
+  "cases": [
+    {
+      "id": "Ju20-13",
+      "source_description": null,
+      "notes": [],
+      "comparison": null
+    },
+    {
+      "id": "2S16-23",
+      "source_description": {
+        "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM's description of the space as “narrow” is slightly puzzling, unless we take \"narrow\" to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "יִשְׁאַל־[אִ֖ישׁ]",
+            "parts": [
+              "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "There is only a narrow space, and no pointing for אִ֖ישׁ, which is read but not written."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "2S18-20",
+      "source_description": {
+        "observation": null,
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "[כֵּ֥ן]",
+            "parts": [
+              "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "In the Aleppo Codex, there is no space for כֵּ֥ן, which is read but not written, but the tsere and merkha are written below, between the surrounding written atoms (not the dagesh, as expected)."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "2K19-31",
+      "source_description": null,
+      "notes": [],
+      "comparison": null
+    },
+    {
+      "id": "2K19-37",
+      "source_description": null,
+      "notes": [],
+      "comparison": null
+    },
+    {
+      "id": "Je31-37",
+      "source_description": {
+        "observation": "The horizontal space between the surrounding written atoms is rather generous.",
+        "documentation_notes": [
+          "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
+        ]
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "יָמִ֥ים [בָּאִ֖ים] נְאֻם־יְהֹוָ֑ה",
+            "parts": [
+              "=לק ובדפוסים",
+              "א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+              "הערת ברויאר",
+              "קורן, ברויאר, סימנים, מכון ממרא"
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "MAM agrees with the qere implied by all of the following: the Leningrad Codex, the Cairo Codex of the Prophets, and the printed tradition."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "The Aleppo Codex has the following body text:"
+              },
+              {
+                "kind": "hebrew",
+                "text": "הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה"
+              },
+              {
+                "kind": "prose",
+                "text": "[sic, missing נְאֻם־ in MAM's illustration]"
+              },
+              {
+                "kind": "prose",
+                "text": "Pointing is not present in the space intended for \"qere without ketiv\"."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "Breuer's note."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "Koren, Breuer, the Simanim Tanakh, and Mechon Mamre."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "Je50-29",
+      "source_description": {
+        "observation": "The horizontal space between the surrounding written atoms is generous. The preceding maqaf extends into that space.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "אַל־יְהִי־[לָהּ֙] פְּלֵיטָ֔ה",
+            "parts": [
+              "א-כתיב=אַל־יְהִי־[֯] פְּלֵיטָ֔ה (רווח ריק בלי ניקוד וטעמים, ולמעלה עיגול מסורה)"
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "The Aleppo Codex has the following pointed ketiv, i.e. the following body text:"
+              },
+              {
+                "kind": "hebrew",
+                "text": "אַל־יְהִי־[֯] פְּלֵיטָ֔ה"
+              },
+              {
+                "kind": "prose",
+                "text": "There is an empty space without vowel points or cantillation marks, with a masorah circle above."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "R3-5",
+      "source_description": {
+        "observation": null,
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "[אֵלַ֖י]",
+            "parts": [
+              "=ל-קרי",
+              "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "MAM's qere agrees with the qere implied by the Leningrad Codex."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note \"אלי קרי\", but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "R3-17",
+      "source_description": {
+        "observation": "The space is at the end of a manuscript line. The line ending may account for the generous space, possibly accidentally.",
+        "documentation_notes": []
+      },
+      "notes": [
+        {
+          "source": {
+            "lemma": "[אֵלַ֔י]",
+            "parts": [
+              "=ל-קרי",
+              "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי ולא כתב\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+            ]
+          },
+          "translation": [
+            [
+              {
+                "kind": "prose",
+                "text": "MAM's qere agrees with the qere implied by the Leningrad Codex."
+              }
+            ],
+            [
+              {
+                "kind": "prose",
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note \"אלי קרי ולא כתב\", but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
+              }
+            ]
+          ]
+        }
+      ],
+      "comparison": null
+    }
+  ]
+}

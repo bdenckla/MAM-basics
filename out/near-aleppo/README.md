@@ -63,13 +63,21 @@ start with [interesting ketiv/qere cases](../../gh-pages/near-aleppo/foi/interes
 These selected examples show whole verses with the current edition's ruby
 display. The BCV in each heading links to the verse in NAEE; relative links work
 locally and on the website. The [qere-without-ketiv study](../../gh-pages/near-aleppo/foi/qere-without-ketiv.html)
-adds current MAM notes, Ben's dated manuscript observations, and supplied crops.
+shows short NAEE excerpts, current MAM notes, recorded manuscript observations,
+and supplied crops.
 Its [source note](../../doc/near-aleppo-qere-without-ketiv/README.md) identifies the
 maintained records and crop provenance. Regenerate the FOI pages and images with:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --html
 ```
+
+The documentation, FOI and edition pages share the approved arrow link
+presentation. Same-page targets earlier in document order use an up arrow;
+later targets use a down arrow. Other MAM-basics pages use a right arrow,
+and destinations outside MAM-basics use a boxed outward arrow. The authored
+rules are in `py/near_aleppo/link_presentation.css`; their generator inserts
+presentation attributes without rewriting the page text or link destinations.
 
 The selection and explanations are maintained in
 `py/near_aleppo/features_of_interest.py`. To print a verse's local and published
@@ -78,26 +86,6 @@ NAEE links from the current checkout, use, for example:
 ```powershell
 ./.venv/Scripts/python.exe py/main_verse_links.py 2Samuel 8:3 --near-aleppo
 ```
-
-The offline final-punctuation review extract is
-`review/ketiv-final-punctuation.html`, with a plain-text companion. It shows the
-requested 42 maqaf cases and 12 pasoleg cases in separate sections, including
-already-present punctuation, complete notes and neighboring verses. Psalm 10:5
-uses the trivial ketiv/qere template's pointed ketiv and qere parameters.
-Each section is sorted by MAM's book order, then numeric chapter and verse,
-interleaving added and already-present cases.
-The selection is tracked in `in/near-aleppo/final-punctuation-review-selection.json`;
-`py/near_aleppo/punctuation_review.py` renders it from the current edition data
-and shared renderer. Reproduce it from the repository root:
-
-```powershell
-./.venv/Scripts/python.exe py/main_near_aleppo.py --punctuation-review
-```
-
-Append `--check` to regenerate in memory and compare both tracked review files.
-The HTML embeds the edition font, its notices and license, styles, exact rendered
-text and input selection; it needs no network access. The unchanged font's source
-package and notices remain in `in/font-support/taamey-d-0.921/`.
 
 The dataset is derived from [Miqra according to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning)
 at Hebrew Wikisource, prepared by Seth (Avi) Kadish with technical assistance from

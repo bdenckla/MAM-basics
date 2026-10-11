@@ -55,6 +55,8 @@ neighboring verses, including punctuation that was already present. Its
 [plain-text companion](https://github.com/bdenckla/MAM-basics/blob/2f3013113b3c2abfa23a7cea30bb10b4eb5c441d/out/near-aleppo/review/ketiv-final-punctuation.txt)
 provides the full site list. The extract's two sections cover 42 maqaf cases
 and 12 U+05C0 cases; the larger totals include already-present punctuation.
+The completed extract was retired from the maintained tree on 2026-10-11;
+the link above retains the historical site list at this draft's comparison commit.
 
 ### Other ketiv/qere representation corrections
 

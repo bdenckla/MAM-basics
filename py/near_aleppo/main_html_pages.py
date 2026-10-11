@@ -20,6 +20,7 @@ reviewed and equal to a fresh source enumeration.
 import argparse
 import hashlib
 import json
+import posixpath
 import sys
 
 from near_aleppo import build_expectations
@@ -31,6 +32,7 @@ from near_aleppo import doc_pages
 from near_aleppo import doc_style
 from near_aleppo import edition
 from near_aleppo import features_of_interest
+from near_aleppo import link_presentation
 from near_aleppo import doc_note_review
 from near_aleppo.doc_html import Numbers
 from mb_cmn import file_io
@@ -74,6 +76,15 @@ def render():
     pages.update(features_of_interest.render())
     pages.update(doc_he_transfer.assets())
     pages.update(doc_daniel_sheva.assets())
+    pages[link_presentation.STYLESHEET] = link_presentation.stylesheet().encode("utf-8")
+    for name, content in pages.items():
+        if name.endswith(".html"):
+            css_href = posixpath.relpath(
+                link_presentation.STYLESHEET, posixpath.dirname(name) or "."
+            )
+            pages[name] = link_presentation.apply(
+                content.decode("utf-8"), name, css_href=css_href
+            ).encode("utf-8")
     return pages, unused_tags
 
 

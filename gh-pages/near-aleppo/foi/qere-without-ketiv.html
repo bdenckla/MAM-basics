@@ -5,225 +5,358 @@
 <meta charset="utf-8">
 <title>Qere without ketiv in near-Aleppo</title>
 <style>
-/* Link presentation trial requested by Ben, 2026-10-11.
-   Embedded only in qere-without-ketiv.html; no site-wide adoption yet. */
+/* Layout for the manuscript study. Link cues use link_presentation.css. */
 .qvlk-study .pointed.foi-verse { line-height: 2.7; }
 .qvlk-study .qvlk-case { margin: 2em 0; }
 .qvlk-study .pointed.qvlk-notes { line-height: 2.2; }
-.qvlk-study .qvlk-crop { max-width: 100%; height: auto; }
-.qvlk-study .qvlk-caption { font-size: 0.9em; }
+/* Match target ink in py/mb_misc/styles_mam_with_doc.css. */
+.qvlk-study .mam-doc-lemma, .qvlk-study .mam-doc-target-without-callout { color: light-dark(blue, lightblue); }
+.qvlk-study .qvlk-crop { display: block; margin-inline: auto; max-width: 100%; height: auto; }
+.qvlk-study .qvlk-caption { font-size: 0.9em; text-align: center; }
 .qvlk-study .romanized { font-style: italic; }
-
-.qvlk-study a[href] {
-    color: light-dark(#1a4fd6, #8ab4ff);
-    text-decoration: none;
-    border-radius: 0.15em;
-}
-.qvlk-study a[href]:visited { color: light-dark(#663399, #c5a5f1); }
-.qvlk-study a[href]:hover { background-color: light-dark(#edf3ff, #15243a); }
-.qvlk-study a[href]:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
-}
-
-/* Empty decorative pseudo-elements leave the link's accessible name and copied
-   text unchanged. These geometric SVGs are authored here, with no remote assets.
-   The default arrow leads to another page; fragment links use a down arrow. */
-.qvlk-study a[href]::after {
-    content: "";
-    display: inline-block;
-    inline-size: 0.72em;
-    block-size: 0.72em;
-    margin-inline-start: 0.22em;
-    background-color: currentColor;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8h11M9 3l5 5-5 5' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-.qvlk-study a[href^="#"]::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 2v11M3 9l5 5 5-5' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-.qvlk-study a.qvlk-external::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7 3H3v10h10V9M9 2h5v5M14 2 7 9' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-}
-
-@media (forced-colors: active) {
-    .qvlk-study a[href]::after {
-        forced-color-adjust: none;
-        background-color: LinkText;
-    }
-}
-@media print {
-    .qvlk-study a[href]::after { display: none; }
-}
+.qvlk-study .qvlk-hebrew-display { text-align: center; }
+.qvlk-study .qvlk-marginal-lines { margin-inline: auto; }
+.qvlk-study .qvlk-case-summary { margin-inline: auto; }
+.qvlk-study .qvlk-case-summary th, .qvlk-study .qvlk-case-summary td { white-space: nowrap; padding-inline: 0.5em; }
+.qvlk-study .qvlk-case-summary th:not(:first-child), .qvlk-study .qvlk-case-summary td { text-align: center; }
+.qvlk-study .qvlk-case-summary th[scope="row"] { font-weight: normal; background: transparent; }
+.qvlk-study .qvlk-summary-key { font-size: 0.9em; }
 </style>
 <link rel="stylesheet" href="../../document.css">
 <link rel="stylesheet" href="../../MAM-parsed/style.css">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../edition/ketiv-qere.css">
+<link rel="stylesheet" href="../link-presentation.css">
 </head>
 <body class="qvlk-study">
 <h1>Qere without ketiv in near-Aleppo</h1>
-<p><a href="index.html">Features of interest</a> · <a href="interesting-ketiv-qere.html">Interesting
-ketiv/qere cases</a> · <a href="../edition/index.html">NAEE book links</a></p>
-<p>Qere without ketiv has no written letters for the qere. The space and marks at the manuscript
-site can nevertheless differ. The verses below show the current near-Aleppo example edition (NAEE);
-the MAM notes and the recorded Aleppo image readings have their own labels. Image readings are
-attributed to Ben Denckla.</p>
-<ol>
-<li><a href="#Ju20-13">Judges 20:13</a></li>
-<li><a href="#2S16-23">2 Samuel 16:23</a></li>
-<li><a href="#2S18-20">2 Samuel 18:20</a></li>
-<li><a href="#2K19-31">2 Kings 19:31</a></li>
-<li><a href="#2K19-37">2 Kings 19:37</a></li>
-<li><a href="#Je31-37">Jeremiah 31:37</a></li>
-<li><a href="#Je50-29">Jeremiah 50:29</a></li>
-<li><a href="#R3-5">Ruth 3:5</a></li>
-<li><a href="#R3-17">Ruth 3:17</a></li>
-</ol>
+<p><a href="index.html" data-na-link="page">Features of interest</a> · <a href="interesting-ketiv-qere.html" data-na-link="page">Interesting
+ketiv/qere cases</a> · <a href="../edition/index.html" data-na-link="page">NAEE book links</a></p>
+<p>Every case of <bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi> discussed here has the
+expected marginal note containing the qere letters. Also as expected, neither qere nor ketiv letters
+are present in the body text. The cases differ in whether, in the body text:</p>
+<ul>
+<li>niqqud marks are present (only four of the nine cases have niqqud)</li>
+<li>horizontal space is present (only 1 case lacks it: 2 Samuel 18:20)</li>
+<li>a masorah circle is present (only 1 case lacks it: 2 Kings 19:31)</li>
+</ul>
+<p>(By definition, when niqqud marks are present, these are "orphan" niqqud, i.e. letterless
+niqqud.)</p>
+<p>For each case of <bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>, we show the
+following:</p>
+<ul>
+<li>Aleppo images of the case.</li>
+<li>How the case looks in the near-Aleppo example edition (NAEE).</li>
+<li>Any MAM notes about the case.</li>
+</ul>
+<p>We present the MAM notes not only in their original Hebrew but also in English translation. This
+translation also makes the original notes' abbreviated wording more explicit. Sometimes it is not
+clear what a note means when it says, for example "<bdi dir="rtl" lang="hbo">=ל-קרי</bdi>". We
+translate that as "MAM's qere agrees with the qere implied by the Leningrad Codex." But it is
+important to note that by "agrees" here we don't mean "equals" so much as "is consistent with". I.e.
+what we mean is "MAM's qere is consistent with the qere implied by the [body niqqud (if any) and
+marginal qere letters of the] Leningrad Codex."</p>
+<div class="qvlk-encoding-guide">
+<h2>Encoding conventions</h2>
+<p>The intended encoding retains each <bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi> call
+and its qere, and supplements that call with one additional template describing the body text. The
+additional template records which niqqud, if any, are present and whether horizontal space is
+present. The cases below require three kinds of additional template:</p>
+<ul>
+<li>For niqqud with horizontal space above the marks, a candidate is
+<bdi dir="rtl" lang="hbo" class="name">ניקוד בלי אות</bdi> (niqqud without a letter).</li>
+<li>For niqqud without horizontal space above the marks, a candidate is
+<bdi dir="rtl" lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> (niqqud without a letter and
+without space).</li>
+<li>Horizontal space without niqqud requires an additional template whose name and syntax remain
+open.</li>
+</ul>
+<p>The phrase “space above the marks” means horizontal space in the line of letters, left between
+words or at the end of a manuscript line. At a line ending, that horizontal space may have been left
+on purpose or may be accidental. The end-of-line cases here are Judges 20:13 and Ruth 3:17. None of
+the cases discussed here is at the start of a manuscript line.</p>
+<p>The existing niqqud templates are specific to near-Aleppo. Their payloads use artificial carrier
+letters to hold the marks; those carriers are not written manuscript letters. The carrier can be
+alef, vav, or, rarely, dalet. The carrier payload for 2 Kings 19:31 remains unsettled because the
+<span class="romanized">ḥolam male</span> reading is tentative.</p>
+<p>Current status: every site below uses the <bdi dir="rtl" lang="hbo" class="name">קרי ולא
+כתיב</bdi> template and will continue to do so. No additional template is applied at these sites
+yet. The additional templates' exact names, parameter shapes and call placement remain to be
+designed. Intended additional templates are labelled pending, separately from the current
+encoding.</p>
+</div>
+<h2>Case summary</h2>
+<div class="table-wrap">
+<table class="qvlk-case-summary" aria-label="Case summary" aria-describedby="qvlk-summary-key">
+<tr>
+<th scope="col">Verse</th>
+<th scope="col"><abbr title="Niqqud in the body text">N</abbr></th>
+<th scope="col"><abbr title="Horizontal space in the line of letters">H</abbr></th>
+<th scope="col"><abbr title="Position in the manuscript line">Pos.</abbr></th>
+</tr>
+<tr>
+<th scope="row"><a href="#Ju20-13" data-na-link="down">Judges 20:13</a></th>
+<td>+</td>
+<td>+</td>
+<td><abbr title="end of a manuscript line">EOL</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#2S16-23" data-na-link="down">2 Samuel 16:23</a></th>
+<td>−</td>
+<td>+</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#2S18-20" data-na-link="down">2 Samuel 18:20</a></th>
+<td>+</td>
+<td>−</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#2K19-31" data-na-link="down">2 Kings 19:31</a></th>
+<td>+</td>
+<td>+</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#2K19-37" data-na-link="down">2 Kings 19:37</a></th>
+<td>+</td>
+<td>+</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#Je31-37" data-na-link="down">Jeremiah 31:37</a></th>
+<td>−</td>
+<td>+</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#Je50-29" data-na-link="down">Jeremiah 50:29</a></th>
+<td>−</td>
+<td>+</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#R3-5" data-na-link="down">Ruth 3:5</a></th>
+<td>−</td>
+<td>+</td>
+<td><abbr title="between written words">BW</abbr></td>
+</tr>
+<tr>
+<th scope="row"><a href="#R3-17" data-na-link="down">Ruth 3:17</a></th>
+<td>−</td>
+<td>+</td>
+<td><abbr title="end of a manuscript line">EOL</abbr></td>
+</tr>
+</table>
+</div>
+<p id="qvlk-summary-key" class="qvlk-summary-key">The "N" column records whether any niqqud are
+present in the body text. The "H" column records whether horizontal space is present in the line of
+letters, with or without niqqud in or under that space. A plus sign (+) means present, and a minus
+sign (−) means absent. The "Pos." column records position: BW means between written words, and EOL
+means at the end of a manuscript line.</p>
 <div id="Ju20-13" class="qvlk-case">
-<h2><a href="../edition/B2-Judges.html#c20v13">Judges 20:13</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">וְעַתָּ֡ה תְּנוּ֩ אֶת־הָאֲנָשִׁ֨ים
-בְּנֵי־בְלִיַּ֜עַל אֲשֶׁ֤ר בַּגִּבְעָה֙ וּנְמִיתֵ֔ם וּנְבַעֲרָ֥ה רָעָ֖ה מִיִּשְׂרָאֵ֑ל וְלֹ֤א אָבוּ֙
-<span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
-כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">בְּנֵ֣י</span></rt><rp>)</rp></ruby></span>
-בִנְיָמִ֔ן לִשְׁמֹ֕עַ בְּק֖וֹל אֲחֵיהֶ֥ם בְּנֵי־יִשְׂרָאֵֽל׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[בְּנֵ֣י]</span></p>
-<h3>Current MAM doc-note</h3>
-<p>MAM has no doc-note attached to this qere-without-ketiv site.</p>
-<h3>Aleppo manuscript reading — recorded 2026-10-08</h3>
-<p>The below-marks of <bdi lang="hbo" dir="rtl" class="pointed">בְּנֵ֣י</bdi>
-(<span class="romanized">sheva</span>, <span class="romanized">tsere</span>,
-<span class="romanized">munaḥ</span>) are present without letters, with space above them. No
-<span class="romanized">dagesh</span>. The orphan marks are at the end of a manuscript line. The
-line ending may have provided space for the marks, possibly accidentally.</p>
-<p>A masorah circle is above the marks; it is documented but not encoded.</p>
-<p>The standalone review's blank SPACE anchors are display conventions, not measurements of
-manuscript spacing or a proposed template design.</p>
+<h2><a href="../edition/B2-Judges.html#c20v13" data-na-link="page">Judges 20:13</a></h2>
 <p><img src="../img/qere-without-ketiv/aleppo-Ju20-13.png" alt="Aleppo Codex crop at Judges 20:13: the qere-without-ketiv site" width="400" height="300" class="qvlk-crop">
 </p>
-<p class="qvlk-caption">Aleppo Codex — Judges 20:13.</p>
-<p><a href="https://www.mgketer.org/mikra/7/20/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c20v13">MAM verse and
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at Judges 20:13.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The proposed additional template is
+<bdi dir="rtl" lang="hbo" class="name">ניקוד בלי אות</bdi>. The additional template records
+<span class="romanized">sheva</span>, <span class="romanized">tsere</span>, and
+<span class="romanized">munaḥ</span>, with no <span class="romanized">dagesh</span>, and horizontal
+space above these marks.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… אָבוּ֙
+<span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
+כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">בְּנֵ֣י</span></rt><rp>)</rp></ruby></span>
+בִנְיָמִ֔ן …</p>
+<h3>MAM doc-note</h3>
+<p>MAM has no doc-note attached to this qere-without-ketiv site.</p>
+<h3>Aleppo manuscript reading</h3>
+<p>The below-marks of <bdi lang="hbo" dir="rtl" class="pointed">בְּנֵ֣י</bdi>
+(<span class="romanized">sheva</span>, <span class="romanized">tsere</span>,
+<span class="romanized">munaḥ</span>) are present without letters, with space above them. There is
+no <span class="romanized">dagesh</span> for this qere in the body text, as expected, since
+<span class="romanized">dagesh</span> marks are never included in cases of qere without ketiv. The
+orphan marks are at the end of a manuscript line. The line ending provided space for the marks,
+possibly accidentally.</p>
+<p><a href="https://www.mgketer.org/mikra/7/20/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c20v13" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Judges&amp;chapter=20&amp;verse=13&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Judges&amp;chapter=20&amp;verse=13&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="2S16-23" class="qvlk-case">
-<h2><a href="../edition/BB-2Samuel.html#c16v23">2 Samuel 16:23</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">וַעֲצַ֣ת אֲחִיתֹ֗פֶל אֲשֶׁ֤ר יָעַץ֙ בַּיָּמִ֣ים
-הָהֵ֔ם כַּאֲשֶׁ֥ר
+<h2><a href="../edition/BB-2Samuel.html#c16v23" data-na-link="page">2 Samuel 16:23</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-2S16-23.png" alt="Aleppo Codex crop at 2 Samuel 16:23: the qere-without-ketiv site" width="382" height="300" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at 2 Samuel 16:23.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The additional template for horizontal space
+without niqqud has not yet been named. The additional template records horizontal space without
+niqqud. Available space does not supply missing marks.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… כַּאֲשֶׁ֥ר
 <span class="mam-doc-target-without-callout">יִשְׁאַל־<span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">אִ֖ישׁ</span></rt><rp>)</rp></ruby></span></span>
-בִּדְבַ֣ר הָאֱלֹהִ֑ים כֵּ֚ן כָּל־עֲצַ֣ת אֲחִיתֹ֔פֶל גַּם־לְדָוִ֖ד גַּ֥ם לְאַבְשָׁלֹֽם׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[אִ֖ישׁ]</span></p>
-<h3>Current MAM doc-note</h3>
+בִּדְבַ֣ר …</p>
+<h3>MAM doc-note</h3>
 <div dir="rtl" lang="hbo" class="pointed qvlk-notes">
 <span class="mam-doc-lemma">יִשְׁאַל־<span class="mam-kq-q-velo-k">[אִ֖ישׁ]</span></span>
 <span class="mam-doc-part-0">יש רווח צר בלבד ואין ניקוד לתיבה "אִ֖ישׁ" הנקראת ולא
 נכתבת.</span></div>
-<h3>Aleppo manuscript reading — recorded 2026-10-08</h3>
-<p>The space is fairly generous even after the <span class="romanized">maqaf</span>, with no
-pointing for <bdi lang="hbo" dir="rtl" class="pointed">אִ֖ישׁ</bdi>. There is insufficient room for
-the letters of <bdi lang="hbo" dir="rtl" class="pointed">איש</bdi>, but ample room for its
-below-marks (<span class="romanized">ḥiriq</span> and <span class="romanized">tipeḥa</span>). Ben
-questions whether the description “narrow” in MAM’s note reviewed on 2026-10-08 fits this space.</p>
-<p><img src="../img/qere-without-ketiv/aleppo-2S16-23.png" alt="Aleppo Codex crop at 2 Samuel 16:23: the qere-without-ketiv site" width="382" height="300" class="qvlk-crop">
-</p>
-<p class="qvlk-caption">Aleppo Codex — 2 Samuel 16:23.</p>
-<p><a href="https://www.mgketer.org/mikra/9/16/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c16v23">MAM verse and
+<div class="qvlk-mam-english">
+<h3>English translation and explanation of the MAM doc-note</h3>
+<p>There is only a narrow space, and no pointing for
+<bdi lang="hbo" dir="rtl" class="pointed">אִ֖ישׁ</bdi>, which is read but not written.</p>
+</div>
+<h3>Additional manuscript remarks</h3>
+<p>The below-marks of <bdi lang="hbo" dir="rtl">איש</bdi> (<span class="romanized">ḥiriq</span> and
+<span class="romanized">tipeḥa</span>) could have easily fit underneath the maqaf and/or the space
+after it, but the naqdan declined to provide those below-marks. MAM's description of the space as
+“narrow” is slightly puzzling, unless we take "narrow" to refer to the space that would be needed
+for the (implied) letters rather than the smaller space needed to fit the below-marks.</p>
+<p><a href="https://www.mgketer.org/mikra/9/16/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c16v23" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=16&amp;verse=23&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=16&amp;verse=23&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="2S18-20" class="qvlk-case">
-<h2><a href="../edition/BB-2Samuel.html#c18v20">2 Samuel 18:20</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">וַיֹּ֧אמֶר ל֣וֹ יוֹאָ֗ב לֹא֩ אִ֨ישׁ בְּשֹׂרָ֤ה
-אַתָּה֙ הַיּ֣וֹם הַזֶּ֔ה וּבִשַּׂרְתָּ֖ בְּי֣וֹם אַחֵ֑ר וְהַיּ֤וֹם הַזֶּה֙ לֹ֣א תְבַשֵּׂ֔ר
+<h2><a href="../edition/BB-2Samuel.html#c18v20" data-na-link="page">2 Samuel 18:20</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-2S18-20.png" alt="Aleppo Codex crop at 2 Samuel 18:20: the qere-without-ketiv site" width="422" height="278" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at 2 Samuel 18:20.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The proposed additional template is
+<bdi dir="rtl" lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi>. The additional template
+records <span class="romanized">tsere</span> and <span class="romanized">merkha</span>, with no
+<span class="romanized">dagesh</span> or horizontal space above the marks. The additional template
+still requires an explicit variant for this use.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… תְבַשֵּׂ֔ר
 כִּֽי־עַל־<span class="mam-doc-target-without-callout"><span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">כֵּ֥ן</span></rt><rp>)</rp></ruby></span></span>
-בֶּן־הַמֶּ֖לֶךְ מֵֽת׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[כֵּ֥ן]</span></p>
-<h3>Current MAM doc-note</h3>
+בֶּן־הַמֶּ֖לֶךְ …</p>
+<h3>MAM doc-note</h3>
 <div dir="rtl" lang="hbo" class="pointed qvlk-notes">
 <span class="mam-doc-lemma"><span class="mam-kq-q-velo-k">[כֵּ֥ן]</span></span>
 <span class="mam-doc-part-0">א=אין רווח לתיבת "כֵּ֥ן" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא
 הדגש, כצפוי) בין התיבות למטה.</span></div>
-<h3>Aleppo manuscript reading — recorded 2026-10-08</h3>
-<p>The <span class="romanized">tsere</span> and <span class="romanized">merkha</span> of
-<bdi lang="hbo" dir="rtl" class="pointed">כֵּ֥ן</bdi> are written below, between the surrounding
-written atoms, without the qere letters or <span class="romanized">dagesh</span>. There is no space
-above these marks. Ben agrees with MAM’s note as reviewed on 2026-10-08.</p>
-<p><img src="../img/qere-without-ketiv/aleppo-2S18-20.png" alt="Aleppo Codex crop at 2 Samuel 18:20: the qere-without-ketiv site" width="422" height="278" class="qvlk-crop">
-</p>
-<p class="qvlk-caption">Aleppo Codex — 2 Samuel 18:20.</p>
-<p><a href="https://www.mgketer.org/mikra/9/18/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c18v20">MAM verse and
+<div class="qvlk-mam-english">
+<h3>English translation and explanation of the MAM doc-note</h3>
+<p>In the Aleppo Codex, there is no space for <bdi lang="hbo" dir="rtl" class="pointed">כֵּ֥ן</bdi>,
+which is read but not written, but the <span class="romanized">tsere</span> and
+<span class="romanized">merkha</span> are written below, between the surrounding written atoms (not
+the <span class="romanized">dagesh</span>, as expected).</p>
+</div>
+<p><a href="https://www.mgketer.org/mikra/9/18/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c18v20" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=18&amp;verse=20&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=18&amp;verse=20&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="2K19-31" class="qvlk-case">
-<h2><a href="../edition/BD-2Kings.html#c19v31">2 Kings 19:31</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">כִּ֤י מִירוּשָׁלַ͏ִם֙ תֵּצֵ֣א שְׁאֵרִ֔ית
-וּפְלֵיטָ֖ה מֵהַ֣ר צִיּ֑וֹן קִנְאַ֛ת יְהוָ֥ה
+<h2><a href="../edition/BD-2Kings.html#c19v31" data-na-link="page">2 Kings 19:31</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-2K19-31.png" alt="Aleppo Codex crop at 2 Kings 19:31: the qere-without-ketiv site" width="296" height="272" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at 2 Kings 19:31.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The proposed additional template is
+<bdi dir="rtl" lang="hbo" class="name">ניקוד בלי אות</bdi>. The additional template records
+<span class="romanized">sheva</span>, <span class="romanized">qamats</span>, and
+<span class="romanized">tipeḥa</span>, with horizontal space above them. The
+<span class="romanized">ḥolam male</span> reading remains tentative, so the carrier payload is
+unsettled.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… יְהוָ֥ה
 <span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">צְבָא֖וֹת</span></rt><rp>)</rp></ruby></span>
 תַּעֲשֶׂה־זֹּֽאת׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[צְבָא֖וֹת]</span></p>
-<h3>Current MAM doc-note</h3>
+<h3>MAM doc-note</h3>
 <p>MAM has no doc-note attached to this qere-without-ketiv site.</p>
-<h3>Aleppo manuscript reading — recorded 2026-10-08</h3>
-<p>There is very generous spacing for <bdi lang="hbo" dir="rtl" class="pointed">צְבָא֖וֹת</bdi>;
-perhaps the qere letters could have fit. All its below-marks are present
+<h3>Aleppo manuscript reading</h3>
+<p>The gap here is generous compared with the manuscript's usual small or nonexistent spaces between
+atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one
+large enough to fit the (implied) qere letters. All the below-marks of
+<bdi lang="hbo" dir="rtl" class="pointed">צְבָא֖וֹת</bdi> are present
 (<span class="romanized">sheva</span>, <span class="romanized">qamats</span>, and
 <span class="romanized">tipeḥa</span>). A <span class="romanized">ḥolam male</span> dot also seems
 to be represented.</p>
-<p><img src="../img/qere-without-ketiv/aleppo-2K19-31.png" alt="Aleppo Codex crop at 2 Kings 19:31: the qere-without-ketiv site" width="296" height="272" class="qvlk-crop">
-</p>
-<p class="qvlk-caption">Aleppo Codex — 2 Kings 19:31.</p>
-<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v31">MAM verse and
+<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v31" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=31&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=31&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="2K19-37" class="qvlk-case">
-<h2><a href="../edition/BD-2Kings.html#c19v37">2 Kings 19:37</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">וַיְהִי֩ ה֨וּא מִֽשְׁתַּחֲוֶ֜ה בֵּ֣ית&thinsp;׀
-נִסְרֹ֣ךְ אֱלֹהָ֗יו וְֽאַדְרַמֶּ֨לֶךְ וְשַׂרְאֶ֤צֶר
+<h2><a href="../edition/BD-2Kings.html#c19v37" data-na-link="page">2 Kings 19:37</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-2K19-37.png" alt="Aleppo Codex crop at 2 Kings 19:37: the qere-without-ketiv site" width="284" height="314" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at 2 Kings 19:37.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The proposed additional template is
+<bdi dir="rtl" lang="hbo" class="name">ניקוד בלי אות</bdi>. The additional template records two
+<span class="romanized">qamats</span> marks and <span class="romanized">pashta</span>, with
+horizontal space above the marks.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… וְשַׂרְאֶ֤צֶר
 <span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">בָּנָיו֙</span></rt><rp>)</rp></ruby></span>
-הִכֻּ֣הוּ בַחֶ֔רֶב וְהֵ֥מָּה נִמְלְט֖וּ אֶ֣רֶץ אֲרָרָ֑ט וַיִּמְלֹ֛ךְ אֵסַר־חַדֹּ֥ן בְּנ֖וֹ
-תַּחְתָּֽיו׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[בָּנָיו֙]</span></p>
-<h3>Current MAM doc-note</h3>
+הִכֻּ֣הוּ …</p>
+<h3>MAM doc-note</h3>
 <p>MAM has no doc-note attached to this qere-without-ketiv site.</p>
 <h3>Aleppo manuscript reading</h3>
-<p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v37">MAM verse and
+<p>The marks of <bdi lang="hbo" dir="rtl" class="pointed">בָּנָיו֙</bdi>
+(<span class="romanized">qamats</span>, <span class="romanized">qamats</span>,
+<span class="romanized">pashta</span>) are present without letters, with space above them. The marks
+occupy a large horizontal space between the surrounding written atoms, presumably left intentionally
+by the letter-scribe.</p>
+<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v37" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=37&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=37&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="Je31-37" class="qvlk-case">
-<h2><a href="../edition/C2-Jeremiah.html#c31v37">Jeremiah 31:37</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">הִנֵּ֛ה
+<h2><a href="../edition/C2-Jeremiah.html#c31v37" data-na-link="page">Jeremiah 31:37</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-Je31-37.png" alt="Aleppo Codex crop at Jeremiah 31:37: body text" width="312" height="272" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at Jeremiah 31:37.</p>
+<p><img src="../img/qere-without-ketiv/aleppo-Je31-37-marginal-qere.png" alt="Aleppo Codex crop at Jeremiah 31:37: marginal qere note" width="104" height="312" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the marginal qere note at Jeremiah 31:37.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The additional template for horizontal space
+without niqqud has not yet been named. The additional template records the generous horizontal space
+without niqqud.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">…
 <span class="mam-doc-target-without-callout">יָמִ֥ים
 <span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">בָּאִ֖ים</span></rt><rp>)</rp></ruby></span>
-נְאֻם־יְהוָ֑ה</span> וְנִבְנְתָ֤ה הָעִיר֙
-<span class="mam-doc-target-without-callout">לַיהוָ֔ה</span> מִמִּגְדַּ֥ל חֲנַנְאֵ֖ל שַׁ֥עַר
-הַפִּנָּֽה׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[בָּאִ֖ים]</span></p>
-<h3>Current MAM doc-note</h3>
+נְאֻם־יְהוָ֑ה</span> …</p>
+<h3>MAM doc-note</h3>
 <div dir="rtl" lang="hbo" class="pointed qvlk-notes">
 <span class="mam-doc-lemma">יָמִ֥ים <span class="mam-kq-q-velo-k">[בָּאִ֖ים]</span>
 נְאֻם־יְהֹוָ֑ה</span> <span class="mam-doc-part-0">=לק ובדפוסים</span><ul class="mam-doc-parts">
@@ -232,46 +365,101 @@ notes</a> ·
 <li>קורן, ברויאר, סימנים, מכון ממרא</li>
 </ul>
 </div>
-<h3>Aleppo manuscript reading</h3>
-<p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/13/31/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c31v37">MAM verse and
+<div class="qvlk-mam-english">
+<h3>English translation and explanation of the MAM doc-note</h3>
+<p>MAM agrees with the qere implied by all of the following: the Leningrad Codex, the Cairo Codex of
+the Prophets, and the printed tradition.</p>
+<ul>
+<li><p>The Aleppo Codex has the following body text:</p>
+<p dir="rtl" lang="hbo" class="pointed qvlk-hebrew-display">הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה</p>
+<p>[sic, missing <bdi lang="hbo" dir="rtl" class="pointed">נְאֻם־</bdi> in MAM's illustration]</p>
+<p>Pointing is not present in the space intended for "qere without ketiv".</p>
+</li>
+<li><p>Breuer's note.</p>
+</li>
+<li><p>Koren, Breuer, the Simanim Tanakh, and Mechon Mamre.</p>
+</li>
+</ul>
+</div>
+<h3>Additional manuscript remarks</h3>
+<p>The horizontal space between the surrounding written atoms is rather generous.</p>
+<p>The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right
+margin, obscuring approximately the first letter of each inferred word on its own line. The cause of
+the damage is unknown. The tape comparison describes how the damage looks; it does not propose a
+mechanism.</p>
+<p>The marginal qere note is inferred to have one word per line:</p>
+<div dir="rtl" lang="hbo" class="qvlk-marginal-lines" style="width: fit-content;">
+<div>
+באים</div>
+<div>
+קרי</div>
+<div>
+ולם</div>
+<div>
+כתב</div>
+</div>
+<p><a href="https://www.mgketer.org/mikra/13/31/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c31v37" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=31&amp;verse=37&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=31&amp;verse=37&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="Je50-29" class="qvlk-case">
-<h2><a href="../edition/C2-Jeremiah.html#c50v29">Jeremiah 50:29</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">הַשְׁמִ֣יעוּ אֶל־בָּבֶ֣ל&thinsp;׀ רַ֠בִּים
-כָּל־דֹּ֨רְכֵי קֶ֜שֶׁת חֲנ֧וּ עָלֶ֣יהָ סָבִ֗יב
+<h2><a href="../edition/C2-Jeremiah.html#c50v29" data-na-link="page">Jeremiah 50:29</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-Je50-29.png" alt="Aleppo Codex crop at Jeremiah 50:29: the qere-without-ketiv site" width="312" height="280" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at Jeremiah 50:29.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The additional template for horizontal space
+without niqqud has not yet been named. The additional template records the generous horizontal space
+without niqqud. The preceding <span class="romanized">maqaf</span> extends into the space.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… סָבִ֗יב
 <span class="mam-doc-target-without-callout">אַל־יְהִי־<span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">לָהּ֙</span></rt><rp>)</rp></ruby></span>
-פְּלֵיטָ֔ה</span> שַׁלְּמוּ־לָ֣הּ כְּפָעֳלָ֔הּ כְּכֹ֛ל אֲשֶׁ֥ר עָשְׂתָ֖ה עֲשׂוּ־לָ֑הּ כִּ֧י
-אֶל־יְהוָ֛ה זָ֖דָה אֶל־קְד֥וֹשׁ יִשְׂרָאֵֽל׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[לָהּ֙]</span></p>
-<h3>Current MAM doc-note</h3>
+פְּלֵיטָ֔ה</span> …</p>
+<h3>MAM doc-note</h3>
 <div dir="rtl" lang="hbo" class="pointed qvlk-notes">
 <span class="mam-doc-lemma">אַל־יְהִי־<span class="mam-kq-q-velo-k">[לָהּ֙]</span> פְּלֵיטָ֔ה</span>
 <span class="mam-doc-part-0">א-כתיב=אַל־יְהִי־[֯] פְּלֵיטָ֔ה (רווח ריק בלי ניקוד וטעמים, ולמעלה
 עיגול מסורה)</span></div>
-<h3>Aleppo manuscript reading</h3>
-<p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/13/50/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c50v29">MAM verse and
+<div class="qvlk-mam-english">
+<h3>English translation and explanation of the MAM doc-note</h3>
+<p>The Aleppo Codex has the following pointed ketiv, i.e. the following body text:</p>
+<p dir="rtl" lang="hbo" class="pointed qvlk-hebrew-display">אַל־יְהִי־[֯] פְּלֵיטָ֔ה</p>
+<p>There is an empty space without vowel points or cantillation marks, with a masorah circle
+above.</p>
+</div>
+<h3>Additional manuscript remarks</h3>
+<p>The horizontal space between the surrounding written atoms is generous. The preceding
+<span class="romanized">maqaf</span> extends into that space.</p>
+<p><a href="https://www.mgketer.org/mikra/13/50/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c50v29" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=50&amp;verse=29&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=50&amp;verse=29&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="R3-5" class="qvlk-case">
-<h2><a href="../edition/E2-Ruth.html#c3v5">Ruth 3:5</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">וַתֹּ֖אמֶר אֵלֶ֑יהָ כֹּ֛ל אֲשֶׁר־תֹּאמְרִ֥י
+<h2><a href="../edition/E2-Ruth.html#c3v5" data-na-link="page">Ruth 3:5</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-R3-5.png" alt="Aleppo Codex crop at Ruth 3:5: the qere-without-ketiv site" width="366" height="308" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at Ruth 3:5.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The additional template for horizontal space
+without niqqud has not yet been named. The additional template records the generous horizontal space
+without niqqud.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… אֲשֶׁר־תֹּאמְרִ֥י
 <span class="mam-doc-target-without-callout"><span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">אֵלַ֖י</span></rt><rp>)</rp></ruby></span></span>
 אֶעֱשֶֽׂה׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[אֵלַ֖י]</span></p>
-<h3>Current MAM doc-note</h3>
+<h3>MAM doc-note</h3>
 <div dir="rtl" lang="hbo" class="pointed qvlk-notes">
 <span class="mam-doc-lemma"><span class="mam-kq-q-velo-k">[אֵלַ֖י]</span></span>
 <span class="mam-doc-part-0">=ל-קרי</span><ul class="mam-doc-parts">
@@ -279,24 +467,40 @@ notes</a> ·
 נכתבת.</li>
 </ul>
 </div>
-<h3>Aleppo manuscript reading</h3>
-<p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v5">MAM verse and
+<div class="qvlk-mam-english">
+<h3>English translation and explanation of the MAM doc-note</h3>
+<p>MAM's qere agrees with the qere implied by the Leningrad Codex.</p>
+<ul>
+<li><p>In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the
+marginal note "<bdi lang="hbo" dir="rtl">אלי קרי</bdi>", but the vowel points and cantillation marks
+for the qere, which is read but not written, are not present.</p>
+</li>
+</ul>
+</div>
+<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v5" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=5&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=5&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 <div id="R3-17" class="qvlk-case">
-<h2><a href="../edition/E2-Ruth.html#c3v17">Ruth 3:17</a></h2>
-<h3>Current NAEE verse</h3>
-<p dir="rtl" lang="hbo" class="pointed foi-verse">וַתֹּ֕אמֶר שֵׁשׁ־הַשְּׂעֹרִ֥ים הָאֵ֖לֶּה נָ֣תַן
-לִ֑י כִּ֚י אָמַ֣ר
+<h2><a href="../edition/E2-Ruth.html#c3v17" data-na-link="page">Ruth 3:17</a></h2>
+<p><img src="../img/qere-without-ketiv/aleppo-R3-17.png" alt="Aleppo Codex crop at Ruth 3:17: the qere-without-ketiv site" width="244" height="238" class="qvlk-crop">
+</p>
+<p class="qvlk-caption">This Aleppo Codex image shows the body text at Ruth 3:17.</p>
+<div class="qvlk-encoding">
+<h3>Near-Aleppo encoding</h3>
+<p><b>Current encoding — implemented:</b> The dataset uses
+<bdi dir="rtl" lang="hbo" class="name">קרי ולא כתיב</bdi>.</p>
+<p><b>Intended additional template — pending:</b> The additional template for horizontal space
+without niqqud has not yet been named. The additional template records the generous horizontal space
+at the end of the manuscript line, without niqqud.</p>
+</div>
+<h3>NAEE excerpt</h3>
+<p dir="rtl" lang="hbo" class="pointed foi-verse qvlk-hebrew-display">… אָמַ֣ר
 <span class="mam-doc-target-without-callout"><span class="near-aleppo-kq-box"><ruby class="near-aleppo-kq" dir="rtl"><span class="near-aleppo-kq-none">[אין
 כתיב]</span><rp>(</rp><rt dir="rtl" title="Qere"><span class="mam-kq-q">אֵלַ֔י</span></rt><rp>)</rp></ruby></span></span>
-אַל־תָּב֥וֹאִי רֵיקָ֖ם אֶל־חֲמוֹתֵֽךְ׃</p>
-<h3>MAM qere</h3>
-<p dir="rtl" lang="hbo" class="pointed"><span class="mam-kq-q-velo-k">[אֵלַ֔י]</span></p>
-<h3>Current MAM doc-note</h3>
+אַל־תָּב֥וֹאִי …</p>
+<h3>MAM doc-note</h3>
 <div dir="rtl" lang="hbo" class="pointed qvlk-notes">
 <span class="mam-doc-lemma"><span class="mam-kq-q-velo-k">[אֵלַ֔י]</span></span>
 <span class="mam-doc-part-0">=ל-קרי</span><ul class="mam-doc-parts">
@@ -304,12 +508,23 @@ notes</a> ·
 ולא נכתבת.</li>
 </ul>
 </div>
-<h3>Aleppo manuscript reading</h3>
-<p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106" class="qvlk-external">mgketer.org</a> ·
-<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v17">MAM verse and
+<div class="qvlk-mam-english">
+<h3>English translation and explanation of the MAM doc-note</h3>
+<p>MAM's qere agrees with the qere implied by the Leningrad Codex.</p>
+<ul>
+<li><p>In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the
+marginal note "<bdi lang="hbo" dir="rtl">אלי קרי ולא כתב</bdi>", but the vowel points and
+cantillation marks for the qere, which is read but not written, are not present.</p>
+</li>
+</ul>
+</div>
+<h3>Additional manuscript remarks</h3>
+<p>The space is at the end of a manuscript line. The line ending may account for the generous space,
+possibly accidentally.</p>
+<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106" data-na-link="external">mgketer.org</a> ·
+<a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v17" data-na-link="page">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=17&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=17&amp;manuscript=aleppo" data-na-link="external">masoretica-aleppo</a></p>
 </div>
 </body>
 </html>

@@ -31,6 +31,32 @@ MAM-with-doc, FOI, MAM-OSIS documentation and near-Aleppo editions load
 near-Aleppo MAM-mode oracle are unchanged by consolidation. Edition pages retain
 their specialized layout rather than loading the prose base.
 
+## Arrow links
+
+All generated near-Aleppo documentation, FOI and edition pages load
+`gh-pages/near-aleppo/link-presentation.css` after their existing styles.
+Its authored source is `py/near_aleppo/link_presentation.css`;
+`py/near_aleppo/link_presentation.py` supplies the generated banner and inserts
+link attributes without reserializing page text. Relative stylesheet paths
+follow each page's directory depth.
+
+The shared rules remove link underlines and add decorative arrows. Same-page
+targets earlier in document order get an up arrow; later targets get a down
+arrow. Other MAM-basics pages get a right arrow, and destinations outside
+MAM-basics get a boxed outward arrow. Hover backgrounds, focus outlines and
+visited colors retain visible interaction cues. The rules apply only to links
+marked by this link helper.
+
+The top-level `gh-pages/index.html` also loads this stylesheet and uses the same
+link helper with the website root as its page directory. Its source remains
+`py/author_site/site_index.py`; regenerate it with `py/main_authored.py gen-site`.
+Other deploy-root pages retain their existing link presentation.
+
+Regenerate the near-Aleppo pages with `py/main_near_aleppo.py --html` when
+changing these rules, and regenerate the top-level index with
+`py/main_authored.py gen-site`. The completed offline final-punctuation review
+extract was retired on 2026-10-11.
+
 ## Reports and standalone bundles
 
 `gh-pages/report.css` is the hand-authored report base, shared by the Holman
