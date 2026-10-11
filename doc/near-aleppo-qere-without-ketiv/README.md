@@ -240,6 +240,8 @@ written atoms, with no qere letters or niqqud. A masorah circle is present in
 that space. Ben describes the marginal-note damage as looking as if opaque tape
 had been laid parallel to the right margin, obscuring approximately the first
 letter of each inferred word on its own line. The cause of the damage is unknown.
+The tape comparison describes how the damage looks; it does not propose a
+mechanism.
 Ben infers the following vertical layout, recorded exactly as supplied:
 
 <div dir="rtl" lang="hbo">

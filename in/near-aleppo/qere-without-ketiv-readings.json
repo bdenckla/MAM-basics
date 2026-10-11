@@ -247,7 +247,7 @@
         "marginal_qere_note": {
           "partly_obscured_by_damage": true,
           "some_letters_inferred": true,
-          "damage_description": "The damage looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line.",
+          "damage_description": "The damage looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The tape comparison describes how the damage looks; it does not propose a mechanism.",
           "cause_unknown": true,
           "inferred_lines": [
             "באים",
@@ -260,7 +260,7 @@
       "observation": "For בָּאִ֖ים, the body text has a rather generous horizontal space between the surrounding written atoms, with no qere letters or niqqud. A masorah circle is present in that space.",
       "romanized": [],
       "documentation_notes": [
-        "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown."
+        "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
       ],
       "crop": {
         "filename": "aleppo-Je31-37.png",

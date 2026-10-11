@@ -1083,7 +1083,8 @@ this observation and the paired crop display.
 **Status:** Clarified by Codex from Ben's further image reading. The damage looks
 as if opaque tape had been laid parallel to the right margin, obscuring
 approximately the first letter of each inferred word on its own line. Ben does
-not know the cause; the tape comparison describes appearance, not material.
+not know the cause. The tape comparison describes how the damage looks; it does
+not propose a mechanism.
 
 **Checkout and baseline:** Source, development and integration checkout is the
 full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
@@ -1219,3 +1220,22 @@ the generator, metadata, source note and generated page. The generated diff was
 read, and `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence; regeneration and the exact wording comparison cover this
 terminology correction.
+
+## Tape comparison describes appearance — 2026-10-11
+
+**Status:** Amplified by Codex at Ben's request. The cause of the damage remains
+unknown. The tape comparison describes how the damage looks; it does not propose
+a mechanism.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`1a76228b225d8ee5e4c4129db09030d6466387e4` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change and verification:** Added the qualification to the reading metadata,
+source note and generated study. HTML regeneration and read-only comparison
+passed for all 95 owned files and both font copies. An exact baseline comparison
+confirmed that only this qualification changed in the records and page. The
+generated diff was read, and `git diff --check` passed. Mega and full suite remain
+on the approved nightly cadence; regeneration and the exact comparison cover
+this prose clarification.
