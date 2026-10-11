@@ -1852,9 +1852,11 @@ The possible “narrow” discrepancy appears once within the additional manuscr
 remarks; separate comparisons now contain only discrepancies and have no
 entries. Manuscript remarks add only facts beyond MAM's notes. The confirmed
 omission of נְאֻם־ in MAM's Jeremiah 31:37 illustration is an observation about
-MAM's description, not a discrepancy with Ben's remarks; the original quoted
-note and its translation remain unchanged. The historical A102 request remains
-deferred under the earlier cutoff: its “The sparseness of the ketiv/qere” row
+MAM's description, not a discrepancy with Ben's remarks. At this handoff, the
+original quoted note and its translation were left unchanged, and the observation
+was not retained on the page. The later “Restore the Jeremiah 31:37 omission
+annotation” correction below adds a bracketed translator's note. The historical
+A102 request remains deferred under the earlier cutoff: its “The sparseness of the ketiv/qere” row
 is still present in `py/near_aleppo/doc_registers.py` and
 `gh-pages/near-aleppo/coverage-and-status.html`. Preserve that separate deferred
 request; this handoff does not extend the qere-study task to A102.
@@ -2433,3 +2435,25 @@ both inline quotations have RTL isolation and no pointed class.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this translation and presentation change. Codex owns commit and
 normal push.
+
+## Restore the Jeremiah 31:37 omission annotation — 2026-10-11
+
+**Status:** Implemented. Ben asked what happened to the observation that MAM's
+body-text illustration omits נְאֻם־ and suggested a bracketed annotation in the
+English translation. Git history confirms that `f5c43013` removed the observation
+with a comparison paragraph while trimming redundant comparisons. The handoff
+record retained the observation but left it off the page. The translation now
+adds “[sic, missing נְאֻם־ in MAM's illustration]” immediately after the quoted
+illustration. The source quotation is unchanged. The wording attributes the
+omission to MAM's illustration. The source README and earlier handoff status
+are reconciled with this correction.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`f30d59d339bf2fa2aaf2e801c22d00a6cc8b3503` before editing. The MAM lemma and
+NAEE excerpt contain נְאֻם־; MAM's quoted illustration does not. The real HTML
+build and read-only comparison passed for all 95 files and both font copies.
+All source and generated diffs and the generated annotation were read. The
+only product change is the added bracketed paragraph. No Python file changed.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this translation-only change. Codex owns commit and normal push.
