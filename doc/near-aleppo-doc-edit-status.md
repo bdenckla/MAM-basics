@@ -1499,3 +1499,23 @@ defects and confirmed the hypotheses and damage qualifications are preserved.
 The three focused prose and mark lints passed, and `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence; focused regeneration,
 source reconciliation, inspection, review and lints cover this prose revision.
+
+## Remove generic qere display explanation — 2026-10-11
+
+**Status:** Implemented. Ben requested removal of the generic explanation that the
+dataset retains the pointed qere and NAEE displays it above the editorial
+“no ketiv” label. The shared generator included that explanation in all nine
+case entries; there is no case-specific reason to retain it at 2 Samuel 18:20.
+The current template identification and the intended supplemental encoding
+remain intact.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`82a248cdbedfadafc0b07035e8c0286efa166327` before editing. Codex owns the removal,
+focused regeneration, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and removes only the generic explanation in all nine case entries.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and the inspected diff cover this prose-only change.

@@ -537,8 +537,7 @@ def _encoding(row, source):
                     mb_html.bold("Current encoding — implemented:"),
                     " The dataset uses ",
                     _template_name(_QERE_TEMPLATE),
-                    " and retains the pointed qere. NAEE displays it "
-                    "above the editorial “no ketiv” label.",
+                    ".",
                 ]
             ),
             mb_html.para(intention),
