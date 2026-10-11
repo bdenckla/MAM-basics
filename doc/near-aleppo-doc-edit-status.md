@@ -2104,3 +2104,19 @@ and both font copies. The source and generated diffs and generated sentence
 were read; the only product change is the requested wording and line wrapping.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this wording-only change. Codex owns commit and normal push.
+
+## Name the summary-table columns in the legend — 2026-10-11
+
+**Status:** Implemented. Ben requested the explicit subjects “The "N" column”,
+“The "H" column” and “The "Pos." column” before “records” in the summary
+legend. The generator and study now use that wording. Definitions, table values
+and all other study content remain unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`16f8bb323c0fb419ffb87a23b40fe90e5f3cdf88` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. The source and generated diffs and generated legend were
+read; the only product change is the requested wording and line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.

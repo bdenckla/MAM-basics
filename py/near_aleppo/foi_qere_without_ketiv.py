@@ -612,10 +612,10 @@ def _case_summary(rows):
             )
         )
     legend = (
-        "N records whether any niqqud are present in the body text. "
-        "H records whether horizontal space is present in the line of letters, "
+        'The "N" column records whether any niqqud are present in the body text. '
+        'The "H" column records whether horizontal space is present in the line of letters, '
         "with or without niqqud in or under that space. A plus sign (+) means "
-        "present, and a minus sign (−) means absent. Pos. records position: "
+        'present, and a minus sign (−) means absent. The "Pos." column records position: '
         "BW means between written words, and EOL means at the end of a manuscript line."
     )
     if any(row["reading"] is None for row in rows):
