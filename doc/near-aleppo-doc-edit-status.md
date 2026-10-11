@@ -2737,3 +2737,15 @@ command passed again. MAM-with-doc regenerated completely without a tracked
 diff. Black passed on all six changed Python files, and `git diff --check`
 passed. Mega and the full suite remain on the approved nightly cadence; no
 specific consequence requires an immediate broad run for this correction.
+
+**Integration:** Origin advanced to `2036eaf7299e9b137db4ab30745642bc95594d8e`
+with documentation and exact frozen-review preservation. The normal merge
+retains those committed records. The imported
+`doc/yod-holam-review-20261007.html` initially failed the authored-prose
+mark-order lint because its historical dataset quotations retain their captured
+order. Fixed by adding that exact frozen capture to the lint's existing
+`_EXCLUDED` mechanism, with its preservation provenance; the capture's bytes
+were verified unchanged against origin and its maintained preservation record.
+The two focused prose/time checks then passed. The correction's 15 focused
+checks and complete regeneration comparison remain applicable; the incoming
+commits change no runtime code or products.

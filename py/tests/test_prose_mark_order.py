@@ -75,8 +75,8 @@ clean. ``in/mam-ws-intro/`` is exempted by name in ``CLAUDE.md`` on the same gro
 None of those is ``.md``, so the file-type scope excludes them without an exclusion
 list, and ``py/repo_scopes.py`` records why a repo-wide sweep has no meaning here.
 
-So a future capture that arrives as ``.md`` is the one case that needs an entry in
-``_EXCLUDED``, with the reason it is byte-verbatim. It is NOT a reason to loosen the
+So a future capture that arrives as ``.md`` or as ``.html`` under ``doc/`` needs
+an entry in ``_EXCLUDED``, with the reason it is byte-verbatim. It is NOT a reason to loosen the
 lint, and never a reason to normalize.
 
 A MISSING INPUT FAILS RATHER THAN SKIPS
@@ -105,10 +105,16 @@ import subprocess
 
 from mb_cmn import paths, uni_denorm
 
-# Byte-verbatim captures that happen to be .md. Empty on 2026-09-09: every capture in
-# the tree is .txt, .html, .json, .xml or .mediawiki. An entry here needs the reason
-# it is verbatim, not merely the fact that it fails.
-_EXCLUDED: frozenset[str] = frozenset()
+# Byte-verbatim captures within the pathspec. An entry needs the reason it is
+# verbatim, not merely the fact that it fails.
+_EXCLUDED: frozenset[str] = frozenset(
+    {
+        # Frozen review preserved byte-for-byte by ee8260de; its quoted historical
+        # dataset strings retain their captured order. See "Preserved evidence"
+        # in doc/branch-integration-2026-10-11.md and the file's -text attribute.
+        "doc/yod-holam-review-20261007.html",
+    }
+)
 
 # Far below the number of files in scope, and here only to catch a pathspec that
 # swallowed everything -- not to assert a tree size. It deliberately carries no
