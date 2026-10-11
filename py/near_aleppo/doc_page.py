@@ -211,14 +211,12 @@ def _what(numbers):
             "consulted external references such as the Jerusalem Crown edition."
         ),
         mb_html.para(
-            "Near-Aleppo aims to provide a continuous text that moves seamlessly "
-            "between an Aleppo-diplomatic edition where the codex survives and "
-            "an Aleppo-flavored edition where it is missing. In missing sections, "
-            "preserved testimony and photographs taken before the loss remain "
-            "evidence of the codex’s text. Where that evidence is lacking, we "
-            "apply editorial policies reflecting our best guess of the Tiberian "
-            "Masoretic consensus. We do not present these editorial guesses as "
-            "a proposed reconstruction of the codex."
+            "Near-Aleppo aims to seamlessly provide Aleppo-diplomatic data where "
+            "the codex survives and Aleppo-flavored data where it is missing. "
+            'When we say that the data is "Aleppo-flavored", we mean that it '
+            "reflects our best guess of the Tiberian Masoretic consensus, with "
+            "a few Aleppo-specific policies imposed on it. We do not present "
+            "these editorial guesses as a proposed reconstruction of the codex."
         ),
         mb_html.para(
             [
