@@ -46,17 +46,21 @@ whole qere with MAM, then shows both parameters in complete curly-brace notation
 The ordinary HTML writer escapes the notation as text.
 
 [`in/near-aleppo/qere-without-ketiv-mam-notes-en.json`](../../in/near-aleppo/qere-without-ketiv-mam-notes-en.json)
-owns the English translations of attached MAM notes and the comparisons with
-Ben's descriptions. Each translation identifies its whole current MAM lemma and
-all note parts. Each comparison with a note identifies the current observation
-and documentation text it assesses. The HTML build requires these subjects to
+owns the English translations and explanations of attached MAM notes and the
+comparisons with Ben's descriptions. The English versions expand abbreviated
+wording. A qere's agreement with a manuscript is expressed as agreement with the
+qere implied by that manuscript. The brief agreement statements do not specify
+whether they concern letters in the margin, niqqud in the body text, or both;
+the study preserves that uncertainty. Each translation identifies its whole
+current MAM lemma and all note parts. Each comparison with a note identifies the
+current observation and documentation text it assesses. The HTML build requires these subjects to
 match and raises if a note or description needs reconciliation. These readable
 source quotations are the subjects of the authored translations and comparisons.
 
-The page places the English translation below each attached Hebrew note and a
-comparison below each manuscript description. A summary near the top lists
-recorded discrepancies. The three cases without an attached MAM note are labelled
-accordingly. Hebrew examples and marginal-note quotations remain in RTL blocks.
+The page places the English translation and explanation below each attached
+Hebrew note and a comparison below each manuscript description. A summary near
+the top lists recorded discrepancies. The three cases without an attached MAM
+note are labelled accordingly. Hebrew examples and marginal-note quotations remain in RTL blocks.
 The manuscript sigla follow the mirrored introduction's source roster:
 `א` is the Aleppo Codex, `ל` the Leningrad Codex, and `ק` the Cairo Codex of the
 Prophets. The roster's `סימנים` is the Simanim Tanakh, as specified in

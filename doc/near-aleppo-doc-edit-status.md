@@ -1519,3 +1519,30 @@ comparison passed for all 95 files and both font copies. The generated diff was
 read and removes only the generic explanation in all nine case entries.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration and the inspected diff cover this prose-only change.
+
+## Explain agreement with an implied qere — 2026-10-11
+
+**Status:** Implemented. Ben requested “the qere implied by the Leningrad Codex”
+in place of “the Leningrad Codex's qere” and comparable clarification elsewhere.
+The English versions translate and expand MAM's abbreviated notes. Their
+statements of agreement must preserve the uncertainty about whether the agreement
+concerns letters in the margin, niqqud in the body text, or both.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`ed4fb323756452bc6ef6321499a7acb94549e445` before editing. Codex owns the explanatory
+prose, regeneration, focused verification, commit and normal push.
+
+**Change:** Both Ruth translations now use the requested implied-qere wording.
+Jeremiah 31:37 likewise attributes the reported agreement to the readings implied
+by the manuscripts. The six English-section headings identify translation and
+explanation, and one introductory paragraph records the unresolved scope of the
+brief agreement statements. The maintained source note describes this treatment.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The source and generated
+diffs were read; only the requested explanatory prose and headings change.
+Original MAM notes, Hebrew text, comparisons, manuscript readings and encodings
+are preserved. `git diff --check` passed. Mega and full suite remain on the
+approved nightly cadence; focused regeneration, note-source reconciliation and
+diff inspection cover this prose-only clarification.

@@ -278,7 +278,7 @@ def _near_aleppo_encodings(rows, examples):
 
 
 def _mam_note_reviews(rows, examples):
-    """Reconcile authored translations with their whole note and description."""
+    """Reconcile translations and explanations with their whole note and description."""
     path = build_paths.input_dir() / "qere-without-ketiv-mam-notes-en.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     if set(data) != {"format", "cases"} or data["format"] != _NOTE_REVIEW_FORMAT:
@@ -383,7 +383,11 @@ def _translation_blocks(blocks, names):
 
 
 def _english_note(review, names):
-    contents = [mb_html.heading_level_3("English translation of the MAM doc-note")]
+    contents = [
+        mb_html.heading_level_3(
+            "English translation and explanation of the MAM doc-note"
+        )
+    ]
     for note in review["notes"]:
         parts = note["translation"]
         contents.extend(_translation_blocks(parts[0], names))
@@ -656,6 +660,12 @@ def render(verses, rows):
                 "The page includes any MAM notes regarding the case at hand.",
                 "The page includes Aleppo images showing the case at hand.",
             ]
+        ),
+        mb_html.para(
+            "The English versions translate the MAM notes and make their "
+            "abbreviated wording explicit. For the brief statements of agreement "
+            "about a qere, the notes do not specify whether the agreement "
+            "concerns the letters in the margin, the niqqud in the body text, or both."
         ),
         mb_html.para(
             "A masorah circle appears to be present in every case below. "
