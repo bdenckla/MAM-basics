@@ -72,6 +72,8 @@ whole qere with MAM. The current source notation is omitted because every select
 call's first parameter is the bracketed qere and its second parameter is the qere.
 The standalone “MAM qere” displays retain all qere letters and marks without the
 MAM-with-doc brackets; quoted MAM notes retain their original text and brackets.
+Inline Hebrew with marks uses pointed styling. Unpointed Hebrew in prose inherits
+the surrounding font while retaining Hebrew language metadata and RTL isolation.
 
 “Current NAEE excerpt” retains the complete chanted word containing the QVLK
 and one neighboring chanted word on each side. A maqaf compound stays whole.

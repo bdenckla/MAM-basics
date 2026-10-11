@@ -2217,3 +2217,36 @@ and generated diffs and the generated sentence were read; the only product chang
 is the requested sentence and line wrapping. No Python file changed.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this wording change. Codex owns commit and normal push.
+
+## Use ordinary prose styling for unpointed Hebrew — 2026-10-11
+
+**Status:** Implemented. Ben requested ordinary styling for unpointed איש in
+“There is insufficient room for the letters of איש”. The study's prose helper
+previously gave every Hebrew run the pointed class. The revision applies the
+existing rendered-prose policy: runs with Hebrew marks use pointed styling;
+unpointed prose inherits the surrounding font. Hebrew language metadata and
+RTL isolation remain. The mark classification matches
+`py/accgram/almost_errors_html_shared.py` and excludes spacing punctuation.
+The unpointed introductory note example receives the same correction. All text,
+Hebrew marks and display blocks are preserved.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`293a357d29553590224dbfb61a1643f3cc9347b6` before editing. Codex owns the generator
+edit, source README, regeneration, focused verification, commit and normal push.
+Readings and Ben's request file remain unchanged. Run Black, the real HTML build
+and read-only comparison, inspect all diffs and generated markup, compare with
+the baseline to verify that only unpointed inline styling changes, and run
+`git diff --check`. Mega and full suite remain on the approved nightly cadence
+for this presentation change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. A differential page comparison,
+using Unicode mark categories as an independent oracle for the current inline
+forms and normalizing HTML wrapping, confirmed four removals of the pointed
+class: the requested איש, the introductory note example, and the two unpointed
+inline אלי quotations. Every text value, Hebrew mark, language and direction
+attribute, and other page element remains unchanged. Pointed forms retain their
+styling. The source and generated diffs and the generated target were read.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this presentation-only change.

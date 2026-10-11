@@ -53,6 +53,9 @@ _LINE_POSITIONS = {
     "end of a manuscript line": "EOL",
 }
 _HEBREW = re.compile(r"([\u0590-\u05ff]+)")
+# Match the mark classification in accgram/almost_errors_html_shared.py.
+# Maqaf, paseq and sof pasuq are spacing punctuation, not pointing.
+_HEBREW_MARK = re.compile(r"[\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7-\u05c9]")
 
 
 def records():
@@ -733,7 +736,7 @@ def _encoding(row):
 
 
 def _prose(text, names=()):
-    """Isolate Hebrew runs and italicize the record's named romanizations."""
+    """Isolate Hebrew runs, style marked runs and italicize named romanizations."""
     parts = [text]
     if names:
         pattern = r"(?<!\w)(" + "|".join(re.escape(name) for name in names) + r")(?!\w)"
@@ -745,7 +748,16 @@ def _prose(text, names=()):
         else:
             result.extend(
                 (
-                    mb_html.bdi(run, {"lang": "hbo", "dir": "rtl", "class": "pointed"})
+                    mb_html.bdi(
+                        run,
+                        {
+                            "lang": "hbo",
+                            "dir": "rtl",
+                            **(
+                                {"class": "pointed"} if _HEBREW_MARK.search(run) else {}
+                            ),
+                        },
+                    )
                     if _HEBREW.fullmatch(run)
                     else run
                 )
@@ -865,9 +877,7 @@ def render(verses, rows):
                 "in English translation. This translation also makes the original "
                 "notes' abbreviated wording more explicit. Sometimes it is not clear "
                 'what a note means when it says, for example "',
-                mb_html.bdi(
-                    "=ל-קרי", {"dir": "rtl", "lang": "hbo", "class": "pointed"}
-                ),
+                mb_html.bdi("=ל-קרי", {"dir": "rtl", "lang": "hbo"}),
                 '". We translate that as "MAM\'s qere agrees with the qere implied '
                 'by the Leningrad Codex." But it would be more conservative to say '
                 '"is consistent with" rather than the stronger "agrees", i.e. it '
