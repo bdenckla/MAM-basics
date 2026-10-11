@@ -855,15 +855,17 @@ def render(verses, rows):
             ]
         ),
         mb_html.para(
-            "For each case of qere without ketiv, we present the following "
-            "in a separate section below:"
+            [
+                "For each case of ",
+                _template_name(_QERE_TEMPLATE),
+                ", we show the following:",
+            ]
         ),
         mb_html.unordered_list(
             [
-                "An excerpt from the current near-Aleppo example edition (NAEE) "
-                "shows the case in context.",
-                "Any relevant MAM notes appear with English translations and explanations.",
-                "Aleppo Codex images show the case in the manuscript.",
+                "How the case looks in the near-Aleppo example edition (NAEE).",
+                "Any MAM notes about the case.",
+                "Aleppo images of the case.",
             ]
         ),
         mb_html.para(

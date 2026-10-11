@@ -2032,3 +2032,29 @@ for direction. The only product change is the opening paragraph and feature
 list. The matching source README and this ledger are updated; all case content
 and deferred work remain unchanged. `git diff --check` passed. Mega and full
 suite remain on the approved nightly cadence for this prose-only change.
+
+## Simplify the per-case contents list — 2026-10-11
+
+**Status:** Implemented. Ben supplied the lead-in “For each case of קרי ולא כתיב,
+we show the following:” and three replacement bullets about the NAEE display,
+MAM notes and Aleppo images. The revision uses that wording exactly, with the
+Hebrew phrase isolated for direction. This supersedes the earlier per-case wording.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`5fbc7b48d413600f31aab1ac1bef5d8b1dbab6b5` before editing. Codex owns the
+generator edit, regeneration, focused verification, commit and normal push.
+Only `py/near_aleppo/foi_qere_without_ketiv.py`,
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html` and this ledger change.
+Preserve the opening, all case content and deferred work.
+Ben's request file remains read-only. Run Black, the real HTML build and
+read-only comparison, inspect the generated diff and content, and run
+`git diff --check`. Mega and full suite remain on the approved nightly cadence
+for this introductory-prose change.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read, and the generated lead-in and bullets were read back. The only
+product change is the requested lead-in and three bullets; all other study
+content remains unchanged. `git diff --check` passed. Mega and full suite
+remain on the approved nightly cadence for this prose-only revision.
