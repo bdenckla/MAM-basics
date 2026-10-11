@@ -353,12 +353,13 @@ quotation is stored in `reading.reviewed_mam_note`.
 
 ## 2 Kings 19:31
 
-Ben clarified on 2026-10-11 that the gap is very generous compared with the
-manuscript's usual small or nonexistent spaces between written atoms. The
-letter-scribe clearly intended to leave a large gap; perhaps the qere letters
-could have fit. All the below-marks of צְבָא֖וֹת are present: sheva, qamats, and
-tipeḥa. A ḥolam male dot also seems to be represented. The letter-fit assessment
-and the dot reading remain tentative; the record does not promote the dot to a
+Ben clarified on 2026-10-11 that the gap is generous compared with the
+manuscript's usual small or nonexistent spaces between atoms, so it is pretty
+clear that the letter-scribe intended to leave a large gap, perhaps even one
+large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת
+are present: sheva, qamats, and tipeḥa. A ḥolam male dot also seems to be
+represented. The letter-fit assessment and the dot reading remain tentative;
+the record does not promote the dot to a
 confirmed manuscript reading.
 
 Ben clarified on 2026-10-11 that no masorah circle is present. The source reading

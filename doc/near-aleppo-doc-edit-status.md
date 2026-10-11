@@ -2529,3 +2529,22 @@ source and generated diffs and the generated paragraph were read; the only
 product change is the requested replacement and line wrapping. No Python file
 changed. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence for this wording-only change. Codex owns commit and normal push.
+
+## Revise the gap wording at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Implemented. Ben supplied one sentence replacing the opening two
+sentences of the manuscript reading. The study now says the gap is generous
+compared with the usual spacing between atoms, making the letter-scribe's intent
+pretty clear, perhaps with enough space for the (implied) qere letters. The
+replacement uses Ben's exact wording and retains the existing terminal period.
+The structured space and letter-fit assessments and source README are aligned.
+The following marks and tentative ḥolam male observations are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`8ea9a8875bd1fd07eea48387c0dd3fe4a545b658` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated paragraph were read; the only
+product change is the requested replacement and line wrapping. No Python file
+changed. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence for this wording-only change. Codex owns commit and normal push.
