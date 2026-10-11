@@ -2250,3 +2250,19 @@ attribute, and other page element remains unchanged. Pointed forms retain their
 styling. The source and generated diffs and the generated target were read.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this presentation-only change.
+
+## Remove “Current” from the NAEE excerpt headings — 2026-10-11
+
+**Status:** Implemented. Ben questioned “Current NAEE excerpt” and instructed
+that the document be treated as up to date, without implying that the representation
+will change. All nine case headings now read “NAEE excerpt”. The source README
+uses the same heading name. Excerpts and all other study content are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`e69618c17300a99217dfecda4c834b321c733037` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the nine generated
+headings were read; the only product change is their wording. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+heading-only change. Codex owns commit and normal push.

@@ -75,7 +75,7 @@ MAM-with-doc brackets; quoted MAM notes retain their original text and brackets.
 Inline Hebrew with marks uses pointed styling. Unpointed Hebrew in prose inherits
 the surrounding font while retaining Hebrew language metadata and RTL isolation.
 
-“Current NAEE excerpt” retains the complete chanted word containing the QVLK
+“NAEE excerpt” retains the complete chanted word containing the QVLK
 and one neighboring chanted word on each side. A maqaf compound stays whole.
 A verse-initial or verse-final QVLK instead retains two chanted words on the
 available side. Ellipses appear only where text has been omitted; the original

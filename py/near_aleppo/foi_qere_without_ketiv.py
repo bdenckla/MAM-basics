@@ -901,7 +901,7 @@ def render(verses, rows):
                 )
             ),
             _encoding(row),
-            mb_html.heading_level_3("Current NAEE excerpt"),
+            mb_html.heading_level_3("NAEE excerpt"),
             mb_html.para(
                 _naee_excerpt(verses[reference], example["qere"], reference),
                 {
