@@ -1,7 +1,7 @@
 """Encoding choices and manuscript readings beside current MAM and NAEE text.
 
 The shared renderer supplies Scripture and MAM notes. The existing closed
-dataset walk selects current qere-only source fragments, excluding note bodies
+dataset walk validates current qere-only source fragments, excluding note bodies
 and copied MAM lemmas. Authored intended encodings are documentation, not changes
 to the dataset's policy or its current source.
 """
@@ -240,7 +240,6 @@ def mam_examples(rows):
         ).verse
         result[tuple(row["reference"])] = {
             "qere": qere_text,
-            "qere_html": hfr.html_for_ren_el(ctx, qeres[0]),
             "notes": note_html,
             "note_sources": [
                 {
@@ -253,11 +252,10 @@ def mam_examples(rows):
     return result
 
 
-def _near_aleppo_encodings(rows, examples):
-    """Read one current Scripture fragment per case through the closed walk."""
+def _validate_near_aleppo_encodings(rows, examples):
+    """Validate one current Scripture fragment per case through the closed walk."""
     bkids = tuple(dict.fromkeys(row["reference"][0] for row in rows))
     books = plus.read_parsed_plus_bk39s(bkids, str(build_paths.dataset_dir().parent))
-    result = {}
     for row in rows:
         reference = tuple(row["reference"])
         book, chapter, verse = reference
@@ -283,12 +281,6 @@ def _near_aleppo_encodings(rows, examples):
             raise ValueError(f"Unexpected qere-only source shape: {reference}")
         if params["2"] != examples[reference]["qere"]:
             raise ValueError(f"Reconcile the dataset's whole qere: {reference}")
-        # Both parameters are literal text. Preserve their complete source values;
-        # the HTML writer escapes this string as text, not raw markup.
-        result[reference] = (
-            "{{" + _QERE_TEMPLATE + "|" + params["1"] + "|" + params["2"] + "}}"
-        )
-    return result
 
 
 def _mam_note_reviews(rows, examples):
@@ -694,7 +686,7 @@ def _encoding_guide():
                     "at these sites yet. The additional templates' exact names, "
                     "parameter shapes and call placement remain to be designed. "
                     "Intended additional templates are labelled pending, separately "
-                    "from the complete current source notation.",
+                    "from the current encoding.",
                 ]
             ),
         ],
@@ -702,7 +694,7 @@ def _encoding_guide():
     )
 
 
-def _encoding(row, source):
+def _encoding(row):
     intended = row["intended_encoding"]
     if intended is None:
         intention = [
@@ -735,11 +727,6 @@ def _encoding(row, source):
                 ]
             ),
             mb_html.para(intention),
-            mb_html.para(mb_html.bold("Current source notation:")),
-            mb_html.para(
-                mb_html.code(mb_html.bdi(source, {"dir": "rtl"})),
-                {"dir": "rtl", "lang": "hbo", "class": "pointed qvlk-source"},
-            ),
         ],
         {"class": "qvlk-encoding"},
     )
@@ -822,7 +809,7 @@ def _crop(crop, reference, outputs, *, label=None):
 def render(verses, rows):
     """Return the study page and unchanged crop bytes owned by the HTML build."""
     examples = mam_examples(rows)
-    encodings = _near_aleppo_encodings(rows, examples)
+    _validate_near_aleppo_encodings(rows, examples)
     reviews = _mam_note_reviews(rows, examples)
     outputs = {}
     body = [
@@ -903,7 +890,7 @@ def render(verses, rows):
                     _reference_text(reference), "../" + vel.near_aleppo_href(*reference)
                 )
             ),
-            _encoding(row, encodings[reference]),
+            _encoding(row),
             mb_html.heading_level_3("Current NAEE excerpt"),
             mb_html.para(
                 _naee_excerpt(verses[reference], example["qere"], reference),
@@ -915,7 +902,7 @@ def render(verses, rows):
             ),
             mb_html.heading_level_3("MAM qere"),
             mb_html.para(
-                example["qere_html"],
+                mb_html.span(example["qere"], {"class": _QERE_TAG}),
                 {"dir": "rtl", "lang": "hbo", "class": "pointed qvlk-hebrew-display"},
             ),
             mb_html.heading_level_3("Current MAM doc-note"),

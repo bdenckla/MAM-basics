@@ -2147,3 +2147,41 @@ absence at 2 Kings 19:31. The only product change is the requested opening
 feature passage and parenthetical explanation. The source README matches.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this prose-only change.
+
+## Remove repeated source notation and standalone qere brackets — 2026-10-11
+
+**Status:** Implemented. Ben authorized removing every “Current source notation”
+subsection if the notation adds nothing beyond the MAM qere display, and requested
+removal of square brackets from those displays. The nine current calls each have
+the bracketed qere as their first parameter and the same qere as their second
+parameter; the introduction already identifies the template. Codex agrees that
+these source blocks add no independent case information. The revision removes
+the blocks and their unused display plumbing and styles, while retaining source
+validation. Each standalone MAM qere appears without brackets; quoted MAM notes
+retain their original text and brackets. The source README and stale notation
+wording are updated.
+This supersedes the earlier source-notation presentation requirement.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`4c81f0d7ddd283627f2694b26aaf97ab417299a0` before editing. Codex owns the generator,
+study CSS, matching source README, regeneration, verification, commit and normal
+push. All qere letters and marks, current and pending encoding summaries,
+excerpts, notes, translations, readings, table values, crops and deferred work
+are preserved. Ben's request file remains read-only. Run Black, the real HTML
+build and read-only comparison, compare the page with the baseline after only
+the authorized presentation changes, inspect all diffs and run `git diff --check`.
+Mega and full suite remain on the approved nightly cadence for this presentation change.
+
+**Verification:** Black passed on the generator. The real HTML build and
+read-only comparison passed for all 95 files and both font copies. A differential
+comparison with the baseline, normalizing HTML line wrapping, confirmed all nine
+source blocks duplicate their MAM qere and all nine standalone displays lose only
+their brackets. Every other page element and its content are preserved, apart
+from the unused source styles and the guide's stale notation wording. This
+includes all qere letters and marks, quoted MAM notes and their brackets, English
+translations, encoding summaries, excerpts, table values and images. The source
+validation still checks one correctly shaped source call per case and agreement
+of its whole qere with MAM. All source and generated diffs and the regenerated
+displays were read. `git diff --check` passed. Mega and full suite remain on the
+approved nightly cadence for this presentation change.

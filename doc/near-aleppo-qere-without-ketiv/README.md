@@ -68,8 +68,10 @@ selects semantic qere-only render elements and notes whose rendered lemma contai
 that element. The existing closed dataset walk also selects the current qere-only
 source fragment from Scripture, excluding note bodies and copied MAM lemmas.
 The study validates that fragment's two literal parameters and agreement of its
-whole qere with MAM, then shows both parameters in complete curly-brace notation.
-The ordinary HTML writer escapes the notation as text.
+whole qere with MAM. The current source notation is omitted because every selected
+call's first parameter is the bracketed qere and its second parameter is the qere.
+The standalone “MAM qere” displays retain all qere letters and marks without the
+MAM-with-doc brackets; quoted MAM notes retain their original text and brackets.
 
 “Current NAEE excerpt” retains the complete chanted word containing the QVLK
 and one neighboring chanted word on each side. A maqaf compound stays whole.
@@ -137,7 +139,8 @@ Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Each entry
 now starts with “Near-Aleppo encoding”, before the NAEE excerpt and manuscript
 discussion. Current encoding and pending intended additional templates have
-separate labels.
+separate labels. Ben requested removal of the repeated source-notation blocks
+on 2026-10-11 because they add no independent information beyond the MAM qere.
 All current source fragments are read afresh from `out/near-aleppo/plus/`; they
 are not copied into the study metadata.
 
@@ -166,8 +169,8 @@ additional template without space above the marks at 2 Samuel 18:20 still awaits
 an explicit variant for that use. The additional template at 2 Samuel 16:23,
 Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5 and Ruth 3:17 must record horizontal space
 without niqqud. The additional template's name and syntax
-remain open. Complete notation is shown only for current encodings; pending
-names, parameter shapes and call placement remain to be designed. Dataset
+remain open. Current encodings are summarized without repeated source notation;
+pending names, parameter shapes and call placement remain to be designed. Dataset
 implementation remains separate.
 
 “Space above the marks” means horizontal space in the line of letters, left

@@ -7,10 +7,8 @@
 .qvlk-study .qvlk-crop { display: block; margin-inline: auto; max-width: 100%; height: auto; }
 .qvlk-study .qvlk-caption { font-size: 0.9em; text-align: center; }
 .qvlk-study .romanized { font-style: italic; }
-.qvlk-study .qvlk-source { line-height: 1.8; }
-.qvlk-study .qvlk-hebrew-display, .qvlk-study .qvlk-source { text-align: center; }
+.qvlk-study .qvlk-hebrew-display { text-align: center; }
 .qvlk-study .qvlk-marginal-lines { margin-inline: auto; }
-.qvlk-study .qvlk-source code { font-family: inherit; overflow-wrap: anywhere; }
 .qvlk-study .qvlk-case-summary { margin-inline: auto; }
 .qvlk-study .qvlk-case-summary th, .qvlk-study .qvlk-case-summary td { white-space: nowrap; padding-inline: 0.5em; }
 .qvlk-study .qvlk-case-summary th:not(:first-child), .qvlk-study .qvlk-case-summary td { text-align: center; }
