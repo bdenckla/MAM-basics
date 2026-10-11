@@ -883,7 +883,7 @@ def render(verses, rows):
                 'by the Leningrad Codex." But it is important to note that by "agrees" '
                 'here we don\'t mean "equals" so much as "is consistent with". I.e. '
                 "what we mean is \"MAM's qere is consistent with the qere implied by "
-                "the [body niqqud (if any) and marginal qere letters] of the "
+                "the [body niqqud (if any) and marginal qere letters of the] "
                 'Leningrad Codex."',
             ]
         ),

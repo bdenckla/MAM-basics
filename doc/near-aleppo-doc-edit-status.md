@@ -2553,10 +2553,11 @@ nightly cadence for this wording-only change. Codex owns commit and normal push.
 
 **Status:** Implemented. Ben replaced the suggestion to use a more conservative
 translation with an explanation that “agrees” means “is consistent with” rather
-than “equals”. The introduction uses the supplied wording, removing the stray
-closing bracket after “of the” as a typo, as stated before editing. The source
-README states the same meaning. This supersedes the earlier conservative-wording
-explanation. The case translations are unchanged.
+than “equals”. Codex initially removed the closing bracket after “of the”,
+incorrectly interpreting it as the stray bracket. The later “Correct the
+bracketed expansion's scope” entry records Ben's semantic correction. The source
+README states the same meaning of “agrees”. This supersedes the earlier
+conservative-wording explanation. The case translations are unchanged.
 
 **Checkout and verification:** Development and integration use the full clone
 `C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
@@ -2566,3 +2567,24 @@ and both font copies. All source and generated diffs and the generated paragraph
 were read; the only product change is the requested explanation and line wrapping.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this wording-only change. Codex owns commit and normal push.
+
+## Correct the bracketed expansion's scope — 2026-10-11
+
+**Status:** Implemented. Ben clarified that the bracket scope must agree with
+the preceding version of the sentence. Codex had removed the wrong closing
+bracket in `94587adb`. The expansion now reads “the qere implied by the [body
+niqqud (if any) and marginal qere letters of the] Leningrad Codex”. Removing the
+bracketed insertion leaves “the qere implied by the Leningrad Codex”. The source
+README states this relation, and the earlier status entry records the correction
+to Codex's initial interpretation. The pushed commit's historical message remains
+unchanged; this entry and the correcting commit supersede its bracket claim.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`94587adb1e5a7767f3890222c73436cde09b4330` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated sentence
+were read. Eliding the bracketed insertion restores the preceding wording.
+The only product change moves the closing bracket. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence for this punctuation
+change. Codex owns commit and normal push.

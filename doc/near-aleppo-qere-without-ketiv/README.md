@@ -108,6 +108,10 @@ current observation and documentation text it assesses. The HTML build requires 
 match and raises if a note or description needs reconciliation. These readable
 source quotations are the subjects of the authored translations and comparisons.
 
+The introduction's bracketed expansion includes "of the". Removing that insertion
+leaves "the qere implied by the Leningrad Codex", matching the preceding version
+of the sentence.
+
 The page places the English translation and explanation below each attached
 Hebrew note. Comparisons record only discrepancies between MAM's note and the
 manuscript remarks; agreements and summaries of facts present in only one
