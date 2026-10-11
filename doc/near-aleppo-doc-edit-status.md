@@ -1995,3 +1995,40 @@ origin/main remains at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551` and is an
 ancestor of HEAD, so no merge or new product checks are required. This approval
 record changes only the maintained ledger; the prior focused verification
 remains applicable. Record-only diff checks are owed before the normal push.
+
+## Define absent letters and list the varying body-text features — 2026-10-11
+
+**Status:** Implemented. Ben supplied replacement opening prose using קרי ולא כתיב,
+stating that neither qere nor ketiv letters are present in the body text, and
+retaining the masorah-circle exception at 2 Kings 19:31. The opening now introduces
+two varying features as bullets: whether "orphan" (letterless) niqqud are present
+and whether horizontal space is present. The revision uses Ben's supplied wording
+and the sentence-completing bullets. This supersedes the preceding opening prose;
+the per-case lead-in and contents list remain unchanged.
+
+**Checkout and execution scope:** Source, development and integration use the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`f73c7f799daab18f8f0ae980166ee476a1250da7` before editing; origin/main matches.
+Codex owns the generator edit, matching source README, HTML regeneration,
+focused verification, commit and normal push. Edit
+`py/near_aleppo/foi_qere_without_ketiv.py`,
+`doc/near-aleppo-qere-without-ketiv/README.md`, this ledger and the generated
+`gh-pages/near-aleppo/foi/qere-without-ketiv.html`. Preserve all case content,
+notes, translations, readings, excerpts, table values, images and dataset calls.
+The request file remains read-only; dataset implementation and A102 remain deferred.
+
+**Verification scope:** Use this clone's interpreter from the repository root
+for Black on the changed generator, `py/main_near_aleppo.py --html` and
+`py/main_near_aleppo.py --html --check`. Read every generated diff and the
+generated opening; the expected product change is only the opening paragraph
+and its new two-item feature list. Run `git diff --check`. Mega and full suite
+remain on the approved nightly cadence for this introductory-prose change.
+
+**Verification:** Black passed on the changed generator. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. The
+source and generated diffs were read, and the generated opening was read back:
+Ben's supplied wording and two bullets appear, with the Hebrew phrase isolated
+for direction. The only product change is the opening paragraph and feature
+list. The matching source README and this ledger are updated; all case content
+and deferred work remain unchanged. `git diff --check` passed. Mega and full
+suite remain on the approved nightly cadence for this prose-only change.

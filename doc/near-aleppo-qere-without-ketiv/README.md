@@ -8,15 +8,20 @@ It is linked from the near-Aleppo FOI index and the existing ketiv/qere guide.
 Ben approved this first draft on 2026-10-08: “what you propose seems fine, at least as a first draft.”
 Implementation and further discussion of the readings proceed together.
 
-Every case of qere without ketiv discussed here has a marginal note containing
-the qere letters; those letters are absent from the body text. A masorah circle
-is present in every case except 2 Kings 19:31. The cases differ in whether
-niqqud are present and whether horizontal space is present in the body text.
+Every case of קרי ולא כתיב discussed here has a marginal note containing the
+qere letters. As expected, by definition, neither qere nor ketiv letters are
+present in the body text. A masorah circle is present in every case except
+2 Kings 19:31. The cases differ in whether, in the body text:
+
+- "orphan" (letterless) niqqud are present
+- horizontal space is present
+
 The study states the common features and the circle exception together once
 in the opening paragraph.
 Complete MAM quotations and translations retain their circle references.
-English descriptions, list items, encoding summaries, translations and image
+English descriptions, encoding summaries, translations and image
 captions use complete sentences.
+The opening feature list completes its lead-in.
 The study uses an unnamed authorial voice. Reading provenance and contribution
 history remain in the source records and this maintained note.
 
