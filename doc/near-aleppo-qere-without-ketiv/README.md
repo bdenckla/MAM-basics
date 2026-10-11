@@ -26,6 +26,10 @@ and crop provenance, together with the intended encoding assessments. Update tha
 file as Ben supplies further readings or revises an assessment. A case without an
 image reading has `reading`, `observation`, and `crop` set to `null`; the page
 states that an image reading has not yet been recorded.
+The v3 record format also permits a reviewed case's `observation` to be `null`
+when its remarks add nothing beyond the attached MAM note. Full structured image
+readings and provenance remain in `reading`; only displayed prose is trimmed.
+Cases with an attached MAM note display only additional manuscript remarks.
 
 The linked case summary table replaces the numbered verse list. Its narrow
 columns use N for niqqud presence, H for horizontal space in the line
@@ -75,14 +79,17 @@ wording. A qere's agreement with a manuscript is expressed as agreement with the
 qere implied by that manuscript. The brief agreement statements do not specify
 whether they concern letters in the margin, niqqud in the body text, or both;
 the study preserves that uncertainty. Each translation identifies its whole
-current MAM lemma and all note parts. Each comparison with a note identifies the
+current MAM lemma and all note parts. Each note review identifies the
 current observation and documentation text it assesses. The HTML build requires these subjects to
 match and raises if a note or description needs reconciliation. These readable
 source quotations are the subjects of the authored translations and comparisons.
 
 The page places the English translation and explanation below each attached
-Hebrew note and a comparison below each manuscript description. A summary near
-the top lists recorded discrepancies. The three cases without an attached MAM
+Hebrew note. Comparisons record only discrepancies between MAM's note and the
+manuscript remarks; agreements and summaries of facts present in only one
+description are omitted. The v2 note-review format uses a `null` comparison
+when no discrepancy requires a separate entry. Discrepancy blocks and their
+summary appear only when entries exist. The three cases without an attached MAM
 note are labelled accordingly. Hebrew examples and marginal-note quotations remain in RTL blocks.
 The manuscript sigla follow the mirrored introduction's source roster:
 `א` is the Aleppo Codex, `ל` the Leningrad Codex, and `ק` the Cairo Codex of the
@@ -100,22 +107,19 @@ The study's observations do not change the near-Aleppo source text or decide a
 template design. Actual near-Aleppo source decisions remain in their existing
 maintained inputs and procedures.
 
-## MAM comparisons, 2026-10-11
+## Additional manuscript remarks, 2026-10-11
 
-The apparent discrepancy is the assessment of the space at 2 Samuel 16:23:
-MAM says that there is only a narrow space; the space appears fairly generous
-even after the maqaf, insufficient for the letters but ample for the below-marks.
-MAM may mean narrow relative to the room needed for the letters rather than
-for the points alone. This is a possible interpretation of MAM's wording.
-Both descriptions say that pointing is absent.
-
-The other attached notes agree with Ben's descriptions where their subjects
-overlap. MAM's Jeremiah 31:37 illustration additionally reports surrounding text
-that Ben has not assessed here. MAM's Ruth notes additionally quote the marginal
-notes. Ben's Ruth 3:17 line-ending hypothesis is additional to MAM's description
-of a noticeable space; MAM does not assess whether that space was intentional.
-There is no attached MAM note at Judges 20:13,
-2 Kings 19:31 or 2 Kings 19:37 to compare with Ben's description.
+Ben requested remarks limited to additional facts, beyond what MAM's note
+already says. At 2 Samuel 16:23, retain the generous space after the maqaf and
+the distinction between room for letters and room for niqqud. MAM's “narrow”
+is only a possible discrepancy because its relative measure is unspecified;
+the qualification stays in the remarks, without a separate comparison entry.
+At Jeremiah 31:37, retain generous inter-word spacing and the qualified damage
+description and inferred marginal-note layout. At Jeremiah 50:29, retain
+generous spacing and the maqaf extending into it. At Ruth 3:17, retain the
+end-of-line position and possible accidental generosity. The separate remarks
+at 2 Samuel 18:20 and Ruth 3:5 add nothing beyond MAM and are omitted.
+The three cases without an attached MAM note retain their full remarks.
 
 ## Encoding presentation, 2026-10-11
 
@@ -127,7 +131,7 @@ separate labels.
 All current source fragments are read afresh from `out/near-aleppo/plus/`; they
 are not copied into the study metadata.
 
-The study's v2 record format adds `intended_encoding`: either `null` for an
+The study's `intended_encoding` is either `null` for an
 entry awaiting a manuscript-based assessment, or an object with `kind` and
 `explanation`. The three closed kinds are `marks-with-space`,
 `marks-without-space` and `space-without-marks`. These are document assessments, not build

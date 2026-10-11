@@ -1738,3 +1738,44 @@ table entries, qere glyphs, target ink, images and dataset calls are preserved.
 The three focused prose and mark lints passed, and `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence; focused regeneration,
 independent context review, source inspection and lints cover this excerpt change.
+
+## Keep only discrepancies and additional manuscript remarks — 2026-10-11
+
+**Status:** Implemented. Ben requested that comparisons with MAM record only
+discrepancies, excluding agreements and summaries of facts supplied by only one
+description. Trim the displayed manuscript remarks to facts beyond MAM's note.
+Keep the qualified interpretation of “narrow” at 2 Samuel 16:23 in those remarks,
+without a separate discrepancy entry: the comparison depends on whether the
+space is assessed relative to the letters or the niqqud.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`b6a38a3f37fbed2024236a2086631142af27204e` before editing. Codex owns the
+source edits, regeneration, focused verification, commit and normal push.
+A read-only reviewer checks the trimming against all six MAM notes.
+
+**Execution scope:** Preserve full structured image readings, provenance, all
+Hebrew notes and translations, images, summary-table values, NAEE excerpts and
+dataset calls. Allow no separate remarks where everything duplicates MAM, and
+no comparison block where no discrepancy remains. Update the maintained source
+README. Run Black on the changed generator, the real HTML build and comparison,
+the focused prose/mark lints and diff checks. Mega and full suite remain on the
+approved nightly cadence.
+
+**Verification:** Black passed on the generator. The real HTML build and
+read-only comparison passed for all 95 files and both font copies. The generated
+diff removes the discrepancy summary and all nine comparison blocks; the
+qualified “narrow” discussion appears once in the additional remarks. Separate
+remarks at 2 Samuel 18:20 and Ruth 3:5 are omitted because they duplicate MAM.
+The other remarks retain only the additional details, and the three cases
+without attached notes retain their full remarks. Nullable displayed remarks
+and comparisons are explicit in the revised source formats and renderer.
+An independent reviewer found no material defects in the trimming or renderer.
+A differential comparison with the baseline confirmed that full structured
+readings, all six Hebrew notes and English translations, nine excerpts and qere
+displays, source notation, table, images and inferred marginal-note layout are
+preserved. The three focused prose and mark lints passed. The source and rendered
+diffs were read, and `git diff --check` passed. This revision supersedes the
+earlier agreement comparisons and duplicated manuscript prose. Mega and full
+suite remain on the approved nightly cadence; focused regeneration, preservation
+comparison, independent review and lints cover this presentation change.

@@ -31,14 +31,12 @@ from render_wt import render_wikitext as rwt
 
 PAGE = "foi/qere-without-ketiv.html"
 TITLE = "Qere without ketiv in near-Aleppo"
-_FORMAT = "near-aleppo-qere-without-ketiv-readings-v2"
+_FORMAT = "near-aleppo-qere-without-ketiv-readings-v3"
 _QERE_TAG = "mam-kq-q-velo-k"
 _QERE_TEMPLATE = "קרי ולא כתיב"
-_NOTE_REVIEW_FORMAT = "near-aleppo-qere-without-ketiv-mam-notes-en-v1"
+_NOTE_REVIEW_FORMAT = "near-aleppo-qere-without-ketiv-mam-notes-en-v2"
 _COMPARISON_LABELS = {
-    "discrepancy": "Apparent discrepancy",
-    "agreement": "Agreement",
-    "no-note": "No attached MAM note",
+    "discrepancy": "Discrepancy",
 }
 _ADDITIONAL_TEMPLATES = {
     "marks-with-space": MARKS_WITHOUT_LETTER,
@@ -102,8 +100,10 @@ def records():
         elif (
             not isinstance(row["reading"], dict)
             or not isinstance(row["reading"].get("qere"), str)
-            or not isinstance(row["observation"], str)
-            or not row["observation"]
+            or (
+                row["observation"] is not None
+                and (not isinstance(row["observation"], str) or not row["observation"])
+            )
         ):
             raise ValueError(f"Incomplete image reading: {identity}")
         if (
@@ -314,15 +314,16 @@ def _mam_note_reviews(rows, examples):
             raise ValueError(f"Invalid or duplicate MAM note review: {identity}")
         result[identity] = review
         comparison = review["comparison"]
-        if (
+        if comparison is not None and (
             not isinstance(comparison, dict)
             or set(comparison) != {"status", "text"}
             or comparison["status"] not in _COMPARISON_LABELS
             or not isinstance(comparison["text"], str)
             or not comparison["text"]
-            or not isinstance(review["notes"], list)
         ):
             raise ValueError(f"Invalid MAM comparison: {identity}")
+        if not isinstance(review["notes"], list):
+            raise ValueError(f"Invalid MAM notes: {identity}")
         for note in review["notes"]:
             if not isinstance(note, dict) or set(note) != {"source", "translation"}:
                 raise ValueError(f"Invalid translated MAM note: {identity}")
@@ -370,8 +371,13 @@ def _mam_note_reviews(rows, examples):
             raise ValueError(
                 f"Reconcile the MAM comparison with the manuscript description at {identity}"
             )
-        if (review["comparison"]["status"] == "no-note") != (not source):
-            raise ValueError(f"Invalid MAM note availability assessment: {identity}")
+        if not source:
+            if review["comparison"] is not None:
+                raise ValueError(f"MAM comparison without an attached note: {identity}")
+            if row["reading"] is not None and row["observation"] is None:
+                raise ValueError(
+                    f"Image reading without manuscript remarks: {identity}"
+                )
     return result
 
 
@@ -435,7 +441,7 @@ def _comparison_summary(rows, reviews):
     differences = []
     for row in rows:
         comparison = reviews[row["id"]]["comparison"]
-        if comparison["status"] == "discrepancy":
+        if comparison is not None:
             differences.append(
                 [
                     mb_html.anchor_h(
@@ -445,19 +451,17 @@ def _comparison_summary(rows, reviews):
                     *_prose(comparison["text"], row["romanized"]),
                 ]
             )
-    return mb_html.div(
-        [
-            mb_html.heading_level_2("Apparent discrepancies with MAM"),
-            (
-                mb_html.unordered_list(differences)
-                if differences
-                else mb_html.para(
-                    "No apparent discrepancy is recorded in the comparisons below."
-                )
-            ),
-        ],
-        {"class": "qvlk-mam-summary"},
-    )
+    if not differences:
+        return []
+    return [
+        mb_html.div(
+            [
+                mb_html.heading_level_2("Discrepancies with MAM"),
+                mb_html.unordered_list(differences),
+            ],
+            {"class": "qvlk-mam-summary"},
+        )
+    ]
 
 
 def _template_name(name):
@@ -860,7 +864,7 @@ def render(verses, rows):
             "and their complete translations retain their references to circles.",
             {"class": "qvlk-common-observation"},
         ),
-        _comparison_summary(rows, reviews),
+        *_comparison_summary(rows, reviews),
         _encoding_guide(),
         *_case_summary(rows),
     ]
@@ -906,7 +910,20 @@ def render(verses, rows):
             )
         if review["notes"]:
             contents.append(_english_note(review, row["romanized"]))
-        contents.append(mb_html.heading_level_3("Aleppo manuscript reading"))
+        marginal_lines = _inferred_marginal_lines(row)
+        if (
+            row["reading"] is None
+            or row["observation"] is not None
+            or row["documentation_notes"]
+            or marginal_lines is not None
+        ):
+            contents.append(
+                mb_html.heading_level_3(
+                    "Additional manuscript remarks"
+                    if review["notes"]
+                    else "Aleppo manuscript reading"
+                )
+            )
         if row["reading"] is None:
             contents.append(
                 mb_html.para(
@@ -914,11 +931,13 @@ def render(verses, rows):
                 )
             )
         else:
-            contents.append(mb_html.para(_prose(row["observation"], row["romanized"])))
+            if row["observation"] is not None:
+                contents.append(
+                    mb_html.para(_prose(row["observation"], row["romanized"]))
+                )
             contents.extend(
                 mb_html.para(_prose(note)) for note in row["documentation_notes"]
             )
-            marginal_lines = _inferred_marginal_lines(row)
             if marginal_lines is not None:
                 contents.append(
                     mb_html.para(
@@ -936,7 +955,8 @@ def render(verses, rows):
                         },
                     )
                 )
-        contents.append(_comparison(review, row["romanized"]))
+        if review["comparison"] is not None:
+            contents.append(_comparison(review, row["romanized"]))
         if row["crop"]:
             crop = row["crop"]
             if "marginal_qere_note" in crop:

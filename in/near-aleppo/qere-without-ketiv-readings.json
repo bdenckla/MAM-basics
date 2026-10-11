@@ -1,5 +1,5 @@
 {
-  "format": "near-aleppo-qere-without-ketiv-readings-v2",
+  "format": "near-aleppo-qere-without-ketiv-readings-v3",
   "cases": [
     {
       "id": "Ju20-13",
@@ -86,7 +86,7 @@
           "quotation": "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
         }
       },
-      "observation": "The space is fairly generous even after the maqaf, yet there is no pointing for אִ֖ישׁ. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). MAM's characterization of the space as “narrow” is slightly puzzling. Perhaps “narrow” refers to the room needed for the letters rather than the room needed for the points alone.",
+      "observation": "The space is fairly generous even after the maqaf. There is insufficient room for the letters of איש, but ample room for its below-marks (ḥiriq and tipeḥa). MAM's characterization of the space as “narrow” is slightly puzzling. This is only a possible discrepancy: “narrow” may refer to the room needed for the letters rather than the much smaller space needed to fit the niqqud comfortably.",
       "romanized": [
         "maqaf",
         "ḥiriq",
@@ -130,7 +130,7 @@
           "quotation": "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה."
         }
       },
-      "observation": "The tsere and merkha of כֵּ֥ן are written below, between the surrounding written atoms, without the qere letters or dagesh. There is no space above these marks. This reading agrees with MAM’s note.",
+      "observation": null,
       "romanized": [
         "tsere",
         "merkha",
@@ -267,7 +267,7 @@
           ]
         }
       },
-      "observation": "For בָּאִ֖ים, the body text has a rather generous horizontal space between the surrounding written atoms, with no qere letters or niqqud.",
+      "observation": "The horizontal space between the surrounding written atoms is rather generous.",
       "romanized": [],
       "documentation_notes": [
         "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
@@ -306,7 +306,7 @@
         "masorah_circle_position": "within the generous space",
         "maqaf_extends_into_space": true
       },
-      "observation": "For לָהּ֙, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud. The preceding maqaf extends into that space.",
+      "observation": "The horizontal space between the surrounding written atoms is generous. The preceding maqaf extends into that space.",
       "romanized": [
         "maqaf"
       ],
@@ -340,7 +340,7 @@
         "masorah_circle_present": true,
         "masorah_circle_position": "within the generous space"
       },
-      "observation": "For אֵלַ֖י, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud.",
+      "observation": null,
       "romanized": [],
       "documentation_notes": [],
       "crop": {
@@ -377,7 +377,7 @@
           "text": "The space may be accidentally generous because it is at the end of the manuscript line."
         }
       },
-      "observation": "For אֵלַ֔י, there is a generous horizontal space at the end of a manuscript line, with no qere letters or niqqud. The line ending may account for the generous space, possibly accidentally.",
+      "observation": "The space is at the end of a manuscript line. The line ending may account for the generous space, possibly accidentally.",
       "romanized": [],
       "documentation_notes": [],
       "crop": {
