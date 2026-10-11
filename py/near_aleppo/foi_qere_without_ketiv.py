@@ -839,9 +839,11 @@ def render(verses, rows):
             ]
         ),
         mb_html.para(
-            "In each case of qere without ketiv, the body text contains no "
-            "letters for the qere; those letters are written in a marginal note. "
-            "The space and marks in the body text of the manuscript can nevertheless differ."
+            "Every case of qere without ketiv discussed here has a marginal "
+            "note containing the qere letters and a masorah circle in the "
+            "body text, where those letters are absent. The cases differ in "
+            "whether niqqud are present and whether horizontal space is "
+            "present in the body text."
         ),
         mb_html.para("The verses below show:"),
         mb_html.unordered_list(
@@ -856,13 +858,6 @@ def render(verses, rows):
             "abbreviated wording explicit. For the brief statements of agreement "
             "about a qere, the notes do not specify whether the agreement "
             "concerns the letters in the margin, the niqqud in the body text, or both."
-        ),
-        mb_html.para(
-            "A masorah circle appears to be present in every case below. "
-            "Circle presence is noted here once because it does not distinguish "
-            "the cases or require different additional templates. MAM's notes "
-            "and their complete translations retain their references to circles.",
-            {"class": "qvlk-common-observation"},
         ),
         *_comparison_summary(rows, reviews),
         _encoding_guide(),

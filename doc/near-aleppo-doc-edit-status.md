@@ -1800,3 +1800,28 @@ were read; the rendered change is confined to the opening sentence and its
 line wrapping. The source README uses the same definition. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence because
 this edit changes only explanatory wording.
+
+## Rework the opening around shared and varying features — 2026-10-11
+
+**Status:** Implemented. Ben requested a full paragraph rewrite: first state the
+features shared by every case, then name the features that vary. State that
+each case discussed here has qere letters in a marginal note and a masorah
+circle in the body text, where the qere letters are absent. Then state that
+niqqud presence and horizontal-space presence differ from case to case. Fold
+the later circle-presence paragraph into this opening so the common feature
+is stated once. This supersedes the preceding opening-sentence revision.
+
+**Checkout and verification scope:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` is clean on main at
+`a33521dd1f0aba6642b62ee86daff2d940a9faa5` before editing. Codex owns the prose,
+source README, regeneration, diff inspection, commit and normal push. Run Black
+on the changed generator and the real HTML build/comparison. Mega and full
+suite remain on the approved nightly cadence for this prose-only revision.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The source and generated diffs
+were read: the opening paragraph is replaced, and the later circle paragraph
+is removed. The source README now states the same common and varying features.
+All case discussions, notes, images, table entries and dataset calls are
+unchanged. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence because this change affects only introductory prose.
