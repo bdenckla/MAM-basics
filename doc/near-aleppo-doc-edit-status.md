@@ -1828,21 +1828,21 @@ nightly cadence because this change affects only introductory prose.
 
 ## Rewrite the per-case lead-in and bullets; continue in a new chat — 2026-10-11
 
-**Status:** Active for the successor chat. Ben requested that the lead-in and
+**Status:** Implemented in the successor chat. Ben requested that the lead-in and
 bullets describe each case's section, rather than the page as a whole. The
-current lead-in, “The verses below show:”, introduces three bullets beginning
+prior lead-in, “The verses below show:”, introduced three bullets beginning
 “The page shows” or “The page includes”. Ben called both the lead-in and the
 repeated bullet openings awkward. Ben suggested a lead-in along the lines of
 “For each case of qere without ketiv, below we show the following”. The intended
 list contents remain the current NAEE excerpt, any relevant MAM notes, and the
-Aleppo Codex images. Write natural complete sentences, without “The page” as
-the subject of each bullet. Choose the precise wording in the successor chat;
-no additional decision from Ben is needed for this authorized prose edit.
+Aleppo Codex images. The revision uses natural complete sentences, without
+“The page” as the subject of each bullet. Codex selected the precise wording
+under the existing authorization; no additional decision from Ben was needed.
 
 Ben also wrote: “Please record all queued request and start a new session.”
-Codex records the queue here and transfers execution after committing and
-pushing this handoff record. The rendered lead-in and bullets are unchanged
-by this handoff commit.
+Codex recorded the queue here and transferred execution after committing and
+pushing the handoff record. The rendered lead-in and bullets were unchanged
+by the handoff commit.
 
 **Queue reconciliation:** All earlier qere-study edit requests in this run
 are implemented or superseded by later requests. The latest opening paragraph
@@ -1906,3 +1906,19 @@ content by reading it and give an absolute file link.
 The source and pending passages were read, and the queue was reconciled with
 the maintained ledger and request file. `git diff --check` is required before
 commit. No generator, mega or suite run is owed by this record-only change.
+
+**Successor implementation and verification:** The exact development and
+integration checkout was verified as `C:/Users/BenDe/GitRepos/MAM-basics`,
+clean on main at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551` before editing.
+The lead-in now reads: “For each case of qere without ketiv, we present the
+following in a separate section below:”. The three complete-sentence bullets
+describe the current NAEE excerpt in context, relevant MAM notes with English
+translations and explanations, and Aleppo Codex images of the case.
+Black passed on the changed generator. The real HTML build and read-only
+comparison passed for all 95 files and both font copies. The source and
+generated diffs were read, and the generated introduction was read back.
+The only product change is the lead-in and three bullets; the opening
+paragraph and all case content remain unchanged. The request file and
+deferred dataset and A102 work remain unchanged. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence because this
+revision changes only introductory prose.

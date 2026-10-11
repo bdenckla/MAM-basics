@@ -845,12 +845,16 @@ def render(verses, rows):
             "whether niqqud are present and whether horizontal space is "
             "present in the body text."
         ),
-        mb_html.para("The verses below show:"),
+        mb_html.para(
+            "For each case of qere without ketiv, we present the following "
+            "in a separate section below:"
+        ),
         mb_html.unordered_list(
             [
-                "The page shows the current near-Aleppo example edition (NAEE) contents for the case at hand.",
-                "The page includes any MAM notes regarding the case at hand.",
-                "The page includes Aleppo images showing the case at hand.",
+                "An excerpt from the current near-Aleppo example edition (NAEE) "
+                "shows the case in context.",
+                "Any relevant MAM notes appear with English translations and explanations.",
+                "Aleppo Codex images show the case in the manuscript.",
             ]
         ),
         mb_html.para(
