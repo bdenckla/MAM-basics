@@ -1925,7 +1925,7 @@ revision changes only introductory prose.
 
 ## Correct masorah-circle presence at 2 Kings 19:31 — 2026-10-11
 
-**Status:** Implemented locally; push awaits Ben's approval. Ben corrected the image reading: “No masorah circle is
+**Status:** Implemented; Ben approved the push on 2026-10-11. Ben corrected the image reading: “No masorah circle is
 present in 2 Kings 19:31.” Replace the universal circle-presence statement with
 “A masorah circle is present in every case except 2 Kings 19:31.” Record the
 absence and its provenance in the 2 Kings 19:31 source reading. The presence of
@@ -1943,12 +1943,12 @@ the current source and rendered study already omit that sentence and contributor
 names. The unnamed rendered voice remains in force; provenance remains in source
 records.
 
-**Push status:** The successor's push of `1f4f5b2e` to `origin/main` was rejected
+**Earlier push rejection:** The successor's push of `1f4f5b2e` to `origin/main` was rejected
 by automatic approval review because main can publish the site and the handoff
-was not accepted as authorization for that push. Origin remains at
-`4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551`. Complete and verify this correction
-locally before asking Ben to approve pushing both local commits. Do not retry the
-rejected outward-facing push through this correction. The changed product is the
+was not accepted as authorization for that push. At the start of this correction,
+origin/main was at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551`. The correction
+was completed and verified locally before asking Ben to approve pushing both
+local commits. The rejected push was not retried before approval. The changed product is the
 published study page; the change can be revised through a later commit, while
 the push is an outward-facing publication step.
 
@@ -1970,7 +1970,7 @@ lead-in and bullets and all notes, translations, excerpts, table values and crop
 are preserved. `git diff --check` passed. Mega and full suite remain on the
 approved nightly cadence for this study-specific correction.
 
-**Standalone pending-push handoff:** Codex prepared this instruction on
+**Standalone push handoff (approval granted):** Codex prepared this instruction on
 2026-10-11. Ben's authorized content change was: “No masorah circle is present
 in 2 Kings 19:31.” The remaining instruction is Codex's reconstruction of the
 pending publication step. After Ben explicitly approves the push, continue in
@@ -1986,3 +1986,12 @@ including both the successor's lead-in rewrite and this correction; never
 force-push or rewrite history. Verify HEAD against origin/main and clean status,
 then report the pushed commit. Until Ben approves, retain both local commits
 and do not repeat the rejected push.
+
+**Approval and readiness, 2026-10-11:** Ben wrote: “Yes, push the circle
+correction and the lead-in rewrite to origin/main.” The approval condition in
+the preceding handoff is fulfilled. The exact full clone was verified clean
+on main at `e2864dfcb873d808310db7aa680a061657309d35`. A fresh fetch confirmed
+origin/main remains at `4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551` and is an
+ancestor of HEAD, so no merge or new product checks are required. This approval
+record changes only the maintained ledger; the prior focused verification
+remains applicable. Record-only diff checks are owed before the normal push.
