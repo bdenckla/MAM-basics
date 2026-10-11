@@ -2374,3 +2374,18 @@ source and generated diffs and both generated entries were read; the only
 product changes are those entries. No Python file changed. `git diff --check`
 passed. Mega and full suite remain on the approved nightly cadence for this
 translation-only change. Codex owns commit and normal push.
+
+## Clarify pointed ketiv in the Jeremiah 50:29 translation — 2026-10-11
+
+**Status:** Implemented. Ben requested “The Aleppo Codex has the following
+pointed ketiv, i.e. the following body text:”. The translation input and
+generated study now use that exact wording.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`89fe992e69fb3c3b2ea7625a79fa8723223dd2f4` before editing. The real HTML build
+and read-only comparison passed for all 95 files and both font copies. All
+source and generated diffs and the generated sentence were read; the only
+product change is that sentence. No Python file changed. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence for this
+wording-only change. Codex owns commit and normal push.
