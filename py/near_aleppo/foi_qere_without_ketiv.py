@@ -707,12 +707,7 @@ def render(verses, rows):
             )
         if review["notes"]:
             contents.append(_english_note(review, row["romanized"]))
-        reading_title = (
-            "Aleppo manuscript reading"
-            if row["reading"] is None
-            else f"Aleppo manuscript reading — recorded {row['reading']['recorded_date']}"
-        )
-        contents.append(mb_html.heading_level_3(reading_title))
+        contents.append(mb_html.heading_level_3("Aleppo manuscript reading"))
         if row["reading"] is None:
             contents.append(
                 mb_html.para(

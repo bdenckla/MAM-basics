@@ -1346,3 +1346,22 @@ font copies. The generated diff was read and adds only the requested paragraph.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; image inspection, regeneration and the inspected diff cover this
 prose-only clarification.
+
+## Remove displayed recording and review dates — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. All nine “Aleppo manuscript
+reading” headings now omit their recording dates. The two Samuel descriptions
+also omit the date on which MAM's note was reviewed. No dates remain in the
+rendered study; source provenance dates remain in the reading metadata.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`120ecb4abcac7fe6f1a3667e92547b1937f8484d` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and contains only the nine heading changes and two date removals in prose.
+The date search found no remaining dates in the page. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; regeneration and
+the inspected diff cover this prose-only revision.

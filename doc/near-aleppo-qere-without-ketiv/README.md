@@ -60,9 +60,10 @@ Prophets. The roster's `סימנים` is the Simanim Tanakh, as specified in
 
 An image reading's subject is its whole recorded qere, including every letter
 and mark. A changed current qere requires reconciling that reading's subject.
-There are no input hashes or fixed-population gates. The dated Samuel comparisons
+There are no input hashes or fixed-population gates. The Samuel reading records
 identify the MAM notes reviewed on 2026-10-08; their verbatim quotations remain in
-the reading records even if the current notes later change.
+the reading records even if the current notes later change. Recording and review
+dates remain in the source metadata and are not displayed in the study.
 
 The study's observations do not change the near-Aleppo source text or decide a
 template design. Actual near-Aleppo source decisions remain in their existing
