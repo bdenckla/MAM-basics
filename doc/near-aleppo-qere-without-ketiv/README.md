@@ -10,14 +10,17 @@ Implementation and further discussion of the readings proceed together.
 
 Every case of קרי ולא כתיב discussed here has a marginal note containing the
 qere letters. As expected, by definition, neither qere nor ketiv letters are
-present in the body text. A masorah circle is present in every case except
-2 Kings 19:31. The cases differ in whether, in the body text:
+present in the body text. The cases differ in whether, in the body text:
 
-- "orphan" (letterless) niqqud are present
-- horizontal space is present
+- niqqud marks are present (only four of the nine cases have niqqud)
+- horizontal space is present (only 1 case lacks it: 2 Samuel 18:20)
+- a masorah circle is present (only 1 case lacks it: 2 Kings 19:31)
 
-The study states the common features and the circle exception together once
-in the opening paragraph.
+(By definition, when niqqud marks are present, these are "orphan" niqqud,
+i.e. letterless niqqud.)
+
+The study states the common features in the opening paragraph and lists all
+three varying features together.
 Complete MAM quotations and translations retain their circle references.
 English descriptions, encoding summaries, translations and image
 captions use complete sentences.

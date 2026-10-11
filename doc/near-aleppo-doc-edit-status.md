@@ -2120,3 +2120,30 @@ and both font copies. The source and generated diffs and generated legend were
 read; the only product change is the requested wording and line wrapping.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence for this wording-only change. Codex owns commit and normal push.
+
+## List and count all three varying body-text features — 2026-10-11
+
+**Status:** Implemented. Ben supplied a three-item replacement feature list:
+niqqud are present in four of nine cases; horizontal space is absent only at
+2 Samuel 18:20; a masorah circle is absent only at 2 Kings 19:31. The revision
+moves the circle exception from the opening paragraph into this list and follows
+the list with Ben's parenthetical definition of present niqqud as “orphan”, or
+letterless, niqqud. It uses the supplied wording and numerals. This supersedes
+the two-item feature list.
+
+**Checkout and scope:** Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`df31de3702c21e6cc53cd0abbc23bc89370fb91d` before editing. Codex owns the
+generator edit, matching source README, regeneration, verification, commit
+and normal push. All case records, translations, excerpts, summary table values,
+crops and deferred work remain unchanged; Ben's request file remains read-only.
+
+**Verification:** Black passed on the generator. The real HTML build and
+read-only comparison passed for all 95 files and both font copies. The source
+and generated diffs were read, and the regenerated introduction and table were
+read back. The table confirms four niqqud-present rows among nine and only
+2 Samuel 18:20 without horizontal space. The source reading records the circle
+absence at 2 Kings 19:31. The only product change is the requested opening
+feature passage and parenthetical explanation. The source README matches.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this prose-only change.

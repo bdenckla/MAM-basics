@@ -844,15 +844,19 @@ def render(verses, rows):
                 _template_name(_QERE_TEMPLATE),
                 " discussed here has a marginal note containing the qere letters. "
                 "As expected, by definition, neither qere nor ketiv letters are "
-                "present in the body text. A masorah circle is present in every "
-                "case except 2 Kings 19:31. The cases differ in whether, in the body text:",
+                "present in the body text. The cases differ in whether, in the body text:",
             ]
         ),
         mb_html.unordered_list(
             [
-                '"orphan" (letterless) niqqud are present',
-                "horizontal space is present",
+                "niqqud marks are present (only four of the nine cases have niqqud)",
+                "horizontal space is present (only 1 case lacks it: 2 Samuel 18:20)",
+                "a masorah circle is present (only 1 case lacks it: 2 Kings 19:31)",
             ]
+        ),
+        mb_html.para(
+            '(By definition, when niqqud marks are present, these are "orphan" niqqud, '
+            "i.e. letterless niqqud.)"
         ),
         mb_html.para(
             [
