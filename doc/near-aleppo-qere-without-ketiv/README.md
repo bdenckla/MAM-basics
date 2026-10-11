@@ -119,6 +119,13 @@ remain open. Complete notation is shown only for current encodings; pending
 names, parameter shapes and call placement remain to be designed. Dataset
 implementation remains separate.
 
+“Space above the marks” means horizontal space in the line of letters, left
+between words or at the end of a manuscript line. At a line ending, the space
+may have been left on purpose or may be accidental. The two end-of-line cases
+are Judges 20:13 and Ruth 3:17. None of the cases in this study is at the start
+of a manuscript line. The recorded observations and all nine body-text crops
+were consulted for this clarification on 2026-10-11.
+
 ## Link presentation trial, 2026-10-11
 
 Ben requested research and implementation of an alternative to ordinary link

@@ -474,6 +474,14 @@ def _encoding_guide():
                 ]
             ),
             mb_html.para(
+                "The phrase “space above the marks” means horizontal space "
+                "in the line of letters, left between words or at the end of a "
+                "manuscript line. At a line ending, that horizontal space may "
+                "have been left on purpose or may be accidental. The end-of-line "
+                "cases here are Judges 20:13 and Ruth 3:17. None of the cases "
+                "discussed here is at the start of a manuscript line."
+            ),
+            mb_html.para(
                 "The existing marks templates are specific to near-Aleppo. Their payloads use "
                 "artificial carrier letters to hold the marks; those carriers "
                 "are not written manuscript letters. The original convention "

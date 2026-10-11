@@ -1325,3 +1325,24 @@ comparison passed for all 95 files and both font copies. The generated diff was
 read and contains only this introduction revision. `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence; regeneration and
 the inspected diff cover this prose-only revision.
+
+## Horizontal space and line position — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. “Encoding conventions” now
+defines “space above the marks” as horizontal space in the line of letters,
+between words or at the end of a manuscript line. End-of-line space may have
+been left on purpose or may be accidental. Judges 20:13 and Ruth 3:17 are the
+two end-of-line cases; none of the cases in this study is at the start of a line.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`7253552845aa6a9687992b28d6a5f1210afe84fc` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Codex consulted the recorded observations and all nine
+body-text crops for the line-position statement. Black passed on the generator.
+HTML regeneration and read-only comparison passed for all 95 files and both
+font copies. The generated diff was read and adds only the requested paragraph.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; image inspection, regeneration and the inspected diff cover this
+prose-only clarification.
