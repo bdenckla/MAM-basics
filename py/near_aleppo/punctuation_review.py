@@ -18,7 +18,7 @@ from mb_cmn import mam_bknas_and_std_bknas as bkn
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import uni_heb
 from mb_misc import mb_html
-from near_aleppo import build_paths, edition, frozen_ketiv
+from near_aleppo import build_paths, edition, frozen_ketiv, link_presentation
 from py_misc import mam_doc_utils, mwd_utils, near_aleppo_params as nap
 from py_misc import ren_html_for_renel as hfr
 from render_wt import render_wikitext as rwt
@@ -268,6 +268,7 @@ def render():
         '<meta name="viewport" content="width=device-width,initial-scale=1">'
         '<meta http-equiv="Content-Security-Policy" content="default-src \'none\'; '
         "style-src 'unsafe-inline'; script-src 'unsafe-inline'; font-src data:; "
+        "img-src data:; "
         "connect-src 'none'\">"
         f"<title>{title}</title><style>{css}\n{_CSS}</style></head><body>"
         f"<header><h1>{title}</h1><p>42 maqaf cases and 12 pasoleg cases, "
@@ -286,6 +287,7 @@ def render():
         f'<script id="font-license" type="text/plain">{notice}{license_text}</script>'
         f"<script>{_SCRIPT}</script></body></html>\n"
     )
+    page = link_presentation.apply(page, "review/" + _BASENAME + ".html")
     return {
         _BASENAME + ".html": page.encode("utf-8"),
         _BASENAME + ".txt": ("\n".join(plain).rstrip("\n") + "\n").encode("utf-8"),

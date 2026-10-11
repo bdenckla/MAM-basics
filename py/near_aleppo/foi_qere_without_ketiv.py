@@ -203,10 +203,7 @@ def _links(reference):
         if link.label in labels:
             if result:
                 result.append(" · ")
-            attrs = {"href": link.href}
-            if link.label in {"mgketer", "tica"}:
-                attrs["class"] = "qvlk-external"
-            result.append(mb_html.anchor(labels[link.label], attrs))
+            result.append(mb_html.anchor_h(labels[link.label], link.href))
     return mb_html.para(result)
 
 

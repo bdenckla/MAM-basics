@@ -7,13 +7,14 @@
 <link rel="stylesheet" href="../document.css">
 <link rel="stylesheet" href="../MAM-parsed/style.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="link-presentation.css">
 </head>
 <body>
 <h1>The near-Aleppo dataset</h1>
-<p>The <a href="https://github.com/bdenckla/MAM-basics/tree/main/out/near-aleppo/">near-Aleppo
+<p>The <a href="https://github.com/bdenckla/MAM-basics/tree/main/out/near-aleppo/" data-na-link="external">near-Aleppo
 dataset</a> is similar to MAM-parsed-plus (mpplus). This page describes what near-Aleppo changes
 relative to mpplus. For what is in common with mpplus, see
-<a href="../MAM-parsed/plus/html/mpplus.html">the documentation for mpplus</a>.</p>
+<a href="../MAM-parsed/plus/html/mpplus.html" data-na-link="page">the documentation for mpplus</a>.</p>
 <p id="what-the-dataset-is">The mpplus dataset is a parsed form of the Wikitext sources for Miqra
 According to the Masorah (MAM). The Hebrew of near-Aleppo is nearer to the Aleppo Codex's body text
 than the Hebrew of mpplus.</p>
@@ -26,14 +27,14 @@ implied by the pointed ketiv words in the body text. Unlike mpplus, near-Aleppo 
 ketiv words rather than only their letters.</p>
 <p>The near-Aleppo dataset differs from mpplus in more than just its Unicode strings. It also uses a
 slightly different set of templates to structure the string data. The
-<a href="reading-json.html">JSON reference</a> describes those differences.</p>
+<a href="reading-json.html" data-na-link="page">JSON reference</a> describes those differences.</p>
 <p>Most changes to MAM that near-Aleppo makes are based on information found in MAM itself. Some of
 that information is in the general policies laid out in MAM's Introduction. When the Introduction
 describes a systematic, invertible difference between MAM and the Aleppo Codex, near-Aleppo applies
 the inverse to MAM's text. For example, MAM supplies stress helpers for all accents, whereas the
 Introduction describes Aleppo as generally lacking helpers for accents other than pashta. So,
 near-Aleppo inverts (in this case undoes) MAM's work by omitting those helpers except where MAM's
-notes justify keeping them. For example, at <a href="edition/A1-Genesis.html#c2v7">Genesis 2:7</a>,
+notes justify keeping them. For example, at <a href="edition/A1-Genesis.html#c2v7" data-na-link="page">Genesis 2:7</a>,
 we can see that near-Aleppo removes MAM's telishah qetannah stress helper:</p>
 <div class="table-wrap display-table">
 <table>
@@ -53,7 +54,7 @@ we can see that near-Aleppo removes MAM's telishah qetannah stress helper:</p>
 documentation note targets a particular word within a particular verse. When a note says that MAM
 diverges from Aleppo at a particular word, the note typically gives Aleppo's form, so in such cases
 near-Aleppo uses Aleppo's form of the word rather than MAM's form. For example, at
-<a href="edition/C1-Isaiah.html#c27v5">Isaiah 27:5</a>, MAM's note gives Aleppo's form without the
+<a href="edition/C1-Isaiah.html#c27v5" data-na-link="page">Isaiah 27:5</a>, MAM's note gives Aleppo's form without the
 dagesh on zayin, and near-Aleppo follows that form:</p>
 <div class="table-wrap display-table">
 <table>
@@ -79,22 +80,22 @@ text. Where that evidence is lacking, we apply editorial policies reflecting our
 Tiberian Masoretic consensus. We do not present these editorial guesses as a proposed reconstruction
 of the codex.</p>
 <p>Near-Aleppo is 24 JSON files in this repository's
-<a href="https://github.com/bdenckla/MAM-basics/tree/main/out/near-aleppo/plus/"><code>out/near-aleppo/plus/</code></a>,
+<a href="https://github.com/bdenckla/MAM-basics/tree/main/out/near-aleppo/plus/" data-na-link="external"><code>out/near-aleppo/plus/</code></a>,
 one for each of MAM-parsed-plus's book files, in its layout and its serialization. Of its 23,202
 verses, near-Aleppo's text differs from MAM-parsed-plus's at 13,877 (59.8%).</p>
-<p>In addition to the JSON near-Aleppo dataset, we provide <a href="edition/index.html">an example
+<p>In addition to the JSON near-Aleppo dataset, we provide <a href="edition/index.html" data-na-link="page">an example
 HTML edition</a> to show one kind of human-readable edition that can be made from near-Aleppo.</p>
 <h2>Features of interest</h2>
-<p><a href="foi/index.html">Features of interest in NAEE</a></p>
+<p><a href="foi/index.html" data-na-link="page">Features of interest in NAEE</a></p>
 <h2>Documentation</h2>
 <ul>
-<li><a href="reading-json.html">Near-Aleppo JSON reference</a></li>
-<li><a href="editorial-policies.html">Editorial policies</a></li>
-<li><a href="coverage-and-status.html">Coverage and limitations</a></li>
-<li><a href="choices.html">Choices and alternatives</a></li>
-<li><a href="ketiv-qere-mobile-he.html">Mobile he and the patah</a></li>
-<li><a href="ketiv-qere-daniel.html">Ketiv/qere cases in Daniel</a></li>
-<li><a href="ketiv-qere-genesis-43-28.html">Genesis 43:28</a></li>
+<li><a href="reading-json.html" data-na-link="page">Near-Aleppo JSON reference</a></li>
+<li><a href="editorial-policies.html" data-na-link="page">Editorial policies</a></li>
+<li><a href="coverage-and-status.html" data-na-link="page">Coverage and limitations</a></li>
+<li><a href="choices.html" data-na-link="page">Choices and alternatives</a></li>
+<li><a href="ketiv-qere-mobile-he.html" data-na-link="page">Mobile he and the patah</a></li>
+<li><a href="ketiv-qere-daniel.html" data-na-link="page">Ketiv/qere cases in Daniel</a></li>
+<li><a href="ketiv-qere-genesis-43-28.html" data-na-link="page">Genesis 43:28</a></li>
 </ul>
 <script src="section-links.js" defer="defer"></script>
 </body>

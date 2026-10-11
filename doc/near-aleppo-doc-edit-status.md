@@ -823,7 +823,8 @@ and visual checks cover this presentation change.
 
 **Status:** Implemented by Codex, authorized by Ben's request to research
 Wikisource, other approaches and MAM-basics precedents, then implement an
-experiment in `qere-without-ketiv.html`. Broader adoption awaits Ben's assessment.
+experiment in `qere-without-ketiv.html`. Ben's subsequent approval and the broader
+rollout are recorded under “Shared arrow links across near-Aleppo pages” below.
 Development and integration use the full clone `C:/Users/BenDe/GitRepos/MAM-basics`
 on main at `79c923957188007a2ffd70dd6ece60103cbeec97`, clean before editing.
 
@@ -850,3 +851,47 @@ because `file:` URLs are disallowed. Visual layout and keyboard behavior await
 Ben's local review; no passing browser check is claimed. Mega and full suite
 remain on the approved nightly cadence. Focused generation and offline
 content/style checks cover this reversible page-specific experiment.
+
+## Shared arrow links across near-Aleppo pages — 2026-10-11
+
+**Status:** Implemented by Codex after Ben approved the study's arrow links and
+requested the presentation across near-Aleppo-related pages. Ben also asked
+whether a same-page link to an earlier anchor would use an up arrow.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`97cb7825cd6b3b1991e9300a7bf5913690e504a7` before editing. Codex owns the
+implementation, verification, commit and normal push. A read-only agent
+inventoried the affected pages and reviewed the integration.
+
+**Change:** All 77 HTML pages under `gh-pages/near-aleppo/` and the maintained
+standalone final-punctuation extract use the approved link presentation.
+`py/near_aleppo/link_presentation.py` inserts presentation attributes into the
+original rendered HTML and assigns up/down arrows by comparing each same-page
+link with its target in document order. Other MAM-basics pages retain a right
+arrow; destinations outside MAM-basics retain a boxed outward arrow. The shared
+authored stylesheet is `py/near_aleppo/link_presentation.css`; publication uses
+one generated copy, and the offline extract embeds it. The extract permits data
+images in its content security policy for the self-contained SVG masks. The
+study's private CSS now owns only its layout.
+
+**Verification:** Black passed on all four changed Python files. The actual
+HTML and extract generators and their read-only comparisons passed: 89 owned
+HTML-build files, both font copies and both extract files are current. Three
+focused renderer, CLC-style and shared-stylesheet tests passed. An independent
+artifact differential confirmed all 78 page bodies are byte-identical to the
+baseline after removing only presentation attributes. All 2,533 links retain
+their labels and destinations; every local fragment resolves and its arrow
+matches document order. The three upward links occur under “Notes for
+applications” in `reading-json.html`. All three SVG masks parse without remote
+dependencies. Hebrew order, RTL markup, source-data scripts, book datasets,
+pointing inputs, observations, crops and the plain-text extract are unchanged.
+The read-only agent review found no material integration issue, and
+`git diff --check` passed.
+
+**Verification limits:** Ben reviewed and approved the original presentation.
+Automated visual and keyboard checks retain the earlier browser-policy block
+on local `file:` previews; no automated browser pass is claimed. The full mega
+and suite remain on the approved nightly cadence. Focused generation, complete
+artifact comparisons and mechanical link checks cover this presentation rollout;
+no consequence requires immediate broad checks.

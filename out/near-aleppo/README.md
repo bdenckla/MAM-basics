@@ -71,6 +71,13 @@ maintained records and crop provenance. Regenerate the FOI pages and images with
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --html
 ```
 
+The documentation, FOI and edition pages share the approved arrow link
+presentation. Same-page targets earlier in document order use an up arrow;
+later targets use a down arrow. Other MAM-basics pages use a right arrow,
+and destinations outside MAM-basics use a boxed outward arrow. The authored
+rules are in `py/near_aleppo/link_presentation.css`; their generator inserts
+presentation attributes without rewriting the page text or link destinations.
+
 The selection and explanations are maintained in
 `py/near_aleppo/features_of_interest.py`. To print a verse's local and published
 NAEE links from the current checkout, use, for example:
@@ -98,6 +105,8 @@ Append `--check` to regenerate in memory and compare both tracked review files.
 The HTML embeds the edition font, its notices and license, styles, exact rendered
 text and input selection; it needs no network access. The unchanged font's source
 package and notices remain in `in/font-support/taamey-d-0.921/`.
+The extract also embeds the shared arrow link styles; its content security
+policy allows the self-contained SVG masks as data images.
 
 The dataset is derived from [Miqra according to the Masorah](https://en.wikisource.org/wiki/User:Dovi/Miqra_according_to_the_Masorah#beginning)
 at Hebrew Wikisource, prepared by Seth (Avi) Kadish with technical assistance from

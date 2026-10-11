@@ -36,9 +36,10 @@ maintained inputs and procedures.
 ## Link presentation trial, 2026-10-11
 
 Ben requested research and implementation of an alternative to ordinary link
-underlines on this page. Broader near-Aleppo adoption awaits Ben's assessment.
-Development and integration use `C:/Users/BenDe/GitRepos/MAM-basics`, a clean full
-clone on main at `79c923957188007a2ffd70dd6ece60103cbeec97` before editing.
+underlines on this page. On 2026-10-11 Ben approved the presentation and requested
+its adoption across the near-Aleppo pages. The rollout is recorded below.
+Trial development and integration used `C:/Users/BenDe/GitRepos/MAM-basics`, a clean
+full clone on main at `79c923957188007a2ffd70dd6ece60103cbeec97` before editing.
 Codex owns implementation, focused regeneration, verification, commit and push.
 
 The [Wikimedia link guide](https://doc.wikimedia.org/codex/latest/style-guide/using-links-and-buttons.html)
@@ -71,19 +72,39 @@ adds a background and keyboard focus adds an outline. This intentionally keeps
 underlines off on hover as well, using the marker and highlight as the cues.
 The empty decorative pseudo-elements do not alter accessible names or copied text.
 
-The authored source is
-[`py/near_aleppo/foi_qere_without_ketiv.css`](../../py/near_aleppo/foi_qere_without_ketiv.css),
-embedded only in this page by its generator. The small geometric SVGs are authored
-locally and use no remote asset. Hebrew, link labels, URLs, observations, crops,
-datasets and template policy are preserved. Verify by regenerating, comparing
-the body after removing only the new class attributes, and checking link markers,
-keyboard focus and light/dark layouts at desktop and narrow widths.
+The trial's link rules were initially embedded from
+[`py/near_aleppo/foi_qere_without_ketiv.css`](../../py/near_aleppo/foi_qere_without_ketiv.css).
+That file now owns only the study's layout. The small geometric SVGs are authored
+locally and use no remote asset. Offline body comparison, SVG validation and
+declared-color contrast checks covered the preserved content and self-contained
+assets. Browser security policy blocked automated local visual and keyboard
+verification because it disallows `file:` URLs. Ben subsequently reviewed and
+approved the presentation; no automated browser pass is claimed.
 
-Automated visual and keyboard verification remains unverified: the browser security
-policy blocked the local preview because it disallows `file:` URLs. These aspects
-await Ben's local review of the generated experiment. Offline body comparison,
-SVG validation and declared-color contrast checks cover the preserved content
-and self-contained assets.
+## Shared near-Aleppo link presentation, 2026-10-11
+
+The shared rules now cover all 77 HTML pages under `gh-pages/near-aleppo/`,
+including documentation, FOI pages, edition pages and their long notes, plus the
+maintained standalone final-punctuation review extract. The authored sources are
+[`py/near_aleppo/link_presentation.py`](../../py/near_aleppo/link_presentation.py)
+and [`py/near_aleppo/link_presentation.css`](../../py/near_aleppo/link_presentation.css).
+The HTML build writes one shared stylesheet; the offline extract embeds it.
+
+Same-page links use an up arrow when the target precedes the link in document
+order, and a down arrow when the target follows it. This direction is assigned
+during generation and needs no browser script. Links to other MAM-basics pages
+retain the right arrow; links outside MAM-basics retain the boxed outward arrow.
+The three backward section links under “Notes for applications” in
+[`reading-json.html`](../../gh-pages/near-aleppo/reading-json.html) demonstrate the
+up arrow. Labels and arrows remain one link, with the trial's hover, focus,
+visited, forced-color and print behavior.
+
+The rollout preserves Hebrew order, RTL markup, page text, link labels and URLs,
+observations, crops, datasets and template policy. Verification compares every
+page's body byte-for-byte after removing only the presentation attributes,
+checks every local fragment and arrow direction, validates the self-contained
+SVGs, and runs the real HTML and standalone-extract comparisons. Automated visual
+and keyboard checks retain the browser-policy limitation described above.
 
 ## Reproduction
 
