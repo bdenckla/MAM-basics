@@ -26,8 +26,8 @@ parse trees that "know" about the Wikitext template format.
 
 The format adds conveniences for consumers, including a `good_ending_plus` key
 in each `book39` object, targeted scroll-difference notes, and an explicit
-template for each atom with special letters. Source boundary records such as the
-0 (zero) and תתת (triple-tav) pseudo-verses are absent.
+template for each atom with special letters. The 0 (zero) and תתת (triple-tav)
+pseudo-verses are absent.
 
 For detailed documentation of the file structures, see:
 
