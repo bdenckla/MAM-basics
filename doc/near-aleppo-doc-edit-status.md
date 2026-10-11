@@ -2694,3 +2694,14 @@ normal escalation after the sandbox denied Windows resolution of the repository
 root before collection. Mega and the full suite remain on the approved nightly
 cadence; this change has no identified consequence requiring an immediate broad
 run.
+
+**Integration:** Implementation commit `7ebdc506` was committed on main. A
+fresh fetch found `origin/main` at `7fb93c9259f3dd4929016f14079f1a768496d580`,
+with a separate near-Aleppo introduction revision. Normal merge commit
+`86b1495347788d9360fdf11b66a0432d3143471b` preserves that introduction and this
+implementation. The merged `doc_page.py` passes Black, and
+`py/main_near_aleppo.py --html --check` confirms all generated pages remain
+current. The incoming change alters only the introduction's prose and its
+generated page; the dataset and qere implementation are unchanged by the merge.
+The focused prose-mark-order and explicit-time-zone checks also passed again
+after the merge (2 tests). Mega and the full suite remain on the nightly cadence.
