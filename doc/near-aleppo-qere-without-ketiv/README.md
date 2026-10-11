@@ -206,6 +206,100 @@ are Judges 20:13 and Ruth 3:17. None of the cases in this study is at the start
 of a manuscript line. The recorded observations and all nine body-text crops
 were consulted for this clarification on 2026-10-11.
 
+## Dataset implementation handoff, 2026-10-11
+
+Ben now authorizes implementation in a new chat: “please start a new session to
+actually implement the planned encodings described in
+near-aleppo/foi/qere-without-ketiv.html (and possibly described in some plan in the
+"doc" folder? I don't know if we made such a plan)”. Codex found the requirements
+in this maintained README, the generated study and the live edit ledger, rather
+than a separate encoding plan. The following is Codex's implementation handoff.
+
+Source, development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`. The reviewed pre-handoff baseline is
+`2618f5070069e85304d7489ca1535eb932bac481` on main, with a clean checkout.
+The successor prompt supplies the committed handoff's exact HEAD. Verify the
+checkout root, HEAD, main branch, clean status and required-commit ancestry
+before editing. Run from the repository root with its own interpreter,
+`C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`.
+The successor owns implementation, verification, commits and normal pushes to
+main. The predecessor completes and pushes this handoff before starting the
+successor, then stops writing in this checkout.
+
+Read `AGENTS.md`, `doc/review-trial.md`, `doc/near-aleppo-build.md`, this README,
+and the maintained inputs named above. Load `hebrew-prose` with its MAM-basics
+and verification references, and `iterative-document-editing`. Runtime inputs
+and manuscript crops are tracked here; this public build has no private runtime
+dependency. Ben's `doc/near-aleppo-requested-doc-edits.md` remains his request
+file; implementation statuses belong in `doc/near-aleppo-doc-edit-status.md`.
+
+Keep every existing קרי ולא כתיב call and its whole qere unchanged. Add one
+explicit template describing the body's niqqud and horizontal space at each
+selected site. The recorded cases are:
+
+| Case | Body classification | Recorded marks |
+| --- | --- | --- |
+| Judges 20:13 | Marks with horizontal space | sheva, tsere, munaḥ; no dagesh |
+| 2 Samuel 16:23 | Horizontal space without marks | None |
+| 2 Samuel 18:20 | Marks without horizontal space | tsere, merkha; no dagesh |
+| 2 Kings 19:31 | Marks with horizontal space | sheva, qamats, tipeḥa; ḥolam dot remains tentative |
+| 2 Kings 19:37 | Marks with horizontal space | qamats, qamats, pashta |
+| Jeremiah 31:37 | Horizontal space without marks | None |
+| Jeremiah 50:29 | Horizontal space without marks | None |
+| Ruth 3:5 | Horizontal space without marks | None |
+| Ruth 3:17 | Horizontal space without marks | None |
+
+Use `in/near-aleppo/qere-without-ketiv-readings.json` as the full source of each
+reading and its qualifications. These body classifications are settled; some
+implementation details remain open:
+
+- The exact additional-template names, parameter shapes and placement need
+  design. “רווח בלי ניקוד” was a suggestion, not an approved name.
+- The existing no-space template accepts only the final-nun-dalet carrier used
+  at Isaiah 54:16. The 2 Samuel 18:20 use needs an explicit suitable variant;
+  preserve the existing carrier contract.
+- At 2 Kings 19:31 the tentative question is whether a ḥolam dot is present in
+  the body text. Resolve the reading with Ben before treating it as confirmed
+  or choosing a payload that silently omits it. The other below-marks are
+  confirmed. Technical design can proceed while this question is resolved.
+
+Investigate the existing build and renderer contracts, make the implementation
+choices concrete and reviewable, and ask Ben only for unresolved Hebrew-reading
+or data-semantic decisions. Implementation is authorized; routine coding choices
+do not need another general approval. Record decisions in this maintained home
+and the existing ledger. Every new recognized template or carrier variant gets
+closed dispatch and exact shape validation in every affected consumer.
+
+Expected product changes are the additional encodings in `out/near-aleppo/plus/`,
+corresponding population records, the example edition and its encoding
+documentation. Preserve MAM source data, all qere letters and marks, and the
+study's images, translations, image-first order and ordinary styling for
+unpointed Hebrew. Update pending labels to implemented only when the actual
+dataset demonstrates that implementation. [MAM-basics issue 304](https://github.com/bdenckla/MAM-basics/issues/304)
+separately tracks the upstream Jeremiah illustration omission; the study's sic annotation remains.
+The deferred A102 coverage-row work remains separate.
+
+Run Black on changed Python files. Regenerate the near-Aleppo products and
+inspect every tracked diff with the real entry point:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_near_aleppo.py
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_near_aleppo.py --check
+```
+
+Use the relevant focused checks through `py/main_test.py`, plus
+`git diff --check`. Validate preservation of the original qere calls and every
+letter and mark, and inspect the rendered body marks and spacing at all selected
+sites. Regenerate other affected consumers if shared rendering changes. Follow
+the approved trial's focused-check and nightly broad-check cadence; an immediate
+broad check needs a specific consequence that cannot accept the delay. Fetch
+origin before normal pushes to main, merge moved origin/main normally if needed,
+and rerun the checks owed by the resulting change. Never rewrite history or
+discard work to make integration pass.
+
 ## Link presentation trial, 2026-10-11
 
 Ben requested research and implementation of an alternative to ordinary link

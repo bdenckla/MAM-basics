@@ -2606,3 +2606,23 @@ bracketed annotation is preserved.
 Only this live ledger changes locally. `git diff --check` passed. Mega and full
 suite remain on the approved nightly cadence for this record-only change.
 Codex owns commit and normal push.
+
+## Authorize a successor to implement the body encodings — 2026-10-11
+
+**Status:** Active; implementation is authorized in a new chat. Ben requested a
+new session to implement the encodings described in the study. Codex found no
+separate encoding plan; the requirements reside in the generated study, source
+README and this ledger. The README's “Dataset implementation handoff” now records
+the settled classifications, open design and ḥolam questions, exact checkout,
+ownership and focused verification commands. This supersedes the earlier
+prose-only scope for the successor's task. The source classifications and
+current dataset are unchanged by the handoff.
+
+**Checkout and handoff:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` was verified clean on main at
+`2618f5070069e85304d7489ca1535eb932bac481` before this preparation. Codex commits
+and pushes the handoff, then creates the successor in the saved MAM-basics
+project at this same path. The successor verifies the committed handoff HEAD
+and owns implementation, checks, commits and normal pushes to main. The
+predecessor stops writing before dispatch. `git diff --check` passed; mega and
+full suite remain on the approved nightly cadence for this handoff-only change.
