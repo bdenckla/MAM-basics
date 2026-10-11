@@ -105,10 +105,12 @@ import subprocess
 
 from mb_cmn import paths, uni_denorm
 
-# Byte-verbatim captures that happen to be .md. Empty on 2026-09-09: every capture in
-# the tree is .txt, .html, .json, .xml or .mediawiki. An entry here needs the reason
-# it is verbatim, not merely the fact that it fails.
-_EXCLUDED: frozenset[str] = frozenset()
+# Byte-verbatim captures or frozen artifacts within the prose pathspecs. This set
+# was empty on 2026-09-09. An entry needs its preservation reason, not merely a
+# failing mark-order scan. Ben requested preserving this original historical
+# review's exact bytes; its source and comparison readings must not be rewritten.
+# doc/branch-integration-2026-10-11.md records the original size and SHA-256.
+_EXCLUDED: frozenset[str] = frozenset({"doc/yod-holam-review-20261007.html"})
 
 # Far below the number of files in scope, and here only to catch a pathspec that
 # swallowed everything -- not to assert a tree size. It deliberately carries no

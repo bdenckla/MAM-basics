@@ -79,6 +79,12 @@ covered. Source outside its scope is still yours to check: `py/check_mark_order.
 `py/py_misc/uni_check.py` and `py/py_misc/check_mpplus.py` check data, and
 `py/foi/foiz_wt_unicode.py` reports `NON_STANDARD_MARK_ORDER` as a feature of interest.
 
+The frozen `doc/yod-holam-review-20261007.html` preserves the original historical
+review's exact source and comparison readings at Ben's explicit request. Its bytes,
+including original mark order, remain unchanged; the integration receipt records its
+source commit, byte count and SHA-256. It is excluded by exact path from the authored
+prose lint, rather than normalized or treated as current authored examples.
+
 Scope: only those five code points have a declared priority. A vowel and an accent pass in either order, so
 `has_std_mark_order` says nothing about which of them comes first.
 

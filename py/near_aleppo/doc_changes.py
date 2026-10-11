@@ -863,6 +863,10 @@ _ADJUSTMENTS = (
     ("C1-Isaiah", "36", "12"),
     ("C1-Isaiah", "44", "24"),
     ("D2-Proverbs", "3", "30"),
+    ('BC-Kings מל"ב', "4", "7"),
+    ("C3-Ezekiel", "14", "14"),
+    ("C3-Ezekiel", "14", "20"),
+    ("C3-Ezekiel", "28", "3"),
 )
 
 
@@ -896,7 +900,13 @@ def _pointed_ketiv(numbers):
                 "alefs written as the near-Aleppo dataset's template ",
                 he_name(MARKS_WITHOUT_LETTER),
                 ", at Isaiah 36:12; and at Proverbs 3:30, with a space where MAM has "
-                "a maqaf before the template, as the note's form has it. Of the "
+                "a maqaf before the template, as the note's form has it. Ben's "
+                "review of 2026-10-08 places the qubuts before bet on an artificial "
+                "alef at 2 Kings 4:7, omitting the adopted form's CGJ now that "
+                "qubuts and qamats have separate hosts. It places only the tsere "
+                "on a medial artificial alef at Ezekiel 14:14, 14:20 and 28:3; "
+                "munah and atnah remain on nun. All four original MAM clauses "
+                "remain verbatim in the notes. Of the "
                 "forms, ",
                 numbers.snap(
                     _P5, _READ + "pointed ketiv ending in the qere's trailing maqaf"

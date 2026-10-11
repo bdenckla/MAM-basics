@@ -1,0 +1,21 @@
+{
+  "baseline": "2036eaf7299e9b137db4ab30745642bc95594d8e",
+  "browser": "151.0.7922.173",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "corpus_units": 176,
+  "qere_final_mark_units": 43,
+  "ketiv_mark_units": 2,
+  "na_control_units": 21,
+  "current_comparisons": 2238,
+  "current_discrepancies": 0,
+  "page_errors": [],
+  "sizes": [
+    20.0,
+    26.1333333333,
+    48.0
+  ],
+  "fonts": [
+    "Comparison Hebrew",
+    "Taamey D WOFF2"
+  ]
+}

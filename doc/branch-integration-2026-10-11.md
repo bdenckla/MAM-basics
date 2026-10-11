@@ -34,3 +34,38 @@ name changes, structural validation, serial optimizations and existing-pool reso
 Preserve the qere-without-ketiv implementation already integrated by its owner, every qere,
 the letter-owned Isaiah 54:16 dalet carrier and the current near-Aleppo wrapper styling.
 Do not restore the retired punctuation-review generator or historical verification gates.
+
+## Reconciliation and focused verification
+
+The merged carrier contract retains both current exact variants, `final-nun-dalet` and
+`orphan-marks-alef`, alongside GA/GV under both carrier names. The former remains owned
+by the final nun at Isaiah 54:16. Parameterless body-space validation, all qere-only calls
+and the owner's independent qere/body-source check remain intact. The structural ketiv
+check runs after body encoding and before MAM-target copying.
+
+The independent 24-book comparison matches the newer `70e5358c` baseline plus the exact
+approved branch delta: five pointing values and 67 template names, with current consumer
+notice text as the explained metadata change. The public data-scope JSON records every
+non-notice changed path. Every qere, other Scripture value, current GD payload and qere-only
+encoding is unchanged. Qere-only populations remain 3/1/5 in schema 6. The four note-derived
+pointings move from the as-written category to named adjustments; all other population
+categories remain unchanged. Eight changed note targets retain their exact approved reviews
+and original source clauses; all other current ledger rows, including the owner's added
+qere-only rows, are unchanged. The complete refreshed ledger has 1,553 reviewed notes.
+
+The first focused run passed 43 checks and identified the frozen yod-holam artifact's
+classification by the authored-prose mark-order lint. Its original bytes remain intact;
+the exact historical artifact path is now excluded with its preservation reason recorded.
+The decisive lint recheck passes. No Hebrew normalization or source-text rewrite occurred.
+
+Fresh Chromium 151 measurements compare all 176 CLC qere and annotation slots and 21
+near-Aleppo controls with ordinary text, in Taamey D and Noto Sans Hebrew at 20, 26.133333
+and 48 px. All 2,238 current comparisons match within the instrument's one-pixel tolerance,
+with zero page errors. The compact browser JSON records the tested baseline and limits;
+detailed results and images remain in the isolated checkout's `.novc/clc-ruby-final-mark/`.
+Main's near-Aleppo `inline-flex`, normal line-height and `0.15em` wrapper remain unchanged.
+
+The serial reconciliation retains all five current forbidden marks, labelled layout
+markers, current example imports and licence completeness checks. The public pool retains
+its UTF-8 initializer and stderr backslash replacement. All three live resource helpers
+match the approved SHA-256. Independent read-only source reviews found no objective defect.
