@@ -58,8 +58,8 @@ The study's v2 record format adds `intended_encoding`: either `null` for an
 entry awaiting a manuscript-based assessment, or an object with `kind` and
 `explanation`. The three closed kinds are `marks-with-space`,
 `marks-without-space` and `empty-body`. These are document assessments, not build
-instructions. All seven reviewed cases have pending assessments; the two entries
-awaiting image readings have `null`. Existing observations and crop provenance
+instructions. All eight reviewed cases have pending assessments; Ruth 3:17
+awaits an image reading and has `null`. Existing observations and crop provenance
 are preserved.
 
 The introduction explains the near-Aleppo-specific templates `ניקוד בלי אות`
@@ -69,9 +69,9 @@ space above the marks. The tentative holam reading at 2 Kings 19:31 leaves its
 payload unsettled.
 The intended template without space above the marks at 2 Samuel 18:20 still
 awaits its own variant and implementation. The intended body text is empty at
-2 Samuel 16:23, Jeremiah 31:37 and Jeremiah 50:29. Complete notation is shown
-only for current encodings; no pending carrier payload is invented. Dataset
-implementation remains separate.
+2 Samuel 16:23, Jeremiah 31:37, Jeremiah 50:29 and Ruth 3:5. Complete notation
+is shown only for current encodings; no pending carrier payload is invented.
+Dataset implementation remains separate.
 
 ## Link presentation trial, 2026-10-11
 
@@ -165,8 +165,7 @@ The corresponding read-only comparison is:
 ## Crop provenance
 
 Ben supplied and interpreted the first four Aleppo manuscript crops below on
-2026-10-08, and the 2 Kings 19:37, Jeremiah 31:37 and Jeremiah 50:29 crops on
-2026-10-11.
+2026-10-08 and the remaining crops on 2026-10-11.
 Codex inspected the supplied crops. The canonical PNG files are under
 [`in/near-aleppo/img/qere-without-ketiv/`](../../in/near-aleppo/img/qere-without-ketiv/),
 and the HTML build copies their unchanged bytes under
@@ -186,6 +185,7 @@ or line coordinate is inferred from a screenshot filename.
 | Jeremiah 31:37, body text | [aleppo-Je31-37.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-Je31-37.png) | `Screenshot 2026-10-11 121352.png` |
 | Jeremiah 31:37, marginal qere note | [aleppo-Je31-37-marginal-qere.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-Je31-37-marginal-qere.png) | `Screenshot 2026-10-11 121420.png` |
 | Jeremiah 50:29 | [aleppo-Je50-29.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-Je50-29.png) | `Screenshot 2026-10-11 122253.png` |
+| Ruth 3:5 | [aleppo-R3-5.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-R3-5.png) | `Screenshot 2026-10-11 122537.png` |
 
 ## Judges 20:13
 
@@ -258,11 +258,17 @@ atoms, with no qere letters or niqqud, only a masorah circle. The preceding maqa
 extends into that space. The intended body encoding assessment is empty;
 dataset implementation remains pending.
 
-## Entries awaiting image readings
+## Ruth 3:5
 
-The study also includes Ruth 3:5 and Ruth 3:17. Their current NAEE verses, qere,
-and any attached MAM notes are displayed. No new image reading or crop has yet
-been supplied for these entries.
+Ben read a generous horizontal space for אֵלַ֖י between the surrounding written
+atoms, with no qere letters or niqqud, only a masorah circle. The intended body
+encoding assessment is empty; dataset implementation remains pending.
+
+## Entry awaiting an image reading
+
+The study also includes Ruth 3:17. Its current NAEE verse, qere, and attached MAM
+note are displayed. No new image reading or crop has yet been supplied for this
+entry.
 
 ## Historical standalone review
 

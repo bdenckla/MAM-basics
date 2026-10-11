@@ -311,12 +311,28 @@
         3,
         5
       ],
-      "intended_encoding": null,
-      "reading": null,
-      "observation": null,
+      "intended_encoding": {
+        "kind": "empty-body",
+        "explanation": "The body text has no qere letters or niqqud; the generous space contains only a masorah circle."
+      },
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-11",
+        "qere": "אֵלַ֖י",
+        "qere_letters_present": false,
+        "pointing_present": false,
+        "space_assessment": "generous horizontal space between the surrounding written atoms",
+        "masorah_circle_present": true,
+        "masorah_circle_position": "within the generous space"
+      },
+      "observation": "For אֵלַ֖י, there is a generous horizontal space between the surrounding written atoms, with no qere letters or niqqud, only a masorah circle.",
       "romanized": [],
       "documentation_notes": [],
-      "crop": null
+      "crop": {
+        "filename": "aleppo-R3-5.png",
+        "source_screenshot": "Screenshot 2026-10-11 122537.png"
+      }
     },
     {
       "id": "R3-17",
