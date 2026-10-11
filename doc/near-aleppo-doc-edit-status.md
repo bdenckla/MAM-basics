@@ -1457,3 +1457,20 @@ only the target-ink rule and its source comment; markup, text and images are
 unchanged. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence; regeneration and the checked stylesheet precedent cover this
 styling-only change.
+
+## Contrast spacing with absent pointing — 2026-10-11
+
+**Status:** Implemented. Ben requested “yet” in the 2 Samuel 16:23 description:
+“The space is fairly generous even after the maqaf, yet there is no pointing
+for אִ֖ישׁ.” The comparison's subject text is reconciled with that wording.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`72c9078cc35c92e561cf81ec46c0fb46f3b72104` before editing. Codex owns the wording
+change, focused verification, commit and normal push.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 files and both font copies. The generated diff was read and changes only
+“with no” to “yet there is no” in the requested sentence. `git diff --check`
+passed. Mega and full suite remain on the approved nightly cadence; regeneration
+and the inspected diff cover this prose-only correction.
