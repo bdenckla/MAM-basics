@@ -840,8 +840,9 @@ def render(verses, rows):
         ),
         mb_html.para(
             "Every case of qere without ketiv discussed here has a marginal "
-            "note containing the qere letters and a masorah circle in the "
-            "body text, where those letters are absent. The cases differ in "
+            "note containing the qere letters; those letters are absent from "
+            "the body text. A masorah circle is present in every case except "
+            "2 Kings 19:31. The cases differ in "
             "whether niqqud are present and whether horizontal space is "
             "present in the body text."
         ),

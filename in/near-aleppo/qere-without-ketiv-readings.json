@@ -170,6 +170,8 @@
           "qamats",
           "tipeḥa"
         ],
+        "masorah_circle_present": false,
+        "masorah_circle_basis": "Ben Denckla's manuscript-image correction, 2026-10-11",
         "xolam_male_dot": {
           "status": "tentative",
           "assessment": "A ḥolam male dot seems to be represented."

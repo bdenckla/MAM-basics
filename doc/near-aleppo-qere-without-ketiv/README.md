@@ -9,10 +9,11 @@ Ben approved this first draft on 2026-10-08: “what you propose seems fine, at 
 Implementation and further discussion of the readings proceed together.
 
 Every case of qere without ketiv discussed here has a marginal note containing
-the qere letters and a masorah circle in the body text, where those letters are
-absent. The cases differ in whether niqqud are present and whether horizontal
-space is present in the body text.
-The study states the common features together once in the opening paragraph.
+the qere letters; those letters are absent from the body text. A masorah circle
+is present in every case except 2 Kings 19:31. The cases differ in whether
+niqqud are present and whether horizontal space is present in the body text.
+The study states the common features and the circle exception together once
+in the opening paragraph.
 Complete MAM quotations and translations retain their circle references.
 English descriptions, list items, encoding summaries, translations and image
 captions use complete sentences.
@@ -323,6 +324,10 @@ Ben read very generous spacing for צְבָא֖וֹת, with all its below-marks 
 sheva, qamats, and tipeḥa. Perhaps the qere letters could have fit. A ḥolam male dot
 also seems to be represented. The letter-fit assessment and the dot reading remain
 tentative; the record does not promote the dot to a confirmed manuscript reading.
+
+Ben clarified on 2026-10-11 that no masorah circle is present. The source reading
+records that absence and its provenance; the study names this exception once
+in the introduction.
 
 ## 2 Kings 19:37
 

@@ -1922,3 +1922,67 @@ paragraph and all case content remain unchanged. The request file and
 deferred dataset and A102 work remain unchanged. `git diff --check` passed.
 Mega and full suite remain on the approved nightly cadence because this
 revision changes only introductory prose.
+
+## Correct masorah-circle presence at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Implemented locally; push awaits Ben's approval. Ben corrected the image reading: “No masorah circle is
+present in 2 Kings 19:31.” Replace the universal circle-presence statement with
+“A masorah circle is present in every case except 2 Kings 19:31.” Record the
+absence and its provenance in the 2 Kings 19:31 source reading. The presence of
+niqqud and horizontal space and the tentative ḥolam male reading are unchanged.
+The opening paragraph and source README must state the exception consistently.
+
+**Checkout and one-writer resumption:** The successor chat finished its lead-in
+and bullet edit and is idle. Its local commit is
+`1f4f5b2e3850d86a658a8b999b47b30e5b307789`; the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` is clean on main at that commit before
+this correction. Codex in this chat resumes as sole writer for Ben's new
+correction. The supplied `aleppo-2K19-31.png` crop was consulted. Ben's earlier
+objection to “Image readings are attributed to Ben Denckla.” needs no edit:
+the current source and rendered study already omit that sentence and contributor
+names. The unnamed rendered voice remains in force; provenance remains in source
+records.
+
+**Push status:** The successor's push of `1f4f5b2e` to `origin/main` was rejected
+by automatic approval review because main can publish the site and the handoff
+was not accepted as authorization for that push. Origin remains at
+`4a0fd45c8bc671a91abb3fd4fa4ec640ee1dd551`. Complete and verify this correction
+locally before asking Ben to approve pushing both local commits. Do not retry the
+rejected outward-facing push through this correction. The changed product is the
+published study page; the change can be revised through a later commit, while
+the push is an outward-facing publication step.
+
+**Verification scope:** Use this clone's environment for Black on the changed
+generator, the real HTML build/comparison and focused prose/mark lints. Read all
+source and generated diffs and run `git diff --check`. The expected product diff
+against `1f4f5b2e` is only the opening paragraph. Preserve the successor's lead-in
+and bullets, all cases, notes, translations, excerpts, table and crops. Mega and
+full suite remain on the approved nightly cadence.
+
+**Verification:** Black passed. The real HTML build and read-only comparison
+passed for all 95 files and both font copies. The three focused prose and
+Hebrew-mark lints passed. The source and generated diffs were read: the only
+product change against the successor's commit is the opening paragraph.
+The input change explicitly records absent circle presence and Ben's correction
+as its basis; no other reading data or encoding assessment changed. The source
+README states the exception in its opening and reading record. The successor's
+lead-in and bullets and all notes, translations, excerpts, table values and crops
+are preserved. `git diff --check` passed. Mega and full suite remain on the
+approved nightly cadence for this study-specific correction.
+
+**Standalone pending-push handoff:** Codex prepared this instruction on
+2026-10-11. Ben's authorized content change was: “No masorah circle is present
+in 2 Kings 19:31.” The remaining instruction is Codex's reconstruction of the
+pending publication step. After Ben explicitly approves the push, continue in
+the source, development and integration checkout
+`C:/Users/BenDe/GitRepos/MAM-basics`, using its own environment. Verify clean
+main and that required baseline `1f4f5b2e3850d86a658a8b999b47b30e5b307789`
+is an ancestor of HEAD and the final local commit is “Correct the masorah-circle
+exception in the qere study”. The executor owns final integration and push.
+Fetch origin; if origin/main moved, merge normally in this full clone and repeat
+the checks owed by the resulting changes. The ledger records the completed
+focused checks and the nightly broad-check exception. Push main normally,
+including both the successor's lead-in rewrite and this correction; never
+force-push or rewrite history. Verify HEAD against origin/main and clean status,
+then report the pushed commit. Until Ben approves, retain both local commits
+and do not repeat the rejected push.
