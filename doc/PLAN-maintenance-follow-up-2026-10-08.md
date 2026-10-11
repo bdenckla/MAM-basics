@@ -41,7 +41,7 @@ in MAM-private.
 | Retire the evacuated phonetic-hbo clone in `GitRepos2` | "delete it please" | Done 2026-10-08: moved to the Recycle Bin after a recheck found no unique work |
 | Add `project_doc_max_bytes = 32768` to that machine's `~/.codex/config.toml` | "go ahead and add the key please" | Done 2026-10-08; the file parses. Other machines still need the key, per `dot-Codex/README.md`, “Machine-local project-instruction budget” |
 | Delete merged branches, sparing `codex/near-aleppo-ketiv-final-maqaf-20261007` | "I concur, please delete those branches" | Done 2026-10-08: 8 MAM-basics, 10 MAM-private and 1 hbofonts remote branches, each leased at its audited tip, and the local `dar-2026-09-29` with `git branch -d` |
-| Permanently delete the two large Claude scratchpads | "Permanently/immediately delete, i.e. non-recycle-bin delete them, please" | Ben's own act: agent safety policy forbids an agent's permanent deletion |
+| Permanently delete the two large Claude scratchpads | "Permanently/immediately delete, i.e. non-recycle-bin delete them, please" | Ben's own act: agent safety policy forbids an agent's permanent deletion. On 2026-10-11 none remained on the laptop that ran the maintenance: no Claude temporary or scratch directory there reached 1 GiB, and the Recycle Bin held none |
 
 Ben asked what retiring the 2026-09-29 review's records requires; answered 2026-10-09 from a
 read-only audit. The review and its remediation are finished, but the turn-01 update's
