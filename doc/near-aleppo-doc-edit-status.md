@@ -1436,3 +1436,24 @@ one inferred marginal-note block use the centering rules. Text, marks, RTL
 attributes, word order, images and manuscript observations are preserved.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; regeneration and stylesheet/markup inspection cover this layout-only change.
+
+## Color MAM note targets — 2026-10-11
+
+**Status:** Implemented. Ben requested coloring the ink of the targets in “Current
+MAM doc-note” entries, following MAM-with-doc and near-Aleppo. The target markup
+is already present; the study now uses the matching blue/light-blue color rules
+for note lemmas and target passages in the displayed verses.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`427e4e89ea13097a7b938f466e1131784556ee4c` before editing. Codex owns the styling
+change, focused verification, commit and normal push.
+
+**Verification:** The color matches `py/mb_misc/styles_mam_with_doc.css`, which
+supplies MAM-with-doc and near-Aleppo's edition styling. All six attached note
+lemmas use the target class. HTML regeneration and read-only comparison passed
+for all 95 files and both font copies. The generated diff was read and adds
+only the target-ink rule and its source comment; markup, text and images are
+unchanged. `git diff --check` passed. Mega and full suite remain on the approved
+nightly cadence; regeneration and the checked stylesheet precedent cover this
+styling-only change.

@@ -2,6 +2,8 @@
 .qvlk-study .pointed.foi-verse { line-height: 2.7; }
 .qvlk-study .qvlk-case { margin: 2em 0; }
 .qvlk-study .pointed.qvlk-notes { line-height: 2.2; }
+/* Match target ink in py/mb_misc/styles_mam_with_doc.css. */
+.qvlk-study .mam-doc-lemma, .qvlk-study .mam-doc-target-without-callout { color: light-dark(blue, lightblue); }
 .qvlk-study .qvlk-crop { display: block; margin-inline: auto; max-width: 100%; height: auto; }
 .qvlk-study .qvlk-caption { font-size: 0.9em; text-align: center; }
 .qvlk-study .romanized { font-style: italic; }
