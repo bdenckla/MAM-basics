@@ -880,11 +880,11 @@ def render(verses, rows):
                 'what a note means when it says, for example "',
                 mb_html.bdi("=ל-קרי", {"dir": "rtl", "lang": "hbo"}),
                 '". We translate that as "MAM\'s qere agrees with the qere implied '
-                'by the Leningrad Codex." But it would be more conservative to say '
-                '"is consistent with" rather than the stronger "agrees", i.e. it '
-                "would be more conservative to say \"MAM's qere is consistent with "
-                "the qere implied by the [body niqqud (if any) and marginal qere "
-                'letters] of the Leningrad Codex."',
+                'by the Leningrad Codex." But it is important to note that by "agrees" '
+                'here we don\'t mean "equals" so much as "is consistent with". I.e. '
+                "what we mean is \"MAM's qere is consistent with the qere implied by "
+                "the [body niqqud (if any) and marginal qere letters] of the "
+                'Leningrad Codex."',
             ]
         ),
         *_comparison_summary(rows, reviews),

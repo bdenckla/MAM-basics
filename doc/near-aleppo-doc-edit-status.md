@@ -2548,3 +2548,21 @@ source and generated diffs and the generated paragraph were read; the only
 product change is the requested replacement and line wrapping. No Python file
 changed. `git diff --check` passed. Mega and full suite remain on the approved
 nightly cadence for this wording-only change. Codex owns commit and normal push.
+
+## Define “agrees” as consistency in the translation introduction — 2026-10-11
+
+**Status:** Implemented. Ben replaced the suggestion to use a more conservative
+translation with an explanation that “agrees” means “is consistent with” rather
+than “equals”. The introduction uses the supplied wording, removing the stray
+closing bracket after “of the” as a typo, as stated before editing. The source
+README states the same meaning. This supersedes the earlier conservative-wording
+explanation. The case translations are unchanged.
+
+**Checkout and verification:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, verified clean on main at
+`a8c8df9bc40c678889d705ef341608dfd4d01726` before editing. Black passed on the
+generator. The real HTML build and read-only comparison passed for all 95 files
+and both font copies. All source and generated diffs and the generated paragraph
+were read; the only product change is the requested explanation and line wrapping.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence for this wording-only change. Codex owns commit and normal push.

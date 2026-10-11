@@ -98,7 +98,8 @@ owns the English translations and explanations of attached MAM notes and the
 comparisons with Ben's descriptions. The English versions expand abbreviated
 wording and use the note's voice. Bibliographic fragments remain fragments, and
 lists of editions remain lists. A qere's agreement with a manuscript is expressed
-as agreement with the qere implied by that manuscript. The brief agreement
+as agreement with the qere implied by that manuscript. Here, "agrees" means
+"is consistent with" rather than "equals". The brief agreement
 statements do not specify whether they concern letters in the margin, niqqud in
 the body text, or both;
 the study preserves that uncertainty. Each translation identifies its whole
