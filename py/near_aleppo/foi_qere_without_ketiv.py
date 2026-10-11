@@ -635,11 +635,17 @@ def render(verses, rows):
         mb_html.para(
             "Qere without ketiv has no letters for the qere written in the "
             "body text, though these letters are written in a marginal note. "
-            "The space and marks in the body text of the manuscript can nevertheless differ. "
-            "The verses below show the current near-Aleppo example edition (NAEE); "
-            "the MAM notes and the recorded Aleppo image readings have their own labels. "
-            "Image readings are attributed to Ben Denckla."
+            "The space and marks in the body text of the manuscript can nevertheless differ."
         ),
+        mb_html.para("The verses below show:"),
+        mb_html.unordered_list(
+            [
+                "the current near-Aleppo example edition (NAEE) contents for the case at hand",
+                "any MAM notes regarding the case at hand",
+                "the Aleppo images showing the case at hand",
+            ]
+        ),
+        mb_html.para("Image readings are attributed to Ben Denckla."),
         mb_html.para(
             "A masorah circle appears to be present in every case below. "
             "Circle presence is noted here once because it does not distinguish "

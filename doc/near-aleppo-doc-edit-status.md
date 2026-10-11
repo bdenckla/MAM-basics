@@ -1307,3 +1307,21 @@ read-only comparison passed for all 95 files and both font copies. The generated
 diff contains only the requested sentence replacement and paragraph wrapping.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; regeneration and the inspected diff cover this prose-only correction.
+
+## Introductory list of case contents — 2026-10-11
+
+**Status:** Implemented by Codex at Ben's request. “Have their own labels” meant
+the HTML document's headings, but the phrase was vague. The introduction now
+lists the current NAEE contents, any MAM notes, and the Aleppo images for each
+case using Ben's proposed wording. The image-reading attribution remains.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`8f7aa4f0ff5084ee0337a4f50cc9d270ce23d9fb` before editing. Codex owns the revision,
+focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and contains only this introduction revision. `git diff --check` passed.
+Mega and full suite remain on the approved nightly cadence; regeneration and
+the inspected diff cover this prose-only revision.
