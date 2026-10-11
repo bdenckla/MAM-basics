@@ -51,14 +51,15 @@ The study's v2 record format adds `intended_encoding`: either `null` for an
 entry awaiting a manuscript-based assessment, or an object with `kind` and
 `explanation`. The three closed kinds are `marks-with-space`,
 `marks-without-space` and `empty-body`. These are document assessments, not build
-instructions. All four reviewed cases have pending assessments; the five entries
+instructions. All five reviewed cases have pending assessments; the four entries
 awaiting image readings have `null`. Existing observations and crop provenance
 are preserved.
 
 The introduction explains the near-Aleppo-specific templates `ניקוד בלי אות`
 and `ניקוד בלי אות ובלי רווח`, including the artificial carrier convention.
-Judges 20:13 and 2 Kings 19:31 take the intended template with space above the
-marks. The tentative holam reading at 2 Kings 19:31 leaves its payload unsettled.
+Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 take the intended template with
+space above the marks. The tentative holam reading at 2 Kings 19:31 leaves its
+payload unsettled.
 The intended template without space above the marks at 2 Samuel 18:20 still
 awaits its own variant and implementation. The intended body text at
 2 Samuel 16:23 is empty. Complete notation is shown only for current encodings;
@@ -155,7 +156,8 @@ The corresponding read-only comparison is:
 
 ## Crop provenance
 
-Ben supplied and interpreted the following Aleppo manuscript crops on 2026-10-08.
+Ben supplied and interpreted the first four Aleppo manuscript crops below on
+2026-10-08 and the 2 Kings 19:37 crop on 2026-10-11.
 Codex inspected the supplied crops. The canonical PNG files are under
 [`in/near-aleppo/img/qere-without-ketiv/`](../../in/near-aleppo/img/qere-without-ketiv/),
 and the HTML build copies their unchanged bytes under
@@ -171,6 +173,7 @@ or line coordinate is inferred from a screenshot filename.
 | 2 Samuel 16:23 | [aleppo-2S16-23.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2S16-23.png) | `Screenshot 2026-10-08 105548.png` |
 | 2 Samuel 18:20 | [aleppo-2S18-20.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2S18-20.png) | `Screenshot 2026-10-08 110056.png` |
 | 2 Kings 19:31 | [aleppo-2K19-31.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2K19-31.png) | `Screenshot 2026-10-08 110419.png` |
+| 2 Kings 19:37 | [aleppo-2K19-37.png](../../in/near-aleppo/img/qere-without-ketiv/aleppo-2K19-37.png) | `Screenshot 2026-10-11 120243.png` |
 
 ## Judges 20:13
 
@@ -209,9 +212,17 @@ sheva, qamats, and tipeḥa. Perhaps the qere letters could have fit. A ḥolam 
 also seems to be represented. The letter-fit assessment and the dot reading remain
 tentative; the record does not promote the dot to a confirmed manuscript reading.
 
+## 2 Kings 19:37
+
+Ben read the marks of בָּנָיו֙: qamats, qamats, and pashta, without letters,
+with space above the marks. The marks occupy a large horizontal space between
+the surrounding written atoms. Ben's hypothesis is that the letter-scribe
+presumably left this space intentionally. The intended encoding assessment uses
+the template with space above the marks; dataset implementation remains pending.
+
 ## Entries awaiting image readings
 
-The study also includes 2 Kings 19:37, Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5,
+The study also includes Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5,
 and Ruth 3:17. Their current NAEE verses, qere, and any attached MAM notes are
 displayed. No new image reading or crop has yet been supplied for these entries.
 

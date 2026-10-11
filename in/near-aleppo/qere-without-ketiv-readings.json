@@ -189,12 +189,39 @@
         19,
         37
       ],
-      "intended_encoding": null,
-      "reading": null,
-      "observation": null,
-      "romanized": [],
+      "intended_encoding": {
+        "kind": "marks-with-space",
+        "explanation": "The intended payload carries two qamats marks and pashta, with space above the marks."
+      },
+      "reading": {
+        "manuscript": "Aleppo Codex",
+        "basis": "Ben Denckla's direct reading of the manuscript image",
+        "recorded_date": "2026-10-11",
+        "qere": "בָּנָיו֙",
+        "qere_letters_present": false,
+        "marks_present": [
+          "qamats",
+          "qamats",
+          "pashta"
+        ],
+        "space_above_marks": true,
+        "space_assessment": "large horizontal space between the surrounding written atoms",
+        "spacing_hypothesis": {
+          "status": "hypothesis",
+          "attribution": "Ben Denckla, 2026-10-11",
+          "text": "The letter-scribe presumably left this space intentionally."
+        }
+      },
+      "observation": "The marks of בָּנָיו֙ (qamats, qamats, pashta) are present without letters, with space above them. The marks occupy a large horizontal space between the surrounding written atoms, presumably left intentionally by the letter-scribe.",
+      "romanized": [
+        "qamats",
+        "pashta"
+      ],
       "documentation_notes": [],
-      "crop": null
+      "crop": {
+        "filename": "aleppo-2K19-37.png",
+        "source_screenshot": "Screenshot 2026-10-11 120243.png"
+      }
     },
     {
       "id": "Je31-37",

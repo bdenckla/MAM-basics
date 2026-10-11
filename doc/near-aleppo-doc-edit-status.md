@@ -1012,3 +1012,34 @@ the read-only agent review found no material defect, and `git diff --check` pass
 restriction recorded in the study README; no browser pass is claimed. Mega and
 full suite remain on the approved nightly cadence. Focused generation and the
 complete source and artifact comparisons cover this document-only revision.
+
+## 2 Kings 19:37 manuscript reading — 2026-10-11
+
+**Status:** Recorded by Codex from Ben's supplied crop and direct observation:
+“marks without letters (qamats, qamats, pashta) with space above.” Ben described
+a large horizontal space, presumably left intentionally by the letter-scribe;
+that intention remains an attributed hypothesis.
+
+**Checkout and baseline:** Source, development and integration checkout is the
+full clone `C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`ec505454b0677ad6dc231d6f87440099d56acbbe` before editing. Codex owns the update,
+focused verification, commit and normal push.
+
+**Change:** The maintained reading record now records the two qamats marks and
+pashta of בָּנָיו֙, without letters and with space above. The existing intended
+encoding assessment uses `marks-with-space`; implementation remains pending.
+Codex inspected `Screenshot 2026-10-11 120243.png` and copied its unchanged bytes
+to `in/near-aleppo/img/qere-without-ketiv/aleppo-2K19-37.png`. The HTML build
+copies that crop for inline display. The source note records provenance and
+the reading; four selected cases still await image readings.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+90 owned files and both font copies. An independent baseline differential
+confirmed that all eight other case records and HTML sections are unchanged,
+along with the target's Scripture, MAM qere, current source notation and links.
+All five canonical/generated crop pairs have identical bytes; the new crop
+also matches the supplied screenshot. The generated HTML diff was read.
+The prose mark-order check passed (one test), and `git diff --check` passed.
+Production datasets are unchanged. Mega and full suite remain on the approved
+nightly cadence; focused generation, the artifact differential and the prose
+check cover this observation and crop update.
