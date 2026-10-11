@@ -490,11 +490,14 @@ def _encoding_guide():
                 "discussed here is at the start of a manuscript line."
             ),
             mb_html.para(
-                "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
-                "artificial carrier letters to hold the marks; those carriers "
-                "are not written manuscript letters. The carrier can be alef, "
-                "vav, or, rarely, dalet. A carrier payload for an unsettled case "
-                "is left open here."
+                _prose(
+                    "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
+                    "artificial carrier letters to hold the marks; those carriers "
+                    "are not written manuscript letters. The carrier can be alef, "
+                    "vav, or, rarely, dalet. The carrier payload for 2 Kings 19:31 "
+                    "remains unsettled because the ḥolam male reading is tentative.",
+                    ("ḥolam male",),
+                )
             ),
             mb_html.para(
                 [

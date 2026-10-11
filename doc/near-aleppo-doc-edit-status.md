@@ -1640,3 +1640,21 @@ recognizes alef, vav and dalet carriers. The generated diff was read and replace
 only the historical sentence with the current carrier choices.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Name the unsettled carrier payload — 2026-10-11
+
+**Status:** Implemented. Ben requested the verse instead of “an unsettled case”.
+Name 2 Kings 19:31 and explain that its tentative ḥolam male reading leaves
+the carrier payload unsettled, as the maintained reading already records.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`02db015b258686eb94bea305e38083d9323fc03c` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and names 2 Kings 19:31 and the tentative ḥolam male reading, with the
+existing romanization styling. The maintained reading supports that explanation.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this prose clarification.
