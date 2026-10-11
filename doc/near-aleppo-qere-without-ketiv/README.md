@@ -33,6 +33,60 @@ The study's observations do not change the near-Aleppo source text or decide a
 template design. Actual near-Aleppo source decisions remain in their existing
 maintained inputs and procedures.
 
+## Link presentation trial, 2026-10-11
+
+Ben requested research and implementation of an alternative to ordinary link
+underlines on this page. Broader near-Aleppo adoption awaits Ben's assessment.
+Development and integration use `C:/Users/BenDe/GitRepos/MAM-basics`, a clean full
+clone on main at `79c923957188007a2ffd70dd6ece60103cbeec97` before editing.
+Codex owns implementation, focused regeneration, verification, commit and push.
+
+The [Wikimedia link guide](https://doc.wikimedia.org/codex/latest/style-guide/using-links-and-buttons.html)
+uses un-underlined links by default, underlines on hover, and an external-link
+icon alongside the label. A live inspection of
+[Wikisource's editing help](https://en.wikisource.org/wiki/Help:Editing) confirmed
+that its named external-link example is one anchor with no ordinary underline and
+a trailing SVG arrow supplied as a CSS background. The arrow is not a separate link.
+
+Other systems make different choices.
+[GOV.UK](https://design-system.service.gov.uk/styles/links/) keeps default
+underlines and reserves their removal for contexts where links are already clear.
+[GitHub's Primer](https://primer.style/accessibility/patterns/primer-components/links/)
+also permits an icon, background shape or outline as a visual link cue.
+[W3C's guidance](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html)
+requires information conveyed by color to have a visible alternative to color.
+
+Current MAM-basics precedents include hover-only underlines for references and
+note targets in `gh-pages/uxlc/style.css`, bordered navigation links in
+`gh-pages/report.css`, and compact reference links in
+`py/mb_diff_mpu/mpplus_assets.py`. The permalink anchors in
+`py/accgram/poetic_oddballs.py` use an icon with an accessible label. The research
+found no current authored trailing external-arrow presentation.
+
+The trial uses un-underlined labels with trailing markers: a down arrow for a
+same-page jump, a right arrow for another MAM-basics page, and a boxed outward
+arrow for the mgketer.org and masoretica-aleppo destinations. The label and marker
+remain one clickable link. Link colors distinguish visited destinations; hover
+adds a background and keyboard focus adds an outline. This intentionally keeps
+underlines off on hover as well, using the marker and highlight as the cues.
+The empty decorative pseudo-elements do not alter accessible names or copied text.
+
+The authored source is
+[`py/near_aleppo/foi_qere_without_ketiv.css`](../../py/near_aleppo/foi_qere_without_ketiv.css),
+embedded only in this page by its generator. The small geometric SVGs are authored
+locally and use no remote asset. Hebrew, link labels, URLs, observations, crops,
+datasets and template policy are preserved. Verify by regenerating, comparing
+the body after removing only the new class attributes, and checking link markers,
+keyboard focus and light/dark layouts at desktop and narrow widths.
+
+Automated visual and keyboard verification remains unverified: the browser security
+policy blocked the local preview because it disallows `file:` URLs. These aspects
+await Ben's local review of the generated experiment. Offline body comparison,
+SVG validation and declared-color contrast checks cover the preserved content
+and self-contained assets.
+
+## Reproduction
+
 Run from the MAM-basics repository root in PowerShell 7:
 
 ```powershell

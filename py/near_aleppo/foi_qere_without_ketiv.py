@@ -8,6 +8,7 @@ does not traverse source-template parameters or change the dataset's policy.
 import json
 import re
 import struct
+from pathlib import Path
 
 from hkq_cmn import uxlc_external_links
 from mb_cmn import bib_locales as tbn
@@ -28,14 +29,6 @@ TITLE = "Qere without ketiv in near-Aleppo"
 _FORMAT = "near-aleppo-qere-without-ketiv-readings-v1"
 _QERE_TAG = "mam-kq-q-velo-k"
 _HEBREW = re.compile(r"([\u0590-\u05ff]+)")
-_STYLE = (
-    ".pointed.foi-verse { line-height:2.7; }"
-    ".qvlk-case { margin:2em 0; }"
-    ".pointed.qvlk-notes { line-height:2.2; }"
-    ".qvlk-crop { max-width:100%;height:auto; }"
-    ".qvlk-caption { font-size:0.9em; }"
-    ".romanized { font-style:italic; }"
-)
 
 
 def records():
@@ -210,7 +203,10 @@ def _links(reference):
         if link.label in labels:
             if result:
                 result.append(" · ")
-            result.append(mb_html.anchor_h(labels[link.label], link.href))
+            attrs = {"href": link.href}
+            if link.label in {"mgketer", "tica"}:
+                attrs["class"] = "qvlk-external"
+            result.append(mb_html.anchor(labels[link.label], attrs))
     return mb_html.para(result)
 
 
@@ -336,7 +332,8 @@ def render(verses, rows):
             "../edition/ketiv-qere.css",
         ),
         html_comment=provenance.generated_html_comment(__file__),
-        head_style=_STYLE,
+        body_class="qvlk-study",
+        head_style=Path(__file__).with_suffix(".css").read_text(encoding="utf-8"),
     )
     outputs[PAGE] = mb_html.html_text(body, ctx).encode("utf-8")
     return outputs

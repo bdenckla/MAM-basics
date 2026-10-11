@@ -818,3 +818,35 @@ or script error occurs. All four screenshots were inspected, and the three
 focused accent-literal and prose mark-order checks passed. Broad checks
 remain on the approved nightly cadence; the focused artifact differential
 and visual checks cover this presentation change.
+
+## Link presentation trial on the manuscript study — 2026-10-11
+
+**Status:** Implemented by Codex, authorized by Ben's request to research
+Wikisource, other approaches and MAM-basics precedents, then implement an
+experiment in `qere-without-ketiv.html`. Broader adoption awaits Ben's assessment.
+Development and integration use the full clone `C:/Users/BenDe/GitRepos/MAM-basics`
+on main at `79c923957188007a2ffd70dd6ece60103cbeec97`, clean before editing.
+
+**Change:** The page uses un-underlined clickable labels with trailing link
+markers, a hover background and a keyboard-focus outline. Same-page jumps,
+other MAM-basics pages and external providers have distinct arrow shapes.
+The locally authored CSS and inline SVG masks are embedded by the page's own
+generator. Shared styles, other pages and link-opening behavior are unchanged.
+`doc/near-aleppo-qere-without-ketiv/README.md`, “Link presentation trial”, records
+the research sources, current repository precedents and the bounded design.
+
+**Verification:** Black, HTML regeneration and read-only comparison passed for
+all 88 owned files and both font copies. The exact body differential matches
+the baseline after removing only the new body and external-link class attributes;
+Hebrew order, RTL markup, labels, URLs, observations and image references are
+unchanged. All three SVG masks parse as self-contained SVG; declared normal and
+visited colors have at least 6.02:1 contrast against the normal and hover
+backgrounds. The existing stylesheet test passed, and `git diff --check` passed.
+Only the study page changed among existing generated artifacts. Book datasets,
+pointing inputs, observations and crops are unchanged.
+
+**Unverified visual checks:** Browser security policy blocked the local preview
+because `file:` URLs are disallowed. Visual layout and keyboard behavior await
+Ben's local review; no passing browser check is claimed. Mega and full suite
+remain on the approved nightly cadence. Focused generation and offline
+content/style checks cover this reversible page-specific experiment.

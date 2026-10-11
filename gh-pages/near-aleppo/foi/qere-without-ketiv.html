@@ -5,13 +5,62 @@
 <meta charset="utf-8">
 <title>Qere without ketiv in near-Aleppo</title>
 <style>
-.pointed.foi-verse { line-height:2.7; }.qvlk-case { margin:2em 0; }.pointed.qvlk-notes { line-height:2.2; }.qvlk-crop { max-width:100%;height:auto; }.qvlk-caption { font-size:0.9em; }.romanized { font-style:italic; }</style>
+/* Link presentation trial requested by Ben, 2026-10-11.
+   Embedded only in qere-without-ketiv.html; no site-wide adoption yet. */
+.qvlk-study .pointed.foi-verse { line-height: 2.7; }
+.qvlk-study .qvlk-case { margin: 2em 0; }
+.qvlk-study .pointed.qvlk-notes { line-height: 2.2; }
+.qvlk-study .qvlk-crop { max-width: 100%; height: auto; }
+.qvlk-study .qvlk-caption { font-size: 0.9em; }
+.qvlk-study .romanized { font-style: italic; }
+
+.qvlk-study a[href] {
+    color: light-dark(#1a4fd6, #8ab4ff);
+    text-decoration: none;
+    border-radius: 0.15em;
+}
+.qvlk-study a[href]:visited { color: light-dark(#663399, #c5a5f1); }
+.qvlk-study a[href]:hover { background-color: light-dark(#edf3ff, #15243a); }
+.qvlk-study a[href]:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+/* Empty decorative pseudo-elements leave the link's accessible name and copied
+   text unchanged. These geometric SVGs are authored here, with no remote assets.
+   The default arrow leads to another page; fragment links use a down arrow. */
+.qvlk-study a[href]::after {
+    content: "";
+    display: inline-block;
+    inline-size: 0.72em;
+    block-size: 0.72em;
+    margin-inline-start: 0.22em;
+    background-color: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8h11M9 3l5 5-5 5' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.qvlk-study a[href^="#"]::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 2v11M3 9l5 5 5-5' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.qvlk-study a.qvlk-external::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7 3H3v10h10V9M9 2h5v5M14 2 7 9' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+@media (forced-colors: active) {
+    .qvlk-study a[href]::after {
+        forced-color-adjust: none;
+        background-color: LinkText;
+    }
+}
+@media print {
+    .qvlk-study a[href]::after { display: none; }
+}
+</style>
 <link rel="stylesheet" href="../../document.css">
 <link rel="stylesheet" href="../../MAM-parsed/style.css">
 <link rel="stylesheet" href="../style.css">
 <link rel="stylesheet" href="../edition/ketiv-qere.css">
 </head>
-<body>
+<body class="qvlk-study">
 <h1>Qere without ketiv in near-Aleppo</h1>
 <p><a href="index.html">Features of interest</a> · <a href="interesting-ketiv-qere.html">Interesting
 ketiv/qere cases</a> · <a href="../edition/index.html">NAEE book links</a></p>
@@ -54,10 +103,10 @@ manuscript spacing or a proposed template design.</p>
 <p><img src="../img/qere-without-ketiv/aleppo-Ju20-13.png" alt="Aleppo Codex crop at Judges 20:13: the qere-without-ketiv site" width="400" height="300" class="qvlk-crop">
 </p>
 <p class="qvlk-caption">Aleppo Codex — Judges 20:13.</p>
-<p><a href="https://www.mgketer.org/mikra/7/20/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/7/20/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c20v13">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Judges&amp;chapter=20&amp;verse=13&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Judges&amp;chapter=20&amp;verse=13&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="2S16-23" class="qvlk-case">
 <h2><a href="../edition/BB-2Samuel.html#c16v23">2 Samuel 16:23</a></h2>
@@ -83,10 +132,10 @@ questions whether the description “narrow” in MAM’s note reviewed on 2026-
 <p><img src="../img/qere-without-ketiv/aleppo-2S16-23.png" alt="Aleppo Codex crop at 2 Samuel 16:23: the qere-without-ketiv site" width="382" height="300" class="qvlk-crop">
 </p>
 <p class="qvlk-caption">Aleppo Codex — 2 Samuel 16:23.</p>
-<p><a href="https://www.mgketer.org/mikra/9/16/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/9/16/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c16v23">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=16&amp;verse=23&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=16&amp;verse=23&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="2S18-20" class="qvlk-case">
 <h2><a href="../edition/BB-2Samuel.html#c18v20">2 Samuel 18:20</a></h2>
@@ -111,10 +160,10 @@ above these marks. Ben agrees with MAM’s note as reviewed on 2026-10-08.</p>
 <p><img src="../img/qere-without-ketiv/aleppo-2S18-20.png" alt="Aleppo Codex crop at 2 Samuel 18:20: the qere-without-ketiv site" width="422" height="278" class="qvlk-crop">
 </p>
 <p class="qvlk-caption">Aleppo Codex — 2 Samuel 18:20.</p>
-<p><a href="https://www.mgketer.org/mikra/9/18/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/9/18/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c18v20">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=18&amp;verse=20&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Samuel&amp;chapter=18&amp;verse=20&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="2K19-31" class="qvlk-case">
 <h2><a href="../edition/BD-2Kings.html#c19v31">2 Kings 19:31</a></h2>
@@ -137,10 +186,10 @@ to be represented.</p>
 <p><img src="../img/qere-without-ketiv/aleppo-2K19-31.png" alt="Aleppo Codex crop at 2 Kings 19:31: the qere-without-ketiv site" width="296" height="272" class="qvlk-crop">
 </p>
 <p class="qvlk-caption">Aleppo Codex — 2 Kings 19:31.</p>
-<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v31">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=31&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=31&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="2K19-37" class="qvlk-case">
 <h2><a href="../edition/BD-2Kings.html#c19v37">2 Kings 19:37</a></h2>
@@ -157,10 +206,10 @@ notes</a> ·
 <p>MAM has no doc-note attached to this qere-without-ketiv site.</p>
 <h3>Aleppo manuscript reading</h3>
 <p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/11/19/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v37">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=37&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=2+Kings&amp;chapter=19&amp;verse=37&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="Je31-37" class="qvlk-case">
 <h2><a href="../edition/C2-Jeremiah.html#c31v37">Jeremiah 31:37</a></h2>
@@ -185,10 +234,10 @@ notes</a> ·
 </div>
 <h3>Aleppo manuscript reading</h3>
 <p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/13/31/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/13/31/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c31v37">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=31&amp;verse=37&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=31&amp;verse=37&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="Je50-29" class="qvlk-case">
 <h2><a href="../edition/C2-Jeremiah.html#c50v29">Jeremiah 50:29</a></h2>
@@ -208,10 +257,10 @@ notes</a> ·
 עיגול מסורה)</span></div>
 <h3>Aleppo manuscript reading</h3>
 <p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/13/50/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/13/50/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c50v29">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=50&amp;verse=29&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Jeremiah&amp;chapter=50&amp;verse=29&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="R3-5" class="qvlk-case">
 <h2><a href="../edition/E2-Ruth.html#c3v5">Ruth 3:5</a></h2>
@@ -232,10 +281,10 @@ notes</a> ·
 </div>
 <h3>Aleppo manuscript reading</h3>
 <p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v5">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=5&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=5&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 <div id="R3-17" class="qvlk-case">
 <h2><a href="../edition/E2-Ruth.html#c3v17">Ruth 3:17</a></h2>
@@ -257,10 +306,10 @@ notes</a> ·
 </div>
 <h3>Aleppo manuscript reading</h3>
 <p>An image reading has not yet been recorded for this entry.</p>
-<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106">mgketer.org</a> ·
+<p><a href="https://www.mgketer.org/mikra/31/3/1/mg/106" class="qvlk-external">mgketer.org</a> ·
 <a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v17">MAM verse and
 notes</a> ·
-<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=17&amp;manuscript=aleppo">masoretica-aleppo</a></p>
+<a href="https://www.masoretica.org/?book=Ruth&amp;chapter=3&amp;verse=17&amp;manuscript=aleppo" class="qvlk-external">masoretica-aleppo</a></p>
 </div>
 </body>
 </html>

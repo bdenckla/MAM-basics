@@ -1,0 +1,49 @@
+/* Link presentation trial requested by Ben, 2026-10-11.
+   Embedded only in qere-without-ketiv.html; no site-wide adoption yet. */
+.qvlk-study .pointed.foi-verse { line-height: 2.7; }
+.qvlk-study .qvlk-case { margin: 2em 0; }
+.qvlk-study .pointed.qvlk-notes { line-height: 2.2; }
+.qvlk-study .qvlk-crop { max-width: 100%; height: auto; }
+.qvlk-study .qvlk-caption { font-size: 0.9em; }
+.qvlk-study .romanized { font-style: italic; }
+
+.qvlk-study a[href] {
+    color: light-dark(#1a4fd6, #8ab4ff);
+    text-decoration: none;
+    border-radius: 0.15em;
+}
+.qvlk-study a[href]:visited { color: light-dark(#663399, #c5a5f1); }
+.qvlk-study a[href]:hover { background-color: light-dark(#edf3ff, #15243a); }
+.qvlk-study a[href]:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+
+/* Empty decorative pseudo-elements leave the link's accessible name and copied
+   text unchanged. These geometric SVGs are authored here, with no remote assets.
+   The default arrow leads to another page; fragment links use a down arrow. */
+.qvlk-study a[href]::after {
+    content: "";
+    display: inline-block;
+    inline-size: 0.72em;
+    block-size: 0.72em;
+    margin-inline-start: 0.22em;
+    background-color: currentColor;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 8h11M9 3l5 5-5 5' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.qvlk-study a[href^="#"]::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 2v11M3 9l5 5 5-5' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.qvlk-study a.qvlk-external::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M7 3H3v10h10V9M9 2h5v5M14 2 7 9' fill='none' stroke='black' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+@media (forced-colors: active) {
+    .qvlk-study a[href]::after {
+        forced-color-adjust: none;
+        background-color: LinkText;
+    }
+}
+@media print {
+    .qvlk-study a[href]::after { display: none; }
+}
