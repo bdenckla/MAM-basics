@@ -1605,3 +1605,20 @@ comparison passed for all 95 files and both font copies. The generated diff was
 read and changes only the requested qualification and resulting line wrapping.
 `git diff --check` passed. Mega and full suite remain on the approved nightly
 cadence; focused regeneration and diff inspection cover this wording-only change.
+
+## Name the existing niqqud templates — 2026-10-11
+
+**Status:** Implemented. Ben requested “The existing niqqud templates” in place of
+“The existing marks templates” to avoid the possible English-verb reading of
+“marks”.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`a9513424352c44ea8bca662164f237f7aaf2658a` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** Black passed on the generator. HTML regeneration and read-only
+comparison passed for all 95 files and both font copies. The generated diff was
+read and changes only “marks” to “niqqud” in the requested phrase.
+`git diff --check` passed. Mega and full suite remain on the approved nightly
+cadence; focused regeneration and diff inspection cover this wording-only change.

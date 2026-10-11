@@ -490,7 +490,7 @@ def _encoding_guide():
                 "discussed here is at the start of a manuscript line."
             ),
             mb_html.para(
-                "The existing marks templates are specific to near-Aleppo. Their payloads use "
+                "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
                 "artificial carrier letters to hold the marks; those carriers "
                 "are not written manuscript letters. The original convention "
                 "uses alef carriers. A carrier payload for an unsettled case "
