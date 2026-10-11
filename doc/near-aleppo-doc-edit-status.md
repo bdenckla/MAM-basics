@@ -1546,3 +1546,22 @@ Original MAM notes, Hebrew text, comparisons, manuscript readings and encodings
 are preserved. `git diff --check` passed. Mega and full suite remain on the
 approved nightly cadence; focused regeneration, note-source reconciliation and
 diff inspection cover this prose-only clarification.
+
+## Describe absent pointing neutrally — 2026-10-11
+
+**Status:** Implemented. Ben questioned “missing” in the Ruth translations and
+suggested “not written” or “not present”. The Hebrew חסרים supports “missing”
+or “absent”, but does not establish a cause for the absence. Use “not present”
+in both Ruth notes and the comparable Jeremiah 31:37 translation of חסר.
+
+**Checkout and baseline:** Development and integration use the full clone
+`C:/Users/BenDe/GitRepos/MAM-basics`, clean on main at
+`99d018732732930d74bb8a158002a1b304289cb9` before editing. Codex owns the wording,
+regeneration, focused verification, commit and normal push.
+
+**Verification:** HTML regeneration and read-only comparison passed for all
+95 files and both font copies. The source and generated diffs were read and
+change only these three English descriptions of absent pointing. Original Hebrew
+notes and Scripture are preserved. `git diff --check` passed. Mega and full
+suite remain on the approved nightly cadence; focused regeneration and diff
+inspection cover this wording-only change.
