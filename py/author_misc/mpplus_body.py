@@ -611,7 +611,7 @@ def s_common_templates(*, claims: ClaimCollection):
                 " element. A consumer that locates stress uses the explicit position "
                 "instead of assuming that the final U+05BD is ",
                 _SILLUQ,
-                ". Invalid calls fail validation.",
+                ".",
             ]
         ),
         author.para(
