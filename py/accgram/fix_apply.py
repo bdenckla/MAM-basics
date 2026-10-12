@@ -39,6 +39,11 @@ _HEB_LETTER_RE = re.compile(r"[א-ת]")
 # Sof pasuq punctuation (U+05C3).  A MAM value that merely adds it is the "missing
 # sof pasuq" fix -- grammar-visible (the transcoder emits 00, the scanner terminates).
 _SOF_PASUQ = "׃"
+# A substituted atom can acquire a maqaf before its retained WLC note suffix
+# (gn 18:18 has ]U).  The shared transcoder tests the fragment's last character,
+# so that suffix leaves a spurious space before the next atom.  Rejoin the tester's
+# fixed body while keeping every note marker, including lookahead-significant ones.
+_MAQAF_NOTES_GAP_RE = re.compile(r"(-(?:\][A-Za-z0-9])+) ")
 
 # Accent abbreviations as ``uni_heb.accent_names`` returns them.  ``(mos)`` is the
 # meteg/silluq glyph (U+05BD); a *medial* meteg difference is invisible to the
@@ -123,8 +128,19 @@ def apply_mam_fix(
     moved_first: list[str] = []
     extra_transforms: list[str] = []
     any_visible = False
+    maqaf_changed = False
     for offset, (wlc_tok, mam_tok) in enumerate(zip(wlc_tokens, mam_tokens)):
         removed, added = _accent_name_diff(wlc_tok, mam_tok)
+        # Maqaf binds adjacent atoms into one chanted word, so a maqaf change is
+        # grammar-visible even when the accent multiset stays the same (#226).
+        maqaf_delta = mam_tok.count(uni_to_marks.MAQAF) - wlc_tok.count(
+            uni_to_marks.MAQAF
+        )
+        maqaf_changed = maqaf_changed or maqaf_delta != 0
+        if maqaf_delta > 0:
+            added = [*added, *(["(maqaf)"] * maqaf_delta)]
+        elif maqaf_delta < 0:
+            removed = [*removed, *(["(maqaf)"] * -maqaf_delta)]
         sof_added = _SOF_PASUQ in mam_tok and _SOF_PASUQ not in wlc_tok
         if sof_added:
             added = [*added, "(sof pasuq)"]
@@ -147,8 +163,9 @@ def apply_mam_fix(
                     desc = f"{desc} [moved: {'; '.join(moved)}]"
             extra_transforms.append(f'word "{wlc_tok}" -> "{mam_tok}" ({desc})')
     if not any_visible:
-        # The per-word accent-name multiset is unchanged AND every accent sits on the
-        # same letter as before, so the change is a vowel- or (medial) meteg-only edit:
+        # The per-word accents and grammar-visible punctuation are unchanged AND
+        # every accent sits on the same letter as before, so the change is a vowel-
+        # or (medial) meteg-only edit:
         # truly invisible to the grammar (the scanner swallows vowels and meteg).  A
         # mark that *moved* letters (je 44:17) is handled above as visible and falls
         # through to the substitution path below.
@@ -179,6 +196,8 @@ def apply_mam_fix(
     for offset in range(span):
         setters[start + offset](mam_tokens[offset])
     new_body = uni_to_marks.verse_to_marks(new_verse)
+    if maqaf_changed:
+        new_body = _MAQAF_NOTES_GAP_RE.sub(r"\1", new_body)
 
     return AppliedFix(
         new_body=new_body,
@@ -324,8 +343,9 @@ def _letter_label(char: str | None) -> str:
 def _no_accent_change_reason(wlc_tokens: list[str], mam_tokens: list[str]) -> str:
     """Classify a grammar-inert change the accent-name multiset cannot see.
 
-    Reached only when the accent-name diff is empty *and* no accent moved to a different
-    letter (an accent move is grammar-visible -- je 44:17 -- and is handled by the
+    Reached only when grammar-visible punctuation is unchanged, the accent-name diff
+    is empty *and* no accent moved to a different letter (an accent move is
+    grammar-visible -- je 44:17 -- and is handled by the
     substitution path before we get here).  What remains is a niqqud-only edit or a
     *medial* meteg-only edit, both invisible to the grammar; we label which.
     """

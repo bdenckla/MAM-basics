@@ -497,13 +497,13 @@ def _gav_display(numbers):
                 ),
                 " as its ",
                 code("tmpl_params"),
-                ". GA permits one or more artificial alefs, each followed by "
+                ". GA permits one or more artificial alef letters, each followed by "
                 "permitted marks. GV requires exactly VAV + HOLAM, retaining "
                 "the holam-male meaning. Neither GA nor GV permits a dagesh. "
                 "Both templates have only parameter 1, containing the carrier "
                 "payload. The mixed alef/vav payload is exactly ",
                 he_pointed("אְאָא֖וֹ"),
-                " at 2 Kings 19:31: three marked alefs followed by the "
+                " at 2 Kings 19:31: three marked alef letters followed by the "
                 "artificial VAV + HOLAM carrier. It also forbids dagesh.",
             ]
         ),
@@ -532,7 +532,7 @@ def _gav_display(numbers):
                 ", inside pointed ketivs or beside unchanged qere-without-ketiv calls.",
                 " The zero-width template occurs at ",
                 verse_refs(second),
-                ", for medial GA/GV orphans and the separately documented explicit variants.",
+                ", for medial GA/GV orphans and the separately documented exact payloads.",
             ]
         ),
         mb_html.para(

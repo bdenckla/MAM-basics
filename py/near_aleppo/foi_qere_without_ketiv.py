@@ -933,7 +933,8 @@ def render(verses, rows):
         mb_html.unordered_list(
             [
                 "An image showing what the case looks like in Aleppo.",
-                "An excerpt of the near-Aleppo edition showing what the case looks like there.",
+                "An excerpt of the near-Aleppo example edition (NAEE) "
+                "showing what the case looks like there.",
                 "Any MAM notes about the case.",
             ]
         ),

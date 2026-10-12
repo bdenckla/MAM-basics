@@ -73,7 +73,8 @@ CASES = (
         "qere-without-ketiv",
         "Qere without ketiv",
         "Ruth 3:5 and Judges 20:13 show qere without ketiv; "
-        "in Ruth 3:5 there is no niqqud for the ketiv whereas in Judges 20:13 there is.",
+        "in Ruth 3:5 there is no orphan niqqud for the qere "
+        "whereas in Judges 20:13 there is.",
         ((tbn.BK_RUTH, 3, 5), (tbn.BK_JUDGES, 20, 13)),
     ),
     Case(
@@ -211,6 +212,11 @@ def _case_contents(case, verses):
     if case.identifier == "1-chronicles-9-4":
         display_attrs = {"dir": "rtl", "lang": "hbo", "class": "pointed center"}
         maqaf = "\N{HEBREW PUNCTUATION MAQAF}"
+        # Orange and yellow take darker shades in light mode to stay legible on white.
+        red = "color: red"
+        orange = "color: light-dark(#b35900, orange)"
+        yellow = "color: light-dark(#806600, yellow)"
+        green = "color: green"
         contents.extend(
             [
                 mb_html.para(
@@ -218,10 +224,10 @@ def _case_contents(case, verses):
                 ),
                 mb_html.para(
                     [
-                        mb_html.span("בֶן" + maqaf, {"style": "color: red"}),
-                        mb_html.span("בָּנִ֔ימִן" + maqaf, {"style": "color: orange"}),
-                        mb_html.span("בְּנֵי" + maqaf, {"style": "color: yellow"}),
-                        mb_html.span("פֶ֖רֶץ", {"style": "color: green"}),
+                        mb_html.span("בֶן" + maqaf, {"style": red}),
+                        mb_html.span("בָּנִ֔ימִן" + maqaf, {"style": orange}),
+                        mb_html.span("בְּנֵי" + maqaf, {"style": yellow}),
+                        mb_html.span("פֶ֖רֶץ", {"style": green}),
                     ],
                     display_attrs,
                 ),
@@ -231,12 +237,12 @@ def _case_contents(case, verses):
                 ),
                 mb_html.para(
                     [
-                        mb_html.span("בֶן" + maqaf, {"style": "color: red"}),
-                        mb_html.span("בָּנִ֔י", {"style": "color: orange"}),
+                        mb_html.span("בֶן" + maqaf, {"style": red}),
+                        mb_html.span("בָּנִ֔י", {"style": orange}),
                         " ",
-                        mb_html.span("מִן" + maqaf, {"style": "color: red"}),
-                        mb_html.span("בְּנֵי" + maqaf, {"style": "color: orange"}),
-                        mb_html.span("פֶ֖רֶץ", {"style": "color: yellow"}),
+                        mb_html.span("מִן" + maqaf, {"style": red}),
+                        mb_html.span("בְּנֵי" + maqaf, {"style": orange}),
+                        mb_html.span("פֶ֖רֶץ", {"style": yellow}),
                     ],
                     display_attrs,
                 ),
