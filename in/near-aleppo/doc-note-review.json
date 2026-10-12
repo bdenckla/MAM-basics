@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "7c174c1ef026da47e707cccaf17e2ef491156f753effe225340b54dfe5ea8672",
+  "inventory_sha256": "85827ff6056ec75523d19c84660cead31c7eaa211360a7097513b1340b38cdb6",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -26019,56 +26019,6 @@
             "index": 1,
             "disposition": "near-subject",
             "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
-          }
-        ]
-      }
-    },
-    {
-      "id": "BC-Kings מל\"א 8:11 note 2 נוסח",
-      "ref": [
-        "BC-Kings מל\"א",
-        "8",
-        "11"
-      ],
-      "note_ordinal": 2,
-      "source_template": "נוסח",
-      "source_note_sha256": "4a313dd5e79e7099c9c5f596b537428f6f6afb615ca27e38962b054ed8ac36f1",
-      "original_target": "כְבוֹד־יְהֹוָ֖ה",
-      "near_target": "כְבוֹד־יְהוָ֖ה",
-      "original_body": "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)",
-      "clauses": [
-        "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
-      ],
-      "change_causes": [
-        "representation policies"
-      ],
-      "coverage": {
-        "category": "surviving",
-        "pages": [
-          "77v"
-        ],
-        "partial_gap_boundaries": []
-      },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "5bd730713ba3d7e1352db8cc0b21964cf9014b4e9c68808b32d2a9e075b83851",
-      "review": {
-        "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
-        "proposed_parts": {
-          "near_clause": null,
-          "mam_clauses": [
-            [
-              "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
-            ]
-          ]
-        },
-        "clauses": [
-          {
-            "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
       }

@@ -114,15 +114,6 @@ _CHOICES = (
     Choice(
         "2026-08-25",
         _EDITORIAL_BEN_ACCEPTED,
-        "The divine-name holam at 1 Kings 8:11, whose note names no source",
-        "The note at 1 Kings 8:11 says a holam was written in the divine name but names no source, so near-Aleppo does not count it among the notes recording the codex's holam, and has no holam there.",
-        (
-            "Reading the missing siglum as `א`, the likely intent, and keeping the holam",
-        ),
-    ),
-    Choice(
-        "2026-08-25",
-        _EDITORIAL_BEN_ACCEPTED,
         "The revia mugrash at Job 19:16",
         "At Job 19:16 near-Aleppo has the geresh muqdam on the first word of the maqaf compound and the revia on the second, as the note gives the codex's form, where MAM has both marks on one letter of the second word.",
         ("Removing the revia, as at the other sites",),
@@ -882,6 +873,13 @@ _CHOICES = (
         "Remove the carrier parameter",
         "Ben removed the carrier parameter from both artificial-carrier templates. Parameter 1 retains every carrier letter and mark, including the holam-male vav, the mixed alef/vav payload and the final-nun dalet accommodation. The earlier dated decisions describe the former parameter labels. The current templates have only parameter 1; the edition's displayed forms and the carriers' interpretations are unchanged.",
         ("Keeping redundant carrier labels alongside the payload",),
+    ),
+    Choice(
+        "2026-10-12",
+        _BEN,
+        "The divine-name holam at 1 Kings 8:11",
+        "Near-Aleppo keeps the holam recorded in MAM's note. The note calls Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo. This supersedes the earlier omission based on the missing siglum.",
+        ("Omitting the holam because the note lacks the Aleppo siglum",),
     ),
 )
 

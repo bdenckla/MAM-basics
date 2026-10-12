@@ -43,9 +43,9 @@
     "Elohim reading: sheva for the hataf segol on the yod (unselected parameter)": 0,
     "Elohim reading: yod with no vowel, unchanged": 1,
     "Elohim reading: yod with no vowel, unchanged (unselected parameter)": 0,
-    "Adonai reading: holam on the first he stripped": 6517,
+    "Adonai reading: holam on the first he stripped": 6516,
     "Adonai reading: holam on the first he stripped (unselected parameter)": 0,
-    "Adonai reading: holam kept where a note records the codex's": 5,
+    "Adonai reading: holam kept where a note records the codex's": 6,
     "Adonai reading: holam kept where a note records the codex's (unselected parameter)": 0,
     "divine title: holam on the dalet stripped": 437,
     "divine title: holam on the dalet stripped (unselected parameter)": 0,
@@ -129,6 +129,7 @@
     ],
     "Adonai reading: holam kept where a note records the codex's": [
       ["BA-Samuel שמ\"א", "15", "1"],
+      ["BC-Kings מל\"א", "8", "11"],
       ["BC-Kings מל\"ב", "20", "9"],
       ["C1-Isaiah", "30", "1"],
       ["C3-Ezekiel", "3", "12"],
@@ -613,7 +614,7 @@
   "phase6_counts": {
     "נוסח: notes reached": 3595,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1548,
+    "נוסח: notes given MAM's target": 1547,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {
