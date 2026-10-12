@@ -597,7 +597,7 @@ def s_common_templates(*, claims: ClaimCollection):
                 author.hbo("מ:סילוק לפני געיה"),
                 " identifies ",
                 _SILLUQ,
-                " before a later $meteg without changing $MAM’s text. "
+                " before $meteg without changing $MAM’s text. "
                 "For example, $MAM’s annotation for Job 4:12 is:",
             ]
         ),
