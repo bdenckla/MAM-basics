@@ -55,13 +55,18 @@ CASES = (
         "a final dalet carrier",
         "The single-atom qere has an additional he. The ketiv's final-nun "
         "dagesh, tsere and mahapakh are displayed on an artificial dalet carrier "
-        "immediately after the nun, without a space.",
+        "immediately after the nun, without a space. "
+        "Carrier notation usually indicates that marks are orphaned or that the "
+        "letter they belong to is unclear. In this case, a strong argument can "
+        "be made that the marks belong to the final nun. We use carrier (orphan) "
+        "syntax mainly because many fonts have difficulty displaying these "
+        "marks on a final nun.",
         ((tbn.BK_ISAIAH, 54, 16),),
     ),
     Case(
         "genesis-30-11",
         "two qere atoms",
-        "The qere has two atoms separated by a space above one ketiv atom.",
+        "The qere has two space-separated atoms above one ketiv atom.",
         ((tbn.BK_GENESIS, 30, 11),),
     ),
     Case(
@@ -205,17 +210,42 @@ def _case_contents(case, verses):
         )
     if case.identifier == "1-chronicles-9-4":
         display_attrs = {"dir": "rtl", "lang": "hbo", "class": "pointed center"}
+        maqaf = "\N{HEBREW PUNCTUATION MAQAF}"
         contents.extend(
             [
                 mb_html.para(
                     "When viewed in context, the ketiv forms a four-atom maqaf compound:"
                 ),
-                mb_html.para("בֶן־בָּנִ֔ימִן־בְּנֵי־פֶ֖רֶץ", display_attrs),
+                mb_html.para(
+                    [
+                        mb_html.span("בֶן", {"style": "color: red"}),
+                        maqaf,
+                        mb_html.span("בָּנִ֔ימִן", {"style": "color: orange"}),
+                        maqaf,
+                        mb_html.span("בְּנֵי", {"style": "color: yellow"}),
+                        maqaf,
+                        mb_html.span("פֶ֖רֶץ", {"style": "color: green"}),
+                    ],
+                    display_attrs,
+                ),
                 mb_html.para(
                     "In contrast, the qere forms a two-atom maqaf compound "
                     "followed by a three-atom maqaf compound:"
                 ),
-                mb_html.para("בֶן־בָּנִ֔י מִן־בְּנֵי־פֶ֖רֶץ", display_attrs),
+                mb_html.para(
+                    [
+                        mb_html.span("בֶן", {"style": "color: red"}),
+                        maqaf,
+                        mb_html.span("בָּנִ֔י", {"style": "color: orange"}),
+                        " ",
+                        mb_html.span("מִן", {"style": "color: red"}),
+                        maqaf,
+                        mb_html.span("בְּנֵי", {"style": "color: orange"}),
+                        maqaf,
+                        mb_html.span("פֶ֖רֶץ", {"style": "color: yellow"}),
+                    ],
+                    display_attrs,
+                ),
             ]
         )
     for reference in case.references:
