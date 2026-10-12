@@ -1,6 +1,6 @@
-# Near-Aleppo release preparation
+# Near-Aleppo release record
 
-State: live; notes approved and release publication in progress
+State: executed 2026-10-12; release published and attachments verified
 
 Ben requested on 2026-10-12: "Let's make a Near-Aleppo release" and
 "Before we release, I will likely want to edit the release notes". Codex prepared
@@ -9,8 +9,8 @@ The [October 7 dry run](near-aleppo-release-notes-2026-10-07-draft.md) remains
 the historical draft and packaging proposal.
 
 Ben approved publication on 2026-10-12: "Great, let's make that draft official
-and do whatever else is needed to make the release." Codex is carrying out
-the release through `gh`; Ben need not create it in the web GUI.
+and do whatever else is needed to make the release." Codex published
+the release through `gh`; no web GUI step remains.
 
 ## Cumulative revision ledger
 
@@ -19,22 +19,23 @@ the release through `gh`; Ben need not create it in the web GUI.
 | Draft fresh notes from the October 7 sketch and subsequent records | Implemented 2026-10-12; the new draft describes the current dataset and pages |
 | Give Ben an opportunity to edit before release | Implemented; Ben accepted the draft and authorized publication on 2026-10-12 |
 | Include the current note and carrier contracts and qere-without-ketiv work | Implemented; measured against the current reviewed ledger and build populations |
-| Select the release date, tag, final commit, and attachment filenames | Implemented; use the date and names below, and tag the commit finalizing these notes |
-| Package and publish the dataset release | Active; create and verify the dataset-only ZIP, then publish through gh |
+| Select the release date, tag, final commit, and attachment filenames | Implemented; the annotated tag identifies commit 11740c303f0e74137fc82ed3004caeb65a82e03a |
+| Package and publish the dataset release | Implemented 2026-10-12; the published release and both attachments are verified below |
 
 ## Approved release scope
 
 Codex selected the descriptive date tag `near-aleppo-2026-10-12` and release
 title "Near-Aleppo — 2026-10-12" under Ben's publication authorization.
 The attachments are `near-aleppo-2026-10-12.zip` and
-`near-aleppo-release-notes-2026-10-12.md`. The annotated tag will identify the
-commit finalizing the notes. Package files from that committed tree, never from
-uncommitted working files. Upload and verify both attachments before publication.
+`near-aleppo-release-notes-2026-10-12.md`. The annotated tag identifies the
+commit finalizing the notes, `11740c303f0e74137fc82ed3004caeb65a82e03a`.
+Both attachments were built from that committed tree and verified before
+publication.
 
 The approved content is the October 12 draft, with its draft labels removed,
 release identity filled in, and attachment references made usable on GitHub.
-No dataset, generator, manuscript decision, or licensing policy changes are
-part of this publication phase.
+No dataset, generator, manuscript decision, or licensing policy changed in
+this publication phase.
 
 ## Draft baseline and evidence
 
@@ -42,11 +43,13 @@ Source, development, and integration checkout:
 `C:/Users/BenDe/GitRepos/MAM-basics`, a full clone on `main`. Its clean HEAD
 before drafting was `a29f1c08924cb9ab01fe7952257fc8df615ebdbf`. The interpreter
 is `C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe`; commands run
-from that checkout's root. Codex owns this draft's integration.
+from that checkout's root. Codex performed integration and release publication.
 
-The current candidate's dataset and pages were checked at that exact commit.
-It is a content baseline, not a selected final release commit: release-notes
-edits and any later product changes must be reconciled before tagging.
+The draft's dataset and pages were checked at that exact commit. Release
+execution began at clean `main` commit
+`5377432afb7de7cf3ff2ab8429ac1c944b43f8ab`, with `origin/main` at the same commit.
+The publication phase changed only the notes and this record; the selected
+release commit retains the checked products.
 
 Before this release, GitHub's release and tag-ref APIs returned no releases or
 tags, verified again on 2026-10-12. The first announcements were made on 2026-10-06,
@@ -95,33 +98,44 @@ The new Markdown received a read-only factual review. Its UTF-8 encoding,
 LF endings, State lines, relative links, and published-page link targets and
 anchors passed local checks. The existing prose mark-order lint passed
 (`py/main_test.py py/tests/test_prose_mark_order.py -q`: one test passed).
-The full mega and suite are deferred to the nightly cadence in
-`doc/review-trial.md`; this phase changes Markdown only.
+The focused check was repeated successfully for publication at preparation HEAD
+`5377432afb7de7cf3ff2ab8429ac1c944b43f8ab`. The official notes passed the same
+Markdown checks and prose mark-order lint. The full mega and suite were skipped
+for these Markdown-only changes, following the nightly cadence in
+`doc/review-trial.md`. Archive verification supplied the release-specific checks.
 
-## Publication sequence
+## Published release and attachment verification
 
-Keep `AGENTS.md`, `doc/review-trial.md`, `doc/near-aleppo-build.md`, and the
-iterative-document-editing and Hebrew-prose skills as the controlling instructions.
-Read the Near-Aleppo privacy criteria before any public prose draws on private
-evidence. No new manuscript interpretation or data policy is part of this release.
+The [Near-Aleppo release](https://github.com/bdenckla/MAM-basics/releases/tag/near-aleppo-2026-10-12)
+is published as GitHub's latest release, with `draft=false` and `prerelease=false`.
+Its release ID is `410891594`. The annotated tag object is
+`bdd5ecfc815c6c3533a9d9bba1ffe7f2414041ea`; GitHub's peeled tag resolves to
+`11740c303f0e74137fc82ed3004caeb65a82e03a`, the selected source commit.
+The GitHub release body exactly matches the committed official notes.
 
-Reverify the checkout and reconcile the draft with the chosen candidate. Repeat
-the focused command above at the final content commit if products or their inputs
-move. Treat any failing check or unexplained product diff as unfinished work.
-Commit release preparation on `main`; fetch and merge `origin/main` before a
-normal push, with focused checks for any incoming changes.
+The ZIP has exactly 26 regular files: `README.md`, `LICENSE.md`, and the 24
+`plus/*.json` files from the selected commit's `out/near-aleppo/` tree.
+It contains no extra files, directories, duplicate members, HTML, crops, fonts,
+or review records. CRC validation and JSON parsing passed. Every member was
+compared byte for byte with its committed Git blob; a separate read-only agent's
+independent audit confirmed the same result. The notes attachment exactly
+matches the committed official Markdown file.
 
-The dataset-only ZIP scope comes from the October 7 draft's "Release contents
-and remaining work": `README.md`, `LICENSE.md`, and exactly the 24 `plus/*.json`
-files from `out/near-aleppo/` at the selected commit. Verify its member list and
-file contents against that commit before attaching it. Keep notes as a separate
-release attachment. HTML, crops, fonts, and review records stay outside the ZIP.
-No maintained packaging command exists yet; prepare the archive from the chosen
-commit after its name and tag are settled.
+Fixed before upload: the initial Git ZIP export changed `LICENSE.md` from
+624 bytes with LF line endings to 634 bytes with CRLF line endings. That archive
+failed the byte gate and was never uploaded. The final ZIP was built directly
+from Git blob bytes, preserving the committed line endings.
 
-Publish only after Ben's release-notes editing is complete. Record the selected
-commit and tag, attachment names, archive verification, and GitHub release URL
-here in the same phase commit. Tags and GitHub releases are outward-facing acts;
-replacing published assets would be a separate act. The current Markdown-only
-draft changes no declared product; the eventual ZIP distributes
+Both attachments were uploaded to a temporary draft release, downloaded into
+a fresh scratch directory, and reverified before `gh release edit` published
+the release. The published API response retained the verified sizes and digests:
+
+| Attachment | Bytes | SHA-256 |
+| --- | ---: | --- |
+| `near-aleppo-2026-10-12.zip` | 2,032,708 | `e1da8e483e9da462c6d889811be251ff7b993a108b535f62b6097bf5080be74b` |
+| `near-aleppo-release-notes-2026-10-12.md` | 8,808 | `998a0f578f02c75f40285f9bc27716367ebc909211f993720b595ef07281859d` |
+
+Tags and GitHub releases are outward-facing acts, authorized by Ben's release
+request above. The source edits changed no declared product; the ZIP distributes
 `out/near-aleppo/`, which `py/product_scopes.py` declares as distributed data.
+Published-asset replacement or tag rewriting would be a separate act.
