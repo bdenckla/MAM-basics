@@ -264,8 +264,9 @@ def render():
         mb_html.heading_level_1(kq_title),
         _navigation(),
         mb_html.para(
-            "In near-Aleppo, the pointed ketiv is the primary text, "
-            "with the pointed qere above it at the same size "
+            "In NAEE (the Near-Aleppo example edition), "
+            "the pointed ketiv is the primary text, "
+            "with the pointed qere above it "
             'and a curved box or "cartouche" around the ketiv/qere pair. '
             "When the qere is wider, the ketiv is centered beneath it."
         ),
