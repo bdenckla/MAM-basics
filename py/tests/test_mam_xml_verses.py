@@ -2,7 +2,7 @@
 
 ``py/mb_cmn/mam_xml_verses.py`` reads MAM-simple/xml-vtrad-mam/ for locating text in
 manuscripts, and no program the mega runs calls it: the Evr. II B 55 page index uses it
-by hand. So without these checks a new MAM-simple element, such as the planned
+by hand. So without these checks a new MAM-simple element, such as
 silluq-before-meteg, would surface only at the next hand use. Ben chose on 2026-09-26 to
 add the first two checks, and the remediation plan he approved on 2026-09-28 added the
 third:
@@ -106,6 +106,10 @@ def _selected_parts(node):
             for child in node:
                 yield from _selected_parts(child)
     elif node.tag in {"text", "kq-k-velo-q"}:
+        yield node.attrib["text"]
+    elif node.tag == "silluq-before-meteg":
+        assert set(node.attrib) == {"text", "letters-with-silluq"}
+        assert len(node) == 0
         yield node.attrib["text"]
     elif node.tag == "slh-word":
         yield node.attrib["slhw-desc-0"]
