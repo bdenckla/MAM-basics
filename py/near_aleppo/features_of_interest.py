@@ -218,12 +218,9 @@ def _case_contents(case, verses):
                 ),
                 mb_html.para(
                     [
-                        mb_html.span("בֶן", {"style": "color: red"}),
-                        maqaf,
-                        mb_html.span("בָּנִ֔ימִן", {"style": "color: orange"}),
-                        maqaf,
-                        mb_html.span("בְּנֵי", {"style": "color: yellow"}),
-                        maqaf,
+                        mb_html.span("בֶן" + maqaf, {"style": "color: red"}),
+                        mb_html.span("בָּנִ֔ימִן" + maqaf, {"style": "color: orange"}),
+                        mb_html.span("בְּנֵי" + maqaf, {"style": "color: yellow"}),
                         mb_html.span("פֶ֖רֶץ", {"style": "color: green"}),
                     ],
                     display_attrs,
@@ -234,14 +231,11 @@ def _case_contents(case, verses):
                 ),
                 mb_html.para(
                     [
-                        mb_html.span("בֶן", {"style": "color: red"}),
-                        maqaf,
+                        mb_html.span("בֶן" + maqaf, {"style": "color: red"}),
                         mb_html.span("בָּנִ֔י", {"style": "color: orange"}),
                         " ",
-                        mb_html.span("מִן", {"style": "color: red"}),
-                        maqaf,
-                        mb_html.span("בְּנֵי", {"style": "color: orange"}),
-                        maqaf,
+                        mb_html.span("מִן" + maqaf, {"style": "color: red"}),
+                        mb_html.span("בְּנֵי" + maqaf, {"style": "color: orange"}),
                         mb_html.span("פֶ֖רֶץ", {"style": "color: yellow"}),
                     ],
                     display_attrs,
