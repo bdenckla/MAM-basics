@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "run": 5,
+  "trial_nights": 7,
+  "date": "2026-10-12",
+  "agent": "Codex",
+  "schedule_disposition": "Existing seven-night trial unchanged; this is night 5, not an extension.",
+  "repository": "MAM-basics",
+  "review_window": {
+    "from_exclusive": "6d50cea430aa44d059ac45e12d778af1ba5d0a60",
+    "through_inclusive": "6168259fa913cfc74358972c16ecc7fdb97350f1",
+    "incoming_reachable_commits": 110,
+    "changed_paths": 215,
+    "ancestry_verified": true
+  },
+  "tested_commit": "6168259fa913cfc74358972c16ecc7fdb97350f1",
+  "allowed_sibling_input_commits": [
+    "8b8b6af548a1d0016baa7d1ad991801707d66c23",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "checks": {
+    "basics-mega": {
+      "started_utc": "2026-10-12T06:36:50.375958+00:00",
+      "ended_utc": "2026-10-12T06:44:36.445670+00:00",
+      "seconds": 466.07,
+      "exit": 0
+    },
+    "basics-suite": {
+      "started_utc": "2026-10-12T06:45:56.076562+00:00",
+      "ended_utc": "2026-10-12T06:50:32.432127+00:00",
+      "seconds": 276.356,
+      "exit": 1
+    },
+    "basics-receipt-recheck": {
+      "started_utc": "2026-10-12T06:52:21.540112+00:00",
+      "ended_utc": "2026-10-12T06:52:22.058055+00:00",
+      "seconds": 0.518,
+      "exit": 0
+    }
+  },
+  "commands": {
+    "mega": [
+      "py/main_0_mega.py"
+    ],
+    "suite": [
+      "py/main_test.py"
+    ],
+    "repair_recheck": [
+      "py/main_test.py",
+      "py/tests/test_receipt_update_links.py",
+      "-q"
+    ]
+  },
+  "mega_steps": 60,
+  "generator_tracked_diffs": 0,
+  "suite_result": {
+    "passed": 1072,
+    "skipped": 5,
+    "failed": 1,
+    "skip_disposition": "Documented divergent edition-transcription token controls; no missing input skip."
+  },
+  "finding": {
+    "disposition": "Fixed by the narrow existing-policy pointer correction",
+    "path": "doc/mega-serial-performance-2026-10-03.md",
+    "failure": "Required update pointer absent on physical line 4",
+    "introducing_commit": "202e69e8e063438b5faca0d73d20a5cde3d4fb61",
+    "repair_commit": "3a46a5b138be5b0535c3de99384a9ccce08966c5",
+    "decisive_recheck": "1 passed",
+    "product_effect": "Documentation pointer only"
+  },
+  "endpoint_data_review": "Independent all-24-book comparison: 67 name-only migrations, five approved pointing changes, nine current qere-body additions (3/1/5), five note-context wrappers preserving original targets/source clauses, and consumer notices. No other non-notice delta; complete qeres and current GD preserved.",
+  "native_windows_worker_api": "Canonical helper returns successful memory/CPU counters and bounded pool counts on Windows; contemporaneous Windows inventory is consistent. Forced shortage, affinity and API-failure scenarios were not exercised.",
+  "limits": [
+    "Original full-suite failure is preserved; no new all-green full rerun is claimed after the pointer repair.",
+    "A no-diff mega and passing preservation checks do not prove manuscript interpretation or browser appearance.",
+    "No new Hebrew semantics, release, source refresh, schedule extension or deployment was authorized or performed."
+  ],
+  "record_disposition": "Repair and ordinary record consolidation may fast-forward main without a push-triggered deployment; source checks ran in isolated committed checkouts and home working checkouts remain unchanged."
+}
