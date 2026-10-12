@@ -1,4 +1,4 @@
-"""Create Sefaria and/or AJF MAM variants from the XML MAM."""
+"""Create Sefaria and/or AJF MAM variants from MAM-simple JSON."""
 
 import argparse
 import sys
@@ -7,22 +7,22 @@ from mb_sefaria import mam4sef_runners
 
 
 def run_sef():
-    """Create the Sefaria MAM from the XML MAM."""
+    """Create the Sefaria MAM from MAM-simple JSON."""
     mam4sef_runners.run_sef()
 
 
 def run_ajf():
-    """Create the AJF MAM from the XML MAM."""
+    """Create the AJF MAM from MAM-simple JSON."""
     mam4sef_runners.run_ajf()
 
 
 def run_both_sef_and_ajf():
-    """Create both Sefaria and AJF MAM variants from the XML MAM."""
+    """Create both Sefaria and AJF MAM variants from MAM-simple JSON."""
     mam4sef_runners.run_both_sef_and_ajf()
 
 
 def almost_main():
-    """Create the Sefaria MAM from the XML MAM."""
+    """Create the Sefaria MAM from MAM-simple JSON."""
     run_sef()
 
 
@@ -60,7 +60,7 @@ def _run_with_passthrough_argv(runner, passthrough_argv):
 
 
 def main(argv=None):
-    """Create Sefaria output by default, with explicit selectors for AJF modes."""
+    """Create Sefaria from MAM-simple JSON by default, with AJF mode selectors."""
     if argv is None:
         argv = sys.argv[1:]
     args, passthrough_argv = _build_parser().parse_known_args(argv)

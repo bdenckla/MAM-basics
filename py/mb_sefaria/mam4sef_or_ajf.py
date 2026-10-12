@@ -22,7 +22,7 @@ _BOOK_LIST_PROVENANCE_SIDECAR_NAME = "_provenance.md"
 
 
 def main_helper(variant):
-    """Create the Sefaria MAM or AJF MAM from the XML MAM."""
+    """Create the Sefaria MAM or AJF MAM from MAM-simple JSON."""
     bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     bkgs = osis_book_abbrevs.bk24_bkgs(bkids)
     _write_output_provenance(variant, bkgs)

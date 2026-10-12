@@ -1,4 +1,5 @@
-<!-- This static page has no machine-specific validation command. -->
+<!-- Hand-authored static page; the silluq case table is checked by
+     py/tests/test_sefaria_silluq_documentation.py. -->
 <!-- quotes (for copy/paste) “” -->
 <!doctype html>
 <html lang="en">
@@ -1124,12 +1125,36 @@ abandoned ל-impositive <span title="zarqa">זרקא</span>
 at some point.
 </p>
 <h3 id="meteg-after-silluq">Meteg after silluq</h3>
-<p>The Sefaria and AJF exporters support MAM’s <span dir="rtl">מ:סילוק לפני געיה</span>
-    annotation. The annotation identifies the silluq explicitly in a verse-final atom
-    with a later meteg. These exports omit the annotation’s explanatory note and remove
-    every U+05BD after the identified silluq, retaining the silluq and all other text.
-    MAM-simple preserves both marks and their position metadata. This support takes
-    effect when annotated source data is imported and the CSV product is regenerated.</p>
+<p>In these MAM-simple atoms, the Sefaria and AJF CSV exports omit the
+    <span class="romanized">meteg</span> after <span class="romanized">silluq</span>
+    and retain the <span class="romanized">silluq</span>:</p>
+<table id="meteg-after-silluq-cases" class="border-collapse break-inside-avoid">
+    <thead>
+        <tr><th>Verse</th><th>MAM-simple input</th><th>Sefaria and AJF output</th></tr>
+    </thead>
+    <tbody>
+        <tr data-osis-id="1Kgs.7.37">
+            <td>1 Kings 7:37</td>
+            <td lang="hbo" dir="rtl">לְכֻלָּֽהְנָֽה</td>
+            <td lang="hbo" dir="rtl">לְכֻלָּֽהְנָה</td>
+        </tr>
+        <tr data-osis-id="Job.4.12">
+            <td>Job 4:12</td>
+            <td lang="hbo" dir="rtl">מֶֽנְהֽוּ</td>
+            <td lang="hbo" dir="rtl">מֶֽנְהוּ</td>
+        </tr>
+    </tbody>
+</table>
+<p>Both exporters read MAM-simple JSON. The Hebrew Wikisource template
+    <bdi lang="hbo">מ:סילוק לפני געיה</bdi> is carried through MAM-parsed-plus into
+    MAM-simple’s <code>silluq-before-meteg</code> object. That object preserves the
+    full marked atom shown in the input column and identifies
+    <span class="romanized">silluq</span> with its <code>letters-with-silluq</code>
+    metadata. The exporters use that position to remove every later U+05BD,
+    retaining every other letter and mark, including the following
+    <span class="romanized">sof pasuq</span>.
+    MAM-simple encodes this distinction without an explanatory note; the CSV
+    exports add no explanatory note for the omitted <span class="romanized">meteg</span>.</p>
 <h3>No special <span class="romanized">meteg</span> placements</h3>
 <p>Old Sefaria has two <span class="romanized">meteg</span> placements that are not present in <span class="small-caps">MAM</span>:</p>
 <ol>

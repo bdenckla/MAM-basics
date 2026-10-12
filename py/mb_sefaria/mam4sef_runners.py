@@ -27,7 +27,7 @@ def build_ajf_variant():
 
 
 def run_sef(overrides=None):
-    """Create the Sefaria MAM from the XML MAM."""
+    """Create the Sefaria MAM from MAM-simple JSON."""
     variant = build_sef_variant()
     if overrides:
         variant.update(overrides)
@@ -35,7 +35,7 @@ def run_sef(overrides=None):
 
 
 def run_ajf(overrides=None):
-    """Create the AJF MAM from the XML MAM."""
+    """Create the AJF MAM from MAM-simple JSON."""
     variant = build_ajf_variant()
     if overrides:
         variant.update(overrides)
