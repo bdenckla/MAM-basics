@@ -46,7 +46,7 @@ columns use N for niqqud presence, H for horizontal space in the line
 of letters, and Pos. for position. The legend defines +/− as present/absent and
 BW/EOL as between written words/end of a manuscript line. The presence values
 come from the three closed `intended_encoding.kind` classifications of the
-recorded manuscript readings, rather than the current dataset calls. The
+recorded manuscript readings, rather than the dataset templates. The
 position comes from each reading's explicit `line_position`; a reviewed reading
 without a recognized position fails the build. Unreviewed cases show question
 marks, with that meaning added to the legend only when needed. Ben confirmed
@@ -73,7 +73,7 @@ that element. The existing closed dataset walk also selects the current qere-onl
 source fragment from Scripture, excluding note bodies and copied MAM lemmas.
 The study validates that fragment's two literal parameters and agreement of its
 whole qere with MAM. The current source notation is omitted because every selected
-call's first parameter is the bracketed qere and its second parameter is the qere.
+template's first parameter is the bracketed qere and its second parameter is the qere.
 The separate “MAM qere” displays are also omitted because they repeat the qere
 in each NAEE excerpt. The excerpt renderer requires exact agreement with MAM,
 including every letter and mark. Quoted MAM notes retain their original text
@@ -168,7 +168,7 @@ without implementation-status labels. The encoding conventions describe the
 dataset without contrasting its state with past or planned encodings. The repeated
 “Current encoding — implemented” paragraph identifying `קרי ולא כתיב`
 was removed at Ben's request on 2026-10-11; the introduction states the common
-qere-call convention once. Ben requested removal of the repeated source-notation blocks
+`קרי ולא כתיב` template convention once. Ben requested removal of the repeated source-notation blocks
 on 2026-10-11 because they add no independent information beyond the MAM qere.
 The separate MAM qere displays were subsequently removed after a comparison
 confirmed agreement with the NAEE qere in all cases.
@@ -184,17 +184,17 @@ pending decision. All nine selected cases have implemented body templates.
 Existing observations and crop provenance are preserved except for Ben's
 confirmed orphan-ḥolam decision recorded below.
 
-Ben clarified on 2026-10-11 that every existing `קרי ולא כתיב` call is to be
+Ben clarified on 2026-10-11 that every existing `קרי ולא כתיב` template is to be
 retained and supplemented with one additional template describing how the qere
 site is represented in the body text. The additional template records the niqqud
 present and whether horizontal space is present. The additional template does
-not replace the existing call or remove the qere. The earlier “empty body text”
+not replace the `קרי ולא כתיב` template or remove the qere. The earlier “empty body text”
 assessment is superseded by “horizontal space without niqqud”; an unpointed space
 still needs an additional template.
 
 The introduction describes the near-Aleppo-specific templates `ניקוד בלי אות`,
 `ניקוד בלי אות ובלי רווח` and `רווח בלי ניקוד`. The additional template
-immediately precedes the unchanged qere call in the same sequence, with no
+immediately precedes the `קרי ולא כתיב` template in the same sequence, with no
 intervening separator. Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 use
 artificial carriers for marks with horizontal space. At 2 Kings 19:31 the payload
 is `אְאָא֖וֹ`: three marked alefs followed by VAV + HOLAM, with the explicit
@@ -241,7 +241,7 @@ and manuscript crops are tracked here; this public build has no private runtime
 dependency. Ben's `doc/near-aleppo-requested-doc-edits.md` remains his request
 file; implementation statuses belong in `doc/near-aleppo-doc-edit-status.md`.
 
-Keep every existing קרי ולא כתיב call and its whole qere unchanged. Add one
+Keep every existing קרי ולא כתיב template and its whole qere unchanged. Add one
 explicit template describing the body's niqqud and horizontal space at each
 selected site. The recorded cases are:
 
@@ -261,7 +261,7 @@ Use `in/near-aleppo/qere-without-ketiv-readings.json` as the full source of each
 reading and its qualifications. These body classifications and their
 implementation are settled:
 
-- The additional body template immediately precedes the unchanged qere call,
+- The additional body template immediately precedes the `קרי ולא כתיב` template,
   without a separator. The exact names and shapes are documented above.
 - The no-space template retains the existing final-nun-dalet contract and
   adds the explicit orphan-marks-alef variant for 2 Samuel 18:20.
@@ -298,7 +298,7 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_near_aleppo.
 ```
 
 Use the relevant focused checks through `py/main_test.py`, plus
-`git diff --check`. Validate preservation of the original qere calls and every
+`git diff --check`. Validate preservation of the `קרי ולא כתיב` templates and every
 letter and mark, and inspect the rendered body marks and spacing at all selected
 sites. Regenerate other affected consumers if shared rendering changes. Follow
 the approved trial's focused-check and nightly broad-check cadence; an immediate
@@ -541,7 +541,7 @@ Ben's implementation request and the settled body classifications form the
 approval snapshot; his orphan-ḥolam decision resolves its last reading question.
 
 `py/near_aleppo/qere_without_ketiv.py` applies the explicit body records after
-reviewed pointings and before MAM-target copying. Each original qere call,
+reviewed pointings and before MAM-target copying. Each original `קרי ולא כתיב` template,
 including both parameters and every letter and mark, remains unchanged.
 `in/near-aleppo/build-populations.json` records the body classifications in
 separate counts and sites, without changing the MAM-only census. The independent
@@ -551,7 +551,7 @@ images, translations, image-first order and ordinary unpointed-Hebrew styling
 remain intact. Deferred A102 work remains separate.
 
 The shared ruby renderer pairs only explicit body templates with an immediately
-following qere call. Space without marks displays an empty span one em wide;
+following `קרי ולא כתיב` template. Space without marks displays an empty span one em wide;
 artificial carrier payloads retain the edition's double guillemets. The no-space
 variant inserts no separator in the dataset or renderer. These display widths
 are editorial, and do not reconstruct the manuscript's measured spacing.
@@ -559,7 +559,7 @@ are editorial, and do not reconstruct the manuscript's measured spacing.
 Verification completed: the full near-Aleppo regeneration and `--check` pass;
 the focused entry-point command recorded in the cumulative ledger passes 15
 tests. All nine rendered cases and every generated diff were inspected.
-An independent comparison confirms unchanged qere calls, MAM notes,
+An independent comparison confirms unchanged `קרי ולא כתיב` templates, MAM notes,
 translations, images and marginal-note layout. MAM-with-doc's complete
 regeneration has no tracked diff. Black and `git diff --check` pass.
 Mega and the full suite remain on the approved nightly cadence.

@@ -656,7 +656,7 @@ def _encoding_guide():
                 [
                     "Each site has a ",
                     _template_name(_QERE_TEMPLATE),
-                    " call providing the qere and one "
+                    " template providing the qere and one "
                     "additional template describing the body text. The "
                     "additional template records which niqqud, if any, are present and whether "
                     "horizontal space is present. The cases use "
@@ -702,8 +702,9 @@ def _encoding_guide():
             ),
             mb_html.para(
                 [
-                    "The additional template immediately precedes the qere call, "
-                    "with no intervening separator. The example edition "
+                    "The additional template immediately precedes the ",
+                    _template_name(_QERE_TEMPLATE),
+                    " template, with no intervening separator. The example edition "
                     "displays the body marks or blank space below the qere in the same box. "
                     "The box and artificial carriers are editorial display conventions; "
                     "their widths do not measure manuscript spacing.",

@@ -2795,3 +2795,16 @@ integration at `origin/main` commit `202e69e8`. The four task files are unchange
 by the merge. The independent study comparison and `--html --check` pass again,
 and all 20 focused near-Aleppo, template, prose, filename and time-zone checks
 pass. Mega and the full suite remain on the approved nightly cadence.
+
+## Use template terminology and the explicit template name — 2026-10-12
+
+**Status:** Fixed at Ben's request. The encoding guide uses “template” rather
+than “call” and names the `קרי ולא כתיב` template explicitly in both passages.
+The maintained build notes use the same terminology.
+
+**Verification:** Work began in the clean main checkout at `6168259f`.
+Black, HTML regeneration and `git diff --check` passed. An independent comparison
+confirms that only the two requested passages change in the study; all nine
+case sections and all other page text and markup are unchanged. No other
+generated page changed. Mega and the full suite remain on the approved nightly
+cadence for this wording-only correction.
