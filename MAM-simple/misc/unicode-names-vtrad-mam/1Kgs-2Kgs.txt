@@ -7068,7 +7068,10 @@ q,∵,(mer),c,∵,b
 SPACE
 α,∵,x,a,(tip),d
 SPACE
-l,:,k,u,l,·,a,(mos),h,:,n,a,(mos),h,(sopa)
+START silluq-before-meteg letters-with-silluq=לכלֽהנה
+l,:,k,u,l,·,a,(mos),h,:,n,a,(mos),h
+STOP silluq-before-meteg letters-with-silluq=לכלֽהנה
+(sopa)
 START/STOP spi-samekh2
 
 1Kings 7:38 in vtrad vtmam

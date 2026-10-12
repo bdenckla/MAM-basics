@@ -31,8 +31,9 @@ template                         raw  settled   parameter key sets (raw)
 קרי ולא כתיב                       9        9   ('1', '2') x9
 כתיב ולא קרי                       8        8   ('1', '2') x6; ('1', '2', '3') x2
 מ:אות תלויה                        4        0   ('1',) x4
+מ:סילוק לפני געיה                  2        2   ('1', '2') x2
 מ:קישור פנימי בהערה                2        0   ('1', '2') x2
 
-distinct template names: 33
+distinct template names: 34
 
 under the corrected settled walk: מ:לגרמיה-2 = 1785, מ:פסק = 508

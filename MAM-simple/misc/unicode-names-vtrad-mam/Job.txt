@@ -1582,7 +1582,10 @@ SPACE
 SPACE
 $,·sh,‥,(mun),m,∵,c.
 SPACE
-m,∵,(mos),n,:,h,(mos),v,·,(sopa)
+START silluq-before-meteg letters-with-silluq=מֽנהו
+m,∵,(mos),n,:,h,(mos),v,·
+STOP silluq-before-meteg letters-with-silluq=מֽנהו
+(sopa)
 
 Job 4:13 in vtrad vtmam
 b,·,i,(dex),$,·si,:,3,i,p,·,i,y,m.

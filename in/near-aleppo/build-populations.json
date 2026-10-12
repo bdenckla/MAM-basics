@@ -26,6 +26,7 @@
     "מ:אות-מיוחדת-במילה": 51,
     "מ:אות-מיוחדת-במילה (unselected parameter)": 1,
     "מ:נו״ן הפוכה": 9,
+    "מ:סילוק לפני געיה": 2,
     "מ:ששש": 228,
     "סס": 41,
     "ססס": 106,
@@ -614,7 +615,7 @@
   "phase6_counts": {
     "נוסח: notes reached": 3595,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1547,
+    "נוסח: notes given MAM's target": 1549,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {

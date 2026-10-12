@@ -247,13 +247,13 @@
   "whole_census_comparison_counts": {
    "cant-alef": {
     "chanted words checked": 262819,
-    "meteg before the stressed syllable": 14761,
-    "meteg after the stressed syllable": 232
+    "meteg before the stressed syllable": 14759,
+    "meteg after the stressed syllable": 234
    },
    "cant-bet": {
     "chanted words checked": 262818,
-    "meteg before the stressed syllable": 14762,
-    "meteg after the stressed syllable": 232
+    "meteg before the stressed syllable": 14760,
+    "meteg after the stressed syllable": 234
    }
   },
   "template_counts": {
@@ -301,17 +301,17 @@
  "counts": {
   "prose verses": {
    "chanted words checked": 233277,
-   "meteg before the stressed syllable": 12956,
+   "meteg before the stressed syllable": 12955,
    "meteg in the stressed syllable, no sof pasuq": 0,
-   "meteg after the stressed syllable": 178,
+   "meteg after the stressed syllable": 179,
    "silluq": 18738,
    "meteg sharing a letter with a non-stress-marking accent": 28
   },
   "poetic verses": {
    "chanted words checked": 29542,
-   "meteg before the stressed syllable": 1805,
+   "meteg before the stressed syllable": 1804,
    "meteg in the stressed syllable, no sof pasuq": 0,
-   "meteg after the stressed syllable": 54,
+   "meteg after the stressed syllable": 55,
    "silluq": 4465,
    "meteg sharing a letter with a non-stress-marking accent": 118
   }
@@ -361,12 +361,12 @@
   "what": "MBS_O counts chanted words with one or more U+05BD meteg marks before the stress and none after it. MAS counts chanted words with one or more U+05BD meteg marks after the stress, irrespective of the number before it.",
   "by_system": {
    "prose verses": {
-    "mbs_only": 12843,
-    "mas": 178
+    "mbs_only": 12842,
+    "mas": 179
    },
    "poetic verses": {
-    "mbs_only": 1786,
-    "mas": 54
+    "mbs_only": 1785,
+    "mas": 55
    }
   },
   "mbs_only_chanted_words_with_multiple_mbs": 122,
@@ -428,13 +428,13 @@
   "prose verses": {
    "closed tsere-vowelled syllable": 26,
    "chanted word closed by a guttural": 34,
-   "open final syllable": 113,
+   "open final syllable": 114,
    "none of the three": 5
   },
   "poetic verses": {
    "closed tsere-vowelled syllable": 16,
    "chanted word closed by a guttural": 26,
-   "open final syllable": 10,
+   "open final syllable": 11,
    "none of the three": 2
   }
  },
@@ -449,7 +449,7 @@
   }
  },
  "actual_type_1_mas": {
-  "cases": 123,
+  "cases": 125,
   "by_initial_stress_pattern": {
    "A": {
     "cases": 103,
@@ -473,10 +473,10 @@
     }
    },
    "not_initially_stressed": {
-    "cases": 1,
+    "cases": 3,
     "by_system": {
-     "prose verses": 1,
-     "poetic verses": 0
+     "prose verses": 2,
+     "poetic verses": 1
     }
    }
   },
@@ -497,9 +497,9 @@
     "jta": "ya`.!lI.mu"
    },
    "not_initially_stressed": {
-    "bcv": "je46:14",
-    "chanted_word": "וְהַשְׁמִ֣יעֽוּ",
-    "jta": "v^.hash.!mI.`u"
+    "bcv": "1k7:37",
+    "chanted_word": "לְכֻלָּֽהְנָֽה׃",
+    "jta": "l^.khul.!lah.na"
    }
   }
  },
@@ -507,8 +507,8 @@
   "what": "Every syllable immediately after a penultimate primary stress with exactly one regular conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable is checked for U+05BD. Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require that the next word not begin with vocal shewa. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
   "not_fit_records_what": "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted word, its next chanted word when present, and whether it meets each of the three Fit-for-MAS criteria.",
-  "candidate_chanted_words": 53962,
-  "non_type_specific_conditions": 3380,
+  "candidate_chanted_words": 53964,
+  "non_type_specific_conditions": 3381,
   "fitting_any_type": 377,
   "with_mas": 200,
   "without_mas": 177,
@@ -570,7 +570,7 @@
   },
   "mas_not_in_the_table": {
    "stress_not_penultimate": 4,
-   "stress_is_silluq": 0,
+   "stress_is_silluq": 2,
    "next_word_not_disjunctive": 15,
    "next_word_not_initially_stressed": 1,
    "type_1_subtype_C": 4,
@@ -578,7 +578,7 @@
    "outside_the_three_types": 7
   },
   "accent_grammar_token_counts": {
-   "1": 53155,
+   "1": 53157,
    "2": 807
   },
   "records": [
@@ -9063,6 +9063,25 @@
     "meets_third_fit_for_mas_criterion": false
    },
    {
+    "bcv": "1k7:37",
+    "system": "prose verses",
+    "chanted_word": "לְכֻלָּֽהְנָֽה׃",
+    "jta": "l^.khul.!lah.na",
+    "next_chanted_word": null,
+    "intervening_punctuation": [],
+    "mam_form": "לְכֻלָּֽהְנָֽה׃",
+    "next_mam_form": null,
+    "intervening_mam_punctuation": null,
+    "types": [
+     "open final syllable"
+    ],
+    "type_1_subtype": null,
+    "next_chanted_word_starts_with_a_vocal_shewa": null,
+    "meets_first_fit_for_mas_criterion": false,
+    "meets_second_fit_for_mas_criterion": false,
+    "meets_third_fit_for_mas_criterion": false
+   },
+   {
     "bcv": "1k11:22",
     "system": "prose verses",
     "chanted_word": "וַיֹּ֣אמֶֽר",
@@ -9427,6 +9446,25 @@
     "meets_third_fit_for_mas_criterion": true
    },
    {
+    "bcv": "jb4:12",
+    "system": "poetic verses",
+    "chanted_word": "מֶֽנְהֽוּ׃",
+    "jta": "!men.hu",
+    "next_chanted_word": null,
+    "intervening_punctuation": [],
+    "mam_form": "מֶֽנְהֽוּ׃",
+    "next_mam_form": null,
+    "intervening_mam_punctuation": null,
+    "types": [
+     "open final syllable"
+    ],
+    "type_1_subtype": null,
+    "next_chanted_word_starts_with_a_vocal_shewa": null,
+    "meets_first_fit_for_mas_criterion": false,
+    "meets_second_fit_for_mas_criterion": false,
+    "meets_third_fit_for_mas_criterion": false
+   },
+   {
     "bcv": "jb5:10",
     "system": "poetic verses",
     "chanted_word": "וְשֹׁ֥לֵֽחַ",
@@ -9526,7 +9564,7 @@
   "conclusion": "MAS before verse end has a conjunctive accent; verse-final MAS follows silluq.",
   "counts": {
    "conjunctive": 232,
-   "disjunctive": 0
+   "disjunctive": 2
   }
  },
  "type_2_type_3_overlap": {
@@ -11799,6 +11837,37 @@
    "metegs_in_the_snapshot": 1,
    "next_mam_form": "אִ֛ישׁ",
    "intervening_mam_punctuation": []
+  },
+  {
+   "bcv": "1k7:37",
+   "system": "prose verses",
+   "chanted_word": "לְכֻלָּֽהְנָֽה׃",
+   "next_chanted_word": null,
+   "snapshot_before_qere": null,
+   "accents_and_letters": "לכלהנה",
+   "jta": "l^.khul.!lah.na",
+   "syllables_after_the_stress": 1,
+   "syllable": "na",
+   "syllable_is_open": true,
+   "vowel": "qamats",
+   "is_the_last_syllable": true,
+   "chanted_word_is_closed_by_a_guttural": false,
+   "next_chanted_word_is_initially_stressed": null,
+   "next_chanted_word_starts_with_a_vocal_shewa": null,
+   "next_chanted_word_accent_classification": null,
+   "has_sof_pasuq": true,
+   "shares_its_letter_with": [],
+   "structural_type": "open final syllable",
+   "subtype": null,
+   "type_1_subtype": null,
+   "atom": 1,
+   "mam_form": "לְכֻלָּֽהְנָֽה׃",
+   "mam_form_matched_by": "as written; one candidate in the verse",
+   "mam_form_candidates": 1,
+   "metegs_in_mam_today": 2,
+   "metegs_in_the_snapshot": 2,
+   "next_mam_form": null,
+   "intervening_mam_punctuation": null
   },
   {
    "bcv": "1k8:16",
@@ -15068,6 +15137,37 @@
    "intervening_mam_punctuation": []
   },
   {
+   "bcv": "jb4:12",
+   "system": "poetic verses",
+   "chanted_word": "מֶֽנְהֽוּ׃",
+   "next_chanted_word": null,
+   "snapshot_before_qere": null,
+   "accents_and_letters": "מנהו",
+   "jta": "!men.hu",
+   "syllables_after_the_stress": 1,
+   "syllable": "hu",
+   "syllable_is_open": true,
+   "vowel": "shuruq",
+   "is_the_last_syllable": true,
+   "chanted_word_is_closed_by_a_guttural": false,
+   "next_chanted_word_is_initially_stressed": null,
+   "next_chanted_word_starts_with_a_vocal_shewa": null,
+   "next_chanted_word_accent_classification": null,
+   "has_sof_pasuq": true,
+   "shares_its_letter_with": [],
+   "structural_type": "open final syllable",
+   "subtype": null,
+   "type_1_subtype": null,
+   "atom": 1,
+   "mam_form": "מֶֽנְהֽוּ׃",
+   "mam_form_matched_by": "as written; one candidate in the verse",
+   "mam_form_candidates": 1,
+   "metegs_in_mam_today": 2,
+   "metegs_in_the_snapshot": 2,
+   "next_mam_form": null,
+   "intervening_mam_punctuation": null
+  },
+  {
    "bcv": "jb5:10",
    "system": "poetic verses",
    "chanted_word": "וְשֹׁ֥לֵֽחַ",
@@ -16774,9 +16874,24 @@
   }
  ],
  "post_silluq": {
-  "source_annotations": [],
+  "source_annotations": [
+   {
+    "bcv": "1k7:37",
+    "mam_form": "לְכֻלָּֽהְנָֽה׃",
+    "text": "לְכֻלָּֽהְנָֽה",
+    "letters-with-silluq": "לכלֽהנה",
+    "metegs_after_silluq": 1
+   },
+   {
+    "bcv": "jb4:12",
+    "mam_form": "מֶֽנְהֽוּ׃",
+    "text": "מֶֽנְהֽוּ",
+    "letters-with-silluq": "מֽנהו",
+    "metegs_after_silluq": 1
+   }
+  ],
   "what": "A meteg on a syllable AFTER the silluq, which would put two U+05BD in one verse-final chanted word and make telling the meteg from the silluq a question about syllables rather than about position.",
-  "in_mam": 0,
+  "in_mam": 2,
   "how_it_is_counted": "A post-stress record whose chanted word has sof pasuq is one: the silluq is in the stressed syllable and this mark is after it. The census of 2026-09-03 could not support this count, its verse-final test having been position-based, and the claim was withdrawn from doc/holman-meteg-m23-isaiah-23-12.md on that ground."
  },
  "diagnostics": {

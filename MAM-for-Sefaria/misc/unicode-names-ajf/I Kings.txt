@@ -7060,7 +7060,7 @@ q,∵,(mer),c,∵,b
 SPACE
 α,∵,x,a,(tip),d
 SPACE
-l,:,k,u,l,·,a,(mos),h,:,n,a,(mos),h,(sopa)
+l,:,k,u,l,·,a,(mos),h,:,n,a,h,(sopa)
 SPACE
 LEFT CURLY BRACKET,σ,RIGHT CURLY BRACKET
 SPACE

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "85827ff6056ec75523d19c84660cead31c7eaa211360a7097513b1340b38cdb6",
+  "inventory_sha256": "90876fa4797603f84807b1fd23492cd10d88592e3a118bbb18fdc312884da128",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -25891,6 +25891,77 @@
             "index": 2,
             "disposition": "mam-context",
             "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
+          }
+        ]
+      }
+    },
+    {
+      "id": "BC-Kings מל\"א 7:37 note 1 נוסח",
+      "ref": [
+        "BC-Kings מל\"א",
+        "7",
+        "37"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "b3b13676a7de494ce0ef7b515eec5d5d9819b576a45d82799cd9e77423909f6d",
+      "original_target": {
+        "tmpl_name": "מ:סילוק לפני געיה",
+        "tmpl_params": {
+          "1": "לְכֻלָּֽהְנָֽה",
+          "2": "לכלֽהנה"
+        }
+      },
+      "near_target": "לְכֻלָּֽהְנָֽה",
+      "original_body": [
+        "=א (קו של סילוק מלעיל באות למ\"ד, וקו של געיה מלרע באות נו\"ן), וכך אצל ברויאר ומג\"ה; והשוו איוב ד,יב.",
+        {
+          "tmpl_name": "ש"
+        },
+        "ל,ק,ש1=לְכֻלָּֽהְנָה (קו של סילוק בלבד מלעיל באות למ\"ד), וכן הוא בדפוסים וקורן וסימנים ומכון ממרא."
+      ],
+      "clauses": [
+        "=א (קו של סילוק מלעיל באות למ\"ד, וקו של געיה מלרע באות נו\"ן), וכך אצל ברויאר ומג\"ה; והשוו איוב ד,יב.",
+        "ל,ק,ש1=לְכֻלָּֽהְנָה (קו של סילוק בלבד מלעיל באות למ\"ד), וכן הוא בדפוסים וקורן וסימנים ומכון ממרא."
+      ],
+      "change_causes": [
+        "template resolution"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "76v"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "1b94f8b722eadcd208e3ef0f0d0c170dbc325445b38f7454a4646a9a9970e3bc",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "Reviewed by Codex on 2026-10-12. Resolving the explicit silluq-position wrapper preserves the full Hebrew atom. Both unchanged source clauses retain explicit MAM context; no clause is promoted and no manuscript reading is supplied by this review.",
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "=א (קו של סילוק מלעיל באות למ\"ד, וקו של געיה מלרע באות נו\"ן), וכך אצל ברויאר ומג\"ה; והשוו איוב ד,יב."
+            ],
+            [
+              "ל,ק,ש1=לְכֻלָּֽהְנָה (קו של סילוק בלבד מלעיל באות למ\"ד), וכן הוא בדפוסים וקורן וסימנים ומכון ממרא."
+            ]
+          ]
+        },
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Keep MAM's attribution of the selected two-mark reading, its edition comparisons and its cross-reference verbatim with the MAM subject."
+          },
+          {
+            "index": 1,
+            "disposition": "mam-context",
+            "reason": "Keep MAM's attributed alternative with silluq alone and its edition comparisons verbatim with the MAM subject."
           }
         ]
       }
@@ -72400,6 +72471,77 @@
             "index": 0,
             "disposition": "near-subject",
             "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+          }
+        ]
+      }
+    },
+    {
+      "id": "D3-Job 4:12 note 1 נוסח",
+      "ref": [
+        "D3-Job",
+        "4",
+        "12"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "734832d39796a653ed6cb065e1e5471355cea8aeba0dfddc5f16c5aa225218a3",
+      "original_target": {
+        "tmpl_name": "מ:סילוק לפני געיה",
+        "tmpl_params": {
+          "1": "מֶֽנְהֽוּ",
+          "2": "מֽנהו"
+        }
+      },
+      "near_target": "מֶֽנְהֽוּ",
+      "original_body": [
+        "=א,ל,ש1,ק-מ (קו של סילוק מלעיל באות מ\"ם, וקו של געיה מלרע באות ה\"א), וכך אצל ברויאר ומג\"ה וכמו כן במכון ממרא וסימנים; והשוו מל\"א ז,לז.",
+        {
+          "tmpl_name": "ש"
+        },
+        "ל-א=מֶֽנְהוּ (קו של סילוק בלבד מלעיל באות מ\"ם), וכמו כן בדפוסים וקורן."
+      ],
+      "clauses": [
+        "=א,ל,ש1,ק-מ (קו של סילוק מלעיל באות מ\"ם, וקו של געיה מלרע באות ה\"א), וכך אצל ברויאר ומג\"ה וכמו כן במכון ממרא וסימנים; והשוו מל\"א ז,לז.",
+        "ל-א=מֶֽנְהוּ (קו של סילוק בלבד מלעיל באות מ\"ם), וכמו כן בדפוסים וקורן."
+      ],
+      "change_causes": [
+        "template resolution"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "271r"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "2792bf601de0646519bd76b66cabdbcc246645602fdda8881b60be2b943cd5d9",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "Reviewed by Codex on 2026-10-12. Resolving the explicit silluq-position wrapper preserves the full Hebrew atom. Both unchanged source clauses retain explicit MAM context; no clause is promoted and no manuscript reading is supplied by this review.",
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "=א,ל,ש1,ק-מ (קו של סילוק מלעיל באות מ\"ם, וקו של געיה מלרע באות ה\"א), וכך אצל ברויאר ומג\"ה וכמו כן במכון ממרא וסימנים; והשוו מל\"א ז,לז."
+            ],
+            [
+              "ל-א=מֶֽנְהוּ (קו של סילוק בלבד מלעיל באות מ\"ם), וכמו כן בדפוסים וקורן."
+            ]
+          ]
+        },
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Keep MAM's attribution of the selected two-mark reading, its edition comparisons and its cross-reference verbatim with the MAM subject."
+          },
+          {
+            "index": 1,
+            "disposition": "mam-context",
+            "reason": "Keep MAM's attributed alternative with silluq alone and its edition comparisons verbatim with the MAM subject."
           }
         ]
       }

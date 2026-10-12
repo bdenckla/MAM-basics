@@ -12362,6 +12362,13 @@
     },
     {
       "wtel_type": "tmpl",
+      "wtel_subtype": "מ:סילוק לפני געיה",
+      "count_C": 0,
+      "count_D": 0,
+      "count_E": 2
+    },
+    {
+      "wtel_type": "tmpl",
       "wtel_subtype": "מ:ספר חדש",
       "count_C": 24,
       "count_D": 0,
@@ -12909,6 +12916,10 @@
       "count": 2
     },
     {
+      "stack": "E/נוסח/מ:סילוק לפני געיה",
+      "count": 2
+    },
+    {
       "stack": "E/נוסח/מ:פסק",
       "count": 23
     },
@@ -13130,6 +13141,12 @@
       "wtel_subtype": "מ:נו״ן הפוכה",
       "arg_count": 1,
       "count": 9,
+      "variations": 1
+    },
+    {
+      "wtel_subtype": "מ:סילוק לפני געיה",
+      "arg_count": 2,
+      "count": 2,
       "variations": 1
     },
     {
@@ -13375,10 +13392,10 @@
       "total": 568
     },
     "plus-E": {
-      "fully_checked": 4199,
+      "fully_checked": 4201,
       "partially_checked": 0,
       "totally_unchecked": 0,
-      "total": 4199
+      "total": 4201
     }
   },
   "normal_order_cov_top_paths_by_case": {

@@ -734,7 +734,7 @@ def build_next_conjunctive_body(survey: dict) -> list:
     assert (
         len(records)
         + sum(
-            record["next_chanted_word_accent_classification"] == "disjunctive"
+            record["next_chanted_word_accent_classification"] in {"disjunctive", None}
             for record in survey["post_stress"]
         )
         == total

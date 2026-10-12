@@ -1569,7 +1569,7 @@ SPACE
 SPACE
 $,·sh,‥,(mun),m,∵,c.
 SPACE
-m,∵,(mos),n,:,h,(mos),v,·,(sopa)
+m,∵,(mos),n,:,h,v,·,(sopa)
 
 Job 4:13 in vtrad vtbhs
 b,·,i,(dex),$,·si,:,3,i,p,·,i,y,m.

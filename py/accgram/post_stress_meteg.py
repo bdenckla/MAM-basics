@@ -71,8 +71,9 @@ cant-bet is retained in the JSON for the rendered appendix.
 
 THE STRESS-LETTER ACCENT CHECK retains one result from the 2026-09-03 census table.  The
 table read the accents on the initial Hebrew letter of the one ``jta`` syllable marked ``!``;
-``stress_accent_classification`` implements that exact rule and establishes only that every
-MAS has a conjunctive accent there.  The four ``misc-vayomer`` records have a narrow-sense
+``stress_accent_classification`` implements that exact rule: MAS before verse end has a
+conjunctive accent there, while verse-final MAS follows silluq. The four ``misc-vayomer``
+records have a narrow-sense
 paseq after the chanted word, so that stroke leaves the underlying accent conjunctive.  In a
 poetic verse, U+05A5 can be yored in an oleh-we-yored whose ole is in the same chanted word or
 the preceding chanted word.  The check refuses either future shape rather than silently calling
