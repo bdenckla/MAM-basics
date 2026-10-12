@@ -1,22 +1,40 @@
 # Near-Aleppo release preparation
 
-State: live; release-notes editing is the current phase
+State: live; notes approved and release publication in progress
 
 Ben requested on 2026-10-12: "Let's make a Near-Aleppo release" and
 "Before we release, I will likely want to edit the release notes". Codex prepared
-[a new draft](near-aleppo-release-notes-2026-10-12-draft.md) for that editing step.
+[release notes](near-aleppo-release-notes-2026-10-12.md) for that editing step.
 The [October 7 dry run](near-aleppo-release-notes-2026-10-07-draft.md) remains
 the historical draft and packaging proposal.
+
+Ben approved publication on 2026-10-12: "Great, let's make that draft official
+and do whatever else is needed to make the release." Codex is carrying out
+the release through `gh`; Ben need not create it in the web GUI.
 
 ## Cumulative revision ledger
 
 | Requirement | Disposition |
 | --- | --- |
 | Draft fresh notes from the October 7 sketch and subsequent records | Implemented 2026-10-12; the new draft describes the current dataset and pages |
-| Give Ben an opportunity to edit before release | Active; no tag, release ZIP, or GitHub release has been created by this task |
+| Give Ben an opportunity to edit before release | Implemented; Ben accepted the draft and authorized publication on 2026-10-12 |
 | Include the current note and carrier contracts and qere-without-ketiv work | Implemented; measured against the current reviewed ledger and build populations |
-| Select the release date, tag, final commit, and attachment filenames | Unresolved; decide after the release-notes text is ready |
-| Package and publish the dataset release | Deferred until the editing phase finishes; use the dataset-only scope below |
+| Select the release date, tag, final commit, and attachment filenames | Implemented; use the date and names below, and tag the commit finalizing these notes |
+| Package and publish the dataset release | Active; create and verify the dataset-only ZIP, then publish through gh |
+
+## Approved release scope
+
+Codex selected the descriptive date tag `near-aleppo-2026-10-12` and release
+title "Near-Aleppo — 2026-10-12" under Ben's publication authorization.
+The attachments are `near-aleppo-2026-10-12.zip` and
+`near-aleppo-release-notes-2026-10-12.md`. The annotated tag will identify the
+commit finalizing the notes. Package files from that committed tree, never from
+uncommitted working files. Upload and verify both attachments before publication.
+
+The approved content is the October 12 draft, with its draft labels removed,
+release identity filled in, and attachment references made usable on GitHub.
+No dataset, generator, manuscript decision, or licensing policy changes are
+part of this publication phase.
 
 ## Draft baseline and evidence
 
@@ -30,8 +48,8 @@ The current candidate's dataset and pages were checked at that exact commit.
 It is a content baseline, not a selected final release commit: release-notes
 edits and any later product changes must be reconciled before tagging.
 
-There are no existing GitHub releases or tags, verified through GitHub's releases
-and tag-ref APIs on 2026-10-12. The first announcements were made on 2026-10-06,
+Before this release, GitHub's release and tag-ref APIs returned no releases or
+tags, verified again on 2026-10-12. The first announcements were made on 2026-10-06,
 so comparisons use the reconstructed anchors recorded in the October 7 draft:
 
 | Comparison | Commit |
@@ -80,7 +98,7 @@ anchors passed local checks. The existing prose mark-order lint passed
 The full mega and suite are deferred to the nightly cadence in
 `doc/review-trial.md`; this phase changes Markdown only.
 
-## Completing the release after editing
+## Publication sequence
 
 Keep `AGENTS.md`, `doc/review-trial.md`, `doc/near-aleppo-build.md`, and the
 iterative-document-editing and Hebrew-prose skills as the controlling instructions.

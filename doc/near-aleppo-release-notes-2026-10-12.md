@@ -1,16 +1,14 @@
-# Near-Aleppo (NA) release notes — 2026-10-12 (draft)
+# Near-Aleppo (NA) release notes — 2026-10-12
 
-State: live; awaiting Ben's edits before release
+State: executed 2026-10-12; official notes for the near-aleppo-2026-10-12 release
 
 This update puts NA-adjusted note content directly in the dataset, adds body-text
 encodings at qere-without-ketiv sites, and improves pointed-ketiv representations.
 The Near-Aleppo example edition (NAEE) now displays ketiv/qere pairs in a curved
 box or "cartouche", with the pointed qere above the ketiv.
 
-This is a draft dated 2026-10-12, not a release announcement. It describes the
-dataset and pages at commit `a29f1c08924cb9ab01fe7952257fc8df615ebdbf`, compared
-with the dataset first announced on 2026-10-06. The release date, tag, and final
-commit remain to be selected after editing.
+This release is dated 2026-10-12 and recorded by the MAM-basics tag
+`near-aleppo-2026-10-12`. It updates the dataset first announced on 2026-10-06.
 
 ## Dataset changes
 
@@ -146,15 +144,16 @@ lists the outstanding cases and coverage limitations.
 
 ## Release contents
 
-The proposed dataset ZIP contains `README.md`, `LICENSE.md`, and the 24 book
-JSON files in `plus/`, all from `out/near-aleppo/` at the final release commit.
-These release notes are a separate attachment. The dataset license remains
-CC BY-SA 4.0, with attribution in `LICENSE.md`.
+The dataset attachment, `near-aleppo-2026-10-12.zip`, contains `README.md`,
+`LICENSE.md`, and the 24 book JSON files in `plus/`, all from
+`out/near-aleppo/` at the release tag. These notes are also attached as
+`near-aleppo-release-notes-2026-10-12.md`. The dataset license remains CC BY-SA 4.0,
+with attribution in `LICENSE.md`.
 
 The [NA documentation](https://bdenckla.github.io/MAM-basics/near-aleppo/)
 and [NAEE](https://bdenckla.github.io/MAM-basics/near-aleppo/edition/) remain live
 pages that can change independently of a dataset release. The ZIP excludes
 the example edition, manuscript image crops, fonts, and internal review records.
 
-Draft comparison and verification details are maintained in
-[near-aleppo-release-status.md](near-aleppo-release-status.md).
+Comparison and release-verification details are recorded in
+[near-aleppo-release-status.md](https://github.com/bdenckla/MAM-basics/blob/main/doc/near-aleppo-release-status.md).
