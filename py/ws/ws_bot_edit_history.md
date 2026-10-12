@@ -272,6 +272,35 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/post-maqaf-ketiv-qere-to-qere-first.json` and
   its selector, `post-maqaf-ketiv-qere-to-qere-first.chapters.json`
 
+### Explicit silluq position: two source annotations, 2026-10-12
+
+- **Purpose:** Wrap the existing `נוסח` targets at 1 Kings 7:37 and Job 4:12
+  with `מ:סילוק לפני געיה`. Parameter 1 preserves the full marked atom;
+  parameter 2 gives its letters with one U+05BD identifying silluq. Sof pasuq
+  remains outside both wrappers. The existing detailed source notes are unchanged.
+- **Authorization and sequencing:** Ben told Codex to proceed on 2026-10-12,
+  confirmed removing later metegs in Sefaria/AJF, and then confirmed that the
+  post-stress-meteg survey should follow both explicit annotations. Public support
+  was pushed at `efb2c407` before the template or chapter annotations were saved.
+  The template and its documentation were created at revision 3088395; the
+  introduction appendix's roster entry was added at revision 3088396. Exact live
+  expansion of both calls equalled the original atoms, including marks and spacing.
+- **Saving run:** 1 Kings 7, revision 3084789 → 3088397; Job 4, revision
+  3084788 → 3088398. Each chapter has exactly one new call. The saving artifacts
+  and downloaded chapter mirrors equal the two `--no-save` previews exactly.
+- **Source scope:** The two existing notes identify the earlier stroke as silluq
+  and the later stroke as meteg. This run encodes those source-note readings and
+  makes no new manuscript judgment.
+- **Post-run download:** Refetched the two chapters and all 36 declared special
+  pages. The special-page mirror had no tracked difference. The observed-template
+  documentation guard then required adding the new name to its actual corpus
+  inventory; all 57 MAM-parsed claims passed after that update.
+- **One-shot:** The exactly-once `old` guards describe the pre-edit text. Verify
+  this run through its saved artifacts and mirror equality, rather than re-running
+  the replacement specification after its targets have changed.
+- **Specification:** `in/mam-ws-bot-edits/silluq-before-meteg.json`;
+  run artifacts `.novc/mam-ws-bot-real-runs/20261012-155640-850657-0400/`.
+
 ## How to look up the original code
 
 All old versions live in the predecessor repo, `bdenckla/trope`. No forest keeps a clone of it

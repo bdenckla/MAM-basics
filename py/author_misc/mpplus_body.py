@@ -49,6 +49,7 @@ _PLUS_COMMON_TEMPLATES = [
     "מ:מקף אפור",
     "מ:דחי",
     "מ:צינור",
+    "מ:סילוק לפני געיה",
     "מ:קמץ",
     "מ:כפול",
     "ר1",
@@ -71,6 +72,7 @@ _PLUS_ACCENT_TEMPLATES = [
     "מ:לגרמיה-2",
     "מ:פסק",
     "מ:מקף אפור",
+    "מ:סילוק לפני געיה",
 ]
 
 _CHOICE_TEMPLATES = [
@@ -530,7 +532,7 @@ def s_common_templates(*, claims: ClaimCollection):
                 ]
             ]
         ),
-        author.heading_level_3("Punctuation templates"),
+        author.heading_level_3("Punctuation and silluq-position templates"),
         tblh.tmpl_purp_table(plus_accent_rows),
         author.heading_level_3("Choice templates"),
         body_shared.choice_templates_intro_para(),

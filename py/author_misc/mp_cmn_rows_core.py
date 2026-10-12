@@ -159,6 +159,16 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         ],
     ),
     (
+        (tmpln.SILLUQ_BEFORE_METEG,),
+        [
+            author.hbo(tmpln.SILLUQ_BEFORE_METEG),
+            "Explicit silluq before a later $meteg. Param 1 is the full marked atom; "
+            "param 2 has its letters and one U+05BD identifying silluq, without "
+            "other marks or punctuation. Param 2 is position metadata, not "
+            "additional Scripture text. Sof pasuq stays outside the template.",
+        ],
+    ),
+    (
         ("מ:דחי", "מ:צינור"),
         [
             [
@@ -405,6 +415,7 @@ CLAIM_DEFS = (
                 "מ:מקף אפור",
                 "מ:דחי",
                 "מ:צינור",
+                tmpln.SILLUQ_BEFORE_METEG,
                 "מ:קמץ",
                 "מ:כפול",
             ]

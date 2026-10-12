@@ -79,10 +79,10 @@ private metadata is not added to the public release schema.
   and product paths in scratch inputs, and use meaningful differential checks for the
   cleanup and explicit stress calculation. Format changed Python with the home Black and
   run relevant focused tests. Follow `doc/review-trial.md` for verification cadence.
-- **Active: support integration.** Commit coherent public and private support, update
+- **Implemented: support integration.** Commit coherent public and private support, update
   private vendoring provenance from the committed public source, integrate through the
   linked-worktree procedure, and push normally before live source annotation.
-- **Active: Wikisource.** Create the pass-through template and its documentation, add it
+- **Implemented: Wikisource.** Create the pass-through template and its documentation, add it
   to the introduction appendix roster, then run the existing bot with `--no-save`, inspect
   exactly the two chapter previews, and apply the reviewed specification. The user's
   execution authorization includes these named live edits; no unrelated page is changed.
@@ -160,4 +160,14 @@ The deliberately regenerated hand-run exports also caught up with previously lag
 inputs: Sefaria and OSIS now show the existing qere-first pairs at 2 Samuel 20:23,
 Jeremiah 48:21, Ezekiel 39:25 and 2 Chronicles 13:19; Sefaria/AJF now include the existing
 second telisha at Judges 19:23 and selected qamats at 2 Kings 22:1. These six known
-differences were audited separately from the new template, which still has zero calls.
+differences were audited separately from the new template, which had zero calls during
+the support-stage check.
+
+## Live source results, 2026-10-12
+
+Support was pushed before source use (`efb2c407`). The template is revision 3088395,
+the appendix entry is revision 3088396, and the chapter annotations are revisions
+3088397 (1 Kings 7) and 3088398 (Job 4). Exact template expansion, saving-artifact
+comparison and downloaded-mirror comparison passed. Each chapter has exactly its
+one new wrapper; the full atoms and existing notes are unchanged. The observed
+template tables now include the actually used name and all 57 MAM-parsed claims pass.
