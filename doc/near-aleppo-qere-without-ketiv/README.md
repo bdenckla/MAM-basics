@@ -35,7 +35,7 @@ owns the selected references, Ben's dated image observations, their qualificatio
 and crop provenance, together with the intended encoding assessments. Update that
 file as Ben supplies further readings or revises an assessment. A case without an
 image reading has `reading`, `observation`, and `crop` set to `null`; the page
-states that an image reading has not yet been recorded.
+states that no image reading is recorded.
 The v4 record format also permits a reviewed case's `observation` to be `null`
 when its remarks add nothing beyond the attached MAM note. Full structured image
 readings and provenance remain in `reading`; only displayed prose is trimmed.
@@ -163,7 +163,9 @@ Ben requested that the encoding choices be prominent, then selected readable
 summaries followed by source notation and a document-only revision. Ben later
 requested that every case begin with its images on 2026-10-11. “Near-Aleppo
 encoding” now follows the images, before the NAEE excerpt and manuscript
-discussion. Each case describes its additional body template. The repeated
+discussion. Each case gives its additional template's name and explanation,
+without implementation-status labels. The encoding conventions describe the
+dataset without contrasting its state with past or planned encodings. The repeated
 “Current encoding — implemented” paragraph identifying `קרי ולא כתיב`
 was removed at Ben's request on 2026-10-11; the introduction states the common
 qere-call convention once. Ben requested removal of the repeated source-notation blocks
@@ -279,8 +281,8 @@ Expected product changes are the additional encodings in `out/near-aleppo/plus/`
 corresponding population records, the example edition and its encoding
 documentation. Preserve MAM source data, all qere letters and marks, and the
 study's images, translations, image-first order and ordinary styling for
-unpointed Hebrew. Update pending labels to implemented only when the actual
-dataset demonstrates that implementation. [MAM-basics issue 304](https://github.com/bdenckla/MAM-basics/issues/304)
+unpointed Hebrew. Encoding descriptions must agree with the dataset.
+[MAM-basics issue 304](https://github.com/bdenckla/MAM-basics/issues/304)
 separately tracks the upstream Jeremiah illustration omission; the study's sic annotation remains.
 The deferred A102 coverage-row work remains separate.
 

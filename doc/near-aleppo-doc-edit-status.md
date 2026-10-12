@@ -2765,3 +2765,26 @@ the study; all nine additional-template descriptions remain. No other generated
 file changed. `git diff --check` passed. Dataset encodings, qere calls, images,
 translations and excerpts are unchanged. Mega and the full suite remain on the
 approved nightly cadence for this static presentation edit.
+
+## Describe encodings without implementation-status labels — 2026-10-11
+
+**Status:** Implemented at Ben's request. Removed all nine “Additional
+template — implemented:” labels and their “The additional template is” lead-in.
+Each description starts with the template name and its explanation. The guide
+describes the encoding conventions directly, without “Current status”,
+“implemented” or “unchanged” framing. The renderer's absent-reading and
+absent-encoding messages also describe recorded information without pending or
+proposed labels. The maintained build guide reflects this presentation.
+
+**Verification:** Work began on main at
+`188a331244d5e474d8aeff902066c91395ca3ed9`. Black passed on the study generator,
+and `py/main_near_aleppo.py --html` regenerated the pages. An independent
+comparison checked all nine template names and explanations against the preceding
+page, then confirmed that all content outside the encoding descriptions and guide
+is unchanged. Images, qere, excerpts, notes, translations and manuscript remarks
+are preserved. No other generated page changed. The remaining uses of
+“intended” and “propose” concern manuscript interpretation rather than encoding
+plans. The read-only `--html --check` confirms all 95 pages/assets and both font
+copies agree with the generator. `git diff --check` passed. Mega and the full
+suite remain on the approved nightly cadence for this
+static presentation edit.

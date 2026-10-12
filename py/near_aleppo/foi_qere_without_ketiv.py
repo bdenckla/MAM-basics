@@ -1,9 +1,9 @@
-"""Encoding choices and manuscript readings beside current MAM and NAEE text.
+"""Encoding choices and manuscript readings beside MAM and NAEE text.
 
-The shared renderer supplies Scripture and MAM notes. The existing closed
-dataset walk validates current qere-only source fragments, excluding note bodies
+The shared renderer supplies Scripture and MAM notes. The closed
+dataset walk validates qere-only source fragments, excluding note bodies
 and copied MAM lemmas. Recorded body templates drive the build, and the study
-checks its implemented labels against the current dataset.
+validates the described encodings against the dataset.
 """
 
 import json
@@ -630,7 +630,7 @@ def _case_summary(rows):
         "BW means between written words, and EOL means at the end of a manuscript line."
     )
     if any(row["reading"] is None for row in rows):
-        legend += " A question mark (?) means that a reading has not yet been recorded."
+        legend += " A question mark (?) means that no image reading is recorded."
     return [
         mb_html.heading_level_2("Case summary"),
         mb_html.div(
@@ -654,12 +654,12 @@ def _encoding_guide():
             mb_html.heading_level_2("Encoding conventions"),
             mb_html.para(
                 [
-                    "The encoding retains each ",
+                    "Each site has a ",
                     _template_name(_QERE_TEMPLATE),
-                    " call and its qere, and supplements that call with one "
+                    " call providing the qere and one "
                     "additional template describing the body text. The "
                     "additional template records which niqqud, if any, are present and whether "
-                    "horizontal space is present. The cases below require "
+                    "horizontal space is present. The cases use "
                     "three kinds of additional template:",
                 ]
             ),
@@ -692,7 +692,7 @@ def _encoding_guide():
             ),
             mb_html.para(
                 _prose(
-                    "The existing niqqud templates are specific to near-Aleppo. Their payloads use "
+                    "The niqqud templates are specific to near-Aleppo. Their payloads use "
                     "artificial carrier letters to hold the marks; those carriers "
                     "are not written manuscript letters. The carrier can be alef, "
                     "vav, or, rarely, dalet. At 2 Kings 19:31, an artificial vav "
@@ -702,10 +702,8 @@ def _encoding_guide():
             ),
             mb_html.para(
                 [
-                    "Current status: every site below uses the ",
-                    _template_name(_QERE_TEMPLATE),
-                    " template. Each implemented additional template immediately precedes "
-                    "that unchanged call, with no intervening separator. The example edition "
+                    "The additional template immediately precedes the qere call, "
+                    "with no intervening separator. The example edition "
                     "displays the body marks or blank space below the qere in the same box. "
                     "The box and artificial carriers are editorial display conventions; "
                     "their widths do not measure manuscript spacing.",
@@ -717,38 +715,20 @@ def _encoding_guide():
 
 
 def _encoding(row):
-    intended = row["intended_encoding"]
-    if intended is None:
-        intention = [
-            mb_html.bold("Intended additional template — assessment open:"),
-            " ",
-            "A manuscript-based encoding assessment has not yet been recorded.",
-        ]
+    encoding = row["intended_encoding"]
+    if encoding is None or encoding["template"] is None:
+        description = "No body encoding is recorded for this site."
     else:
-        name = _ADDITIONAL_TEMPLATES[intended["kind"]]
-        implemented = intended["template"] is not None
-        intention = [
-            mb_html.bold(
-                "Additional template — implemented:"
-                if implemented
-                else "Intended additional template — pending:"
-            ),
-            " ",
-            [
-                (
-                    "The additional template is "
-                    if implemented
-                    else "The proposed additional template is "
-                ),
-                _template_name(name),
-            ],
-            ". ",
-            *_prose(intended["explanation"], row["romanized"]),
+        name = _ADDITIONAL_TEMPLATES[encoding["kind"]]
+        description = [
+            _template_name(name),
+            ": ",
+            *_prose(encoding["explanation"], row["romanized"]),
         ]
     return mb_html.div(
         [
             mb_html.heading_level_3("Near-Aleppo encoding"),
-            mb_html.para(intention),
+            mb_html.para(description),
         ],
         {"class": "qvlk-encoding"},
     )
@@ -980,9 +960,7 @@ def render(verses, rows):
             )
         if row["reading"] is None:
             contents.append(
-                mb_html.para(
-                    "An image reading has not yet been recorded for this entry."
-                )
+                mb_html.para("No image reading is recorded for this entry.")
             )
         else:
             if row["observation"] is not None:
