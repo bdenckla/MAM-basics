@@ -897,7 +897,7 @@ def _pointed_ketiv(numbers):
                 "Samuel 5:2 and 21:12; with the maqaf of the note's form where MAM's "
                 "ketiv has a space, at Isaiah 44:24, as the note says the two words "
                 "are read together; with the marks that the note writes on bracketed "
-                "alefs written as the near-Aleppo dataset's template ",
+                "alef letters written as the near-Aleppo dataset's template ",
                 he_name(MARKS_WITHOUT_LETTER),
                 ", at Isaiah 36:12; and at Proverbs 3:30, with a space where MAM has "
                 "a maqaf before the template, as the note's form has it. Ben's "
