@@ -2840,3 +2840,14 @@ template in `out/near-aleppo/plus/BC-Kings.json` at 2 Kings 19:31. It also check
 the adjacent colon, centered-paragraph class and Hebrew styling. All other page
 text and markup are unchanged; no other generated page changed. Mega and the
 full suite remain on the approved nightly cadence for this presentation edit.
+
+## Describe the rounded-edge box as a cartouche — 2026-10-12
+
+**Status:** Fixed using Ben's exact replacement sentence, describing the
+rounded-edge box or “cartouche” used for normal ketiv/qere cases.
+
+**Verification:** The clean main baseline was `bd143369`. Black, HTML
+regeneration and `git diff --check` passed. An independent comparison confirms
+the exact sentence replacement with no other study text or markup changes and
+no other generated page changes. Mega and the full suite remain on the approved
+nightly cadence for this sentence-only edit.

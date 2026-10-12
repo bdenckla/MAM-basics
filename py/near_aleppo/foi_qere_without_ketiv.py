@@ -717,7 +717,8 @@ def _encoding_guide(rows):
                     "The additional template immediately precedes the ",
                     _template_name(_QERE_TEMPLATE),
                     " template, with no intervening separator. The example edition "
-                    "displays the body marks or blank space below the qere in the same box. "
+                    "displays the body marks or blank space below the qere in the same "
+                    'rounded-edge box or "cartouche" that it uses for normal ketiv/qere cases. '
                     "The box and artificial carriers are editorial display conventions; "
                     "their widths do not measure manuscript spacing.",
                 ]
