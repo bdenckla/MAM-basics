@@ -2788,3 +2788,10 @@ plans. The read-only `--html --check` confirms all 95 pages/assets and both font
 copies agree with the generator. `git diff --check` passed. Mega and the full
 suite remain on the approved nightly cadence for this
 static presentation edit.
+
+**Integration:** Commit `0756a2eb` contains the wording changes. Normal merge
+`dfb8e1f2257da0cc33f8d7ced1b062ef121be102` retains the separately reviewed
+integration at `origin/main` commit `202e69e8`. The four task files are unchanged
+by the merge. The independent study comparison and `--html --check` pass again,
+and all 20 focused near-Aleppo, template, prose, filename and time-zone checks
+pass. Mega and the full suite remain on the approved nightly cadence.
