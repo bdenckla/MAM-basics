@@ -171,7 +171,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "The carrier letter of the templates for marks without a letter",
-        "The original GA convention puts the marks on alefs, an arbitrary carrier, rather than on a letter matching the unwritten word. The later GV and final GD extensions are recorded separately below.",
+        "The original GA convention puts the marks on alef letters, an arbitrary carrier, rather than on a letter matching the unwritten word. The later GV and final GD extensions are recorded separately below.",
         ("A placeholder matching the unwritten word, such as a bet at 2 Samuel 18:20",),
     ),
     Choice(
@@ -185,7 +185,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks at a position of no width",
-        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its use at 2 Samuel 18:20 was implemented on 2026-10-11 with the explicit orphan-marks-alef variant; the later final-dalet font accommodation is recorded separately below.",
+        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its use at 2 Samuel 18:20 was implemented on 2026-10-11 with an alef carrier for the tsere and merkha; the later final-dalet font accommodation is recorded separately below.",
         ("A parameter of the one template",),
     ),
     Choice(
@@ -825,7 +825,7 @@ _CHOICES = (
         "2026-10-05",
         _BEN,
         "The later GV carrier extension",
-        "Ben's GV extension of 2026-10-05 accepts the artificial VAV + HOLAM carrier tagged carrier=holam-male-vav in the template specific to the near-Aleppo dataset, `ניקוד בלי אות`. This records the chosen holam-male meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example edition displays it between double guillemets.",
+        "Ben's GV extension of 2026-10-05 accepts the artificial VAV + HOLAM carrier in the template specific to the near-Aleppo dataset, `ניקוד בלי אות`. This records the chosen holam-male meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example edition displays it between double guillemets.",
         (
             "Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning",
         ),
@@ -850,7 +850,7 @@ _CHOICES = (
         "2026-10-08",
         _BEN,
         "The final dalet font accommodation at Isaiah 54:16",
-        "Ben requested an artificial dalet carrying all three final-nun marks in `ניקוד בלי אות ובלי רווח`. The explicit GD variant, carrier=final-nun-dalet, accepts exactly DALET + DAGESH + TSERE + MAHAPAKH immediately after the ketiv final nun, with no space. The marks remain associated with that nun; the dalet is not a ketiv consonant, and this font accommodation supplies no claim of ownerless manuscript marks. This is the first final carrier case; earlier carriers were initial or medial. GA and GV retain their meanings and dagesh prohibition, and the whole qere is unchanged.",
+        "Ben requested an artificial dalet carrying all three final-nun marks in `ניקוד בלי אות ובלי רווח`. The GD payload is exactly DALET + DAGESH + TSERE + MAHAPAKH, immediately after the ketiv final nun, with no space. The marks remain associated with that nun; the dalet is not a ketiv consonant, and this font accommodation supplies no claim of ownerless manuscript marks. This is the first final carrier case; earlier carriers were initial or medial. GA and GV retain their meanings and dagesh prohibition, and the whole qere is unchanged.",
         ("Omitting a mark to accommodate the font", "Allowing dagesh on GA or GV"),
     ),
     Choice(
@@ -864,21 +864,14 @@ _CHOICES = (
         "2026-10-08",
         _BEN,
         "Medial orphan-template names",
-        "Ben approved migrating the remaining medial orphan instances without adjacent literal separators from `ניקוד בלי אות` to `ניקוד בלי אות ובלי רווח`. The name change preserves every carrier parameter, mark, written letter and separator. Both names accept the existing GA and explicit holam-male-vav GV contracts; a GV remains artificial VAV + HOLAM with its discriminator. Leading orphans retain the original name. No new manuscript adjudication or pointing change is made.",
+        "Ben approved migrating the remaining medial orphan instances without adjacent literal separators from `ניקוד בלי אות` to `ניקוד בלי אות ובלי רווח`. The name change preserves every carrier payload, mark, written letter and separator. Both names accept the existing GA and GV payloads; a GV remains artificial VAV + HOLAM. Leading orphans retain the original name. No new manuscript adjudication or pointing change is made.",
         ("Keeping the older name at these medial orphan positions",),
     ),
     Choice(
         "2026-10-12",
         _BEN,
-        "Remove the carrier parameter",
-        "Ben removed the carrier parameter from both artificial-carrier templates. Parameter 1 retains every carrier letter and mark, including the holam-male vav, the mixed alef/vav payload and the final-nun dalet accommodation. The earlier dated decisions describe the former parameter labels. The current templates have only parameter 1; the edition's displayed forms and the carriers' interpretations are unchanged.",
-        ("Keeping redundant carrier labels alongside the payload",),
-    ),
-    Choice(
-        "2026-10-12",
-        _BEN,
         "The divine-name holam at 1 Kings 8:11",
-        "Near-Aleppo keeps the holam recorded in MAM's note. The note calls Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo. This supersedes the earlier omission based on the missing siglum.",
+        "Near-Aleppo keeps the holam recorded in MAM's note. The note calls Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo.",
         ("Omitting the holam because the note lacks the Aleppo siglum",),
     ),
 )
