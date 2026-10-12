@@ -211,9 +211,13 @@ written letter or accommodate marks associated with a written letter. Their posi
 carrier forms, and display are explained in <a href="#gav-display" data-na-link="down">GAV notation and display</a>.</p>
 <h3 id="gav-display">GAV notation and display</h3>
 <p>Position: the near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות</bdi> represents
-marks at a position of nonzero width. Its name describes the position, not the carrier letter.</p>
-<p>Carrier forms: the supported template accepts GA
-<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> or GV
+marks at a position of nonzero width. Its name describes the position, not the carrier letter. The
+near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> represents marks at
+a position of no width, including a medial position within a written atom. It inserts no separator.
+Medial orphans without adjacent literal separators use this name; leading orphans and explicit
+separators retain their representations.</p>
+<p>Carrier forms: both templates accept GA
+<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> and GV
 <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">וֹ</bdi>","carrier":"holam-male-vav"}</code>
 as its <code>tmpl_params</code>. GA permits one or more artificial alefs, each followed by permitted
 marks. GV requires exactly VAV + HOLAM and the <code>carrier=holam-male-vav</code> discriminator.
@@ -230,56 +234,72 @@ supplies guillemets, as in <bdi lang="hbo" class="pointed">«אֵ»</bdi> and
 <bdi lang="hbo" class="pointed">«אֹ»</bdi> loses the chosen holam-male distinction. Surrounding
 separators remain explicit strings or whitespace templates; an orphan template inserts no automatic
 space.</p>
-<p>The supported nonzero-width template occurs at <a href="edition/A1-Genesis.html#c14v2" data-na-link="page">Genesis
-14:2</a>, <a href="edition/A1-Genesis.html#c14v8" data-na-link="page">14:8</a>,
-<a href="edition/A1-Genesis.html#c25v23" data-na-link="page">25:23</a>; <a href="edition/B2-Judges.html#c11v37" data-na-link="page">Judges
-11:37</a>, <a href="edition/B2-Judges.html#c20v13" data-na-link="page">20:13</a>;
-<a href="edition/BA-1Samuel.html#c13v8" data-na-link="page">1 Samuel 13:8</a>,
-<a href="edition/BA-1Samuel.html#c14v32" data-na-link="page">14:32</a>,
-<a href="edition/BA-1Samuel.html#c17v23" data-na-link="page">17:23</a>,
-<a href="edition/BA-1Samuel.html#c20v2" data-na-link="page">20:2</a>; <a href="edition/BB-2Samuel.html#c3v3" data-na-link="page">2 Samuel
-3:3</a>, <a href="edition/BB-2Samuel.html#c18v3" data-na-link="page">18:3</a>,
-<a href="edition/BB-2Samuel.html#c20v5" data-na-link="page">20:5</a>, <a href="edition/BB-2Samuel.html#c21v9" data-na-link="page">21:9</a>,
-<a href="edition/BB-2Samuel.html#c21v20" data-na-link="page">21:20</a>,
-<a href="edition/BB-2Samuel.html#c22v8" data-na-link="page">22:8</a>,
-<a href="edition/BB-2Samuel.html#c22v51" data-na-link="page">22:51</a>, <a href="edition/BB-2Samuel.html#c23v9" data-na-link="page">23:9</a>
-(twice); <a href="edition/BC-1Kings.html#c4v7" data-na-link="page">1 Kings 4:7</a>,
-<a href="edition/BC-1Kings.html#c7v20" data-na-link="page">7:20</a>, <a href="edition/BC-1Kings.html#c9v18" data-na-link="page">9:18</a>,
-<a href="edition/BC-1Kings.html#c15v18" data-na-link="page">15:18</a>,
-<a href="edition/BC-1Kings.html#c16v26" data-na-link="page">16:26</a>; <a href="edition/BD-2Kings.html#c4v5" data-na-link="page">2 Kings
-4:5</a>, <a href="edition/BD-2Kings.html#c5v25" data-na-link="page">5:25</a>,
-<a href="edition/BD-2Kings.html#c9v15" data-na-link="page">9:15</a>, <a href="edition/BD-2Kings.html#c11v4" data-na-link="page">11:4</a>,
-<a href="edition/BD-2Kings.html#c11v9" data-na-link="page">11:9</a>, <a href="edition/BD-2Kings.html#c11v10" data-na-link="page">11:10</a>,
-<a href="edition/BD-2Kings.html#c11v15" data-na-link="page">11:15</a>,
-<a href="edition/BD-2Kings.html#c11v20" data-na-link="page">11:20</a>,
-<a href="edition/BD-2Kings.html#c12v12" data-na-link="page">12:12</a>,
+<p>The supported nonzero-width template occurs at <a href="edition/B2-Judges.html#c20v13" data-na-link="page">Judges
+20:13</a>; <a href="edition/BA-1Samuel.html#c14v32" data-na-link="page">1 Samuel 14:32</a>,
+<a href="edition/BA-1Samuel.html#c20v2" data-na-link="page">20:2</a>; <a href="edition/BB-2Samuel.html#c21v9" data-na-link="page">2 Samuel
+21:9</a>, <a href="edition/BB-2Samuel.html#c23v9" data-na-link="page">23:9</a>; <a href="edition/BC-1Kings.html#c4v7" data-na-link="page">1
+Kings 4:7</a>, <a href="edition/BC-1Kings.html#c7v20" data-na-link="page">7:20</a>,
+<a href="edition/BC-1Kings.html#c15v18" data-na-link="page">15:18</a>; <a href="edition/BD-2Kings.html#c4v7" data-na-link="page">2 Kings
+4:7</a>, <a href="edition/BD-2Kings.html#c11v20" data-na-link="page">11:20</a>,
 <a href="edition/BD-2Kings.html#c15v25" data-na-link="page">15:25</a>,
-<a href="edition/BD-2Kings.html#c17v31" data-na-link="page">17:31</a>, <a href="edition/BD-2Kings.html#c18v27" data-na-link="page">18:27</a>
-(twice), <a href="edition/BD-2Kings.html#c19v31" data-na-link="page">19:31</a>,
-<a href="edition/BD-2Kings.html#c19v37" data-na-link="page">19:37</a>; <a href="edition/C1-Isaiah.html#c3v16" data-na-link="page">Isaiah
-3:16</a>, <a href="edition/C1-Isaiah.html#c25v10" data-na-link="page">25:10</a>,
-<a href="edition/C1-Isaiah.html#c28v15" data-na-link="page">28:15</a>,
-<a href="edition/C1-Isaiah.html#c32v15" data-na-link="page">32:15</a>,
-<a href="edition/C1-Isaiah.html#c36v12" data-na-link="page">36:12</a>,
-<a href="edition/C1-Isaiah.html#c42v20" data-na-link="page">42:20</a>,
+<a href="edition/BD-2Kings.html#c18v27" data-na-link="page">18:27</a>,
+<a href="edition/BD-2Kings.html#c19v31" data-na-link="page">19:31</a>,
+<a href="edition/BD-2Kings.html#c19v37" data-na-link="page">19:37</a>; <a href="edition/C1-Isaiah.html#c28v15" data-na-link="page">Isaiah
+28:15</a>, <a href="edition/C1-Isaiah.html#c36v12" data-na-link="page">36:12</a>,
 <a href="edition/C1-Isaiah.html#c55v13" data-na-link="page">55:13</a>;
 <a href="edition/C2-Jeremiah.html#c10v13" data-na-link="page">Jeremiah 10:13</a>,
 <a href="edition/C2-Jeremiah.html#c17v19" data-na-link="page">17:19</a>,
-<a href="edition/C2-Jeremiah.html#c18v23" data-na-link="page">18:23</a>,
-<a href="edition/C2-Jeremiah.html#c29v23" data-na-link="page">29:23</a>,
 <a href="edition/C2-Jeremiah.html#c40v3" data-na-link="page">40:3</a>,
-<a href="edition/C2-Jeremiah.html#c42v6" data-na-link="page">42:6</a>,
-<a href="edition/C2-Jeremiah.html#c48v7" data-na-link="page">48:7</a>,
 <a href="edition/C2-Jeremiah.html#c52v32" data-na-link="page">52:32</a>;
-<a href="edition/C3-Ezekiel.html#c16v20" data-na-link="page">Ezekiel 16:20</a>,
+<a href="edition/C3-Ezekiel.html#c18v20" data-na-link="page">Ezekiel 18:20</a>,
+<a href="edition/C3-Ezekiel.html#c42v9" data-na-link="page">42:9</a>; <a href="edition/D2-Proverbs.html#c23v24" data-na-link="page">Proverbs
+23:24</a>, <a href="edition/D2-Proverbs.html#c27v24" data-na-link="page">27:24</a>;
+<a href="edition/D3-Job.html#c2v7" data-na-link="page">Job 2:7</a>;
+<a href="edition/E3-Lamentations.html#c1v18" data-na-link="page">Lamentations 1:18</a>,
+<a href="edition/E3-Lamentations.html#c2v2" data-na-link="page">2:2</a>,
+<a href="edition/E3-Lamentations.html#c4v16" data-na-link="page">4:16</a>,
+<a href="edition/E3-Lamentations.html#c5v3" data-na-link="page">5:3</a>,
+<a href="edition/E3-Lamentations.html#c5v5" data-na-link="page">5:5</a>,
+<a href="edition/E3-Lamentations.html#c5v7" data-na-link="page">5:7</a> (twice);
+<a href="edition/F1-Daniel.html#c2v43" data-na-link="page">Daniel 2:43</a>, inside pointed ketivs or beside unchanged
+qere-without-ketiv calls. The zero-width template occurs at
+<a href="edition/A1-Genesis.html#c14v2" data-na-link="page">Genesis 14:2</a>,
+<a href="edition/A1-Genesis.html#c14v8" data-na-link="page">14:8</a>,
+<a href="edition/A1-Genesis.html#c25v23" data-na-link="page">25:23</a>; <a href="edition/B2-Judges.html#c11v37" data-na-link="page">Judges
+11:37</a>; <a href="edition/BA-1Samuel.html#c13v8" data-na-link="page">1 Samuel 13:8</a>,
+<a href="edition/BA-1Samuel.html#c17v23" data-na-link="page">17:23</a>; <a href="edition/BB-2Samuel.html#c3v2" data-na-link="page">2 Samuel
+3:2</a>, <a href="edition/BB-2Samuel.html#c3v3" data-na-link="page">3:3</a>,
+<a href="edition/BB-2Samuel.html#c18v3" data-na-link="page">18:3</a>,
+<a href="edition/BB-2Samuel.html#c18v20" data-na-link="page">18:20</a>,
+<a href="edition/BB-2Samuel.html#c20v5" data-na-link="page">20:5</a>,
+<a href="edition/BB-2Samuel.html#c21v20" data-na-link="page">21:20</a>,
+<a href="edition/BB-2Samuel.html#c22v8" data-na-link="page">22:8</a>,
+<a href="edition/BB-2Samuel.html#c22v51" data-na-link="page">22:51</a>,
+<a href="edition/BB-2Samuel.html#c23v9" data-na-link="page">23:9</a>; <a href="edition/BC-1Kings.html#c9v18" data-na-link="page">1 Kings
+9:18</a>, <a href="edition/BC-1Kings.html#c16v26" data-na-link="page">16:26</a>; <a href="edition/BD-2Kings.html#c4v5" data-na-link="page">2
+Kings 4:5</a>, <a href="edition/BD-2Kings.html#c5v25" data-na-link="page">5:25</a>,
+<a href="edition/BD-2Kings.html#c9v15" data-na-link="page">9:15</a>, <a href="edition/BD-2Kings.html#c11v4" data-na-link="page">11:4</a>,
+<a href="edition/BD-2Kings.html#c11v9" data-na-link="page">11:9</a>, <a href="edition/BD-2Kings.html#c11v10" data-na-link="page">11:10</a>,
+<a href="edition/BD-2Kings.html#c11v15" data-na-link="page">11:15</a>,
+<a href="edition/BD-2Kings.html#c12v12" data-na-link="page">12:12</a>,
+<a href="edition/BD-2Kings.html#c17v31" data-na-link="page">17:31</a>,
+<a href="edition/BD-2Kings.html#c18v27" data-na-link="page">18:27</a>; <a href="edition/C1-Isaiah.html#c3v16" data-na-link="page">Isaiah
+3:16</a>, <a href="edition/C1-Isaiah.html#c25v10" data-na-link="page">25:10</a>,
+<a href="edition/C1-Isaiah.html#c32v15" data-na-link="page">32:15</a>,
+<a href="edition/C1-Isaiah.html#c42v20" data-na-link="page">42:20</a>,
+<a href="edition/C1-Isaiah.html#c54v16" data-na-link="page">54:16</a>;
+<a href="edition/C2-Jeremiah.html#c18v23" data-na-link="page">Jeremiah 18:23</a>,
+<a href="edition/C2-Jeremiah.html#c29v23" data-na-link="page">29:23</a>,
+<a href="edition/C2-Jeremiah.html#c42v6" data-na-link="page">42:6</a>,
+<a href="edition/C2-Jeremiah.html#c48v7" data-na-link="page">48:7</a>; <a href="edition/C3-Ezekiel.html#c14v14" data-na-link="page">Ezekiel
+14:14</a>, <a href="edition/C3-Ezekiel.html#c14v20" data-na-link="page">14:20</a>,
+<a href="edition/C3-Ezekiel.html#c16v20" data-na-link="page">16:20</a>,
 <a href="edition/C3-Ezekiel.html#c16v25" data-na-link="page">16:25</a>,
 <a href="edition/C3-Ezekiel.html#c16v51" data-na-link="page">16:51</a>,
-<a href="edition/C3-Ezekiel.html#c18v20" data-na-link="page">18:20</a>,
-<a href="edition/C3-Ezekiel.html#c25v9" data-na-link="page">25:9</a>,
+<a href="edition/C3-Ezekiel.html#c25v9" data-na-link="page">25:9</a>, <a href="edition/C3-Ezekiel.html#c28v3" data-na-link="page">28:3</a>,
 <a href="edition/C3-Ezekiel.html#c36v13" data-na-link="page">36:13</a>,
 <a href="edition/C3-Ezekiel.html#c36v14" data-na-link="page">36:14</a>,
 <a href="edition/C3-Ezekiel.html#c36v15" data-na-link="page">36:15</a>,
-<a href="edition/C3-Ezekiel.html#c42v9" data-na-link="page">42:9</a>,
 <a href="edition/C3-Ezekiel.html#c44v24" data-na-link="page">44:24</a>,
 <a href="edition/C3-Ezekiel.html#c46v19" data-na-link="page">46:19</a>; <a href="edition/CA-Hosea.html#c10v10" data-na-link="page">Hosea
 10:10</a>; <a href="edition/D1-Psalms.html#c56v7" data-na-link="page">Psalms 56:7</a>,
@@ -288,29 +308,20 @@ space.</p>
 <a href="edition/D1-Psalms.html#c140v11" data-na-link="page">140:11</a>;
 <a href="edition/D2-Proverbs.html#c6v14" data-na-link="page">Proverbs 6:14</a>,
 <a href="edition/D2-Proverbs.html#c16v27" data-na-link="page">16:27</a>,
-<a href="edition/D2-Proverbs.html#c23v24" data-na-link="page">23:24</a>,
-<a href="edition/D2-Proverbs.html#c23v31" data-na-link="page">23:31</a>,
-<a href="edition/D2-Proverbs.html#c27v24" data-na-link="page">27:24</a>; <a href="edition/D3-Job.html#c2v7" data-na-link="page">Job 2:7</a>,
-<a href="edition/D3-Job.html#c24v6" data-na-link="page">24:6</a>, <a href="edition/D3-Job.html#c33v19" data-na-link="page">33:19</a>,
+<a href="edition/D2-Proverbs.html#c23v31" data-na-link="page">23:31</a>; <a href="edition/D3-Job.html#c24v6" data-na-link="page">Job
+24:6</a>, <a href="edition/D3-Job.html#c33v19" data-na-link="page">33:19</a>,
 <a href="edition/D3-Job.html#c33v28" data-na-link="page">33:28</a> (twice); <a href="edition/E2-Ruth.html#c2v1" data-na-link="page">Ruth
 2:1</a>, <a href="edition/E2-Ruth.html#c3v3" data-na-link="page">3:3</a>;
-<a href="edition/E3-Lamentations.html#c1v18" data-na-link="page">Lamentations 1:18</a>,
-<a href="edition/E3-Lamentations.html#c2v2" data-na-link="page">2:2</a>,
-<a href="edition/E3-Lamentations.html#c3v20" data-na-link="page">3:20</a>,
-<a href="edition/E3-Lamentations.html#c4v16" data-na-link="page">4:16</a>,
-<a href="edition/E3-Lamentations.html#c5v3" data-na-link="page">5:3</a>,
-<a href="edition/E3-Lamentations.html#c5v5" data-na-link="page">5:5</a>,
-<a href="edition/E3-Lamentations.html#c5v7" data-na-link="page">5:7</a> (twice);
+<a href="edition/E3-Lamentations.html#c3v20" data-na-link="page">Lamentations 3:20</a>;
 <a href="edition/E4-Ecclesiastes.html#c4v8" data-na-link="page">Ecclesiastes 4:8</a>;
 <a href="edition/E5-Esther.html#c10v1" data-na-link="page">Esther 10:1</a>; <a href="edition/F1-Daniel.html#c2v9" data-na-link="page">Daniel
 2:9</a>, <a href="edition/F1-Daniel.html#c2v22" data-na-link="page">2:22</a>,
-<a href="edition/F1-Daniel.html#c2v43" data-na-link="page">2:43</a>, <a href="edition/F1-Daniel.html#c9v12" data-na-link="page">9:12</a>;
-<a href="edition/FA-Ezra.html#c7v25" data-na-link="page">Ezra 7:25</a>;
+<a href="edition/F1-Daniel.html#c9v12" data-na-link="page">9:12</a>; <a href="edition/FA-Ezra.html#c7v25" data-na-link="page">Ezra 7:25</a>;
 <a href="edition/FB-Nehemiah.html#c12v16" data-na-link="page">Nehemiah 12:16</a>;
 <a href="edition/FC-1Chronicles.html#c12v16" data-na-link="page">1 Chronicles 12:16</a>;
 <a href="edition/FD-2Chronicles.html#c9v29" data-na-link="page">2 Chronicles 9:29</a>,
-<a href="edition/FD-2Chronicles.html#c18v8" data-na-link="page">18:8</a>, inside pointed ketivs or beside unchanged
-qere-without-ketiv calls.</p>
+<a href="edition/FD-2Chronicles.html#c18v8" data-na-link="page">18:8</a>, for medial GA/GV orphans and the separately
+documented explicit variants.</p>
 <p>The original GA example, at <a href="edition/C1-Isaiah.html#c36v12" data-na-link="page">Isaiah 36:12</a>, is
 <bdi lang="hbo" class="pointed">«אֵאֵ֥»</bdi>. Near-Aleppo encodes the bracketed alef carriers
 supplied in MAM's note; they are not written ketiv letters.</p>
@@ -451,12 +462,14 @@ Near-Aleppo adds note templates, <bdi lang="hbo" class="name">ניקוד בלי 
 <li>Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture.
 The stored pointed ketiv, <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, is a Scripture
 alternative.</li>
-<li>GA and GV artificial carriers are not ketiv consonants. The no-space template
-<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts carrier=final-nun-dalet with
-DALET + DAGESH + TSERE + MAHAPAKH (GD). GD immediately follows the final nun at Isaiah 54:16 without
-a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence
-of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier
-as a ketiv consonant or insert a separator at a carrier-template boundary. The explicit
+<li>GA and GV artificial carriers are not ketiv consonants. Both carrier template names accept GA
+and explicit holam-male-vav GV. Medial GA/GV orphans without adjacent literal separators use the
+no-space name; leading orphans and explicit separators retain their representations. The no-space
+template <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts carrier=final-nun-dalet
+with DALET + DAGESH + TSERE + MAHAPAKH (GD). GD immediately follows the final nun at Isaiah 54:16
+without a space. Its marks remain associated with that nun; the dalet is a font accommodation, not
+evidence of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial
+carrier as a ketiv consonant or insert a separator at a carrier-template boundary. The explicit
 carrier=alef-and-holam-male-vav variant requires ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then
 VAV + HOLAM at 2 Kings 19:31; the final vav retains the holam-male carrier meaning. The explicit
 carrier=orphan-marks-alef variant accepts exactly ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel

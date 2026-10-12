@@ -1,10 +1,10 @@
 """Closed artificial-carrier shapes used by the near-Aleppo dataset.
 
-The original GA shape remains unchanged. The explicit GV variant retains the
-chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet for the
-final-nun marks at Isaiah 54:16, without a space. The mixed alef/vav variant
-at 2 Kings 19:31 retains three alef carriers followed by VAV + HOLAM.
-No carrier is a ketiv consonant.
+Both carrier names accept the original GA shape and the explicit GV variant,
+retaining the chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet
+for the final-nun marks at Isaiah 54:16, without a space. The mixed alef/vav variant
+at 2 Kings 19:31 retains three alef carriers followed by VAV + HOLAM under the
+original carrier name only. No carrier is a ketiv consonant.
 Build validation and edition display use the same carrier validation.
 The explicit orphan-marks-alef variant carries tsere and merkha without space
 at 2 Samuel 18:20. A separate parameterless template records space without marks.
@@ -46,7 +46,9 @@ def carriers(tmpl, label):
     if set(tmpl) != {"tmpl_name", "tmpl_params"}:
         raise AssertionError(f"{label}: unexpected orphan-template fields")
     params = tmpl["tmpl_params"]
-    if tmpl["tmpl_name"] == MARKS_WITHOUT_LETTER_OR_SPACE:
+    if tmpl["tmpl_name"] == MARKS_WITHOUT_LETTER_OR_SPACE and params.get(
+        GV_PARAMETER
+    ) in (GD_VARIANT, ORPHAN_ALEF_VARIANT):
         variants = {
             GD_VARIANT: GD_CARRIER,
             ORPHAN_ALEF_VARIANT: ORPHAN_ALEF_CARRIER,
@@ -59,14 +61,19 @@ def carriers(tmpl, label):
                 f"{label}: {params[GV_PARAMETER]} requires exactly {expected!r}"
             )
         return expected
-    if tmpl["tmpl_name"] != MARKS_WITHOUT_LETTER or set(params) not in (
+    if tmpl["tmpl_name"] not in (
+        MARKS_WITHOUT_LETTER,
+        MARKS_WITHOUT_LETTER_OR_SPACE,
+    ) or set(params) not in (
         {"1"},
         {"1", GV_PARAMETER},
     ):
         raise AssertionError(f"{label}: unsupported orphan-template shape")
     value = params["1"]
     if GV_PARAMETER in params:
-        variants = {GV_VARIANT: GV_CARRIER, GAV_VARIANT: GAV_CARRIER}
+        variants = {GV_VARIANT: GV_CARRIER}
+        if tmpl["tmpl_name"] == MARKS_WITHOUT_LETTER:
+            variants[GAV_VARIANT] = GAV_CARRIER
         if (
             params[GV_PARAMETER] not in variants
             or value != variants[params[GV_PARAMETER]]
@@ -105,7 +112,9 @@ def validate_body(tmpl, label):
         carriers(tmpl, label)
     elif name == MARKS_WITHOUT_LETTER_OR_SPACE:
         carriers(tmpl, label)
-        if tmpl["tmpl_params"][GV_PARAMETER] != ORPHAN_ALEF_VARIANT:
-            raise AssertionError(f"{label}: GD is not a qere-without-ketiv body")
+        if tmpl["tmpl_params"].get(GV_PARAMETER) != ORPHAN_ALEF_VARIANT:
+            raise AssertionError(
+                f"{label}: a no-space qere-without-ketiv body requires orphan-marks-alef"
+            )
     else:
         raise AssertionError(f"{label}: unknown body template {name!r}")

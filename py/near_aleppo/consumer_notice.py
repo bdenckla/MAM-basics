@@ -98,7 +98,11 @@ NOTICE = {
             f"{POINTED_KETIV_PARAMETER}, is a Scripture alternative."
         ),
         (
-            "GA and GV artificial carriers are not ketiv consonants. The no-space "
+            "GA and GV artificial carriers are not ketiv consonants. Both carrier "
+            "template names accept GA and explicit holam-male-vav GV. Medial "
+            "GA/GV orphans without adjacent literal separators use the no-space "
+            "name; leading orphans and explicit separators retain their representations. "
+            "The no-space "
             f"template {MARKS_WITHOUT_LETTER_OR_SPACE} accepts "
             "carrier=final-nun-dalet with DALET + DAGESH + TSERE + MAHAPAKH (GD). "
             "GD immediately follows the final nun at Isaiah 54:16 without a space. "

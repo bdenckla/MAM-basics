@@ -1,0 +1,1166 @@
+{
+  "baseline": "70e5358c842789183bf46e26ee39dff981296fac",
+  "approved_branch": "63c4662c3c9c81dd09eb666196c14acf62562edc",
+  "books": 24,
+  "approved_non_notice_paths": [
+    {
+      "file": "out/near-aleppo/plus/A1-Genesis.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "14",
+        "2",
+        2,
+        1,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/A1-Genesis.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "14",
+        "8",
+        2,
+        1,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/A1-Genesis.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "25",
+        "23",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/B2-Judges.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "11",
+        "37",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "13",
+        "8",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "17",
+        "23",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "3",
+        "2",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "3",
+        "3",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "18",
+        "3",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "20",
+        "5",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "21",
+        "20",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "22",
+        "8",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "22",
+        "51",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BA-Samuel.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "23",
+        "9",
+        2,
+        2,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "9",
+        "18",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "16",
+        "26",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "4",
+        "5",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "4",
+        "7",
+        2,
+        3,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "5",
+        "25",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "9",
+        "15",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "11",
+        "4",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "11",
+        "9",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "11",
+        "10",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "11",
+        "15",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "12",
+        "12",
+        2,
+        5,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "17",
+        "31",
+        2,
+        5,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/BC-Kings.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "18",
+        "27",
+        2,
+        5,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד",
+        2,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C1-Isaiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "3",
+        "16",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C1-Isaiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "25",
+        "10",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C1-Isaiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "32",
+        "15",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C1-Isaiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "42",
+        "20",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C2-Jeremiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "18",
+        "23",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C2-Jeremiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "29",
+        "23",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C2-Jeremiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "42",
+        "6",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C2-Jeremiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "48",
+        "7",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "14",
+        "14",
+        2,
+        1,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "14",
+        "20",
+        2,
+        1,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "16",
+        "20",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "16",
+        "25",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "16",
+        "51",
+        2,
+        3,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "25",
+        "9",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "28",
+        "3",
+        2,
+        1,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "36",
+        "13",
+        2,
+        3,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "36",
+        "14",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "36",
+        "15",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "44",
+        "24",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/C3-Ezekiel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "46",
+        "19",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/CA-The-12-Minor-Prophets.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "10",
+        "10",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D1-Psalms.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "56",
+        "7",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D1-Psalms.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "72",
+        "17",
+        2,
+        3,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D1-Psalms.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "92",
+        "16",
+        2,
+        3,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D1-Psalms.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "140",
+        "11",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D2-Proverbs.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "6",
+        "14",
+        2,
+        6,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D2-Proverbs.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "16",
+        "27",
+        2,
+        3,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D2-Proverbs.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "23",
+        "31",
+        2,
+        3,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D3-Job.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "24",
+        "6",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D3-Job.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "33",
+        "19",
+        2,
+        2,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D3-Job.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "33",
+        "28",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/D3-Job.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "33",
+        "28",
+        2,
+        4,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/E2-Ruth.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "2",
+        "1",
+        2,
+        1,
+        "tmpl_params",
+        "1",
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/E2-Ruth.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "3",
+        "3",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/E3-Lamentations.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "3",
+        "20",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/E4-Ecclesiastes.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "4",
+        "8",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/E5-Esther.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "10",
+        "1",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/F1-Daniel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "2",
+        "9",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/F1-Daniel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "2",
+        "22",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/F1-Daniel.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "9",
+        "12",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/FA-Ezra-Nexemiah.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "7",
+        "25",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/FA-Ezra-Nexemiah.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "12",
+        "16",
+        2,
+        0,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/FC-Chronicles.json",
+      "path": [
+        "book39s",
+        0,
+        "chapters",
+        "12",
+        "16",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/FC-Chronicles.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "9",
+        "29",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    },
+    {
+      "file": "out/near-aleppo/plus/FC-Chronicles.json",
+      "path": [
+        "book39s",
+        1,
+        "chapters",
+        "18",
+        "8",
+        2,
+        1,
+        "tmpl_params",
+        "כתיב מנוקד",
+        1,
+        "tmpl_name"
+      ]
+    }
+  ],
+  "result": "pass"
+}

@@ -66,5 +66,13 @@ full pin. Generated SVGs remain local and unstaged, with private comparison evid
 Browser appearance was not verified. No pending branch was integrated, main pushed or
 schedule extended.
 
+## Evidence integration, 2026-10-12
+
+Ben's separate authorization consolidated the latest authoritative status on main.
+Earlier isolation and no-main-push statements describe each nightly execution stage.
+Historical failures and the actual reviewed/tested run-4 anchors remain unchanged.
+The [integration receipt](branch-integration-2026-10-11.md) records standalone implementation
+verification; it is not a fifth nightly run and does not alter the seven-night schedule.
+
 After night seven, record the compact assessment of Ben's time, meaningful defects,
 unnecessary changes and adequacy of evidence here.

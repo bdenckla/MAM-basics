@@ -271,12 +271,40 @@ _WITHOUT_MASORA_CIRCLES = "the form's two HEBREW MARK MASORA CIRCLE removed"
 _MAQAF_FOR_KETIV_SPACE = "the form's maqaf kept where the ketiv has a space"
 _CARRIERS_FIRST = "the form's bracketed marks written as rule 8's template"
 _SPACE_FOR_MAQAF_BEFORE = "the maqaf before the template made a space"
+_REVIEWED_ORPHAN = "Ben's reviewed orphan-vowel representation"
 _POINTED_KETIV_ADJUSTMENTS = {
     ('BA-Samuel שמ"ב', "5", "2"): (Site(1, 1), _WITHOUT_MASORA_CIRCLES),
     ('BA-Samuel שמ"ב', "21", "12"): (Site(1, 1), _WITHOUT_MASORA_CIRCLES),
     ("C1-Isaiah", "36", "12"): (Site(2, 1), _CARRIERS_FIRST),
     ("C1-Isaiah", "44", "24"): (Site(1, 1), _MAQAF_FOR_KETIV_SPACE),
     ("D2-Proverbs", "3", "30"): (Site(1, 2), _SPACE_FOR_MAQAF_BEFORE),
+    ('BC-Kings מל"ב', "4", "7"): (Site(2, 1), _REVIEWED_ORPHAN),
+    ("C3-Ezekiel", "14", "14"): (Site(1, 1), _REVIEWED_ORPHAN),
+    ("C3-Ezekiel", "14", "20"): (Site(1, 1), _REVIEWED_ORPHAN),
+    ("C3-Ezekiel", "28", "3"): (Site(1, 1), _REVIEWED_ORPHAN),
+}
+# Ben's decisions of 2026-10-08 preserve the complete quoted source form before
+# choosing an orphan representation. Each guard includes the whole ketiv and
+# qere. The 2 Kings CGJ separated qubuts from qamats on bet; separate carrier and
+# written-letter clusters need no such separator. The source note retains it.
+# Ezekiel's accents remain on nun; only tsere is moved to the medial GA carrier.
+_REVIEWED_ORPHAN_VALUES = {
+    ('BC-Kings מל"ב', "4", "7"): (
+        ("בניכי", "וּבָנַ֔יִךְ", "בֻ͏ָנַ֔יִכי"),
+        ("", "אֻ", "בָנַ֔יִכי", False),
+    ),
+    ("C3-Ezekiel", "14", "14"): (
+        ("דנאל", "דָּנִיֵּ֣אל", "דָּנִֵּ֣אל"),
+        ("דָּנִּ֣", "אֵ", "אל", True),
+    ),
+    ("C3-Ezekiel", "14", "20"): (
+        ("דנאל", "דָּנִיֵּ֣אל", "דָּנִֵּ֣אל"),
+        ("דָּנִּ֣", "אֵ", "אל", True),
+    ),
+    ("C3-Ezekiel", "28", "3"): (
+        ("מדנאל", "מִדָּנִיֵּ֑אל", "מִדָּנִֵּ֑אל"),
+        ("מִדָּנִּ֑", "אֵ", "אל", True),
+    ),
 }
 # The one pointed ketiv holding a ZERO WIDTH NON-JOINER, which MAM-parsed-plus has
 # only in this note's body. The character is retained between tav and he to keep
@@ -878,6 +906,20 @@ class Readings:
             )
         if not in_place(form, params[_TARGET], verse, clause.site.note, _KETIV_SIDE):
             raise AssertionError(f"{verse}: a written pointed ketiv is not in place")
+        if adjustment == _REVIEWED_ORPHAN:
+            expected, replacement = _REVIEWED_ORPHAN_VALUES[verse]
+            if (ketiv, qere, value) != expected:
+                raise AssertionError(
+                    f"{verse}: reviewed orphan representation's source changed: "
+                    f"expected {expected!r}, got {(ketiv, qere, value)!r}"
+                )
+            prefix, carrier, suffix, without_space = replacement
+            orphan = phase2.marks_without_letter(
+                carrier, verse, without_space=without_space
+            )
+            template_params[phase2.POINTED_KETIV_PARAMETER] = (
+                [prefix] if prefix else []
+            ) + [orphan, suffix]
         if trailing:
             self._tally(_TRAILING_MAQAF, verse)
         self._tally(_TARGETS_CHANGED, bang=clause.bang)

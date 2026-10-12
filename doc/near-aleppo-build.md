@@ -59,6 +59,20 @@ The final artificial vav retains the ḥolam male carrier meaning without adding
 a written consonant or claiming that a vav is present in the body. The original
 GA and single-carrier GV contracts remain unchanged.
 
+The near-Aleppo dataset's zero-width sibling, `ניקוד בלי אות ובלי רווח`,
+accepts the same GA and explicit holam-male-vav GV shapes. Both render carriers
+in guillemets; neither inserts a separator. By Ben's decision of 2026-10-08,
+medial orphans between written letters with no adjacent literal separator use
+the zero-width name. Leading orphans and existing explicit separators retain
+their representations. Carrier parameters and all Hebrew codepoints are unchanged.
+
+After the last pointing import, before any output is written, a Scripture-target
+check requires each supplied ordinary or trivial pointed ketiv to retain its
+written ketiv consonants, excluding artificial carriers. Raw combining marks
+require a written-letter owner, while explicit orphan templates use the existing
+GA/GV contract, retaining GD as a letter-owned font accommodation. The check inspects values without changing them. It does not
+judge vowel combinations, manuscript ownership or whole-atom grammar.
+
 The build preserves C and D columns, qeres, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It
 copies the original MAM target into every changed note, then adds evidence flags

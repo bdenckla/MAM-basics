@@ -13,7 +13,7 @@
       "critical_rules": [
         "Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it. Near-Aleppo adds note templates, ניקוד בלי אות, and ניקוד בלי אות ובלי רווח, and רווח בלי ניקוד; follow their documented roles.",
         "Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture. The stored pointed ketiv, כתיב מנוקד, is a Scripture alternative.",
-        "GA and GV artificial carriers are not ketiv consonants. The no-space template ניקוד בלי אות ובלי רווח accepts carrier=final-nun-dalet with DALET + DAGESH + TSERE + MAHAPAKH (GD). GD immediately follows the final nun at Isaiah 54:16 without a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier as a ketiv consonant or insert a separator at a carrier-template boundary. The explicit carrier=alef-and-holam-male-vav variant requires ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then VAV + HOLAM at 2 Kings 19:31; the final vav retains the holam-male carrier meaning. The explicit carrier=orphan-marks-alef variant accepts exactly ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel 18:20. The parameterless רווח בלי ניקוד records horizontal space without marks. Each qere-without-ketiv body template immediately precedes the unchanged קרי ולא כתיב call in the same sequence; the body template and qere call describe the same site. A body projection uses the first template; a reading projection uses the qere.",
+        "GA and GV artificial carriers are not ketiv consonants. Both carrier template names accept GA and explicit holam-male-vav GV. Medial GA/GV orphans without adjacent literal separators use the no-space name; leading orphans and explicit separators retain their representations. The no-space template ניקוד בלי אות ובלי רווח accepts carrier=final-nun-dalet with DALET + DAGESH + TSERE + MAHAPAKH (GD). GD immediately follows the final nun at Isaiah 54:16 without a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier as a ketiv consonant or insert a separator at a carrier-template boundary. The explicit carrier=alef-and-holam-male-vav variant requires ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then VAV + HOLAM at 2 Kings 19:31; the final vav retains the holam-male carrier meaning. The explicit carrier=orphan-marks-alef variant accepts exactly ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel 18:20. The parameterless רווח בלי ניקוד records horizontal space without marks. Each qere-without-ketiv body template immediately precedes the unchanged קרי ולא כתיב call in the same sequence; the body template and qere call describe the same site. A body projection uses the first template; a reading projection uses the qere.",
         "Choose one documented branch of each choice-bearing structure; do not concatenate the branches. Near-Aleppo has evaluated away MAM's templates for dual cantillation, qamats, and poetic stress-helper alternatives, so the branches left in near-Aleppo's text are those of the ketiv/qere templates, כתיב מנוקד among them, and of the special-letter words it keeps. A copy of MAM's target in מקרא על פי המסורה keeps all of MAM's alternatives.",
         "A special-letter template's interrupted spelling and uninterrupted word-form are two representations of one word-form; select one text representation rather than collecting both.",
         "Reassemble text fragments before identifying words or maqaf compounds; array, template, and element boundaries are not segmentation boundaries.",
@@ -431,7 +431,7 @@
                       "כתיב מנוקד": [
                         "מ",
                         {
-                          "tmpl_name": "ניקוד בלי אות",
+                          "tmpl_name": "ניקוד בלי אות ובלי רווח",
                           "tmpl_params": {
                             "1": "וֹ",
                             "carrier": "holam-male-vav"
@@ -1017,7 +1017,7 @@
                   "כתיב מנוקד": [
                     "שִׂמְלֹתַ֛",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
                         "1": "אִ"
                       }

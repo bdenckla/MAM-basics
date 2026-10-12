@@ -35,7 +35,7 @@ note, and phase 2 still meets and counts every one. Where MAM's notes
 give the codex's pointed ketiv, ``phase5_readings.py`` adds it to the template in
 POINTED_KETIV_PARAMETER, MAM's parameters staying as they are.
 
-Rule 8's template for marks written where no letter is, MARKS_WITHOUT_LETTER, is
+Rule 8's original template for marks written where no letter is, MARKS_WITHOUT_LETTER, is
 specific to the near-Aleppo dataset. MAM's text never has it, so phase 2 raises if
 it meets it; phase 5 writes it inside a pointed ketiv, and the walks after phase 5
 keep it whole. MARKS_WITHOUT_LETTER_OR_SPACE has the same phase-2 rejection
@@ -190,10 +190,10 @@ _RULES = {
     "מ:נו״ן הפוכה": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:קישור בהערה": _Rule(_VERBATIM, (), _keysets(("1", "2"))),
     SPACE_WITHOUT_MARKS: _Rule(_VERBATIM, (), _keysets(())),
-    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
-        _CARRIERS, (), _keysets(("1", orphan_marks.GV_PARAMETER))
-    ),
     MARKS_WITHOUT_LETTER: _Rule(
+        _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
+    ),
+    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
         _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
     ),
 }
@@ -368,9 +368,10 @@ def carriers_text(tmpl, verse):
     return "[" + orphan_marks.carriers(tmpl, verse) + "]"
 
 
-def marks_without_letter(carriers, verse):
+def marks_without_letter(carriers, verse, *, without_space=False):
     """The near-Aleppo dataset's rule-8 template holding ``carriers``, which carriers_text checks."""
-    tmpl = {"tmpl_name": MARKS_WITHOUT_LETTER, "tmpl_params": {"1": carriers}}
+    name = MARKS_WITHOUT_LETTER_OR_SPACE if without_space else MARKS_WITHOUT_LETTER
+    tmpl = {"tmpl_name": name, "tmpl_params": {"1": carriers}}
     carriers_text(tmpl, verse)
     return tmpl
 
