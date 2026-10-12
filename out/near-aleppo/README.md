@@ -14,9 +14,10 @@ JSON contains the note transformations: consumers need no review-ledger lookup.
 Display formatting remains the consumer's choice. Original source notes and
 review reasoning remain in MAM-parsed-plus and the public review ledger.
 
-Artificial carriers are not ketiv consonants. GA and GV keep their existing
+Artificial carriers are not ketiv consonants. Both carrier templates have only
+parameter 1, containing the payload. GA and GV keep their existing
 meanings and prohibit dagesh. The no-space template `ניקוד בלי אות ובלי רווח`
-retains `carrier=final-nun-dalet`, with DALET + DAGESH + TSERE + MAHAPAKH
+accepts DALET + DAGESH + TSERE + MAHAPAKH
 (GD), immediately after the final nun at Isaiah 54:16. All three marks remain
 associated with that nun, and the whole qere is preserved. This first final
 carrier case is a font accommodation; earlier carriers were initial or medial.
@@ -25,8 +26,8 @@ It makes no claim of ownerless manuscript marks.
 Each selected qere-without-ketiv site retains its complete `קרי ולא כתיב`
 call. An additional body template immediately precedes the qere call in the
 same sequence, with no intervening separator. `ניקוד בלי אות` records marks
-with horizontal space; `ניקוד בלי אות ובלי רווח` with
-`carrier=orphan-marks-alef` records exactly ALEF + TSERE + MERKHA, without
+with horizontal space; `ניקוד בלי אות ובלי רווח`
+records exactly ALEF + TSERE + MERKHA, without
 dagesh or horizontal space, at 2 Samuel 18:20. The parameterless
 `רווח בלי ניקוד` records horizontal space without marks. These body
 templates and their following qere calls describe the same site: a body
@@ -34,8 +35,7 @@ projection selects the body template, and a reading projection selects the
 qere. The example edition displays the body below the qere in one box;
 carrier and box widths do not measure manuscript spacing.
 
-At 2 Kings 19:31, `ניקוד בלי אות` uses the explicit
-`carrier=alef-and-holam-male-vav` variant, requiring exactly `אְאָא֖וֹ`:
+At 2 Kings 19:31, `ניקוד בלי אות` has the mixed alef/vav payload `אְאָא֖וֹ`:
 three marked alefs followed by the artificial VAV + HOLAM carrier. The final
 vav retains the ḥolam male carrier meaning and is not a written body-text letter.
 The original GA and single-carrier GV contracts remain unchanged.

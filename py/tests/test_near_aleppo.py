@@ -73,11 +73,11 @@ def test_qere_only_calls_and_body_templates_match_independent_sources():
                 "א",
                 {
                     "tmpl_name": orphan_marks.MARKS_WITHOUT_LETTER,
-                    "tmpl_params": {"1": "ו", "carrier": orphan_marks.GV_VARIANT},
+                    "tmpl_params": {"1": "ו"},
                 },
                 "ב",
             ],
-            "carrier variant",
+            "carrier alef",
         ),
         (
             [
@@ -86,12 +86,12 @@ def test_qere_only_calls_and_body_templates_match_independent_sources():
                     "tmpl_name": orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE,
                     "tmpl_params": {
                         "1": orphan_marks.GV_CARRIER,
-                        "carrier": "unapproved",
+                        "unexpected": "unapproved",
                     },
                 },
                 "ב",
             ],
-            "carrier variant",
+            "template shape",
         ),
     ),
 )

@@ -876,6 +876,13 @@ _CHOICES = (
         "Ben approved migrating the remaining medial orphan instances without adjacent literal separators from `ניקוד בלי אות` to `ניקוד בלי אות ובלי רווח`. The name change preserves every carrier parameter, mark, written letter and separator. Both names accept the existing GA and explicit holam-male-vav GV contracts; a GV remains artificial VAV + HOLAM with its discriminator. Leading orphans retain the original name. No new manuscript adjudication or pointing change is made.",
         ("Keeping the older name at these medial orphan positions",),
     ),
+    Choice(
+        "2026-10-12",
+        _BEN,
+        "Remove the carrier parameter",
+        "Ben removed the carrier parameter from both artificial-carrier templates. Parameter 1 retains every carrier letter and mark, including the holam-male vav, the mixed alef/vav payload and the final-nun dalet accommodation. The earlier dated decisions describe the former parameter labels. The current templates have only parameter 1; the edition's displayed forms and the carriers' interpretations are unchanged.",
+        ("Keeping redundant carrier labels alongside the payload",),
+    ),
 )
 
 

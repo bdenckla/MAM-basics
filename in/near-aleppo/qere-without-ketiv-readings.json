@@ -119,12 +119,11 @@
       ],
       "intended_encoding": {
         "kind": "marks-without-space",
-        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. The explicit orphan-marks-alef variant uses an artificial alef carrying both marks.",
+        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. An artificial alef has both marks.",
         "template": {
           "tmpl_name": "ניקוד בלי אות ובלי רווח",
           "tmpl_params": {
-            "1": "אֵ֥",
-            "carrier": "orphan-marks-alef"
+            "1": "אֵ֥"
           }
         }
       },
@@ -174,8 +173,7 @@
         "template": {
           "tmpl_name": "ניקוד בלי אות",
           "tmpl_params": {
-            "1": "אְאָא֖וֹ",
-            "carrier": "alef-and-holam-male-vav"
+            "1": "אְאָא֖וֹ"
           }
         }
       },

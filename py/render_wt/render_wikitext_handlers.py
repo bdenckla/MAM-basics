@@ -157,7 +157,7 @@ def _fail_unconverted_renamed_scrdfftar(_hctx, _tmpl):
 
 def _handle_marks_without_letter(_hctx, tmpl):
     # Show explicit artificial carriers in double guillemets. The shared
-    # guard validates GA, GV and GD shapes; the discriminator is metadata.
+    # guard validates the carrier payload in the template's sole parameter.
     params = {
         key: first_and_only_and_str(wtp.template_param_val(tmpl, key))
         for key in wtp.template_param_keys(tmpl)

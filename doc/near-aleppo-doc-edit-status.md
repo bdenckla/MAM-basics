@@ -2851,3 +2851,29 @@ regeneration and `git diff --check` passed. An independent comparison confirms
 the exact sentence replacement with no other study text or markup changes and
 no other generated page changes. Mega and the full suite remain on the approved
 nightly cadence for this sentence-only edit.
+
+## Remove the carrier parameter — 2026-10-12
+
+**Status:** Implemented by Codex at Ben's request: "Let's get rid of this
+parameter. It seems nothing is lost other than some internal self-consistency
+validation."
+
+**Change:** Both artificial-carrier templates now have only parameter 1.
+The maintained pointing and qere-body inputs, shared validation, generated
+dataset, consumer notices and current documentation use that schema. The
+payloads retain every carrier letter and mark and their existing interpretations.
+Earlier dated decisions and finished receipts retain their historical labels;
+the choices page records this later removal.
+
+**Verification:** The clean main baseline was `571e2a31`. Black and
+`git diff --check` passed. Near-Aleppo build and HTML regeneration and the
+complete Near-Aleppo `--check` passed; the focused Near-Aleppo, note-content,
+display-style and prose checks passed 14 tests. A fresh source replay proved
+that the review ledger changes only four removed keys and their evidence
+hashes; every review object is identical. An independent comparison proved
+that all 24 generated books change only the 41 removed keys and their shared
+consumer notice. Hebrew payloads, qeres, separators and all other book values
+are unchanged. The population file and all 66 edition pages are byte-identical.
+Regenerating MAM-with-doc produced no tracked changes. A read-only independent
+diff review found no consequential defects. Mega and the full suite remain on
+the approved nightly cadence.

@@ -283,7 +283,7 @@ def _pending(numbers):
                     "At 2 Samuel 18:20, tsere and merkha without letters or space "
                     "are encoded by ",
                     he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                    ", with carrier=orphan-marks-alef. The same template retains "
+                    ", with an artificial alef. The same template retains "
                     "the separate final-dalet font accommodation at Isaiah 54:16.",
                 ],
                 [

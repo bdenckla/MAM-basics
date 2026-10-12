@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "3a392b7d0d2fae02e10a34fc76f4787b084ce07872ba63f7616c09cebf00e6cd",
+  "inventory_sha256": "7c174c1ef026da47e707cccaf17e2ef491156f753effe225340b54dfe5ea8672",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -1468,8 +1468,7 @@
             {
               "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "וֹ",
-                "carrier": "holam-male-vav"
+                "1": "וֹ"
               }
             },
             "יִ֔ים"
@@ -1502,7 +1501,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "99ffe7a74659260f2f79bab5105fa520612b54db647bff428d4d038ccba5a53b",
+      "evidence_sha256": "13994bf04ca7b69598edd9811e619e48e907ba5cdbfb1b26d14ae659a528dac6",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -1663,8 +1662,7 @@
             {
               "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "וֹ",
-                "carrier": "holam-male-vav"
+                "1": "וֹ"
               }
             },
             "יִ֔ים"
@@ -1685,7 +1683,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "8006e987abf45920788082f6f0287c84063225c37fbae73906a7a1dec1145ee0",
+      "evidence_sha256": "90575aa250a7abb398b0899e3177ea5dcfeb4a2002972f0ece42277a8cbc9cfc",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -23990,8 +23988,7 @@
         {
           "tmpl_name": "ניקוד בלי אות ובלי רווח",
           "tmpl_params": {
-            "1": "אֵ֥",
-            "carrier": "orphan-marks-alef"
+            "1": "אֵ֥"
           }
         },
         {
@@ -24018,7 +24015,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "760dde59ba81672bcdfd74de9413097d5f4efc58655b73aacb0b884c2801186f",
+      "evidence_sha256": "5b083f4f440bda52d0adeb103c3b999fac635346650abaa7a9dc13eb3eef93ef",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -78527,8 +78524,7 @@
             {
               "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "וֹ",
-                "carrier": "holam-male-vav"
+                "1": "וֹ"
               }
             },
             "ידָ֣ע"
@@ -78558,7 +78554,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "9dfa612e6da8c4de77143f3f8d5d6c5ec43248f5b3ed36885be658cb9ef01f55",
+      "evidence_sha256": "92c09d59b89223176e9d3224ee46552014df9aeb27049efd9d014b899aa69b1c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",

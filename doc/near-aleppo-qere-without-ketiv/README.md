@@ -200,13 +200,12 @@ The introduction describes the near-Aleppo-specific templates `ניקוד בלי
 immediately precedes the `קרי ולא כתיב` template in the same sequence, with no
 intervening separator. Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 use
 artificial carriers for marks with horizontal space. At 2 Kings 19:31 the payload
-is `אְאָא֖וֹ`: three marked alefs followed by VAV + HOLAM, with the explicit
-`carrier=alef-and-holam-male-vav` discriminator.
+is `אְאָא֖וֹ`: three marked alefs followed by VAV + HOLAM.
 The encoding guide follows its artificial-vav explanation with a centered
 display of this template's syntax, derived from the validated body record.
-The no-space template's explicit
-`carrier=orphan-marks-alef` variant represents ALEF + TSERE + MERKHA at
-2 Samuel 18:20, without dagesh. The existing `carrier=final-nun-dalet` contract
+Both carrier templates have only parameter 1, containing the payload.
+The no-space template has ALEF + TSERE + MERKHA at
+2 Samuel 18:20, without dagesh. The existing final-dalet contract
 at Isaiah 54:16 remains unchanged. The parameterless `רווח בלי ניקוד`
 records horizontal space without marks at 2 Samuel 16:23, Jeremiah 31:37,
 Jeremiah 50:29, Ruth 3:5 and Ruth 3:17. The example edition shows the body

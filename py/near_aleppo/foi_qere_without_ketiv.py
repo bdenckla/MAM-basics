@@ -651,15 +651,7 @@ def _encoding_guide(rows):
     vav_example = next(row for row in rows if row["reference"] == ["2Kings", 19, 31])
     template = vav_example["intended_encoding"]["template"]
     params = template["tmpl_params"]
-    notation = (
-        "{{"
-        + template["tmpl_name"]
-        + "|"
-        + params["1"]
-        + "|carrier="
-        + params["carrier"]
-        + "}}"
-    )
+    notation = "{{" + template["tmpl_name"] + "|" + params["1"] + "}}"
     return mb_html.div(
         [
             mb_html.heading_level_2("Encoding conventions"),

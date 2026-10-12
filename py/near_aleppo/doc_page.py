@@ -492,20 +492,16 @@ def _gav_display(numbers):
                 mb_html.code(['{"1":"', he_pointed("אֵ"), '"}'], {"dir": "ltr"}),
                 " and GV ",
                 mb_html.code(
-                    ['{"1":"', he_pointed("וֹ"), '","carrier":"holam-male-vav"}'],
+                    ['{"1":"', he_pointed("וֹ"), '"}'],
                     {"dir": "ltr"},
                 ),
                 " as its ",
                 code("tmpl_params"),
                 ". GA permits one or more artificial alefs, each followed by "
-                "permitted marks. GV requires exactly VAV + HOLAM and the ",
-                code("carrier=holam-male-vav"),
-                " discriminator. Neither carrier permits a dagesh. The ",
-                code("carrier"),
-                " parameter is semantic metadata; it identifies the holam-male "
-                "carrier and is not Scripture text. The mixed variant ",
-                code("carrier=alef-and-holam-male-vav"),
-                " requires exactly ",
+                "permitted marks. GV requires exactly VAV + HOLAM, retaining "
+                "the holam-male meaning. Neither GA nor GV permits a dagesh. "
+                "Both templates have only parameter 1, containing the carrier "
+                "payload. The mixed alef/vav payload is exactly ",
                 he_pointed("אְאָא֖וֹ"),
                 " at 2 Kings 19:31: three marked alefs followed by the "
                 "artificial VAV + HOLAM carrier. It also forbids dagesh.",
@@ -553,18 +549,18 @@ def _gav_display(numbers):
             [
                 "The no-space template ",
                 he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                " accepts the explicit orphan-marks-alef variant, ",
+                " accepts the GA payload ",
                 mb_html.code(
-                    ['{"1":"', he_pointed("אֵ֥"), '","carrier":"orphan-marks-alef"}'],
+                    ['{"1":"', he_pointed("אֵ֥"), '"}'],
                     {"dir": "ltr"},
                 ),
                 ", with exactly ALEF + TSERE + MERKHA and no dagesh at 2 Samuel 18:20. "
                 "The same no-space template retains GD, ",
                 mb_html.code(
-                    ['{"1":"', he_pointed("דֵּ֤"), '","carrier":"final-nun-dalet"}'],
+                    ['{"1":"', he_pointed("דֵּ֤"), '"}'],
                     {"dir": "ltr"},
                 ),
-                ". This explicit variant requires exactly DALET + DAGESH + TSERE + "
+                ". This payload requires exactly DALET + DAGESH + TSERE + "
                 "MAHAPAKH. Its permitted dagesh does not relax GA or GV validation. "
                 "It occurs at ",
                 verse_refs((("C1-Isaiah", "54", "16"),)),
@@ -638,10 +634,7 @@ def _added_parameters(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo adds six parameters to templates. Five accompany MAM's "
-                "parameters; the sixth identifies "
-                "the explicit GV, mixed alef/vav, GD and orphan-marks-alef variants of near-Aleppo's "
-                "carrier templates.",
+                "Near-Aleppo adds five parameters to MAM's templates.",
             ]
         ),
         mb_html.para(
@@ -724,19 +717,6 @@ def _added_parameters(numbers):
                 *_joined(families),
                 ".",
             ]
-        ),
-        mb_html.para(
-            "The parameter carrier=holam-male-vav identifies the narrowly licensed "
-            "GV variant of the orphan-mark template. Its parameter 1 must be exactly "
-            "VAV + HOLAM. The carrier parameter is metadata; the artificial vav "
-            "represents orphan holam and is not a written ketiv consonant. "
-            "The mixed alef-and-holam-male-vav variant preserves that final "
-            "VAV + HOLAM after three marked alefs at 2 Kings 19:31. "
-            "The value orphan-marks-alef selects the no-space orphan-mark carrier. "
-            "The same parameter with value final-nun-dalet identifies GD in the "
-            "no-space template, whose parameter 1 must be exactly DALET + DAGESH + "
-            "TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is "
-            "not a written ketiv consonant."
         ),
     ]
 

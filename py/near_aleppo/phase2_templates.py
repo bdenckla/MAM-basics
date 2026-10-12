@@ -119,12 +119,12 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # The marks-without-letter template represents marks that MAM's notes attribute to
 # a nonzero-width space in the codex. Its original schema has one parameter: alefs,
 # each followed by the marks at that position, with alef as an arbitrary carrier.
-# An alef carrier cannot carry dagesh. The GV extension has an explicit carrier
-# discriminator and exactly artificial VAV + HOLAM; the original alef schema remains.
-# The mixed alef-and-holam-male-vav variant requires exactly three marked alefs
+# An alef carrier cannot carry dagesh. The GV payload is exactly artificial
+# VAV + HOLAM; every carrier template has only parameter 1.
+# The mixed alef/vav payload requires exactly three marked alefs
 # followed by VAV + HOLAM at 2 Kings 19:31, preserving that carrier distinction.
-# The no-space template licenses explicit orphan-marks-alef (ALEF + TSERE +
-# MERKHA) and GD (DALET + DAGESH + TSERE + MAHAPAKH) variants. GD accommodates
+# The no-space template licenses GA, including ALEF + TSERE + MERKHA,
+# and GD (DALET + DAGESH + TSERE + MAHAPAKH). GD accommodates
 # the final nun at Isaiah 54:16, without a manuscript-spacing claim.
 # The edition renders the marks in double guillemets; the dataset and the in-place
 # test read them in square brackets, as MAM's notes write them.
@@ -190,12 +190,8 @@ _RULES = {
     "מ:נו״ן הפוכה": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:קישור בהערה": _Rule(_VERBATIM, (), _keysets(("1", "2"))),
     SPACE_WITHOUT_MARKS: _Rule(_VERBATIM, (), _keysets(())),
-    MARKS_WITHOUT_LETTER: _Rule(
-        _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
-    ),
-    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
-        _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
-    ),
+    MARKS_WITHOUT_LETTER: _Rule(_CARRIERS, (), _keysets(("1",))),
+    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(_CARRIERS, (), _keysets(("1",))),
 }
 
 # Templates that phase 2 removes wherever they occur, so that none remains
