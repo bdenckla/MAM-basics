@@ -1,6 +1,6 @@
 # Support and annotate silluq before a later meteg
 
-State: live
+State: executed 2026-10-12
 
 ## Approved execution snapshot, 2026-10-12
 
@@ -12,7 +12,8 @@ Ben subsequently confirmed: "Follow both explicit annotations (Recommended)" for
 the post-stress-meteg survey. This supersedes its deliberate misreading of
 1 Kings 7:37, chosen on 2026-09-09. The survey follows Phonetic MAM's computed stress
 and reconciles verse-final records with the source annotations actually used.
-The undertaking remains tracked by [phonetic-hbo#78](https://github.com/bdenckla/phonetic-hbo/issues/78).
+The undertaking is completed in [phonetic-hbo#78](https://github.com/bdenckla/phonetic-hbo/issues/78),
+closed with Codex's dated completion comment on 2026-10-12.
 
 The source and integration checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`, initially
 `7fb93c9259f3dd4929016f14079f1a768496d580`, on clean main. Development is
@@ -86,7 +87,7 @@ private metadata is not added to the public release schema.
   to the introduction appendix roster, then run the existing bot with `--no-save`, inspect
   exactly the two chapter previews, and apply the reviewed specification. The user's
   execution authorization includes these named live edits; no unrelated page is changed.
-- **Active: refresh.** Complete `mam-wikisource-refresh`, including the source commit,
+- **Implemented: refresh.** Complete `mam-wikisource-refresh`, including the source commit,
   public/private/public dependency loop, separately committed MAM change logs, and affected
   hand-run Sefaria/AJF and OSIS exports. Refresh the introduction independently as its
   README specifies. Inspect all generated diffs and annotate the two-site inventory.
@@ -94,7 +95,7 @@ private metadata is not added to the public release schema.
   both MAM sites, and remove "verse-final" from its silluq group labels. Keep its grouping
   and text records unchanged. Correct any maintained prose that vouches for that false
   sentence under the receipt rules, without rewriting finished historical records.
-- **Active: closeout.** Verify every actual call, both sites in every affected product,
+- **Implemented: closeout.** Verify every actual call, both sites in every affected product,
   generated docs, changed-file formatting and required checks. Integrate and push private
   before public after the refresh loop. Update this plan and the canonical tracker with
   committed outcomes. Keep broad related issues open unless separately authorized.
@@ -153,7 +154,7 @@ After incorporating current main, all 60 mega steps passed again and 13 focused
 integration tests passed. Survey support then passed zero-use generation and site
 claim checks, 15 focused tests, and a separate two-site candidate check: two
 disjunctive silluq records, each without a following word. Its occurrence inventory
-remains empty before annotation. The parser's preservation handler explicitly
+was empty throughout the support stage. The parser's preservation handler explicitly
 evaluates Scripture parameter 1 and preserves validated position metadata parameter 2.
 
 The deliberately regenerated hand-run exports also caught up with previously lagging
@@ -171,3 +172,52 @@ the appendix entry is revision 3088396, and the chapter annotations are revision
 comparison and downloaded-mirror comparison passed. Each chapter has exactly its
 one new wrapper; the full atoms and existing notes are unchanged. The observed
 template tables now include the actually used name and all 57 MAM-parsed claims pass.
+
+## Completed refresh and verification, 2026-10-12
+
+The source is committed at `c486ccad`, its explained products at `accced5d`,
+the generated grammar locks at `13c79810`, and the separately audited change logs
+at `22eac9b4`. The public/private/public dependency loop is complete. The selected
+private checkout passed its refresh profile and affected integration checks, then
+was integrated and pushed before the public implementation at `3f9746e8`.
+Both home clones were verified clean on main and equal to origin/main.
+
+MAM-simple adds exactly the two structured leaves while retaining every text mark.
+Sefaria/AJF remove only the later meteg at each site. OSIS retains both marks and
+adds the two explanatory notes; its schema validation passes. MAM-with-doc text
+is unchanged. Phonetic MAM changes only the two primary-stress spans, from na/no
+to lah/loh in 1 Kings 7:37 and from hu to men in Job 4:12, retaining its Hebrew.
+The post-stress-meteg survey adds these two verse-final records: 232 cases become
+234, with one additional prose case and one additional poetic case. Its source
+annotation differential passes. The Methods page follows both annotations.
+
+The live refresh exposed two bounded statement checks: the next-conjunctive
+appendix's partition omitted absent following words, and the active survey
+docstring claimed all cases had conjunctive stress. Both now distinguish the
+verse-final silluq cases. Near-Aleppo's wrapper resolution preserves the full atoms
+and newly inventories their two unchanged notes; the fresh reviews retain both
+source clauses in explicit MAM context. The final mega passes all 60 steps,
+including the 1,554-note differential, 24 near-Aleppo books and 95 rendered files.
+It adds no further product differences after the dependency loop.
+
+The final suite reports 1,075 passed, five declared skips and one outdated
+independent XML-oracle failure. The production XML reader already accepted the
+new leaf. `py/tests/test_mam_xml_verses.py` now independently recognizes its exact
+two-attribute, childless shape and reads only its marked text. All three
+full-corpus XML-reader checks then pass. Black and whitespace checks pass.
+The full suite and mega were not repeated after this isolated oracle edit;
+production behavior, source data and products remained unchanged, so the other
+results remain applicable under the approved review trial.
+
+The final change-log generation adds exactly the two template changes, moving
+the unreleased count from eight to ten. Named historical releases remain unchanged.
+The freshness guard passes before and after the log commit. The runbook's separate
+2 Kings 22:1 check still finds only one qamats reading in the release and rendered
+page, with 309 prose variant rows in the survey; its existing README disclosure
+remains applicable.
+
+Documentation is complete in MAM-parsed-plus, MAM-simple XML and JSON, Sefaria/AJF
+and its older encoding guide, OSIS, Phonetic MAM and near-Aleppo. The mtgmtg page's
+two-site explanation and labels are corrected. The canonical issue is closed with
+the [agent-written completion record](https://github.com/bdenckla/phonetic-hbo/issues/78#issuecomment-6132516648).
+Generated pages follow the existing scheduled Pages deployment.
