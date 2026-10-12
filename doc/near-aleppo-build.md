@@ -52,13 +52,14 @@ ALEF + TSERE + MERKHA, without dagesh, at 2 Samuel 18:20.
 The parameterless `רווח בלי ניקוד` records horizontal space without marks.
 Build populations record these body classifications separately from the MAM-only
 census. The independent note replay applies the same phase. The example edition
-pairs each body template with its following qere, displaying body marks or a
-blank below the qere; editorial box and carrier widths do not measure manuscript
-spacing. The mixed alef/vav payload is exactly
-`אְאָא֖וֹ` at 2 Kings 19:31: three marked alefs followed by VAV + HOLAM.
+pairs each body template with its following qere, displaying body marks, or
+empty double guillemets for space without marks, below the qere; editorial box
+and carrier widths do not measure manuscript spacing. The mixed alef/vav payload
+is exactly
+`אְאָא֖וֹ` at 2 Kings 19:31: three marked alef letters followed by VAV + HOLAM.
 The final artificial vav retains the ḥolam male carrier meaning without adding
-a written consonant or claiming that a vav is present in the body. The original
-GA and single-carrier GV contracts remain unchanged.
+a written consonant or claiming that a vav is present in the body. This exact
+mixed payload does not relax the GA or single-carrier GV payload rules.
 
 The near-Aleppo dataset's zero-width sibling, `ניקוד בלי אות ובלי רווח`,
 accepts the same GA and GV shapes. Both render carriers

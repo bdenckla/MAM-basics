@@ -15,7 +15,8 @@ Display formatting remains the consumer's choice. Original source notes and
 review reasoning remain in MAM-parsed-plus and the public review ledger.
 
 Artificial carriers are not ketiv consonants. Both carrier templates have only
-parameter 1, containing the payload. GA and GV keep their existing
+parameter 1, containing the payload. GA (one or more artificial alef letters
+with their marks) and GV (an artificial VAV + HOLAM) keep their existing
 meanings and prohibit dagesh. The no-space template `ניקוד בלי אות ובלי רווח`
 accepts DALET + DAGESH + TSERE + MAHAPAKH
 (GD), immediately after the final nun at Isaiah 54:16. All three marks remain
@@ -23,7 +24,7 @@ associated with that nun, and the whole qere is preserved. This first final
 carrier case is a font accommodation; earlier carriers were initial or medial.
 It makes no claim of ownerless manuscript marks.
 
-Each selected qere-without-ketiv site retains its complete `קרי ולא כתיב`
+Each qere-without-ketiv site retains its complete `קרי ולא כתיב`
 call. An additional body template immediately precedes the qere call in the
 same sequence, with no intervening separator. `ניקוד בלי אות` records marks
 with horizontal space; `ניקוד בלי אות ובלי רווח`
@@ -36,9 +37,9 @@ qere. The example edition displays the body below the qere in one box;
 carrier and box widths do not measure manuscript spacing.
 
 At 2 Kings 19:31, `ניקוד בלי אות` has the mixed alef/vav payload `אְאָא֖וֹ`:
-three marked alefs followed by the artificial VAV + HOLAM carrier. The final
+three marked alef letters followed by the artificial VAV + HOLAM carrier. The final
 vav retains the ḥolam male carrier meaning and is not a written body-text letter.
-The original GA and single-carrier GV contracts remain unchanged.
+This exact mixed payload does not relax the GA or single-carrier GV payload rules.
 
 The 24 book files are in `plus/`. The example edition and documentation are in
 `gh-pages/near-aleppo/`. The build reads local MAM-parsed-plus, the Aleppo coverage
@@ -68,7 +69,8 @@ repository or scan archive is a build dependency.
 The shared MAM-with-doc renderer also renders the example edition. Near-Aleppo
 selects ketiv as the primary text, using each stored pointed ketiv where available,
 and shows pointed qere above it in an HTML ruby annotation at the same size,
-with CLC's box around each pair and a small vertical gap between the forms.
+with the Charitable Leningrad Codex (CLC) edition's box around each pair and a
+small vertical gap between the forms.
 The box has its own line height and vertical padding so the border clears marks
 above and below the letters. Trivial ketiv/qere templates use their own pointed
 ketiv and qere parameters. Missing
@@ -76,14 +78,15 @@ readings have the same editorial labels as CLC in the missing reading's position
 Existing notes remain beside the text; the ruby display does not synthesize qere
 notes. Trivial-template qere source metadata is available on the annotation's hover.
 
-The example edition's [features of interest](../../gh-pages/near-aleppo/foi/index.html)
-start with [interesting ketiv/qere cases](../../gh-pages/near-aleppo/foi/interesting-ketiv-qere.html).
-These selected examples show whole verses with the current edition's ruby
-display. The BCV in each heading links to the verse in NAEE; relative links work
-locally and on the website. The [qere-without-ketiv study](../../gh-pages/near-aleppo/foi/qere-without-ketiv.html)
+The example edition's [features of interest](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/)
+start with [interesting ketiv/qere cases](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/interesting-ketiv-qere.html).
+These selected examples show whole verses, or an excerpt at Isaiah 26:20, with
+the current edition's ruby display. The BCV in each heading links to the verse
+in the near-Aleppo example edition (NAEE); relative links work locally and on
+the website. The [qere-without-ketiv study](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/qere-without-ketiv.html)
 shows short NAEE excerpts, current MAM notes, recorded manuscript observations,
 and supplied crops.
-Its [source note](../../doc/near-aleppo-qere-without-ketiv/README.md) identifies the
+Its [source note](https://github.com/bdenckla/MAM-basics/blob/main/doc/near-aleppo-qere-without-ketiv/README.md) identifies the
 maintained records and crop provenance. Regenerate the FOI pages and images with:
 
 ```powershell
