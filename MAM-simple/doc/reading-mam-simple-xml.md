@@ -173,7 +173,7 @@ The "Text" column says where an element's text is: `text` means the `text` attri
 | Element | Meaning | Text |
 |---------|---------|------|
 | `<text text="..."/>` | A run of Hebrew text | `text` |
-| `<silluq-before-meteg>` | An atom with an explicitly identified silluq before a later meteg | `text` |
+| `<silluq-before-meteg>` | An atom with a silluq before a meteg | `text` |
 | `<lp-legarmeih/>` | Legarmeh | none |
 | `<lp-paseq/>` | Paseq in the narrow sense | none |
 | `<implicit-maqaf/>` | Maqaf that is implicit in the manuscript | none |
