@@ -70,10 +70,13 @@ def _edition_index(edition, css_hrefs):
     body = (
         mb_html.heading_level_1("The near-Aleppo edition"),
         mb_html.para(
+            "These pages are an example HTML edition of the near-Aleppo "
+            "dataset. The edition has each book's text with MAM's notes "
+            "beside it, as MAM-with-doc does."
+        ),
+        mwdwidh.unordered_list_of_sections(),
+        mb_html.para(
             [
-                "These pages are an example HTML edition of the near-Aleppo "
-                "dataset. The edition has each book's text with MAM's notes "
-                "beside it, as MAM-with-doc does. ",
                 "Ketiv is the primary text; pointed qere appears above it in a ruby "
                 "annotation at the same size, with CLC's box around each pair and a small "
                 "vertical gap between the forms. "
@@ -134,7 +137,6 @@ def _edition_index(edition, css_hrefs):
             "license and source attribution are these:"
         ),
         mwdwidh.license_para(),
-        mwdwidh.unordered_list_of_sections(),
         mb_html.horizontal_rule(),
         mb_html.anchor_h("MAM-with-doc's sigil decoding", doc_page.SIGIL_DECODING),
     )
