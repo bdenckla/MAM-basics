@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "phase2_counts": {
     "מ:קמץ": 371,
     "מ:דחי": 2306,
@@ -43,9 +43,9 @@
     "Elohim reading: sheva for the hataf segol on the yod (unselected parameter)": 0,
     "Elohim reading: yod with no vowel, unchanged": 1,
     "Elohim reading: yod with no vowel, unchanged (unselected parameter)": 0,
-    "Adonai reading: holam on the first he stripped": 6517,
+    "Adonai reading: holam on the first he stripped": 6516,
     "Adonai reading: holam on the first he stripped (unselected parameter)": 0,
-    "Adonai reading: holam kept where a note records the codex's": 5,
+    "Adonai reading: holam kept where a note records the codex's": 6,
     "Adonai reading: holam kept where a note records the codex's (unselected parameter)": 0,
     "divine title: holam on the dalet stripped": 437,
     "divine title: holam on the dalet stripped (unselected parameter)": 0,
@@ -129,6 +129,7 @@
     ],
     "Adonai reading: holam kept where a note records the codex's": [
       ["BA-Samuel שמ\"א", "15", "1"],
+      ["BC-Kings מל\"א", "8", "11"],
       ["BC-Kings מל\"ב", "20", "9"],
       ["C1-Isaiah", "30", "1"],
       ["C3-Ezekiel", "3", "12"],
@@ -324,9 +325,9 @@
     "codex readings: ketiv/qere plane reading in place in a qere parameter, bang-marked": 0,
     "codex readings: ketiv/qere plane reading in place through phase 3's ketiv/qere apparatus": 3,
     "codex readings: ketiv/qere plane reading in place through phase 3's ketiv/qere apparatus, bang-marked": 0,
-    "codex readings: pointed ketiv written as the form stands": 63,
+    "codex readings: pointed ketiv written as the form stands": 59,
     "codex readings: pointed ketiv written as the form stands, bang-marked": 1,
-    "codex readings: pointed ketiv written with a named adjustment": 5,
+    "codex readings: pointed ketiv written with a named adjustment": 9,
     "codex readings: pointed ketiv written with a named adjustment, bang-marked": 1,
     "codex readings: ketiv/qere plane reading pending by name": 3,
     "codex readings: ketiv/qere plane reading pending by name, bang-marked": 0,
@@ -517,7 +518,6 @@
       ["BC-Kings מל\"ב", "4", "2"],
       ["BC-Kings מל\"ב", "4", "3"],
       ["BC-Kings מל\"ב", "4", "7"],
-      ["BC-Kings מל\"ב", "4", "7"],
       ["BC-Kings מל\"ב", "10", "27"],
       ["BC-Kings מל\"ב", "11", "2"],
       ["BC-Kings מל\"ב", "21", "12"],
@@ -535,9 +535,6 @@
       ["C2-Jeremiah", "50", "15"],
       ["C3-Ezekiel", "6", "3"],
       ["C3-Ezekiel", "9", "11"],
-      ["C3-Ezekiel", "14", "14"],
-      ["C3-Ezekiel", "14", "20"],
-      ["C3-Ezekiel", "28", "3"],
       ["C3-Ezekiel", "36", "14"],
       ["C3-Ezekiel", "42", "16"],
       ["CA-The-12-Minor-Prophets עמוס", "8", "8"],
@@ -559,8 +556,12 @@
     "codex readings: pointed ketiv written with a named adjustment": [
       ["BA-Samuel שמ\"ב", "5", "2"],
       ["BA-Samuel שמ\"ב", "21", "12"],
+      ["BC-Kings מל\"ב", "4", "7"],
       ["C1-Isaiah", "36", "12"],
       ["C1-Isaiah", "44", "24"],
+      ["C3-Ezekiel", "14", "14"],
+      ["C3-Ezekiel", "14", "20"],
+      ["C3-Ezekiel", "28", "3"],
       ["D2-Proverbs", "3", "30"]
     ],
     "codex readings: ketiv/qere plane reading pending by name": [
@@ -613,7 +614,7 @@
   "phase6_counts": {
     "נוסח: notes reached": 3595,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1543,
+    "נוסח: notes given MAM's target": 1547,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {
@@ -1074,6 +1075,28 @@
     ],
     "named codex reading phase 5 does not apply": [
       ["A4-Numbers", "22", "5"]
+    ]
+  },
+  "qere_without_ketiv_counts": {
+    "qere-without-ketiv body: marks-with-space": 3,
+    "qere-without-ketiv body: marks-without-space": 1,
+    "qere-without-ketiv body: space-without-marks": 5
+  },
+  "qere_without_ketiv_sites": {
+    "qere-without-ketiv body: marks-with-space": [
+      ["B2-Judges", "20", "13"],
+      ["BC-Kings מל\"ב", "19", "31"],
+      ["BC-Kings מל\"ב", "19", "37"]
+    ],
+    "qere-without-ketiv body: marks-without-space": [
+      ["BA-Samuel שמ\"ב", "18", "20"]
+    ],
+    "qere-without-ketiv body: space-without-marks": [
+      ["BA-Samuel שמ\"ב", "16", "23"],
+      ["C2-Jeremiah", "31", "37"],
+      ["C2-Jeremiah", "50", "29"],
+      ["E2-Ruth", "3", "17"],
+      ["E2-Ruth", "3", "5"]
     ]
   }
 }

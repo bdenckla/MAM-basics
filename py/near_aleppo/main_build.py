@@ -27,6 +27,7 @@ from mb_cmn import bib_locales as tbn
 from near_aleppo import build_paths
 from near_aleppo import build_expectations
 from near_aleppo import consumer_notice
+from near_aleppo import ketiv_checks
 from near_aleppo.phase2_templates import Resolver
 from near_aleppo.phase2_templates import assert_templates_absent
 from near_aleppo.phase3_policies import Policies
@@ -38,6 +39,7 @@ from near_aleppo.phase6_rename import Renames
 from near_aleppo.frozen_ketiv import FrozenPointing
 from near_aleppo.editorial_ketiv import EditorialPointing
 from near_aleppo.reviewed_ketiv import ReviewedPointing
+from near_aleppo.qere_without_ketiv import BodyEncodings
 
 # The stem of each of MAM-parsed-plus's 24 book files.
 _BOOK_STEMS = frozenset(tbn.ordered_short_dash_full_24(b) for b in tbn.ALL_BK24_IDS)
@@ -67,6 +69,7 @@ def build(bake_notes=True):
     frozen = FrozenPointing()
     editorial = EditorialPointing()
     reviewed = ReviewedPointing()
+    bodies = BodyEncodings()
     out = {}
     for path in paths:
         book = json.loads(path.read_text(encoding="utf-8"))
@@ -100,6 +103,8 @@ def build(bake_notes=True):
                     cells[2] = frozen.apply(cells[2], ref)
                     cells[2] = editorial.apply(cells[2], ref)
                     cells[2] = reviewed.apply(cells[2], ref)
+                    cells[2] = bodies.apply(cells[2], ref)
+                    ketiv_checks.check_e_cell(cells[2], ref)
                     # MAM-target copying follows the last Scripture-reading change. The
                     # flags step after it adds parameters only, none inside a
                     # note's target, and the rename after the verse loop changes
@@ -120,9 +125,10 @@ def build(bake_notes=True):
     frozen.finish()
     editorial.finish()
     reviewed.finish()
+    bodies.finish()
     if bake_notes:
         notes.finish()
-    return out, resolver, policies, readings, mam_targets, flags, renames
+    return out, resolver, policies, readings, mam_targets, flags, renames, bodies
 
 
 def write(dataset, populations):
@@ -185,11 +191,11 @@ def main(argv=None):
     )
     args = parser.parse_args(argv)
 
-    dataset, resolver, policies, readings, mam_targets, flags, renames = build()
+    dataset, resolver, policies, readings, mam_targets, flags, renames, bodies = build()
     build_expectations.assert_census_agrees(resolver, policies, readings, mam_targets)
     renames.assert_expected_counts(mam_targets.counts)
     populations = build_expectations.render(
-        resolver, policies, readings, mam_targets, flags
+        resolver, policies, readings, mam_targets, flags, bodies
     )
     if args.check:
         return check(dataset, populations)

@@ -491,6 +491,12 @@ catalog's "fol." locators.
 Use “ungrammatical verse” as the umbrella while preserving the distinct `error`, `no_parse`,
 and `illegal_mark` statuses. Existing oddball identifiers remain compatibility identifiers.
 
+## Plurals of romanized Hebrew letter and mark names
+
+Do not pluralize romanized Hebrew letter or mark names with English suffixes or Hebrew plural
+endings. Pluralize an English noun instead: "three alef letters", "two meteg marks", "two tsinnor
+marks".
+
 ## Transliteration (accgram)
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
@@ -514,7 +520,6 @@ Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce �
 - **Keep the kaf**: `merkha` (not `merka`), `mahapakh` (not `mahpak`).
 - **`tsinnor`** — never `sinnor` (the grammar's internal nonterminal spelling, which leaks) and
   never `tzinnor` (Breuer's English-translation spelling). `tsinnorit` stays distinct.
-- **No transliterated plurals**: "two tsinnor **marks**," never "tsinnorin."
 - **`oleh-weyored`**, run together. The ~57 `oleh-we-yored` in the tree are legacy, not the rule.
 - **Breuer quotes**: render the accent name in the repo-standard spelling wrapped in **square
   brackets** to flag the divergence — `"[deḥi]"` for his "dekhi"; inside a `#`/docstring context

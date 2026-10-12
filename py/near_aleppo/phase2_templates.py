@@ -35,7 +35,7 @@ note, and phase 2 still meets and counts every one. Where MAM's notes
 give the codex's pointed ketiv, ``phase5_readings.py`` adds it to the template in
 POINTED_KETIV_PARAMETER, MAM's parameters staying as they are.
 
-Rule 8's template for marks written where no letter is, MARKS_WITHOUT_LETTER, is
+Rule 8's original template for marks written where no letter is, MARKS_WITHOUT_LETTER, is
 specific to the near-Aleppo dataset. MAM's text never has it, so phase 2 raises if
 it meets it; phase 5 writes it inside a pointed ketiv, and the walks after phase 5
 keep it whole. MARKS_WITHOUT_LETTER_OR_SPACE has the same phase-2 rejection
@@ -119,14 +119,18 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # The marks-without-letter template represents marks that MAM's notes attribute to
 # a nonzero-width space in the codex. Its original schema has one parameter: alefs,
 # each followed by the marks at that position, with alef as an arbitrary carrier.
-# An alef carrier cannot carry dagesh. The GV extension has an explicit carrier
-# discriminator and exactly artificial VAV + HOLAM; the original alef schema remains.
-# The no-space template licenses only GD, artificial DALET + DAGESH + TSERE +
-# MAHAPAKH for the final nun at Isaiah 54:16, without a manuscript-spacing claim.
+# An alef carrier cannot carry dagesh. The GV payload is exactly artificial
+# VAV + HOLAM; every carrier template has only parameter 1.
+# The mixed alef/vav payload requires exactly three marked alefs
+# followed by VAV + HOLAM at 2 Kings 19:31, preserving that carrier distinction.
+# The no-space template licenses GA, including ALEF + TSERE + MERKHA,
+# and GD (DALET + DAGESH + TSERE + MAHAPAKH). GD accommodates
+# the final nun at Isaiah 54:16, without a manuscript-spacing claim.
 # The edition renders the marks in double guillemets; the dataset and the in-place
 # test read them in square brackets, as MAM's notes write them.
 MARKS_WITHOUT_LETTER = orphan_marks.MARKS_WITHOUT_LETTER
 MARKS_WITHOUT_LETTER_OR_SPACE = orphan_marks.MARKS_WITHOUT_LETTER_OR_SPACE
+SPACE_WITHOUT_MARKS = orphan_marks.SPACE_WITHOUT_MARKS
 
 
 class _Rule(NamedTuple):
@@ -186,12 +190,9 @@ _RULES = {
     "פפפ": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:נו״ן הפוכה": _Rule(_VERBATIM, (), _keysets(("1",))),
     "מ:קישור בהערה": _Rule(_VERBATIM, (), _keysets(("1", "2"))),
-    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(
-        _CARRIERS, (), _keysets(("1", orphan_marks.GV_PARAMETER))
-    ),
-    MARKS_WITHOUT_LETTER: _Rule(
-        _CARRIERS, (), _keysets(("1",), ("1", orphan_marks.GV_PARAMETER))
-    ),
+    SPACE_WITHOUT_MARKS: _Rule(_VERBATIM, (), _keysets(())),
+    MARKS_WITHOUT_LETTER: _Rule(_CARRIERS, (), _keysets(("1",))),
+    MARKS_WITHOUT_LETTER_OR_SPACE: _Rule(_CARRIERS, (), _keysets(("1",))),
 }
 
 # Templates that phase 2 removes wherever they occur, so that none remains
@@ -241,7 +242,7 @@ class Resolver:
         rule = _RULES.get(name)
         if rule is None:
             raise AssertionError(f"{verse}: no phase 2 rule for template {name!r}")
-        if rule.action == _CARRIERS:
+        if rule.action == _CARRIERS or name == SPACE_WITHOUT_MARKS:
             raise AssertionError(
                 f"{verse}: {name!r}, a template specific to the near-Aleppo dataset, "
                 "in MAM's text"
@@ -367,13 +368,14 @@ def selected_keys(tmpl, verse):
 
 
 def carriers_text(tmpl, verse):
-    """Validated GA, GV or GD carriers in the build's bracket notation."""
+    """Validated artificial carriers in the build's bracket notation."""
     return "[" + orphan_marks.carriers(tmpl, verse) + "]"
 
 
-def marks_without_letter(carriers, verse):
+def marks_without_letter(carriers, verse, *, without_space=False):
     """The near-Aleppo dataset's rule-8 template holding ``carriers``, which carriers_text checks."""
-    tmpl = {"tmpl_name": MARKS_WITHOUT_LETTER, "tmpl_params": {"1": carriers}}
+    name = MARKS_WITHOUT_LETTER_OR_SPACE if without_space else MARKS_WITHOUT_LETTER
+    tmpl = {"tmpl_name": name, "tmpl_params": {"1": carriers}}
     carriers_text(tmpl, verse)
     return tmpl
 

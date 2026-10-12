@@ -38,6 +38,7 @@ from foi import foiz_wt_mtgmtg as foi_mtgmtg
 from foi import foiz_wt_unicode as foi_unicode
 
 from mb_cmn import paths
+from mb_cmn.worker_budget import choose_workers
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import bib_locales as tbn
 from wlc_cmn.utf8_io import force_utf8_io
@@ -52,7 +53,9 @@ def _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois)
             out_for_all_bks[bkid] = out_for_this_bk
     else:
         # Each worker is a new process, which main()'s reconfigure does not reach.
-        with multiprocessing.Pool(processes=8, initializer=force_utf8_io) as pool:
+        workers = choose_workers(len(the_arg_triple))
+        print(f"FOI: using {workers} workers")
+        with multiprocessing.Pool(processes=workers, initializer=force_utf8_io) as pool:
             for bkid, out_for_this_bk in pool.imap_unordered(
                 find_wt_fois_for_1_bk, the_arg_triple
             ):

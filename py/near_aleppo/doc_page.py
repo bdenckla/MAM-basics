@@ -405,7 +405,7 @@ def _own_templates(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo uses four added templates, which MAM's text never "
+                "Near-Aleppo uses five added templates, which MAM's text never "
                 "has. Each name is specific to the near-Aleppo dataset, and none has "
                 "the prefix ",
                 he_name("מ:"),
@@ -453,6 +453,9 @@ def _own_templates(numbers):
         ),
         mb_html.para(
             [
+                "The parameterless ",
+                he_name(consumer_notice.SPACE_WITHOUT_MARKS),
+                " records horizontal space without niqqud at a qere-without-ketiv site. "
                 "The two carrier templates represent marks without a written letter "
                 "or accommodate marks associated with a written letter. "
                 "Their positions, accepted carrier forms, and display "
@@ -474,27 +477,34 @@ def _gav_display(numbers):
                 "Position: the near-Aleppo dataset's ",
                 he_name(MARKS_WITHOUT_LETTER),
                 " represents marks at a position of nonzero width. Its name "
-                "describes the position, not the carrier letter.",
+                "describes the position, not the carrier letter. The near-Aleppo "
+                "dataset's ",
+                he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
+                " represents marks at a position of no width, including a medial "
+                "position within a written atom. It inserts no separator. Medial "
+                "orphans without adjacent literal separators use this name; leading "
+                "orphans and explicit separators retain their representations.",
             ]
         ),
         mb_html.para(
             [
-                "Carrier forms: the supported template accepts GA ",
+                "Carrier forms: both templates accept GA ",
                 mb_html.code(['{"1":"', he_pointed("אֵ"), '"}'], {"dir": "ltr"}),
-                " or GV ",
+                " and GV ",
                 mb_html.code(
-                    ['{"1":"', he_pointed("וֹ"), '","carrier":"holam-male-vav"}'],
+                    ['{"1":"', he_pointed("וֹ"), '"}'],
                     {"dir": "ltr"},
                 ),
                 " as its ",
                 code("tmpl_params"),
                 ". GA permits one or more artificial alefs, each followed by "
-                "permitted marks. GV requires exactly VAV + HOLAM and the ",
-                code("carrier=holam-male-vav"),
-                " discriminator. Neither carrier permits a dagesh. The ",
-                code("carrier"),
-                " parameter is semantic metadata; it identifies the holam-male "
-                "carrier and is not Scripture text.",
+                "permitted marks. GV requires exactly VAV + HOLAM, retaining "
+                "the holam-male meaning. Neither GA nor GV permits a dagesh. "
+                "Both templates have only parameter 1, containing the carrier "
+                "payload. The mixed alef/vav payload is exactly ",
+                he_pointed("אְאָא֖וֹ"),
+                " at 2 Kings 19:31: three marked alefs followed by the "
+                "artificial VAV + HOLAM carrier. It also forbids dagesh.",
             ]
         ),
         mb_html.para(
@@ -519,7 +529,10 @@ def _gav_display(numbers):
             [
                 "The supported nonzero-width template occurs at ",
                 verse_refs(first),
-                ", inside the pointed ketivs.",
+                ", inside pointed ketivs or beside unchanged qere-without-ketiv calls.",
+                " The zero-width template occurs at ",
+                verse_refs(second),
+                ", for medial GA/GV orphans and the separately documented explicit variants.",
             ]
         ),
         mb_html.para(
@@ -536,15 +549,21 @@ def _gav_display(numbers):
             [
                 "The no-space template ",
                 he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                " accepts only GD, ",
+                " accepts the GA payload ",
                 mb_html.code(
-                    ['{"1":"', he_pointed("דֵּ֤"), '","carrier":"final-nun-dalet"}'],
+                    ['{"1":"', he_pointed("אֵ֥"), '"}'],
                     {"dir": "ltr"},
                 ),
-                ". This explicit variant requires exactly DALET + DAGESH + TSERE + "
+                ", with exactly ALEF + TSERE + MERKHA and no dagesh at 2 Samuel 18:20. "
+                "The same no-space template retains GD, ",
+                mb_html.code(
+                    ['{"1":"', he_pointed("דֵּ֤"), '"}'],
+                    {"dir": "ltr"},
+                ),
+                ". This payload requires exactly DALET + DAGESH + TSERE + "
                 "MAHAPAKH. Its permitted dagesh does not relax GA or GV validation. "
                 "It occurs at ",
-                verse_refs(second),
+                verse_refs((("C1-Isaiah", "54", "16"),)),
                 ": ",
                 he_pointed("הִן«דֵּ֤»"),
                 ". The carrier immediately follows the final nun without a space. "
@@ -615,9 +634,7 @@ def _added_parameters(numbers):
     return [
         mb_html.para(
             [
-                "Near-Aleppo adds six parameters to templates. Five accompany MAM's "
-                "parameters; the sixth identifies "
-                "the explicit GV and GD variants of near-Aleppo's carrier templates.",
+                "Near-Aleppo adds five parameters to MAM's templates.",
             ]
         ),
         mb_html.para(
@@ -700,16 +717,6 @@ def _added_parameters(numbers):
                 *_joined(families),
                 ".",
             ]
-        ),
-        mb_html.para(
-            "The parameter carrier=holam-male-vav identifies the narrowly licensed "
-            "GV variant of the orphan-mark template. Its parameter 1 must be exactly "
-            "VAV + HOLAM. The carrier parameter is metadata; the artificial vav "
-            "represents orphan holam and is not a written ketiv consonant. "
-            "The same parameter with value final-nun-dalet identifies GD in the "
-            "no-space template, whose parameter 1 must be exactly DALET + DAGESH + "
-            "TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is "
-            "not a written ketiv consonant."
         ),
     ]
 

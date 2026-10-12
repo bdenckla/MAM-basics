@@ -158,7 +158,7 @@ def _fail_unconverted_renamed_scrdfftar(_hctx, _tmpl):
 
 def _handle_marks_without_letter(_hctx, tmpl):
     # Show explicit artificial carriers in double guillemets. The shared
-    # guard validates GA, GV and GD shapes; the discriminator is metadata.
+    # guard validates the carrier payload in the template's sole parameter.
     params = {
         key: first_and_only_and_str(wtp.template_param_val(tmpl, key))
         for key in wtp.template_param_keys(tmpl)
@@ -171,6 +171,15 @@ def _handle_marks_without_letter(_hctx, tmpl):
         "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
         + carriers
         + "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+    )
+
+
+def _handle_space_without_marks(_hctx, tmpl):
+    nap.orphan_marks.validate_space(tmpl, "body-space display")
+    return renel.mk_ren_el_tc(
+        "near-aleppo-body-space",
+        "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+        "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}",
     )
 
 
@@ -638,6 +647,7 @@ _HANDLER_SPECS_FOR_MISC = {
     nap.RENAMED_SCRDFFTAR: {_MASK_EC: _fail_unconverted_renamed_scrdfftar},
     nap.MARKS_WITHOUT_LETTER: {_MASK_EL: _handle_marks_without_letter},
     nap.MARKS_WITHOUT_LETTER_OR_SPACE: {_MASK_EL: _handle_marks_without_letter},
+    nap.SPACE_WITHOUT_MARKS: {_MASK_EL: _handle_space_without_marks},
     tmpln.SLH_WORD: {_MASK_ELP: _handle_slh_word},
     "מ:לגרמיה-2": {_MASK_ELP: _handle_legarmeih_2},
     "מ:פסק": {_MASK_ELP: _handle_paseq},

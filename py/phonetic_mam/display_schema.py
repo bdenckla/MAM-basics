@@ -10,6 +10,8 @@ source-quality fields to avoid decoding the displayed text in a consumer. A layo
 of a dual-cantillation template has alone carries that strand's label.
 """
 
+import re
+
 from mb_cmn import bib_locales
 
 SCHEMA_ID = "phonetic-mam-public-v1"
@@ -38,6 +40,7 @@ _MARKER_CELLS = [[marker] for marker in LAYOUT_MARKERS] + [
 # The computation's annotation points, the retired carriers U+05AF and U+05C4, and
 # U+05C5: the release has neither extraordinary point (Phonetic-MAM/README.md).
 _FORBIDDEN = frozenset(map(chr, (0x05AF, 0x05C4, 0x05C5, 0x05C8, 0x05C9)))
+_FORBIDDEN_PATTERN = re.compile("[" + "".join(sorted(_FORBIDDEN)) + "]")
 
 
 class PublicReleaseError(ValueError):
@@ -61,7 +64,9 @@ def _number(value, label):
 
 def _text(value, label):
     require(isinstance(value, str) and bool(value), f"{label}: expected nonempty text")
-    require(not (_FORBIDDEN & set(value)), f"{label}: forbidden phonetic mark")
+    require(
+        _FORBIDDEN_PATTERN.search(value) is None, f"{label}: forbidden phonetic mark"
+    )
     require("<" not in value and ">" not in value, f"{label}: markup is not text")
     require("\\u" not in value.lower(), f"{label}: escaped codepoint layer")
 

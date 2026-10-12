@@ -47,8 +47,7 @@ CASES = (
     Case(
         "2-samuel-8-3",
         "a wide qere",
-        "The qere is a maqaf compound above a shorter ketiv atom. "
-        "Look at the space reserved for the pair in the verse.",
+        "The qere is a maqaf compound above a shorter ketiv atom.",
         ((tbn.BK_SND_SAM, 8, 3),),
     ),
     Case(
@@ -56,28 +55,32 @@ CASES = (
         "a final dalet carrier",
         "The single-atom qere has an additional he. The ketiv's final-nun "
         "dagesh, tsere and mahapakh are displayed on an artificial dalet carrier "
-        "immediately after the nun, without a space.",
+        "immediately after the nun, without a space. "
+        "Carrier notation usually indicates that marks are orphaned or that the "
+        "letter they belong to is unclear. In this case, a strong argument can "
+        "be made that the marks belong to the final nun. We use carrier (orphan) "
+        "syntax mainly because many fonts have difficulty displaying these "
+        "marks on a final nun.",
         ((tbn.BK_ISAIAH, 54, 16),),
     ),
     Case(
         "genesis-30-11",
         "two qere atoms",
-        "The qere has two atoms separated by a space above one ketiv atom.",
+        "The qere has two space-separated atoms above one ketiv atom.",
         ((tbn.BK_GENESIS, 30, 11),),
     ),
     Case(
         "qere-without-ketiv",
         "Qere without ketiv",
-        "Ruth 3:5 and Judges 20:13 show qere without ketiv. "
-        "NAEE puts the editorial label “no ketiv” on the baseline. "
-        "That label occupies space beneath the qere.",
+        "Ruth 3:5 and Judges 20:13 show qere without ketiv; "
+        "in Ruth 3:5 there is no niqqud for the ketiv whereas in Judges 20:13 there is.",
         ((tbn.BK_RUTH, 3, 5), (tbn.BK_JUDGES, 20, 13)),
     ),
     Case(
         "isaiah-26-20",
         "MAM ketiv/qere inside a three-atom maqaf compound",
         "In MAM, the ketiv יעבור and qere יַעֲבׇר occupy the middle atom "
-        "of the compound עַד־יַעֲבׇר־זָֽעַם. "
+        "of a compound starting with עַד־ and ending with זָֽעַם. "
         "NAEE displays עַד־יַעֲבָור־זָֽעַם, with no qere above the middle atom. "
         "This follows MAM's note, which reports the ketiv and no qere note "
         "in the Aleppo Codex. In forming the near-Aleppo dataset, we inferred "
@@ -88,10 +91,7 @@ CASES = (
     Case(
         "1-chronicles-9-4",
         "a two-atom qere inside a maqaf compound",
-        "The single ketiv atom בנימן has a two-atom qere. "
-        "The pair sits inside a longer maqaf compound, with maqafs on both sides; "
-        "inspect the space between the qere atoms and the connections "
-        "to neighboring atoms.",
+        "The single ketiv atom בנימן has a two-atom qere.",
         ((tbn.BK_FST_CHR, 9, 4),),
     ),
 )
@@ -208,6 +208,40 @@ def _case_contents(case, verses):
                 )
             )
         )
+    if case.identifier == "1-chronicles-9-4":
+        display_attrs = {"dir": "rtl", "lang": "hbo", "class": "pointed center"}
+        maqaf = "\N{HEBREW PUNCTUATION MAQAF}"
+        contents.extend(
+            [
+                mb_html.para(
+                    "When viewed in context, the ketiv forms a four-atom maqaf compound:"
+                ),
+                mb_html.para(
+                    [
+                        mb_html.span("בֶן" + maqaf, {"style": "color: red"}),
+                        mb_html.span("בָּנִ֔ימִן" + maqaf, {"style": "color: orange"}),
+                        mb_html.span("בְּנֵי" + maqaf, {"style": "color: yellow"}),
+                        mb_html.span("פֶ֖רֶץ", {"style": "color: green"}),
+                    ],
+                    display_attrs,
+                ),
+                mb_html.para(
+                    "In contrast, the qere forms a two-atom maqaf compound "
+                    "followed by a three-atom maqaf compound:"
+                ),
+                mb_html.para(
+                    [
+                        mb_html.span("בֶן" + maqaf, {"style": "color: red"}),
+                        mb_html.span("בָּנִ֔י", {"style": "color: orange"}),
+                        " ",
+                        mb_html.span("מִן" + maqaf, {"style": "color: red"}),
+                        mb_html.span("בְּנֵי" + maqaf, {"style": "color: orange"}),
+                        mb_html.span("פֶ֖רֶץ", {"style": "color: yellow"}),
+                    ],
+                    display_attrs,
+                ),
+            ]
+        )
     for reference in case.references:
         if len(case.references) > 1:
             contents.append(mb_html.heading_level_3(_reference_link(reference)))
@@ -254,11 +288,11 @@ def render():
         mb_html.heading_level_1(kq_title),
         _navigation(),
         mb_html.para(
-            "Ketiv is the primary text, with pointed qere above it at the same size "
-            "and CLC's box around the pair. "
-            "When qere is wider, the shorter ketiv is centered beneath it. "
-            "Each heading's verse reference opens the verse in NAEE, "
-            "with its surrounding text and notes."
+            "In NAEE (the Near-Aleppo example edition), "
+            "the pointed ketiv is the primary text, "
+            "with the pointed qere above it "
+            'and a curved box or "cartouche" around the ketiv/qere pair. '
+            "When the qere is wider, the ketiv is centered beneath it."
         ),
         mb_html.ordered_list(
             [mb_html.anchor_h(case.title, "#" + case.identifier) for case in CASES]

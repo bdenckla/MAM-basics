@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "dfb40527c79dab31054e6839507e21cbe5092c72fc49a718a52885f6b952c419",
+  "inventory_sha256": "85827ff6056ec75523d19c84660cead31c7eaa211360a7097513b1340b38cdb6",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -1466,10 +1466,9 @@
           "כתיב מנוקד": [
             "צְב",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "וֹ",
-                "carrier": "holam-male-vav"
+                "1": "וֹ"
               }
             },
             "יִ֔ים"
@@ -1502,11 +1501,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "505ab830bb8a997b187b82fb6571c72969ec8a26270a18ba4373e693aead5956",
+      "evidence_sha256": "13994bf04ca7b69598edd9811e619e48e907ba5cdbfb1b26d14ae659a528dac6",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "The complete note compares written forms, accent positions, manuscript annotations and transcription testimony in MAM's apparatus. Keep its three clauses after the labelled original MAM target; do not treat an agreement head as a claim about the new orphan-carrier display.",
+        "reason": "The complete note compares written forms, accent positions, manuscript annotations and transcription testimony in MAM's apparatus. Keep its three clauses after the labelled original MAM target; do not treat an agreement head as a claim about the new orphan-carrier display. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -1661,10 +1660,9 @@
           "כתיב מנוקד": [
             "צְב",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "וֹ",
-                "carrier": "holam-male-vav"
+                "1": "וֹ"
               }
             },
             "יִ֔ים"
@@ -1685,11 +1683,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "9cc384145335f2da958377ae72729dcf83feab2259805b83968dfe34f6670091",
+      "evidence_sha256": "90575aa250a7abb398b0899e3177ea5dcfeb4a2002972f0ece42277a8cbc9cfc",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "The single clause records cited written forms and hiriq/accent placement. Its cross-references and source attribution belong to the labelled original MAM target, not the new GV representation.",
+        "reason": "The single clause records cited written forms and hiriq/accent placement. Its cross-references and source attribution belong to the labelled original MAM target, not the new GV representation. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -23836,6 +23834,77 @@
       }
     },
     {
+      "id": "BA-Samuel שמ\"ב 16:23 note 1 נוסח",
+      "ref": [
+        "BA-Samuel שמ\"ב",
+        "16",
+        "23"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "0d9e2a33816f4ca399adb6c3bd97894dc1d17ac24f32455b4cb4d71a672db160",
+      "original_target": [
+        "יִשְׁאַל־",
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[אִ֖ישׁ]",
+            "2": "אִ֖ישׁ"
+          }
+        }
+      ],
+      "near_target": [
+        "יִשְׁאַל־",
+        {
+          "tmpl_name": "רווח בלי ניקוד"
+        },
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[אִ֖ישׁ]",
+            "2": "אִ֖ישׁ"
+          }
+        }
+      ],
+      "original_body": "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת.",
+      "clauses": [
+        "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
+      ],
+      "change_causes": [
+        "qere-without-ketiv body encoding"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "65r"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
+      "evidence_sha256": "fd276870df4dda027877fbc3a8ef4f671a8846cf2fee8d9e12bb6c012d40e739",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "The added body template changes the structured target without changing the qere. Preserve every original MAM clause in explicit MAM context; no literal full-target recast is available.",
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Retain MAM's qualified narrow-space description and absence of pointing beside MAM's unchanged qere target."
+          }
+        ],
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "BA-Samuel שמ\"ב 18:12 note 1 נוסח",
       "ref": [
         "BA-Samuel שמ\"ב",
@@ -23896,6 +23965,76 @@
             "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
+      }
+    },
+    {
+      "id": "BA-Samuel שמ\"ב 18:20 note 1 נוסח",
+      "ref": [
+        "BA-Samuel שמ\"ב",
+        "18",
+        "20"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "992fa00a1cd89f8a2afa2c791b62be37642a4f6ab0c0f449112c7f7aa3c22df2",
+      "original_target": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[כֵּ֥ן]",
+          "2": "כֵּ֥ן"
+        }
+      },
+      "near_target": [
+        {
+          "tmpl_name": "ניקוד בלי אות ובלי רווח",
+          "tmpl_params": {
+            "1": "אֵ֥"
+          }
+        },
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[כֵּ֥ן]",
+            "2": "כֵּ֥ן"
+          }
+        }
+      ],
+      "original_body": "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה.",
+      "clauses": [
+        "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה."
+      ],
+      "change_causes": [
+        "qere-without-ketiv body encoding"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "66r"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
+      "evidence_sha256": "5b083f4f440bda52d0adeb103c3b999fac635346650abaa7a9dc13eb3eef93ef",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "The added body template changes the structured target without changing the qere. Preserve every original MAM clause in explicit MAM context; no literal full-target recast is available.",
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Retain the complete Aleppo clause, including tsere, merkha, absent dagesh and absent space; the new body carrier does not alter MAM's qere."
+          }
+        ],
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "א=אין רווח לתיבת \"כֵּ֥ן\" הנקראת ולא נכתבת, אבל נכתבו הצֵרי והמרכא (ולא הדגש, כצפוי) בין התיבות למטה."
+            ]
+          ]
+        }
       }
     },
     {
@@ -25885,56 +26024,6 @@
       }
     },
     {
-      "id": "BC-Kings מל\"א 8:11 note 2 נוסח",
-      "ref": [
-        "BC-Kings מל\"א",
-        "8",
-        "11"
-      ],
-      "note_ordinal": 2,
-      "source_template": "נוסח",
-      "source_note_sha256": "4a313dd5e79e7099c9c5f596b537428f6f6afb615ca27e38962b054ed8ac36f1",
-      "original_target": "כְבוֹד־יְהֹוָ֖ה",
-      "near_target": "כְבוֹד־יְהוָ֖ה",
-      "original_body": "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)",
-      "clauses": [
-        "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
-      ],
-      "change_causes": [
-        "representation policies"
-      ],
-      "coverage": {
-        "category": "surviving",
-        "pages": [
-          "77v"
-        ],
-        "partial_gap_boundaries": []
-      },
-      "candidate_clause": null,
-      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
-      "evidence_sha256": "5bd730713ba3d7e1352db8cc0b21964cf9014b4e9c68808b32d2a9e075b83851",
-      "review": {
-        "status": "reviewed",
-        "presentation": "framed-mam",
-        "reason": "No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
-        "proposed_parts": {
-          "near_clause": null,
-          "mam_clauses": [
-            [
-              "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
-            ]
-          ]
-        },
-        "clauses": [
-          {
-            "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
-          }
-        ]
-      }
-    },
-    {
       "id": "BC-Kings מל\"א 8:33 note 1 נוסח",
       "ref": [
         "BC-Kings מל\"א",
@@ -27424,7 +27513,15 @@
         "tmpl_params": {
           "1": "בניכי",
           "2": "וּבָנַ֔יִךְ",
-          "כתיב מנוקד": "בֻ͏ָנַ֔יִכי"
+          "כתיב מנוקד": [
+            {
+              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_params": {
+                "1": "אֻ"
+              }
+            },
+            "בָנַ֔יִכי"
+          ]
         }
       },
       "original_body": "א-כתיב=בֻ͏ָנַ֔יִכי (נקודות הקובוץ עוד לפני האות בי\"ת מימין למטה, ואין שווא במקביל לקרי)",
@@ -27443,11 +27540,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "384e2949c368e2204682c52e928d815fb7e4a117188554a50ec4f813ae7a0d77",
+      "evidence_sha256": "127828acd380f32eda0a76888d214b8991e41b4e338d03595d2fcf5af58ec10c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -28923,7 +29020,7 @@
             },
             "שֵ֥נַיְ",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
                 "1": "אֵ"
               }
@@ -28965,11 +29062,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "71deb9c765d41018c89abdf19e828e2a5b7f10e502baeb03401f9cb36f5c26f8",
+      "evidence_sha256": "a2863d48f21b79a006e2c590803d1d37457fba5cc468d840e628520b006ece6b",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "The note compares orphan-tsere placement, written/qere spellings and meteg choices across sources. Retain all four clauses with the labelled MAM target so the new two-carrier representation does not become the subject of the source's literal graphical descriptions.",
+        "reason": "The note compares orphan-tsere placement, written/qere spellings and meteg choices across sources. Retain all four clauses with the labelled MAM target so the new two-carrier representation does not become the subject of the source's literal graphical descriptions. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -36047,6 +36144,9 @@
       "near_target": [
         "יָמִ֥ים ",
         {
+          "tmpl_name": "רווח בלי ניקוד"
+        },
+        {
           "tmpl_name": "קרי ולא כתיב",
           "tmpl_params": {
             "1": "[בָּאִ֖ים]",
@@ -36077,7 +36177,8 @@
         "קורן, ברויאר, סימנים, מכון ממרא"
       ],
       "change_causes": [
-        "representation policies"
+        "representation policies",
+        "qere-without-ketiv body encoding"
       ],
       "coverage": {
         "category": "surviving",
@@ -36088,11 +36189,33 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "1e99568e128dd04897d29425017178b0aa94cd2089ed533a9177fe912aab6eb0",
+      "evidence_sha256": "9d72f738e063068bcd1da46671886044ee7ad28734c72e935302e7e03fead579",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "The added body template changes the structured target without changing the qere. Preserve every original MAM clause in explicit MAM context; no literal full-target recast is available.",
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Retain the Leningrad, Cairo and printed-tradition relation with MAM's original qere target."
+          },
+          {
+            "index": 1,
+            "disposition": "mam-context",
+            "reason": "Preserve MAM's Aleppo illustration verbatim, including its missing נאם component, and its statement that the space lacks pointing."
+          },
+          {
+            "index": 2,
+            "disposition": "mam-context",
+            "reason": "Retain Breuer's note reference with the source illustration."
+          },
+          {
+            "index": 3,
+            "disposition": "mam-context",
+            "reason": "Retain the edition list with MAM's original target."
+          }
+        ],
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -36109,29 +36232,7 @@
               "קורן, ברויאר, סימנים, מכון ממרא"
             ]
           ]
-        },
-        "clauses": [
-          {
-            "index": 0,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
-          },
-          {
-            "index": 1,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
-          },
-          {
-            "index": 2,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
-          },
-          {
-            "index": 3,
-            "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
-          }
-        ]
+        }
       }
     },
     {
@@ -37302,6 +37403,79 @@
       }
     },
     {
+      "id": "C2-Jeremiah 50:29 note 1 נוסח",
+      "ref": [
+        "C2-Jeremiah",
+        "50",
+        "29"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "dc3a0371cbab101fc71baf6866566ed604c20214eb67b329869a43d18fd79b9a",
+      "original_target": [
+        "אַל־יְהִי־",
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[לָהּ֙]",
+            "2": "לָהּ֙"
+          }
+        },
+        " פְּלֵיטָ֔ה"
+      ],
+      "near_target": [
+        "אַל־יְהִי־",
+        {
+          "tmpl_name": "רווח בלי ניקוד"
+        },
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[לָהּ֙]",
+            "2": "לָהּ֙"
+          }
+        },
+        " פְּלֵיטָ֔ה"
+      ],
+      "original_body": "א-כתיב=אַל־יְהִי־[֯] פְּלֵיטָ֔ה (רווח ריק בלי ניקוד וטעמים, ולמעלה עיגול מסורה)",
+      "clauses": [
+        "א-כתיב=אַל־יְהִי־[֯] פְּלֵיטָ֔ה (רווח ריק בלי ניקוד וטעמים, ולמעלה עיגול מסורה)"
+      ],
+      "change_causes": [
+        "qere-without-ketiv body encoding"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "160r"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
+      "evidence_sha256": "ad29139728b44c4d55c06cf1e7b5753a609565261ed817359e73d2eaee9cdd4f",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "The added body template changes the structured target without changing the qere. Preserve every original MAM clause in explicit MAM context; no literal full-target recast is available.",
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Retain MAM's Aleppo body illustration and its space, absent marks and masorah-circle description with the original qere target."
+          }
+        ],
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "א-כתיב=אַל־יְהִי־[֯] פְּלֵיטָ֔ה (רווח ריק בלי ניקוד וטעמים, ולמעלה עיגול מסורה)"
+            ]
+          ]
+        }
+      }
+    },
+    {
       "id": "C2-Jeremiah 51:2 note 1 נוסח",
       "ref": [
         "C2-Jeremiah",
@@ -38428,7 +38602,16 @@
         "tmpl_params": {
           "1": "דנאל",
           "2": "דָּנִיֵּ֣אל",
-          "כתיב מנוקד": "דָּנִֵּ֣אל"
+          "כתיב מנוקד": [
+            "דָּנִּ֣",
+            {
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
+              "tmpl_params": {
+                "1": "אֵ"
+              }
+            },
+            "אל"
+          ]
         }
       },
       "original_body": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה)",
@@ -38447,11 +38630,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "3d34ba63474e6f91f7daa7ccaaf8658f49632f729d2c73807a4323a2899264d3",
+      "evidence_sha256": "67fa1e6cb9d0a4c0385ad0c01e49dc9227537fd94f5057be00a031f1e095d0ef",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -38491,7 +38674,16 @@
         "tmpl_params": {
           "1": "דנאל",
           "2": "דָּנִיֵּ֣אל",
-          "כתיב מנוקד": "דָּנִֵּ֣אל"
+          "כתיב מנוקד": [
+            "דָּנִּ֣",
+            {
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
+              "tmpl_params": {
+                "1": "אֵ"
+              }
+            },
+            "אל"
+          ]
         }
       },
       "original_body": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה; אך המונח נדחף לגמרי מתחת לאות אל\"ף כזה: דָּנִֵּא֣ל)",
@@ -38510,11 +38702,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "b803032194a17b89aa5bc18dba75e33e8a644f9d617ff930b8500202b59f0e16",
+      "evidence_sha256": "556d3e3626ecf150313f90d36fc12339edc96ba8aeb9f8eb592b59113faa374e",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -39649,7 +39841,16 @@
         "tmpl_params": {
           "1": "מדנאל",
           "2": "מִדָּנִיֵּ֑אל",
-          "כתיב מנוקד": "מִדָּנִֵּ֑אל"
+          "כתיב מנוקד": [
+            "מִדָּנִּ֑",
+            {
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
+              "tmpl_params": {
+                "1": "אֵ"
+              }
+            },
+            "אל"
+          ]
         }
       },
       "original_body": "א-כתיב=מִדָּנִֵּ֑אל (חיריק, צירה, ואתנחתא מתחת לנו\"ן, בסדר הזה)",
@@ -39668,11 +39869,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "cf20c3ee138bb3cbc2d5018b6f4e83320d845cf60308491f407e90d5aefc4589",
+      "evidence_sha256": "46e28499769db0fddc315efa5f99d1e1016f650aa77da2c995b1c5130f257ce1",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -78271,10 +78472,9 @@
           "כתיב מנוקד": [
             "מ",
             {
-              "tmpl_name": "ניקוד בלי אות",
+              "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "וֹ",
-                "carrier": "holam-male-vav"
+                "1": "וֹ"
               }
             },
             "ידָ֣ע"
@@ -78304,11 +78504,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "1d39744bfbd319cfdd1e88f1082b9c2ef897adfd4419742fbc311da83471193a",
+      "evidence_sha256": "92c09d59b89223176e9d3224ee46552014df9aeb27049efd9d014b899aa69b1c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Both clauses compare qere qamats and patah across sources. Full MAM framing retains their qere subject while the new ketiv uses an artificial VAV+HOLAM carrier and retains qamats on dalet.",
+        "reason": "Both clauses compare qere qamats and patah across sources. Full MAM framing retains their qere subject while the new ketiv uses an artificial VAV+HOLAM carrier and retains qamats on dalet. Ben's 2026-10-08 medial-template migration changes only the target's orphan-template name; all original source clauses and their reviewed dispositions remain unchanged.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -78380,6 +78580,88 @@
             "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
           }
         ]
+      }
+    },
+    {
+      "id": "E2-Ruth 3:5 note 1 נוסח",
+      "ref": [
+        "E2-Ruth",
+        "3",
+        "5"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "81de2b2f28ab9b5cdc3aab062d18d64583c6b726f7aff8429860b0eec5a7edc1",
+      "original_target": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[אֵלַ֖י]",
+          "2": "אֵלַ֖י"
+        }
+      },
+      "near_target": [
+        {
+          "tmpl_name": "רווח בלי ניקוד"
+        },
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[אֵלַ֖י]",
+            "2": "אֵלַ֖י"
+          }
+        }
+      ],
+      "original_body": [
+        "=ל-קרי",
+        {
+          "tmpl_name": "ש"
+        },
+        "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+      ],
+      "clauses": [
+        "=ל-קרי",
+        "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+      ],
+      "change_causes": [
+        "qere-without-ketiv body encoding"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "293v"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
+      "evidence_sha256": "a0df6c7fb30583c1fcce00591136fb0f5bfeba64668633ae3fabd4f9128dfc97",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "The added body template changes the structured target without changing the qere. Preserve every original MAM clause in explicit MAM context; no literal full-target recast is available.",
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Retain the Leningrad-qere relation with MAM's original qere target."
+          },
+          {
+            "index": 1,
+            "disposition": "mam-context",
+            "reason": "Retain the complete Aleppo description of the space, marginal qere note and absent pointing."
+          }
+        ],
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "=ל-קרי"
+            ],
+            [
+              "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+            ]
+          ]
+        }
       }
     },
     {
@@ -78538,6 +78820,88 @@
             "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
           }
         ]
+      }
+    },
+    {
+      "id": "E2-Ruth 3:17 note 1 נוסח",
+      "ref": [
+        "E2-Ruth",
+        "3",
+        "17"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "c730870bc4ac9cbb4c70aa3683bda6a2ac4cbde7778e63a5462df275b42c9950",
+      "original_target": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[אֵלַ֔י]",
+          "2": "אֵלַ֔י"
+        }
+      },
+      "near_target": [
+        {
+          "tmpl_name": "רווח בלי ניקוד"
+        },
+        {
+          "tmpl_name": "קרי ולא כתיב",
+          "tmpl_params": {
+            "1": "[אֵלַ֔י]",
+            "2": "אֵלַ֔י"
+          }
+        }
+      ],
+      "original_body": [
+        "=ל-קרי",
+        {
+          "tmpl_name": "ש"
+        },
+        "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי ולא כתב\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+      ],
+      "clauses": [
+        "=ל-קרי",
+        "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי ולא כתב\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+      ],
+      "change_causes": [
+        "qere-without-ketiv body encoding"
+      ],
+      "coverage": {
+        "category": "surviving",
+        "pages": [
+          "293v"
+        ],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
+      "evidence_sha256": "5f56e6b8c5461c53e702e915477eb29321a57d5e719152d0bb23bf8ec546879b",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "The added body template changes the structured target without changing the qere. Preserve every original MAM clause in explicit MAM context; no literal full-target recast is available.",
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Retain the Leningrad-qere relation with MAM's original qere target."
+          },
+          {
+            "index": 1,
+            "disposition": "mam-context",
+            "reason": "Retain the complete Aleppo description of the space, marginal qere note and absent pointing."
+          }
+        ],
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "=ל-קרי"
+            ],
+            [
+              "בכתר יש רווח ניכר ובו עיגול מסורה להערה \"אלי קרי ולא כתב\", אבל חסרים ניקוד וטעמים לתיבה הנקראת ולא נכתבת."
+            ]
+          ]
+        }
       }
     },
     {

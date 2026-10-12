@@ -373,6 +373,12 @@ def _walk(value, verse, side, visit, path=(), zone=_TEXT):
             else:
                 enter(key, item)
     elif rule.action in (phase2._DISSOLVE, phase2._MARK, phase2._VERBATIM):
+        if name == phase2.SPACE_WITHOUT_MARKS:
+            if not in_dataset_text:
+                raise AssertionError(
+                    f"{verse}: body-space template outside dataset text"
+                )
+            nap.orphan_marks.validate_space(value, verse)
         if in_dataset_text and rule.action != phase2._VERBATIM:
             raise AssertionError(f"{verse}: {name!r}, which phase 2 removes, at {path}")
         if keys not in rule.keysets:
@@ -786,7 +792,7 @@ def _pointed_ketiv(corpus):
 def _rule8(corpus):
     """The verses of each of the near-Aleppo dataset's two rule-8 templates.
 
-    The closed walk validates GA, GV and the no-space GD variant through the shared
+    The closed walk validates every explicit carrier variant through the shared
     carrier guard. A count of each name in the book files' serialized text, every
     zone and column included, checks that the walk saw every occurrence.
     """

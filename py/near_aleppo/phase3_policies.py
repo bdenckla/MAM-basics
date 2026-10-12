@@ -116,9 +116,16 @@ _ELOHIM = "Elohim"
 
 # The note template whose body can record what the codex has at its target.
 _NOTE = "נוסח"
-# How MAM's note opens where it records the codex's holam in the divine name:
-# "=א (in the manuscript a holam dot was written in the divine name)".
+# How MAM's note opens where it records the codex's holam in the divine name.
 _CODEX_DIVINE_NAME_HOLAM_NOTE = '=א (בכתב־היד נכתבה נקודת חולם בשם הוי"ה)'
+# The siglumless wording at 1 Kings 8:11 refers to Aleppo: chapter 5 of MAM's
+# introduction explicitly lists its form under the Aleppo siglum (א*), at
+# in/mam-ws-intro/ch5.mediawiki. Ben confirmed that interpretation on 2026-10-12.
+# Recognize that exact note only at its reviewed site; "the manuscript" alone
+# does not identify Aleppo elsewhere.
+_SIGLUMLESS_DIVINE_NAME_HOLAM_NOTES = {
+    ('BC-Kings מל"א', "8", "11"): '=(בכתב־היד נכתבה נקודת חולם בשם הוי"ה)',
+}
 # How it opens where it records the codex's holam in the divine title:
 # "=א (a holam dot in the manuscript)".
 _CODEX_TITLE_HOLAM_NOTE = "=א (נקודת חולם בכתב־היד)"
@@ -923,12 +930,16 @@ class Policies:
         MAM's introduction says the manuscripts rarely have this holam and that
         MAM supplies it for the reader. Where a note on the atom opens with
         _CODEX_DIVINE_NAME_HOLAM_NOTE, MAM records the codex's holam, and the
-        holam stays. 1 Kings 8:11's note has the same words without the siglum,
-        so it says nothing about the codex, and the holam there is stripped. The Elohim reading keeps its holam, which the
-        codex has.
+        holam stays. The reviewed siglumless note at 1 Kings 8:11 also keeps
+        the holam; MAM's introduction confirms its Aleppo attribution.
+        The Elohim reading keeps its holam, which the codex has.
         """
         edits = {}
-        recorded = _note_opening(note).startswith(_CODEX_DIVINE_NAME_HOLAM_NOTE)
+        opening = _note_opening(note)
+        recorded = opening.startswith(_CODEX_DIVINE_NAME_HOLAM_NOTE) or (
+            verse in _SIGLUMLESS_DIVINE_NAME_HOLAM_NOTES
+            and opening == _SIGLUMLESS_DIVINE_NAME_HOLAM_NOTES[verse]
+        )
         for atom in _atoms(text):
             found = _divine_name(text, atom, verse)
             if found is None or found[0] != _ADONAI:

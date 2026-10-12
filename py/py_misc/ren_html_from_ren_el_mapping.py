@@ -95,6 +95,7 @@ HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION: dict[str, tuple[str, Union[str, None]]] =
     "near-aleppo-kq-q": ("rt", None),
     "near-aleppo-kq-rp": ("rp", None),
     "near-aleppo-kq-none": ("span", "near-aleppo-kq-none"),
+    "near-aleppo-body-space": ("span", "near-aleppo-body-space"),
 }
 HT_TAC_FOR_RT_FOR_SLH_WORD_FOI = {
     **_HT_TAC_FOR_RT_FOR_SPECIAL_SPACES,

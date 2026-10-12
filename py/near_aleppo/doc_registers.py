@@ -47,7 +47,11 @@ def sections(numbers):
 
 
 def _kept(numbers):
-    verbatim = [name for name, rule in _RULES.items() if rule.action == _VERBATIM]
+    verbatim = [
+        name
+        for name, rule in _RULES.items()
+        if rule.action == _VERBATIM and name != consumer_notice.SPACE_WITHOUT_MARKS
+    ]
     items = [
         "Both U+05A2 HEBREW ACCENT ATNAH HAFUKH and U+05AA HEBREW ACCENT YERAH BEN "
         "YOMO, the galgal: the codex tells the two apart.",
@@ -274,14 +278,13 @@ def _pending(numbers):
                     ", at ",
                     numbers.snap(_P2, "קרי ולא כתיב"),
                     " sites, near-Aleppo still displays MAM's pointed qere. "
-                    "The planned body text is empty where no letters or marks are "
-                    "written. At 2 Samuel 18:20, MAM's note records tsere and merkha "
-                    "without letters or space, at the join inside a maqaf compound. "
-                    "The template specific to near-Aleppo, ",
+                    "Recorded body templates now describe the marks or horizontal "
+                    "space at the selected sites, beside unchanged qere calls. "
+                    "At 2 Samuel 18:20, tsere and merkha without letters or space "
+                    "are encoded by ",
                     he_name(consumer_notice.MARKS_WITHOUT_LETTER_OR_SPACE),
-                    ", is now supported for the final-dalet font accommodation at "
-                    "Isaiah 54:16. Its intended use for these marks at "
-                    "2 Samuel 18:20 still awaits an explicit variant and implementation.",
+                    ", with an artificial alef. The same template retains "
+                    "the separate final-dalet font accommodation at Isaiah 54:16.",
                 ],
                 [
                     "The readings of the codex that wait for that work: ",
@@ -294,7 +297,8 @@ def _pending(numbers):
                     verse_refs(numbers.snap_sites(_P5S, one_sided)),
                     "), and the one at ",
                     verse_refs(numbers.snap_sites(_P5S, space)),
-                    ", about the codex's unpointed space for a qere without ketiv.",
+                    ", whose note-derived replacement remains pending; the separate "
+                    "body template now records that horizontal space without marks.",
                 ],
                 [
                     "The clauses citing the codex that near-Aleppo has not yet read: ",

@@ -2609,12 +2609,13 @@ Codex owns commit and normal push.
 
 ## Authorize a successor to implement the body encodings — 2026-10-11
 
-**Status:** Active; implementation is authorized in a new chat. Ben requested a
-new session to implement the encodings described in the study. Codex found no
+**Status:** Implemented by the successor; see “Qere-without-ketiv body encodings” below.
+Ben requested a new session to implement the encodings described in the study. Codex found no
 separate encoding plan; the requirements reside in the generated study, source
-README and this ledger. The README's “Dataset implementation handoff” now records
-the settled classifications, open design and ḥolam questions, exact checkout,
-ownership and focused verification commands. This supersedes the earlier
+README and this ledger. The README's “Dataset implementation handoff” recorded
+the settled classifications, then-open design and ḥolam questions, exact checkout,
+ownership and focused verification commands; the implementation entry records
+their resolution. This supersedes the earlier
 prose-only scope for the successor's task. The source classifications and
 current dataset are unchanged by the handoff.
 
@@ -2626,3 +2627,299 @@ project at this same path. The successor verifies the committed handoff HEAD
 and owns implementation, checks, commits and normal pushes to main. The
 predecessor stops writing before dispatch. `git diff --check` passed; mega and
 full suite remain on the approved nightly cadence for this handoff-only change.
+
+## Qere-without-ketiv body encodings — 2026-10-11
+
+**Status:** Implemented by Codex. All nine selected sites retain the complete
+`קרי ולא כתיב` call and every qere letter and mark. An additional body
+template immediately precedes that call in the same sequence, with no separator.
+
+**Decision:** Ben instructed, “Let's go ahead and assume that dot visible in the
+manuscript is an orphan xolam dot, non-tentatively.” The 2 Kings 19:31 payload
+includes the confirmed orphan ḥolam alongside sheva, qamats and tipeḥa. Its
+reading status, attribution, observation and encoding explanation are reconciled.
+The separate assessment that the implied qere letters might fit in the gap
+remains tentative.
+
+**Design and scope:** The existing `ניקוד בלי אות` records marks with
+horizontal space at Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37.
+`ניקוד בלי אות ובלי רווח` adds `carrier=orphan-marks-alef`, requiring
+exactly ALEF + TSERE + MERKHA, without dagesh, at 2 Samuel 18:20. Its
+Isaiah 54:16 final-nun-dalet contract remains unchanged. The new parameterless
+`רווח בלי ניקוד` records horizontal space without marks at 2 Samuel 16:23,
+Jeremiah 31:37, Jeremiah 50:29, Ruth 3:5 and Ruth 3:17. Every added shape has
+closed build and renderer validation. The shared ruby renderer displays the
+body below the unchanged qere in one box. Carrier, blank-span and box widths
+are editorial, rather than measured manuscript spacing.
+
+**Build and notes:** The added phase follows reviewed pointings and precedes
+MAM-target copying. The independent note replay includes the phase. Population
+schema 6 records three marks-with-space sites, one marks-without-space site and
+five space-without-marks sites, separately from the unchanged MAM-only census.
+The six changed attached-note targets retain all original MAM clauses in explicit
+MAM context; the five newly changed notes account for the added MAM-target copies.
+The study's implemented labels are checked against the actual dataset. Images,
+translations, image-first order, ordinary unpointed-Hebrew styling and the
+Jeremiah sic annotation are preserved. Ben's request file and deferred A102 work
+remain unchanged.
+
+**Checkout and product reach:** The full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` was verified clean on main at the required
+handoff commit `54a8137908bd844d0dc1abe7f1f6661b77be9b9e`. The changes reach
+the distributed near-Aleppo dataset, published near-Aleppo pages and their
+generator. The shared MAM-with-doc renderer is also exercised. The normal push
+to main is an outward-facing act; no history rewriting or destructive local
+operation is part of this work.
+
+**Verification:** `py/main_near_aleppo.py` regenerated the census, dataset and
+HTML, and `py/main_near_aleppo.py --check` confirmed the dataset, populations,
+95 pages/assets and two font copies are current. The source inventory and all
+six changed note reviews passed. All nine rendered case sections were read;
+a separate comparison confirmed their original MAM notes, translations, images,
+image-first order and marginal-note layout are preserved. A JSON comparison
+confirmed that the only changed Scripture cells are the nine selected verses,
+that C and D are unchanged, and that all book-header changes are the shared
+consumer notice. Existing GA, GV and Isaiah 54:16 GD data and pages are unchanged.
+
+The focused entry-point command passed **15 tests**:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_test.py py/tests/test_near_aleppo.py py/tests/test_near_aleppo_note_content.py py/tests/test_near_aleppo_clc_style.py py/tests/test_prose_mark_order.py py/tests/test_tracked_filenames.py py/tests/test_explicit_time_zones.py py/tests/test_mb_cmn_kq_special_templates.py -q
+```
+
+`py/main_mam_with_doc.py` regenerated its complete output without a tracked
+diff. The MAM-only census and Ben's request file are unchanged. Black passed on
+every changed Python file, and `git diff --check` passed. The focused tests used
+normal escalation after the sandbox denied Windows resolution of the repository
+root before collection. Mega and the full suite remain on the approved nightly
+cadence; this change has no identified consequence requiring an immediate broad
+run.
+
+**Integration:** Implementation commit `7ebdc506` was committed on main. A
+fresh fetch found `origin/main` at `7fb93c9259f3dd4929016f14079f1a768496d580`,
+with a separate near-Aleppo introduction revision. Normal merge commit
+`86b1495347788d9360fdf11b66a0432d3143471b` preserves that introduction and this
+implementation. The merged `doc_page.py` passes Black, and
+`py/main_near_aleppo.py --html --check` confirms all generated pages remain
+current. The incoming change alters only the introduction's prose and its
+generated page; the dataset and qere implementation are unchanged by the merge.
+The focused prose-mark-order and explicit-time-zone checks also passed again
+after the merge (2 tests). Mega and the full suite remain on the nightly cadence.
+
+## Correct the fourth carrier at 2 Kings 19:31 — 2026-10-11
+
+**Status:** Fixed. Ben corrected the fourth carrier in `אְאָא֖אֹ`: it must be
+vav. The current payload is `אְאָא֖וֹ`. Codex's original alef carrier missed
+the established VAV + HOLAM convention for ḥolam male.
+
+**Change:** The explicit `carrier=alef-and-holam-male-vav` variant of
+`ניקוד בלי אות` requires exactly three marked alefs followed by VAV + HOLAM
+at this site. Closed validation keeps the original GA, single-carrier GV,
+Isaiah 54:16 GD and 2 Samuel 18:20 no-space contracts unchanged. The study,
+dataset consumer notices, build guide, product README and carrier documentation
+now identify the final vav. The manuscript reading of the orphan dot, including
+its confirmed status and the separate tentative letter-fit assessment, is unchanged.
+
+**Scope and verification:** Work began in the clean full clone
+`C:/Users/BenDe/GitRepos/MAM-basics` on main at
+`70e5358c842789183bf46e26ee39dff981296fac`. The real near-Aleppo regeneration and
+`--check` passed. A separate JSON comparison confirms that only this body template
+changes within Scripture, that the qere call and surrounding text remain exact,
+and that C and D remain unchanged. Other book changes are the shared consumer
+notice. A separate HTML comparison confirms `«אְאָא֖וֹ»` below the unchanged
+`צְבָא֖וֹת`, with all eight other case sections and all images unchanged.
+Population counts, MAM-only census, note-review ledger and source MAM data remain
+unchanged. The change reaches the distributed near-Aleppo data, published pages
+and generator/shared-renderer code; the normal main push is outward-facing.
+
+**Focused checks:** All 15 tests in the implementation's focused entry-point
+command passed again. MAM-with-doc regenerated completely without a tracked
+diff. Black passed on all six changed Python files, and `git diff --check`
+passed. Mega and the full suite remain on the approved nightly cadence; no
+specific consequence requires an immediate broad run for this correction.
+
+**Integration:** Origin advanced to `2036eaf7299e9b137db4ab30745642bc95594d8e`
+with documentation and exact frozen-review preservation. The normal merge
+retains those committed records. The imported
+`doc/yod-holam-review-20261007.html` initially failed the authored-prose
+mark-order lint because its historical dataset quotations retain their captured
+order. Fixed by adding that exact frozen capture to the lint's existing
+`_EXCLUDED` mechanism, with its preservation provenance; the capture's bytes
+were verified unchanged against origin and its maintained preservation record.
+The two focused prose/time checks then passed. The correction's 15 focused
+checks and complete regeneration comparison remain applicable; the incoming
+commits change no runtime code or products.
+
+## Remove the repeated current-encoding paragraph — 2026-10-11
+
+**Status:** Implemented at Ben's request. Removed “Current encoding —
+implemented: The dataset uses קרי ולא כתיב.” from all nine cases. Each
+case retains its additional body-template description, and the introduction
+continues to state the shared qere-call convention once.
+
+**Verification:** The checkout was clean on main at
+`9a77ac71b850c7412974366fba1cb37f57628b75`. Black passed on the changed study
+generator, and `py/main_near_aleppo.py --html` regenerated the pages. A byte
+comparison confirmed exactly nine paragraph removals and no other change to
+the study; all nine additional-template descriptions remain. No other generated
+file changed. `git diff --check` passed. Dataset encodings, qere calls, images,
+translations and excerpts are unchanged. Mega and the full suite remain on the
+approved nightly cadence for this static presentation edit.
+
+## Describe encodings without implementation-status labels — 2026-10-11
+
+**Status:** Implemented at Ben's request. Removed all nine “Additional
+template — implemented:” labels and their “The additional template is” lead-in.
+Each description starts with the template name and its explanation. The guide
+describes the encoding conventions directly, without “Current status”,
+“implemented” or “unchanged” framing. The renderer's absent-reading and
+absent-encoding messages also describe recorded information without pending or
+proposed labels. The maintained build guide reflects this presentation.
+
+**Verification:** Work began on main at
+`188a331244d5e474d8aeff902066c91395ca3ed9`. Black passed on the study generator,
+and `py/main_near_aleppo.py --html` regenerated the pages. An independent
+comparison checked all nine template names and explanations against the preceding
+page, then confirmed that all content outside the encoding descriptions and guide
+is unchanged. Images, qere, excerpts, notes, translations and manuscript remarks
+are preserved. No other generated page changed. The remaining uses of
+“intended” and “propose” concern manuscript interpretation rather than encoding
+plans. The read-only `--html --check` confirms all 95 pages/assets and both font
+copies agree with the generator. `git diff --check` passed. Mega and the full
+suite remain on the approved nightly cadence for this
+static presentation edit.
+
+**Integration:** Commit `0756a2eb` contains the wording changes. Normal merge
+`dfb8e1f2257da0cc33f8d7ced1b062ef121be102` retains the separately reviewed
+integration at `origin/main` commit `202e69e8`. The four task files are unchanged
+by the merge. The independent study comparison and `--html --check` pass again,
+and all 20 focused near-Aleppo, template, prose, filename and time-zone checks
+pass. Mega and the full suite remain on the approved nightly cadence.
+
+## Use template terminology and the explicit template name — 2026-10-12
+
+**Status:** Fixed at Ben's request. The encoding guide uses “template” rather
+than “call” and names the `קרי ולא כתיב` template explicitly in both passages.
+The maintained build notes use the same terminology.
+
+**Verification:** Work began in the clean main checkout at `6168259f`.
+Black, HTML regeneration and `git diff --check` passed. An independent comparison
+confirms that only the two requested passages change in the study; all nine
+case sections and all other page text and markup are unchanged. No other
+generated page changed. Mega and the full suite remain on the approved nightly
+cadence for this wording-only correction.
+
+## Mark only the minority cases in the summary table — 2026-10-12
+
+**Status:** Fixed at Ben's request. N marks the four cases with niqqud, ∅
+marks the one case without horizontal space, and EOL marks the two cases at
+the end of a manuscript line. The other 20 data cells are empty. The legend
+explains each column's marks and blanks. A table-specific transparent background
+overrides the shared alternating row shading.
+
+**Verification:** Work began in the clean main checkout at `5e0286c8`.
+Black, HTML regeneration and `git diff --check` passed. An independent
+comparison maps every preceding table entry to its requested minority mark or
+blank and confirms the 4/1/2 counts. All page text and markup outside the table,
+legend and scoped CSS addition remain unchanged; no other generated page changed.
+The scoped background selector outranks the shared banding selector. Mega and
+the full suite remain on the approved nightly cadence for this presentation edit.
+
+## Display the 2 Kings 19:31 body template — 2026-10-12
+
+**Status:** Fixed at Ben's request. The artificial-vav explanation ends with
+a colon and is followed by a centered paragraph showing the template syntax,
+including the `אְאָא֖וֹ` payload and `carrier=alef-and-holam-male-vav` parameter.
+The display comes from the body record already validated against the dataset.
+Hebrew phrases retain RTL isolation; the marked payload has pointed styling.
+
+**Verification:** Work began in the clean main checkout at `634304dc`.
+Black, HTML regeneration and `git diff --check` passed. An independent comparison
+parsed the displayed syntax and confirmed exact agreement with the actual body
+template in `out/near-aleppo/plus/BC-Kings.json` at 2 Kings 19:31. It also checked
+the adjacent colon, centered-paragraph class and Hebrew styling. All other page
+text and markup are unchanged; no other generated page changed. Mega and the
+full suite remain on the approved nightly cadence for this presentation edit.
+
+## Describe the rounded-edge box as a cartouche — 2026-10-12
+
+**Status:** Fixed using Ben's exact replacement sentence, describing the
+rounded-edge box or “cartouche” used for normal ketiv/qere cases.
+
+**Verification:** The clean main baseline was `bd143369`. Black, HTML
+regeneration and `git diff --check` passed. An independent comparison confirms
+the exact sentence replacement with no other study text or markup changes and
+no other generated page changes. Mega and the full suite remain on the approved
+nightly cadence for this sentence-only edit.
+
+## Remove the carrier parameter — 2026-10-12
+
+**Status:** Implemented by Codex at Ben's request: "Let's get rid of this
+parameter. It seems nothing is lost other than some internal self-consistency
+validation."
+
+**Change:** Both artificial-carrier templates now have only parameter 1.
+The maintained pointing and qere-body inputs, shared validation, generated
+dataset, consumer notices and current documentation use that schema. The
+payloads retain every carrier letter and mark and their existing interpretations.
+Earlier dated decisions and finished receipts retain their historical labels;
+the choices page records this later removal.
+
+**Verification:** The clean main baseline was `571e2a31`. Black and
+`git diff --check` passed. Near-Aleppo build and HTML regeneration and the
+complete Near-Aleppo `--check` passed; the focused Near-Aleppo, note-content,
+display-style and prose checks passed 14 tests. A fresh source replay proved
+that the review ledger changes only four removed keys and their evidence
+hashes; every review object is identical. An independent comparison proved
+that all 24 generated books change only the 41 removed keys and their shared
+consumer notice. Hebrew payloads, qeres, separators and all other book values
+are unchanged. The population file and all 66 edition pages are byte-identical.
+Regenerating MAM-with-doc produced no tracked changes. A read-only independent
+diff review found no consequential defects. Mega and the full suite remain on
+the approved nightly cadence.
+
+## Batch the qere-without-ketiv presentation edits — 2026-10-12
+
+**Status:** Implemented by Codex at Ben’s explicit request, “PLEASE IMPLEMENT
+THIS PLAN”. The approved batch incorporates the requests made in this chat.
+
+**Changes:** The study states that it covers all nine cases, uses the requested
+image and excerpt wording, and qualifies what this document shows. The two
+templates at each site have separate bullets; the three body templates have a
+template-and-meaning table with RTL Hebrew cells. The displayed wikitext is
+centered and RTL. The summary legend names its columns, and the two exceptional
+verse references link to their case sections.
+
+The agreement explanation is footnote φ1, called out from both Ruth translations.
+Its wording is preserved apart from curly punctuation. Authored English prose
+and translations use curly quotes and apostrophes; faithful Hebrew note text is
+unchanged. Empty MAM doc-note sections and the requested redundant mark, space
+and line-position remarks are removed. The general dagesh rule, scribal-intent
+and accidental-spacing explanations, the narrow-space discussion and marginal
+note damage explanation are retained. Matching note-review descriptions were
+reconciled without changing the record format or validation rules.
+
+The shared space-template renderer now displays exactly `«»` beneath the qere,
+without a fixed-width blank. The study, edition introduction and FOI guide
+describe that convention. The maintained source README records the presentation.
+
+**Verification:** Development used the clean main checkout at
+`C:/Users/BenDe/GitRepos/MAM-basics`, baseline
+`00fc4c776ccab620e8b7025c6a4a00aaa552ced6`. Black passed on all four changed
+Python files, one file per invocation after its parallel workers stalled.
+The complete near-Aleppo regeneration and final `--html --check` passed;
+regenerating ordinary MAM-with-doc produced no tracked change. The authorized
+focused near-Aleppo, note-content, display-style and prose checks passed 12 tests.
+The test runner required sandbox escalation to resolve the repository path.
+
+An independent differential check establishes complete coverage of the nine
+qere-only sites, both φ1 callouts, the exact moved passage, local link targets,
+RTL markup, curly punctuation and all five study baselines. The three changed
+edition book pages differ only in their ten body/lemma empty-guillemet displays.
+Qere, excerpts, carrier payloads, images, faithful source notes, translations
+apart from typography, structured readings and provenance are preserved.
+Dataset products, census baselines and population data have no tracked diff.
+A read-only independent review found one italicization issue, corrected before
+the final checks. Every generated diff was inspected; `git diff --check` passed.
+No automated browser inspection is claimed. Mega and the full suite remain on
+the approved nightly cadence for this presentation batch.

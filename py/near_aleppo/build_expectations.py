@@ -28,15 +28,21 @@ _NEAR_ALEPPO = build_paths.input_dir()
 POPULATIONS_PATH = _NEAR_ALEPPO / "build-populations.json"
 _CENSUS_EXPECTED = _NEAR_ALEPPO / "census"
 
-_SCHEMA_VERSION = 5
+_SCHEMA_VERSION = 6
 _COUNT_SECTIONS = (
     "phase2_counts",
     "phase3_counts",
     "phase5_counts",
     "phase6_counts",
     "flag_counts",
+    "qere_without_ketiv_counts",
 )
-_SITE_SECTIONS = ("phase3_sites", "phase5_sites", "flag_sites")
+_SITE_SECTIONS = (
+    "phase3_sites",
+    "phase5_sites",
+    "flag_sites",
+    "qere_without_ketiv_sites",
+)
 _SECTIONS = (
     "phase2_counts",
     "phase3_counts",
@@ -46,6 +52,8 @@ _SECTIONS = (
     "phase6_counts",
     "flag_counts",
     "flag_sites",
+    "qere_without_ketiv_counts",
+    "qere_without_ketiv_sites",
 )
 
 # These phase-2 counters are the settled column of template_inventory.py.
@@ -218,7 +226,7 @@ def assert_census_agrees(resolver, policies, readings, mam_targets):
         )
 
 
-def render(resolver, policies, readings, mam_targets, flags):
+def render(resolver, policies, readings, mam_targets, flags, bodies):
     """The text of the population file for one build's recorded counts and sites."""
     tallies = {
         "phase2_counts": resolver.counts,
@@ -229,6 +237,10 @@ def render(resolver, policies, readings, mam_targets, flags):
         "phase6_counts": mam_targets.counts,
         "flag_counts": flags.counts,
         "flag_sites": flags.sites,
+        "qere_without_ketiv_counts": bodies.counts,
+        "qere_without_ketiv_sites": {
+            key: sorted(value) for key, value in bodies.sites.items()
+        },
     }
     value = {"schema_version": _SCHEMA_VERSION}
     lines = ["{", f'  "schema_version": {_SCHEMA_VERSION},']
@@ -300,6 +312,16 @@ def write(text):
 # helpers kept by a note citing the codex or ל, and the zarqa's kept by a note
 # citing ל.
 _SEEDS = {
+    "qere_without_ketiv_counts": (
+        "qere-without-ketiv body: marks-with-space",
+        "qere-without-ketiv body: marks-without-space",
+        "qere-without-ketiv body: space-without-marks",
+    ),
+    "qere_without_ketiv_sites": (
+        "qere-without-ketiv body: marks-with-space",
+        "qere-without-ketiv body: marks-without-space",
+        "qere-without-ketiv body: space-without-marks",
+    ),
     "phase2_counts": (
         "מ:קמץ",
         "מ:דחי",

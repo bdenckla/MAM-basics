@@ -1,5 +1,5 @@
 {
-  "format": "near-aleppo-qere-without-ketiv-readings-v3",
+  "format": "near-aleppo-qere-without-ketiv-readings-v4",
   "cases": [
     {
       "id": "Ju20-13",
@@ -10,7 +10,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks."
+        "explanation": "The additional template records sheva, tsere, and munaḥ, with no dagesh, and horizontal space above these marks.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְאֵ֣"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -41,7 +47,7 @@
         "masorah_circle_present": true,
         "masorah_circle_position": "above the marks"
       },
-      "observation": "The below-marks of בְּנֵ֣י (sheva, tsere, munaḥ) are present without letters, with space above them. There is no dagesh for this qere in the body text, as expected, since dagesh marks are never included in cases of qere without ketiv. The orphan marks are at the end of a manuscript line. The line ending provided space for the marks, possibly accidentally.",
+      "observation": "In cases of qere without ketiv, dagesh marks are never included. The line ending provided space for the marks, possibly accidentally.",
       "romanized": [
         "sheva",
         "tsere",
@@ -63,7 +69,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records horizontal space without niqqud. Available space does not supply missing marks."
+        "explanation": "The additional template records horizontal space without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -90,7 +99,7 @@
           "quotation": "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
         }
       },
-      "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM's description of the space as “narrow” is slightly puzzling, unless we take \"narrow\" to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
+      "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM’s description of the space as “narrow” is slightly puzzling, unless we take “narrow” to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
       "romanized": [
         "ḥiriq",
         "tipeḥa"
@@ -110,7 +119,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-without-space",
-        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. The additional template still requires an explicit variant for this use."
+        "explanation": "The additional template records tsere and merkha, with no dagesh or horizontal space above the marks. An artificial alef has both marks.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות ובלי רווח",
+          "tmpl_params": {
+            "1": "אֵ֥"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -154,7 +169,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records sheva, qamats, and tipeḥa, with horizontal space above them. The ḥolam male reading remains tentative, so the carrier payload is unsettled."
+        "explanation": "The additional template records sheva, qamats, tipeḥa, and an orphan ḥolam dot, with horizontal space above the marks. Three artificial alef letters carry the below-marks, followed by an artificial vav carrying the ḥolam dot.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אְאָא֖וֹ"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -176,17 +197,19 @@
         ],
         "masorah_circle_present": false,
         "masorah_circle_basis": "Ben Denckla's manuscript-image correction, 2026-10-11",
-        "xolam_male_dot": {
-          "status": "tentative",
-          "assessment": "A ḥolam male dot seems to be represented."
+        "orphan_xolam_dot": {
+          "status": "confirmed",
+          "assessment": "The visible dot is an orphan ḥolam dot.",
+          "attribution": "Ben Denckla, 2026-10-11",
+          "decision": "Let's go ahead and assume that dot visible in the manuscript is an orphan xolam dot, non-tentatively."
         }
       },
-      "observation": "The gap here is generous compared with the manuscript's usual small or nonexistent spaces between atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת are present (sheva, qamats, and tipeḥa). A ḥolam male dot also seems to be represented.",
+      "observation": "The gap here is generous compared with the manuscript’s usual small or nonexistent spaces between atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one large enough to fit the (implied) qere letters.",
       "romanized": [
         "sheva",
         "qamats",
         "tipeḥa",
-        "ḥolam male"
+        "ḥolam"
       ],
       "documentation_notes": [],
       "crop": {
@@ -203,7 +226,13 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records two qamats marks and pashta, with horizontal space above the marks."
+        "explanation": "The additional template records two qamats marks and pashta, with horizontal space above the marks.",
+        "template": {
+          "tmpl_name": "ניקוד בלי אות",
+          "tmpl_params": {
+            "1": "אָאָא֙"
+          }
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -226,7 +255,7 @@
           "text": "The letter-scribe presumably left this space intentionally."
         }
       },
-      "observation": "The marks of בָּנָיו֙ (qamats, qamats, pashta) are present without letters, with space above them. The marks occupy a large horizontal space between the surrounding written atoms, presumably left intentionally by the letter-scribe.",
+      "observation": "The marks occupy a large horizontal space between the surrounding written atoms, presumably left intentionally by the letter-scribe.",
       "romanized": [
         "qamats",
         "pashta"
@@ -246,7 +275,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space without niqqud."
+        "explanation": "The additional template records the generous horizontal space without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -273,7 +305,7 @@
           ]
         }
       },
-      "observation": "The horizontal space between the surrounding written atoms is rather generous.",
+      "observation": null,
       "romanized": [],
       "documentation_notes": [
         "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
@@ -296,7 +328,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space without niqqud. The preceding maqaf extends into the space."
+        "explanation": "The additional template records the generous horizontal space without niqqud. The preceding maqaf extends into the space.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -312,7 +347,7 @@
         "masorah_circle_position": "within the generous space",
         "maqaf_extends_into_space": true
       },
-      "observation": "The horizontal space between the surrounding written atoms is generous. The preceding maqaf extends into that space.",
+      "observation": null,
       "romanized": [
         "maqaf"
       ],
@@ -331,7 +366,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space without niqqud."
+        "explanation": "The additional template records the generous horizontal space without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -363,7 +401,10 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records the generous horizontal space at the end of the manuscript line, without niqqud."
+        "explanation": "The additional template records the generous horizontal space at the end of the manuscript line, without niqqud.",
+        "template": {
+          "tmpl_name": "רווח בלי ניקוד"
+        }
       },
       "reading": {
         "manuscript": "Aleppo Codex",
@@ -383,7 +424,7 @@
           "text": "The space may be accidentally generous because it is at the end of the manuscript line."
         }
       },
-      "observation": "The space is at the end of a manuscript line. The line ending may account for the generous space, possibly accidentally.",
+      "observation": "The line ending may account for the generous space, possibly accidentally.",
       "romanized": [],
       "documentation_notes": [],
       "crop": {

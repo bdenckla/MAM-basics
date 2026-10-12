@@ -10,7 +10,7 @@
     {
       "id": "2S16-23",
       "source_description": {
-        "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM's description of the space as “narrow” is slightly puzzling, unless we take \"narrow\" to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
+        "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM’s description of the space as “narrow” is slightly puzzling, unless we take “narrow” to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
         "documentation_notes": []
       },
       "notes": [
@@ -74,7 +74,7 @@
     {
       "id": "Je31-37",
       "source_description": {
-        "observation": "The horizontal space between the surrounding written atoms is rather generous.",
+        "observation": null,
         "documentation_notes": [
           "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
         ]
@@ -108,17 +108,17 @@
               },
               {
                 "kind": "prose",
-                "text": "[sic, missing נְאֻם־ in MAM's illustration]"
+                "text": "[sic, missing נְאֻם־ in MAM’s illustration]"
               },
               {
                 "kind": "prose",
-                "text": "Pointing is not present in the space intended for \"qere without ketiv\"."
+                "text": "Pointing is not present in the space intended for “qere without ketiv”."
               }
             ],
             [
               {
                 "kind": "prose",
-                "text": "Breuer's note."
+                "text": "Breuer’s note."
               }
             ],
             [
@@ -135,7 +135,7 @@
     {
       "id": "Je50-29",
       "source_description": {
-        "observation": "The horizontal space between the surrounding written atoms is generous. The preceding maqaf extends into that space.",
+        "observation": null,
         "documentation_notes": []
       },
       "notes": [
@@ -185,13 +185,13 @@
             [
               {
                 "kind": "prose",
-                "text": "MAM's qere agrees with the qere implied by the Leningrad Codex."
+                "text": "MAM’s qere agrees with the qere implied by the Leningrad Codex."
               }
             ],
             [
               {
                 "kind": "prose",
-                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note \"אלי קרי\", but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note “אלי קרי”, but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
               }
             ]
           ]
@@ -202,7 +202,7 @@
     {
       "id": "R3-17",
       "source_description": {
-        "observation": "The space is at the end of a manuscript line. The line ending may account for the generous space, possibly accidentally.",
+        "observation": "The line ending may account for the generous space, possibly accidentally.",
         "documentation_notes": []
       },
       "notes": [
@@ -218,13 +218,13 @@
             [
               {
                 "kind": "prose",
-                "text": "MAM's qere agrees with the qere implied by the Leningrad Codex."
+                "text": "MAM’s qere agrees with the qere implied by the Leningrad Codex."
               }
             ],
             [
               {
                 "kind": "prose",
-                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note \"אלי קרי ולא כתב\", but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
+                "text": "In the Aleppo Codex there is a noticeable space containing a masorah circle referring to the marginal note “אלי קרי ולא כתב”, but the vowel points and cantillation marks for the qere, which is read but not written, are not present."
               }
             ]
           ]

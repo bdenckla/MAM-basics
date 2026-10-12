@@ -114,15 +114,6 @@ _CHOICES = (
     Choice(
         "2026-08-25",
         _EDITORIAL_BEN_ACCEPTED,
-        "The divine-name holam at 1 Kings 8:11, whose note names no source",
-        "The note at 1 Kings 8:11 says a holam was written in the divine name but names no source, so near-Aleppo does not count it among the notes recording the codex's holam, and has no holam there.",
-        (
-            "Reading the missing siglum as `א`, the likely intent, and keeping the holam",
-        ),
-    ),
-    Choice(
-        "2026-08-25",
-        _EDITORIAL_BEN_ACCEPTED,
         "The revia mugrash at Job 19:16",
         "At Job 19:16 near-Aleppo has the geresh muqdam on the first word of the maqaf compound and the revia on the second, as the note gives the codex's form, where MAM has both marks on one letter of the second word.",
         ("Removing the revia, as at the other sites",),
@@ -194,7 +185,7 @@ _CHOICES = (
         "2026-09-01",
         _BEN,
         "Marks at a position of no width",
-        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its intended use at 2 Samuel 18:20 remains pending; the later final-dalet font accommodation is recorded separately below.",
+        "The decision reserves the name `ניקוד בלי אות ובלי רווח` for a planned template specific to near-Aleppo, intended to represent marks at a position of no width, at the join inside a maqaf compound. Its use at 2 Samuel 18:20 was implemented on 2026-10-11 with the explicit orphan-marks-alef variant; the later final-dalet font accommodation is recorded separately below.",
         ("A parameter of the one template",),
     ),
     Choice(
@@ -861,6 +852,34 @@ _CHOICES = (
         "The final dalet font accommodation at Isaiah 54:16",
         "Ben requested an artificial dalet carrying all three final-nun marks in `ניקוד בלי אות ובלי רווח`. The explicit GD variant, carrier=final-nun-dalet, accepts exactly DALET + DAGESH + TSERE + MAHAPAKH immediately after the ketiv final nun, with no space. The marks remain associated with that nun; the dalet is not a ketiv consonant, and this font accommodation supplies no claim of ownerless manuscript marks. This is the first final carrier case; earlier carriers were initial or medial. GA and GV retain their meanings and dagesh prohibition, and the whole qere is unchanged.",
         ("Omitting a mark to accommodate the font", "Allowing dagesh on GA or GV"),
+    ),
+    Choice(
+        "2026-10-08",
+        _BEN,
+        "Orphan vowels at five reviewed ketiv sites",
+        "At 2 Samuel 3:2, qamats follows yod on a medial GA carrier. At 2 Kings 4:7, qubuts is on a leading GA carrier by Ben's preference for uniform representation, without a new manuscript inspection; the CGJ formerly between qubuts and qamats on bet is omitted from the adopted form. At Ezekiel 14:14, 14:20 and 28:3, only tsere follows nun on a medial GA carrier; the accents stay on nun. The medial forms use the near-Aleppo dataset's `ניקוד בלי אות ובלי רווח` with its defined single-parameter GA shape. Original MAM notes retain their source forms. Other orphan-template names are unchanged.",
+        ("Retaining both vowels on the same written letter at these sites",),
+    ),
+    Choice(
+        "2026-10-08",
+        _BEN,
+        "Medial orphan-template names",
+        "Ben approved migrating the remaining medial orphan instances without adjacent literal separators from `ניקוד בלי אות` to `ניקוד בלי אות ובלי רווח`. The name change preserves every carrier parameter, mark, written letter and separator. Both names accept the existing GA and explicit holam-male-vav GV contracts; a GV remains artificial VAV + HOLAM with its discriminator. Leading orphans retain the original name. No new manuscript adjudication or pointing change is made.",
+        ("Keeping the older name at these medial orphan positions",),
+    ),
+    Choice(
+        "2026-10-12",
+        _BEN,
+        "Remove the carrier parameter",
+        "Ben removed the carrier parameter from both artificial-carrier templates. Parameter 1 retains every carrier letter and mark, including the holam-male vav, the mixed alef/vav payload and the final-nun dalet accommodation. The earlier dated decisions describe the former parameter labels. The current templates have only parameter 1; the edition's displayed forms and the carriers' interpretations are unchanged.",
+        ("Keeping redundant carrier labels alongside the payload",),
+    ),
+    Choice(
+        "2026-10-12",
+        _BEN,
+        "The divine-name holam at 1 Kings 8:11",
+        "Near-Aleppo keeps the holam recorded in MAM's note. The note calls Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo. This supersedes the earlier omission based on the missing siglum.",
+        ("Omitting the holam because the note lacks the Aleppo siglum",),
     ),
 )
 

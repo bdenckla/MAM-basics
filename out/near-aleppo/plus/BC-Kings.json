@@ -18,9 +18,9 @@
     "consumer_notice": {
       "summary": "The near-Aleppo dataset is similar to MAM-parsed-plus. The Hebrew of near-Aleppo is nearer to the Aleppo Codex's body text than the Hebrew of MAM-parsed-plus. Like MAM-parsed-plus, it is a structured dataset, not ready-to-display Scripture; interpret each structure by its documented role and choose a projection wherever the payload presents alternatives.",
       "critical_rules": [
-        "Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it. Near-Aleppo adds note templates, ניקוד בלי אות, and ניקוד בלי אות ובלי רווח; follow their documented roles.",
-        "Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture. The stored pointed ketiv, כתיב מנוקד, is a Scripture alternative.",
-        "GA and GV artificial carriers are not ketiv consonants. The no-space template ניקוד בלי אות ובלי רווח accepts only carrier=final-nun-dalet with DALET + DAGESH + TSERE + MAHAPAKH (GD). It immediately follows the final nun at Isaiah 54:16 without a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier as a ketiv consonant or insert a separator at a carrier-template boundary.",
+        "Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing fields, and fail on an unknown template instead of guessing from its parameters or skipping it. Near-Aleppo adds note templates, ניקוד בלי אות, and ניקוד בלי אות ובלי רווח, and רווח בלי ניקוד; follow their documented roles.",
+        "Do not collect MAM's preserved targets, note clauses or flags as Scripture. The stored pointed ketiv, כתיב מנוקד, is a Scripture alternative.",
+        "GA and GV artificial carriers are not ketiv consonants. Both carrier template names have only parameter 1 and accept GA and GV payloads. Medial GA/GV orphans without adjacent literal separators use the no-space name; leading orphans and explicit separators retain their representations. The no-space template ניקוד בלי אות ובלי רווח accepts DALET + DAGESH + TSERE + MAHAPAKH (GD). GD immediately follows the final nun at Isaiah 54:16 without a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier as a ketiv consonant or insert a separator at a carrier-template boundary. The mixed alef/vav payload in the original template requires ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then VAV + HOLAM at 2 Kings 19:31; the final vav retains the holam-male carrier meaning. The no-space qere-without-ketiv body payload is exactly ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel 18:20. The parameterless רווח בלי ניקוד records horizontal space without marks. Each qere-without-ketiv body template immediately precedes the unchanged קרי ולא כתיב call in the same sequence; the body template and qere call describe the same site. A body projection uses the first template; a reading projection uses the qere.",
         "Choose one documented branch of each choice-bearing structure; do not concatenate the branches. Near-Aleppo has evaluated away MAM's templates for dual cantillation, qamats, and poetic stress-helper alternatives, so the branches left in near-Aleppo's text are those of the ketiv/qere templates, כתיב מנוקד among them, and of the special-letter words it keeps. A copy of MAM's target in מקרא על פי המסורה keeps all of MAM's alternatives.",
         "A special-letter template's interrupted spelling and uninterrupted word-form are two representations of one word-form; select one text representation rather than collecting both.",
         "Reassemble text fragments before identifying words or maqaf compounds; array, template, and element boundaries are not segmentation boundaries.",
@@ -3104,12 +3104,10 @@
               },
               " הֶעָנָ֑ן כִּי־מָלֵ֥א ",
               {
-                "tmpl_name": "נוסח עם הקשר מקרא על פי המסורה",
+                "tmpl_name": "נוסח",
                 "tmpl_params": {
-                  "1": "כְבוֹד־יְהוָ֖ה",
-                  "2": [],
-                  "מקרא על פי המסורה": "כְבוֹד־יְהֹוָ֖ה",
-                  "הערת מקרא על פי המסורה": "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
+                  "1": "כְבוֹד־יְהֹוָ֖ה",
+                  "2": "=(בכתב־היד נכתבה נקודת חולם בשם הוי\"ה)"
                 }
               },
               " אֶת־בֵּ֥ית יְהוָֽה׃"
@@ -3913,7 +3911,7 @@
                   "כתיב מנוקד": [
                     "תַּ",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
                         "1": "אְ"
                       }
@@ -6397,10 +6395,9 @@
                   "כתיב מנוקד": [
                     "וּ֨בְחַטָּאת֔",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
-                        "1": "וֹ",
-                        "carrier": "holam-male-vav"
+                        "1": "וֹ"
                       }
                     },
                     "יו"
@@ -9677,10 +9674,9 @@
                   "כתיב מנוקד": [
                     "מ",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
-                        "1": "וֹ",
-                        "carrier": "holam-male-vav"
+                        "1": "וֹ"
                       }
                     },
                     "יצָֽקֶת"
@@ -9737,7 +9733,15 @@
                     "tmpl_params": {
                       "1": "בניכי",
                       "2": "וּבָנַ֔יִךְ",
-                      "כתיב מנוקד": "בֻ͏ָנַ֔יִכי"
+                      "כתיב מנוקד": [
+                        {
+                          "tmpl_name": "ניקוד בלי אות",
+                          "tmpl_params": {
+                            "1": "אֻ"
+                          }
+                        },
+                        "בָנַ֔יִכי"
+                      ]
                     }
                   },
                   "2": [],
@@ -10454,7 +10458,7 @@
                   "כתיב מנוקד": [
                     "מֵאַ֖",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
                         "1": "אִ"
                       }
@@ -11635,7 +11639,7 @@
                   "כתיב מנוקד": [
                     "לְ",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
                         "1": "אַ"
                       }
@@ -12352,10 +12356,9 @@
                   "כתיב מנוקד": [
                     "הַמֵּא֗",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
-                        "1": "וֹ",
-                        "carrier": "holam-male-vav"
+                        "1": "וֹ"
                       }
                     },
                     "יות"
@@ -12416,10 +12419,9 @@
                   "כתיב מנוקד": [
                     "הַמֵּא֗",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
-                        "1": "וֹ",
-                        "carrier": "holam-male-vav"
+                        "1": "וֹ"
                       }
                     },
                     "יות"
@@ -12444,10 +12446,9 @@
                   "כתיב מנוקד": [
                     "הַמֵּא֗",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
-                        "1": "וֹ",
-                        "carrier": "holam-male-vav"
+                        "1": "וֹ"
                       }
                     },
                     "יות"
@@ -12510,10 +12511,9 @@
                   "כתיב מנוקד": [
                     "הַמֵּא֣",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
-                        "1": "וֹ",
-                        "carrier": "holam-male-vav"
+                        "1": "וֹ"
                       }
                     },
                     "יות׀"
@@ -12771,7 +12771,7 @@
                   "כתיב מנוקד": [
                     "הַ",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
                         "1": "אֻ"
                       }
@@ -14952,7 +14952,7 @@
                   "כתיב מנוקד": [
                     "סְפַרְ",
                     {
-                      "tmpl_name": "ניקוד בלי אות",
+                      "tmpl_name": "ניקוד בלי אות ובלי רווח",
                       "tmpl_params": {
                         "1": "אָֽ"
                       }
@@ -15503,7 +15503,7 @@
                         },
                         "שֵ֥נַיְ",
                         {
-                          "tmpl_name": "ניקוד בלי אות",
+                          "tmpl_name": "ניקוד בלי אות ובלי רווח",
                           "tmpl_params": {
                             "1": "אֵ"
                           }
@@ -16045,6 +16045,12 @@
             [
               "כִּ֤י מִירוּשָׁלַ͏ִם֙ תֵּצֵ֣א שְׁאֵרִ֔ית וּפְלֵיטָ֖ה מֵהַ֣ר צִיּ֑וֹן קִנְאַ֛ת יְהוָ֥ה ",
               {
+                "tmpl_name": "ניקוד בלי אות",
+                "tmpl_params": {
+                  "1": "אְאָא֖וֹ"
+                }
+              },
+              {
                 "tmpl_name": "קרי ולא כתיב",
                 "tmpl_params": {
                   "1": "[צְבָא֖וֹת]",
@@ -16108,6 +16114,12 @@
             [],
             [
               "וַיְהִי֩ ה֨וּא מִֽשְׁתַּחֲוֶ֜ה בֵּ֣ית׀ נִסְרֹ֣ךְ אֱלֹהָ֗יו וְֽאַדְרַמֶּ֨לֶךְ וְשַׂרְאֶ֤צֶר ",
+              {
+                "tmpl_name": "ניקוד בלי אות",
+                "tmpl_params": {
+                  "1": "אָאָא֙"
+                }
+              },
               {
                 "tmpl_name": "קרי ולא כתיב",
                 "tmpl_params": {

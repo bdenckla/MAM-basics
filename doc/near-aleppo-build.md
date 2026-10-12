@@ -32,14 +32,47 @@ as the build has them where the pointing is written. Where the template no longe
 has them, the build stops with an error that names the record and shows both; a
 renamed template does not stop it. Importing a payload makes no new editorial
 choice. Artificial carriers preserve orphan marks and their positions
-without adding written ketiv consonants. The explicit holam-male-vav variant
-accepts only its declared carrier and exact mark shape. The no-space template
-`ניקוד בלי אות ובלי רווח` accepts only `carrier=final-nun-dalet`, with exactly
+without adding written ketiv consonants. Both carrier templates have only
+parameter 1, containing their payload. GV is exactly VAV + HOLAM, preserving
+the holam-male meaning. The no-space template
+`ניקוד בלי אות ובלי רווח` accepts exactly
 DALET + DAGESH + TSERE + MAHAPAKH (GD). At Isaiah 54:16 it immediately follows
 the final nun without a space, accommodating that nun's marks without adding a
 ketiv consonant. GA and GV still forbid dagesh. This is the first final carrier
 case; earlier carriers were initial or medial. The dalet accommodation makes
 no claim that the manuscript has ownerless marks.
+
+Recorded qere-without-ketiv body encodings are applied after the pointings and
+before MAM-target copying. The build reads the explicit `intended_encoding.template`
+in `in/near-aleppo/qere-without-ketiv-readings.json`, checks its whole qere
+against the unchanged `קרי ולא כתיב` call, and inserts the body template
+immediately before that call without a separator. `ניקוד בלי אות` holds marks
+with horizontal space. The no-space body template has exactly
+ALEF + TSERE + MERKHA, without dagesh, at 2 Samuel 18:20.
+The parameterless `רווח בלי ניקוד` records horizontal space without marks.
+Build populations record these body classifications separately from the MAM-only
+census. The independent note replay applies the same phase. The example edition
+pairs each body template with its following qere, displaying body marks or a
+blank below the qere; editorial box and carrier widths do not measure manuscript
+spacing. The mixed alef/vav payload is exactly
+`אְאָא֖וֹ` at 2 Kings 19:31: three marked alefs followed by VAV + HOLAM.
+The final artificial vav retains the ḥolam male carrier meaning without adding
+a written consonant or claiming that a vav is present in the body. The original
+GA and single-carrier GV contracts remain unchanged.
+
+The near-Aleppo dataset's zero-width sibling, `ניקוד בלי אות ובלי רווח`,
+accepts the same GA and GV shapes. Both render carriers
+in guillemets; neither inserts a separator. By Ben's decision of 2026-10-08,
+medial orphans between written letters with no adjacent literal separator use
+the zero-width name. Leading orphans and existing explicit separators retain
+their representations. All Hebrew codepoints are unchanged.
+
+After the last pointing import, before any output is written, a Scripture-target
+check requires each supplied ordinary or trivial pointed ketiv to retain its
+written ketiv consonants, excluding artificial carriers. Raw combining marks
+require a written-letter owner, while explicit orphan templates use the existing
+GA/GV contract, retaining GD as a letter-owned font accommodation. The check inspects values without changing them. It does not
+judge vowel combinations, manuscript ownership or whole-atom grammar.
 
 The build preserves C and D columns, qeres, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It

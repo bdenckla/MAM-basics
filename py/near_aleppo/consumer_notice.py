@@ -12,6 +12,7 @@ import copy
 from near_aleppo.phase2_templates import MARKS_WITHOUT_LETTER
 from near_aleppo.phase2_templates import MARKS_WITHOUT_LETTER_OR_SPACE
 from near_aleppo.phase2_templates import POINTED_KETIV_PARAMETER
+from near_aleppo.phase2_templates import SPACE_WITHOUT_MARKS
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 
 # MAM-parsed-plus's notice, the same in all 24 books, copied by script: the notice
@@ -88,23 +89,37 @@ NOTICE = {
             "documented Scripture-bearing fields, and fail on an unknown template "
             "instead of guessing from its parameters or skipping it. Near-Aleppo "
             f"adds note templates, {MARKS_WITHOUT_LETTER}, and "
-            f"{MARKS_WITHOUT_LETTER_OR_SPACE}; follow their "
+            f"{MARKS_WITHOUT_LETTER_OR_SPACE}, and {SPACE_WITHOUT_MARKS}; follow their "
             "documented roles."
         ),
         (
-            "Do not collect MAM's preserved targets, note clauses, flags or carrier "
-            "metadata as Scripture. The stored pointed ketiv, "
+            "Do not collect MAM's preserved targets, note clauses or flags "
+            "as Scripture. The stored pointed ketiv, "
             f"{POINTED_KETIV_PARAMETER}, is a Scripture alternative."
         ),
         (
-            "GA and GV artificial carriers are not ketiv consonants. The no-space "
-            f"template {MARKS_WITHOUT_LETTER_OR_SPACE} accepts only "
-            "carrier=final-nun-dalet with DALET + DAGESH + TSERE + MAHAPAKH (GD). "
-            "It immediately follows the final nun at Isaiah 54:16 without a space. "
+            "GA and GV artificial carriers are not ketiv consonants. Both carrier "
+            "template names have only parameter 1 and accept GA and GV payloads. Medial "
+            "GA/GV orphans without adjacent literal separators use the no-space "
+            "name; leading orphans and explicit separators retain their representations. "
+            "The no-space "
+            f"template {MARKS_WITHOUT_LETTER_OR_SPACE} accepts "
+            "DALET + DAGESH + TSERE + MAHAPAKH (GD). "
+            "GD immediately follows the final nun at Isaiah 54:16 without a space. "
             "Its marks remain associated with that nun; the dalet is a font "
             "accommodation, not evidence of ownerless manuscript marks. GA and GV "
             "still forbid dagesh. Never collect any artificial carrier as a ketiv "
-            "consonant or insert a separator at a carrier-template boundary."
+            "consonant or insert a separator at a carrier-template boundary. "
+            "The mixed alef/vav payload in the original template requires "
+            "ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then VAV + HOLAM "
+            "at 2 Kings 19:31; the final vav retains the holam-male carrier meaning. "
+            "The no-space qere-without-ketiv body payload is exactly "
+            "ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel 18:20. "
+            f"The parameterless {SPACE_WITHOUT_MARKS} records horizontal space "
+            "without marks. Each qere-without-ketiv body template immediately "
+            "precedes the unchanged קרי ולא כתיב call in the same sequence; "
+            "the body template and qere call describe the same site. A body "
+            "projection uses the first template; a reading projection uses the qere."
         ),
         (
             "Choose one documented branch of each choice-bearing structure; do not "

@@ -191,7 +191,7 @@ column, parameter, or note body; only the copies of MAM's target have them.</p>
 does not tell the two apart. The note bodies, which near-Aleppo keeps verbatim, still have both
 templates.</p>
 <h3 id="own-templates">Templates specific to near-Aleppo</h3>
-<p>Near-Aleppo uses four added templates, which MAM's text never has. Each name is specific to the
+<p>Near-Aleppo uses five added templates, which MAM's text never has. Each name is specific to the
 near-Aleppo dataset, and none has the prefix <bdi lang="hbo" class="name">מ:</bdi> that marks many
 of MAM's.</p>
 <p>Two are MAM's note templates under names specific to near-Aleppo. Where near-Aleppo changes a
@@ -200,7 +200,7 @@ target in an added parameter, <bdi lang="hbo" class="name">מקרא על פי ה
 original clauses are stored in <bdi lang="hbo" class="name">הערת מקרא על פי המסורה</bdi> and
 describe that MAM target. Such a note is renamed, so that a consumer who knows only MAM's templates
 fails on it rather than misreading it: a <bdi lang="hbo" class="name">נוסח</bdi> is named
-<bdi lang="hbo" class="name">נוסח עם הקשר מקרא על פי המסורה</bdi>, at 1,543 notes, and a
+<bdi lang="hbo" class="name">נוסח עם הקשר מקרא על פי המסורה</bdi>, at 1,547 notes, and a
 <bdi lang="hbo" class="name">מ:הערה-2</bdi> is named <bdi lang="hbo" class="name">הערה-2 עם הקשר
 מקרא על פי המסורה</bdi>, at 5. Scroll-note parameter 3 and the evidence flags keep their existing
 roles. So every template of MAM's that near-Aleppo has keeps MAM's meaning.</p>
@@ -210,19 +210,25 @@ is an empty array and the complete original note is stored in the MAM-note param
 render both note roles directly from the book JSON; no review-ledger lookup or clause transformation
 is required. The example HTML edition displays the near-Aleppo clause beside its form, then MAM's
 labelled form and the stored MAM clauses.</p>
-<p>The two carrier templates represent marks without a written letter or accommodate marks
-associated with a written letter. Their positions, accepted carrier forms, and display are explained
-in <a href="#gav-display" data-na-link="down">GAV notation and display</a>.</p>
+<p>The parameterless <bdi lang="hbo" class="name">רווח בלי ניקוד</bdi> records horizontal space
+without niqqud at a qere-without-ketiv site. The two carrier templates represent marks without a
+written letter or accommodate marks associated with a written letter. Their positions, accepted
+carrier forms, and display are explained in <a href="#gav-display" data-na-link="down">GAV notation and display</a>.</p>
 <h3 id="gav-display">GAV notation and display</h3>
 <p>Position: the near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות</bdi> represents
-marks at a position of nonzero width. Its name describes the position, not the carrier letter.</p>
-<p>Carrier forms: the supported template accepts GA
-<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> or GV
-<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">וֹ</bdi>","carrier":"holam-male-vav"}</code>
-as its <code>tmpl_params</code>. GA permits one or more artificial alefs, each followed by permitted
-marks. GV requires exactly VAV + HOLAM and the <code>carrier=holam-male-vav</code> discriminator.
-Neither carrier permits a dagesh. The <code>carrier</code> parameter is semantic metadata; it
-identifies the holam-male carrier and is not Scripture text.</p>
+marks at a position of nonzero width. Its name describes the position, not the carrier letter. The
+near-Aleppo dataset's <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> represents marks at
+a position of no width, including a medial position within a written atom. It inserts no separator.
+Medial orphans without adjacent literal separators use this name; leading orphans and explicit
+separators retain their representations.</p>
+<p>Carrier forms: both templates accept GA
+<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> and GV
+<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">וֹ</bdi>"}</code> as its
+<code>tmpl_params</code>. GA permits one or more artificial alefs, each followed by permitted marks.
+GV requires exactly VAV + HOLAM, retaining the holam-male meaning. Neither GA nor GV permits a
+dagesh. Both templates have only parameter 1, containing the carrier payload. The mixed alef/vav
+payload is exactly <bdi lang="hbo" class="pointed">אְאָא֖וֹ</bdi> at 2 Kings 19:31: three marked
+alefs followed by the artificial VAV + HOLAM carrier. It also forbids dagesh.</p>
 <p>Display: GAV (guillemet-alef-vav) notation, with the GD dalet extension, identifies artificial
 carriers, which are not written ketiv letters. JSON stores the template payload; the example edition
 supplies guillemets, as in <bdi lang="hbo" class="pointed">«אֵ»</bdi> and
@@ -231,54 +237,72 @@ supplies guillemets, as in <bdi lang="hbo" class="pointed">«אֵ»</bdi> and
 <bdi lang="hbo" class="pointed">«אֹ»</bdi> loses the chosen holam-male distinction. Surrounding
 separators remain explicit strings or whitespace templates; an orphan template inserts no automatic
 space.</p>
-<p>The supported nonzero-width template occurs at <a href="edition/A1-Genesis.html#c14v2" data-na-link="page">Genesis
-14:2</a>, <a href="edition/A1-Genesis.html#c14v8" data-na-link="page">14:8</a>,
-<a href="edition/A1-Genesis.html#c25v23" data-na-link="page">25:23</a>; <a href="edition/B2-Judges.html#c11v37" data-na-link="page">Judges
-11:37</a>; <a href="edition/BA-1Samuel.html#c13v8" data-na-link="page">1 Samuel 13:8</a>,
-<a href="edition/BA-1Samuel.html#c14v32" data-na-link="page">14:32</a>,
-<a href="edition/BA-1Samuel.html#c17v23" data-na-link="page">17:23</a>,
-<a href="edition/BA-1Samuel.html#c20v2" data-na-link="page">20:2</a>; <a href="edition/BB-2Samuel.html#c3v3" data-na-link="page">2 Samuel
-3:3</a>, <a href="edition/BB-2Samuel.html#c18v3" data-na-link="page">18:3</a>,
-<a href="edition/BB-2Samuel.html#c20v5" data-na-link="page">20:5</a>, <a href="edition/BB-2Samuel.html#c21v9" data-na-link="page">21:9</a>,
-<a href="edition/BB-2Samuel.html#c21v20" data-na-link="page">21:20</a>,
-<a href="edition/BB-2Samuel.html#c22v8" data-na-link="page">22:8</a>,
-<a href="edition/BB-2Samuel.html#c22v51" data-na-link="page">22:51</a>, <a href="edition/BB-2Samuel.html#c23v9" data-na-link="page">23:9</a>
-(twice); <a href="edition/BC-1Kings.html#c4v7" data-na-link="page">1 Kings 4:7</a>,
-<a href="edition/BC-1Kings.html#c7v20" data-na-link="page">7:20</a>, <a href="edition/BC-1Kings.html#c9v18" data-na-link="page">9:18</a>,
-<a href="edition/BC-1Kings.html#c15v18" data-na-link="page">15:18</a>,
-<a href="edition/BC-1Kings.html#c16v26" data-na-link="page">16:26</a>; <a href="edition/BD-2Kings.html#c4v5" data-na-link="page">2 Kings
-4:5</a>, <a href="edition/BD-2Kings.html#c5v25" data-na-link="page">5:25</a>,
-<a href="edition/BD-2Kings.html#c9v15" data-na-link="page">9:15</a>, <a href="edition/BD-2Kings.html#c11v4" data-na-link="page">11:4</a>,
-<a href="edition/BD-2Kings.html#c11v9" data-na-link="page">11:9</a>, <a href="edition/BD-2Kings.html#c11v10" data-na-link="page">11:10</a>,
-<a href="edition/BD-2Kings.html#c11v15" data-na-link="page">11:15</a>,
-<a href="edition/BD-2Kings.html#c11v20" data-na-link="page">11:20</a>,
-<a href="edition/BD-2Kings.html#c12v12" data-na-link="page">12:12</a>,
+<p>The supported nonzero-width template occurs at <a href="edition/B2-Judges.html#c20v13" data-na-link="page">Judges
+20:13</a>; <a href="edition/BA-1Samuel.html#c14v32" data-na-link="page">1 Samuel 14:32</a>,
+<a href="edition/BA-1Samuel.html#c20v2" data-na-link="page">20:2</a>; <a href="edition/BB-2Samuel.html#c21v9" data-na-link="page">2 Samuel
+21:9</a>, <a href="edition/BB-2Samuel.html#c23v9" data-na-link="page">23:9</a>; <a href="edition/BC-1Kings.html#c4v7" data-na-link="page">1
+Kings 4:7</a>, <a href="edition/BC-1Kings.html#c7v20" data-na-link="page">7:20</a>,
+<a href="edition/BC-1Kings.html#c15v18" data-na-link="page">15:18</a>; <a href="edition/BD-2Kings.html#c4v7" data-na-link="page">2 Kings
+4:7</a>, <a href="edition/BD-2Kings.html#c11v20" data-na-link="page">11:20</a>,
 <a href="edition/BD-2Kings.html#c15v25" data-na-link="page">15:25</a>,
-<a href="edition/BD-2Kings.html#c17v31" data-na-link="page">17:31</a>, <a href="edition/BD-2Kings.html#c18v27" data-na-link="page">18:27</a>
-(twice); <a href="edition/C1-Isaiah.html#c3v16" data-na-link="page">Isaiah 3:16</a>,
-<a href="edition/C1-Isaiah.html#c25v10" data-na-link="page">25:10</a>,
-<a href="edition/C1-Isaiah.html#c28v15" data-na-link="page">28:15</a>,
-<a href="edition/C1-Isaiah.html#c32v15" data-na-link="page">32:15</a>,
-<a href="edition/C1-Isaiah.html#c36v12" data-na-link="page">36:12</a>,
-<a href="edition/C1-Isaiah.html#c42v20" data-na-link="page">42:20</a>,
+<a href="edition/BD-2Kings.html#c18v27" data-na-link="page">18:27</a>,
+<a href="edition/BD-2Kings.html#c19v31" data-na-link="page">19:31</a>,
+<a href="edition/BD-2Kings.html#c19v37" data-na-link="page">19:37</a>; <a href="edition/C1-Isaiah.html#c28v15" data-na-link="page">Isaiah
+28:15</a>, <a href="edition/C1-Isaiah.html#c36v12" data-na-link="page">36:12</a>,
 <a href="edition/C1-Isaiah.html#c55v13" data-na-link="page">55:13</a>;
 <a href="edition/C2-Jeremiah.html#c10v13" data-na-link="page">Jeremiah 10:13</a>,
 <a href="edition/C2-Jeremiah.html#c17v19" data-na-link="page">17:19</a>,
-<a href="edition/C2-Jeremiah.html#c18v23" data-na-link="page">18:23</a>,
-<a href="edition/C2-Jeremiah.html#c29v23" data-na-link="page">29:23</a>,
 <a href="edition/C2-Jeremiah.html#c40v3" data-na-link="page">40:3</a>,
-<a href="edition/C2-Jeremiah.html#c42v6" data-na-link="page">42:6</a>,
-<a href="edition/C2-Jeremiah.html#c48v7" data-na-link="page">48:7</a>,
 <a href="edition/C2-Jeremiah.html#c52v32" data-na-link="page">52:32</a>;
-<a href="edition/C3-Ezekiel.html#c16v20" data-na-link="page">Ezekiel 16:20</a>,
+<a href="edition/C3-Ezekiel.html#c18v20" data-na-link="page">Ezekiel 18:20</a>,
+<a href="edition/C3-Ezekiel.html#c42v9" data-na-link="page">42:9</a>; <a href="edition/D2-Proverbs.html#c23v24" data-na-link="page">Proverbs
+23:24</a>, <a href="edition/D2-Proverbs.html#c27v24" data-na-link="page">27:24</a>;
+<a href="edition/D3-Job.html#c2v7" data-na-link="page">Job 2:7</a>;
+<a href="edition/E3-Lamentations.html#c1v18" data-na-link="page">Lamentations 1:18</a>,
+<a href="edition/E3-Lamentations.html#c2v2" data-na-link="page">2:2</a>,
+<a href="edition/E3-Lamentations.html#c4v16" data-na-link="page">4:16</a>,
+<a href="edition/E3-Lamentations.html#c5v3" data-na-link="page">5:3</a>,
+<a href="edition/E3-Lamentations.html#c5v5" data-na-link="page">5:5</a>,
+<a href="edition/E3-Lamentations.html#c5v7" data-na-link="page">5:7</a> (twice);
+<a href="edition/F1-Daniel.html#c2v43" data-na-link="page">Daniel 2:43</a>, inside pointed ketivs or beside unchanged
+qere-without-ketiv calls. The zero-width template occurs at
+<a href="edition/A1-Genesis.html#c14v2" data-na-link="page">Genesis 14:2</a>,
+<a href="edition/A1-Genesis.html#c14v8" data-na-link="page">14:8</a>,
+<a href="edition/A1-Genesis.html#c25v23" data-na-link="page">25:23</a>; <a href="edition/B2-Judges.html#c11v37" data-na-link="page">Judges
+11:37</a>; <a href="edition/BA-1Samuel.html#c13v8" data-na-link="page">1 Samuel 13:8</a>,
+<a href="edition/BA-1Samuel.html#c17v23" data-na-link="page">17:23</a>; <a href="edition/BB-2Samuel.html#c3v2" data-na-link="page">2 Samuel
+3:2</a>, <a href="edition/BB-2Samuel.html#c3v3" data-na-link="page">3:3</a>,
+<a href="edition/BB-2Samuel.html#c18v3" data-na-link="page">18:3</a>,
+<a href="edition/BB-2Samuel.html#c18v20" data-na-link="page">18:20</a>,
+<a href="edition/BB-2Samuel.html#c20v5" data-na-link="page">20:5</a>,
+<a href="edition/BB-2Samuel.html#c21v20" data-na-link="page">21:20</a>,
+<a href="edition/BB-2Samuel.html#c22v8" data-na-link="page">22:8</a>,
+<a href="edition/BB-2Samuel.html#c22v51" data-na-link="page">22:51</a>,
+<a href="edition/BB-2Samuel.html#c23v9" data-na-link="page">23:9</a>; <a href="edition/BC-1Kings.html#c9v18" data-na-link="page">1 Kings
+9:18</a>, <a href="edition/BC-1Kings.html#c16v26" data-na-link="page">16:26</a>; <a href="edition/BD-2Kings.html#c4v5" data-na-link="page">2
+Kings 4:5</a>, <a href="edition/BD-2Kings.html#c5v25" data-na-link="page">5:25</a>,
+<a href="edition/BD-2Kings.html#c9v15" data-na-link="page">9:15</a>, <a href="edition/BD-2Kings.html#c11v4" data-na-link="page">11:4</a>,
+<a href="edition/BD-2Kings.html#c11v9" data-na-link="page">11:9</a>, <a href="edition/BD-2Kings.html#c11v10" data-na-link="page">11:10</a>,
+<a href="edition/BD-2Kings.html#c11v15" data-na-link="page">11:15</a>,
+<a href="edition/BD-2Kings.html#c12v12" data-na-link="page">12:12</a>,
+<a href="edition/BD-2Kings.html#c17v31" data-na-link="page">17:31</a>,
+<a href="edition/BD-2Kings.html#c18v27" data-na-link="page">18:27</a>; <a href="edition/C1-Isaiah.html#c3v16" data-na-link="page">Isaiah
+3:16</a>, <a href="edition/C1-Isaiah.html#c25v10" data-na-link="page">25:10</a>,
+<a href="edition/C1-Isaiah.html#c32v15" data-na-link="page">32:15</a>,
+<a href="edition/C1-Isaiah.html#c42v20" data-na-link="page">42:20</a>,
+<a href="edition/C1-Isaiah.html#c54v16" data-na-link="page">54:16</a>;
+<a href="edition/C2-Jeremiah.html#c18v23" data-na-link="page">Jeremiah 18:23</a>,
+<a href="edition/C2-Jeremiah.html#c29v23" data-na-link="page">29:23</a>,
+<a href="edition/C2-Jeremiah.html#c42v6" data-na-link="page">42:6</a>,
+<a href="edition/C2-Jeremiah.html#c48v7" data-na-link="page">48:7</a>; <a href="edition/C3-Ezekiel.html#c14v14" data-na-link="page">Ezekiel
+14:14</a>, <a href="edition/C3-Ezekiel.html#c14v20" data-na-link="page">14:20</a>,
+<a href="edition/C3-Ezekiel.html#c16v20" data-na-link="page">16:20</a>,
 <a href="edition/C3-Ezekiel.html#c16v25" data-na-link="page">16:25</a>,
 <a href="edition/C3-Ezekiel.html#c16v51" data-na-link="page">16:51</a>,
-<a href="edition/C3-Ezekiel.html#c18v20" data-na-link="page">18:20</a>,
-<a href="edition/C3-Ezekiel.html#c25v9" data-na-link="page">25:9</a>,
+<a href="edition/C3-Ezekiel.html#c25v9" data-na-link="page">25:9</a>, <a href="edition/C3-Ezekiel.html#c28v3" data-na-link="page">28:3</a>,
 <a href="edition/C3-Ezekiel.html#c36v13" data-na-link="page">36:13</a>,
 <a href="edition/C3-Ezekiel.html#c36v14" data-na-link="page">36:14</a>,
 <a href="edition/C3-Ezekiel.html#c36v15" data-na-link="page">36:15</a>,
-<a href="edition/C3-Ezekiel.html#c42v9" data-na-link="page">42:9</a>,
 <a href="edition/C3-Ezekiel.html#c44v24" data-na-link="page">44:24</a>,
 <a href="edition/C3-Ezekiel.html#c46v19" data-na-link="page">46:19</a>; <a href="edition/CA-Hosea.html#c10v10" data-na-link="page">Hosea
 10:10</a>; <a href="edition/D1-Psalms.html#c56v7" data-na-link="page">Psalms 56:7</a>,
@@ -287,42 +311,35 @@ space.</p>
 <a href="edition/D1-Psalms.html#c140v11" data-na-link="page">140:11</a>;
 <a href="edition/D2-Proverbs.html#c6v14" data-na-link="page">Proverbs 6:14</a>,
 <a href="edition/D2-Proverbs.html#c16v27" data-na-link="page">16:27</a>,
-<a href="edition/D2-Proverbs.html#c23v24" data-na-link="page">23:24</a>,
-<a href="edition/D2-Proverbs.html#c23v31" data-na-link="page">23:31</a>,
-<a href="edition/D2-Proverbs.html#c27v24" data-na-link="page">27:24</a>; <a href="edition/D3-Job.html#c2v7" data-na-link="page">Job 2:7</a>,
-<a href="edition/D3-Job.html#c24v6" data-na-link="page">24:6</a>, <a href="edition/D3-Job.html#c33v19" data-na-link="page">33:19</a>,
+<a href="edition/D2-Proverbs.html#c23v31" data-na-link="page">23:31</a>; <a href="edition/D3-Job.html#c24v6" data-na-link="page">Job
+24:6</a>, <a href="edition/D3-Job.html#c33v19" data-na-link="page">33:19</a>,
 <a href="edition/D3-Job.html#c33v28" data-na-link="page">33:28</a> (twice); <a href="edition/E2-Ruth.html#c2v1" data-na-link="page">Ruth
 2:1</a>, <a href="edition/E2-Ruth.html#c3v3" data-na-link="page">3:3</a>;
-<a href="edition/E3-Lamentations.html#c1v18" data-na-link="page">Lamentations 1:18</a>,
-<a href="edition/E3-Lamentations.html#c2v2" data-na-link="page">2:2</a>,
-<a href="edition/E3-Lamentations.html#c3v20" data-na-link="page">3:20</a>,
-<a href="edition/E3-Lamentations.html#c4v16" data-na-link="page">4:16</a>,
-<a href="edition/E3-Lamentations.html#c5v3" data-na-link="page">5:3</a>,
-<a href="edition/E3-Lamentations.html#c5v5" data-na-link="page">5:5</a>,
-<a href="edition/E3-Lamentations.html#c5v7" data-na-link="page">5:7</a> (twice);
+<a href="edition/E3-Lamentations.html#c3v20" data-na-link="page">Lamentations 3:20</a>;
 <a href="edition/E4-Ecclesiastes.html#c4v8" data-na-link="page">Ecclesiastes 4:8</a>;
 <a href="edition/E5-Esther.html#c10v1" data-na-link="page">Esther 10:1</a>; <a href="edition/F1-Daniel.html#c2v9" data-na-link="page">Daniel
 2:9</a>, <a href="edition/F1-Daniel.html#c2v22" data-na-link="page">2:22</a>,
-<a href="edition/F1-Daniel.html#c2v43" data-na-link="page">2:43</a>, <a href="edition/F1-Daniel.html#c9v12" data-na-link="page">9:12</a>;
-<a href="edition/FA-Ezra.html#c7v25" data-na-link="page">Ezra 7:25</a>;
+<a href="edition/F1-Daniel.html#c9v12" data-na-link="page">9:12</a>; <a href="edition/FA-Ezra.html#c7v25" data-na-link="page">Ezra 7:25</a>;
 <a href="edition/FB-Nehemiah.html#c12v16" data-na-link="page">Nehemiah 12:16</a>;
 <a href="edition/FC-1Chronicles.html#c12v16" data-na-link="page">1 Chronicles 12:16</a>;
 <a href="edition/FD-2Chronicles.html#c9v29" data-na-link="page">2 Chronicles 9:29</a>,
-<a href="edition/FD-2Chronicles.html#c18v8" data-na-link="page">18:8</a>, inside the pointed ketivs.</p>
+<a href="edition/FD-2Chronicles.html#c18v8" data-na-link="page">18:8</a>, for medial GA/GV orphans and the separately
+documented explicit variants.</p>
 <p>The original GA example, at <a href="edition/C1-Isaiah.html#c36v12" data-na-link="page">Isaiah 36:12</a>, is
 <bdi lang="hbo" class="pointed">«אֵאֵ֥»</bdi>. Near-Aleppo encodes the bracketed alef carriers
 supplied in MAM's note; they are not written ketiv letters.</p>
-<p>The no-space template <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts only GD,
-<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">דֵּ֤</bdi>","carrier":"final-nun-dalet"}</code>.
-This explicit variant requires exactly DALET + DAGESH + TSERE + MAHAPAKH. Its permitted dagesh does
-not relax GA or GV validation. It occurs at <a href="edition/C1-Isaiah.html#c54v16" data-na-link="page">Isaiah
-54:16</a>: <bdi lang="hbo" class="pointed">הִן«דֵּ֤»</bdi>. The carrier immediately follows the
-final nun without a space. This is the first final carrier case; earlier carriers were initial or
-medial. The dalet is a font accommodation for the final nun's marks, which remain associated with
-that nun. It adds no ketiv consonant and makes no claim that the manuscript has ownerless marks. An
-edition that supports the original combination can display
-<bdi lang="hbo" class="pointed">הִןֵּ֤</bdi> directly, retaining all three marks and the qere
-<bdi lang="hbo" class="pointed">הִנֵּ֤ה</bdi>.</p>
+<p>The no-space template <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts the GA
+payload <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ֥</bdi>"}</code>, with exactly ALEF
++ TSERE + MERKHA and no dagesh at 2 Samuel 18:20. The same no-space template retains GD,
+<code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">דֵּ֤</bdi>"}</code>. This payload requires
+exactly DALET + DAGESH + TSERE + MAHAPAKH. Its permitted dagesh does not relax GA or GV validation.
+It occurs at <a href="edition/C1-Isaiah.html#c54v16" data-na-link="page">Isaiah 54:16</a>:
+<bdi lang="hbo" class="pointed">הִן«דֵּ֤»</bdi>. The carrier immediately follows the final nun
+without a space. This is the first final carrier case; earlier carriers were initial or medial. The
+dalet is a font accommodation for the final nun's marks, which remain associated with that nun. It
+adds no ketiv consonant and makes no claim that the manuscript has ownerless marks. An edition that
+supports the original combination can display <bdi lang="hbo" class="pointed">הִןֵּ֤</bdi> directly,
+retaining all three marks and the qere <bdi lang="hbo" class="pointed">הִנֵּ֤ה</bdi>.</p>
 <p>For an orphan holam associated with a qere vav where the ketiv has yod, an edition can choose
 among these display options:</p>
 <ul>
@@ -345,11 +362,10 @@ role. A hypothetical letter-independent holam-male dot could make that intention
 yod. The mismatch concerns encoded meaning, not a general Unicode ban on nonstandard letter-mark
 sequences.</p>
 <h3 id="added-parameters">The parameters near-Aleppo adds</h3>
-<p>Near-Aleppo adds six parameters to templates. Five accompany MAM's parameters; the sixth
-identifies the explicit GV and GD variants of near-Aleppo's carrier templates.</p>
+<p>Near-Aleppo adds five parameters to MAM's templates.</p>
 <p>The parameter <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi>, MAM's name for its text,
 holds MAM's target. Every note whose target near-Aleppo changes has it, and is renamed, as the
-previous subsection says: 1,548 notes. The original clauses in <bdi lang="hbo" class="name">הערת
+previous subsection says: 1,552 notes. The original clauses in <bdi lang="hbo" class="name">הערת
 מקרא על פי המסורה</bdi> have MAM's text as their subject. A clause opening with <code>=</code> in
 that parameter says that the sources it names agree with MAM. A clause opening with the same sign in
 parameter 2 instead describes agreement with near-Aleppo's target. The MAM-target parameter holds
@@ -414,12 +430,6 @@ the branch of the template that near-Aleppo's text follows, in place of MAM's po
 Near-Aleppo has it at 1,032 templates, in 922 verses: 869 <bdi lang="hbo" class="name">כו״ק</bdi>,
 127 <bdi lang="hbo" class="name">קו״כ</bdi>, and 36 <bdi lang="hbo" class="name">מ:כו״ק
 מיוחד</bdi>.</p>
-<p>The parameter carrier=holam-male-vav identifies the narrowly licensed GV variant of the
-orphan-mark template. Its parameter 1 must be exactly VAV + HOLAM. The carrier parameter is
-metadata; the artificial vav represents orphan holam and is not a written ketiv consonant. The same
-parameter with value final-nun-dalet identifies GD in the no-space template, whose parameter 1 must
-be exactly DALET + DAGESH + TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is
-not a written ketiv consonant.</p>
 <h3 id="characters">A character MAM-parsed-plus has only in a note body</h3>
 <p>One character of near-Aleppo's text is a character that MAM-parsed-plus has only in a note body:
 U+200C ZERO WIDTH NON-JOINER, at <a href="edition/D3-Job.html#c38v12" data-na-link="page">Job 38:12</a>, in the pointed
@@ -437,16 +447,25 @@ and choose a projection wherever the payload presents alternatives.</p>
 <li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
 fields, and fail on an unknown template instead of guessing from its parameters or skipping it.
 Near-Aleppo adds note templates, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>, and
-<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi>; follow their documented roles.</li>
-<li>Do not collect MAM's preserved targets, note clauses, flags or carrier metadata as Scripture.
-The stored pointed ketiv, <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, is a Scripture
-alternative.</li>
-<li>GA and GV artificial carriers are not ketiv consonants. The no-space template
-<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts only carrier=final-nun-dalet with
-DALET + DAGESH + TSERE + MAHAPAKH (GD). It immediately follows the final nun at Isaiah 54:16 without
-a space. Its marks remain associated with that nun; the dalet is a font accommodation, not evidence
-of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier
-as a ketiv consonant or insert a separator at a carrier-template boundary.</li>
+<bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi>, and <bdi lang="hbo" class="name">רווח
+בלי ניקוד</bdi>; follow their documented roles.</li>
+<li>Do not collect MAM's preserved targets, note clauses or flags as Scripture. The stored pointed
+ketiv, <bdi lang="hbo" class="name">כתיב מנוקד</bdi>, is a Scripture alternative.</li>
+<li>GA and GV artificial carriers are not ketiv consonants. Both carrier template names have only
+parameter 1 and accept GA and GV payloads. Medial GA/GV orphans without adjacent literal separators
+use the no-space name; leading orphans and explicit separators retain their representations. The
+no-space template <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi> accepts DALET + DAGESH
++ TSERE + MAHAPAKH (GD). GD immediately follows the final nun at Isaiah 54:16 without a space. Its
+marks remain associated with that nun; the dalet is a font accommodation, not evidence of ownerless
+manuscript marks. GA and GV still forbid dagesh. Never collect any artificial carrier as a ketiv
+consonant or insert a separator at a carrier-template boundary. The mixed alef/vav payload in the
+original template requires ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then VAV + HOLAM at 2 Kings
+19:31; the final vav retains the holam-male carrier meaning. The no-space qere-without-ketiv body
+payload is exactly ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel 18:20. The parameterless
+<bdi lang="hbo" class="name">רווח בלי ניקוד</bdi> records horizontal space without marks. Each
+qere-without-ketiv body template immediately precedes the unchanged <bdi lang="hbo" class="name">קרי
+ולא כתיב</bdi> call in the same sequence; the body template and qere call describe the same site. A
+body projection uses the first template; a reading projection uses the qere.</li>
 <li>Choose one documented branch of each choice-bearing structure; do not concatenate the branches.
 Near-Aleppo has evaluated away MAM's templates for dual cantillation, qamats, and poetic
 stress-helper alternatives, so the branches left in near-Aleppo's text are those of the ketiv/qere

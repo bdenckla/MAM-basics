@@ -15,6 +15,7 @@ from near_aleppo import build_paths
 from near_aleppo import doc_page
 from near_aleppo import phase2_templates as phase2
 from near_aleppo import phase6_flags
+from mb_author import author
 from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import read_books_from_mam_parsed_plus as plus
@@ -70,20 +71,16 @@ def _edition_index(edition, css_hrefs):
     body = (
         mb_html.heading_level_1("The near-Aleppo edition"),
         mb_html.para(
+            "These pages are an example HTML edition based on the near-Aleppo "
+            "dataset. The edition has each book's text with MAM's notes "
+            "beside it, as MAM-with-doc does."
+        ),
+        mwdwidh.unordered_list_of_sections(),
+        mb_html.para(
             [
-                "These pages are an example HTML edition of the near-Aleppo "
-                "dataset. The edition has each book's text with MAM's notes "
-                "beside it, as MAM-with-doc does. ",
-                "Ketiv is the primary text; pointed qere appears above it in a ruby "
-                "annotation at the same size, with CLC's box around each pair and a small "
-                "vertical gap between the forms. "
-                "The edition uses each stored pointed ketiv "
-                "where one is available. An absent reading has the editorial label “no ketiv” "
-                "or “no qere” in its own position. ",
-                "See the ",
-                mb_html.anchor_h(
-                    "documentation for the near-Aleppo dataset", "../index.html"
-                ),
+                "The pointed ketiv is shown as the primary text; the pointed qere "
+                "appears above it; both are enclosed in a rounded box or ",
+                author.dquote("cartouche"),
                 ".",
             ]
         ),
@@ -92,45 +89,24 @@ def _edition_index(edition, css_hrefs):
         ),
         mb_html.para(
             [
-                "Where near-Aleppo's text of a note's target differs from MAM's, the "
-                "dataset already stores a reviewed source agreement with near-Aleppo's "
-                "form where a clause was recast, retaining its explanations and qualifications. "
-                "The edition places that clause beside near-Aleppo's form. The remaining "
-                "original clauses follow a line labelled ",
-                _hebrew(MAM_TARGET_PARAMETER),
-                " giving MAM's text and keeping those clauses' original subject. "
-                "Notes requiring uncertain interpretation keep the complete original "
-                "note in that MAM context. This applies in surviving, missing and "
-                "uncertain sections alike. A line labelled ",
-                _english(phase2.APPLIED_AND_FLAGGED),
-                " or ",
-                _english(phase2.FLAGGED_NOT_APPLIED),
-                " gives one of near-Aleppo's flags. Vowels and accents that the codex "
-                "writes under no letter have GA artificial alef carriers or the "
-                "GV artificial VAV + HOLAM carrier. The edition displays both "
-                "between double guillemets, retaining their stored carrier meaning. "
-                "At Isaiah 54:16, GD instead displays the final nun's dagesh, tsere "
-                "and mahapakh on an artificial dalet between double guillemets, "
-                "immediately after the nun without a space. The marks remain "
-                "associated with the nun; this is a font accommodation, not a claim "
-                "of ownerless manuscript marks. The carriers are not written ketiv "
-                "letters. See ",
-                mb_html.anchor_h(
-                    "GAV notation and display in practice",
-                    "../reading-json.html#gav-display",
-                ),
-                " for other editions' display options. Every paseq glyph is shown as "
-                "MAM-with-doc shows a legarmeh, a thin space and then the glyph, since "
-                "near-Aleppo intentionally drops MAM's distinctions between "
-                "paseq and legarmeh.",
+                "MAM’s doc-notes have been adjusted in some cases where the note’s ",
+                author.dquote("target"),
+                ", or subject, differs between near-Aleppo and MAM. "
+                "Orphan vowels and accents—marks associated with no letter or whose "
+                "association is unclear—are shown on placeholder letters (alef, vav, "
+                "or dalet) between double guillemets.",
             ]
+        ),
+        mb_html.para(
+            "Every paseq glyph is shown as MAM-with-doc shows a legarmeh, a thin "
+            "space and then the glyph, since near-Aleppo intentionally drops MAM's "
+            "distinctions between paseq and legarmeh."
         ),
         mb_html.para(
             "Near-Aleppo is derived from Miqra according to the Masorah (MAM), whose "
             "license and source attribution are these:"
         ),
         mwdwidh.license_para(),
-        mwdwidh.unordered_list_of_sections(),
         mb_html.horizontal_rule(),
         mb_html.anchor_h("MAM-with-doc's sigil decoding", doc_page.SIGIL_DECODING),
     )
@@ -228,6 +204,7 @@ def _assert_names_are_the_builds():
         (nap.RENAMED_SCRDFFTAR, RENAMED_NOTES["מ:הערה-2"]),
         (nap.MARKS_WITHOUT_LETTER, phase2.MARKS_WITHOUT_LETTER),
         (nap.MARKS_WITHOUT_LETTER_OR_SPACE, phase2.MARKS_WITHOUT_LETTER_OR_SPACE),
+        (nap.SPACE_WITHOUT_MARKS, phase2.SPACE_WITHOUT_MARKS),
     )
     for copy_name, build_name in pairs:
         if copy_name != build_name:
