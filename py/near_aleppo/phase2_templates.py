@@ -121,6 +121,8 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # each followed by the marks at that position, with alef as an arbitrary carrier.
 # An alef carrier cannot carry dagesh. The GV extension has an explicit carrier
 # discriminator and exactly artificial VAV + HOLAM; the original alef schema remains.
+# The mixed alef-and-holam-male-vav variant requires exactly three marked alefs
+# followed by VAV + HOLAM at 2 Kings 19:31, preserving that carrier distinction.
 # The no-space template licenses explicit orphan-marks-alef (ALEF + TSERE +
 # MERKHA) and GD (DALET + DAGESH + TSERE + MAHAPAKH) variants. GD accommodates
 # the final nun at Isaiah 54:16, without a manuscript-spacing claim.

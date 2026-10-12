@@ -503,7 +503,12 @@ def _gav_display(numbers):
                 " discriminator. Neither carrier permits a dagesh. The ",
                 code("carrier"),
                 " parameter is semantic metadata; it identifies the holam-male "
-                "carrier and is not Scripture text.",
+                "carrier and is not Scripture text. The mixed variant ",
+                code("carrier=alef-and-holam-male-vav"),
+                " requires exactly ",
+                he_pointed("אְאָא֖וֹ"),
+                " at 2 Kings 19:31: three marked alefs followed by the "
+                "artificial VAV + HOLAM carrier. It also forbids dagesh.",
             ]
         ),
         mb_html.para(
@@ -635,7 +640,7 @@ def _added_parameters(numbers):
             [
                 "Near-Aleppo adds six parameters to templates. Five accompany MAM's "
                 "parameters; the sixth identifies "
-                "the explicit GV, GD and orphan-marks-alef variants of near-Aleppo's "
+                "the explicit GV, mixed alef/vav, GD and orphan-marks-alef variants of near-Aleppo's "
                 "carrier templates.",
             ]
         ),
@@ -725,6 +730,8 @@ def _added_parameters(numbers):
             "GV variant of the orphan-mark template. Its parameter 1 must be exactly "
             "VAV + HOLAM. The carrier parameter is metadata; the artificial vav "
             "represents orphan holam and is not a written ketiv consonant. "
+            "The mixed alef-and-holam-male-vav variant preserves that final "
+            "VAV + HOLAM after three marked alefs at 2 Kings 19:31. "
             "The value orphan-marks-alef selects the no-space orphan-mark carrier. "
             "The same parameter with value final-nun-dalet identifies GD in the "
             "no-space template, whose parameter 1 must be exactly DALET + DAGESH + "

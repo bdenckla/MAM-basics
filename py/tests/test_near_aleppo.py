@@ -77,7 +77,7 @@ def test_qere_only_calls_and_body_templates_match_independent_sources():
                 },
                 "ב",
             ],
-            "GV requires exactly",
+            "carrier variant",
         ),
         (
             [
@@ -91,7 +91,7 @@ def test_qere_only_calls_and_body_templates_match_independent_sources():
                 },
                 "ב",
             ],
-            "GV requires exactly",
+            "carrier variant",
         ),
     ),
 )

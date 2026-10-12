@@ -75,8 +75,8 @@ clean. ``in/mam-ws-intro/`` is exempted by name in ``CLAUDE.md`` on the same gro
 None of those is ``.md``, so the file-type scope excludes them without an exclusion
 list, and ``py/repo_scopes.py`` records why a repo-wide sweep has no meaning here.
 
-So a future capture that arrives as ``.md`` is the one case that needs an entry in
-``_EXCLUDED``, with the reason it is byte-verbatim. It is NOT a reason to loosen the
+So a future capture that arrives as ``.md`` or as ``.html`` under ``doc/`` needs
+an entry in ``_EXCLUDED``, with the reason it is byte-verbatim. It is NOT a reason to loosen the
 lint, and never a reason to normalize.
 
 A MISSING INPUT FAILS RATHER THAN SKIPS

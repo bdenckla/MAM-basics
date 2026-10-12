@@ -53,8 +53,11 @@ Build populations record these body classifications separately from the MAM-only
 census. The independent note replay applies the same phase. The example edition
 pairs each body template with its following qere, displaying body marks or a
 blank below the qere; editorial box and carrier widths do not measure manuscript
-spacing. The artificial alef carrying the confirmed orphan ḥolam at 2 Kings 19:31
-adds no written consonant or claim that a vav is present in the body.
+spacing. The explicit `carrier=alef-and-holam-male-vav` variant requires exactly
+`אְאָא֖וֹ` at 2 Kings 19:31: three marked alefs followed by VAV + HOLAM.
+The final artificial vav retains the ḥolam male carrier meaning without adding
+a written consonant or claiming that a vav is present in the body. The original
+GA and single-carrier GV contracts remain unchanged.
 
 The near-Aleppo dataset's zero-width sibling, `ניקוד בלי אות ובלי רווח`,
 accepts the same GA and explicit holam-male-vav GV shapes. Both render carriers

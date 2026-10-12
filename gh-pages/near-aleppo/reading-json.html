@@ -222,7 +222,10 @@ separators retain their representations.</p>
 as its <code>tmpl_params</code>. GA permits one or more artificial alefs, each followed by permitted
 marks. GV requires exactly VAV + HOLAM and the <code>carrier=holam-male-vav</code> discriminator.
 Neither carrier permits a dagesh. The <code>carrier</code> parameter is semantic metadata; it
-identifies the holam-male carrier and is not Scripture text.</p>
+identifies the holam-male carrier and is not Scripture text. The mixed variant
+<code>carrier=alef-and-holam-male-vav</code> requires exactly
+<bdi lang="hbo" class="pointed">אְאָא֖וֹ</bdi> at 2 Kings 19:31: three marked alefs followed by the
+artificial VAV + HOLAM carrier. It also forbids dagesh.</p>
 <p>Display: GAV (guillemet-alef-vav) notation, with the GD dalet extension, identifies artificial
 carriers, which are not written ketiv letters. JSON stores the template payload; the example edition
 supplies guillemets, as in <bdi lang="hbo" class="pointed">«אֵ»</bdi> and
@@ -360,8 +363,8 @@ yod. The mismatch concerns encoded meaning, not a general Unicode ban on nonstan
 sequences.</p>
 <h3 id="added-parameters">The parameters near-Aleppo adds</h3>
 <p>Near-Aleppo adds six parameters to templates. Five accompany MAM's parameters; the sixth
-identifies the explicit GV, GD and orphan-marks-alef variants of near-Aleppo's carrier
-templates.</p>
+identifies the explicit GV, mixed alef/vav, GD and orphan-marks-alef variants of near-Aleppo's
+carrier templates.</p>
 <p>The parameter <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi>, MAM's name for its text,
 holds MAM's target. Every note whose target near-Aleppo changes has it, and is renamed, as the
 previous subsection says: 1,553 notes. The original clauses in <bdi lang="hbo" class="name">הערת
@@ -431,11 +434,12 @@ Near-Aleppo has it at 1,032 templates, in 922 verses: 869 <bdi lang="hbo" class=
 מיוחד</bdi>.</p>
 <p>The parameter carrier=holam-male-vav identifies the narrowly licensed GV variant of the
 orphan-mark template. Its parameter 1 must be exactly VAV + HOLAM. The carrier parameter is
-metadata; the artificial vav represents orphan holam and is not a written ketiv consonant. The value
-orphan-marks-alef selects the no-space orphan-mark carrier. The same parameter with value
-final-nun-dalet identifies GD in the no-space template, whose parameter 1 must be exactly DALET +
-DAGESH + TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is not a written ketiv
-consonant.</p>
+metadata; the artificial vav represents orphan holam and is not a written ketiv consonant. The mixed
+alef-and-holam-male-vav variant preserves that final VAV + HOLAM after three marked alefs at 2 Kings
+19:31. The value orphan-marks-alef selects the no-space orphan-mark carrier. The same parameter with
+value final-nun-dalet identifies GD in the no-space template, whose parameter 1 must be exactly
+DALET + DAGESH + TSERE + MAHAPAKH. That dalet accommodates the final nun's marks and is not a
+written ketiv consonant.</p>
 <h3 id="characters">A character MAM-parsed-plus has only in a note body</h3>
 <p>One character of near-Aleppo's text is a character that MAM-parsed-plus has only in a note body:
 U+200C ZERO WIDTH NON-JOINER, at <a href="edition/D3-Job.html#c38v12" data-na-link="page">Job 38:12</a>, in the pointed
@@ -466,6 +470,8 @@ with DALET + DAGESH + TSERE + MAHAPAKH (GD). GD immediately follows the final nu
 without a space. Its marks remain associated with that nun; the dalet is a font accommodation, not
 evidence of ownerless manuscript marks. GA and GV still forbid dagesh. Never collect any artificial
 carrier as a ketiv consonant or insert a separator at a carrier-template boundary. The explicit
+carrier=alef-and-holam-male-vav variant requires ALEF + SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then
+VAV + HOLAM at 2 Kings 19:31; the final vav retains the holam-male carrier meaning. The explicit
 carrier=orphan-marks-alef variant accepts exactly ALEF + TSERE + MERKHA, with no dagesh, at 2 Samuel
 18:20. The parameterless <bdi lang="hbo" class="name">רווח בלי ניקוד</bdi> records horizontal space
 without marks. Each qere-without-ketiv body template immediately precedes the unchanged
