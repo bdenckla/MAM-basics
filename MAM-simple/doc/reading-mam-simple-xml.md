@@ -227,14 +227,8 @@ sof pasuq, which remains in the following ordinary text node. For example:
 ```
 
 A generic reader takes only `text`; the scaffold is position metadata, not a second
-Scripture form. A reader must not assume that the last U+05BD is silluq. Sefaria/AJF
-remove every U+05BD after the identified silluq. In the two current cases,
-1 Kings 7:37 and Job 4:12, that means removing one meteg in each atom.
-The source template has no explanatory-note parameter. The detailed source notes
-belong to surrounding `נוסח` annotations and are omitted when MAM-simple is produced.
-Sefaria/AJF add no explanatory note. OSIS keeps the full text and adds the separate summary note
-`סילוק לפני געיה` (“silluq before meteg”). The schema
-is supported even when the corpus has no calls of the source template.
+Scripture form. A reader must not assume that the last U+05BD is silluq.
+The two current cases are 1 Kings 7:37 and Job 4:12.
 
 ### Legarmeh and paseq
 
@@ -243,7 +237,6 @@ is supported even when the corpus has no calls of the source template.
 The two tags record which of the two MAM takes the mark to be, a distinction that is
 grammatical rather than graphical: `<lp-legarmeih>` is a legarmeh, which is part of the
 cantillation system, and `<lp-paseq>` is a paseq in the narrow sense, which is not.
-The OSIS example program annotates the latter with פסק ולא לגרמיה.
 
 So MAM-simple has already made a judgement a bare glyph leaves open, and a reader that
 maps both tags onto one output throws that judgement away.
