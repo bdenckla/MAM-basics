@@ -11,7 +11,7 @@
 <body>
 <h1>The encoding of <span class="small-caps">MAM</span> for Sefaria</h1>
 <p>Author: Ben Denckla</p>
-<p>Revision: 2025-06-26 / 30th of Sivan, 5785</p>
+<p>Revision: 2026-10-12</p>
 <h2>Introduction</h2>
 <p>This document describes the encoding of
     <span class="small-caps">MAM</span> (Miqra According to the Masorah)
@@ -75,6 +75,7 @@
             <li>Stress <span title="zarqa">זרקא</span></li>
             <li>No displacement of <span title="zarqa">זרקא</span> by ל</li>
             <li>No special <span class="romanized">meteg</span> placements</li>
+            <li><a href="#meteg-after-silluq">Meteg after silluq</a></li>
             <li>Robust Unicode</li>
         </ol>
     </li>
@@ -1122,6 +1123,13 @@ or the <span class="small-caps">WLC</span>’s transcribers
 abandoned ל-impositive <span title="zarqa">זרקא</span>
 at some point.
 </p>
+<h3 id="meteg-after-silluq">Meteg after silluq</h3>
+<p>The Sefaria and AJF exporters support MAM’s <span dir="rtl">מ:סילוק לפני געיה</span>
+    annotation. The annotation identifies the silluq explicitly in a verse-final atom
+    with a later meteg. These exports omit the annotation’s explanatory note and remove
+    every U+05BD after the identified silluq, retaining the silluq and all other text.
+    MAM-simple preserves both marks and their position metadata. This support takes
+    effect when annotated source data is imported and the CSV product is regenerated.</p>
 <h3>No special <span class="romanized">meteg</span> placements</h3>
 <p>Old Sefaria has two <span class="romanized">meteg</span> placements that are not present in <span class="small-caps">MAM</span>:</p>
 <ol>

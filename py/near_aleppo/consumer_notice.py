@@ -88,7 +88,7 @@ NOTICE = {
             "Use a closed, role-aware template dispatch: recurse only through "
             "documented Scripture-bearing fields, and fail on an unknown template "
             "instead of guessing from its parameters or skipping it. Near-Aleppo "
-            f"adds note templates, {MARKS_WITHOUT_LETTER}, and "
+            f"adds note templates, {MARKS_WITHOUT_LETTER}, "
             f"{MARKS_WITHOUT_LETTER_OR_SPACE}, and {SPACE_WITHOUT_MARKS}; follow their "
             "documented roles."
         ),

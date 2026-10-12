@@ -213,11 +213,14 @@ def _mam_form(record: dict) -> str:
 
 
 def _case_chanted_word_cell(record: dict) -> tuple:
-    """The MAM MAS form followed by its next chanted word."""
+    """The MAM MAS form, followed by its next chanted word when present."""
     # _mam_form first: a record with no MAM form has no next MAM form either, so the
     # assertion below would otherwise fire first and name the wrong cause.
     mam_form = _mam_form(record)
     next_word = record["next_mam_form"]
+    if record["next_chanted_word"] is None:
+        assert next_word is None and psm.SOF_PASUQ in mam_form, record
+        return _hebrew_cell(mam_form)
     assert next_word is not None, f"{record['bcv']}: no next MAM chanted word"
     return _paired_chanted_word_cell(
         mam_form,

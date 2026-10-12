@@ -222,7 +222,13 @@ _QERE_SOURCE_PREFIXES = frozenset(
 _PARAM1_ROLE_TARGETS = (
     template_names.IN_WORD_TMPL_NAMES
     | template_names.STRESS_HELPER_TMPL_NAMES
-    | {template_names.SCRDFF_TAR, "מודגש", "מ:סיום בטוב", "נוסח"}
+    | {
+        template_names.SCRDFF_TAR,
+        template_names.SILLUQ_BEFORE_METEG,
+        "מודגש",
+        "מ:סיום בטוב",
+        "נוסח",
+    }
 )
 _DROPPED_ROLE_TARGETS = frozenset(
     (

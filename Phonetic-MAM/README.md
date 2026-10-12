@@ -85,6 +85,15 @@ the repository keeps Latin letters with diacritics in NFC; these are the bytes
 of the previously published pages, which Ben's decision of 2026-10-03, recorded
 in `doc/review-findings-2026-10-02-update.md`, keeps.
 
+## Silluq before a later meteg
+
+The source template `מ:סילוק לפני געיה` supplies an explicit silluq position.
+Phonetic MAM preserves both U+05BD marks in the Hebrew display and uses that
+position to locate primary stress in the transcriptions. The position scaffold
+is transient computation metadata; it is not additional Scripture text or a
+new field in the public display schema. Calls without this annotation retain
+the ordinary final-U+05BD interpretation.
+
 ## Commands
 
 Run the repository's `py/main_phonetic_mam.py` entry point from MAM-basics:

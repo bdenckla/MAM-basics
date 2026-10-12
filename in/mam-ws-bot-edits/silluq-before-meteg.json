@@ -1,0 +1,22 @@
+{
+  "summary": "Identify silluq before a later meteg in 1 Kings 7:37 and Job 4:12; preserve MAM text and notes",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "1Kings": [
+      {
+        "ch": "ז",
+        "old": "{{נוסח|לְכֻלָּֽהְנָֽה|",
+        "new": "{{נוסח|{{מ:סילוק לפני געיה|לְכֻלָּֽהְנָֽה|לכלֽהנה}}|",
+        "comment": "1 Kings 7:37: identify silluq before the later meteg; preserve text and note"
+      }
+    ],
+    "Job": [
+      {
+        "ch": "ד",
+        "old": "{{נוסח|מֶֽנְהֽוּ|",
+        "new": "{{נוסח|{{מ:סילוק לפני געיה|מֶֽנְהֽוּ|מֽנהו}}|",
+        "comment": "Job 4:12: identify silluq before the later meteg; preserve text and note"
+      }
+    ]
+  }
+}

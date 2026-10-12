@@ -142,6 +142,7 @@ def _hnd_return_maq_str(_1, tmpl):
 
 
 HANDLERS = {
+    tmpln.SILLUQ_BEFORE_METEG: hnd_recurse_on_arg_0,
     "נוסח": hnd_recurse_on_arg_0,
     tmpln.SCRDFF_TAR: hnd_recurse_on_arg_0,
     "מ:קו״כ-אם-2": hnd_recurse_on_arg_0,

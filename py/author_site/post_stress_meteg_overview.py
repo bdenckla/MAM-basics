@@ -8,6 +8,7 @@ from mb_author import author
 from mb_misc import mb_html
 
 from author_site.post_stress_meteg_shared import (
+    _ROM_SILLUQ,
     _CASES_FNAME,
     _COS_CH_14_BY_TYPE,
     _COS_CH_14_PAGES_BY_TYPE,
@@ -274,18 +275,23 @@ def _census_definitions(survey: dict) -> list:
 
 
 def _mas_facts(survey: dict) -> list:
-    """Section 3: the facts shared by every MAS, before structural classification."""
+    """Section 3: MAS facts, distinguishing verse-final cases from following-word facts."""
     exceptions = _noninitial_next_stress_records(survey)
     assert len(exceptions) == 1
     nonfinal_mas_syllable_records = _nonfinal_mas_syllable_records(survey)
     assert len(nonfinal_mas_syllable_records) == 4
     next_conjunctive = _next_conjunctive_records(survey)
-    total = len(survey["post_stress"])
+    with_next_word = [
+        record
+        for record in survey["post_stress"]
+        if record["next_chanted_word"] is not None
+    ]
+    total = len(with_next_word)
     assert (
         len(next_conjunctive)
         + sum(
             record["next_chanted_word_accent_classification"] == "disjunctive"
-            for record in survey["post_stress"]
+            for record in with_next_word
         )
         == total
     )
@@ -294,7 +300,10 @@ def _mas_facts(survey: dict) -> list:
         mb_html.unordered_list(
             (
                 (
-                    "In every MAS case, the stressed syllable has a conjunctive accent (",
+                    "Before verse end, the stressed syllable of every MAS word has a conjunctive accent. "
+                    "Verse-final MAS follows ",
+                    _ROM_SILLUQ,
+                    " (",
                     _footnote_callout(1, _POST_SILLUQ_FOOTNOTE_ID),
                     ").",
                 ),
@@ -305,12 +314,12 @@ def _mas_facts(survey: dict) -> list:
                     "), the MAS syllable is final.",
                 ),
                 (
-                    "In every MAS case but one (",
+                    "In every MAS case with a next word but one (",
                     _footnote_callout(3, _JEREMIAH_FOOTNOTE_ID),
                     "), the next word has initial stress.",
                 ),
                 (
-                    f"In {(total - len(next_conjunctive)) / total:.1%} of MAS cases (",
+                    f"In {(total - len(next_conjunctive)) / total:.1%} of MAS cases with a next word (",
                     _footnote_callout(4, _NEXT_CONJUNCTIVE_FOOTNOTE_ID),
                     "), the next word has a disjunctive accent.",
                 ),
@@ -578,7 +587,8 @@ def _type_1_subtypes(survey: dict) -> list:
                     ")",
                 ),
                 ("1C: Like 1B, but with some accent other than ", _ROM_PASHTA, "."),
-                "1D: The next word does not have initial stress.",
+                "1D: There is no initially stressed next word, either because the next word "
+                "lacks initial stress or because the MAS word is verse-final.",
             )
         ),
         _table(headers, rows),

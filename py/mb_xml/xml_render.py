@@ -38,6 +38,7 @@ _RENOPTS_MAM_XML = {
     "ro_render_style": "abstract",
 }
 _HT_TAC_FOR_RT_FOR_MAM_XML = {
+    "silluq-before-meteg": ("silluq-before-meteg", None),
     #
     "mam-good-ending": ("good-ending", None),
     "mam-letter-small": ("letter-small", None),

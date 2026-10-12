@@ -63,6 +63,7 @@ PARSER_STAGE_TEMPLATE_ARG_COUNTS = {
     "מ:גרש ותלישא גדולה": frozenset({0}),
     "מ:גרשיים ותלישא גדולה": frozenset({0}),
     "מ:דחי": frozenset({2}),
+    "מ:סילוק לפני געיה": frozenset({2}),
     "מ:הערה": frozenset({2}),
     "מ:טעם": frozenset({1}),
     "מ:טעם ומתג באות אחת": frozenset({0}),

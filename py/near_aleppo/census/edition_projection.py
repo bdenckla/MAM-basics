@@ -44,6 +44,7 @@ EDITION_SEPARATOR_TEMPLATE_NAMES = {
 # pointed qere is the temporary pointing proxy for the ordinary ketiv/qere
 # families; phase 4 will synthesize the edition's pointed ketiv from it.
 _EDITION_KEYS = {
+    "מ:סילוק לפני געיה": ("1",),
     "נוסח": ("1",),
     "מ:הערה": (),
     "מ:הערה-2": ("1",),
@@ -105,6 +106,7 @@ def _keysets(*keysets):
 # measured.  The second raises on sight, which is the request to measure it before
 # an edition-style census crosses it.
 _EDITION_KEYSETS = {
+    "מ:סילוק לפני געיה": _keysets(("1", "2")),  # declared annotation contract
     "נוסח": _keysets(("1", "2")),
     "מ:הערה": _keysets(),  # never met in the EP column
     "מ:הערה-2": _keysets(("1", "2", "3")),

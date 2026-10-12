@@ -47,6 +47,11 @@ keeps.</p>
 <th>What near-Aleppo has</th>
 </tr>
 <tr>
+<td dir="rtl"><bdi lang="hbo" class="name">מ:סילוק לפני געיה</bdi></td>
+<td>Its parameter 1, the full marked atom, as plain text. Parameter 2 identifies silluq and is
+position metadata, so it contributes no additional Scripture text. All U+05BD marks remain.</td>
+</tr>
+<tr>
 <td dir="rtl"><bdi lang="hbo" class="name">מ:קמץ</bdi></td>
 <td>Its parameter <bdi lang="hbo" class="name">ד</bdi>, as plain text; its parameter
 <bdi lang="hbo" class="name">ס</bdi> goes.</td>
@@ -178,9 +183,9 @@ rules. In those parameters, near-Aleppo evaluates away 1 <bdi lang="hbo" class="
 <bdi lang="hbo" class="name">מ:דחי</bdi>, 1 <bdi lang="hbo" class="name">מ:לגרמיה-2</bdi>, and 1
 special-letter template besides. So <bdi lang="hbo" class="name">מ:קמץ</bdi>,
 <bdi lang="hbo" class="name">מ:דחי</bdi>, <bdi lang="hbo" class="name">מ:צינור</bdi>,
-<bdi lang="hbo" class="name">מ:כפול</bdi>, and <bdi lang="hbo" class="name">מ:מקף אפור</bdi> occur
-nowhere in near-Aleppo's text, in no column, parameter, or note body; only the copies of MAM's
-target have them.</p>
+<bdi lang="hbo" class="name">מ:כפול</bdi>, <bdi lang="hbo" class="name">מ:מקף אפור</bdi>, and
+<bdi lang="hbo" class="name">מ:סילוק לפני געיה</bdi> occur nowhere in near-Aleppo's text, in no
+column, parameter, or note body; only the copies of MAM's target have them.</p>
 <p>Where MAM has a legarmeh, <bdi lang="hbo" class="name">מ:לגרמיה-2</bdi>, or a narrow-sense paseq,
 <bdi lang="hbo" class="name">מ:פסק</bdi>, near-Aleppo writes the same character, U+05C0, so its text
 does not tell the two apart. The note bodies, which near-Aleppo keeps verbatim, still have both
@@ -441,7 +446,7 @@ and choose a projection wherever the payload presents alternatives.</p>
 <ul>
 <li>Use a closed, role-aware template dispatch: recurse only through documented Scripture-bearing
 fields, and fail on an unknown template instead of guessing from its parameters or skipping it.
-Near-Aleppo adds note templates, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>, and
+Near-Aleppo adds note templates, <bdi lang="hbo" class="name">ניקוד בלי אות</bdi>,
 <bdi lang="hbo" class="name">ניקוד בלי אות ובלי רווח</bdi>, and <bdi lang="hbo" class="name">רווח
 בלי ניקוד</bdi>; follow their documented roles.</li>
 <li>Do not collect MAM's preserved targets, note clauses or flags as Scripture. The stored pointed

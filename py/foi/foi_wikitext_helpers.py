@@ -126,8 +126,14 @@ def all_branch_foilers(overrides):
     handlers = {
         name: _foiler_for_all_named_params for name in tmpln.CURRENT_PLUS_TMPL_NAMES
     }
+    # The silluq scaffold is position metadata, not another Scripture form.
+    handlers[tmpln.SILLUQ_BEFORE_METEG] = _foiler_for_silluq_before_meteg
     handlers.update(overrides)
     return handlers
+
+
+def _foiler_for_silluq_before_meteg(foilers, stack, tmpl):
+    return _sum_map_find_in_wtel(foilers, stack, wtp.template_param_val(tmpl, "1"))
 
 
 ######################################################################

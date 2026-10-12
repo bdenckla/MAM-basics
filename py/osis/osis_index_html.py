@@ -41,6 +41,16 @@ def _section_ge(heading):
     return the_head, the_para, *the_img_br
 
 
+def _section_silluq_before_meteg(heading):
+    return heading_level_2(heading), para(
+        "The exporter supports MAM-simple’s silluq-before-meteg annotation. "
+        "It preserves the full marked atom and adds an OSIS note with type "
+        "x-silluq-before-meteg and text סילוק לפני געיה immediately after the "
+        "atom, before sof pasuq. The note identifies a meteg after silluq "
+        "without reproducing MAM’s detailed source apparatus."
+    )
+
+
 def _section_scrdff(heading):
     the_head = heading_level_2(heading)
     the_para = para(
@@ -503,6 +513,7 @@ HEADING_SLH = "Small, large, & hung letters"
 HEADING_ABCANT = "“A” and “B” cantillations"
 HEADING_IMPMAQ = "Implicit maqaf marks"
 SH_PAIRS_FOR_FEAT_PRES = (  # SH: section (function) & heading
+    (_section_silluq_before_meteg, "Meteg after silluq"),
     (_section_ge, HEADING_GE),
     (_section_scrdff, HEADING_SCRDFF),
     (_section_kq, HEADING_KQ),

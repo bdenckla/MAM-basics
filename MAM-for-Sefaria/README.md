@@ -34,3 +34,13 @@ Hebrew Wikisource have: the qere first in about one pair in eight, mostly where 
 a maqaf. The files under `csv-ajf/` have the ketiv first throughout.
 
 Questions? Email maintainer@miqra.simplelogin.com.
+
+## Meteg after silluq
+
+When MAM’s source annotation identifies silluq before a later meteg, the Sefaria
+and AJF exporters remove every U+05BD after the identified silluq. They retain the
+silluq, every other letter and mark, and the following sof pasuq. These exports
+omit this annotation’s explanatory note. MAM-simple preserves the full text and
+its explicit position metadata; the exporters use that metadata rather than
+assuming that the last U+05BD is silluq. This behavior is supported before the
+source template’s first use and takes effect when the product is regenerated.

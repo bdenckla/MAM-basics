@@ -77,7 +77,7 @@ def _el_text(el):
 
     tmpln.validate_current_plus_template(el)
     name = wtp.template_name(el)
-    if name in {"נוסח", tmpln.SCRDFF_TAR}:
+    if name in {"נוסח", tmpln.SCRDFF_TAR, tmpln.SILLUQ_BEFORE_METEG}:
         return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))
     if name in tmpln.STRESS_HELPER_TMPL_NAMES:
         return "".join(_el_text(sub) for sub in wtp.template_param_val(el, "1"))

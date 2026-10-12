@@ -15,6 +15,7 @@ from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import str_defs as sd
 from mb_cmn import template_names as tmpln
+from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 from mb_cmn import ws_tmpl2 as wtp
 from render_wt import render_element as renel
 from render_wt import render_wikitext_added_lines as added_lines  # near-aleppo
@@ -261,6 +262,20 @@ def _handle_gray_maqaf(hctx, tmpl):
 def _handle_stress_of_dexi_word(hctx, tmpl):
     assert wtp.template_len(tmpl) in (2, 3)
     return wt_help.render_tmpl_el(hctx, tmpl, 1)
+
+
+def _handle_silluq_before_meteg(hctx, tmpl):
+    if set(wtp.template_param_keys(tmpl)) != {"1", "2"}:
+        raise ValueError(
+            f"{hctx.bcvt}: unexpected silluq-before-meteg parameters: {tmpl!r}"
+        )
+    text = first_and_only_and_str(wtp.template_param_val(tmpl, "1"))
+    letters_with_silluq = first_and_only_and_str(wtp.template_param_val(tmpl, "2"))
+    validate_silluq_before_meteg(text, letters_with_silluq, str(hctx.bcvt))
+    abstract = renel.mk_ren_el_tc_and_attr(
+        "silluq-before-meteg", (text,), {"letters-with-silluq": letters_with_silluq}
+    )
+    return _abstract_default(hctx, abstract, text)
 
 
 def _handle_stress_of_tsinnor_word(hctx, tmpl):
@@ -638,6 +653,7 @@ _HANDLER_SPECS_FOR_MISC = {
     "מ:פסק": {_MASK_ELP: _handle_paseq},
     "מ:מקף אפור": {_MASK_EL: _handle_gray_maqaf},
     "מ:דחי": {_MASK_ELP: _handle_stress_of_dexi_word},
+    tmpln.SILLUQ_BEFORE_METEG: {_MASK_ELP: _handle_silluq_before_meteg},
     "מ:צינור": {_MASK_ELP: _handle_stress_of_tsinnor_word},
     "מ:קמץ": {_MASK_ELP: qamats_variation.handle},
     "מ:אות-ק": {_MASK_ELP: _handle_small_letter},

@@ -39,6 +39,7 @@ from accgram.post_stress_meteg_model import (
     _intervening_punctuation,
     _letters,
     _misc_subtype,
+    _parse,
     _starts_with_a_vocal_shewa,
     _stress_letter_accent,
     _stress_syllable_has_conjunctive_accent,
@@ -62,6 +63,7 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
     preceding chanted word has ole is likewise refused as an oleh-we-yored question instead of
     being guessed to be normal merkha.
     """
+    counts = {"conjunctive": 0, "disjunctive": 0}
     for record in post_stress:
         preceding_chanted_word = record.pop("_preceding_chanted_word")
         punctuation = record.get("intervening_punctuation", ())
@@ -77,6 +79,19 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
                 f"{record['bcv']}: misc-vayomer lacks its narrow-sense paseq"
             )
 
+        if record["has_sof_pasuq"]:
+            parsed = _parse(record["chanted_word"], record["jta"])
+            silluq_count = sum(
+                marks.count(METEG)
+                for index, (_letter, marks, _atom_final) in enumerate(parsed["letters"])
+                if _syllable_of(parsed["nuclei"], index) == parsed["stressed"]
+            )
+            if silluq_count != 1:
+                raise SurveyProblem(
+                    f"{record['bcv']}: expected one silluq in the stressed syllable"
+                )
+            counts["disjunctive"] += 1
+            continue
         accent = _stress_letter_accent(record)
         if (
             record["system"] == SYSTEM_POETIC
@@ -90,14 +105,18 @@ def stress_accent_classification(post_stress: list[dict]) -> dict:
             raise SurveyProblem(
                 f"{record['bcv']}: stress-letter accent is not a regular conjunctive"
             )
+        counts["conjunctive"] += 1
 
     return {
         "exact_rule": (
             "Read the accents on the initial Hebrew letter of the one jta syllable marked !, "
-            "the rule used by the 2026-09-03 census table."
+            "the rule used by the 2026-09-03 census table. In a verse-final word, the "
+            "U+05BD in the stressed syllable is the disjunctive silluq."
         ),
-        "conclusion": "Every MAS has a conjunctive accent on that stress letter.",
-        "counts": {"conjunctive": len(post_stress), "disjunctive": 0},
+        "conclusion": (
+            "MAS before verse end has a conjunctive accent; verse-final MAS follows silluq."
+        ),
+        "counts": counts,
     }
 
 
@@ -354,9 +373,13 @@ def _fit_for_mas_candidate(
         "next_chanted_word": next_chanted_word,
         "intervening_punctuation": intervening_punctuation,
         "structural_types": types,
+        "has_sof_pasuq": parsed["has_sof_pasuq"],
         "stress_is_penultimate": stress_is_penultimate,
         "has_u05bd": bool(potential_syllable_meteg_count),
-        "word_has_another_meteg": (word.count(METEG) > potential_syllable_meteg_count),
+        "word_has_another_meteg": (
+            word.count(METEG)
+            > potential_syllable_meteg_count + int(parsed["has_sof_pasuq"])
+        ),
         "next_chanted_word_is_initially_stressed": (
             next_chanted_word_is_initially_stressed
         ),
@@ -495,7 +518,12 @@ def _not_fit_for_mas_record(candidate: dict) -> dict:
     """The complete public-data record for one MAS chanted word not fit for MAS."""
     assert candidate["has_mas"] and not _is_fit_for_mas(candidate), candidate
     assert candidate["mam_form"] is not None, candidate
-    assert candidate["next_mam_form"] is not None, candidate
+    assert (candidate["next_mam_form"] is None) == (
+        candidate["next_chanted_word"] is None
+    ), candidate
+    assert (
+        candidate["next_mam_form"] is not None or candidate["has_sof_pasuq"]
+    ), candidate
     return {
         "bcv": candidate["bcv"],
         "system": candidate["system"],
@@ -753,15 +781,23 @@ def _fit_for_mas_summary(
         for candidate in mas_candidates
         if not candidate["stress_syllable_has_conjunctive_accent"]
     ]
-    assert (
-        not mas_with_nonconjunctive_stress_syllable
+    assert all(
+        candidate["has_sof_pasuq"]
+        for candidate in mas_with_nonconjunctive_stress_syllable
     ), mas_with_nonconjunctive_stress_syllable
     mas_failing_first_criterion = [
         candidate
         for candidate in mas_candidates
         if not _has_first_fit_for_mas_criterion(candidate)
     ]
-    assert len(mas_failing_first_criterion) == len(mas_with_nonpenultimate_stress)
+    assert len(mas_failing_first_criterion) == len(
+        {
+            (candidate["bcv"], candidate["entry_index"])
+            for candidate in (
+                mas_with_nonpenultimate_stress + mas_with_nonconjunctive_stress_syllable
+            )
+        }
+    )
 
     mas_after_second_criterion = [
         candidate
@@ -855,7 +891,7 @@ def _fit_for_mas_summary(
         ),
         "not_fit_records_what": (
             "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted"
-            " word, its next chanted word, and whether it meets each of the three Fit-for-MAS"
+            " word, its next chanted word when present, and whether it meets each of the three Fit-for-MAS"
             " criteria."
         ),
         "candidate_chanted_words": len(candidates),
@@ -867,6 +903,10 @@ def _fit_for_mas_summary(
         "by_fit_type": by_fit_type,
         "mas_not_in_the_table": {
             "stress_not_penultimate": len(mas_with_nonpenultimate_stress),
+            "stress_is_silluq": sum(
+                candidate["has_sof_pasuq"] and candidate["stress_is_penultimate"]
+                for candidate in mas_with_nonconjunctive_stress_syllable
+            ),
             "next_word_not_disjunctive": len(mas_with_non_disjunctive_next_word),
             "next_word_not_initially_stressed": len(mas_with_noninitial_next_word),
             "type_1_subtype_C": len(mas_with_type_1_subtype_c),

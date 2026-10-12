@@ -1,9 +1,7 @@
 # Notes: suggestion M23 (Isaiah 23:12 atom 11, קוּמִי) adds a meteg after the stress
 
-Evidence for the seven-item programme
-[`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md),
-and specifically for that programme's item 1, which has a separate plan,
-[`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md).
+Evidence for the seven-item programme [`PLAN-holman-meteg-rollout-programme.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-holman-meteg-rollout-programme.md), and specifically for that programme's item 1, which has a separate plan, [`PLAN-post-stress-meteg-page-and-holman-m23.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-post-stress-meteg-page-and-holman-m23.md).
+Updates and later status: [holman-meteg-m23-isaiah-23-12-update.md](holman-meteg-m23-isaiah-23-12-update.md).
 
 Captured 2026-09-03 in a plan-mode session of MAM-basics (`C:/Users/BenDe/GitRepos/MAM-basics`,
 HEAD `3829585`, clean tree), one of a set of six notes: the M13 note is

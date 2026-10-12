@@ -1,531 +1,163 @@
-# Add `מ:סילוק לפני געיה` under phonetic-hbo#78
+# Support and annotate silluq before a later meteg
 
 State: live
 
-## Summary
+## Approved execution snapshot, 2026-10-12
 
-MAM has two U+05BD marks in the verse-final atom `לְכֻלָּֽהְנָֽה` at 1 Kings
-7:37: the first serves as silluq and the second is a meteg (called `געיה` in
-MAM's documentation). Add a source template that identifies the first mark as
-the silluq without changing MAM's text. Editions that preserve documentation
-keep both marks. The noteless Sefaria and AJF renderers remove every U+05BD
-after the identified silluq. OSIS keeps both marks and adds a short
-machine-readable note.
+Ben instructed Codex: "Proceed as you suggest." He confirmed: "we want to remove the
+meteg in editions without notes", identifying Sefaria/AJF, and requested documentation
+in MAM-parsed-plus, MAM-simple and the older Sefaria encoding guide. This snapshot
+supersedes the one-site, source-first implementation sequence proposed on 2026-09-08.
+Ben subsequently confirmed: "Follow both explicit annotations (Recommended)" for
+the post-stress-meteg survey. This supersedes its deliberate misreading of
+1 Kings 7:37, chosen on 2026-09-09. The survey follows Phonetic MAM's computed stress
+and reconciles verse-final records with the source annotations actually used.
+The undertaking remains tracked by [phonetic-hbo#78](https://github.com/bdenckla/phonetic-hbo/issues/78).
 
-The same site makes a published page wrong. The `mtgmtg` feature-of-interest page,
-`gh-pages/MAM-with-doc/foi/foi-mtgmtg.html`, opens by calling the very concern this
-plan encodes "unfounded". This plan also corrects that page's introduction and its
-group labels, whose source is the authored prose in
-`py/foi/mtgmtg_explanations.py`.
+The source and integration checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`, initially
+`7fb93c9259f3dd4929016f14079f1a768496d580`, on clean main. Development is
+`C:/Users/BenDe/.codex/worktrees/silluq-before-meteg/MAM-basics`, initially the same
+commit, on `codex-worktree-silluq-before-meteg`. Use the home interpreter
+`C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe` from the development root.
+Private support uses the isolated checkout
+`C:/Users/BenDe/GitRepos2/MAM-basics/.novc/private-silluq-before-meteg`, initially
+`016c086b78e5d416dae07c2810c1ff5280a32316`, with its own home clone's environments.
+The root Codex agent owns final integration in both repositories; private implementation
+is delegated in that separate checkout. Verify HEAD, branch, ancestry and NUL-delimited
+status before each stage and commit.
 
-The canonical progress tracker is
-[phonetic-hbo#78](https://github.com/bdenckla/phonetic-hbo/issues/78). Related
-issues receive cross-reference comments pointing to phonetic-hbo#78; progress
-is not duplicated across their timelines.
+## Source and product contract
 
-## Decisions and public contracts
+Both live source notes explicitly identify the earlier mark as silluq and the later mark
+as meteg: 1 Kings 7:37 and Job 4:12. The live template did not exist and neither chapter
+called it at the initial API check. These are source-note findings, not new manuscript
+readings. The two atoms are:
 
-**Attribution note, 2026-09-09 (review finding 7.2):** the original template,
-MAM-simple, and product contracts below are proposals in the September 8 plan
-introduced by `772545d5`; that provenance does not establish Ben's approval of
-every contract. Commit `7f0e4bdd` already added `State: live` and the dated FOI-page
-decisions on September 9. Commits `527011b7` and `2de7a969` added the later checkout
-and page-scope notes. Those records and this filename are retained. The September 8
-review remediation neither executes nor revises this plan's product contracts.
+| Site | Full atom | Silluq scaffold |
+|---|---|---|
+| 1 Kings 7:37 | לְכֻלָּֽהְנָֽה | לכלֽהנה |
+| Job 4:12 | מֶֽנְהֽוּ | מֽנהו |
 
-### Template name and source call
+Use the exact Wikisource name `מ:סילוק לפני געיה`, with exactly two positional parameters:
 
-Use the exact name `מ:סילוק לפני געיה`. The spelling `סילוק` is established
-throughout the mirrored MAM introduction, including the source entry for
-1 Kings 7:37 at `in/mam-ws-intro/ch5.mediawiki`; do not introduce `סלוק` as an
-alias. The Hebrew template name follows MAM's term `געיה`, while Python names,
-MAM-simple names, and English prose use *meteg*.
+1. Parameter 1 is the full marked atom, unchanged, excluding sof pasuq.
+2. Parameter 2 is the same letter skeleton with exactly one U+05BD identifying silluq,
+   with no other marks or punctuation. The full atom must have that mark and at least
+   one later U+05BD. Earlier metegs remain permitted. All later U+05BD marks are removed
+   by the noteless projection, including a future atom with several later metegs.
 
-The complete source at 1 Kings 7:37 becomes this nested `נוסח` target:
-`{{נוסח|{{מ:סילוק לפני געיה|לְכֻלָּֽהְנָֽה|לכלֽהנה}}|2==א (קווים לסילוק וגעיה), וכך אצל ברויאר ומג"ה{{ש}}ל=לְכֻלָּֽהְנָה (קו אחד לסילוק בלבד), וכן הוא בדפוסים וקורן וסימנים ומכון ממרא}}׃`.
+Validate each actual call and fail with its context and both values on invalid input.
+Unknown templates and malformed shapes continue to fail. The template renders parameter
+1 unchanged on Wikisource and sits inside the existing `נוסח` target. Sof pasuq stays
+outside both wrappers. The bot specification copies exact current source strings and
+changes only the two targets, preserving the existing detailed notes and every text mark.
 
-Sof pasuq stays outside both templates. This matches the existing convention
-for verse-final template calls, including the `מ:קמץ` call documented in
-`doc/holman-meteg-m13-qamats-template.md`, and lets punctuation remain an
-ordinary following text node in MAM-simple.
+MAM-parsed-plus preserves the wrapper. MAM-with-doc and generic text consumers select
+parameter 1. MAM-simple XML and JSON preserve `silluq-before-meteg`, with `text` and
+`letters-with-silluq`; the scaffold is metadata, never additional Scripture text. Both
+formats keep sof pasuq as the following ordinary text node.
 
-The two positional parameters have these contracts:
+Sefaria/AJF remove every later U+05BD, preserving the identified silluq and all other text,
+and supply no explanatory note for this annotation. OSIS preserves both marks and emits
+`<note type="x-silluq-before-meteg">סילוק לפני געיה</note>` before sof pasuq. Near-Aleppo
+selects parameter 1 as plain text. Phonetic MAM retains both marks in its Hebrew display
+and uses the explicit silluq position for primary stress. Private readers preserve text;
+private metadata is not added to the public release schema.
 
-1. Parameter 1 is the exact pointed and accented atom as MAM has it, excluding
-   sof pasuq. Rendering the template normally returns this parameter unchanged.
-2. Parameter 2 contains the same Hebrew letters in the same order, with all
-   marks and punctuation removed except exactly one U+05BD at the position of
-   the silluq. Parameter 2 excludes sof pasuq. For the present source call,
-   parameter 2 is `לכלֽהנה`.
+## Cumulative requirements and stages
 
-Validate every call while rendering the corpus:
+- **Implemented: support before source use.** Add closed registries, parameter schemas, renderer
+  and consumer handlers, accepted nesting, and strict position validation. Supported
+  capability may have zero occurrences. Corpus inventories remain inventories of what
+  occurs; update their occurrence claims only after source annotation and refresh.
+- **Implemented: documentation.** Cover MAM-parsed-plus, MAM-simple XML and JSON, Sefaria/AJF
+  README and authored static encoding guide, OSIS README and generated guide, near-Aleppo
+  template projection, and the Phonetic MAM display/computation distinction. Do not restore
+  retired Sefaria/OSIS example programs or unused vendored files.
+- **Implemented: zero-use and offline verification.** Regenerate affected products with zero
+  calls and judge every diff. Exercise both proposed source calls through the real parser
+  and product paths in scratch inputs, and use meaningful differential checks for the
+  cleanup and explicit stress calculation. Format changed Python with the home Black and
+  run relevant focused tests. Follow `doc/review-trial.md` for verification cadence.
+- **Active: support integration.** Commit coherent public and private support, update
+  private vendoring provenance from the committed public source, integrate through the
+  linked-worktree procedure, and push normally before live source annotation.
+- **Active: Wikisource.** Create the pass-through template and its documentation, add it
+  to the introduction appendix roster, then run the existing bot with `--no-save`, inspect
+  exactly the two chapter previews, and apply the reviewed specification. The user's
+  execution authorization includes these named live edits; no unrelated page is changed.
+- **Active: refresh.** Complete `mam-wikisource-refresh`, including the source commit,
+  public/private/public dependency loop, separately committed MAM change logs, and affected
+  hand-run Sefaria/AJF and OSIS exports. Refresh the introduction independently as its
+  README specifies. Inspect all generated diffs and annotate the two-site inventory.
+- **Implemented: published prose.** Correct the mtgmtg page's false "unfounded" concern, name
+  both MAM sites, and remove "verse-final" from its silluq group labels. Keep its grouping
+  and text records unchanged. Correct any maintained prose that vouches for that false
+  sentence under the receipt rules, without rewriting finished historical records.
+- **Active: closeout.** Verify every actual call, both sites in every affected product,
+  generated docs, changed-file formatting and required checks. Integrate and push private
+  before public after the refresh loop. Update this plan and the canonical tracker with
+  committed outcomes. Keep broad related issues open unless separately authorized.
 
-- Each parameter has the same Hebrew-letter skeleton.
-- Parameter 2 has exactly one U+05BD and no non-letter codepoint besides that
-  U+05BD.
-- Parameter 1 has a U+05BD at the letter boundary marked in parameter 2 and at
-  least one later U+05BD.
-- The cleanup operation keeps the marked U+05BD and removes every later U+05BD;
-  the contract supports a future atom with more than one post-silluq meteg.
-- Invalid calls fail generation with the reference and both parameter values.
+## Commands and verification ownership
 
-### MAM-simple XML and JSON
+Read `AGENTS.md`, the Hebrew prose skill and MAM reference, `py/product_scopes.py`, the
+iterative-document-editing and linked-worktrees skills, both repositories' instructions,
+`py/ws/pywikibot-setup.md`, `in/mam-ws-intro/README.md`, and the refresh skill plus its
+dependent-refresh reference before their stages. Use explicit account configuration for
+pywikibot; credentials and bot runtime files stay outside tracked source.
 
-Preserve the distinction in MAM-simple rather than flattening the new template
-to ordinary text. The 1 Kings 7:37 XML sequence is an element equivalent to
-`<silluq-before-meteg letters-with-silluq="לכלֽהנה" text="לְכֻלָּֽהְנָֽה"/>`
-followed by the ordinary sof-pasuq text node. The JSON element is equivalent to
-`{"type":"silluq-before-meteg","letters-with-silluq":"לכלֽהנה","text":"לְכֻלָּֽהְנָֽה"}`
-followed by the ordinary sof-pasuq text element.
-
-The element name deliberately uses `meteg`, not `gaya`, because MAM-simple's
-public English vocabulary follows the Unicode name. Add the element and its two
-attributes to the XML and JSON reading guides. Generic MAM-simple consumers
-that only want MAM's text flatten the element to its `text` attribute.
-
-### Product behavior
-
-The generated products have these exact outcomes at 1 Kings 7:37:
-
-| Product | Result |
-| --- | --- |
-| MAM-with-doc | Keep `לְכֻלָּֽהְנָֽה׃` and the existing detailed `נוסח` note. |
-| MAM-parsed-plus | Keep both U+05BD marks; the template must not change MAM's text. |
-| MAM-simple XML and JSON | Keep both U+05BD marks in `text` and retain the silluq position in `letters-with-silluq`. |
-| Sefaria | Emit `לְכֻלָּֽהְנָה׃` and no note. |
-| AJF | Emit `לְכֻלָּֽהְנָה׃` and no note. |
-| OSIS | Emit both marks and a note immediately after the atom and before sof pasuq. |
-
-Use the OSIS note type `x-silluq-before-meteg` and note text `סילוק לפני געיה`.
-The relevant sequence is equivalent to
-`לְכֻלָּֽהְנָֽה<note type="x-silluq-before-meteg">סילוק לפני געיה</note>׃`.
-The note describes the encoded distinction; it does not replace the detailed
-MAM-with-doc apparatus note.
-
-### The mtgmtg feature-of-interest page stops calling the concern unfounded
-
-`gh-pages/MAM-with-doc/foi/foi-mtgmtg.html` is published at
-`https://bdenckla.github.io/MAM-basics/MAM-with-doc/foi/foi-mtgmtg.html` and linked from
-`gh-pages/MAM-with-doc/foi/index.html`. Its four introductory paragraphs come from
-`OVERALL_EXPLANATION` in `py/foi/mtgmtg_explanations.py`, and the parenthesis under each
-group heading comes from `_mtg_count_description` in the same module. The first paragraph
-says the concern "turns out to be unfounded": that a verse-final word might contain a
-meteg in the narrow sense (געיה) after the mark that serves as silluq. That is the
-concern this plan exists to encode, and 1 Kings 7:37 is a case of it, so the sentence
-is false. Re-read the two defects, from the root of a MAM-basics checkout, with:
+All commands below run from the public development root with its home interpreter:
 
 ```powershell
-Select-String -Path gh-pages/MAM-with-doc/foi/foi-mtgmtg.html -Pattern 'unfounded|verse-final one'
-```
-
-Ben settled the reading on 2026-09-09, disposing of finding 1 of
-[`doc/review-findings-2026-09-08.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/review-findings-2026-09-08.md):
-MAM has a meteg after silluq at 1 Kings 7:37, and the
-post-stress-meteg research deliberately misreads that word as meteg-then-silluq, which it
-now says on its own pages in Ben's wording (`gh-pages/post-stress-meteg-methods.html`, and
-footnote φ1 on `gh-pages/post-stress-meteg.html`; commit `3b0225e0`). The `mtgmtg` page
-has no such research to protect. It is a census of the feature itself, so it says plainly
-that MAM has the case.
-
-Five decisions, Ben's finding of 2026-09-09 applied to this page:
-
-1. **The first paragraph names the site.** Drop "which turns out to be unfounded",
-   and add the one MAM case with its reference and its form, following the wording
-   Ben approved for the post-stress-meteg pages: at 1 Kgs. 7:37, in MAM, there is a
-   meteg after silluq in לְכֻלָּֽהְנָֽה׃. MAM's source entry for that verse names the two
-   marks in their written order, silluq then געיה: the entry reads `קווים לסילוק וגעיה`.
-   That is how Ben reads it (phonetic-hbo#78, 2026-09-08: "this silluq-then-meteg is
-   not only present in MAM, it is confirmed by MAM's doc-note"). Find the entry, from the same root, with:
-
-   ```powershell
-   Select-String -Path in/mam-ws-intro/ch5.mediawiki -Pattern 'קווים לסילוק וגעיה'
-   ```
-
-   Merely deleting the "unfounded" clause is rejected: it would leave the page
-   raising a concern and never answering it, and the page's tables cannot answer it,
-   the word being one of 354 in a group whose first five only are shown.
-2. **The group labels keep their partition, and one phrase goes.**
-   `_mtg_count_description` labels a sof-pasuq group as "N Unicode METEG marks in addition to
-   the verse-final one serving as silluq", which renders at three group headings. Read as
-   "the last one", that puts the silluq after the meteg, which at 1 Kings 7:37 is backwards.
-   Delete "verse-final" from both branches, leaving "in addition to the one serving as
-   silluq"; the same sentence already says "with sof pasuq present", so nothing is lost. The
-   counts stay right either way: `_get_qualifiers` in `py/foi/foiz_wt_mtgmtg.py` subtracts one
-   for the silluq without claiming which mark it is, so 1 Kings 7:37's `1/sopa-y/maq-n` is a
-   true statement of one meteg beside one silluq.
-3. **No new group, and no footnote on the group.** Once the new template is
-   registered in `foiz_wt_mtgmtg.py`, a template-derived qualifier becomes
-   available, so a `silluq-first` group would be possible; it is rejected anyway.
-   `fp` is a public key in `foi-mtgmtg.json`, and re-partitioning a 354-member group
-   for one member changes that key for every consumer while telling a reader nothing
-   the introduction does not. A one-member group is also a worse home for the fact
-   than a sentence at the top of the page. A footnote on the group is rejected as
-   redundant for the same reason: the only reader who reaches it has already read the
-   introduction, and the word is not among the five shown.
-4. **Plain "word" stands on this page, and no terminology sweep rides along.** The
-   `hebrew-prose` skill bans a loose "word", and this page is not one of the
-   post-stress-meteg pages that `CLAUDE.md` exempts. Plain "word" stands here on the skill's
-   own exemption for a context that settles the sense: the page's second paragraph groups by
-   whether maqaf is present, and its tables show a maqaf compound as one row, so a "word"
-   here is a chanted word. The added sentences avoid the noun anyway, attaching the marks to
-   the form as Ben's post-stress-meteg wording does. Do not sweep "word" out of
-   `explanation_for_path` or `_mtg_count_description` under this plan; that sweep is Ben's
-   call and its own change.
-5. **The page's new claim is pinned against the collected data.** The `hebrew-prose` skill
-   forbids retyping an accent, and `OVERALL_EXPLANATION` is a module constant rather than a
-   generation-time lookup, so the form is typed once and an assertion re-derives it.
-   `py/foi/foi_finals.py`'s `_write_finals3` holds the complete `mtgmtg` collection in
-   `outs["rowdics"]` before either output is written; add the pin there, for that stem alone,
-   raising unless exactly one record has `bcv_short` `1K7:37` and an `r` equal to the typed
-   form. Copy the shape of `maqaf_nonfinal_accents_page.pin_claims`: re-derive and raise,
-   never warn.
-
-**Two of those four introductory paragraphs arrived on 2026-09-09, after the five decisions
-above were written, and this plan does not touch them.** Commit `9f851c2f` appended a third
-and fourth element to `OVERALL_EXPLANATION`, saying that the empty `2/sopa-y/maq-n` group is
-scarcity rather than a rule and pointing at `doc/foi-mtgmtg-empty-cell.md`, which carries the
-Yeivin and Breuer citations and the arithmetic. They were appended rather than woven in, so
-decision 1 still edits the first element alone and decision 2 still edits
-`_mtg_count_description` alone; the added paragraphs never call the concern unfounded and
-never locate the silluq, so acceptance criteria 8 and 9 are unaffected, and the regeneration
-left `foi-mtgmtg.json` byte-identical. This section said "two introductory paragraphs" until
-this note was added.
-
-**One question for Ben that decision 4 did not face: the page is now mixed on "word".** Those
-two added paragraphs say "chanted word" and "atom", glossed inline at first use, because the
-empty group is about a lone atom and plain "word" cannot say that; the older paragraphs say
-plain "word". Decision 4 bans a terminology *sweep* and settles that plain "word" stands, but
-it was written against a two-paragraph page and does not say what to do about a mixed one.
-Rewording the added paragraphs down to "word", rewording the older ones up, and leaving the
-page mixed are all open; none of them is done here.
-
-`doc/holman-meteg-m23-isaiah-23-12.md` vouches for the false sentence and is corrected with
-it. Its item 4 under "The post-silluq meteg: one case, in the Leningrad Codex, not in MAM"
-reports `py/foi/mtgmtg_explanations.py` lines 41-49 as recording the concern as unfounded for
-MAM, with no note that the record is wrong. Correct that one sentence and that heading, which
-counts one case where there are two, one in the Leningrad Codex at 1 Samuel 17:5 and one in
-MAM at 1 Kings 7:37. Leave the rest of that document alone: its item 3 census figure and its
-framing belong to the post-stress-meteg survey, which Ben settled separately on 2026-09-09.
-
-## Implementation plan
-
-### Preconditions and repository isolation
-
-Work in a secondary worktree of a full MAM-basics clone, in any forest, on a
-worktree-required non-`main` branch, and run that clone's interpreter by absolute
-path, `<home-clone>/.venv/Scripts/python.exe`, where `<home-clone>` is the
-worktree's home clone and `<forest>` is the directory holding it,
-`$HOME/GitRepos` or `$HOME/GitRepos<N>`. Do not create a venv, junction, or
-symlink in the worktree.
-
-**The checkout this section named until 2026-09-09 is gone, and nothing is named
-in its place.** It named
-`C:/Users/BenDe/.codex/worktrees/MAM-basics-post-stress-meteg` on the branch
-`post-stress-meteg`, with a planning baseline of 2026-09-08 putting that branch,
-primary `main` and `origin/main` all at
-`825cef66d392ecf028e36db535847eced5a234c1`. Measured 2026-09-09 from the worktree
-`C:/Users/BenDe/GitRepos/MAM-basics/.claude/worktrees/eager-leakey-2ff58c`: that
-directory is absent from disk, `git worktree list` does not name it, and the
-branch `post-stress-meteg` does not exist locally, its work having reached `main`.
-Primary `main` and `origin/main` both stood at
-`becc6f0014e1646d47c3b63239945e3b7838d17e`, seven commits past `825cef66`, which
-is still an ancestor. Three other worktrees stood clean at the same time, two
-Claude worktrees at `becc6f00` and the Codex worktree
-`C:/Users/BenDe/.codex/worktrees/MAM-basics-review-2026-09-08` at `5636d38a`, so
-expect a co-present session and prove non-collision rather than serializing
-against it. Within the hour that co-present session integrated its review record
-and `main` moved again, to `5636d38a` at 08:19 that same morning, with `becc6f00`
-still an ancestor. Two measurements of `main` inside one session is why the
-instruction below is to re-measure rather than to trust any revision written here.
-Use whichever checkout is named when this plan is launched; a fresh worktree is
-correct if none is.
-
-Re-establish the state rather than trusting either revision, and do not begin
-implementation in a dirty checkout.
-
-Before the first edit, read the complete `hebrew-prose` skill, this repository's
-[`AGENTS.md`](../AGENTS.md), [`doc/agent-planning-principles.md`](agent-planning-principles.md),
-[`py/product_scopes.py`](../py/product_scopes.py),
-[`in/repo_maintenance_policy.json`](../in/repo_maintenance_policy.json), and
-[`all-repos.code-workspace`](../all-repos.code-workspace). MAM-OSIS is now the in-repository
-product under `MAM-OSIS/`; do not use a sibling MAM-OSIS checkout.
-
-Re-establish the worktree path, commit, branch, and cleanliness with:
-
-```powershell
-git rev-parse --show-toplevel HEAD --abbrev-ref HEAD
+& "C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe" py/main_authored.py gen-mam-parsed-docs
 ```
 
 ```powershell
-git status --short --branch
-```
-
-Re-establish the home clone's `main` with:
-
-```powershell
-git -C "<home-clone>" rev-parse HEAD
-```
-
-### Source synchronization and external documentation
-
-Create the live Wikisource template `תבנית:מ:סילוק לפני געיה` as a pass-through
-whose body renders parameter 1, matching the behavior of `תבנית:מ:דחי`. Add the
-template to the special-pointing-and-accent-template roster in MAM's
-introduction appendix. Refresh `in/mam-ws-intro/` only after those live edits so
-the mirror records their revision IDs.
-
-Add an explicit one-site replacement specification under
-`in/mam-ws-bot-edits/` for 1 Kings 7:37. The specification must assert the exact
-old and new source strings and must change only the target atom; run the bot's
-no-save mode before the live edit.
-
-After Wikisource is updated, refresh the Wikisource books and the MAM
-introduction. The Wikisource book refresh updates production MAM-parsed-plus and
-maintains the special-page mirror. Review the exact source and generated
-diffs before proceeding.
-
-Use the production entry points from the MAM-basics worktree:
-
-```powershell
-& "<home-clone>/.venv/Scripts/python.exe" py/main_download.py fr-ws-intro
-```
-
-Use the established Wikisource bot entry point and its documented dry-run/no-save
-option after inspecting the current CLI help; do not invent a second bot path.
-
-### Parser, MAM-simple, and shared cleanup helper
-
-Add the new template to every template registry that governs the transient parser
-stage, MAM-parsed-plus, generic source rendering, template surveys, nesting checks, and
-feature-of-interest recursion. The default rendering path returns parameter 1,
-so MAM-with-doc and MAM-parsed-plus retain MAM's two marks.
-The abstract rendering path creates `silluq-before-meteg` with the parameter-2
-value as `letters-with-silluq` and parameter 1 as the element text.
-
-Put the validation and cleanup algorithm in the canonical `mb_cmn` source as a
-small shared helper named `drop_post_silluq_metegs`. Use named Unicode escapes
-for standalone combining marks, including
-`"\N{HEBREW POINT METEG}"`; do not place an orphan combining mark literally in
-Python source. The helper accepts the fully marked atom and
-`letters-with-silluq`, validates the contract above, and returns the fully
-marked atom with all post-silluq U+05BD marks removed.
-
-Copy the shared helper into `MAM-simple/py-examples/mb_cmn/` through the existing
-MAM-simple support-file generator. Do not hand-edit the vendored copy.
-
-Add `silluq-before-meteg` to the XML render mapping, the JSON conversion, and
-the MAM-simple XML/JSON documentation. Update any MAM-simple loaders that
-currently enumerate all element types so generic flattening returns `text` and
-does not lose the following sof pasuq.
-
-### Sefaria, AJF, and OSIS consumers
-
-Register `silluq-before-meteg` in both canonical Sefaria/AJF handlers and the
-generated example copies. Both handlers call `drop_post_silluq_metegs` with the
-element's `text` and `letters-with-silluq` values. Both noteless products discard
-only post-silluq U+05BD marks; they keep the silluq, vowels, accents, letters,
-and sof pasuq.
-
-Register the element in the canonical OSIS handler and generated example copy.
-The OSIS handler returns the unmodified element text followed by an OSIS note
-with type `x-silluq-before-meteg` and text `סילוק לפני געיה`. The ordinary
-following MAM-simple text node supplies sof pasuq after the note.
-
-Update `py/mb_cmn/mam_xml_verses.py` (at `py/py_ac_loc/` until 2026-09-26) and the
-MAM-private consumer at
-`MAM-private/masorah-books/py/ocr_cmn/mam.py` if their
-element allowlists would otherwise reject or omit the new public MAM-simple
-element. These consumers must flatten it to `text`; neither consumer creates a
-note or removes the post-silluq meteg.
-
-**Private dependency disposition, 2026-10-02:** MAM-private's own root pipeline
-now owns the near-Aleppo census. The public mega's private dependency is the
-Phonetic MAM exporter, which reads the retained private adapter through
-`mb_cmn.paths` and the explicit `REPO_MAM_PRIVATE_DIR` override. Run the private
-consumer checks from the selected private checkout with `REPO_MAM_BASICS_DIR`
-selecting this public worktree. Extend the sibling-reach lint if the planned
-template introduces a discoverable dependency; do not use a cwd-relative sibling
-path. This ownership correction leaves phonetic-hbo#78 and this plan's template
-and product behavior work live and outside the evacuation closeout.
-
-### The mtgmtg feature-of-interest page's authored prose
-
-Edit `py/foi/mtgmtg_explanations.py`: `OVERALL_EXPLANATION`'s first paragraph and
-`_mtg_count_description`'s two sof-pasuq branches, per the decisions above, plus
-the pinned form and the pin function. Call the pin from
-`py/foi/foi_finals.py`'s `_write_finals3`, after its loop fills `outs` and before
-`_write_json`. Do not edit `gh-pages/MAM-with-doc/foi/foi-mtgmtg.html` or
-`foi-mtgmtg.json`; both are generated, as the comment at the head of the HTML says.
-
-Lift the Hebrew form from tracked data rather than typing it. The file-writing
-tools put Hebrew into Unicode-normal mark order, which this repository's
-`CLAUDE.md` forbids; check the result with `has_std_mark_order` and repair it with
-`give_std_mark_order`, both in `py/mb_cmn/uni_denorm.py`, before committing any
-file that gained Hebrew.
-
-This correction does not depend on the source template. It may be its own earlier
-commit, and it stays correct if the rest of this plan is deferred.
-
-### Generated artifacts
-
-Regenerate the complete pipeline, not a hand-selected 1 Kings artifact. Expected
-changes include the source mirrors, MAM-parsed outputs, MAM-simple XML/JSON,
-MAM-for-Sefaria/AJF outputs, MAM-OSIS output, template-survey artifacts, and
-documentation generated from those sources. The only intended biblical-text
-difference in noteless Sefaria/AJF output is removal of the second U+05BD at
-1 Kings 7:37. MAM-with-doc, MAM-parsed, and MAM-simple keep the same biblical
-text bytes apart from the new structural wrapper. OSIS keeps the same biblical
-text bytes and gains the one note.
-
-`gh-pages/MAM-with-doc/foi/foi-mtgmtg.html` and `foi-mtgmtg.json` are among the
-artifacts this regeneration rewrites, so both are touched whether or not the prose
-changes. Expect a diff in the HTML and **no diff at all in the JSON**: the JSON
-carries records rather than prose, and the template must not change what the FOI
-collects. A JSON diff is a finding, and the first thing to suspect is the new
-template's handler in `py/foi/foiz_wt_mtgmtg.py`.
-
-Set the worktree's repository routing before generation:
-
-```powershell
-$env:REPOS_ROOT="<forest>"
+& "C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe" py/main_mam_simple.py
 ```
 
 ```powershell
-$env:REPO_MAM_PRIVATE_DIR="C:/path/to/the/verified/MAM-private-worktree"
+& "C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe" py/main_mam4sef.py --both-sef-and-ajf
 ```
-
-Run the current production mega entry point from the verified MAM-basics
-worktree after inspecting its CLI help for the all-steps spelling. Do not run a
-generator, formatter, staging command, or commit in the MAM-basics home
-clone.
-
-## Verification and acceptance criteria
-
-Use generated-output differentials and mechanical lints. Do not add an
-example-based unit test that pins only 1 Kings 7:37. The corpus-wide validation
-in the real renderer is the check for template calls, and full regeneration is
-the behavioral test.
-
-Acceptance requires all of the following:
-
-1. A corpus search finds the new template exactly once, at 1 Kings 7:37, unless
-   later MAM source work has deliberately added another valid site. Every found
-   call passes the parameter contract.
-2. A corpus search confirms that no call includes sof pasuq in either parameter
-   and that the source sof pasuq immediately follows the enclosing `נוסח`
-   template.
-3. MAM-with-doc, MAM-parsed-plus, and MAM-simple have
-   `לְכֻלָּֽהְנָֽה׃` at 1 Kings 7:37.
-4. Sefaria and AJF have `לְכֻלָּֽהְנָה׃` at 1 Kings 7:37 and no synthetic note.
-5. OSIS has both U+05BD marks, exactly one `x-silluq-before-meteg` note at the
-   site, and sof pasuq after the note. The combined OSIS file and the individual
-   1 Kings file agree.
-6. Generic MAM-simple readers, the Aleppo reader, and the masorah-books reader
-   reproduce the atom text with both marks and do not expose the structural
-   wrapper as stray output.
-7. The canonical and generated MAM-simple example support files, the new helper
-   among them, are byte-identical.
-8. `gh-pages/MAM-with-doc/foi/foi-mtgmtg.html` no longer calls the concern
-   unfounded, names 1 Kings 7:37 with the form לְכֻלָּֽהְנָֽה׃, and has no group label
-   locating the silluq as the verse-final U+05BD. Read the rendered page, not the
-   module.
-9. `gh-pages/MAM-with-doc/foi/foi-mtgmtg.json` is byte-identical before and after
-   this plan's implementation. Before the first implementation edit, record its
-   Git blob and re-derive its five group counts. At `f079523148ae4892bec3b313dd43b3b627c1a2a9`
-   on 2026-09-12, the baseline is blob `b6c323992bb1d05e5995b1047449931c8e026464`:
-   717 records in five groups, `1/sopa-y/maq-n` 354, `1/sopa-y/maq-y` 228,
-   `2/sopa-n/maq-n` 19, `2/sopa-n/maq-y` 102 and `2/sopa-y/maq-y` 14, with
-   1 Kings 7:37 in `1/sopa-y/maq-n` and its `r` holding both U+05BD marks. If the
-   starting blob differs, re-derive the counts and treat the mismatch as a
-   finding before proceeding; do not restore old bytes merely to satisfy this
-   criterion. After regeneration, compare the JSON with the recorded pre-edit
-   blob. A count of 353 in the first group means the new template's handler
-   recursed on parameter 2 or ran `drop_post_silluq_metegs`, and this MAM-with-doc
-   artifact keeps MAM's text.
-10. The refreshed `in/mam-ws/` chapter has the exact approved source call and the
-    refreshed production artifacts contain the intended representation.
-11. The full MAM-basics suite passes with no silent skips caused by a missing
-    sibling checkout. The last recorded clean-main baseline was 976 passed,
-    5 skipped, and 65 subtests on 2026-09-06 in
-    [`doc/PLAN-evacuate-five-MAM-products.md`](https://github.com/bdenckla/MAM-basics/blob/40395aa3d44608e9f63a75897cd8e42e1b1a7338/doc/PLAN-evacuate-five-MAM-products.md);
-    remeasure and treat any mismatch as
-    a finding rather than trusting that figure.
-
-    **Correction, 2026-09-09 (finding 7.2):** the cited 976/5/65 result is the
-    evacuation plan's dated Phase 4 result on September 6, not the last recorded
-    baseline when this plan was written on September 8. `CLAUDE.md` records a
-    976/5 run on September 7; the September 7 remediation plan records 976/5/65
-    at `5dfbd7bd` on September 8, and merge `825cef66` records 983/5 later that
-    day. The original `825cef66` checkout baseline was already historical when
-    `772545d5` introduced this plan; the September 9 precondition notes above
-    already record later measurements. Re-establish the exact checkout and run
-    the canonical suite before implementation; none of these dated results is
-    a current-baseline guarantee.
-
-12. Every changed Python file has been formatted together with Black from the
-    home clone's venv, and all unexplained generated diffs are resolved before
-    commit.
-
-Re-derive criterion 9's five figures from the verified MAM-basics worktree root
-with:
 
 ```powershell
-Get-Content gh-pages/MAM-with-doc/foi/foi-mtgmtg.json -Raw | ConvertFrom-Json | Group-Object fp | Select-Object Name,Count
+& "C:/Users/BenDe/GitRepos2/MAM-basics/.venv/Scripts/python.exe" py/main_mam_osis.py
 ```
 
-Record its pre-edit Git blob with:
+Use the actual CLI help for bot selectors and generation commands. Before any Git child
+process runs, provide its exact development path through process-local `GIT_CONFIG_*`.
+No wildcard/global Git trust is used. After the live bot, follow the refresh runbook's
+prediction and diff judgment rather than restoring unexpected output.
 
-```powershell
-git hash-object gh-pages/MAM-with-doc/foi/foi-mtgmtg.json
-```
+Expected zero-use changes are source support, guides, their generated pages and unused-tag
+reports. Biblical text and corpus occurrence inventories remain unchanged. After annotation,
+expect structural wrappers at exactly the two sites, the intended noteless meteg removals,
+two OSIS notes, and primary-stress corrections. Any other text or output difference requires
+an explanation before integration. Record actual check results and stage commits here as
+work completes.
 
-Run Black only on changed Python files:
+## Support-stage results, 2026-10-12
 
-```powershell
-& "<home-clone>/.venv/Scripts/python.exe" -m black "<changed-python-files>"
-```
+Codex's zero-use mega passed all 60 steps. Real parser and product paths accepted both
+proposed source annotations in scratch inputs; MAM-with-doc text remained identical,
+MAM-simple retained both marks and explicit position, Sefaria/AJF removed the later meteg,
+OSIS retained both marks with a note, and Phonetic MAM computed the earlier primary stress
+while retaining both marks. Differential and focused tests passed (35 tests, 8 subtests).
+The private retained diagnostics regenerated all 39 books without a tracked output change.
+A fresh independent dispatch review found no blocker.
+The full suite passed: 1,050 tests, five declared skips and 82 subtests. Both live
+bot preview artifacts equal exactly their intended one-line substitution, with all
+other mirrored source lines unchanged.
+After incorporating current main, all 60 mega steps passed again and 13 focused
+integration tests passed. Survey support then passed zero-use generation and site
+claim checks, 15 focused tests, and a separate two-site candidate check: two
+disjunctive silluq records, each without a following word. Its occurrence inventory
+remains empty before annotation. The parser's preservation handler explicitly
+evaluates Scripture parameter 1 and preserves validated position metadata parameter 2.
 
-Run the canonical suite from the MAM-basics worktree:
-
-```powershell
-& "<home-clone>/.venv/Scripts/python.exe" py/main_test.py -q
-```
-
-## GitHub coordination, commits, and integration
-
-Before implementation, post an agent-attributed planning comment on
-phonetic-hbo#78 stating the chosen template contract, sof-pasuq placement,
-MAM-simple representation, noteless Sefaria/AJF cleanup, OSIS note, the mtgmtg
-page correction, and the fact that MAM's text remains unchanged. Treat
-phonetic-hbo#78 as the only progress log.
-
-Post short agent-attributed cross-reference comments on these open issues if
-they still exist and still overlap when execution begins:
-
-- [MAM-basics#57](https://github.com/bdenckla/MAM-basics/issues/57), "review words
-  with two געיה marks", which is the mtgmtg page's own subject and so bears
-  directly on the page correction, not only on the broader class of meteg/silluq
-  handling.
-- [MAM-private#24](https://github.com/bdenckla/MAM-private/issues/24), which
-  tracks the broader downstream architecture.
-
-Do not close, reopen, relabel, or reassign either broader issue. Historical
-trackers [MAM-for-JPS#19](https://github.com/bdenckla/MAM-for-JPS/issues/19) and
-[MAM-for-CCAR#6](https://github.com/bdenckla/MAM-for-CCAR/issues/6) describe the
-same concrete site but belong to archived repositories. Link them from
-phonetic-hbo#78; do not unarchive those repositories merely to comment.
-
-Commit coherent stages on each worktree-required local branch. Do not push a
-worktree branch. Immediately before archival, integrate each participating
-repository by the established four-step procedure: merge current `main` into
-the worktree branch, resolve and commit there, run the repository's complete
-suite in the worktree, fast-forward the home clone's `main` to the verified
-branch, and push `main`. If the fast-forward refuses because `main` moved,
-return to the worktree merge rather than creating a second merge in the home
-clone.
-
-After all generated artifacts and public outputs are verified and pushed, post
-an agent-attributed closing comment on phonetic-hbo#78 with the MAM-basics commit (including
-MAM-OSIS), the MAM-private commit, and the acceptance results.
-Close phonetic-hbo#78 with that explanatory comment. No related issue changes
-state without a separate explanatory comment.
+The deliberately regenerated hand-run exports also caught up with previously lagging
+inputs: Sefaria and OSIS now show the existing qere-first pairs at 2 Samuel 20:23,
+Jeremiah 48:21, Ezekiel 39:25 and 2 Chronicles 13:19; Sefaria/AJF now include the existing
+second telisha at Judges 19:23 and selected qamats at 2 Kings 22:1. These six known
+differences were audited separately from the new template, which still has zero calls.

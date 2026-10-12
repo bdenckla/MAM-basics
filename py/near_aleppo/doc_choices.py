@@ -818,7 +818,7 @@ _CHOICES = (
         "2026-10-05",
         _BEN,
         "The final-nun dagesh at Isaiah 54:16",
-        "Near-Aleppo retains the dagesh associated with the final nun. Ben reported that he inspected an Aleppo image that day and saw the dot. This observation is attributed to Ben. This unusual final-nun dagesh is a case-specific choice and establishes no general legality rule.",
+        "Near-Aleppo retains the dagesh associated with the final nun. Ben reported that he inspected an Aleppo image that day and saw the dot. On 2026-10-12 he confirmed from low-resolution Aleppo images that the final nun also has the tsere and mahapakh. These observations are attributed to Ben. This unusual final-nun dagesh is a case-specific choice and establishes no general legality rule.",
         ("Omitting the dagesh on the final nun",),
     ),
     Choice(

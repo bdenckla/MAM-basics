@@ -99,6 +99,8 @@ def _write_finals3(args_foi, all_fois, outspec):
         for foi_struct in all_fois[foi_path]:
             fpfs = foi_path, foi_struct
             _make_final_for_foi_struct(fpfs, outs)
+    if outfile_stem == "mtgmtg":
+        mtgmtg_e.validate_quoted_mam_atoms(outs["rowdics"])
     _write_json(args_foi, outfile_stem, outs["rowdics"])
     _write_html(args_foi, outfile_stem, outs["html_tables"])
 

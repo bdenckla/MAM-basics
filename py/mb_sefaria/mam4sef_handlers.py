@@ -4,6 +4,7 @@ from mb_misc import mb_html
 from mb_cmn import str_defs as sd
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import shrink
+from mb_cmn.silluq_before_meteg import drop_post_silluq_metegs
 
 # jobj: JSON dict
 # ofc1: output for all children, summed together
@@ -16,6 +17,10 @@ def _verse(jobj, ofc1, _ofc2):
 
 def _text(jobj, _ofc1, _ofc2):
     return [jobj["text"]]
+
+
+def _silluq_before_meteg(jobj, _ofc1, _ofc2):
+    return [drop_post_silluq_metegs(jobj["text"], jobj["letters-with-silluq"])]
 
 
 def _samekh2_or_3(_etel, _ofc1, _ofc2):
@@ -176,6 +181,7 @@ def _maybe_sampe(jobj):
 
 
 HANDLERS = {
+    ("silluq-before-meteg", None): _silluq_before_meteg,
     ("verse", None): _verse,
     ("text", None): _text,
     #

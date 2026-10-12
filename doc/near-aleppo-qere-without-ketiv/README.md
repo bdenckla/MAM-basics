@@ -201,7 +201,7 @@ The introduction describes the near-Aleppo-specific templates `ניקוד בלי
 immediately precedes the `קרי ולא כתיב` template in the same sequence, with no
 intervening separator. Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 use
 artificial carriers for marks with horizontal space. At 2 Kings 19:31 the payload
-is `אְאָא֖וֹ`: three marked alefs followed by VAV + HOLAM.
+is `אְאָא֖וֹ`: three marked alef letters followed by VAV + HOLAM.
 The encoding guide follows its artificial-vav explanation with a centered
 display of this template's syntax, derived from the validated body record.
 Both carrier templates have only parameter 1, containing the payload.
@@ -210,8 +210,8 @@ The no-space template has ALEF + TSERE + MERKHA at
 at Isaiah 54:16 remains unchanged. The parameterless `רווח בלי ניקוד`
 records horizontal space without marks at 2 Samuel 16:23, Jeremiah 31:37,
 Jeremiah 50:29, Ruth 3:5 and Ruth 3:17. The example edition shows the body
-marks or blank below the qere in one box. Editorial carrier and box widths do
-not measure manuscript spacing.
+marks, or empty double guillemets for space without marks, below the qere in one
+box. Editorial carrier and box widths do not measure manuscript spacing.
 
 “Space above the marks” means horizontal space in the line of letters, left
 between words or at the end of a manuscript line. At a line ending, the space
@@ -487,9 +487,9 @@ clear that the letter-scribe intended to leave a large gap, perhaps even one
 large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת
 are present: sheva, qamats, and tipeḥa. Ben resolved the visible dot as an
 orphan ḥolam on 2026-10-11, without tentative qualification. The body encoding
-includes the three below-mark groups on artificial alefs and the ḥolam dot
+includes the three below-mark groups on artificial alef letters and the ḥolam dot
 on an artificial vav. Ben corrected the fourth carrier on 2026-10-11; the mixed
-variant preserves the ḥolam male carrier meaning. The separate letter-fit
+payload preserves the ḥolam male carrier meaning. The separate letter-fit
 assessment remains tentative.
 
 Ben clarified on 2026-10-11 that no masorah circle is present. The source reading

@@ -136,6 +136,7 @@ _STRESS_VARIANT_TMPL_NAMES = ("מ:דחי", "מ:צינור")
 _SLH_TMPL_NAMES = (tmpln.SLH_WORD, "מ:אות-ג", "מ:אות-ק", "מ:אות תלויה")
 # Templates where arg 1 is the target/primary text (return it, ignore annotation args)
 _RETURN_ARG1_TMPL_NAMES = _SLH_TMPL_NAMES + (
+    tmpln.SILLUQ_BEFORE_METEG,
     tmpln.SCRDFF_TAR,
     "מ:נו״ן הפוכה",
     "מ:קו״כ-אם-2",

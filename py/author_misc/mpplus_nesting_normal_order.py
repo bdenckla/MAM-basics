@@ -14,7 +14,7 @@ _PLUS_E_RANK_CATEGORY_SYMBOLS = (
     "scroll difference note",
     "$ketiv_qere",
     ["choice of $qamats ", author.dquote("size")],
-    "choice of stress helper",
+    "stress helper or explicit silluq position",
     "word with special letter",
     "misc. terminal",
 )

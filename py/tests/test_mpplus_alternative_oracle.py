@@ -32,6 +32,7 @@ _SOURCE_KEYS = "קרי|א-קרי|א,ל-קרי|אל-קרי|ל-קרי|ל-קרי,ק
 _QERE_TEXT = re.compile(rf"(?:(?:{_SOURCE_KEYS})=)?([^=()]+?)(?: \([^()]*\))?$")
 _NOTE_QERE = re.compile(r"ל=יתיר י' \(קרי=([^=()]+)\)$")
 _BODY_KEYS = {
+    names.SILLUQ_BEFORE_METEG: "1",
     **{name: "1" for name in names.IN_WORD_TMPL_NAMES},
     **{name: "1" for name in names.STRESS_HELPER_TMPL_NAMES},
     **{name: "2" for name in names.STD_KQ_TMPL_NAMES},

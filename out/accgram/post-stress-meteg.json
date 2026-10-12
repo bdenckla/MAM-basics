@@ -506,7 +506,7 @@
  "fit_for_mas": {
   "what": "Every syllable immediately after a penultimate primary stress with exactly one regular conjunctive accent, with a next chanted word that has initial stress and a disjunctive accent-grammar token, classified by the three MAS structural predicates and Type 1's A/B/C initial-stress subtypes. The potential syllable is checked for U+05BD. Fit for MAS includes types 1A, 1B, 2Af, 2Bf, and 3; 2Af and 2Bf require that the next word not begin with vocal shewa. Primary-stress position comes independently from Phonetic MAM's jta field.",
   "records_what": "Every chanted-word pair fit for MAS. Each record has the chanted word whose post-stress syllable is classified, the next chanted word, the applicable structural types and Fit-for-MAS class, and whether the first chanted word has MAS.",
-  "not_fit_records_what": "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted word, its next chanted word, and whether it meets each of the three Fit-for-MAS criteria.",
+  "not_fit_records_what": "Every MAS chanted word that is not fit for MAS. Each record has the MAS chanted word, its next chanted word when present, and whether it meets each of the three Fit-for-MAS criteria.",
   "candidate_chanted_words": 53962,
   "non_type_specific_conditions": 3380,
   "fitting_any_type": 377,
@@ -570,6 +570,7 @@
   },
   "mas_not_in_the_table": {
    "stress_not_penultimate": 4,
+   "stress_is_silluq": 0,
    "next_word_not_disjunctive": 15,
    "next_word_not_initially_stressed": 1,
    "type_1_subtype_C": 4,
@@ -9521,8 +9522,8 @@
   ]
  },
  "stress_accent_classification": {
-  "exact_rule": "Read the accents on the initial Hebrew letter of the one jta syllable marked !, the rule used by the 2026-09-03 census table.",
-  "conclusion": "Every MAS has a conjunctive accent on that stress letter.",
+  "exact_rule": "Read the accents on the initial Hebrew letter of the one jta syllable marked !, the rule used by the 2026-09-03 census table. In a verse-final word, the U+05BD in the stressed syllable is the disjunctive silluq.",
+  "conclusion": "MAS before verse end has a conjunctive accent; verse-final MAS follows silluq.",
   "counts": {
    "conjunctive": 232,
    "disjunctive": 0
@@ -16773,6 +16774,7 @@
   }
  ],
  "post_silluq": {
+  "source_annotations": [],
   "what": "A meteg on a syllable AFTER the silluq, which would put two U+05BD in one verse-final chanted word and make telling the meteg from the silluq a question about syllables rather than about position.",
   "in_mam": 0,
   "how_it_is_counted": "A post-stress record whose chanted word has sof pasuq is one: the silluq is in the stressed syllable and this mark is after it. The census of 2026-09-03 could not support this count, its verse-final test having been position-based, and the claim was withdrawn from doc/holman-meteg-m23-isaiah-23-12.md on that ground."
@@ -21813,6 +21815,18 @@
      "קֶ֥צֶב",
      "אֶחָ֖ד",
      "לְכֻלָּֽהְנָֽה׃"
+    ],
+    "metegs": 2
+   },
+   "jb4:12": {
+    "chanted_words": [
+     "וְ֭אֵלַי",
+     "דָּבָ֣ר",
+     "יְגֻנָּ֑ב",
+     "וַתִּקַּ֥ח",
+     "אׇ֝זְנִ֗י",
+     "שֵׁ֣מֶץ",
+     "מֶֽנְהֽוּ׃"
     ],
     "metegs": 2
    },

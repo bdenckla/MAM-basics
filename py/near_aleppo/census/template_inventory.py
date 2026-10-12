@@ -23,6 +23,7 @@ NARPAS = "מ:פסק"
 # than a survey of one edition's Scripture stream.  A value of () means that no
 # child belongs to the settled walk.
 SETTLED_KEYS = {
+    "מ:סילוק לפני געיה": ("1",),  # parameter 2 identifies silluq; it is metadata
     "נוסח": ("1",),  # rule 2
     "מ:כפול": ("כפול",),  # rule 6
     "מ:דחי": ("1",),  # step 29

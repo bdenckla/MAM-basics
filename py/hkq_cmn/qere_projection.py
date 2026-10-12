@@ -218,7 +218,11 @@ def project_qere_atoms(
 
     cmp_name = canonical_template_name(tmpl_name)
 
-    if cmp_name in {"נוסח", canonical_template_name(template_names.SCRDFF_TAR)}:
+    if cmp_name in {
+        "נוסח",
+        canonical_template_name(template_names.SCRDFF_TAR),
+        template_names.SILLUQ_BEFORE_METEG,
+    }:
         return project_qere_atoms(
             _required_param(tmpl_name, tmpl_params, "1"),
             source=source,
