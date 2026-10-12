@@ -31,7 +31,7 @@ class ContextLink:
     href: str
 
 
-# The published survey of MAM's metegs after the primary stress, which is where a reader of
+# The published survey of MAM's meteg marks after the primary stress, which is where a reader of
 # M23's card learns what kind of meteg the case is about and how common that kind is.
 #
 # The href is a sibling-directory hop: the Holman pages are published under gh-pages/holman/

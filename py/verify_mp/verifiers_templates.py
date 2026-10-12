@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Callable
 
 from mb_author.claim import ClaimRecord
-from mb_cmn import paths
+from mb_cmn import paths, template_names
 from verify_mp import kq_qere_first_contexts
 from verify_mp import kq_special_counts
 from verify_mp.corpus import (
@@ -434,6 +434,39 @@ def _param_text(tmpl: dict, key: str):
     return value
 
 
+def verify_mp_plus_templates_silluq_before_meteg_cases(
+    record: ClaimRecord, ctx: Context
+) -> None:
+    """Check the documented annotation sites and the number of later meteg marks.
+
+    This inventories template calls in all columns and parameters, rather than
+    projecting an edition. The claim describes the current calls, not a limit
+    imposed by the supported template's schema.
+    """
+    from mb_cmn.silluq_before_meteg import METEG, validate_silluq_before_meteg
+
+    data = record.data
+    observed = Counter()
+    for site, tmpl in _template_sites(ctx, data["template"]):
+        template_names.validate_current_plus_template(tmpl)
+        text = _param_text(tmpl, "1")
+        scaffold = _param_text(tmpl, "2")
+        silluq_index = validate_silluq_before_meteg(text, scaffold, repr(site))
+        letter_index = -1
+        later_marks = 0
+        for char in text:
+            if "א" <= char <= "ת":
+                letter_index += 1
+            elif char == METEG and letter_index > silluq_index:
+                later_marks += 1
+        assert later_marks == data["later_marks"], (
+            f"{site}: {later_marks} meteg marks after silluq, "
+            f"not the documented {data['later_marks']}"
+        )
+        observed[site] += 1
+    _assert_sites(observed, data["where"], data["template"])
+
+
 def _assert_sites(observed: Counter, declared, what: str) -> None:
     """Assert that the observed sites are the declared ones, each as often as declared."""
     expected = Counter(tuple(site) for site in declared)
@@ -556,6 +589,7 @@ def verify_mp_plus_templates_meteg_accent_one_letter_wikisource_cases(
 
 
 REGISTRY: dict[str, VerifierFn] = {
+    "mp.plus.templates.silluq-before-meteg.cases": verify_mp_plus_templates_silluq_before_meteg_cases,
     "mp.plus.template.haarah-2.star-first-where": verify_mp_plus_template_haarah_2_star_first_where,
     "mp.plus.templates.meteg-accent-one-letter.wikisource-cases": verify_mp_plus_templates_meteg_accent_one_letter_wikisource_cases,
     "mp.plus.templates.new-book.at-each-book-start": verify_mp_plus_templates_new_book_at_each_book_start,

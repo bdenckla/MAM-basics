@@ -28,7 +28,7 @@ _KEEP_PUNCT = frozenset({hpunc.MAQ, hpunc.SOPA, hpunc.PASOLEG})
 
 # keep_meteg policy for U+05BD (meteg-or-silluq, hp.MTGOSLQ):
 #   "none"   — drop every U+05BD (treat all as ordinary meteg)
-#   "silluq" — keep only the token's *last* U+05BD (the silluq), drop earlier metegs
+#   "silluq" — keep only the token's *last* U+05BD (the silluq), drop earlier meteg marks
 #   "all"    — keep every U+05BD
 METEG_DROP = "none"
 METEG_SILLUQ = "silluq"

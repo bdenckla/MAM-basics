@@ -228,8 +228,12 @@ sof pasuq, which remains in the following ordinary text node. For example:
 
 A generic reader takes only `text`; the scaffold is position metadata, not a second
 Scripture form. A reader must not assume that the last U+05BD is silluq. Sefaria/AJF
-remove every U+05BD after the identified silluq because those editions omit this
-annotation’s explanatory note. OSIS keeps the full text and adds a note. The schema
+remove every U+05BD after the identified silluq. In the two current cases,
+1 Kings 7:37 and Job 4:12, that means removing one meteg in each atom.
+The source template has no explanatory-note parameter. The detailed source notes
+belong to surrounding `נוסח` annotations and are omitted when MAM-simple is produced.
+Sefaria/AJF add no explanatory note. OSIS keeps the full text and adds the separate summary note
+`סילוק לפני געיה` (“silluq before meteg”). The schema
 is supported even when the corpus has no calls of the source template.
 
 ### Legarmeh and paseq

@@ -39,8 +39,12 @@ Questions? Email maintainer@miqra.simplelogin.com.
 
 When MAM’s source annotation identifies silluq before a later meteg, the Sefaria
 and AJF exporters remove every U+05BD after the identified silluq. They retain the
-silluq, every other letter and mark, and the following sof pasuq. These exports
-omit this annotation’s explanatory note. MAM-simple preserves the full text and
+silluq, every other letter and mark, and the following sof pasuq. The two current
+cases, 1 Kings 7:37 and Job 4:12, each have exactly one meteg after silluq.
+The source template itself has no explanatory-note parameter. Its two calls sit
+inside existing `נוסח` annotations. Those detailed source notes are omitted when
+MAM-simple is produced; the Sefaria/AJF exporters add no explanatory note.
+MAM-simple preserves the full text and
 its explicit position metadata; the exporters use that metadata rather than
 assuming that the last U+05BD is silluq. This behavior is supported before the
 source template’s first use and takes effect when the product is regenerated.

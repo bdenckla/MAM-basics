@@ -13,6 +13,9 @@ from author_misc import mp_cmn_json_snippets as jsnip
 from author_misc import mp_cmn_top_header_book39 as thb
 from author_misc import mp_body_shared as body_shared
 from author_misc import mp_table_helpers as tblh
+from py_html.my_html_span_romanized import rmn
+
+_SILLUQ = rmn("silluq")
 
 _DEDPG_TMPL_NESTING = "mpplus-template-call-graphs.html"
 _DEDPG_AOT = "mpplus_aot.html"
@@ -553,28 +556,80 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DEDPG_DOCNOTE)),
         body_shared.note_links_param1_explanation_para(),
-        author.heading_level_3("Supported silluq annotation"),
+        author.heading_level_3(["Meteg after ", _SILLUQ]),
+        author.para(
+            _emit_claim_payload(
+                claims,
+                "mp.plus.templates.silluq-before-meteg.cases",
+                [
+                    "Currently $MAM has two annotated cases of $meteg after ",
+                    _SILLUQ,
+                    ": 1 Kings 7:37 and Job 4:12. Each has exactly one $meteg after ",
+                    _SILLUQ,
+                    ". Sefaria/AJF remove that $meteg in both cases.",
+                ],
+                kind="struct",
+                subject="mp:plus",
+                data={
+                    "template": "מ:סילוק לפני געיה",
+                    "where": [
+                        ["ספר מלכים", 'מל"א', "7", "37", 2],
+                        ["ספר איוב", None, "4", "12", 2],
+                    ],
+                    "later_marks": 1,
+                },
+            )
+        ),
         author.para(
             [
                 "The supported template ",
                 author.hbo("מ:סילוק לפני געיה"),
-                " identifies silluq before a later $meteg without changing $MAM’s text. "
+                " identifies ",
+                _SILLUQ,
+                " before a later $meteg without changing $MAM’s text. "
                 "Support does not require a corpus occurrence; the tables above describe "
                 "observed templates. The annotation has exactly two positional parameters. "
                 "Parameter 1 is the full marked atom. Parameter 2 has the same Hebrew "
-                "letters and exactly one U+05BD at the silluq position, with no other "
+                "letters and exactly one U+05BD at the ",
+                _SILLUQ,
+                " position, with no other "
                 "marks or punctuation. Parameter 1 has that mark and at least one later "
-                "U+05BD. Both parameters exclude sof pasuq, which follows the enclosing "
+                "U+05BD. Both parameters exclude $sof_pasuq, which follows the enclosing "
                 "template as ordinary text.",
             ]
         ),
         author.para(
-            "A Scripture projection takes parameter 1 only. Parameter 2 is position "
-            "metadata, not a second reading. $MAM-simple preserves both parameters "
-            "as text and letters-with-silluq on its silluq-before-$meteg element. "
-            "Sefaria/AJF remove the identified later metegs and omit this annotation’s "
-            "explanatory note. OSIS preserves the text and adds a note. A consumer "
-            "that locates stress uses the explicit position instead of assuming "
-            "that the final U+05BD is silluq. Invalid calls fail validation."
+            [
+                "A Scripture projection takes parameter 1 only. Parameter 2 is position "
+                "metadata, not a second reading. $MAM-simple preserves both parameters "
+                "as ",
+                mb_html.code("text"),
+                " and ",
+                mb_html.code("letters-with-silluq"),
+                " on its ",
+                mb_html.code("silluq-before-meteg"),
+                " element. A consumer that locates stress uses the explicit position "
+                "instead of assuming that the final U+05BD is ",
+                _SILLUQ,
+                ". Invalid calls fail validation.",
+            ]
+        ),
+        author.para(
+            [
+                "The template itself has no explanatory-note parameter. Both current "
+                "calls are inside existing ",
+                author.hbo("נוסח"),
+                " annotations whose source notes identify the ",
+                _SILLUQ,
+                " and $meteg "
+                "positions and describe other editions’ text. $MAM-parsed-plus "
+                "retains those source notes; they are omitted when $MAM-simple is "
+                "produced. Sefaria/AJF read $MAM-simple and add no explanatory note. "
+                "OSIS preserves both marks and adds a separate short note, ",
+                author.hbo("סילוק לפני געיה"),
+                " (“",
+                _SILLUQ,
+                " before $meteg”), rather than the detailed source notes.",
+            ]
         ),
     ]

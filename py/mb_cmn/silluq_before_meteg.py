@@ -1,4 +1,4 @@
-"""Validate an explicit silluq position and remove only later metegs."""
+"""Validate an explicit silluq position and remove only later meteg marks."""
 
 import unicodedata
 
@@ -14,7 +14,7 @@ def validate_silluq_before_meteg(text, letters_with_silluq, context="atom"):
 
     Both arguments exclude punctuation. The second contains the same letters,
     exactly one U+05BD, and no other marks. The full atom has that mark and at
-    least one meteg on a later letter. Earlier metegs remain permitted.
+    least one meteg on a later letter. Earlier meteg marks remain permitted.
     """
 
     def fail(reason):
