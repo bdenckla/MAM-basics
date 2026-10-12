@@ -3,14 +3,14 @@
   "artifacts_description": "fix-tester verdicts: whether adopting each annotated prose ungrammatical's MAM-simple value clears its grammar/lexical error",
   "summary": {
     "tested": 96,
-    "confirmed": 93,
+    "confirmed": 95,
     "denied": 1,
     "changed": 0,
-    "untestable": 2,
+    "untestable": 0,
     "speculative_total": 16,
     "speculative_confirmed": 15,
     "synthesized": 1,
-    "agree": 84,
+    "agree": 86,
     "disagree": 1
   },
   "results": [
@@ -417,7 +417,7 @@
       "fix_description": "נ֥כח -> נכח־",
       "classification": "CONFIRMED",
       "untestable_reason": null,
-      "transformation": "word \"נ֥כח\" -> \"נכח־\" ((mer) -> (none))",
+      "transformation": "word \"נ֥כח\" -> \"נכח־\" ((mer) -> (maqaf))",
       "before_status": "ERROR",
       "before_labels": [
         "tipexa_phrase"
@@ -1226,7 +1226,7 @@
       "fix_description": "ד֥י -> די־",
       "classification": "CONFIRMED",
       "untestable_reason": null,
-      "transformation": "word \"ד֥י\" -> \"די־\" ((mer) -> (none))",
+      "transformation": "word \"ד֥י\" -> \"די־\" ((mer) -> (maqaf))",
       "before_status": "ERROR",
       "before_labels": [
         "tipexa_phrase"
@@ -2089,7 +2089,7 @@
       "fix_description": "וה֥יו ל֣י -> והיו־ ל֣י",
       "classification": "CONFIRMED",
       "untestable_reason": null,
-      "transformation": "word \"וה֥יו\" -> \"והיו־\" ((mer) -> (none))",
+      "transformation": "word \"וה֥יו\" -> \"והיו־\" ((mer) -> (maqaf))",
       "before_status": "ERROR",
       "before_labels": [
         "revia_phrase"
@@ -2839,14 +2839,14 @@
       "bcv": "gn18:18",
       "wlc_focus": "ונ֨ברכו",
       "fix_description": "ונ֨ברכו -> ונ֨ברכו־",
-      "classification": "UNTESTABLE",
-      "untestable_reason": "vowel_only",
-      "transformation": "no accent/punctuation difference -- invisible to the grammar",
+      "classification": "CONFIRMED",
+      "untestable_reason": null,
+      "transformation": "word \"ונ֨ברכו\" -> \"ונ֨ברכו־\" ((none) -> (maqaf))",
       "before_status": "ERROR",
       "before_labels": [
         "zaqef_phrase"
       ],
-      "after_status": null,
+      "after_status": "CLEAN",
       "after_labels": [],
       "before_tokens": [
         "METHIGAZAQEF",
@@ -2862,11 +2862,23 @@
         "SILLUQ",
         "SOFPASUQ"
       ],
-      "after_tokens": null,
+      "after_tokens": [
+        "METHIGAZAQEF",
+        "DARGA",
+        "TEVIR",
+        "MERKHA",
+        "TIPEXA",
+        "ATNAX",
+        "METHIGAZAQEF",
+        "TIPEXA",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
       "speculative": false,
       "synthesized": false,
       "claimed_outcome": "expects_fix",
-      "agreement": "n/a",
+      "agreement": "agree",
       "st_summary": "A maqaf is missing somewhere in the LC-BHS-WLC pipeline."
     },
     {
@@ -3569,14 +3581,14 @@
       "bcv": "je37:10",
       "wlc_focus": "ונ֨שארו",
       "fix_description": "ונ֨שארו -> ונ֨שארו־",
-      "classification": "UNTESTABLE",
-      "untestable_reason": "vowel_only",
-      "transformation": "no accent/punctuation difference -- invisible to the grammar",
+      "classification": "CONFIRMED",
+      "untestable_reason": null,
+      "transformation": "word \"ונ֨שארו\" -> \"ונ֨שארו־\" ((none) -> (maqaf))",
       "before_status": "ERROR",
       "before_labels": [
         "zaqef_phrase"
       ],
-      "after_status": null,
+      "after_status": "CLEAN",
       "after_labels": [],
       "before_tokens": [
         "MUNAX",
@@ -3598,11 +3610,29 @@
         "SILLUQ",
         "SOFPASUQ"
       ],
-      "after_tokens": null,
+      "after_tokens": [
+        "MUNAX",
+        "GERSHAYIM",
+        "MAHAPAKH",
+        "PASHTA",
+        "MUNAX",
+        "ZAQEF",
+        "METHIGAZAQEF",
+        "TIPEXA",
+        "ATNAX",
+        "MAHAPAKH",
+        "PASHTA",
+        "ZAQEF",
+        "TEVIR",
+        "MERKHA",
+        "TIPEXA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
       "speculative": false,
       "synthesized": false,
       "claimed_outcome": "expects_fix",
-      "agreement": "n/a",
+      "agreement": "agree",
       "st_summary": "The LC has no maqaf after ונשארו."
     },
     {
@@ -4285,7 +4315,7 @@
       "fix_description": "הונ֖ח -> הונח־",
       "classification": "CONFIRMED",
       "untestable_reason": null,
-      "transformation": "word \"הונ֖ח\" -> \"הונח־\" ((tip) -> (none))",
+      "transformation": "word \"הונ֖ח\" -> \"הונח־\" ((tip) -> (maqaf))",
       "before_status": "ERROR",
       "before_labels": [
         "silluq_phrase"

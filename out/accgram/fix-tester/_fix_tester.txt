@@ -1,11 +1,11 @@
 # Fix-tester: do MAM-simple values resolve annotated prose ungrammatical?
 
-confirmed: 93  denied: 1  changed: 0  untestable: 2  (96 annotated ungrammatical tested)
+confirmed: 95  denied: 1  changed: 0  untestable: 0  (96 annotated ungrammatical tested)
 speculations: 16 total; 15 confirmed, 1 denied/changed, 0 untestable
 synthesized fixes (no MAM diff; tested the note's synth_fix): 1
-claim-vs-result: 84 agree, 1 disagree
+claim-vs-result: 86 agree, 1 disagree
 
-## CONFIRMED -- MAM fix clears the error  (93)
+## CONFIRMED -- MAM fix clears the error  (95)
   1c 1:53 [claim: expects_fix] [AGREE]
     fix: אל֣וף -> אל֥וף
     transform: word "אל֣וף" -> "אל֥וף" ((mun) -> (mer))
@@ -43,7 +43,7 @@ claim-vs-result: 84 agree, 1 disagree
     after:  MUNAX MUNAX PAZER TELISHAQETANNA AZLA GERESH MERKHA LEGARMEH MUNAX REVIA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   1k 20:29 [speculative] [claim: expects_fix] [AGREE]
     fix: נ֥כח -> נכח־
-    transform: word "נ֥כח" -> "נכח־" ((mer) -> (none))
+    transform: word "נ֥כח" -> "נכח־" ((mer) -> (maqaf))
     before: DARGA MERKHAKEFULA MERKHA TIPEXA MUNAX ATNAX LEGARMEH MUNAX REVIA PASHTA ZAQEF QADMA DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: tipexa_phrase]
     after:  DARGA MERKHAKEFULA TIPEXA MUNAX ATNAX LEGARMEH MUNAX REVIA PASHTA ZAQEF QADMA DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   1s 6:19 [claim: expects_fix] [AGREE]
@@ -113,7 +113,7 @@ claim-vs-result: 84 agree, 1 disagree
     after:  AZLA GERESH REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   da 2:41 [claim: expects_fix] [AGREE]
     fix: ד֥י -> די־
-    transform: word "ד֥י" -> "די־" ((mer) -> (none))
+    transform: word "ד֥י" -> "די־" ((mer) -> (maqaf))
     before: GERESH MUNAX REVIA GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF MERKHA MERKHA TIPEXA ATNAX PASHTA MUNAX ZAQEF METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: tipexa_phrase]
     after:  GERESH MUNAX REVIA GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX PASHTA MUNAX ZAQEF METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   dt 9:20 [claim: expects_fix] [AGREE]
@@ -183,7 +183,7 @@ claim-vs-result: 84 agree, 1 disagree
     after:  AZLA GERESH REVIA MUNAX TELISHAGEDOLA QADMA MAHAPAKH PASHTA MUNAX ZAQEF PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX AZLA GERESH DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   ek 14:11 [speculative] [claim: expects_fix] [AGREE]
     fix: וה֥יו ל֣י -> והיו־ ל֣י
-    transform: word "וה֥יו" -> "והיו־" ((mer) -> (none))
+    transform: word "וה֥יו" -> "והיו־" ((mer) -> (maqaf))
     before: TELISHAGEDOLA QADMA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX MERKHA MUNAX REVIA PASHTA MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: revia_phrase]
     after:  TELISHAGEDOLA QADMA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX MUNAX REVIA PASHTA MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   ek 33:20 [claim: expects_fix] [AGREE]
@@ -246,6 +246,11 @@ claim-vs-result: 84 agree, 1 disagree
     transform: word "ולישמע֘אל" -> "ולישמעאל֮" ((zarshit) -> (zarnor))
     before: SEGOLTA LEGARMEH MUNAX REVIA MERKHA TEVIR MERKHA TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:82]
     after:  ZARQA SEGOLTA LEGARMEH MUNAX REVIA MERKHA TEVIR MERKHA TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  gn 18:18 [claim: expects_fix] [AGREE]
+    fix: ונ֨ברכו -> ונ֨ברכו־
+    transform: word "ונ֨ברכו" -> "ונ֨ברכו־" ((none) -> (maqaf))
+    before: METHIGAZAQEF DARGA TEVIR MERKHA TIPEXA ATNAX QADMA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: zaqef_phrase]
+    after:  METHIGAZAQEF DARGA TEVIR MERKHA TIPEXA ATNAX METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   gn 32:24 [claim: expects_fix] [AGREE]
     fix: לו׃ -> לֽו׃
     transform: word "לו׃" -> "לֽו׃" ((none) -> (sil))
@@ -316,6 +321,11 @@ claim-vs-result: 84 agree, 1 disagree
     transform: word "מא֖רץ" -> "מא֣רץ" ((tip) -> (mun))
     before: MUNAX REVIA MAHAPAKH PASHTA ZAQEF PASHTA MUNAX ZAQEF TIPEXA TIPEXA ATNAX GERESH MUNAX REVIA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: atnax_phrase]
     after:  MUNAX REVIA MAHAPAKH PASHTA ZAQEF PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX GERESH MUNAX REVIA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  je 37:10 [claim: expects_fix] [AGREE]
+    fix: ונ֨שארו -> ונ֨שארו־
+    transform: word "ונ֨שארו" -> "ונ֨שארו־" ((none) -> (maqaf))
+    before: MUNAX GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF QADMA ZAQEF TIPEXA ATNAX MAHAPAKH PASHTA ZAQEF TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: zaqef_phrase]
+    after:  MUNAX GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF METHIGAZAQEF TIPEXA ATNAX MAHAPAKH PASHTA ZAQEF TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   je 44:17 [claim: expects_fix] [AGREE]
     fix: כ֩י -> כי֩
     transform: word "כ֩י" -> "כי֩" (telisha qetana: kaf -> yod)
@@ -378,7 +388,7 @@ claim-vs-result: 84 agree, 1 disagree
     after:  PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   lm 5:5 [speculative] [claim: expects_fix] [AGREE]
     fix: הונ֖ח -> הונח־
-    transform: word "הונ֖ח" -> "הונח־" ((tip) -> (none))
+    transform: word "הונ֖ח" -> "הונח־" ((tip) -> (maqaf))
     before: MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: silluq_phrase]
     after:  MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   lv 4:2 [claim: expects_fix] [AGREE]
@@ -481,14 +491,7 @@ claim-vs-result: 84 agree, 1 disagree
 
 ## CHANGED -- a different error appears after the fix  (0)
 
-## UNTESTABLE -- fix could not be applied mechanically  (2)
-  (note: a *medial* 'vowel_only'/'meteg_only' mark is grammar-inert, the scanner swallowing it; 'merge_target_missing' means the named merge_next verse was not found in the source.  None is a verdict on the ungrammatical verse.)
-  gn 18:18 [claim: expects_fix]
-    fix: ונ֨ברכו -> ונ֨ברכו־
-    reason: vowel_only (no accent/punctuation difference -- invisible to the grammar)
-  je 37:10 [claim: expects_fix]
-    fix: ונ֨שארו -> ונ֨שארו־
-    reason: vowel_only (no accent/punctuation difference -- invisible to the grammar)
+## UNTESTABLE -- fix could not be applied mechanically  (0)
 
 ## Review queue: speculative claims whose result disagrees  (1)
   dt 5:8  [DENIED] claim: 'WLC’s “tangled” form for תעשה carries only a merkha on the ש, but a better LC transcription would be a meteg (elyon) and a qadma (taḥton).'
