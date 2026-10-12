@@ -566,7 +566,7 @@ def s_common_templates(*, claims: ClaimCollection):
                     _SILLUQ,
                     ": 1 Kings 7:37 and Job 4:12. Each has exactly one $meteg after ",
                     _SILLUQ,
-                    ". Sefaria/AJF remove that $meteg in both cases.",
+                    ".",
                 ],
                 kind="struct",
                 subject="mp:plus",
@@ -624,7 +624,7 @@ def s_common_templates(*, claims: ClaimCollection):
                 " and $meteg "
                 "positions and describe other editions’ text. $MAM-parsed-plus "
                 "retains those source notes; they are omitted when $MAM-simple is "
-                "produced. Sefaria/AJF read $MAM-simple and add no explanatory note. "
+                "produced. "
                 "OSIS preserves both marks and adds a separate short note, ",
                 author.hbo("סילוק לפני געיה"),
                 " (“",
