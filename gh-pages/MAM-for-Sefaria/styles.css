@@ -1,12 +1,12 @@
-@page {
-    background-color: var(--color-background);
+:root {
+    /* Preserve the page's color conventions with readable shades in each theme. */
+    --color-dim: light-dark(#707070, #aaa);
+    --color-attention: light-dark(#b117b1, #ef79ef);
+    --color-hoverable: light-dark(#187b18, #6ad96a);
+    --color-unicode-code-point-name: light-dark(#0877a9, #72c8f1);
 }
 body {
-    background-color: var(--color-background);
-    color: var(--color-normal);
-}
-body {
-    font-size: 14pt;
+    overflow-wrap: anywhere;
 }
 *[lang="hbo"] {
     font-family: "Taamey D";
@@ -26,17 +26,15 @@ body {
     /* Ezra SIL is always weirdly large so we use 115 not 140 */
 }
 span.dim { color: var(--color-dim) }
-span.dim:hover { color: var(--color-normal) }
+span.dim:hover { color: light-dark(black, white) }
 span.attention { color: var(--color-attention) }
-span.mam-implicit-maqaf { color: var(--color-mam-implicit-maqaf) }
+span.mam-implicit-maqaf { color: var(--color-dim) }
 span.mam-letter-small { font-size: 85%; }
 span.mam-letter-large { font-size: 125%; }
 span.mam-letter-hung { vertical-align: super; }
-span.romanized { font-style: italic }
 *[title] {
     color: var(--color-hoverable);
     prince-tooltip: attr(title);
-
 }
 span.small-caps,
 span.unicode-code-point-name {
@@ -46,17 +44,28 @@ span.unicode-code-point-name {
 span.unicode-code-point-name {
     color: var(--color-unicode-code-point-name);
 }
-table.border-collapse { border-collapse: collapse }
+.table-wrap {
+    margin-block: 1em;
+    overflow-x: auto;
+}
+table { overflow-wrap: normal; }
 table.break-inside-avoid { break-inside: avoid }
 th, td {
-    padding-right: 0.4em;
-    padding-left: 0.4em;
+    padding-block: 0.2em;
 }
 td.letter-spacing-wide { letter-spacing: 0.2em }
 td.vertical-align-bottom { vertical-align: bottom }
 *.bordered { border: 1px solid }
-a[href] { background-color: var(--color-link-background) }
-pre, code { font-size: 85% }
+a[href] { color: light-dark(#174ea6, #9cc2ff) }
+a[href]:visited { color: light-dark(#663399, #c5a5f1) }
+pre {
+    font-size: 85%;
+    overflow-x: auto;
+}
+@media print {
+    :root { color-scheme: light; }
+    .table-wrap { overflow: visible; }
+}
 /* rt: ruby text */
 /* rt.ketiv { font-size: smaller } */
 /* rt.parallel { font-size: inherit } */

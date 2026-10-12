@@ -9,6 +9,7 @@ from mb_cmn import paths
 _PROSE_SHEETS = (
     "style.css",
     "MAM-parsed/style.css",
+    "MAM-for-Sefaria/styles.css",
     "MAM-with-doc/misc/style.css",
     "MAM-with-doc/misc/aliyot-styles.css",
     "book-of-job/style.css",

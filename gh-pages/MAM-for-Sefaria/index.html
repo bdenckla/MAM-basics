@@ -5,7 +5,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style-color-scheme-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../document.css">
     <link rel="stylesheet" href="styles.css">
     <title>The encoding of MAM for Sefaria</title>
 </head>
@@ -155,6 +156,7 @@
         In two cases this confusion is only present in old Sefaria, and this is marked below.
     </li>
 </ol>
+<div class="table-wrap">
 <table class="break-inside-avoid border-collapse">
     <tr>
         <th>code point</th><th>mark</th>
@@ -202,6 +204,7 @@
         <td><span title="geresh muqdam">גרש מקדם</span></td>
     </tr>
 </table>
+</div>
 <p>This document, when viewed in its original
     <span class="small-caps">HTML</span> form, expects the following
     fonts to be available on the system:</p>
@@ -258,6 +261,7 @@
     encodes <span class="romanized">legarmeih</span> &amp; <span title="paseq">פסק</span> distinctly,
     but old Sefaria does not.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid border-collapse">
     <tr>
         <th>MAM <span title="legarmeih" class="romanized">leg.</span></th>
@@ -283,6 +287,7 @@
         <td class="bordered"><span class="unicode-code-point-name">SPACE</span></td>
     </tr>
 </table>
+</div>
 <p>The table above shows that <span class="small-caps">MAM</span>
     distinguishes <span class="romanized">legarmeih</span> from <span title="paseq">פסק</span>
     in the following two ways:</p>
@@ -302,6 +307,7 @@
 </ol>
 <p>Some examples appear below.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -326,6 +332,7 @@
         <td lang="hbo" dir="rtl">מֵעַ֣י ׀ מֵעַ֨י ׀ אחולה [אוֹחִ֜ילָה]</td>
     </tr>
 </table>
+</div>
 <p>Some further notes on <span class="romanized">legarmeih</span> vs. <span title="paseq">פסק</span>:</p>
 <p>Although <span class="romanized">legarmeih</span> &amp; <span title="paseq">פסק</span> mean quite different things,
     they are both encoded with <span class="unicode-code-point-name">PASEQ</span>.
@@ -376,6 +383,7 @@
     of letters and two exotic contexts: small &amp; large in the same word
     and small in <span class="romanized">ketiv</span>.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -399,6 +407,7 @@
         <td lang="hbo" dir="rtl">וגיש</td>
     </tr>
 </table>
+</div>
 <p>Old Sefaria stripped special letter encoding from <span class="small-caps">WLC</span>
     when importing <span class="small-caps">WLC</span>,
     so there’s no comparable feature.
@@ -427,6 +436,7 @@
     The table below shows, schematically, verses 34, 35, &amp; 36 of Numbers 10.
     We use an empty square, □, as a placeholder for the first &amp; last words of a verse.
 </p>
+<div class="table-wrap">
 <table class="border-collapse break-inside-avoid">
     <tr>
         <th class="bordered">MAM</th>
@@ -445,7 +455,9 @@
         </td>
     </tr>
 </table>
+</div>
 <p>Or, even more schematically:</p>
+<div class="table-wrap">
 <table dir="rtl" class="border-collapse break-inside-avoid">
     <tr>
         <th></th>
@@ -466,6 +478,7 @@
         <td lang="hbo" dir="rtl">(׆) (ס)</td>
     </tr>
 </table>
+</div>
 <p>The table below shows how, in Psalm 107,
     <span class="small-caps">MAM</span> &amp; old Sefaria
     agree that:
@@ -487,6 +500,7 @@
         whereas in <span class="small-caps">MAM</span>
         the ׆ starts the verse that follows it.</li>
 </ol>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -506,6 +520,7 @@
     <tr><td>39</td><td lang="hbo" dir="rtl">□ ... □׃</td><td lang="hbo" dir="rtl">□ ... □׃ (׆)</td></tr>
     <tr><td>40</td><td lang="hbo" dir="rtl">׆ □ ... □׃</td><td lang="hbo" dir="rtl">□ ... □׃</td></tr>
 </table>
+</div>
 <h3>Implicit <span class="romanized">maqaf</span></h3>
 <p>MAM has 63 <span class="romanized">maqaf</span> marks that are implied by their accent context but do not exist
     in medieval manuscripts or most printed editions.
@@ -514,6 +529,7 @@
     are enclosed in a span with class <code>mam-implicit-maqaf</code>.
     Here’s an example from Psalm 2:7:
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th>MAM</th>
@@ -524,6 +540,7 @@
         <td lang="hbo" dir="rtl">אֶֽ֫ל חֹ֥ק</td>
     </tr>
 </table>
+</div>
 <h3>The five main <span class="romanized">ketiv/qere</span> types</h3>
 <p>MAM encloses a <span class="romanized">ketiv/qere</span> pair in a span with class
     <code>mam-kq</code>.
@@ -538,6 +555,7 @@
     We use an empty square, □, as a placeholder for a word
     preceding a <span class="romanized">maqaf</span>.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -582,7 +600,9 @@
         <td lang="hbo" dir="rtl">כ כ [קְ] [קְ]</td>
     </tr>
 </table>
+</div>
 <p>Here is a table with another way to compare <span class="romanized">ketiv/qere</span> encoding:</p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -605,6 +625,7 @@
         <td>[<span lang="hbo" dir="rtl">קְ</span>] [<span lang="hbo" dir="rtl">קְ</span>]</td>
     </tr>
 </table>
+</div>
 <h3><span class="romanized">Ketiv velo qere</span> &amp; <span class="romanized">qere velo ketiv</span></h3>
 <p>Instances of these two “<span class="romanized">velo</span>” phenomena are enclosed in spans
     whose classes are the same as those used for
@@ -617,6 +638,7 @@
     for <span class="romanized">ketiv velo qere</span>, <span class="small-caps">MAM</span> uses parentheses,
     whereas old Sefaria does not.
 </p>
+    <div class="table-wrap">
     <table class="break-inside-avoid">
         <tr>
             <th></th>
@@ -634,12 +656,14 @@
             <td lang="hbo" dir="rtl">[קְ]</td>
         </tr>
     </table>
+    </div>
 <h3>Trivial <span class="romanized">ketiv/qere</span> pairs</h3>
 <p>MAM considers 116 <span class="romanized">ketiv/qere</span> pairs to be trivial and does not include a <span class="romanized">ketiv</span>
     for these pairs.
     The <span class="romanized">qere</span> is encoded in a span with class <code>mam-kq-trivial</code>.
     The table below shows an example from Genesis 13:3.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th>MAM</th>
@@ -650,6 +674,7 @@
         <td lang="hbo" dir="rtl">אהלה [אָֽהֳלוֹ֙]</td>
     </tr>
 </table>
+</div>
 <h3>Notes</h3>
 <p>There are 29 concise notes in <span class="small-caps">MAM</span>.
     All of these notes point out variations which appear in Torah scrolls
@@ -674,6 +699,7 @@
     <li><code>&lt;i class="footnote"&gt;(בספרי ... גדולה)&lt;/i&gt;</code></li>
 </ol>
 <p>Here is what that example looks like, in context:</p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <td lang="hbo" dir="rtl">
@@ -681,6 +707,7 @@
         </td>
     </tr>
 </table>
+</div>
 <p>Observe that the note contains a pointed word with a large letter.</p>
 <p>
     Notes appear after their referent in all cases except one,
@@ -709,12 +736,14 @@
     The example below shows the last two verses of Lamentations
     (5:21 &amp; 22) and the corresponding good ending.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <td lang="hbo" dir="rtl">הֲשִׁיבֵ֨נוּ יְהֹוָ֤ה<small>׀</small>אֵלֶ֙יךָ֙ <span class="mam-kq"><span class="mam-kq-k">(ונשוב)</span> <span class="mam-kq-q">[וְֽנָשׁ֔וּבָה]</span></span> חַדֵּ֥שׁ יָמֵ֖ינוּ כְּקֶֽדֶם׃ כִּ֚י אִם־מָאֹ֣ס מְאַסְתָּ֔נוּ קָצַ֥פְתָּ עָלֵ֖ינוּ עַד־מְאֹֽד׃<br>
             <small>השיבנו יהוה אליך ונשובה חדש ימינו כקדם</small></td>
     </tr>
 </table>
+</div>
 <h2 id="h2_string_encoding">String encoding</h2>
 <h3><span class="romanized">Qamats qatan</span></h3>
 <p><span class="unicode-code-point-name">QAMATS QATAN</span>
@@ -730,6 +759,7 @@
     <span class="unicode-code-point-name">QAMATS</span> (gadol).
     Consider the chanted word וּבְכׇל־הָרֶ֖מֶשׂ in Genesis 1:26, in various fonts:
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -750,6 +780,7 @@
         <td lang="hbo" dir="rtl" class="font-family-ezra-sil">וּבְ<span class="attention">כָ</span>ל־הָרֶ֖מֶשׂ</td>
     </tr>
 </table>
+</div>
 <p>In texts like <span class="small-caps">MAM</span>,
     where <span title="Unicode QAMATS QATAN" class="unicode-code-point-name">QQ</span>
     is used, really the
@@ -797,6 +828,7 @@ so a special font would be needed that did one of the following:</p>
     &amp;
     <span title="Unicode QAMATS QATAN" class="unicode-code-point-name">QQ</span>:
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th title="Taamey Frank CLM">Taamey FC</th>
@@ -809,12 +841,14 @@ so a special font would be needed that did one of the following:</p>
         <td lang="hbo" dir="rtl" class="font-family-ezra-sil">אׇהֳלֹה</td>
     </tr>
 </table>
+</div>
 <p>As the table below shows, in some fonts,
     <span title="Unicode QAMATS QATAN" class="unicode-code-point-name">QQ</span>
     does not mix well with <span class="romanized">merkha</span>
     or <span class="romanized">munach</span>.
     Fortunately there are only a few such cases in <span class="small-caps">MAM</span>.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <td></td>
@@ -832,6 +866,7 @@ so a special font would be needed that did one of the following:</p>
         <td lang="hbo" dir="rtl" class="font-family-taamey-b-clm">עַל־כׇּל־<span class="attention">קׇ֣</span>דָשַׁ֔י</td>
     </tr>
 </table>
+</div>
 <h3><span title="atnach hafukh">אתנח הפוך</span></h3>
 <p>The code point <span class="unicode-code-point-name">ATNAH HAFUKH</span>
     (<span title="Unicode ATNAH HAFUKH" class="unicode-code-point-name">AH</span>)
@@ -857,6 +892,7 @@ so a special font would be needed that did one of the following:</p>
     is not used.
     For example, consider the words אֵין and קִרְבָּם in Psalm 5:10:
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid border-collapse">
     <tr>
         <th></th>
@@ -880,6 +916,7 @@ so a special font would be needed that did one of the following:</p>
         <td class="bordered"><span title="Unicode YERAH BEN YOMO" class="unicode-code-point-name">YBY</span></td>
     </tr>
 </table>
+</div>
 <h3><span title="geresh">גרש</span>-<span class="romanized">telisha</span> &amp; <span class="romanized">gershayim-telisha</span></h3>
 <p>In five cases in Tanakh, a word is supposed to be notated to indicate that its
     stressed syllable is to be chanted with first the
@@ -909,6 +946,7 @@ so a special font would be needed that did one of the following:</p>
     Luckily <span class="small-caps">UXLC</span> is always the same as either <span class="small-caps">MAM</span> or old Sefaria,
     somewhat simplifying this complex situation.
 </p>
+<div class="table-wrap">
 <table class="border-collapse">
     <tr>
         <td></td>
@@ -938,8 +976,10 @@ so a special font would be needed that did one of the following:</p>
         <td lang="hbo" dir="rtl"><span class="attention">זֹ֠</span>את</td><!-- 12ZO44)T]C]c -->
     </tr>
 </table>
+</div>
 <p>The table below reviews some of the issues with old Sefaria:
 </p>
+<div class="table-wrap">
 <table class="border-collapse">
     <tr>
         <td lang="hbo" dir="rtl" class="bordered">שֻׁ֝֠בוּ</td>
@@ -953,6 +993,7 @@ so a special font would be needed that did one of the following:</p>
         <td>Look fine, but are missing <span class="romanized">gershayim</span>.</td>
     </tr>
 </table>
+</div>
 <h3>Stress <span title="zarqa">זרקא</span></h3>
 <p>As far as I know, everyone uses
     <span class="unicode-code-point-name">ZINOR</span>
@@ -968,6 +1009,7 @@ so a special font would be needed that did one of the following:</p>
     Old Sefaria doesn’t (or doesn’t often?) use stress <span title="zarqa">זרקא</span>.
     For example, consider the word טֶרֶם in Genesis 19:4:
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid border-collapse">
     <tr>
         <th></th>
@@ -988,6 +1030,7 @@ so a special font would be needed that did one of the following:</p>
         <td></td>
     </tr>
 </table>
+</div>
 <p>The table below shows the roles that
     <span class="unicode-code-point-name">ZINOR</span>
     &amp;
@@ -997,6 +1040,7 @@ so a special font would be needed that did one of the following:</p>
     <span class="unicode-code-point-name">ZARQA</span>
     for stress <span title="zarqa">זרקא</span>.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th></th>
@@ -1014,6 +1058,7 @@ so a special font would be needed that did one of the following:</p>
         <td><span class="romanized">tsinnorit</span></td>
     </tr>
 </table>
+</div>
 <h3>No displacement of <span title="zarqa">זרקא</span> by ל</h3>
 <p>In old Sefaria, in some but not all cases when a word ending in ל needs
     <span title="zarqa">זרקא</span>, the following things happen:
@@ -1076,6 +1121,7 @@ so a special font would be needed that did one of the following:</p>
     the <span title="zarqa">זרקא</span> now appears on the ל not the א, but still before
     the ל’s ascender.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid border-collapse">
     <tr>
         <th></th>
@@ -1104,6 +1150,7 @@ so a special font would be needed that did one of the following:</p>
         <td></td>
     </tr>
 </table>
+</div>
 <p>The word יִשְׂרָאֵל appears 9 times like this in old Sefaria.
     Two words other than יִשְׂרָאֵל appear like this in old Sefaria:</p>
 <ol>
@@ -1128,6 +1175,7 @@ at some point.
 <p>In these MAM-simple atoms, the Sefaria and AJF CSV exports omit the
     <span class="romanized">meteg</span> after <span class="romanized">silluq</span>
     and retain the <span class="romanized">silluq</span>:</p>
+<div class="table-wrap">
 <table id="meteg-after-silluq-cases" class="border-collapse break-inside-avoid">
     <thead>
         <tr><th>Verse</th><th>MAM-simple input</th><th>Sefaria and AJF output</th></tr>
@@ -1145,6 +1193,7 @@ at some point.
         </tr>
     </tbody>
 </table>
+</div>
 <p>Both exporters read MAM-simple JSON. The Hebrew Wikisource template
     <bdi lang="hbo">מ:סילוק לפני געיה</bdi> is carried through MAM-parsed-plus into
     MAM-simple’s <code>silluq-before-meteg</code> object. That object preserves the
@@ -1182,6 +1231,7 @@ at some point.
 </p>
 <p>The table below shows examples of these special <span class="romanized">meteg</span> placements.
 </p>
+<div class="table-wrap">
 <table class="border-collapse break-inside-avoid">
     <tr>
         <th></th>
@@ -1207,6 +1257,7 @@ at some point.
         <td lang="hbo" dir="rtl"><span class="attention">וֽ͏ַ</span>יְהִי־כֵֽן׃</td>
     </tr>
 </table>
+</div>
 <h3 id="h3_fragile_unicode">Robust Unicode</h3>
 <p>It would be nice for all texts in the Sefaria
     system to appear as expected
@@ -1288,6 +1339,7 @@ at some point.
     </li>
     <li>A location (book, chapter, &amp; verse) containing this example word.</li>
 </ol>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th>type</th>
@@ -1325,6 +1377,7 @@ at some point.
         <td><span title="2 Kings">2K</span>9:28</td>
     </tr>
 </table>
+</div>
 <p>
     In some environments (font, OS, etc.),
     the fragile old Sefaria words above don’t just suffer from ordering issues,
@@ -1368,6 +1421,7 @@ at some point.
     is not fragile.
     More on this further below.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th>MAM <span title="Exodus">E</span>/<span title="Deuteronomy">D</span></th>
@@ -1389,6 +1443,7 @@ at some point.
         <td>20:4 / 5:8</td>
     </tr>
 </table>
+</div>
 <p>Only the two bordered
     <span class="small-caps">QUPO</span> words above show a distinction
     between the appearance of fragile &amp; robust encodings.
@@ -1396,6 +1451,7 @@ at some point.
 <p>The non-bordered words have some distracting issues unrelated to fragility.
     The table below describes these issues.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid border-collapse">
     <tr>
         <th class="bordered">
@@ -1419,6 +1475,7 @@ at some point.
         </td>
     </tr>
 </table>
+</div>
 <p>Regarding
     <span lang="hbo" dir="rtl">עַל־פָּ<span class="attention">נָֽ֗</span>יַ</span>
     in old Sefaria:
@@ -1438,6 +1495,7 @@ at some point.
 <p>The table below shows 3 of the 6 unique <span class="small-caps">UM</span> words,
     with a row showing U, the under-accent that should be followed by <span class="romanized">meteg</span>.
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
         <th>MAM</th>
@@ -1464,6 +1522,7 @@ at some point.
         <td><span title="Exodus">E</span>20:10</td>
     </tr>
 </table>
+</div>
 <p>Old Sefaria’s Tanakh has no measures to prevent fragility.
     I have reported the fragility issues
     to the <span class="small-caps">UXLC</span> maintainer
@@ -1518,6 +1577,7 @@ at some point.
     This makes the <span class="small-caps">CSV</span> for verses 35–38 look like this
     (in abbreviated form):
 </p>
+<div class="table-wrap">
 <table class="break-inside-avoid bordered">
     <tr>
         <td>
@@ -1528,6 +1588,7 @@ at some point.
         </td>
     </tr>
 </table>
+</div>
 <p>(Above, Hebrew strings are shown right-to-left.
     Also, a slight distraction is that the Hebrew string for Joshua 21:38
     happens to not need quotes.)</p>
