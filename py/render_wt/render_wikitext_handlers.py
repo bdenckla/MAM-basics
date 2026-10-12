@@ -175,8 +175,10 @@ def _handle_marks_without_letter(_hctx, tmpl):
 
 def _handle_space_without_marks(_hctx, tmpl):
     nap.orphan_marks.validate_space(tmpl, "body-space display")
-    return renel.mk_ren_el_tc_and_attr(
-        "near-aleppo-body-space", (), {"style": "display: inline-block; width: 1em;"}
+    return renel.mk_ren_el_tc(
+        "near-aleppo-body-space",
+        "\N{LEFT-POINTING DOUBLE ANGLE QUOTATION MARK}"
+        "\N{RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK}",
     )
 
 

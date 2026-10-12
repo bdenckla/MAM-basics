@@ -37,7 +37,8 @@ file as Ben supplies further readings or revises an assessment. A case without a
 image reading has `reading`, `observation`, and `crop` set to `null`; the page
 states that no image reading is recorded.
 The v4 record format also permits a reviewed case's `observation` to be `null`
-when its remarks add nothing beyond the attached MAM note. Full structured image
+when its remarks add nothing beyond the attached MAM note, encoding description
+or case summary. Full structured image
 readings and provenance remain in `reading`; only displayed prose is trimmed.
 Cases with an attached MAM note display only additional manuscript remarks.
 
@@ -111,7 +112,7 @@ current observation and documentation text it assesses. The HTML build requires 
 match and raises if a note or description needs reconciliation. These readable
 source quotations are the subjects of the authored translations and comparisons.
 
-The introduction's bracketed expansion includes "of the". Removing that insertion
+Footnote φ1's bracketed expansion includes "of the". Removing that insertion
 leaves "the qere implied by the Leningrad Codex", matching the preceding version
 of the sentence.
 
@@ -387,6 +388,22 @@ checks every local fragment and arrow direction, validates the self-contained
 SVGs, and runs the real HTML comparison. Automated visual and keyboard checks
 retain the browser-policy limitation described above.
 
+## Study presentation
+
+The study covers all nine cases of `קרי ולא כתיב` in near-Aleppo. The introduction
+names the two templates at each site in separate bullets, and the three body
+templates have a template-and-meaning table with RTL Hebrew cells. The displayed
+wikitext is centered and RTL. The summary legend names each column explicitly;
+the introduction's two exceptional verse references link to their case sections.
+
+English prose and translations use curly quotation marks and apostrophes;
+faithful Hebrew source quotations retain their original punctuation. The shared
+`mb_author.author.dquote()` helper wraps authored quotations. Footnote φ1 explains
+agreement with the qere implied by the Leningrad Codex, with callouts from both
+Ruth translations. A case without a MAM doc-note has no empty doc-note section.
+Repeated mark, space and line-position statements are omitted from manuscript
+remarks, while distinct explanations and structured image readings are retained.
+
 ## Reproduction
 
 Run from the MAM-basics repository root in PowerShell 7:
@@ -556,7 +573,7 @@ images, translations, image-first order and ordinary unpointed-Hebrew styling
 remain intact. Deferred A102 work remains separate.
 
 The shared ruby renderer pairs only explicit body templates with an immediately
-following `קרי ולא כתיב` template. Space without marks displays an empty span one em wide;
+following `קרי ולא כתיב` template. Space without marks displays empty double guillemets, `«»`;
 artificial carrier payloads retain the edition's double guillemets. The no-space
 variant inserts no separator in the dataset or renderer. These display widths
 are editorial, and do not reconstruct the manuscript's measured spacing.

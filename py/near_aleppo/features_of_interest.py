@@ -69,7 +69,7 @@ CASES = (
         "qere-without-ketiv",
         "Qere without ketiv",
         "Ruth 3:5 and Judges 20:13 show qere without ketiv. "
-        "NAEE displays the recorded body encoding on the baseline: blank space "
+        "NAEE displays the recorded body encoding on the baseline: empty double guillemets "
         "at Ruth 3:5 and artificial carriers for the orphan marks at Judges 20:13.",
         ((tbn.BK_RUTH, 3, 5), (tbn.BK_JUDGES, 20, 13)),
     ),

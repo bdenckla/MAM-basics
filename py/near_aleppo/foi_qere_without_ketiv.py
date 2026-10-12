@@ -16,6 +16,7 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import read_books_from_mam_parsed_plus as plus
 from mb_cmn import verse_external_links as vel
+from mb_author import author
 from mb_misc import mb_html
 from mwd import mwd_write_book
 from near_aleppo import build_paths, doc_figures, qere_without_ketiv
@@ -36,6 +37,8 @@ _FORMAT = "near-aleppo-qere-without-ketiv-readings-v4"
 _QERE_TAG = "mam-kq-q-velo-k"
 _QERE_TEMPLATE = "קרי ולא כתיב"
 _NOTE_REVIEW_FORMAT = "near-aleppo-qere-without-ketiv-mam-notes-en-v2"
+_AGREEMENT_SENTENCE = "MAM’s qere agrees with the qere implied by the Leningrad Codex."
+_AGREEMENT_FOOTNOTE_ID = "qere-agreement-footnote"
 _COMPARISON_LABELS = {
     "discrepancy": "Discrepancy",
 }
@@ -395,7 +398,12 @@ def _translation_blocks(blocks, names):
     result = []
     for block in blocks:
         if block["kind"] == "prose":
-            result.append(mb_html.para(_prose(block["text"], names)))
+            contents = _prose(block["text"], names)
+            if block["text"] == _AGREEMENT_SENTENCE:
+                contents.extend(
+                    [" (", mb_html.anchor_h("φ1", "#" + _AGREEMENT_FOOTNOTE_ID), ")"]
+                )
+            result.append(mb_html.para(contents))
         elif block["kind"] == "hebrew":
             result.append(
                 mb_html.para(
@@ -445,6 +453,34 @@ def _comparison(review, names):
         ],
         {"class": "qvlk-mam-comparison"},
     )
+
+
+def _agreement_footnote():
+    return [
+        mb_html.heading_level_2(
+            "φ1 — Agreement with the implied qere", {"id": _AGREEMENT_FOOTNOTE_ID}
+        ),
+        mb_html.para(
+            [
+                "Sometimes it is not clear what a note means when it says, for example ",
+                author.dquote(mb_html.bdi("=ל-קרי", {"dir": "rtl", "lang": "hbo"})),
+                ". We translate that as ",
+                author.dquote(_AGREEMENT_SENTENCE),
+                " But it is important to note that by ",
+                author.dquote("agrees"),
+                " here we don’t mean ",
+                author.dquote("equals"),
+                " so much as ",
+                author.dquote("is consistent with"),
+                ". I.e. what we mean is ",
+                author.dquote(
+                    "MAM’s qere is consistent with the qere implied by "
+                    "the [body niqqud (if any) and marginal qere letters of the] "
+                    "Leningrad Codex."
+                ),
+            ]
+        ),
+    ]
 
 
 def _comparison_summary(rows, reviews):
@@ -623,9 +659,9 @@ def _case_summary(rows):
             )
         )
     legend = (
-        'In "N", N marks niqqud in the body text; blanks mean no niqqud. '
-        'In "H", ∅ marks the absence of horizontal space in the line of letters; '
-        'blanks mean space is present. In "Pos.", EOL marks the end of a manuscript '
+        f"In column {author.dquote('N')}, N marks niqqud in the body text; blanks mean no niqqud. "
+        f"In column {author.dquote('H')}, ∅ marks the absence of horizontal space in the line of letters; "
+        f"blanks mean space is present. In column {author.dquote('Pos.')}, EOL marks the end of a manuscript "
         "line; blanks mean between written words."
     )
     if any(row["reading"] is None for row in rows):
@@ -655,35 +691,45 @@ def _encoding_guide(rows):
     return mb_html.div(
         [
             mb_html.heading_level_2("Encoding conventions"),
-            mb_html.para(
-                [
-                    "Each site has a ",
-                    _template_name(_QERE_TEMPLATE),
-                    " template providing the qere and one "
-                    "additional template describing the body text. The "
-                    "additional template records which niqqud, if any, are present and whether "
-                    "horizontal space is present. The cases use "
-                    "three kinds of additional template:",
-                ]
-            ),
+            mb_html.para("Each site has:"),
             mb_html.unordered_list(
                 [
                     [
-                        "For niqqud with horizontal space above the marks, the dataset uses ",
-                        _template_name(MARKS_WITHOUT_LETTER),
-                        " (niqqud without a letter).",
+                        "A ",
+                        _template_name(_QERE_TEMPLATE),
+                        " template providing the qere.",
                     ],
-                    [
-                        "For niqqud without horizontal space above the marks, the dataset uses ",
-                        _template_name(MARKS_WITHOUT_LETTER_OR_SPACE),
-                        " (niqqud without a letter and without space).",
-                    ],
-                    [
-                        "For horizontal space without niqqud, the dataset uses ",
-                        _template_name(orphan_marks.SPACE_WITHOUT_MARKS),
-                        " (space without niqqud), with no parameters.",
-                    ],
+                    "One additional template describing the body text.",
                 ]
+            ),
+            mb_html.para(
+                "The additional template records which niqqud, if any, are present and whether "
+                "horizontal space is present. The cases use three kinds of additional template:"
+            ),
+            mb_html.table(
+                [
+                    mb_html.table_row_of_headers(("Template", "Meaning")),
+                    *[
+                        mb_html.table_row_of_data(
+                            (_template_name(name), meaning), ({"dir": "rtl"}, None)
+                        )
+                        for name, meaning in (
+                            (
+                                MARKS_WITHOUT_LETTER,
+                                "niqqud with horizontal space above the marks",
+                            ),
+                            (
+                                MARKS_WITHOUT_LETTER_OR_SPACE,
+                                "niqqud without horizontal space above the marks",
+                            ),
+                            (
+                                orphan_marks.SPACE_WITHOUT_MARKS,
+                                "horizontal space without niqqud",
+                            ),
+                        )
+                    ],
+                ],
+                {"class": "qvlk-template-meanings"},
             ),
             mb_html.para(
                 "The phrase “space above the marks” means horizontal space "
@@ -703,14 +749,16 @@ def _encoding_guide(rows):
                     ("ḥolam",),
                 )
             ),
-            mb_html.para(_prose(notation), {"class": "center", "dir": "ltr"}),
+            mb_html.para(_prose(notation), {"class": "center", "dir": "rtl"}),
             mb_html.para(
                 [
                     "The additional template immediately precedes the ",
                     _template_name(_QERE_TEMPLATE),
                     " template, with no intervening separator. The example edition "
-                    "displays the body marks or blank space below the qere in the same "
-                    'rounded-edge box or "cartouche" that it uses for normal ketiv/qere cases. '
+                    "displays artificial carriers or empty double guillemets below the qere in the same "
+                    "rounded-edge box or ",
+                    author.dquote("cartouche"),
+                    " that it uses for normal ketiv/qere cases. "
                     "The box and artificial carriers are editorial display conventions; "
                     "their widths do not measure manuscript spacing.",
                 ]
@@ -844,9 +892,9 @@ def render(verses, rows):
         ),
         mb_html.para(
             [
-                "Every case of ",
+                "This document discusses all nine cases of ",
                 _template_name(_QERE_TEMPLATE),
-                " discussed here has the expected marginal note containing the qere letters. "
+                " in near-Aleppo. All nine have the expected marginal note containing the qere letters. "
                 "Also as expected, neither qere nor ketiv letters are "
                 "present in the body text. The cases differ in whether, in the body text:",
             ]
@@ -854,42 +902,43 @@ def render(verses, rows):
         mb_html.unordered_list(
             [
                 "niqqud marks are present (only four of the nine cases have niqqud)",
-                "horizontal space is present (only 1 case lacks it: 2 Samuel 18:20)",
-                "a masorah circle is present (only 1 case lacks it: 2 Kings 19:31)",
+                [
+                    "horizontal space is present (only 1 case lacks it: ",
+                    mb_html.anchor_h("2 Samuel 18:20", "#2S18-20"),
+                    ")",
+                ],
+                [
+                    "a masorah circle is present (only 1 case lacks it: ",
+                    mb_html.anchor_h("2 Kings 19:31", "#2K19-31"),
+                    ")",
+                ],
             ]
         ),
         mb_html.para(
-            '(By definition, when niqqud marks are present, these are "orphan" niqqud, '
-            "i.e. letterless niqqud.)"
+            [
+                "(By definition, when niqqud marks are present, these are ",
+                author.dquote("orphan"),
+                " niqqud, i.e. letterless niqqud.)",
+            ]
         ),
         mb_html.para(
             [
                 "For each case of ",
                 _template_name(_QERE_TEMPLATE),
-                ", we show the following:",
+                ", we show the following in this document:",
             ]
         ),
         mb_html.unordered_list(
             [
-                "Aleppo images of the case.",
-                "How the case looks in the near-Aleppo example edition (NAEE).",
+                "An image showing what the case looks like in Aleppo",
+                "An excerpt of the near-Aleppo edition showing what the case looks like there.",
                 "Any MAM notes about the case.",
             ]
         ),
         mb_html.para(
-            [
-                "We present the MAM notes not only in their original Hebrew but also "
-                "in English translation. This translation also makes the original "
-                "notes' abbreviated wording more explicit. Sometimes it is not clear "
-                'what a note means when it says, for example "',
-                mb_html.bdi("=ל-קרי", {"dir": "rtl", "lang": "hbo"}),
-                '". We translate that as "MAM\'s qere agrees with the qere implied '
-                'by the Leningrad Codex." But it is important to note that by "agrees" '
-                'here we don\'t mean "equals" so much as "is consistent with". I.e. '
-                "what we mean is \"MAM's qere is consistent with the qere implied by "
-                "the [body niqqud (if any) and marginal qere letters of the] "
-                'Leningrad Codex."',
-            ]
+            "We present the MAM notes not only in their original Hebrew but also "
+            "in English translation. This translation also makes the original "
+            "notes’ abbreviated wording more explicit."
         ),
         *_comparison_summary(rows, reviews),
         _encoding_guide(rows),
@@ -932,20 +981,14 @@ def render(verses, rows):
                         "class": "pointed foi-verse qvlk-hebrew-display",
                     },
                 ),
-                mb_html.heading_level_3("MAM doc-note"),
             ]
         )
         if example["notes"]:
+            contents.append(mb_html.heading_level_3("MAM doc-note"))
             contents.append(
                 mb_html.div(
                     example["notes"],
                     {"dir": "rtl", "lang": "hbo", "class": "pointed qvlk-notes"},
-                )
-            )
-        else:
-            contents.append(
-                mb_html.para(
-                    "MAM has no doc-note attached to this qere-without-ketiv site."
                 )
             )
         if review["notes"]:
@@ -997,6 +1040,7 @@ def render(verses, rows):
             contents.append(_comparison(review, row["romanized"]))
         contents.append(_links(reference))
         body.append(mb_html.div(contents, {"id": row["id"], "class": "qvlk-case"}))
+    body.extend(_agreement_footnote())
     ctx = mb_html.WriteCtx(
         TITLE,
         PAGE,

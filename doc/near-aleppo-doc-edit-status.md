@@ -2877,3 +2877,49 @@ are unchanged. The population file and all 66 edition pages are byte-identical.
 Regenerating MAM-with-doc produced no tracked changes. A read-only independent
 diff review found no consequential defects. Mega and the full suite remain on
 the approved nightly cadence.
+
+## Batch the qere-without-ketiv presentation edits — 2026-10-12
+
+**Status:** Implemented by Codex at Ben’s explicit request, “PLEASE IMPLEMENT
+THIS PLAN”. The approved batch incorporates the requests made in this chat.
+
+**Changes:** The study states that it covers all nine cases, uses the requested
+image and excerpt wording, and qualifies what this document shows. The two
+templates at each site have separate bullets; the three body templates have a
+template-and-meaning table with RTL Hebrew cells. The displayed wikitext is
+centered and RTL. The summary legend names its columns, and the two exceptional
+verse references link to their case sections.
+
+The agreement explanation is footnote φ1, called out from both Ruth translations.
+Its wording is preserved apart from curly punctuation. Authored English prose
+and translations use curly quotes and apostrophes; faithful Hebrew note text is
+unchanged. Empty MAM doc-note sections and the requested redundant mark, space
+and line-position remarks are removed. The general dagesh rule, scribal-intent
+and accidental-spacing explanations, the narrow-space discussion and marginal
+note damage explanation are retained. Matching note-review descriptions were
+reconciled without changing the record format or validation rules.
+
+The shared space-template renderer now displays exactly `«»` beneath the qere,
+without a fixed-width blank. The study, edition introduction and FOI guide
+describe that convention. The maintained source README records the presentation.
+
+**Verification:** Development used the clean main checkout at
+`C:/Users/BenDe/GitRepos/MAM-basics`, baseline
+`00fc4c776ccab620e8b7025c6a4a00aaa552ced6`. Black passed on all four changed
+Python files, one file per invocation after its parallel workers stalled.
+The complete near-Aleppo regeneration and final `--html --check` passed;
+regenerating ordinary MAM-with-doc produced no tracked change. The authorized
+focused near-Aleppo, note-content, display-style and prose checks passed 12 tests.
+The test runner required sandbox escalation to resolve the repository path.
+
+An independent differential check establishes complete coverage of the nine
+qere-only sites, both φ1 callouts, the exact moved passage, local link targets,
+RTL markup, curly punctuation and all five study baselines. The three changed
+edition book pages differ only in their ten body/lemma empty-guillemet displays.
+Qere, excerpts, carrier payloads, images, faithful source notes, translations
+apart from typography, structured readings and provenance are preserved.
+Dataset products, census baselines and population data have no tracked diff.
+A read-only independent review found one italicization issue, corrected before
+the final checks. Every generated diff was inspected; `git diff --check` passed.
+No automated browser inspection is claimed. Mega and the full suite remain on
+the approved nightly cadence for this presentation batch.

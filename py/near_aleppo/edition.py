@@ -81,7 +81,7 @@ def _edition_index(edition, css_hrefs):
                 "where one is available. An absent reading has the editorial label “no ketiv” "
                 "or “no qere” in its own position. A qere-without-ketiv site with "
                 "a recorded body encoding instead shows its artificial carriers or "
-                "blank space below the qere. ",
+                "empty double guillemets below the qere. ",
                 "See the ",
                 mb_html.anchor_h(
                     "documentation for the near-Aleppo dataset", "../index.html"

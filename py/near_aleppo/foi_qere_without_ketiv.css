@@ -10,6 +10,7 @@
 .qvlk-study .qvlk-hebrew-display { text-align: center; }
 .qvlk-study .qvlk-marginal-lines { margin-inline: auto; }
 .qvlk-study .qvlk-case-summary { margin-inline: auto; }
+.qvlk-study .qvlk-template-meanings { margin-inline: auto; }
 .qvlk-study .qvlk-case-summary th, .qvlk-study .qvlk-case-summary td { white-space: nowrap; padding-inline: 0.5em; }
 .qvlk-study .qvlk-case-summary th:not(:first-child), .qvlk-study .qvlk-case-summary td { text-align: center; }
 .qvlk-study .qvlk-case-summary th[scope="row"] { font-weight: normal; background: transparent; }

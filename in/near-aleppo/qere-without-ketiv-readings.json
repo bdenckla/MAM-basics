@@ -47,7 +47,7 @@
         "masorah_circle_present": true,
         "masorah_circle_position": "above the marks"
       },
-      "observation": "The below-marks of בְּנֵ֣י (sheva, tsere, munaḥ) are present without letters, with space above them. There is no dagesh for this qere in the body text, as expected, since dagesh marks are never included in cases of qere without ketiv. The orphan marks are at the end of a manuscript line. The line ending provided space for the marks, possibly accidentally.",
+      "observation": "In cases of qere without ketiv, dagesh marks are never included. The line ending provided space for the marks, possibly accidentally.",
       "romanized": [
         "sheva",
         "tsere",
@@ -69,7 +69,7 @@
       ],
       "intended_encoding": {
         "kind": "space-without-marks",
-        "explanation": "The additional template records horizontal space without niqqud. Available space does not supply missing marks.",
+        "explanation": "The additional template records horizontal space without niqqud.",
         "template": {
           "tmpl_name": "רווח בלי ניקוד"
         }
@@ -99,7 +99,7 @@
           "quotation": "יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת."
         }
       },
-      "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM's description of the space as “narrow” is slightly puzzling, unless we take \"narrow\" to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
+      "observation": "The below-marks of איש (ḥiriq and tipeḥa) could have easily fit underneath the maqaf and/or the space after it, but the naqdan declined to provide those below-marks. MAM’s description of the space as “narrow” is slightly puzzling, unless we take “narrow” to refer to the space that would be needed for the (implied) letters rather than the smaller space needed to fit the below-marks.",
       "romanized": [
         "ḥiriq",
         "tipeḥa"
@@ -204,7 +204,7 @@
           "decision": "Let's go ahead and assume that dot visible in the manuscript is an orphan xolam dot, non-tentatively."
         }
       },
-      "observation": "The gap here is generous compared with the manuscript's usual small or nonexistent spaces between atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one large enough to fit the (implied) qere letters. All the below-marks of צְבָא֖וֹת are present (sheva, qamats, and tipeḥa). An orphan ḥolam dot is also present.",
+      "observation": "The gap here is generous compared with the manuscript’s usual small or nonexistent spaces between atoms, so it is pretty clear that the letter-scribe intended to leave a large gap, perhaps even one large enough to fit the (implied) qere letters.",
       "romanized": [
         "sheva",
         "qamats",
@@ -255,7 +255,7 @@
           "text": "The letter-scribe presumably left this space intentionally."
         }
       },
-      "observation": "The marks of בָּנָיו֙ (qamats, qamats, pashta) are present without letters, with space above them. The marks occupy a large horizontal space between the surrounding written atoms, presumably left intentionally by the letter-scribe.",
+      "observation": "The marks occupy a large horizontal space between the surrounding written atoms, presumably left intentionally by the letter-scribe.",
       "romanized": [
         "qamats",
         "pashta"
@@ -305,7 +305,7 @@
           ]
         }
       },
-      "observation": "The horizontal space between the surrounding written atoms is rather generous.",
+      "observation": null,
       "romanized": [],
       "documentation_notes": [
         "The damage to the marginal qere note looks as if opaque tape had been laid parallel to the right margin, obscuring approximately the first letter of each inferred word on its own line. The cause of the damage is unknown. The tape comparison describes how the damage looks; it does not propose a mechanism."
@@ -347,7 +347,7 @@
         "masorah_circle_position": "within the generous space",
         "maqaf_extends_into_space": true
       },
-      "observation": "The horizontal space between the surrounding written atoms is generous. The preceding maqaf extends into that space.",
+      "observation": null,
       "romanized": [
         "maqaf"
       ],
@@ -424,7 +424,7 @@
           "text": "The space may be accidentally generous because it is at the end of the manuscript line."
         }
       },
-      "observation": "The space is at the end of a manuscript line. The line ending may account for the generous space, possibly accidentally.",
+      "observation": "The line ending may account for the generous space, possibly accidentally.",
       "romanized": [],
       "documentation_notes": [],
       "crop": {
