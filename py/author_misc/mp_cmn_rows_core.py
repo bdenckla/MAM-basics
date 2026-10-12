@@ -171,8 +171,7 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
                 " before $meteg. Param 1 is the full marked atom; "
                 "param 2 has its letters and one U+05BD identifying ",
                 _SILLUQ,
-                ", without other marks or punctuation. Param 2 is position metadata, "
-                "not additional Scripture text. The $sof_pasuq stays outside the template.",
+                ", without other marks or punctuation.",
             ],
         ],
     ),
