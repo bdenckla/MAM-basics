@@ -295,7 +295,7 @@ rejects. Nothing in their Notes cells was dropped; `שיטת-א`'s wording cavea
 `שיטת` row. Their Status and Main source are carried over too, which is why several rows below
 cite the Accordance header pattern and the translation code alongside the corpus.
 
-| Qualifier | Meaning | Status | Main source | Attested on, with occurrence counts |
+| Qualifier | Meaning | Status | Main source | Attested on, with dated occurrence counts |
 |---|---|---|---|---|
 | מ"ק | masora qetannah — the short masoretic note in the margin beside the text | Confirmed | MAM-with-doc corpus evidence | On: א (24), ל (3), ק3 (2), ש (2), ב (1), ש1 (1), ק-מ (1), ותיקן448 (1). MAM spells the term out in full in the same relation, at Exodus 38:10: `וכן במסורה קטנה בכתי"ל`. Note that the corpus spells the Vatican manuscript `ותיקן448` here, without the hyphen the row above uses. |
 | מ"ג | masora gedolah — the longer masoretic note, in the upper and lower margins | Confirmed | MAM-with-doc corpus evidence | On: ש1 (4), ק-מ (2), ל (1). **This collides with the edition abbreviation `מ"ג`, Miqra'ot Gedolot, in the table above**; see "Two things are spelled `מ"ג`" below. Written out in full at Zechariah 7:2: `הערת מסורה גדולה בכתי"ש1 שהועתקה מדפי המסורה בכתר`. |
@@ -316,6 +316,11 @@ against MAM-parsed `0128e69` — first under item 6 below (#262), and then again
 56:10 read as `ל,ד` per the paragraphs immediately below, which took `ל` from 139 to 140 and
 `ד` from 5 to 6 and removed the `לד` entry. Both re-measures reproduced the cells they started
 from exactly before changing anything. The other nine rows keep their 2026-08-26 figures.
+Those direct-only figures are retained as dated measurements, not as a rule that the other
+qualifiers never distribute. Avi's worked-example answers resolve five sites below, but do not
+establish uniform scope or revised row totals. Several cited clauses have since been rewritten
+without the original hyphenated qualifier, so adding historical increments to a current count
+of such compounds would mix two populations.
 
 **There is no siglum `לד`: Isaiah 56:10 is `ל,ד` with the comma missing.** Avi Kadish, on #262,
 2026-08-27, unprompted, in the course of answering about the qualifier: "לד should have a comma
@@ -363,7 +368,8 @@ Six things about the attachment, none of which the pair-per-row table could stat
    write a decoding rule that assumes a manuscript or an edition on the other side.
 6. **After `מסורת` or `מסורות`, a comma-joined sigil list distributes over the list, and the two
    spellings are one construct form rather than a singular beside a defective plural.** Avi
-   Kadish, MAM's editor, on #262, 2026-08-27, answering both halves at once: "Yes, מסורת- means
+   Kadish, MAM's editor, in [his first reply on #262](https://github.com/bdenckla/MAM-basics/issues/262#issuecomment-5440221283),
+   2026-08-27, answering both halves at once: "Yes, מסורת- means
    a note in the masorah of whichever source is cited (construct singular). מסורות- means the
    same thing, but for notes that appear in two or more sources." So `A-B,C` is a note in the
    masorah of B and a note in the masorah of C, one attestation each, and `ומסורת-ל,ד` is a
@@ -379,20 +385,48 @@ Six things about the attachment, none of which the pair-per-row table could stat
    corpus writes the same distribution longhand where the qualifier follows the sigil, as in
    `א-קרי,ל-קרי`. So the counts in the מסורת and מסורות rows credit every sigil in the list.
 
-   **The restriction to these two qualifiers still stands, but as pending rather than settled.**
-   Comma lists under or before the other nine qualifiers — `במ"ק-ב,ק13` (Genesis 43:26), the
-   sigil lists in front of `כתיב` and `קרי` — still credit only the directly attached sigil.
-   Avi answered #262's third question, whether the reading extends to those, "Yes, it's the
-   same idea and should be read as such", which would generalize it; but that question named
-   two sites without spelling out what either reading would mean at either of them, so Ben's
-   instruction of 2026-08-27 was to put worked examples to Avi and have a concrete claim
-   confirmed before re-deriving nine rows on an abstraction. The stake is why: generalizing
-   would credit every sigil of Deuteronomy 28:30's eight-item list `ל,ל1,ש,ש1,ק3,ו,ל3,ל9-כתיב`
-   to `כתיב`, where today only the directly attached `ל9` is credited, and the `כתיב` and
-   `קרי` rows would grow the most of the nine. Those examples were posted as the second comment
-   on #262 on 2026-08-27 — five sites with both readings spelled out, two controls, and one
-   anomaly at Genesis 43:28 whose `לו` may be the same missing-comma error as Isaiah 56:10's.
-   Until Avi confirms them the nine rows keep their direct-only counts.
+   **Other qualifiers have confirmed local scopes, but no uniform distributive rule.** Avi's
+   [worked-example answer on #262](https://github.com/bdenckla/MAM-basics/issues/262#issuecomment-5443100250)
+   reports inconsistency and answers the five sites in the
+   [worked-example question](https://github.com/bdenckla/MAM-basics/issues/262#issuecomment-5442563836)
+   individually. The clauses below are those quoted in that question:
+
+   - **Daniel 3:5:** `ל,ב1,ש2-כתיב` cites the ketiv of all three manuscripts — three
+     attestations, on ל, ב1 and ש2.
+   - **Deuteronomy 28:30:** `ל,ל1,ש,ש1,ק3,ו,ל3,ל9-כתיב` cites the pointed ketiv in all eight
+     manuscripts — eight attestations, one on each listed manuscript.
+   - **Genesis 43:26:** `במ"ק-ב,ק13` cites the masora qetannah in both manuscripts — two
+     attestations, on ב and ק13.
+   - **Deuteronomy 32:18:** `ק3,ל-קטנות` is non-distributive: ק3 supplies the reading in its
+     text, and ל supplies the list of small letters at the back of the Leningrad Codex.
+     There is one small-letter-list attestation, on ל; the clause does not cite such a list in ק3.
+   - **Psalms 84:4:** `א,ל,ש1,ק-מ,ל-גדולות` is also non-distributive, and the old note was
+     mistaken. The four manuscript texts lack the large ק, but the large-letter list of ל
+     has it. There is one large-letter-list attestation, on ל, supporting the large letter;
+     the four manuscript-text readings support its absence. The repeated ל names two
+     different kinds of evidence.
+
+   These answers settle the examples, not every occurrence of כתיב, קרי or מ"ק, nor the scope
+   of all nine remaining qualifiers. The reply does not separately answer the question's
+   longhand-equivalence control or its sentence-comma control. Read the earlier broad answer,
+   "Yes, it's the same idea and should be read as such", with these later individual answers,
+   rather than as a universal decoding rule.
+
+   The current committed notes have revised wording: Daniel 3:5 and Deuteronomy 28:30 retain
+   their three- and eight-item lists but identify the ketiv in prose rather than a trailing
+   `-כתיב`. Psalms 84:4 now separates `ל-גדולות,קורן` supporting the large letter from
+   `א,ל,ש1,ק-מ` supporting its absence. The local counts above are therefore semantic
+   attestations at the cited sites, not replacement totals for the dated syntactic census.
+
+   **Genesis 43:28's `לו` remains unresolved here.** Avi first
+   [reported a clarification](https://github.com/bdenckla/MAM-basics/issues/262#issuecomment-5443149866),
+   then [a complete rewrite correcting it](https://github.com/bdenckla/MAM-basics/issues/262#issuecomment-5444189440),
+   then a [final touch](https://github.com/bdenckla/MAM-basics/issues/262#issuecomment-5444223726).
+   The current local note no longer has the old `-כתיב` / `-קרי` clauses, but still has
+   `ל,לו,ק3=` in the ketiv explanation and `ל,ל1,ק3=` in the qere explanation. The comments
+   do not explicitly decode לו as ל1 or ל,ו. Neither alias nor a fourth manuscript is inferred.
+   The [internal research note](sigil-decoding-issue262-research.md) records the source
+   locations and the remaining count and scope questions.
 
 #### Two things are spelled `מ"ג`
 
