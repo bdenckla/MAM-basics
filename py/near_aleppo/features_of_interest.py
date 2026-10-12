@@ -73,7 +73,8 @@ CASES = (
         "qere-without-ketiv",
         "Qere without ketiv",
         "Ruth 3:5 and Judges 20:13 show qere without ketiv; "
-        "in Ruth 3:5 there is no niqqud for the ketiv whereas in Judges 20:13 there is.",
+        "in Ruth 3:5 there is no orphan niqqud for the qere "
+        "whereas in Judges 20:13 there is.",
         ((tbn.BK_RUTH, 3, 5), (tbn.BK_JUDGES, 20, 13)),
     ),
     Case(
