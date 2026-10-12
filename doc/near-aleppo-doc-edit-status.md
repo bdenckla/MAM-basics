@@ -2824,3 +2824,19 @@ blank and confirms the 4/1/2 counts. All page text and markup outside the table,
 legend and scoped CSS addition remain unchanged; no other generated page changed.
 The scoped background selector outranks the shared banding selector. Mega and
 the full suite remain on the approved nightly cadence for this presentation edit.
+
+## Display the 2 Kings 19:31 body template — 2026-10-12
+
+**Status:** Fixed at Ben's request. The artificial-vav explanation ends with
+a colon and is followed by a centered paragraph showing the template syntax,
+including the `אְאָא֖וֹ` payload and `carrier=alef-and-holam-male-vav` parameter.
+The display comes from the body record already validated against the dataset.
+Hebrew phrases retain RTL isolation; the marked payload has pointed styling.
+
+**Verification:** Work began in the clean main checkout at `634304dc`.
+Black, HTML regeneration and `git diff --check` passed. An independent comparison
+parsed the displayed syntax and confirmed exact agreement with the actual body
+template in `out/near-aleppo/plus/BC-Kings.json` at 2 Kings 19:31. It also checked
+the adjacent colon, centered-paragraph class and Hebrew styling. All other page
+text and markup are unchanged; no other generated page changed. Mega and the
+full suite remain on the approved nightly cadence for this presentation edit.

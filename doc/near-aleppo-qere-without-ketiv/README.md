@@ -201,7 +201,10 @@ immediately precedes the `קרי ולא כתיב` template in the same sequence,
 intervening separator. Judges 20:13, 2 Kings 19:31 and 2 Kings 19:37 use
 artificial carriers for marks with horizontal space. At 2 Kings 19:31 the payload
 is `אְאָא֖וֹ`: three marked alefs followed by VAV + HOLAM, with the explicit
-`carrier=alef-and-holam-male-vav` discriminator. The no-space template's explicit
+`carrier=alef-and-holam-male-vav` discriminator.
+The encoding guide follows its artificial-vav explanation with a centered
+display of this template's syntax, derived from the validated body record.
+The no-space template's explicit
 `carrier=orphan-marks-alef` variant represents ALEF + TSERE + MERKHA at
 2 Samuel 18:20, without dagesh. The existing `carrier=final-nun-dalet` contract
 at Isaiah 54:16 remains unchanged. The parameterless `רווח בלי ניקוד`

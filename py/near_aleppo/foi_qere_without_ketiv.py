@@ -647,7 +647,19 @@ def _case_summary(rows):
     ]
 
 
-def _encoding_guide():
+def _encoding_guide(rows):
+    vav_example = next(row for row in rows if row["reference"] == ["2Kings", 19, 31])
+    template = vav_example["intended_encoding"]["template"]
+    params = template["tmpl_params"]
+    notation = (
+        "{{"
+        + template["tmpl_name"]
+        + "|"
+        + params["1"]
+        + "|carrier="
+        + params["carrier"]
+        + "}}"
+    )
     return mb_html.div(
         [
             mb_html.heading_level_2("Encoding conventions"),
@@ -695,10 +707,11 @@ def _encoding_guide():
                     "artificial carrier letters to hold the marks; those carriers "
                     "are not written manuscript letters. The carrier can be alef, "
                     "vav, or, rarely, dalet. At 2 Kings 19:31, an artificial vav "
-                    "carries the orphan ḥolam dot.",
+                    "carries the orphan ḥolam dot:",
                     ("ḥolam",),
                 )
             ),
+            mb_html.para(_prose(notation), {"class": "center", "dir": "ltr"}),
             mb_html.para(
                 [
                     "The additional template immediately precedes the ",
@@ -886,7 +899,7 @@ def render(verses, rows):
             ]
         ),
         *_comparison_summary(rows, reviews),
-        _encoding_guide(),
+        _encoding_guide(rows),
         *_case_summary(rows),
     ]
     for row in rows:
