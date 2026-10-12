@@ -14,6 +14,9 @@ Ben approved the reader-facing continuation on 2026-10-12; the supported example
 are now in the Markdown guide and its manually maintained public HTML subset.
 Decoder behavior, source notes, datasets, editions and qualifier-table totals remain
 unchanged. The continuation used current main `acd9eaa808699336e280ddbdb30b05640c43b6de`.
+During integration, main advanced to `efb2c407e06df9a66e2c540557f6133536f231fe`;
+the incoming committed work was preserved. The guide changes remain confined to this
+research note, `doc/sigil-decoding.md` and `gh-pages/MAM-with-doc/sigil-decoding.html`.
 
 ## What the discussion settles
 
