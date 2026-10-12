@@ -1,16 +1,19 @@
 # Issue 262: internal qualifier-scope clarification
 
-State: live; public-guide synchronization requires separate approval
+State: live; worked examples synchronized to the guides; general scope and row totals unresolved
 
 Recorded by Codex on 2026-10-12 against MAM-basics
 `c1f569a6e1137e37d80f7146d0cd366e49f5eb6b`, after reading the issue body and all six
 comments on [#262](https://github.com/bdenckla/MAM-basics/issues/262).
 
-This is an internal research supplement to [sigil-decoding.md](sigil-decoding.md),
-especially the passage beginning **"The restriction to these two qualifiers still
-stands, but as pending rather than settled."** That passage awaits answers which
-have now arrived. The supplement records those answers without changing decoder
-behavior, source notes, datasets, editions, the guide's table or public HTML.
+This is an internal research supplement to [sigil-decoding.md](sigil-decoding.md).
+The original passage beginning **"The restriction to these two qualifiers still
+stands, but as pending rather than settled"** awaited answers which had already
+arrived. The initial bounded task recorded them here and left the guides unchanged.
+Ben approved the reader-facing continuation on 2026-10-12; the supported examples
+are now in the Markdown guide and its manually maintained public HTML subset.
+Decoder behavior, source notes, datasets, editions and qualifier-table totals remain
+unchanged. The continuation used current main `acd9eaa808699336e280ddbdb30b05640c43b6de`.
 
 ## What the discussion settles
 
@@ -71,26 +74,27 @@ has `ל,לו,ק3=` in the ketiv explanation and `ל,ל1,ק3=` in the qere explan
 The comments themselves do not explicitly decode לו as ל1 or ל,ו. Do not add an
 alias, repair the corpus, or count a fourth manuscript from that unresolved spelling.
 
-## Public synchronization worklist
+## Public synchronization and remaining work
 
 [MAM-with-doc/README.md](../MAM-with-doc/README.md) identifies
 `gh-pages/MAM-with-doc/sigil-decoding.html` as a manually maintained public subset
 of `doc/sigil-decoding.md`, with no automatic Markdown renderer. The Pages workflow
-uploads `gh-pages/` directly. Because this task excludes published changes and
-their generation, the existing guide and HTML remain unchanged; this internal
-supplement is not an input to their generators.
+uploads `gh-pages/` directly. The initial task excluded published changes and left
+the guides unchanged. Ben's separate approval permitted the five supported examples
+to be synchronized on 2026-10-12. The Markdown's stale pending passage is replaced,
+and the public subset now has a qualifier-scope section with the same conclusions.
+The HTML was maintained directly; no generator was changed or newly introduced.
+This research supplement remains outside the product-generation path.
 
-With separate approval for public-guide synchronization:
+The remaining questions are unchanged:
 
-1. Replace the stale pending-confirmation passage with the five local answers,
-   preserving the unresolved general rule and the two unanswered controls.
-2. Re-derive affected qualifier cells against one declared current corpus and
+1. A general qualifier-scope rule and the two unanswered controls remain unresolved.
+2. Revised qualifier-row totals require re-derivation against one declared current corpus and
    counting population. Verify the existing cells before changing them; distinguish
    hyphenated-compound occurrences from semantic attestations in revised notes.
-3. Preserve the one-list scopes of קטנות and גדולות and the corrected direction of
-   the Psalms 84:4 evidence. Treat Genesis 43:28's spelling as unresolved unless the
+3. Genesis 43:28's spelling remains unresolved unless the
    final source revision supplies explicit evidence.
-4. Reconcile the public subset manually and inspect the resulting HTML diff.
 
 No new siglum identity, universal qualifier-scope rule, revised table total,
-source-data correction or public-page update is adopted here.
+or source-data correction is adopted. The guides state the one-list scopes of
+קטנות and גדולות and the corrected direction of the Psalms 84:4 evidence.
