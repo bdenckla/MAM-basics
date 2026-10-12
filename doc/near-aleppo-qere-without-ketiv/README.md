@@ -43,8 +43,11 @@ Cases with an attached MAM note display only additional manuscript remarks.
 
 The linked case summary table replaces the numbered verse list. Its narrow
 columns use N for niqqud presence, H for horizontal space in the line
-of letters, and Pos. for position. The legend defines +/− as present/absent and
-BW/EOL as between written words/end of a manuscript line. The presence values
+of letters, and Pos. for position. Only the minority cases have entries: N for
+the four cases with niqqud, ∅ for the one case without horizontal space, and EOL
+for the two cases at the end of a manuscript line. The other cells are blank;
+the legend explains each column's marks and blanks. Body rows have no alternating
+shading. The presence values
 come from the three closed `intended_encoding.kind` classifications of the
 recorded manuscript readings, rather than the dataset templates. The
 position comes from each reading's explicit `line_position`; a reviewed reading

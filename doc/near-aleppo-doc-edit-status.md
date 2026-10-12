@@ -2808,3 +2808,19 @@ confirms that only the two requested passages change in the study; all nine
 case sections and all other page text and markup are unchanged. No other
 generated page changed. Mega and the full suite remain on the approved nightly
 cadence for this wording-only correction.
+
+## Mark only the minority cases in the summary table — 2026-10-12
+
+**Status:** Fixed at Ben's request. N marks the four cases with niqqud, ∅
+marks the one case without horizontal space, and EOL marks the two cases at
+the end of a manuscript line. The other 20 data cells are empty. The legend
+explains each column's marks and blanks. A table-specific transparent background
+overrides the shared alternating row shading.
+
+**Verification:** Work began in the clean main checkout at `5e0286c8`.
+Black, HTML regeneration and `git diff --check` passed. An independent
+comparison maps every preceding table entry to its requested minority mark or
+blank and confirms the 4/1/2 counts. All page text and markup outside the table,
+legend and scoped CSS addition remain unchanged; no other generated page changed.
+The scoped background selector outranks the shared banding selector. Mega and
+the full suite remain on the approved nightly cadence for this presentation edit.

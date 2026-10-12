@@ -45,12 +45,12 @@ _ADDITIONAL_TEMPLATES = {
     "space-without-marks": orphan_marks.SPACE_WITHOUT_MARKS,
 }
 _SUMMARY_PRESENCE = {
-    "marks-with-space": ("+", "+"),
-    "marks-without-space": ("+", "−"),
-    "space-without-marks": ("−", "+"),
+    "marks-with-space": ("N", ""),
+    "marks-without-space": ("N", "∅"),
+    "space-without-marks": ("", ""),
 }
 _LINE_POSITIONS = {
-    "between written words": "BW",
+    "between written words": "",
     "end of a manuscript line": "EOL",
 }
 # Keep spaces between Hebrew words inside one RTL isolation.
@@ -578,7 +578,7 @@ def _naee_excerpt(scripture, qere, reference):
 
 
 def _case_summary(rows):
-    """Summarize recorded body-text features with explicit presence and position roles."""
+    """Mark only the minority body-text features in each summary column."""
     header = mb_html.table_row(
         [
             mb_html.table_header("Verse", {"scope": "col"}),
@@ -604,9 +604,9 @@ def _case_summary(rows):
         else:
             niqqud, space = _SUMMARY_PRESENCE[intended["kind"]]
             line_position = row["reading"]["line_position"]
-            position = mb_html.abbr(
-                _LINE_POSITIONS[line_position], {"title": line_position}
-            )
+            position = _LINE_POSITIONS[line_position]
+            if position:
+                position = mb_html.abbr(position, {"title": line_position})
         table_rows.append(
             mb_html.table_row(
                 [
@@ -623,11 +623,10 @@ def _case_summary(rows):
             )
         )
     legend = (
-        'The "N" column records whether any niqqud are present in the body text. '
-        'The "H" column records whether horizontal space is present in the line of letters, '
-        "with or without niqqud in or under that space. A plus sign (+) means "
-        'present, and a minus sign (−) means absent. The "Pos." column records position: '
-        "BW means between written words, and EOL means at the end of a manuscript line."
+        'In "N", N marks niqqud in the body text; blanks mean no niqqud. '
+        'In "H", ∅ marks the absence of horizontal space in the line of letters; '
+        'blanks mean space is present. In "Pos.", EOL marks the end of a manuscript '
+        "line; blanks mean between written words."
     )
     if any(row["reading"] is None for row in rows):
         legend += " A question mark (?) means that no image reading is recorded."
