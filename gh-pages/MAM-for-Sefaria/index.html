@@ -715,7 +715,12 @@
     There it is better for the callout (the asterisk)
     to precede rather than follow the word that the note refers to.
 </p>
-<h3>Good endings</h3>
+<h3 id="good-endings">Good endings</h3>
+<p>The current <span class="small-caps">MAM</span> exports for Sefaria and AJF
+    omit good endings. The exporters discard MAM-simple’s
+    <code>good-ending</code> objects, so no repeated verse is appended to a
+    book’s final verse.
+</p>
 <p>A “good ending” is
     an instruction to repeat the second-to-last verse of a book
     when reading the book publicly.
@@ -724,26 +729,23 @@
     the unpointed version of the verse to be repeated appears after the end
     of the book proper. I.e. there are no instructions per se.
 </p>
-<p>In old Sefaria, good endings appear at the end of three books:
+<p>In old Sefaria, good endings appeared at the end of three books:
     Malachi, Lamentations, &amp; Ecclesiastes.
-    In old Sefaria and <span class="small-caps">MAM</span>, a good ending is encoded as follows
+    In old Sefaria, a good ending was encoded as follows
     (the only use of <span class="small-caps">HTML</span> tags in old Sefaria):
 </p>
 <pre>&lt;br&gt;&lt;small&gt;...&lt;/small&gt;</pre>
-<p>In <span class="small-caps">MAM</span>, good endings appear at the end of four books.
-    Three of these four books are the same three as in old Sefaria.
-    The one additional book is Isaiah.
-    The example below shows the last two verses of Lamentations
-    (5:21 &amp; 22) and the corresponding good ending.
+<p>MAM-simple retains good endings for Isaiah, Malachi, Lamentations, and Ecclesiastes.
+    For example, MAM-simple’s good ending for Lamentations repeats 5:21:
 </p>
 <div class="table-wrap">
 <table class="break-inside-avoid">
     <tr>
-        <td lang="hbo" dir="rtl">הֲשִׁיבֵ֨נוּ יְהֹוָ֤ה<small>׀</small>אֵלֶ֙יךָ֙ <span class="mam-kq"><span class="mam-kq-k">(ונשוב)</span> <span class="mam-kq-q">[וְֽנָשׁ֔וּבָה]</span></span> חַדֵּ֥שׁ יָמֵ֖ינוּ כְּקֶֽדֶם׃ כִּ֚י אִם־מָאֹ֣ס מְאַסְתָּ֔נוּ קָצַ֥פְתָּ עָלֵ֖ינוּ עַד־מְאֹֽד׃<br>
-            <small>השיבנו יהוה אליך ונשובה חדש ימינו כקדם</small></td>
+        <td lang="hbo" dir="rtl">השיבנו יהוה אליך ונשובה חדש ימינו כקדם</td>
     </tr>
 </table>
 </div>
+<p>The Sefaria and AJF exports end at Lamentations 5:22 without appending this repetition.</p>
 <h2 id="h2_string_encoding">String encoding</h2>
 <h3><span class="romanized">Qamats qatan</span></h3>
 <p><span class="unicode-code-point-name">QAMATS QATAN</span>
