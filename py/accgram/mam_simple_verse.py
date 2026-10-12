@@ -59,6 +59,7 @@ def load_mam_simple_for_refs(
     *,
     include_strands: bool = False,
     include_native_paseq_roles: bool = False,
+    include_silluq_annotations: bool = False,
 ) -> dict[str, dict[str, object]]:
     """Load the requested MAM-simple verses, keyed by compact bcv.
 
@@ -68,6 +69,8 @@ def load_mam_simple_for_refs(
     receiving the plain ``{"vels": ...}`` shape unchanged.  ``include_native_paseq_roles``
     keeps MAM's ``lp-paseq`` / ``lp-legarmeih`` distinction in the selected token stream as
     ``MAMNativePaseq`` objects; it is off by default for the same compatibility reason.
+    ``include_silluq_annotations`` collects explicit silluq-position nodes from the qere
+    and cant-alef projection, without reading documentation or unselected alternatives.
     """
     require_mam_simple(mam_simple_dir)
 
@@ -106,6 +109,12 @@ def load_mam_simple_for_refs(
                     include_native_paseq_roles=include_native_paseq_roles,
                 ),
             }
+            if include_silluq_annotations:
+                annotations = []
+                _mam_simple_fragments(
+                    verse_node, CANT_ALEF, silluq_annotations=annotations
+                )
+                by_bcv[bcv]["silluq_annotations"] = annotations
 
     return by_bcv
 
@@ -355,6 +364,7 @@ def _mam_simple_fragments(
     cant_strand: str = CANT_COMBINED,
     *,
     include_native_paseq_roles: bool = False,
+    silluq_annotations: list[dict] | None = None,
 ) -> list[object]:
     """One node's subtree as text fragments and ``_BOUNDARY`` separators.
 
@@ -433,12 +443,14 @@ def _mam_simple_fragments(
             matching_children[0],
             cant_strand,
             include_native_paseq_roles=include_native_paseq_roles,
+            silluq_annotations=silluq_annotations,
         )
     if node_type == "kq":
         return _mam_simple_kq_qere_fragments(
             node,
             cant_strand,
             include_native_paseq_roles=include_native_paseq_roles,
+            silluq_annotations=silluq_annotations,
         )
     if node_type in {"kq-k", "ketiv", "kq-k-velo-q"}:
         return [_BOUNDARY]
@@ -449,6 +461,13 @@ def _mam_simple_fragments(
         if set(node) != {"type", "text", "letters-with-silluq"}:
             raise ValueError(f"Unexpected silluq-before-meteg node: {node!r}")
         validate_silluq_before_meteg(node["text"], node["letters-with-silluq"])
+        if silluq_annotations is not None:
+            silluq_annotations.append(
+                {
+                    "text": node["text"],
+                    "letters-with-silluq": node["letters-with-silluq"],
+                }
+            )
         return [node["text"]]
 
     contents = node.get("contents")
@@ -469,6 +488,7 @@ def _mam_simple_fragments(
                     child,
                     cant_strand,
                     include_native_paseq_roles=include_native_paseq_roles,
+                    silluq_annotations=silluq_annotations,
                 )
             )
         return out_fragments
@@ -487,6 +507,7 @@ def _mam_simple_kq_qere_fragments(
     cant_strand: str = CANT_COMBINED,
     *,
     include_native_paseq_roles: bool = False,
+    silluq_annotations: list[dict] | None = None,
 ) -> list[object]:
     """A ketiv/qere node's QERE side, spliced into the run around it.
 
@@ -518,6 +539,7 @@ def _mam_simple_kq_qere_fragments(
                 child,
                 cant_strand,
                 include_native_paseq_roles=include_native_paseq_roles,
+                silluq_annotations=silluq_annotations,
             )
         )
     return out_fragments

@@ -16,7 +16,9 @@ def evaluate(wtel):
 
     This is a structure-preserving edition transformation, not a Scripture
     survey: a preserved template deliberately retains and transforms every one
-    of its parameters, including documentation and alternative branches.  The
+    of its parameters, including documentation and alternative branches. The explicit
+    silluq-position scaffold is validated metadata and stays unchanged; only its
+    Scripture parameter is evaluated. The
     preserved-name roster is closed so a new template cannot become a
     transparent recursive container by default.
     """
@@ -93,6 +95,17 @@ def _handle_bold(tmpl):
     return tmpl
 
 
+def _preserve_silluq_before_meteg(tmpl):
+    """Evaluate Scripture parameter 1 and retain the validated position metadata."""
+    params = tmpln.validate_current_plus_template(tmpl)
+    preserved = {
+        "tmpl_name": tmpln.SILLUQ_BEFORE_METEG,
+        "tmpl_params": {"1": evaluate(params["1"]), "2": params["2"]},
+    }
+    tmpln.validate_current_plus_template(preserved)
+    return preserved
+
+
 def _just_take_arg_1(tmpl):
     assert wtp.template_len(tmpl) == 2
     return evaluate(wtp.template_element(tmpl, 1))
@@ -122,6 +135,7 @@ def _tmpl_i0_maybe(tmpl, idx, default=None):
 
 
 _HANDLERS = {
+    tmpln.SILLUQ_BEFORE_METEG: _preserve_silluq_before_meteg,
     "מודגש": _handle_bold,
     "מ:ירושלם": _handle_yerushalayim,
     "מ:ירושלמה": _handle_yerushalayemah,
@@ -145,6 +159,7 @@ _HANDLERS = {
 }
 
 _CURRENT_HANDLER_INPUT_PARAM_POLICY = {
+    tmpln.SILLUQ_BEFORE_METEG: (frozenset({"1", "2"}), frozenset({"1", "2"})),
     "מודגש": (frozenset({"1"}), frozenset({"1"})),
     "מ:ירושלם": (frozenset({"1"}), frozenset({"1", "2"})),
     "מ:ירושלמה": (frozenset({"1", "2"}), frozenset({"1", "2"})),

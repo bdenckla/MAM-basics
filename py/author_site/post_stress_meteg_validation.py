@@ -280,6 +280,7 @@ def _check_survey_consistency(survey: dict) -> None:
         {
             "outside_the_three_types",
             "stress_not_penultimate",
+            "stress_is_silluq",
             "next_word_not_disjunctive",
             "next_word_not_initially_stressed",
             "type_1_subtype_C",
@@ -329,19 +330,22 @@ def _pin_prose_claims(survey: dict) -> None:
     assert _both(survey, "meteg in the stressed syllable, no sof pasuq") == 0
     stress_accent_classification = survey["stress_accent_classification"]
     assert stress_accent_classification["counts"] == {
-        "conjunctive": len(post_stress),
-        "disjunctive": 0,
+        "conjunctive": sum(not record["has_sof_pasuq"] for record in post_stress),
+        "disjunctive": sum(record["has_sof_pasuq"] for record in post_stress),
     }
     assert (
         stress_accent_classification["conclusion"]
-        == "Every MAS has a conjunctive accent on that stress letter."
+        == "MAS before verse end has a conjunctive accent; verse-final MAS follows silluq."
     )
     assert all(record["syllables_after_the_stress"] == 1 for record in post_stress)
     next_accent_classification = Counter(
         record["next_chanted_word_accent_classification"] for record in post_stress
     )
-    assert set(next_accent_classification) <= {"disjunctive", "conjunctive"}
+    assert set(next_accent_classification) <= {"disjunctive", "conjunctive", None}
     assert sum(next_accent_classification.values()) == len(post_stress)
+    assert next_accent_classification[None] == sum(
+        record["has_sof_pasuq"] for record in post_stress
+    )
     fit_for_mas = _fit_for_mas(survey)
     mbs_and_mas = census_chanted_word_summary["mas_chanted_words_with_mbs"]
     assert all(
@@ -351,9 +355,15 @@ def _pin_prose_claims(survey: dict) -> None:
     not_fit_for_mas_records = _not_fit_for_mas_records(survey)
     assert all(
         record["chanted_word"]
-        and record["next_chanted_word"]
         and record["mam_form"]
-        and record["next_mam_form"]
+        and (
+            (
+                record["next_chanted_word"] is None
+                and record["next_mam_form"] is None
+                and psm.SOF_PASUQ in record["mam_form"]
+            )
+            or (record["next_chanted_word"] and record["next_mam_form"])
+        )
         and not (
             record["meets_first_fit_for_mas_criterion"]
             and record["meets_second_fit_for_mas_criterion"]
@@ -528,7 +538,29 @@ def _pin_prose_claims(survey: dict) -> None:
             )
             == 1
         )
-    assert survey["post_silluq"]["in_mam"] == 0
+    source_annotations = survey["post_silluq"]["source_annotations"]
+    expected_post_silluq = Counter()
+    for annotation in source_annotations:
+        _assert_exact_keys(
+            annotation,
+            {"bcv", "mam_form", "text", "letters-with-silluq", "metegs_after_silluq"},
+            "explicit silluq annotation",
+        )
+        assert annotation["metegs_after_silluq"] > 0
+        assert annotation["mam_form"].endswith(annotation["text"] + psm.SOF_PASUQ)
+        expected_post_silluq[(annotation["bcv"], annotation["mam_form"])] += annotation[
+            "metegs_after_silluq"
+        ]
+    observed_post_silluq = Counter(
+        (record["bcv"], record["mam_form"])
+        for record in post_stress
+        if record["has_sof_pasuq"]
+    )
+    assert observed_post_silluq == expected_post_silluq, (
+        "the Phonetic MAM survey and explicit MAM source annotations disagree",
+        observed_post_silluq,
+        expected_post_silluq,
+    )
     difference = dual_cantillation["meteg_before_stress_difference"]
     # The page: the MBS difference is in three atoms, where one cantillation has no meteg and
     # the other has one before the stress.
@@ -548,6 +580,7 @@ def _pin_prose_claims(survey: dict) -> None:
     for bcv in (
         _POST_SILLUQ_VERSE,
         _MAM_POST_SILLUQ_VERSE,
+        "jb4:12",
         _CHRONICLES_8_11_VERSE,
     ):
         assert bcv in survey["currency"]["focus_verses"], (

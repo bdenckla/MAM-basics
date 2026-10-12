@@ -11,6 +11,7 @@ from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus
 from mb_cmn import bib_locales
 from mb_cmn import template_names as tmpln
+from mb_cmn.silluq_before_meteg import drop_post_silluq_metegs
 from phonetic_mam.core import qere_from_implicit_kq
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -29,14 +30,53 @@ from accgram.post_stress_meteg_model import (
 # as MAM has them TODAY rather than as the surveyed snapshot has them.  Isaiah 23:12 is
 # where the two differ -- suggestion M23 added a meteg there after the snapshot was taken --
 # and 1 Samuel 17:5 is the Leningrad Codex post-silluq case, where the page's claim is about
-# what MAM lacks.  First Kings 7:37 is MAM's post-silluq case, which the research ignores
-# in the sense the Methods page defines (Ben, 2026-09-09): the word is deliberately read as
-# meteg-then-silluq, as the stress oracle reads it, so it counts as MBS_O.
+# what MAM lacks. First Kings 7:37 and Job 4:12 are MAM's post-silluq cases;
+# the survey follows their explicit source annotations when those annotations are used.
 # 2 Chronicles 8:11 supplies MAM's form beside a possible different interpretation of the
 # Leningrad Codex.  Named here rather than in the page module so the form is lifted from the
 # corpus at generation time and reaches the page through the tracked JSON, as every other form
 # does.
-_FOCUS_VERSES = ("is23:12", "1s17:5", "1k7:37", "2c8:11")
+_FOCUS_VERSES = ("is23:12", "1s17:5", "1k7:37", "jb4:12", "2c8:11")
+
+
+def _post_silluq_source_annotations(words_by_bcv: dict[str, list[str]]) -> list[dict]:
+    """Explicit annotations in MAM's qere and cant-alef Scripture projection.
+
+    The reader validates each node and selects Scripture children by name. This inventory
+    is empty while the supported source template is unused; no occurrence is required.
+    """
+    from accgram import mam_simple_verse
+
+    mam_dir = paths.require_mam_simple_vtrad_mam_dir()
+    loaded = mam_simple_verse.load_mam_simple_for_refs(
+        mam_dir,
+        mam_simple_verse.mam_simple_refs(mam_dir),
+        include_silluq_annotations=True,
+    )
+    out = []
+    for bcv, payload in loaded.items():
+        for annotation in payload["silluq_annotations"]:
+            text = annotation["text"]
+            scaffold = annotation["letters-with-silluq"]
+            matches = [
+                word for word in words_by_bcv[bcv] if word.endswith(text + hpu.SOPA)
+            ]
+            if len(matches) != 1:
+                raise SurveyProblem(
+                    f"{bcv}: explicit silluq annotation has {len(matches)} "
+                    f"verse-final MAM matches: {annotation!r}"
+                )
+            cleaned = drop_post_silluq_metegs(text, scaffold, bcv)
+            out.append(
+                {
+                    "bcv": bcv,
+                    "mam_form": matches[0],
+                    "text": text,
+                    "letters-with-silluq": scaffold,
+                    "metegs_after_silluq": text.count(METEG) - cleaned.count(METEG),
+                }
+            )
+    return out
 
 
 def _mam_words_by_bcv(cantillation: str | None = None) -> dict[str, list[str]]:

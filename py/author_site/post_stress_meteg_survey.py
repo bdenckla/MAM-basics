@@ -73,11 +73,12 @@ def _nonfinal_mas_syllable_records(survey: dict) -> list[dict]:
 
 
 def _noninitial_next_stress_records(survey: dict) -> list[dict]:
-    """MAS records whose next chanted word does not have initial stress."""
+    """MAS records with a next chanted word that does not have initial stress."""
     return [
         record
         for record in survey["post_stress"]
-        if not record["next_chanted_word_is_initially_stressed"]
+        if record["next_chanted_word"] is not None
+        and not record["next_chanted_word_is_initially_stressed"]
     ]
 
 

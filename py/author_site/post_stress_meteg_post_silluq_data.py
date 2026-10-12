@@ -592,12 +592,7 @@ def _mam_post_silluq_form(survey: dict) -> str:
 
 
 def _mam_post_silluq_statement(survey: dict, *, starts_sentence: bool = True) -> tuple:
-    """The 1 Kings 7:37 MAM case, and what "ignore" means there.
-
-    The definition is Ben's wording of 2026-09-09: the research deliberately reads the
-    word as meteg-then-silluq, which is what the survey's stress oracle does, so the
-    word counts as MBS_O and ``post_silluq.in_mam`` stays 0.
-    """
+    """Both MAM cases and the survey's support for their explicit source annotations."""
     return (
         "At " if starts_sentence else "at ",
         _ref_link(_MAM_POST_SILLUQ_VERSE),
@@ -607,15 +602,17 @@ def _mam_post_silluq_statement(survey: dict, *, starts_sentence: bool = True) ->
         _ROM_SILLUQ,
         " in ",
         wrap_hebrew_runs(_mam_post_silluq_form(survey)),
-        ". We ignore it for the purposes of this research. ",
-        author.dquote("Ignore"),
-        " means treat this word as a ",
-        _ROM_METEG,
-        "-then-",
+        " and at ",
+        _ref_link("jb4:12"),
+        " in ",
+        wrap_hebrew_runs(
+            _focus_word(survey, "jb4:12", ("מנהו",), must_have=psm.SOF_PASUQ)
+        ),
+        ". The explicit source template identifies the ",
         _ROM_SILLUQ,
-        " word, i.e. deliberately misinterpret the marks. How we treat this mark has"
-        " little effect on our census and no effect on the bulk of the results of this"
-        " research, since they concern ",
-        _ROM_METEG,
-        " immediately after a conjunctive on the primary stress of the word.",
+        " for Phonetic MAM, whose transcription supplies this survey's stress position. "
+        "The survey follows that identification when the source uses the template, "
+        "and checks its post-",
+        _ROM_SILLUQ,
+        " records against the annotations actually present in MAM.",
     )

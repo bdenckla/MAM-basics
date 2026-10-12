@@ -56,6 +56,7 @@ from accgram.post_stress_meteg_sources import (
     _focus_verses,
     _mam_context_by_bcv,
     _mam_words_by_bcv,
+    _post_silluq_source_annotations,
 )
 
 from accgram.post_stress_meteg_classification import (
@@ -244,7 +245,11 @@ def _one_verse(
         preceding_chanted_word = (
             previous_entry.hebrew if previous_entry is not None else ""
         )
-        next_entry = all_usable[index + 1] if index + 1 < len(all_usable) else None
+        next_entry = (
+            all_usable[index + 1]
+            if SOF_PASUQ not in word and index + 1 < len(all_usable)
+            else None
+        )
         next_chanted_word = next_entry.hebrew if next_entry is not None else None
         next_jta = next_entry.transcription if next_entry is not None else None
         next_jta_for_analysis = next_jta
@@ -852,6 +857,9 @@ def build_survey() -> dict:
         },
         "post_stress": post_stress,
         "post_silluq": {
+            "source_annotations": _post_silluq_source_annotations(
+                words_by_cantillation[CANT_ALEF]
+            ),
             "what": (
                 "A meteg on a syllable AFTER the silluq, which would put two U+05BD in one"
                 " verse-final chanted word and make telling the meteg from the silluq a"

@@ -8,6 +8,10 @@ Ben instructed Codex: "Proceed as you suggest." He confirmed: "we want to remove
 meteg in editions without notes", identifying Sefaria/AJF, and requested documentation
 in MAM-parsed-plus, MAM-simple and the older Sefaria encoding guide. This snapshot
 supersedes the one-site, source-first implementation sequence proposed on 2026-09-08.
+Ben subsequently confirmed: "Follow both explicit annotations (Recommended)" for
+the post-stress-meteg survey. This supersedes its deliberate misreading of
+1 Kings 7:37, chosen on 2026-09-09. The survey follows Phonetic MAM's computed stress
+and reconciles verse-final records with the source annotations actually used.
 The undertaking remains tracked by [phonetic-hbo#78](https://github.com/bdenckla/phonetic-hbo/issues/78).
 
 The source and integration checkout is `C:/Users/BenDe/GitRepos2/MAM-basics`, initially
@@ -145,6 +149,12 @@ A fresh independent dispatch review found no blocker.
 The full suite passed: 1,050 tests, five declared skips and 82 subtests. Both live
 bot preview artifacts equal exactly their intended one-line substitution, with all
 other mirrored source lines unchanged.
+After incorporating current main, all 60 mega steps passed again and 13 focused
+integration tests passed. Survey support then passed zero-use generation and site
+claim checks, 15 focused tests, and a separate two-site candidate check: two
+disjunctive silluq records, each without a following word. Its occurrence inventory
+remains empty before annotation. The parser's preservation handler explicitly
+evaluates Scripture parameter 1 and preserves validated position metadata parameter 2.
 
 The deliberately regenerated hand-run exports also caught up with previously lagging
 inputs: Sefaria and OSIS now show the existing qere-first pairs at 2 Samuel 20:23,
