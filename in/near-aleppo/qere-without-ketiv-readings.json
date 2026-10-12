@@ -169,7 +169,7 @@
       ],
       "intended_encoding": {
         "kind": "marks-with-space",
-        "explanation": "The additional template records sheva, qamats, tipeḥa, and an orphan ḥolam dot, with horizontal space above the marks. Three artificial alefs carry the below-marks, followed by an artificial vav carrying the ḥolam dot.",
+        "explanation": "The additional template records sheva, qamats, tipeḥa, and an orphan ḥolam dot, with horizontal space above the marks. Three artificial alef letters carry the below-marks, followed by an artificial vav carrying the ḥolam dot.",
         "template": {
           "tmpl_name": "ניקוד בלי אות",
           "tmpl_params": {

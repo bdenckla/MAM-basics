@@ -894,9 +894,11 @@ def render(verses, rows):
             [
                 "This document discusses all nine cases of ",
                 _template_name(_QERE_TEMPLATE),
-                " in near-Aleppo. All nine have the expected marginal note containing the qere letters. "
-                "Also as expected, neither qere nor ketiv letters are "
-                "present in the body text. The cases differ in whether, in the body text:",
+                " in near-Aleppo. In the manuscript, all nine have the expected marginal note "
+                "containing the qere letters. "
+                "Also as expected, none of the nine have any qere or ketiv letters in the body text, "
+                "i.e. in the large-lettered main columns of the manuscript. "
+                "The cases differ in whether, in the body text:",
             ]
         ),
         mb_html.unordered_list(
@@ -930,7 +932,7 @@ def render(verses, rows):
         ),
         mb_html.unordered_list(
             [
-                "An image showing what the case looks like in Aleppo",
+                "An image showing what the case looks like in Aleppo.",
                 "An excerpt of the near-Aleppo edition showing what the case looks like there.",
                 "Any MAM notes about the case.",
             ]
