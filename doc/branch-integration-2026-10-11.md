@@ -1,6 +1,6 @@
 # Reviewed branch integration, 2026-10-11
 
-State: live; integration authorized by Ben 2026-10-11
+State: executed 2026-10-12; integration authorized by Ben 2026-10-11
 
 Ben authorized integrating the audited preservation work and substantive implementations.
 Development uses the isolated linked checkout
@@ -69,3 +69,43 @@ The serial reconciliation retains all five current forbidden marks, labelled lay
 markers, current example imports and licence completeness checks. The public pool retains
 its UTF-8 initializer and stderr backslash replacement. All three live resource helpers
 match the approved SHA-256. Independent read-only source reviews found no objective defect.
+
+## Combined verification and final concurrent reconciliation
+
+At implementation checkpoint `1f845ef2f7bcaccbf341277db0b31a4793cdd850`, the maintained
+mega completed all 60 steps in 435.123 seconds. Its only tracked output differences were
+eight SVGs: geometry and the Times font-family alias, with every other XML attribute,
+meaningful text and tail equal. Their exact patch and comparison are preserved privately;
+the committed diagrams were restored to avoid incidental host-layout changes.
+
+The full suite recorded 1,071 passes, five documented skips and 82 subtest passes, plus
+two failures, in 269.74 test seconds. One required the read-only hbofonts override in this
+isolated two-repository layout. The other identified two imported prose transliterations;
+source prose and its generated editorial-policy page were corrected to the preferred
+forms. Both failed checks then passed in a three-test decisive recheck (3.14 seconds).
+The original failing full-run record is preserved; this is not a new all-green full run.
+
+Current main then advanced to `188a331244d5e474d8aeff902066c91395ca3ed9`. Merge
+`f430f85680027233b2b2110f583a812c7064af70` preserves its documentation changes and
+the exact 2 Kings 19:31 mixed `alef-and-holam-male-vav` carrier, under the original
+carrier name only. Its holam is confirmed; only the fitting implied qere letters are
+tentative. The distinct 2 Samuel 18:20 form and letter-owned Isaiah 54:16 GD are intact.
+GA/GV remain accepted under both carrier names. The nine removed repeated current-encoding
+paragraphs are not restored. The retired punctuation-review generator remains absent.
+
+Build and HTML regeneration pass after this reconciliation. Thirteen relevant maintained
+tests pass in 38.87 seconds. The independent comparison of every value in all 24 generated
+books passes again against that latest main: exactly the same five approved pointing
+values and 67 names, with no other non-notice difference. The new
+[owner-reconciliation receipt](branch-integration-2026-10-11-owner-reconciliation.json)
+records every path and output hash; the earlier data-scope receipt remains the historical
+check against `70e5358c`. No costly broad check was repeated after this focused union.
+
+Private audit and broad regeneration pass at their committed checkpoints, with their own
+receipt and private command evidence. Original measurements, historical status and failures
+remain dated evidence. The seven-night trial retains its actual run-4 anchors and schedule.
+All approved preservation and implementation scope is complete; no editorial extension or
+native Windows worker-API verification is claimed. Font integration and Pages verification
+belong to the separate Windows owner. Home working checkouts remain unchanged. Publication
+uses normal fast-forward pushes of these isolated integration commits to each repository's
+main, followed by remote-tip verification; no branch is deleted.

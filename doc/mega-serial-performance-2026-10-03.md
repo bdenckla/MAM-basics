@@ -2,6 +2,8 @@
 
 State: executed 2026-10-03. Measured improvements and verification are complete on the isolated branch; main integration is not part of this task.
 
+Later integration status: [single update companion](mega-serial-performance-2026-10-03-update.md).
+
 Written by a Codex session on 2026-10-03 under Ben's delegated instruction to investigate,
 implement worthwhile low-complexity improvements on an isolated branch, and push without
 merging main. Compact timing evidence is in

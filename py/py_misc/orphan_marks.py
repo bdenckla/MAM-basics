@@ -1,9 +1,10 @@
 """Closed artificial-carrier shapes used by the near-Aleppo dataset.
 
 Both carrier names accept the original GA shape and the explicit GV variant,
-retaining the chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet for the
-final-nun marks at Isaiah 54:16, without a space. The mixed alef/vav variant at 2 Kings 19:31 retains three alef carriers followed by VAV + HOLAM.
-No carrier is a ketiv consonant.
+retaining the chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet
+for the final-nun marks at Isaiah 54:16, without a space. The mixed alef/vav variant
+at 2 Kings 19:31 retains three alef carriers followed by VAV + HOLAM under the
+original carrier name only. No carrier is a ketiv consonant.
 Build validation and edition display use the same carrier validation.
 The explicit orphan-marks-alef variant carries tsere and merkha without space
 at 2 Samuel 18:20. A separate parameterless template records space without marks.

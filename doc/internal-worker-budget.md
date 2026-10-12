@@ -90,3 +90,16 @@ git diff --exit-code -- gh-pages/MAM-with-doc/foi
 
 Record the actual outputs and machine context before calling this native verification
 complete. Linux tests that mock Windows calls do not establish it.
+
+## Integration verification, 2026-10-12
+
+Ben authorized current main integration from public source
+`f8d7258513dafc89e10cf29c72a0f43203471590`. The public pool retains its UTF-8
+initializer and stderr backslash replacement. Its canonical helper and both live private
+copies remain byte-identical at SHA-256
+`965af410ef89328275798aed50addd5b938aaa1473412c17b2b1a5be7bee46af`.
+The historical private census is excluded and unchanged. Combined Linux verification
+is recorded in the [integration receipt](branch-integration-2026-10-11.md), including the
+passing 60-step mega and the original suite's two repaired failures. Original resource
+measurements remain unchanged. Native Windows worker-API execution remains unverified;
+the separate hbofonts Windows completion does not establish this helper's native result.

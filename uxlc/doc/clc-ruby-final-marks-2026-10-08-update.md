@@ -164,3 +164,25 @@ padding; no new test infrastructure is added. All 15 focused tests pass with
 that comparison included, and Black and whitespace checks pass. Later main
 commit `6d09c8862e1f1aaf9eac43dbec701d8611651b06` only extends the NAEE guide;
 it changes none of the checked CLC or spacing sources and is left to its owner.
+
+## 2026-10-12 — approved main integration with later wrapper decisions
+
+Ben separately authorized integrating the completed CLC branch at
+`4daa0b7a1975fbde5b60cdd4ac0790642ef96138`. CLC retains the inline-block
+final-mark repair, annotation line height 1.8, padding 0.2em and nowrap. Current
+near-Aleppo independently retains its later inline-flex wrapper, normal line height
+and 0.15em horizontal padding. The shared presentation comparison preserves these
+deliberate differences rather than require stale style equality.
+
+A fresh Chromium 151 run against integration baseline
+`2036eaf7299e9b137db4ab30745642bc95594d8e` checks all 176 CLC units and
+21 near-Aleppo controls, in Taamey D and Noto Sans Hebrew at 20, 26.133333 and
+48 px. All 2,238 current comparisons pass within the instrument's one-pixel tolerance,
+with zero page errors. The compact public
+[browser receipt](../../doc/branch-integration-2026-10-11-clc-browser.json) records the
+counts, fonts and sizes; detailed images remain in the isolated checkout. This new
+final-mark regression does not claim a fresh complete wide/narrow clearance survey.
+
+The [integration receipt](../../doc/branch-integration-2026-10-11.md) records combined
+verification and the later focused carrier/documentation reconciliation. The original
+CLC measurement history and its limits remain unchanged.

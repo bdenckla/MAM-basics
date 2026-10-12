@@ -140,11 +140,12 @@ of the code the item names.
 2. **Take `near-aleppo-census` out of the mega.** Saving: 17.6 s in run 1, 19.4 s pinned. **Done
    in `d32a17b8`** on 2026-09-11, so that the mega writes nothing outside this repository.
 3. **Give the poetic scanner the prose scanner's fast path.** The historical estimate was about
-   5 s of 7.54 s over five steps. **Implemented on `perf/serial-mega-20261003`, pending
-   integration; #273 remains open.** The current all-call differential found identical tokens
+   5 s of 7.54 s over five steps. **Integrated 2026-10-12 from `perf/serial-mega-20261003`;
+   no issue state changed in this integration.** The recorded all-call differential found identical tokens
    and positions on 26,804 calls, with instrumented scanner time 4.56 s before and 1.59 s after.
    Repeated generator timings and verification are in
    [the serial performance record](mega-serial-performance-2026-10-03.md).
+   Its [single update](mega-serial-performance-2026-10-03-update.md) records current integration.
 4. **Scan the chanted-word survey's three corpora at the same time, in three processes.**
    Estimated saving: about 5 s. Risk: medium. Not started, not filed.
 5. **Render `tmpl-survey`'s twelve SVGs at the same time, on a pool of threads.** Estimated
