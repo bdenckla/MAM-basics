@@ -116,3 +116,26 @@ eight, as at Lam.1.18:
 
 Identify the two by `type`, never by position; see
 [Ketiv/Qere](reading-mam-simple-xml.md#ketivqere) in the XML guide.
+
+## Silluq before a later meteg
+
+The object has `type`, `text`, and `letters-with-silluq`, without `contents`.
+It follows the [XML parameter contract](reading-mam-simple-xml.md#silluq-before-a-later-meteg).
+For example, this part of a verse’s `contents` keeps sof pasuq outside the annotation:
+
+```json
+[
+  {
+    "type": "silluq-before-meteg",
+    "letters-with-silluq": "לכלֽהנה",
+    "text": "לְכֻלָּֽהְנָֽה"
+  },
+  {
+    "type": "text",
+    "text": "׃"
+  }
+]
+```
+
+Generic text consumers take only `text`; they never append `letters-with-silluq`
+as running text. Support for this type does not require a corpus occurrence.

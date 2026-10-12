@@ -69,7 +69,7 @@ RANK_GROUPS_FOR_PLUS_E: tuple[frozenset[str], ...] = (
     frozenset({"מ:הערה-2"}),
     _KETIV_QERE_TEMPLATES,
     frozenset({"מ:קמץ"}),
-    frozenset({"מ:דחי", "מ:צינור"}),
+    frozenset({"מ:דחי", "מ:צינור", "מ:סילוק לפני געיה"}),
     frozenset({"מ:אות-מיוחדת-במילה"}),
     _END_COL_E | _END_WHITESPACE | _END_DOCNOTE,
 )
@@ -450,6 +450,9 @@ def _grammar_edges_and_order(grammar: Mapping[str, object]):
     assert isinstance(must_precede_raw, list), "grammar.must_precede must be a list"
 
     allowed_edges = {tuple(x) for x in allowed_edges_raw}
+    # The source contract permits support before the first annotated atom.
+    # The generated lock continues to record the nesting the corpus has used.
+    allowed_edges.update({("E", "מ:סילוק לפני געיה"), ("נוסח", "מ:סילוק לפני געיה")})
     must_precede = {tuple(x) for x in must_precede_raw}
     return allowed_edges, must_precede
 

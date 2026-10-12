@@ -9,8 +9,10 @@ import json
 import sys
 
 from mb_cmn import bib_locales
+from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 from phonetic_mam.core import bccvecs_that_are_known as knowns
 from phonetic_mam.core import deep_latin
+from phonetic_mam.core import distinguished
 from phonetic_mam.core import dtx_struct
 from phonetic_mam.core import dualcant_prepare
 from phonetic_mam.core import ipa
@@ -106,7 +108,7 @@ def _phrase(args):
     _object(
         args,
         ("phrase", "bcvt", "untanglers"),
-        ("lookup-keys", "qamats", "include-in-edition-census"),
+        ("lookup-keys", "qamats", "include-in-edition-census", "silluq-before-meteg"),
     )
     phrase = _string(args["phrase"])
     bcvt = _bcvt(args["bcvt"])
@@ -123,6 +125,34 @@ def _phrase(args):
     dtx = dtx_struct.make_context(untanglers, lookup_keys=lookup_keys)
     dtx = dtx_struct.mk_dtx_with_bcvt(dtx, bcvt)
     dtx = dtx_struct.mk_dtx_with_qamats(dtx, qamats)
+    annotations = args.get("silluq-before-meteg", [])
+    if not isinstance(annotations, list):
+        raise ProtocolError("expected a silluq-before-meteg annotation array")
+    skeletons = set()
+    for annotation in annotations:
+        _object(annotation, ("text", "letters-with-silluq"))
+        validate_silluq_before_meteg(
+            annotation["text"], annotation["letters-with-silluq"], str(bcvt)
+        )
+        skeleton = annotation["letters-with-silluq"].replace(
+            "\N{HEBREW POINT METEG}", ""
+        )
+        if skeleton in skeletons:
+            raise ProtocolError("duplicate silluq-before-meteg annotation")
+        skeletons.add(skeleton)
+        matches = [
+            atom
+            for word in phrase.split(" ")
+            for atom in [
+                distinguished.to_generic_points(word).split(
+                    "\N{HEBREW PUNCTUATION MAQAF}"
+                )[-1]
+            ]
+            if "".join(c for c in atom if 0x05D0 <= ord(c) <= 0x05EA) == skeleton
+        ]
+        if len(matches) != 1:
+            raise ProtocolError("silluq annotation must match exactly one phrase atom")
+    dtx["dtx-silluq-before-meteg"] = annotations
     if not include:
         dtx = dtx_struct.suppress_edition_census(dtx)
     sods = sas_from_phrase.list_of_sods_from_phrase(dtx, phrase)

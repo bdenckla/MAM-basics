@@ -17862,13 +17862,13 @@ b,·,∵,n.,-,y,:,h,(mun),v,o,y,a,d,a,(zaq_q),3
 SPACE
 3,_,l,-
 START span class=mam-kq
-START span class=mam-kq-k
-LEFT PARENTHESIS,h,k,r,y,RIGHT PARENTHESIS
-STOP span class=mam-kq-k
-SPACE
 START span class=mam-kq-q
 LEFT SQUARE BRACKET,h,_,k,·,:,r,‥,τ,i,(tip),y,RIGHT SQUARE BRACKET
 STOP span class=mam-kq-q
+SPACE
+START span class=mam-kq-k
+LEFT PARENTHESIS,h,k,r,y,RIGHT PARENTHESIS
+STOP span class=mam-kq-k
 STOP span class=mam-kq
 SPACE
 v,:,3,_,l,-,h,_,p,·,:,l,‥,τ,i,(mos),y,(sopa)

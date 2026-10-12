@@ -173,6 +173,7 @@ The "Text" column says where an element's text is: `text` means the `text` attri
 | Element | Meaning | Text |
 |---------|---------|------|
 | `<text text="..."/>` | A run of Hebrew text | `text` |
+| `<silluq-before-meteg>` | An atom with an explicitly identified silluq before a later meteg | `text` |
 | `<lp-legarmeih/>` | Legarmeh | none |
 | `<lp-paseq/>` | Paseq in the narrow sense | none |
 | `<implicit-maqaf/>` | Maqaf that is implicit in the manuscript | none |
@@ -208,6 +209,28 @@ atoms or chanted words. An atom is one written form between spaces or maqafs. A 
 word is one atom or a complete maqaf compound. Neither a storage fragment nor a
 punctuation element becomes a separate atom or chanted word merely because it has its
 own tag.
+
+
+
+### Silluq before a later meteg
+
+The `silluq-before-meteg` element has exactly two attributes, `text` and
+`letters-with-silluq`, and no children. `text` is the full marked atom, with both
+marks preserved. `letters-with-silluq` contains the same Hebrew letters and exactly
+one U+05BD identifying silluq, with no other marks or punctuation. The full atom
+has the identified mark and at least one later U+05BD. Both attributes exclude
+sof pasuq, which remains in the following ordinary text node. For example:
+
+```xml
+<silluq-before-meteg letters-with-silluq="לכלֽהנה" text="לְכֻלָּֽהְנָֽה"/>
+<text text="׃"/>
+```
+
+A generic reader takes only `text`; the scaffold is position metadata, not a second
+Scripture form. A reader must not assume that the last U+05BD is silluq. Sefaria/AJF
+remove every U+05BD after the identified silluq because those editions omit this
+annotation’s explanatory note. OSIS keeps the full text and adds a note. The schema
+is supported even when the corpus has no calls of the source template.
 
 ### Legarmeh and paseq
 

@@ -24,3 +24,10 @@ That reads the incremental BHS XML folder with the MAM XML folder as its base, s
 MAM-simple first if its source changed.
 
 MAM-basics also publishes [documentation for MAM OSIS](https://bdenckla.github.io/MAM-basics/MAM-OSIS/) via GitHub Pages.
+
+## Meteg after silluq
+
+The exporter supports MAM-simple’s `silluq-before-meteg` element. It preserves
+the full marked atom and adds `<note type="x-silluq-before-meteg">סילוק לפני געיה</note>`
+immediately after the atom and before sof pasuq. The note records the explicit
+presence of a meteg after silluq; it does not reproduce MAM’s detailed source apparatus.

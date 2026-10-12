@@ -551,4 +551,28 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DEDPG_DOCNOTE)),
         body_shared.note_links_param1_explanation_para(),
+        author.heading_level_3("Supported silluq annotation"),
+        author.para(
+            [
+                "The supported template ",
+                author.hbo("מ:סילוק לפני געיה"),
+                " identifies silluq before a later $meteg without changing $MAM’s text. "
+                "Support does not require a corpus occurrence; the tables above describe "
+                "observed templates. The annotation has exactly two positional parameters. "
+                "Parameter 1 is the full marked atom. Parameter 2 has the same Hebrew "
+                "letters and exactly one U+05BD at the silluq position, with no other "
+                "marks or punctuation. Parameter 1 has that mark and at least one later "
+                "U+05BD. Both parameters exclude sof pasuq, which follows the enclosing "
+                "template as ordinary text.",
+            ]
+        ),
+        author.para(
+            "A Scripture projection takes parameter 1 only. Parameter 2 is position "
+            "metadata, not a second reading. $MAM-simple preserves both parameters "
+            "as text and letters-with-silluq on its silluq-before-$meteg element. "
+            "Sefaria/AJF remove the identified later metegs and omit this annotation’s "
+            "explanatory note. OSIS preserves the text and adds a note. A consumer "
+            "that locates stress uses the explicit position instead of assuming "
+            "that the final U+05BD is silluq. Invalid calls fail validation."
+        ),
     ]

@@ -8678,13 +8678,13 @@ v,:,α,∵,τ,-,b,·,:,n,v,o,τ,∵,(atn),y,h,a
 SPACE
 v,:,α,∵,τ,-
 START span class=mam-kq
-START span class=mam-kq-k
-LEFT PARENTHESIS,3,p,r,v,n.,RIGHT PARENTHESIS
-STOP span class=mam-kq-k
-SPACE
 START span class=mam-kq-q
 LEFT SQUARE BRACKET,3,∵,p,:,r,_,(tip),y,i,n.,RIGHT SQUARE BRACKET
 STOP span class=mam-kq-q
+SPACE
+START span class=mam-kq-k
+LEFT PARENTHESIS,3,p,r,v,n.,RIGHT PARENTHESIS
+STOP span class=mam-kq-k
 STOP span class=mam-kq
 SPACE
 v,·,b,:,n,o,τ,∵,(mos),y,h,a,(sopa)

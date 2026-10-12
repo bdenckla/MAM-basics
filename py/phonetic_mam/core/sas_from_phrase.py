@@ -6,6 +6,8 @@ import phonetic_mam.core.distinguished as disting
 import phonetic_mam.core.syllables as syl
 import phonetic_mam.core.stress as stress
 import phonetic_mam.core.dtx_struct as dtxs
+from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn.silluq_before_meteg import drop_post_silluq_metegs
 
 
 def list_of_sods_from_phrase(dtx, phrase_ydc_ydys_h):
@@ -110,7 +112,8 @@ def _get_sas_from_ndc_cw_wfmtt(dtx, cw_wfmtt):
         eudlcw = rfh.get_eudlcw_from_cw_ydys(cw_str)
         eudlcw_phi_if_diff = _get_eudlcw_phi_if_diff(cw_str, eudlcw)
     syls_per_atom = syl.get_syllables(eudlcw)
-    pstress = stress.get_primary_stress(dtx, syls_per_atom, rfh.accar(eudlcw))
+    accar = _explicit_silluq_accar(dtx, cw_str, eudlcw)
+    pstress = stress.get_primary_stress(dtx, syls_per_atom, accar)
     bcc, isps_one_d, isps_two_d = pstress
     sas = {
         "sas-eudlcw": eudlcw,
@@ -123,3 +126,25 @@ def _get_sas_from_ndc_cw_wfmtt(dtx, cw_wfmtt):
         "sas-qamats": dtxs.get_qamats(dtx),
     }
     return sas
+
+
+def _explicit_silluq_accar(dtx, cw_str, eudlcw):
+    """Use source position metadata for stress, retaining the full displayed text."""
+    generic = disting.to_generic_points(cw_str)
+    prefix, separator, atom = generic.rpartition(hpu.MAQ)
+    if not separator:
+        atom = generic
+    text = atom.removesuffix(hpu.SOPA)
+    letters = "".join(c for c in text if 0x05D0 <= ord(c) <= 0x05EA)
+    for annotation in dtx.get("dtx-silluq-before-meteg", []):
+        scaffold = annotation["letters-with-silluq"]
+        if scaffold.replace("\N{HEBREW POINT METEG}", "") != letters:
+            continue
+        if not atom.endswith(hpu.SOPA):
+            raise ValueError(
+                f"{dtxs.get_bcvt(dtx)}: annotated silluq is not verse-final"
+            )
+        cleaned = drop_post_silluq_metegs(text, scaffold, str(dtxs.get_bcvt(dtx)))
+        stress_text = (prefix + separator if separator else "") + cleaned + hpu.SOPA
+        return rfh.accar(rfh.get_eudlcw_from_cw_ndns(stress_text))
+    return rfh.accar(eudlcw)

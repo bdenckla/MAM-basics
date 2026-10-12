@@ -36211,13 +36211,13 @@ v,:,α,∵,l,-,y,_,(tip),h,:,c,a,h
 SPACE
 v,:,3,_,l,-
 START span class=mam-kq
-START span class=mam-kq-k
-LEFT PARENTHESIS,m,v,p,3,τ,RIGHT PARENTHESIS
-STOP span class=mam-kq-k
-SPACE
 START span class=mam-kq-q
 LEFT SQUARE BRACKET,m,‥,y,p,a,(mos),3,_,τ,RIGHT SQUARE BRACKET
 STOP span class=mam-kq-q
+SPACE
+START span class=mam-kq-k
+LEFT PARENTHESIS,m,v,p,3,τ,RIGHT PARENTHESIS
+STOP span class=mam-kq-k
 STOP span class=mam-kq
 (sopa)
 

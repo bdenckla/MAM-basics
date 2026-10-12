@@ -27,7 +27,12 @@ _PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
 _PARAM1_BODY_NAMES = (
     template_names.IN_WORD_TMPL_NAMES
     | template_names.STRESS_HELPER_TMPL_NAMES
-    | {template_names.SCRDFF_TAR, "מודגש", "מ:סיום בטוב"}
+    | {
+        template_names.SCRDFF_TAR,
+        template_names.SILLUQ_BEFORE_METEG,
+        "מודגש",
+        "מ:סיום בטוב",
+    }
 )
 _DROPPED_BODY_NAMES = {
     template_names.INVERTED_NUN,

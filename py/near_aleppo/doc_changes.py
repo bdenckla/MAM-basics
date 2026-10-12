@@ -140,6 +140,12 @@ def _templates(numbers):
     )
     rows = [
         [
+            he_name("מ:סילוק לפני געיה"),
+            "Its parameter 1, the full marked atom, as plain text. Parameter 2 "
+            "identifies silluq and is position metadata, so it contributes no "
+            "additional Scripture text. All U+05BD marks remain.",
+        ],
+        [
             he_name("מ:קמץ"),
             [
                 "Its parameter ",

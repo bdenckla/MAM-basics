@@ -32,6 +32,7 @@ def copy_support_files():
 MAM_PARSED_PYEX = str(paths.mam_parsed_dir() / "py-examples")
 PYFILE_RELPATHS = (
     "mb_cmn/template_names.py",
+    "mb_cmn/silluq_before_meteg.py",
     "mb_misc/tmpl_survey_toy.py",
 )
 

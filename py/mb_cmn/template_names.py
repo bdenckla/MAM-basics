@@ -30,6 +30,7 @@ TRIVIAL_QERE = "מ:קו״כ-אם-2"
 QAMATS_VARIANT = "מ:קמץ"
 DUAL_CANTILLATION = "מ:כפול"
 STRESS_HELPER_TMPL_NAMES = frozenset(("מ:דחי", "מ:צינור"))
+SILLUQ_BEFORE_METEG = "מ:סילוק לפני געיה"
 
 TWO_ACCENTS_OF_QUPO = "שני טעמים באות אחת קמץ-תחתון-פתח-עליון"
 NO_PAR_AT_STA_OF_CHAP21 = "מ:אין פרשה בתחילת פרק"
@@ -125,7 +126,7 @@ IN_WORD_TMPL_NAMES = {
     SLH_WORD,
 }
 
-# Every template name present in the current MAM-parsed-plus corpus.  This is
+# Every template name supported in current MAM-parsed-plus data. This is
 # the closed roster for whole-dataset inventories and structure-preserving
 # transformations.  A caller that walks every parameter still has to opt into
 # that scope explicitly; membership here does not decide which parameters a
@@ -142,6 +143,7 @@ CURRENT_PLUS_TMPL_NAMES = frozenset(
         NO_PAR_AT_STA_OF_CHAP03,
         NO_PAR_AT_STA_OF_WEEKLY,
         *STRESS_HELPER_TMPL_NAMES,
+        SILLUQ_BEFORE_METEG,
         SCRDFF_TAR,
         "מ:כו״ק מיוחד",
         DUAL_CANTILLATION,
@@ -201,6 +203,7 @@ _NO_PARAM_PLUS_TEMPLATES = frozenset(
 )
 _OPTIONAL_PARAM1_PLUS_TEMPLATES = frozenset({"סס", "ססס", "פפ", "פפפ"})
 CURRENT_PLUS_PARAM_POLICY = {
+    SILLUQ_BEFORE_METEG: (frozenset({"1", "2"}), frozenset({"1", "2"})),
     **{name: (frozenset(), frozenset()) for name in _NO_PARAM_PLUS_TEMPLATES},
     **{
         name: (frozenset(), frozenset({"1"}))
@@ -303,4 +306,14 @@ def validate_current_plus_template(tmpl):
             f"required {sorted(required)!r}, allowed {sorted(allowed)!r}, "
             f"got {sorted(actual)!r}"
         )
+    if name == SILLUQ_BEFORE_METEG:
+        from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
+
+        values = []
+        for key in ("1", "2"):
+            value = params[key]
+            if isinstance(value, (tuple, list)) and len(value) == 1:
+                value = value[0]
+            values.append(value)
+        validate_silluq_before_meteg(*values, context=raw_name)
     return params

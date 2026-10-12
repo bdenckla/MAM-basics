@@ -12,6 +12,7 @@ from mb_misc import osis_book_abbrevs as oba
 from wlc_cmn.wlc_book_codes import wlc_bb_codes, wlc_bb_to_bk39id
 
 from mb_cmn import paths
+from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 
 # The three single-cantillation projections of a dually-cantillated span (issue wlc-utils#36).
 # A ``cant-all-three`` node carries one child of each type: ``cant-combined`` (the
@@ -443,6 +444,12 @@ def _mam_simple_fragments(
         return [_BOUNDARY]
     if node_type == "kq-k-velo-q-maq":
         return []
+
+    if node_type == "silluq-before-meteg":
+        if set(node) != {"type", "text", "letters-with-silluq"}:
+            raise ValueError(f"Unexpected silluq-before-meteg node: {node!r}")
+        validate_silluq_before_meteg(node["text"], node["letters-with-silluq"])
+        return [node["text"]]
 
     contents = node.get("contents")
     if node_type in _TRANSPARENT_CONTENT_NODE_TYPES | _DIRECT_QERE_NODE_TYPES:

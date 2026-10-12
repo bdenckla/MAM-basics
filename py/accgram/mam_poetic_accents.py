@@ -60,6 +60,7 @@ from mb_cmn import hebrew_accents as ha
 from mb_misc import osis_book_abbrevs as oba
 
 from accgram import mam_simple_verse
+from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 from accgram import poetic_accent_names as pan
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -290,10 +291,37 @@ def _walk(node: object, events: list[_Event]) -> None:
             )
         if not isinstance(contents, list):
             raise ValueError(f"MAM-simple poetic {node_type!r} contents is not a list")
-        for child in contents:
-            _walk(child, events)
+        index = 0
+        while index < len(contents):
+            child = contents[index]
+            if child.get("type") == "silluq-before-meteg":
+                if set(child) != {"type", "text", "letters-with-silluq"}:
+                    raise ValueError(f"Unexpected silluq-before-meteg node: {child!r}")
+                validate_silluq_before_meteg(
+                    child["text"], child["letters-with-silluq"]
+                )
+                following = contents[index + 1] if index + 1 < len(contents) else None
+                if not (
+                    isinstance(following, dict)
+                    and set(following) == {"type", "text"}
+                    and following["type"] == "text"
+                    and isinstance(following["text"], str)
+                    and following["text"].startswith(_SOF_PASUQ)
+                ):
+                    raise ValueError(
+                        "silluq annotation lacks its following sof pasuq text"
+                    )
+                _emit_word_events(child["text"] + following["text"], events)
+                index += 2
+            else:
+                _walk(child, events)
+                index += 1
         return
 
+    if node_type == "silluq-before-meteg":
+        raise ValueError(
+            "silluq annotation must be read with its following sof pasuq text"
+        )
     if node_type in _TEXT_TYPES:
         text = node.get("text")
         if not isinstance(text, str):

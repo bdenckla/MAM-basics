@@ -97,6 +97,7 @@ Usage:
 """
 
 import xml.etree.ElementTree as ET
+from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 
 PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
 MAQAF = "\N{HEBREW PUNCTUATION MAQAF}"
@@ -134,6 +135,8 @@ def _scribal_difference_target_text(sdt, verse_osis):
                     f"in {verse_osis}"
                 )
             parts.append(text)
+        elif child.tag == "silluq-before-meteg":
+            parts.append(_silluq_before_meteg_text(child, verse_osis))
         elif child.tag == "text":
             if "text" not in child.attrib:
                 raise ValueError(
@@ -157,6 +160,16 @@ def _lone_text(el, verse_osis):
             f"attributes {el.attrib}, {len(el)} children"
         )
     return el.attrib["text"]
+
+
+def _silluq_before_meteg_text(el, verse_osis):
+    if set(el.attrib) != {"text", "letters-with-silluq"} or len(el):
+        raise ValueError(
+            f"Unexpected <silluq-before-meteg> shape in {verse_osis}: {el.attrib}"
+        )
+    text = el.attrib["text"]
+    validate_silluq_before_meteg(text, el.attrib["letters-with-silluq"], verse_osis)
+    return text
 
 
 def _check_bare(el, verse_osis, allowed_attrib=None):
@@ -183,7 +196,9 @@ def _form_words(strand, verse_osis):
         )
     words = []
     for piece in strand:
-        if piece.tag == "text":
+        if piece.tag == "silluq-before-meteg":
+            words.extend(_silluq_before_meteg_text(piece, verse_osis).split())
+        elif piece.tag == "text":
             words.extend(_lone_text(piece, verse_osis).split())
         elif piece.tag in ("lp-legarmeih", "lp-paseq"):
             _check_bare(piece, verse_osis)
@@ -257,7 +272,11 @@ def get_verse_words(verse_el):
         # Complex verse: iterate children
         for i, child in enumerate(verse_el):
             tag = child.tag
-            if tag == "text":
+            if tag == "silluq-before-meteg":
+                ws = _silluq_before_meteg_text(child, verse_osis).split()
+                raw_words.extend(ws)
+                ketiv_flags.extend([False] * len(ws))
+            elif tag == "text":
                 text = child.attrib.get("text", "").strip()
                 if text:
                     ws = text.split()

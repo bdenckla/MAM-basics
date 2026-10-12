@@ -4,6 +4,7 @@ from mb_misc import slh_description
 from mb_cmn import str_defs as sd
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import shrink
+from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 from osis import osis_namespace as osisn
 
 
@@ -53,6 +54,15 @@ def _verse(etel, ofc1, _ofc2):
 
 def _text(etel, _ofc1, _ofc2):
     return [etel.attrib["text"]]
+
+
+def _silluq_before_meteg(etel, _ofc1, _ofc2):
+    text = etel.attrib["text"]
+    validate_silluq_before_meteg(text, etel.attrib["letters-with-silluq"])
+    note = _etel_ons_with_text(
+        "note", {"type": "x-silluq-before-meteg"}, "סילוק לפני געיה"
+    )
+    return [text, note]
 
 
 def _samekh2(_etel, _ofc1, _ofc2):
@@ -292,6 +302,7 @@ def _my_extend(etel, ofc1):
 
 
 HANDLERS = {
+    ("silluq-before-meteg", None): _silluq_before_meteg,
     ("book24", None): _bk24,
     ("book39", None): _bk39,
     ("chapter", None): _chapter,

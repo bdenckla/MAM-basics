@@ -551,6 +551,20 @@ page</a>.</td>
 <p>In this table, <bdi lang="hbo">מ:קישור פנימי בהערה</bdi> param 1 is a Wikisource-internal target
 (path or fragment) rendered under <code>https://he.wikisource.org/wiki/</code>;
 <bdi lang="hbo">מ:קישור בהערה</bdi> param 1 is an external URL used as-is.</p>
+<h3>Supported silluq annotation</h3>
+<p>The supported template <bdi lang="hbo">מ:סילוק לפני געיה</bdi> identifies silluq before a later
+<span class="romanized">meteg</span> without changing <abbr class="small-caps">MAM</abbr>’s text.
+Support does not require a corpus occurrence; the tables above describe observed templates. The
+annotation has exactly two positional parameters. Parameter 1 is the full marked atom. Parameter 2
+has the same Hebrew letters and exactly one U+05BD at the silluq position, with no other marks or
+punctuation. Parameter 1 has that mark and at least one later U+05BD. Both parameters exclude sof
+pasuq, which follows the enclosing template as ordinary text.</p>
+<p>A Scripture projection takes parameter 1 only. Parameter 2 is position metadata, not a second
+reading. <abbr class="small-caps">MAM</abbr>-simple preserves both parameters as text and
+letters-with-silluq on its silluq-before-<span class="romanized">meteg</span> element. Sefaria/AJF
+remove the identified later metegs and omit this annotation’s explanatory note. OSIS preserves the
+text and adds a note. A consumer that locates stress uses the explicit position instead of assuming
+that the final U+05BD is silluq. Invalid calls fail validation.</p>
 <h2 id="consumer-notice">Notes for applications</h2>
 <p>The notes below are for writers of programs that read ("consume") the JSON data. Such programs
 are the "consumers" named by the <code>header.consumer_notice</code> field. The notes are as

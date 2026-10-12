@@ -51,6 +51,7 @@ def _massage_arg_1(wtel):
 _HANDLERS = {
     "נוסח": _massage_arg_1,
     "מ:דחי": _massage_arg_1,
+    "מ:סילוק לפני געיה": _massage_arg_1,
     "מ:צינור": _massage_arg_1,
     tmpln.SLH_WORD: _massage_arg_1,
     "מ:אות-ג": _massage_arg_1,

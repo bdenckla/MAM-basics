@@ -246,7 +246,7 @@ def _collect_text_fragments(node: object, out_parts: list[str]) -> None:
             return
         if not isinstance(tmpl_params, dict):
             raise _no_rule_error(tmpl_name, tmpl_params)
-        if tmpl_name == "נוסח" or tmpl_name == "מ:הערה-2":
+        if tmpl_name in ("נוסח", "מ:הערה-2", template_names.SILLUQ_BEFORE_METEG):
             # Param 1 is the in-verse target; param 2 is documentation.
             _collect_text_fragments(tmpl_params.get("1"), out_parts)
             return

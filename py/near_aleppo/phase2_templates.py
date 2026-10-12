@@ -144,6 +144,7 @@ def _keysets(*keysets):
 
 
 _RULES = {
+    "מ:סילוק לפני געיה": _Rule(_DISSOLVE, ("1",), _keysets(("1", "2"))),
     "מ:קמץ": _Rule(_DISSOLVE, ("ד",), _keysets(("ד", "ס"))),
     "מ:דחי": _Rule(_DISSOLVE, ("1",), _keysets(("1", "2"))),
     "מ:צינור": _Rule(_DISSOLVE, ("1",), _keysets(("1", "2"))),
@@ -197,7 +198,14 @@ _RULES = {
 # anywhere in the dataset's own text: not in any column, parameter or note body.
 # The copies of MAM's target that phase 6 adds to changed notes are MAM's text, and
 # hold them.
-TEMPLATES_ABSENT_FROM_DATASET = ("מ:קמץ", "מ:דחי", "מ:צינור", "מ:כפול", "מ:מקף אפור")
+TEMPLATES_ABSENT_FROM_DATASET = (
+    "מ:קמץ",
+    "מ:דחי",
+    "מ:צינור",
+    "מ:כפול",
+    "מ:מקף אפור",
+    "מ:סילוק לפני געיה",
+)
 
 
 class Resolver:
