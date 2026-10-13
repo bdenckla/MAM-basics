@@ -1,7 +1,6 @@
 """Differential checks against independently assembled letter clusters."""
 
 from itertools import product
-import xml.etree.ElementTree as ET
 
 import pytest
 
@@ -61,10 +60,7 @@ def test_noteless_and_osis_projections_agree_with_cluster_oracle():
         ]
         for handlers in mam4ajf_handlers.HANDLERS.values():
             assert handlers[(node["type"], None)](node, [], []) == [expected]
-        element = ET.Element(
-            node["type"], {key: value for key, value in node.items() if key != "type"}
-        )
-        body, note = osis_handlers.HANDLERS[(node["type"], None)](element, [], [])
+        body, note = osis_handlers.HANDLERS[(node["type"], None)](node, [], [])
         assert body == text
         assert note.attrib == {"type": "x-silluq-before-meteg"}
         checked += 1

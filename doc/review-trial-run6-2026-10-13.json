@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "run": 6,
+  "trial_nights": 7,
+  "date": "2026-10-13",
+  "agent": "Codex",
+  "schedule_disposition": "Existing seven-night trial unchanged; night 6 of 7, ending 2026-10-14. No extension.",
+  "repository": "MAM-basics",
+  "review_window": {
+    "from_exclusive": "3a46a5b138be5b0535c3de99384a9ccce08966c5",
+    "through_inclusive": "d921ed3565fb3e6cba8b9d46104e92a488b8df12",
+    "incoming_reachable_commits": 72,
+    "changed_paths": 347,
+    "ancestry_verified": true
+  },
+  "reviewed_through": "52f73420395ce9416b9928a957cde9287c273843",
+  "tested_commit": "d921ed3565fb3e6cba8b9d46104e92a488b8df12",
+  "allowed_sibling_input_commits": [
+    "b65627f15d1fc70f755783b6bcd4ae8b97be74a1",
+    "384682ab4ef5c64106735af5789a86573c5c0e51"
+  ],
+  "checks": {
+    "basics-mega": {
+      "started_utc": "2026-10-13T06:16:13.758881+00:00",
+      "ended_utc": "2026-10-13T06:25:34.003111+00:00",
+      "seconds": 560.244,
+      "exit": 0
+    },
+    "basics-suite": {
+      "started_utc": "2026-10-13T06:26:40.167987+00:00",
+      "ended_utc": "2026-10-13T06:32:20.756086+00:00",
+      "seconds": 340.588,
+      "exit": 1
+    },
+    "basics-json-recheck": {
+      "started_utc": "2026-10-13T06:38:09.144152+00:00",
+      "ended_utc": "2026-10-13T06:38:09.619066+00:00",
+      "seconds": 0.475,
+      "exit": 0
+    }
+  },
+  "commands": {
+    "mega": [
+      "py/main_0_mega.py"
+    ],
+    "suite": [
+      "py/main_test.py"
+    ],
+    "repair_recheck": [
+      "py/main_test.py",
+      "py/tests/test_silluq_before_meteg.py",
+      "-q"
+    ]
+  },
+  "mega_steps": 60,
+  "generator_tracked_diffs": 0,
+  "suite_result": {
+    "passed": 1079,
+    "skipped": 5,
+    "failed": 1,
+    "skip_disposition": "Documented divergent edition-transcription token controls; no missing input skip."
+  },
+  "finding": {
+    "disposition": "Fixed stale differential-test caller under the deliberately JSON-only MAM-simple policy.",
+    "path": "py/tests/test_silluq_before_meteg.py",
+    "failure": "The test supplied ElementTree.Element to OSIS handlers that now consume MAM-simple JSON nodes; TypeError at etel[\"text\"].",
+    "repair_commit": "52f73420395ce9416b9928a957cde9287c273843",
+    "decisive_recheck": "3 passed; original independent cluster/body/note assertions retained.",
+    "checked_file_sha256": "043a7f513cb019f3b39e85b780ed90dcdc903ab880cd34177d7f4b2b1413eb71",
+    "product_effect": "Test caller only; OSIS output remains XML. No production/data/export change."
+  },
+  "endpoint_review": "72 reachable commits and 347 changed paths examined from the actual run-5 reviewed anchor. Reviewed JSON-only readers, the adopted meteg-after-silluq representations and consumer projections, template dispatch, display changes, documentation and owner evidence. No additional consequential defect confirmed. Deliberately retired XML payloads/writers are not missing-input defects; upstream mirror whitespace is preserved.",
+  "limits": [
+    "Original full-suite failure is preserved; focused repair verification is not a new all-green full-suite run.",
+    "Mega reproduction and tests do not establish Hebrew interpretation, pronunciation or browser appearance.",
+    "HBCE JSON-reader migration has owner token/tag comparison evidence, but no full HBCE comparison/output regeneration is claimed.",
+    "No source refresh, new Hebrew/data decision, deployment or schedule change was performed."
+  ],
+  "record_disposition": "Narrow repair and ordinary receipts may fast-forward non-push-deploying main. Interactive home checkout and generated evidence remain preserved."
+}
