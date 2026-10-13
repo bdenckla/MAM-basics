@@ -255,13 +255,14 @@ def choice_templates_intro_para():
 def note_links_param1_explanation_para():
     return author.para(
         [
-            "In this table, ",
+            "For ",
             author.hbo("מ:קישור פנימי בהערה"),
-            " param 1 is a Wikisource-internal target (path or fragment) rendered under ",
+            ", parameter 1 is a Wikisource-internal target (path or fragment) "
+            "rendered under ",
             mb_html.code("https://he.wikisource.org/wiki/"),
-            "; ",
+            "; for ",
             author.hbo("מ:קישור בהערה"),
-            " param 1 is an external URL used as-is.",
+            ", parameter 1 is an external URL used as-is.",
         ]
     )
 
