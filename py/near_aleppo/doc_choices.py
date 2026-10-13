@@ -871,7 +871,7 @@ _CHOICES = (
         "2026-10-12",
         _BEN,
         "The divine-name holam at 1 Kings 8:11",
-        "Near-Aleppo keeps the holam recorded in MAM's note. The note calls Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo.",
+        "Near-Aleppo keeps the holam recorded in MAM's note. The note then called Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo; since 2026-10-13 the note itself names Aleppo.",
         ("Omitting the holam because the note lacks the Aleppo siglum",),
     ),
 )
