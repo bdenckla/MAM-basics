@@ -2,13 +2,22 @@
 
 import sys
 
-from intro_doc_audit import audit
+from intro_doc_audit import audit, proofs, review, structures
 
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
-    audit.main()
+    if sys.argv[1:] == ["review"]:
+        review.main()
+    elif sys.argv[1:] == ["proofs"]:
+        proofs.main()
+    elif sys.argv[1:] == ["structures"]:
+        structures.main()
+    elif not sys.argv[1:]:
+        audit.main()
+    else:
+        raise SystemExit("Usage: main_intro_doc_audit.py [review|proofs|structures]")
 
 
 if __name__ == "__main__":

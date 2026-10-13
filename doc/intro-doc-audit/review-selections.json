@@ -1,0 +1,466 @@
+{
+  "findings": [
+    {
+      "id": "JER-31-37",
+      "title": "Jeremiah 31:37: attributed quotation differs",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch5:L458"
+      ],
+      "refs": [
+        [
+          "Jeremiah",
+          31,
+          37
+        ]
+      ],
+      "note_ids": [
+        "Jeremiah 31:37/2/0"
+      ],
+      "explanation": "The Introduction attributes etnahta to the Aleppo ketiv; the note's explicit Aleppo quotation instead has U+05BD at that position. The note's MAM target has etnahta. Both sources agree that the gap for the qere lacks pointing. This establishes a disagreement between attributed quotations; it does not decide the manuscript reading. U+05BD occurs mid-verse, so it must not be described as silluq. The holam difference is a separate policy question. The chapter note revision 3088451 is newer than Introduction chapter 5 revision 3087740. Issue #304 is closed and concerned the formerly omitted atom only. The inspected revision already restores that atom; this audit does not reopen that correction."
+    },
+    {
+      "id": "DEUT-HATAF",
+      "title": "Deuteronomy roster: nine declared, eleven listed",
+      "status": "new-verified-enumeration-discrepancy",
+      "claims": [
+        "ch3:L1134"
+      ],
+      "refs": [
+        [
+          "Deuter",
+          5,
+          23
+        ],
+        [
+          "Deuter",
+          8,
+          2
+        ],
+        [
+          "Deuter",
+          8,
+          15
+        ],
+        [
+          "Deuter",
+          15,
+          20
+        ],
+        [
+          "Deuter",
+          15,
+          22
+        ],
+        [
+          "Deuter",
+          24,
+          13
+        ],
+        [
+          "Deuter",
+          28,
+          39
+        ],
+        [
+          "Deuter",
+          29,
+          7
+        ],
+        [
+          "Deuter",
+          32,
+          10
+        ],
+        [
+          "Deuter",
+          32,
+          18
+        ],
+        [
+          "Deuter",
+          32,
+          36
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The header says nine items, but the roster contains eleven verse entries and twelve atom forms, because 32:10 supplies two. Notes support all eleven listed verse cases. Leningrad supplies the first six entries and Aleppo the last five. The manuscript readings agree; the count is stale. This does not prove that the roster is exhaustive."
+    },
+    {
+      "id": "LAM-1-6",
+      "title": "Lamentations 1:6: one and two are reversed",
+      "status": "new-verified-editorial-description",
+      "claims": [
+        "ch2:L102"
+      ],
+      "refs": [
+        [
+          "Lamentations",
+          1,
+          6
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The example calls the two-atom ketiv one atom and the one-atom qere two atoms. The section's own definition, visible forms, and parsed special ketiv/qere type agree on the opposite description. This verse has no doc-note; the corroboration is the parsed structure, not note silence."
+    },
+    {
+      "id": "PROV-30-19",
+      "title": "Proverbs 30:19: MAM illustration lacks the retained maqaf",
+      "status": "new-verified-edition-illustration-discrepancy",
+      "claims": [
+        "ch2:L968",
+        "ch2:L436",
+        "ch2:L442"
+      ],
+      "refs": [
+        [
+          "Proverbs",
+          30,
+          19
+        ]
+      ],
+      "note_ids": [
+        "Proverbs 30:19/2/0"
+      ],
+      "explanation": "The Introduction's displayed MAM target has a space between the two atoms. The current note target has maqaf and explicitly agrees with Aleppo. The Introduction's own Aleppo quotation and maqaf policy agree with the note. The discrepancy belongs to the edition illustration; no competing Aleppo reading is established."
+    },
+    {
+      "id": "PS-108-11",
+      "title": "Psalm 108:11: the quoted accent differs",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch5:L605"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          108,
+          11
+        ]
+      ],
+      "note_ids": [
+        "Psalms 108:11/2/0"
+      ],
+      "explanation": "The Introduction quotation has U+0596 TIPEHA; the note has U+05AD DEHI in both its selected reading and the alternative attributed to Breuer. The nun-dagesh uncertainty agrees. The raw cache independently confirms the note quotation. This is an attributed-form disagreement, not a manuscript verdict."
+    },
+    {
+      "id": "PS-ALTERNATIVES",
+      "title": "Psalms 57:9 and 108:3: secondary candidate accents differ",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch5:L583",
+        "ch5:L603"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          57,
+          9
+        ],
+        [
+          "Psalms",
+          108,
+          3
+        ]
+      ],
+      "note_ids": [
+        "Psalms 57:9/2/0",
+        "Psalms 108:3/2/0"
+      ],
+      "explanation": "Both sources prefer dehi with meteg. The Introduction secondary option is dehi with merkha; the notes instead propose terha with merkha. The difference appears in both the quoted codepoints and the explicit accent names. These are uncertain Aleppo candidate readings. The caches establish differing candidate sets; they do not select the actual manuscript reading."
+    }
+  ],
+  "tracked": [
+    {
+      "id": "ISSUE-305",
+      "title": "2 Kings 18:27: shin dot",
+      "status": "already-tracked-305",
+      "claims": [
+        "ch5:L430"
+      ],
+      "refs": [
+        [
+          "2Kings",
+          18,
+          27
+        ]
+      ],
+      "note_ids": [
+        "2Kings 18:27/2/1"
+      ],
+      "issue": 305,
+      "explanation": "The Introduction's ketiv quotation has U+05C1; the quoted doc-note form omits it. The current issue comments attribute the decisive manuscript reading to Ben. No scan was consulted in this audit."
+    },
+    {
+      "id": "ISSUE-306",
+      "title": "Ezekiel 28:3: meteg",
+      "status": "already-tracked-306",
+      "claims": [
+        "ch5:L495"
+      ],
+      "refs": [
+        [
+          "Ezekiel",
+          28,
+          3
+        ]
+      ],
+      "note_ids": [
+        "Ezekiel 28:3/2/0"
+      ],
+      "issue": 306,
+      "explanation": "The Introduction has U+05BD under dalet; the explicitly Aleppo-attributed note quotation omits it. The current issue comments attribute the decisive manuscript reading to Ben."
+    },
+    {
+      "id": "ISSUE-307",
+      "title": "Ezekiel 14:14 and 14:20: nun's dagesh",
+      "status": "already-tracked-307",
+      "claims": [
+        "ch5:L492",
+        "ch5:L493"
+      ],
+      "refs": [
+        [
+          "Ezekiel",
+          14,
+          14
+        ],
+        [
+          "Ezekiel",
+          14,
+          20
+        ]
+      ],
+      "note_ids": [
+        "Ezekiel 14:14/2/0",
+        "Ezekiel 14:20/2/0"
+      ],
+      "issue": 307,
+      "explanation": "Both Introduction quotations lack U+05BC on nun; both doc-note quotations include it and their prose explicitly describes nun as dageshed. Current issue comments attribute the manuscript readings to Ben."
+    }
+  ],
+  "uncertainty": [
+    {
+      "id": "SAM-21-12",
+      "title": "2 Samuel 21:12: scope of a single qere note",
+      "status": "attribution-scope-ambiguity",
+      "claims": [
+        "ch5:L385",
+        "appendices:L384"
+      ],
+      "refs": [
+        [
+          "2Samuel",
+          21,
+          12
+        ]
+      ],
+      "note_ids": [
+        "2Samuel 21:12/2/0"
+      ],
+      "explanation": "The chapter entry speaks of one qere note for two atoms; the note and appendix describe three. The chapter may describe only a subset. Cached evidence does not decide whether this is stale wording or deliberately partial scope."
+    },
+    {
+      "id": "SUMMARY-VISIBILITY",
+      "title": "Summary and chapter 2 disagree about doubled tsinnor visibility",
+      "status": "source-chronology-and-rendering-uncertainty",
+      "claims": [
+        "summary:L36",
+        "ch2:L422"
+      ],
+      "refs": [
+        [
+          "Proverbs",
+          30,
+          19
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The older Summary says the three listed phonetic features are not yet visible on Wikisource; chapter 2 says doubled tsinnor already appears. Current cached code contains the corresponding helper. No live template or browser rendering was examined, so actual current visibility remains unverified."
+    },
+    {
+      "id": "PS-MAQAF-SCOPE",
+      "title": "Psalm 66:12 and 119:90: membership in the maqaf list",
+      "status": "apparent-list-scope-disagreement",
+      "claims": [
+        "ch2:L307"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          66,
+          12
+        ],
+        [
+          "Psalms",
+          119,
+          90
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The heading describes servant atoms with maqaf in Aleppo and MAM, but these quoted examples have a space; current text also has a space and no local note on this boundary. The list may have broadened to post-stress-meteg examples. Note silence cannot establish what Aleppo has."
+    },
+    {
+      "id": "IMPLICIT-MS",
+      "title": "Manuscript attribution remains incomplete",
+      "status": "attribution-ambiguity",
+      "claims": [
+        "ch5:L379",
+        "ch5:L429",
+        "ch5:L412",
+        "ch5:L428"
+      ],
+      "refs": [
+        [
+          "2Samuel",
+          16,
+          23
+        ],
+        [
+          "2Kings",
+          18,
+          27
+        ],
+        [
+          "2Kings",
+          14,
+          7
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The cached notes corroborate some prose or gap claims without an explicitly named Aleppo manuscript or a complete corresponding ketiv quotation. Preserve this evidence as partial. A bare phrase meaning 'in the manuscript' is not an Aleppo sigil."
+    },
+    {
+      "id": "GEN-36-13",
+      "title": "Genesis 36:13: shared accent-name wording anomaly",
+      "status": "shared-description-anomaly-not-source-contradiction",
+      "claims": [
+        "ch3:L797"
+      ],
+      "refs": [
+        [
+          "Genesis",
+          36,
+          13
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "Both sources show U+05A3 twice while both call the accent merkha. U+05A3's Unicode name is MUNAH. The sources agree with each other, so this is not an Introduction/doc-note contradiction. No manuscript interpretation is changed."
+    },
+    {
+      "id": "PS-1-3",
+      "title": "Psalm 1:3: added grey maqaf absent from the illustration",
+      "status": "supplemental-edition-evidence",
+      "claims": [
+        "ch2:L980",
+        "ch2:L436",
+        "ch2:L442"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          1,
+          3
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The current parsed text has the added grey maqaf, as the Introduction policy describes; the displayed example lacks it. No local doc-note addresses that boundary. Keep this separate from the note-supported Proverbs illustration finding."
+    },
+    {
+      "id": "MAL-HOLAM",
+      "title": "Malachi 2:7: incidental holam in the specimen",
+      "status": "notation-policy-uncertainty",
+      "claims": [
+        "ch5:L511"
+      ],
+      "refs": [
+        [
+          "Malachi",
+          2,
+          7
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The Introduction specimen includes holam; the explicit Aleppo note quotation omits it and quotes an absence explanation. The meteg claim agrees. The specimen may follow a different convention for conventional divine-name pointing; assess that scope before treating the incidental mark as a manuscript contradiction."
+    },
+    {
+      "id": "PS-119-138",
+      "title": "Psalm 119:138: incidental meteg without an explicit Introduction sigil",
+      "status": "attribution-uncertainty",
+      "claims": [
+        "ch5:L609"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          119,
+          138
+        ]
+      ],
+      "note_ids": [
+        "Psalms 119:138/2/0"
+      ],
+      "explanation": "The Introduction specimen adds meteg on initial vav; the note specimen lacks it. Both address the extra revia. The Introduction row lacks an explicit manuscript sigil, so do not invent Aleppo attribution for the incidental meteg."
+    },
+    {
+      "id": "PS-18-2-ATTRIBUTION",
+      "title": "Psalm 18:2: Aleppo attribution inside the declared missing range",
+      "status": "unsupported-manuscript-attribution",
+      "claims": [
+        "ch5:L625",
+        "ch4:L33"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          18,
+          2
+        ]
+      ],
+      "note_ids": [
+        "Psalms 18:2/2/0"
+      ],
+      "explanation": "The Introduction uses an explicit Aleppo sigil for this form, although its missing-extent roster covers Psalms 15:1 through 25:1. The note discusses other named manuscripts and reading tradition. An unquoted prior report or shorthand could account for the attribution; the caches do not supply it. The grammatical claim agrees, so this is an attribution question, not proof of a false manuscript reading."
+    }
+  ],
+  "controls": [
+    {
+      "id": "PROV-30-5",
+      "title": "Proverbs 30:5: Aleppo's omitted revia dot agrees",
+      "status": "semantic-agreement-mark-order-difference",
+      "claims": [
+        "ch2:L932"
+      ],
+      "refs": [
+        [
+          "Proverbs",
+          30,
+          5
+        ]
+      ],
+      "note_ids": [
+        "Proverbs 30:5/2/0"
+      ],
+      "explanation": "Both sources attribute the omitted revia dot to Aleppo. Ordering of the Introduction's displayed accents differs from MAM's order; that literal encoding difference is not a competing manuscript reading."
+    },
+    {
+      "id": "JOB-11-6",
+      "title": "Job 11:6: oleh position agrees",
+      "status": "semantic-agreement",
+      "claims": [
+        "ch2:L974"
+      ],
+      "refs": [
+        [
+          "Job",
+          11,
+          6
+        ]
+      ],
+      "note_ids": [
+        "Job 11:6/2/0"
+      ],
+      "explanation": "Both sources attribute the same oleh position to Aleppo. The printed alternative is explicitly distinguished. Source strings retain their original mark order."
+    }
+  ]
+}

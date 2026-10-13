@@ -1,0 +1,4422 @@
+[
+  {
+    "topic": "root:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/root.mediawiki#L1",
+    "route": "Introduction navigation",
+    "evidence_boundary": "navigation-container",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "root:5",
+    "heading": "תוכן העניינים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/root.mediawiki#L5",
+    "route": "Introduction navigation",
+    "evidence_boundary": "navigation-container",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L1",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:5",
+    "heading": "הסבר קצר על המהדורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L5",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:9",
+    "heading": "שלוש תכונות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L9",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:18",
+    "heading": "1. רישיון לשימוש חופשי",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L18",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:28",
+    "heading": "2. \"תיקון קוראים\" ומהדורת לימוד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L28",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:38",
+    "heading": "3. תיעוד מלא ושקוף לקביעת הנוסח ושיטת העריכה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L38",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:53",
+    "heading": "תוכן המבוא המלא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L53",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:57",
+    "heading": "ההודעות המקוריות בתקשורת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L57",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:65",
+    "heading": "פרויקטים נלווים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L65",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:73",
+    "heading": "\"מקרא כתורה שבעל־פה, תורה שבכתב ותורה דיגיטלית\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L73",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "summary:77",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L77",
+    "route": "Summary claims and routing",
+    "evidence_boundary": "mixed-current-policy-and-chronology",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L1",
+    "route": "Edition goals and source basis",
+    "evidence_boundary": "policy-with-note-checkable-examples",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:5",
+    "heading": "הסבר קצר על המהדורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L5",
+    "route": "Edition goals and source basis",
+    "evidence_boundary": "policy-with-note-checkable-examples",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:17",
+    "heading": "תורה שבכתב או שבעל־פה: מהו \"מִקְרָא\"?",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L17",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:25",
+    "heading": "מִקְרָא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L25",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:40",
+    "heading": "מִדְרָשׁ וְתַרְגּוּם",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L40",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:54",
+    "heading": "מִשְׁנָה וְתַלְמוּד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L54",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 17,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:90",
+    "heading": "תּוֹרָה שֶׁבִּכְתָב וְתוֹרָה שֶׁבְּעַל־פֶּה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L90",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:100",
+    "heading": "בְּרָכוֹת וּתְפִלּוֹת: תּוֹרָה שֶׁבְּעַל־פֶּה הַיּוֹצֵאת מִתּוֹךְ מִקְרָא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L100",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:103",
+    "heading": "בין סופרים לקוראים: מהי \"מָסוֹרָה\"?",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L103",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:113",
+    "heading": "מסורת הסופרים ומסורת הקוראים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L113",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:131",
+    "heading": "למי מיועדת חכמת המסורה?",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L131",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:147",
+    "heading": "יצירת מופת ואוצר יקר: מהו \"כֶּתֶר\"?",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L147",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:149",
+    "heading": "כתר: שתי מסורות בכתב־יד אחד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L149",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:157",
+    "heading": "שלושה סוגים של מהדורות מקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L157",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:166",
+    "heading": "\"תיקון קוראים\" במובן הרחב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L166",
+    "route": "Transmission, Masorah and manuscript history",
+    "evidence_boundary": "history-with-attributed-corpus-examples",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:172",
+    "heading": "כתר ארם צובה כבסיס לנוסח המסורה במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L172",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:180",
+    "heading": "פרופ' ישראל ייבין על נוסח הניקוד והטעמים בכתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L180",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:188",
+    "heading": "הרב מרדכי ברויאר על נוסח האותיות בכתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L188",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:200",
+    "heading": "מסקנות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L200",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:206",
+    "heading": "מהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L206",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:208",
+    "heading": "המהדורות האחרות של המקרא ברשת האינטרנט",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L208",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:218",
+    "heading": "הרישיון לשימוש חופשי",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L218",
+    "route": "Textual basis, editions and licensing",
+    "evidence_boundary": "mostly-external-source-evidence",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:234",
+    "heading": "תיעוד הנוסח",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L234",
+    "route": "Completeness of local decision documentation",
+    "evidence_boundary": "no-finite-decision-denominator",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:250",
+    "heading": "הבסיס להקלדה ולתיעוד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L250",
+    "route": "Typing and WLC chronology",
+    "evidence_boundary": "historical-source-with-current-examples",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:260",
+    "heading": "עיצוב המהדורה לנוחותו של הקורא והלומד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L260",
+    "route": "Design routing and historical narrative",
+    "evidence_boundary": "policy-or-history",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:266",
+    "heading": "ברוך המקום שמסר תורתו לשומרים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L266",
+    "route": "Design routing and historical narrative",
+    "evidence_boundary": "policy-or-history",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:268",
+    "heading": "תעלומת הכתר האמתית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L268",
+    "route": "Design routing and historical narrative",
+    "evidence_boundary": "policy-or-history",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:288",
+    "heading": "מוֹסרי התורה ושומרי הכתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L288",
+    "route": "Design routing and historical narrative",
+    "evidence_boundary": "policy-or-history",
+    "counts": {
+      "source_units": 21,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:316",
+    "heading": "קישורים חיצוניים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L316",
+    "route": "Design routing and historical narrative",
+    "evidence_boundary": "policy-or-history",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch1:320",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L320",
+    "route": "Design routing and historical narrative",
+    "evidence_boundary": "policy-or-history",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:5",
+    "heading": "הסבר קצר על עיצוב המקרא במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L5",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:11",
+    "heading": "בין כתר לתיקון קוראים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L11",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:19",
+    "heading": "שני ערכים מנוגדים בתוך מהדורת ברויאר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L19",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:40",
+    "heading": "מסקנה: שיטת העיצוב הראוי ל\"תיקון קוראים\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L40",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:46",
+    "heading": "קרי וכתיב ושם הוי\"ה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L46",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:48",
+    "heading": "ניקוד ה\"כתיב\" וה\"קרי\" במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L48",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:60",
+    "heading": "סדר הופעתם של ה\"כתיב\" וה\"קרי\" במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L60",
+    "route": "Edition display and textual conventions",
+    "evidence_boundary": "design-policy-and-structure",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:71",
+    "heading": "שתי התבניות העיקריות ל\"קרי וכתיב\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L71",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:83",
+    "heading": "\"קרי ולא כתיב\" ו\"כתיב ולא קרי\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L83",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:91",
+    "heading": "\"כתיב מילה חדה וקרי תרתין מילין\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L91",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 4,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:100",
+    "heading": "\"כתיב תרתין מילין וקרי מילה חדה\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L100",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:107",
+    "heading": "קרי שונה מהכתיב בשתי מילים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L107",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:115",
+    "heading": "\"קרי וכתיב\" של אֵם קריאה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L115",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 6,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:130",
+    "heading": "יתיר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L130",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:134",
+    "heading": "קרי וכתיב בשני כתבי־היד השונים שהם היסוד למהדורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L134",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:143",
+    "heading": "תיעוד ניקודו של הכתיב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L143",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:149",
+    "heading": "שם הוי\"ה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L149",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:163",
+    "heading": "עיצוב הניקוד והטעמים במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L163",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:167",
+    "heading": "טעם כפול בהברה המוטעמת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L167",
+    "route": "Ketiv/qere, matres and pointing",
+    "evidence_boundary": "finite-structure-counts-and-note-evidence",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:180",
+    "heading": "קמץ קטן",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L180",
+    "route": "Accent duplication and qamats variants",
+    "evidence_boundary": "structural-populations-and-display-policy",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:203",
+    "heading": "חולם בוי\"ו עיצורית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L203",
+    "route": "Accent duplication and qamats variants",
+    "evidence_boundary": "structural-populations-and-display-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:209",
+    "heading": "פסק ולגרמיה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L209",
+    "route": "Holam, paseq and legarmeh",
+    "evidence_boundary": "finite-lists-general-rules-and-external-history",
+    "counts": {
+      "source_units": 25,
+      "explicit_reference_units": 9,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:252",
+    "heading": "הניקוד בתיבת \"ירושלם\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L252",
+    "route": "Explicit hataf and morphological exceptions",
+    "evidence_boundary": "finite-lists-and-completeness",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:260",
+    "heading": "חטפים באותיות לא גרוניות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L260",
+    "route": "Explicit hataf and morphological exceptions",
+    "evidence_boundary": "finite-lists-and-completeness",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:283",
+    "heading": "מתיגת הזקף",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L283",
+    "route": "Explicit hataf and morphological exceptions",
+    "evidence_boundary": "finite-lists-and-completeness",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:287",
+    "heading": "נקודה בוי\"ו עיצורית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L287",
+    "route": "Metigah, meteg, maqaf and double accents",
+    "evidence_boundary": "conditional-note-policy-and-finite-lists",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:293",
+    "heading": "מרכא בתיבת תביר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L293",
+    "route": "Metigah, meteg, maqaf and double accents",
+    "evidence_boundary": "conditional-note-policy-and-finite-lists",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:299",
+    "heading": "עקביות במקפים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L299",
+    "route": "Metigah, meteg, maqaf and double accents",
+    "evidence_boundary": "conditional-note-policy-and-finite-lists",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 3,
+      "form_claims": 25
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:309",
+    "heading": "גרש או גרשיים ותלישא גדולה בתיבה אחת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L309",
+    "route": "Metigah, meteg, maqaf and double accents",
+    "evidence_boundary": "conditional-note-policy-and-finite-lists",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 7,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:326",
+    "heading": "סימן הרפה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L326",
+    "route": "Metigah, meteg, maqaf and double accents",
+    "evidence_boundary": "conditional-note-policy-and-finite-lists",
+    "counts": {
+      "source_units": 13,
+      "explicit_reference_units": 10,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:344",
+    "heading": "הטעמים הנדירים בכ\"א הספרים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L344",
+    "route": "Rafe and rare poetic accents",
+    "evidence_boundary": "complete-list-and-corpus-populations",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:355",
+    "heading": "תווים עתידיים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L355",
+    "route": "Rafe and rare poetic accents",
+    "evidence_boundary": "complete-list-and-corpus-populations",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:359",
+    "heading": "עשרת הדברות: תצוגת מערכת הטעמים הכפולה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L359",
+    "route": "Rafe and rare poetic accents",
+    "evidence_boundary": "complete-list-and-corpus-populations",
+    "counts": {
+      "source_units": 27,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:390",
+    "heading": "עיצוב טעמי אמ\"ת במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L390",
+    "route": "Rafe and rare poetic accents",
+    "evidence_boundary": "complete-list-and-corpus-populations",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:392",
+    "heading": "טעם כפול בהברה המוטעמת בספרי אמ\"ת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L392",
+    "route": "Rafe and rare poetic accents",
+    "evidence_boundary": "complete-list-and-corpus-populations",
+    "counts": {
+      "source_units": 15,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:424",
+    "heading": "עולה ויורד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L424",
+    "route": "Poetic stress helpers and oleh/veyored",
+    "evidence_boundary": "verse-populations-placement-and-policy",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 5,
+      "form_claims": 3
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:448",
+    "heading": "צינורית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L448",
+    "route": "Poetic stress helpers and oleh/veyored",
+    "evidence_boundary": "verse-populations-placement-and-policy",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:458",
+    "heading": "הבחנה בין אתנח הפוך לגלגל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L458",
+    "route": "Poetic stress helpers and oleh/veyored",
+    "evidence_boundary": "verse-populations-placement-and-policy",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:473",
+    "heading": "רביע מוגרש",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L473",
+    "route": "Poetic stress helpers and oleh/veyored",
+    "evidence_boundary": "verse-populations-placement-and-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:479",
+    "heading": "טעם משני בתיבה הראויה להיות מוקפת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L479",
+    "route": "Secondary accents and stress",
+    "evidence_boundary": "explicit-lists-and-semantic-projection",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:487",
+    "heading": "א. תיבה הראויה להיות מוקפת: הסבר התופעה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L487",
+    "route": "Secondary accents and stress",
+    "evidence_boundary": "explicit-lists-and-semantic-projection",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:505",
+    "heading": "ב. תיבה הראויה להיות מוקפת: הסוגים השונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L505",
+    "route": "Secondary accents and stress",
+    "evidence_boundary": "explicit-lists-and-semantic-projection",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 6,
+      "form_claims": 1
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:519",
+    "heading": "ג. תיבה הראויה להיות מוקפת: טעמים משניים בתיבות זעירות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L519",
+    "route": "Secondary accents and stress",
+    "evidence_boundary": "explicit-lists-and-semantic-projection",
+    "counts": {
+      "source_units": 69,
+      "explicit_reference_units": 21,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:609",
+    "heading": "ד. תיבה הראויה להיות מוקפת: טעם בראש התיבה בהברה בלתי־מוטעמת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L609",
+    "route": "Secondary accents and stress",
+    "evidence_boundary": "explicit-lists-and-semantic-projection",
+    "counts": {
+      "source_units": 47,
+      "explicit_reference_units": 40,
+      "form_claims": 1
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:667",
+    "heading": "ה. מרכא משני מניע את השווא הבא אחריו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L667",
+    "route": "Secondary accents and stress",
+    "evidence_boundary": "explicit-lists-and-semantic-projection",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 9,
+      "form_claims": 23
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:687",
+    "heading": "עיצוב חדש לחלוקת הפרשות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L687",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 18,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:716",
+    "heading": "צורת השיר בכ\"א הספרים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L716",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:718",
+    "heading": "מבוא לצורת השיר בכ\"א הספרים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L718",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:730",
+    "heading": "צורת השיר במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L730",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:738",
+    "heading": "רשימת הדפים לצורת השיר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L738",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 65,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:807",
+    "heading": "מעין צורת השיר (לא מובהק)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L807",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 5,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:819",
+    "heading": "יישור משני הצדדים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L819",
+    "route": "Paragraphs and song layouts",
+    "evidence_boundary": "structure-and-note-policy",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:827",
+    "heading": "צורת השיר בספרי אמ\"ת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L827",
+    "route": "Layout history and aesthetics",
+    "evidence_boundary": "external-source-and-policy",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:829",
+    "heading": "מנהג הסופרים מול מנהג הדפוסים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L829",
+    "route": "Layout history and aesthetics",
+    "evidence_boundary": "external-source-and-policy",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:847",
+    "heading": "מהדורות שיצאו בדור האחרון",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L847",
+    "route": "Layout history and aesthetics",
+    "evidence_boundary": "external-source-and-policy",
+    "counts": {
+      "source_units": 17,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:883",
+    "heading": "עיצוב פסוקי אמ\"ת במהדורתנו: הנימוקים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L883",
+    "route": "Layout history and aesthetics",
+    "evidence_boundary": "external-source-and-policy",
+    "counts": {
+      "source_units": 16,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:915",
+    "heading": "עיצוב פסוקי אמ\"ת במהדורתנו: היישום בפועל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L915",
+    "route": "Representative poetic illustrations",
+    "evidence_boundary": "bounded-examples-reviewed",
+    "counts": {
+      "source_units": 51,
+      "explicit_reference_units": 11,
+      "form_claims": 2
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:993",
+    "heading": "אופן הביצוע הטכני של העיצוב בספרי אמ\"ת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L993",
+    "route": "Representative poetic illustrations",
+    "evidence_boundary": "bounded-examples-reviewed",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1008",
+    "heading": "כותרות באמצע השורה במשלי ואיוב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1008",
+    "route": "Representative poetic illustrations",
+    "evidence_boundary": "bounded-examples-reviewed",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1025",
+    "heading": "כותרות במזמורי תהלים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1025",
+    "route": "Headings, Psalm titles and book order",
+    "evidence_boundary": "structure-note-presence-and-history",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1035",
+    "heading": "סדרם של ספרי המקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1035",
+    "route": "Headings, Psalm titles and book order",
+    "evidence_boundary": "structure-note-presence-and-history",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1041",
+    "heading": "ספרי נביאים אחרונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1041",
+    "route": "Headings, Psalm titles and book order",
+    "evidence_boundary": "structure-note-presence-and-history",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1049",
+    "heading": "ספרי כתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1049",
+    "route": "Headings, Psalm titles and book order",
+    "evidence_boundary": "structure-note-presence-and-history",
+    "counts": {
+      "source_units": 26,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1091",
+    "heading": "הצגת סדר הספרים במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1091",
+    "route": "Headings, Psalm titles and book order",
+    "evidence_boundary": "structure-note-presence-and-history",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1095",
+    "heading": "ניווט בתוך ספרי המקרא לפי פרקים ופסוקים ונושאים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1095",
+    "route": "Versification",
+    "evidence_boundary": "cached-comparison-populations-required",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1103",
+    "heading": "ניווט לפי הפרקים ומספרי פסוקים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1103",
+    "route": "Versification",
+    "evidence_boundary": "cached-comparison-populations-required",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1113",
+    "heading": "הבדלים בין הדפוסים בחלוקת הפרקים ומספרי הפסוקים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1113",
+    "route": "Versification",
+    "evidence_boundary": "cached-comparison-populations-required",
+    "counts": {
+      "source_units": 66,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1185",
+    "heading": "ניווט לפי חלוקה עניינית של ספרי המקרא (לפי נושאים)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1185",
+    "route": "Future navigation plans",
+    "evidence_boundary": "proposal-not-current-reading-claim",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch2:1195",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L1195",
+    "route": "Future navigation plans",
+    "evidence_boundary": "proposal-not-current-reading-claim",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1",
+    "route": "Torah source method and comparative basis",
+    "evidence_boundary": "general-rule-and-external-source-evidence",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:5",
+    "heading": "הסבר קצר על קביעת הנוסח בתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L5",
+    "route": "Torah source method and comparative basis",
+    "evidence_boundary": "general-rule-and-external-source-evidence",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:13",
+    "heading": "יסודות הנוסח",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L13",
+    "route": "Torah source method and comparative basis",
+    "evidence_boundary": "general-rule-and-external-source-evidence",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:25",
+    "heading": "תיעוד הנוסח",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L25",
+    "route": "Torah source method and comparative basis",
+    "evidence_boundary": "general-rule-and-external-source-evidence",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:43",
+    "heading": "מסורת הסופרים בתורה: נוסח האותיות והתיבות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L43",
+    "route": "Torah source method and comparative basis",
+    "evidence_boundary": "general-rule-and-external-source-evidence",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:45",
+    "heading": "נוסח האותיות בתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L45",
+    "route": "Torah source method and comparative basis",
+    "evidence_boundary": "general-rule-and-external-source-evidence",
+    "counts": {
+      "source_units": 19,
+      "explicit_reference_units": 11,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:73",
+    "heading": "האותיות החריגות בתורה בכתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L73",
+    "route": "Leningrad spelling and joined forms",
+    "evidence_boundary": "finite-lists-and-completeness",
+    "counts": {
+      "source_units": 135,
+      "explicit_reference_units": 125,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:217",
+    "heading": "סיכום התוצאות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L217",
+    "route": "Leningrad spelling and joined forms",
+    "evidence_boundary": "finite-lists-and-completeness",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 7,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:233",
+    "heading": "תיבות מחוברות בתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L233",
+    "route": "Leningrad spelling and joined forms",
+    "evidence_boundary": "finite-lists-and-completeness",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 11,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:252",
+    "heading": "מסורת הסופרים בתורה: חלוקת הפרשות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L252",
+    "route": "Special letters and exceptional scribal claims",
+    "evidence_boundary": "finite-structure-and-note-evidence",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 6,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:271",
+    "heading": "מסורת הסופרים בתורה: אותיות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L271",
+    "route": "Special letters and exceptional scribal claims",
+    "evidence_boundary": "finite-structure-and-note-evidence",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:276",
+    "heading": "אותיות גדולות וקטנות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L276",
+    "route": "Special letters and exceptional scribal claims",
+    "evidence_boundary": "finite-structure-and-note-evidence",
+    "counts": {
+      "source_units": 54,
+      "explicit_reference_units": 48,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:337",
+    "heading": "אותיות מנוקדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L337",
+    "route": "Special letters and exceptional scribal claims",
+    "evidence_boundary": "finite-structure-and-note-evidence",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 10,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:352",
+    "heading": "נו\"ן הפוכה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L352",
+    "route": "Special letters and exceptional scribal claims",
+    "evidence_boundary": "finite-structure-and-note-evidence",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:366",
+    "heading": "מסורת הסופרים בתורה: הערות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L366",
+    "route": "Torah vowel and accent method",
+    "evidence_boundary": "source-rule-and-examples",
+    "counts": {
+      "source_units": 262,
+      "explicit_reference_units": 28,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:636",
+    "heading": "מסורת הסופרים בתורה: מהדורת כתיב (אותיות בלבד)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L636",
+    "route": "Torah vowel and accent method",
+    "evidence_boundary": "source-rule-and-examples",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:640",
+    "heading": "מסורת הסופרים בתורה לעומת מסורת הקוראים: ההבדל ברמת הדיוק",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L640",
+    "route": "Torah vowel and accent method",
+    "evidence_boundary": "source-rule-and-examples",
+    "counts": {
+      "source_units": 22,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:686",
+    "heading": "מסורת הקוראים בתורה: השימוש בכתי\"ל כבסיס לניקוד ולטעמים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L686",
+    "route": "Precision and aggregate totals",
+    "evidence_boundary": "finite-populations-need-role-projection",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:696",
+    "heading": "הערכת הדיוק בנוסח הניקוד בכתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L696",
+    "route": "Precision and aggregate totals",
+    "evidence_boundary": "finite-populations-need-role-projection",
+    "counts": {
+      "source_units": 15,
+      "explicit_reference_units": 4,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:721",
+    "heading": "הערכת הדיוק בנוסח הטעמים בכתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L721",
+    "route": "Precision and aggregate totals",
+    "evidence_boundary": "finite-populations-need-role-projection",
+    "counts": {
+      "source_units": 18,
+      "explicit_reference_units": 6,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:750",
+    "heading": "מסורת הקוראים בתורה: מקומות חריגים בנוסח הניקוד והטעמים בכתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L750",
+    "route": "Torah vowel/accent irregularity lists",
+    "evidence_boundary": "finite-note-evidence-lists",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:760",
+    "heading": "ספר בראשית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L760",
+    "route": "Torah vowel/accent irregularity lists",
+    "evidence_boundary": "finite-note-evidence-lists",
+    "counts": {
+      "source_units": 76,
+      "explicit_reference_units": 73,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:841",
+    "heading": "ספר שמות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L841",
+    "route": "Torah vowel/accent irregularity lists",
+    "evidence_boundary": "finite-note-evidence-lists",
+    "counts": {
+      "source_units": 88,
+      "explicit_reference_units": 85,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:934",
+    "heading": "ספר ויקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L934",
+    "route": "Torah vowel/accent irregularity lists",
+    "evidence_boundary": "finite-note-evidence-lists",
+    "counts": {
+      "source_units": 45,
+      "explicit_reference_units": 42,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:984",
+    "heading": "ספר במדבר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L984",
+    "route": "Torah vowel/accent irregularity lists",
+    "evidence_boundary": "finite-note-evidence-lists",
+    "counts": {
+      "source_units": 54,
+      "explicit_reference_units": 52,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1042",
+    "heading": "ספר דברים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1042",
+    "route": "Torah vowel/accent irregularity lists",
+    "evidence_boundary": "finite-note-evidence-lists",
+    "counts": {
+      "source_units": 74,
+      "explicit_reference_units": 71,
+      "form_claims": 4
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1121",
+    "heading": "מסורת הקוראים בתורה: חטפים באותיות לא גרוניות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1121",
+    "route": "Non-guttural hataf rosters",
+    "evidence_boundary": "five-roster-counts-reviewed",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 5,
+      "form_claims": 5
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1137",
+    "heading": "מסורת הקוראים בתורה: סימון הגעיה (המתג)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1137",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1139",
+    "heading": "הגדרות יסוד ושיטת ברויאר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1139",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1161",
+    "heading": "הביקורת על שיטת ברויאר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1161",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 17,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1193",
+    "heading": "הסביבה המוסיקלית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1193",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1205",
+    "heading": "דיוקו של כתי\"ל בתחום הגעיות ובכלל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1205",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1221",
+    "heading": "רמת הדיוק האפשרי בשחזור הגעיות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1221",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1242",
+    "heading": "סימון הגעיות בדפוסים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1242",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1252",
+    "heading": "נוסח הגעיות במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1252",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 19,
+      "explicit_reference_units": 5,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1283",
+    "heading": "אחרית דבר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1283",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1295",
+    "heading": "געיה ימנית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1295",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1299",
+    "heading": "מסורת הקוראים בתורה: עשרת הדברות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1299",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1301",
+    "heading": "הטעם התחתון והטעם העליון",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1301",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1319",
+    "heading": "השיבוש שחל בדפוסים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1319",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1325",
+    "heading": "עשרת הדברות במהדורתנו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1325",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1333",
+    "heading": "רשימת הדפים לעשרת הדברות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1333",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1337",
+    "heading": "ציון מספרי הפסוקים בעשרת הדברות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1337",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1351",
+    "heading": "פסוק מעשה ראובן",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1351",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 21,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1390",
+    "heading": "סדרי הקריאה בתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1390",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1392",
+    "heading": "חלוקת הסדרים בתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1392",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 0,
+      "form_claims": 1
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1413",
+    "heading": "החלוקה לפרשות השבוע",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1413",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1419",
+    "heading": "החלוקה לעולים בתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1419",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch3:1427",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1427",
+    "route": "Meteg policy and exceptions",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L1",
+    "route": "Missing Aleppo extent and source basis",
+    "evidence_boundary": "extent-roster-and-source-attribution",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:7",
+    "heading": "הסבר קצר על קביעת הנוסח במקומות בנ\"ך החסרים בכתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L7",
+    "route": "Missing Aleppo extent and source basis",
+    "evidence_boundary": "extent-roster-and-source-attribution",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:13",
+    "heading": "יסודות הנוסח ותיעודו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L13",
+    "route": "Missing Aleppo extent and source basis",
+    "evidence_boundary": "extent-roster-and-source-attribution",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:21",
+    "heading": "המקומות החסרים בכתר בנביאים וכתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L21",
+    "route": "Missing Aleppo extent and source basis",
+    "evidence_boundary": "extent-roster-and-source-attribution",
+    "counts": {
+      "source_units": 13,
+      "explicit_reference_units": 6,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:47",
+    "heading": "מסורת הסופרים בנביאים וכתובים: נוסח האותיות והתיבות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L47",
+    "route": "Comparative spelling totals",
+    "evidence_boundary": "finite-counts-and-external-comparisons",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:49",
+    "heading": "דיוקם היחסי של כתבי־היד בנוסח הכתיב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L49",
+    "route": "Comparative spelling totals",
+    "evidence_boundary": "finite-counts-and-external-comparisons",
+    "counts": {
+      "source_units": 39,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:96",
+    "heading": "האותיות החריגות בנביאים וכתובים בכתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L96",
+    "route": "Spelling rosters and hard choices",
+    "evidence_boundary": "finite-lists-and-note-evidence",
+    "counts": {
+      "source_units": 193,
+      "explicit_reference_units": 178,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:303",
+    "heading": "ספקות והכרעות קשות בקביעת נוסח האותיות והתיבות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L303",
+    "route": "Spelling rosters and hard choices",
+    "evidence_boundary": "finite-lists-and-note-evidence",
+    "counts": {
+      "source_units": 25,
+      "explicit_reference_units": 17,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:333",
+    "heading": "קונטרסי המסורה של כתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L333",
+    "route": "Spelling rosters and hard choices",
+    "evidence_boundary": "finite-lists-and-note-evidence",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:352",
+    "heading": "מסורת הסופרים בנביאים וכתובים: חלוקת הפרשות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L352",
+    "route": "Paragraph and special-letter policy",
+    "evidence_boundary": "structure-and-source-attribution",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 4,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:371",
+    "heading": "מסורת הסופרים בנביאים וכתובים: אותיות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L371",
+    "route": "Paragraph and special-letter policy",
+    "evidence_boundary": "structure-and-source-attribution",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:375",
+    "heading": "מסורת הסופרים במגילת אסתר: הערות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L375",
+    "route": "Paragraph and special-letter policy",
+    "evidence_boundary": "structure-and-source-attribution",
+    "counts": {
+      "source_units": 39,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:417",
+    "heading": "מסורת הקוראים בנביאים וכתובים: השימוש בכתי\"ל כבסיס לניקוד ולטעמים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L417",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:423",
+    "heading": "מסורת הקוראים בנביאים וכתובים: מקומות חריגים בנוסח הניקוד והטעמים בכתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L423",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:429",
+    "heading": "ספר מלכים (הקטע החסר בכתר ארם צובה)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L429",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 15,
+      "explicit_reference_units": 13,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:449",
+    "heading": "ספר ירמיהו (הקטע החסר בכתר ארם צובה)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L449",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 8,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:465",
+    "heading": "ספר תרי עשר (הקטעים החסרים בכתר ארם צובה)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L465",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 35,
+      "explicit_reference_units": 30,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:506",
+    "heading": "ספר תהלים (הקטע החסר בכתר ארם צובה)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L506",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 21,
+      "explicit_reference_units": 17,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:531",
+    "heading": "מגילת שיר השירים החל מ\"בַּמֶּלֶךְ שְׁלֹמֹה\" (ג,יא)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L531",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 11,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:549",
+    "heading": "מגילת קֹהלת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L549",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 33,
+      "explicit_reference_units": 29,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:588",
+    "heading": "מגילת איכה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L588",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 18,
+      "explicit_reference_units": 15,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:611",
+    "heading": "מגילת אסתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L611",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 12,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:629",
+    "heading": "ספר דניאל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L629",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 63,
+      "explicit_reference_units": 58,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:698",
+    "heading": "ספר עזרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L698",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 54,
+      "explicit_reference_units": 49,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch4:757",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L757",
+    "route": "Vowel, accent and meteg rosters",
+    "evidence_boundary": "finite-lists-and-conditional-note-policy",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L1",
+    "route": "Aleppo method and Isaiah examples",
+    "evidence_boundary": "source-claims-and-finite-statistics",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:5",
+    "heading": "הסבר קצר על קביעת הנוסח בנביאים וכתובים במקומות הקיימים בכתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L5",
+    "route": "Aleppo method and Isaiah examples",
+    "evidence_boundary": "source-claims-and-finite-statistics",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:11",
+    "heading": "יסודות הנוסח ותיעודו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L11",
+    "route": "Aleppo method and Isaiah examples",
+    "evidence_boundary": "source-claims-and-finite-statistics",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:17",
+    "heading": "הכנת מהדורת מקרא על־פי כתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L17",
+    "route": "Aleppo method and Isaiah examples",
+    "evidence_boundary": "source-claims-and-finite-statistics",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:19",
+    "heading": "מהדורות מקרא קודמות על־פי כתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L19",
+    "route": "Aleppo method and Isaiah examples",
+    "evidence_boundary": "source-claims-and-finite-statistics",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:42",
+    "heading": "ספר ישעיהו כדוגמה ליישום השיטה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L42",
+    "route": "Aleppo method and Isaiah examples",
+    "evidence_boundary": "source-claims-and-finite-statistics",
+    "counts": {
+      "source_units": 24,
+      "explicit_reference_units": 16,
+      "form_claims": 5
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:75",
+    "heading": "מסורת הסופרים בנביאים וכתובים: נוסח האותיות והתיבות בכתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L75",
+    "route": "Spelling, atom joins and Isaiah pointing",
+    "evidence_boundary": "finite-note-evidence-and-completeness",
+    "counts": {
+      "source_units": 95,
+      "explicit_reference_units": 27,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:208",
+    "heading": "מסורת הסופרים בנביאים וכתובים: אותיות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L208",
+    "route": "Spelling, atom joins and Isaiah pointing",
+    "evidence_boundary": "finite-note-evidence-and-completeness",
+    "counts": {
+      "source_units": 55,
+      "explicit_reference_units": 45,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:274",
+    "heading": "מסורת הסופרים בנביאים וכתובים: חלוקת הפרשות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L274",
+    "route": "Spelling, atom joins and Isaiah pointing",
+    "evidence_boundary": "finite-note-evidence-and-completeness",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:280",
+    "heading": "מסורת הקוראים בנביאים וכתובים: מקומות חריגים בנוסח הניקוד והטעמים בכתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L280",
+    "route": "Spelling, atom joins and Isaiah pointing",
+    "evidence_boundary": "finite-note-evidence-and-completeness",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:296",
+    "heading": "ספר יהושע",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L296",
+    "route": "Spelling, atom joins and Isaiah pointing",
+    "evidence_boundary": "finite-note-evidence-and-completeness",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 8,
+      "form_claims": 8
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:310",
+    "heading": "ספר שופטים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L310",
+    "route": "Spelling, atom joins and Isaiah pointing",
+    "evidence_boundary": "finite-note-evidence-and-completeness",
+    "counts": {
+      "source_units": 13,
+      "explicit_reference_units": 10,
+      "form_claims": 11
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:328",
+    "heading": "ספר שמואל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L328",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 56,
+      "explicit_reference_units": 54,
+      "form_claims": 59
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:389",
+    "heading": "ספר מלכים (חוץ מהקטע החסר בכתר)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L389",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 39,
+      "explicit_reference_units": 36,
+      "form_claims": 43
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:433",
+    "heading": "ספר ישעיהו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L433",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:437",
+    "heading": "ספר ירמיהו (חוץ מהקטע החסר בכתר)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L437",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 20,
+      "explicit_reference_units": 16,
+      "form_claims": 16
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:463",
+    "heading": "ספר יחזקאל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L463",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 30,
+      "explicit_reference_units": 26,
+      "form_claims": 26
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:499",
+    "heading": "ספר תרי עשר (חוץ מהקטעים החסרים בכתר)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L499",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 9,
+      "form_claims": 10
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:518",
+    "heading": "ספר דברי הימים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L518",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 39,
+      "explicit_reference_units": 35,
+      "form_claims": 37
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:563",
+    "heading": "ספר תהלים (חוץ מהקטע החסר בכתר)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L563",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 60,
+      "explicit_reference_units": 55,
+      "form_claims": 56
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:629",
+    "heading": "ספר איוב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L629",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 9,
+      "form_claims": 10
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:646",
+    "heading": "ספר משלי",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L646",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 19,
+      "explicit_reference_units": 15,
+      "form_claims": 16
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:670",
+    "heading": "מגילת רות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L670",
+    "route": "Per-book pointing and pointed-ketiv lists",
+    "evidence_boundary": "bounded-pointing-batches-reviewed",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 2,
+      "form_claims": 2
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:678",
+    "heading": "מגילת שיר השירים עד \"בְּנוֹת צִיּוֹן\" (ג,יא)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L678",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 1,
+      "form_claims": 1
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:689",
+    "heading": "מסורת הקוראים בנביאים וכתובים: חטפים באותיות לא גרוניות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L689",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 22,
+      "explicit_reference_units": 18,
+      "form_claims": 544
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:733",
+    "heading": "מסורת הקוראים בנביאים וכתובים: עיצוב טעמי אמ\"ת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L733",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:737",
+    "heading": "עולה ויורד",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L737",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 8,
+      "form_claims": 50
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:763",
+    "heading": "צינורית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L763",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 3,
+      "form_claims": 3
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:777",
+    "heading": "הבחנה בין אתנח הפוך לגלגל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L777",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:781",
+    "heading": "רביע מוגרש",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L781",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:793",
+    "heading": "טעם משני בתיבה הראויה להיות מוקפת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L793",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:797",
+    "heading": "חלוקת הסדרים בנביאים וכתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L797",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 31,
+      "explicit_reference_units": 4,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:835",
+    "heading": "תוספת פסוקים בכתבי־היד ובדפוסים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L835",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 19,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "ch5:869",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L869",
+    "route": "Hataf and remaining aggregate policy",
+    "evidence_boundary": "finite-rosters-and-source-rule",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L1",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:5",
+    "heading": "רשימת מקורות (כתבי־יד, דפוסים ומחקרים), כלי עזר וחומר להעשרה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L5",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:7",
+    "heading": "שני כתבי־היד העיקריים שהם היסוד לנוסח המקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L7",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:10",
+    "heading": "א. כתר ארם צובה (יד בן צבי 1)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L10",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:23",
+    "heading": "ב. [https://ihbmr.com/manuscripts/L כתב־יד לנינגרד] ([[:W:הספרייה הלאומית הרוסית|הספרייה הלאומית הרוסית]], [[:W:סנקט פטרבורג|סנקט פטרבורג]], Ms. EVR I B 19a)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L23",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:29",
+    "heading": "ג. אתרים חיצוניים לעיון בכתבי־יד מקראיים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L29",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:35",
+    "heading": "כתבי־היד לתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L35",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 30,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:71",
+    "heading": "כתבי־היד לנביאים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L71",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:86",
+    "heading": "כתבי־היד לכתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L86",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 15,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:105",
+    "heading": "מבחר כתבי־יד תימנים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L105",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 0,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:107",
+    "heading": "מאפייני כתבי־היד התימנים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L107",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 18,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:134",
+    "heading": "מבחר כתבי־יד תימנים לתורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L134",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 18,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:155",
+    "heading": "מבחר כתבי־יד תימנים לספרי הנביאים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L155",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:166",
+    "heading": "מבחר כתבי־יד תימנים לספרי הכתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L166",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:181",
+    "heading": "מבחר כתבי־יד ספרדים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L181",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 13,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:197",
+    "heading": "מבחר כתבי־יד אשכנזים ואיטלקים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L197",
+    "route": "Sigil and manuscript roster",
+    "evidence_boundary": "current-decoding-spec-and-attribution",
+    "counts": {
+      "source_units": 19,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:220",
+    "heading": "ספרות המסורה וכלי עזר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L220",
+    "route": "Bibliography and edition identifiers",
+    "evidence_boundary": "external-source-history",
+    "counts": {
+      "source_units": 26,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:251",
+    "heading": "מהדורות מקרא המיוסדות על כתבי־היד הטברנים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L251",
+    "route": "Bibliography and edition identifiers",
+    "evidence_boundary": "external-source-history",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:265",
+    "heading": "דפוסים נפוצים (שאינם מיוסדים על כתבי־היד הטברנים)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L265",
+    "route": "Bibliography and edition identifiers",
+    "evidence_boundary": "external-source-history",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:280",
+    "heading": "מקרא, מסורה, תרגום, תפסיר, ומפרשי יסוד: אבני דרך בהדפסתם",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L280",
+    "route": "Bibliography and edition identifiers",
+    "evidence_boundary": "external-source-history",
+    "counts": {
+      "source_units": 34,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:318",
+    "heading": "התרגומים ופירושי המופת על המקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L318",
+    "route": "Bibliography and edition identifiers",
+    "evidence_boundary": "external-source-history",
+    "counts": {
+      "source_units": 13,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:339",
+    "heading": "רשימת התבניות לתיעוד ועיצוב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L339",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:343",
+    "heading": "תבניות לתיעוד מקומי והערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L343",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:353",
+    "heading": "תבניות לעיצוב כללי",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L353",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:360",
+    "heading": "תבניות ניווט",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L360",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:365",
+    "heading": "תבניות לראשי ספרים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L365",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:370",
+    "heading": "תבניות ל\"קרי וכתיב\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L370",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 16,
+      "explicit_reference_units": 11,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:389",
+    "heading": "תבניות לחלוקת הפרשות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L389",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:401",
+    "heading": "תבניות לאותיות מיוחדות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L401",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 3,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:408",
+    "heading": "תבניות לניקוד וטעמים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L408",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 12,
+      "explicit_reference_units": 2,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:422",
+    "heading": "תבניות לצורת השיר בכ\"א הספרים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L422",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:427",
+    "heading": "תבניות לצורת השיר בספרי אמ\"ת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L427",
+    "route": "Technical template roles and counts",
+    "evidence_boundary": "finite-role-aware-structure-populations",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:440",
+    "heading": "רשימת תיקונים ושינויים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L440",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:449",
+    "heading": "שלבי העבודה בפיתוח הפרויקט",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L449",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:457",
+    "heading": "חלק ראשון: תורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L457",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 11,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:474",
+    "heading": "חלק שני: חמש מגילות ושאר המקומות החסרים בכתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L474",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:485",
+    "heading": "חלק שלישי: שאר ספרי נביאים וכתובים לפי כתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L485",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:497",
+    "heading": "גיליון הנתונים (2015–2026) והעברת הפרויקט למרחב הראשי של ויקיטקסט",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L497",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 3,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:505",
+    "heading": "הגהה יסודית של כל המקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L505",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:517",
+    "heading": "רשימת המשתתפים בפרויקט \"מקרא על פי המסורה\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L517",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:525",
+    "heading": "הקדשה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L525",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:530",
+    "heading": "יישומים חיצוניים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L530",
+    "route": "Chronology, contributors and apps",
+    "evidence_boundary": "historical-not-doc-note-testable",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:538",
+    "heading": "מהדורה \"מנוקדת\" ומהדורת \"כתיב\"",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L538",
+    "route": "Derivative edition proposals",
+    "evidence_boundary": "proposal-not-current-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:544",
+    "heading": "מהדורה מנוקדת (בלי טעמים)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L544",
+    "route": "Derivative edition proposals",
+    "evidence_boundary": "proposal-not-current-policy",
+    "counts": {
+      "source_units": 10,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:559",
+    "heading": "מהדורת כתיב (אותיות בלבד)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L559",
+    "route": "Derivative edition proposals",
+    "evidence_boundary": "proposal-not-current-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:565",
+    "heading": "יצירת מהדורות נגזרות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L565",
+    "route": "Derivative edition proposals",
+    "evidence_boundary": "proposal-not-current-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "appendices:571",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L571",
+    "route": "Derivative edition proposals",
+    "evidence_boundary": "proposal-not-current-policy",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L1",
+    "route": "Aleppo surviving/lost extent",
+    "evidence_boundary": "extent-and-attribution",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:4",
+    "heading": "הצילומים של כתר ארם צובה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L4",
+    "route": "Aleppo surviving/lost extent",
+    "evidence_boundary": "extent-and-attribution",
+    "counts": {
+      "source_units": 6,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:13",
+    "heading": "צילומי קטעים מהתורה, וסוף ספר דברים מ\"וּמִשְׁאַרְתֶּֽךָ\" (כח,יז)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L13",
+    "route": "Aleppo surviving/lost extent",
+    "evidence_boundary": "extent-and-attribution",
+    "counts": {
+      "source_units": 17,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:33",
+    "heading": "ספר יהושע",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L33",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 33,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:68",
+    "heading": "ספר שופטים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L68",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 34,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:104",
+    "heading": "ספר שמואל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L104",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 74,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:180",
+    "heading": "ספר מלכים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L180",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 78,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:260",
+    "heading": "ספר ישעיהו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L260",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 55,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:317",
+    "heading": "ספר ירמיהו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L317",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 72,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:391",
+    "heading": "ספר יחזקאל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L391",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 59,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:452",
+    "heading": "ספר תרי עשר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L452",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 48,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:502",
+    "heading": "ספר דברי הימים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L502",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 79,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:583",
+    "heading": "ספר תהלים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L583",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 64,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:649",
+    "heading": "ספר איוב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L649",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 27,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:678",
+    "heading": "ספר משלי",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L678",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 25,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:705",
+    "heading": "מגילת רות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L705",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:712",
+    "heading": "מגילת שיר השירים עד \"בְּנוֹת צִיּוֹן\" (ג,יא)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L712",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-aleppo:718",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L718",
+    "route": "Aleppo manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L1",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:4",
+    "heading": "הצילומים של כתי\"ל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L4",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:16",
+    "heading": "ספר בראשית",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L16",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 65,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:83",
+    "heading": "ספר שמות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L83",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 54,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:139",
+    "heading": "ספר ויקרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L139",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 38,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:179",
+    "heading": "ספר במדבר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L179",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 54,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:235",
+    "heading": "ספר דברים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L235",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 49,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:286",
+    "heading": "ספר יהושע",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L286",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 32,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:320",
+    "heading": "ספר שופטים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L320",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 32,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:354",
+    "heading": "ספר שמואל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L354",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 72,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:428",
+    "heading": "ספר מלכים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L428",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 77,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:507",
+    "heading": "ספר ישעיהו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L507",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 54,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:563",
+    "heading": "ספר ירמיהו",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L563",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 66,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:631",
+    "heading": "ספר יחזקאל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L631",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 59,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:692",
+    "heading": "ספר תרי עשר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L692",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 50,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:744",
+    "heading": "ספר דברי הימים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L744",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 80,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:826",
+    "heading": "ספר תהלים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L826",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 65,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:893",
+    "heading": "ספר איוב",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L893",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 29,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:924",
+    "heading": "ספר משלי",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L924",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 27,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:953",
+    "heading": "מגילת רות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L953",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:963",
+    "heading": "מגילת שיר השירים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L963",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 8,
+      "explicit_reference_units": 1,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:973",
+    "heading": "מגילת קֹהלת",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L973",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 13,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:988",
+    "heading": "מגילת איכה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L988",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:999",
+    "heading": "מגילת אסתר",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L999",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 14,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:1015",
+    "heading": "ספר דניאל",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L1015",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 23,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:1040",
+    "heading": "ספר עזרא",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L1040",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 35,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:1077",
+    "heading": "מסורה סופית (מ\"ס-ל)",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L1077",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 60,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "index-leningrad:1139",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L1139",
+    "route": "Leningrad manuscript locators",
+    "evidence_boundary": "locator-roster-not-reading-evidence",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1",
+    "route": "Historical WLC typing categories",
+    "evidence_boundary": "historical-snapshot",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:2",
+    "heading": "רשימת ההערות בהקלדת וסטמינטר ופירושם",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L2",
+    "route": "Historical WLC typing categories",
+    "evidence_boundary": "historical-snapshot",
+    "counts": {
+      "source_units": 65,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:97",
+    "heading": "רשימת השינויים המלאה מגירסה 4.10 ל-4.12",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L97",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:101",
+    "heading": "תורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L101",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 176,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:298",
+    "heading": "נביאים ראשונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L298",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 127,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:453",
+    "heading": "נביאים אחרונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L453",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 278,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:782",
+    "heading": "כתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L782",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 312,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1145",
+    "heading": "רשימת השינויים המלאה מגירסה 4.12 ל-4.14",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1145",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1149",
+    "heading": "תורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1149",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 117,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1291",
+    "heading": "נביאים ראשונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1291",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 72,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1389",
+    "heading": "נביאים אחרונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1389",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 130,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1579",
+    "heading": "כתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1579",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 162,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:1801",
+    "heading": "רשימת השינויים המלאה מגירסה 4.14 ל-4.16",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1801",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 348,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:2160",
+    "heading": "תורה",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L2160",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 119,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:2308",
+    "heading": "נביאים ראשונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L2308",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 249,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:2604",
+    "heading": "נביאים אחרונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L2604",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 591,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "westminster-typing:3288",
+    "heading": "כתובים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L3288",
+    "route": "Historical WLC version-change rosters",
+    "evidence_boundary": "historical-comparison-populations",
+    "counts": {
+      "source_units": 743,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L1",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:5",
+    "heading": "גיליון הנתונים",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L5",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:10",
+    "heading": "טור A בקובץ: שם הספר ומספר הפרק",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L10",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 9,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:25",
+    "heading": "טור B בקובץ: מספר הפסוק",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L25",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:33",
+    "heading": "טור C בקובץ: קוד הבא לפני הפסוק",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L33",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 5,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:43",
+    "heading": "טור D בקובץ: תבנית הניווט לפסוק",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L43",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 7,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:53",
+    "heading": "טור E בקובץ: הנוסח המלא של הפסוק",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L53",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 4,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "data-sheet-guide:61",
+    "heading": "הערות",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L61",
+    "route": "Frozen spreadsheet column schema",
+    "evidence_boundary": "historical-schema-not-current-sheet-proof",
+    "counts": {
+      "source_units": 2,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  },
+  {
+    "topic": "technical-guide:1",
+    "heading": "Page preamble",
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/technical-guide.mediawiki#L1",
+    "route": "Redirect to spreadsheet guide",
+    "evidence_boundary": "navigation-container",
+    "counts": {
+      "source_units": 1,
+      "explicit_reference_units": 0,
+      "form_claims": 0
+    },
+    "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
+  }
+]

@@ -100,6 +100,12 @@
       "objects": [
         "100644 blob c8b7091bcf0a1b37154c726bddcc433284127c20\tdoc/sigil-decoding.md"
       ]
+    },
+    "in/mam-ws-revisions.json": {
+      "last_commit": "647f5e225f69782194137e74627cfaced4a7d2a2 2026-10-13T10:28:22-04:00",
+      "objects": [
+        "100644 blob 5a43afd8dc25775d4e72868791dc3f56cd8ff267\tin/mam-ws-revisions.json"
+      ]
     }
   },
   "issues": {
@@ -186,6 +192,48 @@
       "labels": [],
       "state": "OPEN",
       "title": "Add nun’s dagesh to the Introduction at Ezekiel 14:14 and 14:20"
+    },
+    "304": {
+      "body": "Written by a Codex session on 2026-10-11. Ben's instruction was:\n\n> Please create a github issue corresponding to \"sic, missing נְאֻם־ in MAM's illustration\"\n\nEverything else below is this session's reconstruction.\n\nThe MAM doc-note for the qere without ketiv at Jeremiah 31:37 omits נְאֻם־ from its Aleppo body-text illustration:\n\n<div dir=\"rtl\">א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")</div>\n\nThe same note's lemma includes the omitted atom:\n\n<div dir=\"rtl\">יָמִ֥ים [בָּאִ֖ים] נְאֻם־יְהֹוָ֑ה</div>\n\nRestore נְאֻם־ immediately before the divine name in the MAM documentation note's illustration on Hebrew Wikisource. After the source correction, reconcile the local capture and the study's translator's annotation.\n\nEvidence at the verified repository commit:\n\n- [Captured MAM doc-note](https://github.com/bdenckla/MAM-basics/blob/5a9f53b72805b3b5ed976ac45bb8e5e207c1e3bb/MAM-parsed/plus/C2-Jeremiah.json#L9550-L9569).\n- [Study quotation and omission annotation](https://github.com/bdenckla/MAM-basics/blob/5a9f53b72805b3b5ed976ac45bb8e5e207c1e3bb/in/near-aleppo/qere-without-ketiv-mam-notes-en.json#L75-L117).\n",
+      "comments": [
+        {
+          "id": "IC_kwDORi0zS88AAAABbHqJ4Q",
+          "author": {
+            "login": "bdenckla"
+          },
+          "authorAssociation": "OWNER",
+          "body": "@skadish1 Do you agree that נְאֻם־ should be added to the doc-note, yielding א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה?",
+          "createdAt": "2026-10-11T23:09:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/304#issuecomment-6114937313",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDORi0zS88AAAABbdyzug",
+          "author": {
+            "login": "skadish1"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "[Done](https://he.wikisource.org/w/index.php?title=%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&curid=237690&diff=3088451&oldid=2988015).",
+          "createdAt": "2026-10-13T04:19:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/304#issuecomment-6138147770",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "state": "CLOSED",
+      "title": "Jeremiah 31:37: restore נְאֻם־ in MAM's Aleppo illustration"
     }
+  },
+  "owner_update_context": {
+    "ecf00895b4cf12e672ab29e5a90213af07aa194e": "ecf00895b4cf12e672ab29e5a90213af07aa194e 2026-10-13T10:54:01-04:00 Regenerate MAM products from the Wikisource refresh",
+    "dabe559f9722e35e35178112d87f715658d74fbf": "dabe559f9722e35e35178112d87f715658d74fbf 2026-10-13T13:03:54-04:00 Reconcile the Jeremiah 31:37 translation and regenerate near-Aleppo pages"
   }
 }

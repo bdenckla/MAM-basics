@@ -1,0 +1,1854 @@
+{
+  "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
+  "verses_scanned": 23202,
+  "instances": {
+    "k1q2-sr-kqq": 13,
+    "k2q1": 8,
+    "קרי ולא כתיב": 9,
+    "k2q2": 8,
+    "k1q2-wr-kqq": 2,
+    "כתיב ולא קרי": 8,
+    "k3q3": 1,
+    "k1q2-ur-qqk": 2,
+    "k1q1-mcom": 1,
+    "מ:מקף אפור": 116,
+    "k1q2-sr-qqk": 1,
+    "k1q2-sr-bcom": 1
+  },
+  "distinct_verses": {
+    "k1q2-sr-kqq": 13,
+    "k2q1": 8,
+    "קרי ולא כתיב": 9,
+    "k2q2": 8,
+    "k1q2-wr-kqq": 2,
+    "כתיב ולא קרי": 8,
+    "k3q3": 1,
+    "k1q2-ur-qqk": 2,
+    "k1q1-mcom": 1,
+    "מ:מקף אפור": 109,
+    "k1q2-sr-qqk": 1,
+    "k1q2-sr-bcom": 1
+  },
+  "records": [
+    {
+      "ref": "Genesis 30:11",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/30/11/2/1",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "בגד",
+          "2": "בָּ֣א גָ֑ד",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Exodus 4:2",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/4/2/2/1",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מזה",
+          "2": "מַה־זֶּ֣ה",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 33:2",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/33/2/2/3",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "אשדת",
+          "2": "אֵ֥שׁ דָּ֖ת",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Judges 16:25",
+      "path": "MAM-parsed/plus/B2-Judges.json",
+      "json_pointer": "/book39s/0/chapters/16/25/2/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "כי טוב",
+          "2": "כְּט֣וֹב",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Judges 20:13",
+      "path": "MAM-parsed/plus/B2-Judges.json",
+      "json_pointer": "/book39s/0/chapters/20/13/2/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[בְּנֵ֣י]",
+          "2": "בְּנֵ֣י"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 9:1",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/9/1/2/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מבן ימין",
+          "2": "מִבִּנְיָמִ֗ין",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 20:2",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/20/2/2/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "לו עשה",
+          "2": "לֹֽא־יַעֲשֶׂ֨ה",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 24:8",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/24/8/2/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מן המערה",
+          "2": "מֵֽהַמְּעָרָ֔ה",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 5:2",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/5/2/2/1/tmpl_params/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "הייתה מוציא",
+          "2": "הָיִ֛יתָ הַמּוֹצִ֥יא",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 8:3",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/8/3/2/1/tmpl_params/1",
+      "category": "k1q2-wr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "בנהר",
+          "2": "בִּֽנְהַר־פְּרָֽת",
+          "סוג": "כו\"ק קרי שונה מהכתיב בשתי מילים"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 13:33",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/13/33/2/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(אם)־",
+          "2": "אם",
+          "3": "־"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 15:21",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/15/21/2/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(אם)",
+          "2": "אם"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 16:23",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/16/23/2/1/tmpl_params/1/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[אִ֖ישׁ]",
+          "2": "אִ֖ישׁ"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 18:20",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/18/20/2/1/tmpl_params/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[כֵּ֥ן]",
+          "2": "כֵּ֥ן"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 21:12",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/21/12/2/1/tmpl_params/1",
+      "category": "k3q3",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "תלום שם הפלשתים",
+          "2": "תְּלָא֥וּם שָׁ֙מָּה֙ פְּלִשְׁתִּ֔ים",
+          "סוג": "כו\"ק של שלוש מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "1Kings 17:15",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/0/chapters/17/15/2/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "הוא והיא",
+          "2": "הִֽיא־וָה֛וּא",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 5:18",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/5/18/2/3/tmpl_params/1/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(נא)־",
+          "2": "נא",
+          "3": "־"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 18:27",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/18/27/2/5/tmpl_params/1",
+      "category": "k1q2-ur-qqk",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "שניהם",
+          "2": "מֵימֵ֥י רַגְלֵיהֶ֖ם",
+          "סוג": "קו\"כ קרי שונה מהכתיב בשתי מילים"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 19:31",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/19/31/2/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[צְבָא֖וֹת]",
+          "2": "צְבָא֖וֹת"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 19:37",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/19/37/2/3",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[בָּנָיו֙]",
+          "2": "בָּנָיו֙"
+        }
+      }
+    },
+    {
+      "ref": "Isaiah 3:15",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/3/15/2/0",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מלכם",
+          "2": "מַה־לָּכֶם֙",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Isaiah 9:6",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/9/6/2/0/tmpl_params/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "לם רבה",
+          "2": "לְמַרְבֵּ֨ה",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Isaiah 26:20",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/26/20/2/5/tmpl_params/1",
+      "category": "k1q1-mcom",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "יעבור",
+          "2": "יַעֲבׇר־",
+          "סוג": "כו\"ק בין שני מקפים"
+        }
+      }
+    },
+    {
+      "ref": "Isaiah 36:12",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/36/12/2/3/tmpl_params/1",
+      "category": "k1q2-ur-qqk",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "שיניהם",
+          "2": "מֵימֵ֥י רַגְלֵיהֶ֖ם",
+          "סוג": "קו\"כ קרי שונה מהכתיב בשתי מילים"
+        }
+      }
+    },
+    {
+      "ref": "Isaiah 44:24",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/44/24/2/1/tmpl_params/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מי אתי",
+          "2": "מֵאִתִּֽי",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 6:29",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/6/29/2/1",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מאשתם",
+          "2": "מֵאֵ֖שׁ תַּ֣ם",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 14:14",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/14/14/2/1/tmpl_params/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "ואלול ותרמות",
+          "2": "וֶאֱלִיל֙ וְתַרְמִ֣ית",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 18:3",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/18/3/2/1",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "והנהו",
+          "2": "וְהִנֵּה־ה֛וּא",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 31:37",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/31/37/2/1/tmpl_params/1/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[בָּאִ֖ים]",
+          "2": "בָּאִ֖ים"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 38:16",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/38/16/2/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(את)",
+          "2": "את"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 39:12",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/39/12/2/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(אם)",
+          "2": "אם"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 48:20",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/48/20/2/1/tmpl_params/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "הילילי וזעקי",
+          "2": [
+            "הֵילִ֣ילוּ",
+            {
+              "tmpl_name": "מ:פסק"
+            },
+            "וּֽזְﬞעָ֑קוּ"
+          ],
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 50:29",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/50/29/2/3/tmpl_params/1/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[לָהּ֙]",
+          "2": "לָהּ֙"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 51:3",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/51/3/2/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(ידרך)",
+          "2": "ידרך"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 8:6",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/8/6/2/1",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מהם",
+          "2": "מָ֣ה הֵ֣ם",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 9:11",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/9/11/2/3/tmpl_params/1",
+      "category": "k1q2-wr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "כאשר",
+          "2": "כְּכֹ֖ל אֲשֶׁ֥ר",
+          "סוג": "כו\"ק קרי שונה מהכתיב בשתי מילים"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 42:9",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/42/9/2/0",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "ומתחתה לשכות",
+          "2": "וּמִתַּ֖חַת הַלְּשָׁכ֣וֹת",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 48:16",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/16/2/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(חמש)",
+          "2": "חמש"
+        }
+      }
+    },
+    {
+      "ref": "Psalms 1:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/1/1/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 1:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/1/2/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 1:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/1/3/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 2:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/2/7/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 2:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/2/7/2/7",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 2:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/2/7/2/9/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 5:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/5/5/2/3/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 5:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/5/5/2/3/tmpl_params/1/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 6:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/6/3/2/4",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 10:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/10/10/2/4",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "חלכאים",
+          "2": "חֵ֣ל כָּאִֽים",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Psalms 14:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/14/7/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 15:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/15/5/2/6",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 18:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/18/1/2/12",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 18:12",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/18/12/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 18:20",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/18/20/2/4",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 18:20",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/18/20/2/6",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 22:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/22/9/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 22:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/22/9/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 24:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/24/10/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 30:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/30/8/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 30:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/30/10/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 31:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/10/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 31:19",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/19/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 31:20",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/20/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 31:21",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/21/2/6",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 31:22",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/22/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 32:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/32/2/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 35:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/35/10/2/0/tmpl_params/1/tmpl_params/ד/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 35:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/35/10/2/7",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 36:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/36/7/2/9",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 39:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/39/2/2/4/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 39:13",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/39/13/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 40:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/40/5/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 40:18",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/40/18/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 42:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/42/5/2/11",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 43:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/43/1/2/7/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 45:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/45/8/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 46:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/46/4/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 47:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/47/5/2/2/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 49:15",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/49/15/2/8",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 53:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/53/7/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 54:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/54/8/2/2/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 55:16",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/55/16/2/0",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "ישימות",
+          "2": [
+            "יַשִּׁ֤י מָ֨וֶת",
+            {
+              "tmpl_name": "מ:לגרמיה-2"
+            }
+          ],
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Psalms 60:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/60/2/2/4",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 62:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/62/9/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 62:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/62/10/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 64:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/64/7/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 65:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/65/9/2/7",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 65:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/65/10/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 66:15",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/66/15/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 66:20",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/66/20/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 67:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/67/2/2/4",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 68:11",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/68/11/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 69:15",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/69/15/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 73:28",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/73/28/2/7",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 74:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/74/9/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 80:15",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/80/15/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 83:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/83/9/2/4",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 88:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/88/1/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 88:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/88/10/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 95:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/95/7/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 96:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/96/4/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 97:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/97/10/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 98:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/98/9/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 102:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/102/3/2/6",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 104:6",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/104/6/2/4",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 106:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/106/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 106:48",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/106/48/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 111:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/111/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 112:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/112/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 113:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/113/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 117:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/117/2/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 123:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/123/4/2/7",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "לגאיונים",
+          "2": "לִגְאֵ֥י יוֹנִֽים",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Psalms 135:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/135/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 137:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/137/1/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 141:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/141/5/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 143:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/143/3/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 144:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/144/2/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 144:13",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/144/13/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 145:21",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/145/21/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 147:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/147/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 147:20",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/147/20/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 148:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/148/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 149:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/149/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 150:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/150/1/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 1:22",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/1/22/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 3:12",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/3/12/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 6:3",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/3/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 6:26",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/26/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 8:13",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/8/13/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 8:34",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/8/34/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 19:7",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/19/7/2/0/tmpl_params/1/tmpl_params/ד/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 21:29",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/21/29/2/5/tmpl_params/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "יכין דרכיו",
+          "2": "יָבִ֬ין דַּרְכּֽוֹ",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "Proverbs 22:17",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/22/17/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 23:5",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/23/5/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 25:7",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/25/7/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 27:22",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/27/22/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 28:22",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/28/22/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 29:13",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/29/13/2/2/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 30:9",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/30/9/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 30:9",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/30/9/2/8",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 3:4",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/3/4/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 7:11",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/7/11/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 12:15",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/12/15/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 14:5",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/14/5/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 14:13",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/14/13/2/9",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 18:19",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/18/19/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 21:33",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/21/33/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 22:28",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/22/28/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 24:13",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/24/13/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 24:15",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/24/15/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 31:7",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/31/7/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 32:5",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/32/5/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 33:9",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/33/9/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 34:10",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/34/10/2/7",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 34:37",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/34/37/2/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 37:6",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/37/6/2/5",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 37:21",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/37/21/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 38:1",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/38/1/2/3",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מנהסערה",
+          "2": [
+            "מִ֥ן",
+            {
+              "tmpl_name": "מ:פסק"
+            },
+            "הַסְּעָרָ֗ה"
+          ],
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Job 38:12",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/38/12/2/3/tmpl_params/1",
+      "category": "k2q2",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "ידעתה שחר",
+          "2": "יִדַּ֖עְתָּ הַשַּׁ֣חַר",
+          "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "Job 40:6",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/40/6/2/3",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מנסערה",
+          "2": [
+            "מִ֥ן",
+            {
+              "tmpl_name": "מ:פסק"
+            },
+            "סְעָרָ֗ה"
+          ],
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Job 40:10",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/40/10/2/0/tmpl_params/1/1",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 42:3",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/42/3/2/3",
+      "category": "מ:מקף אפור",
+      "node": {
+        "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Ruth 3:5",
+      "path": "MAM-parsed/plus/E2-Ruth.json",
+      "json_pointer": "/book39s/0/chapters/3/5/2/1/tmpl_params/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[אֵלַ֖י]",
+          "2": "אֵלַ֖י"
+        }
+      }
+    },
+    {
+      "ref": "Ruth 3:12",
+      "path": "MAM-parsed/plus/E2-Ruth.json",
+      "json_pointer": "/book39s/0/chapters/3/12/2/1/tmpl_params/1",
+      "category": "כתיב ולא קרי",
+      "node": {
+        "tmpl_name": "כתיב ולא קרי",
+        "tmpl_params": {
+          "1": "(אם)",
+          "2": "אם"
+        }
+      }
+    },
+    {
+      "ref": "Ruth 3:17",
+      "path": "MAM-parsed/plus/E2-Ruth.json",
+      "json_pointer": "/book39s/0/chapters/3/17/2/1/tmpl_params/1",
+      "category": "קרי ולא כתיב",
+      "node": {
+        "tmpl_name": "קרי ולא כתיב",
+        "tmpl_params": {
+          "1": "[אֵלַ֔י]",
+          "2": "אֵלַ֔י"
+        }
+      }
+    },
+    {
+      "ref": "Lamentations 1:6",
+      "path": "MAM-parsed/plus/E3-Lamentations.json",
+      "json_pointer": "/book39s/0/chapters/1/6/2/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "מן בת",
+          "2": "מִבַּת־",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Lamentations 4:3",
+      "path": "MAM-parsed/plus/E3-Lamentations.json",
+      "json_pointer": "/book39s/0/chapters/4/3/2/3/tmpl_params/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "כי ענים",
+          "2": "כַּיְעֵנִ֖ים",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Nehemiah 2:13",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/2/13/2/3/tmpl_params/1",
+      "category": "k1q2-sr-qqk",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "המפרוצים",
+          "2": [
+            "הֵ֣ם",
+            {
+              "tmpl_name": "מ:פסק"
+            },
+            "פְּרוּצִ֔ים"
+          ],
+          "סוג": "קו\"כ כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "1Chronicles 9:4",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/0/chapters/9/4/2/1/tmpl_params/1",
+      "category": "k1q2-sr-bcom",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "בנימן",
+          "2": "בָּנִ֔י מִן־",
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין בין שני מקפים"
+        }
+      }
+    },
+    {
+      "ref": "1Chronicles 27:12",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/0/chapters/27/12/2/1/tmpl_params/1",
+      "category": "k1q2-sr-kqq",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "לבנימיני",
+          "2": [
+            "לַבֵּ֣ן",
+            {
+              "tmpl_name": "מ:פסק"
+            },
+            "יְמִינִ֑י"
+          ],
+          "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "2Chronicles 34:6",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/34/6/2/1",
+      "category": "k2q1",
+      "node": {
+        "tmpl_name": "מ:כו״ק מיוחד",
+        "tmpl_params": {
+          "1": "בחר בתיהם",
+          "2": "בְּחַרְבֹתֵיהֶ֖ם",
+          "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    }
+  ]
+}

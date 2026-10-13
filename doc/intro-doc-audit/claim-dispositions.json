@@ -1,0 +1,4498 @@
+[
+  {
+    "claim": "ch5:L430",
+    "batch": "ketiv",
+    "status": "already-tracked",
+    "evidence": [
+      {
+        "ref": "2Kings 18:27",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 18:27/2/0",
+          "2Kings 18:27/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c18v27",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L495",
+    "batch": "ketiv",
+    "status": "already-tracked",
+    "evidence": [
+      {
+        "ref": "Ezekiel 28:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 28:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c28v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9B%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L492",
+    "batch": "ketiv",
+    "status": "already-tracked",
+    "evidence": [
+      {
+        "ref": "Ezekiel 14:14",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 14:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c14v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L493",
+    "batch": "ketiv",
+    "status": "already-tracked",
+    "evidence": [
+      {
+        "ref": "Ezekiel 14:20",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 14:20/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c14v20",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L458",
+    "batch": "ketiv",
+    "status": "new-supported-attributed-form-disagreement",
+    "evidence": [
+      {
+        "ref": "Jeremiah 31:37",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 31:37/2/0",
+          "Jeremiah 31:37/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c31v37",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L385",
+    "batch": "ketiv",
+    "status": "scope-ambiguity",
+    "evidence": [
+      {
+        "ref": "2Samuel 21:12",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 21:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c21v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L431",
+    "batch": "ketiv",
+    "status": "wrong-locator-intended-verse-verified",
+    "evidence": [
+      {
+        "ref": "2Kings 21:20",
+        "verse_exists": true,
+        "note_ids": [],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c21v20",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L561",
+    "batch": "ketiv",
+    "status": "wrong-locator-intended-verse-verified",
+    "evidence": [
+      {
+        "ref": "2Chronicles 6:7",
+        "verse_exists": true,
+        "note_ids": [],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c6v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L379",
+    "batch": "ketiv",
+    "status": "attribution-or-full-form-incomplete",
+    "evidence": [
+      {
+        "ref": "2Samuel 16:23",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 16:23/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c16v23",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%98%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L429",
+    "batch": "ketiv",
+    "status": "attribution-or-full-form-incomplete",
+    "evidence": [
+      {
+        "ref": "2Kings 18:27",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 18:27/2/0",
+          "2Kings 18:27/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c18v27",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L412",
+    "batch": "ketiv",
+    "status": "prose-corroborated-full-ketiv-unverified",
+    "evidence": [
+      {
+        "ref": "2Kings 14:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 14:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c14v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L428",
+    "batch": "ketiv",
+    "status": "prose-corroborated-full-ketiv-unverified",
+    "evidence": [
+      {
+        "ref": "2Kings 14:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 14:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c14v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L326",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Judges 19:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 19:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c19v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L366",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 5:6",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 5:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c5v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L367",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 5:12",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 5:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c5v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L369",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 14:27",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 14:27/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c14v27",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L370",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 19:18",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 19:18/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c19v18",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L371",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 19:19",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 19:19/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c19v19",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L372",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 19:22",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 19:22/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c19v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L373",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 19:23",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 19:23/2/0",
+          "1Samuel 19:23/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c19v23",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L374",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 19:23",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 19:23/2/0",
+          "1Samuel 19:23/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c19v23",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L375",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Samuel 27:8",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 27:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c27v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%9B%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L376",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 5:2",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 5:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c5v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L377",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 8:3",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 8:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c8v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L378",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 12:24",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 12:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c12v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L380",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 18:12",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 18:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c18v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L381",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 18:20",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 18:20/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c18v20",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L382",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 19:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 19:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c19v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L383",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 20:14",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 20:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c20v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L384",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 21:12",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 21:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c21v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L386",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 24:16",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 24:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c24v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L387",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Samuel 24:18",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 24:18/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c24v18",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L418",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Kings 7:45",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 7:45/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c7v45",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L419",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Kings 9:9",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 9:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c9v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L420",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 2:16",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 2:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c2v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L421",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 4:2",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 4:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c4v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L422",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 4:3",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 4:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c4v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L423",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 4:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 4:7/2/0",
+          "2Kings 4:7/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c4v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L424",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 4:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 4:7/2/0",
+          "2Kings 4:7/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c4v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L425",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 5:18",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 5:18/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c5v18",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L426",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 10:27",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 10:27/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c10v27",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L427",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Kings 11:2",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 11:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c11v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L453",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 2:24",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 2:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c2v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L454",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 3:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 3:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c3v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L455",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 15:4",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 15:4/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c15v4",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%98%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L456",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 24:9",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 24:9/2/0",
+          "Jeremiah 24:9/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c24v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L457",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 34:17",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 34:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c34v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L460",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 50:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 50:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c50v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%A0/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L461",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Jeremiah 50:29",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 50:29/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c50v29",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%A0/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L490",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Ezekiel 6:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 6:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c6v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L491",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Ezekiel 9:11",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 9:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c9v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L494",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Ezekiel 21:28",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 21:28/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c21v28",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L496",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Ezekiel 36:14",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 36:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c36v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9C%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L497",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Ezekiel 42:16",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 42:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c42v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9E%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L514",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Amos 8:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Amos 8:8/2/0",
+          "Amos 8:8/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CC-Amos.html#c8v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A2%D7%9E%D7%95%D7%A1_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L555",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Chronicles 1:46",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 1:46/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c1v46",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L556",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Chronicles 3:24",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 3:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c3v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L557",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Chronicles 9:4",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 9:4/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c9v4",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L558",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Chronicles 27:29",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 27:29/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c27v29",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L559",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "1Chronicles 27:12",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 27:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c27v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L560",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "2Chronicles 29:8",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 29:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c29v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%9B%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L618",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Psalms 9:19",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 9:19/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c9v19",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L619",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Psalms 73:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 73:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c73v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A2%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L620",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Psalms 79:10",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 79:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c79v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A2%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L621",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Psalms 89:29",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 89:29/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c89v29",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A4%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L622",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Psalms 145:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 145:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c145v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9E%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L644",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Job 38:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 38:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c38v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%9C%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L668",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Proverbs 23:26",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 23:26/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c23v26",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%9B%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L708",
+    "batch": "ketiv",
+    "status": "agreement-or-representation-only",
+    "evidence": [
+      {
+        "ref": "Hosea 7:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Hosea 7:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CA-Hosea.html#c7v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A9%D7%A2_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Hosea 7:13",
+        "verse_exists": true,
+        "note_ids": [
+          "Hosea 7:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CA-Hosea.html#c7v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A9%D7%A2_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Hosea 9:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Hosea 9:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CA-Hosea.html#c9v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A9%D7%A2_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Hosea 9:17",
+        "verse_exists": true,
+        "note_ids": [
+          "Hosea 9:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CA-Hosea.html#c9v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A9%D7%A2_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Joel 3:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Joel 3:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CB-Joel.html#c3v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%95%D7%90%D7%9C_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Amos 2:13",
+        "verse_exists": true,
+        "note_ids": [
+          "Amos 2:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CC-Amos.html#c2v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A2%D7%9E%D7%95%D7%A1_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Amos 4:1",
+        "verse_exists": true,
+        "note_ids": [
+          "Amos 4:1/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CC-Amos.html#c4v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A2%D7%9E%D7%95%D7%A1_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Amos 5:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Amos 5:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CC-Amos.html#c5v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A2%D7%9E%D7%95%D7%A1_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Amos 6:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Amos 6:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CC-Amos.html#c6v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A2%D7%9E%D7%95%D7%A1_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Amos 8:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Amos 8:8/2/0",
+          "Amos 8:8/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CC-Amos.html#c8v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A2%D7%9E%D7%95%D7%A1_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Micah 3:9",
+        "verse_exists": true,
+        "note_ids": [
+          "Micah 3:9/0/0",
+          "Micah 3:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CF-Micah.html#c3v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%99%D7%9B%D7%94_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Micah 5:11",
+        "verse_exists": true,
+        "note_ids": [
+          "Micah 5:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CF-Micah.html#c5v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%99%D7%9B%D7%94_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Micah 6:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Micah 6:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CF-Micah.html#c6v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%99%D7%9B%D7%94_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Micah 7:1",
+        "verse_exists": true,
+        "note_ids": [
+          "Micah 7:1/2/0",
+          "Micah 7:1/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CF-Micah.html#c7v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%99%D7%9B%D7%94_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Nahum 2:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Nahum 2:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CG-Nahum.html#c2v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A0%D7%97%D7%95%D7%9D_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Nahum 2:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Nahum 2:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CG-Nahum.html#c2v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A0%D7%97%D7%95%D7%9D_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Nahum 2:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Nahum 2:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CG-Nahum.html#c2v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A0%D7%97%D7%95%D7%9D_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Habakkuk 3:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Habakkuk 3:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CH-Habakkuk.html#c3v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%97%D7%91%D7%A7%D7%95%D7%A7_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Habakkuk 3:16",
+        "verse_exists": true,
+        "note_ids": [
+          "Habakkuk 3:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CH-Habakkuk.html#c3v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%97%D7%91%D7%A7%D7%95%D7%A7_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Tsefaniah 1:9",
+        "verse_exists": true,
+        "note_ids": [
+          "Tsefaniah 1:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CI-Tsefaniah.html#c1v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A6%D7%A4%D7%A0%D7%99%D7%94_%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Tsefaniah 2:1",
+        "verse_exists": true,
+        "note_ids": [
+          "Tsefaniah 2:1/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CI-Tsefaniah.html#c2v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A6%D7%A4%D7%A0%D7%99%D7%94_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Tsefaniah 2:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Tsefaniah 2:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CI-Tsefaniah.html#c2v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A6%D7%A4%D7%A0%D7%99%D7%94_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Zechariah 4:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Zechariah 4:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CK-Zechariah.html#c4v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%96%D7%9B%D7%A8%D7%99%D7%94_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      },
+      {
+        "ref": "Zechariah 11:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Zechariah 11:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CK-Zechariah.html#c11v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%96%D7%9B%D7%A8%D7%99%D7%94_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L315",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 2:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 2:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c2v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L316",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 2:17",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 2:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c2v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L317",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 7:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 7:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c7v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L318",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 8:10",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 8:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c8v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L319",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 9:48",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 9:48/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c9v48",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L320",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 18:19",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 18:19/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c18v19",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L321",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 18:22",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 18:22/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c18v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L322",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 20:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 20:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c20v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L323",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Judges 20:35",
+        "verse_exists": true,
+        "note_ids": [
+          "Judges 20:35/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c20v35",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%95%D7%A4%D7%98%D7%99%D7%9D_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L335",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 11:3",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 11:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c11v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L336",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 14:52",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 14:52/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c14v52",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L337",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 15:1",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 15:1/2/0",
+          "1Samuel 15:1/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c15v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%98%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L338",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 15:11",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 15:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c15v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%98%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L339",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 17:34",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 17:34/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c17v34",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L340",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 18:8",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 18:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c18v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L341",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 18:19",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 18:19/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c18v19",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L342",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 19:17",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 19:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c19v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L343",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 21:2",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 21:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c21v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L344",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 23:17",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 23:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c23v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%9B%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L345",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 25:11",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 25:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c25v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%9B%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L346",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 29:6",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 29:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c29v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%9B%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L347",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 1:19",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 1:19/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c1v19",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L348",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 3:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 3:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c3v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L349",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 7:9",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 7:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c7v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L350",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 8:16",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 8:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c8v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L351",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 8:18",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 8:18/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c8v18",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L352",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 11:11",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 11:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c11v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L353",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 11:25",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 11:25/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c11v25",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L354",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 11:26",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 11:26/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c11v26",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L355",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 12:1",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 12:1/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c12v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L356",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 12:11",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 12:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c12v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L357",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 19:42",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 19:42/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c19v42",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L358",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 22:7",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 22:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c22v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L359",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 22:40",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 22:40/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c22v40",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L360",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 23:13",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 23:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c23v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L361",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 23:24",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 23:24/2/0",
+          "2Samuel 23:24/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c23v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L362",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 24:2",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 24:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c24v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L363",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Samuel 24:3",
+        "verse_exists": true,
+        "note_ids": [
+          "2Samuel 24:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c24v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%91_%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L368",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Samuel 10:7",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 10:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c10v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L394",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 2:21",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 2:21/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c2v21",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L395",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 2:28",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 2:28/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c2v28",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L396",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 4:7",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 4:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c4v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L397",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 6:8",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 6:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c6v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L398",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 7:33",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 7:33/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c7v33",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L399",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 7:37",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 7:37/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c7v37",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L400",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 8:7",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 8:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c8v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L401",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 8:11",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 8:11/2/0",
+          "1Kings 8:11/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c8v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L402",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 10:24",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 10:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c10v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L403",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 14:3",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 14:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c14v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L404",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 17:12",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 17:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c17v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%99%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L405",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 17:13",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 17:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c17v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%99%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L406",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 18:33",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 18:33/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c18v33",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L407",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 18:43",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 18:43/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c18v43",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L408",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Kings 20:29",
+        "verse_exists": true,
+        "note_ids": [
+          "1Kings 20:29/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BC-1Kings.html#c20v29",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%90_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L409",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Kings 5:12",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 5:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c5v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L410",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Kings 8:6",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 8:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c8v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L411",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Kings 10:10",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 10:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c10v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L413",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Kings 19:16",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 19:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c19v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L414",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Kings 20:9",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 20:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c20v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L415",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Kings 20:11",
+        "verse_exists": true,
+        "note_ids": [
+          "2Kings 20:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c20v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D%20%D7%91_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L442",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 12:16",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 12:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c12v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L443",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 24:9",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 24:9/2/0",
+          "Jeremiah 24:9/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c24v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L444",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 42:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 42:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c42v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9E%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L445",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 48:22",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 48:22/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c48v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9E%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L446",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 52:22",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 52:22/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c52v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%A0%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L449",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 2:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 2:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c2v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L450",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 49:28",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 49:28/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c49v28",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9E%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L459",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Jeremiah 31:38",
+        "verse_exists": true,
+        "note_ids": [
+          "Jeremiah 31:38/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c31v38",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L468",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 1:4",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 1:4/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c1v4",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L469",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 3:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 3:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c3v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L470",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 5:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 5:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c5v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L471",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 10:11",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 10:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c10v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L472",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 12:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 12:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c12v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L473",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 16:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 16:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c16v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%98%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L474",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 16:33",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 16:33/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c16v33",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%98%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L475",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 20:31",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 20:31/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c20v31",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L476",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 28:17",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 28:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c28v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9B%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L477",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 28:22",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 28:22/2/0",
+          "Ezekiel 28:22/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c28v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9B%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L478",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 28:22",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 28:22/2/0",
+          "Ezekiel 28:22/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c28v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9B%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L479",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 35:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 35:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c35v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9C%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L480",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 39:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 39:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c39v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9C%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L481",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 46:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 46:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c46v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9E%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L482",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 46:9",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 46:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c46v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9E%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L483",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 48:10",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 48:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c48v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9E%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L486",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 15:4",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 15:4/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c15v4",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%98%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L487",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ezekiel 32:20",
+        "verse_exists": true,
+        "note_ids": [
+          "Ezekiel 32:20/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c32v20",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%97%D7%96%D7%A7%D7%90%D7%9C_%D7%9C%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L505",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Hosea 4:18",
+        "verse_exists": true,
+        "note_ids": [
+          "Hosea 4:18/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CA-Hosea.html#c4v18",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%94%D7%95%D7%A9%D7%A2_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L507",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Micah 5:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Micah 5:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CF-Micah.html#c5v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%99%D7%9B%D7%94_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L508",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Habakkuk 2:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Habakkuk 2:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CH-Habakkuk.html#c2v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%97%D7%91%D7%A7%D7%95%D7%A7_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L509",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Tsefaniah 2:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Tsefaniah 2:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CI-Tsefaniah.html#c2v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A6%D7%A4%D7%A0%D7%99%D7%94_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L510",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Zechariah 12:13",
+        "verse_exists": true,
+        "note_ids": [
+          "Zechariah 12:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CK-Zechariah.html#c12v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%96%D7%9B%D7%A8%D7%99%D7%94_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L516",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Nahum 2:1",
+        "verse_exists": true,
+        "note_ids": [
+          "Nahum 2:1/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CG-Nahum.html#c2v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A0%D7%97%D7%95%D7%9D_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L524",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 4:9",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 4:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c4v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L525",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 5:41",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 5:41/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c5v41",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L526",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 6:45",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 6:45/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c6v45",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L527",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 16:9",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 16:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c16v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%98%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L528",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 17:6",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 17:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c17v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%99%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L529",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 18:4",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 18:4/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c18v4",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L530",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 18:17",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 18:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c18v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L531",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 21:5",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 21:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c21v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L532",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 21:12",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 21:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c21v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L533",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 21:29",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 21:29/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c21v29",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L534",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 22:10",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 22:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c22v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L535",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 25:31",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 25:31/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c25v31",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L536",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 28:10",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 28:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c28v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L537",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "1Chronicles 28:17",
+        "verse_exists": true,
+        "note_ids": [
+          "1Chronicles 28:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c28v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%9B%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L538",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 6:16",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 6:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c6v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L539",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 6:20",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 6:20/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c6v20",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L540",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 8:11",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 8:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c8v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L541",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 9:24",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 9:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c9v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L542",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 10:10",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 10:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c10v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L543",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 11:23",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 11:23/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c11v23",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L544",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 14:6",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 14:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c14v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%99%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L545",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 25:1",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 25:1/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c25v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%9B%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L546",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 30:21",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 30:21/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c30v21",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%9C/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L547",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 33:25",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 33:25/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c33v25",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%9C%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L548",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 35:9",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 35:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c35v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%9C%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L549",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "2Chronicles 36:23",
+        "verse_exists": true,
+        "note_ids": [
+          "2Chronicles 36:23/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c36v23",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%9C%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L568",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 5:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 5:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c5v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L569",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 6:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 6:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c6v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L570",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 7:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 7:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c7v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L571",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 11:1",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 11:1/2/0",
+          "Psalms 11:1/2/1",
+          "Psalms 11:1/2/2"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c11v1",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L572",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 12:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 12:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c12v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L573",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 26:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 26:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c26v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9B%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L574",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 27:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 27:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c27v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9B%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L575",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 37:14",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 37:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c37v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9C%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L576",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 37:17",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 37:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c37v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9C%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L577",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 39:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 39:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c39v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9C%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L578",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 44:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 44:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c44v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9E%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L579",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 44:27",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 44:27/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c44v27",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9E%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L580",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 56:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 56:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c56v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A0%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L581",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 56:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 56:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c56v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A0%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L582",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 57:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 57:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c57v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A0%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L584",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 60:14",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 60:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c60v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A1/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L585",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 64:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 64:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c64v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A1%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L587",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 75:4",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 75:4/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c75v4",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A2%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L589",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 86:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 86:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c86v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A4%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L590",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 89:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 89:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c89v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A4%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L591",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 89:20",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 89:20/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c89v20",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A4%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L592",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 92:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 92:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c92v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A6%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L593",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 94:12",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 94:12/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c94v12",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A6%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L594",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 98:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 98:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c98v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A6%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L595",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 98:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 98:8/2/0",
+          "Psalms 98:8/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c98v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A6%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L596",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 99:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 99:5/2/0",
+          "Psalms 99:5/2/1",
+          "Psalms 99:5/2/2"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c99v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A6%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L597",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 106:19",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 106:19/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c106v19",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L598",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 106:43",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 106:43/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c106v43",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L599",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 106:48",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 106:48/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c106v48",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L600",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 107:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 107:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c107v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L601",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 107:17",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 107:17/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c107v17",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L602",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 107:18",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 107:18/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c107v18",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L604",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 108:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 108:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c108v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L606",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 110:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 110:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c110v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L607",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 118:10",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 118:10/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c118v10",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L608",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 119:14",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 119:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c119v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L610",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 124:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 124:6/2/0",
+          "Psalms 124:6/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c124v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9B%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L611",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 127:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 127:2/2/0",
+          "Psalms 127:2/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c127v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9B%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L612",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 138:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 138:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c138v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9C%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L613",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 139:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 139:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c139v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9C%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L614",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 140:6",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 140:6/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c140v6",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9E/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L615",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 144:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 144:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c144v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%9E%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L626",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Psalms 45:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 45:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c45v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9E%D7%94/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L634",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 12:24",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 12:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c12v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L635",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 16:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 16:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c16v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%98%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L636",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 19:16",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 19:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c19v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L638",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 23:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 23:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c23v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%9B%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L639",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 29:16",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 29:16/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c29v16",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%9B%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L640",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 31:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 31:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c31v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L641",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Job 41:22",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 41:22/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c41v22",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%9E%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L651",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 2:11",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 2:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c2v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L652",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 3:30",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 3:30/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c3v30",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L653",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 6:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 6:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c6v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L654",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 6:24",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 6:24/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c6v24",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L655",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 7:13",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 7:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c7v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L656",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 8:34",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 8:34/2/0",
+          "Proverbs 8:34/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c8v34",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L657",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 10:13",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 10:13/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c10v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%99/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L658",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 11:13",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 11:13/2/0",
+          "Proverbs 11:13/2/1"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c11v13",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%99%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L659",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 12:23",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 12:23/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c12v23",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%99%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L660",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 13:25",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 13:25/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c13v25",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%99%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L661",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Proverbs 21:30",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 21:30/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c21v30",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L675",
+    "batch": "nonketiv",
+    "status": "agreement-or-representation",
+    "evidence": [
+      {
+        "ref": "Ruth 3:5",
+        "verse_exists": true,
+        "note_ids": [
+          "Ruth 3:5/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/E2-Ruth.html#c3v5",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A8%D7%95%D7%AA_%D7%92/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L333",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "1Samuel 1:3",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 1:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c1v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L334",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "1Samuel 7:11",
+        "verse_exists": true,
+        "note_ids": [
+          "1Samuel 7:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c7v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%A9%D7%9E%D7%95%D7%90%D7%9C%20%D7%90_%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L511",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "Malachi 2:7",
+        "verse_exists": true,
+        "note_ids": [
+          "Malachi 2:7/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CL-Malachi.html#c2v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%90%D7%9B%D7%99_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L523",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "1Chronicles 4:8",
+        "verse_exists": true,
+        "note_ids": [],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c4v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%90_%D7%93/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L588",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "Psalms 78:7",
+        "verse_exists": true,
+        "note_ids": [],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c78v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A2%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L609",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "Psalms 119:138",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 119:138/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c119v138",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%99%D7%98/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L625",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "Psalms 18:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 18:2/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c18v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%99%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L665",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "Proverbs 22:8",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 22:8/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c22v8",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%9B%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L666",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L667",
+    "batch": "nonketiv",
+    "status": "uncertain-attribution-or-quoted-form",
+    "evidence": [
+      {
+        "ref": "Proverbs 22:14",
+        "verse_exists": true,
+        "note_ids": [
+          "Proverbs 22:14/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c22v14",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%9B%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L583",
+    "batch": "nonketiv",
+    "status": "supported-accent-source-disagreement",
+    "evidence": [
+      {
+        "ref": "Psalms 57:9",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 57:9/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c57v9",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A0%D7%96/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L603",
+    "batch": "nonketiv",
+    "status": "supported-accent-source-disagreement",
+    "evidence": [
+      {
+        "ref": "Psalms 108:3",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 108:3/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c108v3",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L605",
+    "batch": "nonketiv",
+    "status": "supported-accent-source-disagreement",
+    "evidence": [
+      {
+        "ref": "Psalms 108:11",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 108:11/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c108v11",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A7%D7%97/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L506",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": [
+      {
+        "ref": "Joel 2:25",
+        "verse_exists": true,
+        "note_ids": [
+          "Joel 2:25/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/CB-Joel.html#c2v25",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%99%D7%95%D7%90%D7%9C_%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L515",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L552",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": [
+      {
+        "ref": "2Chronicles 6:7",
+        "verse_exists": true,
+        "note_ids": [],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c6v7",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%93%D7%91%D7%A8%D7%99%20%D7%94%D7%99%D7%9E%D7%99%D7%9D%20%D7%91_%D7%95/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L586",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L627",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": [
+      {
+        "ref": "Psalms 81:2",
+        "verse_exists": true,
+        "note_ids": [
+          "Psalms 81:2/0/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c81v2",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%A4%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L637",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": [
+      {
+        "ref": "Job 21:15",
+        "verse_exists": true,
+        "note_ids": [
+          "Job 21:15/2/0"
+        ],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c21v15",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%90%D7%99%D7%95%D7%91_%D7%9B%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  },
+  {
+    "claim": "ch5:L662",
+    "batch": "nonketiv",
+    "status": "locator-intended-claim-corroborated",
+    "evidence": [
+      {
+        "ref": "Proverbs 20:25",
+        "verse_exists": true,
+        "note_ids": [],
+        "edition_link": "https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c20v25",
+        "chapter_link": "https://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%9C%D7%99_%D7%9B/%D7%98%D7%A2%D7%9E%D7%99%D7%9D"
+      }
+    ]
+  }
+]

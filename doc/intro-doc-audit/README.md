@@ -40,6 +40,70 @@ the exact source relation, annotation scope, and any disagreement must be review
 before assigning a semantic result. Introduction transclusions remain unexpanded
 and are explicitly counted. No live Wikisource request was made.
 
-The HTML review, semantic dispositions, coverage routes, and uncertainty queue are
-being added in subsequent manageable batches. Existing issues #305–307 will remain
-separate from newly validated discrepancies. No issues or comments will be posted.
+Open [review.html](review.html) for the compact comparison, with the 20–48 px Hebrew
+slider (default 30), exact source links, and cached verse contexts. The report keeps
+the three existing issues separate from new research. No issues or comments were posted.
+
+Two complete bounded chapter 5 batches reviewed **269/269 selected source lines**:
+69 lines containing the Aleppo ketiv sigil, and 200 other pointing/list rows.
+`ketiv-batch.json`, `nonketiv-batch.json`, and `claim-dispositions.json` preserve
+their exhaustive populations and semantic dispositions. Of these lines, 237 have
+corroborated phenomena or representation differences, four are already tracked,
+four contain the newly supported attributed-form disagreements, nine have locator
+problems, one has a scope ambiguity, and fourteen have incomplete attribution or
+form evidence. These line counts do not imply independent manuscript verification.
+
+New attributed-form disagreements occur at Jeremiah 31:37; Psalm 108:11; and the
+paired secondary-reading alternatives at Psalms 57:9 and 108:3. Neither source is
+declared correct. `codepoint-proofs.json` independently matches the selected notes
+back to the faithful raw chapter cache and records every codepoint. Jeremiah uses
+the updated revision 3088451: the restored atom and closed issue #304 are separate
+from this accent disagreement. Source chronology is retained rather than erased.
+
+Other reviewed discrepancies include the Deuteronomy hataf roster's nine-versus-eleven
+count (eleven verse entries, twelve atom forms), Lamentations 1:6's reversed one/two
+description, and Proverbs 30:19's stale MAM illustration. The first has all eleven
+Introduction/doc-note pairs in `deuter-roster-pairs.json`; the latter two explicitly
+distinguish structural or edition evidence from a manuscript-reading conflict.
+Eight independently checked locator examples are grouped as one finding.
+
+`topic-coverage.json` routes all **340/340 titled spans** to their evidence boundaries.
+It inventories every topic, including general rules, completeness claims, historical
+quotations, policy, manuscript locators, and proposals. It does **not** claim that
+all 1,643 verse-linked units or all corpus-wide rules have been semantically audited.
+`review-selections.json` keeps nine compact uncertainty groups, and the batch ledgers
+retain less consequential incomplete cases without turning them into an alarm list.
+
+The next source-boundary questions are whether incidental specimen marks assert
+complete manuscript pointing, how two-versus-three qere-note descriptions delimit
+their scope, and how old template rosters map to current unified special types.
+The current cache does not establish the true manuscript reading at the new accent
+disagreements. No manuscript scan or new source interpretation was undertaken.
+
+Additional research commands use the same interpreter from the worktree root:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py proofs
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py structures
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py review
+```
+
+The supplemental structural census scans 23,202/23,202 verses through the repository's
+existing closed EP projection. It counts a template before choosing its documented
+child, excludes documentation bodies, and retains every counted node and JSON pointer.
+Typed populations alone do not prove the semantic completeness of an Introduction
+list. In particular, traditional masorah populations and current template identity
+can differ. The survey-only note target field likewise is **not** a complete rendering:
+it may omit structural legarmeh or spacing. The complete `target_node` is the evidence.
+
+Focused verification includes regeneration, raw/parsed codepoint checks, exhaustive
+batch-ledger coverage, and a headless local visual inspection. All research writes
+stay under `doc/intro-doc-audit/` and its code under `py/intro_doc_audit/` plus the one
+entrypoint. No production generator or testing gate was added; mega/full-suite work
+was not run, preserving nightly priority.

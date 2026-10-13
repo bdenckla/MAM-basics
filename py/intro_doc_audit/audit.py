@@ -30,7 +30,9 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "doc/intro-doc-audit"
 HEAD = re.compile(r"^(={2,6})(.*?)\1\s*$")
 LETTERS = re.compile(r"[^\u05d0-\u05ea]")
-FORMS = re.compile(r"(?<![א-ת])(?P<sigil>א(?:-כתיב|-קרי)?[?!*]*)=(?P<form>[^()\[\]{}=;:]+)")
+FORMS = re.compile(
+    r"(?<![א-ת])(?P<sigil>א(?:-כתיב|-קרי)?[?!*]*)=(?P<form>[^()\[\]{}=;:]+)"
+)
 WORD = re.compile(r"[\u0591-\u05ea\u034f\ufb1e]+(?:[ −-][\u0591-\u05ea\u034f\ufb1e]+)*")
 HE_BOOKS = {bn.he_bk39_name(book): book for book in bl.ALL_BK39_IDS}
 
@@ -38,13 +40,16 @@ HE_BOOKS = {bn.he_bk39_name(book): book for book in bl.ALL_BK39_IDS}
 def dump(name, value):
     (OUT / name).write_text(
         json.dumps(value, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8", newline="\n",
+        encoding="utf-8",
+        newline="\n",
     )
 
 
 @cache
 def pinned_commit():
-    return json.loads((OUT / "source-pin.json").read_text(encoding="utf-8"))["base_commit"]
+    return json.loads((OUT / "source-pin.json").read_text(encoding="utf-8"))[
+        "base_commit"
+    ]
 
 
 def source_url(path, line=1):
@@ -69,7 +74,9 @@ def ref_id(ref):
 
 
 def inventory_intro():
-    manifest = json.loads((ROOT / "in/mam-ws-intro/manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads(
+        (ROOT / "in/mam-ws-intro/manifest.json").read_text(encoding="utf-8")
+    )
     topics, claims = [], []
     for key, metadata in manifest["pages"].items():
         path = f"in/mam-ws-intro/{key}.mediawiki"
@@ -85,10 +92,16 @@ def inventory_intro():
                 title = heading[2].strip() if heading else "Page preamble"
                 hierarchy = [x for x in hierarchy if x[0] < level] + [(level, title)]
                 current = {
-                    "id": f"{key}:{n}", "page": key, "path": path,
-                    "line": n, "end_line": len(lines), "heading": title,
-                    "hierarchy": [x[1] for x in hierarchy], "revision": metadata,
-                    "source_url": source_url(path, n), "claim_ids": [],
+                    "id": f"{key}:{n}",
+                    "page": key,
+                    "path": path,
+                    "line": n,
+                    "end_line": len(lines),
+                    "heading": title,
+                    "hierarchy": [x[1] for x in hierarchy],
+                    "revision": metadata,
+                    "source_url": source_url(path, n),
+                    "claim_ids": [],
                 }
                 topics.append(current)
             if heading or not line.strip() or line.strip() in {"{|", "|}", "|-"}:
@@ -97,19 +110,35 @@ def inventory_intro():
             wikilinks = []
             for link in code.filter_wikilinks():
                 target = str(link.title).strip()
-                wikilinks.append({"target": target, "label": str(link.text or link.title), "ref": resolve_link(target)})
+                wikilinks.append(
+                    {
+                        "target": target,
+                        "label": str(link.text or link.title),
+                        "ref": resolve_link(target),
+                    }
+                )
             refs = []
             for link in wikilinks:
                 if link["ref"] and link["ref"] not in refs:
                     refs.append(link["ref"])
-            transclusions = [str(t) for t in code.filter_templates() if str(t.name).strip().startswith("#קטע:")]
+            transclusions = [
+                str(t)
+                for t in code.filter_templates()
+                if str(t.name).strip().startswith("#קטע:")
+            ]
             forms = []
             for m in FORMS.finditer(line):
                 form = m["form"].strip().strip('"').strip("<>").strip()
                 # A prose continuation after the form is not silently included.
                 tokens = WORD.match(form)
                 if tokens:
-                    forms.append({"sigil": m["sigil"], "form": tokens[0], "literal_expression": m[0]})
+                    forms.append(
+                        {
+                            "sigil": m["sigil"],
+                            "form": tokens[0],
+                            "literal_expression": m[0],
+                        }
+                    )
             cid = f"{key}:L{n}"
             tags = []
             if refs:
@@ -120,21 +149,43 @@ def inventory_intro():
                 tags.append("enumeration-or-table")
             if transclusions:
                 tags.append("unexpanded-transclusion")
-            claims.append({"id": cid, "topic": current["id"], "path": path, "line": n,
-                           "text": line, "source_url": source_url(path, n), "links": wikilinks,
-                           "refs": refs, "forms": forms, "tags": tags,
-                           "transclusions": transclusions,
-                           "coverage": "joined-evidence-needs-semantic-review" if refs else "topic-policy-history-or-implicit-evidence-needs-classification"})
+            claims.append(
+                {
+                    "id": cid,
+                    "topic": current["id"],
+                    "path": path,
+                    "line": n,
+                    "text": line,
+                    "source_url": source_url(path, n),
+                    "links": wikilinks,
+                    "refs": refs,
+                    "forms": forms,
+                    "tags": tags,
+                    "transclusions": transclusions,
+                    "coverage": (
+                        "joined-evidence-needs-semantic-review"
+                        if refs
+                        else "topic-policy-history-or-implicit-evidence-needs-classification"
+                    ),
+                }
+            )
             current["claim_ids"].append(cid)
     return topics, claims
 
 
 def inventory_notes():
     notes, verses, inputs = [], {}, []
-    revisions = json.loads((ROOT / "in/mam-ws-revisions.json").read_text(encoding="utf-8"))["books"]
+    revisions = json.loads(
+        (ROOT / "in/mam-ws-revisions.json").read_text(encoding="utf-8")
+    )["books"]
     for path in sorted((ROOT / "MAM-parsed/plus").glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
-        positions = [m.start() for m in re.finditer(r'"tmpl_name": "נוסח"', path.read_text(encoding="utf-8"))]
+        positions = [
+            m.start()
+            for m in re.finditer(
+                r'"tmpl_name": "נוסח"', path.read_text(encoding="utf-8")
+            )
+        ]
         text = path.read_text(encoding="utf-8")
         decoder = json.JSONDecoder()
         source_records = []
@@ -142,7 +193,12 @@ def inventory_notes():
             node, _ = decoder.raw_decode(text, text.rfind("{", 0, position))
             source_records.append((node, text.count("\n", 0, position) + 1))
         used = set()
-        inputs.append({"path": path.relative_to(ROOT).as_posix(), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        inputs.append(
+            {
+                "path": path.relative_to(ROOT).as_posix(),
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+        )
         for book in data["book39s"]:
             bkid = bn.MAM_HBNP_TO_BK39ID[(book["book24_name"], book["sub_book_name"])]
             for chapter, chapter_data in book["chapters"].items():
@@ -153,9 +209,15 @@ def inventory_notes():
                         for j, note in enumerate(extract.find_docnote_tmpls(cell)):
                             params = note["tmpl_params"]
                             nid = f"{key}/{cellno}/{j}"
-                            locations = [i for i, (node, _) in enumerate(source_records) if i not in used and node == note]
+                            locations = [
+                                i
+                                for i, (node, _) in enumerate(source_records)
+                                if i not in used and node == note
+                            ]
                             if not locations:
-                                raise ValueError(f"No literal source location for {nid}")
+                                raise ValueError(
+                                    f"No literal source location for {nid}"
+                                )
                             index = locations[0]
                             used.add(index)
                             line = source_records[index][1]
@@ -164,25 +226,51 @@ def inventory_notes():
                                 target_text = extract.flatten_text(params["1"])
                                 target_projection_error = None
                             except ValueError as error:
-                                if not str(error).startswith("Unexpected template in flatten_text:"):
+                                if not str(error).startswith(
+                                    "Unexpected template in flatten_text:"
+                                ):
                                     raise
                                 # Known dataset template without this survey's text projection.
                                 # Retain the complete node, and do not invent visible Scripture.
                                 target_text = None
                                 target_projection_error = str(error)
-                            notes.append({"id": nid, "ref": key, "path": path.relative_to(ROOT).as_posix(), "line": line,
-                                          "json_pointer": f"/book39s/{data['book39s'].index(book)}/chapters/{chapter}/{verse}/{cellno}",
-                                          "target_node": params["1"], "body_node": params["2"], "body_text": body,
-                                          "target_text": target_text, "target_projection_error": target_projection_error,
-                                          "chapter_revision": revisions[bkid][hvn.INT_TO_STR_DIC[int(chapter)]],
-                                          "sigil_expressions": sigils._lhs_equals_expressions(body),
-                                          "implicit_MAM_agreement": sigils._leading_equals_expressions(body),
-                                          "source_url": source_url(path.relative_to(ROOT).as_posix(), line)})
+                            notes.append(
+                                {
+                                    "id": nid,
+                                    "ref": key,
+                                    "path": path.relative_to(ROOT).as_posix(),
+                                    "line": line,
+                                    "json_pointer": f"/book39s/{data['book39s'].index(book)}/chapters/{chapter}/{verse}/{cellno}",
+                                    "target_node": params["1"],
+                                    "body_node": params["2"],
+                                    "body_text": body,
+                                    "target_survey_text": target_text,
+                                    "target_projection_notice": "Existing hataf survey projection: qere and primary stress only; structural marks and whitespace may be omitted. Use target_node for evidence.",
+                                    "target_projection_error": target_projection_error,
+                                    "chapter_revision": revisions[bkid][
+                                        hvn.INT_TO_STR_DIC[int(chapter)]
+                                    ],
+                                    "sigil_expressions": sigils._lhs_equals_expressions(
+                                        body
+                                    ),
+                                    "implicit_MAM_agreement": sigils._leading_equals_expressions(
+                                        body
+                                    ),
+                                    "source_url": source_url(
+                                        path.relative_to(ROOT).as_posix(), line
+                                    ),
+                                }
+                            )
                             note_ids.append(nid)
                     if verse not in ("0", "תתת"):
                         verses[key] = {"note_ids": note_ids}
-        inputs[-1]["notes_outside_chapter_walk"] = [line for i, (_, line) in enumerate(source_records) if i not in used]
-        print(f"Read {path.name}: {len(used)} chapter notes; {len(source_records)-len(used)} outside chapter walk", flush=True)
+        inputs[-1]["notes_outside_chapter_walk"] = [
+            line for i, (_, line) in enumerate(source_records) if i not in used
+        ]
+        print(
+            f"Read {path.name}: {len(used)} chapter notes; {len(source_records)-len(used)} outside chapter walk",
+            flush=True,
+        )
     return notes, verses, inputs
 
 
@@ -194,10 +282,15 @@ def build_matches(claims, notes, verses):
         for ref in claim["refs"]:
             key = ref_id(ref)
             row = verses.get(key)
-            evidence.append({"ref": key, "verse_exists": row is not None,
-                             "note_ids": row["note_ids"] if row else [],
-                             "edition_link": links.mam_with_doc_url(*ref),
-                             "chapter_link": links.wikisource_url(ref[0], ref[1])})
+            evidence.append(
+                {
+                    "ref": key,
+                    "verse_exists": row is not None,
+                    "note_ids": row["note_ids"] if row else [],
+                    "edition_link": links.mam_with_doc_url(*ref),
+                    "chapter_link": links.wikisource_url(ref[0], ref[1]),
+                }
+            )
         claim["evidence"] = evidence
         # This is a triage heuristic, never a contradiction verdict.
         for form in claim["forms"]:
@@ -214,10 +307,18 @@ def build_matches(claims, notes, verses):
                         kind = "mark-order-only-form-present-at-verse"
                     else:
                         kind = "form-not-found-at-verse"
-                    if kind != "form-not-found-at-verse" or LETTERS.sub("", literal) in LETTERS.sub("", note["body_text"]):
+                    if kind != "form-not-found-at-verse" or LETTERS.sub(
+                        "", literal
+                    ) in LETTERS.sub("", note["body_text"]):
                         matching_notes.append({"note_id": nid, "match": kind})
-            candidates.append({"claim": claim["id"], "form": form, "matches": matching_notes,
-                               "status": "unreviewed-literal-triage"})
+            candidates.append(
+                {
+                    "claim": claim["id"],
+                    "form": form,
+                    "matches": matching_notes,
+                    "status": "unreviewed-literal-triage",
+                }
+            )
     return candidates
 
 
@@ -234,22 +335,43 @@ def main():
     candidates = build_matches(claims, notes, verses)
     for topic in topics:
         subset = [c for c in claims if c["topic"] == topic["id"]]
-        topic["counts"] = {"source_units": len(subset), "explicit_reference_units": sum(bool(c["refs"]) for c in subset),
-                           "form_claims": sum(len(c["forms"]) for c in subset)}
+        topic["counts"] = {
+            "source_units": len(subset),
+            "explicit_reference_units": sum(bool(c["refs"]) for c in subset),
+            "form_claims": sum(len(c["forms"]) for c in subset),
+        }
     dump("topics.json", topics)
     dump("claims.json", claims)
     dump("notes.json", notes)
     dump("form-triage.json", candidates)
-    summary = {"pages": 13, "topics": len(topics), "source_units": len(claims), "doc_notes": len(notes),
-               "canonical_verse_doc_notes": sum(n["ref"] in verses for n in notes),
-               "paratext_doc_notes": sum(n["ref"] not in verses for n in notes),
-               "verses": len(verses), "explicit_reference_units": sum(bool(c["refs"]) for c in claims),
-               "reference_edges": sum(len(c["evidence"]) for c in claims),
-               "edges_with_notes": sum(bool(e["note_ids"]) for c in claims for e in c["evidence"]),
-               "invalid_verse_edges": sum(not e["verse_exists"] for c in claims for e in c["evidence"]),
-               "Aleppo_form_triage": len(candidates),
-               "form_triage": dict(Counter(m["match"] for c in candidates for m in c["matches"])),
-               "unexpanded_transclusion_units": sum(bool(c["transclusions"]) for c in claims),
-               "input_files": inputs}
+    summary = {
+        "pages": 13,
+        "topics": len(topics),
+        "source_units": len(claims),
+        "doc_notes": len(notes),
+        "canonical_verse_doc_notes": sum(n["ref"] in verses for n in notes),
+        "paratext_doc_notes": sum(n["ref"] not in verses for n in notes),
+        "verses": len(verses),
+        "explicit_reference_units": sum(bool(c["refs"]) for c in claims),
+        "reference_edges": sum(len(c["evidence"]) for c in claims),
+        "edges_with_notes": sum(
+            bool(e["note_ids"]) for c in claims for e in c["evidence"]
+        ),
+        "invalid_verse_edges": sum(
+            not e["verse_exists"] for c in claims for e in c["evidence"]
+        ),
+        "Aleppo_form_triage": len(candidates),
+        "form_triage": dict(
+            Counter(m["match"] for c in candidates for m in c["matches"])
+        ),
+        "unexpanded_transclusion_units": sum(bool(c["transclusions"]) for c in claims),
+        "input_files": inputs,
+    }
     dump("summary.json", summary)
-    print(json.dumps({k: v for k, v in summary.items() if k != "input_files"}, ensure_ascii=False, indent=2))
+    print(
+        json.dumps(
+            {k: v for k, v in summary.items() if k != "input_files"},
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
