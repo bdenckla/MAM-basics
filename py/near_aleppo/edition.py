@@ -71,9 +71,12 @@ def _edition_index(edition, css_hrefs):
     body = (
         mb_html.heading_level_1("The near-Aleppo edition"),
         mb_html.para(
-            "These pages are an example HTML edition based on the near-Aleppo "
-            "dataset. The edition has each book's text with MAM's notes "
-            "beside it, as MAM-with-doc does."
+            [
+                "These pages are an example HTML edition based on the ",
+                mb_html.anchor_h("near-Aleppo dataset", "../index.html"),
+                ". The edition has each book's text with MAM's notes "
+                "beside it, as MAM-with-doc does.",
+            ]
         ),
         mwdwidh.unordered_list_of_sections(),
         mb_html.para(
