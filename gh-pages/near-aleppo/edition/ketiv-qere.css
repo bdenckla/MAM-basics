@@ -39,3 +39,8 @@ ruby.near-aleppo-kq .near-aleppo-kq-none {
     font-size: 70%;
     color: light-dark(#777, #999);
 }
+/* The optional shared classifier selects crowded pointed-Hebrew atoms.
+   Keep the adjustment relative to the reading's font size. */
+span.hebrew-expanded-spacing {
+    letter-spacing: 0.06em;
+}

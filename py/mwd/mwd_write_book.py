@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 from mb_cmn import bib_locales as tbn
 from mb_cmn import my_utils
@@ -59,7 +59,7 @@ def _para_for_chap_ancs(bkid, books_mpu):
     return mb_html.para(my_utils.intersperse(" ", anchors))
 
 
-def _extended_write_ctx(ecb, books_mpu, out_paths, ht_tac_for_ren_tag):
+def _extended_write_ctx(ecb, books_mpu, out_paths, ht_tac_for_ren_tag, text_to_html):
     # The mapping selects MAM-with-doc or the near-Aleppo edition's added tags.
     bkid = ecb[2]
     powc = _pair_of_write_ctxs(ecb, out_paths)
@@ -67,7 +67,7 @@ def _extended_write_ctx(ecb, books_mpu, out_paths, ht_tac_for_ren_tag):
         bkid,
         powc[0],
         powc[1],
-        hfr.HfrCtx(ht_tac_for_ren_tag),
+        hfr.HfrCtx(ht_tac_for_ren_tag, text_to_html=text_to_html),
         _para_for_chap_ancs(bkid, books_mpu),
     )
 
@@ -104,7 +104,7 @@ def _html_for_chapter(bkid, hfr_ctx: hfr.HfrCtx, ver_ndds: list[mwdu.VerseNdd]):
 def _html_for_book(wrae: _ExtendedWriteCtx, ver_ndds):
     chapters = _break_into_chapters(ver_ndds)
     survey = rts.make()
-    hfr_ctx = hfr.HfrCtx(wrae.hfr_ctx.ht_tag_and_class_for_ren_tag, survey)
+    hfr_ctx = replace(wrae.hfr_ctx, survey=survey)
     divs_for_main = []
     divs_for_bido = []
     for chapter in chapters:
@@ -132,7 +132,9 @@ def _render_three_col_html(wrae: _ExtendedWriteCtx, ver_ndds):
     return html_for_book["survey"], pages
 
 
-def render_book(ecb, books_mpu, out_paths, renopts, ht_tac_for_ren_tag):
+def render_book(
+    ecb, books_mpu, out_paths, renopts, ht_tac_for_ren_tag, *, text_to_html=None
+):
     """Return the survey and page text for the selected edition, without writes."""
     bkid = ecb[2]
     my_utils_fm.show_progress_g(__file__, "book", bkid)
@@ -144,7 +146,9 @@ def render_book(ecb, books_mpu, out_paths, renopts, ht_tac_for_ren_tag):
     doc = rwt.map_over_verafs(doc_utils.extract_docs, verafs)
     ver_ndd_part_triples = tuple(my_utils.szip(bcvts, nondoc, doc))
     ver_ndds = tuple(mwdu.VerseNdd(*triple) for triple in ver_ndd_part_triples)
-    ewc = _extended_write_ctx(ecb, books_mpu, out_paths, ht_tac_for_ren_tag)
+    ewc = _extended_write_ctx(
+        ecb, books_mpu, out_paths, ht_tac_for_ren_tag, text_to_html
+    )
     return _render_three_col_html(ewc, ver_ndds)
 
 

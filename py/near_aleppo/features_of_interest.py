@@ -126,7 +126,7 @@ def _verses(references=None):
     bkids = tuple(dict.fromkeys(ref[0] for ref in references))
     books = plus.read_parsed_plus_bk39s(bkids, str(build_paths.dataset_dir().parent))
     mode = edition.NEAR_ALEPPO_MODE
-    ctx = hfr.HfrCtx(mode.ht_tac_for_ren_tag)
+    ctx = hfr.HfrCtx(mode.ht_tac_for_ren_tag, text_to_html=mode.text_to_html)
     rendered = {bkid: rwt.render(bkid, books, mode.renopts, {}) for bkid in bkids}
     examples = {}
     for reference in references:
