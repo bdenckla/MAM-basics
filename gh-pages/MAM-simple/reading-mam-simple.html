@@ -86,9 +86,10 @@ additional Scripture.</li>
 <li>Select the required Scripture branches and reassemble adjacent fragments in source
 order before segmentation. An atom is one written form between spaces or maqaf marks. A
 chanted word is one atom or a complete maqaf compound. A template, fragment,
-punctuation, or structural-node boundary defines neither unit; in particular, a
-separate <code>lp-legarmeih</code> or <code>lp-paseq</code> node represents a mark that belongs with
-the preceding atom.</li>
+punctuation, or structural-node boundary defines neither unit. An <code>lp-legarmeih</code>
+node represents a mark that belongs with the preceding atom. Narrow-sense paseq
+(<code>lp-paseq</code>) is not part of the preceding atom; its line-wrapping behavior is a
+rendering decision for the application.</li>
 <li>Narpas (narrow-sense paseq, <code>lp-paseq</code>) forms no compound of any kind; only maqaf joins atoms
 into a chanted word. MAM encodes no text whitespace before or after narpas to avoid
 prescribing display spacing, not to group the surrounding text. An edition decides

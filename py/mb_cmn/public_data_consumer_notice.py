@@ -99,7 +99,7 @@ def mam_simple_notice() -> dict[str, object]:
     """Return the notice shared by every MAM-simple JSON file."""
     return {
         "summary": (
-            "This is a projected extract of MAM, not a complete representation of the "
+            "This is an extract of MAM, not a complete representation of the "
             "source; consume its documented roles and retained alternatives "
             "explicitly."
         ),
@@ -122,10 +122,11 @@ def mam_simple_notice() -> dict[str, object]:
                 "running text."
             ),
             (
-                "Reassemble fragments before identifying atoms or chanted words; a "
-                "separate paseq or legarmeh node represents a mark that belongs with "
-                "the preceding atom, and structural boundaries do not define units of "
-                "cantillation."
+                "Reassemble fragments before identifying atoms or chanted words; "
+                "structural boundaries do not define units of cantillation. An "
+                "lp-legarmeih node represents a mark that belongs with the preceding "
+                "atom. Narrow-sense paseq (lp-paseq) is not part of the preceding atom; "
+                "its line-wrapping behavior is a rendering decision for the application."
             ),
             MAM_SIMPLE_NARPAS_GROUPING_RULE,
             (
