@@ -1,6 +1,7 @@
 # Cached Introduction and documentation-note audit
 
-State: live research; isolated branch, no integration scheduled
+State: finite reference passes accounted for; unresolved evidence boundaries retained.
+Isolated research branch, no integration scheduled.
 
 This audit uses the repository snapshot at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
 It changes no Scripture input, edition, published page, or manuscript interpretation.
@@ -63,7 +64,8 @@ meteg specimen; Daniel 5:7's ketiv spelling; Psalm 39:13's exchanged meteg/merkh
 positions; Psalm 17:14's maqaf candidates; and Isaiah 10:15's missing-yod position.
 Psalm 150:3's first hataf specimen adds a ninth group: its Introduction quotation
 has sheva while the raw/parsed note explicitly attributes hataf-patah to Aleppo.
-These are nine groups covering ten verses. Neither source is
+Two subsequent passes add Isaiah 59:19’s nearby-witness maqaf attribution and
+Psalm 31:12’s omitted-hataf classification. These are eleven groups covering twelve verses. Neither source is
 declared correct. `codepoint-proofs.json` independently matches the selected notes
 back to the faithful raw chapter cache and records every codepoint. Jeremiah uses
 the updated revision 3088451: the restored atom and closed issue #304 are separate
@@ -74,7 +76,7 @@ count (eleven verse entries, twelve atom forms), Lamentations 1:6's reversed one
 description, and Proverbs 30:19's stale MAM illustration. The first has all eleven
 Introduction/doc-note pairs in `deuter-roster-pairs.json`; the latter two explicitly
 distinguish structural or edition evidence from a manuscript-reading conflict.
-Ten independently checked locator examples are grouped as one finding. A grouped
+Thirty-one independently checked locator examples are grouped as one finding. A grouped
 description review covers four letter/accent-name disagreements, including a
 Deuteronomy 28:27 note that says TAV where the Introduction correctly says TET.
 The raw-cache quotations agree, so this is a prose-label discrepancy, not an
@@ -119,10 +121,11 @@ to count the same objects as the current edition templates.
 `topic-coverage.json` routes all **340/340 titled spans** to their evidence boundaries.
 It inventories every topic, including general rules, completeness claims, historical
 quotations, policy, manuscript locators, and proposals. It does **not** claim that
-all 1,643 verse-linked units or all corpus-wide rules have been semantically audited.
-The added evidence assessments cover **80/80 policy/example units**, and the
+all corpus-wide rules, historical statements or physical readings have been certified.
+All **1,643/1,643 verse-linked source units** now have bounded reviewer assessments.
+The added evidence assessments cover **210/210 policy/example units**, and the
 24 hataf-roster plus five meteg-roster source units. The combined source-unit
-ledger therefore assesses **1,468/1,468 selected units**. Assessment includes
+ledger therefore assesses **1,859 distinct selected source units**. Assessment includes
 unsupported and uncheckable claims; it is not a declaration of consistency.
 
 All **667/667 hataf roster entries** across five Torah and nineteen later-book
@@ -142,13 +145,13 @@ uncertain candidates, and one (Exodus 7:13) has unresolved clause scope.
 faithful raw bodies: a PATAH specimen described as meteg, a meteg specimen labelled
 no meteg, and two witness lists assigning the same named source both readings.
 
-`policy-assessments.json` preserves bounded support and limits for the eighty
+`policy-assessments.json` preserves bounded support and limits for the 210
 units. `torah-final-topic-assessments.json` records **154/154 read-and-routed units**,
 including history, Decalogue and Reuben presentation, musical explanations, and
 reading divisions. That routing is explicitly narrower than a complete semantic
 audit of their embedded claims.
 
-`review-selections.json` keeps twenty compact uncertainty groups, and the batch ledgers
+`review-selections.json` keeps 24 compact uncertainty groups, and the batch ledgers
 retain less consequential incomplete cases without turning them into an alarm list.
 
 The next source-boundary questions are whether incidental specimen marks assert
@@ -192,3 +195,63 @@ batch-ledger coverage, and a headless local visual inspection. All research writ
 stay under `doc/intro-doc-audit/` and its code under `py/intro_doc_audit/` plus the one
 entrypoint. No production generator or testing gate was added; mega/full-suite work
 was not run, preserving nightly priority.
+
+
+The final finite passes
+-----------------------
+
+`scoped-assessments.json` adds **273/273 bounded source-unit assessments**,
+including the remaining 118 Torah units, 59 Chapter 2 units, remaining Chapter 5
+example paragraphs, appendix/index metadata and poetic-roster source units.
+The distinct combined ledger is 1,859 units; overlapping assessments of the
+Deuteronomy hataf roster are retained under `additional_assessments`, counted once.
+All 8,984 original source units remain available, including layout, table cells,
+navigation and non-reference prose. A source unit is not an independent claim.
+Topic routing explicitly preserves limits on the broader remaining prose; the
+finished finite passes do not establish universal semantic consistency.
+
+`poetic-rosters.json` and its manual input `poetic-roster-review.json` account for
+**385/385 items in 14 source units**:125 explicit design examples and 260 implicit
+revia examples. All have the reviewed selected-edition feature;286 have central
+named-source correspondence, one has a qualification/representation concern,
+and 98 have only current-feature evidence because a pertinent source statement is
+absent. The55 two-word oleh examples have32 gray maqafs, six ordinary maqafs and
+17 spaces after independently accented words. Every one of the 260 selected revia
+examples has GERESH MUQDAM U+059D and REVIA U+0597 in one Unicode letter cluster,
+through the current closed EP projection. This is a representation check, not a
+claim about physical manuscript positions.
+
+The compact report has **11 attributed-form disagreement groups**, **25 other
+reviewed groups**, the 31-example locator family, and the three already tracked
+issues. The later other groups include opposite-direction note prose errors,
+2Samuel 21:12’s two-versus-three qere-note scope, Numbers 22:5’s Sapir-versus-Cassuto
+attribution, Genesis 2:10’s older-transcription chronology, an internal small/large
+label, and an Amos–Micah three-versus-four missing-page count. The latter remains
+historical metadata conflict; neither page count is declared physically correct.
+
+`semantic-controls.json` preserves seven additional independently matched raw
+note bodies; `source-boundary-proofs.json` preserves four attribution/chronology,
+locator and size controls. Source quotes, uncertainty markers and current decoder
+meanings are retained. `poetic-description-proofs.json` checks Psalm 30:12’s omitted
+OLEH, which the note calls REVIA. Psalm 53:6’s note also names a resh absent from
+its described atom. These checks substantiate the reviewed cached statements;
+successful regeneration alone is not a semantic consistency verdict.
+
+The closed corpus census reproduces 4,465 poetic verses, but 2,679 DEHI verses versus
+the Introduction’s2,685, and 423 OLEH verses versus 421. Count definitions and source
+chronology remain unresolved. The55 semantic two-word cases were reviewed as a
+finite list but not rederived as a full-corpus semantic partition. Physical readings,
+source-book claims, pronunciation theory, original typography, unreported correction
+history and universal list completeness cannot all be settled from these caches.
+The24 uncertainty groups and per-item ledgers make those limitations explicit.
+
+Regenerate the poetic item evidence with:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py poetic-rosters
+```
+
+Every research subcommand now lowers its process priority. The final batch used
+small sequential reads and research-only checks; no nightly or production gate
+was added. No external issue/comment, merge, deployment or manuscript interpretation
+change was made.

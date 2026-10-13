@@ -1,0 +1,1104 @@
+{
+  "batches": [
+    {
+      "id": "torah-remaining-pre-pointing",
+      "page": "ch3",
+      "selection": {
+        "max_line": 749,
+        "explicit_refs_only": true,
+        "exclude_claims": [
+          "ch3:L102",
+          "ch3:L103",
+          "ch3:L104",
+          "ch3:L105",
+          "ch3:L106",
+          "ch3:L107",
+          "ch3:L108",
+          "ch3:L109",
+          "ch3:L110",
+          "ch3:L111",
+          "ch3:L112",
+          "ch3:L113",
+          "ch3:L114",
+          "ch3:L115",
+          "ch3:L116",
+          "ch3:L117",
+          "ch3:L118",
+          "ch3:L119",
+          "ch3:L120",
+          "ch3:L121",
+          "ch3:L122",
+          "ch3:L123",
+          "ch3:L124",
+          "ch3:L125",
+          "ch3:L126",
+          "ch3:L127",
+          "ch3:L130",
+          "ch3:L131",
+          "ch3:L132",
+          "ch3:L133",
+          "ch3:L134",
+          "ch3:L135",
+          "ch3:L136",
+          "ch3:L137",
+          "ch3:L138",
+          "ch3:L139",
+          "ch3:L140",
+          "ch3:L141",
+          "ch3:L142",
+          "ch3:L143",
+          "ch3:L146",
+          "ch3:L147",
+          "ch3:L148",
+          "ch3:L149",
+          "ch3:L150",
+          "ch3:L151",
+          "ch3:L152",
+          "ch3:L153",
+          "ch3:L154",
+          "ch3:L155",
+          "ch3:L156",
+          "ch3:L157",
+          "ch3:L158",
+          "ch3:L159",
+          "ch3:L160",
+          "ch3:L161",
+          "ch3:L162",
+          "ch3:L163",
+          "ch3:L164",
+          "ch3:L165",
+          "ch3:L166",
+          "ch3:L167",
+          "ch3:L168",
+          "ch3:L169",
+          "ch3:L170",
+          "ch3:L171",
+          "ch3:L172",
+          "ch3:L173",
+          "ch3:L174",
+          "ch3:L175",
+          "ch3:L178",
+          "ch3:L179",
+          "ch3:L180",
+          "ch3:L181",
+          "ch3:L182",
+          "ch3:L183",
+          "ch3:L184",
+          "ch3:L185",
+          "ch3:L186",
+          "ch3:L187",
+          "ch3:L188",
+          "ch3:L189",
+          "ch3:L190",
+          "ch3:L191",
+          "ch3:L192",
+          "ch3:L193",
+          "ch3:L194",
+          "ch3:L195",
+          "ch3:L196",
+          "ch3:L197",
+          "ch3:L198",
+          "ch3:L199",
+          "ch3:L200",
+          "ch3:L201",
+          "ch3:L202",
+          "ch3:L203",
+          "ch3:L204",
+          "ch3:L205",
+          "ch3:L206",
+          "ch3:L207",
+          "ch3:L208",
+          "ch3:L209",
+          "ch3:L210",
+          "ch3:L211",
+          "ch3:L212",
+          "ch3:L213",
+          "ch3:L214",
+          "ch3:L215",
+          "ch3:L224",
+          "ch3:L225",
+          "ch3:L226",
+          "ch3:L227",
+          "ch3:L228",
+          "ch3:L229",
+          "ch3:L236",
+          "ch3:L237",
+          "ch3:L238",
+          "ch3:L239",
+          "ch3:L240",
+          "ch3:L241",
+          "ch3:L242",
+          "ch3:L243",
+          "ch3:L244",
+          "ch3:L245",
+          "ch3:L246",
+          "ch3:L80",
+          "ch3:L81",
+          "ch3:L82",
+          "ch3:L83",
+          "ch3:L84",
+          "ch3:L85",
+          "ch3:L86",
+          "ch3:L87",
+          "ch3:L88",
+          "ch3:L89",
+          "ch3:L90",
+          "ch3:L91",
+          "ch3:L92",
+          "ch3:L93",
+          "ch3:L94",
+          "ch3:L95",
+          "ch3:L96",
+          "ch3:L97",
+          "ch3:L98",
+          "ch3:L99"
+        ]
+      },
+      "reviewed": 118,
+      "total": 118,
+      "dispositions": {
+        "bounded-local-phenomenon-or-structure-supported": [
+          "ch3:L54",
+          "ch3:L55",
+          "ch3:L56",
+          "ch3:L61",
+          "ch3:L62",
+          "ch3:L64",
+          "ch3:L65",
+          "ch3:L66",
+          "ch3:L67",
+          "ch3:L68",
+          "ch3:L69",
+          "ch3:L260",
+          "ch3:L261",
+          "ch3:L262",
+          "ch3:L263",
+          "ch3:L264",
+          "ch3:L265",
+          "ch3:L285",
+          "ch3:L286",
+          "ch3:L288",
+          "ch3:L289",
+          "ch3:L290",
+          "ch3:L291",
+          "ch3:L292",
+          "ch3:L293",
+          "ch3:L294",
+          "ch3:L295",
+          "ch3:L297",
+          "ch3:L298",
+          "ch3:L299",
+          "ch3:L300",
+          "ch3:L301",
+          "ch3:L304",
+          "ch3:L305",
+          "ch3:L310",
+          "ch3:L311",
+          "ch3:L312",
+          "ch3:L313",
+          "ch3:L314",
+          "ch3:L315",
+          "ch3:L316",
+          "ch3:L317",
+          "ch3:L318",
+          "ch3:L322",
+          "ch3:L323",
+          "ch3:L324",
+          "ch3:L325",
+          "ch3:L326",
+          "ch3:L327",
+          "ch3:L328",
+          "ch3:L329",
+          "ch3:L330",
+          "ch3:L331",
+          "ch3:L332",
+          "ch3:L333",
+          "ch3:L334",
+          "ch3:L335",
+          "ch3:L341",
+          "ch3:L342",
+          "ch3:L343",
+          "ch3:L348",
+          "ch3:L350",
+          "ch3:L354",
+          "ch3:L357",
+          "ch3:L374",
+          "ch3:L392",
+          "ch3:L401",
+          "ch3:L410",
+          "ch3:L419",
+          "ch3:L428",
+          "ch3:L437",
+          "ch3:L446",
+          "ch3:L455",
+          "ch3:L464",
+          "ch3:L473",
+          "ch3:L482",
+          "ch3:L500",
+          "ch3:L509",
+          "ch3:L518",
+          "ch3:L527",
+          "ch3:L536",
+          "ch3:L545",
+          "ch3:L572",
+          "ch3:L581",
+          "ch3:L590",
+          "ch3:L599",
+          "ch3:L608",
+          "ch3:L617",
+          "ch3:L732",
+          "ch3:L734",
+          "ch3:L735",
+          "ch3:L741"
+        ],
+        "source-or-history-or-completeness-limit": [
+          "ch3:L15",
+          "ch3:L21",
+          "ch3:L287",
+          "ch3:L302",
+          "ch3:L307",
+          "ch3:L320",
+          "ch3:L321",
+          "ch3:L344",
+          "ch3:L345",
+          "ch3:L346",
+          "ch3:L347",
+          "ch3:L349",
+          "ch3:L491",
+          "ch3:L626",
+          "ch3:L702",
+          "ch3:L703",
+          "ch3:L725",
+          "ch3:L740"
+        ],
+        "locator-or-internal-description-defect": [
+          "ch3:L221",
+          "ch3:L296",
+          "ch3:L303",
+          "ch3:L306",
+          "ch3:L563",
+          "ch3:L701",
+          "ch3:L707"
+        ],
+        "qualified-prior-source-attribution-disagreement": [
+          "ch3:L554"
+        ]
+      },
+      "method": "Read all 118 pending verse-linked units before the pointing lists, all matched note bodies and targets, and associated eight-cell table rows. Root independently checked meaningful new findings in complete raw/parsed caches.",
+      "associated_table_scopes": [
+        [
+          374,
+          381
+        ],
+        [
+          392,
+          399
+        ],
+        [
+          401,
+          408
+        ],
+        [
+          410,
+          417
+        ],
+        [
+          419,
+          426
+        ],
+        [
+          428,
+          435
+        ],
+        [
+          437,
+          444
+        ],
+        [
+          446,
+          453
+        ],
+        [
+          455,
+          462
+        ],
+        [
+          464,
+          471
+        ],
+        [
+          473,
+          480
+        ],
+        [
+          482,
+          489
+        ],
+        [
+          491,
+          498
+        ],
+        [
+          500,
+          507
+        ],
+        [
+          509,
+          516
+        ],
+        [
+          518,
+          525
+        ],
+        [
+          527,
+          534
+        ],
+        [
+          536,
+          543
+        ],
+        [
+          545,
+          552
+        ],
+        [
+          554,
+          561
+        ],
+        [
+          563,
+          570
+        ],
+        [
+          572,
+          579
+        ],
+        [
+          581,
+          588
+        ],
+        [
+          590,
+          597
+        ],
+        [
+          599,
+          606
+        ],
+        [
+          608,
+          615
+        ],
+        [
+          617,
+          624
+        ],
+        [
+          626,
+          633
+        ]
+      ],
+      "subclaim_limits": {
+        "ordinary-letter-provenance": [
+          287,
+          302,
+          307,
+          491,
+          626
+        ],
+        "specific-masorah-provenance": [
+          291,
+          294,
+          305
+        ],
+        "Leningrad-dot-attribution": [
+          344,
+          345,
+          346,
+          347,
+          349
+        ],
+        "incidental-pointing": [
+          305,
+          350
+        ],
+        "joining-scope": [
+          374,
+          617
+        ],
+        "source-history-and-broad-method": [
+          15,
+          21,
+          702,
+          703,
+          725,
+          740
+        ]
+      },
+      "limits": "Supported means the local phenomenon/annotation agrees. It does not certify all nested provenance clauses, historical claims, aggregates, manuscript inventory or complete pointing. Nun markers were read as structures, not survey text."
+    },
+    {
+      "id": "remaining-ch2-outside-policy",
+      "page": "ch2",
+      "selection": {
+        "claim_ids": [
+          "ch2:L1010",
+          "ch2:L1012",
+          "ch2:L102",
+          "ch2:L1020",
+          "ch2:L117",
+          "ch2:L121",
+          "ch2:L123",
+          "ch2:L126",
+          "ch2:L127",
+          "ch2:L128",
+          "ch2:L139",
+          "ch2:L140",
+          "ch2:L172",
+          "ch2:L173",
+          "ch2:L174",
+          "ch2:L189",
+          "ch2:L191",
+          "ch2:L196",
+          "ch2:L217",
+          "ch2:L220",
+          "ch2:L221",
+          "ch2:L223",
+          "ch2:L224",
+          "ch2:L225",
+          "ch2:L226",
+          "ch2:L228",
+          "ch2:L238",
+          "ch2:L69",
+          "ch2:L703",
+          "ch2:L79",
+          "ch2:L810",
+          "ch2:L811",
+          "ch2:L812",
+          "ch2:L813",
+          "ch2:L817",
+          "ch2:L823",
+          "ch2:L923",
+          "ch2:L929",
+          "ch2:L93",
+          "ch2:L935",
+          "ch2:L941",
+          "ch2:L947",
+          "ch2:L953",
+          "ch2:L959",
+          "ch2:L965",
+          "ch2:L971",
+          "ch2:L977",
+          "ch2:L983"
+        ]
+      },
+      "reviewed": 48,
+      "total": 48,
+      "dispositions": {
+        "attributed-qere-note-scope-disagreement": [
+          "ch2:L69"
+        ],
+        "previously-recorded-reversed-description": [
+          "ch2:L102"
+        ],
+        "introduction-internal-accent-name-disagreement": [
+          "ch2:L173"
+        ],
+        "locator-or-selected-membership-limits": [
+          "ch2:L221",
+          "ch2:L813"
+        ],
+        "previously-recorded-stale-illustration": [
+          "ch2:L965"
+        ],
+        "selected-examples-supported-external-comparisons-unverified": [
+          "ch2:L79",
+          "ch2:L93",
+          "ch2:L117",
+          "ch2:L121",
+          "ch2:L123",
+          "ch2:L126",
+          "ch2:L127",
+          "ch2:L128",
+          "ch2:L139",
+          "ch2:L140",
+          "ch2:L172",
+          "ch2:L174"
+        ],
+        "linguistic-history-policy-unverified-local-examples-checked": [
+          "ch2:L189",
+          "ch2:L191",
+          "ch2:L196"
+        ],
+        "legarmeh-examples-supported-general-rule-or-source-history-limited": [
+          "ch2:L217",
+          "ch2:L220",
+          "ch2:L223",
+          "ch2:L224",
+          "ch2:L225",
+          "ch2:L226",
+          "ch2:L228",
+          "ch2:L238"
+        ],
+        "paragraph-or-layout-supported-entire-ranges-and-history-limited": [
+          "ch2:L703",
+          "ch2:L810",
+          "ch2:L811",
+          "ch2:L812",
+          "ch2:L817",
+          "ch2:L823"
+        ],
+        "indentation-supported-grammar-and-percentages-unverified": [
+          "ch2:L923",
+          "ch2:L929",
+          "ch2:L935",
+          "ch2:L941",
+          "ch2:L947",
+          "ch2:L953",
+          "ch2:L959",
+          "ch2:L971",
+          "ch2:L977",
+          "ch2:L983"
+        ],
+        "heading-presentation-supported-in-raw-cache": [
+          "ch2:L1010",
+          "ch2:L1012",
+          "ch2:L1020"
+        ]
+      },
+      "method": "All 48 selected units and full matched note structures/bodies were read. Long L221 membership checked each existing main target; all 11 indentation illustrations and26 centered headings checked in faithful raw structures. Song-list whole ranges received representative checks only.",
+      "limits": "Local structure support does not certify physical manuscripts, external books, linguistic theories, global policies, the 90%/98% estimates, or whole song-layout ranges. Bare manuscript wording does not create attribution.",
+      "legarmeh_selected_absences": [
+        "1Samuel 11:9",
+        "1Samuel 11:12",
+        "2Samuel 15:2",
+        "Zechariah 10:12",
+        "Song of Songs 3:3",
+        "1Chronicles 18:10"
+      ],
+      "legarmeh_locator_bindings": [
+        [
+          "Numbers",
+          10,
+          29
+        ],
+        [
+          "Numbers",
+          10,
+          35
+        ],
+        [
+          "2Samuel",
+          15,
+          30
+        ],
+        [
+          "Ruth",
+          3,
+          3
+        ],
+        [
+          "Ruth",
+          3,
+          13
+        ]
+      ]
+    },
+    {
+      "id": "catalogues-appendices",
+      "page": "appendices",
+      "selection": {
+        "claim_ids": [
+          "appendices:L374",
+          "appendices:L375",
+          "appendices:L377",
+          "appendices:L378",
+          "appendices:L379",
+          "appendices:L380",
+          "appendices:L381",
+          "appendices:L382",
+          "appendices:L383",
+          "appendices:L384",
+          "appendices:L385"
+        ]
+      },
+      "reviewed": 11,
+      "total": 11,
+      "dispositions": {
+        "catalogue-typed-membership-supported": [
+          "appendices:L374",
+          "appendices:L377",
+          "appendices:L378",
+          "appendices:L379",
+          "appendices:L380",
+          "appendices:L381",
+          "appendices:L382",
+          "appendices:L384",
+          "appendices:L385"
+        ],
+        "catalogue-scope-or-template-drift": [
+          "appendices:L375",
+          "appendices:L383"
+        ]
+      },
+      "method": "Complete closed EP catalogue census and exact membership comparisons; full details are in catalogue-comparison.json.",
+      "limits": "Traditional masorah populations may differ from current typed structures. Membership comparisons do not certify historical provenance."
+    },
+    {
+      "id": "catalogues-ch2",
+      "page": "ch2",
+      "selection": {
+        "claim_ids": [
+          "ch2:L86",
+          "ch2:L87",
+          "ch2:L96",
+          "ch2:L97",
+          "ch2:L98",
+          "ch2:L105",
+          "ch2:L112",
+          "ch2:L113"
+        ]
+      },
+      "reviewed": 8,
+      "total": 8,
+      "dispositions": {
+        "catalogue-typed-membership-supported": [
+          "ch2:L86",
+          "ch2:L96",
+          "ch2:L97",
+          "ch2:L98",
+          "ch2:L105",
+          "ch2:L113"
+        ],
+        "catalogue-scope-or-template-drift": [
+          "ch2:L87",
+          "ch2:L112"
+        ]
+      },
+      "method": "Complete closed EP catalogue census and exact membership comparisons; full details are in catalogue-comparison.json.",
+      "limits": "Traditional masorah populations may differ from current typed structures. Membership comparisons do not certify historical provenance."
+    },
+    {
+      "id": "ch5-remaining-example-paragraphs",
+      "page": "ch5",
+      "selection": {
+        "claim_ids": [
+          "ch5:L49",
+          "ch5:L50",
+          "ch5:L53",
+          "ch5:L56",
+          "ch5:L58",
+          "ch5:L59",
+          "ch5:L63",
+          "ch5:L64",
+          "ch5:L65",
+          "ch5:L66",
+          "ch5:L67",
+          "ch5:L70",
+          "ch5:L257",
+          "ch5:L332",
+          "ch5:L676",
+          "ch5:L802",
+          "ch5:L803",
+          "ch5:L804",
+          "ch5:L805",
+          "ch5:L47",
+          "ch5:L51",
+          "ch5:L57",
+          "ch5:L687",
+          "ch5:L44",
+          "ch5:L839",
+          "ch5:L855"
+        ]
+      },
+      "reviewed": 26,
+      "total": 26,
+      "dispositions": {
+        "bounded-main-source-or-selected-form-supported": [
+          "ch5:L49",
+          "ch5:L50",
+          "ch5:L53",
+          "ch5:L56",
+          "ch5:L58",
+          "ch5:L59",
+          "ch5:L63",
+          "ch5:L64",
+          "ch5:L65",
+          "ch5:L66",
+          "ch5:L67",
+          "ch5:L70",
+          "ch5:L257",
+          "ch5:L332",
+          "ch5:L676",
+          "ch5:L802",
+          "ch5:L803",
+          "ch5:L804",
+          "ch5:L805"
+        ],
+        "previously-recorded-uncertain-missing-yod-position": [
+          "ch5:L47"
+        ],
+        "manuscript-source-maqaf-attribution-disagreement": [
+          "ch5:L51"
+        ],
+        "edition-attribution-disagreement-with-note": [
+          "ch5:L57"
+        ],
+        "docnote-omitted-accent-name-disagreement": [
+          "ch5:L687"
+        ],
+        "source-history-and-locator-limit": [
+          "ch5:L44"
+        ],
+        "current-selected-text-boundary-supported-history-unverified": [
+          "ch5:L839",
+          "ch5:L855"
+        ]
+      },
+      "method": "Root read complete selected units, all matched note bodies/targets, associated section paragraphs and complete raw/parsed verse contexts for consequential cases. Direct structured evidence was used for special letters, reversed nuns and reading-division metadata.",
+      "limits": "Main local support does not establish external histories, work chronology, estimatedmissingmetegs, universalerrorfrequency, scan interpretations or everycomparisonedition. Isaiah 44:24 retains a ketiv-quotation maqaf versus no-maqaf-description boundary question.",
+      "incidental_quote_limits": {
+        "Isaiah 44:24": "L-ketiv display includes maqaf but prose says none: physical mark versus qere/ketiv quotation convention unresolved."
+      },
+      "associated_unlinked_units_read": [
+        "ch5:L841",
+        "ch5:L844",
+        "ch5:L847",
+        "ch5:L849",
+        "ch5:L851",
+        "ch5:L853",
+        "ch5:L858",
+        "ch5:L861",
+        "ch5:L864",
+        "ch5:L867"
+      ]
+    },
+    {
+      "id": "remaining-misc-appendices",
+      "page": "appendices",
+      "selection": {
+        "claim_ids": [
+          "appendices:L374",
+          "appendices:L377",
+          "appendices:L378",
+          "appendices:L379",
+          "appendices:L380",
+          "appendices:L381",
+          "appendices:L382",
+          "appendices:L384",
+          "appendices:L385",
+          "appendices:L392",
+          "appendices:L404",
+          "appendices:L405",
+          "appendices:L406",
+          "appendices:L411",
+          "appendices:L418",
+          "appendices:L375",
+          "appendices:L383"
+        ]
+      },
+      "reviewed": 17,
+      "total": 17,
+      "dispositions": {
+        "bounded-local-phenomenon-or-template-supported": [
+          "appendices:L374",
+          "appendices:L377",
+          "appendices:L378",
+          "appendices:L379",
+          "appendices:L380",
+          "appendices:L381",
+          "appendices:L382",
+          "appendices:L384",
+          "appendices:L385",
+          "appendices:L392",
+          "appendices:L404",
+          "appendices:L405",
+          "appendices:L406",
+          "appendices:L411",
+          "appendices:L418"
+        ],
+        "boundary-metadata-supported": [],
+        "historical-source-or-policy-limit": [],
+        "locator-or-incidental-quotation-or-type-catalogue-difference": [
+          "appendices:L375",
+          "appendices:L383"
+        ],
+        "conflicting-historical-metadata": []
+      },
+      "method": "Read complete matched notes and relevant parsed/raw structures for the whole chosen population. Verse-anchor table units include all associated eight cells.",
+      "limits": "Local examples and boundaries do not establish external books, historical manuscript pages or photography, original masorah catalogues, broad base-source policies, or legacy template display.",
+      "associated_table_scopes": [],
+      "specific_limits": {
+        "ch4:L407": "Selected spelling agrees; tentative Aleppo claim has no pertinent local statement; Yemenite witnesses are explicitly divided.",
+        "ch4:L433": "Current word agrees; Breuer provenance/reason unavailable.",
+        "appendices:L375": "Historical examples and current simple-template populations differ;2Samuel8:3 now uses two-word different-qere type.",
+        "appendices:L383": "Eight references use the two-word type;2Samuel21:12 uses the current three-word type, corroborating L384."
+      }
+    },
+    {
+      "id": "remaining-misc-ch1",
+      "page": "ch1",
+      "selection": {
+        "claim_ids": [
+          "ch1:L127"
+        ]
+      },
+      "reviewed": 1,
+      "total": 1,
+      "dispositions": {
+        "bounded-local-phenomenon-or-template-supported": [],
+        "boundary-metadata-supported": [],
+        "historical-source-or-policy-limit": [
+          "ch1:L127"
+        ],
+        "locator-or-incidental-quotation-or-type-catalogue-difference": [],
+        "conflicting-historical-metadata": []
+      },
+      "method": "Read complete matched notes and relevant parsed/raw structures for the whole chosen population. Verse-anchor table units include all associated eight cells.",
+      "limits": "Local examples and boundaries do not establish external books, historical manuscript pages or photography, original masorah catalogues, broad base-source policies, or legacy template display.",
+      "associated_table_scopes": [],
+      "specific_limits": {
+        "ch4:L407": "Selected spelling agrees; tentative Aleppo claim has no pertinent local statement; Yemenite witnesses are explicitly divided.",
+        "ch4:L433": "Current word agrees; Breuer provenance/reason unavailable.",
+        "appendices:L375": "Historical examples and current simple-template populations differ;2Samuel8:3 now uses two-word different-qere type.",
+        "appendices:L383": "Eight references use the two-word type;2Samuel21:12 uses the current three-word type, corroborating L384."
+      }
+    },
+    {
+      "id": "remaining-misc-ch4",
+      "page": "ch4",
+      "selection": {
+        "claim_ids": [
+          "ch4:L362",
+          "ch4:L363",
+          "ch4:L368",
+          "ch4:L369",
+          "ch4:L389",
+          "ch4:L421",
+          "ch4:L25",
+          "ch4:L27",
+          "ch4:L31",
+          "ch4:L35",
+          "ch4:L407",
+          "ch4:L433",
+          "ch4:L33",
+          "ch4:L398",
+          "ch4:L30"
+        ]
+      },
+      "reviewed": 15,
+      "total": 15,
+      "dispositions": {
+        "bounded-local-phenomenon-or-template-supported": [
+          "ch4:L362",
+          "ch4:L363",
+          "ch4:L368",
+          "ch4:L369",
+          "ch4:L389",
+          "ch4:L421"
+        ],
+        "boundary-metadata-supported": [
+          "ch4:L25",
+          "ch4:L27",
+          "ch4:L31",
+          "ch4:L35"
+        ],
+        "historical-source-or-policy-limit": [
+          "ch4:L407",
+          "ch4:L433"
+        ],
+        "locator-or-incidental-quotation-or-type-catalogue-difference": [
+          "ch4:L33",
+          "ch4:L398"
+        ],
+        "conflicting-historical-metadata": [
+          "ch4:L30"
+        ]
+      },
+      "method": "Read complete matched notes and relevant parsed/raw structures for the whole chosen population. Verse-anchor table units include all associated eight cells.",
+      "limits": "Local examples and boundaries do not establish external books, historical manuscript pages or photography, original masorah catalogues, broad base-source policies, or legacy template display.",
+      "associated_table_scopes": [
+        [
+          398,
+          405
+        ],
+        [
+          407,
+          414
+        ]
+      ],
+      "specific_limits": {
+        "ch4:L407": "Selected spelling agrees; tentative Aleppo claim has no pertinent local statement; Yemenite witnesses are explicitly divided.",
+        "ch4:L433": "Current word agrees; Breuer provenance/reason unavailable.",
+        "appendices:L375": "Historical examples and current simple-template populations differ;2Samuel8:3 now uses two-word different-qere type.",
+        "appendices:L383": "Eight references use the two-word type;2Samuel21:12 uses the current three-word type, corroborating L384."
+      }
+    },
+    {
+      "id": "remaining-misc-index-aleppo",
+      "page": "index-aleppo",
+      "selection": {
+        "claim_ids": [
+          "index-aleppo:L15",
+          "index-aleppo:L716"
+        ]
+      },
+      "reviewed": 2,
+      "total": 2,
+      "dispositions": {
+        "bounded-local-phenomenon-or-template-supported": [],
+        "boundary-metadata-supported": [
+          "index-aleppo:L15"
+        ],
+        "historical-source-or-policy-limit": [
+          "index-aleppo:L716"
+        ],
+        "locator-or-incidental-quotation-or-type-catalogue-difference": [],
+        "conflicting-historical-metadata": []
+      },
+      "method": "Read complete matched notes and relevant parsed/raw structures for the whole chosen population. Verse-anchor table units include all associated eight cells.",
+      "limits": "Local examples and boundaries do not establish external books, historical manuscript pages or photography, original masorah catalogues, broad base-source policies, or legacy template display.",
+      "associated_table_scopes": [],
+      "specific_limits": {
+        "ch4:L407": "Selected spelling agrees; tentative Aleppo claim has no pertinent local statement; Yemenite witnesses are explicitly divided.",
+        "ch4:L433": "Current word agrees; Breuer provenance/reason unavailable.",
+        "appendices:L375": "Historical examples and current simple-template populations differ;2Samuel8:3 now uses two-word different-qere type.",
+        "appendices:L383": "Eight references use the two-word type;2Samuel21:12 uses the current three-word type, corroborating L384."
+      }
+    },
+    {
+      "id": "remaining-misc-index-leningrad",
+      "page": "index-leningrad",
+      "selection": {
+        "claim_ids": [
+          "index-leningrad:L236",
+          "index-leningrad:L964"
+        ]
+      },
+      "reviewed": 2,
+      "total": 2,
+      "dispositions": {
+        "bounded-local-phenomenon-or-template-supported": [],
+        "boundary-metadata-supported": [],
+        "historical-source-or-policy-limit": [
+          "index-leningrad:L236",
+          "index-leningrad:L964"
+        ],
+        "locator-or-incidental-quotation-or-type-catalogue-difference": [],
+        "conflicting-historical-metadata": []
+      },
+      "method": "Read complete matched notes and relevant parsed/raw structures for the whole chosen population. Verse-anchor table units include all associated eight cells.",
+      "limits": "Local examples and boundaries do not establish external books, historical manuscript pages or photography, original masorah catalogues, broad base-source policies, or legacy template display.",
+      "associated_table_scopes": [],
+      "specific_limits": {
+        "ch4:L407": "Selected spelling agrees; tentative Aleppo claim has no pertinent local statement; Yemenite witnesses are explicitly divided.",
+        "ch4:L433": "Current word agrees; Breuer provenance/reason unavailable.",
+        "appendices:L375": "Historical examples and current simple-template populations differ;2Samuel8:3 now uses two-word different-qere type.",
+        "appendices:L383": "Eight references use the two-word type;2Samuel21:12 uses the current three-word type, corroborating L384."
+      }
+    },
+    {
+      "id": "ch2-final-secondary-theory",
+      "page": "ch2",
+      "selection": {
+        "claim_ids": [
+          "ch2:L646",
+          "ch2:L658",
+          "ch2:L670",
+          "ch2:L671",
+          "ch2:L673",
+          "ch2:L676",
+          "ch2:L677",
+          "ch2:L679",
+          "ch2:L681",
+          "ch2:L683",
+          "ch2:L685"
+        ]
+      },
+      "reviewed": 11,
+      "total": 11,
+      "dispositions": {
+        "bounded-local-evidence-supported-theory-or-completeness-unverified": [
+          "ch2:L646",
+          "ch2:L658",
+          "ch2:L670",
+          "ch2:L673",
+          "ch2:L677",
+          "ch2:L679",
+          "ch2:L683",
+          "ch2:L685"
+        ],
+        "selected-five-structures-supported-A-provenance-unattested": [
+          "ch2:L671"
+        ],
+        "central-specimens-supported-two-gray-maqaf-representation-differences": [
+          "ch2:L676"
+        ],
+        "attributed-hataf-disagreement-and-malformed-excluded-example-locator": [
+          "ch2:L681"
+        ]
+      },
+      "ordered_population_counts": {
+        "ch2:L658": 15,
+        "ch2:L670": 17,
+        "ch2:L671": 5,
+        "ch2:L676": 7,
+        "ch2:L677": 4,
+        "ch2:L681": 11
+      },
+      "method": "Read all 11 units with full ordered source text, matched notes and complete EP. Specimens preceding links were paired directly rather than using the post-link helper field. L670 counts17 explicit items plus8 cross-referenced hallelujah cases; three opening repeats produce20 link occurrences.",
+      "limits": "Pronunciation, intermediate-sheva theory, source histories and global completeness are unverified. L671 selected features agree but the atom-specific Aleppo statements are not supplied by corresponding notes. L658 retains qualified incidental Leningrad dagesh uncertainty.",
+      "representation_limits": {
+        "ch2:L676": [
+          "Psalms 46:4",
+          "Psalms 64:7"
+        ]
+      }
+    },
+    {
+      "id": "poetic-roster-source-units",
+      "page": "ch5",
+      "selection": {
+        "claim_ids": [
+          "ch5:L743",
+          "ch5:L745",
+          "ch5:L747",
+          "ch5:L751",
+          "ch5:L753",
+          "ch5:L755",
+          "ch5:L759",
+          "ch5:L761",
+          "ch5:L769",
+          "ch5:L773",
+          "ch5:L775",
+          "ch5:L787",
+          "ch5:L789",
+          "ch5:L791"
+        ]
+      },
+      "reviewed": 14,
+      "total": 14,
+      "dispositions": {
+        "individual-item-assessments-see-poetic-rosters": [
+          "ch5:L743",
+          "ch5:L745",
+          "ch5:L747",
+          "ch5:L751",
+          "ch5:L753",
+          "ch5:L755",
+          "ch5:L759",
+          "ch5:L761",
+          "ch5:L769",
+          "ch5:L773",
+          "ch5:L775",
+          "ch5:L787",
+          "ch5:L789",
+          "ch5:L791"
+        ]
+      },
+      "method": "Every125 explicit and260 implicit item read with complete notes and complete EP; ordered source/context joins and individual disposition inputs retained in poetic-roster-review.json and poetic-rosters.json.",
+      "limits": "Current features agree in 385 items; central named-source support exists in 286, one has qualification/representation concern and98 lack pertinent named-source statements. Overlapping prose/scope flags are separate."
+    }
+  ]
+}

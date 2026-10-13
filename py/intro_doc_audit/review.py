@@ -29,6 +29,7 @@ def roster_items():
         r["claim"]: r["items"]
         for r in read("hataf-rosters.json")["rosters"]
         + read("meteg-roster-review.json")["rosters"]
+        + read("poetic-rosters.json")["rosters"]
     }
 
 
@@ -127,6 +128,16 @@ def card(case, by_claim, by_note):
         extra = f' <a href="https://github.com/bdenckla/MAM-basics/issues/{case["issue"]}">MAM-basics #{case["issue"]}</a>'
     intro_cells = [hbo(intro_display(c)) for c in claims]
     intro = intro_cells[0]
+    if case.get("intro_literal_excerpts"):
+        intro_cells = []
+        for excerpt in case["intro_literal_excerpts"]:
+            cid, text = excerpt["claim"], excerpt["text"]
+            if text not in by_claim[cid]["text"]:
+                raise ValueError(
+                    "Introduction review excerpt is not a literal source fragment"
+                )
+            intro_cells.append(hbo(intro_display({"id": cid, "text": text})))
+        intro = "<hr>".join(intro_cells)
     if case.get("intro_roster_items"):
         excerpts = []
         for cid, index in case["intro_roster_items"]:
@@ -167,7 +178,23 @@ def card(case, by_claim, by_note):
             if isinstance(target, str)
             else ""
         )
-        bodies.append(prefix + hbo(note["body_text"]))
+        excerpts = case.get("note_excerpts", {}).get(note["id"])
+        if excerpts:
+            if not all(fragment in note["body_text"] for fragment in excerpts):
+                raise ValueError("Review excerpt is not a literal note fragment")
+            shown = (
+                hbo("\n".join(excerpts))
+                + '<details><summary class="latin">Full note</summary>'
+                + hbo(note["body_text"])
+                + "</details>"
+            )
+        else:
+            shown = hbo(note["body_text"])
+        bodies.append(prefix + shown)
+    if case.get("supporting_intro_claims"):
+        bodies = [
+            hbo(intro_display(by_claim[cid])) for cid in case["supporting_intro_claims"]
+        ]
     if not bodies:
         bodies = [
             (
@@ -203,7 +230,7 @@ def card(case, by_claim, by_note):
     )
     if len(contexts) > 3:
         context_html = f"<details><summary>Cached contexts for {len(contexts)} verses</summary>{context_html}</details>"
-    if len(claims) == len(notes) == len(refs) and len(refs) > 1:
+    if len(intro_cells) == len(notes) == len(refs) and len(refs) > 1:
         comparison_rows = "".join(
             f'<tr><td class="he" dir="rtl">{cell}</td><td class="he" dir="rtl">{body}</td><td class="bcv">{html.escape(audit.ref_id(ref))}</td></tr>'
             for cell, body, ref in zip(intro_cells, bodies, refs)
@@ -213,7 +240,7 @@ def card(case, by_claim, by_note):
     return (
         f"""<article id="{case['id']}"><h3>{html.escape(case['title'])}</h3>
 <p class="status">{html.escape(case['status'].replace('-', ' '))}{extra}</p>
-<div class="scroll"><table class="comparison"><thead><tr><th>Introduction</th><th>Doc-note</th><th>Verse</th></tr></thead><tbody>{comparison_rows}
+<div class="scroll"><table class="comparison"><thead><tr><th>Introduction</th><th>{html.escape(case.get('right_label', 'Doc-note'))}</th><th>Verse</th></tr></thead><tbody>{comparison_rows}
 </tbody></table></div><p>{html.escape(case['explanation'])}</p><p class="meta">{cite}</p>{enumeration}{context_html}</article>""",
         contexts,
     )
@@ -280,7 +307,6 @@ def main():
                         "evidence": by_claim[cid]["evidence"],
                     }
                 )
-    audit.dump("claim-dispositions.json", dispositions)
     for batch in other_batches:
         population = [n for group in batch["dispositions"].values() for n in group]
         selectors = batch.get("selectors") or [
@@ -369,6 +395,54 @@ def main():
                 "item_statuses": {i["id"]: i["status"] for i in row["items"]},
             }
         )
+    scoped = read("scoped-assessments.json")
+    for batch in scoped["batches"]:
+        population = [cid for ids in batch["dispositions"].values() for cid in ids]
+        selector = batch["selection"]
+        expected = (
+            {
+                c["id"]
+                for c in claims
+                if c["id"].startswith(batch["page"] + ":")
+                and selector.get("min_line", 1)
+                <= c["line"]
+                <= selector.get("max_line", 100000)
+                and (not selector.get("explicit_refs_only") or c["refs"])
+                and c["id"] not in selector.get("exclude_claims", [])
+            }
+            if "claim_ids" not in selector
+            else set(selector["claim_ids"])
+        )
+        if (
+            len(population) != len(set(population))
+            or set(population) != expected
+            or len(population) != batch["total"]
+        ):
+            raise ValueError(f"Incomplete scoped assessment: {batch['id']}")
+        for status, ids in batch["dispositions"].items():
+            for cid in ids:
+                dispositions.append(
+                    {
+                        "claim": cid,
+                        "batch": batch["id"],
+                        "status": status,
+                        "evidence": by_claim[cid]["evidence"],
+                    }
+                )
+    unique = {}
+    for assessment in dispositions:
+        cid = assessment["claim"]
+        if cid in unique:
+            unique[cid].setdefault("additional_assessments", []).append(
+                {
+                    key: value
+                    for key, value in assessment.items()
+                    if key not in {"claim", "evidence"}
+                }
+            )
+        else:
+            unique[cid] = assessment
+    dispositions = list(unique.values())
     audit.dump("claim-dispositions.json", dispositions)
     pointing_reviewed = (
         len(ledger)
@@ -404,7 +478,7 @@ def main():
                 "counts": topic["counts"],
                 "reviewed_source_units": reviewed,
                 "pending_explicit_reference_units": pending_refs,
-                "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed",
+                "semantic_status": "explicit-reference-source-units-assessed; broader non-reference claims retain the stated evidence boundary",
             }
         )
     audit.dump("topic-coverage.json", coverage)
@@ -420,9 +494,14 @@ def main():
         rendered = []
         for case in selection[key]:
             markup, contexts = card(case, by_claim, by_note)
+            if key == "findings":
+                markup = f'<details class="finding"><summary>{html.escape(case["title"])} <small>{html.escape(case["status"].replace("-", " "))}</small></summary>{markup}</details>'
             rendered.append(markup)
             all_contexts.extend(contexts)
-        sections.append(f'<section><h2>{label}</h2>{"".join(rendered)}</section>')
+        body = "".join(rendered)
+        if key in {"tracked", "uncertainty", "controls"}:
+            body = f"<details><summary>Show {len(rendered)} {label.lower()}</summary>{body}</details>"
+        sections.append(f"<section><h2>{label}</h2>{body}</section>")
     nav_rows = []
     for case in navigation:
         c = by_claim[case["claim"]]
@@ -485,12 +564,19 @@ def main():
         "all_selected_units_reviewed": len(dispositions),
         "bounded_list_source_units_reviewed": bounded_list_units,
         "policy_units_assessed": sum(b["reviewed"] for b in policy["batches"]),
+        "scoped_units_assessed": sum(b["reviewed"] for b in scoped["batches"]),
+        "explicit_reference_units_assessed": sum(
+            bool(c["refs"]) and c["id"] in reviewed_ids for c in claims
+        ),
+        "explicit_reference_units_total": summary["explicit_reference_units"],
         "hataf_roster_items_reviewed": sum(
             len(r["items"]) for r in hataf_review["rosters"]
         ),
         "hataf_roster_items_total": read("roster-review.json")["total_items"],
         "meteg_roster_items_reviewed": meteg_review["reviewed"],
         "meteg_roster_items_total": meteg_review["total"],
+        "poetic_roster_items_reviewed": read("poetic-rosters.json")["reviewed"],
+        "poetic_roster_items_total": read("poetic-rosters.json")["total"],
         "catalogue_lines_reviewed": catalogue_comparison["catalogue_lines"],
         "catalogue_membership_matches": catalogue_comparison[
             "matching_membership_lines"
@@ -504,7 +590,7 @@ def main():
     spelling_reviewed = sum(
         b["reviewed"] for b in other_batches if "spelling" in b.get("batch", "")
     )
-    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source snapshot <code>{chapters}</code>. {len(topics)} topic spans on 13 pages; {summary['explicit_reference_units']:,} verse-linked source units. Pointing batches reviewed {pointing_reviewed}/{pointing_reviewed} selected rows; spelling batches {spelling_reviewed}/{spelling_reviewed} units; 19/19 catalogue memberships were compared. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Remaining general rules, spelling lists and complete-corpus claims are mapped but not yet fully audited.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
+    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source <code>{chapters[:12]}</code>. {len(topics)}/340 topic spans; {counts['explicit_reference_units_assessed']:,}/{summary['explicit_reference_units']:,} verse-linked units assessed; 667/667 hataf, 98/98 meteg and 385/385 poetic roster items. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Expand a reviewed case for exact Hebrew and context. General rules, physical readings, historical evidence and whole-corpus completeness retain their explicit limits.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
     output = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cached Introduction audit</title><style>'
         + style

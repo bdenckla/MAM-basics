@@ -1,0 +1,375 @@
+{
+  "rosters": [
+    {
+      "claim": "ch5:L743",
+      "kind": "explicit-poetic-design",
+      "total": 7,
+      "correspondence_items": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "qualification_items": [],
+      "feature_only_items": [
+        2
+      ]
+    },
+    {
+      "claim": "ch5:L745",
+      "kind": "explicit-poetic-design",
+      "total": 2,
+      "correspondence_items": [
+        1,
+        2
+      ],
+      "qualification_items": [],
+      "feature_only_items": []
+    },
+    {
+      "claim": "ch5:L747",
+      "kind": "explicit-poetic-design",
+      "total": 4,
+      "correspondence_items": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "qualification_items": [],
+      "feature_only_items": []
+    },
+    {
+      "claim": "ch5:L751",
+      "kind": "explicit-poetic-design",
+      "total": 34,
+      "correspondence_items": [
+        19,
+        22,
+        29
+      ],
+      "qualification_items": [],
+      "feature_only_items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "claim": "ch5:L753",
+      "kind": "explicit-poetic-design",
+      "total": 11,
+      "correspondence_items": [
+        2,
+        6,
+        10,
+        11
+      ],
+      "qualification_items": [
+        5
+      ],
+      "feature_only_items": [
+        1,
+        3,
+        4,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "claim": "ch5:L755",
+      "kind": "explicit-poetic-design",
+      "total": 10,
+      "correspondence_items": [],
+      "qualification_items": [],
+      "feature_only_items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "claim": "ch5:L759",
+      "kind": "explicit-poetic-design",
+      "total": 25,
+      "correspondence_items": [
+        3,
+        7,
+        8,
+        11,
+        13,
+        14,
+        18,
+        19,
+        20,
+        23,
+        24,
+        25
+      ],
+      "qualification_items": [],
+      "feature_only_items": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        15,
+        16,
+        17,
+        21,
+        22
+      ]
+    },
+    {
+      "claim": "ch5:L761",
+      "kind": "explicit-poetic-design",
+      "total": 7,
+      "correspondence_items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "qualification_items": [],
+      "feature_only_items": []
+    },
+    {
+      "claim": "ch5:L769",
+      "kind": "explicit-poetic-design",
+      "total": 15,
+      "correspondence_items": [],
+      "qualification_items": [],
+      "feature_only_items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "claim": "ch5:L773",
+      "kind": "explicit-poetic-design",
+      "total": 8,
+      "correspondence_items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "qualification_items": [],
+      "feature_only_items": []
+    },
+    {
+      "claim": "ch5:L775",
+      "kind": "explicit-poetic-design",
+      "total": 2,
+      "correspondence_items": [
+        1,
+        2
+      ],
+      "qualification_items": [],
+      "feature_only_items": []
+    },
+    {
+      "claim": "ch5:L787",
+      "kind": "revia-omission",
+      "book": "Psalms",
+      "total": 150,
+      "default_correspondence": true,
+      "feature_only_items": [
+        5,
+        26,
+        98,
+        125
+      ]
+    },
+    {
+      "claim": "ch5:L789",
+      "kind": "revia-omission",
+      "book": "Proverbs",
+      "total": 48,
+      "default_correspondence": true,
+      "feature_only_items": [
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        33,
+        36,
+        39
+      ]
+    },
+    {
+      "claim": "ch5:L791",
+      "kind": "revia-omission",
+      "book": "Job",
+      "total": 62,
+      "default_correspondence": true,
+      "feature_only_items": [
+        9,
+        13,
+        16,
+        29,
+        36,
+        38,
+        46
+      ]
+    }
+  ],
+  "scope_flags": {
+    "ch5:L743/item/1": [
+      "note calls omitted OLEH REVIA; independently verified prose defect"
+    ],
+    "ch5:L743/item/4": [
+      "introduction legarmeh versus current paseq structural class; central omission agrees"
+    ],
+    "ch5:L751/item/4": [
+      "incidental patah quotation versus Aleppo qamats note; accent/join feature agrees"
+    ],
+    "ch5:L751/item/19": [
+      "Introduction starred attribution versus note A?,L? uncertainty; note names resh absent from atom היה"
+    ],
+    "ch5:L753/item/5": [
+      "GALGAL U+05AA versus ATNAH_HAFUKH U+05A2; certain starred A versus uncertain A?; join feature agrees"
+    ],
+    "ch5:L787/item/56": [
+      "incidental omitted rafe in source quotation"
+    ],
+    "ch5:L787/item/64": [
+      "incidental sheva versus Aleppo hataf quotation; central revia omission agrees"
+    ],
+    "ch5:L791/item/28": [
+      "deliberate A-versus-L selected representation: A geresh/revia on different letters, MAM pair on same letter"
+    ],
+    "ch5:L787/item/3": [
+      "note qualification A-qere, bare A ketiv/qere in Introduction"
+    ],
+    "ch5:L789/item/21": [
+      "note qualification A-qere, bare A ketiv/qere in Introduction"
+    ],
+    "ch5:L759/item/1": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/2": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/4": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/5": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/9": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/10": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/15": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/17": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/20": [
+      "correction-history statement lacks corresponding local note evidence"
+    ],
+    "ch5:L759/item/7": [
+      "double-oleh supported; unfinished-correction explanation unverified"
+    ],
+    "ch5:L759/item/23": [
+      "correction history reported in note; not physically verified"
+    ],
+    "ch5:L761/item/4": [
+      "correction history reported in note; not physically verified"
+    ],
+    "ch5:L775/item/1": [
+      "correction history reported in note; not physically verified"
+    ]
+  },
+  "reviewed": 385,
+  "total": 385,
+  "source_dispositions": {
+    "central_named_source": 286,
+    "qualification_concern": 1,
+    "selected_feature_only": 98
+  },
+  "explicit_selected_feature_populations": {
+    "same_letter_oleh": 13,
+    "two_word_oleh": 55,
+    "oleh_placement": 25,
+    "divine_name_oleh": 7,
+    "gray_maqaf_tsinnorit": 15,
+    "divine_name_tsinnorit": 8,
+    "exceptions": 2
+  },
+  "two_word_oleh_selected_join_types": {
+    "gray_maqaf": 32,
+    "ordinary_maqaf": 6,
+    "spaces_after_independently_accented_words": 17
+  },
+  "limits": "All 385 items received complete-note and complete-EP review. Current-feature support is not manuscript attribution. Absence of a pertinent note is not a contradiction. Paired GERESH MUQDAM U+059D / REVIA U+0597 on the same Unicode letter is a parsed representation result, not manuscript placement. Physical readings, broad completeness and unreported correction histories remain unverified."
+}

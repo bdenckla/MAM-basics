@@ -27,6 +27,10 @@ def main():
     character_records = []
     combined_atom_records = []
     verse_count = 0
+    poetic_verse_count = 0
+    additional_characters = ("\N{HEBREW ACCENT DEHI}", "\N{HEBREW ACCENT OLE}")
+    additional_counts = Counter()
+    additional_refs = {char: set() for char in additional_characters}
     selected_marks = (
         "\N{HEBREW ACCENT SHALSHELET}",
         "\N{HEBREW ACCENT MERKHA KEFULA}",
@@ -39,6 +43,10 @@ def main():
             book, cv = ref.rsplit(" ", 1)
             chapter, verse = map(int, cv.split(":"))
             poetic = bl.is_poetcant(bl.mk_bcvtmam(book, chapter, verse))
+            for char in additional_characters:
+                if char in value:
+                    additional_counts[char] += value.count(char)
+                    additional_refs[char].add(ref)
             for char in selected_marks:
                 if char in value:
                     character_records.append(
@@ -105,6 +113,9 @@ def main():
                     if not verse.isdigit() or verse == "0":
                         continue
                     verse_count += 1
+                    poetic_verse_count += bl.is_poetcant(
+                        bl.mk_bcvtmam(bkid, int(chapter), int(verse))
+                    )
                     walk(
                         cells[2],
                         f"{bkid} {chapter}:{verse}",
@@ -127,6 +138,15 @@ def main():
         "rare-mark-populations.json",
         {
             "verses_scanned": verse_count,
+            "poetic_verses_scanned": poetic_verse_count,
+            "additional_literal_mark_populations": {
+                unicodedata.name(char): {
+                    "instances": additional_counts[char],
+                    "distinct_verses": len(additional_refs[char]),
+                    "verse_membership": sorted(additional_refs[char]),
+                }
+                for char in additional_characters
+            },
             "projection": result["projection"],
             "poetic_predicate": "bib_locales.is_poetcant(mk_bcvtmam(...)), including Job's prose sections",
             "limits": "Counts describe selected edition strings, not manuscript populations. Combined atoms are literal Hebrew runs inside selected leaf strings; the five qualifying atoms are retained with source pointers.",

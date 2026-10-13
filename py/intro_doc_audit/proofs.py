@@ -463,3 +463,201 @@ def main():
     print(
         f"Verified {len(meteg_prose)} meteg-prose controls against faithful raw notes"
     )
+    note = notes["Psalms 30:12/2/0"]
+    body = note["body_text"]
+    context = review.context(["Psalms", 30, 12])
+    raw_matches = [
+        t
+        for t in mwparserfromhell.parse(context["wikitext"]).filter_templates()
+        if str(t.name) == "נוסח"
+        and uni_denorm.give_std_mark_order(str(t.get("2").value))
+        == uni_denorm.give_std_mark_order(body)
+    ]
+    form = ATOMS.findall(body.split("א=", 1)[1])[0]
+    if (
+        len(raw_matches) != 1
+        or "\N{HEBREW ACCENT OLE}" not in note["target_node"]
+        or "\N{HEBREW ACCENT OLE}" in form
+        or "\N{HEBREW ACCENT REVIA}" in note["target_node"]
+        or "נקודת הרביע" not in body
+    ):
+        raise ValueError("Psalm30:12 missing-oleh description control changed")
+    audit.dump(
+        "poetic-description-proofs.json",
+        [
+            {
+                "note_id": note["id"],
+                "raw_path": context["path"],
+                "raw_note_body": str(raw_matches[0].get("2").value),
+                "target_node": note["target_node"],
+                "aleppo_form": form,
+                "target_codepoints": codepoints(note["target_node"]),
+                "aleppo_codepoints": codepoints(form),
+                "result": "Target contains OLEH+MERKHA; the A quotation retains MERKHA and omits OLEH. Note prose calls the omitted accent REVIA.",
+            }
+        ],
+    )
+    print("Verified Psalm30:12's poetic-accent description against faithful raw notes")
+    boundary = []
+    for cid, nid, ref in [
+        ("ch3:L557", "Numbers 22:5/2/0", ["Numbers", 22, 5]),
+        ("ch3:L707", "Genesis 2:10/2/0", ["Genesis", 2, 10]),
+        ("ch3:L263", "Levit 7:22/0/0", ["Levit", 7, 22]),
+    ]:
+        path, raw = review.raw_book(ref[0])
+        chapter = "\n".join(raw[review.hvn.INT_TO_STR_DIC[ref[1]]])
+        body = notes[nid]["body_text"]
+        matched = [
+            str(t.get("2").value)
+            for t in mwparserfromhell.parse(chapter).filter_templates()
+            if str(t.name) == "נוסח"
+            and uni_denorm.give_std_mark_order(
+                str(t.get("2").value).replace("{{ש}}", "\n")
+            )
+            == uni_denorm.give_std_mark_order(body)
+        ]
+        if len(matched) != 1:
+            raise ValueError(f"Source-boundary note lacks unique raw agreement: {nid}")
+        source = claims[cid]["text"]
+        if ref[0] == "Numbers":
+            if (
+                "א(ס)=" not in source
+                or "העדות שבשתיקה של א(ר)" not in body
+                or "א(ו)" not in body
+            ):
+                raise ValueError("Qualified prior witness disagreement changed")
+        elif ref[0] == "Genesis":
+            if (
+                "גרסאות קודמות" not in body
+                or "צילום הצבעוני" not in body
+                or 'ברי"ש מנקודת' not in body
+            ):
+                raise ValueError("Digital transcription chronology control changed")
+        elif 'להלן בפסוק כ"ז' not in body:
+            raise ValueError("Leviticus note locator control changed")
+        boundary.append(
+            {
+                "claim": cid,
+                "note_id": nid,
+                "raw_path": path.relative_to(audit.ROOT).as_posix(),
+                "raw_note_body": matched[0],
+                "parsed_note_body": body,
+                "literal_intro_text": source,
+                "scope": "Source attribution/chronology or prose locator; no physical manuscript verdict.",
+            }
+        )
+    raw_size = review.context(["Deuter", 22, 6])
+    if (
+        "{{אות-ג|" not in claims["ch3:L303"]["text"]
+        or "'''(ק)'''" not in claims["ch3:L303"]["text"]
+        or 'בקו"ף גדולה' not in raw_size["wikitext"]
+    ):
+        raise ValueError("Introduction letter-size label control changed")
+    boundary.append(
+        {
+            "claim": "ch3:L303",
+            "raw_context": raw_size,
+            "literal_intro_text": claims["ch3:L303"]["text"],
+            "scope": "Introduction internal size-label conflict corroborated by raw annotation.",
+        }
+    )
+    audit.dump("source-boundary-proofs.json", boundary)
+    print(
+        f"Verified {len(boundary)} source-boundary and prose controls against faithful raw caches"
+    )
+    semantic_controls = []
+    for cid, nid, ref, kind in [
+        (
+            "ch5:L51",
+            "Isaiah 59:19/2/0",
+            ["Isaiah", 59, 19],
+            "nearby-witness-maqaf-attribution",
+        ),
+        (
+            "ch5:L57",
+            "Isaiah 55:5/2/0",
+            ["Isaiah", 55, 5],
+            "HaKeter-reading-attribution",
+        ),
+        (
+            "ch5:L687",
+            "Song of Songs 2:17/2/0",
+            ["Song of Songs", 2, 17],
+            "qadma-versus-pashta-description",
+        ),
+        (
+            "ch2:L681",
+            "Psalms 31:12/2/1",
+            ["Psalms", 31, 12],
+            "omitted-versus-explicit-hataf",
+        ),
+        ("ch4:L30", "Amos 8:13/2/0", ["Amos", 8, 13], "three-versus-four-pages"),
+        (
+            "ch2:L69",
+            "2Samuel 21:12/2/0",
+            ["2Samuel", 21, 12],
+            "two-versus-three-qere-note-atoms",
+        ),
+        (
+            "ch5:L751",
+            "Psalms 53:6/2/0",
+            ["Psalms", 53, 6],
+            "resh-absent-from-described-atom",
+        ),
+    ]:
+        context = review.context(ref)
+        note = notes[nid]
+        body = note["body_text"]
+        matched = [
+            str(t.get("2").value)
+            for t in mwparserfromhell.parse(context["wikitext"]).filter_templates()
+            if str(t.name) == "נוסח"
+            and uni_denorm.give_std_mark_order(
+                str(t.get("2").value)
+                .replace("{{ש}}", "\n")
+                .replace("{{מ:לגרמיה-2}}", "\N{HEBREW PUNCTUATION PASEQ}")
+            )
+            == uni_denorm.give_std_mark_order(body)
+        ]
+        if len(matched) != 1:
+            raise ValueError(f"Semantic control lacks unique raw note: {nid}")
+        if kind == "qadma-versus-pashta-description" and (
+            "\N{HEBREW ACCENT QADMA}" not in note["target_node"]
+            or "חסר טעם הפשטא" not in body
+        ):
+            raise ValueError("Song accent-name control changed")
+        if kind == "omitted-versus-explicit-hataf":
+            intro_form = next(
+                w
+                for w in ATOMS.findall(claims[cid]["text"])
+                if audit.LETTERS.sub("", w) == "ולשכני"
+            )
+            note_form = next(
+                w for w in ATOMS.findall(body) if audit.LETTERS.sub("", w) == "ולשכני"
+            )
+            if (
+                "\N{HEBREW POINT HATAF PATAH}" in intro_form
+                or "\N{HEBREW POINT HATAF PATAH}" not in note_form
+            ):
+                raise ValueError("Psalm31:12 hataf control changed")
+        if kind == "resh-absent-from-described-atom" and (
+            'רי"ש' not in body or "ר" in note["target_node"]
+        ):
+            raise ValueError("Psalm53:6 letter-name control changed")
+        semantic_controls.append(
+            {
+                "claim": cid,
+                "note_id": nid,
+                "kind": kind,
+                "raw_path": context["path"],
+                "raw_note_body": matched[0],
+                "parsed_note_body": body,
+                "target_node": note["target_node"],
+                "literal_intro_text": claims[cid]["text"],
+                "scope": "Root-reviewed cached statement or prose discrepancy; raw matching verifies the quotation, not the physical manuscript.",
+            }
+        )
+    audit.dump("semantic-controls.json", semantic_controls)
+    print(
+        f"Verified {len(semantic_controls)} additional semantic-control quotations against raw notes"
+    )
