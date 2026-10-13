@@ -35,7 +35,7 @@ class MAMNativePaseq:
 
 
 def require_mam_simple(mam_simple_dir: Path) -> None:
-    """Fail clearly when a caller-supplied MAM-simple XML directory is absent.
+    """Fail clearly when a caller-supplied MAM-simple JSON directory is absent.
 
     The ordinary path is the local MAM-simple product. A caller may still supply
     ``--mam-simple-dir`` for an alternate input, and the exception therefore names the
@@ -43,7 +43,7 @@ def require_mam_simple(mam_simple_dir: Path) -> None:
     """
     if not mam_simple_dir.is_dir():
         raise FileNotFoundError(
-            f"MAM-simple XML directory does not exist: {mam_simple_dir}"
+            f"MAM-simple JSON directory does not exist: {mam_simple_dir}"
         )
 
 

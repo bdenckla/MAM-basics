@@ -9,9 +9,9 @@
 <link rel="stylesheet" href="documentation.css">
 </head>
 <body>
-<nav aria-label="Documentation"><a href="index.html">MAM-simple</a> · <a href="reading-mam-simple.html">Overview</a> · <a href="reading-mam-simple-xml.html">XML</a> · <a href="reading-mam-simple-json.html">JSON</a> · <a href="versification-differences.html">Versification differences</a> · <a href="versification-and-cantillation.html">Versification and cantillation</a></nav>
+<nav aria-label="Documentation"><a href="index.html">MAM-simple</a> · <a href="reading-mam-simple.html">Overview</a> · <a href="reading-mam-simple-json.html">JSON</a> · <a href="versification-differences.html">Versification differences</a> · <a href="versification-and-cantillation.html">Versification and cantillation</a></nav>
 <h1 id="reading-mam-simple">Reading MAM-simple</h1>
-<p>This document describes the XML and JSON formats used in MAM-simple and how to extract text from them.</p>
+<p>This document describes the JSON format used in MAM-simple and how to extract text from it.</p>
 <h2 id="file-layout">File Layout</h2>
 <table>
 <thead>
@@ -21,21 +21,7 @@
 <th>versification</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><code>xml-vtrad-bhs</code></td>
-<td>XML</td>
-<td>BHS</td>
-</tr>
-<tr>
-<td><code>xml-vtrad-sef</code></td>
-<td>XML</td>
-<td>Sefaria</td>
-</tr>
-<tr>
-<td><code>xml-vtrad-mam</code></td>
-<td>XML</td>
-<td>MAM native</td>
-</tr>
+<tbody>
 <tr>
 <td><code>json-vtrad-bhs</code></td>
 <td>JSON</td>
@@ -52,69 +38,62 @@
 <td>MAM native</td>
 </tr>
 </tbody></table>
-<p>Each file is named for one <code>book24</code> (e.g., <code>1Sam-2Sam.xml</code>, <code>Gen.xml</code>, <code>Hos-Mal.xml</code>).
+<p>Each file is named for one <code>book24</code> (e.g., <code>1Sam-2Sam.json</code>, <code>Gen.json</code>, <code>Hos-Mal.json</code>).
 A <code>book24</code> corresponds to one of the 24 books of the Hebrew Bible; some of them span more than one <code>book39</code>, i.e. some of them span more than one book in the system that divides the Hebrew Bible up into 39 rather than 24 books.</p>
 <h3 id="the-bhs-and-sefaria-folders-are-incremental-with-the-mam-ones-as-the-base">The BHS and Sefaria folders are incremental, with the MAM ones as the base</h3>
-<p>Since 2026-09-12, the two <code>-vtrad-mam</code> folders hold all 24 book-group files and the four
-others hold only the book groups whose cv-labels that versification places somewhere
-other than where MAM places them. That is six of the 24 for BHS — <code>1Sam-2Sam</code>, <code>Deut</code>,
-<code>Exod</code>, <code>Jer</code>, <code>Josh</code>, <code>Num</code> — and the same five less <code>Num</code> for Sefaria. The incremental-folder
-deletion removed 24.3 MB on 2026-09-12. The same commit removed another 1.3 MB by dropping
-<code>yeivinID</code> from the 48 MAM files, taking the product from 63.3 MB to 37.6 MB.</p>
-<p><strong>To read book group <code>X</code> in versification <code>V</code>: read <code>&lt;fmt&gt;-vtrad-&lt;V&gt;/X</code>, and if it is not
-there, read <code>&lt;fmt&gt;-vtrad-mam/X</code> instead.</strong> In Python, that is one <code>try</code>:</p>
+<p>The <code>json-vtrad-mam</code> folder holds all 24 book-group files. The BHS folder holds six groups — <code>1Sam-2Sam</code>, <code>Deut</code>, <code>Exod</code>, <code>Jer</code>, <code>Josh</code>, and <code>Num</code> — and the Sefaria folder holds the same five groups except <code>Num</code>. The other groups use the MAM file.</p>
+<p><strong>To read book group <code>X</code> in versification <code>V</code>, read <code>json-vtrad-&lt;V&gt;/X.json</code>, falling back to <code>json-vtrad-mam/X.json</code>.</strong> In Python:</p>
 <pre><code class="language-python">from pathlib import Path
 
 
-def book_group_path(fmt: str, vtrad: str, stem: str) -&gt; Path:
-    &quot;&quot;&quot;The file to read for one book group in one versification.
-
-    fmt is &quot;xml&quot; or &quot;json&quot;; vtrad is &quot;mam&quot;, &quot;bhs&quot; or &quot;sef&quot;; stem is a book24
-    name such as &quot;Gen&quot; or &quot;1Sam-2Sam&quot;.
-    &quot;&quot;&quot;
-    suffix = &quot;.&quot; + fmt
-    asked = Path(f&quot;{fmt}-vtrad-{vtrad}&quot;) / (stem + suffix)
-    if asked.exists():
+def book_group_path(vtrad: str, stem: str) -&gt; Path:
+    &quot;&quot;&quot;The JSON file for one book group in mam, bhs or sef versification.&quot;&quot;&quot;
+    if vtrad not in {&quot;mam&quot;, &quot;bhs&quot;, &quot;sef&quot;}:
+        raise ValueError(f&quot;Unknown versification {vtrad!r}&quot;)
+    asked = Path(f&quot;json-vtrad-{vtrad}&quot;) / (stem + &quot;.json&quot;)
+    if asked.is_file():
         return asked
-    return Path(f&quot;{fmt}-vtrad-mam&quot;) / (stem + suffix)
+    base = Path(&quot;json-vtrad-mam&quot;) / (stem + &quot;.json&quot;)
+    if not base.is_file():
+        raise FileNotFoundError(base)
+    return base
 </code></pre>
 <p>Every cv-label and every byte of text in the file the fallback returns is what
 versification <code>V</code> calls for, which is exactly why it is not stored twice. <strong>And the file
 says so itself</strong>: its root's <code>versification-tradition</code> holds a comma-separated set naming
 every tradition it is correct for, so a <code>Ruth</code> read this way says
-<code>versification-tradition=&quot;vtmam,vtbhs,vtsef&quot;</code> and a <code>Num</code> says
-<code>versification-tradition=&quot;vtmam,vtsef&quot;</code>. A reader can therefore check the file it landed
+<code>&quot;versification-tradition&quot;: &quot;vtmam,vtbhs,vtsef&quot;</code> and a <code>Num</code> says
+<code>&quot;versification-tradition&quot;: &quot;vtmam,vtsef&quot;</code>. A reader can therefore check the file it landed
 on rather than trust the fallback rule — see
-<a href="reading-mam-simple-xml.html#xml-element-hierarchy">the XML guide's root element</a>.</p>
+<a href="reading-mam-simple-json.html#root-object">the JSON guide's root object</a>.</p>
 <p>For a full description of where and how the three versifications differ, see <a href="versification-differences.html">Versification Differences</a>.</p>
 <h2 id="consumer-notice">Consumer notice</h2>
 <p>MAM-simple is a projected extract of MAM, not a complete representation of the
 MAM-parsed source. Every JSON file embeds a <code>consumer_notice</code> immediately after its
-<code>provenance</code> field, and every XML file places the same structured notice in a comment
-before the <code>&lt;book24&gt;</code> root. The notice points back to this section.</p>
+<code>provenance</code> field. The notice points back to this section.</p>
 <p>The following rules protect distinctions that a generic tree walk would erase:</p>
 <ul>
 <li>Use the incremental-folder fallback above. An absent BHS or Sefaria book-group file
 is not an absent book.</li>
 <li>Dispatch explicitly on every documented element role and fail on an unknown element.
-Choose one branch where alternatives remain, including <code>&lt;kq&gt;</code> and
-<code>&lt;cant-all-three&gt;</code>; do not concatenate alternatives, a <code>&lt;scrdfftar&gt;</code> target with its
-note, or a <code>&lt;good-ending&gt;</code> repetition with running text. MAM-simple has already
+Choose one branch where alternatives remain, including <code>kq</code> and
+<code>cant-all-three</code>; do not concatenate alternatives, a <code>scrdfftar</code> target with its
+note, or a <code>good-ending</code> repetition with running text. MAM-simple has already
 resolved or removed some choices retained by MAM-parsed, so absence here does not
 establish absence in MAM-parsed.</li>
-<li>Identify the two children of <code>&lt;kq&gt;</code> by element type, not by position. They are in the order
+<li>Identify the two children of <code>kq</code> by element type, not by position. They are in the order
 that MAM's rendered pages on Hebrew Wikisource have, which is qere first in about one pair
 in eight.</li>
-<li>The children of <code>&lt;slh-word&gt;</code> spell one atom-form. Its <code>slhw-desc-0</code> attribute repeats
+<li>The children of <code>slh-word</code> spell one atom-form. Its <code>slhw-desc-0</code> attribute repeats
 the uninterrupted atom-form without the letter formatting; the attribute is not
 additional Scripture.</li>
 <li>Select the required Scripture branches and reassemble adjacent fragments in source
 order before segmentation. An atom is one written form between spaces or maqafs. A
 chanted word is one atom or a complete maqaf compound. A template, fragment,
 punctuation, or structural-node boundary defines neither unit; in particular, a
-separate <code>&lt;lp-legarmeih&gt;</code> or <code>&lt;lp-paseq&gt;</code> node represents a mark that belongs with
+separate <code>lp-legarmeih</code> or <code>lp-paseq</code> node represents a mark that belongs with
 the preceding atom.</li>
-<li>Narpas (narrow-sense paseq, <code>&lt;lp-paseq&gt;</code>) forms no compound of any kind; only maqaf joins atoms
+<li>Narpas (narrow-sense paseq, <code>lp-paseq</code>) forms no compound of any kind; only maqaf joins atoms
 into a chanted word. MAM encodes no text whitespace before or after narpas to avoid
 prescribing display spacing, not to group the surrounding text. An edition decides
 whether to display spacing before and/or after narpas; an analytical consumer need
@@ -130,49 +109,55 @@ sides deliberately.</li>
 </ul>
 <h2 id="format-details">Format Details</h2>
 <ul>
-<li><strong><a href="reading-mam-simple-xml.html">XML format</a></strong> — element hierarchy, verse text storage, child element types, verse attributes, and versification attributes.</li>
-<li><strong><a href="reading-mam-simple-json.html">JSON format</a></strong> — JSON object structure mirroring the XML hierarchy.</li>
+<li><strong><a href="reading-mam-simple-json.html">JSON format</a></strong> — object hierarchy, child types, verse fields, and versification fields.</li>
 </ul>
 <h2 id="reading-mam-simple-from-python">Reading MAM-simple from Python</h2>
 <p>Nothing beyond the standard library is needed. Run from the MAM-simple directory, this
 program writes the plain text of Job 34 to <code>py-examples-out/job-34.txt</code>. It handles only
 the elements Job 34 has, and raises on any other rather than guess:</p>
-<pre><code class="language-python">import xml.etree.ElementTree as ET
+<pre><code class="language-python">import json
+from pathlib import Path
 
 PASEQ = &quot;\N{HEBREW PUNCTUATION PASEQ}&quot;
 MAQAF = &quot;\N{HEBREW PUNCTUATION MAQAF}&quot;
 
-# What each element of Job 34 other than &lt;text&gt; contributes to a verse's plain text.
-# This program handles only the elements Job 34 has, and raises on any other.
-_CONTRIBUTION = {
-    &quot;lp-legarmeih&quot;: PASEQ,  # the text after it starts with a space
-    &quot;implicit-maqaf&quot;: MAQAF,  # MAM's gray maqaf, with no space on either side
-}
+# This chapter has only these text and punctuation roles.
+_CONTRIBUTION = {&quot;lp-legarmeih&quot;: PASEQ, &quot;implicit-maqaf&quot;: MAQAF}
 
 
 def verse_text(verse):
     &quot;&quot;&quot;The plain text of one verse of Job 34.&quot;&quot;&quot;
-    if &quot;text&quot; in verse.attrib:  # a text attribute and children never co-occur
-        return verse.attrib[&quot;text&quot;]
+    if &quot;text&quot; in verse:
+        if &quot;contents&quot; in verse:
+            raise ValueError(&quot;text and contents cannot co-occur&quot;)
+        return verse[&quot;text&quot;]
     parts = []
-    for el in verse:
-        if el.tag == &quot;text&quot;:
-            parts.append(el.attrib[&quot;text&quot;])
-        elif el.tag in _CONTRIBUTION:
-            parts.append(_CONTRIBUTION[el.tag])
+    for node in verse.get(&quot;contents&quot;, []):
+        kind = node[&quot;type&quot;]
+        if kind == &quot;text&quot;:
+            if set(node) != {&quot;type&quot;, &quot;text&quot;}:
+                raise ValueError(f&quot;Unexpected text node {node}&quot;)
+            parts.append(node[&quot;text&quot;])
+        elif kind in _CONTRIBUTION:
+            if set(node) != {&quot;type&quot;}:
+                raise ValueError(f&quot;Unexpected punctuation node {node}&quot;)
+            parts.append(_CONTRIBUTION[kind])
         else:
-            raise ValueError(f&quot;{verse.attrib['osisID']}: unhandled &lt;{el.tag}&gt;&quot;)
+            raise ValueError(f&quot;{verse[&#x27;osisID&#x27;]}: unhandled {kind}&quot;)
     return &quot;&quot;.join(parts)
 
 
 def main():
-    book = ET.parse(&quot;xml-vtrad-mam/Job.xml&quot;)
-    chapter = book.find(&quot;book39/chapter[@osisID='Job.34']&quot;)
-    with open(&quot;py-examples-out/job-34.txt&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;) as out:
-        for verse in chapter:
-            if verse.tag != &quot;verse&quot;:
-                raise ValueError(f&quot;Job.34: unhandled &lt;{verse.tag}&gt;&quot;)
-            out.write(f&quot;{verse.attrib['osisID']}: {verse_text(verse)}\n&quot;)
+    with open(&quot;json-vtrad-mam/Job.json&quot;, encoding=&quot;utf-8&quot;) as source:
+        root = json.load(source)
+    book = next(n for n in root[&quot;contents&quot;] if n[&quot;type&quot;] == &quot;book39&quot; and n[&quot;osisID&quot;] == &quot;Job&quot;)
+    chapter = next(n for n in book[&quot;contents&quot;] if n[&quot;type&quot;] == &quot;chapter&quot; and n[&quot;osisID&quot;] == &quot;Job.34&quot;)
+    Path(&quot;py-examples-out&quot;).mkdir(exist_ok=True)
+    with open(&quot;py-examples-out/job-34.txt&quot;, &quot;w&quot;, encoding=&quot;utf-8&quot;, newline=&quot;\n&quot;) as out:
+        for verse in chapter[&quot;contents&quot;]:
+            if verse[&quot;type&quot;] != &quot;verse&quot;:
+                raise ValueError(f&quot;Job.34: unhandled {verse[&#x27;type&#x27;]}&quot;)
+            out.write(f&quot;{verse[&#x27;osisID&#x27;]}: {verse_text(verse)}\n&quot;)
 
 
 if __name__ == &quot;__main__&quot;:
@@ -180,9 +165,9 @@ if __name__ == &quot;__main__&quot;:
 </code></pre>
 <p>Two points in it are easy to get wrong:</p>
 <ul>
-<li><strong>An element without text can still contribute.</strong> <code>&lt;lp-legarmeih&gt;</code> contributes the
-glyph U+05C0, and <code>&lt;implicit-maqaf&gt;</code> MAM's gray maqaf as an ordinary maqaf. MAM
-encodes no space around <code>&lt;implicit-maqaf&gt;</code>, so a program that gives it nothing runs
+<li><strong>An element without text can still contribute.</strong> <code>lp-legarmeih</code> contributes the
+glyph U+05C0, and <code>implicit-maqaf</code> MAM's gray maqaf as an ordinary maqaf. MAM
+encodes no space around <code>implicit-maqaf</code>, so a program that gives it nothing runs
 two atoms together: Job 34:10 would read <bdi lang="hbo" dir="rtl">שִׁמְע֫וּלִ֥י</bdi> instead of <bdi lang="hbo" dir="rtl">שִׁמְע֫וּ־לִ֥י</bdi>.</li>
 <li><strong>Write non-ASCII to a file, not to stdout.</strong> On Windows, Python encodes a redirected
 stdout with the locale code page, and printing Hebrew there raises
@@ -190,19 +175,19 @@ stdout with the locale code page, and printing Hebrew there raises
 <code>sys.stdout.reconfigure(encoding=&quot;utf-8&quot;)</code> first.</li>
 </ul>
 <p>To read another chapter, add a branch for each element the program raises on;
-<a href="reading-mam-simple-xml.html#extracting-the-plain-text-of-a-verse">Extracting the plain text of a verse</a>
+<a href="reading-mam-simple-json.html#extracting-the-plain-text-of-a-verse">Extracting the plain text of a verse</a>
 says which elements need recursion and which hold alternatives to choose among.</p>
 <h2 id="the-py-examples-program-and-the-two-that-were-retired">The <code>py-examples/</code> Program, and the Two That Were Retired</h2>
 <p>The <code>py-examples/</code> directory contains one complete working example:</p>
 <ul>
-<li><strong><a href="https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/py-examples/main_letter_small_job_example.py"><code>main_letter_small_job_example.py</code></a></strong> — reports all of the <code>&lt;letter-small&gt;</code> elements in <code>Job.xml</code>, writing output to <code>py-examples-out/letter-small-job.txt</code>.</li>
+<li><strong><a href="https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/py-examples/main_letter_small_job_example.py"><code>main_letter_small_job_example.py</code></a></strong> — reports all of the <code>letter-small</code> elements in <code>Job.json</code>, writing output to <code>py-examples-out/letter-small-job.txt</code>.</li>
 </ul>
-<p>It iterates directly over XML elements, without the handler pattern described below.</p>
+<p>It inventories small-letter objects in JSON, including ketiv and qere branches and notes.</p>
 <p>Two further examples, <code>main_mam4sef_example.py</code> and <code>main_mam_osis_example.py</code>, were
 retired on 2026-09-12. They created the Sefaria and OSIS editions of MAM from this
 product — the first from the JSON format, the second from the XML format — and they were
 written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories. Both editions
-are still produced by MAM-basics' <code>py/main_mam4sef.py</code> and <code>py/main_mam_osis.py</code>. Both generators
+are still produced by MAM-basics' <code>py/main_mam4sef.py</code> and <code>py/main_mam_osis.py</code>. Both generators now read JSON and
 follow the incremental-folder rule above: read the requested versification file when present and
 the MAM file otherwise.</p>
 <h2 id="the-recursive-handler-pattern">The Recursive Handler Pattern</h2>
@@ -216,21 +201,21 @@ and the modules named are in
 <li><strong><code>py/mb_sefaria/mam4sef_or_ajf.py</code></strong> — reads JSON, walks the tree with <code>_handle()</code></li>
 <li><strong><code>py/mb_sefaria/mam4sef_handlers.py</code></strong> — handler functions for every element type, keyed by <code>(tag, class)</code> tuple</li>
 </ul>
-<p>The OSIS generator uses the same pattern over XML elements, with handler
+<p>The OSIS generator uses the same pattern over JSON objects, with handler
 functions in <code>py/osis/osis_handlers.py</code> and the walk itself in
 <code>py/osis/osis_runner.py</code>. Its <code>_handle()</code> is where to look to see the pattern
 whole. It processes one element by first processing that element's children, and then
 calling the element's handler with three arguments:</p>
 <ul>
-<li><code>etel</code> — the element itself</li>
+<li><code>etel</code> — the JSON object itself</li>
 <li><code>ofc1</code> — output for all children, summed together</li>
 <li><code>ofc2</code> — output for all children, per child</li>
 </ul>
-<p>When the element has a <code>text</code> attribute, <code>ofc1</code> is that attribute instead, which works
-because a <code>text</code> attribute and children never co-occur. Handlers are keyed by
+<p>When the element has a <code>text</code> field, <code>ofc1</code> is that field instead, which works
+because a <code>text</code> field and a <code>contents</code> array never co-occur. Handlers are keyed by
 <code>(tag, class)</code>, so <code>(&quot;kq&quot;, &quot;sep-maqaf&quot;)</code> gets a different handler from <code>(&quot;kq&quot;, None)</code>.
 The <code>ofc2</code> argument is what lets a handler choose among its children rather than take
-them all: <code>&lt;scrdfftar&gt;</code>'s handler uses it to tell the target from the note.</p>
+them all: <code>scrdfftar</code>'s handler uses it to tell the target from the note.</p>
 <p>Together, MAM-basics' Sefaria and OSIS generators are the canonical
 reference for how to process the full range of MAM-simple element types.</p>
 </body>

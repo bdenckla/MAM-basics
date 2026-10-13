@@ -15,18 +15,18 @@ def child_handlers(tag_and_class):
     return HANDLERS
 
 
-# etel: ElementTree element
+# etel: MAM-simple JSON node (OSIS output elements are ElementTree elements)
 # ofc1: output for all children, summed together
 # ofc2: output for all children, per child
 
 
 def _bk24(etel, ofc1, _ofc2):
-    # In MAM XML, every bk39 is inside a bk24.
+    # In MAM-simple JSON, every bk39 is inside a book-group envelope.
     # In contrast, in MAM OSIS, we allow the equivalent of a bk39
     # (a div with type "book")
     # to exist alongside the equivalent of a bk24
     # (a div with type "bookGroup").
-    bk39s = etel.findall("./book39")
+    bk39s = [child for child in etel["contents"] if child["type"] == "book39"]
     assert bk39s
     if len(bk39s) == 1:
         # Here we ignore the bk24 level, returning only its contents.
@@ -38,27 +38,27 @@ def _bk24(etel, ofc1, _ofc2):
 
 
 def _bk39(etel, ofc1, _ofc2):
-    attr = {"type": "book", "osisID": etel.attrib["osisID"]}
+    attr = {"type": "book", "osisID": etel["osisID"]}
     return _singleton("div", attr, ofc1)
 
 
 def _chapter(etel, ofc1, _ofc2):
-    attr = {"osisID": etel.attrib["osisID"]}
+    attr = {"osisID": etel["osisID"]}
     return _singleton("chapter", attr, ofc1)
 
 
 def _verse(etel, ofc1, _ofc2):
-    attr = {"osisID": etel.attrib["osisID"]}
+    attr = {"osisID": etel["osisID"]}
     return _singleton("verse", attr, ofc1)
 
 
 def _text(etel, _ofc1, _ofc2):
-    return [etel.attrib["text"]]
+    return [etel["text"]]
 
 
 def _silluq_before_meteg(etel, _ofc1, _ofc2):
-    text = etel.attrib["text"]
-    validate_silluq_before_meteg(text, etel.attrib["letters-with-silluq"])
+    text = etel["text"]
+    validate_silluq_before_meteg(text, etel["letters-with-silluq"])
     note = _etel_ons_with_text(
         "note", {"type": "x-silluq-before-meteg"}, "סילוק לפני געיה"
     )
@@ -122,7 +122,7 @@ def _invnun(etel, _ofc1, _ofc2):
         at the start of verses 23-28 and 40.
     """
     maybe_nbsp_dic = {"including-trailing-space": sd.NBSP, None: ""}
-    maybe_nbsp = maybe_nbsp_dic[etel.attrib.get("class")]
+    maybe_nbsp = maybe_nbsp_dic[etel.get("class")]
     return [hpu.NUN_HAF + maybe_nbsp]
 
 
@@ -170,8 +170,8 @@ def _pass_thru(_etel, ofc1, _ofc2):
 def _ketiv_qere(etel, _ofc1, ofc2):
     assert len(ofc2) == 2
     sep_dic = {"sep-maqaf": hpu.MAQ, None: " "}
-    separator = sep_dic[etel.attrib.get("class")]
-    kq_or_qk = tuple(ofc2.values())
+    separator = sep_dic[etel.get("class")]
+    kq_or_qk = tuple(ofc2)
     return [*kq_or_qk[0], separator, *kq_or_qk[1]]
 
 
@@ -213,12 +213,12 @@ def _qere_velo_ketiv(_etel, ofc1, _ofc2):
 
 
 def _slh_word(etel, ofc1, _ofc2):
-    desc3_es = etel.attrib["slhw-desc-3"]
+    desc3_es = etel["slhw-desc-3"]
     desc3 = slh_description.desc3_decoded_from_a_str(desc3_es)
     desc_parts = (
-        etel.attrib["slhw-desc-0"],
-        etel.attrib["slhw-desc-1"],
-        etel.attrib["slhw-desc-2"],
+        etel["slhw-desc-0"],
+        etel["slhw-desc-1"],
+        etel["slhw-desc-2"],
         desc3,
     )
     desc_str = slh_description.desc_parts_shown_as_a_str(desc_parts)
@@ -228,10 +228,10 @@ def _slh_word(etel, ofc1, _ofc2):
 
 
 def _scrdfftar(etel, _ofc1, ofc2):
-    target, note = ofc2.values()
+    target, note = ofc2
     attr = {"type": "x-scroll-difference"}
     note2 = _singleton("note", attr, note)
-    starpos = etel.attrib["sdt-starpos"]
+    starpos = etel["sdt-starpos"]
     assert starpos in ("before-word", "after-word")
     maybe_note_0 = note2 if starpos == "before-word" else []
     maybe_note_1 = note2 if starpos == "after-word" else []
@@ -267,8 +267,8 @@ def _ketiv_velo_qere_amx(ofc1):
 
 
 def _scope(bk39_etels):
-    first_id = bk39_etels[0].attrib["osisID"]
-    last_id = bk39_etels[-1].attrib["osisID"]
+    first_id = bk39_etels[0]["osisID"]
+    last_id = bk39_etels[-1]["osisID"]
     return first_id + "-" + last_id  # e.g. 1Chr-2Chr
 
 

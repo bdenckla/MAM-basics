@@ -5,15 +5,11 @@ from pathlib import Path
 
 _FORMAT_SUFFIXES = {
     "json": ".json",
-    "xml": ".xml",
 }
 _DIRECTORY_NAMES = {
     ("json", "mam"): "json-vtrad-mam",
     ("json", "bhs"): "json-vtrad-bhs",
     ("json", "sef"): "json-vtrad-sef",
-    ("xml", "mam"): "xml-vtrad-mam",
-    ("xml", "bhs"): "xml-vtrad-bhs",
-    ("xml", "sef"): "xml-vtrad-sef",
 }
 _VERSIFICATIONS = ("mam", "bhs", "sef")
 

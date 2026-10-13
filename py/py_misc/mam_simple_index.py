@@ -35,10 +35,9 @@ _TEMPLATE = """\
 </head>
 <body>
 <h1>MAM-simple</h1>
-<p>MAM-simple is a simple but incomplete extract of MAM, available in XML and JSON.</p>
+<p>MAM-simple is a simple but incomplete extract of MAM, available in JSON.</p>
 <ul>
 <li><a href="reading-mam-simple.html">Reading MAM-simple</a> — file layout, consumer notice, and examples</li>
-<li><a href="reading-mam-simple-xml.html">XML format</a></li>
 <li><a href="reading-mam-simple-json.html">JSON format</a></li>
 <li><a href="versification-differences.html">Versification differences</a></li>
 <li><a href="versification-and-cantillation.html">Versification and cantillation</a></li>

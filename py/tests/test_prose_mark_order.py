@@ -179,6 +179,6 @@ def test_hand_authored_prose_is_in_mam_mark_order():
         "Found hand-authored Hebrew not in MAM's mark order. Do NOT fix this by"
         " running unicodedata.normalize, which is what puts it in the wrong order in"
         " the first place: pass the text through uni_denorm.give_std_mark_order, or"
-        " lift the word from MAM-simple/xml-vtrad-mam, which has it already."
+        " lift the word from MAM-simple/json-vtrad-mam, which has it already."
         f" {offenders}"
     )

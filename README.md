@@ -8,7 +8,7 @@ This repository contains files related to [MAM (Miqra according to the Masorah)]
 
 1. **Download.** `main_download.py fr-wikisource` downloads MAM's books from Hebrew Wikisource into `in/mam-ws/` and maintains a 36-page special-page mirror under `in/mam-ws-special/`.
 2. **Parse.** `main_parse.py ws` parses the downloaded Wikisource MAM into [MAM-parsed-plus](MAM-parsed/README.md) under `MAM-parsed/plus/`.
-3. **Make MAM-simple.** `main_mam_simple.py` reads `MAM-parsed/plus/` and produces XML and JSON exports of MAM under [`MAM-simple/`](MAM-simple/).
+3. **Make MAM-simple.** `main_mam_simple.py` reads `MAM-parsed/plus/` and produces JSON exports of MAM under [`MAM-simple/`](MAM-simple/).
 4. **Make MAM-for-Sefaria and MAM-OSIS.** MAM-simple is used to make two more products: `main_mam4sef.py` writes [`MAM-for-Sefaria/`](MAM-for-Sefaria/), and `main_mam_osis.py` writes [`MAM-OSIS/`](MAM-OSIS/README.md).
 
 Another product that, like MAM-simple, has `MAM-parsed/plus/` as its source is the "MAM with doc" edition: `main_mam_with_doc.py` writes its HTML pages, in a two-column layout with documentation notes, under `gh-pages/MAM-with-doc/`.
@@ -23,7 +23,7 @@ Two diagrams show this pipeline:
 Several of the directories below have a README of their own, beside the files it describes.
 
 - [`MAM-parsed/`](MAM-parsed/README.md) — MAM-parsed-plus JSON, historical release inputs, documentation, and a toy example
-- [`MAM-simple/`](MAM-simple/) — XML and JSON MAM exports in three versifications
+- [`MAM-simple/`](MAM-simple/) — JSON MAM exports in three versifications
 - [`MAM-for-Sefaria/`](MAM-for-Sefaria/) — CSV MAM export suitable for Sefaria import; its [encoding documentation](https://bdenckla.github.io/MAM-basics/MAM-for-Sefaria/) is published with this site
 - [`MAM-with-doc/`](MAM-with-doc/README.md) — an HTML edition of MAM with documentation notes; its [published edition](https://bdenckla.github.io/MAM-basics/MAM-with-doc/) is in the site tree
 - [`MAM-OSIS/`](MAM-OSIS/README.md) — OSIS MAM exports for conversion to SWORD format, with configuration and documentation

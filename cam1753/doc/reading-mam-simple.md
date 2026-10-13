@@ -4,7 +4,6 @@ The canonical guide to the MAM-simple format is maintained as HTML under
 `gh-pages/MAM-simple/` in MAM-basics:
 
 - [Reading MAM-simple](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple.html) — file layout, and reading MAM-simple from Python
-- [XML format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-xml.html) — the XML hierarchy, element types, and verse attributes
 - [JSON format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html) — the JSON format
 
 This file used to be a fuller copy of that guide. The copy went stale — it still had the
@@ -14,13 +13,14 @@ What remains below is what is specific to the Cambridge 1753 data.
 
 ## What MAM-basics has for Cambridge 1753
 
-`../../MAM-simple/xml-vtrad-mam/` is the MAM word-sequence ground truth. It is the
+`../../MAM-simple/json-vtrad-mam/` is the MAM word-sequence ground truth. It is the
 landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pipeline.
 
-`../../py/mb_cmn/mam_xml_verses.py` reads it. `py/py_cam1753_loc/gen_flat_stream.py`
-called it to make the Cambridge 1753 streams until 2026-09-26, when that generator was
-retired and the module moved from `py/py_ac_loc/`. The entry point is
-`get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one
+`../../py/mb_cmn/mam_json_verses.py` reads it. `py/py_cam1753_loc/gen_flat_stream.py`
+called its XML predecessor to make the Cambridge 1753 streams until 2026-09-26, when that generator was
+retired and the XML module moved from `py/py_ac_loc/`. The reader moved to JSON on
+2026-10-12. The entry point is
+`get_verses_in_range(json_path, book_osis_prefix, start_cv, end_cv)`, which returns one
 dict per verse with `cv`, `words`, `ketiv_indices`, `atoms`, and `parashah_before`.
 
 **The shared reader came from codex-index-aleppo, deliberately.** codex-index-cam1753 had a

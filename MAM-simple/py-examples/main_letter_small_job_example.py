@@ -11,7 +11,7 @@ from mb_misc import letter_small_job
 
 def main():
     """Find <letter-small> elements in Job."""
-    letter_small_job.almost_main("xml-vtrad-mam/Job.xml")
+    letter_small_job.almost_main("json-vtrad-mam/Job.json")
 
 
 if __name__ == "__main__":

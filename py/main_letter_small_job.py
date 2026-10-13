@@ -4,12 +4,12 @@
 from mb_cmn import paths
 from mb_misc import letter_small_job
 
-_XML_PATH = str(paths.repo_root() / "MAM-simple" / "xml-vtrad-mam" / "Job.xml")
+_JSON_PATH = str(paths.repo_root() / "MAM-simple" / "json-vtrad-mam" / "Job.json")
 
 
 def almost_main():
     """Find <letter-small> elements in Job."""
-    letter_small_job.almost_main(_XML_PATH)
+    letter_small_job.almost_main(_JSON_PATH)
 
 
 if __name__ == "__main__":

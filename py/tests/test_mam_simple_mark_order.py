@@ -4,7 +4,7 @@ WHY THIS EXISTS
 
 The corpus was never the problem. ``render_wt/render_wikitext_helpers.py``'s
 ``uni_check.check`` runs on every element sequence MAM-simple's generator renders and
-aborts the run on a violation, so the six output flavours cannot be published in the
+aborts the run on a violation, so the JSON outputs cannot be distributed in the
 wrong order. Everything else in that repo had no check at all, and on 2026-08-09 two
 places were found in the wrong order:
 
@@ -27,13 +27,9 @@ MAM-simple scope leaves out.
 
 WHAT IT COVERS, AND WHY NOT THE CORPUS
 
-Every tracked text file under MAM-simple/ except ``xml-vtrad-*`` and ``json-vtrad-*``,
-plus the maintained HTML reading guides and both versification generators' prose
-and pages. The two corpus families are excluded on cost, not on trust: the corpus
-is 84 MB and takes 13 seconds to check,
-against 0.01 seconds for everything else, and it is the one part already guaranteed at
-generation time by the assert named above. Including it would grow this repo's suite by
-a tenth for a second opinion on the only thing already proven.
+Every tracked text file under MAM-simple/ except ``json-vtrad-*``,
+plus the maintained HTML guides, the XML compatibility pointer, and both versification
+generators' prose and pages. The JSON corpus is already checked during generation.
 
 ``misc/`` and ``py-examples-out/`` ARE covered, though both are generated. Until
 2026-09-12 the reason was that both were produced by the vendored copies under
@@ -63,9 +59,8 @@ import unittest
 from mb_cmn import paths
 from mb_cmn import uni_denorm
 
-# The published corpus. Excluded on cost: 84 MB and 13 seconds, and already asserted at
-# generation time by uni_check.check inside render_wtseq.
-_EXCLUDE_DIR_PREFIXES = ("xml-vtrad-", "json-vtrad-")
+# The distributed JSON corpus is already checked by uni_check.check in render_wtseq.
+_EXCLUDE_DIR_PREFIXES = ("json-vtrad-",)
 
 # Fonts and images have no text to order; reading them as UTF-8 would merely raise.
 _BINARY_EXTENSIONS = {".woff2", ".png", ".jpg", ".jpeg", ".gif", ".ico", ".pdf"}
@@ -148,7 +143,7 @@ class TestMamSimpleMarkOrder(unittest.TestCase):
             "Found Hebrew not in MAM's mark order. Do NOT fix this by running"
             " unicodedata.normalize, which is what puts it in the wrong order in the"
             " first place: pass the text through uni_denorm.give_std_mark_order, or"
-            f" lift it from xml-vtrad-mam. {offenders}",
+            f" lift it from json-vtrad-mam. {offenders}",
         )
 
 

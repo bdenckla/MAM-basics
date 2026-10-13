@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="documentation.css">
 </head>
 <body>
-<nav aria-label="Documentation"><a href="index.html">MAM-simple</a> · <a href="reading-mam-simple.html">Overview</a> · <a href="reading-mam-simple-xml.html">XML</a> · <a href="reading-mam-simple-json.html">JSON</a> · <a href="versification-and-cantillation.html">Versification and cantillation</a></nav>
+<nav aria-label="Documentation"><a href="index.html">MAM-simple</a> · <a href="reading-mam-simple.html">Overview</a> · <a href="reading-mam-simple-json.html">JSON</a> · <a href="versification-and-cantillation.html">Versification and cantillation</a></nav>
 <h1 id="versification-differences-mam-bhs-and-sefaria">Versification Differences: MAM, BHS, and Sefaria</h1>
 <p>MAM-simple provides three versification traditions (vtrad), that is, three
 ways of placing cv-labels (chapter/verse labels) across the same Hebrew text:</p>
@@ -401,9 +401,9 @@ relative to the MAM reference shown in the MAM column.</p>
 
 <h2 id="how-mam-simple-records-these-differences">How MAM-simple Records These Differences</h2>
 <p>The tables above treat the Hebrew span as primary. Internally, however, the
-<code>vtrad-bhs</code> and <code>vtrad-sef</code> output files (XML and JSON) still record these
+<code>json-vtrad-bhs</code> and <code>json-vtrad-sef</code> output files record these
 differences relative to MAM, because MAM is the underlying source text. Every
-non-MAM verse whose label diverges from its MAM source has two attributes:</p>
+non-MAM verse whose label diverges from its MAM source has the following fields:</p>
 <ul>
 <li><strong><code>contents-corresponds-to</code></strong> — one of:
 <ul>
@@ -415,21 +415,27 @@ non-MAM verse whose label diverges from its MAM source has two attributes:</p>
 <li><strong><code>osisID-of-MAM-src</code></strong> — the OSIS ID of the MAM source verse (present for
 the first two cases above, absent for the third)</li>
 </ul>
-<p>For example:</p>
-<pre><code class="language-xml">&lt;!-- Chapter-boundary shift: 1 Sam 23:29 (MAM) → 1 Sam 24:1 (BHS/Sef) --&gt;
-&lt;verse osisID=&quot;1Sam.24.1&quot;
-       contents-corresponds-to=&quot;a full verse in MAM&quot;
-       osisID-of-MAM-src=&quot;1Sam.23.29&quot; .../&gt;
-
-&lt;!-- Decalogue split: MAM Deut 5:6 → BHS/Sef 5:6 (first part) --&gt;
-&lt;verse osisID=&quot;Deut.5.6&quot;
-       contents-corresponds-to=&quot;less than a full verse in MAM&quot;
-       osisID-of-MAM-src=&quot;Deut.5.6&quot; .../&gt;
-
-&lt;!-- Joshua 21: verse number inserted where MAM has no text --&gt;
-&lt;verse osisID=&quot;Josh.21.36&quot;
-       contents-corresponds-to=&quot;no verse in MAM&quot;
-       text=&quot;—&quot;/&gt;
+<p>For example, with Scripture text omitted from the first two objects:</p>
+<pre><code class="language-json">[
+  {
+    &quot;type&quot;: &quot;verse&quot;,
+    &quot;osisID&quot;: &quot;1Sam.24.1&quot;,
+    &quot;contents-corresponds-to&quot;: &quot;a full verse in MAM&quot;,
+    &quot;osisID-of-MAM-src&quot;: &quot;1Sam.23.29&quot;
+  },
+  {
+    &quot;type&quot;: &quot;verse&quot;,
+    &quot;osisID&quot;: &quot;Deut.5.6&quot;,
+    &quot;contents-corresponds-to&quot;: &quot;less than a full verse in MAM&quot;,
+    &quot;osisID-of-MAM-src&quot;: &quot;Deut.5.6&quot;
+  },
+  {
+    &quot;type&quot;: &quot;verse&quot;,
+    &quot;osisID&quot;: &quot;Josh.21.36&quot;,
+    &quot;contents-corresponds-to&quot;: &quot;no verse in MAM&quot;,
+    &quot;text&quot;: &quot;—&quot;
+  }
+]
 </code></pre>
 </body>
 </html>

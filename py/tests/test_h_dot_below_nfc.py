@@ -303,7 +303,6 @@ _MAM_SIMPLE_EXCLUDE_DIR_PREFIXES = (
     "py-examples/mb_cmn/",
     "py-examples/mb_misc/",
     "py-examples-out/",
-    "xml-vtrad-",
 )
 _MAM_SIMPLE_EXCLUDE_FILES = frozenset({"py-examples/provenance.md"})
 _MAM_WITH_DOC_EXCLUDE_DIR_PREFIXES = ("py/",)

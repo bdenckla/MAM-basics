@@ -7,7 +7,7 @@ from render_wt import render_wikitext as rwt
 
 
 def render_to_xml(books_mpu, bkid):
-    """Render MAM XML"""
+    """Render the abstract node intermediate consumed by MAM-simple JSON."""
     # rv: rendered verses
     bcvt_to_veraf = rwt.render(bkid, books_mpu, _RENOPTS_MAM_XML)
     verafs = tuple(bcvt_to_veraf.values())
@@ -20,7 +20,7 @@ def render_to_xml(books_mpu, bkid):
 
 
 def handle_survey_results(bkids, survey):
-    """Report the render tags MAM-simple's XML handles and no verse uses; only a full run can."""
+    """Report the render tags MAM-simple handles and no verse uses; only a full run can."""
     if len(bkids) != 39:
         return
     rts.write_unused_report(

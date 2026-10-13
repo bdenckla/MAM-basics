@@ -91,9 +91,9 @@ An atom is one written form between spaces or maqafs. These rules define its fie
    `../cam1753/cam1753-line-breaks/`: MAM-simple's book id, then the chapter and verse, as in
    `2Chr 11:16`, `Ps 58:4` or `Job 4:11`.
 2. **A `_num` counts the verse's atoms from 1** in MAM's word sequence in
-   [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/). The segmentation is the one
+   [`../MAM-simple/json-vtrad-mam/`](../MAM-simple/json-vtrad-mam/). The segmentation is the one
    behind the Aleppo and Cambridge 1753 flat streams:
-   [`../py/mb_cmn/mam_xml_verses.py`](../py/mb_cmn/mam_xml_verses.py)'s `get_verse_atoms`,
+   [`../py/mb_cmn/mam_json_verses.py`](../py/mb_cmn/mam_json_verses.py)'s `get_verse_atoms`,
    which splits each entry that the module's `get_verse_words` gives after every maqaf. So
    the paseq glyph and a sof pasuq belong to the atom before
    them, and where MAM has a ketiv/qere, the atoms are the ketiv's. A ketiv that is not read is
@@ -365,7 +365,7 @@ verses from these images.
      atoms are those of `<cant-combined>`, the combined representation of the two strands, whose atom
      numbers and letters are the same as either strand's. The reader's module docstring gives
      each decision with an example. No verse is refused now, and
-     `py/tests/test_mam_xml_verses.py` checks both fixes over the whole of MAM-simple.
+     `py/tests/test_mam_json_verses.py` checks both fixes over the whole of MAM-simple.
 
    The fixes changed no atom of any verse that the reader already accepted, so no `_num` in the
    index and no letter count in item 3 changed.

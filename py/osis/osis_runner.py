@@ -28,6 +28,7 @@ from mb_cmn import my_utils
 from mb_cmn import file_io
 from mb_cmn import provenance
 from mb_cmn import shrink
+from mb_cmn import mam_simple_json
 from osis import osis_namespace as osisn
 from osis import osis_handlers
 from osis import osis_index_html
@@ -37,9 +38,9 @@ _NS_URL_FOR_XML = "http://www.w3.org/XML/1998/namespace"
 
 
 def almost_main(paths, bkids=None, *, book_group_path: Callable[[str], Path]):
-    """Create MAM-OSIS XML from MAM XML data, writing to the locations in paths.
+    """Create MAM-OSIS XML from MAM-simple JSON data, writing to the locations in paths.
 
-    ``book_group_path`` explicitly resolves each requested input XML book group.
+    ``book_group_path`` explicitly resolves each requested input JSON book group.
     Required paths key: output_book_dir.
     Optional paths keys: header_path, osis_output_path, xsd_path, xml_xsd_path,
     index_html_dir.
@@ -56,20 +57,23 @@ def almost_main(paths, bkids=None, *, book_group_path: Callable[[str], Path]):
         _write_osis(header, proots, paths)
 
 
-def _handle(handlers, etel):  # etel: ElementTree element
-    tag_and_class = etel.tag, etel.attrib.get("class")
-    attr_text = etel.attrib.get("text")
+def _handle(handlers, etel):  # etel: MAM-simple JSON node
+    attrs = mam_simple_json.attributes(etel)
+    tag_and_class = etel["type"], attrs.get("class")
+    attr_text = attrs.get("text")
     ofc1_raw = []  # output for all children, summed together
-    ofc2 = {}  # output for all children, per child
+    ofc2 = []  # output for all children, per child
     child_handlers = osis_handlers.child_handlers(tag_and_class)
-    for child in etel:
+    for child in mam_simple_json.children(etel):
         output_for_child = _handle(child_handlers, child)
         ofc1_raw.extend(output_for_child)
-        ofc2[child] = output_for_child
+        ofc2.append(output_for_child)
     ofc1 = shrink.shrink_xml(ofc1_raw)
     if attr_text is not None:
         assert not ofc1
         ofc1 = [attr_text]
+    if tag_and_class not in handlers:
+        raise ValueError(f"Unhandled MAM-simple JSON type/class: {tag_and_class}")
     handler = handlers[tag_and_class]
     return handler(etel, ofc1, ofc2)
 
@@ -101,9 +105,8 @@ def _write_callback(xml_elementtree2, out_fp):
 
 def _do_one_book_group(bkg, paths, book_group_path):
     bkg_name = bkg["bkg-name"]
-    xml_path = book_group_path(bkg_name)
-    tree = ET.parse(xml_path)
-    root = tree.getroot()
+    json_path = book_group_path(bkg_name)
+    root = mam_simple_json.read_book_group(json_path)
     proot, filename_stem = _process_bk24(root)
     out_path = f"{paths['output_book_dir']}/{filename_stem}.xml"
     _write_xml(proot, out_path)

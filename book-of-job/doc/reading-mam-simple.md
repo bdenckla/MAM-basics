@@ -4,7 +4,6 @@ The canonical guide to the MAM-simple format is maintained as HTML under
 `gh-pages/MAM-simple/` in this repository:
 
 - [Reading MAM-simple](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple.html) — file layout, and reading MAM-simple from Python
-- [XML format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-xml.html) — the XML hierarchy, element types, and verse attributes
 - [JSON format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html) — the JSON format
 
 This file used to be a fuller copy of that guide. The copy went stale — it still had the
@@ -19,8 +18,8 @@ of MAM-simple's `xml-vtrad-mam`, until 2026-09-03. The 76-file tree was delibera
 not moved to MAM-basics: no code read it, and it duplicated the codex-index-aleppo
 snapshot. The Book-of-Job repository history preserves the snapshot and its provenance.
 
-**The code that reads XML of this shape is MAM-basics', and since 2026-08-22 it is one module
-rather than two.** codex-index-aleppo and codex-index-cam1753 initially held a `MAM-XML/` snapshot
+**The maintained reader is now `../../py/mb_cmn/mam_json_verses.py`, reading JSON.**
+The XML reader was consolidated into MAM-basics on 2026-08-22. codex-index-aleppo and codex-index-cam1753 initially held a `MAM-XML/` snapshot
 as separate copies. codex-index-aleppo read the snapshot with
 `py/py_ac_loc/mam_xml_verses.py`; codex-index-cam1753 used
 `py_mam_xml/mam_xml_verses.py`. Both repos' Python moved to MAM-basics that day
@@ -29,5 +28,6 @@ under `doc/PLAN-evacuate-python-from-codex-index-trio.md` (deleted 2026-08-29 by
 lines of drift and merged them into `py/py_ac_loc/mam_xml_verses.py`, single, which
 moved to `../../py/mb_cmn/mam_xml_verses.py` on 2026-09-26. Neither codex-index repo
 holds any code now; each keeps its data and goes on hosting it. Book-of-Job no longer
-holds a second snapshot. Since 2026-09-06 the reader has read
-`MAM-basics/MAM-simple/xml-vtrad-mam/`.
+holds a second snapshot. From 2026-09-06 until XML retirement on 2026-10-12, the reader read
+`MAM-basics/MAM-simple/xml-vtrad-mam/`. It now reads
+`MAM-basics/MAM-simple/json-vtrad-mam/`.

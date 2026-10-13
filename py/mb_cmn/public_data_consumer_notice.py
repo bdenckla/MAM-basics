@@ -1,7 +1,5 @@
 """Canonical warning labels embedded in public structured-data products."""
 
-import json
-
 MAM_PARSED_PLUS_DOCUMENTATION = (
     "https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/"
     "mpplus.html#consumer-notice"
@@ -98,7 +96,7 @@ def mam_parsed_notice() -> dict[str, object]:
 
 
 def mam_simple_notice() -> dict[str, object]:
-    """Return the notice shared by every MAM-simple JSON and XML file."""
+    """Return the notice shared by every MAM-simple JSON file."""
     return {
         "summary": (
             "This is a projected extract of MAM, not a complete representation of the "
@@ -175,11 +173,3 @@ def codex_index_notice(documentation: str) -> dict[str, object]:
         ],
         "documentation": documentation,
     }
-
-
-def xml_comment(notice: dict[str, object]) -> str:
-    """Serialize a notice as one parseable XML comment payload."""
-    payload = json.dumps(notice, ensure_ascii=False, separators=(",", ":"))
-    if "--" in payload:
-        raise ValueError("XML comments cannot contain a double hyphen")
-    return f"consumer_notice: {payload}"

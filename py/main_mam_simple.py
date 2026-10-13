@@ -1,7 +1,6 @@
-"""Make a simple but incomplete extract of MAM in XML and JSON formats.
+"""Make a simple but incomplete extract of MAM in JSON format.
 
-The XML format is not OSIS, but is informed by OSIS; the JSON format mirrors
-the XML structure.  Both are written for each of the three versification
+JSON is written for each of the three versification
 variants (BHS, Sefaria, MAM's own).
 
 Subcommands:
@@ -46,7 +45,6 @@ from mb_misc import my_utils_for_mainish as my_utils_fm
 from py_misc import mam_simple_copy_py_files
 from mb_cmn import paths
 from mb_cmn import read_books_from_mam_parsed_plus as plus
-from py_misc import write_utils_xml
 from py_misc import write_utils_json
 from mb_misc import osis_book_abbrevs
 from py_misc import vtrad
@@ -54,7 +52,6 @@ from mb_misc import write_utils
 from py_misc import ren_tag_survey as rts
 from mb_cmn import bib_locales as tbn
 from mb_xml import xml_render
-from mb_xml import xml_root_from_bksams
 from mb_xml import xml_distribute_sampe as xml_sampe
 from mb_json import json_root_from_bksams
 from versification_differences import generate_doc
@@ -68,7 +65,7 @@ def _do_not_convert(_bkids, books_mpu):
 
 _VARIANT_COMMON = {
     "variant-output-root": paths.repo_root() / "MAM-simple",
-    "variant-file-format": "vff-xml",
+    "variant-file-format": "vff-json",
 }
 _VARIANT_VTBHS = {
     **_VARIANT_COMMON,
@@ -128,24 +125,15 @@ def _finish_one_book_group(bkg, bkg_rendered, variant):
     # The variant declares its vtrad and the rendered verses carry it; a mismatch would
     # mean variant-convert-vtrad and variant-vtrad had come apart.
     assert _get_vtrad(bkg_rendered) == variant["variant-vtrad"]
-    xml_path = write_utils.bkg_path(variant, bkg["bkg-name"], out_subdir="")
-    json_path = write_utils.bkg_path(
-        variant, bkg["bkg-name"], fmt_override="vff-json", out_subdir=""
-    )
+    json_path = write_utils.bkg_path(variant, bkg["bkg-name"], out_subdir="")
     if _stores_own_file(bkg, variant):
         vtrads = _vtrads_served(bkg, variant)
-        write_utils_xml.write_root_in_xml_fmt(
-            xml_path,
-            xml_root_from_bksams.root(bksams, vtrads, variant),
-            generator_file=__file__,
-        )
         write_utils_json.write_root_in_json_fmt(
             json_path,
             json_root_from_bksams.root(bksams, vtrads, variant),
             generator_file=__file__,
         )
     else:
-        _remove_stale(xml_path)
         _remove_stale(json_path)
     if variant.get("variant-writes-unicode-names"):
         verses_for_write = {"rv-cant-all-three": bkg_rendered}
@@ -165,7 +153,7 @@ def _stores_own_file(bkg, variant):
     THE BHS AND SEF CORPORA ARE STORED INCREMENTALLY AGAINST THE MAM ONE, on Ben's
     instruction of 2026-09-12: "move to a system where -bhs and -sef versions only exist
     for books whose files differ from the -mam version.  I.e. move to an 'incremental'
-    storage system, with -mam as the base."  A book group absent from xml-vtrad-bhs/ or
+    storage system, with -mam as the base."  A book group absent from json-vtrad-bhs/ or
     json-vtrad-sef/ is one whose cv-labels that tradition places exactly where MAM
     places them, and the vtmam file is the one to read; MAM-simple's README and
     gh-pages/MAM-simple/reading-mam-simple.html state that reading rule for a consumer.
@@ -235,9 +223,7 @@ def _show_progress(variant, bkg_name):
 
 def almost_main(bkids=None):
     """
-    Make a simple but incomplete extract of MAM in XML and JSON formats.
-    The XML format is not OSIS, but is informed by OSIS.
-    The JSON format mirrors the XML structure.
+    Make a simple but incomplete extract of MAM in JSON format.
     """
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS

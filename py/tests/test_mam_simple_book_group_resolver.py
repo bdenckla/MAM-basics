@@ -7,7 +7,7 @@ import pytest
 
 from mb_cmn.mam_simple_book_group import resolve_book_group_path
 
-_FORMATS = {"json": ".json", "xml": ".xml"}
+_FORMATS = {"json": ".json"}
 _VTRADS = ("mam", "bhs", "sef")
 _STEM_ORDERS = (("alpha", "beta"), ("beta", "alpha"))
 

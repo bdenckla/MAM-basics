@@ -1,7 +1,6 @@
 """Mechanical lint for warning labels in current public structured data."""
 
 import json
-import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
@@ -42,7 +41,7 @@ NARPAS_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-parsed" / "README.md",
     ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
     ROOT / "gh-pages" / "MAM-simple" / "reading-mam-simple.html",
-    ROOT / "gh-pages" / "MAM-simple" / "reading-mam-simple-xml.html",
+    ROOT / "gh-pages" / "MAM-simple" / "reading-mam-simple-json.html",
 )
 MAM_PARSED_WHITESPACE_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-parsed" / "README.md",
@@ -180,17 +179,13 @@ def _mam_simple_files(fmt: str, vtrad: str) -> list[Path]:
     return files
 
 
-def test_mam_simple_json_and_xml_notices_and_complete_file_sets():
+def test_mam_simple_json_notices_and_complete_file_sets():
     expected_notice = notice.mam_simple_notice()
     _assert_narpas_rule(
         expected_notice, notice.MAM_SIMPLE_NARPAS_GROUPING_RULE, "MAM-simple"
     )
     for vtrad in MAM_SIMPLE_COUNTS:
         json_files = _mam_simple_files("json", vtrad)
-        xml_files = _mam_simple_files("xml", vtrad)
-        assert {path.stem for path in json_files} == {
-            path.stem for path in xml_files
-        }, f"MAM-simple JSON and XML file sets differ for {vtrad}"
         for path in json_files:
             payload = _load_json(path)
             assert list(payload)[:2] == [
@@ -204,16 +199,12 @@ def test_mam_simple_json_and_xml_notices_and_complete_file_sets():
                 "contents",
             }, f"{path}: unexpected root schema"
             _assert_notice(payload["consumer_notice"], expected_notice, path)
-        for path in xml_files:
-            contents = path.read_text(encoding="utf-8")
-            match = re.search(r"<!-- consumer_notice: (\{.*\}) -->", contents)
-            assert (
-                match is not None
-            ), f"{path}: missing parseable pre-root consumer notice"
-            assert match.start() < contents.index(
-                "<book24"
-            ), f"{path}: consumer notice does not precede the root element"
-            _assert_notice(json.loads(match.group(1)), expected_notice, path)
+
+
+def test_mam_simple_has_no_retired_xml_payload_folders():
+    root = ROOT / "MAM-simple"
+    assert root.is_dir()
+    assert not list(root.glob("xml-vtrad-*")), "MAM-simple XML distribution is retired"
 
 
 def _assert_codex_index(

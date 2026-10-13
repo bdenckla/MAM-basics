@@ -40,9 +40,9 @@ def receipt_path() -> Path:
     return paths.repo_root() / "doc" / RECEIPT_NAME
 
 
-def mam_simple_psalms_xml() -> Path:
-    """MAM's text of Psalms: MAM-simple's XML in MAM's own versification."""
-    return paths.repo_root() / "MAM-simple" / "xml-vtrad-mam" / "Ps.xml"
+def mam_simple_psalms_json() -> Path:
+    """MAM's text of Psalms: MAM-simple's JSON in MAM's own versification."""
+    return paths.repo_root() / "MAM-simple" / "json-vtrad-mam" / "Ps.json"
 
 
 def mpplus_psalms_json() -> Path:

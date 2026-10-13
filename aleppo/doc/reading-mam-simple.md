@@ -4,7 +4,6 @@ The canonical guide to the MAM-simple format is maintained as HTML under
 `gh-pages/MAM-simple/` in MAM-basics:
 
 - [Reading MAM-simple](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple.html) — file layout, and reading MAM-simple from Python
-- [XML format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-xml.html) — the XML hierarchy, element types, and verse attributes
 - [JSON format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html) — the JSON format
 
 This file used to be a fuller copy of that guide. The copy went stale — it still had the
@@ -14,11 +13,11 @@ What remains below is what is specific to this repo.
 
 ## What this repo has
 
-`../../MAM-simple/xml-vtrad-mam/` is the MAM word-sequence ground truth. It is the
+`../../MAM-simple/json-vtrad-mam/` is the MAM word-sequence ground truth. It is the
 landed MAM-simple product, regenerated from MAM-parsed by MAM-basics' export pipeline.
 
-`../../py/mb_cmn/mam_xml_verses.py` reads it. Its entry point is
-`get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv)`, which returns one
+`../../py/mb_cmn/mam_json_verses.py` reads it. Its entry point is
+`get_verses_in_range(json_path, book_osis_prefix, start_cv, end_cv)`, which returns one
 dict per verse with `cv`, `words`, `ketiv_indices`, `atoms`, and `parashah_before`. The
 module lived at `py/py_ac_loc/mam_xml_verses.py` until 2026-09-26, when the programs that
 made this repo's streams were retired.

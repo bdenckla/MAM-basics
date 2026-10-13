@@ -1,5 +1,5 @@
 """
-Read verses from MAM-simple XML (xml-vtrad-mam) for locating text in manuscripts.
+Read verses from MAM-simple JSON (json-vtrad-mam) for locating text in manuscripts.
 
 This module serves one application: locating text on the pages and lines of a
 manuscript by counting atoms and letters in MAM's word sequence. Its user is the
@@ -69,12 +69,12 @@ then contribute, keeping the atoms what is written on the page:
 
 Each of those seven elements has its shape checked against the one it has in every
 occurrence in MAM-simple on 2026-09-26, and any other shape raises ValueError. No
-MAM-simple verse is refused: ``py/tests/test_mam_xml_verses.py`` runs
-``get_verse_atoms`` over every verse of MAM-simple/xml-vtrad-mam/ and checks that no
+MAM-simple verse is refused: ``py/tests/test_mam_json_verses.py`` runs
+``get_verse_atoms`` over every verse of MAM-simple/json-vtrad-mam/ and checks that no
 atom is empty.
 
 Parashah breaks. MAM-simple places a break between books, between chapters, between
-verses or within a verse (gh-pages/MAM-simple/reading-mam-simple-xml.html).
+verses or within a verse (gh-pages/MAM-simple/reading-mam-simple-json.html).
 A caller learns of a break only from the starts-with-sampe attribute of the verse after it, which
 ``get_verses_in_range`` turns into parashah_before: pe2, samekh2, pe3 and samekh3 give
 {"parashah": "spi-pe2"}, {"parashah": "spi-samekh2"}, {"parashah": "spi-pe3"} and
@@ -85,10 +85,10 @@ in mid-line (samekh3, MAM's ססס). A break within a verse, of any of the four 
 never reaches a caller, as Ben decided on 2026-09-26 for the flat streams.
 
 Usage:
-    from mb_cmn.mam_xml_verses import get_verses_in_range
+    from mb_cmn.mam_json_verses import get_verses_in_range
 
     verses = get_verses_in_range(
-        r'C:/path/to/MAM-basics/MAM-simple/xml-vtrad-mam/Job.xml',
+        r'C:/path/to/MAM-basics/MAM-simple/json-vtrad-mam/Job.json',
         'Job', (37, 9), (38, 20),
     )
     # Returns: [{'cv': '37:9', 'words': [...], 'ketiv_indices': [], 'atoms': [...],
@@ -96,7 +96,12 @@ Usage:
     # parashah_before is None or one of the four markers above
 """
 
-import xml.etree.ElementTree as ET
+from mb_cmn.mam_simple_json import (
+    attributes as _attributes,
+    children as _children,
+    find_child as _find_child,
+    read_book_group,
+)
 from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 
 PASEQ = "\N{HEBREW PUNCTUATION PASEQ}"
@@ -117,67 +122,73 @@ _NU10_INVNUN_NEIGHBOR = {"class": "nu10-invnun-neighbor"}
 
 def _scribal_difference_target_text(sdt, verse_osis):
     """Return the visible target text, rejecting an unrecognised target shape."""
-    attribute_text = sdt.attrib.get("text", "")
+    attribute_text = _attributes(sdt).get("text", "")
     if attribute_text.strip():
-        if len(sdt):
+        if len(_children(sdt)):
             raise ValueError(
                 f"<sdt-target> has text= and child elements in {verse_osis}"
             )
         return attribute_text.strip()
 
     parts = []
-    for child in sdt:
-        if child.tag == "slh-word":
-            text = child.attrib.get("slhw-desc-0", "")
+    for child in _children(sdt):
+        if child["type"] == "slh-word":
+            text = _attributes(child).get("slhw-desc-0", "")
             if not text.strip():
                 raise ValueError(
                     f"<slh-word> under <sdt-target> has no slhw-desc-0 "
                     f"in {verse_osis}"
                 )
             parts.append(text)
-        elif child.tag == "silluq-before-meteg":
+        elif child["type"] == "silluq-before-meteg":
             parts.append(_silluq_before_meteg_text(child, verse_osis))
-        elif child.tag == "text":
-            if "text" not in child.attrib:
+        elif child["type"] == "text":
+            if "text" not in _attributes(child):
                 raise ValueError(
                     f"<text> under <sdt-target> has no text= in {verse_osis}"
                 )
-            parts.append(child.attrib["text"])
-        elif child.tag == "spi-pe2":
+            parts.append(_attributes(child)["text"])
+        elif child["type"] == "spi-pe2":
             pass
         else:
             raise ValueError(
-                f"Unhandled <sdt-target> child <{child.tag}> in {verse_osis}"
+                f"Unhandled <sdt-target> child <{child['type']}> in {verse_osis}"
             )
     return "".join(parts).strip()
 
 
 def _lone_text(el, verse_osis):
     """Return el's text=, which must be non-empty and el's only attribute."""
-    if set(el.attrib) != {"text"} or len(el) or not el.attrib["text"].strip():
+    if (
+        set(_attributes(el)) != {"text"}
+        or len(_children(el))
+        or not _attributes(el)["text"].strip()
+    ):
         raise ValueError(
-            f"<{el.tag}> in {verse_osis} is not a non-empty text= alone: "
-            f"attributes {el.attrib}, {len(el)} children"
+            f"<{el['type']}> in {verse_osis} is not a non-empty text= alone: "
+            f"attributes {_attributes(el)}, {len(_children(el))} children"
         )
-    return el.attrib["text"]
+    return _attributes(el)["text"]
 
 
 def _silluq_before_meteg_text(el, verse_osis):
-    if set(el.attrib) != {"text", "letters-with-silluq"} or len(el):
+    if set(_attributes(el)) != {"text", "letters-with-silluq"} or len(_children(el)):
         raise ValueError(
-            f"Unexpected <silluq-before-meteg> shape in {verse_osis}: {el.attrib}"
+            f"Unexpected <silluq-before-meteg> shape in {verse_osis}: {_attributes(el)}"
         )
-    text = el.attrib["text"]
-    validate_silluq_before_meteg(text, el.attrib["letters-with-silluq"], verse_osis)
+    text = _attributes(el)["text"]
+    validate_silluq_before_meteg(
+        text, _attributes(el)["letters-with-silluq"], verse_osis
+    )
     return text
 
 
 def _check_bare(el, verse_osis, allowed_attrib=None):
     """Raise unless el has no children and its attributes are none or allowed_attrib."""
-    if len(el) or (el.attrib and el.attrib != allowed_attrib):
+    if len(_children(el)) or (_attributes(el) and _attributes(el) != allowed_attrib):
         raise ValueError(
-            f"<{el.tag}> in {verse_osis} is not bare: "
-            f"attributes {el.attrib}, {len(el)} children"
+            f"<{el['type']}> in {verse_osis} is not bare: "
+            f"attributes {_attributes(el)}, {len(_children(el))} children"
         )
 
 
@@ -187,30 +198,30 @@ def _form_words(strand, verse_osis):
     A form has a text= alone, or no attributes and children drawn from <text>,
     <lp-legarmeih> and <lp-paseq>, read as they are directly under a <verse>.
     """
-    if "text" in strand.attrib:
+    if "text" in _attributes(strand):
         return _lone_text(strand, verse_osis).split()
-    if strand.attrib or not len(strand):
+    if _attributes(strand) or not len(_children(strand)):
         raise ValueError(
-            f"<{strand.tag}> in {verse_osis} has neither a text= alone nor children "
-            f"alone: attributes {strand.attrib}, {len(strand)} children"
+            f"<{strand['type']}> in {verse_osis} has neither a text= alone nor children "
+            f"alone: attributes {_attributes(strand)}, {len(_children(strand))} children"
         )
     words = []
-    for piece in strand:
-        if piece.tag == "silluq-before-meteg":
+    for piece in _children(strand):
+        if piece["type"] == "silluq-before-meteg":
             words.extend(_silluq_before_meteg_text(piece, verse_osis).split())
-        elif piece.tag == "text":
+        elif piece["type"] == "text":
             words.extend(_lone_text(piece, verse_osis).split())
-        elif piece.tag in ("lp-legarmeih", "lp-paseq"):
+        elif piece["type"] in ("lp-legarmeih", "lp-paseq"):
             _check_bare(piece, verse_osis)
             if not words:
                 raise ValueError(
-                    f"<{piece.tag}> opens <{strand.tag}> in {verse_osis}, "
+                    f"<{piece['type']}> opens <{strand['type']}> in {verse_osis}, "
                     f"with no text before it"
                 )
             words[-1] = words[-1] + PASEQ
         else:
             raise ValueError(
-                f"Unhandled <{strand.tag}> child <{piece.tag}> in {verse_osis}"
+                f"Unhandled <{strand['type']}> child <{piece['type']}> in {verse_osis}"
             )
     return words
 
@@ -221,12 +232,12 @@ def _cant_combined_words(cant_all_three, verse_osis):
     Ben's decision of 2026-09-26 selects their combined representation. It need
     not include every mark of each strand.
     """
-    strands = list(cant_all_three)
-    if cant_all_three.attrib or [s.tag for s in strands] != _CANT_FORMS:
+    strands = _children(cant_all_three)
+    if _attributes(cant_all_three) or [s["type"] for s in strands] != _CANT_FORMS:
         raise ValueError(
             f"<cant-all-three> in {verse_osis} does not have exactly the children "
-            f"{_CANT_FORMS} and no attributes: {[s.tag for s in strands]}, "
-            f"{cant_all_three.attrib}"
+            f"{_CANT_FORMS} and no attributes: {[s['type'] for s in strands]}, "
+            f"{_attributes(cant_all_three)}"
         )
     combined, _alef, _bet = [_form_words(s, verse_osis) for s in strands]
     return combined
@@ -234,23 +245,26 @@ def _cant_combined_words(cant_all_three, verse_osis):
 
 def _trivial_kq_words(el, verse_osis):
     """Read either known trivial ketiv/qere form, preserving the pointed ketiv."""
-    if "text" in el.attrib:
+    if "text" in _attributes(el):
         return _lone_text(el, verse_osis).split()
-    if el.attrib or [child.tag for child in el] != ["text", "lp-legarmeih"]:
+    if _attributes(el) or [child["type"] for child in _children(el)] != [
+        "text",
+        "lp-legarmeih",
+    ]:
         raise ValueError(f"Unsupported <kq-trivial> shape in {verse_osis}")
-    words = _lone_text(el[0], verse_osis).split()
-    _check_bare(el[1], verse_osis)
+    words = _lone_text(_children(el)[0], verse_osis).split()
+    _check_bare(_children(el)[1], verse_osis)
     words[-1] += PASEQ
     return words
 
 
 def get_verse_words(verse_el):
     """
-    Extract the entries of a MAM-simple XML <verse> element, as the module
+    Extract the entries of a MAM-simple JSON <verse> element, as the module
     docstring describes.
 
     Args:
-        verse_el: an xml.etree.ElementTree Element for a <verse>.
+        verse_el: a JSON object whose type is verse.
 
     Returns a dict:
         words: list of str — the verse's entries, atoms joined across each maqaf
@@ -260,24 +274,24 @@ def get_verse_words(verse_el):
     <kq-k-velo-q>, <kq-k-velo-q-maq>, <kq-q-velo-k>, <good-ending>, <spi-pe3>,
     <spi-samekh3> or <cant-all-three> that MAM-simple does not have.
     """
-    verse_osis = verse_el.attrib.get("osisID", "?")
+    verse_osis = _attributes(verse_el).get("osisID", "?")
     raw_words = []
     ketiv_flags = []
 
-    if "text" in verse_el.attrib:
+    if "text" in _attributes(verse_el):
         # Simple verse: text is directly on the element
-        raw_words = verse_el.attrib["text"].split()
+        raw_words = _attributes(verse_el)["text"].split()
         ketiv_flags = [False] * len(raw_words)
     else:
         # Complex verse: iterate children
-        for i, child in enumerate(verse_el):
-            tag = child.tag
+        for i, child in enumerate(_children(verse_el)):
+            tag = child["type"]
             if tag == "silluq-before-meteg":
                 ws = _silluq_before_meteg_text(child, verse_osis).split()
                 raw_words.extend(ws)
                 ketiv_flags.extend([False] * len(ws))
             elif tag == "text":
-                text = child.attrib.get("text", "").strip()
+                text = _attributes(child).get("text", "").strip()
                 if text:
                     ws = text.split()
                     raw_words.extend(ws)
@@ -288,16 +302,16 @@ def get_verse_words(verse_el):
                     raw_words[-1] = raw_words[-1] + PASEQ
             elif tag == "kq":
                 # Non-trivial ketiv/qere — use ketiv text (unpointed)
-                kq_k = child.find("kq-k")
+                kq_k = _find_child(child, "kq-k")
                 if kq_k is not None:
-                    kt = kq_k.attrib.get("text", "").strip()
+                    kt = _attributes(kq_k).get("text", "").strip()
                     if not kt:
-                        slh = kq_k.find("slh-word")
+                        slh = _find_child(kq_k, "slh-word")
                         if slh is not None:
-                            kt = slh.attrib.get("slhw-desc-0", "").strip()
+                            kt = _attributes(slh).get("slhw-desc-0", "").strip()
                     assert kt, (
                         f"<kq-k> has no text= and no slh-word child "
-                        f"in {verse_el.attrib.get('osisID', '?')}"
+                        f"in {_attributes(verse_el).get('osisID', '?')}"
                     )
                     ws = kt.split()
                     raw_words.extend(ws)
@@ -308,14 +322,14 @@ def get_verse_words(verse_el):
                 ketiv_flags.extend([False] * len(ws))
             elif tag == "slh-word":
                 # Suspended-letter word — use desc-0 (full pointed word)
-                text = child.attrib.get("slhw-desc-0", "").strip()
+                text = _attributes(child).get("slhw-desc-0", "").strip()
                 if text:
                     ws = text.split()
                     raw_words.extend(ws)
                     ketiv_flags.extend([False] * len(ws))
             elif tag == "scrdfftar":
                 # Scribal difference target — extract visible text in document order.
-                sdt = child.find("sdt-target")
+                sdt = _find_child(child, "sdt-target")
                 if sdt is not None:
                     text = _scribal_difference_target_text(sdt, verse_osis)
                     if text:
@@ -345,7 +359,7 @@ def get_verse_words(verse_el):
             elif tag == "kq-k-velo-q-maq":
                 # Ben, 2026-09-26: no maqaf after a ketiv that is not read.
                 _check_bare(child, verse_osis)
-                if i == 0 or verse_el[i - 1].tag != "kq-k-velo-q":
+                if i == 0 or _children(verse_el)[i - 1]["type"] != "kq-k-velo-q":
                     raise ValueError(
                         f"<kq-k-velo-q-maq> in {verse_osis} does not follow "
                         f"a <kq-k-velo-q>"
@@ -378,7 +392,7 @@ def get_verse_words(verse_el):
 
     # Attach standalone sof pasuq (׃) to the preceding word.
     # This happens when a <kq> element is followed by <text text="׃" />
-    # in the MAM-simple XML — the sof pasuq ends up as its own token.
+    # in the MAM-simple JSON — the sof pasuq ends up as its own token.
     SOF_PASUQ = "\N{HEBREW PUNCTUATION SOF PASUQ}"
     merged = []
     merged_ketiv = []
@@ -405,7 +419,7 @@ def _atoms_of(words):
 
 def get_verse_atoms(verse_el):
     """
-    Return the atoms of a MAM-simple XML <verse> element: each entry of
+    Return the atoms of a MAM-simple JSON <verse> element: each entry of
     ``get_verse_words``'s ``words``, split after every maqaf, which stays with the
     atom before it. An atom's number in its verse is its index here plus one.
 
@@ -414,22 +428,24 @@ def get_verse_atoms(verse_el):
     return _atoms_of(get_verse_words(verse_el)["words"])
 
 
-def _find_book39(root, book_osis_prefix, xml_path):
+def _find_book39(root, book_osis_prefix, json_path):
     """Return the one <book39> under root whose osisID is book_osis_prefix."""
-    if root.tag != "book24":
-        raise ValueError(f"The root of {xml_path} is <{root.tag}>, not <book24>")
+    if root["type"] != "book24":
+        raise ValueError(f"The root of {json_path} is <{root['type']}>, not <book24>")
     matches = []
-    for child in root:
-        if child.tag == "book39":
-            if child.attrib["osisID"] == book_osis_prefix:
+    for child in _children(root):
+        if child["type"] == "book39":
+            if _attributes(child)["osisID"] == book_osis_prefix:
                 matches.append(child)
-        elif child.tag in _PARASHAH_TAGS:
+        elif child["type"] in _PARASHAH_TAGS:
             pass  # A break between books reaches a stream through starts-with-sampe
         else:
-            raise ValueError(f"Unhandled <book24> child <{child.tag}> in {xml_path}")
+            raise ValueError(
+                f"Unhandled <book24> child <{child['type']}> in {json_path}"
+            )
     if len(matches) != 1:
         raise ValueError(
-            f"{xml_path} has {len(matches)} <book39> elements whose osisID is "
+            f"{json_path} has {len(matches)} <book39> elements whose osisID is "
             f"{book_osis_prefix!r}, not 1"
         )
     return matches[0]
@@ -437,24 +453,24 @@ def _find_book39(root, book_osis_prefix, xml_path):
 
 def _parashah_before(verse_el):
     """Return the marker for a parashah break before verse_el, or None."""
-    sampe = verse_el.attrib.get("starts-with-sampe")
+    sampe = _attributes(verse_el).get("starts-with-sampe")
     if sampe is None:
         return None
     if sampe not in _SAMPE_PARASHAH:
         raise ValueError(
-            f"Unhandled starts-with-sampe {sampe!r} in {verse_el.attrib['osisID']}"
+            f"Unhandled starts-with-sampe {sampe!r} in {_attributes(verse_el)['osisID']}"
         )
     return {"parashah": _SAMPE_PARASHAH[sampe]}
 
 
-def get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv):
+def get_verses_in_range(json_path, book_osis_prefix, start_cv, end_cv):
     """
-    Extract verses from a MAM-simple XML file in a chapter:verse range.
+    Extract verses from a MAM-simple JSON file in a chapter:verse range.
 
     Args:
-        xml_path: path to a MAM-simple XML file (e.g., .../xml-vtrad-mam/Job.xml)
+        json_path: path to a MAM-simple JSON file (e.g., .../json-vtrad-mam/Job.json)
         book_osis_prefix: the osisID of one <book39> in that file, e.g., 'Job', or
-            '2Chr' in 1Chr-2Chr.xml
+            '2Chr' in 1Chr-2Chr.json
         start_cv: (chapter, verse) tuple, inclusive
         end_cv: (chapter, verse) tuple, inclusive
 
@@ -473,26 +489,27 @@ def get_verses_in_range(xml_path, book_osis_prefix, start_cv, end_cv):
     book_osis_prefix, on a starts-with-sampe value other than those four, and on an
     element this module does not handle.
     """
-    tree = ET.parse(xml_path)
-    book39 = _find_book39(tree.getroot(), book_osis_prefix, xml_path)
+    book39 = _find_book39(read_book_group(json_path), book_osis_prefix, json_path)
 
     verses = []
-    for child in book39:
-        if child.tag in _PARASHAH_TAGS:
+    for child in _children(book39):
+        if child["type"] in _PARASHAH_TAGS:
             continue  # A break between chapters: see starts-with-sampe below
-        if child.tag != "chapter":
-            raise ValueError(f"Unhandled <book39> child <{child.tag}> in {xml_path}")
-        osis = child.attrib["osisID"]  # e.g., 'Job.37'
+        if child["type"] != "chapter":
+            raise ValueError(
+                f"Unhandled <book39> child <{child['type']}> in {json_path}"
+            )
+        osis = _attributes(child)["osisID"]  # e.g., 'Job.37'
         if not osis.startswith(book_osis_prefix + "."):
             raise ValueError(f"Chapter {osis} is not in book {book_osis_prefix}")
         ch = int(osis.split(".")[-1])
 
-        for v in child:
-            if v.tag in _PARASHAH_TAGS:
+        for v in _children(child):
+            if v["type"] in _PARASHAH_TAGS:
                 continue  # A break between verses: see starts-with-sampe below
-            if v.tag != "verse":
-                raise ValueError(f"Unhandled <chapter> child <{v.tag}> in {osis}")
-            v_osis = v.attrib["osisID"]
+            if v["type"] != "verse":
+                raise ValueError(f"Unhandled <chapter> child <{v['type']}> in {osis}")
+            v_osis = _attributes(v)["osisID"]
             vs = int(v_osis.split(".")[-1])
             if (ch, vs) < start_cv or (ch, vs) > end_cv:
                 continue

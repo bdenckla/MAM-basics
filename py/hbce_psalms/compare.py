@@ -1,7 +1,7 @@
 """Compare HBCE's transcriptions of the Aleppo Codex (MA) and the Leningrad Codex (ML) with
 MAM, chanted word by chanted word.
 
-MAM's text is ``MAM-simple/xml-vtrad-mam/Ps.xml``. Both sides are compared in MAM-normal mark
+MAM's text is ``MAM-simple/json-vtrad-mam/Ps.json``. Both sides are compared in MAM-normal mark
 order through ``give_std_mark_order``, never through Unicode normalization. Each differing
 chanted word is classified mark by mark against MAM's documented design policies (chapters 2
 and 5 of MAM's introduction) and checked against MAM's doc-notes for its verse.
@@ -44,6 +44,7 @@ import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 
 from hbce_psalms import hbce_paths
+from mb_cmn import mam_simple_json
 from mb_cmn import hebrew_accents as hac
 from mb_cmn import hebrew_letters as hle
 from mb_cmn import hebrew_points as hpo
@@ -284,11 +285,11 @@ def mam_split_text(text: str, out: list, flags=None) -> None:
 def mam_slh_word(el) -> str:
     """The text of a MAM-simple <slh-word>: a word with a small, large or hung letter."""
     parts = []
-    for child in el:
-        if child.tag in ("letter-small", "letter-large", "letter-hung", "text"):
+    for child in mam_simple_json.children(el):
+        if child["type"] in ("letter-small", "letter-large", "letter-hung", "text"):
             parts.append(child.get("text", ""))
         else:
-            raise ValueError(f"unrecognized element inside <slh-word>: {child.tag}")
+            raise ValueError(f"unrecognized element inside <slh-word>: {child["type"]}")
     return "".join(parts)
 
 
@@ -296,7 +297,7 @@ def mam_ketiv(k) -> str:
     """The ketiv of a MAM-simple <kq-k>."""
     if k.get("text") is not None:
         return k.get("text")
-    slh = k.find("slh-word")
+    slh = mam_simple_json.find_child(k, "slh-word")
     if slh is None:
         raise ValueError("a <kq-k> with neither text nor <slh-word>")
     return mam_slh_word(slh)
@@ -304,8 +305,8 @@ def mam_ketiv(k) -> str:
 
 def mam_children_tokens(el, out: list, tagcount: Counter, flags=None) -> None:
     """Tokens for the children of a MAM-simple <verse> (or of a <kq-q>)."""
-    for child in el:
-        tag = child.tag
+    for child in mam_simple_json.children(el):
+        tag = child["type"]
         tagcount[tag] += 1
         if tag == "text":
             mam_split_text(child.get("text", ""), out, flags)
@@ -321,8 +322,8 @@ def mam_children_tokens(el, out: list, tagcount: Counter, flags=None) -> None:
             if out:
                 out[-1].gray_maqaf_after = True
         elif tag == "kq":
-            k = child.find("kq-k")
-            q = child.find("kq-q")
+            k = mam_simple_json.find_child(child, "kq-k")
+            q = mam_simple_json.find_child(child, "kq-q")
             if k is None or q is None:
                 raise ValueError("a <kq> without both <kq-k> and <kq-q>")
             ketiv = mam_ketiv(k)
@@ -384,9 +385,9 @@ def mam_finalize(tokens: list) -> list:
 
 def load_mam(tagcount: Counter) -> dict:
     """Each verse of MAM's Psalms, as a list of its chanted words."""
-    root = ET.parse(hbce_paths.mam_simple_psalms_xml()).getroot()
+    root = mam_simple_json.read_book_group(hbce_paths.mam_simple_psalms_json())
     verses = {}
-    for verse in root.iter("verse"):
+    for verse in mam_simple_json.verses(root):
         ref = verse.get("osisID")
         toks = []
         if verse.get("text") is not None:

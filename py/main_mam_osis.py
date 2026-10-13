@@ -21,28 +21,28 @@ _PATHS = {
 }
 
 
-def _bhs_xml_book_group_path(stem: str):
+def _bhs_json_book_group_path(stem: str):
     return resolve_book_group_path(
         _MAM_SIMPLE_ROOT,
-        fmt="xml",
+        fmt="json",
         vtrad="bhs",
         stems=(stem,),
     )
 
 
 def almost_main(bkids=None):
-    """Create MAM-OSIS from MAM-simple XML."""
+    """Create MAM-OSIS from MAM-simple JSON."""
     if bkids is None:
         bkids = tbn.ALL_BK39_IDS
     osis_runner.almost_main(
         _PATHS,
         bkids,
-        book_group_path=_bhs_xml_book_group_path,
+        book_group_path=_bhs_json_book_group_path,
     )
 
 
 def main():
-    """Create MAM-OSIS from MAM-simple XML."""
+    """Create MAM-OSIS from MAM-simple JSON."""
     bkids = my_utils_fm.get_bk39_tuple_from_argparse()
     almost_main(bkids)
 

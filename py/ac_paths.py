@@ -34,7 +34,7 @@ instruction that day to remove both line-break editors.  The last seven went lat
 same day with the rest of the codex-index image work, under
 ``doc/PLAN-retire-codex-index-image-work.md``.  The package ``py_ac_loc`` went with
 them, and its one surviving module, the MAM-simple reader, moved to
-``py/mb_cmn/mam_xml_verses.py``.
+``py/mb_cmn/mam_json_verses.py``.
 
 EVERY ONE IS PREFIXED, and the prefix is mechanical: ``main_ac_`` plus the module
 stem for an entry point, ``check_ac_`` plus the stem for a check.  Five of the

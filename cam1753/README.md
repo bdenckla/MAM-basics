@@ -29,7 +29,7 @@ so the data below is kept as it stands, and nothing regenerates it.
   made while reading the pages.
 - [`cam1753-spreads-provenance.md`](cam1753-spreads-provenance.md) records where the
   retired spreads came from and the last commit that holds them.
-- [`../MAM-simple/xml-vtrad-mam/`](../MAM-simple/xml-vtrad-mam/) is the MAM word-sequence
+- [`../MAM-simple/json-vtrad-mam/`](../MAM-simple/json-vtrad-mam/) is the MAM word-sequence
   ground truth that the line-break streams follow.
 
 The image attribution and non-commercial terms are in
@@ -78,6 +78,6 @@ Neither subordinate format is part of the entry-index schema above.
 
 - [`doc/cam1753-line-break-task.md`](doc/cam1753-line-break-task.md) describes the
   manuscript, the retired images, the annotation data, and how it was made.
-- [`doc/reading-mam-simple.md`](doc/reading-mam-simple.md) describes the MAM-simple XML
+- [`doc/reading-mam-simple.md`](doc/reading-mam-simple.md) describes the MAM-simple JSON
   reader and product path.
 - [`doc/mam-with-doc-urls.md`](doc/mam-with-doc-urls.md) describes MAM-with-doc URLs.

@@ -137,26 +137,32 @@ def render_sef_generated_sections_html(headings):
 
 
 def render_how_mam_simple_records_these_differences_html(headings):
-    example = """<!-- Chapter-boundary shift: 1 Sam 23:29 (MAM) → 1 Sam 24:1 (BHS/Sef) -->
-<verse osisID="1Sam.24.1"
-       contents-corresponds-to="a full verse in MAM"
-       osisID-of-MAM-src="1Sam.23.29" .../>
-
-<!-- Decalogue split: MAM Deut 5:6 → BHS/Sef 5:6 (first part) -->
-<verse osisID="Deut.5.6"
-       contents-corresponds-to="less than a full verse in MAM"
-       osisID-of-MAM-src="Deut.5.6" .../>
-
-<!-- Joshua 21: verse number inserted where MAM has no text -->
-<verse osisID="Josh.21.36"
-       contents-corresponds-to="no verse in MAM"
-       text="—"/>
+    example = """[
+  {
+    "type": "verse",
+    "osisID": "1Sam.24.1",
+    "contents-corresponds-to": "a full verse in MAM",
+    "osisID-of-MAM-src": "1Sam.23.29"
+  },
+  {
+    "type": "verse",
+    "osisID": "Deut.5.6",
+    "contents-corresponds-to": "less than a full verse in MAM",
+    "osisID-of-MAM-src": "Deut.5.6"
+  },
+  {
+    "type": "verse",
+    "osisID": "Josh.21.36",
+    "contents-corresponds-to": "no verse in MAM",
+    "text": "—"
+  }
+]
 """
     return headings.render(2, "How MAM-simple Records These Differences") + """
 <p>The tables above treat the Hebrew span as primary. Internally, however, the
-<code>vtrad-bhs</code> and <code>vtrad-sef</code> output files (XML and JSON) still record these
+<code>json-vtrad-bhs</code> and <code>json-vtrad-sef</code> output files record these
 differences relative to MAM, because MAM is the underlying source text. Every
-non-MAM verse whose label diverges from its MAM source has two attributes:</p>
+non-MAM verse whose label diverges from its MAM source has the following fields:</p>
 <ul>
 <li><strong><code>contents-corresponds-to</code></strong> — one of:
 <ul>
@@ -168,8 +174,8 @@ non-MAM verse whose label diverges from its MAM source has two attributes:</p>
 <li><strong><code>osisID-of-MAM-src</code></strong> — the OSIS ID of the MAM source verse (present for
 the first two cases above, absent for the third)</li>
 </ul>
-<p>For example:</p>
-<pre><code class="language-xml">""" + escape(example) + "</code></pre>"
+<p>For example, with Scripture text omitted from the first two objects:</p>
+<pre><code class="language-json">""" + escape(example) + "</code></pre>"
 
 
 def render_full_html(books_mpu):
@@ -195,7 +201,7 @@ def render_full_html(books_mpu):
 <link rel="stylesheet" href="documentation.css">
 </head>
 <body>
-<nav aria-label="Documentation"><a href="index.html">MAM-simple</a> · <a href="reading-mam-simple.html">Overview</a> · <a href="reading-mam-simple-xml.html">XML</a> · <a href="reading-mam-simple-json.html">JSON</a> · <a href="versification-and-cantillation.html">Versification and cantillation</a></nav>
+<nav aria-label="Documentation"><a href="index.html">MAM-simple</a> · <a href="reading-mam-simple.html">Overview</a> · <a href="reading-mam-simple-json.html">JSON</a> · <a href="versification-and-cantillation.html">Versification and cantillation</a></nav>
 {body}
 </body>
 </html>

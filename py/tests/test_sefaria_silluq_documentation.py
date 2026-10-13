@@ -1,7 +1,7 @@
 """Compare the static Sefaria guide's case table with all MAM-simple annotations.
 
 This is a node inventory, not an edition text walk: every silluq annotation in
-canonical MAM-simple XML needs a documented column. The other-MAM forms are
+canonical MAM-simple JSON needs a documented column. The other-MAM forms are
 checked against that inventory, and the Sefaria forms against both exporters'
 explicit leaf handlers. No case names or populations are pinned in this test.
 """
@@ -9,12 +9,13 @@ explicit leaf handlers. No case names or populations are pinned in this test.
 from collections import Counter
 from html.parser import HTMLParser
 import subprocess
-import xml.etree.ElementTree as ET
+import json
 
 from mb_cmn import paths
 from mb_cmn.git_process import git_command
 from mb_cmn.uni_denorm import has_std_mark_order
 from mb_sefaria import mam4ajf_handlers, mam4sef_handlers
+from osis import osis_handlers
 
 
 class _CaseTable(HTMLParser):
@@ -91,37 +92,50 @@ class _CaseTable(HTMLParser):
             self.in_table = False
 
 
+def _inventory(node):
+    """Inventory every retained branch and note, with closed type/class dispatch."""
+    assert (node["type"], node.get("class")) in osis_handlers.HANDLERS
+    assert not ("text" in node and "contents" in node)
+    yield node
+    for child in node.get("contents", []):
+        yield from _inventory(child)
+
+
 def _annotation_rows():
     root = paths.repo_root()
     tracked = subprocess.run(
-        git_command(root, "ls-files", "-z", "--", "MAM-simple/xml-vtrad-mam/*.xml"),
+        git_command(root, "ls-files", "-z", "--", "MAM-simple/json-vtrad-mam/*.json"),
         check=True,
         capture_output=True,
         encoding="utf-8",
     )
     files = [root / name for name in tracked.stdout.split("\0") if name]
-    assert files, "No tracked canonical MAM-simple XML files"
+    assert files, "No tracked canonical MAM-simple JSON files"
     rows = []
     verses = 0
     for path in files:
-        for verse in ET.parse(path).getroot().iter("verse"):
+        root = json.loads(path.read_text(encoding="utf-8"))
+        for verse in _inventory({"type": "book24", "contents": root["contents"]}):
+            if verse["type"] != "verse":
+                continue
             verses += 1
-            for element in verse.iter("silluq-before-meteg"):
-                assert set(element.attrib) == {"text", "letters-with-silluq"}
-                assert len(element) == 0
-                node = {"type": element.tag, **element.attrib}
+            for node in _inventory(verse):
+                if node["type"] != "silluq-before-meteg":
+                    continue
+                assert set(node) == {"type", "text", "letters-with-silluq"}
+                assert "contents" not in node
                 projections = [
                     mam4sef_handlers.HANDLERS,
                     *mam4ajf_handlers.HANDLERS.values(),
                 ]
                 outputs = [
-                    handlers[(element.tag, None)](node, [], [])
+                    handlers[(node["type"], None)](node, [], [])
                     for handlers in projections
                 ]
                 assert all(output == outputs[0] for output in outputs)
                 assert len(outputs[0]) == 1
-                rows.append((verse.attrib["osisID"], node["text"], outputs[0][0]))
-    assert verses, "No verses in the canonical MAM-simple XML files"
+                rows.append((verse["osisID"], node["text"], outputs[0][0]))
+    assert verses, "No verses in the canonical MAM-simple JSON files"
     return rows
 
 

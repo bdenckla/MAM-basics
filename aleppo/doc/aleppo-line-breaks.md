@@ -47,7 +47,7 @@ column's lines count from 1 to 28.
 A file without line markers, such as those in `aleppo/ds-flat-stream/`, is the starting
 point the flat-stream generator wrote; one with them has had line breaks defined by hand.
 The generator read `MAM-simple/xml-vtrad-mam/` with the segmentation that
-`get_verse_atoms` in `py/mb_cmn/mam_xml_verses.py` now gives, and
+`get_verse_atoms` in `py/mb_cmn/mam_json_verses.py` now gives, and
 [`reading-mam-simple.md`](reading-mam-simple.md) describes the reader's choices.
 
 ## Page image sources

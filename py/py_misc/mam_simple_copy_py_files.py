@@ -54,6 +54,7 @@ PYFILE_RELPATHS = (
     "mb_misc/letter_small_job.py",
     #
     "mb_cmn/file_io.py",
+    "mb_cmn/mam_simple_json.py",
     "mb_cmn/provenance.py",
 )
 

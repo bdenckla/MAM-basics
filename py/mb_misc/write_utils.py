@@ -63,18 +63,15 @@ _FOLDERS = {
     "vpq-vtrad-bhs": {
         "vff-json": "json-vtrad-bhs",
         "vff-csv": "csv-vtrad-bhs",
-        "vff-xml": "xml-vtrad-bhs",
     },
     "vpq-vtrad-sef": {
         "vff-json": "json-vtrad-sef",
         "vff-csv": "csv-vtrad-sef",
-        "vff-xml": "xml-vtrad-sef",
     },
     "vpq-vtrad-mam": {
         "vff-json": "json-vtrad-mam",
         "vff-unicode-names": "unicode-names-vtrad-mam",
         "vff-csv": "csv-vtrad-mam",
-        "vff-xml": "xml-vtrad-mam",
     },
     "vpq-ajf": {
         "vff-json": "json-ajf",

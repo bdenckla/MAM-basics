@@ -69,7 +69,7 @@ uses its home clone's interpreter by absolute path):
 ./.venv/Scripts/python.exe py/main_hbce_psalms.py compare
 ```
 
-It reads only this directory and this repository's MAM-simple, `MAM-parsed/plus/`, mirrored
+It reads only this directory and this repository's MAM-simple JSON, `MAM-parsed/plus/`, mirrored
 introduction and UXLC data, and it never touches the network. Then read
 `git diff -- hbce-psalms/out`: the outputs are the test, and every difference is a finding until
 it is explained. `py/main_hbce_psalms.py lint-receipt` checks that every Hebrew form in the report

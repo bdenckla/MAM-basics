@@ -86,7 +86,7 @@ count from 1 to 26. A “blank line” is a line without verse content (masorah 
 decorations between books, etc.), not necessarily visually empty.
 
 The streams were generated from `../../MAM-simple/xml-vtrad-mam/` with the segmentation
-that `get_verse_atoms` in `../../py/mb_cmn/mam_xml_verses.py` now gives, and the line
+that `get_verse_atoms` in `../../py/mb_cmn/mam_json_verses.py` now gives, and the line
 markers were then added by hand in an interactive editor, one page at a time.
 [`reading-mam-simple.md`](reading-mam-simple.md) describes the reader's choices.
 
@@ -106,5 +106,5 @@ markers were then added by hand in an interactive editor, one page at a time.
 | `../cam1753-col-quads/*.json` | Column bounding quad data |
 | `../cam1753-spread-splits-doc/*.json` | Where each spread was split into pages |
 | `../check_line_breaks.html` | The frozen report of the last line-break check |
-| `../../py/mb_cmn/mam_xml_verses.py` | MAM-simple verse and atom extraction |
-| `../../MAM-simple/xml-vtrad-mam/*.xml` | Hebrew Bible text source |
+| `../../py/mb_cmn/mam_json_verses.py` | Maintained MAM-simple verse and atom extraction |
+| `../../MAM-simple/json-vtrad-mam/*.json` | Current Hebrew Bible text source |

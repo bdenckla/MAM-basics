@@ -1,6 +1,6 @@
 # Reading MAM-simple: XML Format
 
-The detailed documentation is now [Reading MAM-simple: XML Format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-xml.html).
+MAM-simple XML was retired on 2026-10-12. Use the [JSON format guide](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html). The old section links below lead to compatibility pointers.
 
 ## XML Element Hierarchy
 
