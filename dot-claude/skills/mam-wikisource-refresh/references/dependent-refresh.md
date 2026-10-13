@@ -160,7 +160,7 @@ them. Approval of the refresh approves nothing that they protect.
    approves new pins or footnote edits in his own message, `check` and the Yeivin tests that
    compare the claims with the analysis fail, and nothing is pushed; with his approval, change only what he approved, rerun with
    `--resume-from yeivin-itm-survey-meteg-claims`, and commit those changes on their own, quoting
-   his approval. (b) Near-Aleppo's stored pointed ketivs (Ben, 2026-10-07): when the build stops
+   his approval. (b) Near-Aleppo's stored pointed ketiv forms (Ben, 2026-10-07): when the build stops
    because a target's ketiv or qere differs from its record, ask Ben, giving the verse, the
    recorded and current ketiv and qere, the stored pointed ketiv, and the Aleppo Codex links that
    the `verse-links` skill produces. Do not write a new pointed ketiv yourself. After his

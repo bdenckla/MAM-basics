@@ -149,7 +149,7 @@ _ORACLE = {
     # none. MAM's two-marks-on-one-letter doc-notes corroborate the QUPO vowel assignment
     # (dt 5:7 פני = קמץ+silluq taxton / patax elyon; ex 20:4 מתחת = קמץ+atnax taxton / patax+azla
     # elyon) and, at dt 5:8 מתחת, MAM's own text follows the witness WITHOUT the extra patax —
-    # corroborating this oracle's NON-QUPO treatment there. (dt 5:7/5:12's supplied sof-pasuqs
+    # corroborating this oracle's NON-QUPO treatment there. (dt 5:7/5:12's supplied sof-pasuq marks
     # carry no per-witness MAM note in the harvest, so they stay uncorroborated.) See §7.7.
     #
     # MAM cross-check (issue UXLC-utils#42) — VALIDATION ONLY, legarmeh-vs-paseq (§7.16) + pisqah (§7.7):

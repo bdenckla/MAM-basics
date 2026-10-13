@@ -26,7 +26,7 @@ dict per verse with `cv`, `words`, `ketiv_indices`, `atoms`, and `parashah_befor
 **The shared reader came from codex-index-aleppo, deliberately.** codex-index-cam1753 had a
 separate copy at `py_mam_xml/mam_xml_verses.py` until 2026-08-22; the two were the same tool
 with 43 lines of drift, and a census of every tag in Ps, Job and Prov found exactly one
-they treated differently — `spi-invnun`, the seven inverted nuns of Psalm 107, which
+they treated differently — `spi-invnun`, the seven inverted nun marks of Psalm 107, which
 the codex-index-aleppo copy raised on and the codex-index-cam1753 copy silently skipped. The shared copy was
 given the missing skip clause and codex-index-cam1753's copy was deleted, the equivalence having been
 checked over all three books: 4512 verses, 30322 words, 0 mismatches.

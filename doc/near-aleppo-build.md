@@ -86,7 +86,7 @@ GA/GV/GD contract. GD accommodates final-nun marks or the absent qere yod's
 cluster at the declared sites. The check inspects values without changing them. It does not
 judge vowel combinations, manuscript ownership or whole-atom grammar.
 
-The build preserves C and D columns, qeres, atom boundaries
+The build preserves C and D columns, qere forms, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It
 copies the original MAM target into every changed note, then adds evidence flags
 and gives those notes distinct near-Aleppo names. Its final phase stores the

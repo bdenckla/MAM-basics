@@ -49,11 +49,11 @@ consumer joining Phonetic MAM to MAM must allow for these differences:
 5. **Rafe.** Phonetic MAM's book files have none of MAM's rafe, U+05BF, which
    `MAM-simple/` has.
 6. **Ketiv and qere.** Where MAM has a ketiv and a qere, `MAM-simple/`'s `kq`,
-   Phonetic MAM has only the qere. It has none of the 8 ketivs that MAM writes
+   Phonetic MAM has only the qere. It has none of the 8 ketiv forms that MAM writes
    but does not read, `MAM-simple/`'s `kq-k-velo-q`.
-7. **Inverted nuns.** Phonetic MAM has none of MAM's 9 inverted nuns,
+7. **Inverted nun marks.** Phonetic MAM has none of MAM's 9 inverted nun marks,
    `MAM-simple/`'s `spi-invnun`, though it keeps MAM's parashah breaks and
-   narrow-sense paseqs as rows of their own.
+   narrow-sense paseq marks as rows of their own.
 8. **Shirah spacing.** Phonetic MAM has the closed-parashah marker `ססס` at each
    of MAM's 328 uses of the template `מ:ששש`, the shirah (song) spacing that
    `MAM-simple/` writes as `shirah-space`. So Phonetic MAM has 758 `ססס` rows

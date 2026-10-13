@@ -154,9 +154,9 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/sigil-b2-to-t451.json`
 - **Plan:** `doc/PLAN-replace-sigil-b2-with-t451.md`
 
-### Holman meteg rollout: 29 metegs removed, one added
+### Holman meteg rollout: 29 meteg marks removed, one added
 - **Purpose:** Apply the thirty MAM suggestions Daniel Holman sent that differ
-  from their Aleppo Codex comparison form in metegs alone. Twenty-nine take a
+  from their Aleppo Codex comparison form in meteg marks alone. Twenty-nine take a
   meteg off an atom of MAM; one, M23 at Isaiah 23:12.11, puts one on. Ben
   accepted all thirty on 2026-09-03 and gave the go-ahead for the live save the
   same day. Run 2026-09-03: 23 chapters saved over seven book-sized slices —
@@ -279,7 +279,7 @@ infrastructure has changed enough to make them misleading examples:
   parameter 2 gives its letters with one U+05BD identifying silluq. Sof pasuq
   remains outside both wrappers. The existing detailed source notes are unchanged.
 - **Authorization and sequencing:** Ben told Codex to proceed on 2026-10-12,
-  confirmed removing later metegs in Sefaria/AJF, and then confirmed that the
+  confirmed removing later meteg marks in Sefaria/AJF, and then confirmed that the
   post-stress-meteg survey should follow both explicit annotations. Public support
   was pushed at `efb2c407` before the template or chapter annotations were saved.
   The template and its documentation were created at revision 3088395; the

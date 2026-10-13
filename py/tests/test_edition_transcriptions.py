@@ -831,7 +831,7 @@ def test_to_reference_maps_through_the_diff_not_by_raw_index() -> None:
 def test_pasolegs_land_on_reference_pasoleg_positions(stem: str) -> None:
     """Every pasoleg that maps exactly through the diff lands on a reference U+05C0 position.
 
-    Pasolegs are the one check that does not share the review loop's asymmetry -- they are
+    Pasoleg marks are the one check that does not share the review loop's asymmetry -- they are
     independent anchors -- but only in reference coordinates.  ``_pasolegs`` indexes the
     TRANSCRIBED stream, so each index goes through ``_to_reference`` first; comparing raw was
     the report's original sin, and on the Deuteronomy taxton it looked right only because two

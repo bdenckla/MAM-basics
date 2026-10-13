@@ -205,7 +205,7 @@ def test_split_word_position_safe_pasoleg():
     entry = {"cluster": cluster, "alef": cluster, "bet": carrier2 + " "}
     alef = dc.split_word(word, entry, "alef")
     bet = dc.split_word(word, entry, "bet")
-    assert alef == word  # taxton keeps both pasolegs: nothing subtracted
+    assert alef == word  # taxton keeps both pasoleg marks: nothing subtracted
     assert bet == shared + carrier2 + " "  # elyon drops only the divergent (later) one
     assert (
         _count(alef, _PASOLEG) == 2 and _count(bet, _PASOLEG) == 1

@@ -74,7 +74,7 @@ the digital copy is distributed under CC BY-NC-SA 4.0.
 
 **Cairo CoTP has the silluq alone:** it has no meteg after the silluq. Ben notes that a stroke
 attached to the lamed ascender may look like a meteg, but is the scribe's lamed letterform; the
-other lameds on the manuscript page have the same feature. Ben does not know whether
+other lamed letters on the manuscript page have the same feature. Ben does not know whether
 pre-vowel meteg is common in Cairo CoTP. His broader expectation that, in manuscripts where
 pre-vowel meteg is common, it rarely occurs beyond an initial vowel has not been checked
 against Cairo CoTP. The earlier pre-vowel meteg research for Job 4:12 is in
@@ -596,7 +596,7 @@ original source filename is `Screenshot 2026-09-22 092430.png`; its SHA-256 is
 `E3F065933AD6C4EFB9B41A23FBC2640BC689B1FB85D092D9FBBBF3B222D2B9F2`.
 
 **In אֶֽעֱשֶֽׂה, the edition has a longer stroke for the silluq than for the meteg; each stroke
-is beside a segol** — Ben's reading of the image. This makes the two segols direct visual
+is beside a segol** — Ben's reading of the image. This makes the two segol marks direct visual
 yardsticks for comparing the stroke lengths.
 
 The 222 × 146 source PNG has opaque alpha and 256 achromatic levels, so it is grayscale rather

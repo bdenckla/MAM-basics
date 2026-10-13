@@ -1,4 +1,4 @@
-r"""Survey: MAM's metegs by position relative to the chanted word's one primary stress.
+r"""Survey: MAM's meteg marks by position relative to the chanted word's one primary stress.
 
 A meteg normally stands BEFORE the stress.  Both Yeivin and Breuer describe a meteg after it
 as a named class -- ITM §§332, 338 and 354, CoS Ch. 8 types (a), (b) and (j) -- and neither

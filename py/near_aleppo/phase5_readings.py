@@ -260,7 +260,7 @@ _QERE_WITHOUT_KETIV_READINGS = {("C2-Jeremiah", "31", "37"): Site(1, 2)}
 # the in-place test compares the form less them. At Isaiah 44:24 the form's maqaf stays
 # where MAM's ketiv, מי אתי, has a space, the clause's parenthetical saying that the
 # maqaf shows the two written atoms read together. At Isaiah 36:12 the form opens with
-# the codex's pointing of the qere's first word, in square brackets on two alefs, which
+# the codex's pointing of the qere's first word, in square brackets on two alef letters, which
 # the clause says stands in the margin at the line's end, in a space of two letters: it
 # is written as the near-Aleppo dataset's rule-8 template, phase2.MARKS_WITHOUT_LETTER, then a space and the
 # pointed ketiv, rule 8's first use in the dataset. At Proverbs 3:30 the bang-marked
@@ -471,7 +471,7 @@ _PLANE_ONE_SIDED = (
     "codex readings: ketiv/qere plane reading at a one-sided template, left for later "
     "work"
 )
-# Pointed ketivs ending in the qere's trailing maqaf, retained as part of the pointing.
+# Pointed ketiv forms ending in the qere's trailing maqaf, retained as part of the pointing.
 _TRAILING_MAQAF = "codex readings: pointed ketiv ending in the qere's trailing maqaf"
 
 # The build records these counts and site lists in
