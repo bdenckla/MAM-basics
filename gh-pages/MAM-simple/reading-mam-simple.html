@@ -38,7 +38,7 @@
 A <code>book24</code> corresponds to one of the 24 books of the Hebrew Bible; some of them span more than one <code>book39</code>, i.e. some of them span more than one book in the system that divides the Hebrew Bible up into 39 rather than 24 books.</p>
 <h3 id="the-bhs-and-sefaria-folders-are-incremental-with-the-mam-ones-as-the-base">The BHS and Sefaria folders are incremental, with the MAM ones as the base</h3>
 <p>The <code>json-vtrad-mam</code> folder holds all 24 book-group files. The BHS folder holds six groups — <code>1Sam-2Sam</code>, <code>Deut</code>, <code>Exod</code>, <code>Jer</code>, <code>Josh</code>, and <code>Num</code> — and the Sefaria folder holds the same five groups except <code>Num</code>. The other groups use the MAM file.</p>
-<p><strong>To read book group <code>X</code> in versification <code>V</code>, read <code>json-vtrad-&lt;V&gt;/X.json</code>, falling back to <code>json-vtrad-mam/X.json</code>.</strong> In Python:</p>
+<p><strong>To read book group <code>X</code> in versification <code>V</code>, read <code>json-vtrad-&lt;V&gt;/<wbr>X.json</code>, falling back to <code>json-vtrad-mam/<wbr>X.json</code>.</strong> In Python:</p>
 <pre><code class="language-python">from pathlib import Path
 
 
@@ -110,7 +110,7 @@ sides deliberately.</li>
 </ul>
 <h2 id="reading-mam-simple-from-python">Reading MAM-simple from Python</h2>
 <p>Nothing beyond the standard library is needed. Run from the MAM-simple directory, this
-program writes the plain text of Job 34 to <code>py-examples-out/job-34.txt</code>. It handles only
+program writes the plain text of Job 34 to <code>py-examples-out/<wbr>job-34.txt</code>. It handles only
 the elements Job 34 has, and raises on any other rather than guess:</p>
 <pre><code class="language-python">import json
 from pathlib import Path
@@ -177,14 +177,14 @@ says which elements need recursion and which hold alternatives to choose among.<
 <h2 id="the-py-examples-program-and-the-two-that-were-retired">The <code>py-examples/</code> Program, and the Two That Were Retired</h2>
 <p>The <code>py-examples/</code> directory contains one complete working example:</p>
 <ul>
-<li><strong><a href="https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/py-examples/main_letter_small_job_example.py"><code>main_letter_small_job_example.py</code></a></strong> — reports all of the <code>letter-small</code> elements in <code>Job.json</code>, writing output to <code>py-examples-out/letter-small-job.txt</code>.</li>
+<li><strong><a href="https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/py-examples/main_letter_small_job_example.py"><code>main_letter_small_job_example.py</code></a></strong> — reports all of the <code>letter-small</code> elements in <code>Job.json</code>, writing output to <code>py-examples-out/<wbr>letter-small-job.txt</code>.</li>
 </ul>
 <p>It inventories small-letter objects in JSON, including ketiv and qere branches and notes.</p>
 <p>Two further examples, <code>main_mam4sef_example.py</code> and <code>main_mam_osis_example.py</code>, were
 retired on 2026-09-12. They created the Sefaria and OSIS editions of MAM from this
 product — the first from the JSON format, the second from the XML format — and they were
 written when MAM-simple, MAM-for-Sefaria and MAM-OSIS were separate repositories. Both editions
-are still produced by MAM-basics' <code>py/main_mam4sef.py</code> and <code>py/main_mam_osis.py</code>. Both generators now read JSON and
+are still produced by MAM-basics' <code>py/<wbr>main_mam4sef.py</code> and <code>py/<wbr>main_mam_osis.py</code>. Both generators now read JSON and
 follow the incremental-folder rule above: read the requested versification file when present and
 the MAM file otherwise.</p>
 <h2 id="the-recursive-handler-pattern">The Recursive Handler Pattern</h2>
@@ -195,12 +195,12 @@ and the modules named are in
 <a href="https://github.com/bdenckla/MAM-basics">MAM-basics</a> rather than in this product.</p>
 <p>For the Sefaria generator the relevant modules are:</p>
 <ul>
-<li><strong><code>py/mb_sefaria/mam4sef_or_ajf.py</code></strong> — reads JSON, walks the tree with <code>_handle()</code></li>
-<li><strong><code>py/mb_sefaria/mam4sef_handlers.py</code></strong> — handler functions for every element type, keyed by <code>(tag, class)</code> tuple</li>
+<li><strong><code>py/<wbr>mb_sefaria/<wbr>mam4sef_or_ajf.py</code></strong> — reads JSON, walks the tree with <code>_handle()</code></li>
+<li><strong><code>py/<wbr>mb_sefaria/<wbr>mam4sef_handlers.py</code></strong> — handler functions for every element type, keyed by <code>(tag, class)</code> tuple</li>
 </ul>
 <p>The OSIS generator uses the same pattern over JSON objects, with handler
-functions in <code>py/osis/osis_handlers.py</code> and the walk itself in
-<code>py/osis/osis_runner.py</code>. Its <code>_handle()</code> is where to look to see the pattern
+functions in <code>py/<wbr>osis/<wbr>osis_handlers.py</code> and the walk itself in
+<code>py/<wbr>osis/<wbr>osis_runner.py</code>. Its <code>_handle()</code> is where to look to see the pattern
 whole. It processes one element by first processing that element's children, and then
 calling the element's handler with three arguments:</p>
 <ul>
