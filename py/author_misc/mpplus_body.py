@@ -568,15 +568,16 @@ def s_common_templates(*, claims: ClaimCollection):
         author.heading_level_3("Documentation templates"),
         tblh.tmpl_purp_table(cmn.other_rows_shared_core(docnote_doc=_DEDPG_DOCNOTE)),
         body_shared.note_links_param1_explanation_para(),
-        author.heading_level_3(["Meteg after ", _SILLUQ]),
+        author.heading_level_3([rmn("Silluq"), " before $meteg"]),
         author.para(
             _emit_claim_payload(
                 claims,
                 "mp.plus.templates.silluq-before-meteg.cases",
                 [
-                    "Currently $MAM has two annotated cases of $meteg after ",
+                    "Currently $MAM has two annotated cases of ",
                     _SILLUQ,
-                    ": 1 Kings 7:37 and Job 4:12. Each has exactly one $meteg after ",
+                    " before $meteg: 1 Kings 7:37 and Job 4:12. "
+                    "Each has exactly one $meteg after ",
                     _SILLUQ,
                     ".",
                 ],
