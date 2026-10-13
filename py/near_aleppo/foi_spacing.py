@@ -226,7 +226,7 @@ def render():
             ]
         ),
         mb_html.para(
-            "An atom is a written form between spaces or maqafs. These examples "
+            "An atom is a written form between spaces or maqaf marks. These examples "
             "show shapes that can feel cramped in Taamey D even when no ink "
             "overlaps. An atom can belong to more than one family. The families "
             "group candidates for visual judgment rather than providing an "
