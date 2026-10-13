@@ -505,6 +505,9 @@ _ABBR_SC = {
 }
 _ROMANIZED = {
     "$aliyah": "aliyah",
+    # Ben's page-specific exception in notes_on_aliyot; the ordinary aliyot
+    # placeholder below retains an English noun for other authored prose.
+    "$technical_aliyot": "aliyot",
     "$kohen": "kohen",
     "$levi": "levi",
     "$yisrael": "yisrael",
@@ -654,9 +657,9 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$galgal", "galgal"),
     **_rom_with_cap("$yby", "yeraḥ ben yomo"),
     **_ROMANIZED,
-    # Keep established placeholder keys; pluralize an English noun in prose.
+    # Keep established placeholder keys and their chosen prose conventions.
     "$aliyot": (_romanized("aliyah"), " portions"),
-    "$parashiyot": (_romanized("parashah"), " sections"),
+    "$parashiyot": _romanized("parashot"),
 }
 
 

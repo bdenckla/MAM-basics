@@ -16,6 +16,22 @@ The authoritative adaptation is `py/yeivin_itm/`, with its approved data and doc
 also preserve their wording; authored explanation outside this scope follows the general rule.
 `doc/hebrew-name-plurals.md` describes the rendered-page lint and its scoped exceptions.
 
+## Notes on aliyot keeps its established technical plurals
+
+Ben's decision, 2026-10-13: `gh-pages/MAM-with-doc/misc/notes_on_aliyot.html` keeps
+`aliyot` throughout, including its title. Ben permits it in the document's already highly
+technical context and also rejected the widespread change to it. Restore its existing wording
+rather than rephrasing surrounding prose during a terminology sweep. The exception is for
+`aliyot` on this page, not for all plurals on the page or for its use on other pages.
+
+Ben's later clarification that day chooses `parashot`, rather than `parashiyot`, for our own
+prose, including this page. Quotations and adaptations keep whichever spelling they use.
+
+`py/author_misc/notes_on_aliyot.py` uses the explicit `$technical_aliyot` substitution in
+`py/mb_author/author.py`; ordinary `$aliyot` uses an English noun elsewhere. The established
+`$parashiyot` placeholder key now renders `parashot`. A prose sweep should keep editorial
+changes bounded, especially in an explicitly technical document.
+
 ## The post-stress-meteg pages say plain "word"
 
 Ben's decision, 2026-09-08: `gh-pages/post-stress-meteg*.html` and its subdocuments, eight on that

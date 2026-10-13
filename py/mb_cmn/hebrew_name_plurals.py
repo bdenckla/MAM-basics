@@ -52,8 +52,8 @@ _PROSE_NOUNS = {
 _HEBREW_PLURALS = {
     "masorot": ("masorah", "notes"),
     "aliyot": ("aliyah", "portions"),
-    "parashiyot": ("parashah", "sections"),
-    "parashot": ("parashah", "sections"),
+    # Ben chose parashot as the accepted Hebrew plural in our own prose.
+    "parashiyot": ("parashot", ""),
     "setumot": ("setumah", "sections"),
     "petuḥot": ("petuḥah", "sections"),
     "petuxot": ("petuxah", "sections"),
@@ -169,7 +169,7 @@ def text_findings(text: str, lines: list[int]) -> list[Finding]:
             singular = singular.upper()
         elif term[0].isupper():
             singular = singular[0].upper() + singular[1:]
-        preferred = singular + " " + noun
+        preferred = singular + (" " + noun if noun else "")
         findings.append(Finding(lines[match.start()], term, preferred))
     return findings
 
@@ -273,6 +273,11 @@ _QUOTATIONS = {
     ),
 }
 
+# Ben permits aliyot in this technical document only.
+_PAGE_TERM_EXCEPTIONS = {
+    "gh-pages/MAM-with-doc/misc/notes_on_aliyot.html": {"aliyot"},
+}
+
 
 def html_findings(html: str, relative_path: str) -> list[Finding]:
     """Check authored prose; preserve the entire Yeivin adaptation and quotations."""
@@ -295,4 +300,9 @@ def html_findings(html: str, relative_path: str) -> list[Finding]:
     # Narrow exceptions retain line positions instead of suppressing a whole page.
     for quotation in _QUOTATIONS.get(relative_path, ()):
         text = text.replace(quotation, " " * len(quotation))
-    return text_findings(text, parser.lines)
+    permitted = _PAGE_TERM_EXCEPTIONS.get(relative_path, set())
+    return [
+        finding
+        for finding in text_findings(text, parser.lines)
+        if _latin_key(finding.term) not in permitted
+    ]

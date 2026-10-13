@@ -333,12 +333,25 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
         "qere forms",
         "masorah notes",
         "aliyah portions",
-        "parashah sections",
-        "parashah sections",
+        "parashot",
         "setumah sections",
         "petuḥah sections",
     ]
     assert not scan(nouns, "gh-pages/yeivin-itm/adapted-prose.html")
+    technical = "<p>Aliyot, parashiyot, ketivs, and maqafs.</p>"
+    assert [
+        f.term
+        for f in scan(technical, "gh-pages/MAM-with-doc/misc/notes_on_aliyot.html")
+    ] == ["parashiyot", "ketivs", "maqafs"]
+    assert [f.term for f in scan(technical, "gh-pages/example.html")] == [
+        "Aliyot",
+        "parashiyot",
+        "ketivs",
+        "maqafs",
+    ]
+    assert not scan(
+        "<p>Parashot and parashot.</p><q>parashiyot</q>", "gh-pages/example.html"
+    )
     assert not scan(
         "<p>Masoretes, rabbis, Levites, pages, and qere readings.</p>",
         "gh-pages/example.html",

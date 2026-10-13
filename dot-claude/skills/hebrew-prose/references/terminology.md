@@ -502,6 +502,10 @@ Preserve literal quotations, source titles, technical identifiers and data strin
 English words and names are not subject to a blanket suffix replacement. Repository-specific
 exceptions, including MAM-basics' entire Yeivin ITM adaptation, remain in force.
 
+Ben's choice, 2026-10-13: use `parashot`, rather than `parashiyot`, when using the Hebrew plural
+in our own prose. This accepted plural is an exception to the general English-noun preference.
+Quotations and adaptations preserve whichever form they use.
+
 ## Transliteration (accgram)
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.

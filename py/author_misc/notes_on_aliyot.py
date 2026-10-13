@@ -62,8 +62,8 @@ def _taamey(contents):
 ###############################################################################
 
 _FNAME = "notes_on_aliyot.html"
-_TITLE = "Notes on Aliyah Portions"
-_H1 = "Notes on $aliyot"
+_TITLE = "Notes on Aliyot"
+_H1 = "Notes on $technical_aliyot"
 
 _AUTHOR = "Author: Ben Denckla"
 _REVISION = [
@@ -74,7 +74,7 @@ _REVISION = [
 # ── Introduction ──
 
 _INTRO_P1 = [
-    "This document describes the $aliyot of the Torah,",
+    "This document describes the $technical_aliyot of the Torah,",
     " as they appear in $MAM (Miqra According to the Masorah).",
     " The $MAM text is annotated with two systems",
     " that hierarchically divide the Torah.",
@@ -110,7 +110,7 @@ _INTRO_UL2 = [
                 ],
                 [
                     "378 ",
-                    _strong("$aliyot"),
+                    _strong("$technical_aliyot"),
                     " (7 for each $parashah)",
                     " immediately below the level of the $parashah",
                 ],
@@ -154,9 +154,9 @@ _INTRO_UL4 = [
     [
         "While it is true that there are exactly 7 ",
         _strong("numbered"),
-        " $aliyot for every $parashah, there are ",
+        " $technical_aliyot for every $parashah, there are ",
         _strong("non-numbered"),
-        " $aliyot that don't belong in this hierarchy.",
+        " $technical_aliyot that don't belong in this hierarchy.",
     ],
 ]
 
@@ -247,8 +247,8 @@ _DUAL_P4 = "This alternate hierarchy:"
 _DUAL_UL2 = [
     "has only 47 rather than 54 divisions in its sub-book level",
     [
-        "has only 329 rather than 378 numbered $aliyot",
-        " (each dual $parashah still has exactly 7 numbered $aliyot,",
+        "has only 329 rather than 378 numbered $technical_aliyot",
+        " (each dual $parashah still has exactly 7 numbered $technical_aliyot,",
         " just like a single $parashah)",
     ],
 ]
@@ -261,11 +261,11 @@ _DUAL_P5 = [
     " (use all 7 duals, or use none) suffices for our purposes here.",
 ]
 _DUAL_P6 = [
-    "As mentioned above, each dual $parashah has its own 7 numbered $aliyot.",
-    " These 7 $aliyot simply consist of 1 to 4 neighboring $aliyot",
+    "As mentioned above, each dual $parashah has its own 7 numbered $technical_aliyot.",
+    " These 7 $technical_aliyot simply consist of 1 to 4 neighboring $technical_aliyot",
     ' from the "single but pairable" halves of the dual $parashah.',
     " The table below shows the partitioning of all 7 dual $parashiyot,",
-    " expressed in terms of these constituent $aliyot.",
+    " expressed in terms of these constituent $technical_aliyot.",
 ]
 
 
@@ -376,7 +376,7 @@ _PART_NOTES_UL = [
         f" Its 4th $aliyah starts with 6{_PRIME}.",
         " The 4th $aliyah of בהר-בחֻקֹתי",
         " is also exceptional because it is the largest:",
-        " it is the only $aliyah consisting of 4 $aliyot from its halves.",
+        " it is the only $aliyah consisting of 4 $technical_aliyot from its halves.",
     ],
 ]
 
@@ -414,7 +414,7 @@ _NN_UL1 = [
 ]
 _NN_P2 = [
     "(Like $MAM, we always put the name of a teaser in square brackets.",
-    " This is to avoid confusion with the 1st three numbered $aliyot,",
+    " This is to avoid confusion with the 1st three numbered $technical_aliyot,",
     " which are traditionally given to the same three groups",
     " as the teasers: $kohen, $levi, & $yisrael.)",
 ]
@@ -751,7 +751,7 @@ _CBODY = [
     author.para(_PART_NOTES_P),
     author.unordered_list(_PART_NOTES_UL),
     # Non-numbered aliyot
-    author.heading_level_3("Non-numbered $aliyot"),
+    author.heading_level_3("Non-numbered $technical_aliyot"),
     author.para(_NN_P1),
     author.unordered_list(_NN_UL1),
     author.para(_NN_P2),

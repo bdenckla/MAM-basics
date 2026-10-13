@@ -6,7 +6,9 @@ This preference includes apparatus and other Hebrew nouns, not just letter/mark 
 The rule lives in the `hebrew-prose` skill's
 [terminology reference](../dot-claude/skills/hebrew-prose/references/terminology.md).
 Ben's 2026-10-13 exception preserves the entire Yeivin ITM adaptation's plural conventions,
-including his adapted prose and footnotes; the
+including his adapted prose and footnotes. His technical-page exception also preserves
+`aliyot` throughout `notes_on_aliyot.html`. His later clarification chooses `parashot` over
+`parashiyot` in our own prose, while preserving quotations and adaptations; the
 [repository reference](../dot-claude/skills/hebrew-prose/references/mam-basics.md) owns its scope.
 
 ## Regular lint
@@ -46,6 +48,12 @@ content tagged `lang="hbo..."`, and quotation elements (`q` and `blockquote`). E
 prose attributes remain checked even on a Hebrew element. IDs, classes, URLs and data
 attributes are outside the prose scan; standalone path/identifier forms are also ignored.
 The whole `gh-pages/yeivin-itm/` directory and `gh-pages/yeivin_itm.html` are exempt.
+`_PAGE_TERM_EXCEPTIONS` permits only `aliyot` (case-insensitively) in
+`gh-pages/MAM-with-doc/misc/notes_on_aliyot.html`. Other unwanted plurals on that page still
+fail, and `aliyot` still fails on other pages. The source uses an explicit technical
+substitution for it. `Parashot`/`parashot` are accepted in our own prose; `parashiyot` suggests
+`parashot` unless in a quotation or adaptation. The legacy `$parashiyot` key renders the chosen
+`parashot` spelling without changing technical identifiers.
 
 An unmarked verbatim source phrase can have a narrow path-and-phrase exception in
 `_QUOTATIONS`. Its entries preserve UXLC's "five yods" note in `gh-pages/clc/Proverbs.html`
@@ -59,6 +67,15 @@ irregular plural forms, arbitrarily split names, and unrendered Python
 comments/docstrings are outside its coverage. Unmarked source quotations still need human
 classification. Generated pages are covered after regeneration, including by the normal
 mega/nightly workflow; no generator strings or technical identifiers are rewritten by lint.
+
+The recognition aliases are not prescribed house spellings. In both the pre-sweep and current
+HTML, `ketib` has three visible occurrences in the BHS apparatus quotation/reduction/gloss of
+`urwotm_2_saying_the_quiet_part_out_loud.html`; `masora` has nine (five edition/chapter-title
+references, one UXLC quotation, one authored sigil explanation, and two Latin `masora
+parva/magna` phrases). `qeri`, `aliya`, and `parasha` have no observed whole-word gh-pages usage;
+they were speculative aliases added to the recognizer. None of the new replacement prose uses
+these five spellings. Unicode names and technical `MASORA_CIRCLE`/`masora-circle` forms are
+separate from these visible-prose counts. This audit does not standardize their spelling.
 
 ## Audit coverage and changes, 2026-10-13
 
@@ -77,10 +94,15 @@ The initial letter/mark pass changed fourteen authored occurrences across nine p
 | oles | ole marks | 1 | `py/near_aleppo/doc_changes.py` |
 | ga’yas | ga’ya marks | 1 | `py/accgram/ps17v14_mam_doc_notes_body.py` (authored English translation/gloss; original Hebrew retained) |
 
-The broader follow-up removes an unintended letter/mark-only scope restriction. It changes
-69 additional plural-word occurrences across ten pages. These counts are individual plural
-words; for example, one `parashot setumot` phrase contributes two words. Across both passes,
-83 authored occurrences change on eighteen distinct pages.
+The broader follow-up removes an unintended letter/mark-only scope restriction. After Ben's
+technical-page and preferred-plural clarifications, 54 additional word occurrences change
+across ten pages: 36 English-noun corrections and 18 `parashiyot` → `parashot` substitutions.
+These counts are individual plural words; for example, one `parashot setumot` phrase contributes
+two words. Across both passes, 68 authored occurrences change on eighteen distinct pages.
+The extensive English-noun rephrasing of `notes_on_aliyot.html` was reversed at its authoritative
+source. Its original `aliyot` wording and surrounding prose are preserved; the only difference
+from its pre-sweep text is the chosen `parashiyot` → `parashot` spelling and incidental line
+wrapping. Its technical context and the scale of editorial churn both motivated Ben's exception.
 
 | Before | After in context | Additional HTML occurrences | Authoritative source |
 | --- | --- | ---: | --- |
@@ -89,11 +111,10 @@ words; for example, one `parashot setumot` phrase contributes two words. Across 
 | qeres | qere forms | 1 | `py/near_aleppo/doc_changes.py` |
 | qeres | qere readings | 1 | `py/near_aleppo/doc_genesis_ketiv.py` |
 | masorot | masorah notes | 1 | `py/accgram/almost_errors_oddities.py` |
-| aliyot / Aliyot | aliyah portions / Aliyah Portions | 15 | `py/mb_author/author.py` substitutions and `py/author_misc/notes_on_aliyot.py` title |
 | aliyot | aliyah portions | 1 | `py/author_misc/mp_body_shared.py`, through `py/mb_author/author.py` |
 | aliyot | aliyah portions | 1 | `py/mwd/mwd_write_index_dot_html.py` |
 | aliyot | aliyah portions | 1 | `py/author_site/site_data.py` |
-| parashiyot | parashah sections | 18 | `py/mb_author/author.py` substitutions, consumed by `py/author_misc/notes_on_aliyot.py` |
+| parashiyot | parashot | 18 | Existing `py/mb_author/author.py` placeholder, consumed by `py/author_misc/notes_on_aliyot.py` |
 | parashot / Parashot | parashah, in parashah setumah/petuḥah sections | 11 | `py/osis/osis_index_html.py` |
 | setumot | setumah, in the same compound noun phrases | 6 | `py/osis/osis_index_html.py` |
 | petuḥot | petuḥah, in the same compound noun phrases | 7 | `py/osis/osis_index_html.py` |
@@ -112,6 +133,7 @@ Intentional remaining plural-name matches:
 | `gh-pages/yeivin-itm/yeivin_itm-318_344.html` / adaptation sources | ḥillufim | 2 | Entire adaptation exempt |
 | `gh-pages/yeivin-itm/yeivin_itm-345_357.html` / adaptation sources | ḥillufim | 1 | Entire adaptation exempt |
 | `gh-pages/yeivin-itm/yeivin_itm-376_393.html` / adaptation sources | ḥillufim | 1 | Entire adaptation exempt |
+| `gh-pages/MAM-with-doc/misc/notes_on_aliyot.html` / explicit technical substitutions and original title | aliyot / Aliyot | 15 | Ben's technical-page exception; original prose preserved |
 
 Other raw candidate matches are syllables in the unchanged `gh-pages/phonetic-mam/tnkh/`
 transcription data, not plural names. Their term counts are below (Latin diacritics retained as
