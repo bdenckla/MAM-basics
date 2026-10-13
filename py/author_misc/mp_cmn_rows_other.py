@@ -243,39 +243,51 @@ def whitespace_rows_shared():
                 " / ",
                 author.hbo("ססס"),
             ],
-            [
-                "$Parashah $petuxah / $setumah variants."
-                " When one of these marks a $parashah break within a verse"
-                " (rather than between verses),",
-                [
-                    " it takes the argument ",
-                    author.hbo("פסקא באמצע פסוק"),
-                    ", with three rule-based exceptions in column E:",
-                ],
-                author.unordered_list(
-                    [
-                        [
-                            "a ",
-                            author.hbo("ססס"),
-                            " between the items of a list"
-                            " (as in 2 Samuel 23; noted in $MAM's Introduction)",
-                        ],
-                        [
-                            "a break inside ",
-                            author.hbo("מ:כפול"),
-                            ", tagged only in the strand where it falls within a verse",
-                        ],
-                        [
-                            "the ",
-                            author.hbo("ססס"),
-                            " beside an inverted $nun, at the edge of a verse"
-                            " (Numbers 10:35–36)",
-                        ],
-                    ]
-                ),
-            ],
+            "$Parashah $petuxah / $setumah variants.",
         ],
         OTHER_ROW_BY_TEMPLATE["מ:ששש"],
+    ]
+
+
+def parashah_break_details_block():
+    return [
+        author.para(
+            [
+                "When ",
+                author.hbo("פפ"),
+                ", ",
+                author.hbo("פפפ"),
+                ", ",
+                author.hbo("סס"),
+                " or ",
+                author.hbo("ססס"),
+                " marks a $parashah break within a verse (rather than between "
+                "verses), it takes the argument ",
+                author.hbo("פסקא באמצע פסוק"),
+                ", with three rule-based exceptions in column E:",
+            ]
+        ),
+        author.unordered_list(
+            [
+                [
+                    "a ",
+                    author.hbo("ססס"),
+                    " between the items of a list"
+                    " (as in 2 Samuel 23; noted in $MAM's Introduction)",
+                ],
+                [
+                    "a break inside ",
+                    author.hbo("מ:כפול"),
+                    ", tagged only in the strand where it falls within a verse",
+                ],
+                [
+                    "the ",
+                    author.hbo("ססס"),
+                    " beside an inverted $nun, at the edge of a verse"
+                    " (Numbers 10:35–36)",
+                ],
+            ]
+        ),
     ]
 
 
