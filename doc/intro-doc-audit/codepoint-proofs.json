@@ -1251,5 +1251,130 @@
       }
     ],
     "raw_vs_parsed_relation": "equal after explicit MAM mark-order comparison and known line-separator / legarmeh-2 survey serialization; raw templates remain preserved"
+  },
+  {
+    "case": "PS-150-3",
+    "intro_claim": "ch5:L710",
+    "note_id": "Psalms 150:3/2/0",
+    "raw_path": "in/mam-ws/D1-Psalms.json",
+    "raw_note_body": "א=הַ֭לֲלוּהוּ (חטף)",
+    "parsed_note_body": "א=הַ֭לֲלוּהוּ (חטף)",
+    "intro_form": "הַ֭לְלוּהוּ",
+    "note_form": "הַ֭לֲלוּהוּ",
+    "intro_codepoints": [
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "֭",
+        "codepoint": "U+05AD",
+        "name": "HEBREW ACCENT DEHI"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      }
+    ],
+    "note_codepoints": [
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "֭",
+        "codepoint": "U+05AD",
+        "name": "HEBREW ACCENT DEHI"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ֲ",
+        "codepoint": "U+05B2",
+        "name": "HEBREW POINT HATAF PATAH"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      }
+    ],
+    "raw_vs_parsed_relation": "equal after explicit MAM mark-order comparison and known line-separator / legarmeh-2 survey serialization; raw templates remain preserved"
   }
 ]

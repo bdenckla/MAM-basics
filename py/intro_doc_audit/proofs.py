@@ -7,7 +7,7 @@ import unicodedata
 import mwparserfromhell
 
 from mb_cmn import uni_denorm
-from intro_doc_audit import audit, review
+from intro_doc_audit import audit, review, rosters
 
 ATOMS = re.compile(r"[\u05d0-\u05ea\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7]+")
 
@@ -37,6 +37,7 @@ def main():
         ("PS-17-14", "ch2:L649", "Psalms 17:14/2/0", ["Psalms", 17, 14]),
         ("ISA-10-15", "ch5:L130", "Isaiah 10:15/2/0", ["Isaiah", 10, 15]),
         ("JOSH-14-7", "ch5:L304", "Joshua 14:7/2/0", ["Joshua", 14, 7]),
+        ("PS-150-3", "ch5:L710", "Psalms 150:3/2/0", ["Psalms", 150, 3]),
     ]
     result = []
     for name, cid, nid, ref in cases:
@@ -155,6 +156,18 @@ def main():
                 or not body.startswith("=א?,ל")
             ):
                 raise ValueError("Joshua selected meteg/certainty control changed")
+        elif name == "PS-150-3":
+            item = rosters.literal_items(claims[cid])[165]
+            if item["strict_ref"] != ref:
+                raise ValueError("Psalm 150 roster occurrence moved")
+            intro_form = item["forms"][0]["literal_form"]
+            note_form = ATOMS.findall(body.split("א=", 1)[1])[0]
+            if (
+                "\N{HEBREW POINT SHEVA}" not in intro_form
+                or "\N{HEBREW POINT HATAF PATAH}" in intro_form
+                or "\N{HEBREW POINT HATAF PATAH}" not in note_form
+            ):
+                raise ValueError("Psalm 150 roster hataf difference changed")
         else:
             intro_form = [
                 w for w in ATOMS.findall(source) if audit.LETTERS.sub("", w) == "עורה"
@@ -188,9 +201,7 @@ def main():
             }
         )
     audit.dump("codepoint-proofs.json", result)
-    print(
-        f"Verified {len(result)} selected raw/parsed source pairs and accent identities"
-    )
+    print(f"Verified {len(result)} selected raw/parsed quotation controls")
     descriptions = []
     for cid, nid, ref, letters in [
         ("ch3:L853", "Exodus 7:20/2/0", ["Exodus", 7, 20], "ויהפכו"),
@@ -340,3 +351,115 @@ def main():
         )
     audit.dump("letter-size-proofs.json", letter_sizes)
     print(f"Verified {len(letter_sizes)} raw/parsed special-letter size controls")
+    specimen = rosters.literal_items(claims["ch5:L710"])[31]["literal_specimen"]
+    intro_words = [
+        w for w in ATOMS.findall(specimen) if audit.LETTERS.sub("", w) == "שמעה"
+    ]
+    note = notes["Psalms 39:13/2/0"]
+    note_words = [
+        w
+        for w in ATOMS.findall(note["body_text"])
+        if audit.LETTERS.sub("", w) == "שמעה"
+    ]
+    if (
+        len(intro_words) != 2
+        or "\N{HEBREW POINT HATAF PATAH}" not in intro_words[1]
+        or not specimen.endswith("בחטף קמץ)")
+        or uni_denorm.give_std_mark_order(intro_words[1])
+        != uni_denorm.give_std_mark_order(note_words[1])
+    ):
+        raise ValueError("Psalm 39 roster description control changed")
+    audit.dump(
+        "roster-description-proofs.json",
+        [
+            {
+                "claim": "ch5:L710",
+                "item": 32,
+                "literal_specimen": specimen,
+                "note_id": note["id"],
+                "intro_second_form": intro_words[1],
+                "note_second_form": note_words[1],
+                "codepoints": codepoints(intro_words[1]),
+                "independent_raw_note_proof": "codepoint-proofs.json / PS-39-13",
+                "result": "The second alternative forms agree after MAM-order comparison and encode HATAF PATAH. Introduction prose labels this second alternative hataf qamats; the raw/parsed note says hataf patah.",
+            }
+        ],
+    )
+    print("Verified the Psalm 39:13 roster's second-alternative description control")
+    meteg_prose = []
+    for nid, ref, kind in [
+        ("Exodus 7:13/2/0", ["Exodus", 7, 13], "patah-in-meteg-description"),
+        ("Levit 3:17/2/0", ["Levit", 3, 17], "meteg-form-described-as-no-meteg"),
+        ("Numbers 10:8/2/0", ["Numbers", 10, 8], "duplicate-L1-relation"),
+        ("Deuter 1:33/2/0", ["Deuter", 1, 33], "duplicate-Sh1-relation"),
+    ]:
+        note = notes[nid]
+        context = review.context(ref)
+        body = note["body_text"]
+        raw_matches = [
+            t
+            for t in mwparserfromhell.parse(context["wikitext"]).filter_templates()
+            if str(t.name) == "נוסח"
+            and uni_denorm.give_std_mark_order(
+                str(t.get("2").value).replace("{{ש}}", "\n")
+            )
+            == uni_denorm.give_std_mark_order(body)
+        ]
+        if len(raw_matches) != 1:
+            raise ValueError(f"Meteg prose control lacks unique raw evidence: {nid}")
+        if kind == "patah-in-meteg-description":
+            form = next(
+                w
+                for w in ATOMS.findall(body)
+                if audit.LETTERS.sub("", w) == "ויחזק"
+                and any(unicodedata.category(c) == "Mn" for c in w)
+            )
+            yod_cluster = rosters.CLUSTER.findall(form)[1]
+            if (
+                "\N{HEBREW POINT PATAH}" not in yod_cluster
+                or "\N{HEBREW POINT SEGOL}" not in yod_cluster
+                or "\N{HEBREW POINT METEG}" in yod_cluster
+            ):
+                raise ValueError("Exodus explanatory vowel identity changed")
+        elif kind == "meteg-form-described-as-no-meteg":
+            clause = body.split("ל1?,ב,ש1[ביד שניה]=", 1)[1].split("\n", 1)[0]
+            form = ATOMS.findall(clause)[0]
+            if "\N{HEBREW POINT METEG}" not in form or "אין געיה" not in clause:
+                raise ValueError("Leviticus meteg/no-meteg control changed")
+        else:
+            token = "ל1" if kind == "duplicate-L1-relation" else "ש1"
+            leading = body.split("\n", 1)[0]
+            explicit = next(
+                s
+                for s in body.split("\n")[1:]
+                if s.startswith("ל1,") and "אין געיה" in s
+            )
+            if (
+                token not in leading.split(";")[0]
+                or token not in explicit.split("=", 1)[0]
+            ):
+                raise ValueError(f"Duplicate source relation changed: {nid}")
+            form = ATOMS.findall(explicit.split("=", 1)[1])[0]
+            if (
+                "\N{HEBREW POINT METEG}" in form
+                or "\N{HEBREW POINT METEG}" not in note["target_node"]
+            ):
+                raise ValueError(f"Duplicate source meteg control changed: {nid}")
+        meteg_prose.append(
+            {
+                "note_id": nid,
+                "ref": ref,
+                "kind": kind,
+                "raw_path": context["path"],
+                "raw_note_body": str(raw_matches[0].get("2").value),
+                "parsed_note_body": body,
+                "target_node": note["target_node"],
+                "specimen": form,
+                "codepoints": codepoints(form),
+                "scope": "Note description/source-list consistency; no physical manuscript judgment.",
+            }
+        )
+    audit.dump("meteg-prose-proofs.json", meteg_prose)
+    print(
+        f"Verified {len(meteg_prose)} meteg-prose controls against faithful raw notes"
+    )

@@ -3,9 +3,12 @@
 import ctypes
 import json
 import os
+import re
+import unicodedata
 from collections import Counter
 
 from mb_cmn import kq_special_templates as kq
+from mb_cmn import bib_locales as bl
 from mb_cmn import mam_bknas_and_std_bknas as bn
 from mb_cmn import template_names as tn
 from mb_cmn import ws_tmpl2 as wtp
@@ -21,10 +24,50 @@ def main():
         if not kernel.SetPriorityClass(kernel.GetCurrentProcess(), 0x4000):
             raise ctypes.WinError()
     records = []
+    character_records = []
+    combined_atom_records = []
     verse_count = 0
+    selected_marks = (
+        "\N{HEBREW ACCENT SHALSHELET}",
+        "\N{HEBREW ACCENT MERKHA KEFULA}",
+        "\N{HEBREW ACCENT QARNEY PARA}",
+        "\N{HEBREW ACCENT YERAH BEN YOMO}",
+    )
 
     def walk(value, ref, path, pointer):
         if isinstance(value, str):
+            book, cv = ref.rsplit(" ", 1)
+            chapter, verse = map(int, cv.split(":"))
+            poetic = bl.is_poetcant(bl.mk_bcvtmam(book, chapter, verse))
+            for char in selected_marks:
+                if char in value:
+                    character_records.append(
+                        {
+                            "ref": ref,
+                            "path": path,
+                            "json_pointer": pointer,
+                            "literal_text": value,
+                            "character_name": unicodedata.name(char),
+                            "instances": value.count(char),
+                            "is_poetcant": poetic,
+                        }
+                    )
+            for atom in re.findall(
+                r"[\u05d0-\u05ea\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7\u034f\ufb1e]+",
+                value,
+            ):
+                if "\N{HEBREW ACCENT TELISHA GEDOLA}" in atom and (
+                    "\N{HEBREW ACCENT GERESH}" in atom
+                    or "\N{HEBREW ACCENT GERSHAYIM}" in atom
+                ):
+                    combined_atom_records.append(
+                        {
+                            "ref": ref,
+                            "path": path,
+                            "json_pointer": pointer,
+                            "literal_atom": atom,
+                        }
+                    )
             return
         if isinstance(value, list):
             for i, child in enumerate(value):
@@ -80,6 +123,17 @@ def main():
         "records": records,
     }
     audit.dump("structural-populations.json", result)
+    audit.dump(
+        "rare-mark-populations.json",
+        {
+            "verses_scanned": verse_count,
+            "projection": result["projection"],
+            "poetic_predicate": "bib_locales.is_poetcant(mk_bcvtmam(...)), including Job's prose sections",
+            "limits": "Counts describe selected edition strings, not manuscript populations. Combined atoms are literal Hebrew runs inside selected leaf strings; the five qualifying atoms are retained with source pointers.",
+            "characters": character_records,
+            "combined_telisha_geresh_atoms": combined_atom_records,
+        },
+    )
     print(
         json.dumps(
             {

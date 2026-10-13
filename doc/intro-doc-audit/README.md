@@ -44,7 +44,7 @@ Open [review.html](review.html) for the compact comparison, with the 20–48 px 
 slider (default 30), exact source links, and cached verse contexts. The report keeps
 the three existing issues separate from new research. No issues or comments were posted.
 
-The bounded ledgers account for **1,359/1,359 selected source units**, including
+The bounded list ledgers account for **1,359/1,359 selected source units**, including
 **846/846 selected pointing rows**. Four initial pointing batches reviewed 838 rows:
 69 lines containing the Aleppo ketiv sigil, and 200 other pointing/list rows.
 Chapter 3 contributes 323 rows and chapter 4 contributes 246 rows.
@@ -61,7 +61,9 @@ New attributed-form disagreements occur at Jeremiah 31:37; Psalm 108:11; and the
 paired secondary-reading alternatives at Psalms 57:9 and 108:3; Daniel 2:17's
 meteg specimen; Daniel 5:7's ketiv spelling; Psalm 39:13's exchanged meteg/merkha
 positions; Psalm 17:14's maqaf candidates; and Isaiah 10:15's missing-yod position.
-These are eight groups covering nine verses. Neither source is
+Psalm 150:3's first hataf specimen adds a ninth group: its Introduction quotation
+has sheva while the raw/parsed note explicitly attributes hataf-patah to Aleppo.
+These are nine groups covering ten verses. Neither source is
 declared correct. `codepoint-proofs.json` independently matches the selected notes
 back to the faithful raw chapter cache and records every codepoint. Jeremiah uses
 the updated revision 3088451: the restored atom and closed issue #304 are separate
@@ -118,7 +120,35 @@ to count the same objects as the current edition templates.
 It inventories every topic, including general rules, completeness claims, historical
 quotations, policy, manuscript locators, and proposals. It does **not** claim that
 all 1,643 verse-linked units or all corpus-wide rules have been semantically audited.
-`review-selections.json` keeps seventeen compact uncertainty groups, and the batch ledgers
+The added evidence assessments cover **80/80 policy/example units**, and the
+24 hataf-roster plus five meteg-roster source units. The combined source-unit
+ledger therefore assesses **1,468/1,468 selected units**. Assessment includes
+unsupported and uncheckable claims; it is not a declaration of consistency.
+
+All **667/667 hataf roster entries** across five Torah and nineteen later-book
+rosters have individual dispositions in `hataf-rosters.json` and its manual
+assessment input `roster-review.json`. Of these, 645 have central source/hataf
+correspondence; 22 retain quotation, label, attribution or incidental-mark limits.
+Twelve malformed locators have separately recorded intended-verse bindings.
+Counts distinguish forms, alternative specimens, non-guttural hataf occurrences
+and verse membership: Judges has 23 forms with 24 relevant hatafs, Psalms has
+172 listed forms including one erroneous sheva specimen, and Chronicles has
+63 forms in 61 verses. Aggregate totals alone hide these differences.
+
+All **98/98 Torah meteg exception entries** were compared with complete note
+targets/bodies: 86 main named-source comparisons agree, eleven retain supported
+uncertain candidates, and one (Exodus 7:13) has unresolved clause scope.
+`meteg-prose-proofs.json` checks four additional note-side inconsistencies against
+faithful raw bodies: a PATAH specimen described as meteg, a meteg specimen labelled
+no meteg, and two witness lists assigning the same named source both readings.
+
+`policy-assessments.json` preserves bounded support and limits for the eighty
+units. `torah-final-topic-assessments.json` records **154/154 read-and-routed units**,
+including history, Decalogue and Reuben presentation, musical explanations, and
+reading divisions. That routing is explicitly narrower than a complete semantic
+audit of their embedded claims.
+
+`review-selections.json` keeps twenty compact uncertainty groups, and the batch ledgers
 retain less consequential incomplete cases without turning them into an alarm list.
 
 The next source-boundary questions are whether incidental specimen marks assert
@@ -139,6 +169,10 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_au
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py catalogues
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py rosters
 ```
 
 ```powershell

@@ -1,0 +1,932 @@
+{
+  "read_and_routed": 154,
+  "total_source_units": 154,
+  "nonblank_raw_lines_including_headings": 177,
+  "records": [
+    {
+      "claim": "ch3:L1123",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1123",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1125",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1125",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1126",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1126",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1128",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1128",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1130",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1130",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1132",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1134",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1134",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1135",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1135",
+      "route": "eight-hataf-roster-and-context-units; finite-item-results-in-roster-review",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1141",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1141",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1143",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1143",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1145",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1145",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1147",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1147",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1149",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1149",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1151",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1151",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1153",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1153",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1155",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1155",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1157",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1157",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1159",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1159",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1163",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1163",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1165",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1165",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1166",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1166",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1167",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1167",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1168",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1168",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1169",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1169",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1171",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1171",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1173",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1173",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1175",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1175",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1177",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1177",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1179",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1179",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1181",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1181",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1183",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1183",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1185",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1185",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1187",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1187",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1189",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1189",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1191",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1191",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1195",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1195",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1197",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1197",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1199",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1199",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1201",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1201",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1203",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1203",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1207",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1207",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1209",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1209",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1211",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1211",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1213",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1213",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1215",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1215",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1217",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1217",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1219",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1219",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1223",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1223",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1225",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1225",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1227",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1227",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1229",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1229",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1231",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1231",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1233",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1233",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1234",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1234",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1235",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1235",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1236",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1236",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1237",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1237",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1238",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1238",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1240",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1240",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1244",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1244",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1246",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1246",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1248",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1248",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1250",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1250",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1254",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1254",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1256",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1256",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1258",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1258",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1260",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1260",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1261",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1261",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1263",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1263",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1265",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1265",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1267",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1267",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1269",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1269",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1270",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1270",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1272",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1272",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1273",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1273",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1274",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1274",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1276",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1276",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1277",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1277",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1278",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1278",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1279",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1279",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1280",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1280",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1281",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1281",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1285",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1285",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1287",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1287",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1289",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1289",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1291",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1291",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1293",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1293",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1297",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1297",
+      "route": "meteg-policy/history/examples;98-item-exception-ledger-separate",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1302",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1302",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1303",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1303",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1304",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1304",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1305",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1305",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1307",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1307",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1309",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1309",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1310",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1310",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1311",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1311",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1313",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1313",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1315",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1315",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1317",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1317",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1321",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1321",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1323",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1323",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1327",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1327",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1328",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1328",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1329",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1329",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1331",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1331",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1335",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1335",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1339",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1339",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1341",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1341",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1343",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1343",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1345",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1345",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1347",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1347",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1349",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1349",
+      "route": "Decalogue-history/strand/numbering/display-claims;transclusion-unexpanded",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1353",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1353",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1355",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1355",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1356",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1356",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1358",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1358",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1359",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1359",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1360",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1360",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1361",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1361",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1363",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1363",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1365",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1365",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1367",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1367",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1369",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1369",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1370",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1370",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1372",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1372",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1374",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1374",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1376",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1376",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1378",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1378",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1380",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1380",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1382",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1382",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1384",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1384",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1386",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1386",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1388",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1388",
+      "route": "Reuben-named-accent-order-corroborated;historical/interpretive/display-boundaries",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1394",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1394",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1395",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1395",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1396",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1396",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1398",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1398",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1400",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1400",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1401",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1401",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1402",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1402",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1403",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1403",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1404",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1404",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1405",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1405",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1407",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1407",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1408",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1408",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1409",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1409",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1411",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1411",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1415",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1415",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1417",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1417",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1421",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1421",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1423",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1423",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1425",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1425",
+      "route": "reading-division-policy/history;citation-defect-and-strength-question",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1428",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1428",
+      "route": "footer-navigation",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    },
+    {
+      "claim": "ch3:L1430",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1430",
+      "route": "footer-navigation",
+      "status": "read-and-routed;not-a-complete-semantic-verdict"
+    }
+  ],
+  "limits": "The98 meteg and82 hataf entries have separate semantic ledgers. Historical quotations, universal corpus rules, musical explanations, strand populations and manuscript physical readings remain unverified."
+}

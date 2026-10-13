@@ -1,0 +1,2480 @@
+{
+  "reviewed": 98,
+  "total": 98,
+  "counts": {
+    "central-named-source-correspondence": 86,
+    "supported-uncertain-candidate": 11,
+    "source-scope-conflict": 1
+  },
+  "rosters": [
+    {
+      "claim": "ch3:L1261",
+      "declared_items": 37,
+      "items": [
+        {
+          "id": "ch3:L1261/item/1",
+          "index": 1,
+          "literal_link": "[[בראשית ב/טעמים#ב ז|ב,ז]]",
+          "link_target": "בראשית ב/טעמים#ב ז",
+          "link_label": "ב,ז",
+          "literal_specimen": "(ל=וַֽיְהִ֥י)",
+          "strict_ref": [
+            "Genesis",
+            2,
+            7
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֥י",
+              "literal_form": "וַֽיְהִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/2",
+          "index": 2,
+          "literal_link": "[[בראשית ה/טעמים#ה ג|ה,ג]]",
+          "link_target": "בראשית ה/טעמים#ה ג",
+          "link_label": "ה,ג",
+          "literal_specimen": "(ל=וַֽיְחִ֣י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֣י",
+              "literal_form": "וַֽיְחִ֣י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/3",
+          "index": 3,
+          "literal_link": "[[בראשית ה/טעמים#ה ט|ה,ט]]",
+          "link_target": "בראשית ה/טעמים#ה ט",
+          "link_label": "ה,ט",
+          "literal_specimen": "(ל=וַֽיְחִ֥י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            9
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֥י",
+              "literal_form": "וַֽיְחִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/4",
+          "index": 4,
+          "literal_link": "[[בראשית ה/טעמים#ה י|ה,י]]",
+          "link_target": "בראשית ה/טעמים#ה י",
+          "link_label": "ה,י",
+          "literal_specimen": "(ל=וַֽיְחִ֣י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            10
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֣י",
+              "literal_form": "וַֽיְחִ֣י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/5",
+          "index": 5,
+          "literal_link": "[[בראשית ה/טעמים#ה יב|ה,יב]]",
+          "link_target": "בראשית ה/טעמים#ה יב",
+          "link_label": "ה,יב",
+          "literal_specimen": "(ל=וַֽיְחִ֥י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            12
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֥י",
+              "literal_form": "וַֽיְחִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/6",
+          "index": 6,
+          "literal_link": "[[בראשית ה/טעמים#ה טו|ה,טו]]",
+          "link_target": "בראשית ה/טעמים#ה טו",
+          "link_label": "ה,טו",
+          "literal_specimen": "(ל=וַֽיְחִ֣י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            15
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֣י",
+              "literal_form": "וַֽיְחִ֣י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/7",
+          "index": 7,
+          "literal_link": "[[בראשית ה/טעמים#ה טז|ה,טז]]",
+          "link_target": "בראשית ה/טעמים#ה טז",
+          "link_label": "ה,טז",
+          "literal_specimen": "(ל=וַֽיְחִ֣י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            16
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֣י",
+              "literal_form": "וַֽיְחִ֣י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/8",
+          "index": 8,
+          "literal_link": "[[בראשית ה/טעמים#ה כו|ה,כו]]",
+          "link_target": "בראשית ה/טעמים#ה כו",
+          "link_label": "ה,כו",
+          "literal_specimen": "(ל=וַֽיְחִ֣י)",
+          "strict_ref": [
+            "Genesis",
+            5,
+            26
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֣י",
+              "literal_form": "וַֽיְחִ֣י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/9",
+          "index": 9,
+          "literal_link": "[[בראשית ו/טעמים#ו טז|ו,טז]]",
+          "link_target": "בראשית ו/טעמים#ו טז",
+          "link_label": "ו,טז",
+          "literal_specimen": "(ל?=תַּֽעֲשֶׂ֣ה)",
+          "strict_ref": [
+            "Genesis",
+            6,
+            16
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=תַּֽעֲשֶׂ֣ה",
+              "literal_form": "תַּֽעֲשֶׂ֣ה",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1261/item/10",
+          "index": 10,
+          "literal_link": "[[בראשית ז/טעמים#ז י|ז,י]]",
+          "link_target": "בראשית ז/טעמים#ז י",
+          "link_label": "ז,י",
+          "literal_specimen": "(ל=וַֽיְהִ֖י)",
+          "strict_ref": [
+            "Genesis",
+            7,
+            10
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֖י",
+              "literal_form": "וַֽיְהִ֖י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/11",
+          "index": 11,
+          "literal_link": "[[בראשית ז/טעמים#ז יב|ז,יב]]",
+          "link_target": "בראשית ז/טעמים#ז יב",
+          "link_label": "ז,יב",
+          "literal_specimen": "(ל=וַֽיְהִ֥י)",
+          "strict_ref": [
+            "Genesis",
+            7,
+            12
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֥י",
+              "literal_form": "וַֽיְהִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/12",
+          "index": 12,
+          "literal_link": "[[בראשית ח/טעמים#ח ו|ח,ו]]",
+          "link_target": "בראשית ח/טעמים#ח ו",
+          "link_label": "ח,ו",
+          "literal_specimen": "(ל=וַֽיְהִ֕י)",
+          "strict_ref": [
+            "Genesis",
+            8,
+            6
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֕י",
+              "literal_form": "וַֽיְהִ֕י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/13",
+          "index": 13,
+          "literal_link": "[[בראשית ח/טעמים#ח יג|ח,יג]]",
+          "link_target": "בראשית ח/טעמים#ח יג",
+          "link_label": "ח,יג",
+          "literal_specimen": "(ל=וַֽ֠יְהִי)",
+          "strict_ref": [
+            "Genesis",
+            8,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽ֠יְהִי",
+              "literal_form": "וַֽ֠יְהִי",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/14",
+          "index": 14,
+          "literal_link": "[[בראשית י/טעמים#י יט|י,יט]]",
+          "link_target": "בראשית י/טעמים#י יט",
+          "link_label": "י,יט",
+          "literal_specimen": "(ל=וַֽיְהִ֞י)",
+          "strict_ref": [
+            "Genesis",
+            10,
+            19
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֞י",
+              "literal_form": "וַֽיְהִ֞י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/15",
+          "index": 15,
+          "literal_link": "[[בראשית י/טעמים#י ל|י,ל]]",
+          "link_target": "בראשית י/טעמים#י ל",
+          "link_label": "י,ל",
+          "literal_specimen": "(ל=וַֽיְהִ֥י)",
+          "strict_ref": [
+            "Genesis",
+            10,
+            30
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֥י",
+              "literal_form": "וַֽיְהִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/16",
+          "index": 16,
+          "literal_link": "[[בראשית יא/טעמים#יא א|יא,א]]",
+          "link_target": "בראשית יא/טעמים#יא א",
+          "link_label": "יא,א",
+          "literal_specimen": "(ל=וַֽיְהִ֥י)",
+          "strict_ref": [
+            "Genesis",
+            11,
+            1
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֥י",
+              "literal_form": "וַֽיְהִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/17",
+          "index": 17,
+          "literal_link": "[[בראשית יא/טעמים#יא ב|יא,ב]]",
+          "link_target": "בראשית יא/טעמים#יא ב",
+          "link_label": "יא,ב",
+          "literal_specimen": "(ל=וַֽיְהִ֖י)",
+          "strict_ref": [
+            "Genesis",
+            11,
+            2
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֖י",
+              "literal_form": "וַֽיְהִ֖י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/18",
+          "index": 18,
+          "literal_link": "[[בראשית יא/טעמים#יא יג|יא,יג]]",
+          "link_target": "בראשית יא/טעמים#יא יג",
+          "link_label": "יא,יג",
+          "literal_specimen": "(ל=וַֽיְחִ֣י)",
+          "strict_ref": [
+            "Genesis",
+            11,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְחִ֣י",
+              "literal_form": "וַֽיְחִ֣י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/19",
+          "index": 19,
+          "literal_link": "[[בראשית יח/טעמים#יח טו|יח,טו]]",
+          "link_target": "בראשית יח/טעמים#יח טו",
+          "link_label": "יח,טו",
+          "literal_specimen": "(ל=וַיֹּ֥אמֶר{{מ:פסק}}לֹ֖א)",
+          "strict_ref": [
+            "Genesis",
+            18,
+            15
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיֹּ֥אמֶר",
+              "literal_form": "וַיֹּ֥אמֶר",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/20",
+          "index": 20,
+          "literal_link": "[[בראשית יט/טעמים#יט יג|יט,יג]]",
+          "link_target": "בראשית יט/טעמים#יט יג",
+          "link_label": "יט,יג",
+          "literal_specimen": "(ל=כִּֽי־גָֽדְלָ֤ה)",
+          "strict_ref": [
+            "Genesis",
+            19,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=כִּֽי־גָֽדְלָ֤ה",
+              "literal_form": "כִּֽי־גָֽדְלָ֤ה",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/21",
+          "index": 21,
+          "literal_link": "[[בראשית כה/טעמים#כה לא|כה,לא]]",
+          "link_target": "בראשית כה/טעמים#כה לא",
+          "link_label": "כה,לא",
+          "literal_specimen": "(ל=אֶת־בְּכֹֽרָתְךָ֖)",
+          "strict_ref": [
+            "Genesis",
+            25,
+            31
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=אֶת־בְּכֹֽרָתְךָ֖",
+              "literal_form": "אֶת־בְּכֹֽרָתְךָ֖",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/22",
+          "index": 22,
+          "literal_link": "[[בראשית כז/טעמים#כז א|כז,א]]",
+          "link_target": "בראשית כז/טעמים#כז א",
+          "link_label": "כז,א",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Genesis",
+            27,
+            1
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/23",
+          "index": 23,
+          "literal_link": "[[בראשית לא/טעמים#לא מג|לא,מג]]",
+          "link_target": "בראשית לא/טעמים#לא מג",
+          "link_label": "לא,מג",
+          "literal_specimen": "(ל=מָֽה־אֶֽעֱשֶׂ֤ה)",
+          "strict_ref": [
+            "Genesis",
+            31,
+            43
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=מָֽה־אֶֽעֱשֶׂ֤ה",
+              "literal_form": "מָֽה־אֶֽעֱשֶׂ֤ה",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֱ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF SEGOL"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/24",
+          "index": 24,
+          "literal_link": "[[בראשית לא/טעמים#לא נב|לא,נב]]",
+          "link_target": "בראשית לא/טעמים#לא נב",
+          "link_label": "לא,נב",
+          "literal_specimen": "(ל?=לֹֽא־אֶֽעֱבֹ֤ר)",
+          "strict_ref": [
+            "Genesis",
+            31,
+            52
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=לֹֽא־אֶֽעֱבֹ֤ר",
+              "literal_form": "לֹֽא־אֶֽעֱבֹ֤ר",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֱ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF SEGOL"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1261/item/25",
+          "index": 25,
+          "literal_link": "[[בראשית לב/טעמים#לב כו|לב,כו]]",
+          "link_target": "בראשית לב/טעמים#לב כו",
+          "link_label": "לב,כו",
+          "literal_specimen": "(ל=בְּהֵֽאָבְק֖וֹ)",
+          "strict_ref": [
+            "Genesis",
+            32,
+            26
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=בְּהֵֽאָבְק֖וֹ",
+              "literal_form": "בְּהֵֽאָבְק֖וֹ",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/26",
+          "index": 26,
+          "literal_link": "[[בראשית לה/טעמים#לה ג|לה,ג]]",
+          "link_target": "בראשית לה/טעמים#לה ג",
+          "link_label": "לה,ג",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Genesis",
+            35,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/27",
+          "index": 27,
+          "literal_link": "[[בראשית לו/טעמים#לו יח|לו,יח]]",
+          "link_target": "בראשית לו/טעמים#לו יח",
+          "link_label": "לו,יח",
+          "literal_specimen": "(ל=אָֽהֳלִיבָמָ֛ה [2])",
+          "strict_ref": [
+            "Genesis",
+            36,
+            18
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=אָֽהֳלִיבָמָ֛ה ",
+              "literal_form": "אָֽהֳלִיבָמָ֛ה",
+              "hatafs": [
+                {
+                  "literal_cluster": "הֳ",
+                  "base": "ה",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF QAMATS"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/28",
+          "index": 28,
+          "literal_link": "[[בראשית לז/טעמים#לז כג|לז,כג]]",
+          "link_target": "בראשית לז/טעמים#לז כג",
+          "link_label": "לז,כג",
+          "literal_specimen": "(ל=וַֽיְהִ֕י)",
+          "strict_ref": [
+            "Genesis",
+            37,
+            23
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֕י",
+              "literal_form": "וַֽיְהִ֕י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/29",
+          "index": 29,
+          "literal_link": "[[בראשית לח/טעמים#לח יח|לח,יח]]",
+          "link_target": "בראשית לח/טעמים#לח יח",
+          "link_label": "לח,יח",
+          "literal_specimen": "(ל=הָֽעֵרָבוֹן֮)",
+          "strict_ref": [
+            "Genesis",
+            38,
+            18
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הָֽעֵרָבוֹן֮",
+              "literal_form": "הָֽעֵרָבוֹן֮",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/30",
+          "index": 30,
+          "literal_link": "[[בראשית לח/טעמים#לח כד|לח,כד]]",
+          "link_target": "בראשית לח/טעמים#לח כד",
+          "link_label": "לח,כד",
+          "literal_specimen": "(ל=לֵֽאמֹר֙)",
+          "strict_ref": [
+            "Genesis",
+            38,
+            24
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאמֹר֙",
+              "literal_form": "לֵֽאמֹר֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/31",
+          "index": 31,
+          "literal_link": "[[בראשית לט/טעמים#לט יא|לט,יא]]",
+          "link_target": "בראשית לט/טעמים#לט יא",
+          "link_label": "לט,יא",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Genesis",
+            39,
+            11
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/32",
+          "index": 32,
+          "literal_link": "[[בראשית לט/טעמים#לט יג|לט,יג]]",
+          "link_target": "בראשית לט/טעמים#לט יג",
+          "link_label": "לט,יג",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Genesis",
+            39,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/33",
+          "index": 33,
+          "literal_link": "[[בראשית מג/טעמים#מג כא|מג,כא]]",
+          "link_target": "בראשית מג/טעמים#מג כא",
+          "link_label": "מג,כא",
+          "literal_specimen": "(ל=וַֽיְהִ֞י)",
+          "strict_ref": [
+            "Genesis",
+            43,
+            21
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֞י",
+              "literal_form": "וַֽיְהִ֞י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/34",
+          "index": 34,
+          "literal_link": "[[בראשית מד/טעמים#מד כד|מד,כד]]",
+          "link_target": "בראשית מד/טעמים#מד כד",
+          "link_label": "מד,כד",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Genesis",
+            44,
+            24
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1261/item/35",
+          "index": 35,
+          "literal_link": "[[בראשית מה/טעמים#מה יד|מה,יד]]",
+          "link_target": "בראשית מה/טעמים#מה יד",
+          "link_label": "מה,יד",
+          "literal_specimen": "(ל?=בִנְיָמִֽן־אָחִ֖יו)",
+          "strict_ref": [
+            "Genesis",
+            45,
+            14
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=בִנְיָמִֽן־אָחִ֖יו",
+              "literal_form": "בִנְיָמִֽן־אָחִ֖יו",
+              "hatafs": []
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1261/item/36",
+          "index": 36,
+          "literal_link": "[[בראשית מו/טעמים#מו יט|מו,יט]]",
+          "link_target": "בראשית מו/טעמים#מו יט",
+          "link_label": "מו,יט",
+          "literal_specimen": "(ל?=יַֽעֲקֹ֔ב)",
+          "strict_ref": [
+            "Genesis",
+            46,
+            19
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=יַֽעֲקֹ֔ב",
+              "literal_form": "יַֽעֲקֹ֔ב",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1261/item/37",
+          "index": 37,
+          "literal_link": "[[בראשית מט/טעמים#מט יח|מט,יח]]",
+          "link_target": "בראשית מט/טעמים#מט יח",
+          "link_label": "מט,יח",
+          "literal_specimen": "(ל=לִֽישׁוּעָתְךָ֖).",
+          "strict_ref": [
+            "Genesis",
+            49,
+            18
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לִֽישׁוּעָתְךָ֖",
+              "literal_form": "לִֽישׁוּעָתְךָ֖",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        }
+      ]
+    },
+    {
+      "claim": "ch3:L1263",
+      "declared_items": 14,
+      "items": [
+        {
+          "id": "ch3:L1263/item/1",
+          "index": 1,
+          "literal_link": "[[שמות א/טעמים#א כא|א,כא]]",
+          "link_target": "שמות א/טעמים#א כא",
+          "link_label": "א,כא",
+          "literal_specimen": "(ל=כִּֽי־יָֽרְא֥וּ)",
+          "strict_ref": [
+            "Exodus",
+            1,
+            21
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=כִּֽי־יָֽרְא֥וּ",
+              "literal_form": "כִּֽי־יָֽרְא֥וּ",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/2",
+          "index": 2,
+          "literal_link": "[[שמות ה/טעמים#ה ד|ה,ד]]",
+          "link_target": "שמות ה/טעמים#ה ד",
+          "link_label": "ה,ד",
+          "literal_specimen": "(ל=מִמַּֽעֲשָׂ֑יו)",
+          "strict_ref": [
+            "Exodus",
+            5,
+            4
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=מִמַּֽעֲשָׂ֑יו",
+              "literal_form": "מִמַּֽעֲשָׂ֑יו",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/3",
+          "index": 3,
+          "literal_link": "[[שמות ז/טעמים#ז יג|ז,יג]]",
+          "link_target": "שמות ז/טעמים#ז יג",
+          "link_label": "ז,יג",
+          "literal_specimen": "(ל=וַיֶּחֱזַק֙)",
+          "strict_ref": [
+            "Exodus",
+            7,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיֶּחֱזַק֙",
+              "literal_form": "וַיֶּחֱזַק֙",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֱ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF SEGOL"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "source-scope-conflict"
+        },
+        {
+          "id": "ch3:L1263/item/4",
+          "index": 4,
+          "literal_link": "[[שמות ח/טעמים#ח כא|ח,כא]]",
+          "link_target": "שמות ח/טעמים#ח כא",
+          "link_label": "ח,כא",
+          "literal_specimen": "(ל=לֵֽאלֹהֵיכֶ֖ם)",
+          "strict_ref": [
+            "Exodus",
+            8,
+            21
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאלֹהֵיכֶ֖ם",
+              "literal_form": "לֵֽאלֹהֵיכֶ֖ם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/5",
+          "index": 5,
+          "literal_link": "[[שמות ט/טעמים#ט לה|ט,לה]]",
+          "link_target": "שמות ט/טעמים#ט לה",
+          "link_label": "ט,לה",
+          "literal_specimen": "(ל=וַֽיֶּחֱזַק֙)",
+          "strict_ref": [
+            "Exodus",
+            9,
+            35
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיֶּחֱזַק֙",
+              "literal_form": "וַֽיֶּחֱזַק֙",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֱ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF SEGOL"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/6",
+          "index": 6,
+          "literal_link": "[[שמות יג/טעמים#יג ה|יג,ה]]",
+          "link_target": "שמות יג/טעמים#יג ה",
+          "link_label": "יג,ה",
+          "literal_specimen": "(ל=כִֽי־יְבִֽיאֲךָ֣)",
+          "strict_ref": [
+            "Exodus",
+            13,
+            5
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=כִֽי־יְבִֽיאֲךָ֣",
+              "literal_form": "כִֽי־יְבִֽיאֲךָ֣",
+              "hatafs": [
+                {
+                  "literal_cluster": "אֲ",
+                  "base": "א",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/7",
+          "index": 7,
+          "literal_link": "[[שמות יג/טעמים#יג יא|יג,יא]]",
+          "link_target": "שמות יג/טעמים#יג יא",
+          "link_label": "יג,יא",
+          "literal_specimen": "(ל=כִּֽי־יְבִֽאֲךָ֤)",
+          "strict_ref": [
+            "Exodus",
+            13,
+            11
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=כִּֽי־יְבִֽאֲךָ֤",
+              "literal_form": "כִּֽי־יְבִֽאֲךָ֤",
+              "hatafs": [
+                {
+                  "literal_cluster": "אֲ",
+                  "base": "א",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/8",
+          "index": 8,
+          "literal_link": "[[שמות טו/טעמים#טו כו|טו,כו]]",
+          "link_target": "שמות טו/טעמים#טו כו",
+          "link_label": "טו,כו",
+          "literal_specimen": "(ל=כָּֽל־הַמַּֽחֲלָ֞ה)",
+          "strict_ref": [
+            "Exodus",
+            15,
+            26
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=כָּֽל־הַמַּֽחֲלָ֞ה",
+              "literal_form": "כָּֽל־הַמַּֽחֲלָ֞ה",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֲ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/9",
+          "index": 9,
+          "literal_link": "[[שמות כ/טעמים#כ ג|כ,ג]]",
+          "link_target": "שמות כ/טעמים#כ ג",
+          "link_label": "כ,ג",
+          "literal_specimen": "(ל=תַֽעֲשֶׂ֨ה־לְךָ֥֣)",
+          "strict_ref": [
+            "Exodus",
+            20,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=תַֽעֲשֶׂ֨ה־לְךָ֥֣",
+              "literal_form": "תַֽעֲשֶׂ֨ה־לְךָ֥֣",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/10",
+          "index": 10,
+          "literal_link": "[[שמות כא/טעמים#כא יד|כא,יד]]",
+          "link_target": "שמות כא/טעמים#כא יד",
+          "link_label": "כא,יד",
+          "literal_specimen": "(ל?=וְכִי־יָזִ֥ד)",
+          "strict_ref": [
+            "Exodus",
+            21,
+            14
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=וְכִי־יָזִ֥ד",
+              "literal_form": "וְכִי־יָזִ֥ד",
+              "hatafs": []
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1263/item/11",
+          "index": 11,
+          "literal_link": "[[שמות כד/טעמים#כד יא|כד,יא]]",
+          "link_target": "שמות כד/טעמים#כד יא",
+          "link_label": "כד,יא",
+          "literal_specimen": "(ל=וַֽיֶּחֱזוּ֙)",
+          "strict_ref": [
+            "Exodus",
+            24,
+            11
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיֶּחֱזוּ֙",
+              "literal_form": "וַֽיֶּחֱזוּ֙",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֱ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF SEGOL"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/12",
+          "index": 12,
+          "literal_link": "[[שמות ל/טעמים#ל י|ל,י]]",
+          "link_target": "שמות ל/טעמים#ל י",
+          "link_label": "ל,י",
+          "literal_specimen": "(ל=קֹֽדֶשׁ־קָֽדָשִׁ֥ים)",
+          "strict_ref": [
+            "Exodus",
+            30,
+            10
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=קֹֽדֶשׁ־קָֽדָשִׁ֥ים",
+              "literal_form": "קֹֽדֶשׁ־קָֽדָשִׁ֥ים",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/13",
+          "index": 13,
+          "literal_link": "[[שמות לב/טעמים#לב ל|לב,ל]]",
+          "link_target": "שמות לב/טעמים#לב ל",
+          "link_label": "לב,ל",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Exodus",
+            32,
+            30
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1263/item/14",
+          "index": 14,
+          "literal_link": "[[שמות לו/טעמים#לו יג|לו,יג]]",
+          "link_target": "שמות לו/טעמים#לו יג",
+          "link_label": "לו,יג",
+          "literal_specimen": "(ל=וַֽיְהִ֥י).",
+          "strict_ref": [
+            "Exodus",
+            36,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיְהִ֥י",
+              "literal_form": "וַֽיְהִ֥י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        }
+      ]
+    },
+    {
+      "claim": "ch3:L1265",
+      "declared_items": 10,
+      "items": [
+        {
+          "id": "ch3:L1265/item/1",
+          "index": 1,
+          "literal_link": "[[ויקרא א/טעמים#א ה|א,ה]]",
+          "link_target": "ויקרא א/טעמים#א ה",
+          "link_label": "א,ה",
+          "literal_specimen": "(ל=הַֽכֹּֽהֲנִים֙)",
+          "strict_ref": [
+            "Levit",
+            1,
+            5
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הַֽכֹּֽהֲנִים֙",
+              "literal_form": "הַֽכֹּֽהֲנִים֙",
+              "hatafs": [
+                {
+                  "literal_cluster": "הֲ",
+                  "base": "ה",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/2",
+          "index": 2,
+          "literal_link": "[[ויקרא ג/טעמים#ג יז|ג,יז]]",
+          "link_target": "ויקרא ג/טעמים#ג יז",
+          "link_label": "ג,יז",
+          "literal_specimen": "(ל=מֽוֹשְׁבֹתֵיכֶ֑ם)",
+          "strict_ref": [
+            "Levit",
+            3,
+            17
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=מֽוֹשְׁבֹתֵיכֶ֑ם",
+              "literal_form": "מֽוֹשְׁבֹתֵיכֶ֑ם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/3",
+          "index": 3,
+          "literal_link": "[[ויקרא ח/טעמים#ח יא|ח,יא]]",
+          "link_target": "ויקרא ח/טעמים#ח יא",
+          "link_label": "ח,יא",
+          "literal_specimen": "(ל=עַֽל־הַמִּזְבֵּ֖חַ)",
+          "strict_ref": [
+            "Levit",
+            8,
+            11
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=עַֽל־הַמִּזְבֵּ֖חַ",
+              "literal_form": "עַֽל־הַמִּזְבֵּ֖חַ",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/4",
+          "index": 4,
+          "literal_link": "[[ויקרא ט/טעמים#ט א|ט,א]]",
+          "link_target": "ויקרא ט/טעמים#ט א",
+          "link_label": "ט,א",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Levit",
+            9,
+            1
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/5",
+          "index": 5,
+          "literal_link": "[[ויקרא כ/טעמים#כ כז|כ,כז]]",
+          "link_target": "ויקרא כ/טעמים#כ כז",
+          "link_label": "כ,כז",
+          "literal_specimen": "(ל?=כִּֽי־יִהְיֶ֨ה)",
+          "strict_ref": [
+            "Levit",
+            20,
+            27
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=כִּֽי־יִהְיֶ֨ה",
+              "literal_form": "כִּֽי־יִהְיֶ֨ה",
+              "hatafs": []
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1265/item/6",
+          "index": 6,
+          "literal_link": "[[ויקרא כג/טעמים#כג ג|כג,ג]]",
+          "link_target": "ויקרא כג/טעמים#כג ג",
+          "link_label": "כג,ג",
+          "literal_specimen": "(ל=מֽוֹשְׁבֹתֵיכֶֽם)",
+          "strict_ref": [
+            "Levit",
+            23,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=מֽוֹשְׁבֹתֵיכֶֽם",
+              "literal_form": "מֽוֹשְׁבֹתֵיכֶֽם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/7",
+          "index": 7,
+          "literal_link": "[[ויקרא כג/טעמים#כג לא|כג,לא]]",
+          "link_target": "ויקרא כג/טעמים#כג לא",
+          "link_label": "כג,לא",
+          "literal_specimen": "(ל=מֹֽשְׁבֹֽתֵיכֶֽם)",
+          "strict_ref": [
+            "Levit",
+            23,
+            31
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=מֹֽשְׁבֹֽתֵיכֶֽם",
+              "literal_form": "מֹֽשְׁבֹֽתֵיכֶֽם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/8",
+          "index": 8,
+          "literal_link": "[[ויקרא כג/טעמים#כג מד|כג,מד]]",
+          "link_target": "ויקרא כג/טעמים#כג מד",
+          "link_label": "כג,מד",
+          "literal_specimen": "(ל=אֶת־מֹעֲדֵ֖י)",
+          "strict_ref": [
+            "Levit",
+            23,
+            44
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=אֶת־מֹעֲדֵ֖י",
+              "literal_form": "אֶת־מֹעֲדֵ֖י",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/9",
+          "index": 9,
+          "literal_link": "[[ויקרא כה/טעמים#כה כח|כה,כח]]",
+          "link_target": "ויקרא כה/טעמים#כה כח",
+          "link_label": "כה,כח",
+          "literal_specimen": "(ל=לֹֽא־מָֽצְאָ֜ה)",
+          "strict_ref": [
+            "Levit",
+            25,
+            28
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֹֽא־מָֽצְאָ֜ה",
+              "literal_form": "לֹֽא־מָֽצְאָ֜ה",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1265/item/10",
+          "index": 10,
+          "literal_link": "[[ויקרא כז/טעמים#כז כח|כז,כח]]",
+          "link_target": "ויקרא כז/טעמים#כז כח",
+          "link_label": "כז,כח",
+          "literal_specimen": "(ל=קֹֽדֶשׁ־קׇֽדָשִׁ֥ים).",
+          "strict_ref": [
+            "Levit",
+            27,
+            28
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=קֹֽדֶשׁ־קׇֽדָשִׁ֥ים",
+              "literal_form": "קֹֽדֶשׁ־קׇֽדָשִׁ֥ים",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        }
+      ]
+    },
+    {
+      "claim": "ch3:L1267",
+      "declared_items": 19,
+      "items": [
+        {
+          "id": "ch3:L1267/item/1",
+          "index": 1,
+          "literal_link": "[[במדבר ג/טעמים#ג ו|ג,ו]]",
+          "link_target": "במדבר ג/טעמים#ג ו",
+          "link_label": "ג,ו",
+          "literal_specimen": "(ל=וְהַֽעֲמַדְתָּ֣ או וְֽהַעֲמַדְתָּ֣)",
+          "strict_ref": [
+            "Numbers",
+            3,
+            6
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וְהַֽעֲמַדְתָּ֣ או וְֽהַעֲמַדְתָּ֣",
+              "literal_form": "וְהַֽעֲמַדְתָּ֣ או וְֽהַעֲמַדְתָּ֣",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                },
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1267/item/2",
+          "index": 2,
+          "literal_link": "[[במדבר ג/טעמים#ג כז|ג,כז]]",
+          "link_target": "במדבר ג/טעמים#ג כז",
+          "link_label": "ג,כז",
+          "literal_specimen": "(ל=הָֽעָזִּיאֵלִ֑י)",
+          "strict_ref": [
+            "Numbers",
+            3,
+            27
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הָֽעָזִּיאֵלִ֑י",
+              "literal_form": "הָֽעָזִּיאֵלִ֑י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/3",
+          "index": 3,
+          "literal_link": "[[במדבר ד/טעמים#ד לב|ד,לב]]",
+          "link_target": "במדבר ד/טעמים#ד לב",
+          "link_label": "ד,לב",
+          "literal_specimen": "(ל=וִֽיתֵדֹתָם֙)",
+          "strict_ref": [
+            "Numbers",
+            4,
+            32
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וִֽיתֵדֹתָם֙",
+              "literal_form": "וִֽיתֵדֹתָם֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/4",
+          "index": 4,
+          "literal_link": "[[במדבר ה/טעמים#ה כא|ה,כא]]",
+          "link_target": "במדבר ה/טעמים#ה כא",
+          "link_label": "ה,כא",
+          "literal_specimen": "(ל=אֶֽת־הָֽאִשָּׁה֮)",
+          "strict_ref": [
+            "Numbers",
+            5,
+            21
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=אֶֽת־הָֽאִשָּׁה֮",
+              "literal_form": "אֶֽת־הָֽאִשָּׁה֮",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/5",
+          "index": 5,
+          "literal_link": "[[במדבר י/טעמים#י ח|י,ח]]",
+          "link_target": "במדבר י/טעמים#י ח",
+          "link_label": "י,ח",
+          "literal_specimen": "(ל=בַּֽחֲצֹצְר֑וֹת)",
+          "strict_ref": [
+            "Numbers",
+            10,
+            8
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=בַּֽחֲצֹצְר֑וֹת",
+              "literal_form": "בַּֽחֲצֹצְר֑וֹת",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֲ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/6",
+          "index": 6,
+          "literal_link": "[[במדבר יא/טעמים#יא כד|יא,כד]]",
+          "link_target": "במדבר יא/טעמים#יא כד",
+          "link_label": "יא,כד",
+          "literal_specimen": "(ל=וַֽיַּעֲמֵ֥ד)",
+          "strict_ref": [
+            "Numbers",
+            11,
+            24
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַֽיַּעֲמֵ֥ד",
+              "literal_form": "וַֽיַּעֲמֵ֥ד",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/7",
+          "index": 7,
+          "literal_link": "[[במדבר יד/טעמים#יד כה|יד,כה]]",
+          "link_target": "במדבר יד/טעמים#יד כה",
+          "link_label": "יד,כה",
+          "literal_specimen": "(ל=וְהָֽעֲמָלֵקִ֥י וְהַֽכְּנַעֲנִ֖י)",
+          "strict_ref": [
+            "Numbers",
+            14,
+            25
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וְהָֽעֲמָלֵקִ֥י וְהַֽכְּנַעֲנִ֖י",
+              "literal_form": "וְהָֽעֲמָלֵקִ֥י וְהַֽכְּנַעֲנִ֖י",
+              "hatafs": [
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                },
+                {
+                  "literal_cluster": "עֲ",
+                  "base": "ע",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/8",
+          "index": 8,
+          "literal_link": "[[במדבר יד/טעמים#יד לח|יד,לח]]",
+          "link_target": "במדבר יד/טעמים#יד לח",
+          "link_label": "יד,לח",
+          "literal_specimen": "(ל=הַֽהֹלְכִ֖ים)",
+          "strict_ref": [
+            "Numbers",
+            14,
+            38
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הַֽהֹלְכִ֖ים",
+              "literal_form": "הַֽהֹלְכִ֖ים",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/9",
+          "index": 9,
+          "literal_link": "[[במדבר טו/טעמים#טו יד|טו,יד]]",
+          "link_target": "במדבר טו/טעמים#טו יד",
+          "link_label": "טו,יד",
+          "literal_specimen": "(ל=אֲשֶֽׁר־בְּתֽוֹכְכֶם֙)",
+          "strict_ref": [
+            "Numbers",
+            15,
+            14
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=אֲשֶֽׁר־בְּתֽוֹכְכֶם֙",
+              "literal_form": "אֲשֶֽׁר־בְּתֽוֹכְכֶם֙",
+              "hatafs": [
+                {
+                  "literal_cluster": "אֲ",
+                  "base": "א",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/10",
+          "index": 10,
+          "literal_link": "[[במדבר טו/טעמים#טו מ|טו,מ]]",
+          "link_target": "במדבר טו/טעמים#טו מ",
+          "link_label": "טו,מ",
+          "literal_specimen": "(ל=לֵֽאלֹהֵיכֶֽם)",
+          "strict_ref": [
+            "Numbers",
+            15,
+            40
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאלֹהֵיכֶֽם",
+              "literal_form": "לֵֽאלֹהֵיכֶֽם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/11",
+          "index": 11,
+          "literal_link": "[[במדבר טז/טעמים#טז יח|טז,יח]]",
+          "link_target": "במדבר טז/טעמים#טז יח",
+          "link_label": "טז,יח",
+          "literal_specimen": "(ל?=וַֽיַּעַמְד֗וּ)",
+          "strict_ref": [
+            "Numbers",
+            16,
+            18
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=וַֽיַּעַמְד֗וּ",
+              "literal_form": "וַֽיַּעַמְד֗וּ",
+              "hatafs": []
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1267/item/12",
+          "index": 12,
+          "literal_link": "[[במדבר טז/טעמים#טז לא|טז,לא]]",
+          "link_target": "במדבר טז/טעמים#טז לא",
+          "link_label": "טז,לא",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Numbers",
+            16,
+            31
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/13",
+          "index": 13,
+          "literal_link": "[[במדבר יז/טעמים#יז כא|יז,כא]]",
+          "link_target": "במדבר יז/טעמים#יז כא",
+          "link_label": "יז,כא",
+          "literal_specimen": "(ל=כָּֽל־נְשִֽׂיאֵיהֶ֡ם)",
+          "strict_ref": [
+            "Numbers",
+            17,
+            21
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=כָּֽל־נְשִֽׂיאֵיהֶ֡ם",
+              "literal_form": "כָּֽל־נְשִֽׂיאֵיהֶ֡ם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/14",
+          "index": 14,
+          "literal_link": "[[במדבר יח/טעמים#יח ב|יח,ב]]",
+          "link_target": "במדבר יח/טעמים#יח ב",
+          "link_label": "יח,ב",
+          "literal_specimen": "(ל=וִֽישָׁרְת֑וּךָ)",
+          "strict_ref": [
+            "Numbers",
+            18,
+            2
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וִֽישָׁרְת֑וּךָ",
+              "literal_form": "וִֽישָׁרְת֑וּךָ",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/15",
+          "index": 15,
+          "literal_link": "[[במדבר כה/טעמים#כה ב|כה,ב]]",
+          "link_target": "במדבר כה/טעמים#כה ב",
+          "link_label": "כה,ב",
+          "literal_specimen": "(ל=לֵֽאלֹהֵיהֶֽן)",
+          "strict_ref": [
+            "Numbers",
+            25,
+            2
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאלֹהֵיהֶֽן",
+              "literal_form": "לֵֽאלֹהֵיהֶֽן",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/16",
+          "index": 16,
+          "literal_link": "[[במדבר כו/טעמים#כו לא|כו,לא]]",
+          "link_target": "במדבר כו/טעמים#כו לא",
+          "link_label": "כו,לא",
+          "literal_specimen": "(ל=הָֽאַשְׂרִֽאֵלִ֑י)",
+          "strict_ref": [
+            "Numbers",
+            26,
+            31
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הָֽאַשְׂרִֽאֵלִ֑י",
+              "literal_form": "הָֽאַשְׂרִֽאֵלִ֑י",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/17",
+          "index": 17,
+          "literal_link": "[[במדבר לא/טעמים#לא לב|לא,לב]]",
+          "link_target": "במדבר לא/טעמים#לא לב",
+          "link_label": "לא,לב",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Numbers",
+            31,
+            32
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1267/item/18",
+          "index": 18,
+          "literal_link": "[[במדבר לג/טעמים#לג ג|לג,ג]]",
+          "link_target": "במדבר לג/טעמים#לג ג",
+          "link_label": "לג,ג",
+          "literal_specimen": "(ל?=הָֽרִאשׁ֔וֹן)",
+          "strict_ref": [
+            "Numbers",
+            33,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=הָֽרִאשׁ֔וֹן",
+              "literal_form": "הָֽרִאשׁ֔וֹן",
+              "hatafs": []
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        },
+        {
+          "id": "ch3:L1267/item/19",
+          "index": 19,
+          "literal_link": "[[במדבר לה/טעמים#לה לג|לה,לג]]",
+          "link_target": "במדבר לה/טעמים#לה לג",
+          "link_label": "לה,לג",
+          "literal_specimen": "(ל?=וְלֹא־תַחֲנִ֣יפוּ).",
+          "strict_ref": [
+            "Numbers",
+            35,
+            33
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=וְלֹא־תַחֲנִ֣יפוּ",
+              "literal_form": "וְלֹא־תַחֲנִ֣יפוּ",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֲ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        }
+      ]
+    },
+    {
+      "claim": "ch3:L1269",
+      "declared_items": 18,
+      "items": [
+        {
+          "id": "ch3:L1269/item/1",
+          "index": 1,
+          "literal_link": "[[דברים א/טעמים#א ג|א,ג]]",
+          "link_target": "דברים א/טעמים#א ג",
+          "link_label": "א,ג",
+          "literal_specimen": "(ל=וַיְהִי֙)",
+          "strict_ref": [
+            "Deuter",
+            1,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיְהִי֙",
+              "literal_form": "וַיְהִי֙",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/2",
+          "index": 2,
+          "literal_link": "[[דברים א/טעמים#א כט|א,כט]]",
+          "link_target": "דברים א/טעמים#א כט",
+          "link_label": "א,כט",
+          "literal_specimen": "(ל=לֹא־תַֽעַרְצ֥וּן וְֽלֹא־תִֽירְא֖וּן)",
+          "strict_ref": [
+            "Deuter",
+            1,
+            29
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֹא־תַֽעַרְצ֥וּן וְֽלֹא־תִֽירְא֖וּן",
+              "literal_form": "לֹא־תַֽעַרְצ֥וּן וְֽלֹא־תִֽירְא֖וּן",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/3",
+          "index": 3,
+          "literal_link": "[[דברים א/טעמים#א לג|א,לג]]",
+          "link_target": "דברים א/טעמים#א לג",
+          "link_label": "א,לג",
+          "literal_specimen": "(ל=לַֽחֲנֹֽתְכֶ֑ם)",
+          "strict_ref": [
+            "Deuter",
+            1,
+            33
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לַֽחֲנֹֽתְכֶ֑ם",
+              "literal_form": "לַֽחֲנֹֽתְכֶ֑ם",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֲ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/4",
+          "index": 4,
+          "literal_link": "[[דברים ז/טעמים#ז ח|ז,ח]]",
+          "link_target": "דברים ז/טעמים#ז ח",
+          "link_label": "ז,ח",
+          "literal_specimen": "(ל=מֵֽאַהֲבַ֨ת)",
+          "strict_ref": [
+            "Deuter",
+            7,
+            8
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=מֵֽאַהֲבַ֨ת",
+              "literal_form": "מֵֽאַהֲבַ֨ת",
+              "hatafs": [
+                {
+                  "literal_cluster": "הֲ",
+                  "base": "ה",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/5",
+          "index": 5,
+          "literal_link": "[[דברים ז/טעמים#ז יג|ז,יג]]",
+          "link_target": "דברים ז/טעמים#ז יג",
+          "link_label": "ז,יג",
+          "literal_specimen": "(ל=וְתִֽירֹשְׁךָ֣)",
+          "strict_ref": [
+            "Deuter",
+            7,
+            13
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וְתִֽירֹשְׁךָ֣",
+              "literal_form": "וְתִֽירֹשְׁךָ֣",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/6",
+          "index": 6,
+          "literal_link": "[[דברים ח/טעמים#ח ג|ח,ג]]",
+          "link_target": "דברים ח/טעמים#ח ג",
+          "link_label": "ח,ג",
+          "literal_specimen": "(ל=וַיַּֽאֲכִֽלְךָ֤)",
+          "strict_ref": [
+            "Deuter",
+            8,
+            3
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וַיַּֽאֲכִֽלְךָ֤",
+              "literal_form": "וַיַּֽאֲכִֽלְךָ֤",
+              "hatafs": [
+                {
+                  "literal_cluster": "אֲ",
+                  "base": "א",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/7",
+          "index": 7,
+          "literal_link": "[[דברים ח/טעמים#ח טז|ח,טז]]",
+          "link_target": "דברים ח/טעמים#ח טז",
+          "link_label": "ח,טז",
+          "literal_specimen": "(ל=הַמַּֽאֲכִ֨לְךָ֥)",
+          "strict_ref": [
+            "Deuter",
+            8,
+            16
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הַמַּֽאֲכִ֨לְךָ֥",
+              "literal_form": "הַמַּֽאֲכִ֨לְךָ֥",
+              "hatafs": [
+                {
+                  "literal_cluster": "אֲ",
+                  "base": "א",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/8",
+          "index": 8,
+          "literal_link": "[[דברים יא/טעמים#יא יד|יא,יד]]",
+          "link_target": "דברים יא/טעמים#יא יד",
+          "link_label": "יא,יד",
+          "literal_specimen": "(ל=וְתִֽירֹשְׁךָ֖)",
+          "strict_ref": [
+            "Deuter",
+            11,
+            14
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וְתִֽירֹשְׁךָ֖",
+              "literal_form": "וְתִֽירֹשְׁךָ֖",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/9",
+          "index": 9,
+          "literal_link": "[[דברים יא/טעמים#יא כד|יא,כד]]",
+          "link_target": "דברים יא/טעמים#יא כד",
+          "link_label": "יא,כד",
+          "literal_specimen": "(ל=הָֽאַחֲר֔וֹן)",
+          "strict_ref": [
+            "Deuter",
+            11,
+            24
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=הָֽאַחֲר֔וֹן",
+              "literal_form": "הָֽאַחֲר֔וֹן",
+              "hatafs": [
+                {
+                  "literal_cluster": "חֲ",
+                  "base": "ח",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/10",
+          "index": 10,
+          "literal_link": "[[דברים יא/טעמים#יא כה|יא,כה]]",
+          "link_target": "דברים יא/טעמים#יא כה",
+          "link_label": "יא,כה",
+          "literal_specimen": "(ל=וּמֽוֹרַאֲכֶ֜ם)",
+          "strict_ref": [
+            "Deuter",
+            11,
+            25
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וּמֽוֹרַאֲכֶ֜ם",
+              "literal_form": "וּמֽוֹרַאֲכֶ֜ם",
+              "hatafs": [
+                {
+                  "literal_cluster": "אֲ",
+                  "base": "א",
+                  "non_guttural": false,
+                  "marks": [
+                    "HEBREW POINT HATAF PATAH"
+                  ]
+                }
+              ]
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/11",
+          "index": 11,
+          "literal_link": "[[דברים יב/טעמים#יב יז|יב,יז]]",
+          "link_target": "דברים יב/טעמים#יב יז",
+          "link_label": "יב,יז",
+          "literal_specimen": "(ל=וְתִֽירֹשְׁךָ֣)",
+          "strict_ref": [
+            "Deuter",
+            12,
+            17
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=וְתִֽירֹשְׁךָ֣",
+              "literal_form": "וְתִֽירֹשְׁךָ֣",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/12",
+          "index": 12,
+          "literal_link": "[[דברים יב/טעמים#יב כ|יב,כ]]",
+          "link_target": "דברים יב/טעמים#יב כ",
+          "link_label": "יב,כ",
+          "literal_specimen": "(ל=אֶֽת־גְּבֽוּלְךָ֮)",
+          "strict_ref": [
+            "Deuter",
+            12,
+            20
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=אֶֽת־גְּבֽוּלְךָ֮",
+              "literal_form": "אֶֽת־גְּבֽוּלְךָ֮",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/13",
+          "index": 13,
+          "literal_link": "[[דברים יב/טעמים#יב ל|יב,ל]]",
+          "link_target": "דברים יב/טעמים#יב ל",
+          "link_label": "יב,ל",
+          "literal_specimen": "(ל=לֵֽאלֹהֵיהֶ֜ם)",
+          "strict_ref": [
+            "Deuter",
+            12,
+            30
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאלֹהֵיהֶ֜ם",
+              "literal_form": "לֵֽאלֹהֵיהֶ֜ם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/14",
+          "index": 14,
+          "literal_link": "[[דברים יב/טעמים#יב לא|יב,לא]]",
+          "link_target": "דברים יב/טעמים#יב לא",
+          "link_label": "יב,לא",
+          "literal_specimen": "(ל=לֵֽאלֹהֵיהֶֽם)",
+          "strict_ref": [
+            "Deuter",
+            12,
+            31
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאלֹהֵיהֶֽם",
+              "literal_form": "לֵֽאלֹהֵיהֶֽם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/15",
+          "index": 15,
+          "literal_link": "[[דברים יד/טעמים#יד כג|יד,כג]]",
+          "link_target": "דברים יד/טעמים#יד כג",
+          "link_label": "יד,כג",
+          "literal_specimen": "(ל=תִּֽירֹשְׁךָ֣)",
+          "strict_ref": [
+            "Deuter",
+            14,
+            23
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=תִּֽירֹשְׁךָ֣",
+              "literal_form": "תִּֽירֹשְׁךָ֣",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/16",
+          "index": 16,
+          "literal_link": "[[דברים יח/טעמים#יח ד|יח,ד]]",
+          "link_target": "דברים יח/טעמים#יח ד",
+          "link_label": "יח,ד",
+          "literal_specimen": "(ל=תִּֽירֹשְׁךָ֣)",
+          "strict_ref": [
+            "Deuter",
+            18,
+            4
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=תִּֽירֹשְׁךָ֣",
+              "literal_form": "תִּֽירֹשְׁךָ֣",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/17",
+          "index": 17,
+          "literal_link": "[[דברים כ/טעמים#כ יח|כ,יח]]",
+          "link_target": "דברים כ/טעמים#כ יח",
+          "link_label": "כ,יח",
+          "literal_specimen": "(ל=לֵֽאלֹהֵיהֶ֑ם)",
+          "strict_ref": [
+            "Deuter",
+            20,
+            18
+          ],
+          "forms": [
+            {
+              "sigil": "ל",
+              "literal_expression": "ל=לֵֽאלֹהֵיהֶ֑ם",
+              "literal_form": "לֵֽאלֹהֵיהֶ֑ם",
+              "hatafs": []
+            }
+          ],
+          "status": "central-named-source-correspondence"
+        },
+        {
+          "id": "ch3:L1269/item/18",
+          "index": 18,
+          "literal_link": "[[דברים כח/טעמים#כח יא|דברים כח,יא]]",
+          "link_target": "דברים כח/טעמים#כח יא",
+          "link_label": "דברים כח,יא",
+          "literal_specimen": "(ל?=וְהוֹתִֽרְךָ֤).",
+          "strict_ref": [
+            "Deuter",
+            28,
+            11
+          ],
+          "forms": [
+            {
+              "sigil": "ל?",
+              "literal_expression": "ל?=וְהוֹתִֽרְךָ֤",
+              "literal_form": "וְהוֹתִֽרְךָ֤",
+              "hatafs": []
+            }
+          ],
+          "status": "supported-uncertain-candidate"
+        }
+      ]
+    }
+  ],
+  "overlapping_note_prose_flags": [
+    {
+      "item": "ch3:L1263/item/3",
+      "note_id": "Exodus 7:13/2/0",
+      "kind": "patah-in-specimen-prose-describes-meteg"
+    },
+    {
+      "item": "ch3:L1265/item/2",
+      "note_id": "Levit 3:17/2/0",
+      "kind": "meteg-specimen-described-as-no-meteg"
+    },
+    {
+      "item": "ch3:L1267/item/5",
+      "note_id": "Numbers 10:8/2/0",
+      "kind": "duplicate-L1-source-relation"
+    },
+    {
+      "item": "ch3:L1269/item/3",
+      "note_id": "Deuter 1:33/2/0",
+      "kind": "duplicate-Sh1-source-relation"
+    }
+  ],
+  "method": "Every entry was compared to complete current note targets/bodies in small sequential batches. Uncertain candidates, compound scope, structured targets, qamats alternatives and strands remain explicit.",
+  "limits": "No general rule, physical manuscript reading or universal roster completeness was certified. Ancillary source-list/prose issues do not negate the supported main Leningrad comparison."
+}

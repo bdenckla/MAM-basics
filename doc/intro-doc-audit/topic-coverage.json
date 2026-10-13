@@ -1048,11 +1048,12 @@
       "explicit_reference_units": 2,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
+      "ch2:L254",
       "ch2:L256",
       "ch2:L258"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1066,12 +1067,20 @@
       "explicit_reference_units": 3,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
       "ch2:L262",
       "ch2:L264",
-      "ch2:L278"
+      "ch2:L266",
+      "ch2:L268",
+      "ch2:L270",
+      "ch2:L272",
+      "ch2:L274",
+      "ch2:L276",
+      "ch2:L278",
+      "ch2:L280",
+      "ch2:L281"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1085,7 +1094,9 @@
       "explicit_reference_units": 0,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
+    "reviewed_source_units": [
+      "ch2:L285"
+    ],
     "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
@@ -1100,10 +1111,11 @@
       "explicit_reference_units": 1,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
-      "ch2:L289"
+    "reviewed_source_units": [
+      "ch2:L289",
+      "ch2:L291"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1117,10 +1129,11 @@
       "explicit_reference_units": 1,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
+      "ch2:L295",
       "ch2:L297"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1134,12 +1147,13 @@
       "explicit_reference_units": 3,
       "form_claims": 25
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
       "ch2:L301",
+      "ch2:L303",
       "ch2:L305",
       "ch2:L307"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1153,16 +1167,19 @@
       "explicit_reference_units": 7,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
+      "ch2:L311",
       "ch2:L312",
       "ch2:L313",
       "ch2:L314",
       "ch2:L315",
       "ch2:L316",
+      "ch2:L318",
+      "ch2:L320",
       "ch2:L322",
       "ch2:L324"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1176,12 +1193,14 @@
       "explicit_reference_units": 10,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
+      "ch2:L328",
+      "ch2:L330",
       "ch2:L331",
       "ch2:L332",
       "ch2:L333",
       "ch2:L334",
+      "ch2:L336",
       "ch2:L337",
       "ch2:L338",
       "ch2:L339",
@@ -1189,6 +1208,7 @@
       "ch2:L341",
       "ch2:L342"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1202,12 +1222,15 @@
       "explicit_reference_units": 3,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
+      "ch2:L346",
       "ch2:L347",
       "ch2:L348",
-      "ch2:L349"
+      "ch2:L349",
+      "ch2:L351",
+      "ch2:L353"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -1221,7 +1244,9 @@
       "explicit_reference_units": 0,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
+    "reviewed_source_units": [
+      "ch2:L357"
+    ],
     "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
@@ -1236,7 +1261,35 @@
       "explicit_reference_units": 0,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
+    "reviewed_source_units": [
+      "ch2:L361",
+      "ch2:L362",
+      "ch2:L363",
+      "ch2:L364",
+      "ch2:L365",
+      "ch2:L366",
+      "ch2:L367",
+      "ch2:L368",
+      "ch2:L369",
+      "ch2:L370",
+      "ch2:L371",
+      "ch2:L372",
+      "ch2:L373",
+      "ch2:L374",
+      "ch2:L375",
+      "ch2:L376",
+      "ch2:L377",
+      "ch2:L378",
+      "ch2:L379",
+      "ch2:L380",
+      "ch2:L381",
+      "ch2:L382",
+      "ch2:L383",
+      "ch2:L384",
+      "ch2:L385",
+      "ch2:L386",
+      "ch2:L388"
+    ],
     "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
@@ -2909,14 +2962,14 @@
       "explicit_reference_units": 5,
       "form_claims": 5
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
       "ch3:L1126",
       "ch3:L1128",
       "ch3:L1130",
       "ch3:L1132",
       "ch3:L1134"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -3035,14 +3088,14 @@
       "explicit_reference_units": 5,
       "form_claims": 0
     },
-    "reviewed_source_units": [],
-    "pending_explicit_reference_units": [
+    "reviewed_source_units": [
       "ch3:L1261",
       "ch3:L1263",
       "ch3:L1265",
       "ch3:L1267",
       "ch3:L1269"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {
@@ -4926,9 +4979,6 @@
       "form_claims": 544
     },
     "reviewed_source_units": [
-      "ch5:L708"
-    ],
-    "pending_explicit_reference_units": [
       "ch5:L694",
       "ch5:L696",
       "ch5:L698",
@@ -4936,6 +4986,7 @@
       "ch5:L702",
       "ch5:L704",
       "ch5:L706",
+      "ch5:L708",
       "ch5:L710",
       "ch5:L712",
       "ch5:L714",
@@ -4943,10 +4994,12 @@
       "ch5:L718",
       "ch5:L720",
       "ch5:L722",
+      "ch5:L724",
       "ch5:L726",
       "ch5:L728",
       "ch5:L730"
     ],
+    "pending_explicit_reference_units": [],
     "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed"
   },
   {

@@ -138,5 +138,33 @@
       25
     ],
     "reason": "Both label and link use18:21; the quoted form and corresponding Leningrad note occur at18:25. The18:21 note concerns a different atom."
+  },
+  {
+    "claim": "ch2:L264",
+    "wrong": [
+      "Ezekiel",
+      27,
+      3
+    ],
+    "intended": [
+      "Ezekiel",
+      27,
+      4
+    ],
+    "reason": "The named atom and A/MG-H note occur at27:4;27:3 contains a different atom. Both link and repeated prose say verse3."
+  },
+  {
+    "claim": "ch3:L1401",
+    "wrong": [
+      "Genesis",
+      22,
+      2
+    ],
+    "intended": [
+      "Genesis",
+      22,
+      20
+    ],
+    "reason": "The additional-seder paragraph gives22:2, but its nearby quoted opening and the CP note with seder19* identify22:20."
   }
 ]

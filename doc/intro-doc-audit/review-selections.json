@@ -466,6 +466,114 @@
         "Jeremiah 39:13/2/0"
       ],
       "explanation": "The Introduction and faithful raw/current parsed edition templates both select a small resh at 2Samuel21:19 and a small final nun at Jeremiah39:13. Their notes' implicit-edition clauses say large. The notes separately describe normal Aleppo letters. The size-label defect is in note wording; no manuscript interpretation has been changed."
+    },
+    {
+      "id": "PS-150-3-HATAF",
+      "title": "Psalm150:3: the first Aleppo roster specimen has sheva rather than hataf",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch5:L710"
+      ],
+      "intro_roster_items": [
+        [
+          "ch5:L710",
+          166
+        ]
+      ],
+      "refs": [
+        [
+          "Psalms",
+          150,
+          3
+        ]
+      ],
+      "note_ids": [
+        "Psalms 150:3/2/0"
+      ],
+      "explanation": "The first of two separately indexed Psalm150:3 items is explicitly Aleppo-attributed but encodes SHEVA (U+05B0) on lamed. The faithful raw/current parsed note quotes Aleppo with HATAF PATAH (U+05B2). The second occurrence is separately retained and agrees. This is a central hataf-quotation disagreement; the actual manuscript reading remains unverified. The Psalms roster has172 form items against171 declared items, but item-count and hataf-occurrence-count are kept distinct."
+    },
+    {
+      "id": "PS-39-13-HATAF-LABEL",
+      "title": "Psalm39:13: the second hataf alternative has the wrong vowel name",
+      "status": "new-verified-introduction-description-discrepancy",
+      "claims": [
+        "ch5:L710"
+      ],
+      "intro_roster_items": [
+        [
+          "ch5:L710",
+          32
+        ]
+      ],
+      "refs": [
+        [
+          "Psalms",
+          39,
+          13
+        ]
+      ],
+      "note_ids": [
+        "Psalms 39:13/2/0"
+      ],
+      "explanation": "The Introduction encodes HATAF PATAH (U+05B2) in the second alternative but labels it hataf qamats. Its first alternative correctly has HATAF QAMATS (U+05B3). The current raw/parsed note distinguishes the two vowels correctly and retains uncertainty about Aleppo. Both alternative forms agree; the defect is the Introduction's second vowel label."
+    },
+    {
+      "id": "DOCNOTE-METEG-PROSE",
+      "title": "Four notes have meteg specimen or witness-list inconsistencies",
+      "status": "new-verified-docnote-prose-discrepancy",
+      "claims": [
+        "ch3:L1263",
+        "ch3:L1265",
+        "ch3:L1267",
+        "ch3:L1269"
+      ],
+      "intro_roster_items": [
+        [
+          "ch3:L1263",
+          3
+        ],
+        [
+          "ch3:L1265",
+          2
+        ],
+        [
+          "ch3:L1267",
+          5
+        ],
+        [
+          "ch3:L1269",
+          3
+        ]
+      ],
+      "refs": [
+        [
+          "Exodus",
+          7,
+          13
+        ],
+        [
+          "Levit",
+          3,
+          17
+        ],
+        [
+          "Numbers",
+          10,
+          8
+        ],
+        [
+          "Deuter",
+          1,
+          33
+        ]
+      ],
+      "note_ids": [
+        "Exodus 7:13/2/0",
+        "Levit 3:17/2/0",
+        "Numbers 10:8/2/0",
+        "Deuter 1:33/2/0"
+      ],
+      "explanation": "Exodus7:13 describes meteg but its explanatory yod cluster has SEGOL plus PATAH, with no METEG. Leviticus3:17 explicitly says no meteg after a candidate containing meteg on bet. Numbers10:8 assigns L1 both a meteg target and a no-meteg alternative; Deuteronomy1:33 similarly assigns Sh1 both target and no-meteg forms. The raw bodies reproduce these exact inconsistencies. Main Leningrad comparisons at the latter three verses agree; Exodus retains a separate source-scope question. No manuscript interpretation was undertaken."
     }
   ],
   "tracked": [
@@ -887,6 +995,97 @@
       "refs": [],
       "note_ids": [],
       "explanation": "Psalm77:8 omits the initial meteg present in both current dehi alternatives. Ruth3:13 and Esther1:6 omit the legarmeh glyph present in their complete current special-letter targets. All selected letter sizes agree. The specimens occur in a size list; they do not independently establish a disagreement in a named manuscript's complete pointing. Complete target nodes, rather than the survey text field, retain the legarmeh evidence."
+    },
+    {
+      "id": "EXOD-7-13-SCOPE",
+      "title": "Exodus7:13: implicit Leningrad meteg agreement has uncertain scope",
+      "status": "source-scope-uncertainty",
+      "claims": [
+        "ch3:L1263"
+      ],
+      "refs": [
+        [
+          "Exodus",
+          7,
+          13
+        ]
+      ],
+      "note_ids": [
+        "Exodus 7:13/2/0"
+      ],
+      "explanation": "The Introduction's Leningrad specimen has no meteg. The note's target has meteg and its implicit agreement includes Leningrad, but the following explanatory list specifically names other witnesses for the yod meteg. Keep this conflict in clause scope separate from the explanatory PATAH typo; neither cache settles the actual manuscript reading.",
+      "intro_roster_items": [
+        [
+          "ch3:L1263",
+          3
+        ]
+      ]
+    },
+    {
+      "id": "HATAF-SOURCE-SCOPE",
+      "title": "Hataf rosters: source scope and inclusion questions",
+      "status": "source-and-inclusion-policy-uncertainty",
+      "claims": [
+        "ch5:L704",
+        "ch5:L704",
+        "ch5:L706"
+      ],
+      "refs": [
+        [
+          "Jeremiah",
+          48,
+          20
+        ],
+        [
+          "Jeremiah",
+          50,
+          6
+        ],
+        [
+          "Ezekiel",
+          17,
+          17
+        ]
+      ],
+      "note_ids": [
+        "Jeremiah 48:20/2/0",
+        "Jeremiah 50:6/2/0",
+        "Ezekiel 17:17/2/0"
+      ],
+      "explanation": "Two Jeremiah items claim Aleppo qere while the corresponding notes document only ketiv. Ezekiel17:17 explicitly quotes Leningrad while its note names Aleppo for that form. Nine specimens omit sigla even though their notes supply Aleppo. Proverbs30:17 has an additional Leningrad non-guttural hataf in its note that is absent from the roster. These are source/inclusion boundaries requiring judgment, not proof from note silence. All667 item dispositions and twelve corrected locator bindings are retained in roster-review.json and hataf-rosters.json.",
+      "intro_roster_items": [
+        [
+          "ch5:L704",
+          30
+        ],
+        [
+          "ch5:L704",
+          32
+        ],
+        [
+          "ch5:L706",
+          17
+        ]
+      ]
+    },
+    {
+      "id": "SEDER-DESCRIPTION-STRENGTH",
+      "title": "Deuteronomy20:1: uncertain seder versus error wording",
+      "status": "description-strength-uncertainty",
+      "claims": [
+        "ch3:L1405"
+      ],
+      "refs": [
+        [
+          "Deuter",
+          20,
+          1
+        ]
+      ],
+      "note_ids": [
+        "Deuter 20:1/1/0"
+      ],
+      "explanation": "The Introduction calls Dotan's bracketed seder an error, while the current note describes it as uncertain and only proposes how an error might have arisen. Dotan's source was not consulted. Preserve the difference in description strength without resolving the manuscript or historical source."
     }
   ],
   "controls": [

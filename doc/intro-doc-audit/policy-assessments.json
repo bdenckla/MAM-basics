@@ -1,0 +1,141 @@
+{
+  "batches": [
+    {
+      "page": "ch2",
+      "range": [
+        251,
+        284
+      ],
+      "reviewed": 14,
+      "total": 14,
+      "dispositions": {
+        "bounded-template-or-example-supported": [
+          254,
+          256,
+          258,
+          278,
+          280
+        ],
+        "finite-source-examples-supported-history-unverified": [
+          262
+        ],
+        "incorrect-locator-intended-source-comparison-supported": [
+          264
+        ],
+        "morphology-examples-partly-supported-general-claims-uncheckable": [
+          276
+        ],
+        "general-policy-or-completeness-not-exhaustively-tested": [
+          274
+        ],
+        "external-history-or-editorial-claim-uncheckable": [
+          266,
+          268,
+          270,
+          272
+        ],
+        "glyph-example-supported-usage-and-completeness-uncheckable": [
+          281
+        ]
+      },
+      "method": "Read every selected source unit against complete current verse nodes and relevant note bodies. The five hataf-hiriq source notes were independently checked in raw caches. General history, morphology frequencies and font collisions retain separate boundaries."
+    },
+    {
+      "page": "ch2",
+      "range": [
+        285,
+        392
+      ],
+      "reviewed": 66,
+      "total": 66,
+      "dispositions": {
+        "listed-form-or-finite-membership-supported": [
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          324,
+          333,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          347,
+          348,
+          349
+        ],
+        "bounded-example-or-source-relation-supported": [
+          289,
+          297,
+          301,
+          320,
+          322,
+          332
+        ],
+        "partial-manuscript-attribution": [
+          334
+        ],
+        "qualified-source-or-scope-discrepancy": [
+          305,
+          307,
+          331
+        ],
+        "general-policy-or-completeness-not-exhaustively-tested": [
+          285,
+          295,
+          303,
+          330,
+          336
+        ],
+        "external-history-or-grammar-uncheckable": [
+          291,
+          318,
+          328,
+          346,
+          351,
+          353
+        ],
+        "future-proposal": [
+          357
+        ],
+        "publication-or-display-uncheckable": [
+          361,
+          388
+        ],
+        "navigation-or-table-metadata": [
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384,
+          385,
+          386
+        ]
+      },
+      "method": "Listed note relations and complete selected EP structures were checked. Closed edition-projection censuses establish the seven prose shalshelet, fourteen double-merkha and sixteen qarne-parah memberships, plus the five combined geresh/telisha atoms. The83 rafe specimens and18 Reuben forms were checked as listed membership, without claiming manuscript-wide completeness."
+    }
+  ],
+  "limits": "Assessment of a unit records bounded support and evidence limits. It does not certify every embedded assertion or universal policy."
+}

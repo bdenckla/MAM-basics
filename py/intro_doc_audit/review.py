@@ -23,6 +23,15 @@ def hbo(text):
     return html.escape(text)
 
 
+@cache
+def roster_items():
+    return {
+        r["claim"]: r["items"]
+        for r in read("hataf-rosters.json")["rosters"]
+        + read("meteg-roster-review.json")["rosters"]
+    }
+
+
 def source_node(value):
     """Serialize retained parsed structure without projecting or interpreting it."""
     if isinstance(value, str):
@@ -116,7 +125,26 @@ def card(case, by_claim, by_note):
     extra = ""
     if case.get("issue"):
         extra = f' <a href="https://github.com/bdenckla/MAM-basics/issues/{case["issue"]}">MAM-basics #{case["issue"]}</a>'
-    intro = "<hr>".join(hbo(intro_display(c)) for c in claims[:1])
+    intro_cells = [hbo(intro_display(c)) for c in claims]
+    intro = intro_cells[0]
+    if case.get("intro_roster_items"):
+        excerpts = []
+        for cid, index in case["intro_roster_items"]:
+            item = roster_items()[cid][index - 1]
+            excerpts.append(
+                hbo(
+                    intro_display(
+                        {
+                            "id": cid,
+                            "text": item["literal_link"]
+                            + " "
+                            + item["literal_specimen"],
+                        }
+                    )
+                )
+            )
+        intro = "<hr>".join(excerpts)
+        intro_cells = excerpts
     enumeration = ""
     if case["id"] == "DEUT-HATAF":
         pairs = enumeration_pairs(claims[0], by_note)
@@ -177,8 +205,8 @@ def card(case, by_claim, by_note):
         context_html = f"<details><summary>Cached contexts for {len(contexts)} verses</summary>{context_html}</details>"
     if len(claims) == len(notes) == len(refs) and len(refs) > 1:
         comparison_rows = "".join(
-            f'<tr><td class="he" dir="rtl">{hbo(intro_display(c))}</td><td class="he" dir="rtl">{body}</td><td class="bcv">{html.escape(audit.ref_id(ref))}</td></tr>'
-            for c, body, ref in zip(claims, bodies, refs)
+            f'<tr><td class="he" dir="rtl">{cell}</td><td class="he" dir="rtl">{body}</td><td class="bcv">{html.escape(audit.ref_id(ref))}</td></tr>'
+            for cell, body, ref in zip(intro_cells, bodies, refs)
         )
     else:
         comparison_rows = f'<tr><td class="he" dir="rtl">{intro}</td><td class="he" dir="rtl">{"<hr>".join(bodies)}</td><td class="bcv">{"<br>".join(html.escape(audit.ref_id(r)) for r in refs)}</td></tr>'
@@ -211,6 +239,9 @@ def main():
     structures = read("structural-populations.json")
     catalogue_comparison = read("catalogue-comparison.json")
     summary = read("summary.json")
+    hataf_review = read("hataf-rosters.json")
+    meteg_review = read("meteg-roster-review.json")
+    policy = read("policy-assessments.json")
     by_claim = {c["id"]: c for c in claims}
     by_note = {n["id"]: n for n in notes}
     ledger = [n for group in ketiv["dispositions"].values() for n in group]
@@ -294,6 +325,50 @@ def main():
                         "supplemental_template_evidence": supplemental,
                     }
                 )
+    bounded_list_units = len(dispositions)
+    for batch in policy["batches"]:
+        population = [n for ns in batch["dispositions"].values() for n in ns]
+        a, b = batch["range"]
+        expected = {
+            c["line"]
+            for c in claims
+            if c["id"].startswith(batch["page"] + ":") and a <= c["line"] <= b
+        }
+        if len(population) != len(set(population)) or set(population) != expected:
+            raise ValueError(
+                "Policy assessment does not account for its declared units"
+            )
+        for status, lines in batch["dispositions"].items():
+            for line in lines:
+                cid = f"{batch['page']}:L{line}"
+                dispositions.append(
+                    {
+                        "claim": cid,
+                        "batch": "policy-assessment",
+                        "status": status,
+                        "evidence": by_claim[cid]["evidence"],
+                    }
+                )
+    for row in hataf_review["rosters"]:
+        dispositions.append(
+            {
+                "claim": row["claim"],
+                "batch": "hataf-roster",
+                "status": "item-ledger-assessed;see-individual-dispositions",
+                "evidence": by_claim[row["claim"]]["evidence"],
+                "item_statuses": {i["id"]: i["status"] for i in row["items"]},
+            }
+        )
+    for row in meteg_review["rosters"]:
+        dispositions.append(
+            {
+                "claim": row["claim"],
+                "batch": "meteg-roster",
+                "status": "item-ledger-assessed;see-individual-dispositions",
+                "evidence": by_claim[row["claim"]]["evidence"],
+                "item_statuses": {i["id"]: i["status"] for i in row["items"]},
+            }
+        )
     audit.dump("claim-dispositions.json", dispositions)
     pointing_reviewed = (
         len(ledger)
@@ -408,6 +483,14 @@ def main():
         "chapter5_earlier_source_units_reviewed": other_batches[5]["reviewed"],
         "chapter5_earlier_source_units_total": other_batches[5]["total"],
         "all_selected_units_reviewed": len(dispositions),
+        "bounded_list_source_units_reviewed": bounded_list_units,
+        "policy_units_assessed": sum(b["reviewed"] for b in policy["batches"]),
+        "hataf_roster_items_reviewed": sum(
+            len(r["items"]) for r in hataf_review["rosters"]
+        ),
+        "hataf_roster_items_total": read("roster-review.json")["total_items"],
+        "meteg_roster_items_reviewed": meteg_review["reviewed"],
+        "meteg_roster_items_total": meteg_review["total"],
         "catalogue_lines_reviewed": catalogue_comparison["catalogue_lines"],
         "catalogue_membership_matches": catalogue_comparison[
             "matching_membership_lines"

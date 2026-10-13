@@ -1,0 +1,1219 @@
+{
+  "verses_scanned": 23202,
+  "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
+  "poetic_predicate": "bib_locales.is_poetcant(mk_bcvtmam(...)), including Job's prose sections",
+  "limits": "Counts describe selected edition strings, not manuscript populations. Combined atoms are literal Hebrew runs inside selected leaf strings; the five qualifying atoms are retained with source pointers.",
+  "characters": [
+    {
+      "ref": "Genesis 19:16",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/19/16/2/0/tmpl_params/1/0",
+      "literal_text": "וַֽיִּתְמַהְמָ֓הּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Genesis 24:12",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/24/12/2/0",
+      "literal_text": "וַיֹּאמַ֓ר",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Genesis 27:25",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/27/25/2/2",
+      "literal_text": " ל֦וֹ יַ֖יִן וַיֵּֽשְׁתְּ׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Genesis 39:8",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/39/8/2/0",
+      "literal_text": "וַיְמָאֵ֓ן",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Exodus 5:15",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/5/15/2/0",
+      "literal_text": "וַיָּבֹ֗אוּ שֹֽׁטְרֵי֙ בְּנֵ֣י יִשְׂרָאֵ֔ל וַיִּצְעֲק֥וּ אֶל־פַּרְעֹ֖ה לֵאמֹ֑ר לָ֧מָּה תַעֲשֶׂ֦ה כֹ֖ה לַעֲבָדֶֽיךָ׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Levit 8:23",
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "json_pointer": "/book39s/0/chapters/8/23/2/0/tmpl_params/1/0",
+      "literal_text": "וַיִּשְׁחָ֓ט",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Levit 10:1",
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "json_pointer": "/book39s/0/chapters/10/1/2/4",
+      "literal_text": " לִפְנֵ֤י יְהֹוָה֙ אֵ֣שׁ זָרָ֔ה אֲשֶׁ֧ר לֹ֦א צִוָּ֖ה אֹתָֽם׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Numbers 14:3",
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "json_pointer": "/book39s/0/chapters/14/3/2/0",
+      "literal_text": "וְלָמָ֣ה יְ֠הֹוָ֠ה מֵבִ֨יא אֹתָ֜נוּ אֶל־הָאָ֤רֶץ הַזֹּאת֙ לִנְפֹּ֣ל בַּחֶ֔רֶב נָשֵׁ֥ינוּ וְטַפֵּ֖נוּ יִהְי֣וּ לָבַ֑ז הֲל֧וֹא ט֦וֹב לָ֖נוּ שׁ֥וּב מִצְרָֽיְמָה׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Numbers 32:42",
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "json_pointer": "/book39s/0/chapters/32/42/2/1/tmpl_params/1",
+      "literal_text": "לָ֦הֿ",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Numbers 35:5",
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "json_pointer": "/book39s/0/chapters/35/5/2/0",
+      "literal_text": "וּמַדֹּתֶ֞ם מִח֣וּץ לָעִ֗יר אֶת־פְּאַת־קֵ֣דְמָה אַלְפַּ֪יִם בָּֽאַמָּ֟ה וְאֶת־פְּאַת־נֶ֩גֶב֩ אַלְפַּ֨יִם בָּאַמָּ֜ה וְאֶת־פְּאַת־יָ֣ם",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Numbers 35:5",
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "json_pointer": "/book39s/0/chapters/35/5/2/0",
+      "literal_text": "וּמַדֹּתֶ֞ם מִח֣וּץ לָעִ֗יר אֶת־פְּאַת־קֵ֣דְמָה אַלְפַּ֪יִם בָּֽאַמָּ֟ה וְאֶת־פְּאַת־נֶ֩גֶב֩ אַלְפַּ֨יִם בָּאַמָּ֜ה וְאֶת־פְּאַת־יָ֣ם",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Joshua 19:51",
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "json_pointer": "/book39s/0/chapters/19/51/2/2",
+      "literal_text": "וִיהוֹשֻׁ֪עַ בִּן־נ֟וּן וְרָאשֵׁ֣י הָאָב֣וֹת לְמַטּוֹת֩ בְּנֵי־יִשְׂרָאֵ֨ל",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Joshua 19:51",
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "json_pointer": "/book39s/0/chapters/19/51/2/2",
+      "literal_text": "וִיהוֹשֻׁ֪עַ בִּן־נ֟וּן וְרָאשֵׁ֣י הָאָב֣וֹת לְמַטּוֹת֩ בְּנֵי־יִשְׂרָאֵ֨ל",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Samuel 4:2",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/4/2/2/0",
+      "literal_text": "וּשְׁנֵ֣י אֲנָשִׁ֣ים שָׂרֵֽי־גְדוּדִ֣ים הָי֪וּ בֶן־שָׁא֟וּל שֵׁם֩ הָאֶחָ֨ד בַּעֲנָ֜ה וְשֵׁ֧ם הַשֵּׁנִ֣י רֵכָ֗ב בְּנֵ֛י רִמּ֥וֹן הַבְּאֵרֹתִ֖י מִבְּנֵ֣י בִנְיָמִ֑ן כִּ֚י גַּם־בְּאֵר֔וֹת תֵּחָשֵׁ֖ב עַל־בִּנְיָמִֽן׃",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Samuel 4:2",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/4/2/2/0",
+      "literal_text": "וּשְׁנֵ֣י אֲנָשִׁ֣ים שָׂרֵֽי־גְדוּדִ֣ים הָי֪וּ בֶן־שָׁא֟וּל שֵׁם֩ הָאֶחָ֨ד בַּעֲנָ֜ה וְשֵׁ֧ם הַשֵּׁנִ֣י רֵכָ֗ב בְּנֵ֛י רִמּ֥וֹן הַבְּאֵרֹתִ֖י מִבְּנֵ֣י בִנְיָמִ֑ן כִּ֚י גַּם־בְּאֵר֔וֹת תֵּחָשֵׁ֖ב עַל־בִּנְיָמִֽן׃",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "1Kings 10:3",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/0/chapters/10/3/2/0",
+      "literal_text": "וַיַּגֶּד־לָ֥הּ שְׁלֹמֹ֖ה אֶת־כׇּל־דְּבָרֶ֑יהָ לֹֽא־הָיָ֤ה דָבָר֙ נֶעְלָ֣ם מִן־הַמֶּ֔לֶךְ אֲשֶׁ֧ר לֹ֦א הִגִּ֖יד לָֽהּ׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "1Kings 20:29",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/0/chapters/20/29/2/0",
+      "literal_text": "וַֽיַּחֲנ֧וּ אֵ֦לֶּה ",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Kings 10:5",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/10/5/2/0",
+      "literal_text": "וַיִּשְׁלַ֣ח אֲשֶׁר־עַל־הַבַּ֣יִת וַאֲשֶׁ֪ר עַל־הָעִ֟יר וְהַזְּקֵנִים֩ וְהָאֹמְנִ֨ים אֶל־יֵה֤וּא",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Kings 10:5",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/10/5/2/0",
+      "literal_text": "וַיִּשְׁלַ֣ח אֲשֶׁר־עַל־הַבַּ֣יִת וַאֲשֶׁ֪ר עַל־הָעִ֟יר וְהַזְּקֵנִים֩ וְהָאֹמְנִ֨ים אֶל־יֵה֤וּא",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Isaiah 13:8",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/13/8/2/0/tmpl_params/1/0",
+      "literal_text": "וְֽנִבְהָ֓לוּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Jeremiah 13:13",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/13/13/2/0",
+      "literal_text": "וְאָמַרְתָּ֨ אֲלֵיהֶ֜ם כֹּֽה־אָמַ֣ר יְהֹוָ֗ה הִנְנִ֣י מְמַלֵּ֣א אֶת־כׇּל־יֹשְׁבֵ֣י הָאָ֪רֶץ הַזֹּ֟את וְאֶת־הַמְּלָכִ֣ים הַיֹּשְׁבִים֩ לְדָוִ֨ד עַל־כִּסְא֜וֹ וְאֶת־הַכֹּהֲנִ֣ים וְאֶת־הַנְּבִאִ֗ים וְאֵ֛ת כׇּל־יֹשְׁבֵ֥י יְרוּשָׁלָ֖͏ִם שִׁכָּרֽוֹן׃",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Jeremiah 13:13",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/13/13/2/0",
+      "literal_text": "וְאָמַרְתָּ֨ אֲלֵיהֶ֜ם כֹּֽה־אָמַ֣ר יְהֹוָ֗ה הִנְנִ֣י מְמַלֵּ֣א אֶת־כׇּל־יֹשְׁבֵ֣י הָאָ֪רֶץ הַזֹּ֟את וְאֶת־הַמְּלָכִ֣ים הַיֹּשְׁבִים֩ לְדָוִ֨ד עַל־כִּסְא֜וֹ וְאֶת־הַכֹּהֲנִ֣ים וְאֶת־הַנְּבִאִ֗ים וְאֵ֛ת כׇּל־יֹשְׁבֵ֥י יְרוּשָׁלָ֖͏ִם שִׁכָּרֽוֹן׃",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Jeremiah 38:25",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/38/25/2/0",
+      "literal_text": "וְכִֽי־יִשְׁמְע֣וּ הַשָּׂרִים֮ כִּי־דִבַּ֣רְתִּי אִתָּךְ֒ וּבָ֣אוּ אֵלֶ֣יךָ וְֽאָמְר֪וּ אֵלֶ֟יךָ הַגִּידָה־נָּ֨א לָ֜נוּ מַה־דִּבַּ֧רְתָּ אֶל־הַמֶּ֛לֶךְ אַל־תְּכַחֵ֥ד מִמֶּ֖נּוּ וְלֹ֣א נְמִיתֶ֑ךָ וּמַה־דִּבֶּ֥ר אֵלֶ֖יךָ הַמֶּֽלֶךְ׃",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Jeremiah 38:25",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/38/25/2/0",
+      "literal_text": "וְכִֽי־יִשְׁמְע֣וּ הַשָּׂרִים֮ כִּי־דִבַּ֣רְתִּי אִתָּךְ֒ וּבָ֣אוּ אֵלֶ֣יךָ וְֽאָמְר֪וּ אֵלֶ֟יךָ הַגִּידָה־נָּ֨א לָ֜נוּ מַה־דִּבַּ֧רְתָּ אֶל־הַמֶּ֛לֶךְ אַל־תְּכַחֵ֥ד מִמֶּ֖נּוּ וְלֹ֣א נְמִיתֶ֑ךָ וּמַה־דִּבֶּ֥ר אֵלֶ֖יךָ הַמֶּֽלֶךְ׃",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezekiel 14:4",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/14/4/2/2",
+      "literal_text": " אֲדֹנָ֣י יֱהֹוִ֗ה אִ֣ישׁ אִ֣ישׁ מִבֵּ֣ית יִשְׂרָאֵ֡ל אֲשֶׁר֩ יַעֲלֶ֨ה אֶת־גִּלּוּלָ֜יו אֶל־לִבּ֗וֹ וּמִכְשׁ֤וֹל עֲוֺנוֹ֙ יָשִׂים֙ נֹ֣כַח פָּנָ֔יו וּבָ֖א אֶל־הַנָּבִ֑יא אֲנִ֣י יְהֹוָ֗ה נַעֲנֵ֧יתִי ל֦וֹ ",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezekiel 48:21",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/21/2/4",
+      "literal_text": "לִתְרֽוּמַת־הַקֹּ֣דֶשׁ וְלַאֲחֻזַּ֪ת הָעִ֟יר אֶל־פְּנֵ֣י חֲמִשָּׁה֩ וְעֶשְׂרִ֨ים אֶ֥לֶף",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezekiel 48:21",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/21/2/4",
+      "literal_text": "לִתְרֽוּמַת־הַקֹּ֣דֶשׁ וְלַאֲחֻזַּ֪ת הָעִ֟יר אֶל־פְּנֵ֣י חֲמִשָּׁה֩ וְעֶשְׂרִ֨ים אֶ֥לֶף",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Amos 1:2",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/2/chapters/1/2/2/0",
+      "literal_text": "וַיֹּאמַ֓ר",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Habakkuk 1:3",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/7/chapters/1/3/2/0",
+      "literal_text": "לָ֣מָּה תַרְאֵ֤נִי אָ֙וֶן֙ וְעָמָ֣ל תַּבִּ֔יט וְשֹׁ֥ד וְחָמָ֖ס לְנֶגְדִּ֑י וַיְהִ֧י רִ֦יב וּמָד֖וֹן יִשָּֽׂא׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Zechariah 3:2",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/10/chapters/3/2/2/0",
+      "literal_text": "וַיֹּ֨אמֶר יְהֹוָ֜ה אֶל־הַשָּׂטָ֗ן יִגְעַ֨ר יְהֹוָ֤ה בְּךָ֙ הַשָּׂטָ֔ן וְיִגְעַ֤ר יְהֹוָה֙ בְּךָ֔ הַבֹּחֵ֖ר בִּירֽוּשָׁלָ֑͏ִם הֲל֧וֹא זֶ֦ה א֖וּד מֻצָּ֥ל מֵאֵֽשׁ׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Psalms 3:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/3/3/2/2",
+      "literal_text": "אֵ֤ין יְֽשׁוּעָ֓תָה לּ֬וֹ בֵאלֹהִ֬ים סֶֽלָה׃",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 5:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/5/10/2/0",
+      "literal_text": "כִּ֤י אֵ֪ין בְּפִ֡יהוּ נְכוֹנָה֮",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 5:12",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/5/12/2/0",
+      "literal_text": "וְיִשְׂמְח֨וּ כׇל־ח֪וֹסֵי בָ֡ךְ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 7:6",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/7/6/2/5",
+      "literal_text": "וּכְבוֹדִ֓י",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 10:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/10/2/2/4",
+      "literal_text": "יִתָּפְשׂ֓וּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 11:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/11/2/2/0",
+      "literal_text": "כִּ֤י הִנֵּ֪ה הָרְשָׁעִ֡ים יִדְרְכ֬וּן קֶ֗שֶׁת",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 12:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/12/8/2/2",
+      "literal_text": "תִּצְּרֶ֓נּוּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 13:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/13/2/2/4",
+      "literal_text": "עַד־אָ֓נָה",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 13:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/13/3/2/0",
+      "literal_text": "עַד־אָ֨נָה אָשִׁ֪ית עֵצ֡וֹת בְּנַפְשִׁ֗י",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 13:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/13/3/2/4",
+      "literal_text": "עַד־אָ֓נָה",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 20:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/20/8/2/4",
+      "literal_text": "וַאֲנַ֓חְנוּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 22:25",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/22/25/2/0",
+      "literal_text": "כִּ֤י לֹֽא־בָזָ֨ה וְלֹ֪א שִׁקַּ֡ץ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 23:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/23/4/2/0",
+      "literal_text": "גַּ֤ם כִּֽי־אֵלֵ֨ךְ בְּגֵ֪יא צַלְמָ֡וֶת",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 27:6",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/27/6/2/0",
+      "literal_text": "וְעַתָּ֨ה יָר֪וּם רֹאשִׁ֡י",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 28:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/28/5/2/0",
+      "literal_text": "כִּ֤י לֹ֪א יָבִ֡ינוּ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 29:11",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/29/11/2/2",
+      "literal_text": "יְהֹוָ֓ה",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 31:11",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/11/2/0",
+      "literal_text": "כִּ֤י כָל֪וּ בְיָג֡וֹן חַיַּי֮",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 31:12",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/31/12/2/1",
+      "literal_text": " הָיִ֪יתִי חֶרְפָּ֡ה",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 32:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/32/5/2/0",
+      "literal_text": "חַטָּאתִ֨י אוֹדִ֪יעֲךָ֡",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 33:12",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/33/12/2/4",
+      "literal_text": "הָעָ֓ם",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 34:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/34/8/2/0",
+      "literal_text": "חֹנֶ֤ה מַלְאַךְ־יְהֹוָ֓ה סָ֘בִ֤יב לִירֵאָ֗יו",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 41:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/41/8/2/4",
+      "literal_text": "עָלַ֓י",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 44:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/44/4/2/0",
+      "literal_text": "כִּ֤י לֹ֪א בְחַרְבָּ֡ם יָ֥רְשׁוּ אָ֗רֶץ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 44:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/44/9/2/3",
+      "literal_text": "וְשִׁמְךָ֓",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 49:14",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/49/14/2/4",
+      "literal_text": "וְאַחֲרֵיהֶ֓ם",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 50:6",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/50/6/2/2",
+      "literal_text": "כִּֽי־אֱלֹהִ֓ים",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 52:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/52/5/2/2",
+      "literal_text": "שֶׁ֓קֶר",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 56:14",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/56/14/2/0",
+      "literal_text": "כִּ֤י הִצַּ֪לְתָּ נַפְשִׁ֡י ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 59:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/59/4/2/0",
+      "literal_text": "כִּ֤י הִנֵּ֪ה אָרְב֡וּ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 65:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/65/2/2/0",
+      "literal_text": "לְךָ֤ דֻֽמִיָּ֬ה תְהִלָּ֓ה אֱלֹ֘הִ֥ים בְּצִיּ֑וֹן",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 65:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/65/10/2/3/tmpl_params/1",
+      "literal_text": "וַתְּשֹׁ֪קְﬞקֶ֡הָ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 66:7",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/66/7/2/8/tmpl_params/1/0",
+      "literal_text": "הַסּוֹרְﬞרִ֓ים",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 67:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/67/5/2/7",
+      "literal_text": "וּלְאֻמִּ֓ים",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 68:15",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/68/15/2/0",
+      "literal_text": "בְּפָ֘רֵ֤שׂ שַׁדַּ֓י מְלָ֘כִ֤ים בָּ֗הּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 68:31",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/68/31/2/0",
+      "literal_text": "גְּעַ֨ר חַיַּ֪ת קָנֶ֡ה",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 72:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/72/3/2/0",
+      "literal_text": "יִשְׂא֤וּ הָרִ֓ים שָׁ֘ל֥וֹם לָעָ֑ם",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 75:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/75/9/2/0",
+      "literal_text": "כִּ֤י כ֪וֹס בְּֽיַד־יְהֹוָ֡ה",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 77:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/77/4/2/2",
+      "literal_text": "אָשִׂ֓יחָה",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 84:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/84/4/2/0",
+      "literal_text": "גַּם־צִפּ֨וֹר מָ֪צְאָה בַ֡יִת",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 89:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/89/2/2/4",
+      "literal_text": "לְדֹ֥ר וָדֹ֓ר",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 89:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/89/3/2/4",
+      "literal_text": "שָׁמַ֓יִם",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 90:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/90/4/2/0",
+      "literal_text": "כִּ֤י אֶ֪לֶף שָׁנִ֡ים",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 90:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/90/10/2/0",
+      "literal_text": "יְמֵֽי־שְׁנוֹתֵ֨ינוּ בָהֶ֥ם שִׁבְעִ֪ים שָׁנָ֡ה",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 92:10",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/92/10/2/0",
+      "literal_text": "כִּ֤י הִנֵּ֪ה אֹיְבֶ֡יךָ יְֽהֹוָ֗ה",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 94:17",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/94/17/2/4",
+      "literal_text": "כִּמְעַ֓ט",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 106:38",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/106/38/2/0",
+      "literal_text": "וַיִּ֥שְׁפְּכ֨וּ דָ֪ם נָקִ֡י",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 106:48",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/106/48/2/2",
+      "literal_text": "יְהֹוָ֨ה אֱלֹהֵ֪י יִשְׂרָאֵ֡ל",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 109:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/109/2/2/0",
+      "literal_text": "כִּ֤י פִ֪י רָשָׁ֡ע ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 122:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/122/4/2/0",
+      "literal_text": "שֶׁשָּׁ֨ם עָל֪וּ שְׁבָטִ֡ים",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 123:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/123/2/2/0",
+      "literal_text": "הִנֵּ֨ה כְעֵינֵ֪י עֲבָדִ֡ים אֶל־יַ֤ד אֲֽדוֹנֵיהֶ֗ם",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 125:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/125/3/2/0",
+      "literal_text": "כִּ֤י לֹ֪א יָנ֡וּחַ שֵׁ֤בֶט הָרֶ֗שַׁע",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 126:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/126/2/2/0",
+      "literal_text": "אָ֤ז יִמָּלֵ֪א שְׂח֡וֹק ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 127:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/127/2/2/3/tmpl_params/1",
+      "literal_text": "מַשְׁכִּ֪ימֵֽי",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 131:1",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/131/1/2/9",
+      "literal_text": "וְלֹֽא־הִלַּ֓כְתִּי",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 137:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/137/3/2/0",
+      "literal_text": "כִּ֤י שָׁ֨ם שְֽׁאֵל֪וּנוּ שׁוֹבֵ֡ינוּ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 137:9",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/137/9/2/2",
+      "literal_text": " שֶׁיֹּאחֵ֓ז וְנִפֵּ֬ץ אֶֽת־עֹלָלַ֗יִךְ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 138:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/138/2/2/0",
+      "literal_text": "אֶשְׁתַּחֲוֶ֨ה אֶל־הֵיכַ֪ל קׇדְשְׁךָ֡",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 141:4",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/141/4/2/0",
+      "literal_text": "אַל־תַּט־לִבִּ֨י לְדָבָ֪ר",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 143:6",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/143/6/2/2",
+      "literal_text": "נַפְשִׁ֓י",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 143:11",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/143/11/2/2",
+      "literal_text": "בְּצִדְקָתְךָ֓",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Psalms 146:3",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/146/3/2/2",
+      "literal_text": "בְּבֶן־אָדָ֓ם",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 1:9",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/1/9/2/2",
+      "literal_text": " לִוְיַ֤ת חֵ֓ן הֵ֬ם לְרֹאשֶׁ֑ךָ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 6:3",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/3/2/0",
+      "literal_text": "עֲשֵׂ֨ה זֹ֥את אֵפ֪וֹא",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 6:10",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/10/2/4",
+      "literal_text": "מְעַ֓ט",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 6:27",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/27/2/0",
+      "literal_text": "הֲיַחְתֶּ֤ה אִ֓ישׁ אֵ֬שׁ בְּחֵיק֑וֹ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 7:23",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/7/23/2/0",
+      "literal_text": "עַ֤ד יְפַלַּ֪ח חֵ֡ץ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 23:29",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/23/29/2/0",
+      "literal_text": "לְמִ֨י א֥וֹי לְמִ֪י אֲב֡וֹי",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 24:33",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/24/33/2/4",
+      "literal_text": "מְעַ֓ט",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 27:10",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/27/10/2/1/tmpl_params/2",
+      "literal_text": "וְרֵ֪עַ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Proverbs 30:33",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/30/33/2/0",
+      "literal_text": "כִּ֤י מִ֪יץ חָלָ֡ב י֘וֹצִ֤יא חֶמְאָ֗ה",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 5:19",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/5/19/2/4",
+      "literal_text": "וּבְשֶׁ֓בַע",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 6:4",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/6/4/2/0",
+      "literal_text": "כִּ֤י חִצֵּ֪י שַׁדַּ֡י",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 15:23",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/15/23/2/2",
+      "literal_text": "יָדַ֓ע",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 16:4",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/16/4/2/4",
+      "literal_text": "ל֤וּ יֵ֪שׁ נַפְשְׁכֶ֡ם תַּ֤חַת נַפְשִׁ֗י",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 16:9",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/16/9/2/7",
+      "literal_text": "צָרִ֓י",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 32:6",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/32/6/2/11",
+      "literal_text": "עַל־כֵּ֖ן זָחַ֥לְתִּי וָאִירָ֓א",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 37:12",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/37/12/2/8",
+      "literal_text": "כֹּ֖ל אֲשֶׁ֥ר יְצַוֵּ֓ם",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Job 40:23",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/40/23/2/4",
+      "literal_text": "יִבְטַ֓ח",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": true
+    },
+    {
+      "ref": "Esther 7:9",
+      "path": "MAM-parsed/plus/E5-Esther.json",
+      "json_pointer": "/book39s/0/chapters/7/9/2/0",
+      "literal_text": "וַיֹּ֣אמֶר חַ֠רְבוֹנָ֠ה אֶחָ֨ד מִן־הַסָּרִיסִ֜ים לִפְנֵ֣י הַמֶּ֗לֶךְ גַּ֣ם הִנֵּה־הָעֵ֣ץ אֲשֶׁר־עָשָׂ֪ה הָמָ֟ן לְֽמׇרְדֳּכַ֞י אֲשֶׁ֧ר דִּבֶּר־ט֣וֹב עַל־הַמֶּ֗לֶךְ עֹמֵד֙ בְּבֵ֣ית הָמָ֔ן גָּבֹ֖הַּ חֲמִשִּׁ֣ים אַמָּ֑ה וַיֹּ֥אמֶר הַמֶּ֖לֶךְ תְּלֻ֥הוּ עָלָֽיו׃",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Esther 7:9",
+      "path": "MAM-parsed/plus/E5-Esther.json",
+      "json_pointer": "/book39s/0/chapters/7/9/2/0",
+      "literal_text": "וַיֹּ֣אמֶר חַ֠רְבוֹנָ֠ה אֶחָ֨ד מִן־הַסָּרִיסִ֜ים לִפְנֵ֣י הַמֶּ֗לֶךְ גַּ֣ם הִנֵּה־הָעֵ֣ץ אֲשֶׁר־עָשָׂ֪ה הָמָ֟ן לְֽמׇרְדֳּכַ֞י אֲשֶׁ֧ר דִּבֶּר־ט֣וֹב עַל־הַמֶּ֗לֶךְ עֹמֵד֙ בְּבֵ֣ית הָמָ֔ן גָּבֹ֖הַּ חֲמִשִּׁ֣ים אַמָּ֑ה וַיֹּ֥אמֶר הַמֶּ֖לֶךְ תְּלֻ֥הוּ עָלָֽיו׃",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezra 5:15",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/0/chapters/5/15/2/0",
+      "literal_text": "וַאֲמַר־לֵ֓הּ",
+      "character_name": "HEBREW ACCENT SHALSHELET",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezra 6:9",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/0/chapters/6/9/2/4",
+      "literal_text": "לֶאֱלָ֪הּ שְׁמַיָּ֟א חִנְטִ֞ין מְלַ֣ח",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezra 6:9",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/0/chapters/6/9/2/4",
+      "literal_text": "לֶאֱלָ֪הּ שְׁמַיָּ֟א חִנְטִ֞ין מְלַ֣ח",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Ezra 7:25",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/0/chapters/7/25/2/4",
+      "literal_text": " דִּ֚י בַּעֲבַ֣ר נַהֲרָ֔ה לְכׇל־יָדְעֵ֖י דָּתֵ֣י אֱלָהָ֑ךְ וְדִ֧י לָ֦א יָדַ֖ע תְּהוֹדְעֽוּן׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 1:6",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/1/6/2/0",
+      "literal_text": "תְּהִ֣י נָ֣א אׇזְנְךָֽ־קַשֶּׁ֣בֶת וְֽעֵינֶ֪יךָ ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 1:6",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/1/6/2/1/tmpl_params/1",
+      "literal_text": "פְתוּח֟וֹת",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 3:38",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/3/38/2/0",
+      "literal_text": "וַנִּבְנֶה֙ אֶת־הַ֣חוֹמָ֔ה וַתִּקָּשֵׁ֥ר כׇּל־הַחוֹמָ֖ה עַד־חֶצְיָ֑הּ וַיְהִ֧י לֵ֦ב לָעָ֖ם לַעֲשֽׂוֹת׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 5:13",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/5/13/2/0",
+      "literal_text": "גַּם־חׇצְנִ֣י נָעַ֗רְתִּי וָֽאֹמְרָ֡ה כָּ֣כָה יְנַעֵ֪ר הָֽאֱלֹהִ֟ים אֶת־כׇּל־הָאִישׁ֩ אֲשֶׁ֨ר לֹֽא־יָקִ֜ים אֶת־הַדָּבָ֣ר הַזֶּ֗ה מִבֵּיתוֹ֙ וּמִ֣יגִיע֔וֹ וְכָ֛כָה יִהְיֶ֥ה נָע֖וּר וָרֵ֑ק וַיֹּאמְר֨וּ כׇֽל־הַקָּהָ֜ל אָמֵ֗ן וַֽיְהַלְלוּ֙ אֶת־יְהֹוָ֔ה וַיַּ֥עַשׂ הָעָ֖ם כַּדָּבָ֥ר הַזֶּֽה׃",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 5:13",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/5/13/2/0",
+      "literal_text": "גַּם־חׇצְנִ֣י נָעַ֗רְתִּי וָֽאֹמְרָ֡ה כָּ֣כָה יְנַעֵ֪ר הָֽאֱלֹהִ֟ים אֶת־כׇּל־הָאִישׁ֩ אֲשֶׁ֨ר לֹֽא־יָקִ֜ים אֶת־הַדָּבָ֣ר הַזֶּ֗ה מִבֵּיתוֹ֙ וּמִ֣יגִיע֔וֹ וְכָ֛כָה יִהְיֶ֥ה נָע֖וּר וָרֵ֑ק וַיֹּאמְר֨וּ כׇֽל־הַקָּהָ֜ל אָמֵ֗ן וַֽיְהַלְלוּ֙ אֶת־יְהֹוָ֔ה וַיַּ֥עַשׂ הָעָ֖ם כַּדָּבָ֥ר הַזֶּֽה׃",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 13:5",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/13/5/2/0",
+      "literal_text": "וַיַּ֨עַשׂ ל֜וֹ לִשְׁכָּ֣ה גְדוֹלָ֗ה וְשָׁ֣ם הָי֪וּ לְפָנִ֟ים נֹ֠תְנִ֠ים אֶת־הַמִּנְחָ֨ה הַלְּבוֹנָ֜ה וְהַכֵּלִ֗ים וּמַעְשַׂ֤ר הַדָּגָן֙ הַתִּיר֣וֹשׁ וְהַיִּצְהָ֔ר מִצְוַת֙ הַלְוִיִּ֔ם וְהַמְשֹׁרְרִ֖ים ",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 13:5",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/13/5/2/0",
+      "literal_text": "וַיַּ֨עַשׂ ל֜וֹ לִשְׁכָּ֣ה גְדוֹלָ֗ה וְשָׁ֣ם הָי֪וּ לְפָנִ֟ים נֹ֠תְנִ֠ים אֶת־הַמִּנְחָ֨ה הַלְּבוֹנָ֜ה וְהַכֵּלִ֗ים וּמַעְשַׂ֤ר הַדָּגָן֙ הַתִּיר֣וֹשׁ וְהַיִּצְהָ֔ר מִצְוַת֙ הַלְוִיִּ֔ם וְהַמְשֹׁרְרִ֖ים ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 13:15",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/13/15/2/4",
+      "literal_text": "בַּשַּׁבָּ֡ת וּמְבִיאִ֣ים הָעֲרֵמ֣וֹת וְֽעֹמְסִ֪ים עַל־הַחֲמֹרִ֟ים וְאַף־יַ֜יִן עֲנָבִ֤ים וּתְאֵנִים֙ וְכׇל־מַשָּׂ֔א וּמְבִיאִ֥ים יְרוּשָׁלַ֖͏ִם בְּי֣וֹם הַשַּׁבָּ֑ת וָאָעִ֕יד בְּי֖וֹם מִכְרָ֥ם צָֽיִד׃",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "Nehemiah 13:15",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/13/15/2/4",
+      "literal_text": "בַּשַּׁבָּ֡ת וּמְבִיאִ֣ים הָעֲרֵמ֣וֹת וְֽעֹמְסִ֪ים עַל־הַחֲמֹרִ֟ים וְאַף־יַ֜יִן עֲנָבִ֤ים וּתְאֵנִים֙ וְכׇל־מַשָּׂ֔א וּמְבִיאִ֥ים יְרוּשָׁלַ֖͏ִם בְּי֣וֹם הַשַּׁבָּ֑ת וָאָעִ֕יד בְּי֖וֹם מִכְרָ֥ם צָֽיִד׃",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "1Chronicles 28:1",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/0/chapters/28/1/2/0",
+      "literal_text": "וַיַּקְהֵ֣ל דָּוִ֣יד אֶת־כׇּל־שָׂרֵ֣י יִשְׂרָאֵ֡ל שָׂרֵ֣י הַשְּׁבָטִ֣ים וְשָׂרֵ֣י הַמַּחְלְק֣וֹת הַמְשָׁרְתִ֪ים אֶת־הַמֶּ֟לֶךְ וְשָׂרֵ֣י הָאֲלָפִ֣ים וְשָׂרֵ֣י הַמֵּא֡וֹת וְשָׂרֵ֣י כׇל־רְכוּשׁ־וּמִקְנֶה֩",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "1Chronicles 28:1",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/0/chapters/28/1/2/0",
+      "literal_text": "וַיַּקְהֵ֣ל דָּוִ֣יד אֶת־כׇּל־שָׂרֵ֣י יִשְׂרָאֵ֡ל שָׂרֵ֣י הַשְּׁבָטִ֣ים וְשָׂרֵ֣י הַמַּחְלְק֣וֹת הַמְשָׁרְתִ֪ים אֶת־הַמֶּ֟לֶךְ וְשָׂרֵ֣י הָאֲלָפִ֣ים וְשָׂרֵ֣י הַמֵּא֡וֹת וְשָׂרֵ֣י כׇל־רְכוּשׁ־וּמִקְנֶה֩",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Chronicles 9:2",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/9/2/2/0",
+      "literal_text": "וַיַּגֶּד־לָ֥הּ שְׁלֹמֹ֖ה אֶת־כׇּל־דְּבָרֶ֑יהָ וְלֹֽא־נֶעְלַ֤ם דָּבָר֙ מִשְּׁלֹמֹ֔ה אֲשֶׁ֧ר לֹ֦א הִגִּ֖יד לָֽהּ׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Chronicles 20:30",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/20/30/2/0",
+      "literal_text": "וַתִּשְׁקֹ֖ט מַלְכ֣וּת יְהוֹשָׁפָ֑ט וַיָּ֧נַֽח ל֦וֹ אֱלֹהָ֖יו מִסָּבִֽיב׃",
+      "character_name": "HEBREW ACCENT MERKHA KEFULA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Chronicles 24:5",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/24/5/2/0",
+      "literal_text": "וַיִּקְבֹּץ֮ אֶת־הַכֹּהֲנִ֣ים וְהַלְוִיִּם֒ וַיֹּ֣אמֶר לָהֶ֡ם צְא֣וּ לְעָרֵ֪י יְהוּדָ֟ה וְקִבְצוּ֩ מִכׇּל־יִשְׂרָאֵ֨ל כֶּ֜סֶף לְחַזֵּ֣ק",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Chronicles 24:5",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/24/5/2/0",
+      "literal_text": "וַיִּקְבֹּץ֮ אֶת־הַכֹּהֲנִ֣ים וְהַלְוִיִּם֒ וַיֹּ֣אמֶר לָהֶ֡ם צְא֣וּ לְעָרֵ֪י יְהוּדָ֟ה וְקִבְצוּ֩ מִכׇּל־יִשְׂרָאֵ֨ל כֶּ֜סֶף לְחַזֵּ֣ק",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Chronicles 35:7",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/35/7/2/0",
+      "literal_text": "וַיָּ֣רֶם יֹאשִׁיָּ֣הוּ לִבְנֵ֪י הָעָ֟ם צֹ֞אן כְּבָשִׂ֣ים וּבְנֵי־עִזִּים֮ הַכֹּ֣ל לַפְּסָחִים֒ לְכׇל־הַנִּמְצָ֗א לְמִסְפַּר֙ שְׁלֹשִׁ֣ים אֶ֔לֶף וּבָקָ֖ר שְׁלֹ֣שֶׁת אֲלָפִ֑ים אֵ֖לֶּה ",
+      "character_name": "HEBREW ACCENT QARNEY PARA",
+      "instances": 1,
+      "is_poetcant": false
+    },
+    {
+      "ref": "2Chronicles 35:7",
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "json_pointer": "/book39s/1/chapters/35/7/2/0",
+      "literal_text": "וַיָּ֣רֶם יֹאשִׁיָּ֣הוּ לִבְנֵ֪י הָעָ֟ם צֹ֞אן כְּבָשִׂ֣ים וּבְנֵי־עִזִּים֮ הַכֹּ֣ל לַפְּסָחִים֒ לְכׇל־הַנִּמְצָ֗א לְמִסְפַּר֙ שְׁלֹשִׁ֣ים אֶ֔לֶף וּבָקָ֖ר שְׁלֹ֣שֶׁת אֲלָפִ֑ים אֵ֖לֶּה ",
+      "character_name": "HEBREW ACCENT YERAH BEN YOMO",
+      "instances": 1,
+      "is_poetcant": false
+    }
+  ],
+  "combined_telisha_geresh_atoms": [
+    {
+      "ref": "Genesis 5:29",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/5/29/2/1/tmpl_params/1",
+      "literal_atom": "זֶ֞֠ה"
+    },
+    {
+      "ref": "Levit 10:4",
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "json_pointer": "/book39s/0/chapters/10/4/2/1/tmpl_params/1",
+      "literal_atom": "קִ֞֠רְב֞֠וּ"
+    },
+    {
+      "ref": "2Kings 17:13",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/17/13/2/3/tmpl_params/1",
+      "literal_atom": "שֻׁ֜֠בוּ"
+    },
+    {
+      "ref": "Ezekiel 48:10",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/10/2/0/tmpl_params/1",
+      "literal_atom": "וּ֜֠לְאֵ֜֠לֶּה"
+    },
+    {
+      "ref": "Tsefaniah 2:15",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/8/chapters/2/15/2/0/tmpl_params/1",
+      "literal_atom": "זֹ֞֠את"
+    }
+  ]
+}
