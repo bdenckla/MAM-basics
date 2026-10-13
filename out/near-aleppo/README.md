@@ -5,6 +5,9 @@ Codex's body text. It includes reviewed near-Aleppo note clauses and distinguish
 MAM's original targets from changed near-Aleppo targets. It is structured data: use the closed,
 role-aware template rules in each book's consumer notice.
 
+For the dataset ZIP and release notes, see the
+[latest near-Aleppo release (2026-10-12)](https://github.com/bdenckla/MAM-basics/releases/tag/near-aleppo-2026-10-12).
+
 The changed-note templates are `נוסח עם הקשר מקרא על פי המסורה` and
 `הערה-2 עם הקשר מקרא על פי המסורה`. Parameter 1 is the near-Aleppo target;
 parameter 2 is its reviewed clause, or an empty array. `מקרא על פי המסורה`

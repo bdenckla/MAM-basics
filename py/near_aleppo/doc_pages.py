@@ -170,6 +170,19 @@ def pages(numbers):
         body = [mb_html.heading_level_1(title)]
         if path == "index.html":
             body.append(copy.deepcopy(original[1]))
+            body.append(
+                mb_html.para(
+                    [
+                        "For the dataset ZIP and release notes, see the ",
+                        link(
+                            "latest near-Aleppo release (2026-10-12)",
+                            "https://github.com/bdenckla/MAM-basics/releases/tag/"
+                            "near-aleppo-2026-10-12",
+                        ),
+                        ".",
+                    ]
+                )
+            )
         else:
             body.append(_navigation())
             if len(identifiers) > 1:
