@@ -29,3 +29,7 @@ The detailed documentation is now [Reading MAM-simple: JSON Format](https://bden
 ## Silluq before a later meteg
 
 [Read this section](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html#silluq-before-a-later-meteg).
+
+## Legarmeh and paseq
+
+[Read this section](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html#legarmeh-and-paseq).
