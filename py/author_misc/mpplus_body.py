@@ -556,6 +556,7 @@ def s_common_templates(*, claims: ClaimCollection):
         tblh.tmpl_purp_table(
             cmn.whitespace_rows_shared() + [poetic_spacing_row] + whitespace_plus_rows
         ),
+        *cmn.parashah_break_details_block(),
         author.para(
             "Many editions will choose to skip poetic formatting by treating"
             " ר0–ר4 as simple word spaces."

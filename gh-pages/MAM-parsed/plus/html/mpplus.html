@@ -309,12 +309,7 @@ named params include <bdi lang="hbo">סדר=</bdi> (seder number) and <bdi lang=
 <td class="template-col"><bdi lang="hbo">קו״כ</bdi></td>
 <td class="wide-col"><span class="romanized">Qere</span>-first
 <span class="romanized">ketiv/qere</span>. Param 1 = unpointed <span class="romanized">ketiv</span>,
-param 2 = pointed <span class="romanized">qere</span>, as in <bdi lang="hbo">כו״ק</bdi>, but
-<abbr class="small-caps">MAM</abbr>'s rendered Wikisource page has the
-<span class="romanized">qere</span> first, then the <span class="romanized">ketiv</span>. Used where
-the pair follows a <span class="romanized">maqaf</span>, and in three verses where the pair follows
-a narrow-sense <span class="romanized">paseq</span> (<bdi lang="hbo">מ:פסק</bdi>): 1 Samuel 2:16,
-Jeremiah 4:19 and Ezekiel 35:12.</td>
+param 2 = pointed <span class="romanized">qere</span>, as in <bdi lang="hbo">כו״ק</bdi>.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:קו״כ-אם-2</bdi></td>
@@ -339,6 +334,11 @@ dedicated page</a>.</td>
 <a href="mpplus_kq_special.html">its dedicated page</a>.</td>
 </tr>
 </table>
+<p>For <bdi lang="hbo">קו״כ</bdi>, <abbr class="small-caps">MAM</abbr>'s rendered Wikisource page
+has the <span class="romanized">qere</span> first, then the <span class="romanized">ketiv</span>.
+This template is used where the pair follows a <span class="romanized">maqaf</span>, and in three
+verses where the pair follows a narrow-sense <span class="romanized">paseq</span>
+(<bdi lang="hbo">מ:פסק</bdi>): 1 Samuel 2:16, Jeremiah 4:19 and Ezekiel 35:12.</p>
 <p>Example of standard <span class="romanized">ketiv/qere</span> (Genesis 8:17):</p>
 <pre class="json-block"><span class="tok-punct">{</span><span class="tok-punct"></span>
 <span class="tok-punct">    </span><span class="tok-key">&quot;tmpl_name&quot;</span><span class="tok-punct">:</span><span class="tok-punct"> </span><span class="tok-string heb">&quot;כו״ק&quot;</span><span class="tok-punct">,</span><span class="tok-punct"></span>
@@ -442,18 +442,7 @@ prescribes no display spacing.</p>
 <td class="template-col"><bdi lang="hbo">פפ</bdi> / <bdi lang="hbo">פפפ</bdi> /
 <bdi lang="hbo">סס</bdi> / <bdi lang="hbo">ססס</bdi></td>
 <td class="wide-col"><span class="romanized">Parashah</span> <span class="romanized">petuḥah</span>
-/ <span class="romanized">setumah</span> variants. When one of these marks a
-<span class="romanized">parashah</span> break within a verse (rather than between verses), it takes
-the argument <bdi lang="hbo">פסקא באמצע פסוק</bdi>, with three rule-based exceptions in column
-E:<ul>
-<li>a <bdi lang="hbo">ססס</bdi> between the items of a list (as in 2 Samuel 23; noted in
-<abbr class="small-caps">MAM</abbr>'s Introduction)</li>
-<li>a break inside <bdi lang="hbo">מ:כפול</bdi>, tagged only in the strand where it falls within a
-verse</li>
-<li>the <bdi lang="hbo">ססס</bdi> beside an inverted <span class="romanized">nun</span>, at the edge
-of a verse (Numbers 10:35–36)</li>
-</ul>
-</td>
+/ <span class="romanized">setumah</span> variants.</td>
 </tr>
 <tr>
 <td class="template-col"><bdi lang="hbo">מ:ששש</bdi></td>
@@ -484,6 +473,18 @@ prophet name.</td>
 designation (e.g. ספר שני).</td>
 </tr>
 </table>
+<p>When <bdi lang="hbo">פפ</bdi>, <bdi lang="hbo">פפפ</bdi>, <bdi lang="hbo">סס</bdi> or
+<bdi lang="hbo">ססס</bdi> marks a <span class="romanized">parashah</span> break within a verse
+(rather than between verses), it takes the argument <bdi lang="hbo">פסקא באמצע פסוק</bdi>, with
+three rule-based exceptions in column E:</p>
+<ul>
+<li>a <bdi lang="hbo">ססס</bdi> between the items of a list (as in 2 Samuel 23; noted in
+<abbr class="small-caps">MAM</abbr>'s Introduction)</li>
+<li>a break inside <bdi lang="hbo">מ:כפול</bdi>, tagged only in the strand where it falls within a
+verse</li>
+<li>the <bdi lang="hbo">ססס</bdi> beside an inverted <span class="romanized">nun</span>, at the edge
+of a verse (Numbers 10:35–36)</li>
+</ul>
 <p>Many editions will choose to skip poetic formatting by treating ר0–ר4 as simple word spaces.</p>
 <h3>Lack-of-whitespace templates</h3>
 <table class="center">

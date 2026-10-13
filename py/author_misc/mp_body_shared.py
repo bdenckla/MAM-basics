@@ -239,6 +239,7 @@ def ketiv_qere_block(*, kq_rows, json_kq):
     return [
         author.heading_level_3("$icap_Ketiv_qere templates"),
         tblh.tmpl_purp_table(kq_rows),
+        cmn.qere_first_details_para(),
         author.para("Example of standard $ketiv_qere (Genesis 8:17):"),
         json_block.json_block_raw_html(json_kq),
     ]

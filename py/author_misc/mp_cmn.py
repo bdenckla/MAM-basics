@@ -22,6 +22,7 @@ JSON_DOCNOTE_PLUS = _examples_and_file_naming.JSON_DOCNOTE_PLUS
 from author_misc import mp_cmn_rows_core as _rows_core  # noqa: E402
 
 KQ_ROWS = _rows_core.KQ_ROWS
+qere_first_details_para = _rows_core.qere_first_details_para
 KQ_AM2_SUG_LIST = _rows_core.KQ_AM2_SUG_LIST
 SPECIAL_LETTER_ROWS = _rows_core.SPECIAL_LETTER_ROWS
 ACCENT_ROWS = _rows_core.ACCENT_ROWS
@@ -46,6 +47,7 @@ OTHER_ROW_TEMPLATE_NAMES = _rows_other.OTHER_ROW_TEMPLATE_NAMES
 OTHER_ROW_BY_TEMPLATE = _rows_other.OTHER_ROW_BY_TEMPLATE
 other_rows_for_templates = _rows_other.other_rows_for_templates
 whitespace_rows_shared = _rows_other.whitespace_rows_shared
+parashah_break_details_block = _rows_other.parashah_break_details_block
 other_rows_shared_core = _rows_other.other_rows_shared_core
 good_ending_row = _rows_other.good_ending_row
 
