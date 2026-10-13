@@ -1,0 +1,150 @@
+{
+  "pages": 13,
+  "topics": 340,
+  "source_units": 8984,
+  "doc_notes": 3905,
+  "canonical_verse_doc_notes": 3905,
+  "paratext_doc_notes": 0,
+  "verses": 23202,
+  "explicit_reference_units": 1643,
+  "reference_edges": 3125,
+  "edges_with_notes": 2608,
+  "invalid_verse_edges": 4,
+  "Aleppo_form_triage": 962,
+  "form_triage": {
+    "form-not-found-at-verse": 1350,
+    "mark-order-only-form-present-at-verse": 432,
+    "literal-form-present-at-verse": 570
+  },
+  "unexpanded_transclusion_units": 50,
+  "input_files": [
+    {
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "sha256": "443fb743f2a13de04798925f75335aeafe35a269b99c7a91046957bc2907dd6b",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "sha256": "3c5f6355d4c0edd8a206f97d6c3c078952bfbf7ac850ac24b54a36efa02198d6",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "sha256": "e2159715c998110d8ff7a61c95c97c0b1d603322c475b44d15a7abf7ebf0fc29",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "sha256": "8c6324b8ee2a49194d0fd20d1d927c81b904d97d29baecfd29cd7f34282c5e45",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "sha256": "0d3e0370dd28ea8eefd0601979026b5c8467dd5f07a3b0b4e3fa2bb126d9f23b",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "sha256": "8c5030941247685755eb65df1ff0e461945e63f96ba9b91b20d4af233a5307be",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/B2-Judges.json",
+      "sha256": "0f2dccdf66b669156e4e92f72705ae396e464dc5437ed8129cd1b66e43bbda83",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "sha256": "29ba5bf9d0e1ed56b57463930ecb6831ad2d73face02b4b0c700b7b192119a93",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "sha256": "328fe5f7058eb79b17f1477145ac8193ac58d4b349d7fa6fe994155ba2dcacbf",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "sha256": "7a7ec5b94aea67522a130375c6a59fb6f274c2cc15cfdbbfaddcf22b2f988ed2",
+      "notes_outside_chapter_walk": [
+        35
+      ]
+    },
+    {
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "sha256": "21638251b9c66c9af3325e6d58bc83c9eb129da4b5d0a9950d134ddafac6b2cb",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "sha256": "262798c1c6a5b352f8754fdafb3c800ed266fd344fc77207d0bd0e9803b95d6f",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "sha256": "f42bf68af52db7e0619eff230ca0e68f4928b58cc40cf3ff9cf8e80f243bbd00",
+      "notes_outside_chapter_walk": [
+        12240
+      ]
+    },
+    {
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "sha256": "b20f27b16cf4489a85c1bd35c3f8fb9c254dd544b1faabdae094a125cd16723a",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "sha256": "ae2228d6a48fe795e60abe2d24c692cf6e8a18f1a9e646de4743e3a66794bf1a",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "sha256": "5be2cec4f10eb57b0dc2fad9cba9813bf0c124650b8d7a753c10d6adff0e0259",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/E1-Song of Songs.json",
+      "sha256": "be96227073bf14e52a8e5764caaf8e9afbed15d2b00cf436cd47a2c51e71afcd",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/E2-Ruth.json",
+      "sha256": "fb0a92803350eb3c0a383b262bf13524a3f32c19dd0d868923613527b67361b0",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/E3-Lamentations.json",
+      "sha256": "1ec2781b8898f8564476fc6801315fab38c0134795ec107fb0b5ea207a2823f7",
+      "notes_outside_chapter_walk": [
+        35
+      ]
+    },
+    {
+      "path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+      "sha256": "a3bbdc6712668235c181235dfb80004ba8ce1d3d9506ac4991784ff60599f153",
+      "notes_outside_chapter_walk": [
+        35
+      ]
+    },
+    {
+      "path": "MAM-parsed/plus/E5-Esther.json",
+      "sha256": "a93c106356dc16f32d7ef3719b7edde93cb82a958ec413f29e968ddb24abf235",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "sha256": "43fcc78c2bfe85bb86291e6845470949d784fdd36bec78520c130ad630857704",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "sha256": "e1fab9e242844f76877cad59b16678678dc0481791fcfbb94bb3c512213b4739",
+      "notes_outside_chapter_walk": []
+    },
+    {
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "sha256": "9e6c06b8513ec9219130376810de0eb561c630ff75e34da243ae2ed20bf629b9",
+      "notes_outside_chapter_walk": []
+    }
+  ]
+}
