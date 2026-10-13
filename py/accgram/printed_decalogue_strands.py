@@ -385,7 +385,7 @@ MAQAF_IS_THE_LAST_RUNG = (
     " rung deep, counted once and not twice as a regrouping plus an accent. It is, though, the"
     " mildest difference there is, and that is what these verdicts measure: how far down the"
     " scale each Decalogue's agreement with that strand reaches — the chanted verse boundaries,"
-    " then the disjunctive skeleton, then the conjunctives, then the maqafs."
+    " then the disjunctive skeleton, then the conjunctives, then the maqaf marks."
 )
 
 

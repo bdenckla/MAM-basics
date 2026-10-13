@@ -346,7 +346,7 @@ _CHOICES = (
         "Isaiah 26:20, where the note says the codex has MAM's ketiv and no qere note",
         "Near-Aleppo has MAM's ketiv there pointed by the letter-driven transplant of the qere's pointing, the note giving no pointed form.",
         (
-            "MAM's template kept until near-Aleppo infers pointed ketivs",
+            "MAM's template kept until near-Aleppo infers pointed ketiv forms",
             "The ketiv unpointed",
             "Reading the codex first",
         ),
@@ -590,11 +590,11 @@ _CHOICES = (
     Choice(
         "2026-09-23",
         _BEN,
-        "Which pointed ketivs near-Aleppo has",
-        "This stage added the pointed ketivs MAM's notes give at two-sided templates. The approved frozen subset of 2026-10-02 adds inference at its accepted sites; one-sided sites remain later work.",
+        "Which pointed ketiv forms near-Aleppo has",
+        "This stage added the pointed ketiv forms MAM's notes give at two-sided templates. The approved frozen subset of 2026-10-02 adds inference at its accepted sites; one-sided sites remain later work.",
         (
             "Adding the one-sided sites",
-            "Adding the inference of pointed ketivs from the qere",
+            "Adding the inference of pointed ketiv forms from the qere",
         ),
     ),
     Choice(
@@ -648,7 +648,7 @@ _CHOICES = (
         "The documentation describes near-Aleppo as it stands, with a section naming what is pending, and a mega-pipeline step regenerates and checks it.",
         (
             "No mega step yet",
-            "Waiting for the inference of pointed ketivs",
+            "Waiting for the inference of pointed ketiv forms",
         ),
     ),
     Choice(

@@ -583,7 +583,7 @@ def _post_silluq_image_nodes(image_id: str) -> list:
                     "like a ",
                     _ROM_METEG,
                     ", but it is part of the scribe's lamed. Ben notes that the "
-                    "other lameds on the manuscript page have the same feature.",
+                    "other lamed letters on the manuscript page have the same feature.",
                 ),
             ),
             _post_silluq_cairo_cotp_crop(),
