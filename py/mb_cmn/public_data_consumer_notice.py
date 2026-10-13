@@ -7,8 +7,8 @@ MAM_PARSED_PLUS_DOCUMENTATION = (
     "mpplus.html#consumer-notice"
 )
 MAM_SIMPLE_DOCUMENTATION = (
-    "https://github.com/bdenckla/MAM-basics/blob/main/"
-    "MAM-simple/doc/reading-mam-simple.md#consumer-notice"
+    "https://bdenckla.github.io/MAM-basics/MAM-simple/"
+    "reading-mam-simple.html#consumer-notice"
 )
 LENINGRAD_INDEX_DOCUMENTATION = (
     "https://github.com/bdenckla/MAM-basics/blob/main/"

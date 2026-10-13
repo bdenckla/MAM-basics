@@ -4,14 +4,16 @@ from mb_cmn import read_books_from_mam_parsed_plus as plus
 from versification_differences import case_data
 from versification_differences import doc
 
-_OUTPUT_PATH = paths.repo_root() / "MAM-simple" / "doc" / "versification-differences.md"
+_OUTPUT_PATH = (
+    paths.repo_root() / "gh-pages" / "MAM-simple" / "versification-differences.html"
+)
 
 
-def render_full_markdown():
+def render_full_html():
     books_mpu = plus.read_parsed_plus_bk39s(
         _all_case_book_ids(), paths.mam_parsed_path()
     )
-    return doc.render_full_markdown(books_mpu)
+    return doc.render_full_html(books_mpu)
 
 
 def output_path():
@@ -19,14 +21,18 @@ def output_path():
 
 
 def check_output_matches() -> bool:
+    if not _OUTPUT_PATH.exists():
+        return False
     expected = _OUTPUT_PATH.read_text(encoding="utf-8")
-    actual = render_full_markdown()
+    actual = render_full_html()
     return actual == expected
 
 
 def write_output_if_changed() -> bool:
-    actual = render_full_markdown()
-    current = _OUTPUT_PATH.read_text(encoding="utf-8")
+    actual = render_full_html()
+    current = (
+        _OUTPUT_PATH.read_text(encoding="utf-8") if _OUTPUT_PATH.exists() else None
+    )
     if current == actual:
         return False
     # MAM-simple's line-ending policy is LF (.gitattributes eol=lf); write LF

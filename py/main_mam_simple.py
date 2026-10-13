@@ -7,7 +7,7 @@ variants (BHS, Sefaria, MAM's own).
 Subcommands:
     all
                 Run the core MAM-simple export and then regenerate the docs
-                this repo writes under MAM-simple/.  This is what runs when no
+                this repo writes under gh-pages/MAM-simple/.  This is what runs when no
                 subcommand is given at all, so the bare command line is the
                 whole job.
     core-only
@@ -168,7 +168,7 @@ def _stores_own_file(bkg, variant):
     storage system, with -mam as the base."  A book group absent from xml-vtrad-bhs/ or
     json-vtrad-sef/ is one whose cv-labels that tradition places exactly where MAM
     places them, and the vtmam file is the one to read; MAM-simple's README and
-    doc/reading-mam-simple.md state that reading rule for a consumer.
+    gh-pages/MAM-simple/reading-mam-simple.html state that reading rule for a consumer.
     """
     vtrad_val = variant["variant-vtrad"]
     if vtrad_val == tbn.VT_MAM:
@@ -256,7 +256,7 @@ def almost_main(bkids=None):
 def write_generated_docs():
     """Rewrite each doc this program generates, only where its content changed.
 
-    The doc-only half of this program: MAM-simple/doc/versification-differences.md,
+    The doc-only half of this program: gh-pages/MAM-simple/versification-differences.html,
     gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and font,
     and gh-pages/MAM-simple/index.html.  Public since 2026-09-10, when
     py/main_0_mega.py's mam-simple-docs step began calling it; that module's

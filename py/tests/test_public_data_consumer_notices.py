@@ -18,8 +18,8 @@ DOCUMENTATION_TARGETS = {
         'id="consumer-notice"',
     ),
     notice.MAM_SIMPLE_DOCUMENTATION: (
-        ROOT / "MAM-simple" / "doc" / "reading-mam-simple.md",
-        "## Consumer notice",
+        ROOT / "gh-pages" / "MAM-simple" / "reading-mam-simple.html",
+        'id="consumer-notice"',
     ),
     notice.LENINGRAD_INDEX_DOCUMENTATION: (
         ROOT / "doc" / "scan-pages.md",
@@ -41,9 +41,8 @@ DOCUMENTATION_TARGETS = {
 NARPAS_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-parsed" / "README.md",
     ROOT / "gh-pages" / "MAM-parsed" / "plus" / "html" / "mpplus.html",
-    ROOT / "MAM-simple" / "README.md",
-    ROOT / "MAM-simple" / "doc" / "reading-mam-simple.md",
-    ROOT / "MAM-simple" / "doc" / "reading-mam-simple-xml.md",
+    ROOT / "gh-pages" / "MAM-simple" / "reading-mam-simple.html",
+    ROOT / "gh-pages" / "MAM-simple" / "reading-mam-simple-xml.html",
 )
 MAM_PARSED_WHITESPACE_DOCUMENTATION_TARGETS = (
     ROOT / "MAM-parsed" / "README.md",

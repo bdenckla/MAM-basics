@@ -1,11 +1,11 @@
 # Reading MAM-simple
 
-The guide to the MAM-simple format lives in this repository's `MAM-simple/`
-product directory and is canonical there:
+The canonical guide to the MAM-simple format is maintained as HTML under
+`gh-pages/MAM-simple/` in this repository:
 
-- [reading-mam-simple.md](../../MAM-simple/doc/reading-mam-simple.md) — file layout, and reading MAM-simple from Python
-- [reading-mam-simple-xml.md](../../MAM-simple/doc/reading-mam-simple-xml.md) — the XML hierarchy, element types, and verse attributes
-- [reading-mam-simple-json.md](../../MAM-simple/doc/reading-mam-simple-json.md) — the JSON format
+- [Reading MAM-simple](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple.html) — file layout, and reading MAM-simple from Python
+- [XML format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-xml.html) — the XML hierarchy, element types, and verse attributes
+- [JSON format](https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple-json.html) — the JSON format
 
 This file used to be a fuller copy of that guide. The copy went stale — it still had the
 XML under `out/xml-vtrad-mam`, a directory MAM-simple moved to the repo root — so on

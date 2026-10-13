@@ -1,9 +1,8 @@
-"""Generate MAM-simple/doc/versification-and-cantillation.html.
+"""Generate gh-pages/MAM-simple/versification-and-cantillation.html.
 
-Companion generator to versification_differences/generate_doc.py; both write into
-MAM-simple/ and are driven from main_mam_simple.py's doc step.
-This one emits a standalone HTML page (served via GitHub Pages), whereas the
-companion still emits Markdown (rendered on github.com).
+Companion generator to versification_differences/generate_doc.py; both write
+standalone HTML into gh-pages/MAM-simple/ and are driven from main_mam_simple.py's
+doc step.
 """
 
 from pathlib import Path

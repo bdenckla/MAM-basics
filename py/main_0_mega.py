@@ -347,7 +347,7 @@ _STEPS = [
         main_mam_simple.write_generated_docs,
         "py/main_mam_simple.py doc-only: reads MAM-parsed's plus/ tree and rewrites,"
         " each only where its content changed,"
-        " MAM-simple/doc/versification-differences.md,"
+        " gh-pages/MAM-simple/versification-differences.html,"
         " gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and"
         " font, and gh-pages/MAM-simple/index.html; must come after parse-ws",
     ),
