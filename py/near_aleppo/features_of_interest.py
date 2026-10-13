@@ -100,7 +100,7 @@ CASES = (
     Case(
         "2-kings-18-27",
         "a euphemistic qere and no shin dot",
-        "The ketiv שניהם has the euphemistic qere מֵימֵ֥י רַגְלֵיהֶ֖ם. "
+        "The ketiv has a two-atom euphemistic qere. "
         "The Aleppo Codex has no dot of any kind above the ketiv's shin. "
         "The manuscript is well preserved here, so the absence is clear. "
         "Near-Aleppo retains its current pointing without a shin dot. "
@@ -219,6 +219,16 @@ def _shin_figure(raw):
                 "https://github.com/bdenckla/MAM-basics/blob/main/"
                 "doc/near-aleppo-avi-ketiv-investigation.html",
             )
+        ),
+        mb_html.para(
+            [
+                "The Introduction correction is tracked in ",
+                mb_html.anchor_h(
+                    "MAM-basics issue 305",
+                    "https://github.com/bdenckla/MAM-basics/issues/305",
+                ),
+                ".",
+            ]
         ),
     ]
 
