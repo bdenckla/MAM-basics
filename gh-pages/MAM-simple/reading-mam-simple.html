@@ -163,7 +163,7 @@ if __name__ == &quot;__main__&quot;:
 <p>Two points in it are easy to get wrong:</p>
 <ul>
 <li><strong>An element without text can still contribute.</strong> <code>lp-legarmeih</code> contributes the
-glyph U+05C0, and <code>implicit-maqaf</code> MAM's gray maqaf as an ordinary maqaf. MAM
+glyph U+05C0, and <code>implicit-maqaf</code> contributes an ordinary maqaf. MAM
 encodes no space around <code>implicit-maqaf</code>, so a program that gives it nothing runs
 two atoms together: Job 34:10 would read <bdi lang="hbo" dir="rtl">שִׁמְע֫וּלִ֥י</bdi> instead of <bdi lang="hbo" dir="rtl">שִׁמְע֫וּ־לִ֥י</bdi>.</li>
 <li><strong>Write non-ASCII to a file, not to stdout.</strong> On Windows, Python encodes a redirected
