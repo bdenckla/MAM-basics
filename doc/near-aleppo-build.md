@@ -109,6 +109,18 @@ and near-Aleppo; MAM-with-doc's own regenerated pages show any change it makes
 there. Stored Hebrew source strings retain their own codepoints; display projection
 uses MAM-normal mark order without Unicode normalization.
 
+NAEE opts into the shared HTML-stage typography helper
+`py/py_html/hebrew_letter_spacing.py`. Its first spacing trial selects contiguous
+Hebrew atoms with a yod, vav or final nun carrying both a broad below-letter vowel
+(tsere, segol, a hataf vowel or qubuts) and a below-letter accent. The selected
+text gets `0.06em` extra letter spacing in the edition stylesheet. This is a
+conservative visual heuristic, not a collision detector or an exhaustive list
+of cramped atoms. The same rule reaches ketiv, qere and Hebrew examples in notes;
+spaces, maqafs, punctuation and source characters are preserved. Atoms divided
+by formatting spans can be missed or only partly expanded; single-letter text
+leaves are left alone. MAM-with-doc and Phonetic MAM have not opted in. The
+classifier and HTML helper can be reused without changing their datasets.
+
 The broader research census, source captures, comparison programs, scan archive,
 adoption handoffs and approval records remain private. They are not inputs to any
 near-Aleppo public build path.

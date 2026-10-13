@@ -28,6 +28,7 @@ from py_misc import mwd_utils as mwdu
 from py_misc import near_aleppo_params as nap
 from py_misc import ren_html_from_ren_el_mapping as hfrm
 from py_misc import ren_tag_survey as rts
+from py_html import hebrew_letter_spacing
 
 EDITION_CSS_HREF = "../../MAM-with-doc/two_col_style.css"
 INDEX_NAME = "index.html"
@@ -44,6 +45,7 @@ class Mode:
     ht_tac_for_ren_tag: dict  # each render tag's HTML tag and class
     index: Callable  # (edition, css_hrefs) -> the index page's text
     unused_tags: Callable  # (render tags seen) -> the handled ones not seen, sorted
+    text_to_html: Callable | None = None  # optional typography after semantic rendering
 
 
 # The edition mapping includes MAM-with-doc's tags, added note lines and ruby.
@@ -146,6 +148,7 @@ NEAR_ALEPPO_MODE = Mode(
     hfrm.HT_TAC_FOR_RT_FOR_NEAR_ALEPPO_EDITION,
     _edition_index,
     _unused_edition_tags,
+    hebrew_letter_spacing.html_for_text,
 )
 
 
@@ -161,7 +164,12 @@ def render(mode, books_mpu, *, css_hrefs):
         ecb = mode.edition, css_hrefs, bkid
         names = mwdu.filename_for_bkid(bkid), mwdu.filename_for_bkid_for_bido(bkid)
         book_survey, book_pages = mwdwb.render_book(
-            ecb, books_mpu, names, mode.renopts, mode.ht_tac_for_ren_tag
+            ecb,
+            books_mpu,
+            names,
+            mode.renopts,
+            mode.ht_tac_for_ren_tag,
+            text_to_html=mode.text_to_html,
         )
         survey = rts.add(survey, book_survey)
         if clash := set(pages) & set(book_pages):

@@ -1,7 +1,7 @@
 """Exports HfrCtx, html_for_ren_el"""
 
 from dataclasses import dataclass
-from typing import Union
+from typing import Callable, Union
 
 from render_wt import render_element as renel
 from mb_cmn import str_defs as sd
@@ -16,6 +16,7 @@ class HfrCtx:
 
     ht_tag_and_class_for_ren_tag: dict[str, tuple[str, Union[str, None]]]
     survey: Union[dict, None] = None
+    text_to_html: Callable | None = None
 
 
 def html_for_ren_el(hfr_ctx: HfrCtx, ren_el):
@@ -26,7 +27,7 @@ def html_for_ren_el(hfr_ctx: HfrCtx, ren_el):
     span's contents is a converted version of ren-c.
     """
     if isinstance(ren_el, str):
-        return ren_el
+        return hfr_ctx.text_to_html(ren_el) if hfr_ctx.text_to_html else ren_el
     if isinstance(ren_el, (tuple, list)):
         out_tup = tuple(html_for_ren_el(hfr_ctx, r) for r in ren_el)
         return shrink.shrink(out_tup)
