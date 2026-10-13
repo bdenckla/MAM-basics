@@ -40,7 +40,7 @@ WHAT COUNTS AS ONE TOKEN (the conventions the transcriptions are written to):
 
 WHAT A DIFFERENCE MEANS.  Differences are not all of one weight, but they are all on one
 scale, and maqaf is its bottom rung: a maqaf separates the ATOM it sits on from the next even
-less than a conjunctive accent does.  So where the two texts put their maqafs differently, that
+less than a conjunctive accent does.  So where the two texts put their maqaf marks differently, that
 IS a difference in how the text is marked -- the mildest kind -- and it is counted ONCE, at the
 atom whose marking changed, never as a regrouping plus a separate accent.  Both confirmed
 differences in the Exodus elyon are of that kind, and so is one of the three in the Exodus

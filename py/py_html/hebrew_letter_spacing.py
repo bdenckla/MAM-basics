@@ -115,7 +115,7 @@ def iter_atoms(text):
 def html_for_text(text):
     """Wrap selected Hebrew atoms, preserving all characters and separators.
 
-    Spaces, maqafs and punctuation stay outside the spacing span. Combining marks,
+    Spaces, maqaf marks and punctuation stay outside the spacing span. Combining marks,
     including Phonetic MAM's newer Hebrew points, stay with their base letter.
     """
     result = []

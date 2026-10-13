@@ -252,7 +252,7 @@ infrastructure has changed enough to make them misleading examples:
 - **Scope:** a call counted if its opening braces directly followed a maqaf, or if
   it began the first parameter of a `{{נוסח}}` call that directly followed one. By
   that definition, `in/mam-ws/` as of 298958d3 had these four `כו"ק` and no others.
-  The two ketiv-first `{{מ:כו"ק מיוחד}}` calls between two maqafs, at Isaiah 26:20
+  The two ketiv-first `{{מ:כו"ק מיוחד}}` calls between two maqaf marks, at Isaiah 26:20
   and 1 Chronicles 9:4, which the introduction prescribes, were left alone.
 - **Safety rule:** a script cut each `old` string from the page text rebuilt from
   `in/mam-ws/`: the atom before the maqaf, the maqaf and the whole call, so

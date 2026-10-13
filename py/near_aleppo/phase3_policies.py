@@ -1313,7 +1313,7 @@ class Policies:
         is also the population check. A doubt-marked clause and a clause headed
         א-כתיב or א-קרי are outside this policy. Where one of the remaining
         clause's quoted forms has the target's letters and marks and differs only
-        in spaces and maqafs, its verse and exact head must be in
+        in spaces and maqaf marks, its verse and exact head must be in
         _MAQAF_READINGS. The first such form of the tabled clause is the target
         this policy returns.
         """
@@ -1942,7 +1942,7 @@ def _bemo_sheva(text, atoms, number, verse):
 
 
 def _separator_parts(text):
-    """Return non-separator characters and the spaces or maqafs between them."""
+    """Return non-separator characters and the spaces or maqaf marks between them."""
     characters, separators, current = [], [], ""
     for char in text:
         if char in (" ", MAQAF):

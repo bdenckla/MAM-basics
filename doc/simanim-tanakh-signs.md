@@ -60,7 +60,7 @@ places the Aleppo lacks, and R. Shalom Shachna Yellin's lists supplying petuxot 
 it is defective; Esther keeps the customary section divisions rather than the Aleppo order, to
 minimize dispute. The ma'ala also covers page layout — the shape of the שירות and the setting of
 the אמ"ת books in two columns, both taken from the Aleppo manuscript — and the line-breaking
-devices that follow from it, including gray maqafs used to fill a line where a blank is wanted.
+devices that follow from it, including gray maqaf marks used to fill a line where a blank is wanted.
 The preface (p. י) is blunt that none of this is meant to decide halakhic questions of petuxot,
 setumot or ketiv/qere; the text was chosen to serve correct reading, not to settle sofrut.
 

@@ -162,7 +162,7 @@ def ends_in_furtive_patax(word: str) -> bool:
 def _nuclei(word: str) -> list[tuple[int, int]]:
     """Where each of the chanted word's syllables begins, as ``(letter ordinal, tie-break)``.
 
-    Ordinals count base letters from 1 across the whole chanted word, maqafs included, so a
+    Ordinals count base letters from 1 across the whole chanted word, maqaf marks included, so a
     compound's atoms number straight through as the one chanted word they are.  The tie-break is
     0 for a syllable whose onset is a written letter and 1 for one whose onset is not, which puts
     the second sort between that letter and the next; ``is_final_stress`` compares an accent's

@@ -365,7 +365,7 @@ def _kind_of(unit: Unit, atom_indices: list[int]) -> str:
 
 
 def _display(unit: Unit) -> str:
-    """The chanted word in letters and accents, no vowels, with its maqafs put back.
+    """The chanted word in letters and accents, no vowels, with its maqaf marks put back.
 
     ``accents_and_letters`` drops the maqaf along with the vowels, so a compound is reduced atom
     by atom and rejoined -- the same treatment ``maqaf_nonfinal_accents_page._render_span`` gives

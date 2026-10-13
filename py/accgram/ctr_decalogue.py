@@ -65,17 +65,17 @@ meteg, or a munax/merkha swap.  None touches a disjunctive.  The cross-strand re
 comparison against the OTHER tradition -- is where the evidence is: agreement collapses, which is
 what rules out the clean match being an artifact of the fold.
 
-ONE SCALE HERE TOO, AND THE MAQAFS AGREE (issue wlc-utils#76).  A maqaf sits at the bottom of the same
-scale as the accents rather than in a ledger of its own -- it has the weakest SEPARATING force
-there is, which is the opposite of being loose, since a maqaf binds its two atoms tightest.
+ONE SCALE HERE TOO, AND THE MAQAF MARKS AGREE (issue wlc-utils#76).  A maqaf sits at the bottom of
+the same scale as the accents rather than in a ledger of its own -- it has the weakest SEPARATING
+force there is, which is the opposite of being loose, since a maqaf binds its two atoms tightest.
 (``printed_decalogue_strands``' ``MAQAF_IS_THE_LAST_RUNG`` states this to the reader, and its
-guardrail comment records the second-ledger convention it replaced.)  This comparison already
-works that way and needs no rewording: ``compare`` splits each reading on whitespace, so a maqaf
-compound is ONE word on both sides, and a maqaf CTR placed otherwise than the Wikisource strand
-would break the skeleton alignment and be reported, not quietly excused.  Re-derived 2026-07-26, it never
-has to be: the two sides segment into the same words (142 against 142 in Exodus, 164 against
-164 in Deuteronomy) and their maqafs match word for word and slot for slot, 27 compounds against
-27 and 24 against 24.  So all four residuals are accent differences and nothing else.
+guardrail comment records the second-ledger convention it replaced.)  This comparison already works
+that way and needs no rewording: ``compare`` splits each reading on whitespace, so a maqaf compound
+is ONE word on both sides, and a maqaf CTR placed otherwise than the Wikisource strand would break
+the skeleton alignment and be reported, not quietly excused.  Re-derived 2026-07-26, it never has to
+be: the two sides segment into the same words (142 against 142 in Exodus, 164 against 164 in
+Deuteronomy) and their maqaf marks match word for word and slot for slot, 27 compounds against 27
+and 24 against 24.  So all four residuals are accent differences and nothing else.
 
 Note what the two compound ones are, but do not lean on them: on יהיה־לך and on ובנך־ובתך the
 strand has a meteg on the non-final atom and CTR a munax there instead, which is a second accent

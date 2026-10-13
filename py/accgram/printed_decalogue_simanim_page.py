@@ -1053,7 +1053,7 @@ def _conclusion(
         ),
         # Single-sourced in pds and stated verbatim on all three pages of the trio (2026-07-25 claim
         # audit, finding 3), since both verdict tables below are written in its terms: pp. 83-84
-        # follow their Wikisource strand in every accent and part from it at two maqafs, and the
+        # follow their Wikisource strand in every accent and part from it at two maqaf marks, and the
         # reader needs the scale to see that as one graded verdict rather than two claims at odds.
         # Splice the constant; don't paraphrase it, and don't scope it to one of the two tables.
         H.para((pds.MAQAF_IS_THE_LAST_RUNG,)),

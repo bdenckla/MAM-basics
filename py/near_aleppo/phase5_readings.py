@@ -59,7 +59,7 @@ ketiv/qere template, a direct element beside plain text alone, as its pointed ke
 the form less the target's text before and after the template, cut as phase 3's
 ketiv/qere apparatus cuts it, and adjusted where
 _POINTED_KETIV_ADJUSTMENTS names the clause. Its letters must be the ketiv
-parameter's as written, final forms included, and its spaces and maqafs the ketiv's,
+parameter's as written, final forms included, and its spaces and maqaf marks the ketiv's,
 except for a trailing maqaf, which must be the qere's, and the named adjustments. The
 text outside the template must be the form's, except at Proverbs 3:30. It must hold
 nothing phase 3 would change: no HEBREW POINT JUDEO-SPANISH VARIKA, HEBREW POINT
@@ -482,7 +482,7 @@ _TRAILING_MAQAF = "codex readings: pointed ketiv ending in the qere's trailing m
 # already in place, forms written to whole targets or named atoms, forms written
 # to selected parameters or added pointed-ketiv parameters, and named pending or
 # not-applied forms. It records bang-marked outcomes, named adjustments and
-# trailing maqafs separately. Deuteronomy 32:13's form is already in place through
+# trailing maqaf marks separately. Deuteronomy 32:13's form is already in place through
 # phase 3's apparatus and is an ordinary apply-candidate, not an added pointing.
 # The shitat-Alef table is checked separately against current source clauses.
 #
@@ -936,11 +936,11 @@ class Readings:
 
         ``carriers`` is None, or at Isaiah 36:12 the carriers of the near-Aleppo dataset's rule-8 template,
         which ``portion`` follows after a space. The carriers and ``portion`` must hold
-        letters, marks, spaces and maqafs alone, nothing of _NOT_IN_POINTED_KETIV, no
+        letters, marks, spaces and maqaf marks alone, nothing of _NOT_IN_POINTED_KETIV, no
         ZERO WIDTH NON-JOINER but the one _ZERO_WIDTH_NON_JOINER_READINGS names, and
         neither configuration of _PHASE3_CONFIGURATION_READINGS. ``portion`` must have
         no doubled or outer space, and the ketiv's letters as written, final forms
-        included, and its spaces and maqafs the ketiv's, except for a trailing maqaf,
+        included, and its spaces and maqaf marks the ketiv's, except for a trailing maqaf,
         which must be the qere's, and at the site of _MAQAF_FOR_KETIV_SPACE, where the
         ketiv's one space is a maqaf.
         """
@@ -995,7 +995,7 @@ class Readings:
             skeleton += phase3.MAQAF
         if _skeleton(portion) != skeleton:
             raise AssertionError(
-                f"{verse}: a pointed ketiv whose spaces and maqafs are not the ketiv's"
+                f"{verse}: a pointed ketiv whose spaces and maqaf marks are not the ketiv's"
             )
         return trailing
 
@@ -1329,7 +1329,7 @@ def _portion(form, before, after, verse):
 
 
 def _skeleton(text):
-    """The letters, spaces and maqafs of ``text``, in order, all else left out."""
+    """The letters, spaces and maqaf marks of ``text``, in order, all else left out."""
     return "".join(
         char for char in text if char in phase3._LETTERS or char in (" ", phase3.MAQAF)
     )
@@ -1442,7 +1442,7 @@ def _check_replacement(form, replaced, verse):
     """Raise unless ``form`` can stand in the dataset in place of ``replaced``.
 
     It must hold letters, marks and single spaces alone, and no varika or masora
-    circle; and it must have the spaces and maqafs of the text it replaces, and as
+    circle; and it must have the spaces and maqaf marks of the text it replaces, and as
     many paseq glyphs and SOF PASUQ characters, so that a reading never drops a
     legarmeh or a paseq, nor changes a maqaf, which phase 3's maqaf policy decides.
     """
@@ -1457,7 +1457,7 @@ def _check_replacement(form, replaced, verse):
         raise AssertionError(f"{verse}: a reading with an outer or a doubled space")
     if _separators(form) != _separators(replaced):
         raise AssertionError(
-            f"{verse}: a reading whose spaces and maqafs are not those of the text it "
+            f"{verse}: a reading whose spaces and maqaf marks are not those of the text it "
             "replaces"
         )
     if form.count(phase3.PASEQ) != replaced.count(phase3.PASEQ):

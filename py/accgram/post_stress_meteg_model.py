@@ -821,7 +821,7 @@ def _bb_of_stem() -> dict[str, str]:
 
 
 def _bare(word: str) -> str:
-    """The chanted word in letters and accents alone, its maqafs put back.
+    """The chanted word in letters and accents alone, its maqaf marks put back.
 
     ``accents_and_letters`` drops the maqaf along with the vowels, so a compound is reduced
     atom by atom and rejoined, as ``chanted_word_accents_units._display`` does it.  Phonetic
@@ -850,7 +850,7 @@ _NOT_IN_THE_JOIN_KEY = re.compile(
 
 
 def _phonetic_mam_join_key(word: str) -> str:
-    """``word`` reduced to what both texts must agree on: letters, points, and the maqafs.
+    """``word`` reduced to what both texts must agree on: letters, points, and the maqaf marks.
 
     Phonetic MAM's tilde for MAM's gray maqaf is folded onto the maqaf it stands for, so a
     compound joined by one matches the compound MAM has.

@@ -123,7 +123,7 @@ Hebrew atoms with a yod, vav or final nun carrying both a broad below-letter vow
 text gets `0.06em` extra letter spacing in the edition stylesheet. This is a
 conservative visual heuristic, not a collision detector or an exhaustive list
 of cramped atoms. The same rule reaches ketiv, qere and Hebrew examples in notes;
-spaces, maqafs, punctuation and source characters are preserved. Atoms divided
+spaces, maqaf marks, punctuation and source characters are preserved. Atoms divided
 by formatting spans can be missed or only partly expanded; single-letter text
 leaves are left alone. MAM-with-doc and Phonetic MAM have not opted in. The
 classifier and HTML helper can be reused without changing their datasets.

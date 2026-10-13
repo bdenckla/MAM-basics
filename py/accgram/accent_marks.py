@@ -15,7 +15,7 @@ A "mark body" is a string of single-character marks, one per structural element:
   scanner filler, exactly as in Phase 1 -- and vowels/points are dropped;
 * **maqaf** is ``-`` and the gaps between atoms are a space, the two ATOM boundaries the
   ``TEXT`` class and the lexical layer key on.  (An *atom* is one written word, between
-  spaces or maqafs; a maqaf joins two of them into one CHANTED WORD, which is the unit an
+  spaces or maqaf marks; a maqaf joins two of them into one CHANTED WORD, which is the unit an
   accent marks.  This module's alphabet sees only atoms -- issue wlc-utils#81.)
 * ketiv ``*``/``**`` markers and ``]N`` note markers are kept verbatim.
 

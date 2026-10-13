@@ -124,7 +124,7 @@ _EXPECTED_DIVERGENCES = {
     # standing proof that compensating errors are possible in exactly this material.
     "simtiq_dt_elyon": [],
     # SimTiq's Deuteronomy appendix Decalogue (taxton, p. 247) is the edition's KNOWN m-trad
-    # departure, and the first transcription whose divergences are neither maqafs nor confined
+    # departure, and the first transcription whose divergences are neither maqaf marks nor confined
     # to conjunctives.  All three regions fall inside the Shabbat
     # commandment, and there the page reads m-trad throughout -- the three signal words
     # (כל־מלאכה pazer not geresh, ועבדך־ואמתך telisha gedola not revia, וכל־בהמתך revia not
@@ -475,7 +475,7 @@ def test_pinned_divergences_leave_the_disjunctive_skeleton_alone(stem: str) -> N
 
     This is what licenses saying SimTiq follows the p-trad's accent STRUCTURE while denying
     that it follows it in every accent -- a distinction the Exodus taxton makes load-bearing,
-    since two of its three divergences are accent differences rather than maqafs.  Scoped to
+    since two of its three divergences are accent differences rather than maqaf marks.  Scoped to
     _SKELETON_UNTOUCHED: it is not true of the Deuteronomy taxton, and the
     test below pins that it is not.
     """

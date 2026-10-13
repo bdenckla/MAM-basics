@@ -47,10 +47,10 @@ lint that holds the scanner to it.  One confound survives and is handled here: a
 written twice on one chanted word is ONE accent written twice, and the scanner does not fuse it.
 ``_fold_repeated_geresh`` folds such a repeat, and ``geresh_folds`` names every place it fired.
 
-ATOM AND CHANTED WORD (issue wlc-utils#81).  An atom is one written word, between spaces or maqafs; a
-chanted word is a lone atom or a whole maqaf compound, and is the unit an accent marks.  Yeivin
-states outright that the two take the same rules -- ITM §302, quoted in ``YEIVIN_ENTRIES`` -- so
-this survey counts both together and records which kind each hit is, rather than treating the
+ATOM AND CHANTED WORD (issue wlc-utils#81).  An atom is one written word, between spaces or maqaf
+marks; a chanted word is a lone atom or a whole maqaf compound, and is the unit an accent marks.
+Yeivin states outright that the two take the same rules -- ITM §302, quoted in ``YEIVIN_ENTRIES`` --
+so this survey counts both together and records which kind each hit is, rather than treating the
 compound as a separate phenomenon.  Maqaf is the last rung of the one scale of separating force
 (``maqaf_nonfinal_accents``' ``MAQAF_IS_THE_LAST_RUNG`` in ``printed_decalogue_strands``), not a
 second ledger.
@@ -575,7 +575,7 @@ def _split_hits(corpus: dict) -> list[dict]:
 def maqaf_after_gaya(scanned: dict[str, dict]) -> dict:
     """The compounds whose accents are split across atoms, partitioned by ITM §357's signature.
 
-    A compound reaches this survey because a maqaf stands inside it, and the maqafs it finds
+    A compound reaches this survey because a maqaf stands inside it, and the maqaf marks it finds
     are not all written for the same reason.  Yeivin ITM §357 and Breuer CoS Ch. 1 §43 both
     describe a maqaf written after a word that has its own accent and a gaʿya after that
     accent; §357 gives its purpose as saying the slowed syllable makes no break, and what it
