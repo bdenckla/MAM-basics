@@ -98,7 +98,8 @@ eight, as at Lam.1.18:</p>
 <p>Identify the two by <code>type</code>, never by position; see
 <a href="reading-mam-simple-xml.html#ketivqere">Ketiv/Qere</a> in the XML guide.</p>
 <h2 id="silluq-before-a-later-meteg">Silluq before a later meteg</h2>
-<p>The object has <code>type</code>, <code>text</code>, and <code>letters-with-silluq</code>, without <code>contents</code>.
+<p>A <code>silluq-before-meteg</code> object represents an atom with a silluq before a meteg.
+The object has <code>type</code>, <code>text</code>, and <code>letters-with-silluq</code>, without <code>contents</code>.
 It follows the <a href="reading-mam-simple-xml.html#silluq-before-a-later-meteg">XML parameter contract</a>.
 For example, this part of a verse’s <code>contents</code> keeps sof pasuq outside the annotation:</p>
 <pre><code class="language-json">[
@@ -114,6 +115,11 @@ For example, this part of a verse’s <code>contents</code> keeps sof pasuq outs
 ]
 </code></pre>
 <p>Generic text consumers take only <code>text</code>; they never append <code>letters-with-silluq</code>
-as running text. Support for this type does not require a corpus occurrence.</p>
+as running text. The two current cases are 1 Kings 7:37 and Job 4:12.</p>
+<h2 id="legarmeh-and-paseq">Legarmeh and paseq</h2>
+<p>The <code>lp-legarmeih</code> type identifies legarmeh, which is part of the cantillation system.
+The <code>lp-paseq</code> type identifies paseq in the narrow sense, which is not part of the cantillation system,
+or is, at most, at the periphery of the cantillation system.</p>
+<p>An edition or other application may use or discard this distinction.</p>
 </body>
 </html>
