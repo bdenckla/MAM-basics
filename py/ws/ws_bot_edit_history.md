@@ -227,7 +227,7 @@ infrastructure has changed enough to make them misleading examples:
   `in/mam-ws-bot-edits/bare-links-to-external-link-template.json` and its
   selector, `bare-links-to-external-link-template.chapters.json`
 
-### Post-maqaf ketiv/qere: four calls given the qere-first template — current
+### Post-maqaf ketiv/qere: four calls given the qere-first template
 - **Purpose:** Give the template `קו"כ` to the four ketiv/qere whose qere directly
   follows a maqaf but whose call was `כו"ק`: 2 Samuel 20:23, Jeremiah 48:21,
   Ezekiel 39:25 and 2 Chronicles 13:19. MAM's introduction prescribes `קו"כ` where
@@ -300,6 +300,40 @@ infrastructure has changed enough to make them misleading examples:
   the replacement specification after its targets have changed.
 - **Specification:** `in/mam-ws-bot-edits/silluq-before-meteg.json`;
   run artifacts `.novc/mam-ws-bot-real-runs/20261012-155640-850657-0400/`.
+
+### Exodus note links: 17:16 unbolded and given JSTOR's public address, 26:7 templated again, 2026-10-13 — current
+
+- **Purpose:** Let MAM-parsed read two notes that the Wikisource user Dovi had edited.
+  Exodus 17:16's note, extended on 2026-10-12 with a paragraph citing Yuval Weiss's
+  article in Leshonenu, gave that link's text as `'''לשוננו'''`. The template parser
+  rejects raw `'''` (`py/ws/ws_tmpl_parser.py`), so that day's refresh stopped there. The
+  parser's advice, `{{מודגש}}`, cannot be followed inside the link: both templates have
+  rank 7 in the nesting normal form, which never nests one rank-7 template in another. So
+  the bolding was removed. The same link went through a library proxy,
+  `https://www-jstor-org.mgs.oranim.ac.il/journal/lesonenu`; it now gives JSTOR's public
+  address, `https://www.jstor.org/journal/lesonenu`. Exodus 26:7's note, reworded on
+  2026-09-29, had gone back to the bare `[URL text]` link that the note-link run of
+  2026-09-27 templated. MAM-parsed keeps such a link as plain text, so MAM-with-doc would
+  show its brackets and URL; the note is `{{מ:קישור בהערה|URL|text}}` again, exactly as
+  that run's `new` wrote it.
+- **Authorization:** Ben asked for all three changes, and for the bot to make them, on
+  2026-10-13. A Claude Code session wrote the file and ran it the same day.
+- **Saving run:** Exodus 17, revision 3088235 → 3088583; Exodus 26, revision 3085723 →
+  3088584.
+- **Safety rule:** each `old` string occurred exactly once in the page text that the
+  stopped download had captured at revisions 3088235 and 3085723. The `--no-save` dry
+  run's edited chapters equalled that capture with the replacements applied, codepoint
+  for codepoint. The saving run's chapters equalled the dry run's, and the post-run
+  download equalled both.
+- **Post-run download:** Refetched the two chapters and all 36 declared special pages.
+  The special-page mirror had no tracked difference, and the reparse of Exodus passed all
+  59 MAM-parsed claims.
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-10-13, immediately
+  after the run: a `--no-save` re-run raised on Exodus 17.
+- **Edit level:** Raw page text string replacement, chapter-targeted.
+- **JSON files:** `in/mam-ws-bot-edits/exodus-17-26-note-links.json` and its selector,
+  `exodus-17-26-note-links.chapters.json`; run artifacts
+  `.novc/mam-ws-bot-real-runs/20261013-102232-324529-0400/`.
 
 ## How to look up the original code
 

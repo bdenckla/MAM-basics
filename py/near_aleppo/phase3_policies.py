@@ -118,13 +118,17 @@ _ELOHIM = "Elohim"
 _NOTE = "נוסח"
 # How MAM's note opens where it records the codex's holam in the divine name.
 _CODEX_DIVINE_NAME_HOLAM_NOTE = '=א (בכתב־היד נכתבה נקודת חולם בשם הוי"ה)'
-# The siglumless wording at 1 Kings 8:11 refers to Aleppo: chapter 5 of MAM's
-# introduction explicitly lists its form under the Aleppo siglum (א*), at
-# in/mam-ws-intro/ch5.mediawiki. Ben confirmed that interpretation on 2026-10-12.
-# Recognize that exact note only at its reviewed site; "the manuscript" alone
-# does not identify Aleppo elsewhere.
-_SIGLUMLESS_DIVINE_NAME_HOLAM_NOTES = {
-    ('BC-Kings מל"א', "8", "11"): '=(בכתב־היד נכתבה נקודת חולם בשם הוי"ה)',
+# The note at 1 Kings 8:11 records the codex's holam in its own words. Until
+# 2026-10-13 they had no siglum, and chapter 5 of MAM's introduction explicitly lists
+# the form under the Aleppo siglum (א*), at in/mam-ws-intro/ch5.mediawiki; Ben
+# confirmed that interpretation on 2026-10-12. A Wikisource edit of 2026-10-13 gave
+# the note the siglum and "בכתר", in the Crown, and added that the small dot looks
+# like ink rather than a stain. Recognize that exact note only at its reviewed site.
+_SITE_DIVINE_NAME_HOLAM_NOTES = {
+    ('BC-Kings מל"א', "8", "11"): (
+        '=א (נקודת חולם נכתבה בשם הוי"ה בכתר, הנקודה אמנם קטנה אך נראה שהיא דיו ולא'
+        " כתם בעור)"
+    ),
 }
 # How it opens where it records the codex's holam in the divine title:
 # "=א (a holam dot in the manuscript)".
@@ -930,15 +934,15 @@ class Policies:
         MAM's introduction says the manuscripts rarely have this holam and that
         MAM supplies it for the reader. Where a note on the atom opens with
         _CODEX_DIVINE_NAME_HOLAM_NOTE, MAM records the codex's holam, and the
-        holam stays. The reviewed siglumless note at 1 Kings 8:11 also keeps
-        the holam; MAM's introduction confirms its Aleppo attribution.
+        holam stays. The reviewed note at 1 Kings 8:11, worded otherwise, also
+        keeps the holam.
         The Elohim reading keeps its holam, which the codex has.
         """
         edits = {}
         opening = _note_opening(note)
         recorded = opening.startswith(_CODEX_DIVINE_NAME_HOLAM_NOTE) or (
-            verse in _SIGLUMLESS_DIVINE_NAME_HOLAM_NOTES
-            and opening == _SIGLUMLESS_DIVINE_NAME_HOLAM_NOTES[verse]
+            verse in _SITE_DIVINE_NAME_HOLAM_NOTES
+            and opening == _SITE_DIVINE_NAME_HOLAM_NOTES[verse]
         )
         for atom in _atoms(text):
             found = _divine_name(text, atom, verse)

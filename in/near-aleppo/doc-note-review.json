@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "90876fa4797603f84807b1fd23492cd10d88592e3a118bbb18fdc312884da128",
+  "inventory_sha256": "dcdbee4e377e38e58306a036ce053a50e9a2f8d6d4a864f7f490044a36317de3",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -36200,7 +36200,7 @@
       ],
       "note_ordinal": 1,
       "source_template": "נוסח",
-      "source_note_sha256": "8dbca946b41c0fc8b6a474b785a20ac09af48a6f54715e5ab8528fb940ede374",
+      "source_note_sha256": "1b8d9953e4eaa69b822b13ec45336ef8bbe933c8241ecebecacaa525b2ea5ef7",
       "original_target": [
         "יָמִ֥ים ",
         {
@@ -36227,11 +36227,11 @@
         " נְאֻם־יְהוָ֑ה"
       ],
       "original_body": [
-        "=לק ובדפוסים",
+        "=ל,ק ובדפוסים",
         {
           "tmpl_name": "ש"
         },
-        "א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+        "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
         {
           "tmpl_name": "ש"
         },
@@ -36242,8 +36242,8 @@
         "קורן, ברויאר, סימנים, מכון ממרא"
       ],
       "clauses": [
-        "=לק ובדפוסים",
-        "א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+        "=ל,ק ובדפוסים",
+        "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
         "הערת ברויאר",
         "קורן, ברויאר, סימנים, מכון ממרא"
       ],
@@ -36260,7 +36260,7 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "9d72f738e063068bcd1da46671886044ee7ad28734c72e935302e7e03fead579",
+      "evidence_sha256": "e5bd7b5e7144127cfa21de1fa7a0696c68b8c5f1eb19258d3a28a013a7bdf25c",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
@@ -36274,7 +36274,7 @@
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Preserve MAM's Aleppo illustration verbatim, including its missing נאם component, and its statement that the space lacks pointing."
+            "reason": "Preserve MAM's Aleppo illustration verbatim, now including its נאם component, and its statement that the space lacks pointing."
           },
           {
             "index": 2,
@@ -36291,10 +36291,10 @@
           "near_clause": null,
           "mam_clauses": [
             [
-              "=לק ובדפוסים"
+              "=ל,ק ובדפוסים"
             ],
             [
-              "א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")"
+              "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")"
             ],
             [
               "הערת ברויאר"
