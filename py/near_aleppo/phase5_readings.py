@@ -287,7 +287,9 @@ _POINTED_KETIV_ADJUSTMENTS = {
 # choosing an orphan representation. Each guard includes the whole ketiv and
 # qere. The 2 Kings CGJ separated qubuts from qamats on bet; separate carrier and
 # written-letter clusters need no such separator. The source note retains it.
-# Ezekiel's accents remain on nun; only tsere is moved to the medial GA carrier.
+# Ben revised the three Ezekiel representations on 2026-10-13: nun matches
+# the qere nun, while the absent qere yod's complete mark cluster uses a
+# medial GD carrier. Its dagesh requires dalet rather than alef.
 _REVIEWED_ORPHAN_VALUES = {
     ('BC-Kings מל"ב', "4", "7"): (
         ("בניכי", "וּבָנַ֔יִךְ", "בֻ͏ָנַ֔יִכי"),
@@ -295,15 +297,15 @@ _REVIEWED_ORPHAN_VALUES = {
     ),
     ("C3-Ezekiel", "14", "14"): (
         ("דנאל", "דָּנִיֵּ֣אל", "דָּנִֵּ֣אל"),
-        ("דָּנִּ֣", "אֵ", "אל", True),
+        ("דָּנִ", "דֵּ֣", "אל", True),
     ),
     ("C3-Ezekiel", "14", "20"): (
         ("דנאל", "דָּנִיֵּ֣אל", "דָּנִֵּ֣אל"),
-        ("דָּנִּ֣", "אֵ", "אל", True),
+        ("דָּנִ", "דֵּ֣", "אל", True),
     ),
     ("C3-Ezekiel", "28", "3"): (
         ("מדנאל", "מִדָּנִיֵּ֑אל", "מִדָּנִֵּ֑אל"),
-        ("מִדָּנִּ֑", "אֵ", "אל", True),
+        ("מִדָּנִ", "דֵּ֑", "אל", True),
     ),
 }
 # The one pointed ketiv holding a ZERO WIDTH NON-JOINER, which MAM-parsed-plus has

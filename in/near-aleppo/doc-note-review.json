@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "dcdbee4e377e38e58306a036ce053a50e9a2f8d6d4a864f7f490044a36317de3",
+  "inventory_sha256": "68097a014007b5b6f9ec81cd9ca3e5eef5c189f4b1a87c3742900b509d5af7c4",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -38674,11 +38674,11 @@
           "1": "דנאל",
           "2": "דָּנִיֵּ֣אל",
           "כתיב מנוקד": [
-            "דָּנִּ֣",
+            "דָּנִ",
             {
               "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "אֵ"
+                "1": "דֵּ֣"
               }
             },
             "אל"
@@ -38701,11 +38701,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "67fa1e6cb9d0a4c0385ad0c01e49dc9227537fd94f5057be00a031f1e095d0ef",
+      "evidence_sha256": "c338c349cf91a2340850071a32f51b314cc978deb745285d48c23cd044bb9fcb",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
+        "reason": "Ben revised the representation on 2026-10-13 and requested implementation: nun matches its qere cluster; a medial dalet carrier holds the absent qere yod's complete dagesh, tsere and accent cluster. Preserve the original MAM clause verbatim as MAM context, including its source attachment and placement qualifications. The Ezekiel 28:3 crop settles absence of meteg only; this representation does not recast the manuscript's mark ownership.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -38746,11 +38746,11 @@
           "1": "דנאל",
           "2": "דָּנִיֵּ֣אל",
           "כתיב מנוקד": [
-            "דָּנִּ֣",
+            "דָּנִ",
             {
               "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "אֵ"
+                "1": "דֵּ֣"
               }
             },
             "אל"
@@ -38773,11 +38773,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "556d3e3626ecf150313f90d36fc12339edc96ba8aeb9f8eb592b59113faa374e",
+      "evidence_sha256": "8cb2f7c0caa96341537e25e0f6a2a1d8f4e66af04c2e1e900a89cc9b7f165227",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
+        "reason": "Ben revised the representation on 2026-10-13 and requested implementation: nun matches its qere cluster; a medial dalet carrier holds the absent qere yod's complete dagesh, tsere and accent cluster. Preserve the original MAM clause verbatim as MAM context, including its source attachment and placement qualifications. The Ezekiel 28:3 crop settles absence of meteg only; this representation does not recast the manuscript's mark ownership.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -39913,11 +39913,11 @@
           "1": "מדנאל",
           "2": "מִדָּנִיֵּ֑אל",
           "כתיב מנוקד": [
-            "מִדָּנִּ֑",
+            "מִדָּנִ",
             {
               "tmpl_name": "ניקוד בלי אות ובלי רווח",
               "tmpl_params": {
-                "1": "אֵ"
+                "1": "דֵּ֑"
               }
             },
             "אל"
@@ -39940,11 +39940,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "46e28499769db0fddc315efa5f99d1e1016f650aa77da2c995b1c5130f257ce1",
+      "evidence_sha256": "b7bb7a745ef619b5937e207983089d569310e2644d44d48e2d4965037356c414",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Ben reviewed this orphan-vowel representation on 2026-10-08. Preserve the original MAM clause verbatim as MAM context; it records the source attachment, while the adopted target uses the chosen artificial carrier. No manuscript-image claim is recast.",
+        "reason": "Ben revised the representation on 2026-10-13 and requested implementation: nun matches its qere cluster; a medial dalet carrier holds the absent qere yod's complete dagesh, tsere and accent cluster. Preserve the original MAM clause verbatim as MAM context, including its source attachment and placement qualifications. The Ezekiel 28:3 crop settles absence of meteg only; this representation does not recast the manuscript's mark ownership.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [

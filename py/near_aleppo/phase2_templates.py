@@ -39,8 +39,9 @@ Rule 8's original template for marks written where no letter is, MARKS_WITHOUT_L
 specific to the near-Aleppo dataset. MAM's text never has it, so phase 2 raises if
 it meets it; phase 5 writes it inside a pointed ketiv, and the walks after phase 5
 keep it whole. MARKS_WITHOUT_LETTER_OR_SPACE has the same phase-2 rejection
-and later validation, with an explicit dalet variant for the final-nun marks
-at Isaiah 54:16. The dalet is a font accommodation, not a written consonant.
+and later validation, with explicit dalet variants for the final-nun marks
+at Isaiah 54:16 and the absent qere yod's marks at the three Ezekiel Daniel sites.
+The dalet is an artificial carrier, not a written consonant.
 
 Legarmeh, paseq and gray maqaf are first written as private-use placeholders, so
 that the spacing each replacement assumes can be checked on the verse's flattened
@@ -124,8 +125,9 @@ _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 # The mixed alef/vav payload requires exactly three marked alefs
 # followed by VAV + HOLAM at 2 Kings 19:31, preserving that carrier distinction.
 # The no-space template licenses GA, including ALEF + TSERE + MERKHA,
-# and GD (DALET + DAGESH + TSERE + MAHAPAKH). GD accommodates
-# the final nun at Isaiah 54:16, without a manuscript-spacing claim.
+# and GD (DALET + DAGESH + TSERE + MAHAPAKH, MUNAH or ETNAHTA).
+# GD accommodates the final nun at Isaiah 54:16 and the absent qere yod's
+# cluster at Ezekiel 14:14, 14:20 and 28:3, without a manuscript-spacing claim.
 # The edition renders the marks in double guillemets; the dataset and the in-place
 # test read them in square brackets, as MAM's notes write them.
 MARKS_WITHOUT_LETTER = orphan_marks.MARKS_WITHOUT_LETTER

@@ -2,9 +2,9 @@
 
 Written consonants must remain the ketiv's, with artificial carriers excluded.
 Raw combining marks need a written-letter owner; explicit orphan templates use
-the shared carrier contract. GD retains its final-nun ownership; its artificial
-dalet is a font accommodation. These checks neither choose ownership nor assess
-letter-local or whole-atom grammar, and never rewrite a pointing.
+the shared carrier contract. GD accommodates final-nun marks and the absent
+qere yod's cluster at the three Ezekiel Daniel sites. These checks neither choose
+ownership nor assess letter-local or whole-atom grammar, and never rewrite a pointing.
 """
 
 import unicodedata
