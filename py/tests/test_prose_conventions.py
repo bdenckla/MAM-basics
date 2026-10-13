@@ -89,8 +89,11 @@ from __future__ import annotations
 
 import pathlib
 import re
+import subprocess
 
 from mb_cmn import paths
+from mb_cmn import hebrew_name_plurals
+from mb_cmn.git_process import git_command
 
 # Lines bearing this pragma are exempt.
 _PRAGMA = re.compile(r"#\s*prose-ok")
@@ -251,3 +254,76 @@ def test_no_cantillation_accent_phrase() -> None:
     assert (
         not offenders
     ), 'Drop the redundant "cantillation" before "accent":\n  ' + "\n  ".join(offenders)
+
+
+def test_no_plural_inflections_of_hebrew_names() -> None:
+    """All tracked gh-pages HTML, including hover and screen-reader prose.
+
+    This test is discovered by py/main_test.py and the regular nightly suite.
+    Fix generators for generated pages. Yeivin's entire adaptation is exempt;
+    quotes, code, Hebrew/transcription data, and explained local exceptions keep
+    their wording. See doc/hebrew-name-plurals.md for coverage and limitations.
+    """
+    root = paths.repo_root()
+    tracked = (
+        subprocess.check_output(git_command(root, "ls-files", "-z", "--", "gh-pages"))
+        .decode("utf-8")
+        .split("\0")
+    )
+    html = [rel for rel in tracked if rel.endswith(".html")]
+    assert html, "no tracked gh-pages HTML: plural lint would be empty"
+    offenders = []
+    for rel in html:
+        for finding in hebrew_name_plurals.html_findings(
+            (root / rel).read_text(encoding="utf-8"), rel
+        ):
+            offenders.append(
+                f"{rel}:{finding.line}: {finding.term} -> {finding.preferred}"
+            )
+    assert not offenders, "Pluralize an English noun instead:\n" + "\n".join(offenders)
+
+
+def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
+    """Ben requested a check of detections and legitimate exceptions."""
+    scan = hebrew_name_plurals.html_findings
+    html = (
+        "<p>Three <i>alef</i>s, two munaḥs, dageshes, shevas, metegim, "
+        "final-kafs, and <span>maqaf</span>\u200as.</p>\n"
+        '<img alt="two lameds" title="two tsinnors">'
+    )
+    found = scan(html, "gh-pages/example.html")
+    assert [f.preferred for f in found] == [
+        "alef letters",
+        "munaḥ marks",
+        "dagesh marks",
+        "sheva marks",
+        "meteg marks",
+        "final-kaf letters",
+        "maqaf marks",
+        "lamed letters",
+        "tsinnor marks",
+    ]
+    assert found[-1].line == 2
+    assert scan("<i>METEG</i>S", "gh-pages/example.html")[0].preferred == "METEG marks"
+    exempt = (
+        '<p id="maqafs" class="metegs"><a href="maqafs.html#metegs">link</a></p>'
+        '<code>maqafs metegs_by_verse</code><script>const x = "maqafs";</script>'
+        '<span lang="hbo-Latn">ḥets·rón</span><blockquote>metegs</blockquote>'
+        '<q>dageshes</q><p data-hebrew-plural-ok="literal source">alefs</p>'
+        "<p>English sins, shins and bets; alphabetic, pages, marks, dots, and helpers.</p>"
+    )
+    assert not scan(exempt, "gh-pages/example.html")
+    assert not scan(html, "gh-pages/yeivin-itm/new-adapted-prose.html")
+    assert not scan(html, "gh-pages/yeivin_itm.html")
+    quote = "<p>five yods and no Masorah circle is present to indicate which yod is superfluous</p>"
+    assert not scan(quote, "gh-pages/clc/Proverbs.html")
+    assert scan(quote + "<p>two yods</p>", "gh-pages/clc/Proverbs.html")
+    holman = "<p>HUB and MAM read with two Merekhas.</p>"
+    assert not scan(holman, "gh-pages/holman/uxlc_corrections.html")
+    assert scan(holman + "<p>two MEREKHAS</p>", "gh-pages/holman/uxlc_corrections.html")
+    assert (
+        scan('<span lang="hbo" title="two yods">א</span>', "gh-pages/example.html")[
+            0
+        ].preferred
+        == "yod letters"
+    )

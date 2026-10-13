@@ -2253,15 +2253,15 @@ def _poetic_section(survey: dict) -> tuple[object, ...]:
                 " word readily and systematically (Breuer, ",
                 _cos(),
                 " ch. 9 §§20–26), where the prose system does so rarely, and in the few pairs"
-                " above. And many of its maqafs are not written at all: Breuer (§§27, 37)"
+                " above. And many of its maqaf marks are not written at all: Breuer (§§27, 37)"
                 " records that in poetic verses the maqaf after a secondary mark is customarily"
                 " left unwritten while the atom still counts as joined, so a survey that looks"
                 " for a written maqaf reaches only part of what is there. MAM supplies the"
                 " rest: it has ",
-                link(f"{_gray(survey)} gray maqafs", _FOI_RARE_TMPLS),
+                link(f"{_gray(survey)} gray maqaf marks", _FOI_RARE_TMPLS),
                 ", its mark for a maqaf the manuscript leaves unwritten where the chanted word"
                 " needs one, and this survey reads a gray maqaf as a maqaf. On that reckoning"
-                f" MAM's poetic verses have {hits} cases. Of the gray maqafs,"
+                f" MAM's poetic verses have {hits} cases. Of the gray maqaf marks,"
                 f" {_gray(survey, mpa.GRAY_KIND_SECOND)} join an atom that has an accent"
                 " alongside the compound's accent; the other"
                 f" {_gray(survey, mpa.GRAY_KIND_SPREAD)} have one accent written across the"

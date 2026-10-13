@@ -274,7 +274,7 @@ BODY = [
                         "lb2": "",
                         "contents": ["‹מִֽמְתִֽים־יָדְךָ֨\u202f׀›"],
                     },
-                    "\n(both being ga’yas) according to ",
+                    "\n(both being ga’ya marks) according to ",
                     {
                         "_htel_tag": "span",
                         "attr": {"lang": "hbo"},

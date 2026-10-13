@@ -463,7 +463,7 @@ def _ole(numbers):
                 ),
                 " such letters. The other ",
                 numbers.snap(_P3, "ole on a letter without the yored, unchanged"),
-                " oles, each on a letter without a yored, are as MAM has them.",
+                " ole marks, each on a letter without a yored, are as MAM has them.",
             ]
         ),
         *doc_policy_examples.comparison("ole"),

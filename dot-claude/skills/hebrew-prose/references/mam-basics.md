@@ -4,6 +4,18 @@ Read this reference when prose about Hebrew accentuation is written or edited in
 General terminology and rendered-page rules remain in the other skill references rather than
 being repeated here.
 
+## The Yeivin ITM adaptation preserves its plural conventions
+
+Ben's decision, 2026-10-13: the entire Yeivin ITM adaptation keeps its decisions about plurals
+of transliterated words, including Ben's freely adapted prose and footnotes. Do not apply the
+general preference for "meteg marks" or "alef letters" to that adaptation.
+
+The authoritative adaptation is `py/yeivin_itm/`, with its approved data and documentation in
+`Yeivin-ITM/`. `py/main_yeivin_itm.py render` writes `gh-pages/yeivin-itm/` and the landing page
+`gh-pages/yeivin_itm.html`. All of these are within the exception. Literal quotations elsewhere
+also preserve their wording; authored explanation outside this scope follows the general rule.
+`doc/hebrew-name-plurals.md` describes the rendered-page lint and its scoped exceptions.
+
 ## The post-stress-meteg pages say plain "word"
 
 Ben's decision, 2026-09-08: `gh-pages/post-stress-meteg*.html` and its subdocuments, eight on that
