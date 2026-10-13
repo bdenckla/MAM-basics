@@ -8,6 +8,7 @@ Run py/main_near_aleppo.py --html to regenerate these pages.
 
 import copy
 from dataclasses import dataclass
+import struct
 
 from hkq_cmn import uxlc_external_links
 from mb_cmn import bib_locales as tbn
@@ -25,6 +26,7 @@ INDEX = "foi/index.html"
 KETIV_QERE = "foi/interesting-ketiv-qere.html"
 # Leave room for ruby annotations on adjacent wrapped lines of the verse.
 _GUIDE_STYLE = ".pointed.foi-verse { line-height: 2.7; }"
+_SHIN_IMAGE = "aleppo-2K18-27-shin.png"
 
 
 @dataclass(frozen=True)
@@ -94,6 +96,16 @@ CASES = (
         "a two-atom qere inside a maqaf compound",
         "The single ketiv atom בנימן has a two-atom qere.",
         ((tbn.BK_FST_CHR, 9, 4),),
+    ),
+    Case(
+        "2-kings-18-27",
+        "a euphemistic qere and no shin dot",
+        "The ketiv has a two-atom euphemistic qere. "
+        "The Aleppo Codex has no dot of any kind above the ketiv's shin. "
+        "The manuscript is well preserved here, so the absence is clear. "
+        "Near-Aleppo retains its current pointing without a shin dot. "
+        "The shin dot in the Introduction's list needs correction.",
+        ((tbn.BK_SND_KGS, 18, 27),),
     ),
 )
 
@@ -181,7 +193,47 @@ def _isaiah_26_20_excerpt(scripture):
     return ["… ", remaining, " ", compound, sof_pasuq]
 
 
-def _case_contents(case, verses):
+def _shin_figure(raw):
+    """Show Ben's unchanged supplied Aleppo crop; provenance is in the study."""
+    if raw[:8] != b"\x89PNG\r\n\x1a\n":
+        raise ValueError("The 2 Kings 18:27 evidence image is not PNG")
+    width, height = struct.unpack(">II", raw[16:24])
+    return [
+        mb_html.para(
+            mb_html.img(
+                {
+                    "src": "../img/" + _SHIN_IMAGE,
+                    "alt": "Aleppo Codex, 2 Kings 18:27: no dot above shin in the ketiv שניהם",
+                    "width": str(width),
+                    "height": str(height),
+                    "style": "max-width: 100%; height: auto;",
+                }
+            )
+        ),
+        mb_html.para(
+            "The shin has no dot above it in this Aleppo Codex crop at 2 Kings 18:27."
+        ),
+        mb_html.para(
+            mb_html.anchor_h(
+                "Manuscript observation, screenshot provenance and Introduction comparison",
+                "https://github.com/bdenckla/MAM-basics/blob/main/"
+                "doc/near-aleppo-avi-ketiv-investigation.html",
+            )
+        ),
+        mb_html.para(
+            [
+                "The Introduction correction is tracked in ",
+                mb_html.anchor_h(
+                    "MAM-basics issue 305",
+                    "https://github.com/bdenckla/MAM-basics/issues/305",
+                ),
+                ".",
+            ]
+        ),
+    ]
+
+
+def _case_contents(case, verses, shin_image):
     title = (
         [_reference_link(case.references[0]), " — ", case.label]
         if len(case.references) == 1
@@ -191,6 +243,8 @@ def _case_contents(case, verses):
         mb_html.heading_level_2(title, {"id": case.identifier}),
         mb_html.para(case.description),
     ]
+    if case.identifier == "2-kings-18-27":
+        contents.extend(_shin_figure(shin_image))
     if case.compare_mam:
         contents.append(
             mb_html.para(
@@ -304,8 +358,9 @@ def render():
             [mb_html.anchor_h(case.title, "#" + case.identifier) for case in CASES]
         ),
     ]
+    shin_image = (build_paths.asset_dir() / _SHIN_IMAGE).read_bytes()
     for case in CASES:
-        kq_body.extend(_case_contents(case, verses))
+        kq_body.extend(_case_contents(case, verses, shin_image))
     comment = provenance.generated_html_comment(__file__)
     pages = {}
     for path, title, body in (
@@ -325,5 +380,6 @@ def render():
             head_style=_GUIDE_STYLE if path == KETIV_QERE else None,
         )
         pages[path] = mb_html.html_text(body, ctx).encode("utf-8")
+    pages["img/" + _SHIN_IMAGE] = shin_image
     pages.update(foi_qere_without_ketiv.render(verses, study_records))
     return pages

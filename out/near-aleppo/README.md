@@ -24,11 +24,13 @@ Artificial carriers are not ketiv consonants. Both carrier templates have only
 parameter 1, containing the payload. GA (one or more artificial alef letters
 with their marks) and GV (an artificial VAV + HOLAM) keep their existing
 meanings and prohibit dagesh. The no-space template `ניקוד בלי אות ובלי רווח`
-accepts DALET + DAGESH + TSERE + MAHAPAKH
-(GD), immediately after the final nun at Isaiah 54:16. All three marks remain
-associated with that nun, and the whole qere is preserved. This first final
-carrier case is a font accommodation; earlier carriers were initial or medial.
-It makes no claim of ownerless manuscript marks.
+accepts exactly DALET + DAGESH + TSERE with MAHAPAKH, MUNAH or ETNAHTA (GD).
+The MAHAPAKH payload immediately follows the final nun at Isaiah 54:16;
+all three marks remain associated with that nun as a font accommodation.
+The MUNAH payload follows nun at Ezekiel 14:14 and 14:20, and the ETNAHTA
+payload follows nun at 28:3. At these Ezekiel sites, nun matches the qere nun
+with hiriq alone, and the carrier holds the absent qere yod's complete mark
+cluster. The whole qere is preserved. Carriers add no ketiv consonant or space.
 
 Each qere-without-ketiv site retains its complete `קרי ולא כתיב`
 call. An additional body template immediately precedes the qere call in the

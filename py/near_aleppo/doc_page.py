@@ -579,6 +579,22 @@ def _gav_display(numbers):
             ]
         ),
         mb_html.para(
+            [
+                "GD also admits exactly DALET + DAGESH + TSERE + MUNAH at ",
+                verse_refs((("C3-Ezekiel", "14", "14"), ("C3-Ezekiel", "14", "20"))),
+                ", and DALET + DAGESH + TSERE + ETNAHTA at ",
+                verse_refs((("C3-Ezekiel", "28", "3"),)),
+                ". These medial carriers hold the complete mark cluster of the "
+                "qere yod absent from the ketiv. Nun has hiriq alone, matching "
+                "the qere nun. The resulting forms are ",
+                he_pointed("דָּנִ«דֵּ֣»אל"),
+                " and ",
+                he_pointed("מִדָּנִ«דֵּ֑»אל"),
+                ". No carrier is a written ketiv consonant. GA and GV continue "
+                "to prohibit dagesh.",
+            ]
+        ),
+        mb_html.para(
             "For an orphan holam associated with a qere vav where the ketiv has "
             "yod, an edition can choose among these display options:"
         ),

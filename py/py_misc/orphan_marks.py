@@ -1,8 +1,9 @@
 """Closed artificial-carrier shapes used by the near-Aleppo dataset.
 
 Both carrier names accept the original GA shape and the GV payload,
-retaining the chosen artificial VAV + HOLAM. The explicit GD variant uses a dalet
-for the final-nun marks at Isaiah 54:16, without a space. The mixed alef/vav variant
+retaining the chosen artificial VAV + HOLAM. The explicit GD variants use a dalet
+for the final-nun marks at Isaiah 54:16 and the missing qere yod's marks at
+Ezekiel 14:14, 14:20 and 28:3, without a space. The mixed alef/vav variant
 at 2 Kings 19:31 retains three alef carriers followed by VAV + HOLAM under the
 original carrier name only. No carrier is a ketiv consonant.
 Build validation and edition display use the same carrier validation.
@@ -19,6 +20,14 @@ ORPHAN_ALEF_CARRIER = (
 GD_CARRIER = (
     "\N{HEBREW LETTER DALET}\N{HEBREW POINT DAGESH OR MAPIQ}"
     "\N{HEBREW POINT TSERE}\N{HEBREW ACCENT MAHAPAKH}"
+)
+GD_MUNAH_CARRIER = (
+    "\N{HEBREW LETTER DALET}\N{HEBREW POINT DAGESH OR MAPIQ}"
+    "\N{HEBREW POINT TSERE}\N{HEBREW ACCENT MUNAH}"
+)
+GD_ATNAH_CARRIER = (
+    "\N{HEBREW LETTER DALET}\N{HEBREW POINT DAGESH OR MAPIQ}"
+    "\N{HEBREW POINT TSERE}\N{HEBREW ACCENT ETNAHTA}"
 )
 GV_CARRIER = "\N{HEBREW LETTER VAV}\N{HEBREW POINT HOLAM}"
 GAV_CARRIER = "אְאָא֖וֹ"
@@ -54,7 +63,7 @@ def carriers(tmpl, label):
     if name == MARKS_WITHOUT_LETTER:
         allowed.add(GAV_CARRIER)
     elif name == MARKS_WITHOUT_LETTER_OR_SPACE:
-        allowed.add(GD_CARRIER)
+        allowed.update((GD_CARRIER, GD_MUNAH_CARRIER, GD_ATNAH_CARRIER))
     if isinstance(value, str) and value in allowed:
         return value
     if not isinstance(value, str) or not value.startswith(_ALEF):

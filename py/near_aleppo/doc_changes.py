@@ -909,9 +909,12 @@ def _pointed_ketiv(numbers):
                 "a maqaf before the template, as the note's form has it. Ben's "
                 "review of 2026-10-08 places the qubuts before bet on an artificial "
                 "alef at 2 Kings 4:7, omitting the adopted form's CGJ now that "
-                "qubuts and qamats have separate hosts. It places only the tsere "
-                "on a medial artificial alef at Ezekiel 14:14, 14:20 and 28:3; "
-                "munaḥ and atnaḥ remain on nun. All four original MAM clauses "
+                "qubuts and qamats have separate hosts. Ben's revised decision "
+                "of 2026-10-13 places dagesh, tsere and munaḥ on a medial "
+                "artificial dalet at Ezekiel 14:14 and 14:20, and dagesh, tsere "
+                "and atnaḥ on that carrier at 28:3. Nun has the qere nun's "
+                "hiriq alone; the carrier has the absent qere yod's complete "
+                "mark cluster. All four original MAM clauses "
                 "remain verbatim in the notes. Of the "
                 "forms, ",
                 numbers.snap(

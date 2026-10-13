@@ -40,11 +40,17 @@ without adding written ketiv consonants. Both carrier templates have only
 parameter 1, containing their payload. GV is exactly VAV + HOLAM, preserving
 the holam-male meaning. The no-space template
 `ניקוד בלי אות ובלי רווח` accepts exactly
-DALET + DAGESH + TSERE + MAHAPAKH (GD). At Isaiah 54:16 it immediately follows
+DALET + DAGESH + TSERE with MAHAPAKH, MUNAH or ETNAHTA (GD).
+The MAHAPAKH payload at Isaiah 54:16 immediately follows
 the final nun without a space, accommodating that nun's marks without adding a
 ketiv consonant. GA and GV still forbid dagesh. This is the first final carrier
 case; earlier carriers were initial or medial. The dalet accommodation makes
-no claim that the manuscript has ownerless marks.
+no claim that the manuscript has ownerless marks. By Ben's revised decision of
+2026-10-13, the MUNAH payload follows nun at Ezekiel 14:14 and 14:20, and the
+ETNAHTA payload follows nun at 28:3. Nun has exactly its qere cluster, hiriq
+alone; the carrier has the absent qere yod's complete dagesh, tsere and accent
+cluster. This supersedes the October 8 tsere-only GA representation at these
+three sites. The complete qere and original source clauses are preserved.
 
 Recorded qere-without-ketiv body encodings are applied after the pointings and
 before MAM-target copying. The build reads the explicit `intended_encoding.template`
@@ -76,7 +82,8 @@ After the last pointing import, before any output is written, a Scripture-target
 check requires each supplied ordinary or trivial pointed ketiv to retain its
 written ketiv consonants, excluding artificial carriers. Raw combining marks
 require a written-letter owner, while explicit orphan templates use the existing
-GA/GV contract, retaining GD as a letter-owned font accommodation. The check inspects values without changing them. It does not
+GA/GV/GD contract. GD accommodates final-nun marks or the absent qere yod's
+cluster at the declared sites. The check inspects values without changing them. It does not
 judge vowel combinations, manuscript ownership or whole-atom grammar.
 
 The build preserves C and D columns, qeres, atom boundaries
