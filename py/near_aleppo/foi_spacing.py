@@ -228,8 +228,9 @@ def render():
         mb_html.para(
             "An atom is a written form between spaces or maqafs. These examples "
             "show shapes that can feel cramped in Taamey D even when no ink "
-            "overlaps. The families can overlap; they are candidates for visual "
-            "judgment rather than an exhaustive inventory of cramped atoms."
+            "overlaps. An atom can belong to more than one family. The families "
+            "group candidates for visual judgment rather than providing an "
+            "exhaustive inventory of cramped atoms."
         ),
         mb_html.para(
             "Each row compares the same complete atom at usual spacing and with "
