@@ -1,10 +1,142 @@
 [
-  {"claim":"ch2:L430","wrong":["Psalms",27,24],"intended":["Psalms",27,14],"reason":"The anchor names nonexistent verse 24; its label names verse 14."},
-  {"claim":"ch3:L296","wrong":["Numbers",14,77],"intended":["Numbers",14,17],"reason":"The anchor names nonexistent verse 77; its label and special-letter example name verse 17."},
-  {"claim":"ch3:L701","wrong":["Deuter",31,50],"intended":["Deuter",31,21],"reason":"A repeated link names nonexistent verse 50; both display labels and the paragraph's first link name verse 21."},
-  {"claim":"ch4:L686","wrong":["Daniel",12,12],"intended":["Daniel",12,2],"reason":"Both label and link name verse 12, but the quoted atom and its detailed note occur at verse 2. Verse 12 has no corresponding atom or note."},
-  {"claim":"ch4:L564","wrong":["Ecclesiastes",4,7],"intended":["Ecclesiastes",5,17],"reason":"The displayed label names 5:17 and its doc-note matches the form; the anchor points to 4:7."},
-  {"claim":"ch5:L431","wrong":["2Kings",21,20],"intended":["2Kings",21,12],"reason":"The displayed label names 21:12 and its explicitly Aleppo-attributed ketiv note matches; the anchor points to 21:20."},
-  {"claim":"ch5:L561","wrong":["2Chronicles",6,7],"intended":["2Chronicles",34,22],"reason":"The displayed label names 34:22 and its doc-note matches the ketiv; the anchor points to 6:7."},
-  {"claim":"ch5:L662","wrong":["Proverbs",20,25],"intended":["Proverbs",25,20],"reason":"The quoted compound belongs at 25:20, whose note addresses that maqaf; the linked chapter and verse are transposed."}
+  {
+    "claim": "ch2:L430",
+    "wrong": [
+      "Psalms",
+      27,
+      24
+    ],
+    "intended": [
+      "Psalms",
+      27,
+      14
+    ],
+    "reason": "The anchor names nonexistent verse 24; its label names verse 14."
+  },
+  {
+    "claim": "ch3:L296",
+    "wrong": [
+      "Numbers",
+      14,
+      77
+    ],
+    "intended": [
+      "Numbers",
+      14,
+      17
+    ],
+    "reason": "The anchor names nonexistent verse 77; its label and special-letter example name verse 17."
+  },
+  {
+    "claim": "ch3:L701",
+    "wrong": [
+      "Deuter",
+      31,
+      50
+    ],
+    "intended": [
+      "Deuter",
+      31,
+      21
+    ],
+    "reason": "A repeated link names nonexistent verse 50; both display labels and the paragraph's first link name verse 21."
+  },
+  {
+    "claim": "ch4:L686",
+    "wrong": [
+      "Daniel",
+      12,
+      12
+    ],
+    "intended": [
+      "Daniel",
+      12,
+      2
+    ],
+    "reason": "Both label and link name verse 12, but the quoted atom and its detailed note occur at verse 2. Verse 12 has no corresponding atom or note."
+  },
+  {
+    "claim": "ch4:L564",
+    "wrong": [
+      "Ecclesiastes",
+      4,
+      7
+    ],
+    "intended": [
+      "Ecclesiastes",
+      5,
+      17
+    ],
+    "reason": "The displayed label names 5:17 and its doc-note matches the form; the anchor points to 4:7."
+  },
+  {
+    "claim": "ch5:L431",
+    "wrong": [
+      "2Kings",
+      21,
+      20
+    ],
+    "intended": [
+      "2Kings",
+      21,
+      12
+    ],
+    "reason": "The displayed label names 21:12 and its explicitly Aleppo-attributed ketiv note matches; the anchor points to 21:20."
+  },
+  {
+    "claim": "ch5:L561",
+    "wrong": [
+      "2Chronicles",
+      6,
+      7
+    ],
+    "intended": [
+      "2Chronicles",
+      34,
+      22
+    ],
+    "reason": "The displayed label names 34:22 and its doc-note matches the ketiv; the anchor points to 6:7."
+  },
+  {
+    "claim": "ch5:L662",
+    "wrong": [
+      "Proverbs",
+      20,
+      25
+    ],
+    "intended": [
+      "Proverbs",
+      25,
+      20
+    ],
+    "reason": "The quoted compound belongs at 25:20, whose note addresses that maqaf; the linked chapter and verse are transposed."
+  },
+  {
+    "claim": "ch2:L87",
+    "wrong": [
+      "Jeremiah",
+      31,
+      38
+    ],
+    "intended": [
+      "Jeremiah",
+      31,
+      37
+    ],
+    "reason": "The qere-without-ketiv roster and appendix list 31:38; the quoted coming atom and its current note occur at 31:37. Verse 31:38 has ordinary qוה/qו ketiv/qere."
+  },
+  {
+    "claim": "ch3:L775",
+    "wrong": [
+      "Genesis",
+      18,
+      21
+    ],
+    "intended": [
+      "Genesis",
+      18,
+      25
+    ],
+    "reason": "Both label and link use18:21; the quoted form and corresponding Leningrad note occur at18:25. The18:21 note concerns a different atom."
+  }
 ]

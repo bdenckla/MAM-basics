@@ -173,6 +173,25 @@ def inventory_intro():
     return topics, claims
 
 
+def object_address(container, wanted):
+    """Locate an already selected note object, without interpreting its fields."""
+    if container is wanted:
+        return ""
+    items = (
+        enumerate(container)
+        if isinstance(container, list)
+        else container.items() if isinstance(container, dict) else ()
+    )
+    for key, child in items:
+        try:
+            suffix = object_address(child, wanted)
+            escaped = str(key).replace("~", "~0").replace("/", "~1")
+            return f"/{escaped}{suffix}"
+        except LookupError:
+            pass
+    raise LookupError("Selected note not in source container")
+
+
 def inventory_notes():
     notes, verses, inputs = [], {}, []
     revisions = json.loads(
@@ -187,11 +206,31 @@ def inventory_notes():
             )
         ]
         text = path.read_text(encoding="utf-8")
+        # Source addressing only: indentation is the generated JSON's hierarchy,
+        # not a Scripture/annotation projection. Bind literal note occurrences to
+        # their actual book/chapter/verse, excluding good-ending metadata copies.
+        line_refs = {}
+        book_index, source_chapter, source_verse = -1, None, None
+        for number, source_line in enumerate(text.splitlines(), 1):
+            if source_line.startswith('      "book24_name":'):
+                book_index += 1
+                source_chapter, source_verse = None, None
+            if match := re.fullmatch(r'        "(\d+)": \{', source_line):
+                source_chapter = match[1]
+            if match := re.fullmatch(r'          "([^"\n]+)": \[', source_line):
+                source_verse = match[1]
+            if source_chapter is not None and source_verse is not None:
+                source_book = data["book39s"][book_index]
+                source_bkid = bn.MAM_HBNP_TO_BK39ID[
+                    (source_book["book24_name"], source_book["sub_book_name"])
+                ]
+                line_refs[number] = f"{source_bkid} {source_chapter}:{source_verse}"
         decoder = json.JSONDecoder()
         source_records = []
         for position in positions:
             node, _ = decoder.raw_decode(text, text.rfind("{", 0, position))
-            source_records.append((node, text.count("\n", 0, position) + 1))
+            source_line = text.count("\n", 0, position) + 1
+            source_records.append((node, source_line, line_refs.get(source_line)))
         used = set()
         inputs.append(
             {
@@ -211,8 +250,10 @@ def inventory_notes():
                             nid = f"{key}/{cellno}/{j}"
                             locations = [
                                 i
-                                for i, (node, _) in enumerate(source_records)
-                                if i not in used and node == note
+                                for i, (node, _, source_ref) in enumerate(
+                                    source_records
+                                )
+                                if i not in used and node == note and source_ref == key
                             ]
                             if not locations:
                                 raise ValueError(
@@ -240,7 +281,8 @@ def inventory_notes():
                                     "ref": key,
                                     "path": path.relative_to(ROOT).as_posix(),
                                     "line": line,
-                                    "json_pointer": f"/book39s/{data['book39s'].index(book)}/chapters/{chapter}/{verse}/{cellno}",
+                                    "json_pointer": f"/book39s/{data['book39s'].index(book)}/chapters/{chapter}/{verse}/{cellno}"
+                                    + object_address(cell, note),
                                     "target_node": params["1"],
                                     "body_node": params["2"],
                                     "body_text": body,
@@ -265,7 +307,7 @@ def inventory_notes():
                     if verse not in ("0", "תתת"):
                         verses[key] = {"note_ids": note_ids}
         inputs[-1]["notes_outside_chapter_walk"] = [
-            line for i, (_, line) in enumerate(source_records) if i not in used
+            line for i, (_, line, _) in enumerate(source_records) if i not in used
         ]
         print(
             f"Read {path.name}: {len(used)} chapter notes; {len(source_records)-len(used)} outside chapter walk",

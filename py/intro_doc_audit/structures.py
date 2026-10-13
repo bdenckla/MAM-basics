@@ -38,7 +38,7 @@ def main():
             category = kq.canonical_special_kq_type_from_name_and_sug(
                 name, value["tmpl_params"]["סוג"]
             )
-        elif name in ("קרי ולא כתיב", "כתיב ולא קרי", "מ:מקף אפור"):
+        elif name in ("קרי ולא כתיב", "כתיב ולא קרי", "מ:מקף אפור", "מ:קו״כ-אם-2"):
             category = name
         if category:
             records.append(

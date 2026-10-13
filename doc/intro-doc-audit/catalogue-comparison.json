@@ -1,0 +1,508 @@
+{
+  "catalogue_lines": 19,
+  "matching_membership_lines": 15,
+  "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
+  "rows": [
+    {
+      "claim": "ch2:L86",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L86",
+      "categories": [
+        "כתיב ולא קרי"
+      ],
+      "declared_refs": [
+        "2Kings 5:18",
+        "2Samuel 13:33",
+        "2Samuel 15:21",
+        "Ezekiel 48:16",
+        "Jeremiah 38:16",
+        "Jeremiah 39:12",
+        "Jeremiah 51:3",
+        "Ruth 3:12"
+      ],
+      "current_template_refs": [
+        "2Kings 5:18",
+        "2Samuel 13:33",
+        "2Samuel 15:21",
+        "Ezekiel 48:16",
+        "Jeremiah 38:16",
+        "Jeremiah 39:12",
+        "Jeremiah 51:3",
+        "Ruth 3:12"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "ch2:L87",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L87",
+      "categories": [
+        "קרי ולא כתיב"
+      ],
+      "declared_refs": [
+        "2Kings 19:31",
+        "2Kings 19:37",
+        "2Samuel 16:23",
+        "2Samuel 18:20",
+        "2Samuel 8:3",
+        "Jeremiah 31:38",
+        "Jeremiah 50:29",
+        "Judges 20:13",
+        "Ruth 3:17",
+        "Ruth 3:5"
+      ],
+      "current_template_refs": [
+        "2Kings 19:31",
+        "2Kings 19:37",
+        "2Samuel 16:23",
+        "2Samuel 18:20",
+        "Jeremiah 31:37",
+        "Jeremiah 50:29",
+        "Judges 20:13",
+        "Ruth 3:17",
+        "Ruth 3:5"
+      ],
+      "literal_locator_adjustment": {
+        "Jeremiah 31:38": "Jeremiah 31:37"
+      },
+      "listed_only_after_locator_check": [
+        "2Samuel 8:3"
+      ],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": false
+    },
+    {
+      "claim": "ch2:L96",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L96",
+      "categories": [
+        "k1q2-sr-kqq"
+      ],
+      "declared_refs": [
+        "1Chronicles 27:12",
+        "Deuter 33:2",
+        "Exodus 4:2",
+        "Ezekiel 8:6",
+        "Genesis 30:11",
+        "Isaiah 3:15",
+        "Jeremiah 18:3",
+        "Jeremiah 6:29",
+        "Job 38:1",
+        "Job 40:6",
+        "Psalms 10:10",
+        "Psalms 123:4",
+        "Psalms 55:16"
+      ],
+      "current_template_refs": [
+        "1Chronicles 27:12",
+        "Deuter 33:2",
+        "Exodus 4:2",
+        "Ezekiel 8:6",
+        "Genesis 30:11",
+        "Isaiah 3:15",
+        "Jeremiah 18:3",
+        "Jeremiah 6:29",
+        "Job 38:1",
+        "Job 40:6",
+        "Psalms 10:10",
+        "Psalms 123:4",
+        "Psalms 55:16"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "ch2:L97",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L97",
+      "categories": [
+        "k1q2-sr-qqk"
+      ],
+      "declared_refs": [
+        "Nehemiah 2:13"
+      ],
+      "current_template_refs": [
+        "Nehemiah 2:13"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "ch2:L98",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L98",
+      "categories": [
+        "k1q2-sr-bcom"
+      ],
+      "declared_refs": [
+        "1Chronicles 9:4"
+      ],
+      "current_template_refs": [
+        "1Chronicles 9:4"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "ch2:L105",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L105",
+      "categories": [
+        "k2q1"
+      ],
+      "declared_refs": [
+        "1Samuel 24:8",
+        "1Samuel 9:1",
+        "2Chronicles 34:6",
+        "Isaiah 44:24",
+        "Isaiah 9:6",
+        "Judges 16:25",
+        "Lamentations 1:6",
+        "Lamentations 4:3"
+      ],
+      "current_template_refs": [
+        "1Samuel 24:8",
+        "1Samuel 9:1",
+        "2Chronicles 34:6",
+        "Isaiah 44:24",
+        "Isaiah 9:6",
+        "Judges 16:25",
+        "Lamentations 1:6",
+        "Lamentations 4:3"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "ch2:L112",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L112",
+      "categories": [
+        "k1q2-wr-kqq"
+      ],
+      "declared_refs": [
+        "Ezekiel 9:11"
+      ],
+      "current_template_refs": [
+        "2Samuel 8:3",
+        "Ezekiel 9:11"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [
+        "2Samuel 8:3"
+      ],
+      "membership_agrees_after_locator_check": false
+    },
+    {
+      "claim": "ch2:L113",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L113",
+      "categories": [
+        "k1q2-ur-qqk"
+      ],
+      "declared_refs": [
+        "2Kings 18:27",
+        "Isaiah 36:12"
+      ],
+      "current_template_refs": [
+        "2Kings 18:27",
+        "Isaiah 36:12"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L374",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L374",
+      "categories": [
+        "כתיב ולא קרי"
+      ],
+      "declared_refs": [
+        "2Kings 5:18",
+        "2Samuel 13:33",
+        "2Samuel 15:21",
+        "Ezekiel 48:16",
+        "Jeremiah 38:16",
+        "Jeremiah 39:12",
+        "Jeremiah 51:3",
+        "Ruth 3:12"
+      ],
+      "current_template_refs": [
+        "2Kings 5:18",
+        "2Samuel 13:33",
+        "2Samuel 15:21",
+        "Ezekiel 48:16",
+        "Jeremiah 38:16",
+        "Jeremiah 39:12",
+        "Jeremiah 51:3",
+        "Ruth 3:12"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L375",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L375",
+      "categories": [
+        "קרי ולא כתיב"
+      ],
+      "declared_refs": [
+        "2Kings 19:31",
+        "2Kings 19:37",
+        "2Samuel 16:23",
+        "2Samuel 18:20",
+        "2Samuel 8:3",
+        "Jeremiah 31:38",
+        "Jeremiah 50:29",
+        "Judges 20:13",
+        "Ruth 3:17",
+        "Ruth 3:5"
+      ],
+      "current_template_refs": [
+        "2Kings 19:31",
+        "2Kings 19:37",
+        "2Samuel 16:23",
+        "2Samuel 18:20",
+        "Jeremiah 31:37",
+        "Jeremiah 50:29",
+        "Judges 20:13",
+        "Ruth 3:17",
+        "Ruth 3:5"
+      ],
+      "literal_locator_adjustment": {
+        "Jeremiah 31:38": "Jeremiah 31:37"
+      },
+      "listed_only_after_locator_check": [
+        "2Samuel 8:3"
+      ],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": false
+    },
+    {
+      "claim": "appendices:L377",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L377",
+      "categories": [
+        "k1q2-sr-kqq"
+      ],
+      "declared_refs": [
+        "1Chronicles 27:12",
+        "Deuter 33:2",
+        "Exodus 4:2",
+        "Ezekiel 8:6",
+        "Genesis 30:11",
+        "Isaiah 3:15",
+        "Jeremiah 18:3",
+        "Jeremiah 6:29",
+        "Job 38:1",
+        "Job 40:6",
+        "Psalms 10:10",
+        "Psalms 123:4",
+        "Psalms 55:16"
+      ],
+      "current_template_refs": [
+        "1Chronicles 27:12",
+        "Deuter 33:2",
+        "Exodus 4:2",
+        "Ezekiel 8:6",
+        "Genesis 30:11",
+        "Isaiah 3:15",
+        "Jeremiah 18:3",
+        "Jeremiah 6:29",
+        "Job 38:1",
+        "Job 40:6",
+        "Psalms 10:10",
+        "Psalms 123:4",
+        "Psalms 55:16"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L378",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L378",
+      "categories": [
+        "k1q2-sr-qqk"
+      ],
+      "declared_refs": [
+        "Nehemiah 2:13"
+      ],
+      "current_template_refs": [
+        "Nehemiah 2:13"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L379",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L379",
+      "categories": [
+        "k1q2-sr-bcom"
+      ],
+      "declared_refs": [
+        "1Chronicles 9:4"
+      ],
+      "current_template_refs": [
+        "1Chronicles 9:4"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L380",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L380",
+      "categories": [
+        "k2q1"
+      ],
+      "declared_refs": [
+        "1Samuel 24:8",
+        "1Samuel 9:1",
+        "2Chronicles 34:6",
+        "Isaiah 44:24",
+        "Isaiah 9:6",
+        "Judges 16:25",
+        "Lamentations 1:6",
+        "Lamentations 4:3"
+      ],
+      "current_template_refs": [
+        "1Samuel 24:8",
+        "1Samuel 9:1",
+        "2Chronicles 34:6",
+        "Isaiah 44:24",
+        "Isaiah 9:6",
+        "Judges 16:25",
+        "Lamentations 1:6",
+        "Lamentations 4:3"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L381",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L381",
+      "categories": [
+        "k1q2-wr-kqq"
+      ],
+      "declared_refs": [
+        "2Samuel 8:3",
+        "Ezekiel 9:11"
+      ],
+      "current_template_refs": [
+        "2Samuel 8:3",
+        "Ezekiel 9:11"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L382",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L382",
+      "categories": [
+        "k1q2-ur-qqk"
+      ],
+      "declared_refs": [
+        "2Kings 18:27",
+        "Isaiah 36:12"
+      ],
+      "current_template_refs": [
+        "2Kings 18:27",
+        "Isaiah 36:12"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L383",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L383",
+      "categories": [
+        "k2q2"
+      ],
+      "declared_refs": [
+        "1Kings 17:15",
+        "1Samuel 20:2",
+        "2Samuel 21:12",
+        "2Samuel 5:2",
+        "Ezekiel 42:9",
+        "Jeremiah 14:14",
+        "Jeremiah 48:20",
+        "Job 38:12",
+        "Proverbs 21:29"
+      ],
+      "current_template_refs": [
+        "1Kings 17:15",
+        "1Samuel 20:2",
+        "2Samuel 5:2",
+        "Ezekiel 42:9",
+        "Jeremiah 14:14",
+        "Jeremiah 48:20",
+        "Job 38:12",
+        "Proverbs 21:29"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [
+        "2Samuel 21:12"
+      ],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": false
+    },
+    {
+      "claim": "appendices:L384",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L384",
+      "categories": [
+        "k3q3"
+      ],
+      "declared_refs": [
+        "2Samuel 21:12"
+      ],
+      "current_template_refs": [
+        "2Samuel 21:12"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    },
+    {
+      "claim": "appendices:L385",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L385",
+      "categories": [
+        "k1q1-mcom"
+      ],
+      "declared_refs": [
+        "Isaiah 26:20"
+      ],
+      "current_template_refs": [
+        "Isaiah 26:20"
+      ],
+      "literal_locator_adjustment": {},
+      "listed_only_after_locator_check": [],
+      "current_type_only": [],
+      "membership_agrees_after_locator_check": true
+    }
+  ],
+  "semantic_disposition": "The catalogue and current MAM template identities differ at four source units. Traditional Masorah phenomena across manuscripts are not identical to current MAM selected-template populations. No universal manuscript count is asserted.",
+  "decisive_notes": [
+    "2Samuel 8:3/2/0",
+    "2Samuel 21:12/2/0",
+    "Jeremiah 31:37/2/0"
+  ]
+}

@@ -168,6 +168,133 @@
         "Psalms 108:3/2/0"
       ],
       "explanation": "Both sources prefer dehi with meteg. The Introduction secondary option is dehi with merkha; the notes instead propose terha with merkha. The difference appears in both the quoted codepoints and the explicit accent names. These are uncertain Aleppo candidate readings. The caches establish differing candidate sets; they do not select the actual manuscript reading."
+    },
+    {
+      "id": "CATALOGUE-SCOPE",
+      "title": "Current template catalogues differ from older category lists",
+      "status": "new-verified-current-catalogue-discrepancy",
+      "claims": [
+        "ch2:L109",
+        "ch2:L112",
+        "appendices:L381",
+        "appendices:L383",
+        "appendices:L384"
+      ],
+      "refs": [
+        [
+          "2Samuel",
+          8,
+          3
+        ],
+        [
+          "2Samuel",
+          21,
+          12
+        ]
+      ],
+      "note_ids": [
+        "2Samuel 8:3/2/0",
+        "2Samuel 21:12/2/0"
+      ],
+      "explanation": "Chapter 2 lists three changed-qere cases; the appendix and current MAM structures have four, adding 2 Samuel 8:3. The appendix also lists nine two-atom annotation units while current MAM has eight, assigning 2 Samuel 21:12 to one three-atom unit. Nineteen catalogue memberships were checked: fifteen agree and four differ. This is catalogue drift under current MAM template identity. Traditional Masorah counts depend on manuscript and scope: at 8:3 the note expressly treats the extra qere atom differently in Aleppo and other manuscripts."
+    },
+    {
+      "id": "DESCRIPTION-NAMES",
+      "title": "Named marks and letters disagree while quoted forms agree",
+      "status": "new-verified-source-description-discrepancy",
+      "claims": [
+        "ch3:L853",
+        "ch3:L1002",
+        "ch3:L1008",
+        "ch3:L1117"
+      ],
+      "refs": [
+        [
+          "Exodus",
+          7,
+          20
+        ],
+        [
+          "Numbers",
+          16,
+          27
+        ],
+        [
+          "Numbers",
+          22,
+          23
+        ],
+        [
+          "Deuter",
+          28,
+          27
+        ]
+      ],
+      "note_ids": [
+        "Exodus 7:20/2/0",
+        "Numbers 16:27/2/0",
+        "Numbers 22:23/2/0",
+        "Deuter 28:27/2/0"
+      ],
+      "explanation": "At Exodus 7:20 the Introduction names merkha where its specimen and the note have TEVIR. At Numbers 16:27 it places segol on qof while the specimen and note place it on resh. At Numbers 22:23 it names bet instead of the note's dalet; the specimen has no bet. At Deuteronomy 28:27 the direction reverses: the Introduction names tet correctly, while the note calls that letter tav in its final clause. The quoted qere has tet and no tav. These are description discrepancies, not new manuscript readings. The uncertainty qualifier at Numbers 22:23 requires separate attention."
+    },
+    {
+      "id": "DAN-2-17",
+      "title": "Daniel 2:17: meteg differs in the Leningrad quotation",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch4:L642"
+      ],
+      "refs": [
+        [
+          "Daniel",
+          2,
+          17
+        ]
+      ],
+      "note_ids": [
+        "Daniel 2:17/2/0"
+      ],
+      "explanation": "The explicitly Leningrad-attributed Introduction specimen includes U+05BD under dalet; the note specimen omits it. Both describe the missing yod dagesh, and that phenomenon agrees. The extra meteg is a supported difference between the attributed quotations. Raw and parsed note captures agree. No notation-policy limitation was found in this local context, and the manuscript reading remains unverified."
+    },
+    {
+      "id": "DAN-5-7",
+      "title": "Daniel 5:7: yod differs in the Leningrad ketiv quotation",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch4:L217"
+      ],
+      "refs": [
+        [
+          "Daniel",
+          5,
+          7
+        ]
+      ],
+      "note_ids": [
+        "Daniel 5:7/2/1"
+      ],
+      "explanation": "The Introduction's explicitly Leningrad-attributed ketiv includes a yod after nun; the note's Leningrad ketiv omits that yod. The raw note agrees with the parsed note, and direct codepoint checks establish the consonantal difference. This is a supported source-quoted spelling discrepancy, with the manuscript reading still unverified."
+    },
+    {
+      "id": "DAN-7-9-SELECTION",
+      "title": "Daniel 7:9: the starred edition reading is reversed",
+      "status": "new-verified-edition-selection-discrepancy",
+      "claims": [
+        "ch4:L328",
+        "ch4:L242"
+      ],
+      "refs": [
+        [
+          "Daniel",
+          7,
+          9
+        ]
+      ],
+      "note_ids": [
+        "Daniel 7:9/2/0"
+      ],
+      "explanation": "The decision list places the edition-selection star on the Leningrad full-first-yod form. The main spelling row and current MAM target select the defective-first-yod form instead. The note explicitly distinguishes these source spellings. This is an internal Introduction selection reversal corroborated by current edition evidence; the Leningrad manuscript claim itself agrees."
     }
   ],
   "tracked": [
@@ -421,6 +548,93 @@
         "Psalms 18:2/2/0"
       ],
       "explanation": "The Introduction uses an explicit Aleppo sigil for this form, although its missing-extent roster covers Psalms 15:1 through 25:1. The note discusses other named manuscripts and reading tradition. An unquoted prior report or shorthand could account for the attribution; the caches do not supply it. The grammatical claim agrees, so this is an attribution question, not proof of a false manuscript reading."
+    },
+    {
+      "id": "L-CANDIDATE-SCOPE",
+      "title": "Leningrad candidate attribution and digital-transcription qualifiers",
+      "status": "attribution-and-candidate-scope-uncertainty",
+      "claims": [
+        "ch3:L1079",
+        "ch4:L514",
+        "ch4:L518",
+        "ch4:L645",
+        "ch4:L659",
+        "ch4:L734"
+      ],
+      "refs": [
+        [
+          "Deuter",
+          12,
+          30
+        ],
+        [
+          "Psalms",
+          17,
+          14
+        ],
+        [
+          "Psalms",
+          18,
+          7
+        ],
+        [
+          "Daniel",
+          2,
+          41
+        ],
+        [
+          "Daniel",
+          5,
+          3
+        ],
+        [
+          "Nehemiah",
+          12,
+          47
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "Several Introduction entries place disputed candidates under Leningrad while the current notes attribute some candidates to other manuscripts or only to the digital transcription, or retain a digital-transcription qualifier absent from the Introduction. The batch ledgers retain exact source units. These are attribution-precision questions; the caches do not settle the physical reading."
+    },
+    {
+      "id": "STRAND-SCOPE",
+      "title": "Deuteronomy 5:13: reading-strand assignments exceed the note",
+      "status": "reading-strand-scope-uncertainty",
+      "claims": [
+        "ch3:L1064"
+      ],
+      "refs": [
+        [
+          "Deuter",
+          5,
+          13
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "The Introduction assigns the two quoted marks to reading strands more specifically than the note's explicit Leningrad description of munah and merkha. The quoted marks themselves are corroborated. Keep the strand assignment as a separate source-scope question."
+    },
+    {
+      "id": "SHARED-EXPLANATIONS",
+      "title": "Shared or incidental explanation differences",
+      "status": "editorial-explanation-scope",
+      "claims": [
+        "ch4:L537",
+        "ch4:L605"
+      ],
+      "refs": [
+        [
+          "Song of Songs",
+          4,
+          16
+        ],
+        [
+          "Lamentations",
+          4,
+          7
+        ]
+      ],
+      "note_ids": [],
+      "explanation": "Song of Songs 4:16 names lamed, although the difference between the displayed MAM and Leningrad specimens is dagesh on zayin; lamed is undotted in both. At Lamentations 4:7 both specimens encode segol on shin while the descriptions discuss qamats and the note preserves uncertainty about close dots. These are explanation questions, not independent disagreements about the manuscript reading."
     }
   ],
   "controls": [

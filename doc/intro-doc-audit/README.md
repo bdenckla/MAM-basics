@@ -5,7 +5,7 @@ State: live research; isolated branch, no integration scheduled
 This audit uses the repository snapshot at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
 It changes no Scripture input, edition, published page, or manuscript interpretation.
 `source-pin.json` preserves exact Git objects and the current full bodies/comments of
-MAM-basics #305–307. `topics.json` covers all thirteen Introduction cache pages;
+MAM-basics #304-307. `topics.json` covers all thirteen Introduction cache pages;
 `claims.json` preserves every nonblank source unit with its topic and source pointer.
 Source units include table cells and navigation: their count is not a semantic claim count.
 
@@ -44,17 +44,20 @@ Open [review.html](review.html) for the compact comparison, with the 20–48 px 
 slider (default 30), exact source links, and cached verse contexts. The report keeps
 the three existing issues separate from new research. No issues or comments were posted.
 
-Two complete bounded chapter 5 batches reviewed **269/269 selected source lines**:
+Four complete bounded pointing batches reviewed **838/838 selected source lines**:
 69 lines containing the Aleppo ketiv sigil, and 200 other pointing/list rows.
-`ketiv-batch.json`, `nonketiv-batch.json`, and `claim-dispositions.json` preserve
-their exhaustive populations and semantic dispositions. Of these lines, 237 have
+Chapter 3 contributes 323 rows and chapter 4 contributes 246 rows.
+`ketiv-batch.json`, `nonketiv-batch.json`, `ch3-pointing-batch.json`,
+`ch4-pointing-batch.json`, and `claim-dispositions.json` preserve their exhaustive
+populations and semantic dispositions. Of the 269 chapter 5 lines, 237 have
 corroborated phenomena or representation differences, four are already tracked,
 four contain the newly supported attributed-form disagreements, nine have locator
 problems, one has a scope ambiguity, and fourteen have incomplete attribution or
 form evidence. These line counts do not imply independent manuscript verification.
 
 New attributed-form disagreements occur at Jeremiah 31:37; Psalm 108:11; and the
-paired secondary-reading alternatives at Psalms 57:9 and 108:3. Neither source is
+paired secondary-reading alternatives at Psalms 57:9 and 108:3; Daniel 2:17's
+meteg specimen; and Daniel 5:7's ketiv spelling. Neither source is
 declared correct. `codepoint-proofs.json` independently matches the selected notes
 back to the faithful raw chapter cache and records every codepoint. Jeremiah uses
 the updated revision 3088451: the restored atom and closed issue #304 are separate
@@ -65,13 +68,23 @@ count (eleven verse entries, twelve atom forms), Lamentations 1:6's reversed one
 description, and Proverbs 30:19's stale MAM illustration. The first has all eleven
 Introduction/doc-note pairs in `deuter-roster-pairs.json`; the latter two explicitly
 distinguish structural or edition evidence from a manuscript-reading conflict.
-Eight independently checked locator examples are grouped as one finding.
+Ten independently checked locator examples are grouped as one finding. A grouped
+description review covers four letter/accent-name disagreements, including a
+Deuteronomy 28:27 note that says TAV where the Introduction correctly says TET.
+The raw-cache quotations agree, so this is a prose-label discrepancy, not an
+alternative manuscript reading. Daniel 7:9's selected spelling also reverses
+between two Introduction lists while the note's Leningrad claim agrees.
+
+`catalogue-comparison.json` checks **19/19 finite catalogue lines** against current
+typed populations: fifteen memberships match and four differ. The differences
+are retained as template/scope drift; a traditional masorah count is not assumed
+to count the same objects as the current edition templates.
 
 `topic-coverage.json` routes all **340/340 titled spans** to their evidence boundaries.
 It inventories every topic, including general rules, completeness claims, historical
 quotations, policy, manuscript locators, and proposals. It does **not** claim that
 all 1,643 verse-linked units or all corpus-wide rules have been semantically audited.
-`review-selections.json` keeps nine compact uncertainty groups, and the batch ledgers
+`review-selections.json` keeps twelve compact uncertainty groups, and the batch ledgers
 retain less consequential incomplete cases without turning them into an alarm list.
 
 The next source-boundary questions are whether incidental specimen marks assert
@@ -88,6 +101,10 @@ C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_au
 
 ```powershell
 C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py structures
+```
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py catalogues
 ```
 
 ```powershell

@@ -31,6 +31,8 @@ def main():
         ("PS-108-11", "ch5:L605", "Psalms 108:11/2/0", ["Psalms", 108, 11]),
         ("PS-57-9", "ch5:L583", "Psalms 57:9/2/0", ["Psalms", 57, 9]),
         ("PS-108-3", "ch5:L603", "Psalms 108:3/2/0", ["Psalms", 108, 3]),
+        ("DAN-2-17", "ch4:L642", "Daniel 2:17/2/0", ["Daniel", 2, 17]),
+        ("DAN-5-7", "ch4:L217", "Daniel 5:7/2/1", ["Daniel", 5, 7]),
     ]
     result = []
     for name, cid, nid, ref in cases:
@@ -78,6 +80,29 @@ def main():
                 or "\N{HEBREW ACCENT DEHI}" not in note_form
             ):
                 raise ValueError("Psalm 108:11 accent identity changed")
+        elif name == "DAN-2-17":
+            intro_form = next(
+                w
+                for w in ATOMS.findall(source)
+                if audit.LETTERS.sub("", w) == "דניאל"
+                and any(unicodedata.category(c) == "Mn" for c in w)
+            )
+            note_form = next(
+                w for w in ATOMS.findall(body) if audit.LETTERS.sub("", w) == "דניאל"
+            )
+            if (
+                "\N{HEBREW POINT METEG}" not in intro_form
+                or "\N{HEBREW POINT METEG}" in note_form
+            ):
+                raise ValueError("Daniel meteg discrepancy changed")
+        elif name == "DAN-5-7":
+            intro_form = ATOMS.findall(source.split("ל=[", 1)[1])[0]
+            note_form = ATOMS.findall(body.split("ל-כתיב=", 1)[1])[0]
+            if (
+                audit.LETTERS.sub("", intro_form) != "והמוניכא"
+                or audit.LETTERS.sub("", note_form) != "והמונכא"
+            ):
+                raise ValueError("Daniel ketiv YOD discrepancy changed")
         else:
             intro_form = [
                 w for w in ATOMS.findall(source) if audit.LETTERS.sub("", w) == "עורה"
@@ -108,4 +133,52 @@ def main():
     audit.dump("codepoint-proofs.json", result)
     print(
         f"Verified {len(result)} selected raw/parsed source pairs and accent identities"
+    )
+    descriptions = []
+    for cid, nid, ref, letters in [
+        ("ch3:L853", "Exodus 7:20/2/0", ["Exodus", 7, 20], "ויהפכו"),
+        ("ch3:L1002", "Numbers 16:27/2/0", ["Numbers", 16, 27], "קרח"),
+        ("ch3:L1008", "Numbers 22:23/2/0", ["Numbers", 22, 23], "הדרך"),
+        ("ch3:L1117", "Deuter 28:27/2/0", ["Deuter", 28, 27], "ובטחרים"),
+    ]:
+        context = review.context(ref)
+        body = notes[nid]["body_text"]
+        equivalent = []
+        for template in mwparserfromhell.parse(context["wikitext"]).filter_templates():
+            if str(template.name) != "נוסח":
+                continue
+            raw_body = str(template.get("2").value)
+            if uni_denorm.give_std_mark_order(
+                raw_body.replace("{{ש}}", "\n")
+            ) == uni_denorm.give_std_mark_order(body):
+                equivalent.append(raw_body)
+        if len(equivalent) != 1:
+            raise ValueError(f"Description note lacks raw-cache agreement: {cid}")
+        intro_form = next(
+            w
+            for w in ATOMS.findall(claims[cid]["text"])
+            if audit.LETTERS.sub("", w) == letters
+        )
+        note_form = next(
+            w for w in ATOMS.findall(body) if audit.LETTERS.sub("", w) == letters
+        )
+        if uni_denorm.give_std_mark_order(intro_form) != uni_denorm.give_std_mark_order(
+            note_form
+        ):
+            raise ValueError(f"Description control's specimen differs: {cid}")
+        descriptions.append(
+            {
+                "claim": cid,
+                "note_id": nid,
+                "raw_note_body": equivalent[0],
+                "parsed_note_body": body,
+                "intro_form": intro_form,
+                "note_form": note_form,
+                "codepoints": codepoints(note_form),
+                "result": "Quoted atom forms agree after explicit mark-order comparison; description-name disagreement is separately reviewed.",
+            }
+        )
+    audit.dump("description-proofs.json", descriptions)
+    print(
+        f"Verified {len(descriptions)} description controls against raw notes and exact quoted forms"
     )

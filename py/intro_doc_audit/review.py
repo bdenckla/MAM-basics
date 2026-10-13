@@ -71,15 +71,16 @@ def intro_display(claim):
         note = next(t for t in templates if str(t.name) == "נוסח")
         return str(note.get("1").value)
     if text.startswith("#[["):
-        return text.partition("]] ")[2]
+        text = text.partition("]] ")[2]
     if claim["id"] == "ch2:L102":
         return text[text.index('("מִן') :]
     code = mwparserfromhell.parse(text)
     for link in code.filter_wikilinks():
         text = text.replace(str(link), str(link.text or link.title))
     for template in code.filter_templates():
-        if str(template.name) == "עוגן בשורה":
+        if str(template.name) in {"עוגן בשורה", "הערה"}:
             text = text.replace(str(template), "")
+    text = re.sub(r"</?span(?:\s+[^>]*)?>", "", text)
     return text.replace("'''", "").replace("''", "")
 
 
@@ -174,12 +175,18 @@ def card(case, by_claim, by_note):
     )
     if len(contexts) > 3:
         context_html = f"<details><summary>Cached contexts for {len(contexts)} verses</summary>{context_html}</details>"
+    if len(claims) == len(notes) == len(refs) and len(refs) > 1:
+        comparison_rows = "".join(
+            f'<tr><td class="he" dir="rtl">{hbo(intro_display(c))}</td><td class="he" dir="rtl">{body}</td><td class="bcv">{html.escape(audit.ref_id(ref))}</td></tr>'
+            for c, body, ref in zip(claims, bodies, refs)
+        )
+    else:
+        comparison_rows = f'<tr><td class="he" dir="rtl">{intro}</td><td class="he" dir="rtl">{"<hr>".join(bodies)}</td><td class="bcv">{"<br>".join(html.escape(audit.ref_id(r)) for r in refs)}</td></tr>'
     return (
         f"""<article id="{case['id']}"><h3>{html.escape(case['title'])}</h3>
 <p class="status">{html.escape(case['status'].replace('-', ' '))}{extra}</p>
-<div class="scroll"><table class="comparison"><thead><tr><th>Introduction</th><th>Doc-note</th><th>Verse</th></tr></thead><tbody><tr>
-<td class="he" dir="rtl">{intro}</td><td class="he" dir="rtl">{'<hr>'.join(bodies)}</td><td class="bcv">{'<br>'.join(html.escape(audit.ref_id(r)) for r in refs)}</td>
-</tr></tbody></table></div><p>{html.escape(case['explanation'])}</p><p class="meta">{cite}</p>{enumeration}{context_html}</article>""",
+<div class="scroll"><table class="comparison"><thead><tr><th>Introduction</th><th>Doc-note</th><th>Verse</th></tr></thead><tbody>{comparison_rows}
+</tbody></table></div><p>{html.escape(case['explanation'])}</p><p class="meta">{cite}</p>{enumeration}{context_html}</article>""",
         contexts,
     )
 
@@ -193,6 +200,9 @@ def main():
     navigation = read("navigation-cases.json")
     ketiv = read("ketiv-batch.json")
     nonketiv = read("nonketiv-batch.json")
+    other_batches = [read("ch3-pointing-batch.json"), read("ch4-pointing-batch.json")]
+    structures = read("structural-populations.json")
+    catalogue_comparison = read("catalogue-comparison.json")
     summary = read("summary.json")
     by_claim = {c["id"]: c for c in claims}
     by_note = {n["id"]: n for n in notes}
@@ -230,6 +240,43 @@ def main():
                         "batch": batch_name,
                         "status": status,
                         "evidence": by_claim[cid]["evidence"],
+                    }
+                )
+    audit.dump("claim-dispositions.json", dispositions)
+    for batch in other_batches:
+        population = [n for group in batch["dispositions"].values() for n in group]
+        a, b = batch["range"]
+        actual_population = [
+            c["line"]
+            for c in claims
+            if c["id"].startswith(batch["page"] + ":")
+            and a <= c["line"] <= b
+            and c["text"].startswith("#")
+        ]
+        if len(population) != len(set(population)) or set(population) != set(
+            actual_population
+        ):
+            raise ValueError(f"Incomplete reviewed population: {batch['page']}")
+        for status, lines in batch["dispositions"].items():
+            for line in lines:
+                cid = f"{batch['page']}:L{line}"
+                supplemental = (
+                    [
+                        r
+                        for r in structures["records"]
+                        if r["category"] == "מ:קו״כ-אם-2"
+                        and any(r["ref"] == e["ref"] for e in by_claim[cid]["evidence"])
+                    ]
+                    if status == "corroborated-structured-template-provenance"
+                    else []
+                )
+                dispositions.append(
+                    {
+                        "claim": cid,
+                        "batch": batch["page"] + "-pointing",
+                        "status": status,
+                        "evidence": by_claim[cid]["evidence"],
+                        "supplemental_template_evidence": supplemental,
                     }
                 )
     audit.dump("claim-dispositions.json", dispositions)
@@ -308,13 +355,22 @@ def main():
         "nonketiv_lines_reviewed": len(nk_ledger),
         "nonketiv_lines_total": len(nk_actual),
         "chapter5_selected_lines_reviewed": len(ledger) + len(nk_ledger),
+        "chapter3_pointing_lines_reviewed": other_batches[0]["reviewed"],
+        "chapter3_pointing_lines_total": other_batches[0]["total"],
+        "chapter4_pointing_lines_reviewed": other_batches[1]["reviewed"],
+        "chapter4_pointing_lines_total": other_batches[1]["total"],
+        "all_selected_pointing_rows_reviewed": len(dispositions),
+        "catalogue_lines_reviewed": catalogue_comparison["catalogue_lines"],
+        "catalogue_membership_matches": catalogue_comparison[
+            "matching_membership_lines"
+        ],
         "topic_routes": len(coverage),
         "unreviewed_claims_have_no_consistency_verdict": True,
     }
     audit.dump("review-counts.json", counts)
     style = """@font-face{font-family:Taamey;src:url(../woff2/Taamey_D.woff2)}
 :root{--he-size:30px;color-scheme:light}body{font:17px/1.6 Georgia,serif;color:#253442;background:#f7f7f3;margin:0}main{max-width:1180px;margin:auto;padding:28px}h1,h2,h3,summary,th,.meta,.status,label{font-family:system-ui,sans-serif}h1{font-size:28px}h2{font-size:23px;margin-top:40px}h3{font-size:19px}article{background:white;border:1px solid #dbe0db;border-radius:8px;padding:20px;margin:18px 0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.latin{font:16px/1.6 Georgia,serif;direction:ltr}.scroll{overflow-x:auto}table{border-collapse:collapse;max-width:100%;background:white}th,td{text-align:left;padding:10px 14px;border-bottom:1px solid #dde3df;vertical-align:top}.comparison td{max-width:430px}.bcv{white-space:nowrap;vertical-align:middle;font:14px/1.5 system-ui,sans-serif}.meta,small{font-size:13px;color:#526359}.status{font-size:13px;color:#49624c}a{color:#215b86}details{margin-top:12px}summary{cursor:pointer;color:#3f5545}.note-target{border-bottom:1px dashed #a1afa5;padding-bottom:8px;margin-bottom:8px}.raw{background:#f7f8f5;padding:16px}input{vertical-align:middle}hr{border:0;border-top:1px solid #dde3df}"""
-    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source snapshot <code>{chapters}</code>. {len(topics)} topic spans on 13 pages; {summary['explicit_reference_units']:,} verse-linked source units. Two chapter 5 batches reviewed {len(ledger)+len(nk_ledger)}/{len(actual)+len(nk_actual)} selected lines. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Remaining corpus/count rules are mapped but unreviewed.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
+    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source snapshot <code>{chapters}</code>. {len(topics)} topic spans on 13 pages; {summary['explicit_reference_units']:,} verse-linked source units. Pointing batches reviewed {len(dispositions)}/{len(dispositions)} selected rows; 19/19 catalogue memberships were compared. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Remaining general rules, spelling lists and complete-corpus claims are mapped but not yet fully audited.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
     output = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cached Introduction audit</title><style>'
         + style

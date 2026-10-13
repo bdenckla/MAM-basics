@@ -403,5 +403,285 @@
       }
     ],
     "raw_vs_parsed_relation": "equal after explicit MAM mark-order comparison and known line-separator serialization"
+  },
+  {
+    "case": "DAN-2-17",
+    "intro_claim": "ch4:L642",
+    "note_id": "Daniel 2:17/2/0",
+    "raw_path": "in/mam-ws/F1-Daniel.json",
+    "raw_note_body": "=ש1,ק-מ,ב1 ובדפוסים, וכמו כן בכתי\"ל בשאר המקומות{{ש}}ל!=דָּנִיֵ֖אל (חסר דגש באות יו\"ד), טעות בעקבות BHS.{{ש}}הערות דותן וברויאר",
+    "parsed_note_body": "=ש1,ק-מ,ב1 ובדפוסים, וכמו כן בכתי\"ל בשאר המקומות\nל!=דָּנִיֵ֖אל (חסר דגש באות יו\"ד), טעות בעקבות BHS.\nהערות דותן וברויאר",
+    "intro_form": "דָּֽנִיֵ֖אל",
+    "note_form": "דָּנִיֵ֖אל",
+    "intro_codepoints": [
+      {
+        "character": "ד",
+        "codepoint": "U+05D3",
+        "name": "HEBREW LETTER DALET"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ֽ",
+        "codepoint": "U+05BD",
+        "name": "HEBREW POINT METEG"
+      },
+      {
+        "character": "נ",
+        "codepoint": "U+05E0",
+        "name": "HEBREW LETTER NUN"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ֵ",
+        "codepoint": "U+05B5",
+        "name": "HEBREW POINT TSERE"
+      },
+      {
+        "character": "֖",
+        "codepoint": "U+0596",
+        "name": "HEBREW ACCENT TIPEHA"
+      },
+      {
+        "character": "א",
+        "codepoint": "U+05D0",
+        "name": "HEBREW LETTER ALEF"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      }
+    ],
+    "note_codepoints": [
+      {
+        "character": "ד",
+        "codepoint": "U+05D3",
+        "name": "HEBREW LETTER DALET"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "נ",
+        "codepoint": "U+05E0",
+        "name": "HEBREW LETTER NUN"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ֵ",
+        "codepoint": "U+05B5",
+        "name": "HEBREW POINT TSERE"
+      },
+      {
+        "character": "֖",
+        "codepoint": "U+0596",
+        "name": "HEBREW ACCENT TIPEHA"
+      },
+      {
+        "character": "א",
+        "codepoint": "U+05D0",
+        "name": "HEBREW LETTER ALEF"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      }
+    ],
+    "raw_vs_parsed_relation": "equal after explicit MAM mark-order comparison and known line-separator serialization"
+  },
+  {
+    "case": "DAN-5-7",
+    "intro_claim": "ch4:L217",
+    "note_id": "Daniel 5:7/2/1",
+    "raw_path": "in/mam-ws/F1-Daniel.json",
+    "raw_note_body": "=ב1,ק-מ,ת451 ומסורת-ל (וְהַֽמְנִוכָ֤א כתיב, וי\"ו אחרי נו\"ן במקום היו\"ד של הקרי); וכמו כן בתנ\"ך ליסבון.{{ש}}ל-כתיב=וְהַֽמְונִכָ֤א (כתיב וי\"ו אחרי מ\"ם לפני נו\"ן) וכן בקורן; וראו להלן בפסוק כ\"ט.{{ש}}הערות ברויאר והמקליד",
+    "parsed_note_body": "=ב1,ק-מ,ת451 ומסורת-ל (וְהַֽמְנִוכָ֤א כתיב, וי\"ו אחרי נו\"ן במקום היו\"ד של הקרי); וכמו כן בתנ\"ך ליסבון.\nל-כתיב=וְהַֽמְונִכָ֤א (כתיב וי\"ו אחרי מ\"ם לפני נו\"ן) וכן בקורן; וראו להלן בפסוק כ\"ט.\nהערות ברויאר והמקליד",
+    "intro_form": "וְהַֽמְונִיכָ֤א",
+    "note_form": "וְהַֽמְונִכָ֤א",
+    "intro_codepoints": [
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ֽ",
+        "codepoint": "U+05BD",
+        "name": "HEBREW POINT METEG"
+      },
+      {
+        "character": "מ",
+        "codepoint": "U+05DE",
+        "name": "HEBREW LETTER MEM"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "נ",
+        "codepoint": "U+05E0",
+        "name": "HEBREW LETTER NUN"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "כ",
+        "codepoint": "U+05DB",
+        "name": "HEBREW LETTER KAF"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "֤",
+        "codepoint": "U+05A4",
+        "name": "HEBREW ACCENT MAHAPAKH"
+      },
+      {
+        "character": "א",
+        "codepoint": "U+05D0",
+        "name": "HEBREW LETTER ALEF"
+      }
+    ],
+    "note_codepoints": [
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ֽ",
+        "codepoint": "U+05BD",
+        "name": "HEBREW POINT METEG"
+      },
+      {
+        "character": "מ",
+        "codepoint": "U+05DE",
+        "name": "HEBREW LETTER MEM"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "נ",
+        "codepoint": "U+05E0",
+        "name": "HEBREW LETTER NUN"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "כ",
+        "codepoint": "U+05DB",
+        "name": "HEBREW LETTER KAF"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "֤",
+        "codepoint": "U+05A4",
+        "name": "HEBREW ACCENT MAHAPAKH"
+      },
+      {
+        "character": "א",
+        "codepoint": "U+05D0",
+        "name": "HEBREW LETTER ALEF"
+      }
+    ],
+    "raw_vs_parsed_relation": "equal after explicit MAM mark-order comparison and known line-separator serialization"
   }
 ]

@@ -2,7 +2,7 @@
 
 import sys
 
-from intro_doc_audit import audit, proofs, review, structures
+from intro_doc_audit import audit, catalogues, proofs, review, structures
 
 
 def main():
@@ -14,10 +14,14 @@ def main():
         proofs.main()
     elif sys.argv[1:] == ["structures"]:
         structures.main()
+    elif sys.argv[1:] == ["catalogues"]:
+        catalogues.main()
     elif not sys.argv[1:]:
         audit.main()
     else:
-        raise SystemExit("Usage: main_intro_doc_audit.py [review|proofs|structures]")
+        raise SystemExit(
+            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues]"
+        )
 
 
 if __name__ == "__main__":

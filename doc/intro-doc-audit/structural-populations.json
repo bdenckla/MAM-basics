@@ -2,6 +2,7 @@
   "projection": "Existing edition_projection: qere, primary stress, qamats ד, combined cantillation; note target only. Structure counted before selecting its child. No note-body recursion and no all-parameters fallback.",
   "verses_scanned": 23202,
   "instances": {
+    "מ:קו״כ-אם-2": 149,
     "k1q2-sr-kqq": 13,
     "k2q1": 8,
     "קרי ולא כתיב": 9,
@@ -16,6 +17,7 @@
     "k1q2-sr-bcom": 1
   },
   "distinct_verses": {
+    "מ:קו״כ-אם-2": 134,
     "k1q2-sr-kqq": 13,
     "k2q1": 8,
     "קרי ולא כתיב": 9,
@@ -31,6 +33,34 @@
   },
   "records": [
     {
+      "ref": "Genesis 13:3",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/13/3/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": {
+            "tmpl_name": "מ:קמץ",
+            "tmpl_params": {
+              "ד": "אׇֽהֳלֹה֙",
+              "ס": "אָֽהֳלֹה֙"
+            }
+          },
+          "2": "אהלה",
+          "3": {
+            "tmpl_name": "מ:קמץ",
+            "tmpl_params": {
+              "ד": "אׇֽהֳלֹוֹ֙",
+              "ס": "אָֽהֳלֹוֹ֙"
+            }
+          },
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
       "ref": "Genesis 30:11",
       "path": "MAM-parsed/plus/A1-Genesis.json",
       "json_pointer": "/book39s/0/chapters/30/11/2/1",
@@ -41,6 +71,54 @@
           "1": "בגד",
           "2": "בָּ֣א גָ֑ד",
           "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Genesis 49:10",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/49/10/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "שִׁילֹ֔ה",
+          "2": "שילה",
+          "3": "שִׁיל֔וֹ",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Genesis 49:11",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/49/11/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עִירֹ֔ה",
+          "2": "עירה",
+          "3": "עִיר֔וֹ",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Genesis 49:11",
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "json_pointer": "/book39s/0/chapters/49/11/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "סוּתֹֽה",
+          "2": "סותה",
+          "3": "סוּתֽוֹ",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
         }
       }
     },
@@ -59,6 +137,422 @@
       }
     },
     {
+      "ref": "Exodus 22:4",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/22/4/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּעִירֹ֔ה",
+          "2": "בעירה",
+          "3": "בְּעִיר֔וֹ",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Exodus 22:26",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/22/26/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כְסוּתֹה֙",
+          "2": "כסותה",
+          "3": "כְסוּתוֹ֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Exodus 27:11",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/27/11/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְעַמֻּדָ֣ו",
+          "2": "ועמדו",
+          "3": "וְעַמֻּדָ֣יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Exodus 28:28",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/28/28/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מִֽטַּבְּעֹתָ֞ו",
+          "2": "מטבעתו",
+          "3": "מִטַּבְּעֹתָ֞יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Exodus 32:19",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/32/19/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מִיָּדָו֙",
+          "2": "מידו",
+          "3": "מִיָּדָיו֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Exodus 39:33",
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "json_pointer": "/book39s/0/chapters/39/33/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּרִיחָ֖ו",
+          "2": "בריחו",
+          "3": "בְּרִיחָ֖יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Levit 9:22",
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "json_pointer": "/book39s/0/chapters/9/22/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "יָדָ֛ו",
+          "2": "ידו",
+          "3": "יָדָ֛יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Levit 16:21",
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "json_pointer": "/book39s/0/chapters/16/21/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "יָדָ֗ו",
+          "2": "ידו",
+          "3": "יָדָ֗יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Numbers 12:3",
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "json_pointer": "/book39s/0/chapters/12/3/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עָנָ֣ו",
+          "2": "ענו",
+          "3": "עָנָ֣יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 2:33",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/2/33/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בָּנָ֖ו",
+          "2": "בנו",
+          "3": "בָּנָ֖יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 7:9",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/7/9/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מִצְוֺתָ֖ו",
+          "2": "מצותו",
+          "3": "מִצְוֺתָ֖יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 8:2",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/8/2/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מִצְוֺתָ֖ו",
+          "2": "מצותו",
+          "3": "מִצְוֺתָ֖יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 13:16",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/13/16/2/3/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַהִ֖וא",
+          "2": "ההוא",
+          "3": "הַהִ֖יא",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב הוא קרי היא"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:15",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/15/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֖",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָ֖ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:15",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/15/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֛",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָ֛ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:16",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/16/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֖",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָ֖ה",
+          "מקורות": "ל1-קרי,ק3-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:20",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/20/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "לַֽנַּעֲרָֽ",
+          "2": "לנער",
+          "3": "לַֽנַּעֲרָֽה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:21",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/21/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֜",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָ֜ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:23",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/23/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "נַעֲרָ֣",
+          "2": "נער",
+          "3": "נַעֲרָ֣ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:24",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/24/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֗",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָ֗ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:25",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/25/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֙",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָה֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:26",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/26/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְלַֽנַּעֲרָ֙",
+          "2": "ולנער",
+          "3": "וְלַֽנַּעֲרָה֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:26",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/26/2/2",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "לַֽנַּעֲרָ֖",
+          "2": "לנער",
+          "3": "לַֽנַּעֲרָ֖ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:27",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/27/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֙",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָה֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:28",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/28/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "נַעֲרָ֤",
+          "2": "נער",
+          "3": "נַעֲרָ֤ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 22:29",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/22/29/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַֽנַּעֲרָ֖",
+          "2": "הנער",
+          "3": "הַֽנַּעֲרָ֖ה",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב נער קרי נערה"
+        }
+      }
+    },
+    {
       "ref": "Deuter 33:2",
       "path": "MAM-parsed/plus/A5-Deuter.json",
       "json_pointer": "/book39s/0/chapters/33/2/2/3",
@@ -69,6 +563,69 @@
           "1": "אשדת",
           "2": "אֵ֥שׁ דָּ֖ת",
           "סוג": "כו\"ק כתיב מילה חדה וקרי תרתין מילין"
+        }
+      }
+    },
+    {
+      "ref": "Deuter 33:9",
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "json_pointer": "/book39s/0/chapters/33/9/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בָּנָ֖ו",
+          "2": "בנו",
+          "3": "בָּנָ֖יו",
+          "מקורות": "א-קרי,ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Joshua 3:4",
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "json_pointer": "/book39s/0/chapters/3/4/2/3/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וּבֵנָ֔יו",
+          "2": "ובניו",
+          "3": "וּבֵינָ֔יו",
+          "מקורות": "ל-קרי"
+        }
+      }
+    },
+    {
+      "ref": "Joshua 8:11",
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "json_pointer": "/book39s/0/chapters/8/11/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בֵּינָ֥ו",
+          "2": "בינו",
+          "3": "בֵּינָ֥יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Joshua 16:3",
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "json_pointer": "/book39s/0/chapters/16/3/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "תֹצְאֹתָ֖ו",
+          "2": "תצאתו",
+          "3": "תֹצְאֹתָ֖יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       }
     },
@@ -100,6 +657,70 @@
       }
     },
     {
+      "ref": "1Samuel 2:10",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/2/10/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מְרִיבָ֗ו",
+          "2": "מריבו",
+          "3": "מְרִיבָ֗יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 2:10",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/2/10/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עָלָו֙",
+          "2": "עלו",
+          "3": "עָלָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 3:2",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/3/2/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְעֵינָו֙",
+          "2": "ועינו",
+          "3": "וְעֵינָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 3:18",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/3/18/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּעֵינָ֖ו",
+          "2": "בעינו",
+          "3": "בְּעֵינָ֖יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "1Samuel 9:1",
       "path": "MAM-parsed/plus/BA-Samuel.json",
       "json_pointer": "/book39s/0/chapters/9/1/2/1",
@@ -110,6 +731,54 @@
           "1": "מבן ימין",
           "2": "מִבִּנְיָמִ֗ין",
           "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 10:21",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/10/21/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "לְמִשְׁפְּחֹתָ֔ו",
+          "2": "למשפחתו",
+          "3": "לְמִשְׁפְּחֹתָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 18:7",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/18/7/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בַּאֲלָפָ֔ו",
+          "2": "באלפו",
+          "3": "בַּאֲלָפָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 18:14",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/18/14/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "דְּרָכָ֖ו",
+          "2": "דרכו",
+          "3": "דְּרָכָ֖יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       }
     },
@@ -128,6 +797,54 @@
       }
     },
     {
+      "ref": "1Samuel 21:12",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/21/12/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בַּאֲלָפָ֔ו",
+          "2": "באלפו",
+          "3": "בַּאֲלָפָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 21:12",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/21/12/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּרִבְבֹתָֽו",
+          "2": "ברבבתו",
+          "3": "בְּרִבְבֹתָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 23:5",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/23/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וַאֲנָשָׁ֨ו",
+          "2": "ואנשו",
+          "3": "וַאֲנָשָׁ֨יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "1Samuel 24:8",
       "path": "MAM-parsed/plus/BA-Samuel.json",
       "json_pointer": "/book39s/0/chapters/24/8/2/1",
@@ -138,6 +855,118 @@
           "1": "מן המערה",
           "2": "מֵֽהַמְּעָרָ֔ה",
           "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 26:5",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/26/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "סְבִיבֹתָֽו",
+          "2": "סביבתו",
+          "3": "סְבִיבֹתָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 26:7",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/26/7/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מְרַֽאֲשֹׁתָ֑ו",
+          "2": "מראשתו",
+          "3": "מְרַֽאֲשֹׁתָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 26:7",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/26/7/2/5",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "סְבִיבֹתָֽו",
+          "2": "סביבתו",
+          "3": "סְבִיבֹתָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 26:11",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/26/11/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מְרַאֲשֹׁתָ֛ו",
+          "2": "מראשתו",
+          "3": "מְרַאֲשֹׁתָ֛יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 26:16",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/26/16/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מְרַאֲשֹׁתָֽו",
+          "2": "מראשתו",
+          "3": "מְרַאֲשֹׁתָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Samuel 29:5",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/0/chapters/29/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּרִבְבֹתָֽו",
+          "2": "ברבבתו",
+          "3": "בְּרִבְבֹתָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 2:23",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/2/23/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "תַּחְתָּ֑ו",
+          "2": "תחתו",
+          "3": "תַּחְתָּ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       }
     },
@@ -170,6 +999,54 @@
       }
     },
     {
+      "ref": "2Samuel 11:24",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/11/24/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וַיֹּר֨אֿוּ",
+          "2": "ויראו",
+          "3": "וַיֹּר֨וּ",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 11:24",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/11/24/2/2",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַמּוֹרִ֤אֿים",
+          "2": "המוראים",
+          "3": "הַמּוֹרִ֤ים",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 12:20",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/12/20/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "שִׂמְלֹתָ֔ו",
+          "2": "שמלתו",
+          "3": "שִׂמְלֹתָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "2Samuel 13:33",
       "path": "MAM-parsed/plus/BA-Samuel.json",
       "json_pointer": "/book39s/1/chapters/13/33/2/1",
@@ -180,6 +1057,22 @@
           "1": "(אם)־",
           "2": "אם",
           "3": "־"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 13:34",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/13/34/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עֵינָ֔ו",
+          "2": "עינו",
+          "3": "עֵינָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       }
     },
@@ -223,6 +1116,38 @@
       }
     },
     {
+      "ref": "2Samuel 19:19",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/19/19/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּעֵינָ֑ו",
+          "2": "בעינו",
+          "3": "בְּעֵינָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 20:8",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/20/8/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְעָלָ֞ו",
+          "2": "ועלו",
+          "3": "וְעָלָ֞יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "2Samuel 21:12",
       "path": "MAM-parsed/plus/BA-Samuel.json",
       "json_pointer": "/book39s/1/chapters/21/12/2/1/tmpl_params/1",
@@ -233,6 +1158,70 @@
           "1": "תלום שם הפלשתים",
           "2": "תְּלָא֥וּם שָׁ֙מָּה֙ פְּלִשְׁתִּ֔ים",
           "סוג": "כו\"ק של שלוש מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 22:23",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/22/23/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מִשְׁפָּטָ֖ו",
+          "2": "משפטו",
+          "3": "מִשְׁפָּטָ֖יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 23:9",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/23/9/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְאַחֲרָ֛ו",
+          "2": "ואחרו",
+          "3": "וְאַחֲרָ֛יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "2Samuel 24:22",
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "json_pointer": "/book39s/1/chapters/24/22/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּעֵינָ֑ו",
+          "2": "בעינו",
+          "3": "בְּעֵינָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "1Kings 10:5",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/0/chapters/10/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מְשָׁרְתָ֜ו",
+          "2": "משרתו",
+          "3": "מְשָׁרְתָ֜יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       }
     },
@@ -251,6 +1240,38 @@
       }
     },
     {
+      "ref": "1Kings 18:42",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/0/chapters/18/42/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בִּרְכָּֽו",
+          "2": "ברכו",
+          "3": "בִּרְכָּֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 5:9",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/5/9/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּסוּסָ֣ו",
+          "2": "בסוסו",
+          "3": "בְּסוּסָ֣יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "2Kings 5:18",
       "path": "MAM-parsed/plus/BC-Kings.json",
       "json_pointer": "/book39s/1/chapters/5/18/2/3/tmpl_params/1/1",
@@ -265,6 +1286,38 @@
       }
     },
     {
+      "ref": "2Kings 11:18",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/11/18/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מִזְבְּחֹתָ֤ו",
+          "2": "מזבחתו",
+          "3": "מִזְבְּחֹתָ֤יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 14:12",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/14/12/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "לְאֹהָלָֽו",
+          "2": "לאהלו",
+          "3": "לְאֹהָלָֽיו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "2Kings 18:27",
       "path": "MAM-parsed/plus/BC-Kings.json",
       "json_pointer": "/book39s/1/chapters/18/27/2/5/tmpl_params/1",
@@ -275,6 +1328,22 @@
           "1": "שניהם",
           "2": "מֵימֵ֥י רַגְלֵיהֶ֖ם",
           "סוג": "קו\"כ קרי שונה מהכתיב בשתי מילים"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 19:23",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/19/23/2/5",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "קִצֹּ֔ה",
+          "2": "קצה",
+          "3": "קִצּ֔וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
         }
       }
     },
@@ -301,6 +1370,22 @@
         "tmpl_params": {
           "1": "[בָּנָיו֙]",
           "2": "בָּנָיו֙"
+        }
+      }
+    },
+    {
+      "ref": "2Kings 20:13",
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "json_pointer": "/book39s/1/chapters/20/13/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "נְכֹתֹ֡ה",
+          "2": "נכתה",
+          "3": "נְכֹת֡וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
         }
       }
     },
@@ -361,6 +1446,22 @@
       }
     },
     {
+      "ref": "Isaiah 39:2",
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "json_pointer": "/book39s/0/chapters/39/2/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "נְכֹתֹ֡ה",
+          "2": "נכתה",
+          "3": "נְכֹת֡וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
       "ref": "Isaiah 44:24",
       "path": "MAM-parsed/plus/C1-Isaiah.json",
       "json_pointer": "/book39s/0/chapters/44/24/2/1/tmpl_params/1",
@@ -371,6 +1472,21 @@
           "1": "מי אתי",
           "2": "מֵאִתִּֽי",
           "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 2:3",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/2/3/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "תְּבוּאָתֹ֑ה",
+          "2": "תבואתה",
+          "3": "תְּבוּאָת֑וֹ",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
         }
       }
     },
@@ -389,6 +1505,22 @@
       }
     },
     {
+      "ref": "Jeremiah 8:10",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/8/10/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כֻּלֹּ֖ה",
+          "2": "כלה",
+          "3": "כֻּלּ֖וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
       "ref": "Jeremiah 14:14",
       "path": "MAM-parsed/plus/C2-Jeremiah.json",
       "json_pointer": "/book39s/0/chapters/14/14/2/1/tmpl_params/1",
@@ -399,6 +1531,38 @@
           "1": "ואלול ותרמות",
           "2": "וֶאֱלִיל֙ וְתַרְמִ֣ית",
           "סוג": "כו\"ק של שתי מילים בהערה אחת"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 15:8",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/15/8/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "אַלְמְנוֹתָו֙",
+          "2": "אלמנותו",
+          "3": "אַלְמְנוֹתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 17:24",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/17/24/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בֹּ֖ה",
+          "2": "בה",
+          "3": "בּ֖וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
         }
       }
     },
@@ -426,6 +1590,37 @@
         "tmpl_params": {
           "1": "[בָּאִ֖ים]",
           "2": "בָּאִ֖ים"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 32:4",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/32/4/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עֵינָ֥ו",
+          "2": "עינו",
+          "3": "עֵינָ֥יו",
+          "מקורות": "א-קרי,ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Jeremiah 32:35",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/32/35/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַחֲטִ֥י",
+          "2": "החטי",
+          "3": "הַחֲטִ֥יא",
+          "מקורות": "ל-קרי"
         }
       }
     },
@@ -502,6 +1697,37 @@
       }
     },
     {
+      "ref": "Jeremiah 51:9",
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "json_pointer": "/book39s/0/chapters/51/9/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "רִפִּ֤אֿנוּ",
+          "2": "רפאנו",
+          "3": "רִפִּ֤ינוּ",
+          "מקורות": "ל-קרי"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 3:20",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/3/20/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "צִדְקֹתָו֙",
+          "2": "צדקתו",
+          "3": "צִדְקֹתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Ezekiel 8:6",
       "path": "MAM-parsed/plus/C3-Ezekiel.json",
       "json_pointer": "/book39s/0/chapters/8/6/2/1",
@@ -530,6 +1756,389 @@
       }
     },
     {
+      "ref": "Ezekiel 12:14",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/12/14/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עֶזְרֹ֛ה",
+          "2": "עזרה",
+          "3": "עֶזְר֛וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 18:21",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/18/21/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חַטֹּאתָו֙",
+          "2": "חטאתו",
+          "3": "חַטֹּאתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 18:24",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/18/24/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "צִדְקֹתָ֤ו",
+          "2": "צדקתו",
+          "3": "צִדְקֹתָ֤יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 20:40",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/20/40/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כֻּלֹּ֖ה",
+          "2": "כלה",
+          "3": "כֻּלּ֖וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 27:6",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/27/6/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כִּתִּיִּֽם",
+          "2": "כתים",
+          "3": "כִּתִּיִּֽים",
+          "מקורות": "א-קרי"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 31:5",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/31/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "פֹארֹתָ֛ו",
+          "2": "פארתו",
+          "3": "פֹארֹתָ֛יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 33:13",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/33/13/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "צִדְקֹתָו֙",
+          "2": "צדקתו",
+          "3": "צִדְקֹתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 33:16",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/33/16/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חַטֹּאתָו֙",
+          "2": "חטאתו",
+          "3": "חַטֹּאתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 36:10",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/36/10/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כֻּלֹּ֑ה",
+          "2": "כלה",
+          "3": "כֻּלּ֑וֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 37:16",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/37/16/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חֲבֵרָ֑ו",
+          "2": "חברו",
+          "3": "חֲבֵרָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 37:16",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/37/16/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חֲבֵרָֽו",
+          "2": "חברו",
+          "3": "חֲבֵרָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 37:19",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/37/19/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חֲבֵרָ֑ו",
+          "2": "חברו",
+          "3": "חֲבֵרָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:6",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/6/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּמַעֲלוֹתָ֑ו",
+          "2": "במעלותו",
+          "3": "בְּמַעֲלוֹתָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:9",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/9/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְאֵילָ֖ו",
+          "2": "ואילו",
+          "3": "וְאֵילָ֖יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:21",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/21/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְאֵֽלַמָּו֙",
+          "2": "ואלמו",
+          "3": "וְאֵֽלַמָּיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:22",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/22/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְחַלּוֹנָ֤ו",
+          "2": "וחלונו",
+          "3": "וְחַלּוֹנָ֤יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:22",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/22/2/2",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְתִ֣ימֹרָ֔ו",
+          "2": "ותימרו",
+          "3": "וְתִ֣ימֹרָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:24",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/24/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "אֵילָו֙",
+          "2": "אילו",
+          "3": "אֵילָיו֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:24",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/24/2/3/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְאֵ֣ילַמָּ֔ו",
+          "2": "ואילמו",
+          "3": "וְאֵ֣ילַמָּ֔יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:25",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/25/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וּלְאֵֽילַמָּו֙",
+          "2": "ולאילמו",
+          "3": "וּלְאֵֽילַמָּיו֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:26",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/26/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עֹֽלוֹתָ֔ו",
+          "2": "עלותו",
+          "3": "עֹֽלוֹתָ֔יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:26",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/26/2/3/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְאֵלַמָּ֖ו",
+          "2": "ואלמו",
+          "3": "וְאֵלַמָּ֖יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:31",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/31/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מַעֲלָֽו",
+          "2": "מעלו",
+          "3": "מַעֲלָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 40:37",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/40/37/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מַעֲלָֽו",
+          "2": "מעלו",
+          "3": "מַעֲלָֽיו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Ezekiel 42:9",
       "path": "MAM-parsed/plus/C3-Ezekiel.json",
       "json_pointer": "/book39s/0/chapters/42/9/2/0",
@@ -544,6 +2153,134 @@
       }
     },
     {
+      "ref": "Ezekiel 43:11",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/43/11/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "צוּרֹתָ֡ו",
+          "2": "צורתו",
+          "3": "צוּרֹתָ֡יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 43:11",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/43/11/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "צ֨וּרֹתָ֤ו",
+          "2": "צורתו",
+          "3": "צ֨וּרֹתָ֤יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 43:11",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/43/11/2/5",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "תּֽוֹרֹתָו֙",
+          "2": "תורתו",
+          "3": "תּֽוֹרֹתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 43:26",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/43/26/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "יָדָֽו",
+          "2": "ידו",
+          "3": "יָדָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 44:5",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/44/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "תּוֹרֹתָ֑ו",
+          "2": "תורתו",
+          "3": "תּוֹרֹתָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 47:8",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/47/8/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְנִרְפּ֥אֿוּ",
+          "2": "ונרפאו",
+          "3": "וְנִרְפּ֥וּ",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 47:11",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/47/11/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בִּצֹּאתָ֧ו",
+          "2": "בצאתו",
+          "3": "בִּצֹּאתָ֧יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 48:15",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/15/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּתוֹכֹֽה",
+          "2": "בתוכה",
+          "3": "בְּתוֹכֽוֹ",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
       "ref": "Ezekiel 48:16",
       "path": "MAM-parsed/plus/C3-Ezekiel.json",
       "json_pointer": "/book39s/0/chapters/48/16/2/1",
@@ -553,6 +2290,86 @@
         "tmpl_params": {
           "1": "(חמש)",
           "2": "חמש"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 48:18",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/18/2/3/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "תְבֽוּאָתֹה֙",
+          "2": "תבואתה",
+          "3": "תְבֽוּאָתוֹ֙",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Ezekiel 48:21",
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "json_pointer": "/book39s/0/chapters/48/21/2/7",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּתוֹכֹֽה",
+          "2": "בתוכה",
+          "3": "בְּתוֹכֽוֹ",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Amos 9:6",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/2/chapters/9/6/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מַעֲלוֹתָ֔ו",
+          "2": "מעלותו",
+          "3": "מַעֲלוֹתָ֔יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Obadiah 1:11",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/3/chapters/1/11/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "שְׁעָרָ֗ו",
+          "2": "שערו",
+          "3": "שְׁעָרָ֗יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Habakkuk 3:14",
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "json_pointer": "/book39s/7/chapters/3/14/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "פְּרָזָ֔ו",
+          "2": "פרזו",
+          "3": "פְּרָזָ֔יו",
+          "מקורות": "א-קרי,ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
         }
       }
     },
@@ -638,6 +2455,32 @@
       }
     },
     {
+      "ref": "Psalms 10:5",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/10/5/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": [
+            "דְרָכָ֨ו",
+            {
+              "tmpl_name": "מ:לגרמיה-2"
+            }
+          ],
+          "2": "דרכו",
+          "3": [
+            "דְרָכָ֨יו",
+            {
+              "tmpl_name": "מ:לגרמיה-2"
+            }
+          ],
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Psalms 10:10",
       "path": "MAM-parsed/plus/D1-Psalms.json",
       "json_pointer": "/book39s/0/chapters/10/10/2/4",
@@ -703,6 +2546,21 @@
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 18:51",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/18/51/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מַגְדִּל֮",
+          "2": "מגדל",
+          "3": "מַגְדִּיל֮",
+          "מקורות": "ל-קרי"
+        }
       }
     },
     {
@@ -959,6 +2817,22 @@
       }
     },
     {
+      "ref": "Psalms 58:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/58/8/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חִ֝צָּ֗ו",
+          "2": "חצו",
+          "3": "חִ֝צָּ֗יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Psalms 60:2",
       "path": "MAM-parsed/plus/D1-Psalms.json",
       "json_pointer": "/book39s/0/chapters/60/2/2/4",
@@ -1112,6 +2986,21 @@
       }
     },
     {
+      "ref": "Psalms 90:8",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/90/8/2/0/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "שַׁתָּ֣",
+          "2": "שת",
+          "3": "שַׁתָּ֣ה",
+          "מקורות": "א-קרי,ל-קרי"
+        }
+      }
+    },
+    {
       "ref": "Psalms 95:7",
       "path": "MAM-parsed/plus/D1-Psalms.json",
       "json_pointer": "/book39s/0/chapters/95/7/2/1",
@@ -1166,12 +3055,44 @@
       }
     },
     {
+      "ref": "Psalms 105:40",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/105/40/2/2",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "שְׂלָ֑ו",
+          "2": "שלו",
+          "3": "שְׂלָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Psalms 106:1",
       "path": "MAM-parsed/plus/D1-Psalms.json",
       "json_pointer": "/book39s/0/chapters/106/1/2/0/tmpl_params/1/1",
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 106:45",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/106/45/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חֲסָדָֽו",
+          "2": "חסדו",
+          "3": "חֲסָדָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1306,6 +3227,22 @@
       }
     },
     {
+      "ref": "Psalms 147:19",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/147/19/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "דְּבָרָ֣ו",
+          "2": "דברו",
+          "3": "דְּבָרָ֣יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Psalms 147:20",
       "path": "MAM-parsed/plus/D1-Psalms.json",
       "json_pointer": "/book39s/0/chapters/147/20/2/1",
@@ -1321,6 +3258,22 @@
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Psalms 148:2",
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "json_pointer": "/book39s/0/chapters/148/2/2/4",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "צְבָאָֽו",
+          "2": "צבאו",
+          "3": "צְבָאָֽיו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1366,6 +3319,50 @@
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 6:13",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/13/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "בְּ֭עֵינָו",
+              "2": "בְּ֭עֵינָ֭ו"
+            }
+          },
+          "2": "בעינו",
+          "3": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "בְּ֭עֵינָיו",
+              "2": "בְּ֭עֵינָ֭יו"
+            }
+          },
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Proverbs 6:13",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/6/13/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּרַגְלָ֑ו",
+          "2": "ברגלו",
+          "3": "בְּרַגְלָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1428,6 +3425,22 @@
       }
     },
     {
+      "ref": "Proverbs 22:25",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/22/25/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "אֹרְחֹתָ֑ו",
+          "2": "ארחתו",
+          "3": "אֹרְחֹתָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Proverbs 23:5",
       "path": "MAM-parsed/plus/D2-Proverbs.json",
       "json_pointer": "/book39s/0/chapters/23/5/2/1",
@@ -1443,6 +3456,34 @@
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Proverbs 26:24",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/26/24/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "בִּ֭שְׂפָתָו",
+              "2": "בִּ֭שְׂפָתָ֭ו"
+            }
+          },
+          "2": "בשפתו",
+          "3": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "בִּ֭שְׂפָתָיו",
+              "2": "בִּ֭שְׂפָתָ֭יו"
+            }
+          },
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1491,12 +3532,44 @@
       }
     },
     {
+      "ref": "Proverbs 30:10",
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "json_pointer": "/book39s/0/chapters/30/10/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "אֲדֹנָ֑ו",
+          "2": "אדנו",
+          "3": "אֲדֹנָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Job 3:4",
       "path": "MAM-parsed/plus/D3-Job.json",
       "json_pointer": "/book39s/0/chapters/3/4/2/1",
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 5:18",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/5/18/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְיָדָ֥ו",
+          "2": "וידו",
+          "3": "וְיָדָ֥יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1545,6 +3618,38 @@
       }
     },
     {
+      "ref": "Job 20:11",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/20/11/2/2",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עֲלוּמָ֑ו",
+          "2": "עלומו",
+          "3": "עֲלוּמָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Job 21:20",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/21/20/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "עֵינָ֣ו",
+          "2": "עינו",
+          "3": "עֵינָ֣יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Job 21:33",
       "path": "MAM-parsed/plus/D3-Job.json",
       "json_pointer": "/book39s/0/chapters/21/33/2/3",
@@ -1560,6 +3665,22 @@
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 24:1",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/24/1/2/4",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וְ֝יֹדְעָ֗ו",
+          "2": "וידעו",
+          "3": "וְ֝יֹדְעָ֗יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1581,12 +3702,72 @@
       }
     },
     {
+      "ref": "Job 26:14",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/26/14/2/9",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "גְּ֝בוּרֹתָ֗ו",
+          "2": "גבורתו",
+          "3": "גְּ֝בוּרֹתָ֗יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Job 27:15",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/27/15/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "שְׂ֭רִידָו",
+              "2": "שְׂ֭רִידָ֭ו"
+            }
+          },
+          "2": "שרידו",
+          "3": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "שְׂ֭רִידָיו",
+              "2": "שְׂ֭רִידָ֭יו"
+            }
+          },
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Job 31:7",
       "path": "MAM-parsed/plus/D3-Job.json",
       "json_pointer": "/book39s/0/chapters/31/7/2/1",
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 31:20",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/31/20/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חֲלָצָ֑ו",
+          "2": "חלצו",
+          "3": "חֲלָצָ֑יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1635,6 +3816,22 @@
       }
     },
     {
+      "ref": "Job 37:12",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/37/12/2/4",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "בְּתַחְבּוּלֹתָ֣ו",
+          "2": "בתחבולתו",
+          "3": "בְּתַחְבּוּלֹתָ֣יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Job 37:21",
       "path": "MAM-parsed/plus/D3-Job.json",
       "json_pointer": "/book39s/0/chapters/37/21/2/3",
@@ -1678,6 +3875,50 @@
       }
     },
     {
+      "ref": "Job 38:41",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/38/41/2/5",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "יְ֭לָדָו",
+              "2": "יְ֭לָדָ֭ו"
+            }
+          },
+          "2": "ילדו",
+          "3": {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "יְ֭לָדָיו",
+              "2": "יְ֭לָדָ֭יו"
+            }
+          },
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Job 39:26",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/39/26/2/4",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כְּנָפָ֣ו",
+          "2": "כנפו",
+          "3": "כְּנָפָ֣יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Job 40:6",
       "path": "MAM-parsed/plus/D3-Job.json",
       "json_pointer": "/book39s/0/chapters/40/6/2/3",
@@ -1704,6 +3945,22 @@
       "category": "מ:מקף אפור",
       "node": {
         "tmpl_name": "מ:מקף אפור"
+      }
+    },
+    {
+      "ref": "Job 40:17",
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "json_pointer": "/book39s/0/chapters/40/17/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "פַחֲדָ֣ו",
+          "2": "פחדו",
+          "3": "פַחֲדָ֣יו",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
       }
     },
     {
@@ -1742,6 +3999,22 @@
       }
     },
     {
+      "ref": "Ruth 3:14",
+      "path": "MAM-parsed/plus/E2-Ruth.json",
+      "json_pointer": "/book39s/0/chapters/3/14/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מַרְגְּלוֹתָו֙",
+          "2": "מרגלותו",
+          "3": "מַרְגְּלוֹתָיו֙",
+          "מקורות": "א-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Ruth 3:17",
       "path": "MAM-parsed/plus/E2-Ruth.json",
       "json_pointer": "/book39s/0/chapters/3/17/2/1/tmpl_params/1",
@@ -1769,6 +4042,22 @@
       }
     },
     {
+      "ref": "Lamentations 3:39",
+      "path": "MAM-parsed/plus/E3-Lamentations.json",
+      "json_pointer": "/book39s/0/chapters/3/39/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חֲטָאָֽו",
+          "2": "חטאו",
+          "3": "חֲטָאָֽיו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
       "ref": "Lamentations 4:3",
       "path": "MAM-parsed/plus/E3-Lamentations.json",
       "json_pointer": "/book39s/0/chapters/4/3/2/3/tmpl_params/1",
@@ -1779,6 +4068,163 @@
           "1": "כי ענים",
           "2": "כַּיְעֵנִ֖ים",
           "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+        }
+      }
+    },
+    {
+      "ref": "Ecclesiastes 5:17",
+      "path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+      "json_pointer": "/book39s/0/chapters/5/17/2/5",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "חַיָּ֛ו",
+          "2": "חיו",
+          "3": "חַיָּ֛יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Ecclesiastes 10:10",
+      "path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+      "json_pointer": "/book39s/0/chapters/10/10/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "הַכְשֵׁ֖יר",
+          "2": "הכשיר",
+          "3": "הַכְשֵׁ֖ר"
+        }
+      }
+    },
+    {
+      "ref": "Daniel 1:4",
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "json_pointer": "/book39s/0/chapters/1/4/2/1/tmpl_params/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מאֿוּם֩",
+          "2": "מאום",
+          "3": "מוּם֩",
+          "מקורות": "ל-קרי,ק13-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "Daniel 4:16",
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "json_pointer": "/book39s/0/chapters/4/16/2/5",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מָרִ֕אי",
+          "2": "מראי",
+          "3": "מָרִ֕י",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "Daniel 4:21",
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "json_pointer": "/book39s/0/chapters/4/21/2/3/tmpl_params/1/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מָרִ֥אי",
+          "2": "מראי",
+          "3": "מָרִ֥י",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "Daniel 11:10",
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "json_pointer": "/book39s/0/chapters/11/10/2/0",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "וּבָנָ֣ו",
+          "2": "ובנו",
+          "3": "וּבָנָ֣יו",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב חסר יו\"ד בסיומת של קמץ ואחריו וי\"ו"
+        }
+      }
+    },
+    {
+      "ref": "Daniel 11:10",
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "json_pointer": "/book39s/0/chapters/11/10/2/4",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "מָעֻזֹּֽה",
+          "2": "מעזה",
+          "3": "מָעֻזּֽוֹ",
+          "מקורות": "ל-קרי",
+          "סוג": "כתיב ה\"א בסיומת של חולם"
+        }
+      }
+    },
+    {
+      "ref": "Ezra 5:1",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/0/chapters/5/1/2/3",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "נְבִיַּאיָּ֔א",
+          "2": "נביאיא",
+          "3": "נְבִיַּיָּ֔א",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "Ezra 5:2",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/0/chapters/5/2/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "נְבִיַּאיָּ֥א",
+          "2": "נביאיא",
+          "3": "נְבִיַּיָּ֥א",
+          "מקורות": "ל-קרי",
+          "סוג": "אל\"ף נחה באמצע תיבה ולא נקראת"
+        }
+      }
+    },
+    {
+      "ref": "Nehemiah 1:1",
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "json_pointer": "/book39s/1/chapters/1/1/2/1",
+      "category": "מ:קו״כ-אם-2",
+      "node": {
+        "tmpl_name": "מ:קו״כ-אם-2",
+        "tmpl_params": {
+          "1": "כִּסְלֵו֙",
+          "2": "כסלו",
+          "3": "כִּסְלֵיו֙",
+          "מקורות": "ל-קרי"
         }
       }
     },
