@@ -491,13 +491,27 @@ catalog's "fol." locators.
 Use “ungrammatical verse” as the umbrella while preserving the distinct `error`, `no_parse`,
 and `illegal_mark` statuses. Existing oddball identifiers remain compatibility identifiers.
 
-## Plurals of romanized Hebrew letter and mark names
+## Plurals of romanized Hebrew words
 
-Do not pluralize romanized Hebrew letter or mark names with English suffixes or Hebrew plural
-endings. Pluralize an English noun instead: "three alef letters", "two meteg marks", "two tsinnor
-marks".
+Do not pluralize romanized Hebrew words with English suffixes or Hebrew plural endings in
+authored prose. Pluralize a context-specific English noun instead: "three alef letters",
+"two meteg marks", "two tsinnor marks", "pointed ketiv forms", "two qere readings", or
+"aliyah portions". The noun must fit the sentence; a lint's default suggestion does not
+settle whether the context calls for forms, readings, words, notes, sections, or another noun.
+Preserve literal quotations, source titles, technical identifiers and data strings. Ordinary
+English words and names are not subject to a blanket suffix replacement. Repository-specific
+exceptions, including MAM-basics' entire Yeivin ITM adaptation, remain in force.
+
+Ben's choice, 2026-10-13: use `parashot`, rather than `parashiyot`, when using the Hebrew plural
+in our own prose. This accepted plural is an exception to the general English-noun preference.
+Quotations and adaptations preserve whichever form they use.
 
 ## Transliteration (accgram)
+
+Ben's rendered-prose choices, 2026-10-13: use `qere`, `aliyah`, `parashah`, and `masorah`,
+rather than `qeri`, `aliya`, `parasha`, and `masora`, in our own prose. Retain literal source
+wording, external work titles, technical identifiers and the repository's adaptation exceptions.
+This choice does not start a sweep of other transliteration variants.
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 

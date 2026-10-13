@@ -84,7 +84,9 @@ def gen_html_file(tdm_ch):
         author.para(_PARA_056),
         author.para(_PARA_057),
         author.para(_PARA_058),
-        author.para(_PARA_059),
+        author.para(
+            _PARA_059, {"data-hebrew-plural-ok": "BHS apparatus transcription"}
+        ),
         author.para(_PARA_060),
         author.unordered_list(_LIST_061),
         author.para(_PARA_062),
@@ -530,11 +532,15 @@ _PARA_058 = [
     "𝔖𝔙",
 ]
 _PARA_059 = "15:21 אם: sic L; > pauci Mss cf 𝔊𝔖𝔙; permulti Mss ut Ketib"
-_PARA_060 = """Ignoring “ > pauci Mss cf 𝔊𝔖𝔙 ” since non-Hebrew manuscripts are irrelevant for our
-purposes, the 15:21 note is reduced to “sic L; permulti Mss ut Ketib,” which I take
-to mean:""".replace(
-    "\n", " "
-)
+_PARA_060 = [
+    "Ignoring “ > pauci Mss cf 𝔊𝔖𝔙 ” since non-Hebrew manuscripts are irrelevant for our "
+    "purposes, the 15:21 note is reduced to “",
+    mb_html.span(
+        "sic L; permulti Mss ut Ketib,",
+        {"data-hebrew-plural-ok": "Quoted reduction of BHS apparatus"},
+    ),
+    "” which I take to mean:",
+]
 _LIST_061 = [
     [
         author.emphasis("So"),
@@ -550,7 +556,10 @@ _LIST_061 = [
         " [have this] ",
         author.emphasis("as"),
         " [a] ",
-        author.emphasis("Ketib"),
+        mb_html.emphasis(
+            "Ketib",
+            {"data-hebrew-plural-ok": "BHS term retained in our explanatory gloss"},
+        ),
         " [i.e. have אם unpointed].”",
     ],
 ]

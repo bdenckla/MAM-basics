@@ -170,7 +170,7 @@ _ABOUT_MAM = Section(
         ),
         _entry("MAM FOI (Features of Interest) Lists", f"{_MWD}foi/index.html"),
         _entry(
-            ("Notes on Torah ", Italic("aliyot")),
+            ("Notes on Torah ", Italic("aliyah"), " portions"),
             f"{_MWD_MISC}notes_on_aliyot.html",
         ),
         _entry(

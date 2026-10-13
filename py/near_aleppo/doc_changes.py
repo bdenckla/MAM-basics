@@ -463,7 +463,7 @@ def _ole(numbers):
                 ),
                 " such letters. The other ",
                 numbers.snap(_P3, "ole on a letter without the yored, unchanged"),
-                " oles, each on a letter without a yored, are as MAM has them.",
+                " ole marks, each on a letter without a yored, are as MAM has them.",
             ]
         ),
         *doc_policy_examples.comparison("ole"),
@@ -957,7 +957,7 @@ def _pointed_ketiv(numbers):
                 " pointed-ketiv parameters: case-specific choices and source-supported "
                 "agreements admitted under the approved plan only after checking "
                 "current targets, notes, prior pointings, written letters and atom "
-                "boundaries. It preserves current qeres and edition punctuation, "
+                "boundaries. It preserves current qere forms and edition punctuation, "
                 "and includes only the pointings, each with the ketiv and whole qere "
                 "it was made for, which the template must still have when the build "
                 "writes the pointing. "

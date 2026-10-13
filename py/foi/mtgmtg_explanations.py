@@ -75,9 +75,9 @@ OVERALL_EXPLANATION = (
         (
             "One cell of that grid is empty: no chanted word without a maqaf, that",
             "is, no single atom, ends its verse with a silluq and two further",
-            "metegs. The neighbouring cells show what does occur. A single atom that",
+            "meteg marks. The neighbouring cells show what does occur. A single atom that",
             "ends its verse with a silluq and one meteg is common, and a verse-final",
-            "maqaf compound sometimes spreads a silluq and two metegs across its",
+            "maqaf compound sometimes spreads a silluq and two meteg marks across its",
             "atoms.",
         )
     ),
@@ -85,8 +85,8 @@ OVERALL_EXPLANATION = (
         (
             "That absence is scarcity rather than a rule. Neither Yeivin's",
             "Introduction to the Tiberian Masorah nor Breuer's The Cantillation of",
-            "Scripture makes the number of metegs on a word depend on whether that",
-            "word has a silluq, and the few shapes that do have two metegs mid-verse,",
+            "Scripture makes the number of meteg marks on a word depend on whether that",
+            "word has a silluq, and the few shapes that do have two meteg marks mid-verse,",
             "chiefly hitpael forms and theophoric names ending in יה, hardly ever end",
             "a verse at all. The rate at which a mid-verse single atom has a second",
             "meteg is low enough to predict fewer than one such verse-final atom in",

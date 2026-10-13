@@ -110,7 +110,7 @@ def section():
             "and be omitted rather than transferred. If that reasoning also applies "
             "to shuruq, the ketiv's single dot need not determine which qere "
             "pointing underlies it. This is reasoned uncertainty, not a demonstrated "
-            "historical explanation or a claim that the two qeres are equally likely."
+            "historical explanation or a claim that the two qere readings are equally likely."
         ),
         mb_html.para(
             "Near-Aleppo retains MAM's current qere unchanged. This individual "
