@@ -81,15 +81,28 @@ class _Page(HTMLParser):
             return
         if not re.search(r"[\u05d0-\u05ea]", data):
             return
-        cell = next((attrs for tag, attrs in reversed(self.stack) if tag == "td"), None)
-        if cell is None:
+        cell_index = next(
+            (i for i in range(len(self.stack) - 1, -1, -1) if self.stack[i][0] == "td"),
+            None,
+        )
+        if cell_index is None:
             return
+        cell = self.stack[cell_index][1]
         rtl_table = any(
             tag == "table" and attrs.get("dir") == "rtl" for tag, attrs in self.stack
         )
+        # English prose cells keep LTR direction; Hebrew code labels are isolated.
+        isolated_hebrew_in_english_cell = (
+            cell.get("dir") == "ltr"
+            and cell.get("lang") == "en"
+            and any(
+                tag == "bdi" and attrs.get("dir") == "rtl"
+                for tag, attrs in self.stack[cell_index + 1 :]
+            )
+        )
         assert (
-            cell.get("dir") == "rtl" or rtl_table
-        ), f"{self.path}: Hebrew table cell lacks dir=rtl at {self.getpos()}"
+            cell.get("dir") == "rtl" or rtl_table or isolated_hebrew_in_english_cell
+        ), f"{self.path}: Hebrew table text lacks RTL direction or isolation at {self.getpos()}"
 
 
 def _local_target(source, url):
