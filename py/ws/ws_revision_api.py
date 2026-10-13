@@ -1,7 +1,8 @@
 """Validate batched chapter identities and retrieve their exact raw revisions.
 
-The chapter and special-page downloads both query the API through ChapterClient, which
-waits out replication lag rather than failing on it.
+The chapter and special-page downloads query the API through ChapterClient, and the
+introduction download through get_query_json directly; each waits out replication lag
+rather than failing on it.
 """
 
 import time
@@ -19,8 +20,8 @@ class ChapterResponseError(RuntimeError):
 def get_query_json(downloader, endpoint, params, *, allow_cache, sleep_fun=time.sleep):
     """Return a Wikisource API query's JSON, retrying while the API refuses it for lag.
 
-    ChapterClient sends maxlag=1, asking the API to refuse a query rather than add load
-    while a replica database lags more than a second behind. MediaWiki answers that
+    Every MAM download sends maxlag=1, asking the API to refuse a query rather than add
+    load while a replica database lags more than a second behind. MediaWiki answers that
     refusal with HTTP 200 and an error whose code is "maxlag", with a Retry-After header
     of at least five seconds. polite_download retries only HTTP error statuses, so until
     2026-10-13 one refusal ended a whole download: that day's first refresh attempt

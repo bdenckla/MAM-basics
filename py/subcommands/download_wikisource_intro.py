@@ -73,6 +73,7 @@ from mb_cmn import paths
 from mb_cmn import polite_download
 from mb_misc import my_utils_for_mainish as my_utils_fm
 from mb_misc import ws_urls
+from ws import ws_revision_api
 
 _ROOT_TITLE = "ויקיטקסט:מבוא למקרא על פי המסורה"
 
@@ -143,7 +144,9 @@ def _live_subpage_titles(downloader):
             "aplimit": _MAX_TITLES_PER_REQUEST,
             **continuation,
         }
-        response_json = downloader.get_json(_WIKISOURCE_API_PHP, params=params)
+        response_json = ws_revision_api.get_query_json(
+            downloader, _WIKISOURCE_API_PHP, params, allow_cache=True
+        )
         assert "error" not in response_json, response_json["error"]
         titles.extend(page["title"] for page in response_json["query"]["allpages"])
         if "continue" not in response_json:
@@ -179,7 +182,9 @@ def _download_revision_batch(slugs, downloader):
     }
     # No redirects=1, unlike the book downloader: a redirect page in the introduction is
     # mirrored as the redirect it is, rather than silently as its target.
-    response_json = downloader.get_json(_WIKISOURCE_API_PHP, params=params)
+    response_json = ws_revision_api.get_query_json(
+        downloader, _WIKISOURCE_API_PHP, params, allow_cache=True
+    )
     titles_to_revisions = _revisions_from_response_json(response_json, titles)
     return {slug: titles_to_revisions[_SLUG_TO_TITLE[slug]] for slug in slugs}
 
