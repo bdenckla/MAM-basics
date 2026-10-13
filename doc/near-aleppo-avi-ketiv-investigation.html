@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avi’s lists and near-Aleppo ketiv pointing</title>
+  <style>
+    @font-face {
+      font-family: "Taamey Investigation";
+      src: url("woff2/Taamey_D.woff2") format("woff2");
+      font-weight: normal;
+      font-style: normal;
+    }
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      color: #202c38;
+      background: #f5f6f8;
+      font: 18px/1.65 Georgia, "Times New Roman", serif;
+    }
+    main { max-width: 1120px; margin: 0 auto; padding: 36px 28px 70px; }
+    h1, h2, h3, nav, .meta, .status, th {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    h1 { font-size: 2rem; line-height: 1.25; margin: 0 0 14px; }
+    h2 { font-size: 1.45rem; line-height: 1.35; margin: 0 0 18px; }
+    h3 { font-size: 1.05rem; margin: 24px 0 8px; }
+    p { max-width: 80ch; margin: 12px 0; }
+    a { color: #164f87; text-underline-offset: 3px; }
+    a:hover { color: #0b2d50; }
+    .meta { font-size: 0.87rem; color: #4b5968; overflow-wrap: anywhere; }
+    .status { font-size: 0.92rem; border-left: 4px solid #9b6a16; padding: 10px 14px; background: #fff5dc; }
+    header { margin-bottom: 28px; }
+    nav { padding: 16px 20px; background: #e9eef4; border-radius: 6px; margin: 24px 0; }
+    nav ol { margin: 4px 0; padding-left: 25px; }
+    section { margin: 28px 0; padding: 28px; background: white; border: 1px solid #dce2e8; border-radius: 8px; }
+    .table-wrap { overflow-x: auto; margin: 16px 0 22px; }
+    table { border-collapse: collapse; width: auto; }
+    th { text-align: left; font-size: 0.85rem; color: #445260; border-bottom: 2px solid #a8b7c7; }
+    th, td { padding: 10px 16px; vertical-align: middle; border-bottom: 1px solid #dce2e8; }
+    td.site { white-space: nowrap; padding-left: 12px; font-size: 0.9rem; }
+    td.reading { min-width: 145px; font-size: 0.93rem; }
+    td.detail { min-width: 210px; max-width: 360px; font-size: 0.9rem; }
+    td[dir="rtl"] { font-family: "Taamey Investigation", "SBL Hebrew", serif; font-size: 39px; line-height: 1.9; white-space: nowrap; font-weight: normal; }
+    [lang="hbo"] { font-family: "Taamey Investigation", "SBL Hebrew", serif; font-weight: normal; }
+    bdi[lang="hbo"] { font-size: 1.35em; line-height: 1.7; }
+    td bdi[lang="hbo"] { font-size: inherit; line-height: inherit; }
+    .form { margin: 12px 0; padding: 10px 18px; background: #f2f5f8; font-size: 39px; line-height: 1.9; overflow-x: auto; white-space: nowrap; }
+    .proposed { background: #fff8e9; }
+    .evidence { font-size: 0.92rem; }
+    .evidence ul { padding-left: 22px; }
+    .evidence li { margin: 7px 0; }
+    code { font: 0.84em/1.5 ui-monospace, Consolas, monospace; overflow-wrap: anywhere; }
+    .source-excerpt { border-left: 3px solid #9aaec4; padding-left: 16px; }
+    footer { font-size: 0.9rem; color: #4b5968; }
+    @media (max-width: 650px) {
+      main { padding: 24px 14px 50px; }
+      section { padding: 20px 16px; }
+      h1 { font-size: 1.65rem; }
+      td[dir="rtl"], .form { font-size: 34px; }
+      th, td { padding: 8px 12px; }
+    }
+    @media print {
+      body { background: white; font-size: 11pt; }
+      main { max-width: none; padding: 0; }
+      nav { display: none; }
+      section { border: 0; border-top: 1px solid #a8b7c7; padding: 18px 0; border-radius: 0; }
+      h2, h3 { break-after: avoid; }
+      tr { break-inside: avoid; }
+      td[dir="rtl"], .form { font-size: 27pt; }
+      .table-wrap { overflow: visible; }
+      td.detail { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Avi’s lists and near-Aleppo ketiv pointing</h1>
+    <p class="status"><strong>State:</strong> live investigation. All proposed data changes remain unapplied.</p>
+    <p class="meta">Written by Codex, 2026-10-13. Source and near-Aleppo snapshot:
+      <a href="https://github.com/bdenckla/MAM-basics/tree/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9"><code>fb5660216b38f2ad93fdfba50eaec9b6940dd6c9</code></a>.</p>
+    <p><strong>Avi’s lists supply a useful cross-check, but the discrepancies below require source reconciliation or editorial judgment.</strong>
+      Most distinctive pointings in the lists already enter near-Aleppo through MAM’s chapter notes.
+      The three Aleppo cases here concern a shin dot, a meteg, and nun dagesh at two verses.
+      The Leningrad case concerns vowel placement and dagesh where Aleppo is missing.</p>
+    <p>These comparisons establish what Avi’s introduction, MAM’s chapter notes, and the stored near-Aleppo data say.
+      No manuscript images were independently inspected for this investigation.
+      A proposed form below is a conditional edit to the current data, not a verified manuscript reading.</p>
+  </header>
+
+  <nav aria-label="Investigation cases">
+    <ol>
+      <li><a href="#kings-shin">2 Kings 18:27: shin dot</a></li>
+      <li><a href="#ezekiel-meteg">Ezekiel 28:3: meteg under dalet</a></li>
+      <li><a href="#ezekiel-dagesh">Ezekiel 14:14 and 14:20: nun dagesh</a></li>
+      <li><a href="#ecclesiastes">Ecclesiastes 9:4: vowel placement and dagesh</a></li>
+    </ol>
+  </nav>
+
+  <section id="sources">
+    <h2>Sources and Hebrew notation</h2>
+    <p>Avi directed Ben to the <bdi lang="hbo" dir="rtl">הניקוד בתוך הכתיב</bdi> subsections of the introduction’s lists.
+      The local chapter 5 mirror records revision <strong>3087740</strong>, with source timestamp
+      <code>2026-10-08T17:34:00Z</code>. The chapter 4 mirror records revision <strong>3087756</strong>,
+      with source timestamp <code>2026-10-08T18:06:50Z</code>.
+      The <a href="../in/mam-ws-intro/manifest.json">mirror manifest</a> supplies these identities;
+      the <a href="../in/mam-ws-intro/README.md">mirror README</a> explains their scope.</p>
+    <p>The Hebrew forms in this report use MAM-normal mark order. The source mirrors retain their captured bytes.
+      Reordering a display copy does not add, remove, or relocate a mark between letters.</p>
+    <p>In near-Aleppo’s displayed notation, guillemets identify artificial carriers:
+      <bdi lang="hbo" dir="rtl">«אֵ»</bdi> represents tsere without an additional written ketiv consonant.
+      The carrier’s alef is not part of the ketiv spelling.
+      Near-Aleppo’s approved carrier choices are retained in every hypothetical edit shown here.</p>
+    <p>Source links identify both the local files and the exact baseline passages in Git.
+      The baseline links remain evidence for this investigation if the maintained files later change.</p>
+  </section>
+
+  <section id="kings-shin">
+    <h2>1. 2 Kings 18:27: shin dot</h2>
+    <p class="status"><strong>Disposition:</strong> adding a shin dot remains an unapplied candidate.
+      Avi’s introduction includes the dot, whereas both forms quoted in MAM’s chapter note omit it.</p>
+    <p>MAM’s ketiv letters are <bdi lang="hbo" dir="rtl">שניהם</bdi>.
+      The complete pointed qere is <bdi lang="hbo" dir="rtl">מֵימֵ֥י רַגְלֵיהֶ֖ם</bdi>.
+      This is a special ketiv/qere pair whose qere comprises two atoms.
+      Near-Aleppo’s reviewed pointing preserves the orphan tsere positions with artificial carriers.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pointed form</th><th>Site</th><th>Reading</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">ֵשֵׁ֥נַיְֵהֶ֖ם</bdi></td><td class="site">2 Kings 18:27</td><td class="reading">Introduction list</td><td class="detail">Shin has a shin dot. The initial and medial tsere are shown as the source encodes them.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">«אֵ»שֵ֥נַיְ«אֵ»הֶ֖ם</bdi></td><td class="site">2 Kings 18:27</td><td class="reading">Current near-Aleppo</td><td class="detail">Shin has no shin dot.</td></tr>
+          <tr class="proposed"><td dir="rtl"><bdi lang="hbo" dir="rtl">«אֵ»שֵׁ֥נַיְ«אֵ»הֶ֖ם</bdi></td><td class="site">2 Kings 18:27</td><td class="reading">Conditional edit</td><td class="detail">Add only the shin dot; retain the carrier representation and all other marks.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>What the chapter note says</h3>
+    <p>The note supplies two Aleppo ketiv representations, both without a shin dot:</p>
+    <div class="form" lang="hbo" dir="rtl">‹[אֵ]שֵ֥נַיְ+יֵהֶ֖ם›</div>
+    <div class="form" lang="hbo" dir="rtl">‹ֵשֵ֥נַיְֵהֶ֖ם›</div>
+    <p>The note describes the initial tsere dots as compressed into the narrow space between the atoms.
+      Near-Aleppo’s stored form follows the note’s absence of a shin dot; the missing dot is not a consequence of its carrier notation.</p>
+    <h3>What would settle the edit</h3>
+    <p>A manuscript check or Avi’s reconciliation of the two source passages should determine whether the shin dot belongs in the pointed ketiv.
+      The qere has no shin, so its pointed letters cannot themselves supply this ketiv-specific dot.
+      The introduction provides a reason to investigate the addition, not enough evidence to adopt it while the chapter note disagrees.</p>
+    <div class="evidence">
+      <ul>
+        <li>Introduction: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/mam-ws-intro/ch5.mediawiki#L430">chapter 5, line 430</a>; <a href="../in/mam-ws-intro/ch5.mediawiki">local mirror</a>.</li>
+        <li>Chapter note: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/out/near-aleppo/plus/BC-Kings.json#L15537">preserved MAM clause</a>; <a href="../out/near-aleppo/plus/BC-Kings.json">local dataset</a>.</li>
+        <li>Stored pointing: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/near-aleppo/reviewed-pointed-ketiv.json#L1355">record <code>BD-2Kings:18:27:1</code></a>; <a href="../in/near-aleppo/reviewed-pointed-ketiv.json">local reviewed pointings</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ezekiel-meteg">
+    <h2>2. Ezekiel 28:3: meteg under dalet</h2>
+    <p class="status"><strong>Disposition:</strong> adding meteg under dalet remains an unapplied candidate.
+      Avi’s introduction includes meteg; MAM’s quoted chapter-note form omits it.</p>
+    <p>MAM’s ketiv is <bdi lang="hbo" dir="rtl">מדנאל</bdi>, with qere
+      <bdi lang="hbo" dir="rtl">מִדָּנִיֵּ֑אל</bdi>.
+      The list and chapter note agree on nun dagesh, hiriq, tsere, and atnaḥ.
+      The source disagreement is the meteg associated with dalet’s qamats.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pointed form</th><th>Site</th><th>Reading</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">מִדָּֽנִֵּ֑אל</bdi></td><td class="site">Ezekiel 28:3</td><td class="reading">Introduction list</td><td class="detail">Meteg under dalet.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">מִדָּנִֵּ֑אל</bdi></td><td class="site">Ezekiel 28:3</td><td class="reading">MAM chapter note</td><td class="detail">No meteg; the note places hiriq, tsere, and atnaḥ beneath nun.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">מִדָּנִּ֑«אֵ»אל</bdi></td><td class="site">Ezekiel 28:3</td><td class="reading">Current near-Aleppo</td><td class="detail">Tsere uses a medial artificial carrier; hiriq and atnaḥ remain on nun.</td></tr>
+          <tr class="proposed"><td dir="rtl"><bdi lang="hbo" dir="rtl">מִדָּֽנִּ֑«אֵ»אל</bdi></td><td class="site">Ezekiel 28:3</td><td class="reading">Conditional edit</td><td class="detail">Add only meteg under dalet.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>The existing carrier decision</h3>
+    <p>Ben’s 2026-10-08 decision placed only tsere on the medial artificial alef; atnaḥ remains on nun.
+      The implementation preserves the complete MAM source clause and applies that named representation adjustment.
+      Its guarded source form already lacks meteg, so the adjustment does not remove meteg.</p>
+    <h3>What would settle the edit</h3>
+    <p>The meteg needs a manuscript check or source reconciliation with Avi.
+      If confirmed, adding it would preserve the approved carrier choice, the written ketiv consonants, and the complete qere.</p>
+    <div class="evidence">
+      <ul>
+        <li>Introduction: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/mam-ws-intro/ch5.mediawiki#L495">chapter 5, line 495</a>.</li>
+        <li>Current pointing and source clause: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/out/near-aleppo/plus/C3-Ezekiel.json#L7877">Ezekiel dataset</a>; <a href="../out/near-aleppo/plus/C3-Ezekiel.json">local dataset</a>.</li>
+        <li>Approved representation: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/py/near_aleppo/phase5_readings.py#L286"><code>_REVIEWED_ORPHAN_VALUES</code></a>; <a href="../py/near_aleppo/phase5_readings.py">local implementation</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ezekiel-dagesh">
+    <h2>3. Ezekiel 14:14 and 14:20: nun dagesh</h2>
+    <p class="status"><strong>Disposition:</strong> removing nun dagesh remains an unresolved source disagreement.
+      The chapter notes explicitly describe nun as dotted, whereas the introduction’s two forms omit the dot.</p>
+    <p>Both verses have MAM’s ketiv <bdi lang="hbo" dir="rtl">דנאל</bdi> and qere
+      <bdi lang="hbo" dir="rtl">דָּנִיֵּ֣אל</bdi>.
+      Near-Aleppo follows the chapter-note dagesh and the same approved tsere-carrier convention used at Ezekiel 28:3.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pointed form</th><th>Site</th><th>Reading</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">דָּנִֵ֣אל</bdi></td><td class="site">Ezekiel 14:14</td><td class="reading">Introduction list</td><td class="detail">No nun dagesh.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">דָּנִּ֣«אֵ»אל</bdi></td><td class="site">Ezekiel 14:14</td><td class="reading">Current near-Aleppo</td><td class="detail">Nun has dagesh, hiriq, and munaḥ.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">דָּנִֵ֣אל</bdi></td><td class="site">Ezekiel 14:20</td><td class="reading">Introduction list</td><td class="detail">No nun dagesh.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">דָּנִּ֣«אֵ»אל</bdi></td><td class="site">Ezekiel 14:20</td><td class="reading">Current near-Aleppo</td><td class="detail">Same stored pointing as 14:14.</td></tr>
+          <tr class="proposed"><td dir="rtl"><bdi lang="hbo" dir="rtl">דָּנִ֣«אֵ»אל</bdi></td><td class="site">Both verses</td><td class="reading">Conditional edit</td><td class="detail">Remove only nun dagesh.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>The chapter notes give positive evidence for the dot</h3>
+    <p>Both chapter notes quote <bdi lang="hbo" dir="rtl">דָּנִֵּ֣אל</bdi> and describe hiriq, tsere, and munaḥ beneath
+      “the dotted nun”: <bdi lang="hbo" dir="rtl">האות נו"ן הדגושה</bdi>.
+      The disagreement therefore includes an explicit prose assertion, not merely a dot in one encoded string.</p>
+    <p>At 14:20, the note adds that munaḥ is pushed beneath alef and illustrates that placement as
+      <bdi lang="hbo" dir="rtl">דָּנִֵּא֣ל</bdi>.
+      That separate placement qualification also retains nun dagesh.
+      This investigation concerns the dagesh discrepancy; the conditional edit retains the approved placement of munaḥ on nun.</p>
+    <h3>What would settle the edit</h3>
+    <p>An omission from the shorter introduction list is a plausible explanation, but remains an inference.
+      Because the chapter notes explicitly name nun dagesh, removing it has weaker support than the shin-dot and meteg additions.
+      Both verses should be checked independently before either stored form is changed.</p>
+    <div class="evidence">
+      <ul>
+        <li>Introduction: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/mam-ws-intro/ch5.mediawiki#L492">chapter 5, lines 492–493</a>.</li>
+        <li>Current 14:14 pointing and note: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/out/near-aleppo/plus/C3-Ezekiel.json#L3163">dataset passage</a>.</li>
+        <li>Current 14:20 pointing and note: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/out/near-aleppo/plus/C3-Ezekiel.json#L3249">dataset passage</a>.</li>
+        <li>Carrier decision: <a href="../py/near_aleppo/phase5_readings.py"><code>phase5_readings.py</code></a>, searchable passage <code>_REVIEWED_ORPHAN_VALUES</code>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="ecclesiastes">
+    <h2>4. Ecclesiastes 9:4: vowel placement and dagesh</h2>
+    <p class="status"><strong>Disposition:</strong> an editorial review remains possible; no replacement is adopted.
+      Aleppo is missing here, and the exact Leningrad form in Avi’s list is itself qualified by MAM’s chapter note.</p>
+    <p>MAM’s ketiv letters are <bdi lang="hbo" dir="rtl">יבחר</bdi>; its pointed qere is
+      <bdi lang="hbo" dir="rtl">יְחֻבַּ֔ר</bdi>.
+      Near-Aleppo’s current pointed ketiv comes from the frozen MAM-derived pointing set, rather than an Aleppo reading quoted in a note.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Pointed form</th><th>Site</th><th>Reading</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">יְחֻבַּ֔ר</bdi></td><td class="site">Ecclesiastes 9:4</td><td class="reading">MAM qere</td><td class="detail">Qubuts on heth; dagesh and pataḥ on bet.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">יְבַּחֻ֔ר</bdi></td><td class="site">Ecclesiastes 9:4</td><td class="reading">Current near-Aleppo ketiv</td><td class="detail">The same consonants retain those vowel and dagesh assignments despite their exchanged positions.</td></tr>
+          <tr><td dir="rtl"><bdi lang="hbo" dir="rtl">יְבֻחָ֔ר</bdi></td><td class="site">Ecclesiastes 9:4</td><td class="reading">Listed Leningrad ketiv</td><td class="detail">Qubuts on bet; doubtful qamats on heth; no bet dagesh in the quoted form.</td></tr>
+          <tr class="proposed"><td dir="rtl"><bdi lang="hbo" dir="rtl">יְבֻחַ֔ר</bdi></td><td class="site">Ecclesiastes 9:4</td><td class="reading">Analytical comparison</td><td class="detail">The reported Leningrad arrangement with pataḥ substituted for the doubtful qamats, following the note’s preferred reading. Not an adopted form.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>The qamats reading is doubtful in the source</h3>
+    <p>The introduction labels the form <bdi lang="hbo" dir="rtl">ל-כתיב?!=יְבֻחָ֔ר</bdi>
+      and asks whether heth has qamats.
+      MAM’s chapter note attributes the doubtful qamats to Breuer, then reports that inspection of an enlarged image favors pataḥ,
+      despite blur beneath the horizontal stroke, perhaps a trace of erasure. The note says Dotan also reads pataḥ.</p>
+    <p>The analytical comparison above makes that reported preference visible.
+      It does not assert a new manuscript reading from this investigation, and it does not establish an Aleppo form.</p>
+    <h3>Three questions must be distinguished</h3>
+    <ol>
+      <li><strong>Vowel placement:</strong> current near-Aleppo keeps pataḥ on bet and qubuts on heth.
+        The reported Leningrad arrangement has qubuts on the second written letter, bet, and the other vowel on the third written letter, heth.</li>
+      <li><strong>Vowel identity:</strong> the list’s qamats is doubtful; the chapter note favors pataḥ.
+        Adopting the arrangement does not require adopting the doubtful qamats.</li>
+      <li><strong>Dagesh:</strong> current near-Aleppo retains the qere bet’s dagesh.
+        The quoted Leningrad ketiv form has no bet dagesh. A change of vowel placement would not, by itself, decide whether that dot should be retained.</li>
+    </ol>
+    <h3>What would justify a near-Aleppo edit</h3>
+    <p>Near-Aleppo aims for an inferred Masoretic consensus where Aleppo is missing.
+      A reported Leningrad peculiarity is consequently a comparison, not an automatic replacement policy.
+      The useful question is whether independent pointed-ketiv readings support the Leningrad arrangement over the current inferred arrangement.</p>
+    <p>The note’s agreeing clause names Sassoon 1053, the Cambridge manuscript, printed editions, Koren, Breuer, and Miqraot Gedolot Haketer
+      alongside MAM’s qere presentation. That agreement does not, by itself, supply each manuscript’s pointed ketiv.
+      A broader source comparison should establish the vowel positions and bet dagesh explicitly before an editorial choice is made.</p>
+    <div class="evidence">
+      <ul>
+        <li>Introduction: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/mam-ws-intro/ch4.mediawiki#L586">chapter 4, line 586</a>; <a href="../in/mam-ws-intro/ch4.mediawiki">local mirror</a>.</li>
+        <li>Current pointing and qualified source reading: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/out/near-aleppo/plus/E4-Ecclesiastes.json#L2425">Ecclesiastes dataset passage</a>; <a href="../out/near-aleppo/plus/E4-Ecclesiastes.json">local dataset</a>.</li>
+        <li>Stored inference: <a href="https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/near-aleppo/frozen-pointed-ketiv.json#L8708">record <code>E4-Ecclesiastes:9:4:0</code></a>; <a href="../in/near-aleppo/frozen-pointed-ketiv.json">local frozen pointings</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="investigation-status">
+    <h2>Investigation status</h2>
+    <p><strong>The detailed comparison is recorded; all data decisions remain unresolved.</strong>
+      The first source checks should address the shin dot at 2 Kings 18:27 and meteg at Ezekiel 28:3.
+      The two Ezekiel 14 nun dagesh marks have stronger positive support in the chapter notes and require reconciliation of the shorter list with those notes.
+      Ecclesiastes 9:4 requires an editorial comparison of pointed-ketiv traditions where Aleppo is missing.</p>
+    <p>This report reaches documentation only under the repository’s declared product scopes.
+      No runtime pointing, chapter note, dataset, or published edition has been changed by this write-up.</p>
+  </section>
+
+  <footer>
+    <p>This maintained investigation records the evidence at the baseline commit above.
+      Later source checks and decisions can be added here while the investigation remains live.</p>
+  </footer>
+</main>
+</body>
+</html>
