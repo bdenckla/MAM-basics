@@ -307,7 +307,7 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
     assert scan("<i>METEG</i>S", "gh-pages/example.html")[0].preferred == "METEG marks"
     exempt = (
         '<p id="maqafs" class="metegs"><a href="maqafs.html#metegs">link</a></p>'
-        '<code>maqafs metegs_by_verse</code><script>const x = "maqafs";</script>'
+        '<code>maqafs metegs_by_verse unit.ketivs unit.qeres</code><script>const x = "maqafs";</script>'
         '<span lang="hbo-Latn">ḥets·rón</span><blockquote>metegs</blockquote>'
         '<q>dageshes</q><p data-hebrew-plural-ok="literal source">alefs</p>'
         "<p>English sins, shins and bets; alphabetic, pages, marks, dots, and helpers.</p>"
@@ -326,4 +326,20 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
             0
         ].preferred
         == "yod letters"
+    )
+    nouns = "<p>ketivs, <i>qere</i>s, masorot, aliyot, parashiyot, parashot, setumot, petuḥot.</p>"
+    assert [f.preferred for f in scan(nouns, "gh-pages/example.html")] == [
+        "ketiv forms",
+        "qere forms",
+        "masorah notes",
+        "aliyah portions",
+        "parashah sections",
+        "parashah sections",
+        "setumah sections",
+        "petuḥah sections",
+    ]
+    assert not scan(nouns, "gh-pages/yeivin-itm/adapted-prose.html")
+    assert not scan(
+        "<p>Masoretes, rabbis, Levites, pages, and qere readings.</p>",
+        "gh-pages/example.html",
     )

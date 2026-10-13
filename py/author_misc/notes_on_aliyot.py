@@ -62,7 +62,7 @@ def _taamey(contents):
 ###############################################################################
 
 _FNAME = "notes_on_aliyot.html"
-_TITLE = "Notes on Aliyot"
+_TITLE = "Notes on Aliyah Portions"
 _H1 = "Notes on $aliyot"
 
 _AUTHOR = "Author: Ben Denckla"

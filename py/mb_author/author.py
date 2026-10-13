@@ -505,8 +505,6 @@ _ABBR_SC = {
 }
 _ROMANIZED = {
     "$aliyah": "aliyah",
-    "$aliyot": "aliyot",
-    "$parashiyot": "parashiyot",
     "$kohen": "kohen",
     "$levi": "levi",
     "$yisrael": "yisrael",
@@ -656,6 +654,9 @@ _DOLLAR_SUB_DISPATCH = {
     **_rom_with_cap("$galgal", "galgal"),
     **_rom_with_cap("$yby", "yeraḥ ben yomo"),
     **_ROMANIZED,
+    # Keep established placeholder keys; pluralize an English noun in prose.
+    "$aliyot": (_romanized("aliyah"), " portions"),
+    "$parashiyot": (_romanized("parashah"), " sections"),
 }
 
 

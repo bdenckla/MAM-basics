@@ -1,4 +1,4 @@
-"""Rendered-prose lint for plural inflections of romanized Hebrew names.
+"""Rendered-prose lint for plural inflections of romanized Hebrew words.
 
 Vocabulary comes from the maintained Unicode/diff display names, with spelling
 aliases for prose and source quotations. This never rewrites or normalizes input.
@@ -30,6 +30,34 @@ _MARK_ALIASES = (
     "oleh ole illuy iluy yored galgal yerax yerah merka merkha merekha mahpakh "  # translit-ok
     "mahapakh mehuppak ga'ya gaʿya ga'aya gaya mayela"  # translit-ok
 ).split()
+
+# The noun is a default suggestion; an editor chooses forms/readings/words
+# (and similar context-specific nouns) from the sentence, not from this lint.
+_PROSE_NOUNS = {
+    "ketiv": "forms",
+    "ketib": "forms",
+    "qere": "forms",
+    "qeri": "forms",
+    "masorah": "notes",
+    "masora": "notes",
+    "aliyah": "portions",
+    "aliya": "portions",
+    "parashah": "sections",
+    "parasha": "sections",
+    "setumah": "sections",
+    "petuḥah": "sections",
+    "petuxah": "sections",
+    "ḥilluf": "variants",
+}
+_HEBREW_PLURALS = {
+    "masorot": ("masorah", "notes"),
+    "aliyot": ("aliyah", "portions"),
+    "parashiyot": ("parashah", "sections"),
+    "parashot": ("parashah", "sections"),
+    "setumot": ("setumah", "sections"),
+    "petuḥot": ("petuḥah", "sections"),
+    "petuxot": ("petuxah", "sections"),
+}
 
 # Ambiguous ordinary English words require an explicit letter context. Other
 # unknown transliterations remain a human review task, not a blanket suffix ban.
@@ -84,6 +112,7 @@ def vocabulary() -> dict[str, tuple[str, str]]:
                 names[full.removeprefix(prefix).lower()] = noun
     names.update((name, "letters") for name in _LETTER_ALIASES)
     names.update((name, "marks") for name in _MARK_ALIASES)
+    names.update(_PROSE_NOUNS)
     result = {}
     for name, noun in names.items():
         # Generic English tails (dot, helper, accent) already pluralize correctly.
@@ -99,6 +128,9 @@ def vocabulary() -> dict[str, tuple[str, str]]:
                 continue
             for suffix in ("s", "es", "im", "ot"):
                 result[_latin_key(spelling + suffix)] = (spelling, noun)
+    result.update(
+        (_latin_key(plural), value) for plural, value in _HEBREW_PLURALS.items()
+    )
     return result
 
 
@@ -130,8 +162,14 @@ def text_findings(text: str, lines: list[int]) -> list[Finding]:
         ):
             continue
         singular, noun = names[key]
-        suffix = key.removeprefix(_latin_key(singular))
-        preferred = term[: -len(suffix)] + " " + noun
+        if key.startswith(_latin_key(singular)):
+            suffix = key.removeprefix(_latin_key(singular))
+            singular = term[: -len(suffix)]
+        elif term.isupper():
+            singular = singular.upper()
+        elif term[0].isupper():
+            singular = singular[0].upper() + singular[1:]
+        preferred = singular + " " + noun
         findings.append(Finding(lines[match.start()], term, preferred))
     return findings
 

@@ -154,12 +154,12 @@ def _section_kq(heading):
 
 def _section_par(heading):
     the_head = heading_level_2(heading)
-    part1_subhead = heading_level_3(("Parashot setumot of type 1",))
+    part1_subhead = heading_level_3(("Parashah setumah sections of type 1",))
     part1_para1 = para(
         (
             "In English these are sometimes known as “closed sections” "
-            "or “closed paragraphs”. Below are two examples of parashot "
-            "setumot of type 1. In MapM, a type-1 parashah setumah is "
+            "or “closed paragraphs”. Below are two examples of parashah "
+            "setumah sections of type 1. In MapM, a type-1 parashah setumah is "
             "implemented as a line break followed by some horizontal whitespace "
             "(a “tab” or “indent” if you like). (In xulsword, a line break "
             "is also followed by a blank line.)"
@@ -185,11 +185,11 @@ def _section_par(heading):
         *_img_br("png/par-setumah-type-1-number-1.png"),
         *_img_br("png/par-setumah-type-1-number-2.png"),
     )
-    part2_subhead = heading_level_3(("Parashot setumot of type 2",))
+    part2_subhead = heading_level_3(("Parashah setumah sections of type 2",))
     part2_para1 = para(
         (
             "Below is a single passage/screen snip containing several "
-            "examples of parashot setumot of type 2. In MapM, a parashah "
+            "examples of parashah setumah sections of type 2. In MapM, a parashah "
             "setumah of type 2 is implemented as horizontal whitespace "
             "without a line break. The passage below is from the start "
             "of 1Kgs 4. The passage includes examples of both between-verse "
@@ -197,16 +197,16 @@ def _section_par(heading):
             "",
         )
     )
-    part3_subhead = heading_level_3(("Parashot petuḥot of type 1",))
+    part3_subhead = heading_level_3(("Parashah petuḥah sections of type 1",))
     part3_para1 = para(
         (
             "In English these are sometimes known as “open sections” or “open "
-            "paragraphs”. Below are three examples of parashot petuḥot of "
+            "paragraphs”. Below are three examples of parashah petuḥah sections of "
             "type 1. A parashah petuḥah of type 1 (like a parashah petuḥah "
             "of type 2 (see below)) is implemented as a line break. Importantly, "
             "in xulsword, a line break also includes a blank line, i.e., it "
-            "includes some vertical whitespace. MapM doesn’t implement parashot "
-            "petuḥot of type 1 as distinct from type 2 (both are simply a "
+            "includes some vertical whitespace. MapM doesn’t implement parashah "
+            "petuḥah sections of type 1 as distinct from type 2 (both are simply a "
             "line break), but I’m still counting it as a feature present rather "
             "than absent."
             "",
@@ -235,10 +235,10 @@ def _section_par(heading):
         *_img_br("png/par-petuḥah-type-1-number-1.png"),
         *_img_br("png/par-petuḥah-type-1-number-2.png"),
     )
-    part4_subhead = heading_level_3(("Parashot petuḥot of type 2",))
+    part4_subhead = heading_level_3(("Parashah petuḥah sections of type 2",))
     part4_para1 = para(
         (
-            "Below are three examples of parashot petuḥot of type 2. These "
+            "Below are three examples of parashah petuḥah sections of type 2. These "
             "are rare (there are only 18 of them). A parashah petuḥah of type "
             "2 (like a parashah petuḥah of type 1 (see above)) is implemented "
             "as a line break. Unlike type 1, ideally type 2 would be a line "
@@ -503,7 +503,7 @@ INTRO = para(
 HEADING_GE = "Good endings (4 of them)"
 HEADING_SCRDFF = "Scroll difference notes (29 of them)"
 HEADING_KQ = "Ketiv/qere, ketiv velo qere, & qere velo ketiv"
-HEADING_PAR = "Parashot setumot & petuḥot, each of types 1 & 2"
+HEADING_PAR = "Parashah setumah & petuḥah sections, each of types 1 & 2"
 HEADING_INVNUN = "Inverted nun markers (Numbers 10 & Psalm 107 types)"
 HEADING_SHIRAH = "Shirah spaces"
 HEADING_PASEQ = "Paseq marks (as distinct from legarmeih marks)"

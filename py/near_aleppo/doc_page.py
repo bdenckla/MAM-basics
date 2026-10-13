@@ -529,7 +529,7 @@ def _gav_display(numbers):
             [
                 "The supported nonzero-width template occurs at ",
                 verse_refs(first),
-                ", inside pointed ketivs or beside unchanged qere-without-ketiv calls.",
+                ", inside pointed ketiv forms or beside unchanged qere-without-ketiv calls.",
                 " The zero-width template occurs at ",
                 verse_refs(second),
                 ", for medial GA/GV orphans and the separately documented exact payloads.",

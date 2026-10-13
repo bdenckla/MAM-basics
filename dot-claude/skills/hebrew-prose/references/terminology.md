@@ -491,11 +491,16 @@ catalog's "fol." locators.
 Use “ungrammatical verse” as the umbrella while preserving the distinct `error`, `no_parse`,
 and `illegal_mark` statuses. Existing oddball identifiers remain compatibility identifiers.
 
-## Plurals of romanized Hebrew letter and mark names
+## Plurals of romanized Hebrew words
 
-Do not pluralize romanized Hebrew letter or mark names with English suffixes or Hebrew plural
-endings. Pluralize an English noun instead: "three alef letters", "two meteg marks", "two tsinnor
-marks".
+Do not pluralize romanized Hebrew words with English suffixes or Hebrew plural endings in
+authored prose. Pluralize a context-specific English noun instead: "three alef letters",
+"two meteg marks", "two tsinnor marks", "pointed ketiv forms", "two qere readings", or
+"aliyah portions". The noun must fit the sentence; a lint's default suggestion does not
+settle whether the context calls for forms, readings, words, notes, sections, or another noun.
+Preserve literal quotations, source titles, technical identifiers and data strings. Ordinary
+English words and names are not subject to a blanket suffix replacement. Repository-specific
+exceptions, including MAM-basics' entire Yeivin ITM adaptation, remain in force.
 
 ## Transliteration (accgram)
 

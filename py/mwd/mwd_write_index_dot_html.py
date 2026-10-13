@@ -29,7 +29,9 @@ def render_index_dot_html(edition, css_hrefs):
 def _index_body_contents():
     foi_anchor = mb_html.anchor_h("Features of interest", "foi/index.html")
     sigil_anchor = mb_html.anchor_h("Sigil decoding", "sigil-decoding.html")
-    aliyot_anchor = mb_html.anchor_h("Notes on aliyot", "misc/notes_on_aliyot.html")
+    aliyot_anchor = mb_html.anchor_h(
+        "Notes on aliyah portions", "misc/notes_on_aliyot.html"
+    )
     changelog_anchor = mb_html.anchor_h("Change log", "change-log/index.html")
     body_contents = (
         *_cc_by_sa_license(),

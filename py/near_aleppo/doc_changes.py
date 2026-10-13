@@ -957,7 +957,7 @@ def _pointed_ketiv(numbers):
                 " pointed-ketiv parameters: case-specific choices and source-supported "
                 "agreements admitted under the approved plan only after checking "
                 "current targets, notes, prior pointings, written letters and atom "
-                "boundaries. It preserves current qeres and edition punctuation, "
+                "boundaries. It preserves current qere forms and edition punctuation, "
                 "and includes only the pointings, each with the ketiv and whole qere "
                 "it was made for, which the template must still have when the build "
                 "writes the pointing. "

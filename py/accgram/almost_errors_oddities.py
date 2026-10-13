@@ -348,7 +348,7 @@ def ek2031_section(index, parser, has_legarmeh: HasLegarmeh) -> tuple[object, ..
             (
                 "MAM has this double accent,"
                 " and has a documentation note citing support for it from"
-                " three standard manuscripts (Aleppo, Leningrad, Cairo) and their masorot."
+                " three standard manuscripts (Aleppo, Leningrad, Cairo) and their masorah notes."
                 " MAM also cites Yeivin 28.1 p. 232."
                 " MAM spells out why this double accent is puzzling yet standard:",
             )
