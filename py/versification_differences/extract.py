@@ -17,7 +17,6 @@ class SimpleShiftRowRec:
 @dataclass(frozen=True)
 class SimpleShiftSectionRec:
     heading: str
-    table_separator: str
     intro_lines: tuple[str, ...]
     rows: tuple[SimpleShiftRowRec, ...]
     other_vtrad_label: str = "BHS"
@@ -71,7 +70,7 @@ def extract_sef_simple_shift_sections():
         ProseSectionRec(
             heading=case_rec.sef_heading,
             body_lines=(
-                f"As in [BHS](#{_bhs_anchor_id(case_rec)}), Sef has a simple chapter-boundary shift here.",
+                f'As in <a href="#{_bhs_anchor_id(case_rec)}">BHS</a>, Sef has a simple chapter-boundary shift here.',
             ),
         )
         for case_rec in case_data.sef_simple_shift_cases()
@@ -93,7 +92,7 @@ def extract_sef_present_vs_absent_sections():
         ProseSectionRec(
             heading=case_rec.sef_heading,
             body_lines=(
-                f"As in [BHS](#{_bhs_anchor_id(case_rec)}), Sef has a present-vs-absent case here.",
+                f'As in <a href="#{_bhs_anchor_id(case_rec)}">BHS</a>, Sef has a present-vs-absent case here.',
             ),
         )
         for case_rec in case_data.sef_present_vs_absent_cases()
@@ -115,7 +114,6 @@ def _extract_bhs_simple_shift_section(case_rec, books_mpu):
     rows.append(_mk_row(shifted_bcvt_seq[-1], verses))
     return SimpleShiftSectionRec(
         heading=case_rec.bhs_heading,
-        table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_case(case_rec),
         rows=tuple(rows),
         anchor_id=_bhs_anchor_id(case_rec),
@@ -140,7 +138,6 @@ def _extract_bhs_split_one_vs_many_section(case_rec, books_mpu):
         rows.append(_mk_row(last_shifted_bcvt, verses))
     return SimpleShiftSectionRec(
         heading=case_rec.bhs_heading,
-        table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_split_one_vs_many_case(case_rec),
         rows=tuple(rows),
         note_lines=case_rec.note_lines,
@@ -154,7 +151,6 @@ def _extract_bhs_complex_boundary_section(case_rec, books_mpu):
     rows.extend(_split_anchor_rows(case_rec, verses[case_rec.mam_anchor_bcvt]))
     return SimpleShiftSectionRec(
         heading=case_rec.bhs_heading,
-        table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_complex_boundary_case(case_rec),
         rows=tuple(rows),
         note_lines=case_rec.note_lines,
@@ -174,7 +170,6 @@ def _extract_bhs_present_vs_absent_section(case_rec, books_mpu):
         rows.append(_mk_row(shifted_bcvt_seq[-1], verses))
     return SimpleShiftSectionRec(
         heading=case_rec.bhs_heading,
-        table_separator=case_rec.bhs_table_separator,
         intro_lines=_intro_lines_for_present_vs_absent_case(),
         rows=tuple(rows),
         anchor_id=_bhs_anchor_id(case_rec),
@@ -260,7 +255,7 @@ def _absent_rows(case_rec):
     return tuple(
         SimpleShiftRowRec(
             hebrew_range="—",
-            mam_label="*(absent)*",
+            mam_label="<em>(absent)</em>",
             other_label=_cv_label(tbn.mk_bcvt(case_rec.book_id, cvve[0])),
         )
         for cvve in maprec[1:]
@@ -365,7 +360,7 @@ def _intro_lines_for_present_vs_absent_case():
         "corresponding Hebrew text (these verses are absent from the Aleppo Codex and",
         "the Leningrad Codex). In the MAM output that needs to have BHS versification,",
         "those two verse elements are present but have only a dash (—) as their text",
-        'and they are marked `contents-corresponds-to="no verse in MAM"`.',
+        'and they are marked <code>contents-corresponds-to="no verse in MAM"</code>.',
     )
 
 
@@ -379,14 +374,14 @@ def _intro_lines_for_sef_early_one_vs_many_case(case_rec):
     early_bhs_anchor = _bhs_anchor_id(case_rec)
     late_bhs_anchor = _late_decalogue_bhs_anchor_id(case_rec)
     return (
-        f"As in [BHS](#{early_bhs_anchor}), the span of text labeled "
+        f'As in <a href="#{early_bhs_anchor}">BHS</a>, the span of text labeled '
         + anchor_label
         + " in MAM",
         "is labeled as "
         + _join_labels_with_and(sef_labels)
-        + " in Sef. Unlike [BHS](#"
+        + ' in Sef. Unlike <a href="#'
         + late_bhs_anchor
-        + "), Sef does not go on to split the span of text labeled "
+        + '">BHS</a>, Sef does not go on to split the span of text labeled '
         + contrast_label
         + " in MAM.",
     )

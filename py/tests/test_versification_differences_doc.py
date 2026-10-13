@@ -9,7 +9,9 @@ from versification_differences import doc as versification_differences_doc
 
 def _current_doc_path():
     """The landed MAM-simple document this test diffs against."""
-    return paths.repo_root() / "MAM-simple" / "doc" / "versification-differences.md"
+    return (
+        paths.repo_root() / "gh-pages" / "MAM-simple" / "versification-differences.html"
+    )
 
 
 class TestVersificationDifferencesDoc(unittest.TestCase):
@@ -30,7 +32,7 @@ class TestVersificationDifferencesDoc(unittest.TestCase):
         )
 
         self.assertEqual(
-            versification_differences_doc.render_full_markdown(books_mpu),
+            versification_differences_doc.render_full_html(books_mpu),
             expected,
         )
 

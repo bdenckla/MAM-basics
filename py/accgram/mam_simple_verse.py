@@ -168,8 +168,8 @@ def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
     whose labels that tradition and MAM agree on, and ``json-vtrad-mam/`` holds the
     file to read -- identical but for the root's versification-tradition value, which
     this loader does not read.  That is the reading rule MAM-simple's README and
-    ``doc/reading-mam-simple.md`` state, implemented here because this is the one
-    function that turns a bk39 id into a file for every accgram caller, and those
+    ``gh-pages/MAM-simple/reading-mam-simple.html`` state, implemented here because
+    this is the one function that turns a bk39 id into a file for every accgram caller, and those
     callers ask for ``json-vtrad-bhs`` (the surveys are keyed to WLC's refs).
 
     The fallback fires only for a directory named ``json-vtrad-bhs`` or

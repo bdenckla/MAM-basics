@@ -28,8 +28,9 @@ MAM-simple scope leaves out.
 WHAT IT COVERS, AND WHY NOT THE CORPUS
 
 Every tracked text file under MAM-simple/ except ``xml-vtrad-*`` and ``json-vtrad-*``,
-plus the generator text and generated page named above. The two corpus families are
-excluded on cost, not on trust: the corpus is 84 MB and takes 13 seconds to check,
+plus the maintained HTML reading guides and both versification generators' prose
+and pages. The two corpus families are excluded on cost, not on trust: the corpus
+is 84 MB and takes 13 seconds to check,
 against 0.01 seconds for everything else, and it is the one part already guaranteed at
 generation time by the assert named above. Including it would grow this repo's suite by
 a tenth for a second opinion on the only thing already proven.
@@ -76,6 +77,14 @@ _FLOOR = 20
 _REQUIRED_OUTSIDE_PRODUCT = frozenset(
     {
         "py/versification_and_cantillation/doc.py",
+        "py/versification_differences/doc.py",
+        "py/versification_differences/combined.py",
+        "py/versification_differences/extract.py",
+        "py/versification_differences/case_data.py",
+        "gh-pages/MAM-simple/reading-mam-simple.html",
+        "gh-pages/MAM-simple/reading-mam-simple-xml.html",
+        "gh-pages/MAM-simple/reading-mam-simple-json.html",
+        "gh-pages/MAM-simple/versification-differences.html",
         "gh-pages/MAM-simple/versification-and-cantillation.html",
     }
 )

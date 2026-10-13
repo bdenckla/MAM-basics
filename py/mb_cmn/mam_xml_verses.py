@@ -74,8 +74,8 @@ MAM-simple verse is refused: ``py/tests/test_mam_xml_verses.py`` runs
 atom is empty.
 
 Parashah breaks. MAM-simple places a break between books, between chapters, between
-verses or within a verse (MAM-simple/doc/reading-mam-simple-xml.md). A caller learns
-of a break only from the starts-with-sampe attribute of the verse after it, which
+verses or within a verse (gh-pages/MAM-simple/reading-mam-simple-xml.html).
+A caller learns of a break only from the starts-with-sampe attribute of the verse after it, which
 ``get_verses_in_range`` turns into parashah_before: pe2, samekh2, pe3 and samekh3 give
 {"parashah": "spi-pe2"}, {"parashah": "spi-samekh2"}, {"parashah": "spi-pe3"} and
 {"parashah": "spi-samekh3"}. A verse without the attribute gets None, and any other

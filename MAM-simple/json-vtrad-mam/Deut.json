@@ -11,7 +11,7 @@
       "The free parashah marker and the adjacent starts-with-sampe and ends-with-sampe attributes describe one break, not three.",
       "For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or transform both sides deliberately; Unicode-normalized text can look identical while comparing differently."
     ],
-    "documentation": "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/doc/reading-mam-simple.md#consumer-notice"
+    "documentation": "https://bdenckla.github.io/MAM-basics/MAM-simple/reading-mam-simple.html#consumer-notice"
   },
   "versification-tradition": "vtmam",
   "contents": [

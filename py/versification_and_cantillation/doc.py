@@ -43,9 +43,8 @@ from versification_and_cantillation import strands
 
 _GENERATOR_FILE = Path(__file__).with_name("generate_doc.py")
 
-# The sibling versification-differences doc stays Markdown, rendered on github.com;
-# from this Pages-served HTML page we therefore link to its rendered blob view.
-_VDIFF_URL = "https://github.com/bdenckla/MAM-basics/blob/main/MAM-simple/doc/versification-differences.md"
+# Both versification documents are served from the same Pages directory.
+_VDIFF_URL = "versification-differences.html"
 
 # The MAM-with-doc FOI page listing verses with a פסקא באמצע פסוק (mid-verse
 # samekh/pe divider); linked from the body as the catalogue of such verses.
@@ -120,7 +119,7 @@ CSS_FILENAME = "versification-and-cantillation.css"
 _BODY_TEMPLATE = """\
 <h1>Versification and Cantillation</h1>
 
-<p>This document is a companion to <a href="{vdiff_url}">versification-differences.md</a>.
+<p>This document is a companion to <a href="{vdiff_url}">Versification differences</a>.
 That document deliberately ignores cantillation,
 defining a verse as simply a span of text between two cv-labels.
 That definition of a verse is what we will call
