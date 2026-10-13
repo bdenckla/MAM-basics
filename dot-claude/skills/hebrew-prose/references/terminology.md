@@ -508,6 +508,11 @@ Quotations and adaptations preserve whichever form they use.
 
 ## Transliteration (accgram)
 
+Ben's rendered-prose choices, 2026-10-13: use `qere`, `aliyah`, `parashah`, and `masorah`,
+rather than `qeri`, `aliya`, `parasha`, and `masora`, in our own prose. Retain literal source
+wording, external work titles, technical identifiers and the repository's adaptation exceptions.
+This choice does not start a sweep of other transliteration variants.
+
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 
 - **ḥet (ח) is never `h`.** ASCII **`x`/`X`** almost everywhere hand-written — identifiers

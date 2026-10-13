@@ -62,20 +62,40 @@ New local quotations may instead use
 `data-hebrew-plural-ok="reason"` on their containing element; a reason is required. Use
 these for actual source wording or an established exception, not to suppress authored prose.
 
+The existing `py/tests/test_transliterations.py` separately checks the four approved rendered
+spellings: `qeri` -> `qere`, `aliya` -> `aliyah`, `parasha` -> `parashah`, and `masora` ->
+`masorah`. Those four aliases no longer belong to the plural vocabulary. Both checks share
+the same HTML extraction and quotation/adaptation/technical-reference boundaries. The spelling
+check flags singular forms and appended plural endings, with original file/line diagnostics;
+its scope does not broaden the existing Python transliteration denylist. Five exact external
+work-title phrases in `_SOURCE_TITLES` and the imported UXLC Genesis Masora-circle note in
+`_QUOTATIONS` retain their source spellings without exempting other prose on those pages.
+The exact maintained Unicode name `HEBREW MARK MASORA CIRCLE` also remains literal vocabulary.
+
+All three retained `Ketib` uses in `urwotm_2_saying_the_quiet_part_out_loud.html` now have explicit
+source-preservation markers in its generator: the apparatus transcription's paragraph, the
+quoted reduction's span, and only the Latin term's emphasis in our explanatory gloss. The
+third use is our gloss retaining a source term, not a verbatim quotation of the whole gloss.
+The surrounding authored explanation remains checked. A focused test injects both a plural
+and a nonstandard spelling inside and outside each of these actual marked regions.
+
 This is a vocabulary lint, not a universal detector of romanized Hebrew. Unlisted spellings or
 irregular plural forms, arbitrarily split names, and unrendered Python
 comments/docstrings are outside its coverage. Unmarked source quotations still need human
 classification. Generated pages are covered after regeneration, including by the normal
 mega/nightly workflow; no generator strings or technical identifiers are rewritten by lint.
+The separate spelling check is deliberately narrower: its four literal spellings and appended
+endings are checked, but arbitrarily split names or unlisted spelling variants are not covered.
 
-The recognition aliases are not prescribed house spellings. In both the pre-sweep and current
-HTML, `ketib` has three visible occurrences in the BHS apparatus quotation/reduction/gloss of
-`urwotm_2_saying_the_quiet_part_out_loud.html`; `masora` has nine (five edition/chapter-title
-references, one UXLC quotation, one authored sigil explanation, and two Latin `masora
-parva/magna` phrases). `qeri`, `aliya`, and `parasha` have no observed whole-word gh-pages usage;
-they were speculative aliases added to the recognizer. None of the new replacement prose uses
-these five spellings. Unicode names and technical `MASORA_CIRCLE`/`masora-circle` forms are
-separate from these visible-prose counts. This audit does not standardize their spelling.
+The recognition aliases are not prescribed house spellings. Pre-sweep whole-word HTML counts
+were `ketib` three and `masora` nine; `qeri`, `aliya`, and `parasha` had no observed usage and
+were speculative aliases. The three `ketib` occurrences remain in the BHS source contexts
+described above. The final follow-up standardizes three authored `masora` occurrences: one
+hand-maintained sigil explanation and the two generated Latin `masorah parva/magna` phrases.
+The remaining six `masora` occurrences are five edition/chapter-title references and one
+imported UXLC quotation. No replacement prose introduces the three speculative spellings.
+Unicode names and technical `MASORA_CIRCLE`/`masora-circle` forms are separate from these
+visible-prose counts and retain their exact values.
 
 ## Audit coverage and changes, 2026-10-13
 
@@ -99,6 +119,11 @@ technical-page and preferred-plural clarifications, 54 additional word occurrenc
 across ten pages: 36 English-noun corrections and 18 `parashiyot` → `parashot` substitutions.
 These counts are individual plural words; for example, one `parashot setumot` phrase contributes
 two words. Across both passes, 68 authored occurrences change on eighteen distinct pages.
+The approved spelling follow-up adds three `masora` -> `masorah` changes, for 71 word
+corrections on nineteen pages. The separate BHS source annotations change a twentieth HTML
+file's markup without changing its visible text. Final verification compares against current
+main `c0bd297bbaff781b8eeebd0fc9dfc03f750e3975`, preserving its independently restored
+"Meteg after silluq" link; that owner's change is outside the sweep counts.
 The extensive English-noun rephrasing of `notes_on_aliyot.html` was reversed at its authoritative
 source. Its original `aliyot` wording and surrounding prose are preserved; the only difference
 from its pre-sweep text is the chosen `parashiyot` → `parashot` spelling and incidental line
@@ -118,6 +143,11 @@ wrapping. Its technical context and the scale of editorial churn both motivated 
 | parashot / Parashot | parashah, in parashah setumah/petuḥah sections | 11 | `py/osis/osis_index_html.py` |
 | setumot | setumah, in the same compound noun phrases | 6 | `py/osis/osis_index_html.py` |
 | petuḥot | petuḥah, in the same compound noun phrases | 7 | `py/osis/osis_index_html.py` |
+
+| Approved spelling follow-up | After | HTML occurrences | Authoritative source |
+| --- | --- | ---: | --- |
+| masora qetannah | masorah qetannah | 1 | `gh-pages/MAM-with-doc/sigil-decoding.html` (hand-maintained) |
+| masora parva / masora magna | masorah parva / masorah magna | 2 | `py/near_aleppo/doc_registers.py` |
 
 Intentional remaining plural-name matches:
 
@@ -174,6 +204,19 @@ and `py/main_near_aleppo.py --html`. The follow-up also used `py/main_authored.p
 The maintained `osis.osis_runner.almost_main` rendered the OSIS index with its XML export paths
 redirected to ignored scratch, where the export was validated; the intentionally lagging
 distributed OSIS files were not refreshed. No new command or prose framework was added.
-Only the eighteen intended HTML pages differ across both passes; generated JSON, Scripture,
-other outputs, HTML tags/attributes, links and anchors remain unchanged. English nouns added
-after romanized spans remain outside those spans, while the tag/attribute sequence stays intact.
+Only the twenty intended HTML files differ in the final sweep. Generated JSON, Scripture,
+other outputs, Hebrew marks, links, anchors and classes remain unchanged. Nineteen pages have
+only the intended word corrections and incidental line wrapping, with identical tag/attribute
+sequences. English nouns added after romanized spans remain outside those spans. The twentieth
+page adds exactly three reason attributes and one neutral span for the BHS source protections;
+its visible text and all existing tags/attributes are preserved. Both lints pass over the full
+tracked HTML scope, with the acknowledged vocabulary and quotation-classification limits above.
+
+Final focused verification: `py/main_test.py py/tests/test_prose_conventions.py
+py/tests/test_transliterations.py py/tests/test_prose_mark_order.py -q` passed all ten checks.
+After the exact Unicode-name exception, the three rendered-spelling/source-region checks were
+rerun and passed. Black and `git diff --check` passed. A cumulative comparison against current
+main verified all 71 intended word substitutions, exact Hebrew codepoint streams and HTML
+structures/attributes, allowing only the three stated source markers and their neutral span.
+The full mega and suite were intentionally deferred under the approved review/testing trial:
+this prose-only change received focused regeneration and comparison while Ben worked.

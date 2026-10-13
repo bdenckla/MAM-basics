@@ -35,16 +35,22 @@ This module is itself excluded from the *denylist* scan: its patterns
 necessarily spell out every retired variant.  (It is still covered by the
 decomposed-composite scan, so the real het glyph it does use stays precomposed.)
 
+The separate rendered-prose check below enforces only the four approved noun
+spellings, using the plural lint's quotation/adaptation/identifier boundaries.
+
 Run:
-    .venv/Scripts/python.exe -m pytest py/tests/test_transliterations.py -v
+    .venv/Scripts/python.exe py/main_test.py py/tests/test_transliterations.py -v
 """
 
 from __future__ import annotations
 
 import re
+import subprocess
 import unicodedata
 
-from mb_cmn import paths
+from mb_cmn import paths, unicode_data
+from mb_cmn import hebrew_name_plurals as html_prose
+from mb_cmn.git_process import git_command
 
 # Lines bearing this pragma are exempt from the denylist scan.
 _PRAGMA = re.compile(r"#\s*translit-ok")
@@ -146,3 +152,133 @@ def test_no_decomposed_composites_tree_wide() -> None:
         "Use precomposed (NFC) forms, not decomposed base+combining-mark"
         " sequences:\n  " + "\n  ".join(offenders)
     )
+
+
+# This distinct HTML check covers only Ben's four approved spelling choices.
+# Other source spellings retain the existing denylist and its own exemptions.
+_RENDERED_VARIANTS = {
+    "qeri": ("qere", "forms"),
+    "aliya": ("aliyah", "portions"),
+    "parasha": ("parashah", "sections"),
+    "masora": ("masorah", "notes"),
+}
+_RENDERED_VARIANT_PATTERN = re.compile(
+    r"\b(" + "|".join(_RENDERED_VARIANTS) + r")(s|es|im|ot)?\b", re.I
+)
+
+
+def _rendered_variant_findings(html: str, rel: str) -> list[html_prose.Finding]:
+    if not _RENDERED_VARIANT_PATTERN.search(html):
+        return []
+    text, lines = html_prose.authored_html_text(html, rel)
+    # An exact Unicode name is literal vocabulary, not our prose spelling.
+    unicode_name = unicode_data.name("\u05af")
+    text = text.replace(unicode_name, " " * len(unicode_name))
+    found = []
+    for match in _RENDERED_VARIANT_PATTERN.finditer(text):
+        if html_prose.is_technical_reference(text, match):
+            continue
+        preferred, plural_noun = _RENDERED_VARIANTS[match[1].lower()]
+        if match[1].isupper():
+            preferred = preferred.upper()
+        elif match[1][0].isupper():
+            preferred = preferred.capitalize()
+        if match[2]:
+            preferred += " " + plural_noun
+        found.append(html_prose.Finding(lines[match.start()], match[0], preferred))
+    return found
+
+
+def test_no_nonstandard_noun_transliterations_in_rendered_prose() -> None:
+    root = paths.repo_root()
+    tracked = (
+        subprocess.check_output(git_command(root, "ls-files", "-z", "--", "gh-pages"))
+        .decode("utf-8")
+        .split("\0")
+    )
+    html = [rel for rel in tracked if rel.endswith(".html")]
+    assert html, "no tracked gh-pages HTML: transliteration lint would be empty"
+    offenders = []
+    for rel in html:
+        for finding in _rendered_variant_findings(
+            (root / rel).read_text(encoding="utf-8"), rel
+        ):
+            offenders.append(
+                f"{rel}:{finding.line}: {finding.term} -> {finding.preferred}"
+            )
+    assert (
+        not offenders
+    ), "Use the chosen transliteration in authored prose:\n" + "\n".join(offenders)
+
+
+def test_rendered_variant_quotes_adaptations_and_identifiers() -> None:
+    scan = _rendered_variant_findings
+    rel = "gh-pages/example.html"
+    assert [f.preferred for f in scan("<p>qeri, aliya, parasha, masora.</p>", rel)] == [
+        "qere",
+        "aliyah",
+        "parashah",
+        "masorah",
+    ]
+    assert [f.preferred for f in scan("<p>qeris and masoras.</p>", rel)] == [
+        "qere forms",
+        "masorah notes",
+    ]
+    assert not scan(
+        "<q>qeri maqafs</q><blockquote>aliya metegs</blockquote>"
+        '<span data-hebrew-plural-ok="literal source">parasha shewas</span>'
+        "<code>qeri</code><p>unit.qeri qeri_key qeri.txt /aliya/</p>"
+        '<a href="parasha.html" class="masora" id="qeri">link</a>',
+        rel,
+    )
+    assert not html_prose.html_findings("<q>qeri maqafs</q><p>qere forms</p>", rel)
+    assert html_prose.html_findings("<p>maqafs</p>", rel)
+    assert scan("<p>qeri</p>", rel)
+    assert not scan(
+        "<p>qeri aliya parasha masora</p>", "gh-pages/yeivin-itm/adapted-prose.html"
+    )
+    assert scan("<p>qeri</p>", "gh-pages/MAM-with-doc/misc/notes_on_aliyot.html")
+    clc = "gh-pages/clc/Genesis.html"
+    phrase = (
+        "The Masora Circle over the word refers to the number '4' in the left margin."
+    )
+    assert not scan("<p>" + phrase + "</p>", clc)
+    assert scan("<p>" + phrase + "</p><p>masora</p>", clc)
+    unicode_name = unicode_data.name("\u05af")
+    assert not scan("<p>" + unicode_name + "</p>", rel)
+    assert [f.term for f in scan("<p>" + unicode_name + " and MASORA.</p>", rel)] == [
+        "MASORA"
+    ]
+
+
+def test_bhs_ketib_regions_exempt_only_the_retained_source_wording() -> None:
+    rel = "gh-pages/MAM-with-doc/misc/urwotm_2_saying_the_quiet_part_out_loud.html"
+    html = (paths.repo_root() / rel).read_text(encoding="utf-8")
+    regions = list(
+        re.finditer(
+            r'<(?P<tag>p|span|em) data-hebrew-plural-ok="[^"]+">'
+            r"(?P<body>.*?)</(?P=tag)>",
+            html,
+            re.S,
+        )
+    )
+    assert len(regions) == 3
+    assert all("Ketib" in region["body"] for region in regions)
+    authored, _ = html_prose.authored_html_text(html, rel)
+    assert "Ketib" not in authored
+    assert "which I take to mean:" in authored
+    assert "unpointed" in authored  # our gloss remains checked outside its Latin term
+    for region in regions:
+        changed = (
+            html[: region.start("body")]
+            + region["body"].replace("Ketib", "qeri maqafs")
+            + html[region.end("body") :]
+        )
+        assert not html_prose.html_findings(changed, rel)
+        assert not _rendered_variant_findings(changed, rel)
+        # Identical words in new authored prose on this page must still fail.
+        changed += "\n<p>qeri maqafs</p>"
+        assert [f.term for f in html_prose.html_findings(changed, rel)] == ["maqafs"]
+        spellings = _rendered_variant_findings(changed, rel)
+        assert [f.term for f in spellings] == ["qeri"]
+        assert spellings[0].line == changed.count("\n") + 1

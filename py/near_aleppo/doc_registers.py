@@ -114,8 +114,8 @@ def _not_represented():
         ),
         mb_html.unordered_list(
             [
-                "The rest of the masorah: the masorah circles, the masora parva, and "
-                "the masora magna. Only the qere notes are there, as MAM's ketiv/qere "
+                "The rest of the masorah: the masorah circles, the masorah parva, and "
+                "the masorah magna. Only the qere notes are there, as MAM's ketiv/qere "
                 "templates.",
                 "The codex's rafe marks, beyond the few that MAM has. The codex has "
                 "many more, and how many is not known.",

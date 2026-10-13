@@ -37,13 +37,9 @@ _PROSE_NOUNS = {
     "ketiv": "forms",
     "ketib": "forms",
     "qere": "forms",
-    "qeri": "forms",
     "masorah": "notes",
-    "masora": "notes",
     "aliyah": "portions",
-    "aliya": "portions",
     "parashah": "sections",
-    "parasha": "sections",
     "setumah": "sections",
     "petuḥah": "sections",
     "petuxah": "sections",
@@ -151,9 +147,7 @@ def text_findings(text: str, lines: list[int]) -> list[Finding]:
         if key not in names:
             continue
         # Paths, identifiers, URLs and apostrophe-s possessives are not prose plurals.
-        left = text[match.start() - 1 : match.start()] if match.start() else ""
-        right = text[match.end() : match.end() + 1]
-        if left in {"_", "/", ".", "@", "·"} or right in {"_", "/", "·"}:
+        if is_technical_reference(text, match):
             continue
         if key in _AMBIGUOUS and not re.search(
             r"\b(?:Hebrew|letters?)\b",
@@ -172,6 +166,17 @@ def text_findings(text: str, lines: list[int]) -> list[Finding]:
         preferred = singular + (" " + noun if noun else "")
         findings.append(Finding(lines[match.start()], term, preferred))
     return findings
+
+
+def is_technical_reference(text: str, match: re.Match[str]) -> bool:
+    """Exclude identifier/path tokens, not sentence-final punctuation."""
+    left = text[match.start() - 1 : match.start()] if match.start() else ""
+    right = text[match.end() : match.end() + 1]
+    return (
+        left in {"_", "/", "\\", ".", "@", "·", "-"}
+        or right in {"_", "/", "\\", "·", "-"}
+        or (right == "." and text[match.end() + 1 : match.end() + 2].isalnum())
+    )
 
 
 class _Prose(HTMLParser):
@@ -264,6 +269,9 @@ _QUOTATIONS = {
     "gh-pages/clc/Proverbs.html": (
         "five yods and no Masorah circle is present to indicate which yod is superfluous",
     ),
+    "gh-pages/clc/Genesis.html": (
+        "The Masora Circle over the word refers to the number '4' in the left margin.",
+    ),
     "gh-pages/holman/uxlc_corrections.html": (
         "where two Merekhas serve Legarmeh",
         "Revise note that other editions read with one or two Merekhas.",
@@ -273,19 +281,51 @@ _QUOTATIONS = {
     ),
 }
 
+_SOURCE_TITLES = {
+    **{
+        f"gh-pages/MAM-with-doc/misc/{name}.html": ("Miqra al pi ha-Masora edition",)
+        for name in (
+            "he_ws_intro_to_mam_gaya_text",
+            "he_ws_intro_to_mam_gray_maqaf_1",
+            "he_ws_intro_to_mam_pasleg",
+        )
+    },
+    "gh-pages/aleppo/missing_sections_torah.html": (
+        "Mavo le-Miqra ʿal pi ha-Masora, Pereq Gimel",
+    ),
+    "gh-pages/aleppo/missing_sections_nakh.html": (
+        "Mavo le-Miqra ʿal pi ha-Masora, Pereq Dalet",
+    ),
+}
+
 # Ben permits aliyot in this technical document only.
 _PAGE_TERM_EXCEPTIONS = {
     "gh-pages/MAM-with-doc/misc/notes_on_aliyot.html": {"aliyot"},
 }
 
 
-def html_findings(html: str, relative_path: str) -> list[Finding]:
-    """Check authored prose; preserve the entire Yeivin adaptation and quotations."""
+def authored_html_text(html: str, relative_path: str) -> tuple[str, list[int]]:
+    """Shared quote/adaptation/code exclusions for the two rendered-prose lints."""
     if (
         relative_path.startswith("gh-pages/yeivin-itm/")
         or relative_path == "gh-pages/yeivin_itm.html"
     ):
-        return []
+        return "", []
+    parser = _Prose()
+    parser.feed(html)
+    parser.close()
+    text = "".join(parser.text)
+    # Narrow exceptions retain line positions instead of suppressing a whole page.
+    for quotation in (
+        *_QUOTATIONS.get(relative_path, ()),
+        *_SOURCE_TITLES.get(relative_path, ()),
+    ):
+        text = text.replace(quotation, " " * len(quotation))
+    return text, parser.lines
+
+
+def html_findings(html: str, relative_path: str) -> list[Finding]:
+    """Check plurals in authored prose, respecting narrow term exceptions."""
     # Most pages contain Scripture only. Token lookup avoids parsing those pages;
     # the second arm also admits suffixes separated from their name by markup.
     names = vocabulary()
@@ -293,16 +333,10 @@ def html_findings(html: str, relative_path: str) -> list[Finding]:
         _latin_key(match.group()) in names for match in _WORD.finditer(html)
     ):
         return []
-    parser = _Prose()
-    parser.feed(html)
-    parser.close()
-    text = "".join(parser.text)
-    # Narrow exceptions retain line positions instead of suppressing a whole page.
-    for quotation in _QUOTATIONS.get(relative_path, ()):
-        text = text.replace(quotation, " " * len(quotation))
+    text, lines = authored_html_text(html, relative_path)
     permitted = _PAGE_TERM_EXCEPTIONS.get(relative_path, set())
     return [
         finding
-        for finding in text_findings(text, parser.lines)
+        for finding in text_findings(text, lines)
         if _latin_key(finding.term) not in permitted
     ]
