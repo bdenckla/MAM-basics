@@ -6,8 +6,11 @@ from author_misc import mp_cmn_claims_core as _claims_core
 from mb_cmn import mam_bknas as bknas
 from mb_author import author
 from mb_misc import mb_html
+from py_html.my_html_span_romanized import rmn
 
 _claim_def = _claims_core.claim_def
+
+_SILLUQ = rmn("silluq")
 
 _KQ_SPECIAL_DOC = "mpplus_kq_special.html"
 _DUALCANT_DOC = "mpplus_dualcant.html"
@@ -162,10 +165,14 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
         (tmpln.SILLUQ_BEFORE_METEG,),
         [
             author.hbo(tmpln.SILLUQ_BEFORE_METEG),
-            "Explicit silluq before a later $meteg. Param 1 is the full marked atom; "
-            "param 2 has its letters and one U+05BD identifying silluq, without "
-            "other marks or punctuation. Param 2 is position metadata, not "
-            "additional Scripture text. Sof pasuq stays outside the template.",
+            [
+                "Annotates ",
+                _SILLUQ,
+                " before $meteg. Param 1 is the full marked atom; "
+                "param 2 has its letters and one U+05BD identifying ",
+                _SILLUQ,
+                ", without other marks or punctuation.",
+            ],
         ],
     ),
     (

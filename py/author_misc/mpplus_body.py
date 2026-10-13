@@ -96,6 +96,7 @@ _JSON_D_COL_FIRST = jsnip.read_text("mpplus_body", "d_col_first.json")
 _JSON_EP_EXAMPLE = jsnip.read_text("mpplus_body", "ep_example.json")
 _JSON_TMPL_FORMAT = jsnip.read_text("mpplus_body", "tmpl_format.json")
 _JSON_NESTED = jsnip.read_text("mpplus_body", "nested_tmpl.json")
+_JSON_SILLUQ_BEFORE_METEG = jsnip.read_text("mpplus_body", "silluq_before_meteg.json")
 
 
 def _json_top_level_skel(*, claims: ClaimCollection):
@@ -183,6 +184,16 @@ def _json_nested(*, claims: ClaimCollection):
         claims,
         "mp.plus.example.nested-tmpl",
         _JSON_NESTED,
+        kind="example",
+        subject="mp:plus",
+    )
+
+
+def _json_silluq_before_meteg(*, claims: ClaimCollection):
+    return _emit_claim_payload(
+        claims,
+        "mp.plus.example.silluq-before-meteg",
+        _JSON_SILLUQ_BEFORE_METEG,
         kind="example",
         subject="mp:plus",
     )
@@ -582,54 +593,50 @@ def s_common_templates(*, claims: ClaimCollection):
         ),
         author.para(
             [
-                "The supported template ",
+                "The template ",
                 author.hbo("מ:סילוק לפני געיה"),
                 " identifies ",
                 _SILLUQ,
-                " before a later $meteg without changing $MAM’s text. "
-                "Support does not require a corpus occurrence; the tables above describe "
-                "observed templates. The annotation has exactly two positional parameters. "
-                "Parameter 1 is the full marked atom. Parameter 2 has the same Hebrew "
-                "letters and exactly one U+05BD at the ",
+                " before $meteg without changing $MAM’s text. "
+                "For example, $MAM’s annotation for Job 4:12 is:",
+            ]
+        ),
+        json_block.json_block_raw_html(_json_silluq_before_meteg(claims=claims)),
+        author.para(
+            [
+                "Parameter 1 contains the full marked atom. Here, the stroke on ",
+                author.hbo("מ"),
+                " is ",
                 _SILLUQ,
-                " position, with no other "
-                "marks or punctuation. Parameter 1 has that mark and at least one later "
-                "U+05BD. Both parameters exclude $sof_pasuq, which follows the enclosing "
-                "template as ordinary text.",
+                ", and the later stroke on ",
+                author.hbo("ה"),
+                " is $meteg. Both strokes use U+05BD.",
+            ]
+        ),
+        author.para(
+            [
+                "Parameter 2 repeats the Hebrew letters with only the ",
+                _SILLUQ,
+                " stroke, identifying which stroke marks the stressed syllable.",
+            ]
+        ),
+        author.para(
+            [
+                "The template takes exactly these two positional parameters. "
+                "Parameter 1 includes the identified ",
+                _SILLUQ,
+                " and at least one later U+05BD. Parameter 2 contains no other marks "
+                "or punctuation. The following $sof_pasuq sits outside the template "
+                "as ordinary text.",
             ]
         ),
         author.para(
             [
                 "A Scripture projection takes parameter 1 only. Parameter 2 is position "
-                "metadata, not a second reading. $MAM-simple preserves both parameters "
-                "as ",
-                mb_html.code("text"),
-                " and ",
-                mb_html.code("letters-with-silluq"),
-                " on its ",
-                mb_html.code("silluq-before-meteg"),
-                " element. A consumer that locates stress uses the explicit position "
-                "instead of assuming that the final U+05BD is ",
+                "metadata, not a second reading. A consumer that locates stress uses "
+                "the explicit position instead of assuming that the final U+05BD is ",
                 _SILLUQ,
                 ".",
-            ]
-        ),
-        author.para(
-            [
-                "The template itself has no explanatory-note parameter. Both current "
-                "calls are inside existing ",
-                author.hbo("נוסח"),
-                " annotations whose source notes identify the ",
-                _SILLUQ,
-                " and $meteg "
-                "positions and describe other editions’ text. $MAM-parsed-plus "
-                "retains those source notes; they are omitted when $MAM-simple is "
-                "produced. "
-                "OSIS preserves both marks and adds a separate short note, ",
-                author.hbo("סילוק לפני געיה"),
-                " (“",
-                _SILLUQ,
-                " before $meteg”), rather than the detailed source notes.",
             ]
         ),
     ]
