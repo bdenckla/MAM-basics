@@ -1,12 +1,52 @@
-"""Validate batched chapter identities and retrieve their exact raw revisions."""
+"""Validate batched chapter identities and retrieve their exact raw revisions.
+
+The chapter and special-page downloads both query the API through ChapterClient, which
+waits out replication lag rather than failing on it.
+"""
+
+import time
 
 import requests
 
+from mb_misc import my_utils_for_mainish as my_utils_fm
 from ws import ws_revision_metadata as metadata
 
 
 class ChapterResponseError(RuntimeError):
     """A chapter response cannot establish a complete, unambiguous identity."""
+
+
+def get_query_json(downloader, endpoint, params, *, allow_cache, sleep_fun=time.sleep):
+    """Return a Wikisource API query's JSON, retrying while the API refuses it for lag.
+
+    ChapterClient sends maxlag=1, asking the API to refuse a query rather than add load
+    while a replica database lags more than a second behind. MediaWiki answers that
+    refusal with HTTP 200 and an error whose code is "maxlag", with a Retry-After header
+    of at least five seconds. polite_download retries only HTTP error statuses, so until
+    2026-10-13 one refusal ended a whole download: that day's first refresh attempt
+    stopped at its 19th request, refused for 1.001 seconds of lag. Waits double from five
+    seconds to a one-minute cap. A refusal of the last attempt is returned, so the
+    caller's own check of the response's "error" key still stops a run that the lag
+    outlasts.
+    """
+    for attempt in range(1, _MAXLAG_ATTEMPTS):
+        response = downloader.get_json(endpoint, params=params, allow_cache=allow_cache)
+        if not _is_maxlag_refusal(response):
+            return response
+        wait_s = min(_MAXLAG_FIRST_WAIT_S * 2 ** (attempt - 1), _MAXLAG_MAX_WAIT_S)
+        my_utils_fm.show_progress_g(
+            __file__,
+            "maxlag",
+            f"refused at {response['error'].get('lag')}s of lag;"
+            f" waiting {wait_s:g}s before attempt {attempt + 1} of {_MAXLAG_ATTEMPTS}",
+        )
+        sleep_fun(wait_s)
+    return downloader.get_json(endpoint, params=params, allow_cache=allow_cache)
+
+
+def _is_maxlag_refusal(response):
+    error = response.get("error") if isinstance(response, dict) else None
+    return isinstance(error, dict) and error.get("code") == "maxlag"
 
 
 class CountingSession(requests.Session):
@@ -264,9 +304,10 @@ class ChapterClient:
             self.metadata_batches += 1
         else:
             self.content_batches += 1
-        return self.downloader.get_json(
+        return get_query_json(
+            self.downloader,
             self.endpoint,
-            params={
+            {
                 "action": "query",
                 "format": "json",
                 "formatversion": 2,
@@ -325,3 +366,8 @@ class ChapterClient:
             ),
             identities,
         )
+
+
+_MAXLAG_ATTEMPTS = 6
+_MAXLAG_FIRST_WAIT_S = 5.0
+_MAXLAG_MAX_WAIT_S = 60.0
