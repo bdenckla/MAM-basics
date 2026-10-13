@@ -18,6 +18,7 @@ from mb_cmn import verse_external_links as vel
 from mb_misc import mb_html
 from near_aleppo import build_paths, edition
 from near_aleppo import foi_qere_without_ketiv
+from near_aleppo import foi_spacing
 from py_misc import mam_doc_utils, mwd_utils
 from py_misc import ren_html_for_renel as hfr
 from render_wt import render_wikitext as rwt
@@ -332,6 +333,9 @@ def render():
                     "Interesting ketiv/qere cases", "interesting-ketiv-qere.html"
                 ),
                 mb_html.anchor_h("Qere without ketiv", "qere-without-ketiv.html"),
+                mb_html.anchor_h(
+                    "Cramped atoms and letter spacing", "cramped-atoms.html"
+                ),
             ]
         ),
     ]
@@ -382,4 +386,5 @@ def render():
         pages[path] = mb_html.html_text(body, ctx).encode("utf-8")
     pages["img/" + _SHIN_IMAGE] = shin_image
     pages.update(foi_qere_without_ketiv.render(verses, study_records))
+    pages.update(foi_spacing.render())
     return pages

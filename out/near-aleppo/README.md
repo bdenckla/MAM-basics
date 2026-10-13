@@ -95,7 +95,13 @@ the website. The [qere-without-ketiv study](https://bdenckla.github.io/MAM-basic
 shows short NAEE excerpts, current MAM notes, recorded manuscript observations,
 and supplied crops.
 Its [source note](https://github.com/bdenckla/MAM-basics/blob/main/doc/near-aleppo-qere-without-ketiv/README.md) identifies the
-maintained records and crop provenance. Regenerate the FOI pages and images with:
+maintained records and crop provenance.
+
+The [spacing study](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/cramped-atoms.html)
+compares characteristic cramped atoms at usual spacing and with added letter
+spacing, including adjacent narrow letters and qof with a pointed predecessor.
+It distinguishes the active NAEE spacing rule from broader trial families.
+Regenerate the FOI pages and images with:
 
 ```powershell
 ./.venv/Scripts/python.exe py/main_near_aleppo.py --html
