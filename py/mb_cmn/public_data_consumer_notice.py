@@ -125,8 +125,7 @@ def mam_simple_notice() -> dict[str, object]:
                 "Reassemble fragments before identifying atoms or chanted words; "
                 "structural boundaries do not define units of cantillation. An "
                 "lp-legarmeih node represents a mark that belongs with the preceding "
-                "atom. Narrow-sense paseq (lp-paseq) is not part of the preceding atom; "
-                "its line-wrapping behavior is a rendering decision for the application."
+                "atom. Narrow-sense paseq (lp-paseq) is not part of the preceding atom."
             ),
             MAM_SIMPLE_NARPAS_GROUPING_RULE,
             (
