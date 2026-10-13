@@ -7,7 +7,7 @@
     "מ:לגרמיה-2": 1785,
     "מ:פסק": 508,
     "מ:מקף אפור": 116,
-    "נוסח": 3595,
+    "נוסח": 3596,
     "מ:הערה-2": 27,
     "מ:כפול": 34,
     "מ:קו״כ-אם-2": 149,
@@ -292,7 +292,7 @@
     ]
   },
   "phase5_counts": {
-    "codex readings: notes walked": 3595,
+    "codex readings: notes walked": 3596,
     "codex readings: empty clauses in note bodies": 1,
     "codex readings: direct codex siglum elements": 1150,
     "codex readings: direct differing clauses": 1142,
@@ -613,7 +613,7 @@
     ]
   },
   "phase6_counts": {
-    "נוסח: notes reached": 3595,
+    "נוסח: notes reached": 3596,
     "מ:הערה-2: notes reached": 27,
     "נוסח: notes given MAM's target": 1549,
     "מ:הערה-2: notes given MAM's target": 5

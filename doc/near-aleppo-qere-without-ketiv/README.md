@@ -125,10 +125,12 @@ summary appear only when entries exist. The three cases without an attached MAM
 note are labelled accordingly. Hebrew body-text examples remain in RTL blocks.
 The Ruth marginal-note quotations stay inline at their source position, in
 ordinary prose styling, without a separate explanatory paraphrase.
-At Jeremiah 31:37, the English translation adds a bracketed translator's note
-immediately after MAM's body-text illustration: “[sic, missing נְאֻם־ in MAM's
-illustration]”. The original Hebrew quotation remains unchanged; the annotation
-identifies an omission in MAM's illustration.
+At Jeremiah 31:37, MAM's body-text illustration omitted נְאֻם־ until the
+Hebrew Wikisource edit of 2026-10-13, revision 3088451, restored it, as
+[MAM-basics issue 304](https://github.com/bdenckla/MAM-basics/issues/304)
+requested. The English translation's bracketed translator's note,
+“[sic, missing נְאֻם־ in MAM's illustration]”, was removed when the
+corrected note arrived.
 The manuscript sigla follow the mirrored introduction's source roster:
 `א` is the Aleppo Codex, `ל` the Leningrad Codex, and `ק` the Cairo Codex of the
 Prophets. The roster's `סימנים` is the Simanim Tanakh, as specified in

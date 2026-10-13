@@ -6,6 +6,10 @@ entry point is `py/main_near_aleppo.py`. Its inputs are the tracked
 data in `in/near-aleppo/`. Its outputs are `out/near-aleppo/plus/` and
 `gh-pages/near-aleppo/`. The product README gives the CLI commands and license.
 
+Follow [Releasing near-Aleppo](near-aleppo-release.md) to prepare a release,
+update the dated release links, package the committed dataset, and publish
+verified attachments.
+
 The documentation pages load `../document.css` for their shared English
 typography, followed by `../MAM-parsed/style.css` for parsed-document examples.
 Their own `style.css` adds the Hebrew examples, template notation

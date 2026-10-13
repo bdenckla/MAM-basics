@@ -171,19 +171,19 @@ found; fragments can coincide with a name plus an ending):
 
 | Raw fragment | Occurrences in `gh-pages/phonetic-mam/tnkh/` |
 | --- | ---: |
-| ḥés | 52 |
+| ḥés | 52 |
 | ḥets | 44 |
-| béts | 20 |
-| pés | 16 |
-| ḥéts | 6 |
+| béts | 20 |
+| pés | 16 |
+| ḥéts | 6 |
 | ḥes | 5 |
-| mémim | 4 |
+| mémim | 4 |
 | bets | 4 |
 | nunim | 3 |
 | vaus | 2 |
 | pes | 1 |
 | ḥetim | 1 |
-| téts | 1 |
+| téts | 1 |
 
 Ordinary English plurals and literal Unicode-name strings also remain unchanged. These
 distinctions are why a blanket text replacement is inappropriate. No remaining authored prose

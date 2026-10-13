@@ -1,0 +1,20 @@
+{
+  "summary": "Note links: Exod 17:16, unbold the link text לשוננו (raw ''' markup stops MAM's parser) and use JSTOR's public address, not a library proxy; Exod 26:7, write the bare [URL text] link with מ:קישור בהערה again",
+  "edit-kind": "explicit-replacement",
+  "edits": {
+    "Exodus": [
+      {
+        "ch": "יז",
+        "old": "{{מ:קישור בהערה|1=https://www-jstor-org.mgs.oranim.ac.il/journal/lesonenu|2='''לשוננו'''}}",
+        "new": "{{מ:קישור בהערה|1=https://www.jstor.org/journal/lesonenu|2=לשוננו}}",
+        "comment": "Exodus 17:16: unbold the link text and use JSTOR's public address"
+      },
+      {
+        "ch": "כו",
+        "old": "[https://archive.org/details/sefer-torah-bl-or-1462-images/page/n8/mode/1up ספר התורה בספריה הבריטית Or. 1462]",
+        "new": "{{מ:קישור בהערה|https://archive.org/details/sefer-torah-bl-or-1462-images/page/n8/mode/1up|ספר התורה בספריה הבריטית Or. 1462}}",
+        "comment": "Exodus 26:7: write the bare link with the external-link template again"
+      }
+    ]
+  }
+}
