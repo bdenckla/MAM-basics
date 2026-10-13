@@ -320,9 +320,9 @@
   "what": "A qamats-variant row contains qamats-dal and qamats-sam readings of one MAM template row. The source-entry count includes both readings; the MAM chanted-word count selects the qamats-dal sequence once. The fatal survey invariants require source entries to equal MAM chanted words counted plus duplicate phonetic-reading entries, and connect duplicate entries to row counts and measured grouping differences, in each system.",
   "by_system": {
    "prose verses": {
-    "source_entries": 233586,
-    "variant_rows": 309,
-    "duplicate_phonetic_reading_entries": 309,
+    "source_entries": 233587,
+    "variant_rows": 310,
+    "duplicate_phonetic_reading_entries": 310,
     "mam_chanted_words_counted": 233277
    },
    "poetic verses": {

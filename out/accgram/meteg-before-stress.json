@@ -38866,18 +38866,6 @@
     "other_meteg_count": null
    },
    {
-    "bcv": "2K22:1",
-    "hebrew": "מִבָּֽצְקַֽת׃",
-    "transcription": "mib.ba.ts^.!kat",
-    "qamats_variant": null,
-    "pattern": "AFR3",
-    "fine_pattern": "AFR3",
-    "accent_class": "disj",
-    "target_meteg": false,
-    "accent_on_target": null,
-    "other_meteg_count": 1
-   },
-   {
     "bcv": "2K22:6",
     "hebrew": "וְלַגֹּֽדְרִ֑ים",
     "transcription": "v^.lag.gO.d^.!rIm",
@@ -72632,7 +72620,7 @@
    {
     "field": "fine_pattern",
     "value": "AFR3",
-    "count": 1656
+    "count": 1655
    },
    {
     "field": "fine_pattern",
@@ -72712,7 +72700,7 @@
    {
     "field": "other_meteg_count",
     "value": 1,
-    "count": 497
+    "count": 496
    },
    {
     "field": "other_meteg_count",
@@ -72755,7 +72743,7 @@
     "cwg": 9,
     "csg": 577,
     "dwg": 25,
-    "dsg": 1045
+    "dsg": 1044
    },
    "AFR4": {
     "cwg": 3,
@@ -73284,6 +73272,18 @@
     "other_meteg_count": null
    },
    {
+    "bcv": "2K22:1",
+    "hebrew": "מִבָּֽצְקַֽת׃",
+    "transcription": "mib.ba.ts^.!kat",
+    "qamats_variant": "qamats-sam",
+    "pattern": "AFR3",
+    "fine_pattern": "AFR3",
+    "accent_class": "disj",
+    "target_meteg": false,
+    "accent_on_target": null,
+    "other_meteg_count": 1
+   },
+   {
     "bcv": "I58:10",
     "hebrew": "כַּֽצָּהֳרָֽיִם׃",
     "transcription": "kats.tsa.h0.!ra.yim",
@@ -73629,12 +73629,12 @@
    {
     "field": "fine_pattern",
     "value": "AFR3",
-    "count": 3
+    "count": 4
    },
    {
     "field": "other_meteg_count",
     "value": 1,
-    "count": 2
+    "count": 3
    }
   ],
   "reshaped_counts": {
@@ -73672,7 +73672,7 @@
     "cwg": 0,
     "csg": 0,
     "dwg": 1,
-    "dsg": 2
+    "dsg": 3
    },
    "AFR4": {
     "cwg": 0,

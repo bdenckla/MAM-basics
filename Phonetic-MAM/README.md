@@ -46,38 +46,27 @@ consumer joining Phonetic MAM to MAM must allow for these differences:
    for example, `MAM-simple/` has וַ֭אֲנִי and Phonetic MAM has וַ֭אֲנִ֭י.
 4. **Varika.** Phonetic MAM keeps MAM's varika, U+FB1E, which `MAM-simple/`
    lacks.
-5. **2 Kings 22:1.** MAM's qamats template, `מ:קמץ`, gives the verse's last
-   chanted word two alternatives, מִבׇּֽצְקַֽת for its ד parameter
-   and מִבָּֽצְקַֽת for its ס parameter. Phonetic MAM has only the second,
-   as מִבָּֽצְקַֽת׃, without the labels קמץ-ד and קמץ-ס that it has at each of the
-   other 356 verses where MAM has that template. Until the Wikisource refresh of
-   2026-09-27, this repository's copy of MAM had only the form Phonetic MAM has.
-6. **2 Chronicles 25:17.** MAM has the ketiv לך and the qere לְכָ֖ה. Phonetic
-   MAM has לְךָ֖, with the ketiv's final kaf and the qere's points. MAM's
-   note there reports that the Aleppo Codex has לְךָ֖ with no qere note, so Phonetic
-   MAM has the form that MAM's note attributes to that manuscript. That is
-   MAM's report; the manuscript itself has not been checked.
-7. **Rafe.** Phonetic MAM's book files have none of MAM's rafe, U+05BF, which
+5. **Rafe.** Phonetic MAM's book files have none of MAM's rafe, U+05BF, which
    `MAM-simple/` has.
-8. **Ketiv and qere.** Where MAM has a ketiv and a qere, `MAM-simple/`'s `kq`,
-   Phonetic MAM has only the qere, apart from item 6's verse. It has none of the
-   8 ketivs that MAM writes but does not read, `MAM-simple/`'s `kq-k-velo-q`.
-9. **Inverted nuns.** Phonetic MAM has none of MAM's 9 inverted nuns,
+6. **Ketiv and qere.** Where MAM has a ketiv and a qere, `MAM-simple/`'s `kq`,
+   Phonetic MAM has only the qere. It has none of the 8 ketivs that MAM writes
+   but does not read, `MAM-simple/`'s `kq-k-velo-q`.
+7. **Inverted nuns.** Phonetic MAM has none of MAM's 9 inverted nuns,
    `MAM-simple/`'s `spi-invnun`, though it keeps MAM's parashah breaks and
    narrow-sense paseqs as rows of their own.
-10. **Shirah spacing.** Phonetic MAM has the closed-parashah marker `ססס` at each
-    of MAM's 328 uses of the template `מ:ששש`, the shirah (song) spacing that
-    `MAM-simple/` writes as `shirah-space`. So Phonetic MAM has 758 `ססס` rows
-    where MAM has 430 `ססס`. All 328 are in the eight passages that MAM lays out
-    in song form:
-    - Exodus 15
-    - Deuteronomy 32
-    - Joshua 12
-    - Judges 5
-    - 2 Samuel 22
-    - Ecclesiastes 3
-    - Esther 9
-    - 1 Chronicles 16
+8. **Shirah spacing.** Phonetic MAM has the closed-parashah marker `ססס` at each
+   of MAM's 328 uses of the template `מ:ששש`, the shirah (song) spacing that
+   `MAM-simple/` writes as `shirah-space`. So Phonetic MAM has 758 `ססס` rows
+   where MAM has 430 `ססס`. All 328 are in the eight passages that MAM lays out
+   in song form:
+   - Exodus 15
+   - Deuteronomy 32
+   - Joshua 12
+   - Judges 5
+   - 2 Samuel 22
+   - Ecclesiastes 3
+   - Esther 9
+   - 1 Chronicles 16
 
 The transcriptions have each acute or breve vowel decomposed, as a base letter
 followed by U+0301 or U+0306, while their ḥ is the precomposed U+1E25. Elsewhere
