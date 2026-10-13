@@ -131,7 +131,13 @@ them. Approval of the refresh approves nothing that they protect.
    `py/ws/ws_get_bk_in_fmt_2.py`'s header or category assertion, a chapter page no longer names
    the chapter it was fetched as: inspect the page, then record a deliberate layout change in a
    reviewed commit of its own, or report the page on Wikisource and download again once it is
-   fixed; commit nothing from the stopped run.
+   fixed; commit nothing from the stopped run. If `phonetic-mam-export` stops on an
+   "unreconciled source verse", MAM-private's display source adapter cannot reconcile that
+   verse of MAM with its private source. Until 2026-10-13 it silently showed the source's form
+   there instead, which cost Phonetic MAM MAM's qamats alternative at 2 Kings 22:1 and MAM's
+   qere at 2 Chronicles 25:17. The repair is in MAM-private, a source override or an adapter
+   change: commit it there, then resume with
+   `./.venv/Scripts/python.exe py/main_0_mega.py --resume-from phonetic-mam-export`.
 2. **The two grammar locks**, closed dispatch over template nesting: the parser-stage lock
    (`py/verify_mp/expanded_stack_grammar_parser_stage.lock.json`, Ben, 2026-09-30) and the
    plus-survey lock (`py/tmpl_survey/expanded_stack_grammar_plus.lock.json`, accepted
@@ -160,24 +166,6 @@ them. Approval of the refresh approves nothing that they protect.
    the `verse-links` skill produces. Do not write a new pointed ketiv yourself. After his
    decision, change the record's value and parameters as he says, in a commit of their own
    quoting him, and resume from `near-aleppo-build`.
-
-## Phonetic MAM's missing qamats alternative at 2 Kings 22:1
-
-By Ben's decision of 2026-10-09, this section holds the check that finding 22 of the 2026-09-29
-review left to the next dependent refresh; every dependent refresh makes it until it passes. The
-refresh `97c4aff5` of 2026-09-27 gave 2 Kings 22:1 a `נוסח` note whose lemma calls MAM's qamats
-template, `מ:קמץ`. Phonetic MAM has only the form of that call's ס parameter, without the
-labels קמץ-ד and קמץ-ס, as `Phonetic-MAM/README.md`, "How the Hebrew differs from MAM's text",
-item 5, discloses. The cause is not established, and a re-export does not supply the alternative:
-the mega's re-export at `e9c72f2b` left `Phonetic-MAM/data/BD-2Kings.json` unchanged.
-
-After step 4's mega, check whether the alternative has reached `Phonetic-MAM/data/BD-2Kings.json`,
-`gh-pages/phonetic-mam/tnkh/BD-2Kings/22.html` and `out/accgram/post-stress-meteg.json`. That
-survey's `qamats_variant_census` counted 309 `variant_rows` in prose verses on 2026-10-11, and
-the alternative adds one. The survey's currency check cannot see the alternative: it counts U+05BD
-per numbered verse, and both forms have two. When the alternative arrives, correct the README's
-item 5 as "Checks that a text change can trip", item 3, says, and remove this section in the same
-commit.
 
 ## Required scenario behavior
 

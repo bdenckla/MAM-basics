@@ -1344,6 +1344,8 @@ retired from the tracked tree and remain at these immutable locations:
 The plan's `:213` and `:561` count it before its line-4 pointer, as at
 [`38a8db9a`](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-29.md);
 at the archive they are `:214` and `:562`. Turn 01's `:417` and its update's `:1782–1798` are
-unchanged there. Finding 22's check, which that base item keeps deferred, now lives in
+unchanged there. Finding 22's check, which that base item keeps deferred, lived in
 `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, "Phonetic MAM's
-missing qamats alternative at 2 Kings 22:1".
+missing qamats alternative at 2 Kings 22:1", until the fix that
+`doc/review-findings-2026-10-02-update.md`, "C5.2 fixed and finding 22's refresh check retired,
+2026-10-13", records retired it on 2026-10-13.
