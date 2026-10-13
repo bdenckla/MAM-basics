@@ -130,8 +130,9 @@ def mam_simple_notice() -> dict[str, object]:
             ),
             MAM_SIMPLE_NARPAS_GROUPING_RULE,
             (
-                "The free parashah marker and the adjacent starts-with-sampe and "
-                "ends-with-sampe attributes describe one break, not three."
+                "For a break between verses, the parashah marker and the adjacent "
+                "starts-with-sampe and ends-with-sampe fields describe one break, "
+                "not three."
             ),
             (
                 "For literal search, byte comparison, or MAM-compatible output, "

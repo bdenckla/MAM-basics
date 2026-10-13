@@ -116,10 +116,12 @@ value being a one-element set.</p>
 <li>as a child of a <code>verse</code> <code>contents</code> array, within a verse</li>
 </ul>
 <p>This treatment of parashah breaks is a distinctive feature of MAM-simple. Most encodings of the Tanakh make every parashah break belong to a verse. This requires the vast majority of breaks to be assigned to either the preceding or following verse. (The few mid-verse breaks of course naturally belong to their verse.)</p>
-<p>Each system (freely-placed breaks and verse-assigned breaks) has its merits. MAM-simple has freely-placed breaks, but also provides <code>starts-with-sampe</code> and <code>ends-with-sampe</code> verse fields. These attributes support use-cases for which a starts-with or ends-with encoding is a better fit.</p>
-<p>For a break between verses, MAM-simple provides a free-standing element and the adjacent
-verses' <code>starts-with-sampe</code> and <code>ends-with-sampe</code> attributes. A break within verse text has
-its element inside the verse, without corresponding start/end attributes.
+<p>For a break between verses, including at chapter and book boundaries, MAM-simple stores
+a parashah-marker object outside the verse objects. The adjacent verses'
+<code>starts-with-sampe</code> and <code>ends-with-sampe</code> fields record the same break.
+These fields support consumers that need breaks assigned to verse beginnings or endings.
+A break within verse text has its marker object inside the verse, without corresponding
+start/end fields.
 This makes MAM-simple less simple, but we believe the tradeoff is a good one.
 Choosing a single encoding would simplify the data at a cost to use-cases that don't fit
 that encoding well.</p>
