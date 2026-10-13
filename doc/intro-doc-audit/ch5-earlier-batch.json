@@ -1,0 +1,397 @@
+{
+  "page": "ch5",
+  "batch": "ch5-earlier",
+  "selectors": [
+    {
+      "range": [
+        97,
+        205
+      ],
+      "prefixes": [
+        "|[["
+      ],
+      "following_units": 2
+    },
+    {
+      "range": [
+        214,
+        247
+      ],
+      "prefixes": [
+        "#"
+      ]
+    },
+    {
+      "range": [
+        251,
+        255
+      ],
+      "prefixes": [
+        "#"
+      ]
+    },
+    {
+      "range": [
+        260,
+        260
+      ],
+      "prefixes": [
+        "#"
+      ]
+    },
+    {
+      "range": [
+        269,
+        272
+      ],
+      "prefixes": [
+        "#"
+      ]
+    },
+    {
+      "range": [
+        301,
+        308
+      ],
+      "prefixes": [
+        "#"
+      ]
+    }
+  ],
+  "reviewed": 133,
+  "total": 133,
+  "entry_anchors_reviewed": 79,
+  "entry_anchors_total": 79,
+  "verse_instances": 89,
+  "distinct_verses": 88,
+  "included_pointing_rows": 8,
+  "population": "24 spelling rows and three joining rows (each three cells), 34 size rows, five dotted rows, one reversed-nun roster, four suspended-letter rows, and eight Joshua pointing rows",
+  "anchor_dispositions": {
+    "local-spelling-selection-or-phenomenon-correspondence": [
+      97,
+      101,
+      105,
+      109,
+      113,
+      117,
+      121,
+      125,
+      133,
+      137,
+      141,
+      145,
+      149,
+      153,
+      157,
+      161,
+      165,
+      169,
+      173,
+      177,
+      181,
+      185,
+      189,
+      195,
+      199,
+      203,
+      214,
+      216,
+      218,
+      219,
+      221,
+      222,
+      223,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      236,
+      237,
+      238,
+      239,
+      240,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      251,
+      301,
+      302,
+      303,
+      305,
+      306,
+      307,
+      308
+    ],
+    "precise-source-subclaim-unsupported": [
+      217,
+      255
+    ],
+    "edition-structure-corroborated-manuscript-note-absent": [
+      252,
+      253,
+      254,
+      260,
+      269,
+      270,
+      271,
+      272
+    ],
+    "supported-quoted-form-discrepancy": [
+      129
+    ],
+    "docnote-letter-size-label-discrepancy": [
+      215,
+      220
+    ],
+    "edition-selection-and-certainty-discrepancy": [
+      304
+    ],
+    "incidental-size-specimen-scope": [
+      224,
+      235,
+      241
+    ]
+  },
+  "dispositions": {
+    "local-spelling-selection-or-phenomenon-correspondence": [
+      97,
+      98,
+      99,
+      101,
+      102,
+      103,
+      105,
+      106,
+      107,
+      109,
+      110,
+      111,
+      113,
+      114,
+      115,
+      117,
+      118,
+      119,
+      121,
+      122,
+      123,
+      125,
+      126,
+      127,
+      133,
+      134,
+      135,
+      137,
+      138,
+      139,
+      141,
+      142,
+      143,
+      145,
+      146,
+      147,
+      149,
+      150,
+      151,
+      153,
+      154,
+      155,
+      157,
+      158,
+      159,
+      161,
+      162,
+      163,
+      165,
+      166,
+      167,
+      169,
+      170,
+      171,
+      173,
+      174,
+      175,
+      177,
+      178,
+      179,
+      181,
+      182,
+      183,
+      185,
+      186,
+      187,
+      189,
+      190,
+      191,
+      195,
+      196,
+      197,
+      199,
+      200,
+      201,
+      203,
+      204,
+      205,
+      214,
+      216,
+      218,
+      219,
+      221,
+      222,
+      223,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      236,
+      237,
+      238,
+      239,
+      240,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      251,
+      301,
+      302,
+      303,
+      305,
+      306,
+      307,
+      308
+    ],
+    "precise-source-subclaim-unsupported": [
+      217,
+      255
+    ],
+    "edition-structure-corroborated-manuscript-note-absent": [
+      252,
+      253,
+      254,
+      260,
+      269,
+      270,
+      271,
+      272
+    ],
+    "supported-quoted-form-discrepancy": [
+      129,
+      130,
+      131
+    ],
+    "docnote-letter-size-label-discrepancy": [
+      215,
+      220
+    ],
+    "edition-selection-and-certainty-discrepancy": [
+      304
+    ],
+    "incidental-size-specimen-scope": [
+      224,
+      235,
+      241
+    ]
+  },
+  "method": "Every finite entry, complete selected structure, and corresponding note body was read. Root independently checked meaningful findings in raw/parsed notes, source clauses and codepoints. Structured template evidence was used for letters lacking prose notes.",
+  "limits": "All selections except the Joshua meteg case agree with current structure. Structure alone does not establish manuscript attribution or complete source-list coverage. The fourteen contextual units retain explicit policy/history/completeness boundaries.",
+  "contextual_units": [
+    78,
+    80,
+    82,
+    83,
+    84,
+    86,
+    193,
+    210,
+    212,
+    249,
+    257,
+    267,
+    276,
+    278
+  ],
+  "contextual_dispositions": {
+    "finite-table-counts-correspond": [
+      83,
+      84
+    ],
+    "policy-history-or-unproved-completeness": [
+      78,
+      80,
+      82,
+      86,
+      193,
+      210,
+      212,
+      249,
+      257,
+      267,
+      276,
+      278
+    ]
+  },
+  "finite_results": {
+    "spelling_selections": {
+      "matching": 24,
+      "total": 24
+    },
+    "spelling_source_quotations": {
+      "matching": 23,
+      "total": 24
+    },
+    "join_verse_selections": {
+      "matching": 7,
+      "total": 7
+    },
+    "size_choices": {
+      "matching": 34,
+      "total": 34,
+      "ordinary": 3,
+      "selected_special_letters": 33,
+      "maximal_candidate_letters": 36
+    },
+    "dotted_forms": {
+      "matching": 5,
+      "total": 5
+    },
+    "suspended_forms": {
+      "matching": 4,
+      "total": 4
+    },
+    "reversed_nun_verse_locations": {
+      "matching": 7,
+      "total": 7,
+      "verses": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        40
+      ]
+    },
+    "joshua_pointing": {
+      "matching": 7,
+      "total": 8
+    }
+  }
+}

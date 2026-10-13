@@ -1,0 +1,57 @@
+[
+  {
+    "claim": "ch5:L215",
+    "note_id": "2Samuel 21:19/2/0",
+    "raw_path": "in/mam-ws/BB-2Samuel.json",
+    "raw_target": "בֶּן־יַעְ{{מ:אות-ק|רֵ֨}}י",
+    "parsed_target": {
+      "tmpl_name": "מ:אות-מיוחדת-במילה",
+      "tmpl_params": {
+        "1": [
+          "בֶּן־יַעְ",
+          {
+            "tmpl_name": "מ:אות-ק",
+            "tmpl_params": {
+              "1": "רֵ֨"
+            }
+          },
+          "י"
+        ],
+        "2": "בֶּן־יַעְרֵ֨י",
+        "3": "..־..ר.",
+        "4": "ק",
+        "5": "ר/ק"
+      }
+    },
+    "raw_note_body": "=דפוסים וקורן (אות רי\"ש גדולה){{ש}}א=בֶּן־יַעְרֵ֨י (אין אות גדולה)",
+    "parsed_note_body": "=דפוסים וקורן (אות רי\"ש גדולה)\nא=בֶּן־יַעְרֵ֨י (אין אות גדולה)",
+    "result": "Both Introduction and raw/parsed edition targets mark a small letter; the note's implicit-edition clause says large."
+  },
+  {
+    "claim": "ch5:L220",
+    "note_id": "Jeremiah 39:13/2/0",
+    "raw_path": "in/mam-ws/C2-Jeremiah.json",
+    "raw_target": "וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}",
+    "parsed_target": {
+      "tmpl_name": "מ:אות-מיוחדת-במילה",
+      "tmpl_params": {
+        "1": [
+          "וּנְבֽוּשַׁזְבָּ",
+          {
+            "tmpl_name": "מ:אות-ק",
+            "tmpl_params": {
+              "1": "ן֙"
+            }
+          }
+        ],
+        "2": "וּנְבֽוּשַׁזְבָּן֙",
+        "3": ".......ן",
+        "4": "ק",
+        "5": "ן/ק"
+      }
+    },
+    "raw_note_body": "=דפוסים וקורן (אות נו\"ן סופית גדולה){{ש}}א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)",
+    "parsed_note_body": "=דפוסים וקורן (אות נו\"ן סופית גדולה)\nא=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)",
+    "result": "Both Introduction and raw/parsed edition targets mark a small letter; the note's implicit-edition clause says large."
+  }
+]

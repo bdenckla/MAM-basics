@@ -200,7 +200,14 @@ def main():
     navigation = read("navigation-cases.json")
     ketiv = read("ketiv-batch.json")
     nonketiv = read("nonketiv-batch.json")
-    other_batches = [read("ch3-pointing-batch.json"), read("ch4-pointing-batch.json")]
+    other_batches = [
+        read("ch3-pointing-batch.json"),
+        read("ch4-pointing-batch.json"),
+        read("ch4-spelling-batch.json"),
+        read("ch3-spelling-batch.json"),
+        read("ch2-secondary-batch.json"),
+        read("ch5-earlier-batch.json"),
+    ]
     structures = read("structural-populations.json")
     catalogue_comparison = read("catalogue-comparison.json")
     summary = read("summary.json")
@@ -245,14 +252,22 @@ def main():
     audit.dump("claim-dispositions.json", dispositions)
     for batch in other_batches:
         population = [n for group in batch["dispositions"].values() for n in group]
-        a, b = batch["range"]
-        actual_population = [
-            c["line"]
-            for c in claims
-            if c["id"].startswith(batch["page"] + ":")
-            and a <= c["line"] <= b
-            and c["text"].startswith("#")
+        selectors = batch.get("selectors") or [
+            {"range": batch["range"], "prefixes": ["#"]}
         ]
+        actual_population = sorted(
+            {
+                line
+                for c in claims
+                for s in selectors
+                if c["id"].startswith(batch["page"] + ":")
+                and s["range"][0] <= c["line"] <= s["range"][1]
+                and any(c["text"].startswith(p) for p in s["prefixes"])
+                for line in range(
+                    c["line"], c["line"] + s.get("following_units", 0) + 1
+                )
+            }
+        )
         if len(population) != len(set(population)) or set(population) != set(
             actual_population
         ):
@@ -273,19 +288,37 @@ def main():
                 dispositions.append(
                     {
                         "claim": cid,
-                        "batch": batch["page"] + "-pointing",
+                        "batch": batch.get("batch", batch["page"] + "-pointing"),
                         "status": status,
                         "evidence": by_claim[cid]["evidence"],
                         "supplemental_template_evidence": supplemental,
                     }
                 )
     audit.dump("claim-dispositions.json", dispositions)
+    pointing_reviewed = (
+        len(ledger)
+        + len(nk_ledger)
+        + sum(
+            (
+                b["reviewed"]
+                if "selectors" not in b
+                else b.get("included_pointing_rows", 0)
+            )
+            for b in other_batches
+        )
+    )
+    reviewed_ids = {d["claim"] for d in dispositions}
     coverage = []
     for topic in topics:
         matches = [r for r in routes[topic["page"]] if r[0] <= topic["line"] <= r[1]]
         if len(matches) != 1:
             raise ValueError(f"Topic lacks one coverage route: {topic['id']}")
         route = matches[0]
+        topic_claims = [c for c in claims if c["topic"] == topic["id"]]
+        reviewed = [c["id"] for c in topic_claims if c["id"] in reviewed_ids]
+        pending_refs = [
+            c["id"] for c in topic_claims if c["refs"] and c["id"] not in reviewed_ids
+        ]
         coverage.append(
             {
                 "topic": topic["id"],
@@ -294,6 +327,8 @@ def main():
                 "route": route[2],
                 "evidence_boundary": route[3],
                 "counts": topic["counts"],
+                "reviewed_source_units": reviewed,
+                "pending_explicit_reference_units": pending_refs,
                 "semantic_status": "bounded-case-dispositions-only; remaining claims unreviewed",
             }
         )
@@ -323,7 +358,7 @@ def main():
             + "</td></tr>"
         )
     sections.append(
-        '<section><h2>Verse locator family</h2><p>Eight independently checked examples, grouped as one navigation finding. The 3,125 reference joins were inventoried; the complete label/target population has not received semantic review.</p><div class="scroll"><table><thead><tr><th>Introduction</th><th>Linked verse</th><th>Intended verse</th><th>Evidence</th></tr></thead><tbody>'
+        f'<section><h2>Verse locator family</h2><p>{len(navigation)} independently checked examples, grouped as one navigation finding. The 3,125 reference joins were inventoried; the complete label/target population has not received semantic review.</p><div class="scroll"><table><thead><tr><th>Introduction</th><th>Linked verse</th><th>Intended verse</th><th>Evidence</th></tr></thead><tbody>'
         + "".join(nav_rows)
         + "</tbody></table></div></section>"
     )
@@ -359,7 +394,20 @@ def main():
         "chapter3_pointing_lines_total": other_batches[0]["total"],
         "chapter4_pointing_lines_reviewed": other_batches[1]["reviewed"],
         "chapter4_pointing_lines_total": other_batches[1]["total"],
-        "all_selected_pointing_rows_reviewed": len(dispositions),
+        "all_selected_pointing_rows_reviewed": pointing_reviewed,
+        "chapter4_spelling_units_reviewed": other_batches[2]["reviewed"],
+        "chapter4_spelling_units_total": other_batches[2]["total"],
+        "chapter3_spelling_units_reviewed": other_batches[3]["reviewed"],
+        "chapter3_spelling_units_total": other_batches[3]["total"],
+        "chapter2_secondary_units_reviewed": other_batches[4]["reviewed"],
+        "chapter2_secondary_units_total": other_batches[4]["total"],
+        "chapter5_earlier_entry_anchors_reviewed": other_batches[5][
+            "entry_anchors_reviewed"
+        ],
+        "chapter5_earlier_entry_anchors_total": other_batches[5]["entry_anchors_total"],
+        "chapter5_earlier_source_units_reviewed": other_batches[5]["reviewed"],
+        "chapter5_earlier_source_units_total": other_batches[5]["total"],
+        "all_selected_units_reviewed": len(dispositions),
         "catalogue_lines_reviewed": catalogue_comparison["catalogue_lines"],
         "catalogue_membership_matches": catalogue_comparison[
             "matching_membership_lines"
@@ -370,7 +418,10 @@ def main():
     audit.dump("review-counts.json", counts)
     style = """@font-face{font-family:Taamey;src:url(../woff2/Taamey_D.woff2)}
 :root{--he-size:30px;color-scheme:light}body{font:17px/1.6 Georgia,serif;color:#253442;background:#f7f7f3;margin:0}main{max-width:1180px;margin:auto;padding:28px}h1,h2,h3,summary,th,.meta,.status,label{font-family:system-ui,sans-serif}h1{font-size:28px}h2{font-size:23px;margin-top:40px}h3{font-size:19px}article{background:white;border:1px solid #dbe0db;border-radius:8px;padding:20px;margin:18px 0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.latin{font:16px/1.6 Georgia,serif;direction:ltr}.scroll{overflow-x:auto}table{border-collapse:collapse;max-width:100%;background:white}th,td{text-align:left;padding:10px 14px;border-bottom:1px solid #dde3df;vertical-align:top}.comparison td{max-width:430px}.bcv{white-space:nowrap;vertical-align:middle;font:14px/1.5 system-ui,sans-serif}.meta,small{font-size:13px;color:#526359}.status{font-size:13px;color:#49624c}a{color:#215b86}details{margin-top:12px}summary{cursor:pointer;color:#3f5545}.note-target{border-bottom:1px dashed #a1afa5;padding-bottom:8px;margin-bottom:8px}.raw{background:#f7f8f5;padding:16px}input{vertical-align:middle}hr{border:0;border-top:1px solid #dde3df}"""
-    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source snapshot <code>{chapters}</code>. {len(topics)} topic spans on 13 pages; {summary['explicit_reference_units']:,} verse-linked source units. Pointing batches reviewed {len(dispositions)}/{len(dispositions)} selected rows; 19/19 catalogue memberships were compared. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Remaining general rules, spelling lists and complete-corpus claims are mapped but not yet fully audited.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
+    spelling_reviewed = sum(
+        b["reviewed"] for b in other_batches if "spelling" in b.get("batch", "")
+    )
+    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source snapshot <code>{chapters}</code>. {len(topics)} topic spans on 13 pages; {summary['explicit_reference_units']:,} verse-linked source units. Pointing batches reviewed {pointing_reviewed}/{pointing_reviewed} selected rows; spelling batches {spelling_reviewed}/{spelling_reviewed} units; 19/19 catalogue memberships were compared. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Remaining general rules, spelling lists and complete-corpus claims are mapped but not yet fully audited.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
     output = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cached Introduction audit</title><style>'
         + style

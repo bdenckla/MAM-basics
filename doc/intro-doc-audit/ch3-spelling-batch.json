@@ -1,0 +1,216 @@
+{
+  "page": "ch3",
+  "batch": "ch3-spelling",
+  "selectors": [
+    {
+      "range": [
+        80,
+        215
+      ],
+      "prefixes": [
+        "#"
+      ]
+    },
+    {
+      "range": [
+        224,
+        229
+      ],
+      "prefixes": [
+        "#"
+      ]
+    },
+    {
+      "range": [
+        236,
+        246
+      ],
+      "prefixes": [
+        "#"
+      ]
+    }
+  ],
+  "population": "128 primary spelling rows, six historically qualified Breuer summary rows, eleven joining rows",
+  "reviewed": 145,
+  "total": 145,
+  "dispositions": {
+    "incorrect-locator-intended-claim-corroborated": [
+      118,
+      146,
+      175
+    ],
+    "docnote-letter-label-discrepancy": [
+      153,
+      211
+    ],
+    "docnote-internal-source-conflict": [
+      186
+    ],
+    "incidental-selected-edition-pointing": [
+      193,
+      201
+    ],
+    "joining-certainty-scope-uncertainty": [
+      241,
+      244
+    ],
+    "incidental-manuscript-pointing-scope-uncertainty": [
+      246
+    ],
+    "source-spelling-and-joining-correspondence": [
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      202,
+      203,
+      204,
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      212,
+      213,
+      214,
+      215,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      236,
+      237,
+      238,
+      239,
+      240,
+      242,
+      243,
+      245
+    ]
+  },
+  "method": "Every numbered source row and complete matched target/body notes was read. Intended-verse notes were checked for three malformed links. Root independently matched consequential note-only findings to faithful raw caches and selected-form codepoints.",
+  "limits": "Local spelling/join correspondence does not certify every broader provenance clause or historical book classification. Incidental divine-name pointing remains a quotation-scope question; no physical manuscript reading was established.",
+  "overlapping_source_subclaim_limits": {
+    "masorah_conflict": [
+      116
+    ],
+    "precise_small_or_large_masorah": [
+      125,
+      162
+    ],
+    "all_community_attribution": [
+      224,
+      225
+    ],
+    "annotation_drift_not_spelling_discrepancy": [
+      124
+    ],
+    "historical_qualification": "ch3:L223"
+  }
+}

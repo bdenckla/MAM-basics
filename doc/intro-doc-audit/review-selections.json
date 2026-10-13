@@ -295,6 +295,177 @@
         "Daniel 7:9/2/0"
       ],
       "explanation": "The decision list places the edition-selection star on the Leningrad full-first-yod form. The main spelling row and current MAM target select the defective-first-yod form instead. The note explicitly distinguishes these source spellings. This is an internal Introduction selection reversal corroborated by current edition evidence; the Leningrad manuscript claim itself agrees."
+    },
+    {
+      "id": "SPELLING-DECISION-COVERAGE",
+      "title": "Chapter 4: spelling cross-references lack decision-list entries",
+      "status": "new-verified-list-coverage-discrepancy",
+      "claims": [
+        "ch4:L214",
+        "ch4:L231",
+        "ch4:L252"
+      ],
+      "refs": [
+        [
+          "Daniel",
+          4,
+          33
+        ],
+        [
+          "Daniel",
+          5,
+          29
+        ],
+        [
+          "Daniel",
+          8,
+          8
+        ]
+      ],
+      "note_ids": [
+        "Daniel 4:33/2/0",
+        "Daniel 5:29/2/1",
+        "Daniel 8:8/2/0"
+      ],
+      "explanation": "The main list has 26 orange rows referring readers to the decision list, but that list has 17 verse entries; nine orange rows have no counterpart. Three representative missing cases explicitly have at least three named rejected witnesses in the notes, fitting the inclusion rule at ch4:L311. Daniel 4:33 names Leningrad, B1 and Or 2212; Daniel 5:29 names Leningrad, Sh1 and B1; Daniel 8:8 names Leningrad, Q-M and T451. This establishes one internal list-coverage family, without proving the complete census required by the general rule. All nine missing IDs are retained in ch4-spelling-batch.json."
+    },
+    {
+      "id": "PS-39-13",
+      "title": "Psalm 39:13: merkha and meteg exchange positions in the Leningrad quotation",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch2:L617",
+        "ch2:L636"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          39,
+          13
+        ]
+      ],
+      "note_ids": [
+        "Psalms 39:13/2/0"
+      ],
+      "explanation": "Two identical Introduction entries put MERKHA (U+05A5) on shin and METEG (U+05BD) on ayin in the explicitly Leningrad-attributed form. The raw and parsed note put METEG on shin and MERKHA on ayin. Maqaf and sheva agree. The note separately retains Aleppo hataf uncertainty; this finding concerns the Leningrad quotation and leaves the physical reading unverified."
+    },
+    {
+      "id": "PS-17-14-MAQAF",
+      "title": "Psalm 17:14: Leningrad candidate maqaf conflicts with the Introduction",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch2:L649"
+      ],
+      "refs": [
+        [
+          "Psalms",
+          17,
+          14
+        ]
+      ],
+      "note_ids": [
+        "Psalms 17:14/2/0"
+      ],
+      "explanation": "The Introduction quotes two Leningrad candidates without MAQAF (U+05BE) and explicitly says there is no maqaf. Both note candidates include maqaf; the note also says meteg, merkha and maqaf. The first candidate is attributed to the typist and the second to Dotan, whose uncertainty is retained. The Sh1/Q13 statement agrees. Raw-template serialization was checked independently; no manuscript image was consulted."
+    },
+    {
+      "id": "DOCNOTE-SPELLING-PROSE",
+      "title": "Three Torah doc-notes have letter-label or source-list inconsistencies",
+      "status": "new-verified-docnote-prose-discrepancy",
+      "claims": [
+        "ch3:L153",
+        "ch3:L211",
+        "ch3:L186"
+      ],
+      "refs": [
+        [
+          "Numbers",
+          9,
+          7
+        ],
+        [
+          "Deuter",
+          32,
+          34
+        ],
+        [
+          "Deuter",
+          6,
+          21
+        ]
+      ],
+      "note_ids": [
+        "Numbers 9:7/2/0",
+        "Deuter 32:34/2/0",
+        "Deuter 6:21/2/0"
+      ],
+      "explanation": "Numbers 9:7 calls the selected full-YOD form full VAV, although that atom has yod and no vav. Deuteronomy 32:34 calls its full-VAV form full YOD, although the atom has vav and no yod. At Deuteronomy 6:21 the note lists Leningrad both among the implicit MAM defective-vav witnesses and in an explicit full-vav alternative; its final prose supports the full-vav Leningrad form quoted by the Introduction. Faithful raw bodies and selected target forms confirm all three. These note prose/source-list defects remain separate from physical manuscript readings."
+    },
+    {
+      "id": "ISA-10-15",
+      "title": "Isaiah 10:15: Aleppo spelling quotations omit different yods",
+      "status": "new-supported-source-disagreement",
+      "claims": [
+        "ch5:L130",
+        "ch5:L86",
+        "ch5:L94"
+      ],
+      "refs": [
+        [
+          "Isaiah",
+          10,
+          15
+        ]
+      ],
+      "note_ids": [
+        "Isaiah 10:15/2/0"
+      ],
+      "explanation": "The table explicitly identifies its middle column as the Aleppo form. Its specimen lacks the second yod; the current raw/parsed note lacks the first yod and expressly names the first yod as the partly erased letter. The starred edition form agrees with current MAM. This is a positional spelling-quotation disagreement, with the physical manuscript reading still unverified."
+    },
+    {
+      "id": "JOSH-14-7-SELECTION",
+      "title": "Joshua 14:7: the Introduction stars a meteg that the edition omits",
+      "status": "new-verified-edition-selection-and-certainty-discrepancy",
+      "claims": [
+        "ch5:L304"
+      ],
+      "refs": [
+        [
+          "Joshua",
+          14,
+          7
+        ]
+      ],
+      "note_ids": [
+        "Joshua 14:7/2/0"
+      ],
+      "explanation": "The Introduction uses Aleppo*= and a star to select a meteg on lamed. The current edition target has no such meteg; its note assigns the no-meteg reading to Aleppo? and Leningrad, while preserving a meteg reading as an uncertain Aleppo alternative. Raw evidence confirms the target and candidate relation. Selection and certainty have changed; the caches do not settle the fine mark in the manuscript."
+    },
+    {
+      "id": "SPECIAL-LETTER-NOTE-LABELS",
+      "title": "Two doc-notes call selected small letters large",
+      "status": "new-verified-docnote-description-discrepancy",
+      "claims": [
+        "ch5:L215",
+        "ch5:L220"
+      ],
+      "refs": [
+        [
+          "2Samuel",
+          21,
+          19
+        ],
+        [
+          "Jeremiah",
+          39,
+          13
+        ]
+      ],
+      "note_ids": [
+        "2Samuel 21:19/2/0",
+        "Jeremiah 39:13/2/0"
+      ],
+      "explanation": "The Introduction and faithful raw/current parsed edition templates both select a small resh at 2Samuel21:19 and a small final nun at Jeremiah39:13. Their notes' implicit-edition clauses say large. The notes separately describe normal Aleppo letters. The size-label defect is in note wording; no manuscript interpretation has been changed."
     }
   ],
   "tracked": [
@@ -635,6 +806,87 @@
       ],
       "note_ids": [],
       "explanation": "Song of Songs 4:16 names lamed, although the difference between the displayed MAM and Leningrad specimens is dagesh on zayin; lamed is undotted in both. At Lamentations 4:7 both specimens encode segol on shin while the descriptions discuss qamats and the note preserves uncertainty about close dots. These are explanation questions, not independent disagreements about the manuscript reading."
+    },
+    {
+      "id": "SPELLING-SPECIMEN-SCOPE",
+      "title": "Spelling specimens carry incidental accent differences",
+      "status": "quotation-scope-uncertainty",
+      "claims": [
+        "ch4:L290",
+        "ch4:L327",
+        "ch4:L331"
+      ],
+      "refs": [
+        [
+          "Nehemiah",
+          9,
+          37
+        ],
+        [
+          "Daniel",
+          7,
+          15
+        ]
+      ],
+      "note_ids": [
+        "Nehemiah 9:37/2/0",
+        "Daniel 7:15/2/0"
+      ],
+      "explanation": "Both Nehemiah 9:37 starred specimens omit the current MAM target's second TELISHA GEDOLA (U+05A0) on tav, although their spelling agrees. Daniel 7:15's unnamed rejected specimen carries MERKHA while the named Breuer specimen in the note carries MUNAH; the selected spelling agrees, and the main row quotes the latter accent correctly. These spelling-section specimens do not establish a contradiction in a named manuscript's complete pointing."
+    },
+    {
+      "id": "SPELLING-SOURCE-PRECISION",
+      "title": "Spelling notes support less-specific source claims",
+      "status": "unsupported-source-subclaims",
+      "claims": [
+        "ch4:L105",
+        "ch4:L113",
+        "ch4:L138",
+        "ch4:L219"
+      ],
+      "refs": [],
+      "note_ids": [],
+      "explanation": "The local spelling evidence agrees, but the notes do not establish every source detail: a small-versus-large Masorah distinction; specifically small Aleppo Masorah rather than generic Aleppo Masorah; own-Masorah-L support underlying a surprising form; and Leningrad attribution of Daniel 5:16's ketiv. The batch ledger retains these as unsupported subclaims, without upgrading note silence into contradiction."
+    },
+    {
+      "id": "TORAH-SPELLING-SCOPE",
+      "title": "Torah spelling and joining specimens: incidental pointing and certainty",
+      "status": "quotation-and-certainty-scope-uncertainty",
+      "claims": [
+        "ch3:L193",
+        "ch3:L201",
+        "ch3:L241",
+        "ch3:L244",
+        "ch3:L246"
+      ],
+      "refs": [],
+      "note_ids": [],
+      "explanation": "Two starred spelling specimens differ from current MAM in incidental meteg placement or presence. Two joining rows retain uncertainty where the notes explicitly assign Leningrad a single or spaced form; the caches do not establish that the older uncertainty was erroneous. Deuteronomy 32:6 omits the yod sheva explicitly present in the Leningrad note, but the joining statement agrees and divine-name quotation conventions require separate consideration. The exhaustive ledger preserves these scope questions and does not declare them physical manuscript contradictions."
+    },
+    {
+      "id": "ALEPPO-SPECIAL-SOURCE-PRECISION",
+      "title": "Special-letter lists: precise Masorah subclaims exceed local notes",
+      "status": "unsupported-source-subclaims",
+      "claims": [
+        "ch5:L217",
+        "ch5:L255"
+      ],
+      "refs": [],
+      "note_ids": [],
+      "explanation": "Isaiah44:14 specifies small Aleppo Masorah while its note names generic Aleppo Masorah. Psalm27:13 associates a six-dot Leningrad form with small Leningrad Masorah; the corresponding note gives that form for LS1 and specifically cites small Aleppo Masorah. The form evidence agrees, and both positive source claims could coexist. The precise subclaims remain unsupported locally rather than contradicted."
+    },
+    {
+      "id": "ALEPPO-SIZE-SPECIMEN-SCOPE",
+      "title": "Size-list specimens omit incidental meteg or legarmeh structure",
+      "status": "quotation-scope-uncertainty",
+      "claims": [
+        "ch5:L224",
+        "ch5:L235",
+        "ch5:L241"
+      ],
+      "refs": [],
+      "note_ids": [],
+      "explanation": "Psalm77:8 omits the initial meteg present in both current dehi alternatives. Ruth3:13 and Esther1:6 omit the legarmeh glyph present in their complete current special-letter targets. All selected letter sizes agree. The specimens occur in a size list; they do not independently establish a disagreement in a named manuscript's complete pointing. Complete target nodes, rather than the survey text field, retain the legarmeh evidence."
     }
   ],
   "controls": [
