@@ -1,9 +1,9 @@
-# Review and testing trial
+# Review and testing process
 
-State: live; approved 2026-10-07
+State: live; revised 2026-10-14
 
 Ben approved the proposed process on 2026-10-07: "I approve; let's try this new process."
-This amendment controls MAM-basics, MAM-private and occasional hbofonts review and repair work.
+This process controls MAM-basics, MAM-private and occasional hbofonts review and repair work.
 It supersedes the older obligatory Ben dispositions, fresh remediation-plan approval, D7's
 approval gate for routine internal editorial repairs, blanket finding rechecks, and ordinary
 pre-push/full-suite gates. Keep historical evidence, focused regeneration obligations and the
@@ -39,6 +39,12 @@ Run broad checks immediately only when a specific consequence cannot accept the 
 that consequence; touching Python or reaching a product alone does not establish the exception.
 Plans and handoffs add no blanket checks or mandatory per-item proof ceremony.
 
+Prefer a dependable working cloud runner for portable nightly checks when its actual
+credentials, inputs and environments are available; reserve HP for Windows-specific checks.
+An offline personal computer must not be a prerequisite for portable testing. No cloud runner
+is claimed fixed or configured: record execution blockers honestly when no working runner is
+available, without advancing unexecuted checks or anchors.
+
 At each nightly run, fetch main and record exact repository and required input commits. Use
 isolated checkouts with their home clones' environments, leaving interactive edits untouched.
 Review only new endpoint diffs; run MAM-basics and MAM-private's broad checks nightly. Check
@@ -67,11 +73,14 @@ maintained source integrity checks for concrete corruption. Do not preserve or r
 retired hash/sealing/replay gates. Use the resulting maintained commands and proportionate
 confidence evidence rather than replacement process machinery. No review relay is introduced.
 
-## Anchors, receipts and the seven-night trial
+## Anchors and compact receipts
 
 Keep one small maintained run note per repository; this repository uses
 [review-trial-status.md](review-trial-status.md). Record the adopted baseline, reviewed-through
-commit, last tested commit/result, and one short entry per run or repair with evidence links.
+commit, last tested commit/result, and one short outcome per run or repair with evidence links.
+Keep commands, failures and limitations only as detailed as needed to assess the result; link
+existing receipts instead of copying them or dumping routine logs. Check factual integrity,
+not arbitrary receipt-link positions.
 Advance reviewed-through only after examining the diff and disposing of consequential findings;
 it does not mean every finding is fixed. Advance last tested only for checks actually completed,
 recording failures and incomplete runs accurately. A repair is fixed only on decisive evidence,
@@ -83,7 +92,23 @@ receipts remain immutable with their single update; change State when the phase 
 repeating it in every entry. Trial setup/receipt changes are evidence unless they expose a
 consequential defect; ordinary code and data repairs remain reviewable window content.
 
-Run seven nights around 2 a.m. America/New_York, then give one compact assessment of Ben's time,
-meaningful defects, unnecessary changes, and evidence adequacy. Decide further scheduling from
-that assessment; do not automatically resurrect the old machinery. The scheduler is configured
-separately; this document creates no automation.
+## Trial assessment and scheduling
+
+The approved trial scheduled seven nights, 2026-10-08 through 2026-10-14, around 2 a.m.
+America/New_York. At the assessment after six executed nights, there were three test or
+documentation upkeep fixes and no newly confirmed product/data defect; Ben-time savings were
+not measured. Exact evidence was useful, but passing checks were not editorial proof. Zero
+product defects in six nights is not itself a reason to abandon nightly mega/suite testing.
+See the [maintained outcomes](review-trial-status.md) and the linked
+[run 5](review-trial-run5-2026-10-12.json) and [run 6](review-trial-run6-2026-10-13.json) receipts;
+private evidence remains in its owning repository.
+
+The seventh scheduled attempt was blocked before process creation: HP was offline and the
+saved runner failed startup twice with a generic ASB error. It ran no checks and advanced no
+anchors; only six nights had execution evidence at that assessment. The status notes record
+the separately authorized final continuation. Retain nightly testing, consequential new-change review, objective low-risk
+autonomous repairs and quiet successes. New-main-only review was already the trial policy.
+
+Receipt pushes must respect deployment triggers, including documentation-only main pushes.
+The scheduler is configured separately: this document does not renew or extend the trial or
+create an automation. Further scheduling requires Ben's explicit authorization.
