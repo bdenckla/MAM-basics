@@ -1,10 +1,17 @@
 /* Natural table widths keep each expanded atom beside its reference. */
+.spacing-study table {
+    margin-inline: auto;
+}
+.spacing-study th,
+.spacing-study td {
+    padding-block: 0.15em;
+}
 .spacing-study td {
     vertical-align: middle;
 }
 .spacing-study td.spacing-atom {
     font-size: 24pt;
-    line-height: 2;
+    line-height: 1.4;
     font-feature-settings: "ss01";
     white-space: nowrap;
 }
