@@ -237,28 +237,50 @@ def counts_by_family():
 
 def _reference_link(reference):
     book, chapter, verse = reference
-    label = f"{uxlc_external_links.book_display_name(book)} {chapter}:{verse}"
-    return mb_html.anchor_h(label, "../" + vel.near_aleppo_href(*reference))
+    label = f"{uxlc_external_links.TANACH_US_BOOK_CODES[book]} {chapter}:{verse}"
+    return mb_html.anchor(
+        label,
+        {
+            "href": "../" + vel.near_aleppo_href(*reference),
+            "title": f"{uxlc_external_links.book_display_name(book)} {chapter}:{verse}",
+        },
+    )
 
 
-def _family_counts_table(counts):
-    rows = [mb_html.table_row_of_headers(("Family", "Occurrences"))]
-    rows.extend(
-        mb_html.table_row_of_data(
-            (
-                mb_html.anchor_h(family.title, "#" + family.identifier),
-                f"{counts[family.identifier].total():,}",
+def _family_counts_table(counts, resolved):
+    rows = [
+        mb_html.table_row_of_headers(
+            ("Family", mb_html.abbr("Occ.", {"title": "Occurrences"}), "spacing")
+        )
+    ]
+    for family in FAMILIES:
+        expanded = {
+            spacing.needs_expansion(resolved[example]) for example in family.examples
+        }
+        if len(expanded) != 1:
+            raise ValueError(
+                f"Spacing examples no longer share one spacing: {family.identifier}"
+            )
+        rows.append(
+            mb_html.table_row_of_data(
+                (
+                    mb_html.anchor_h(family.title, "#" + family.identifier),
+                    f"{counts[family.identifier].total():,}",
+                    "expanded" if True in expanded else "usual",
+                )
             )
         )
-        for family in FAMILIES
-    )
     return mb_html.div(mb_html.table(rows), {"class": "table-wrap"})
 
 
 def _family_table(family, resolved):
     rows = [
         mb_html.table_row_of_headers(
-            ("Usual spacing", "Added spacing", "Reference", "Reading", "Current NAEE")
+            (
+                "Usual spacing",
+                "Added spacing",
+                mb_html.abbr("bcv", {"title": "book-chapter-verse"}),
+            )
         )
     ]
     for example in family.examples:
@@ -269,17 +291,11 @@ def _family_table(family, resolved):
                     atom,
                     mb_html.span_c(atom, spacing.CLASS),
                     _reference_link(example.reference),
-                    {"body": "Body text", "ketiv": "Ketiv", "qere": "Qere"}[
-                        example.reading
-                    ],
-                    "Expanded" if spacing.needs_expansion(atom) else "Usual spacing",
                 ),
                 (
                     {"dir": "rtl", "lang": "hbo", "class": "pointed spacing-atom"},
                     {"dir": "rtl", "lang": "hbo", "class": "pointed spacing-atom"},
                     {"class": "spacing-reference"},
-                    None,
-                    None,
                 ),
             )
         )
@@ -300,24 +316,20 @@ def render():
             ]
         ),
         mb_html.para(
-            "These examples show words that can feel cramped in Taamey D even "
+            "This document shows examples of words that can look cramped in Taamey D even "
             "when no stroke overlaps."
         ),
         mb_html.para(
-            (
-                "A ",
-                mb_html.bold("family"),
-                " is a group of words that share a potentially cramped arrangement "
-                "of letters and marks. A word can match the description of more "
-                "than one family. The families provide candidates for visual "
-                "judgment rather than an exhaustive inventory of cramped words.",
-            )
+            "We group these words into families based on the circumstances that "
+            "might cause the cramping. A word can match the description of more "
+            "than one family. The families provide candidates for visual "
+            "judgment rather than an exhaustive inventory of cramped words."
         ),
         mb_html.para(
-            "Each row compares the same word at usual spacing and with "
-            "0.06em extra letter spacing. The Reference opens the verse in NAEE. "
-            "Current NAEE states which spacing the edition currently applies. "
-            "The first three families receive automatic spacing."
+            "The example tables compare “Usual spacing” with “Added spacing” "
+            "(0.06em extra letter spacing). In the summary table, “spacing” gives "
+            "the spacing NAEE uses for the examples in each family. NAEE "
+            "automatically expands words in the first three families."
         ),
         mb_html.para(
             "The last two families are for visual trials: adjacent narrow letters "
@@ -334,7 +346,7 @@ def render():
             "or vowel formatting are excluded. Adding the family totals would "
             "double-count words that belong to more than one family."
         ),
-        _family_counts_table(counts),
+        _family_counts_table(counts, resolved),
     ]
     for family in FAMILIES:
         words = counts[family.identifier]

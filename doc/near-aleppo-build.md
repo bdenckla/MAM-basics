@@ -160,7 +160,8 @@ A trial match receives automatic spacing only if it also belongs to an active fa
 Examples resolve from the shared renderer's body, ketiv or qere stream and must retain their
 stated family. Notes, ruby fallback text and placeholders are excluded; atoms
 crossing special-letter or vowel-variant formatting are not selected.
-The opening family table reports only occurrence counts. Each family then reports
+The opening family table reports occurrence counts and the spacing NAEE uses for
+each family's examples. Each family then reports
 the number of examples shown, distinct pointed words, and occurrences across all books
 in this same projection. The raised-vowel-on-yod-before-qof family shows every distinct
 pointed word, with a generation check that the selected examples cover that family.
