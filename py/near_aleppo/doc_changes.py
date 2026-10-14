@@ -665,20 +665,32 @@ def _stress(numbers):
             ("cites ל", ", no clause citing the codex"),
         )
     ]
-    stripped = [
-        ("segolta", "segolta"),
-        ("telisha qetanah", "telisha qetanah"),
-        ("telisha gedolah", "telisha gedolah"),
-        ("zarqa", "zarqa"),
+    rows = [
+        [
+            "pashta",
+            "On the second-to-last letter",
+            "Accent alone",
+            numbers.snap(_P3, "stress helpers: pashta's stress helper stripped"),
+        ],
+        [
+            "pashta",
+            "Earlier in the word",
+            "Accent and stress helper",
+            numbers.snap(
+                _P3,
+                "stress helpers: pashta's stress helper kept, a letter standing between",
+            ),
+        ],
     ]
-    stripped_text = []
-    for index, (label, accent) in enumerate(stripped):
-        if index:
-            stripped_text.append(", and " if index == len(stripped) - 1 else ", ")
-        stripped_text += [
-            numbers.snap(_P3, f"stress helpers: {accent}'s stress helper stripped"),
-            f" words with the {label}" if index == 0 else f" with the {label}",
-        ]
+    for accent in ("segolta", "telisha qetanah", "telisha gedolah", "zarqa"):
+        rows.append(
+            [
+                accent,
+                "Present",
+                "Accent alone",
+                numbers.snap(_P3, f"stress helpers: {accent}'s stress helper stripped"),
+            ]
+        )
     return [
         _heading(STRESS),
         mb_html.para(
@@ -690,23 +702,21 @@ def _stress(numbers):
                 "letter (Yeivin, ",
                 itm(),
                 " §239), and near-Aleppo has that convention, where the codex is lost "
-                "too. Where MAM has the pashta's stress helper on a word's "
-                "second-to-last letter, near-Aleppo has the pashta alone, at ",
-                numbers.snap(_P3, "stress helpers: pashta's stress helper stripped"),
-                " words, and it keeps the other ",
-                numbers.snap(
-                    _P3,
-                    "stress helpers: pashta's stress helper kept, a letter standing between",
-                ),
-                ", a mater lectionis counting as a letter between. Where MAM has the "
-                "stress helper of another accent, near-Aleppo has the accent alone: at ",
-                *stripped_text,
-                ". Every stress helper this policy strips is in a prose verse. "
-                "In a poetic verse the characters of a zarqa and its helper are "
-                "the tsinnor and the tsinnorit, two accents, which near-Aleppo keeps. "
-                "The poetic stress helpers of the deḥi and the tsinnor go with MAM's "
-                "templates for them.",
+                "too. A mater lectionis counts as a letter between the stressed "
+                "letter and the word's last letter.",
             ]
+        ),
+        table(
+            ["Accent", "MAM's stress helper", "Near-Aleppo", "Words"],
+            rows,
+            [None, None, None, NUMBER_CELL],
+        ),
+        mb_html.para(
+            "Every stress helper this policy strips is in a prose verse. "
+            "In a poetic verse the characters of a zarqa and its helper are "
+            "the tsinnor and the tsinnorit, two accents, which near-Aleppo keeps. "
+            "The poetic stress helpers of the deḥi and the tsinnor go with MAM's "
+            "templates for them."
         ),
         mb_html.para(
             [

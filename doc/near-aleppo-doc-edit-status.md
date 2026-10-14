@@ -2961,3 +2961,22 @@ Unicode citations pass and bare uppercase prose still fails. Only the three
 documentation pages changed among generated products; the dataset is unchanged.
 Mega and the full suite remain on the approved nightly cadence for this spelling
 and instruction change.
+
+## Stress-helper counts as a table — 2026-10-14
+
+**Status:** implemented by Codex at Ben’s request to replace the inline counts
+with a table.
+
+**Change:** Six rows show the accent, MAM’s stress helper, Near-Aleppo’s form
+and the number of words. Pashta has separate rows for a helper on the
+second-to-last letter and an earlier letter. The mater-lectionis qualification
+stays above the table; the prose/poetic explanation and note-recorded exceptions
+stay below it. Counts still come from the same build populations.
+
+**Verification:** Work began in the clean main checkout at `880b92f9`.
+Black, HTML regeneration and five focused prose checks passed. A differential
+comparison against the captured page confirms all six counts and outcomes,
+numeric-cell alignment, preserved explanatory passages and unchanged content
+outside the section. Only `editorial-policies.html` changed among generated
+files; the dataset is unchanged. Mega and the full suite remain on the approved
+nightly cadence for this presentation change.
