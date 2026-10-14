@@ -284,22 +284,43 @@
         "translation": "MAM: וַיֹּצִיאֵ֧נוּ; Leningrad: וַיּוֹצִיאֵ֧נוּ."
       },
       {
-        "label": "Doc-note — beginning of the agreement list",
+        "label": "Complete MAM doc-note, Deuteronomy 6:21 — Hebrew and full English translation",
         "note": "Deuter 6:21/2/0",
-        "quote": "=ל,ל1",
-        "translation": "MAM agrees with Leningrad and St Petersburg, Firkovich B 17."
-      },
-      {
-        "label": "Doc-note — explicit Leningrad alternative",
-        "note": "Deuter 6:21/2/0",
-        "quote": "ל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)",
-        "translation": "Leningrad surprisingly has וַיּוֹצִיאֵ֧נוּ (full vav)."
-      },
-      {
-        "label": "Doc-note — concluding manuscript statement",
-        "note": "Deuter 6:21/2/0",
-        "quote": "כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.",
-        "translation": "Sassoon Codex 507: vav omitted; Leningrad Codex: vav included."
+        "quote": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
+        "translation": "Initial =: MAM agrees with ל (Leningrad), ל1 (Firkovich B17), ש (Sassoon 507), ש1 (Sassoon 1053), ק3 (Cairo 18, after correction), ו (the Washington Pentateuch), ל3 (St Petersburg EVR-II-B-10), ל9 (St Petersburg EVR-II-B-59), פטרבורג-EVR-II-B-8 (St Petersburg EVR-II-B-8, interlinear text), and מסורת-ל (a note in Leningrad’s Masorah), טברניות (Tiberian material), and רמ\"ה (Meir Halevi Abulafia / Masoret Seyag la-Torah): spelling with vav omitted.\n\nל!=וַיּוֹצִיאֵ֧נוּ: Leningrad surprisingly has this spelling (vav included).\n\nBreuer noted uncertainty about the spelling in כתי\"ש (Sassoon 507) and כתי\"ל (Leningrad). But examining the manuscripts at increased magnification shows clearly: Sassoon 507 omits vav; Leningrad includes vav.\n\nקורן (Koren), ברויאר (Breuer), סימנים (the Simanim Tiqqun), מכון ממרא (Mechon Mamre).",
+        "translation_quotes": [
+          "ל1",
+          "ש1",
+          "ק3",
+          "ל3",
+          "ל9",
+          "פטרבורג-EVR-II-B-8",
+          "מסורת-ל",
+          "רמ\"ה",
+          "ל!=וַיּוֹצִיאֵ֧נוּ",
+          "כתי\"ש",
+          "כתי\"ל"
+        ],
+        "entire_note": true,
+        "full_width": true,
+        "translation_clauses": [
+          {
+            "source": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)",
+            "translation": "Initial =: MAM agrees with ל (Leningrad), ל1 (Firkovich B17), ש (Sassoon 507), ש1 (Sassoon 1053), ק3 (Cairo 18, after correction), ו (the Washington Pentateuch), ל3 (St Petersburg EVR-II-B-10), ל9 (St Petersburg EVR-II-B-59), פטרבורג-EVR-II-B-8 (St Petersburg EVR-II-B-8, interlinear text), and מסורת-ל (a note in Leningrad’s Masorah), טברניות (Tiberian material), and רמ\"ה (Meir Halevi Abulafia / Masoret Seyag la-Torah): spelling with vav omitted."
+          },
+          {
+            "source": "ל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)",
+            "translation": "ל!=וַיּוֹצִיאֵ֧נוּ: Leningrad surprisingly has this spelling (vav included)."
+          },
+          {
+            "source": "ברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.",
+            "translation": "Breuer noted uncertainty about the spelling in כתי\"ש (Sassoon 507) and כתי\"ל (Leningrad). But examining the manuscripts at increased magnification shows clearly: Sassoon 507 omits vav; Leningrad includes vav."
+          },
+          {
+            "source": "קורן, ברויאר, סימנים, מכון ממרא",
+            "translation": "קורן (Koren), ברויאר (Breuer), סימנים (the Simanim Tiqqun), מכון ממרא (Mechon Mamre)."
+          }
+        ]
       }
     ],
     "explanation": "The explicit ל!=וַיּוֹצִיאֵ֧נוּ clause and concluding prose instead assign Leningrad the full-vav spelling, agreeing with the Introduction.",
@@ -317,6 +338,10 @@
         "id": "Deuter 6:21/2/0",
         "text": "וַיּוֹצִיאֵ֧נוּ"
       }
+    ],
+    "prose_quotes": [
+      "=ל",
+      "ל!=וַיּוֹצִיאֵ֧נוּ"
     ]
   },
   {

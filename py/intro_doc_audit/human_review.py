@@ -155,6 +155,17 @@ class Sources:
 
 def panel(passage, sources):
     sources.resolve(passage)
+    if passage.get("entire_note"):
+        if passage["quote"] != sources.notes[passage["note"]]["body_text"]:
+            raise ValueError("A complete note panel must contain the entire note")
+        clauses = passage["translation_clauses"]
+        if (
+            "\n".join(c["source"] for c in clauses) != passage["quote"]
+            or "\n\n".join(c["translation"] for c in clauses) != passage["translation"]
+        ):
+            raise ValueError(
+                "Complete-note clauses must match the displayed translation"
+            )
     kind = passage.get("kind", "explanatory")
     if kind not in {"explanatory", "scripture"}:
         raise ValueError(f"Unknown passage kind: {kind}")
@@ -167,7 +178,9 @@ def panel(passage, sources):
         raise ValueError("Scripture-only quotations are not translated in this review")
     quote = passage["quote"]
     return (
-        '<div class="passage"><h4>'
+        '<div class="passage'
+        + (" full-width" if passage.get("full_width") else "")
+        + '"><h4>'
         + escaped(passage["label"])
         + '</h4><div class="he" lang="he" dir="rtl">'
         + escaped(visible_wikitext(quote))
@@ -325,7 +338,8 @@ def card(case, sources):
                 case.get(key, "")
                 for key in ("context", "explanation", "decision")
                 if case.get(key)
-            )
+            ),
+            case.get("prose_quotes", ()),
         )
         + "</p></div>"
         + membership
@@ -447,7 +461,7 @@ def main(cases=None, output="review.html"):
     output_html = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
         + STYLE
-        + ".he-quote{display:inline-block;white-space:pre-wrap}"
+        + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
         + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
         + "".join(sections)

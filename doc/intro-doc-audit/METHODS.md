@@ -16,7 +16,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 583 displayed passages against literal stored strings,
+The renderer validates 581 displayed passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -47,6 +47,12 @@ the screenshot itself is neither included in the repository nor published.
 
 Explanatory translations and questions were reread against their evidence; literal
 validation alone does not establish translation accuracy or manuscript truth.
+The Deuteronomy 6:21 comparison includes its entire four-clause doc-note and full
+English translation, including the correction/interlinear qualifiers, Breuer’s
+uncertainty and enlarged-inspection statement, and the final edition list. Hebrew
+sigils remain visible with established decoding. The renderer validates the complete
+note and its per-clause translation bindings; the faithful raw note was checked
+separately, retaining its original mark order.
 
 Regenerate the readable review and its presentation coverage record with
 `py/main_intro_doc_audit.py review`, using the interpreter and low-priority workflow
