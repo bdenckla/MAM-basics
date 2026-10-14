@@ -138,5 +138,44 @@
     "research_note": "numbers-9-7-adjudication.md",
     "independent_check": "The selected MAM word contains yod and no vav. The Introduction and doc-note's Leningrad clause describe the same presence/absence of yod. The existing spelling-prose proof retains the faithful raw-note comparison.",
     "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+  },
+  {
+    "id": "DEUT-32-34-BEN-20261014",
+    "case": "deuteronomy-vav-label",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_04aee01833c88191be854758be2400a8",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "דברים לב/טעמים",
+      "page_id": 236679,
+      "requested_title": "דברים_לב/טעמים",
+      "revision_id": 3079372,
+      "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+    },
+    "current": {
+      "note": "Deuter 32:34/2/0",
+      "quote": "(כתיב מלא יו\"ד)"
+    },
+    "proposed_quotation": "(כתיב מלא וי\"ו)",
+    "changes": [
+      {
+        "before": "יו\"ד",
+        "after": "וי\"ו",
+        "purpose": "Ben confirms that the full-spelling description should name vav rather than yod; preserve the stored quotation mark and parentheses. This is inverse to Numbers 9:7."
+      }
+    ],
+    "current_label": "Current cached doc-note wording",
+    "proposed_label": "Ben’s confirmed corrected wording — not applied",
+    "current_explanation": "(Spelling with yod included.)",
+    "proposed_explanation": "(Spelling with vav included.)",
+    "research_note": "deuteronomy-32-34-adjudication.md",
+    "inverse_of": "NUM-9-7-BEN-20261014",
+    "independent_check": "The faithful raw chapter and parsed note both contain the current wording. The selected MAM word contains vav and no yod; the Introduction and the note's Leningrad clause describe the presence/absence of vav. The existing spelling-prose proof retains the raw-note comparison.",
+    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
   }
 ]

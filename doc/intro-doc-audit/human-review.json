@@ -231,8 +231,8 @@
       "DOCNOTE-SPELLING-PROSE"
     ],
     "section": "discrepancies",
-    "title": "Deuteronomy 32:34 — the note names yod, but the added letter is vav",
-    "issue": "The doc-note calls the selected spelling “full yod”; its word contains vav and no yod.",
+    "title": "Deuteronomy 32:34 — Ben confirms the doc-note’s vav correction",
+    "issue": "Ben confirms that the doc-note’s “full yod” label should say “full vav”; the selected word contains vav and no yod.",
     "context": "MAM חָת֖וּם has vav; Leningrad חָתֻ֖ם does not.",
     "panels": [
       {
@@ -263,8 +263,9 @@
       }
     ],
     "explanation": "The Introduction and both quoted spellings agree on this vav difference.",
-    "decision": "Correct the note’s selected-spelling description to “full vav” if the quoted word is intended.",
-    "reading_forms": []
+    "decision": "This is the inverse of Numbers 9:7. The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
+    "reading_forms": [],
+    "adjudication": "DEUT-32-34-BEN-20261014"
   },
   {
     "id": "deuteronomy-leningrad-spelling",

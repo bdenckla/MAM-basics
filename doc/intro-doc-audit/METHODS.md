@@ -16,7 +16,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 582 displayed passages against literal stored strings,
+The renderer validates 583 displayed passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -37,8 +37,9 @@ Ben’s 2026-10-14 Jeremiah 31:37 adjudication is recorded in
 [jeremiah-31-37-adjudication.md](jeremiah-31-37-adjudication.md) and
 [adjudications.json](adjudications.json). The readable case keeps the cached quotation
 and shows his exact proposed correction separately. Ben also confirmed the
-[Numbers 9:7 wording correction](numbers-9-7-adjudication.md), retaining the stored
-punctuation in its before/after comparison. The renderer checks two proposed
+[Numbers 9:7 wording correction](numbers-9-7-adjudication.md) and its inverse,
+[Deuteronomy 32:34](deuteronomy-32-34-adjudication.md), retaining the stored
+punctuation in both before/after comparisons. The renderer checks three proposed
 quotations against their declared edits, separately from source-passage validation.
 The three contextual facts, local screenshot observations and bounded restoration
 history are retained with attribution. The copying theory remains a hypothesis;
