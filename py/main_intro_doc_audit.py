@@ -18,6 +18,7 @@ from intro_doc_audit import (
     prose_findings,
     deuter_hataf_scope,
     all_books_hataf,
+    all_books_hataf_review,
 )
 
 
@@ -54,11 +55,13 @@ def main():
         deuter_hataf_scope.main()
     elif sys.argv[1:] == ["all-books-hataf"]:
         all_books_hataf.main()
+    elif sys.argv[1:] == ["all-books-hataf-review"]:
+        all_books_hataf_review.main()
     elif not sys.argv[1:]:
         audit.main()
     else:
         raise SystemExit(
-            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope|all-books-hataf]"
+            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope|all-books-hataf|all-books-hataf-review]"
         )
 
 

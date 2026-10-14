@@ -147,7 +147,11 @@ def main():
                         "pointer": f"/book39s/{book_index}/good_ending_plus",
                         "path": path.relative_to(audit.ROOT).as_posix(),
                         "node": extra,
-                        "note_copies": len(list(extract.find_docnote_tmpls(extra))),
+                        "note_copies": len(
+                            list(
+                                extract.find_docnote_tmpls([extra["wikitext_element"]])
+                            )
+                        ),
                     }
                 )
         print(

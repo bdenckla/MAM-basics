@@ -118,7 +118,8 @@ class Sources:
             lines = (
                 (audit.ROOT / record["path"]).read_text(encoding="utf-8").splitlines()
             )
-            line = next(i for i, value in enumerate(lines, 1) if literal in value)
+            encoded = json.dumps(literal, ensure_ascii=False)[1:-1]
+            line = next(i for i, value in enumerate(lines, 1) if encoded in value)
             record = dict(record, source_url=audit.source_url(record["path"], line))
         elif passage.get("source") == "intro-raw":
             path = passage["path"]
@@ -262,7 +263,7 @@ def adjudication_comparison(case, sources):
             '<div class="passage"><h4>'
             + escaped(label)
             + '</h4><div class="he" lang="he" dir="rtl">'
-            + escaped(quote)
+            + escaped(visible_wikitext(quote))
             + "</div>"
             + (
                 '<p class="translation">' + prose(explanation) + "</p>"
@@ -299,18 +300,18 @@ def word_comparison_table(comparison, sources):
                 + "</span></div>"
             )
         rows.append(
-            '<tr><td class="verse">'
+            '<tr><td class="word-pair">'
+            + "".join(forms)
+            + '</td><td class="verse">'
             + escaped(row["ref"])
             + "</td><td>"
             + escaped(row["manuscript"])
-            + '</td><td class="word-pair">'
-            + "".join(forms)
             + "</td></tr>"
         )
     return (
         '<div class="membership"><table><caption>'
         + prose(comparison["caption"])
-        + "</caption><thead><tr><th>Verse</th><th>Manuscript</th><th>Word in each source</th></tr></thead><tbody>"
+        + "</caption><thead><tr><th>Word in each source</th><th>Verse</th><th>Manuscript</th></tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table></div>"
     )
@@ -399,6 +400,24 @@ STYLE = """@font-face{font-family:Taamey;src:url(../woff2/Taamey_D.woff2)}
 :root{--he-size:30px;color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f5f6f4;color:#22332d;font:17px/1.65 Georgia,serif}main{max-width:1220px;margin:auto;padding:28px}h1,h2,h3,h4,label,nav,.reading-label,.source-link{font-family:system-ui,sans-serif}h1{font-size:29px;line-height:1.3}h2{font-size:24px;margin:42px 0 15px}h3{font-size:21px;margin:0 0 12px}h4{font-size:15px;line-height:1.45;margin:0 0 12px;color:#4e645a}.intro{max-width:850px}.toolbar{position:sticky;top:0;background:#f5f6f4f5;border-bottom:1px solid #d5dfd9;padding:12px 0;z-index:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar nav{margin-left:auto;font-size:14px}a{color:#1f5b85}nav a{margin-left:14px}article{background:white;border:1px solid #d7e0da;border-radius:8px;padding:25px;margin:22px 0;scroll-margin-top:85px}.issue{font-weight:bold;font-size:18px}.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:22px 0}.passage{border-left:3px solid #bdcfc2;background:#f6f8f5;padding:16px 18px;min-width:0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.translation{font-size:16px;line-height:1.65;white-space:pre-wrap;margin-bottom:10px}.source-link{font-size:13px}.readings{display:flex;gap:20px;flex-wrap:wrap;border-top:1px solid #dce5de;border-bottom:1px solid #dce5de;padding:14px 0}.reading{display:flex;flex-direction:column;min-width:220px;flex:1}.reading-label,.gloss{font-size:14px}.reading .he{align-self:flex-start}.decision{background:#eef4f0;padding:12px 16px}footer{margin-top:40px;border-top:1px solid #d5dfd9;padding-top:20px;font-size:15px}input{vertical-align:middle}@media(max-width:760px){main{padding:16px}.comparison{grid-template-columns:1fr}.toolbar nav{margin-left:0}nav a{margin-left:0;margin-right:12px}article{padding:18px}}"""
 
 
+THEME_STYLE = """
+/* Match the shared document.css serif and light-dark pattern. */
+:root{color-scheme:light dark;--review-bg:light-dark(white,black);--review-text:light-dark(black,white);--review-muted:light-dark(#555,#bbb);--review-border:light-dark(#bbb,#555);--review-panel:light-dark(#f6f6f6,#171717);--review-head:light-dark(#eee,#222)}
+body{font-family:serif;font-size:14pt;color:var(--review-text);background:var(--review-bg)}
+h1,h2,h3,h4,label,nav,.reading-label,.source-link{font-family:serif}
+a{color:light-dark(#0000ee,#8ab4f8)}
+.toolbar{background:var(--review-bg);border-color:var(--review-border)}
+article,.case{background:var(--review-bg);border-color:var(--review-border)}
+.case article,.passage,.readings,footer{border-color:var(--review-border)}
+.passage,.decision{background:var(--review-panel)}
+h4,.reading-label,.annotation{color:var(--review-muted)}
+.membership table{width:auto;max-width:100%}
+.membership th,.membership td{border-color:var(--review-border)}
+.membership th{font-family:serif;background:var(--review-head)}
+.membership .verse{font-family:serif}
+"""
+
+
 def coverage_report(cases, literal_passages, proposed_quotations=0):
     """Account for retained cases; this is presentation coverage, not a verdict."""
     covered = {
@@ -437,7 +456,7 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
         "readable_cases": len(cases),
         "sections": {
             key: sum(case["section"] == key for case in cases)
-            for key in ("discrepancies", "questions", "tracked")
+            for key in ("discrepancies", "questions", "scope", "tracked")
         },
         "prior_findings_questions_and_tracked": {
             "covered": len(expected),
@@ -492,6 +511,11 @@ def main(cases=None, output="review.html"):
             "These cases need a scope, attribution or evidence decision before either passage can be called wrong.",
         ),
         (
+            "scope",
+            "Why these words are outside the list",
+            "These words have a different vowel function or a different named source. The examples show the distinction.",
+        ),
+        (
             "tracked",
             "Already tracked",
             "These discrepancies are recorded in issues #305–307.",
@@ -509,9 +533,10 @@ def main(cases=None, output="review.html"):
         + STYLE
         + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}.readings{display:grid;grid-template-columns:minmax(0,max-content)}.reading{min-width:0;flex:initial}.reading .he{align-self:stretch;text-align:right}.comparison.adjudication{grid-template-columns:1fr}.word-pair .reading+.reading{margin-top:12px}.word-pair .he{align-self:flex-end}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
+        + THEME_STYLE
         + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
         + "".join(sections)
-        + '<footer><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
+        + '<footer><p>Ben’s approvals identify proposals for Avi’s review. No proposed changes have been applied or submitted.</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
     )
     if output == "review.html":
         audit.dump(

@@ -1,0 +1,1738 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "checker": "/root/hataf_independent",
+  "evidence": {
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "counts": {
+      "other-source-or-reconstruction": 9,
+      "rejected-historical-question": 3,
+      "definite-omission": 5,
+      "morphological-context-inference": 10,
+      "explicit-short-o-exclusion": 4,
+      "scope-or-reading-uncertainty": 8,
+      "pointed-ketiv-vowel-transfer-inference": 1,
+      "divine-name-or-incidental-quotation": 2,
+      "already-listed-template-interruption": 1
+    },
+    "records": [
+      {
+        "note_id": "Genesis 18:17/2/0",
+        "ref": "Genesis 18:17",
+        "unlisted_words": [
+          {
+            "word": "הַֽמֲכַסֶּ֤ה",
+            "key": "המכסה",
+            "clusters": [
+              "מֲ"
+            ]
+          }
+        ],
+        "body": "=ל,ש,ק3 ובדפוסים ומ\"ש\nל=הַֽמְכַסֶּ֤ה בגעיה ימנית\nמג\"ה=הַֽמֲכַסֶּ֤ה (לפי שחזור שיטת הכתר)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L7283",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/18/17/2/1",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf is attributed to Miqraot Gedolot HaKeter reconstruction, not to Aleppo/Leningrad; Leningrad explicitly has sheva.",
+        "target": "הַֽמְכַסֶּ֤ה",
+        "raw_proof": {
+          "note_id": "Genesis 18:17/2/0",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=ל,ש,ק3 ובדפוסים ומ\"ש{{ש}}ל=הַֽמְכַסֶּ֤ה בגעיה ימנית{{ש}}מג\"ה=הַֽמֲכַסֶּ֤ה (לפי שחזור שיטת הכתר)",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/18/17/2/1",
+          "parsed_note_body": "=ל,ש,ק3 ובדפוסים ומ\"ש\nל=הַֽמְכַסֶּ֤ה בגעיה ימנית\nמג\"ה=הַֽמֲכַסֶּ֤ה (לפי שחזור שיטת הכתר)",
+          "chapter_revision": {
+            "resolved_title": "בראשית יח/טעמים",
+            "page_id": 236003,
+            "requested_title": "בראשית_יח/טעמים",
+            "revision_id": 2987605,
+            "sha256": "4429b51ab642e169e94c30676cef63fdf0898b079232613389ca88df35028553"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L7283",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Genesis 27:26/2/0",
+        "ref": "Genesis 27:26",
+        "unlisted_words": [
+          {
+            "word": "וּשֲקָה",
+            "key": "ושקה",
+            "clusters": [
+              "שֲ"
+            ]
+          }
+        ],
+        "body": "=א(צילום ויקס),א(ס),ל,ל1,ש,ק3,ו <א(ס)=\"וּשֲקָה\" בחטף פתח? אינו כן אלא בשוא לבד ואין מתג בואו>",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L11810",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/27/26/2/1",
+        "independent_verdict": "rejected-historical-question",
+        "reason": "The quoted question proposes וּשֲקָה, but the reported answer explicitly says sheva alone.",
+        "target": "וּשְׁקָה־לִּ֖י",
+        "raw_proof": {
+          "note_id": "Genesis 27:26/2/0",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=א(צילום ויקס),א(ס),ל,ל1,ש,ק3,ו <א(ס)=\"וּשֲקָה\" בחטף פתח? אינו כן אלא בשוא לבד ואין מתג בואו>",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/27/26/2/1",
+          "parsed_note_body": "=א(צילום ויקס),א(ס),ל,ל1,ש,ק3,ו <א(ס)=\"וּשֲקָה\" בחטף פתח? אינו כן אלא בשוא לבד ואין מתג בואו>",
+          "chapter_revision": {
+            "resolved_title": "בראשית כז/טעמים",
+            "page_id": 236044,
+            "requested_title": "בראשית_כז/טעמים",
+            "revision_id": 2987614,
+            "sha256": "9238bebfe7b3c6e03941be1e1f63717d265f00bd950423e277e3f67b44bb4539"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L11810",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Genesis 30:27/2/0",
+        "ref": "Genesis 30:27",
+        "unlisted_words": [
+          {
+            "word": "וַיְבָרֲכֵ֥נִי",
+            "key": "ויברכני",
+            "clusters": [
+              "רֲ"
+            ]
+          }
+        ],
+        "body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים\nל=וַיְבָרֲכֵ֥נִי (חטף)\nהערת ברויאר",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L13440",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/30/27/2/1",
+        "independent_verdict": "definite-omission",
+        "reason": "Explicit Leningrad resh ḥataf pataḥ; ordinary vocal sheva, with MAM varika; no list position.",
+        "target": "וַיְבָרְﬞכֵ֥נִי",
+        "raw_proof": {
+          "note_id": "Genesis 30:27/2/0",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים{{ש}}ל=וַיְבָרֲכֵ֥נִי (חטף){{ש}}הערת ברויאר",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/30/27/2/1",
+          "parsed_note_body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים\nל=וַיְבָרֲכֵ֥נִי (חטף)\nהערת ברויאר",
+          "chapter_revision": {
+            "resolved_title": "בראשית ל/טעמים",
+            "page_id": 236056,
+            "requested_title": "בראשית_ל/טעמים",
+            "revision_id": 3017397,
+            "sha256": "e1ebe4dc7f3ce3d6f15b9a5cc742a518ca0fee3e65b40065bbee924a239d5991"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L13440",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Genesis 41:7/2/0",
+        "ref": "Genesis 41:7",
+        "unlisted_words": [
+          {
+            "word": "הַֽשִׁבֳּלִ֔ים",
+            "key": "השבלים",
+            "clusters": [
+              "בֳּ"
+            ]
+          }
+        ],
+        "body": "=ל1,ב,ש,ש1,ק3,ו\nל!=הַֽשִׁבֳּלִ֔ים (חסר דגש באות שי\"ן) כמו בעוד מקומות (ראו פסוקים כ\"ד, כ\"ז)\nהערת דותן",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18451",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/41/7/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "Regular שִׁבֳּלִים short-o vowel, following nonguttural lamed; note concerns shin dagesh, not a sheva/ḥataf alternation.",
+        "target": "הַֽשִּׁבֳּלִ֔ים",
+        "raw_proof": {
+          "note_id": "Genesis 41:7/2/0",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו{{ש}}ל!=הַֽשִׁבֳּלִ֔ים (חסר דגש באות שי\"ן) כמו בעוד מקומות (ראו פסוקים כ\"ד, כ\"ז){{ש}}הערת דותן",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/41/7/2/1",
+          "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו\nל!=הַֽשִׁבֳּלִ֔ים (חסר דגש באות שי\"ן) כמו בעוד מקומות (ראו פסוקים כ\"ד, כ\"ז)\nהערת דותן",
+          "chapter_revision": {
+            "resolved_title": "בראשית מא/טעמים",
+            "page_id": 236101,
+            "requested_title": "בראשית_מא/טעמים",
+            "revision_id": 3008393,
+            "sha256": "c7607fa2434e74abda9f697ea307da4a4472dd41d783e16eb7bb49d7b828ea49"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18451",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Genesis 41:24/2/0",
+        "ref": "Genesis 41:24",
+        "unlisted_words": [
+          {
+            "word": "הָשִׁבֳּלִ֣ים",
+            "key": "השבלים",
+            "clusters": [
+              "בֳּ"
+            ]
+          }
+        ],
+        "body": "=ל1,ב,ש,ש1,ק3,ו\nל!=הָשִׁבֳּלִ֣ים (קמץ באות ה\"א וחסר דגש באות שי\"ן)\nהערות ברויאר ודותן והמקליד",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18700",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/41/24/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "Regular שִׁבֳּלִים short-o vowel, following nonguttural lamed; note concerns article qamats and shin dagesh.",
+        "target": "הַשִּׁבֳּלִ֣ים",
+        "raw_proof": {
+          "note_id": "Genesis 41:24/2/0",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו{{ש}}ל!=הָשִׁבֳּלִ֣ים (קמץ באות ה\"א וחסר דגש באות שי\"ן){{ש}}הערות ברויאר ודותן והמקליד",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/41/24/2/1",
+          "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו\nל!=הָשִׁבֳּלִ֣ים (קמץ באות ה\"א וחסר דגש באות שי\"ן)\nהערות ברויאר ודותן והמקליד",
+          "chapter_revision": {
+            "resolved_title": "בראשית מא/טעמים",
+            "page_id": 236101,
+            "requested_title": "בראשית_מא/טעמים",
+            "revision_id": 3008393,
+            "sha256": "c7607fa2434e74abda9f697ea307da4a4472dd41d783e16eb7bb49d7b828ea49"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18700",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Genesis 41:24/2/1",
+        "ref": "Genesis 41:24",
+        "unlisted_words": [
+          {
+            "word": "הַֽשִׁבֳּלִ֖ים",
+            "key": "השבלים",
+            "clusters": [
+              "בֳּ"
+            ]
+          }
+        ],
+        "body": "=ל?,ב,ל1,ש,ק3,ו\nל?=הַֽשִׁבֳּלִ֖ים (חסר דגש באות שי\"ן?)\nהערת ברויאר",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18718",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/41/24/2/3",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "Regular שִׁבֳּלִים short-o vowel; uncertainty is about shin dagesh, not bet vowel.",
+        "target": "הַֽשִּׁבֳּלִ֖ים",
+        "raw_proof": {
+          "note_id": "Genesis 41:24/2/1",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=ל?,ב,ל1,ש,ק3,ו{{ש}}ל?=הַֽשִׁבֳּלִ֖ים (חסר דגש באות שי\"ן?){{ש}}הערת ברויאר",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/41/24/2/3",
+          "parsed_note_body": "=ל?,ב,ל1,ש,ק3,ו\nל?=הַֽשִׁבֳּלִ֖ים (חסר דגש באות שי\"ן?)\nהערת ברויאר",
+          "chapter_revision": {
+            "resolved_title": "בראשית מא/טעמים",
+            "page_id": 236101,
+            "requested_title": "בראשית_מא/טעמים",
+            "revision_id": 3008393,
+            "sha256": "c7607fa2434e74abda9f697ea307da4a4472dd41d783e16eb7bb49d7b828ea49"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18718",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Genesis 41:27/2/0",
+        "ref": "Genesis 41:27",
+        "unlisted_words": [
+          {
+            "word": "הַֽשִׁבֳּלִים֙",
+            "key": "השבלים",
+            "clusters": [
+              "בֳּ"
+            ]
+          }
+        ],
+        "body": "=ל1,ב,ש,ש1,ק3,ו\nל!=הַֽשִׁבֳּלִים֙ (חסר דגש באות שי\"ן)\nהערות ברויאר (בספק) ודותן (בוודאי והצדק עמו).",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18763",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "pointer": "/book39s/0/chapters/41/27/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "Regular שִׁבֳּלִים short-o vowel; note concerns shin dagesh.",
+        "target": "הַֽשִּׁבֳּלִים֙",
+        "raw_proof": {
+          "note_id": "Genesis 41:27/2/0",
+          "raw_path": "in/mam-ws/A1-Genesis.json",
+          "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו{{ש}}ל!=הַֽשִׁבֳּלִים֙ (חסר דגש באות שי\"ן){{ש}}הערות ברויאר (בספק) ודותן (בוודאי והצדק עמו).",
+          "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+          "parsed_pointer": "/book39s/0/chapters/41/27/2/1",
+          "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו\nל!=הַֽשִׁבֳּלִים֙ (חסר דגש באות שי\"ן)\nהערות ברויאר (בספק) ודותן (בוודאי והצדק עמו).",
+          "chapter_revision": {
+            "resolved_title": "בראשית מא/טעמים",
+            "page_id": 236101,
+            "requested_title": "בראשית_מא/טעמים",
+            "revision_id": 3008393,
+            "sha256": "c7607fa2434e74abda9f697ea307da4a4472dd41d783e16eb7bb49d7b828ea49"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L18763",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Exodus 37:25/2/0",
+        "ref": "Exodus 37:25",
+        "unlisted_words": [
+          {
+            "word": "רֳחְבּ֜וֹ",
+            "key": "רחבו",
+            "clusters": [
+              "רֳ"
+            ]
+          }
+        ],
+        "body": "=ל1,ב,ש,ש1,ק3,ו\nל=רֳחְבּ֜וֹ (חטף קמץ לסימון תנועת קמץ חטוף); שתי הנקודות של החטף נראות היטב בצילום בצבע, ובהתאם לדעתו של ברויאר. אמנם לפי דותן והמקליד ל=רָחְבּ֜וֹ.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A2-Exodus.json#L16513",
+        "path": "MAM-parsed/plus/A2-Exodus.json",
+        "pointer": "/book39s/0/chapters/37/25/2/1",
+        "independent_verdict": "explicit-short-o-exclusion",
+        "reason": "Note explicitly says חטף קמץ לסימון תנועת קמץ חטוף for רֳחְבּ֜וֹ.",
+        "target": "רׇחְבּ֜וֹ",
+        "raw_proof": {
+          "note_id": "Exodus 37:25/2/0",
+          "raw_path": "in/mam-ws/A2-Exodus.json",
+          "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו{{ש}}ל=רֳחְבּ֜וֹ (חטף קמץ לסימון תנועת קמץ חטוף); שתי הנקודות של החטף נראות היטב בצילום בצבע, ובהתאם לדעתו של ברויאר. אמנם לפי דותן והמקליד ל=רָחְבּ֜וֹ.",
+          "parsed_path": "MAM-parsed/plus/A2-Exodus.json",
+          "parsed_pointer": "/book39s/0/chapters/37/25/2/1",
+          "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו\nל=רֳחְבּ֜וֹ (חטף קמץ לסימון תנועת קמץ חטוף); שתי הנקודות של החטף נראות היטב בצילום בצבע, ובהתאם לדעתו של ברויאר. אמנם לפי דותן והמקליד ל=רָחְבּ֜וֹ.",
+          "chapter_revision": {
+            "resolved_title": "שמות לז/טעמים",
+            "page_id": 236285,
+            "requested_title": "שמות_לז/טעמים",
+            "revision_id": 2987673,
+            "sha256": "ec5af99a945f4301d9929de8080b71e7943afa6d023f7a29bd275752345b586d"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A2-Exodus.json#L16513",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Numbers 5:28/2/0",
+        "ref": "Numbers 5:28",
+        "unlisted_words": [
+          {
+            "word": "וְנִזְרֳעָ֥ה",
+            "key": "ונזרעה",
+            "clusters": [
+              "רֳ"
+            ]
+          }
+        ],
+        "body": "=ל,ל1,ש,ש1,ק3\nב,ו=וְנִזְרֳעָ֥ה (בחטף קמץ), וכמו כן לפי או\"ת ומ\"ש בחלק מהספרים, וכך ניקדו במג\"ה.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L2978",
+        "path": "MAM-parsed/plus/A4-Numbers.json",
+        "pointer": "/book39s/0/chapters/5/28/2/1",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf qamats belongs to British/Washington manuscripts and some editions; Leningrad agrees with MAM.",
+        "target": "וְנִזְרְﬞעָ֥ה",
+        "raw_proof": {
+          "note_id": "Numbers 5:28/2/0",
+          "raw_path": "in/mam-ws/A4-Numbers.json",
+          "raw_note_body": "=ל,ל1,ש,ש1,ק3{{ש}}ב,ו=וְנִזְרֳעָ֥ה (בחטף קמץ), וכמו כן לפי או\"ת ומ\"ש בחלק מהספרים, וכך ניקדו במג\"ה.",
+          "parsed_path": "MAM-parsed/plus/A4-Numbers.json",
+          "parsed_pointer": "/book39s/0/chapters/5/28/2/1",
+          "parsed_note_body": "=ל,ל1,ש,ש1,ק3\nב,ו=וְנִזְרֳעָ֥ה (בחטף קמץ), וכמו כן לפי או\"ת ומ\"ש בחלק מהספרים, וכך ניקדו במג\"ה.",
+          "chapter_revision": {
+            "resolved_title": "במדבר ה/טעמים",
+            "page_id": 236426,
+            "requested_title": "במדבר_ה/טעמים",
+            "revision_id": 2987708,
+            "sha256": "d090c89c12c646591bf5d6dd313c0b09a1f334b55abb5514baed5f8984edbdc9"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L2978",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Numbers 10:9/2/1",
+        "ref": "Numbers 10:9",
+        "unlisted_words": [
+          {
+            "word": "וֲנִזְכַּרְתֶּ֗ם",
+            "key": "ונזכרתם",
+            "clusters": [
+              "וֲ"
+            ]
+          }
+        ],
+        "body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן\nל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו)\nהערות ברויאר ודותן והמקליד",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5380",
+        "path": "MAM-parsed/plus/A4-Numbers.json",
+        "pointer": "/book39s/0/chapters/10/9/2/3",
+        "independent_verdict": "definite-omission",
+        "reason": "Explicit Leningrad vav ḥataf pataḥ; MAM has ordinary initial sheva; no list position.",
+        "target": "וְנִזְכַּרְתֶּ֗ם",
+        "raw_proof": {
+          "note_id": "Numbers 10:9/2/1",
+          "raw_path": "in/mam-ws/A4-Numbers.json",
+          "raw_note_body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו){{ש}}הערות ברויאר ודותן והמקליד",
+          "parsed_path": "MAM-parsed/plus/A4-Numbers.json",
+          "parsed_pointer": "/book39s/0/chapters/10/9/2/3",
+          "parsed_note_body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן\nל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו)\nהערות ברויאר ודותן והמקליד",
+          "chapter_revision": {
+            "resolved_title": "במדבר י/טעמים",
+            "page_id": 236446,
+            "requested_title": "במדבר_י/טעמים",
+            "revision_id": 2990906,
+            "sha256": "a8803dd7a388c1e7a6737d41214fcb4471d1c0d0a5245649c0d05e4bb53ef912"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5380",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Numbers 11:1/2/0",
+        "ref": "Numbers 11:1",
+        "unlisted_words": [
+          {
+            "word": "כמתאנֲנים",
+            "key": "כמתאננים",
+            "clusters": [
+              "נֲ"
+            ]
+          }
+        ],
+        "body": "=א(ס),ל,ב,ש,ש1,ק3,ו <כמתאנֲנים? לא כן אלא בשוא לבד>\nמ\"ג דפוס ונציה=כְּמִתְאֹ֣׆ְנִ֔ים (!) בנו\"ן הפוכה.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5968",
+        "path": "MAM-parsed/plus/A4-Numbers.json",
+        "pointer": "/book39s/0/chapters/11/1/2/1",
+        "independent_verdict": "rejected-historical-question",
+        "reason": "The quoted question proposes כמתאנֲנים, but the reported answer explicitly says sheva alone.",
+        "target": "כְּמִתְאֹ֣נְנִ֔ים",
+        "raw_proof": {
+          "note_id": "Numbers 11:1/2/0",
+          "raw_path": "in/mam-ws/A4-Numbers.json",
+          "raw_note_body": "=א(ס),ל,ב,ש,ש1,ק3,ו <כמתאנֲנים? לא כן אלא בשוא לבד>{{ש}}מ\"ג דפוס ונציה=כְּמִתְאֹ֣׆ְנִ֔ים (!) בנו\"ן הפוכה.",
+          "parsed_path": "MAM-parsed/plus/A4-Numbers.json",
+          "parsed_pointer": "/book39s/0/chapters/11/1/2/1",
+          "parsed_note_body": "=א(ס),ל,ב,ש,ש1,ק3,ו <כמתאנֲנים? לא כן אלא בשוא לבד>\nמ\"ג דפוס ונציה=כְּמִתְאֹ֣׆ְנִ֔ים (!) בנו\"ן הפוכה.",
+          "chapter_revision": {
+            "resolved_title": "במדבר יא/טעמים",
+            "page_id": 236450,
+            "requested_title": "במדבר_יא/טעמים",
+            "revision_id": 3023236,
+            "sha256": "303b6e14c3ef99d747bc06cb022bd6bbebd0c769d8645087b4b9f88f6685c97d"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5968",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Numbers 18:2/2/0",
+        "ref": "Numbers 18:2",
+        "unlisted_words": [
+          {
+            "word": "וִֽישָֽׁרֲת֑וּךָ",
+            "key": "וישרתוך",
+            "clusters": [
+              "רֲ"
+            ]
+          },
+          {
+            "word": "וִֽישָֽׁרֲת֑וּךָ",
+            "key": "וישרתוך",
+            "clusters": [
+              "רֲ"
+            ]
+          }
+        ],
+        "body": "=א(ס),ש,ק3,ו? (געיה באות שי\"ן ולא בוי\"ו); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", הערה 8 ובספר טעמי המקרא פרק ח.\nא(ס)=<\"וִֽישָֽׁרֲת֑וּךָ\" מלא ויו? כן, ובשוא לבד, ואין מתג בואו [!]> ואם כן נראה מנוסח השאלה שהיתה געיה בשי\"ן.\nל,ל1?=וִֽישָׁרְת֑וּךָ (געיה באות וי\"ו) וכך אצל ברויאר ומג\"ה.\nב,ש1=וִישָׁרְת֑וּךָ (אין געיה)\nדפוסים וקורן=וִֽישָֽׁרֲת֑וּךָ כמו בנוסח השאלה של א(ס).",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L9302",
+        "path": "MAM-parsed/plus/A4-Numbers.json",
+        "pointer": "/book39s/0/chapters/18/2/2/1",
+        "independent_verdict": "rejected-historical-question",
+        "reason": "Aleppo question contains the proposed ḥataf, but its answer says sheva alone; printed editions repeat the question’s wording.",
+        "target": "וִישָֽׁרְת֑וּךָ",
+        "raw_proof": {
+          "note_id": "Numbers 18:2/2/0",
+          "raw_path": "in/mam-ws/A4-Numbers.json",
+          "raw_note_body": "=א(ס),ש,ק3,ו? (געיה באות שי\"ן ולא בוי\"ו); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", הערה 8 ובספר טעמי המקרא פרק ח.{{ש}}א(ס)=<\"וִֽישָֽׁרֲת֑וּךָ\" מלא ויו? כן, ובשוא לבד, ואין מתג בואו [!]> ואם כן נראה מנוסח השאלה שהיתה געיה בשי\"ן.{{ש}}ל,ל1?=וִֽישָׁרְת֑וּךָ (געיה באות וי\"ו) וכך אצל ברויאר ומג\"ה.{{ש}}ב,ש1=וִישָׁרְת֑וּךָ (אין געיה){{ש}}דפוסים וקורן=וִֽישָֽׁרֲת֑וּךָ כמו בנוסח השאלה של א(ס).",
+          "parsed_path": "MAM-parsed/plus/A4-Numbers.json",
+          "parsed_pointer": "/book39s/0/chapters/18/2/2/1",
+          "parsed_note_body": "=א(ס),ש,ק3,ו? (געיה באות שי\"ן ולא בוי\"ו); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", הערה 8 ובספר טעמי המקרא פרק ח.\nא(ס)=<\"וִֽישָֽׁרֲת֑וּךָ\" מלא ויו? כן, ובשוא לבד, ואין מתג בואו [!]> ואם כן נראה מנוסח השאלה שהיתה געיה בשי\"ן.\nל,ל1?=וִֽישָׁרְת֑וּךָ (געיה באות וי\"ו) וכך אצל ברויאר ומג\"ה.\nב,ש1=וִישָׁרְת֑וּךָ (אין געיה)\nדפוסים וקורן=וִֽישָֽׁרֲת֑וּךָ כמו בנוסח השאלה של א(ס).",
+          "chapter_revision": {
+            "resolved_title": "במדבר יח/טעמים",
+            "page_id": 236478,
+            "requested_title": "במדבר_יח/טעמים",
+            "revision_id": 2987721,
+            "sha256": "836be1cb1dd448586b69a026f61188efc2fdec7d529d93c7f1fd7045ac33b320"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L9302",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Deuter 3:22/2/0",
+        "ref": "Deuter 3:22",
+        "unlisted_words": [
+          {
+            "word": "תְִּירָא֑וּם",
+            "key": "תיראום",
+            "clusters": [
+              "תְִּ"
+            ]
+          }
+        ],
+        "body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן\nל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.\nל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L1660",
+        "path": "MAM-parsed/plus/A5-Deuter.json",
+        "pointer": "/book39s/0/chapters/3/22/2/1",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Note questions whether the blurred Leningrad sign is ḥataf ḥiriq or gaʿya.",
+        "target": "תִּֽירָא֑וּם",
+        "raw_proof": {
+          "note_id": "Deuter 3:22/2/0",
+          "raw_path": "in/mam-ws/A5-Deuter.json",
+          "raw_note_body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.{{ש}}ל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+          "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+          "parsed_pointer": "/book39s/0/chapters/3/22/2/1",
+          "parsed_note_body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן\nל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.\nל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+          "chapter_revision": {
+            "resolved_title": "דברים ג/טעמים",
+            "page_id": 236563,
+            "requested_title": "דברים_ג/טעמים",
+            "revision_id": 2995294,
+            "sha256": "166ad5195e703100b3b9b330adce6ba21ac2fd86db998da5d53f9bf46df1f257"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L1660",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Deuter 32:6/2/0",
+        "ref": "Deuter 32:6",
+        "unlisted_words": [
+          {
+            "word": "לְיֲהוָה֙",
+            "key": "ליהוה",
+            "clusters": [
+              "יֲ"
+            ]
+          }
+        ],
+        "body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד)\nל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)\nל1=הַ לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)\nש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)\nתיגאן=<הַֽלְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.\nמ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15539",
+        "path": "MAM-parsed/plus/A5-Deuter.json",
+        "pointer": "/book39s/0/chapters/32/6/2/0",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Non-guttural yod ḥataf is only FirkovichB17; Leningrad ḥataf is on guttural he. Divine-name pointing also matters.",
+        "target": {
+          "tmpl_name": "מ:הערה-2",
+          "tmpl_params": {
+            "1": [
+              {
+                "tmpl_name": "מ:אות-מיוחדת-במילה",
+                "tmpl_params": {
+                  "1": {
+                    "tmpl_name": "מ:אות-ג",
+                    "tmpl_params": {
+                      "1": "הַ"
+                    }
+                  },
+                  "2": "הַ",
+                  "3": "ה",
+                  "4": "ג",
+                  "5": "ה/ג"
+                }
+              },
+              " לְיְהֹוָה֙"
+            ],
+            "2": [
+              "בספרי תימן ",
+              {
+                "tmpl_name": "מ:אות-מיוחדת-במילה",
+                "tmpl_params": {
+                  "1": [
+                    {
+                      "tmpl_name": "מ:אות-ג",
+                      "tmpl_params": {
+                        "1": "הַֽ"
+                      }
+                    },
+                    "לְיהֹוָה֙"
+                  ],
+                  "2": "הַֽלְיהֹוָה֙",
+                  "3": "ה.....",
+                  "4": "ג",
+                  "5": "ה/ג"
+                }
+              },
+              " בתיבה אחת"
+            ],
+            "3": "אאא*"
+          }
+        },
+        "raw_proof": {
+          "note_id": "Deuter 32:6/2/0",
+          "raw_path": "in/mam-ws/A5-Deuter.json",
+          "raw_note_body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד){{ש}}ל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד){{ש}}ל1={{מ:אות-ג|הַ}} לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד){{ש}}ש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד){{ש}}תיגאן=<{{מ:אות-ג|הַֽ}}לְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.{{ש}}מ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+          "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+          "parsed_pointer": "/book39s/0/chapters/32/6/2/0",
+          "parsed_note_body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד)\nל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)\nל1=הַ לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)\nש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)\nתיגאן=<הַֽלְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.\nמ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+          "chapter_revision": {
+            "resolved_title": "דברים לב/טעמים",
+            "page_id": 236679,
+            "requested_title": "דברים_לב/טעמים",
+            "revision_id": 3079372,
+            "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15539",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Deuter 32:13/2/0",
+        "ref": "Deuter 32:13",
+        "unlisted_words": [
+          {
+            "word": "בָּ֣מֳותֵי",
+            "key": "במותי",
+            "clusters": [
+              "מֳ"
+            ]
+          }
+        ],
+        "body": "=ל <יתיר ו'>\nא=<עַל־בָּ֣מֳותֵי> מ\"ק-א=<ג' מל'>\nלגבי הקמץ הרחב בבי\"ת ראו ויינברג 3.1.1, ושם בהערה 15 (ויש לשים לב למקום הטעם).",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15870",
+        "path": "MAM-parsed/plus/A5-Deuter.json",
+        "pointer": "/book39s/0/chapters/32/13/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "בָּמֳתֵי is the retained short-o morphological form in qere, under ch2:L276 policy; note concerns spelling and bet qamats.",
+        "target": [
+          "עַל־",
+          {
+            "tmpl_name": "קו״כ",
+            "tmpl_params": {
+              "1": "במותי",
+              "2": "בָּ֣מֳתֵי"
+            }
+          }
+        ],
+        "raw_proof": {
+          "note_id": "Deuter 32:13/2/0",
+          "raw_path": "in/mam-ws/A5-Deuter.json",
+          "raw_note_body": "=ל <יתיר ו'>{{ש}}א=<עַל־בָּ֣מֳותֵי> מ\"ק-א=<ג' מל'>{{ש}}לגבי הקמץ הרחב בבי\"ת ראו ויינברג 3.1.1, ושם בהערה 15 (ויש לשים לב למקום הטעם).",
+          "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+          "parsed_pointer": "/book39s/0/chapters/32/13/2/1",
+          "parsed_note_body": "=ל <יתיר ו'>\nא=<עַל־בָּ֣מֳותֵי> מ\"ק-א=<ג' מל'>\nלגבי הקמץ הרחב בבי\"ת ראו ויינברג 3.1.1, ושם בהערה 15 (ויש לשים לב למקום הטעם).",
+          "chapter_revision": {
+            "resolved_title": "דברים לב/טעמים",
+            "page_id": 236679,
+            "requested_title": "דברים_לב/טעמים",
+            "revision_id": 3079372,
+            "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15870",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "2Samuel 8:10/2/0",
+        "ref": "2Samuel 8:10",
+        "unlisted_words": [
+          {
+            "word": "וּֽלְבָרֲכ֗וֹ",
+            "key": "ולברכו",
+            "clusters": [
+              "רֲ"
+            ]
+          }
+        ],
+        "body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L12006",
+        "path": "MAM-parsed/plus/BA-Samuel.json",
+        "pointer": "/book39s/1/chapters/8/10/2/1",
+        "independent_verdict": "definite-omission",
+        "reason": "Explicit Aleppo resh ḥataf pataḥ; MAM has varika; no list position.",
+        "target": "וּֽלְבָרְﬞכ֗וֹ",
+        "raw_proof": {
+          "note_id": "2Samuel 8:10/2/0",
+          "raw_path": "in/mam-ws/BB-2Samuel.json",
+          "raw_note_body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+          "parsed_path": "MAM-parsed/plus/BA-Samuel.json",
+          "parsed_pointer": "/book39s/1/chapters/8/10/2/1",
+          "parsed_note_body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+          "chapter_revision": {
+            "resolved_title": "שמואל ב ח/טעמים",
+            "page_id": 237027,
+            "requested_title": "שמואל ב_ח/טעמים",
+            "revision_id": 3010613,
+            "sha256": "2c0a9ffcad0a31f673cc48d895a7d2c3d0d7f82146dd1e63a0c8ba720400245a"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L12006",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "2Samuel 24:16/2/0",
+        "ref": "2Samuel 24:16",
+        "unlisted_words": [
+          {
+            "word": "הָאֲוְרֲ֥נָה",
+            "key": "האורנה",
+            "clusters": [
+              "רֲ֥"
+            ]
+          }
+        ],
+        "body": "א-כתיב=הָאֲוְרֲ֥נָה",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L18418",
+        "path": "MAM-parsed/plus/BA-Samuel.json",
+        "pointer": "/book39s/1/chapters/24/16/2/3",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Pointed ketiv has resh ḥataf pataḥ while qere has resh pataḥ. This is not automatically optional vocal-sheva marking.",
+        "target": {
+          "tmpl_name": "כו״ק",
+          "tmpl_params": {
+            "1": "האורנה",
+            "2": "הָֽאֲרַ֥וְנָה"
+          }
+        },
+        "raw_proof": {
+          "note_id": "2Samuel 24:16/2/0",
+          "raw_path": "in/mam-ws/BB-2Samuel.json",
+          "raw_note_body": "א-כתיב=הָאֲוְרֲ֥נָה",
+          "parsed_path": "MAM-parsed/plus/BA-Samuel.json",
+          "parsed_pointer": "/book39s/1/chapters/24/16/2/3",
+          "parsed_note_body": "א-כתיב=הָאֲוְרֲ֥נָה",
+          "chapter_revision": {
+            "resolved_title": "שמואל ב כד/טעמים",
+            "page_id": 237091,
+            "requested_title": "שמואל ב_כד/טעמים",
+            "revision_id": 3008005,
+            "sha256": "589d42a4283c6843df594a4cb6a8d528fc341f9da53b137dd59c1947794ffe25"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L18418",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "2Samuel 24:18/2/0",
+        "ref": "2Samuel 24:18",
+        "unlisted_words": [
+          {
+            "word": "אֲרַ֥נֳיה",
+            "key": "ארניה",
+            "clusters": [
+              "נֳ"
+            ]
+          }
+        ],
+        "body": "א-כתיב=אֲרַ֥נֳיה",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L18462",
+        "path": "MAM-parsed/plus/BA-Samuel.json",
+        "pointer": "/book39s/1/chapters/24/18/2/1",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Pointed ketiv has nun ḥataf qamats while qere has nun qamats; vowel function is not explained.",
+        "target": {
+          "tmpl_name": "כו״ק",
+          "tmpl_params": {
+            "1": "ארניה",
+            "2": "אֲרַ֥וְנָה"
+          }
+        },
+        "raw_proof": {
+          "note_id": "2Samuel 24:18/2/0",
+          "raw_path": "in/mam-ws/BB-2Samuel.json",
+          "raw_note_body": "א-כתיב=אֲרַ֥נֳיה",
+          "parsed_path": "MAM-parsed/plus/BA-Samuel.json",
+          "parsed_pointer": "/book39s/1/chapters/24/18/2/1",
+          "parsed_note_body": "א-כתיב=אֲרַ֥נֳיה",
+          "chapter_revision": {
+            "resolved_title": "שמואל ב כד/טעמים",
+            "page_id": 237091,
+            "requested_title": "שמואל ב_כד/טעמים",
+            "revision_id": 3008005,
+            "sha256": "589d42a4283c6843df594a4cb6a8d528fc341f9da53b137dd59c1947794ffe25"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L18462",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "1Kings 8:33/2/0",
+        "ref": "1Kings 8:33",
+        "unlisted_words": [
+          {
+            "word": "וְהִתְפַּלֲל֧וּ",
+            "key": "והתפללו",
+            "clusters": [
+              "לֲ"
+            ]
+          }
+        ],
+        "body": "=ל,ק ובדפוסים לגבי הדגש (וכן הכריע ברויאר), והשוו להלן בפסוקים לה, מד, מח.\nא=וְהִתְפַּלְּל֧וּ (למ\"ד דגושה, ואין געיה כשיטת בן אשר); וכן הכריעו במג\"ה.\nק=וְהִתְפַּלֲל֧וּ\nל=וְהִֽתְפַּלְל֧וּ (הגעיה מתאימה לשיטת בן נפתלי)\nקורן=וְהִֽתְפַּֽלְל֧וּ",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BC-Kings.json#L3434",
+        "path": "MAM-parsed/plus/BC-Kings.json",
+        "pointer": "/book39s/0/chapters/8/33/2/1",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf is assigned to Cairo Prophets, not Aleppo/Leningrad.",
+        "target": "וְהִתְפַּלְל֧וּ",
+        "raw_proof": {
+          "note_id": "1Kings 8:33/2/0",
+          "raw_path": "in/mam-ws/BC-1Kings.json",
+          "raw_note_body": "=ל,ק ובדפוסים לגבי הדגש (וכן הכריע ברויאר), והשוו להלן בפסוקים לה, מד, מח.{{ש}}א=וְהִתְפַּלְּל֧וּ (למ\"ד דגושה, ואין געיה כשיטת בן אשר); וכן הכריעו במג\"ה.{{ש}}ק=וְהִתְפַּלֲל֧וּ{{ש}}ל=וְהִֽתְפַּלְל֧וּ (הגעיה מתאימה לשיטת בן נפתלי){{ש}}קורן=וְהִֽתְפַּֽלְל֧וּ",
+          "parsed_path": "MAM-parsed/plus/BC-Kings.json",
+          "parsed_pointer": "/book39s/0/chapters/8/33/2/1",
+          "parsed_note_body": "=ל,ק ובדפוסים לגבי הדגש (וכן הכריע ברויאר), והשוו להלן בפסוקים לה, מד, מח.\nא=וְהִתְפַּלְּל֧וּ (למ\"ד דגושה, ואין געיה כשיטת בן אשר); וכן הכריעו במג\"ה.\nק=וְהִתְפַּלֲל֧וּ\nל=וְהִֽתְפַּלְל֧וּ (הגעיה מתאימה לשיטת בן נפתלי)\nקורן=וְהִֽתְפַּֽלְל֧וּ",
+          "chapter_revision": {
+            "resolved_title": "מלכים א ח/טעמים",
+            "page_id": 237124,
+            "requested_title": "מלכים א_ח/טעמים",
+            "revision_id": 3088450,
+            "sha256": "7906628a895d25f175087fad916d0ed5bae266f1a0f3dfbf57f7005e72ae6585"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BC-Kings.json#L3434",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "1Kings 19:20/2/0",
+        "ref": "1Kings 19:20",
+        "unlisted_words": [
+          {
+            "word": "אֶשֳּׂקָה",
+            "key": "אשקה",
+            "clusters": [
+              "שֳּׂ"
+            ]
+          },
+          {
+            "word": "אֶשֲּׂקָה",
+            "key": "אשקה",
+            "clusters": [
+              "שֲּׂ"
+            ]
+          }
+        ],
+        "body": "=א,ל (בשווא)\nחלק מהדפוסים וקורן=אֶשֳּׂקָה־נָּא֙ (בחטף קמץ), ק=אֶשֲּׂקָה־נָּא֙ (בחטף פתח) ויש דפוסים גם כך, כולם בעקבות מ\"ש שהתלבט בין שלושת האפשרויות\nמ\"ג=אֶשְׂקָה־נָּא֙ (בנקודת שי\"ן שמאלית!)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BC-Kings.json#L7774",
+        "path": "MAM-parsed/plus/BC-Kings.json",
+        "pointer": "/book39s/0/chapters/19/20/2/1",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf readings belong to Cairo Prophets and printed editions; Aleppo/Leningrad have sheva.",
+        "target": "אֶשְּׁקָה־נָּא֙",
+        "raw_proof": {
+          "note_id": "1Kings 19:20/2/0",
+          "raw_path": "in/mam-ws/BC-1Kings.json",
+          "raw_note_body": "=א,ל (בשווא){{ש}}חלק מהדפוסים וקורן=אֶשֳּׂקָה־נָּא֙ (בחטף קמץ), ק=אֶשֲּׂקָה־נָּא֙ (בחטף פתח) ויש דפוסים גם כך, כולם בעקבות מ\"ש שהתלבט בין שלושת האפשרויות{{ש}}מ\"ג=אֶשְׂקָה־נָּא֙ (בנקודת שי\"ן שמאלית!)",
+          "parsed_path": "MAM-parsed/plus/BC-Kings.json",
+          "parsed_pointer": "/book39s/0/chapters/19/20/2/1",
+          "parsed_note_body": "=א,ל (בשווא)\nחלק מהדפוסים וקורן=אֶשֳּׂקָה־נָּא֙ (בחטף קמץ), ק=אֶשֲּׂקָה־נָּא֙ (בחטף פתח) ויש דפוסים גם כך, כולם בעקבות מ\"ש שהתלבט בין שלושת האפשרויות\nמ\"ג=אֶשְׂקָה־נָּא֙ (בנקודת שי\"ן שמאלית!)",
+          "chapter_revision": {
+            "resolved_title": "מלכים א יט/טעמים",
+            "page_id": 237167,
+            "requested_title": "מלכים א_יט/טעמים",
+            "revision_id": 2987890,
+            "sha256": "eb5469f02d135c4cb8f3d3b95cc0bf2ef0c6194a4893429e915816a32050bfb0"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BC-Kings.json#L7774",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Isaiah 18:4/2/0",
+        "ref": "Isaiah 18:4",
+        "unlisted_words": [
+          {
+            "word": "אֶשְׁקֳוטָ֖ה",
+            "key": "אשקוטה",
+            "clusters": [
+              "קֳ"
+            ]
+          }
+        ],
+        "body": "=ל ובדפוסים (ועל פיהם בקורן, ברויאר, דותן, סימנים, מכון ממרא)\nא=אֶשְׁקֳוטָ֖ה (אין הערת \"קרי\") וכן במג\"ה\nמ\"ק-א=<ג' מל'>",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C1-Isaiah.json#L3821",
+        "path": "MAM-parsed/plus/C1-Isaiah.json",
+        "pointer": "/book39s/0/chapters/18/4/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "אֶשְׁקֳטָה has morphological short-o qoph vowel, following nonguttural tet; note concerns full vav and absence of qere note.",
+        "target": {
+          "tmpl_name": "כו״ק",
+          "tmpl_params": {
+            "1": "אשקוטה",
+            "2": "אֶשְׁקֳטָ֖ה"
+          }
+        },
+        "raw_proof": {
+          "note_id": "Isaiah 18:4/2/0",
+          "raw_path": "in/mam-ws/C1-Isaiah.json",
+          "raw_note_body": "=ל ובדפוסים (ועל פיהם בקורן, ברויאר, דותן, סימנים, מכון ממרא){{ש}}א=אֶשְׁקֳוטָ֖ה (אין הערת \"קרי\") וכן במג\"ה{{ש}}מ\"ק-א=<ג' מל'>",
+          "parsed_path": "MAM-parsed/plus/C1-Isaiah.json",
+          "parsed_pointer": "/book39s/0/chapters/18/4/2/1",
+          "parsed_note_body": "=ל ובדפוסים (ועל פיהם בקורן, ברויאר, דותן, סימנים, מכון ממרא)\nא=אֶשְׁקֳוטָ֖ה (אין הערת \"קרי\") וכן במג\"ה\nמ\"ק-א=<ג' מל'>",
+          "chapter_revision": {
+            "resolved_title": "ישעיהו יח/טעמים",
+            "page_id": 237348,
+            "requested_title": "ישעיהו_יח/טעמים",
+            "revision_id": 2987936,
+            "sha256": "db2c42fbfb93b8206d23680e966e03657a6d64edce61701372e24dc23ea05590"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C1-Isaiah.json#L3821",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Isaiah 58:14/2/0",
+        "ref": "Isaiah 58:14",
+        "unlisted_words": [
+          {
+            "word": "בָּ֣מֳותֵי",
+            "key": "במותי",
+            "clusters": [
+              "מֳ"
+            ]
+          }
+        ],
+        "body": "=ל ובדפוסים (וכן בברויאר)\nא=עַל־בָּ֣מֳותֵי (אין הערת קרי)\nמ\"ק-א=<ג' מל'>\nלגבי הקמץ הרחב בבי\"ת ראו בהערה על דברים לב,יג.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C1-Isaiah.json#L12767",
+        "path": "MAM-parsed/plus/C1-Isaiah.json",
+        "pointer": "/book39s/0/chapters/58/14/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "Same בָּמֳתֵי morphological form as Deuter32:13; note explicitly refers there.",
+        "target": [
+          "עַל־",
+          {
+            "tmpl_name": "קו״כ",
+            "tmpl_params": {
+              "1": "במותי",
+              "2": "בָּ֣מֳתֵי"
+            }
+          }
+        ],
+        "raw_proof": {
+          "note_id": "Isaiah 58:14/2/0",
+          "raw_path": "in/mam-ws/C1-Isaiah.json",
+          "raw_note_body": "=ל ובדפוסים (וכן בברויאר){{ש}}א=עַל־בָּ֣מֳותֵי (אין הערת קרי){{ש}}מ\"ק-א=<ג' מל'>{{ש}}לגבי הקמץ הרחב בבי\"ת ראו בהערה על דברים לב,יג.",
+          "parsed_path": "MAM-parsed/plus/C1-Isaiah.json",
+          "parsed_pointer": "/book39s/0/chapters/58/14/2/1",
+          "parsed_note_body": "=ל ובדפוסים (וכן בברויאר)\nא=עַל־בָּ֣מֳותֵי (אין הערת קרי)\nמ\"ק-א=<ג' מל'>\nלגבי הקמץ הרחב בבי\"ת ראו בהערה על דברים לב,יג.",
+          "chapter_revision": {
+            "resolved_title": "ישעיהו נח/טעמים",
+            "page_id": 237533,
+            "requested_title": "ישעיהו_נח/טעמים",
+            "revision_id": 2987976,
+            "sha256": "25f2999eb8fd7fae809648bbcb07d1569e73ea8bb227fadf22cc5c456b68dd26"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C1-Isaiah.json#L12767",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Jeremiah 29:18/2/0",
+        "ref": "Jeremiah 29:18",
+        "unlisted_words": [
+          {
+            "word": "לְזַוֲעָה",
+            "key": "לזועה",
+            "clusters": [
+              "וֲ"
+            ]
+          }
+        ],
+        "body": "=דפוסים\nל-כתיב=לְזַועֲהָ לפי ברויאר, אבל יותר נראה לקרוא בו לְזַוֲעָה, וכן דעתם של דותן ושל המקליד.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L8447",
+        "path": "MAM-parsed/plus/C2-Jeremiah.json",
+        "pointer": "/book39s/0/chapters/29/18/2/1",
+        "independent_verdict": "pointed-ketiv-vowel-transfer-inference",
+        "reason": "Ketiv לְזַוֲעָה corresponds to qere לְזַעֲוָ֜ה: the qere guttural ayin’s required ḥataf occurs under vav in transposed ketiv letters. This is contextual correspondence, not a new manuscript reading.",
+        "target": {
+          "tmpl_name": "כו״ק",
+          "tmpl_params": {
+            "1": "לזועה",
+            "2": "לְזַעֲוָ֜ה"
+          }
+        },
+        "raw_proof": {
+          "note_id": "Jeremiah 29:18/2/0",
+          "raw_path": "in/mam-ws/C2-Jeremiah.json",
+          "raw_note_body": "=דפוסים{{ש}}ל-כתיב=לְזַועֲהָ לפי ברויאר, אבל יותר נראה לקרוא בו לְזַוֲעָה, וכן דעתם של דותן ושל המקליד.",
+          "parsed_path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "parsed_pointer": "/book39s/0/chapters/29/18/2/1",
+          "parsed_note_body": "=דפוסים\nל-כתיב=לְזַועֲהָ לפי ברויאר, אבל יותר נראה לקרוא בו לְזַוֲעָה, וכן דעתם של דותן ושל המקליד.",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו כט/טעמים",
+            "page_id": 237682,
+            "requested_title": "ירמיהו_כט/טעמים",
+            "revision_id": 2988013,
+            "sha256": "19aa5c68df86596d1286c09b06b2e3dd5c5c19c4af1ef4e87162e4f30cdab61f"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L8447",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Jeremiah 31:34/2/0",
+        "ref": "Jeremiah 31:34",
+        "unlisted_words": [
+          {
+            "word": "יֱהֹוִ֔ה",
+            "key": "יהוה",
+            "clusters": [
+              "יֱ"
+            ]
+          }
+        ],
+        "body": "כתר ארם צובה קיים באופן חלקי מכאן ואילך. הדף קרוע בחלקו, והכתר שלם לגמרי רק החל מתיבת ה' ב\"וְאַתָּ֞ה אָמַ֤רְתָּ אֵלַי֙ אֲדֹנָ֣י יֱהֹוִ֔ה'\" (ל\"ב כ\"ה); היסוד לתיבות ולפסוקים החסרים בדף הקרוע בחלקו הוא כתי\"ל.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L9473",
+        "path": "MAM-parsed/plus/C2-Jeremiah.json",
+        "pointer": "/book39s/0/chapters/31/34/2/3",
+        "independent_verdict": "divine-name-or-incidental-quotation",
+        "reason": "An incidental יֱהֹוִה quotation names the surviving-Aleppo boundary; divine-name qere pointing is outside optional vocal-sheva scope.",
+        "target": "שֶׁ֙מֶשׁ֙",
+        "raw_proof": {
+          "note_id": "Jeremiah 31:34/2/0",
+          "raw_path": "in/mam-ws/C2-Jeremiah.json",
+          "raw_note_body": "כתר ארם צובה קיים באופן חלקי מכאן ואילך. הדף קרוע בחלקו, והכתר שלם לגמרי רק החל מתיבת ה' ב\"וְאַתָּ֞ה אָמַ֤רְתָּ אֵלַי֙ אֲדֹנָ֣י יֱהֹוִ֔ה'\" (ל\"ב כ\"ה); היסוד לתיבות ולפסוקים החסרים בדף הקרוע בחלקו הוא כתי\"ל.",
+          "parsed_path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "parsed_pointer": "/book39s/0/chapters/31/34/2/3",
+          "parsed_note_body": "כתר ארם צובה קיים באופן חלקי מכאן ואילך. הדף קרוע בחלקו, והכתר שלם לגמרי רק החל מתיבת ה' ב\"וְאַתָּ֞ה אָמַ֤רְתָּ אֵלַי֙ אֲדֹנָ֣י יֱהֹוִ֔ה'\" (ל\"ב כ\"ה); היסוד לתיבות ולפסוקים החסרים בדף הקרוע בחלקו הוא כתי\"ל.",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו לא/טעמים",
+            "page_id": 237690,
+            "requested_title": "ירמיהו_לא/טעמים",
+            "revision_id": 3088451,
+            "sha256": "6506efcdb68c809c9c33529e1e216add0993666fc48b17fec42eed632ea46db5"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L9473",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Jeremiah 48:20/2/0",
+        "ref": "Jeremiah 48:20",
+        "unlisted_words": [
+          {
+            "word": "וּֽזֳעָ֑קיּ",
+            "key": "וזעקי",
+            "clusters": [
+              "זֳ"
+            ]
+          }
+        ],
+        "body": "א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14105",
+        "path": "MAM-parsed/plus/C2-Jeremiah.json",
+        "pointer": "/book39s/0/chapters/48/20/2/1",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Already listed at ch5:L704/item30 with qere spelling and א-קרי; note documents only pointed ketiv. Existing source-boundary question, not a new omission.",
+        "target": {
+          "tmpl_name": "מ:כו״ק מיוחד",
+          "tmpl_params": {
+            "1": "הילילי וזעקי",
+            "2": [
+              "הֵילִ֣ילוּ",
+              {
+                "tmpl_name": "מ:פסק"
+              },
+              "וּֽזְﬞעָ֑קוּ"
+            ],
+            "סוג": "כו\"ק של שתי מילים בהערה אחת"
+          }
+        },
+        "raw_proof": {
+          "note_id": "Jeremiah 48:20/2/0",
+          "raw_path": "in/mam-ws/C2-Jeremiah.json",
+          "raw_note_body": "א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)",
+          "parsed_path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "parsed_pointer": "/book39s/0/chapters/48/20/2/1",
+          "parsed_note_body": "א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו מח/טעמים",
+            "page_id": 237758,
+            "requested_title": "ירמיהו_מח/טעמים",
+            "revision_id": 3087505,
+            "sha256": "1df616cb1811f0b00bd083394ceb2e911820ae8416ec27b408da6da52c06d751"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14105",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Jeremiah 48:32/2/0",
+        "ref": "Jeremiah 48:32",
+        "unlisted_words": [
+          {
+            "word": "מִבֲּכִ֨י",
+            "key": "מבכי",
+            "clusters": [
+              "בֲּ"
+            ]
+          }
+        ],
+        "body": "לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14261",
+        "path": "MAM-parsed/plus/C2-Jeremiah.json",
+        "pointer": "/book39s/0/chapters/48/32/2/0",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Note favors a blot or a removed pataḥ stroke over Breuer’s ḥataf reading.",
+        "target": "מִבְּכִ֨י",
+        "raw_proof": {
+          "note_id": "Jeremiah 48:32/2/0",
+          "raw_path": "in/mam-ws/C2-Jeremiah.json",
+          "raw_note_body": "לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.",
+          "parsed_path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "parsed_pointer": "/book39s/0/chapters/48/32/2/0",
+          "parsed_note_body": "לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו מח/טעמים",
+            "page_id": 237758,
+            "requested_title": "ירמיהו_מח/טעמים",
+            "revision_id": 3087505,
+            "sha256": "1df616cb1811f0b00bd083394ceb2e911820ae8416ec27b408da6da52c06d751"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14261",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Jeremiah 49:28/2/0",
+        "ref": "Jeremiah 49:28",
+        "unlisted_words": [
+          {
+            "word": "וְשֳׁדְד֖וּ",
+            "key": "ושדדו",
+            "clusters": [
+              "שֳׁ"
+            ]
+          }
+        ],
+        "body": "=ל,ק ובדפוסים ובקורן (וכך הכריע ברויאר).\nא=וְשֳׁדְד֖וּ (חטף קמץ לסימון תנועת קמץ חטוף), וכן הוא במקראות גדולות דפוס ראשון ובמג\"ה.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14738",
+        "path": "MAM-parsed/plus/C2-Jeremiah.json",
+        "pointer": "/book39s/0/chapters/49/28/2/5",
+        "independent_verdict": "explicit-short-o-exclusion",
+        "reason": "Note explicitly says חטף קמץ לסימון תנועת קמץ חטוף for וְשֳׁדְד֖וּ.",
+        "target": "וְשׇׁדְד֖וּ",
+        "raw_proof": {
+          "note_id": "Jeremiah 49:28/2/0",
+          "raw_path": "in/mam-ws/C2-Jeremiah.json",
+          "raw_note_body": "=ל,ק ובדפוסים ובקורן (וכך הכריע ברויאר).{{ש}}א=וְשֳׁדְד֖וּ (חטף קמץ לסימון תנועת קמץ חטוף), וכן הוא במקראות גדולות דפוס ראשון ובמג\"ה.",
+          "parsed_path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "parsed_pointer": "/book39s/0/chapters/49/28/2/5",
+          "parsed_note_body": "=ל,ק ובדפוסים ובקורן (וכך הכריע ברויאר).\nא=וְשֳׁדְד֖וּ (חטף קמץ לסימון תנועת קמץ חטוף), וכן הוא במקראות גדולות דפוס ראשון ובמג\"ה.",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו מט/טעמים",
+            "page_id": 237762,
+            "requested_title": "ירמיהו_מט/טעמים",
+            "revision_id": 2988033,
+            "sha256": "52ae2e3ef1d7892ddaedaebbf3762d4d3cd7bb003d24f467cb6a4a18846ae953"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14738",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Jeremiah 50:6/2/0",
+        "ref": "Jeremiah 50:6",
+        "unlisted_words": [
+          {
+            "word": "שׁוֹבֲב֑יּם",
+            "key": "שובבים",
+            "clusters": [
+              "בֲ"
+            ]
+          }
+        ],
+        "body": "א-כתיב=שׁוֹבֲב֑יּם (חטף)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14980",
+        "path": "MAM-parsed/plus/C2-Jeremiah.json",
+        "pointer": "/book39s/0/chapters/50/6/2/3",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Already listed at ch5:L704/item32 with qere spelling and א-קרי; note documents only pointed ketiv. Existing source-boundary question, not a new omission.",
+        "target": {
+          "tmpl_name": "כו״ק",
+          "tmpl_params": {
+            "1": "שובבים",
+            "2": "שׁוֹבְﬞב֑וּם"
+          }
+        },
+        "raw_proof": {
+          "note_id": "Jeremiah 50:6/2/0",
+          "raw_path": "in/mam-ws/C2-Jeremiah.json",
+          "raw_note_body": "א-כתיב=שׁוֹבֲב֑יּם (חטף)",
+          "parsed_path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "parsed_pointer": "/book39s/0/chapters/50/6/2/3",
+          "parsed_note_body": "א-כתיב=שׁוֹבֲב֑יּם (חטף)",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו נ/טעמים",
+            "page_id": 237766,
+            "requested_title": "ירמיהו_נ/טעמים",
+            "revision_id": 2988034,
+            "sha256": "69ed774aa54b077b49f6b3665f905fec76427588301aa76fb57a7eb68ec45a54"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14980",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Ezekiel 26:9/2/0",
+        "ref": "Ezekiel 26:9",
+        "unlisted_words": [
+          {
+            "word": "קָבֳלּ֔וֹ",
+            "key": "קבלו",
+            "clusters": [
+              "בֳ"
+            ]
+          }
+        ],
+        "body": "=א,ל,ק ומ\"ש\nדפוסים=קָבֳלּ֔וֹ (קמץ חטוף בבי\"ת)\nלגבי הקמצים הקטנים ראו ויינברג, 3.1.1, והשוו מל\"ב טו,י (=ויינברג 3.6.8.4 ושם נשאר בספק); במסורת הקריאה הספרדית הבי\"ת בקמץ קטן (וכך בסימנים).",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C3-Ezekiel.json#L7406",
+        "path": "MAM-parsed/plus/C3-Ezekiel.json",
+        "pointer": "/book39s/0/chapters/26/9/2/1",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf form is attributed only to printed editions and described as short-o; Aleppo/Leningrad agree with the qamats choices.",
+        "target": {
+          "tmpl_name": "מ:קמץ",
+          "tmpl_params": {
+            "ד": "קׇֽבׇלּ֔וֹ",
+            "ס": "קָֽבׇלּ֔וֹ"
+          }
+        },
+        "raw_proof": {
+          "note_id": "Ezekiel 26:9/2/0",
+          "raw_path": "in/mam-ws/C3-Ezekiel.json",
+          "raw_note_body": "=א,ל,ק ומ\"ש{{ש}}דפוסים=קָבֳלּ֔וֹ (קמץ חטוף בבי\"ת){{ש}}לגבי הקמצים הקטנים ראו ויינברג, 3.1.1, והשוו מל\"ב טו,י (=ויינברג 3.6.8.4 ושם נשאר בספק); במסורת הקריאה הספרדית הבי\"ת בקמץ קטן (וכך בסימנים).",
+          "parsed_path": "MAM-parsed/plus/C3-Ezekiel.json",
+          "parsed_pointer": "/book39s/0/chapters/26/9/2/1",
+          "parsed_note_body": "=א,ל,ק ומ\"ש\nדפוסים=קָבֳלּ֔וֹ (קמץ חטוף בבי\"ת)\nלגבי הקמצים הקטנים ראו ויינברג, 3.1.1, והשוו מל\"ב טו,י (=ויינברג 3.6.8.4 ושם נשאר בספק); במסורת הקריאה הספרדית הבי\"ת בקמץ קטן (וכך בסימנים).",
+          "chapter_revision": {
+            "resolved_title": "יחזקאל כו/טעמים",
+            "page_id": 237878,
+            "requested_title": "יחזקאל_כו/טעמים",
+            "revision_id": 2988062,
+            "sha256": "641fecafbf72f22e17b952ad08f3687bb2ff7b8e1038d17ea71122b4a36ee8f3"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C3-Ezekiel.json#L7406",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Ezekiel 32:20/2/0",
+        "ref": "Ezekiel 32:20",
+        "unlisted_words": [
+          {
+            "word": "מֳשְׁכ֥וּ",
+            "key": "משכו",
+            "clusters": [
+              "מֳ"
+            ]
+          }
+        ],
+        "body": "=ל (וכן בדפוסים הרגילים ובקורן)\nא=מֳשְׁכ֥וּ (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C3-Ezekiel.json#L9320",
+        "path": "MAM-parsed/plus/C3-Ezekiel.json",
+        "pointer": "/book39s/0/chapters/32/20/2/1",
+        "independent_verdict": "explicit-short-o-exclusion",
+        "reason": "Note explicitly says חטף קמץ לסימון תנועת קמץ חטוף for מֳשְׁכ֥וּ.",
+        "target": "מׇשְׁכ֥וּ",
+        "raw_proof": {
+          "note_id": "Ezekiel 32:20/2/0",
+          "raw_path": "in/mam-ws/C3-Ezekiel.json",
+          "raw_note_body": "=ל (וכן בדפוסים הרגילים ובקורן){{ש}}א=מֳשְׁכ֥וּ (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה",
+          "parsed_path": "MAM-parsed/plus/C3-Ezekiel.json",
+          "parsed_pointer": "/book39s/0/chapters/32/20/2/1",
+          "parsed_note_body": "=ל (וכן בדפוסים הרגילים ובקורן)\nא=מֳשְׁכ֥וּ (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה",
+          "chapter_revision": {
+            "resolved_title": "יחזקאל לב/טעמים",
+            "page_id": 237902,
+            "requested_title": "יחזקאל_לב/טעמים",
+            "revision_id": 3001610,
+            "sha256": "328afa25072c1e35d1af879cf5c17c638532f91d991b643028597fb294234d84"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C3-Ezekiel.json#L9320",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Psalms 65:10/2/0",
+        "ref": "Psalms 65:10",
+        "unlisted_words": [
+          {
+            "word": "וַתְּשֹׁ֪קֲקֶ֡הָ",
+            "key": "ותשקקה",
+            "clusters": [
+              "קֲ"
+            ]
+          }
+        ],
+        "body": "א=וַתְּשֹׁ֪קֲקֶ֡הָ (חטף)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L25036",
+        "path": "MAM-parsed/plus/D1-Psalms.json",
+        "pointer": "/book39s/0/chapters/65/10/2/3",
+        "independent_verdict": "already-listed-template-interruption",
+        "reason": "ch5:L710 already has וַתְּשֹׁ{{גלגל}}קֲקֶ֡הָ; inline accent template interrupted the coarse lexical key. No omission.",
+        "target": "וַתְּשֹׁ֪קְﬞקֶ֡הָ",
+        "raw_proof": {
+          "manual_raw_context": {
+            "ref": "Psalms 65:10",
+            "path": "in/mam-ws/D1-Psalms.json",
+            "wikitext": "פָּ֤קַֽדְתָּ{{מ:מקף אפור}}הָאָ֨רֶץ {{נוסח|{{גלגל-2|וַתְּשֹׁ֪קְﬞקֶ֡הָ}}|2=א={{גלגל-2|וַתְּשֹׁ֪קֲקֶ֡הָ}} (חטף)}} רַבַּ֬ת תַּעְשְׁרֶ֗נָּה{{ר1}}פֶּ֣לֶג {{מ:דחי|אֱ֭לֹהִים|אֱ֭לֹהִ֭ים}} מָ֣לֵא מָ֑יִם{{ר2}}תָּכִ֥ין דְּ֝גָנָ֗ם{{ר0}}כִּי־כֵ֥ן תְּכִינֶֽהָ׃"
+          },
+          "notice": "Existing raw-note comparator does not recognize גלגל-2; manually retain complete raw verse without claiming comparator success."
+        }
+      },
+      {
+        "note_id": "Psalms 144:15/2/0",
+        "ref": "Psalms 144:15",
+        "unlisted_words": [
+          {
+            "word": "שֶׁיֲהֹוָ֥ה",
+            "key": "שיהוה",
+            "clusters": [
+              "יֲ"
+            ]
+          }
+        ],
+        "body": "=א,ש1 (חטף סגול באות שי\"ן ושווא באות יו\"ד) וכן אצל ברויאר ומג\"ה ומכון ממרא\nל!=שֶׁיֲהֹוָ֥ה (סגול באות שי\"ן וחטף פתח באות יו\"ד)\nק-מ=שֶֽׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא געיה ימנית באות יו\"ד) וכן בסימנים\nדפוסים=שֶׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא באות יו\"ד)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L59270",
+        "path": "MAM-parsed/plus/D1-Psalms.json",
+        "pointer": "/book39s/0/chapters/144/15/2/5",
+        "independent_verdict": "divine-name-or-incidental-quotation",
+        "reason": "Both forms matter: A’s שֱׁיְהֹוָ֥ה has reduced segol instead of the ordinary prefix’s full segol; L’s שֶׁיֲהֹוָ֥ה has divine-name yod pointing, not an ordinary sheva replacement.",
+        "target": "שֱׁיְהֹוָ֥ה",
+        "raw_proof": {
+          "note_id": "Psalms 144:15/2/0",
+          "raw_path": "in/mam-ws/D1-Psalms.json",
+          "raw_note_body": "=א,ש1 (חטף סגול באות שי\"ן ושווא באות יו\"ד) וכן אצל ברויאר ומג\"ה ומכון ממרא{{ש}}ל!=שֶׁיֲהֹוָ֥ה (סגול באות שי\"ן וחטף פתח באות יו\"ד){{ש}}ק-מ=שֶֽׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא געיה ימנית באות יו\"ד) וכן בסימנים{{ש}}דפוסים=שֶׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא באות יו\"ד)",
+          "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+          "parsed_pointer": "/book39s/0/chapters/144/15/2/5",
+          "parsed_note_body": "=א,ש1 (חטף סגול באות שי\"ן ושווא באות יו\"ד) וכן אצל ברויאר ומג\"ה ומכון ממרא\nל!=שֶׁיֲהֹוָ֥ה (סגול באות שי\"ן וחטף פתח באות יו\"ד)\nק-מ=שֶֽׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא געיה ימנית באות יו\"ד) וכן בסימנים\nדפוסים=שֶׁיְהֹוָ֥ה (סגול באות שי\"ן ושווא באות יו\"ד)",
+          "chapter_revision": {
+            "resolved_title": "תהלים קמד/טעמים",
+            "page_id": 238822,
+            "requested_title": "תהלים_קמד/טעמים",
+            "revision_id": 2988296,
+            "sha256": "757f4b4aa278811f8980016ea2f97f3aaba68dad7093e4384a8d45255b88415c"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L59270",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Proverbs 30:17/2/1",
+        "ref": "Proverbs 30:17",
+        "unlisted_words": [
+          {
+            "word": "לִֽיקֲּהַ֫ת",
+            "key": "ליקהת",
+            "clusters": [
+              "קֲּ"
+            ]
+          }
+        ],
+        "body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.\nל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)\nדפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L19359",
+        "path": "MAM-parsed/plus/D2-Proverbs.json",
+        "pointer": "/book39s/0/chapters/30/17/2/7",
+        "independent_verdict": "definite-omission",
+        "reason": "Explicit Leningrad qoph ḥataf pataḥ; list at the same verse has only the different Aleppo word תִּ֥לֲעַ֣ג.",
+        "target": "לִֽיקְּהַ֫ת־אֵ֥ם",
+        "raw_proof": {
+          "note_id": "Proverbs 30:17/2/1",
+          "raw_path": "in/mam-ws/D2-Proverbs.json",
+          "raw_note_body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.{{ש}}ל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף){{ש}}דפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+          "parsed_path": "MAM-parsed/plus/D2-Proverbs.json",
+          "parsed_pointer": "/book39s/0/chapters/30/17/2/7",
+          "parsed_note_body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.\nל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)\nדפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+          "chapter_revision": {
+            "resolved_title": "משלי ל/טעמים",
+            "page_id": 238967,
+            "requested_title": "משלי_ל/טעמים",
+            "revision_id": 3008043,
+            "sha256": "ccafd0a2809ce63646704ba84d8aa2335b276ba054cfe1b91840e78e1ede7526"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L19359",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Song of Songs 1:6/2/0",
+        "ref": "Song of Songs 1:6",
+        "unlisted_words": [
+          {
+            "word": "שֶׁשֱּׁזָפַ֖תְנִי",
+            "key": "ששזפתני",
+            "clusters": [
+              "שֱּׁ"
+            ]
+          }
+        ],
+        "body": "=א ובדפוסים\nל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E1-Song%20of%20Songs.json#L146",
+        "path": "MAM-parsed/plus/E1-Song of Songs.json",
+        "pointer": "/book39s/0/chapters/1/6/2/1",
+        "independent_verdict": "definite-omission",
+        "reason": "Explicit Leningrad shin ḥataf segol; MAM has ordinary sheva; no list position.",
+        "target": "שֶׁשְּׁזָפַ֖תְנִי",
+        "raw_proof": {
+          "note_id": "Song of Songs 1:6/2/0",
+          "raw_path": "in/mam-ws/E1-Song of Songs.json",
+          "raw_note_body": "=א ובדפוסים{{ש}}ל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+          "parsed_path": "MAM-parsed/plus/E1-Song of Songs.json",
+          "parsed_pointer": "/book39s/0/chapters/1/6/2/1",
+          "parsed_note_body": "=א ובדפוסים\nל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+          "chapter_revision": {
+            "resolved_title": "שיר השירים א/טעמים",
+            "page_id": 239145,
+            "requested_title": "שיר השירים_א/טעמים",
+            "revision_id": 2988376,
+            "sha256": "cd7e29b159a32af9c3f847b196e68274d33115b36ac61e43ffc9ffad2d0fa741"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E1-Song%20of%20Songs.json#L146",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Song of Songs 8:4/2/0",
+        "ref": "Song of Songs 8:4",
+        "unlisted_words": [
+          {
+            "word": "תְּעֹ֥רֲר֛וּ",
+            "key": "תעררו",
+            "clusters": [
+              "רֲ"
+            ]
+          }
+        ],
+        "body": "=ק13,ל-א (מרכא בתיבת תביר); וכמו כן לפי שיטת-א וכללי המסורה. ראו בהערת הנוסח לעיל (ב,ז) למידע מלא לגבי מרכא בתיבת תביר בשלושת המקומות המקבילים.\nשיטת-א=תְּעֹ֥רֲר֛וּ (בחטף פתח)\nל=תְּעֹֽרְר֛וּ (בגעיה); יש בקו נטייה קלה שקצת דומה למרכא, וכן ציין אותו ברויאר כמרכא (בניגוד לשני המקומות המקבילים), אמנם לנו נראה יותר שהוא געיה (ובמיוחד לאור שני המקומות המקבילים בכתי\"ל (ב,ז; ג,ה), ודרכו של כתי\"ל בדרך כלל.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E1-Song%20of%20Songs.json#L1928",
+        "path": "MAM-parsed/plus/E1-Song of Songs.json",
+        "pointer": "/book39s/0/chapters/8/4/2/3",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf is reconstructed Aleppo practice שיטת-א; no surviving Aleppo attribution. Leningrad has sheva.",
+        "target": "תְּעֹ֥רְר֛וּ",
+        "raw_proof": {
+          "note_id": "Song of Songs 8:4/2/0",
+          "raw_path": "in/mam-ws/E1-Song of Songs.json",
+          "raw_note_body": "=ק13,ל-א (מרכא בתיבת תביר); וכמו כן לפי שיטת-א וכללי המסורה. ראו בהערת הנוסח לעיל (ב,ז) למידע מלא לגבי מרכא בתיבת תביר בשלושת המקומות המקבילים.{{ש}}שיטת-א=תְּעֹ֥רֲר֛וּ (בחטף פתח){{ש}}ל=תְּעֹֽרְר֛וּ (בגעיה); יש בקו נטייה קלה שקצת דומה למרכא, וכן ציין אותו ברויאר כמרכא (בניגוד לשני המקומות המקבילים), אמנם לנו נראה יותר שהוא געיה (ובמיוחד לאור שני המקומות המקבילים בכתי\"ל (ב,ז; ג,ה), ודרכו של כתי\"ל בדרך כלל.",
+          "parsed_path": "MAM-parsed/plus/E1-Song of Songs.json",
+          "parsed_pointer": "/book39s/0/chapters/8/4/2/3",
+          "parsed_note_body": "=ק13,ל-א (מרכא בתיבת תביר); וכמו כן לפי שיטת-א וכללי המסורה. ראו בהערת הנוסח לעיל (ב,ז) למידע מלא לגבי מרכא בתיבת תביר בשלושת המקומות המקבילים.\nשיטת-א=תְּעֹ֥רֲר֛וּ (בחטף פתח)\nל=תְּעֹֽרְר֛וּ (בגעיה); יש בקו נטייה קלה שקצת דומה למרכא, וכן ציין אותו ברויאר כמרכא (בניגוד לשני המקומות המקבילים), אמנם לנו נראה יותר שהוא געיה (ובמיוחד לאור שני המקומות המקבילים בכתי\"ל (ב,ז; ג,ה), ודרכו של כתי\"ל בדרך כלל.",
+          "chapter_revision": {
+            "resolved_title": "שיר השירים ח/טעמים",
+            "page_id": 239173,
+            "requested_title": "שיר השירים_ח/טעמים",
+            "revision_id": 2988383,
+            "sha256": "c01d2428072954bee95bdeda683ee9f31dae54c102a0976307ce794c8ebed1f0"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E1-Song%20of%20Songs.json#L1928",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Ruth 2:2/2/1",
+        "ref": "Ruth 2:2",
+        "unlisted_words": [
+          {
+            "word": "וַאֲלַקֳטָּ֣ה",
+            "key": "ואלקטה",
+            "clusters": [
+              "קֳ"
+            ]
+          }
+        ],
+        "body": "=א (קו\"ף דגושה)\nל!=וַאֲלַקֳטָּ֣ה (טי\"ת דגושה)\nהערת המקליד",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E2-Ruth.json#L538",
+        "path": "MAM-parsed/plus/E2-Ruth.json",
+        "pointer": "/book39s/0/chapters/2/2/2/5",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "וַאֲלַקֳּטָה has the short-o qoph vowel of the inflected verb, following nonguttural tet; note concerns qoph/tet dagesh.",
+        "target": "וַאֲלַקֳּטָ֣ה",
+        "raw_proof": {
+          "note_id": "Ruth 2:2/2/1",
+          "raw_path": "in/mam-ws/E2-Ruth.json",
+          "raw_note_body": "=א (קו\"ף דגושה){{ש}}ל!=וַאֲלַקֳטָּ֣ה (טי\"ת דגושה){{ש}}הערת המקליד",
+          "parsed_path": "MAM-parsed/plus/E2-Ruth.json",
+          "parsed_pointer": "/book39s/0/chapters/2/2/2/5",
+          "parsed_note_body": "=א (קו\"ף דגושה)\nל!=וַאֲלַקֳטָּ֣ה (טי\"ת דגושה)\nהערת המקליד",
+          "chapter_revision": {
+            "resolved_title": "רות ב/טעמים",
+            "page_id": 239182,
+            "requested_title": "רות_ב/טעמים",
+            "revision_id": 2988385,
+            "sha256": "555a6ca73152e26a9e29d307054fefc8a6b65f7328971e12d6d9b5b9d94dd8f1"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E2-Ruth.json#L538",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Ruth 2:2/2/2",
+        "ref": "Ruth 2:2",
+        "unlisted_words": [
+          {
+            "word": "בַשִׁבֳּלִ֔ים",
+            "key": "בשבלים",
+            "clusters": [
+              "בֳּ"
+            ]
+          }
+        ],
+        "body": "=א (געיה)\nל=בַשִׁבֳּלִ֔ים (חסר דגש בשי\"ן ואין געיה)\nהערת המקליד (לגבי הדגש החסר בשי\"ן)",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E2-Ruth.json#L556",
+        "path": "MAM-parsed/plus/E2-Ruth.json",
+        "pointer": "/book39s/0/chapters/2/2/2/7",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "Regular שִׁבֳּלִים short-o vowel; note concerns shin dagesh/meteg.",
+        "target": "בַֽשִּׁבֳּלִ֔ים",
+        "raw_proof": {
+          "note_id": "Ruth 2:2/2/2",
+          "raw_path": "in/mam-ws/E2-Ruth.json",
+          "raw_note_body": "=א (געיה){{ש}}ל=בַשִׁבֳּלִ֔ים (חסר דגש בשי\"ן ואין געיה){{ש}}הערת המקליד (לגבי הדגש החסר בשי\"ן)",
+          "parsed_path": "MAM-parsed/plus/E2-Ruth.json",
+          "parsed_pointer": "/book39s/0/chapters/2/2/2/7",
+          "parsed_note_body": "=א (געיה)\nל=בַשִׁבֳּלִ֔ים (חסר דגש בשי\"ן ואין געיה)\nהערת המקליד (לגבי הדגש החסר בשי\"ן)",
+          "chapter_revision": {
+            "resolved_title": "רות ב/טעמים",
+            "page_id": 239182,
+            "requested_title": "רות_ב/טעמים",
+            "revision_id": 2988385,
+            "sha256": "555a6ca73152e26a9e29d307054fefc8a6b65f7328971e12d6d9b5b9d94dd8f1"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E2-Ruth.json#L556",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Ruth 2:7/2/0",
+        "ref": "Ruth 2:7",
+        "unlisted_words": [
+          {
+            "word": "אֲלַקֳטָה",
+            "key": "אלקטה",
+            "clusters": [
+              "קֳ"
+            ]
+          }
+        ],
+        "body": "=א\nל?=אֲלַקֳטָה־נָּא֙? (חסר דגש בקו\"ף?)\nהמקליד לא סימן דגש בקו\"ף, אבל מעיון בכתב־היד ייתכן שהוא קיים.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E2-Ruth.json#L669",
+        "path": "MAM-parsed/plus/E2-Ruth.json",
+        "pointer": "/book39s/0/chapters/2/7/2/1",
+        "independent_verdict": "morphological-context-inference",
+        "reason": "אֲלַקֳּטָה is the same short-o morphological form as Ruth2:2; uncertainty is about qoph dagesh, not vowel.",
+        "target": "אֲלַקֳּטָה־נָּא֙",
+        "raw_proof": {
+          "note_id": "Ruth 2:7/2/0",
+          "raw_path": "in/mam-ws/E2-Ruth.json",
+          "raw_note_body": "=א{{ש}}ל?=אֲלַקֳטָה־נָּא֙? (חסר דגש בקו\"ף?){{ש}}המקליד לא סימן דגש בקו\"ף, אבל מעיון בכתב־היד ייתכן שהוא קיים.",
+          "parsed_path": "MAM-parsed/plus/E2-Ruth.json",
+          "parsed_pointer": "/book39s/0/chapters/2/7/2/1",
+          "parsed_note_body": "=א\nל?=אֲלַקֳטָה־נָּא֙? (חסר דגש בקו\"ף?)\nהמקליד לא סימן דגש בקו\"ף, אבל מעיון בכתב־היד ייתכן שהוא קיים.",
+          "chapter_revision": {
+            "resolved_title": "רות ב/טעמים",
+            "page_id": 239182,
+            "requested_title": "רות_ב/טעמים",
+            "revision_id": 2988385,
+            "sha256": "555a6ca73152e26a9e29d307054fefc8a6b65f7328971e12d6d9b5b9d94dd8f1"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E2-Ruth.json#L669",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Ecclesiastes 2:13/2/0",
+        "ref": "Ecclesiastes 2:13",
+        "unlisted_words": [
+          {
+            "word": "כִּֽיתֲר֥וֹן",
+            "key": "כיתרון",
+            "clusters": [
+              "תֲ"
+            ]
+          }
+        ],
+        "body": "=ל,פטרבורג-EVR-II-B-34 ובדפוסים (אין חטף)\nש1,ק13,ש2=כִּֽיתֲר֥וֹן (חטף), כשיטת-א וכך במג\"ה; לגבי ניקוד האות כ\"ף בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E4-Ecclesiastes.json#L467",
+        "path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+        "pointer": "/book39s/0/chapters/2/13/2/1",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf belongs to Sassoon1053,Cairo13,Sassoon1056 and reconstructed Aleppo practice; Leningrad has no ḥataf.",
+        "target": "כִּֽיתְﬞר֥וֹן",
+        "raw_proof": {
+          "note_id": "Ecclesiastes 2:13/2/0",
+          "raw_path": "in/mam-ws/E4-Ecclesiastes.json",
+          "raw_note_body": "=ל,פטרבורג-EVR-II-B-34 ובדפוסים (אין חטף){{ש}}ש1,ק13,ש2=כִּֽיתֲר֥וֹן (חטף), כשיטת-א וכך במג\"ה; לגבי ניקוד האות כ\"ף בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.",
+          "parsed_path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+          "parsed_pointer": "/book39s/0/chapters/2/13/2/1",
+          "parsed_note_body": "=ל,פטרבורג-EVR-II-B-34 ובדפוסים (אין חטף)\nש1,ק13,ש2=כִּֽיתֲר֥וֹן (חטף), כשיטת-א וכך במג\"ה; לגבי ניקוד האות כ\"ף בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.",
+          "chapter_revision": {
+            "resolved_title": "קהלת ב/טעמים",
+            "page_id": 239199,
+            "requested_title": "קהלת_ב/טעמים",
+            "revision_id": 2988394,
+            "sha256": "b46d4cd422ba084203e7dfb08dd9efcd7c878ec0d0e3421086130819ef78e310"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E4-Ecclesiastes.json#L467",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Esther 1:6/2/1",
+        "ref": "Esther 1:6",
+        "unlisted_words": [
+          {
+            "word": "רִֽצֲפַ֥ת",
+            "key": "רצפת",
+            "clusters": [
+              "צֲ"
+            ]
+          }
+        ],
+        "body": "=ל,ק13,פטרבורג-EVR-II-B-92 (געיה פונטית וסימן רפה על האות פ\"א); כלומר: השווא נע והפ\"א רפה.\nפטרבורג-EVR-II-B-55=רִֽצֲפַ֥ת (חטף); וראו עוד מ\"ש שבמקצת ספרים הצד\"י בחטף.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E5-Esther.json#L149",
+        "path": "MAM-parsed/plus/E5-Esther.json",
+        "pointer": "/book39s/0/chapters/1/6/2/4",
+        "independent_verdict": "other-source-or-reconstruction",
+        "reason": "Ḥataf is attributed only to PetersburgEVR-II-B-55; Leningrad agrees with sheva+meteg.",
+        "target": "רִֽצְפַ֥ת",
+        "raw_proof": {
+          "note_id": "Esther 1:6/2/1",
+          "raw_path": "in/mam-ws/E5-Esther.json",
+          "raw_note_body": "=ל,ק13,פטרבורג-EVR-II-B-92 (געיה פונטית וסימן רפה על האות פ\"א); כלומר: השווא נע והפ\"א רפה.{{ש}}פטרבורג-EVR-II-B-55=רִֽצֲפַ֥ת (חטף); וראו עוד מ\"ש שבמקצת ספרים הצד\"י בחטף.",
+          "parsed_path": "MAM-parsed/plus/E5-Esther.json",
+          "parsed_pointer": "/book39s/0/chapters/1/6/2/4",
+          "parsed_note_body": "=ל,ק13,פטרבורג-EVR-II-B-92 (געיה פונטית וסימן רפה על האות פ\"א); כלומר: השווא נע והפ\"א רפה.\nפטרבורג-EVR-II-B-55=רִֽצֲפַ֥ת (חטף); וראו עוד מ\"ש שבמקצת ספרים הצד\"י בחטף.",
+          "chapter_revision": {
+            "resolved_title": "אסתר א/טעמים",
+            "page_id": 239244,
+            "requested_title": "אסתר_א/טעמים",
+            "revision_id": 2988404,
+            "sha256": "918d26f9f58228e3dd0046a5084a1e7f1d23fa439f91e03722763d68e79b69b3"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E5-Esther.json#L149",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Daniel 12:2/2/0",
+        "ref": "Daniel 12:2",
+        "unlisted_words": [
+          {
+            "word": "מִיֲּשֵׁנֵ֥י",
+            "key": "מישני",
+            "clusters": [
+              "יֲּ"
+            ]
+          }
+        ],
+        "body": "=ל?,ק-מ,ב1,ת451,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.\nל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/F1-Daniel.json#L7938",
+        "path": "MAM-parsed/plus/F1-Daniel.json",
+        "pointer": "/book39s/0/chapters/12/2/2/1",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Leningrad ḥataf pataḥ is explicitly doubtful; blurred unexplained line.",
+        "target": "מִיְּשֵׁנֵ֥י",
+        "raw_proof": {
+          "note_id": "Daniel 12:2/2/0",
+          "raw_path": "in/mam-ws/F1-Daniel.json",
+          "raw_note_body": "=ל?,ק-מ,ב1,ת451,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.{{ש}}ל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
+          "parsed_path": "MAM-parsed/plus/F1-Daniel.json",
+          "parsed_pointer": "/book39s/0/chapters/12/2/2/1",
+          "parsed_note_body": "=ל?,ק-מ,ב1,ת451,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.\nל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
+          "chapter_revision": {
+            "resolved_title": "דניאל יב/טעמים",
+            "page_id": 239329,
+            "requested_title": "דניאל_יב/טעמים",
+            "revision_id": 3079371,
+            "sha256": "814c85ed602ab07f5b2ccd63cf43a17f195cc44ceea9c3395d4de8de0a17eadc"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/F1-Daniel.json#L7938",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "Nehemiah 6:19/2/0",
+        "ref": "Nehemiah 6:19",
+        "unlisted_words": [
+          {
+            "word": "לְיָֽרֲאֵֽנִי",
+            "key": "ליראני",
+            "clusters": [
+              "רֲ"
+            ]
+          }
+        ],
+        "body": "=ל?,ש1,ק-מ,ב1 ובדפסוים (רי\"ש שווּאה)\nל?=לְיָֽרֲאֵֽנִי (חטף פתח באות רי\"ש?) לפי ברויאר (בוודאי) ולפי דותן (בספק). ונראה שהצדק עם דותן, כי מעיון בכתי\"ל בהגדלה לא נראה שיש קו מובהק לחטף-פתח.\nהערות ברויאר ודותן",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/FA-Ezra-Nexemiah.json#L6319",
+        "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+        "pointer": "/book39s/1/chapters/6/19/2/1",
+        "independent_verdict": "scope-or-reading-uncertainty",
+        "reason": "Note favors Dotan’s uncertainty and says an enlarged image does not show a distinct pataḥ stroke.",
+        "target": "לְיָֽרְאֵֽנִי",
+        "raw_proof": {
+          "note_id": "Nehemiah 6:19/2/0",
+          "raw_path": "in/mam-ws/FB-Nehemiah.json",
+          "raw_note_body": "=ל?,ש1,ק-מ,ב1 ובדפסוים (רי\"ש שווּאה){{ש}}ל?=לְיָֽרֲאֵֽנִי (חטף פתח באות רי\"ש?) לפי ברויאר (בוודאי) ולפי דותן (בספק). ונראה שהצדק עם דותן, כי מעיון בכתי\"ל בהגדלה לא נראה שיש קו מובהק לחטף-פתח.{{ש}}הערות ברויאר ודותן",
+          "parsed_path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+          "parsed_pointer": "/book39s/1/chapters/6/19/2/1",
+          "parsed_note_body": "=ל?,ש1,ק-מ,ב1 ובדפסוים (רי\"ש שווּאה)\nל?=לְיָֽרֲאֵֽנִי (חטף פתח באות רי\"ש?) לפי ברויאר (בוודאי) ולפי דותן (בספק). ונראה שהצדק עם דותן, כי מעיון בכתי\"ל בהגדלה לא נראה שיש קו מובהק לחטף-פתח.\nהערות ברויאר ודותן",
+          "chapter_revision": {
+            "resolved_title": "נחמיה ו/טעמים",
+            "page_id": 239395,
+            "requested_title": "נחמיה_ו/טעמים",
+            "revision_id": 2988440,
+            "sha256": "bac568d81b88db8a01a8aae6143dde91062c84df94f893adb2a777f09b6c890f"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/FA-Ezra-Nexemiah.json#L6319",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      },
+      {
+        "note_id": "2Chronicles 6:42/2/0",
+        "ref": "2Chronicles 6:42",
+        "unlisted_words": [
+          {
+            "word": "זֳכְרָ֕ה",
+            "key": "זכרה",
+            "clusters": [
+              "זֳ"
+            ]
+          }
+        ],
+        "body": "א,ש1=זֳכְרָ֕ה (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה.\nל=זָכְרָ֕ה בקמץ וכך בדפוסים; ובאופן דומה אצל ברויאר ובסימנים (בקמץ קטן).",
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/FC-Chronicles.json#L12510",
+        "path": "MAM-parsed/plus/FC-Chronicles.json",
+        "pointer": "/book39s/1/chapters/6/42/2/1",
+        "independent_verdict": "explicit-short-o-exclusion",
+        "reason": "Note explicitly says חטף קמץ לסימון תנועת קמץ חטוף for זֳכְרָ֕ה.",
+        "target": "זׇכְרָ֕ה",
+        "raw_proof": {
+          "note_id": "2Chronicles 6:42/2/0",
+          "raw_path": "in/mam-ws/FD-2Chronicles.json",
+          "raw_note_body": "א,ש1=זֳכְרָ֕ה (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה.{{ש}}ל=זָכְרָ֕ה בקמץ וכך בדפוסים; ובאופן דומה אצל ברויאר ובסימנים (בקמץ קטן).",
+          "parsed_path": "MAM-parsed/plus/FC-Chronicles.json",
+          "parsed_pointer": "/book39s/1/chapters/6/42/2/1",
+          "parsed_note_body": "א,ש1=זֳכְרָ֕ה (חטף קמץ לסימון תנועת קמץ חטוף) וכן במג\"ה.\nל=זָכְרָ֕ה בקמץ וכך בדפוסים; ובאופן דומה אצל ברויאר ובסימנים (בקמץ קטן).",
+          "chapter_revision": {
+            "resolved_title": "דברי הימים ב ו/טעמים",
+            "page_id": 239565,
+            "requested_title": "דברי הימים ב_ו/טעמים",
+            "revision_id": 3080382,
+            "sha256": "40f348775cf19066c2095f37689afff6701553e292d4fcd394b060bf00be8d2c"
+          },
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/FC-Chronicles.json#L12510",
+          "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+        }
+      }
+    ],
+    "additional_body_uncertainty": {
+      "ref": "2Samuel6:5",
+      "form": "וּֽבְצֶלְצֱלִֽים",
+      "raw": {
+        "ref": "2Samuel 6:5",
+        "path": "in/mam-ws/BB-2Samuel.json",
+        "wikitext": "וְדָוִ֣ד{{מ:לגרמיה-2}} וְכׇל־בֵּ֣ית יִשְׂרָאֵ֗ל מְשַֽׂחֲקִים֙ לִפְנֵ֣י יְהֹוָ֔ה בְּכֹ֖ל עֲצֵ֣י בְרוֹשִׁ֑ים וּבְכִנֹּר֤וֹת וּבִנְבָלִים֙ וּבְתֻפִּ֔ים וּבִמְנַעַנְעִ֖ים וּֽבְצֶלְצֱלִֽים׃"
+      },
+      "reason": "No cached note identifies Aleppo/Leningrad attribution or explains whether tsadi ḥataf segol is an optional vocal-sheva mark; retain function/source uncertainty."
+    }
+  }
+}

@@ -22,7 +22,7 @@
     },
     {
       "id": "DEUT-HATAF",
-      "title": "Deuteronomy roster: nine declared, twelve words listed",
+      "title": "Deuteronomy list: nine declared, twelve words listed",
       "status": "new-verified-enumeration-discrepancy",
       "claims": [
         "ch3:L1134"
@@ -85,7 +85,7 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "Ben specifies words as the items: six cite Leningrad and six cite Aleppo. Deuteronomy 32:10 contributes two words. The complete cached evidence accounts for 955/955 verses and 365/365 doc-notes. The 12 roster words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add roster items. Of the 12 roster words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva. Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented.",
+      "explanation": "Ben specifies words as the items: six cite Leningrad and six cite Aleppo. Deuteronomy 32:10 contributes two words. The complete cached evidence accounts for 955/955 verses and 365/365 doc-notes. The 12 list words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add list items. Of the 12 list words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva. Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented.",
       "adjudication": "DEUT-HATAF-COUNT-BEN-20261014"
     },
     {
@@ -448,7 +448,7 @@
     },
     {
       "id": "PS-150-3-HATAF",
-      "title": "Psalm 150:3: the first Aleppo roster specimen has sheva rather than ḥataf",
+      "title": "Psalm 150:3: the first Aleppo list specimen has sheva rather than ḥataf",
       "status": "new-supported-source-disagreement",
       "claims": [
         "ch5:L710"
@@ -469,7 +469,7 @@
       "note_ids": [
         "Psalms 150:3/2/0"
       ],
-      "explanation": "The first of two separately indexed Psalm 150:3 items is explicitly Aleppo-attributed but encodes SHEVA (U+05B0) on lamed. The faithful raw/current parsed note quotes Aleppo with HATAF PATAH (U+05B2). The second occurrence is separately retained and agrees. This is a central ḥataf-quotation disagreement; the actual manuscript reading remains unverified. The Psalms roster has 172 form items against171 declared items, but item-count and ḥataf-occurrence-count are kept distinct."
+      "explanation": "The first of two separately indexed Psalm 150:3 items is explicitly Aleppo-attributed but encodes SHEVA (U+05B0) on lamed. The faithful raw/current parsed note quotes Aleppo with HATAF PATAH (U+05B2). The second occurrence is separately retained and agrees. This is a central ḥataf-quotation disagreement; the actual manuscript reading remains unverified. The Psalms list has 172 form items against171 declared items, but item-count and ḥataf-occurrence-count are kept distinct."
     },
     {
       "id": "PS-39-13-HATAF-LABEL",
@@ -755,7 +755,7 @@
           "א-קרי=<תלאום שמה פלשתים> (הערת קרי אחת לשלוש תיבות ביחד), וכך גם בכתי\"ש1. במג\"ה ציינו \"קרי וכתיב\" לכל תיבה לחוד; ואילו ברויאר הביא הערת קרי אחת לשלושת התיבות (וכך גם בקורן)."
         ]
       },
-      "explanation": "The Introduction explicitly puts this Aleppo case in its roster of one qere note for two adjacent atoms, after a separate one-atom ketiv/qere. The current raw/parsed note instead assigns one qere note for all three atoms to Aleppo and Sassoon 1053; Cairo and Leningrad have differently partitioned two-note descriptions. This is an attributed scope disagreement and source chronology remains unresolved. The appendices’ two-word roster repeats the case, while its next row describes the current three-word grouping."
+      "explanation": "The Introduction explicitly puts this Aleppo case in its list of one qere note for two adjacent atoms, after a separate one-atom ketiv/qere. The current raw/parsed note instead assigns one qere note for all three atoms to Aleppo and Sassoon 1053; Cairo and Leningrad have differently partitioned two-note descriptions. This is an attributed scope disagreement and source chronology remains unresolved. The appendices’ two-word list repeats the case, while its next row describes the current three-word grouping."
     },
     {
       "id": "ZARQA-TSINNOR-NAMES",
@@ -905,7 +905,7 @@
       "note_ids": [
         "Psalms 31:12/2/1"
       ],
-      "explanation": "The Introduction puts וְלִשְׁכֵנַי in its11-case roster where the Aleppo scribe allegedly omitted ḥataf, and the specimen has sheva. The complete note explicitly assigns ḥataf-pataḥ to Aleppo at that atom. Faithful raw and parsed bodies agree. This is a central attributed ḥataf disagreement; no physical manuscript reading is decided."
+      "explanation": "The Introduction puts וְלִשְׁכֵנַי in its11-case list where the Aleppo scribe allegedly omitted ḥataf, and the specimen has sheva. The complete note explicitly assigns ḥataf-pataḥ to Aleppo at that atom. Faithful raw and parsed bodies agree. This is a central attributed ḥataf disagreement; no physical manuscript reading is decided."
     },
     {
       "id": "PS-53-6-LETTER-NAME",
@@ -1183,7 +1183,7 @@
       "note_ids": [
         "Psalms 18:2/2/0"
       ],
-      "explanation": "The Introduction uses an explicit Aleppo sigil for this form, although its missing-extent roster covers Psalms 15:1 through 25:1. The note discusses other named manuscripts and reading tradition. An unquoted prior report or shorthand could account for the attribution; the caches do not supply it. The grammatical claim agrees, so this is an attribution question, not proof of a false manuscript reading."
+      "explanation": "The Introduction uses an explicit Aleppo sigil for this form, although its missing-extent list covers Psalms 15:1 through 25:1. The note discusses other named manuscripts and reading tradition. An unquoted prior report or shorthand could account for the attribution; the caches do not supply it. The grammatical claim agrees, so this is an attribution question, not proof of a false manuscript reading."
     },
     {
       "id": "L-CANDIDATE-SCOPE",
@@ -1380,7 +1380,7 @@
     },
     {
       "id": "HATAF-SOURCE-SCOPE",
-      "title": "Ḥataf rosters: source scope and inclusion questions",
+      "title": "Ḥataf lists: source scope and inclusion questions",
       "status": "source-and-inclusion-policy-uncertainty",
       "claims": [
         "ch5:L704",
@@ -1459,7 +1459,7 @@
     },
     {
       "id": "LEGARMEH-LIST-SCOPE",
-      "title": "Long legarmeh roster: locators, selection and historical source scope",
+      "title": "Long legarmeh list: locators, selection and historical source scope",
       "status": "locator-and-selected-list-membership-limits",
       "claims": [
         "ch2:L221"

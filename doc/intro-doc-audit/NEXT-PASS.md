@@ -20,7 +20,7 @@ This directory's README, source-pin, review-counts, topic-coverage,
 claim-dispositions and review-selections hold the evidence. The frozen source commit is
 `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`; exact cache revisions are pinned.
 Do not repeat completed passes: 340 topic spans are routed, all 1,643 verse-linked
-source units are assessed, and all 667 hataf, 98 meteg and 385 poetic roster items
+source units are assessed, and all 667 hataf, 98 meteg and 385 poetic list items
 have item-level evidence boundaries. The original selected ledger had 1,859 units;
 the complete original inventory has 8,984 source units, including metadata and
 non-reference prose. These counts do not certify universal consistency.

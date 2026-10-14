@@ -323,7 +323,7 @@
         ]
       }
     ],
-    "explanation": "Ben independently inspected the manuscript and found it pretty clearly plene-vav despite its poor condition. The cause—aging damage, erasure or both—remains unresolved.",
+    "explanation": "Ben inspected the manuscript and found it pretty clearly plene-vav despite its poor condition. The cause—aging damage, erasure or both—remains unresolved.",
     "decision": "The exact edit is =ל,ל1 → =ל1; the remaining note is unchanged. The original full note and translation remain visible, and this source correction has not been applied.",
     "reading_forms": [
       {
@@ -351,17 +351,17 @@
       "ALL-HATAF-SONG-1-6"
     ],
     "section": "discrepancies",
-    "title": "Song of Songs 1:6: a Leningrad ḥataf word is missing from the roster",
-    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
-    "context": "The word has ḥataf segol on shin. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
-    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
-    "decision": "Add the entry ל!=שֶׁשֱּׁזָפַ֖תְנִי. This proposed addition is unapplied.",
+    "title": "Song of Songs 1:6: a Leningrad ḥataf word is missing from the list",
+    "issue": "The Introduction’s Song of Songs list omits שֶׁשֱּׁזָפַ֖תְנִי.",
+    "context": "The doc-note assigns שֶׁשֱּׁזָפַ֖תְנִי to Leningrad (ל), with ḥataf segol on shin.",
+    "explanation": "The Leningrad shin ḥataf segol marks vocal sheva, the function covered by the list.",
+    "decision": "Ben approves adding Song of Songs 1:6 for proposal to Avi. Use ל=שֶׁשֱּׁזָפַ֖תְנִי in the list, and change its heading from six to seven items, as shown below. The doc-note retains !=, meaning “surprisingly equals.”",
     "prose_quotes": [
-      "ל!=שֶׁשֱּׁזָפַ֖תְנִי"
+      "ל=שֶׁשֱּׁזָפַ֖תְנִי"
     ],
     "panels": [
       {
-        "label": "Introduction — Song roster heading",
+        "label": "Introduction — Song of Songs list heading",
         "claim": "ch5:L716",
         "quote": "(6 פריטים)",
         "translation": "(6 items)"
@@ -376,7 +376,20 @@
         ]
       }
     ],
-    "reading_forms": []
+    "reading_forms": [
+      {
+        "label": "Doc-note — Leningrad",
+        "note": "Song of Songs 1:6/2/0",
+        "text": "שֶׁשֱּׁזָפַ֖תְנִי"
+      },
+      {
+        "label": "MAM text",
+        "source": "note-target",
+        "id": "Song of Songs 1:6/2/0",
+        "text": "שֶׁשְּׁזָפַ֖תְנִי"
+      }
+    ],
+    "adjudication": "SONG-1-6-BEN-20261014"
   },
   {
     "id": "ALL-HATAF-SAM-8-10",
@@ -384,17 +397,17 @@
       "ALL-HATAF-SAM-8-10"
     ],
     "section": "discrepancies",
-    "title": "2 Samuel 8:10: a Aleppo ḥataf word is missing from the roster",
-    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Aleppo.",
-    "context": "The word has ḥataf pataḥ on resh. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
-    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
-    "decision": "Add the entry א=וּֽלְבָרֲכ֗וֹ. This proposed addition is unapplied.",
+    "title": "2 Samuel 8:10: an Aleppo ḥataf word is missing from the list",
+    "issue": "The Introduction’s Samuel list omits וּֽלְבָרֲכ֗וֹ.",
+    "context": "The doc-note assigns וּֽלְבָרֲכ֗וֹ to Aleppo (א), with ḥataf pataḥ on resh.",
+    "explanation": "The Aleppo resh ḥataf pataḥ marks vocal sheva, the function covered by the list.",
+    "decision": "Ben approves adding 2 Samuel 8:10 for proposal to Avi. Add א=וּֽלְבָרֲכ֗וֹ after the 2 Samuel 1:9 entry, and change the Samuel heading from 30 to 31 items, as shown below.",
     "prose_quotes": [
       "א=וּֽלְבָרֲכ֗וֹ"
     ],
     "panels": [
       {
-        "label": "Introduction — 2 roster heading",
+        "label": "Introduction — Samuel list heading",
         "claim": "ch5:L698",
         "quote": "(30 פריטים)",
         "translation": "(30 items)"
@@ -409,7 +422,20 @@
         ]
       }
     ],
-    "reading_forms": []
+    "reading_forms": [
+      {
+        "label": "Doc-note — Aleppo",
+        "note": "2Samuel 8:10/2/0",
+        "text": "וּֽלְבָרֲכ֗וֹ"
+      },
+      {
+        "label": "MAM text",
+        "source": "note-target",
+        "id": "2Samuel 8:10/2/0",
+        "text": "וּֽלְבָרְﬞכ֗וֹ"
+      }
+    ],
+    "adjudication": "SAM-8-10-BEN-20261014"
   },
   {
     "id": "ALL-HATAF-NUM-10-9",
@@ -417,17 +443,17 @@
       "ALL-HATAF-NUM-10-9"
     ],
     "section": "discrepancies",
-    "title": "Numbers 10:9: a Leningrad ḥataf word is missing from the roster",
-    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
-    "context": "The word has ḥataf pataḥ on vav. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
-    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
-    "decision": "Add the entry ל!=וֲנִזְכַּרְתֶּ֗ם. This proposed addition is unapplied.",
+    "title": "Numbers 10:9: a Leningrad ḥataf word is missing from the list",
+    "issue": "The Introduction’s Numbers list omits וֲנִזְכַּרְתֶּ֗ם.",
+    "context": "The doc-note assigns וֲנִזְכַּרְתֶּ֗ם to Leningrad (ל), with ḥataf pataḥ on vav.",
+    "explanation": "The Leningrad vav ḥataf pataḥ marks vocal sheva, the function covered by the list.",
+    "decision": "Add the entry ל!=וֲנִזְכַּרְתֶּ֗ם.",
     "prose_quotes": [
       "ל!=וֲנִזְכַּרְתֶּ֗ם"
     ],
     "panels": [
       {
-        "label": "Introduction — Numbers roster heading",
+        "label": "Introduction — Numbers list heading",
         "claim": "ch3:L1132",
         "quote": "(18 פריטים)",
         "translation": "(18 items)"
@@ -442,7 +468,19 @@
         ]
       }
     ],
-    "reading_forms": []
+    "reading_forms": [
+      {
+        "label": "Doc-note — Leningrad",
+        "note": "Numbers 10:9/2/1",
+        "text": "וֲנִזְכַּרְתֶּ֗ם"
+      },
+      {
+        "label": "MAM text",
+        "source": "note-target",
+        "id": "Numbers 10:9/2/1",
+        "text": "וְנִזְכַּרְתֶּ֗ם"
+      }
+    ]
   },
   {
     "id": "ALL-HATAF-GEN-30-27",
@@ -450,17 +488,17 @@
       "ALL-HATAF-GEN-30-27"
     ],
     "section": "discrepancies",
-    "title": "Genesis 30:27: a Leningrad ḥataf word is missing from the roster",
-    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
-    "context": "The word has ḥataf pataḥ on resh. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
-    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
-    "decision": "Add the entry ל=וַיְבָרֲכֵ֥נִי. This proposed addition is unapplied.",
+    "title": "Genesis 30:27: a Leningrad ḥataf word is missing from the list",
+    "issue": "The Introduction’s Genesis list omits וַיְבָרֲכֵ֥נִי.",
+    "context": "The doc-note assigns וַיְבָרֲכֵ֥נִי to Leningrad (ל), with ḥataf pataḥ on resh.",
+    "explanation": "The Leningrad resh ḥataf pataḥ marks vocal sheva, the function covered by the list.",
+    "decision": "Add the entry ל=וַיְבָרֲכֵ֥נִי.",
     "prose_quotes": [
       "ל=וַיְבָרֲכֵ֥נִי"
     ],
     "panels": [
       {
-        "label": "Introduction — Genesis roster heading",
+        "label": "Introduction — Genesis list heading",
         "claim": "ch3:L1126",
         "quote": "(33 פריטים)",
         "translation": "(33 items)"
@@ -475,7 +513,19 @@
         ]
       }
     ],
-    "reading_forms": []
+    "reading_forms": [
+      {
+        "label": "Doc-note — Leningrad",
+        "note": "Genesis 30:27/2/0",
+        "text": "וַיְבָרֲכֵ֥נִי"
+      },
+      {
+        "label": "MAM text",
+        "source": "note-target",
+        "id": "Genesis 30:27/2/0",
+        "text": "וַיְבָרְﬞכֵ֥נִי"
+      }
+    ]
   },
   {
     "id": "deuteronomy-hataf-count",
@@ -515,7 +565,7 @@
         ]
       }
     ],
-    "explanation": "The complete cached evidence accounts for 955/955 verses and 365/365 doc-notes. The 12 roster words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add roster items. Of the 12 roster words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva.",
+    "explanation": "The 12 list words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add list items. Of the 12 list words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva.",
     "decision": "Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented.",
     "reading_forms": [],
     "prose_quotes": [
@@ -528,7 +578,7 @@
       "(12 פריטים)"
     ],
     "word_comparison": {
-      "caption": "All 12 roster words, with their supporting doc-note forms. Mark-order differences are preserved.",
+      "caption": "All 12 list words, with their supporting doc-note forms. Mark-order differences are preserved.",
       "rows": [
         {
           "ref": "Deuteronomy 5:23",
@@ -2764,7 +2814,7 @@
         "note": "Levit 7:22/0/0"
       }
     ],
-    "explanation": "The Introduction names verse 28. The doc-note gives verse 27 for the same quoted opening. The complete chapter structure places the second petuḥah before verse 28.",
+    "explanation": "The Introduction names verse 28. The doc-note gives verse 27 for the same quoted opening. The chapter places the second petuḥah before verse 28.",
     "decision": "Change the note's second verse number from 27 to 28.",
     "reading_forms": [
       {
@@ -2810,7 +2860,7 @@
         "translation": "By using the Unicode characters for “zarqa” at the end of the word and “tsinnor” inside the word, as we wrote in the previous footnote."
       }
     ],
-    "explanation": "The Introduction’s specimen has U+0598 internally and U+05AE at the end, matching the first footnote. The second calls the final character zarqa and the internal character tsinnor. These are an accent and its stress helper, not two independent accents.",
+    "explanation": "The Introduction’s specimen has U+0598 internally and U+05AE at the end, matching the first footnote. The second calls the final character zarqa and the internal character tsinnor. These are an accent and its stress helper.",
     "decision": "Reverse the names in the second footnote to agree with the first footnote and the actual specimen.",
     "reading_forms": [
       {
@@ -3363,7 +3413,7 @@
         "translation": "There is only a narrow gap, with no pointing for the qere velo ketiv אִ֖ישׁ."
       }
     ],
-    "explanation": "The descriptions agree word for word, but only the Introduction names the Aleppo Codex. The local note does not name a manuscript. Its agreement confirms the description, without independently identifying the source.",
+    "explanation": "The descriptions agree word for word, but only the Introduction names the Aleppo Codex. The local note does not name a manuscript. Its agreement confirms the description, without identifying the source.",
     "decision": "Confirm that this note is intended as an Aleppo description, preferably with the source of the recorded reading. Until then, distinguish the Introduction’s attribution from the unnamed local description.",
     "reading_forms": [
       {
@@ -3444,7 +3494,7 @@
       }
     ],
     "explanation": "MAM has this ketiv/qere pair, but no local note on the pair supplies that Aleppo pointing. The other notes concern separate targets, so their Aleppo attributions cannot establish this quotation.",
-    "decision": "Identify an attributed description or source for this pair. Otherwise state that the pointing is quoted by the Introduction but not independently supplied by its local note.",
+    "decision": "Identify an attributed description or source for this pair. Otherwise state that the pointing is quoted by the Introduction but not supplied by its local note.",
     "reading_forms": [
       {
         "label": "Aleppo ketiv quotation — Introduction",
@@ -4815,7 +4865,7 @@
         "translation": "Aleppo Codex ketiv: שׁוֹבֲב֑יּם (ḥataf)."
       }
     ],
-    "explanation": "The final consonants differ, as do the ketiv/qere labels. The notes document the ḥataf on the pointed ketiv. MAM's qere does not independently establish that Aleppo supplied the same pointed qere.",
+    "explanation": "The final consonants differ, as do the ketiv/qere labels. The notes document the ḥataf on the pointed ketiv. MAM's qere does not establish that Aleppo supplied the same pointed qere.",
     "decision": "Should the Introduction quote the pointed ketiv documented in the notes, or explain why the ketiv vowel is illustrated on the qere?",
     "reading_forms": [
       {
@@ -4890,17 +4940,17 @@
       "HATAF-SOURCE-SCOPE"
     ],
     "section": "discrepancies",
-    "title": "Proverbs 30:17: a Leningrad ḥataf word is missing from the roster",
-    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
-    "context": "The word has ḥataf pataḥ on qoph. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
-    "explanation": "The roster already lists תִּ֥לֲעַ֣ג at this verse, but omits the separate word לִֽיקֲּהַ֫ת. The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
+    "title": "Proverbs 30:17: a Leningrad ḥataf word is missing from the list",
+    "issue": "The Introduction’s Proverbs list omits לִֽיקֲּהַ֫ת־אֵ֥ם.",
+    "context": "The doc-note assigns לִֽיקֲּהַ֫ת־אֵ֥ם to Leningrad (ל), with ḥataf pataḥ on qoph.",
+    "explanation": "The Proverbs list already lists Aleppo תִּ֥לֲעַ֣ג at 30:17; Leningrad’s additional לִֽיקֲּהַ֫ת has qoph ḥataf pataḥ.",
     "decision": "Add the entry ל=לִֽיקֲּהַ֫ת־אֵ֥ם. This proposed addition is unapplied.",
     "prose_quotes": [
       "ל=לִֽיקֲּהַ֫ת־אֵ֥ם"
     ],
     "panels": [
       {
-        "label": "Introduction — Proverbs roster heading",
+        "label": "Introduction — Proverbs list heading",
         "claim": "ch5:L712",
         "quote": "(12 פריטים)",
         "translation": "(12 items)"
@@ -4915,7 +4965,19 @@
         ]
       }
     ],
-    "reading_forms": []
+    "reading_forms": [
+      {
+        "label": "Doc-note — Leningrad",
+        "note": "Proverbs 30:17/2/1",
+        "text": "לִֽיקֲּהַ֫ת־אֵ֥ם"
+      },
+      {
+        "label": "MAM text",
+        "source": "note-target",
+        "id": "Proverbs 30:17/2/1",
+        "text": "לִֽיקְּהַ֫ת־אֵ֥ם"
+      }
+    ]
   },
   {
     "id": "SEDER-DESCRIPTION-STRENGTH",
@@ -5238,7 +5300,7 @@
         "translation": "Aleppo Codex?: שֹׁמֵ֢֫עַֽ לִ֥י (the oleh mark is suspended between mem and ayin)."
       }
     ],
-    "explanation": "The two marks below mem are different accents, not merely different ordering of the same signs. The Introduction's separate explanation distinguishes galgal from atnaḥ hafukh. The design list also lacks the question mark retained in the other entry. Its example of two independently accented words remains understandable, but the quotation and certainty do not match the other passage.",
+    "explanation": "The two marks below mem are different accents, not merely different ordering of the same signs. The Introduction's separate explanation distinguishes galgal from atnaḥ hafukh. The design list also lacks the question mark retained in the other entry. Its example of two accented words remains understandable, but the quotation and certainty do not match the other passage.",
     "decision": "Should the design example use atnaḥ hafukh and retain the uncertainty stated in the other entry, or explain a different intended notation and attribution?",
     "reading_forms": [
       {
@@ -5758,7 +5820,7 @@
         "kind": "scripture"
       }
     ],
-    "explanation": "The cached combined page and both parsed readings locate this example at 20:8, rather than 20:7.",
+    "explanation": "The cached combined page and both readings locate this example at 20:8, rather than 20:7.",
     "decision": "Check that the reference is intended for the combined page, then change its displayed number and destination to Exodus 20:8. The combined dagesh and rafe do not need a new interpretation.",
     "reading_forms": []
   },
@@ -6173,5 +6235,444 @@
     "explanation": "The two phrases have the same general meaning, but a section destination depends on the actual heading text. The cached appendix has no matching explicit anchor for the reversed wording.",
     "decision": "Make both references match the appendix's actual heading. Live template-generated aliases have not been checked.",
     "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-SAM-24-16",
+    "covers": [
+      "ALL-HATAF-SAM-24-16"
+    ],
+    "section": "questions",
+    "title": "2 Samuel 24:16: does the ketiv resh ḥataf belong in the list?",
+    "issue": "The Aleppo ketiv הָאֲוְרֲ֥נָה has ḥataf pataḥ on resh, but the Samuel list omits this word.",
+    "context": "The qere הָֽאֲרַ֥וְנָה has different letters and vowels. The doc-note names Aleppo ketiv (א-כתיב).",
+    "explanation": "The note does not explain the resh vowel’s function. The qere does not show whether the ketiv ḥataf marks optional vocal sheva.",
+    "decision": "Keep this as a possible omitted ketiv word until the function of the resh vowel is established.",
+    "panels": [
+      {
+        "label": "Doc-note, 2Samuel 24:16",
+        "note": "2Samuel 24:16/2/0",
+        "quote": "א-כתיב=הָאֲוְרֲ֥נָה",
+        "translation": "Aleppo ketiv: הָאֲוְרֲ֥נָה."
+      }
+    ],
+    "reading_forms": [
+      {
+        "label": "Aleppo ketiv",
+        "note": "2Samuel 24:16/2/0",
+        "text": "הָאֲוְרֲ֥נָה"
+      },
+      {
+        "label": "MAM qere",
+        "source": "verse-parts",
+        "text": "הָֽאֲרַ֥וְנָה",
+        "path": "MAM-parsed/plus/BA-Samuel.json",
+        "parts": [
+          {
+            "pointer": "/book39s/1/chapters/24/16/2/3/tmpl_params/1/tmpl_params/2",
+            "text": "הָֽאֲרַ֥וְנָה"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ALL-HATAF-SAM-24-18",
+    "covers": [
+      "ALL-HATAF-SAM-24-18"
+    ],
+    "section": "questions",
+    "title": "2 Samuel 24:18: what is the ketiv nun ḥataf qamats doing?",
+    "issue": "The Aleppo ketiv אֲרַ֥נֳיה has ḥataf qamats on nun, but the Samuel list omits this word.",
+    "context": "The qere אֲרַ֥וְנָה has different letters and vowels. The doc-note names Aleppo ketiv (א-כתיב).",
+    "explanation": "The note does not identify this nun vowel as morphological or as optional vocal-sheva marking.",
+    "decision": "Keep the possible omission and vowel-function question open; the short note does not justify either a definite addition or a morphological exclusion.",
+    "panels": [
+      {
+        "label": "Doc-note, 2Samuel 24:18",
+        "note": "2Samuel 24:18/2/0",
+        "quote": "א-כתיב=אֲרַ֥נֳיה",
+        "translation": "Aleppo ketiv: אֲרַ֥נֳיה."
+      }
+    ],
+    "reading_forms": [
+      {
+        "label": "Aleppo ketiv",
+        "note": "2Samuel 24:18/2/0",
+        "text": "אֲרַ֥נֳיה"
+      },
+      {
+        "label": "MAM qere",
+        "source": "verse-parts",
+        "text": "אֲרַ֥וְנָה",
+        "path": "MAM-parsed/plus/BA-Samuel.json",
+        "parts": [
+          {
+            "pointer": "/book39s/1/chapters/24/18/2/1/tmpl_params/1/tmpl_params/2",
+            "text": "אֲרַ֥וְנָה"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ALL-HATAF-JER-48-32",
+    "covers": [
+      "ALL-HATAF-JER-48-32"
+    ],
+    "section": "questions",
+    "title": "Jeremiah 48:32: ḥataf, stain or erased pataḥ stroke?",
+    "issue": "The Aleppo form מִבֲּכִ֨י reported by Breuer is absent from the Jeremiah list.",
+    "context": "The disputed vowel is ḥataf pataḥ on bet. The doc-note’s inspection suggests a stain, or a pataḥ stroke erased to leave sheva.",
+    "explanation": "The note therefore retains a reading dispute rather than confirming the ḥataf.",
+    "decision": "Keep this as an uncertain possible omission, with both the Breuer report and the note’s alternative explanation visible.",
+    "panels": [
+      {
+        "label": "Doc-note, Jeremiah 48:32",
+        "note": "Jeremiah 48:32/2/0",
+        "quote": "לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.",
+        "translation": "According to Breuer, Aleppo has מִבֲּכִ֨י (ḥataf on a non-guttural letter). But examination of the Codex suggests a stain, or that there was ḥataf pataḥ and its pataḥ stroke was erased to leave sheva alone."
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-DAN-12-2",
+    "covers": [
+      "ALL-HATAF-DAN-12-2"
+    ],
+    "section": "questions",
+    "title": "Daniel 12:2: uncertain Leningrad ḥataf pataḥ on yod",
+    "issue": "The possible Leningrad form מִיֲּשֵׁנֵ֥י is absent from the Daniel list.",
+    "context": "The note writes Leningrad with a question mark (ל?) and describes an indistinct unusual stroke below yod.",
+    "explanation": "Breuer marks the possible ḥataf as uncertain; Dotan and the transcriber support the form without it.",
+    "decision": "Keep this as an uncertain possible omission; the note does not establish the yod ḥataf.",
+    "panels": [
+      {
+        "label": "Doc-note, Daniel 12:2",
+        "note": "Daniel 12:2/2/0",
+        "quote": "=ל?,ק-מ,ב1,ת451,ש2 ובדפוסים, וכן דעתם של דותן והמקליד לגבי כתי\"ל.\nל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
+        "translation": "MAM agrees with Leningrad?, Cambridge Add. 1753, British Library Or. 2375, the Joseph ben Benaya manuscript formerly T451, Sassoon 82 and printed editions; this is also Dotan’s and the transcriber’s opinion concerning Leningrad. Leningrad? has מִיֲּשֵׁנֵ֥י (ḥataf pataḥ?). There is an indistinct unusual stroke below yod on the left, so Breuer marked the ḥataf as uncertain."
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-NEH-6-19",
+    "covers": [
+      "ALL-HATAF-NEH-6-19"
+    ],
+    "section": "questions",
+    "title": "Nehemiah 6:19: Breuer’s ḥataf report remains disputed",
+    "issue": "The possible Leningrad form לְיָֽרֲאֵֽנִי is absent from the Ezra–Nehemiah list.",
+    "context": "The disputed vowel is ḥataf pataḥ on resh. Breuer reads it confidently; Dotan is uncertain.",
+    "explanation": "The doc-note favors Dotan’s uncertainty because an enlarged view does not show a distinct pataḥ stroke.",
+    "decision": "Keep this as an uncertain possible omission rather than a confirmed Leningrad ḥataf.",
+    "panels": [
+      {
+        "label": "Doc-note, Nehemiah 6:19",
+        "note": "Nehemiah 6:19/2/0",
+        "quote": "=ל?,ש1,ק-מ,ב1 ובדפסוים (רי\"ש שווּאה)\nל?=לְיָֽרֲאֵֽנִי (חטף פתח באות רי\"ש?) לפי ברויאר (בוודאי) ולפי דותן (בספק). ונראה שהצדק עם דותן, כי מעיון בכתי\"ל בהגדלה לא נראה שיש קו מובהק לחטף-פתח.\nהערות ברויאר ודותן",
+        "translation": "MAM agrees with Leningrad?, Sassoon 1053, Cambridge Add. 1753, British Library Or. 2375 and printed editions (resh with sheva). Leningrad? has לְיָֽרֲאֵֽנִי (ḥataf pataḥ on resh?), according to Breuer with certainty and Dotan with doubt. Dotan appears correct: enlarged examination of Leningrad does not show a clear pataḥ stroke. Breuer’s and Dotan’s notes."
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-SAM-6-5",
+    "covers": [
+      "ALL-HATAF-SAM-6-5"
+    ],
+    "section": "questions",
+    "title": "2 Samuel 6:5: a retained tsadi ḥataf segol with no explanation",
+    "issue": "MAM has וּֽבְצֶלְצֱלִֽים, with ḥataf segol on tsadi; the Samuel list omits it.",
+    "context": "There is no doc-note at this word.",
+    "explanation": "MAM’s vowel establishes the written form, but supplies neither an Aleppo/Leningrad attribution nor a statement that this tsadi ḥataf marks optional vocal sheva.",
+    "decision": "Keep the manuscript attribution and vowel function unresolved. The edition form alone does not establish a list omission or a morphological exclusion.",
+    "panels": [
+      {
+        "label": "MAM text, 2 Samuel 6:5",
+        "source": "verse",
+        "id": "2Samuel 6:5",
+        "kind": "scripture",
+        "quote": "וּֽבְצֶלְצֱלִֽים",
+        "translation": ""
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-PS-17-14-SOURCE",
+    "covers": [
+      "ALL-HATAF-PS-17-14-SOURCE"
+    ],
+    "section": "questions",
+    "title": "Psalm 17:14: a Sassoon 1053 entry under an Aleppo-or-Leningrad heading",
+    "issue": "The list expressly names Sassoon 1053 (ש1) for מִ֥מֲתִֽים־יָדְךָ֨ ׀, although its heading names Aleppo or Leningrad.",
+    "context": "The doc-note attributes the mem ḥataf to Sassoon 1053, Cairo 13, St. Petersburg EVR-II-B-55 and Gaster1, and relates it to Aleppo practice.",
+    "explanation": "Its Leningrad quotations have sheva and explicitly no ḥataf. The named other manuscripts and reconstructed Aleppo practice do not establish an Aleppo manuscript quotation.",
+    "decision": "Explain this exception in the list’s scope, or remove this word from the Aleppo-or-Leningrad list. This is a scope decision, not a correction of the manuscript’s pointing.",
+    "panels": [
+      {
+        "label": "Introduction — the explicit Sassoon 1053 list entry",
+        "claim": "ch5:L710",
+        "quote": "(ש1=מִ֥מֲתִֽים־יָדְךָ֨ ׀)",
+        "translation": "Sassoon 1053: מִ֥מֲתִֽים־יָדְךָ֨ ׀."
+      },
+      {
+        "label": "Doc-note, Psalms 17:14",
+        "note": "Psalms 17:14/2/0",
+        "quote": "=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכא כטעם משני: <מִ֥מֲתִֽים־יָדְךָ֨׀>.",
+        "translation": "MAM agrees with Sassoon 1053, Cairo 13, St. Petersburg EVR-II-B-55 and Gaster1 concerning secondary merkha, meteg on the stressed syllable and maqaf. These manuscripts, and Aleppo practice, also have ḥataf to indicate vocal sheva after secondary merkha: מִ֥מֲתִֽים־יָדְךָ֨׀."
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-LIST-COUNTS",
+    "covers": [
+      "ALL-HATAF-LIST-COUNTS"
+    ],
+    "section": "discrepancies",
+    "title": "Judges, Chronicles and Psalms: what the headings count",
+    "issue": "Judges has 23 word entries under “24 items”; Chronicles has 63 under “61”; Psalms has 172 under “171”.",
+    "context": "Judges 7:7 has two ḥataf vowels in the single word הַֽמֲלַֽקֲקִים֙. Chronicles has 63 words at 61 verse positions.",
+    "explanation": "Judges’ 24 counts vowels; Chronicles’ 61 counts verses. Psalms’ 172 includes the Sassoon 1053 entry discussed separately. Whether that entry should be counted in an Aleppo-or-Leningrad list depends on the scope decision.",
+    "decision": "Using words as items, as Ben specifies for Deuteronomy, propose (23 פריטים) for Judges and (63 פריטים) for Chronicles. For Psalms, propose (172 פריטים) if the Sassoon 1053 entry is retained and counted; removing it leaves 171.",
+    "panels": [
+      {
+        "label": "Introduction — Judges heading",
+        "claim": "ch5:L696",
+        "quote": "(24 פריטים)",
+        "translation": "(24 items.)"
+      },
+      {
+        "label": "Introduction — the one Judges word with two vowels",
+        "claim": "ch5:L696",
+        "quote": "הַֽמֲלַֽקֲקִים֙",
+        "kind": "scripture",
+        "translation": ""
+      },
+      {
+        "label": "Introduction — Chronicles heading",
+        "claim": "ch5:L730",
+        "quote": "(61 פריטים)",
+        "translation": "(61 items.)"
+      },
+      {
+        "label": "Introduction — Psalms heading",
+        "claim": "ch5:L710",
+        "quote": "(171 פריטים)",
+        "translation": "(171 items.)"
+      }
+    ],
+    "reading_forms": [],
+    "prose_quotes": [
+      "(23 פריטים)",
+      "(63 פריטים)",
+      "(172 פריטים)"
+    ]
+  },
+  {
+    "id": "ALL-HATAF-DIVINE-FUNCTION",
+    "covers": [
+      "ALL-HATAF-DIVINE-FUNCTION"
+    ],
+    "section": "scope",
+    "title": "Divine-name pointing: יֱהֹוִה and שֱׁיְהֹוָ֥ה",
+    "issue": "The divine-name ḥataf vowels serve the qere pointing, rather than the list’s optional vocal-sheva purpose.",
+    "context": "Chapter 2 explains the yod ḥataf segol in יֱהֹ־וִה as a cue to read אֱ־לֹהִים. Psalm 144:15 has Aleppo שֱׁיְהֹוָ֥ה and Leningrad שֶׁיֲהֹוָ֥ה.",
+    "explanation": "In the Aleppo Psalm form, shin has reduced segol in place of the prefix’s ordinary segol; yod has sheva. In Leningrad, shin has segol and yod has ḥataf pataḥ in the divine name. Neither is an optional ordinary-sheva list example.",
+    "decision": "Exclude these forms from the vocal-sheva list, retaining the actual Aleppo and Leningrad pointing separately.",
+    "panels": [
+      {
+        "label": "Introduction, chapter2 — purpose of divine-name ḥataf segol",
+        "claim": "ch2:L161",
+        "quote": "נהוג בכמעט כל הדפוסים לנקד \"יֱהֹ־וִה\" בחטף סגול, וניקוד זה הוא כמובן יעיל כדי להדגיש לקורא המצוי שיש לבטא כאן חטף־סגול ולקרוא \"אֱ־לֹהִים\".",
+        "translation": "Almost all printed editions point יֱהֹ־וִה with ḥataf segol. This pointing helps the reader recognize that ḥataf segol should be pronounced here and read אֱ־לֹהִים."
+      },
+      {
+        "label": "Doc-note, Psalms 144:15",
+        "note": "Psalms 144:15/2/0",
+        "quote": "=א,ש1 (חטף סגול באות שי\"ן ושווא באות יו\"ד) וכן אצל ברויאר ומג\"ה ומכון ממרא\nל!=שֶׁיֲהֹוָ֥ה (סגול באות שי\"ן וחטף פתח באות יו\"ד)",
+        "translation": "MAM agrees with Aleppo and Sassoon 1053 (ḥataf segol on shin and sheva on yod), as do Breuer, Miqraot Gedolot HaKeter and Mechon Mamre. Leningrad surprisingly equals שֶׁיֲהֹוָ֥ה (segol on shin and ḥataf pataḥ on yod)."
+      }
+    ],
+    "reading_forms": [
+      {
+        "label": "Aleppo form in MAM",
+        "source": "note-target",
+        "id": "Psalms 144:15/2/0",
+        "text": "שֱׁיְהֹוָ֥ה"
+      },
+      {
+        "label": "Leningrad form",
+        "note": "Psalms 144:15/2/0",
+        "text": "שֶׁיֲהֹוָ֥ה"
+      }
+    ]
+  },
+  {
+    "id": "ALL-HATAF-MORPHOLOGICAL-O",
+    "covers": [
+      "ALL-HATAF-MORPHOLOGICAL-O"
+    ],
+    "section": "scope",
+    "title": "Short-o vowels: רֳאִ֑י, שִׁבֳּלִים and לַקֳּטָה",
+    "issue": "Morphological ḥataf qamats represents a short-o vowel, rather than optional vocal sheva.",
+    "context": "Genesis 16:13 has both רֳאִ֑י and רֹאִֽי. The שִׁבֳּלִים forms have the corresponding ḥolam form שִׁבֹּ֜לֶת at Judges 12:6. Ruth’s לַקֳּטָה forms correspond to לִלְקֹט֙ at Ruth 2:8.",
+    "explanation": "These comparisons support the short-o classification in context. Chapter 2 expressly preserves morphological ḥataf qamats. Ezra 8:25’s note also expressly identifies the qoph vowel in וָאֶשְׁקֳלָ֣ה as the morphological ḥolam vowel preserved in the ketiv.",
+    "decision": "Exclude these short-o forms from the optional vocal-sheva list. The function labels distinguish the note’s explicit statements from contextual grammatical inference.",
+    "panels": [
+      {
+        "label": "Introduction, chapter2 — morphological exception",
+        "claim": "ch2:L276",
+        "quote": "יוצא מן הכלל חטף קמץ בכתר שתפקידו מורפולוגי, כגון חטף קמץ הבא להורות על תנועת \"o\" קצרה בדומה לקמץ קטן (חטוף)",
+        "translation": "An exception is morphological ḥataf qamats in Aleppo, such as ḥataf qamats indicating a short “o” vowel like qamats qatan."
+      },
+      {
+        "label": "Doc-note, Ezra 8:25",
+        "note": "Ezra 8:25/2/0",
+        "quote": "ל=יתיר ו'\nחטף קמץ באות קו\"ף כדי להורות על תנועת החולם המורפולוגית הנשמרת בכתיב. והשוו בפסוק הבא.",
+        "translation": "Leningrad: vav is added. The ḥataf qamats on qoph indicates the morphological ḥolam vowel preserved in the ketiv; compare the following verse."
+      }
+    ],
+    "reading_forms": [
+      {
+        "label": "Genesis 16:13 — ḥataf qamats",
+        "source": "verse-parts",
+        "text": "רֳאִ֑י",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/16/13/2/0",
+            "text": "רֳאִ֑י"
+          }
+        ]
+      },
+      {
+        "label": "Genesis 16:13 — ḥolam",
+        "source": "verse-parts",
+        "text": "רֹאִֽי",
+        "path": "MAM-parsed/plus/A1-Genesis.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/16/13/2/2",
+            "text": "רֹאִֽי"
+          }
+        ]
+      },
+      {
+        "label": "Judges 12:6 — ḥolam counterpart",
+        "source": "verse-parts",
+        "text": "שִׁבֹּ֜לֶת",
+        "path": "MAM-parsed/plus/B2-Judges.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/12/6/2/0",
+            "text": "שִׁבֹּ֜לֶת"
+          }
+        ]
+      },
+      {
+        "label": "Ruth 2:8 — ḥolam counterpart",
+        "source": "verse-parts",
+        "text": "לִלְקֹט֙",
+        "path": "MAM-parsed/plus/E2-Ruth.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/2/8/2/2",
+            "text": "לִלְקֹט֙"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ALL-HATAF-ARAMAIC-SEGOL",
+    "covers": [
+      "ALL-HATAF-ARAMAIC-SEGOL"
+    ],
+    "section": "scope",
+    "title": "Aramaic reduced segol: גֱּלִ֣י and related forms",
+    "issue": "Aramaic morphological ḥataf segol is a vowel-function exclusion from the optional vocal-sheva list.",
+    "context": "Daniel 2:30’s note expressly identifies the gimel ḥataf segol in גֱּלִ֣י as morphological segol.",
+    "explanation": "The other Aramaic examples are בֱנַיְתַהּ֙ at Daniel 4:27, וּמַדֱּקָ֔ה at 7:7, מְמַלֱּלָ֑ה at 7:11, and קֱרִ֖י / קֱרִ֧י at Ezra 4:18 and 4:23. These are intrinsic reduced vowels, rather than optional sheva marking.",
+    "decision": "Keep all six occurrences outside the vocal-sheva list, with their Hebrew forms and locations retained.",
+    "panels": [
+      {
+        "label": "Doc-note, Daniel 2:30",
+        "note": "Daniel 2:30/2/0",
+        "quote": "=ל,ב1,ש2; חטף סגול באות גימ\"ל כדי להורות על תנועת סגול מורפולוגית. והשוו בלעיל בפסוק י\"ט.",
+        "translation": "MAM agrees with Leningrad, British Library Or. 2375 and Sassoon 82. The ḥataf segol on gimel indicates a morphological segol vowel; compare verse19 above."
+      }
+    ],
+    "reading_forms": [
+      {
+        "label": "Daniel 2:30",
+        "source": "note-target",
+        "id": "Daniel 2:30/2/0",
+        "text": "גֱּלִ֣י"
+      },
+      {
+        "label": "Daniel 4:27",
+        "source": "verse-parts",
+        "text": "בֱנַיְתַהּ֙",
+        "path": "MAM-parsed/plus/F1-Daniel.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/4/27/2/0",
+            "text": "בֱנַיְתַהּ֙"
+          }
+        ]
+      },
+      {
+        "label": "Daniel 7:7",
+        "source": "verse-parts",
+        "text": "וּמַדֱּקָ֔ה",
+        "path": "MAM-parsed/plus/F1-Daniel.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/7/7/2/4",
+            "text": "וּמַדֱּקָ֔ה"
+          }
+        ]
+      },
+      {
+        "label": "Daniel 7:11",
+        "source": "verse-parts",
+        "text": "מְמַלֱּלָ֑ה",
+        "path": "MAM-parsed/plus/F1-Daniel.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/7/11/2/0",
+            "text": "מְמַלֱּלָ֑ה"
+          }
+        ]
+      },
+      {
+        "label": "Ezra 4:18",
+        "source": "verse-parts",
+        "text": "קֱרִ֖י",
+        "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/4/18/2/0",
+            "text": "קֱרִ֖י"
+          }
+        ]
+      },
+      {
+        "label": "Ezra 4:23",
+        "source": "verse-parts",
+        "text": "קֱרִ֧י",
+        "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/4/23/2/2",
+            "text": "קֱרִ֧י"
+          }
+        ]
+      }
+    ]
   }
 ]

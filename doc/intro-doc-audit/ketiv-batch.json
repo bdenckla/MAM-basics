@@ -1,15 +1,91 @@
 {
-  "population":"Every chapter 5 source line containing א-כתיב; includes one aggregate roster, not 69 independent claims",
-  "reviewed":69,
+  "population": "Every chapter 5 source line containing א-כתיב; includes one aggregate roster, not 69 independent claims",
+  "reviewed": 69,
   "dispositions": {
-    "already-tracked":[430,495,492,493],
-    "new-supported-attributed-form-disagreement":[458],
-    "scope-ambiguity":[385],
-    "wrong-locator-intended-verse-verified":[431,561],
-    "attribution-or-full-form-incomplete":[379,429],
-    "prose-corroborated-full-ketiv-unverified":[412,428],
-    "agreement-or-representation-only":[326,366,367,369,370,371,372,373,374,375,376,377,378,380,381,382,383,384,386,387,418,419,420,421,422,423,424,425,426,427,453,454,455,456,457,460,461,490,491,494,496,497,514,555,556,557,558,559,560,618,619,620,621,622,644,668,708]
+    "already-tracked": [
+      430,
+      495,
+      492,
+      493
+    ],
+    "new-supported-attributed-form-disagreement": [
+      458
+    ],
+    "scope-ambiguity": [
+      385
+    ],
+    "wrong-locator-intended-verse-verified": [
+      431,
+      561
+    ],
+    "attribution-or-full-form-incomplete": [
+      379,
+      429
+    ],
+    "prose-corroborated-full-ketiv-unverified": [
+      412,
+      428
+    ],
+    "agreement-or-representation-only": [
+      326,
+      366,
+      367,
+      369,
+      370,
+      371,
+      372,
+      373,
+      374,
+      375,
+      376,
+      377,
+      378,
+      380,
+      381,
+      382,
+      383,
+      384,
+      386,
+      387,
+      418,
+      419,
+      420,
+      421,
+      422,
+      423,
+      424,
+      425,
+      426,
+      427,
+      453,
+      454,
+      455,
+      456,
+      457,
+      460,
+      461,
+      490,
+      491,
+      494,
+      496,
+      497,
+      514,
+      555,
+      556,
+      557,
+      558,
+      559,
+      560,
+      618,
+      619,
+      620,
+      621,
+      622,
+      644,
+      668,
+      708
+    ]
   },
-  "method":"Read-only semantic pass using the current parsed note inventory and sigil rendering, followed by primary-agent checks of meaningful findings. Repeated forms, surrounding maqafs, ZWNJ, masorah-circle decoration, mark order, and qere/ketiv roles were distinguished. Source agreement does not establish a manuscript reading.",
-  "limits":"Line 708's 25-entry roster also has displayed note corroboration. No manuscript scan or source-book reading was added. The 69-line denominator does not cover all chapter 5 statements."
+  "method": "Read-only semantic pass using the current parsed note inventory and sigil rendering, followed by primary-agent checks of meaningful findings. Repeated forms, surrounding maqafs, ZWNJ, masorah-circle decoration, mark order, and qere/ketiv roles were distinguished. Source agreement does not establish a manuscript reading.",
+  "limits": "Line 708's 25-entry list also has displayed note corroboration. No manuscript scan or source-book reading was added. The 69-line denominator does not cover all chapter 5 statements."
 }

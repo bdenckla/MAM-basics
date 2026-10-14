@@ -4,8 +4,9 @@ Open [review.html](review.html) for the readable comparisons. This appendix reta
 the technical inventory, source versions, coverage limits and supporting evidence.
 
 The presentation is maintained in [human-review.json](human-review.json).
-It contains 141 concrete comparisons: 89 discrepancies, 48 interpretation or source
-questions, and four verse comparisons for the three tracked issues. These are
+It contains 152 concrete comparisons: 90 discrepancies, 55 interpretation or source
+questions, three resolved vowel-function comparisons, and four verse comparisons
+for the three tracked issues. These are
 presentation entries, not 137 independent manuscript findings. Paired verses and
 grouped note wording were separated where the reader needs a distinct decision;
 duplicate reference results were merged.
@@ -16,8 +17,8 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 616 source passages against literal stored strings,
-including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
+The renderer validates 661 source passages against literal stored strings,
+including the ketiv/qere pairs in the complete chapter 2/appendix comparison and the new source/function examples.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
 displayed as current MAM text, not as invented doc-notes. Link syntax and formatting
@@ -43,7 +44,7 @@ punctuation in both before/after comparisons. Ben subsequently adjudicated
 [Deuteronomy 6:21](deuteronomy-6-21-adjudication.md): remove only bare ל from the
 opening list, retaining ל1. The original complete note and translation stay visible;
 the manuscript assessment is Ben’s and damage/erasure causes remain uncertain.
-The renderer checks six proposed
+The renderer checks eight proposed
 quotations against their declared edits, separately from source-passage validation.
 The three contextual facts, local screenshot observations and bounded restoration
 history are retained with attribution. The copying theory remains a hypothesis;
@@ -60,7 +61,7 @@ separately, retaining its original mark order.
 Dedicated word comparisons and proposed before/after quotations are stacked
 vertically, following Ben’s 2026-10-14 Hebrew-prose guidance.
 
-Ben selects **12 words** as the Deuteronomy roster’s item count. The report shows
+Ben selects **12 words** as the Deuteronomy list’s item count. The report shows
 all twelve Introduction/doc-note word pairs and the exact proposed heading.
 [deuter-hataf-scope.md](deuter-hataf-scope.md) and
 [deuter-hataf-scope.json](deuter-hataf-scope.json) account for 955/955 verses,
@@ -74,7 +75,7 @@ words are recorded. Reproduce this finite check with
 [Lamentations 1:6](lamentations-1-6-proposal.md) now has the exact before/after
 sentence and the actual MAM ketiv/qere words. Its source-based proposal preserves
 the Introduction’s assignments and corrects only its one/two counts. This is
-independently verified, separately from the five user-adjudicated comparisons.
+independently verified, separately from the seven user-adjudicated comparisons.
 [report-prose-revision.json](report-prose-revision.json) records the authored
 classifier and transliteration corrections. Existing report-scoped plural and
 transliteration lint rules were applied, supplemented by a manual ḥataf/ḥet scan;
@@ -82,7 +83,7 @@ source quotations, adaptations, identifiers, paths and official Unicode names
 retain their wording. Superfluous “parsed” and “displayed” qualifiers were removed
 where they did not establish a distinction; link-label/target distinctions remain.
 
-The 2026-10-14 all-book extension has saved five independently verified roster
+The 2026-10-14 all-book extension has saved five independently verified list
 omissions at Genesis 30:27, Numbers 10:9, 2 Samuel 8:10, Proverbs 30:17 and Song of
 Songs 1:6 in [all-books-hataf-findings.json](all-books-hataf-findings.json). The
 Proverbs question is now a verified discrepancy; the four other verse cases are
@@ -90,9 +91,16 @@ new reader entries. [all-books-hataf-census.json](all-books-hataf-census.json) c
 39/39 books, 23,202/23,202 verses, 3,905/3,905 canonical doc-notes and all ketiv/qere
 parameters. Its selected-body count agrees independently with MAM-simple and the
 checker’s separate enumeration: 536 literal non-guttural vowel occurrences.
-The complete contextual candidate dispositions are being recorded separately;
-the census alone is not a consistency verdict. Reproduce the enumeration with
-`py/main_intro_doc_audit.py all-books-hataf`.
+The [all-book findings and evidence](all-books-hataf.md) retain all candidate
+dispositions, source/function controls, word-count distinctions and the nine
+reading/function/source-object uncertainties. The census alone is not a consistency
+verdict. Reproduce enumeration and assessment with `py/main_intro_doc_audit.py
+all-books-hataf` and `py/main_intro_doc_audit.py all-books-hataf-review`.
+Ben approves the Song of Songs 1:6 and 2 Samuel 8:10 additions for proposal to Avi;
+the seven-word Song heading, 31-word Samuel heading, exact insertions and approvals
+are in adjudications.json. No proposal
+has been submitted or applied. The report’s individual findings state substantive
+source/word/vowel evidence; specific validation procedures are retained here.
 
 Regenerate the readable review and its presentation coverage record with
 `py/main_intro_doc_audit.py review`, using the interpreter and low-priority workflow
@@ -467,3 +475,16 @@ Every research subcommand now lowers its process priority. The final batch used
 small sequential reads and research-only checks; no nightly or production gate
 was added. No external issue/comment, merge, deployment or manuscript interpretation
 change was made.
+
+The reader typography follows the shared document.css default-serif and
+`color-scheme: light dark` / `light-dark()` pattern. The Hebrew font and captured
+strings remain unchanged. Local Times New Roman regular and bold both contain
+U+1E25; bounded light/dark Edge previews show consistent ḥ rendering, readable
+30px Hebrew, and vertically stacked forms. The slider retains20–48px/default30.
+The report still has exactly three hard-coded open defaults: Jeremiah31:37,
+Numbers9:7 and the different-qere-count case. They are presentation defaults,
+with no documented selection rationale and no approval/progress meaning. The
+report has no open/closed persistence code; only the font slider is scripted.
+In the isolated local headless Edge reload check, Jeremiah was closed and the
+Song 1:6 case opened; reloading restored exactly the three hard-coded defaults.
+This verifies that browser run, not the behavior of Ben’s interactive app panel.

@@ -1,9 +1,9 @@
-# Deuteronomy: 12 roster words and complete cached scope check
+# Deuteronomy: 12 list words and complete cached scope check
 
 Ben selects **words** as the item unit (2026-10-14,
 `Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be`). The current heading is
 `(9 פריטים)`; the proposed heading is `(12 פריטים)`. This proposal is unapplied.
-The roster has 11 verse entries and 12 words: both words at 32:10 count;
+The list has 11 verse entries and 12 words: both words at 32:10 count;
 the unmarked prefix attached by maqaf at 32:36 does not add an item.
 
 All **955/955 canonical verses**, **365/365 doc-notes**, and **7/7 ketiv/qere
@@ -50,13 +50,13 @@ uncertain candidate.
 
 * **Deuteronomy 3:22:** uncertain Leningrad תְִּירָא֑וּם has sheva plus ḥiriq on
   tav. The raw and parsed note expressly allow the blurred sign to be gaʿya
-  instead. Dotan and Breuer print ḥiriq and gaʿya without comment. The roster
+  instead. Dotan and Breuer print ḥiriq and gaʿya without comment. The list
   omits this candidate. `ל?!=` means uncertain Leningrad **surprisingly equals**
   the quoted form. Treat this as **one uncertain possible omission**, not a
   confirmed thirteenth item or a confirmed manuscript contradiction.
 * **Deuteronomy 32:6:** לְיֲהוָה֙ has ḥataf on non-guttural yod, but the note
   assigns that form to Firkovich B17 (`ל1`). Leningrad’s הֲ־לַיְהוָה֙ puts the
-  vowel on guttural he. This does not add an Aleppo/Leningrad roster word.
+  vowel on guttural he. This does not add an Aleppo/Leningrad list word.
 * **Deuteronomy 32:13:** the Aleppo quotation בָּ֣מֳותֵי and MAM qere בָּ֣מֳתֵי
   retain ḥataf qamats. Their treatment falls under the morphological exception,
   rather than optional vocal-sheva replacement. This is a contextual classification
@@ -69,8 +69,8 @@ uncertain candidate.
 * 32:13: בָּ֣מֳתֵי, retained morphological ḥataf qamats in the qere.
 
 These are concrete excluded occurrences, rather than evidence that only four
-manuscript roster words exist. The edition replaces the roster vowels with sheva.
-It has varika in **9/12** roster words. At 15:22 it has תֹּאכְלֶ֑נּוּ; at 32:10 it
+manuscript list words exist. The edition replaces the list vowels with sheva.
+It has varika in **9/12** list words. At 15:22 it has תֹּאכְלֶ֑נּוּ; at 32:10 it
 has יְסֹבְבֶ֙נְהוּ֙ and יְב֣וֹנְנֵ֔הוּ, each with plain sheva and no varika. The
 faithful raw targets agree with both edition projections on those three words.
 This documents the marker difference from the stated policy; it does not propose
@@ -81,7 +81,7 @@ an edition change or alter the word count.
 Run `python py/main_intro_doc_audit.py deuter-hataf-scope` from the worktree root.
 The entry point lowers process priority and reads this one book sequentially.
 [deuter-hataf-scope.json](deuter-hataf-scope.json) retains all candidates, exact
-roster bindings, raw-note proofs, source pointers, chapter revisions, edition
+list bindings, raw-note proofs, source pointers, chapter revisions, edition
 occurrences, ketiv/qere template inventory, and the uncertainty queue. Its inputs
 are byte-checked against source commit `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
 Introduction chapter 3 is revision **3087744**; chapter 2 is **3087893**.

@@ -1,10 +1,11 @@
 {
   "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
   "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
-  "readable_cases": 141,
+  "readable_cases": 152,
   "sections": {
-    "discrepancies": 89,
-    "questions": 48,
+    "discrepancies": 90,
+    "questions": 55,
+    "scope": 3,
     "tracked": 4
   },
   "prior_findings_questions_and_tracked": {
@@ -24,9 +25,9 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 616,
-  "proposed_quotations_checked": 6,
-  "user_adjudicated_comparisons": 5,
+  "literal_passages_checked": 661,
+  "proposed_quotations_checked": 8,
+  "user_adjudicated_comparisons": 7,
   "comparison_mapping": {
     "NEXT-CATALOGUE": [
       "different-qere-count"
@@ -405,6 +406,39 @@
     ],
     "fragment:data-sheet-guide:L59": [
       "NAV-SECTION-TEMPLATES"
+    ],
+    "ALL-HATAF-SAM-24-16": [
+      "ALL-HATAF-SAM-24-16"
+    ],
+    "ALL-HATAF-SAM-24-18": [
+      "ALL-HATAF-SAM-24-18"
+    ],
+    "ALL-HATAF-JER-48-32": [
+      "ALL-HATAF-JER-48-32"
+    ],
+    "ALL-HATAF-DAN-12-2": [
+      "ALL-HATAF-DAN-12-2"
+    ],
+    "ALL-HATAF-NEH-6-19": [
+      "ALL-HATAF-NEH-6-19"
+    ],
+    "ALL-HATAF-SAM-6-5": [
+      "ALL-HATAF-SAM-6-5"
+    ],
+    "ALL-HATAF-PS-17-14-SOURCE": [
+      "ALL-HATAF-PS-17-14-SOURCE"
+    ],
+    "ALL-HATAF-LIST-COUNTS": [
+      "ALL-HATAF-LIST-COUNTS"
+    ],
+    "ALL-HATAF-DIVINE-FUNCTION": [
+      "ALL-HATAF-DIVINE-FUNCTION"
+    ],
+    "ALL-HATAF-MORPHOLOGICAL-O": [
+      "ALL-HATAF-MORPHOLOGICAL-O"
+    ],
+    "ALL-HATAF-ARAMAIC-SEGOL": [
+      "ALL-HATAF-ARAMAIC-SEGOL"
     ]
   },
   "methods_only_or_resolved": {

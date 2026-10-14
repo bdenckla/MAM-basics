@@ -765,7 +765,7 @@
           }
         }
       },
-      "note_copies": 0
+      "note_copies": 1
     },
     {
       "book": "Malachi",
@@ -789,7 +789,7 @@
           }
         }
       },
-      "note_copies": 0
+      "note_copies": 1
     },
     {
       "book": "Lamentations",
@@ -813,7 +813,7 @@
           }
         }
       },
-      "note_copies": 0
+      "note_copies": 1
     },
     {
       "book": "Ecclesiastes",
@@ -837,7 +837,7 @@
           }
         }
       },
-      "note_copies": 0
+      "note_copies": 1
     }
   ],
   "independent_body_check": "Literal non-guttural vowel membership and every book’s verse count agree with MAM-simple",

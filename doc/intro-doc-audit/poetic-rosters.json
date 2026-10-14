@@ -1,5 +1,5 @@
 {
-  "method": "Ordered AST links for explicit rosters; chapter/verse numeral spans plus reviewed book heading for implicit rosters. Annotation links excluded from main populations. Complete EP retained and current closed EP projection used; no note-body descent. Exact note nodes and full source text remain in notes.json and claims.json. Form presence is routing only; semantic dispositions are reviewer assessments.",
+  "method": "Ordered AST links for explicit lists; chapter/verse numeral spans plus reviewed book heading for implicit lists. Annotation links excluded from main populations. Complete EP retained and current closed EP projection used; no note-body descent. Exact note nodes and full source text remain in notes.json and claims.json. Form presence is routing only; semantic dispositions are reviewer assessments.",
   "limits": "All 385 items received complete-note and complete-EP review. Current-feature support is not manuscript attribution. Absence of a pertinent note is not a contradiction. Paired GERESH MUQDAM U+059D / REVIA U+0597 on the same Unicode letter is a parsed representation result, not manuscript placement. Physical readings, broad completeness and unreported correction histories remain unverified.",
   "reviewed": 385,
   "total": 385,
