@@ -652,19 +652,6 @@ def main():
         "incremental_cached_pass": incremental_counts,
     }
     audit.dump("review-counts.json", counts)
-    style = """@font-face{font-family:Taamey;src:url(../woff2/Taamey_D.woff2)}
-:root{--he-size:30px;color-scheme:light}body{font:17px/1.6 Georgia,serif;color:#253442;background:#f7f7f3;margin:0}main{max-width:1180px;margin:auto;padding:28px}h1,h2,h3,summary,th,.meta,.status,label{font-family:system-ui,sans-serif}h1{font-size:28px}h2{font-size:23px;margin-top:40px}h3{font-size:19px}article{background:white;border:1px solid #dbe0db;border-radius:8px;padding:20px;margin:18px 0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.latin{font:16px/1.6 Georgia,serif;direction:ltr}.scroll{overflow-x:auto}table{border-collapse:collapse;max-width:100%;background:white}th,td{text-align:left;padding:10px 14px;border-bottom:1px solid #dde3df;vertical-align:top}.comparison td{max-width:430px}.bcv{white-space:nowrap;vertical-align:middle;font:14px/1.5 system-ui,sans-serif}.meta,small{font-size:13px;color:#526359}.status{font-size:13px;color:#49624c}a{color:#215b86}details{margin-top:12px}summary{cursor:pointer;color:#3f5545}.note-target{border-bottom:1px dashed #a1afa5;padding-bottom:8px;margin-bottom:8px}.raw{background:#f7f8f5;padding:16px}input{vertical-align:middle}hr{border:0;border-top:1px solid #dde3df}"""
-    spelling_reviewed = sum(
-        b["reviewed"] for b in other_batches if "spelling" in b.get("batch", "")
-    )
-    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source <code>{chapters[:12]}</code>. {len(topics)}/340 topic spans; {counts['explicit_reference_units_assessed']:,}/{summary['explicit_reference_units']:,} verse-linked units assessed; 667/667 hataf, 98/98 meteg and 385/385 poetic roster items. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. The incremental pass adds bounded local clarifications below. General rules, physical readings, historical evidence and whole-corpus completeness retain their explicit limits.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
-    output = (
-        '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cached Introduction audit</title><style>'
-        + style
-        + "</style></head><body><main>"
-        + intro
-        + "".join(sections)
-        + """</main><script>const slider=document.getElementById('size');slider.addEventListener('input',()=>{document.documentElement.style.setProperty('--he-size',slider.value+'px');document.getElementById('value').textContent=slider.value});</script></body></html>"""
-    )
-    (audit.OUT / "review.html").write_text(output, encoding="utf-8", newline="\n")
-    print(json.dumps(counts, indent=2))
+    from intro_doc_audit import human_review
+
+    human_review.main()
