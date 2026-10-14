@@ -22,7 +22,7 @@ makes a blanket guess that this module corrects before the grammar sees the toke
    scanner reads a conjunctive merkha and misses the divider.  ``poetic_scanner``
    already recovers the cases its galgal-servus heuristic can see; the rest are
    recovered here by *charitable parsing*: if a verse does not parse, but reinterpreting
-   exactly one of its merkhas as an (unmarked) yored makes it parse, adopt that reading.
+   exactly one of its merkha accents as an (unmarked) yored makes it parse, adopt that reading.
    This consults no oracle -- only the grammar -- and touches only verses that would
    otherwise be NO_PARSE, so it can never change a verse that already parses.
 
@@ -111,7 +111,7 @@ def _demote_mam_paseq(
 
 
 def _legarmeh_positions_to_demote(wlc_disj: list[str], mam_disj: list[str]) -> set[int]:
-    """Indices (into ``wlc_disj``) of WLC legarmehs not matched to a MAM legarmeh."""
+    """Indices (into ``wlc_disj``) of WLC legarmeh accents not matched to a MAM legarmeh."""
     matcher = difflib.SequenceMatcher(a=wlc_disj, b=mam_disj, autojunk=False)
     demote: set[int] = set()
     for tag, i1, i2, _j1, _j2 in matcher.get_opcodes():

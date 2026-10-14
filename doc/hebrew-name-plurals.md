@@ -43,11 +43,15 @@ Names with an intrinsic ending, such as `gershayim`, `qamats`, or `qubuts`, are 
 the check detects an appended ending, not any word ending in those letters.
 
 The lint checks visible prose and `alt`, `title`, `aria-label` and `aria-description` text.
-It excludes code/preformatted examples, scripts/styles, Hebrew and phonetic transcription
-content tagged `lang="hbo..."`, and quotation elements (`q` and `blockquote`). English
+It excludes code/preformatted examples, scripts/styles, content tagged `lang="hbo..."`, and
+quotation elements (`q` and `blockquote`). English
 prose attributes remain checked even on a Hebrew element. IDs, classes, URLs and data
 attributes are outside the prose scan; standalone path/identifier forms are also ignored.
 The whole `gh-pages/yeivin-itm/` directory and `gh-pages/yeivin_itm.html` are exempt.
+Phonetic MAM's chapter pages under `gh-pages/phonetic-mam/tnkh/` are exempt too: their only
+English is navigation and the pronunciation controls, and their transcriptions carry no `lang`
+attribute. Phonetic MAM's testsuite pages stay checked for their authored notes, although their
+transcriptions are untagged too.
 `_PAGE_TERM_EXCEPTIONS` permits only `aliyot` (case-insensitively) in
 `gh-pages/MAM-with-doc/misc/notes_on_aliyot.html`. Other unwanted plurals on that page still
 fail, and `aliyot` still fails on other pages. The source uses an explicit technical
@@ -165,25 +169,10 @@ Intentional remaining plural-name matches:
 | `gh-pages/yeivin-itm/yeivin_itm-376_393.html` / adaptation sources | ḥillufim | 1 | Entire adaptation exempt |
 | `gh-pages/MAM-with-doc/misc/notes_on_aliyot.html` / explicit technical substitutions and original title | aliyot / Aliyot | 15 | Ben's technical-page exception; original prose preserved |
 
-Other raw candidate matches are syllables in the unchanged `gh-pages/phonetic-mam/tnkh/`
-transcription data, not plural names. Their term counts are below (Latin diacritics retained as
-found; fragments can coincide with a name plus an ending):
-
-| Raw fragment | Occurrences in `gh-pages/phonetic-mam/tnkh/` |
-| --- | ---: |
-| ḥés | 52 |
-| ḥets | 44 |
-| béts | 20 |
-| pés | 16 |
-| ḥéts | 6 |
-| ḥes | 5 |
-| mémim | 4 |
-| bets | 4 |
-| nunim | 3 |
-| vaus | 2 |
-| pes | 1 |
-| ḥetim | 1 |
-| téts | 1 |
+The audit's text extraction also found candidate matches in the unchanged Phonetic MAM
+transcriptions under `gh-pages/phonetic-mam/tnkh/`: transcription syllables, and strings that
+run the end of a Sephardic transcription into the start of the Ashkenazic one beside it. None
+is a plural name, and the lint now exempts those pages, as “Regular lint” describes.
 
 Ordinary English plurals and literal Unicode-name strings also remain unchanged. These
 distinctions are why a blanket text replacement is inappropriate. No remaining authored prose

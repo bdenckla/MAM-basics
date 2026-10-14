@@ -40,7 +40,7 @@ record, and the two classes must partition the MAS population. All MAS records e
 MAS record excluded from its "Has MAS" count, using disjoint reasons whose total reconciles with
 the complete MAS population.
 
-The survey also derives the MAS chanted words that have two distinct metegs: an MBS before the
+The survey also derives the MAS chanted words that have two distinct meteg marks: an MBS before the
 primary stress and a MAS immediately after it. The MBS_O census category counts chanted words
 with one or more MBS marks and no MAS, while the MAS category counts chanted words with a MAS
 regardless of whether a chanted word also has an MBS. A chanted word in the derived MBS-and-MAS
@@ -163,19 +163,19 @@ else. Nine removed the chanted word's one meteg before the stress, and two added
 At 2 Chronicles 26:15 the chanted word still has its silluq. The eleven account for every survey
 figure that moved except the two in item 6:
 
-1. Prose metegs before the stressed syllable went from 12,962 to 12,955: nine fewer and two
+1. Prose meteg marks before the stressed syllable went from 12,962 to 12,955: nine fewer and two
    more. The dual-cantillation section's whole-census counts, which total both verse systems
    for each strand, moved by the same seven, from 14,767 to 14,760 for cant-alef and from
    14,768 to 14,761 for cant-bet.
 2. Prose MBS_O chanted words went from 12,849 to 12,842. None of the eleven chanted words has a
    meteg after the stress, so the nine left MBS_O and the two joined it.
-3. Prose metegs sharing a letter with a non-stress-marking accent went from 27 to 28, and the
+3. Prose meteg marks sharing a letter with a non-stress-marking accent went from 27 to 28, and the
    JSON's diagnostics list of them gained Isaiah 24:18's record. The meteg added there is on
    the vav that has the telisha gedolah, whose place on the first letter does not mark the
    stress. As "Primary stress and accent parsing" below says, such a meteg is classified by its
-   syllable, so it is counted among the metegs before the stress as well as here.
+   syllable, so it is counted among the meteg marks before the stress as well as here.
 4. The comparison with the 2026-09-03 census moved with items 1 and 3. The prose difference in
-   metegs before the stressed syllable went from −169 to −176, and a prose row for metegs
+   meteg marks before the stressed syllable went from −169 to −176, and a prose row for meteg marks
    sharing a letter, 27 in the census against 28 measured, appeared, since the comparison lists
    only the categories that differ.
 5. `currency` went from 38,161 U+05BD in the snapshot against 38,170 in MAM-simple to 38,154

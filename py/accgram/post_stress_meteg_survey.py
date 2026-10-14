@@ -406,7 +406,7 @@ def _problems(found: dict) -> list[str]:
     if found["same_letter_failures"]:
         refs = [one["bcv"] for one in found["same_letter_failures"][:20]]
         out.append(
-            f"{len(found['same_letter_failures'])} metegs share a letter with a"
+            f"{len(found['same_letter_failures'])} meteg marks share a letter with a"
             f" accent on the stress letter, whose order is undefined: {refs}"
         )
     if found["mismatches"]:

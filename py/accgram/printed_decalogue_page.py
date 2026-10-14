@@ -1434,16 +1434,16 @@ def _chabad_aside() -> tuple[object, ...]:
         # page or its satellites rests on it. Say the division in CHANTED VERSES only -- an earlier
         # draft called it "the ordinary numbered-verse division", which is both off-subject (these
         # pages are about chanted verse structure, never numbering) and wrong (Ex 20:13 holds four
-        # sof pasuqs, which is where three of the sixteen come from).
+        # sof pasuq marks, which is where three of the sixteen come from).
         #
         # And do NOT call CTR's sixteen spans chanted verses (Ben, 2026-07-24).  A chanted verse
         # needs a SILLUQ, and seven of the sixteen have none, so they are SOF PASUQ SPANS -- a
         # span that, in Ben's words, "doesn't even seem to be trying to obey the rules of
         # cantillation".  The draft this replaced said "the word-accents are the elyon's, but the
         # chanted verse division belongs to neither strand", which invites the objection that
-        # sinks it: silluq IS a word-accent, so a real re-division would have MOVED the silluqs
+        # sinks it: silluq IS a word-accent, so a real re-division would have MOVED the silluq marks
         # and the two halves could not come apart.  They come apart here only because CTR moved
-        # nothing.  Its sixteen sof pasuqs are the exact UNION of the two strands' boundaries
+        # nothing.  Its sixteen sof pasuq marks are the exact UNION of the two strands' boundaries
         # (elyon 9 + taxton 13, sharing 6), laid over an untouched elyon accent stream: at the 9
         # elyon boundaries CTR has the elyon's silluq, and at the 7 taxton-only ones it has no
         # silluq at all -- the mark stands after the elyon's own mid-verse disjunctive (revia x3,

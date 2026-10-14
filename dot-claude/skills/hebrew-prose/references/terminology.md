@@ -5,7 +5,7 @@ and which known holdouts are deliberate.
 
 ## Atom vs chanted word (wlc-utils#81)
 
-- **Atom** — one written word, between spaces or maqafs; the thing a maqaf joins to the next.
+- **Atom** — one written word, between spaces or maqaf marks; the thing a maqaf joins to the next.
 - **Chanted word** — a lone atom *or* a whole maqaf compound. The unit cantillation operates on,
   normally with one accent. A maqaf compound is ONE chanted word, not two words joined.
 
@@ -86,7 +86,7 @@ Every chanted atom's marking sits on ONE scale of separating force: disjunctives
   read "differ only at the maqaf."
 
 Verdicts became a ladder — chanted verse boundaries → disjunctive skeleton → conjunctives →
-maqafs — each cell naming the first rung that breaks. The reader-facing statement is the verbatim
+maqaf marks — each cell naming the first rung that breaks. The reader-facing statement is the verbatim
 `printed_decalogue_strands.MAQAF_IS_THE_LAST_RUNG`: **splice that constant, do not paraphrase
 it.** Its guardrail comment records the replaced convention so it does not get reinstated.
 

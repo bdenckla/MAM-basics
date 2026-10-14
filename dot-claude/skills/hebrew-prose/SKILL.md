@@ -10,7 +10,7 @@ the repository-specific reference before writing. Load only the references neede
 
 ## Checklist that applies to every accentuation task
 
-1. **Name the unit.** An **atom** is one written form between spaces or maqafs. A **chanted
+1. **Name the unit.** An **atom** is one written form between spaces or maqaf marks. A **chanted
    word** is one atom or a whole maqaf compound, the unit on which cantillation operates. Do
    not leave a loose "word" for the reader to resolve, and name a compound whole rather than
    naming a bare half.

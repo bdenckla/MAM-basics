@@ -47,7 +47,7 @@ Design (all four points verified against the data, see issue wlc-utils#36):
 
 MAM stress-helpers (the zarqa's, U+0598, and the doubled telisha / segol / pashta helpers)
 are never imposed on the WLC streams: ``_emit_word`` drops the zarqa helper and the second
-of any doubled accent.  MAM's metegs are likewise stripped from the emitted
+of any doubled accent.  MAM's meteg marks are likewise stripped from the emitted
 stream (``_strip_nonfinal_meteg``), keeping only the verse-final meteg the scanner reads
 as silluq -- the rest are swallowed by the scanner, so dropping them is parse-neutral.
 
@@ -81,7 +81,7 @@ _SRC_MAQAF = uni_to_marks.MAQAF  # the Unicode maqaf U+05BE in the source words
 
 # Characters of a strand word that survive into the emitted WLC-stream word: base
 # letters and the punctuation / final marks (the spine), plus meteg (kept here so the
-# scanner can recover a verse-final silluq from it; the non-final metegs are stripped
+# scanner can recover a verse-final silluq from it; the non-final meteg marks are stripped
 # afterwards by ``_strip_nonfinal_meteg``).  Accents are handled separately
 # (matched/substituted/supplied); points/dagesh/CGJ are dropped.
 _KEEP_NON_ACCENT = frozenset((_SRC_MAQAF, _SOF_PASUQ, _PASEQ, _METEG))
@@ -875,12 +875,12 @@ def _segment(vels: list[_Tok]) -> list[list[_Tok]]:
 
 
 def _strip_nonfinal_meteg(chanted_verse: list[_Tok]) -> list[_Tok]:
-    """Drop metegs from a chanted verse, keeping only the verse-final silluq.
+    """Drop meteg marks from a chanted verse, keeping only the verse-final silluq.
 
     The scanner swallows every meteg except the one adjacent to the sof pasuq, which it
     promotes to SILLUQ; that meteg lives in the chanted verse's last word (the word with
     the sof pasuq).  Stripping the others is therefore parse-neutral, and it keeps WLC's
-    emitted strand free of MAM's metegs -- marks that are not WLC's own here and bear
+    emitted strand free of MAM's meteg marks -- marks that are not WLC's own here and bear
     on no accent grammar (e.g. dt 5:8's elyon תעשה, where MAM's swallowed meteg would
     otherwise mask WLC's actual merkha)."""
     if len(chanted_verse) <= 1:

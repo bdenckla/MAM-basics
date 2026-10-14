@@ -86,7 +86,7 @@ GA/GV/GD contract. GD accommodates final-nun marks or the absent qere yod's
 cluster at the declared sites. The check inspects values without changing them. It does not
 judge vowel combinations, manuscript ownership or whole-atom grammar.
 
-The build preserves C and D columns, qeres, atom boundaries
+The build preserves C and D columns, qere forms, atom boundaries
 and edition punctuation except where a stated policy explicitly applies. It
 copies the original MAM target into every changed note, then adds evidence flags
 and gives those notes distinct near-Aleppo names. Its final phase stores the
@@ -126,7 +126,7 @@ vowel-raising context beside qof. The selected
 text gets `0.06em` extra letter spacing in the edition stylesheet. This is a
 conservative visual heuristic, not a collision detector or an exhaustive list
 of cramped atoms. The same rule reaches ketiv, qere and Hebrew examples in notes;
-spaces, maqafs, punctuation and source characters are preserved. Atoms divided
+spaces, maqaf marks, punctuation and source characters are preserved. Atoms divided
 by formatting spans can be missed or only partly expanded; single-letter text
 leaves are left alone. MAM-with-doc and Phonetic MAM have not opted in. The
 classifier and HTML helper can be reused without changing their datasets.
@@ -140,7 +140,7 @@ only; it never reorders the source or displayed text. Unsupported glyphs remain
 barriers. The first `kern2AddThin` context, with two below marks followed by three
 on a narrow letter, had no occurrence in the selected-Scripture investigation and
 remains inactive without a visual verdict. Orphan vowels are removed from the
-font's below-mark screen; unjudged final he, het or ayin shapes with patah are
+font's below-mark screen; unjudged final he, ḥet or ayin shapes with pataḥ are
 excluded from its fifth advance-adding context because the font can use a
 filtered-out furtive glyph there. The source archive is
 `in/font-support/taamey-d-0.921/Taamey_D-0.921-source-40115a364a4e.zip`, whose

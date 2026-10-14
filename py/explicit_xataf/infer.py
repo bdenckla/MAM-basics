@@ -73,7 +73,7 @@ def _infer_replacement_at(varika_word, varika_idx):
 def varika_positions(varika_word):
     """Return list of (consonant, varika_index) for each varika in the word.
 
-    Handles multiple varikas, e.g. Judges 7:7 הַֽמְﬞלַֽקְﬞקִים֙.
+    Handles multiple varika marks, e.g. Judges 7:7 הַֽמְﬞלַֽקְﬞקִים֙.
     """
     positions = []
     last_letter = None
@@ -91,7 +91,7 @@ def infer_replacement(varika_word):
     Returns the replacement string: a ḥataf vowel, or ḥiriq (for pseudo
     ḥataf-ḥiriq).  Returns None if the word has no varika.
 
-    For words with a single varika only. For multiple varikas, use
+    For words with a single varika only. For multiple varika marks, use
     varika_positions and apply the same inference logic per position.
     """
     positions = varika_positions(varika_word)
@@ -121,8 +121,8 @@ def is_inferrable(varika_word, xataf_word):
     """Return True if every inferred ḥataf vowel appears on the relevant
     consonant in the xataf word.
 
-    Checks all varikas in the word — e.g. Judges 7:7 הַֽמְﬞלַֽקְﬞקִים֙
-    has two varikas and both must be inferrable.
+    Checks all varika marks in the word — e.g. Judges 7:7 הַֽמְﬞלַֽקְﬞקִים֙
+    has two varika marks and both must be inferrable.
 
     The xataf word doesn't have to be the entire varika word with the
     shewa+varika replaced — it just has to contain each consonant that

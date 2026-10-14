@@ -64,7 +64,7 @@ English sentence with a Hebrew word.
 * **ONE scale, with maqaf at the bottom of it -- there is no second ledger for maqaf
   differences.**  A verdict measures how far down that scale a Decalogue's agreement with its
   Wikisource strand reaches: chanted verse boundaries, then the disjunctive skeleton, then the
-  conjunctives, then the maqafs.  A maqaf an edition adds or drops IS a difference in how the
+  conjunctives, then the maqaf marks.  A maqaf an edition adds or drops IS a difference in how the
   text is marked --
   the mildest one there is, since a maqaf separates its atom from the next even less than a
   conjunctive does -- and it is counted ONCE, at the atom whose marking changed, never as a
@@ -347,7 +347,7 @@ SHABBAT_SIGNAL_SHORTHAND = (
 
 # Where maqaf sits relative to the accents, and what the verdicts therefore measure, stated to
 # the reader verbatim on all three pages of the trio -- the hub where it first says two editions
-# put their maqafs differently, and each satellite where it introduces its own per-Decalogue
+# put their maqaf marks differently, and each satellite where it introduces its own per-Decalogue
 # verdict table.  Plain ``str``, not HTML: splice it into a contents tuple.
 #
 # WHY IT IS SAID AT ALL (2026-07-25 claim audit, finding 3).  The trio used "every accent" two

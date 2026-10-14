@@ -65,7 +65,7 @@ when a unit is too short for the intermediate one):
   legarmeh (#370)            -> (terminal lowest disjunctive)
 
 Token disambiguation that the scanner (accgram.poetic_scanner) performs and
-this grammar relies on: the three revias share signs but are distinct tokens here
+this grammar relies on: the three revia accents share signs but are distinct tokens here
 (REVIA_GADOL / REVIA_QATAN / REVIA_MUGRASH); the scanner separates them by the
 geresh muqdam (mugrash) and by position (qatan only before oleh-we-yored, a bare
 revia before silluq = mugrash without geresh, #391).

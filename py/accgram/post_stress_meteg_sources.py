@@ -224,7 +224,7 @@ def _settle(matches: list[str], snapshot: str) -> tuple[str | None, str]:
         return written, f"the one of {len(forms)} identical to the snapshot"
     agreeing = [one for one in forms if one.count(METEG) == snapshot.count(METEG)]
     if len(agreeing) == 1:
-        return agreeing[0], f"the one of {len(forms)} whose metegs agree"
+        return agreeing[0], f"the one of {len(forms)} whose meteg marks agree"
     return None, f"{len(forms)} candidates, none of them settled"
 
 

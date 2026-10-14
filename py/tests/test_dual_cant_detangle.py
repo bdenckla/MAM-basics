@@ -78,7 +78,7 @@ def test_gen3522_strands_are_pashut_and_midrashit_and_parse() -> None:
 
 
 def test_each_strand_has_one_chanted_verse_per_sof_pasuq() -> None:
-    """In all three passages, as many chanted verses as MAM's text of the strand has sof pasuqs."""
+    """In all three passages, as many chanted verses as MAM's text of the strand has sof pasuq marks."""
     mam = _mam_with_strands()
     for pr in _detangle():
         for tr in pr.strands:

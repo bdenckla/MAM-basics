@@ -7,7 +7,7 @@ marks are compared mechanically against the reference strands in
 to follow is the surprise this module finds:
 
 * CTR's **Exodus 20** has the ta'am **elyon** accents (not the taxton the running text was
-  expected to hold) under a punctuation that is NEITHER strand's: sixteen sof pasuqs, the exact
+  expected to hold) under a punctuation that is NEITHER strand's: sixteen sof pasuq marks, the exact
   UNION of the two strands' boundaries (the elyon's 9 and the taxton's 13, sharing 6).  Nothing
   was re-accented to fit them.  At the 9 elyon boundaries CTR has the elyon's silluq; at the 7
   taxton-only ones it has no silluq at all, the mark standing after the elyon's own mid-verse
@@ -26,7 +26,7 @@ finding.  ``sof_pasuq_spans`` is named for this, and ``span_silluq_status`` is w
 
 The claim the page makes needs that check to be REAL: "the accents are the elyon's, silluq
 included, but the punctuation is neither strand's" invites the objection that sinks a sloppier
-version of it -- silluq IS an accent, so a genuine re-division would have MOVED the silluqs and
+version of it -- silluq IS an accent, so a genuine re-division would have MOVED the silluq marks and
 the two halves could not come apart.  They come apart here only because CTR moved nothing.  Note
 that the glyph comparison below cannot see this on its own: ``word_glyphs`` drops U+05BD, so
 139/142 is silluq-BLIND and would agree just as happily if CTR had re-silluqed the seven.
@@ -35,7 +35,7 @@ STATE THE DIVISION IN CHANTED VERSES OR SPANS, NEVER IN NUMBERED ONES.  An earli
 two bullets above described the Exodus division as "the ordinary numbered-verse division -- a sof
 pasuq at every numbered verse".  That is both off-subject and false.  Off-subject because these
 pages and this comparison are about chanted verse structure only, numbering being a different
-concept (Ben, 2026-07-24).  False because Exodus 20:13 holds FOUR sof pasuqs, which is exactly
+concept (Ben, 2026-07-24).  False because Exodus 20:13 holds FOUR sof pasuq marks, which is exactly
 where three of the sixteen come from -- ``sof_pasuq_spans`` below says so, and the file
 contradicted itself for as long as both texts stood.  Issue wlc-utils#69's Result 11 carried the same
 phrasing and was corrected with this.
@@ -65,17 +65,17 @@ meteg, or a munax/merkha swap.  None touches a disjunctive.  The cross-strand re
 comparison against the OTHER tradition -- is where the evidence is: agreement collapses, which is
 what rules out the clean match being an artifact of the fold.
 
-ONE SCALE HERE TOO, AND THE MAQAFS AGREE (issue wlc-utils#76).  A maqaf sits at the bottom of the same
-scale as the accents rather than in a ledger of its own -- it has the weakest SEPARATING force
-there is, which is the opposite of being loose, since a maqaf binds its two atoms tightest.
+ONE SCALE HERE TOO, AND THE MAQAF MARKS AGREE (issue wlc-utils#76).  A maqaf sits at the bottom of
+the same scale as the accents rather than in a ledger of its own -- it has the weakest SEPARATING
+force there is, which is the opposite of being loose, since a maqaf binds its two atoms tightest.
 (``printed_decalogue_strands``' ``MAQAF_IS_THE_LAST_RUNG`` states this to the reader, and its
-guardrail comment records the second-ledger convention it replaced.)  This comparison already
-works that way and needs no rewording: ``compare`` splits each reading on whitespace, so a maqaf
-compound is ONE word on both sides, and a maqaf CTR placed otherwise than the Wikisource strand
-would break the skeleton alignment and be reported, not quietly excused.  Re-derived 2026-07-26, it never
-has to be: the two sides segment into the same words (142 against 142 in Exodus, 164 against
-164 in Deuteronomy) and their maqafs match word for word and slot for slot, 27 compounds against
-27 and 24 against 24.  So all four residuals are accent differences and nothing else.
+guardrail comment records the second-ledger convention it replaced.)  This comparison already works
+that way and needs no rewording: ``compare`` splits each reading on whitespace, so a maqaf compound
+is ONE word on both sides, and a maqaf CTR placed otherwise than the Wikisource strand would break
+the skeleton alignment and be reported, not quietly excused.  Re-derived 2026-07-26, it never has to
+be: the two sides segment into the same words (142 against 142 in Exodus, 164 against 164 in
+Deuteronomy) and their maqaf marks match word for word and slot for slot, 27 compounds against 27
+and 24 against 24.  So all four residuals are accent differences and nothing else.
 
 Note what the two compound ones are, but do not lean on them: on יהיה־לך and on ובנך־ובתך the
 strand has a meteg on the non-final atom and CTR a munax there instead, which is a second accent
@@ -147,8 +147,8 @@ def sof_pasuq_spans(ctr: dict, book: str) -> list[str]:
 
     The neutral name is the point: this splits at the MARK and claims nothing about
     chantability.  A chanted verse needs a silluq before its sof pasuq, and CTR's Exodus has
-    sixteen sof pasuqs over an accent stream supplying only nine silluqs, so seven of its spans
-    close on a mid-verse disjunctive and are no kind of verse (see the module docstring and
+    sixteen sof pasuq marks over an accent stream supplying only nine silluq marks, so seven of its
+    spans close on a mid-verse disjunctive and are no kind of verse (see the module docstring and
     ``span_silluq_status``).  Deuteronomy's thirteen spans all have a silluq, so there they are
     chanted verses.
 
@@ -228,7 +228,7 @@ def span_silluq_status(ctr: dict, book: str) -> tuple[SpanSilluq, ...]:
 
     This is what keeps the page's claim honest.  ``word_glyphs`` drops U+05BD, so the glyph
     comparison is silluq-blind and would report the same 139/142 whether or not CTR had moved
-    the silluqs to its own sixteen boundaries.  It did not, and this is where that is checked.
+    the silluq marks to its own sixteen boundaries.  It did not, and this is where that is checked.
     """
     out: list[SpanSilluq] = []
     for span in sof_pasuq_spans(ctr, book):

@@ -33,7 +33,7 @@ strand wants an accent UXLC omitted, a note in lieu of inventing one**:
     synthesized "added out of thin air" note (e.g. a sof-pasuq breaking Gen
     35:22's pashut into its two chanted verses). Only the three accent-coupled
     punctuation marks — **maqaf / sof-pasuq / legarmeh** — are ever supplied; so
-    far three sof-pasuqs are (Gen 35:22 pashut, and the taḥton verse-ends of Exod
+    far three sof-pasuq marks are (Gen 35:22 pashut, and the taḥton verse-ends of Exod
     20:8 לקדשו and 20:9 מלאכתך, where UXLC has none).
   * **Omitted accent — noted, never supplied.** Where a strand's chanting calls
     for an *accent* UXLC left untangled (it has only the other strand's accent

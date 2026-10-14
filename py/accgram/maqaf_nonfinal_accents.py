@@ -130,7 +130,7 @@ records that so the page cannot state a corpus's standing wrongly.
 
 THE GRAY MAQAF COUNTS AS A MAQAF, and only MAM has one.  A compound is found here by its maqaf,
 and in poetic verses the maqaf after a secondary mark is customarily left unwritten while the atom
-still counts as joined -- so a scan of written maqafs alone reaches only part of the poetic
+still counts as joined -- so a scan of written maqaf marks alone reaches only part of the poetic
 phenomenon.  MAM's answer to that is the gray maqaf (מקף אפור), its mark for a maqaf the
 manuscript leaves unwritten where the chanted word needs one, and MAM-simple has every one of them
 as an ``implicit-maqaf`` node, which ``mam_simple_verse`` puts on the atom before (issue
@@ -1068,7 +1068,7 @@ def _mam_simple_gray_maqafs_by_verse() -> Counter:
 
 
 def gray_maqaf_survey() -> dict:
-    """MAM's gray maqafs: the compounds its poetic verses join without a written maqaf.
+    """MAM's gray maqaf marks: the compounds its poetic verses join without a written maqaf.
 
     Not a fourth corpus beside the three above -- a second MEASURE, of the part of the poetic
     phenomenon the maqaf scan cannot reach.  See the module docstring on why it has to be, and
@@ -1088,7 +1088,7 @@ def gray_maqaf_survey() -> dict:
         fields = hit["shape"].split("-")
         assert fields[0] != "0" and "+" not in fields[0], hit
         assert any(field != "0" for field in fields[1:]), hit
-    # The source string says that MAM-simple has the same gray maqafs in the same verses.
+    # The source string says that MAM-simple has the same gray maqaf marks in the same verses.
     in_plus = Counter(hit["bcv"] for hit in hits)
     in_simple = _mam_simple_gray_maqafs_by_verse()
     assert in_simple == in_plus, sorted(
@@ -1104,7 +1104,7 @@ def gray_maqaf_survey() -> dict:
         "source": (
             "MAM-parsed-plus (the מ:מקף אפור template). MAM-simple has the same"
             f" {len(hits)}, in the same verses, as its implicit-maqaf node, and the corpus"
-            " counts above read them as maqafs; this count is here for the two-kind split"
+            " counts above read them as maqaf marks; this count is here for the two-kind split"
             " beside them, not because"
             " one of the two texts has the mark and the other has not."
         ),
@@ -1301,7 +1301,7 @@ def build_survey() -> dict:
             " poetic phenomenon. His own 'few cases where the hyphen is not omitted' bear this"
             " out from the other side: Job 6:10 and Prov 25:20 are written WITHOUT a maqaf in"
             " WLC and UXLC, and with one only in MAM. MAM supplies the rest as its gray maqaf,"
-            " and the counts here read those as maqafs -- so MAM's poetic hits below count"
+            " and the counts here read those as maqaf marks -- so MAM's poetic hits below count"
             " gray-maqaf compounds alongside written-maqaf ones, while WLC and UXLC, having no"
             " such mark, keep poetic counts that are floors. ``gray_maqaf`` counts the mark on"
             " its own and splits it by kind. No ANFA-reason is assigned here either; see"

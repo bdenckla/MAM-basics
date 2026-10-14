@@ -119,7 +119,7 @@ bracketed names being this page's, in place of the translator's."
 Two details settled at the same time. **Let the bracket swallow the whole phrase** rather than
 leaving a fragment of the original stranded outside it — "the small [zaqef]" was rejected for
 "the [zaqef qatan]". And **expand to `zaqef qatan` here** even though `ROM_ZAQEF_QATAN` romanizes
-as a bare "zaqef" by default: the section being quoted is about which of the two zaqefs a word
+as a bare "zaqef" by default: the section being quoted is about which of the two zaqef accents a word
 takes, so the *qatan* is the point rather than a redundancy. The literal wording still belongs in
 the docstrings, comments and issue bodies that cite the same passage — a citation should reproduce
 what the book says.

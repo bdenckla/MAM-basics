@@ -435,14 +435,14 @@ def _fuse_cross_chanted_word_yored(body: str, raw_tokens: list[Token]) -> list[T
 def _reclassify_revia(types: list[str]) -> list[str]:
     """Resolve each generic REVIA (no geresh muqdam) to its role.
 
-    The three revias share signs: revia mugrash carries a geresh muqdam (handled in
+    The three revia accents share signs: revia mugrash carries a geresh muqdam (handled in
     the rule table); revia gadol and revia qatan are a bare dot, and a
     *bare* revia before silluq is revia mugrash "without the geresh" (Yeivin
     #367).  Disambiguation is by the next disjunctive in the stream:
 
       - next is OLEH_WEYORED  -> revia qatan (it stands only there, #368);
       - next is SILLUQ        -> revia mugrash without geresh (the last
-        disjunctive before silluq; when two revias precede silluq the first is
+        disjunctive before silluq; when two revia accents precede silluq the first is
         gadol and the second mugrash, #391 -- handled automatically since the
         first revia's next disjunctive is the second revia, not silluq);
       - otherwise (next is atnax, oleh, or another revia) -> revia gadol.

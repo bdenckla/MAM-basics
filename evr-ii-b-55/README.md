@@ -85,7 +85,7 @@ records was read:
 | `de_text_at_line`, `de_text_at_line_ref` | A located verse. `de_text_at_line` gives the verse's atoms on one line; `de_text_at_line_ref` names that line and, on a three-column page, its column. |
 | `de_note` | Who read or located the record, when, and at what resolution, with any damage that affects the reading. |
 
-An atom is one written form between spaces or maqafs. These rules define its fields:
+An atom is one written form between spaces or maqaf marks. These rules define its fields:
 
 1. **A `_ref` names a verse** in the form of the verse labels in `../aleppo/line-breaks/` and
    `../cam1753/cam1753-line-breaks/`: MAM-simple's book id, then the chapter and verse, as in

@@ -1796,8 +1796,8 @@
     "change_column": 3,
     "change_line": 26,
     "change_fline": 80,
-    "guess_fline": 80.19,
-    "fline_diff": 0.19
+    "guess_fline": 80.2,
+    "fline_diff": 0.2
   },
   {
     "change_release": "2022.04.01",
@@ -2286,8 +2286,8 @@
     "change_column": 3,
     "change_line": 13,
     "change_fline": 67,
-    "guess_fline": 67.11,
-    "fline_diff": 0.11
+    "guess_fline": 67.15,
+    "fline_diff": 0.15
   },
   {
     "change_release": "2022.07.04",

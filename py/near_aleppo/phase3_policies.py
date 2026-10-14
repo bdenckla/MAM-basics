@@ -56,8 +56,8 @@ against the codex forms the note quotes.
 The maqaf policy, the hataf on a non-guttural and the stress-helper policy also
 read a note before the note's target is walked, after the ketiv/qere apparatus.
 The maqaf policy puts the note's codex form in the target. The hataf policy decides
-the vowels of the target's varikas, in order, and the walk applies them in the
-order it meets the varikas. The stress-helper policy decides whether the target
+the vowels of the target's varika marks, in order, and the walk applies them in the
+order it meets the varika marks. The stress-helper policy decides whether the target
 keeps its stress helpers.
 """
 
@@ -286,7 +286,7 @@ _KQ_TRANSPLANT_VERSES = (
 _KQ_TRANSPLANT_KETIV_AGREEING_VERSES = (("C1-Isaiah", "26", "20"),)
 # The transplant takes the one longest matching of the qere's letters to the ketiv's,
 # except at a verse this table names, a named exception. At Zephaniah 2:9 the
-# qere, גּוֹיִ֖י, has two yods where the ketiv, גוי, has one, so there are two
+# qere, גּוֹיִ֖י, has two yod letters where the ketiv, גוי, has one, so there are two
 # longest matchings. Matching the ketiv's yod to the qere's second yod leaves the
 # first, with its hiriq and its accent, unmatched, so the tie is broken toward
 # matching it to the first yod, which leaves no mark unplaced, and the ketiv pointed
@@ -730,10 +730,10 @@ class Policies:
         self._kq_qamats_qatan_removed = 0
         # Notes in the current verse whose target the maqaf policy replaced.
         self._maqaf_notes = 0
-        # The vowels a note decided for the varikas of its target that the walk has
+        # The vowels a note decided for the varika marks of its target that the walk has
         # not met yet, in order.
         self._hataf_waiting = []
-        # The varikas in the current verse whose vowel each hataf table decided.
+        # The varika marks in the current verse whose vowel each hataf table decided.
         self._hataf_table_uses = Counter()
         # What the innermost note being walked does with the stress helpers in its
         # target, as _stress_helper_note decides it: (what it keeps them for, or None,
@@ -863,7 +863,7 @@ class Policies:
         if hataf and self._hataf_waiting:
             raise AssertionError(
                 f"{verse}: the walk of a note's target met {len(self._hataf_waiting)} "
-                "fewer varikas than the note's reading decided vowels for"
+                "fewer varika marks than the note's reading decided vowels for"
             )
         if name == _NOTE and mode == _SELECTED:
             self._check_revia_removals(params["1"], new_params["1"], note, verse)
@@ -1313,7 +1313,7 @@ class Policies:
         is also the population check. A doubt-marked clause and a clause headed
         א-כתיב or א-קרי are outside this policy. Where one of the remaining
         clause's quoted forms has the target's letters and marks and differs only
-        in spaces and maqafs, its verse and exact head must be in
+        in spaces and maqaf marks, its verse and exact head must be in
         _MAQAF_READINGS. The first such form of the tabled clause is the target
         this policy returns.
         """
@@ -1942,7 +1942,7 @@ def _bemo_sheva(text, atoms, number, verse):
 
 
 def _separator_parts(text):
-    """Return non-separator characters and the spaces or maqafs between them."""
+    """Return non-separator characters and the spaces or maqaf marks between them."""
     characters, separators, current = [], [], ""
     for char in text:
         if char in (" ", MAQAF):

@@ -4,7 +4,7 @@ This is the detailed statement behind the compact checklist in `../SKILL.md`.
 
 ## The rules that get broken most
 
-**Never a loose "word."** An **atom** is one written word, between spaces or maqafs — the thing
+**Never a loose "word."** An **atom** is one written word, between spaces or maqaf marks — the thing
 a maqaf joins to the next. A **chanted word** is a lone atom *or* a whole maqaf compound: the
 unit cantillation operates on, normally with one accent. Say which you mean. Name a compound
 whole — על־פני, לא־תעשה — never a bare half of one with an apology ("פני, maqaf-joined as
@@ -13,7 +13,7 @@ for an ordinary English word, inside quoted or translated source material, and w
 context already settles which sense is meant (references/terminology.md).
 
 **"Chanted word" is MECHANICAL, and an analysis never takes the name away.** What makes a chanted
-word is the writing: atoms joined by maqafs, bounded by spaces. So **never write that a maqaf
+word is the writing: atoms joined by maqaf marks, bounded by spaces. So **never write that a maqaf
 compound "is not really a chanted word"** because some section explains its maqaf as unusual — say
 it is a chanted word **in presentation only**, or **superficially a chanted word**, and then say
 what the analysis adds. Ben, 2026-08-03, on a draft calling ITM §357's maqaf-after-gaʿya compounds
@@ -170,7 +170,7 @@ oracle behind it. The pattern is `maqaf_nonfinal_accents_page`'s `_find_span()` 
 pair (2026-07-29, replacing the `lo_taase_atoms()` / `simtiq_lo_compounds()` this line used to
 cite): search by a tuple of atom letters **per chanted word**, so the pattern fixes the grouping
 as well as the letters and cannot match a strand that groups those atoms differently; raise unless
-exactly one place matches; render each atom through `accents_and_letters` and put the maqafs back.
+exactly one place matches; render each atom through `accents_and_letters` and put the maqaf marks back.
 Two lessons are built into it. **Collect matches in a list, never a set** — a strand's two
 byte-identical לא־תעשה compounds deduped to one and the `len == 1` assertion passed having
 distinguished nothing (item 14 of [review-findings-2026-07-29.md](https://github.com/bdenckla/MAM-basics/blob/f72297084ab94aea6fd1274dc1bc3d7ce6acddd5/doc/review-findings-2026-07-29.md)); what tells such

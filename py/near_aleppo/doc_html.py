@@ -169,7 +169,7 @@ def code(text):
 
 
 # A Hebrew run inside English prose held as one string: a Hebrew letter, then Hebrew
-# letters and marks, gereshes, colons, hyphens and digits, and further such words
+# letters and marks, geresh marks, colons, hyphens and digits, and further such words
 # after single spaces, as in the names מ:הערה-2 and נוסח למקרא על פי המסורה.
 _LETTERS = "\N{HEBREW LETTER ALEF}-\N{HEBREW LETTER TAV}"
 _IN_RUN = (

@@ -5,7 +5,7 @@ State: live; release-notes dry run, not an announced release
 This draft describes a hypothetical release from MAM-basics commit
 `2f3013113b3c2abfa23a7cea30bb10b4eb5c441d`. The main change since the first
 announcement is a new JSON contract for notes whose targets differ from MAM's:
-the dataset now includes the NA-adjusted clauses. Pointed ketivs now
+the dataset now includes the NA-adjusted clauses. Pointed ketiv forms now
 retain final punctuation at additional sites, and the example edition has ketiv
 as its primary text with pointed qere above it.
 
@@ -39,12 +39,12 @@ complete original note in MAM context.
 parameter sets, following the JSON reference. The consumer notices in all
 24 book files also explain the new contract.
 
-### Final punctuation in pointed ketivs
+### Final punctuation in pointed ketiv forms
 
 The stored pointed ketiv now includes a final maqaf at 36 additional sites and
 a final U+05C0 sign at five additional sites. U+05C0 is the glyph near-Aleppo
 uses for both narrow-sense paseq and legarmeh. These additions preserve the
-pointing's existing letters and vowel and accent marks. The qeres are unchanged.
+pointing's existing letters and vowel and accent marks. The qere forms are unchanged.
 
 **Consumer action:** Preserve the final punctuation when selecting the pointed
 ketiv. A final maqaf joins the ketiv to the following atom; do not insert a

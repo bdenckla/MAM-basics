@@ -1,7 +1,7 @@
 # Why the mtgmtg survey's `2/sopa-y/maq-n` group is empty: coincidental, not structural
 
 **The answer is coincidental scarcity.** Neither Yeivin nor Breuer states a rule that would forbid
-a lone verse-final atom from having a silluq and two metegs, and the arithmetic puts the expected
+a lone verse-final atom from having a silluq and two meteg marks, and the arithmetic puts the expected
 number of such atoms in MAM at about one or below, so an empty group is what the corpus should
 produce with no rule at all. Investigated 2026-09-09 at MAM-basics commit `becc6f00`.
 `py/foi/mtgmtg_explanations.py`'s rendered introduction carries the finding in two paragraphs
@@ -121,7 +121,7 @@ re-derives every figure and presence claim in this file and raises on drift.
    by — and applying each group's mid-verse step-up rate to the verse-final atoms in it predicts
    **1.00**, for a 36.8% chance of zero. Carrying through the verse-final depression of clause 5
    as well predicts **0.49**, for a 61.5% chance of zero.
-4. **The 19 shapes that do have two metegs mid-verse hardly ever end a verse.** They are
+4. **The 19 shapes that do have two meteg marks mid-verse hardly ever end a verse.** They are
    thirteen distinct consonantal skeletons: hitpael forms of פלל, theophoric names in ־יה, and
    one each of מלקקים, להיותכם, ויטיבך and ואחוית. Those thirteen skeletons occur 48 times as lone
    atoms in MAM and **not once at a verse end**. Widening the match to the bare stem finds three
@@ -156,13 +156,13 @@ re-derives every figure and presence claim in this file and raises on drift.
 
 ## Why the fourteen members of `2/sopa-y/maq-y` do not disprove any of this
 
-In every one of the 14, the final atom has exactly one U+05BD, its silluq, and both metegs sit on
+In every one of the 14, the final atom has exactly one U+05BD, its silluq, and both meteg marks sit on
 an earlier atom of the compound. Twelve of the 14 distribute as 2+1, Psalms 81:9 אִם־תִּֽשְׁמַֽע־לִֽי׃
 as 0+2+1 and Job 18:21 לֹֽא־יָדַֽע־אֵֽל׃ as 1+1+1. So the 14 are not cases of an atom that has a silluq
-also having two metegs; they are cases of a compound spreading two metegs over the atoms that precede
-the silluq. Read that way they say nothing about `2/sopa-y/maq-n` except that a compound has more
-room, which is the same thing the maq-y column says everywhere else in the grid: the step-up rate
-is 1.49% for mid-verse compounds against 0.255% for mid-verse lone atoms.
+also having two meteg marks; they are cases of a compound spreading two meteg marks over the atoms
+that precede the silluq. Read that way they say nothing about `2/sopa-y/maq-n` except that a compound
+has more room, which is the same thing the maq-y column says everywhere else in the grid: the step-up
+rate is 1.49% for mid-verse compounds against 0.255% for mid-verse lone atoms.
 
 ## What this file does not claim
 

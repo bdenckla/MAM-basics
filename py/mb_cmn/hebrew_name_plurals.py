@@ -309,6 +309,9 @@ def authored_html_text(html: str, relative_path: str) -> tuple[str, list[int]]:
     if (
         relative_path.startswith("gh-pages/yeivin-itm/")
         or relative_path == "gh-pages/yeivin_itm.html"
+        # Phonetic MAM's chapter pages are generated transcriptions, untagged by
+        # lang, with only navigation in English. Its testsuite pages stay checked.
+        or relative_path.startswith("gh-pages/phonetic-mam/tnkh/")
     ):
         return "", []
     parser = _Prose()

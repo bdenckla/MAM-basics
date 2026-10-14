@@ -50,8 +50,8 @@ _BELOW_VOWELS = _BROAD_BELOW_VOWELS | frozenset(
 _BELOW_ACCENTS_OR_METEG = ha.UNI_UNDER_ACCENTS | {hp.MTGOSLQ}
 _BELOW_MARKS = _BELOW_VOWELS | _BELOW_ACCENTS_OR_METEG
 # Taamey D.sym.fea's @blws and @blw_wides, rather than the broader trial sets.
-# Yetiv and dehi are excluded by the kern lookups' mark filtering; sheva na is
-# not a glyph in this font. Patah and qamats are wide in the font's classes.
+# Yetiv and dexi are excluded by the kern lookups' mark filtering; sheva na is
+# not a glyph in this font. Patax and qamats are wide in the font's classes.
 _FONT_BELOW = _BELOW_MARKS - {ha.YET, ha.DEX, hp.SHEVA_NA}
 _FONT_WIDE = _FONT_BELOW - {hp.SHEVA, hp.XIRIQ, hp.MTGOSLQ}
 _FONT_XATAFS = frozenset((hp.XSEGOL, hp.XPATAX, hp.XQAMATS))
@@ -111,7 +111,7 @@ def _font_added_space(clusters):
     the selected-Scripture investigation found no occurrence to judge visually.
     """
     projected = [(letter, _font_below(marks)) for letter, marks in clusters]
-    # ccmp06JerusalemOrphans replaces the last hiriq/sheva in these explicit
+    # ccmp06JerusalemOrphans replaces the last xiriq/sheva in these explicit
     # vowel sequences with an orphan glyph outside the below-mark filter.
     for index, (_, marks) in enumerate(projected[:-1]):
         next_letter = projected[index + 1][0]
@@ -137,7 +137,7 @@ def _font_added_space(clusters):
         two_below_wide = len(a) == 2 and a[0] in _FONT_BELOW and a[1] in _FONT_WIDE
         wide_below = len(b) >= 2 and b[0] in _FONT_WIDE and b[1] in _FONT_BELOW
         below_wide = len(b) >= 2 and b[0] in _FONT_BELOW and b[1] in _FONT_WIDE
-        # A final he/het/ayin's patah can be a furtive glyph filtered out by
+        # A final he/xet/ayin's patax can be a furtive glyph filtered out by
         # kern1AddThin. Omit these unjudged alternate shapes from its fifth
         # context rather than treating the raw vowel as a broad font glyph.
         fifth_context = wide_below and not (
@@ -279,7 +279,7 @@ def iter_atoms(text):
 def html_for_text(text):
     """Wrap selected Hebrew atoms, preserving all characters and separators.
 
-    Spaces, maqafs and punctuation stay outside the spacing span. Combining marks,
+    Spaces, maqaf marks and punctuation stay outside the spacing span. Combining marks,
     including Phonetic MAM's newer Hebrew points, stay with their base letter.
     """
     result = []

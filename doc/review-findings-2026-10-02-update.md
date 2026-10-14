@@ -167,10 +167,11 @@ cited by its report section.
       and `py/tests/test_final_stress_vs_phonetic_mam.py` say that the join keys drop the points.
     - "Generic" is the codebase's term for un-annotated Hebrew, so the defect is the README's
       silence, not the word.
-13. **C5.2. Accepted, unfixed; distributed data and published pages.** The release lacks MAM's
-    qamats alternative at 2 Kings 22:1. At 2 Chronicles 25:17 it shows an atom with the ketiv's final
-    kaf and the qere's points. Neither the README nor the schema discloses either. Independent
-    recounts agree:
+13. **C5.2. Accepted; fixed on 2026-10-13, as "C5.2 fixed and finding 22's refresh check retired,
+    2026-10-13" below records; distributed data and published pages.** As of 2026-10-02, the
+    release lacks MAM's qamats alternative at 2 Kings 22:1. At 2 Chronicles 25:17 it shows an
+    atom with the ketiv's final kaf and the qere's points. Neither the README nor the schema
+    discloses either. Independent recounts agree:
     - 23,200 of 23,202 verses agree with MAM-simple;
     - 2 Kings 22:1 is the only one of the 357 verses with a qamats template that lacks
       qamats-labelled readings.
@@ -913,7 +914,56 @@ from the tracked tree. They remain at these immutable locations, with turns 02 t
 The cited `:186–187`, `:540–550` and `:773–779` of the September 29 plan count it before its
 line-4 pointer, as at
 [`38a8db9a`](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-29.md);
-at the archive each is one higher. Turn 01's update's `:1769–1780` is unchanged there, and the
-check that its entry records now lives in
+at the archive each is one higher. Turn 01's update's `:1769–1780` is unchanged there. The check
+that its entry records lived in
 `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, "Phonetic MAM's
-missing qamats alternative at 2 Kings 22:1".
+missing qamats alternative at 2 Kings 22:1", until "C5.2 fixed and finding 22's refresh check
+retired, 2026-10-13" below retired it.
+
+## C5.2 fixed and finding 22's refresh check retired, 2026-10-13
+
+Recorded by Claude Opus 5.5 on 2026-10-13, New York time, in a Claude desktop session working
+in `C:/Users/BenDe/GitRepos2/MAM-basics` and `C:/Users/BenDe/GitRepos2/MAM-private`, which Ben
+asked to investigate the check that finding 22 of the 2026-09-29 round had become.
+
+**C5.2: fixed in `b903fbcf`.** The release now has both of MAM's qamats alternatives at
+2 Kings 22:1, labelled קמץ-ד and קמץ-ס as at the other 356 verses with that template, and MAM's qere at
+2 Chronicles 25:17. No refresh of MAM could have supplied either. The exporter has always read
+the current MAM-parsed, which has had the 2 Kings 22:1 alternative since `97c4aff5`; MAM-private's
+display source adapter could not reconcile either verse with its private source and showed that
+source's forms instead. MAM-private `3d45d8a3` corrects that source at both verses and makes the
+adapter refuse any other verse it cannot reconcile, except the designed dual-cantillation ones.
+`Phonetic-MAM/README.md`, "How the Hebrew differs from MAM's text", drops its items 5 and 6, and
+its item on ketiv and qere drops "apart from item 6's verse". Ben's words of 2026-10-13 were
+"Follow your recommendations." and "Handle 2Chr 15:17 analogously, if it is analogous enough to
+follow without me having to get involved."; the second is taken as 2 Chronicles 25:17, the verse
+of the report he answered.
+
+**Finding 22's standing check: retired by the commit that adds this entry.**
+`dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md` no longer has
+"Phonetic MAM's missing qamats alternative at 2 Kings 22:1", the check that every dependent
+refresh was to make "until it passes". Its "Checks that a text change can trip", item 1, now says
+what to do when `phonetic-mam-export` stops on a verse that the adapter cannot reconcile.
+
+**How the check came to wait on a refresh.** The 2026-09-29 round's turn 02 called finding 22 a
+"Survey lag" (`b268ef0d`), and the round's close-out proposal deferred it to "the next dependent
+refresh", which it called "where to check that the variant reaches" the page (`1dec1203`). The
+round's plan then said that refresh "checks" it (`50ef50ee`). This review's finding 5.2 said that
+the next refresh "will not bring the variant in", and C5.2's entry above recorded that evidence
+beside the deferral without changing it. On 2026-10-11 `be9c0396` moved the check into the
+runbook; it ran on 2026-10-12 and found the alternative still missing.
+
+**Correction: words attributed to Ben.** The base's finding 5.2 says "Ben deferred finding 22, the
+missing 2 Kings 22:1 qamats variant, "for that evidence gap"". The quoted words are not Ben's.
+They are from "[deferred for that evidence gap; no MAM-basics change proposed]" in the close-out
+proposal of `1dec1203`, an entry that calls its dispositions "Claude's proposals, not Ben's
+decisions". Ben approved that proposal as a package on 2026-09-30, with no words of his own about
+finding 22.
+
+The commit that adds this entry also corrects in place C5.2's status above, "Accepted, unfixed",
+and three present-tense claims that it made stale: "the check that its entry records now lives
+in" in "Archived receipt references, 2026-10-11" above; "Finding 22's check, which that base item
+keeps deferred, now lives in" in the entry of the same name in
+`doc/review-findings-2026-10-04-update.md`; and "The check that "That finding's live record" names
+now lives in" in the entry of the same name in
+`doc/PLAN-remediate-review-findings-2026-10-02-update.md`.

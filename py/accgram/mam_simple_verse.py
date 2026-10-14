@@ -342,7 +342,7 @@ def _normalize_mam_simple_node(
     *,
     include_native_paseq_roles: bool = False,
 ) -> list[object]:
-    """The ATOMS of one node's subtree -- one written word each, between spaces or maqafs
+    """The ATOMS of one node's subtree -- one written word each, between spaces or maqaf marks
     -- with every maqaf kept on the atom it follows, plus a lone PASOLEG token for each
     paseq/legarmeh.
 

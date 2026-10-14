@@ -555,7 +555,7 @@ def _occurrence_key(occurrence: dict) -> tuple[str, int]:
     A form is not an identity.  Twenty-one forms occur twice in one numbered verse with
     one meteg on each occurrence -- Exodus 26:5's לֻֽלָאֹ֗ת and Judges 1:33's בֵֽית־שֶׁ֙מֶשׁ֙
     among them -- so a key of (bcv, chanted word, jta) read each such pair as one chanted
-    word carrying two metegs.  That is what put
+    word carrying two meteg marks.  That is what put
     ``mbs_only_chanted_words_with_multiple_mbs`` at 143 rather than 122, and the MBS_O
     counts 21 above the chanted words they were described as counting, until 2026-09-09.
     The independent oracle is the features-of-interest survey ``foi/foiz_wt_mtgmtg.py``,

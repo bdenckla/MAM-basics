@@ -17,14 +17,11 @@ measurement is for is about prose verses, and because only poetic verses have MA
 which this test's join cannot match.  Phonetic MAM has each of MAM's gray-maqaf compounds as one
 entry, 113 of them, and ``analysis_reader`` spells that maqaf as a tilde where ``mam_simple_verse``
 gives it as U+05BE; the join key keeps both marks, so none of the 113 joins, and they are most of
-what will not join anywhere in MAM's Tanakh.  The rest, 12 chanted words in prose verses, are
+what will not join anywhere in MAM's Tanakh.  The rest, 10 chanted words in prose verses, are
 outside this test's reach for reasons of their own (issue wlc-utils#91): 8 dually-cantillated
-chanted words in the two Decalogues, whose ``cant-combined`` projection is neither strand; the two
-chanted words of Deuteronomy 32:6, where MAM's large ה stands apart from לְיְהֹוָה֙ and Phonetic
-MAM has one entry for the two atoms; 2 Kings 22:1, where Phonetic MAM has only מִבָּֽצְקַֽת׃ and
-MAM-simple has the other qamats alternative, מִבׇּֽצְקַֽת׃; and 2 Chronicles 25:17, where Phonetic
-MAM has לְךָ֖ against the qere לְכָ֖ה that MAM-simple and WLC 4.22 both have.  Those last two are
-differences in the text rather than in the grouping.  The
+chanted words in the two Decalogues, whose ``cant-combined`` projection is neither strand; and the
+two chanted words of Deuteronomy 32:6, where MAM's large ה stands apart from לְיְהֹוָה֙ and
+Phonetic MAM has one entry for the two atoms.  The
 scan is rerun here rather than read out of the survey's JSON, which keeps counts and not words --
 and rerun over MAM's own versification, for which see ``_measured``.
 

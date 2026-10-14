@@ -79,7 +79,7 @@ def _token_color(ttype) -> str:
 
 
 def _has_pointing(text: str) -> bool:
-    """Return True if text contains Hebrew combining marks (nikud or taamim)."""
+    """Return True if text contains Hebrew combining marks (nikud or accents)."""
     return any("\u0591" <= ch <= "\u05c9" for ch in text)
 
 

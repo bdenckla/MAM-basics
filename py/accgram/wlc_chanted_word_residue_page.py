@@ -262,9 +262,9 @@ def residue(corpus: dict) -> list[dict]:
 
 
 def _skeleton(chanted_word: str) -> str:
-    """A chanted word's letters and maqafs, with the accents dropped.
+    """A chanted word's letters and maqaf marks, with the accents dropped.
 
-    The maqafs stay in, so two corpora match here only when they also group the atoms the same
+    The maqaf marks stay in, so two corpora match here only when they also group the atoms the same
     way.  That is the strict reading and the one the MAM column wants: a compound MAM splits
     into two chanted words is not the same chanted word, and should not be reported as one.
     """
@@ -272,7 +272,7 @@ def _skeleton(chanted_word: str) -> str:
 
 
 def _mam_index(mam: dict) -> dict[tuple[str, str], str]:
-    """(bcv, letters-and-maqafs) -> MAM's token sequence, for every MAM chanted word with two."""
+    """(bcv, letters-and-maqaf-marks) -> MAM's token sequence, for every MAM chanted word with two."""
     return {
         (h["bcv"], _skeleton(h["chanted_word"])): h["sequence"]
         for h in mam["occurrences"]
@@ -659,7 +659,7 @@ def _stroke_caveat(rows: list[dict]) -> tuple[object, ...]:
             " scanner reads only the marks on the letters. So the MAM column there says what the"
             " scanner reads of MAM's chanted word, and is not a report that MAM has nothing"
             " after the word. Neither text's Hebrew above has the stroke: the Chanted word"
-            " column is letters, accents and maqafs."
+            " column is letters, accents and maqaf marks."
         ),
     )
 

@@ -18,7 +18,7 @@ The WLC side compares the *reconciled* token stream (``poetic_reconcile``), the 
 one the driver parses.  One consequence is honest to flag: legarmeh-vs-paseq is not in
 WLC's M-C source, so the reconciler resolves it *from MAM* -- the legarmeh dimension of
 this check is therefore agree-by-construction, not an independent witness.  Every other
-disjunctive (silluq, atnax, oleh-we-yored, the revias, dexi, tsinnor, pazer) is still
+disjunctive (silluq, atnax, oleh-we-yored, the revia accents, dexi, tsinnor, pazer) is still
 derived from WLC alone, so the check remains a meaningful Phase-2 surface for them.
 
 The run writes a git-tracked report ``out/accgram/poetic/_mam_xcheck.txt``: a

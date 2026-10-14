@@ -70,8 +70,10 @@ The cited `:186–187`, `:540–550` and `:2250–2251` of the September 29 plan
 line-4 pointer, as at
 [`38a8db9a`](https://github.com/bdenckla/MAM-basics/blob/38a8db9ae851b83d43b5c5ad42c007943b54d724/doc/PLAN-remediate-review-findings-2026-09-29.md);
 at the archive each is one higher. Turn 01's `:45` and `:1442` and its update's `:1540–1547` are
-unchanged there. The check that "That finding's live record" names now lives in
+unchanged there. The check that "That finding's live record" names lived in
 `dot-claude/skills/mam-wikisource-refresh/references/dependent-refresh.md`, "Phonetic MAM's
-missing qamats alternative at 2 Kings 22:1". The `GitRepos2/MAM-basics/.novc/review-2026-09-29/`
+missing qamats alternative at 2 Kings 22:1", until the fix that
+`doc/review-findings-2026-10-02-update.md`, "C5.2 fixed and finding 22's refresh check retired,
+2026-10-13", records retired it on 2026-10-13. The `GitRepos2/MAM-basics/.novc/review-2026-09-29/`
 that "is cited by tracked records" went to the Recycle Bin with the rest of that `.novc/` on
 2026-10-11, by Ben's decision of 2026-10-09.
