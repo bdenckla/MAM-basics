@@ -1,6 +1,7 @@
 # Taamey D spacing prose continuation
 
 State: executed 2026-10-14; branch-only work complete
+Updates and later status: [taamey-d-spacing-prose-status-update.md](taamey-d-spacing-prose-status-update.md).
 
 Ben requested completing the failed spacing session on an isolated branch, with no
 new spacing policy, font or dataset changes, main integration, or deployment.
