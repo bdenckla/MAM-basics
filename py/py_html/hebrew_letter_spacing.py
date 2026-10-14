@@ -1,12 +1,12 @@
 """Conservative screening for cramped pointed-Hebrew text in Taamey D.
 
 This is a typography heuristic, not a collision detector. A yod or vav with
-a broad below-vowel and a below-accent can crowd neighboring ink
+a wide below-vowel and a below-accent can crowd neighboring ink
 even after the font has avoided overlap. NAEE expands such atoms by 0.06em,
 alongside the six observed advance-adding contexts in the frozen Taamey D 0.921
 source and its precise preceding-yod vowel-raising context beside qof. These
 font-derived contexts preserve their below-mark order and filtering conditions;
-they do not enable either broad FOI trial screen wholesale.
+they do not enable either general FOI trial screen wholesale.
 
 HTML conversion sees contiguous text leaves after semantic rendering. Atoms split
 by special-letter or vowel-variant spans may be missed or only partly expanded;
@@ -32,7 +32,7 @@ _VOWEL_ACCENT_LETTERS = frozenset(
         "\N{HEBREW LETTER VAV}",
     )
 )
-_BROAD_BELOW_VOWELS = frozenset(
+_WIDE_BELOW_VOWELS = frozenset(
     (hp.TSERE, hp.SEGOL_V, hp.XSEGOL, hp.XPATAX, hp.XQAMATS, hp.QUBUTS)
 )
 # The broader narrow-letter class in the frozen Taamey D source's @narlets.
@@ -44,7 +44,7 @@ _NARROW_PAIR_LETTERS = _VOWEL_ACCENT_LETTERS | frozenset(
         "\N{HEBREW LETTER FINAL NUN}",
     )
 )
-_BELOW_VOWELS = _BROAD_BELOW_VOWELS | frozenset(
+_BELOW_VOWELS = _WIDE_BELOW_VOWELS | frozenset(
     (hp.SHEVA, hp.SHEVA_NA, hp.XIRIQ, hp.PATAX, hp.QAMATS, hp.QAMATS_Q)
 )
 _BELOW_ACCENTS_OR_METEG = ha.UNI_UNDER_ACCENTS | {hp.MTGOSLQ}
@@ -139,7 +139,7 @@ def _font_added_space(clusters):
         below_wide = len(b) >= 2 and b[0] in _FONT_BELOW and b[1] in _FONT_WIDE
         # A final he/xet/ayin's patax can be a furtive glyph filtered out by
         # kern1AddThin. Omit these unjudged alternate shapes from its fifth
-        # context rather than treating the raw vowel as a broad font glyph.
+        # context rather than treating the raw vowel as a wide font glyph.
         fifth_context = wide_below and not (
             index + 2 == len(projected) and second in "החע" and hp.PATAX in b
         )
@@ -208,7 +208,7 @@ def types_for_atom(atom):
     """Identify overlapping crowding families, including additional FOI trial types.
 
     The original narrow-vowel-accent and the two precise font-derived families
-    opt into NAEE expansion. The broad pair families remain visual trials.
+    opt into NAEE expansion. The general pair families remain visual trials.
     """
     clusters = []
     for char in atom:
@@ -228,7 +228,7 @@ def types_for_atom(atom):
     clusters = [(letter, set(marks)) for letter, marks in clusters]
     if any(
         letter in _VOWEL_ACCENT_LETTERS
-        and marks & _BROAD_BELOW_VOWELS
+        and marks & _WIDE_BELOW_VOWELS
         and marks & ha.UNI_UNDER_ACCENTS
         for letter, marks in clusters
     ):
@@ -240,7 +240,7 @@ def types_for_atom(atom):
         and first_marks & _BELOW_MARKS
         and second_marks & _BELOW_MARKS
         and (first_marks | second_marks)
-        & (_BROAD_BELOW_VOWELS | _BELOW_ACCENTS_OR_METEG)
+        & (_WIDE_BELOW_VOWELS | _BELOW_ACCENTS_OR_METEG)
         for (first, first_marks), (second, second_marks) in pairs
     ):
         types.append(ADJACENT_NARROW_BELOW)
@@ -255,7 +255,7 @@ def types_for_atom(atom):
 
 
 def needs_expansion(atom):
-    """Apply the three active families, leaving the broad FOI families as trials."""
+    """Apply the three active families, leaving the general FOI families as trials."""
     return bool(
         {NARROW_VOWEL_ACCENT, FONT_ADDED_SPACE, YOD_BEFORE_QOF}
         & set(types_for_atom(atom))

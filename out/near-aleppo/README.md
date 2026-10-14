@@ -101,7 +101,7 @@ The [spacing study](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/crampe
 compares characteristic cramped words at usual spacing and with added letter
 spacing. NAEE expands the original narrow-letter family, the six observed
 spacing contexts in Taamey D's own rules, and the precise context where the font
-raises a preceding yod's vowel beside qof. Broad adjacent-narrow and
+raises a preceding yod's vowel beside qof. General adjacent-narrow and
 qof-predecessor screens remain trials; matching a trial alone does not enable
 automatic spacing.
 Each family gives its sample size, total distinct pointed words, and occurrences
