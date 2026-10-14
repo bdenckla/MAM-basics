@@ -321,8 +321,8 @@ def render():
         ),
         mb_html.para(
             "We group these words into families based on the circumstances that "
-            "might cause the cramping. A word can match the description of more "
-            "than one family. The families provide candidates for visual "
+            "might cause the cramping. A word can be in more than one family. "
+            "The families provide candidates for visual "
             "judgment rather than an exhaustive inventory of cramped words."
         ),
         mb_html.para(
