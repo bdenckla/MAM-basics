@@ -6,7 +6,7 @@ placeholders. Notes are removed before HTML conversion. Examples resolve from
 current source by consonants and must still match the stated screening family.
 Atoms crossing special-letter or vowel-variant formatting are excluded so that
 the isolated comparison retains the edition's glyph appearance. Family counts
-use this same projection across every book, counting full pointed forms and
+use this same projection across every book, counting full pointed words and
 their occurrences independently for each overlapping family.
 """
 
@@ -28,7 +28,7 @@ from py_misc import ren_html_for_renel as hfr
 from render_wt import render_wikitext as rwt
 
 PAGE = "foi/cramped-atoms.html"
-TITLE = "Cramped atoms and letter spacing in NAEE"
+TITLE = "Cramped words and letter spacing in NAEE"
 
 
 @dataclass(frozen=True)
@@ -64,7 +64,7 @@ FAMILIES = (
         "Shapes where Taamey D adds spacing",
         "Taamey D adds space in particular combinations of narrow letters and "
         "below marks, near final descending letters, and where a hataf vowel "
-        "precedes an accented narrow letter. NAEE gives these atoms its "
+        "precedes an accented narrow letter. NAEE gives these words its "
         "additional spacing as well. These examples show the six observed "
         "shapes selected from the font’s spacing rules.",
         (
@@ -95,7 +95,7 @@ FAMILIES = (
         "Two adjacent narrow letters each carry marks below. Broad vowel dots "
         "or an extra mark below a letter leave less room between the sets of marks. These examples "
         "include vav beside yod and nun beside vav. This broad screen remains "
-        "a trial; a matching atom can receive automatic spacing from a more "
+        "a trial; a matching word can receive automatic spacing from a more "
         "specific family.",
         (
             Example((tbn.BK_GENESIS, 1, 3), "body", "ויהי"),
@@ -111,7 +111,7 @@ FAMILIES = (
         "around those marks. The examples include broad vowel dots on the "
         "predecessor, an extra below-letter accent on qof, and an extra "
         "below-letter accent on the predecessor. This broad screen also remains "
-        "a trial; a matching atom can receive automatic spacing from a more "
+        "a trial; a matching word can receive automatic spacing from a more "
         "specific family.",
         (
             Example((tbn.BK_GENESIS, 2, 14), "body", "חדקל"),
@@ -212,7 +212,7 @@ def resolved_examples():
 
 
 def counts_by_family():
-    """Count distinct complete forms and occurrences in the examples' projection."""
+    """Count distinct pointed words and occurrences in the examples' projection."""
     mode = edition.NEAR_ALEPPO_MODE
     books = plus.read_parsed_plus_bk39s(
         tbn.ALL_BK39_IDS, str(build_paths.dataset_dir().parent)
@@ -282,23 +282,22 @@ def render():
             ]
         ),
         mb_html.para(
-            "An atom is a written form between spaces or maqaf marks. These examples "
-            "show shapes that can feel cramped in Taamey D even when no ink "
-            "overlaps. An atom can belong to more than one family. The families "
+            "These examples show words that can feel cramped in Taamey D even "
+            "when no ink overlaps. A word can belong to more than one family. The families "
             "group candidates for visual judgment rather than providing an "
-            "exhaustive inventory of cramped atoms."
+            "exhaustive inventory of cramped words."
         ),
         mb_html.para(
-            "Each row compares the same complete atom at usual spacing and with "
+            "Each row compares the same word at usual spacing and with "
             "0.06em extra letter spacing. The Reference opens the verse in NAEE. "
             "Current NAEE states which spacing the edition currently applies. "
             "The first three families receive automatic spacing. The two broad "
-            "trial screens do not select atoms for automatic spacing."
+            "trial screens do not select words for automatic spacing."
         ),
         mb_html.para(
-            "Counts cover Scripture in NAEE, including ketiv and qere. A distinct "
-            "pointed form includes every vowel and accent mark; occurrences count "
-            "each appearance of that form. Notes and atoms with special letter "
+            "Counts cover Scripture in NAEE, including ketiv and qere. Counts "
+            "distinguish different spellings and pointing, including accent marks; "
+            "occurrences count each appearance. Notes and words with special letter "
             "or vowel formatting are excluded. The families overlap, so their "
             "totals cannot be added."
         ),
@@ -313,7 +312,7 @@ def render():
                 mb_html.para(family.description),
                 mb_html.para(
                     f"Showing {len(family.examples):,} examples from "
-                    f"{len(counts[family.identifier]):,} distinct pointed forms "
+                    f"{len(counts[family.identifier]):,} distinct pointed words "
                     f"({counts[family.identifier].total():,} occurrences).",
                     {"class": "spacing-counts"},
                 ),
