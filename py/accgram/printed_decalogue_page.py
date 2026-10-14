@@ -1441,7 +1441,7 @@ def _chabad_aside() -> tuple[object, ...]:
         # span that, in Ben's words, "doesn't even seem to be trying to obey the rules of
         # cantillation".  The draft this replaced said "the word-accents are the elyon's, but the
         # chanted verse division belongs to neither strand", which invites the objection that
-        # sinks it: silluq IS a word-accent, so a real re-division would have MOVED the silluq marks
+        # sinks it: silluq IS a word-accent, so a real re-division would have MOVED the silluq accents
         # and the two halves could not come apart.  They come apart here only because CTR moved
         # nothing.  Its sixteen sof pasuq marks are the exact UNION of the two strands' boundaries
         # (elyon 9 + taxton 13, sharing 6), laid over an untouched elyon accent stream: at the 9

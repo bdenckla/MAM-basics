@@ -217,7 +217,7 @@ def p_zaqef_phrase_zaqefgadol(p):
 
 # See Yeivin on shofar illuy and shofar mekarbel: these signs are often pointed
 # differently than plain munax zaqef and munax+munax zaqef in some MSS, but
-# here in L they are pointed the same as munax marks before zaqef.
+# here in L they are pointed the same as munax accents before zaqef.
 def p_zaqef_phrase_munax(p):
     "zaqef_phrase : MUNAX ZAQEF"
     p[0] = add_leaves("zaqef_phrase", p[1], p[2])
@@ -856,7 +856,7 @@ def p_geresh_phrase_munax2_telq_azla(p):
     p[0] = add_leaves("geresh_phrase", p[1], p[2], p[3], p[4], p[5])
 
 
-# Judg 11:17 & about 6 other passages have this many munax marks.
+# Judg 11:17 & about 6 other passages have this many munax accents.
 def p_geresh_phrase_munax3_telq_azla(p):
     "geresh_phrase : MUNAX MUNAX MUNAX TELISHAQETANNA AZLA GERESH"
     p[0] = add_leaves("geresh_phrase", p[1], p[2], p[3], p[4], p[5], p[6])

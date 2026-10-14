@@ -26,9 +26,9 @@ finding.  ``sof_pasuq_spans`` is named for this, and ``span_silluq_status`` is w
 
 The claim the page makes needs that check to be REAL: "the accents are the elyon's, silluq
 included, but the punctuation is neither strand's" invites the objection that sinks a sloppier
-version of it -- silluq IS an accent, so a genuine re-division would have MOVED the silluq marks and
-the two halves could not come apart.  They come apart here only because CTR moved nothing.  Note
-that the glyph comparison below cannot see this on its own: ``word_glyphs`` drops U+05BD, so
+version of it -- silluq IS an accent, so a genuine re-division would have MOVED the silluq accents
+and the two halves could not come apart.  They come apart here only because CTR moved nothing.
+Note that the glyph comparison below cannot see this on its own: ``word_glyphs`` drops U+05BD, so
 139/142 is silluq-BLIND and would agree just as happily if CTR had re-silluqed the seven.
 
 STATE THE DIVISION IN CHANTED VERSES OR SPANS, NEVER IN NUMBERED ONES.  An earlier draft of the
@@ -147,10 +147,10 @@ def sof_pasuq_spans(ctr: dict, book: str) -> list[str]:
 
     The neutral name is the point: this splits at the MARK and claims nothing about
     chantability.  A chanted verse needs a silluq before its sof pasuq, and CTR's Exodus has
-    sixteen sof pasuq marks over an accent stream supplying only nine silluq marks, so seven of its
-    spans close on a mid-verse disjunctive and are no kind of verse (see the module docstring and
-    ``span_silluq_status``).  Deuteronomy's thirteen spans all have a silluq, so there they are
-    chanted verses.
+    sixteen sof pasuq marks over an accent stream supplying only nine silluq accents, so seven of
+    its spans close on a mid-verse disjunctive and are no kind of verse (see the module docstring
+    and ``span_silluq_status``).  Deuteronomy's thirteen spans all have a silluq, so there they
+    are chanted verses.
 
     Splitting is still the right recovery step: Exodus 20:13 has three prohibitions each with
     its own colon, so a numbered verse is not a span either.
@@ -227,8 +227,8 @@ def span_silluq_status(ctr: dict, book: str) -> tuple[SpanSilluq, ...]:
     """Per sof pasuq span: does its last word have a silluq -- i.e. is it a chanted verse at all?
 
     This is what keeps the page's claim honest.  ``word_glyphs`` drops U+05BD, so the glyph
-    comparison is silluq-blind and would report the same 139/142 whether or not CTR had moved
-    the silluq marks to its own sixteen boundaries.  It did not, and this is where that is checked.
+    comparison is silluq-blind and would report the same 139/142 whether or not CTR had moved the
+    silluq accents to its own sixteen boundaries.  It did not, and this is where that is checked.
     """
     out: list[SpanSilluq] = []
     for span in sof_pasuq_spans(ctr, book):
