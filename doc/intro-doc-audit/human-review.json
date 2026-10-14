@@ -273,9 +273,9 @@
       "DOCNOTE-SPELLING-PROSE"
     ],
     "section": "discrepancies",
-    "title": "Deuteronomy 6:21 — Leningrad is assigned both spellings",
-    "issue": "The doc-note includes Leningrad in both the defective-vav and full-vav source lists.",
-    "context": "MAM has וַיֹּצִיאֵ֧נוּ. The note’s initial =ל clause therefore assigns Leningrad the defective spelling.",
+    "title": "Deuteronomy 6:21 — Ben’s correction of the opening source list",
+    "issue": "Ben adjudicates removal of bare ל from the opening defective-vav list; Firkovich B17 remains.",
+    "context": "The note’s explicit alternative and repeated concluding statement assign Leningrad the plene-vav spelling and favor this direction of correction.",
     "panels": [
       {
         "label": "Introduction, chapter 3 — Torah spelling differences",
@@ -284,7 +284,7 @@
         "translation": "MAM: וַיֹּצִיאֵ֧נוּ; Leningrad: וַיּוֹצִיאֵ֧נוּ."
       },
       {
-        "label": "Complete MAM doc-note, Deuteronomy 6:21 — Hebrew and full English translation",
+        "label": "Original complete MAM doc-note, Deuteronomy 6:21 — Hebrew and full English translation",
         "note": "Deuter 6:21/2/0",
         "quote": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
         "translation": "Initial =: MAM agrees with ל (Leningrad), ל1 (Firkovich B17), ש (Sassoon 507), ש1 (Sassoon 1053), ק3 (Cairo 18, after correction), ו (the Washington Pentateuch), ל3 (St Petersburg EVR-II-B-10), ל9 (St Petersburg EVR-II-B-59), פטרבורג-EVR-II-B-8 (St Petersburg EVR-II-B-8, interlinear text), and מסורת-ל (a note in Leningrad’s Masorah), טברניות (Tiberian material), and רמ\"ה (Meir Halevi Abulafia / Masoret Seyag la-Torah): spelling with vav omitted.\n\nל!=וַיּוֹצִיאֵ֧נוּ: Leningrad surprisingly has this spelling (vav included).\n\nBreuer noted uncertainty about the spelling in כתי\"ש (Sassoon 507) and כתי\"ל (Leningrad). But examining the manuscripts at increased magnification shows clearly: Sassoon 507 omits vav; Leningrad includes vav.\n\nקורן (Koren), ברויאר (Breuer), סימנים (the Simanim Tiqqun), מכון ממרא (Mechon Mamre).",
@@ -323,8 +323,8 @@
         ]
       }
     ],
-    "explanation": "The explicit ל!=וַיּוֹצִיאֵ֧נוּ clause and concluding prose instead assign Leningrad the full-vav spelling, agreeing with the Introduction.",
-    "decision": "Reconcile Leningrad’s entry in the initial list with the note’s explicit spelling and conclusion.",
+    "explanation": "Ben independently inspected the manuscript and found it pretty clearly plene-vav despite its poor condition. The cause—aging damage, erasure or both—remains unresolved.",
+    "decision": "The exact edit is =ל,ל1 → =ל1; the remaining note is unchanged. The original full note and translation remain visible, and this source correction has not been applied.",
     "reading_forms": [
       {
         "label": "MAM text",
@@ -340,9 +340,10 @@
       }
     ],
     "prose_quotes": [
-      "=ל",
-      "ל!=וַיּוֹצִיאֵ֧נוּ"
-    ]
+      "=ל,ל1",
+      "=ל1"
+    ],
+    "adjudication": "DEUT-6-21-BEN-20261014"
   },
   {
     "id": "deuteronomy-hataf-count",

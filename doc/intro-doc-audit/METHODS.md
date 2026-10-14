@@ -16,7 +16,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 581 displayed passages against literal stored strings,
+The renderer validates 582 displayed passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -39,7 +39,11 @@ Ben’s 2026-10-14 Jeremiah 31:37 adjudication is recorded in
 and shows his exact proposed correction separately. Ben also confirmed the
 [Numbers 9:7 wording correction](numbers-9-7-adjudication.md) and its inverse,
 [Deuteronomy 32:34](deuteronomy-32-34-adjudication.md), retaining the stored
-punctuation in both before/after comparisons. The renderer checks three proposed
+punctuation in both before/after comparisons. Ben subsequently adjudicated
+[Deuteronomy 6:21](deuteronomy-6-21-adjudication.md): remove only bare ל from the
+opening list, retaining ל1. The original complete note and translation stay visible;
+the manuscript assessment is Ben’s and damage/erasure causes remain uncertain.
+The renderer checks four proposed
 quotations against their declared edits, separately from source-passage validation.
 The three contextual facts, local screenshot observations and bounded restoration
 history are retained with attribution. The copying theory remains a hypothesis;
@@ -53,6 +57,8 @@ uncertainty and enlarged-inspection statement, and the final edition list. Hebre
 sigils remain visible with established decoding. The renderer validates the complete
 note and its per-clause translation bindings; the faithful raw note was checked
 separately, retaining its original mark order.
+Dedicated word comparisons and proposed before/after quotations are stacked
+vertically, following Ben’s 2026-10-14 Hebrew-prose guidance.
 
 Regenerate the readable review and its presentation coverage record with
 `py/main_intro_doc_audit.py review`, using the interpreter and low-priority workflow

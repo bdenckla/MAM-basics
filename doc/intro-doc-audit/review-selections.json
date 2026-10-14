@@ -371,10 +371,11 @@
         "Deuter 32:34/2/0",
         "Deuter 6:21/2/0"
       ],
-      "explanation": "Numbers 9:7 calls the selected full-YOD form full VAV, although that atom has yod and no vav. Deuteronomy 32:34 calls its full-VAV form full YOD, although the atom has vav and no yod. At Deuteronomy 6:21 the note lists Leningrad both among the implicit MAM defective-vav witnesses and in an explicit full-vav alternative; its final prose supports the full-vav Leningrad form quoted by the Introduction. Faithful raw bodies and selected target forms confirm all three. These note prose/source-list defects remain separate from physical manuscript readings. Ben confirmed the Numbers 9:7 vav-to-yod wording correction on 2026-10-14; adjudications.json retains the exact stored punctuation and proposed wording. No source correction has been applied. Ben also confirmed the inverse Deuteronomy 32:34 yod-to-vav wording correction on 2026-10-14; its exact stored punctuation and proposed wording are retained in adjudications.json.",
+      "explanation": "Numbers 9:7 calls the selected full-YOD form full VAV, although that atom has yod and no vav. Deuteronomy 32:34 calls its full-VAV form full YOD, although the atom has vav and no yod. At Deuteronomy 6:21 the note lists Leningrad both among the implicit MAM defective-vav witnesses and in an explicit full-vav alternative; its final prose supports the full-vav Leningrad form quoted by the Introduction. Faithful raw bodies and selected target forms confirm all three. These note prose/source-list defects remain separate from physical manuscript readings. Ben confirmed the Numbers 9:7 vav-to-yod wording correction on 2026-10-14; adjudications.json retains the exact stored punctuation and proposed wording. No source correction has been applied. Ben also confirmed the inverse Deuteronomy 32:34 yod-to-vav wording correction on 2026-10-14; its exact stored punctuation and proposed wording are retained in adjudications.json. Ben adjudicated Deuteronomy 6:21 on 2026-10-14: remove only bare ל from the initial list, preserving ל1. The repeated note statements favor this direction, and Ben independently inspected the manuscript and found it pretty clearly plene-vav. Damage/erasure causes remain uncertain; the precise proposed note is retained without any upstream edit.",
       "adjudications": [
         "NUM-9-7-BEN-20261014",
-        "DEUT-32-34-BEN-20261014"
+        "DEUT-32-34-BEN-20261014",
+        "DEUT-6-21-BEN-20261014"
       ]
     },
     {

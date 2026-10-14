@@ -177,5 +177,68 @@
     "inverse_of": "NUM-9-7-BEN-20261014",
     "independent_check": "The faithful raw chapter and parsed note both contain the current wording. The selected MAM word contains vav and no yod; the Introduction and the note's Leningrad clause describe the presence/absence of vav. The existing spelling-prose proof retains the raw-note comparison.",
     "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+  },
+  {
+    "id": "DEUT-6-21-BEN-20261014",
+    "case": "deuteronomy-leningrad-spelling",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_4e66eddc6bf48191ba19bb417ae3ae7f",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "opening-list-correction-adjudicated-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "דברים ו/טעמים",
+      "page_id": 236575,
+      "requested_title": "דברים_ו/טעמים",
+      "revision_id": 2987745,
+      "sha256": "5ba16e01ad47e080b992f10770147fc059c7f7dbf46aa66bfeab7602da8eb23f"
+    },
+    "current": {
+      "note": "Deuter 6:21/2/0",
+      "quote": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)"
+    },
+    "proposed_quotation": "=ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)",
+    "changes": [
+      {
+        "before": "=ל,ל1",
+        "after": "=ל1",
+        "purpose": "Remove only bare ל and its following list comma at the opening. Preserve ל1, מסורת-ל and every other character."
+      }
+    ],
+    "current_full_note": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
+    "proposed_full_note": "=ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
+    "current_label": "Current opening clause — includes Leningrad",
+    "proposed_label": "Ben’s proposed opening clause — Leningrad removed; Firkovich B17 retained",
+    "current_explanation": "The original list includes bare ל (Leningrad) before ל1 (Firkovich B17).",
+    "proposed_explanation": "Only the first list entry and its comma are removed; Firkovich B17 and the Leningrad Masorah reference remain.",
+    "research_note": "deuteronomy-6-21-adjudication.md",
+    "internal_evidence": [
+      {
+        "quote": "ל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)",
+        "meaning": "The explicit Leningrad alternative has plene vav."
+      },
+      {
+        "quote": "כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.",
+        "meaning": "The concluding statement again assigns plene vav to Leningrad, in contrast to Sassoon 507."
+      }
+    ],
+    "manuscript_assessment": {
+      "attribution": "Ben",
+      "reading": "pretty clearly plene-vav",
+      "basis": "Ben independently inspected the manuscript, beyond the internal consistency argument.",
+      "condition": "Not in great shape at this location.",
+      "cause": "Aging damage, erasure, or both remain uncertain."
+    },
+    "local_screenshot": {
+      "path": "C:\\Users\\BenDe\\OneDrive\\Pictures\\Screenshots\\Screenshot 2026-10-14 143534.png",
+      "sha256": "745f14bd5cca6608dca902bb3d95ead6054ab1d2069db4792beb443fbc127ae6",
+      "bytes": 131388,
+      "disposition": "opened locally; not copied into the repository, uploaded or embedded"
+    },
+    "assistant_observation": "The supplied crop has a visibly irregular/obscured area across the word. This inspection does not independently adjudicate the reading or determine the cause of that appearance.",
+    "scope": "Research/report proposal only; the original full note and translation remain visible. No source cache, dataset, Wikisource, issue/comment or main change."
   }
 ]
