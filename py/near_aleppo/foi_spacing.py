@@ -49,8 +49,8 @@ class Family:
 FAMILIES = (
     Family(
         spacing.NARROW_VOWEL_ACCENT,
-        "A broad vowel and accent on a narrow letter",
-        "In this family of words, yod or vav carries both a broad below-vowel "
+        "A wide vowel and accent on a narrow letter",
+        "In this family of words, yod or vav carries both a wide below-vowel "
         "and a below-accent. The vowel dots and accent share a narrow letter’s "
         "space. This family is expanded automatically in NAEE.",
         (
@@ -92,9 +92,9 @@ FAMILIES = (
         spacing.ADJACENT_NARROW_BELOW,
         "Adjacent narrow letters, both with below-marks",
         "In this family of words, two adjacent narrow letters each carry below-marks. "
-        "Broad vowel dots or an extra below-mark leave less room between the sets "
+        "Wide vowel dots or an extra below-mark leave less room between the sets "
         "of marks. These examples "
-        "include vav beside yod and nun beside vav. This broad screen remains "
+        "include vav beside yod and nun beside vav. This general screen remains "
         "a trial; a matching word can receive automatic spacing from a more "
         "specific family.",
         (
@@ -108,9 +108,9 @@ FAMILIES = (
         "Qof and its predecessor, both with below-marks",
         "In this family of words, qof and the letter immediately before it in "
         "reading order both carry below-marks. Qof’s descending stroke adds to the crowding "
-        "around those marks. The examples include broad vowel dots on the "
+        "around those marks. The examples include wide vowel dots on the "
         "predecessor, an extra below-accent on qof, and an extra "
-        "below-accent on the predecessor. This broad screen also remains "
+        "below-accent on the predecessor. This general screen also remains "
         "a trial; a matching word can receive automatic spacing from a more "
         "specific family.",
         (
@@ -292,7 +292,7 @@ def render():
             "Each row compares the same word at usual spacing and with "
             "0.06em extra letter spacing. The Reference opens the verse in NAEE. "
             "Current NAEE states which spacing the edition currently applies. "
-            "The first three families receive automatic spacing. The two broad "
+            "The first three families receive automatic spacing. The two general "
             "trial screens do not select words for automatic spacing."
         ),
         mb_html.para(
