@@ -94,6 +94,7 @@ class Sources:
         self.claims = {c["id"]: c for c in read("claims.json")}
         self.notes = {n["id"]: n for n in read("notes.json")}
         self.checked = 0
+        self.proposals_checked = 0
 
     def resolve(self, passage):
         if "claim" in passage or passage.get("source") == "claim":
@@ -208,6 +209,64 @@ def membership_table(comparison, sources):
     )
 
 
+def adjudication_comparison(case, sources):
+    entries = [a for a in read("adjudications.json") if a["id"] == case["adjudication"]]
+    if len(entries) != 1:
+        raise ValueError("An adjudication must identify one retained research record")
+    entry = entries[0]
+    if (
+        entry["case"] != case["id"]
+        or entry["source_base_commit"] != audit.pinned_commit()
+    ):
+        raise ValueError("Adjudication case or source snapshot does not match")
+    sources.resolve(entry["current"])
+    proposed = entry["current"]["quote"]
+    for change in entry["changes"]:
+        if proposed.count(change["before"]) != 1:
+            raise ValueError(
+                "A proposed quotation edit needs one exact source occurrence"
+            )
+        proposed = proposed.replace(change["before"], change["after"], 1)
+    if proposed != entry["proposed_quotation"]:
+        raise ValueError("The proposed quotation differs from its recorded edits")
+    sources.proposals_checked += 1
+    panels = []
+    for label, quote, explanation in (
+        (
+            entry.get("current_label", "Current cached doc-note quotation"),
+            entry["current"]["quote"],
+            entry.get("current_explanation", ""),
+        ),
+        (
+            entry.get(
+                "proposed_label", "Ben’s proposed corrected quotation — not applied"
+            ),
+            proposed,
+            entry.get("proposed_explanation", ""),
+        ),
+    ):
+        panels.append(
+            '<div class="passage"><h4>'
+            + escaped(label)
+            + '</h4><div class="he" lang="he" dir="rtl">'
+            + escaped(quote)
+            + "</div>"
+            + (
+                '<p class="translation">' + prose(explanation) + "</p>"
+                if explanation
+                else ""
+            )
+            + "</div>"
+        )
+    return (
+        '<div class="comparison adjudication">'
+        + "".join(panels)
+        + '</div><p><a href="'
+        + escaped(entry["research_note"])
+        + '">Ben’s adjudication and research context</a></p>'
+    )
+
+
 def card(case, sources):
     for key in ("title", "issue", "decision", "panels"):
         if not case.get(key):
@@ -243,6 +302,9 @@ def card(case, sources):
             )
             + "</div>"
         )
+    adjudication = (
+        adjudication_comparison(case, sources) if case.get("adjudication") else ""
+    )
     issue = ""
     if case.get("issue_number"):
         number = case["issue_number"]
@@ -271,6 +333,7 @@ def card(case, sources):
         + passages
         + "</div>"
         + ('<div class="readings">' + "".join(forms) + "</div>" if forms else "")
+        + adjudication
         + issue
         + "</article></details>"
     )
@@ -280,7 +343,7 @@ STYLE = """@font-face{font-family:Taamey;src:url(../woff2/Taamey_D.woff2)}
 :root{--he-size:30px;color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#f5f6f4;color:#22332d;font:17px/1.65 Georgia,serif}main{max-width:1220px;margin:auto;padding:28px}h1,h2,h3,h4,label,nav,.reading-label,.source-link{font-family:system-ui,sans-serif}h1{font-size:29px;line-height:1.3}h2{font-size:24px;margin:42px 0 15px}h3{font-size:21px;margin:0 0 12px}h4{font-size:15px;line-height:1.45;margin:0 0 12px;color:#4e645a}.intro{max-width:850px}.toolbar{position:sticky;top:0;background:#f5f6f4f5;border-bottom:1px solid #d5dfd9;padding:12px 0;z-index:2;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar nav{margin-left:auto;font-size:14px}a{color:#1f5b85}nav a{margin-left:14px}article{background:white;border:1px solid #d7e0da;border-radius:8px;padding:25px;margin:22px 0;scroll-margin-top:85px}.issue{font-weight:bold;font-size:18px}.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin:22px 0}.passage{border-left:3px solid #bdcfc2;background:#f6f8f5;padding:16px 18px;min-width:0}.he{font:var(--he-size)/1.9 Taamey,'SBL Hebrew',serif;font-weight:400;white-space:pre-wrap;overflow-wrap:anywhere}.translation{font-size:16px;line-height:1.65;white-space:pre-wrap;margin-bottom:10px}.source-link{font-size:13px}.readings{display:flex;gap:20px;flex-wrap:wrap;border-top:1px solid #dce5de;border-bottom:1px solid #dce5de;padding:14px 0}.reading{display:flex;flex-direction:column;min-width:220px;flex:1}.reading-label,.gloss{font-size:14px}.reading .he{align-self:flex-start}.decision{background:#eef4f0;padding:12px 16px}footer{margin-top:40px;border-top:1px solid #d5dfd9;padding-top:20px;font-size:15px}input{vertical-align:middle}@media(max-width:760px){main{padding:16px}.comparison{grid-template-columns:1fr}.toolbar nav{margin-left:0}nav a{margin-left:0;margin-right:12px}article{padding:18px}}"""
 
 
-def coverage_report(cases, literal_passages):
+def coverage_report(cases, literal_passages, proposed_quotations=0):
     """Account for retained cases; this is presentation coverage, not a verdict."""
     covered = {
         key: [case["id"] for case in cases if key in case["covers"]]
@@ -314,7 +377,7 @@ def coverage_report(cases, literal_passages):
         raise ValueError(f"Additional case lacks a readable disposition: {missing}")
     return {
         "source_base_commit": audit.pinned_commit(),
-        "purpose": "Presentation coverage and exact-quotation verification; no new semantic consistency verdict.",
+        "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
         "readable_cases": len(cases),
         "sections": {
             key: sum(case["section"] == key for case in cases)
@@ -338,6 +401,8 @@ def coverage_report(cases, literal_passages):
             "total": len(fragment_keys),
         },
         "literal_passages_checked": literal_passages,
+        "proposed_quotations_checked": proposed_quotations,
+        "user_adjudicated_comparisons": sum(bool(c.get("adjudication")) for c in cases),
         "comparison_mapping": covered,
         "methods_only_or_resolved": methods,
         "limits": [
@@ -390,7 +455,8 @@ def main(cases=None, output="review.html"):
     )
     if output == "review.html":
         audit.dump(
-            "human-review-coverage.json", coverage_report(cases, sources.checked)
+            "human-review-coverage.json",
+            coverage_report(cases, sources.checked, sources.proposals_checked),
         )
     (audit.OUT / output).write_text(output_html, encoding="utf-8", newline="\n")
     print(
@@ -398,6 +464,7 @@ def main(cases=None, output="review.html"):
             {
                 "readable_cases": len(cases),
                 "literal_passages_checked": sources.checked,
+                "proposed_quotations_checked": sources.proposals_checked,
                 "output": output,
             }
         )

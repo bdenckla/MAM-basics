@@ -1,6 +1,6 @@
 {
   "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
-  "purpose": "Presentation coverage and exact-quotation verification; no new semantic consistency verdict.",
+  "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
   "readable_cases": 137,
   "sections": {
     "discrepancies": 84,
@@ -25,6 +25,8 @@
     "total": 6
   },
   "literal_passages_checked": 582,
+  "proposed_quotations_checked": 2,
+  "user_adjudicated_comparisons": 2,
   "comparison_mapping": {
     "NEXT-CATALOGUE": [
       "different-qere-count"

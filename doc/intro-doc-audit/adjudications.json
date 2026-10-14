@@ -1,0 +1,142 @@
+[
+  {
+    "id": "JER-31-37-BEN-20261014",
+    "case": "jeremiah-accent",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_a32e0898f09c8191bc489d5b907129fd",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "ירמיהו לא/טעמים",
+      "page_id": 237690,
+      "requested_title": "ירמיהו_לא/טעמים",
+      "revision_id": 3088451,
+      "sha256": "6506efcdb68c809c9c33529e1e216add0993666fc48b17fec42eed632ea46db5"
+    },
+    "introduction": {
+      "claim": "ch5:L458",
+      "revision_id": 3087740,
+      "quote": "יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה"
+    },
+    "current": {
+      "note": "Jeremiah 31:37/2/0",
+      "quote": "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה"
+    },
+    "proposed_quotation": "הִנֵּ֛ה יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה",
+    "changes": [
+      {
+        "before": "נְאֻם־יְהֹוָֽה",
+        "after": "נְאֻם־יְהֹוָ֑ה",
+        "purpose": "Replace U+05BD HEBREW POINT METEG with U+0591 HEBREW ACCENT ETNAHTA; Ben's correctness adjudication."
+      },
+      {
+        "before": "נְאֻם־יְהֹוָ֑ה",
+        "after": "נְאֻם־יְהוָ֑ה",
+        "purpose": "Remove U+05B9 HEBREW POINT HOLAM, as Ben requests to match the manuscript and Introduction."
+      },
+      {
+        "before": "[]",
+        "after": "[֯]",
+        "purpose": "Optionally include U+05AF HEBREW MARK MASORA CIRCLE in the gap; Ben expressly says its omission is not a correctness issue."
+      }
+    ],
+    "research_note": "jeremiah-31-37-adjudication.md",
+    "local_screenshot": {
+      "path": "C:\\Users\\BenDe\\OneDrive\\Pictures\\Screenshots\\Screenshot 2026-10-14 114737.png",
+      "sha256": "363034f1ad10d2cc0c5f4e25079f0c0f6e805bd7eb465a4c6e3fd32b17baba81",
+      "bytes": 72533,
+      "disposition": "inspected locally; not copied into the repository, uploaded or embedded"
+    },
+    "ben_contextual_facts": [
+      {
+        "fact": 1,
+        "observation": "The etnaḥta is broken; Ben judges the ink shape originally non-contiguous, rather than broken through aging."
+      },
+      {
+        "fact": 2,
+        "observation": "This is the famous torn leaf of Aleppo, in its extant section."
+      },
+      {
+        "fact": 3,
+        "observation": "Ben attributes the recent restoration of the needed נְאֻם־ to Avi."
+      }
+    ],
+    "independent_checks": {
+      "screenshot": "The supplied crop visibly shows separated lower accent strokes at the disputed location and no visible ḥolam dot over the divine name. The inspection does not independently determine the cause of the separated strokes or the crop's leaf provenance.",
+      "cache_history": [
+        {
+          "commit": "3c58d0871210fc01298979f286e19bac9d11d58d",
+          "path": "in/mam-ws/C2-Jeremiah.json",
+          "verse37_aleppo_clause": "הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+          "verse36_ending": "נְאֻם־יְהֹוָֽה׃"
+        },
+        {
+          "commit": "647f5e225f69782194137e74627cfaced4a7d2a2",
+          "path": "in/mam-ws/C2-Jeremiah.json",
+          "verse37_aleppo_clause": "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+          "verse36_ending": "נְאֻם־יְהֹוָֽה׃"
+        }
+      ],
+      "restoration": "The Aleppo clause changed only by restoration of נְאֻם־ between these two cached snapshots. U+05BD and ḥolam were already present in the older quotation. The completion report corroborates the restoration but does not independently identify the Wikisource editor as Avi.",
+      "cached_issue_completion": {
+        "repository": "bdenckla/MAM-basics",
+        "issue": 304,
+        "state": "CLOSED",
+        "author_login": "skadish1",
+        "created_at": "2026-10-13T04:19:55Z",
+        "comment_url": "https://github.com/bdenckla/MAM-basics/issues/304#issuecomment-6138147770",
+        "body": "[Done](https://he.wikisource.org/w/index.php?title=%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&curid=237690&diff=3088451&oldid=2988015).",
+        "linked_old_revision": 2988015,
+        "linked_new_revision": 3088451
+      }
+    },
+    "hypothesis": {
+      "author": "Ben",
+      "status": "not-established-history",
+      "description": "The post-gap נְאֻם־יְהֹוָֽה may have been copied separately from verse 31:36, omitting sof pasuq, rather than copying the whole phrase beginning הִנֵּ֛ה יָמִ֥ים. The preceding verse does have that ending, but matching text does not establish a copying event; the wrong mark predates the recent phrase restoration."
+    },
+    "scope": "Research/report proposal only. No source cache, scripture dataset, edition, Wikisource page, issue/comment, main integration or deployment changed."
+  },
+  {
+    "id": "NUM-9-7-BEN-20261014",
+    "case": "numbers-yod-label",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_ed2fbcd60d008191a26921b22a3c08d9",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "במדבר ט/טעמים",
+      "page_id": 236442,
+      "requested_title": "במדבר_ט/טעמים",
+      "revision_id": 2987712,
+      "sha256": "5b582ecf84038b11b879c1c41c24f7b693c7013e617424d0ec5e4add0fd4a6f5"
+    },
+    "current": {
+      "note": "Numbers 9:7/2/0",
+      "quote": "(כתיב מלא וי\"ו)"
+    },
+    "proposed_quotation": "(כתיב מלא יו\"ד)",
+    "changes": [
+      {
+        "before": "וי\"ו",
+        "after": "יו\"ד",
+        "purpose": "Ben confirms that the full-spelling description should name yod rather than vav; preserve the stored quotation mark and parentheses."
+      }
+    ],
+    "current_label": "Current cached doc-note wording",
+    "proposed_label": "Ben’s confirmed corrected wording — not applied",
+    "current_explanation": "(Spelling with vav included.)",
+    "proposed_explanation": "(Spelling with yod included.)",
+    "research_note": "numbers-9-7-adjudication.md",
+    "independent_check": "The selected MAM word contains yod and no vav. The Introduction and doc-note's Leningrad clause describe the same presence/absence of yod. The existing spelling-prose proof retains the faithful raw-note comparison.",
+    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+  }
+]

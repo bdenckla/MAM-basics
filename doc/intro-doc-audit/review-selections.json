@@ -17,7 +17,8 @@
       "note_ids": [
         "Jeremiah 31:37/2/0"
       ],
-      "explanation": "The Introduction attributes etnahta to the Aleppo ketiv; the note's explicit Aleppo quotation instead has U+05BD at that position. The note's MAM target has etnahta. Both sources agree that the gap for the qere lacks pointing. This establishes a disagreement between attributed quotations; it does not decide the manuscript reading. U+05BD occurs mid-verse, so it must not be described as silluq. The holam difference is a separate policy question. The chapter note revision 3088451 is newer than Introduction chapter 5 revision 3087740. Issue #304 is closed and concerned the formerly omitted atom only. The inspected revision already restores that atom; this audit does not reopen that correction."
+      "explanation": "The Introduction’s Aleppo quotation has U+0591 etnaḥta; the cached doc-note has U+05BD Unicode METEG. The character’s encoding alone does not establish a narrow-sense meteg interpretation for this erroneous quotation. Both descriptions concern the unpointed gap for qere without ketiv. Ben adjudicated the doc-note on 2026-10-14 and requests etnaḥta, omission of the ḥolam dot, and optional inclusion of the orphan masorah circle. adjudications.json and jeremiah-31-37-adjudication.md retain the original and proposed quotations and contextual evidence. Chapter revision 3088451 is newer than Introduction revision 3087740; the closed #304 restoration of the formerly omitted phrase is independently checked and preserved. No source correction has been applied.",
+      "adjudication": "JER-31-37-BEN-20261014"
     },
     {
       "id": "DEUT-HATAF",
@@ -167,7 +168,7 @@
         "Psalms 57:9/2/0",
         "Psalms 108:3/2/0"
       ],
-      "explanation": "Both sources prefer dehi with meteg. The Introduction secondary option is dehi with merkha; the notes instead propose terha with merkha. The difference appears in both the quoted codepoints and the explicit accent names. These are uncertain Aleppo candidate readings. The caches establish differing candidate sets; they do not select the actual manuscript reading."
+      "explanation": "Both sources prefer deḥi with meteg. The Introduction secondary option is deḥi with merkha; the notes instead propose terḥa with merkha. The difference appears in both the quoted codepoints and the explicit accent names. These are uncertain Aleppo candidate readings. The caches establish differing candidate sets; they do not select the actual manuscript reading."
     },
     {
       "id": "DESCRIPTION-NAMES",
@@ -318,7 +319,7 @@
       "note_ids": [
         "Psalms 39:13/2/0"
       ],
-      "explanation": "Two identical Introduction entries put MERKHA (U+05A5) on shin and METEG (U+05BD) on ayin in the explicitly Leningrad-attributed form. The raw and parsed note put METEG on shin and MERKHA on ayin. Maqaf and sheva agree. The note separately retains Aleppo hataf uncertainty; this finding concerns the Leningrad quotation and leaves the physical reading unverified."
+      "explanation": "Two identical Introduction entries put MERKHA (U+05A5) on shin and METEG (U+05BD) on ayin in the explicitly Leningrad-attributed form. The raw and parsed note put METEG on shin and MERKHA on ayin. Maqaf and sheva agree. The note separately retains Aleppo ḥataf uncertainty; this finding concerns the Leningrad quotation and leaves the physical reading unverified."
     },
     {
       "id": "PS-17-14-MAQAF",
@@ -370,7 +371,10 @@
         "Deuter 32:34/2/0",
         "Deuter 6:21/2/0"
       ],
-      "explanation": "Numbers 9:7 calls the selected full-YOD form full VAV, although that atom has yod and no vav. Deuteronomy 32:34 calls its full-VAV form full YOD, although the atom has vav and no yod. At Deuteronomy 6:21 the note lists Leningrad both among the implicit MAM defective-vav witnesses and in an explicit full-vav alternative; its final prose supports the full-vav Leningrad form quoted by the Introduction. Faithful raw bodies and selected target forms confirm all three. These note prose/source-list defects remain separate from physical manuscript readings."
+      "explanation": "Numbers 9:7 calls the selected full-YOD form full VAV, although that atom has yod and no vav. Deuteronomy 32:34 calls its full-VAV form full YOD, although the atom has vav and no yod. At Deuteronomy 6:21 the note lists Leningrad both among the implicit MAM defective-vav witnesses and in an explicit full-vav alternative; its final prose supports the full-vav Leningrad form quoted by the Introduction. Faithful raw bodies and selected target forms confirm all three. These note prose/source-list defects remain separate from physical manuscript readings. Ben confirmed the Numbers 9:7 vav-to-yod wording correction on 2026-10-14; adjudications.json retains the exact stored punctuation and proposed wording. No source correction has been applied.",
+      "adjudications": [
+        "NUM-9-7-BEN-20261014"
+      ]
     },
     {
       "id": "ISA-10-15",
@@ -440,7 +444,7 @@
     },
     {
       "id": "PS-150-3-HATAF",
-      "title": "Psalm 150:3: the first Aleppo roster specimen has sheva rather than hataf",
+      "title": "Psalm 150:3: the first Aleppo roster specimen has sheva rather than ḥataf",
       "status": "new-supported-source-disagreement",
       "claims": [
         "ch5:L710"
@@ -461,11 +465,11 @@
       "note_ids": [
         "Psalms 150:3/2/0"
       ],
-      "explanation": "The first of two separately indexed Psalm 150:3 items is explicitly Aleppo-attributed but encodes SHEVA (U+05B0) on lamed. The faithful raw/current parsed note quotes Aleppo with HATAF PATAH (U+05B2). The second occurrence is separately retained and agrees. This is a central hataf-quotation disagreement; the actual manuscript reading remains unverified. The Psalms roster has 172 form items against171 declared items, but item-count and hataf-occurrence-count are kept distinct."
+      "explanation": "The first of two separately indexed Psalm 150:3 items is explicitly Aleppo-attributed but encodes SHEVA (U+05B0) on lamed. The faithful raw/current parsed note quotes Aleppo with HATAF PATAH (U+05B2). The second occurrence is separately retained and agrees. This is a central ḥataf-quotation disagreement; the actual manuscript reading remains unverified. The Psalms roster has 172 form items against171 declared items, but item-count and ḥataf-occurrence-count are kept distinct."
     },
     {
       "id": "PS-39-13-HATAF-LABEL",
-      "title": "Psalm 39:13: the second hataf alternative has the wrong vowel name",
+      "title": "Psalm 39:13: the second ḥataf alternative has the wrong vowel name",
       "status": "new-verified-introduction-description-discrepancy",
       "claims": [
         "ch5:L710"
@@ -486,7 +490,7 @@
       "note_ids": [
         "Psalms 39:13/2/0"
       ],
-      "explanation": "The Introduction encodes HATAF PATAH (U+05B2) in the second alternative but labels it hataf qamats. Its first alternative correctly has HATAF QAMATS (U+05B3). The current raw/parsed note distinguishes the two vowels correctly and retains uncertainty about Aleppo. Both alternative forms agree; the defect is the Introduction's second vowel label."
+      "explanation": "The Introduction encodes HATAF PATAH (U+05B2) in the second alternative but labels it ḥataf qamats. Its first alternative correctly has HATAF QAMATS (U+05B3). The current raw/parsed note distinguishes the two vowels correctly and retains uncertainty about Aleppo. Both alternative forms agree; the defect is the Introduction's second vowel label."
     },
     {
       "id": "DOCNOTE-METEG-PROSE",
@@ -872,7 +876,7 @@
     },
     {
       "id": "PS-31-12-HATAF",
-      "title": "Psalm 31:12: omitted-hataf classification versus an explicit hataf note",
+      "title": "Psalm 31:12: omitted-ḥataf classification versus an explicit ḥataf note",
       "status": "new-supported-source-disagreement",
       "claims": [
         "ch2:L681"
@@ -897,7 +901,7 @@
       "note_ids": [
         "Psalms 31:12/2/1"
       ],
-      "explanation": "The Introduction puts וְלִשְׁכֵנַי in its11-case roster where the Aleppo scribe allegedly omitted hataf, and the specimen has sheva. The complete note explicitly assigns hataf-patah to Aleppo at that atom. Faithful raw and parsed bodies agree. This is a central attributed hataf disagreement; no physical manuscript reading is decided."
+      "explanation": "The Introduction puts וְלִשְׁכֵנַי in its11-case roster where the Aleppo scribe allegedly omitted ḥataf, and the specimen has sheva. The complete note explicitly assigns ḥataf-pataḥ to Aleppo at that atom. Faithful raw and parsed bodies agree. This is a central attributed ḥataf disagreement; no physical manuscript reading is decided."
     },
     {
       "id": "PS-53-6-LETTER-NAME",
@@ -1123,7 +1127,7 @@
     },
     {
       "id": "MAL-HOLAM",
-      "title": "Malachi 2:7: incidental holam in the specimen",
+      "title": "Malachi 2:7: incidental ḥolam in the specimen",
       "status": "notation-policy-uncertainty",
       "claims": [
         "ch5:L511"
@@ -1136,7 +1140,7 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "The Introduction specimen includes holam; the explicit Aleppo note quotation omits it and quotes an absence explanation. The meteg claim agrees. The specimen may follow a different convention for conventional divine-name pointing; assess that scope before treating the incidental mark as a manuscript contradiction."
+      "explanation": "The Introduction specimen includes ḥolam; the explicit Aleppo note quotation omits it and quotes an absence explanation. The meteg claim agrees. The specimen may follow a different convention for conventional divine-name pointing; assess that scope before treating the incidental mark as a manuscript contradiction."
     },
     {
       "id": "PS-119-138",
@@ -1239,7 +1243,7 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "The Introduction assigns the two quoted marks to reading strands more specifically than the note's explicit Leningrad description of munah and merkha. The quoted marks themselves are corroborated. Keep the strand assignment as a separate source-scope question."
+      "explanation": "The Introduction assigns the two quoted marks to reading strands more specifically than the note's explicit Leningrad description of munaḥ and merkha. The quoted marks themselves are corroborated. Keep the strand assignment as a separate source-scope question."
     },
     {
       "id": "SHARED-EXPLANATIONS",
@@ -1318,7 +1322,7 @@
       ],
       "refs": [],
       "note_ids": [],
-      "explanation": "The two incidental meteg specimens retain quotation scope. Numbers 1:10 and 10:19 explicitly document joined/spaced Leningrad forms; whether earlier uncertainty was unwarranted cannot be dated from the cache. Deuteronomy 32:6's Leningrad quotation omits the yod SHEVA explicitly present and described in the note. The holam policy does not explain that SHEVA omission. Joining agrees; complete-quotation intent and physical truth remain open."
+      "explanation": "The two incidental meteg specimens retain quotation scope. Numbers 1:10 and 10:19 explicitly document joined/spaced Leningrad forms; whether earlier uncertainty was unwarranted cannot be dated from the cache. Deuteronomy 32:6's Leningrad quotation omits the yod SHEVA explicitly present and described in the note. The ḥolam policy does not explain that SHEVA omission. Joining agrees; complete-quotation intent and physical truth remain open."
     },
     {
       "id": "ALEPPO-SPECIAL-SOURCE-PRECISION",
@@ -1372,7 +1376,7 @@
     },
     {
       "id": "HATAF-SOURCE-SCOPE",
-      "title": "Hataf rosters: source scope and inclusion questions",
+      "title": "Ḥataf rosters: source scope and inclusion questions",
       "status": "source-and-inclusion-policy-uncertainty",
       "claims": [
         "ch5:L704",
@@ -1401,7 +1405,7 @@
         "Jeremiah 50:6/2/0",
         "Ezekiel 17:17/2/0"
       ],
-      "explanation": "Nine unsigled specimens have explicit Aleppo note counterparts, consistent with the enclosing Aleppo-or-Leningrad heading; missing item sigla are not an evidence block for those nine. Two Jeremiah qere specimens still cross notes documenting ketiv; Ezekiel 17:17's Leningrad claim lacks a matching named-L clause. Inclusion of the additional Proverbs 30:17 Leningrad hataf remains editorial.",
+      "explanation": "Nine unsigled specimens have explicit Aleppo note counterparts, consistent with the enclosing Aleppo-or-Leningrad heading; missing item sigla are not an evidence block for those nine. Two Jeremiah qere specimens still cross notes documenting ketiv; Ezekiel 17:17's Leningrad claim lacks a matching named-L clause. Inclusion of the additional Proverbs 30:17 Leningrad ḥataf remains editorial.",
       "intro_roster_items": [
         [
           "ch5:L704",
@@ -1516,7 +1520,7 @@
         "Psalms 68:18/2/0",
         "Psalms 74:5/2/0"
       ],
-      "explanation": "Other Introduction passages agree with the notes for Psalm 6:3's qamats, Psalm 74:5's hataf and Psalm 68:18's rafe, while the design lists differ literally. Proverbs 8:34's other entry retains ATNAH HAFUKH and doubt; the design list uses GALGAL and a certain star. These are concrete internal quotation/qualification differences. The central design predicates agree. Complete manuscript-quotation intent and physical readings remain open; do not inflate them into four new central-feature alarms.",
+      "explanation": "Other Introduction passages agree with the notes for Psalm 6:3's qamats, Psalm 74:5's ḥataf and Psalm 68:18's rafe, while the design lists differ literally. Proverbs 8:34's other entry retains ATNAH HAFUKH and doubt; the design list uses GALGAL and a certain star. These are concrete internal quotation/qualification differences. The central design predicates agree. Complete manuscript-quotation intent and physical readings remain open; do not inflate them into four new central-feature alarms.",
       "intro_roster_items": [
         [
           "ch5:L751",

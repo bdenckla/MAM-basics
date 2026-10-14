@@ -142,9 +142,9 @@
       "JER-31-37"
     ],
     "section": "discrepancies",
-    "title": "Jeremiah 31:37 — which mark is attributed to Aleppo?",
-    "issue": "The Introduction quotes an etnahta on the divine name; the doc-note’s Aleppo quotation has a meteg at that position.",
-    "context": "Both passages describe missing pointing for the קרי ולא כתיב word בָּאִ֖ים; the discrepancy concerns the following divine name.",
+    "title": "Jeremiah 31:37 — Ben’s correction of the doc-note quotation",
+    "issue": "Ben adjudicates the doc-note’s Unicode METEG (U+05BD) as an error: it should be etnaḥta, as in the Introduction’s chapter 5.",
+    "context": "His proposed quotation also omits the ḥolam dot and includes the orphan masorah circle in the gap. The circle is optional; its omission is not a correctness issue.",
     "panels": [
       {
         "label": "Introduction, chapter 5 — missing pointing for qere without ketiv",
@@ -165,24 +165,10 @@
         ]
       }
     ],
-    "explanation": "The MAM text has etnahta; it does not settle the manuscript quotation. The additional holam dot in the note is a separate quotation-policy question.",
-    "decision": "Which Aleppo quotation is intended? Reconcile the attributed pointing without treating the MAM text as evidence for the manuscript.",
-    "reading_forms": [
-      {
-        "label": "Introduction: etnahta",
-        "source": "claim",
-        "id": "ch5:L458",
-        "text": "נְאֻם־יְהוָ֑ה",
-        "mark_name": "ETNAHTA"
-      },
-      {
-        "label": "Doc-note: meteg",
-        "source": "note",
-        "id": "Jeremiah 31:37/2/0",
-        "text": "נְאֻם־יְהֹוָֽה",
-        "mark_name": "METEG"
-      }
-    ]
+    "explanation": "",
+    "decision": "The unchanged cached quotation and Ben’s proposed correction are shown below. This source correction has not been applied; the research note records his observations, the recent restoration and the copying hypothesis.",
+    "reading_forms": [],
+    "adjudication": "JER-31-37-BEN-20261014"
   },
   {
     "id": "numbers-yod-label",
@@ -190,8 +176,8 @@
       "DOCNOTE-SPELLING-PROSE"
     ],
     "section": "discrepancies",
-    "title": "Numbers 9:7 — the note names vav, but the added letter is yod",
-    "issue": "The doc-note calls the selected spelling “full vav”; the displayed word contains a yod and no vav.",
+    "title": "Numbers 9:7 — Ben confirms the doc-note’s yod correction",
+    "issue": "Ben confirms that the doc-note’s “full vav” label should say “full yod”; the selected word contains yod and no vav.",
     "context": "The contrast is הַקְרִ֜יב versus הַקְרִ֜ב: presence or absence of yod.",
     "panels": [
       {
@@ -222,7 +208,7 @@
       }
     ],
     "explanation": "The Introduction and the note’s Leningrad clause both describe the yod difference.",
-    "decision": "Correct the note’s selected-spelling description to “full yod” if the quoted word is intended.",
+    "decision": "The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
     "reading_forms": [
       {
         "label": "MAM: includes yod",
@@ -236,7 +222,8 @@
         "id": "Numbers 9:7/2/0",
         "text": "הַקְרִ֜ב"
       }
-    ]
+    ],
+    "adjudication": "NUM-9-7-BEN-20261014"
   },
   {
     "id": "deuteronomy-vav-label",
@@ -337,7 +324,7 @@
       "DEUT-HATAF"
     ],
     "section": "discrepancies",
-    "title": "Deuteronomy’s list of hataf vowels on non-guttural letters",
+    "title": "Deuteronomy’s list of ḥataf vowels on non-guttural letters",
     "issue": "The Introduction labels this list “9 items,” but it names eleven verses and twelve words.",
     "context": "Six verse entries cite Leningrad; five cite Aleppo. Deuteronomy 32:10 contributes two words.",
     "panels": [
@@ -357,7 +344,7 @@
         "label": "Doc-note, Deuteronomy 32:10",
         "note": "Deuter 32:10/2/0",
         "quote": "א=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף)",
-        "translation": "Aleppo: יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (hataf in each word)."
+        "translation": "Aleppo: יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (ḥataf in each word)."
       }
     ],
     "explanation": "The entries are 5:23; 8:2, 8:15; 15:20, 15:22; 24:13; 28:39; 29:7; 32:10, 32:18 and 32:36. Their doc-notes support the quoted hatafs. Neither verse count nor word count is nine.",
@@ -664,7 +651,7 @@
         "label": "Doc-note, Ezekiel 28:3 — Aleppo ketiv",
         "note": "Ezekiel 28:3/2/0",
         "quote": "א-כתיב=מִדָּנִֵּ֑אל (חיריק, צירה, ואתנחתא מתחת לנו\"ן, בסדר הזה)",
-        "translation": "Aleppo ketiv: מִדָּנִֵּ֑אל (hiriq, tsere and etnahta below nun, in that order)."
+        "translation": "Aleppo ketiv: מִדָּנִֵּ֑אל (ḥiriq, tsere and etnaḥta below nun, in that order)."
       }
     ],
     "explanation": "Issue #306 records Ben’s conclusion that the doc-note was correct.",
@@ -692,7 +679,7 @@
         "label": "Doc-note, Ezekiel 14:14 — Aleppo ketiv",
         "note": "Ezekiel 14:14/2/0",
         "quote": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה)",
-        "translation": "Aleppo ketiv: דָּנִֵּ֣אל (hiriq, tsere and munah below the dageshed nun, in that order)."
+        "translation": "Aleppo ketiv: דָּנִֵּ֣אל (ḥiriq, tsere and munaḥ below the dageshed nun, in that order)."
       }
     ],
     "explanation": "Issue #307 records Ben’s conclusion that the doc-note was correct at both Ezekiel 14:14 and 14:20. The quoted prose makes the dot’s intended letter explicit.",
@@ -720,7 +707,7 @@
         "label": "Doc-note, Ezekiel 14:20 — Aleppo ketiv",
         "note": "Ezekiel 14:20/2/0",
         "quote": "א-כתיב=דָּנִֵּ֣אל (חיריק, צירה, ומונח מתחת לאות נו\"ן הדגושה, בסדר הזה; אך המונח נדחף לגמרי מתחת לאות אל\"ף כזה: דָּנִֵּא֣ל)",
-        "translation": "Aleppo ketiv: דָּנִֵּ֣אל (hiriq, tsere and munah below the dageshed nun, in that order; but the munah is pushed entirely below alef, like this: דָּנִֵּא֣ל)."
+        "translation": "Aleppo ketiv: דָּנִֵּ֣אל (ḥiriq, tsere and munaḥ below the dageshed nun, in that order; but the munaḥ is pushed entirely below alef, like this: דָּנִֵּא֣ל)."
       }
     ],
     "explanation": "Issue #307 records Ben’s conclusion that the doc-note was correct at both Ezekiel 14:14 and 14:20. The quoted prose makes the dot’s intended letter explicit.",
@@ -734,8 +721,8 @@
       "PS-108-11"
     ],
     "section": "discrepancies",
-    "title": "Psalm 108:11: tipeha in the Introduction, dehi in the note",
-    "issue": "The Introduction’s Aleppo quotation has tipeha, while the note’s Breuer quotation has dehi.",
+    "title": "Psalm 108:11: tipeha in the Introduction, deḥi in the note",
+    "issue": "The Introduction’s Aleppo quotation has tipeha, while the note’s Breuer quotation has deḥi.",
     "context": "",
     "panels": [
       {
@@ -751,8 +738,8 @@
         "note": "Psalms 108:11/2/0"
       }
     ],
-    "explanation": "Both passages leave the dagesh in nun uncertain; the note questions Breuer’s interpretation because the manuscript area is blurred. This is separate from the tipeha/dehi discrepancy.",
-    "decision": "Should the Introduction quotation have dehi, matching the note’s Breuer quotation, or is its tipeha intentional?",
+    "explanation": "Both passages leave the dagesh in nun uncertain; the note questions Breuer’s interpretation because the manuscript area is blurred. This is separate from the tipeha/deḥi discrepancy.",
+    "decision": "Should the Introduction quotation have deḥi, matching the note’s Breuer quotation, or is its tipeha intentional?",
     "reading_forms": [
       {
         "label": "Introduction’s Aleppo quotation: tipeha",
@@ -761,7 +748,7 @@
         "text": "יֹ֖בִלֵנִּי"
       },
       {
-        "label": "Note’s Breuer quotation: dehi",
+        "label": "Note’s Breuer quotation: deḥi",
         "source": "note",
         "id": "Psalms 108:11/2/0",
         "text": "יֹ֭בִלֵנִּי"
@@ -774,25 +761,25 @@
       "PS-ALTERNATIVES"
     ],
     "section": "discrepancies",
-    "title": "Psalm 57:9: dehi or terha in the Aleppo alternative",
-    "issue": "The Introduction’s second possible Aleppo pointing has dehi and merkha; the note’s alternative has terha and merkha.",
+    "title": "Psalm 57:9: deḥi or terḥa in the Aleppo alternative",
+    "issue": "The Introduction’s second possible Aleppo pointing has deḥi and merkha; the note’s alternative has terḥa and merkha.",
     "context": "",
     "panels": [
       {
         "label": "Introduction, Chapter 5: Psalm 57",
         "claim": "ch5:L583",
         "quote": "(א?=ע֭וּרָֽה* או ע֭וּרָ֥ה): דחי וגעיה* או דחי ומרכא? (סימון מקום הטעם לדחי)",
-        "translation": "Possible Aleppo pointing: ע֭וּרָֽה (preferred, dehi and meteg), or ע֭וּרָ֥ה (dehi and merkha?); indication of the stress position for dehi."
+        "translation": "Possible Aleppo pointing: ע֭וּרָֽה (preferred, deḥi and meteg), or ע֭וּרָ֥ה (deḥi and merkha?); indication of the stress position for deḥi."
       },
       {
         "label": "Psalm 57:9 note: uncertain Aleppo and Leningrad pointing",
         "quote": "א?,ל?=ע֖וּרָ֥ה (טרחא ומרכא?)",
-        "translation": "Aleppo and Leningrad may have ע֖וּרָ֥ה (terha and merkha?).",
+        "translation": "Aleppo and Leningrad may have ע֖וּרָ֥ה (terḥa and merkha?).",
         "note": "Psalms 57:9/2/0"
       }
     ],
-    "explanation": "Both passages prefer dehi with meteg. Their secondary possibilities differ, and the note leaves that secondary pointing uncertain for both Aleppo and Leningrad.",
-    "decision": "Should the Introduction’s alternative have terha and merkha, matching the note, or should the note include a dehi-and-merkha alternative?",
+    "explanation": "Both passages prefer deḥi with meteg. Their secondary possibilities differ, and the note leaves that secondary pointing uncertain for both Aleppo and Leningrad.",
+    "decision": "Should the Introduction’s alternative have terḥa and merkha, matching the note, or should the note include a deḥi-and-merkha alternative?",
     "reading_forms": [
       {
         "label": "Shared preferred pointing",
@@ -820,25 +807,25 @@
       "PS-ALTERNATIVES"
     ],
     "section": "discrepancies",
-    "title": "Psalm 108:3: dehi or terha in the Aleppo alternative",
-    "issue": "The Introduction’s second possible Aleppo pointing has dehi and merkha; the note’s alternative has terha and merkha.",
+    "title": "Psalm 108:3: deḥi or terḥa in the Aleppo alternative",
+    "issue": "The Introduction’s second possible Aleppo pointing has deḥi and merkha; the note’s alternative has terḥa and merkha.",
     "context": "",
     "panels": [
       {
         "label": "Introduction, Chapter 5: Psalm 108",
         "claim": "ch5:L603",
         "quote": "(א?=ע֭וּרָֽה* או ע֭וּרָ֥ה): דחי וגעיה* או דחי ומרכא? (סימון מקום הטעם לדחי)",
-        "translation": "Possible Aleppo pointing: ע֭וּרָֽה (preferred, dehi and meteg), or ע֭וּרָ֥ה (dehi and merkha?); indication of the stress position for dehi."
+        "translation": "Possible Aleppo pointing: ע֭וּרָֽה (preferred, deḥi and meteg), or ע֭וּרָ֥ה (deḥi and merkha?); indication of the stress position for deḥi."
       },
       {
         "label": "Psalm 108:3 note: uncertain Aleppo pointing",
         "quote": "א?=ע֖וּרָ֥ה (טרחא ומרכא?)",
-        "translation": "Aleppo may have ע֖וּרָ֥ה (terha and merkha?).",
+        "translation": "Aleppo may have ע֖וּרָ֥ה (terḥa and merkha?).",
         "note": "Psalms 108:3/2/0"
       }
     ],
-    "explanation": "Both passages prefer dehi with meteg. Their secondary possibilities differ, and the note leaves that secondary Aleppo pointing uncertain.",
-    "decision": "Should the Introduction’s alternative have terha and merkha, matching the note, or should the note include a dehi-and-merkha alternative?",
+    "explanation": "Both passages prefer deḥi with meteg. Their secondary possibilities differ, and the note leaves that secondary Aleppo pointing uncertain.",
+    "decision": "Should the Introduction’s alternative have terḥa and merkha, matching the note, or should the note include a deḥi-and-merkha alternative?",
     "reading_forms": [
       {
         "label": "Shared preferred pointing",
@@ -917,7 +904,7 @@
         "kind": "scripture"
       },
       {
-        "label": "Introduction, Chapter 2: hataf after a secondary accent",
+        "label": "Introduction, Chapter 2: ḥataf after a secondary accent",
         "claim": "ch2:L636",
         "quote": "שִׁ֥מְעָֽה־תְפִלָּתִ֨י",
         "kind": "scripture"
@@ -968,7 +955,7 @@
       {
         "label": "Psalm 17:14 note: Leningrad alternatives and their sources",
         "quote": "ל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).",
-        "translation": "Leningrad has <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, with no hataf), according to the transcriber; Koren has this with the maqaf omitted. Alternatively, <מִֽמְתִֽים־יָדְךָ֨׀> has both marks as meteg according to Dotan, which appears more likely in Leningrad.",
+        "translation": "Leningrad has <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, with no ḥataf), according to the transcriber; Koren has this with the maqaf omitted. Alternatively, <מִֽמְתִֽים־יָדְךָ֨׀> has both marks as meteg according to Dotan, which appears more likely in Leningrad.",
         "note": "Psalms 17:14/2/0",
         "translation_quotes": [
           "<מִֽמְתִ֥ים־יָדְךָ֨׀>",
@@ -1064,12 +1051,12 @@
       "PS-150-3-HATAF"
     ],
     "section": "discrepancies",
-    "title": "Psalm 150:3: sheva or hataf patah in the first occurrence",
-    "issue": "The Introduction’s first Aleppo quotation has sheva under lamed; the note’s Aleppo quotation has hataf patah.",
+    "title": "Psalm 150:3: sheva or ḥataf pataḥ in the first occurrence",
+    "issue": "The Introduction’s first Aleppo quotation has sheva under lamed; the note’s Aleppo quotation has ḥataf pataḥ.",
     "context": "",
     "panels": [
       {
-        "label": "Introduction, Chapter 5: hataf vowels in Psalms",
+        "label": "Introduction, Chapter 5: ḥataf vowels in Psalms",
         "claim": "ch5:L710",
         "quote": "(א=הַ֭לְלוּהוּ [1])",
         "translation": "Aleppo has הַ֭לְלוּהוּ (first occurrence)."
@@ -1077,12 +1064,12 @@
       {
         "label": "Psalm 150:3 note: Aleppo quotation",
         "quote": "א=הַ֭לֲלוּהוּ (חטף)",
-        "translation": "Aleppo has הַ֭לֲלוּהוּ (hataf).",
+        "translation": "Aleppo has הַ֭לֲלוּהוּ (ḥataf).",
         "note": "Psalms 150:3/2/0"
       }
     ],
-    "explanation": "The discrepancy is under the first lamed of the occurrence with dehi.",
-    "decision": "Should the first Aleppo quotation in the Introduction have hataf patah, matching the note, or should the note’s quotation be revised?",
+    "explanation": "The discrepancy is under the first lamed of the occurrence with deḥi.",
+    "decision": "Should the first Aleppo quotation in the Introduction have ḥataf pataḥ, matching the note, or should the note’s quotation be revised?",
     "reading_forms": [
       {
         "label": "Introduction: sheva under lamed",
@@ -1091,7 +1078,7 @@
         "text": "הַ֭לְלוּהוּ"
       },
       {
-        "label": "Note: hataf patah under lamed",
+        "label": "Note: ḥataf pataḥ under lamed",
         "source": "note",
         "id": "Psalms 150:3/2/0",
         "text": "הַ֭לֲלוּהוּ"
@@ -1104,8 +1091,8 @@
       "PS-39-13-HATAF-LABEL"
     ],
     "section": "discrepancies",
-    "title": "Psalm 39:13: hataf patah labelled hataf qamats",
-    "issue": "The Introduction calls its second alternative hataf qamats, although its pointing has hataf patah.",
+    "title": "Psalm 39:13: ḥataf pataḥ labelled ḥataf qamats",
+    "issue": "The Introduction calls its second alternative ḥataf qamats, although its pointing has ḥataf pataḥ.",
     "context": "",
     "panels": [
       {
@@ -1118,35 +1105,35 @@
         "label": "Introduction, Chapter 5: name given to the second alternative",
         "claim": "ch5:L710",
         "quote": "בחטף קמץ",
-        "translation": "With hataf qamats."
+        "translation": "With ḥataf qamats."
       },
       {
         "label": "Psalm 39:13 note: second alternative and its name",
         "quote": "או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח)",
-        "translation": "Or <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (hataf patah).",
+        "translation": "Or <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (ḥataf pataḥ).",
         "note": "Psalms 39:13/2/0",
         "translation_quotes": [
           "<שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀>"
         ]
       }
     ],
-    "explanation": "The first alternative has hataf qamats and is correctly labelled. The second quotation agrees with the note’s hataf-patah alternative; only the Introduction’s vowel name differs.",
-    "decision": "Should the second label be corrected to “hataf patah,” retaining both possible Aleppo alternatives?",
+    "explanation": "The first alternative has ḥataf qamats and is correctly labelled. The second quotation agrees with the note’s ḥataf-pataḥ alternative; only the Introduction’s vowel name differs.",
+    "decision": "Should the second label be corrected to “ḥataf pataḥ,” retaining both possible Aleppo alternatives?",
     "reading_forms": [
       {
-        "label": "Introduction: hataf-qamats quotation",
+        "label": "Introduction: ḥataf-qamats quotation",
         "source": "claim",
         "id": "ch5:L710",
         "text": "שִׁ֥מֳעָֽה"
       },
       {
-        "label": "Introduction: hataf-patah quotation",
+        "label": "Introduction: ḥataf-pataḥ quotation",
         "source": "claim",
         "id": "ch5:L710",
         "text": "שִׁ֥מֲעָֽה"
       },
       {
-        "label": "Note: hataf-patah quotation",
+        "label": "Note: ḥataf-pataḥ quotation",
         "source": "note",
         "id": "Psalms 39:13/2/0",
         "text": "שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀"
@@ -1159,8 +1146,8 @@
       "DOCNOTE-METEG-PROSE"
     ],
     "section": "discrepancies",
-    "title": "Exodus 7:13: meteg described, patah quoted",
-    "issue": "The note describes meteg on yod, but its explanatory quotation has an extra patah there.",
+    "title": "Exodus 7:13: meteg described, pataḥ quoted",
+    "issue": "The note describes meteg on yod, but its explanatory quotation has an extra pataḥ there.",
     "context": "",
     "panels": [
       {
@@ -1178,11 +1165,11 @@
         "kind": "scripture"
       }
     ],
-    "explanation": "The explanatory quotation has segol and patah vowels under yod, with no meteg. MAM text has a segol vowel and meteg at that position, matching the mark described in the prose.",
-    "decision": "Should the extra patah in the explanatory quotation be meteg?",
+    "explanation": "The explanatory quotation has segol and pataḥ vowels under yod, with no meteg. MAM text has a segol vowel and meteg at that position, matching the mark described in the prose.",
+    "decision": "Should the extra pataḥ in the explanatory quotation be meteg?",
     "reading_forms": [
       {
-        "label": "Explanatory quotation: extra patah under yod",
+        "label": "Explanatory quotation: extra pataḥ under yod",
         "source": "note",
         "id": "Exodus 7:13/2/0",
         "text": "וַיֶַּחֱזַק֙"
@@ -1373,15 +1360,15 @@
       "PS-31-12-HATAF"
     ],
     "section": "discrepancies",
-    "title": "Psalm 31:12: hataf patah in the Aleppo quotation",
-    "issue": "The Introduction includes the word among Aleppo’s missing-hataf examples; the note gives Aleppo hataf patah.",
+    "title": "Psalm 31:12: ḥataf pataḥ in the Aleppo quotation",
+    "issue": "The Introduction includes the word among Aleppo’s missing-ḥataf examples; the note gives Aleppo ḥataf pataḥ.",
     "context": "",
     "panels": [
       {
         "label": "Introduction, Chapter 2: explanation of this group",
         "claim": "ch2:L681",
         "quote": "קיים מיעוט ניכר של מקומות שבהם לא הקפיד מסרן הכתר לכתוב חטף כדי להורות לקורא על הנעת השווא.",
-        "translation": "There is a substantial minority of places where the Aleppo masoretic annotator did not consistently put a hataf vowel to indicate a vocal sheva."
+        "translation": "There is a substantial minority of places where the Aleppo masoretic annotator did not consistently put a ḥataf vowel to indicate a vocal sheva."
       },
       {
         "label": "Introduction, Chapter 2: Psalm 31 example in that group",
@@ -1392,15 +1379,15 @@
       {
         "label": "Psalm 31:12 note: Aleppo quotation",
         "quote": "א=<וְלִ֥שֲׁכֵנַ֨י׀> (חטף)",
-        "translation": "Aleppo has <וְלִ֥שֲׁכֵנַ֨י׀> (hataf).",
+        "translation": "Aleppo has <וְלִ֥שֲׁכֵנַ֨י׀> (ḥataf).",
         "note": "Psalms 31:12/2/1",
         "translation_quotes": [
           "<וְלִ֥שֲׁכֵנַ֨י׀>"
         ]
       }
     ],
-    "explanation": "The Introduction’s specimen has plain sheva under shin, consistent with its list heading. The note explicitly attributes hataf patah to Aleppo at that shin.",
-    "decision": "Should this example have hataf patah and leave the missing-hataf list, or should the note’s Aleppo attribution be revised?",
+    "explanation": "The Introduction’s specimen has plain sheva under shin, consistent with its list heading. The note explicitly attributes ḥataf pataḥ to Aleppo at that shin.",
+    "decision": "Should this example have ḥataf pataḥ and leave the missing-ḥataf list, or should the note’s Aleppo attribution be revised?",
     "reading_forms": [
       {
         "label": "Introduction: sheva under shin",
@@ -1409,7 +1396,7 @@
         "text": "וְלִ֥שְׁכֵנַ֨י׀"
       },
       {
-        "label": "Note: hataf patah under shin",
+        "label": "Note: ḥataf pataḥ under shin",
         "source": "note",
         "id": "Psalms 31:12/2/1",
         "text": "וְלִ֥שֲׁכֵנַ֨י׀"
@@ -2092,7 +2079,7 @@
         "note": "Numbers 16:27/2/0"
       }
     ],
-    "explanation": "In both quotations, qof has a holam dot and resh has a segol vowel. MAM instead has a patah vowel under resh. The disagreement is the Introduction's letter name.",
+    "explanation": "In both quotations, qof has a ḥolam dot and resh has a segol vowel. MAM instead has a pataḥ vowel under resh. The disagreement is the Introduction's letter name.",
     "decision": "Replace “qof” with “resh” in the Introduction's description.",
     "reading_forms": [
       {
@@ -2113,7 +2100,7 @@
         "id": "Numbers 16:27/2/0",
         "text": "מִשְׁכַּן־קֹ֛רַח",
         "pointer": "",
-        "annotation": "Patah vowel under resh."
+        "annotation": "Pataḥ vowel under resh."
       }
     ]
   },
@@ -2909,7 +2896,7 @@
         "translation": "For the tsinnor accent, which presents no difficulty, the additional stress-marking sign already appears in our edition."
       }
     ],
-    "explanation": "The Summary groups vocal sheva, strong dagesh, and poetic stress helpers under a single statement that they are not yet visible on Wikisource. Chapter 2 says the tsinnor helper already appears, while most dehi displays are unchanged. The cached wording therefore needs a distinction; it does not establish what a browser currently renders.",
+    "explanation": "The Summary groups vocal sheva, strong dagesh, and poetic stress helpers under a single statement that they are not yet visible on Wikisource. Chapter 2 says the tsinnor helper already appears, while most deḥi displays are unchanged. The cached wording therefore needs a distinction; it does not establish what a browser currently renders.",
     "decision": "Confirm which features are visible on Wikisource, then narrow the Summary’s statement to the features that remain exclusive to Phonetic MAM.",
     "reading_forms": []
   },
@@ -3119,9 +3106,9 @@
       "GEN-36-13"
     ],
     "section": "questions",
-    "title": "Genesis 36:13 — both descriptions say merkha, but the signs are munah",
-    "issue": "Should the descriptions name munah, or are the quoted accent signs themselves wrong?",
-    "context": "Both passages name merkha on alef and lamed, while the printed accents are munah.",
+    "title": "Genesis 36:13 — both descriptions say merkha, but the signs are munaḥ",
+    "issue": "Should the descriptions name munaḥ, or are the quoted accent signs themselves wrong?",
+    "context": "Both passages name merkha on alef and lamed, while the printed accents are munaḥ.",
     "panels": [
       {
         "label": "Introduction, chapter 3 — Genesis 36:13",
@@ -3137,7 +3124,7 @@
       }
     ],
     "explanation": "This is a shared mismatch between the quoted word and its accent names, not a disagreement between the Introduction and the note.",
-    "decision": "If the quoted word is correct, use munah in both descriptions; if merkha is intended, identify the quotation that supports changing its accents.",
+    "decision": "If the quoted word is correct, use munaḥ in both descriptions; if merkha is intended, identify the quotation that supports changing its accents.",
     "reading_forms": [
       {
         "label": "Introduction’s Leningrad quotation",
@@ -3199,8 +3186,8 @@
       "MAL-HOLAM"
     ],
     "section": "questions",
-    "title": "Malachi 2:7 — is the holam dot in the Aleppo example supplied for the reader?",
-    "issue": "Does the Introduction’s Aleppo example intentionally supply the usual holam dot while documenting only the meteg’s position?",
+    "title": "Malachi 2:7 — is the ḥolam dot in the Aleppo example supplied for the reader?",
+    "issue": "Does the Introduction’s Aleppo example intentionally supply the usual ḥolam dot while documenting only the meteg’s position?",
     "context": "Both sources discuss meteg on the first he of the divine name.",
     "panels": [
       {
@@ -3216,14 +3203,14 @@
         "translation": "The Aleppo Codex unexpectedly has יְהֽוָה־צְבָא֖וֹת: meteg on the first he of the divine name."
       },
       {
-        "label": "Local note quoting Yeivin about the absent holam",
+        "label": "Local note quoting Yeivin about the absent ḥolam",
         "note": "Malachi 2:7/2/0",
         "quote": "געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה",
-        "translation": "A meteg on the he with the holam vowel, even though the holam is not marked, proves that there is a syllable here."
+        "translation": "A meteg on the he with the ḥolam vowel, even though the ḥolam is not marked, proves that there is a syllable here."
       }
     ],
-    "explanation": "The meteg descriptions agree. The Introduction’s example includes a holam dot; the note’s Aleppo quotation lacks it and explicitly explains its absence. The Introduction may use conventional full pointing while illustrating the meteg, rather than claim that Aleppo has that extra dot.",
-    "decision": "Use the same convention consistently, or state why the extra holam dot is supplied.",
+    "explanation": "The meteg descriptions agree. The Introduction’s example includes a ḥolam dot; the note’s Aleppo quotation lacks it and explicitly explains its absence. The Introduction may use conventional full pointing while illustrating the meteg, rather than claim that Aleppo has that extra dot.",
+    "decision": "Use the same convention consistently, or state why the extra ḥolam dot is supplied.",
     "reading_forms": [
       {
         "label": "Introduction’s Aleppo example",
@@ -3346,7 +3333,7 @@
         "label": "Local note distinguishing the transcription from the manuscript",
         "note": "Deuter 12:30/2/1",
         "quote": "הקלדה!=לֵאמֹ֨ר (טעם קדמא) בעקבות BHS, אמנם בכתי\"ל נראה שנקודת החולם התחברה לאות מ\"ם ולכן נראית כמו קדמא.",
-        "translation": "The digital transcription unexpectedly has לֵאמֹ֨ר (qadma), following Biblia Hebraica Stuttgartensia. In the Leningrad Codex, however, the holam dot appears to have joined the mem, making it look like qadma."
+        "translation": "The digital transcription unexpectedly has לֵאמֹ֨ר (qadma), following Biblia Hebraica Stuttgartensia. In the Leningrad Codex, however, the ḥolam dot appears to have joined the mem, making it look like qadma."
       }
     ],
     "explanation": "The Introduction leaves two manuscript readings open. The local note explicitly assigns revia to Leningrad and qadma to the transcription, and explains why the manuscript could look like qadma. These are different descriptions of the remaining uncertainty.",
@@ -3397,7 +3384,7 @@
         "label": "Local note’s two Leningrad alternatives",
         "note": "Psalms 17:14/2/0",
         "quote": "ל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).",
-        "translation": "Leningrad: <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, without a hataf vowel), according to the transcriber; Koren has the same accents without maqaf. Or <מִֽמְתִֽים־יָדְךָ֨׀> (both are metegs), according to Dotan; this seems more likely in the Leningrad Codex.",
+        "translation": "Leningrad: <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, without a ḥataf vowel), according to the transcriber; Koren has the same accents without maqaf. Or <מִֽמְתִֽים־יָדְךָ֨׀> (both are metegs), according to Dotan; this seems more likely in the Leningrad Codex.",
         "translation_quotes": [
           "<מִֽמְתִ֥ים־יָדְךָ֨׀>",
           "<מִֽמְתִֽים־יָדְךָ֨׀>"
@@ -3435,7 +3422,7 @@
     "section": "questions",
     "title": "Psalm 18:7 — merkha in Leningrad, meteg in the transcription",
     "issue": "Is meteg still a possible manuscript reading here, or should the Introduction identify it specifically as the digital transcription’s reading?",
-    "context": "The question concerns secondary merkha versus meteg before the hataf vowel and munah.",
+    "context": "The question concerns secondary merkha versus meteg before the ḥataf vowel and munaḥ.",
     "panels": [
       {
         "label": "Introduction, chapter 4 — possible Leningrad readings",
@@ -3447,13 +3434,13 @@
         "label": "Local note assigning merkha to Leningrad and related sources",
         "note": "Psalms 18:7/2/0",
         "quote": "ל,ל-א,גסטר1,שיטת-א=אֶ֥קֲרָ֣א (מרכא כטעם משני ואחריה חטף)",
-        "translation": "Leningrad, St. Petersburg EVR-II-B-55, Gaster 1, and Aleppo’s general practice: אֶ֥קֲרָ֣א (secondary merkha followed by a hataf vowel)."
+        "translation": "Leningrad, St. Petersburg EVR-II-B-55, Gaster 1, and Aleppo’s general practice: אֶ֥קֲרָ֣א (secondary merkha followed by a ḥataf vowel)."
       },
       {
         "label": "Local note — digital transcription quotation",
         "note": "Psalms 18:7/2/0",
         "quote": "הקלדה=אֶֽקֲרָ֣א (געיה וחטף)",
-        "translation": "Digital transcription: אֶֽקֲרָ֣א (meteg and hataf vowel)."
+        "translation": "Digital transcription: אֶֽקֲרָ֣א (meteg and ḥataf vowel)."
       }
     ],
     "explanation": "The local note attributes merkha to Leningrad and meteg to the transcription. Its appeal to Aleppo’s general practice is not a quotation from a surviving Aleppo page.",
@@ -3627,27 +3614,27 @@
     ],
     "section": "questions",
     "title": "Deuteronomy 5:13 — which accent belongs to which Decalogue accentuation?",
-    "issue": "What supports assigning munah to the upper accentuation and merkha to the lower accentuation?",
-    "context": "The Leningrad quotation has munah and merkha together.",
+    "issue": "What supports assigning munaḥ to the upper accentuation and merkha to the lower accentuation?",
+    "context": "The Leningrad quotation has munaḥ and merkha together.",
     "panels": [
       {
         "label": "Introduction, chapter 3 — allocation to the two Decalogue accentuations",
         "claim": "ch3:L1064",
         "quote": "ל!=(לַיהֹוָ֣֥ה): מונח לטעם העליון לפני מרכא לטעם התחתון",
-        "translation": "The Leningrad Codex unexpectedly has לַיהֹוָ֣֥ה: munah for the upper accentuation precedes merkha for the lower accentuation."
+        "translation": "The Leningrad Codex unexpectedly has לַיהֹוָ֣֥ה: munaḥ for the upper accentuation precedes merkha for the lower accentuation."
       },
       {
         "label": "Local note naming the two signs without allocating them",
         "note": "Deuter 5:13/2/0",
         "quote": "ל!=לַיהֹוָ֣֥ה (מונח ומרכא)",
-        "translation": "The Leningrad Codex unexpectedly has לַיהֹוָ֣֥ה (munah and merkha)."
+        "translation": "The Leningrad Codex unexpectedly has לַיהֹוָ֣֥ה (munaḥ and merkha)."
       }
     ],
     "explanation": "The Introduction additionally assigns each accent to a particular Decalogue accentuation. The note does not supply that assignment.",
     "decision": "Identify the basis for the allocation, or describe the two accents without assigning them to upper and lower accentuation.",
     "reading_forms": [
       {
-        "label": "Leningrad quotation — munah and merkha",
+        "label": "Leningrad quotation — munaḥ and merkha",
         "source": "note",
         "id": "Deuter 5:13/2/0",
         "text": "לַיהֹוָ֣֥ה"
@@ -4184,10 +4171,10 @@
         "label": "MAM note on Deuteronomy 32:6: Leningrad",
         "note": "Deuter 32:6/2/0",
         "quote": "ל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)",
-        "translation": "The Leningrad Codex has הֲ־לַיְהוָה֙ (hataf patah beneath he, maqaf-joined words, patah beneath lamed, and sheva beneath yod)."
+        "translation": "The Leningrad Codex has הֲ־לַיְהוָה֙ (ḥataf pataḥ beneath he, maqaf-joined words, pataḥ beneath lamed, and sheva beneath yod)."
       }
     ],
-    "explanation": "The joining agrees. The Introduction has no sheva beneath yod; the note expressly says there is one. Omitting a holam dot from a manuscript quotation does not explain omission of this different vowel sign.",
+    "explanation": "The joining agrees. The Introduction has no sheva beneath yod; the note expressly says there is one. Omitting a ḥolam dot from a manuscript quotation does not explain omission of this different vowel sign.",
     "decision": "Should the Introduction reproduce the sheva described in the note, or explicitly identify this example as illustrating joining without complete vowel notation?",
     "reading_forms": [
       {
@@ -4439,12 +4426,12 @@
       "HATAF-SOURCE-SCOPE"
     ],
     "section": "questions",
-    "title": "Jeremiah 48:20 and 50:6: are the hataf examples ketiv or qere?",
-    "issue": "The Introduction labels both examples as Aleppo qere, while the notes attribute the hataf to Aleppo's pointed ketiv.",
-    "context": "The comparison is between the Introduction's hataf list and the local ketiv annotations.",
+    "title": "Jeremiah 48:20 and 50:6: are the ḥataf examples ketiv or qere?",
+    "issue": "The Introduction labels both examples as Aleppo qere, while the notes attribute the ḥataf to Aleppo's pointed ketiv.",
+    "context": "The comparison is between the Introduction's ḥataf list and the local ketiv annotations.",
     "panels": [
       {
-        "label": "Introduction, chapter 5: Jeremiah hataf list, 48:20",
+        "label": "Introduction, chapter 5: Jeremiah ḥataf list, 48:20",
         "claim": "ch5:L704",
         "quote": "א-קרי=וּֽזֳעָ֑קוּ",
         "translation": "Aleppo Codex qere: וּֽזֳעָ֑קוּ."
@@ -4453,10 +4440,10 @@
         "label": "MAM note on Jeremiah 48:20",
         "note": "Jeremiah 48:20/2/0",
         "quote": "א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)",
-        "translation": "Aleppo Codex ketiv: וּֽזֳעָ֑קיּ (hataf qamats)."
+        "translation": "Aleppo Codex ketiv: וּֽזֳעָ֑קיּ (ḥataf qamats)."
       },
       {
-        "label": "Introduction, chapter 5: Jeremiah hataf list, 50:6",
+        "label": "Introduction, chapter 5: Jeremiah ḥataf list, 50:6",
         "claim": "ch5:L704",
         "quote": "א-קרי=שׁוֹבֲב֑וּם",
         "translation": "Aleppo Codex qere: שׁוֹבֲב֑וּם."
@@ -4465,10 +4452,10 @@
         "label": "MAM note on Jeremiah 50:6",
         "note": "Jeremiah 50:6/2/0",
         "quote": "א-כתיב=שׁוֹבֲב֑יּם (חטף)",
-        "translation": "Aleppo Codex ketiv: שׁוֹבֲב֑יּם (hataf)."
+        "translation": "Aleppo Codex ketiv: שׁוֹבֲב֑יּם (ḥataf)."
       }
     ],
-    "explanation": "The final consonants differ, as do the ketiv/qere labels. The notes document the hataf on the pointed ketiv. MAM's qere does not independently establish that Aleppo supplied the same pointed qere.",
+    "explanation": "The final consonants differ, as do the ketiv/qere labels. The notes document the ḥataf on the pointed ketiv. MAM's qere does not independently establish that Aleppo supplied the same pointed qere.",
     "decision": "Should the Introduction quote the pointed ketiv documented in the notes, or explain why the ketiv vowel is illustrated on the qere?",
     "reading_forms": [
       {
@@ -4503,12 +4490,12 @@
       "HATAF-SOURCE-SCOPE"
     ],
     "section": "questions",
-    "title": "Ezekiel 17:17: which codex has this hataf?",
-    "issue": "The Introduction names Leningrad for this hataf; the verse note names Aleppo.",
-    "context": "Both specimens have hataf patah beneath the same lamed.",
+    "title": "Ezekiel 17:17: which codex has this ḥataf?",
+    "issue": "The Introduction names Leningrad for this ḥataf; the verse note names Aleppo.",
+    "context": "Both specimens have ḥataf pataḥ beneath the same lamed.",
     "panels": [
       {
-        "label": "Introduction, chapter 5: Ezekiel hataf list",
+        "label": "Introduction, chapter 5: Ezekiel ḥataf list",
         "claim": "ch5:L706",
         "quote": "ל=סֹלֲלָ֖ה",
         "translation": "The Leningrad Codex has סֹלֲלָ֖ה."
@@ -4517,7 +4504,7 @@
         "label": "MAM note on Ezekiel 17:17",
         "note": "Ezekiel 17:17/2/0",
         "quote": "א=סֹלֲלָ֖ה (חטף)",
-        "translation": "The Aleppo Codex has סֹלֲלָ֖ה (hataf)."
+        "translation": "The Aleppo Codex has סֹלֲלָ֖ה (ḥataf)."
       }
     ],
     "explanation": "The word and vowel sign agree, but the named manuscript differs. The note's Aleppo attribution does not rule out the same sign in Leningrad; it simply does not establish the Introduction's Leningrad attribution.",
@@ -4543,15 +4530,15 @@
       "HATAF-SOURCE-SCOPE"
     ],
     "section": "questions",
-    "title": "Proverbs 30:17: should the list include the additional Leningrad hataf?",
-    "issue": "The Introduction includes the Aleppo hataf in one word but omits the Leningrad hataf documented in another word of the same verse.",
+    "title": "Proverbs 30:17: should the list include the additional Leningrad ḥataf?",
+    "issue": "The Introduction includes the Aleppo ḥataf in one word but omits the Leningrad ḥataf documented in another word of the same verse.",
     "context": "These are separate words and separate annotations.",
     "panels": [
       {
-        "label": "Introduction, chapter 5: stated subject of the hataf list",
+        "label": "Introduction, chapter 5: stated subject of the ḥataf list",
         "claim": "ch5:L691",
         "quote": "חטפים באותיות לא גרוניות בספרי הנביאים והכתובים''' בכתר ארם צובה או בכתי\"ל.",
-        "translation": "Hataf vowels on non-guttural letters in the Prophets and Writings, in the Aleppo Codex or the Leningrad Codex."
+        "translation": "Ḥataf vowels on non-guttural letters in the Prophets and Writings, in the Aleppo Codex or the Leningrad Codex."
       },
       {
         "label": "Introduction, chapter 5: Proverbs 30:17 entry",
@@ -4563,10 +4550,10 @@
         "label": "MAM note on Proverbs 30:17: a second word",
         "note": "Proverbs 30:17/2/1",
         "quote": "ל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)",
-        "translation": "The Leningrad Codex has לִֽיקֲּהַ֫ת־אֵ֥ם (hataf)."
+        "translation": "The Leningrad Codex has לִֽיקֲּהַ֫ת־אֵ֥ם (ḥataf)."
       }
     ],
-    "explanation": "The current note identifies another Leningrad hataf that fits the list's stated subject. Whether it belongs in the Introduction depends on whether the list intends to include every such example or a selected set.",
+    "explanation": "The current note identifies another Leningrad ḥataf that fits the list's stated subject. Whether it belongs in the Introduction depends on whether the list intends to include every such example or a selected set.",
     "decision": "Should this Leningrad example be added, or should the Introduction state a selection rule that explains its omission?",
     "reading_forms": [
       {
@@ -4622,15 +4609,15 @@
       "POETIC-CENSUS-SCOPE"
     ],
     "section": "questions",
-    "title": "Which text do the Introduction's dehi and oleh-weyored totals describe?",
+    "title": "Which text do the Introduction's deḥi and oleh-weyored totals describe?",
     "issue": "The Introduction's totals differ from the corresponding counts in current MAM, and it does not identify a different text or counting rule for them.",
     "context": "The Introduction's 421 refers specifically to principal division; the current count of 423 counts verses containing oleh.",
     "panels": [
       {
-        "label": "Introduction, chapter 2: stress marking for dehi and tsinnor",
+        "label": "Introduction, chapter 2: stress marking for deḥi and tsinnor",
         "claim": "ch2:L394",
         "quote": "מתוך 2685 פסוקי אמ\"ת המוטעמים בטעם הדחי.",
-        "translation": "Out of 2,685 poetic verses in Psalms, Proverbs, and Job accented with dehi."
+        "translation": "Out of 2,685 poetic verses in Psalms, Proverbs, and Job accented with deḥi."
       },
       {
         "label": "Introduction, chapter 2: oleh-weyored",
@@ -4645,7 +4632,7 @@
         "translation": "Oleh-weyored is accented in two words in 55 verses, about 13 percent of the 421 verses accented with oleh-weyored."
       }
     ],
-    "explanation": "The existing current-MAM results give 2,679 verses containing dehi and 423 containing oleh. The 55 verses with oleh and yored in different words agree with the Introduction's list. The older totals could reflect another text, an earlier version, or a distinction in what counts as a principal division; the quoted passages do not say which.",
+    "explanation": "The existing current-MAM results give 2,679 verses containing deḥi and 423 containing oleh. The 55 verses with oleh and yored in different words agree with the Introduction's list. The older totals could reflect another text, an earlier version, or a distinction in what counts as a principal division; the quoted passages do not say which.",
     "decision": "Should these figures explicitly count current MAM verses under a stated rule, or remain figures for another identified text or definition? In particular, does “principal division” exclude any of the 423 current verses containing oleh?",
     "reading_forms": []
   },
@@ -4806,13 +4793,13 @@
     "section": "questions",
     "title": "Psalms 6:3 and 74:5: should the accent-design lists retain the vowels quoted elsewhere?",
     "issue": "Two accent-design examples differ in vowels from other Introduction sections that quote the same Aleppo words.",
-    "context": "The unusual-vowel, hataf, and accent-design entries all name Aleppo.",
+    "context": "The unusual-vowel, ḥataf, and accent-design entries all name Aleppo.",
     "panels": [
       {
         "label": "Introduction, chapter 5: unusual Aleppo vowels and accents, Psalms",
         "claim": "ch5:L569",
         "quote": "(א=אֻמְלָ֫ל): נקודת קמץ בלמ\"ד, במקום פתח",
-        "translation": "The Aleppo Codex has אֻמְלָ֫ל: qamats dot beneath lamed instead of patah."
+        "translation": "The Aleppo Codex has אֻמְלָ֫ל: qamats dot beneath lamed instead of pataḥ."
       },
       {
         "label": "Introduction, chapter 5: poetic accent design, maqaf between oleh and yored",
@@ -4827,7 +4814,7 @@
         "translation": "The Aleppo Codex has אֻמְלָ֫ל (qamats dot beneath lamed)."
       },
       {
-        "label": "Introduction, chapter 5: hataf vowels on non-guttural letters",
+        "label": "Introduction, chapter 5: ḥataf vowels on non-guttural letters",
         "claim": "ch5:L710",
         "quote": "א=בִּסֲבָךְ־עֵ֝ץ",
         "translation": "Aleppo Codex: בִּסֲבָךְ־עֵ֝ץ."
@@ -4839,13 +4826,13 @@
         "translation": "Aleppo Codex: בִּסְבׇךְ־עֵ֝ץ."
       },
       {
-        "label": "MAM note on Psalm 74:5: Aleppo hataf",
+        "label": "MAM note on Psalm 74:5: Aleppo ḥataf",
         "note": "Psalms 74:5/2/0",
         "quote": "א=בִּסֲבָךְ־עֵ֝ץ (חטף; השמטת נקודת הרביע)",
-        "translation": "The Aleppo Codex has בִּסֲבָךְ־עֵ֝ץ (hataf; omission of the revia dot)."
+        "translation": "The Aleppo Codex has בִּסֲבָךְ־עֵ֝ץ (ḥataf; omission of the revia dot)."
       }
     ],
-    "explanation": "The unusual-vowel and hataf sections agree with the notes. The design lists instead have patah at Psalm 6:3 and ordinary sheva at Psalm 74:5. Their central accent examples still work, but naming Aleppo can make a reader expect the other vowel signs to reproduce its quoted text too.",
+    "explanation": "The unusual-vowel and ḥataf sections agree with the notes. The design lists instead have pataḥ at Psalm 6:3 and ordinary sheva at Psalm 74:5. Their central accent examples still work, but naming Aleppo can make a reader expect the other vowel signs to reproduce its quoted text too.",
     "decision": "Should the design lists retain the Aleppo vowels quoted in the other sections, or explicitly identify the examples as limited illustrations of the accent feature?",
     "reading_forms": [
       {
@@ -4861,7 +4848,7 @@
         "text": "אֻמְלַ֫ל אָ֥נִי"
       },
       {
-        "label": "Psalm 74:5: hataf section",
+        "label": "Psalm 74:5: ḥataf section",
         "source": "claim",
         "id": "ch5:L710",
         "text": "בִּסֲבָךְ־עֵ֝ץ"
@@ -5054,7 +5041,7 @@
     "section": "discrepancies",
     "title": "Deuteronomy 31:21: a repeated vowel-dispute link points to verse 50",
     "issue": "The paragraph correctly names Deuteronomy 31:21, then repeats that label with a link to nonexistent verse 50.",
-    "context": "The entry concerns the patah versus qamats attributed to the Ben-Asher and Ben-Naphtali traditions.",
+    "context": "The entry concerns the pataḥ versus qamats attributed to the Ben-Asher and Ben-Naphtali traditions.",
     "panels": [
       {
         "label": "Introduction, chapter 3: Accuracy of the Leningrad Codex's vowels",
@@ -5079,21 +5066,21 @@
       "navigation:ch4:L686:Daniel 12:2"
     ],
     "section": "discrepancies",
-    "title": "Daniel 12:2: the uncertain hataf reading is listed at 12:12",
+    "title": "Daniel 12:2: the uncertain ḥataf reading is listed at 12:12",
     "issue": "Both the printed reference and the link say Daniel 12:12, but the quoted word and its note are at Daniel 12:2.",
-    "context": "The underlying question is whether the Leningrad Codex has hataf patah under the yod.",
+    "context": "The underlying question is whether the Leningrad Codex has ḥataf pataḥ under the yod.",
     "panels": [
       {
         "label": "Introduction, chapter 4: Daniel",
         "claim": "ch4:L686",
         "quote": "[[דניאל יב/טעמים#יב יב|יב,יב]] (ל?=מִיֲּשֵׁנֵ֥י): בחטף פתח?",
-        "translation": "Daniel 12:12: the Leningrad Codex may have מִיֲּשֵׁנֵ֥י with hataf patah?"
+        "translation": "Daniel 12:12: the Leningrad Codex may have מִיֲּשֵׁנֵ֥י with ḥataf pataḥ?"
       },
       {
         "label": "Doc-note at Daniel 12:2",
         "note": "Daniel 12:2/2/0",
         "quote": "ל?=מִיֲּשֵׁנֵ֥י (בחטף פתח?); יש קו מטושטש ומוזר מתחת ליו\"ד בצד שמאל, ולכן סימן ברויאר את החטף בספק.",
-        "translation": "The Leningrad Codex may have מִיֲּשֵׁנֵ֥י with hataf patah. There is a blurred, unusual stroke below the yod on the left, so Breuer marked the hataf as uncertain."
+        "translation": "The Leningrad Codex may have מִיֲּשֵׁנֵ֥י with ḥataf pataḥ. There is a blurred, unusual stroke below the yod on the left, so Breuer marked the ḥataf as uncertain."
       }
     ],
     "explanation": "The note preserves the same uncertainty as the Introduction. The mismatch is the location: the word belongs to 12:2.",
@@ -5106,21 +5093,21 @@
       "navigation:ch4:L564:Ecclesiastes 5:17"
     ],
     "section": "discrepancies",
-    "title": "Ecclesiastes 5:17: the hataf example links to 4:7",
-    "issue": "The Introduction labels its hataf example 5:17 but sends the reader to Ecclesiastes 4:7.",
-    "context": "The comment concerns missing hataf dots under alef in the Leningrad Codex quotation.",
+    "title": "Ecclesiastes 5:17: the ḥataf example links to 4:7",
+    "issue": "The Introduction labels its ḥataf example 5:17 but sends the reader to Ecclesiastes 4:7.",
+    "context": "The comment concerns missing ḥataf dots under alef in the Leningrad Codex quotation.",
     "panels": [
       {
         "label": "Introduction, chapter 4: Ecclesiastes",
         "claim": "ch4:L564",
         "quote": "[[קהלת ד/טעמים#ד ז|ה,יז]] (ל!=לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת): חסרות נקודות החטף באות אל\"ף",
-        "translation": "Ecclesiastes 5:17 [linked to 4:7]: the Leningrad Codex unexpectedly has לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת without the hataf dots under alef."
+        "translation": "Ecclesiastes 5:17 [linked to 4:7]: the Leningrad Codex unexpectedly has לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת without the ḥataf dots under alef."
       },
       {
         "label": "Doc-note at Ecclesiastes 5:17",
         "note": "Ecclesiastes 5:17/2/0",
         "quote": "ל!=לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת (חסרות נקודות החטף באות אל\"ף)",
-        "translation": "The Leningrad Codex unexpectedly has לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת without the hataf dots under alef."
+        "translation": "The Leningrad Codex unexpectedly has לֶֽאֶכוֹל־וְ֠לִשְׁתּ֠וֹת without the ḥataf dots under alef."
       }
     ],
     "explanation": "The displayed verse number and the note agree on 5:17. The encoded chapter and verse point elsewhere.",
@@ -5278,12 +5265,12 @@
       "navigation:ch2:L264:Ezekiel 27:4"
     ],
     "section": "discrepancies",
-    "title": "Ezekiel 27:4: the hataf example is repeatedly assigned to verse 3",
-    "issue": "The Introduction names verse 3 twice for the hataf example, while its quoted phrase and corresponding note belong to Ezekiel 27:4.",
-    "context": "The comparison concerns hataf patah versus sheva and the parallel phrase at 27:11.",
+    "title": "Ezekiel 27:4: the ḥataf example is repeatedly assigned to verse 3",
+    "issue": "The Introduction names verse 3 twice for the ḥataf example, while its quoted phrase and corresponding note belong to Ezekiel 27:4.",
+    "context": "The comparison concerns ḥataf pataḥ versus sheva and the parallel phrase at 27:11.",
     "panels": [
       {
-        "label": "Introduction, chapter 2: Hataf vowels on non-gutturals",
+        "label": "Introduction, chapter 2: Ḥataf vowels on non-gutturals",
         "claim": "ch2:L264",
         "quote": "\"כָּלֲל֖וּ\" ([[יחזקאל כז/טעמים#כז ג|שם כז,ג]], במג\"ה \"כָּלְל֖וּ\")",
         "translation": "The word כָּלֲל֖וּ is cited at Ezekiel 27:3, with כָּלְל֖וּ in Miqra'ot Gedolot Ha-keter."
@@ -5292,13 +5279,13 @@
         "label": "Introduction, same discussion: the repeated verse claim",
         "claim": "ch2:L264",
         "quote": "\"כָּלֲל֖וּ יָפְיֵֽךְ\" בפסוק ג' בחטף, לעומת \"כָּלְל֥וּ יָפְיֵֽךְ\" בשוא בפסוק י\"א",
-        "translation": "The phrase כָּלֲל֖וּ יָפְיֵֽךְ has hataf in verse 3, compared with כָּלְל֥וּ יָפְיֵֽךְ with sheva in verse 11."
+        "translation": "The phrase כָּלֲל֖וּ יָפְיֵֽךְ has ḥataf in verse 3, compared with כָּלְל֥וּ יָפְיֵֽךְ with sheva in verse 11."
       },
       {
         "label": "Doc-note at Ezekiel 27:4",
         "note": "Ezekiel 27:4/2/0",
         "quote": "א=כָּלֲל֖וּ (חטף); במג\"ה בדפוס בשווא, ואולי נפלה טעות בעקבות הביטוי המקביל בפסוק י\"א.",
-        "translation": "The Aleppo Codex has כָּלֲל֖וּ with hataf. The printed Miqra'ot Gedolot Ha-keter has sheva; perhaps an error arose from the parallel phrase in verse 11."
+        "translation": "The Aleppo Codex has כָּלֲל֖וּ with ḥataf. The printed Miqra'ot Gedolot Ha-keter has sheva; perhaps an error arose from the parallel phrase in verse 11."
       }
     ],
     "explanation": "The doc-note and verse context identify the first phrase as 27:4. The proposed explanation involving 27:11 can remain, but verse 3 does not contain this quoted example.",
@@ -5545,7 +5532,7 @@
     "section": "discrepancies",
     "title": "Numbers 10:29 and 10:35: two legarmeh entries link to chapter 20",
     "issue": "Two entries in the Introduction's legarmeh list print chapter 10 and encode chapter 10 verse fragments, but both select the chapter 20 page.",
-    "context": "Both intended entries concern munah legarmeh before revia in MAM text.",
+    "context": "Both intended entries concern munaḥ legarmeh before revia in MAM text.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Paseq and legarmeh, first entry",
@@ -5572,7 +5559,7 @@
     "section": "discrepancies",
     "title": "2 Samuel 15:30: the legarmeh entry points to verse 2",
     "issue": "The Introduction's legarmeh list prints 2 Samuel 15:30 but links to 15:2.",
-    "context": "The intended entry concerns munah legarmeh before revia in MAM text.",
+    "context": "The intended entry concerns munaḥ legarmeh before revia in MAM text.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Paseq and legarmeh",
@@ -5594,7 +5581,7 @@
     "section": "discrepancies",
     "title": "Ruth 3:3 and 3:13: the legarmeh entries link to Song of Songs",
     "issue": "Two references under the Introduction's Ruth heading use Song of Songs as their target book.",
-    "context": "Both entries concern munah legarmeh before revia in MAM text.",
+    "context": "Both entries concern munaḥ legarmeh before revia in MAM text.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Paseq and legarmeh, Ruth entries",

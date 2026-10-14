@@ -14,7 +14,7 @@ duplicate reference results were merged.
 finding, question and tracked groups, accounts for all 10/10 additional case records,
 and maps all 32/32 verse-reference records and 6/6 section-link records. The verse
 records include one exact duplicate. Agreement controls and the nine resolved
-unsigned hataf comparisons stay in this appendix and their original data.
+unsigned ḥataf comparisons stay in this appendix and their original data.
 
 The renderer validates 582 displayed passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
@@ -32,6 +32,17 @@ the technical source pointers remain in the research data and this appendix.
 Bracketed Hebrew quotations in English translations use one explicit RTL-isolated
 node, including their gaps and orphan marks; English labels and sentence punctuation
 remain outside it. The quotation strings and source captures retain their codepoints.
+
+Ben’s 2026-10-14 Jeremiah 31:37 adjudication is recorded in
+[jeremiah-31-37-adjudication.md](jeremiah-31-37-adjudication.md) and
+[adjudications.json](adjudications.json). The readable case keeps the cached quotation
+and shows his exact proposed correction separately. Ben also confirmed the
+[Numbers 9:7 wording correction](numbers-9-7-adjudication.md), retaining the stored
+punctuation in its before/after comparison. The renderer checks two proposed
+quotations against their declared edits, separately from source-passage validation.
+The three contextual facts, local screenshot observations and bounded restoration
+history are retained with attribution. The copying theory remains a hypothesis;
+the screenshot itself is neither included in the repository nor published.
 
 Explanatory translations and questions were reread against their evidence; literal
 validation alone does not establish translation accuracy or manuscript truth.
@@ -103,16 +114,17 @@ New attributed-form disagreements occur at Jeremiah 31:37; Psalm 108:11; and the
 paired secondary-reading alternatives at Psalms 57:9 and 108:3; Daniel 2:17's
 meteg specimen; Daniel 5:7's ketiv spelling; Psalm 39:13's exchanged meteg/merkha
 positions; Psalm 17:14's maqaf candidates; and Isaiah 10:15's missing-yod position.
-Psalm 150:3's first hataf specimen adds a ninth group: its Introduction quotation
-has sheva while the raw/parsed note explicitly attributes hataf-patah to Aleppo.
+Psalm 150:3's first ḥataf specimen adds a ninth group: its Introduction quotation
+has sheva while the raw/parsed note explicitly attributes ḥataf-pataḥ to Aleppo.
 Two subsequent passes add Isaiah 59:19’s nearby-witness maqaf attribution and
-Psalm 31:12’s omitted-hataf classification. These are eleven groups covering twelve verses. Neither source is
-declared correct. `codepoint-proofs.json` independently matches the selected notes
+Psalm 31:12’s omitted-ḥataf classification. These are eleven groups covering twelve verses.
+Ben’s later Jeremiah adjudication selects the doc-note correction; the other groups
+retain their recorded source boundaries. `codepoint-proofs.json` independently matches the selected notes
 back to the faithful raw chapter cache and records every codepoint. Jeremiah uses
 the updated revision 3088451: the restored atom and closed issue #304 are separate
 from this accent disagreement. Source chronology is retained rather than erased.
 
-Other reviewed discrepancies include the Deuteronomy hataf roster's nine-versus-eleven
+Other reviewed discrepancies include the Deuteronomy ḥataf roster's nine-versus-eleven
 count (eleven verse entries, twelve atom forms), Lamentations 1:6's reversed one/two
 description, and Proverbs 30:19's stale MAM illustration. The first has all eleven
 Introduction/doc-note pairs in `deuter-roster-pairs.json`; the latter two explicitly
@@ -165,16 +177,16 @@ quotations, policy, manuscript locators, and proposals. It does **not** claim th
 all corpus-wide rules, historical statements or physical readings have been certified.
 All **1,643/1,643 verse-linked source units** now have bounded reviewer assessments.
 The added evidence assessments cover **210/210 policy/example units**, and the
-24 hataf-roster plus five meteg-roster source units. The combined source-unit
+24 ḥataf-roster plus five meteg-roster source units. The combined source-unit
 ledger originally assessed **1,859 distinct selected source units**. Assessment includes
 unsupported and uncheckable claims; it is not a declaration of consistency.
 
-All **667/667 hataf roster entries** across five Torah and nineteen later-book
+All **667/667 ḥataf roster entries** across five Torah and nineteen later-book
 rosters have individual dispositions in `hataf-rosters.json` and its manual
-assessment input `roster-review.json`. Of these, 645 have central source/hataf
+assessment input `roster-review.json`. Of these, 645 have central source/ḥataf
 correspondence; 22 retain quotation, label, attribution or incidental-mark limits.
 Twelve malformed locators have separately recorded intended-verse bindings.
-Counts distinguish forms, alternative specimens, non-guttural hataf occurrences
+Counts distinguish forms, alternative specimens, non-guttural ḥataf occurrences
 and verse membership: Judges has 23 forms with 24 relevant hatafs, Psalms has
 172 listed forms including one erroneous sheva specimen, and Chronicles has
 63 forms in 61 verses. Aggregate totals alone hide these differences.
@@ -239,8 +251,8 @@ are outside that predicate. Lamentations 1's three explicit cases are independen
 accounted for at 1:6, 1:11 and 1:18, including its special first case and post-maqaf third.
 
 `next-pass-assessments.json` retains **21 independent raw-note comparisons**, including
-the **nine unsigled hataf entries** now matched to explicit Aleppo counterparts.
-This overlay raises central source/hataf correspondence from 645 to **654/667**;
+the **nine unsigled ḥataf entries** now matched to explicit Aleppo counterparts.
+This overlay raises central source/ḥataf correspondence from 645 to **654/667**;
 13 item-level quotation/source-scope limits remain. The original roster ledger is
 retained and linked to the incremental proof, without rerunning the completed roster.
 It clarifies 2 Kings 14:7's explicit Aleppo pashta clause, Daniel 2:41's expressly
@@ -356,7 +368,7 @@ The final finite passes
 including the remaining 118 Torah units, 59 Chapter 2 units, remaining Chapter 5
 example paragraphs, appendix/index metadata and poetic-roster source units.
 The distinct combined ledger is 1,859 units; overlapping assessments of the
-Deuteronomy hataf roster are retained under `additional_assessments`, counted once.
+Deuteronomy ḥataf roster are retained under `additional_assessments`, counted once.
 All 8,984 original source units remain available, including layout, table cells,
 navigation and non-reference prose. A source unit is not an independent claim.
 Topic routing explicitly preserves limits on the broader remaining prose; the
