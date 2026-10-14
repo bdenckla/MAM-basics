@@ -134,32 +134,76 @@ class Sources:
 
 
 def panel(passage, sources):
-    record = sources.resolve(passage)
-    translation = passage["translation"]
-    if not translation.strip():
-        raise ValueError("Every Hebrew passage needs an English translation")
+    sources.resolve(passage)
+    kind = passage.get("kind", "explanatory")
+    if kind not in {"explanatory", "scripture"}:
+        raise ValueError(f"Unknown passage kind: {kind}")
+    translation = passage.get("translation", "")
+    if kind == "explanatory" and not translation.strip():
+        raise ValueError(
+            "An explanatory passage needs its explanatory prose translated"
+        )
+    if kind == "scripture" and translation:
+        raise ValueError("Scripture-only quotations are not translated in this review")
     quote = passage["quote"]
     return (
         '<div class="passage"><h4>'
         + escaped(passage["label"])
         + '</h4><div class="he" lang="he" dir="rtl">'
         + escaped(visible_wikitext(quote))
-        + '</div><p class="translation">'
-        + prose(translation)
-        + '</p><a class="source-link" href="'
-        + escaped(record["source_url"])
-        + '">Source passage</a></div>'
+        + "</div>"
+        + (
+            '<p class="translation">' + prose(translation) + "</p>"
+            if translation
+            else ""
+        )
+        + "</div>"
+    )
+
+
+def membership_table(comparison, sources):
+    rows = []
+    for row in comparison["rows"]:
+        cells = ['<td class="verse">' + escaped(row["ref"]) + "</td>"]
+        for side in ("chapter2", "appendix"):
+            entry = row[side]
+            if entry is None:
+                cells.append('<td colspan="2">Not listed</td>')
+            else:
+                for key in ("ketiv", "qere"):
+                    sources.resolve({"claim": entry["claim"], "text": entry[key]})
+                    cells.append(
+                        '<td class="he" lang="he" dir="rtl">'
+                        + escaped(entry[key])
+                        + "</td>"
+                    )
+        rows.append("<tr>" + "".join(cells) + "</tr>")
+    return (
+        '<div class="membership"><table><caption>'
+        + prose(comparison["caption"])
+        + '</caption><thead><tr><th rowspan="2">Verse</th><th colspan="2">Chapter 2 — three entries</th><th colspan="2">Appendix — four entries</th></tr><tr><th>Ketiv</th><th>Qere</th><th>Ketiv</th><th>Qere</th></tr></thead><tbody>'
+        + "".join(rows)
+        + "</tbody></table></div>"
     )
 
 
 def card(case, sources):
-    for key in ("title", "issue", "context", "explanation", "decision", "panels"):
+    for key in ("title", "issue", "decision", "panels"):
         if not case.get(key):
             raise ValueError(f"Incomplete readable case {case.get('id')}: {key}")
     passages = "".join(panel(p, sources) for p in case["panels"])
+    membership = (
+        membership_table(case["membership_comparison"], sources)
+        if case.get("membership_comparison")
+        else ""
+    )
     forms = []
     for form in case.get("reading_forms", []):
-        record = sources.resolve(form)
+        sources.resolve(form)
+        if "gloss" in form:
+            raise ValueError(
+                "Reading displays must not carry lexical Scripture glosses"
+            )
         tooltip = (
             f' title="{escaped(form["mark_name"])}"' if form.get("mark_name") else ""
         )
@@ -170,9 +214,13 @@ def card(case, sources):
             + tooltip
             + ">"
             + escaped(form["text"])
-            + '</span><span class="gloss">'
-            + escaped(form["gloss"])
-            + "</span></div>"
+            + "</span>"
+            + (
+                '<span class="annotation">' + prose(form["annotation"]) + "</span>"
+                if form.get("annotation")
+                else ""
+            )
+            + "</div>"
         )
     issue = ""
     if case.get("issue_number"):
@@ -185,14 +233,23 @@ def card(case, sources):
         else ""
     )
     return (
-        f'<details class="case" id="{escaped(case["id"])}"{opened}><summary><h3>{prose(case["title"])}</h3>'
-        f'<span class="issue">{prose(case["issue"])}</span></summary><article><p>{prose(case["context"])}</p>'
+        f'<details class="case" id="{escaped(case["id"])}"{opened}><summary><h3>{prose(case["title"])}</h3></summary><article>'
+        + '<div class="explanation"><p><strong>'
+        + prose(case["issue"])
+        + "</strong> "
+        + prose(
+            " ".join(
+                case.get(key, "")
+                for key in ("context", "explanation", "decision")
+                if case.get(key)
+            )
+        )
+        + "</p></div>"
+        + membership
         + '<div class="comparison">'
         + passages
         + "</div>"
         + ('<div class="readings">' + "".join(forms) + "</div>" if forms else "")
-        + f'<p>{prose(case["explanation"])}</p>'
-        + f'<p class="decision"><strong>Decision:</strong> {prose(case["decision"])}</p>'
         + issue
         + "</article></details>"
     )
@@ -304,10 +361,10 @@ def main(cases=None, output="review.html"):
     output_html = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
         + STYLE
-        + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case>summary .issue{display:block;font:16px/1.6 Georgia,serif;font-weight:400;margin-top:8px}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}#tracked .case>summary .issue{font-size:15px}"
-        + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">Each comparison gives the relevant Hebrew, an English translation and the decision it raises.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
+        + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
+        + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
         + "".join(sections)
-        + '<footer><a href="METHODS.md">Methods, evidence and coverage</a> · <a href="human-review.json">Translated comparison data</a><p>The source links point to the repository copies used for these comparisons. No manuscript reading has been changed.</p></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
+        + '<footer><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
     )
     if output == "review.html":
         audit.dump(

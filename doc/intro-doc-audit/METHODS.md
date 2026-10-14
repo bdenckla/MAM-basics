@@ -3,7 +3,7 @@
 Open [review.html](review.html) for the readable comparisons. This appendix retains
 the technical inventory, source versions, coverage limits and supporting evidence.
 
-The translated presentation is maintained in [human-review.json](human-review.json).
+The presentation is maintained in [human-review.json](human-review.json).
 It contains 137 concrete comparisons: 85 discrepancies, 48 interpretation or source
 questions, and four verse comparisons for the three tracked issues. These are
 presentation entries, not 137 independent manuscript findings. Paired verses and
@@ -16,12 +16,21 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned hataf comparisons stay in this appendix and their original data.
 
-The renderer validates 561 displayed passages against literal stored strings.
+The renderer validates 578 displayed passages against literal stored strings,
+including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
 displayed as current MAM text, not as invented doc-notes. Link syntax and formatting
 are hidden for readability while captured Hebrew codepoints remain unchanged.
-English translations and decisions were reread against their evidence; literal
+The report addresses an expert reader: it uses ketiv/qere directly and translates
+explanatory Hebrew prose while retaining cited Scripture in Hebrew. Scripture-only
+panels have no translation; lexical glosses are omitted. MAM text, MAM ketiv and
+MAM qere labels identify the actual selected source rather than treating “reading”
+as qere. Each comparison and remaining question precedes its source quotations in
+one block. Raw-file and JSON “Source passage” links are omitted from the reader page;
+the technical source pointers remain in the research data and this appendix.
+
+Explanatory translations and questions were reread against their evidence; literal
 validation alone does not establish translation accuracy or manuscript truth.
 
 Regenerate the readable review and its presentation coverage record with
@@ -70,8 +79,9 @@ before assigning a semantic result. Introduction transclusions remain unexpanded
 and are explicitly counted. No live Wikisource request was made.
 
 Open [review.html](review.html) for the compact comparison, with the 20–48 px Hebrew
-slider (default 30), exact source links, and cached verse contexts. The report keeps
-the three existing issues separate from new research. No issues or comments were posted.
+slider (default 30) and cached verse contexts. Exact source links and pointers remain
+in the supporting data. The report keeps the three existing issues separate from
+new research. No issues or comments were posted.
 
 The bounded list ledgers account for **1,359/1,359 selected source units**, including
 **846/846 selected pointing rows**. Four initial pointing batches reviewed 838 rows:
