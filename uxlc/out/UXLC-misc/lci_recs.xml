@@ -47,7 +47,7 @@
         <type-count col-name="stopc" integer="978" none="4" />
         <type-count col-name="stopv" integer="978" none="4" />
         <type-count col-name="stopp" integer="978" none="4" />
-        <type-count col-name="note" none="948" string="34" />
+        <type-count col-name="note" none="942" string="40" />
       </type-counts>
       <bkid-val-counts>
         <bkid-val-count bkid="Genesis" count="61" />
@@ -721,7 +721,7 @@
       <stopc>36</stopc>
       <stopv>30</stopv>
       <stopp>7</stopp>
-      <note />
+      <note>column 3 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>022B</page>
@@ -736,7 +736,7 @@
       <stopc>37</stopc>
       <stopv>15</stopv>
       <stopp>10</stopp>
-      <note />
+      <note>all 3 columns have 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>023A</page>
@@ -1981,7 +1981,7 @@
       <stopc>10</stopc>
       <stopv>6</stopv>
       <stopp>25</stopp>
-      <note />
+      <note>column 3 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>062A</page>
@@ -2431,7 +2431,7 @@
       <stopc>4</stopc>
       <stopv>8</stopv>
       <stopp>4</stopp>
-      <note />
+      <note>all 3 columns have 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>076B</page>
@@ -2446,7 +2446,7 @@
       <stopc>4</stopc>
       <stopv>32</stopv>
       <stopp>5</stopp>
-      <note />
+      <note>all 3 columns have 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>077A</page>
@@ -2581,7 +2581,7 @@
       <stopc>10</stopc>
       <stopv>22</stopv>
       <stopp>11</stopp>
-      <note />
+      <note>column 1 has 28 lines</note>
     </lci_rec>
     <lci_rec>
       <page>081B</page>

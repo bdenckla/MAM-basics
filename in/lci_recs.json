@@ -663,7 +663,7 @@
             "stopc": 36,
             "stopv": 30,
             "stopp": 7,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "022B",
@@ -678,7 +678,7 @@
             "stopc": 37,
             "stopv": 15,
             "stopp": 10,
-            "note": null
+            "note": "all 3 columns have 28 lines"
         },
         {
             "page": "023A",
@@ -1923,7 +1923,7 @@
             "stopc": 10,
             "stopv": 6,
             "stopp": 25,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "062A",
@@ -2373,7 +2373,7 @@
             "stopc": 4,
             "stopv": 8,
             "stopp": 4,
-            "note": null
+            "note": "all 3 columns have 28 lines"
         },
         {
             "page": "076B",
@@ -2388,7 +2388,7 @@
             "stopc": 4,
             "stopv": 32,
             "stopp": 5,
-            "note": null
+            "note": "all 3 columns have 28 lines"
         },
         {
             "page": "077A",
@@ -2523,7 +2523,7 @@
             "stopc": 10,
             "stopv": 22,
             "stopp": 11,
-            "note": null
+            "note": "column 1 has 28 lines"
         },
         {
             "page": "081B",
