@@ -48,9 +48,9 @@ _CHOICES = (
     Choice(
         "2026-08-23",
         _BEN,
-        "The rafe marks MAM lacks",
-        "Near-Aleppo has the rafe marks MAM has and no others, so it has fewer than the codex, which has the rafe in many places where MAM does not.",
-        ("Deriving the missing rafe marks by rule",),
+        "The rafeh marks MAM lacks",
+        "Near-Aleppo has the rafeh marks MAM has and no others, so it has fewer than the codex, which has the rafeh in many places where MAM does not.",
+        ("Deriving the missing rafeh marks by rule",),
     ),
     Choice(
         "2026-08-25",

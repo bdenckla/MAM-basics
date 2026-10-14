@@ -549,7 +549,7 @@ being drafted; the other rows were proposed for his approval.
 | Meteg | marks | | |
 | Shin dot, sin dot | dots | | Ben |
 | Dagesh, mapiq | marks | dots | Ben, for "dots" |
-| Rafe, varika | marks | | |
+| Rafeh, varika | marks | | |
 | Maqaf, paseq, sof pasuq, inverted nun, and geresh or gershayim as punctuation | marks | | |
 | Pasoleg | marks | stroke, for technical pen-on-ink description | Ben |
 | Ketiv, qere | words, or atoms where the distinction from chanted words matters | forms, as in "the ketiv form of this word has a yod after ..."; readings, though rarely if ever better | Ben |
@@ -582,6 +582,9 @@ Ben's rendered-prose choices, 2026-10-13: use `qere`, `aliyah`, `parashah`, and 
 rather than `qeri`, `aliya`, `parasha`, and `masora`, in our own prose. Retain literal source
 wording, external work titles, technical identifiers and the repository's adaptation exceptions.
 This choice does not start a sweep of other transliteration variants.
+
+Ben's choice, 2026-10-14: use `rafeh` in authored prose. Retain `RAFE` when
+citing the Unicode name, as in `U+05BF HEBREW POINT RAFE` or `Unicode RAFE`.
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 

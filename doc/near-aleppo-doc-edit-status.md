@@ -2943,3 +2943,21 @@ the existing section. No other generated file or dataset changed. Five focused
 prose checks and `git diff --check` passed. A read-only review found no
 consequential issue. Mega and the full suite remain on the approved nightly
 cadence for this prose revision.
+
+## Rafeh spelling — 2026-10-14
+
+**Status:** implemented by Codex. Ben prefers “rafeh” in prose and requires
+literal Unicode RAFE names to keep their spelling. The canonical Hebrew prose
+reference now records that choice and uses “Rafeh” in its default-noun table.
+
+**Change:** Corrected the ten prose occurrences across editorial policies,
+coverage and choices. Extended the Near-Aleppo rendered spelling lint to reject
+“rafe” in prose while retaining complete Unicode names and “Unicode RAFE” labels.
+
+**Verification:** Work began in the clean main checkout at `d4f322e3`.
+Black, HTML regeneration, skill validation and five focused prose checks passed.
+Scratch reversions to the former spellings fail at all ten occurrences; literal
+Unicode citations pass and bare uppercase prose still fails. Only the three
+documentation pages changed among generated products; the dataset is unchanged.
+Mega and the full suite remain on the approved nightly cadence for this spelling
+and instruction change.

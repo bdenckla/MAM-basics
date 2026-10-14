@@ -56,7 +56,7 @@ def _kept(numbers):
         "Both U+05A2 HEBREW ACCENT ATNAH HAFUKH and U+05AA HEBREW ACCENT YERAH BEN "
         "YOMO, the galgal: the codex tells the two apart.",
         [
-            "Every rafe of MAM's, U+05BF HEBREW POINT RAFE, all ",
+            "Every rafeh of MAM's, U+05BF HEBREW POINT RAFE, all ",
             numbers.fig("rafe_mam"),
             " of them; near-Aleppo has ",
             numbers.fig("rafe"),
@@ -117,7 +117,7 @@ def _not_represented():
                 "The rest of the masorah: the masorah circles, the masorah parva, and "
                 "the masorah magna. Only the qere notes are there, as MAM's ketiv/qere "
                 "templates.",
-                "The codex's rafe marks, beyond the few that MAM has. The codex has "
+                "The codex's rafeh marks, beyond the few that MAM has. The codex has "
                 "many more, and how many is not known.",
             ]
         ),
@@ -127,15 +127,15 @@ def _not_represented():
 def _limitations(numbers):
     rows = [
         [
-            "Rafe",
+            "Rafeh",
             [
-                "The codex marks the rafe in many places where MAM does not, and how "
-                "many is not known. The manuscripts use the rafe inconsistently "
+                "The codex marks the rafeh in many places where MAM does not, and how "
+                "many is not known. The manuscripts use the rafeh inconsistently "
                 "(Yeivin, ",
                 itm(),
                 " §397), so near-Aleppo does not derive the missing ones by rule, "
                 "which would give them a regularity the manuscripts lack. Near-Aleppo "
-                "has fewer rafe marks than the codex.",
+                "has fewer rafeh marks than the codex.",
             ],
         ],
         [

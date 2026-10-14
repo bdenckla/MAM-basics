@@ -1,9 +1,10 @@
-"""Lint xet spellings in every registered Near-Aleppo documentation page.
+"""Lint preferred spellings in every registered Near-Aleppo documentation page.
 
 The source denylist in test_transliterations.py does not cover every vowel name.
 This check reads rendered prose, including headings and prose attributes, so
 source literals, interpolated values and the shared consumer notice are covered.
-ASCII identifiers, literal Unicode names and source quotations retain their own
+The vocabulary includes Ben's preference for rafeh. ASCII identifiers,
+literal Unicode names and source quotations retain their own
 spellings. Prose compounds remain checked, including names joined by hyphens.
 This scope does not claim to audit other products' legacy prose.
 """
@@ -33,7 +34,7 @@ def _variants():
     }
 
 
-_VARIANTS = _variants()
+_VARIANTS = {**_variants(), "rafe": "rafeh"}
 _PATTERN = re.compile(
     r"(?<!\w)(?:" + "|".join(map(re.escape, _VARIANTS)) + r")(?!\w)", re.I
 )
@@ -81,6 +82,9 @@ _FORMULA_PATTERN = re.compile(
     + _alternation(_MARK_NAMES)
     + r")*\b"
 )
+_UNICODE_LABEL_PATTERN = re.compile(
+    r"\bUnicode\s+" + _alternation(_LETTER_NAMES | _MARK_NAMES) + r"\b"
+)
 
 
 def findings(html, name):
@@ -88,6 +92,7 @@ def findings(html, name):
     text, lines = html_prose.authored_html_text(html, "gh-pages/near-aleppo/" + name)
     text = _FORMULA_PATTERN.sub(lambda match: " " * len(match[0]), text)
     text = _UNICODE_PATTERN.sub(lambda match: " " * len(match[0]), text)
+    text = _UNICODE_LABEL_PATTERN.sub(lambda match: " " * len(match[0]), text)
     for title in _SOURCE_TITLES.get(name, ()):
         text = text.replace(title, " " * len(title))
     for citation in _SHORT_NAME_CITATIONS.get(name, ()):
@@ -112,7 +117,7 @@ def findings(html, name):
     return found
 
 
-def test_near_aleppo_documentation_uses_unicode_xet_spellings():
+def test_near_aleppo_documentation_uses_preferred_transliterations():
     root = paths.repo_root() / "gh-pages/near-aleppo"
     assert doc_pages._PAGES, "Near-Aleppo documentation lint has no registered pages"
     offenders = []
@@ -122,6 +127,6 @@ def test_near_aleppo_documentation_uses_unicode_xet_spellings():
                 f"gh-pages/near-aleppo/{name}:{finding.line}: "
                 f"{finding.term} -> {finding.preferred}"
             )
-    assert not offenders, "Use precomposed xet in rendered prose:\n" + "\n".join(
-        offenders
-    )
+    assert (
+        not offenders
+    ), "Use preferred transliterations in rendered prose:\n" + "\n".join(offenders)
