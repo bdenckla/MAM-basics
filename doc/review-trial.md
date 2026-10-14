@@ -105,8 +105,8 @@ private evidence remains in its owning repository.
 
 The seventh scheduled attempt was blocked before process creation: HP was offline and the
 saved runner failed startup twice with a generic ASB error. It ran no checks and advanced no
-anchors; the status notes record any separately authorized continuation. This is not seven
-executed nights. Retain nightly testing, consequential new-change review, objective low-risk
+anchors; only six nights had execution evidence at that assessment. The status notes record
+the separately authorized final continuation. Retain nightly testing, consequential new-change review, objective low-risk
 autonomous repairs and quiet successes. New-main-only review was already the trial policy.
 
 Receipt pushes must respect deployment triggers, including documentation-only main pushes.
