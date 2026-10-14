@@ -51,7 +51,9 @@ class AtomLocation:
         have, and held inside the 27 lines the column arithmetic assumes: an
         interpolation landing at line 27.6 means the foot of the column, and
         reporting a line 28 the reader cannot find there would be worse than
-        reporting the last one. Only 2Samuel 5:21.1 reaches that today.
+        reporting the last one. On 2026-10-14 three tracked estimates rounded
+        to line 28: 2Samuel 5:21.1 (27.6), Jeremiah 8:9.9 (28.0) and Job
+        34:20.4 (27.8).
         """
         return min(27, max(1, round(self.line)))
 
