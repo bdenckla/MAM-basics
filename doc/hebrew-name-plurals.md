@@ -1,9 +1,10 @@
 # Plurals of romanized Hebrew words
 
 Use a context-specific English plural noun in authored prose: "maqaf marks", "meteg marks",
-"three alef letters", "pointed ketiv forms", "qere readings", or "aliyah portions".
+"three alef letters", "two tsinnor accents", "two qere words", or "aliyah portions".
 This preference includes apparatus and other Hebrew nouns, not just letter/mark names.
-The rule lives in the `hebrew-prose` skill's
+The rule, with the table of default nouns that Ben approved on 2026-10-14, lives in the
+`hebrew-prose` skill's
 [terminology reference](../dot-claude/skills/hebrew-prose/references/terminology.md).
 Ben's 2026-10-13 exception preserves the entire Yeivin ITM adaptation's plural conventions,
 including his adapted prose and footnotes. His technical-page exception also preserves
@@ -30,9 +31,16 @@ source and regenerate it; hand-maintained HTML is edited directly.
 names in `pydiff_mm.diff_mm_uni_name`, the letter/point/accent and poetic names in
 `mb_diff_mpu.describe_diff`, and full Hebrew Unicode names, plus explicit spelling aliases.
 Small noun and irregular-plural tables cover the additional words found in this audit:
-ketiv/qere, masorah, aliyah, parashah, setumah/petuḥah, and ḥilluf. Suggested nouns are
-editorial defaults, not automatic substitutions; the sentence decides forms, readings, words,
-notes, portions, sections, or another appropriate noun.
+ketiv/qere, masorah, aliyah, parashah, setumah/petuḥah, and ḥilluf. The aliases ḥataf,
+pasoleg and ta'am were added on 2026-10-14, after the previous day's sweep of authored prose
+outside the pages had found their plurals by hand.
+Suggested nouns follow the terminology reference's table: "letters" for a letter, "accents"
+for an accent, "vowels" for a vowel point, "dots" for ḥolam, "words" for ketiv and qere, and
+"marks" for any other mark, including legarmeh, ole and yored. Ḥiriq suggests both "vowels"
+and "dots", which Ben accepts equally, and the homonyms segol, geresh and gershayim suggest
+the noun of each sense. A compound's final component never overrides a full name's noun, so
+"vavs" suggests "vav letters" rather than the noun of `ḥolam-ḥaser-for-vav`. Suggested nouns
+are editorial defaults, not automatic substitutions; the sentence decides the noun.
 Matching recognizes Latin diacritic variants, English `s`/`es` and appended Hebrew `im`/`ot`,
 as well as suffixes separated from italic names by inline tags or thin/hair spaces. Latin
 folding is for lookup only; no source or Hebrew text is normalized. Suggestions preserve the
@@ -55,9 +63,9 @@ transcriptions are untagged too.
 `_PAGE_TERM_EXCEPTIONS` permits only `aliyot` (case-insensitively) in
 `gh-pages/MAM-with-doc/misc/notes_on_aliyot.html`. Other unwanted plurals on that page still
 fail, and `aliyot` still fails on other pages. The source uses an explicit technical
-substitution for it. `Parashot`/`parashot` are accepted in our own prose; `parashiyot` suggests
-`parashot` unless in a quotation or adaptation. The legacy `$parashiyot` key renders the chosen
-`parashot` spelling without changing technical identifiers.
+substitution for it. `Parashot`/`parashot` are accepted in our own prose; `parashiyot`, like an
+English plural of parashah, suggests `parashot` unless in a quotation or adaptation. The legacy
+`$parashiyot` key renders the chosen `parashot` spelling without changing technical identifiers.
 
 An unmarked verbatim source phrase can have a narrow path-and-phrase exception in
 `_QUOTATIONS`. Its entries preserve UXLC's "five yods" note in `gh-pages/clc/Proverbs.html`

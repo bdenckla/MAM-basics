@@ -334,7 +334,7 @@ def render():
                 ),
                 mb_html.anchor_h("Qere without ketiv", "qere-without-ketiv.html"),
                 mb_html.anchor_h(
-                    "Cramped atoms and letter spacing", "cramped-atoms.html"
+                    "Cramped words and letter spacing", "cramped-atoms.html"
                 ),
             ]
         ),

@@ -156,11 +156,13 @@ def test_no_decomposed_composites_tree_wide() -> None:
 
 # This distinct HTML check covers only Ben's four approved spelling choices.
 # Other source spellings retain the existing denylist and its own exemptions.
+# Each variant maps to its chosen singular and plural, the plural taking the
+# plural lint's default noun or, for parashah, the accepted parashot.
 _RENDERED_VARIANTS = {
-    "qeri": ("qere", "forms"),
-    "aliya": ("aliyah", "portions"),
-    "parasha": ("parashah", "sections"),
-    "masora": ("masorah", "notes"),
+    "qeri": ("qere", "qere words"),
+    "aliya": ("aliyah", "aliyah portions"),
+    "parasha": ("parashah", "parashot"),
+    "masora": ("masorah", "masorah notes"),
 }
 _RENDERED_VARIANT_PATTERN = re.compile(
     r"\b(" + "|".join(_RENDERED_VARIANTS) + r")(s|es|im|ot)?\b", re.I
@@ -178,13 +180,12 @@ def _rendered_variant_findings(html: str, rel: str) -> list[html_prose.Finding]:
     for match in _RENDERED_VARIANT_PATTERN.finditer(text):
         if html_prose.is_technical_reference(text, match):
             continue
-        preferred, plural_noun = _RENDERED_VARIANTS[match[1].lower()]
+        singular, plural = _RENDERED_VARIANTS[match[1].lower()]
+        preferred = plural if match[2] else singular
         if match[1].isupper():
             preferred = preferred.upper()
         elif match[1][0].isupper():
             preferred = preferred.capitalize()
-        if match[2]:
-            preferred += " " + plural_noun
         found.append(html_prose.Finding(lines[match.start()], match[0], preferred))
     return found
 
@@ -221,7 +222,7 @@ def test_rendered_variant_quotes_adaptations_and_identifiers() -> None:
         "masorah",
     ]
     assert [f.preferred for f in scan("<p>qeris and masoras.</p>", rel)] == [
-        "qere forms",
+        "qere words",
         "masorah notes",
     ]
     assert not scan(

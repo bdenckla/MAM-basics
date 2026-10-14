@@ -98,9 +98,14 @@ Its [source note](https://github.com/bdenckla/MAM-basics/blob/main/doc/near-alep
 maintained records and crop provenance.
 
 The [spacing study](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/cramped-atoms.html)
-compares characteristic cramped atoms at usual spacing and with added letter
-spacing, including adjacent narrow letters and qof with a pointed predecessor.
-It distinguishes the active NAEE spacing rule from broader trial families.
+compares characteristic cramped words at usual spacing and with added letter
+spacing. NAEE expands the original narrow-letter family, the six observed
+spacing contexts in Taamey D's own rules, and the precise context where the font
+raises a preceding yod's vowel beside qof. Broad adjacent-narrow and
+qof-predecessor screens remain trials; matching a trial alone does not enable
+automatic spacing.
+Each family gives its sample size, total distinct pointed words, and occurrences
+in the same Scripture selection; those totals are regenerated with the page.
 Regenerate the FOI pages and images with:
 
 ```powershell
