@@ -1,7 +1,7 @@
 """Conservative screening for cramped pointed-Hebrew text in Taamey D.
 
-This is a typography heuristic, not a collision detector. A narrow letter with
-a broad below-letter vowel and a below-letter accent can crowd neighboring ink
+This is a typography heuristic, not a collision detector. A yod or vav with
+a broad below-vowel and a below-accent can crowd neighboring ink
 even after the font has avoided overlap. NAEE expands such atoms by 0.06em,
 alongside the six observed advance-adding contexts in the frozen Taamey D 0.921
 source and its precise preceding-yod vowel-raising context beside qof. These
@@ -26,22 +26,22 @@ ADJACENT_NARROW_BELOW = "adjacent-narrow-below"
 QOF_PREDECESSOR_BELOW = "qof-predecessor-below"
 FONT_ADDED_SPACE = "font-added-space"
 YOD_BEFORE_QOF = "yod-before-qof"
-_NARROW_LETTERS = frozenset(
+_VOWEL_ACCENT_LETTERS = frozenset(
     (
         "\N{HEBREW LETTER YOD}",
         "\N{HEBREW LETTER VAV}",
-        "\N{HEBREW LETTER FINAL NUN}",
     )
 )
 _BROAD_BELOW_VOWELS = frozenset(
     (hp.TSERE, hp.SEGOL_V, hp.XSEGOL, hp.XPATAX, hp.XQAMATS, hp.QUBUTS)
 )
 # The broader narrow-letter class in the frozen Taamey D source's @narlets.
-_NARROW_PAIR_LETTERS = _NARROW_LETTERS | frozenset(
+_NARROW_PAIR_LETTERS = _VOWEL_ACCENT_LETTERS | frozenset(
     (
         "\N{HEBREW LETTER GIMEL}",
         "\N{HEBREW LETTER ZAYIN}",
         "\N{HEBREW LETTER NUN}",
+        "\N{HEBREW LETTER FINAL NUN}",
     )
 )
 _BELOW_VOWELS = _BROAD_BELOW_VOWELS | frozenset(
@@ -227,7 +227,7 @@ def types_for_atom(atom):
         types.append(YOD_BEFORE_QOF)
     clusters = [(letter, set(marks)) for letter, marks in clusters]
     if any(
-        letter in _NARROW_LETTERS
+        letter in _VOWEL_ACCENT_LETTERS
         and marks & _BROAD_BELOW_VOWELS
         and marks & ha.UNI_UNDER_ACCENTS
         for letter, marks in clusters

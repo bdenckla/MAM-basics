@@ -50,8 +50,8 @@ FAMILIES = (
     Family(
         spacing.NARROW_VOWEL_ACCENT,
         "A broad vowel and accent on a narrow letter",
-        "A yod, vav or final nun carries a broad below-letter vowel and a "
-        "below-letter accent. The vowel dots and accent share a narrow letter’s "
+        "In this family of words, yod or vav carries both a broad below-vowel "
+        "and a below-accent. The vowel dots and accent share a narrow letter’s "
         "space. This family is expanded automatically in NAEE.",
         (
             Example((tbn.BK_EZEKIEL, 14, 14), "qere", "דניאל"),
@@ -62,9 +62,9 @@ FAMILIES = (
     Family(
         spacing.FONT_ADDED_SPACE,
         "Shapes where Taamey D adds spacing",
-        "Taamey D adds space in particular combinations of narrow letters and "
-        "below marks, near final descending letters, and where a hataf vowel "
-        "precedes an accented narrow letter. NAEE gives these words its "
+        "In this family of words, Taamey D adds space in particular combinations "
+        "of narrow letters and below-marks, near final descending letters, and "
+        "where a hataf vowel precedes an accented narrow letter. NAEE gives these words its "
         "additional spacing as well. These examples show the six observed "
         "shapes selected from the font’s spacing rules.",
         (
@@ -79,10 +79,9 @@ FAMILIES = (
     Family(
         spacing.YOD_BEFORE_QOF,
         "A raised vowel on yod before qof",
-        "In particular combinations of yod’s broad vowel and the following "
-        "qof’s vowel and below-letter accent, Taamey D raises yod’s vowel to "
-        "make room beside qof’s marks. NAEE adds horizontal space to separate "
-        "the neighboring groups of marks more clearly.",
+        "In this family of words, Taamey D raises yod’s vowel to make room beside "
+        "the following qof’s vowel and below-accent. NAEE adds horizontal space "
+        "to separate the neighboring groups of marks more clearly.",
         (
             Example((tbn.BK_JEREM, 15, 19), "body", "יקר"),
             Example((tbn.BK_GENESIS, 27, 31), "body", "יקם"),
@@ -91,9 +90,10 @@ FAMILIES = (
     ),
     Family(
         spacing.ADJACENT_NARROW_BELOW,
-        "Adjacent narrow letters, both with marks below",
-        "Two adjacent narrow letters each carry marks below. Broad vowel dots "
-        "or an extra mark below a letter leave less room between the sets of marks. These examples "
+        "Adjacent narrow letters, both with below-marks",
+        "In this family of words, two adjacent narrow letters each carry below-marks. "
+        "Broad vowel dots or an extra below-mark leave less room between the sets "
+        "of marks. These examples "
         "include vav beside yod and nun beside vav. This broad screen remains "
         "a trial; a matching word can receive automatic spacing from a more "
         "specific family.",
@@ -105,12 +105,12 @@ FAMILIES = (
     ),
     Family(
         spacing.QOF_PREDECESSOR_BELOW,
-        "Qof and its predecessor, both with marks below",
-        "The letter immediately before qof in reading order and qof itself "
-        "both have marks below. Qof’s descending stroke adds to the crowding "
+        "Qof and its predecessor, both with below-marks",
+        "In this family of words, qof and the letter immediately before it in "
+        "reading order both carry below-marks. Qof’s descending stroke adds to the crowding "
         "around those marks. The examples include broad vowel dots on the "
-        "predecessor, an extra below-letter accent on qof, and an extra "
-        "below-letter accent on the predecessor. This broad screen also remains "
+        "predecessor, an extra below-accent on qof, and an extra "
+        "below-accent on the predecessor. This broad screen also remains "
         "a trial; a matching word can receive automatic spacing from a more "
         "specific family.",
         (
@@ -283,8 +283,9 @@ def render():
         ),
         mb_html.para(
             "These examples show words that can feel cramped in Taamey D even "
-            "when no ink overlaps. A word can belong to more than one family. The families "
-            "group candidates for visual judgment rather than providing an "
+            "when no ink overlaps. Each family groups words that share a combination "
+            "of letters and marks. A word can belong to more than one family. The families "
+            "provide candidates for visual judgment rather than an "
             "exhaustive inventory of cramped words."
         ),
         mb_html.para(
