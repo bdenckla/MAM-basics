@@ -277,8 +277,7 @@ def _family_table(family, resolved):
     rows = [
         mb_html.table_row_of_headers(
             (
-                "Usual spacing",
-                "Added spacing",
+                "Word",
                 mb_html.abbr("bcv", {"title": "book-chapter-verse"}),
             )
         )
@@ -288,12 +287,10 @@ def _family_table(family, resolved):
         rows.append(
             mb_html.table_row_of_data(
                 (
-                    atom,
-                    mb_html.span_c(atom, spacing.CLASS),
+                    (atom, mb_html.line_break(), mb_html.span_c(atom, spacing.CLASS)),
                     _reference_link(example.reference),
                 ),
                 (
-                    {"dir": "rtl", "lang": "hbo", "class": "pointed spacing-atom"},
                     {"dir": "rtl", "lang": "hbo", "class": "pointed spacing-atom"},
                     {"class": "spacing-reference"},
                 ),
@@ -326,8 +323,8 @@ def render():
             "judgment rather than an exhaustive inventory of cramped words."
         ),
         mb_html.para(
-            "The example tables compare “Usual spacing” with “Added spacing” "
-            "(0.06em extra letter spacing). In the summary table, “spacing” gives "
+            "In each example, the word is shown with usual spacing above and "
+            "added spacing (0.06em extra letter spacing) below. In the summary table, “spacing” gives "
             "the spacing NAEE uses for the examples in each family. NAEE "
             "automatically expands words in the first three families."
         ),

@@ -163,6 +163,11 @@ The bracketed column groups are optional; omit them when the table does not need
 pointed-Hebrew columns extend to the left, and additional Latin-alphabet columns extend to the
 right. This keeps the core pointed Hebrew immediately to the left of its BCV.
 
+Ben's decision, 2026-10-14: when comparing words, place the words one above the
+other. This applies to typographic comparisons and other comparisons of words.
+In a table, use one cell with line breaks between the words; keep any BCV beside
+that cell.
+
 - Let the table and its columns take their natural content widths. Do not stretch the table to
   fill the available width, and do not divide the available width equally between columns.
 - Render pointed Hebrew large enough for its pointing to be read comfortably, with adequate line
