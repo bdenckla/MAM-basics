@@ -481,10 +481,8 @@ The reader typography follows the shared document.css default-serif and
 strings remain unchanged. Local Times New Roman regular and bold both contain
 U+1E25; bounded light/dark Edge previews show consistent ḥ rendering, readable
 30px Hebrew, and vertically stacked forms. The slider retains20–48px/default30.
-The report still has exactly three hard-coded open defaults: Jeremiah31:37,
-Numbers9:7 and the different-qere-count case. They are presentation defaults,
-with no documented selection rationale and no approval/progress meaning. The
-report has no open/closed persistence code; only the font slider is scripted.
-In the isolated local headless Edge reload check, Jeremiah was closed and the
-Song 1:6 case opened; reloading restored exactly the three hard-coded defaults.
-This verifies that browser run, not the behavior of Ben’s interactive app panel.
+Ben requested removal of the three open defaults on 2026-10-14
+(`Sentinel_5729358219cc819184bea60bbddef656`). All case sections now start
+collapsed. The report has no open/closed persistence code; only the font slider
+is scripted. The earlier local Edge reload check returned the old defaults;
+that historical observation does not describe the new all-collapsed initial state.

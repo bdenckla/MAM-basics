@@ -364,14 +364,8 @@ def card(case, sources):
     if case.get("issue_number"):
         number = case["issue_number"]
         issue = f'<p><a href="https://github.com/bdenckla/MAM-basics/issues/{number}">Tracked in #{number}</a></p>'
-    opened = (
-        " open"
-        if case["id"]
-        in {"different-qere-count", "jeremiah-accent", "numbers-yod-label"}
-        else ""
-    )
     return (
-        f'<details class="case" id="{escaped(case["id"])}"{opened}><summary><h3>{prose(case["title"])}</h3></summary><article>'
+        f'<details class="case" id="{escaped(case["id"])}"><summary><h3>{prose(case["title"])}</h3></summary><article>'
         + '<div class="explanation"><p><strong>'
         + prose(case["issue"])
         + "</strong> "
