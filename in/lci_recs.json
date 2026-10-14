@@ -1982,7 +1982,7 @@
             "startp": 1,
             "stopc": 13,
             "stopv": 38,
-            "stopp": 7,
+            "stopp": 8,
             "note": null
         },
         {
@@ -1994,10 +1994,10 @@
             "bkid": "Levit",
             "startc": 13,
             "startv": 38,
-            "startp": 8,
+            "startp": 9,
             "stopc": 14,
             "stopv": 4,
-            "stopp": 10,
+            "stopp": 9,
             "note": null
         },
         {
@@ -2009,7 +2009,7 @@
             "bkid": "Levit",
             "startc": 14,
             "startv": 4,
-            "startp": 11,
+            "startp": 10,
             "stopc": 14,
             "stopv": 25,
             "stopp": 21,

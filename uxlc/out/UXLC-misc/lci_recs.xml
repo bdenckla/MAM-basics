@@ -2040,7 +2040,7 @@
       <startp>1</startp>
       <stopc>13</stopc>
       <stopv>38</stopv>
-      <stopp>7</stopp>
+      <stopp>8</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -2052,10 +2052,10 @@
       <bkid>Levit</bkid>
       <startc>13</startc>
       <startv>38</startv>
-      <startp>8</startp>
+      <startp>9</startp>
       <stopc>14</stopc>
       <stopv>4</stopv>
-      <stopp>10</stopp>
+      <stopp>9</stopp>
       <note />
     </lci_rec>
     <lci_rec>
@@ -2067,7 +2067,7 @@
       <bkid>Levit</bkid>
       <startc>14</startc>
       <startv>4</startv>
-      <startp>11</startp>
+      <startp>10</startp>
       <stopc>14</stopc>
       <stopv>25</stopv>
       <stopp>21</stopp>
