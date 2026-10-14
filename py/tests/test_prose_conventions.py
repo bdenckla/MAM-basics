@@ -288,20 +288,22 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
     scan = hebrew_name_plurals.html_findings
     html = (
         "<p>Three <i>alef</i>s, two munaḥs, dageshes, shevas, metegim, "
-        "final-kafs, and <span>maqaf</span>\u200as.</p>\n"
+        "final-kafs, vavs, segols, and <span>maqaf</span>\u200as.</p>\n"
         '<img alt="two lameds" title="two tsinnors">'
     )
     found = scan(html, "gh-pages/example.html")
     assert [f.preferred for f in found] == [
         "alef letters",
-        "munaḥ marks",
+        "munaḥ accents",
         "dagesh marks",
         "sheva marks",
         "meteg marks",
         "final-kaf letters",
+        "vav letters",
+        "segol accents or segol vowels",
         "maqaf marks",
         "lamed letters",
-        "tsinnor marks",
+        "tsinnor accents",
     ]
     assert found[-1].line == 2
     assert scan("<i>METEG</i>S", "gh-pages/example.html")[0].preferred == "METEG marks"
@@ -331,8 +333,8 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
     )
     nouns = "<p>ketivs, <i>qere</i>s, masorot, aliyot, parashiyot, parashot, setumot, petuḥot.</p>"
     assert [f.preferred for f in scan(nouns, "gh-pages/example.html")] == [
-        "ketiv forms",
-        "qere forms",
+        "ketiv words",
+        "qere words",
         "masorah notes",
         "aliyah portions",
         "parashot",

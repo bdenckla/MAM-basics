@@ -10,7 +10,7 @@ against a re-fetch or a re-vendoring that would quietly change it:
   a punctuation that is neither strand's: sixteen sof pasuq marks, the union of the two strands'
   boundaries.  Only nine of the sixteen spans have a silluq, so only nine are chanted verses --
   say SOF PASUQ SPAN for the rest, which is what makes the finding statable at all (a real
-  re-division would have moved the silluq marks, and silluq is an accent).
+  re-division would have moved the silluq accents, and silluq is an accent).
 * CTR's Deuteronomy 5 is the taxton, division and all: thirteen spans, all with a silluq.
 
 Every residual difference from the followed strand is CONJUNCTIVE -- the disjunctive skeleton,

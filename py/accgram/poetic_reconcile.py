@@ -111,7 +111,7 @@ def _demote_mam_paseq(
 
 
 def _legarmeh_positions_to_demote(wlc_disj: list[str], mam_disj: list[str]) -> set[int]:
-    """Indices (into ``wlc_disj``) of WLC legarmeh accents not matched to a MAM legarmeh."""
+    """Indices (into ``wlc_disj``) of WLC legarmeh marks not matched to a MAM legarmeh."""
     matcher = difflib.SequenceMatcher(a=wlc_disj, b=mam_disj, autojunk=False)
     demote: set[int] = set()
     for tag, i1, i2, _j1, _j2 in matcher.get_opcodes():

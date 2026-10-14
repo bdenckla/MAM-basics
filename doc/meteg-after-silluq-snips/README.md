@@ -596,7 +596,7 @@ original source filename is `Screenshot 2026-09-22 092430.png`; its SHA-256 is
 `E3F065933AD6C4EFB9B41A23FBC2640BC689B1FB85D092D9FBBBF3B222D2B9F2`.
 
 **In אֶֽעֱשֶֽׂה, the edition has a longer stroke for the silluq than for the meteg; each stroke
-is beside a segol** — Ben's reading of the image. This makes the two segol marks direct visual
+is beside a segol** — Ben's reading of the image. This makes the two segol vowels direct visual
 yardsticks for comparing the stroke lengths.
 
 The 222 × 146 source PNG has opaque alpha and 256 achromatic levels, so it is grayscale rather

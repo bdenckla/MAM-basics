@@ -3,6 +3,8 @@
 Vocabulary comes from the maintained Unicode/diff display names, with spelling
 aliases for prose and source quotations. This never rewrites or normalizes input.
 HTML extraction preserves adjacent inline text and its original line numbers.
+Suggested nouns follow the default nouns that the hebrew-prose skill's terminology
+reference tables under "Plurals of romanized Hebrew words".
 """
 
 from __future__ import annotations
@@ -19,40 +21,88 @@ from pydiff_mm import diff_mm_uni_name
 
 # These are spelling aliases, not recommended spellings.  # translit-ok
 _LETTER_ALIASES = "aleph beth gimmel daleth heh hey waw vau yodh het chet kaph lamedh samech tsade tzadi tzade sadi sade kof quf taw".split()
+_ACCENT_ALIASES = (
+    "legarmeh legarmeih etnaxta atnax atnah atnach atnakh atnahta etnahta etnachta "  # translit-ok
+    "athnah munax munah munach munakh dexi dehi dekhi tipexa tipeha tiphcha tifcha "  # translit-ok
+    "tifha tarxa tarha tarkha tsinnor tsinnorit tsinor zinor sinnor tzinnor segolta "  # translit-ok
+    "segol zaqef zakef revia rebia geresh azla metigah metiga oleh ole illuy iluy "
+    "yored galgal yerax yerah merka merkha merekha mahpakh mahapakh mehuppak mayela "  # translit-ok
+    "ta'am taʿam taam"
+).split()
 _MARK_ALIASES = (
     "sheva shewa metheg meteg maqaf maqqef makaf makkeph dagesh dages mapiq mappiq "
-    "shuruq shureq rafe rafeh paseq pasuq legarmeh legarmeih etnaxta atnax "
-    "atnah atnach atnakh atnahta etnahta etnachta athnah munax munah munach munakh "  # translit-ok
-    "dexi dehi dekhi tipexa tipeha tiphcha tifcha tifha tarxa tarha tarkha "  # translit-ok
-    "hiriq hireq xiriq holam xolam patah patax qamets qamats qames qamatz kamats "
-    "qubuts qibbuts qibbus qumus tsere sere tsinnor tsinnorit tsinor zinor sinnor tzinnor "  # translit-ok
-    "segolta segol zaqef zakef revia rebia geresh azla metigah metiga "
-    "oleh ole illuy iluy yored galgal yerax yerah merka merkha merekha mahpakh "  # translit-ok
-    "mahapakh mehuppak ga'ya gaʿya ga'aya gaya mayela"  # translit-ok
+    "shuruq shureq rafe rafeh paseq pasuq pasoleg hiriq hireq xiriq holam xolam "
+    "patah patax qamets qamats qames qamatz kamats qubuts qibbuts qibbus qumus "
+    "tsere sere hataf xataf ga'ya gaʿya ga'aya gaya"
 ).split()
 
-# The noun is a default suggestion; an editor chooses forms/readings/words
-# (and similar context-specific nouns) from the sentence, not from this lint.
-_PROSE_NOUNS = {
-    "ketiv": "forms",
-    "ketib": "forms",
-    "qere": "forms",
-    "masorah": "notes",
-    "aliyah": "portions",
-    "parashah": "sections",
-    "setumah": "sections",
-    "petuḥah": "sections",
-    "petuxah": "sections",
-    "ḥilluf": "variants",
+# Ben's default plural nouns, approved 2026-10-14, are tabled in the hebrew-prose
+# skill's terminology reference. A letter takes "letters", an accent "accents" and
+# any other mark "marks", except for the names below. Each suggestion is still an
+# editorial default: the sentence decides, and "marks" fits any written sign.
+_LETTERS, _ACCENTS, _MARKS = ("letters",), ("accents",), ("marks",)
+_VOWELS, _DOTS = ("vowels",), ("dots",)
+_NAME_NOUNS = {
+    # A homonym takes the noun of each sense, so that the noun is never ambiguous.
+    "segol": ("accents", "vowels"),
+    "geresh": ("accents", "marks"),
+    "gershayim": ("accents", "marks"),
+    # Ben accepts either noun for xiriq.
+    **dict.fromkeys(("hiriq", "hireq", "xiriq"), ("vowels", "dots")),
+    **dict.fromkeys(("holam", "xolam"), _DOTS),
+    **dict.fromkeys(
+        "patah patax qamats qamets qames qamatz kamats tsere sere qubuts qibbuts "
+        "qibbus qumus shuruq shureq hataf xataf".split(),
+        _VOWELS,
+    ),
+    **dict.fromkeys(("legarmeh", "legarmeih", "ole", "oleh", "yored"), _MARKS),
+    "silluq": _ACCENTS,  # shares U+05BD with meteg, which takes "marks"
 }
+# A compound vowel name takes the noun of its first component: hataf-segol,
+# holam-haser-for-vav and qamats-qatan.
+_COMPOUND_NOUNS = {
+    "hataf": _VOWELS,
+    "xataf": _VOWELS,
+    "holam": _DOTS,
+    "xolam": _DOTS,
+    "qamats": _VOWELS,
+}
+# The kind of mark a Unicode name gives, for a name not in _NAME_NOUNS.
+_PREFIX_NOUNS = (
+    ("HEBREW LETTER ", _LETTERS),
+    ("HEBREW ACCENT ", _ACCENTS),
+    ("HEBREW POINT ", _MARKS),
+    ("HEBREW PUNCTUATION ", _MARKS),
+    ("HEBREW MARK ", _MARKS),
+)
+
+# The noun is a default suggestion; an editor chooses words, atoms or another
+# context-specific noun from the sentence, not from this lint.
+_PROSE_NOUNS = {
+    "ketiv": ("words",),
+    "ketib": ("words",),
+    "qere": ("words",),
+    "masorah": ("notes",),
+    "aliyah": ("portions",),
+    "parashah": (),
+    "setumah": ("sections",),
+    "petuḥah": ("sections",),
+    "petuxah": ("sections",),
+    "ḥilluf": ("variants",),
+}
+# Ben chose parashot as the accepted Hebrew plural in our own prose, so an
+# English or Hebrew plural of parashah suggests it.
+_ACCEPTED_PLURALS = {"parashah": "parashot"}
 _HEBREW_PLURALS = {
-    "masorot": ("masorah", "notes"),
-    "aliyot": ("aliyah", "portions"),
-    # Ben chose parashot as the accepted Hebrew plural in our own prose.
-    "parashiyot": ("parashot", ""),
-    "setumot": ("setumah", "sections"),
-    "petuḥot": ("petuḥah", "sections"),
-    "petuxot": ("petuxah", "sections"),
+    "masorot": ("masorah", ("notes",)),
+    "aliyot": ("aliyah", ("portions",)),
+    "parashiyot": ("parashot", ()),
+    "setumot": ("setumah", ("sections",)),
+    "petuḥot": ("petuḥah", ("sections",)),
+    "petuxot": ("petuxah", ("sections",)),
+    "te'amim": ("ta'am", _ACCENTS),
+    "teʿamim": ("taʿam", _ACCENTS),
+    "teamim": ("taam", _ACCENTS),
 }
 
 # Ambiguous ordinary English words require an explicit letter context. Other
@@ -80,50 +130,75 @@ def _latin_key(text: str) -> str:
     return "".join(pieces)
 
 
+def _nouns(name: str, kind_nouns: tuple[str, ...]) -> tuple[str, ...]:
+    """The table's nouns for a name, else the nouns of its kind of mark."""
+    key = _latin_key(name)
+    head = re.split("[- ]", key)[0]
+    return _NAME_NOUNS.get(key) or _COMPOUND_NOUNS.get(head) or kind_nouns
+
+
+def _kind_nouns(character: str) -> tuple[str, ...]:
+    """The nouns of a character's kind of mark, read from its Unicode name."""
+    full = unicode_data.name(character, "")
+    for prefix, nouns in _PREFIX_NOUNS:
+        if full.startswith(prefix):
+            return nouns
+    raise ValueError(f"no plural noun for U+{ord(character):04X} {full!r}")
+
+
 @lru_cache(maxsize=1)
-def vocabulary() -> dict[str, tuple[str, str]]:
-    """Plural spelling -> (singular spelling, English noun), derived live."""
+def vocabulary() -> dict[str, tuple[str, tuple[str, ...]]]:
+    """Plural spelling -> (singular spelling, English nouns), derived live."""
     names = {}
     for character, name in diff_mm_uni_name._SHORT_NAMES.items():
         cp = ord(character)
         if 0x591 <= cp <= 0x5EA or cp == 0xFB1E:
             for part in name.split("/"):
-                names[part] = "letters" if 0x5D0 <= cp <= 0x5EA else "marks"
-    for table, noun in (
-        (describe_diff.LETTER_NAMES, "letters"),
-        (describe_diff.ACCENT_NAMES, "marks"),
-        (describe_diff.POINT_NAMES, "marks"),
-        (describe_diff.POETIC_ACCENTS, "marks"),
+                names[part] = _nouns(part, _kind_nouns(character))
+    for table in (
+        describe_diff.LETTER_NAMES,
+        describe_diff.ACCENT_NAMES,
+        describe_diff.POINT_NAMES,
+        describe_diff.POETIC_ACCENTS,
     ):
-        names.update((name, noun) for name in table.values())
+        for character, name in table.items():
+            names[name] = _nouns(name, _kind_nouns(character))
     for cp in range(0x591, 0x5EA + 1):
         full = unicode_data.name(chr(cp), "")
-        for prefix, noun in (
-            ("HEBREW LETTER ", "letters"),
-            ("HEBREW POINT ", "marks"),
-            ("HEBREW ACCENT ", "marks"),
-            ("HEBREW PUNCTUATION ", "marks"),
-        ):
+        for prefix, nouns in _PREFIX_NOUNS:
             if full.startswith(prefix):
-                names[full.removeprefix(prefix).lower()] = noun
-    names.update((name, "letters") for name in _LETTER_ALIASES)
-    names.update((name, "marks") for name in _MARK_ALIASES)
+                name = full.removeprefix(prefix).lower()
+                names[name] = _nouns(name, nouns)
+    names.update((name, _LETTERS) for name in _LETTER_ALIASES)
+    names.update((name, _nouns(name, _ACCENTS)) for name in _ACCENT_ALIASES)
+    names.update((name, _nouns(name, _MARKS)) for name in _MARK_ALIASES)
     names.update(_PROSE_NOUNS)
+    # Generic English tails (dot, helper, accent) already pluralize correctly.
+    names = {
+        name: nouns
+        for name, nouns in names.items()
+        if not name.endswith(("dot", "helper", "accent", "circle", "vowel", "-sh"))
+    }
+    # A compound's final name component is checked too: final-kafs, zaqef-qatans,
+    # and sof-pasuqs, across hyphens or inline formatting. A full name keeps its
+    # own noun (vav is a letter, whatever holam-haser-for-vav takes), and a
+    # component whose compounds disagree, as qatan does, takes "marks".
+    full_keys = {_latin_key(name) for name in names}
+    components = {}
+    for name, nouns in names.items():
+        component = name.split("-")[-1]
+        if component not in (name, "na") and _latin_key(component) not in full_keys:
+            components.setdefault(component, set()).add(nouns)
+    spellings = dict(names)
+    for component, nouns in components.items():
+        spellings[component] = nouns.pop() if len(nouns) == 1 else _MARKS
     result = {}
-    for name, noun in names.items():
-        # Generic English tails (dot, helper, accent) already pluralize correctly.
-        if any(
-            name.endswith(tail)
-            for tail in ("dot", "helper", "accent", "circle", "vowel", "-sh")
-        ):
-            continue
-        # A compound's final name component is checked too: final-kafs,
-        # zaqef-qatans, and sof-pasuqs, across hyphens or inline formatting.
-        for spelling in {name, name.split("-")[-1]}:
-            if spelling == "na":
-                continue
-            for suffix in ("s", "es", "im", "ot"):
-                result[_latin_key(spelling + suffix)] = (spelling, noun)
+    for spelling, nouns in spellings.items():
+        value = (spelling, nouns)
+        if spelling in _ACCEPTED_PLURALS:
+            value = (_ACCEPTED_PLURALS[spelling], ())
+        for suffix in ("s", "es", "im", "ot"):
+            result[_latin_key(spelling + suffix)] = value
     result.update(
         (_latin_key(plural), value) for plural, value in _HEBREW_PLURALS.items()
     )
@@ -155,7 +230,7 @@ def text_findings(text: str, lines: list[int]) -> list[Finding]:
             re.I,
         ):
             continue
-        singular, noun = names[key]
+        singular, nouns = names[key]
         if key.startswith(_latin_key(singular)):
             suffix = key.removeprefix(_latin_key(singular))
             singular = term[: -len(suffix)]
@@ -163,7 +238,8 @@ def text_findings(text: str, lines: list[int]) -> list[Finding]:
             singular = singular.upper()
         elif term[0].isupper():
             singular = singular[0].upper() + singular[1:]
-        preferred = singular + (" " + noun if noun else "")
+        # A name with two default nouns suggests both: "segol accents or segol vowels".
+        preferred = " or ".join(f"{singular} {noun}" for noun in nouns) or singular
         findings.append(Finding(lines[match.start()], term, preferred))
     return findings
 
