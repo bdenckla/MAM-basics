@@ -161,8 +161,8 @@ stated family. Notes, ruby fallback text and placeholders are excluded; atoms
 crossing special-letter or vowel-variant formatting are not selected.
 Each family reports the number of examples shown, distinct pointed words,
 and occurrences across all books in this same projection. Counts are
-recomputed during HTML generation. Families overlap, so their totals are not
-additive.
+recomputed during HTML generation. Adding the family totals would double-count
+words that belong to more than one family.
 
 The broader research census, source captures, comparison programs, scan archive,
 adoption handoffs and approval records remain private. They are not inputs to any
