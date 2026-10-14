@@ -342,8 +342,8 @@ def render():
         mb_html.para(
             "Counts cover Scripture in NAEE, including ketiv and qere. Counts "
             "distinguish different spellings and pointing, including accent marks; "
-            "occurrences count each appearance. Notes and words with special letter "
-            "or vowel formatting are excluded. Adding the family totals would "
+            "occurrences count each appearance. Words in notes and words with "
+            "special letters (small, large, or hung) are excluded. Adding the family totals would "
             "double-count words that belong to more than one family."
         ),
         _family_counts_table(counts, resolved),
