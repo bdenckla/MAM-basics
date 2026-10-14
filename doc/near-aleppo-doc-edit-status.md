@@ -2923,3 +2923,23 @@ A read-only independent review found one italicization issue, corrected before
 the final checks. Every generated diff was inspected; `git diff --check` passed.
 No automated browser inspection is claimed. Mega and the full suite remain on
 the approved nightly cadence for this presentation batch.
+
+## Pointed-ketiv section for readers — 2026-10-14
+
+**Status:** implemented by Codex at Ben’s request to describe what the pointed
+ketiv forms contain, removing how the pointings were obtained.
+
+**Change:** Replaced the four dense paragraphs under “The pointed ketiv” with
+three short paragraphs about complete coverage, ketiv/qere display, preserved
+consonants, carrier notation and reconstructed pointings. Removed import
+categories, approval history, technical checks and case-by-case decision details.
+The generator checks the retained claim that every paired entry has a pointed
+ketiv. Existing detailed documentation remains linked from the section.
+
+**Verification:** Work began in the clean main checkout at `5d0265b5`.
+Black and HTML regeneration passed. A comparison with the captured page confirms
+that only this section changed; its count is 1,032 and its GAV link resolves to
+the existing section. No other generated file or dataset changed. Five focused
+prose checks and `git diff --check` passed. A read-only review found no
+consequential issue. Mega and the full suite remain on the approved nightly
+cadence for this prose revision.

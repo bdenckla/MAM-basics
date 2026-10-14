@@ -863,111 +863,32 @@ def _readings(numbers):
     ]
 
 
-_ADJUSTMENTS = (
-    ('BA-Samuel שמ"ב', "5", "2"),
-    ('BA-Samuel שמ"ב', "21", "12"),
-    ("C1-Isaiah", "36", "12"),
-    ("C1-Isaiah", "44", "24"),
-    ("D2-Proverbs", "3", "30"),
-    ('BC-Kings מל"ב', "4", "7"),
-    ("C3-Ezekiel", "14", "14"),
-    ("C3-Ezekiel", "14", "20"),
-    ("C3-Ezekiel", "28", "3"),
-)
-
-
 def _pointed_ketiv(numbers):
-    adjusted = _READ + "pointed ketiv written with a named adjustment"
-    if sorted(map(verse_key, numbers.snap_sites(_P5S, adjusted))) != sorted(
-        _ADJUSTMENTS
-    ):
-        raise AssertionError("the page names the adjusted pointed ketivs' sites")
+    if numbers.fig_value("kq_without_pointed_ketiv"):
+        raise AssertionError("a retained paired ketiv/qere entry lacks a pointed ketiv")
     return [
         _heading(POINTED_KETIV),
         mb_html.para(
             [
-                "Where MAM's notes give the pointed ketiv that the codex has at a "
-                "ketiv/qere template, under the siglum ",
-                he_name("א-כתיב"),
-                " or under a plain ",
-                he_name("א"),
-                " with the ketiv's letters, near-Aleppo writes it in the parameter ",
-                he_name(POINTED_KETIV_PARAMETER),
-                ", and its text follows that parameter: at ",
-                numbers.fig("note_pointed_ketiv_templates"),
-                " templates. At ",
-                numbers.snap(_P5, _READ + "pointed ketiv written as the form stands"),
-                " the parameter is the note's form as it stands, and at ",
-                numbers.snap(_P5, adjusted),
-                " it has an adjustment: without the note's masorah circles, at 2 "
-                "Samuel 5:2 and 21:12; with the maqaf of the note's form where MAM's "
-                "ketiv has a space, at Isaiah 44:24, as the note says the two words "
-                "are read together; with the marks that the note writes on bracketed "
-                "alef letters written as the near-Aleppo dataset's template ",
-                he_name(MARKS_WITHOUT_LETTER),
-                ", at Isaiah 36:12; and at Proverbs 3:30, with a space where MAM has "
-                "a maqaf before the template, as the note's form has it. Ben's "
-                "review of 2026-10-08 places the qubuts before bet on an artificial "
-                "alef at 2 Kings 4:7, omitting the adopted form's CGJ now that "
-                "qubuts and qamats have separate hosts. Ben's revised decision "
-                "of 2026-10-13 places dagesh, tsere and munaḥ on a medial "
-                "artificial dalet at Ezekiel 14:14 and 14:20, and dagesh, tsere "
-                "and atnaḥ on that carrier at 28:3. Nun has the qere nun's "
-                "ḥiriq alone; the carrier has the absent qere yod's complete "
-                "mark cluster. All four original MAM clauses "
-                "remain verbatim in the notes. Of the "
-                "forms, ",
-                numbers.snap(
-                    _P5, _READ + "pointed ketiv ending in the qere's trailing maqaf"
-                ),
-                " end in the maqaf that follows MAM's qere.",
+                "Near-Aleppo supplies a pointed ketiv for every paired ketiv/qere "
+                "entry it retains: ",
+                numbers.fig("pointed_ketiv_templates"),
+                " entries. In the example edition, the pointed ketiv is the main "
+                "text and the pointed qere appears above it.",
             ]
         ),
         mb_html.para(
             [
-                "An approved frozen source-only algorithm supplies a further ",
-                numbers.fig("inferred_pointed_ketiv_templates"),
-                " pointed-ketiv parameters from MAM's ketiv and pointed qere "
-                "after the representation policies. Each accepted prediction "
-                "has one surviving canonical candidate and no unresolved "
-                "ownership node. Other transfer and source-accounting warnings "
-                "are retained in a separate source archive; singleton selection "
-                "is categorical, not a probability or a guarantee of correctness. "
-                "MAM-note pointings take priority. The frozen import adds no "
-                "source attribution or diagnostic metadata to a template.",
+                "The pointed ketiv keeps the ketiv’s written consonants. Artificial "
+                "carriers, shown between double guillemets, hold marks without "
+                "adding written consonants; see ",
+                link("GAV notation and display", "reading-json.html#gav-display"),
+                ".",
             ]
         ),
         mb_html.para(
-            [
-                "Individual editorial adjudication supplies a further ",
-                numbers.fig("editorial_pointed_ketiv_templates"),
-                " pointed-ketiv parameters, at Genesis 43:28, Ezekiel 42:9, "
-                "and Daniel 5:7, 5:21, and 5:29. "
-                "The ",
-                link("mobile he cases", "ketiv-qere-mobile-he.html"),
-                " explain the unattached pataḥ in Ezekiel; the ",
-                link("Genesis 43:28 case", "ketiv-qere-genesis-43-28.html"),
-                " and ",
-                link("Daniel cases", "ketiv-qere-daniel.html"),
-                " explain inferred readings where Aleppo is not extant. "
-                "These decisions are recorded separately from the frozen algorithmic predictions.",
-            ]
-        ),
-        mb_html.para(
-            [
-                "A sealed reviewed portable import supplies a further ",
-                numbers.fig("reviewed_pointed_ketiv_templates"),
-                " pointed-ketiv parameters: case-specific choices and source-supported "
-                "agreements admitted under the approved plan only after checking "
-                "current targets, notes, prior pointings, written letters and atom "
-                "boundaries. It preserves current qere forms and edition punctuation, "
-                "and includes only the pointings, each with the ketiv and whole qere "
-                "it was made for, which the template must still have when the build "
-                "writes the pointing. "
-                "All retained paired ketiv/qere templates now have an adopted "
-                "pointing. Prior note-derived, frozen and individual "
-                "pointings retain priority.",
-            ]
+            "These pointings include editorial reconstructions; they are not all "
+            "verified readings of Aleppo."
         ),
     ]
 
