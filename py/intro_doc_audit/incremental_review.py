@@ -38,12 +38,21 @@ def render(by_claim, by_note):
     cases = [
         {
             "id": "NEXT-CATALOGUE",
-            "title": "Different-qere total: chapter 2 has three; appendix has four",
-            "status": "supported-internal-count-difference",
-            "claims": ["ch2:L109", "ch2:L112", "appendices:L381", "appendices:L382"],
+            "title": "2 Samuel 8:3: classification and counting scope of two-word qere",
+            "status": "classification-and-counting-scope-unresolved",
+            "claims": [
+                "ch2:L87",
+                "ch2:L109",
+                "ch2:L111",
+                "ch2:L112",
+                "ch2:L113",
+                "appendices:L375",
+                "appendices:L381",
+                "appendices:L382",
+            ],
             "refs": [["2Samuel", 8, 3]],
             "note_ids": ["2Samuel 8:3/2/0"],
-            "explanation": "The appendix includes 2 Samuel 8:3 alongside Ezekiel 9:11 in its two non-maqaf cases; chapter 2 lists only Ezekiel and totals three. The current typed target and note support the added one-ketiv/two-different-qere case. The traditional qere-only final atom can coexist with that unified classification. This resolves an internal list/count difference, not the truth of every traditional masorah catalogue.",
+            "explanation": "The appendix includes 2 Samuel 8:3, giving four cases where chapter 2 lists three. Both passages describe templates and use Masorah-note denominators, so manuscript-note versus template-use counting is not established. Chapter 2 describes qere differing especially in its first word, with pointing outside or compressed into ketiv. Samuel retains בנהר and adds פרת, which could explain a narrower category. Both passages also list Samuel under qere without ketiv. Its note distinguishes Aleppo from the other named sources, but chapter 2 names no manuscript for its total. Neither a manuscript basis nor an explicit exclusion rule is specified. Establish classification and counting scope before proposing three to four; differing memberships alone do not establish a numerical contradiction.",
         },
         {
             "id": "NEXT-DEUT-SHEVA",
@@ -245,7 +254,20 @@ def render(by_claim, by_note):
             "routing_only_external_table_cells"
         ]["count"],
         "incremental_evidence_cards": len(cases),
-        "new_internal_wording_count_date_metadata_groups": 5,
+        "new_internal_wording_count_date_metadata_groups": sum(
+            case["status"]
+            in {
+                "supported-internal-wording-tension",
+                "supported-internal-grouping-mismatch",
+                "supported-incompatible-date-pair",
+                "supported-internal-version-label-mismatch",
+            }
+            for case in cases
+        ),
+        "classification_and_counting_scope_questions": sum(
+            case["status"] == "classification-and-counting-scope-unresolved"
+            for case in cases
+        ),
         "new_prose_verse_locator_examples": 1,
         "new_cached_fragment_target_cases": len(prose["fragment_cases"]),
         "new_central_attributed_form_groups": 0,

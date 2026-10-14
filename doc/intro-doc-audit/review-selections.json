@@ -170,35 +170,6 @@
       "explanation": "Both sources prefer dehi with meteg. The Introduction secondary option is dehi with merkha; the notes instead propose terha with merkha. The difference appears in both the quoted codepoints and the explicit accent names. These are uncertain Aleppo candidate readings. The caches establish differing candidate sets; they do not select the actual manuscript reading."
     },
     {
-      "id": "CATALOGUE-SCOPE",
-      "title": "Current template catalogues differ from older category lists",
-      "status": "new-verified-current-catalogue-discrepancy",
-      "claims": [
-        "ch2:L109",
-        "ch2:L112",
-        "appendices:L381",
-        "appendices:L383",
-        "appendices:L384"
-      ],
-      "refs": [
-        [
-          "2Samuel",
-          8,
-          3
-        ],
-        [
-          "2Samuel",
-          21,
-          12
-        ]
-      ],
-      "note_ids": [
-        "2Samuel 8:3/2/0",
-        "2Samuel 21:12/2/0"
-      ],
-      "explanation": "Chapter 2 lists three changed-qere cases; the appendix and current MAM structures have four, adding 2 Samuel 8:3. The appendix also lists nine two-atom annotation units while current MAM has eight, assigning 2 Samuel 21:12 to one three-atom unit. Nineteen catalogue memberships were checked: fifteen agree and four differ. This is catalogue drift under current MAM template identity. Traditional Masorah counts depend on manuscript and scope: at 8:3 the note expressly treats the extra qere atom differently in Aleppo and other manuscripts."
-    },
-    {
       "id": "DESCRIPTION-NAMES",
       "title": "Named marks and letters disagree while quoted forms agree",
       "status": "new-verified-source-description-discrepancy",
@@ -1564,6 +1535,40 @@
           64
         ]
       ]
+    },
+    {
+      "id": "CATALOGUE-SCOPE",
+      "title": "Catalogue classification and counting scope need clarification",
+      "status": "catalogue-classification-and-counting-scope-unresolved",
+      "claims": [
+        "ch2:L109",
+        "ch2:L112",
+        "appendices:L381",
+        "appendices:L383",
+        "appendices:L384",
+        "ch2:L87",
+        "ch2:L111",
+        "ch2:L113",
+        "appendices:L375",
+        "appendices:L382"
+      ],
+      "refs": [
+        [
+          "2Samuel",
+          8,
+          3
+        ],
+        [
+          "2Samuel",
+          21,
+          12
+        ]
+      ],
+      "note_ids": [
+        "2Samuel 8:3/2/0",
+        "2Samuel 21:12/2/0"
+      ],
+      "explanation": "Chapter 2 lists three cases and the appendix four, adding 2 Samuel 8:3. Both describe templates and Masorah notes; no manuscript-note versus template-use distinction is established. Chapter 2’s first-word criterion may explain Samuel’s exclusion because בנהר remains its first qere word and פרת is added. Both also list Samuel as qere without ketiv. The note distinguishes Aleppo’s two-word qere from the other named sources, but neither a manuscript basis nor an exclusion rule is specified for chapter 2’s total. Establish classification and counting scope before treating the totals as contradictory. The separate 2 Samuel 21:12 two-word/three-word qere-note question remains unresolved. The 19-line membership comparison records 15 matches and four differences under current template identity; those differences do not themselves establish counting errors."
     }
   ],
   "controls": [

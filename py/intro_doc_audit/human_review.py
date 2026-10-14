@@ -18,8 +18,27 @@ def escaped(value):
     return html.escape(value, quote=True)
 
 
-def prose(value):
+def prose(value, quotations=()):
     # Isolate Hebrew embedded in English without changing its codepoints.
+    if quotations:
+        positions = []
+        for quote in quotations:
+            if not quote or value.count(quote) != 1:
+                raise ValueError(
+                    "An explicit Hebrew quotation needs one exact occurrence"
+                )
+            positions.append((value.index(quote), quote))
+        rendered, cursor = [], 0
+        for start, quote in sorted(positions):
+            if start < cursor:
+                raise ValueError("Explicit Hebrew quotations must not overlap")
+            rendered.append(prose(value[cursor:start]))
+            rendered.append(
+                '<bdi class="he-quote" lang="he" dir="rtl">' + escaped(quote) + "</bdi>"
+            )
+            cursor = start + len(quote)
+        rendered.append(prose(value[cursor:]))
+        return "".join(rendered)
     return re.sub(
         r"[\u0591-\u05f4\ufb1e]+(?:[ \u05be][\u0591-\u05f4\ufb1e]+)*",
         lambda match: '<bdi lang="he" dir="rtl">' + match[0] + "</bdi>",
@@ -153,7 +172,9 @@ def panel(passage, sources):
         + escaped(visible_wikitext(quote))
         + "</div>"
         + (
-            '<p class="translation">' + prose(translation) + "</p>"
+            '<p class="translation">'
+            + prose(translation, passage.get("translation_quotes", ()))
+            + "</p>"
             if translation
             else ""
         )
@@ -361,6 +382,7 @@ def main(cases=None, output="review.html"):
     output_html = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
         + STYLE
+        + ".he-quote{display:inline-block;white-space:pre-wrap}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
         + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
         + "".join(sections)

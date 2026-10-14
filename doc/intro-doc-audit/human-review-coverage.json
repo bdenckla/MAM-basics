@@ -3,8 +3,8 @@
   "purpose": "Presentation coverage and exact-quotation verification; no new semantic consistency verdict.",
   "readable_cases": 137,
   "sections": {
-    "discrepancies": 85,
-    "questions": 48,
+    "discrepancies": 84,
+    "questions": 49,
     "tracked": 4
   },
   "prior_findings_questions_and_tracked": {
@@ -24,7 +24,7 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 578,
+  "literal_passages_checked": 582,
   "comparison_mapping": {
     "NEXT-CATALOGUE": [
       "different-qere-count"

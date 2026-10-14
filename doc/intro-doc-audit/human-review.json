@@ -5,10 +5,10 @@
       "NEXT-CATALOGUE",
       "CATALOGUE-SCOPE"
     ],
-    "section": "discrepancies",
-    "title": "One ketiv word / two qere words (קרי שונה מהכתיב בשתי מילים): 3 versus 4",
-    "issue": "Under קרי שונה מהכתיב בשתי מילים, chapter 2 lists three cases; the appendix lists four.",
-    "context": "2 Samuel 8:3 alone accounts for the membership difference.",
+    "section": "questions",
+    "title": "2 Samuel 8:3 — scope of the two-word qere category",
+    "issue": "Do chapter 2 and the appendix define the same category of קרי שונה מהכתיב בשתי מילים?",
+    "context": "Chapter 2 lists one case not following maqaf and two following maqaf; the appendix lists two in each group. Only the appendix includes 2 Samuel 8:3 in this category.",
     "panels": [
       {
         "label": "Chapter 2 — first subdivision",
@@ -53,10 +53,34 @@
         "pointer": "/tmpl_params/2",
         "quote": "בִּֽנְהַר־פְּרָֽת",
         "kind": "scripture"
+      },
+      {
+        "label": "Chapter 2 — category description and first-word criterion",
+        "claim": "ch2:L109",
+        "quote": "בשלושה פסוקים במקרא יש הערת \"קרי\" המייחסת שתי מילים של \"קרי\" למילה אחת של \"כתיב\". לא מדובר על \"כתיב מילה חדה וקרי תרתין מילין\" (ראו [[#\"כתיב מילה חדה וקרי תרתין מילין\"|לעיל]]), כי במקום '''לחלק''' את ה\"כתיב\" לשתי המילים של ה\"קרי\" אנחנו מוצאים שהקרי '''שונה''' מהכתיב, במיוחד בתיבה הראשונה שבה. זה מתבטא בכך שהניקוד לתיבת ה\"קרי\" הראשונה נכתבת '''מחוץ''' לתיבת \"כתיב\" לגמרי (בדומה ל[[#\"קרי ולא כתיב\" ו\"כתיב ולא קרי\"|קרי ולא כתיב]]) אם יש מספיק מקום, או שהוא דחוס בתחילת תיבת ה\"כתיב\" ונכנס בה רק באופן חלקי (אם אין מספיק מקום).",
+        "translation": "In three verses in Scripture a qere note assigns two qere words to one ketiv word. This is not כתיב מילה חדה וקרי תרתין מילין (see above): instead of dividing the ketiv into the two qere words, the qere differs from the ketiv, especially in its first word. The pointing for the first qere word is written entirely outside the ketiv word, as with קרי ולא כתיב, if there is sufficient space; otherwise it is compressed at the beginning of the ketiv word and only partly fits inside it."
+      },
+      {
+        "label": "Chapter 2 — use of two special templates",
+        "claim": "ch2:L111",
+        "quote": "במהדורתנו השתמשנו בשתי תבניות מיוחדות כדי לתייג ולעצב את התופעה הזאת באופן ברור.",
+        "translation": "In our edition we used two special templates to tag and format this phenomenon clearly."
+      },
+      {
+        "label": "Chapter 2 — Samuel’s entry in the קרי ולא כתיב list",
+        "claim": "ch2:L87",
+        "quote": "[[שמואל ב ח/טעמים#ח ג|שמ\"ב ח,ג]]",
+        "translation": "2 Samuel 8:3."
+      },
+      {
+        "label": "Appendix — Samuel’s entry in the קרי ולא כתיב list",
+        "claim": "appendices:L375",
+        "quote": "[[שמואל ב ח/טעמים#ח ג|שמ\"ב ח,ג]]",
+        "translation": "2 Samuel 8:3."
       }
     ],
-    "explanation": "Chapter 2 lists one case not following maqaf and two following maqaf; the appendix lists two in each group. Its “2 of 4” is the first subdivision, not a competing total. The Samuel note gives Aleppo’s qere as both words, but describes פרת as קרי ולא כתיב in the other named sources.",
-    "decision": "Does chapter 2 omit Samuel unintentionally, or use a different counting scope? The list difference is established. The reason for the omission is unclear.",
+    "explanation": "Both passages describe templates and call their denominators Masorah notes, so a distinction between manuscript-note counts and MAM template uses is not established. Chapter 2 describes qere differing from ketiv ‘especially in its first word,’ with that word’s pointing outside or compressed into the ketiv. Samuel retains בנהר as its first qere word and adds פרת; this could explain a narrower category. Both passages also list Samuel under קרי ולא כתיב. The Samuel note describes Aleppo’s two-word qere and the other named sources’ פרת קרי ולא כתב, but chapter 2 names no manuscript for its total.",
+    "decision": "Neither a manuscript basis nor an explicit exclusion rule is specified. Establish the intended classification and counting scope before proposing a change from three to four; the differing memberships alone do not establish a numerical contradiction.",
     "reading_forms": [],
     "membership_comparison": {
       "caption": "Complete lists for קרי שונה מהכתיב בשתי מילים. Ketiv/qere are copied with the pointing of each list.",
@@ -126,13 +150,19 @@
         "label": "Introduction, chapter 5 — missing pointing for qere without ketiv",
         "claim": "ch5:L458",
         "quote": "(א-כתיב=יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה): חסר ניקוד ברווח המיועד ל\"בָּאִ֖ים\" (קרי ולא כתיב)",
-        "translation": "Aleppo ketiv: יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה. Pointing is missing in the space intended for the קרי ולא כתיב word בָּאִ֖ים."
+        "translation": "Aleppo ketiv: יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה. Pointing is missing in the space intended for the קרי ולא כתיב word בָּאִ֖ים.",
+        "translation_quotes": [
+          "יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה"
+        ]
       },
       {
         "label": "Doc-note, Jeremiah 31:37 — Aleppo quotation",
         "note": "Jeremiah 31:37/2/0",
         "quote": "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
-        "translation": "Aleppo: הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (pointing is missing in the space intended for קרי ולא כתיב)."
+        "translation": "Aleppo: הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (pointing is missing in the space intended for קרי ולא כתיב).",
+        "translation_quotes": [
+          "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה"
+        ]
       }
     ],
     "explanation": "The MAM text has etnahta; it does not settle the manuscript quotation. The additional holam dot in the note is a separate quotation-policy question.",
@@ -593,13 +623,20 @@
         "label": "Introduction, chapter 5 — Aleppo ketiv",
         "claim": "ch5:L430",
         "quote": "א-כתיב=<ֵשֵׁ֥נַיְֵהֶ֖ם>",
-        "translation": "Aleppo ketiv: <ֵשֵׁ֥נַיְֵהֶ֖ם>."
+        "translation": "Aleppo ketiv: <ֵשֵׁ֥נַיְֵהֶ֖ם>.",
+        "translation_quotes": [
+          "<ֵשֵׁ֥נַיְֵהֶ֖ם>"
+        ]
       },
       {
         "label": "Doc-note, 2 Kings 18:27 — Aleppo ketiv",
         "note": "2Kings 18:27/2/1",
         "quote": "א-כתיב=‹[אֵ]שֵ֥נַיְ+יֵהֶ֖ם›, ‹ֵשֵ֥נַיְֵהֶ֖ם›",
-        "translation": "Aleppo ketiv: ‹[אֵ]שֵ֥נַיְ+יֵהֶ֖ם›, ‹ֵשֵ֥נַיְֵהֶ֖ם›. The plus sign separates superimposed pointing for font display."
+        "translation": "Aleppo ketiv: ‹[אֵ]שֵ֥נַיְ+יֵהֶ֖ם›, ‹ֵשֵ֥נַיְֵהֶ֖ם›. The plus sign separates superimposed pointing for font display.",
+        "translation_quotes": [
+          "‹[אֵ]שֵ֥נַיְ+יֵהֶ֖ם›",
+          "‹ֵשֵ֥נַיְֵהֶ֖ם›"
+        ]
       }
     ],
     "explanation": "The current text of issue #305 records Ben’s conclusion that the doc-note was correct. This audit preserves that tracked result separately from its new comparisons and has not inspected a manuscript scan.",
@@ -889,7 +926,10 @@
         "label": "Psalm 39:13 note: Leningrad quotation",
         "quote": "ל=<שִֽׁמְעָ֥ה־תְפִלָּתִ֨י׀> (מ\"ם שוואה ומקף)",
         "translation": "Leningrad has <שִֽׁמְעָ֥ה־תְפִלָּתִ֨י׀> (mem with sheva and maqaf).",
-        "note": "Psalms 39:13/2/0"
+        "note": "Psalms 39:13/2/0",
+        "translation_quotes": [
+          "<שִֽׁמְעָ֥ה־תְפִלָּתִ֨י׀>"
+        ]
       }
     ],
     "explanation": "The same Leningrad quotation occurs in two Introduction subsections. Both agree with the note on sheva under mem and on maqaf, but differ in the positions of merkha and meteg.",
@@ -929,7 +969,11 @@
         "label": "Psalm 17:14 note: Leningrad alternatives and their sources",
         "quote": "ל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).",
         "translation": "Leningrad has <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, with no hataf), according to the transcriber; Koren has this with the maqaf omitted. Alternatively, <מִֽמְתִֽים־יָדְךָ֨׀> has both marks as meteg according to Dotan, which appears more likely in Leningrad.",
-        "note": "Psalms 17:14/2/0"
+        "note": "Psalms 17:14/2/0",
+        "translation_quotes": [
+          "<מִֽמְתִ֥ים־יָדְךָ֨׀>",
+          "<מִֽמְתִֽים־יָדְךָ֨׀>"
+        ]
       }
     ],
     "explanation": "The note attributes one alternative to the transcriber and the other to Dotan, preferring Dotan’s interpretation of Leningrad. Both quotations have maqaf at the boundary where both Introduction quotations have a space.",
@@ -1080,7 +1124,10 @@
         "label": "Psalm 39:13 note: second alternative and its name",
         "quote": "או <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (חטף פתח)",
         "translation": "Or <שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀> (hataf patah).",
-        "note": "Psalms 39:13/2/0"
+        "note": "Psalms 39:13/2/0",
+        "translation_quotes": [
+          "<שִׁ֥מֲעָֽה תְפִלָּתִ֨י׀>"
+        ]
       }
     ],
     "explanation": "The first alternative has hataf qamats and is correctly labelled. The second quotation agrees with the note’s hataf-patah alternative; only the Introduction’s vowel name differs.",
@@ -1346,7 +1393,10 @@
         "label": "Psalm 31:12 note: Aleppo quotation",
         "quote": "א=<וְלִ֥שֲׁכֵנַ֨י׀> (חטף)",
         "translation": "Aleppo has <וְלִ֥שֲׁכֵנַ֨י׀> (hataf).",
-        "note": "Psalms 31:12/2/1"
+        "note": "Psalms 31:12/2/1",
+        "translation_quotes": [
+          "<וְלִ֥שֲׁכֵנַ֨י׀>"
+        ]
       }
     ],
     "explanation": "The Introduction’s specimen has plain sheva under shin, consistent with its list heading. The note explicitly attributes hataf patah to Aleppo at that shin.",
@@ -2806,7 +2856,10 @@
         "label": "Local note — Aleppo’s three-word qere note",
         "note": "2Samuel 21:12/2/0",
         "quote": "א-קרי=<תלאום שמה פלשתים> (הערת קרי אחת לשלוש תיבות ביחד), וכך גם בכתי\"ש1.",
-        "translation": "Aleppo Codex qere: <תלאום שמה פלשתים>; one qere note for all three words together. Sassoon 1053 has the same arrangement."
+        "translation": "Aleppo Codex qere: <תלאום שמה פלשתים>; one qere note for all three words together. Sassoon 1053 has the same arrangement.",
+        "translation_quotes": [
+          "<תלאום שמה פלשתים>"
+        ]
       },
       {
         "label": "Introduction, appendices — catalogue of two words under one qere note",
@@ -3327,7 +3380,12 @@
         "label": "Introduction, chapter 4 — proposed Leningrad alternatives",
         "claim": "ch4:L514",
         "quote": "ל?=<מִ֥מְתִֽים־יָדְךָ֨ ׀>* או <מִֽמְתִ֥ים־יָדְךָ֨ ׀> או <מִֽמְתִֽים־יָדְךָ֨ ׀>",
-        "translation": "Leningrad Codex? <מִ֥מְתִֽים־יָדְךָ֨ ׀>* or <מִֽמְתִ֥ים־יָדְךָ֨ ׀> or <מִֽמְתִֽים־יָדְךָ֨ ׀>."
+        "translation": "Leningrad Codex? <מִ֥מְתִֽים־יָדְךָ֨ ׀>* or <מִֽמְתִ֥ים־יָדְךָ֨ ׀> or <מִֽמְתִֽים־יָדְךָ֨ ׀>.",
+        "translation_quotes": [
+          "<מִ֥מְתִֽים־יָדְךָ֨ ׀>",
+          "<מִֽמְתִ֥ים־יָדְךָ֨ ׀>",
+          "<מִֽמְתִֽים־יָדְךָ֨ ׀>"
+        ]
       },
       {
         "label": "Local note naming the sources of the first pattern",
@@ -3339,7 +3397,11 @@
         "label": "Local note’s two Leningrad alternatives",
         "note": "Psalms 17:14/2/0",
         "quote": "ל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).",
-        "translation": "Leningrad: <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, without a hataf vowel), according to the transcriber; Koren has the same accents without maqaf. Or <מִֽמְתִֽים־יָדְךָ֨׀> (both are metegs), according to Dotan; this seems more likely in the Leningrad Codex."
+        "translation": "Leningrad: <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, without a hataf vowel), according to the transcriber; Koren has the same accents without maqaf. Or <מִֽמְתִֽים־יָדְךָ֨׀> (both are metegs), according to Dotan; this seems more likely in the Leningrad Codex.",
+        "translation_quotes": [
+          "<מִֽמְתִ֥ים־יָדְךָ֨׀>",
+          "<מִֽמְתִֽים־יָדְךָ֨׀>"
+        ]
       }
     ],
     "explanation": "The note supports the first accent pattern in other named manuscripts. For Leningrad it records the second pattern from the transcriber and the third from Dotan, favouring the third. The Introduction also offers the first pattern as a Leningrad possibility, without identifying that additional basis.",
@@ -3425,19 +3487,29 @@
         "label": "Introduction, chapter 4 — possible Leningrad readings",
         "claim": "ch4:L645",
         "quote": "ל?!=<דִֽי פַרְזְלָ֖א> או <דִ֥י פַרְזְלָ֖א>",
-        "translation": "Leningrad Codex, possibly and unexpectedly: <דִֽי פַרְזְלָ֖א> or <דִ֥י פַרְזְלָ֖א>."
+        "translation": "Leningrad Codex, possibly and unexpectedly: <דִֽי פַרְזְלָ֖א> or <דִ֥י פַרְזְלָ֖א>.",
+        "translation_quotes": [
+          "<דִֽי פַרְזְלָ֖א>",
+          "<דִ֥י פַרְזְלָ֖א>"
+        ]
       },
       {
         "label": "Local note’s manuscript interpretation",
         "note": "Daniel 2:41/2/1",
         "quote": "ל?=<דִֽי פַרְזְלָ֖א> (געיה וחסר מקף?) לפי הערת ברויאר במהדורת חורב, וכך נראה מעיון בכתב־היד בהגדלה.",
-        "translation": "Leningrad? <דִֽי פַרְזְלָ֖א> (meteg and missing maqaf?), according to Breuer’s note in the Horev edition; this is also how it appears on magnified inspection of the manuscript."
+        "translation": "Leningrad? <דִֽי פַרְזְלָ֖א> (meteg and missing maqaf?), according to Breuer’s note in the Horev edition; this is also how it appears on magnified inspection of the manuscript.",
+        "translation_quotes": [
+          "<דִֽי פַרְזְלָ֖א>"
+        ]
       },
       {
         "label": "Local note expressly retaining the transcription alternative",
         "note": "Daniel 2:41/2/1",
         "quote": "הקלדה=<דִ֥י פַרְזְלָ֖א> (במרכא) בעקבות BHS וגם זה אפשרי.",
-        "translation": "Digital transcription: <דִ֥י פַרְזְלָ֖א> (merkha), following Biblia Hebraica Stuttgartensia; this too is possible."
+        "translation": "Digital transcription: <דִ֥י פַרְזְלָ֖א> (merkha), following Biblia Hebraica Stuttgartensia; this too is possible.",
+        "translation_quotes": [
+          "<דִ֥י פַרְזְלָ֖א>"
+        ]
       }
     ],
     "explanation": "The note distinguishes the sources but does not reject the transcription’s merkha interpretation.",
@@ -3678,7 +3750,11 @@
         "label": "Introduction, chapter 4: unusual spellings in the Leningrad Codex",
         "claim": "ch4:L290",
         "quote": "ל=[גְּ֠וִיֹּתֵינוּ]* / [גְּ֠וִיָּתֵנוּ]",
-        "translation": "Leningrad Codex: [גְּ֠וִיֹּתֵינוּ]* / [גְּ֠וִיָּתֵנוּ]."
+        "translation": "Leningrad Codex: [גְּ֠וִיֹּתֵינוּ]* / [גְּ֠וִיָּתֵנוּ].",
+        "translation_quotes": [
+          "[גְּ֠וִיֹּתֵינוּ]",
+          "[גְּ֠וִיָּתֵנוּ]"
+        ]
       },
       {
         "label": "Introduction, chapter 4: explanation of the star",
@@ -3727,7 +3803,11 @@
         "label": "Introduction, chapter 4: difficult spelling decisions",
         "claim": "ch4:L327",
         "quote": "ל=[בְּג֣וֹא]* / [בְּג֥וֹ]",
-        "translation": "Leningrad Codex: [בְּג֣וֹא]* / [בְּג֥וֹ]."
+        "translation": "Leningrad Codex: [בְּג֣וֹא]* / [בְּג֥וֹ].",
+        "translation_quotes": [
+          "[בְּג֣וֹא]",
+          "[בְּג֥וֹ]"
+        ]
       },
       {
         "label": "MAM note on Daniel 7:15: Breuer's spelling",
@@ -3866,7 +3946,11 @@
         "label": "Introduction, chapter 4: Ecclesiastes spelling list",
         "claim": "ch4:L138",
         "quote": "[הוֹלֵלֹ֖ת]* / ל=[הוֹלֵל֖וֹת]!",
-        "translation": "Starred: [הוֹלֵלֹ֖ת]*; Leningrad Codex: [הוֹלֵל֖וֹת]!."
+        "translation": "Starred: [הוֹלֵלֹ֖ת]*; Leningrad Codex: [הוֹלֵל֖וֹת]!.",
+        "translation_quotes": [
+          "[הוֹלֵלֹ֖ת]",
+          "[הוֹלֵל֖וֹת]"
+        ]
       },
       {
         "label": "MAM note on Ecclesiastes 1:17: Leningrad spelling",
@@ -3940,7 +4024,11 @@
         "label": "Introduction, chapter 3: Deuteronomy spelling list, 12:20",
         "claim": "ch3:L193",
         "quote": "[גְּבֻֽלְךָ֮]* / ל=[גְּבֽוּלְךָ֮]!",
-        "translation": "Starred: [גְּבֻֽלְךָ֮]*; Leningrad Codex: [גְּבֽוּלְךָ֮]!."
+        "translation": "Starred: [גְּבֻֽלְךָ֮]*; Leningrad Codex: [גְּבֽוּלְךָ֮]!.",
+        "translation_quotes": [
+          "[גְּבֻֽלְךָ֮]",
+          "[גְּבֽוּלְךָ֮]"
+        ]
       },
       {
         "label": "MAM text at Deuteronomy 12:20",
@@ -3954,7 +4042,11 @@
         "label": "Introduction, chapter 3: Deuteronomy spelling list, 28:49",
         "claim": "ch3:L201",
         "quote": "[מֵרָחֹק֙]* / ל=[מֵרָחוֹק֙]!",
-        "translation": "Starred: [מֵרָחֹק֙]*; Leningrad Codex: [מֵרָחוֹק֙]!."
+        "translation": "Starred: [מֵרָחֹק֙]*; Leningrad Codex: [מֵרָחוֹק֙]!.",
+        "translation_quotes": [
+          "[מֵרָחֹק֙]",
+          "[מֵרָחוֹק֙]"
+        ]
       },
       {
         "label": "MAM text at Deuteronomy 28:49",
@@ -4010,7 +4102,11 @@
         "label": "Introduction, chapter 3: compound names, Numbers 1:10",
         "claim": "ch3:L241",
         "quote": "[פְּדָהצֽוּר]*=ל? / ל=[פְּדָה צֽוּר]?",
-        "translation": "[פְּדָהצֽוּר]* is tentatively attributed to the Leningrad Codex; the spaced alternative [פְּדָה צֽוּר] is also tentatively attributed to that codex."
+        "translation": "[פְּדָהצֽוּר]* is tentatively attributed to the Leningrad Codex; the spaced alternative [פְּדָה צֽוּר] is also tentatively attributed to that codex.",
+        "translation_quotes": [
+          "[פְּדָהצֽוּר]",
+          "[פְּדָה צֽוּר]"
+        ]
       },
       {
         "label": "MAM note on Numbers 1:10",
@@ -4022,7 +4118,11 @@
         "label": "Introduction, chapter 3: compound names, Numbers 10:19",
         "claim": "ch3:L244",
         "quote": "[צוּרִֽישַׁדָּֽי]*=ל? / ל=[צוּרִֽי שַׁדָּֽי]?",
-        "translation": "[צוּרִֽישַׁדָּֽי]* is tentatively attributed to the Leningrad Codex; the spaced alternative [צוּרִֽי שַׁדָּֽי] is also tentatively attributed to that codex."
+        "translation": "[צוּרִֽישַׁדָּֽי]* is tentatively attributed to the Leningrad Codex; the spaced alternative [צוּרִֽי שַׁדָּֽי] is also tentatively attributed to that codex.",
+        "translation_quotes": [
+          "[צוּרִֽישַׁדָּֽי]",
+          "[צוּרִֽי שַׁדָּֽי]"
+        ]
       },
       {
         "label": "MAM note on Numbers 10:19: Leningrad",
@@ -4075,7 +4175,10 @@
         "label": "Introduction, chapter 3: joined and separate words",
         "claim": "ch3:L246",
         "quote": "ל=[הֲ־לַיהוָה֙]",
-        "translation": "Leningrad Codex: [הֲ־לַיהוָה֙]."
+        "translation": "Leningrad Codex: [הֲ־לַיהוָה֙].",
+        "translation_quotes": [
+          "[הֲ־לַיהוָה֙]"
+        ]
       },
       {
         "label": "MAM note on Deuteronomy 32:6: Leningrad",
@@ -4155,7 +4258,10 @@
         "label": "Introduction, chapter 5: exceptionally dotted letters",
         "claim": "ch5:L255",
         "quote": "ל=[לׅׄוּלֵׅׄ֗אׅׄ] (=מ\"ק-ל)",
-        "translation": "The Leningrad Codex has [לׅׄוּלֵׅׄ֗אׅׄ], identified as agreeing with its Masorah Parva."
+        "translation": "The Leningrad Codex has [לׅׄוּלֵׅׄ֗אׅׄ], identified as agreeing with its Masorah Parva.",
+        "translation_quotes": [
+          "[לׅׄוּלֵׅׄ֗אׅׄ]"
+        ]
       },
       {
         "label": "MAM note on Psalm 27:13: six-dot pattern",
@@ -5129,7 +5235,10 @@
         "label": "Doc-note at Jeremiah 31:37",
         "note": "Jeremiah 31:37/2/0",
         "quote": "א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
-        "translation": "The Aleppo Codex has הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה; the gap intended for qere without ketiv has no pointing."
+        "translation": "The Aleppo Codex has הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה; the gap intended for qere without ketiv has no pointing.",
+        "translation_quotes": [
+          "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה"
+        ]
       }
     ],
     "explanation": "The qere without ketiv is at 31:37. Verse 31:38 instead has an ordinary ketiv/qere, so it does not identify this list entry.",

@@ -1,10 +1,10 @@
 {
   "new_attributed_form_disagreements": 11,
-  "new_other_reviewed_cases": 25,
+  "new_other_reviewed_cases": 24,
   "navigation_family_examples": 32,
   "tracked_issues": 3,
   "tracked_verse_cases": 4,
-  "uncertainty_cases": 24,
+  "uncertainty_cases": 25,
   "ketiv_lines_reviewed": 69,
   "ketiv_lines_total": 69,
   "nonketiv_lines_reviewed": 200,
@@ -54,7 +54,8 @@
     "general_prose_units_total": 643,
     "external_Westminster_cells_routed_not_semantically_assessed": 843,
     "incremental_evidence_cards": 10,
-    "new_internal_wording_count_date_metadata_groups": 5,
+    "new_internal_wording_count_date_metadata_groups": 4,
+    "classification_and_counting_scope_questions": 1,
     "new_prose_verse_locator_examples": 1,
     "new_cached_fragment_target_cases": 6,
     "new_central_attributed_form_groups": 0

@@ -4,7 +4,7 @@ Open [review.html](review.html) for the readable comparisons. This appendix reta
 the technical inventory, source versions, coverage limits and supporting evidence.
 
 The presentation is maintained in [human-review.json](human-review.json).
-It contains 137 concrete comparisons: 85 discrepancies, 48 interpretation or source
+It contains 137 concrete comparisons: 84 discrepancies, 49 interpretation or source
 questions, and four verse comparisons for the three tracked issues. These are
 presentation entries, not 137 independent manuscript findings. Paired verses and
 grouped note wording were separated where the reader needs a distinct decision;
@@ -16,7 +16,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned hataf comparisons stay in this appendix and their original data.
 
-The renderer validates 578 displayed passages against literal stored strings,
+The renderer validates 582 displayed passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -29,6 +29,9 @@ MAM qere labels identify the actual selected source rather than treating “read
 as qere. Each comparison and remaining question precedes its source quotations in
 one block. Raw-file and JSON “Source passage” links are omitted from the reader page;
 the technical source pointers remain in the research data and this appendix.
+Bracketed Hebrew quotations in English translations use one explicit RTL-isolated
+node, including their gaps and orphan marks; English labels and sentence punctuation
+remain outside it. The quotation strings and source captures retain their codepoints.
 
 Explanatory translations and questions were reread against their evidence; literal
 validation alone does not establish translation accuracy or manuscript truth.
@@ -189,7 +192,7 @@ including history, Decalogue and Reuben presentation, musical explanations, and
 reading divisions. That routing is explicitly narrower than a complete semantic
 audit of their embedded claims.
 
-`review-selections.json` keeps 24 compact uncertainty groups, and the batch ledgers
+`review-selections.json` keeps 25 compact uncertainty groups, and the batch ledgers
 retain less consequential incomplete cases without turning them into an alarm list.
 
 The next source-boundary questions are whether incidental specimen marks assert
@@ -249,14 +252,20 @@ absences resolve by locator correction; four remain. A repaired nonexistent targ
 was not a third member of those six. No source or historical commit is rewritten.
 
 The four differing catalogue lines reduce to **two underlying verse cases**, plus the
-repeated Jeremiah locator error. The chapter-2 different-qere total (three) and appendix
-total (four) disagree internally; the appendix includes 2 Samuel 8:3, supported by the
-current typed object and the note. Traditional atom-level qere-only phenomena can coexist
-with a unified modern template. 2 Samuel 21:12's already reviewed three-atom scope is
-not counted again as a new finding.
+repeated Jeremiah locator error. The chapter-2 different-qere list has three entries
+and the appendix four, adding 2 Samuel 8:3. This is a classification/counting-scope
+question. Both passages discuss templates and use Masorah-note denominators; neither
+establishes a manuscript-note versus template-use distinction. Chapter 2 describes
+a difference especially in the first qere word, with pointing outside or compressed
+into ketiv. Samuel retains בנהר and adds פרת, so that criterion could explain its
+exclusion. Both passages also list Samuel under qere without ketiv. The note
+distinguishes Aleppo from the other named sources, but chapter 2 names no manuscript
+for its total. Establish the category, source basis and exclusion rule before
+proposing three to four. The separate 2 Samuel 21:12 two-word/three-word qere-note
+scope also remains unresolved.
 
-The incremental review presents **five new internal count/wording/date/metadata groups**:
-the three-versus-four catalogue count; ordinary-Hebrew-year wording against its own
+The incremental review presents **four new internal count/wording/date/metadata groups**:
+ordinary-Hebrew-year wording against its own
 solar-year arithmetic; Isaiah's first-three-types/four-cases grouping; and an incompatible
 Hebrew/Gregorian date pair; and a source label saying WLC 4.14 before its own WLC 4.16
 quotation. The two quoted legend totals add exactly to 1,034 and 945. The historical
@@ -364,7 +373,7 @@ examples has GERESH MUQDAM U+059D and REVIA U+0597 in one Unicode letter cluster
 through the current closed EP projection. This is a representation check, not a
 claim about physical manuscript positions.
 
-The compact report has **11 attributed-form disagreement groups**, **25 other
+The compact report has **11 attributed-form disagreement groups**, **24 other
 reviewed groups**, the 31-example locator family, and the three already tracked
 issues. The later other groups include opposite-direction note prose errors,
 2Samuel 21:12’s two-versus-three qere-note scope, Numbers 22:5’s Sapir-versus-Cassuto
