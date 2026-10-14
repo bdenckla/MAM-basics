@@ -1,0 +1,142 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "verified_omissions": [
+    {
+      "id": "ALL-HATAF-GEN-30-27",
+      "ref": "Genesis 30:27",
+      "claim": "ch3:L1126",
+      "note": "Genesis 30:27/2/0",
+      "proposed_entry": "ל=וַיְבָרֲכֵ֥נִי",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Genesis 30:27/2/0",
+        "raw_path": "in/mam-ws/A1-Genesis.json",
+        "raw_note_body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים{{ש}}ל=וַיְבָרֲכֵ֥נִי (חטף){{ש}}הערת ברויאר",
+        "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+        "parsed_pointer": "/book39s/0/chapters/30/27/2/1",
+        "parsed_note_body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים\nל=וַיְבָרֲכֵ֥נִי (חטף)\nהערת ברויאר",
+        "chapter_revision": {
+          "resolved_title": "בראשית ל/טעמים",
+          "page_id": 236056,
+          "requested_title": "בראשית_ל/טעמים",
+          "revision_id": 3017397,
+          "sha256": "e1ebe4dc7f3ce3d6f15b9a5cc742a518ca0fee3e65b40065bbee924a239d5991"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L13440",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+    },
+    {
+      "id": "ALL-HATAF-NUM-10-9",
+      "ref": "Numbers 10:9",
+      "claim": "ch3:L1132",
+      "note": "Numbers 10:9/2/1",
+      "proposed_entry": "ל!=וֲנִזְכַּרְתֶּ֗ם",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Numbers 10:9/2/1",
+        "raw_path": "in/mam-ws/A4-Numbers.json",
+        "raw_note_body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו){{ש}}הערות ברויאר ודותן והמקליד",
+        "parsed_path": "MAM-parsed/plus/A4-Numbers.json",
+        "parsed_pointer": "/book39s/0/chapters/10/9/2/3",
+        "parsed_note_body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן\nל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו)\nהערות ברויאר ודותן והמקליד",
+        "chapter_revision": {
+          "resolved_title": "במדבר י/טעמים",
+          "page_id": 236446,
+          "requested_title": "במדבר_י/טעמים",
+          "revision_id": 2990906,
+          "sha256": "a8803dd7a388c1e7a6737d41214fcb4471d1c0d0a5245649c0d05e4bb53ef912"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5380",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+    },
+    {
+      "id": "ALL-HATAF-SAM-8-10",
+      "ref": "2 Samuel 8:10",
+      "claim": "ch5:L698",
+      "note": "2Samuel 8:10/2/0",
+      "proposed_entry": "א=וּֽלְבָרֲכ֗וֹ",
+      "source_scope": "explicit Aleppo; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "2Samuel 8:10/2/0",
+        "raw_path": "in/mam-ws/BB-2Samuel.json",
+        "raw_note_body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+        "parsed_path": "MAM-parsed/plus/BA-Samuel.json",
+        "parsed_pointer": "/book39s/1/chapters/8/10/2/1",
+        "parsed_note_body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "שמואל ב ח/טעמים",
+          "page_id": 237027,
+          "requested_title": "שמואל ב_ח/טעמים",
+          "revision_id": 3010613,
+          "sha256": "2c0a9ffcad0a31f673cc48d895a7d2c3d0d7f82146dd1e63a0c8ba720400245a"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L12006",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+    },
+    {
+      "id": "HATAF-PROVERBS-ADDITION",
+      "ref": "Proverbs 30:17",
+      "claim": "ch5:L712",
+      "note": "Proverbs 30:17/2/1",
+      "proposed_entry": "ל=לִֽיקֲּהַ֫ת־אֵ֥ם",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Proverbs 30:17/2/1",
+        "raw_path": "in/mam-ws/D2-Proverbs.json",
+        "raw_note_body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.{{ש}}ל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף){{ש}}דפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+        "parsed_path": "MAM-parsed/plus/D2-Proverbs.json",
+        "parsed_pointer": "/book39s/0/chapters/30/17/2/7",
+        "parsed_note_body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.\nל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)\nדפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+        "chapter_revision": {
+          "resolved_title": "משלי ל/טעמים",
+          "page_id": 238967,
+          "requested_title": "משלי_ל/טעמים",
+          "revision_id": 3008043,
+          "sha256": "ccafd0a2809ce63646704ba84d8aa2335b276ba054cfe1b91840e78e1ede7526"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L19359",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+    },
+    {
+      "id": "ALL-HATAF-SONG-1-6",
+      "ref": "Song of Songs 1:6",
+      "claim": "ch5:L716",
+      "note": "Song of Songs 1:6/2/0",
+      "proposed_entry": "ל!=שֶׁשֱּׁזָפַ֖תְנִי",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Song of Songs 1:6/2/0",
+        "raw_path": "in/mam-ws/E1-Song of Songs.json",
+        "raw_note_body": "=א ובדפוסים{{ש}}ל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+        "parsed_path": "MAM-parsed/plus/E1-Song of Songs.json",
+        "parsed_pointer": "/book39s/0/chapters/1/6/2/1",
+        "parsed_note_body": "=א ובדפוסים\nל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+        "chapter_revision": {
+          "resolved_title": "שיר השירים א/טעמים",
+          "page_id": 239145,
+          "requested_title": "שיר השירים_א/טעמים",
+          "revision_id": 2988376,
+          "sha256": "cd7e29b159a32af9c3f847b196e68274d33115b36ac61e43ffc9ffad2d0fa741"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E1-Song%20of%20Songs.json#L146",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+    }
+  ],
+  "status": "initial verified results saved; complete candidate dispositions in progress",
+  "limits": "Five enumeration discrepancies are established from explicit cached source claims. Manuscript truth has not been independently reassessed."
+}

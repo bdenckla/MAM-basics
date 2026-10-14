@@ -346,6 +346,138 @@
     "adjudication": "DEUT-6-21-BEN-20261014"
   },
   {
+    "id": "ALL-HATAF-SONG-1-6",
+    "covers": [
+      "ALL-HATAF-SONG-1-6"
+    ],
+    "section": "discrepancies",
+    "title": "Song of Songs 1:6: a Leningrad ḥataf word is missing from the roster",
+    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
+    "context": "The word has ḥataf segol on shin. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
+    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
+    "decision": "Add the entry ל!=שֶׁשֱּׁזָפַ֖תְנִי. This proposed addition is unapplied.",
+    "prose_quotes": [
+      "ל!=שֶׁשֱּׁזָפַ֖תְנִי"
+    ],
+    "panels": [
+      {
+        "label": "Introduction — Song roster heading",
+        "claim": "ch5:L716",
+        "quote": "(6 פריטים)",
+        "translation": "(6 items)"
+      },
+      {
+        "label": "Doc-note — the omitted Leningrad word",
+        "note": "Song of Songs 1:6/2/0",
+        "quote": "ל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+        "translation": "Leningrad surprisingly equals שֶׁשֱּׁזָפַ֖תְנִי (ḥataf segol on shin).",
+        "translation_quotes": [
+          "שֶׁשֱּׁזָפַ֖תְנִי"
+        ]
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-SAM-8-10",
+    "covers": [
+      "ALL-HATAF-SAM-8-10"
+    ],
+    "section": "discrepancies",
+    "title": "2 Samuel 8:10: a Aleppo ḥataf word is missing from the roster",
+    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Aleppo.",
+    "context": "The word has ḥataf pataḥ on resh. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
+    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
+    "decision": "Add the entry א=וּֽלְבָרֲכ֗וֹ. This proposed addition is unapplied.",
+    "prose_quotes": [
+      "א=וּֽלְבָרֲכ֗וֹ"
+    ],
+    "panels": [
+      {
+        "label": "Introduction — 2 roster heading",
+        "claim": "ch5:L698",
+        "quote": "(30 פריטים)",
+        "translation": "(30 items)"
+      },
+      {
+        "label": "Doc-note — the omitted Aleppo word",
+        "note": "2Samuel 8:10/2/0",
+        "quote": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+        "translation": "Aleppo: וּֽלְבָרֲכ֗וֹ (ḥataf pataḥ on resh).",
+        "translation_quotes": [
+          "וּֽלְבָרֲכ֗וֹ"
+        ]
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-NUM-10-9",
+    "covers": [
+      "ALL-HATAF-NUM-10-9"
+    ],
+    "section": "discrepancies",
+    "title": "Numbers 10:9: a Leningrad ḥataf word is missing from the roster",
+    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
+    "context": "The word has ḥataf pataḥ on vav. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
+    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
+    "decision": "Add the entry ל!=וֲנִזְכַּרְתֶּ֗ם. This proposed addition is unapplied.",
+    "prose_quotes": [
+      "ל!=וֲנִזְכַּרְתֶּ֗ם"
+    ],
+    "panels": [
+      {
+        "label": "Introduction — Numbers roster heading",
+        "claim": "ch3:L1132",
+        "quote": "(18 פריטים)",
+        "translation": "(18 items)"
+      },
+      {
+        "label": "Doc-note — the omitted Leningrad word",
+        "note": "Numbers 10:9/2/1",
+        "quote": "ל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו)",
+        "translation": "Leningrad surprisingly equals וֲנִזְכַּרְתֶּ֗ם (ḥataf pataḥ on vav).",
+        "translation_quotes": [
+          "וֲנִזְכַּרְתֶּ֗ם"
+        ]
+      }
+    ],
+    "reading_forms": []
+  },
+  {
+    "id": "ALL-HATAF-GEN-30-27",
+    "covers": [
+      "ALL-HATAF-GEN-30-27"
+    ],
+    "section": "discrepancies",
+    "title": "Genesis 30:27: a Leningrad ḥataf word is missing from the roster",
+    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
+    "context": "The word has ḥataf pataḥ on resh. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
+    "explanation": "The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
+    "decision": "Add the entry ל=וַיְבָרֲכֵ֥נִי. This proposed addition is unapplied.",
+    "prose_quotes": [
+      "ל=וַיְבָרֲכֵ֥נִי"
+    ],
+    "panels": [
+      {
+        "label": "Introduction — Genesis roster heading",
+        "claim": "ch3:L1126",
+        "quote": "(33 פריטים)",
+        "translation": "(33 items)"
+      },
+      {
+        "label": "Doc-note — the omitted Leningrad word",
+        "note": "Genesis 30:27/2/0",
+        "quote": "ל=וַיְבָרֲכֵ֥נִי (חטף)",
+        "translation": "Leningrad: וַיְבָרֲכֵ֥נִי (ḥataf pataḥ on resh).",
+        "translation_quotes": [
+          "וַיְבָרֲכֵ֥נִי"
+        ]
+      }
+    ],
+    "reading_forms": []
+  },
+  {
     "id": "deuteronomy-hataf-count",
     "covers": [
       "DEUT-HATAF"
@@ -4757,46 +4889,33 @@
     "covers": [
       "HATAF-SOURCE-SCOPE"
     ],
-    "section": "questions",
-    "title": "Proverbs 30:17: should the list include the additional Leningrad ḥataf?",
-    "issue": "The Introduction includes the Aleppo ḥataf in one word but omits the Leningrad ḥataf documented in another word of the same verse.",
-    "context": "These are separate words and separate annotations.",
+    "section": "discrepancies",
+    "title": "Proverbs 30:17: a Leningrad ḥataf word is missing from the roster",
+    "issue": "The complete Introduction roster omits this word, although its doc-note explicitly assigns it to Leningrad.",
+    "context": "The word has ḥataf pataḥ on qoph. The roster’s scope is vocal-sheva marking in Aleppo or Leningrad.",
+    "explanation": "The roster already lists תִּ֥לֲעַ֣ג at this verse, but omits the separate word לִֽיקֲּהַ֫ת. The note’s named source and the non-guttural vowel meet that scope. The faithful raw note and full roster were checked independently; this is an enumeration discrepancy between the cached sources.",
+    "decision": "Add the entry ל=לִֽיקֲּהַ֫ת־אֵ֥ם. This proposed addition is unapplied.",
+    "prose_quotes": [
+      "ל=לִֽיקֲּהַ֫ת־אֵ֥ם"
+    ],
     "panels": [
       {
-        "label": "Introduction, chapter 5: stated subject of the ḥataf list",
-        "claim": "ch5:L691",
-        "quote": "חטפים באותיות לא גרוניות בספרי הנביאים והכתובים''' בכתר ארם צובה או בכתי\"ל.",
-        "translation": "Ḥataf vowels on non-guttural letters in the Prophets and Writings, in the Aleppo Codex or the Leningrad Codex."
-      },
-      {
-        "label": "Introduction, chapter 5: Proverbs 30:17 entry",
+        "label": "Introduction — Proverbs roster heading",
         "claim": "ch5:L712",
-        "quote": "א=תִּ֥לֲעַ֣ג",
-        "translation": "The Aleppo Codex has תִּ֥לֲעַ֣ג."
+        "quote": "(12 פריטים)",
+        "translation": "(12 items)"
       },
       {
-        "label": "MAM note on Proverbs 30:17: a second word",
+        "label": "Doc-note — the omitted Leningrad word",
         "note": "Proverbs 30:17/2/1",
         "quote": "ל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)",
-        "translation": "The Leningrad Codex has לִֽיקֲּהַ֫ת־אֵ֥ם (ḥataf)."
+        "translation": "Leningrad: לִֽיקֲּהַ֫ת־אֵ֥ם (ḥataf pataḥ on qoph).",
+        "translation_quotes": [
+          "לִֽיקֲּהַ֫ת־אֵ֥ם"
+        ]
       }
     ],
-    "explanation": "The current note identifies another Leningrad ḥataf that fits the list's stated subject. Whether it belongs in the Introduction depends on whether the list intends to include every such example or a selected set.",
-    "decision": "Should this Leningrad example be added, or should the Introduction state a selection rule that explains its omission?",
-    "reading_forms": [
-      {
-        "label": "Aleppo example already listed",
-        "source": "claim",
-        "id": "ch5:L712",
-        "text": "תִּ֥לֲעַ֣ג"
-      },
-      {
-        "label": "Additional Leningrad example in the note",
-        "source": "note",
-        "id": "Proverbs 30:17/2/1",
-        "text": "לִֽיקֲּהַ֫ת־אֵ֥ם"
-      }
-    ]
+    "reading_forms": []
   },
   {
     "id": "SEDER-DESCRIPTION-STRENGTH",

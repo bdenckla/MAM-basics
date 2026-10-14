@@ -4,7 +4,7 @@ Open [review.html](review.html) for the readable comparisons. This appendix reta
 the technical inventory, source versions, coverage limits and supporting evidence.
 
 The presentation is maintained in [human-review.json](human-review.json).
-It contains 137 concrete comparisons: 84 discrepancies, 49 interpretation or source
+It contains 141 concrete comparisons: 89 discrepancies, 48 interpretation or source
 questions, and four verse comparisons for the three tracked issues. These are
 presentation entries, not 137 independent manuscript findings. Paired verses and
 grouped note wording were separated where the reader needs a distinct decision;
@@ -16,7 +16,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 611 source passages against literal stored strings,
+The renderer validates 616 source passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -81,6 +81,18 @@ transliteration lint rules were applied, supplemented by a manual ḥataf/ḥet 
 source quotations, adaptations, identifiers, paths and official Unicode names
 retain their wording. Superfluous “parsed” and “displayed” qualifiers were removed
 where they did not establish a distinction; link-label/target distinctions remain.
+
+The 2026-10-14 all-book extension has saved five independently verified roster
+omissions at Genesis 30:27, Numbers 10:9, 2 Samuel 8:10, Proverbs 30:17 and Song of
+Songs 1:6 in [all-books-hataf-findings.json](all-books-hataf-findings.json). The
+Proverbs question is now a verified discrepancy; the four other verse cases are
+new reader entries. [all-books-hataf-census.json](all-books-hataf-census.json) covers
+39/39 books, 23,202/23,202 verses, 3,905/3,905 canonical doc-notes and all ketiv/qere
+parameters. Its selected-body count agrees independently with MAM-simple and the
+checker’s separate enumeration: 536 literal non-guttural vowel occurrences.
+The complete contextual candidate dispositions are being recorded separately;
+the census alone is not a consistency verdict. Reproduce the enumeration with
+`py/main_intro_doc_audit.py all-books-hataf`.
 
 Regenerate the readable review and its presentation coverage record with
 `py/main_intro_doc_audit.py review`, using the interpreter and low-priority workflow

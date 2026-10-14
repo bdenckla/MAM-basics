@@ -1,10 +1,10 @@
 {
   "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
   "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
-  "readable_cases": 137,
+  "readable_cases": 141,
   "sections": {
-    "discrepancies": 84,
-    "questions": 49,
+    "discrepancies": 89,
+    "questions": 48,
     "tracked": 4
   },
   "prior_findings_questions_and_tracked": {
@@ -24,7 +24,7 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 611,
+  "literal_passages_checked": 616,
   "proposed_quotations_checked": 6,
   "user_adjudicated_comparisons": 5,
   "comparison_mapping": {
@@ -42,6 +42,18 @@
       "numbers-yod-label",
       "deuteronomy-vav-label",
       "deuteronomy-leningrad-spelling"
+    ],
+    "ALL-HATAF-SONG-1-6": [
+      "ALL-HATAF-SONG-1-6"
+    ],
+    "ALL-HATAF-SAM-8-10": [
+      "ALL-HATAF-SAM-8-10"
+    ],
+    "ALL-HATAF-NUM-10-9": [
+      "ALL-HATAF-NUM-10-9"
+    ],
+    "ALL-HATAF-GEN-30-27": [
+      "ALL-HATAF-GEN-30-27"
     ],
     "DEUT-HATAF": [
       "deuteronomy-hataf-count"
