@@ -29,14 +29,14 @@ from near_aleppo.phase3_policies import _ADONAI_LETTERS
 SECTION = ("what-the-dataset-changes", "What near-Aleppo changes")
 TEMPLATES = ("templates", "MAM's templates: evaluated away or kept")
 QAMATS = ("qamats-size", "The qamats size")
-DIVINE_NAME = ("divine-name-holam", "The holam in the divine name")
-DIVINE_TITLE = ("divine-title-holam", "The holam in the divine title")
+DIVINE_NAME = ("divine-name-holam", "The ḥolam in the divine name")
+DIVINE_TITLE = ("divine-title-holam", "The ḥolam in the divine title")
 ELOHIM = ("elohim-vowel", "The divine name read Elohim")
 REVIA = ("revia-mugrash", "The revia mugrash")
 OLE = ("ole-and-yored", "The ole on the yored's letter")
 KETIV_QERE = ("ketiv-qere-apparatus", "The ketiv/qere apparatus")
 MAQAF = ("maqaf", "The maqaf")
-HATAF = ("hataf", "The hataf on a letter that is not a guttural")
+HATAF = ("hataf", "The ḥataf on a letter that is not a guttural")
 STRESS = ("stress-helpers", "The stress helpers")
 READINGS = ("codex-readings", "The codex's readings in MAM's notes")
 POINTED_KETIV = ("pointed-ketiv", "The pointed ketiv")
@@ -317,10 +317,10 @@ def _divine_name(numbers):
         _heading(DIVINE_NAME),
         mb_html.para(
             [
-                "Where the divine name is read Adonai, MAM has a holam on its first "
+                "Where the divine name is read Adonai, MAM has a ḥolam on its first "
                 "he, and MAM's introduction says that the codex does not write it "
                 "there except in a few places, which MAM's notes record. Near-Aleppo "
-                "has no holam there, at ",
+                "has no ḥolam there, at ",
                 numbers.snap(_P3, "Adonai reading: holam on the first he stripped"),
                 " words, and keeps it at the ",
                 numbers.snap(
@@ -332,7 +332,7 @@ def _divine_name(numbers):
                     _P3S,
                     "Adonai reading: holam kept where a note records the codex's",
                 ),
-                ". Where the divine name is read Elohim, the codex has the holam, and "
+                ". Where the divine name is read Elohim, the codex has the ḥolam, and "
                 "near-Aleppo has it as MAM does.",
             ]
         ),
@@ -347,9 +347,9 @@ def _divine_title(numbers):
             [
                 "Where a word ending in the letters ",
                 he_name(_ADONAI_LETTERS),
-                " is the divine title, with a qamats on its nun, MAM has a holam on "
+                " is the divine title, with a qamats on its nun, MAM has a ḥolam on "
                 "its dalet, which MAM's introduction says the codex writes only in "
-                "isolated places. Near-Aleppo has no holam there, at ",
+                "isolated places. Near-Aleppo has no ḥolam there, at ",
                 numbers.snap(_P3, "divine title: holam on the dalet stripped"),
                 " words, and keeps it at ",
                 _sites(
@@ -374,7 +374,7 @@ def _elohim(numbers):
         _heading(ELOHIM),
         mb_html.para(
             [
-                "Where the divine name is read Elohim, MAM has a hataf segol on its "
+                "Where the divine name is read Elohim, MAM has a ḥataf segol on its "
                 "yod, and near-Aleppo has a sheva there, at ",
                 numbers.snap(
                     _P3, "Elohim reading: sheva for the hataf segol on the yod"
@@ -582,25 +582,25 @@ def _hataf(numbers):
         _heading(HATAF),
         mb_html.para(
             [
-                "Where the manuscripts have a hataf on a letter that is not a "
+                "Where the manuscripts have a ḥataf on a letter that is not a "
                 "guttural, MAM has a sheva with a varika, U+FB1E HEBREW POINT "
-                "JUDEO-SPANISH VARIKA, and gives the hataf's form in its note on the "
-                "word. Near-Aleppo has the hataf, reading each vowel from the note: a "
-                "hataf patah at ",
+                "JUDEO-SPANISH VARIKA, and gives the ḥataf's form in its note on the "
+                "word. Near-Aleppo has the ḥataf, reading each vowel from the note: a "
+                "ḥataf pataḥ at ",
                 numbers.snap(
                     _P3,
                     "hataf on a non-guttural: sheva and varika replaced by a hataf patah",
                 ),
-                " letters and a hataf qamats at ",
+                " letters and a ḥataf qamats at ",
                 numbers.snap(
                     _P3,
                     "hataf on a non-guttural: sheva and varika replaced by a hataf qamats",
                 ),
                 ". At the ",
                 numbers.snap(_P3, hiriq),
-                " letters where MAM's notes give the codex a hataf hiriq, ",
+                " letters where MAM's notes give the codex a ḥataf ḥiriq, ",
                 _sites(numbers, _P3S, hiriq),
-                ", near-Aleppo has the sheva with a hiriq, as each note writes the "
+                ", near-Aleppo has the sheva with a ḥiriq, as each note writes the "
                 "codex's form. At all ",
                 numbers.snap(
                     _P3,
@@ -613,14 +613,14 @@ def _hataf(numbers):
         *doc_policy_examples.comparison("hataf-hiriq"),
         mb_html.para(
             [
-                "Near-Aleppo has the hataf at every varika of MAM's, whichever "
+                "Near-Aleppo has the ḥataf at every varika of MAM's, whichever "
                 "sources the note cites. Of the ",
                 numbers.fig("varika_notes"),
                 " notes on a varika, ",
                 numbers.fig("varika_notes_without_codex_siglum"),
-                " quote the hataf's form under no siglum beginning with ",
+                " quote the ḥataf's form under no siglum beginning with ",
                 he_name("א"),
-                ", so that there the hataf rests on the convention and on other "
+                ", so that there the ḥataf rests on the convention and on other "
                 "manuscripts rather than on a reading of the codex.",
             ]
         ),
@@ -913,7 +913,7 @@ def _pointed_ketiv(numbers):
                 "of 2026-10-13 places dagesh, tsere and munaḥ on a medial "
                 "artificial dalet at Ezekiel 14:14 and 14:20, and dagesh, tsere "
                 "and atnaḥ on that carrier at 28:3. Nun has the qere nun's "
-                "hiriq alone; the carrier has the absent qere yod's complete "
+                "ḥiriq alone; the carrier has the absent qere yod's complete "
                 "mark cluster. All four original MAM clauses "
                 "remain verbatim in the notes. Of the "
                 "forms, ",
@@ -945,7 +945,7 @@ def _pointed_ketiv(numbers):
                 "and Daniel 5:7, 5:21, and 5:29. "
                 "The ",
                 link("mobile he cases", "ketiv-qere-mobile-he.html"),
-                " explain the unattached patah in Ezekiel; the ",
+                " explain the unattached pataḥ in Ezekiel; the ",
                 link("Genesis 43:28 case", "ketiv-qere-genesis-43-28.html"),
                 " and ",
                 link("Daniel cases", "ketiv-qere-daniel.html"),

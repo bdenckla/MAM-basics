@@ -499,7 +499,7 @@ def _gav_display(numbers):
                 code("tmpl_params"),
                 ". GA permits one or more artificial alef letters, each followed by "
                 "permitted marks. GV requires exactly VAV + HOLAM, retaining "
-                "the holam-male meaning. Neither GA nor GV permits a dagesh. "
+                "the ḥolam-male meaning. Neither GA nor GV permits a dagesh. "
                 "Both templates have only parameter 1, containing the carrier "
                 "payload. The mixed alef/vav payload is exactly ",
                 he_pointed("אְאָא֖וֹ"),
@@ -520,7 +520,7 @@ def _gav_display(numbers):
                 he_pointed("«וֹ»"),
                 "; converting it to ",
                 he_pointed("«אֹ»"),
-                " loses the chosen holam-male distinction. Surrounding separators "
+                " loses the chosen ḥolam-male distinction. Surrounding separators "
                 "remain explicit strings or whitespace templates; an orphan "
                 "template inserts no automatic space.",
             ]
@@ -585,7 +585,7 @@ def _gav_display(numbers):
                 ", and DALET + DAGESH + TSERE + ETNAHTA at ",
                 verse_refs((("C3-Ezekiel", "28", "3"),)),
                 ". These medial carriers hold the complete mark cluster of the "
-                "qere yod absent from the ketiv. Nun has hiriq alone, matching "
+                "qere yod absent from the ketiv. Nun has ḥiriq alone, matching "
                 "the qere nun. The resulting forms are ",
                 he_pointed("דָּנִ«דֵּ֣»אל"),
                 " and ",
@@ -595,13 +595,13 @@ def _gav_display(numbers):
             ]
         ),
         mb_html.para(
-            "For an orphan holam associated with a qere vav where the ketiv has "
+            "For an orphan ḥolam associated with a qere vav where the ketiv has "
             "yod, an edition can choose among these display options:"
         ),
         mb_html.unordered_list(
             [
                 "Show GAV directly, retaining the GV carrier before the ketiv yod.",
-                "Collapse the holam backwards onto the consonant before the ketiv yod.",
+                "Collapse the ḥolam backwards onto the consonant before the ketiv yod.",
                 "Attach U+05B9 HEBREW POINT HOLAM to the ketiv yod as a rendering "
                 "accommodation, without asserting that the yod owns the mark.",
             ]
@@ -621,14 +621,14 @@ def _gav_display(numbers):
                     "Hebrew specification, “Holam Male and Holam Haser”",
                     "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-9/",
                 ),
-                " uses U+05B9 for holam male on vav when the distinction is made. "
-                "U+05BA HEBREW POINT HOLAM HASER FOR VAV distinguishes holam on "
+                " uses U+05B9 for ḥolam male on vav when the distinction is made. "
+                "U+05BA HEBREW POINT HOLAM HASER FOR VAV distinguishes ḥolam on "
                 "consonantal vav; its use on other base letters is undefined. "
-                "U+05B9 is also the ordinary holam on other letters. Unicode thus "
-                "has no separate, letter-independent holam-male dot that would "
+                "U+05B9 is also the ordinary ḥolam on other letters. Unicode thus "
+                "has no separate, letter-independent ḥolam-male dot that would "
                 "express the qere-vav role when attached to ketiv yod. Applying "
                 "U+05B9 to yod can display the dot, but does not encode that role. "
-                "A hypothetical letter-independent holam-male dot could make "
+                "A hypothetical letter-independent ḥolam-male dot could make "
                 "that intention explicit even on yod. The mismatch concerns "
                 "encoded meaning, not a general Unicode ban on nonstandard "
                 "letter-mark sequences.",
@@ -756,7 +756,7 @@ def _characters(numbers):
                 verse_refs(character["verses"]),
                 ", in the pointed ketiv that the note there gives the codex, between "
                 "the ketiv's tav and he. The note's form has it, and it is there to "
-                "keep fonts from treating the he's patah as a furtive patah.",
+                "keep fonts from treating the he's pataḥ as a furtive pataḥ.",
             ]
         ),
     ]

@@ -52,7 +52,7 @@ _PAGES = {
         ("where-the-codex-survives", "limitations", "pending", "manual-task"),
     ),
     "choices.html": ("Choices and alternatives", ("choices",)),
-    "ketiv-qere-mobile-he.html": ("Mobile he and the patah", ("mobile-he",)),
+    "ketiv-qere-mobile-he.html": ("Mobile he and the pataḥ", ("mobile-he",)),
     "ketiv-qere-daniel.html": (
         "Ketiv/qere cases in Daniel",
         ("daniel-final-sheva", "daniel-yod-vav"),

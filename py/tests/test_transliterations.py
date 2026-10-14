@@ -10,7 +10,7 @@ hiding half the hits, so it is gone.  The two checks:
 1. ``test_no_undesirable_transliterations`` -- a denylist of spelling variants
    that the wlc-utils#13 standardization retired: ``zinor``->``tsinnor`` (wlc-utils#30),
    ``merka``->``merkha``, ``atnach``->``atnax``, ``sinnor``->``tsinnor``, the
-   het-as-plain-``h`` forms, and a few Goerwitz/legacy capitalizations.  No
+   selected het-as-plain-``h`` accent forms, and a few Goerwitz/legacy capitalizations.  No
    lookahead is needed to shield the good form: the preferred spellings are
    precomposed ``ḥ`` (U+1E25), which shares no ASCII substring with a pattern
    like ``munah``, so the good spelling can never trip it.
@@ -37,6 +37,9 @@ decomposed-composite scan, so the real het glyph it does use stays precomposed.)
 
 The separate rendered-prose check below enforces only the four approved noun
 spellings, using the plural lint's quotation/adaptation/identifier boundaries.
+Neither check covers every xet spelling. ``test_near_aleppo_transliterations.py``
+additionally checks all registered Near-Aleppo documentation pages, including
+vowel names, compounds and prose attributes, against the Unicode display names.
 
 Run:
     .venv/Scripts/python.exe py/main_test.py py/tests/test_transliterations.py -v

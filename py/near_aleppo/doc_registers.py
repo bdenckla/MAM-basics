@@ -139,15 +139,15 @@ def _limitations(numbers):
             ],
         ],
         [
-            "The holam in the divine name",
+            "The ḥolam in the divine name",
             [
-                "MAM's notes record the codex's holam in the divine name at ",
+                "MAM's notes record the codex's ḥolam in the divine name at ",
                 numbers.snap(
                     _P3, "Adonai reading: holam kept where a note records the codex's"
                 ),
                 " words, and MAM does not say that they are every such place. So "
                 "near-Aleppo is right in general, and wrong wherever the codex has a "
-                "holam that no note records. For the divine title MAM speaks only of "
+                "ḥolam that no note records. For the divine title MAM speaks only of "
                 "isolated places, but its ",
                 numbers.record(
                     numbers.snap_value(_P3, "divine title: holam on the dalet stripped")

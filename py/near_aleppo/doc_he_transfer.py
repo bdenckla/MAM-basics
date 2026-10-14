@@ -1,4 +1,4 @@
-"""Equal-status manuscript examples of mobile he and patah ownership."""
+"""Equal-status manuscript examples of mobile he and patax ownership."""
 
 import json
 
@@ -39,14 +39,14 @@ def _pointings(value, ref):
 
 def section():
     out = [
-        mb_html.heading_level_3("Mobile he and the patah", {"id": "mobile-he"}),
+        mb_html.heading_level_3("Mobile he and the pataḥ", {"id": "mobile-he"}),
         mb_html.para(
             [
                 "In these word-pairs, “mobile ",
                 he_name("ה"),
                 "” describes the relationship between a he at the end of the first ketiv "
                 "word and a he at the beginning of the second qere word. The consonantal "
-                "relationship alone does not determine where the patah belongs.",
+                "relationship alone does not determine where the pataḥ belongs.",
             ]
         ),
         mb_html.para(
@@ -71,7 +71,7 @@ def section():
             ]
         ),
         mb_html.para(
-            "In GAV (guillemet-alef-vav) notation, the unattached patah before the second ketiv word is recorded as:"
+            "In GAV (guillemet-alef-vav) notation, the unattached pataḥ before the second ketiv word is recorded as:"
         ),
         he_display("«אַ»"),
         mb_html.para(
@@ -79,7 +79,7 @@ def section():
                 "The alef "
                 "inside the guillemets is an artificial carrier, not a ketiv consonant. "
                 "Near-Aleppo stores it in its existing marks-without-letter template. "
-                "A patah belonging to a written he stays on that he, without guillemets.",
+                "A pataḥ belonging to a written he stays on that he, without guillemets.",
             ]
         ),
     ]
