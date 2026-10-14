@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-14",
+  "scope": "Authored reader prose; original quotations, Scripture strings, identifiers, paths and official Unicode names preserved.",
+  "classifier_and_transliteration_replacements": {
+    "hatafs": 1,
+    "tipeha": 5,
+    "petuhot": 1,
+    "petuha": 1,
+    "tipha": 5,
+    "maqafs": 1,
+    "metegs": 2,
+    "Horev": 1,
+    "munach": 1,
+    "atnah": 3,
+    "Minhat": 3,
+    "merka": 8,
+    "tirha": 2
+  },
+  "selective_precision": [
+    "Lamentations 1:6: name the Introduction’s chapter 2 example, remove superfluous displayed/parsed, use MAM’s special ketiv/qere template.",
+    "Retain displayed reference/label where its distinction from the encoded link target matters."
+  ],
+  "source_snapshot": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c"
+}

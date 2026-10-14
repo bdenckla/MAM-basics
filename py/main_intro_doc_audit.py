@@ -16,6 +16,7 @@ from intro_doc_audit import (
     next_pass,
     general_prose,
     prose_findings,
+    deuter_hataf_scope,
 )
 
 
@@ -48,11 +49,13 @@ def main():
         general_prose.main()
     elif sys.argv[1:] == ["prose-findings"]:
         prose_findings.main()
+    elif sys.argv[1:] == ["deuter-hataf-scope"]:
+        deuter_hataf_scope.main()
     elif not sys.argv[1:]:
         audit.main()
     else:
         raise SystemExit(
-            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings]"
+            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope]"
         )
 
 

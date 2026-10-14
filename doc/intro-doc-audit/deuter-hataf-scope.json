@@ -1,0 +1,1464 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "inputs": [
+    {
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "last_input_commit_at_frozen_source": "647f5e225f69782194137e74627cfaced4a7d2a2",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Deut.json",
+      "last_input_commit_at_frozen_source": "fb5660216b38f2ad93fdfba50eaec9b6940dd6c9",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-simple/json-vtrad-mam/Deut.json"
+    },
+    {
+      "path": "in/mam-ws/A5-Deuter.json",
+      "last_input_commit_at_frozen_source": "647f5e225f69782194137e74627cfaced4a7d2a2",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws/A5-Deuter.json"
+    },
+    {
+      "path": "in/mam-ws-intro/ch2.mediawiki",
+      "last_input_commit_at_frozen_source": "c486ccadf9dccb3f319abc1f121bd244921fd0ca",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki"
+    },
+    {
+      "path": "in/mam-ws-intro/ch3.mediawiki",
+      "last_input_commit_at_frozen_source": "c486ccadf9dccb3f319abc1f121bd244921fd0ca",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki"
+    }
+  ],
+  "scope": "Optional non-guttural-letter ḥataf vowels marking vocal sheva in Aleppo or Leningrad, as distinguished from other manuscripts and retained morphological ḥataf vowels.",
+  "scope_claims": [
+    {
+      "id": "ch3:L1123",
+      "text": "להלן רשימה של '''חטפים באותיות לא גרוניות בתורה''' בכתי\"ל או בכתר ארם צובה. חטפים אלה באים להורות על '''הנעת השווא''', ובמקומם הוספנו במהדורתנו סימן מיוחד מעל האות השווּאה (להסבר מפורט ראו ב'''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ב#חטפים באותיות לא גרוניות|פרק השני]]''' של המבוא למהדורתנו). לרשימה של החטפים בספרי הנביאים וכתובים ראו '''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ה#מסורת הקוראים בנ\"ך: חטפים באותיות לא גרוניות|כאן]]'''.",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1123"
+    },
+    {
+      "id": "ch2:L276",
+      "text": "יוצא מן הכלל חטף קמץ בכתר שתפקידו מורפולוגי, כגון חטף קמץ הבא להורות על תנועת \"o\" קצרה בדומה לקמץ קטן (חטוף), בצורות כגון קֳדָשִׁים הבאה בכתר לעתים קרובות במקום קָדָשִׁים (שתי הצורות מופיעות בכמה מקומות בכתר) ובאופן דומה \"שׇׁרָשָׁיו\", וכמו כן בשם \"מׇרְדֳּכַי\" במגילת אסתר.{{הערה|1=אמנם השוו את הניקוד בתיבות שבהן לאחר החטף קמץ באה אות גרונית, כגון קֳהָת (תיבה זו ונגזרותיה באות במקומות רבים בכתר בחטף קמץ, אמנם לפעמים גם בשווא פשוט), שבא במהדורתנו קְהָת בשוא (כמו בהמהדורות ברויאר). על תופעת חטף קמץ לסימון קמץ חטוף (כדי למנוע טעות), ראו ייבין ב.5 (עמ' 19-20). על שווא נע שלפני אות גרונית שנהגה מעין תנועתה (של הגרונית), ראו במאמרו של [http://www.korenpub.com/HE/static/grammar חנן אריאל], עמ' 6.}}",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L276"
+    },
+    {
+      "id": "ch2:L281",
+      "text": "מעל האות \"ר\" בדוגמה הזאת רואים סימן דיאקריטי הנקרא \"וריקה\" (Varika), תו גראפי מעל האות שנעזרים בו בכתיבת שפת הספרדית-היהודית ([[:W:לאדינו|לאדינו]]).{{הערה|בתור סימן אורתוגרפי (גליף מעל האות) במערכת היוניקוד, סימן הווריקה (U+FB1E) הוא גרסה אחרת של סימן הרפה (U+05BF). במהדורות שונות של סידורי תפילה בעבר, יש שסימנו שווא נא על ידי השימוש בסימן קו הרפה, או בסימן עיגול המסורה, או בטעם הסגול (כולם מעל האות). אך לכל הסימנים האלה יש משמעויות אחרות, ולעתים נחוץ להשתמש בהם למטרותיהן המקוריות בתוך מהדורת מקרא או בפסוקים המובאים בתוך הסידור. לכן עדיף להשתמש בסימן אחר לגמרי, שאינו מתחום המקרא, כדי לסמן שווא נע. סימן הווריקה יכול להיות פתרון טוב בינתיים, עד שמערכת היוניקוד תתמוך בסימן מיוחד עבור \"שווא נע\".}} יש רשימות מלאות של כל התיבות מהסוג הזה ב'''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ג#מסורת הקוראים בתורה: חטפים באותיות לא גרוניות|תורה]]''' וב'''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ה#מסורת הקוראים בנ\"ך: חטפים באותיות לא גרוניות|ספרי הנביאים והכתובים]]'''.",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L281"
+    }
+  ],
+  "word_definition": "One written word between space or maqaf bearing a relevant vowel; two words at 32:10 are separate, the unmarked prefix at 32:36 is not counted, and repeated source quotations of one word are one item.",
+  "canonical_verses": 955,
+  "independent_simple_verses": 955,
+  "complete_notes_discovered_and_scanned": 365,
+  "note_candidates": [
+    {
+      "note_id": "Deuter 3:22/2/0",
+      "ref": "Deuter 3:22",
+      "body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן\nל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.\nל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+      "words": [
+        {
+          "word": "תְִּירָא֑וּם",
+          "offset": 37,
+          "written_word_index": 9,
+          "unpointed_key": "תיראום",
+          "features": [
+            {
+              "literal_cluster": "תְִּ",
+              "base": "ת",
+              "non_guttural": true,
+              "marks": [
+                "SHEVA + HIRIQ in the same base-letter cluster"
+              ]
+            }
+          ]
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 3:22/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.{{ש}}ל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/3/22/2/1",
+        "parsed_note_body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן\nל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.\nל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+        "chapter_revision": {
+          "resolved_title": "דברים ג/טעמים",
+          "page_id": 236563,
+          "requested_title": "דברים_ג/טעמים",
+          "revision_id": 2995294,
+          "sha256": "166ad5195e703100b3b9b330adce6ba21ac2fd86db998da5d53f9bf46df1f257"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L1660",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "uncertain: possible Leningrad ḥataf ḥiriq absent from the roster; the note explicitly allows the blurred sign to be meteg instead, and Dotan/Breuer print ḥiriq with gaʿya without comment"
+    },
+    {
+      "note_id": "Deuter 5:23/2/0",
+      "ref": "Deuter 5:23",
+      "body": "=ש,ש1,ו,ל3,פטרבורג-EVR-II-B-8\nא(צילום)?,ל,ל1,ק3=וּֽשֲׁמָ֔ע (חטף) וכמו כן בדפוסים (ועל פיהם בקורן ובסימנים)\nברויאר, מכון ממרא",
+      "words": [
+        {
+          "word": "וּֽשֲׁמָ֔ע",
+          "offset": 48,
+          "written_word_index": 10,
+          "unpointed_key": "ושמע",
+          "features": [
+            {
+              "literal_cluster": "שֲׁ",
+              "base": "ש",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "MAM-mark-order-only"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 5:23/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ש,ש1,ו,ל3,פטרבורג-EVR-II-B-8{{ש}}א(צילום)?,ל,ל1,ק3=וּֽשֲׁמָ֔ע (חטף) וכמו כן בדפוסים (ועל פיהם בקורן ובסימנים){{ש}}ברויאר, מכון ממרא",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/5/23/2/1",
+        "parsed_note_body": "=ש,ש1,ו,ל3,פטרבורג-EVR-II-B-8\nא(צילום)?,ל,ל1,ק3=וּֽשֲׁמָ֔ע (חטף) וכמו כן בדפוסים (ועל פיהם בקורן ובסימנים)\nברויאר, מכון ממרא",
+        "chapter_revision": {
+          "resolved_title": "דברים ה/טעמים",
+          "page_id": 236571,
+          "requested_title": "דברים_ה/טעמים",
+          "revision_id": 2998471,
+          "sha256": "9a6c85a49ae72be9e9dcc5df24ce1f9d02ae60548cf339d189edd5e9c78c9e2d"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L3360",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Leningrad; uncertain Aleppo-photograph report also present"
+    },
+    {
+      "note_id": "Deuter 8:2/2/0",
+      "ref": "Deuter 8:2",
+      "body": "=ל1,ש,ש1,ק3,ו,ל3,ל9 ורמ\"ה (כתיב מלא וי\"ו ומלא יו\"ד; אין חטף)\nל=הֹלִֽיכֲךָ֜ (כתיב חסר וי\"ו ומלא יו\"ד; חטף)",
+      "words": [
+        {
+          "word": "הֹלִֽיכֲךָ֜",
+          "offset": 63,
+          "written_word_index": 19,
+          "unpointed_key": "הליכך",
+          "features": [
+            {
+              "literal_cluster": "כֲ",
+              "base": "כ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 8:2/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל1,ש,ש1,ק3,ו,ל3,ל9 ורמ\"ה (כתיב מלא וי\"ו ומלא יו\"ד; אין חטף){{ש}}ל=הֹלִֽיכֲךָ֜ (כתיב חסר וי\"ו ומלא יו\"ד; חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/8/2/2/1",
+        "parsed_note_body": "=ל1,ש,ש1,ק3,ו,ל3,ל9 ורמ\"ה (כתיב מלא וי\"ו ומלא יו\"ד; אין חטף)\nל=הֹלִֽיכֲךָ֜ (כתיב חסר וי\"ו ומלא יו\"ד; חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים ח/טעמים",
+          "page_id": 236583,
+          "requested_title": "דברים_ח/טעמים",
+          "revision_id": 3007983,
+          "sha256": "aeafed507a3a76e8babedd034552be857396ed4b6d195c0fe58f6ac9a9263bde"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L4324",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Leningrad"
+    },
+    {
+      "note_id": "Deuter 8:15/2/0",
+      "ref": "Deuter 8:15",
+      "body": "=ש,ש1,ל3\nל,ק3,ל9=הַמּוֹלִ֨יכֲךָ֜ (חטף)",
+      "words": [
+        {
+          "word": "הַמּוֹלִ֨יכֲךָ֜",
+          "offset": 17,
+          "written_word_index": 6,
+          "unpointed_key": "המוליכך",
+          "features": [
+            {
+              "literal_cluster": "כֲ",
+              "base": "כ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 8:15/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ש,ש1,ל3{{ש}}ל,ק3,ל9=הַמּוֹלִ֨יכֲךָ֜ (חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/8/15/2/0",
+        "parsed_note_body": "=ש,ש1,ל3\nל,ק3,ל9=הַמּוֹלִ֨יכֲךָ֜ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים ח/טעמים",
+          "page_id": 236583,
+          "requested_title": "דברים_ח/טעמים",
+          "revision_id": 3007983,
+          "sha256": "aeafed507a3a76e8babedd034552be857396ed4b6d195c0fe58f6ac9a9263bde"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L4568",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Leningrad with other named sources"
+    },
+    {
+      "note_id": "Deuter 15:20/2/0",
+      "ref": "Deuter 15:20",
+      "body": "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים\nל,ק3=תֹאכֲלֶ֙נּוּ֙ (חטף) וכמו כן בקורן",
+      "words": [
+        {
+          "word": "תֹאכֲלֶ֙נּוּ֙",
+          "offset": 44,
+          "written_word_index": 12,
+          "unpointed_key": "תאכלנו",
+          "features": [
+            {
+              "literal_cluster": "כֲ",
+              "base": "כ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 15:20/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים{{ש}}ל,ק3=תֹאכֲלֶ֙נּוּ֙ (חטף) וכמו כן בקורן",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/15/20/2/1",
+        "parsed_note_body": "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים\nל,ק3=תֹאכֲלֶ֙נּוּ֙ (חטף) וכמו כן בקורן",
+        "chapter_revision": {
+          "resolved_title": "דברים טו/טעמים",
+          "page_id": 236611,
+          "requested_title": "דברים_טו/טעמים",
+          "revision_id": 2987754,
+          "sha256": "abb005f37d2daf9183d1305fe379b0721e57cffb3fd079ce79444b2baed22479"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L7460",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Leningrad with Cairo 18"
+    },
+    {
+      "note_id": "Deuter 15:22/2/0",
+      "ref": "Deuter 15:22",
+      "body": "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים\nל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן",
+      "words": [
+        {
+          "word": "תֹּאכֲלֶ֑נּוּ",
+          "offset": 44,
+          "written_word_index": 12,
+          "unpointed_key": "תאכלנו",
+          "features": [
+            {
+              "literal_cluster": "כֲ",
+              "base": "כ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "MAM-mark-order-only"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 15:22/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים{{ש}}ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/15/22/2/1",
+        "parsed_note_body": "=ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים\nל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן",
+        "chapter_revision": {
+          "resolved_title": "דברים טו/טעמים",
+          "page_id": 236611,
+          "requested_title": "דברים_טו/טעמים",
+          "revision_id": 2987754,
+          "sha256": "abb005f37d2daf9183d1305fe379b0721e57cffb3fd079ce79444b2baed22479"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L7492",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Leningrad with Cairo 18"
+    },
+    {
+      "note_id": "Deuter 24:13/2/2",
+      "ref": "Deuter 24:13",
+      "body": "=ש,ק3,ל3,ו\nל,ל1,ש1,ל9=וּבֵֽרֲכֶ֑ךָּ (חטף)",
+      "words": [
+        {
+          "word": "וּבֵֽרֲכֶ֑ךָּ",
+          "offset": 22,
+          "written_word_index": 8,
+          "unpointed_key": "וברכך",
+          "features": [
+            {
+              "literal_cluster": "רֲ",
+              "base": "ר",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "MAM-mark-order-only"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 24:13/2/2",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ש,ק3,ל3,ו{{ש}}ל,ל1,ש1,ל9=וּבֵֽרֲכֶ֑ךָּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/24/13/2/5",
+        "parsed_note_body": "=ש,ק3,ל3,ו\nל,ל1,ש1,ל9=וּבֵֽרֲכֶ֑ךָּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים כד/טעמים",
+          "page_id": 236647,
+          "requested_title": "דברים_כד/טעמים",
+          "revision_id": 2987763,
+          "sha256": "af238dfd9465e2382d3f7d940fa6c84faa8cf715d389adcf203355b59c5962c9"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L10864",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Leningrad with other named sources"
+    },
+    {
+      "note_id": "Deuter 28:39/2/0",
+      "ref": "Deuter 28:39",
+      "body": "=ל,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורן\nא=תֹאכֲלֶ֖נּוּ (חטף)",
+      "words": [
+        {
+          "word": "תֹאכֲלֶ֖נּוּ",
+          "offset": 43,
+          "written_word_index": 12,
+          "unpointed_key": "תאכלנו",
+          "features": [
+            {
+              "literal_cluster": "כֲ",
+              "base": "כ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 28:39/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורן{{ש}}א=תֹאכֲלֶ֖נּוּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/28/39/2/1",
+        "parsed_note_body": "=ל,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורן\nא=תֹאכֲלֶ֖נּוּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים כח/טעמים",
+          "page_id": 236663,
+          "requested_title": "דברים_כח/טעמים",
+          "revision_id": 3079374,
+          "sha256": "f01802e5dad051f53f50e01af3f46f590d5257438a840681b2689a16f844aa9e"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L12744",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Aleppo"
+    },
+    {
+      "note_id": "Deuter 29:7/2/1",
+      "ref": "Deuter 29:7",
+      "body": "=ל,ל1,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורן\nא=הַֽמֲנַשִּֽׁי (חטף)",
+      "words": [
+        {
+          "word": "הַֽמֲנַשִּֽׁי",
+          "offset": 46,
+          "written_word_index": 13,
+          "unpointed_key": "המנשי",
+          "features": [
+            {
+              "literal_cluster": "מֲ",
+              "base": "מ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "MAM-mark-order-only"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 29:7/2/1",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל,ל1,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורן{{ש}}א=הַֽמֲנַשִּֽׁי (חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/29/7/2/3",
+        "parsed_note_body": "=ל,ל1,ש,ש1,ק3,ו,ל3,ל9 וכמו כן בדפוסים וקורן\nא=הַֽמֲנַשִּֽׁי (חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים כט/טעמים",
+          "page_id": 236667,
+          "requested_title": "דברים_כט/טעמים",
+          "revision_id": 2998410,
+          "sha256": "8952b9365299978c76493f65f106cfa32e1411bfaff56311d03f2622e1f7cf08"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L13532",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Aleppo"
+    },
+    {
+      "note_id": "Deuter 32:6/2/0",
+      "ref": "Deuter 32:6",
+      "body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד)\nל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)\nל1=הַ לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)\nש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)\nתיגאן=<הַֽלְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.\nמ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+      "words": [
+        {
+          "word": "לְיֲהוָה֙",
+          "offset": 178,
+          "written_word_index": 46,
+          "unpointed_key": "ליהוה",
+          "features": [
+            {
+              "literal_cluster": "יֲ",
+              "base": "י",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ]
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 32:6/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד){{ש}}ל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד){{ש}}ל1={{מ:אות-ג|הַ}} לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד){{ש}}ש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד){{ש}}תיגאן=<{{מ:אות-ג|הַֽ}}לְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.{{ש}}מ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/32/6/2/0",
+        "parsed_note_body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד)\nל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)\nל1=הַ לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)\nש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)\nתיגאן=<הַֽלְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.\nמ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+        "chapter_revision": {
+          "resolved_title": "דברים לב/טעמים",
+          "page_id": 236679,
+          "requested_title": "דברים_לב/טעמים",
+          "revision_id": 3079372,
+          "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15539",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "excluded: non-guttural yod vowel attributed only to Firkovich B17, not Aleppo or Leningrad; Leningrad's he vowel is guttural"
+    },
+    {
+      "note_id": "Deuter 32:10/2/0",
+      "ref": "Deuter 32:10",
+      "body": "=ל1?,ש,ש1,ק3,ל3?,ל9 וכמו כן בדפוסים וקורן (אין געיה ואין חטפים)\nא=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף)\nל=יְסֹֽבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ (געיה באות סמ\"ך ואין חטפים)",
+      "words": [
+        {
+          "word": "יְסֹבֲבֶ֙נְהוּ֙",
+          "offset": 66,
+          "written_word_index": 15,
+          "unpointed_key": "יסבבנהו",
+          "features": [
+            {
+              "literal_cluster": "בֲ",
+              "base": "ב",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        },
+        {
+          "word": "יְב֣וֹנֲנֵ֔הוּ",
+          "offset": 82,
+          "written_word_index": 16,
+          "unpointed_key": "יבוננהו",
+          "features": [
+            {
+              "literal_cluster": "נֲ",
+              "base": "נ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 32:10/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל1?,ש,ש1,ק3,ל3?,ל9 וכמו כן בדפוסים וקורן (אין געיה ואין חטפים){{ש}}א=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף){{ש}}ל=יְסֹֽבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ (געיה באות סמ\"ך ואין חטפים)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/32/10/2/4",
+        "parsed_note_body": "=ל1?,ש,ש1,ק3,ל3?,ל9 וכמו כן בדפוסים וקורן (אין געיה ואין חטפים)\nא=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף)\nל=יְסֹֽבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ (געיה באות סמ\"ך ואין חטפים)",
+        "chapter_revision": {
+          "resolved_title": "דברים לב/טעמים",
+          "page_id": 236679,
+          "requested_title": "דברים_לב/טעמים",
+          "revision_id": 3079372,
+          "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15777",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Aleppo, two distinct words"
+    },
+    {
+      "note_id": "Deuter 32:13/2/0",
+      "ref": "Deuter 32:13",
+      "body": "=ל <יתיר ו'>\nא=<עַל־בָּ֣מֳותֵי> מ\"ק-א=<ג' מל'>\nלגבי הקמץ הרחב בבי\"ת ראו ויינברג 3.1.1, ושם בהערה 15 (ויש לשים לב למקום הטעם).",
+      "words": [
+        {
+          "word": "בָּ֣מֳותֵי",
+          "offset": 20,
+          "written_word_index": 5,
+          "unpointed_key": "במותי",
+          "features": [
+            {
+              "literal_cluster": "מֳ",
+              "base": "מ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF QAMATS"
+              ]
+            }
+          ]
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 32:13/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל <יתיר ו'>{{ש}}א=<עַל־בָּ֣מֳותֵי> מ\"ק-א=<ג' מל'>{{ש}}לגבי הקמץ הרחב בבי\"ת ראו ויינברג 3.1.1, ושם בהערה 15 (ויש לשים לב למקום הטעם).",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/32/13/2/1",
+        "parsed_note_body": "=ל <יתיר ו'>\nא=<עַל־בָּ֣מֳותֵי> מ\"ק-א=<ג' מל'>\nלגבי הקמץ הרחב בבי\"ת ראו ויינברג 3.1.1, ושם בהערה 15 (ויש לשים לב למקום הטעם).",
+        "chapter_revision": {
+          "resolved_title": "דברים לב/טעמים",
+          "page_id": 236679,
+          "requested_title": "דברים_לב/טעמים",
+          "revision_id": 3079372,
+          "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15870",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "excluded: retained morphological ḥataf qamats in the qere, rather than the optional vocal-sheva marking replaced by sheva in the stated policy; contextual classification under ch2:L276"
+    },
+    {
+      "note_id": "Deuter 32:18/2/1",
+      "ref": "Deuter 32:18",
+      "body": "=ל,ל1,ש,ש1,ק3,ל3,ל9\nא=מְחֹלֲלֶֽךָ (חטף)",
+      "words": [
+        {
+          "word": "מְחֹלֲלֶֽךָ",
+          "offset": 22,
+          "written_word_index": 8,
+          "unpointed_key": "מחללך",
+          "features": [
+            {
+              "literal_cluster": "לֲ",
+              "base": "ל",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 32:18/2/1",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל,ל1,ש,ש1,ק3,ל3,ל9{{ש}}א=מְחֹלֲלֶֽךָ (חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/32/18/2/4",
+        "parsed_note_body": "=ל,ל1,ש,ש1,ק3,ל3,ל9\nא=מְחֹלֲלֶֽךָ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים לב/טעמים",
+          "page_id": 236679,
+          "requested_title": "דברים_לב/טעמים",
+          "revision_id": 3079372,
+          "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L16084",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Aleppo"
+    },
+    {
+      "note_id": "Deuter 32:36/2/0",
+      "ref": "Deuter 32:36",
+      "body": "א,ל3=כִּֽי־אָ֣זֲלַת (געיה באות כ\"ף וחטף)\nש1,ל9=כִּי־אָ֣זֲלַת (אין געיה, חטף)\nל,ש,ק3=כִּי־אָ֣זְלַת (אין געיה ואין חטף)",
+      "words": [
+        {
+          "word": "אָ֣זֲלַת",
+          "offset": 11,
+          "written_word_index": 3,
+          "unpointed_key": "אזלת",
+          "features": [
+            {
+              "literal_cluster": "זֲ",
+              "base": "ז",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        },
+        {
+          "word": "אָ֣זֲלַת",
+          "offset": 52,
+          "written_word_index": 12,
+          "unpointed_key": "אזלת",
+          "features": [
+            {
+              "literal_cluster": "זֲ",
+              "base": "ז",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF PATAH"
+              ]
+            }
+          ],
+          "intro_relation": "literal"
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 32:36/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "א,ל3=כִּֽי־אָ֣זֲלַת (געיה באות כ\"ף וחטף){{ש}}ש1,ל9=כִּי־אָ֣זֲלַת (אין געיה, חטף){{ש}}ל,ש,ק3=כִּי־אָ֣זְלַת (אין געיה ואין חטף)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/32/36/2/5",
+        "parsed_note_body": "א,ל3=כִּֽי־אָ֣זֲלַת (געיה באות כ\"ף וחטף)\nש1,ל9=כִּי־אָ֣זֲלַת (אין געיה, חטף)\nל,ש,ק3=כִּי־אָ֣זְלַת (אין געיה ואין חטף)",
+        "chapter_revision": {
+          "resolved_title": "דברים לב/טעמים",
+          "page_id": 236679,
+          "requested_title": "דברים_לב/טעמים",
+          "revision_id": 3079372,
+          "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L16538",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "in-scope: explicit Aleppo; later Sassoon 1053/EVR-II-B-59 variant is the same word, not a second item"
+    }
+  ],
+  "roster_words": [
+    {
+      "ref": "Deuter 5:23",
+      "sigil": "ל",
+      "intro_word": {
+        "word": "וּֽשֲׁמָ֔ע",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "ושמע",
+        "features": [
+          {
+            "literal_cluster": "שֲׁ",
+            "base": "ש",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 5:23/2/0",
+        "note_words": [
+          {
+            "word": "וּֽשֲׁמָ֔ע",
+            "offset": 48,
+            "written_word_index": 10,
+            "unpointed_key": "ושמע",
+            "features": [
+              {
+                "literal_cluster": "שֲׁ",
+                "base": "ש",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "MAM-mark-order-only"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 8:2",
+      "sigil": "ל",
+      "intro_word": {
+        "word": "הֹלִֽיכֲךָ֜",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "הליכך",
+        "features": [
+          {
+            "literal_cluster": "כֲ",
+            "base": "כ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 8:2/2/0",
+        "note_words": [
+          {
+            "word": "הֹלִֽיכֲךָ֜",
+            "offset": 63,
+            "written_word_index": 19,
+            "unpointed_key": "הליכך",
+            "features": [
+              {
+                "literal_cluster": "כֲ",
+                "base": "כ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 8:15",
+      "sigil": "ל",
+      "intro_word": {
+        "word": "הַמּוֹלִ֨יכֲךָ֜",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "המוליכך",
+        "features": [
+          {
+            "literal_cluster": "כֲ",
+            "base": "כ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 8:15/2/0",
+        "note_words": [
+          {
+            "word": "הַמּוֹלִ֨יכֲךָ֜",
+            "offset": 17,
+            "written_word_index": 6,
+            "unpointed_key": "המוליכך",
+            "features": [
+              {
+                "literal_cluster": "כֲ",
+                "base": "כ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 15:20",
+      "sigil": "ל",
+      "intro_word": {
+        "word": "תֹאכֲלֶ֙נּוּ֙",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "תאכלנו",
+        "features": [
+          {
+            "literal_cluster": "כֲ",
+            "base": "כ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 15:20/2/0",
+        "note_words": [
+          {
+            "word": "תֹאכֲלֶ֙נּוּ֙",
+            "offset": 44,
+            "written_word_index": 12,
+            "unpointed_key": "תאכלנו",
+            "features": [
+              {
+                "literal_cluster": "כֲ",
+                "base": "כ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 15:22",
+      "sigil": "ל",
+      "intro_word": {
+        "word": "תֹּאכֲלֶ֑נּוּ",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "תאכלנו",
+        "features": [
+          {
+            "literal_cluster": "כֲ",
+            "base": "כ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 15:22/2/0",
+        "note_words": [
+          {
+            "word": "תֹּאכֲלֶ֑נּוּ",
+            "offset": 44,
+            "written_word_index": 12,
+            "unpointed_key": "תאכלנו",
+            "features": [
+              {
+                "literal_cluster": "כֲ",
+                "base": "כ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "MAM-mark-order-only"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 24:13",
+      "sigil": "ל",
+      "intro_word": {
+        "word": "וּבֵֽרֲכֶ֑ךָּ",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "וברכך",
+        "features": [
+          {
+            "literal_cluster": "רֲ",
+            "base": "ר",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 24:13/2/2",
+        "note_words": [
+          {
+            "word": "וּבֵֽרֲכֶ֑ךָּ",
+            "offset": 22,
+            "written_word_index": 8,
+            "unpointed_key": "וברכך",
+            "features": [
+              {
+                "literal_cluster": "רֲ",
+                "base": "ר",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "MAM-mark-order-only"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 28:39",
+      "sigil": "א",
+      "intro_word": {
+        "word": "תֹאכֲלֶ֖נּוּ",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "תאכלנו",
+        "features": [
+          {
+            "literal_cluster": "כֲ",
+            "base": "כ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 28:39/2/0",
+        "note_words": [
+          {
+            "word": "תֹאכֲלֶ֖נּוּ",
+            "offset": 43,
+            "written_word_index": 12,
+            "unpointed_key": "תאכלנו",
+            "features": [
+              {
+                "literal_cluster": "כֲ",
+                "base": "כ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 29:7",
+      "sigil": "א",
+      "intro_word": {
+        "word": "הַֽמֲנַשִּֽׁי",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "המנשי",
+        "features": [
+          {
+            "literal_cluster": "מֲ",
+            "base": "מ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 29:7/2/1",
+        "note_words": [
+          {
+            "word": "הַֽמֲנַשִּֽׁי",
+            "offset": 46,
+            "written_word_index": 13,
+            "unpointed_key": "המנשי",
+            "features": [
+              {
+                "literal_cluster": "מֲ",
+                "base": "מ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "MAM-mark-order-only"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 32:10",
+      "sigil": "א",
+      "intro_word": {
+        "word": "יְסֹבֲבֶ֙נְהוּ֙",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "יסבבנהו",
+        "features": [
+          {
+            "literal_cluster": "בֲ",
+            "base": "ב",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 32:10/2/0",
+        "note_words": [
+          {
+            "word": "יְסֹבֲבֶ֙נְהוּ֙",
+            "offset": 66,
+            "written_word_index": 15,
+            "unpointed_key": "יסבבנהו",
+            "features": [
+              {
+                "literal_cluster": "בֲ",
+                "base": "ב",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 32:10",
+      "sigil": "א",
+      "intro_word": {
+        "word": "יְב֣וֹנֲנֵ֔הוּ",
+        "offset": 16,
+        "written_word_index": 1,
+        "unpointed_key": "יבוננהו",
+        "features": [
+          {
+            "literal_cluster": "נֲ",
+            "base": "נ",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 32:10/2/0",
+        "note_words": [
+          {
+            "word": "יְב֣וֹנֲנֵ֔הוּ",
+            "offset": 82,
+            "written_word_index": 16,
+            "unpointed_key": "יבוננהו",
+            "features": [
+              {
+                "literal_cluster": "נֲ",
+                "base": "נ",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 32:18",
+      "sigil": "א",
+      "intro_word": {
+        "word": "מְחֹלֲלֶֽךָ",
+        "offset": 0,
+        "written_word_index": 0,
+        "unpointed_key": "מחללך",
+        "features": [
+          {
+            "literal_cluster": "לֲ",
+            "base": "ל",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 32:18/2/1",
+        "note_words": [
+          {
+            "word": "מְחֹלֲלֶֽךָ",
+            "offset": 22,
+            "written_word_index": 8,
+            "unpointed_key": "מחללך",
+            "features": [
+              {
+                "literal_cluster": "לֲ",
+                "base": "ל",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    },
+    {
+      "ref": "Deuter 32:36",
+      "sigil": "א",
+      "intro_word": {
+        "word": "אָ֣זֲלַת",
+        "offset": 6,
+        "written_word_index": 1,
+        "unpointed_key": "אזלת",
+        "features": [
+          {
+            "literal_cluster": "זֲ",
+            "base": "ז",
+            "non_guttural": true,
+            "marks": [
+              "HEBREW POINT HATAF PATAH"
+            ]
+          }
+        ]
+      },
+      "binding": {
+        "note_id": "Deuter 32:36/2/0",
+        "note_words": [
+          {
+            "word": "אָ֣זֲלַת",
+            "offset": 11,
+            "written_word_index": 3,
+            "unpointed_key": "אזלת",
+            "features": [
+              {
+                "literal_cluster": "זֲ",
+                "base": "ז",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          },
+          {
+            "word": "אָ֣זֲלַת",
+            "offset": 52,
+            "written_word_index": 12,
+            "unpointed_key": "אזלת",
+            "features": [
+              {
+                "literal_cluster": "זֲ",
+                "base": "ז",
+                "non_guttural": true,
+                "marks": [
+                  "HEBREW POINT HATAF PATAH"
+                ]
+              }
+            ],
+            "intro_relation": "literal"
+          }
+        ]
+      }
+    }
+  ],
+  "roster_word_count": 12,
+  "roster_verse_count": 11,
+  "scoped_note_word_count": 12,
+  "missing_from_roster": [],
+  "extra_in_roster": [],
+  "uncertainty_queue": [
+    {
+      "note_id": "Deuter 3:22/2/0",
+      "ref": "Deuter 3:22",
+      "body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן\nל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.\nל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+      "words": [
+        {
+          "word": "תְִּירָא֑וּם",
+          "offset": 37,
+          "written_word_index": 9,
+          "unpointed_key": "תיראום",
+          "features": [
+            {
+              "literal_cluster": "תְִּ",
+              "base": "ת",
+              "non_guttural": true,
+              "marks": [
+                "SHEVA + HIRIQ in the same base-letter cluster"
+              ]
+            }
+          ]
+        }
+      ],
+      "raw_proof": {
+        "note_id": "Deuter 3:22/2/0",
+        "raw_path": "in/mam-ws/A5-Deuter.json",
+        "raw_note_body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.{{ש}}ל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+        "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+        "parsed_pointer": "/book39s/0/chapters/3/22/2/1",
+        "parsed_note_body": "=ל?,ש,ק3,ו וכמו כן בדפוסים וקורן\nל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.\nל1,ש1,ל3=תִּֽירָא֑וּם (אין געיה)",
+        "chapter_revision": {
+          "resolved_title": "דברים ג/טעמים",
+          "page_id": 236563,
+          "requested_title": "דברים_ג/טעמים",
+          "revision_id": 2995294,
+          "sha256": "166ad5195e703100b3b9b330adce6ba21ac2fd86db998da5d53f9bf46df1f257"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L1660",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "scope_disposition": "uncertain: possible Leningrad ḥataf ḥiriq absent from the roster; the note explicitly allows the blurred sign to be meteg instead, and Dotan/Breuer print ḥiriq with gaʿya without comment"
+    }
+  ],
+  "edition_body_non_guttural_hataf_words": [
+    {
+      "ref": "Deuter 3:24",
+      "pointer": "/book39s/0/chapters/3/24/2",
+      "word": "יֱהֹוִ֗ה",
+      "offset": 9,
+      "written_word_index": 1,
+      "unpointed_key": "יהוה",
+      "features": [
+        {
+          "literal_cluster": "יֱ",
+          "base": "י",
+          "non_guttural": true,
+          "marks": [
+            "HEBREW POINT HATAF SEGOL"
+          ]
+        }
+      ],
+      "scope_disposition": "Divine-name qere pointing, not an optional vocal-sheva vowel"
+    },
+    {
+      "ref": "Deuter 9:26",
+      "pointer": "/book39s/0/chapters/9/26/2",
+      "word": "יֱהֹוִ֗ה",
+      "offset": 46,
+      "written_word_index": 5,
+      "unpointed_key": "יהוה",
+      "features": [
+        {
+          "literal_cluster": "יֱ",
+          "base": "י",
+          "non_guttural": true,
+          "marks": [
+            "HEBREW POINT HATAF SEGOL"
+          ]
+        }
+      ],
+      "scope_disposition": "Divine-name qere pointing, not an optional vocal-sheva vowel"
+    },
+    {
+      "ref": "Deuter 28:35",
+      "pointer": "/book39s/0/chapters/28/35/2",
+      "word": "קׇדְקֳדֶֽךָ",
+      "offset": 131,
+      "written_word_index": 15,
+      "unpointed_key": "קדקדך",
+      "features": [
+        {
+          "literal_cluster": "קֳ",
+          "base": "ק",
+          "non_guttural": true,
+          "marks": [
+            "HEBREW POINT HATAF QAMATS"
+          ]
+        }
+      ],
+      "scope_disposition": "Retained morphological ḥataf qamats; contextual classification under ch2:L276"
+    },
+    {
+      "ref": "Deuter 32:13",
+      "pointer": "/book39s/0/chapters/32/13/2",
+      "word": "בָּ֣מֳתֵי",
+      "offset": 19,
+      "written_word_index": 2,
+      "unpointed_key": "במתי",
+      "features": [
+        {
+          "literal_cluster": "מֳ",
+          "base": "מ",
+          "non_guttural": true,
+          "marks": [
+            "HEBREW POINT HATAF QAMATS"
+          ]
+        }
+      ],
+      "scope_disposition": "Retained morphological ḥataf qamats in the qere; contextual classification under ch2:L276"
+    }
+  ],
+  "edition_vocal_sheva_marker_words": [
+    {
+      "ref": "Deuter 5:23",
+      "pointer": "/book39s/0/chapters/5/23/2",
+      "word": "וּֽשְׁﬞמָ֔ע"
+    },
+    {
+      "ref": "Deuter 8:2",
+      "pointer": "/book39s/0/chapters/8/2/2",
+      "word": "הוֹלִֽיכְﬞךָ֜"
+    },
+    {
+      "ref": "Deuter 8:15",
+      "pointer": "/book39s/0/chapters/8/15/2",
+      "word": "הַמּוֹלִ֨יכְﬞךָ֜"
+    },
+    {
+      "ref": "Deuter 15:20",
+      "pointer": "/book39s/0/chapters/15/20/2",
+      "word": "תֹאכְﬞלֶ֙נּוּ֙"
+    },
+    {
+      "ref": "Deuter 24:13",
+      "pointer": "/book39s/0/chapters/24/13/2",
+      "word": "וּבֵֽרְﬞכֶ֑ךָּ"
+    },
+    {
+      "ref": "Deuter 28:39",
+      "pointer": "/book39s/0/chapters/28/39/2",
+      "word": "תֹאכְﬞלֶ֖נּוּ"
+    },
+    {
+      "ref": "Deuter 29:7",
+      "pointer": "/book39s/0/chapters/29/7/2",
+      "word": "הַֽמְﬞנַשִּֽׁי"
+    },
+    {
+      "ref": "Deuter 32:18",
+      "pointer": "/book39s/0/chapters/32/18/2",
+      "word": "מְחֹלְﬞלֶֽךָ"
+    },
+    {
+      "ref": "Deuter 32:36",
+      "pointer": "/book39s/0/chapters/32/36/2",
+      "word": "אָ֣זְﬞלַת"
+    }
+  ],
+  "plain_sheva_controls": [
+    {
+      "ref": "Deuter 15:22",
+      "raw_verse": {
+        "ref": "Deuter 15:22",
+        "path": "in/mam-ws/A5-Deuter.json",
+        "wikitext": "בִּשְׁעָרֶ֖יךָ {{נוסח|תֹּאכְלֶ֑נּוּ|2==ל1,ש,ש1,ו,ל3,ל9 וכמו כן בחלק מהדפוסים{{ש}}ל,ק3=תֹּאכֲלֶ֑נּוּ וכמו כן בקורן}} הַטָּמֵ֤א וְהַטָּהוֹר֙ יַחְדָּ֔ו כַּצְּבִ֖י וְכָאַיָּֽל׃"
+      },
+      "selected_target_node": "תֹּאכְלֶ֑נּוּ",
+      "disposition": "Roster vowel replaced with sheva; no varika in the faithful raw target or independent edition projections"
+    },
+    {
+      "ref": "Deuter 32:10",
+      "raw_verse": {
+        "ref": "Deuter 32:10",
+        "path": "in/mam-ws/A5-Deuter.json",
+        "wikitext": "יִמְצָאֵ֙הוּ֙ בְּאֶ֣רֶץ מִדְבָּ֔ר{{מ:ששש}}וּבְתֹ֖הוּ יְלֵ֣ל יְשִׁמֹ֑ן{{ר3}}{{נוסח|יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ|2==ל1?,ש,ש1,ק3,ל3?,ל9 וכמו כן בדפוסים וקורן (אין געיה ואין חטפים){{ש}}א=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף){{ש}}ל=יְסֹֽבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ (געיה באות סמ\"ך ואין חטפים)}}{{מ:ששש}}יִצְּרֶ֖נְהוּ כְּאִישׁ֥וֹן עֵינֽוֹ׃"
+      },
+      "selected_target_node": "יְסֹבְבֶ֙נְהוּ֙ יְב֣וֹנְנֵ֔הוּ",
+      "disposition": "Roster vowel replaced with sheva; no varika in the faithful raw target or independent edition projections"
+    }
+  ],
+  "ketiv_qere_templates": [
+    {
+      "ref": "Deuter 5:9",
+      "pointer": "/book39s/0/chapters/5/9/2/2",
+      "template": "כו״ק",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": []
+    },
+    {
+      "ref": "Deuter 21:7",
+      "pointer": "/book39s/0/chapters/21/7/2/1",
+      "template": "כו״ק",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": []
+    },
+    {
+      "ref": "Deuter 28:27",
+      "pointer": "/book39s/0/chapters/28/27/2/1/tmpl_params/1",
+      "template": "כו״ק",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": []
+    },
+    {
+      "ref": "Deuter 28:30",
+      "pointer": "/book39s/0/chapters/28/30/2/1/tmpl_params/1",
+      "template": "כו״ק",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": []
+    },
+    {
+      "ref": "Deuter 29:22",
+      "pointer": "/book39s/0/chapters/29/22/2/3/tmpl_params/1",
+      "template": "כו״ק",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": []
+    },
+    {
+      "ref": "Deuter 32:13",
+      "pointer": "/book39s/0/chapters/32/13/2/1/tmpl_params/1/1",
+      "template": "קו״כ",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": [
+        {
+          "word": "בָּ֣מֳתֵי",
+          "offset": 0,
+          "written_word_index": 0,
+          "unpointed_key": "במתי",
+          "features": [
+            {
+              "literal_cluster": "מֳ",
+              "base": "מ",
+              "non_guttural": true,
+              "marks": [
+                "HEBREW POINT HATAF QAMATS"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ref": "Deuter 33:2",
+      "pointer": "/book39s/0/chapters/33/2/2/3",
+      "template": "מ:כו״ק מיוחד",
+      "ketiv_non_guttural_hataf": [],
+      "qere_non_guttural_hataf": []
+    }
+  ],
+  "limits": [
+    "This is exhaustive within the complete cached edition/annotation evidence and the explicitly reviewed source scope; absence of an unrecorded manuscript occurrence is not established.",
+    "Morphological classification of the retained 32:13 qere follows the stated policy context; no manuscript scan or new manuscript interpretation was undertaken.",
+    "Original Hebrew strings are retained; raw-note matching uses existing MAM mark-order comparison only, without rewriting captures."
+  ]
+}

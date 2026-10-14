@@ -353,7 +353,7 @@
     "section": "discrepancies",
     "title": "Deuteronomy’s list of ḥataf vowels on non-guttural letters",
     "issue": "The Introduction labels this list “9 items,” but it names eleven verses and twelve words.",
-    "context": "Six verse entries cite Leningrad; five cite Aleppo. Deuteronomy 32:10 contributes two words.",
+    "context": "Ben specifies words as the items: six cite Leningrad and six cite Aleppo. Deuteronomy 32:10 contributes two words.",
     "panels": [
       {
         "label": "Introduction, chapter 3 — heading of the Deuteronomy list",
@@ -372,11 +372,179 @@
         "note": "Deuter 32:10/2/0",
         "quote": "א=יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (חטף וחטף)",
         "translation": "Aleppo: יְסֹבֲבֶ֙נְהוּ֙ יְב֣וֹנֲנֵ֔הוּ (ḥataf in each word)."
+      },
+      {
+        "label": "Doc-note, Deuteronomy 3:22 — uncertain unlisted candidate",
+        "note": "Deuter 3:22/2/0",
+        "quote": "ל?!=תְִּירָא֑וּם בחטף-חיריק (!) ע\"פ המקליד ומעיון בצילום כתי\"ל. אבל דותן וברויאר הדפיסו בחיריק וגעיה בלי להעיר, וייתכן שהסימן המטושטש באמת געיה.",
+        "translation": "Leningrad? surprisingly equals תְִּירָא֑וּם with ḥataf ḥiriq (!), according to the transcriber and examination of a photograph of the Leningrad Codex. But Dotan and Breuer printed ḥiriq and gaʿya without comment, and the blurred sign may actually be gaʿya.",
+        "translation_quotes": [
+          "תְִּירָא֑וּם"
+        ]
       }
     ],
-    "explanation": "The entries are 5:23; 8:2, 8:15; 15:20, 15:22; 24:13; 28:39; 29:7; 32:10, 32:18 and 32:36. Their doc-notes support the quoted hatafs. Neither verse count nor word count is nine.",
-    "decision": "Should the heading count eleven verse entries or twelve words? Exhaustiveness beyond these entries remains a separate question.",
-    "reading_forms": []
+    "explanation": "The complete cached evidence accounts for 955/955 verses and 365/365 doc-notes. The 12 roster words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add roster items. Of the 12 roster words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva.",
+    "decision": "Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented.",
+    "reading_forms": [],
+    "prose_quotes": [
+      "תְִּירָא֑וּם",
+      "לְיֲהוָה֙",
+      "בָּ֣מֳתֵי",
+      "יֱהֹוִ֗ה",
+      "קׇדְקֳדֶֽךָ",
+      "(9 פריטים)",
+      "(12 פריטים)"
+    ],
+    "word_comparison": {
+      "caption": "All 12 roster words, with their supporting doc-note forms. Mark-order differences are preserved.",
+      "rows": [
+        {
+          "ref": "Deuteronomy 5:23",
+          "manuscript": "Leningrad",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "וּֽשֲׁמָ֔ע"
+          },
+          "doc_note": {
+            "note": "Deuter 5:23/2/0",
+            "text": "וּֽשֲׁמָ֔ע"
+          }
+        },
+        {
+          "ref": "Deuteronomy 8:2",
+          "manuscript": "Leningrad",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "הֹלִֽיכֲךָ֜"
+          },
+          "doc_note": {
+            "note": "Deuter 8:2/2/0",
+            "text": "הֹלִֽיכֲךָ֜"
+          }
+        },
+        {
+          "ref": "Deuteronomy 8:15",
+          "manuscript": "Leningrad",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "הַמּוֹלִ֨יכֲךָ֜"
+          },
+          "doc_note": {
+            "note": "Deuter 8:15/2/0",
+            "text": "הַמּוֹלִ֨יכֲךָ֜"
+          }
+        },
+        {
+          "ref": "Deuteronomy 15:20",
+          "manuscript": "Leningrad",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "תֹאכֲלֶ֙נּוּ֙"
+          },
+          "doc_note": {
+            "note": "Deuter 15:20/2/0",
+            "text": "תֹאכֲלֶ֙נּוּ֙"
+          }
+        },
+        {
+          "ref": "Deuteronomy 15:22",
+          "manuscript": "Leningrad",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "תֹּאכֲלֶ֑נּוּ"
+          },
+          "doc_note": {
+            "note": "Deuter 15:22/2/0",
+            "text": "תֹּאכֲלֶ֑נּוּ"
+          }
+        },
+        {
+          "ref": "Deuteronomy 24:13",
+          "manuscript": "Leningrad",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "וּבֵֽרֲכֶ֑ךָּ"
+          },
+          "doc_note": {
+            "note": "Deuter 24:13/2/2",
+            "text": "וּבֵֽרֲכֶ֑ךָּ"
+          }
+        },
+        {
+          "ref": "Deuteronomy 28:39",
+          "manuscript": "Aleppo",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "תֹאכֲלֶ֖נּוּ"
+          },
+          "doc_note": {
+            "note": "Deuter 28:39/2/0",
+            "text": "תֹאכֲלֶ֖נּוּ"
+          }
+        },
+        {
+          "ref": "Deuteronomy 29:7",
+          "manuscript": "Aleppo",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "הַֽמֲנַשִּֽׁי"
+          },
+          "doc_note": {
+            "note": "Deuter 29:7/2/1",
+            "text": "הַֽמֲנַשִּֽׁי"
+          }
+        },
+        {
+          "ref": "Deuteronomy 32:10",
+          "manuscript": "Aleppo",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "יְסֹבֲבֶ֙נְהוּ֙"
+          },
+          "doc_note": {
+            "note": "Deuter 32:10/2/0",
+            "text": "יְסֹבֲבֶ֙נְהוּ֙"
+          }
+        },
+        {
+          "ref": "Deuteronomy 32:10",
+          "manuscript": "Aleppo",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "יְב֣וֹנֲנֵ֔הוּ"
+          },
+          "doc_note": {
+            "note": "Deuter 32:10/2/0",
+            "text": "יְב֣וֹנֲנֵ֔הוּ"
+          }
+        },
+        {
+          "ref": "Deuteronomy 32:18",
+          "manuscript": "Aleppo",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "מְחֹלֲלֶֽךָ"
+          },
+          "doc_note": {
+            "note": "Deuter 32:18/2/1",
+            "text": "מְחֹלֲלֶֽךָ"
+          }
+        },
+        {
+          "ref": "Deuteronomy 32:36",
+          "manuscript": "Aleppo",
+          "introduction": {
+            "claim": "ch3:L1134",
+            "text": "אָ֣זֲלַת"
+          },
+          "doc_note": {
+            "note": "Deuter 32:36/2/0",
+            "text": "אָ֣זֲלַת"
+          }
+        }
+      ]
+    },
+    "adjudication": "DEUT-HATAF-COUNT-BEN-20261014"
   },
   {
     "id": "lamentations-one-two",
@@ -385,8 +553,8 @@
     ],
     "section": "discrepancies",
     "title": "Lamentations 1:6 — one/two reversed in the ketiv/qere description",
-    "issue": "The example calls the two-word ketiv one word and the one-word qere two words.",
-    "context": "The displayed ketiv is מִן בַּת־; the qere is מִבַּת־.",
+    "issue": "The Introduction’s chapter 2 example calls the two-word ketiv one word and the one-word qere two words.",
+    "context": "The Introduction’s example gives מִן בַּת־ as ketiv and מִבַּת־ as qere.",
     "panels": [
       {
         "label": "Introduction, chapter 2 — the category",
@@ -401,9 +569,42 @@
         "translation": "(מִן בַּת־: ketiv in one word; מִבַּת־: qere in two words.)"
       }
     ],
-    "explanation": "This reverses both the section’s stated category, כתיב תרתין מילין וקרי מילה חדה, and the parsed special ketiv/qere structure. There is no doc-note at this verse.",
-    "decision": "Reverse the example’s one/two descriptions if the displayed ketiv and qere are intended.",
-    "reading_forms": []
+    "explanation": "Its word counts reverse both the section’s category, כתיב תרתין מילין וקרי מילה חדה, and MAM’s special ketiv/qere template: ketiv מן בת; qere מִבַּת־. There is no doc-note at this verse.",
+    "decision": "Keep the Introduction’s forms and pointing, and correct its counts as shown below.",
+    "reading_forms": [
+      {
+        "label": "MAM ketiv — two words",
+        "source": "verse-parts",
+        "path": "MAM-parsed/plus/E3-Lamentations.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/1/6/2/1/tmpl_params/1",
+            "text": "מן בת"
+          }
+        ],
+        "text": "מן בת"
+      },
+      {
+        "label": "MAM qere — one word",
+        "source": "verse-parts",
+        "path": "MAM-parsed/plus/E3-Lamentations.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/1/6/2/1/tmpl_params/2",
+            "text": "מִבַּת־"
+          }
+        ],
+        "text": "מִבַּת־"
+      }
+    ],
+    "prose_quotes": [
+      "מִן בַּת־",
+      "מִבַּת־",
+      "כתיב תרתין מילין וקרי מילה חדה",
+      "מן בת",
+      "מִבַּת־"
+    ],
+    "adjudication": "LAM-1-6-PROPOSAL-20261014"
   },
   {
     "id": "proverbs-maqaf-illustration",
@@ -748,8 +949,8 @@
       "PS-108-11"
     ],
     "section": "discrepancies",
-    "title": "Psalm 108:11: tipeha in the Introduction, deḥi in the note",
-    "issue": "The Introduction’s Aleppo quotation has tipeha, while the note’s Breuer quotation has deḥi.",
+    "title": "Psalm 108:11: tipeḥa in the Introduction, deḥi in the note",
+    "issue": "The Introduction’s Aleppo quotation has tipeḥa, while the note’s Breuer quotation has deḥi.",
     "context": "",
     "panels": [
       {
@@ -765,11 +966,11 @@
         "note": "Psalms 108:11/2/0"
       }
     ],
-    "explanation": "Both passages leave the dagesh in nun uncertain; the note questions Breuer’s interpretation because the manuscript area is blurred. This is separate from the tipeha/deḥi discrepancy.",
-    "decision": "Should the Introduction quotation have deḥi, matching the note’s Breuer quotation, or is its tipeha intentional?",
+    "explanation": "Both passages leave the dagesh in nun uncertain; the note questions Breuer’s interpretation because the manuscript area is blurred. This is separate from the tipeḥa/deḥi discrepancy.",
+    "decision": "Should the Introduction quotation have deḥi, matching the note’s Breuer quotation, or is its tipeḥa intentional?",
     "reading_forms": [
       {
-        "label": "Introduction’s Aleppo quotation: tipeha",
+        "label": "Introduction’s Aleppo quotation: tipeḥa",
         "source": "claim",
         "id": "ch5:L605",
         "text": "יֹ֖בִלֵנִּי"
@@ -2416,7 +2617,7 @@
     "section": "discrepancies",
     "title": "Leviticus 7:22 — the second section begins at 7:28, not 7:27",
     "issue": "The verse note points to 7:27 for an opening that occurs at 7:28.",
-    "context": "Two nearby petuhot have similar verse openings.",
+    "context": "Two nearby petuḥah sections have similar verse openings.",
     "panels": [
       {
         "label": "Introduction, chapter 3: Torah section divisions",
@@ -2431,7 +2632,7 @@
         "note": "Levit 7:22/0/0"
       }
     ],
-    "explanation": "The Introduction names verse 28. The doc-note gives verse 27 for the same quoted opening. The complete chapter structure places the second petuha before verse 28.",
+    "explanation": "The Introduction names verse 28. The doc-note gives verse 27 for the same quoted opening. The complete chapter structure places the second petuḥah before verse 28.",
     "decision": "Change the note's second verse number from 27 to 28.",
     "reading_forms": [
       {
@@ -2477,7 +2678,7 @@
         "translation": "By using the Unicode characters for “zarqa” at the end of the word and “tsinnor” inside the word, as we wrote in the previous footnote."
       }
     ],
-    "explanation": "The displayed specimen has U+0598 internally and U+05AE at the end, matching the first footnote. The second calls the final character zarqa and the internal character tsinnor. These are an accent and its stress helper, not two independent accents.",
+    "explanation": "The Introduction’s specimen has U+0598 internally and U+05AE at the end, matching the first footnote. The second calls the final character zarqa and the internal character tsinnor. These are an accent and its stress helper, not two independent accents.",
     "decision": "Reverse the names in the second footnote to agree with the first footnote and the actual specimen.",
     "reading_forms": [
       {
@@ -2507,17 +2708,17 @@
       {
         "label": "Isaiah 59:19 verse note: nearby manuscripts",
         "quote": "=ל,ש1,ק,ל-א,ק25,ב1,ש2 (מרכא וטפחא)",
-        "translation": "MAM agrees with the Leningrad Codex, Sassoon 1053, the Cairo Codex of the Prophets, St. Petersburg Evr. II B 55, Cairo 25, British Library Or. 2375, and Sassoon 82: merkha and tipha.",
+        "translation": "MAM agrees with the Leningrad Codex, Sassoon 1053, the Cairo Codex of the Prophets, St. Petersburg Evr. II B 55, Cairo 25, British Library Or. 2375, and Sassoon 82: merkha and tipḥa.",
         "note": "Isaiah 59:19/2/0"
       },
       {
         "label": "Isaiah 59:19 verse note: possible Aleppo reading",
         "quote": "א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת)",
-        "translation": "The Aleppo Codex may have ר֥וּחַ־יְהֹוָ֖ה (merkha and tipha, with maqaf on the word bearing the conjunctive accent).",
+        "translation": "The Aleppo Codex may have ר֥וּחַ־יְהֹוָ֖ה (merkha and tipḥa, with maqaf on the word bearing the conjunctive accent).",
         "note": "Isaiah 59:19/2/0"
       }
     ],
-    "explanation": "The Introduction assigns the maqaf compound to the other named manuscripts and printed editions. The doc-note instead assigns those sources the spaced MAM text with merkha and tipha.",
+    "explanation": "The Introduction assigns the maqaf compound to the other named manuscripts and printed editions. The doc-note instead assigns those sources the spaced MAM text with merkha and tipḥa.",
     "decision": "Choose whether to change the Introduction's attribution to the spaced text, following the doc-note, or revise the doc-note's source attribution.",
     "reading_forms": [
       {
@@ -2532,14 +2733,14 @@
         "id": "Isaiah 59:19/2/0",
         "text": "ר֥וּחַ יְהֹוָ֖ה",
         "pointer": "",
-        "annotation": "Merkha and tipha; no maqaf."
+        "annotation": "Merkha and tipḥa; no maqaf."
       },
       {
         "label": "Doc-note's possible Aleppo quotation",
         "source": "note",
         "id": "Isaiah 59:19/2/0",
         "text": "ר֥וּחַ־יְהֹוָ֖ה",
-        "annotation": "Merkha, maqaf and tipha."
+        "annotation": "Merkha, maqaf and tipḥa."
       }
     ]
   },
@@ -3187,7 +3388,7 @@
         "label": "Introduction, chapter 2 — maqaf policy for a two-word oleh and yored",
         "claim": "ch2:L442",
         "quote": "לכן במהדורתנו סימנו אותם כדי שהקורא יבין שיש לצרף את שתי התיבות, אמנם ב{{צבע גופן|אפור|צבע אפור}} כדי שגם ידע שהמקף לא מופיע בכתב־היד.",
-        "translation": "Therefore, in our edition we marked these maqafs so the reader would understand that the two words should be joined, but in grey so the reader would also know that the maqaf does not appear in the manuscript."
+        "translation": "Therefore, in our edition we marked these maqaf marks so the reader would understand that the two words should be joined, but in grey so the reader would also know that the maqaf does not appear in the manuscript."
       },
       {
         "label": "Introduction, chapter 2 — Psalm 1:3 as a manuscript example in the oleh and yored discussion",
@@ -3411,7 +3612,7 @@
         "label": "Local note’s two Leningrad alternatives",
         "note": "Psalms 17:14/2/0",
         "quote": "ל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).",
-        "translation": "Leningrad: <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, without a ḥataf vowel), according to the transcriber; Koren has the same accents without maqaf. Or <מִֽמְתִֽים־יָדְךָ֨׀> (both are metegs), according to Dotan; this seems more likely in the Leningrad Codex.",
+        "translation": "Leningrad: <מִֽמְתִ֥ים־יָדְךָ֨׀> (meteg, merkha, and maqaf, without a ḥataf vowel), according to the transcriber; Koren has the same accents without maqaf. Or <מִֽמְתִֽים־יָדְךָ֨׀> (both are meteg marks), according to Dotan; this seems more likely in the Leningrad Codex.",
         "translation_quotes": [
           "<מִֽמְתִ֥ים־יָדְךָ֨׀>",
           "<מִֽמְתִֽים־יָדְךָ֨׀>"
@@ -3434,7 +3635,7 @@
         "text": "מִֽמְתִ֥ים־יָדְךָ֨׀"
       },
       {
-        "label": "Dotan’s Leningrad quotation — two metegs",
+        "label": "Dotan’s Leningrad quotation — two meteg marks",
         "source": "note",
         "id": "Psalms 17:14/2/0",
         "text": "מִֽמְתִֽים־יָדְךָ֨׀"
@@ -3511,7 +3712,7 @@
         "label": "Local note’s manuscript interpretation",
         "note": "Daniel 2:41/2/1",
         "quote": "ל?=<דִֽי פַרְזְלָ֖א> (געיה וחסר מקף?) לפי הערת ברויאר במהדורת חורב, וכך נראה מעיון בכתב־היד בהגדלה.",
-        "translation": "Leningrad? <דִֽי פַרְזְלָ֖א> (meteg and missing maqaf?), according to Breuer’s note in the Horev edition; this is also how it appears on magnified inspection of the manuscript.",
+        "translation": "Leningrad? <דִֽי פַרְזְלָ֖א> (meteg and missing maqaf?), according to Breuer’s note in the Ḥorev edition; this is also how it appears on magnified inspection of the manuscript.",
         "translation_quotes": [
           "<דִֽי פַרְזְלָ֖א>"
         ]
@@ -3810,7 +4011,7 @@
     ],
     "section": "questions",
     "title": "Daniel 7:15: which accent belongs on the rejected spelling?",
-    "issue": "The Introduction's alternative without final alef has merkha, while the Breuer alternative named in the note has munach.",
+    "issue": "The Introduction's alternative without final alef has merkha, while the Breuer alternative named in the note has munaḥ.",
     "context": "The entry occurs in the Introduction's difficult-spelling-decisions section.",
     "panels": [
       {
@@ -4896,7 +5097,7 @@
     ],
     "section": "questions",
     "title": "Proverbs 8:34: why does the design example use galgal without the stated uncertainty?",
-    "issue": "The design list has galgal and a certain Aleppo attribution, while the other Introduction entry and the note have atnah hafukh and uncertainty about the oleh mark.",
+    "issue": "The design list has galgal and a certain Aleppo attribution, while the other Introduction entry and the note have atnaḥ hafukh and uncertainty about the oleh mark.",
     "context": "The note describes the oleh mark as suspended between mem and ayin.",
     "panels": [
       {
@@ -4918,8 +5119,8 @@
         "translation": "Aleppo Codex?: שֹׁמֵ֢֫עַֽ לִ֥י (the oleh mark is suspended between mem and ayin)."
       }
     ],
-    "explanation": "The two marks below mem are different accents, not merely different ordering of the same signs. The Introduction's separate explanation distinguishes galgal from atnah hafukh. The design list also lacks the question mark retained in the other entry. Its example of two independently accented words remains understandable, but the quotation and certainty do not match the other passage.",
-    "decision": "Should the design example use atnah hafukh and retain the uncertainty stated in the other entry, or explain a different intended notation and attribution?",
+    "explanation": "The two marks below mem are different accents, not merely different ordering of the same signs. The Introduction's separate explanation distinguishes galgal from atnaḥ hafukh. The design list also lacks the question mark retained in the other entry. Its example of two independently accented words remains understandable, but the quotation and certainty do not match the other passage.",
+    "decision": "Should the design example use atnaḥ hafukh and retain the uncertainty stated in the other entry, or explain a different intended notation and attribution?",
     "reading_forms": [
       {
         "label": "Introduction: selected uncertain Aleppo example",
@@ -4980,7 +5181,7 @@
         "label": "MAM note on Psalm 68:18",
         "note": "Psalms 68:18/2/0",
         "quote": "א=בָֿ֝ם (השמטת נקודת הרביע); השארנו כאן את סימן הרפה באות בי\"ת בעקבות דברי מנחת־שי על ישעיהו לד,יא.",
-        "translation": "The Aleppo Codex has בָֿ֝ם (omission of the revia dot); we retained the rafe sign over bet here following Minhat Shay's discussion of Isaiah 34:11."
+        "translation": "The Aleppo Codex has בָֿ֝ם (omission of the revia dot); we retained the rafe sign over bet here following Minḥat Shay's discussion of Isaiah 34:11."
       }
     ],
     "explanation": "The chapter 2 example and the note agree about rafe. The chapter 5 example still illustrates the omitted revia dot correctly, but its Aleppo quotation lacks that separately emphasized rafe.",
@@ -5203,19 +5404,19 @@
     "section": "discrepancies",
     "title": "Proverbs 25:20: the chapter and verse are reversed in the link",
     "issue": "The entry prints 25:20 for the maqaf example but its link targets Proverbs 20:25.",
-    "context": "The entry concerns maqaf at a word bearing merka as a secondary accent.",
+    "context": "The entry concerns maqaf at a word bearing merkha as a secondary accent.",
     "panels": [
       {
         "label": "Introduction, chapter 5: Proverbs",
         "claim": "ch5:L662",
         "quote": "[[משלי כ/טעמים#כ כה|כה,כ]] (א*=מַ֥עֲדֶה־בֶּ֨גֶד ׀): מקף בתיבת משרת (מרכא כטעם משני)",
-        "translation": "Proverbs 25:20 [linked to 20:25]: the Aleppo Codex has מַ֥עֲדֶה־בֶּ֨גֶד ׀ with maqaf at a word bearing a conjunctive accent (merka as a secondary accent)."
+        "translation": "Proverbs 25:20 [linked to 20:25]: the Aleppo Codex has מַ֥עֲדֶה־בֶּ֨גֶד ׀ with maqaf at a word bearing a conjunctive accent (merkha as a secondary accent)."
       },
       {
         "label": "Doc-note at Proverbs 25:20",
         "note": "Proverbs 25:20/2/0",
         "quote": "=א ומ\"ש (מקף בתיבת משרת)",
-        "translation": "The Aleppo Codex and Minhat Shay agree with MAM text: maqaf at a word bearing a conjunctive accent."
+        "translation": "The Aleppo Codex and Minḥat Shay agree with MAM text: maqaf at a word bearing a conjunctive accent."
       }
     ],
     "explanation": "The note belongs to 25:20 and discusses the same maqaf. The target reverses the displayed chapter and verse.",
@@ -5360,13 +5561,13 @@
     "section": "discrepancies",
     "title": "Psalm 78:7: the link is right but its label says 69:7",
     "issue": "The Introduction's link targets Psalm 78:7, while its printed label says Psalm 69:7.",
-    "context": "The example belongs to the discussion of merka as a secondary accent.",
+    "context": "The example belongs to the discussion of merkha as a secondary accent.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Words suitable for joining with maqaf",
         "claim": "ch2:L513",
         "quote": "[[תהלים עח/טעמים#עח ז|תהלים סט,ז]] במרכא ויש מקף בכתר.",
-        "translation": "Psalm 69:7 [the link targets 78:7], with merka and a maqaf in the Aleppo Codex."
+        "translation": "Psalm 69:7 [the link targets 78:7], with merkha and a maqaf in the Aleppo Codex."
       }
     ],
     "explanation": "Here the encoded destination identifies the intended verse; the printed chapter number is wrong.",
@@ -5379,9 +5580,9 @@
       "navigation:ch2:L515:Psalms 38:19"
     ],
     "section": "discrepancies",
-    "title": "Psalm 38:19: the secondary-tirha example links to verse 15",
+    "title": "Psalm 38:19: the secondary-tirḥa example links to verse 15",
     "issue": "The example prints Psalm 38:19 and quotes its final word, but its link targets verse 15.",
-    "context": "The discussion concerns tirha as a secondary accent within the verse-final word.",
+    "context": "The discussion concerns tirḥa as a secondary accent within the verse-final word.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Words suitable for joining with maqaf",
@@ -5489,7 +5690,7 @@
         "label": "Doc-note at Deuteronomy 32:18",
         "note": "Deuter 32:18/2/0",
         "quote": "=ק3,ל-קטנות ומ\"ש (אות יו\"ד קטנה)",
-        "translation": "Cairo 18, the Leningrad Codex's list of small letters, and Minhat Shay support the small yod in MAM text."
+        "translation": "Cairo 18, the Leningrad Codex's list of small letters, and Minḥat Shay support the small yod in MAM text."
       }
     ],
     "explanation": "The label and the small-letter example identify 32:18. The encoded chapter is 33.",
@@ -5687,15 +5888,15 @@
       "navigation:ch2:L681:Psalms 118:26"
     ],
     "section": "discrepancies",
-    "title": "Psalm 118:26: the merka example has a chapter 2 verse fragment",
+    "title": "Psalm 118:26: the merkha example has a chapter 2 verse fragment",
     "issue": "The Introduction selects the Psalm 118 page and prints 118:26, but the verse fragment says 2:26.",
-    "context": "The passage excludes this word's merka from the secondary-accent list.",
+    "context": "The passage excludes this word's merkha from the secondary-accent list.",
     "panels": [
       {
-        "label": "Introduction, chapter 2: Secondary merka and the following sheva",
+        "label": "Introduction, chapter 2: Secondary merkha and the following sheva",
         "claim": "ch2:L681",
         "quote": "טעם המרכא בתיבת בֵּ֝רַ֥כְנוּכֶ֗ם ([[תהלים קיח/טעמים#ב כו|תהלים קיח,כו]]) איננו טעם משני ואינו שייך לכאן.",
-        "translation": "The merka accent in בֵּ֝רַ֥כְנוּכֶ֗ם (Psalm 118:26) is not a secondary accent and does not belong here. The link's verse fragment reads 2:26."
+        "translation": "The merkha accent in בֵּ֝רַ֥כְנוּכֶ֗ם (Psalm 118:26) is not a secondary accent and does not belong here. The link's verse fragment reads 2:26."
       }
     ],
     "explanation": "The page, displayed reference, and quoted word all identify Psalm 118:26. The fragment's chapter 2 disagrees; Psalm 2 has no verse 26.",

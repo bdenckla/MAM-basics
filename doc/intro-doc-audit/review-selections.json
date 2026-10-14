@@ -22,7 +22,7 @@
     },
     {
       "id": "DEUT-HATAF",
-      "title": "Deuteronomy roster: nine declared, eleven listed",
+      "title": "Deuteronomy roster: nine declared, twelve words listed",
       "status": "new-verified-enumeration-discrepancy",
       "claims": [
         "ch3:L1134"
@@ -85,7 +85,8 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "The header says nine items, but the roster contains eleven verse entries and twelve atom forms, because 32:10 supplies two. Notes support all eleven listed verse cases. Leningrad supplies the first six entries and Aleppo the last five. The manuscript readings agree; the count is stale. This does not prove that the roster is exhaustive."
+      "explanation": "Ben specifies words as the items: six cite Leningrad and six cite Aleppo. Deuteronomy 32:10 contributes two words. The complete cached evidence accounts for 955/955 verses and 365/365 doc-notes. The 12 roster words match all 12 definite Aleppo/Leningrad vocal-sheva words in those notes. One possible omission remains: 3:22 has an uncertain Leningrad ḥataf ḥiriq, תְִּירָא֑וּם, whose blurred sign the note says may instead be a meteg. The additional 32:6 vowel is on yod in Firkovich B17, לְיֲהוָה֙, outside the named-manuscript scope. The 32:13 qere בָּ֣מֳתֵי retains morphological ḥataf qamats, outside the vocal-sheva policy. The edition also retains יֱהֹוִ֗ה at 3:24 and 9:26 and קׇדְקֳדֶֽךָ at 28:35; these are divine-name qere pointing and morphological ḥataf qamats, respectively. These four edition occurrences therefore do not add roster items. Of the 12 roster words, nine have the edition’s varika marker; 15:22 and both 32:10 words have plain sheva. Change (9 פריטים) to (12 פריטים). All 12 confirmed note words are listed, with no extra listed word; 3:22 remains an explicit uncertain omission. The cached evidence cannot exclude manuscript occurrences that were never documented.",
+      "adjudication": "DEUT-HATAF-COUNT-BEN-20261014"
     },
     {
       "id": "LAM-1-6",
@@ -102,7 +103,8 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "The example calls the two-atom ketiv one atom and the one-atom qere two atoms. The section's own definition, visible forms, and parsed special ketiv/qere type agree on the opposite description. This verse has no doc-note; the corroboration is the parsed structure, not note silence."
+      "explanation": "The Introduction’s example gives מִן בַּת־ as ketiv and מִבַּת־ as qere. Its word counts reverse both the section’s category, כתיב תרתין מילין וקרי מילה חדה, and MAM’s special ketiv/qere template: ketiv מן בת; qere מִבַּת־. There is no doc-note at this verse. Keep the Introduction’s forms and pointing, and correct its counts as shown below.",
+      "adjudication": "LAM-1-6-PROPOSAL-20261014"
     },
     {
       "id": "PROV-30-19",

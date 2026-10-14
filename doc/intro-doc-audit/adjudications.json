@@ -240,5 +240,71 @@
     },
     "assistant_observation": "The supplied crop has a visibly irregular/obscured area across the word. This inspection does not independently adjudicate the reading or determine the cause of that appearance.",
     "scope": "Research/report proposal only; the original full note and translation remain visible. No source cache, dataset, Wikisource, issue/comment or main change."
+  },
+  {
+    "id": "DEUT-HATAF-COUNT-BEN-20261014",
+    "case": "deuteronomy-hataf-count",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "transcript_evidence": "Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be"
+    },
+    "status": "word-count-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087744,
+    "current": {
+      "claim": "ch3:L1134",
+      "quote": "(9 פריטים)"
+    },
+    "proposed_quotation": "(12 פריטים)",
+    "changes": [
+      {
+        "before": "(9 פריטים)",
+        "after": "(12 פריטים)",
+        "purpose": "Count the 12 listed words, including both words at 32:10; Ben selects words as the item unit."
+      }
+    ],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Ben’s corrected word count — not applied",
+    "current_explanation": "(9 items.)",
+    "proposed_explanation": "(12 items.)",
+    "research_note": "deuter-hataf-scope.md",
+    "independent_check": "955/955 verses, 365/365 notes, all seven ketiv/qere templates and an independent MAM-simple body pass. All 12 definite scoped note words occur in the roster; one uncertain Leningrad 3:22 candidate remains.",
+    "scope": "Research/report proposal only."
+  },
+  {
+    "id": "LAM-1-6-PROPOSAL-20261014",
+    "case": "lamentations-one-two",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "kind": "independently-verified-proposal",
+      "transcript_evidence": "Sentinel_270f66758edc8191b846ed342c368317"
+    },
+    "status": "independently-verified-word-count-correction; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087893,
+    "current": {
+      "claim": "ch2:L102",
+      "quote": "(\"מִן בַּת־\" כתיב בתיבה אחת, \"מִבַּת־\" קרי בשתי תיבות)."
+    },
+    "proposed_quotation": "(\"מִן בַּת־\" כתיב בשתי תיבות, \"מִבַּת־\" קרי בתיבה אחת).",
+    "changes": [
+      {
+        "before": "(\"מִן בַּת־\" כתיב בתיבה אחת, \"מִבַּת־\" קרי בשתי תיבות).",
+        "after": "(\"מִן בַּת־\" כתיב בשתי תיבות, \"מִבַּת־\" קרי בתיבה אחת).",
+        "purpose": "Preserve the Introduction’s ketiv/qere assignments and pointing, changing only the one/two word counts."
+      }
+    ],
+    "current_label": "Current Introduction example",
+    "proposed_label": "Proposed corrected Introduction example — not applied",
+    "current_explanation": "(מִן בַּת־: ketiv in one word; מִבַּת־: qere in two words.)",
+    "proposed_explanation": "(מִן בַּת־: ketiv in two words; מִבַּת־: qere in one word.)",
+    "research_note": "lamentations-1-6-proposal.md",
+    "research_label": "Verified source evidence and concrete proposal",
+    "independent_check": "Introduction chapter 2 line 102 names the correct forms but reverses their counts. The cached raw verse and MAM’s special ketiv/qere template agree: ketiv מן בת, qere מִבַּת־, type כתיב תרתין מילין וקרי מילה חדה. No doc-note exists at this verse.",
+    "scope": "Research/report proposal only."
   }
 ]

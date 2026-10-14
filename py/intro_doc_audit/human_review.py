@@ -276,7 +276,43 @@ def adjudication_comparison(case, sources):
         + "".join(panels)
         + '</div><p><a href="'
         + escaped(entry["research_note"])
-        + '">Ben’s adjudication and research context</a></p>'
+        + '">'
+        + escaped(
+            entry.get("research_label", "Ben’s adjudication and research context")
+        )
+        + "</a></p>"
+    )
+
+
+def word_comparison_table(comparison, sources):
+    rows = []
+    for row in comparison["rows"]:
+        forms = []
+        for label, key in (("Introduction", "introduction"), ("Doc-note", "doc_note")):
+            form = row[key]
+            sources.resolve(form)
+            forms.append(
+                '<div class="reading"><span class="reading-label">'
+                + label
+                + '</span><span class="he" lang="he" dir="rtl">'
+                + escaped(form["text"])
+                + "</span></div>"
+            )
+        rows.append(
+            '<tr><td class="verse">'
+            + escaped(row["ref"])
+            + "</td><td>"
+            + escaped(row["manuscript"])
+            + '</td><td class="word-pair">'
+            + "".join(forms)
+            + "</td></tr>"
+        )
+    return (
+        '<div class="membership"><table><caption>'
+        + prose(comparison["caption"])
+        + "</caption><thead><tr><th>Verse</th><th>Manuscript</th><th>Word in each source</th></tr></thead><tbody>"
+        + "".join(rows)
+        + "</tbody></table></div>"
     )
 
 
@@ -291,6 +327,11 @@ def card(case, sources):
         else ""
     )
     forms = []
+    words = (
+        word_comparison_table(case["word_comparison"], sources)
+        if case.get("word_comparison")
+        else ""
+    )
     for form in case.get("reading_forms", []):
         sources.resolve(form)
         if "gloss" in form:
@@ -343,6 +384,7 @@ def card(case, sources):
         )
         + "</p></div>"
         + membership
+        + words
         + '<div class="comparison">'
         + passages
         + "</div>"
@@ -416,7 +458,11 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
         },
         "literal_passages_checked": literal_passages,
         "proposed_quotations_checked": proposed_quotations,
-        "user_adjudicated_comparisons": sum(bool(c.get("adjudication")) for c in cases),
+        "user_adjudicated_comparisons": sum(
+            entry["authority"].get("kind") != "independently-verified-proposal"
+            for entry in read("adjudications.json")
+            if any(c.get("adjudication") == entry["id"] for c in cases)
+        ),
         "comparison_mapping": covered,
         "methods_only_or_resolved": methods,
         "limits": [
@@ -461,7 +507,7 @@ def main(cases=None, output="review.html"):
     output_html = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
         + STYLE
-        + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}.readings{display:grid;grid-template-columns:minmax(0,max-content)}.reading{min-width:0;flex:initial}.reading .he{align-self:stretch;text-align:right}.comparison.adjudication{grid-template-columns:1fr}"
+        + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}.readings{display:grid;grid-template-columns:minmax(0,max-content)}.reading{min-width:0;flex:initial}.reading .he{align-self:stretch;text-align:right}.comparison.adjudication{grid-template-columns:1fr}.word-pair .reading+.reading{margin-top:12px}.word-pair .he{align-self:flex-end}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
         + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
         + "".join(sections)
