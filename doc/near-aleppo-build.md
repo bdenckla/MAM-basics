@@ -119,7 +119,7 @@ uses MAM-normal mark order without Unicode normalization.
 NAEE opts into the shared HTML-stage typography helper
 `py/py_html/hebrew_letter_spacing.py`. Its original family selects contiguous
 Hebrew atoms with yod or vav carrying both a wide below-vowel
-(tsere, segol, a hataf vowel or qubuts) and a below-accent. By Ben's approval
+(tsere, segol, a ḥataf vowel or qubuts) and a below-accent. By Ben's approval
 of 2026-10-13, the active selection also includes the six observed advance-adding
 contexts in the frozen Taamey D 0.921 source and its precise preceding-yod
 vowel-raising context beside qof. The selected
@@ -153,15 +153,18 @@ Its first three families receive automatic spacing: the original narrow-letter
 family, the observed font-spacing contexts, and the precise yod-before-qof context.
 The FOI's reader-facing prose uses "word" without defining "atom": its typographic
 examples make the unit clear.
-Two general screens remain display trials: adjacent narrow letters with below-letter
-marks, and qof with below-letter marks on its predecessor and itself. A trial match
-can also belong to an active family. Examples resolve
-from the shared renderer's body, ketiv or qere stream and must retain their
+The last two families remain display trials: adjacent narrow letters with below-marks,
+and qof with below-marks on its predecessor and itself. These descriptions include
+many ordinary-looking words and have not been adopted as automatic spacing rules.
+A trial match receives automatic spacing only if it also belongs to an active family.
+Examples resolve from the shared renderer's body, ketiv or qere stream and must retain their
 stated family. Notes, ruby fallback text and placeholders are excluded; atoms
 crossing special-letter or vowel-variant formatting are not selected.
-Each family reports the number of examples shown, distinct pointed words,
-and occurrences across all books in this same projection. Counts are
-recomputed during HTML generation. Adding the family totals would double-count
+The opening family table reports only occurrence counts. Each family then reports
+the number of examples shown, distinct pointed words, and occurrences across all books
+in this same projection. The raised-vowel-on-yod-before-qof family shows every distinct
+pointed word, with a generation check that the selected examples cover that family.
+Counts are recomputed during HTML generation. Adding the family totals would double-count
 words that belong to more than one family.
 
 The broader research census, source captures, comparison programs, scan archive,

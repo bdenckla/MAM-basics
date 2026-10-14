@@ -61,12 +61,12 @@ FAMILIES = (
     ),
     Family(
         spacing.FONT_ADDED_SPACE,
-        "Shapes where Taamey D adds spacing",
+        "Words where Taamey D adds spacing",
         "In this family of words, Taamey D adds space in particular combinations "
         "of narrow letters and below-marks, near final descending letters, and "
-        "where a hataf vowel precedes an accented narrow letter. NAEE gives these words its "
+        "where a ḥataf vowel precedes an accented narrow letter. NAEE gives these words its "
         "additional spacing as well. These examples show the six observed "
-        "shapes selected from the font’s spacing rules.",
+        "combinations selected from the font’s spacing rules.",
         (
             Example((tbn.BK_GENESIS, 29, 22), "body", "ויעש"),
             Example((tbn.BK_GENESIS, 8, 20), "body", "ויבן"),
@@ -86,6 +86,10 @@ FAMILIES = (
             Example((tbn.BK_JEREM, 15, 19), "body", "יקר"),
             Example((tbn.BK_GENESIS, 27, 31), "body", "יקם"),
             Example((tbn.BK_EZEKIEL, 15, 3), "body", "היקח"),
+            Example((tbn.BK_GENESIS, 18, 16), "body", "ויקמו"),
+            Example((tbn.BK_GENESIS, 22, 19), "body", "ויקמו"),
+            Example((tbn.BK_ISAIAH, 43, 4), "body", "יקרת"),
+            Example((tbn.BK_SND_CHR, 20, 19), "body", "ויקמו"),
         ),
     ),
     Family(
@@ -94,9 +98,9 @@ FAMILIES = (
         "In this family of words, two adjacent narrow letters each carry below-marks. "
         "Wide vowel dots or an extra below-mark leave less room between the sets "
         "of marks. These examples "
-        "include vav beside yod and nun beside vav. This general screen remains "
-        "a trial; a matching word can receive automatic spacing from a more "
-        "specific family.",
+        "include vav beside yod and nun beside vav. This family remains a visual "
+        "trial; a matching word receives automatic spacing only if it also "
+        "belongs to one of the first three families.",
         (
             Example((tbn.BK_GENESIS, 1, 3), "body", "ויהי"),
             Example((tbn.BK_GENESIS, 10, 11), "body", "נינוה"),
@@ -110,9 +114,9 @@ FAMILIES = (
         "reading order both carry below-marks. Qof’s descending stroke adds to the crowding "
         "around those marks. The examples include wide vowel dots on the "
         "predecessor, an extra below-accent on qof, and an extra "
-        "below-accent on the predecessor. This general screen also remains "
-        "a trial; a matching word can receive automatic spacing from a more "
-        "specific family.",
+        "below-accent on the predecessor. This family also remains a visual "
+        "trial; a matching word receives automatic spacing only if it also "
+        "belongs to one of the first three families.",
         (
             Example((tbn.BK_GENESIS, 2, 14), "body", "חדקל"),
             Example((tbn.BK_GENESIS, 2, 15), "body", "ויקח"),
@@ -237,6 +241,20 @@ def _reference_link(reference):
     return mb_html.anchor_h(label, "../" + vel.near_aleppo_href(*reference))
 
 
+def _family_counts_table(counts):
+    rows = [mb_html.table_row_of_headers(("Family", "Occurrences"))]
+    rows.extend(
+        mb_html.table_row_of_data(
+            (
+                mb_html.anchor_h(family.title, "#" + family.identifier),
+                f"{counts[family.identifier].total():,}",
+            )
+        )
+        for family in FAMILIES
+    )
+    return mb_html.div(mb_html.table(rows), {"class": "table-wrap"})
+
+
 def _family_table(family, resolved):
     rows = [
         mb_html.table_row_of_headers(
@@ -283,7 +301,7 @@ def render():
         ),
         mb_html.para(
             "These examples show words that can feel cramped in Taamey D even "
-            "when no ink overlaps."
+            "when no stroke overlaps."
         ),
         mb_html.para(
             (
@@ -299,8 +317,15 @@ def render():
             "Each row compares the same word at usual spacing and with "
             "0.06em extra letter spacing. The Reference opens the verse in NAEE. "
             "Current NAEE states which spacing the edition currently applies. "
-            "The first three families receive automatic spacing. The two general "
-            "trial screens do not select words for automatic spacing."
+            "The first three families receive automatic spacing."
+        ),
+        mb_html.para(
+            "The last two families are for visual trials: adjacent narrow letters "
+            "with below-marks, and qof with below-marks on itself and its predecessor. "
+            "These descriptions select many words, including ordinary-looking ones; "
+            "they have not been adopted as automatic spacing rules. A word in either "
+            "trial family still receives automatic spacing if it also belongs to "
+            "one of the first three families."
         ),
         mb_html.para(
             "Counts cover Scripture in NAEE, including ketiv and qere. Counts "
@@ -309,19 +334,25 @@ def render():
             "or vowel formatting are excluded. Adding the family totals would "
             "double-count words that belong to more than one family."
         ),
-        mb_html.ordered_list(
-            [mb_html.anchor_h(f.title, "#" + f.identifier) for f in FAMILIES]
-        ),
+        _family_counts_table(counts),
     ]
     for family in FAMILIES:
+        words = counts[family.identifier]
+        if family.identifier == spacing.YOD_BEFORE_QOF:
+            if {resolved[example] for example in family.examples} != set(words):
+                raise ValueError("Yod-before-qof examples no longer cover every word")
+            count_text = f"Showing all {len(words):,} distinct pointed words "
+        else:
+            count_text = (
+                f"Showing {len(family.examples):,} examples from "
+                f"{len(words):,} distinct pointed words "
+            )
         body.extend(
             (
                 mb_html.heading_level_2(family.title, {"id": family.identifier}),
                 mb_html.para(family.description),
                 mb_html.para(
-                    f"Showing {len(family.examples):,} examples from "
-                    f"{len(counts[family.identifier]):,} distinct pointed words "
-                    f"({counts[family.identifier].total():,} occurrences).",
+                    count_text + f"({words.total():,} occurrences).",
                     {"class": "spacing-counts"},
                 ),
                 _family_table(family, resolved),
