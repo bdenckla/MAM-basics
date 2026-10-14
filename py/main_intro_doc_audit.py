@@ -12,6 +12,10 @@ from intro_doc_audit import (
     rosters,
     structures,
     poetic_rosters,
+    census_scope,
+    next_pass,
+    general_prose,
+    prose_findings,
 )
 
 
@@ -36,11 +40,19 @@ def main():
         rosters.main()
     elif sys.argv[1:] == ["poetic-rosters"]:
         poetic_rosters.main()
+    elif sys.argv[1:] == ["census-scope"]:
+        census_scope.main()
+    elif sys.argv[1:] == ["next-pass"]:
+        next_pass.main()
+    elif sys.argv[1:] == ["general-prose"]:
+        general_prose.main()
+    elif sys.argv[1:] == ["prose-findings"]:
+        prose_findings.main()
     elif not sys.argv[1:]:
         audit.main()
     else:
         raise SystemExit(
-            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters]"
+            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings]"
         )
 
 

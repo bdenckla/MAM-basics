@@ -1,7 +1,7 @@
 {
   "new_attributed_form_disagreements": 11,
   "new_other_reviewed_cases": 25,
-  "navigation_family_examples": 31,
+  "navigation_family_examples": 32,
   "tracked_issues": 3,
   "tracked_verse_cases": 4,
   "uncertainty_cases": 24,
@@ -25,7 +25,7 @@
   "chapter5_earlier_entry_anchors_total": 79,
   "chapter5_earlier_source_units_reviewed": 133,
   "chapter5_earlier_source_units_total": 133,
-  "all_selected_units_reviewed": 1859,
+  "all_selected_units_reviewed": 2502,
   "bounded_list_source_units_reviewed": 1359,
   "policy_units_assessed": 210,
   "scoped_units_assessed": 273,
@@ -40,5 +40,23 @@
   "catalogue_lines_reviewed": 19,
   "catalogue_membership_matches": 15,
   "topic_routes": 340,
-  "unreviewed_claims_have_no_consistency_verdict": true
+  "unreviewed_claims_have_no_consistency_verdict": true,
+  "incremental_cached_pass": {
+    "uncertainty_groups_revisited": 24,
+    "uncertainty_groups_total": 24,
+    "two_atom_roster_memberships": 55,
+    "two_atom_current_population": 55,
+    "unsigled_hataf_counterparts": 9,
+    "current_hataf_central_correspondence": 654,
+    "hataf_total_items": 667,
+    "independent_raw_note_comparisons": 21,
+    "general_prose_units_read": 643,
+    "general_prose_units_total": 643,
+    "external_Westminster_cells_routed_not_semantically_assessed": 843,
+    "incremental_evidence_cards": 10,
+    "new_internal_wording_count_date_metadata_groups": 5,
+    "new_prose_verse_locator_examples": 1,
+    "new_cached_fragment_target_cases": 6,
+    "new_central_attributed_form_groups": 0
+  }
 }

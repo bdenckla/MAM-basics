@@ -42698,5 +42698,3863 @@
     "batch": "poetic-roster-source-units",
     "status": "individual-item-assessments-see-poetic-rosters",
     "evidence": []
+  },
+  {
+    "claim": "summary:L30",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L58",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L62",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L81",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L119",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L125",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L147",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L176",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L199",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L215",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L246",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L250",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L736",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L815",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1001",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1023",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1033",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1107",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L17",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L33",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L39",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L248",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L831",
+    "batch": "general-numeric-universal-prose",
+    "status": "cache-checkable-subclaims-universals-open",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L7",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L34",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L42",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L136",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L157",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L732",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L885",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L901",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L921",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L23",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L280",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L307",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L29",
+    "batch": "general-numeric-universal-prose",
+    "status": "editorial-policy-or-interpretation",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L42",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L138",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L611",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L77",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L250",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L370",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L372",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L52",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L101",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L357",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L359",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L82",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L212",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L290",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L735",
+    "batch": "general-numeric-universal-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L153",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L907",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L913",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L53",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L60",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L71",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L75",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L79",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L101",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L129",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L145",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L177",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L219",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L223",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L231",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L235",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L278",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L368",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L378",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L700",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L711",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L731",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L733",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L335",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L341",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L13",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L21",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L46",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L624",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L749",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L767",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L771",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L785",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L799",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L801",
+    "batch": "general-numeric-universal-prose",
+    "status": "numerical-source-population-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L201",
+    "batch": "general-numeric-universal-prose",
+    "status": "phonetic-musical-semantic-rule-unverified",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L211",
+    "batch": "general-numeric-universal-prose",
+    "status": "phonetic-musical-semantic-rule-unverified",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L213",
+    "batch": "general-numeric-universal-prose",
+    "status": "phonetic-musical-semantic-rule-unverified",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L669",
+    "batch": "general-numeric-universal-prose",
+    "status": "phonetic-musical-semantic-rule-unverified",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L675",
+    "batch": "general-numeric-universal-prose",
+    "status": "phonetic-musical-semantic-rule-unverified",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L991",
+    "batch": "general-numeric-universal-prose",
+    "status": "phonetic-musical-semantic-rule-unverified",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L635",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L640",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L656",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L926",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L938",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L944",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L950",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L956",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L962",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L986",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L638",
+    "batch": "general-numeric-universal-prose",
+    "status": "illustration-rubric-navigation-fragment",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L20",
+    "batch": "general-numeric-universal-prose",
+    "status": "external-publication-license-rendering",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L51",
+    "batch": "general-numeric-universal-prose",
+    "status": "external-publication-license-rendering",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L825",
+    "batch": "general-numeric-universal-prose",
+    "status": "external-publication-license-rendering",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1093",
+    "batch": "general-numeric-universal-prose",
+    "status": "external-publication-license-rendering",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1193",
+    "batch": "general-numeric-universal-prose",
+    "status": "external-publication-license-rendering",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L267",
+    "batch": "general-numeric-universal-prose",
+    "status": "external-publication-license-rendering",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L21",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L23",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L30",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L32",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L38",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L50",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L54",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L145",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L155",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L169",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L193",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L205",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L207",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L230",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L236",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L248",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L722",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L724",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L728",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L809",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L841",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L851",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L859",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L873",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L875",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L877",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L881",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L897",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L903",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L905",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L909",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1014",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1027",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1031",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1047",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1055",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1089",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1105",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1115",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L19",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L47",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L49",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L51",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L58",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L256",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L309",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L340",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L644",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L682",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L692",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L698",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L713",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L717",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L723",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L29",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L37",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L39",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L41",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L43",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L45",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L337",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L338",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L339",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L346",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L355",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L61",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L847",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L851",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L853",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L867",
+    "batch": "general-numeric-universal-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "root:L16",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L11",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L16",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L26",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L34",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L44",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L7",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L13",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L15",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L292",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L310",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L9",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L13",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L15",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L17",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L141",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L171",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L178",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L660",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L664",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L705",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L712",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1018",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1039",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1189",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L11",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L269",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L356",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L758",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L824",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L836",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L916",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L919",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L966",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L969",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L1022",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L1108",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L1115",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L11",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L111",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L115",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L124",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L128",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L137",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L151",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L167",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L186",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L260",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L313",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L361",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L365",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L373",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L446",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L453",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L460",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L468",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L470",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L498",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L502",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L553",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L580",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L584",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L592",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L608",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L633",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L688",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L694",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L702",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L743",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L9",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L15",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L69",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L259",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L314",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L325",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L365",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L391",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L393",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L417",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L435",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L439",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L441",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L448",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L452",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L467",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L485",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L489",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L502",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L504",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L513",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L522",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L551",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L554",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L565",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L567",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L617",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L633",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L643",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L650",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L664",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L674",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L739",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L765",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L779",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L783",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L795",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L31",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L60",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L65",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L73",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L82",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L88",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L98",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L132",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L212",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L241",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L254",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L260",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L316",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L326",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L332",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L429",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L436",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L444",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L467",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L478",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L491",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L527",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L542",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L548",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L552",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L10",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L14",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L39",
+    "batch": "remaining-general-prose",
+    "status": "framing-or-routing-no-new-operational-claim",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L22",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L40",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L59",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L63",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L21",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L23",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L27",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L30",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L32",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L34",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L36",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L38",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L42",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L44",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L46",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L48",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L50",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L52",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L56",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L60",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L62",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L64",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L66",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L68",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L70",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L72",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L84",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L86",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L88",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L92",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L94",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L96",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L98",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L105",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L107",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L109",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L111",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L115",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L119",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L129",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L135",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L141",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L143",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L151",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L153",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L155",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L159",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L161",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L174",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L176",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L182",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L184",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L186",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L190",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L192",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L194",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L196",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L198",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L202",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L204",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L210",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L214",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L220",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L224",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L236",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L246",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L254",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L256",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L270",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L272",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L276",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L280",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L282",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L286",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L290",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L312",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L28",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L52",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L66",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L151",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L161",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L182",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L188",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L240",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L693",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L720",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L831",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L833",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L835",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L837",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L839",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L845",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L849",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L853",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L861",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L869",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L871",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L879",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L895",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L911",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1016",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1029",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1043",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1051",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1057",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1059",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1099",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L254",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L642",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L684",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L688",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L705",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L54",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L56",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L551",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L590",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L613",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L631",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L700",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L23",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L40",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L73",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L78",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L298",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L312",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L330",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L465",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L520",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L631",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L648",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L672",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L837",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L841",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L861",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L8",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L37",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L46",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L109",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L111",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L113",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L115",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L117",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L130",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L179",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L183",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L199",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L222",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L249",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L252",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L282",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L320",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L322",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L324",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L442",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L455",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L459",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L461",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L465",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L487",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L499",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L501",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L503",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L507",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L509",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L511",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L513",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L536",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L546",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L563",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L6",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L34",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L69",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L105",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L261",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L392",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L503",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L650",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L679",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L706",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L6",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L287",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L321",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L355",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L508",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L632",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L745",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L894",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L925",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L954",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L8",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L23",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L31",
+    "batch": "remaining-general-prose",
+    "status": "historical-manuscript-source-book-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L32",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L133",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L145",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L168",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L170",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L178",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L216",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L226",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L228",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L232",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L238",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L262",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L264",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L314",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L7",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L44",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L56",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L95",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L104",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L111",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L159",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L165",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L219",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L689",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L697",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L699",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L701",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L821",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L887",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L891",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L893",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L899",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1037",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1097",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1101",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1109",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1187",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L7",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L9",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L282",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L694",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L719",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L9",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L15",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L17",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L19",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L94",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L350",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L419",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L7",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L31",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L38",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L80",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L278",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L691",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L267",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L337",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L345",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L540",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L561",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L567",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L569",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L17",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L84",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L140",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L180",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L974",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L989",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L1000",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L1016",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L1041",
+    "batch": "remaining-general-prose",
+    "status": "editorial-policy-or-live-presentation-boundary",
+    "evidence": []
+  },
+  {
+    "claim": "summary:L46",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L244",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L248",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L252",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L195",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L989",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L1117",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L27",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L258",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L284",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L715",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L738",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L743",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L745",
+    "batch": "remaining-general-prose",
+    "status": "completeness-without-closed-population",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L64",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L73",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L85",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L89",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L132",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L186",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L242",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L917",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L995",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L29",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L35",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L41",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L762",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L843",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L936",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L986",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch3:L1044",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch2:L77",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L23",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L99",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L366",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L25",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L286",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L288",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L807",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L833",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L341",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L347",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L351",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L451",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L429",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L564",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L827",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L12",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L14",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L16",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L27",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L35",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L45",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L55",
+    "batch": "remaining-general-prose",
+    "status": "cache-supported-bounded-subclaims",
+    "evidence": []
+  },
+  {
+    "claim": "ch1:L258",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-reference-error",
+    "evidence": []
+  },
+  {
+    "claim": "ch4:L427",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L55",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "ch5:L294",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "appendices:L476",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "index-aleppo:L11",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "index-leningrad:L693",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L37",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "data-sheet-guide:L59",
+    "batch": "remaining-general-prose",
+    "status": "supported-internal-wording-date-or-target-mismatch",
+    "evidence": []
+  },
+  {
+    "claim": "westminster-typing:L3",
+    "batch": "historical-WLC-source-framing",
+    "status": "historical-quoted-source-framing-subclaims-checked",
+    "evidence": []
+  },
+  {
+    "claim": "westminster-typing:L98",
+    "batch": "historical-WLC-source-framing",
+    "status": "historical-quoted-source-framing-subclaims-checked",
+    "evidence": []
+  },
+  {
+    "claim": "westminster-typing:L1146",
+    "batch": "historical-WLC-source-framing",
+    "status": "historical-quoted-source-framing-subclaims-checked",
+    "evidence": []
+  },
+  {
+    "claim": "westminster-typing:L62",
+    "batch": "historical-WLC-source-framing",
+    "status": "supported-internal-source-version-label-mismatch",
+    "evidence": []
   }
 ]

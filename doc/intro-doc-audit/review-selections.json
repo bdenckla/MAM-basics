@@ -1112,7 +1112,7 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "The cached notes corroborate some prose or gap claims without an explicitly named Aleppo manuscript or a complete corresponding ketiv quotation. Preserve this evidence as partial. A bare phrase meaning 'in the manuscript' is not an Aleppo sigil."
+      "explanation": "2 Kings 14:7's note explicitly names Aleppo for the missing additional pashta, corroborating that narrow subclaim. Its ketiv target remains unpointed, so a complete pointed Aleppo ketiv is not supplied. 2 Samuel 16:23 corroborates the gap/unpointed-qere description with unnamed manuscript wording. No corresponding note exists on the ketiv/qere target at 2 Kings 18:27. Nearby Aleppo notes cannot transfer attribution."
     },
     {
       "id": "GEN-36-13",
@@ -1251,7 +1251,7 @@
         ]
       ],
       "note_ids": [],
-      "explanation": "Several Introduction entries place disputed candidates under Leningrad while the current notes attribute some candidates to other manuscripts or only to the digital transcription, or retain a digital-transcription qualifier absent from the Introduction. The batch ledgers retain exact source units. These are attribution-precision questions; the caches do not settle the physical reading."
+      "explanation": "The six clauses require separate witness/transcription scope. Deuteronomy 12:30 and Psalm 18:7 distinguish Leningrad from its digital transcription; Psalm 17:14 distinguishes Leningrad alternatives from a reading assigned elsewhere. Daniel 2:41 explicitly allows the digital merkha alternative with וגם זה אפשרי, so it must not be described as a wholly rejected transcription. Daniel 5:3 and Nehemiah 12:47 retain transcription/question qualifiers absent from the Introduction. Physical readings remain unresolved."
     },
     {
       "id": "STRAND-SCOPE",
@@ -1318,7 +1318,7 @@
         "Nehemiah 9:37/2/0",
         "Daniel 7:15/2/0"
       ],
-      "explanation": "Both Nehemiah 9:37 starred specimens omit the current MAM target's second TELISHA GEDOLA (U+05A0) on tav, although their spelling agrees. Daniel 7:15's unnamed rejected specimen carries MERKHA while the named Breuer specimen in the note carries MUNAH; the selected spelling agrees, and the main row quotes the latter accent correctly. These spelling-section specimens do not establish a contradiction in a named manuscript's complete pointing."
+      "explanation": "Chapter 4 explicitly defines its star as the selected spelling. It does not assert complete pointing through that star alone. Nehemiah 9:37's missing second telisha and Daniel 7:15's unnamed rejected accent therefore remain incidental quotation questions; the central spelling selections agree."
     },
     {
       "id": "SPELLING-SOURCE-PRECISION",
@@ -1347,7 +1347,7 @@
       ],
       "refs": [],
       "note_ids": [],
-      "explanation": "Two starred spelling specimens differ from current MAM in incidental meteg placement or presence. Two joining rows retain uncertainty where the notes explicitly assign Leningrad a single or spaced form; the caches do not establish that the older uncertainty was erroneous. Deuteronomy 32:6 omits the yod sheva explicitly present in the Leningrad note, but the joining statement agrees and divine-name quotation conventions require separate consideration. The exhaustive ledger preserves these scope questions and does not declare them physical manuscript contradictions."
+      "explanation": "The two incidental meteg specimens retain quotation scope. Numbers 1:10 and 10:19 explicitly document joined/spaced Leningrad forms; whether earlier uncertainty was unwarranted cannot be dated from the cache. Deuteronomy 32:6's Leningrad quotation omits the yod SHEVA explicitly present and described in the note. The holam policy does not explain that SHEVA omission. Joining agrees; complete-quotation intent and physical truth remain open."
     },
     {
       "id": "ALEPPO-SPECIAL-SOURCE-PRECISION",
@@ -1372,7 +1372,7 @@
       ],
       "refs": [],
       "note_ids": [],
-      "explanation": "Psalm 77:8 omits the initial meteg present in both current dehi alternatives. Ruth 3:13 and Esther 1:6 omit the legarmeh glyph present in their complete current special-letter targets. All selected letter sizes agree. The specimens occur in a size list; they do not independently establish a disagreement in a named manuscript's complete pointing. Complete target nodes, rather than the survey text field, retain the legarmeh evidence."
+      "explanation": "Chapter 5 defines its star as the size performed in MAM. All three selected sizes agree. Complete Ruth/Esther targets retain legarmeh and both Psalm 77:8 helper branches retain initial meteg; incomplete survey text must not hide those marks. Full pointing-quotation intent remains editorial."
     },
     {
       "id": "EXOD-7-13-SCOPE",
@@ -1430,7 +1430,7 @@
         "Jeremiah 50:6/2/0",
         "Ezekiel 17:17/2/0"
       ],
-      "explanation": "Two Jeremiah items claim Aleppo qere while the corresponding notes document only ketiv. Ezekiel 17:17 explicitly quotes Leningrad while its note names Aleppo for that form. Nine specimens omit sigla even though their notes supply Aleppo. Proverbs 30:17 has an additional Leningrad non-guttural hataf in its note that is absent from the roster. These are source/inclusion boundaries requiring judgment, not proof from note silence. All 667 item dispositions and twelve corrected locator bindings are retained in roster-review.json and hataf-rosters.json.",
+      "explanation": "Nine unsigled specimens have explicit Aleppo note counterparts, consistent with the enclosing Aleppo-or-Leningrad heading; missing item sigla are not an evidence block for those nine. Two Jeremiah qere specimens still cross notes documenting ketiv; Ezekiel 17:17's Leningrad claim lacks a matching named-L clause. Inclusion of the additional Proverbs 30:17 Leningrad hataf remains editorial.",
       "intro_roster_items": [
         [
           "ch5:L704",
@@ -1476,7 +1476,7 @@
       ],
       "refs": [],
       "note_ids": [],
-      "explanation": "The selected closed EP stream contains4465 poetic verses,2679 verses with a literal DEHI mark and423 with OLEH. The Introduction says2685 dehi verses and421 oleh-veyored verses; its55 two-atom class also needs the intended semantic predicate. The cache census uses current primary stress, qere proxy, selected qamats and combined cantillation. Literal mark counts alone do not establish the author's semantic partition or manuscript population, so these numerical differences remain unreconciled rather than promoted to supported contradictions."
+      "explanation": "Current MAM has 4465 poetic verses, 2679 DEHI verses and 423 OLEH verses. The current closed MAM-simple disjunctive extractor independently reproduces both memberships; helper/qamats alternatives preserve them. A complete atom-stream predicate partitions the 423 OLEH cases into 368 same-atom and 55 two-atom cases, with zero unmatched cases. All 55 current two-atom verse memberships match the Introduction's three lists exactly: 38 joined by maqaf, 17 spaced. The Introduction's 2685/421 totals still lack a cached source-membership/counting contract. Current cached WLC does not reproduce those totals; its limited scanner recovery is not a complete grammatical census."
     },
     {
       "id": "LEGARMEH-LIST-SCOPE",
@@ -1487,7 +1487,7 @@
       ],
       "refs": [],
       "note_ids": [],
-      "explanation": "Five wrong chapter/verse bindings have independently corroborated intended targets. Six existing main linked targets have no selected legarmeh:1Samuel 11:9,11:12;2Samuel 15:2;Zechariah10:12;Song 3:3;1Chronicles 18:10. Three of these are resolved by wrong-reference correction. The remaining selected-membership differences do not establish what the historical Wick roster or physical witnesses contain. Every existing main target was checked, but the global grammatical and uniqueness claims remain unproved."
+      "explanation": "Only two of the six existing main targets lacking selected legarmeh are resolved by wrong-reference correction: 2 Samuel 15:2 to 15:30 and Song 3:3 to Ruth 3:3. Song 3:13 to Ruth 3:13 repairs a nonexistent target and is not a third of those six. Four existing selected absences remain: 1 Samuel 11:9, 11:12; Zechariah 10:12; 1 Chronicles 18:10. The historical Wick population and physical witnesses remain unverified. This corrects the maintained research explanation, not Scripture input."
     },
     {
       "id": "ISA-44-24-KETIV-MAQAF",
@@ -1545,7 +1545,7 @@
         "Psalms 68:18/2/0",
         "Psalms 74:5/2/0"
       ],
-      "explanation": "The central design features agree, but selected source specimens omit incidental distinctions: Psalm 6:3 patah versus Aleppo qamats;68:18 missing rafe;74:5 sheva versus explicit Aleppo hataf. Proverbs 8:34 has GALGAL U+05AA versus note/edition ATNAH_HAFUKH U+05A2 and an uncertain A candidate. These remain quotation/qualification scope questions instead of additional central-feature contradiction verdicts. Full item evidence is in poetic-rosters.json.",
+      "explanation": "Other Introduction passages agree with the notes for Psalm 6:3's qamats, Psalm 74:5's hataf and Psalm 68:18's rafe, while the design lists differ literally. Proverbs 8:34's other entry retains ATNAH HAFUKH and doubt; the design list uses GALGAL and a certain star. These are concrete internal quotation/qualification differences. The central design predicates agree. Complete manuscript-quotation intent and physical readings remain open; do not inflate them into four new central-feature alarms.",
       "intro_roster_items": [
         [
           "ch5:L751",

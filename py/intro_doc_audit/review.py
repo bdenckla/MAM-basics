@@ -195,6 +195,36 @@ def card(case, by_claim, by_note):
         bodies = [
             hbo(intro_display(by_claim[cid])) for cid in case["supporting_intro_claims"]
         ]
+    if case.get("paired_supporting_intro_excerpts"):
+        excerpts = case["paired_supporting_intro_excerpts"]
+        if len(excerpts) != len(bodies):
+            raise ValueError("Paired Introduction support must align with note rows")
+        for index, excerpt in enumerate(excerpts):
+            cid, text = excerpt["claim"], excerpt["text"]
+            if text not in by_claim[cid]["text"]:
+                raise ValueError(
+                    "Paired support is not a literal Introduction fragment"
+                )
+            bodies[
+                index
+            ] += '<hr><div class="latin">Other Introduction passage</div>' + hbo(
+                intro_display({"id": cid, "text": text})
+            )
+    if case.get("right_literal_excerpts"):
+        bodies = []
+        for excerpt in case["right_literal_excerpts"]:
+            cid, text = excerpt["claim"], excerpt["text"]
+            if text not in by_claim[cid]["text"]:
+                raise ValueError(
+                    "Right-column support is not a literal Introduction fragment"
+                )
+            bodies.append(hbo(intro_display({"id": cid, "text": text})))
+    if case.get("cached_contexts_as_comparison"):
+        bodies = [
+            f'<div class="latin">{html.escape(audit.ref_id(ref))}</div>'
+            + hbo(context(ref)["wikitext"])
+            for ref in refs
+        ]
     if not bodies:
         bodies = [
             (
@@ -209,10 +239,35 @@ def card(case, by_claim, by_note):
     cite += " · " + " · ".join(
         f'<a href="{n["source_url"]}">note {html.escape(n["ref"])}</a>' for n in notes
     )
+    supporting_ids = list(
+        dict.fromkeys(
+            case.get("supporting_intro_claims", [])
+            + [
+                e["claim"]
+                for e in case.get("paired_supporting_intro_excerpts", [])
+                + case.get("right_literal_excerpts", [])
+            ]
+        )
+    )
+    if supporting_ids:
+        cite += " · " + " · ".join(
+            f'<a href="{by_claim[cid]["source_url"]}">support {html.escape(cid)}</a>'
+            for cid in supporting_ids
+        )
+    if case.get("supplemental_sources"):
+        cite += " · " + " · ".join(
+            f'<a href="{html.escape(s["url"], quote=True)}">{html.escape(s["label"])}</a>'
+            for s in case["supplemental_sources"]
+        )
     manifest = json.loads(
         (audit.ROOT / "in/mam-ws-intro/manifest.json").read_text(encoding="utf-8")
     )["pages"]
-    revisions = sorted({manifest[c["id"].split(":", 1)[0]]["revid"] for c in claims})
+    revisions = sorted(
+        {
+            manifest[c["id"].split(":", 1)[0]]["revid"]
+            for c in claims + [by_claim[cid] for cid in supporting_ids]
+        }
+    )
     cite += "<br>Introduction revisions: " + " · ".join(
         f'<a href="https://he.wikisource.org/w/index.php?oldid={r}">{r}</a>'
         for r in revisions
@@ -236,7 +291,10 @@ def card(case, by_claim, by_note):
             for cell, body, ref in zip(intro_cells, bodies, refs)
         )
     else:
-        comparison_rows = f'<tr><td class="he" dir="rtl">{intro}</td><td class="he" dir="rtl">{"<hr>".join(bodies)}</td><td class="bcv">{"<br>".join(html.escape(audit.ref_id(r)) for r in refs)}</td></tr>'
+        right_class, right_direction = (
+            ("latin", "ltr") if case.get("right_is_latin") else ("he", "rtl")
+        )
+        comparison_rows = f'<tr><td class="he" dir="rtl">{intro}</td><td class="{right_class}" dir="{right_direction}">{"<hr>".join(bodies)}</td><td class="bcv">{"<br>".join(html.escape(audit.ref_id(r)) for r in refs)}</td></tr>'
     return (
         f"""<article id="{case['id']}"><h3>{html.escape(case['title'])}</h3>
 <p class="status">{html.escape(case['status'].replace('-', ' '))}{extra}</p>
@@ -396,7 +454,8 @@ def main():
             }
         )
     scoped = read("scoped-assessments.json")
-    for batch in scoped["batches"]:
+    general = read("general-prose-assessments.json")
+    for batch in scoped["batches"] + general["batches"]:
         population = [cid for ids in batch["dispositions"].values() for cid in ids]
         selector = batch["selection"]
         expected = (
@@ -478,13 +537,20 @@ def main():
                 "counts": topic["counts"],
                 "reviewed_source_units": reviewed,
                 "pending_explicit_reference_units": pending_refs,
-                "semantic_status": "explicit-reference-source-units-assessed; broader non-reference claims retain the stated evidence boundary",
+                "semantic_status": "explicit-reference and selected ordinary-prose source units assessed; broader universals, routing-only cells and other non-reference claims retain the stated evidence boundary",
             }
         )
     audit.dump("topic-coverage.json", coverage)
     chapters = read("source-pin.json")["base_commit"]
     all_contexts = []
     sections = []
+    from intro_doc_audit import incremental_review
+
+    incremental, contexts, incremental_counts = incremental_review.render(
+        by_claim, by_note
+    )
+    sections.append(incremental)
+    all_contexts.extend(contexts)
     for label, key in [
         ("New reviewed discrepancies", "findings"),
         ("Already tracked", "tracked"),
@@ -583,6 +649,7 @@ def main():
         ],
         "topic_routes": len(coverage),
         "unreviewed_claims_have_no_consistency_verdict": True,
+        "incremental_cached_pass": incremental_counts,
     }
     audit.dump("review-counts.json", counts)
     style = """@font-face{font-family:Taamey;src:url(../woff2/Taamey_D.woff2)}
@@ -590,7 +657,7 @@ def main():
     spelling_reviewed = sum(
         b["reviewed"] for b in other_batches if "spelling" in b.get("batch", "")
     )
-    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source <code>{chapters[:12]}</code>. {len(topics)}/340 topic spans; {counts['explicit_reference_units_assessed']:,}/{summary['explicit_reference_units']:,} verse-linked units assessed; 667/667 hataf, 98/98 meteg and 385/385 poetic roster items. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. Expand a reviewed case for exact Hebrew and context. General rules, physical readings, historical evidence and whole-corpus completeness retain their explicit limits.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
+    intro = f"""<h1>Cached MAM Introduction and doc-notes</h1><p>Source <code>{chapters[:12]}</code>. {len(topics)}/340 topic spans; {counts['explicit_reference_units_assessed']:,}/{summary['explicit_reference_units']:,} verse-linked units assessed; 667/667 hataf, 98/98 meteg and 385/385 poetic roster items. Neither source is presumed authoritative.</p><p class="meta">{counts['new_attributed_form_disagreements']} new attributed-form disagreement groups · {counts['new_other_reviewed_cases']} other reviewed cases · one locator family · 3 tracked issues / 4 verses. The incremental pass adds bounded local clarifications below. General rules, physical readings, historical evidence and whole-corpus completeness retain their explicit limits.</p><label for="size">Hebrew size <output id="value">30</output> px </label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><p class="meta"><a href="README.md">Method and limitations</a> · <a href="topic-coverage.json">Coverage data</a> · <a href="review-selections.json">Dispositions</a> · <a href="source-pin.json">Exact source pins</a></p>"""
     output = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cached Introduction audit</title><style>'
         + style

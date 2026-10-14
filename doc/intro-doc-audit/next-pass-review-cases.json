@@ -1,0 +1,397 @@
+[
+  {
+    "id": "NEXT-CATALOGUE",
+    "title": "Different-qere total: chapter 2 has three; appendix has four",
+    "status": "supported-internal-count-difference",
+    "claims": [
+      "ch2:L109",
+      "ch2:L112",
+      "appendices:L381",
+      "appendices:L382"
+    ],
+    "refs": [
+      [
+        "2Samuel",
+        8,
+        3
+      ]
+    ],
+    "note_ids": [
+      "2Samuel 8:3/2/0"
+    ],
+    "explanation": "The appendix includes 2 Samuel 8:3 alongside Ezekiel 9:11 in its two non-maqaf cases; chapter 2 lists only Ezekiel and totals three. The current typed target and note support the added one-ketiv/two-different-qere case. The traditional qere-only final atom can coexist with that unified classification. This resolves an internal list/count difference, not the truth of every traditional masorah catalogue."
+  },
+  {
+    "id": "NEXT-DEUT-SHEVA",
+    "title": "Deuteronomy 32:6: the incidental yod SHEVA difference is literal",
+    "status": "quotation-scope-clarified",
+    "claims": [
+      "ch3:L246"
+    ],
+    "refs": [
+      [
+        "Deuter",
+        32,
+        6
+      ]
+    ],
+    "note_ids": [
+      "Deuter 32:6/2/0"
+    ],
+    "note_excerpts": {
+      "Deuter 32:6/2/0": [
+        "ל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)"
+      ]
+    },
+    "intro_literal_excerpts": [
+      {
+        "claim": "ch3:L246",
+        "text": "[הֲ־לַיהוָה֙]"
+      }
+    ],
+    "explanation": "The two incidental meteg specimens retain quotation scope. Numbers 1:10 and 10:19 explicitly document joined/spaced Leningrad forms; whether earlier uncertainty was unwarranted cannot be dated from the cache. Deuteronomy 32:6's Leningrad quotation omits the yod SHEVA explicitly present and described in the note. The holam policy does not explain that SHEVA omission. Joining agrees; complete-quotation intent and physical truth remain open."
+  },
+  {
+    "id": "NEXT-POETIC-QUOTES",
+    "title": "Four design specimens differ from other Introduction passages",
+    "status": "internal-quotation-and-qualification-differences",
+    "claims": [
+      "ch5:L751",
+      "ch5:L753",
+      "ch5:L787"
+    ],
+    "intro_roster_items": [
+      [
+        "ch5:L751",
+        4
+      ],
+      [
+        "ch5:L753",
+        5
+      ],
+      [
+        "ch5:L787",
+        56
+      ],
+      [
+        "ch5:L787",
+        64
+      ]
+    ],
+    "refs": [
+      [
+        "Psalms",
+        6,
+        3
+      ],
+      [
+        "Proverbs",
+        8,
+        34
+      ],
+      [
+        "Psalms",
+        68,
+        18
+      ],
+      [
+        "Psalms",
+        74,
+        5
+      ]
+    ],
+    "note_ids": [
+      "Psalms 6:3/2/0",
+      "Proverbs 8:34/2/0",
+      "Psalms 68:18/2/0",
+      "Psalms 74:5/2/0"
+    ],
+    "paired_supporting_intro_excerpts": [
+      {
+        "claim": "ch5:L569",
+        "text": "#[[תהלים ו/טעמים#ו ג|ו,ג]] (א=אֻמְלָ֫ל): נקודת קמץ בלמ\"ד, במקום פתח"
+      },
+      {
+        "claim": "ch5:L656",
+        "text": "#[[משלי ח/טעמים#ח לד|ח,לד]] (א?=שֹׁמֵ֢עַֽ֫ לִ֥י* או שֹׁמֵ֢֫עַֽ לִ֥י): סימן ה\"עולה\" תלוי בין האותיות מ\"ם ועי\"ן"
+      },
+      {
+        "claim": "ch2:L334",
+        "text": "#'''במקומות שאותיות בג\"ד כפ\"ת צפויות להיות דגושות אך הן רפות.''' כגון: [[ישעיהו לד/טעמים#לד יא|ישעיהו לד,יא]] \"קַֽו־תֹֿ֖הוּ\"; [[יחזקאל כג/טעמים#כג מב|יחזקאל כג,מב]]: \"שָׁלֵ֣ו בָֿהּ֒\"; [[תהלים סח/טעמים#סח יח|תהלים סח,יח]] \"אֲדֹנָ֥י בָֿ֝֗ם\".{{הערה|שלושת התיבות הללו מפורטות ב[https://mg.alhatorah.org/Dual/Minchat_Shai/Yeshayahu/34.11#m7e0n6 הערת מנחת שי לישעיהו לד,יא]. בכל אחת מהן יש סימן רפה ברור בכתר ארם צובה ובכתי\"ל.}}"
+      },
+      {
+        "claim": "ch5:L710",
+        "text": "(א=בִּסֲבָךְ־עֵ֝ץ)"
+      }
+    ],
+    "right_label": "Doc-note and other Introduction passage",
+    "explanation": "Other Introduction passages agree with the notes for Psalm 6:3's qamats, Psalm 74:5's hataf and Psalm 68:18's rafe, while the design lists differ literally. Proverbs 8:34's other entry retains ATNAH HAFUKH and doubt; the design list uses GALGAL and a certain star. These are concrete internal quotation/qualification differences. The central design predicates agree. Complete manuscript-quotation intent and physical readings remain open; do not inflate them into four new central-feature alarms."
+  },
+  {
+    "id": "NEXT-NINE-HATAF",
+    "title": "Nine unsigled hataf entries have explicit Aleppo counterparts",
+    "status": "narrow-source-subclaim-resolved",
+    "claims": [
+      "ch5:L706",
+      "ch5:L710"
+    ],
+    "intro_roster_items": [
+      [
+        "ch5:L706",
+        16
+      ],
+      [
+        "ch5:L710",
+        75
+      ],
+      [
+        "ch5:L710",
+        76
+      ],
+      [
+        "ch5:L710",
+        125
+      ],
+      [
+        "ch5:L710",
+        126
+      ],
+      [
+        "ch5:L710",
+        127
+      ],
+      [
+        "ch5:L710",
+        128
+      ],
+      [
+        "ch5:L710",
+        136
+      ],
+      [
+        "ch5:L710",
+        156
+      ]
+    ],
+    "refs": [
+      [
+        "Ezekiel",
+        16,
+        51
+      ],
+      [
+        "Psalms",
+        83,
+        13
+      ],
+      [
+        "Psalms",
+        84,
+        5
+      ],
+      [
+        "Psalms",
+        135,
+        19
+      ],
+      [
+        "Psalms",
+        135,
+        19
+      ],
+      [
+        "Psalms",
+        135,
+        20
+      ],
+      [
+        "Psalms",
+        135,
+        20
+      ],
+      [
+        "Psalms",
+        145,
+        2
+      ],
+      [
+        "Psalms",
+        148,
+        14
+      ]
+    ],
+    "note_ids": [
+      "Ezekiel 16:51/2/0",
+      "Psalms 83:13/2/0",
+      "Psalms 84:5/2/1",
+      "Psalms 135:19/2/0",
+      "Psalms 135:19/2/1",
+      "Psalms 135:20/2/0",
+      "Psalms 135:20/2/1",
+      "Psalms 145:2/2/1",
+      "Psalms 148:14/2/0"
+    ],
+    "explanation": "Nine unsigled specimens have explicit Aleppo note counterparts, consistent with the enclosing Aleppo-or-Leningrad heading; missing item sigla are not an evidence block for those nine. Two Jeremiah qere specimens still cross notes documenting ketiv; Ezekiel 17:17's Leningrad claim lacks a matching named-L clause. Inclusion of the additional Proverbs 30:17 Leningrad hataf remains editorial."
+  },
+  {
+    "id": "NEXT-IMPLICIT-MS",
+    "title": "2 Kings 14:7 explicitly names Aleppo for the missing pashta",
+    "status": "narrow-attribution-subclaim-resolved",
+    "claims": [
+      "ch5:L412",
+      "ch5:L428"
+    ],
+    "refs": [
+      [
+        "2Kings",
+        14,
+        7
+      ]
+    ],
+    "note_ids": [
+      "2Kings 14:7/2/0"
+    ],
+    "explanation": "2 Kings 14:7's note explicitly names Aleppo for the missing additional pashta, corroborating that narrow subclaim. Its ketiv target remains unpointed, so a complete pointed Aleppo ketiv is not supplied. 2 Samuel 16:23 corroborates the gap/unpointed-qere description with unnamed manuscript wording. No corresponding note exists on the ketiv/qere target at 2 Kings 18:27. Nearby Aleppo notes cannot transfer attribution."
+  },
+  {
+    "id": "NEXT-YEAR-SCOPE",
+    "title": "Seder explanation: Hebrew-year narrative and solar-year arithmetic",
+    "status": "supported-internal-wording-tension",
+    "claims": [
+      "ch5:L799"
+    ],
+    "refs": [],
+    "note_ids": [],
+    "intro_literal_excerpts": [
+      {
+        "claim": "ch5:L799",
+        "text": "בניגוד ל'''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ג#חלוקת הסדרים בתורה|חלוקת הסדרים בתורה]]''', חלוקת הסדרים בנביאים וכתובים איננה עניינית אלא בעיקר כמותית. הסדרים אינם מתחילים בתחילת עניין בדרך כלל, וגם לא מסתיימים בסוף עניין, אלא במקומות שיש בהם דברי ברכה או נחמה או שבח לה'. הסיבה לחלוקתם של ספרי הנביאים והכתובים לסדרים אינה ידועה לנו; אמנם לפי הסבר רווח, תפקידה לסמן יחידות בשביל קריאה יומית כדי לסיים את כל המקרא בשנה אחת, כי לפי חישוב פשוט יוצא שמספר הסדרים קרוב או זהה למספר ימי החול בשנה עברית רגילה (למעט שבתות ומועדים)."
+      }
+    ],
+    "right_literal_excerpts": [
+      {
+        "claim": "ch5:L799",
+        "text": "סיכומם של ימות החול (293) וימי שבת וחג (71) הוא 364, כלומר, מנין ימיה של שנת השמש חסר יום אחד, כנגד תשעה באב, שהוא יום אסור בתלמוד תורה (קוראים בו ספר \"איכה\"); ויום זה אף הוא נקרא \"מועד\", ואין למנותו כאן בחשבון ימות החול. יוצא איפה שנקבע \"סדר\" קריאה מן התורה, הנביאים והכתובים, לכל יחיד ויחיד, לכל יום ויום מ-365 ימי השנה. וכך, כנראה, נהגו קדמונינו."
+      }
+    ],
+    "right_label": "Quotation in the same Introduction paragraph",
+    "explanation": "The narrative says an ordinary Hebrew year; the quotation explicitly calculates a 365-day solar year. Its arithmetic, 293 + 71 = 364 plus the excluded day, is internally consistent. The cache establishes the wording tension, not the historical purpose or calendar used by the seder division."
+  },
+  {
+    "id": "NEXT-ISAIAH-GROUPING",
+    "title": "Isaiah's four decisions belong to the first two types",
+    "status": "supported-internal-grouping-mismatch",
+    "claims": [
+      "ch5:L55"
+    ],
+    "refs": [],
+    "note_ids": [],
+    "right_label": "Surrounding Introduction enumeration",
+    "right_literal_excerpts": [
+      {
+        "claim": "ch5:L47",
+        "text": "#ספק קל לגבי קביעת אות אחת בכתר: \"מְרִימָ֔[י]ו\" ([[ישעיהו י/טעמים#י טו|י,טו]])."
+      },
+      {
+        "claim": "ch5:L48",
+        "text": "#ספקות בקביעת הניקוד והטעמים והגעיות בכתר (3 מקומות, שאחד מהם ספק מקף בתיבת משרת [ראו סוג 5 דוגמה ג.])."
+      },
+      {
+        "claim": "ch5:L49",
+        "text": "#מקומות חריגים בשיטת הניקוד בכתר (2 מקומות). ב[[ישעיהו יז/טעמים#יז ט|יז,ט]] א=\"מָעוּז֗וֹ\" (במקום ק=מָעוּזּ֗וֹ וכן בדפוסים [ל=מָעֻזּ֗וֹ]); ב[[ישעיהו כז/טעמים#כז ה|כז,ה]] א=\"בְּמָעוּזִ֔י\" במקום ל,ק=בְּמָעוּזִּ֔י [דפוסים=בְּמָֽעֻזִּ֔י]). מצד אחד דגש חסר הוא אחד מהסוגים של הטעויות הקלות שנפלו בכתר לעתים רחוקות למרות דייקנותו{{הערה|ראו ייבין א.5, עמ' 16-17.}}, אבל חסרונו באותה תיבה פעמיים אולי רומז על עיקרון כלשהו. מצד שני גם אם הדבר נעשה בכוונה – עדיין אין עקביות בעניין זה בכתר. והשוו: \"מָעוּזִּ֖י\" ([[שמואל ב כב/טעמים#כב לג|שמ\"ב כב לג]]), \"מָעוּזִּֽי׃\" ([[תהלים לא/טעמים#לא ה|תהלים לא,ה]]), \"מָ֝עוּזָּ֗ם\" ([[תהלים לז/טעמים#לז לט|תהלים לז,לט]]), \"מָעוּזִּי֮\" ([[תהלים מג/טעמים#מג ב|תהלים מג,ב]]), \"מָע֫וּזּ֥וֹ\" ([[תהלים נב/טעמים#נב ט|תהלים נב,ט]])."
+      }
+    ],
+    "explanation": "The five-type list assigns one case to type 1, three to type 2 and two to type 3. The first two total four; the first three total six. The following four decisions belong to the first two, while the preceding paragraph handles the last three types. This is an internal grouping-wording defect; the manuscript judgments are not reconsidered."
+  },
+  {
+    "id": "NEXT-DATE-PAIR",
+    "title": "An appendix Hebrew/Gregorian date pair denotes different years",
+    "status": "supported-incompatible-date-pair",
+    "claims": [
+      "appendices:L476"
+    ],
+    "intro_literal_excerpts": [
+      {
+        "claim": "appendices:L476",
+        "text": " של עדכונים ותיקונים (בעיקר בהערות הנוסח) הסתיים בז' טבת תשע\"ד (10.12.14)."
+      }
+    ],
+    "refs": [],
+    "note_ids": [],
+    "right_label": "Cached date pair",
+    "right_literal_excerpts": [
+      {
+        "claim": "appendices:L476",
+        "text": "ז' טבת תשע\"ד (10.12.14)"
+      }
+    ],
+    "explanation": "The local Hebrew-calendar conversion gives 2013-12-10 for 7 Tevet 5774; 2014-12-10 corresponds to 18 Kislev 5775. Both conversions round-trip. The pair is incompatible. The actual historical event date is not established, so no corrected event date is chosen."
+  },
+  {
+    "id": "NEXT-JOB-REFERENCE",
+    "title": "Job's prose reference reverses chapter and verse",
+    "status": "supported-prose-reference-error",
+    "claims": [
+      "ch1:L258"
+    ],
+    "intro_literal_excerpts": [
+      {
+        "claim": "ch1:L258",
+        "text": "לדוגמה: באיוב י,ט התיבה \"וְנִפְלָא֗וֹת\" כתובה ב[http://tanach.us/Tanach.xml?Job9:10-9:10 הקלדת וסטמינסטר] וב[https://mechon-mamre.org/c/ct/c2709.htm מכון ממרא] (נכון ליום ד' תמוז תשפ\"ב [03.07.2022]) בלי גרש מוקדם באות הראשונה. "
+      }
+    ],
+    "refs": [
+      [
+        "Job",
+        9,
+        10
+      ],
+      [
+        "Job",
+        10,
+        9
+      ]
+    ],
+    "note_ids": [],
+    "right_label": "Exact cached verse contexts",
+    "cached_contexts_as_comparison": true,
+    "supplemental_sources": [
+      {
+        "url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws/D3-Job.json#L1",
+        "label": "Job 9:10 raw cache"
+      },
+      {
+        "url": "https://he.wikisource.org/w/index.php?oldid=2988342",
+        "label": "Job 9:10 chapter revision 2988342"
+      },
+      {
+        "url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws/D3-Job.json#L1",
+        "label": "Job 10:9 raw cache"
+      },
+      {
+        "url": "https://he.wikisource.org/w/index.php?oldid=2988343",
+        "label": "Job 10:9 chapter revision 2988343"
+      }
+    ],
+    "explanation": "The named prose reference reverses chapter and verse. The quoted word and both external source paths identify Job 9:10; current raw and parsed 9:10 contain that word, while 10:9 does not. No external link was fetched. The footnote's historical transcription and manuscript claims remain unverified."
+  },
+  {
+    "id": "NEXT-WLC-VERSION",
+    "title": "A Westminster source label says 4.14; its quotation says 4.16",
+    "status": "supported-internal-version-label-mismatch",
+    "claims": [
+      "westminster-typing:L62"
+    ],
+    "refs": [],
+    "note_ids": [],
+    "right_label": "Heading in the quoted source table",
+    "right_is_latin": true,
+    "right_literal_excerpts": [
+      {
+        "claim": "westminster-typing:L66",
+        "text": "Transcription notes in the Westminster Leningrad Codex [4.16]"
+      }
+    ],
+    "explanation": "The historical versions are explicitly named. The Hebrew source label disagrees with its own quotation's version heading. Both quoted note-legend totals are arithmetically consistent: 1034 and 945. The historical 4.12/4.14 category counts do not define unique-change membership or verify manuscript interpretations. Current cached 4.22 is a different source/version; the remaining historical table units are routed with that evidence boundary."
+  }
+]

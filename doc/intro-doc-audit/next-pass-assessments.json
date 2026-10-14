@@ -1,0 +1,1980 @@
+{
+  "author": "Codex",
+  "date": "2026-10-14",
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "previous_audit_commit": "46b40fcace6382be94ebdee0fee761a349eedcaa",
+  "scope": "Incremental cached-only assessment. Local subclaims may be resolved while the enclosing uncertainty remains open. No physical manuscript, historical source-book or live-rendering verdict is inferred.",
+  "uncertainty_groups_reviewed": 24,
+  "uncertainty_groups_total": 24,
+  "assessments": [
+    {
+      "id": "SAM-21-12",
+      "status": "subset-scope-remains-open",
+      "result": "The chapter 5 quotation selects the final two ketiv atoms. The note and appendix explicitly describe Aleppo's single qere note for all three. A partial quotation can coexist with that three-atom statement; whether the chapter intends an exclusive two-atom scope remains editorial. The separately reviewed chapter 2 / two-atom appendix membership case is not a new duplicate finding.",
+      "claims": [
+        {
+          "id": "ch5:L385",
+          "text": "#[[שמואל ב כא/טעמים#כא יב|שמ\"ב כא,יב]] (א-כתיב=שָׁםָּ ה֙פְּלִשְׁתִּ֔ים): הערת קרי אחת לשתי התיבות",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 385,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L385",
+          "topic": "ch5:328"
+        },
+        {
+          "id": "appendices:L384",
+          "text": "##'''[[תבנית:מ:כו\"ק של שלוש מילים בהערה אחת]] (הערת מסורה אחת):''' [[שמואל ב כא/טעמים#כא יב|שמ\"ב כא,יב]]. שימו לב: '''[הקרי מופיע בסוגריים מרובעים]'''. למרות שאין צורך בתבנית זו כדי להציג את הטקסט כראוי במהדורה, כי ניתן להשתמש בתבנית הרגילה ([[תבנית:כו\"ק]]), השתמשנו בתבנית זו כדי לאפשר ספירת מילים אוטומטית לבדיקות והשוואות, ואת המרת הטקסט לפורמטים אחרים.",
+          "path": "in/mam-ws-intro/appendices.mediawiki",
+          "line": 384,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L384",
+          "topic": "appendices:370"
+        }
+      ],
+      "notes": [
+        {
+          "id": "2Samuel 21:12/2/0",
+          "target_node": {
+            "tmpl_name": "מ:כו״ק מיוחד",
+            "tmpl_params": {
+              "1": "תלום שם הפלשתים",
+              "2": "תְּלָא֥וּם שָׁ֙מָּה֙ פְּלִשְׁתִּ֔ים",
+              "סוג": "כו\"ק של שלוש מילים בהערה אחת"
+            }
+          },
+          "body_text": "א-כתיב=תְּלָוֻ֥֯ם שָׁםָּ֯ ה֙פְּלִשְׁתִּ֔ים\nא-קרי=<תלאום שמה פלשתים> (הערת קרי אחת לשלוש תיבות ביחד), וכך גם בכתי\"ש1. במג\"ה ציינו \"קרי וכתיב\" לכל תיבה לחוד; ואילו ברויאר הביא הערת קרי אחת לשלושת התיבות (וכך גם בקורן).\nבכתי\"ק יש שתי הערות קרי: \"תלאום\" ו\"שמה פלשתים\"; ההערה הראשונה מתייחסת לכתיב חסר אל\"ף (\"תלום\"), והשנייה לאיזו תיבה שייכת האות ה\"א (\"שמה\" לפי הקרי, \"הפלשתים\" לפי הכתיב).\nבכתי\"ל יש שתי הערות קרי: \"תלאום שמה\" ו\"פלשתים\".\nבכתבי־היד ב1,ש2 יש יש שתי הערות קרי, אחת לתיבה \"תלאום\" ואחת לתיבה \"שמה\".",
+          "path": "MAM-parsed/plus/BA-Samuel.json",
+          "json_pointer": "/book39s/1/chapters/21/12/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L16519",
+          "chapter_revision": {
+            "resolved_title": "שמואל ב כא/טעמים",
+            "page_id": 237079,
+            "requested_title": "שמואל ב_כא/טעמים",
+            "revision_id": 3010614,
+            "sha256": "b1e455272f81838e4c2098b0222c83732ab921dc308d679526236e490c9193fb"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "SUMMARY-VISIBILITY",
+      "status": "cache-implementation-resolved-live-visibility-open",
+      "result": "Summary's captured revision predates chapter 2's captured revision, but this does not date the individual sentences. Proverbs 30:19 retains both single and doubled tsinnor helper branches. The current closed projection and local wikitext handler select branch 1. Cached implementation is established; current Hebrew Wikisource visibility is outside this audit.",
+      "evidence_claims": [
+        "ch2:L422"
+      ],
+      "code_paths": [
+        "py/render_wt/render_wikitext_handlers.py"
+      ],
+      "claims": [
+        {
+          "id": "summary:L36",
+          "text": "בנוסף לתכונות הללו, הקוד של \"מקרא על־פי המסורה\" כבר מכיל יישום מלא לסימון שווא נע, דגש חזק, וטעם כפול בהברה המוטעמת בספרי אמ\"ת. מאפיינים אלה אינם מופיעים עדיין בוויקיטקסט, אך הם באים לידי ביטוי במלואם בתוך '''[https://bdenckla.github.io/phonetic-hbo/ התנ\"ך הפונטי]''' (אתר חיצוני).",
+          "path": "in/mam-ws-intro/summary.mediawiki",
+          "line": 36,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/summary.mediawiki#L36",
+          "topic": "summary:28"
+        },
+        {
+          "id": "ch2:L422",
+          "text": "'''המצב הנוכחי:''' בתשרי תשפ\"ה (2024) הסתיים ביצוע מלא של סימון כפול ל\"דחי\" ו\"צינור\" בפסוקי אמ\"ת. אין שינוי בפועל בתצוגת רוב הפסוקים, שיש בהם טעם דחי, אך ניתן לראות סימון להברה המוטעמת ב'''[https://bdenckla.github.io/phonetic-hbo/ תנ\"ך הפונטי]''' ובדפי העריכה  (בתוך [[תבנית:מ:דחי]]). לגבי טעם הצינור, שאין בו קושי, הטעם הכפול כבר מופיע במהודרתנו (ע\"י השימוש ב[[תבנית:מ:צינור]]).",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 422,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L422",
+          "topic": "ch2:392"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "PS-MAQAF-SCOPE",
+      "status": "local-membership-difference-heading-intent-open",
+      "result": "Both Psalms 66:12 and 119:90 have a space after the quoted first atom in the current raw and selected parsed text. No note addresses that boundary. This resolves current MAM membership only; whether the heading intends a strict maqaf list or broader post-stress-meteg examples, and what Aleppo has, remain open.",
+      "claims": [
+        {
+          "id": "ch2:L307",
+          "text": "אך יש תיבות שהקריאה בהן יותר מורכבת: יש בהן געיה לתיקון הקריאה, ולעתים הן מוקפות בכתר.{{הערה|ראו ייבין, כתר, יט.15-18 (עמ' 186-187).}} במקומות האלה ייתכן שהמקף המסומן בכתר יעזור לקורא, לדוגמה: \"וָ֥אֶתֵּֽן־נֶ֙זֶם֙\" ([[יחזקאל טז/טעמים#טז יב|יחזקאל טז,יב]]). להלן רשימה של כל המקומות בכ\"א הספרים שבהם מופיע מקף בתיבת משרת בכתר ובמהדורתנו: [[שופטים ח/טעמים#ח י|שופטים ח,י]] (א=שֹׁ֥לֵֽף־חָֽרֶב); [[שופטים כ/טעמים#כ ב|שופטים כ,ב]] (א=שֹׁ֥לֵֽף־חָֽרֶב); [[שופטים כ/טעמים#כ לה|שופטים כ,לה]] (א=שֹׁ֥לֵֽף־חָֽרֶב); [[שמואל ב ז/טעמים#ז ט|שמ\"ב ז,ט]] (א=וְעָשִׂ֤תִֽי־לְךָ֙); [[ישעיהו מ/טעמים#מ ז|ישעיהו מ,ז]] (א=נָ֣בֵֽל־צִ֔יץ); [[ישעיהו נט/טעמים#נט טז|ישעיהו נט,טז]] (א=וַתּ֤וֹשַֽׁע־לוֹ֙); [[ישעיהו סג/טעמים#סג ה|ישעיהו סג,ה]] (א=וַתּ֤וֹשַֽׁע־לִי֙); [[ישעיהו סו/טעמים#סו ח|ישעיהו סו,ח]] (א=אִם־יִוָּ֥לֵֽד־גּ֖וֹי); [[יחזקאל א/טעמים#א ד|יחזקאל א,ד]] (א=וְנֹ֥גַֽהּ־ל֖וֹ); [[יחזקאל טז/טעמים#טז יב|יחזקאל טז,יב]] (א=וָ֥אֶתֵּֽן־נֶ֙זֶם֙); [[דברי הימים א כא/טעמים#כא ה|דה\"א כא,ה]] (א=שֹׁ֥לֵֽף־חָֽרֶב); [[דברי הימים ב ח/טעמים#ח יא|דה\"ב ח,יא]] (א=אֲשֶׁר־בָּ֥אָֽה־אֲלֵיהֶ֖ם); [[דברי הימים ב יד/טעמים#יד ו|דה\"ב יד,ו]] (א=וַיָּ֥נַֽח־לָ֖נוּ). ובספרי אמ\"ת: [[תהלים יב/טעמים#יב ו|תהלים יב,ו]] (א=יָפִ֥יחַֽ־לֽוֹ); (ק13,גסטר1=כִּ֘י חָ֥פֵֽץ־בִּֽי׃) [[תהלים יח/טעמים#יח כ|תהלים יח,כ]];{{הערה|שם=כי חפץ בי או בו|יש כאן תופעה נדירה בשני מקומות בלבד: \"כִּ֘י '''חָ֥פֵֽץ''' בִּֽי\" ([[תהלים יח/טעמים#יח כ|תהלים יח,כ]]) ו\"כִּ֘י '''חָ֥פֵֽץ''' בּֽוֹ\" ([[תהלים כב/טעמים#כב ט|כב,ט]]). בשני המקומות נמסרה הסכמה שגם לפי בן־אשר יש צינורית בתיבת \"כִּי\" הבאה לפני תיבה שטעמה בראשה והיא משרתת לסילוק (ולכן התיבה \"כִּי\" ראויה להקפה כי [[#צינורית|צינורית היא טעם משני]], אך המקף נשמט ממנה בפועל ולא נכתב). בשאר כל המקומות תיבת \"כִּי\" מוקפת לפי בן־אשר (ואין בה שום טעם), ואילו לפי בן־נפתלי היא מוטעמת תמיד בצינורית. וראו ייבין מב.2 (עמ' 285-286). בנוסף לכך, למרות הגעיה בתיבה \"חָ֥פֵֽץ\", לא נראה שמדובר על [[#ד. תיבה הראויה להיות מוקפת: טעם בראש התיבה בהברה בלתי־מוטעמת|מרכא משני ובתיבה שהטעם העיקרי נשמט ממנה והגעיה נכתבה במקומו]], כי מרכא היא טעם משרת רגיל לפני סילוק. נראה אם כן שנכתבה הגעיה לתיקון הקריאה, ואם כן גם \"חָ֥פֵֽץ\" ראויה להקפה. לפרטים נוספים ראו ייבין: בחלק מכתבי־היד התיבה \"כִּ֘י\" או התיבה \"חָ֥פֵֽץ\" מוקפת בפועל, או שתיהן כאחת, לפי הנתונים המובאים שם. ויש להוסיף על הנתונים שהביא שגם בכתי\"ק13 ובכתב־יד גסטר הראשונה [https://ihbmr.com/manuscripts/?pageId=3963&manuscript=G&panX=0.277050760812639&panY=0.5551366584378234&zoom=3.4314471375443367&fullscreen=true כאן] ו[https://ihbmr.com/manuscripts/?pageId=3967&manuscript=G&panX=0.6999221067291568&panY=0.644316116311837&zoom=4.933285037306152&fullscreen=true כאן] התיבה \"חָ֥פֵֽץ\" מוקפת במקום השני. כתר ארם צובה לא שרד בשני המקומות, וחבל על דאבדין.}} [[תהלים כב/טעמים#כב ט|תהלים כב,ט]] (ק13,גסטר1=כִּ֘י חָ֥פֵֽץ־בּֽוֹ׃);{{הערה|שם=כי חפץ בי או בו}} [[תהלים סו/טעמים#סו יב|תהלים סו,יב]] (א=הִרְכַּ֥בְתָּֽ); [[תהלים פט/טעמים#פט כ|תהלים פט,כ]] (א=דִּבַּ֥רְתָּֽ־בְחָז֡וֹן); [[תהלים קיט/טעמים#קיט צ|תהלים קיט,צ]] (א=כּוֹנַ֥נְתָּֽ).{{הערה|בדוגמאות אלו מדובר על טעם מובהק של מרכא בהברה המוטעמת ביחד עם געיה לתיקון הקריאה, כמו בכ\"א הספרים. אך בספרי אמ\"ת בהרבה מקומות אחרים, השארנו מקפים רבים במקומות שיש לכאורה תיבת משרת, ואף הוספנו מקפים. במקומות אלה לא מדובר בטעם משרת מובהק אלא בטעם משני, ו[[#טעם משני בתיבה הראויה להיות מוקפת|התיבה ראויה להיות מוקפת]].}}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 307,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L307",
+          "topic": "ch2:299"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "IMPLICIT-MS",
+      "status": "explicit-Aleppo-subclaim-partly-resolved",
+      "result": "2 Kings 14:7's note explicitly names Aleppo for the missing additional pashta, corroborating that narrow subclaim. Its ketiv target remains unpointed, so a complete pointed Aleppo ketiv is not supplied. 2 Samuel 16:23 corroborates the gap/unpointed-qere description with unnamed manuscript wording. No corresponding note exists on the ketiv/qere target at 2 Kings 18:27. Nearby Aleppo notes cannot transfer attribution.",
+      "note_ids": [
+        "2Kings 14:7/2/0"
+      ],
+      "claims": [
+        {
+          "id": "ch5:L379",
+          "text": "#[[שמואל ב טז/טעמים#טז כג|שמ\"ב טז,כג]] (א-כתיב=יִשְׁאַל־֯ ): יש רווח צר בלבד ואין ניקוד לתיבה \"אִ֖ישׁ\" הנקראת ולא נכתבת",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 379,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L379",
+          "topic": "ch5:328"
+        },
+        {
+          "id": "ch5:L429",
+          "text": "#[[מלכים ב יח/טעמים#יח כז|מל\"ב יח,כז]] (א-כתיב=חֹרָיהָ֗ם [א-קרי=צוֹאָתָ֗ם]): השוו ישעיהו לו,יב",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 429,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L429",
+          "topic": "ch5:389"
+        },
+        {
+          "id": "ch5:L412",
+          "text": "#[[מלכים ב יד/טעמים#יד ז|מל\"ב יד,ז]] (א-כתיב=המֶלַח֙ [א-קרי=מֶלַח֙]): חסר פשטא מלעיל בניגוד לדרכו",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 412,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L412",
+          "topic": "ch5:389"
+        },
+        {
+          "id": "ch5:L428",
+          "text": "#[[מלכים ב יד/טעמים#יד ז|מל\"ב יד,ז]] (א-כתיב=-המֶלַח֙ [א-קרי=מֶלַח֙]): חסר פשטא מלעיל בניגוד לדרכו",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 428,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L428",
+          "topic": "ch5:389"
+        }
+      ],
+      "notes": [
+        {
+          "id": "2Kings 14:7/2/0",
+          "target_node": {
+            "tmpl_name": "קו״כ",
+            "tmpl_params": {
+              "1": "המלח",
+              "2": "מֶ֙לַח֙"
+            }
+          },
+          "body_text": "=ל,ק ובדפוסים\nא!=מֶלַח֙ (חסר פשטא מלעיל בניגוד לדרכו)\nהערת ברויאר",
+          "path": "MAM-parsed/plus/BC-Kings.json",
+          "json_pointer": "/book39s/1/chapters/14/7/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BC-Kings.json#L13591",
+          "chapter_revision": {
+            "resolved_title": "מלכים ב יד/טעמים",
+            "page_id": 237233,
+            "requested_title": "מלכים ב_יד/טעמים",
+            "revision_id": 3008010,
+            "sha256": "f7cd44992458e16d81b0679863e1953acdcbbd2ef3d2a7930624b3cdfedfde9c"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "GEN-36-13",
+      "status": "shared-label-anomaly-no-inter-source-contradiction",
+      "result": "Both sources encode two MUNAH marks, U+05A3, and call them merkha. This is a shared glyph/name anomaly. The cache supplies no basis to choose a corrected physical reading or an author's intended label.",
+      "claims": [
+        {
+          "id": "ch3:L797",
+          "text": "#[[בראשית לו/טעמים#לו יג|בראשית לו,יג]] (ל!=אֵ֣לֶּ֣ה): טעם מרכא פעמיים באותיות אל\"ף ולמ\"ד",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 797,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L797",
+          "topic": "ch3:760"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "PS-1-3",
+      "status": "local-presentation-drift-resolved-intent-open",
+      "result": "The chapter 2 illustration omits the grey maqaf explicitly prescribed in the same chapter and present in both raw and parsed current MAM. This is a cached policy/illustration difference. Intentional simplification versus stale illustration remains editorial; no manuscript verdict follows.",
+      "evidence_claims": [
+        "ch2:L436",
+        "ch2:L442"
+      ],
+      "claims": [
+        {
+          "id": "ch2:L980",
+          "text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת{{אתנח הפוך}}וּל עַֽל־פַּלְגֵ֫י מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה}}יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 980,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L980",
+          "topic": "ch2:915"
+        },
+        {
+          "id": "ch2:L436",
+          "text": "בכל המקומות שה\"עולה\" מסומן בתיבה שלפני תיבת ה\"יורד\", ואין טעם עצמאי בתיבת ה\"העולה\", שתי התיבות ראויות לצירוף על־ידי מקף.{{הערה|עולה ויורד מוטעם בשתי תיבות ב-55 פסוקים, שהם כ-13% מתוך 421 פסוקים המוטעמים ע\"י עולה ויורד.}} אך בכתבי־היד השמיטו את המקף בדרך כלל, כנראה כדבר המובן מאליו שאין חובה לסמן אותו. ואילו בדפוסים הנהיגו עקביות גמורה: הם הקפידו להשמיט את המקף '''תמיד''', אפילו בתיבות מוקפות שאין בהן טעם כלל. כגון: לֹ֫א לָ֥נוּ (במקום לֹ֫א־לָ֥נוּ בכתר), כֶּ֫ן ה֥וּא (במקום כֶּ֫ן־ה֥וּא בכתר). גם כתר ארם צובה השמיט את המקפים בדרך כלל (אך לא תמיד), כגון: עַֽל־פַּלְגֵ֫י מָ֥יִם ([[תהלים א/טעמים#א ג|א,ג]]) במקום עַֽל־פַּלְגֵ֫י־מָ֥יִם, אֶֽ֫ל חֹ֥ק ([[תהלים ב/טעמים#ב ז|ב,ז]]) במקום אֶֽ֫ל־חֹ֥ק (בדומה לדפוסים).{{הערה|המקף בין שתי תיבות של עולה ויורד מסומן בכתר ארם צובה בששה פסוקים (מתוך 55): [[תהלים ע/טעמים#ע ו|תהלים ע,ו]] (ח֫וּשָׁה־לִּ֥י); [[תהלים קטו/טעמים#קטו א|קטו,א]] (לֹ֫א־לָ֥נוּ); [[משלי ה/טעמים#ה יט|משלי ה,יט]] (וְֽיַעֲלַ֫ת־חֵ֥ן); [[משלי כג/טעמים#כג ז|כג,ז]] (כֶּ֫ן־ה֥וּא); [[משלי ל/טעמים#ל יז|ל,יז]] (לִֽיקְּהַ֫ת־אֵ֥ם); [[משלי ל/טעמים#ל יט|ל,יט]] (עֲלֵ֫י־צ֥וּר). הקפה בין תיבת ה\"עולה\" לתיבת היורד נמצאת לפעמים גם בכתבי־היד הקרובים לכתר, כגון [[תהלים עג/טעמים#עג כח|עג,כח]] (לִ֫י־ט֥וֹב) ו[[תהלים קמד/טעמים#קמד יג|קמד,יג]] (אֶ֫ל־זַ֥ן) בכתי\"ל; לתיאורים של כתבי־יד נוספים ראו ייבין, מט.1 עמ' 330.}} למרות שהמקף מושמט בדרך כלל, העובדה ששתי התיבות ראויות לצירוף על־ידי מקף משפיעה על עצם ניקודן, כגון: [[תהלים מ/טעמים#מ יח|תהלים מ,יח]] (א=יַֽחֲשָׁ֫ב לִ֥י); [[תהלים קמה/טעמים#קמה כא|קמה,כא]] (א=יְֽדַבֶּ֫ר פִּ֥י); [[איוב ז/טעמים#ז יא|איוב ז,יא]] (א=אֶחֱשָׂ֫ךְ פִּ֥י).",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 436,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L436",
+          "topic": "ch2:424"
+        },
+        {
+          "id": "ch2:L442",
+          "text": "'''ב. מקף בין שתי תיבות של \"עולה\" ו\"יורד\":''' שני סימנים \"עולה\" ו\"יורד\" הם בסופו של דבר טעם אחד שכוחו גדול במיוחד. כשהטעם הזה מסומן בשתי תיבות סמוכות, ואין טעם עצמאי בתיבה הראשונה, מוסכם לפי כל הדעות שמדובר על שתי תיבות הראויות לצירוף על־ידי מקף, ועובדה זו אף משפיעה על הגייתן ועל עצם ניקודן (למרות שכתבי־היד משמיטים את המקף בדרך כלל כדבר המובן מאליו). לקורא בימינו חשוב אם כן שהמקפים ביניהן יסומנו. לכן במהדורתנו סימנו אותם כדי שהקורא יבין שיש לצרף את שתי התיבות, אמנם ב{{צבע גופן|אפור|צבע אפור}} כדי שגם ידע שהמקף לא מופיע בכתב־היד.{{הערה|בששת המקומות שהמקף מסומן בכתר ארם צובה, המקף במהדורתנו יופיע בצבע רגיל. לרשימה מפורטת של כל הפסוקים ראו [[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ה#עולה ויורד|בפרק החמישי של המבוא למהדורה]].}}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 442,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L442",
+          "topic": "ch2:424"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "MAL-HOLAM",
+      "status": "central-meteg-agrees-incidental-holam-scope-open",
+      "result": "The central meteg claim agrees. The Introduction's holam differs from the explicit Aleppo quotation and absence explanation. Chapter 2 permits an edition holam; it does not explicitly authorize normalizing manuscript-labelled quotations. The quotation's intended completeness remains editorial.",
+      "evidence_claims": [
+        "ch2:L153",
+        "ch2:L157"
+      ],
+      "claims": [
+        {
+          "id": "ch5:L511",
+          "text": "#[[מלאכי ב/טעמים#ב ז|מלאכי ב,ז]] (א!=יְהֹֽוָה־צְבָא֖וֹת): געיה באות ה\"א הראשונה של שם הוי\"ה",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 511,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L511",
+          "topic": "ch5:499"
+        },
+        {
+          "id": "ch2:L153",
+          "text": "כך המצב גם בכתבי־היד הטברניים בהבדל אחד קטן: נקודת החולם חסר לרוב והם מנקדים \"יְה־וָה\" (יושם לב שאין ניקוד כלל באות ה\"א הראשונה). ראוי לציין שאף בכתבי־היד הטברניים שם הוי\"ה מנוקד לעתים רחוקות גם בחולם (ראו לדוגמה בכתי\"ל בתחילת מזמור ט\"ו בתהלים), כלומר שלא מדובר על הקפדה אלא על מנהג סופרים לוותר על ניקוד זה שטעמו אינו ידוע לנו.{{הערה|ראו ייבין (ו.9, עמ' 71-72) לתיעוד מנהגי כתבי־היד בניקוד שם הוי\"ה ושם אדנו\"ת, ולהוכחות שאכן בוטאו תנועת o בשם הוי\"ה. לדעתו של ייבין מדובר על \"נוהג, שסיבתו אינה ברורה\". ניתן אמנם להציע את ההסבר הפשוט הזה: ייתכן שבכתר ארם צובה ויתר המסרן על ניקוד החולם בשם הוי\"ה בניקוד לְעוֹלָם כדי להבליט את ההבדל בינו לבין שם הוי\"ה בניקוד אֱלֹהִים. אחרת היה נשאר רק ניקוד אחד, דהיינו קמץ (קו ונקודה) בוי\"ו מול חיריק (נקודה) בלבד להבחין ביניהם (יְה־וָה מול יְה־וִה). אמנם אם כותבים את החולם רק בניקוד אֱלֹהִים אז ההבחנה בולטת יותר: יְה־וָה מול יְהֹ־וִה. חשוב לציין שיש עוד סימנים נפוצים שהסופרים ויתרו בהם לעתים קרובות, כגון נקודותיים בסוף פסוק (ראו ייבין כא.4, עמ' 198-199). בכתי\"א מדובר על סימון שהוא מעשהו של הסופר ולא של המסרן, והסופר סימן את סוף הפסוק רק בכשליש עד מחצית הפסוקים בכ\"א הספרים (ורק בכעשירית מהם בספרי אמ\"ת). ואילו המסרן סמך על ה\"סילוק\" ולא הקפיד להשלים נקודותיים בסופי הפסוקים. בכתי\"ל סוף הפסוק מסומן לעתים בנקודה אחת בלבד או בלי שום סימן בכלל (חוץ מהסילוק). בדרך כלל לא נהוג לציין תופעות כאלו שאין בהם משמעות אף במהדורות המתועדות ע\"פ כתבי היד (כגון דותן וברויאר ומג\"ה), וגם במהדורתנו לא נציין אותם בתיעוד. אבל בהקלדת וסטמינטסר אכן יש הערה מיוחדת ל\"סוף פסוק\" חסר בכתי\"ל.}} לכן באותן מהדורות הבאות בעיקר לתעד את מנהג כתבי־היד (כגון מהדורת דותן והקלדת וסטמינסטר לגבי כתי\"ל, ו\"מקראות גדולות הכתר\" לגבי כתי\"א (ובעניין הספציפי הזה גם במהדורת \"מכון ממרא\"), מנקדים את שֵׁם הוי\"ה אמנם בלי נקודת חולם.{{הערה|יצויין שגם שם אדנו\"ת בא בדרך כלל בלי חולם בכתי\"א (\"אֲדנָי\") חוץ ממקומות בודדים (ראו בייבין). לכן ניתן להצביע על חוסר עקביות במהדורת מכון ממרא, שבה מנקדים שם אדנו\"ת בנקודת חולם (\"אֲדֹנָי\") למרות ש'''אין''' נקודה בכתי\"א, לעומת שם הוי\"ה שבו בחרו לא לנקד נקודת חולם במהדורתם (בהתאם לכתבי־היד).}}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 153,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L153",
+          "topic": "ch2:149"
+        },
+        {
+          "id": "ch2:L157",
+          "text": "מעבר לכך היה לנו גם רצון לשמור על המנהג העקבי בכתבי־היד ובדפוסים לנקד את שם הוי\"ה, כי מנהג זה מהווה איפיון בולט ומרכזי של נוסח המסורה. אמנם אם כבר מנקדים את שם הוי\"ה, ברור שעדיף בהרבה מבחינתו של הקורא שיראה בפניו את הניקוד המלא של \"לְעוֹלָם\" (כולל נקודת החולם) כמו שהוא בכל הדפסוים, בשביל לקרוא כראוי \"אֲ־דֹנָי\". לכן החלטנו לנקד את שם הוי\"ה באופן מלא, ויש בכך גם כבוד כלפי מנהג כמעט כל הדפוסים לנקד את השם בעקביות בנקודת חולם.",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 157,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L157",
+          "topic": "ch2:149"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "PS-119-138",
+      "status": "central-revia-agrees-incidental-attribution-open",
+      "result": "Both sources address the extra revia. The Introduction also has a vav meteg absent from the note's specimen, but the row has no explicit manuscript sigil for that incidental mark. Neither its Aleppo attribution nor a physical contradiction is established.",
+      "claims": [
+        {
+          "id": "ch5:L609",
+          "text": "#[[תהלים קיט/טעמים#קיט קלח|קיט,קלח]] (וֶֽאֱמוּנָ֥֗ה): נקודת רביע מיותרת באות נו\"ן בנוסף למרכא",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 609,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L609",
+          "topic": "ch5:563"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Psalms 119:138/2/0",
+          "target_node": "וֶאֱמוּנָ֥ה",
+          "body_text": "=ל,ש1 ובדפוסים (וכן הכריעו ברויאר ומג\"ה)\nא!=וֶאֱמוּנָ֥֗ה (נקודת רביע מיותרת באות נו\"ן בנוסף למרכא)",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/119/138/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L52214",
+          "chapter_revision": {
+            "resolved_title": "תהלים קיט/טעמים",
+            "page_id": 238722,
+            "requested_title": "תהלים_קיט/טעמים",
+            "revision_id": 2988271,
+            "sha256": "b588f8c0068e5e1c3580230b9b0ae6aa3710cf0afa77605b113a91300c140e92"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "PS-18-2-ATTRIBUTION",
+      "status": "external-provenance-boundary",
+      "result": "The explicit Aleppo quotation lies within the Introduction's declared missing extent. The note supports the grammatical reading from other witnesses and reading tradition. The cache contains no pre-loss Aleppo report or explanation of the sigil's intended shorthand.",
+      "claims": [
+        {
+          "id": "ch5:L625",
+          "text": "#[[תהלים יח/טעמים#יח ב|יח,ב]] (א=אֶרְחָמְךָ֖): לכאורה קמץ רחב לפני כללי הדקדוק, אבל המדקדקים הספרדים ציינו מסורת שהקמץ חטוף",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 625,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L625",
+          "topic": "ch5:563"
+        },
+        {
+          "id": "ch4:L33",
+          "text": "4. תהלים (קטע חסר): <קטע התחלה=חלק חסר בתהלים/>'''ב[[מקרא על פי המסורה/כתובים#ספר תהלים|ספר תהלים]] חסרים שני דפים בכתר ארם צובה, שהיו בהם כ-10 מזמורים.''' החלק החסר מתחיל במילים \"מִזְמ֗וֹר לְדָ֫וִ֥ד מִי־יָג֣וּר בְּאָהֳלֶ֑ךָ...\" ([[תהלים טו/טעמים#טו א|טו,א]]) ומסתיים במילים \"...לְדָוִ֡ד אֵלֶ֥יךָ יְ֝הֹוָ֗ה נַפְשִׁ֥י אֶשָּֽׂא׃\" ([[תהלים כה/טעמים#כה א|כה,א]]).<קטע סוף=חלק חסר בתהלים/>",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 33,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L33",
+          "topic": "ch4:21"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Psalms 18:2/2/0",
+          "target_node": "אֶרְחׇמְךָ֖",
+          "body_text": "מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה והתיבה הזאת ביניהם). אך המדקדקים הספרדים (ראו רד\"ק, מאירי) מציינים מסורת שהקמץ חטוף, וגם במ\"ש הביא מסורת זו למרות הסתייגות ע\"פ כללי הדקדוק (\"קבלנו קריאתו בקמץ חטוף אשר לא כדת בהיות העי\"ן גרונית\"). גם המילון של דוידזון מציין כאן קמץ קטן; והשוו תהלים פא,ח. בכתבי־היד (ל,ש1,ק13,גסטר1) אין געיה בתיבה זו והספק נשאר.",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/18/2/2/2",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L5156",
+          "chapter_revision": {
+            "resolved_title": "תהלים יח/טעמים",
+            "page_id": 238318,
+            "requested_title": "תהלים_יח/טעמים",
+            "revision_id": 3007144,
+            "sha256": "c4c108f31a9dd551b02970b98da2122a28995b7bfaca41a091c67767c47356b8"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "L-CANDIDATE-SCOPE",
+      "status": "candidate-qualifications-clarified-physical-readings-open",
+      "result": "The six clauses require separate witness/transcription scope. Deuteronomy 12:30 and Psalm 18:7 distinguish Leningrad from its digital transcription; Psalm 17:14 distinguishes Leningrad alternatives from a reading assigned elsewhere. Daniel 2:41 explicitly allows the digital merkha alternative with וגם זה אפשרי, so it must not be described as a wholly rejected transcription. Daniel 5:3 and Nehemiah 12:47 retain transcription/question qualifiers absent from the Introduction. Physical readings remain unresolved.",
+      "note_ids": [
+        "Daniel 2:41/2/1",
+        "Daniel 5:3/2/0",
+        "Nehemiah 12:47/2/0",
+        "Deuter 12:30/2/1",
+        "Psalms 17:14/2/0",
+        "Psalms 18:7/2/0"
+      ],
+      "claims": [
+        {
+          "id": "ch3:L1079",
+          "text": "#[[דברים יב/טעמים#יב ל|דברים יב,ל]] (ל?=לֵאמֹ֗ר* או לֵאמֹ֨ר): טעם רביע או טעם קדמא?{{הערה|נראה שנקודת החולם התחברה לאות מ\"ם ולכן נראית כמו קדמא.}}",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 1079,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1079",
+          "topic": "ch3:1042"
+        },
+        {
+          "id": "ch4:L514",
+          "text": "#[[תהלים יז/טעמים#יז יד|יז,יד]] (ל?=<מִ֥מְתִֽים־יָדְךָ֨ ׀>* או <מִֽמְתִ֥ים־יָדְךָ֨ ׀> או <מִֽמְתִֽים־יָדְךָ֨ ׀>): מרכא וגעיה ומקף בתיבת משרת*, או געיה ומרכא ומקף בתיבת משרת, או שתי געיות בתיבה המוקפת?",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 514,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L514",
+          "topic": "ch4:506"
+        },
+        {
+          "id": "ch4:L518",
+          "text": "#[[תהלים יח/טעמים#יח ז|יח,ז]] (ל?=אֶ֥קֲרָ֣א* או אֶֽקֲרָ֣א): מרכא ומונח* או געיה ומונח?",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 518,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L518",
+          "topic": "ch4:506"
+        },
+        {
+          "id": "ch4:L645",
+          "text": "#[[דניאל ב/טעמים#ב מא|ב,מא]] (ל?!=<דִֽי פַרְזְלָ֖א> או <דִ֥י פַרְזְלָ֖א>): חסר מקף או מרכא וטפחא (במקום דִֽי־פַרְזְלָ֖א*)?",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 645,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L645",
+          "topic": "ch4:629"
+        },
+        {
+          "id": "ch4:L659",
+          "text": "#[[דניאל ה/טעמים#ה ג|ה,ג]] (ל?=מִן־הֵֽיכְלָ֛א): געיה ותביר (במקום מרכא בתיבת תביר)?",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 659,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L659",
+          "topic": "ch4:629"
+        },
+        {
+          "id": "ch4:L734",
+          "text": "#[[נחמיה יב/טעמים#יב מז|נחמיה יב,מז]] (ל?=נֹֽתְנִ֛ים): געיה ותביר (במקום מרכא בתיבת תביר)?",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 734,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L734",
+          "topic": "ch4:698"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Daniel 2:41/2/1",
+          "target_node": "דִֽי־פַרְזְלָ֖א",
+          "body_text": "=ש1,ק-מ,ב1 ובדפוסים (וכן בברויאר ומג\"ה)\nל?=<דִֽי פַרְזְלָ֖א> (געיה וחסר מקף?) לפי הערת ברויאר במהדורת חורב, וכך נראה מעיון בכתב־היד בהגדלה.\nהקלדה=<דִ֥י פַרְזְלָ֖א> (במרכא) בעקבות BHS וגם זה אפשרי.\nהערת ברויאר (במהדורת חורב)",
+          "path": "MAM-parsed/plus/F1-Daniel.json",
+          "json_pointer": "/book39s/0/chapters/2/41/2/7",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/F1-Daniel.json#L1401",
+          "chapter_revision": {
+            "resolved_title": "דניאל ב/טעמים",
+            "page_id": 239289,
+            "requested_title": "דניאל_ב/טעמים",
+            "revision_id": 2988414,
+            "sha256": "617e32129e7b986cb20e70c1279da74cdf2528b2322ff11b35c5e1d8235a40b6"
+          }
+        },
+        {
+          "id": "Daniel 5:3/2/0",
+          "target_node": "מִן־הֵ֥יכְלָ֛א",
+          "body_text": "=ל?,ש1,ק-מ? ושיטת-א (מרכא בתיבת תביר), וכך אצל ברויאר ומג\"ה.\nל(הקלדה)?=מִן־הֵֽיכְלָ֛א (געיה ותביר)\nב1,ש2=מִן־הֵיכְלָ֛א (אין קו באות ה\"א)",
+          "path": "MAM-parsed/plus/F1-Daniel.json",
+          "json_pointer": "/book39s/0/chapters/5/3/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/F1-Daniel.json#L3594",
+          "chapter_revision": {
+            "resolved_title": "דניאל ה/טעמים",
+            "page_id": 239301,
+            "requested_title": "דניאל_ה/טעמים",
+            "revision_id": 2988417,
+            "sha256": "0100f4d7cce00d676e16ea9d8db55179e15c60c6e305821f9501a1d4ff071c02"
+          }
+        },
+        {
+          "id": "Nehemiah 12:47/2/0",
+          "target_node": "נֹ֥תְנִ֛ים",
+          "body_text": "=ש1,ק-מ?,ב1 ושיטת-א (מרכא בתיבת תביר)\nל?(הקלדה),ק-מ?=נֹֽתְנִ֛ים (געיה ותביר)",
+          "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+          "json_pointer": "/book39s/1/chapters/12/47/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/FA-Ezra-Nexemiah.json#L9730",
+          "chapter_revision": {
+            "resolved_title": "נחמיה יב/טעמים",
+            "page_id": 239419,
+            "requested_title": "נחמיה_יב/טעמים",
+            "revision_id": 2988446,
+            "sha256": "9dbfb2f17a0d57d83a03399e73bb05ea09fe96957491ed73c299b16b1c8eb3c9"
+          }
+        },
+        {
+          "id": "Deuter 12:30/2/1",
+          "target_node": "לֵאמֹ֗ר",
+          "body_text": "=ל,ש,ש1,ק3,ו,ל3,ל9 (בטעם רביע) ובדפוסים\nהקלדה!=לֵאמֹ֨ר (טעם קדמא) בעקבות BHS, אמנם בכתי\"ל נראה שנקודת החולם התחברה לאות מ\"ם ולכן נראית כמו קדמא.",
+          "path": "MAM-parsed/plus/A5-Deuter.json",
+          "json_pointer": "/book39s/0/chapters/12/30/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L6429",
+          "chapter_revision": {
+            "resolved_title": "דברים יב/טעמים",
+            "page_id": 236599,
+            "requested_title": "דברים_יב/טעמים",
+            "revision_id": 2987751,
+            "sha256": "e8270bb3128ee1a1d2557b2a9df475929f9a65309468c401738b180f5befee88"
+          }
+        },
+        {
+          "id": "Psalms 17:14/2/0",
+          "target_node": [
+            "מִ֥מְﬞתִֽים־יָדְךָ֨",
+            {
+              "tmpl_name": "מ:לגרמיה-2"
+            }
+          ],
+          "body_text": "=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכא כטעם משני: <מִ֥מֲתִֽים־יָדְךָ֨׀>.\nלגבי המרכא והגעיה ראו ברויאר, טעמי המקרא, יא.3 (עמ' 264-265): \"הטעמה מיוחדת נוהגת לפני לגרמיה המשמש בתחום שלטון פזר: מרכא משני יבוא בראש התיבה שלפני הלגרמיה – בתנאי שיש חציצה בין המרכא לבין התנועה הראויה להיות מוטעמת. המרכא המשני בא בלא טעם עיקרי, וגעיה באה במקום הטעם\" (והשוו לדוגמה להלן יט, טו). וכך הטעמים אצל ברויאר ומג\"ה, אך הם משמיטים את המקף.\nל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).\nברויאר, מקראות גדולות הכתר, סימנים, מכון ממרא",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/17/14/2/0",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L4927",
+          "chapter_revision": {
+            "resolved_title": "תהלים יז/טעמים",
+            "page_id": 238314,
+            "requested_title": "תהלים_יז/טעמים",
+            "revision_id": 2988169,
+            "sha256": "02d60f785a07ce5c64b39168f4c1a0e859ede22e9e8a922b4e9cf649268cb33e"
+          }
+        },
+        {
+          "id": "Psalms 18:7/2/0",
+          "target_node": "אֶ֥קְﬞרָ֣א",
+          "body_text": "ל,ל-א,גסטר1,שיטת-א=אֶ֥קֲרָ֣א (מרכא כטעם משני ואחריה חטף), וראו ברויאר, טעמי המקרא, עמ' 277.\nש1,ק13=אֶ֥קְרָ֣א (אין חטף) וכך אצל ברויאר ומג\"ה\nהקלדה=אֶֽקֲרָ֣א (געיה וחטף)",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/18/7/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L5280",
+          "chapter_revision": {
+            "resolved_title": "תהלים יח/טעמים",
+            "page_id": 238318,
+            "requested_title": "תהלים_יח/טעמים",
+            "revision_id": 3007144,
+            "sha256": "c4c108f31a9dd551b02970b98da2122a28995b7bfaca41a091c67767c47356b8"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "STRAND-SCOPE",
+      "status": "combined-source-marks-agree-strand-assignment-open",
+      "result": "The Leningrad note documents the combined munah/merkha form but does not assign each mark to the upper/lower reading strand. Current MAM's two selected strands do not establish Leningrad's strand assignment. Combining-codepoint order is not such evidence.",
+      "claims": [
+        {
+          "id": "ch3:L1064",
+          "text": "#[[דברים ה/טעמים#ה יג|דברים ה,יג]] ל!=(לַיהֹוָ֣֥ה): מונח לטעם העליון לפני מרכא לטעם התחתון",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 1064,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1064",
+          "topic": "ch3:1042"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "SHARED-EXPLANATIONS",
+      "status": "literal-explanation-anomalies-resolved-repair-intent-open",
+      "result": "Song of Songs 4:16's selected/candidate distinction is dagesh on zayin; lamed is undotted in both, so the Introduction's lamed explanation is locally inaccurate. Lamentations 4:7 encodes SEGOL on shin in both specimens while the prose says qamats and preserves uncertainty about close dots. The latter is a shared explanation anomaly, without an independent manuscript reading verdict.",
+      "claims": [
+        {
+          "id": "ch4:L537",
+          "text": "#[[שיר השירים ד/טעמים#ד טז|שיר השירים ד,טז]] (ל=יִזְל֣וּ): אין דגש בלמד",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 537,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L537",
+          "topic": "ch4:531"
+        },
+        {
+          "id": "ch4:L605",
+          "text": "#[[איכה ד/טעמים#ד ז|ד,ז]] (ל?!=מִשֶּׁ֔לֶג): קמץ באות שי\"ן",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 605,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L605",
+          "topic": "ch4:588"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "SPELLING-SPECIMEN-SCOPE",
+      "status": "selection-scope-clarified-complete-pointing-open",
+      "result": "Chapter 4 explicitly defines its star as the selected spelling. It does not assert complete pointing through that star alone. Nehemiah 9:37's missing second telisha and Daniel 7:15's unnamed rejected accent therefore remain incidental quotation questions; the central spelling selections agree.",
+      "evidence_claims": [
+        "ch4:L99",
+        "ch2:L169",
+        "ch2:L174"
+      ],
+      "claims": [
+        {
+          "id": "ch4:L290",
+          "text": "#<span style=\"background-color: orange\">[[נחמיה ט/טעמים#ט לז|נחמיה ט,לז]] ל=[גְּ֠וִיֹּתֵינוּ]* / [גְּ֠וִיָּתֵנוּ]</span> ([[#ספקות והכרעות קשות בקביעת נוסח האותיות והתיבות|ראו ברשימת הספקות]])",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 290,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L290",
+          "topic": "ch4:96"
+        },
+        {
+          "id": "ch4:L327",
+          "text": "##'''[[דניאל ז/טעמים#ז טו|דניאל ז,טו:]]''' ל=[בְּג֣וֹא]* / [בְּג֥וֹ]",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 327,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L327",
+          "topic": "ch4:303"
+        },
+        {
+          "id": "ch4:L331",
+          "text": "#'''[[נחמיה ט/טעמים#ט לז|נחמיה ט,לז]]''' ל=[גְּ֠וִיֹּתֵינוּ]* / [גְּ֠וִיָּתֵנוּ]{{הערה|כאן יש ניקוד שונה, והכתיב השונה בהתאם לניקוד.}}",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 331,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L331",
+          "topic": "ch4:303"
+        },
+        {
+          "id": "ch4:L99",
+          "text": "'''נוסח הכתיב בכתי\"ל:''' מובאות כאן התיבות בכתי\"ל שהכתיב שלהן ראוי לציון. הפריט הראשון בכל שורה ברשימה הוא נוסח הכתיב המתאים למסורה והמופיע במהדורתנו ואחריו כוכבית (*). הפריט השני הוא נוסח אחר של הכתיב שנדחה במהדורתנו – בדרך כלל זה נוסחו של כתי\"ל – ואחריו סימן קריאה (!) במקרים שבהם הכתיב בכתי\"ל סותר את הערות המסורה שבתוך כתי\"ל עצמו.",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 99,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L99",
+          "topic": "ch4:96"
+        },
+        {
+          "id": "ch2:L169",
+          "text": "לגבי טעמי המקרא הנכתבים רק בסוף התיבה או בראשה, ולא תמיד בהברה המוטעמת (בניגוד לרוב הטעמים), נסמן אותם פעם נוספת בעקביות בהברה המוטעמת (באות הראשונה שבה). שיטה זו של סימון נוסף של הטעם בהברה המוטעמת באופן עקבי באה לידי ביטוי במעט כתבי־יד; ואילו בכתר ארם צובה וברוב כתבי־היד והדפוסים, הסימון הכפול נוהג רק בפשטא. אמנם לעתים רחוקות גם בכתר ובכתבי־היד הקרובים אליו כתבו טעם מוכפל במקום שעלול להתעורר ספק בזיהויה של ההברה המוטעמת.{{הערה|ראו ייבין, כתר, כג.2-3 (עמ' 212-214) לגבי סימון כפול של הפשטא; כח.5 (עמ' 233-234) לגבי סימון כפול בשאר הטעמים, ורשימה מלאה של המקומות בכתר ארם צובה ובכתבי־היד הקרובים אליו.}} בעידן המודרני זכתה שיטת הסימון הכפול ליישום מלא בחומשים של היידנהיים, ובעקבותיו בספרי המקרא שהוציא יצחק בער.{{הערה|ראו '''[[ויקיטקסט:מבוא למקרא על פי המסורה/נספחים#דפוסים נפוצים (שאינם מיוסדים על כתבי־היד הטברנים)|כאן]]''' עבור קישורים לסריקות מלאות של חומשי היידנהיים וספרי המקרא של בער. וכך הביא היידנהיים ב'''משפטי הטעמים''' (רעדעלהיים תקס\"ח), [[עמוד:משפטי הטעמים רעדעלהיים תקס\"ח.pdf/33|ט\"ו ע\"א]]: \"הרבה מן הסופרים הקדמונים העמידו שני זרקות באותן התיבות שניגונם מלעיל, אחד בסוף ואחד באות הראוי להנגן, וכן עשו בתלישא, וכמו שעשו בפשטא.\" וראו עוד במאמרו של ישראל מאיר לוינגר, \"ר' וולף היידענהיים, חייו ומפעלו: תקי\"ז-תקצ\"ב\", '''המעין''' כו, א (תשמ\"ו), 16-27; ב (תשמ\"ו), 35-42 (שהצביע שם בעמ' 24 על שיטה זו בחומשים של היידנהיים).}} על פי המודל שלהם יישמו את השיטה מאוחר יותר גם במהדורת קורן (ירושלים תשכ\"ד).",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 169,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L169",
+          "topic": "ch2:167"
+        },
+        {
+          "id": "ch2:L174",
+          "text": "*'''תלישא גדולה ותלישא קטנה''' (פרשת פקודי, [[שמות לט/טעמים#לט יד|שמות לט,יד]]; [[שמות לח/טעמים#לח כה|לח,כה]]): וְ֠הָאֲבָנִ֠ים, וְאֶ֩לֶף֩.",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 174,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L174",
+          "topic": "ch2:167"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Nehemiah 9:37/2/0",
+          "target_node": "גְּ֠וִיֹּתֵ֠ינוּ",
+          "body_text": "=ל,ש1,ק13,ש2 ומסורת-ל וטברנית (יו\"ד ראשונה מנוקדת בנקודת חולם, וכתיב מלא יו\"ד בסוף), וכך הוא בשתי מהדורותיו האחרונות של ברויאר (ובסימנים) ובמג\"ה.\nק-מ,ב1=גְּ֠וִיָּתֵנוּ (יו\"ד ראשונה מנוקדת בקמץ, וכתיב חסר יו\"ד בסוף בהתאם לניקוד) וכמו כן בדפוסים וקורן (וכך גם במהדורתו הראשונה של ברויאר ובמכון ממרא)\nמ\"ג דפוס ונציה=גְּ֠וִיֹּתֵנוּ\nבתנ\"ך ליסבון הניקוד בחולם והכתיב חסר, וצוין בהערת מ\"ק: \"ל' וא' גְּוִיָּתֵנוּ\".",
+          "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+          "json_pointer": "/book39s/1/chapters/9/37/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/FA-Ezra-Nexemiah.json#L8228",
+          "chapter_revision": {
+            "resolved_title": "נחמיה ט/טעמים",
+            "page_id": 239407,
+            "requested_title": "נחמיה_ט/טעמים",
+            "revision_id": 2988443,
+            "sha256": "37dce6b884f383a1530eff7e136c249e094fe7d4aa05cdcd50a7c9d990c8fe8d"
+          }
+        },
+        {
+          "id": "Daniel 7:15/2/0",
+          "target_node": "בְּג֣וֹא",
+          "body_text": "=ל ומסורת-ל,ד (וכן בקורן) ובמג\"ה; וראו לעיל בהערה על פרק ג' פסוק כ\"ה (מחלוקת מסורה!)\nברויאר=בְּג֣וֹ\nהערת ברויאר וכן בסימנים, מכון ממרא",
+          "path": "MAM-parsed/plus/F1-Daniel.json",
+          "json_pointer": "/book39s/0/chapters/7/15/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/F1-Daniel.json#L5775",
+          "chapter_revision": {
+            "resolved_title": "דניאל ז/טעמים",
+            "page_id": 239309,
+            "requested_title": "דניאל_ז/טעמים",
+            "revision_id": 3079366,
+            "sha256": "8666620274bfba24eb81ab0b021140c3f2ddb9e8746b6823713b713dd47f6f9e"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "SPELLING-SOURCE-PRECISION",
+      "status": "local-spelling-agrees-precise-provenance-open",
+      "result": "The spelling evidence agrees, but the cache does not establish every small/large Masorah distinction, specifically small Aleppo Masorah, surprising own-Masorah-L support, or Daniel 5:16's Leningrad ketiv attribution. The sigil decoder explains surprising equality; it cannot supply the missing manuscript fact. Daniel 5:7's parallel note is not evidence for 5:16.",
+      "claims": [
+        {
+          "id": "ch4:L105",
+          "text": "#[[מלכים ב טו/טעמים#טו כה|מל\"ב טו,כה:]] [וַיְמִתֵ֖הוּ]* / ל=[וַיְמִיתֵ֖הוּ]!{{הערה|מ\"ק-ל תומכת בגירסת המסורה הברורה, אמנם במ\"ג-ל יש הערה משובשת התומכת בגירסת כתי\"ל.}}",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 105,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L105",
+          "topic": "ch4:96"
+        },
+        {
+          "id": "ch4:L113",
+          "text": "#<span style=\"background-color: orange\">[[ירמיהו לא/טעמים#לא כז|ירמיהו לא,כז:]] [וְלִנְטֹ֖עַ]*=מ\"ק-א / [וְלִנְט֖וֹעַ]=ל</span> ([[#ספקות והכרעות קשות בקביעת נוסח האותיות והתיבות|ראו ברשימת הספקות]])",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 113,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L113",
+          "topic": "ch4:96"
+        },
+        {
+          "id": "ch4:L138",
+          "text": "#[[קהלת א/טעמים#א יז|א,יז]]: [הוֹלֵלֹ֖ת]* / ל=[הוֹלֵל֖וֹת]!{{הערה|נוסח כתי\"ל לתיבה הובא ברשימות ברויאר כזהה לרוב כתבי־היד, כנראה בטעות. וראו בתיעוד הנוסח על תיבה זו.}} / דפוסים=[הֹֽלֵל֖וֹת]",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 138,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L138",
+          "topic": "ch4:96"
+        },
+        {
+          "id": "ch4:L219",
+          "text": "#<span style=\"background-color: orange\">[[דניאל ה/טעמים#ה טז|ה,טז]] ל=[וְהַֽמְונִכָ֤א כתיב, וְהַֽמְנִיכָ֤א קרי]* (ראו [[#ספקות והכרעות קשות בקביעת נוסח האותיות והתיבות|ברשימת הספקות]])</span>",
+          "path": "in/mam-ws-intro/ch4.mediawiki",
+          "line": 219,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L219",
+          "topic": "ch4:96"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "TORAH-SPELLING-SCOPE",
+      "status": "joining-and-literal-sheva-subclaims-clarified",
+      "result": "The two incidental meteg specimens retain quotation scope. Numbers 1:10 and 10:19 explicitly document joined/spaced Leningrad forms; whether earlier uncertainty was unwarranted cannot be dated from the cache. Deuteronomy 32:6's Leningrad quotation omits the yod SHEVA explicitly present and described in the note. The holam policy does not explain that SHEVA omission. Joining agrees; complete-quotation intent and physical truth remain open.",
+      "note_ids": [
+        "Deuter 32:6/2/0"
+      ],
+      "evidence_claims": [
+        "ch2:L153",
+        "ch2:L157"
+      ],
+      "claims": [
+        {
+          "id": "ch3:L193",
+          "text": "#ראה [[דברים יב/טעמים#יב כ|(יב,כ)]]: [גְּבֻֽלְךָ֮]* / ל=[גְּבֽוּלְךָ֮]!",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 193,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L193",
+          "topic": "ch3:73"
+        },
+        {
+          "id": "ch3:L201",
+          "text": "#כי־תבוא [[דברים כח/טעמים#כח מט|(כח,מט)]]: [מֵרָחֹק֙]* / ל=[מֵרָחוֹק֙]!",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 201,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L201",
+          "topic": "ch3:73"
+        },
+        {
+          "id": "ch3:L241",
+          "text": "#במדבר, במדבר [[במדבר א/טעמים#א י|(א,י)]]: [פְּדָהצֽוּר]*=ל? / ל=[פְּדָה צֽוּר]?",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 241,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L241",
+          "topic": "ch3:233"
+        },
+        {
+          "id": "ch3:L244",
+          "text": "#במדבר, בהעלֹתך [[במדבר י/טעמים#י יט|(י,יט)]]: [צוּרִֽישַׁדָּֽי]*=ל? / ל=[צוּרִֽי שַׁדָּֽי]?",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 244,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L244",
+          "topic": "ch3:233"
+        },
+        {
+          "id": "ch3:L246",
+          "text": "#דברים, האזינו [[דברים לב/טעמים#לב ו|(לב,ו)]]: [{{מ:אות-ג|הַ}} לְיְהֹוָה֙]* / א=[{{מ:אות-ג|הַ}} לְיְהוָה֙] / ל=[הֲ־לַיהוָה֙] / ספרי תימן=[{{מ:אות-ג|הַֽ}}לְיהֹוָה֙] (וראו גם ב[[#מסורת הסופרים בתורה: הערות מיוחדות|הערות מיוחדות על התורה]] וב[[#ה לה'|רשימת האותיות הגדולות]])",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 246,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L246",
+          "topic": "ch3:233"
+        },
+        {
+          "id": "ch2:L153",
+          "text": "כך המצב גם בכתבי־היד הטברניים בהבדל אחד קטן: נקודת החולם חסר לרוב והם מנקדים \"יְה־וָה\" (יושם לב שאין ניקוד כלל באות ה\"א הראשונה). ראוי לציין שאף בכתבי־היד הטברניים שם הוי\"ה מנוקד לעתים רחוקות גם בחולם (ראו לדוגמה בכתי\"ל בתחילת מזמור ט\"ו בתהלים), כלומר שלא מדובר על הקפדה אלא על מנהג סופרים לוותר על ניקוד זה שטעמו אינו ידוע לנו.{{הערה|ראו ייבין (ו.9, עמ' 71-72) לתיעוד מנהגי כתבי־היד בניקוד שם הוי\"ה ושם אדנו\"ת, ולהוכחות שאכן בוטאו תנועת o בשם הוי\"ה. לדעתו של ייבין מדובר על \"נוהג, שסיבתו אינה ברורה\". ניתן אמנם להציע את ההסבר הפשוט הזה: ייתכן שבכתר ארם צובה ויתר המסרן על ניקוד החולם בשם הוי\"ה בניקוד לְעוֹלָם כדי להבליט את ההבדל בינו לבין שם הוי\"ה בניקוד אֱלֹהִים. אחרת היה נשאר רק ניקוד אחד, דהיינו קמץ (קו ונקודה) בוי\"ו מול חיריק (נקודה) בלבד להבחין ביניהם (יְה־וָה מול יְה־וִה). אמנם אם כותבים את החולם רק בניקוד אֱלֹהִים אז ההבחנה בולטת יותר: יְה־וָה מול יְהֹ־וִה. חשוב לציין שיש עוד סימנים נפוצים שהסופרים ויתרו בהם לעתים קרובות, כגון נקודותיים בסוף פסוק (ראו ייבין כא.4, עמ' 198-199). בכתי\"א מדובר על סימון שהוא מעשהו של הסופר ולא של המסרן, והסופר סימן את סוף הפסוק רק בכשליש עד מחצית הפסוקים בכ\"א הספרים (ורק בכעשירית מהם בספרי אמ\"ת). ואילו המסרן סמך על ה\"סילוק\" ולא הקפיד להשלים נקודותיים בסופי הפסוקים. בכתי\"ל סוף הפסוק מסומן לעתים בנקודה אחת בלבד או בלי שום סימן בכלל (חוץ מהסילוק). בדרך כלל לא נהוג לציין תופעות כאלו שאין בהם משמעות אף במהדורות המתועדות ע\"פ כתבי היד (כגון דותן וברויאר ומג\"ה), וגם במהדורתנו לא נציין אותם בתיעוד. אבל בהקלדת וסטמינטסר אכן יש הערה מיוחדת ל\"סוף פסוק\" חסר בכתי\"ל.}} לכן באותן מהדורות הבאות בעיקר לתעד את מנהג כתבי־היד (כגון מהדורת דותן והקלדת וסטמינסטר לגבי כתי\"ל, ו\"מקראות גדולות הכתר\" לגבי כתי\"א (ובעניין הספציפי הזה גם במהדורת \"מכון ממרא\"), מנקדים את שֵׁם הוי\"ה אמנם בלי נקודת חולם.{{הערה|יצויין שגם שם אדנו\"ת בא בדרך כלל בלי חולם בכתי\"א (\"אֲדנָי\") חוץ ממקומות בודדים (ראו בייבין). לכן ניתן להצביע על חוסר עקביות במהדורת מכון ממרא, שבה מנקדים שם אדנו\"ת בנקודת חולם (\"אֲדֹנָי\") למרות ש'''אין''' נקודה בכתי\"א, לעומת שם הוי\"ה שבו בחרו לא לנקד נקודת חולם במהדורתם (בהתאם לכתבי־היד).}}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 153,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L153",
+          "topic": "ch2:149"
+        },
+        {
+          "id": "ch2:L157",
+          "text": "מעבר לכך היה לנו גם רצון לשמור על המנהג העקבי בכתבי־היד ובדפוסים לנקד את שם הוי\"ה, כי מנהג זה מהווה איפיון בולט ומרכזי של נוסח המסורה. אמנם אם כבר מנקדים את שם הוי\"ה, ברור שעדיף בהרבה מבחינתו של הקורא שיראה בפניו את הניקוד המלא של \"לְעוֹלָם\" (כולל נקודת החולם) כמו שהוא בכל הדפסוים, בשביל לקרוא כראוי \"אֲ־דֹנָי\". לכן החלטנו לנקד את שם הוי\"ה באופן מלא, ויש בכך גם כבוד כלפי מנהג כמעט כל הדפוסים לנקד את השם בעקביות בנקודת חולם.",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 157,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L157",
+          "topic": "ch2:149"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Deuter 32:6/2/0",
+          "target_node": {
+            "tmpl_name": "מ:הערה-2",
+            "tmpl_params": {
+              "1": [
+                {
+                  "tmpl_name": "מ:אות-מיוחדת-במילה",
+                  "tmpl_params": {
+                    "1": {
+                      "tmpl_name": "מ:אות-ג",
+                      "tmpl_params": {
+                        "1": "הַ"
+                      }
+                    },
+                    "2": "הַ",
+                    "3": "ה",
+                    "4": "ג",
+                    "5": "ה/ג"
+                  }
+                },
+                " לְיְהֹוָה֙"
+              ],
+              "2": [
+                "בספרי תימן ",
+                {
+                  "tmpl_name": "מ:אות-מיוחדת-במילה",
+                  "tmpl_params": {
+                    "1": [
+                      {
+                        "tmpl_name": "מ:אות-ג",
+                        "tmpl_params": {
+                          "1": "הַֽ"
+                        }
+                      },
+                      "לְיהֹוָה֙"
+                    ],
+                    "2": "הַֽלְיהֹוָה֙",
+                    "3": "ה.....",
+                    "4": "ג",
+                    "5": "ה/ג"
+                  }
+                },
+                " בתיבה אחת"
+              ],
+              "3": "אאא*"
+            }
+          },
+          "body_text": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד)\nל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)\nל1=הַ לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)\nש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)\nתיגאן=<הַֽלְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.\nמ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+          "path": "MAM-parsed/plus/A5-Deuter.json",
+          "json_pointer": "/book39s/0/chapters/32/6/2/0",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15539",
+          "chapter_revision": {
+            "resolved_title": "דברים לב/טעמים",
+            "page_id": 236679,
+            "requested_title": "דברים_לב/טעמים",
+            "revision_id": 3079372,
+            "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "ALEPPO-SPECIAL-SOURCE-PRECISION",
+      "status": "precise-Masorah-provenance-open",
+      "result": "Isaiah 44:14's note supplies generic Aleppo Masorah, not specifically small Masorah. Psalm 27:13's six-dot clause explicitly cites small Aleppo Masorah and LS1, not the Introduction's small-L detail. Positive source claims may coexist. Neither absence supplies a contradiction.",
+      "claims": [
+        {
+          "id": "ch5:L217",
+          "text": "#'''(ק)''' [[ישעיהו מד/טעמים#מד יד|ישעיהו (מד,יד)]]: [אֹ֖רֶ{{מ:אות-ק|ן}}]*=מ\"ק-א",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 217,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L217",
+          "topic": "ch5:208"
+        },
+        {
+          "id": "ch5:L255",
+          "text": "#[[תהלים כז/טעמים#כז יג|תהלים (כז,יג)]]: [לׅׄוּׅׄלֵׅׄ֗אׅׄ]*=א / ל=[לׅׄוּלֵׅׄ֗אׅׄ] (=מ\"ק-ל) / מ\"ס-ל=[לׅׄוּׄלֵׅׄ֗אׅׄ]",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 255,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L255",
+          "topic": "ch5:208"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "ALEPPO-SIZE-SPECIMEN-SCOPE",
+      "status": "size-selection-scope-clarified-pointing-open",
+      "result": "Chapter 5 defines its star as the size performed in MAM. All three selected sizes agree. Complete Ruth/Esther targets retain legarmeh and both Psalm 77:8 helper branches retain initial meteg; incomplete survey text must not hide those marks. Full pointing-quotation intent remains editorial.",
+      "evidence_claims": [
+        "ch5:L212"
+      ],
+      "claims": [
+        {
+          "id": "ch5:L224",
+          "text": "#'''(ג)''' [[תהלים עז/טעמים#עז ח|תהלים (עז,ח)]]: [הַ֭לְעוֹלָמִים]* / [{{מ:אות-ג|הַ֭}}לְעוֹלָמִים]",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 224,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L224",
+          "topic": "ch5:208"
+        },
+        {
+          "id": "ch5:L235",
+          "text": "#'''(ג)''' [[רות ג/טעמים#ג יג|רות (ג,יג)]]: [לִ֣י{{מ:אות-ג|נִ}}י]*",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 235,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L235",
+          "topic": "ch5:208"
+        },
+        {
+          "id": "ch5:L241",
+          "text": "#'''(ג)''' [[אסתר א/טעמים#א ו|אסתר (א,ו)]]: [{{מ:אות-ג|ח֣}}וּר]*",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 241,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L241",
+          "topic": "ch5:208"
+        },
+        {
+          "id": "ch5:L212",
+          "text": "הרשימה הבאה מכילה אוסף מקסימלי של האותיות הגדולות והקטנות בספרי הנביאים והכתובים.{{הערה|היא מבוססת בעיקר על הרשימה המובאת [http://www.jewishencyclopedia.com/articles/13809-small-and-large-letters באנציקלופדיה היהודית] (1906), וכוללת כמעט כל אות אפשרית.}} רוב האותיות ברשימה זו מופיעות גם בדפוס קורן, ולכן הן מופיעות בפועל גם במהדורתנו (ברשימה זו הן מסומנות בכוכבית).{{הערה|אותיות גדולות וקטנות שאין להן ביצוע בדפוס קורן, אבל מופיעות בכתבי־יד או בדפוסים אחרים, צוינו בתיעוד הנוסח בתור \"יש דפוסים\".}} אותיות שבאות לידי ביטוי של ממש בתוך כתבי־היד מצוינות ברשימה.",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 212,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L212",
+          "topic": "ch5:208"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "EXOD-7-13-SCOPE",
+      "status": "clause-scope-boundary",
+      "result": "The implicit leading equality includes Leningrad, while the explanatory yod-meteg witness list names other witnesses. The leading clause could assert absence of the heavy vav rather than every target mark. Neither sigil decoding nor glyph presence resolves that clause scope. The separate PATAH/meteg prose typo remains independently reviewed.",
+      "claims": [
+        {
+          "id": "ch3:L1263",
+          "text": "'''[[מקרא על פי המסורה/תורה#ספר שמות|ספר שמות]]''' (14 פריטים): [[שמות א/טעמים#א כא|א,כא]] (ל=כִּֽי־יָֽרְא֥וּ); [[שמות ה/טעמים#ה ד|ה,ד]] (ל=מִמַּֽעֲשָׂ֑יו); [[שמות ז/טעמים#ז יג|ז,יג]] (ל=וַיֶּחֱזַק֙); [[שמות ח/טעמים#ח כא|ח,כא]] (ל=לֵֽאלֹהֵיכֶ֖ם); [[שמות ט/טעמים#ט לה|ט,לה]] (ל=וַֽיֶּחֱזַק֙); [[שמות יג/טעמים#יג ה|יג,ה]] (ל=כִֽי־יְבִֽיאֲךָ֣); [[שמות יג/טעמים#יג יא|יג,יא]] (ל=כִּֽי־יְבִֽאֲךָ֤); [[שמות טו/טעמים#טו כו|טו,כו]] (ל=כָּֽל־הַמַּֽחֲלָ֞ה); [[שמות כ/טעמים#כ ג|כ,ג]] (ל=תַֽעֲשֶׂ֨ה־לְךָ֥֣); [[שמות כא/טעמים#כא יד|כא,יד]] (ל?=וְכִי־יָזִ֥ד); [[שמות כד/טעמים#כד יא|כד,יא]] (ל=וַֽיֶּחֱזוּ֙); [[שמות ל/טעמים#ל י|ל,י]] (ל=קֹֽדֶשׁ־קָֽדָשִׁ֥ים); [[שמות לב/טעמים#לב ל|לב,ל]] (ל=וַיְהִי֙); [[שמות לו/טעמים#לו יג|לו,יג]] (ל=וַֽיְהִ֥י).",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 1263,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1263",
+          "topic": "ch3:1252"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Exodus 7:13/2/0",
+          "target_node": "וַיֶּֽחֱזַק֙",
+          "body_text": "=ל,ל1,ב,ק3,ש,ו; לפי שיטת ב\"א אין געיה כבדה באות וי\"ו, לא כאן ולא להלן ט,לה (\"ויחזק לב פ' וחבירו בלא גע'\"). בכתבי־היד ב,ש,ק3,ו יש געיה קלה באות יו\"ד (וַיֶַּחֱזַק֙), וכמו כן להלן ט,לה בכתבי־היד ב,ק3,ו. וראו ייבין, יב.9 (עמ' 99), שבדוגמאות אחדות בטעם פשטא מועדפת געיה קלה מן הכבדה (כולל הדוגמה הזאת).\nש1,ל3=וַֽיֶּחֱזַק֙ (געיה כבדה באות וי\"ו כשיטת בן נפתלי), וכמו כן להלן ט,לה בכתבי־היד ל,ש,ל3.",
+          "path": "MAM-parsed/plus/A2-Exodus.json",
+          "json_pointer": "/book39s/0/chapters/7/13/2/0",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A2-Exodus.json#L2448",
+          "chapter_revision": {
+            "resolved_title": "שמות ז/טעמים",
+            "page_id": 236165,
+            "requested_title": "שמות_ז/טעמים",
+            "revision_id": 2987644,
+            "sha256": "62fe29d9bf64162cf481002bda060446c0e488fc297ec20dea33c3f495a16a33"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "HATAF-SOURCE-SCOPE",
+      "status": "nine-unsigled-Aleppo-counterparts-resolved-three-source-limits-open",
+      "result": "Nine unsigled specimens have explicit Aleppo note counterparts, consistent with the enclosing Aleppo-or-Leningrad heading; missing item sigla are not an evidence block for those nine. Two Jeremiah qere specimens still cross notes documenting ketiv; Ezekiel 17:17's Leningrad claim lacks a matching named-L clause. Inclusion of the additional Proverbs 30:17 Leningrad hataf remains editorial.",
+      "evidence_claims": [
+        "ch5:L691",
+        "ch5:L706",
+        "ch5:L710"
+      ],
+      "roster_items": [
+        [
+          "ch5:L706",
+          16
+        ],
+        [
+          "ch5:L710",
+          75
+        ],
+        [
+          "ch5:L710",
+          76
+        ],
+        [
+          "ch5:L710",
+          125
+        ],
+        [
+          "ch5:L710",
+          126
+        ],
+        [
+          "ch5:L710",
+          127
+        ],
+        [
+          "ch5:L710",
+          128
+        ],
+        [
+          "ch5:L710",
+          136
+        ],
+        [
+          "ch5:L710",
+          156
+        ]
+      ],
+      "claims": [
+        {
+          "id": "ch5:L704",
+          "text": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בירמיהו}}'''[[מקרא על פי המסורה/נביאים#ספר ירמיהו|ספר ירמיהו]]''' (37 פריטים):{{הערה|1=רשימה זו אינה כוללת את הפריט [[ירמיהו מח/טעמים#מח לב|מח,לב]] (א=מִבֲּכִ֨י), המובא ברשימות ברויאר. נראה יותר שבכתר יש כאן שווא בלבד (\"מִבְּכִ֨י\"), או שהקו של הפתח נמחק; וכך הכריעו גם ב[https://www.mgketer.org/mikra/13/48/1/mg/106 מג\"ה].}} [[ירמיהו ג/טעמים#ג כה|ג,כה]] (א=וּֽתֲכַסֵּנוּ֮); [[ירמיהו ד/טעמים#ד ז|ד,ז]] (א=מִֽסֻּבֲּכ֔וֹ); [[ירמיהו ה/טעמים#ה א|ה,א]] (א=שׁוֹטֲט֞וּ); [[ירמיהו ה/טעמים#ה ה|ה,ה]] (א=אֵֽלֲכָה־לִּ֤י); [[ירמיהו ו/טעמים#ו ו|ו,ו]] (א=סֹֽלֲלָ֑ה); [[ירמיהו ו/טעמים#ו ט|ו,ט]] (א=יְעוֹלֲל֥וּ); [[ירמיהו ו/טעמים#ו כח|ו,כח]] (א=סוֹרֲרִ֔ים); [[ירמיהו ז/טעמים#ז יא|ז,יא]] (א=הַֽמֳעָרַ֣ת [{{קו תחתי|חטף קמץ}}]); [[ירמיהו ח/טעמים#ח ה|ח,ה]] (א=שׁוֹבֲבָ֜ה); [[ירמיהו ח/טעמים#ח כג|ח,כג]] (א=חַֽלֲלֵ֥י); [[ירמיהו ט/טעמים#ט ט|ט,ט]] (א=נָדֲד֖וּ); [[ירמיהו ט/טעמים#ט טז|ט,טז]] (א=לַמְקוֹנֲנ֖וֹת); [[ירמיהו יא/טעמים#יא טו|יא,טו]] (א=הַֽמֲזִמָּ֙תָה֙); [[ירמיהו יא/טעמים#יא כא|יא,כא]] (א=הַֽמֲבַקְשִׁ֥ים); [[ירמיהו יב/טעמים#יב י|יב,י]] (א=בֹּסֲס֖וּ); [[ירמיהו יב/טעמים#יב יב|יב,יב]] (א=שֹֽׁדֲדִ֔ים); [[ירמיהו כ/טעמים#כ יז|כ,יז]] (א=לֹא־מוֹתֲתַ֖נִי); [[ירמיהו כב/טעמים#כב טו|כב,טו]] (א=הֲתִֽמֲלֹ֔ךְ); [[ירמיהו כב/טעמים#כב כ|כב,כ]] (א=וּֽצֳעָ֔קִי [{{קו תחתי|חטף קמץ}}]); [[ירמיהו כב/טעמים#כב כח|כב,כח]] (א=הֽוּטֲלוּ֙); [[ירמיהו כה/טעמים#כה לג|כה,לג]] (א=חַֽלֲלֵ֤י); [[ירמיהו כה/טעמים#כה לו|כה,לו]] (א=וִֽילֲלַ֖ת); [[ירמיהו לא/טעמים#לא לב|לא,לב]] (ל=אֶכְתֲּבֶ֑נָּה);{{הערה|1=בן־נפתלי,'''ל''',ב1=אֶכְתֲּבֶ֑נָּה (חטף פתח); בן־אשר,מ\"ש,דפוסים=אֶכְתֳּבֶ֑נָּה (חטף קמץ); ק=אֶכְתְּבֶ֑נָּה (שווא). הפריט אינו מופיע בספר החילופים מהדורת ליפשיץ; החילוף מוזכר ברד\"ק, ודבריו הובאו במ\"ש.}} [[ירמיהו לב/טעמים#לב ט|לב,ט]] (ל=וָֽאֶשְׁקֲלָה־לּוֹ֙); [[ירמיהו לג/טעמים#לג י|לג,י]] (א=הַֽנֲשַׁמּ֗וֹת); [[ירמיהו מ/טעמים#מ טו|מ,טו]] (א=אֵ֤לֲכָה); [[ירמיהו מא/טעמים#מא ה|מא,ה]] (א=וּמִתְגֹּֽדֲדִ֑ים); [[ירמיהו מד/טעמים#מד ט|מד,ט]] (א=הַֽשֲׁכַחְתֶּם֩); [[ירמיהו מו/טעמים#מו ט|מו,ט]] (א=וְהִתְהֹלֲל֣וּ); [[ירמיהו מח/טעמים#מח כ|מח,כ]] (א-קרי=וּֽזֳעָ֑קוּ [{{קו תחתי|חטף קמץ}}]);  [[ירמיהו מט/טעמים#מט ד|מט,ד]] (א=מַה־תִּתְהַֽלֲלִי֙); [[ירמיהו נ/טעמים#נ ו|נ,ו]] (א-קרי=שׁוֹבֲב֑וּם); [[ירמיהו נ/טעמים#נ י|נ,י]] (א=כָּל־שֹׁלֲלֶ֥יהָ); [[ירמיהו נא/טעמים#נא ב|נא,ב]] (א=וִיבֹקֲק֖וּ);{{הערה|שם=חסר אצל ברויאר}} [[ירמיהו נא/טעמים#נא ז|נא,ז]] (א=יִתְהֹלֲל֥וּ); [[ירמיהו נא/טעמים#נא מט|נא,מט2]] (א=חַֽלֲלֵ֥י); [[ירמיהו נא/טעמים#נא נג|נא,נג]] (א=שֹׁדֲדִ֛ים).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 704,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L704",
+          "topic": "ch5:689"
+        },
+        {
+          "id": "ch5:L706",
+          "text": "{{עוגן בשורה|חטפים באותיות לא-גרוניות ביחזקאל}}'''[[מקרא על פי המסורה/נביאים#ספר יחזקאל|ספר יחזקאל]]''' (55 פריטים): [[יחזקאל א/טעמים#א ז|א,ז]] (א=וְנֹ֣צֲצִ֔ים); [[יחזקאל ג/טעמים#ג יח|ג,יח]] (א=הָרֲשָׁעָ֖ה); [[יחזקאל ג/טעמים#ג יט|ג,יט]] (א=הָרֲשָׁעָ֑ה); [[יחזקאל ד/טעמים#ד ב|ד,ב]] (א=סֹלֲלָ֑ה); [[יחזקאל ד/טעמים#ד ט|ד,ט]] (א=תֹּאכֲלֶֽנּוּ); [[יחזקאל ד/טעמים#ד י|ד,י]] (א=תֹּאכֲלֶ֔נּוּ [1]); [[יחזקאל ד/טעמים#ד ט|ד,י]] (א=תֹּאכֲלֶֽנּוּ [2]); [[יחזקאל ד/טעמים#ד יב|ד,יב]] (א=תֹּאכֲלֶ֑נָּה); [[יחזקאל ד/טעמים#ד יב|ד,יב]] (א=בְּגֶֽלֲלֵי֙); [[יחזקאל ד/טעמים#ד טו|ד,טו]] (א=גֶּֽלֲלֵ֣י); [[יחזקאל ו/טעמים#ו ז|ו,ז]] (א=בְּתוֹכֲכֶ֑ם); [[יחזקאל ז/טעמים#ז טו|ז,טו]] (א=יֹאכֲלֶֽנּוּ); [[יחזקאל ט/טעמים#ט ח|ט,ח]] (א=וְנֵֽאשֲׁאַ֖ר); [[יחזקאל יג/טעמים#יג כ|יג,כ]] (א=מְצֹדֲד֨וֹת [1]); [[יחזקאל יג/טעמים#יג כ|יג,כ]] (א=מְצֹדֲד֥וֹת [2]); [[יחזקאל טז/טעמים#טז נא|טז,נא]] (וַתְּצַדֲּקִי֙); [[יחזקאל יז/טעמים#יז יז|יז,יז]] (ל=סֹלֲלָ֖ה); [[יחזקאל כא/טעמים#כא כז|כא,כז]] (א=סֹלֲלָ֖ה); [[יחזקאל כו/טעמים#כו ח|כו,ח]] (א=סֹֽלֲלָ֔ה); [[יחזקאל כו/טעמים#כו יב|כו,יב]] (א=וְשָׁלֲל֣וּ); [[יחזקאל כו/טעמים#כו יב|כו,יב]] (א=וּבָֽזֲזוּ֙); [[יחזקאל כו/טעמים#כו טז|כו,טז]] (א=וְשָׁמֲמ֖וּ); [[יחזקאל כו/טעמים#כו כא|כו,כא]] (א=וּֽתֲבֻקְשִׁ֗י); [[יחזקאל כז/טעמים#כז ד|כז,ד]] (א=כָּלֲל֖וּ); [[יחזקאל כז/טעמים#כז כז|כז,כז]] (א=וּבְכׇל־קֳהָלֵךְ֙ [{{קו תחתי|חטף קמץ}}]); [[יחזקאל כז/טעמים#כז לב|כז,לב]] (א=וְקוֹנֲנ֖וּ); [[יחזקאל כז/טעמים#כז לד|כז,לד]] (א=וְכׇל־קֳהָלֵ֖ךְ [{{קו תחתי|חטף קמץ}}]); [[יחזקאל כז/טעמים#כז לה|כז,לה]] (א=שָׁמֲמ֖וּ); [[יחזקאל כח/טעמים#כח ט|כח,ט]] (א=מְחַלֲלֶֽיךָ); [[יחזקאל כח/טעמים#כח טז|כח,טז]] (א=תוֹכֲךָ֛); [[יחזקאל כח/טעמים#כח יח|כח,יח]] (א=מִתּֽוֹכֲךָ֙); [[יחזקאל כח/טעמים#כח יט|כח,יט]] (א=שָׁמֲמ֖וּ); [[יחזקאל לא/טעמים#לא ד|לא,ד]] (א=רֹמֲמָ֑תְהוּ); [[יחזקאל לא/טעמים#לא ו|לא,ו]] (א=קִֽנֲנוּ֙); [[יחזקאל לב/טעמים#לב י|לב,י]] (א=בְּעוֹפֲפִ֥י); [[יחזקאל לב/טעמים#לב יב|לב,יב]] (א=וְשָֽׁדֲדוּ֙); [[יחזקאל לב/טעמים#לב טז|לב,טז]] (א=וְק֣וֹנֲנ֔וּהָ); [[יחזקאל לב/טעמים#לב כב|לב,כב]] (א=וְכָל־קֳהָלָ֔הּ [{{קו תחתי|חטף קמץ}}]); [[יחזקאל לג/טעמים#לג כח|לג,כח]] (א=וְשָׁ֥מֲמ֛וּ); [[יחזקאל לה/טעמים#לה ו|לה,ו]] (א=יִרְדֲּפֶ֑ךָ [1]); [[יחזקאל לה/טעמים#לה ו|לה,ו]] (א=יִרְדֲּפֶֽךָ [2]); [[יחזקאל לה/טעמים#לה ז|לה,ז]] (א=לְשִֽׁמֲמָ֖ה); [[יחזקאל לה/טעמים#לה ט|לה,ט]] (א=שִֽׁמֲמ֤וֹת); [[יחזקאל לה/טעמים#לה יא|לה,יא]] (א=אֶשְׁפֲּטֶֽךָ); [[יחזקאל לו/טעמים#לו ד|לו,ד]] (א=הַשֹּֽׁמֲמוֹת֙); [[יחזקאל לו/טעמים#לו לה|לו,לה]] (א=וְהַֽנֲשַׁמּ֥וֹת); [[יחזקאל לט/טעמים#לט י|לט,י]] (א=וְשָׁלֲל֣וּ); [[יחזקאל לט/טעמים#לט י|לט,י]] (א=אֶת־שֹׁלֲלֵיהֶ֗ם); [[יחזקאל לט/טעמים#לט י|לט,י]] (א=וּבָֽזֲזוּ֙); [[יחזקאל לט/טעמים#לט י|לט,י]] (א=אֶת־בֹּ֣זֲזֵיהֶ֔ם); [[יחזקאל לט/טעמים#לט כז|לט,כז]] (א=בְּשׁוֹבֲבִ֤י); [[יחזקאל מ/טעמים#מ מג|מ,מג]] (א=וְהַֽשֲׁפַתַּ֗יִם); [[יחזקאל מג/טעמים#מג י|מג,י]] (א=וּמָדֲד֖וּ); [[יחזקאל מז/טעמים#מז כב|מז,כב]] (א=בְּתוֹכֲכֶ֔ם [1]); [[יחזקאל מח/טעמים#מח יא|מח,יא]] (א=הַֽמֲקֻדָּשׁ֙).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 706,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L706",
+          "topic": "ch5:689"
+        },
+        {
+          "id": "ch5:L691",
+          "text": "להלן רשימה של '''חטפים באותיות לא גרוניות בספרי הנביאים והכתובים''' בכתר ארם צובה או בכתי\"ל. חטפים אלה באים להורות על '''הנעת השווא''', ובמקומם הוספנו במהדורתנו סימן מיוחד מעל האות השווּאה  (להסבר מפורט ראו ב'''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ב#חטפים באותיות לא גרוניות|פרק השני]]''' של המבוא למהדורתנו). לרשימה של החטפים בתורה ראו '''[[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ג#מסורת הקוראים בתורה: חטפים באותיות לא גרוניות|כאן]]'''.",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 691,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L691",
+          "topic": "ch5:689"
+        },
+        {
+          "id": "ch5:L710",
+          "text": "{{עוגן בשורה|חטפים באותיות לא-גרוניות במשלי}}'''[[מקרא על פי המסורה/כתובים#ספר תהלים|ספר תהלים]]''' (171 פריטים): [[תהלים ה/טעמים#ה ו|ה,ו]] (א=ה֭וֹלֲלִים); [[תהלים ה/טעמים#ה ט|ה,ט]] (א=שׁוֹרֲרָ֑י); [[תהלים ו/טעמים#ו ח|ו,ח]] (א=עָשֲׁשָׁ֣ה); [[תהלים ו/טעמים#ו ח|ו,ח]] (א=בְּכׇל־צוֹרֲרָֽי); [[תהלים ז/טעמים#ז ה|ז,ה]] (א=צֽוֹרֲרִ֣י); [[תהלים ז/טעמים#ז ז|ז,ז]] (א=צוֹרֲרָ֑י); [[תהלים ז/טעמים#ז ח|ז,ח]] (א=תְּסֽוֹבֲבֶ֑ךָּ); [[תהלים ח/טעמים#ח ג|ח,ג]] (א=עוֹלֲלִ֨ים ׀); [[תהלים ח/טעמים#ח ג|ח,ג]] (א=צוֹרֲרֶ֑יךָ); [[תהלים ט/טעמים#ט יד|ט,יד]] (א=חָֽנֲנֵ֬נִי); [[תהלים ט/טעמים#ט יד|ט,יד]] (א=מְ֝רוֹמֲמִ֗י); [[תהלים י/טעמים#י ה|י,ה]] (א=כׇּל־צ֝וֹרֲרָ֗יו); [[תהלים יא/טעמים#יא ב|יא,ב]] (א=כּוֹנֲנ֣וּ); [[תהלים יב/טעמים#יב ז|יב,ז]] (א=אִ֥מֲר֣וֹת); [[תהלים יד/טעמים#יד א|יד,א]] (א=הִֽשְִׁחִ֗יתוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים יד/טעמים#יד א|יד,א]] (א=הִֽתְִעִ֥יבוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים יז/טעמים#יז יד|יז,יד]] (ש1=מִ֥מֲתִֽים־יָדְךָ֨ ׀); [[תהלים יח/טעמים#יח ז|יח,ז]] (ל=אֶ֥קֲרָ֣א); [[תהלים כו/טעמים#כו ו|כו,ו]] (א=וַאֲסֹבֲבָ֖ה); [[תהלים כז/טעמים#כז ה|כז,ה]] (א=יְרוֹמֲמֵֽנִּי); [[תהלים כז/טעמים#כז יא|כז,יא]] (א=שֽׁוֹרֲרָֽי); [[תהלים לא/טעמים#לא י|לא,י]] (א=עָשֲׁשָׁ֖ה); [[תהלים לא/טעמים#לא יב|לא,יב]] לא,יב (א=מִכׇּל־צֹרֲרַ֨י); [[תהלים לא/טעמים#לא יב|לא,יב]] לא,יב (א=וְלִ֥שֲׁכֵנַ֨י ׀); [[תהלים לא/טעמים#לא יב|לא,יב]] לא,יב (א=נָדֲד֥וּ); [[תהלים לב/טעמים#לב ז|לב,ז]] (א=תְּס֖וֹבֲבֵ֣נִי); [[תהלים לב/טעמים#לב י|לב,י]] (א=יְסוֹבֲבֶֽנּוּ); [[תהלים לד/טעמים#לד א|לד,א]] (א=וַ֝יְגָרֲשֵׁ֗הוּ); [[תהלים לד/טעמים#לד ב|לד,ב]] (א=אֲבָרֲכָ֣ה); [[תהלים לד/טעמים#לד ד|לד,ד]] (א=וּנְרוֹמֲמָ֖ה); [[תהלים לה/טעמים#לה יח|לה,יח]] (א=אֲהַלֲלֶֽךָּ); [[תהלים לט/טעמים#לט יג|לט,יג]] (א?=<שִׁ֥מֳעָֽה{{מ:מקף אפור}}תְפִלָּתִ֨י ׀> [{{קו תחתי|חטף קמץ}}] או <שִׁ֥מֲעָֽה{{מ:מקף אפור}}תְפִלָּתִ֨י ׀> בחטף קמץ); [[תהלים מ/טעמים#מ יג|מ,יג]] (א=אָפֲפֽוּ־עָלַ֨י); [[תהלים מב/טעמים#מב יא|מב,יא]] (א=צוֹרֲרָ֑י);{{הערה|שם=חסר אצל ברויאר}} [[תהלים נג/טעמים#נג,ב|נג,ב]] (א=הִֽ֝שְִׁחִ֗יתוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים נג/טעמים#נג,ב|נג,ב]] (א=וְהִֽתְִעִ֥יבוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים נה/טעמים#נה,יא|נה,יא]] (א=יְסוֹבֲבֻ֥הָ); [[תהלים נה/טעמים#נה,כב|נה,כב]] (א=וּֽקֲרָב־לִ֫בּ֥וֹ); [[תהלים נו/טעמים#נו ג|נו,ג]] (א=שׁ֭וֹרֲרַי); [[תהלים נט/טעמים#נט ז|נט,ז]] (א=וִיס֥וֹבֲבוּ); [[תהלים נט/טעמים#נט טו|נט,טו]] (א=וִיס֥וֹבֲבוּ); [[תהלים ס/טעמים#ס ט|ס,ט]] (א=מְחֹֽקֲקִֽי); [[תהלים סב/טעמים#סב ד|סב,ד]] (א=תְּה֥וֹתֲת֣וּ); [[תהלים סב/טעמים#סב ה|סב,ה]] (א=יְקַֽלֲלוּ־סֶֽלָה); [[תהלים סד/טעמים#סד ט|סד,ט]] (א=יִ֝תְנֹדֲד֗וּ); [[תהלים סד/טעמים#סד יא|סד,יא]] (א=וְ֝יִתְהַלֲל֗וּ); [[תהלים סה/טעמים#סה ה|סה,ה]] (א=תִּ֥בֲחַ֣ר); [[תהלים סה/טעמים#סה י|סה,י]] (א=וַתְּשֹׁ{{גלגל}}קֲקֶ֡הָ); [[תהלים סה/טעמים#סה יא|סה,יא]] (א=תְּ֝מֹגֲגֶ֗נָּה); [[תהלים סו/טעמים#סו ז|סו,ז]] (א=הַסּוֹרֲרִ֓ים ׀); [[תהלים סו/טעמים#סו ח|סו,ח]] (א=בָּרֲכ֖וּ); [[תהלים סו/טעמים#סו יב|סו,יב]] (א=לָרֲוָיָֽה); [[תהלים סז/טעמים#סז ב|סז,ב]] (א=וִיבָרֲכֵ֑נוּ); [[תהלים סז/טעמים#סז ז|סז,ז]] (א=יְ֝בָרֲכֵ֗נוּ); [[תהלים סז/טעמים#סז ח|סז,ח]] (א=יְבָרֲכֵ֥נוּ); [[תהלים סח/טעמים#סח ז|סח,ז]] (א=ס֝וֹרֲרִ֗ים); [[תהלים סח/טעמים#סח יט|סח,יט]] (א=ס֝וֹרֲרִ֗ים); [[תהלים סח/טעמים#סח כד|סח,כד]] (א=תִּ֥מֲחַ֥ץ); [[תהלים סח/טעמים#סח כז|סח,כז]] (א=בָּרֲכ֣וּ); [[תהלים סט/טעמים#סט כ|סט,כ]] (א=כׇּל־צוֹרֲרָֽי); [[תהלים סט/טעמים#סט לא|סט,לא]] (א=אֲהַלֲלָ֣ה); [[תהלים סט/טעמים#סט לה|סט,לה]] (א=יְֽ֭הַלֲלוּהוּ); [[תהלים עב/טעמים#עב טו|עב,טו]] (א=יְבָרֲכֶֽנְהוּ); [[תהלים עג/טעמים#עג ג|עג,ג]] (א=בַּהוֹלֲלִ֑ים); [[תהלים עג/טעמים#עג כח|עג,כח]] (א=קִ֥רֲבַ֥ת); [[תהלים עד/טעמים#עד ד|עד,ד]] (א=צֹ֭רֲרֶיךָ); [[תהלים עד/טעמים#עד ה|עד,ה]] (א=בִּסֲבָךְ־עֵ֝ץ); [[תהלים עד/טעמים#עד כא|עד,כא]] (א=יְֽהַלֲל֥וּ); [[תהלים עד/טעמים#עד כג|עד,כג]] (א=צֹרֲרֶ֑יךָ); [[תהלים עה/טעמים#עה ה|עה,ה]] (א=לַ֭הוֹלֲלִים); [[תהלים עו/טעמים#עו ו|עו,ו]] (א=אֶשְׁתּֽוֹלֲל֨וּ |);{{הערה|פריט זה חסר ברשימת ברויאר, אולי בגלל שהמקום מטושטש.}} [[תהלים עו/טעמים#עו יב|עו,יב]] (א=נִ֥דֲר֣וּ); [[תהלים פ/טעמים#פ ג|פ,ג]] (א=עוֹרֲרָ֥ה); [[תהלים פ/טעמים#פ יא|פ,יא]] (א=אַֽרֲזֵי); [[תהלים פג/טעמים#פג יג|פג,יג]] (נִ֣ירֲשָׁה); [[תהלים פד/טעמים#פד ה|פד,ה]] (יְֽהַלֲל֥וּךָ); [[תהלים פז/טעמים#פז ה|פז,ה]] (א=וּ֥לֲצִיּ֨וֹן ׀); [[תהלים פז/טעמים#פז ז|פז,ז]] (א=כְּחֹלֲלִ֑ים); [[תהלים צ/טעמים#צ יז|צ,יז]] (א=כּוֹנֲנָ֥ה); [[תהלים צ/טעמים#צ יז|צ,יז]] (א=כּוֹנֲנֵֽהוּ); [[תהלים צד/טעמים#צד י|צד,י]] (א=הַֽמֲלַמֵּ֖ד); [[תהלים צו/טעמים#צו ב|צו,ב]] (א=בָּרֲכ֣וּ); [[תהלים צז/טעמים#צז ז|צז,ז]] (א=הַמִּֽתְהַלֲלִ֥ים); [[תהלים צט/טעמים#צט ה|צט,ה]] (א=רוֹמֲמ֡וּ); [[תהלים צט/טעמים#צט ט|צט,ט]] (א=רוֹמֲמ֡וּ); [[תהלים ק/טעמים#ק ד|ק,ד]] (א=בָּרֲכ֥וּ); [[תהלים קג/טעמים#קג א|קג,א]] (א=בָּרֲכִ֣י); [[תהלים קג/טעמים#קג ב|קג,ב]] (א=בָּרֲכִ֣י); [[תהלים קג/טעמים#קג כ|קג,כ]] (א=בָּרֲכ֥וּ); [[תהלים קג/טעמים#קג כא|קג,כא]] (א=בָּרֲכ֣וּ); [[תהלים קג/טעמים#קג כב|קג,כב]] (א=בָּרֲכ֤וּ); [[תהלים קג/טעמים#קג כב|קג,כב]] (א=בָּרֲכִ֥י); [[תהלים קד/טעמים#קד א|קד,א]] (א=בָּרֲכִ֥י); [[תהלים קד/טעמים#קד ג|קד,ג]] (א=הַ֥מֲקָרֶ֥ה); [[תהלים קד/טעמים#קד ג|קד,ג]] (א=הַֽ֝מֲהַלֵּ֗ךְ); [[תהלים קד/טעמים#קד י|קד,י]] (א=הַֽמֲשַׁלֵּ֣חַ); [[תהלים קד/טעמים#קד יח|קד,יח]] (א=לַֽשֲׁפַנִּֽים); [[תהלים קד/טעמים#קד לה|קד,לה]] (א=בָּרֲכִ֣י); [[תהלים קד/טעמים#קד לה|קד,לה]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קה/טעמים#קה ג|קה,ג]] (א=הִֽ֭תְהַלֲלוּ); [[תהלים קה/טעמים#קה מה|קה,מה]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קו/טעמים#קו א|קו,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קז/טעמים#קז לו|קז,לו]] (א=וַ֝יְכוֹנֲנ֗וּ); [[תהלים קז/טעמים#קז לח|קז,לח]] (א=וַיְבָרֲכֵ֣ם); [[תהלים קז/טעמים#קז מג|קז,מג]] (א=וְ֝יִתְבּוֹנֲנ֗וּ); [[תהלים קח/טעמים#קח ט|קח,ט]] (א=מְחֹקֲקִֽי); [[תהלים קט/טעמים#קט כח|קט,כח]] (א=יְקַֽלֲלוּ־הֵמָּה֮); [[תהלים קט/טעמים#קט ל|קט,ל]] (א=אֲהַלֲלֶֽנּוּ); [[תהלים קיא/טעמים#קיא א|קיא,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קיב/טעמים#קיב א|קיב,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קיג/טעמים#קיג א|קיג,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קיג/טעמים#קיג א|קיג,א]] (א=הַ֭לֲלוּ); [[תהלים קיג/טעמים#קיג א|קיג,א]] (א=הַֽ֝לֲל֗וּ); [[תהלים קיג/טעמים#קיג ט|קיג,ט]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קטו/טעמים#קטו יח|קטו,יח]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קיח/טעמים#קיח כח|קיח,כח]] (א=אֲרוֹמֲמֶֽךָּ); [[תהלים קיט/טעמים#קיט קטו|קיט,קטו]] (א=וְ֝אֶצֲּרָ֗ה); [[תהלים קיט/טעמים#קיט קעה|קיט,קעה]] (א=וּֽתְהַלֲלֶ֑ךָּ); [[תהלים קלד/טעמים#קלד א|קלד,א]] (א=בָּרֲכ֣וּ); [[תהלים קלד/טעמים#קלד ב|קלד,ב]] (א=וּ֝בָרֲכ֗וּ); [[תהלים קלה/טעמים#קלה א|קלה,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קלה/טעמים#קלה א|קלה,א]] (א=הַֽ֭לֲלוּ [1]); [[תהלים קלה/טעמים#קלה א|קלה,א]] (א=הַֽ֝לֲל֗וּ [2]); [[תהלים קלה/טעמים#קלה ג|קלה,ג]] (א=הַֽלֲלוּ־יָ֭הּ); [[תהלים קלה/טעמים#קלה יט|קלה,יט]] (בָּרֲכ֣וּ [1]); [[תהלים קלה/טעמים#קלה יט|קלה,יט]] (בָּרֲכ֥וּ [2]); [[תהלים קלה/טעמים#קלה כ|קלה,כ]] (בָּרֲכ֣וּ [1]); [[תהלים קלה/טעמים#קלה כ|קלה,כ]] (בָּרֲכ֥וּ [2]); [[תהלים קלה/טעמים#קלה כא|קלה,כא]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קלט/טעמים#קלט כא|קלט,כא]] (א=וּ֝בִתְקוֹמֲמֶ֗יךָ); [[תהלים קמ/טעמים#קמ ד|קמ,ד]] (א=שָׁ֥נֲנ֣וּ); [[תהלים קמג/טעמים#קמג יב|קמג,יב]] (א=כׇּל־צֹרֲרֵ֣י); [[תהלים קמד/טעמים#קמד א|קמד,א]] (א=הַֽמֲלַמֵּ֣ד); [[תהלים קמה/טעמים#קמה א|קמה,א]] (א=וַאֲבָרֲכָ֥ה); [[תהלים קמה/טעמים#קמה ב|קמה,ב]] (א=אֲבָרֲכֶ֑ךָּ [1]); [[תהלים קמה/טעמים#קמה ב|קמה,ב]] (וַאֲהַלֲלָ֥ה [2]); [[תהלים קמה/טעמים#קמה י|קמה,י]] (א=יְבָרֲכֽוּכָה); [[תהלים קמו/טעמים#קמו א|קמו,א]] (א=הַֽלֲלוּ־יָ֡הּ); [[תהלים קמו/טעמים#קמו א|קמו,א]] (א=הַֽלֲלִ֥י); [[תהלים קמו/טעמים#קמו ב|קמו,ב]] (א=אֲהַלֲלָ֣ה); [[תהלים קמו/טעמים#קמו י|קמו,י]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קמז/טעמים#קמז א|קמז,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קמז/טעמים#קמז ח|קמז,ח]] (א=הַֽמֲכַסֶּ֬ה); [[תהלים קמז/טעמים#קמז יב|קמז,יב]] (א=הַֽלֲלִ֖י); [[תהלים קמז/טעמים#קמז כ|קמז,כ]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קמח/טעמים#קמח א|קמח,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קמח/טעמים#קמח א|קמח,א]] (א=הַֽלֲל֣וּ); [[תהלים קמח/טעמים#קמח א|קמח,א]] (א=הַֽ֝לֲל֗וּהוּ); [[תהלים קמח/טעמים#קמח ב|קמח,ב]] (א=הַֽלֲל֥וּהוּ [1]); [[תהלים קמח/טעמים#קמח ג|קמח,ג]] (א=הַֽ֭לֲלוּהוּ [1]); [[תהלים קמח/טעמים#קמח ג|קמח,ג]] (א=הַֽ֝לֲל֗וּהוּ [2]); [[תהלים קמח/טעמים#קמח ד|קמח,ד]] (א=הַֽ֭לֲלוּהוּ); [[תהלים קמח/טעמים#קמח ה|קמח,ה]] (א=יְֽ֭הַלֲלוּ); [[תהלים קמח/טעמים#קמח ז|קמח,ז]] (א=הַֽלֲל֣וּ); [[תהלים קמח/טעמים#קמח יג|קמח,יג]] (א=<יְהַלֲל֤וּ ׀>); [[תהלים קמח/טעמים#קמח יד|קמח,יד]] (הַֽלֲלוּ־יָֽהּ); [[תהלים קמט/טעמים#קמט א|קמט,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קמט/טעמים#קמט ג|קמט,ג]] (א=יְהַלֲל֣וּ); [[תהלים קמט/טעמים#קמט ו|קמט,ו]] (א=רוֹמֲמ֣וֹת); [[תהלים קמט/טעמים#קמט ט|קמט,ט]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קנ/טעמים#קנ א|קנ,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קנ/טעמים#קנ א|קנ,א]] (א=הַֽלֲלוּ־אֵ֥ל); [[תהלים קנ/טעמים#קנ א|קנ,א]] (א=הַֽ֝לֲל֗וּהוּ); [[תהלים קנ/טעמים#קנ ב|קנ,ב]] (א=הַלֲל֥וּהוּ [1]); [[תהלים קנ/טעמים#קנ ב|קנ,ב]] (א=הַ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ג|קנ,ג]] (א=הַ֭לְלוּהוּ [1]); [[תהלים קנ/טעמים#קנ ג|קנ,ג]] (א=הַ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ד|קנ,ד]] (א=הַ֭לֲלוּהוּ [1]); [[תהלים קנ/טעמים#קנ ד|קנ,ד]] (א=הַֽ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ה|קנ,ה]] (א=הַלֲל֥וּהוּ [1]); [[תהלים קנ/טעמים#קנ ה|קנ,ה]] (א=הַֽ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ו|קנ,ו]] (א=הַֽלֲלוּ־יָֽהּ).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 710,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L710",
+          "topic": "ch5:689"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Jeremiah 48:20/2/0",
+          "target_node": {
+            "tmpl_name": "מ:כו״ק מיוחד",
+            "tmpl_params": {
+              "1": "הילילי וזעקי",
+              "2": [
+                "הֵילִ֣ילוּ",
+                {
+                  "tmpl_name": "מ:פסק"
+                },
+                "וּֽזְﬞעָ֑קוּ"
+              ],
+              "סוג": "כו\"ק של שתי מילים בהערה אחת"
+            }
+          },
+          "body_text": "א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)",
+          "path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "json_pointer": "/book39s/0/chapters/48/20/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14105",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו מח/טעמים",
+            "page_id": 237758,
+            "requested_title": "ירמיהו_מח/טעמים",
+            "revision_id": 3087505,
+            "sha256": "1df616cb1811f0b00bd083394ceb2e911820ae8416ec27b408da6da52c06d751"
+          }
+        },
+        {
+          "id": "Jeremiah 50:6/2/0",
+          "target_node": {
+            "tmpl_name": "כו״ק",
+            "tmpl_params": {
+              "1": "שובבים",
+              "2": "שׁוֹבְﬞב֑וּם"
+            }
+          },
+          "body_text": "א-כתיב=שׁוֹבֲב֑יּם (חטף)",
+          "path": "MAM-parsed/plus/C2-Jeremiah.json",
+          "json_pointer": "/book39s/0/chapters/50/6/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C2-Jeremiah.json#L14980",
+          "chapter_revision": {
+            "resolved_title": "ירמיהו נ/טעמים",
+            "page_id": 237766,
+            "requested_title": "ירמיהו_נ/טעמים",
+            "revision_id": 2988034,
+            "sha256": "69ed774aa54b077b49f6b3665f905fec76427588301aa76fb57a7eb68ec45a54"
+          }
+        },
+        {
+          "id": "Ezekiel 17:17/2/0",
+          "target_node": "סֹלְﬞלָ֖ה",
+          "body_text": "א=סֹלֲלָ֖ה (חטף)",
+          "path": "MAM-parsed/plus/C3-Ezekiel.json",
+          "json_pointer": "/book39s/0/chapters/17/17/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C3-Ezekiel.json#L4421",
+          "chapter_revision": {
+            "resolved_title": "יחזקאל יז/טעמים",
+            "page_id": 237842,
+            "requested_title": "יחזקאל_יז/טעמים",
+            "revision_id": 2988053,
+            "sha256": "8f3c39d370a13d729d44c3f3ced56783b2f354f410f08c84cf58a8d92bdfe285"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "SEDER-DESCRIPTION-STRENGTH",
+      "status": "description-strength-resolved-Dotan-intent-open",
+      "result": "Both sources omit the seder from selected MAM and describe Leningrad's internal mark without a list entry. The Introduction hedges its explanation with כנראה but calls Dotan's mark an error; the note preserves doubt. Dotan's source and intended brackets remain outside this cache.",
+      "claims": [
+        {
+          "id": "ch3:L1405",
+          "text": "*בספר דברים (בנוסף על כ\"ז סדרים): ואתחנן=ד*, ראה=יא*, שֹפטים=טו*,{{הערה|יש לסמן עוד מקום בפרשת שֹפטים בכתי\"ל, דהיינו [[דברים כ א]], בו מסומן סדר נוסף בכתב היד (לכאורה \"טו**\"). אבל סימון זה כנראה בטעות הוא, שהרי אינו מובא ברשימת הסדרים בכתי\"ל עצמו וגם לא בספר החילופים (דותן ציין אותו כטעות {ס}). במהדורתנו לא תייגנו אותו ב[[תבנית:מ:סדר]] אבל הערנו עליו בהערת נוסח.}} כי־תצא=טז*.",
+          "path": "in/mam-ws-intro/ch3.mediawiki",
+          "line": 1405,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1405",
+          "topic": "ch3:1392"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Deuter 20:1/1/0",
+          "target_node": {
+            "tmpl_name": "מ:פסוק",
+            "tmpl_params": {
+              "1": "דברים",
+              "2": "כ",
+              "3": "א"
+            }
+          },
+          "body_text": "בכתי\"ל יש כאן סימן של תחילת סדר (טו**), אמנם הוא חסר ברשימת קס\"ז הסדרים בתורה שבסוף התורה בכתי\"ל (היה צריך לבוא שם אחרי מספר י\"ח), וגם חסר ברשימה שבספר החילופים. דותן הביא אותו בסוגריים כסדר מסופק: {ס}. וייתכן שהסדר צויין כאן בטעות בגלל הפסוק הדומה בסדר שמתחיל בראש פרשת \"כי תצא\".",
+          "path": "MAM-parsed/plus/A5-Deuter.json",
+          "json_pointer": "/book39s/0/chapters/20/1/1/0",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L8841",
+          "chapter_revision": {
+            "resolved_title": "דברים כ/טעמים",
+            "page_id": 236631,
+            "requested_title": "דברים_כ/טעמים",
+            "revision_id": 2987759,
+            "sha256": "db517c9180af18db138caf3bc1f15fd3bc25ae906c3b7e7bea8c7b8a5ace1383"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "POETIC-CENSUS-SCOPE",
+      "status": "current-memberships-and-55-roster-resolved-historical-totals-open",
+      "result": "Current MAM has 4465 poetic verses, 2679 DEHI verses and 423 OLEH verses. The current closed MAM-simple disjunctive extractor independently reproduces both memberships; helper/qamats alternatives preserve them. A complete atom-stream predicate partitions the 423 OLEH cases into 368 same-atom and 55 two-atom cases, with zero unmatched cases. All 55 current two-atom verse memberships match the Introduction's three lists exactly: 38 joined by maqaf, 17 spaced. The Introduction's 2685/421 totals still lack a cached source-membership/counting contract. Current cached WLC does not reproduce those totals; its limited scanner recovery is not a complete grammatical census.",
+      "evidence_claims": [
+        "ch5:L749",
+        "ch5:L751",
+        "ch5:L753",
+        "ch5:L755"
+      ],
+      "claims": [
+        {
+          "id": "ch2:L394",
+          "text": "'''הצורך:''' בטעמי אמ\"ת יש טעם מפסיק אחד שנכתב תמיד בתחילת התיבה מימין לאות הראשונה (טעם ה'''דחי'''), וטעם מפסיק אחד שנכתב תמיד בסופה משמאל לאות האחרונה (טעם ה'''צינור''').{{הערה|יש להבדיל בין טעם ה'''צינור''' שהוא טעם מפסיק, לבין טעם ה'''צינורית''' שהוא טעם מחבר ומשני. הצינור נכתב תמיד בסוף התיבה משמאל לאות האחרונה, ואילו הצינורית נכתבת תמיד על גבי אות אחת בתחילת התיבה או באמצעה (והיא יושבת על גבי האות שלה באמצעה). בתור טעם משני, הצינורית תמיד נכתבת ביחד עם עוד טעם, שהוא הטעם העיקרי באותה תיבה או בתיבות מוקפות. ראו לדוגמה [[משלי ל/טעמים#ל לג|משלי ל,לג]] (\"י֘וֹצִ֤יא\"). וראו עוד להלן, [[#צינורית|\"צינורית\"]].}} אין ספק שסימון נוסף של הדחי והצינור בהברה המוטעמת יועיל לקורא בספרי אמ\"ת, [[#טעם כפול בהברה המוטעמת|בדיוק כמו בכ\"א הספרים]]. ואכן בקצת מהפסוקים בכתר שיש בהם טעם הדחי, בתיבות מסוימות שעשוי להתעורר בהן ספק באיתור הטעם בתיבה, יש סימון בכתר של ההברה המוטעמת ע\"י קו קטן שנראה כמו געיה או מרכא;{{הערה|לדעתו של ייבין, מדובר על קווים הדומים למרכא בכתר ובכתבי־היד הקרובים, וכך הדפיס אותם ברויאר במהדורותיו האחרונות (כגון ע֭וּרָ֥ה ב[[תהלים נז/טעמים#נז ט|נז,ט]]). אך דותן ומג\"ה הכריעו שקו כזה הוא געיה, וכך הדפיס אותם אף ברויאר במהדורתו הראשונה (כגון ע֭וּרָֽה). וכך נראה גם לנו באופן כללי, ולכן הבאנו את הקווים האלה במהדורתנו כגעיות. ייבין הביא את דבריו של חיבור מסורה קדום: \"אלא שקצת הסופרים מביאים תחת אות הטעם במקומות הקשים את מקלו בצורת המרכא '''ואינו מרכא''', אל כדי שייוודע שהוא האות המוטעמת...\" (ההדגשה אינה במקור). ייבין הציע שם גם סיבה שלא כתבו סימן מאונך כגעיה אלא נטוי לצד שמאל כמרכא: כדי שהקורא לא יחשוב שמדובר בהטעמה מלעיל ומדובר בגעיה לאחר הטעם (המצויה לעתים בכתר). מציאות זו לגבי הקווים הנדירים ממילא בהברה המוטעמת מחלישה את הטיעון שבגלל התקדים לכאורה בכתבי־היד, יש לסמן אותה בקו של געיה דווקא, ולא על ידי הכפלת הטעם (ראו על כך להלן).}} מדובר על 9 מקומות בלבד בכתר, מתוך 2685 פסוקי אמ\"ת המוטעמים בטעם הדחי.{{הערה|תשעת המקומות בכתר הם: ק֭וּמָֽה (תהלים [[תהלים מד/טעמים#מד כז|מד,כז]]), ע֭וּרָֽה ([[תהלים נז/טעמים#נז ט|נז,ט]]; [[תהלים קח/טעמים#קח ג|קח,ג]]), יִ֭מָּחֽוּ ([[תהלים סט/טעמים#סט כט|סט,כט]]), צָ֭רָתִֽי ([[תהלים פו/טעמים#פו ז|פו,ז]]), קָ֭רָֽאתִי ([[תהלים קלח/טעמים#קלח ג|קלח,ג]]), אָ֭נָֽה ([[תהלים קלט/טעמים#קלט ז|קלט,ז]]), אֹ֭כֵֽל ([[משלי יג/טעמים#יג כה|משלי יג,כה]]), אָ֭נֹכִֽי ([[איוב כט/טעמים#כט טז|איוב כט,טז]]). רוב הדוגמאות שבכתבי־היד הקרובים הם באותם פסוקים; ראו ייבין, מד.1, עמ' 301-302.}} בכתבי־היד הקרובים לכתר קיימת תופעה דומה באותם פסוקים או בקצת פסוקים אחרים. ובדומה לכך לגבי צינור: בכתבי־היד הקרובים לכתר עשוי לבוא טעם כפול בהברה המוטעמת כדי להורות על מקום הטעם במקום שאפשר לטעות בו,{{הערה|ראו ייבין, המסורה למקרא, 328 (עמ' 195). לגבי צינור הכפילו בכתבי־היד את הטעם עצמו, ולא כתבו געיה במקומו.}} כגון: שַׁ֮תּוּ֮ ([[תהלים מט/טעמים#מט טו|תהלים מט,טו]]).{{הערה|הטעם הכפול מצוי בתיבה זו בשני כתבי־יד הקרובים לכתר ארם צובה: '''ק13''' ו'''ת'''. כפילת הטעם צינור באה בעקביות בכתבי־יד שנכתבו בניקוד טברני מורחב, כגון בחלק מכתבי־יד האשכנזים והאיטלקים. ראו לדוגמה את [https://digi.vatlib.it/view/MSS_Urb.ebr.2/0687 כת\"י וטיקן Urb.ebr.2] ואת [https://archive.org/details/state-library-of-berlin-ms.-or.-fol.-1213-erfurt-3-images/page/n681/mode/1up?view=theater כת\"י ארפורט 3], בהם נכתב טעם כפול של צינור בתיבה שַׁ֮תּוּ֮ (אמנם בשני השי\"ן קמוצה והתי\"ו דגושה!). באותם עמודים בשני כתבי־היד ניתן לראות כמה דוגמאות של הטעם דחי, שנכתבו בצורת '''תביר''' בהברה המוטעמת (אם ההברה המוטעמת אינה בראש התיבה); ראו על כך ייבין, המסורה למקרא, 327 (עמ' 195). לדוגמה נוספת של סימון צינור ודחי באותם שני כתבי־יד, ראו [[תהלים יח/טעמים#יח מד|תהלים יח,מד-מט]]: [https://digi.vatlib.it/view/MSS_Urb.ebr.2/0676 כאן] ו[https://archive.org/details/state-library-of-berlin-ms.-or.-fol.-1213-erfurt-3-images/page/n669/mode/1up?view=theater כאן]. }}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 394,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L394",
+          "topic": "ch2:392"
+        },
+        {
+          "id": "ch2:L426",
+          "text": "'''עולה ויורד''' הוא טעם המחלק את התחום השלם של הפסוק, בתוך פסוקים ארוכים או מורכבים בספרי אמ\"ת. אמנם רוב פסוקי אמ\"ת נחלקים ע\"י אתנחתא, כמו בכ\"א הספרים. אך אם החלק השני של הפסוק ארוך, אז הפסוק השלם יתחלק בדרך כלל על ידי עולה ויורד, ולשמאלו יתחלק שוב בחלוקה משנית על ידי אתנחתא.{{הערה|מתוך 4465 פסוקי אמ\"ת, רק 421 מתחלקים בחלוקה ראשית ע\"י עולה ויורד (כ-9.4%).}} בכך גדול כוחו של עולה ויורד מכוחו של אתנחתא.",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 426,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L426",
+          "topic": "ch2:424"
+        },
+        {
+          "id": "ch2:L436",
+          "text": "בכל המקומות שה\"עולה\" מסומן בתיבה שלפני תיבת ה\"יורד\", ואין טעם עצמאי בתיבת ה\"העולה\", שתי התיבות ראויות לצירוף על־ידי מקף.{{הערה|עולה ויורד מוטעם בשתי תיבות ב-55 פסוקים, שהם כ-13% מתוך 421 פסוקים המוטעמים ע\"י עולה ויורד.}} אך בכתבי־היד השמיטו את המקף בדרך כלל, כנראה כדבר המובן מאליו שאין חובה לסמן אותו. ואילו בדפוסים הנהיגו עקביות גמורה: הם הקפידו להשמיט את המקף '''תמיד''', אפילו בתיבות מוקפות שאין בהן טעם כלל. כגון: לֹ֫א לָ֥נוּ (במקום לֹ֫א־לָ֥נוּ בכתר), כֶּ֫ן ה֥וּא (במקום כֶּ֫ן־ה֥וּא בכתר). גם כתר ארם צובה השמיט את המקפים בדרך כלל (אך לא תמיד), כגון: עַֽל־פַּלְגֵ֫י מָ֥יִם ([[תהלים א/טעמים#א ג|א,ג]]) במקום עַֽל־פַּלְגֵ֫י־מָ֥יִם, אֶֽ֫ל חֹ֥ק ([[תהלים ב/טעמים#ב ז|ב,ז]]) במקום אֶֽ֫ל־חֹ֥ק (בדומה לדפוסים).{{הערה|המקף בין שתי תיבות של עולה ויורד מסומן בכתר ארם צובה בששה פסוקים (מתוך 55): [[תהלים ע/טעמים#ע ו|תהלים ע,ו]] (ח֫וּשָׁה־לִּ֥י); [[תהלים קטו/טעמים#קטו א|קטו,א]] (לֹ֫א־לָ֥נוּ); [[משלי ה/טעמים#ה יט|משלי ה,יט]] (וְֽיַעֲלַ֫ת־חֵ֥ן); [[משלי כג/טעמים#כג ז|כג,ז]] (כֶּ֫ן־ה֥וּא); [[משלי ל/טעמים#ל יז|ל,יז]] (לִֽיקְּהַ֫ת־אֵ֥ם); [[משלי ל/טעמים#ל יט|ל,יט]] (עֲלֵ֫י־צ֥וּר). הקפה בין תיבת ה\"עולה\" לתיבת היורד נמצאת לפעמים גם בכתבי־היד הקרובים לכתר, כגון [[תהלים עג/טעמים#עג כח|עג,כח]] (לִ֫י־ט֥וֹב) ו[[תהלים קמד/טעמים#קמד יג|קמד,יג]] (אֶ֫ל־זַ֥ן) בכתי\"ל; לתיאורים של כתבי־יד נוספים ראו ייבין, מט.1 עמ' 330.}} למרות שהמקף מושמט בדרך כלל, העובדה ששתי התיבות ראויות לצירוף על־ידי מקף משפיעה על עצם ניקודן, כגון: [[תהלים מ/טעמים#מ יח|תהלים מ,יח]] (א=יַֽחֲשָׁ֫ב לִ֥י); [[תהלים קמה/טעמים#קמה כא|קמה,כא]] (א=יְֽדַבֶּ֫ר פִּ֥י); [[איוב ז/טעמים#ז יא|איוב ז,יא]] (א=אֶחֱשָׂ֫ךְ פִּ֥י).",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 436,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L436",
+          "topic": "ch2:424"
+        },
+        {
+          "id": "ch5:L749",
+          "text": "'''ב. מקף בין שתי תיבות של \"עולה\" ו\"יורד\":''' להלן רשימה של כל פסוקי אמ\"ת (סה\"כ 55) שבהם ה\"עולה\" וה\"יורד\" באות בשתי תיבות סמוכות. אם אין בתיבת ה\"עולה\" טעם עצמאי, אז סימנו מקף בין תיבת ה\"עולה\" לתיבת ה\"יורד\", בהתאם למדיניות העיצוב שקבענו [[ויקיטקסט:מבוא למקרא על פי המסורה/פרק ב#עולה ויורד|בפרק השני של המבוא למהדורתנו]]. ואם יש טעם עצמאי בתיבת ה\"עולה\", והיא לא ראויה אם כן להיות מוקפת, אז מהדורתנו זהה לנוסח הכתר (בלי מקף) וסימנו את הדוגמה בכוכבית. ברשימה מובא נוסחו של כתר ארם צובה, שבדרך כלל משמיט את המקף;{{הערה| במקום אחד שבו הכתר לא קיים (תהלים יח,מד) הבאנו ברשימה את נוסחו של כתי\"ל, שגם בו המקף מושמט בדרך כלל.}} דוגמאות יוצאות מן הכלל שבהן המקף מסומן בכתר '''מודגשות''', והן מופיעות במהדורתנו כמקפים רגילים. ואילו בשאר המקומות (שבהם אין טעם עצמאי בתיבת ה\"עולה\" אך המקף מושמט בכתר ארם צובה) סימנו את המקף ב{{צבע גופן|אפור|צבע אפור}} במהדורתנו.{{הערה|השתמשנו לשם כך ב[[תבנית:מ:מקף אפור]].}}",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 749,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L749",
+          "topic": "ch5:737"
+        },
+        {
+          "id": "ch5:L751",
+          "text": ":'''[[מקרא על פי המסורה/כתובים#ספר תהלים|תהלים:]]''' [[תהלים א/טעמים#א ג|א,ג]] (א{{=}}עַֽל־פַּלְגֵ֫י מָ֥יִם); [[תהלים ב/טעמים#ב ז|ב,ז]] (א{{=}}אֶֽ֫ל חֹ֥ק); [[תהלים ד/טעמים#ד ז|ד,ז]] (א*{{=}}מִֽי־יַרְאֵ֢נוּ֫ ט֥וֹב); [[תהלים ו/טעמים#ו ג|ו,ג]] (א{{=}}אֻמְלַ֫ל אָ֥נִי); [[תהלים ח/טעמים#ח ג|ח,ג]] (א*{{=}}יִסַּ֢דְתָּ֫ עֹ֥ז); [[תהלים יד/טעמים#יד ד|יד,ד]] (א*{{=}}כׇּל־פֹּ֢עֲלֵ֫י אָ֥וֶן); [[תהלים יח/טעמים#יח מד|יח,מד]] (ל*{{=}}מֵרִ֢יבֵ֫י עָ֥ם); [[תהלים כח/טעמים#כח ג|כח,ג]] (א*{{=}}וְעִם־פֹּ֢עֲלֵ֫י אָ֥וֶן); [[תהלים ל/טעמים#ל ח|ל,ח]] (א{{=}}לְֽהַרְרִ֫י עֹ֥ז); [[תהלים ל/טעמים#ל י|ל,י]] (א{{=}}אֶ֫ל שָׁ֥חַת); [[תהלים לא/טעמים#לא י|לא,י]] (א{{=}}צַ֫ר לִ֥י); [[תהלים לא/טעמים#לא יט|לא,יט]] (א{{=}}שִׂפְתֵ֫י שָׁ֥קֶר); [[תהלים לא/טעמים#לא כא|לא,כא]] (א{{=}}מֵרֻכְסֵ֫י אִ֥ישׁ); [[תהלים לז/טעמים#לז ז|לז,ז]] (א*{{=}}וְהִתְח֢וֹלֵֽ֫ל ל֥וֹ); [[תהלים מ/טעמים#מ יח|מ,יח]] (א{{=}}יַֽחֲשָׁ֫ב לִ֥י); [[תהלים מד/טעמים#מד ד|מד,ד]] (א*{{=}}לֹא־הוֹשִׁ֢יעָ֫ה לָּ֥מוֹ); [[תהלים מה/טעמים#מה ח|מה,ח]] (א{{=}}וַתִּשְׂנָ֫א רֶ֥שַׁע); [[תהלים נג/טעמים#נג ה|נג,ה]] (א*{{=}}פֹּ֤עֲלֵ֫י אָ֥וֶן); [[תהלים נג/טעמים#נג ו|נג,ו]] (א*{{=}}לֹא־הָ֢יָה֫ פָ֥חַד); [[תהלים נו/טעמים#נו ט|נו,ט]] (א*{{=}}סָפַ֢רְתָּ֫ה אָ֥תָּה); [[תהלים סב/טעמים#סב י|סב,י]] (א{{=}}בְּנֵ֫י אִ֥ישׁ); [[תהלים ע/טעמים#ע ו|ע,ו]] ('''א{{=}}ח֫וּשָׁה־לִּ֥י'''); [[תהלים עג/טעמים#עג כח|עג,כח]] (א{{=}}לִ֫י ט֥וֹב); [[תהלים פ/טעמים#פ טו|פ,טו]] (א{{=}}שֽׁ֫וּב נָ֥א); [[תהלים פח/טעמים#פח א|פח,א]] (א{{=}}לִבְנֵ֫י קֹ֥רַח); [[תהלים פח/טעמים#פח י|פח,י]] (א{{=}}מִנִּ֫י עֹ֥נִי); [[תהלים צז/טעמים#צז י|צז,י]] (א{{=}}שִׂנְא֫וּ רָ֥ע); [[תהלים קב/טעמים#קב ג|קב,ג]] (א{{=}}צַ֫ר לִ֥י); [[תהלים קטו/טעמים#קטו א|קטו,א]] ('''א=לֹ֫א־לָ֥נוּ'''); [[תהלים קיח/טעמים#קיח כז|קיח,כז]] (א*{{=}}וַיָּ֢אֶ֫ר לָ֥נוּ); [[תהלים קמב/טעמים#קמב ז|קמב,ז]] (א*{{=}}כִּֽי־דַלּ֢וֹתִ֫י מְאֹ֥ד); [[תהלים קמד/טעמים#קמד ב|תהלים קמד,ב]] (א{{=}}וּֽמְפַלְטִ֫י לִ֥י); [[תהלים קמד/טעמים#קמד יג|תהלים קמד,יג]] (א{{=}}אֶ֫ל זַ֥ן); [[תהלים קמה/טעמים#קמה כא|קמה,כא]] (א{{=}}יְֽדַבֶּ֫ר פִּ֥י).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 751,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L751",
+          "topic": "ch5:737"
+        },
+        {
+          "id": "ch5:L753",
+          "text": ":'''[[מקרא על פי המסורה/כתובים#ספר משלי|משלי:]]''' [[משלי א/טעמים#א כב|א,כב]] (א{{=}}תְּֽאֵהֲב֫וּ פֶ֥תִי); [[משלי ה/טעמים#ה יט|ה,יט]] ('''א=וְֽיַעֲלַ֫ת־חֵ֥ן'''); [[משלי ו/טעמים#ו כו|ו,כו]] (א{{=}}עַֽד־כִּכַּ֫ר לָ֥חֶם); [[משלי ח/טעמים#ח יג|ח,יג]] (א{{=}}שְֽׂנֹ֫את רָ֥ע); [[משלי ח/טעמים#ח לד|ח,לד]] (א*{{=}}שֹׁמֵ֪עַֽ֫ לִ֥י); [[משלי כג/טעמים#כג ז|כג,ז]] ('''א=כֶּ֫ן־ה֥וּא'''); [[משלי כד/טעמים#כד יב|כד,יב]] (א*{{=}}לֹֽא־יָדַ֢עְנ֫וּ זֶ֥ה); [[משלי כה/טעמים#כה ז|כה,ז]] (א{{=}}עֲֽלֵ֫ה הֵ֥נָּה); [[משלי ל/טעמים#ל טז|ל,טז]] (א*{{=}}וְעֹ֢צֶ֫ר רָ֥חַם); [[משלי ל/טעמים#ל יז|ל,יז]] ('''א=לִֽיקְּהַ֫ת־אֵ֥ם'''); [[משלי ל/טעמים#ל יט|ל,יט]] ('''א=עֲלֵ֫י־צ֥וּר''').",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 753,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L753",
+          "topic": "ch5:737"
+        },
+        {
+          "id": "ch5:L755",
+          "text": ":'''[[מקרא על פי המסורה/כתובים#ספר איוב|איוב:]]''' [[איוב ג/טעמים#ג ד|ג,ד]] (א{{=}}יְֽהִ֫י חֹ֥שֶׁךְ); [[איוב ג/טעמים#ג ו|ג,ו]] (א*{{=}}יִקָּחֵ֢ה֫וּ אֹ֥פֶל); [[איוב ז/טעמים#ז יא|ז,יא]] (א{{=}}אֶחֱשָׂ֫ךְ פִּ֥י); [[איוב כא/טעמים#כא לג|כא,לג]] (א{{=}}רִגְבֵ֫י נָ֥חַל); [[איוב כד/טעמים#כד יג|כד,יג]] (א{{=}}בְּֽמֹרְדֵ֫י א֥וֹר); [[איוב לב/טעמים#לב ב|לב,ב]] (א*{{=}}מִמִּשְׁפַּ֢חַ֫ת רָ֥ם); [[איוב לג/טעמים#לג ט|לג,ט]] (א{{=}}בְּֽלִ֫י פָ֥שַׁע); [[איוב לד/טעמים#לד י|לד,י]] (א{{=}}שִׁמְע֫וּ לִ֥י); [[איוב לז/טעמים#לז ו|לז,ו]] (א{{=}}הֱוֵ֫א אָ֥רֶץ); [[איוב מב/טעמים#מב ג|מב,ג]] (א{{=}}בְּֽלִ֫י דָ֥עַת).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 755,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L755",
+          "topic": "ch5:737"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "LEGARMEH-LIST-SCOPE",
+      "status": "locator-resolution-count-corrected-historical-population-open",
+      "result": "Only two of the six existing main targets lacking selected legarmeh are resolved by wrong-reference correction: 2 Samuel 15:2 to 15:30 and Song 3:3 to Ruth 3:3. Song 3:13 to Ruth 3:13 repairs a nonexistent target and is not a third of those six. Four existing selected absences remain: 1 Samuel 11:9, 11:12; Zechariah 10:12; 1 Chronicles 18:10. The historical Wick population and physical witnesses remain unverified. This corrects the maintained research explanation, not Scripture input.",
+      "claims": [
+        {
+          "id": "ch2:L221",
+          "text": "#'''מונח וקו מאונך הסמוכים לרביע הם תמיד מונח לגרמיה, ואף פָּסֵק הראוי לבוא מיד לפני רביע מתחלף בלגרמיה; חוץ ממקום אחד בלבד בכל המקרא.''' המקום היחיד הוא [[ישעיהו מב/טעמים#מב ה|ישעיהו מב,ה]] (\"הָאֵ֣ל ׀ יְהֹוָ֗ה\"). העדות המפורשת של המסורה קובעת: \"ולעולם לא תמצא פסק לפני רביע כי אם במקום אחד, והוא כֹּה־אָמַ֞ר הָאֵ֣ל ׀ יְהֹוָ֗ה בּוֹרֵ֤א [הַ]שָּׁמַ֙יִם֙\" ([[עמוד:משפטי הטעמים רעדעלהיים תקס\"ח.pdf/18|משפטי הטעמים ז' ע\"ב]]). הַפָּסֵק בַּפָּסוּק בישעיהו מודגש במסורה במקומות נוספים,{{הערה|ב[https://manuscripts.sefaria.org/leningrad-color/BIB_LENCDX_F236A.jpg כתי\"ל] יש עליו ציון מפורש \"פ֗ס֗ק֗\"; ובכתר ארם צובה יש בו הערת מסורה \"ב֗\" שמשווה אותו לַפָּסֵק הברור בביטוי הזהה ב[[תהלים פה/טעמים#פה ט|תהלים פה,ט]] (וגם שם אותה הערה). לגבי רשימת הפסק בכתי\"ל, שבה הפסוק הזה נעדר, ראו את רשימת הַפָּסֵק של ויקס [https://archive.org/details/treatiseonacce00wick/page/128/mode/1up עמ' 128 הערה 20]; רשימת הַפָּסֵק בכתי\"ל לישעיהו משובשת היא, וברשימות אחרות הפסוק מופיע.}} ובפסוקים האחרים שיש בהם מונח וקו מאונך הסמוכים לרביע יש ציונים של \"לגרמיה\".{{הערה|ראו את [https://archive.org/details/treatiseonacce00wick/page/129/mode/1up רשימת ויקס של לגרמיה הסמוך לרביע], שהיא \"רשימה מוסמכת למדי\" לדעתו של ייבין, המסורה למקרא, 308 (עמ' 179). גם ברויאר ערך רשימה כזו, שבה הוא מקטלג את כל המקומות לפי סוגים (טעמי המקרא, ו.11 (עמ' 137-140). וגם [https://archive.org/details/Ginsburg_The-Massorah-Compiled-from-Manuscripts_1880-1905/page/n632/mode/1up?view=theater רשימת גינצבורג] של כל לגרמיה במקרא כוללת את הלגרמיה הסמוך לרביע. להלן רשימה של לגרמיה הסמוך לרביע, המבוססת בעיקר על רשימתו של ויקס: '''בראשית''' [[בראשית ג/טעמים#ג טו|ג,טו]]; [[בראשית יז/טעמים#יז יד|יז,יד]]; [[בראשית כג/טעמים#כג ו|כג,ו]]; [[בראשית כט/טעמים#כט ט|כט,ט2]]; [[בראשית מה/טעמים#מה ה|מה,ה]]; '''שמות''' [[שמות ל/טעמים#ל יג|ל,יג]]; '''במדבר''' [[במדבר ז/טעמים#ז יג|ז,יג2]] ,[[במדבר ז/טעמים#ז יט|יט2]], וכו'; [[במדבר כ/טעמים#י כט|י,כט]]; [[במדבר כ/טעמים#י לה|י,לה2]]; [[במדבר כ/טעמים#כ כא|כ,כא]]; '''דברים''' [[דברים א/טעמים#א לג|א,לג2]]; [[דברים ה/טעמים#ה ד|ה,ד]]; [[דברים ה/טעמים#ה כא|ה,כא2]] (אצל ויקס רשום בטעות כב2); [[דברים לב/טעמים#לב לט|לב,לט]]; '''יהושע''' [[יהושע ה/טעמים#ה יד|ה,יד]]; [[יהושע ט/טעמים#ט יב|ט,יב]]; [[יהושע טו/טעמים#טו יח|טו,יח]] (ויקס השמיט את הפסוק הזה לאור הפסוק המקביל ב[[שופטים א/טעמים#א יד|שופטים א,יד]] אבל הקו נמצא בכתר ארם צובה); '''שופטים''' [[שופטים יא/טעמים#יא מ|יא,מ]]; [[שופטים טז/טעמים#טז ב|טז,ב]]; [[שופטים יח/טעמים#יח ז|יח,ז2]]; [[שופטים כ/טעמים#כ כח|כ,כח]]; '''שמואל''' {{קו תחתי|שמ\"א}} [[שמואל א יא/טעמים#יא ט|יא,ט]]; [[שמואל א יא/טעמים#יא יב|יא,יב2]]; [[שמואל א טז/טעמים#טז ה|טז,ה]]; [[שמואל א טז/טעמים#טז ז|טז,ז2]]; [[שמואל א כ/טעמים#כ כה|כ,כה]]; [[שמואל א כו/טעמים#כו טז|כו,טז2]]; {{קו תחתי|שמ\"ב}} [[שמואל ב יב/טעמים#יב כג|יב,כג]]; [[שמואל ב טו/טעמים#טו כ|טו,כ]]; [[שמואל ב טו/טעמים#טו ב|טו,ל]]; '''מלכים''' {{קו תחתי|מל\"א}} [[מלכים א ו/טעמים#ו כט|ו,כט]]; [[מלכים א ז/טעמים#ז כג|ז,כג2]]; [[מלכים ב יט/טעמים#יט ד|יט,ד2]]; {{קו תחתי|מל\"ב}} [[מלכים ב ב/טעמים#ב יב|ב,יב]]; [[מלכים ב ה/טעמים#ה כב|ה,כב]]; [[מלכים ב כה/טעמים#כה טז|כה,טז]]; '''ישעיהו''' [[ישעיהו ט/טעמים#ט טז|ט,טז]]; [[ישעיהו יט/טעמים#יט טז|יט,טז2]]; [[ישעיהו כא/טעמים#כא ח|כא,ח2]]; [[ישעיהו כב/טעמים#כב ב|כב,ב]]; [[ישעיהו כב/טעמים#כב יא|כב,יא]]; [[ישעיהו מט/טעמים#מט כא|מט,כא2]]; '''ירמיהו''' [[ירמיהו נ/טעמים#נ לד|נ,לד]]; [[ירמיהו נב/טעמים#נב כ|נב,כ]]; '''יחזקאל''' [[יחזקאל כד/טעמים#כד יז|כד,יז]]; [[יחזקאל לה/טעמים#לה יב|לה,יב]]; '''זכריה''' [[זכריה א/טעמים#א ח|א,ח]]; [[זכריה ו/טעמים#ו טו|ו,טו]]; [[זכריה י/טעמים#י יב|י,יב2]]; '''שיר השירים''' [[שיר השירים ד/טעמים#ד יד|ד,יד]]; [[שיר השירים ח/טעמים#ח יד|ח,יד]]; '''רות''' [[רות א/טעמים#א יג|א,יג]]; [[שיר השירים ג/טעמים#ג ג|ג,ג]]; [[שיר השירים ג/טעמים#ג יג|ג,יג]]; '''קהלת''' [[קהלת ט/טעמים#ט ג|ט,ג]]; '''דניאל''' [[דניאל ד/טעמים#ד טו|ד,טו2]]; '''נחמיה''' [[נחמיה ב/טעמים#ב יב|ב,יב]]; '''דברי הימים''' {{קו תחתי|דה\"א}} [[דברי הימים א ג/טעמים#ג א|ג,א2]]; [[דברי הימים א יח/טעמים#יח י|יח,י]]; {{קו תחתי|דה\"ב}} [[דברי הימים ב ד/טעמים#ד ב|ד,ב2]]; [[דברי הימים ב כא/טעמים#כא יט|כא,יט]]. בשני מקומות ברשימתו של ויקס אין קו של לגרמיה בכתבי־היד (כתי\"א וכתי\"ל), אבל יש לגרמיה בחלק מהדפוסים: [[מלכים ב יז/טעמים#יז לו|מל\"ב יז,לו]] (ליסר, לטריס, בער, קורן); [[ירמיהו כ/טעמים#כ ד|ירמיהו כ,ד]] (ליסר, לטריס). בנוסף השמיט ויקס מרשימתו את שלושת הפסוקים הבאים (ראו שם הערה 27): [[ישעיהו ז/טעמים#ז כה|ישעיהו ז,כה]] (בער); [[דניאל יא/טעמים#יא ו|דניאל יא,ו]] (כתבי־יד שונים); [[דברי הימים ב יח/טעמים#יח ג|דה\"ב יח,ג]] (כתבי־יד שונים).}}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 221,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L221",
+          "topic": "ch2:209"
+        }
+      ],
+      "notes": [],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "ISA-44-24-KETIV-MAQAF",
+      "status": "literal-glyph-prose-mismatch-resolved-separator-intent-open",
+      "result": "The maqaf is present in both raw and parsed Leningrad ketiv quotations; it is not introduced by the parser. The accompanying prose says no maqaf and the underlying ketiv is unpointed מי אתי with a single qere. Whether the quoted separator reconstructs display or is an error remains unresolved.",
+      "claims": [
+        {
+          "id": "ch5:L50",
+          "text": "#חריגים בניקודו של ה\"כתיב\" (4 מקומות): \"עֲנִוִים֙\" (עֲנִיִּים֙ קרי; [[ישעיהו לב/טעמים#לב ז|לב,ז]]), \"חֹראָיהָ֗ם\" (צוֹאָתָ֗ם קרי; [[ישעיהו לו/טעמים#לו יב|לו,יב]]), \"אֵאֵ֥ שַׁיְנֵיהֶ֖ם\" ([מֵימֵ֥י] רַגְלֵיהֶ֖ם קרי; [[ישעיהו לו/טעמים#לו יב|לו,יב]]), \"מֵי־אִתִּֽי׃\" (מֵאִתִּֽי׃ קרי; [[ישעיהו מד/טעמים#מד כד|מד,כד]]).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 50,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L50",
+          "topic": "ch5:42"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Isaiah 44:24/2/0",
+          "target_node": {
+            "tmpl_name": "מ:כו״ק מיוחד",
+            "tmpl_params": {
+              "1": "מי אתי",
+              "2": "מֵאִתִּֽי",
+              "סוג": "כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+            }
+          },
+          "body_text": "א-כתיב=מֵי־אִתִּֽי (מקף כדי להורות על קריאה של שתי התיבות הכתובות ביחד)\nל-כתיב=מֵי־אִתִּֽי (אין מקף כי יש בקרי רק תיבה אחת)",
+          "path": "MAM-parsed/plus/C1-Isaiah.json",
+          "json_pointer": "/book39s/0/chapters/44/24/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C1-Isaiah.json#L9976",
+          "chapter_revision": {
+            "resolved_title": "ישעיהו מד/טעמים",
+            "page_id": 237476,
+            "requested_title": "ישעיהו_מד/טעמים",
+            "revision_id": 3010621,
+            "sha256": "5a2ef6d47dcdfa05bd83578ff51371bb0212881730566f3ccb1c2e99ae5e43c4"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    },
+    {
+      "id": "POETIC-SPECIMEN-SCOPE",
+      "status": "internal-quotation-differences-resolved-completeness-open",
+      "result": "Other Introduction passages agree with the notes for Psalm 6:3's qamats, Psalm 74:5's hataf and Psalm 68:18's rafe, while the design lists differ literally. Proverbs 8:34's other entry retains ATNAH HAFUKH and doubt; the design list uses GALGAL and a certain star. These are concrete internal quotation/qualification differences. The central design predicates agree. Complete manuscript-quotation intent and physical readings remain open; do not inflate them into four new central-feature alarms.",
+      "evidence_claims": [
+        "ch5:L569",
+        "ch5:L656",
+        "ch2:L334",
+        "ch5:L710",
+        "ch2:L460",
+        "ch2:L469"
+      ],
+      "claims": [
+        {
+          "id": "ch5:L751",
+          "text": ":'''[[מקרא על פי המסורה/כתובים#ספר תהלים|תהלים:]]''' [[תהלים א/טעמים#א ג|א,ג]] (א{{=}}עַֽל־פַּלְגֵ֫י מָ֥יִם); [[תהלים ב/טעמים#ב ז|ב,ז]] (א{{=}}אֶֽ֫ל חֹ֥ק); [[תהלים ד/טעמים#ד ז|ד,ז]] (א*{{=}}מִֽי־יַרְאֵ֢נוּ֫ ט֥וֹב); [[תהלים ו/טעמים#ו ג|ו,ג]] (א{{=}}אֻמְלַ֫ל אָ֥נִי); [[תהלים ח/טעמים#ח ג|ח,ג]] (א*{{=}}יִסַּ֢דְתָּ֫ עֹ֥ז); [[תהלים יד/טעמים#יד ד|יד,ד]] (א*{{=}}כׇּל־פֹּ֢עֲלֵ֫י אָ֥וֶן); [[תהלים יח/טעמים#יח מד|יח,מד]] (ל*{{=}}מֵרִ֢יבֵ֫י עָ֥ם); [[תהלים כח/טעמים#כח ג|כח,ג]] (א*{{=}}וְעִם־פֹּ֢עֲלֵ֫י אָ֥וֶן); [[תהלים ל/טעמים#ל ח|ל,ח]] (א{{=}}לְֽהַרְרִ֫י עֹ֥ז); [[תהלים ל/טעמים#ל י|ל,י]] (א{{=}}אֶ֫ל שָׁ֥חַת); [[תהלים לא/טעמים#לא י|לא,י]] (א{{=}}צַ֫ר לִ֥י); [[תהלים לא/טעמים#לא יט|לא,יט]] (א{{=}}שִׂפְתֵ֫י שָׁ֥קֶר); [[תהלים לא/טעמים#לא כא|לא,כא]] (א{{=}}מֵרֻכְסֵ֫י אִ֥ישׁ); [[תהלים לז/טעמים#לז ז|לז,ז]] (א*{{=}}וְהִתְח֢וֹלֵֽ֫ל ל֥וֹ); [[תהלים מ/טעמים#מ יח|מ,יח]] (א{{=}}יַֽחֲשָׁ֫ב לִ֥י); [[תהלים מד/טעמים#מד ד|מד,ד]] (א*{{=}}לֹא־הוֹשִׁ֢יעָ֫ה לָּ֥מוֹ); [[תהלים מה/טעמים#מה ח|מה,ח]] (א{{=}}וַתִּשְׂנָ֫א רֶ֥שַׁע); [[תהלים נג/טעמים#נג ה|נג,ה]] (א*{{=}}פֹּ֤עֲלֵ֫י אָ֥וֶן); [[תהלים נג/טעמים#נג ו|נג,ו]] (א*{{=}}לֹא־הָ֢יָה֫ פָ֥חַד); [[תהלים נו/טעמים#נו ט|נו,ט]] (א*{{=}}סָפַ֢רְתָּ֫ה אָ֥תָּה); [[תהלים סב/טעמים#סב י|סב,י]] (א{{=}}בְּנֵ֫י אִ֥ישׁ); [[תהלים ע/טעמים#ע ו|ע,ו]] ('''א{{=}}ח֫וּשָׁה־לִּ֥י'''); [[תהלים עג/טעמים#עג כח|עג,כח]] (א{{=}}לִ֫י ט֥וֹב); [[תהלים פ/טעמים#פ טו|פ,טו]] (א{{=}}שֽׁ֫וּב נָ֥א); [[תהלים פח/טעמים#פח א|פח,א]] (א{{=}}לִבְנֵ֫י קֹ֥רַח); [[תהלים פח/טעמים#פח י|פח,י]] (א{{=}}מִנִּ֫י עֹ֥נִי); [[תהלים צז/טעמים#צז י|צז,י]] (א{{=}}שִׂנְא֫וּ רָ֥ע); [[תהלים קב/טעמים#קב ג|קב,ג]] (א{{=}}צַ֫ר לִ֥י); [[תהלים קטו/טעמים#קטו א|קטו,א]] ('''א=לֹ֫א־לָ֥נוּ'''); [[תהלים קיח/טעמים#קיח כז|קיח,כז]] (א*{{=}}וַיָּ֢אֶ֫ר לָ֥נוּ); [[תהלים קמב/טעמים#קמב ז|קמב,ז]] (א*{{=}}כִּֽי־דַלּ֢וֹתִ֫י מְאֹ֥ד); [[תהלים קמד/טעמים#קמד ב|תהלים קמד,ב]] (א{{=}}וּֽמְפַלְטִ֫י לִ֥י); [[תהלים קמד/טעמים#קמד יג|תהלים קמד,יג]] (א{{=}}אֶ֫ל זַ֥ן); [[תהלים קמה/טעמים#קמה כא|קמה,כא]] (א{{=}}יְֽדַבֶּ֫ר פִּ֥י).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 751,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L751",
+          "topic": "ch5:737"
+        },
+        {
+          "id": "ch5:L753",
+          "text": ":'''[[מקרא על פי המסורה/כתובים#ספר משלי|משלי:]]''' [[משלי א/טעמים#א כב|א,כב]] (א{{=}}תְּֽאֵהֲב֫וּ פֶ֥תִי); [[משלי ה/טעמים#ה יט|ה,יט]] ('''א=וְֽיַעֲלַ֫ת־חֵ֥ן'''); [[משלי ו/טעמים#ו כו|ו,כו]] (א{{=}}עַֽד־כִּכַּ֫ר לָ֥חֶם); [[משלי ח/טעמים#ח יג|ח,יג]] (א{{=}}שְֽׂנֹ֫את רָ֥ע); [[משלי ח/טעמים#ח לד|ח,לד]] (א*{{=}}שֹׁמֵ֪עַֽ֫ לִ֥י); [[משלי כג/טעמים#כג ז|כג,ז]] ('''א=כֶּ֫ן־ה֥וּא'''); [[משלי כד/טעמים#כד יב|כד,יב]] (א*{{=}}לֹֽא־יָדַ֢עְנ֫וּ זֶ֥ה); [[משלי כה/טעמים#כה ז|כה,ז]] (א{{=}}עֲֽלֵ֫ה הֵ֥נָּה); [[משלי ל/טעמים#ל טז|ל,טז]] (א*{{=}}וְעֹ֢צֶ֫ר רָ֥חַם); [[משלי ל/טעמים#ל יז|ל,יז]] ('''א=לִֽיקְּהַ֫ת־אֵ֥ם'''); [[משלי ל/טעמים#ל יט|ל,יט]] ('''א=עֲלֵ֫י־צ֥וּר''').",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 753,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L753",
+          "topic": "ch5:737"
+        },
+        {
+          "id": "ch5:L787",
+          "text": ":'''[[מקרא על פי המסורה/כתובים#ספר תהלים|תהלים:]]''' ז,א ('''א{{=}}עַל־דִּבְרֵי־כ֝֗וּשׁ'''); ח,ז (א{{=}}כֹּ֝ל); יא,א (א{{=}}נודו נ֝וּדִי); יא,ב (א{{=}}בְּמוֹ־אֹ֝פֶל); יד,ג (א{{=}}אֵ֝ין); {{צבע גופן|אפור|טז,א (ל{{=}}אֵ֝֗ל); יז,ו (ל{{=}}לִ֝֗י); יז,י (ל{{=}}פִּ֝֗ימוֹ); יח,יב (ל{{=}}חֶשְׁכַת־מַ֝֗יִם); יח,טו ('''ל{{=}}רָ֝ב'''); יח,לא (ל{{=}}ה֝֗וּא); יח,לב (ל{{=}}צ֝֗וּר); כ,ט (ל{{=}}קַּ֝֗מְנוּ); כב,כא (ל{{=}}מִיַּד־כֶּ֝֗לֶב); כג,ג (ל{{=}}בְמַעְגְּלֵי־צֶ֝֗דֶק);}} כה,כא ('''א{{=}}כִּ֝֗י'''); כז,יב ('''א{{=}}עֵדֵי־שֶׁ֝֗קֶר'''); לא,כ (א{{=}}נֶ֝גֶד); לא,כב (א{{=}}לִ֝י); לא,כד (א{{=}}עַל־יֶ֝תֶר); לב,ט (א{{=}}בַּ֝ל); לב,י (א{{=}}חֶ֝סֶד); לג,ו (א{{=}}פִּ֝יו); לה,יד ('''א{{=}}כַּאֲבֶל־אֵ֝֗ם'''); לו,ה (א{{=}}רָ֝ע); לז,ב (א{{=}}דֶּ֝שֶׁא); לז,ג (א{{=}}שְׁכׇן־אֶ֝רֶץ); לח,יא (א{{=}}גַּם־הֵ֝ם); מ,ח (א{{=}}בִּמְגִלַּת־סֵ֝פֶר); מ,טז (א{{=}}לִ֝י); מד,טו (א{{=}}מְנֽוֹד־רֹ֝אשׁ); מה,ט (א{{=}}שֵׁ֝ן); מח,ז (א{{=}}חִ֝יל); מח,יא (א{{=}}צֶ֝דֶק); מט,ג (א{{=}}יַ֝חַד); מט,כ (א{{=}}עַד־נֵ֝צַח); נ,א (א{{=}}מִמִּזְרַח־שֶׁ֝מֶשׁ); נא,ב (א{{=}}כַּאֲשֶׁר־בָּ֝א); נב,ג (א{{=}}אֵ֝ל); נב,יא (א{{=}}כִי־ט֝וֹב); נג,ב (א{{=}}עָ֝וֶל); נג,ד (א{{=}}אֵ֝ין); נה,ד (א{{=}}אָ֝וֶן); נה,ה (א{{=}}מָ֝וֶת); נז,ב (א{{=}}עַ֝ד); נח,ט (א{{=}}אֵ֝שֶׁת); סא,ד (א{{=}}מִגְדַּל־עֹ֝ז); סב,י (א{{=}}הֵ֝מָּה); סב,יב (א{{=}}עֹ֝ז); סג,ט (א{{=}}בִּ֝י); סד,ז (א{{=}}אִ֝ישׁ); סה,ו (א{{=}}כׇּל־קַצְוֵי־אֶ֝רֶץ); סו,ו (א{{=}}שָׁ֝ם); סו,יד (א{{=}}וְדִבֶּר־פִּ֝י); סח,יג (א{{=}}בַּ֝יִת); סח,יח (א{{=}}בָ֝ם); סח,כט (א{{=}}ז֝וּ); סט,ג (א{{=}}בְמַעֲמַקֵּי־מַ֝יִם); סט,יח (א{{=}}כִּי־צַר־לִ֝י); סט,לו (א{{=}}שָׁ֝ם); עא,יז (א{{=}}וְעַד־הֵ֝נָּה); עג,ו (א{{=}}יַעֲטָף־שִׁ֝ית); עג,יט (א{{=}}תַ֝מּוּ); עד,ה (א{{=}}בִּסְבׇךְ־עֵ֝ץ); עד,כ (א{{=}}מַחֲשַׁכֵּי־אֶ֝רֶץ); עה,ט (א{{=}}כֹּ֝ל); עו,יב (א{{=}}שַׁ֝י); עז,ט (א{{=}}אֹ֝מֶר); עז,יז ('''א{{=}}אַ֝֗ף'''); עח,כא (א{{=}}וְגַם־אַ֝ף); עח,ל (א{{=}}ע֝וֹד); עח,מב (א{{=}}י֝וֹם); עח,נד (א{{=}}הַר־זֶ֝ה); עח,ס (א{{=}}אֹ֝הֶל); עט,ה (א{{=}}כְּמוֹ־אֵ֝שׁ); פ,טז (א{{=}}וְעַל־בֵּ֝ן); פא,יא (א{{=}}הַרְחֶב־פִּ֝יךָ); פג,יא (א{{=}}דֹּ֝מֶן); פג,יג (א{{=}}אֵ֝ת); פד,ה (א{{=}}ע֝וֹד); פד,יב (א{{=}}יִמְנַע־ט֝וֹב); פה,ב (א{{=}}שַׁ֝בְתָּ); פו,ה (א{{=}}וְרַב־חֶ֝סֶד); פז,ד (א{{=}}זֶ֝ה); פט,מח (א{{=}}עַל־מַה־שָּׁ֝וְא); צ,י (א{{=}}חִ֝ישׁ); צד,ט (א{{=}}עַ֝יִן); צד,טז (א{{=}}לִ֝י); צו,ד (א{{=}}ה֝וּא); צז,ז (א{{=}}הִשְׁתַּחֲווּ־ל֝וֹ); צח,ג (א{{=}}אֵ֝ת); צח,ח (א{{=}}יַ֝חַד); צט,ב (א{{=}}ה֝וּא); ק,ד (א{{=}}הוֹדוּ־ל֝וֹ); קא,ד (א{{=}}רָ֝ע); קא,ו (א{{=}}ה֝וּא); קד,יד (א{{=}}לֶ֝חֶם); קד,יט (א{{=}}שֶׁ֝מֶשׁ); קה,ב ('''א{{=}}שִׂ֝֗יחוּ'''); קה,יא (א{{=}}חֶ֝בֶל); קו,יד (א{{=}}וַיְנַסּוּ־אֵ֝ל); קו,כ (א{{=}}שׁ֝וֹר); קו,כט (א{{=}}וַתִּפְרׇץ־בָּ֝ם); קז,לג (א{{=}}מַ֝יִם); קט,כ (א{{=}}רָ֝ע); קי,ו (א{{=}}רֹ֝אשׁ); קי,ז (א{{=}}עַל־כֵּ֝ן); קיג,ח (א{{=}}עִ֝ם); קטו,ב (א{{=}}אַיֵּה־נָ֝א); קטז,יד (א{{=}}נֶגְדָה־נָּ֝א); קטז,יח (א{{=}}נֶגְדָה־נָּ֝א); קיח,יד (א{{=}}וַֽיְהִי־לִ֝י); קיח,יט (א{{=}}אָבֹא־בָ֝ם); קיח,כא (א{{=}}וַתְּהִי־לִ֝י); קיט,יג (א{{=}}כֹּ֝ל); קיט,מט (א{{=}}עַ֝ל); קיט,סב (א{{=}}עַ֝ל); קיט,צ (א{{=}}אֶ֝רֶץ); קיט,צב (א{{=}}אָ֝ז); קיט,צג (א{{=}}בָ֝ם); קיט,קד (א{{=}}עַל־כֵּ֝ן); קיט,קיח (א{{=}}כִּי־שֶׁ֝קֶר); קיט,קכט (א{{=}}עַל־כֵּ֝ן); קיט,קלו (א{{=}}עַ֝ל); קיט,קסד (א{{=}}עַ֝ל); קכ,ד (א{{=}}עִ֝ם); קכ,ו (א{{=}}עִ֝ם); קכ,ז (א{{=}}הֵ֝מָּה); קכג,ב (א{{=}}עַ֝ד); קכג,ג (א{{=}}כִּי־רַ֝ב); קכד,א (א{{=}}יֹאמַר־נָ֝א); קכד,ד (א{{=}}נַ֝חְלָה); קכד,ו (א{{=}}טֶ֝רֶף); קכז,א (א{{=}}לֹא־יִשְׁמׇר־עִ֝יר); קכז,ד (א{{=}}כֵּ֝ן); קכח,ה (א{{=}}כֹּ֝ל); קכט,א (א{{=}}יֹאמַר־נָ֝א); קכט,ב (א{{=}}גַּ֝ם); קכט,ה (א{{=}}כֹּ֝ל); קלב,א (א{{=}}אֵ֝ת); קלב,יז (א{{=}}נֵ֝ר); קלה,ז (א{{=}}מֽוֹצֵא־ר֝וּחַ); קלה,יז (א{{=}}אַ֝ף); קלז,ג (א{{=}}לָ֝נוּ); קלז,ד (א{{=}}עַ֝ל); קלז,ו (א{{=}}עַ֝ל); קלז,ז (א{{=}}עַ֝ד); קמ,ג (א{{=}}כׇּל־י֝וֹם); קמג,יב (א{{=}}כִּ֝י); קמח,י (א{{=}}רֶ֝מֶשׂ).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 787,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L787",
+          "topic": "ch5:781"
+        },
+        {
+          "id": "ch5:L569",
+          "text": "#[[תהלים ו/טעמים#ו ג|ו,ג]] (א=אֻמְלָ֫ל): נקודת קמץ בלמ\"ד, במקום פתח",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 569,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L569",
+          "topic": "ch5:563"
+        },
+        {
+          "id": "ch5:L656",
+          "text": "#[[משלי ח/טעמים#ח לד|ח,לד]] (א?=שֹׁמֵ֢עַֽ֫ לִ֥י* או שֹׁמֵ֢֫עַֽ לִ֥י): סימן ה\"עולה\" תלוי בין האותיות מ\"ם ועי\"ן",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 656,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L656",
+          "topic": "ch5:646"
+        },
+        {
+          "id": "ch2:L334",
+          "text": "#'''במקומות שאותיות בג\"ד כפ\"ת צפויות להיות דגושות אך הן רפות.''' כגון: [[ישעיהו לד/טעמים#לד יא|ישעיהו לד,יא]] \"קַֽו־תֹֿ֖הוּ\"; [[יחזקאל כג/טעמים#כג מב|יחזקאל כג,מב]]: \"שָׁלֵ֣ו בָֿהּ֒\"; [[תהלים סח/טעמים#סח יח|תהלים סח,יח]] \"אֲדֹנָ֥י בָֿ֝֗ם\".{{הערה|שלושת התיבות הללו מפורטות ב[https://mg.alhatorah.org/Dual/Minchat_Shai/Yeshayahu/34.11#m7e0n6 הערת מנחת שי לישעיהו לד,יא]. בכל אחת מהן יש סימן רפה ברור בכתר ארם צובה ובכתי\"ל.}}",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 334,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L334",
+          "topic": "ch2:326"
+        },
+        {
+          "id": "ch5:L710",
+          "text": "{{עוגן בשורה|חטפים באותיות לא-גרוניות במשלי}}'''[[מקרא על פי המסורה/כתובים#ספר תהלים|ספר תהלים]]''' (171 פריטים): [[תהלים ה/טעמים#ה ו|ה,ו]] (א=ה֭וֹלֲלִים); [[תהלים ה/טעמים#ה ט|ה,ט]] (א=שׁוֹרֲרָ֑י); [[תהלים ו/טעמים#ו ח|ו,ח]] (א=עָשֲׁשָׁ֣ה); [[תהלים ו/טעמים#ו ח|ו,ח]] (א=בְּכׇל־צוֹרֲרָֽי); [[תהלים ז/טעמים#ז ה|ז,ה]] (א=צֽוֹרֲרִ֣י); [[תהלים ז/טעמים#ז ז|ז,ז]] (א=צוֹרֲרָ֑י); [[תהלים ז/טעמים#ז ח|ז,ח]] (א=תְּסֽוֹבֲבֶ֑ךָּ); [[תהלים ח/טעמים#ח ג|ח,ג]] (א=עוֹלֲלִ֨ים ׀); [[תהלים ח/טעמים#ח ג|ח,ג]] (א=צוֹרֲרֶ֑יךָ); [[תהלים ט/טעמים#ט יד|ט,יד]] (א=חָֽנֲנֵ֬נִי); [[תהלים ט/טעמים#ט יד|ט,יד]] (א=מְ֝רוֹמֲמִ֗י); [[תהלים י/טעמים#י ה|י,ה]] (א=כׇּל־צ֝וֹרֲרָ֗יו); [[תהלים יא/טעמים#יא ב|יא,ב]] (א=כּוֹנֲנ֣וּ); [[תהלים יב/טעמים#יב ז|יב,ז]] (א=אִ֥מֲר֣וֹת); [[תהלים יד/טעמים#יד א|יד,א]] (א=הִֽשְִׁחִ֗יתוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים יד/טעמים#יד א|יד,א]] (א=הִֽתְִעִ֥יבוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים יז/טעמים#יז יד|יז,יד]] (ש1=מִ֥מֲתִֽים־יָדְךָ֨ ׀); [[תהלים יח/טעמים#יח ז|יח,ז]] (ל=אֶ֥קֲרָ֣א); [[תהלים כו/טעמים#כו ו|כו,ו]] (א=וַאֲסֹבֲבָ֖ה); [[תהלים כז/טעמים#כז ה|כז,ה]] (א=יְרוֹמֲמֵֽנִּי); [[תהלים כז/טעמים#כז יא|כז,יא]] (א=שֽׁוֹרֲרָֽי); [[תהלים לא/טעמים#לא י|לא,י]] (א=עָשֲׁשָׁ֖ה); [[תהלים לא/טעמים#לא יב|לא,יב]] לא,יב (א=מִכׇּל־צֹרֲרַ֨י); [[תהלים לא/טעמים#לא יב|לא,יב]] לא,יב (א=וְלִ֥שֲׁכֵנַ֨י ׀); [[תהלים לא/טעמים#לא יב|לא,יב]] לא,יב (א=נָדֲד֥וּ); [[תהלים לב/טעמים#לב ז|לב,ז]] (א=תְּס֖וֹבֲבֵ֣נִי); [[תהלים לב/טעמים#לב י|לב,י]] (א=יְסוֹבֲבֶֽנּוּ); [[תהלים לד/טעמים#לד א|לד,א]] (א=וַ֝יְגָרֲשֵׁ֗הוּ); [[תהלים לד/טעמים#לד ב|לד,ב]] (א=אֲבָרֲכָ֣ה); [[תהלים לד/טעמים#לד ד|לד,ד]] (א=וּנְרוֹמֲמָ֖ה); [[תהלים לה/טעמים#לה יח|לה,יח]] (א=אֲהַלֲלֶֽךָּ); [[תהלים לט/טעמים#לט יג|לט,יג]] (א?=<שִׁ֥מֳעָֽה{{מ:מקף אפור}}תְפִלָּתִ֨י ׀> [{{קו תחתי|חטף קמץ}}] או <שִׁ֥מֲעָֽה{{מ:מקף אפור}}תְפִלָּתִ֨י ׀> בחטף קמץ); [[תהלים מ/טעמים#מ יג|מ,יג]] (א=אָפֲפֽוּ־עָלַ֨י); [[תהלים מב/טעמים#מב יא|מב,יא]] (א=צוֹרֲרָ֑י);{{הערה|שם=חסר אצל ברויאר}} [[תהלים נג/טעמים#נג,ב|נג,ב]] (א=הִֽ֝שְִׁחִ֗יתוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים נג/טעמים#נג,ב|נג,ב]] (א=וְהִֽתְִעִ֥יבוּ [{{קו תחתי|'''חטף חיריק'''}}]); [[תהלים נה/טעמים#נה,יא|נה,יא]] (א=יְסוֹבֲבֻ֥הָ); [[תהלים נה/טעמים#נה,כב|נה,כב]] (א=וּֽקֲרָב־לִ֫בּ֥וֹ); [[תהלים נו/טעמים#נו ג|נו,ג]] (א=שׁ֭וֹרֲרַי); [[תהלים נט/טעמים#נט ז|נט,ז]] (א=וִיס֥וֹבֲבוּ); [[תהלים נט/טעמים#נט טו|נט,טו]] (א=וִיס֥וֹבֲבוּ); [[תהלים ס/טעמים#ס ט|ס,ט]] (א=מְחֹֽקֲקִֽי); [[תהלים סב/טעמים#סב ד|סב,ד]] (א=תְּה֥וֹתֲת֣וּ); [[תהלים סב/טעמים#סב ה|סב,ה]] (א=יְקַֽלֲלוּ־סֶֽלָה); [[תהלים סד/טעמים#סד ט|סד,ט]] (א=יִ֝תְנֹדֲד֗וּ); [[תהלים סד/טעמים#סד יא|סד,יא]] (א=וְ֝יִתְהַלֲל֗וּ); [[תהלים סה/טעמים#סה ה|סה,ה]] (א=תִּ֥בֲחַ֣ר); [[תהלים סה/טעמים#סה י|סה,י]] (א=וַתְּשֹׁ{{גלגל}}קֲקֶ֡הָ); [[תהלים סה/טעמים#סה יא|סה,יא]] (א=תְּ֝מֹגֲגֶ֗נָּה); [[תהלים סו/טעמים#סו ז|סו,ז]] (א=הַסּוֹרֲרִ֓ים ׀); [[תהלים סו/טעמים#סו ח|סו,ח]] (א=בָּרֲכ֖וּ); [[תהלים סו/טעמים#סו יב|סו,יב]] (א=לָרֲוָיָֽה); [[תהלים סז/טעמים#סז ב|סז,ב]] (א=וִיבָרֲכֵ֑נוּ); [[תהלים סז/טעמים#סז ז|סז,ז]] (א=יְ֝בָרֲכֵ֗נוּ); [[תהלים סז/טעמים#סז ח|סז,ח]] (א=יְבָרֲכֵ֥נוּ); [[תהלים סח/טעמים#סח ז|סח,ז]] (א=ס֝וֹרֲרִ֗ים); [[תהלים סח/טעמים#סח יט|סח,יט]] (א=ס֝וֹרֲרִ֗ים); [[תהלים סח/טעמים#סח כד|סח,כד]] (א=תִּ֥מֲחַ֥ץ); [[תהלים סח/טעמים#סח כז|סח,כז]] (א=בָּרֲכ֣וּ); [[תהלים סט/טעמים#סט כ|סט,כ]] (א=כׇּל־צוֹרֲרָֽי); [[תהלים סט/טעמים#סט לא|סט,לא]] (א=אֲהַלֲלָ֣ה); [[תהלים סט/טעמים#סט לה|סט,לה]] (א=יְֽ֭הַלֲלוּהוּ); [[תהלים עב/טעמים#עב טו|עב,טו]] (א=יְבָרֲכֶֽנְהוּ); [[תהלים עג/טעמים#עג ג|עג,ג]] (א=בַּהוֹלֲלִ֑ים); [[תהלים עג/טעמים#עג כח|עג,כח]] (א=קִ֥רֲבַ֥ת); [[תהלים עד/טעמים#עד ד|עד,ד]] (א=צֹ֭רֲרֶיךָ); [[תהלים עד/טעמים#עד ה|עד,ה]] (א=בִּסֲבָךְ־עֵ֝ץ); [[תהלים עד/טעמים#עד כא|עד,כא]] (א=יְֽהַלֲל֥וּ); [[תהלים עד/טעמים#עד כג|עד,כג]] (א=צֹרֲרֶ֑יךָ); [[תהלים עה/טעמים#עה ה|עה,ה]] (א=לַ֭הוֹלֲלִים); [[תהלים עו/טעמים#עו ו|עו,ו]] (א=אֶשְׁתּֽוֹלֲל֨וּ |);{{הערה|פריט זה חסר ברשימת ברויאר, אולי בגלל שהמקום מטושטש.}} [[תהלים עו/טעמים#עו יב|עו,יב]] (א=נִ֥דֲר֣וּ); [[תהלים פ/טעמים#פ ג|פ,ג]] (א=עוֹרֲרָ֥ה); [[תהלים פ/טעמים#פ יא|פ,יא]] (א=אַֽרֲזֵי); [[תהלים פג/טעמים#פג יג|פג,יג]] (נִ֣ירֲשָׁה); [[תהלים פד/טעמים#פד ה|פד,ה]] (יְֽהַלֲל֥וּךָ); [[תהלים פז/טעמים#פז ה|פז,ה]] (א=וּ֥לֲצִיּ֨וֹן ׀); [[תהלים פז/טעמים#פז ז|פז,ז]] (א=כְּחֹלֲלִ֑ים); [[תהלים צ/טעמים#צ יז|צ,יז]] (א=כּוֹנֲנָ֥ה); [[תהלים צ/טעמים#צ יז|צ,יז]] (א=כּוֹנֲנֵֽהוּ); [[תהלים צד/טעמים#צד י|צד,י]] (א=הַֽמֲלַמֵּ֖ד); [[תהלים צו/טעמים#צו ב|צו,ב]] (א=בָּרֲכ֣וּ); [[תהלים צז/טעמים#צז ז|צז,ז]] (א=הַמִּֽתְהַלֲלִ֥ים); [[תהלים צט/טעמים#צט ה|צט,ה]] (א=רוֹמֲמ֡וּ); [[תהלים צט/טעמים#צט ט|צט,ט]] (א=רוֹמֲמ֡וּ); [[תהלים ק/טעמים#ק ד|ק,ד]] (א=בָּרֲכ֥וּ); [[תהלים קג/טעמים#קג א|קג,א]] (א=בָּרֲכִ֣י); [[תהלים קג/טעמים#קג ב|קג,ב]] (א=בָּרֲכִ֣י); [[תהלים קג/טעמים#קג כ|קג,כ]] (א=בָּרֲכ֥וּ); [[תהלים קג/טעמים#קג כא|קג,כא]] (א=בָּרֲכ֣וּ); [[תהלים קג/טעמים#קג כב|קג,כב]] (א=בָּרֲכ֤וּ); [[תהלים קג/טעמים#קג כב|קג,כב]] (א=בָּרֲכִ֥י); [[תהלים קד/טעמים#קד א|קד,א]] (א=בָּרֲכִ֥י); [[תהלים קד/טעמים#קד ג|קד,ג]] (א=הַ֥מֲקָרֶ֥ה); [[תהלים קד/טעמים#קד ג|קד,ג]] (א=הַֽ֝מֲהַלֵּ֗ךְ); [[תהלים קד/טעמים#קד י|קד,י]] (א=הַֽמֲשַׁלֵּ֣חַ); [[תהלים קד/טעמים#קד יח|קד,יח]] (א=לַֽשֲׁפַנִּֽים); [[תהלים קד/טעמים#קד לה|קד,לה]] (א=בָּרֲכִ֣י); [[תהלים קד/טעמים#קד לה|קד,לה]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קה/טעמים#קה ג|קה,ג]] (א=הִֽ֭תְהַלֲלוּ); [[תהלים קה/טעמים#קה מה|קה,מה]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קו/טעמים#קו א|קו,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קז/טעמים#קז לו|קז,לו]] (א=וַ֝יְכוֹנֲנ֗וּ); [[תהלים קז/טעמים#קז לח|קז,לח]] (א=וַיְבָרֲכֵ֣ם); [[תהלים קז/טעמים#קז מג|קז,מג]] (א=וְ֝יִתְבּוֹנֲנ֗וּ); [[תהלים קח/טעמים#קח ט|קח,ט]] (א=מְחֹקֲקִֽי); [[תהלים קט/טעמים#קט כח|קט,כח]] (א=יְקַֽלֲלוּ־הֵמָּה֮); [[תהלים קט/טעמים#קט ל|קט,ל]] (א=אֲהַלֲלֶֽנּוּ); [[תהלים קיא/טעמים#קיא א|קיא,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קיב/טעמים#קיב א|קיב,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קיג/טעמים#קיג א|קיג,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קיג/טעמים#קיג א|קיג,א]] (א=הַ֭לֲלוּ); [[תהלים קיג/טעמים#קיג א|קיג,א]] (א=הַֽ֝לֲל֗וּ); [[תהלים קיג/טעמים#קיג ט|קיג,ט]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קטו/טעמים#קטו יח|קטו,יח]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קיח/טעמים#קיח כח|קיח,כח]] (א=אֲרוֹמֲמֶֽךָּ); [[תהלים קיט/טעמים#קיט קטו|קיט,קטו]] (א=וְ֝אֶצֲּרָ֗ה); [[תהלים קיט/טעמים#קיט קעה|קיט,קעה]] (א=וּֽתְהַלֲלֶ֑ךָּ); [[תהלים קלד/טעמים#קלד א|קלד,א]] (א=בָּרֲכ֣וּ); [[תהלים קלד/טעמים#קלד ב|קלד,ב]] (א=וּ֝בָרֲכ֗וּ); [[תהלים קלה/טעמים#קלה א|קלה,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קלה/טעמים#קלה א|קלה,א]] (א=הַֽ֭לֲלוּ [1]); [[תהלים קלה/טעמים#קלה א|קלה,א]] (א=הַֽ֝לֲל֗וּ [2]); [[תהלים קלה/טעמים#קלה ג|קלה,ג]] (א=הַֽלֲלוּ־יָ֭הּ); [[תהלים קלה/טעמים#קלה יט|קלה,יט]] (בָּרֲכ֣וּ [1]); [[תהלים קלה/טעמים#קלה יט|קלה,יט]] (בָּרֲכ֥וּ [2]); [[תהלים קלה/טעמים#קלה כ|קלה,כ]] (בָּרֲכ֣וּ [1]); [[תהלים קלה/טעמים#קלה כ|קלה,כ]] (בָּרֲכ֥וּ [2]); [[תהלים קלה/טעמים#קלה כא|קלה,כא]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קלט/טעמים#קלט כא|קלט,כא]] (א=וּ֝בִתְקוֹמֲמֶ֗יךָ); [[תהלים קמ/טעמים#קמ ד|קמ,ד]] (א=שָׁ֥נֲנ֣וּ); [[תהלים קמג/טעמים#קמג יב|קמג,יב]] (א=כׇּל־צֹרֲרֵ֣י); [[תהלים קמד/טעמים#קמד א|קמד,א]] (א=הַֽמֲלַמֵּ֣ד); [[תהלים קמה/טעמים#קמה א|קמה,א]] (א=וַאֲבָרֲכָ֥ה); [[תהלים קמה/טעמים#קמה ב|קמה,ב]] (א=אֲבָרֲכֶ֑ךָּ [1]); [[תהלים קמה/טעמים#קמה ב|קמה,ב]] (וַאֲהַלֲלָ֥ה [2]); [[תהלים קמה/טעמים#קמה י|קמה,י]] (א=יְבָרֲכֽוּכָה); [[תהלים קמו/טעמים#קמו א|קמו,א]] (א=הַֽלֲלוּ־יָ֡הּ); [[תהלים קמו/טעמים#קמו א|קמו,א]] (א=הַֽלֲלִ֥י); [[תהלים קמו/טעמים#קמו ב|קמו,ב]] (א=אֲהַלֲלָ֣ה); [[תהלים קמו/טעמים#קמו י|קמו,י]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קמז/טעמים#קמז א|קמז,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קמז/טעמים#קמז ח|קמז,ח]] (א=הַֽמֲכַסֶּ֬ה); [[תהלים קמז/טעמים#קמז יב|קמז,יב]] (א=הַֽלֲלִ֖י); [[תהלים קמז/טעמים#קמז כ|קמז,כ]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קמח/טעמים#קמח א|קמח,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קמח/טעמים#קמח א|קמח,א]] (א=הַֽלֲל֣וּ); [[תהלים קמח/טעמים#קמח א|קמח,א]] (א=הַֽ֝לֲל֗וּהוּ); [[תהלים קמח/טעמים#קמח ב|קמח,ב]] (א=הַֽלֲל֥וּהוּ [1]); [[תהלים קמח/טעמים#קמח ג|קמח,ג]] (א=הַֽ֭לֲלוּהוּ [1]); [[תהלים קמח/טעמים#קמח ג|קמח,ג]] (א=הַֽ֝לֲל֗וּהוּ [2]); [[תהלים קמח/טעמים#קמח ד|קמח,ד]] (א=הַֽ֭לֲלוּהוּ); [[תהלים קמח/טעמים#קמח ה|קמח,ה]] (א=יְֽ֭הַלֲלוּ); [[תהלים קמח/טעמים#קמח ז|קמח,ז]] (א=הַֽלֲל֣וּ); [[תהלים קמח/טעמים#קמח יג|קמח,יג]] (א=<יְהַלֲל֤וּ ׀>); [[תהלים קמח/טעמים#קמח יד|קמח,יד]] (הַֽלֲלוּ־יָֽהּ); [[תהלים קמט/טעמים#קמט א|קמט,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קמט/טעמים#קמט ג|קמט,ג]] (א=יְהַלֲל֣וּ); [[תהלים קמט/טעמים#קמט ו|קמט,ו]] (א=רוֹמֲמ֣וֹת); [[תהלים קמט/טעמים#קמט ט|קמט,ט]] (א=הַֽלֲלוּ־יָֽהּ); [[תהלים קנ/טעמים#קנ א|קנ,א]] (א=<הַ֥לֲלוּ יָ֨הּ ׀>); [[תהלים קנ/טעמים#קנ א|קנ,א]] (א=הַֽלֲלוּ־אֵ֥ל); [[תהלים קנ/טעמים#קנ א|קנ,א]] (א=הַֽ֝לֲל֗וּהוּ); [[תהלים קנ/טעמים#קנ ב|קנ,ב]] (א=הַלֲל֥וּהוּ [1]); [[תהלים קנ/טעמים#קנ ב|קנ,ב]] (א=הַ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ג|קנ,ג]] (א=הַ֭לְלוּהוּ [1]); [[תהלים קנ/טעמים#קנ ג|קנ,ג]] (א=הַ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ד|קנ,ד]] (א=הַ֭לֲלוּהוּ [1]); [[תהלים קנ/טעמים#קנ ד|קנ,ד]] (א=הַֽ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ה|קנ,ה]] (א=הַלֲל֥וּהוּ [1]); [[תהלים קנ/טעמים#קנ ה|קנ,ה]] (א=הַֽ֝לֲל֗וּהוּ [2]); [[תהלים קנ/טעמים#קנ ו|קנ,ו]] (א=הַֽלֲלוּ־יָֽהּ).",
+          "path": "in/mam-ws-intro/ch5.mediawiki",
+          "line": 710,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L710",
+          "topic": "ch5:689"
+        },
+        {
+          "id": "ch2:L460",
+          "text": "בכתר ובכתבי־היד העתיקים, משרת הפזר הוא ה\"גלגל\", והוא זהה בצורתו למשרת הפזר הגדול בכ\"א הספרים (\"ירח בן יומו\" המשרת ל\"קרני פרה\"). מספרו ב[http://www.unicode.org/charts/PDF/U0590.pdf יוניקוד] הוא 05AA (\"֪\").",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 460,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L460",
+          "topic": "ch2:458"
+        },
+        {
+          "id": "ch2:L469",
+          "text": "#[[תבנית:אתנח הפוך]] (בשביל המשרת של \"עולה ויורד\" בספרי אמ\"ת, שיש בו דמיון מסוים לצורתם של \"ירח בן יומו\" ו\"גלגל\" אך אינו זהה להם בצורתו); מספרו במערכת היוניקוד: 05A2.",
+          "path": "in/mam-ws-intro/ch2.mediawiki",
+          "line": 469,
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L469",
+          "topic": "ch2:458"
+        }
+      ],
+      "notes": [
+        {
+          "id": "Psalms 6:3/2/0",
+          "target_node": "אֻמְלַ֫ל",
+          "body_text": "=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויאר ספק ברשימתו.\nא=אֻמְלָ֫ל (נקודת קמץ באות למ\"ד); כל האזור מטושטש מאוד, אבל רואים את נקודת הקמץ בבירור (וכך הכריעו במג\"ה).",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/6/3/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L1302",
+          "chapter_revision": {
+            "resolved_title": "תהלים ו/טעמים",
+            "page_id": 238270,
+            "requested_title": "תהלים_ו/טעמים",
+            "revision_id": 2988158,
+            "sha256": "897d446bf16de3e074a3c8cc34cfeaf868c65053d49052f0b77b686d7eaffa94"
+          }
+        },
+        {
+          "id": "Proverbs 8:34/2/0",
+          "target_node": "שֹׁמֵ֢עַֽ֫ לִ֥י",
+          "body_text": "א?=שֹׁמֵ֢֫עַֽ לִ֥י (סימן ה\"עולה\" תלוי בין האותיות מ\"ם ועי\"ן)",
+          "path": "MAM-parsed/plus/D2-Proverbs.json",
+          "json_pointer": "/book39s/0/chapters/8/34/2/4",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L5086",
+          "chapter_revision": {
+            "resolved_title": "משלי ח/טעמים",
+            "page_id": 238879,
+            "requested_title": "משלי_ח/טעמים",
+            "revision_id": 2992565,
+            "sha256": "131b45fa8b810a2843a6a30721203960e8e5d9131a7cdd255fbe78c8435c9d47"
+          }
+        },
+        {
+          "id": "Psalms 68:18/2/0",
+          "target_node": "בָֿ֝֗ם",
+          "body_text": "א=בָֿ֝ם (השמטת נקודת הרביע); השארנו כאן את סימן הרפה באות בי\"ת בעקבות דברי מנחת־שי על ישעיהו לד,יא.",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/68/18/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L26294",
+          "chapter_revision": {
+            "resolved_title": "תהלים סח/טעמים",
+            "page_id": 238518,
+            "requested_title": "תהלים_סח/טעמים",
+            "revision_id": 2997828,
+            "sha256": "534616278109caae3e4313deb117eaa54b53e6e08a2c1a0b1dca9ce1841d8766"
+          }
+        },
+        {
+          "id": "Psalms 74:5/2/0",
+          "target_node": "בִּסְﬞבׇךְ־עֵ֝֗ץ",
+          "body_text": "א=בִּסֲבָךְ־עֵ֝ץ (חטף; השמטת נקודת הרביע)",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "json_pointer": "/book39s/0/chapters/74/5/2/3",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L29752",
+          "chapter_revision": {
+            "resolved_title": "תהלים עד/טעמים",
+            "page_id": 238542,
+            "requested_title": "תהלים_עד/טעמים",
+            "revision_id": 2997807,
+            "sha256": "70c86ea1c6282c56065e259c1d0617cab89fdef2b6ef4bfed455178e0cfce5de"
+          }
+        }
+      ],
+      "remaining_uncertainty": true
+    }
+  ],
+  "nine_unsigled_hataf_counterparts": [
+    {
+      "item": "ch5:L706/item/16",
+      "ref": "Ezekiel 16:51",
+      "intro_literal_specimen": "(וַתְּצַדֲּקִי֙)",
+      "note_id": "Ezekiel 16:51/2/0",
+      "note_literal_form": "וַתְּצַדֲּקִי֙",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Ezekiel 16:51/2/0",
+        "raw_path": "in/mam-ws/C3-Ezekiel.json",
+        "raw_note_body": "א=וַתְּצַדֲּקִי֙ (חטף); אמנם במג\"ה בדפוס הכריעו בשווא נגד כתב־היד באופן חריג, ואולי נפלה אצלם טעות.",
+        "parsed_path": "MAM-parsed/plus/C3-Ezekiel.json",
+        "parsed_pointer": "/book39s/0/chapters/16/51/2/1",
+        "parsed_note_body": "א=וַתְּצַדֲּקִי֙ (חטף); אמנם במג\"ה בדפוס הכריעו בשווא נגד כתב־היד באופן חריג, ואולי נפלה אצלם טעות.",
+        "chapter_revision": {
+          "resolved_title": "יחזקאל טז/טעמים",
+          "page_id": 237838,
+          "requested_title": "יחזקאל_טז/טעמים",
+          "revision_id": 2988052,
+          "sha256": "517650e3831f1ee51258d23821cf093b948c3d754a91789c2abb757bd23c8b42"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/C3-Ezekiel.json#L4042",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/75",
+      "ref": "Psalms 83:13",
+      "intro_literal_specimen": "(נִ֣ירֲשָׁה)",
+      "note_id": "Psalms 83:13/2/0",
+      "note_literal_form": "נִ֣ירֲשָׁה",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 83:13/2/0",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=נִ֣ירֲשָׁה (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/83/13/2/3",
+        "parsed_note_body": "א=נִ֣ירֲשָׁה (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים פג/טעמים",
+          "page_id": 238578,
+          "requested_title": "תהלים_פג/טעמים",
+          "revision_id": 2988235,
+          "sha256": "132d0a2d0b1c376a785409b1e9c38095aaf7951281cd0cc5ae679e774e3d9c8e"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L34546",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/76",
+      "ref": "Psalms 84:5",
+      "intro_literal_specimen": "(יְֽהַלֲל֥וּךָ)",
+      "note_id": "Psalms 84:5/2/1",
+      "note_literal_form": "יְֽהַלֲל֥וּךָ",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 84:5/2/1",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=יְֽהַלֲל֥וּךָ (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/84/5/2/5",
+        "parsed_note_body": "א=יְֽהַלֲל֥וּךָ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים פד/טעמים",
+          "page_id": 238582,
+          "requested_title": "תהלים_פד/טעמים",
+          "revision_id": 3079376,
+          "sha256": "c9e1d0937e36861a1f3535001674a7fd7bbdb6a53cf37e5849c459e500dd62aa"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L34821",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/125",
+      "ref": "Psalms 135:19",
+      "intro_literal_specimen": "(בָּרֲכ֣וּ [1])",
+      "note_id": "Psalms 135:19/2/0",
+      "note_literal_form": "בָּרֲכ֣וּ",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 135:19/2/0",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=בָּרֲכ֣וּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/135/19/2/3",
+        "parsed_note_body": "א=בָּרֲכ֣וּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים קלה/טעמים",
+          "page_id": 238786,
+          "requested_title": "תהלים_קלה/טעמים",
+          "revision_id": 2988287,
+          "sha256": "3866b8f3cce43a1099c19c70bc2e5a26d0d7260e77427b5301d3f18a92d569e5"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L56006",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/126",
+      "ref": "Psalms 135:19",
+      "intro_literal_specimen": "(בָּרֲכ֥וּ [2])",
+      "note_id": "Psalms 135:19/2/1",
+      "note_literal_form": "בָּרֲכ֥וּ",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 135:19/2/1",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=בָּרֲכ֥וּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/135/19/2/7",
+        "parsed_note_body": "א=בָּרֲכ֥וּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים קלה/טעמים",
+          "page_id": 238786,
+          "requested_title": "תהלים_קלה/טעמים",
+          "revision_id": 2988287,
+          "sha256": "3866b8f3cce43a1099c19c70bc2e5a26d0d7260e77427b5301d3f18a92d569e5"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L56018",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/127",
+      "ref": "Psalms 135:20",
+      "intro_literal_specimen": "(בָּרֲכ֣וּ [1])",
+      "note_id": "Psalms 135:20/2/0",
+      "note_literal_form": "בָּרֲכ֣וּ",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 135:20/2/0",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=בָּרֲכ֣וּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/135/20/2/3",
+        "parsed_note_body": "א=בָּרֲכ֣וּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים קלה/טעמים",
+          "page_id": 238786,
+          "requested_title": "תהלים_קלה/טעמים",
+          "revision_id": 2988287,
+          "sha256": "3866b8f3cce43a1099c19c70bc2e5a26d0d7260e77427b5301d3f18a92d569e5"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L56045",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/128",
+      "ref": "Psalms 135:20",
+      "intro_literal_specimen": "(בָּרֲכ֥וּ [2])",
+      "note_id": "Psalms 135:20/2/1",
+      "note_literal_form": "בָּרֲכ֥וּ",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 135:20/2/1",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=בָּרֲכ֥וּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/135/20/2/7",
+        "parsed_note_body": "א=בָּרֲכ֥וּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים קלה/טעמים",
+          "page_id": 238786,
+          "requested_title": "תהלים_קלה/טעמים",
+          "revision_id": 2988287,
+          "sha256": "3866b8f3cce43a1099c19c70bc2e5a26d0d7260e77427b5301d3f18a92d569e5"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L56057",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/136",
+      "ref": "Psalms 145:2",
+      "intro_literal_specimen": "(וַאֲהַלֲלָ֥ה [2])",
+      "note_id": "Psalms 145:2/2/1",
+      "note_literal_form": "וַאֲהַלֲלָ֥ה",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 145:2/2/1",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=וַאֲהַלֲלָ֥ה (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/145/2/2/3",
+        "parsed_note_body": "א=וַאֲהַלֲלָ֥ה (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים קמה/טעמים",
+          "page_id": 238826,
+          "requested_title": "תהלים_קמה/טעמים",
+          "revision_id": 2997834,
+          "sha256": "46cf7380e5c599937d3b11b9173e1a75530bfe03bf681ae102576893d99b12bf"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L59347",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    },
+    {
+      "item": "ch5:L710/item/156",
+      "ref": "Psalms 148:14",
+      "intro_literal_specimen": "(הַֽלֲלוּ־יָֽהּ)",
+      "note_id": "Psalms 148:14/2/0",
+      "note_literal_form": "הַֽלֲלוּ־יָֽהּ",
+      "source_relation": "explicit Aleppo counterpart in current note; source not supplied by guessing the unsigled item",
+      "raw_note_evidence": {
+        "note_id": "Psalms 148:14/2/0",
+        "raw_path": "in/mam-ws/D1-Psalms.json",
+        "raw_note_body": "א=הַֽלֲלוּ־יָֽהּ (חטף)",
+        "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+        "parsed_pointer": "/book39s/0/chapters/148/14/2/10",
+        "parsed_note_body": "א=הַֽלֲלוּ־יָֽהּ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "תהלים קמח/טעמים",
+          "page_id": 238838,
+          "requested_title": "תהלים_קמח/טעמים",
+          "revision_id": 3008039,
+          "sha256": "8e19ada28f4c655157f2c7ad03b758ebc6b8daa25173271d4194458b2087ea6a"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L60865",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      }
+    }
+  ],
+  "hataf_incremental_overlay": {
+    "original_central_correspondence": 645,
+    "resolved_unsigled_counterparts": 9,
+    "current_central_correspondence": 654,
+    "remaining_item_scope_or_quotation_limits": 13,
+    "total_items": 667,
+    "method": "Retain the original roster ledger as prior evidence; overlay the nine independently raw-matched named-source counterparts. No full roster rerun."
+  },
+  "independent_raw_note_proofs": [
+    {
+      "note_id": "Deuter 32:6/2/0",
+      "raw_path": "in/mam-ws/A5-Deuter.json",
+      "raw_note_body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד){{ש}}ל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד){{ש}}ל1={{מ:אות-ג|הַ}} לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד){{ש}}ש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד){{ש}}תיגאן=<{{מ:אות-ג|הַֽ}}לְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.{{ש}}מ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+      "parsed_path": "MAM-parsed/plus/A5-Deuter.json",
+      "parsed_pointer": "/book39s/0/chapters/32/6/2/0",
+      "parsed_note_body": "=א,ש,ק3[מ\"ק-ק3=ה' רב'],ל9 ומ\"ש (פתח באות ה\"א גדולה, רווח, ואחר כך שווא באות למ\"ד ובאות יו\"ד)\nל=הֲ־לַיְהוָה֙ (חטף פתח באות ה\"א, תיבות מוקפות, פתח באות למ\"ד ושווא באות יו\"ד)\nל1=הַ לְיֲהוָה֙ (פתח באות ה\"א גדולה, תיבה בפני עצמה, שווא באות למ\"ד וחטף פתח באות יו\"ד)\nש1=הַ־ליְהוָה֙ (אין אות גדולה, תיבות מוקפות, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)\nתיגאן=<הַֽלְיהֹוָה֙> (פתח וגעיה באות ה\"א גדולה, תיבה אחת, שווא באות למ\"ד, אין ניקוד של שווא באות יו\"ד), וראו פנקובר, נוסח התורה, עמ' 69, 71.\nמ\"ג דפוס ונציה=הַליְהֹוָה (אין אות גדולה, תיבה אחת, אין ניקוד של שווא באות למ\"ד, שווא באות יו\"ד)",
+      "chapter_revision": {
+        "resolved_title": "דברים לב/טעמים",
+        "page_id": 236679,
+        "requested_title": "דברים_לב/טעמים",
+        "revision_id": 3079372,
+        "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A5-Deuter.json#L15539",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "2Kings 14:7/2/0",
+      "raw_path": "in/mam-ws/BD-2Kings.json",
+      "raw_note_body": "=ל,ק ובדפוסים{{ש}}א!=מֶלַח֙ (חסר פשטא מלעיל בניגוד לדרכו){{ש}}הערת ברויאר",
+      "parsed_path": "MAM-parsed/plus/BC-Kings.json",
+      "parsed_pointer": "/book39s/1/chapters/14/7/2/1",
+      "parsed_note_body": "=ל,ק ובדפוסים\nא!=מֶלַח֙ (חסר פשטא מלעיל בניגוד לדרכו)\nהערת ברויאר",
+      "chapter_revision": {
+        "resolved_title": "מלכים ב יד/טעמים",
+        "page_id": 237233,
+        "requested_title": "מלכים ב_יד/טעמים",
+        "revision_id": 3008010,
+        "sha256": "f7cd44992458e16d81b0679863e1953acdcbbd2ef3d2a7930624b3cdfedfde9c"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BC-Kings.json#L13591",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Daniel 2:41/2/1",
+      "raw_path": "in/mam-ws/F1-Daniel.json",
+      "raw_note_body": "=ש1,ק-מ,ב1 ובדפוסים (וכן בברויאר ומג\"ה){{ש}}ל?=<דִֽי פַרְזְלָ֖א> (געיה וחסר מקף?) לפי הערת ברויאר במהדורת חורב, וכך נראה מעיון בכתב־היד בהגדלה.{{ש}}הקלדה=<דִ֥י פַרְזְלָ֖א> (במרכא) בעקבות BHS וגם זה אפשרי.{{ש}}הערת ברויאר (במהדורת חורב)",
+      "parsed_path": "MAM-parsed/plus/F1-Daniel.json",
+      "parsed_pointer": "/book39s/0/chapters/2/41/2/7",
+      "parsed_note_body": "=ש1,ק-מ,ב1 ובדפוסים (וכן בברויאר ומג\"ה)\nל?=<דִֽי פַרְזְלָ֖א> (געיה וחסר מקף?) לפי הערת ברויאר במהדורת חורב, וכך נראה מעיון בכתב־היד בהגדלה.\nהקלדה=<דִ֥י פַרְזְלָ֖א> (במרכא) בעקבות BHS וגם זה אפשרי.\nהערת ברויאר (במהדורת חורב)",
+      "chapter_revision": {
+        "resolved_title": "דניאל ב/טעמים",
+        "page_id": 239289,
+        "requested_title": "דניאל_ב/טעמים",
+        "revision_id": 2988414,
+        "sha256": "617e32129e7b986cb20e70c1279da74cdf2528b2322ff11b35c5e1d8235a40b6"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/F1-Daniel.json#L1401",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "2Samuel 8:3/2/0",
+      "raw_path": "in/mam-ws/BB-2Samuel.json",
+      "raw_note_body": "א-קרי=\"בנהר פרת\" (שתי התיבות), אמנם חסרים המקף לתיבה \"בנהר\", והרווח והניקוד לתיבה \"פְּרָֽת\" שאינה נכתבת.{{ש}}ל-קרי,ק-קרי,ש1-קרי,או\"א(97)=\"פְּרָֽת קרי ולא כתב\", וכך גם בתיגאן ובכתבי־יד ספרדים ובדפוסים; לגבי הכתיב והקרי במקום הזה ראו יוסף עופר, המסורה למקרא ודרכיה: פרקי מבוא, עמ' 106 ושם בהערה 12.",
+      "parsed_path": "MAM-parsed/plus/BA-Samuel.json",
+      "parsed_pointer": "/book39s/1/chapters/8/3/2/1",
+      "parsed_note_body": "א-קרי=\"בנהר פרת\" (שתי התיבות), אמנם חסרים המקף לתיבה \"בנהר\", והרווח והניקוד לתיבה \"פְּרָֽת\" שאינה נכתבת.\nל-קרי,ק-קרי,ש1-קרי,או\"א(97)=\"פְּרָֽת קרי ולא כתב\", וכך גם בתיגאן ובכתבי־יד ספרדים ובדפוסים; לגבי הכתיב והקרי במקום הזה ראו יוסף עופר, המסורה למקרא ודרכיה: פרקי מבוא, עמ' 106 ושם בהערה 12.",
+      "chapter_revision": {
+        "resolved_title": "שמואל ב ח/טעמים",
+        "page_id": 237027,
+        "requested_title": "שמואל ב_ח/טעמים",
+        "revision_id": 3010613,
+        "sha256": "2c0a9ffcad0a31f673cc48d895a7d2c3d0d7f82146dd1e63a0c8ba720400245a"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L11920",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Psalms 6:3/2/0",
+      "raw_path": "in/mam-ws/D1-Psalms.json",
+      "raw_note_body": "=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויאר ספק ברשימתו.{{ש}}א=אֻמְלָ֫ל (נקודת קמץ באות למ\"ד); כל האזור מטושטש מאוד, אבל רואים את נקודת הקמץ בבירור (וכך הכריעו במג\"ה).",
+      "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+      "parsed_pointer": "/book39s/0/chapters/6/3/2/3",
+      "parsed_note_body": "=ל,ש1,ק13,ק-מ ומסורת טברנית ומ\"ש (פתח באות למ\"ד) וכמו כן בדפוסים, וכך הכריעו דותן וברויאר; ייתכן שבכתי\"ל יש סימן מחיקה לנקודת קמץ מתחת לקו, ולכן ציין ברויאר ספק ברשימתו.\nא=אֻמְלָ֫ל (נקודת קמץ באות למ\"ד); כל האזור מטושטש מאוד, אבל רואים את נקודת הקמץ בבירור (וכך הכריעו במג\"ה).",
+      "chapter_revision": {
+        "resolved_title": "תהלים ו/טעמים",
+        "page_id": 238270,
+        "requested_title": "תהלים_ו/טעמים",
+        "revision_id": 2988158,
+        "sha256": "897d446bf16de3e074a3c8cc34cfeaf868c65053d49052f0b77b686d7eaffa94"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L1302",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Proverbs 8:34/2/0",
+      "raw_path": "in/mam-ws/D2-Proverbs.json",
+      "raw_note_body": "א?=שֹׁמֵ֢֫עַֽ לִ֥י (סימן ה\"עולה\" תלוי בין האותיות מ\"ם ועי\"ן)",
+      "parsed_path": "MAM-parsed/plus/D2-Proverbs.json",
+      "parsed_pointer": "/book39s/0/chapters/8/34/2/4",
+      "parsed_note_body": "א?=שֹׁמֵ֢֫עַֽ לִ֥י (סימן ה\"עולה\" תלוי בין האותיות מ\"ם ועי\"ן)",
+      "chapter_revision": {
+        "resolved_title": "משלי ח/טעמים",
+        "page_id": 238879,
+        "requested_title": "משלי_ח/טעמים",
+        "revision_id": 2992565,
+        "sha256": "131b45fa8b810a2843a6a30721203960e8e5d9131a7cdd255fbe78c8435c9d47"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L5086",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Psalms 68:18/2/0",
+      "raw_path": "in/mam-ws/D1-Psalms.json",
+      "raw_note_body": "א=בָֿ֝ם (השמטת נקודת הרביע); השארנו כאן את סימן הרפה באות בי\"ת בעקבות דברי מנחת־שי על ישעיהו לד,יא.",
+      "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+      "parsed_pointer": "/book39s/0/chapters/68/18/2/3",
+      "parsed_note_body": "א=בָֿ֝ם (השמטת נקודת הרביע); השארנו כאן את סימן הרפה באות בי\"ת בעקבות דברי מנחת־שי על ישעיהו לד,יא.",
+      "chapter_revision": {
+        "resolved_title": "תהלים סח/טעמים",
+        "page_id": 238518,
+        "requested_title": "תהלים_סח/טעמים",
+        "revision_id": 2997828,
+        "sha256": "534616278109caae3e4313deb117eaa54b53e6e08a2c1a0b1dca9ce1841d8766"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L26294",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Psalms 74:5/2/0",
+      "raw_path": "in/mam-ws/D1-Psalms.json",
+      "raw_note_body": "א=בִּסֲבָךְ־עֵ֝ץ (חטף; השמטת נקודת הרביע)",
+      "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+      "parsed_pointer": "/book39s/0/chapters/74/5/2/3",
+      "parsed_note_body": "א=בִּסֲבָךְ־עֵ֝ץ (חטף; השמטת נקודת הרביע)",
+      "chapter_revision": {
+        "resolved_title": "תהלים עד/טעמים",
+        "page_id": 238542,
+        "requested_title": "תהלים_עד/טעמים",
+        "revision_id": 2997807,
+        "sha256": "70c86ea1c6282c56065e259c1d0617cab89fdef2b6ef4bfed455178e0cfce5de"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L29752",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Exodus 14:5/2/0",
+      "raw_path": "in/mam-ws/A2-Exodus.json",
+      "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו ובדפוסים{{ש}}ל!=וַיֹּֽאמרוּ֙ (חסר שווא באות מ\"ם){{ש}}הערת המקליד",
+      "parsed_path": "MAM-parsed/plus/A2-Exodus.json",
+      "parsed_pointer": "/book39s/0/chapters/14/5/2/1",
+      "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו ובדפוסים\nל!=וַיֹּֽאמרוּ֙ (חסר שווא באות מ\"ם)\nהערת המקליד",
+      "chapter_revision": {
+        "resolved_title": "שמות יד/טעמים",
+        "page_id": 236193,
+        "requested_title": "שמות_יד/טעמים",
+        "revision_id": 2987651,
+        "sha256": "7ca6cf803c53da15c4731d72b0de0cf632316674295781d3a8965a12c09754f2"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A2-Exodus.json#L5347",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Exodus 14:13/2/1",
+      "raw_path": "in/mam-ws/A2-Exodus.json",
+      "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה (כתיב חסר יו\"ד){{ש}}ל!=תֹסִ֛יפוּ (כתיב מלא יו\"ד){{ש}}הערת ברויאר",
+      "parsed_path": "MAM-parsed/plus/A2-Exodus.json",
+      "parsed_pointer": "/book39s/0/chapters/14/13/2/3",
+      "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה (כתיב חסר יו\"ד)\nל!=תֹסִ֛יפוּ (כתיב מלא יו\"ד)\nהערת ברויאר",
+      "chapter_revision": {
+        "resolved_title": "שמות יד/טעמים",
+        "page_id": 236193,
+        "requested_title": "שמות_יד/טעמים",
+        "revision_id": 2987651,
+        "sha256": "7ca6cf803c53da15c4731d72b0de0cf632316674295781d3a8965a12c09754f2"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A2-Exodus.json#L5525",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Psalms 3:1/2/0",
+      "raw_path": "in/mam-ws/D1-Psalms.json",
+      "raw_note_body": "פרשה סתומה",
+      "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+      "parsed_pointer": "/book39s/0/chapters/3/1/2/1",
+      "parsed_note_body": "פרשה סתומה",
+      "chapter_revision": {
+        "resolved_title": "תהלים ג/טעמים",
+        "page_id": 238258,
+        "requested_title": "תהלים_ג/טעמים",
+        "revision_id": 2988155,
+        "sha256": "f9a2b1da00fd1fde08636add5908d3e7537131f0aa129ce14b4ca4404caf4985"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L495",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    },
+    {
+      "note_id": "Psalms 106:1/2/1",
+      "raw_path": "in/mam-ws/D1-Psalms.json",
+      "raw_note_body": "פרשה פתוחה",
+      "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+      "parsed_pointer": "/book39s/0/chapters/106/1/2/1",
+      "parsed_note_body": "פרשה פתוחה",
+      "chapter_revision": {
+        "resolved_title": "תהלים קו/טעמים",
+        "page_id": 238670,
+        "requested_title": "תהלים_קו/טעמים",
+        "revision_id": 3008037,
+        "sha256": "2e261d0599ae06c18e526e7ca88dd0df80031875606a055fa1685603bec20712"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L44028",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    }
+  ],
+  "deuteronomy_yod_sheva": {
+    "intro_claim": "ch3:L246",
+    "intro_literal_form": "הֲ־לַיהוָה֙",
+    "note_id": "Deuter 32:6/2/0",
+    "note_literal_form": "הֲ־לַיְהוָה֙",
+    "intro_codepoints": [
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ֲ",
+        "codepoint": "U+05B2",
+        "name": "HEBREW POINT HATAF PATAH"
+      },
+      {
+        "character": "־",
+        "codepoint": "U+05BE",
+        "name": "HEBREW PUNCTUATION MAQAF"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "֙",
+        "codepoint": "U+0599",
+        "name": "HEBREW ACCENT PASHTA"
+      }
+    ],
+    "note_codepoints": [
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ֲ",
+        "codepoint": "U+05B2",
+        "name": "HEBREW POINT HATAF PATAH"
+      },
+      {
+        "character": "־",
+        "codepoint": "U+05BE",
+        "name": "HEBREW PUNCTUATION MAQAF"
+      },
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "֙",
+        "codepoint": "U+0599",
+        "name": "HEBREW ACCENT PASHTA"
+      }
+    ],
+    "boundary": "Literal quoted difference established; central joining agrees and complete-quotation intent remains editorial."
+  },
+  "catalogue_scope": {
+    "line_differences": [
+      "ch2:L87",
+      "appendices:L375",
+      "ch2:L112",
+      "appendices:L383"
+    ],
+    "underlying_verse_cases": [
+      "2Samuel 8:3",
+      "2Samuel 21:12"
+    ],
+    "repeated_wrong_locator": {
+      "linked": "Jeremiah 31:38",
+      "intended": "Jeremiah 31:37",
+      "already_in_locator_family": true
+    },
+    "resolved_internal_count_difference": {
+      "claims": [
+        "ch2:L109",
+        "ch2:L112",
+        "appendices:L381",
+        "appendices:L382"
+      ],
+      "chapter_total": 3,
+      "appendix_total": 4,
+      "chapter_non_maqaf_members": [
+        "Ezekiel 9:11"
+      ],
+      "appendix_non_maqaf_members": [
+        "2Samuel 8:3",
+        "Ezekiel 9:11"
+      ],
+      "note_id": "2Samuel 8:3/2/0"
+    },
+    "boundary": "2 Samuel 8:3 has a current one-ketiv/two-different-qere typed target and an Aleppo qere clause for both atoms; Leningrad/other-source clauses also describe the traditional qere-only final atom. Traditional atom-level phenomena and unified modern template identity need not be mutually exclusive. 2 Samuel 21:12's three-atom scope is already reviewed; no duplicate new finding."
+  }
+}

@@ -432,5 +432,19 @@
       26
     ],
     "reason": "Page and displayed label say118:26, while the fragment says2:26. Intended raw/parsed context agrees with the quoted ברכנו כם atom."
+  },
+  {
+    "claim": "ch1:L258",
+    "wrong": [
+      "Job",
+      10,
+      9
+    ],
+    "intended": [
+      "Job",
+      9,
+      10
+    ],
+    "reason": "The prose reference reverses chapter/verse; the quoted word, two external paths and raw/parsed verse membership identify Job9:10. Historical source forms remain unverified."
   }
 ]

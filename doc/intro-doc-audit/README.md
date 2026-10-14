@@ -1,6 +1,6 @@
 # Cached Introduction and documentation-note audit
 
-State: finite reference passes accounted for; unresolved evidence boundaries retained.
+State: finite reference and productive cached prose passes accounted for; external and editorial evidence boundaries retained.
 Isolated research branch, no integration scheduled.
 
 This audit uses the repository snapshot at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
@@ -76,7 +76,7 @@ count (eleven verse entries, twelve atom forms), Lamentations 1:6's reversed one
 description, and Proverbs 30:19's stale MAM illustration. The first has all eleven
 Introduction/doc-note pairs in `deuter-roster-pairs.json`; the latter two explicitly
 distinguish structural or edition evidence from a manuscript-reading conflict.
-Thirty-one independently checked locator examples are grouped as one finding. A grouped
+The initial thirty-one independently checked locator examples are grouped as one finding. A grouped
 description review covers four letter/accent-name disagreements, including a
 Deuteronomy 28:27 note that says TAV where the Introduction correctly says TET.
 The raw-cache quotations agree, so this is a prose-label discrepancy, not an
@@ -125,7 +125,7 @@ all corpus-wide rules, historical statements or physical readings have been cert
 All **1,643/1,643 verse-linked source units** now have bounded reviewer assessments.
 The added evidence assessments cover **210/210 policy/example units**, and the
 24 hataf-roster plus five meteg-roster source units. The combined source-unit
-ledger therefore assesses **1,859 distinct selected source units**. Assessment includes
+ledger originally assessed **1,859 distinct selected source units**. Assessment includes
 unsupported and uncheckable claims; it is not a declaration of consistency.
 
 All **667/667 hataf roster entries** across five Torah and nineteen later-book
@@ -159,6 +159,111 @@ complete manuscript pointing, how two-versus-three qere-note descriptions delimi
 their scope, and how old template rosters map to current unified special types.
 The current cache does not establish the true manuscript reading at the new accent
 disagreements. No manuscript scan or new source interpretation was undertaken.
+
+## Incremental cached pass, 2026-10-14
+
+The previous broad audit is commit `46b40fcace6382be94ebdee0fee761a349eedcaa`.
+The source remains `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`; no cache was refreshed.
+This separate batch revisits **24/24 uncertainty groups** and reads **643/643 additional
+prose units**: 179 numeric/universal routing selections, all 460 remaining ordinary
+units, and four historical-WLC source-framing units. Root reconciled the
+read-only reviewers' disjoint ledgers and independently checked material findings.
+The selected assessed ledger now has **2,502/8,984 source units**. All **1,643/1,643
+explicit-reference units** remain accounted for. Assessment includes unsupported
+claims and framing; neither fraction measures universal semantic consistency.
+Of 847 initially routed Westminster units, the four source-framing paragraphs now
+receive bounded checks; **843 historical table units** remain routed without individual
+semantic assessment. Remaining headings, markup, metadata, tables, transclusions and
+historical prose keep the boundaries in the 340-topic map; they have no blanket verdict.
+
+`next-pass-census.json` records current source and consumer commits, exact pointers,
+three closed EP projection choices and an independent current MAM-simple extractor.
+All choices reproduce **2,679 DEHI / 423 OLEH verses out of 4,465 poetic verses**.
+Doubled helpers change mark-instance counts without changing verse membership.
+The complete selected atom predicate partitions OLEH into **368 same-atom + 55 two-atom
+cases, zero unmatched**. All **55/55** two-atom verse memberships exactly match the
+Introduction's three lists; 38 are maqaf-joined and 17 spaced. This resolves current
+MAM roster completeness under that predicate. It does not certify a physical manuscript
+population. The Introduction's **2,685/421** totals still have no cached source-membership
+or counting contract. Neither cached WLC 4.20 nor 4.22 reproduces them; both give the
+same compared memberships (2,682 literal DEHI verses, 407 literal OLEH verses). Their
+limited scanner recovery is not asserted as a complete grammatical count.
+
+The same closed walk finds **371 qamats-alternative parent templates in 357 verses**
+out of 23,202 canonical verses. The Introduction's “about 350” lacks an approximation
+tolerance or historical count basis, so this is numerical drift. All **1,010/1,010
+ordinary ketiv/qere objects** have unpointed selected ketiv (880 ketiv-first, 130
+qere-first). Special types, implicit reading-mother families, colour and live layout
+are outside that predicate. Lamentations 1's three explicit cases are independently
+accounted for at 1:6, 1:11 and 1:18, including its special first case and post-maqaf third.
+
+`next-pass-assessments.json` retains **21 independent raw-note comparisons**, including
+the **nine unsigled hataf entries** now matched to explicit Aleppo counterparts.
+This overlay raises central source/hataf correspondence from 645 to **654/667**;
+13 item-level quotation/source-scope limits remain. The original roster ledger is
+retained and linked to the incremental proof, without rerunning the completed roster.
+It clarifies 2 Kings 14:7's explicit Aleppo pashta clause, Daniel 2:41's expressly
+possible digital candidate, Deuteronomy 32:6's literal yod-sheva difference, and four
+design specimens that differ from other Introduction passages agreeing with their notes.
+Central spelling/size/design agreement remains separate from complete quotation intent.
+The maintained legarmeh explanation is corrected: **two** of six existing selected
+absences resolve by locator correction; four remain. A repaired nonexistent target
+was not a third member of those six. No source or historical commit is rewritten.
+
+The four differing catalogue lines reduce to **two underlying verse cases**, plus the
+repeated Jeremiah locator error. The chapter-2 different-qere total (three) and appendix
+total (four) disagree internally; the appendix includes 2 Samuel 8:3, supported by the
+current typed object and the note. Traditional atom-level qere-only phenomena can coexist
+with a unified modern template. 2 Samuel 21:12's already reviewed three-atom scope is
+not counted again as a new finding.
+
+The incremental review presents **five new internal count/wording/date/metadata groups**:
+the three-versus-four catalogue count; ordinary-Hebrew-year wording against its own
+solar-year arithmetic; Isaiah's first-three-types/four-cases grouping; and an incompatible
+Hebrew/Gregorian date pair; and a source label saying WLC 4.14 before its own WLC 4.16
+quotation. The two quoted legend totals add exactly to 1,034 and 945. The historical
+versions are explicitly named, but matching machine-readable legacy inputs and physical
+source controls are unavailable. The 4.12/4.14 summary covers all 39 books and retains
+category counts whose overlap/filtering does not define unique-change majority.
+Local calendar conversion establishes that 7 Tevet 5774
+is 2013-12-10, while the text pairs it with 10.12.14. The historical event date remains
+unknown. A Job prose reference reverses 9:10 to 10:9, increasing the verse-locator
+family to **32 checked examples**. **Six further internal fragment targets** differ
+from current cached headings and explicit anchors; live template aliases were not checked.
+`next-pass-prose-findings.json` preserves the exact evidence and remaining limits.
+These additions make **no new central attributed-form disagreement groups**: the
+previous eleven groups and the separately tracked #305–307 remain distinct.
+
+`general-prose-input.json` and `general-prose-assessments.json` preserve all 643 IDs,
+human dispositions, exact source captures and narrower claim-to-note/code relations.
+Successful census execution is not the evidence for those semantic judgments.
+Productive local checks are exhausted for the declared populations. Further resolution
+needs an editorial decision about quotation/list scope, an explicit historical counting
+population, an unavailable manuscript/source-book report, or live rendering evidence.
+Those are concrete evidence boundaries, not execution failures. No such additional
+source work or correction is authorized by this audit.
+
+Regenerate this incremental batch sequentially, at the entry point's low priority:
+
+```powershell
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py census-scope
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py next-pass
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py prose-findings
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py general-prose
+C:/Users/BenDe/GitRepos/MAM-basics/.venv/Scripts/python.exe py/main_intro_doc_audit.py review
+```
+
+The prose-finding command adds the checked Job example idempotently to the research
+navigation ledger. Every command writes only research data/report files. No new testing
+gate, full suite, manuscript scan, external issue/comment, source correction, main
+integration or deployment was performed.
+
+Final focused verification matched all 8,984 captured Introduction units and 3,905
+retained note nodes to their cached inputs, confirmed the declared populations and
+research-only diff, and passed Black on the seven changed Python files and `git diff --check`.
+The final compact Hebrew comparison was rendered and inspected at 30 px; the report
+retains the 20–48 px slider and no copy/print/save controls. These checks do not turn
+the remaining evidence boundaries into consistency findings.
 
 Additional research commands use the same interpreter from the worktree root:
 
