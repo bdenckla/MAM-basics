@@ -283,10 +283,17 @@ def render():
         ),
         mb_html.para(
             "These examples show words that can feel cramped in Taamey D even "
-            "when no ink overlaps. Each family groups words that share a combination "
-            "of letters and marks. A word can belong to more than one family. The families "
-            "provide candidates for visual judgment rather than an "
-            "exhaustive inventory of cramped words."
+            "when no ink overlaps."
+        ),
+        mb_html.para(
+            (
+                "A ",
+                mb_html.bold("family"),
+                " is a group of words that share a potentially cramped arrangement "
+                "of letters and marks. A word can match the description of more "
+                "than one family. The families provide candidates for visual "
+                "judgment rather than an exhaustive inventory of cramped words.",
+            )
         ),
         mb_html.para(
             "Each row compares the same word at usual spacing and with "
