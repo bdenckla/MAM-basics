@@ -118,8 +118,8 @@ uses MAM-normal mark order without Unicode normalization.
 
 NAEE opts into the shared HTML-stage typography helper
 `py/py_html/hebrew_letter_spacing.py`. Its original family selects contiguous
-Hebrew atoms with a yod, vav or final nun carrying both a broad below-letter vowel
-(tsere, segol, a hataf vowel or qubuts) and a below-letter accent. By Ben's approval
+Hebrew atoms with yod or vav carrying both a broad below-vowel
+(tsere, segol, a hataf vowel or qubuts) and a below-accent. By Ben's approval
 of 2026-10-13, the active selection also includes the six observed advance-adding
 contexts in the frozen Taamey D 0.921 source and its precise preceding-yod
 vowel-raising context beside qof. The selected
