@@ -2980,3 +2980,16 @@ numeric-cell alignment, preserved explanatory passages and unchanged content
 outside the section. Only `editorial-policies.html` changed among generated
 files; the dataset is unchanged. Mega and the full suite remain on the approved
 nightly cadence for this presentation change.
+
+## Name the vowel examples in their captions — 2026-10-14
+
+**Status:** implemented by Codex at Ben’s request. The Psalms 40:13 caption
+identifies a ḥataf on a non-guttural, the letter pe. The Psalms 14:1 caption
+identifies a ḥataf ḥiriq and notes its poor rendering in many fonts.
+
+**Verification:** Work began in the clean main checkout at `c1db3b82`.
+Black, HTML regeneration and five focused prose checks passed. A comparison
+with the captured page confirms exactly the two requested caption changes;
+the verse links, Hebrew examples and all other page content are unchanged.
+No other generated file or dataset changed. Mega and the full suite remain
+on the approved nightly cadence for these caption edits.

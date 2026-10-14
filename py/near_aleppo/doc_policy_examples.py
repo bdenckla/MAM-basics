@@ -63,6 +63,12 @@ _EXAMPLES = {
         "\N{HEBREW POINT HIRIQ}",
     ),
 }
+_CAPTION_ENDINGS = {
+    "hataf": (", we have a ḥataf on a non-guttural (in this case, the letter pe):"),
+    "hataf-hiriq": (
+        ", we have a ḥataf ḥiriq (not well rendered in many fonts, unfortunately):"
+    ),
+}
 
 
 def _cell(directory, ref):
@@ -151,7 +157,9 @@ def comparison(name):
         ):
             raise AssertionError("Job example must use the first quoted Aleppo form")
     return [
-        mb_html.para(["For example, at ", *verse_refs((ref,)), ":"]),
+        mb_html.para(
+            ["For example, at ", *verse_refs((ref,)), _CAPTION_ENDINGS.get(name, ":")]
+        ),
         _comparison(before, after),
     ]
 
