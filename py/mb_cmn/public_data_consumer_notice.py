@@ -129,6 +129,17 @@ def mam_simple_notice() -> dict[str, object]:
             ),
             MAM_SIMPLE_NARPAS_GROUPING_RULE,
             (
+                "An element with no text can still matter. spi-invnun stands for the "
+                "inverted nun, followed by a space when its class is "
+                "including-trailing-space. Within a verse, shirah-space and the "
+                "parashah markers spi-samekh2, spi-samekh3, spi-pe2 and spi-pe3 can be "
+                "the only separator between adjacent Scripture strings, with no literal "
+                "whitespace at that boundary. Do not drop such an element. A plain-text "
+                "projection that does not preserve layout must supply the inverted nun "
+                "and each such separator; a layout-preserving renderer must implement "
+                "the documented space or break."
+            ),
+            (
                 "For a break between verses, the parashah marker and the adjacent "
                 "starts-with-sampe and ends-with-sampe fields describe one break, "
                 "not three."

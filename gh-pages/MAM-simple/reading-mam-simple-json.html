@@ -237,7 +237,11 @@ interspersed with objects encoding special features, e.g.:</p>
 <ol>
 <li>If the <code>verse</code> has a <code>text</code> field, that field is the whole plain text.</li>
 <li>Otherwise, walk its children in document order. Each child contributes either its
-<code>text</code> field or, if it has children instead, the text assembled from those.</li>
+<code>text</code> field or, if it has children instead, the text assembled from those. A child
+with neither can still contribute, as the
+<a href="reading-mam-simple.html#consumer-notice">consumer notice</a> and
+<a href="reading-mam-simple.html#reading-mam-simple-from-python">Reading MAM-simple from Python</a>
+explain.</li>
 </ol>
 <p><strong>Step 2 has to recurse, and a reader that skips the recursion loses text silently.</strong>
 It is tempting to write step 2 as &quot;concatenate the <code>text</code> fields of the <code>text</code>
