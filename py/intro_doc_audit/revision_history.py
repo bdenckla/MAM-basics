@@ -1,7 +1,11 @@
 """Read-only, bounded Wikisource history research outside the scripture caches."""
 
 import json
+import time
+from datetime import datetime, timedelta, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -21,8 +25,25 @@ class HistoryClient:
         path = self.cache_dir / (key + ".json")
         if path.exists():
             return json.loads(path.read_bytes())
+        pacing = self.cache_dir / "network-pacing.json"
+        now = datetime.now(timezone.utc)
+        if pacing.exists():
+            next_request = datetime.fromisoformat(
+                json.loads(pacing.read_text())["next_request"]
+            )
+            delay = max(0, (next_request - now).total_seconds())
+            if delay > 60:
+                raise RuntimeError(
+                    f"History API cooldown until {next_request.isoformat()}"
+                )
+            time.sleep(delay)
+        now = datetime.now(timezone.utc)
+        pacing.write_text(
+            json.dumps({"next_request": (now + timedelta(seconds=10)).isoformat()}),
+            encoding="utf-8",
+        )
         url = "https://he.wikisource.org/w/api.php?" + urlencode(
-            {"format": "json", "formatversion": 2, **params}
+            {"format": "json", "formatversion": 2, "maxlag": 5, **params}
         )
         request = Request(
             url,
@@ -30,8 +51,38 @@ class HistoryClient:
                 "User-Agent": "MAM-basics read-only revision-history research (github.com/bdenckla/MAM-basics)"
             },
         )
-        with urlopen(request, timeout=25) as response:
-            raw = response.read()
+        try:
+            with urlopen(request, timeout=25) as response:
+                raw = response.read()
+        except HTTPError as error:
+            if error.code == 429:
+                retry = error.headers.get("Retry-After", "60")
+                if retry.isdigit():
+                    seconds = max(60, int(retry))
+                else:
+                    try:
+                        retry_date = parsedate_to_datetime(retry)
+                        seconds = max(
+                            60,
+                            (retry_date - datetime.now(timezone.utc)).total_seconds(),
+                        )
+                    except (TypeError, ValueError):
+                        seconds = 300
+                next_request = datetime.now(timezone.utc) + timedelta(seconds=seconds)
+                pacing.write_text(
+                    json.dumps(
+                        {
+                            "next_request": next_request.isoformat(),
+                            "reason": "HTTP 429",
+                            "retry_after": retry,
+                        }
+                    ),
+                    encoding="utf-8",
+                )
+                raise RuntimeError(
+                    f"History API rate limit; paused until {next_request.isoformat()}"
+                ) from error
+            raise
         result = json.loads(raw)
         if "error" in result:
             raise ValueError(result["error"])

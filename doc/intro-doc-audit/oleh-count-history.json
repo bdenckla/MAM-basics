@@ -1,0 +1,45 @@
+{
+  "case": "oleh-omission-count",
+  "classification": "established-count-correction-with-stale-chapter2-summary",
+  "chapter5_change": {
+    "revid": 1194335,
+    "parentid": 1194333,
+    "timestamp": "2021-09-26T05:32:43Z",
+    "url": "https://he.wikisource.org/w/index.php?diff=1194335&oldid=1194333",
+    "before_total": 11,
+    "after_total": 13,
+    "list_entries_before": 13,
+    "list_entries_after": 13,
+    "entries_changed": false
+  },
+  "chapter2_before": {
+    "revid": 1194327,
+    "timestamp": "2021-09-26T05:14:43Z",
+    "count": 11,
+    "url": "https://he.wikisource.org/w/index.php?oldid=1194327"
+  },
+  "chapter2_after": {
+    "revid": 1220669,
+    "timestamp": "2021-09-26T20:12:28Z",
+    "count": 11,
+    "url": "https://he.wikisource.org/w/index.php?oldid=1220669"
+  },
+  "current_cached_counts": {
+    "chapter2": {
+      "revision": 3087893,
+      "count": 11
+    },
+    "chapter5": {
+      "revision": 3087740,
+      "count": 13
+    }
+  },
+  "correction_approval": "not-approved-by-Ben",
+  "evidence": "oleh-count-history-sources.json",
+  "note_evidence": "oleh-count-evidence.json",
+  "limits": [
+    "This establishes the requested 2021 sequence; it does not date the earliest creation of the list or earliest divergence of its entries from eleven.",
+    "Chapter 2 and chapter 5 content histories were sampled, not read exhaustively. Adjacent revisions prove the particular correction.",
+    "The two counts summarize source claims; neither history nor note counts constitute manuscript scan verification or proof of completeness."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "authorization": "Sentinel_7a1e08b9a994819188a8e42b91fb1795",
+  "cases": [
+    {
+      "case": "proverbs-maqaf-illustration",
+      "classification": "established-staleness",
+      "result": "proverbs-30-19-history.json",
+      "research_note": "proverbs-30-19-history.md"
+    },
+    {
+      "case": "oleh-omission-count",
+      "classification": "established-count-correction-with-stale-chapter2-summary",
+      "result": "oleh-count-history.json"
+    }
+  ]
+}

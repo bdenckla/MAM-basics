@@ -290,29 +290,58 @@ def word_comparison_table(comparison, sources):
     rows = []
     for row in comparison["rows"]:
         forms = []
-        for label, key in (("Introduction", "introduction"), ("Doc-note", "doc_note")):
-            form = row[key]
-            sources.resolve(form)
+        entries = row.get("forms")
+        if entries is None:
+            entries = [
+                {"label": label, "passage": row[key]}
+                for label, key in (
+                    ("Introduction", "introduction"),
+                    ("Doc-note", "doc_note"),
+                )
+            ]
+        for entry in entries:
+            label, form = entry["label"], entry["passage"]
+            record = sources.resolve(form)
+            tooltip = (
+                ' title="' + escaped(entry["mark_name"]) + '"'
+                if entry.get("mark_name")
+                else ""
+            )
             forms.append(
                 '<div class="reading"><span class="reading-label">'
-                + label
-                + '</span><span class="he" lang="he" dir="rtl">'
+                + escaped(label)
+                + '</span><span class="he" lang="he" dir="rtl"'
+                + tooltip
+                + ">"
                 + escaped(form["text"])
-                + "</span></div>"
+                + "</span>"
+                + (
+                    '<a href="' + escaped(record["source_url"]) + '">Source</a>'
+                    if row.get("link_sources")
+                    else ""
+                )
+                + "</div>"
             )
+        evidence = escaped(row.get("manuscript", ""))
+        if row.get("evidence"):
+            evidence = panel(row["evidence"], sources)
+        if row.get("evidence_explanation"):
+            evidence += "<p>" + prose(row["evidence_explanation"]) + "</p>"
         rows.append(
             '<tr><td class="word-pair">'
             + "".join(forms)
             + '</td><td class="verse">'
             + escaped(row["ref"])
             + "</td><td>"
-            + escaped(row["manuscript"])
+            + evidence
             + "</td></tr>"
         )
     return (
         '<div class="membership"><table><caption>'
         + prose(comparison["caption"])
-        + "</caption><thead><tr><th>Word in each source</th><th>Verse</th><th>Manuscript</th></tr></thead><tbody>"
+        + "</caption><thead><tr><th>Word in each source</th><th>Verse</th><th>"
+        + escaped(comparison.get("evidence_heading", "Manuscript"))
+        + "</th></tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table></div>"
     )

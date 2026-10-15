@@ -1,0 +1,4365 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "authorization": "Sentinel_7a1e08b9a994819188a8e42b91fb1795",
+  "scope": "Existing report comparisons with MAM body text (including alternatives) or doc-notes, plus Ben's explicit omitted-oleh count-history request. Other pure Introduction contradictions, locator defects and resolved controls are accounted for but outside this content-history pass.",
+  "coverage": {
+    "report_cases_accounted": 152,
+    "report_cases_total": 152,
+    "excluded-internal-or-control": 58,
+    "applicable": 94
+  },
+  "history_partition": {
+    "excluded": 58,
+    "pending": 92,
+    "established-staleness": 1,
+    "established-count-correction-with-stale-chapter2-summary": 1
+  },
+  "first_batch": [
+    "numbers-yod-label",
+    "deuteronomy-vav-label",
+    "PS-1-3",
+    "PS-18-2-ATTRIBUTION"
+  ],
+  "cases": [
+    {
+      "case": "different-qere-count",
+      "title": "2 Samuel 8:3 — scope of the two-word qere category",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The requested comparison is between two Introduction category definitions; the MAM qere is corroborating context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "appendices:L375",
+        "appendices:L381",
+        "appendices:L382",
+        "ch2:L109",
+        "ch2:L111",
+        "ch2:L112",
+        "ch2:L113",
+        "ch2:L87"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/appendices.mediawiki",
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 8:3/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב ח/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "2Samuel 8:3/2/0",
+          "pointer": "/tmpl_params/2"
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "jeremiah-accent",
+      "title": "Jeremiah 31:37 — Ben’s correction of the doc-note quotation",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "JER-31-37-BEN-20261014",
+      "introduction_claims": [
+        "ch5:L458"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Jeremiah 31:37/2/0"
+      ],
+      "chapter_pages": [
+        "ירמיהו לא/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "numbers-yod-label",
+      "title": "Numbers 9:7 — Ben confirms the doc-note’s yod correction",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "NUM-9-7-BEN-20261014",
+      "introduction_claims": [
+        "ch3:L153"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 9:7/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר ט/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Numbers 9:7/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Numbers 9:7/2/0"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": true
+    },
+    {
+      "case": "deuteronomy-vav-label",
+      "title": "Deuteronomy 32:34 — Ben confirms the doc-note’s vav correction",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "DEUT-32-34-BEN-20261014",
+      "introduction_claims": [
+        "ch3:L211"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 32:34/2/0"
+      ],
+      "chapter_pages": [
+        "דברים לב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Deuter 32:34/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": true
+    },
+    {
+      "case": "deuteronomy-leningrad-spelling",
+      "title": "Deuteronomy 6:21 — Ben’s correction of the opening source list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "DEUT-6-21-BEN-20261014",
+      "introduction_claims": [
+        "ch3:L186"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 6:21/2/0"
+      ],
+      "chapter_pages": [
+        "דברים ו/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Deuter 6:21/2/0"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-SONG-1-6",
+      "title": "Song of Songs 1:6: a Leningrad ḥataf word is missing from the list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "SONG-1-6-BEN-20261014",
+      "introduction_claims": [
+        "ch5:L716"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Song of Songs 1:6/2/0"
+      ],
+      "chapter_pages": [
+        "שיר השירים א/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Song of Songs 1:6/2/0"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-SAM-8-10",
+      "title": "2 Samuel 8:10: an Aleppo ḥataf word is missing from the list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "SAM-8-10-BEN-20261014",
+      "introduction_claims": [
+        "ch5:L698"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 8:10/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב ח/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "2Samuel 8:10/2/0"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-NUM-10-9",
+      "title": "Numbers 10:9: a Leningrad ḥataf word is missing from the list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "NUM-10-9-BEN-20261015",
+      "introduction_claims": [
+        "ch3:L1132"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 10:9/2/1"
+      ],
+      "chapter_pages": [
+        "במדבר י/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Numbers 10:9/2/1"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-GEN-30-27",
+      "title": "Genesis 30:27: a Leningrad ḥataf word is missing from the list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "GEN-30-27-BEN-20261015",
+      "introduction_claims": [
+        "ch3:L1126"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Genesis 30:27/2/0"
+      ],
+      "chapter_pages": [
+        "בראשית ל/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Genesis 30:27/2/0"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "deuteronomy-hataf-count",
+      "title": "Deuteronomy’s list of ḥataf vowels on non-guttural letters",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The count conflicts with the Introduction's own list items.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "DEUT-HATAF-COUNT-BEN-20261014",
+      "introduction_claims": [
+        "ch3:L1134"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 15:20/2/0",
+        "Deuter 15:22/2/0",
+        "Deuter 24:13/2/2",
+        "Deuter 28:39/2/0",
+        "Deuter 29:7/2/1",
+        "Deuter 32:10/2/0",
+        "Deuter 32:18/2/1",
+        "Deuter 32:36/2/0",
+        "Deuter 3:22/2/0",
+        "Deuter 5:23/2/0",
+        "Deuter 8:15/2/0",
+        "Deuter 8:2/2/0"
+      ],
+      "chapter_pages": [
+        "דברים ג/טעמים",
+        "דברים ה/טעמים",
+        "דברים ח/טעמים",
+        "דברים טו/טעמים",
+        "דברים כד/טעמים",
+        "דברים כח/טעמים",
+        "דברים כט/טעמים",
+        "דברים לב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "lamentations-one-two",
+      "title": "Lamentations 1:6 — contradictory one/two counts within the Introduction",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Ben identifies a contradiction within the Introduction.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "LAM-1-6-PROPOSAL-20261014",
+      "introduction_claims": [
+        "ch2:L102"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/E3-Lamentations.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/1/6/2/1/tmpl_params/1",
+              "text": "מן בת"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/E3-Lamentations.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/1/6/2/1/tmpl_params/2",
+              "text": "מִבַּת־"
+            }
+          ]
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "proverbs-maqaf-illustration",
+      "title": "Proverbs 30:19 — the layout example keeps MAM’s older spaced form",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": true,
+      "adjudication": "PROV-30-19-BEN-20261015",
+      "introduction_claims": [
+        "ch2:L965",
+        "ch2:L968"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Proverbs 30:19/2/0"
+      ],
+      "chapter_pages": [
+        "משלי ל/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Proverbs 30:19/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "established-staleness",
+      "history_result": "proverbs-30-19-history.json",
+      "first_batch": false
+    },
+    {
+      "case": "oleh-omission-count",
+      "title": "Aleppo’s omitted oleh mark — eleven poetic verses or thirteen?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "explicit_scope_exception": "Ben explicitly requested the count's chronology as an exception to the exclusion of internal Introduction contradictions, together with the thirteen MAM body/doc-note comparisons.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L434",
+        "ch5:L741",
+        "ch5:L743",
+        "ch5:L745",
+        "ch5:L747"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki",
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Job 29:25/2/1",
+        "Job 34:20/2/0",
+        "Job 8:6/2/0",
+        "Job 9:22/2/0",
+        "Proverbs 24:24/2/0",
+        "Proverbs 30:15/2/2",
+        "Psalms 109:16/2/0",
+        "Psalms 125:2/2/0",
+        "Psalms 30:12/2/0",
+        "Psalms 55:20/2/1",
+        "Psalms 68:20/2/1",
+        "Psalms 86:2/2/1"
+      ],
+      "chapter_pages": [
+        "איוב ח/טעמים",
+        "איוב ט/טעמים",
+        "איוב כט/טעמים",
+        "איוב לד/טעמים",
+        "משלי כד/טעמים",
+        "משלי ל/טעמים",
+        "תהלים ל/טעמים",
+        "תהלים נה/טעמים",
+        "תהלים סח/טעמים",
+        "תהלים פו/טעמים",
+        "תהלים קט/טעמים",
+        "תהלים קכה/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/D1-Psalms.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/42/3/2/4",
+              "text": "חָ֥֫י"
+            }
+          ]
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        },
+        {
+          "source": "note-target"
+        }
+      ],
+      "history_status": "established-count-correction-with-stale-chapter2-summary",
+      "history_result": "oleh-count-history.json",
+      "first_batch": false
+    },
+    {
+      "case": "isaiah-decision-types",
+      "title": "Isaiah’s four editorial decisions — which categories contain them?",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's category enumeration contradicts its own summary.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L47",
+        "ch5:L48",
+        "ch5:L49",
+        "ch5:L55"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "appendix-date-pair",
+      "title": "The appendix’s completion date — 7 Tevet 5774 or 10 December 2014?",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The two dates disagree within the appendix.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "appendices:L476"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/appendices.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "job-chapter-verse",
+      "title": "Job 9:10 — chapter and verse reversed in an example",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's reference label reverses its own link destination.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch1:L258"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch1.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "westminster-version-label",
+      "title": "Westminster transcription notes — version 4.14 or 4.16?",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The version label disagrees with its quoted heading, without a MAM body/doc-note comparison.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "westminster-typing:L62",
+        "westminster-typing:L66"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/westminster-typing.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "seder-year-type",
+      "title": "Daily seder reading — a Hebrew year or a solar year?",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's reading-schedule wording disagrees with the Koren passage it quotes.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L799"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "tracked-shin-dot",
+      "title": "2 Kings 18:27 — the Aleppo ketiv’s shin dot",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L430"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Kings 18:27/2/1"
+      ],
+      "chapter_pages": [
+        "מלכים ב יח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "tracked-ezekiel-meteg",
+      "title": "Ezekiel 28:3 — meteg in the Aleppo ketiv",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L495"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Ezekiel 28:3/2/0"
+      ],
+      "chapter_pages": [
+        "יחזקאל כח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-14",
+      "title": "Ezekiel 14:14 — dagesh on nun in the Aleppo ketiv",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L492"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Ezekiel 14:14/2/0"
+      ],
+      "chapter_pages": [
+        "יחזקאל יד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-20",
+      "title": "Ezekiel 14:20 — dagesh on nun in the Aleppo ketiv",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L493"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Ezekiel 14:20/2/0"
+      ],
+      "chapter_pages": [
+        "יחזקאל יד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-108-11",
+      "title": "Psalm 108:11: tipeḥa in the Introduction, deḥi in the note",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L605"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 108:11/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים קח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-57-9-ALTERNATIVE",
+      "title": "Psalm 57:9: deḥi or terḥa in the Aleppo alternative",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L583"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 57:9/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים נז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-108-3-ALTERNATIVE",
+      "title": "Psalm 108:3: deḥi or terḥa in the Aleppo alternative",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L603"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 108:3/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים קח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DAN-2-17",
+      "title": "Daniel 2:17: meteg in the Leningrad quotation",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L642"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 2:17/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-39-13",
+      "title": "Psalm 39:13: merkha and meteg positions in the Leningrad quotation",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L617",
+        "ch2:L636"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 39:13/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים לט/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-17-14-MAQAF",
+      "title": "Psalm 17:14: maqaf in the Leningrad alternatives",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L649"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 17:14/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים יז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "title": "Joshua 14:7: preferred meteg and current MAM body text",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L304"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Joshua 14:7/2/0"
+      ],
+      "chapter_pages": [
+        "יהושע יד/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Joshua 14:7/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-150-3-HATAF",
+      "title": "Psalm 150:3: sheva or ḥataf pataḥ in the first occurrence",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L710"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 150:3/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים קנ/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-39-13-HATAF-LABEL",
+      "title": "Psalm 39:13: ḥataf pataḥ labelled ḥataf qamats",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's vowel name contradicts its own quoted vowel.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L710"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 39:13/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים לט/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "EX-7-13-METEG-QUOTATION",
+      "title": "Exodus 7:13: meteg described, pataḥ quoted",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [],
+      "introduction_pages": [],
+      "doc_notes": [
+        "Exodus 7:13/2/0"
+      ],
+      "chapter_pages": [
+        "שמות ז/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Exodus 7:13/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Exodus 7:13/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "LEV-3-17-METEG-LABEL",
+      "title": "Leviticus 3:17: scope of “no meteg”",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [],
+      "introduction_pages": [],
+      "doc_notes": [
+        "Levit 3:17/2/0"
+      ],
+      "chapter_pages": [
+        "ויקרא ג/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NUM-10-8-B17-METEG",
+      "title": "Numbers 10:8: Firkovich B17 meteg attribution",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [],
+      "introduction_pages": [],
+      "doc_notes": [
+        "Numbers 10:8/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר י/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Numbers 10:8/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DEUT-1-33-SASSOON-METEG",
+      "title": "Deuteronomy 1:33: Sassoon 1053 meteg attribution",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [],
+      "introduction_pages": [],
+      "doc_notes": [
+        "Deuter 1:33/2/0"
+      ],
+      "chapter_pages": [
+        "דברים א/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Deuter 1:33/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-30-12-NOTE-LABEL",
+      "title": "Psalm 30:12: the omitted oleh mark is called revia",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L743"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 30:12/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים ל/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Psalms 30:12/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Psalms 30:12/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-31-12-HATAF",
+      "title": "Psalm 31:12: ḥataf pataḥ in the Aleppo quotation",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L681"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 31:12/2/1"
+      ],
+      "chapter_pages": [
+        "תהלים לא/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-53-6-LETTER-NAME",
+      "title": "Psalm 53:6: resh in the oleh-placement description",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [],
+      "introduction_pages": [],
+      "doc_notes": [
+        "Psalms 53:6/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים נג/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Psalms 53:6/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Psalms 53:6/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Psalms 53:6/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DAN-5-7",
+      "title": "Daniel 5:7 — a yod discrepancy in Leningrad's ketiv",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L217"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 5:7/2/1"
+      ],
+      "chapter_pages": [
+        "דניאל ה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DAN-7-9-SELECTION",
+      "title": "Daniel 7:9 — opposite selection stars",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L242",
+        "ch4:L328"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 7:9/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ז/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Daniel 7:9/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-3-5",
+      "title": "Daniel 3:5 — missing decision-list entry for קַיתְרֹ֨ס",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L198",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 3:5/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ג/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-4-33",
+      "title": "Daniel 4:33 — missing decision-list entry for וְזִיוִי֙",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L214",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 4:33/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-5-7",
+      "title": "Daniel 5:7 — missing decision-list entry for וְהַֽמְנִוכָ֤א",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L217",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 5:7/2/1"
+      ],
+      "chapter_pages": [
+        "דניאל ה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-5-16",
+      "title": "Daniel 5:16 — missing decision-list entry for וְהַֽמְונִכָ֤א",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L219",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-5-29",
+      "title": "Daniel 5:29 — missing decision-list entry for וְהַֽמְנִוכָ֥א",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L231",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 5:29/2/1"
+      ],
+      "chapter_pages": [
+        "דניאל ה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-6-25",
+      "title": "Daniel 6:25 — missing decision-list entry for וּלְג֤וֹב",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L239",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 6:25/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ו/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-6-28",
+      "title": "Daniel 6:28 — missing decision-list entry for שֵׁיזִ֣ב",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L240",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 6:28/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ו/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-7-21",
+      "title": "Daniel 7:21 — missing decision-list entry for עָבְדָ֥ה",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L246",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 7:21/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-COVERAGE-DAN-8-8",
+      "title": "Daniel 8:8 — missing decision-list entry for הַגְּדֹלָ֔ה",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L252",
+        "ch4:L313"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 8:8/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DESCRIPTION-EXOD-7-20",
+      "title": "Exodus 7:20 — meteg and tevir, not meteg and merkha",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's accent name contradicts its own specimen; the doc-note agrees with the specimen.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L853"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Exodus 7:20/2/0"
+      ],
+      "chapter_pages": [
+        "שמות ז/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Exodus 7:20/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DESCRIPTION-NUM-16-27",
+      "title": "Numbers 16:27 — the segol vowel is under resh, not qof",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's letter name contradicts its own specimen; the doc-note agrees with the specimen.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1002"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 16:27/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר טז/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Numbers 16:27/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DESCRIPTION-NUM-22-23",
+      "title": "Numbers 22:23 — the uncertain dot belongs to dalet",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1008"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 22:23/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר כב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Numbers 22:23/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DESCRIPTION-DEUT-28-27",
+      "title": "Deuteronomy 28:27 — tet, not tav, in the qere",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1117"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 28:27/2/0"
+      ],
+      "chapter_pages": [
+        "דברים כח/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Deuter 28:27/2/0",
+          "pointer": "/tmpl_params/2"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ISA-10-15",
+      "title": "Isaiah 10:15 — which yod is partly erased?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L130",
+        "ch5:L56"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Isaiah 10:15/2/0"
+      ],
+      "chapter_pages": [
+        "ישעיהו י/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Isaiah 10:15/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPECIAL-LETTER-2SAM-21-19",
+      "title": "2 Samuel 21:19 — a small resh described as large",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L215"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 21:19/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב כא/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "2Samuel 21:19/2/0",
+          "pointer": "/tmpl_params/2"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "title": "Jeremiah 39:13 — a small final nun described as large",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L220"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Jeremiah 39:13/2/0"
+      ],
+      "chapter_pages": [
+        "ירמיהו לט/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Jeremiah 39:13/2/0",
+          "pointer": "/tmpl_params/2"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "DEUT-22-6-SIZE",
+      "title": "Deuteronomy 22:6 — the qof is labelled both small and large",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Introduction's category marker contradicts its own specimen.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L303"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "LEV-7-PARASHAH-LOCATOR",
+      "title": "Leviticus 7:22 — the second section begins at 7:28, not 7:27",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L264"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Levit 7:22/0/0"
+      ],
+      "chapter_pages": [
+        "ויקרא ז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ZARQA-TSINNOR-NAMES",
+      "title": "Leviticus 8:25 — two footnotes reverse the Unicode character names",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Two Introduction footnotes reverse their names.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L173"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "title": "Isaiah 59:19 — maqaf attribution to nearby sources",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L51"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Isaiah 59:19/2/0"
+      ],
+      "chapter_pages": [
+        "ישעיהו נט/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Isaiah 59:19/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "title": "Isaiah 55:5 — did HaKeter print merkha or tevir?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L57"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Isaiah 55:5/2/0"
+      ],
+      "chapter_pages": [
+        "ישעיהו נה/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Isaiah 55:5/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SONG-2-17-ACCENT-NAME",
+      "title": "Song of Songs 2:17 — the missing accent is qadma",
+      "scope": "applicable",
+      "scope_reason": "Supplemental MAM note/body defect from the same audit; its source history may explain the mismatch.",
+      "comparison_kind": "supplemental-MAM-note-body",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L687"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Song of Songs 2:17/2/0"
+      ],
+      "chapter_pages": [
+        "שיר השירים ב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Song of Songs 2:17/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "AMOS-MISSING-PAGES",
+      "title": "Amos 8:13 to Micah 5:1 — three missing pages or four?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L30"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Amos 8:13/2/0"
+      ],
+      "chapter_pages": [
+        "עמוס ח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-15-1-QUOTE",
+      "title": "Psalm 15:1 — omitted divine name in the opening quotation",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L33"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 15:1/2/0",
+        "Psalms 15:1/2/2"
+      ],
+      "chapter_pages": [
+        "תהלים טו/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Psalms 15:1/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Psalms 15:1/2/2",
+          "pointer": "/tmpl_params/1"
+        },
+        {
+          "source": "note-target",
+          "id": "Psalms 15:1/2/2",
+          "pointer": "/tmpl_params/1"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NUM-22-5-QUALIFIED",
+      "title": "Numbers 22:5 — Sapir or Cassuto's lists for the vav-inclusive spelling?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L557"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 22:5/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר כב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Numbers 22:5/2/0",
+          "pointer": "/tmpl_params/1"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "GEN-2-10-CHRONOLOGY",
+      "title": "Genesis 2:10 — an old transcription dot presented as a manuscript example",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L707"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Genesis 2:10/2/0"
+      ],
+      "chapter_pages": [
+        "בראשית ב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Genesis 2:10/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SAM-21-12",
+      "title": "2 Samuel 21:12 — one qere note for two words or three?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "appendices:L383",
+        "appendices:L384",
+        "ch5:L385"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/appendices.mediawiki",
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 21:12/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב כא/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "2Samuel 21:12/2/0",
+          "pointer": "/tmpl_params/2"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SUMMARY-VISIBILITY",
+      "title": "Poetic stress helpers — the Summary and chapter 2 describe different visibility",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The Summary conflicts with another Introduction explanation of visibility.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L422",
+        "summary:L36"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki",
+        "in/mam-ws-intro/summary.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-66-12-MAQAF-SCOPE",
+      "title": "Psalm 66:12 — a space in a list headed ‘maqaf’",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L307"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-119-90-MAQAF-SCOPE",
+      "title": "Psalm 119:90 — a meteg example in the maqaf list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L307"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "IMPLICIT-MS-SAM-16-23",
+      "title": "2 Samuel 16:23 — does the unnamed gap note describe Aleppo?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L379"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 16:23/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב טז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-14-7",
+      "title": "2 Kings 14:7 — pashta omission confirmed; ketiv pointing unresolved",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L412",
+        "ch5:L428"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Kings 14:7/2/0"
+      ],
+      "chapter_pages": [
+        "מלכים ב יד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-18-27",
+      "title": "2 Kings 18:27 — source of the quoted Aleppo ketiv and qere pointing",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L429"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "GEN-36-13",
+      "title": "Genesis 36:13 — both descriptions say merkha, but the signs are munaḥ",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L797"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Genesis 36:13/2/0"
+      ],
+      "chapter_pages": [
+        "בראשית לו/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-1-3",
+      "title": "Psalm 1:3 — the illustration lacks the grey maqaf required by the stated policy",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L436",
+        "ch2:L442",
+        "ch2:L980"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": true
+    },
+    {
+      "case": "MAL-HOLAM",
+      "title": "Malachi 2:7 — is the ḥolam dot in the Aleppo example supplied for the reader?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L511"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Malachi 2:7/2/0"
+      ],
+      "chapter_pages": [
+        "מלאכי ב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-119-138",
+      "title": "Psalm 119:138 — an initial meteg appears only in the Introduction example",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L609"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 119:138/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים קיט/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "PS-18-2-ATTRIBUTION",
+      "title": "Psalm 18:2 — why is this pointing attributed to the missing Aleppo pages?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L33",
+        "ch5:L625"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki",
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 18:2/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים יח/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Psalms 18:2/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": true
+    },
+    {
+      "case": "L-CANDIDATE-DEUT-12-30",
+      "title": "Deuteronomy 12:30 — a doubtful manuscript accent or a transcription choice?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1079"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 12:30/2/1"
+      ],
+      "chapter_pages": [
+        "דברים יב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "L-CANDIDATE-PS-17-14",
+      "title": "Psalm 17:14 — does the first alternative belong to Leningrad?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L514"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 17:14/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים יז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "L-CANDIDATE-PS-18-7",
+      "title": "Psalm 18:7 — merkha in Leningrad, meteg in the transcription",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L518"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 18:7/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים יח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "L-CANDIDATE-DAN-2-41",
+      "title": "Daniel 2:41 — both interpretations remain possible",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L645"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 2:41/2/1"
+      ],
+      "chapter_pages": [
+        "דניאל ב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Daniel 2:41/2/1",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "L-CANDIDATE-DAN-5-3",
+      "title": "Daniel 5:3 — a possible transcription reading is labelled as a manuscript reading",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L659"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 5:3/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ה/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Daniel 5:3/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "L-CANDIDATE-NEH-12-47",
+      "title": "Nehemiah 12:47 — the transcription qualifier is missing from the Introduction",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L734"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Nehemiah 12:47/2/0"
+      ],
+      "chapter_pages": [
+        "נחמיה יב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Nehemiah 12:47/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "STRAND-SCOPE",
+      "title": "Deuteronomy 5:13 — which accent belongs to which Decalogue accentuation?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1064"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 5:13/2/0"
+      ],
+      "chapter_pages": [
+        "דברים ה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-SONG-4-16",
+      "title": "Song of Songs 4:16 — is the missing dagesh on zayin, not lamed?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L537"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Song of Songs 4:16/2/0"
+      ],
+      "chapter_pages": [
+        "שיר השירים ד/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Song of Songs 4:16/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "title": "Lamentations 4:7 — a segol vowel in an example described as qamats",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L605"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Lamentations 4:7/2/0"
+      ],
+      "chapter_pages": [
+        "איכה ד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-SPECIMEN-NEHEMIAH",
+      "title": "Nehemiah 9:37: should the spelling example include the stress-helper mark?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L290",
+        "ch4:L99"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Nehemiah 9:37/2/0"
+      ],
+      "chapter_pages": [
+        "נחמיה ט/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Nehemiah 9:37/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Nehemiah 9:37/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-SPECIMEN-DANIEL",
+      "title": "Daniel 7:15: which accent belongs on the rejected spelling?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L327"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 7:15/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-SOURCE-2KINGS",
+      "title": "2 Kings 15:25: which Leningrad Masorah note supports each spelling?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L105"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "2Kings 15:25/2/0"
+      ],
+      "chapter_pages": [
+        "מלכים ב טו/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "2Kings 15:25/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-SOURCE-JEREMIAH",
+      "title": "Jeremiah 31:27: is the support specifically Aleppo's Masorah Parva?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L113"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Jeremiah 31:27/2/0"
+      ],
+      "chapter_pages": [
+        "ירמיהו לא/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "title": "Ecclesiastes 1:17: what supports the exclamation mark on Leningrad's spelling?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L138",
+        "ch4:L99"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Ecclesiastes 1:17/2/0"
+      ],
+      "chapter_pages": [
+        "קהלת א/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+      "title": "Daniel 5:16: what supports the Leningrad attribution for the pointed ketiv and qere?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L219"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "TORAH-SPELLING-METEG",
+      "title": "Deuteronomy 12:20 and 28:49: do spelling examples also promise MAM's meteg marks?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L193",
+        "ch3:L201"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 12:20/2/0",
+        "Deuter 28:49/2/0"
+      ],
+      "chapter_pages": [
+        "דברים יב/טעמים",
+        "דברים כח/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Deuter 12:20/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Deuter 28:49/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Deuter 12:20/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Deuter 28:49/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "TORAH-SPELLING-NAMES",
+      "title": "Numbers 1:10 and 10:19: should the Leningrad spacing still have question marks?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L241",
+        "ch3:L244"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 10:19/2/0",
+        "Numbers 1:10/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר א/טעמים",
+        "במדבר י/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "TORAH-SPELLING-DEUT32-SHEVA",
+      "title": "Deuteronomy 32:6: should the Leningrad quotation include the yod's sheva?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L246"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 32:6/2/0"
+      ],
+      "chapter_pages": [
+        "דברים לב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "title": "Isaiah 44:14: which Aleppo Masorah source calls for a small final nun?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L217"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Isaiah 44:14/2/0"
+      ],
+      "chapter_pages": [
+        "ישעיהו מד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALEPPO-SPECIAL-PS27",
+      "title": "Psalm 27:13: which manuscript's Masorah supports the six-dot pattern?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L255"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 27:13/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים כז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALEPPO-SIZE-QUOTATIONS",
+      "title": "Psalm 77:8, Ruth 3:13, and Esther 1:6: what else should a letter-size example include?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L212",
+        "ch5:L224",
+        "ch5:L235",
+        "ch5:L241"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Esther 1:6/2/0",
+        "Psalms 77:8/2/0",
+        "Ruth 3:13/2/0"
+      ],
+      "chapter_pages": [
+        "אסתר א/טעמים",
+        "רות ג/טעמים",
+        "תהלים עז/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Psalms 77:8/2/0",
+          "pointer": "/tmpl_params/1"
+        },
+        {
+          "source": "note-target",
+          "id": "Ruth 3:13/2/0",
+          "pointer": "/tmpl_params/2"
+        },
+        {
+          "source": "note-target",
+          "id": "Esther 1:6/2/0",
+          "pointer": "/tmpl_params/2"
+        },
+        {
+          "source": "note-target",
+          "id": "Psalms 77:8/2/0",
+          "pointer": "/tmpl_params/1"
+        },
+        {
+          "source": "note-target",
+          "id": "Ruth 3:13/2/0",
+          "pointer": "/tmpl_params/2"
+        },
+        {
+          "source": "note-target",
+          "id": "Esther 1:6/2/0",
+          "pointer": "/tmpl_params/2"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "EXOD-7-13-SCOPE",
+      "title": "Exodus 7:13: does the note attribute the yod meteg to Leningrad?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1263"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Exodus 7:13/2/0"
+      ],
+      "chapter_pages": [
+        "שמות ז/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Exodus 7:13/2/0",
+          "pointer": ""
+        },
+        {
+          "source": "note-target",
+          "id": "Exodus 7:13/2/0",
+          "pointer": ""
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "title": "Jeremiah 48:20 and 50:6: are the ḥataf examples ketiv or qere?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L704"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Jeremiah 48:20/2/0",
+        "Jeremiah 50:6/2/0"
+      ],
+      "chapter_pages": [
+        "ירמיהו מח/טעמים",
+        "ירמיהו נ/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "HATAF-EZEKIEL-SOURCE",
+      "title": "Ezekiel 17:17: which codex has this ḥataf?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L706"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Ezekiel 17:17/2/0"
+      ],
+      "chapter_pages": [
+        "יחזקאל יז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "HATAF-PROVERBS-ADDITION",
+      "title": "Proverbs 30:17: a Leningrad ḥataf word is missing from the list",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L712"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Proverbs 30:17/2/1"
+      ],
+      "chapter_pages": [
+        "משלי ל/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Proverbs 30:17/2/1"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "SEDER-DESCRIPTION-STRENGTH",
+      "title": "Deuteronomy 20:1: did Dotan describe the seder mark as erroneous or uncertain?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1405"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 20:1/1/0"
+      ],
+      "chapter_pages": [
+        "דברים כ/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "POETIC-COUNTS-TEXT",
+      "title": "Which text do the Introduction's deḥi and oleh-weyored totals describe?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L394",
+        "ch2:L426",
+        "ch2:L436"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "LEGARMEH-LIST-SCOPE",
+      "title": "Legarmeh before revia: a Wickes-based list or a list of current MAM verses?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L221"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [
+        {
+          "source": "verse-parts",
+          "id": "1Samuel 11:9",
+          "path": "MAM-parsed/plus/BA-Samuel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/11/9/2/0",
+              "text": "לַמַּלְאָכִ֣ים הַבָּאִ֗ים"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "id": "1Samuel 11:12",
+          "path": "MAM-parsed/plus/BA-Samuel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/11/12/2/0",
+              "text": "מִ֣י הָאֹמֵ֔ר"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "id": "Zechariah 10:12",
+          "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+          "parts": [
+            {
+              "pointer": "/book39s/10/chapters/10/12/2/0",
+              "text": "וּבִשְׁמ֖וֹ יִתְהַלָּ֑כוּ"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "id": "1Chronicles 18:10",
+          "path": "MAM-parsed/plus/FC-Chronicles.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/18/10/2/1/tmpl_params/1/tmpl_params/2",
+              "text": "לִשְׁאׇל־"
+            },
+            {
+              "pointer": "/book39s/0/chapters/18/10/2/2",
+              "text": "ל֨וֹ לְשָׁל֜וֹם"
+            }
+          ]
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "title": "Isaiah 44:24: is the maqaf quoted for Leningrad or supplied for display?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L50"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Isaiah 44:24/2/0"
+      ],
+      "chapter_pages": [
+        "ישעיהו מד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "POETIC-PS6-PS74-VOWELS",
+      "title": "Psalms 6:3 and 74:5: should the accent-design lists retain the vowels quoted elsewhere?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L569",
+        "ch5:L710",
+        "ch5:L751",
+        "ch5:L787"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 6:3/2/0",
+        "Psalms 74:5/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים ו/טעמים",
+        "תהלים עד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "POETIC-PROV8-QUALIFICATION",
+      "title": "Proverbs 8:34: why does the design example use galgal without the stated uncertainty?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L656",
+        "ch5:L753"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Proverbs 8:34/2/0"
+      ],
+      "chapter_pages": [
+        "משלי ח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "POETIC-PS68-RAFE",
+      "title": "Psalm 68:18: should the revia example include the explicitly retained rafe?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L334",
+        "ch5:L787"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki",
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 68:18/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים סח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-PS-27-14",
+      "title": "Psalm 27:14: the link for the divine name points to verse 24",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L430"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 27:14/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים כז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-NUM-14-17",
+      "title": "Numbers 14:17: the large-yod example links to verse 77",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L296"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 14:17/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר יד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-DEUT-31-21",
+      "title": "Deuteronomy 31:21: a repeated vowel-dispute link points to verse 50",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L701"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 31:21/2/1"
+      ],
+      "chapter_pages": [
+        "דברים לא/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-DAN-12-2",
+      "title": "Daniel 12:2: the uncertain ḥataf reading is listed at 12:12",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L686"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 12:2/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל יב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-ECC-5-17",
+      "title": "Ecclesiastes 5:17: the ḥataf example links to 4:7",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L564"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Ecclesiastes 5:17/2/0"
+      ],
+      "chapter_pages": [
+        "קהלת ה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-2KGS-21-12",
+      "title": "2 Kings 21:12: the pointed ketiv links to verse 20",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L431"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Kings 21:12/2/0"
+      ],
+      "chapter_pages": [
+        "מלכים ב כא/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-2CHR-34-22",
+      "title": "2 Chronicles 34:22: the ketiv example links to 6:7",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L561"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Chronicles 34:22/2/0"
+      ],
+      "chapter_pages": [
+        "דברי הימים ב לד/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-PROV-25-20",
+      "title": "Proverbs 25:20: the chapter and verse are reversed in the link",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L662"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Proverbs 25:20/2/0"
+      ],
+      "chapter_pages": [
+        "משלי כה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-JER-31-37",
+      "title": "Jeremiah 31:37: the qere-without-ketiv lists name 31:38",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "appendices:L375",
+        "ch2:L87"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/appendices.mediawiki",
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Jeremiah 31:37/2/0"
+      ],
+      "chapter_pages": [
+        "ירמיהו לא/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-GEN-18-25",
+      "title": "Genesis 18:25: the missing-dagesh example is listed at 18:21",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L775"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Genesis 18:25/2/0"
+      ],
+      "chapter_pages": [
+        "בראשית יח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-EZEK-27-4",
+      "title": "Ezekiel 27:4: the ḥataf example is repeatedly assigned to verse 3",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L264"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Ezekiel 27:4/2/0"
+      ],
+      "chapter_pages": [
+        "יחזקאל כז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-GEN-22-20",
+      "title": "Genesis 22:20: the additional reading division is named as 22:2",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L1396",
+        "ch3:L1401"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Genesis 22:20/1/0"
+      ],
+      "chapter_pages": [
+        "בראשית כב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-PS-78-7",
+      "title": "Psalm 78:7: the link is right but its label says 69:7",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L513"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-PS-38-19",
+      "title": "Psalm 38:19: the secondary-tirḥa example links to verse 15",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L515"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-JOB-40-10",
+      "title": "Job 40:10: the example is labelled Proverbs",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L598"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Job 40:10/2/0"
+      ],
+      "chapter_pages": [
+        "איוב מ/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-EXOD-20-8",
+      "title": "Exodus 20:8: the combined dagesh and rafe example is cited as 20:7",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L331"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-GEN-9-29",
+      "title": "Genesis 9:29: a chapter 9 link carries a chapter 6 destination",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L221"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Genesis 9:29/2/0"
+      ],
+      "chapter_pages": [
+        "בראשית ט/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-DEUT-32-18",
+      "title": "Deuteronomy 32:18: the small-yod example links to chapter 33",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L306"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Deuter 32:18/2/0"
+      ],
+      "chapter_pages": [
+        "דברים לב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-NUM-25-11",
+      "title": "Numbers 25:11: the yod-size table names verse 10",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch3:L563",
+        "ch3:L565"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch3.mediawiki"
+      ],
+      "doc_notes": [
+        "Numbers 25:11/2/0"
+      ],
+      "chapter_pages": [
+        "במדבר כה/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-DEUT-27-15",
+      "title": "Deuteronomy 27:15–26: the list of curses is assigned to chapter 26",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L813"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-NUM-10-29-35",
+      "title": "Numbers 10:29 and 10:35: two legarmeh entries link to chapter 20",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L221"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-2SAM-15-30",
+      "title": "2 Samuel 15:30: the legarmeh entry points to verse 2",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L221"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-RUTH-3-3-13",
+      "title": "Ruth 3:3 and 3:13: the legarmeh entries link to Song of Songs",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L221"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Ruth 3:13/2/0"
+      ],
+      "chapter_pages": [
+        "רות ג/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-ISA-1-12",
+      "title": "Isaiah 1:12: the meteg example is cited as 1:9",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L44"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-ESTH-9-2",
+      "title": "Esther 9:2: the initial-letter comparison names verse 3",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L398",
+        "ch4:L405"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [
+        "Esther 9:2/2/1"
+      ],
+      "chapter_pages": [
+        "אסתר ט/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-PS-118-26",
+      "title": "Psalm 118:26: the merkha example has a chapter 2 verse fragment",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L681"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-SECTION-ALEPPO-POINTING",
+      "title": "Chapter 4's cross-reference to Aleppo pointing uses a different section name",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch4:L427"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch4.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-SECTION-LENINGRAD-POINTING",
+      "title": "Chapter 5's cross-reference to Leningrad pointing uses a different section name",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L294"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-SECTION-SOURCES",
+      "title": "The Aleppo index’s source-list link requests a different heading",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "index-aleppo:L11"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/index-aleppo.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-SECTION-TWELVE",
+      "title": "The Leningrad index's link to the Twelve omits part of the target heading",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "index-leningrad:L693"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/index-leningrad.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "NAV-SECTION-TEMPLATES",
+      "title": "The data-sheet guide reverses the words in the template-list heading",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "data-sheet-guide:L37",
+        "data-sheet-guide:L59"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/data-sheet-guide.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-16",
+      "title": "2 Samuel 24:16: does the ketiv resh ḥataf belong in the list?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L698"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 24:16/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב כד/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/BA-Samuel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/1/chapters/24/16/2/3/tmpl_params/1/tmpl_params/2",
+              "text": "הָֽאֲרַ֥וְנָה"
+            }
+          ]
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-18",
+      "title": "2 Samuel 24:18: what is the ketiv nun ḥataf qamats doing?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L698"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "2Samuel 24:18/2/0"
+      ],
+      "chapter_pages": [
+        "שמואל ב כד/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/BA-Samuel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/1/chapters/24/18/2/1/tmpl_params/1/tmpl_params/2",
+              "text": "אֲרַ֥וְנָה"
+            }
+          ]
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "title": "Jeremiah 48:32: ḥataf, stain or erased pataḥ stroke?",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L704"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Jeremiah 48:32/2/0"
+      ],
+      "chapter_pages": [
+        "ירמיהו מח/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-DAN-12-2",
+      "title": "Daniel 12:2: uncertain Leningrad ḥataf pataḥ on yod",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L726"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Daniel 12:2/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל יב/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-NEH-6-19",
+      "title": "Nehemiah 6:19: Breuer’s ḥataf report remains disputed",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L728"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Nehemiah 6:19/2/0"
+      ],
+      "chapter_pages": [
+        "נחמיה ו/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-SAM-6-5",
+      "title": "2 Samuel 6:5: a retained tsadi ḥataf segol with no explanation",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L698"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [
+        {
+          "source": "verse",
+          "id": "2Samuel 6:5"
+        }
+      ],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-PS-17-14-SOURCE",
+      "title": "Psalm 17:14: a Sassoon 1053 entry under an Aleppo-or-Leningrad heading",
+      "scope": "applicable",
+      "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L710"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 17:14/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים יז/טעמים"
+      ],
+      "body_source_pointers": [],
+      "history_status": "pending",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-LIST-COUNTS",
+      "title": "Judges, Chronicles and Psalms: what the headings count",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "The declared headings disagree with the Introduction's own word-item counts.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch5:L696",
+        "ch5:L710",
+        "ch5:L730"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch5.mediawiki"
+      ],
+      "doc_notes": [],
+      "chapter_pages": [],
+      "body_source_pointers": [],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-DIVINE-FUNCTION",
+      "title": "Divine-name pointing: יֱהֹוִה and שֱׁיְהֹוָ֥ה",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Resolved vowel-function control rather than a discrepant Introduction/MAM claim.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L161"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Psalms 144:15/2/0"
+      ],
+      "chapter_pages": [
+        "תהלים קמד/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Psalms 144:15/2/0"
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-MORPHOLOGICAL-O",
+      "title": "Short-o vowels: רֳאִ֑י, שִׁבֳּלִים and לַקֳּטָה",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Resolved vowel-function control rather than a discrepant Introduction/MAM claim.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [
+        "ch2:L276"
+      ],
+      "introduction_pages": [
+        "in/mam-ws-intro/ch2.mediawiki"
+      ],
+      "doc_notes": [
+        "Ezra 8:25/2/0"
+      ],
+      "chapter_pages": [
+        "עזרא ח/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/A1-Genesis.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/16/13/2/0",
+              "text": "רֳאִ֑י"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/A1-Genesis.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/16/13/2/2",
+              "text": "רֹאִֽי"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/B2-Judges.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/12/6/2/0",
+              "text": "שִׁבֹּ֜לֶת"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/E2-Ruth.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/2/8/2/2",
+              "text": "לִלְקֹט֙"
+            }
+          ]
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    },
+    {
+      "case": "ALL-HATAF-ARAMAIC-SEGOL",
+      "title": "Aramaic reduced segol: גֱּלִ֣י and related forms",
+      "scope": "excluded-internal-or-control",
+      "scope_reason": "Resolved vowel-function control rather than a discrepant Introduction/MAM claim.",
+      "comparison_kind": "Introduction-MAM",
+      "ben_reviewed": false,
+      "adjudication": null,
+      "introduction_claims": [],
+      "introduction_pages": [],
+      "doc_notes": [
+        "Daniel 2:30/2/0"
+      ],
+      "chapter_pages": [
+        "דניאל ב/טעמים"
+      ],
+      "body_source_pointers": [
+        {
+          "source": "note-target",
+          "id": "Daniel 2:30/2/0"
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/F1-Daniel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/4/27/2/0",
+              "text": "בֱנַיְתַהּ֙"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/F1-Daniel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/7/7/2/4",
+              "text": "וּמַדֱּקָ֔ה"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/F1-Daniel.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/7/11/2/0",
+              "text": "מְמַלֱּלָ֑ה"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/4/18/2/0",
+              "text": "קֱרִ֖י"
+            }
+          ]
+        },
+        {
+          "source": "verse-parts",
+          "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+          "parts": [
+            {
+              "pointer": "/book39s/0/chapters/4/23/2/2",
+              "text": "קֱרִ֧י"
+            }
+          ]
+        }
+      ],
+      "history_status": "excluded",
+      "history_result": null,
+      "first_batch": false
+    }
+  ],
+  "limits": [
+    "Pending means no chronology verdict, not evidence of staleness.",
+    "A changed chapter alone cannot date the addition or alteration of a particular word or doc-note claim.",
+    "Existing Ben approvals and current report statuses are copied as context and are not altered by inventory routing.",
+    "Global poetic count questions require historical corpus/count-definition evidence rather than a single chapter's revision history."
+  ]
+}

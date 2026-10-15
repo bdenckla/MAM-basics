@@ -894,9 +894,483 @@
         "translation": "Aleppo: י֥וֹם (oleh mark omitted)."
       }
     ],
-    "explanation": "The chapter 5 list contains seven Psalms verses (30:12; 42:3; 55:20; 68:20; 86:2; 109:16; 125:2), two Proverbs verses (24:24; 30:15) and four Job verses (8:6; 9:22; 29:25; 34:20). These are thirteen distinct verses, not eleven. Their local note relationships were checked separately.",
+    "explanation": "The list has thirteen distinct verses: seven Psalms, two Proverbs and four Job verses. All thirteen MAM body forms have oleh and yored on the same letter. Of eighteen notes at these verses, twelve concern this pointing pair: eleven name omitted oleh; Psalm 30:12 instead calls the omitted sign revia. Psalm 42:3 has no doc-note, so its Aleppo attribution comes from the Introduction alone. The other six notes concern paseq, qamats alternatives, a small bet or a ḥataf vowel. The table shows all thirteen cases; these source quotations do not independently establish manuscript readings or list completeness.",
     "decision": "Reconcile chapter 2’s eleven with chapter 5’s thirteen entries, or explain the intended exclusions. The list comparison does not prove manuscript-wide completeness.",
-    "reading_forms": []
+    "reading_forms": [],
+    "word_comparison": {
+      "caption": "Thirteen listed verses and the twelve pertinent doc-notes. The Introduction and note quotations retain their own mark order.",
+      "evidence_heading": "Doc-note evidence",
+      "rows": [
+        {
+          "ref": "Psalms 30:12",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "לִ֥י"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Psalms 30:12/2/0",
+                "text": "לִ֥֫י"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Psalms 30:12/2/0",
+                "text": "לִ֥י"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence_explanation": "The quoted forms differ by OLE U+05AB. Neither has REVIA U+0597. The proposed label correction remains open in the separate Psalm 30:12 case.",
+          "evidence": {
+            "note": "Psalms 30:12/2/0",
+            "quote": "א=לִ֥י (השמטת נקודת הרביע)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the revia dot)."
+          }
+        },
+        {
+          "ref": "Psalms 42:3",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "(א=לְאֵ֢ל חָ֥י)"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "verse-parts",
+                "path": "MAM-parsed/plus/D1-Psalms.json",
+                "parts": [
+                  {
+                    "pointer": "/book39s/0/chapters/42/3/2/4",
+                    "text": "חָ֥֫י"
+                  }
+                ],
+                "text": "חָ֥֫י"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            }
+          ],
+          "link_sources": true,
+          "evidence_explanation": "Aleppo attribution is supplied by the Introduction alone; the parsed verse has no documentation note."
+        },
+        {
+          "ref": "Psalms 55:20",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "סֶ֥לָה"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Psalms 55:20/2/1",
+                "text": "סֶ֥֫לָה"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Psalms 55:20/2/1",
+                "text": "סֶ֥לָה"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Psalms 55:20/2/1",
+            "quote": "א=סֶ֥לָה (המשטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Psalms 68:20",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "י֥וֹם"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Psalms 68:20/2/1",
+                "text": "י֥֫וֹם"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Psalms 68:20/2/1",
+                "text": "י֥וֹם"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Psalms 68:20/2/1",
+            "quote": "א=י֥וֹם (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Psalms 86:2",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "אָ֥נִי"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Psalms 86:2/2/1",
+                "text": "אָ֥֫נִי"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Psalms 86:2/2/1",
+                "text": "אָ֥נִי"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Psalms 86:2/2/1",
+            "quote": "א=אָ֥נִי (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Psalms 109:16",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "חָ֥סֶד"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Psalms 109:16/2/0",
+                "text": "חָ֥֫סֶד"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Psalms 109:16/2/0",
+                "text": "חָ֥סֶד"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Psalms 109:16/2/0",
+            "quote": "=דפוסים\nא=חָ֥סֶד (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "The selected printed editions agree with MAM. Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Psalms 125:2",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L743",
+                "text": "לָ֥הּ"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Psalms 125:2/2/0",
+                "text": "לָ֥֫הּ"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Psalms 125:2/2/0",
+                "text": "לָ֥הּ"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Psalms 125:2/2/0",
+            "quote": "א=לָ֥הּ (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Proverbs 24:24",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L745",
+                "text": "אָ֥תָּה"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Proverbs 24:24/2/0",
+                "text": "אָ֥֫תָּה"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Proverbs 24:24/2/0",
+                "text": "אָ֥תָּה"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Proverbs 24:24/2/0",
+            "quote": "=דפוסים וקורן\nא=אָ֥תָּה (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "The selected printed editions and Koren agree with MAM. Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Proverbs 30:15",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L745",
+                "text": "הַ֥ב"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Proverbs 30:15/2/2",
+                "text": "הַ֥֫ב"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Proverbs 30:15/2/2",
+                "text": "הַ֥ב"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Proverbs 30:15/2/2",
+            "quote": "א=הַ֥ב (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Job 8:6",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L747",
+                "text": "אָ֥תָּה"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Job 8:6/2/0",
+                "text": "אָ֥֫תָּה"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Job 8:6/2/0",
+                "text": "אָ֥תָּה"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Job 8:6/2/0",
+            "quote": "א=אָ֥תָּה (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Job 9:22",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L747",
+                "text": "אַחַ֗ת הִ֥יא"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Job 9:22/2/0",
+                "text": "אַחַ֗ת הִ֥֫יא"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Job 9:22/2/0",
+                "text": "אַחַ֗ת הִ֥יא"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Job 9:22/2/0",
+            "quote": "א,ל=אַחַ֗ת הִ֥יא (השמטת סימן העולה כמקובל); אך יודגש שחסרון ה\"עולה\" במקרה הזה גרם לשיבושים מגוונים בדפוסים: <אַֽחַת־הִ֭יא!> או <אַחַת־הִ֭יא!> או <אַחַ֗ת הִ֭יא!> (קורן כאחרון)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo and the Leningrad Codex have the quoted form (omission of the oleh mark, as usual). The lack of oleh here caused various corruptions in the printed editions: the three forms quoted in the note; Koren has the last."
+          }
+        },
+        {
+          "ref": "Job 29:25",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L747",
+                "text": "רֹ֥אשׁ"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Job 29:25/2/1",
+                "text": "רֹ֥֫אשׁ"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Job 29:25/2/1",
+                "text": "רֹ֥אשׁ"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence_explanation": "The Introduction footnote discusses possible erasure above resh; the source attribution is not an independent scan verdict.",
+          "evidence": {
+            "note": "Job 29:25/2/1",
+            "quote": "א=רֹ֥אשׁ (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        },
+        {
+          "ref": "Job 34:20",
+          "forms": [
+            {
+              "label": "Introduction: Aleppo quotation",
+              "passage": {
+                "claim": "ch5:L747",
+                "text": "לָ֥יְלָה"
+              }
+            },
+            {
+              "label": "MAM body text",
+              "passage": {
+                "source": "note-target",
+                "note": "Job 34:20/2/0",
+                "text": "לָ֥֫יְלָה"
+              },
+              "mark_name": "OLE U+05AB; MERKHA U+05A5 (yored here)"
+            },
+            {
+              "label": "Aleppo quotation in doc-note",
+              "passage": {
+                "note": "Job 34:20/2/0",
+                "text": "לָ֥יְלָה"
+              }
+            }
+          ],
+          "link_sources": true,
+          "evidence": {
+            "note": "Job 34:20/2/0",
+            "quote": "א=לָ֥יְלָה (השמטת סימן העולה)",
+            "label": "Complete doc-note",
+            "translation": "Aleppo has the quoted form (omission of the oleh mark)."
+          }
+        }
+      ]
+    },
+    "revision_history": {
+      "summary": "On 26 September 2021, chapter 5’s declared total changed from eleven to thirteen at 05:32 UTC. All thirteen entries were already present in the preceding revision; this edit changed only the total. Chapter 2 still said eleven in the revisions immediately before (05:14 UTC) and after (20:12 UTC). The current cached chapters retain eleven and thirteen respectively. Ben has not approved the proposed reconciliation.",
+      "links": [
+        {
+          "label": "Chapter 5: exact 11 → 13 correction",
+          "url": "https://he.wikisource.org/w/index.php?diff=1194335&oldid=1194333"
+        },
+        {
+          "label": "Chapter 2 immediately before",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1194327"
+        },
+        {
+          "label": "Chapter 2 immediately after",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1220669"
+        }
+      ]
+    }
   },
   {
     "id": "isaiah-decision-types",
@@ -917,8 +1391,8 @@
       {
         "label": "Introduction, chapter 5 — type 2",
         "claim": "ch5:L48",
-        "quote": "ספקות בקביעת הניקוד והטעמים והגעיות בכתר (3 מקומות",
-        "translation": "Doubts in establishing the vowels, accents and meteg marks in the Aleppo Codex (three places"
+        "quote": "ספקות בקביעת הניקוד והטעמים והגעיות בכתר (3 מקומות, שאחד מהם ספק מקף בתיבת משרת [ראו סוג 5 דוגמה ג.]).",
+        "translation": "Doubts in establishing the vowels, accents and meteg marks in the Aleppo Codex (three places, one involving a doubtful maqaf in an atom bearing a conjunctive accent [see type 5, example c])."
       },
       {
         "label": "Introduction, chapter 5 — type 3",
@@ -929,8 +1403,8 @@
       {
         "label": "Introduction — introduction to the four decisions",
         "claim": "ch5:L55",
-        "quote": "לגבי שלושת הסוגים הראשונים (כלומר ארבעת המקומות בספר ישעיהו",
-        "translation": "Regarding the first three types (that is, the four places in the book of Isaiah"
+        "quote": "אמנם לגבי שלושת הסוגים הראשונים (כלומר ארבעת המקומות בספר ישעיהו שבהם יש ספק כלשהו לגבי קריאת כתב־היד או לגבי כוונתו של המנקד, ואם כן יש קושי מסוים בקביעת עצם הנוסח), נצטרכנו להכריע בעצמנו על פי עיון חוזר בכתב־היד ועל פי שיקול הדעת. בארבעת המקומות האלה בספר ישעיהו החלטנו כך:",
+        "translation": "Regarding the first three types (that is, the four places in Isaiah where there is some doubt about reading the manuscript or the vocalizer’s intention, and therefore some difficulty in establishing the text itself), we had to decide through renewed examination of the manuscript and our judgment. In these four places in Isaiah we decided as follows:"
       }
     ],
     "explanation": "The first two types contain 1 + 3 = 4 places. The first three contain 1 + 3 + 2 = 6. The four decisions that follow concern Isaiah 10:15, 55:5, 45:6 and 14:2, matching the first two types. This is a grouping description error, rather than a reconsideration of the editorial decisions.",
@@ -1782,7 +2256,7 @@
         "note": "Psalms 30:12/2/0"
       }
     ],
-    "explanation": "The Introduction and note agree on the Aleppo quotation with yored alone. MAM body text has both yored and oleh marks; the explanatory label therefore identifies the wrong omission.",
+    "explanation": "The Introduction and note agree on the Aleppo quotation with yored alone. MAM body text has both yored and oleh marks; the explanatory label therefore identifies the wrong omission. The extra codepoint is U+05AB HEBREW ACCENT OLE; U+0597 HEBREW ACCENT REVIA occurs in neither quoted form. The shared U+05A5 HEBREW ACCENT MERKHA serves as yored here.",
     "decision": "Should the note say “omission of the oleh mark” instead of “omission of the revia mark”?",
     "reading_forms": [
       {
