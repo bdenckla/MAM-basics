@@ -648,3 +648,13 @@ At this checkpoint 43/94 histories are recorded and 51 remain pending. Twelve Be
 decisions, 717 literal passages and twelve proposals are unchanged. The optional
 `history-batch history-batch5` command rebuilds this evidence from the separate
 local research cache.
+
+The [sixth history batch](history-batch6-results.json) records five Deuteronomy
+cases from 147/147 chapter revisions. The meteg examples retain older pointing,
+while their stated spelling-only selection leaves the illustration policy open.
+The wrong tav label enters when its note description is expanded. Manuscript
+certainty, strand allocation and Dotan's published convention remain separate
+support questions. The [literal evidence](history-batch6-sources.json) explicitly
+includes the verse-heading note at Deuteronomy 20:1; a body-only extraction would
+miss that evidence. At this checkpoint 48/94 histories are recorded and 46 remain
+pending. Prior quotations and all twelve Ben decisions remain unchanged.

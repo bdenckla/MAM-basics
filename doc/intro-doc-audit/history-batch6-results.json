@@ -1,0 +1,150 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "cases": [
+    {
+      "case": "L-CANDIDATE-DEUT-12-30",
+      "classification": "history-accounted-manuscript-interpretation-unresolved",
+      "result": "Revia is selected throughout the twenty canonical MAM versions. The 18 January 2024 note explicitly adds Leningrad to its support while retaining the transcription alternative. The Introduction keeps doubt but already gives the same joined-ḥolam explanation. A November 2025 edit corrects the note's accent name from pashta to qadma without changing its U+0598 sign. The remaining physical interpretation and degree of certainty are unresolved.",
+      "limits": [
+        "No new manuscript inspection. The more confident source assignment and the Introduction’s retained doubt need an attributed interpretive decision; neither source’s wording alone establishes the physical reading.",
+        "The selected Introduction contents provide dated observations, not exhaustive chapter 3 history or an exact first insertion."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "deuter-12",
+          "contents_read": 21,
+          "visible_revisions": 21
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2834323",
+          "url": "https://he.wikisource.org/w/index.php?diff=2834323&oldid=2834322"
+        },
+        {
+          "label": "Chapter change 2963837",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963837&oldid=2907868"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2834443"
+        }
+      ]
+    },
+    {
+      "case": "DESCRIPTION-DEUT-28-27",
+      "classification": "wrong-description-present-when-added",
+      "result": "On 20 January 2024 the note expands its general missing-dagesh description by adding the wrong tav name; its quoted qere already has tet and no tav. A later expansion correctly names tet in one group but retains tav in the other. The inspected Introduction names tet correctly. The error occurs when the description is added, rather than after a changed qere.",
+      "limits": [
+        "The manuscript and Miqraot Gedolot HaKeter attributions were not independently investigated. Correcting the letter name does not adjudicate those attributions.",
+        "No exact first Introduction insertion claimed."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "deuter-28",
+          "contents_read": 37,
+          "visible_revisions": 37
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2834538",
+          "url": "https://he.wikisource.org/w/index.php?diff=2834538&oldid=2820868"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2835211"
+        }
+      ]
+    },
+    {
+      "case": "TORAH-SPELLING-METEG",
+      "classification": "established-staleness-in-incidental-pointing-scope-unresolved",
+      "result": "Both examples retain older MAM pointing. MAM removes the Deuteronomy 12:20 bet meteg in November 2019 and adds the 28:49 initial meteg in November 2023; inspected Introduction snapshots preserve the former forms. The spelling selections do not change, and the list explicitly defines its star as selecting spelling. Whether incidental pointing should be updated remains editorial.",
+      "limits": [
+        "Chronology of the pointing divergence is established for both halves. Whether to update the illustrative pointing or clarify its scope remains editorial; this result does not authorize scripture changes.",
+        "Selected snapshots establish observed persistence, not all intermediate Introduction revisions."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "deuter-12",
+          "contents_read": 21,
+          "visible_revisions": 21
+        },
+        {
+          "key": "deuter-28",
+          "contents_read": 37,
+          "visible_revisions": 37
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 928090",
+          "url": "https://he.wikisource.org/w/index.php?diff=928090&oldid=905210"
+        },
+        {
+          "label": "Chapter change 2820868",
+          "url": "https://he.wikisource.org/w/index.php?diff=2820868&oldid=2806487"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=521548"
+        }
+      ]
+    },
+    {
+      "case": "SEDER-DESCRIPTION-STRENGTH",
+      "classification": "history-accounted-Dotan-description-support-unresolved",
+      "result": "The Introduction's stronger description of Dotan is observed by April 2014, before the canonical note is added in October 2015. From that addition the note distinguishes Dotan's uncertainty from the author's separate possible-error explanation. Later note wording does not create the difference. Dotan's actual publication and notation convention remain the specific support gap.",
+      "limits": [
+        "Dotan’s publication and its convention for a braced seder sign were not checked. A direct citation to that convention and the Deuteronomy 20:1 entry is needed to decide whether error, uncertainty or both faithfully describe his assessment.",
+        "The shared absence from the seder lists does not by itself determine Dotan’s degree of certainty or prove the author’s proposed cause.",
+        "Pre-import MAM draft history was not examined;2015 is the canonical-page addition date, not an established global origin of the note."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "deuter-20",
+          "contents_read": 17,
+          "visible_revisions": 17
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 657112",
+          "url": "https://he.wikisource.org/w/index.php?diff=657112&oldid=655692"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=538454"
+        }
+      ]
+    },
+    {
+      "case": "STRAND-SCOPE",
+      "classification": "history-accounted-strand-allocation-support-unresolved",
+      "result": "On 19 October 2023 the note changes its reported Leningrad signs from tipḥa/munaḥ to munaḥ/merkha while MAM's selected form remains unchanged. The subsequently observed Introduction assigns the signs to upper and lower accentuation; the note does not make that allocation. History dates the changed quotation but does not validate the added strand assignment.",
+      "limits": [
+        "The note names Dotan and Breuer but does not give an attributed explanation allocating the Leningrad signs. A direct discussion of that allocation, or another explicitly attributed analysis of this Leningrad reading, is needed to validate it.",
+        "The MAM statement that its own single munaḥ serves both readings cannot supply that different allocation for Leningrad. No new manuscript inspection, grammatical adjudication, or source correction is proposed.",
+        "The exact first Introduction insertion and continuous earlier history were not established; the dated observations suffice to show this is not a surviving old tipḥa quotation."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "deuter-5",
+          "contents_read": 72,
+          "visible_revisions": 72
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2810188",
+          "url": "https://he.wikisource.org/w/index.php?diff=2810188&oldid=2810161"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812137"
+        }
+      ]
+    }
+  ]
+}

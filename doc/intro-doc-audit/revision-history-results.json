@@ -217,6 +217,31 @@
       "case": "POETIC-COUNTS-TEXT",
       "classification": "insufficient-history-to-identify-counting-source-and-principal-division-definition",
       "result": "history-batch5-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-DEUT-12-30",
+      "classification": "history-accounted-manuscript-interpretation-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "DESCRIPTION-DEUT-28-27",
+      "classification": "wrong-description-present-when-added",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "TORAH-SPELLING-METEG",
+      "classification": "established-staleness-in-incidental-pointing-scope-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "SEDER-DESCRIPTION-STRENGTH",
+      "classification": "history-accounted-Dotan-description-support-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "STRAND-SCOPE",
+      "classification": "history-accounted-strand-allocation-support-unresolved",
+      "result": "history-batch6-results.json"
     }
   ]
 }

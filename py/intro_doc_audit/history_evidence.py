@@ -54,7 +54,7 @@ def letters(text):
     return "".join(c for c in text if "\u05d0" <= c <= "\u05ea")
 
 
-def verse_excerpt(text, verse):
+def verse_excerpt(text, verse, include_heading=False):
     number = hvn.INT_TO_STR_DIC[verse]
     pattern = (
         r"<\u05e7\u05d8\u05e2 \u05d4\u05ea\u05d7\u05dc\u05d4="
@@ -66,14 +66,20 @@ def verse_excerpt(text, verse):
     match = re.search(pattern, text, re.S)
     if not match:
         raise ValueError(f"Historical verse {verse} lacks its declared delimiters")
-    return {"line": text[: match.start(1)].count("\n") + 1, "text": match[1]}
+    start = match.start(1)
+    if include_heading:
+        marker = "<\u05e7\u05d8\u05e2 \u05d4\u05ea\u05d7\u05dc\u05d4=\u05e1\u05d9\u05de\u05df/>"
+        start = text.rfind(marker, 0, match.start())
+        if start < 0:
+            raise ValueError(f"Historical verse {verse} lacks its heading delimiter")
+    return {"line": text[:start].count("\n") + 1, "text": text[start : match.end(1)]}
 
 
-def capture(revision, kind, verse=None, needles=()):
+def capture(revision, kind, verse=None, needles=(), include_heading=False):
     """Retain exact source strings; only selection uses comparison mark order."""
     text = revision["slots"]["main"]["content"]
     if verse is not None:
-        excerpts = [verse_excerpt(text, verse)]
+        excerpts = [verse_excerpt(text, verse, include_heading)]
     else:
         keys = [uni_denorm.give_std_mark_order(n) for n in needles]
         excerpts = [

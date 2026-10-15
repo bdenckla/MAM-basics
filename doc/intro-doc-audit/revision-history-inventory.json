@@ -19,29 +19,32 @@
     "omission-present-when-Genesis-numeric-count-assigned": 1,
     "established-staleness": 7,
     "established-count-correction-with-stale-chapter2-summary": 1,
-    "pending": 51,
+    "pending": 46,
     "not-explained-by-later-canonical-note-change-origin-undated": 1,
     "defect-present-when-note-added": 1,
     "ambiguity-present-when-alternative-added": 1,
     "internal-note-conflict-introduced-by-source-code-replacement": 1,
     "conflicting-attribution-present-when-agreement-expanded": 1,
     "discrepancy-at-first-observed-Introduction-entry-origin-bounded": 1,
-    "wrong-description-present-when-added": 1,
+    "wrong-description-present-when-added": 2,
     "wrong-locator-present-when-note-added": 1,
     "dated-note-expansion-with-partial-appendix-update": 1,
     "shared-terminology-question-from-first-canonical-note": 1,
     "insufficient-history-to-resolve-manuscript-attribution": 1,
+    "history-accounted-manuscript-interpretation-unresolved": 2,
     "attribution-tension-present-when-Introduction-candidate-added": 1,
     "attribution-tension-present-when-Introduction-alternative-added": 1,
-    "history-accounted-manuscript-interpretation-unresolved": 1,
     "history-accounted-source-qualification-unresolved": 1,
+    "history-accounted-strand-allocation-support-unresolved": 1,
     "history-accounted-illustration-scope-unresolved": 1,
     "insufficient-history-to-resolve-specific-Masorah-attribution": 1,
     "history-accounted-specific-source-support-absent": 1,
+    "established-staleness-in-incidental-pointing-scope-unresolved": 1,
     "mixed-chronology-later-certainty-and-original-qualification": 1,
     "established-staleness-after-doc-note-correction": 1,
     "history-accounted-agreement-scope-unresolved": 1,
     "later-note-expansion-unreflected-in-existing-list": 1,
+    "history-accounted-Dotan-description-support-unresolved": 1,
     "insufficient-history-to-identify-counting-source-and-principal-division-definition": 1,
     "insufficient-semantic-evidence-for-list-category": 2,
     "history-accounted-uncertain-hataf-category": 1,
@@ -1657,8 +1660,8 @@
           "pointer": "/tmpl_params/2"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "wrong-description-present-when-added",
+      "history_result": "history-batch6-results.json",
       "first_batch": false
     },
     {
@@ -2405,8 +2408,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-manuscript-interpretation-unresolved",
+      "history_result": "history-batch6-results.json",
       "first_batch": false
     },
     {
@@ -2579,8 +2582,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-strand-allocation-support-unresolved",
+      "history_result": "history-batch6-results.json",
       "first_batch": false
     },
     {
@@ -2862,8 +2865,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness-in-incidental-pointing-scope-unresolved",
+      "history_result": "history-batch6-results.json",
       "first_batch": false
     },
     {
@@ -3181,8 +3184,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-Dotan-description-support-unresolved",
+      "history_result": "history-batch6-results.json",
       "first_batch": false
     },
     {

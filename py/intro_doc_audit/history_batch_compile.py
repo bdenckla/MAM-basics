@@ -98,13 +98,15 @@ def intro_capture(revision, plan, claims):
     return result
 
 
-def chapter_states(chapter, verse):
+def chapter_states(chapter, verse, include_heading=False):
     """Group exact note templates without interpreting source sigils or mark meaning."""
     states = defaultdict(list)
     missing = []
     for rid, revision in chapter.items():
         try:
-            text = verse_excerpt(revision["slots"]["main"]["content"], verse)["text"]
+            text = verse_excerpt(
+                revision["slots"]["main"]["content"], verse, include_heading
+            )["text"]
         except ValueError:
             missing.append(rid)
             continue
@@ -116,6 +118,7 @@ def chapter_states(chapter, verse):
         states[notes].append(rid)
     return {
         "verse": verse,
+        **({"includes_verse_heading": True} if include_heading else {}),
         "literal_note_states": [
             {"revisions": sorted(ids), "templates": list(notes)}
             for notes, ids in states.items()
@@ -152,10 +155,18 @@ def main(batch, cache_dir=".novc/proverbs-history-api"):
                     "contents_read": len(chapter),
                     "visible_revisions": len(metadata[key]),
                     "states": [
-                        chapter_states(chapter, v) for v in specification["verses"]
+                        chapter_states(
+                            chapter, v, specification.get("include_heading", False)
+                        )
+                        for v in specification["verses"]
                     ],
                     "selected_sources": [
-                        capture(chapter[rid], "chapter", verse)
+                        capture(
+                            chapter[rid],
+                            "chapter",
+                            verse,
+                            include_heading=specification.get("include_heading", False),
+                        )
                         for rid in specification["selected"]
                         for verse in specification["verses"]
                     ],

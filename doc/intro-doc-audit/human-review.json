@@ -3367,7 +3367,20 @@
         "pointer": "/tmpl_params/2",
         "annotation": "Dagesh in tet."
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 20 January 2024 the note expands its general missing-dagesh description by adding the wrong tav name; its quoted qere already has tet and no tav. A later expansion correctly names tet in one group but retains tav in the other. The inspected Introduction names tet correctly. The error occurs when the description is added, rather than after a changed qere.",
+      "links": [
+        {
+          "label": "Chapter change 2834538",
+          "url": "https://he.wikisource.org/w/index.php?diff=2834538&oldid=2820868"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2835211"
+        }
+      ]
+    }
   },
   {
     "id": "ISA-10-15",
@@ -4632,7 +4645,24 @@
         "id": "Deuter 12:30/2/1",
         "text": "לֵאמֹ֨ר"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "Revia is selected throughout the twenty canonical MAM versions. The 18 January 2024 note explicitly adds Leningrad to its support while retaining the transcription alternative. The Introduction keeps doubt but already gives the same joined-ḥolam explanation. A November 2025 edit corrects the note's accent name from pashta to qadma without changing its U+0598 sign. The remaining physical interpretation and degree of certainty are unresolved.",
+      "links": [
+        {
+          "label": "Chapter change 2834323",
+          "url": "https://he.wikisource.org/w/index.php?diff=2834323&oldid=2834322"
+        },
+        {
+          "label": "Chapter change 2963837",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963837&oldid=2907868"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2834443"
+        }
+      ]
+    }
   },
   {
     "id": "L-CANDIDATE-PS-17-14",
@@ -4980,7 +5010,20 @@
         "id": "Deuter 5:13/2/0",
         "text": "לַיהֹוָ֣֥ה"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 19 October 2023 the note changes its reported Leningrad signs from tipḥa/munaḥ to munaḥ/merkha while MAM's selected form remains unchanged. The subsequently observed Introduction assigns the signs to upper and lower accentuation; the note does not make that allocation. History dates the changed quotation but does not validate the added strand assignment.",
+      "links": [
+        {
+          "label": "Chapter change 2810188",
+          "url": "https://he.wikisource.org/w/index.php?diff=2810188&oldid=2810161"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812137"
+        }
+      ]
+    }
   },
   {
     "id": "SHARED-EXPLANATIONS-SONG-4-16",
@@ -5457,7 +5500,24 @@
         "pointer": "",
         "text": "מֵֽרָחֹק֙"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "Both examples retain older MAM pointing. MAM removes the Deuteronomy 12:20 bet meteg in November 2019 and adds the 28:49 initial meteg in November 2023; inspected Introduction snapshots preserve the former forms. The spelling selections do not change, and the list explicitly defines its star as selecting spelling. Whether incidental pointing should be updated remains editorial.",
+      "links": [
+        {
+          "label": "Chapter change 928090",
+          "url": "https://he.wikisource.org/w/index.php?diff=928090&oldid=905210"
+        },
+        {
+          "label": "Chapter change 2820868",
+          "url": "https://he.wikisource.org/w/index.php?diff=2820868&oldid=2806487"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=521548"
+        }
+      ]
+    }
   },
   {
     "id": "TORAH-SPELLING-NAMES",
@@ -6028,7 +6088,20 @@
     ],
     "explanation": "The note distinguishes Dotan's uncertainty from its suggested explanation for a possible error. The Introduction makes the description attributed to Dotan stronger. Dotan's publication has not been checked for this rewrite.",
     "decision": "Should the Introduction use the note's wording “uncertain seder,” or retain “error” only with a direct citation showing that this was Dotan's assessment?",
-    "reading_forms": []
+    "reading_forms": [],
+    "revision_history": {
+      "summary": "The Introduction's stronger description of Dotan is observed by April 2014, before the canonical note is added in October 2015. From that addition the note distinguishes Dotan's uncertainty from the author's separate possible-error explanation. Later note wording does not create the difference. Dotan's actual publication and notation convention remain the specific support gap.",
+      "links": [
+        {
+          "label": "Chapter change 657112",
+          "url": "https://he.wikisource.org/w/index.php?diff=657112&oldid=655692"
+        },
+        {
+          "label": "Earlier Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=538454"
+        }
+      ]
+    }
   },
   {
     "id": "POETIC-COUNTS-TEXT",
