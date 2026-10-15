@@ -217,8 +217,7 @@ def _shin_figure(raw):
         mb_html.para(
             mb_html.anchor_h(
                 "Manuscript observation, screenshot provenance and Introduction comparison",
-                "https://github.com/bdenckla/MAM-basics/blob/main/"
-                "doc/near-aleppo-avi-ketiv-investigation.html",
+                "../avi-ketiv-investigation.html#kings-shin",
             )
         ),
         mb_html.para(

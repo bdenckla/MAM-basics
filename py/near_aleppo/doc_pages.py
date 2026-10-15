@@ -1,4 +1,4 @@
-"""Divide documentation sections among eight linked pages.
+"""Divide documentation sections among linked pages, grouping ketiv cases.
 
 Each identified heading has one explicit owner; a new or missing identifier
 fails generation. Sections retain their text, figures and assets. Local links
@@ -52,6 +52,7 @@ _PAGES = {
         ("where-the-codex-survives", "limitations", "pending", "manual-task"),
     ),
     "choices.html": ("Choices and alternatives", ("choices",)),
+    "ketiv-pointing.html": ("Ketiv pointing", ()),
     "ketiv-qere-mobile-he.html": ("Mobile he and the pataḥ", ("mobile-he",)),
     "ketiv-qere-daniel.html": (
         "Ketiv/qere cases in Daniel",
@@ -105,6 +106,8 @@ def _heading_text(section):
 def _navigation():
     contents = []
     for path, (title, _) in _PAGES.items():
+        if path in _CASE_PAGES:
+            continue
         if contents:
             contents.append(" · ")
         contents.append(link("Overview" if path == "index.html" else title, path))
@@ -133,7 +136,49 @@ def _overview_extra():
             [
                 link(title, path)
                 for path, (title, _) in _PAGES.items()
-                if path != "index.html"
+                if path != "index.html" and path not in _CASE_PAGES
+            ]
+        ),
+    ]
+
+
+def _ketiv_cases():
+    return mb_html.unordered_list(
+        [link(_PAGES[path][0], path) for path in _PAGES if path in _CASE_PAGES]
+        + [
+            link(
+                "Avi's lists and near-Aleppo ketiv pointing: "
+                "2 Kings, Ezekiel and Ecclesiastes 9:4",
+                "avi-ketiv-investigation.html",
+            )
+        ]
+    )
+
+
+def _ketiv_pointing():
+    return [
+        mb_html.para(
+            [
+                "Near-Aleppo supplies pointed ketiv forms under its ",
+                link(
+                    "general policy for the pointed ketiv",
+                    "editorial-policies.html#pointed-ketiv",
+                ),
+                ". These cases explain particular pointing decisions "
+                "and the manuscript evidence behind them.",
+            ]
+        ),
+        mb_html.heading_level_2("Cases and manuscript evidence"),
+        _ketiv_cases(),
+        mb_html.para(
+            [
+                "The ",
+                link(
+                    "Ecclesiastes 9:4 investigation",
+                    "avi-ketiv-investigation.html#ecclesiastes",
+                ),
+                " distinguishes near-Aleppo's adopted pointing from the "
+                "Leningrad ketiv quoted in MAM's documentation note.",
             ]
         ),
     ]
@@ -187,6 +232,8 @@ def pages(numbers):
             body.append(_navigation())
             if len(identifiers) > 1:
                 body += _contents(identifiers, sections)
+        if path == "ketiv-pointing.html":
+            body += _ketiv_pointing()
         for identifier in identifiers:
             nodes = copy.deepcopy(sections[identifier])
             if path in {"index.html", "choices.html"}:
@@ -211,10 +258,14 @@ def pages(numbers):
         if path in _CASE_PAGES:
             body.append(
                 mb_html.para(
-                    link(
-                        "General policy for the pointed ketiv",
-                        "editorial-policies.html#pointed-ketiv",
-                    )
+                    [
+                        link("Ketiv pointing", "ketiv-pointing.html"),
+                        " · ",
+                        link(
+                            "General policy for the pointed ketiv",
+                            "editorial-policies.html#pointed-ketiv",
+                        ),
+                    ]
                 )
             )
         for node in body:
