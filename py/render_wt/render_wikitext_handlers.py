@@ -525,7 +525,7 @@ def _handle_shirah_space(hctx, tmpl):
 def _handle_inverted_nun(hctx, tmpl):
     assert wtp.template_len(tmpl) == 2
     t10 = wtp.template_i0(tmpl, 1)
-    add_tr_space = t10 == hpu.NUN_HAF + "__"
+    add_tr_space = t10 == hpu.NUN_HAF + " "
     assert add_tr_space or t10 == hpu.NUN_HAF
     if not add_tr_space:
         assert _is_nu10_35_or_36(hctx)
