@@ -1,0 +1,15 @@
+{
+  "target": "חָ֥֫י",
+  "note": "א=חָ֥י (השמטת סימן העולה)",
+  "wikitext": "{{נוסח|חָ֥֫י|א=חָ֥י (השמטת סימן העולה)}}",
+  "model_note": "Psalms 68:20/2/1",
+  "body_file": ".novc\\issue310-concrete-supplied-oleh-note-comment-20261015.md",
+  "body": "Written by a Codex session on 2026-10-15, at Ben's request.\n\nSuggested full doc-note for the existing MAM form `חָ֥֫י`:\n\n`א=חָ֥י (השמטת סימן העולה)`\n\nIn Wikisource wikitext:\n\n```text\n{{נוסח|חָ֥֫י|א=חָ֥י (השמטת סימן העולה)}}\n```\n\nThis uses the same wording as Psalms 68:20, 86:2 and 125:2. The Aleppo reading is taken from the Introduction's list cited above; no manuscript image was checked.\n",
+  "corrected_wikitext": "{{נוסח|חָ֥֫י|2=א=חָ֥י (השמטת סימן העולה)}}",
+  "correction_body": "Written by a Codex session on 2026-10-15. Syntax correction to my comment above: the second parameter needs explicit `2=` because its value contains `=`. The proposed Hebrew note is unchanged. Full usable wikitext:\n\n```text\n{{נוסח|חָ֥֫י|2=א=חָ֥י (השמטת סימן העולה)}}\n```\n",
+  "correction_body_file": ".novc\\issue310-concrete-note-template-correction-20261015.md",
+  "comment_url": "https://github.com/bdenckla/MAM-basics/issues/310#issuecomment-6198113070",
+  "correction_url": "https://github.com/bdenckla/MAM-basics/issues/310#issuecomment-6198123146",
+  "readback": "Exact original comment and correction verified including Hebrew codepoints; issue body unchanged.",
+  "authorization": "Ben request Sentinel_8c127574c44881918a6c47e6c61684e3"
+}
