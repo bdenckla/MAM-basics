@@ -1,0 +1,487 @@
+{
+  "method": "Independent cached-only inspection of all visible canonical chapter contents, exact parent/child verse excerpts and templates, the native repository template parser for historical note arguments, source-aware Introduction roster routing, and literal source codepoint comparison. No normalization or source edits. Successful assertions check the stated provenance and literal comparisons; the English dispositions were read against those excerpts.",
+  "coverage": {
+    "cases": 3,
+    "cases_total": 3,
+    "canonical_chapters": 3,
+    "canonical_contents": 70,
+    "canonical_visible_metadata": 70
+  },
+  "cases": [
+    {
+      "case": "PS-150-3-HATAF",
+      "classification": "established-staleness",
+      "verified": true,
+      "finding": "The first Aleppo quotation changes from sheva to ḥataf pataḥ on 6 March 2026 at 19:17:29 UTC. The Introduction first-occurrence entry retains sheva in every inspected historical state and in the pinned cache. The second occurrence is a separate entry and has ḥataf pataḥ throughout the note history since the 2016 import.",
+      "canonical_coverage": {
+        "contents": 18,
+        "visible_metadata": 18
+      },
+      "exact_correction": {
+        "before": {
+          "revid": 2988302,
+          "parentid": 2909084,
+          "timestamp": "2026-02-16T19:40:00Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2988302",
+          "excerpt": {
+            "line": 8,
+            "text": "{{נוסח|{{מ:דחי|הַ֭לְﬞלוּהוּ|הַ֭לְﬞל֭וּהוּ}}|2=א=הַ֭לְלוּהוּ (חטף)}} בְּתֵ֣קַע שׁוֹפָ֑ר{{ר1}}{{נוסח|הַ֝לְﬞל֗וּהוּ|2=א=הַ֝לֲל֗וּהוּ (חטף)}} בְּנֵ֣בֶל וְכִנּֽוֹר׃"
+          }
+        },
+        "after": {
+          "revid": 2995847,
+          "parentid": 2988302,
+          "timestamp": "2026-03-06T19:17:29Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2995847",
+          "excerpt": {
+            "line": 8,
+            "text": "{{נוסח|{{מ:דחי|הַ֭לְﬞלוּהוּ|הַ֭לְﬞל֭וּהוּ}}|2=א=הַ֭לֲלוּהוּ (חטף)}} בְּתֵ֣קַע שׁוֹפָ֑ר{{ר1}}{{נוסח|הַ֝לְﬞל֗וּהוּ|2=א=הַ֝לֲל֗וּהוּ (חטף)}} בְּנֵ֣בֶל וְכִנּֽוֹר׃"
+          }
+        },
+        "diff_url": "https://he.wikisource.org/w/index.php?diff=2995847&oldid=2988302"
+      },
+      "literal_form_comparison": {
+        "before": "הַ֭לְלוּהוּ",
+        "after": "הַ֭לֲלוּהוּ",
+        "edits": [
+          {
+            "operation": "replace",
+            "before": "ְ",
+            "after": "ֲ",
+            "before_codepoints": [
+              {
+                "codepoint": "U+05B0",
+                "name": "HEBREW POINT SHEVA"
+              }
+            ],
+            "after_codepoints": [
+              {
+                "codepoint": "U+05B2",
+                "name": "HEBREW POINT HATAF PATAH"
+              }
+            ]
+          }
+        ],
+        "main_target_unchanged": true,
+        "second_occurrence_unchanged": true
+      },
+      "first_quotation_state_transitions": [
+        {
+          "revid": 671530,
+          "timestamp": "2016-01-24T05:37:32Z",
+          "form": "הַ֭לְלוּהוּ"
+        },
+        {
+          "revid": 2995847,
+          "timestamp": "2026-03-06T19:17:29Z",
+          "form": "הַ֭לֲלוּהוּ"
+        }
+      ],
+      "earlier_note_prose": {
+        "added_revision": 2708350,
+        "timestamp": "2023-03-12T12:48:22Z",
+        "note": "א=הַ֭לְלוּהוּ (חטף)",
+        "qualification": "The first quotation still has sheva when the explicit ḥataf label is added in March 2023. The label is absent briefly in revision 2888188 and restored in 2888956; neither edit changes the quotation vowel."
+      },
+      "introduction_states": [
+        {
+          "revid": 2708391,
+          "parentid": 2708390,
+          "timestamp": "2023-03-12T15:49:32Z",
+          "capture_file": ".novc/proverbs-history-api/revision-2708391.json",
+          "items": [
+            {
+              "line": 657,
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֭לְלוּהוּ [1])"
+            },
+            {
+              "line": 657,
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֝לֲל֗וּהוּ [2])"
+            }
+          ]
+        },
+        {
+          "revid": 2892889,
+          "parentid": 2892878,
+          "timestamp": "2024-11-20T19:57:07Z",
+          "capture_file": ".novc/proverbs-history-api/selected-history7-content-001.json",
+          "items": [
+            {
+              "line": 701,
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֭לְלוּהוּ [1])"
+            },
+            {
+              "line": 701,
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֝לֲל֗וּהוּ [2])"
+            }
+          ]
+        },
+        {
+          "revid": 3088859,
+          "parentid": 3088690,
+          "timestamp": "2026-10-15T09:42:04Z",
+          "capture_file": ".novc/proverbs-history-api/revision-3088859.json",
+          "items": [
+            {
+              "line": 710,
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֭לְלוּהוּ [1])"
+            },
+            {
+              "line": 710,
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֝לֲל֗וּהוּ [2])"
+            }
+          ]
+        },
+        {
+          "source_kind": "pinned-repository-cache",
+          "claim": "ch5:L710",
+          "revid": 3087740,
+          "timestamp": "2026-10-08T17:34:00Z",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L710",
+          "items": [
+            {
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֭לְלוּהוּ [1])"
+            },
+            {
+              "literal_link": "[[תהלים קנ/טעמים#קנ ג|קנ,ג]]",
+              "literal_specimen": "(א=הַ֝לֲל֗וּהוּ [2])"
+            }
+          ]
+        }
+      ],
+      "frozen_audit_note": {
+        "id": "Psalms 150:3/2/0",
+        "chapter_revision": {
+          "resolved_title": "תהלים קנ/טעמים",
+          "page_id": 238846,
+          "requested_title": "תהלים_קנ/טעמים",
+          "revision_id": 2995847,
+          "sha256": "8e5235d28be155a6f3d48ddcd1e71c3dd8da4673c34d86b59e8403c9e81c97f9"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L61191",
+        "target_node": {
+          "tmpl_name": "מ:דחי",
+          "tmpl_params": {
+            "1": "הַ֭לְﬞלוּהוּ",
+            "2": "הַ֭לְﬞל֭וּהוּ"
+          }
+        },
+        "body_text": "א=הַ֭לֲלוּהוּ (חטף)"
+      },
+      "limits": [
+        "This dates the textual change and subsequent Introduction staleness, without independently deciding the manuscript reading.",
+        "The MAM target uses its vocal-sheva marker; it is distinct from the explicitly attributed Aleppo quotation being compared."
+      ]
+    },
+    {
+      "case": "PS-108-3-ALTERNATIVE",
+      "classification": "established-staleness",
+      "verified": true,
+      "finding": "On 9 November 2025 at 18:51:41 UTC the uncertain Aleppo alternative changes from deḥi plus merkha to terḥa plus merkha, while the preferred deḥi-plus-meteg target remains unchanged. The explanatory names change with the source character, and the expanded prose expressly describes two conjunctives preceding revia. The inspected Introduction states retain the older alternative.",
+      "canonical_coverage": {
+        "contents": 27,
+        "visible_metadata": 27
+      },
+      "exact_correction": {
+        "before": {
+          "revid": 2907694,
+          "parentid": 2888719,
+          "timestamp": "2025-03-08T08:49:05Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2907694",
+          "excerpt": {
+            "line": 8,
+            "text": "{{נוסח|{{מ:דחי|ע֭וּרָֽה|ע֭וּרָ֭ה}}|2==א?,ל (דחי וקו של געיה להורות על מקום הטעם), וכך במהדורותיו הראשונות של ברויאר (מוסד הרב קוק וחורב) ובמג\"ה, וכמו כן בדפוסים וקורן וסימנים{{ש}}א?=ע֭וּרָ֥ה (דחי ומרכא?); וראו ברויאר, טעמי המקרא, יא.43 עמ' 285. כך נדפס אצל ברויאר בכתר ירושלים וכן במכון ממרא. והשוו לפסוק המקביל בתהלים נז,ט (כאן הקו עוד יותר ישר).}} הַנֵּ֥בֶל וְכִנּ֗וֹר{{ר1}}אָעִ֥ירָה שָּֽׁחַר׃"
+          }
+        },
+        "after": {
+          "revid": 2963318,
+          "parentid": 2907694,
+          "timestamp": "2025-11-09T18:51:41Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2963318",
+          "excerpt": {
+            "line": 8,
+            "text": "{{נוסח|{{מ:דחי|ע֭וּרָֽה|ע֭וּרָ֭ה}}|2==א?,ל (קו של דחי וקו של געיה להורות על מקום הטעם), וכך במהדורותיו הראשונות של ברויאר (מוסד הרב קוק וחורב) ובמג\"ה, וכמו כן בדפוסים וקורן וסימנים. והשוו לפסוק המקביל בתהלים נז,ט (שם הקווים לדחי ולגעיה פחות ברורים.).{{ש}}א?=ע֖וּרָ֥ה (טרחא ומרכא?); וראו ברויאר, טעמי המקרא, יא.43 עמ' 285 על טרחא ומרכא כשני המשרתים הסמוכים לרביע. וכך נדפס אצל ברויאר בכתר ירושלים וכמו כן במכון ממרא.}} הַנֵּ֥בֶל וְכִנּ֗וֹר{{ר1}}אָעִ֥ירָה שָּֽׁחַר׃"
+          }
+        },
+        "diff_url": "https://he.wikisource.org/w/index.php?diff=2963318&oldid=2907694"
+      },
+      "literal_form_comparison": {
+        "before": "ע֭וּרָ֥ה",
+        "after": "ע֖וּרָ֥ה",
+        "edits": [
+          {
+            "operation": "replace",
+            "before": "֭",
+            "after": "֖",
+            "before_codepoints": [
+              {
+                "codepoint": "U+05AD",
+                "name": "HEBREW ACCENT DEHI"
+              }
+            ],
+            "after_codepoints": [
+              {
+                "codepoint": "U+0596",
+                "name": "HEBREW ACCENT TIPEHA"
+              }
+            ]
+          }
+        ],
+        "preferred_target_unchanged": true,
+        "preferred_target_literal": "{{מ:דחי|ע֭וּרָֽה|ע֭וּרָ֭ה}}"
+      },
+      "introduction_states": [
+        {
+          "revid": 2708391,
+          "parentid": 2708390,
+          "timestamp": "2023-03-12T15:49:32Z",
+          "capture_file": ".novc/proverbs-history-api/revision-2708391.json",
+          "items": [
+            {
+              "line": 564,
+              "literal_link": "[[תהלים קח/טעמים#קח ג|קח,ג]]",
+              "literal_specimen": "(א?=ע֭וּרָֽה* או ע֭וּרָ֥ה): דחי וגעיה או דחי ומרכא?"
+            }
+          ]
+        },
+        {
+          "revid": 2892889,
+          "parentid": 2892878,
+          "timestamp": "2024-11-20T19:57:07Z",
+          "capture_file": ".novc/proverbs-history-api/selected-history7-content-001.json",
+          "items": [
+            {
+              "line": 606,
+              "literal_link": "[[תהלים קח/טעמים#קח ג|קח,ג]]",
+              "literal_specimen": "(א?=ע֭וּרָֽה* או ע֭וּרָ֥ה): דחי וגעיה או דחי ומרכא?"
+            }
+          ]
+        },
+        {
+          "revid": 3088859,
+          "parentid": 3088690,
+          "timestamp": "2026-10-15T09:42:04Z",
+          "capture_file": ".novc/proverbs-history-api/revision-3088859.json",
+          "items": [
+            {
+              "line": 603,
+              "literal_link": "[[תהלים קח/טעמים#קח ג|קח,ג]]",
+              "literal_specimen": "(א?=ע֭וּרָֽה* או ע֭וּרָ֥ה): דחי וגעיה* או דחי ומרכא? (סימון מקום הטעם לדחי)"
+            }
+          ]
+        },
+        {
+          "source_kind": "pinned-repository-cache",
+          "claim": "ch5:L603",
+          "revid": 3087740,
+          "timestamp": "2026-10-08T17:34:00Z",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L603",
+          "items": [
+            {
+              "literal_link": "[[תהלים קח/טעמים#קח ג|קח,ג]]",
+              "literal_specimen": "(א?=ע֭וּרָֽה* או ע֭וּרָ֥ה): דחי וגעיה* או דחי ומרכא? (סימון מקום הטעם לדחי)"
+            }
+          ]
+        }
+      ],
+      "frozen_audit_note": {
+        "id": "Psalms 108:3/2/0",
+        "chapter_revision": {
+          "resolved_title": "תהלים קח/טעמים",
+          "page_id": 238678,
+          "requested_title": "תהלים_קח/טעמים",
+          "revision_id": 2988260,
+          "sha256": "8e5887b3992cc46674ca21ffb07fb32ea062b6d94f536b5f32d871952eb6c773"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L46115",
+        "target_node": {
+          "tmpl_name": "מ:דחי",
+          "tmpl_params": {
+            "1": "ע֭וּרָֽה",
+            "2": "ע֭וּרָ֭ה"
+          }
+        },
+        "body_text": "=א?,ל (קו של דחי וקו של געיה להורות על מקום הטעם), וכך במהדורותיו הראשונות של ברויאר (מוסד הרב קוק וחורב) ובמג\"ה, וכמו כן בדפוסים וקורן וסימנים. והשוו לפסוק המקביל בתהלים נז,ט (שם הקווים לדחי ולגעיה פחות ברורים).\nא?=ע֖וּרָ֥ה (טרחא ומרכא?); וראו ברויאר, טעמי המקרא, יא.43 עמ' 285 על טרחא ומרכא כשני המשרתים הסמוכים לרביע. וכך נדפס אצל ברויאר בכתר ירושלים וכמו כן במכון ממרא."
+      },
+      "limits": [
+        "Both source passages leave the Aleppo reading uncertain. This establishes textual staleness, not a new manuscript interpretation.",
+        "The comparison concerns the secondary alternative. The preferred form and its separate stress-helper rendering must not be mistaken for that alternative."
+      ]
+    },
+    {
+      "case": "PS-30-12-NOTE-LABEL",
+      "classification": "history-accounted-note-error-at-addition",
+      "verified": true,
+      "finding": "The erroneous revia description is introduced on 7 March 2023 at 08:46:25 UTC although the MAM target and Aleppo quotation already differ only by oleh. Revision 3088911 of 15 October 2026 at 17:59:04 UTC corrects the description to the omitted oleh sign and leaves both pointed forms unchanged. The Introduction quotation agrees with the note quotation; the error is the note label.",
+      "canonical_coverage": {
+        "contents": 25,
+        "visible_metadata": 25
+      },
+      "exact_correction": {
+        "before": {
+          "revid": 2988182,
+          "parentid": 2956137,
+          "timestamp": "2026-02-16T19:36:50Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2988182",
+          "excerpt": {
+            "line": 17,
+            "text": "הָפַ֣כְתָּ מִסְפְּדִי֮ לְמָח֢וֹל {{נוסח|לִ֥֫י|2=א=לִ֥י (השמטת נקודת הרביע)}}{{ר1}}פִּתַּ֥חְתָּ שַׂקִּ֑י{{ר1}}וַֽתְּאַזְּרֵ֥נִי שִׂמְחָֽה׃"
+          }
+        },
+        "after": {
+          "revid": 3088911,
+          "parentid": 2988182,
+          "timestamp": "2026-10-15T17:59:04Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088911",
+          "excerpt": {
+            "line": 17,
+            "text": "הָפַ֣כְתָּ מִסְפְּדִי֮ לְמָח֢וֹל {{נוסח|לִ֥֫י|2=א=לִ֥י (השמטת סימן העולה)}}{{ר1}}פִּתַּ֥חְתָּ שַׂקִּ֑י{{ר1}}וַֽתְּאַזְּרֵ֥נִי שִׂמְחָֽה׃"
+          }
+        },
+        "diff_url": "https://he.wikisource.org/w/index.php?diff=3088911&oldid=2988182"
+      },
+      "label_addition": {
+        "before": {
+          "revid": 1379677,
+          "parentid": 1289310,
+          "timestamp": "2022-03-03T13:26:19Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1379677",
+          "excerpt": {
+            "line": 16,
+            "text": "הָפַ֣כְתָּ מִסְפְּדִי֮ לְמָח{{אתנח הפוך}}וֹל {{נוסח|לִ֥֫י|א=לִ֥י}}{{ר1}}פִּתַּ֥חְתָּ שַׂקִּ֑י{{ר1}}וַֽתְּאַזְּרֵ֥נִי שִׂמְחָֽה׃"
+          }
+        },
+        "after": {
+          "revid": 2707452,
+          "parentid": 1379677,
+          "timestamp": "2023-03-07T08:46:25Z",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707452",
+          "excerpt": {
+            "line": 16,
+            "text": "הָפַ֣כְתָּ מִסְפְּדִי֮ לְמָח{{אתנח הפוך}}וֹל {{נוסח|לִ֥֫י|א=לִ֥י (השמטת נקודת הרביע)}}{{ר1}}פִּתַּ֥חְתָּ שַׂקִּ֑י{{ר1}}וַֽתְּאַזְּרֵ֥נִי שִׂמְחָֽה׃"
+          }
+        },
+        "diff_url": "https://he.wikisource.org/w/index.php?diff=2707452&oldid=1379677"
+      },
+      "literal_comparison": {
+        "MAM_target": "לִ֥֫י",
+        "Aleppo_quotation": "לִ֥י",
+        "target_to_quotation_edits": [
+          {
+            "operation": "delete",
+            "before": "֫",
+            "after": "",
+            "before_codepoints": [
+              {
+                "codepoint": "U+05AB",
+                "name": "HEBREW ACCENT OLE"
+              }
+            ],
+            "after_codepoints": []
+          }
+        ],
+        "label_before": "השמטת נקודת הרביע",
+        "label_after": "השמטת סימן העולה",
+        "pointed_forms_unchanged_by_correction": true,
+        "revia_codepoint_absent_from_both_forms": true
+      },
+      "introduction_states": [
+        {
+          "revid": 1194328,
+          "parentid": 1053269,
+          "timestamp": "2021-09-26T05:16:12Z",
+          "capture_file": ".novc/proverbs-history-api/revision-1194328.json",
+          "items": [
+            {
+              "line": 216,
+              "literal_link": "[[תהלים ל/טעמים#ל יב|ל,יב]]",
+              "literal_specimen": "()"
+            }
+          ]
+        },
+        {
+          "revid": 1934798,
+          "parentid": 1933501,
+          "timestamp": "2023-01-11T09:10:31Z",
+          "capture_file": ".novc/proverbs-history-api/revision-1934798.json",
+          "items": [
+            {
+              "line": 223,
+              "literal_link": "[[תהלים ל/טעמים#ל יב|ל,יב]]",
+              "literal_specimen": "(א=לְמָח֢וֹל לִ֥י)"
+            }
+          ]
+        },
+        {
+          "revid": 2708391,
+          "parentid": 2708390,
+          "timestamp": "2023-03-12T15:49:32Z",
+          "capture_file": ".novc/proverbs-history-api/revision-2708391.json",
+          "items": [
+            {
+              "line": 691,
+              "literal_link": "[[תהלים ל/טעמים#ל יב|ל,יב]]",
+              "literal_specimen": "(א=לְמָח֢וֹל לִ֥י)"
+            }
+          ]
+        },
+        {
+          "revid": 3088859,
+          "parentid": 3088690,
+          "timestamp": "2026-10-15T09:42:04Z",
+          "capture_file": ".novc/proverbs-history-api/revision-3088859.json",
+          "items": [
+            {
+              "line": 743,
+              "literal_link": "[[תהלים ל/טעמים#ל יב|ל,יב]]",
+              "literal_specimen": "(א=לְמָח֢וֹל לִ֥י)"
+            }
+          ]
+        },
+        {
+          "source_kind": "pinned-repository-cache",
+          "claim": "ch5:L743",
+          "revid": 3087740,
+          "timestamp": "2026-10-08T17:34:00Z",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L743",
+          "items": [
+            {
+              "literal_link": "[[תהלים ל/טעמים#ל יב|ל,יב]]",
+              "literal_specimen": "(א=לְמָח֢וֹל לִ֥י)"
+            }
+          ]
+        }
+      ],
+      "frozen_audit_note": {
+        "id": "Psalms 30:12/2/0",
+        "chapter_revision": {
+          "resolved_title": "תהלים ל/טעמים",
+          "page_id": 238366,
+          "requested_title": "תהלים_ל/טעמים",
+          "revision_id": 2988182,
+          "sha256": "09b5f0dead824bb647c24433efc390b2cbcba186950b5d68363adf8b8deec2e5"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L10778",
+        "target_node": "לִ֥֫י",
+        "body_text": "א=לִ֥י (השמטת נקודת הרביע)"
+      },
+      "already_tracked_issue": 309,
+      "limits": [
+        "The corrected source is later historical evidence. The frozen audit note remains at revision 2988182 with the old label.",
+        "No manuscript reading is reassessed, and no issue or comment was created."
+      ]
+    }
+  ],
+  "supporting_scratch": [
+    ".novc/history-psalm-independent-raw.json",
+    ".novc/history-psalm-independent-intro.json"
+  ],
+  "remaining_blockers": []
+}

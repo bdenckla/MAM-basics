@@ -730,3 +730,40 @@ stress-helper addition in a spelling specimen, and an uncertain candidate alread
 acknowledged elsewhere in the Introduction. These distinctions do not authorize
 manuscript changes. [Literal sources](history-batch10-sources.json), original
 quotations and all twelve Ben decisions remain preserved.
+
+The [eleventh history batch](history-batch11-results.json) completes the final
+eleven applicable cases using 330/330 chapter contents. All 94/94 applicable
+history questions now have evidenced dispositions, with zero pending chronology
+entries. This means the history pass is accounted for, not that every substantive
+question has been settled. Psalm 39's case concerns the Leningrad placement
+quotation: its first explicit canonical quotation already disagrees with the
+earlier Introduction, so a later corrected Leningrad note is not established.
+The neighboring Aleppo vowel expansion is context rather than that case's claim.
+Proverbs 8's history was also refined to distinguish a recorded template-name
+change from an independently literal codepoint correction; its retained source
+evidence is byte-identical.
+
+The final batch dates Psalm 57's alternative correction and Psalm 68's rafe
+quotation change, while preserving their uncertain or otherwise matching design
+features. Song 2's wrong accent name enters its note in 2023; the pinned
+Introduction already has the corrected name. Song 4's wrong lamed description
+is present in the earliest matching Introduction snapshot, while the note's
+literal difference is zayin dagesh. Letter-size examples distinguish a real later
+meteg addition from relocation of already present legarmeh templates. The Wickes
+adaptation still needs its direct source and original notation; no reference
+repair or new count is inferred.
+
+The [completion inventory](history-completion.json) records 340/340 topic routes,
+152/152 reader cases, 94/94 history dispositions and the preserved 717 literal
+passages and twelve proposals. Across the history work, pertinent passages were
+inspected in all 1,711 visible revisions of 75 chapter histories. Nine additional
+chapter routes are current evidence for the omitted-oleh count, whose requested
+chronology concerns the Introduction count; their individual chapter histories
+are explicitly not claimed. Canonical histories, selected Introduction snapshots,
+and uninspected external-source questions remain distinct. The [independent Psalm
+validation](psalm-history-independent-validation.json) confirms three material
+chronologies against 70/70 chapter revisions. The [grouped follow-up inventory](revision-history-followups.json) partitions all
+94 cases: seventeen approved, tracked or bounded-answer context cases and
+77 existing editorial/evidence questions. Its optional finer-origin group and
+26 secondary memberships preserve separate subclaims without authorizing further
+actions. No scripture datasets, editions or published files were changed.

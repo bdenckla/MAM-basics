@@ -1947,7 +1947,28 @@
         "id": "Psalms 57:9/2/0",
         "text": "ע֖וּרָ֥ה"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The note uses an uncertain deḥi-plus-merkha alternative after the March 2023 change of preferred reading to deḥi plus meteg. On 9 November 2025 its prose specifies terḥa plus merkha as two conjunctives before revia; several minutes later the literal alternative receives the terḥa codepoint. The same session also extends the uncertainty to Leningrad. Introduction snapshots from March 2023 through November 2024 and the post-change October 2026 snapshot retain deḥi plus merkha as the alternative. This establishes later staleness relative to the completed note correction.",
+      "links": [
+        {
+          "label": "Chapter change 2708095",
+          "url": "https://he.wikisource.org/w/index.php?diff=2708095&oldid=2707721"
+        },
+        {
+          "label": "Chapter change 2963315",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963315&oldid=2912323"
+        },
+        {
+          "label": "Chapter change 2963319",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963319&oldid=2963317"
+        },
+        {
+          "label": "Chapter change 2963325",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963325&oldid=2963324"
+        }
+      ]
+    }
   },
   {
     "id": "PS-108-3-ALTERNATIVE",
@@ -2112,7 +2133,20 @@
         "id": "Psalms 39:13/2/0",
         "text": "שִֽׁמְעָ֥ה־תְפִלָּתִ֨י׀"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The actual review claim concerns the Leningrad quotation: both Introduction passages first observed in November 2025 place merkha on shin and meteg on ayin. On 12 March 2026 the chapter adds its first explicit Leningrad quotation, with meteg on shin and merkha on ayin. The actual parent has no Leningrad quotation to correct, so this dates the first explicit canonical disagreement, rather than establishing later staleness after a corrected Leningrad note. The older 2011 public text already has the pattern later assigned to Leningrad; the 2016 import instead gives the selected-MAM pattern and an Aleppo ḥataf quotation.",
+      "links": [
+        {
+          "label": "Chapter change 2997805",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997805&oldid=2988191"
+        },
+        {
+          "label": "Chapter change 2997806",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997806&oldid=2997805"
+        }
+      ]
+    }
   },
   {
     "id": "PS-17-14-MAQAF",
@@ -2688,7 +2722,20 @@
         "id": "Psalms 31:12/2/1",
         "text": "וְלִ֥שֲׁכֵנַ֨י׀"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The Aleppo ḥataf quotation and explicit ḥataf description are present from the 2016 MAM import through every later chapter revision. The selected MAM form initially has plain sheva; its vocal-sheva marker is added only on 6 March 2026, without changing the Aleppo quotation. The Introduction's minority group, which explicitly says the Aleppo masorete did not write ḥataf, already includes this atom in the retained November 2025 snapshot. That claim therefore conflicts with the longstanding note; it is not explained by a later note reassignment or by the 2026 selected-form marker.",
+      "links": [
+        {
+          "label": "Chapter change 671411",
+          "url": "https://he.wikisource.org/w/index.php?diff=671411&oldid=408188"
+        },
+        {
+          "label": "Chapter change 2995849",
+          "url": "https://he.wikisource.org/w/index.php?diff=2995849&oldid=2988183"
+        }
+      ]
+    }
   },
   {
     "id": "PS-53-6-LETTER-NAME",
@@ -2738,7 +2785,16 @@
         "text": "לֹא־הָ֢יָ֫ה פָ֥חַד",
         "pointer": ""
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 25 March 2023 the note and the claim that oleh hangs between yod and resh are added together. Its actual parent and child both spell the relevant atom he-yod-he; there is no resh in that atom or the quoted chanted-word context. The same edit changes the displayed oleh position from after the final he to the yod. Thus the letter-name problem exists at the description's addition, rather than resulting from a later consonant change. Subsequent edits add source sigils or change templates and keep the same letter-name description.",
+      "links": [
+        {
+          "label": "Chapter change 2715106",
+          "url": "https://he.wikisource.org/w/index.php?diff=2715106&oldid=2707692"
+        }
+      ]
+    }
   },
   {
     "id": "DAN-5-7",
@@ -4048,7 +4104,24 @@
         "pointer": "",
         "annotation": "Qadma."
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The note introduces the name pashta on 26 February 2023. Its selected MAM sign and its statement about Breuer adding qadma already existed in 2016 and remain unchanged. Retained March and May 2023 Introduction passages also call it pashta; the pinned Introduction now calls it qadma. The dated note edit therefore introduces the inconsistent accent name, while the later Introduction has corrected its corresponding label.",
+      "links": [
+        {
+          "label": "Pashta wording added, 2023-02-26",
+          "url": "https://he.wikisource.org/w/index.php?diff=2705681&oldid=1379873"
+        },
+        {
+          "label": "Earlier Introduction wording, 2023-03-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2706329"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3087740"
+        }
+      ]
+    }
   },
   {
     "id": "AMOS-MISSING-PAGES",
@@ -4436,7 +4509,16 @@
         "id": "ch2:L307",
         "text": "הִרְכַּ֥בְתָּֽ"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "All 18 canonical versions have a space after the relevant atom rather than maqaf. The actual 3 January 2024 edit adds reading-aid meteg to that atom, with an Aleppo-based change comment, and leaves the following space. The Introduction's corresponding poetic example, first observed in the retained November 2025 snapshots, has the same merkha-plus-meteg form. There is no historical removal of maqaf to explain a discrepancy. As with Psalm 119:90, the paragraph's explicit universal maqaf statement names the Twenty-one Books, while the poetic continuation may include meteg cases without maqaf.",
+      "links": [
+        {
+          "label": "Chapter change 2829693",
+          "url": "https://he.wikisource.org/w/index.php?diff=2829693&oldid=2759867"
+        }
+      ]
+    }
   },
   {
     "id": "PS-119-90-MAQAF-SCOPE",
@@ -5411,7 +5493,20 @@
         "pointer": "",
         "annotation": "Dagesh on zayin."
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The MAM note has contrasted zayin dagesh with its absence in the Leningrad quotation since the 2016 import. Its explanation has always said only missing dagesh, without naming lamed. Retained Introduction passages already name lamed in March 2023, although their quoted form matches the note. No later note change or change to the selected consonant explains the wrong letter name.",
+      "links": [
+        {
+          "label": "Note imported, 2016-01-24",
+          "url": "https://he.wikisource.org/w/index.php?diff=671303&oldid=404985"
+        },
+        {
+          "label": "Introduction entry, 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        }
+      ]
+    }
   },
   {
     "id": "SHARED-EXPLANATIONS-LAM-4-7",
@@ -6265,7 +6360,36 @@
         "pointer": "/tmpl_params/2",
         "text": "ח֣וּר׀"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The three letter-size choices agree throughout the canonical MAM histories. Psalm 77 acquired its initial meteg on 9 January 2024 after the retained Introduction specimen. Ruth and Esther already had their legarmeh strokes in the first MAM versions in January 2016; February 2025 edits only moved those existing templates inside the note targets. All three Introduction specimens are present by February 2019. The remaining question is how complete a letter-size illustration should be.",
+      "links": [
+        {
+          "label": "All three size specimens and size-star legend, February 2019",
+          "url": "https://he.wikisource.org/w/index.php?oldid=888275"
+        },
+        {
+          "label": "Psalm 77 initial meteg added, January 2024",
+          "url": "https://he.wikisource.org/w/index.php?diff=2830945&oldid=2830917"
+        },
+        {
+          "label": "Ruth existing legarmeh moved inside note target, February 2025",
+          "url": "https://he.wikisource.org/w/index.php?diff=2904519&oldid=2860830"
+        },
+        {
+          "label": "Esther existing legarmeh moved inside note target, February 2025",
+          "url": "https://he.wikisource.org/w/index.php?diff=2904520&oldid=2859006"
+        },
+        {
+          "label": "First MAM Ruth note already has legarmeh, January 2016",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671298"
+        },
+        {
+          "label": "First MAM Esther note already has legarmeh, January 2016",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671271"
+        }
+      ]
+    }
   },
   {
     "id": "EXOD-7-13-SCOPE",
@@ -6713,7 +6837,24 @@
           }
         ]
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "All 13 canonical 1 Samuel 11 versions, all 11 Zechariah 10 versions, and all 15 1 Chronicles 18 versions lack a vertical-bar sign and any paseq/legarmeh helper in the four questioned passages. In 1 Samuel 11:12 and Zechariah 10:12 the entire raw verse also has no revia in any version. The current patterns are already present at each MAM import; no later canonical accent edit created their mismatch with the Introduction's references. The four references are retained in the first inspected November 2025 Introduction snapshot. Its list is explicitly based mainly on Wickes, with its own manuscript and print exceptions and additions; it is not identified as a current-MAM census.",
+      "links": [
+        {
+          "label": "Chapter change 653452",
+          "url": "https://he.wikisource.org/w/index.php?diff=653452&oldid=402687"
+        },
+        {
+          "label": "Chapter change 658423",
+          "url": "https://he.wikisource.org/w/index.php?diff=658423&oldid=404045"
+        },
+        {
+          "label": "Chapter change 667579",
+          "url": "https://he.wikisource.org/w/index.php?diff=667579&oldid=408653"
+        }
+      ]
+    }
   },
   {
     "id": "ISA-44-24-KETIV-MAQAF",
@@ -6855,7 +6996,20 @@
         "id": "ch5:L787",
         "text": "בִּסְבׇךְ־עֵ֝ץ"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "Across all 16 Psalm 6 and 20 Psalm 74 chapter revisions, their MAM-era notes consistently distinguish selected-MAM vowels from explicit Aleppo quotations: pataḥ versus qamats in Psalm 6:3, and sheva versus ḥataf pataḥ in Psalm 74:5. Those distinctions already occur in both 2016 imports. The November 2020 Introduction snapshots attribute the pataḥ form to Aleppo in the two-atom oleh list and expand the Psalm 74 revia example to a compound with sheva. Later Introduction sections also reproduce the note-supported qamats and ḥataf forms. Thus no later canonical vowel correction created these differences between Introduction illustrations and notes.",
+      "links": [
+        {
+          "label": "Chapter change 2706999",
+          "url": "https://he.wikisource.org/w/index.php?diff=2706999&oldid=1379653"
+        },
+        {
+          "label": "Chapter change 2707881",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707881&oldid=1379722"
+        }
+      ]
+    }
   },
   {
     "id": "POETIC-PROV8-QUALIFICATION",
@@ -6916,7 +7070,7 @@
       }
     ],
     "revision_history": {
-      "summary": "The selected MAM accent is changed from the galgal template to the atnaḥ hafukh template on 15 May 2019. The Aleppo quotation separately receives U+05A2 instead of U+05AA on 14 October 2021. The design list retains U+05AA in the November 2020 and January 2023 Introduction snapshots and in the pinned cache, while the irregular-pointing entry observed in March 2023 uses U+05A2 and explicitly offers two positions with a question mark. This establishes divergence from recorded encoding corrections, rather than a mere combining-order difference. The design-list asterisk explicitly marks an independent accent and consequent absence of added maqaf; it is not an uncertainty marker.",
+      "summary": "The note already marks the Aleppo oleh-position interpretation doubtful in the 2016 import, whereas the design list observed in November 2020 has an unqualified Aleppo attribution. The design-list asterisk explicitly marks an independent accent and consequent absence of added maqaf; it is not an uncertainty marker. Separately, the selected MAM source changes from the galgal template to the atnaḥ hafukh template on 15 May 2019. The Aleppo quotation receives literal U+05A2 instead of U+05AA on 14 October 2021. The design list retains U+05AA before and after that correction, while the irregular-pointing entry observed in March 2023 uses U+05A2 and offers both positions with a question mark. The encoded-mark difference is substantive in the current Introduction's expressly declared distinction, rather than mere combining order.",
       "links": [
         {
           "label": "Chapter change 899940",
@@ -6990,7 +7144,16 @@
         "id": "Psalms 68:18/2/0",
         "text": "בָֿ֝ם"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The 2016 chapter has no rafe in either selected-MAM text or its Aleppo quotation. On 13 July 2022 the actual parent-to-child edit adds rafe to both and explicitly explains its retention, citing Minḥat Shai. The revia-design illustration lacks rafe in retained 2019 and November 2020 Introduction snapshots before that edit, and still lacks it in January 2023 and October 2026 afterward. The pinned chapter 2 discussion separately and explicitly reports rafe in Aleppo and Leningrad. This establishes later quotation staleness concerning rafe.",
+      "links": [
+        {
+          "label": "Chapter change 1412805",
+          "url": "https://he.wikisource.org/w/index.php?diff=1412805&oldid=1379715"
+        }
+      ]
+    }
   },
   {
     "id": "NAV-PS-27-14",

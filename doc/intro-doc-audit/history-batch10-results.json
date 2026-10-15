@@ -4,11 +4,11 @@
     {
       "case": "POETIC-PROV8-QUALIFICATION",
       "classification": "history-accounted-source-divergence",
-      "result": "The selected MAM accent is changed from the galgal template to the atnaḥ hafukh template on 15 May 2019. The Aleppo quotation separately receives U+05A2 instead of U+05AA on 14 October 2021. The design list retains U+05AA in the November 2020 and January 2023 Introduction snapshots and in the pinned cache, while the irregular-pointing entry observed in March 2023 uses U+05A2 and explicitly offers two positions with a question mark. This establishes divergence from recorded encoding corrections, rather than a mere combining-order difference. The design-list asterisk explicitly marks an independent accent and consequent absence of added maqaf; it is not an uncertainty marker.",
+      "result": "The note already marks the Aleppo oleh-position interpretation doubtful in the 2016 import, whereas the design list observed in November 2020 has an unqualified Aleppo attribution. The design-list asterisk explicitly marks an independent accent and consequent absence of added maqaf; it is not an uncertainty marker. Separately, the selected MAM source changes from the galgal template to the atnaḥ hafukh template on 15 May 2019. The Aleppo quotation receives literal U+05A2 instead of U+05AA on 14 October 2021. The design list retains U+05AA before and after that correction, while the irregular-pointing entry observed in March 2023 uses U+05A2 and offers both positions with a question mark. The encoded-mark difference is substantive in the current Introduction's expressly declared distinction, rather than mere combining order.",
       "limits": [
         "The two possible oleh positions remain a manuscript interpretation question; history does not choose between them.",
         "The first retained design-list occurrence is later than the 2019 selected-MAM change, so the list's original insertion and exact copying history remain undated.",
-        "The current Introduction expressly distinguishes galgal from atnaḥ hafukh (chapter 2 lines 458–471); historical terminology and the retained codepoints are reported separately."
+        "The current Introduction expressly distinguishes galgal from atnaḥ hafukh (chapter 2 lines 458–471). Historical template renderings were not reconstructed: the 2019 observation concerns template identity, while the 2021 note correction changes literal codepoints independently of template rendering."
       ],
       "chapter_coverage": [
         {
