@@ -10,9 +10,11 @@
   },
   "history_partition": {
     "excluded": 58,
-    "pending": 92,
-    "established-staleness": 1,
-    "established-count-correction-with-stale-chapter2-summary": 1
+    "pending": 88,
+    "discrepancy-present-when-doc-note-description-added": 2,
+    "established-staleness": 2,
+    "established-count-correction-with-stale-chapter2-summary": 1,
+    "insufficient-history-to-resolve-manuscript-attribution": 1
   },
   "first_batch": [
     "numbers-yod-label",
@@ -116,8 +118,8 @@
           "id": "Numbers 9:7/2/0"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "discrepancy-present-when-doc-note-description-added",
+      "history_result": "history-batch1-results.json",
       "first_batch": true
     },
     {
@@ -147,8 +149,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "discrepancy-present-when-doc-note-description-added",
+      "history_result": "history-batch1-results.json",
       "first_batch": true
     },
     {
@@ -2173,8 +2175,8 @@
       "doc_notes": [],
       "chapter_pages": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness",
+      "history_result": "history-batch1-results.json",
       "first_batch": true
     },
     {
@@ -2256,8 +2258,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history-to-resolve-manuscript-attribution",
+      "history_result": "history-batch1-results.json",
       "first_batch": true
     },
     {

@@ -553,3 +553,23 @@ The missing parenthesis in the Isaiah type-2 category was introduced by excerpti
 chapter 5 line 48 inside a balanced parenthetical. Its Hebrew and English now include
 the complete category; the similarly truncated summary paragraph is also complete.
 The source cache and the case's disposition are unchanged.
+
+The first four-case [history batch](history-batch1-results.json) reads all 136
+visible canonical chapter contents for Numbers 9, Deuteronomy 32, Psalms 1 and 18.
+The [retained evidence](history-batch1-sources.json) includes selected literal
+verse excerpts, Introduction insertions and their adaptive-search traces. The
+optional `py/main_intro_doc_audit.py history-batch1` command rebuilds these records
+from the local read-only API cache without network calls; its selected revision IDs
+are retained in the evidence file. It is not part of a production or testing gate.
+
+Numbers 9:7's incorrect vav label entered revision 2826807 on 2023-12-24;
+Deuteronomy 32:34's incorrect yod label entered revision 2835959 on 2024-01-28.
+Both selected spellings are unchanged immediately across those edits. Psalm 1:3's
+layout example entered revision 486875 on 2013-05-30, matching linked MAM draft
+486873 from nine minutes earlier; the canonical chapter added the grey maqaf in
+revision 998046 on 2020-11-10. Psalm 18:2's explicit Aleppo attribution entered the
+Introduction on 2023-03-09, before the explanatory chapter note on 2023-03-10 and
+the consulted-manuscript list in 2025. That history leaves the attribution in the
+missing Aleppo section unresolved. All existing approvals and source quotations
+remain unchanged. Six of 94 applicable histories are now accounted for; 88 remain
+pending rather than being classified from unexamined history.

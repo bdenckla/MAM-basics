@@ -21,6 +21,7 @@ from intro_doc_audit import (
     all_books_hataf_review,
     history_inventory,
     oleh_count,
+    history_batch1,
 )
 
 
@@ -63,11 +64,13 @@ def main():
         history_inventory.main()
     elif sys.argv[1:] == ["oleh-count"]:
         oleh_count.main()
+    elif sys.argv[1:] == ["history-batch1"]:
+        history_batch1.main()
     elif not sys.argv[1:]:
         audit.main()
     else:
         raise SystemExit(
-            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope|all-books-hataf|all-books-hataf-review|history-inventory|oleh-count]"
+            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope|all-books-hataf|all-books-hataf-review|history-inventory|oleh-count|history-batch1]"
         )
 
 

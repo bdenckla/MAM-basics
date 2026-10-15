@@ -223,7 +223,20 @@
         "text": "הַקְרִ֜ב"
       }
     ],
-    "adjudication": "NUM-9-7-BEN-20261014"
+    "adjudication": "NUM-9-7-BEN-20261014",
+    "revision_history": {
+      "summary": "The note’s incorrect letter-name parenthetical was added on 2023-12-24; the selected MAM spelling is identical immediately before and after that edit. It was wrong when added, rather than becoming stale after a later spelling change. The Introduction’s spelling contrast is already present in the dated entry linked below. Ben’s approved correction is unchanged.",
+      "links": [
+        {
+          "label": "Introduction entry",
+          "url": "https://he.wikisource.org/w/index.php?diff=519485&oldid=519155"
+        },
+        {
+          "label": "Doc-note description added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2826807&oldid=2826802"
+        }
+      ]
+    }
   },
   {
     "id": "deuteronomy-vav-label",
@@ -265,7 +278,20 @@
     "explanation": "The Introduction and both quoted spellings agree on this vav difference.",
     "decision": "This is the inverse of Numbers 9:7. The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
     "reading_forms": [],
-    "adjudication": "DEUT-32-34-BEN-20261014"
+    "adjudication": "DEUT-32-34-BEN-20261014",
+    "revision_history": {
+      "summary": "The note’s incorrect letter-name parenthetical was added on 2024-01-28; the selected MAM spelling is identical immediately before and after that edit. It was wrong when added, rather than becoming stale after a later spelling change. The Introduction’s spelling contrast is already present in the dated entry linked below. Ben’s approved correction is unchanged.",
+      "links": [
+        {
+          "label": "Introduction entry",
+          "url": "https://he.wikisource.org/w/index.php?diff=522036&oldid=521773"
+        },
+        {
+          "label": "Doc-note description added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2835959&oldid=2835958"
+        }
+      ]
+    }
   },
   {
     "id": "deuteronomy-leningrad-spelling",
@@ -4098,7 +4124,24 @@
         "id": "ch2:L980",
         "text": "עַֽל־פַּלְגֵ֫י מָ֥יִם"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The layout example was inserted on 30 May 2013 with a space, matching the linked MAM draft revised nine minutes earlier. The canonical MAM chapter acquired a grey maqaf at that boundary on 10 November 2020. The cached layout example retains the older MAM form; its separate occurrence as a manuscript quotation has a different role.",
+      "links": [
+        {
+          "label": "Layout example inserted",
+          "url": "https://he.wikisource.org/w/index.php?diff=486875&oldid=486833"
+        },
+        {
+          "label": "Linked MAM draft at writing",
+          "url": "https://he.wikisource.org/w/index.php?oldid=486873"
+        },
+        {
+          "label": "Grey maqaf added to MAM",
+          "url": "https://he.wikisource.org/w/index.php?diff=998046&oldid=904392"
+        }
+      ]
+    }
   },
   {
     "id": "MAL-HOLAM",
@@ -4231,7 +4274,24 @@
         "text": "אֶרְחׇמְךָ֖",
         "pointer": ""
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The explicit Aleppo attribution entered the Introduction on 9 March 2023, one day before the explanatory chapter note. The note’s consulted-manuscript list was added in December 2025. The dated notes do not identify an Aleppo source for this missing section; the chronology leaves that attribution and the vowel-function question unresolved.",
+      "links": [
+        {
+          "label": "Introduction attribution added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707753&oldid=2707726"
+        },
+        {
+          "label": "Explanatory note added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2708061&oldid=2707445"
+        },
+        {
+          "label": "Consulted manuscripts added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2966768&oldid=2964958"
+        }
+      ]
+    }
   },
   {
     "id": "L-CANDIDATE-DEUT-12-30",
