@@ -711,3 +711,22 @@ and historical quotations remain under the existing case, without a new
 proposal, issue or manuscript judgment. At this checkpoint 71/94 histories are
 recorded and 23 remain pending. Rebuild the research batch with
 `py/main_intro_doc_audit.py history-batch history-batch9`.
+
+The [tenth history batch](history-batch10-results.json) records twelve cases from
+218/218 canonical chapter contents, bringing coverage to 83/94 histories with
+11 pending. Psalm 150's first occurrence became stale after the March 2026
+quotation correction; its second occurrence is separately matched. Psalm 108:3's
+alternative became stale after November 2025. Psalm 108:11's older accent already
+differs in the first observed Introduction entry, so its exact origin remains
+undated. Psalm 30's wrong label was added in March 2023 and corrected in later
+revision 3088911; this remains the already tracked #309 case.
+
+Proverbs 8 preserves distinct dated selected-text and Aleppo-quotation encoding
+changes. Its design-list star explicitly concerns the independent accent and
+absence of an added maqaf; it supplies no uncertainty qualification. Other cases
+retain paragraph scope, attribution or specific Masorah support gaps. The three
+Nehemiah cases distinguish a preexisting transcription qualification, a later
+stress-helper addition in a spelling specimen, and an uncertain candidate already
+acknowledged elsewhere in the Introduction. These distinctions do not authorize
+manuscript changes. [Literal sources](history-batch10-sources.json), original
+quotations and all twelve Ben decisions remain preserved.

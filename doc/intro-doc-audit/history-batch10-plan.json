@@ -1,0 +1,786 @@
+{
+  "method": "Independent cached-only review. Strict complete chapter histories; actual parent and child inspected for meaningful changes. Original literals remain in per-chapter and Introduction scratch evidence and are selected by the compiler plan. Pinned audit inputs are not replaced by later cached sources. Independent cached-only review of complete canonical chapter histories and selected Introduction revisions. Source excerpts are retained literally; matching keys are never used as quotations. Scope questions and missing support remain explicit, with no new manuscript reading, review approval or external action.",
+  "cases": [
+    {
+      "case": "POETIC-PROV8-QUALIFICATION",
+      "classification": "history-accounted-source-divergence",
+      "result": "The selected MAM accent is changed from the galgal template to the atnaḥ hafukh template on 15 May 2019. The Aleppo quotation separately receives U+05A2 instead of U+05AA on 14 October 2021. The design list retains U+05AA in the November 2020 and January 2023 Introduction snapshots and in the pinned cache, while the irregular-pointing entry observed in March 2023 uses U+05A2 and explicitly offers two positions with a question mark. This establishes divergence from recorded encoding corrections, rather than a mere combining-order difference. The design-list asterisk explicitly marks an independent accent and consequent absence of added maqaf; it is not an uncertainty marker.",
+      "limits": [
+        "The two possible oleh positions remain a manuscript interpretation question; history does not choose between them.",
+        "The first retained design-list occurrence is later than the 2019 selected-MAM change, so the list's original insertion and exact copying history remain undated.",
+        "The current Introduction expressly distinguishes galgal from atnaḥ hafukh (chapter 2 lines 458–471); historical terminology and the retained codepoints are reported separately."
+      ],
+      "chapters": [
+        {
+          "key": "proverbs-8",
+          "verses": [
+            34
+          ],
+          "selected": [
+            671357,
+            899938,
+            899940,
+            998389,
+            1280015,
+            1434530,
+            2706734,
+            2706790,
+            2912373
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          997158,
+          1934798,
+          2707020,
+          2761045,
+          3088859
+        ],
+        "refs": [
+          [
+            "Proverbs",
+            8,
+            34
+          ]
+        ],
+        "allow_absent": true,
+        "line_numbers": {
+          "3088859": [
+            749
+          ]
+        }
+      },
+      "pinned_introduction_claims": [
+        "ch5:L656",
+        "ch5:L753"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 899940",
+          "url": "https://he.wikisource.org/w/index.php?diff=899940&oldid=899938"
+        },
+        {
+          "label": "Chapter change 1280015",
+          "url": "https://he.wikisource.org/w/index.php?diff=1280015&oldid=998389"
+        },
+        {
+          "label": "Chapter change 2706734",
+          "url": "https://he.wikisource.org/w/index.php?diff=2706734&oldid=1434530"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          899938,
+          899940
+        ],
+        [
+          998389,
+          1280015
+        ],
+        [
+          1434530,
+          2706734
+        ]
+      ]
+    },
+    {
+      "case": "PS-108-3-ALTERNATIVE",
+      "classification": "established-staleness",
+      "result": "The note initially has deḥi plus merkha as its uncertain alternative. On 9 November 2025 the actual parent-to-child change replaces that alternative by terḥa plus merkha and expressly describes two conjunctives before revia; the preferred deḥi-plus-meteg reading remains. Introduction snapshots before that change and the October 2026 snapshot afterward retain the former deḥi-plus-merkha alternative. This dates later staleness relative to a substantive note correction.",
+      "limits": [
+        "The uncertain Aleppo reading itself is not settled by this audit.",
+        "The named poetic functions and the literal U+05AD/U+0596 difference are both material; similar lower glyphs are not treated as equivalent."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-108",
+          "verses": [
+            3
+          ],
+          "selected": [
+            671488,
+            1379756,
+            2708102,
+            2708116,
+            2907694,
+            2963318,
+            2963321
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2708391,
+          2892889,
+          3088859
+        ],
+        "refs": [
+          [
+            "Psalms",
+            108,
+            3
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch5:L603"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2708102",
+          "url": "https://he.wikisource.org/w/index.php?diff=2708102&oldid=1379756"
+        },
+        {
+          "label": "Chapter change 2963318",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963318&oldid=2907694"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1379756,
+          2708102
+        ],
+        [
+          2907694,
+          2963318
+        ]
+      ]
+    },
+    {
+      "case": "PS-108-11",
+      "classification": "history-accounted-source-divergence",
+      "result": "The 2016 note uses U+0596 in both the selected text and its disputed dagesh quotation. On 14 October 2020 the selected form is corrected to deḥi, followed by a separate correction of the note quotation to deḥi sixteen minutes later. The first retained Introduction occurrence in March 2023 already has the older U+0596 form, while preserving the same uncertainty about nun dagesh. Thus the accent divergence predates the first observed Introduction occurrence; a later chapter change cannot explain its subsequent persistence.",
+      "limits": [
+        "The Introduction insertion parent is not cached, so its precise origin is not dated.",
+        "The disputed nun dagesh and blurred manuscript area remain unresolved; the accent quotation mismatch does not adjudicate them."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-108",
+          "verses": [
+            11
+          ],
+          "selected": [
+            671488,
+            904680,
+            992713,
+            992717,
+            2708182,
+            2708218,
+            2831999
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2708391,
+          2841570,
+          3088859
+        ],
+        "refs": [
+          [
+            "Psalms",
+            108,
+            11
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch5:L605"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 992713",
+          "url": "https://he.wikisource.org/w/index.php?diff=992713&oldid=904680"
+        },
+        {
+          "label": "Chapter change 992717",
+          "url": "https://he.wikisource.org/w/index.php?diff=992717&oldid=992713"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          904680,
+          992713
+        ],
+        [
+          992713,
+          992717
+        ]
+      ]
+    },
+    {
+      "case": "PS-150-3-HATAF",
+      "classification": "established-staleness",
+      "result": "The 2016 note records plain sheva in the first occurrence. On 12 March 2023 it adds the explicit ḥataf description and the selected-MAM vocal-sheva marker, but leaves plain sheva in the Aleppo quotation. On 6 March 2026 the actual parent-to-child edit corrects that quotation to ḥataf pataḥ. The Introduction's first-occurrence entry retains plain sheva before and after this correction, including the pinned cache. The second occurrence is separate and already had ḥataf in the 2016 note.",
+      "limits": [
+        "This traces the recorded correction, not an independent reading of the manuscript.",
+        "The 2023 literal quotation and its own ḥataf description were already internally inconsistent; the 2026 edit resolves that note inconsistency but leaves the Introduction quotation stale."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-150",
+          "verses": [
+            3
+          ],
+          "selected": [
+            671530,
+            1379798,
+            2708350,
+            2988302,
+            2995847
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2708391,
+          2892889,
+          3088859
+        ],
+        "refs": [
+          [
+            "Psalms",
+            150,
+            3
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch5:L710"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2708350",
+          "url": "https://he.wikisource.org/w/index.php?diff=2708350&oldid=1379798"
+        },
+        {
+          "label": "Chapter change 2995847",
+          "url": "https://he.wikisource.org/w/index.php?diff=2995847&oldid=2988302"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1379798,
+          2708350
+        ],
+        [
+          2988302,
+          2995847
+        ]
+      ]
+    },
+    {
+      "case": "PS-119-138",
+      "classification": "history-accounted-attribution-scope-unresolved",
+      "result": "All canonical MAM-era revisions keep both the selected atom and its Aleppo quotation without initial meteg. The older 2011 public text has initial meteg, but the 2016 MAM import removes it and adds the Aleppo extra-revia quotation without it. The Introduction first observed in March 2023 has initial meteg while agreeing with the note about the extra revia dot. No later chapter change accounts for that quotation difference.",
+      "limits": [
+        "The Introduction example lacks an explicit manuscript sigil, so its initial meteg must not automatically be attributed to Aleppo.",
+        "Whether this is a reading-aid addition or a full manuscript quotation remains a source-scope question. The shared substantive extra-revia claim agrees.",
+        "The 2011 reading does not prove that the Introduction copied that source."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-119",
+          "verses": [
+            138
+          ],
+          "selected": [
+            404550,
+            408320,
+            671499,
+            1414784,
+            2708214,
+            2860711
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2708391,
+          2841570,
+          3088859
+        ],
+        "refs": [
+          [
+            "Psalms",
+            119,
+            138
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch5:L609"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 671499",
+          "url": "https://he.wikisource.org/w/index.php?diff=671499&oldid=408320"
+        },
+        {
+          "label": "Chapter change 2708214",
+          "url": "https://he.wikisource.org/w/index.php?diff=2708214&oldid=1414784"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          408320,
+          671499
+        ],
+        [
+          1414784,
+          2708214
+        ]
+      ]
+    },
+    {
+      "case": "PS-119-90-MAQAF-SCOPE",
+      "classification": "history-accounted-paragraph-scope-unresolved",
+      "result": "All 23 canonical versions have a space after the relevant atom rather than maqaf. The 2016 MAM import adds its reading-aid meteg, and the pinned Introduction reproduces the same merkha-plus-meteg form. The paragraph's explicit universal maqaf statement names the Twenty-one Books; the subsequent poetic examples may include meteg cases without maqaf. Chapter history therefore supplies no later removal of maqaf and does not establish a contradiction in this example.",
+      "limits": [
+        "The scope of the poetic continuation remains ambiguous; treating the Twenty-one-Books statement as a universal requirement for every poetic example would overstate the source.",
+        "There is no pertinent doc-note explicitly claiming a maqaf here.",
+        "The exact current poetic specimen is first observed in retained November 2025 Introduction snapshots, which do not date its original insertion."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-119",
+          "verses": [
+            90
+          ],
+          "selected": [
+            404550,
+            408320,
+            671499,
+            2708214,
+            2888881
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2965114
+        ],
+        "refs": [
+          [
+            "Psalms",
+            119,
+            90
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch2:L307"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 671499",
+          "url": "https://he.wikisource.org/w/index.php?diff=671499&oldid=408320"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          408320,
+          671499
+        ]
+      ]
+    },
+    {
+      "case": "ALEPPO-SPECIAL-PS27",
+      "classification": "history-accounted-attribution-unresolved",
+      "result": "The six-dot Leningrad/Sassoon reading is accompanied by an Aleppo Masorah-parva attribution from the 2016 MAM import through all 24 MAM-era revisions. The Introduction first observed in February 2023 assigns the corresponding six-dot Leningrad reading to Leningrad Masorah parva, and retains that label. This is not a discrepancy caused by a later note reassignment. The dot pattern agrees after accounting for literal upper-mark order; the named Masorah source differs.",
+      "limits": [
+        "Both Masorah sources could support the same six-dot pattern. The cached chapter does not prove that the Introduction attribution is false.",
+        "The exact Introduction insertion parent is absent, and no primary marginal-note inspection was performed."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-27",
+          "verses": [
+            13
+          ],
+          "selected": [
+            671407,
+            1001732,
+            1178405,
+            1288581,
+            1291119,
+            2707447,
+            2860526
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2696987,
+          2708391,
+          3088859
+        ],
+        "refs": [
+          [
+            "Psalms",
+            27,
+            13
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch5:L255"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 1291119",
+          "url": "https://he.wikisource.org/w/index.php?diff=1291119&oldid=1288581"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1288581,
+          1291119
+        ]
+      ]
+    },
+    {
+      "case": "PS-15-1-QUOTE",
+      "classification": "history-accounted-quotation-omission",
+      "result": "The divine-name atom occurs between the psalm title and the following question in all 26 canonical chapter versions, including the 2011 public text and the 2016 MAM import. The Introduction's opening quotation for the missing Aleppo section already omits that internal atom in the first retained March 2023 snapshot and retains the omission. No later insertion into the chapter explains the mismatch.",
+      "limits": [
+        "This is a quotation used to identify a missing-section boundary, not an assertion that the quoted words survive in Aleppo.",
+        "The exact Introduction insertion parent is not retained; the omission's origin is undated.",
+        "Whether an internal silent abbreviation was intended cannot be decided from the cached quotation."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-15",
+          "verses": [
+            1
+          ],
+          "selected": [
+            404134,
+            671390,
+            1379662,
+            2707148,
+            2707205,
+            2966759
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2707149,
+          2823628
+        ],
+        "refs": [
+          [
+            "Psalms",
+            15,
+            1
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch4:L33"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2707148",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707148&oldid=1379662"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1379662,
+          2707148
+        ]
+      ]
+    },
+    {
+      "case": "PS-30-12-NOTE-LABEL",
+      "classification": "history-accounted-note-error-at-addition",
+      "result": "The 26 September 2021 chapter edit adds oleh to the selected MAM atom while its Aleppo quotation keeps yored alone. On 7 March 2023 the note adds the description missing revia dot even though the two quoted forms differ by oleh. That description is wrong at its addition; no later pointing change created the mismatch. A separately cached post-baseline edit on 15 October 2026 corrects the label to missing oleh sign.",
+      "limits": [
+        "This case is already tracked as public MAM-basics issue #309; no new issue or comment is authorized.",
+        "The frozen audit baseline retains the older erroneous label. Revision 3088911 is later historical evidence and must not be substituted for the pinned note.",
+        "No new manuscript interpretation is made."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-30",
+          "verses": [
+            12
+          ],
+          "selected": [
+            671410,
+            1178008,
+            1194329,
+            1379677,
+            2707452,
+            2988182,
+            3088911
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1194328,
+          1934798,
+          2708391,
+          3088859
+        ],
+        "refs": [
+          [
+            "Psalms",
+            30,
+            12
+          ]
+        ],
+        "allow_absent": true
+      },
+      "pinned_introduction_claims": [
+        "ch5:L743"
+      ],
+      "links": [
+        {
+          "label": "Chapter change 1194329",
+          "url": "https://he.wikisource.org/w/index.php?diff=1194329&oldid=1178008"
+        },
+        {
+          "label": "Chapter change 2707452",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707452&oldid=1379677"
+        },
+        {
+          "label": "Chapter change 3088911",
+          "url": "https://he.wikisource.org/w/index.php?diff=3088911&oldid=2988182"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1178008,
+          1194329
+        ],
+        [
+          1379677,
+          2707452
+        ],
+        [
+          2988182,
+          3088911
+        ]
+      ]
+    },
+    {
+      "case": "L-CANDIDATE-NEH-12-47",
+      "classification": "history-accounted-preexisting-source-qualification-difference",
+      "summary": "The meteg alternative was labelled as transcription in the first MAM note in January 2016. An April 2023 note revision explicitly labels it possible Leningrad transcription; the earliest selected Introduction entry a week later already omits that qualifier while retaining uncertainty. This is a source-qualification difference, not a newly established manuscript reading.",
+      "result": "Fourteen of fourteen visible canonical revisions were inspected, including twelve MAM-note versions. The first MAM note (667650, 4 January 2016) selects merkha in the atom accented by tevir by Aleppo general practice and labels the alternative as transcription. The adjacent revision 2719928 (3 April 2023), parent 2719927, explicitly attributes the alternative to possible Leningrad transcription and possibly Cambridge Add.1753. The selected Introduction 2737602 (10 April 2023) and pinned current entry retain the meteg candidate and question marks but omit the transcription qualification. The omission is already present by the earliest retained Introduction entry; the exact entry origin was not traced.",
+      "limits": [
+        "The exact Introduction insertion was not traced. The qualification is demonstrably present by the earliest selected entry, but an absent 6 March versus present 10 April interval does not locate the entry relative to the 3 April note edit.",
+        "The question marks in both sources remain substantive uncertainty. The sources do not prove whether the manuscript has meteg or merkha.",
+        "Aleppo general practice is not direct evidence of an extant Aleppo reading at Nehemiah 12:47."
+      ],
+      "chapters": [
+        {
+          "key": "nehemiah-12",
+          "verses": [
+            47
+          ],
+          "selected": [
+            667650,
+            2719927,
+            2719928,
+            2988446
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2737602
+        ],
+        "refs": [
+          [
+            "Nehemiah",
+            12,
+            47
+          ]
+        ]
+      },
+      "pinned_introduction_claims": [
+        "ch4:L734"
+      ],
+      "links": [
+        {
+          "label": "First MAM note: transcription alternative, January 2016",
+          "revision": 667650
+        },
+        {
+          "label": "Possible Leningrad transcription attribution, April 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2719928&oldid=2719927"
+        },
+        {
+          "label": "Introduction candidate without transcription qualifier, April 2023",
+          "revision": 2737602
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2719927,
+          2719928
+        ]
+      ]
+    },
+    {
+      "case": "SPELLING-SPECIMEN-NEHEMIAH",
+      "classification": "history-accounted-later-stress-helper-scope",
+      "summary": "The April 2023 Introduction specimens matched the canonical form then. On 8 September 2024 the note target acquired an additional telisha gedolah stress-helper sign while retaining the same spelling. Both Introduction examples retain the older accentual specimen; the star is explicitly about spelling, so this establishes a specimen-scope question rather than a spelling contradiction.",
+      "result": "Sixteen of sixteen visible canonical revisions were inspected, including fourteen MAM-note versions. The selected letters and single telisha gedolah form are present in the first MAM note 667647 (4 January 2016) and in both Introduction examples by 2737602 (10 April 2023). Adjacent revision 2878490 (8 September 2024), parent 2860071, adds the second telisha gedolah sign in the note target without changing its letters. Removing only that added U+05A0 literally recovers the previous target. The unchanged Introduction specimens therefore predate a later stress-helper addition. Because the Introduction legend defines its star by spelling, this is not a supported contradiction of the spelling claim.",
+      "limits": [
+        "The exact Introduction insertion was not traced. Earliest selected April 2023 is a retained bound.",
+        "Letter-only comparison is diagnostic routing only. The before and after pointed source forms are preserved literally; no source mark-order normalization was applied.",
+        "History proves when the additional sign appears in canonical MAM, not whether a fuller accentual specimen is editorially required by a spelling section."
+      ],
+      "chapters": [
+        {
+          "key": "nehemiah-9",
+          "verses": [
+            37
+          ],
+          "selected": [
+            667647,
+            2719915,
+            2860071,
+            2878490,
+            2988443
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2737602
+        ],
+        "refs": [
+          [
+            "Nehemiah",
+            9,
+            37
+          ]
+        ],
+        "line_numbers": {
+          "2737602": [
+            82
+          ]
+        }
+      },
+      "pinned_introduction_claims": [
+        "ch4:L99",
+        "ch4:L290",
+        "ch4:L331"
+      ],
+      "links": [
+        {
+          "label": "First MAM selected form, January 2016",
+          "revision": 667647
+        },
+        {
+          "label": "Both spelling specimens and star legend, April 2023",
+          "revision": 2737602
+        },
+        {
+          "label": "Additional telisha gedolah stress-helper sign, September 2024",
+          "url": "https://he.wikisource.org/w/index.php?diff=2878490&oldid=2860071"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2860071,
+          2878490
+        ]
+      ]
+    },
+    {
+      "case": "ALL-HATAF-NEH-6-19",
+      "classification": "history-accounted-preserved-uncertainty-and-list-scope",
+      "summary": "The first MAM note in January 2016 already distinguishes Breuer certainty from Dotan doubt and favors the uncertain reading. Introduction chapter 4 explicitly lists the same doubtful resh vowel by April 2023. Chapter 5 has omitted it from its eleven-item Ezra-Nehemiah list since at least May 2023. This remains an uncertain list-scope question, not a confirmed missing ḥataf.",
+      "result": "Fifteen of fifteen visible canonical revisions were inspected: two pre-MAM chapter versions, twelve MAM-note versions and one transient vandalized version that removed the verse before restoration. The note has retained the same substantive uncertainty since 667644 (4 January 2016). The adjacent edits 2719343 and 2719344 (2 April 2023) explicitly name resh with sheva versus possible ḥataf pataḥ and retain the earlier Breuer/Dotan disagreement. Selected Introduction 2737602 (10 April 2023) already acknowledges that uncertain Leningrad candidate in chapter 4; selected chapter 5 revision 2761045 (22 May 2023) already omits it from the eleven-item Ezra-Nehemiah list. Both facts persist in the pinned Introduction. The source is therefore not wholly unmentioned, and no confirmed Leningrad ḥataf omission has been established.",
+      "limits": [
+        "The chapter 5 omission remains an uncertain candidate-list scope question, not a confirmed missing Leningrad ḥataf. No manuscript image or external Breuer/Dotan source was checked.",
+        "The Introduction is not wholly silent: chapter 4 already records the uncertainty. A policy about including uncertain cases in the chapter 5 list would resolve the list-scope question.",
+        "The exact Introduction entry/list origins were not exhaustively traced. The selected snapshots establish retained bounds only."
+      ],
+      "chapters": [
+        {
+          "key": "nehemiah-6",
+          "verses": [
+            19
+          ],
+          "selected": [
+            667644,
+            802937,
+            2716435,
+            2719343,
+            2719344,
+            2988440
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2737602,
+          2761045
+        ],
+        "refs": [
+          [
+            "Nehemiah",
+            6,
+            19
+          ]
+        ],
+        "line_numbers": {
+          "2761045": [
+            679
+          ]
+        },
+        "scope_caption": true
+      },
+      "pinned_introduction_claims": [
+        "ch4:L728",
+        "ch5:L728"
+      ],
+      "links": [
+        {
+          "label": "First MAM note already uncertain, January 2016",
+          "revision": 667644
+        },
+        {
+          "label": "Explicit resh-vowel explanation, April 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2719344&oldid=2719343"
+        },
+        {
+          "label": "Introduction chapter 4 acknowledges uncertainty, April 2023",
+          "revision": 2737602
+        },
+        {
+          "label": "Earliest selected eleven-item Ezra-Nehemiah list, May 2023",
+          "revision": 2761045
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2716435,
+          2719343
+        ],
+        [
+          2719343,
+          2719344
+        ]
+      ]
+    }
+  ]
+}

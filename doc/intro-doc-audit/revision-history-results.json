@@ -357,6 +357,66 @@
       "case": "SPELLING-SOURCE-ECCLESIASTES",
       "classification": "history-accounted-specific-source-support-absent",
       "result": "history-batch9-results.json"
+    },
+    {
+      "case": "POETIC-PROV8-QUALIFICATION",
+      "classification": "history-accounted-source-divergence",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-108-3-ALTERNATIVE",
+      "classification": "established-staleness",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-108-11",
+      "classification": "history-accounted-source-divergence",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-150-3-HATAF",
+      "classification": "established-staleness",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-119-138",
+      "classification": "history-accounted-attribution-scope-unresolved",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-119-90-MAQAF-SCOPE",
+      "classification": "history-accounted-paragraph-scope-unresolved",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "ALEPPO-SPECIAL-PS27",
+      "classification": "history-accounted-attribution-unresolved",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-15-1-QUOTE",
+      "classification": "history-accounted-quotation-omission",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-30-12-NOTE-LABEL",
+      "classification": "history-accounted-note-error-at-addition",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-NEH-12-47",
+      "classification": "history-accounted-preexisting-source-qualification-difference",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "SPELLING-SPECIMEN-NEHEMIAH",
+      "classification": "history-accounted-later-stress-helper-scope",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "ALL-HATAF-NEH-6-19",
+      "classification": "history-accounted-preserved-uncertainty-and-list-scope",
+      "result": "history-batch10-results.json"
     }
   ]
 }
