@@ -127,6 +127,46 @@
       "case": "ALL-HATAF-PS-17-14-SOURCE",
       "classification": "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded",
       "result": "history-batch3-results.json"
+    },
+    {
+      "case": "DAN-2-17",
+      "classification": "established-staleness",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-DAN-2-41",
+      "classification": "history-accounted-manuscript-interpretation-unresolved",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "DAN-5-7",
+      "classification": "discrepancy-at-first-observed-Introduction-entry-origin-bounded",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-DAN-5-3",
+      "classification": "history-accounted-source-qualification-unresolved",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "DAN-7-9-SELECTION",
+      "classification": "established-staleness",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "SPELLING-SPECIMEN-DANIEL",
+      "classification": "history-accounted-illustration-scope-unresolved",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "ALL-HATAF-DAN-12-2",
+      "classification": "history-accounted-uncertain-hataf-category",
+      "result": "history-batch4-results.json"
     }
   ]
 }

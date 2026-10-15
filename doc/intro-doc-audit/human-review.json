@@ -1924,7 +1924,24 @@
         "id": "Daniel 2:17/2/0",
         "text": "דָּנִיֵ֖אל"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 27 November 2023 the note removes meteg from both selected MAM and its Leningrad quotation. Introduction snapshots from October before the correction and December afterward retain the same meteg-bearing quotation. The 2016 note originally had that meteg. This establishes later staleness relative to the recorded correction.",
+      "links": [
+        {
+          "label": "Chapter change 2821664",
+          "url": "https://he.wikisource.org/w/index.php?diff=2821664&oldid=2760064"
+        },
+        {
+          "label": "Introduction 2023-04-10",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2737602"
+        },
+        {
+          "label": "Introduction 2023-10-26",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812195"
+        }
+      ]
+    }
   },
   {
     "id": "PS-39-13",
@@ -2557,7 +2574,28 @@
         "id": "Daniel 5:7/2/1",
         "text": "וְהַֽמְונִכָ֤א"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The note adds the pointed extra-yod ketiv on 11 April 2023 and removes that yod on 16 April at 09:37. The Introduction ketiv entry is absent in the inspected 09:42 snapshot, but present with extra yod on 21 April. Its first observed occurrence therefore already follows the correction; an initially accurate Introduction becoming stale is not established.",
+      "links": [
+        {
+          "label": "Chapter change 2737716",
+          "url": "https://he.wikisource.org/w/index.php?diff=2737716&oldid=2716615"
+        },
+        {
+          "label": "Chapter change 2744728",
+          "url": "https://he.wikisource.org/w/index.php?diff=2744728&oldid=2744727"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        },
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        }
+      ]
+    }
   },
   {
     "id": "DAN-7-9-SELECTION",
@@ -2610,7 +2648,24 @@
         "text": "שְׁבִבִ֣ין",
         "pointer": ""
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 20 April 2023 the canonical text changes its selected spelling from two yod letters to one. The Introduction decision list had starred the former choice beforehand. Its 21 April main list adopts the new selection, while the decision list retains the old star. This establishes a partial update and a stale selection marker.",
+      "links": [
+        {
+          "label": "Chapter change 2746186",
+          "url": "https://he.wikisource.org/w/index.php?diff=2746186&oldid=2716617"
+        },
+        {
+          "label": "Introduction 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        }
+      ]
+    }
   },
   {
     "id": "SPELLING-COVERAGE-DAN-3-5",
@@ -4677,7 +4732,24 @@
         "text": "דִֽי־פַרְזְלָ֖א",
         "pointer": ""
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The 2016 note already distinguishes a doubtful manuscript interpretation from the transcription alternative. On 5 April 2023 it expressly qualifies the missing-maqaf reading and retains the other interpretation as possible. The first inspected Introduction occurrence five days later already offers both alternatives. History does not settle the stroke or require rejecting either reading.",
+      "links": [
+        {
+          "label": "Chapter change 2721999",
+          "url": "https://he.wikisource.org/w/index.php?diff=2721999&oldid=2721981"
+        },
+        {
+          "label": "Introduction 2023-04-10",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2737602"
+        },
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        }
+      ]
+    }
   },
   {
     "id": "L-CANDIDATE-DAN-5-3",
@@ -4719,7 +4791,24 @@
         "id": "Daniel 5:3/2/0",
         "text": "מִן־הֵֽיכְלָ֛א"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The note labels the meteg alternative as transcription from the 2016 import. On 11 April 2023 it explicitly makes both manuscript and transcription assignments doubtful. The inspected 16 April Introduction already has the abbreviated Leningrad question mark without the transcription qualifier. The history does not establish a later source change causing staleness or settle the intended abbreviation.",
+      "links": [
+        {
+          "label": "Chapter change 2737716",
+          "url": "https://he.wikisource.org/w/index.php?diff=2737716&oldid=2716615"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        },
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        }
+      ]
+    }
   },
   {
     "id": "L-CANDIDATE-NEH-12-47",
@@ -4980,7 +5069,20 @@
         "id": "Daniel 7:15/2/0",
         "text": "בְּג֣וֹ"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The Breuer alternative has munaḥ in all twenty-four canonical MAM versions from 2016 onward. The Introduction decision list has merkha in the inspected March 2023 passage and later snapshots, without attributing that specimen to Breuer; its later main list has munaḥ. Stable differing specimens do not establish an incorrect Breuer quotation without that attribution.",
+      "links": [
+        {
+          "label": "Introduction 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        }
+      ]
+    }
   },
   {
     "id": "SPELLING-SOURCE-2KINGS",
@@ -5168,7 +5270,20 @@
         "id": "ch4:L219",
         "text": "וְהַֽמְנִיכָ֤א"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "All twenty-four canonical MAM versions retain the same unpointed ketiv and pointed qere, without a source note for this pair. The Introduction already explicitly attributes pointed ketiv/qere to Leningrad in the inspected 21 April 2023 snapshot. Nearby notes concern other atoms. This is a specific source-support gap, rather than evidence of a removed annotation or a demonstrated contradiction.",
+      "links": [
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        },
+        {
+          "label": "Introduction 2023-10-26",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812195"
+        }
+      ]
+    }
   },
   {
     "id": "TORAH-SPELLING-METEG",
@@ -7174,7 +7289,24 @@
         "translation": "MAM agrees with Leningrad?, Cambridge Add. 1753, British Library Or. 2375, the Joseph ben Benaya manuscript formerly T451, Sassoon 82 and printed editions; this is also Dotan’s and the transcriber’s opinion concerning Leningrad. Leningrad? has מִיֲּשֵׁנֵ֥י (ḥataf pataḥ?). There is an indistinct unusual stroke below yod on the left, so Breuer marked the ḥataf as uncertain."
       }
     ],
-    "reading_forms": []
+    "reading_forms": [],
+    "revision_history": {
+      "summary": "The faint Leningrad mark is explicitly uncertain in the first canonical MAM note of January 2016. The April 2023 expansion preserves that doubt. The populated eleven-item Daniel list omits 12:2 by the inspected May 2023 snapshot, but the earlier empty placeholder cannot establish an omission. History does not confirm a missing entry or resolve the vowel category.",
+      "links": [
+        {
+          "label": "Chapter change 2746517",
+          "url": "https://he.wikisource.org/w/index.php?diff=2746517&oldid=2746298"
+        },
+        {
+          "label": "Introduction 2023-05-22",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045"
+        },
+        {
+          "label": "Introduction 2024-02-26",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2841570"
+        }
+      ]
+    }
   },
   {
     "id": "ALL-HATAF-NEH-6-19",

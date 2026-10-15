@@ -598,7 +598,7 @@ unchanged.
 The [third history batch](history-batch3-results.json) accounts for fifteen more
 cases, using all 317 visible chapter revisions across ten distinct chapters
 (including previously captured chapters). Twenty-five of 94 applicable histories
-are now recorded; 69 remain pending. The [literal evidence](history-batch3-sources.json)
+were recorded at this checkpoint; 69 remained pending. The [literal evidence](history-batch3-sources.json)
 retains complete chapter metadata, grouped exact note states and selected
 before/after verse and Introduction excerpts. The optional `history-batch3`
 command rebuilds this research evidence from the separate local API cache.
@@ -620,3 +620,13 @@ posted comment and subsequent explicit-parameter syntax correction are retained
 in [the comment receipt](issue310-concrete-note-comment.json). Both comments were
 read back character for character; the original issue body was unchanged. No
 Wikisource source edit was made.
+
+The [fourth history batch](history-batch4-results.json) accounts for all eight
+Daniel cases from 85/85 canonical chapter revisions. The November 2023 Daniel 2:17
+meteg correction and April 2023 Daniel 7:9 selection change establish two stale
+Introduction details. Six other cases retain explicit uncertainty about first
+insertion, manuscript interpretation, source qualification, illustration scope,
+or an uncertain vowel. The [literal evidence](history-batch4-sources.json) keeps
+the source distinctions and before/after snapshots. Thirty-three of 94 applicable
+histories are recorded; 61 remain pending. Rebuild this batch with
+`py/main_intro_doc_audit.py history-batch history-batch4`.

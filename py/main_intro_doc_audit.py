@@ -3,6 +3,7 @@
 import sys
 import ctypes
 import os
+import re
 
 from intro_doc_audit import (
     audit,
@@ -24,6 +25,7 @@ from intro_doc_audit import (
     history_batch1,
     history_batch2,
     history_batch3,
+    history_batch_compile,
 )
 
 
@@ -72,6 +74,12 @@ def main():
         history_batch2.main()
     elif sys.argv[1:] == ["history-batch3"]:
         history_batch3.main()
+    elif (
+        len(sys.argv) == 3
+        and sys.argv[1] == "history-batch"
+        and re.fullmatch(r"history-batch[0-9]+", sys.argv[2])
+    ):
+        history_batch_compile.main(sys.argv[2])
     elif not sys.argv[1:]:
         audit.main()
     else:
