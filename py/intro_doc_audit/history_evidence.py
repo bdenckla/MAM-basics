@@ -15,7 +15,9 @@ class CachedHistory:
         self.path = Path(path)
 
     def metadata(self, key):
-        paths = sorted(self.path.glob(key + "-metadata-*.json"))
+        # The first Proverbs investigation used distinct metadata/content keys.
+        metadata_key = "proverbs" if key == "chapter" else key
+        paths = sorted(self.path.glob(metadata_key + "-metadata-*.json"))
         if not paths:
             raise ValueError(f"No retained metadata for {key}")
         pages = [json.loads(p.read_bytes()) for p in paths]

@@ -23,6 +23,7 @@ from intro_doc_audit import (
     oleh_count,
     history_batch1,
     history_batch2,
+    history_batch3,
 )
 
 
@@ -69,11 +70,13 @@ def main():
         history_batch1.main()
     elif sys.argv[1:] == ["history-batch2"]:
         history_batch2.main()
+    elif sys.argv[1:] == ["history-batch3"]:
+        history_batch3.main()
     elif not sys.argv[1:]:
         audit.main()
     else:
         raise SystemExit(
-            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope|all-books-hataf|all-books-hataf-review|history-inventory|oleh-count|history-batch1|history-batch2]"
+            "Usage: main_intro_doc_audit.py [review|proofs|structures|catalogues|rosters|poetic-rosters|census-scope|next-pass|general-prose|prose-findings|deuter-hataf-scope|all-books-hataf|all-books-hataf-review|history-inventory|oleh-count|history-batch1|history-batch2|history-batch3]"
         )
 
 

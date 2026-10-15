@@ -1,0 +1,773 @@
+{
+  "method": "Independent cached-source readers supplied semantic findings; the single report writer selected literal before/after sources. Complete canonical chapter histories are distinguished from selected Introduction snapshots. Exact note states retain codepoints; source sigils and historical confidence are interpreted manually. A successful compile verifies provenance and coverage only, not consistency.",
+  "cases": [
+    {
+      "case": "TORAH-SPELLING-DEUT32-SHEVA",
+      "classification": "established-staleness-after-doc-note-correction",
+      "result": "On 28 January 2024 the canonical note adds the missing yod sheva to its Leningrad quotation and description. The Introduction's quotation is unchanged in the immediately surrounding chapter-3 snapshots. The older form was already in the 2015 canonical note; this dates staleness relative to the note correction, without independently verifying the manuscript.",
+      "limits": [
+        "The correction's physical manuscript basis is not rechecked.",
+        "The older draft's first quotation is not dated."
+      ],
+      "chapters": [
+        {
+          "key": "deuter-32",
+          "verses": [
+            6
+          ],
+          "selected": [
+            655705,
+            2821665,
+            2835957
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1290610,
+          2835211,
+          2835961
+        ],
+        "refs": [
+          [
+            "Deuter",
+            32,
+            6
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Note corrects yod sheva",
+          "url": "https://he.wikisource.org/w/index.php?diff=2835957&oldid=2821665"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2821665,
+          2835957
+        ]
+      ]
+    },
+    {
+      "case": "L-CANDIDATE-PS-18-7",
+      "classification": "attribution-tension-present-when-Introduction-alternative-added",
+      "result": "The Introduction first presents definite Leningrad meteg with a ḥataf at 20:44 on 6 March 2023. At 21:02:18 the canonical note instead explicitly assigns Leningrad merkha with a ḥataf; seventeen seconds later the Introduction adds its current doubtful merkha-or-meteg alternatives. This tension coexists with that addition, rather than arising from a later note change.",
+      "limits": [
+        "The question mark may preserve a legitimate unresolved manuscript interpretation.",
+        "The history does not settle the supporting manuscript reading or choose between alternatives."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-18",
+          "verses": [
+            7
+          ],
+          "selected": [
+            1434520,
+            2707404
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2707401,
+          2707405
+        ],
+        "refs": [
+          [
+            "Psalms",
+            18,
+            7
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Explicit Leningrad note",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707404&oldid=1434520"
+        },
+        {
+          "label": "Introduction alternatives",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707405&oldid=2707401"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1434520,
+          2707404
+        ],
+        [
+          2707401,
+          2707405
+        ]
+      ]
+    },
+    {
+      "case": "HATAF-PROVERBS-ADDITION",
+      "classification": "later-note-expansion-unreflected-in-existing-list",
+      "result": "On 9 August 2024 the note first explicitly documents Leningrad's ḥataf at Proverbs 30:17. The twelve-item Proverbs list remains literally unchanged in Introduction snapshots before and after the edit and omits that form. This establishes an unreflected note expansion, but does not date the reading's discovery or prove that the list was complete when assembled.",
+      "limits": [
+        "The public pre-MAM 2011 chapter already has a ḥataf form.",
+        "The list's entire formation history is unexamined; the proposed addition remains unapproved."
+      ],
+      "chapters": [
+        {
+          "key": "chapter",
+          "verses": [
+            17
+          ],
+          "selected": [
+            2860044,
+            2871735
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2865999,
+          2879657
+        ],
+        "list_claim": "ch5:L712",
+        "scope_caption": true
+      },
+      "links": [
+        {
+          "label": "Leningrad note expansion",
+          "url": "https://he.wikisource.org/w/index.php?diff=2871735&oldid=2860044"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2860044,
+          2871735
+        ]
+      ]
+    },
+    {
+      "case": "NUM-10-8-B17-METEG",
+      "classification": "internal-note-conflict-introduced-by-source-code-replacement",
+      "result": "The 2018 note assigns Firkovich B17 no meteg. In 2021 the opening agreement list instead names L1 with meteg, while the lower no-meteg list names L2. On 24 December 2023 only that lower L2 becomes L1, leaving L1 in both conflicting lists. This dates the internal conflict; the earlier assessments differ and history cannot decide which reading to retain.",
+      "limits": [
+        "L1 is Firkovich B17 in the current sigil inventory; historical L2's intended identity remains unadjudicated.",
+        "Prior claims of image inspection are source statements, not this audit's scan verification."
+      ],
+      "chapters": [
+        {
+          "key": "numbers-10",
+          "verses": [
+            8
+          ],
+          "selected": [
+            803014,
+            812251,
+            1170471,
+            1290402,
+            2809587,
+            2826766
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [],
+        "refs": []
+      },
+      "links": [
+        {
+          "label": "2018 assessment",
+          "url": "https://he.wikisource.org/w/index.php?diff=812251&oldid=803014"
+        },
+        {
+          "label": "2021 source lists",
+          "url": "https://he.wikisource.org/w/index.php?diff=1290402&oldid=1170471"
+        },
+        {
+          "label": "Conflicting replacement",
+          "url": "https://he.wikisource.org/w/index.php?diff=2826766&oldid=2809587"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          803014,
+          812251
+        ],
+        [
+          1170471,
+          1290402
+        ],
+        [
+          2809587,
+          2826766
+        ]
+      ]
+    },
+    {
+      "case": "ALL-HATAF-SAM-8-10",
+      "classification": "omission-present-when-Samuel-list-expanded",
+      "result": "The explicit Aleppo ḥataf quotation at 2 Samuel 8:10 is present in the first canonical MAM note of October 2015 and remains in all seventeen note-bearing revisions. The February 2023 Samuel list expansion already omits it. The omission predates later note-format changes and is not caused by a newly reported manuscript form.",
+      "limits": [
+        "The February 2023 list has thirty semantic entries; its malformed 'not included' annotation also exposes a thirty-first ordinary link to 7:10. That explicitly excluded annotation is not a list member.",
+        "No independent manuscript reading is asserted; Ben's approved addition remains unapplied."
+      ],
+      "chapters": [
+        {
+          "key": "2samuel-8",
+          "verses": [
+            10
+          ],
+          "selected": [
+            653478,
+            1379350,
+            2700554
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700411,
+          2700495,
+          2700515,
+          2700730
+        ],
+        "list_claim": "ch5:L698",
+        "scope_caption": true,
+        "allow_absent": true
+      },
+      "links": [
+        {
+          "label": "Canonical quotation",
+          "url": "https://he.wikisource.org/w/index.php?diff=653478&oldid=407513"
+        },
+        {
+          "label": "Samuel list expansion",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700730&oldid=2700515"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1379350,
+          2700554
+        ]
+      ]
+    },
+    {
+      "case": "SPECIAL-LETTER-2SAM-21-19",
+      "classification": "wrong-description-present-when-added",
+      "result": "On 9 February 2023 revision 2700701 adds prose describing a large resh while retaining the existing small-resh template. The Introduction specifies a small resh immediately before and after that edit. A later letter-size change does not explain the mismatch.",
+      "limits": [
+        "The historical prose is erroneous relative to the unchanged template and Introduction; no fresh manuscript inspection was made."
+      ],
+      "chapters": [
+        {
+          "key": "2samuel-21",
+          "verses": [
+            19
+          ],
+          "selected": [
+            1418073,
+            2700701
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700515,
+          2700730
+        ],
+        "refs": [
+          [
+            "2Samuel",
+            21,
+            19
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Large-resh prose added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700701&oldid=1418073"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1418073,
+          2700701
+        ]
+      ]
+    },
+    {
+      "case": "SAM-21-12",
+      "classification": "dated-note-expansion-with-partial-appendix-update",
+      "result": "The Introduction's two-word example was added on 9 February 2023, agreeing with the contemporary note. On 5 March 2024 the appendix adds a three-word catalogue entry but retains the entire old nine-item two-word line, including this verse. Five minutes later the canonical note expands to three words; on 13 March its template name is corrected. Chapter 5 retains its older two-word description. The history establishes a partial update, while the intended counting scope remains open.",
+      "limits": [
+        "The new three-word catalogue does not by itself decide whether the overlapping two-word classification was intentional.",
+        "No Ben adjudication or source-text edit is added."
+      ],
+      "chapters": [
+        {
+          "key": "2samuel-21",
+          "verses": [
+            12
+          ],
+          "selected": [
+            2824160,
+            2842695,
+            2842697,
+            2844021
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700733,
+          2700734,
+          2841570,
+          2865999,
+          2841701,
+          2842694
+        ],
+        "refs": [
+          [
+            "2Samuel",
+            21,
+            12
+          ]
+        ],
+        "allow_absent": true
+      },
+      "links": [
+        {
+          "label": "Introduction example",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700734&oldid=2700733"
+        },
+        {
+          "label": "Appendix partial update",
+          "url": "https://he.wikisource.org/w/index.php?diff=2842694&oldid=2841701"
+        },
+        {
+          "label": "Three-word note",
+          "url": "https://he.wikisource.org/w/index.php?diff=2842695&oldid=2824160"
+        },
+        {
+          "label": "Template name corrected",
+          "url": "https://he.wikisource.org/w/index.php?diff=2844021&oldid=2842697"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2700733,
+          2700734
+        ],
+        [
+          2841701,
+          2842694
+        ],
+        [
+          2824160,
+          2842695
+        ],
+        [
+          2842697,
+          2844021
+        ]
+      ]
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-16",
+      "classification": "insufficient-semantic-evidence-for-list-category",
+      "result": "The exact Aleppo ketiv quotation is already in the October 2015 canonical MAM import and remains unchanged in all twenty-four note-bearing revisions. It predates the February 2023 Samuel list expansion, which omits it. History therefore excludes a later note addition as the cause, but does not establish the phonetic function of the resh ḥataf in the Aleppo ketiv or its eligibility for this list.",
+      "limits": [
+        "A literal ḥataf mark is not proof of the non-guttural vowel category intended by the list.",
+        "This is an unresolved category question, not a confirmed missing entry."
+      ],
+      "chapters": [
+        {
+          "key": "2samuel-24",
+          "verses": [
+            16
+          ],
+          "selected": [
+            653491
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700515,
+          2700730
+        ],
+        "list_claim": "ch5:L698",
+        "scope_caption": true
+      },
+      "links": [
+        {
+          "label": "Canonical ketiv quotation",
+          "url": "https://he.wikisource.org/w/index.php?diff=653491&oldid=407553"
+        },
+        {
+          "label": "Samuel list expansion",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700730&oldid=2700515"
+        }
+      ],
+      "adjacent_pairs": []
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-18",
+      "classification": "insufficient-semantic-evidence-for-list-category",
+      "result": "The exact Aleppo ketiv quotation is already in the October 2015 canonical MAM import and remains unchanged in all twenty-four note-bearing revisions. It predates the February 2023 Samuel list expansion, which omits it. History therefore excludes a later note addition as the cause, but does not establish the phonetic function of the nun ḥataf qamats in the Aleppo ketiv or its eligibility for this list.",
+      "limits": [
+        "A literal ḥataf mark is not proof of the non-guttural vowel category intended by the list.",
+        "This is an unresolved category question, not a confirmed missing entry."
+      ],
+      "chapters": [
+        {
+          "key": "2samuel-24",
+          "verses": [
+            18
+          ],
+          "selected": [
+            653491
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700515,
+          2700730
+        ],
+        "list_claim": "ch5:L698",
+        "scope_caption": true
+      },
+      "links": [
+        {
+          "label": "Canonical ketiv quotation",
+          "url": "https://he.wikisource.org/w/index.php?diff=653491&oldid=407553"
+        },
+        {
+          "label": "Samuel list expansion",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700730&oldid=2700515"
+        }
+      ],
+      "adjacent_pairs": []
+    },
+    {
+      "case": "ALL-HATAF-GEN-30-27",
+      "classification": "omission-present-when-Genesis-numeric-count-assigned",
+      "result": "The Leningrad note's ḥataf form is unchanged from the October 2015 canonical import. On 31 August 2023 the Genesis list moves from thirty-one entries with an unknown count to thirty-two entries with a count of thirty-two, adding only 49:23; 30:27 is absent on both sides and at every observed assembly stage. The omission was present during list assembly, rather than caused by a later note change.",
+      "limits": [
+        "The Torah section still carries a work-in-progress marker, so assigning the Genesis count is not proof that the whole section was completed.",
+        "Ben's approved addition and revised current total remain unapplied."
+      ],
+      "chapters": [
+        {
+          "key": "genesis-30",
+          "verses": [
+            27
+          ],
+          "selected": [
+            655648,
+            2797075,
+            2797080
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2778793,
+          2778794,
+          2778988,
+          2799568,
+          2800792,
+          2835961
+        ],
+        "list_claim": "ch3:L1126",
+        "allow_absent": true
+      },
+      "links": [
+        {
+          "label": "Genesis count assigned",
+          "url": "https://he.wikisource.org/w/index.php?diff=2800792&oldid=2799568"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2799568,
+          2800792
+        ]
+      ]
+    },
+    {
+      "case": "ALL-HATAF-NUM-10-9",
+      "classification": "omission-present-when-Numbers-numeric-count-assigned",
+      "result": "The linked December 2013 MAM draft already explicitly documents Leningrad's ḥataf; the canonical note retains it from its 2015 import. On 2 October 2023 the Numbers list is created with seven entries and an unknown count at 15:26, then assigned eighteen entries at 15:41. Numbers 10:9 is absent at both stages and throughout the twelve inspected October-2 snapshots. The omission was present during assembly, rather than caused by a later canonical-note addition.",
+      "limits": [
+        "The section remains marked under construction into January 2024; Ben's phonetic question is separately unresolved.",
+        "Ben's approved addition remains unapplied."
+      ],
+      "chapters": [
+        {
+          "key": "numbers-10",
+          "verses": [
+            9
+          ],
+          "selected": [
+            655593
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2806427,
+          2806435,
+          2806441,
+          2806442,
+          2806467,
+          2812137,
+          2834443
+        ],
+        "list_claim": "ch3:L1132",
+        "allow_absent": true
+      },
+      "links": [
+        {
+          "label": "Numbers list created",
+          "url": "https://he.wikisource.org/w/index.php?diff=2806435&oldid=2806427"
+        },
+        {
+          "label": "Count assigned eighteen",
+          "url": "https://he.wikisource.org/w/index.php?diff=2806442&oldid=2806441"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2806427,
+          2806435
+        ],
+        [
+          2806441,
+          2806442
+        ]
+      ],
+      "extra_notes": [
+        {
+          "revision": 519486,
+          "note": "Numbers 10:9/2/0"
+        }
+      ]
+    },
+    {
+      "case": "TORAH-SPELLING-NAMES",
+      "classification": "mixed-chronology-later-certainty-and-original-qualification",
+      "result": "For Numbers 1:10 the canonical note resolves the formerly doubtful one-atom Leningrad name on 17 December 2023; the Introduction retains its older question marks. For 10:19 the linked December 2013 draft is already explicit about two atoms before the Introduction adds its question marks later that day. The first mismatch follows a later clarification; the second was present when the qualification appeared.",
+      "limits": [
+        "The exact 2013 qualification insertion is bounded by revisions 519598 and 519608 here.",
+        "Different confidence does not prove which source's manuscript judgment is justified; no scan or interpretation change is made."
+      ],
+      "chapters": [
+        {
+          "key": "numbers-1",
+          "verses": [
+            10
+          ],
+          "selected": [
+            655582,
+            2815664,
+            2825395
+          ]
+        },
+        {
+          "key": "numbers-10",
+          "verses": [
+            19
+          ],
+          "selected": [
+            655593
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          519598,
+          519608,
+          519609,
+          519610,
+          519611,
+          2812137,
+          2835961
+        ],
+        "refs": [
+          [
+            "Numbers",
+            1,
+            10
+          ],
+          [
+            "Numbers",
+            10,
+            19
+          ]
+        ],
+        "allow_absent": true
+      },
+      "links": [
+        {
+          "label": "Numbers 1:10 clarification",
+          "url": "https://he.wikisource.org/w/index.php?diff=2825395&oldid=2815664"
+        },
+        {
+          "label": "Numbers 10:19 observed qualification interval",
+          "url": "https://he.wikisource.org/w/index.php?diff=519608&oldid=519598"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          2815664,
+          2825395
+        ]
+      ],
+      "extra_notes": [
+        {
+          "revision": 519486,
+          "note": "Numbers 10:19/2/0"
+        }
+      ]
+    },
+    {
+      "case": "PS-17-14-MAQAF",
+      "classification": "not-explained-by-later-canonical-note-change-origin-undated",
+      "result": "Both explicit Leningrad alternatives have maqaf in every one of the thirty canonical MAM-note revisions from January 2016 onward. Chapter 2's contrary wording is present by the observed 26 November 2025 revision and remains in the pinned cache. A later canonical-note maqaf change cannot explain the discrepancy; the exact Introduction insertion remains undated.",
+      "limits": [
+        "The 2011 pre-MAM public text is not assumed to be the draft consulted by the Introduction.",
+        "No physical manuscript reading is independently verified."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-17",
+          "verses": [
+            14
+          ],
+          "selected": [
+            671397,
+            1401358,
+            2707399
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2965114,
+          2965129
+        ],
+        "refs": [
+          [
+            "Psalms",
+            17,
+            14
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Observed Introduction wording",
+          "url": "https://he.wikisource.org/w/index.php?diff=2965129&oldid=2965114"
+        }
+      ],
+      "adjacent_pairs": []
+    },
+    {
+      "case": "L-CANDIDATE-PS-17-14",
+      "classification": "attribution-tension-present-when-Introduction-candidate-added",
+      "result": "At 20:43:14 on 6 March 2023 the note explicitly assigns the selected pattern to Sassoon/general Aleppo practice and retains two different Leningrad alternatives. Fourteen seconds later the Introduction adds that first pattern as a third possible Leningrad reading. The attribution question is present at the candidate's addition, rather than caused by a later note expansion.",
+      "limits": [
+        "The question mark may preserve a legitimate manuscript uncertainty; the note's two alternatives do not disprove a third physical reading.",
+        "The supporting source for the extra Leningrad candidate remains unidentified."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-17",
+          "verses": [
+            14
+          ],
+          "selected": [
+            1401358,
+            2707399
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2707149,
+          2707400
+        ],
+        "refs": [
+          [
+            "Psalms",
+            17,
+            14
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Contemporary note",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707399&oldid=1401358"
+        },
+        {
+          "label": "Introduction candidate added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707400&oldid=2707149"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1401358,
+          2707399
+        ],
+        [
+          2707149,
+          2707400
+        ]
+      ]
+    },
+    {
+      "case": "ALL-HATAF-PS-17-14-SOURCE",
+      "classification": "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded",
+      "result": "The Sassoon 1053 entry is present by 7 March 2023 under a generic ḥataf heading with a cross-reference paragraph. The narrower Aleppo-or-Leningrad caption is already present by 30 June 2024 and retains the same Sassoon entry. The chapter note's source attribution is not a later conflicting reading. The observed sequence points to a scope-caption issue; its exact insertion remains undated.",
+      "limits": [
+        "The first observed entry is not claimed to be its insertion.",
+        "The missing Aleppo section does not acquire a direct quotation merely from this caption.",
+        "A broader scope description or explicit exception remains an editorial decision."
+      ],
+      "chapters": [
+        {
+          "key": "psalms-17",
+          "verses": [
+            14
+          ],
+          "selected": [
+            671397,
+            2707399
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2707462,
+          2865999,
+          2879657,
+          2891769,
+          2892878,
+          2892889
+        ],
+        "list_claim": "ch5:L710",
+        "scope_caption": true
+      },
+      "links": [
+        {
+          "label": "Observed scope-caption interval",
+          "url": "https://he.wikisource.org/w/index.php?diff=2865999&oldid=2707462"
+        }
+      ],
+      "adjacent_pairs": []
+    }
+  ]
+}

@@ -573,8 +573,8 @@ revision 998046 on 2020-11-10. Psalm 18:2's explicit Aleppo attribution entered 
 Introduction on 2023-03-09, before the explanatory chapter note on 2023-03-10 and
 the consulted-manuscript list in 2025. That history leaves the attribution in the
 missing Aleppo section unresolved. All existing approvals and source quotations
-remain unchanged. Ten of 94 applicable histories are now accounted for; 84 remain
-pending rather than being classified from unexamined history.
+remain unchanged. The current history inventory records completed and pending
+cases separately rather than classifying unexamined history.
 
 The [second history batch](history-batch2-results.json) records four cases from
 61 complete chapter histories, with Jeremiah 31 reused for two different questions.
@@ -594,3 +594,29 @@ evidence is in [history-batch2-sources.json](history-batch2-sources.json); the
 optional `history-batch2` command rebuilds from the local API cache without
 network access. All twelve Ben approvals and the original source excerpts remain
 unchanged.
+
+The [third history batch](history-batch3-results.json) accounts for fifteen more
+cases, using all 317 visible chapter revisions across ten distinct chapters
+(including previously captured chapters). Twenty-five of 94 applicable histories
+are now recorded; 69 remain pending. The [literal evidence](history-batch3-sources.json)
+retains complete chapter metadata, grouped exact note states and selected
+before/after verse and Introduction excerpts. The optional `history-batch3`
+command rebuilds this research evidence from the separate local API cache.
+
+Deuteronomy 32:6 became stale after the January 2024 note correction. Psalm 17:14
+and 18:7's candidate-attribution tensions coexist with their March 2023
+Introduction additions. The Samuel, Genesis and Numbers omissions predate later
+canonical note changes; Genesis and Numbers were already absent when numeric
+list counts were assigned, while the Torah section still carried its work marker.
+Numbers 10:8's conflicting source code enters in December 2023. The March 2024
+2 Samuel 21:12 update adds the three-word appendix entry but retains the older
+two-word catalogue. The two Samuel 24 ketiv vowels remain function questions,
+and Psalm 17's later narrowed caption retains the earlier Sassoon entry.
+These bounded histories do not independently settle manuscripts or list scope.
+
+Ben separately requested a concrete Psalm 42:3 note in a comment to #310
+(`Sentinel_8c127574c44881918a6c47e6c61684e3`). The exact note, analogous examples,
+posted comment and subsequent explicit-parameter syntax correction are retained
+in [the comment receipt](issue310-concrete-note-comment.json). Both comments were
+read back character for character; the original issue body was unchanged. No
+Wikisource source edit was made.

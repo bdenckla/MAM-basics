@@ -14,11 +14,25 @@
     "discrepancy-present-when-doc-note-description-added": 2,
     "discrepancy-present-when-doc-note-source-list-expanded": 1,
     "omission-present-when-current-cross-manuscript-list-created": 1,
-    "pending": 84,
+    "omission-present-when-Samuel-list-expanded": 1,
+    "omission-present-when-Numbers-numeric-count-assigned": 1,
+    "omission-present-when-Genesis-numeric-count-assigned": 1,
     "established-staleness": 2,
     "established-count-correction-with-stale-chapter2-summary": 1,
+    "pending": 69,
+    "not-explained-by-later-canonical-note-change-origin-undated": 1,
+    "internal-note-conflict-introduced-by-source-code-replacement": 1,
+    "wrong-description-present-when-added": 1,
+    "dated-note-expansion-with-partial-appendix-update": 1,
     "insufficient-history-to-resolve-manuscript-attribution": 1,
-    "insufficient-history-to-resolve-specific-Masorah-attribution": 1
+    "attribution-tension-present-when-Introduction-candidate-added": 1,
+    "attribution-tension-present-when-Introduction-alternative-added": 1,
+    "insufficient-history-to-resolve-specific-Masorah-attribution": 1,
+    "mixed-chronology-later-certainty-and-original-qualification": 1,
+    "established-staleness-after-doc-note-correction": 1,
+    "later-note-expansion-unreflected-in-existing-list": 1,
+    "insufficient-semantic-evidence-for-list-category": 2,
+    "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded": 1
   },
   "first_batch": [
     "numbers-yod-label",
@@ -55,6 +69,7 @@
       "chapter_pages": [
         "שמואל ב ח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -86,6 +101,7 @@
       "chapter_pages": [
         "ירמיהו לא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "discrepancy-in-first-retained-canonical-MAM-note",
       "history_result": "history-batch2-results.json",
@@ -111,6 +127,7 @@
       "chapter_pages": [
         "במדבר ט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -146,6 +163,7 @@
       "chapter_pages": [
         "דברים לב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -177,6 +195,7 @@
       "chapter_pages": [
         "דברים ו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -207,6 +226,7 @@
       "chapter_pages": [
         "שיר השירים א/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -237,14 +257,15 @@
       "chapter_pages": [
         "שמואל ב ח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
           "id": "2Samuel 8:10/2/0"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "omission-present-when-Samuel-list-expanded",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -267,14 +288,15 @@
       "chapter_pages": [
         "במדבר י/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
           "id": "Numbers 10:9/2/1"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "omission-present-when-Numbers-numeric-count-assigned",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -297,14 +319,15 @@
       "chapter_pages": [
         "בראשית ל/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
           "id": "Genesis 30:27/2/0"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "omission-present-when-Genesis-numeric-count-assigned",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -345,6 +368,7 @@
         "דברים כט/טעמים",
         "דברים לב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -366,6 +390,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "verse-parts",
@@ -413,6 +438,7 @@
       "chapter_pages": [
         "משלי ל/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -472,6 +498,7 @@
         "תהלים קט/טעמים",
         "תהלים קכה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target"
@@ -543,6 +570,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -564,6 +592,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -585,6 +614,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -607,6 +637,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -628,6 +659,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -653,6 +685,7 @@
       "chapter_pages": [
         "מלכים ב יח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -678,6 +711,7 @@
       "chapter_pages": [
         "יחזקאל כח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -703,6 +737,7 @@
       "chapter_pages": [
         "יחזקאל יד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -728,6 +763,7 @@
       "chapter_pages": [
         "יחזקאל יד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -753,6 +789,7 @@
       "chapter_pages": [
         "תהלים קח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -778,6 +815,7 @@
       "chapter_pages": [
         "תהלים נז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -803,6 +841,7 @@
       "chapter_pages": [
         "תהלים קח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -828,6 +867,7 @@
       "chapter_pages": [
         "דניאל ב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -854,6 +894,7 @@
       "chapter_pages": [
         "תהלים לט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -879,9 +920,10 @@
       "chapter_pages": [
         "תהלים יז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "not-explained-by-later-canonical-note-change-origin-undated",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -904,6 +946,7 @@
       "chapter_pages": [
         "יהושע יד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -935,6 +978,7 @@
       "chapter_pages": [
         "תהלים קנ/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -960,6 +1004,7 @@
       "chapter_pages": [
         "תהלים לט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -981,6 +1026,7 @@
       "chapter_pages": [
         "שמות ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1013,6 +1059,7 @@
       "chapter_pages": [
         "ויקרא ג/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -1034,6 +1081,7 @@
       "chapter_pages": [
         "במדבר י/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1041,8 +1089,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "internal-note-conflict-introduced-by-source-code-replacement",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -1061,6 +1109,7 @@
       "chapter_pages": [
         "דברים א/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1092,6 +1141,7 @@
       "chapter_pages": [
         "תהלים ל/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1128,6 +1178,7 @@
       "chapter_pages": [
         "תהלים לא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -1149,6 +1200,7 @@
       "chapter_pages": [
         "תהלים נג/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1190,6 +1242,7 @@
       "chapter_pages": [
         "דניאל ה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -1216,6 +1269,7 @@
       "chapter_pages": [
         "דניאל ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1248,6 +1302,7 @@
       "chapter_pages": [
         "דניאל ג/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1274,6 +1329,7 @@
       "chapter_pages": [
         "דניאל ד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1300,6 +1356,7 @@
       "chapter_pages": [
         "דניאל ה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1322,6 +1379,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1348,6 +1406,7 @@
       "chapter_pages": [
         "דניאל ה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1374,6 +1433,7 @@
       "chapter_pages": [
         "דניאל ו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1400,6 +1460,7 @@
       "chapter_pages": [
         "דניאל ו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1426,6 +1487,7 @@
       "chapter_pages": [
         "דניאל ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1452,6 +1514,7 @@
       "chapter_pages": [
         "דניאל ח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1477,6 +1540,7 @@
       "chapter_pages": [
         "שמות ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1508,6 +1572,7 @@
       "chapter_pages": [
         "במדבר טז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1539,6 +1604,7 @@
       "chapter_pages": [
         "במדבר כב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1570,6 +1636,7 @@
       "chapter_pages": [
         "דברים כח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1602,6 +1669,7 @@
       "chapter_pages": [
         "ישעיהו י/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1633,6 +1701,7 @@
       "chapter_pages": [
         "שמואל ב כא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1640,8 +1709,8 @@
           "pointer": "/tmpl_params/2"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "wrong-description-present-when-added",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -1664,6 +1733,7 @@
       "chapter_pages": [
         "ירמיהו לט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1691,6 +1761,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1716,6 +1787,7 @@
       "chapter_pages": [
         "ויקרא ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -1737,6 +1809,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -1762,6 +1835,7 @@
       "chapter_pages": [
         "ישעיהו נט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1793,6 +1867,7 @@
       "chapter_pages": [
         "ישעיהו נה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1824,6 +1899,7 @@
       "chapter_pages": [
         "שיר השירים ב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1855,6 +1931,7 @@
       "chapter_pages": [
         "עמוס ח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -1881,6 +1958,7 @@
       "chapter_pages": [
         "תהלים טו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1922,6 +2000,7 @@
       "chapter_pages": [
         "במדבר כב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1953,6 +2032,7 @@
       "chapter_pages": [
         "בראשית ב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1987,6 +2067,7 @@
       "chapter_pages": [
         "שמואל ב כא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -1994,8 +2075,8 @@
           "pointer": "/tmpl_params/2"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "dated-note-expansion-with-partial-appendix-update",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -2016,6 +2097,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -2036,7 +2118,12 @@
         "in/mam-ws-intro/ch2.mediawiki"
       ],
       "doc_notes": [],
-      "chapter_pages": [],
+      "chapter_pages": [
+        "תהלים סו/טעמים"
+      ],
+      "additional_chapter_route_refs": [
+        "Psalms 66:"
+      ],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2057,7 +2144,12 @@
         "in/mam-ws-intro/ch2.mediawiki"
       ],
       "doc_notes": [],
-      "chapter_pages": [],
+      "chapter_pages": [
+        "תהלים קיט/טעמים"
+      ],
+      "additional_chapter_route_refs": [
+        "Psalms 119:"
+      ],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2083,6 +2175,7 @@
       "chapter_pages": [
         "שמואל ב טז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2109,6 +2202,7 @@
       "chapter_pages": [
         "מלכים ב יד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2129,7 +2223,12 @@
         "in/mam-ws-intro/ch5.mediawiki"
       ],
       "doc_notes": [],
-      "chapter_pages": [],
+      "chapter_pages": [
+        "מלכים ב יח/טעמים"
+      ],
+      "additional_chapter_route_refs": [
+        "2Kings 18:"
+      ],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2155,6 +2254,7 @@
       "chapter_pages": [
         "בראשית לו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2178,6 +2278,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "established-staleness",
       "history_result": "history-batch1-results.json",
@@ -2203,6 +2304,7 @@
       "chapter_pages": [
         "מלאכי ב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2228,6 +2330,7 @@
       "chapter_pages": [
         "תהלים קיט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2255,6 +2358,7 @@
       "chapter_pages": [
         "תהלים יח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2286,6 +2390,7 @@
       "chapter_pages": [
         "דברים יב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2311,9 +2416,10 @@
       "chapter_pages": [
         "תהלים יז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "attribution-tension-present-when-Introduction-candidate-added",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -2336,9 +2442,10 @@
       "chapter_pages": [
         "תהלים יח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "attribution-tension-present-when-Introduction-alternative-added",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -2361,6 +2468,7 @@
       "chapter_pages": [
         "דניאל ב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2392,6 +2500,7 @@
       "chapter_pages": [
         "דניאל ה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2423,6 +2532,7 @@
       "chapter_pages": [
         "נחמיה יב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2454,6 +2564,7 @@
       "chapter_pages": [
         "דברים ה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2479,6 +2590,7 @@
       "chapter_pages": [
         "שיר השירים ד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2510,6 +2622,7 @@
       "chapter_pages": [
         "איכה ד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2536,6 +2649,7 @@
       "chapter_pages": [
         "נחמיה ט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2572,6 +2686,7 @@
       "chapter_pages": [
         "דניאל ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2597,6 +2712,7 @@
       "chapter_pages": [
         "מלכים ב טו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2628,6 +2744,7 @@
       "chapter_pages": [
         "ירמיהו לא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "insufficient-history-to-resolve-specific-Masorah-attribution",
       "history_result": "history-batch2-results.json",
@@ -2654,6 +2771,7 @@
       "chapter_pages": [
         "קהלת א/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2674,7 +2792,12 @@
         "in/mam-ws-intro/ch4.mediawiki"
       ],
       "doc_notes": [],
-      "chapter_pages": [],
+      "chapter_pages": [
+        "דניאל ה/טעמים"
+      ],
+      "additional_chapter_route_refs": [
+        "Daniel 5:"
+      ],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2703,6 +2826,7 @@
         "דברים יב/טעמים",
         "דברים כח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2752,9 +2876,10 @@
         "במדבר א/טעמים",
         "במדבר י/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "mixed-chronology-later-certainty-and-original-qualification",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -2777,9 +2902,10 @@
       "chapter_pages": [
         "דברים לב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness-after-doc-note-correction",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -2802,6 +2928,7 @@
       "chapter_pages": [
         "ישעיהו מד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2827,6 +2954,7 @@
       "chapter_pages": [
         "תהלים כז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2859,6 +2987,7 @@
         "רות ג/טעמים",
         "תהלים עז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2915,6 +3044,7 @@
       "chapter_pages": [
         "שמות ז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -2953,6 +3083,7 @@
         "ירמיהו מח/טעמים",
         "ירמיהו נ/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -2978,6 +3109,7 @@
       "chapter_pages": [
         "יחזקאל יז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3003,14 +3135,15 @@
       "chapter_pages": [
         "משלי ל/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
           "id": "Proverbs 30:17/2/1"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "later-note-expansion-unreflected-in-existing-list",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -3033,6 +3166,7 @@
       "chapter_pages": [
         "דברים כ/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3056,6 +3190,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3076,7 +3211,16 @@
         "in/mam-ws-intro/ch2.mediawiki"
       ],
       "doc_notes": [],
-      "chapter_pages": [],
+      "chapter_pages": [
+        "דברי הימים א יח/טעמים",
+        "זכריה י/טעמים",
+        "שמואל א יא/טעמים"
+      ],
+      "additional_chapter_route_refs": [
+        "1Samuel 11:",
+        "Zechariah 10:",
+        "1Chronicles 18:"
+      ],
       "body_source_pointers": [
         {
           "source": "verse-parts",
@@ -3151,6 +3295,7 @@
       "chapter_pages": [
         "ישעיהו מד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3181,6 +3326,7 @@
         "תהלים ו/טעמים",
         "תהלים עד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3207,6 +3353,7 @@
       "chapter_pages": [
         "משלי ח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3234,6 +3381,7 @@
       "chapter_pages": [
         "תהלים סח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -3259,6 +3407,7 @@
       "chapter_pages": [
         "תהלים כז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3284,6 +3433,7 @@
       "chapter_pages": [
         "במדבר יד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3309,6 +3459,7 @@
       "chapter_pages": [
         "דברים לא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3334,6 +3485,7 @@
       "chapter_pages": [
         "דניאל יב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3359,6 +3511,7 @@
       "chapter_pages": [
         "קהלת ה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3384,6 +3537,7 @@
       "chapter_pages": [
         "מלכים ב כא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3409,6 +3563,7 @@
       "chapter_pages": [
         "דברי הימים ב לד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3434,6 +3589,7 @@
       "chapter_pages": [
         "משלי כה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3461,6 +3617,7 @@
       "chapter_pages": [
         "ירמיהו לא/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3486,6 +3643,7 @@
       "chapter_pages": [
         "בראשית יח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3511,6 +3669,7 @@
       "chapter_pages": [
         "יחזקאל כז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3537,6 +3696,7 @@
       "chapter_pages": [
         "בראשית כב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3558,6 +3718,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3579,6 +3740,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3604,6 +3766,7 @@
       "chapter_pages": [
         "איוב מ/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3625,6 +3788,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3650,6 +3814,7 @@
       "chapter_pages": [
         "בראשית ט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3675,6 +3840,7 @@
       "chapter_pages": [
         "דברים לב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3701,6 +3867,7 @@
       "chapter_pages": [
         "במדבר כה/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3722,6 +3889,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3743,6 +3911,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3764,6 +3933,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3789,6 +3959,7 @@
       "chapter_pages": [
         "רות ג/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3810,6 +3981,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3836,6 +4008,7 @@
       "chapter_pages": [
         "אסתר ט/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3857,6 +4030,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3878,6 +4052,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3899,6 +4074,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3920,6 +4096,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3941,6 +4118,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3963,6 +4141,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -3988,6 +4167,7 @@
       "chapter_pages": [
         "שמואל ב כד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "verse-parts",
@@ -4000,8 +4180,8 @@
           ]
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-semantic-evidence-for-list-category",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -4024,6 +4204,7 @@
       "chapter_pages": [
         "שמואל ב כד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "verse-parts",
@@ -4036,8 +4217,8 @@
           ]
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-semantic-evidence-for-list-category",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -4060,6 +4241,7 @@
       "chapter_pages": [
         "ירמיהו מח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -4085,6 +4267,7 @@
       "chapter_pages": [
         "דניאל יב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -4110,6 +4293,7 @@
       "chapter_pages": [
         "נחמיה ו/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "pending",
       "history_result": null,
@@ -4130,7 +4314,12 @@
         "in/mam-ws-intro/ch5.mediawiki"
       ],
       "doc_notes": [],
-      "chapter_pages": [],
+      "chapter_pages": [
+        "שמואל ב ו/טעמים"
+      ],
+      "additional_chapter_route_refs": [
+        "2Samuel 6:"
+      ],
       "body_source_pointers": [
         {
           "source": "verse",
@@ -4161,9 +4350,10 @@
       "chapter_pages": [
         "תהלים יז/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded",
+      "history_result": "history-batch3-results.json",
       "first_batch": false
     },
     {
@@ -4184,6 +4374,7 @@
       ],
       "doc_notes": [],
       "chapter_pages": [],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [],
       "history_status": "excluded",
       "history_result": null,
@@ -4209,6 +4400,7 @@
       "chapter_pages": [
         "תהלים קמד/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",
@@ -4239,6 +4431,7 @@
       "chapter_pages": [
         "עזרא ח/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "verse-parts",
@@ -4301,6 +4494,7 @@
       "chapter_pages": [
         "דניאל ב/טעמים"
       ],
+      "additional_chapter_route_refs": [],
       "body_source_pointers": [
         {
           "source": "note-target",

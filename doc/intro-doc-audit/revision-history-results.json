@@ -52,6 +52,81 @@
       "case": "SPELLING-SOURCE-JEREMIAH",
       "classification": "insufficient-history-to-resolve-specific-Masorah-attribution",
       "result": "history-batch2-results.json"
+    },
+    {
+      "case": "TORAH-SPELLING-DEUT32-SHEVA",
+      "classification": "established-staleness-after-doc-note-correction",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-PS-18-7",
+      "classification": "attribution-tension-present-when-Introduction-alternative-added",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "HATAF-PROVERBS-ADDITION",
+      "classification": "later-note-expansion-unreflected-in-existing-list",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "NUM-10-8-B17-METEG",
+      "classification": "internal-note-conflict-introduced-by-source-code-replacement",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-8-10",
+      "classification": "omission-present-when-Samuel-list-expanded",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "SPECIAL-LETTER-2SAM-21-19",
+      "classification": "wrong-description-present-when-added",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "SAM-21-12",
+      "classification": "dated-note-expansion-with-partial-appendix-update",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-16",
+      "classification": "insufficient-semantic-evidence-for-list-category",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-18",
+      "classification": "insufficient-semantic-evidence-for-list-category",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-GEN-30-27",
+      "classification": "omission-present-when-Genesis-numeric-count-assigned",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-NUM-10-9",
+      "classification": "omission-present-when-Numbers-numeric-count-assigned",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "TORAH-SPELLING-NAMES",
+      "classification": "mixed-chronology-later-certainty-and-original-qualification",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "PS-17-14-MAQAF",
+      "classification": "not-explained-by-later-canonical-note-change-origin-undated",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-PS-17-14",
+      "classification": "attribution-tension-present-when-Introduction-candidate-added",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-PS-17-14-SOURCE",
+      "classification": "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded",
+      "result": "history-batch3-results.json"
     }
   ]
 }

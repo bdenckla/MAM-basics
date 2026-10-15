@@ -3,6 +3,7 @@
 from collections import Counter
 
 from intro_doc_audit import audit, human_review
+from mb_cmn import hebrew_verse_numerals as hvn
 
 INTERNAL = {
     "different-qere-count": "The requested comparison is between two Introduction category definitions; the MAM qere is corroborating context.",
@@ -41,6 +42,15 @@ LIST_CLAIMS = {
     "ALL-HATAF-DAN-12-2": "ch5:L726",
     "ALL-HATAF-NEH-6-19": "ch5:L728",
     "ALL-HATAF-SAM-6-5": "ch5:L698",
+}
+
+EXTRA_CHAPTER_REFS = {
+    "PS-66-12-MAQAF-SCOPE": ["Psalms 66:"],
+    "PS-119-90-MAQAF-SCOPE": ["Psalms 119:"],
+    "IMPLICIT-MS-KINGS-18-27": ["2Kings 18:"],
+    "SPELLING-SOURCE-DANIEL-CHAIN": ["Daniel 5:"],
+    "ALL-HATAF-SAM-6-5": ["2Samuel 6:"],
+    "LEGARMEH-LIST-SCOPE": ["1Samuel 11:", "Zechariah 10:", "1Chronicles 18:"],
 }
 
 FIRST_BATCH = [
@@ -116,6 +126,18 @@ def main():
                 else "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence."
             )
         result = history_results.get(cid)
+        routed_pages = {
+            notes[n]["chapter_revision"]["resolved_title"] for n in note_ids
+        }
+        for prefix in EXTRA_CHAPTER_REFS.get(cid, []):
+            book, chapter = prefix.rstrip(":").split(" ")
+            hebrew_book = next(k for k, v in audit.HE_BOOKS.items() if v == book)
+            routed_pages.add(
+                hebrew_book
+                + " "
+                + hvn.INT_TO_STR_DIC[int(chapter)]
+                + "/\u05d8\u05e2\u05de\u05d9\u05dd"
+            )
         records.append(
             {
                 "case": cid,
@@ -137,9 +159,8 @@ def main():
                 "introduction_claims": sorted(claim_ids),
                 "introduction_pages": sorted({claims[c]["path"] for c in claim_ids}),
                 "doc_notes": sorted(note_ids),
-                "chapter_pages": sorted(
-                    {notes[n]["chapter_revision"]["resolved_title"] for n in note_ids}
-                ),
+                "chapter_pages": sorted(routed_pages),
+                "additional_chapter_route_refs": EXTRA_CHAPTER_REFS.get(cid, []),
                 "body_source_pointers": body_sources,
                 "history_status": (
                     "excluded"
