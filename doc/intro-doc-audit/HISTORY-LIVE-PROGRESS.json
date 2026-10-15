@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-10-15T18:52:12.447199+00:00",
+  "branch": "research/intro-docnotes-20261013",
+  "latest_pushed_commit": "be47e660063a6ba0b91e640a6d2767c80bdea0de",
+  "applicable_histories": 94,
+  "recorded_working_tree": 54,
+  "pending": 40,
+  "recorded_latest_push": 48,
+  "next_batch_cases": 6,
+  "status": "Continuing; no research blocker. Read-only history captures resumed after execution-session interruption.",
+  "substantive_chronology": [
+    "2 Kings 18:27 shin dot: canonical note removed it at revision 2810645 (2023-10-22); Introduction correction is revision 3088682 (2026-10-14T02:40:46Z).",
+    "Ezekiel 28:3 meteg: canonical correction 3001796 (2026-03-30); Introduction correction 3088685 (2026-10-14T02:47:25Z).",
+    "Ezekiel 14:14 and 14:20 dageshes: canonical corrections 2866003/2866004 (2024-06-30); Introduction correction 3088859 (2026-10-15T09:42:04Z)."
+  ],
+  "notification_limitation": "No parent-notification or cloud_threads tool is exposed in this executor. No substitute messaging action taken."
+}

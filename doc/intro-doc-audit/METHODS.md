@@ -658,3 +658,18 @@ support questions. The [literal evidence](history-batch6-sources.json) explicitl
 includes the verse-heading note at Deuteronomy 20:1; a body-only extraction would
 miss that evidence. At this checkpoint 48/94 histories are recorded and 46 remain
 pending. Prior quotations and all twelve Ben decisions remain unchanged.
+The [seventh history batch](history-batch7-results.json) accounts for six Samuel
+and Kings cases using 96/96 canonical chapter contents. An earlier explicit Aleppo
+label supports the otherwise unnamed 2 Samuel 16:23 description; this provenance
+does not license assigning every unnamed manuscript to Aleppo. The two Kings
+pointing examples and the Masorah subdivision retain specific source-support gaps.
+The Samuel 6:5 vowel category remains unresolved.
+
+The tracked 2 Kings 18:27 shin-dot discrepancy became stale after the canonical
+note edit of 22 October 2023. The exact subsequent Introduction correction is
+revision 3088682, dated 14 October 2026 at 02:40:46 UTC; its parent is the frozen
+repository revision 3087740. The [literal evidence](history-batch7-sources.json)
+labels that parent as a pinned repository cache rather than an API download.
+At this checkpoint 54/94 histories are recorded and 40 remain pending. Prior
+quotations, reader categories and all twelve Ben decisions remain unchanged.
+

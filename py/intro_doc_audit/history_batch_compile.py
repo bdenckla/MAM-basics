@@ -176,6 +176,26 @@ def main(batch, cache_dir=".novc/proverbs-history-api"):
             intro_capture(store.get(rid), record["intro"], claims)
             for rid in record["intro"]["revisions"]
         ]
+        for claim_id in record.get("pinned_introduction_claims", []):
+            claim = claims[claim_id]
+            page_key = claim_id.split(":", 1)[0]
+            manifest = json.loads(
+                (audit.ROOT / "in/mam-ws-intro/manifest.json").read_bytes()
+            )["pages"][page_key]
+            literal = (
+                (audit.ROOT / claim["path"]).read_text(encoding="utf-8").splitlines()
+            )
+            assert literal[claim["line"] - 1] == claim["text"]
+            intro.append(
+                {
+                    "kind": "pinned Introduction cache",
+                    "revid": manifest["revid"],
+                    "timestamp": manifest["timestamp"],
+                    "url": claim["source_url"],
+                    "repository_path": claim["path"],
+                    "excerpts": [{"line": claim["line"], "text": claim["text"]}],
+                }
+            )
         extra = [
             capture(store.get(s["revision"]), s["kind"], s["verse"])
             for s in record.get("extra_verses", [])
@@ -203,6 +223,11 @@ def main(batch, cache_dir=".novc/proverbs-history-api"):
                 "chapters": chapter_sources,
                 "introduction": intro,
                 "extra_sources": extra,
+                **(
+                    {"introduction_correction": record["introduction_correction"]}
+                    if "introduction_correction" in record
+                    else {}
+                ),
             }
         )
         links = [

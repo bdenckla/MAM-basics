@@ -19,7 +19,8 @@
     "omission-present-when-Genesis-numeric-count-assigned": 1,
     "established-staleness": 7,
     "established-count-correction-with-stale-chapter2-summary": 1,
-    "pending": 46,
+    "established-staleness-followed-by-post-cache-correction": 1,
+    "pending": 40,
     "not-explained-by-later-canonical-note-change-origin-undated": 1,
     "defect-present-when-note-added": 1,
     "ambiguity-present-when-alternative-added": 1,
@@ -29,6 +30,8 @@
     "wrong-description-present-when-added": 2,
     "wrong-locator-present-when-note-added": 1,
     "dated-note-expansion-with-partial-appendix-update": 1,
+    "history-accounted-attribution-supported-by-earlier-note": 1,
+    "history-accounted-specific-source-support-absent": 4,
     "shared-terminology-question-from-first-canonical-note": 1,
     "insufficient-history-to-resolve-manuscript-attribution": 1,
     "history-accounted-manuscript-interpretation-unresolved": 2,
@@ -38,7 +41,6 @@
     "history-accounted-strand-allocation-support-unresolved": 1,
     "history-accounted-illustration-scope-unresolved": 1,
     "insufficient-history-to-resolve-specific-Masorah-attribution": 1,
-    "history-accounted-specific-source-support-absent": 1,
     "established-staleness-in-incidental-pointing-scope-unresolved": 1,
     "mixed-chronology-later-certainty-and-original-qualification": 1,
     "established-staleness-after-doc-note-correction": 1,
@@ -48,6 +50,7 @@
     "insufficient-history-to-identify-counting-source-and-principal-division-definition": 1,
     "insufficient-semantic-evidence-for-list-category": 2,
     "history-accounted-uncertain-hataf-category": 1,
+    "history-accounted-vowel-function-and-source-unresolved": 1,
     "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded": 1
   },
   "first_batch": [
@@ -703,8 +706,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness-followed-by-post-cache-correction",
+      "history_result": "history-batch7-results.json",
       "first_batch": false
     },
     {
@@ -2193,8 +2196,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-attribution-supported-by-earlier-note",
+      "history_result": "history-batch7-results.json",
       "first_batch": false
     },
     {
@@ -2220,8 +2223,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-specific-source-support-absent",
+      "history_result": "history-batch7-results.json",
       "first_batch": false
     },
     {
@@ -2246,8 +2249,8 @@
         "2Kings 18:"
       ],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-specific-source-support-absent",
+      "history_result": "history-batch7-results.json",
       "first_batch": false
     },
     {
@@ -2736,8 +2739,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-specific-source-support-absent",
+      "history_result": "history-batch7-results.json",
       "first_batch": false
     },
     {
@@ -4342,8 +4345,8 @@
           "id": "2Samuel 6:5"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-vowel-function-and-source-unresolved",
+      "history_result": "history-batch7-results.json",
       "first_batch": false
     },
     {

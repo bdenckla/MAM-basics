@@ -242,6 +242,36 @@
       "case": "STRAND-SCOPE",
       "classification": "history-accounted-strand-allocation-support-unresolved",
       "result": "history-batch6-results.json"
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-14-7",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-2KINGS",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "IMPLICIT-MS-SAM-16-23",
+      "classification": "history-accounted-attribution-supported-by-earlier-note",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-18-27",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "tracked-shin-dot",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-6-5",
+      "classification": "history-accounted-vowel-function-and-source-unresolved",
+      "result": "history-batch7-results.json"
     }
   ]
 }

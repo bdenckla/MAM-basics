@@ -1668,7 +1668,32 @@
     "explanation": "The current text of issue #305 records Ben’s conclusion that the doc-note was correct. This audit preserves that tracked result separately from its new comparisons and has not inspected a manuscript scan.",
     "decision": "Use #305 for the existing correction; no new manuscript decision is raised here.",
     "reading_forms": [],
-    "issue_number": 305
+    "issue_number": 305,
+    "revision_history": {
+      "summary": "The explicit Aleppo ketiv quotation added to the canonical note in February 2023 has a shin dot, matching the inspected Introduction then. On 22 October 2023 the note removes that dot from both Aleppo display forms while expanding the font-oriented representation. The February 2024 Introduction retains the dot, establishing later staleness. Introduction revision 3088682, whose parent is the pinned revision 3087740, removes the dot on 14 October 2026 at 02:40:46 UTC. The following revision 3088683 changes only the comparison link and punctuation in this entry.",
+      "links": [
+        {
+          "label": "Aleppo quotation loses shin dot",
+          "url": "https://he.wikisource.org/w/index.php?diff=2810645&oldid=2810583"
+        },
+        {
+          "label": "Introduction before recorded correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2704663"
+        },
+        {
+          "label": "Introduction retains dot in 2024",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2841570"
+        },
+        {
+          "label": "Later Introduction without dot",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088859"
+        },
+        {
+          "label": "Exact subsequent Introduction correction",
+          "url": "https://he.wikisource.org/w/index.php?diff=3088682&oldid=3087740"
+        }
+      ]
+    }
   },
   {
     "id": "tracked-ezekiel-meteg",
@@ -4265,7 +4290,20 @@
         "id": "2Samuel 16:23/2/0",
         "text": "אִ֖ישׁ"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The 2015 canonical note explicitly attributes the narrow gap and missing qere-velo-ketiv pointing to Aleppo. On 9 February 2023 at 14:48 the note is reworded and its Aleppo sigil is removed. At 15:48 the Introduction adds that same reworded description under an explicit Aleppo label. History therefore supplies recorded Aleppo provenance for the current unnamed description; it does not independently verify the physical manuscript.",
+      "links": [
+        {
+          "label": "Aleppo label removed during rewording",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700676&oldid=1389649"
+        },
+        {
+          "label": "Introduction adds explicit Aleppo description",
+          "url": "https://he.wikisource.org/w/index.php?diff=2700734&oldid=2700733"
+        }
+      ]
+    }
   },
   {
     "id": "IMPLICIT-MS-KINGS-14-7",
@@ -4311,7 +4349,20 @@
         "id": "2Kings 14:7/2/0",
         "text": "מֶלַח֙"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The Introduction already quotes the prefixed-he ketiv and the missing pashta helper in February 2023. The canonical chapter first adds the pertinent Aleppo note on 17 February 2025; that note quotes the qere and explicitly confirms the missing helper. Earlier canonical MAM versions and the new note do not provide the complete pointed ketiv attribution. This is a specific source-support gap, not a removed annotation or a demonstrated pointing contradiction.",
+      "links": [
+        {
+          "label": "Aleppo note added in 2025",
+          "url": "https://he.wikisource.org/w/index.php?diff=2904451&oldid=2859977"
+        },
+        {
+          "label": "Introduction February 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2704663"
+        }
+      ]
+    }
   },
   {
     "id": "IMPLICIT-MS-KINGS-18-27",
@@ -4345,7 +4396,20 @@
         "id": "ch5:L429",
         "text": "צוֹאָתָ֗ם"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The canonical chapter carries the ketiv/qere pair without a pertinent Aleppo-pointing annotation in all twenty-nine inspected versions. Its other notes concern different targets and never supply the complete pointed Aleppo ketiv for this pair. The Introduction already explicitly attributes the pointed pair to Aleppo in February 2023. No removed local source note or later pointing change explains that attribution gap.",
+      "links": [
+        {
+          "label": "Introduction February 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2704663"
+        },
+        {
+          "label": "Introduction February 2024",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2841570"
+        }
+      ]
+    }
   },
   {
     "id": "GEN-36-13",
@@ -5268,7 +5332,20 @@
         "id": "2Kings 15:25/2/0",
         "text": "וַיְמִיתֵ֖הוּ"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The 2015 canonical note supports the selected spelling through general Aleppo, Leningrad and Tiberian Masorah traditions. Its February 2023 edit clarifies sigil punctuation and marks the Leningrad spelling as surprising, but does not distinguish Masorah Parva from Masorah Gedolah. The inspected March 2023 Introduction already gives that more specific distinction. No canonical note version provides or later removes this specific explanation; history does not establish that the Introduction's additional claim is false.",
+      "links": [
+        {
+          "label": "Source-label clarification February 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2702132&oldid=1379403"
+        },
+        {
+          "label": "Introduction March 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        }
+      ]
+    }
   },
   {
     "id": "SPELLING-SOURCE-JEREMIAH",
@@ -7545,7 +7622,20 @@
         "translation": ""
       }
     ],
-    "reading_forms": []
+    "reading_forms": [],
+    "revision_history": {
+      "summary": "The 2015 MAM import already has the retained tsadi ḥataf segol, years before the completed Samuel list inspected in February 2023. All eleven canonical chapter versions lack a pertinent explanatory source note for this atom; later edits preserve its MAM form. The history therefore does not support later staleness and still does not establish either manuscript attribution or membership in the optional vocal-sheva category.",
+      "links": [
+        {
+          "label": "2015 MAM import already has ḥataf segol",
+          "url": "https://he.wikisource.org/w/index.php?diff=653476&oldid=402792"
+        },
+        {
+          "label": "Completed Samuel list February 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2700730"
+        }
+      ]
+    }
   },
   {
     "id": "ALL-HATAF-PS-17-14-SOURCE",
