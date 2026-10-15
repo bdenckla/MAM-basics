@@ -27,7 +27,7 @@
   },
   "literal_passages_checked": 663,
   "proposed_quotations_checked": 10,
-  "user_adjudicated_comparisons": 9,
+  "user_adjudicated_comparisons": 10,
   "reviewed_cases": [
     "jeremiah-accent",
     "numbers-yod-label",
@@ -37,11 +37,11 @@
     "ALL-HATAF-SAM-8-10",
     "ALL-HATAF-NUM-10-9",
     "ALL-HATAF-GEN-30-27",
-    "deuteronomy-hataf-count"
+    "deuteronomy-hataf-count",
+    "lamentations-one-two"
   ],
   "unevaluated_cases": [
     "different-qere-count",
-    "lamentations-one-two",
     "proverbs-maqaf-illustration",
     "oleh-omission-count",
     "isaiah-decision-types",

@@ -74,8 +74,9 @@ words are recorded. Reproduce this finite check with
 
 [Lamentations 1:6](lamentations-1-6-proposal.md) now has the exact before/after
 sentence and the actual MAM ketiv/qere words. Its source-based proposal preserves
-the Introduction’s assignments and corrects only its one/two counts. This is
-independently verified, separately from the nine user-adjudicated comparisons.
+the Introduction’s assignments and corrects only its one/two counts. Ben approved
+this correction on 2026-10-15 as a contradiction within the Introduction; the report
+now has ten user-adjudicated comparisons.
 [report-prose-revision.json](report-prose-revision.json) records the authored
 classifier and transliteration corrections. Existing report-scoped plural and
 transliteration lint rules were applied, supplemented by a manual ḥataf/ḥet scan;
@@ -496,10 +497,12 @@ remain unchanged. Ben’s Numbers 10:9 phonetic question is separately attribute
 unresolved in both the case and the all-book ledger. It is not one of the nine
 pre-existing manuscript/function/source-object uncertainties.
 
-The reader puts 143 unevaluated cases first and the nine cases with recorded substantive
+The reader puts 142 unevaluated cases first and the ten cases with recorded substantive
 Ben decisions in a collapsed **Reviewed** section at the bottom. Membership is derived
 from linked adjudication authority and status; an independently verified proposal or a
-wording comment does not qualify. Lamentations 1:6 therefore remains unevaluated.
+wording comment does not qualify. Ben’s 2026-10-15 Lamentations 1:6 approval
+(`Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f`, 15:03 UTC) moves that case into Reviewed.
+It resolves a contradiction within the Introduction; no doc-note exists at that verse.
 Numbers 10:9 belongs in Reviewed while retaining its unresolved phonetic question. All
 152 cases and the Reviewed wrapper start collapsed; stable anchors, source quotations
 and prior decisions are retained. No persistence or tracking system was added.

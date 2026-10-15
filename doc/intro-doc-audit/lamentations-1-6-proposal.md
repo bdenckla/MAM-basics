@@ -3,8 +3,9 @@
 The Introduction’s chapter 2 example assigns the forms correctly but reverses
 the word counts. MAM’s special ketiv/qere template has ketiv **מן בת** (two words)
 and qere **מִבַּת־** (one word), with type **כתיב תרתין מילין וקרי מילה חדה**.
-There is no doc-note at this verse. This is a description error established by
-the Introduction and verse template, rather than competing manuscript claims.
+There is no doc-note at this verse. This is a contradiction within the Introduction:
+its example reverses the category named in the same section. The MAM verse template
+provides corroboration.
 
 Current Introduction sentence:
 
@@ -41,6 +42,12 @@ Ben requested a concrete proposal on 2026-10-14
 (`סוג` were checked directly.
 
 Ben requested a concrete proposal on 2026-10-14
-(`Sentinel_270f66758edc8191b846ed342c368317`). The source correction is independently
-verified and **unapplied**, separately identified from Ben’s manuscript adjudications
-in [adjudications.json](adjudications.json).
+(`Sentinel_270f66758edc8191b846ed342c368317`). The source correction was initially an independently
+verified proposal. Ben subsequently approved it as recorded below; it remains
+**unapplied** in [adjudications.json](adjudications.json).
+
+Ben approved the existing correction on 2026-10-15 at 15:03 UTC
+(`Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f`). He identifies the discrepancy as a
+contradiction within the Introduction. The case is now in the collapsed Reviewed
+section, with its exact proposed wording and source quotations preserved. No source
+correction has been submitted or applied.

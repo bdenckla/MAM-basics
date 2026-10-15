@@ -736,8 +736,8 @@
       "LAM-1-6"
     ],
     "section": "discrepancies",
-    "title": "Lamentations 1:6 — one/two reversed in the ketiv/qere description",
-    "issue": "The Introduction’s chapter 2 example calls the two-word ketiv one word and the one-word qere two words.",
+    "title": "Lamentations 1:6 — contradictory one/two counts within the Introduction",
+    "issue": "The Introduction contradicts itself: its chapter 2 example calls the two-word ketiv one word and the one-word qere two words, reversing the category in the same section.",
     "context": "The Introduction’s example gives מִן בַּת־ as ketiv and מִבַּת־ as qere.",
     "panels": [
       {
@@ -754,7 +754,7 @@
       }
     ],
     "explanation": "Its word counts reverse both the section’s category, כתיב תרתין מילין וקרי מילה חדה, and MAM’s special ketiv/qere template: ketiv מן בת; qere מִבַּת־. There is no doc-note at this verse.",
-    "decision": "Keep the Introduction’s forms and pointing, and correct its counts as shown below.",
+    "decision": "Ben approves the correction below: keep the Introduction’s forms and pointing, and reverse its one/two counts.",
     "reading_forms": [
       {
         "label": "MAM ketiv — two words",
@@ -788,7 +788,8 @@
       "מן בת",
       "מִבַּת־"
     ],
-    "adjudication": "LAM-1-6-PROPOSAL-20261014"
+    "adjudication": "LAM-1-6-PROPOSAL-20261014",
+    "discrepancy_type": "internal-Introduction-contradiction"
   },
   {
     "id": "proverbs-maqaf-illustration",
