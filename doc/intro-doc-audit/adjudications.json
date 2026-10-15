@@ -611,5 +611,50 @@
     "submission_status": "not-submitted",
     "application_status": "unapplied",
     "scope": "Proposal/report update only; no live source edit or submission is authorized."
+  },
+  {
+    "id": "OLEH-COUNT-BEN-20261015",
+    "case": "oleh-omission-count",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "time": "16:48 UTC",
+      "transcript_evidence": "Sentinel_95a89af0c4c881919b4be237fe750029",
+      "kind": "substantive-approval",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087893,
+    "current": {
+      "claim": "ch2:L434",
+      "quote": "בכתר ארם צובה יש השמטה שיטתית ועקבית כזאת של ה\"עולה\" ב-11 פסוקי אמ\"ת"
+    },
+    "proposed_quotation": "בכתר ארם צובה יש השמטה שיטתית ועקבית כזאת של ה\"עולה\" ב-13 פסוקי אמ\"ת",
+    "changes": [
+      {
+        "before": "11",
+        "after": "13",
+        "purpose": "Correct only chapter 2’s declared count to agree with the thirteen listed verses in chapter 5."
+      }
+    ],
+    "current_label": "Current cached chapter 2 count",
+    "proposed_label": "Ben’s approved chapter 2 count — not applied",
+    "current_explanation": "Eleven poetic verses.",
+    "proposed_explanation": "Thirteen poetic verses. This counts listed verses, not supporting doc-notes.",
+    "research_note": "oleh-count-history.md",
+    "research_label": "Count history and the two filed spin-off issues",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "spin_off_issues": [
+      {
+        "number": 309,
+        "url": "https://github.com/bdenckla/MAM-basics/issues/309"
+      },
+      {
+        "number": 310,
+        "url": "https://github.com/bdenckla/MAM-basics/issues/310"
+      }
+    ]
   }
 ]

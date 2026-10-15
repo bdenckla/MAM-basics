@@ -34,12 +34,31 @@
       "count": 13
     }
   },
-  "correction_approval": "not-approved-by-Ben",
+  "correction_approval": "approved-by-Ben; proposed-source-correction-not-submitted-or-applied",
   "evidence": "oleh-count-history-sources.json",
   "note_evidence": "oleh-count-evidence.json",
   "limits": [
     "This establishes the requested 2021 sequence; it does not date the earliest creation of the list or earliest divergence of its entries from eleven.",
     "Chapter 2 and chapter 5 content histories were sampled, not read exhaustively. Adjacent revisions prove the particular correction.",
     "The two counts summarize source claims; neither history nor note counts constitute manuscript scan verification or proof of completeness."
+  ],
+  "approval_authority": {
+    "person": "Ben",
+    "date": "2026-10-15",
+    "time": "16:48 UTC",
+    "transcript_evidence": "Sentinel_95a89af0c4c881919b4be237fe750029",
+    "kind": "substantive-approval",
+    "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+  },
+  "adjudication": "OLEH-COUNT-BEN-20261015",
+  "spin_off_issues": [
+    {
+      "number": 309,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/309"
+    },
+    {
+      "number": 310,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/310"
+    }
   ]
 }

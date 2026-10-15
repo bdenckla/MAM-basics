@@ -447,6 +447,16 @@ def card(case, sources):
     if case.get("issue_number"):
         number = case["issue_number"]
         issue = f'<p><a href="https://github.com/bdenckla/MAM-basics/issues/{number}">Tracked in #{number}</a></p>'
+    spin_offs = (
+        "<p><strong>Spin-off issues.</strong> "
+        + "; ".join(
+            '<a href="' + escaped(item["url"]) + '">' + prose(item["label"]) + "</a>"
+            for item in case.get("spin_off_issues", [])
+        )
+        + ".</p>"
+        if case.get("spin_off_issues")
+        else ""
+    )
     return (
         f'<details class="case" id="{escaped(case["id"])}"><summary><h3>{prose(case["title"])}</h3></summary><article>'
         + '<div class="explanation"><p><strong>'
@@ -463,6 +473,7 @@ def card(case, sources):
         + "</p></div>"
         + section_link
         + history_note
+        + spin_offs
         + membership
         + words
         + '<div class="comparison">'

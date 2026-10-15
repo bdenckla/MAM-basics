@@ -25,9 +25,9 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 716,
-  "proposed_quotations_checked": 11,
-  "user_adjudicated_comparisons": 11,
+  "literal_passages_checked": 717,
+  "proposed_quotations_checked": 12,
+  "user_adjudicated_comparisons": 12,
   "reviewed_cases": [
     "jeremiah-accent",
     "numbers-yod-label",
@@ -39,11 +39,11 @@
     "ALL-HATAF-GEN-30-27",
     "deuteronomy-hataf-count",
     "lamentations-one-two",
-    "proverbs-maqaf-illustration"
+    "proverbs-maqaf-illustration",
+    "oleh-omission-count"
   ],
   "unevaluated_cases": [
     "different-qere-count",
-    "oleh-omission-count",
     "isaiah-decision-types",
     "appendix-date-pair",
     "job-chapter-verse",

@@ -427,8 +427,8 @@
       "scope_reason": "The Introduction's claim, example, attribution, list membership or coverage can be compared with dated MAM body/doc-note evidence.",
       "explicit_scope_exception": "Ben explicitly requested the count's chronology as an exception to the exclusion of internal Introduction contradictions, together with the thirteen MAM body/doc-note comparisons.",
       "comparison_kind": "Introduction-MAM",
-      "ben_reviewed": false,
-      "adjudication": null,
+      "ben_reviewed": true,
+      "adjudication": "OLEH-COUNT-BEN-20261015",
       "introduction_claims": [
         "ch2:L434",
         "ch5:L741",

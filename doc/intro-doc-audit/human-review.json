@@ -921,7 +921,7 @@
       }
     ],
     "explanation": "The list has thirteen distinct verses: seven Psalms, two Proverbs and four Job verses. All thirteen MAM body forms have oleh and yored on the same letter. Of eighteen notes at these verses, twelve concern this pointing pair: eleven name omitted oleh; Psalm 30:12 instead calls the omitted sign revia. Psalm 42:3 has no doc-note, so its Aleppo attribution comes from the Introduction alone. The other six notes concern paseq, qamats alternatives, a small bet or a ḥataf vowel. The table shows all thirteen cases; these source quotations do not independently establish manuscript readings or list completeness.",
-    "decision": "Reconcile chapter 2’s eleven with chapter 5’s thirteen entries, or explain the intended exclusions. The list comparison does not prove manuscript-wide completeness.",
+    "decision": "Ben approves changing chapter 2’s count from eleven to thirteen. The proposed source correction is shown below and has not been applied. The two doc-note follow-ups are filed separately.",
     "reading_forms": [],
     "word_comparison": {
       "caption": "Thirteen listed verses and the twelve pertinent doc-notes. The Introduction and note quotations retain their own mark order.",
@@ -1381,7 +1381,7 @@
       ]
     },
     "revision_history": {
-      "summary": "On 26 September 2021, chapter 5’s declared total changed from eleven to thirteen at 05:32 UTC. All thirteen entries were already present in the preceding revision; this edit changed only the total. Chapter 2 still said eleven in the revisions immediately before (05:14 UTC) and after (20:12 UTC). The current cached chapters retain eleven and thirteen respectively. Ben has not approved the proposed reconciliation.",
+      "summary": "On 26 September 2021, chapter 5’s declared total changed from eleven to thirteen at 05:32 UTC. All thirteen entries were already present in the preceding revision; this edit changed only the total. Chapter 2 still said eleven in the revisions immediately before (05:14 UTC) and after (20:12 UTC). The current cached chapters retain eleven and thirteen respectively. Ben approves changing chapter 2’s count to thirteen; the source correction is still unapplied.",
       "links": [
         {
           "label": "Chapter 5: exact 11 → 13 correction",
@@ -1396,7 +1396,18 @@
           "url": "https://he.wikisource.org/w/index.php?oldid=1220669"
         }
       ]
-    }
+    },
+    "adjudication": "OLEH-COUNT-BEN-20261015",
+    "spin_off_issues": [
+      {
+        "label": "#309: Psalm 30:12 — oleh rather than revia",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/309"
+      },
+      {
+        "label": "#310: Psalm 42:3 — missing supplied-oleh note",
+        "url": "https://github.com/bdenckla/MAM-basics/issues/310"
+      }
+    ]
   },
   {
     "id": "isaiah-decision-types",
@@ -2298,7 +2309,8 @@
         "id": "Psalms 30:12/2/0",
         "text": "לִ֥י"
       }
-    ]
+    ],
+    "issue_number": 309
   },
   {
     "id": "PS-31-12-HATAF",
