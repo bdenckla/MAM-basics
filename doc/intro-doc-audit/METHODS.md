@@ -17,7 +17,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 661 source passages against literal stored strings,
+The renderer validates 663 source passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison and the new source/function examples.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -44,7 +44,7 @@ punctuation in both before/after comparisons. Ben subsequently adjudicated
 [Deuteronomy 6:21](deuteronomy-6-21-adjudication.md): remove only bare ל from the
 opening list, retaining ל1. The original complete note and translation stay visible;
 the manuscript assessment is Ben’s and damage/erasure causes remain uncertain.
-The renderer checks eight proposed
+The renderer checks ten proposed
 quotations against their declared edits, separately from source-passage validation.
 The three contextual facts, local screenshot observations and bounded restoration
 history are retained with attribution. The copying theory remains a hypothesis;
@@ -75,7 +75,7 @@ words are recorded. Reproduce this finite check with
 [Lamentations 1:6](lamentations-1-6-proposal.md) now has the exact before/after
 sentence and the actual MAM ketiv/qere words. Its source-based proposal preserves
 the Introduction’s assignments and corrects only its one/two counts. This is
-independently verified, separately from the seven user-adjudicated comparisons.
+independently verified, separately from the nine user-adjudicated comparisons.
 [report-prose-revision.json](report-prose-revision.json) records the authored
 classifier and transliteration corrections. Existing report-scoped plural and
 transliteration lint rules were applied, supplemented by a manual ḥataf/ḥet scan;
@@ -486,3 +486,20 @@ Ben requested removal of the three open defaults on 2026-10-14
 collapsed. The report has no open/closed persistence code; only the font slider
 is scripted. The earlier local Edge reload check returned the old defaults;
 that historical observation does not describe the new all-collapsed initial state.
+
+On 2026-10-15, Ben approved the Numbers 10:9 and Genesis 30:27 additions for proposal to
+Avi; the exact entries, count changes (18→19 and 33→34), source forms and insertion
+neighbors are retained in adjudications.json. The authored entries are built from
+retained source-form lookups and checked for MAM mark order, following owner-main
+guidance at `7cd619ad101dc40e5636342f4af7336ee204415f`; historical source captures
+remain unchanged. Ben’s Numbers 10:9 phonetic question is separately attributed and
+unresolved in both the case and the all-book ledger. It is not one of the nine
+pre-existing manuscript/function/source-object uncertainties.
+
+The reader puts 143 unevaluated cases first and the nine cases with recorded substantive
+Ben decisions in a collapsed **Reviewed** section at the bottom. Membership is derived
+from linked adjudication authority and status; an independently verified proposal or a
+wording comment does not qualify. Lamentations 1:6 therefore remains unevaluated.
+Numbers 10:9 belongs in Reviewed while retaining its unresolved phonetic question. All
+152 cases and the Reviewed wrapper start collapsed; stable anchors, source quotations
+and prior decisions are retained. No persistence or tracking system was added.

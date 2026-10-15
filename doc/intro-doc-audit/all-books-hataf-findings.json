@@ -26,7 +26,10 @@
         "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L13440",
         "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
       },
-      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification",
+      "adjudication": "GEN-30-27-BEN-20261015",
+      "editorial_status": "approved-by-Ben-for-proposal-to-Avi",
+      "proposed_list_entry": "[[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי);"
     },
     {
       "id": "ALL-HATAF-NUM-10-9",
@@ -34,7 +37,7 @@
       "claim": "ch3:L1132",
       "note": "Numbers 10:9/2/1",
       "proposed_entry": "ל!=וֲנִזְכַּרְתֶּ֗ם",
-      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "source_scope": "explicit Leningrad non-guttural ḥataf; phonetic function unresolved (Ben)",
       "status": "verified-roster-omission",
       "root_raw_proof": {
         "note_id": "Numbers 10:9/2/1",
@@ -53,7 +56,11 @@
         "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5380",
         "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
       },
-      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification",
+      "phonetic_question": "NUM-10-9-BEN-PHONETICS-20261015",
+      "adjudication": "NUM-10-9-BEN-20261015",
+      "editorial_status": "approved-by-Ben-for-proposal-to-Avi",
+      "proposed_list_entry": "[[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם);"
     },
     {
       "id": "ALL-HATAF-SAM-8-10",
@@ -285,5 +292,22 @@
     "Ben_approvals": "Approved for proposal to Avi, not approval by Avi.",
     "submission_status": "No issues filed and Avi not contacted; Ben is reviewing the report.",
     "applications": "No source or edition proposal applied."
-  }
+  },
+  "phonetic_questions": [
+    {
+      "id": "NUM-10-9-BEN-PHONETICS-20261015",
+      "case": "ALL-HATAF-NUM-10-9",
+      "note": "Numbers 10:9/2/1",
+      "word": "וֲנִזְכַּרְתֶּ֗ם",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-15",
+        "time": "08:02 UTC",
+        "transcript_evidence": "Sentinel_d946607c16f08191959bbfe2d66bf9f4"
+      },
+      "status": "unresolved-phonetic-question; list-addition-approved",
+      "explanation": "Ben understands an initial sheva to be vocal already. He asks whether this vav ḥataf specifies pataḥ vowel quality, whether pataḥ quality is the default, and whether the following nun’s ḥiriq changes that default. He remains uncertain.",
+      "scope": "This records Ben’s question, not a settled phonetic analysis. His approval of the list addition does not resolve it."
+    }
+  ]
 }

@@ -446,10 +446,10 @@
     "title": "Numbers 10:9: a Leningrad ḥataf word is missing from the list",
     "issue": "The Introduction’s Numbers list omits וֲנִזְכַּרְתֶּ֗ם.",
     "context": "The doc-note assigns וֲנִזְכַּרְתֶּ֗ם to Leningrad (ל), with ḥataf pataḥ on vav.",
-    "explanation": "The Leningrad vav ḥataf pataḥ marks vocal sheva, the function covered by the list.",
-    "decision": "Add the entry ל!=וֲנִזְכַּרְתֶּ֗ם.",
+    "explanation": "Ben understands an initial sheva to be vocal already. He asks whether this vav ḥataf specifies pataḥ vowel quality, whether pataḥ quality is the default, and whether the following nun’s ḥiriq changes that default. He remains uncertain.",
+    "decision": "Ben approves adding Numbers 10:9 for proposal to Avi. Add ל=וֲנִזְכַּרְתֶּ֗ם after the Numbers 6:27 entry and change the heading from 18 to 19 items, as shown below.",
     "prose_quotes": [
-      "ל!=וֲנִזְכַּרְתֶּ֗ם"
+      "ל=וֲנִזְכַּרְתֶּ֗ם"
     ],
     "panels": [
       {
@@ -480,7 +480,8 @@
         "id": "Numbers 10:9/2/1",
         "text": "וְנִזְכַּרְתֶּ֗ם"
       }
-    ]
+    ],
+    "adjudication": "NUM-10-9-BEN-20261015"
   },
   {
     "id": "ALL-HATAF-GEN-30-27",
@@ -492,7 +493,7 @@
     "issue": "The Introduction’s Genesis list omits וַיְבָרֲכֵ֥נִי.",
     "context": "The doc-note assigns וַיְבָרֲכֵ֥נִי to Leningrad (ל), with ḥataf pataḥ on resh.",
     "explanation": "The Leningrad resh ḥataf pataḥ marks vocal sheva, the function covered by the list.",
-    "decision": "Add the entry ל=וַיְבָרֲכֵ֥נִי.",
+    "decision": "Ben approves adding Genesis 30:27 for proposal to Avi. Add ל=וַיְבָרֲכֵ֥נִי after the Genesis 29:8 entry and change the heading from 33 to 34 items, as shown below.",
     "prose_quotes": [
       "ל=וַיְבָרֲכֵ֥נִי"
     ],
@@ -525,7 +526,8 @@
         "id": "Genesis 30:27/2/0",
         "text": "וַיְבָרְﬞכֵ֥נִי"
       }
-    ]
+    ],
+    "adjudication": "GEN-30-27-BEN-20261015"
   },
   {
     "id": "deuteronomy-hataf-count",

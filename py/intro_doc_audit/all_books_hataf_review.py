@@ -179,6 +179,7 @@ def main():
         "ketiv_qere_vowel_reviews": parameter_rows,
         "raw_unlisted_note_proofs": raw_proofs,
         "verified_omissions": findings["verified_omissions"],
+        "phonetic_questions": findings.get("phonetic_questions", []),
         "uncertainty_queue": uncertainties,
         "source_framing_exception": framing,
         "prior_semantic_list_exceptions": exceptions,

@@ -412,6 +412,24 @@ h4,.reading-label,.annotation{color:var(--review-muted)}
 """
 
 
+def reviewed_case_ids(cases):
+    """Use recorded substantive Ben decisions, never presentation state."""
+    records = {entry["id"]: entry for entry in read("adjudications.json")}
+    reviewed = set()
+    for case in cases:
+        if not (record_id := case.get("adjudication")):
+            continue
+        entry = records[record_id]
+        authority = entry["authority"]
+        if (
+            authority.get("person") == "Ben"
+            and authority.get("kind") != "independently-verified-proposal"
+            and "by-Ben" in entry["status"]
+        ):
+            reviewed.add(case["id"])
+    return reviewed
+
+
 def coverage_report(cases, literal_passages, proposed_quotations=0):
     """Account for retained cases; this is presentation coverage, not a verdict."""
     covered = {
@@ -444,6 +462,7 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
             raise ValueError(f"Readable review omits retained results: {missing}")
     if missing := {c["id"] for c in incremental} - set(covered) - set(methods):
         raise ValueError(f"Additional case lacks a readable disposition: {missing}")
+    reviewed = reviewed_case_ids(cases)
     return {
         "source_base_commit": audit.pinned_commit(),
         "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
@@ -471,11 +490,11 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
         },
         "literal_passages_checked": literal_passages,
         "proposed_quotations_checked": proposed_quotations,
-        "user_adjudicated_comparisons": sum(
-            entry["authority"].get("kind") != "independently-verified-proposal"
-            for entry in read("adjudications.json")
-            if any(c.get("adjudication") == entry["id"] for c in cases)
-        ),
+        "user_adjudicated_comparisons": len(reviewed),
+        "reviewed_cases": [case["id"] for case in cases if case["id"] in reviewed],
+        "unevaluated_cases": [
+            case["id"] for case in cases if case["id"] not in reviewed
+        ],
         "comparison_mapping": covered,
         "methods_only_or_resolved": methods,
         "limits": [
@@ -492,6 +511,7 @@ def main(cases=None, output="review.html"):
     ids = [case["id"] for case in cases]
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate readable case IDs")
+    reviewed = reviewed_case_ids(cases)
     sections = []
     for key, title, lead in (
         (
@@ -515,20 +535,33 @@ def main(cases=None, output="review.html"):
             "These discrepancies are recorded in issues #305–307.",
         ),
     ):
-        entries = [case for case in cases if case["section"] == key]
+        entries = [
+            case
+            for case in cases
+            if case["section"] == key and case["id"] not in reviewed
+        ]
         if entries:
             sections.append(
                 f'<section id="{key}"><h2>{title}</h2><p>{lead}</p>'
                 + "".join(card(case, sources) for case in entries)
                 + "</section>"
             )
+    if reviewed:
+        sections.append(
+            '<details class="reviewed" id="reviewed"><summary><h2>Reviewed ('
+            + str(len(reviewed))
+            + ")</h2></summary><p>These cases have recorded substantive Ben decisions. Any remaining questions stay with their cases.</p>"
+            + "".join(card(case, sources) for case in cases if case["id"] in reviewed)
+            + "</details>"
+        )
     output_html = (
         '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MAM Introduction and doc-note discrepancies</title><style>'
         + STYLE
         + ".he-quote{display:inline-block;white-space:pre-wrap}.passage.full-width{grid-column:1/-1}.readings{display:grid;grid-template-columns:minmax(0,max-content)}.reading{min-width:0;flex:initial}.reading .he{align-self:stretch;text-align:right}.comparison.adjudication{grid-template-columns:1fr}.word-pair .reading+.reading{margin-top:12px}.word-pair .he{align-self:flex-end}"
         + ".case{background:white;border:1px solid #d7e0da;border-radius:8px;margin:18px 0;scroll-margin-top:85px}.case>summary{cursor:pointer;padding:20px 25px;list-style-position:outside;margin-left:20px}.case>summary h3{display:inline;margin:0}.case article{border:0;border-top:1px solid #d7e0da;border-radius:0;margin:0;padding-top:5px}bdi{unicode-bidi:isolate}.membership{overflow-x:auto;margin:24px 0}.membership table{width:100%;border-collapse:collapse}.membership caption{text-align:left;margin-bottom:12px}.membership th,.membership td{border:1px solid #d7e0da;padding:8px 12px;vertical-align:middle}.membership th{font:14px/1.5 system-ui,sans-serif;background:#f2f6f3}.membership .verse{white-space:nowrap;font:14px/1.5 system-ui,sans-serif}.annotation{font-size:14px}"
         + THEME_STYLE
-        + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a></nav></div>'
+        + ".reviewed{margin-top:42px;scroll-margin-top:85px}.reviewed>summary{cursor:pointer}.reviewed>summary h2{display:inline;margin:0}"
+        + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a><a href="#reviewed">Reviewed</a></nav></div>'
         + "".join(sections)
         + '<footer><p>Ben’s approvals identify proposals for Avi’s review. No proposed changes have been applied or submitted.</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
     )

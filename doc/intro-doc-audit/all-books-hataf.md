@@ -6,8 +6,8 @@ each word, source, vowel and proposed addition.
 
 | Verse | Explicit doc-note form | Current list | Editorial state |
 | --- | --- | --- | --- |
-| Genesis 30:27 | ל=וַיְבָרֲכֵ֥נִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1126) omits this word | Ben’s review pending |
-| Numbers 10:9 | ל!=וֲנִזְכַּרְתֶּ֗ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132) omits this word | Ben’s review pending |
+| Genesis 30:27 | ל=וַיְבָרֲכֵ֥נִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1126) omits this word | Approved by Ben for proposal to Avi |
+| Numbers 10:9 | ל!=וֲנִזְכַּרְתֶּ֗ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132) omits this word | Approved by Ben for proposal to Avi |
 | 2 Samuel 8:10 | א=וּֽלְבָרֲכ֗וֹ | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L698) omits this word | Approved by Ben for proposal to Avi |
 | Proverbs 30:17 | ל=לִֽיקֲּהַ֫ת־אֵ֥ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L712) omits this word | Ben’s review pending |
 | Song of Songs 1:6 | ל!=שֶׁשֱּׁזָפַ֖תְנִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L716) omits this word | Approved by Ben for proposal to Avi |
@@ -230,3 +230,34 @@ Ben also approves adding 2 Samuel 8:10 (2026-10-14,
 The exact current/proposed Samuel list and approval are retained alongside the
 Song approval in adjudications.json. Both approvals are for proposal to Avi;
 neither has been submitted or applied.
+
+## Numbers and Genesis approvals, 2026-10-15
+
+Ben approves this addition for proposal to Avi
+(`Sentinel_d946607c16f08191959bbfe2d66bf9f4`, 08:02 UTC). Insert it after Numbers 6:27
+and before Numbers 16:32; change the heading from 18 to 19 items.
+
+```mediawiki
+[[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם);
+```
+
+Ben understands an initial sheva to be vocal already. He asks whether this vav ḥataf
+specifies pataḥ vowel quality, whether pataḥ quality is the default, and whether the
+following nun’s ḥiriq changes that default. He remains uncertain.
+
+This question remains unresolved and does not withdraw his approval of the list
+addition. The doc-note’s `!=` means **surprisingly equals**; the proposed list entry
+uses `ל=`.
+
+Ben approves this addition for proposal to Avi
+(`Sentinel_3565f381ef048191a87658483a12f713`). Insert it after Genesis 29:8 and before
+Genesis 30:38; change the heading from 33 to 34 items.
+
+```mediawiki
+[[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי);
+```
+
+The exact source forms, current/proposed lists, insertion checks, approval evidence and
+separate phonetic question are retained in [adjudications.json](adjudications.json).
+These additions have not been submitted or applied. Proverbs 30:17 still awaits Ben’s
+decision.
