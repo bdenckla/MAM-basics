@@ -3,8 +3,8 @@
   "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
   "readable_cases": 152,
   "sections": {
-    "discrepancies": 89,
-    "questions": 56,
+    "discrepancies": 90,
+    "questions": 55,
     "scope": 3,
     "tracked": 4
   },
@@ -25,9 +25,9 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 665,
-  "proposed_quotations_checked": 10,
-  "user_adjudicated_comparisons": 10,
+  "literal_passages_checked": 666,
+  "proposed_quotations_checked": 11,
+  "user_adjudicated_comparisons": 11,
   "reviewed_cases": [
     "jeremiah-accent",
     "numbers-yod-label",
@@ -38,11 +38,11 @@
     "ALL-HATAF-NUM-10-9",
     "ALL-HATAF-GEN-30-27",
     "deuteronomy-hataf-count",
-    "lamentations-one-two"
+    "lamentations-one-two",
+    "proverbs-maqaf-illustration"
   ],
   "unevaluated_cases": [
     "different-qere-count",
-    "proverbs-maqaf-illustration",
     "oleh-omission-count",
     "isaiah-decision-types",
     "appendix-date-pair",

@@ -3,8 +3,8 @@
 The Introduction’s example matched MAM’s spaced main form when it was added.
 The chapter later changed to maqaf. The older example remains in the audit’s
 Introduction snapshot. This establishes staleness of the example relative to
-MAM’s later main form; it does not establish the editor’s later intent or record
-Ben’s approval of a correction.
+MAM’s later main form. Ben approved the correction on 2026-10-15 at 16:11 UTC;
+the proposal remains unsubmitted and unapplied.
 
 | Event | Dated revision evidence (UTC) |
 | --- | --- |
@@ -75,3 +75,17 @@ The audit’s original base commit and cached source revisions remain unchanged:
 3087893 and Proverbs 30 revision 3008043. This is supplemental read-only live
 history research authorized by `Sentinel_daff81a9d8e0819182ae17f268dd2f41`.
 No wiki edit, source-cache refresh, issue, submission or main integration occurred.
+
+## Ben’s approval
+
+Ben approved replacing the space with maqaf in the Introduction’s layout example
+on 2026-10-15 at 16:11 UTC
+(`Sentinel_a0613408f38c8191804afc8c85a5733c`), based on the stale-example chronology.
+The case is settled and appears in Reviewed. The exact proposal is retained in
+[adjudications.json](adjudications.json):
+
+> עֲלֵ֫י צ֥וּר → עֲלֵ֫י־צ֥וּר
+
+Only the one boundary changes in the full proposed example. The separate Aleppo
+quotation and all historical source evidence are preserved. This approval records
+a proposal; no wiki edit or submission to Avi has occurred.

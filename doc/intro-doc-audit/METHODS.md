@@ -4,7 +4,7 @@ Open [review.html](review.html) for the readable comparisons. This appendix reta
 the technical inventory, source versions, coverage limits and supporting evidence.
 
 The presentation is maintained in [human-review.json](human-review.json).
-It contains 152 concrete comparisons: 89 discrepancies, 56 interpretation or source
+It contains 152 concrete comparisons: 90 discrepancies, 55 interpretation or source
 questions, three resolved vowel-function comparisons, and four verse comparisons
 for the three tracked issues. These are
 presentation entries, not 137 independent manuscript findings. Paired verses and
@@ -17,7 +17,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 665 source passages against literal stored strings,
+The renderer validates 666 source passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison and the new source/function examples.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -44,7 +44,7 @@ punctuation in both before/after comparisons. Ben subsequently adjudicated
 [Deuteronomy 6:21](deuteronomy-6-21-adjudication.md): remove only bare ל from the
 opening list, retaining ל1. The original complete note and translation stay visible;
 the manuscript assessment is Ben’s and damage/erasure causes remain uncertain.
-The renderer checks ten proposed
+The renderer checks eleven proposed
 quotations against their declared edits, separately from source-passage validation.
 The three contextual facts, local screenshot observations and bounded restoration
 history are retained with attribution. The copying theory remains a hypothesis;
@@ -76,7 +76,7 @@ words are recorded. Reproduce this finite check with
 sentence and the actual MAM ketiv/qere words. Its source-based proposal preserves
 the Introduction’s assignments and corrects only its one/two counts. Ben approved
 this correction on 2026-10-15 as a contradiction within the Introduction; the report
-now has ten user-adjudicated comparisons.
+now has eleven user-adjudicated comparisons.
 [report-prose-revision.json](report-prose-revision.json) records the authored
 classifier and transliteration corrections. Existing report-scoped plural and
 transliteration lint rules were applied, supplemented by a manual ḥataf/ḥet scan;
@@ -497,7 +497,7 @@ remain unchanged. Ben’s Numbers 10:9 phonetic question is separately attribute
 unresolved in both the case and the all-book ledger. It is not one of the nine
 pre-existing manuscript/function/source-object uncertainties.
 
-The reader puts 142 unevaluated cases first and the ten cases with recorded substantive
+The reader puts 141 unevaluated cases first and the eleven cases with recorded substantive
 Ben decisions in a collapsed **Reviewed** section at the bottom. Membership is derived
 from linked adjudication authority and status; an independently verified proposal or a
 wording comment does not qualify. Ben’s 2026-10-15 Lamentations 1:6 approval
@@ -508,9 +508,9 @@ Numbers 10:9 belongs in Reviewed while retaining its unresolved phonetic questio
 and prior decisions are retained. No persistence or tracking system was added.
 
 The 2026-10-15 Proverbs 30:19 wording review names the Introduction’s layout example
-and MAM body text directly, and removes the redundant discrepancy sentence. Context
-review leaves intentional use of the printed-edition form unresolved, so the case is
-unevaluated under Questions. The section link is derived from the unique cached
+and MAM body text directly, and removes the redundant discrepancy sentence. Initial
+context review left intentional use of the printed-edition form unresolved, so the case
+was placed under Questions. The section link is derived from the unique cached
 heading at chapter 2 line 915; its live rendered anchor was not checked. Source and
 wording details are retained in report-prose-revision.json. Other MAM body-text labels
 identify their selected source form, including the deḥi and qamats-qatan forms.
@@ -519,6 +519,8 @@ The subsequent [Proverbs 30:19 history check](proverbs-30-19-history.md) locates
 the actual 2013-05-27 example insertion and the 2020-11-08 chapter change from
 space to maqaf. All 41 visible chapter revisions and 22 linked-draft revisions
 were read; the larger Introduction histories have complete metadata and selected
-content evidence. This establishes an older MAM form retained by the example,
-without changing its unevaluated status or Ben’s other approvals. The supplemental
+content evidence. This establishes an older MAM form retained by the example.
+Ben approved the exact space-to-maqaf proposal on 2026-10-15 at 16:11 UTC
+(`Sentinel_a0613408f38c8191804afc8c85a5733c`), moving the settled case into Reviewed.
+The other approvals and historical evidence are preserved. The supplemental
 live-history evidence is separate from the original cached audit inputs.

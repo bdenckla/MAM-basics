@@ -796,7 +796,7 @@
     "covers": [
       "PROV-30-19"
     ],
-    "section": "questions",
+    "section": "discrepancies",
     "title": "Proverbs 30:19 — the layout example keeps MAM’s older spaced form",
     "issue": "The Introduction’s layout example has עֲלֵ֫י צ֥וּר with a space; MAM’s body text has עֲלֵ֫י־צ֥וּר with a maqaf.",
     "context": "This chapter 2 example illustrates four units on four lines, alternating unindented and indented lines. The Introduction’s own Aleppo quotation has maqaf, agreeing with the doc-note’s =א attribution.",
@@ -835,7 +835,7 @@
         "full_width": true
       }
     ],
-    "decision": "Review whether to update the layout example to MAM’s later maqaf form. Keep its separate Aleppo quotation and the documented history.",
+    "decision": "Ben approves replacing the space with maqaf in the layout example, as shown below.",
     "reading_forms": [],
     "introduction_section": {
       "page_key": "ch2",
@@ -847,7 +847,7 @@
       "anchor_basis": "MediaWiki heading fragment from the unique literal cached heading (spaces to underscores); no live rendered-anchor check."
     },
     "revision_history": {
-      "summary": "Added on 27 May 2013 with MAM’s then-current spaced form; the chapter changed to maqaf on 8 November 2020. The Introduction still has the space before and after that change and in its cached 2026 revision. This establishes an outdated example without settling the editor’s later intent.",
+      "summary": "Added on 27 May 2013 with MAM’s then-current spaced form; the chapter changed to maqaf on 8 November 2020. The Introduction still has the space before and after that change and in its cached 2026 revision. This establishes an outdated example.",
       "links": [
         {
           "label": "2013 example addition",
@@ -862,7 +862,8 @@
           "url": "proverbs-30-19-history.md"
         }
       ]
-    }
+    },
+    "adjudication": "PROV-30-19-BEN-20261015"
   },
   {
     "id": "oleh-omission-count",

@@ -47,7 +47,7 @@
       "עֲלֵ֫י־צ֥וּר"
     ]
   },
-  "correction_approval": "not-approved",
+  "correction_approval": "approved-by-Ben; proposal-not-submitted-or-applied",
   "coverage": {
     "chapter_contents": {
       "read": 41,
@@ -70,5 +70,14 @@
     "The actual adjacent insertion and chapter-change diffs establish the sequence. Adaptive root snapshots do not prove that no earlier or unidentified draft ever contained a similar example.",
     "Introduction/root metadata were enumerated completely, but their full content histories were not downloaded or claimed continuously unchanged.",
     "Publicly suppressed/deleted history and unrelated draft pages were not assessed. The copied 2013 example was checked directly; old rendered pages were not used to infer historical transclusion contents."
-  ]
+  ],
+  "approval_authority": {
+    "person": "Ben",
+    "date": "2026-10-15",
+    "time": "16:11 UTC",
+    "kind": "substantive-approval",
+    "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+    "transcript_evidence": "Sentinel_a0613408f38c8191804afc8c85a5733c"
+  },
+  "adjudication": "PROV-30-19-BEN-20261015"
 }

@@ -572,5 +572,44 @@
       "text": "וַיְבָרֲכֵ֥נִי",
       "construction": "Lookup from the retained doc-note form; MAM mark order verified without altering source captures."
     }
+  },
+  {
+    "id": "PROV-30-19-BEN-20261015",
+    "case": "proverbs-maqaf-illustration",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "time": "16:11 UTC",
+      "kind": "substantive-approval",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "transcript_evidence": "Sentinel_a0613408f38c8191804afc8c85a5733c"
+    },
+    "status": "approved-by-Ben; proposed-source-correction-not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087893,
+    "current": {
+      "claim": "ch2:L968",
+      "quote": "עֲלֵ֫י צ֥וּר"
+    },
+    "proposed_quotation": "עֲלֵ֫י־צ֥וּר",
+    "changes": [
+      {
+        "before": "עֲלֵ֫י צ֥וּר",
+        "after": "עֲלֵ֫י־צ֥וּר",
+        "purpose": "Replace the single space between the two words in the layout example with maqaf, based on the established stale-example chronology."
+      }
+    ],
+    "current_label": "Current Introduction layout example — word pair",
+    "proposed_label": "Approved by Ben — proposed word pair with maqaf",
+    "current_explanation": "The space-separated word pair in the layout example.",
+    "proposed_explanation": "Replace only that space with maqaf.",
+    "research_note": "proverbs-30-19-history.md",
+    "research_label": "History and Ben’s approved correction",
+    "current_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
+    "proposed_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י־צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
+    "history_basis": "proverbs-30-19-history.json",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "scope": "Proposal/report update only; no live source edit or submission is authorized."
   }
 ]
