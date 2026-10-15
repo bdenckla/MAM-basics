@@ -687,3 +687,27 @@ Neither the physical counting unit nor the correct count is settled by history.
 The [literal evidence](history-batch8-sources.json) preserves those distinctions.
 At this checkpoint 59/94 histories are recorded and 35 remain pending. The
 original reader categories, quotations and twelve Ben decisions are unchanged.
+
+The [ninth history batch](history-batch9-results.json) records twelve cases from
+199/199 canonical chapter contents. Joshua's starred selected form became stale
+after the March 2026 change. Jeremiah 39's size description and Isaiah 44:24's
+Leningrad quotation tension date to their note edits. Jeremiah 48:32 is an
+explicit Introduction exclusion. Other cases retain source, edition, quotation
+or illustration-scope uncertainty; a dated difference alone is not called an
+independently established manuscript contradiction.
+
+The [independent Isaiah review](isaiah-history-independent-validation.json)
+verified 73/73 chapter revisions. It found that Isaiah 59's 2026 note edit restores
+a 2015 distinction, after a March 2023 grouping change. The reader's earlier
+categorical English attribution has been [qualified](isaiah59-scope-qualification.json)
+to preserve uncertainty about the Introduction clause's scope. Every Hebrew
+quotation, reading form, case section and Ben decision is unchanged.
+
+Ecclesiastes's Masorah support gap remains open. A separate literal note-label
+defect, introduced on 23 March 2023, was confirmed by two independent readers
+and the audit owner: the two-vav Leningrad quotation receives the mixed
+full/defective label. Its [literal validation](ecclesiastes-note-label-evidence.json)
+and historical quotations remain under the existing case, without a new
+proposal, issue or manuscript judgment. At this checkpoint 71/94 histories are
+recorded and 23 remain pending. Rebuild the research batch with
+`py/main_intro_doc_audit.py history-batch history-batch9`.

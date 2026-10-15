@@ -297,6 +297,66 @@
       "case": "AMOS-MISSING-PAGES",
       "classification": "insufficient-history",
       "result": "history-batch8-results.json"
+    },
+    {
+      "case": "ISA-10-15",
+      "classification": "discrepancy-present-in-observed-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "classification": "introduced-in-note",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "classification": "introduced-in-note",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "classification": "intentional-exclusion",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "classification": "established-staleness",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "MAL-HOLAM",
+      "classification": "dated-quotation-divergence",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch9-results.json"
     }
   ]
 }

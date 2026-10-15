@@ -17,10 +17,10 @@
     "omission-present-when-Samuel-list-expanded": 1,
     "omission-present-when-Numbers-numeric-count-assigned": 1,
     "omission-present-when-Genesis-numeric-count-assigned": 1,
-    "established-staleness": 7,
+    "established-staleness": 8,
     "established-count-correction-with-stale-chapter2-summary": 1,
     "established-staleness-followed-by-post-cache-correction": 4,
-    "pending": 35,
+    "pending": 23,
     "not-explained-by-later-canonical-note-change-origin-undated": 1,
     "defect-present-when-note-added": 1,
     "ambiguity-present-when-alternative-added": 1,
@@ -28,12 +28,16 @@
     "conflicting-attribution-present-when-agreement-expanded": 1,
     "discrepancy-at-first-observed-Introduction-entry-origin-bounded": 1,
     "wrong-description-present-when-added": 2,
+    "discrepancy-present-in-observed-history": 1,
+    "introduced-in-note": 2,
     "wrong-locator-present-when-note-added": 1,
-    "insufficient-history": 1,
+    "history-accounted-agreement-scope-unresolved": 2,
+    "insufficient-history": 5,
     "dated-note-expansion-with-partial-appendix-update": 1,
     "history-accounted-attribution-supported-by-earlier-note": 1,
-    "history-accounted-specific-source-support-absent": 5,
+    "history-accounted-specific-source-support-absent": 6,
     "shared-terminology-question-from-first-canonical-note": 1,
+    "dated-quotation-divergence": 1,
     "insufficient-history-to-resolve-manuscript-attribution": 1,
     "history-accounted-manuscript-interpretation-unresolved": 2,
     "attribution-tension-present-when-Introduction-candidate-added": 1,
@@ -45,11 +49,11 @@
     "established-staleness-in-incidental-pointing-scope-unresolved": 1,
     "mixed-chronology-later-certainty-and-original-qualification": 1,
     "established-staleness-after-doc-note-correction": 1,
-    "history-accounted-agreement-scope-unresolved": 1,
     "later-note-expansion-unreflected-in-existing-list": 1,
     "history-accounted-Dotan-description-support-unresolved": 1,
     "insufficient-history-to-identify-counting-source-and-principal-division-definition": 1,
     "insufficient-semantic-evidence-for-list-category": 2,
+    "intentional-exclusion": 1,
     "history-accounted-uncertain-hataf-category": 1,
     "history-accounted-vowel-function-and-source-unresolved": 1,
     "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded": 1
@@ -974,8 +978,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -1697,8 +1701,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "discrepancy-present-in-observed-history",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -1761,8 +1765,8 @@
           "pointer": "/tmpl_params/2"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "introduced-in-note",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -1863,8 +1867,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-agreement-scope-unresolved",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -1895,8 +1899,8 @@
           "pointer": ""
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -2326,8 +2330,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "dated-quotation-divergence",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -2644,8 +2648,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -2793,8 +2797,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-specific-source-support-absent",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -2950,8 +2954,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -3105,8 +3109,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -3317,8 +3321,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "introduced-in-note",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {
@@ -4263,8 +4267,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "intentional-exclusion",
+      "history_result": "history-batch9-results.json",
       "first_batch": false
     },
     {

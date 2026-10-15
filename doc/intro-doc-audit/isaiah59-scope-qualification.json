@@ -1,0 +1,64 @@
+{
+  "case": "ISA-59-19-MAQAF",
+  "basis": "Independent complete canonical history and selected Introduction readings exposed an unresolved scope; the earlier English case overstated whole-compound attribution.",
+  "independent_evidence": "isaiah-history-independent-validation.json",
+  "source_passages_unchanged": true,
+  "status_and_case_section_unchanged": true,
+  "before": {
+    "explanation": "The Introduction assigns the maqaf compound to the other named manuscripts and printed editions. The doc-note instead assigns those sources the spaced MAM body text with merkha and tipḥa.",
+    "issue": "The Introduction assigns a maqaf to nearby manuscripts and printed editions; the doc-note assigns those sources the spaced text.",
+    "decision": "Choose whether to change the Introduction's attribution to the spaced text, following the doc-note, or revise the doc-note's source attribution.",
+    "reading_forms": [
+      {
+        "label": "Introduction's uncertain quotation, also attributed to nearby sources",
+        "source": "claim",
+        "id": "ch5:L51",
+        "text": "ר֥וּחַ־יְהוָ֖ה"
+      },
+      {
+        "label": "MAM body text",
+        "source": "note-target",
+        "id": "Isaiah 59:19/2/0",
+        "text": "ר֥וּחַ יְהֹוָ֖ה",
+        "pointer": "",
+        "annotation": "Merkha and tipḥa; no maqaf."
+      },
+      {
+        "label": "Doc-note's possible Aleppo quotation",
+        "source": "note",
+        "id": "Isaiah 59:19/2/0",
+        "text": "ר֥וּחַ־יְהֹוָ֖ה",
+        "annotation": "Merkha, maqaf and tipḥa."
+      }
+    ]
+  },
+  "after": {
+    "explanation": "A whole-compound reading of the Introduction gives an apparent attribution mismatch. An accent-only reading may agree with the doc-note. The historical note alternates between grouping these claims and separating them, while its selected MAM pointing stays spaced; history does not settle the Introduction clause’s intended scope.",
+    "issue": "The Introduction's nearby-source agreement clause may concern the complete maqaf compound or specifically merkha; the doc-note gives those sources the spaced MAM text.",
+    "decision": "Clarify what the Introduction's agreement clause covers before proposing any change to the source attribution.",
+    "reading_forms": [
+      {
+        "label": "Introduction's uncertain quotation; nearby-source clause scope unresolved",
+        "source": "claim",
+        "id": "ch5:L51",
+        "text": "ר֥וּחַ־יְהוָ֖ה"
+      },
+      {
+        "label": "MAM body text",
+        "source": "note-target",
+        "id": "Isaiah 59:19/2/0",
+        "text": "ר֥וּחַ יְהֹוָ֖ה",
+        "pointer": "",
+        "annotation": "Merkha and tipḥa; no maqaf."
+      },
+      {
+        "label": "Doc-note's possible Aleppo quotation",
+        "source": "note",
+        "id": "Isaiah 59:19/2/0",
+        "text": "ר֥וּחַ־יְהֹוָ֖ה",
+        "annotation": "Merkha, maqaf and tipḥa."
+      }
+    ]
+  },
+  "limitation": "No new manuscript reading, proposal or approval."
+}

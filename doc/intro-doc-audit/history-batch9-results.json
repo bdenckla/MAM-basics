@@ -1,0 +1,355 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "cases": [
+    {
+      "case": "ISA-10-15",
+      "classification": "discrepancy-present-in-observed-history",
+      "result": "The note has discussed the first yod since its 2015 MAM import. The Introduction explanation also names the first yod in January 2023. Its table, already present in the retained February 2023 snapshot, instead quotes a form lacking the second yod; the bracketed summary points to that second position too. No later note change explains this mismatch.",
+      "limits": [
+        "The actual table insertion was not located; this dates the mismatch by its first retained table snapshot.",
+        "The note and explanation report the manuscript judgment; no manuscript image was examined."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "isaiah-10",
+          "contents_read": 18,
+          "visible_revisions": 18
+        }
+      ],
+      "links": [
+        {
+          "label": "Note imported, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?diff=658345&oldid=407682"
+        },
+        {
+          "label": "Table and explanation, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987"
+        }
+      ]
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "classification": "insufficient-history",
+      "result": "The note attributes tevir to HaKeter from its 2015 MAM import onward; the selected MAM form has merkha throughout. Retained Introduction passages from January 2023 already say that HaKeter chose merkha. The chapter history supplies no later edition-attribution change that explains their disagreement.",
+      "limits": [
+        "The HaKeter edition or version and its printed passage remain unverified.",
+        "Selected Introduction history does not locate the origin of its conflicting edition attribution."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "isaiah-55",
+          "contents_read": 10,
+          "visible_revisions": 10
+        }
+      ],
+      "links": [
+        {
+          "label": "Note imported, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?diff=658388&oldid=403348"
+        },
+        {
+          "label": "Introduction, 2023-01-11",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798"
+        }
+      ]
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "classification": "insufficient-history",
+      "result": "The 2015 note already distinguishes a small nun prescribed by the Aleppo Masorah from an ordinary-sized nun in the manuscript text. Its 2023 wording retains that distinction and still does not specify Masorah Parva. The Introduction has the narrower Parva attribution by February 2023; the history does not establish that extra specificity.",
+      "limits": [
+        "The broader Masorah attribution does not contradict the narrower Parva attribution. Its exact location or further evidence remains unresolved.",
+        "No manuscript examination was undertaken."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "isaiah-44",
+          "contents_read": 20,
+          "visible_revisions": 20
+        }
+      ],
+      "links": [
+        {
+          "label": "Note imported, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=658377"
+        },
+        {
+          "label": "Note wording, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?diff=2696982&oldid=1379458"
+        },
+        {
+          "label": "Introduction, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987"
+        }
+      ]
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "classification": "introduced-in-note",
+      "result": "The Leningrad quotation and its no-maqaf explanation were added together on 25 March 2026. The quotation already contains maqaf at that insertion. The earlier note documented only the Aleppo ketiv, matching the Introduction example. This dates the note-internal tension rather than a later change to the Introduction.",
+      "limits": [
+        "History does not decide whether the quotation has a supplied display separator or an unintended maqaf. The intended correction remains open."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "isaiah-44",
+          "contents_read": 20,
+          "visible_revisions": 20
+        }
+      ],
+      "links": [
+        {
+          "label": "Aleppo note added, 2021-09-13",
+          "url": "https://he.wikisource.org/w/index.php?diff=1178444&oldid=1178399"
+        },
+        {
+          "label": "Leningrad line added, 2026-03-25",
+          "url": "https://he.wikisource.org/w/index.php?diff=3000539&oldid=2987962"
+        }
+      ]
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "The 2015 note already separates the nearby sources with spaced MAM pointing from the uncertain Aleppo maqaf alternatives. On 1 March 2023 a note edit merges Aleppo into the agreement clause while its selected form stays spaced. The 16 February 2026 edit separates those claims again, restoring the earlier distinction. The Introduction has a broad agreement clause by January 2023 and later expands its manuscript list. Whether that clause means the complete compound or specifically merkha remains unclear. This chronology does not establish newly caused Introduction staleness.",
+      "limits": [
+        "The Introduction clause has an ambiguous scope; history does not prove that it intentionally attributes maqaf to all named sources.",
+        "The dated note edit clarifies its claims, without independently establishing a manuscript reading.",
+        "The pinned Introduction passage is separately preserved by the original audit; selected older snapshots establish the age of its wording."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "isaiah-59",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Earlier distinction merged, March 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2706372&oldid=2706370"
+        },
+        {
+          "label": "Earlier distinction restored, February 2026",
+          "url": "https://he.wikisource.org/w/index.php?diff=2987581&oldid=2987562"
+        },
+        {
+          "label": "Introduction wording, 2023-01-11",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3087740"
+        }
+      ]
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "classification": "introduced-in-note",
+      "result": "The note adds the description large final nun on 1 February 2023, while retaining the small-letter template already present in its 2015 MAM version. The retained Introduction list also marks the nun small. The dated change introduces a description/template mismatch inside the note, rather than making the Introduction stale.",
+      "limits": [
+        "This compares explicit source wording and template size, without independently checking the printed editions or manuscript."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "jeremiah-39",
+          "contents_read": 12,
+          "visible_revisions": 12
+        }
+      ],
+      "links": [
+        {
+          "label": "Size description added, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?diff=2696972&oldid=1379519"
+        },
+        {
+          "label": "Small-letter Introduction entry, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987"
+        }
+      ]
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "classification": "insufficient-history",
+      "result": "Both local notes have explicitly attributed the quoted ḥataf vowels to Aleppo ketiv since their 2015 MAM versions. The retained Introduction list already labels its different final-consonant forms as Aleppo qere by February 2023. January 2023 changes add a sheva helper to selected MAM qere without changing either ketiv attribution. No later relabelling of the notes explains the Introduction scope.",
+      "limits": [
+        "History does not establish whether the list deliberately illustrates a ketiv vowel on the qere or inadvertently mislabels the quotation.",
+        "The manuscript pointing of the qere is not independently established."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "jeremiah-48",
+          "contents_read": 16,
+          "visible_revisions": 16
+        },
+        {
+          "key": "jeremiah-50",
+          "contents_read": 18,
+          "visible_revisions": 18
+        }
+      ],
+      "links": [
+        {
+          "label": "Jeremiah 48 ketiv note, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=658329"
+        },
+        {
+          "label": "Jeremiah 50 ketiv note, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=658331"
+        },
+        {
+          "label": "Introduction qere labels, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987"
+        }
+      ]
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "classification": "intentional-exclusion",
+      "result": "The Introduction explicitly excludes Jeremiah 48:32 in the retained list footnote by 1 February 2023. The note has contrasted Breuer ḥataf with a possibly erased pataḥ stroke leaving sheva since 2015; on 29 January 2023 it also offers a stain as an explanation. Both sources retain the reading uncertainty. The absent main-list entry is therefore a documented exclusion, rather than an unexplained omission.",
+      "limits": [
+        "Neither the Breuer report nor the note author alternative is promoted to a settled manuscript reading. No manuscript image was examined."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "jeremiah-48",
+          "contents_read": 16,
+          "visible_revisions": 16
+        }
+      ],
+      "links": [
+        {
+          "label": "Stain alternative added, 2023-01-29",
+          "url": "https://he.wikisource.org/w/index.php?diff=2693819&oldid=1379528"
+        },
+        {
+          "label": "Explicit Introduction exclusion, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987"
+        }
+      ]
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "classification": "established-staleness",
+      "result": "The Introduction starred a form with lamed meteg in February 2023, matching the earlier selected MAM pointing. On 12 March 2026 the note adds uncertainty about Aleppo and then the selected MAM form loses that meteg. The pinned Introduction and the later retained research snapshot still star the earlier form. This establishes staleness of the selected-form indication.",
+      "limits": [
+        "The ink interpretation is the note author report; no manuscript image was examined.",
+        "The October 2026 research snapshot is separate from the unchanged original audit cache; that pinned cache already retains the same starred form."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "joshua-14",
+          "contents_read": 17,
+          "visible_revisions": 17
+        }
+      ],
+      "links": [
+        {
+          "label": "Note qualification, 2026-03-12",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997882&oldid=2987785"
+        },
+        {
+          "label": "Selected meteg removed, 2026-03-12",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997883&oldid=2997882"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3087740"
+        }
+      ]
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "classification": "insufficient-history",
+      "result": "Selected MAM has segol on shin throughout its retained MAM history. The 2016 note already reports Breuer qamats and disputes it. On 21 March 2023 the note softens that judgment and introduces an explicitly doubtful Leningrad alternative, still quoted with segol. The retained Introduction entry from April 2023 already combines that segol quotation with the qamats caption. A later vowel change does not explain the mismatch.",
+      "limits": [
+        "The sigil itself retains a question mark in both sources; the shorter Introduction caption does not establish certainty.",
+        "The intended quotation for the doubtful manuscript reading remains unresolved. No manuscript dots were examined."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "lamentations-4",
+          "contents_read": 23,
+          "visible_revisions": 23
+        }
+      ],
+      "links": [
+        {
+          "label": "Earlier note, 2016-01-24",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671269"
+        },
+        {
+          "label": "Uncertainty revised, 2023-03-21",
+          "url": "https://he.wikisource.org/w/index.php?diff=2713560&oldid=1379092"
+        },
+        {
+          "label": "Introduction, 2023-04-10",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2737602"
+        }
+      ]
+    },
+    {
+      "case": "MAL-HOLAM",
+      "classification": "dated-quotation-divergence",
+      "result": "The earlier note and the February 2023 Introduction example both include ḥolam. On 17 December 2024 the note changes selected MAM meteg placement and later explicitly removes ḥolam from its Aleppo quotation, while retaining the explanation of the unmarked vowel. The pinned Introduction keeps ḥolam in its example. This dates the literal divergence, without settling whether the Introduction deliberately supplies conventional pointing while illustrating meteg.",
+      "limits": [
+        "The meteg descriptions agree; the open question concerns the scope of the illustration and its supplied ḥolam.",
+        "The source explanation of the absent manuscript dot is not independently verified.",
+        "The later research snapshot is distinct from the unchanged original audit cache."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "malachi-2",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Selected pointing changed, 2024-12-17",
+          "url": "https://he.wikisource.org/w/index.php?diff=2895557&oldid=2895461"
+        },
+        {
+          "label": "Aleppo ḥolam removed, 2024-12-17",
+          "url": "https://he.wikisource.org/w/index.php?diff=2895561&oldid=2895559"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3087740"
+        }
+      ]
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "All fifteen visible canonical revisions were inspected. The thirteen MAM note versions retain the selected and Leningrad spellings and discuss Breuer’s report; none supplies or later removes a specific conflicting note in Leningrad’s own Masorah. The selected March 2023 Introduction already contains the exclamation mark and its local definition. Separately, the 23 March 2023 note edit adds a mixed full-vav/defective-vav label to the unchanged Leningrad form containing two written vav letters. The selected form has one vav, and the two different forms now receive the same label. This supplemental label defect remains attached to this existing case for independent review; it creates no new case or approval.",
+      "limits": [
+        "Absence of a local Masorah citation does not prove the Introduction claim false. No Masorah source or manuscript image was inspected.",
+        "The Introduction origin was not exhaustively traced; March 2023 is the earliest selected chapter-4 capture.",
+        "The exclamation mark takes its specific meaning from this chapter’s legend. A generic surprise modifier does not establish a Masorah conflict.",
+        "The supplemental note-label defect concerns the quoted forms and wording, not an independently verified manuscript reading or an approved correction."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "ecclesiastes-1",
+          "contents_read": 15,
+          "visible_revisions": 15
+        }
+      ],
+      "links": [
+        {
+          "label": "First canonical MAM note, January 2016",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671283"
+        },
+        {
+          "label": "Introduction and exclamation-mark legend, March 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        },
+        {
+          "label": "Supplemental note-label wording added, March 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2714101&oldid=1379884"
+        }
+      ]
+    }
+  ]
+}
