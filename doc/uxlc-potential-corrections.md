@@ -1,0 +1,64 @@
+# Potential UXLC corrections, not reported
+
+State: live. Nothing here has been sent to the UXLC, to its editor or to the author of any
+change record.
+
+Ben decided on 2026-10-15 to report none of the UXLC problems in sections 1 and 2: "Leave all of
+this as is. I don't care about mistakes in UXLC any more." He then added: "who knows, maybe I'll start caring
+again at some point in the future. Which, come to think of it, suggests that maybe these UXLC
+potential corrections should be recorded in a file in the "doc" folder somewhere, in case I ever
+care to report them in the future." This file is that record. Add any later potential UXLC
+correction here.
+
+A change record's **locator** is its page, column and line, written here as page, then
+column:line, such as F063A 2:20. The UXLC's locators count only lines that hold text, so a
+citation below blank lines has a line number lower, by the number of blank lines above it, than a
+count of every ruled line gives.
+Before reporting any locator below, count every ruled line from the column's top on the page
+image, and allow for that convention.
+
+## 1. Three locators that disagree with the page images, found 2026-10-14
+
+A comparison of UXLC change records with Charles Loder's leningrad-codex-tei v0.5.0 found these.
+That edition is a TEI encoding of pages F001B–F091B, whose line breaks are Gemini's readings of
+Sefaria's photographs. For each record, a Claude session's reading of a crop of Sefaria's
+photograph, made on 2026-10-14, agrees with the TEI's line. Ben has not checked these three on
+the images. In the TEI, none of the three atoms has an empty line above it in its column.
+
+| Change record | Release | Citation | Locator | TEI and Claude's reading | Author |
+| --- | --- | --- | --- | --- | --- |
+| 2021.02.22-15 | 2021.04.01 | Lev 13:3.12 | F063A 2:20 | line 21 | Stephen Salisbury |
+| 2021.12.28-2 | 2022.04.01 | Lev 26:35.3 | F073A 1:1 | line 3 | Todd Shandelman |
+| 2022.04.04-6 | 2022.07.04 | Num 9:17.6 | F080B 3:26 | line 25 | Daniel Holman |
+
+The UXLC disagrees with itself about Lev 26:35.3: its earlier record 2021.02.22-17, by Stephen
+Salisbury, gives F073A 1:3, as the TEI and Claude's reading do.
+
+The comparison's working files are untracked, under `.novc/lc-tei-phase1/` in the primary
+forest's MAM-basics clone, with the crops in its `out/crops/`.
+
+## 2. A pending UXLC 2.6 record that cites the wrong position, found 2026-10-14
+
+Daniel Holman's record 2026.08.05-10, in the proposed UXLC 2.6 change list with file date
+2026.10.19, cites Lev 25:20.3 for "Remove mahapakh under the kaf. Remove note 'c'." Its
+reference text is at position 4 of the verse; position 3 holds the other atom of that maqaf
+compound. Ben's record 2020.12.22-2 cites the same atom as Lev 25:20.4.
+
+The record also leaves its column and line empty. Ben's 2020.12.22-2 gives Folio_71v 2:16 for the
+atom, which is page F071B, column 2, line 16, and the TEI and Claude's reading agree. MAM-basics'
+override copy of the change list, `uxlc/in/UXLC-misc-fixed/2026.10.19 - Changes.xml`, fills the
+empty fields with an estimate, 2:14; section 3 says why.
+
+## 3. Defects in the proposed UXLC 2.6 change list, noted 2026-08-12
+
+UXLC-utils commit
+[3435fc81](https://github.com/bdenckla/UXLC-utils/commit/3435fc8130642528cfc8a134a645bf4dc7af1141)
+recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on 2026-08-12, now
+`uxlc/in/UXLC-misc/2026.10.19 - Changes.xml`. No later copy has been checked.
+
+1. 2026.08.05-27 (Job 11:6.3) gives its book as `job`, lowercase.
+2. 2026.08.05-5 (Ex 20:3.2), 2026.08.05-10 (Lev 25:20.3) and 2026.08.05-25 (Job 34:20.4) give a
+   page but an empty column and line. MAM-basics' override copy fills each from the repository's
+   location estimator, so those three values are estimates, not readings of the manuscript.
+3. 2026.08.05-19 (2 Sam 5:21.1), Daniel Holman's, describes removing a maqaf, but its change text
+   equals its reference text, maqaf included, so the record proposes no change.
