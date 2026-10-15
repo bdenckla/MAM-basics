@@ -4,6 +4,7 @@ import html
 import json
 import re
 from functools import cache
+from urllib.parse import quote
 
 import mwparserfromhell
 
@@ -317,6 +318,41 @@ def word_comparison_table(comparison, sources):
     )
 
 
+def introduction_section_link(reference, sources):
+    """Link the unique cached section heading, without a live-page fetch."""
+    path = reference["path"]
+    heading = reference["heading"]
+    sources.resolve(
+        {
+            "source": "intro-raw",
+            "path": path,
+            "line": reference["heading_line"],
+            "quote": heading,
+        }
+    )
+    lines = (audit.ROOT / path).read_text(encoding="utf-8").splitlines()
+    if sum(line.strip("=") == heading for line in lines) != 1:
+        raise ValueError("Section link needs one exact cached heading")
+    manifest = json.loads(
+        (audit.ROOT / "in/mam-ws-intro/manifest.json").read_text(encoding="utf-8")
+    )["pages"][reference["page_key"]]
+    url = (
+        "https://he.wikisource.org/wiki/"
+        + quote(manifest["title"].replace(" ", "_"), safe="/:")
+        + "#"
+        + quote(heading.replace(" ", "_"), safe=":")
+    )
+    if url != reference["url"] or manifest["revid"] != reference["revision"]:
+        raise ValueError("Section link differs from the cached page and heading")
+    return (
+        '<p>Introduction section: <a href="'
+        + escaped(url)
+        + '">'
+        + prose(heading, (heading,))
+        + "</a></p>"
+    )
+
+
 def card(case, sources):
     for key in ("title", "issue", "decision", "panels"):
         if not case.get(key):
@@ -360,6 +396,11 @@ def card(case, sources):
     adjudication = (
         adjudication_comparison(case, sources) if case.get("adjudication") else ""
     )
+    section_link = (
+        introduction_section_link(case["introduction_section"], sources)
+        if case.get("introduction_section")
+        else ""
+    )
     issue = ""
     if case.get("issue_number"):
         number = case["issue_number"]
@@ -378,6 +419,7 @@ def card(case, sources):
             case.get("prose_quotes", ()),
         )
         + "</p></div>"
+        + section_link
         + membership
         + words
         + '<div class="comparison">'

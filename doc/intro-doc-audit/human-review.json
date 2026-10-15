@@ -187,7 +187,7 @@
         "translation": "MAM: הַקְרִ֜יב; Leningrad: הַקְרִ֜ב. The star marks MAM’s selected spelling."
       },
       {
-        "label": "MAM text, Numbers 9:7",
+        "label": "MAM body text, Numbers 9:7",
         "source": "note-target",
         "id": "Numbers 9:7/2/0",
         "quote": "הַקְרִ֜יב",
@@ -242,7 +242,7 @@
         "translation": "MAM: חָת֖וּם; Leningrad: חָתֻ֖ם."
       },
       {
-        "label": "MAM text, Deuteronomy 32:34",
+        "label": "MAM body text, Deuteronomy 32:34",
         "source": "note-target",
         "id": "Deuter 32:34/2/0",
         "quote": "חָת֖וּם",
@@ -327,7 +327,7 @@
     "decision": "The exact edit is =ל,ל1 → =ל1; the remaining note is unchanged. The original full note and translation remain visible, and this source correction has not been applied.",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Deuter 6:21/2/0",
         "text": "וַיֹּצִיאֵ֧נוּ"
@@ -383,7 +383,7 @@
         "text": "שֶׁשֱּׁזָפַ֖תְנִי"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Song of Songs 1:6/2/0",
         "text": "שֶׁשְּׁזָפַ֖תְנִי"
@@ -429,7 +429,7 @@
         "text": "וּֽלְבָרֲכ֗וֹ"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "2Samuel 8:10/2/0",
         "text": "וּֽלְבָרְﬞכ֗וֹ"
@@ -475,7 +475,7 @@
         "text": "וֲנִזְכַּרְתֶּ֗ם"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Numbers 10:9/2/1",
         "text": "וְנִזְכַּרְתֶּ֗ם"
@@ -521,7 +521,7 @@
         "text": "וַיְבָרֲכֵ֥נִי"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Genesis 30:27/2/0",
         "text": "וַיְבָרְﬞכֵ֥נִי"
@@ -796,13 +796,13 @@
     "covers": [
       "PROV-30-19"
     ],
-    "section": "discrepancies",
-    "title": "Proverbs 30:19 — the illustration drops a retained maqaf",
-    "issue": "The MAM illustration has עֲלֵ֫י צ֥וּר with a space; the MAM text has עֲלֵ֫י־צ֥וּר.",
-    "context": "The Introduction’s own Aleppo quotation has maqaf, agreeing with the doc-note’s =א attribution.",
+    "section": "questions",
+    "title": "Proverbs 30:19 — does the layout example follow printed editions?",
+    "issue": "The Introduction’s layout example has עֲלֵ֫י צ֥וּר with a space; MAM’s body text has עֲלֵ֫י־צ֥וּר with a maqaf.",
+    "context": "This chapter 2 example illustrates four units on four lines, alternating unindented and indented lines. The Introduction’s own Aleppo quotation has maqaf, agreeing with the doc-note’s =א attribution.",
     "panels": [
       {
-        "label": "Introduction, chapter 2 — MAM illustration",
+        "label": "Introduction, chapter 2 — four-unit layout example",
         "claim": "ch2:L968",
         "quote": "עֲלֵ֫י צ֥וּר",
         "kind": "scripture"
@@ -814,7 +814,7 @@
         "translation": "Aleppo: עֲלֵ֫י־צ֥וּר (with maqaf)."
       },
       {
-        "label": "MAM text, Proverbs 30:19",
+        "label": "MAM body text, Proverbs 30:19",
         "source": "note-target",
         "id": "Proverbs 30:19/2/0",
         "quote": "עֲלֵ֫י־צ֥וּר",
@@ -826,11 +826,27 @@
         "note": "Proverbs 30:19/2/0",
         "quote": "=א (במקף)\nדפוסים=עֲלֵ֫י צ֥וּר",
         "translation": "MAM agrees with Aleppo (with maqaf). Printed editions: עֲלֵ֫י צ֥וּר."
+      },
+      {
+        "label": "Introduction — what the example illustrates",
+        "claim": "ch2:L965",
+        "quote": "'''3. פסוקים בעלי ארבע יחידות או יותר:''' לעתים יחסית רחוקות יש פסוקים עוד יותר מורכבים, בעלי ארבע יחידות מובהקות או יותר. פסוק בעל ארבע יחידות (במבנה של \"א-א-ב-ב\" או \"א-ב-א-ב\") יוצג בארבע שורות: הראשונה בלי הזחה, השנייה לאחר הזחה רגילה, השלישית שוב בלי הזחה, והרביעית שוב לאחר הזחה רגילה.",
+        "translation": "3. Verses with four or more units: less commonly, more complex verses have four or more distinct units. A verse with four units (A–A–B–B or A–B–A–B) is presented on four lines: the first unindented, the second normally indented, the third unindented again, and the fourth normally indented again.",
+        "full_width": true
       }
     ],
-    "explanation": "The discrepancy is the illustrated MAM text, which instead uses the spaced text attributed to printed editions.",
-    "decision": "Reconcile the MAM illustration with the retained maqaf; these passages do not establish competing Aleppo quotations.",
-    "reading_forms": []
+    "decision": "Clarify whether this layout example intentionally uses the printed-edition form. If so, identify that source; if it is meant to reproduce MAM’s body text, reconcile the boundary.",
+    "reading_forms": [],
+    "introduction_section": {
+      "page_key": "ch2",
+      "path": "in/mam-ws-intro/ch2.mediawiki",
+      "heading_line": 915,
+      "heading": "עיצוב פסוקי אמ\"ת במהדורתנו: היישום בפועל",
+      "url": "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A4%D7%A8%D7%A7_%D7%91#%D7%A2%D7%99%D7%A6%D7%95%D7%91_%D7%A4%D7%A1%D7%95%D7%A7%D7%99_%D7%90%D7%9E%22%D7%AA_%D7%91%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%AA%D7%A0%D7%95:_%D7%94%D7%99%D7%99%D7%A9%D7%95%D7%9D_%D7%91%D7%A4%D7%95%D7%A2%D7%9C",
+      "revision": 3087893,
+      "anchor_basis": "MediaWiki heading fragment from the unique literal cached heading (spaces to underscores); no live rendered-anchor check."
+    },
+    "explanation": "The doc-note assigns the spaced form to printed editions, so an intentional printed-edition example is possible. The surrounding discussion compares manuscript and printed layouts, but presents this as the layout “in our edition”; it does not say that this example adopts a printed edition’s pointing. The source choice therefore remains unresolved."
   },
   {
     "id": "oleh-omission-count",
@@ -1411,8 +1427,8 @@
       "JOSH-14-7-SELECTION"
     ],
     "section": "discrepancies",
-    "title": "Joshua 14:7: preferred meteg and current MAM text",
-    "issue": "The Introduction prefers meteg on lamed, while MAM text lacks it and the note retains it as an uncertain Aleppo alternative.",
+    "title": "Joshua 14:7: preferred meteg and current MAM body text",
+    "issue": "The Introduction prefers meteg on lamed, while MAM body text lacks it and the note retains it as an uncertain Aleppo alternative.",
     "context": "",
     "panels": [
       {
@@ -1422,9 +1438,9 @@
         "translation": "Preferred Aleppo pointing: עִם־לְֽבָבִֽי, with meteg on lamed."
       },
       {
-        "label": "Joshua 14:7 note: agreement with MAM text",
+        "label": "Joshua 14:7 note: agreement with MAM body text",
         "quote": "=א?,ל (אין געיה)",
-        "translation": "MAM text has no meteg; this agrees with Leningrad and may agree with Aleppo.",
+        "translation": "MAM body text has no meteg; this agrees with Leningrad and may agree with Aleppo.",
         "note": "Joshua 14:7/2/0"
       },
       {
@@ -1435,7 +1451,7 @@
       }
     ],
     "explanation": "The starred Introduction quotation is the note’s uncertain alternative. The note describes ink beside the sheva dots under lamed without deciding whether it was intended as meteg.",
-    "decision": "Should the Introduction’s preferred pointing match MAM text without lamed meteg, leaving the meteg quotation as an uncertain Aleppo alternative?",
+    "decision": "Should the Introduction’s preferred pointing match MAM body text without lamed meteg, leaving the meteg quotation as an uncertain Aleppo alternative?",
     "reading_forms": [
       {
         "label": "Introduction’s preferred Aleppo pointing",
@@ -1444,7 +1460,7 @@
         "text": "עִם־לְֽבָבִֽי"
       },
       {
-        "label": "MAM text: no meteg on lamed",
+        "label": "MAM body text: no meteg on lamed",
         "source": "note-target",
         "id": "Joshua 14:7/2/0",
         "text": "עִם־לְבָבִֽי",
@@ -1570,7 +1586,7 @@
         "note": "Exodus 7:13/2/0"
       },
       {
-        "label": "MAM text at Exodus 7:13",
+        "label": "MAM body text at Exodus 7:13",
         "quote": "וַיֶּֽחֱזַק֙",
         "source": "note-target",
         "id": "Exodus 7:13/2/0",
@@ -1578,7 +1594,7 @@
         "kind": "scripture"
       }
     ],
-    "explanation": "The explanatory quotation has segol and pataḥ vowels under yod, with no meteg. MAM text has a segol vowel and meteg at that position, matching the mark described in the prose.",
+    "explanation": "The explanatory quotation has segol and pataḥ vowels under yod, with no meteg. MAM body text has a segol vowel and meteg at that position, matching the mark described in the prose.",
     "decision": "Should the extra pataḥ in the explanatory quotation be meteg?",
     "reading_forms": [
       {
@@ -1588,7 +1604,7 @@
         "text": "וַיֶַּחֱזַק֙"
       },
       {
-        "label": "MAM text: meteg on yod",
+        "label": "MAM body text: meteg on yod",
         "source": "note-target",
         "id": "Exodus 7:13/2/0",
         "text": "וַיֶּֽחֱזַק֙",
@@ -1647,7 +1663,7 @@
     "context": "",
     "panels": [
       {
-        "label": "Numbers 10:8 note: manuscripts agreeing with MAM text",
+        "label": "Numbers 10:8 note: manuscripts agreeing with MAM body text",
         "quote": "=ל1,ש,ו (געיה בצד\"י)",
         "translation": "MAM agrees with Firkovich B17, Sassoon 507, and the Washington Pentateuch: meteg on tsadi.",
         "note": "Numbers 10:8/2/0"
@@ -1659,11 +1675,11 @@
         "note": "Numbers 10:8/2/0"
       }
     ],
-    "explanation": "The opening agreement list includes Firkovich B17 among the manuscripts agreeing with MAM text. The later quotation assigns it the no-meteg pointing as well.",
+    "explanation": "The opening agreement list includes Firkovich B17 among the manuscripts agreeing with MAM body text. The later quotation assigns it the no-meteg pointing as well.",
     "decision": "Should Firkovich B17 be listed with meteg on tsadi or with no meteg?",
     "reading_forms": [
       {
-        "label": "MAM text: meteg on tsadi, attributed to Firkovich B17",
+        "label": "MAM body text: meteg on tsadi, attributed to Firkovich B17",
         "source": "note-target",
         "id": "Numbers 10:8/2/0",
         "text": "בַּחֲצֹֽצְר֑וֹת",
@@ -1688,7 +1704,7 @@
     "context": "",
     "panels": [
       {
-        "label": "Deuteronomy 1:33 note: manuscripts agreeing with MAM text",
+        "label": "Deuteronomy 1:33 note: manuscripts agreeing with MAM body text",
         "quote": "=ל-מ,ש,ש1,ק3,ו,ל3",
         "translation": "MAM agrees with the Lehmann manuscript, Sassoon 507, Sassoon 1053, Cairo 18, the Washington Pentateuch, and St. Petersburg EVR-II-B-10.",
         "note": "Deuter 1:33/2/0"
@@ -1700,11 +1716,11 @@
         "note": "Deuter 1:33/2/0"
       }
     ],
-    "explanation": "The opening agreement list includes Sassoon 1053 among the manuscripts agreeing with MAM text. The later quotation assigns it the no-meteg pointing as well.",
+    "explanation": "The opening agreement list includes Sassoon 1053 among the manuscripts agreeing with MAM body text. The later quotation assigns it the no-meteg pointing as well.",
     "decision": "Should Sassoon 1053 be listed with meteg on nun or with no meteg?",
     "reading_forms": [
       {
-        "label": "MAM text: meteg on nun, attributed to Sassoon 1053",
+        "label": "MAM body text: meteg on nun, attributed to Sassoon 1053",
         "source": "note-target",
         "id": "Deuter 1:33/2/0",
         "text": "לַחֲנֹֽתְכֶ֑ם",
@@ -1735,7 +1751,7 @@
         "translation": "Aleppo has לְמָח֢וֹל לִ֥י."
       },
       {
-        "label": "MAM text at Psalm 30:12",
+        "label": "MAM body text at Psalm 30:12",
         "quote": "לִ֥֫י",
         "source": "note-target",
         "id": "Psalms 30:12/2/0",
@@ -1749,11 +1765,11 @@
         "note": "Psalms 30:12/2/0"
       }
     ],
-    "explanation": "The Introduction and note agree on the Aleppo quotation with yored alone. MAM text has both yored and oleh marks; the explanatory label therefore identifies the wrong omission.",
+    "explanation": "The Introduction and note agree on the Aleppo quotation with yored alone. MAM body text has both yored and oleh marks; the explanatory label therefore identifies the wrong omission.",
     "decision": "Should the note say “omission of the oleh mark” instead of “omission of the revia mark”?",
     "reading_forms": [
       {
-        "label": "MAM text: yored and oleh marks",
+        "label": "MAM body text: yored and oleh marks",
         "source": "note-target",
         "id": "Psalms 30:12/2/0",
         "text": "לִ֥֫י",
@@ -1827,7 +1843,7 @@
     "context": "",
     "panels": [
       {
-        "label": "Psalm 53:6 note: attribution of MAM text",
+        "label": "Psalm 53:6 note: attribution of MAM body text",
         "quote": "=א?,ל?,ש1,ב1 ובדפוסים",
         "translation": "MAM agrees with Sassoon 1053, British Library Or. 2375, and selected printed editions; agreement with Aleppo and Leningrad is uncertain.",
         "note": "Psalms 53:6/2/0"
@@ -1839,7 +1855,7 @@
         "note": "Psalms 53:6/2/0"
       },
       {
-        "label": "MAM text at Psalm 53:6",
+        "label": "MAM body text at Psalm 53:6",
         "quote": "לֹא־הָ֢יָ֫ה פָ֥חַד",
         "source": "note-target",
         "id": "Psalms 53:6/2/0",
@@ -1858,7 +1874,7 @@
         "pointer": ""
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Psalms 53:6/2/0",
         "text": "לֹא־הָ֢יָ֫ה פָ֥חַד",
@@ -1935,7 +1951,7 @@
         "note": "Daniel 7:9/2/0"
       }
     ],
-    "explanation": "The unusual-spellings list and the current MAM text select the spelling without the first yod. The difficult-decisions list instead stars the Leningrad spelling with both yod letters.",
+    "explanation": "The unusual-spellings list and the current MAM body text select the spelling without the first yod. The difficult-decisions list instead stars the Leningrad spelling with both yod letters.",
     "decision": "Choose whether to move the decision-list star to the one-yod spelling, or document a change in MAM's selected spelling.",
     "reading_forms": [
       {
@@ -1951,7 +1967,7 @@
         "text": "שְׁבִבִ֣ין"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Daniel 7:9/2/0",
         "text": "שְׁבִבִ֣ין",
@@ -2050,7 +2066,7 @@
     "decision": "Add a decision-list entry for this verse, or remove the referral if this spelling is meant to stay outside that list.",
     "reading_forms": [
       {
-        "label": "Introduction: MAM text",
+        "label": "Introduction: selected MAM spelling",
         "source": "claim",
         "id": "ch4:L214",
         "text": "וְזִיוִי֙"
@@ -2252,7 +2268,7 @@
     "decision": "Add a decision-list entry for this verse, or remove the referral if this spelling is meant to stay outside that list.",
     "reading_forms": [
       {
-        "label": "Introduction: MAM text",
+        "label": "Introduction: selected MAM spelling",
         "source": "claim",
         "id": "ch4:L239",
         "text": "וּלְג֤וֹב"
@@ -2304,7 +2320,7 @@
     "decision": "Add a decision-list entry for this verse, or remove the referral if this spelling is meant to stay outside that list.",
     "reading_forms": [
       {
-        "label": "Introduction: MAM text",
+        "label": "Introduction: selected MAM spelling",
         "source": "claim",
         "id": "ch4:L240",
         "text": "שֵׁיזִ֣ב"
@@ -2356,7 +2372,7 @@
     "decision": "Add a decision-list entry for this verse, or remove the referral if this spelling is meant to stay outside that list.",
     "reading_forms": [
       {
-        "label": "Introduction: MAM text",
+        "label": "Introduction: selected MAM spelling",
         "source": "claim",
         "id": "ch4:L246",
         "text": "עָבְדָ֥ה"
@@ -2408,7 +2424,7 @@
     "decision": "Add a decision-list entry for this verse, or remove the referral if this spelling is meant to stay outside that list.",
     "reading_forms": [
       {
-        "label": "Introduction: MAM text",
+        "label": "Introduction: selected MAM spelling",
         "source": "claim",
         "id": "ch4:L252",
         "text": "הַגְּדֹלָ֔ה"
@@ -2444,7 +2460,7 @@
         "note": "Exodus 7:20/2/0"
       }
     ],
-    "explanation": "The possible Leningrad quotation has meteg followed by tevir. MAM text has merkha followed by tevir. The doc-note names the possible pair as gaʿya and tevir; the Introduction calls it gaʿya and merkha.",
+    "explanation": "The possible Leningrad quotation has meteg followed by tevir. MAM body text has merkha followed by tevir. The doc-note names the possible pair as gaʿya and tevir; the Introduction calls it gaʿya and merkha.",
     "decision": "Change the Introduction's first “merkha” to “tevir,” while keeping the uncertainty about the Leningrad reading.",
     "reading_forms": [
       {
@@ -2460,7 +2476,7 @@
         "text": "וַיֵּהָֽפְכ֛וּ"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Exodus 7:20/2/0",
         "text": "וַיֵּהָ֥פְכ֛וּ",
@@ -2508,7 +2524,7 @@
         "text": "מִשְׁכַּן־קֹ֛רֶח"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Numbers 16:27/2/0",
         "text": "מִשְׁכַּן־קֹ֛רַח",
@@ -2556,7 +2572,7 @@
         "text": "מִן־הַדֶ֔רֶךְ"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Numbers 22:23/2/0",
         "text": "מִן־הַדֶּ֔רֶךְ",
@@ -2642,7 +2658,7 @@
         "note": "Isaiah 10:15/2/0"
       }
     ],
-    "explanation": "The table's quoted letters are mem–resh–yod–mem–vav; the doc-note's uncertain quotation has mem–resh–mem–yod–vav. The earlier summary also brackets the second-yod position, while the detailed explanation names the first. MAM text has both yod letters.",
+    "explanation": "The table's quoted letters are mem–resh–yod–mem–vav; the doc-note's uncertain quotation has mem–resh–mem–yod–vav. The earlier summary also brackets the second-yod position, while the detailed explanation names the first. MAM body text has both yod letters.",
     "decision": "Choose whether to correct the table and bracketed summary to mark the first yod as uncertain, following the detailed explanation, or revise the explanation if the second yod was intended.",
     "reading_forms": [
       {
@@ -2660,7 +2676,7 @@
         "annotation": "First yod uncertain."
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Isaiah 10:15/2/0",
         "text": "מְרִימָ֔יו",
@@ -2702,7 +2718,7 @@
     "decision": "If MAM's small resh is intended, change the note's selection description to “small resh” and consider changing “no large letter” to “ordinary resh” for clarity.",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "2Samuel 21:19/2/0",
         "text": "בֶּן־יַעְרֵ֨י",
@@ -2744,7 +2760,7 @@
     "decision": "If MAM's small final nun is intended, change the note's opening size description from “large” to “small.”",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Jeremiah 39:13/2/0",
         "text": "וּנְבֽוּשַׁזְבָּן֙",
@@ -2776,7 +2792,7 @@
         "translation": "קַן־צִפּ֣וֹר, with large qof, in Yemenite manuscripts and, unexpectedly, in the Leningrad Codex's final masorah."
       },
       {
-        "label": "Introduction, chapter 3: MAM text",
+        "label": "Introduction, chapter 3: selected MAM letter size",
         "claim": "ch3:L303",
         "quote": "[קַן־צִפּ֣וֹר]*=ל",
         "translation": "MAM selects קַן־צִפּ֣וֹר, agreeing with the Leningrad Codex."
@@ -2786,7 +2802,7 @@
     "decision": "Change the row's category marker from small to large if the specimen and the accompanying table express the intended size tradition.",
     "reading_forms": [
       {
-        "label": "Introduction: MAM text",
+        "label": "Introduction: selected MAM form",
         "source": "claim",
         "id": "ch3:L303",
         "text": "קַן־צִפּ֣וֹר",
@@ -2903,7 +2919,7 @@
         "note": "Isaiah 59:19/2/0"
       }
     ],
-    "explanation": "The Introduction assigns the maqaf compound to the other named manuscripts and printed editions. The doc-note instead assigns those sources the spaced MAM text with merkha and tipḥa.",
+    "explanation": "The Introduction assigns the maqaf compound to the other named manuscripts and printed editions. The doc-note instead assigns those sources the spaced MAM body text with merkha and tipḥa.",
     "decision": "Choose whether to change the Introduction's attribution to the spaced text, following the doc-note, or revise the doc-note's source attribution.",
     "reading_forms": [
       {
@@ -2913,7 +2929,7 @@
         "text": "ר֥וּחַ־יְהוָ֖ה"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Isaiah 59:19/2/0",
         "text": "ר֥וּחַ יְהֹוָ֖ה",
@@ -2962,7 +2978,7 @@
     "decision": "Confirm which HaKeter edition or version the passage means, then correct either the Introduction's claim of agreement or the note's tevir attribution.",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Isaiah 55:5/2/0",
         "text": "וְלִקְד֥וֹשׁ",
@@ -3007,7 +3023,7 @@
         "note": "Song of Songs 2:17/2/0"
       }
     ],
-    "explanation": "MAM text has qadma, U+05A8. The quoted Aleppo compound lacks that mark. The Introduction and the doc-note's final sentence call it qadma; only the doc-note's parenthesis calls it pashta.",
+    "explanation": "MAM body text has qadma, U+05A8. The quoted Aleppo compound lacks that mark. The Introduction and the doc-note's final sentence call it qadma; only the doc-note's parenthesis calls it pashta.",
     "decision": "Change “pashta” to “qadma” in the note's parenthesis.",
     "reading_forms": [
       {
@@ -3025,7 +3041,7 @@
         "annotation": "No accent."
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Song of Songs 2:17/2/0",
         "text": "דְּמֵה־לְךָ֨",
@@ -3091,7 +3107,7 @@
         "kind": "scripture"
       },
       {
-        "label": "MAM text: psalm title",
+        "label": "MAM body text: psalm title",
         "quote": "מִזְמ֗וֹר לְדָ֫וִ֥ד",
         "source": "note-target",
         "id": "Psalms 15:1/2/0",
@@ -3099,7 +3115,7 @@
         "kind": "scripture"
       },
       {
-        "label": "MAM text: divine name following the title",
+        "label": "MAM body text: divine name with deḥi only at the word’s start",
         "quote": "יְ֭הֹוָה",
         "source": "note-target",
         "id": "Psalms 15:1/2/2",
@@ -3107,7 +3123,7 @@
         "kind": "scripture"
       }
     ],
-    "explanation": "MAM text includes the four-letter divine name after the title. The Introduction runs directly from לְדָ֫וִ֥ד to מִי־יָג֣וּר, without indicating an omission. Its gap boundary otherwise agrees with the doc-note.",
+    "explanation": "MAM body text includes the four-letter divine name after the title. The Introduction runs directly from לְדָ֫וִ֥ד to מִי־יָג֣וּר, without indicating an omission. Its gap boundary otherwise agrees with the doc-note.",
     "decision": "Insert the divine name in the Introduction quotation, or add an ellipsis if the shorter quotation is intentional.",
     "reading_forms": [
       {
@@ -3117,7 +3133,7 @@
         "text": "מִזְמ֗וֹר לְדָ֫וִ֥ד מִי־יָג֣וּר בְּאָהֳלֶ֑ךָ"
       },
       {
-        "label": "MAM text: divine name following the title",
+        "label": "MAM body text: divine name with deḥi only at the word’s start",
         "source": "note-target",
         "id": "Psalms 15:1/2/2",
         "text": "יְ֭הֹוָה",
@@ -3133,7 +3149,7 @@
     "section": "questions",
     "title": "Numbers 22:5 — Sapir or Cassuto's lists for the vav-inclusive spelling?",
     "issue": "The Introduction credits the implied full-vav spelling to Sapir, while the verse note credits it to Cassuto's lists.",
-    "context": "MAM text omits vav; the discrepancy concerns attribution of the alternative spelling.",
+    "context": "MAM body text omits vav; the discrepancy concerns attribution of the alternative spelling.",
     "panels": [
       {
         "label": "Introduction, chapter 3: Special notes on Torah",
@@ -3170,7 +3186,7 @@
         "text": "בְּע֗וֹר"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Numbers 22:5/2/0",
         "text": "בְּעֹ֗ר",
@@ -3219,7 +3235,7 @@
         "text": "וְנָהָרּ֙"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Genesis 2:10/2/0",
         "text": "וְנָהָר֙",
@@ -3342,7 +3358,7 @@
         "translation": "Aleppo Codex: הִרְכַּ֥בְתָּֽ."
       }
     ],
-    "explanation": "The quoted word has merkha followed by meteg, but no maqaf. MAM text also has a space after this word. The local note concerns another word and supplies no Aleppo quotation for this boundary.",
+    "explanation": "The quoted word has merkha followed by meteg, but no maqaf. MAM body text also has a space after this word. The local note concerns another word and supplies no Aleppo quotation for this boundary.",
     "decision": "If maqaf is essential to the list’s scope, identify the basis for including this verse.",
     "reading_forms": [
       {
@@ -3382,7 +3398,7 @@
         "translation": "Aleppo Codex: כּוֹנַ֥נְתָּֽ."
       }
     ],
-    "explanation": "The example has merkha followed by meteg, but no maqaf. MAM text has a space at this boundary.",
+    "explanation": "The example has merkha followed by meteg, but no maqaf. MAM body text has a space at this boundary.",
     "decision": "Retain it under a broader heading, or supply the evidence that makes it a maqaf example.",
     "reading_forms": [
       {
@@ -3582,8 +3598,8 @@
         "kind": "scripture"
       }
     ],
-    "explanation": "MAM text has a grey maqaf at this boundary, in agreement with the stated policy; the layout illustration has a space. The separate manuscript discussion explicitly describes Aleppo without maqaf.",
-    "decision": "If the layout illustration represents MAM text, include the grey maqaf; if it deliberately gives the manuscript quotation, label that distinction.",
+    "explanation": "MAM body text has a grey maqaf at this boundary, in agreement with the stated policy; the layout illustration has a space. The separate manuscript discussion explicitly describes Aleppo without maqaf.",
+    "decision": "If the layout illustration represents MAM body text, include the grey maqaf; if it deliberately gives the manuscript quotation, label that distinction.",
     "reading_forms": [
       {
         "label": "Introduction’s layout illustration",
@@ -3718,7 +3734,7 @@
         "text": "אֶרְחָמְךָ֖"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text: form with qamats qatan on ḥet",
         "source": "note-target",
         "id": "Psalms 18:2/2/0",
         "text": "אֶרְחׇמְךָ֖",
@@ -3881,7 +3897,7 @@
     "section": "questions",
     "title": "Daniel 2:41 — both interpretations remain possible",
     "issue": "Should the two readings be labelled separately as the manuscript interpretation and the digital transcription’s still-possible alternative?",
-    "context": "The two proposed quotations lack maqaf and differ between meteg and merkha; MAM text has maqaf.",
+    "context": "The two proposed quotations lack maqaf and differ between meteg and merkha; MAM body text has maqaf.",
     "panels": [
       {
         "label": "Introduction, chapter 4 — possible Leningrad readings",
@@ -3928,7 +3944,7 @@
         "text": "דִ֥י פַרְזְלָ֖א"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Daniel 2:41/2/1",
         "text": "דִֽי־פַרְזְלָ֖א",
@@ -3963,7 +3979,7 @@
     "decision": "State whether the candidate concerns the manuscript, its transcription, or both. Retain the transcription qualification until a recorded manuscript reading supports removing it.",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Daniel 5:3/2/0",
         "text": "מִן־הֵ֥יכְלָ֛א",
@@ -4005,7 +4021,7 @@
     "decision": "Keep the source qualification, or identify the attributed manuscript reading that justifies a direct Leningrad assignment.",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Nehemiah 12:47/2/0",
         "text": "נֹ֥תְנִ֛ים",
@@ -4077,7 +4093,7 @@
         "translation": "Leningrad: יִזְל֣וּ (missing dagesh)."
       }
     ],
-    "explanation": "The Leningrad quotation lacks dagesh on zayin. MAM text has that dagesh on zayin. The note says only ‘missing dagesh,’ while the Introduction names lamed.",
+    "explanation": "The Leningrad quotation lacks dagesh on zayin. MAM body text has that dagesh on zayin. The note says only ‘missing dagesh,’ while the Introduction names lamed.",
     "decision": "If the compared words are correct, name zayin in the Introduction; if lamed is intended, supply the corresponding quotation.",
     "reading_forms": [
       {
@@ -4087,7 +4103,7 @@
         "text": "יִזְל֣וּ"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Song of Songs 4:16/2/0",
         "text": "יִזְּל֣וּ",
@@ -4163,7 +4179,7 @@
         "translation": "The first item in each line is the spelling that accords with the Masorah and occurs in our edition, followed by a star."
       },
       {
-        "label": "MAM text at Nehemiah 9:37",
+        "label": "MAM body text at Nehemiah 9:37",
         "source": "note-target",
         "id": "Nehemiah 9:37/2/0",
         "pointer": "",
@@ -4181,7 +4197,7 @@
         "text": "גְּ֠וִיֹּתֵינוּ"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Nehemiah 9:37/2/0",
         "pointer": "",
@@ -4272,7 +4288,7 @@
     "decision": "Should the Introduction retain the specific Masorah Parva/Masorah Gedolah explanation with a precise supporting citation, or use the general attribution in the verse note?",
     "reading_forms": [
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "2Kings 15:25/2/0",
         "pointer": "",
@@ -4431,7 +4447,7 @@
         ]
       },
       {
-        "label": "MAM text at Deuteronomy 12:20",
+        "label": "MAM body text at Deuteronomy 12:20",
         "source": "note-target",
         "id": "Deuter 12:20/2/0",
         "pointer": "",
@@ -4449,7 +4465,7 @@
         ]
       },
       {
-        "label": "MAM text at Deuteronomy 28:49",
+        "label": "MAM body text at Deuteronomy 28:49",
         "source": "note-target",
         "id": "Deuter 28:49/2/0",
         "pointer": "",
@@ -4467,7 +4483,7 @@
         "text": "גְּבֻֽלְךָ֮"
       },
       {
-        "label": "MAM text: complete compound",
+        "label": "MAM body text: complete compound",
         "source": "note-target",
         "id": "Deuter 12:20/2/0",
         "pointer": "",
@@ -4480,7 +4496,7 @@
         "text": "מֵרָחֹק֙"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Deuter 28:49/2/0",
         "pointer": "",
@@ -4694,7 +4710,7 @@
     ],
     "section": "questions",
     "title": "Psalm 77:8, Ruth 3:13, and Esther 1:6: what else should a letter-size example include?",
-    "issue": "The examples agree with MAM's selected letter sizes but omit meteg or legarmeh marks present in the corresponding MAM text.",
+    "issue": "The examples agree with MAM's selected letter sizes but omit meteg or legarmeh marks present in the corresponding MAM body text.",
     "context": "Chapter 5 defines the star by the letter-size choice.",
     "panels": [
       {
@@ -4710,7 +4726,7 @@
         "kind": "scripture"
       },
       {
-        "label": "MAM text: Psalm 77:8, initial meteg",
+        "label": "MAM body text: Psalm 77:8, initial meteg; deḥi only at the word’s start",
         "source": "note-target",
         "id": "Psalms 77:8/2/0",
         "pointer": "/tmpl_params/1",
@@ -4724,7 +4740,7 @@
         "kind": "scripture"
       },
       {
-        "label": "MAM text: Ruth 3:13, legarmeh",
+        "label": "MAM body text: Ruth 3:13, legarmeh",
         "source": "note-target",
         "id": "Ruth 3:13/2/0",
         "pointer": "/tmpl_params/2",
@@ -4738,7 +4754,7 @@
         "kind": "scripture"
       },
       {
-        "label": "MAM text: Esther 1:6, legarmeh",
+        "label": "MAM body text: Esther 1:6, legarmeh",
         "source": "note-target",
         "id": "Esther 1:6/2/0",
         "pointer": "/tmpl_params/2",
@@ -4756,21 +4772,21 @@
         "text": "הַ֭לְעוֹלָמִים"
       },
       {
-        "label": "MAM text: Psalm 77:8",
+        "label": "MAM body text: Psalm 77:8, deḥi only at the word’s start",
         "source": "note-target",
         "id": "Psalms 77:8/2/0",
         "pointer": "/tmpl_params/1",
         "text": "הַֽ֭לְעוֹלָמִים"
       },
       {
-        "label": "MAM text: Ruth 3:13",
+        "label": "MAM body text: Ruth 3:13",
         "source": "note-target",
         "id": "Ruth 3:13/2/0",
         "pointer": "/tmpl_params/2",
         "text": "לִ֣ינִי׀"
       },
       {
-        "label": "MAM text: Esther 1:6",
+        "label": "MAM body text: Esther 1:6",
         "source": "note-target",
         "id": "Esther 1:6/2/0",
         "pointer": "/tmpl_params/2",
@@ -4795,7 +4811,7 @@
         "translation": "The Leningrad Codex has וַיֶּחֱזַק֙."
       },
       {
-        "label": "MAM text at Exodus 7:13",
+        "label": "MAM body text at Exodus 7:13",
         "source": "note-target",
         "id": "Exodus 7:13/2/0",
         "pointer": "",
@@ -4825,7 +4841,7 @@
         "text": "וַיֶּחֱזַק֙"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Exodus 7:13/2/0",
         "pointer": "",
@@ -4975,7 +4991,7 @@
         "text": "לִֽיקֲּהַ֫ת־אֵ֥ם"
       },
       {
-        "label": "MAM text",
+        "label": "MAM body text",
         "source": "note-target",
         "id": "Proverbs 30:17/2/1",
         "text": "לִֽיקְּהַ֫ת־אֵ֥ם"
@@ -5087,7 +5103,7 @@
     "decision": "Should the list retain Wickes's entries and explicitly identify the differences from current MAM, or be recast as a list of MAM passages with its historical source discussed separately?",
     "reading_forms": [
       {
-        "label": "MAM text: 1 Samuel 11:9",
+        "label": "MAM body text: 1 Samuel 11:9",
         "source": "verse-parts",
         "id": "1Samuel 11:9",
         "text": "לַמַּלְאָכִ֣ים הַבָּאִ֗ים",
@@ -5100,7 +5116,7 @@
         ]
       },
       {
-        "label": "MAM text: 1 Samuel 11:12",
+        "label": "MAM body text: 1 Samuel 11:12",
         "source": "verse-parts",
         "id": "1Samuel 11:12",
         "text": "מִ֣י הָאֹמֵ֔ר",
@@ -5113,7 +5129,7 @@
         ]
       },
       {
-        "label": "MAM text: Zechariah 10:12",
+        "label": "MAM body text: Zechariah 10:12",
         "source": "verse-parts",
         "id": "Zechariah 10:12",
         "text": "וּבִשְׁמ֖וֹ יִתְהַלָּ֑כוּ",
@@ -5126,7 +5142,7 @@
         ]
       },
       {
-        "label": "MAM text: 1 Chronicles 18:10, qere excerpt",
+        "label": "MAM body text: 1 Chronicles 18:10, qere excerpt",
         "source": "verse-parts",
         "id": "1Chronicles 18:10",
         "text": "לִשְׁאׇל־ל֨וֹ לְשָׁל֜וֹם",
@@ -5411,7 +5427,7 @@
         "label": "Doc-note at Psalm 27:14",
         "note": "Psalms 27:14/2/0",
         "quote": "=א (מקום ה\"עולה\" באות יו\"ד כשיטתו)",
-        "translation": "The Aleppo Codex agrees with MAM text: the oleh mark is on the yod, in accordance with its practice."
+        "translation": "The Aleppo Codex agrees with MAM body text: the oleh mark is on the yod, in accordance with its practice."
       }
     ],
     "explanation": "The printed reference and the note identify verse 14. The discrepancy is in the encoded destination, rather than in the claim about the oleh mark.",
@@ -5600,7 +5616,7 @@
         "label": "Doc-note at Proverbs 25:20",
         "note": "Proverbs 25:20/2/0",
         "quote": "=א ומ\"ש (מקף בתיבת משרת)",
-        "translation": "The Aleppo Codex and Minḥat Shay agree with MAM text: maqaf at a word bearing a conjunctive accent."
+        "translation": "The Aleppo Codex and Minḥat Shay agree with MAM body text: maqaf at a word bearing a conjunctive accent."
       }
     ],
     "explanation": "The note belongs to 25:20 and discusses the same maqaf. The target reverses the displayed chapter and verse.",
@@ -5874,7 +5890,7 @@
         "label": "Doc-note at Deuteronomy 32:18",
         "note": "Deuter 32:18/2/0",
         "quote": "=ק3,ל-קטנות ומ\"ש (אות יו\"ד קטנה)",
-        "translation": "Cairo 18, the Leningrad Codex's list of small letters, and Minḥat Shay support the small yod in MAM text."
+        "translation": "Cairo 18, the Leningrad Codex's list of small letters, and Minḥat Shay support the small yod in MAM body text."
       }
     ],
     "explanation": "The label and the small-letter example identify 32:18. The encoded chapter is 33.",
@@ -5944,7 +5960,7 @@
     "section": "discrepancies",
     "title": "Numbers 10:29 and 10:35: two legarmeh entries link to chapter 20",
     "issue": "Two entries in the Introduction's legarmeh list print chapter 10 and encode chapter 10 verse fragments, but both select the chapter 20 page.",
-    "context": "Both intended entries concern munaḥ legarmeh before revia in MAM text.",
+    "context": "Both intended entries concern munaḥ legarmeh before revia in MAM body text.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Paseq and legarmeh, first entry",
@@ -5971,7 +5987,7 @@
     "section": "discrepancies",
     "title": "2 Samuel 15:30: the legarmeh entry points to verse 2",
     "issue": "The Introduction's legarmeh list prints 2 Samuel 15:30 but links to 15:2.",
-    "context": "The intended entry concerns munaḥ legarmeh before revia in MAM text.",
+    "context": "The intended entry concerns munaḥ legarmeh before revia in MAM body text.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Paseq and legarmeh",
@@ -5993,7 +6009,7 @@
     "section": "discrepancies",
     "title": "Ruth 3:3 and 3:13: the legarmeh entries link to Song of Songs",
     "issue": "Two references under the Introduction's Ruth heading use Song of Songs as their target book.",
-    "context": "Both entries concern munaḥ legarmeh before revia in MAM text.",
+    "context": "Both entries concern munaḥ legarmeh before revia in MAM body text.",
     "panels": [
       {
         "label": "Introduction, chapter 2: Paseq and legarmeh, Ruth entries",
@@ -6393,7 +6409,7 @@
     "decision": "Keep the manuscript attribution and vowel function unresolved. The edition form alone does not establish a list omission or a morphological exclusion.",
     "panels": [
       {
-        "label": "MAM text, 2 Samuel 6:5",
+        "label": "MAM body text, 2 Samuel 6:5",
         "source": "verse",
         "id": "2Samuel 6:5",
         "kind": "scripture",

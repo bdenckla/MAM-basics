@@ -3,8 +3,8 @@
   "purpose": "Presentation coverage and exact-quotation verification. User adjudications and unapplied proposals are recorded separately; rendering does not establish semantic consistency.",
   "readable_cases": 152,
   "sections": {
-    "discrepancies": 90,
-    "questions": 55,
+    "discrepancies": 89,
+    "questions": 56,
     "scope": 3,
     "tracked": 4
   },
@@ -25,7 +25,7 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 663,
+  "literal_passages_checked": 665,
   "proposed_quotations_checked": 10,
   "user_adjudicated_comparisons": 10,
   "reviewed_cases": [

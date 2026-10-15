@@ -4,7 +4,7 @@ Open [review.html](review.html) for the readable comparisons. This appendix reta
 the technical inventory, source versions, coverage limits and supporting evidence.
 
 The presentation is maintained in [human-review.json](human-review.json).
-It contains 152 concrete comparisons: 90 discrepancies, 55 interpretation or source
+It contains 152 concrete comparisons: 89 discrepancies, 56 interpretation or source
 questions, three resolved vowel-function comparisons, and four verse comparisons
 for the three tracked issues. These are
 presentation entries, not 137 independent manuscript findings. Paired verses and
@@ -17,15 +17,15 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 663 source passages against literal stored strings,
+The renderer validates 665 source passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison and the new source/function examples.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
-displayed as current MAM text, not as invented doc-notes. Link syntax and formatting
+displayed as current MAM body text, not as invented doc-notes. Link syntax and formatting
 are hidden for readability while captured Hebrew codepoints remain unchanged.
 The report addresses an expert reader: it uses ketiv/qere directly and translates
 explanatory Hebrew prose while retaining cited Scripture in Hebrew. Scripture-only
-panels have no translation; lexical glosses are omitted. MAM text, MAM ketiv and
+panels have no translation; lexical glosses are omitted. MAM body text, MAM ketiv and
 MAM qere labels identify the actual selected source rather than treating “reading”
 as qere. Each comparison and remaining question precedes its source quotations in
 one block. Raw-file and JSON “Source passage” links are omitted from the reader page;
@@ -506,3 +506,11 @@ It resolves a contradiction within the Introduction; no doc-note exists at that 
 Numbers 10:9 belongs in Reviewed while retaining its unresolved phonetic question. All
 152 cases and the Reviewed wrapper start collapsed; stable anchors, source quotations
 and prior decisions are retained. No persistence or tracking system was added.
+
+The 2026-10-15 Proverbs 30:19 wording review names the Introduction’s layout example
+and MAM body text directly, and removes the redundant discrepancy sentence. Context
+review leaves intentional use of the printed-edition form unresolved, so the case is
+unevaluated under Questions. The section link is derived from the unique cached
+heading at chapter 2 line 915; its live rendered anchor was not checked. Source and
+wording details are retained in report-prose-revision.json. Other MAM body-text labels
+identify their selected source form, including the deḥi and qamats-qatan forms.
