@@ -1532,7 +1532,7 @@
     "stopc": 16,
     "stopv": 3,
     "stopp": 14,
-    "note": null,
+    "note": "column 1 of 1; the song at its top is long lines of this one column, spaced to look vaguely like 3 columns",
     "start_word_count": 0,
     "stop_word_count": 237,
     "whole_start_verse_atom_count": 7,

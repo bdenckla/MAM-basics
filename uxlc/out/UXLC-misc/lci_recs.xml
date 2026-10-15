@@ -47,7 +47,7 @@
         <type-count col-name="stopc" integer="978" none="4" />
         <type-count col-name="stopv" integer="978" none="4" />
         <type-count col-name="stopp" integer="978" none="4" />
-        <type-count col-name="note" none="942" string="40" />
+        <type-count col-name="note" none="941" string="41" />
       </type-counts>
       <bkid-val-counts>
         <bkid-val-count bkid="Genesis" count="61" />
@@ -1306,7 +1306,7 @@
       <stopc>16</stopc>
       <stopv>3</stopv>
       <stopp>14</stopp>
-      <note />
+      <note>column 1 of 1; the song at its top is long lines of this one column, spaced to look vaguely like 3 columns</note>
     </lci_rec>
     <lci_rec>
       <page>041A</page>
