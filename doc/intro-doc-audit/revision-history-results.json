@@ -272,6 +272,31 @@
       "case": "ALL-HATAF-SAM-6-5",
       "classification": "history-accounted-vowel-function-and-source-unresolved",
       "result": "history-batch7-results.json"
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-14",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-20",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "HATAF-EZEKIEL-SOURCE",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "tracked-ezekiel-meteg",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "AMOS-MISSING-PAGES",
+      "classification": "insufficient-history",
+      "result": "history-batch8-results.json"
     }
   ]
 }

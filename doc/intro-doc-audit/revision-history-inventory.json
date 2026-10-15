@@ -19,8 +19,8 @@
     "omission-present-when-Genesis-numeric-count-assigned": 1,
     "established-staleness": 7,
     "established-count-correction-with-stale-chapter2-summary": 1,
-    "established-staleness-followed-by-post-cache-correction": 1,
-    "pending": 40,
+    "established-staleness-followed-by-post-cache-correction": 4,
+    "pending": 35,
     "not-explained-by-later-canonical-note-change-origin-undated": 1,
     "defect-present-when-note-added": 1,
     "ambiguity-present-when-alternative-added": 1,
@@ -29,9 +29,10 @@
     "discrepancy-at-first-observed-Introduction-entry-origin-bounded": 1,
     "wrong-description-present-when-added": 2,
     "wrong-locator-present-when-note-added": 1,
+    "insufficient-history": 1,
     "dated-note-expansion-with-partial-appendix-update": 1,
     "history-accounted-attribution-supported-by-earlier-note": 1,
-    "history-accounted-specific-source-support-absent": 4,
+    "history-accounted-specific-source-support-absent": 5,
     "shared-terminology-question-from-first-canonical-note": 1,
     "insufficient-history-to-resolve-manuscript-attribution": 1,
     "history-accounted-manuscript-interpretation-unresolved": 2,
@@ -732,8 +733,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness-followed-by-post-cache-correction",
+      "history_result": "history-batch8-results.json",
       "first_batch": false
     },
     {
@@ -758,8 +759,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness-followed-by-post-cache-correction",
+      "history_result": "history-batch8-results.json",
       "first_batch": false
     },
     {
@@ -784,8 +785,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "established-staleness-followed-by-post-cache-correction",
+      "history_result": "history-batch8-results.json",
       "first_batch": false
     },
     {
@@ -1952,8 +1953,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history",
+      "history_result": "history-batch8-results.json",
       "first_batch": false
     },
     {
@@ -3130,8 +3131,8 @@
       ],
       "additional_chapter_route_refs": [],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "history-accounted-specific-source-support-absent",
+      "history_result": "history-batch8-results.json",
       "first_batch": false
     },
     {

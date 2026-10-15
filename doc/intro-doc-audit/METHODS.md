@@ -673,3 +673,17 @@ labels that parent as a pinned repository cache rather than an API download.
 At this checkpoint 54/94 histories are recorded and 40 remain pending. Prior
 quotations, reader categories and all twelve Ben decisions remain unchanged.
 
+The [eighth history batch](history-batch8-results.json) accounts for five cases
+using 74/74 canonical chapter contents. Three already tracked Ezekiel entries
+became stale after the June 2024 dagesh corrections and March 2026 meteg correction.
+The exact later Introduction edits are 3088859 for both dagesh entries and 3088685
+for the meteg entry. These later corrections supplement the preserved audit
+rather than updating its frozen source inputs.
+
+The Ezekiel 17:17 attribution still lacks specific Leningrad support in the local
+notes; a form occurring in both manuscripts remains possible. Amos's three-page
+versus four-page count is already different in the inspected older material.
+Neither the physical counting unit nor the correct count is settled by history.
+The [literal evidence](history-batch8-sources.json) preserves those distinctions.
+At this checkpoint 59/94 histories are recorded and 35 remain pending. The
+original reader categories, quotations and twelve Ben decisions are unchanged.
