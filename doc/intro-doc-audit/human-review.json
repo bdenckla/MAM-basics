@@ -168,7 +168,24 @@
     "explanation": "",
     "decision": "The unchanged cached quotation and Ben’s proposed correction are shown below. This source correction has not been applied; the research note records his observations, the recent restoration and the copying hypothesis.",
     "reading_forms": [],
-    "adjudication": "JER-31-37-BEN-20261014"
+    "adjudication": "JER-31-37-BEN-20261014",
+    "revision_history": {
+      "summary": "The first canonical MAM note in November 2015 already has U+05BD and ḥolam, while selected body text has etnaḥta throughout the 25 MAM revisions. The October 2026 restoration adds the missing atom but retains those marks. The Introduction has its etnaḥta/no-ḥolam example by February 2023. The earlier draft origin and Ben’s copying hypothesis remain unestablished; the February spacing edit does not date the example’s creation.",
+      "links": [
+        {
+          "label": "First canonical MAM note",
+          "url": "https://he.wikisource.org/w/index.php?diff=658312&oldid=407875"
+        },
+        {
+          "label": "Introduction example by February 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2698334"
+        },
+        {
+          "label": "Recent restoration",
+          "url": "https://he.wikisource.org/w/index.php?diff=3088451&oldid=2988015"
+        }
+      ]
+    }
   },
   {
     "id": "numbers-yod-label",
@@ -369,7 +386,20 @@
       "=ל,ל1",
       "=ל1"
     ],
-    "adjudication": "DEUT-6-21-BEN-20261014"
+    "adjudication": "DEUT-6-21-BEN-20261014",
+    "revision_history": {
+      "summary": "The Introduction’s spelling contrast is present in the adjacent 31 December 2013 entry, and the original canonical MAM note agrees with it. On 19 October 2023 the note’s expanded agreement list adds bare Leningrad while preserving its plene-vav alternative and concluding statement. The conflict is present in that list expansion; the selected spelling does not change. Ben’s approved correction remains unchanged.",
+      "links": [
+        {
+          "label": "Introduction entry",
+          "url": "https://he.wikisource.org/w/index.php?diff=520558&oldid=520551"
+        },
+        {
+          "label": "Conflicting list expansion",
+          "url": "https://he.wikisource.org/w/index.php?diff=2810192&oldid=2759383"
+        }
+      ]
+    }
   },
   {
     "id": "ALL-HATAF-SONG-1-6",
@@ -415,7 +445,24 @@
         "text": "שֶׁשְּׁזָפַ֖תְנִי"
       }
     ],
-    "adjudication": "SONG-1-6-BEN-20261014"
+    "adjudication": "SONG-1-6-BEN-20261014",
+    "revision_history": {
+      "summary": "The current six-item list was added on 1 March 2023 with Song 1:6 already absent. The chapter note has recorded Leningrad’s shin ḥataf segol since the 2016 MAM import; the 2023 operator and wording edits leave that reading unchanged. An older three-item Aleppo-specific list has a narrower scope. Ben’s approved addition remains unchanged.",
+      "links": [
+        {
+          "label": "Six-item list added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2706336&oldid=2706335"
+        },
+        {
+          "label": "Earlier canonical MAM note",
+          "url": "https://he.wikisource.org/w/index.php?diff=671300&oldid=408473"
+        },
+        {
+          "label": "Operator edit before list creation",
+          "url": "https://he.wikisource.org/w/index.php?diff=2705674&oldid=1379872"
+        }
+      ]
+    }
   },
   {
     "id": "ALL-HATAF-SAM-8-10",
@@ -4903,7 +4950,24 @@
         "id": "ch4:L113",
         "text": "וְלִנְט֖וֹעַ"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The specific Masorah Parva wording is unchanged in the observed March 2023 and pinned 2026 Introduction passages. The 25 canonical MAM-note revisions name the Aleppo Masorah generally, with later discussion but no identified short marginal note. That broader attribution is compatible with the Introduction. The supporting Masorah Parva note or an explicit scholarly attribution still needs identification.",
+      "links": [
+        {
+          "label": "Introduction in March 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707401"
+        },
+        {
+          "label": "Expanded chapter discussion",
+          "url": "https://he.wikisource.org/w/index.php?diff=673934&oldid=658312"
+        },
+        {
+          "label": "Later clarification",
+          "url": "https://he.wikisource.org/w/index.php?diff=1289329&oldid=1288226"
+        }
+      ]
+    }
   },
   {
     "id": "SPELLING-SOURCE-ECCLESIASTES",

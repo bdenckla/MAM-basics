@@ -10,11 +10,15 @@
   },
   "history_partition": {
     "excluded": 58,
-    "pending": 88,
+    "discrepancy-in-first-retained-canonical-MAM-note": 1,
     "discrepancy-present-when-doc-note-description-added": 2,
+    "discrepancy-present-when-doc-note-source-list-expanded": 1,
+    "omission-present-when-current-cross-manuscript-list-created": 1,
+    "pending": 84,
     "established-staleness": 2,
     "established-count-correction-with-stale-chapter2-summary": 1,
-    "insufficient-history-to-resolve-manuscript-attribution": 1
+    "insufficient-history-to-resolve-manuscript-attribution": 1,
+    "insufficient-history-to-resolve-specific-Masorah-attribution": 1
   },
   "first_batch": [
     "numbers-yod-label",
@@ -83,8 +87,8 @@
         "ירמיהו לא/טעמים"
       ],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "discrepancy-in-first-retained-canonical-MAM-note",
+      "history_result": "history-batch2-results.json",
       "first_batch": false
     },
     {
@@ -179,8 +183,8 @@
           "id": "Deuter 6:21/2/0"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "discrepancy-present-when-doc-note-source-list-expanded",
+      "history_result": "history-batch2-results.json",
       "first_batch": false
     },
     {
@@ -209,8 +213,8 @@
           "id": "Song of Songs 1:6/2/0"
         }
       ],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "omission-present-when-current-cross-manuscript-list-created",
+      "history_result": "history-batch2-results.json",
       "first_batch": false
     },
     {
@@ -2625,8 +2629,8 @@
         "ירמיהו לא/טעמים"
       ],
       "body_source_pointers": [],
-      "history_status": "pending",
-      "history_result": null,
+      "history_status": "insufficient-history-to-resolve-specific-Masorah-attribution",
+      "history_result": "history-batch2-results.json",
       "first_batch": false
     },
     {

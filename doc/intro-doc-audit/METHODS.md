@@ -573,5 +573,24 @@ revision 998046 on 2020-11-10. Psalm 18:2's explicit Aleppo attribution entered 
 Introduction on 2023-03-09, before the explanatory chapter note on 2023-03-10 and
 the consulted-manuscript list in 2025. That history leaves the attribution in the
 missing Aleppo section unresolved. All existing approvals and source quotations
-remain unchanged. Six of 94 applicable histories are now accounted for; 88 remain
+remain unchanged. Ten of 94 applicable histories are now accounted for; 84 remain
 pending rather than being classified from unexamined history.
+
+The [second history batch](history-batch2-results.json) records four cases from
+61 complete chapter histories, with Jeremiah 31 reused for two different questions.
+Deuteronomy 6:21's bare-Leningrad source-list conflict is introduced by the 2023
+list expansion, while the current Song of Songs list omits 1:6 when created in
+March 2023. Jeremiah 31:37's wrong quotation mark is already in the first canonical
+MAM note of 2015; the 2026 restoration does not change it. The exact earlier draft
+origin remains unestablished. A February 2023 spacing edit is explicitly rejected
+as the substantive example's origin.
+
+The separate Jeremiah 31:27 source-specificity question remains unresolved:
+the stable Introduction names Masorah Parva while the historical notes name
+the Aleppo Masorah generally. The broader attribution is compatible with the
+narrower one; it does not establish a contradiction. The particular marginal
+note or scholarly attribution remains a concrete support gap. Literal source
+evidence is in [history-batch2-sources.json](history-batch2-sources.json); the
+optional `history-batch2` command rebuilds from the local API cache without
+network access. All twelve Ben approvals and the original source excerpts remain
+unchanged.
