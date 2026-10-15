@@ -1,0 +1,74 @@
+{
+  "case": "proverbs-maqaf-illustration",
+  "classification": "established-staleness-of-example-relative-to-later-MAM-main-form",
+  "introduction_addition": {
+    "revid": 486389,
+    "parentid": 486388,
+    "timestamp": "2013-05-27T06:39:35Z",
+    "url": "https://he.wikisource.org/w/index.php?diff=486389&oldid=486388"
+  },
+  "chapter_change": {
+    "revid": 997545,
+    "parentid": 904820,
+    "timestamp": "2020-11-08T05:24:42Z",
+    "url": "https://he.wikisource.org/w/index.php?diff=997545&oldid=904820"
+  },
+  "matched_at_writing": {
+    "draft_revision": 486384,
+    "timestamp": "2013-05-27T06:07:40Z",
+    "form": "עֲלֵ֫י צ֥וּר",
+    "explanation": "The latest linked MAM draft revision before the Introduction insertion has the same spaced main form and Aleppo maqaf alternative."
+  },
+  "subsequent_examples": [
+    {
+      "revid": 487519,
+      "timestamp": "2013-06-05T05:19:24Z",
+      "main": "עֲלֵ֫י צ֥וּר",
+      "url": "https://he.wikisource.org/w/index.php?oldid=487519"
+    },
+    {
+      "revid": 997158,
+      "timestamp": "2020-11-06T11:11:55Z",
+      "main": "עֲלֵ֫י צ֥וּר",
+      "url": "https://he.wikisource.org/w/index.php?oldid=997158"
+    },
+    {
+      "revid": 997664,
+      "timestamp": "2020-11-08T13:25:10Z",
+      "main": "עֲלֵ֫י צ֥וּר",
+      "url": "https://he.wikisource.org/w/index.php?oldid=997664"
+    }
+  ],
+  "cache_endpoint": {
+    "introduction_revision": 3087893,
+    "chapter_revision": 3008043,
+    "forms": [
+      "עֲלֵ֫י צ֥וּר",
+      "עֲלֵ֫י־צ֥וּר"
+    ]
+  },
+  "correction_approval": "not-approved",
+  "coverage": {
+    "chapter_contents": {
+      "read": 41,
+      "visible_revisions": 41
+    },
+    "linked_draft_contents": {
+      "read": 22,
+      "visible_revisions": 22
+    },
+    "intro_contents": {
+      "read": 3,
+      "visible_revisions": 1423
+    },
+    "root_contents": {
+      "read": 16,
+      "visible_revisions": 860
+    }
+  },
+  "limits": [
+    "The actual adjacent insertion and chapter-change diffs establish the sequence. Adaptive root snapshots do not prove that no earlier or unidentified draft ever contained a similar example.",
+    "Introduction/root metadata were enumerated completely, but their full content histories were not downloaded or claimed continuously unchanged.",
+    "Publicly suppressed/deleted history and unrelated draft pages were not assessed. The copied 2013 example was checked directly; old rendered pages were not used to infer historical transclusion contents."
+  ]
+}

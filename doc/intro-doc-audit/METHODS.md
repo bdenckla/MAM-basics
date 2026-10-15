@@ -514,3 +514,11 @@ unevaluated under Questions. The section link is derived from the unique cached
 heading at chapter 2 line 915; its live rendered anchor was not checked. Source and
 wording details are retained in report-prose-revision.json. Other MAM body-text labels
 identify their selected source form, including the deḥi and qamats-qatan forms.
+
+The subsequent [Proverbs 30:19 history check](proverbs-30-19-history.md) locates
+the actual 2013-05-27 example insertion and the 2020-11-08 chapter change from
+space to maqaf. All 41 visible chapter revisions and 22 linked-draft revisions
+were read; the larger Introduction histories have complete metadata and selected
+content evidence. This establishes an older MAM form retained by the example,
+without changing its unevaluated status or Ben’s other approvals. The supplemental
+live-history evidence is separate from the original cached audit inputs.

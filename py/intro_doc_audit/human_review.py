@@ -401,6 +401,19 @@ def card(case, sources):
         if case.get("introduction_section")
         else ""
     )
+    history = case.get("revision_history")
+    history_note = (
+        "<p><strong>History.</strong> "
+        + prose(history["summary"])
+        + " "
+        + "; ".join(
+            '<a href="' + escaped(link["url"]) + '">' + prose(link["label"]) + "</a>"
+            for link in history["links"]
+        )
+        + ".</p>"
+        if history
+        else ""
+    )
     issue = ""
     if case.get("issue_number"):
         number = case["issue_number"]
@@ -420,6 +433,7 @@ def card(case, sources):
         )
         + "</p></div>"
         + section_link
+        + history_note
         + membership
         + words
         + '<div class="comparison">'

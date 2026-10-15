@@ -797,7 +797,7 @@
       "PROV-30-19"
     ],
     "section": "questions",
-    "title": "Proverbs 30:19 — does the layout example follow printed editions?",
+    "title": "Proverbs 30:19 — the layout example keeps MAM’s older spaced form",
     "issue": "The Introduction’s layout example has עֲלֵ֫י צ֥וּר with a space; MAM’s body text has עֲלֵ֫י־צ֥וּר with a maqaf.",
     "context": "This chapter 2 example illustrates four units on four lines, alternating unindented and indented lines. The Introduction’s own Aleppo quotation has maqaf, agreeing with the doc-note’s =א attribution.",
     "panels": [
@@ -835,7 +835,7 @@
         "full_width": true
       }
     ],
-    "decision": "Clarify whether this layout example intentionally uses the printed-edition form. If so, identify that source; if it is meant to reproduce MAM’s body text, reconcile the boundary.",
+    "decision": "Review whether to update the layout example to MAM’s later maqaf form. Keep its separate Aleppo quotation and the documented history.",
     "reading_forms": [],
     "introduction_section": {
       "page_key": "ch2",
@@ -846,7 +846,23 @@
       "revision": 3087893,
       "anchor_basis": "MediaWiki heading fragment from the unique literal cached heading (spaces to underscores); no live rendered-anchor check."
     },
-    "explanation": "The doc-note assigns the spaced form to printed editions, so an intentional printed-edition example is possible. The surrounding discussion compares manuscript and printed layouts, but presents this as the layout “in our edition”; it does not say that this example adopts a printed edition’s pointing. The source choice therefore remains unresolved."
+    "revision_history": {
+      "summary": "Added on 27 May 2013 with MAM’s then-current spaced form; the chapter changed to maqaf on 8 November 2020. The Introduction still has the space before and after that change and in its cached 2026 revision. This establishes an outdated example without settling the editor’s later intent.",
+      "links": [
+        {
+          "label": "2013 example addition",
+          "url": "https://he.wikisource.org/w/index.php?diff=486389&oldid=486388"
+        },
+        {
+          "label": "2020 chapter change",
+          "url": "https://he.wikisource.org/w/index.php?diff=997545&oldid=904820"
+        },
+        {
+          "label": "History, source chain and limits",
+          "url": "proverbs-30-19-history.md"
+        }
+      ]
+    }
   },
   {
     "id": "oleh-omission-count",
