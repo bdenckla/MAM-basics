@@ -51,7 +51,12 @@ def intro_capture(revision, plan, claims):
     if plan.get("list_claim"):
         label = claims[plan["list_claim"]]["links"][0]["label"]
     lines = revision["slots"]["main"]["content"].splitlines()
-    selected, headings = set(), {}
+    selected = {
+        i - 1 for i in plan.get("line_numbers", {}).get(str(revision["revid"]), [])
+    }
+    if any(i < 0 or i >= len(lines) for i in selected):
+        raise ValueError("Explicit historical source line is outside the revision")
+    headings = {}
     for i, line in enumerate(lines):
         if line.startswith("=="):
             level = len(line) - len(line.lstrip("="))

@@ -627,6 +627,24 @@ meteg correction and April 2023 Daniel 7:9 selection change establish two stale
 Introduction details. Six other cases retain explicit uncertainty about first
 insertion, manuscript interpretation, source qualification, illustration scope,
 or an uncertain vowel. The [literal evidence](history-batch4-sources.json) keeps
-the source distinctions and before/after snapshots. Thirty-three of 94 applicable
-histories are recorded; 61 remain pending. Rebuild this batch with
+the source distinctions and before/after snapshots. This checkpoint recorded
+thirty-three of 94 applicable histories, with 61 pending. Rebuild this batch with
 `py/main_intro_doc_audit.py history-batch history-batch4`.
+
+The [fifth history batch](history-batch5-results.json) integrates ten independently
+examined cases, using 161/161 canonical chapter contents and selected Introduction
+captures. Genesis 2:10 and the two Numbers 22 cases establish later staleness.
+Exodus 7:13's quotation defect and Leviticus 7's wrong locator occur when their
+notes are added; Leviticus 3's meteg label and Exodus's agreement scope remain
+ambiguous. Deuteronomy 1:33's expanded agreement introduces a conflicting source
+assignment. Genesis 36:13 shares the terminology problem in both sources.
+
+The poetic totals' historical paragraphs retain their figures in the inspected
+snapshots, but their original counted text and definition remain unidentified.
+Literal oleh presence has not been equated with the stated principal division.
+This is an explicit evidence gap, rather than proof of staleness or consistency.
+The [retained sources](history-batch5-sources.json) preserve the supporting text.
+At this checkpoint 43/94 histories are recorded and 51 remain pending. Twelve Ben
+decisions, 717 literal passages and twelve proposals are unchanged. The optional
+`history-batch history-batch5` command rebuilds this evidence from the separate
+local research cache.

@@ -167,6 +167,56 @@
       "case": "ALL-HATAF-DAN-12-2",
       "classification": "history-accounted-uncertain-hataf-category",
       "result": "history-batch4-results.json"
+    },
+    {
+      "case": "EX-7-13-METEG-QUOTATION",
+      "classification": "defect-present-when-note-added",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "EXOD-7-13-SCOPE",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "LEV-3-17-METEG-LABEL",
+      "classification": "ambiguity-present-when-alternative-added",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "LEV-7-PARASHAH-LOCATOR",
+      "classification": "wrong-locator-present-when-note-added",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "GEN-2-10-CHRONOLOGY",
+      "classification": "established-staleness",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "GEN-36-13",
+      "classification": "shared-terminology-question-from-first-canonical-note",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "DESCRIPTION-NUM-22-23",
+      "classification": "established-staleness",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "NUM-22-5-QUALIFIED",
+      "classification": "established-staleness",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "DEUT-1-33-SASSOON-METEG",
+      "classification": "conflicting-attribution-present-when-agreement-expanded",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "POETIC-COUNTS-TEXT",
+      "classification": "insufficient-history-to-identify-counting-source-and-principal-division-definition",
+      "result": "history-batch5-results.json"
     }
   ]
 }

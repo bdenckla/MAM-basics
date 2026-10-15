@@ -2246,7 +2246,20 @@
         "text": "וַיֶּֽחֱזַק֙",
         "pointer": ""
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The explanatory yod quotation already has the extra pataḥ when the note is added on 10 June 2024. Fifteen minutes later the selected MAM form gains meteg without correcting that quotation. September's correction fixes the separate vav quotation only. A later MAM pointing change did not introduce the yod defect.",
+      "links": [
+        {
+          "label": "Note added",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2863599"
+        },
+        {
+          "label": "Separate vav correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2886265"
+        }
+      ]
+    }
   },
   {
     "id": "LEV-3-17-METEG-LABEL",
@@ -2286,7 +2299,20 @@
         "id": "Levit 3:17/2/0",
         "text": "מוֹשְׁבֹֽתֵיכֶ֑ם"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The no-meteg label is added on 26 October 2023 beside a quotation already containing bet meteg. Earlier 2018 discussion distinguishes absent mem meteg from uncertain bet meteg. The ambiguous clause therefore has this pointing when written; history does not decide whether its label refers only to mem or whether quotation or description needs correction.",
+      "links": [
+        {
+          "label": "Alternative added",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812044"
+        },
+        {
+          "label": "Earlier meteg discussion",
+          "url": "https://he.wikisource.org/w/index.php?oldid=810664"
+        }
+      ]
+    }
   },
   {
     "id": "NUM-10-8-B17-METEG",
@@ -2385,7 +2411,16 @@
         "id": "Deuter 1:33/2/0",
         "text": "לַחֲנֹתְכֶ֑ם"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 6 June 2023 the opening agreement list adds Sassoon 1053 to the form with meteg while retaining the same sigil in the no-meteg alternative. Earlier note versions place that sigil only in the latter. The history dates the internal source conflict; it does not decide which physical reading should be retained.",
+      "links": [
+        {
+          "label": "Conflicting agreement expansion",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2764992"
+        }
+      ]
+    }
   },
   {
     "id": "PS-30-12-NOTE-LABEL",
@@ -3271,7 +3306,20 @@
         "pointer": "",
         "annotation": "Dagesh in dalet."
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The January 2024 note and Introduction agree in the erroneous bet label. On 8 July 2025 the note first adds doubt and the blurred-dot explanation, then corrects only bet to dalet. The pinned Introduction retains the old unqualified bet wording. This dates later staleness; the selected MAM form remains unchanged.",
+      "links": [
+        {
+          "label": "Note correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2947571"
+        },
+        {
+          "label": "Note correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2947628"
+        }
+      ]
+    }
   },
   {
     "id": "DESCRIPTION-DEUT-28-27",
@@ -3549,7 +3597,16 @@
         "id": "Levit 7:22/0/0",
         "text": "וַיְדַבֵּ֥ר... דַּבֵּ֛ר אֶל־בְּנֵ֥י יִשְׂרָאֵ֖ל לֵאמֹ֑ר הַמַּקְרִ֞יב"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The section note added on 1 September 2023 already calls the second opening verse 27 while quoting the opening at 28–29. Adjacent verse context places the section before 28. Subsequent expansions retain 27; a later verse-number change did not create the erroneous locator.",
+      "links": [
+        {
+          "label": "Section note added",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2800873"
+        }
+      ]
+    }
   },
   {
     "id": "ZARQA-TSINNOR-NAMES",
@@ -3894,7 +3951,16 @@
         "pointer": "/tmpl_params/1",
         "annotation": "Vav omitted; supported by Vital's explicit report."
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The 2015 note and September 2021 Introduction both name Sapir. On 16 October 2023 the note changes the relevant attribution to Cassuto's lists while retaining Ofer's Cassuto citation. The October 26 Introduction and pinned cache still name Sapir. This establishes later attribution staleness, without independently checking Ofer or manuscript evidence.",
+      "links": [
+        {
+          "label": "Note correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2809595"
+        }
+      ]
+    }
   },
   {
     "id": "GEN-2-10-CHRONOLOGY",
@@ -3943,7 +4009,24 @@
         "pointer": "",
         "annotation": "Undotted resh; attributed to Leningrad in the doc-note."
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "The September 2021 Introduction quotes a dotted resh as Leningrad. On 17 November the note changes its attribution to undotted resh and reports the apparent dot as a transcription error; the November 19 Introduction retains the codepoint-identical paragraph and wrong 1:10 link. MAM's selected body was already undotted in 2015. This is staleness after a note-attribution correction.",
+      "links": [
+        {
+          "label": "Before correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1182964"
+        },
+        {
+          "label": "Note correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1287018"
+        },
+        {
+          "label": "After correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1287557"
+        }
+      ]
+    }
   },
   {
     "id": "SAM-21-12",
@@ -4289,7 +4372,20 @@
         "id": "Genesis 36:13/2/0",
         "text": "אֵ֣לֶּ֣ה"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "Every canonical MAM note quotation from its October 2015 import has two munaḥ signs while its description names merkha. The August 2023 wording expansion retains both; selected Introduction snapshots share the same description and signs. This is a shared terminology question, not demonstrated disagreement between the two sources or later staleness.",
+      "links": [
+        {
+          "label": "Canonical import",
+          "url": "https://he.wikisource.org/w/index.php?oldid=655658"
+        },
+        {
+          "label": "Later wording",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2797903"
+        }
+      ]
+    }
   },
   {
     "id": "PS-1-3",
@@ -5728,7 +5824,20 @@
         "pointer": "",
         "text": "וַיֶּֽחֱזַק֙"
       }
-    ]
+    ],
+    "revision_history": {
+      "summary": "On 10 June 2024 the note is created without yod meteg in its main form, then gains that meteg fifteen minutes later. Four minutes afterward the Introduction adds its Leningrad example without meteg. The opening agreement already included sources with differing yod meteg even before the main-form edit, so it cannot safely mean agreement in every mark. Its scope may concern absence of heavy vav meteg. This is not established Introduction staleness.",
+      "links": [
+        {
+          "label": "Main-form change",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2863601"
+        },
+        {
+          "label": "Contemporary Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2863602"
+        }
+      ]
+    }
   },
   {
     "id": "HATAF-JEREMIAH-KETIV-QERE",
@@ -5952,7 +6061,20 @@
     ],
     "explanation": "The existing current-MAM results give 2,679 verses containing deḥi and 423 containing oleh. The 55 verses with oleh and yored in different words agree with the Introduction's list. The older totals could reflect another text, an earlier version, or a distinction in what counts as a principal division; the quoted passages do not say which.",
     "decision": "Should these figures explicitly count current MAM verses under a stated rule, or remain figures for another identified text or definition? In particular, does “principal division” exclude any of the 423 current verses containing oleh?",
-    "reading_forms": []
+    "reading_forms": [],
+    "revision_history": {
+      "summary": "The 4465/421 principal-division statement and the 55/421 two-word statement are already present in the observed 2020-11-06 Introduction snapshot, with the same definitions and figures as the current cache. The 2685 deḥi total is present in the observed 2025-11-26 snapshot and the current source. No inspected snapshot identifies a different counted text or dates a change of counting definition. Existing current-MAM evidence establishes 2679 verses with deḥi and 423 with oleh, and all 55 two-atom cases match the list, but presence of an oleh glyph has not been shown equivalent to the Introduction criterion of principal division. Therefore neither later staleness nor a discrepancy from the outset can be concluded.",
+      "links": [
+        {
+          "label": "Observed count paragraph",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2965114"
+        },
+        {
+          "label": "Observed count paragraph",
+          "url": "https://he.wikisource.org/w/index.php?oldid=997158"
+        }
+      ]
+    }
   },
   {
     "id": "LEGARMEH-LIST-SCOPE",
