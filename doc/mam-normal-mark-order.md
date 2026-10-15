@@ -29,7 +29,11 @@ MAM's shipped data is entirely in MAM-normal order — checked 2026-08-04, `has_
 for all 63 files now retained under `MAM-parsed/plus/` and `MAM-for-Sefaria/csv/`. So a cluster
 in the other order is either hand-authored — and **the way in is a paste through anything that
 normalizes, a browser above all** — or it sits upstream of the denormalizing step and belongs
-exactly as it is. Hebrew you did not lift from the data is the thing to suspect.
+exactly as it is. Hebrew you did not lift from the data is the thing to suspect. That includes
+Hebrew an agent types, even when copying it from tool output: on 2026-10-14, all eight forms that
+two Claude sessions typed with a dagesh, shin dot or sin dot beside a vowel came out in
+Unicode-normal order. Build such text from the data by lookup, or pass it through
+`give_std_mark_order`.
 
 **Never "repair" the second kind, and know which clusters are the second kind.** A scan of every
 tracked file on 2026-09-11, at review-branch commit `2bb94060`, counted **699,940** clusters in the
