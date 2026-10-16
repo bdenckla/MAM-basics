@@ -288,7 +288,9 @@ _WLC_AND_UXLC = Section(
             "wlc/420422/full-record/420422-54.html",
         ),
         _entry("All WLC a-notes", "wlc/wlc-a-notes/index.html"),
-        _entry("Goerwitz Run on WLC", "wlc/accgram/goerwitz.html"),
+        _entry(
+            "Goerwitz accent grammar checker run on WLC", "wlc/accgram/goerwitz.html"
+        ),
         _entry("UXLC-utils web pages", "uxlc/index.html"),
         _entry(
             f"Daniel Holman{_RSQM}s change proposals for UXLC",
@@ -303,7 +305,7 @@ _UNICODE = Section(
 )
 
 _TAAMEY = Section(
-    heading=Anchor("Taamey D", _TAAMEY_D),
+    heading=Anchor("The Taamey D font", _TAAMEY_D),
     entries=(),
 )
 
