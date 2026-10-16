@@ -9,7 +9,7 @@ _CONT_FTNT_NOT_SCRUPULOUS = [
 ]
 _CONT_FTNT_GAYA_AFTER_PRISTRESS = [
     ["See ", hlp.rtn(332)],
-    [" for an example of a type of  $gaya that,"],
+    [" for an example of a type of $gaya that,"],
     [" extraordinarily, comes after the stress."],
 ]
 _CONT_FTNT_TO_THE_RIGHT = [
