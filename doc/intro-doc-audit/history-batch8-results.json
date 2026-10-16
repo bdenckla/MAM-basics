@@ -1,0 +1,171 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "cases": [
+    {
+      "case": "tracked-ezekiel-dagesh-14",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "The canonical Aleppo ketiv quotation initially lacks nun dagesh, matching the inspected February 2023 Introduction. On 30 June 2024 at 07:57:59 UTC the note adds that dagesh and expressly describes the nun as dageshed. The Introduction snapshot thirteen minutes before the correction has the old form, and September 2024 still retains it, establishing later staleness. Introduction revision 3088859, parent 3088690, adds nun dagesh to this entry on 15 October 2026 at 09:42:04 UTC, in the same edit as the verse 20 correction.",
+      "limits": [
+        "This dates the recorded text corrections; it does not independently verify the manuscript or change the existing tracked disposition.",
+        "The later Introduction correction is established from actual parent and child contents, with exact source mark order preserved. The original pinned audit cache remains unchanged."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "ezekiel-14",
+          "contents_read": 17,
+          "visible_revisions": 17
+        }
+      ],
+      "links": [
+        {
+          "label": "Nun dagesh added to verse 14 note",
+          "url": "https://he.wikisource.org/w/index.php?diff=2866003&oldid=2859606"
+        },
+        {
+          "label": "Introduction immediately before correction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2865999"
+        },
+        {
+          "label": "Introduction retains old form September 2024",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2879657"
+        },
+        {
+          "label": "Later corrected Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088859"
+        },
+        {
+          "label": "Exact subsequent Introduction correction",
+          "url": "https://he.wikisource.org/w/index.php?diff=3088859&oldid=3088690"
+        }
+      ]
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-20",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "The earlier canonical Aleppo ketiv quotation lacks nun dagesh, matching the Introduction. On 30 June 2024 at 07:57:59 UTC the note first describes a dageshed nun and adds a dotted alternate example, while its main quotation still lacks the dot. The following edit at 07:59:23 UTC adds nun dagesh to the main quotation. September 2024 Introduction still retains the older undotted form, establishing later staleness. Introduction revision 3088859, parent 3088690, adds nun dagesh to this entry on 15 October 2026 at 09:42:04 UTC, in the same edit as the verse 14 correction.",
+      "limits": [
+        "The two June 2024 edits must be distinguished: the first main quotation remained undotted at verse 20 even though the accompanying prose and alternate example had changed.",
+        "The later Introduction correction is established from actual parent and child contents. Exact source mark order and the original pinned audit cache remain unchanged; no independent manuscript judgment was made."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "ezekiel-14",
+          "contents_read": 17,
+          "visible_revisions": 17
+        }
+      ],
+      "links": [
+        {
+          "label": "Description and alternate example change first",
+          "url": "https://he.wikisource.org/w/index.php?diff=2866003&oldid=2859606"
+        },
+        {
+          "label": "Main quotation gains nun dagesh",
+          "url": "https://he.wikisource.org/w/index.php?diff=2866004&oldid=2866003"
+        },
+        {
+          "label": "Introduction retains old form September 2024",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2879657"
+        },
+        {
+          "label": "Later corrected Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088859"
+        },
+        {
+          "label": "Exact subsequent Introduction correction",
+          "url": "https://he.wikisource.org/w/index.php?diff=3088859&oldid=3088690"
+        }
+      ]
+    },
+    {
+      "case": "HATAF-EZEKIEL-SOURCE",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "The canonical note has explicitly attributed the lamed ḥataf form to Aleppo since the November 2015 MAM import. February 2023 adds the selected vocal-sheva display and March adds the descriptive ḥataf label, while the manuscript attribution stays Aleppo. The populated Ezekiel list already attributes the same form to Leningrad in the inspected February 2023 Introduction. No later attribution change or removed Leningrad note explains this difference. History does not rule out the form in both manuscripts, so it does not establish a contradiction.",
+      "limits": [
+        "All sixteen visible canonical chapter revisions were inspected. Leningrad support for this particular form is absent from the local note history, not disproved.",
+        "The actual first Introduction insertion was not located. No manuscript source or scan was examined."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "ezekiel-17",
+          "contents_read": 16,
+          "visible_revisions": 16
+        }
+      ],
+      "links": [
+        {
+          "label": "Selected vocal-sheva display added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2698392&oldid=1379549"
+        },
+        {
+          "label": "Explicit ḥataf label added",
+          "url": "https://he.wikisource.org/w/index.php?diff=2709390&oldid=2698392"
+        },
+        {
+          "label": "Populated Introduction list February 2023",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2698679"
+        }
+      ]
+    },
+    {
+      "case": "tracked-ezekiel-meteg",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "The canonical Aleppo ketiv quotation and selected MAM qere retain dalet meteg from the November 2015 import through February 2026. On 30 March 2026 at 16:23:17 UTC the canonical edit removes that meteg from both forms. The pinned Introduction revision 3087740 of 8 October still includes it, establishing later staleness. Introduction revision 3088685, parent 3088684, removes the meteg on 14 October 2026 at 02:47:25 UTC.",
+      "limits": [
+        "All twenty-six visible canonical chapter revisions were inspected. Actual adjacent Introduction contents establish the later correction; the original pinned audit cache remains unchanged.",
+        "This chronology dates source text changes without independently verifying the manuscript or changing the existing tracked disposition."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "ezekiel-28",
+          "contents_read": 26,
+          "visible_revisions": 26
+        }
+      ],
+      "links": [
+        {
+          "label": "Dalet meteg removed from canonical MAM form and note",
+          "url": "https://he.wikisource.org/w/index.php?diff=3001796&oldid=2988064"
+        },
+        {
+          "label": "Pinned October 8 Introduction still has meteg",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3087740"
+        },
+        {
+          "label": "Later corrected Introduction",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088859"
+        },
+        {
+          "label": "Exact subsequent Introduction correction",
+          "url": "https://he.wikisource.org/w/index.php?diff=3088685&oldid=3088684"
+        }
+      ]
+    },
+    {
+      "case": "AMOS-MISSING-PAGES",
+      "classification": "insufficient-history",
+      "result": "The note has said four pages since its first retained MAM revision on 8 November 2015. Selected Introduction passages say three by 6 March 2023 and retain that count. Both describe the same gap, from Amos 8:13 through the stated position in Micah 5:1. The complete chapter history contains no later count change explaining the difference.",
+      "limits": [
+        "The correct count and the intended physical page unit remain unresolved; no manuscript pages were examined.",
+        "Selected Introduction snapshots establish the discrepancy by March 2023, not when that count was first written or whether it replaced a previous count."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "amos-8",
+          "contents_read": 15,
+          "visible_revisions": 15
+        }
+      ],
+      "links": [
+        {
+          "label": "Note added, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?diff=658462&oldid=403901"
+        },
+        {
+          "label": "Introduction, 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        }
+      ]
+    }
+  ]
+}

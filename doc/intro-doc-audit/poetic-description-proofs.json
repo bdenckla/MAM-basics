@@ -1,0 +1,59 @@
+[
+  {
+    "note_id": "Psalms 30:12/2/0",
+    "raw_path": "in/mam-ws/D1-Psalms.json",
+    "raw_note_body": "א=לִ֥י (השמטת נקודת הרביע)",
+    "target_node": "לִ֥֫י",
+    "aleppo_form": "לִ֥י",
+    "target_codepoints": [
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "֥",
+        "codepoint": "U+05A5",
+        "name": "HEBREW ACCENT MERKHA"
+      },
+      {
+        "character": "֫",
+        "codepoint": "U+05AB",
+        "name": "HEBREW ACCENT OLE"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      }
+    ],
+    "aleppo_codepoints": [
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "֥",
+        "codepoint": "U+05A5",
+        "name": "HEBREW ACCENT MERKHA"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      }
+    ],
+    "result": "Target contains OLEH+MERKHA; the A quotation retains MERKHA and omits OLEH. Note prose calls the omitted accent REVIA."
+  }
+]

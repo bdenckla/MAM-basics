@@ -1,0 +1,88 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "cases": [
+    {
+      "case": "deuteronomy-leningrad-spelling",
+      "classification": "discrepancy-present-when-doc-note-source-list-expanded",
+      "chapter_contents_read": 20,
+      "visible_chapter_revisions": 20,
+      "introduction_entry": {
+        "revid": 520558,
+        "parentid": 520551,
+        "timestamp": "2013-12-31T06:06:40Z"
+      },
+      "chapter_change": {
+        "revid": 2810192,
+        "parentid": 2759383,
+        "timestamp": "2023-10-19T10:41:48Z",
+        "url": "https://he.wikisource.org/w/index.php?diff=2810192&oldid=2759383"
+      },
+      "result": "The 2023 list expansion adds bare Leningrad to agreement with the defective-vav main text, while retaining the same main form, the plene-vav alternative and the concluding plene-vav attribution to Leningrad. The original canonical MAM note agrees with the Introduction. This is a conflicting source-list entry when inserted, rather than established Introduction staleness.",
+      "limits": [
+        "The earlier draft history is not assessed; the 2011 public chapter predates the MAM import.",
+        "The != operator means surprisingly equals; bare Leningrad, Firkovich B17 and the Leningrad Masorah reference remain distinct."
+      ]
+    },
+    {
+      "case": "ALL-HATAF-SONG-1-6",
+      "classification": "omission-present-when-current-cross-manuscript-list-created",
+      "chapter_contents_read": 14,
+      "visible_chapter_revisions": 14,
+      "introduction_list_added": {
+        "revid": 2706336,
+        "parentid": 2706335,
+        "timestamp": "2023-03-01T11:54:21Z",
+        "url": "https://he.wikisource.org/w/index.php?diff=2706336&oldid=2706335"
+      },
+      "earlier_note": {
+        "revid": 671300,
+        "timestamp": "2016-01-24T05:30:05Z"
+      },
+      "result": "The new six-item list omits Song 1:6 from its first revision, although the canonical MAM note has recorded Leningrad’s shin ḥataf segol since the 2016 import. Later operator and label edits do not add that vowel reading.",
+      "limits": [
+        "An earlier three-item list within the Aleppo-specific Song section has a narrower scope; its omission of Leningrad 1:6 is not used to establish the later list’s incompleteness.",
+        "Historical mark order differs from the parsed form without changing its vowel. Ben’s approved addition is preserved."
+      ]
+    },
+    {
+      "case": "jeremiah-accent",
+      "classification": "discrepancy-in-first-retained-canonical-MAM-note",
+      "chapter_contents_read": 27,
+      "visible_chapter_revisions": 27,
+      "first_canonical_note": {
+        "revid": 658312,
+        "parentid": 407875,
+        "timestamp": "2015-11-08T06:06:07Z",
+        "url": "https://he.wikisource.org/w/index.php?diff=658312&oldid=407875"
+      },
+      "recent_restoration": {
+        "revid": 3088451,
+        "parentid": 2988015,
+        "timestamp": "2026-10-13T04:19:07Z",
+        "url": "https://he.wikisource.org/w/index.php?diff=3088451&oldid=2988015"
+      },
+      "result": "The canonical MAM note already quotes U+05BD and ḥolam in its 2015 import, while selected body text has etnaḥta throughout all 25 MAM revisions. The 2026 restoration adds the missing ne’um atom but retains those marks. A cached Introduction example already has etnaḥta without holam by 3 February 2023. Later body-text changes do not explain the quotation error.",
+      "limits": [
+        "The earlier MAM draft origin and Ben’s copying hypothesis remain unestablished.",
+        "2699151 only removes a space before the masorah circle; it is not the substantive example’s insertion.",
+        "The historical comparison preserves Ben’s manuscript adjudication without independently repeating manuscript research."
+      ]
+    },
+    {
+      "case": "SPELLING-SOURCE-JEREMIAH",
+      "classification": "insufficient-history-to-resolve-specific-Masorah-attribution",
+      "shared_chapter_contents_read": 27,
+      "introduction_observed_revisions": [
+        2707401,
+        2707405,
+        3087756
+      ],
+      "result": "The Introduction’s specific Masorah Parva attribution is unchanged in the observed March 2023 and pinned 2026 passages. All 25 MAM-note revisions name the Aleppo Masorah generally; they do not identify the particular short marginal note. The broader attribution is compatible with the narrower one, so no contradiction is demonstrated.",
+      "support_gap": "Identify the Aleppo Masorah Parva note or list, or an explicit scholarly attribution. The note’s Breuer citation is a lead whose contents were not inspected in this cached-history task.",
+      "limits": [
+        "Selected Introduction snapshots establish observed stability, not the origin or continuous history of all 659 revisions.",
+        "The spelling choice agrees; a general attribution does not disprove a more specific one."
+      ]
+    }
+  ]
+}

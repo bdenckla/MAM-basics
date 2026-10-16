@@ -1,0 +1,70 @@
+{
+  "page": "ch2",
+  "batch": "ch2-secondary",
+  "selectors": [
+    {
+      "range": [
+        614,
+        665
+      ],
+      "prefixes": [
+        "#"
+      ]
+    }
+  ],
+  "population": "All38 numbered rows under topic ch2:609",
+  "reviewed": 38,
+  "total": 38,
+  "dispositions": {
+    "supported-quoted-form-discrepancy": [
+      617,
+      636,
+      649
+    ],
+    "source-relation-corroborated": [
+      644,
+      648,
+      652
+    ],
+    "aleppo-subclaim-supported-leningrad-subclaim-unattested": [
+      631,
+      637,
+      638,
+      653
+    ],
+    "one-supported-leningrad-candidate-certainty-unqualified": [
+      647
+    ],
+    "source-claim-not-established-by-local-note": [
+      614,
+      615,
+      616,
+      618,
+      619,
+      620,
+      621,
+      622,
+      623,
+      624,
+      625,
+      626,
+      627,
+      628,
+      629,
+      630,
+      632,
+      633,
+      641,
+      642,
+      643,
+      650,
+      651,
+      654,
+      661,
+      662,
+      665
+    ]
+  },
+  "method": "Root read every Introduction row and every current note joined by its explicit verse references. Named manuscript relations were checked independently of verse-level note presence. Consequential discrepancies were checked against faithful raw cache and exact codepoints.",
+  "limits": "Twenty-seven primary source claims have no corresponding local note statement, even when notes on other atoms exist. This is an evidence boundary, not a contradiction or proof of correctness. Four rows support only the Aleppo subclaim. Psalm19:15 agrees with one explicitly uncertain Leningrad candidate but omits the alternatives. Current edition structure does not independently establish manuscript pointing."
+}

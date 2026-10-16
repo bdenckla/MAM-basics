@@ -1,0 +1,4911 @@
+{
+  "schema_version": 1,
+  "status": "manually-grouped-and-root-checked",
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "purpose": "Navigation from completed chronology research to concrete evidence or editorial questions. No new alarm, semantic verdict, approval, source edit or action mandate is created.",
+  "bounds": [
+    "All 94 applicable histories are recorded. Group membership does not imply semantic consistency, contradiction or unresolved chronology.",
+    "Groups are manually assigned from each case's actual claim, current decision and evidence; classification words are copied only as existing dispositions.",
+    "Primary memberships partition the 94 cases. Secondary memberships identify separate subclaims; group membership totals therefore exceed 94.",
+    "The first three groups preserve approved, tracked or answered context and are not an unresolved-source alarm list.",
+    "Optional finer origin research is nonblocking. No broad Introduction-origin search, manuscript scan work, external messaging or source correction is authorized here.",
+    "The 58 excluded/internal/control cases are outside this 94-case history follow-up grouping; their IDs and all 12 Ben decisions are preserved.",
+    "The 77 editorial/evidence primary memberships are navigation for existing questions, not 77 newly confirmed defects or authorized actions."
+  ],
+  "source_files": [
+    {
+      "path": "doc/intro-doc-audit/revision-history-results.json",
+      "sha256": "f720ec66385bceff2b237281a07d350c16576e4da7ccad6aaa62f0e6e74d82de"
+    },
+    {
+      "path": "doc/intro-doc-audit/revision-history-inventory.json",
+      "sha256": "156e2107445d747b0014fa35a09b8e93355b1ce0a385beeb6f52c16d80d64384"
+    },
+    {
+      "path": "doc/intro-doc-audit/human-review.json",
+      "sha256": "0ca2f7ec43afb16a366d7f2bedb6d75f34c0ffefd8962b8d3ad7fa17c40cb585"
+    },
+    {
+      "path": "doc/intro-doc-audit/adjudications.json",
+      "sha256": "79c0597b0d3735f6cf0f670d8c73ac1e38db3cf3932c7a6da1d96685041ba5ce"
+    },
+    {
+      "path": "doc/intro-doc-audit/history-completion.json",
+      "sha256": "2159743c4c3281dd9d0bc7f90e736986bc18df2b2c8a47422ed46642bd907fb4"
+    }
+  ],
+  "coverage": {
+    "report_case_ids_preserved": 152,
+    "applicable_histories_recorded": 94,
+    "applicable_history_denominator": 94,
+    "primary_cases_grouped": 94,
+    "primary_group_denominator": 94,
+    "groups": 20,
+    "primary_groups": 19,
+    "secondary_memberships": 26,
+    "Ben_decisions_preserved": 12,
+    "Ben_decisions_in_applicable_history_scope": 10,
+    "source_completion_coverage": {
+      "intro_pages": 13,
+      "topic_inventory_accounted": 340,
+      "topic_inventory_total": 340,
+      "pending_explicit_reference_source_units": 0,
+      "reader_cases_accounted": 152,
+      "reader_cases_total": 152,
+      "history_dispositions_recorded": 94,
+      "history_applicable_total": 94,
+      "history_pending": 0,
+      "excluded_internal_or_control_cases": 58,
+      "fully_inspected_chapter_histories": 75,
+      "unique_canonical_revisions_inspected_for_relevant_passages": 1711,
+      "current_context_routes_without_individual_chapter_history": 9,
+      "literal_passages_rechecked": 717,
+      "unapplied_proposals_rechecked": 12,
+      "ben_adjudications_preserved": 12
+    },
+    "context_primary_cases": 17,
+    "editorial_or_evidence_primary_cases": 77
+  },
+  "preservation": {
+    "report_case_ids": [
+      "different-qere-count",
+      "jeremiah-accent",
+      "numbers-yod-label",
+      "deuteronomy-vav-label",
+      "deuteronomy-leningrad-spelling",
+      "ALL-HATAF-SONG-1-6",
+      "ALL-HATAF-SAM-8-10",
+      "ALL-HATAF-NUM-10-9",
+      "ALL-HATAF-GEN-30-27",
+      "deuteronomy-hataf-count",
+      "lamentations-one-two",
+      "proverbs-maqaf-illustration",
+      "oleh-omission-count",
+      "isaiah-decision-types",
+      "appendix-date-pair",
+      "job-chapter-verse",
+      "westminster-version-label",
+      "seder-year-type",
+      "tracked-shin-dot",
+      "tracked-ezekiel-meteg",
+      "tracked-ezekiel-dagesh-14",
+      "tracked-ezekiel-dagesh-20",
+      "PS-108-11",
+      "PS-57-9-ALTERNATIVE",
+      "PS-108-3-ALTERNATIVE",
+      "DAN-2-17",
+      "PS-39-13",
+      "PS-17-14-MAQAF",
+      "JOSH-14-7-SELECTION",
+      "PS-150-3-HATAF",
+      "PS-39-13-HATAF-LABEL",
+      "EX-7-13-METEG-QUOTATION",
+      "LEV-3-17-METEG-LABEL",
+      "NUM-10-8-B17-METEG",
+      "DEUT-1-33-SASSOON-METEG",
+      "PS-30-12-NOTE-LABEL",
+      "PS-31-12-HATAF",
+      "PS-53-6-LETTER-NAME",
+      "DAN-5-7",
+      "DAN-7-9-SELECTION",
+      "SPELLING-COVERAGE-DAN-3-5",
+      "SPELLING-COVERAGE-DAN-4-33",
+      "SPELLING-COVERAGE-DAN-5-7",
+      "SPELLING-COVERAGE-DAN-5-16",
+      "SPELLING-COVERAGE-DAN-5-29",
+      "SPELLING-COVERAGE-DAN-6-25",
+      "SPELLING-COVERAGE-DAN-6-28",
+      "SPELLING-COVERAGE-DAN-7-21",
+      "SPELLING-COVERAGE-DAN-8-8",
+      "DESCRIPTION-EXOD-7-20",
+      "DESCRIPTION-NUM-16-27",
+      "DESCRIPTION-NUM-22-23",
+      "DESCRIPTION-DEUT-28-27",
+      "ISA-10-15",
+      "SPECIAL-LETTER-2SAM-21-19",
+      "SPECIAL-LETTER-JER-39-13",
+      "DEUT-22-6-SIZE",
+      "LEV-7-PARASHAH-LOCATOR",
+      "ZARQA-TSINNOR-NAMES",
+      "ISA-59-19-MAQAF",
+      "ISA-55-5-EDITION",
+      "SONG-2-17-ACCENT-NAME",
+      "AMOS-MISSING-PAGES",
+      "PS-15-1-QUOTE",
+      "NUM-22-5-QUALIFIED",
+      "GEN-2-10-CHRONOLOGY",
+      "SAM-21-12",
+      "SUMMARY-VISIBILITY",
+      "PS-66-12-MAQAF-SCOPE",
+      "PS-119-90-MAQAF-SCOPE",
+      "IMPLICIT-MS-SAM-16-23",
+      "IMPLICIT-MS-KINGS-14-7",
+      "IMPLICIT-MS-KINGS-18-27",
+      "GEN-36-13",
+      "PS-1-3",
+      "MAL-HOLAM",
+      "PS-119-138",
+      "PS-18-2-ATTRIBUTION",
+      "L-CANDIDATE-DEUT-12-30",
+      "L-CANDIDATE-PS-17-14",
+      "L-CANDIDATE-PS-18-7",
+      "L-CANDIDATE-DAN-2-41",
+      "L-CANDIDATE-DAN-5-3",
+      "L-CANDIDATE-NEH-12-47",
+      "STRAND-SCOPE",
+      "SHARED-EXPLANATIONS-SONG-4-16",
+      "SHARED-EXPLANATIONS-LAM-4-7",
+      "SPELLING-SPECIMEN-NEHEMIAH",
+      "SPELLING-SPECIMEN-DANIEL",
+      "SPELLING-SOURCE-2KINGS",
+      "SPELLING-SOURCE-JEREMIAH",
+      "SPELLING-SOURCE-ECCLESIASTES",
+      "SPELLING-SOURCE-DANIEL-CHAIN",
+      "TORAH-SPELLING-METEG",
+      "TORAH-SPELLING-NAMES",
+      "TORAH-SPELLING-DEUT32-SHEVA",
+      "ALEPPO-SPECIAL-ISA44",
+      "ALEPPO-SPECIAL-PS27",
+      "ALEPPO-SIZE-QUOTATIONS",
+      "EXOD-7-13-SCOPE",
+      "HATAF-JEREMIAH-KETIV-QERE",
+      "HATAF-EZEKIEL-SOURCE",
+      "HATAF-PROVERBS-ADDITION",
+      "SEDER-DESCRIPTION-STRENGTH",
+      "POETIC-COUNTS-TEXT",
+      "LEGARMEH-LIST-SCOPE",
+      "ISA-44-24-KETIV-MAQAF",
+      "POETIC-PS6-PS74-VOWELS",
+      "POETIC-PROV8-QUALIFICATION",
+      "POETIC-PS68-RAFE",
+      "NAV-PS-27-14",
+      "NAV-NUM-14-17",
+      "NAV-DEUT-31-21",
+      "NAV-DAN-12-2",
+      "NAV-ECC-5-17",
+      "NAV-2KGS-21-12",
+      "NAV-2CHR-34-22",
+      "NAV-PROV-25-20",
+      "NAV-JER-31-37",
+      "NAV-GEN-18-25",
+      "NAV-EZEK-27-4",
+      "NAV-GEN-22-20",
+      "NAV-PS-78-7",
+      "NAV-PS-38-19",
+      "NAV-JOB-40-10",
+      "NAV-EXOD-20-8",
+      "NAV-GEN-9-29",
+      "NAV-DEUT-32-18",
+      "NAV-NUM-25-11",
+      "NAV-DEUT-27-15",
+      "NAV-NUM-10-29-35",
+      "NAV-2SAM-15-30",
+      "NAV-RUTH-3-3-13",
+      "NAV-ISA-1-12",
+      "NAV-ESTH-9-2",
+      "NAV-PS-118-26",
+      "NAV-SECTION-ALEPPO-POINTING",
+      "NAV-SECTION-LENINGRAD-POINTING",
+      "NAV-SECTION-SOURCES",
+      "NAV-SECTION-TWELVE",
+      "NAV-SECTION-TEMPLATES",
+      "ALL-HATAF-SAM-24-16",
+      "ALL-HATAF-SAM-24-18",
+      "ALL-HATAF-JER-48-32",
+      "ALL-HATAF-DAN-12-2",
+      "ALL-HATAF-NEH-6-19",
+      "ALL-HATAF-SAM-6-5",
+      "ALL-HATAF-PS-17-14-SOURCE",
+      "ALL-HATAF-LIST-COUNTS",
+      "ALL-HATAF-DIVINE-FUNCTION",
+      "ALL-HATAF-MORPHOLOGICAL-O",
+      "ALL-HATAF-ARAMAIC-SEGOL"
+    ],
+    "outside_this_history_grouping": [
+      {
+        "case": "different-qere-count",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The requested comparison is between two Introduction category definitions; the MAM qere is corroborating context."
+      },
+      {
+        "case": "deuteronomy-hataf-count",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The count conflicts with the Introduction's own list items."
+      },
+      {
+        "case": "lamentations-one-two",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Ben identifies a contradiction within the Introduction."
+      },
+      {
+        "case": "isaiah-decision-types",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's category enumeration contradicts its own summary."
+      },
+      {
+        "case": "appendix-date-pair",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The two dates disagree within the appendix."
+      },
+      {
+        "case": "job-chapter-verse",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's reference label reverses its own link destination."
+      },
+      {
+        "case": "westminster-version-label",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The version label disagrees with its quoted heading, without a MAM body/doc-note comparison."
+      },
+      {
+        "case": "seder-year-type",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's reading-schedule wording disagrees with the Koren passage it quotes."
+      },
+      {
+        "case": "PS-39-13-HATAF-LABEL",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's vowel name contradicts its own quoted vowel."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-3-5",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-4-33",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-5-7",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-5-16",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-5-29",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-6-25",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-6-28",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-7-21",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "SPELLING-COVERAGE-DAN-8-8",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "An internal Introduction referral points to an absent Introduction decision-list entry. MAM's note corroborates the spelling rather than contradicting it."
+      },
+      {
+        "case": "DESCRIPTION-EXOD-7-20",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's accent name contradicts its own specimen; the doc-note agrees with the specimen."
+      },
+      {
+        "case": "DESCRIPTION-NUM-16-27",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's letter name contradicts its own specimen; the doc-note agrees with the specimen."
+      },
+      {
+        "case": "DEUT-22-6-SIZE",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Introduction's category marker contradicts its own specimen."
+      },
+      {
+        "case": "ZARQA-TSINNOR-NAMES",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Two Introduction footnotes reverse their names."
+      },
+      {
+        "case": "SUMMARY-VISIBILITY",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The Summary conflicts with another Introduction explanation of visibility."
+      },
+      {
+        "case": "NAV-PS-27-14",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-NUM-14-17",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-DEUT-31-21",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-DAN-12-2",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-ECC-5-17",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-2KGS-21-12",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-2CHR-34-22",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-PROV-25-20",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-JER-31-37",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-GEN-18-25",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-EZEK-27-4",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-GEN-22-20",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-PS-78-7",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-PS-38-19",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-JOB-40-10",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-EXOD-20-8",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-GEN-9-29",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-DEUT-32-18",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-NUM-25-11",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-DEUT-27-15",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-NUM-10-29-35",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-2SAM-15-30",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-RUTH-3-3-13",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-ISA-1-12",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-ESTH-9-2",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-PS-118-26",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-SECTION-ALEPPO-POINTING",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-SECTION-LENINGRAD-POINTING",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-SECTION-SOURCES",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-SECTION-TWELVE",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "NAV-SECTION-TEMPLATES",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Introduction navigation/reference defect, without a contradictory MAM reading or doc-note claim. Follow only if a content-history case needs this locator as context."
+      },
+      {
+        "case": "ALL-HATAF-LIST-COUNTS",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "The declared headings disagree with the Introduction's own word-item counts."
+      },
+      {
+        "case": "ALL-HATAF-DIVINE-FUNCTION",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Resolved vowel-function control rather than a discrepant Introduction/MAM claim."
+      },
+      {
+        "case": "ALL-HATAF-MORPHOLOGICAL-O",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Resolved vowel-function control rather than a discrepant Introduction/MAM claim."
+      },
+      {
+        "case": "ALL-HATAF-ARAMAIC-SEGOL",
+        "scope": "excluded-internal-or-control",
+        "scope_reason": "Resolved vowel-function control rather than a discrepant Introduction/MAM claim."
+      }
+    ],
+    "Ben_decisions": [
+      {
+        "case": "jeremiah-accent",
+        "id": "JER-31-37-BEN-20261014",
+        "status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "transcript_evidence": "Sentinel_a32e0898f09c8191bc489d5b907129fd",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=JER-31-37-BEN-20261014"
+      },
+      {
+        "case": "numbers-yod-label",
+        "id": "NUM-9-7-BEN-20261014",
+        "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "transcript_evidence": "Sentinel_ed2fbcd60d008191a26921b22a3c08d9",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=NUM-9-7-BEN-20261014"
+      },
+      {
+        "case": "deuteronomy-vav-label",
+        "id": "DEUT-32-34-BEN-20261014",
+        "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "transcript_evidence": "Sentinel_04aee01833c88191be854758be2400a8",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=DEUT-32-34-BEN-20261014"
+      },
+      {
+        "case": "deuteronomy-leningrad-spelling",
+        "id": "DEUT-6-21-BEN-20261014",
+        "status": "opening-list-correction-adjudicated-by-Ben; proposed-source-correction-not-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "transcript_evidence": "Sentinel_4e66eddc6bf48191ba19bb417ae3ae7f",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=DEUT-6-21-BEN-20261014"
+      },
+      {
+        "case": "deuteronomy-hataf-count",
+        "id": "DEUT-HATAF-COUNT-BEN-20261014",
+        "status": "word-count-confirmed-by-Ben; proposed-source-correction-not-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+          "transcript_evidence": "Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be"
+        },
+        "source_pointer": "adjudications.json#id=DEUT-HATAF-COUNT-BEN-20261014"
+      },
+      {
+        "case": "lamentations-one-two",
+        "id": "LAM-1-6-PROPOSAL-20261014",
+        "status": "word-count-correction-approved-by-Ben; proposed-source-correction-not-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-15",
+          "time": "15:03 UTC",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+          "kind": "substantive-approval",
+          "transcript_evidence": "Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f"
+        },
+        "source_pointer": "adjudications.json#id=LAM-1-6-PROPOSAL-20261014"
+      },
+      {
+        "case": "ALL-HATAF-SONG-1-6",
+        "id": "SONG-1-6-BEN-20261014",
+        "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "transcript_evidence": "Sentinel_5cc0b84ada60819184ea0ba0de313702",
+          "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=SONG-1-6-BEN-20261014"
+      },
+      {
+        "case": "ALL-HATAF-SAM-8-10",
+        "id": "SAM-8-10-BEN-20261014",
+        "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "transcript_evidence": "Sentinel_d7bf7c8506fc819198b58b2098c0c86e",
+          "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=SAM-8-10-BEN-20261014"
+      },
+      {
+        "case": "ALL-HATAF-NUM-10-9",
+        "id": "NUM-10-9-BEN-20261015",
+        "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-15",
+          "transcript_evidence": "Sentinel_d946607c16f08191959bbfe2d66bf9f4",
+          "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+          "time": "08:02 UTC"
+        },
+        "source_pointer": "adjudications.json#id=NUM-10-9-BEN-20261015"
+      },
+      {
+        "case": "ALL-HATAF-GEN-30-27",
+        "id": "GEN-30-27-BEN-20261015",
+        "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-15",
+          "transcript_evidence": "Sentinel_3565f381ef048191a87658483a12f713",
+          "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=GEN-30-27-BEN-20261015"
+      },
+      {
+        "case": "proverbs-maqaf-illustration",
+        "id": "PROV-30-19-BEN-20261015",
+        "status": "approved-by-Ben; proposed-source-correction-not-submitted-or-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-15",
+          "time": "16:11 UTC",
+          "kind": "substantive-approval",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+          "transcript_evidence": "Sentinel_a0613408f38c8191804afc8c85a5733c"
+        },
+        "source_pointer": "adjudications.json#id=PROV-30-19-BEN-20261015"
+      },
+      {
+        "case": "oleh-omission-count",
+        "id": "OLEH-COUNT-BEN-20261015",
+        "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-15",
+          "time": "16:48 UTC",
+          "transcript_evidence": "Sentinel_95a89af0c4c881919b4be237fe750029",
+          "kind": "substantive-approval",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+        },
+        "source_pointer": "adjudications.json#id=OLEH-COUNT-BEN-20261015"
+      }
+    ]
+  },
+  "groups": [
+    {
+      "id": "approved_proposals",
+      "title": "Previously approved proposals",
+      "kind": "workflow-context",
+      "next_evidence_or_decision": "Keep the recorded approval and exact prepared proposal; no renewed correctness approval is needed for that subclaim. Application and submission remain as recorded.",
+      "boundary": "Approval of a correction does not establish its copying history, all neighboring readings, or source-list completeness.",
+      "members": [
+        {
+          "case": "jeremiah-accent",
+          "role": "primary",
+          "reason": "Ben adjudicated etnaḥta and ḥolam omission; the Masorah circle remains optional. The older wrong quote does not establish a copying event."
+        },
+        {
+          "case": "numbers-yod-label",
+          "role": "primary",
+          "reason": "Ben confirmed that the spelling label should name yod."
+        },
+        {
+          "case": "deuteronomy-vav-label",
+          "role": "primary",
+          "reason": "Ben confirmed that the spelling label should name vav."
+        },
+        {
+          "case": "deuteronomy-leningrad-spelling",
+          "role": "primary",
+          "reason": "Ben approved removing only bare Leningrad from the opening defective-spelling list; preserve the remaining sigils and Masorah attribution."
+        },
+        {
+          "case": "ALL-HATAF-SONG-1-6",
+          "role": "primary",
+          "reason": "The list-addition proposal is approved; retain the recorded submission/application state."
+        },
+        {
+          "case": "ALL-HATAF-SAM-8-10",
+          "role": "primary",
+          "reason": "The list-addition proposal is approved; retain the recorded submission/application state."
+        },
+        {
+          "case": "ALL-HATAF-NUM-10-9",
+          "role": "primary",
+          "reason": "The addition is approved; the vowel-function discussion is a separate subquestion."
+        },
+        {
+          "case": "ALL-HATAF-GEN-30-27",
+          "role": "primary",
+          "reason": "The list-addition proposal is approved; retain the recorded submission/application state."
+        },
+        {
+          "case": "proverbs-maqaf-illustration",
+          "role": "primary",
+          "reason": "Ben approved the Proverbs 30:19 illustration proposal. This does not approve the separate Proverbs 30:17 case."
+        },
+        {
+          "case": "oleh-omission-count",
+          "role": "primary",
+          "reason": "Ben approved changing the stated count to thirteen. Independent completeness and separate note questions remain bounded by the existing evidence."
+        }
+      ],
+      "primary_count": 10,
+      "membership_count": 10,
+      "case_ids": [
+        "jeremiah-accent",
+        "numbers-yod-label",
+        "deuteronomy-vav-label",
+        "deuteronomy-leningrad-spelling",
+        "ALL-HATAF-SONG-1-6",
+        "ALL-HATAF-SAM-8-10",
+        "ALL-HATAF-NUM-10-9",
+        "ALL-HATAF-GEN-30-27",
+        "proverbs-maqaf-illustration",
+        "oleh-omission-count"
+      ]
+    },
+    {
+      "id": "tracked_or_post_cache_correction",
+      "title": "Tracked or subsequently corrected wording",
+      "kind": "workflow-context",
+      "next_evidence_or_decision": "Use the existing tracked correction and separate dated post-cache evidence from the frozen comparison.",
+      "boundary": "An observed correction does not itself close an issue, change a review section, or mark Ben's approval.",
+      "members": [
+        {
+          "case": "tracked-shin-dot",
+          "role": "primary",
+          "reason": "The tracked shin-dot case has separate dated post-cache correction evidence; preserve the frozen comparison."
+        },
+        {
+          "case": "tracked-ezekiel-meteg",
+          "role": "primary",
+          "reason": "The tracked Ezekiel meteg case has separate dated post-cache correction evidence."
+        },
+        {
+          "case": "tracked-ezekiel-dagesh-14",
+          "role": "primary",
+          "reason": "The tracked Ezekiel 14:14 dagesh case has separate dated post-cache correction evidence."
+        },
+        {
+          "case": "tracked-ezekiel-dagesh-20",
+          "role": "primary",
+          "reason": "The tracked Ezekiel 14:20 dagesh case has separate dated post-cache correction evidence."
+        },
+        {
+          "case": "PS-30-12-NOTE-LABEL",
+          "role": "primary",
+          "reason": "A post-baseline revision corrected the note label; this observation does not alter its existing unreviewed disposition."
+        }
+      ],
+      "primary_count": 5,
+      "membership_count": 5,
+      "case_ids": [
+        "tracked-shin-dot",
+        "tracked-ezekiel-meteg",
+        "tracked-ezekiel-dagesh-14",
+        "tracked-ezekiel-dagesh-20",
+        "PS-30-12-NOTE-LABEL"
+      ]
+    },
+    {
+      "id": "bounded_answer_available",
+      "title": "Question answered within the cached evidence",
+      "kind": "evidence-context",
+      "next_evidence_or_decision": "Retain the bounded answer already supplied by the history; further reading research is unnecessary merely to answer this question.",
+      "boundary": "A provenance answer or explicit exclusion does not adjudicate a manuscript reading.",
+      "members": [
+        {
+          "case": "IMPLICIT-MS-SAM-16-23",
+          "role": "primary",
+          "reason": "The older note explicitly named Aleppo, supplying provenance for the current unnamed manuscript statement."
+        },
+        {
+          "case": "ALL-HATAF-JER-48-32",
+          "role": "primary",
+          "reason": "The Introduction explicitly excludes the entry because of reading doubt; the apparent unexplained omission is accounted for."
+        }
+      ],
+      "primary_count": 2,
+      "membership_count": 2,
+      "case_ids": [
+        "IMPLICIT-MS-SAM-16-23",
+        "ALL-HATAF-JER-48-32"
+      ]
+    },
+    {
+      "id": "literal_wording_review",
+      "title": "Local letter, label, sign or locator wording",
+      "kind": "editorial-choice",
+      "next_evidence_or_decision": "Review the specific local wording against the displayed form and the existing proposed decision. Choose the intended referent where the case offers alternatives.",
+      "boundary": "Do not change a reading to make an erroneous label fit, or silently remove a separate qualification.",
+      "members": [
+        {
+          "case": "EX-7-13-METEG-QUOTATION",
+          "role": "primary",
+          "reason": "The prose names meteg while its purported quotation has an extra pataḥ; review the concrete quotation correction."
+        },
+        {
+          "case": "PS-53-6-LETTER-NAME",
+          "role": "primary",
+          "reason": "The atom has he-yod-he and no resh. Choose the intended letter pair; the wrong name was present when the description was added."
+        },
+        {
+          "case": "DESCRIPTION-NUM-22-23",
+          "role": "primary",
+          "reason": "The description names bet where the form points to dalet; preserve the distinct reading-uncertainty question."
+        },
+        {
+          "case": "DESCRIPTION-DEUT-28-27",
+          "role": "primary",
+          "reason": "The description names tav where the cited form requires tet; preserve the separate edition attribution."
+        },
+        {
+          "case": "SPECIAL-LETTER-2SAM-21-19",
+          "role": "primary",
+          "reason": "The selected form marks a small resh while the prose says large; align the intended size label or specimen."
+        },
+        {
+          "case": "SPECIAL-LETTER-JER-39-13",
+          "role": "primary",
+          "reason": "The selected form marks a small final nun while the prose says large; align the intended size label or specimen."
+        },
+        {
+          "case": "LEV-7-PARASHAH-LOCATOR",
+          "role": "primary",
+          "reason": "The cited paragraph context identifies verse 28 rather than 27."
+        },
+        {
+          "case": "SONG-2-17-ACCENT-NAME",
+          "role": "primary",
+          "reason": "The note introduced pashta despite the qadma sign and existing qadma statement; the pinned Introduction now has qadma."
+        },
+        {
+          "case": "SHARED-EXPLANATIONS-SONG-4-16",
+          "role": "primary",
+          "reason": "The quoted comparison concerns zayin dagesh. Name zayin if these forms are retained, or supply a form supporting lamed."
+        },
+        {
+          "case": "GEN-36-13",
+          "role": "primary",
+          "reason": "Both quoted descriptions say merkha while the displayed signs are munaḥ; decide whether the signs or their names are intended."
+        },
+        {
+          "case": "SPELLING-SOURCE-ECCLESIASTES",
+          "role": "secondary",
+          "reason": "Independent validation found a local full/full versus full/defective label error, using the first and second vav positions separately. This does not resolve the Masorah exclamation claim."
+        }
+      ],
+      "primary_count": 10,
+      "membership_count": 11,
+      "case_ids": [
+        "EX-7-13-METEG-QUOTATION",
+        "PS-53-6-LETTER-NAME",
+        "DESCRIPTION-NUM-22-23",
+        "DESCRIPTION-DEUT-28-27",
+        "SPECIAL-LETTER-2SAM-21-19",
+        "SPECIAL-LETTER-JER-39-13",
+        "LEV-7-PARASHAH-LOCATOR",
+        "SONG-2-17-ACCENT-NAME",
+        "SHARED-EXPLANATIONS-SONG-4-16",
+        "GEN-36-13",
+        "SPELLING-SOURCE-ECCLESIASTES"
+      ]
+    },
+    {
+      "id": "source_alignment",
+      "title": "Quotation or selection alignment",
+      "kind": "editorial-choice",
+      "next_evidence_or_decision": "Choose how the Introduction and note should align for the identified form, selected reading or alternative; retain any expressly stated uncertainty.",
+      "boundary": "This group contains several different dated relations. Membership does not mean every discrepancy is established staleness or that the note is always right.",
+      "members": [
+        {
+          "case": "PS-108-11",
+          "role": "primary",
+          "reason": "Review the conflicting quoted form and preserve the note's nun-reading qualification."
+        },
+        {
+          "case": "PS-57-9-ALTERNATIVE",
+          "role": "primary",
+          "reason": "The completed November 2025 note correction gives terḥa plus merkha; the Introduction retains deḥi plus merkha as alternative."
+        },
+        {
+          "case": "PS-108-3-ALTERNATIVE",
+          "role": "primary",
+          "reason": "Review the quoted alternative and its qualification against the dated note; do not silently erase uncertainty."
+        },
+        {
+          "case": "DAN-2-17",
+          "role": "primary",
+          "reason": "The Introduction retains a meteg after the dated note change selected the form without it."
+        },
+        {
+          "case": "PS-17-14-MAQAF",
+          "role": "primary",
+          "reason": "The literal Introduction/note relation is available for an alignment choice even though the exact Introduction insertion is not located."
+        },
+        {
+          "case": "JOSH-14-7-SELECTION",
+          "role": "primary",
+          "reason": "Choose how to quote the selected reading while retaining the recorded meteg uncertainty."
+        },
+        {
+          "case": "PS-150-3-HATAF",
+          "role": "primary",
+          "reason": "Review the first Aleppo quotation: the Introduction retains sheva while the note's first Aleppo quotation was corrected to ḥataf pataḥ. Keep the second occurrence separate."
+        },
+        {
+          "case": "PS-31-12-HATAF",
+          "role": "primary",
+          "reason": "The minority group says Aleppo lacks ḥataf, but the note has attributed it to Aleppo since import. A 2026 selected-form marker did not create that disagreement."
+        },
+        {
+          "case": "DAN-5-7",
+          "role": "primary",
+          "reason": "The first bounded Introduction entry follows the note correction; align the quotation without inventing an earlier stale stage."
+        },
+        {
+          "case": "DAN-7-9-SELECTION",
+          "role": "primary",
+          "reason": "The preferred selection changed in the note; choose whether the Introduction should quote the current preferred form or label the older alternative."
+        },
+        {
+          "case": "ISA-10-15",
+          "role": "primary",
+          "reason": "Align the current source assignment/quotation while preserving the separate uncertainty about the physical erasure or reading."
+        },
+        {
+          "case": "PS-15-1-QUOTE",
+          "role": "primary",
+          "reason": "Choose a complete quotation including the omitted name or an explicit ellipsis."
+        },
+        {
+          "case": "NUM-22-5-QUALIFIED",
+          "role": "primary",
+          "reason": "Align the changed qualified attribution; adjudicating the underlying Sapir/Cassuto report would require its cited published source."
+        },
+        {
+          "case": "GEN-2-10-CHRONOLOGY",
+          "role": "primary",
+          "reason": "Distinguish the superseded transcription and current reading, and correct the verse link to 2:10 if retaining the example."
+        },
+        {
+          "case": "PS-1-3",
+          "role": "primary",
+          "reason": "Choose a quotation consistent with the selected form or identify which illustrative features are intentionally retained."
+        },
+        {
+          "case": "HATAF-PROVERBS-ADDITION",
+          "role": "primary",
+          "reason": "The Proverbs 30:17 addition remains a separate unapproved alignment proposal from the approved Proverbs 30:19 illustration."
+        },
+        {
+          "case": "TORAH-SPELLING-DEUT32-SHEVA",
+          "role": "primary",
+          "reason": "Review the displayed sheva/quotation relation separately from what the spelling example's star promises."
+        }
+      ],
+      "primary_count": 17,
+      "membership_count": 17,
+      "case_ids": [
+        "PS-108-11",
+        "PS-57-9-ALTERNATIVE",
+        "PS-108-3-ALTERNATIVE",
+        "DAN-2-17",
+        "PS-17-14-MAQAF",
+        "JOSH-14-7-SELECTION",
+        "PS-150-3-HATAF",
+        "PS-31-12-HATAF",
+        "DAN-5-7",
+        "DAN-7-9-SELECTION",
+        "ISA-10-15",
+        "PS-15-1-QUOTE",
+        "NUM-22-5-QUALIFIED",
+        "GEN-2-10-CHRONOLOGY",
+        "PS-1-3",
+        "HATAF-PROVERBS-ADDITION",
+        "TORAH-SPELLING-DEUT32-SHEVA"
+      ]
+    },
+    {
+      "id": "conflicting_assignments",
+      "title": "Duplicate conflicting manuscript assignments",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Use an attributable reading report for the named manuscript to decide which contradictory assignment to remove or qualify.",
+      "boundary": "The date when a conflict entered the note does not select the physical reading.",
+      "members": [
+        {
+          "case": "NUM-10-8-B17-METEG",
+          "role": "primary",
+          "reason": "Firkovich B17 receives conflicting assignments within the source comparison; an attributed reading must choose the correction."
+        },
+        {
+          "case": "DEUT-1-33-SASSOON-METEG",
+          "role": "primary",
+          "reason": "Sassoon receives conflicting meteg assignments; chronology alone does not establish which assignment should be removed."
+        }
+      ],
+      "primary_count": 2,
+      "membership_count": 2,
+      "case_ids": [
+        "NUM-10-8-B17-METEG",
+        "DEUT-1-33-SASSOON-METEG"
+      ]
+    },
+    {
+      "id": "manuscript_report",
+      "title": "Specific manuscript attribution or placement",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Identify a report or citation that supports the exact named manuscript, complete form, pointing or placement at issue.",
+      "boundary": "An unnamed manuscript, another manuscript's reading, or a partial observation is insufficient for a more specific attribution.",
+      "members": [
+        {
+          "case": "IMPLICIT-MS-KINGS-14-7",
+          "role": "primary",
+          "reason": "The confirmed pashta omission is narrower than the complete pointed ketiv claimed; identify support for the remaining pointing."
+        },
+        {
+          "case": "IMPLICIT-MS-KINGS-18-27",
+          "role": "primary",
+          "reason": "Other note targets do not supply the exact manuscript/form pair asserted here."
+        },
+        {
+          "case": "PS-18-2-ATTRIBUTION",
+          "role": "primary",
+          "reason": "Identify the earlier Aleppo report for this lost portion; the grammatical inference does not establish the attribution."
+        },
+        {
+          "case": "L-CANDIDATE-PS-17-14",
+          "role": "primary",
+          "reason": "The candidate is attested to other manuscripts; identify an explicit Leningrad basis before adding that attribution."
+        },
+        {
+          "case": "HATAF-EZEKIEL-SOURCE",
+          "role": "primary",
+          "reason": "The Aleppo note does not exclude a matching Leningrad reading; support the latter attribution or relabel the example."
+        },
+        {
+          "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+          "role": "primary",
+          "reason": "MAM's unpointed ketiv and pointed qere template does not supply Leningrad attribution or the claimed ketiv pointing."
+        },
+        {
+          "case": "ALL-HATAF-SAM-6-5",
+          "role": "primary",
+          "reason": "No pertinent note supplies the manuscript source for the proposed addition; vowel function also remains separate."
+        },
+        {
+          "case": "PS-39-13",
+          "role": "primary",
+          "reason": "The first explicit canonical Leningrad quote differs from the Introduction's placement. Its parent has no Leningrad quote: obtain support for the placement rather than infer corrected-note staleness from the neighboring Aleppo vowel change."
+        }
+      ],
+      "primary_count": 8,
+      "membership_count": 8,
+      "case_ids": [
+        "IMPLICIT-MS-KINGS-14-7",
+        "IMPLICIT-MS-KINGS-18-27",
+        "PS-18-2-ATTRIBUTION",
+        "L-CANDIDATE-PS-17-14",
+        "HATAF-EZEKIEL-SOURCE",
+        "SPELLING-SOURCE-DANIEL-CHAIN",
+        "ALL-HATAF-SAM-6-5",
+        "PS-39-13"
+      ]
+    },
+    {
+      "id": "masorah_location",
+      "title": "Exact Masorah annotation or location",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Locate the specific Masorah annotation, named subcategory or cited discussion that supports the narrower claim.",
+      "boundary": "A generic Masorah attribution can be compatible with a narrower claim. Missing local support is not proof that the claim is false.",
+      "members": [
+        {
+          "case": "SPELLING-SOURCE-2KINGS",
+          "role": "primary",
+          "reason": "Locate the exact Parva/Gedolah notes and support for the claim that the Gedolah text is corrupt."
+        },
+        {
+          "case": "SPELLING-SOURCE-JEREMIAH",
+          "role": "primary",
+          "reason": "The broad Aleppo Masorah note is compatible with Parva; locate the narrower annotation or the cited Breuer discussion at Jeremiah 18:9 note 60."
+        },
+        {
+          "case": "SPELLING-SOURCE-ECCLESIASTES",
+          "role": "primary",
+          "reason": "The exclamation asserts a conflict with Leningrad's Masorah; identify that annotation. The independently confirmed local spelling-label defect is distinct."
+        },
+        {
+          "case": "ALEPPO-SPECIAL-ISA44",
+          "role": "primary",
+          "reason": "Locate the specific Parva instruction for small nun and distinguish it from ordinary-sized running text; a generic Masorah note is not a refutation."
+        },
+        {
+          "case": "ALEPPO-SPECIAL-PS27",
+          "role": "primary",
+          "reason": "The note cites Aleppo's Masorah whereas the Introduction names Leningrad; locate the separate Leningrad annotation, since both could support the instruction."
+        }
+      ],
+      "primary_count": 5,
+      "membership_count": 5,
+      "case_ids": [
+        "SPELLING-SOURCE-2KINGS",
+        "SPELLING-SOURCE-JEREMIAH",
+        "SPELLING-SOURCE-ECCLESIASTES",
+        "ALEPPO-SPECIAL-ISA44",
+        "ALEPPO-SPECIAL-PS27"
+      ]
+    },
+    {
+      "id": "edition_version",
+      "title": "Named edition or published report",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Check the specified edition/version or cited published report at the exact passage.",
+      "boundary": "A named edition, a manuscript and a later transcription cannot be substituted for one another.",
+      "members": [
+        {
+          "case": "ISA-55-5-EDITION",
+          "role": "primary",
+          "reason": "Check the specified HaKeter edition/version at the merkha/tevir passage."
+        },
+        {
+          "case": "NUM-22-5-QUALIFIED",
+          "role": "secondary",
+          "reason": "Only if the underlying Sapir/Cassuto attribution is being adjudicated, inspect the cited Ofer report; aligning the changed text needs no new origin search."
+        }
+      ],
+      "primary_count": 1,
+      "membership_count": 2,
+      "case_ids": [
+        "ISA-55-5-EDITION",
+        "NUM-22-5-QUALIFIED"
+      ]
+    },
+    {
+      "id": "source_certainty",
+      "title": "Transcription, manuscript and certainty wording",
+      "kind": "editorial-choice-and-source-evidence",
+      "next_evidence_or_decision": "Choose a source label that matches the actual evidence and retain reported doubt; obtain an attributed basis before making a stronger manuscript claim.",
+      "boundary": "Historical stability does not convert a doubtful transcription into an unqualified manuscript reading.",
+      "members": [
+        {
+          "case": "L-CANDIDATE-PS-18-7",
+          "role": "primary",
+          "reason": "Choose wording that distinguishes the reported transcription and uncertainty from an unqualified Leningrad attribution."
+        },
+        {
+          "case": "L-CANDIDATE-DAN-5-3",
+          "role": "primary",
+          "reason": "The source/reading qualification must be retained rather than promoting a reported form to a definite manuscript claim."
+        },
+        {
+          "case": "L-CANDIDATE-NEH-12-47",
+          "role": "primary",
+          "reason": "Retain the distinction between the transcription source and the manuscript attribution, including reported doubt."
+        },
+        {
+          "case": "TORAH-SPELLING-NAMES",
+          "role": "primary",
+          "reason": "Choose the named source labels and degree of certainty supported by the actual cited comparison."
+        },
+        {
+          "case": "POETIC-PROV8-QUALIFICATION",
+          "role": "secondary",
+          "reason": "The design-list asterisk marks independent accent and no added maqaf; it does not express the note's preexisting reading doubt."
+        }
+      ],
+      "primary_count": 4,
+      "membership_count": 5,
+      "case_ids": [
+        "L-CANDIDATE-PS-18-7",
+        "L-CANDIDATE-DAN-5-3",
+        "L-CANDIDATE-NEH-12-47",
+        "TORAH-SPELLING-NAMES",
+        "POETIC-PROV8-QUALIFICATION"
+      ]
+    },
+    {
+      "id": "uncertain_reading",
+      "title": "Explicitly unresolved reading",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Preserve the recorded alternatives or uncertainty unless a specific attributed report resolves the exact disputed mark or reading.",
+      "boundary": "An unchanged question mark and a successful history lookup do not settle the reading. This inventory authorizes no manuscript scan work.",
+      "members": [
+        {
+          "case": "L-CANDIDATE-DEUT-12-30",
+          "role": "primary",
+          "reason": "The source comparison retains competing meteg readings; do not promote the doubtful Leningrad candidate to a settled reading."
+        },
+        {
+          "case": "L-CANDIDATE-DAN-2-41",
+          "role": "primary",
+          "reason": "The disputed Leningrad reading remains explicitly qualified; an extra candidate needs more than a category match."
+        },
+        {
+          "case": "SHARED-EXPLANATIONS-LAM-4-7",
+          "role": "primary",
+          "reason": "The shared explanation leaves an actual reading uncertainty; history does not independently select a reading."
+        },
+        {
+          "case": "ALL-HATAF-DAN-12-2",
+          "role": "primary",
+          "reason": "The reported Leningrad ḥataf reading remains uncertain; eligibility depends on both that evidence and the list's treatment of uncertain entries."
+        },
+        {
+          "case": "ALL-HATAF-NEH-6-19",
+          "role": "primary",
+          "reason": "The candidate reading remains qualified; decide uncertain-entry policy only after retaining that qualification."
+        },
+        {
+          "case": "DESCRIPTION-NUM-22-23",
+          "role": "secondary",
+          "reason": "Correcting the bet/dalet wording does not remove the independently reported reading uncertainty."
+        },
+        {
+          "case": "PS-108-11",
+          "role": "secondary",
+          "reason": "Any quotation alignment must retain the qualification concerning the nun reading."
+        },
+        {
+          "case": "JOSH-14-7-SELECTION",
+          "role": "secondary",
+          "reason": "The meteg uncertainty remains independent of the selected-quotation choice."
+        },
+        {
+          "case": "ISA-10-15",
+          "role": "secondary",
+          "reason": "Physical erasure or reading interpretation remains unresolved even after textual attribution is aligned."
+        },
+        {
+          "case": "PS-57-9-ALTERNATIVE",
+          "role": "secondary",
+          "reason": "The dated terḥa/merkha correction is established, while the alternative's manuscript uncertainty must remain visible."
+        },
+        {
+          "case": "PS-108-3-ALTERNATIVE",
+          "role": "secondary",
+          "reason": "The alternative's qualification is not removed merely by matching the dated quotation."
+        }
+      ],
+      "primary_count": 5,
+      "membership_count": 11,
+      "case_ids": [
+        "L-CANDIDATE-DEUT-12-30",
+        "L-CANDIDATE-DAN-2-41",
+        "SHARED-EXPLANATIONS-LAM-4-7",
+        "ALL-HATAF-DAN-12-2",
+        "ALL-HATAF-NEH-6-19",
+        "DESCRIPTION-NUM-22-23",
+        "PS-108-11",
+        "JOSH-14-7-SELECTION",
+        "ISA-10-15",
+        "PS-57-9-ALTERNATIVE",
+        "PS-108-3-ALTERNATIVE"
+      ]
+    },
+    {
+      "id": "illustration_extent",
+      "title": "Illustration extent, notation and qualification",
+      "kind": "editorial-choice",
+      "next_evidence_or_decision": "Decide which features an example promises to reproduce, and make notation and certainty consistent with that promise.",
+      "boundary": "A spelling or size specimen need not quote every mark. A substantive encoded-mark distinction or certainty claim must be considered separately.",
+      "members": [
+        {
+          "case": "MAL-HOLAM",
+          "role": "primary",
+          "reason": "Decide whether the specimen promises the entire source form or only the stated feature, including treatment of ḥolam."
+        },
+        {
+          "case": "PS-119-138",
+          "role": "primary",
+          "reason": "Specify the specimen's promised feature and exact source; incidental marks cannot alone establish a wrong quotation."
+        },
+        {
+          "case": "SPELLING-SPECIMEN-NEHEMIAH",
+          "role": "primary",
+          "reason": "A spelling specimen does not automatically promise full agreement in all pointing and accents."
+        },
+        {
+          "case": "SPELLING-SPECIMEN-DANIEL",
+          "role": "primary",
+          "reason": "The rejected specimen is not named as a Breuer quotation; define what is being illustrated before assigning that source or alleging a bad quotation."
+        },
+        {
+          "case": "TORAH-SPELLING-METEG",
+          "role": "primary",
+          "reason": "The Deuteronomy specimens illustrate spelling; decide whether their meteg marks are part of a full-source quotation promise."
+        },
+        {
+          "case": "ALEPPO-SIZE-QUOTATIONS",
+          "role": "primary",
+          "reason": "Examples marked for letter size need a declared extent before differences in unrelated marks are treated as errors."
+        },
+        {
+          "case": "POETIC-PS6-PS74-VOWELS",
+          "role": "primary",
+          "reason": "Clarify which vowel and notation features these design examples promise to reproduce."
+        },
+        {
+          "case": "POETIC-PS68-RAFE",
+          "role": "primary",
+          "reason": "Clarify whether the example's rafe is part of its declared design claim or a full quotation."
+        },
+        {
+          "case": "POETIC-PROV8-QUALIFICATION",
+          "role": "primary",
+          "reason": "Decide the design list's substantive encoded-mark notation and unqualified Aleppo attribution. The note's doubt predates the observed list; the 2019 template change and 2021 literal codepoint correction are separate evidence."
+        },
+        {
+          "case": "PS-1-3",
+          "role": "secondary",
+          "reason": "If retaining an intentionally illustrative form, identify its scope rather than presenting it as an exact quotation."
+        },
+        {
+          "case": "TORAH-SPELLING-DEUT32-SHEVA",
+          "role": "secondary",
+          "reason": "The star and spelling-specimen scope must be considered separately from the concrete displayed sheva."
+        }
+      ],
+      "primary_count": 9,
+      "membership_count": 11,
+      "case_ids": [
+        "MAL-HOLAM",
+        "PS-119-138",
+        "SPELLING-SPECIMEN-NEHEMIAH",
+        "SPELLING-SPECIMEN-DANIEL",
+        "TORAH-SPELLING-METEG",
+        "ALEPPO-SIZE-QUOTATIONS",
+        "POETIC-PS6-PS74-VOWELS",
+        "POETIC-PS68-RAFE",
+        "POETIC-PROV8-QUALIFICATION",
+        "PS-1-3",
+        "TORAH-SPELLING-DEUT32-SHEVA"
+      ]
+    },
+    {
+      "id": "statement_scope",
+      "title": "Scope of a sentence or local label",
+      "kind": "editorial-choice",
+      "next_evidence_or_decision": "Specify the atom, compound, accent-only relation or prose/poetic population to which the statement applies before asserting contradiction.",
+      "boundary": "A broader possible reading of an ambiguous sentence is not by itself a supported error.",
+      "members": [
+        {
+          "case": "LEV-3-17-METEG-LABEL",
+          "role": "primary",
+          "reason": "The phrase without meteg could refer to mem even though bet has meteg; identify the referent."
+        },
+        {
+          "case": "ISA-59-19-MAQAF",
+          "role": "primary",
+          "reason": "Agreement could concern accent or the whole compound; earlier notes distinguished the space/maqaf relation before a merge and later separation. Do not call the later separation a new stale event."
+        },
+        {
+          "case": "EXOD-7-13-SCOPE",
+          "role": "primary",
+          "reason": "Distinguish the opening vav-agreement statement from the separate yod claim."
+        },
+        {
+          "case": "ISA-44-24-KETIV-MAQAF",
+          "role": "primary",
+          "reason": "Decide whether the printed maqaf is an intended manuscript claim or a separator in the ketiv specimen."
+        },
+        {
+          "case": "PS-66-12-MAQAF-SCOPE",
+          "role": "primary",
+          "reason": "The universal maqaf statement names the Twenty-one Books; the poetic continuation may include meteg cases without maqaf. Canonical history shows no removal of maqaf."
+        },
+        {
+          "case": "PS-119-90-MAQAF-SCOPE",
+          "role": "primary",
+          "reason": "Clarify whether the poetic continuation inherits the preceding universal maqaf condition or illustrates meteg cases more broadly."
+        }
+      ],
+      "primary_count": 6,
+      "membership_count": 6,
+      "case_ids": [
+        "LEV-3-17-METEG-LABEL",
+        "ISA-59-19-MAQAF",
+        "EXOD-7-13-SCOPE",
+        "ISA-44-24-KETIV-MAQAF",
+        "PS-66-12-MAQAF-SCOPE",
+        "PS-119-90-MAQAF-SCOPE"
+      ]
+    },
+    {
+      "id": "population_definition",
+      "title": "Counted population or historical list",
+      "kind": "definition-and-source-evidence",
+      "next_evidence_or_decision": "Identify the counting unit, source population and version; distinguish an inherited historical list from a present MAM census.",
+      "boundary": "A glyph count, MAM template count or neighboring category cannot silently substitute for the named population.",
+      "members": [
+        {
+          "case": "SAM-21-12",
+          "role": "primary",
+          "reason": "Distinguish manuscript qere-note count, MAM template count and the two-word subset from the three-word whole; the historical partial update is already dated."
+        },
+        {
+          "case": "POETIC-COUNTS-TEXT",
+          "role": "primary",
+          "reason": "Identify the counted corpus/version and principal-division definition; a glyph-presence total does not prove the stated principal-division total."
+        },
+        {
+          "case": "LEGARMEH-LIST-SCOPE",
+          "role": "primary",
+          "reason": "Consult the named Wickes list and its exceptions, and state whether the claim is historical enumeration or present MAM census."
+        },
+        {
+          "case": "oleh-omission-count",
+          "role": "secondary",
+          "reason": "The approved thirteen-entry correction does not independently prove every manuscript reading or historical list completeness; nine routed chapters are current-count context only."
+        },
+        {
+          "case": "ALL-HATAF-PS-17-14-SOURCE",
+          "role": "secondary",
+          "reason": "The Aleppo/Leningrad heading defines the population; the Sassoon exception must be made explicit if retained."
+        }
+      ],
+      "primary_count": 3,
+      "membership_count": 5,
+      "case_ids": [
+        "SAM-21-12",
+        "POETIC-COUNTS-TEXT",
+        "LEGARMEH-LIST-SCOPE",
+        "oleh-omission-count",
+        "ALL-HATAF-PS-17-14-SOURCE"
+      ]
+    },
+    {
+      "id": "vowel_function",
+      "title": "Vowel function before list eligibility",
+      "kind": "interpretation",
+      "next_evidence_or_decision": "Determine the function of the exact ḥataf vowel in the relevant ketiv, rather than infer list eligibility from the presence of the glyph.",
+      "boundary": "The qere alone cannot settle whether a ketiv vowel is a reading aid for vocal sheva or a morphological vowel.",
+      "members": [
+        {
+          "case": "ALL-HATAF-SAM-24-16",
+          "role": "primary",
+          "reason": "Determine whether the ketiv's ḥataf vowel is an optional vocal-sheva aid or a morphological vowel; qere alone cannot decide."
+        },
+        {
+          "case": "ALL-HATAF-SAM-24-18",
+          "role": "primary",
+          "reason": "Determine the function of the ketiv vowel before treating the atom as a missing member of the optional vocal-sheva list."
+        },
+        {
+          "case": "ALL-HATAF-SAM-6-5",
+          "role": "secondary",
+          "reason": "Even with manuscript attribution, determine whether the ḥataf vowel belongs to the intended optional-vocal-sheva category."
+        },
+        {
+          "case": "ALL-HATAF-NUM-10-9",
+          "role": "secondary",
+          "reason": "The approved addition and the separate vav ḥataf/pataḥ function plus following nun ḥiriq question must not be conflated."
+        }
+      ],
+      "primary_count": 2,
+      "membership_count": 4,
+      "case_ids": [
+        "ALL-HATAF-SAM-24-16",
+        "ALL-HATAF-SAM-24-18",
+        "ALL-HATAF-SAM-6-5",
+        "ALL-HATAF-NUM-10-9"
+      ]
+    },
+    {
+      "id": "category_policy",
+      "title": "List source or ketiv/qere policy",
+      "kind": "editorial-choice",
+      "next_evidence_or_decision": "State the list's source/category policy or explain the deliberate transfer between ketiv and qere forms.",
+      "boundary": "A list-policy choice is distinct from correcting a manuscript's pointing.",
+      "members": [
+        {
+          "case": "HATAF-JEREMIAH-KETIV-QERE",
+          "role": "primary",
+          "reason": "Decide whether the Introduction deliberately displays a ketiv vowel on the qere. Quote the ketiv or explain the transfer; direct qere attribution needs separate support."
+        },
+        {
+          "case": "ALL-HATAF-PS-17-14-SOURCE",
+          "role": "primary",
+          "reason": "Sassoon appears under an Aleppo/Leningrad heading; broaden the heading, state an exception or remove the entry as a scope choice rather than a pointing correction."
+        },
+        {
+          "case": "ALL-HATAF-DAN-12-2",
+          "role": "secondary",
+          "reason": "The list must say whether explicitly uncertain readings are eligible; this policy cannot settle the reading itself."
+        },
+        {
+          "case": "ALL-HATAF-NEH-6-19",
+          "role": "secondary",
+          "reason": "The treatment of uncertain candidates is a list-policy question separate from the disputed reading."
+        }
+      ],
+      "primary_count": 2,
+      "membership_count": 4,
+      "case_ids": [
+        "HATAF-JEREMIAH-KETIV-QERE",
+        "ALL-HATAF-PS-17-14-SOURCE",
+        "ALL-HATAF-DAN-12-2",
+        "ALL-HATAF-NEH-6-19"
+      ]
+    },
+    {
+      "id": "physical_count_unit",
+      "title": "Missing-page counting unit",
+      "kind": "definition-and-source-evidence",
+      "next_evidence_or_decision": "Identify whether each statement counts pages, leaves or another unit for the same gap, with an attributable gap inventory or pagination.",
+      "boundary": "Repeated three/four wording does not settle the unit. No new manuscript scan work is authorized.",
+      "members": [
+        {
+          "case": "AMOS-MISSING-PAGES",
+          "role": "primary",
+          "reason": "The same physical gap is described as three versus four; identify page/leaf/unit conventions before selecting a number."
+        }
+      ],
+      "primary_count": 1,
+      "membership_count": 1,
+      "case_ids": [
+        "AMOS-MISSING-PAGES"
+      ]
+    },
+    {
+      "id": "Dotan_convention",
+      "title": "Dotan's notation and evidential strength",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Check Dotan's published notation convention and the relevant entry before describing the note's uncertainty or hypothesis as a definite error.",
+      "boundary": "Absence from a list and a brace convention are not self-interpreting evidence.",
+      "members": [
+        {
+          "case": "SEDER-DESCRIPTION-STRENGTH",
+          "role": "primary",
+          "reason": "Check Dotan's brace/seder convention and the specific entry; keep the note's uncertainty distinct from its author's hypothesis."
+        }
+      ],
+      "primary_count": 1,
+      "membership_count": 1,
+      "case_ids": [
+        "SEDER-DESCRIPTION-STRENGTH"
+      ]
+    },
+    {
+      "id": "strand_allocation",
+      "title": "Decalogue sign allocation to strands",
+      "kind": "source-evidence",
+      "next_evidence_or_decision": "Find an explicitly attributed allocation of Leningrad's relevant signs to the named strands.",
+      "boundary": "MAM's shared single munaḥ does not determine how Leningrad's munaḥ and merkha are allocated.",
+      "members": [
+        {
+          "case": "STRAND-SCOPE",
+          "role": "primary",
+          "reason": "The available MAM form does not allocate Leningrad's two signs to its Decalogue strands; obtain that precise attribution."
+        }
+      ],
+      "primary_count": 1,
+      "membership_count": 1,
+      "case_ids": [
+        "STRAND-SCOPE"
+      ]
+    },
+    {
+      "id": "optional_origin",
+      "title": "Optional finer origin or copying provenance",
+      "kind": "optional-nonblocking-history",
+      "next_evidence_or_decision": "Only if exact authorship, first insertion or cause becomes a separate research goal, obtain the narrowly relevant earlier Introduction or draft revision.",
+      "boundary": "All 94 chronology questions are accounted for. These bounded origin limits are not pending history coverage or a mandate for more downloads.",
+      "members": [
+        {
+          "case": "jeremiah-accent",
+          "role": "secondary",
+          "reason": "Earlier draft origin and Ben's copying hypothesis remain separate from the approved correction; matching the preceding verse does not establish copying."
+        },
+        {
+          "case": "PS-17-14-MAQAF",
+          "role": "secondary",
+          "reason": "The exact Introduction insertion is unlocated; the available literal comparison is sufficient for its existing editorial question."
+        },
+        {
+          "case": "DAN-5-7",
+          "role": "secondary",
+          "reason": "The first Introduction entry is bounded after the note correction. Its exact insertion is unnecessary to preserve that chronology limit."
+        },
+        {
+          "case": "ISA-10-15",
+          "role": "secondary",
+          "reason": "The table's exact insertion is not located; this does not prevent recording the observed source-assignment mismatch."
+        },
+        {
+          "case": "PS-31-12-HATAF",
+          "role": "secondary",
+          "reason": "The specific minority-group claim is observed in November 2025; older different lists do not establish its insertion date."
+        },
+        {
+          "case": "PS-39-13",
+          "role": "secondary",
+          "reason": "The Introduction's Leningrad placement origin is unresolved. The first canonical Leningrad quote is an addition, not a correction to a parent Leningrad quote."
+        },
+        {
+          "case": "SHARED-EXPLANATIONS-SONG-4-16",
+          "role": "secondary",
+          "reason": "March 2023 is the observed Introduction wording, not an asserted first origin of the wrong letter name."
+        },
+        {
+          "case": "SONG-2-17-ACCENT-NAME",
+          "role": "secondary",
+          "reason": "The Introduction correction is bounded between retained 2023 and pinned 2026 snapshots; its exact date is not needed for the note's wording correction."
+        },
+        {
+          "case": "ALL-HATAF-PS-17-14-SOURCE",
+          "role": "secondary",
+          "reason": "The caption narrowing is bounded rather than dated to an exact revision; this does not resolve or prevent its list-scope question."
+        }
+      ],
+      "primary_count": 0,
+      "membership_count": 9,
+      "case_ids": [
+        "jeremiah-accent",
+        "PS-17-14-MAQAF",
+        "DAN-5-7",
+        "ISA-10-15",
+        "PS-31-12-HATAF",
+        "PS-39-13",
+        "SHARED-EXPLANATIONS-SONG-4-16",
+        "SONG-2-17-ACCENT-NAME",
+        "ALL-HATAF-PS-17-14-SOURCE"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case": "jeremiah-accent",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "Ben adjudicated etnaḥta and ḥolam omission; the Masorah circle remains optional. The older wrong quote does not establish a copying event."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "Earlier draft origin and Ben's copying hypothesis remain separate from the approved correction; matching the preceding verse does not establish copying."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "JER-31-37-BEN-20261014",
+        "decision": "The unchanged cached quotation and Ben’s proposed correction are shown below. This source correction has not been applied; the research note records his observations, the recent restoration and the copying hypothesis.",
+        "adjudication_status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied"
+      },
+      "recorded_chronology": {
+        "case": "jeremiah-accent",
+        "classification": "discrepancy-in-first-retained-canonical-MAM-note",
+        "result": "history-batch2-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=jeremiah-accent",
+        "history_inventory": "revision-history-inventory.json#case=jeremiah-accent",
+        "introduction_claims": [
+          "ch5:L458"
+        ],
+        "doc_notes": [
+          "Jeremiah 31:37/2/0"
+        ]
+      }
+    },
+    {
+      "case": "numbers-yod-label",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "Ben confirmed that the spelling label should name yod."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "NUM-9-7-BEN-20261014",
+        "decision": "The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
+        "adjudication_status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied"
+      },
+      "recorded_chronology": {
+        "case": "numbers-yod-label",
+        "classification": "discrepancy-present-when-doc-note-description-added",
+        "result": "history-batch1-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=numbers-yod-label",
+        "history_inventory": "revision-history-inventory.json#case=numbers-yod-label",
+        "introduction_claims": [
+          "ch3:L153"
+        ],
+        "doc_notes": [
+          "Numbers 9:7/2/0"
+        ]
+      }
+    },
+    {
+      "case": "deuteronomy-vav-label",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "Ben confirmed that the spelling label should name vav."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "DEUT-32-34-BEN-20261014",
+        "decision": "This is the inverse of Numbers 9:7. The exact cached and corrected wording are shown below, preserving the stored quotation mark and parentheses. This source correction has not been applied.",
+        "adjudication_status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied"
+      },
+      "recorded_chronology": {
+        "case": "deuteronomy-vav-label",
+        "classification": "discrepancy-present-when-doc-note-description-added",
+        "result": "history-batch1-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=deuteronomy-vav-label",
+        "history_inventory": "revision-history-inventory.json#case=deuteronomy-vav-label",
+        "introduction_claims": [
+          "ch3:L211"
+        ],
+        "doc_notes": [
+          "Deuter 32:34/2/0"
+        ]
+      }
+    },
+    {
+      "case": "deuteronomy-leningrad-spelling",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "Ben approved removing only bare Leningrad from the opening defective-spelling list; preserve the remaining sigils and Masorah attribution."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "DEUT-6-21-BEN-20261014",
+        "decision": "The exact edit is =ל,ל1 → =ל1; the remaining note is unchanged. The original full note and translation remain visible, and this source correction has not been applied.",
+        "adjudication_status": "opening-list-correction-adjudicated-by-Ben; proposed-source-correction-not-applied"
+      },
+      "recorded_chronology": {
+        "case": "deuteronomy-leningrad-spelling",
+        "classification": "discrepancy-present-when-doc-note-source-list-expanded",
+        "result": "history-batch2-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=deuteronomy-leningrad-spelling",
+        "history_inventory": "revision-history-inventory.json#case=deuteronomy-leningrad-spelling",
+        "introduction_claims": [
+          "ch3:L186"
+        ],
+        "doc_notes": [
+          "Deuter 6:21/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-SONG-1-6",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "The list-addition proposal is approved; retain the recorded submission/application state."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "SONG-1-6-BEN-20261014",
+        "decision": "Ben approves adding Song of Songs 1:6 for proposal to Avi. Use ל=שֶׁשֱּׁזָפַ֖תְנִי in the list, and change its heading from six to seven items, as shown below. The doc-note retains !=, meaning “surprisingly equals.”",
+        "adjudication_status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied"
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-SONG-1-6",
+        "classification": "omission-present-when-current-cross-manuscript-list-created",
+        "result": "history-batch2-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-SONG-1-6",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-SONG-1-6",
+        "introduction_claims": [
+          "ch5:L716"
+        ],
+        "doc_notes": [
+          "Song of Songs 1:6/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-SAM-8-10",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "The list-addition proposal is approved; retain the recorded submission/application state."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "SAM-8-10-BEN-20261014",
+        "decision": "Ben approves adding 2 Samuel 8:10 for proposal to Avi. Add א=וּֽלְבָרֲכ֗וֹ after the 2 Samuel 1:9 entry, and change the Samuel heading from 30 to 31 items, as shown below.",
+        "adjudication_status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied"
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-SAM-8-10",
+        "classification": "omission-present-when-Samuel-list-expanded",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-SAM-8-10",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-SAM-8-10",
+        "introduction_claims": [
+          "ch5:L698"
+        ],
+        "doc_notes": [
+          "2Samuel 8:10/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-NUM-10-9",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "The addition is approved; the vowel-function discussion is a separate subquestion."
+        },
+        {
+          "group": "vowel_function",
+          "role": "secondary",
+          "reason": "The approved addition and the separate vav ḥataf/pataḥ function plus following nun ḥiriq question must not be conflated."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "NUM-10-9-BEN-20261015",
+        "decision": "Ben approves adding Numbers 10:9 for proposal to Avi. Add ל=וֲנִזְכַּרְתֶּ֗ם after the Numbers 6:27 entry and change the heading from 18 to 19 items, as shown below.",
+        "adjudication_status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied"
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-NUM-10-9",
+        "classification": "omission-present-when-Numbers-numeric-count-assigned",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-NUM-10-9",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-NUM-10-9",
+        "introduction_claims": [
+          "ch3:L1132"
+        ],
+        "doc_notes": [
+          "Numbers 10:9/2/1"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-GEN-30-27",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "The list-addition proposal is approved; retain the recorded submission/application state."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "GEN-30-27-BEN-20261015",
+        "decision": "Ben approves adding Genesis 30:27 for proposal to Avi. Add ל=וַיְבָרֲכֵ֥נִי after the Genesis 29:8 entry and change the heading from 33 to 34 items, as shown below.",
+        "adjudication_status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied"
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-GEN-30-27",
+        "classification": "omission-present-when-Genesis-numeric-count-assigned",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-GEN-30-27",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-GEN-30-27",
+        "introduction_claims": [
+          "ch3:L1126"
+        ],
+        "doc_notes": [
+          "Genesis 30:27/2/0"
+        ]
+      }
+    },
+    {
+      "case": "proverbs-maqaf-illustration",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "Ben approved the Proverbs 30:19 illustration proposal. This does not approve the separate Proverbs 30:17 case."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "PROV-30-19-BEN-20261015",
+        "decision": "Ben approves replacing the space with maqaf in the layout example, as shown below.",
+        "adjudication_status": "approved-by-Ben; proposed-source-correction-not-submitted-or-applied"
+      },
+      "recorded_chronology": {
+        "case": "proverbs-maqaf-illustration",
+        "classification": "established-staleness",
+        "result": "proverbs-30-19-history.json",
+        "research_note": "proverbs-30-19-history.md"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=proverbs-maqaf-illustration",
+        "history_inventory": "revision-history-inventory.json#case=proverbs-maqaf-illustration",
+        "introduction_claims": [
+          "ch2:L965",
+          "ch2:L968"
+        ],
+        "doc_notes": [
+          "Proverbs 30:19/2/0"
+        ]
+      }
+    },
+    {
+      "case": "oleh-omission-count",
+      "primary_group": "approved_proposals",
+      "memberships": [
+        {
+          "group": "approved_proposals",
+          "role": "primary",
+          "reason": "Ben approved changing the stated count to thirteen. Independent completeness and separate note questions remain bounded by the existing evidence."
+        },
+        {
+          "group": "population_definition",
+          "role": "secondary",
+          "reason": "The approved thirteen-entry correction does not independently prove every manuscript reading or historical list completeness; nine routed chapters are current-count context only."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": true,
+        "adjudication": "OLEH-COUNT-BEN-20261015",
+        "decision": "Ben approves changing chapter 2’s count from eleven to thirteen. The proposed source correction is shown below and has not been applied. The two doc-note follow-ups are filed separately.",
+        "adjudication_status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied"
+      },
+      "recorded_chronology": {
+        "case": "oleh-omission-count",
+        "classification": "established-count-correction-with-stale-chapter2-summary",
+        "result": "oleh-count-history.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=oleh-omission-count",
+        "history_inventory": "revision-history-inventory.json#case=oleh-omission-count",
+        "introduction_claims": [
+          "ch2:L434",
+          "ch5:L741",
+          "ch5:L743",
+          "ch5:L745",
+          "ch5:L747"
+        ],
+        "doc_notes": [
+          "Job 29:25/2/1",
+          "Job 34:20/2/0",
+          "Job 8:6/2/0",
+          "Job 9:22/2/0",
+          "Proverbs 24:24/2/0",
+          "Proverbs 30:15/2/2",
+          "Psalms 109:16/2/0",
+          "Psalms 125:2/2/0",
+          "Psalms 30:12/2/0",
+          "Psalms 55:20/2/1",
+          "Psalms 68:20/2/1",
+          "Psalms 86:2/2/1"
+        ]
+      }
+    },
+    {
+      "case": "tracked-shin-dot",
+      "primary_group": "tracked_or_post_cache_correction",
+      "memberships": [
+        {
+          "group": "tracked_or_post_cache_correction",
+          "role": "primary",
+          "reason": "The tracked shin-dot case has separate dated post-cache correction evidence; preserve the frozen comparison."
+        }
+      ],
+      "existing_disposition": {
+        "section": "tracked",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Use #305 for the existing correction; no new manuscript decision is raised here.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "tracked-shin-dot",
+        "classification": "established-staleness-followed-by-post-cache-correction",
+        "result": "history-batch7-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=tracked-shin-dot",
+        "history_inventory": "revision-history-inventory.json#case=tracked-shin-dot",
+        "introduction_claims": [
+          "ch5:L430"
+        ],
+        "doc_notes": [
+          "2Kings 18:27/2/1"
+        ]
+      }
+    },
+    {
+      "case": "tracked-ezekiel-meteg",
+      "primary_group": "tracked_or_post_cache_correction",
+      "memberships": [
+        {
+          "group": "tracked_or_post_cache_correction",
+          "role": "primary",
+          "reason": "The tracked Ezekiel meteg case has separate dated post-cache correction evidence."
+        }
+      ],
+      "existing_disposition": {
+        "section": "tracked",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Use #306 for the existing meteg correction; no new manuscript decision is raised here.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "tracked-ezekiel-meteg",
+        "classification": "established-staleness-followed-by-post-cache-correction",
+        "result": "history-batch8-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=tracked-ezekiel-meteg",
+        "history_inventory": "revision-history-inventory.json#case=tracked-ezekiel-meteg",
+        "introduction_claims": [
+          "ch5:L495"
+        ],
+        "doc_notes": [
+          "Ezekiel 28:3/2/0"
+        ]
+      }
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-14",
+      "primary_group": "tracked_or_post_cache_correction",
+      "memberships": [
+        {
+          "group": "tracked_or_post_cache_correction",
+          "role": "primary",
+          "reason": "The tracked Ezekiel 14:14 dagesh case has separate dated post-cache correction evidence."
+        }
+      ],
+      "existing_disposition": {
+        "section": "tracked",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Use #307 for the existing correction; no new manuscript decision is raised here.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "tracked-ezekiel-dagesh-14",
+        "classification": "established-staleness-followed-by-post-cache-correction",
+        "result": "history-batch8-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=tracked-ezekiel-dagesh-14",
+        "history_inventory": "revision-history-inventory.json#case=tracked-ezekiel-dagesh-14",
+        "introduction_claims": [
+          "ch5:L492"
+        ],
+        "doc_notes": [
+          "Ezekiel 14:14/2/0"
+        ]
+      }
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-20",
+      "primary_group": "tracked_or_post_cache_correction",
+      "memberships": [
+        {
+          "group": "tracked_or_post_cache_correction",
+          "role": "primary",
+          "reason": "The tracked Ezekiel 14:20 dagesh case has separate dated post-cache correction evidence."
+        }
+      ],
+      "existing_disposition": {
+        "section": "tracked",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Use #307 for the existing correction; no new manuscript decision is raised here.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "tracked-ezekiel-dagesh-20",
+        "classification": "established-staleness-followed-by-post-cache-correction",
+        "result": "history-batch8-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=tracked-ezekiel-dagesh-20",
+        "history_inventory": "revision-history-inventory.json#case=tracked-ezekiel-dagesh-20",
+        "introduction_claims": [
+          "ch5:L493"
+        ],
+        "doc_notes": [
+          "Ezekiel 14:20/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-108-11",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Review the conflicting quoted form and preserve the note's nun-reading qualification."
+        },
+        {
+          "group": "uncertain_reading",
+          "role": "secondary",
+          "reason": "Any quotation alignment must retain the qualification concerning the nun reading."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction quotation have deḥi, matching the note’s Breuer quotation, or is its tipeḥa intentional?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-108-11",
+        "classification": "history-accounted-source-divergence",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-108-11",
+        "history_inventory": "revision-history-inventory.json#case=PS-108-11",
+        "introduction_claims": [
+          "ch5:L605"
+        ],
+        "doc_notes": [
+          "Psalms 108:11/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-57-9-ALTERNATIVE",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The completed November 2025 note correction gives terḥa plus merkha; the Introduction retains deḥi plus merkha as alternative."
+        },
+        {
+          "group": "uncertain_reading",
+          "role": "secondary",
+          "reason": "The dated terḥa/merkha correction is established, while the alternative's manuscript uncertainty must remain visible."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction’s alternative have terḥa and merkha, matching the note, or should the note include a deḥi-and-merkha alternative?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-57-9-ALTERNATIVE",
+        "classification": "established-staleness",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-57-9-ALTERNATIVE",
+        "history_inventory": "revision-history-inventory.json#case=PS-57-9-ALTERNATIVE",
+        "introduction_claims": [
+          "ch5:L583"
+        ],
+        "doc_notes": [
+          "Psalms 57:9/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-108-3-ALTERNATIVE",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Review the quoted alternative and its qualification against the dated note; do not silently erase uncertainty."
+        },
+        {
+          "group": "uncertain_reading",
+          "role": "secondary",
+          "reason": "The alternative's qualification is not removed merely by matching the dated quotation."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction’s alternative have terḥa and merkha, matching the note, or should the note include a deḥi-and-merkha alternative?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-108-3-ALTERNATIVE",
+        "classification": "established-staleness",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-108-3-ALTERNATIVE",
+        "history_inventory": "revision-history-inventory.json#case=PS-108-3-ALTERNATIVE",
+        "introduction_claims": [
+          "ch5:L603"
+        ],
+        "doc_notes": [
+          "Psalms 108:3/2/0"
+        ]
+      }
+    },
+    {
+      "case": "DAN-2-17",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The Introduction retains a meteg after the dated note change selected the form without it."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Which Leningrad quotation should both passages use: with or without meteg on dalet?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "DAN-2-17",
+        "classification": "established-staleness",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=DAN-2-17",
+        "history_inventory": "revision-history-inventory.json#case=DAN-2-17",
+        "introduction_claims": [
+          "ch4:L642"
+        ],
+        "doc_notes": [
+          "Daniel 2:17/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-39-13",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "The first explicit canonical Leningrad quote differs from the Introduction's placement. Its parent has no Leningrad quote: obtain support for the placement rather than infer corrected-note staleness from the neighboring Aleppo vowel change."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The Introduction's Leningrad placement origin is unresolved. The first canonical Leningrad quote is an addition, not a correction to a parent Leningrad quote."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Which placement should both passages give for Leningrad: merkha–meteg or meteg–merkha?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-39-13",
+        "classification": "history-accounted-l-quotation-origin-unresolved",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-39-13",
+        "history_inventory": "revision-history-inventory.json#case=PS-39-13",
+        "introduction_claims": [
+          "ch2:L617",
+          "ch2:L636"
+        ],
+        "doc_notes": [
+          "Psalms 39:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-17-14-MAQAF",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The literal Introduction/note relation is available for an alignment choice even though the exact Introduction insertion is not located."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The exact Introduction insertion is unlocated; the available literal comparison is sufficient for its existing editorial question."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should both Introduction alternatives have maqaf and the “no maqaf” comment be revised, or does that comment describe a different Leningrad pointing?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-17-14-MAQAF",
+        "classification": "not-explained-by-later-canonical-note-change-origin-undated",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-17-14-MAQAF",
+        "history_inventory": "revision-history-inventory.json#case=PS-17-14-MAQAF",
+        "introduction_claims": [
+          "ch2:L649"
+        ],
+        "doc_notes": [
+          "Psalms 17:14/2/0"
+        ]
+      }
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Choose how to quote the selected reading while retaining the recorded meteg uncertainty."
+        },
+        {
+          "group": "uncertain_reading",
+          "role": "secondary",
+          "reason": "The meteg uncertainty remains independent of the selected-quotation choice."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction’s preferred pointing match MAM body text without lamed meteg, leaving the meteg quotation as an uncertain Aleppo alternative?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "JOSH-14-7-SELECTION",
+        "classification": "established-staleness",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=JOSH-14-7-SELECTION",
+        "history_inventory": "revision-history-inventory.json#case=JOSH-14-7-SELECTION",
+        "introduction_claims": [
+          "ch5:L304"
+        ],
+        "doc_notes": [
+          "Joshua 14:7/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-150-3-HATAF",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Review the first Aleppo quotation: the Introduction retains sheva while the note's first Aleppo quotation was corrected to ḥataf pataḥ. Keep the second occurrence separate."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the first Aleppo quotation in the Introduction have ḥataf pataḥ, matching the note, or should the note’s quotation be revised?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-150-3-HATAF",
+        "classification": "established-staleness",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-150-3-HATAF",
+        "history_inventory": "revision-history-inventory.json#case=PS-150-3-HATAF",
+        "introduction_claims": [
+          "ch5:L710"
+        ],
+        "doc_notes": [
+          "Psalms 150:3/2/0"
+        ]
+      }
+    },
+    {
+      "case": "EX-7-13-METEG-QUOTATION",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The prose names meteg while its purported quotation has an extra pataḥ; review the concrete quotation correction."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the extra pataḥ in the explanatory quotation be meteg?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "EX-7-13-METEG-QUOTATION",
+        "classification": "defect-present-when-note-added",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=EX-7-13-METEG-QUOTATION",
+        "history_inventory": "revision-history-inventory.json#case=EX-7-13-METEG-QUOTATION",
+        "introduction_claims": [],
+        "doc_notes": [
+          "Exodus 7:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "LEV-3-17-METEG-LABEL",
+      "primary_group": "statement_scope",
+      "memberships": [
+        {
+          "group": "statement_scope",
+          "role": "primary",
+          "reason": "The phrase without meteg could refer to mem even though bet has meteg; identify the referent."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Does “no meteg” mean “no meteg on mem,” or should the alternative quotation lack meteg on bet?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "LEV-3-17-METEG-LABEL",
+        "classification": "ambiguity-present-when-alternative-added",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=LEV-3-17-METEG-LABEL",
+        "history_inventory": "revision-history-inventory.json#case=LEV-3-17-METEG-LABEL",
+        "introduction_claims": [],
+        "doc_notes": [
+          "Levit 3:17/2/0"
+        ]
+      }
+    },
+    {
+      "case": "NUM-10-8-B17-METEG",
+      "primary_group": "conflicting_assignments",
+      "memberships": [
+        {
+          "group": "conflicting_assignments",
+          "role": "primary",
+          "reason": "Firkovich B17 receives conflicting assignments within the source comparison; an attributed reading must choose the correction."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should Firkovich B17 be listed with meteg on tsadi or with no meteg?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "NUM-10-8-B17-METEG",
+        "classification": "internal-note-conflict-introduced-by-source-code-replacement",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=NUM-10-8-B17-METEG",
+        "history_inventory": "revision-history-inventory.json#case=NUM-10-8-B17-METEG",
+        "introduction_claims": [],
+        "doc_notes": [
+          "Numbers 10:8/2/0"
+        ]
+      }
+    },
+    {
+      "case": "DEUT-1-33-SASSOON-METEG",
+      "primary_group": "conflicting_assignments",
+      "memberships": [
+        {
+          "group": "conflicting_assignments",
+          "role": "primary",
+          "reason": "Sassoon receives conflicting meteg assignments; chronology alone does not establish which assignment should be removed."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should Sassoon 1053 be listed with meteg on nun or with no meteg?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "DEUT-1-33-SASSOON-METEG",
+        "classification": "conflicting-attribution-present-when-agreement-expanded",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=DEUT-1-33-SASSOON-METEG",
+        "history_inventory": "revision-history-inventory.json#case=DEUT-1-33-SASSOON-METEG",
+        "introduction_claims": [],
+        "doc_notes": [
+          "Deuter 1:33/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-30-12-NOTE-LABEL",
+      "primary_group": "tracked_or_post_cache_correction",
+      "memberships": [
+        {
+          "group": "tracked_or_post_cache_correction",
+          "role": "primary",
+          "reason": "A post-baseline revision corrected the note label; this observation does not alter its existing unreviewed disposition."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the note say “omission of the oleh mark” instead of “omission of the revia mark”?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-30-12-NOTE-LABEL",
+        "classification": "history-accounted-note-error-at-addition",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-30-12-NOTE-LABEL",
+        "history_inventory": "revision-history-inventory.json#case=PS-30-12-NOTE-LABEL",
+        "introduction_claims": [
+          "ch5:L743"
+        ],
+        "doc_notes": [
+          "Psalms 30:12/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-31-12-HATAF",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The minority group says Aleppo lacks ḥataf, but the note has attributed it to Aleppo since import. A 2026 selected-form marker did not create that disagreement."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The specific minority-group claim is observed in November 2025; older different lists do not establish its insertion date."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should this example have ḥataf pataḥ and leave the missing-ḥataf list, or should the note’s Aleppo attribution be revised?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-31-12-HATAF",
+        "classification": "history-accounted-source-divergence",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-31-12-HATAF",
+        "history_inventory": "revision-history-inventory.json#case=PS-31-12-HATAF",
+        "introduction_claims": [
+          "ch2:L681"
+        ],
+        "doc_notes": [
+          "Psalms 31:12/2/1"
+        ]
+      }
+    },
+    {
+      "case": "PS-53-6-LETTER-NAME",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The atom has he-yod-he and no resh. Choose the intended letter pair; the wrong name was present when the description was added."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the description name yod and the final he, or a different pair of letters?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-53-6-LETTER-NAME",
+        "classification": "history-accounted-note-error-at-addition",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-53-6-LETTER-NAME",
+        "history_inventory": "revision-history-inventory.json#case=PS-53-6-LETTER-NAME",
+        "introduction_claims": [],
+        "doc_notes": [
+          "Psalms 53:6/2/0"
+        ]
+      }
+    },
+    {
+      "case": "DAN-5-7",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The first bounded Introduction entry follows the note correction; align the quotation without inventing an earlier stale stage."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The first Introduction entry is bounded after the note correction. Its exact insertion is unnecessary to preserve that chronology limit."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Choose the intended Leningrad ketiv quotation; if the doc-note is correct, remove the extra yod from the Introduction.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "DAN-5-7",
+        "classification": "discrepancy-at-first-observed-Introduction-entry-origin-bounded",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=DAN-5-7",
+        "history_inventory": "revision-history-inventory.json#case=DAN-5-7",
+        "introduction_claims": [
+          "ch4:L217"
+        ],
+        "doc_notes": [
+          "Daniel 5:7/2/1"
+        ]
+      }
+    },
+    {
+      "case": "DAN-7-9-SELECTION",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The preferred selection changed in the note; choose whether the Introduction should quote the current preferred form or label the older alternative."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Choose whether to move the decision-list star to the one-yod spelling, or document a change in MAM's selected spelling.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "DAN-7-9-SELECTION",
+        "classification": "established-staleness",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=DAN-7-9-SELECTION",
+        "history_inventory": "revision-history-inventory.json#case=DAN-7-9-SELECTION",
+        "introduction_claims": [
+          "ch4:L242",
+          "ch4:L328"
+        ],
+        "doc_notes": [
+          "Daniel 7:9/2/0"
+        ]
+      }
+    },
+    {
+      "case": "DESCRIPTION-NUM-22-23",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The description names bet where the form points to dalet; preserve the distinct reading-uncertainty question."
+        },
+        {
+          "group": "uncertain_reading",
+          "role": "secondary",
+          "reason": "Correcting the bet/dalet wording does not remove the independently reported reading uncertainty."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Change “bet” to “dalet,” and decide whether to restore the note's question marks or explicitly describe the blurred-dot reading.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "DESCRIPTION-NUM-22-23",
+        "classification": "established-staleness",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=DESCRIPTION-NUM-22-23",
+        "history_inventory": "revision-history-inventory.json#case=DESCRIPTION-NUM-22-23",
+        "introduction_claims": [
+          "ch3:L1008"
+        ],
+        "doc_notes": [
+          "Numbers 22:23/2/0"
+        ]
+      }
+    },
+    {
+      "case": "DESCRIPTION-DEUT-28-27",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The description names tav where the cited form requires tet; preserve the separate edition attribution."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Change the note's letter name from tav to tet; retain its attribution to Miqra'ot Gedolot HaKeter unless that edition attribution is separately reconsidered.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "DESCRIPTION-DEUT-28-27",
+        "classification": "wrong-description-present-when-added",
+        "result": "history-batch6-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=DESCRIPTION-DEUT-28-27",
+        "history_inventory": "revision-history-inventory.json#case=DESCRIPTION-DEUT-28-27",
+        "introduction_claims": [
+          "ch3:L1117"
+        ],
+        "doc_notes": [
+          "Deuter 28:27/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ISA-10-15",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Align the current source assignment/quotation while preserving the separate uncertainty about the physical erasure or reading."
+        },
+        {
+          "group": "uncertain_reading",
+          "role": "secondary",
+          "reason": "Physical erasure or reading interpretation remains unresolved even after textual attribution is aligned."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The table's exact insertion is not located; this does not prevent recording the observed source-assignment mismatch."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Choose whether to correct the table and bracketed summary to mark the first yod as uncertain, following the detailed explanation, or revise the explanation if the second yod was intended.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ISA-10-15",
+        "classification": "discrepancy-present-in-observed-history",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ISA-10-15",
+        "history_inventory": "revision-history-inventory.json#case=ISA-10-15",
+        "introduction_claims": [
+          "ch5:L130",
+          "ch5:L56"
+        ],
+        "doc_notes": [
+          "Isaiah 10:15/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPECIAL-LETTER-2SAM-21-19",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The selected form marks a small resh while the prose says large; align the intended size label or specimen."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If MAM's small resh is intended, change the note's selection description to “small resh” and consider changing “no large letter” to “ordinary resh” for clarity.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPECIAL-LETTER-2SAM-21-19",
+        "classification": "wrong-description-present-when-added",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPECIAL-LETTER-2SAM-21-19",
+        "history_inventory": "revision-history-inventory.json#case=SPECIAL-LETTER-2SAM-21-19",
+        "introduction_claims": [
+          "ch5:L215"
+        ],
+        "doc_notes": [
+          "2Samuel 21:19/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The selected form marks a small final nun while the prose says large; align the intended size label or specimen."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If MAM's small final nun is intended, change the note's opening size description from “large” to “small.”",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPECIAL-LETTER-JER-39-13",
+        "classification": "introduced-in-note",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPECIAL-LETTER-JER-39-13",
+        "history_inventory": "revision-history-inventory.json#case=SPECIAL-LETTER-JER-39-13",
+        "introduction_claims": [
+          "ch5:L220"
+        ],
+        "doc_notes": [
+          "Jeremiah 39:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "LEV-7-PARASHAH-LOCATOR",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The cited paragraph context identifies verse 28 rather than 27."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Change the note's second verse number from 27 to 28.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "LEV-7-PARASHAH-LOCATOR",
+        "classification": "wrong-locator-present-when-note-added",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=LEV-7-PARASHAH-LOCATOR",
+        "history_inventory": "revision-history-inventory.json#case=LEV-7-PARASHAH-LOCATOR",
+        "introduction_claims": [
+          "ch3:L264"
+        ],
+        "doc_notes": [
+          "Levit 7:22/0/0"
+        ]
+      }
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "primary_group": "statement_scope",
+      "memberships": [
+        {
+          "group": "statement_scope",
+          "role": "primary",
+          "reason": "Agreement could concern accent or the whole compound; earlier notes distinguished the space/maqaf relation before a merge and later separation. Do not call the later separation a new stale event."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Clarify what the Introduction's agreement clause covers before proposing any change to the source attribution.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ISA-59-19-MAQAF",
+        "classification": "history-accounted-agreement-scope-unresolved",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ISA-59-19-MAQAF",
+        "history_inventory": "revision-history-inventory.json#case=ISA-59-19-MAQAF",
+        "introduction_claims": [
+          "ch5:L51"
+        ],
+        "doc_notes": [
+          "Isaiah 59:19/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "primary_group": "edition_version",
+      "memberships": [
+        {
+          "group": "edition_version",
+          "role": "primary",
+          "reason": "Check the specified HaKeter edition/version at the merkha/tevir passage."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Confirm which HaKeter edition or version the passage means, then correct either the Introduction's claim of agreement or the note's tevir attribution.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ISA-55-5-EDITION",
+        "classification": "insufficient-history",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ISA-55-5-EDITION",
+        "history_inventory": "revision-history-inventory.json#case=ISA-55-5-EDITION",
+        "introduction_claims": [
+          "ch5:L57"
+        ],
+        "doc_notes": [
+          "Isaiah 55:5/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SONG-2-17-ACCENT-NAME",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The note introduced pashta despite the qadma sign and existing qadma statement; the pinned Introduction now has qadma."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The Introduction correction is bounded between retained 2023 and pinned 2026 snapshots; its exact date is not needed for the note's wording correction."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Change “pashta” to “qadma” in the note's parenthesis.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SONG-2-17-ACCENT-NAME",
+        "classification": "introduced-in-note",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SONG-2-17-ACCENT-NAME",
+        "history_inventory": "revision-history-inventory.json#case=SONG-2-17-ACCENT-NAME",
+        "introduction_claims": [
+          "ch5:L687"
+        ],
+        "doc_notes": [
+          "Song of Songs 2:17/2/0"
+        ]
+      }
+    },
+    {
+      "case": "AMOS-MISSING-PAGES",
+      "primary_group": "physical_count_unit",
+      "memberships": [
+        {
+          "group": "physical_count_unit",
+          "role": "primary",
+          "reason": "The same physical gap is described as three versus four; identify page/leaf/unit conventions before selecting a number."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Choose the intended count and make the two descriptions agree; if “pages” is being used in different senses, state the units explicitly.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "AMOS-MISSING-PAGES",
+        "classification": "insufficient-history",
+        "result": "history-batch8-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=AMOS-MISSING-PAGES",
+        "history_inventory": "revision-history-inventory.json#case=AMOS-MISSING-PAGES",
+        "introduction_claims": [
+          "ch4:L30"
+        ],
+        "doc_notes": [
+          "Amos 8:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-15-1-QUOTE",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Choose a complete quotation including the omitted name or an explicit ellipsis."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Insert the divine name in the Introduction quotation, or add an ellipsis if the shorter quotation is intentional.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-15-1-QUOTE",
+        "classification": "history-accounted-quotation-omission",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-15-1-QUOTE",
+        "history_inventory": "revision-history-inventory.json#case=PS-15-1-QUOTE",
+        "introduction_claims": [
+          "ch4:L33"
+        ],
+        "doc_notes": [
+          "Psalms 15:1/2/0",
+          "Psalms 15:1/2/2"
+        ]
+      }
+    },
+    {
+      "case": "NUM-22-5-QUALIFIED",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Align the changed qualified attribution; adjudicating the underlying Sapir/Cassuto report would require its cited published source."
+        },
+        {
+          "group": "edition_version",
+          "role": "secondary",
+          "reason": "Only if the underlying Sapir/Cassuto attribution is being adjudicated, inspect the cited Ofer report; aligning the changed text needs no new origin search."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Confirm which report is intended; change the Introduction's attribution to Cassuto's lists if the verse note is correct, or explain Sapir's separate evidence if both reports matter.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "NUM-22-5-QUALIFIED",
+        "classification": "established-staleness",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=NUM-22-5-QUALIFIED",
+        "history_inventory": "revision-history-inventory.json#case=NUM-22-5-QUALIFIED",
+        "introduction_claims": [
+          "ch3:L557"
+        ],
+        "doc_notes": [
+          "Numbers 22:5/2/0"
+        ]
+      }
+    },
+    {
+      "case": "GEN-2-10-CHRONOLOGY",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Distinguish the superseded transcription and current reading, and correct the verse link to 2:10 if retaining the example."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Correct the link to Genesis 2:10 and either describe this as a superseded transcription reading or choose a different manuscript example for the paragraph.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "GEN-2-10-CHRONOLOGY",
+        "classification": "established-staleness",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=GEN-2-10-CHRONOLOGY",
+        "history_inventory": "revision-history-inventory.json#case=GEN-2-10-CHRONOLOGY",
+        "introduction_claims": [
+          "ch3:L707"
+        ],
+        "doc_notes": [
+          "Genesis 2:10/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SAM-21-12",
+      "primary_group": "population_definition",
+      "memberships": [
+        {
+          "group": "population_definition",
+          "role": "primary",
+          "reason": "Distinguish manuscript qere-note count, MAM template count and the two-word subset from the three-word whole; the historical partial update is already dated."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Specify any intended two-word subset and the manuscript arrangement or MAM template population counted by the appendix.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SAM-21-12",
+        "classification": "dated-note-expansion-with-partial-appendix-update",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SAM-21-12",
+        "history_inventory": "revision-history-inventory.json#case=SAM-21-12",
+        "introduction_claims": [
+          "appendices:L383",
+          "appendices:L384",
+          "ch5:L385"
+        ],
+        "doc_notes": [
+          "2Samuel 21:12/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-66-12-MAQAF-SCOPE",
+      "primary_group": "statement_scope",
+      "memberships": [
+        {
+          "group": "statement_scope",
+          "role": "primary",
+          "reason": "The universal maqaf statement names the Twenty-one Books; the poetic continuation may include meteg cases without maqaf. Canonical history shows no removal of maqaf."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If maqaf is essential to the list’s scope, identify the basis for including this verse.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-66-12-MAQAF-SCOPE",
+        "classification": "history-accounted-paragraph-scope-unresolved",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-66-12-MAQAF-SCOPE",
+        "history_inventory": "revision-history-inventory.json#case=PS-66-12-MAQAF-SCOPE",
+        "introduction_claims": [
+          "ch2:L307"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "PS-119-90-MAQAF-SCOPE",
+      "primary_group": "statement_scope",
+      "memberships": [
+        {
+          "group": "statement_scope",
+          "role": "primary",
+          "reason": "Clarify whether the poetic continuation inherits the preceding universal maqaf condition or illustrates meteg cases more broadly."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Retain it under a broader heading, or supply the evidence that makes it a maqaf example.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-119-90-MAQAF-SCOPE",
+        "classification": "history-accounted-paragraph-scope-unresolved",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-119-90-MAQAF-SCOPE",
+        "history_inventory": "revision-history-inventory.json#case=PS-119-90-MAQAF-SCOPE",
+        "introduction_claims": [
+          "ch2:L307"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "IMPLICIT-MS-SAM-16-23",
+      "primary_group": "bounded_answer_available",
+      "memberships": [
+        {
+          "group": "bounded_answer_available",
+          "role": "primary",
+          "reason": "The older note explicitly named Aleppo, supplying provenance for the current unnamed manuscript statement."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Confirm that this note is intended as an Aleppo description, preferably with the source of the recorded reading. Until then, distinguish the Introduction’s attribution from the unnamed local description.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "IMPLICIT-MS-SAM-16-23",
+        "classification": "history-accounted-attribution-supported-by-earlier-note",
+        "result": "history-batch7-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=IMPLICIT-MS-SAM-16-23",
+        "history_inventory": "revision-history-inventory.json#case=IMPLICIT-MS-SAM-16-23",
+        "introduction_claims": [
+          "ch5:L379"
+        ],
+        "doc_notes": [
+          "2Samuel 16:23/2/0"
+        ]
+      }
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-14-7",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "The confirmed pashta omission is narrower than the complete pointed ketiv claimed; identify support for the remaining pointing."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Separate the confirmed pashta omission from the ketiv-pointing claim; identify the latter’s source if complete pointing is intended.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "IMPLICIT-MS-KINGS-14-7",
+        "classification": "history-accounted-specific-source-support-absent",
+        "result": "history-batch7-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=IMPLICIT-MS-KINGS-14-7",
+        "history_inventory": "revision-history-inventory.json#case=IMPLICIT-MS-KINGS-14-7",
+        "introduction_claims": [
+          "ch5:L412",
+          "ch5:L428"
+        ],
+        "doc_notes": [
+          "2Kings 14:7/2/0"
+        ]
+      }
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-18-27",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "Other note targets do not supply the exact manuscript/form pair asserted here."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Identify an attributed description or source for this pair. Otherwise state that the pointing is quoted by the Introduction but not supplied by its local note.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "IMPLICIT-MS-KINGS-18-27",
+        "classification": "history-accounted-specific-source-support-absent",
+        "result": "history-batch7-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=IMPLICIT-MS-KINGS-18-27",
+        "history_inventory": "revision-history-inventory.json#case=IMPLICIT-MS-KINGS-18-27",
+        "introduction_claims": [
+          "ch5:L429"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "GEN-36-13",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "Both quoted descriptions say merkha while the displayed signs are munaḥ; decide whether the signs or their names are intended."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If the quoted word is correct, use munaḥ in both descriptions; if merkha is intended, identify the quotation that supports changing its accents.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "GEN-36-13",
+        "classification": "shared-terminology-question-from-first-canonical-note",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=GEN-36-13",
+        "history_inventory": "revision-history-inventory.json#case=GEN-36-13",
+        "introduction_claims": [
+          "ch3:L797"
+        ],
+        "doc_notes": [
+          "Genesis 36:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-1-3",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Choose a quotation consistent with the selected form or identify which illustrative features are intentionally retained."
+        },
+        {
+          "group": "illustration_extent",
+          "role": "secondary",
+          "reason": "If retaining an intentionally illustrative form, identify its scope rather than presenting it as an exact quotation."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If the layout illustration represents MAM body text, include the grey maqaf; if it deliberately gives the manuscript quotation, label that distinction.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-1-3",
+        "classification": "established-staleness",
+        "result": "history-batch1-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-1-3",
+        "history_inventory": "revision-history-inventory.json#case=PS-1-3",
+        "introduction_claims": [
+          "ch2:L436",
+          "ch2:L442",
+          "ch2:L980"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "MAL-HOLAM",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "Decide whether the specimen promises the entire source form or only the stated feature, including treatment of ḥolam."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Use the same convention consistently, or state why the extra ḥolam dot is supplied.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "MAL-HOLAM",
+        "classification": "dated-quotation-divergence",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=MAL-HOLAM",
+        "history_inventory": "revision-history-inventory.json#case=MAL-HOLAM",
+        "introduction_claims": [
+          "ch5:L511"
+        ],
+        "doc_notes": [
+          "Malachi 2:7/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-119-138",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "Specify the specimen's promised feature and exact source; incidental marks cannot alone establish a wrong quotation."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If the example is a full quotation, identify the source for the initial meteg.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-119-138",
+        "classification": "history-accounted-attribution-scope-unresolved",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-119-138",
+        "history_inventory": "revision-history-inventory.json#case=PS-119-138",
+        "introduction_claims": [
+          "ch5:L609"
+        ],
+        "doc_notes": [
+          "Psalms 119:138/2/0"
+        ]
+      }
+    },
+    {
+      "case": "PS-18-2-ATTRIBUTION",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "Identify the earlier Aleppo report for this lost portion; the grammatical inference does not establish the attribution."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Identify the Aleppo report, or qualify the attribution as reading tradition or editorial convention.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "PS-18-2-ATTRIBUTION",
+        "classification": "insufficient-history-to-resolve-manuscript-attribution",
+        "result": "history-batch1-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=PS-18-2-ATTRIBUTION",
+        "history_inventory": "revision-history-inventory.json#case=PS-18-2-ATTRIBUTION",
+        "introduction_claims": [
+          "ch4:L33",
+          "ch5:L625"
+        ],
+        "doc_notes": [
+          "Psalms 18:2/2/0"
+        ]
+      }
+    },
+    {
+      "case": "L-CANDIDATE-DEUT-12-30",
+      "primary_group": "uncertain_reading",
+      "memberships": [
+        {
+          "group": "uncertain_reading",
+          "role": "primary",
+          "reason": "The source comparison retains competing meteg readings; do not promote the doubtful Leningrad candidate to a settled reading."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Decide whether the manuscript reading is still unresolved. If it is, preserve both candidates with their evidence; if the note’s interpretation is accepted, label qadma as the transcription reading.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "L-CANDIDATE-DEUT-12-30",
+        "classification": "history-accounted-manuscript-interpretation-unresolved",
+        "result": "history-batch6-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=L-CANDIDATE-DEUT-12-30",
+        "history_inventory": "revision-history-inventory.json#case=L-CANDIDATE-DEUT-12-30",
+        "introduction_claims": [
+          "ch3:L1079"
+        ],
+        "doc_notes": [
+          "Deuter 12:30/2/1"
+        ]
+      }
+    },
+    {
+      "case": "L-CANDIDATE-PS-17-14",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "The candidate is attested to other manuscripts; identify an explicit Leningrad basis before adding that attribution."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Identify the report supporting the first Leningrad candidate, or keep it separate as the reading of the other named manuscripts.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "L-CANDIDATE-PS-17-14",
+        "classification": "attribution-tension-present-when-Introduction-candidate-added",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=L-CANDIDATE-PS-17-14",
+        "history_inventory": "revision-history-inventory.json#case=L-CANDIDATE-PS-17-14",
+        "introduction_claims": [
+          "ch4:L514"
+        ],
+        "doc_notes": [
+          "Psalms 17:14/2/0"
+        ]
+      }
+    },
+    {
+      "case": "L-CANDIDATE-PS-18-7",
+      "primary_group": "source_certainty",
+      "memberships": [
+        {
+          "group": "source_certainty",
+          "role": "primary",
+          "reason": "Choose wording that distinguishes the reported transcription and uncertainty from an unqualified Leningrad attribution."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Clarify whether the Introduction preserves an unresolved manuscript interpretation or lists the transcription as an alternative source.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "L-CANDIDATE-PS-18-7",
+        "classification": "attribution-tension-present-when-Introduction-alternative-added",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=L-CANDIDATE-PS-18-7",
+        "history_inventory": "revision-history-inventory.json#case=L-CANDIDATE-PS-18-7",
+        "introduction_claims": [
+          "ch4:L518"
+        ],
+        "doc_notes": [
+          "Psalms 18:7/2/0"
+        ]
+      }
+    },
+    {
+      "case": "L-CANDIDATE-DAN-2-41",
+      "primary_group": "uncertain_reading",
+      "memberships": [
+        {
+          "group": "uncertain_reading",
+          "role": "primary",
+          "reason": "The disputed Leningrad reading remains explicitly qualified; an extra candidate needs more than a category match."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep both possible interpretations, with their source labels, unless additional attributed evidence resolves the short line.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "L-CANDIDATE-DAN-2-41",
+        "classification": "history-accounted-manuscript-interpretation-unresolved",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=L-CANDIDATE-DAN-2-41",
+        "history_inventory": "revision-history-inventory.json#case=L-CANDIDATE-DAN-2-41",
+        "introduction_claims": [
+          "ch4:L645"
+        ],
+        "doc_notes": [
+          "Daniel 2:41/2/1"
+        ]
+      }
+    },
+    {
+      "case": "L-CANDIDATE-DAN-5-3",
+      "primary_group": "source_certainty",
+      "memberships": [
+        {
+          "group": "source_certainty",
+          "role": "primary",
+          "reason": "The source/reading qualification must be retained rather than promoting a reported form to a definite manuscript claim."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "State whether the candidate concerns the manuscript, its transcription, or both. Retain the transcription qualification until a recorded manuscript reading supports removing it.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "L-CANDIDATE-DAN-5-3",
+        "classification": "history-accounted-source-qualification-unresolved",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=L-CANDIDATE-DAN-5-3",
+        "history_inventory": "revision-history-inventory.json#case=L-CANDIDATE-DAN-5-3",
+        "introduction_claims": [
+          "ch4:L659"
+        ],
+        "doc_notes": [
+          "Daniel 5:3/2/0"
+        ]
+      }
+    },
+    {
+      "case": "L-CANDIDATE-NEH-12-47",
+      "primary_group": "source_certainty",
+      "memberships": [
+        {
+          "group": "source_certainty",
+          "role": "primary",
+          "reason": "Retain the distinction between the transcription source and the manuscript attribution, including reported doubt."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep the source qualification, or identify the attributed manuscript reading that justifies a direct Leningrad assignment.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "L-CANDIDATE-NEH-12-47",
+        "classification": "history-accounted-preexisting-source-qualification-difference",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=L-CANDIDATE-NEH-12-47",
+        "history_inventory": "revision-history-inventory.json#case=L-CANDIDATE-NEH-12-47",
+        "introduction_claims": [
+          "ch4:L734"
+        ],
+        "doc_notes": [
+          "Nehemiah 12:47/2/0"
+        ]
+      }
+    },
+    {
+      "case": "STRAND-SCOPE",
+      "primary_group": "strand_allocation",
+      "memberships": [
+        {
+          "group": "strand_allocation",
+          "role": "primary",
+          "reason": "The available MAM form does not allocate Leningrad's two signs to its Decalogue strands; obtain that precise attribution."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Identify the basis for the allocation, or describe the two accents without assigning them to upper and lower accentuation.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "STRAND-SCOPE",
+        "classification": "history-accounted-strand-allocation-support-unresolved",
+        "result": "history-batch6-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=STRAND-SCOPE",
+        "history_inventory": "revision-history-inventory.json#case=STRAND-SCOPE",
+        "introduction_claims": [
+          "ch3:L1064"
+        ],
+        "doc_notes": [
+          "Deuter 5:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-SONG-4-16",
+      "primary_group": "literal_wording_review",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "primary",
+          "reason": "The quoted comparison concerns zayin dagesh. Name zayin if these forms are retained, or supply a form supporting lamed."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "March 2023 is the observed Introduction wording, not an asserted first origin of the wrong letter name."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "If the compared words are correct, name zayin in the Introduction; if lamed is intended, supply the corresponding quotation.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SHARED-EXPLANATIONS-SONG-4-16",
+        "classification": "discrepancy-present-in-observed-history",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SHARED-EXPLANATIONS-SONG-4-16",
+        "history_inventory": "revision-history-inventory.json#case=SHARED-EXPLANATIONS-SONG-4-16",
+        "introduction_claims": [
+          "ch4:L537"
+        ],
+        "doc_notes": [
+          "Song of Songs 4:16/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "primary_group": "uncertain_reading",
+      "memberships": [
+        {
+          "group": "uncertain_reading",
+          "role": "primary",
+          "reason": "The shared explanation leaves an actual reading uncertainty; history does not independently select a reading."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Preserve the note’s uncertainty about qamats unless further attributed evidence resolves it.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SHARED-EXPLANATIONS-LAM-4-7",
+        "classification": "insufficient-history",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SHARED-EXPLANATIONS-LAM-4-7",
+        "history_inventory": "revision-history-inventory.json#case=SHARED-EXPLANATIONS-LAM-4-7",
+        "introduction_claims": [
+          "ch4:L605"
+        ],
+        "doc_notes": [
+          "Lamentations 4:7/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPELLING-SPECIMEN-NEHEMIAH",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "A spelling specimen does not automatically promise full agreement in all pointing and accents."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction reproduce MAM's complete accentuation here, or explicitly retain this as a spelling-only example?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPELLING-SPECIMEN-NEHEMIAH",
+        "classification": "history-accounted-later-stress-helper-scope",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPELLING-SPECIMEN-NEHEMIAH",
+        "history_inventory": "revision-history-inventory.json#case=SPELLING-SPECIMEN-NEHEMIAH",
+        "introduction_claims": [
+          "ch4:L290",
+          "ch4:L99"
+        ],
+        "doc_notes": [
+          "Nehemiah 9:37/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPELLING-SPECIMEN-DANIEL",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "The rejected specimen is not named as a Breuer quotation; define what is being illustrated before assigning that source or alleging a bad quotation."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the rejected example be tied to a named source with its accentuation, or should the Introduction identify it as a spelling-only illustration?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPELLING-SPECIMEN-DANIEL",
+        "classification": "history-accounted-illustration-scope-unresolved",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPELLING-SPECIMEN-DANIEL",
+        "history_inventory": "revision-history-inventory.json#case=SPELLING-SPECIMEN-DANIEL",
+        "introduction_claims": [
+          "ch4:L327"
+        ],
+        "doc_notes": [
+          "Daniel 7:15/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPELLING-SOURCE-2KINGS",
+      "primary_group": "masorah_location",
+      "memberships": [
+        {
+          "group": "masorah_location",
+          "role": "primary",
+          "reason": "Locate the exact Parva/Gedolah notes and support for the claim that the Gedolah text is corrupt."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction retain the specific Masorah Parva/Masorah Gedolah explanation with a precise supporting citation, or use the general attribution in the verse note?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPELLING-SOURCE-2KINGS",
+        "classification": "history-accounted-specific-source-support-absent",
+        "result": "history-batch7-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPELLING-SOURCE-2KINGS",
+        "history_inventory": "revision-history-inventory.json#case=SPELLING-SOURCE-2KINGS",
+        "introduction_claims": [
+          "ch4:L105"
+        ],
+        "doc_notes": [
+          "2Kings 15:25/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPELLING-SOURCE-JEREMIAH",
+      "primary_group": "masorah_location",
+      "memberships": [
+        {
+          "group": "masorah_location",
+          "role": "primary",
+          "reason": "The broad Aleppo Masorah note is compatible with Parva; locate the narrower annotation or the cited Breuer discussion at Jeremiah 18:9 note 60."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction keep the more specific Masorah Parva attribution with its supporting reference, or say simply “Aleppo Masorah,” as the note does?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPELLING-SOURCE-JEREMIAH",
+        "classification": "insufficient-history-to-resolve-specific-Masorah-attribution",
+        "result": "history-batch2-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPELLING-SOURCE-JEREMIAH",
+        "history_inventory": "revision-history-inventory.json#case=SPELLING-SOURCE-JEREMIAH",
+        "introduction_claims": [
+          "ch4:L113"
+        ],
+        "doc_notes": [
+          "Jeremiah 31:27/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "primary_group": "masorah_location",
+      "memberships": [
+        {
+          "group": "literal_wording_review",
+          "role": "secondary",
+          "reason": "Independent validation found a local full/full versus full/defective label error, using the first and second vav positions separately. This does not resolve the Masorah exclamation claim."
+        },
+        {
+          "group": "masorah_location",
+          "role": "primary",
+          "reason": "The exclamation asserts a conflict with Leningrad's Masorah; identify that annotation. The independently confirmed local spelling-label defect is distinct."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the exclamation mark remain with an explicit reference to the conflicting Leningrad Masorah note, or be omitted if the entry is only a spelling comparison?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPELLING-SOURCE-ECCLESIASTES",
+        "classification": "history-accounted-specific-source-support-absent",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPELLING-SOURCE-ECCLESIASTES",
+        "history_inventory": "revision-history-inventory.json#case=SPELLING-SOURCE-ECCLESIASTES",
+        "introduction_claims": [
+          "ch4:L138",
+          "ch4:L99"
+        ],
+        "doc_notes": [
+          "Ecclesiastes 1:17/2/0"
+        ]
+      }
+    },
+    {
+      "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "MAM's unpointed ketiv and pointed qere template does not supply Leningrad attribution or the claimed ketiv pointing."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the entry retain the explicit Leningrad attribution with supporting evidence, or distinguish the Introduction's pointed ketiv and qere from what is directly documented for Leningrad?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+        "classification": "history-accounted-specific-source-support-absent",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SPELLING-SOURCE-DANIEL-CHAIN",
+        "history_inventory": "revision-history-inventory.json#case=SPELLING-SOURCE-DANIEL-CHAIN",
+        "introduction_claims": [
+          "ch4:L219"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "TORAH-SPELLING-METEG",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "The Deuteronomy specimens illustrate spelling; decide whether their meteg marks are part of a full-source quotation promise."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the selected spelling examples reproduce all MAM marks, or should the Introduction say that their accents and meteg marks are illustrative?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "TORAH-SPELLING-METEG",
+        "classification": "established-staleness-in-incidental-pointing-scope-unresolved",
+        "result": "history-batch6-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=TORAH-SPELLING-METEG",
+        "history_inventory": "revision-history-inventory.json#case=TORAH-SPELLING-METEG",
+        "introduction_claims": [
+          "ch3:L193",
+          "ch3:L201"
+        ],
+        "doc_notes": [
+          "Deuter 12:20/2/0",
+          "Deuter 28:49/2/0"
+        ]
+      }
+    },
+    {
+      "case": "TORAH-SPELLING-NAMES",
+      "primary_group": "source_certainty",
+      "memberships": [
+        {
+          "group": "source_certainty",
+          "role": "primary",
+          "reason": "Choose the named source labels and degree of certainty supported by the actual cited comparison."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should these Introduction entries follow the present notes without question marks, or retain the uncertainty as a deliberately recorded earlier assessment?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "TORAH-SPELLING-NAMES",
+        "classification": "mixed-chronology-later-certainty-and-original-qualification",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=TORAH-SPELLING-NAMES",
+        "history_inventory": "revision-history-inventory.json#case=TORAH-SPELLING-NAMES",
+        "introduction_claims": [
+          "ch3:L241",
+          "ch3:L244"
+        ],
+        "doc_notes": [
+          "Numbers 10:19/2/0",
+          "Numbers 1:10/2/0"
+        ]
+      }
+    },
+    {
+      "case": "TORAH-SPELLING-DEUT32-SHEVA",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "Review the displayed sheva/quotation relation separately from what the spelling example's star promises."
+        },
+        {
+          "group": "illustration_extent",
+          "role": "secondary",
+          "reason": "The star and spelling-specimen scope must be considered separately from the concrete displayed sheva."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction reproduce the sheva described in the note, or explicitly identify this example as illustrating joining without complete vowel notation?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "TORAH-SPELLING-DEUT32-SHEVA",
+        "classification": "established-staleness-after-doc-note-correction",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=TORAH-SPELLING-DEUT32-SHEVA",
+        "history_inventory": "revision-history-inventory.json#case=TORAH-SPELLING-DEUT32-SHEVA",
+        "introduction_claims": [
+          "ch3:L246"
+        ],
+        "doc_notes": [
+          "Deuter 32:6/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "primary_group": "masorah_location",
+      "memberships": [
+        {
+          "group": "masorah_location",
+          "role": "primary",
+          "reason": "Locate the specific Parva instruction for small nun and distinguish it from ordinary-sized running text; a generic Masorah note is not a refutation."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction retain the specific Masorah Parva attribution with its location, or use the broader Aleppo Masorah attribution in the verse note?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALEPPO-SPECIAL-ISA44",
+        "classification": "insufficient-history",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALEPPO-SPECIAL-ISA44",
+        "history_inventory": "revision-history-inventory.json#case=ALEPPO-SPECIAL-ISA44",
+        "introduction_claims": [
+          "ch5:L217"
+        ],
+        "doc_notes": [
+          "Isaiah 44:14/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALEPPO-SPECIAL-PS27",
+      "primary_group": "masorah_location",
+      "memberships": [
+        {
+          "group": "masorah_location",
+          "role": "primary",
+          "reason": "The note cites Aleppo's Masorah whereas the Introduction names Leningrad; locate the separate Leningrad annotation, since both could support the instruction."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction identify a separate supporting Leningrad Masorah note, or use the Aleppo Masorah Parva attribution already stated in the verse note?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALEPPO-SPECIAL-PS27",
+        "classification": "history-accounted-attribution-unresolved",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALEPPO-SPECIAL-PS27",
+        "history_inventory": "revision-history-inventory.json#case=ALEPPO-SPECIAL-PS27",
+        "introduction_claims": [
+          "ch5:L255"
+        ],
+        "doc_notes": [
+          "Psalms 27:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALEPPO-SIZE-QUOTATIONS",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "Examples marked for letter size need a declared extent before differences in unrelated marks are treated as errors."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the letter-size list include the surrounding MAM marks, or explicitly leave these examples limited to letter size?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALEPPO-SIZE-QUOTATIONS",
+        "classification": "history-accounted-size-scope-with-distinct-mark-chronologies",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALEPPO-SIZE-QUOTATIONS",
+        "history_inventory": "revision-history-inventory.json#case=ALEPPO-SIZE-QUOTATIONS",
+        "introduction_claims": [
+          "ch5:L212",
+          "ch5:L224",
+          "ch5:L235",
+          "ch5:L241"
+        ],
+        "doc_notes": [
+          "Esther 1:6/2/0",
+          "Psalms 77:8/2/0",
+          "Ruth 3:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "EXOD-7-13-SCOPE",
+      "primary_group": "statement_scope",
+      "memberships": [
+        {
+          "group": "statement_scope",
+          "role": "primary",
+          "reason": "Distinguish the opening vav-agreement statement from the separate yod claim."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the note separate agreement about the vav from agreement about the yod meteg, and state explicitly which of those claims includes Leningrad?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "EXOD-7-13-SCOPE",
+        "classification": "history-accounted-agreement-scope-unresolved",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=EXOD-7-13-SCOPE",
+        "history_inventory": "revision-history-inventory.json#case=EXOD-7-13-SCOPE",
+        "introduction_claims": [
+          "ch3:L1263"
+        ],
+        "doc_notes": [
+          "Exodus 7:13/2/0"
+        ]
+      }
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "primary_group": "category_policy",
+      "memberships": [
+        {
+          "group": "category_policy",
+          "role": "primary",
+          "reason": "Decide whether the Introduction deliberately displays a ketiv vowel on the qere. Quote the ketiv or explain the transfer; direct qere attribution needs separate support."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction quote the pointed ketiv documented in the notes, or explain why the ketiv vowel is illustrated on the qere?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "HATAF-JEREMIAH-KETIV-QERE",
+        "classification": "insufficient-history",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=HATAF-JEREMIAH-KETIV-QERE",
+        "history_inventory": "revision-history-inventory.json#case=HATAF-JEREMIAH-KETIV-QERE",
+        "introduction_claims": [
+          "ch5:L704"
+        ],
+        "doc_notes": [
+          "Jeremiah 48:20/2/0",
+          "Jeremiah 50:6/2/0"
+        ]
+      }
+    },
+    {
+      "case": "HATAF-EZEKIEL-SOURCE",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "The Aleppo note does not exclude a matching Leningrad reading; support the latter attribution or relabel the example."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction name Aleppo, as the verse note does, or retain the Leningrad attribution with separate support?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "HATAF-EZEKIEL-SOURCE",
+        "classification": "history-accounted-specific-source-support-absent",
+        "result": "history-batch8-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=HATAF-EZEKIEL-SOURCE",
+        "history_inventory": "revision-history-inventory.json#case=HATAF-EZEKIEL-SOURCE",
+        "introduction_claims": [
+          "ch5:L706"
+        ],
+        "doc_notes": [
+          "Ezekiel 17:17/2/0"
+        ]
+      }
+    },
+    {
+      "case": "HATAF-PROVERBS-ADDITION",
+      "primary_group": "source_alignment",
+      "memberships": [
+        {
+          "group": "source_alignment",
+          "role": "primary",
+          "reason": "The Proverbs 30:17 addition remains a separate unapproved alignment proposal from the approved Proverbs 30:19 illustration."
+        }
+      ],
+      "existing_disposition": {
+        "section": "discrepancies",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Add the entry ל=לִֽיקֲּהַ֫ת־אֵ֥ם. This proposed addition is unapplied.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "HATAF-PROVERBS-ADDITION",
+        "classification": "later-note-expansion-unreflected-in-existing-list",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=HATAF-PROVERBS-ADDITION",
+        "history_inventory": "revision-history-inventory.json#case=HATAF-PROVERBS-ADDITION",
+        "introduction_claims": [
+          "ch5:L712"
+        ],
+        "doc_notes": [
+          "Proverbs 30:17/2/1"
+        ]
+      }
+    },
+    {
+      "case": "SEDER-DESCRIPTION-STRENGTH",
+      "primary_group": "Dotan_convention",
+      "memberships": [
+        {
+          "group": "Dotan_convention",
+          "role": "primary",
+          "reason": "Check Dotan's brace/seder convention and the specific entry; keep the note's uncertainty distinct from its author's hypothesis."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Introduction use the note's wording “uncertain seder,” or retain “error” only with a direct citation showing that this was Dotan's assessment?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "SEDER-DESCRIPTION-STRENGTH",
+        "classification": "history-accounted-Dotan-description-support-unresolved",
+        "result": "history-batch6-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=SEDER-DESCRIPTION-STRENGTH",
+        "history_inventory": "revision-history-inventory.json#case=SEDER-DESCRIPTION-STRENGTH",
+        "introduction_claims": [
+          "ch3:L1405"
+        ],
+        "doc_notes": [
+          "Deuter 20:1/1/0"
+        ]
+      }
+    },
+    {
+      "case": "POETIC-COUNTS-TEXT",
+      "primary_group": "population_definition",
+      "memberships": [
+        {
+          "group": "population_definition",
+          "role": "primary",
+          "reason": "Identify the counted corpus/version and principal-division definition; a glyph-presence total does not prove the stated principal-division total."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should these figures explicitly count current MAM verses under a stated rule, or remain figures for another identified text or definition? In particular, does “principal division” exclude any of the 423 current verses containing oleh?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "POETIC-COUNTS-TEXT",
+        "classification": "insufficient-history-to-identify-counting-source-and-principal-division-definition",
+        "result": "history-batch5-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=POETIC-COUNTS-TEXT",
+        "history_inventory": "revision-history-inventory.json#case=POETIC-COUNTS-TEXT",
+        "introduction_claims": [
+          "ch2:L394",
+          "ch2:L426",
+          "ch2:L436"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "LEGARMEH-LIST-SCOPE",
+      "primary_group": "population_definition",
+      "memberships": [
+        {
+          "group": "population_definition",
+          "role": "primary",
+          "reason": "Consult the named Wickes list and its exceptions, and state whether the claim is historical enumeration or present MAM census."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the list retain Wickes's entries and explicitly identify the differences from current MAM, or be recast as a list of MAM passages with its historical source discussed separately?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "LEGARMEH-LIST-SCOPE",
+        "classification": "history-accounted-external-list-scope-unresolved",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=LEGARMEH-LIST-SCOPE",
+        "history_inventory": "revision-history-inventory.json#case=LEGARMEH-LIST-SCOPE",
+        "introduction_claims": [
+          "ch2:L221"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "primary_group": "statement_scope",
+      "memberships": [
+        {
+          "group": "statement_scope",
+          "role": "primary",
+          "reason": "Decide whether the printed maqaf is an intended manuscript claim or a separator in the ketiv specimen."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the Leningrad line identify a supplied display separator, or should its quoted punctuation and explanation agree directly?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ISA-44-24-KETIV-MAQAF",
+        "classification": "introduced-in-note",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ISA-44-24-KETIV-MAQAF",
+        "history_inventory": "revision-history-inventory.json#case=ISA-44-24-KETIV-MAQAF",
+        "introduction_claims": [
+          "ch5:L50"
+        ],
+        "doc_notes": [
+          "Isaiah 44:24/2/0"
+        ]
+      }
+    },
+    {
+      "case": "POETIC-PS6-PS74-VOWELS",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "Clarify which vowel and notation features these design examples promise to reproduce."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the design lists retain the Aleppo vowels quoted in the other sections, or explicitly identify the examples as limited illustrations of the accent feature?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "POETIC-PS6-PS74-VOWELS",
+        "classification": "history-accounted-quotation-context-divergence",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=POETIC-PS6-PS74-VOWELS",
+        "history_inventory": "revision-history-inventory.json#case=POETIC-PS6-PS74-VOWELS",
+        "introduction_claims": [
+          "ch5:L569",
+          "ch5:L710",
+          "ch5:L751",
+          "ch5:L787"
+        ],
+        "doc_notes": [
+          "Psalms 6:3/2/0",
+          "Psalms 74:5/2/0"
+        ]
+      }
+    },
+    {
+      "case": "POETIC-PROV8-QUALIFICATION",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "source_certainty",
+          "role": "secondary",
+          "reason": "The design-list asterisk marks independent accent and no added maqaf; it does not express the note's preexisting reading doubt."
+        },
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "Decide the design list's substantive encoded-mark notation and unqualified Aleppo attribution. The note's doubt predates the observed list; the 2019 template change and 2021 literal codepoint correction are separate evidence."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the design example use atnaḥ hafukh and retain the uncertainty stated in the other entry, or explain a different intended notation and attribution?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "POETIC-PROV8-QUALIFICATION",
+        "classification": "history-accounted-source-divergence",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=POETIC-PROV8-QUALIFICATION",
+        "history_inventory": "revision-history-inventory.json#case=POETIC-PROV8-QUALIFICATION",
+        "introduction_claims": [
+          "ch5:L656",
+          "ch5:L753"
+        ],
+        "doc_notes": [
+          "Proverbs 8:34/2/0"
+        ]
+      }
+    },
+    {
+      "case": "POETIC-PS68-RAFE",
+      "primary_group": "illustration_extent",
+      "memberships": [
+        {
+          "group": "illustration_extent",
+          "role": "primary",
+          "reason": "Clarify whether the example's rafe is part of its declared design claim or a full quotation."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Should the revia list include the rafe, or explain that it omits signs unrelated to the accent feature being illustrated?",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "POETIC-PS68-RAFE",
+        "classification": "established-staleness-of-quotation-context",
+        "result": "history-batch11-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=POETIC-PS68-RAFE",
+        "history_inventory": "revision-history-inventory.json#case=POETIC-PS68-RAFE",
+        "introduction_claims": [
+          "ch2:L334",
+          "ch5:L787"
+        ],
+        "doc_notes": [
+          "Psalms 68:18/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-16",
+      "primary_group": "vowel_function",
+      "memberships": [
+        {
+          "group": "vowel_function",
+          "role": "primary",
+          "reason": "Determine whether the ketiv's ḥataf vowel is an optional vocal-sheva aid or a morphological vowel; qere alone cannot decide."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep this as a possible omitted ketiv word until the function of the resh vowel is established.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-SAM-24-16",
+        "classification": "insufficient-semantic-evidence-for-list-category",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-SAM-24-16",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-SAM-24-16",
+        "introduction_claims": [
+          "ch5:L698"
+        ],
+        "doc_notes": [
+          "2Samuel 24:16/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-18",
+      "primary_group": "vowel_function",
+      "memberships": [
+        {
+          "group": "vowel_function",
+          "role": "primary",
+          "reason": "Determine the function of the ketiv vowel before treating the atom as a missing member of the optional vocal-sheva list."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep the possible omission and vowel-function question open; the short note does not justify either a definite addition or a morphological exclusion.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-SAM-24-18",
+        "classification": "insufficient-semantic-evidence-for-list-category",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-SAM-24-18",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-SAM-24-18",
+        "introduction_claims": [
+          "ch5:L698"
+        ],
+        "doc_notes": [
+          "2Samuel 24:18/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "primary_group": "bounded_answer_available",
+      "memberships": [
+        {
+          "group": "bounded_answer_available",
+          "role": "primary",
+          "reason": "The Introduction explicitly excludes the entry because of reading doubt; the apparent unexplained omission is accounted for."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep this as an uncertain possible omission, with both the Breuer report and the note’s alternative explanation visible.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-JER-48-32",
+        "classification": "intentional-exclusion",
+        "result": "history-batch9-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-JER-48-32",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-JER-48-32",
+        "introduction_claims": [
+          "ch5:L704"
+        ],
+        "doc_notes": [
+          "Jeremiah 48:32/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-DAN-12-2",
+      "primary_group": "uncertain_reading",
+      "memberships": [
+        {
+          "group": "uncertain_reading",
+          "role": "primary",
+          "reason": "The reported Leningrad ḥataf reading remains uncertain; eligibility depends on both that evidence and the list's treatment of uncertain entries."
+        },
+        {
+          "group": "category_policy",
+          "role": "secondary",
+          "reason": "The list must say whether explicitly uncertain readings are eligible; this policy cannot settle the reading itself."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep this as an uncertain possible omission; the note does not establish the yod ḥataf.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-DAN-12-2",
+        "classification": "history-accounted-uncertain-hataf-category",
+        "result": "history-batch4-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-DAN-12-2",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-DAN-12-2",
+        "introduction_claims": [
+          "ch5:L726"
+        ],
+        "doc_notes": [
+          "Daniel 12:2/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-NEH-6-19",
+      "primary_group": "uncertain_reading",
+      "memberships": [
+        {
+          "group": "uncertain_reading",
+          "role": "primary",
+          "reason": "The candidate reading remains qualified; decide uncertain-entry policy only after retaining that qualification."
+        },
+        {
+          "group": "category_policy",
+          "role": "secondary",
+          "reason": "The treatment of uncertain candidates is a list-policy question separate from the disputed reading."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep this as an uncertain possible omission rather than a confirmed Leningrad ḥataf.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-NEH-6-19",
+        "classification": "history-accounted-preserved-uncertainty-and-list-scope",
+        "result": "history-batch10-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-NEH-6-19",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-NEH-6-19",
+        "introduction_claims": [
+          "ch5:L728"
+        ],
+        "doc_notes": [
+          "Nehemiah 6:19/2/0"
+        ]
+      }
+    },
+    {
+      "case": "ALL-HATAF-SAM-6-5",
+      "primary_group": "manuscript_report",
+      "memberships": [
+        {
+          "group": "manuscript_report",
+          "role": "primary",
+          "reason": "No pertinent note supplies the manuscript source for the proposed addition; vowel function also remains separate."
+        },
+        {
+          "group": "vowel_function",
+          "role": "secondary",
+          "reason": "Even with manuscript attribution, determine whether the ḥataf vowel belongs to the intended optional-vocal-sheva category."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Keep the manuscript attribution and vowel function unresolved. The edition form alone does not establish a list omission or a morphological exclusion.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-SAM-6-5",
+        "classification": "history-accounted-vowel-function-and-source-unresolved",
+        "result": "history-batch7-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-SAM-6-5",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-SAM-6-5",
+        "introduction_claims": [
+          "ch5:L698"
+        ],
+        "doc_notes": []
+      }
+    },
+    {
+      "case": "ALL-HATAF-PS-17-14-SOURCE",
+      "primary_group": "category_policy",
+      "memberships": [
+        {
+          "group": "population_definition",
+          "role": "secondary",
+          "reason": "The Aleppo/Leningrad heading defines the population; the Sassoon exception must be made explicit if retained."
+        },
+        {
+          "group": "category_policy",
+          "role": "primary",
+          "reason": "Sassoon appears under an Aleppo/Leningrad heading; broaden the heading, state an exception or remove the entry as a scope choice rather than a pointing correction."
+        },
+        {
+          "group": "optional_origin",
+          "role": "secondary",
+          "reason": "The caption narrowing is bounded rather than dated to an exact revision; this does not resolve or prevent its list-scope question."
+        }
+      ],
+      "existing_disposition": {
+        "section": "questions",
+        "ben_reviewed": false,
+        "adjudication": null,
+        "decision": "Explain this exception in the list’s scope, or remove this word from the Aleppo-or-Leningrad list. This is a scope decision, not a correction of the manuscript’s pointing.",
+        "adjudication_status": null
+      },
+      "recorded_chronology": {
+        "case": "ALL-HATAF-PS-17-14-SOURCE",
+        "classification": "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded",
+        "result": "history-batch3-results.json"
+      },
+      "source_pointers": {
+        "human_review": "human-review.json#id=ALL-HATAF-PS-17-14-SOURCE",
+        "history_inventory": "revision-history-inventory.json#case=ALL-HATAF-PS-17-14-SOURCE",
+        "introduction_claims": [
+          "ch5:L710"
+        ],
+        "doc_notes": [
+          "Psalms 17:14/2/0"
+        ]
+      }
+    }
+  ]
+}

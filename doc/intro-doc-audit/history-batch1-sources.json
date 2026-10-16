@@ -1,0 +1,2115 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "method": "Complete visible canonical chapter contents were read for the four compiled cases; exact selected verse and Introduction source excerpts retained here. Introduction contents were selected adaptively from enumerated metadata. The Psalm 1 linked draft was read at its latest revision before the example insertion.",
+  "cases": [
+    {
+      "case": "numbers-yod-label",
+      "chapter_page": {
+        "page_key": "numbers-9",
+        "visible_metadata": [
+          {
+            "revid": 402214,
+            "parentid": 0,
+            "timestamp": "2011-05-10T14:13:48Z",
+            "comment": "תיכנות: אורי מילר ואראל סגל"
+          },
+          {
+            "revid": 655590,
+            "parentid": 402214,
+            "timestamp": "2015-10-19T03:11:50Z",
+            "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+          },
+          {
+            "revid": 799415,
+            "parentid": 655590,
+            "timestamp": "2017-11-02T06:00:09Z",
+            "comment": ""
+          },
+          {
+            "revid": 803008,
+            "parentid": 799415,
+            "timestamp": "2017-12-06T11:33:53Z",
+            "comment": ""
+          },
+          {
+            "revid": 889758,
+            "parentid": 803008,
+            "timestamp": "2019-03-06T13:46:37Z",
+            "comment": ""
+          },
+          {
+            "revid": 889851,
+            "parentid": 889758,
+            "timestamp": "2019-03-06T22:03:52Z",
+            "comment": ""
+          },
+          {
+            "revid": 1178414,
+            "parentid": 889851,
+            "timestamp": "2021-09-13T13:58:45Z",
+            "comment": "מ:אות מנוקדת"
+          },
+          {
+            "revid": 1379204,
+            "parentid": 1178414,
+            "timestamp": "2022-03-03T13:20:03Z",
+            "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+          },
+          {
+            "revid": 2716956,
+            "parentid": 1379204,
+            "timestamp": "2023-03-27T19:09:53Z",
+            "comment": "+[[קטגוריה:במדבר ט]]; הוספת קטגוריה לפרק מנוקד: חמישה חומשי תורה ([[toolforge:quickcategories/batch/6107/|QuickCategories batch #6107]])"
+          },
+          {
+            "revid": 2759348,
+            "parentid": 2716956,
+            "timestamp": "2023-05-21T14:57:13Z",
+            "comment": "ניווט"
+          },
+          {
+            "revid": 2814826,
+            "parentid": 2759348,
+            "timestamp": "2023-10-30T23:21:00Z",
+            "comment": "Remove <קטע התחלה=פסח שני/> and <קטע סוף=פסח שני/>."
+          },
+          {
+            "revid": 2815023,
+            "parentid": 2814826,
+            "timestamp": "2023-10-31T13:14:50Z",
+            "comment": "Removing this tag breaks other pages"
+          },
+          {
+            "revid": 2815122,
+            "parentid": 2815023,
+            "timestamp": "2023-10-31T18:17:24Z",
+            "comment": "ביטול גרסה [[Special:Diff/2815023|2815023]] של [[Special:Contributions/Nahum|Nahum]] ([[User talk:Nahum|שיחה]])"
+          },
+          {
+            "revid": 2826758,
+            "parentid": 2815122,
+            "timestamp": "2023-12-24T06:03:58Z",
+            "comment": ""
+          },
+          {
+            "revid": 2826759,
+            "parentid": 2826758,
+            "timestamp": "2023-12-24T06:14:17Z",
+            "comment": ""
+          },
+          {
+            "revid": 2826760,
+            "parentid": 2826759,
+            "timestamp": "2023-12-24T06:21:46Z",
+            "comment": ""
+          },
+          {
+            "revid": 2826801,
+            "parentid": 2826760,
+            "timestamp": "2023-12-24T07:29:31Z",
+            "comment": ""
+          },
+          {
+            "revid": 2826802,
+            "parentid": 2826801,
+            "timestamp": "2023-12-24T07:30:13Z",
+            "comment": ""
+          },
+          {
+            "revid": 2826807,
+            "parentid": 2826802,
+            "timestamp": "2023-12-24T07:31:19Z",
+            "comment": ""
+          },
+          {
+            "revid": 2859041,
+            "parentid": 2826807,
+            "timestamp": "2024-05-23T04:42:18Z",
+            "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+          },
+          {
+            "revid": 2907285,
+            "parentid": 2859041,
+            "timestamp": "2025-03-06T12:37:53Z",
+            "comment": "use new מ:עלייה template"
+          },
+          {
+            "revid": 2907844,
+            "parentid": 2907285,
+            "timestamp": "2025-03-08T14:17:12Z",
+            "comment": "מ:לגרמיה-2"
+          },
+          {
+            "revid": 2987712,
+            "parentid": 2907844,
+            "timestamp": "2026-02-16T19:24:00Z",
+            "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+          }
+        ]
+      },
+      "introduction_addition": [
+        {
+          "kind": "Introduction",
+          "revid": 519155,
+          "parentid": 519054,
+          "timestamp": "2013-12-24T03:15:52Z",
+          "comment": "/* הערות מיוחדות בתורה (מסורת הסופרים) */ הוספת קישורים",
+          "url": "https://he.wikisource.org/w/index.php?oldid=519155",
+          "excerpts": []
+        },
+        {
+          "kind": "Introduction",
+          "revid": 519485,
+          "parentid": 519155,
+          "timestamp": "2013-12-25T04:58:20Z",
+          "comment": "/* נוסח הכתיב המובהק בתורה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=519485",
+          "excerpts": [
+            {
+              "line": 99,
+              "text": "#בהעלֹתך (ט,ז): [הַקְרִ֜יב]* / ל=[הַקְרִ֜ב]!"
+            }
+          ]
+        }
+      ],
+      "chapter_sources": [
+        {
+          "kind": "chapter",
+          "revid": 655590,
+          "parentid": 402214,
+          "timestamp": "2015-10-19T03:11:50Z",
+          "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+          "url": "https://he.wikisource.org/w/index.php?oldid=655590",
+          "excerpts": [
+            {
+              "line": 13,
+              "text": "וַ֠יֹּאמְר֠וּ הָאֲנָשִׁ֤ים הָהֵ֙מָּה֙ אֵלָ֔יו אֲנַ֥חְנוּ טְמֵאִ֖ים לְנֶ֣פֶשׁ אָדָ֑ם לָ֣מָּה נִגָּרַ֗ע לְבִלְתִּ֨י {{נוסח|הַקְרִ֜יב|=שש1 ומסורת-ל וטברניות ורמ\"ה|ל=הַקְרִ֜ב (כתיב חסר יו\"ד)}} אֶת־קׇרְבַּ֤ן יְהֹוָה֙ בְּמֹ֣עֲד֔וֹ בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2826802,
+          "parentid": 2826801,
+          "timestamp": "2023-12-24T07:30:13Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2826802",
+          "excerpts": [
+            {
+              "line": 12,
+              "text": "וַ֠יֹּאמְר֠וּ הָאֲנָשִׁ֤ים הָהֵ֙מָּה֙ אֵלָ֔יו אֲנַ֥חְנוּ טְמֵאִ֖ים לְנֶ֣פֶשׁ אָדָ֑ם לָ֣מָּה נִגָּרַ֗ע לְבִלְתִּ֨י {{נוסח|הַקְרִ֜יב|=ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה|ל=הַקְרִ֜ב (כתיב חסר יו\"ד)}} אֶת־קׇרְבַּ֤ן יְהֹוָה֙ בְּמֹ֣עֲד֔וֹ בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2826807,
+          "parentid": 2826802,
+          "timestamp": "2023-12-24T07:31:19Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2826807",
+          "excerpts": [
+            {
+              "line": 12,
+              "text": "וַ֠יֹּאמְר֠וּ הָאֲנָשִׁ֤ים הָהֵ֙מָּה֙ אֵלָ֔יו אֲנַ֥חְנוּ טְמֵאִ֖ים לְנֶ֣פֶשׁ אָדָ֑ם לָ֣מָּה נִגָּרַ֗ע לְבִלְתִּ֨י {{נוסח|הַקְרִ֜יב|=ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה (כתיב מלא וי\"ו)|ל=הַקְרִ֜ב (כתיב חסר יו\"ד)}} אֶת־קׇרְבַּ֤ן יְהֹוָה֙ בְּמֹ֣עֲד֔וֹ בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2987712,
+          "parentid": 2907844,
+          "timestamp": "2026-02-16T19:24:00Z",
+          "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2987712",
+          "excerpts": [
+            {
+              "line": 12,
+              "text": "וַ֠יֹּאמְר֠וּ הָאֲנָשִׁ֤ים הָהֵ֙מָּה֙ אֵלָ֔יו אֲנַ֥חְנוּ טְמֵאִ֖ים לְנֶ֣פֶשׁ אָדָ֑ם לָ֣מָּה נִגָּרַ֗ע לְבִלְתִּ֨י {{נוסח|הַקְרִ֜יב|2==ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה (כתיב מלא וי\"ו){{ש}}ל=הַקְרִ֜ב (כתיב חסר יו\"ד)}} אֶת־קׇרְבַּ֤ן יְהֹוָה֙ בְּמֹ֣עֲד֔וֹ בְּת֖וֹךְ בְּנֵ֥י יִשְׂרָאֵֽל׃"
+            }
+          ]
+        }
+      ],
+      "chapter_scan": [
+        {
+          "revid": 402214,
+          "timestamp": "2011-05-10T14:13:48Z",
+          "wrong_label_present": false,
+          "main_forms": []
+        },
+        {
+          "revid": 655590,
+          "timestamp": "2015-10-19T03:11:50Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 799415,
+          "timestamp": "2017-11-02T06:00:09Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 803008,
+          "timestamp": "2017-12-06T11:33:53Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 889758,
+          "timestamp": "2019-03-06T13:46:37Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 889851,
+          "timestamp": "2019-03-06T22:03:52Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 1178414,
+          "timestamp": "2021-09-13T13:58:45Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 1379204,
+          "timestamp": "2022-03-03T13:20:03Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2716956,
+          "timestamp": "2023-03-27T19:09:53Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2759348,
+          "timestamp": "2023-05-21T14:57:13Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2814826,
+          "timestamp": "2023-10-30T23:21:00Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2815023,
+          "timestamp": "2023-10-31T13:14:50Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2815122,
+          "timestamp": "2023-10-31T18:17:24Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2826758,
+          "timestamp": "2023-12-24T06:03:58Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2826759,
+          "timestamp": "2023-12-24T06:14:17Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2826760,
+          "timestamp": "2023-12-24T06:21:46Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2826801,
+          "timestamp": "2023-12-24T07:29:31Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2826802,
+          "timestamp": "2023-12-24T07:30:13Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2826807,
+          "timestamp": "2023-12-24T07:31:19Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2859041,
+          "timestamp": "2024-05-23T04:42:18Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2907285,
+          "timestamp": "2025-03-06T12:37:53Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2907844,
+          "timestamp": "2025-03-08T14:17:12Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        },
+        {
+          "revid": 2987712,
+          "timestamp": "2026-02-16T19:24:00Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "הַקְרִ֜יב"
+          ]
+        }
+      ],
+      "adaptive_search_trace": [
+        {
+          "revid": 487523,
+          "timestamp": "2013-06-05T05:42:13Z",
+          "present": false
+        },
+        {
+          "revid": 3087744,
+          "timestamp": "2026-10-08T17:47:36Z",
+          "present": true
+        },
+        {
+          "revid": 1290610,
+          "timestamp": "2021-12-05T07:20:08Z",
+          "present": true
+        },
+        {
+          "revid": 538454,
+          "timestamp": "2014-04-20T03:42:33Z",
+          "present": true
+        },
+        {
+          "revid": 522140,
+          "timestamp": "2014-01-10T08:44:55Z",
+          "present": true
+        },
+        {
+          "revid": 518801,
+          "timestamp": "2013-12-23T08:35:47Z",
+          "present": false
+        },
+        {
+          "revid": 520780,
+          "timestamp": "2013-12-31T20:46:38Z",
+          "present": true
+        },
+        {
+          "revid": 519611,
+          "timestamp": "2013-12-25T20:43:11Z",
+          "present": true
+        },
+        {
+          "revid": 519598,
+          "timestamp": "2013-12-25T20:13:35Z",
+          "present": true
+        },
+        {
+          "revid": 519485,
+          "timestamp": "2013-12-25T04:58:20Z",
+          "present": true
+        },
+        {
+          "revid": 519054,
+          "timestamp": "2013-12-23T18:38:39Z",
+          "present": false
+        },
+        {
+          "revid": 519155,
+          "timestamp": "2013-12-24T03:15:52Z",
+          "present": false
+        }
+      ]
+    },
+    {
+      "case": "deuteronomy-vav-label",
+      "chapter_page": {
+        "page_key": "deuter-32",
+        "visible_metadata": [
+          {
+            "revid": 402452,
+            "parentid": 0,
+            "timestamp": "2011-05-10T14:42:17Z",
+            "comment": "תיכנות: אורי מילר ואראל סגל"
+          },
+          {
+            "revid": 655705,
+            "parentid": 402452,
+            "timestamp": "2015-10-19T03:16:27Z",
+            "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+          },
+          {
+            "revid": 673174,
+            "parentid": 655705,
+            "timestamp": "2016-02-08T03:35:19Z",
+            "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+          },
+          {
+            "revid": 673232,
+            "parentid": 673174,
+            "timestamp": "2016-02-08T14:20:24Z",
+            "comment": "/* הערות */"
+          },
+          {
+            "revid": 743864,
+            "parentid": 673232,
+            "timestamp": "2016-12-28T07:02:23Z",
+            "comment": "שווא מיותר"
+          },
+          {
+            "revid": 799631,
+            "parentid": 743864,
+            "timestamp": "2017-11-05T15:38:19Z",
+            "comment": ""
+          },
+          {
+            "revid": 902010,
+            "parentid": 799631,
+            "timestamp": "2019-05-30T11:49:04Z",
+            "comment": "/* הפרק בלי צורת השיר (בפרשות סתומות) ובלי מספרים */"
+          },
+          {
+            "revid": 902013,
+            "parentid": 902010,
+            "timestamp": "2019-05-30T11:53:38Z",
+            "comment": ""
+          },
+          {
+            "revid": 902021,
+            "parentid": 902013,
+            "timestamp": "2019-05-30T12:08:24Z",
+            "comment": ""
+          },
+          {
+            "revid": 902022,
+            "parentid": 902021,
+            "timestamp": "2019-05-30T12:08:43Z",
+            "comment": "/* הפרק עם צורת השיר */"
+          },
+          {
+            "revid": 902023,
+            "parentid": 902022,
+            "timestamp": "2019-05-30T12:09:00Z",
+            "comment": "/* הפרק עם צורת השיר */"
+          },
+          {
+            "revid": 902024,
+            "parentid": 902023,
+            "timestamp": "2019-05-30T12:13:55Z",
+            "comment": ""
+          },
+          {
+            "revid": 902025,
+            "parentid": 902024,
+            "timestamp": "2019-05-30T12:15:12Z",
+            "comment": "/* הפרק עם צורת השיר ובלי מספרים */"
+          },
+          {
+            "revid": 902026,
+            "parentid": 902025,
+            "timestamp": "2019-05-30T12:15:53Z",
+            "comment": "/* הפרק עם צורת השיר ובלי מספרים */"
+          },
+          {
+            "revid": 902027,
+            "parentid": 902026,
+            "timestamp": "2019-05-30T12:18:04Z",
+            "comment": ""
+          },
+          {
+            "revid": 902028,
+            "parentid": 902027,
+            "timestamp": "2019-05-30T12:18:54Z",
+            "comment": "/* הפרק עם צורת השיר ובלי מספרים */"
+          },
+          {
+            "revid": 902198,
+            "parentid": 902028,
+            "timestamp": "2019-05-31T05:22:09Z",
+            "comment": ""
+          },
+          {
+            "revid": 902203,
+            "parentid": 902198,
+            "timestamp": "2019-05-31T05:29:37Z",
+            "comment": "/* הפרק עם צורת השיר */"
+          },
+          {
+            "revid": 905197,
+            "parentid": 902203,
+            "timestamp": "2019-06-16T09:36:38Z",
+            "comment": ""
+          },
+          {
+            "revid": 932407,
+            "parentid": 905197,
+            "timestamp": "2019-12-26T05:52:00Z",
+            "comment": "/* הפרק בלי צורת השיר (בפרשות סתומות) */ עליות לשני וחמישי"
+          },
+          {
+            "revid": 975806,
+            "parentid": 932407,
+            "timestamp": "2020-08-04T16:11:56Z",
+            "comment": "לפי בקשת המתכנת בנימין דנקלה"
+          },
+          {
+            "revid": 1060298,
+            "parentid": 975806,
+            "timestamp": "2021-03-13T16:15:53Z",
+            "comment": "להחליף את {{ססס}} ב{{מ:ששש}}"
+          },
+          {
+            "revid": 1156261,
+            "parentid": 1060298,
+            "timestamp": "2021-08-19T19:25:32Z",
+            "comment": "קביעת הזי״ו ל״ך שונה בין ראשוני אשכנז ובין ראשוני ספרד וכך נהגו בחו״ל לשיטתם עד הדור האחרון"
+          },
+          {
+            "revid": 1169699,
+            "parentid": 1156261,
+            "timestamp": "2021-09-01T13:58:53Z",
+            "comment": "נדחה שינוי הטקסט האחרון (מאת [[מיוחד:תרומות/100.8.66.74|100.8.66.74]]) ושוחזרה גרסה 1060298 מאת Bdenckla"
+          },
+          {
+            "revid": 1170478,
+            "parentid": 1169699,
+            "timestamp": "2021-09-07T13:08:30Z",
+            "comment": "מ:הערה"
+          },
+          {
+            "revid": 1379263,
+            "parentid": 1170478,
+            "timestamp": "2022-03-03T13:20:52Z",
+            "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+          },
+          {
+            "revid": 2716047,
+            "parentid": 1379263,
+            "timestamp": "2023-03-26T18:50:42Z",
+            "comment": ""
+          },
+          {
+            "revid": 2717015,
+            "parentid": 2716047,
+            "timestamp": "2023-03-27T19:10:53Z",
+            "comment": "+[[קטגוריה:דברים לב]]; הוספת קטגוריה לפרק מנוקד: חמישה חומשי תורה ([[toolforge:quickcategories/batch/6107/|QuickCategories batch #6107]])"
+          },
+          {
+            "revid": 2717415,
+            "parentid": 2717015,
+            "timestamp": "2023-03-27T22:29:50Z",
+            "comment": "המילה מְכָרָ֔ם נקלטה בטעות בהערת תיעוד"
+          },
+          {
+            "revid": 2717416,
+            "parentid": 2717415,
+            "timestamp": "2023-03-27T22:45:32Z",
+            "comment": "הוסף רווח לפני המילה מְכָרָ֔ם"
+          },
+          {
+            "revid": 2759411,
+            "parentid": 2717416,
+            "timestamp": "2023-05-21T14:59:15Z",
+            "comment": "ניווט"
+          },
+          {
+            "revid": 2806489,
+            "parentid": 2759411,
+            "timestamp": "2023-10-02T16:33:43Z",
+            "comment": ""
+          },
+          {
+            "revid": 2815683,
+            "parentid": 2806489,
+            "timestamp": "2023-11-02T19:01:44Z",
+            "comment": "add עלייה ראשונה=כן"
+          },
+          {
+            "revid": 2821665,
+            "parentid": 2815683,
+            "timestamp": "2023-11-27T15:51:14Z",
+            "comment": "בפסוק מ\"ז, מחיקת געיה ב\"לֹא־דָבָ֨ר\" (כמו בכתר ארם צובה [אבל לא בכתי\"ל])."
+          },
+          {
+            "revid": 2835957,
+            "parentid": 2821665,
+            "timestamp": "2024-01-28T10:48:38Z",
+            "comment": ""
+          },
+          {
+            "revid": 2835958,
+            "parentid": 2835957,
+            "timestamp": "2024-01-28T11:02:04Z",
+            "comment": ""
+          },
+          {
+            "revid": 2835959,
+            "parentid": 2835958,
+            "timestamp": "2024-01-28T11:18:56Z",
+            "comment": ""
+          },
+          {
+            "revid": 2835960,
+            "parentid": 2835959,
+            "timestamp": "2024-01-28T11:24:55Z",
+            "comment": ""
+          },
+          {
+            "revid": 2835962,
+            "parentid": 2835960,
+            "timestamp": "2024-01-28T11:30:19Z",
+            "comment": ""
+          },
+          {
+            "revid": 2859377,
+            "parentid": 2835962,
+            "timestamp": "2024-05-23T04:49:20Z",
+            "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+          },
+          {
+            "revid": 2860826,
+            "parentid": 2859377,
+            "timestamp": "2024-05-23T13:24:32Z",
+            "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+          },
+          {
+            "revid": 2892295,
+            "parentid": 2860826,
+            "timestamp": "2024-11-15T03:57:38Z",
+            "comment": ""
+          },
+          {
+            "revid": 2892296,
+            "parentid": 2892295,
+            "timestamp": "2024-11-15T04:00:42Z",
+            "comment": "/* הפרק בלי צורת השיר (בפרשות סתומות) ובלי מספרים */"
+          },
+          {
+            "revid": 2906641,
+            "parentid": 2892296,
+            "timestamp": "2025-03-01T22:20:07Z",
+            "comment": "remove triple apostrophes from עלייה arg to מ:פסוק (only happens when עלייה ראשונה=כן)"
+          },
+          {
+            "revid": 2907250,
+            "parentid": 2906641,
+            "timestamp": "2025-03-06T08:16:28Z",
+            "comment": "use new מ:עלייה template"
+          },
+          {
+            "revid": 2907883,
+            "parentid": 2907250,
+            "timestamp": "2025-03-08T14:23:42Z",
+            "comment": "מ:לגרמיה-2"
+          },
+          {
+            "revid": 2908597,
+            "parentid": 2907883,
+            "timestamp": "2025-03-11T13:06:50Z",
+            "comment": "(ללא מספרי פסוקים)"
+          },
+          {
+            "revid": 2908630,
+            "parentid": 2908597,
+            "timestamp": "2025-03-11T13:52:50Z",
+            "comment": "(באמצעות רווחים וללא מספרי פסוקים)"
+          },
+          {
+            "revid": 2908642,
+            "parentid": 2908630,
+            "timestamp": "2025-03-11T13:58:35Z",
+            "comment": "(באמצעות רווחים)"
+          },
+          {
+            "revid": 2908769,
+            "parentid": 2908642,
+            "timestamp": "2025-03-11T21:18:13Z",
+            "comment": "break long lines at space"
+          },
+          {
+            "revid": 2990918,
+            "parentid": 2908769,
+            "timestamp": "2026-02-18T12:24:23Z",
+            "comment": "בוט - תיקון בעיית הערות השוליים הכפולות"
+          },
+          {
+            "revid": 2998413,
+            "parentid": 2990918,
+            "timestamp": "2026-03-15T23:54:51Z",
+            "comment": "Remove 7 spurious meteg marks from late Deuteronomy, per mgketer#80"
+          },
+          {
+            "revid": 3008184,
+            "parentid": 2998413,
+            "timestamp": "2026-04-27T14:16:09Z",
+            "comment": ""
+          },
+          {
+            "revid": 3008186,
+            "parentid": 3008184,
+            "timestamp": "2026-04-27T14:17:46Z",
+            "comment": ""
+          },
+          {
+            "revid": 3079266,
+            "parentid": 3008186,
+            "timestamp": "2026-08-26T17:46:44Z",
+            "comment": ""
+          },
+          {
+            "revid": 3079372,
+            "parentid": 3079266,
+            "timestamp": "2026-08-27T17:42:10Z",
+            "comment": ""
+          }
+        ]
+      },
+      "introduction_addition": [
+        {
+          "kind": "Introduction",
+          "revid": 521773,
+          "parentid": 521772,
+          "timestamp": "2014-01-07T06:03:17Z",
+          "comment": "/* נושאים משניים במסורת הסופרים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=521773",
+          "excerpts": []
+        },
+        {
+          "kind": "Introduction",
+          "revid": 522036,
+          "parentid": 521773,
+          "timestamp": "2014-01-09T19:45:03Z",
+          "comment": "/* נוסח הכתיב המובהק בתורה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=522036",
+          "excerpts": [
+            {
+              "line": 159,
+              "text": "#האזינו (לב,לד): [חָת֖וּם]* / ל=[חָתֻ֖ם]!"
+            }
+          ]
+        }
+      ],
+      "chapter_sources": [
+        {
+          "kind": "chapter",
+          "revid": 655705,
+          "parentid": 402452,
+          "timestamp": "2015-10-19T03:16:27Z",
+          "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+          "url": "https://he.wikisource.org/w/index.php?oldid=655705",
+          "excerpts": [
+            {
+              "line": 51,
+              "text": "הֲלֹא־ה֖וּא כָּמֻ֣ס עִמָּדִ֑י{{ר3}}{{נוסח|חָת֖וּם|=אשש1 ומסורות-אל ורמ\"ה|ל=חָתֻ֖ם (כתיב חסר וי\"ו)}} בְּאוֹצְרֹתָֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2835958,
+          "parentid": 2835957,
+          "timestamp": "2024-01-28T11:02:04Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2835958",
+          "excerpts": [
+            {
+              "line": 52,
+              "text": "הֲלֹא־ה֖וּא כָּמֻ֣ס עִמָּדִ֑י{{ר3}}{{נוסח|חָת֖וּם|=אשש1 ומסורות-אל ורמ\"ה|ל=חָתֻ֖ם (כתיב חסר וי\"ו)}} בְּאוֹצְרֹתָֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2835959,
+          "parentid": 2835958,
+          "timestamp": "2024-01-28T11:18:56Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2835959",
+          "excerpts": [
+            {
+              "line": 52,
+              "text": "הֲלֹא־ה֖וּא כָּמֻ֣ס עִמָּדִ֑י{{ר3}}{{נוסח|חָת֖וּם|=א,ל1,ש,ש1,ק3,ל3,ל9 ומסורות-א,ל ורמ\"ה (כתיב מלא יו\"ד)|ל!=חָתֻ֖ם (כתיב חסר וי\"ו)}} בְּאוֹצְרֹתָֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 3079372,
+          "parentid": 3079266,
+          "timestamp": "2026-08-27T17:42:10Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3079372",
+          "excerpts": [
+            {
+              "line": 64,
+              "text": "הֲלֹא־ה֖וּא כָּמֻ֣ס עִמָּדִ֑י{{ר3}}{{נוסח|חָת֖וּם|2==א,ל1,ש,ש1,ק3,ל3,ל9 ומסורות-א,ל ורמ\"ה (כתיב מלא יו\"ד){{ש}}ל!=חָתֻ֖ם (כתיב חסר וי\"ו)}} בְּאוֹצְרֹתָֽי׃"
+            }
+          ]
+        }
+      ],
+      "chapter_scan": [
+        {
+          "revid": 402452,
+          "timestamp": "2011-05-10T14:42:17Z",
+          "wrong_label_present": false,
+          "main_forms": []
+        },
+        {
+          "revid": 655705,
+          "timestamp": "2015-10-19T03:16:27Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 673174,
+          "timestamp": "2016-02-08T03:35:19Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 673232,
+          "timestamp": "2016-02-08T14:20:24Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 743864,
+          "timestamp": "2016-12-28T07:02:23Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 799631,
+          "timestamp": "2017-11-05T15:38:19Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902010,
+          "timestamp": "2019-05-30T11:49:04Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902013,
+          "timestamp": "2019-05-30T11:53:38Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902021,
+          "timestamp": "2019-05-30T12:08:24Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902022,
+          "timestamp": "2019-05-30T12:08:43Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902023,
+          "timestamp": "2019-05-30T12:09:00Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902024,
+          "timestamp": "2019-05-30T12:13:55Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902025,
+          "timestamp": "2019-05-30T12:15:12Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902026,
+          "timestamp": "2019-05-30T12:15:53Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902027,
+          "timestamp": "2019-05-30T12:18:04Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902028,
+          "timestamp": "2019-05-30T12:18:54Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902198,
+          "timestamp": "2019-05-31T05:22:09Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 902203,
+          "timestamp": "2019-05-31T05:29:37Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 905197,
+          "timestamp": "2019-06-16T09:36:38Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 932407,
+          "timestamp": "2019-12-26T05:52:00Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 975806,
+          "timestamp": "2020-08-04T16:11:56Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 1060298,
+          "timestamp": "2021-03-13T16:15:53Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 1156261,
+          "timestamp": "2021-08-19T19:25:32Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 1169699,
+          "timestamp": "2021-09-01T13:58:53Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 1170478,
+          "timestamp": "2021-09-07T13:08:30Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 1379263,
+          "timestamp": "2022-03-03T13:20:52Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2716047,
+          "timestamp": "2023-03-26T18:50:42Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2717015,
+          "timestamp": "2023-03-27T19:10:53Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2717415,
+          "timestamp": "2023-03-27T22:29:50Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2717416,
+          "timestamp": "2023-03-27T22:45:32Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2759411,
+          "timestamp": "2023-05-21T14:59:15Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2806489,
+          "timestamp": "2023-10-02T16:33:43Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2815683,
+          "timestamp": "2023-11-02T19:01:44Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2821665,
+          "timestamp": "2023-11-27T15:51:14Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2835957,
+          "timestamp": "2024-01-28T10:48:38Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2835958,
+          "timestamp": "2024-01-28T11:02:04Z",
+          "wrong_label_present": false,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2835959,
+          "timestamp": "2024-01-28T11:18:56Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2835960,
+          "timestamp": "2024-01-28T11:24:55Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2835962,
+          "timestamp": "2024-01-28T11:30:19Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2859377,
+          "timestamp": "2024-05-23T04:49:20Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2860826,
+          "timestamp": "2024-05-23T13:24:32Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2892295,
+          "timestamp": "2024-11-15T03:57:38Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2892296,
+          "timestamp": "2024-11-15T04:00:42Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2906641,
+          "timestamp": "2025-03-01T22:20:07Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2907250,
+          "timestamp": "2025-03-06T08:16:28Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2907883,
+          "timestamp": "2025-03-08T14:23:42Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2908597,
+          "timestamp": "2025-03-11T13:06:50Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2908630,
+          "timestamp": "2025-03-11T13:52:50Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2908642,
+          "timestamp": "2025-03-11T13:58:35Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2908769,
+          "timestamp": "2025-03-11T21:18:13Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2990918,
+          "timestamp": "2026-02-18T12:24:23Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 2998413,
+          "timestamp": "2026-03-15T23:54:51Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 3008184,
+          "timestamp": "2026-04-27T14:16:09Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 3008186,
+          "timestamp": "2026-04-27T14:17:46Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 3079266,
+          "timestamp": "2026-08-26T17:46:44Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        },
+        {
+          "revid": 3079372,
+          "timestamp": "2026-08-27T17:42:10Z",
+          "wrong_label_present": true,
+          "main_forms": [
+            "חָת֖וּם"
+          ]
+        }
+      ],
+      "adaptive_search_trace": [
+        {
+          "revid": 487523,
+          "timestamp": "2013-06-05T05:42:13Z",
+          "present": false
+        },
+        {
+          "revid": 3087744,
+          "timestamp": "2026-10-08T17:47:36Z",
+          "present": true
+        },
+        {
+          "revid": 1290610,
+          "timestamp": "2021-12-05T07:20:08Z",
+          "present": true
+        },
+        {
+          "revid": 538454,
+          "timestamp": "2014-04-20T03:42:33Z",
+          "present": true
+        },
+        {
+          "revid": 522140,
+          "timestamp": "2014-01-10T08:44:55Z",
+          "present": true
+        },
+        {
+          "revid": 518801,
+          "timestamp": "2013-12-23T08:35:47Z",
+          "present": false
+        },
+        {
+          "revid": 520780,
+          "timestamp": "2013-12-31T20:46:38Z",
+          "present": false
+        },
+        {
+          "revid": 522041,
+          "timestamp": "2014-01-09T19:52:37Z",
+          "present": true
+        },
+        {
+          "revid": 521548,
+          "timestamp": "2014-01-06T06:21:10Z",
+          "present": false
+        },
+        {
+          "revid": 521573,
+          "timestamp": "2014-01-06T09:22:59Z",
+          "present": false
+        },
+        {
+          "revid": 521772,
+          "timestamp": "2014-01-07T05:56:05Z",
+          "present": false
+        },
+        {
+          "revid": 521773,
+          "timestamp": "2014-01-07T06:03:17Z",
+          "present": false
+        },
+        {
+          "revid": 522036,
+          "timestamp": "2014-01-09T19:45:03Z",
+          "present": true
+        }
+      ]
+    },
+    {
+      "case": "PS-18-2-ATTRIBUTION",
+      "chapter_page": {
+        "page_key": "psalms-18",
+        "visible_metadata": [
+          {
+            "revid": 404146,
+            "parentid": 0,
+            "timestamp": "2011-05-10T22:15:52Z",
+            "comment": "תיכנות: אורי מילר ואראל סגל"
+          },
+          {
+            "revid": 408171,
+            "parentid": 404146,
+            "timestamp": "2011-05-12T03:47:26Z",
+            "comment": "תיכנות: אורי מילר ואראל סגל"
+          },
+          {
+            "revid": 671398,
+            "parentid": 408171,
+            "timestamp": "2016-01-24T05:33:27Z",
+            "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+          },
+          {
+            "revid": 904419,
+            "parentid": 671398,
+            "timestamp": "2019-06-12T07:42:44Z",
+            "comment": ""
+          },
+          {
+            "revid": 998052,
+            "parentid": 904419,
+            "timestamp": "2020-11-10T07:29:08Z",
+            "comment": ""
+          },
+          {
+            "revid": 1379665,
+            "parentid": 998052,
+            "timestamp": "2022-03-03T13:26:10Z",
+            "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+          },
+          {
+            "revid": 1434520,
+            "parentid": 1379665,
+            "timestamp": "2022-10-07T04:38:44Z",
+            "comment": "מחיקת מקף אפור."
+          },
+          {
+            "revid": 2707404,
+            "parentid": 1434520,
+            "timestamp": "2023-03-06T21:02:18Z",
+            "comment": ""
+          },
+          {
+            "revid": 2707406,
+            "parentid": 2707404,
+            "timestamp": "2023-03-06T21:06:08Z",
+            "comment": ""
+          },
+          {
+            "revid": 2707445,
+            "parentid": 2707406,
+            "timestamp": "2023-03-07T07:02:11Z",
+            "comment": ""
+          },
+          {
+            "revid": 2708061,
+            "parentid": 2707445,
+            "timestamp": "2023-03-10T11:37:03Z",
+            "comment": ""
+          },
+          {
+            "revid": 2708063,
+            "parentid": 2708061,
+            "timestamp": "2023-03-10T11:46:26Z",
+            "comment": ""
+          },
+          {
+            "revid": 2708067,
+            "parentid": 2708063,
+            "timestamp": "2023-03-10T11:50:24Z",
+            "comment": ""
+          },
+          {
+            "revid": 2708069,
+            "parentid": 2708067,
+            "timestamp": "2023-03-10T11:55:02Z",
+            "comment": ""
+          },
+          {
+            "revid": 2708071,
+            "parentid": 2708069,
+            "timestamp": "2023-03-10T11:57:54Z",
+            "comment": ""
+          },
+          {
+            "revid": 2708089,
+            "parentid": 2708071,
+            "timestamp": "2023-03-10T12:29:41Z",
+            "comment": "סגור סוגריים"
+          },
+          {
+            "revid": 2716705,
+            "parentid": 2708089,
+            "timestamp": "2023-03-27T19:00:13Z",
+            "comment": "+[[קטגוריה:תהלים יח]]; הוספת קטגוריה לפרק ([[toolforge:quickcategories/batch/6106/|QuickCategories batch #6106]])"
+          },
+          {
+            "revid": 2759819,
+            "parentid": 2716705,
+            "timestamp": "2023-05-21T15:10:33Z",
+            "comment": "ניווט"
+          },
+          {
+            "revid": 2860508,
+            "parentid": 2759819,
+            "timestamp": "2024-05-23T05:15:09Z",
+            "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+          },
+          {
+            "revid": 2879634,
+            "parentid": 2860508,
+            "timestamp": "2024-09-12T03:55:28Z",
+            "comment": ""
+          },
+          {
+            "revid": 2880672,
+            "parentid": 2879634,
+            "timestamp": "2024-09-18T13:14:13Z",
+            "comment": ""
+          },
+          {
+            "revid": 2880736,
+            "parentid": 2880672,
+            "timestamp": "2024-09-18T15:11:20Z",
+            "comment": ""
+          },
+          {
+            "revid": 2883447,
+            "parentid": 2880736,
+            "timestamp": "2024-09-22T23:16:14Z",
+            "comment": "תבניות {{מ:דחי}} ו{{מ:צינור}}"
+          },
+          {
+            "revid": 2883448,
+            "parentid": 2883447,
+            "timestamp": "2024-09-22T23:19:56Z",
+            "comment": "שוחזר מעריכה של [[Special:Contributions/ShalomOrobot|ShalomOrobot]] ([[User talk:ShalomOrobot|שיחה]]) לעריכה האחרונה של [[User:Dovi|Dovi]]"
+          },
+          {
+            "revid": 2887986,
+            "parentid": 2883448,
+            "timestamp": "2024-10-07T06:42:49Z",
+            "comment": "תבניות {{מ:דחי}} ו{{מ:צינור}}"
+          },
+          {
+            "revid": 2888026,
+            "parentid": 2887986,
+            "timestamp": "2024-10-07T07:49:20Z",
+            "comment": ""
+          },
+          {
+            "revid": 2889239,
+            "parentid": 2888026,
+            "timestamp": "2024-10-13T18:40:03Z",
+            "comment": ""
+          },
+          {
+            "revid": 2906662,
+            "parentid": 2889239,
+            "timestamp": "2025-03-01T22:36:26Z",
+            "comment": "standardize newline use (usually means remove extra newlines)"
+          },
+          {
+            "revid": 2907608,
+            "parentid": 2906662,
+            "timestamp": "2025-03-08T08:34:44Z",
+            "comment": "מ:לגרמיה-2"
+          },
+          {
+            "revid": 2909603,
+            "parentid": 2907608,
+            "timestamp": "2025-03-15T22:42:01Z",
+            "comment": "Use 2= in קו״כ-אם"
+          },
+          {
+            "revid": 2911353,
+            "parentid": 2909603,
+            "timestamp": "2025-03-19T19:12:29Z",
+            "comment": "remove 1-arg מ:דחי and מ:צינור"
+          },
+          {
+            "revid": 2912299,
+            "parentid": 2911353,
+            "timestamp": "2025-03-21T16:42:51Z",
+            "comment": "Use U+05A2 instead of אתנח הפוך template"
+          },
+          {
+            "revid": 2964958,
+            "parentid": 2912299,
+            "timestamp": "2025-11-24T19:28:18Z",
+            "comment": ""
+          },
+          {
+            "revid": 2966768,
+            "parentid": 2964958,
+            "timestamp": "2025-12-08T06:56:08Z",
+            "comment": ""
+          },
+          {
+            "revid": 2966769,
+            "parentid": 2966768,
+            "timestamp": "2025-12-08T07:00:14Z",
+            "comment": ""
+          },
+          {
+            "revid": 2966772,
+            "parentid": 2966769,
+            "timestamp": "2025-12-08T07:02:42Z",
+            "comment": ""
+          },
+          {
+            "revid": 2988170,
+            "parentid": 2966772,
+            "timestamp": "2026-02-16T19:36:30Z",
+            "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+          },
+          {
+            "revid": 3001526,
+            "parentid": 2988170,
+            "timestamp": "2026-03-29T12:19:02Z",
+            "comment": ""
+          },
+          {
+            "revid": 3001528,
+            "parentid": 3001526,
+            "timestamp": "2026-03-29T12:24:41Z",
+            "comment": ""
+          },
+          {
+            "revid": 3001532,
+            "parentid": 3001528,
+            "timestamp": "2026-03-29T12:32:12Z",
+            "comment": ""
+          },
+          {
+            "revid": 3007144,
+            "parentid": 3001532,
+            "timestamp": "2026-04-20T22:46:34Z",
+            "comment": "Replace {{קו\"כ-אם}} with {{מ:קו\"כ-אם-2}}, per MAM-basics#55"
+          }
+        ]
+      },
+      "introduction_addition": [
+        {
+          "kind": "Introduction",
+          "revid": 2707726,
+          "parentid": 2707725,
+          "timestamp": "2023-03-08T20:46:16Z",
+          "comment": "/* תהלים (בהכנה) */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707726",
+          "excerpts": []
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2707753,
+          "parentid": 2707726,
+          "timestamp": "2023-03-09T06:13:48Z",
+          "comment": "/* תהלים (קטע חסר) */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707753",
+          "excerpts": [
+            {
+              "line": 566,
+              "text": "#[[תהלים יח/טעמים#יח ב|יח,ב]] (א=אֶרְחָמְךָ֖) ו[[תהלים פא/טעמים#פא ב|פא,ח]] (א=אֶבְחָנְךָ֨): לכאורה קמץ רחב לפני כללי הדקדוק, אבל המדקדקים הספרדים מציינים שהקמץ חטוף"
+            }
+          ]
+        }
+      ],
+      "chapter_sources": [
+        {
+          "kind": "chapter",
+          "revid": 671398,
+          "parentid": 408171,
+          "timestamp": "2016-01-24T05:33:27Z",
+          "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671398",
+          "excerpts": [
+            {
+              "line": 8,
+              "text": "וַיֹּאמַ֡ר{{ר1}}אֶרְחׇמְךָ֖ יְהֹוָ֣ה חִזְקִֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2707445,
+          "parentid": 2707406,
+          "timestamp": "2023-03-07T07:02:11Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707445",
+          "excerpts": [
+            {
+              "line": 6,
+              "text": "וַיֹּאמַ֡ר{{ר1}}אֶרְחׇמְךָ֖ יְהֹוָ֣ה חִזְקִֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2708061,
+          "parentid": 2707445,
+          "timestamp": "2023-03-10T11:37:03Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2708061",
+          "excerpts": [
+            {
+              "line": 6,
+              "text": "וַיֹּאמַ֡ר{{ר1}}{{נוסח|אֶרְחׇמְךָ֖|לכאורה מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה והתיבה הזאת ביניהם; והשוו תהלים פא,ח). אך המדקדקים הספרדים (ראו רד\"ק, מאירי) מציינים מסורת שהקמץ חטוף, וגם במ\"ש הביא מסורת זו למרות הסתייגות ע\"פ כללי הדקדוק (\"קבלנו קריאתו בקמץ חטוף אשר לא כדת\").}} יְהֹוָ֣ה חִזְקִֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2964958,
+          "parentid": 2912299,
+          "timestamp": "2025-11-24T19:28:18Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2964958",
+          "excerpts": [
+            {
+              "line": 7,
+              "text": "וַיֹּאמַ֡ר{{ר1}}{{נוסח|אֶרְחׇמְךָ֖|2=מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה והתיבה הזאת ביניהם). אך המדקדקים הספרדים (ראו רד\"ק, מאירי) מציינים מסורת שהקמץ חטוף, וגם במ\"ש הביא מסורת זו למרות הסתייגות ע\"פ כללי הדקדוק (\"קבלנו קריאתו בקמץ חטוף אשר לא כדת בהיות העי״ן גרונית\"). גם המילון של דוידזון מציין כאן קמץ קטן; והשוו תהלים פא,ח.}} יְהֹוָ֣ה חִזְקִֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2966768,
+          "parentid": 2964958,
+          "timestamp": "2025-12-08T06:56:08Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2966768",
+          "excerpts": [
+            {
+              "line": 7,
+              "text": "וַיֹּאמַ֡ר{{ר1}}{{נוסח|אֶרְחׇמְךָ֖|2=מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה והתיבה הזאת ביניהם). אך המדקדקים הספרדים (ראו רד\"ק, מאירי) מציינים מסורת שהקמץ חטוף, וגם במ\"ש הביא מסורת זו למרות הסתייגות ע\"פ כללי הדקדוק (\"קבלנו קריאתו בקמץ חטוף אשר לא כדת בהיות העי\"ן גרונית\"). גם המילון של דוידזון מציין כאן קמץ קטן; והשוו תהלים פא,ח. בכתבי־היד (ל,ש1,ק13,גסטר1) אין געיה בתיבה זו והספק נשאר.}} יְהֹוָ֣ה חִזְקִֽי׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 3007144,
+          "parentid": 3001532,
+          "timestamp": "2026-04-20T22:46:34Z",
+          "comment": "Replace {{קו\"כ-אם}} with {{מ:קו\"כ-אם-2}}, per MAM-basics#55",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3007144",
+          "excerpts": [
+            {
+              "line": 7,
+              "text": "וַיֹּאמַ֡ר{{ר1}}{{נוסח|אֶרְחׇמְךָ֖|2=מדובר על אחד מפעלי אֶפְעַל שהרי ע' הפועל אות גרונית, ואם כן הקמץ אמור להיות קמץ רחב (ראו ויינברג, 3.2.3.2 בפסקת \"NOTE\" שבה יש רשימה של פעלים מהסוג הזה והתיבה הזאת ביניהם). אך המדקדקים הספרדים (ראו רד\"ק, מאירי) מציינים מסורת שהקמץ חטוף, וגם במ\"ש הביא מסורת זו למרות הסתייגות ע\"פ כללי הדקדוק (\"קבלנו קריאתו בקמץ חטוף אשר לא כדת בהיות העי\"ן גרונית\"). גם המילון של דוידזון מציין כאן קמץ קטן; והשוו תהלים פא,ח. בכתבי־היד (ל,ש1,ק13,גסטר1) אין געיה בתיבה זו והספק נשאר.}} יְהֹוָ֣ה חִזְקִֽי׃"
+            }
+          ]
+        }
+      ],
+      "chapter_contents_read": 41,
+      "adaptive_search_trace": [
+        {
+          "revid": 487534,
+          "timestamp": "2013-06-05T05:52:49Z",
+          "present": false
+        },
+        {
+          "revid": 3088859,
+          "timestamp": "2026-10-15T09:42:04Z",
+          "present": true
+        },
+        {
+          "revid": 2706338,
+          "timestamp": "2023-03-01T11:56:19Z",
+          "present": false
+        },
+        {
+          "revid": 2761045,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "present": true
+        },
+        {
+          "revid": 2708391,
+          "timestamp": "2023-03-12T15:49:32Z",
+          "present": true
+        },
+        {
+          "revid": 2707889,
+          "timestamp": "2023-03-09T12:30:47Z",
+          "present": true
+        },
+        {
+          "revid": 2707020,
+          "timestamp": "2023-03-05T14:59:10Z",
+          "present": false
+        },
+        {
+          "revid": 2707617,
+          "timestamp": "2023-03-08T08:54:17Z",
+          "present": false
+        },
+        {
+          "revid": 2707725,
+          "timestamp": "2023-03-08T20:43:44Z",
+          "present": false
+        },
+        {
+          "revid": 2707843,
+          "timestamp": "2023-03-09T09:26:25Z",
+          "present": true
+        },
+        {
+          "revid": 2707753,
+          "timestamp": "2023-03-09T06:13:48Z",
+          "present": true
+        },
+        {
+          "revid": 2707726,
+          "timestamp": "2023-03-08T20:46:16Z",
+          "present": false
+        }
+      ]
+    },
+    {
+      "case": "PS-1-3",
+      "chapter_page": {
+        "page_key": "psalms-1",
+        "visible_metadata": [
+          {
+            "revid": 404078,
+            "parentid": 0,
+            "timestamp": "2011-05-10T22:12:24Z",
+            "comment": "תיכנות: אורי מילר ואראל סגל"
+          },
+          {
+            "revid": 671381,
+            "parentid": 404078,
+            "timestamp": "2016-01-24T05:32:57Z",
+            "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+          },
+          {
+            "revid": 904392,
+            "parentid": 671381,
+            "timestamp": "2019-06-12T06:21:30Z",
+            "comment": ""
+          },
+          {
+            "revid": 998046,
+            "parentid": 904392,
+            "timestamp": "2020-11-10T07:24:46Z",
+            "comment": ""
+          },
+          {
+            "revid": 1170130,
+            "parentid": 998046,
+            "timestamp": "2021-09-04T18:49:44Z",
+            "comment": "use מ: prefix with רווח לספר בתהלים"
+          },
+          {
+            "revid": 1379648,
+            "parentid": 1170130,
+            "timestamp": "2022-03-03T13:25:58Z",
+            "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+          },
+          {
+            "revid": 2716688,
+            "parentid": 1379648,
+            "timestamp": "2023-03-27T19:00:02Z",
+            "comment": "+[[קטגוריה:תהלים א]]; הוספת קטגוריה לפרק ([[toolforge:quickcategories/batch/6106/|QuickCategories batch #6106]])"
+          },
+          {
+            "revid": 2759802,
+            "parentid": 2716688,
+            "timestamp": "2023-05-21T15:10:12Z",
+            "comment": "ניווט"
+          },
+          {
+            "revid": 2836816,
+            "parentid": 2759802,
+            "timestamp": "2024-02-02T17:52:18Z",
+            "comment": "Use new empty template {{מ:רווח לספר בתהלים בפסק ראשון}}"
+          },
+          {
+            "revid": 2837047,
+            "parentid": 2836816,
+            "timestamp": "2024-02-04T17:46:39Z",
+            "comment": "Change בפסק ראשון to בפסוק הראשון in template suffixes."
+          },
+          {
+            "revid": 2878399,
+            "parentid": 2837047,
+            "timestamp": "2024-09-06T07:36:15Z",
+            "comment": ""
+          },
+          {
+            "revid": 2878453,
+            "parentid": 2878399,
+            "timestamp": "2024-09-07T20:05:30Z",
+            "comment": ""
+          },
+          {
+            "revid": 2907591,
+            "parentid": 2878453,
+            "timestamp": "2025-03-08T08:31:54Z",
+            "comment": "מ:לגרמיה-2"
+          },
+          {
+            "revid": 2911337,
+            "parentid": 2907591,
+            "timestamp": "2025-03-19T19:09:59Z",
+            "comment": "remove 1-arg מ:דחי and מ:צינור"
+          },
+          {
+            "revid": 2912286,
+            "parentid": 2911337,
+            "timestamp": "2025-03-21T16:40:41Z",
+            "comment": "Use U+05A2 instead of אתנח הפוך template"
+          },
+          {
+            "revid": 2988153,
+            "parentid": 2912286,
+            "timestamp": "2026-02-16T19:36:03Z",
+            "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+          }
+        ]
+      },
+      "introduction_addition": [
+        {
+          "kind": "Introduction",
+          "revid": 486833,
+          "parentid": 486821,
+          "timestamp": "2013-05-30T14:41:50Z",
+          "comment": "/* נספח ג. רשימת התבניות לעיצוב ותיעוד */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=486833",
+          "excerpts": []
+        },
+        {
+          "kind": "Introduction",
+          "revid": 486875,
+          "parentid": 486833,
+          "timestamp": "2013-05-30T15:39:16Z",
+          "comment": "/* צורת השיר בספרי אמ\"ת */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=486875",
+          "excerpts": [
+            {
+              "line": 667,
+              "text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת{{אתנח הפוך}}וּל עַֽל־פַּלְגֵ֫י מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה}} יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃"
+            }
+          ]
+        }
+      ],
+      "linked_draft_at_writing": {
+        "kind": "linked MAM draft",
+        "revid": 486873,
+        "parentid": 486822,
+        "timestamp": "2013-05-30T15:29:58Z",
+        "comment": "",
+        "url": "https://he.wikisource.org/w/index.php?oldid=486873",
+        "excerpts": [
+          {
+            "line": 6,
+            "text": "{{מ:פסוק|תהלים|א|ג}}וְֽהָיָ֗ה כְּעֵץ֮ שָׁת{{אתנח הפוך}}וּל עַֽל־פַּלְגֵ֫י מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה}} יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃ "
+          }
+        ]
+      },
+      "chapter_sources": [
+        {
+          "kind": "chapter",
+          "revid": 671381,
+          "parentid": 404078,
+          "timestamp": "2016-01-24T05:32:57Z",
+          "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671381",
+          "excerpts": [
+            {
+              "line": 8,
+              "text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת{{אתנח הפוך}}וּל עַֽל־פַּלְגֵ֫י מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה}}יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 904392,
+          "parentid": 671381,
+          "timestamp": "2019-06-12T06:21:30Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=904392",
+          "excerpts": [
+            {
+              "line": 7,
+              "text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת{{אתנח הפוך}}וּל עַֽל־פַּלְגֵ֫י מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה}}יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 998046,
+          "parentid": 904392,
+          "timestamp": "2020-11-10T07:24:46Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=998046",
+          "excerpts": [
+            {
+              "line": 7,
+              "text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת{{אתנח הפוך}}וּל עַֽל־פַּלְגֵ֫י{{מ:מקף אפור}}מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה}}יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃"
+            }
+          ]
+        },
+        {
+          "kind": "chapter",
+          "revid": 2988153,
+          "parentid": 2912286,
+          "timestamp": "2026-02-16T19:36:03Z",
+          "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2988153",
+          "excerpts": [
+            {
+              "line": 8,
+              "text": "וְֽהָיָ֗ה כְּעֵץ֮ שָׁת֢וּל עַֽל־פַּלְגֵ֫י{{מ:מקף אפור}}מָ֥יִם{{ר1}}אֲשֶׁ֤ר פִּרְי֨וֹ{{מ:לגרמיה-2}} יִתֵּ֬ן בְּעִתּ֗וֹ{{ר1}}וְעָלֵ֥הוּ לֹֽא־יִבּ֑וֹל{{ר2}}וְכֹ֖ל אֲשֶׁר־יַעֲשֶׂ֣ה יַצְלִֽיחַ׃"
+            }
+          ]
+        }
+      ],
+      "chapter_contents_read": 16,
+      "adaptive_search_trace": [
+        {
+          "revid": 389808,
+          "timestamp": "2011-01-31T19:55:25Z",
+          "present": false
+        },
+        {
+          "revid": 487515,
+          "timestamp": "2013-06-05T05:00:10Z",
+          "present": true
+        },
+        {
+          "revid": 451693,
+          "timestamp": "2012-09-02T12:01:29Z",
+          "present": false
+        },
+        {
+          "revid": 471757,
+          "timestamp": "2013-01-26T19:05:05Z",
+          "present": false
+        },
+        {
+          "revid": 476592,
+          "timestamp": "2013-03-23T22:09:07Z",
+          "present": false
+        },
+        {
+          "revid": 484906,
+          "timestamp": "2013-05-20T07:05:32Z",
+          "present": false
+        },
+        {
+          "revid": 486400,
+          "timestamp": "2013-05-27T06:57:59Z",
+          "present": false
+        },
+        {
+          "revid": 487273,
+          "timestamp": "2013-06-03T07:33:27Z",
+          "present": true
+        },
+        {
+          "revid": 486821,
+          "timestamp": "2013-05-30T14:25:24Z",
+          "present": false
+        },
+        {
+          "revid": 486876,
+          "timestamp": "2013-05-30T15:41:06Z",
+          "present": true
+        },
+        {
+          "revid": 486833,
+          "timestamp": "2013-05-30T14:41:50Z",
+          "present": false
+        },
+        {
+          "revid": 486875,
+          "timestamp": "2013-05-30T15:39:16Z",
+          "present": true
+        }
+      ]
+    }
+  ]
+}

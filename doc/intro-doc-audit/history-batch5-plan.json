@@ -1,0 +1,548 @@
+{
+  "method": "Ten independently examined histories integrated by one writer. Exact chapter metadata and note states distinguish later staleness, errors at creation, shared terminology and unresolved source/scope definitions. Global counts reuse existing audited corpus evidence; aggregates alone do not identify a historical corpus. Original source captures and twelve Ben decisions remain unchanged.",
+  "cases": [
+    {
+      "case": "EX-7-13-METEG-QUOTATION",
+      "classification": "defect-present-when-note-added",
+      "result": "The explanatory yod quotation already has the extra pataḥ when the note is added on 10 June 2024. Fifteen minutes later the selected MAM form gains meteg without correcting that quotation. September's correction fixes the separate vav quotation only. A later MAM pointing change did not introduce the yod defect.",
+      "limits": [
+        "No manuscript image was inspected. The definite error is the explanatory string containing segol and patah under yod while the prose names meteg."
+      ],
+      "chapters": [
+        {
+          "key": "exodus-7",
+          "verses": [
+            13
+          ],
+          "selected": [
+            2860409,
+            2863599,
+            2863601,
+            2863603,
+            2886265
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [],
+        "refs": [],
+        "line_numbers": {},
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2860409,
+          2863599
+        ],
+        [
+          2863599,
+          2863601
+        ],
+        [
+          2863603,
+          2886265
+        ]
+      ],
+      "links": [
+        {
+          "label": "Note added",
+          "revision": 2863599
+        },
+        {
+          "label": "Separate vav correction",
+          "revision": 2886265
+        }
+      ]
+    },
+    {
+      "case": "EXOD-7-13-SCOPE",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "On 10 June 2024 the note is created without yod meteg in its main form, then gains that meteg fifteen minutes later. Four minutes afterward the Introduction adds its Leningrad example without meteg. The opening agreement already included sources with differing yod meteg even before the main-form edit, so it cannot safely mean agreement in every mark. Its scope may concern absence of heavy vav meteg. This is not established Introduction staleness.",
+      "limits": [
+        "Do not classify the Introduction Leningrad quotation as stale merely because selected MAM gained meteg. MAM and a manuscript quotation may intentionally differ.",
+        "The note does not explicitly name Leningrad among the sources for yod meteg."
+      ],
+      "chapters": [
+        {
+          "key": "exodus-7",
+          "verses": [
+            13
+          ],
+          "selected": [
+            2863599,
+            2863601
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2858658,
+          2863602
+        ],
+        "refs": [
+          [
+            "Exodus",
+            7,
+            13
+          ]
+        ],
+        "line_numbers": {},
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2863599,
+          2863601
+        ],
+        [
+          2858658,
+          2863602
+        ]
+      ],
+      "links": [
+        {
+          "label": "Main-form change",
+          "revision": 2863601
+        },
+        {
+          "label": "Contemporary Introduction",
+          "revision": 2863602
+        }
+      ]
+    },
+    {
+      "case": "LEV-3-17-METEG-LABEL",
+      "classification": "ambiguity-present-when-alternative-added",
+      "result": "The no-meteg label is added on 26 October 2023 beside a quotation already containing bet meteg. Earlier 2018 discussion distinguishes absent mem meteg from uncertain bet meteg. The ambiguous clause therefore has this pointing when written; history does not decide whether its label refers only to mem or whether quotation or description needs correction.",
+      "limits": [
+        "Firkovich B17 remains explicitly uncertain and the Sassoon 1053 alternative explicitly belongs to a second hand.",
+        "No later change in the quoted pointing explains the no-meteg label. No manuscript research was performed."
+      ],
+      "chapters": [
+        {
+          "key": "leviticus-3",
+          "verses": [
+            17
+          ],
+          "selected": [
+            810505,
+            810664,
+            2759312,
+            2812044
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [],
+        "refs": [],
+        "line_numbers": {},
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2759312,
+          2812044
+        ]
+      ],
+      "links": [
+        {
+          "label": "Alternative added",
+          "revision": 2812044
+        },
+        {
+          "label": "Earlier meteg discussion",
+          "revision": 810664
+        }
+      ]
+    },
+    {
+      "case": "LEV-7-PARASHAH-LOCATOR",
+      "classification": "wrong-locator-present-when-note-added",
+      "result": "The section note added on 1 September 2023 already calls the second opening verse 27 while quoting the opening at 28–29. Adjacent verse context places the section before 28. Subsequent expansions retain 27; a later verse-number change did not create the erroneous locator.",
+      "limits": [
+        "This concerns a verse locator in the prose. It does not adjudicate the historical Aleppo section division."
+      ],
+      "chapters": [
+        {
+          "key": "leviticus-7",
+          "verses": [
+            22,
+            27,
+            28,
+            29
+          ],
+          "selected": [
+            2759316,
+            2800873
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [],
+        "refs": [],
+        "line_numbers": {},
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2759316,
+          2800873
+        ]
+      ],
+      "links": [
+        {
+          "label": "Section note added",
+          "revision": 2800873
+        }
+      ]
+    },
+    {
+      "case": "GEN-2-10-CHRONOLOGY",
+      "classification": "established-staleness",
+      "result": "The September 2021 Introduction quotes a dotted resh as Leningrad. On 17 November the note changes its attribution to undotted resh and reports the apparent dot as a transcription error; the November 19 Introduction retains the codepoint-identical paragraph and wrong 1:10 link. MAM's selected body was already undotted in 2015. This is staleness after a note-attribution correction.",
+      "limits": [],
+      "chapters": [
+        {
+          "key": "genesis-2",
+          "verses": [
+            10
+          ],
+          "selected": [
+            655620,
+            786234,
+            1287018,
+            1287019
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1182964,
+          1287557,
+          1290610
+        ],
+        "refs": [
+          [
+            "Genesis",
+            1,
+            10
+          ],
+          [
+            "Genesis",
+            2,
+            10
+          ]
+        ],
+        "line_numbers": {
+          "1290610": [
+            649
+          ],
+          "1182964": [
+            649
+          ],
+          "1287557": [
+            649
+          ]
+        },
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          786234,
+          1287018
+        ],
+        [
+          1287018,
+          1287019
+        ],
+        [
+          1182964,
+          1287557
+        ]
+      ],
+      "links": [
+        {
+          "label": "Before correction",
+          "revision": 1182964
+        },
+        {
+          "label": "Note correction",
+          "revision": 1287018
+        },
+        {
+          "label": "After correction",
+          "revision": 1287557
+        }
+      ]
+    },
+    {
+      "case": "GEN-36-13",
+      "classification": "shared-terminology-question-from-first-canonical-note",
+      "result": "Every canonical MAM note quotation from its October 2015 import has two munaḥ signs while its description names merkha. The August 2023 wording expansion retains both; selected Introduction snapshots share the same description and signs. This is a shared terminology question, not demonstrated disagreement between the two sources or later staleness.",
+      "limits": [
+        "The 2011 pre-MAM chapter body also has a double-MUNAH form. It is a separate historical transcription stage and does not verify the manuscript.",
+        "Exact Introduction insertion was not sought because it does not change the shared mismatch classification."
+      ],
+      "chapters": [
+        {
+          "key": "genesis-36",
+          "verses": [
+            13
+          ],
+          "selected": [
+            655658,
+            2759252,
+            2797903
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2799568,
+          2835961
+        ],
+        "refs": [
+          [
+            "Genesis",
+            36,
+            13
+          ]
+        ],
+        "line_numbers": {
+          "2799568": [
+            726
+          ],
+          "2835961": [
+            860
+          ]
+        },
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2759252,
+          2797903
+        ]
+      ],
+      "links": [
+        {
+          "label": "Canonical import",
+          "revision": 655658
+        },
+        {
+          "label": "Later wording",
+          "revision": 2797903
+        }
+      ]
+    },
+    {
+      "case": "DESCRIPTION-NUM-22-23",
+      "classification": "established-staleness",
+      "result": "The January 2024 note and Introduction agree in the erroneous bet label. On 8 July 2025 the note first adds doubt and the blurred-dot explanation, then corrects only bet to dalet. The pinned Introduction retains the old unqualified bet wording. This dates later staleness; the selected MAM form remains unchanged.",
+      "limits": [
+        "The exact Introduction insertion of the bet description was not traced; it is already present in the January19,2024 selected snapshot.",
+        "The blurred-dot statement is a historical report in the note, not an independent image observation by this audit.",
+        "The 24 MAM canonical revisions retain one literal selected main form; the changes concern description and uncertainty about Leningrad."
+      ],
+      "chapters": [
+        {
+          "key": "numbers-22",
+          "verses": [
+            23
+          ],
+          "selected": [
+            2829277,
+            2829281,
+            2907298,
+            2947571,
+            2947628
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2834443,
+          3087744
+        ],
+        "refs": [
+          [
+            "Numbers",
+            22,
+            23
+          ]
+        ],
+        "line_numbers": {
+          "2834443": [
+            1072
+          ],
+          "3087744": [
+            1008
+          ]
+        },
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2907298,
+          2947571
+        ],
+        [
+          2947571,
+          2947628
+        ]
+      ],
+      "links": [
+        {
+          "label": "Note correction",
+          "revision": 2947571
+        },
+        {
+          "label": "Note correction",
+          "revision": 2947628
+        }
+      ]
+    },
+    {
+      "case": "NUM-22-5-QUALIFIED",
+      "classification": "established-staleness",
+      "result": "The 2015 note and September 2021 Introduction both name Sapir. On 16 October 2023 the note changes the relevant attribution to Cassuto's lists while retaining Ofer's Cassuto citation. The October 26 Introduction and pinned cache still name Sapir. This establishes later attribution staleness, without independently checking Ofer or manuscript evidence.",
+      "limits": [
+        "This establishes which wording changed and what the Introduction retained. Ofer’s cited pages and the underlying reports were not independently read in this history-only batch.",
+        "History does not by itself decide whether Sapir also supplies separate evidence or authorize changing manuscript interpretation.",
+        "The exact origin of the Introduction table footnote is not traced; its Sapir attribution is already captured in2021.",
+        "The 2011 public chapter predates the MAM import and does not establish a contemporary MAM draft reading."
+      ],
+      "chapters": [
+        {
+          "key": "numbers-22",
+          "verses": [
+            5
+          ],
+          "selected": [
+            655603,
+            2759361,
+            2809595
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1182964,
+          2812137,
+          3087744
+        ],
+        "refs": [
+          [
+            "Numbers",
+            22,
+            5
+          ]
+        ],
+        "line_numbers": {
+          "1182964": [
+            498
+          ],
+          "2812137": [
+            528
+          ],
+          "3087744": [
+            557
+          ]
+        },
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2759361,
+          2809595
+        ]
+      ],
+      "links": [
+        {
+          "label": "Note correction",
+          "revision": 2809595
+        }
+      ]
+    },
+    {
+      "case": "DEUT-1-33-SASSOON-METEG",
+      "classification": "conflicting-attribution-present-when-agreement-expanded",
+      "result": "On 6 June 2023 the opening agreement list adds Sassoon 1053 to the form with meteg while retaining the same sigil in the no-meteg alternative. Earlier note versions place that sigil only in the latter. The history dates the internal source conflict; it does not decide which physical reading should be retained.",
+      "limits": [
+        "The attribution is decoded using the current sigil inventory; no manuscript image was inspected."
+      ],
+      "chapters": [
+        {
+          "key": "deuter-1",
+          "verses": [
+            33
+          ],
+          "selected": [
+            2762851,
+            2764992
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [],
+        "refs": [],
+        "line_numbers": {},
+        "allow_absent": true
+      },
+      "adjacent_pairs": [
+        [
+          2762851,
+          2764992
+        ]
+      ],
+      "links": [
+        {
+          "label": "Conflicting agreement expansion",
+          "revision": 2764992
+        }
+      ]
+    },
+    {
+      "case": "POETIC-COUNTS-TEXT",
+      "classification": "insufficient-history-to-identify-counting-source-and-principal-division-definition",
+      "result": "The 4465/421 principal-division statement and the 55/421 two-word statement are already present in the observed 2020-11-06 Introduction snapshot, with the same definitions and figures as the current cache. The 2685 deḥi total is present in the observed 2025-11-26 snapshot and the current source. No inspected snapshot identifies a different counted text or dates a change of counting definition. Existing current-MAM evidence establishes 2679 verses with deḥi and 423 with oleh, and all 55 two-atom cases match the list, but presence of an oleh glyph has not been shown equivalent to the Introduction criterion of principal division. Therefore neither later staleness nor a discrepancy from the outset can be concluded.",
+      "limits": [
+        "No corpus was regenerated in this batch; existing evidence and source code were inspected.",
+        "Cached WLC 420/422 diagnostics are comparison-text observations and do not establish which source the Introduction counted.",
+        "A first observed cached occurrence is not an insertion date; the Introduction content history is incomplete.",
+        "The original calculation or an identified edition/revision with per-verse memberships for 2685 and 421; aggregate totals alone cannot identify additions/removals.",
+        "An explicit grammatical rule for principal division, including whether and why any verses containing oleh are excluded.",
+        "If historical MAM is the intended source, comparable selected-text snapshots at the count-writing date, preserving qere/alternative selection and prose-versus-poetic verse routing."
+      ],
+      "chapters": [],
+      "intro": {
+        "revisions": [
+          2965114,
+          997158
+        ],
+        "refs": [],
+        "line_numbers": {
+          "2965114": [
+            385
+          ],
+          "997158": [
+            278,
+            288
+          ]
+        },
+        "allow_absent": true
+      },
+      "adjacent_pairs": [],
+      "links": [
+        {
+          "label": "Observed count paragraph",
+          "revision": 2965114
+        },
+        {
+          "label": "Observed count paragraph",
+          "revision": 997158
+        }
+      ]
+    }
+  ]
+}

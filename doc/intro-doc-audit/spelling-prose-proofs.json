@@ -1,0 +1,191 @@
+[
+  {
+    "claim": "ch3:L153",
+    "note_id": "Numbers 9:7/2/0",
+    "raw_path": "in/mam-ws/A4-Numbers.json",
+    "raw_note_body": "=ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה (כתיב מלא וי\"ו){{ש}}ל=הַקְרִ֜ב (כתיב חסר יו\"ד)",
+    "parsed_note_body": "=ל1,ב,ש,ש1,ק3,ו ומסורת-ל וטברניות ורמ\"ה (כתיב מלא וי\"ו)\nל=הַקְרִ֜ב (כתיב חסר יו\"ד)",
+    "raw_target": "הַקְרִ֜יב",
+    "parsed_target": "הַקְרִ֜יב",
+    "intro_selected": "הַקְרִ֜יב",
+    "codepoints": [
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ק",
+        "codepoint": "U+05E7",
+        "name": "HEBREW LETTER QOF"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ר",
+        "codepoint": "U+05E8",
+        "name": "HEBREW LETTER RESH"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "֜",
+        "codepoint": "U+059C",
+        "name": "HEBREW ACCENT GERESH"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ב",
+        "codepoint": "U+05D1",
+        "name": "HEBREW LETTER BET"
+      }
+    ],
+    "result": "Raw target, parsed target and Introduction selection agree after explicit MAM mark-order comparison. The note's letter-label or duplicate source relation is separately reviewed."
+  },
+  {
+    "claim": "ch3:L211",
+    "note_id": "Deuter 32:34/2/0",
+    "raw_path": "in/mam-ws/A5-Deuter.json",
+    "raw_note_body": "=א,ל1,ש,ש1,ק3,ל3,ל9 ומסורות-א,ל ורמ\"ה (כתיב מלא יו\"ד){{ש}}ל!=חָתֻ֖ם (כתיב חסר וי\"ו)",
+    "parsed_note_body": "=א,ל1,ש,ש1,ק3,ל3,ל9 ומסורות-א,ל ורמ\"ה (כתיב מלא יו\"ד)\nל!=חָתֻ֖ם (כתיב חסר וי\"ו)",
+    "raw_target": "חָת֖וּם",
+    "parsed_target": "חָת֖וּם",
+    "intro_selected": "חָת֖וּם",
+    "codepoints": [
+      {
+        "character": "ח",
+        "codepoint": "U+05D7",
+        "name": "HEBREW LETTER HET"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "ת",
+        "codepoint": "U+05EA",
+        "name": "HEBREW LETTER TAV"
+      },
+      {
+        "character": "֖",
+        "codepoint": "U+0596",
+        "name": "HEBREW ACCENT TIPEHA"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ם",
+        "codepoint": "U+05DD",
+        "name": "HEBREW LETTER FINAL MEM"
+      }
+    ],
+    "result": "Raw target, parsed target and Introduction selection agree after explicit MAM mark-order comparison. The note's letter-label or duplicate source relation is separately reviewed."
+  },
+  {
+    "claim": "ch3:L186",
+    "note_id": "Deuter 6:21/2/0",
+    "raw_path": "in/mam-ws/A5-Deuter.json",
+    "raw_note_body": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו){{ש}}ל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו){{ש}}ברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.{{ש}}קורן, ברויאר, סימנים, מכון ממרא",
+    "parsed_note_body": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
+    "raw_target": "וַיֹּצִיאֵ֧נוּ",
+    "parsed_target": "וַיֹּצִיאֵ֧נוּ",
+    "intro_selected": "וַיֹּצִיאֵ֧נוּ",
+    "codepoints": [
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "צ",
+        "codepoint": "U+05E6",
+        "name": "HEBREW LETTER TSADI"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "א",
+        "codepoint": "U+05D0",
+        "name": "HEBREW LETTER ALEF"
+      },
+      {
+        "character": "ֵ",
+        "codepoint": "U+05B5",
+        "name": "HEBREW POINT TSERE"
+      },
+      {
+        "character": "֧",
+        "codepoint": "U+05A7",
+        "name": "HEBREW ACCENT DARGA"
+      },
+      {
+        "character": "נ",
+        "codepoint": "U+05E0",
+        "name": "HEBREW LETTER NUN"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      }
+    ],
+    "result": "Raw target, parsed target and Introduction selection agree after explicit MAM mark-order comparison. The note's letter-label or duplicate source relation is separately reviewed."
+  }
+]

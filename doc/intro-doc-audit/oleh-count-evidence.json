@@ -1,0 +1,666 @@
+{
+  "case": "oleh-omission-count",
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "method": "Start with the parsed ordered chapter 5 list. Select pertinent notes by manual semantic review; reuse the current source-form grammar, sigil-expression parsing and literal note/body pointers. Compare marks only on MAM-order keys; retain all quotations verbatim.",
+  "counts": {
+    "listed_distinct_verses": 13,
+    "MAM_body_forms_with_both_marks_on_same_letter": 13,
+    "candidate_notes_at_listed_verses": 18,
+    "pertinent_notes": 12,
+    "notes_explicitly_naming_omitted_oleh": 11,
+    "pointing_pairs_with_revia_label": 1,
+    "verses_without_doc_note": 1,
+    "unrelated_candidate_notes": 6
+  },
+  "statuses": {
+    "pointing-pair-supported-but-note-calls-omission-revia": 1,
+    "MAM-body-feature-only-no-doc-note": 1,
+    "note-explicitly-names-omitted-oleh": 11
+  },
+  "limits": [
+    "Thirteen listed verses do not imply thirteen supporting doc-notes.",
+    "Psalm 30:12's revia label remains the separate open case PS-30-12-NOTE-LABEL.",
+    "No manuscript scans or manuscript-wide completeness claim are part of this check.",
+    "Historical revision evidence is supplemental; the pinned source caches are unchanged."
+  ],
+  "cases": [
+    {
+      "ref": "Psalms 30:12",
+      "introduction_item": "ch5:L743/item/1",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "לִ֥י"
+      },
+      "introduction_complete_specimen": "(א=לְמָח֢וֹל לִ֥י)",
+      "relevant_note": "Psalms 30:12/2/0",
+      "candidate_note_ids": [
+        "Psalms 30:12/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Psalms 30:12/2/0",
+        "text": "לִ֥֫י"
+      },
+      "aleppo_note_form": {
+        "note": "Psalms 30:12/2/0",
+        "text": "לִ֥י"
+      },
+      "complete_note": {
+        "note": "Psalms 30:12/2/0",
+        "quote": "א=לִ֥י (השמטת נקודת הרביע)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L10778",
+      "note_json_pointer": "/book39s/0/chapters/30/12/2/1",
+      "chapter_revision": {
+        "resolved_title": "תהלים ל/טעמים",
+        "page_id": 238366,
+        "requested_title": "תהלים_ל/טעמים",
+        "revision_id": 2988182,
+        "sha256": "09b5f0dead824bb647c24433efc390b2cbcba186950b5d68363adf8b8deec2e5"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "pointing-pair-supported-but-note-calls-omission-revia",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Psalms 42:3",
+      "introduction_item": "ch5:L743/item/2",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "(א=לְאֵ֢ל חָ֥י)"
+      },
+      "introduction_complete_specimen": "(א=לְאֵ֢ל חָ֥י)",
+      "relevant_note": null,
+      "candidate_note_ids": [],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "verse-parts",
+        "path": "MAM-parsed/plus/D1-Psalms.json",
+        "parts": [
+          {
+            "pointer": "/book39s/0/chapters/42/3/2/4",
+            "text": "חָ֥֫י"
+          }
+        ],
+        "text": "חָ֥֫י"
+      },
+      "status": "MAM-body-feature-only-no-doc-note",
+      "limit": "Aleppo attribution is supplied by the Introduction alone; the parsed verse has no documentation note.",
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Psalms 55:20",
+      "introduction_item": "ch5:L743/item/3",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "סֶ֥לָה"
+      },
+      "introduction_complete_specimen": "(א=קֶ֗דֶם סֶ֥לָה)",
+      "relevant_note": "Psalms 55:20/2/1",
+      "candidate_note_ids": [
+        "Psalms 55:20/2/0",
+        "Psalms 55:20/2/1"
+      ],
+      "unrelated_notes": [
+        {
+          "id": "Psalms 55:20/2/0",
+          "topic": "paseq"
+        }
+      ],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Psalms 55:20/2/1",
+        "text": "סֶ֥֫לָה"
+      },
+      "aleppo_note_form": {
+        "note": "Psalms 55:20/2/1",
+        "text": "סֶ֥לָה"
+      },
+      "complete_note": {
+        "note": "Psalms 55:20/2/1",
+        "quote": "א=סֶ֥לָה (המשטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L21779",
+      "note_json_pointer": "/book39s/0/chapters/55/20/2/7",
+      "chapter_revision": {
+        "resolved_title": "תהלים נה/טעמים",
+        "page_id": 238466,
+        "requested_title": "תהלים_נה/טעמים",
+        "revision_id": 3010630,
+        "sha256": "0af59229383028916214bf0277a639eddc1ec55abe1275a3dc4e33b87175386e"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Psalms 68:20",
+      "introduction_item": "ch5:L743/item/4",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "י֥וֹם"
+      },
+      "introduction_complete_specimen": "(א=י֤וֹם{{מ:לגרמיה}}י֥וֹם)",
+      "relevant_note": "Psalms 68:20/2/1",
+      "candidate_note_ids": [
+        "Psalms 68:20/2/0",
+        "Psalms 68:20/2/1"
+      ],
+      "unrelated_notes": [
+        {
+          "id": "Psalms 68:20/2/0",
+          "topic": "paseq"
+        }
+      ],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Psalms 68:20/2/1",
+        "text": "י֥֫וֹם"
+      },
+      "aleppo_note_form": {
+        "note": "Psalms 68:20/2/1",
+        "text": "י֥וֹם"
+      },
+      "complete_note": {
+        "note": "Psalms 68:20/2/1",
+        "quote": "א=י֥וֹם (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L26394",
+      "note_json_pointer": "/book39s/0/chapters/68/20/2/2",
+      "chapter_revision": {
+        "resolved_title": "תהלים סח/טעמים",
+        "page_id": 238518,
+        "requested_title": "תהלים_סח/טעמים",
+        "revision_id": 2997828,
+        "sha256": "534616278109caae3e4313deb117eaa54b53e6e08a2c1a0b1dca9ce1841d8766"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Psalms 86:2",
+      "introduction_item": "ch5:L743/item/5",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "אָ֥נִי"
+      },
+      "introduction_complete_specimen": "(א=כִּֽי־חָסִ֢יד אָ֥נִי)",
+      "relevant_note": "Psalms 86:2/2/1",
+      "candidate_note_ids": [
+        "Psalms 86:2/2/0",
+        "Psalms 86:2/2/1"
+      ],
+      "unrelated_notes": [
+        {
+          "id": "Psalms 86:2/2/0",
+          "topic": "qamats alternatives"
+        }
+      ],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Psalms 86:2/2/1",
+        "text": "אָ֥֫נִי"
+      },
+      "aleppo_note_form": {
+        "note": "Psalms 86:2/2/1",
+        "text": "אָ֥נִי"
+      },
+      "complete_note": {
+        "note": "Psalms 86:2/2/1",
+        "quote": "א=אָ֥נִי (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L35405",
+      "note_json_pointer": "/book39s/0/chapters/86/2/2/4",
+      "chapter_revision": {
+        "resolved_title": "תהלים פו/טעמים",
+        "page_id": 238590,
+        "requested_title": "תהלים_פו/טעמים",
+        "revision_id": 2997830,
+        "sha256": "241c725f11bb7d3fefee00574a8635c8ee4d4ce1f9ef24ab8198b8b8baf38f9a"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Psalms 109:16",
+      "introduction_item": "ch5:L743/item/6",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "חָ֥סֶד"
+      },
+      "introduction_complete_specimen": "(א=עֲשׂ֢וֹת חָ֥סֶד)",
+      "relevant_note": "Psalms 109:16/2/0",
+      "candidate_note_ids": [
+        "Psalms 109:16/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Psalms 109:16/2/0",
+        "text": "חָ֥֫סֶד"
+      },
+      "aleppo_note_form": {
+        "note": "Psalms 109:16/2/0",
+        "text": "חָ֥סֶד"
+      },
+      "complete_note": {
+        "note": "Psalms 109:16/2/0",
+        "quote": "=דפוסים\nא=חָ֥סֶד (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L46714",
+      "note_json_pointer": "/book39s/0/chapters/109/16/2/5",
+      "chapter_revision": {
+        "resolved_title": "תהלים קט/טעמים",
+        "page_id": 238682,
+        "requested_title": "תהלים_קט/טעמים",
+        "revision_id": 3079206,
+        "sha256": "7ef16c5db327c95f1f8ea6d2b74774d3205444cffcb5f6364371601ed8d87870"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Psalms 125:2",
+      "introduction_item": "ch5:L743/item/7",
+      "introduction": {
+        "claim": "ch5:L743",
+        "text": "לָ֥הּ"
+      },
+      "introduction_complete_specimen": "(א=סָבִ֢יב לָ֥הּ).",
+      "relevant_note": "Psalms 125:2/2/0",
+      "candidate_note_ids": [
+        "Psalms 125:2/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Psalms 125:2/2/0",
+        "text": "לָ֥֫הּ"
+      },
+      "aleppo_note_form": {
+        "note": "Psalms 125:2/2/0",
+        "text": "לָ֥הּ"
+      },
+      "complete_note": {
+        "note": "Psalms 125:2/2/0",
+        "quote": "א=לָ֥הּ (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L53880",
+      "note_json_pointer": "/book39s/0/chapters/125/2/2/3",
+      "chapter_revision": {
+        "resolved_title": "תהלים קכה/טעמים",
+        "page_id": 238746,
+        "requested_title": "תהלים_קכה/טעמים",
+        "revision_id": 2988277,
+        "sha256": "10714031774203594086660bb6c50df373c907c8779c6b58694b592245513e1d"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Proverbs 24:24",
+      "introduction_item": "ch5:L745/item/1",
+      "introduction": {
+        "claim": "ch5:L745",
+        "text": "אָ֥תָּה"
+      },
+      "introduction_complete_specimen": "(א=צַדִּ֢יק אָ֥תָּה)",
+      "relevant_note": "Proverbs 24:24/2/0",
+      "candidate_note_ids": [
+        "Proverbs 24:24/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Proverbs 24:24/2/0",
+        "text": "אָ֥֫תָּה"
+      },
+      "aleppo_note_form": {
+        "note": "Proverbs 24:24/2/0",
+        "text": "אָ֥תָּה"
+      },
+      "complete_note": {
+        "note": "Proverbs 24:24/2/0",
+        "quote": "=דפוסים וקורן\nא=אָ֥תָּה (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L15348",
+      "note_json_pointer": "/book39s/0/chapters/24/24/2/5",
+      "chapter_revision": {
+        "resolved_title": "משלי כד/טעמים",
+        "page_id": 238943,
+        "requested_title": "משלי_כד/טעמים",
+        "revision_id": 2997813,
+        "sha256": "79f64f6b9c20dac9a2f8822c469648f894e96ea2332c91dd010d14e8cee183b2"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Proverbs 30:15",
+      "introduction_item": "ch5:L745/item/2",
+      "introduction": {
+        "claim": "ch5:L745",
+        "text": "הַ֥ב"
+      },
+      "introduction_complete_specimen": "(א=הַ֤ב{{מ:פסק}}הַ֥ב).",
+      "relevant_note": "Proverbs 30:15/2/2",
+      "candidate_note_ids": [
+        "Proverbs 30:15/2/0",
+        "Proverbs 30:15/2/1",
+        "Proverbs 30:15/2/2"
+      ],
+      "unrelated_notes": [
+        {
+          "id": "Proverbs 30:15/2/0",
+          "topic": "small bet"
+        },
+        {
+          "id": "Proverbs 30:15/2/1",
+          "topic": "paseq"
+        }
+      ],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Proverbs 30:15/2/2",
+        "text": "הַ֥֫ב"
+      },
+      "aleppo_note_form": {
+        "note": "Proverbs 30:15/2/2",
+        "text": "הַ֥ב"
+      },
+      "complete_note": {
+        "note": "Proverbs 30:15/2/2",
+        "quote": "א=הַ֥ב (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L19298",
+      "note_json_pointer": "/book39s/0/chapters/30/15/2/6",
+      "chapter_revision": {
+        "resolved_title": "משלי ל/טעמים",
+        "page_id": 238967,
+        "requested_title": "משלי_ל/טעמים",
+        "revision_id": 3008043,
+        "sha256": "ccafd0a2809ce63646704ba84d8aa2335b276ba054cfe1b91840e78e1ede7526"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Job 8:6",
+      "introduction_item": "ch5:L747/item/1",
+      "introduction": {
+        "claim": "ch5:L747",
+        "text": "אָ֥תָּה"
+      },
+      "introduction_complete_specimen": "(א=וְיָשָׁ֗ר אָ֥תָּה)",
+      "relevant_note": "Job 8:6/2/0",
+      "candidate_note_ids": [
+        "Job 8:6/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Job 8:6/2/0",
+        "text": "אָ֥֫תָּה"
+      },
+      "aleppo_note_form": {
+        "note": "Job 8:6/2/0",
+        "text": "אָ֥תָּה"
+      },
+      "complete_note": {
+        "note": "Job 8:6/2/0",
+        "quote": "א=אָ֥תָּה (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D3-Job.json#L3340",
+      "note_json_pointer": "/book39s/0/chapters/8/6/2/1",
+      "chapter_revision": {
+        "resolved_title": "איוב ח/טעמים",
+        "page_id": 239004,
+        "requested_title": "איוב_ח/טעמים",
+        "revision_id": 2997810,
+        "sha256": "f187855c12a2e6909a1b294de590b7cc14a6505311bf63e8781c944cf3f98f4c"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Job 9:22",
+      "introduction_item": "ch5:L747/item/2",
+      "introduction": {
+        "claim": "ch5:L747",
+        "text": "אַחַ֗ת הִ֥יא"
+      },
+      "introduction_complete_specimen": "(א=אַחַ֗ת הִ֥יא)",
+      "relevant_note": "Job 9:22/2/0",
+      "candidate_note_ids": [
+        "Job 9:22/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Job 9:22/2/0",
+        "text": "אַחַ֗ת הִ֥֫יא"
+      },
+      "aleppo_note_form": {
+        "note": "Job 9:22/2/0",
+        "text": "אַחַ֗ת הִ֥יא"
+      },
+      "complete_note": {
+        "note": "Job 9:22/2/0",
+        "quote": "א,ל=אַחַ֗ת הִ֥יא (השמטת סימן העולה כמקובל); אך יודגש שחסרון ה\"עולה\" במקרה הזה גרם לשיבושים מגוונים בדפוסים: <אַֽחַת־הִ֭יא!> או <אַחַת־הִ֭יא!> או <אַחַ֗ת הִ֭יא!> (קורן כאחרון)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D3-Job.json#L4104",
+      "note_json_pointer": "/book39s/0/chapters/9/22/2/0",
+      "chapter_revision": {
+        "resolved_title": "איוב ט/טעמים",
+        "page_id": 239008,
+        "requested_title": "איוב_ט/טעמים",
+        "revision_id": 2988342,
+        "sha256": "dbb89e01f0de2d016d8540bfa2409f9f170e8303a86b7d5e8c0b71a8ce8c930c"
+      },
+      "sigil_expression": "א,ל",
+      "current_sigil_expressions": [
+        "א,ל"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": true
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Job 29:25",
+      "introduction_item": "ch5:L747/item/3",
+      "introduction": {
+        "claim": "ch5:L747",
+        "text": "רֹ֥אשׁ"
+      },
+      "introduction_complete_specimen": "(א=וְאֵשֵׁ֢ב רֹ֥אשׁ)",
+      "relevant_note": "Job 29:25/2/1",
+      "candidate_note_ids": [
+        "Job 29:25/2/0",
+        "Job 29:25/2/1"
+      ],
+      "unrelated_notes": [
+        {
+          "id": "Job 29:25/2/0",
+          "topic": "a ḥataf vowel"
+        }
+      ],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Job 29:25/2/1",
+        "text": "רֹ֥֫אשׁ"
+      },
+      "aleppo_note_form": {
+        "note": "Job 29:25/2/1",
+        "text": "רֹ֥אשׁ"
+      },
+      "complete_note": {
+        "note": "Job 29:25/2/1",
+        "quote": "א=רֹ֥אשׁ (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D3-Job.json#L14572",
+      "note_json_pointer": "/book39s/0/chapters/29/25/2/4",
+      "chapter_revision": {
+        "resolved_title": "איוב כט/טעמים",
+        "page_id": 239088,
+        "requested_title": "איוב_כט/טעמים",
+        "revision_id": 2988362,
+        "sha256": "810bdcedcf2bc5c648a6573f85e914f0b1b39ca1bb255ee0a5fc06c8bf8eee0b"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "limit": "The Introduction footnote discusses possible erasure above resh; the source attribution is not an independent scan verdict.",
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    },
+    {
+      "ref": "Job 34:20",
+      "introduction_item": "ch5:L747/item/4",
+      "introduction": {
+        "claim": "ch5:L747",
+        "text": "לָ֥יְלָה"
+      },
+      "introduction_complete_specimen": "(א=וַחֲצ֢וֹת לָ֥יְלָה).",
+      "relevant_note": "Job 34:20/2/0",
+      "candidate_note_ids": [
+        "Job 34:20/2/0"
+      ],
+      "unrelated_notes": [],
+      "mam_body": {
+        "source": "note-target",
+        "note": "Job 34:20/2/0",
+        "text": "לָ֥֫יְלָה"
+      },
+      "aleppo_note_form": {
+        "note": "Job 34:20/2/0",
+        "text": "לָ֥יְלָה"
+      },
+      "complete_note": {
+        "note": "Job 34:20/2/0",
+        "quote": "א=לָ֥יְלָה (השמטת סימן העולה)"
+      },
+      "note_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D3-Job.json#L17774",
+      "note_json_pointer": "/book39s/0/chapters/34/20/2/6",
+      "chapter_revision": {
+        "resolved_title": "איוב לד/טעמים",
+        "page_id": 239108,
+        "requested_title": "איוב_לד/טעמים",
+        "revision_id": 2992498,
+        "sha256": "6feed7c2fe6d64c8ff7c775180d2da2228e3487ac3acc49c92507f9094dc7f60"
+      },
+      "sigil_expression": "א",
+      "current_sigil_expressions": [
+        "א"
+      ],
+      "status": "note-explicitly-names-omitted-oleh",
+      "comparison": "MAM body minus OLE equals the explicitly attributed Aleppo form after comparison-only MAM mark ordering.",
+      "mark_delta": {
+        "MAM_additional_codepoint": "U+05AB HEBREW ACCENT OLE",
+        "shared_mark": "U+05A5 HEBREW ACCENT MERKHA (yored in this context)",
+        "REVIA_U0597_present_in_either_form": false
+      },
+      "mam_body_has_oleh_and_yored_on_same_letter": true
+    }
+  ]
+}

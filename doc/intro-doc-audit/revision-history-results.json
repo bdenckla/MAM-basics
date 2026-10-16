@@ -1,0 +1,477 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "authorization": "Sentinel_7a1e08b9a994819188a8e42b91fb1795",
+  "cases": [
+    {
+      "case": "proverbs-maqaf-illustration",
+      "classification": "established-staleness",
+      "result": "proverbs-30-19-history.json",
+      "research_note": "proverbs-30-19-history.md"
+    },
+    {
+      "case": "oleh-omission-count",
+      "classification": "established-count-correction-with-stale-chapter2-summary",
+      "result": "oleh-count-history.json"
+    },
+    {
+      "case": "numbers-yod-label",
+      "classification": "discrepancy-present-when-doc-note-description-added",
+      "result": "history-batch1-results.json"
+    },
+    {
+      "case": "deuteronomy-vav-label",
+      "classification": "discrepancy-present-when-doc-note-description-added",
+      "result": "history-batch1-results.json"
+    },
+    {
+      "case": "PS-18-2-ATTRIBUTION",
+      "classification": "insufficient-history-to-resolve-manuscript-attribution",
+      "result": "history-batch1-results.json"
+    },
+    {
+      "case": "PS-1-3",
+      "classification": "established-staleness",
+      "result": "history-batch1-results.json"
+    },
+    {
+      "case": "deuteronomy-leningrad-spelling",
+      "classification": "discrepancy-present-when-doc-note-source-list-expanded",
+      "result": "history-batch2-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SONG-1-6",
+      "classification": "omission-present-when-current-cross-manuscript-list-created",
+      "result": "history-batch2-results.json"
+    },
+    {
+      "case": "jeremiah-accent",
+      "classification": "discrepancy-in-first-retained-canonical-MAM-note",
+      "result": "history-batch2-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-JEREMIAH",
+      "classification": "insufficient-history-to-resolve-specific-Masorah-attribution",
+      "result": "history-batch2-results.json"
+    },
+    {
+      "case": "TORAH-SPELLING-DEUT32-SHEVA",
+      "classification": "established-staleness-after-doc-note-correction",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-PS-18-7",
+      "classification": "attribution-tension-present-when-Introduction-alternative-added",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "HATAF-PROVERBS-ADDITION",
+      "classification": "later-note-expansion-unreflected-in-existing-list",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "NUM-10-8-B17-METEG",
+      "classification": "internal-note-conflict-introduced-by-source-code-replacement",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-8-10",
+      "classification": "omission-present-when-Samuel-list-expanded",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "SPECIAL-LETTER-2SAM-21-19",
+      "classification": "wrong-description-present-when-added",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "SAM-21-12",
+      "classification": "dated-note-expansion-with-partial-appendix-update",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-16",
+      "classification": "insufficient-semantic-evidence-for-list-category",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-24-18",
+      "classification": "insufficient-semantic-evidence-for-list-category",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-GEN-30-27",
+      "classification": "omission-present-when-Genesis-numeric-count-assigned",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-NUM-10-9",
+      "classification": "omission-present-when-Numbers-numeric-count-assigned",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "TORAH-SPELLING-NAMES",
+      "classification": "mixed-chronology-later-certainty-and-original-qualification",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "PS-17-14-MAQAF",
+      "classification": "not-explained-by-later-canonical-note-change-origin-undated",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-PS-17-14",
+      "classification": "attribution-tension-present-when-Introduction-candidate-added",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "ALL-HATAF-PS-17-14-SOURCE",
+      "classification": "later-scope-caption-retains-earlier-Sassoon-entry-origin-bounded",
+      "result": "history-batch3-results.json"
+    },
+    {
+      "case": "DAN-2-17",
+      "classification": "established-staleness",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-DAN-2-41",
+      "classification": "history-accounted-manuscript-interpretation-unresolved",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "DAN-5-7",
+      "classification": "discrepancy-at-first-observed-Introduction-entry-origin-bounded",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-DAN-5-3",
+      "classification": "history-accounted-source-qualification-unresolved",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "DAN-7-9-SELECTION",
+      "classification": "established-staleness",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "SPELLING-SPECIMEN-DANIEL",
+      "classification": "history-accounted-illustration-scope-unresolved",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "ALL-HATAF-DAN-12-2",
+      "classification": "history-accounted-uncertain-hataf-category",
+      "result": "history-batch4-results.json"
+    },
+    {
+      "case": "EX-7-13-METEG-QUOTATION",
+      "classification": "defect-present-when-note-added",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "EXOD-7-13-SCOPE",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "LEV-3-17-METEG-LABEL",
+      "classification": "ambiguity-present-when-alternative-added",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "LEV-7-PARASHAH-LOCATOR",
+      "classification": "wrong-locator-present-when-note-added",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "GEN-2-10-CHRONOLOGY",
+      "classification": "established-staleness",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "GEN-36-13",
+      "classification": "shared-terminology-question-from-first-canonical-note",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "DESCRIPTION-NUM-22-23",
+      "classification": "established-staleness",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "NUM-22-5-QUALIFIED",
+      "classification": "established-staleness",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "DEUT-1-33-SASSOON-METEG",
+      "classification": "conflicting-attribution-present-when-agreement-expanded",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "POETIC-COUNTS-TEXT",
+      "classification": "insufficient-history-to-identify-counting-source-and-principal-division-definition",
+      "result": "history-batch5-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-DEUT-12-30",
+      "classification": "history-accounted-manuscript-interpretation-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "DESCRIPTION-DEUT-28-27",
+      "classification": "wrong-description-present-when-added",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "TORAH-SPELLING-METEG",
+      "classification": "established-staleness-in-incidental-pointing-scope-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "SEDER-DESCRIPTION-STRENGTH",
+      "classification": "history-accounted-Dotan-description-support-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "STRAND-SCOPE",
+      "classification": "history-accounted-strand-allocation-support-unresolved",
+      "result": "history-batch6-results.json"
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-14-7",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-2KINGS",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "IMPLICIT-MS-SAM-16-23",
+      "classification": "history-accounted-attribution-supported-by-earlier-note",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "IMPLICIT-MS-KINGS-18-27",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "tracked-shin-dot",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "ALL-HATAF-SAM-6-5",
+      "classification": "history-accounted-vowel-function-and-source-unresolved",
+      "result": "history-batch7-results.json"
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-14",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "tracked-ezekiel-dagesh-20",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "HATAF-EZEKIEL-SOURCE",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "tracked-ezekiel-meteg",
+      "classification": "established-staleness-followed-by-post-cache-correction",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "AMOS-MISSING-PAGES",
+      "classification": "insufficient-history",
+      "result": "history-batch8-results.json"
+    },
+    {
+      "case": "ISA-10-15",
+      "classification": "discrepancy-present-in-observed-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "classification": "introduced-in-note",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "classification": "introduced-in-note",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "classification": "intentional-exclusion",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "classification": "established-staleness",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "classification": "insufficient-history",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "MAL-HOLAM",
+      "classification": "dated-quotation-divergence",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "history-batch9-results.json"
+    },
+    {
+      "case": "POETIC-PROV8-QUALIFICATION",
+      "classification": "history-accounted-source-divergence",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-108-3-ALTERNATIVE",
+      "classification": "established-staleness",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-108-11",
+      "classification": "history-accounted-source-divergence",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-150-3-HATAF",
+      "classification": "established-staleness",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-119-138",
+      "classification": "history-accounted-attribution-scope-unresolved",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-119-90-MAQAF-SCOPE",
+      "classification": "history-accounted-paragraph-scope-unresolved",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "ALEPPO-SPECIAL-PS27",
+      "classification": "history-accounted-attribution-unresolved",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-15-1-QUOTE",
+      "classification": "history-accounted-quotation-omission",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-30-12-NOTE-LABEL",
+      "classification": "history-accounted-note-error-at-addition",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "L-CANDIDATE-NEH-12-47",
+      "classification": "history-accounted-preexisting-source-qualification-difference",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "SPELLING-SPECIMEN-NEHEMIAH",
+      "classification": "history-accounted-later-stress-helper-scope",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "ALL-HATAF-NEH-6-19",
+      "classification": "history-accounted-preserved-uncertainty-and-list-scope",
+      "result": "history-batch10-results.json"
+    },
+    {
+      "case": "PS-31-12-HATAF",
+      "classification": "history-accounted-source-divergence",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "PS-39-13",
+      "classification": "history-accounted-l-quotation-origin-unresolved",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "PS-53-6-LETTER-NAME",
+      "classification": "history-accounted-note-error-at-addition",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "PS-57-9-ALTERNATIVE",
+      "classification": "established-staleness",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "PS-66-12-MAQAF-SCOPE",
+      "classification": "history-accounted-paragraph-scope-unresolved",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "POETIC-PS6-PS74-VOWELS",
+      "classification": "history-accounted-quotation-context-divergence",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "POETIC-PS68-RAFE",
+      "classification": "established-staleness-of-quotation-context",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "LEGARMEH-LIST-SCOPE",
+      "classification": "history-accounted-external-list-scope-unresolved",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "SONG-2-17-ACCENT-NAME",
+      "classification": "introduced-in-note",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-SONG-4-16",
+      "classification": "discrepancy-present-in-observed-history",
+      "result": "history-batch11-results.json"
+    },
+    {
+      "case": "ALEPPO-SIZE-QUOTATIONS",
+      "classification": "history-accounted-size-scope-with-distinct-mark-chronologies",
+      "result": "history-batch11-results.json"
+    }
+  ]
+}

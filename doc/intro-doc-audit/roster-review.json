@@ -1,0 +1,176 @@
+{
+  "reviewed_source_units": [
+    "ch3:L1126",
+    "ch3:L1128",
+    "ch3:L1130",
+    "ch3:L1132",
+    "ch3:L1134",
+    "ch5:L694",
+    "ch5:L696",
+    "ch5:L698",
+    "ch5:L700",
+    "ch5:L702",
+    "ch5:L704",
+    "ch5:L706",
+    "ch5:L708",
+    "ch5:L710",
+    "ch5:L712",
+    "ch5:L714",
+    "ch5:L716",
+    "ch5:L718",
+    "ch5:L720",
+    "ch5:L722",
+    "ch5:L724",
+    "ch5:L726",
+    "ch5:L728",
+    "ch5:L730"
+  ],
+  "reviewed_items": 667,
+  "total_items": 667,
+  "default_disposition": "central-source-and-hataf-correspondence",
+  "exception_dispositions": {
+    "supported-hataf-form-discrepancy": [
+      "ch5:L710/item/166"
+    ],
+    "hataf-name-description-discrepancy": [
+      "ch5:L710/item/32"
+    ],
+    "named-source-counterpart-unattested": [
+      "ch5:L706/item/17"
+    ],
+    "ketiv-to-qere-source-boundary": [
+      "ch5:L704/item/30",
+      "ch5:L704/item/32"
+    ],
+    "unlabelled-source-specimen": [
+      "ch5:L706/item/16",
+      "ch5:L710/item/75",
+      "ch5:L710/item/76",
+      "ch5:L710/item/125",
+      "ch5:L710/item/126",
+      "ch5:L710/item/127",
+      "ch5:L710/item/128",
+      "ch5:L710/item/136",
+      "ch5:L710/item/156"
+    ],
+    "incidental-mark-or-representation-scope": [
+      "ch5:L694/item/8",
+      "ch5:L698/item/12",
+      "ch5:L706/item/10",
+      "ch5:L712/item/10",
+      "ch5:L718/item/1",
+      "ch5:L710/item/5",
+      "ch5:L710/item/71",
+      "ch5:L710/item/74"
+    ]
+  },
+  "intended_ref_overrides": {
+    "ch5:L694/item/4": [
+      "Joshua",
+      6,
+      13
+    ],
+    "ch5:L696/item/1": [
+      "Judges",
+      3,
+      26
+    ],
+    "ch5:L698/item/22": [
+      "2Samuel",
+      16,
+      7
+    ],
+    "ch5:L706/item/7": [
+      "Ezekiel",
+      4,
+      10
+    ],
+    "ch5:L710/item/35": [
+      "Psalms",
+      53,
+      2
+    ],
+    "ch5:L710/item/36": [
+      "Psalms",
+      53,
+      2
+    ],
+    "ch5:L710/item/37": [
+      "Psalms",
+      55,
+      11
+    ],
+    "ch5:L710/item/38": [
+      "Psalms",
+      55,
+      22
+    ],
+    "ch5:L714/item/4": [
+      "Job",
+      3,
+      8
+    ],
+    "ch5:L722/item/1": [
+      "Ecclesiastes",
+      6,
+      2
+    ],
+    "ch5:L726/item/1": [
+      "Daniel",
+      1,
+      4
+    ],
+    "ch5:L728/item/11": [
+      "Nehemiah",
+      13,
+      19
+    ]
+  },
+  "method": "All list items were semantically read against complete current notes/targets; malformed locators were independently checked at the intended verse. Central hataf/source correspondence is narrower than complete pointing and list exhaustiveness. Root independently verified material source and description findings in faithful raw notes and codepoints.",
+  "limits": "No manuscript images or external history were consulted. Notes documenting only ketiv do not establish manuscript qere; omitted sigla are not supplied as authorial claims. Counts distinguish forms, alternative specimens, nonguttural hataf occurrences and distinct verses.",
+  "overlapping_count_and_scope_flags": {
+    "judges": {
+      "claim": "ch5:L696",
+      "declared": 24,
+      "forms": 23,
+      "nonguttural_hatafs": 24
+    },
+    "psalms": {
+      "claim": "ch5:L710",
+      "declared": 171,
+      "forms": 172,
+      "one_literal_form_has_sheva_instead_of_hataf": 166
+    },
+    "chronicles": {
+      "claim": "ch5:L730",
+      "declared": 61,
+      "forms": 63,
+      "distinct_verses": 61
+    },
+    "torah_deuter": {
+      "claim": "ch3:L1134",
+      "declared": 9,
+      "verse_entries": 11,
+      "atom_forms": 12
+    },
+    "unlisted_leningrad_candidate": {
+      "ref": [
+        "Proverbs",
+        30,
+        17
+      ],
+      "note_id": "Proverbs 30:17/2/1",
+      "status": "inclusion-policy-uncertainty"
+    },
+    "framing_subclaim": {
+      "item": "ch5:L710/item/17",
+      "explicit_source": "ש1",
+      "status": "broader-Aleppo-or-Leningrad-heading-does-not-literally-encompass-this-source"
+    },
+    "duplicated_anchor_name": [
+      "ch5:L710",
+      "ch5:L712"
+    ],
+    "genesis_display_label_slips": "ch3:L1126:2:12 and2:23 targets correct; labels name chapter1"
+  }
+}

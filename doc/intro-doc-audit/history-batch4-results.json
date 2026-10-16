@@ -1,0 +1,242 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "cases": [
+    {
+      "case": "DAN-2-17",
+      "classification": "established-staleness",
+      "result": "On 27 November 2023 the note removes meteg from both selected MAM and its Leningrad quotation. Introduction snapshots from October before the correction and December afterward retain the same meteg-bearing quotation. The 2016 note originally had that meteg. This establishes later staleness relative to the recorded correction.",
+      "limits": [
+        "This dates the textual divergence; it does not independently adjudicate the Leningrad manuscript's fine mark.",
+        "Selected Introduction snapshots establish before/after persistence, not exhaustive Introduction history or its first insertion."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-2",
+          "contents_read": 21,
+          "visible_revisions": 21
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2821664",
+          "url": "https://he.wikisource.org/w/index.php?diff=2821664&oldid=2760064"
+        },
+        {
+          "label": "Introduction 2023-04-10",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2737602"
+        },
+        {
+          "label": "Introduction 2023-10-26",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812195"
+        }
+      ]
+    },
+    {
+      "case": "L-CANDIDATE-DAN-2-41",
+      "classification": "history-accounted-manuscript-interpretation-unresolved",
+      "result": "The 2016 note already distinguishes a doubtful manuscript interpretation from the transcription alternative. On 5 April 2023 it expressly qualifies the missing-maqaf reading and retains the other interpretation as possible. The first inspected Introduction occurrence five days later already offers both alternatives. History does not settle the stroke or require rejecting either reading.",
+      "limits": [
+        "The Introduction's abbreviated source labels can be clarified, but no contradicted or superseded reading is established by this history.",
+        "No new manuscript inspection or first-insertion claim."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-2",
+          "contents_read": 21,
+          "visible_revisions": 21
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2721999",
+          "url": "https://he.wikisource.org/w/index.php?diff=2721999&oldid=2721981"
+        },
+        {
+          "label": "Introduction 2023-04-10",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2737602"
+        },
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        }
+      ]
+    },
+    {
+      "case": "DAN-5-7",
+      "classification": "discrepancy-at-first-observed-Introduction-entry-origin-bounded",
+      "result": "The note adds the pointed extra-yod ketiv on 11 April 2023 and removes that yod on 16 April at 09:37. The Introduction ketiv entry is absent in the inspected 09:42 snapshot, but present with extra yod on 21 April. Its first observed occurrence therefore already follows the correction; an initially accurate Introduction becoming stale is not established.",
+      "limits": [
+        "No copying event, manuscript verdict, or exact Introduction insertion date is inferred.",
+        "The bounded evidence dates the note correction and shows the discrepancy at the first inspected occurrence; intermediate Introduction edits were not exhaustively read."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-5",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2737716",
+          "url": "https://he.wikisource.org/w/index.php?diff=2737716&oldid=2716615"
+        },
+        {
+          "label": "Chapter change 2744728",
+          "url": "https://he.wikisource.org/w/index.php?diff=2744728&oldid=2744727"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        },
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        }
+      ]
+    },
+    {
+      "case": "L-CANDIDATE-DAN-5-3",
+      "classification": "history-accounted-source-qualification-unresolved",
+      "result": "The note labels the meteg alternative as transcription from the 2016 import. On 11 April 2023 it explicitly makes both manuscript and transcription assignments doubtful. The inspected 16 April Introduction already has the abbreviated Leningrad question mark without the transcription qualifier. The history does not establish a later source change causing staleness or settle the intended abbreviation.",
+      "limits": [
+        "The difference concerns source qualification; the cached history does not settle which physical stroke is present or what an abbreviated Introduction label intended.",
+        "The first actual Introduction insertion was not located."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-5",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2737716",
+          "url": "https://he.wikisource.org/w/index.php?diff=2737716&oldid=2716615"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        },
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        }
+      ]
+    },
+    {
+      "case": "SPELLING-SOURCE-DANIEL-CHAIN",
+      "classification": "history-accounted-specific-source-support-absent",
+      "result": "All twenty-four canonical MAM versions retain the same unpointed ketiv and pointed qere, without a source note for this pair. The Introduction already explicitly attributes pointed ketiv/qere to Leningrad in the inspected 21 April 2023 snapshot. Nearby notes concern other atoms. This is a specific source-support gap, rather than evidence of a removed annotation or a demonstrated contradiction.",
+      "limits": [
+        "To validate the attribution, a recorded Leningrad transcription/manuscript reading of this particular pointed ketiv and qere is needed; the generic MAM template supplies neither that attribution nor pointing for its unpointed ketiv.",
+        "Canonical note absence does not establish that no external source supports the Introduction."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-5",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Introduction 2023-04-21",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2746282"
+        },
+        {
+          "label": "Introduction 2023-10-26",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2812195"
+        }
+      ]
+    },
+    {
+      "case": "DAN-7-9-SELECTION",
+      "classification": "established-staleness",
+      "result": "On 20 April 2023 the canonical text changes its selected spelling from two yod letters to one. The Introduction decision list had starred the former choice beforehand. Its 21 April main list adopts the new selection, while the decision list retains the old star. This establishes a partial update and a stale selection marker.",
+      "limits": [
+        "This proves a real change of MAM's editorial selection; it does not independently adjudicate manuscript spellings or require changing scripture data.",
+        "No claim about the exact first Introduction insertion."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-7",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2746186",
+          "url": "https://he.wikisource.org/w/index.php?diff=2746186&oldid=2716617"
+        },
+        {
+          "label": "Introduction 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        }
+      ]
+    },
+    {
+      "case": "SPELLING-SPECIMEN-DANIEL",
+      "classification": "history-accounted-illustration-scope-unresolved",
+      "result": "The Breuer alternative has munaḥ in all twenty-four canonical MAM versions from 2016 onward. The Introduction decision list has merkha in the inspected March 2023 passage and later snapshots, without attributing that specimen to Breuer; its later main list has munaḥ. Stable differing specimens do not establish an incorrect Breuer quotation without that attribution.",
+      "limits": [
+        "A named source for the merkha specimen, or an explicit spelling-only illustration policy, would resolve the intended scope; canonical history alone does not.",
+        "Do not label this an incorrect quotation of Breuer without establishing that attribution."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-7",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "Introduction 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        },
+        {
+          "label": "Introduction 2023-04-16",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2744730"
+        }
+      ]
+    },
+    {
+      "case": "ALL-HATAF-DAN-12-2",
+      "classification": "history-accounted-uncertain-hataf-category",
+      "result": "The faint Leningrad mark is explicitly uncertain in the first canonical MAM note of January 2016. The April 2023 expansion preserves that doubt. The populated eleven-item Daniel list omits 12:2 by the inspected May 2023 snapshot, but the earlier empty placeholder cannot establish an omission. History does not confirm a missing entry or resolve the vowel category.",
+      "limits": [
+        "The history cannot resolve the stroke or establish whether this explicitly uncertain candidate falls within the list's intended population.",
+        "The latest live-history snapshot 3088859 is separate evidence; the pinned Introduction cache remains unchanged.",
+        "No manuscript inspection."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "daniel-12",
+          "contents_read": 14,
+          "visible_revisions": 14
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2746517",
+          "url": "https://he.wikisource.org/w/index.php?diff=2746517&oldid=2746298"
+        },
+        {
+          "label": "Introduction 2023-05-22",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045"
+        },
+        {
+          "label": "Introduction 2024-02-26",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2841570"
+        }
+      ]
+    }
+  ]
+}

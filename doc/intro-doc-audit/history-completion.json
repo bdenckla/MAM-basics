@@ -1,0 +1,829 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "completion_boundary": "All 94 applicable history questions have an evidenced disposition. This does not settle every manuscript, illustration-scope or source-support question.",
+  "coverage": {
+    "intro_pages": 13,
+    "topic_inventory_accounted": 340,
+    "topic_inventory_total": 340,
+    "pending_explicit_reference_source_units": 0,
+    "reader_cases_accounted": 152,
+    "reader_cases_total": 152,
+    "history_dispositions_recorded": 94,
+    "history_applicable_total": 94,
+    "history_pending": 0,
+    "excluded_internal_or_control_cases": 58,
+    "fully_inspected_chapter_histories": 75,
+    "unique_canonical_revisions_inspected_for_relevant_passages": 1711,
+    "current_context_routes_without_individual_chapter_history": 9,
+    "literal_passages_rechecked": 717,
+    "unapplied_proposals_rechecked": 12,
+    "ben_adjudications_preserved": 12
+  },
+  "frozen_Introduction_revisions": {
+    "root": 3085150,
+    "summary": 3085154,
+    "ch1": 3087907,
+    "ch2": 3087893,
+    "ch3": 3087744,
+    "ch4": 3087756,
+    "ch5": 3087740,
+    "appendices": 3088449,
+    "index-aleppo": 3083178,
+    "index-leningrad": 3083919,
+    "westminster-typing": 2897781,
+    "data-sheet-guide": 3085151,
+    "technical-guide": 2898722
+  },
+  "chapter_histories": [
+    {
+      "title": "ירמיהו לא/טעמים",
+      "key": "jeremiah-31",
+      "visible_revisions": 27,
+      "contents_inspected_for_relevant_passages": 27,
+      "cases": [
+        "jeremiah-accent",
+        "SPELLING-SOURCE-JEREMIAH"
+      ]
+    },
+    {
+      "title": "במדבר ט/טעמים",
+      "key": "numbers-9",
+      "visible_revisions": 23,
+      "contents_inspected_for_relevant_passages": 23,
+      "cases": [
+        "numbers-yod-label"
+      ]
+    },
+    {
+      "title": "דברים לב/טעמים",
+      "key": "deuter-32",
+      "visible_revisions": 56,
+      "contents_inspected_for_relevant_passages": 56,
+      "cases": [
+        "deuteronomy-vav-label",
+        "TORAH-SPELLING-DEUT32-SHEVA"
+      ]
+    },
+    {
+      "title": "דברים ו/טעמים",
+      "key": "deuter-6",
+      "visible_revisions": 20,
+      "contents_inspected_for_relevant_passages": 20,
+      "cases": [
+        "deuteronomy-leningrad-spelling"
+      ]
+    },
+    {
+      "title": "שיר השירים א/טעמים",
+      "key": "song-1",
+      "visible_revisions": 14,
+      "contents_inspected_for_relevant_passages": 14,
+      "cases": [
+        "ALL-HATAF-SONG-1-6"
+      ]
+    },
+    {
+      "title": "שמואל ב ח/טעמים",
+      "key": "2samuel-8",
+      "visible_revisions": 19,
+      "contents_inspected_for_relevant_passages": 19,
+      "cases": [
+        "ALL-HATAF-SAM-8-10"
+      ]
+    },
+    {
+      "title": "במדבר י/טעמים",
+      "key": "numbers-10",
+      "visible_revisions": 34,
+      "contents_inspected_for_relevant_passages": 34,
+      "cases": [
+        "ALL-HATAF-NUM-10-9",
+        "NUM-10-8-B17-METEG",
+        "TORAH-SPELLING-NAMES"
+      ]
+    },
+    {
+      "title": "בראשית ל/טעמים",
+      "key": "genesis-30",
+      "visible_revisions": 22,
+      "contents_inspected_for_relevant_passages": 22,
+      "cases": [
+        "ALL-HATAF-GEN-30-27"
+      ]
+    },
+    {
+      "title": "משלי ל/טעמים",
+      "key": "chapter",
+      "visible_revisions": 41,
+      "contents_inspected_for_relevant_passages": 41,
+      "cases": [
+        "proverbs-maqaf-illustration",
+        "oleh-omission-count",
+        "HATAF-PROVERBS-ADDITION"
+      ]
+    },
+    {
+      "title": "תהלים ל/טעמים",
+      "key": "psalms-30",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "oleh-omission-count",
+        "PS-30-12-NOTE-LABEL"
+      ]
+    },
+    {
+      "title": "תהלים סח/טעמים",
+      "key": "psalms-68",
+      "visible_revisions": 31,
+      "contents_inspected_for_relevant_passages": 31,
+      "cases": [
+        "oleh-omission-count",
+        "POETIC-PS68-RAFE"
+      ]
+    },
+    {
+      "title": "מלכים ב יח/טעמים",
+      "key": "2kings-18",
+      "visible_revisions": 29,
+      "contents_inspected_for_relevant_passages": 29,
+      "cases": [
+        "tracked-shin-dot",
+        "IMPLICIT-MS-KINGS-18-27"
+      ]
+    },
+    {
+      "title": "יחזקאל כח/טעמים",
+      "key": "ezekiel-28",
+      "visible_revisions": 26,
+      "contents_inspected_for_relevant_passages": 26,
+      "cases": [
+        "tracked-ezekiel-meteg"
+      ]
+    },
+    {
+      "title": "יחזקאל יד/טעמים",
+      "key": "ezekiel-14",
+      "visible_revisions": 17,
+      "contents_inspected_for_relevant_passages": 17,
+      "cases": [
+        "tracked-ezekiel-dagesh-14",
+        "tracked-ezekiel-dagesh-20"
+      ]
+    },
+    {
+      "title": "תהלים קח/טעמים",
+      "key": "psalms-108",
+      "visible_revisions": 27,
+      "contents_inspected_for_relevant_passages": 27,
+      "cases": [
+        "PS-108-11",
+        "PS-108-3-ALTERNATIVE"
+      ]
+    },
+    {
+      "title": "תהלים נז/טעמים",
+      "key": "psalms-57",
+      "visible_revisions": 26,
+      "contents_inspected_for_relevant_passages": 26,
+      "cases": [
+        "PS-57-9-ALTERNATIVE"
+      ]
+    },
+    {
+      "title": "דניאל ב/טעמים",
+      "key": "daniel-2",
+      "visible_revisions": 21,
+      "contents_inspected_for_relevant_passages": 21,
+      "cases": [
+        "DAN-2-17",
+        "L-CANDIDATE-DAN-2-41"
+      ]
+    },
+    {
+      "title": "תהלים לט/טעמים",
+      "key": "psalms-39",
+      "visible_revisions": 27,
+      "contents_inspected_for_relevant_passages": 27,
+      "cases": [
+        "PS-39-13"
+      ]
+    },
+    {
+      "title": "תהלים יז/טעמים",
+      "key": "psalms-17",
+      "visible_revisions": 31,
+      "contents_inspected_for_relevant_passages": 31,
+      "cases": [
+        "PS-17-14-MAQAF",
+        "L-CANDIDATE-PS-17-14",
+        "ALL-HATAF-PS-17-14-SOURCE"
+      ]
+    },
+    {
+      "title": "יהושע יד/טעמים",
+      "key": "joshua-14",
+      "visible_revisions": 17,
+      "contents_inspected_for_relevant_passages": 17,
+      "cases": [
+        "JOSH-14-7-SELECTION"
+      ]
+    },
+    {
+      "title": "תהלים קנ/טעמים",
+      "key": "psalms-150",
+      "visible_revisions": 18,
+      "contents_inspected_for_relevant_passages": 18,
+      "cases": [
+        "PS-150-3-HATAF"
+      ]
+    },
+    {
+      "title": "שמות ז/טעמים",
+      "key": "exodus-7",
+      "visible_revisions": 19,
+      "contents_inspected_for_relevant_passages": 19,
+      "cases": [
+        "EX-7-13-METEG-QUOTATION",
+        "EXOD-7-13-SCOPE"
+      ]
+    },
+    {
+      "title": "ויקרא ג/טעמים",
+      "key": "levit-3",
+      "visible_revisions": 14,
+      "contents_inspected_for_relevant_passages": 14,
+      "cases": [
+        "LEV-3-17-METEG-LABEL"
+      ]
+    },
+    {
+      "title": "דברים א/טעמים",
+      "key": "deuter-1",
+      "visible_revisions": 30,
+      "contents_inspected_for_relevant_passages": 30,
+      "cases": [
+        "DEUT-1-33-SASSOON-METEG"
+      ]
+    },
+    {
+      "title": "תהלים לא/טעמים",
+      "key": "psalms-31",
+      "visible_revisions": 27,
+      "contents_inspected_for_relevant_passages": 27,
+      "cases": [
+        "PS-31-12-HATAF"
+      ]
+    },
+    {
+      "title": "תהלים נג/טעמים",
+      "key": "psalms-53",
+      "visible_revisions": 27,
+      "contents_inspected_for_relevant_passages": 27,
+      "cases": [
+        "PS-53-6-LETTER-NAME"
+      ]
+    },
+    {
+      "title": "דניאל ה/טעמים",
+      "key": "daniel-5",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "DAN-5-7",
+        "L-CANDIDATE-DAN-5-3",
+        "SPELLING-SOURCE-DANIEL-CHAIN"
+      ]
+    },
+    {
+      "title": "דניאל ז/טעמים",
+      "key": "daniel-7",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "DAN-7-9-SELECTION",
+        "SPELLING-SPECIMEN-DANIEL"
+      ]
+    },
+    {
+      "title": "במדבר כב/טעמים",
+      "key": "numbers-22",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "DESCRIPTION-NUM-22-23",
+        "NUM-22-5-QUALIFIED"
+      ]
+    },
+    {
+      "title": "דברים כח/טעמים",
+      "key": "deuter-28",
+      "visible_revisions": 37,
+      "contents_inspected_for_relevant_passages": 37,
+      "cases": [
+        "DESCRIPTION-DEUT-28-27",
+        "TORAH-SPELLING-METEG"
+      ]
+    },
+    {
+      "title": "ישעיהו י/טעמים",
+      "key": "isaiah-10",
+      "visible_revisions": 18,
+      "contents_inspected_for_relevant_passages": 18,
+      "cases": [
+        "ISA-10-15"
+      ]
+    },
+    {
+      "title": "שמואל ב כא/טעמים",
+      "key": "2samuel-21",
+      "visible_revisions": 26,
+      "contents_inspected_for_relevant_passages": 26,
+      "cases": [
+        "SPECIAL-LETTER-2SAM-21-19",
+        "SAM-21-12"
+      ]
+    },
+    {
+      "title": "ירמיהו לט/טעמים",
+      "key": "jeremiah-39",
+      "visible_revisions": 12,
+      "contents_inspected_for_relevant_passages": 12,
+      "cases": [
+        "SPECIAL-LETTER-JER-39-13"
+      ]
+    },
+    {
+      "title": "ויקרא ז/טעמים",
+      "key": "levit-7",
+      "visible_revisions": 32,
+      "contents_inspected_for_relevant_passages": 32,
+      "cases": [
+        "LEV-7-PARASHAH-LOCATOR"
+      ]
+    },
+    {
+      "title": "ישעיהו נט/טעמים",
+      "key": "isaiah-59",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "ISA-59-19-MAQAF"
+      ]
+    },
+    {
+      "title": "ישעיהו נה/טעמים",
+      "key": "isaiah-55",
+      "visible_revisions": 10,
+      "contents_inspected_for_relevant_passages": 10,
+      "cases": [
+        "ISA-55-5-EDITION"
+      ]
+    },
+    {
+      "title": "שיר השירים ב/טעמים",
+      "key": "song-of-songs-2",
+      "visible_revisions": 16,
+      "contents_inspected_for_relevant_passages": 16,
+      "cases": [
+        "SONG-2-17-ACCENT-NAME"
+      ]
+    },
+    {
+      "title": "עמוס ח/טעמים",
+      "key": "amos-8",
+      "visible_revisions": 15,
+      "contents_inspected_for_relevant_passages": 15,
+      "cases": [
+        "AMOS-MISSING-PAGES"
+      ]
+    },
+    {
+      "title": "תהלים טו/טעמים",
+      "key": "psalms-15",
+      "visible_revisions": 26,
+      "contents_inspected_for_relevant_passages": 26,
+      "cases": [
+        "PS-15-1-QUOTE"
+      ]
+    },
+    {
+      "title": "בראשית ב/טעמים",
+      "key": "genesis-2",
+      "visible_revisions": 24,
+      "contents_inspected_for_relevant_passages": 24,
+      "cases": [
+        "GEN-2-10-CHRONOLOGY"
+      ]
+    },
+    {
+      "title": "תהלים סו/טעמים",
+      "key": "psalms-66",
+      "visible_revisions": 18,
+      "contents_inspected_for_relevant_passages": 18,
+      "cases": [
+        "PS-66-12-MAQAF-SCOPE"
+      ]
+    },
+    {
+      "title": "תהלים קיט/טעמים",
+      "key": "psalms-119",
+      "visible_revisions": 23,
+      "contents_inspected_for_relevant_passages": 23,
+      "cases": [
+        "PS-119-90-MAQAF-SCOPE",
+        "PS-119-138"
+      ]
+    },
+    {
+      "title": "שמואל ב טז/טעמים",
+      "key": "2samuel-16",
+      "visible_revisions": 16,
+      "contents_inspected_for_relevant_passages": 16,
+      "cases": [
+        "IMPLICIT-MS-SAM-16-23"
+      ]
+    },
+    {
+      "title": "מלכים ב יד/טעמים",
+      "key": "2kings-14",
+      "visible_revisions": 22,
+      "contents_inspected_for_relevant_passages": 22,
+      "cases": [
+        "IMPLICIT-MS-KINGS-14-7"
+      ]
+    },
+    {
+      "title": "בראשית לו/טעמים",
+      "key": "genesis-36",
+      "visible_revisions": 17,
+      "contents_inspected_for_relevant_passages": 17,
+      "cases": [
+        "GEN-36-13"
+      ]
+    },
+    {
+      "title": "מלאכי ב/טעמים",
+      "key": "malachi-2",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "MAL-HOLAM"
+      ]
+    },
+    {
+      "title": "תהלים יח/טעמים",
+      "key": "psalms-18",
+      "visible_revisions": 41,
+      "contents_inspected_for_relevant_passages": 41,
+      "cases": [
+        "PS-18-2-ATTRIBUTION",
+        "L-CANDIDATE-PS-18-7"
+      ]
+    },
+    {
+      "title": "דברים יב/טעמים",
+      "key": "deuter-12",
+      "visible_revisions": 21,
+      "contents_inspected_for_relevant_passages": 21,
+      "cases": [
+        "L-CANDIDATE-DEUT-12-30",
+        "TORAH-SPELLING-METEG"
+      ]
+    },
+    {
+      "title": "נחמיה יב/טעמים",
+      "key": "nehemiah-12",
+      "visible_revisions": 14,
+      "contents_inspected_for_relevant_passages": 14,
+      "cases": [
+        "L-CANDIDATE-NEH-12-47"
+      ]
+    },
+    {
+      "title": "דברים ה/טעמים",
+      "key": "deuter-5",
+      "visible_revisions": 72,
+      "contents_inspected_for_relevant_passages": 72,
+      "cases": [
+        "STRAND-SCOPE"
+      ]
+    },
+    {
+      "title": "שיר השירים ד/טעמים",
+      "key": "song-of-songs-4",
+      "visible_revisions": 15,
+      "contents_inspected_for_relevant_passages": 15,
+      "cases": [
+        "SHARED-EXPLANATIONS-SONG-4-16"
+      ]
+    },
+    {
+      "title": "איכה ד/טעמים",
+      "key": "lamentations-4",
+      "visible_revisions": 23,
+      "contents_inspected_for_relevant_passages": 23,
+      "cases": [
+        "SHARED-EXPLANATIONS-LAM-4-7"
+      ]
+    },
+    {
+      "title": "נחמיה ט/טעמים",
+      "key": "nehemiah-9",
+      "visible_revisions": 16,
+      "contents_inspected_for_relevant_passages": 16,
+      "cases": [
+        "SPELLING-SPECIMEN-NEHEMIAH"
+      ]
+    },
+    {
+      "title": "מלכים ב טו/טעמים",
+      "key": "2kings-15",
+      "visible_revisions": 18,
+      "contents_inspected_for_relevant_passages": 18,
+      "cases": [
+        "SPELLING-SOURCE-2KINGS"
+      ]
+    },
+    {
+      "title": "קהלת א/טעמים",
+      "key": "ecclesiastes-1",
+      "visible_revisions": 15,
+      "contents_inspected_for_relevant_passages": 15,
+      "cases": [
+        "SPELLING-SOURCE-ECCLESIASTES"
+      ]
+    },
+    {
+      "title": "במדבר א/טעמים",
+      "key": "numbers-1",
+      "visible_revisions": 21,
+      "contents_inspected_for_relevant_passages": 21,
+      "cases": [
+        "TORAH-SPELLING-NAMES"
+      ]
+    },
+    {
+      "title": "ישעיהו מד/טעמים",
+      "key": "isaiah-44",
+      "visible_revisions": 20,
+      "contents_inspected_for_relevant_passages": 20,
+      "cases": [
+        "ALEPPO-SPECIAL-ISA44",
+        "ISA-44-24-KETIV-MAQAF"
+      ]
+    },
+    {
+      "title": "תהלים כז/טעמים",
+      "key": "psalms-27",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "ALEPPO-SPECIAL-PS27"
+      ]
+    },
+    {
+      "title": "אסתר א/טעמים",
+      "key": "esther-1",
+      "visible_revisions": 25,
+      "contents_inspected_for_relevant_passages": 25,
+      "cases": [
+        "ALEPPO-SIZE-QUOTATIONS"
+      ]
+    },
+    {
+      "title": "רות ג/טעמים",
+      "key": "ruth-3",
+      "visible_revisions": 24,
+      "contents_inspected_for_relevant_passages": 24,
+      "cases": [
+        "ALEPPO-SIZE-QUOTATIONS"
+      ]
+    },
+    {
+      "title": "תהלים עז/טעמים",
+      "key": "psalms-77",
+      "visible_revisions": 19,
+      "contents_inspected_for_relevant_passages": 19,
+      "cases": [
+        "ALEPPO-SIZE-QUOTATIONS"
+      ]
+    },
+    {
+      "title": "ירמיהו מח/טעמים",
+      "key": "jeremiah-48",
+      "visible_revisions": 16,
+      "contents_inspected_for_relevant_passages": 16,
+      "cases": [
+        "HATAF-JEREMIAH-KETIV-QERE",
+        "ALL-HATAF-JER-48-32"
+      ]
+    },
+    {
+      "title": "ירמיהו נ/טעמים",
+      "key": "jeremiah-50",
+      "visible_revisions": 18,
+      "contents_inspected_for_relevant_passages": 18,
+      "cases": [
+        "HATAF-JEREMIAH-KETIV-QERE"
+      ]
+    },
+    {
+      "title": "יחזקאל יז/טעמים",
+      "key": "ezekiel-17",
+      "visible_revisions": 16,
+      "contents_inspected_for_relevant_passages": 16,
+      "cases": [
+        "HATAF-EZEKIEL-SOURCE"
+      ]
+    },
+    {
+      "title": "דברים כ/טעמים",
+      "key": "deuter-20",
+      "visible_revisions": 17,
+      "contents_inspected_for_relevant_passages": 17,
+      "cases": [
+        "SEDER-DESCRIPTION-STRENGTH"
+      ]
+    },
+    {
+      "title": "דברי הימים א יח/טעמים",
+      "key": "1chronicles-18",
+      "visible_revisions": 15,
+      "contents_inspected_for_relevant_passages": 15,
+      "cases": [
+        "LEGARMEH-LIST-SCOPE"
+      ]
+    },
+    {
+      "title": "זכריה י/טעמים",
+      "key": "zechariah-10",
+      "visible_revisions": 11,
+      "contents_inspected_for_relevant_passages": 11,
+      "cases": [
+        "LEGARMEH-LIST-SCOPE"
+      ]
+    },
+    {
+      "title": "שמואל א יא/טעמים",
+      "key": "1samuel-11",
+      "visible_revisions": 13,
+      "contents_inspected_for_relevant_passages": 13,
+      "cases": [
+        "LEGARMEH-LIST-SCOPE"
+      ]
+    },
+    {
+      "title": "תהלים ו/טעמים",
+      "key": "psalms-6",
+      "visible_revisions": 16,
+      "contents_inspected_for_relevant_passages": 16,
+      "cases": [
+        "POETIC-PS6-PS74-VOWELS"
+      ]
+    },
+    {
+      "title": "תהלים עד/טעמים",
+      "key": "psalms-74",
+      "visible_revisions": 20,
+      "contents_inspected_for_relevant_passages": 20,
+      "cases": [
+        "POETIC-PS6-PS74-VOWELS"
+      ]
+    },
+    {
+      "title": "משלי ח/טעמים",
+      "key": "proverbs-8",
+      "visible_revisions": 29,
+      "contents_inspected_for_relevant_passages": 29,
+      "cases": [
+        "POETIC-PROV8-QUALIFICATION"
+      ]
+    },
+    {
+      "title": "שמואל ב כד/טעמים",
+      "key": "2samuel-24",
+      "visible_revisions": 26,
+      "contents_inspected_for_relevant_passages": 26,
+      "cases": [
+        "ALL-HATAF-SAM-24-16",
+        "ALL-HATAF-SAM-24-18"
+      ]
+    },
+    {
+      "title": "דניאל יב/טעמים",
+      "key": "daniel-12",
+      "visible_revisions": 14,
+      "contents_inspected_for_relevant_passages": 14,
+      "cases": [
+        "ALL-HATAF-DAN-12-2"
+      ]
+    },
+    {
+      "title": "נחמיה ו/טעמים",
+      "key": "nehemiah-6",
+      "visible_revisions": 15,
+      "contents_inspected_for_relevant_passages": 15,
+      "cases": [
+        "ALL-HATAF-NEH-6-19"
+      ]
+    },
+    {
+      "title": "שמואל ב ו/טעמים",
+      "key": "2samuel-6",
+      "visible_revisions": 11,
+      "contents_inspected_for_relevant_passages": 11,
+      "cases": [
+        "ALL-HATAF-SAM-6-5"
+      ]
+    }
+  ],
+  "context_only_routes": [
+    {
+      "title": "איוב ח/טעמים",
+      "key": "job-8",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "איוב ט/טעמים",
+      "key": "job-9",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "איוב כט/טעמים",
+      "key": "job-29",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "איוב לד/טעמים",
+      "key": "job-34",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "משלי כד/טעמים",
+      "key": "proverbs-24",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "תהלים נה/טעמים",
+      "key": "psalms-55",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "תהלים פו/טעמים",
+      "key": "psalms-86",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "תהלים קט/טעמים",
+      "key": "psalms-109",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    },
+    {
+      "title": "תהלים קכה/טעמים",
+      "key": "psalms-125",
+      "cases": [
+        "oleh-omission-count"
+      ],
+      "boundary": "Current note/count context only; the completed history disposition concerns the Introduction count or its unidentified counted source. This chapter history was not individually traced."
+    }
+  ],
+  "history_index": "revision-history-results.json",
+  "history_inventory": "revision-history-inventory.json",
+  "uncertainty_groups": "revision-history-followups.json",
+  "reader": "review.html",
+  "bounds": [
+    "The original Introduction, parsed note and scripture caches remain frozen. Later read-only revision evidence is stored separately.",
+    "Canonical chapter contents are complete relative to the visible retained metadata; relevant passages were manually assessed. Deleted or inaccessible revisions are not claimed.",
+    "Introduction history has complete metadata where recorded and selected content snapshots; exact first insertions remain undated in specified cases.",
+    "Current source captures and linked drafts are distinguished. Historical template rendering is not reconstructed where explicitly limited.",
+    "Nine chapter routes belong only to current count context. Their histories are not represented as individually inspected.",
+    "No manuscript image or new manuscript interpretation was used. A missing local citation does not prove a source claim false.",
+    "The original 152 reader IDs and sections remain; Isaiah59 English scope was explicitly qualified. All 717 literal passages, 12 proposals and 12 Ben decisions are preserved."
+  ],
+  "execution_blockers": []
+}

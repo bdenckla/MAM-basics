@@ -1,0 +1,347 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "cases": [
+    {
+      "case": "PS-31-12-HATAF",
+      "classification": "history-accounted-source-divergence",
+      "result": "The Aleppo ḥataf quotation and explicit ḥataf description are present from the 2016 MAM import through every later chapter revision. The selected MAM form initially has plain sheva; its vocal-sheva marker is added only on 6 March 2026, without changing the Aleppo quotation. The Introduction's minority group, which explicitly says the Aleppo masorete did not write ḥataf, already includes this atom in the retained November 2025 snapshot. That claim therefore conflicts with the longstanding note; it is not explained by a later note reassignment or by the 2026 selected-form marker.",
+      "limits": [
+        "This establishes a conflict between explicit source statements, not an independent manuscript reading.",
+        "Older Introduction references to the verse belong to a different ḥataf list; they do not date this specific minority-group claim.",
+        "The exact insertion of the no-ḥataf minority-group entry is not available in the retained snapshots."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-31",
+          "contents_read": 27,
+          "visible_revisions": 27
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 671411",
+          "url": "https://he.wikisource.org/w/index.php?diff=671411&oldid=408188"
+        },
+        {
+          "label": "Chapter change 2995849",
+          "url": "https://he.wikisource.org/w/index.php?diff=2995849&oldid=2988183"
+        }
+      ]
+    },
+    {
+      "case": "PS-39-13",
+      "classification": "history-accounted-l-quotation-origin-unresolved",
+      "result": "The actual review claim concerns the Leningrad quotation: both Introduction passages first observed in November 2025 place merkha on shin and meteg on ayin. On 12 March 2026 the chapter adds its first explicit Leningrad quotation, with meteg on shin and merkha on ayin. The actual parent has no Leningrad quotation to correct, so this dates the first explicit canonical disagreement, rather than establishing later staleness after a corrected Leningrad note. The older 2011 public text already has the pattern later assigned to Leningrad; the 2016 import instead gives the selected-MAM pattern and an Aleppo ḥataf quotation.",
+      "limits": [
+        "No earlier explicit canonical Leningrad quotation is available to date a correction of that attribution. The Introduction's insertion parent is not retained.",
+        "The 2011 public-text pattern does not independently establish manuscript authority or the copying origin of the Introduction's pattern.",
+        "The same March 2026 edit also adds an Aleppo ḥataf-pataḥ alternative, but that is neighboring context rather than the issue under review here; chapter 5's ḥataf list already records both Aleppo possibilities. Neither vowel interpretation is adjudicated."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-39",
+          "contents_read": 27,
+          "visible_revisions": 27
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2997805",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997805&oldid=2988191"
+        },
+        {
+          "label": "Chapter change 2997806",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997806&oldid=2997805"
+        }
+      ]
+    },
+    {
+      "case": "PS-53-6-LETTER-NAME",
+      "classification": "history-accounted-note-error-at-addition",
+      "result": "On 25 March 2023 the note and the claim that oleh hangs between yod and resh are added together. Its actual parent and child both spell the relevant atom he-yod-he; there is no resh in that atom or the quoted chanted-word context. The same edit changes the displayed oleh position from after the final he to the yod. Thus the letter-name problem exists at the description's addition, rather than resulting from a later consonant change. Subsequent edits add source sigils or change templates and keep the same letter-name description.",
+      "limits": [
+        "This is a supplementary doc-note-description case, with no pertinent Introduction claim.",
+        "The intended correct pair of letters and the manuscript sign's physical position are not independently adjudicated."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-53",
+          "contents_read": 27,
+          "visible_revisions": 27
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2715106",
+          "url": "https://he.wikisource.org/w/index.php?diff=2715106&oldid=2707692"
+        }
+      ]
+    },
+    {
+      "case": "PS-57-9-ALTERNATIVE",
+      "classification": "established-staleness",
+      "result": "The note uses an uncertain deḥi-plus-merkha alternative after the March 2023 change of preferred reading to deḥi plus meteg. On 9 November 2025 its prose specifies terḥa plus merkha as two conjunctives before revia; several minutes later the literal alternative receives the terḥa codepoint. The same session also extends the uncertainty to Leningrad. Introduction snapshots from March 2023 through November 2024 and the post-change October 2026 snapshot retain deḥi plus merkha as the alternative. This establishes later staleness relative to the completed note correction.",
+      "limits": [
+        "The November 2025 intermediate revisions briefly omit the lower accent; these are not treated as the final substantive alternative.",
+        "Both manuscript interpretations remain explicitly uncertain; matching preferred readings does not make their alternatives equivalent."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-57",
+          "contents_read": 26,
+          "visible_revisions": 26
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2708095",
+          "url": "https://he.wikisource.org/w/index.php?diff=2708095&oldid=2707721"
+        },
+        {
+          "label": "Chapter change 2963315",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963315&oldid=2912323"
+        },
+        {
+          "label": "Chapter change 2963319",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963319&oldid=2963317"
+        },
+        {
+          "label": "Chapter change 2963325",
+          "url": "https://he.wikisource.org/w/index.php?diff=2963325&oldid=2963324"
+        }
+      ]
+    },
+    {
+      "case": "PS-66-12-MAQAF-SCOPE",
+      "classification": "history-accounted-paragraph-scope-unresolved",
+      "result": "All 18 canonical versions have a space after the relevant atom rather than maqaf. The actual 3 January 2024 edit adds reading-aid meteg to that atom, with an Aleppo-based change comment, and leaves the following space. The Introduction's corresponding poetic example, first observed in the retained November 2025 snapshots, has the same merkha-plus-meteg form. There is no historical removal of maqaf to explain a discrepancy. As with Psalm 119:90, the paragraph's explicit universal maqaf statement names the Twenty-one Books, while the poetic continuation may include meteg cases without maqaf.",
+      "limits": [
+        "The poetic continuation's scope remains ambiguous; a universal-maqaf contradiction is not established.",
+        "The pertinent canonical note concerns another atom in the verse and supplies no direct claim about maqaf after this one.",
+        "The revision comment dates a source attribution but does not independently establish the manuscript reading."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-66",
+          "contents_read": 18,
+          "visible_revisions": 18
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2829693",
+          "url": "https://he.wikisource.org/w/index.php?diff=2829693&oldid=2759867"
+        }
+      ]
+    },
+    {
+      "case": "POETIC-PS6-PS74-VOWELS",
+      "classification": "history-accounted-quotation-context-divergence",
+      "result": "Across all 16 Psalm 6 and 20 Psalm 74 chapter revisions, their MAM-era notes consistently distinguish selected-MAM vowels from explicit Aleppo quotations: pataḥ versus qamats in Psalm 6:3, and sheva versus ḥataf pataḥ in Psalm 74:5. Those distinctions already occur in both 2016 imports. The November 2020 Introduction snapshots attribute the pataḥ form to Aleppo in the two-atom oleh list and expand the Psalm 74 revia example to a compound with sheva. Later Introduction sections also reproduce the note-supported qamats and ḥataf forms. Thus no later canonical vowel correction created these differences between Introduction illustrations and notes.",
+      "limits": [
+        "The central design features still agree: the two-atom oleh pattern and the omission of the revia dot. The discrepancy concerns other marks in quotations expressly attributed to Aleppo.",
+        "Whether feature-limited illustrations were intended to suppress unrelated vowel differences remains an editorial source-scope question; the current list introduction says it presents Aleppo's text.",
+        "Selected Introduction snapshots bound the expanded illustrations but do not date their exact insertion. No new manuscript reading is asserted."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-6",
+          "contents_read": 16,
+          "visible_revisions": 16
+        },
+        {
+          "key": "psalms-74",
+          "contents_read": 20,
+          "visible_revisions": 20
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 2706999",
+          "url": "https://he.wikisource.org/w/index.php?diff=2706999&oldid=1379653"
+        },
+        {
+          "label": "Chapter change 2707881",
+          "url": "https://he.wikisource.org/w/index.php?diff=2707881&oldid=1379722"
+        }
+      ]
+    },
+    {
+      "case": "POETIC-PS68-RAFE",
+      "classification": "established-staleness-of-quotation-context",
+      "result": "The 2016 chapter has no rafe in either selected-MAM text or its Aleppo quotation. On 13 July 2022 the actual parent-to-child edit adds rafe to both and explicitly explains its retention, citing Minḥat Shai. The revia-design illustration lacks rafe in retained 2019 and November 2020 Introduction snapshots before that edit, and still lacks it in January 2023 and October 2026 afterward. The pinned chapter 2 discussion separately and explicitly reports rafe in Aleppo and Leningrad. This establishes later quotation staleness concerning rafe.",
+      "limits": [
+        "The illustration's central claim, omission of the revia dot in Aleppo, remains consistent with the note. A stale rafe omission does not refute that accent-design claim.",
+        "The revia list uses interior plain verse labels, so explicit historical source line numbers are required; a wikilink-only match would silently omit this evidence.",
+        "History dates the recorded rafe correction. It does not independently inspect either manuscript or adjudicate the manuscript reading."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-68",
+          "contents_read": 31,
+          "visible_revisions": 31
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 1412805",
+          "url": "https://he.wikisource.org/w/index.php?diff=1412805&oldid=1379715"
+        }
+      ]
+    },
+    {
+      "case": "LEGARMEH-LIST-SCOPE",
+      "classification": "history-accounted-external-list-scope-unresolved",
+      "result": "All 13 canonical 1 Samuel 11 versions, all 11 Zechariah 10 versions, and all 15 1 Chronicles 18 versions lack a vertical-bar sign and any paseq/legarmeh helper in the four questioned passages. In 1 Samuel 11:12 and Zechariah 10:12 the entire raw verse also has no revia in any version. The current patterns are already present at each MAM import; no later canonical accent edit created their mismatch with the Introduction's references. The four references are retained in the first inspected November 2025 Introduction snapshot. Its list is explicitly based mainly on Wickes, with its own manuscript and print exceptions and additions; it is not identified as a current-MAM census.",
+      "limits": [
+        "The full cached histories account for later canonical changes, but not the origin or intended reference scope of the adapted external list.",
+        "Needed evidence: Wickes page 129 and note 27 with the exact four references, original chapter/verse notation and trailing 2 notation, compared with the Introduction's adaptation. The direct source has not been inspected here; no correction to a book/chapter/verse is guessed.",
+        "An earlier Introduction snapshot containing the actual introduction or revision of these four entries would date their origin; the retained selected snapshots do not.",
+        "Absence of a vertical bar in these passages does not adjudicate the grammar of other list entries, nor supply a new total for the list."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "1samuel-11",
+          "contents_read": 13,
+          "visible_revisions": 13
+        },
+        {
+          "key": "zechariah-10",
+          "contents_read": 11,
+          "visible_revisions": 11
+        },
+        {
+          "key": "1chronicles-18",
+          "contents_read": 15,
+          "visible_revisions": 15
+        }
+      ],
+      "links": [
+        {
+          "label": "Chapter change 653452",
+          "url": "https://he.wikisource.org/w/index.php?diff=653452&oldid=402687"
+        },
+        {
+          "label": "Chapter change 658423",
+          "url": "https://he.wikisource.org/w/index.php?diff=658423&oldid=404045"
+        },
+        {
+          "label": "Chapter change 667579",
+          "url": "https://he.wikisource.org/w/index.php?diff=667579&oldid=408653"
+        }
+      ]
+    },
+    {
+      "case": "SONG-2-17-ACCENT-NAME",
+      "classification": "introduced-in-note",
+      "result": "The note introduces the name pashta on 26 February 2023. Its selected MAM sign and its statement about Breuer adding qadma already existed in 2016 and remain unchanged. Retained March and May 2023 Introduction passages also call it pashta; the pinned Introduction now calls it qadma. The dated note edit therefore introduces the inconsistent accent name, while the later Introduction has corrected its corresponding label.",
+      "limits": [
+        "The actual Introduction correction revision was not located; it is bounded by the retained May 2023 wording and the unchanged pinned October 2026 cache.",
+        "This compares encoded accent signs and source terminology, without independently interpreting a manuscript mark.",
+        "The later October 2026 research capture is separate from the pinned audit cache."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "song-of-songs-2",
+          "contents_read": 16,
+          "visible_revisions": 16
+        }
+      ],
+      "links": [
+        {
+          "label": "Pashta wording added, 2023-02-26",
+          "url": "https://he.wikisource.org/w/index.php?diff=2705681&oldid=1379873"
+        },
+        {
+          "label": "Earlier Introduction wording, 2023-03-01",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2706329"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3087740"
+        }
+      ]
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-SONG-4-16",
+      "classification": "discrepancy-present-in-observed-history",
+      "result": "The MAM note has contrasted zayin dagesh with its absence in the Leningrad quotation since the 2016 import. Its explanation has always said only missing dagesh, without naming lamed. Retained Introduction passages already name lamed in March 2023, although their quoted form matches the note. No later note change or change to the selected consonant explains the wrong letter name.",
+      "limits": [
+        "The actual Introduction insertion was not located; the letter-name mismatch is established by the first retained matching entry.",
+        "The zayin comparison follows the literal forms. It does not independently verify manuscript pointing."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "song-of-songs-4",
+          "contents_read": 15,
+          "visible_revisions": 15
+        }
+      ],
+      "links": [
+        {
+          "label": "Note imported, 2016-01-24",
+          "url": "https://he.wikisource.org/w/index.php?diff=671303&oldid=404985"
+        },
+        {
+          "label": "Introduction entry, 2023-03-06",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149"
+        }
+      ]
+    },
+    {
+      "case": "ALEPPO-SIZE-QUOTATIONS",
+      "classification": "history-accounted-size-scope-with-distinct-mark-chronologies",
+      "result": "All sixty-eight visible revisions were inspected: Psalm 77 nineteen of nineteen, Ruth 3 twenty-four of twenty-four, Esther 1 twenty-five of twenty-five, including sixty-five MAM-note versions. Psalm 77:8 initially lacks meteg in canonical MAM, and its ordinary-he specimen in the selected February 2019 Introduction agrees with that earlier form. Adjacent revision 2830945 (9 January 2024), parent 2830917, adds the initial meteg without changing letter size. The current primary deḥi argument is used; its alternative stress-helper branch is distinct. Ruth 3:13 already has large nun plus following legarmeh in first MAM revision 671298; adjacent 2904519 (17 February 2025), parent 2860830, only moves its existing stroke template inside the target. Esther 1:6 already has large ḥet plus following legarmeh in first MAM revision 671271; adjacent 2904520 (17 February 2025), parent 2859006, similarly only moves its existing template. Removing the relevant first legarmeh template from each before and after pair gives literally identical complete verse strings in both cases. All three Introduction size specimens are present by 888275 (25 February 2019) and remain in the pinned Introduction. The legend scopes the star to letter size; omitted surrounding marks establish an illustration-scope question, not a contradiction of the size choices.",
+      "limits": [
+        "The February 2019 snapshot is the earliest selected specimen capture, not a proved insertion date. Its links point to historical drafts; their exact at-writing content was not independently reconstructed. Canonical histories are identified as canonical histories rather than silently substituted for those drafts.",
+        "The 2011 public chapters precede canonical MAM imports and are not evidence of MAM draft readings.",
+        "The Psalm comparison uses the primary deḥi argument. The alternative stress-helper argument is retained as separate evidence and is not silently combined with it.",
+        "No manuscript scan or new manuscript reading was inspected. Exact adjacent edits date source changes, not independent correctness of the reported manuscript attributions.",
+        "Whether a size-only example should reproduce the surrounding MAM marks remains an editorial question; no correction or interpretation approval is inferred."
+      ],
+      "chapter_coverage": [
+        {
+          "key": "psalms-77",
+          "contents_read": 19,
+          "visible_revisions": 19
+        },
+        {
+          "key": "ruth-3",
+          "contents_read": 24,
+          "visible_revisions": 24
+        },
+        {
+          "key": "esther-1",
+          "contents_read": 25,
+          "visible_revisions": 25
+        }
+      ],
+      "links": [
+        {
+          "label": "All three size specimens and size-star legend, February 2019",
+          "url": "https://he.wikisource.org/w/index.php?oldid=888275"
+        },
+        {
+          "label": "Psalm 77 initial meteg added, January 2024",
+          "url": "https://he.wikisource.org/w/index.php?diff=2830945&oldid=2830917"
+        },
+        {
+          "label": "Ruth existing legarmeh moved inside note target, February 2025",
+          "url": "https://he.wikisource.org/w/index.php?diff=2904519&oldid=2860830"
+        },
+        {
+          "label": "Esther existing legarmeh moved inside note target, February 2025",
+          "url": "https://he.wikisource.org/w/index.php?diff=2904520&oldid=2859006"
+        },
+        {
+          "label": "First MAM Ruth note already has legarmeh, January 2016",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671298"
+        },
+        {
+          "label": "First MAM Esther note already has legarmeh, January 2016",
+          "url": "https://he.wikisource.org/w/index.php?oldid=671271"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "verified_omissions": [
+    {
+      "id": "ALL-HATAF-GEN-30-27",
+      "ref": "Genesis 30:27",
+      "claim": "ch3:L1126",
+      "note": "Genesis 30:27/2/0",
+      "proposed_entry": "ל=וַיְבָרֲכֵ֥נִי",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Genesis 30:27/2/0",
+        "raw_path": "in/mam-ws/A1-Genesis.json",
+        "raw_note_body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים{{ש}}ל=וַיְבָרֲכֵ֥נִי (חטף){{ש}}הערת ברויאר",
+        "parsed_path": "MAM-parsed/plus/A1-Genesis.json",
+        "parsed_pointer": "/book39s/0/chapters/30/27/2/1",
+        "parsed_note_body": "=ש,ש1,ק3,ו וכמו כן בתיגאן ובדפוסים\nל=וַיְבָרֲכֵ֥נִי (חטף)\nהערת ברויאר",
+        "chapter_revision": {
+          "resolved_title": "בראשית ל/טעמים",
+          "page_id": 236056,
+          "requested_title": "בראשית_ל/טעמים",
+          "revision_id": 3017397,
+          "sha256": "e1ebe4dc7f3ce3d6f15b9a5cc742a518ca0fee3e65b40065bbee924a239d5991"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A1-Genesis.json#L13440",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification",
+      "adjudication": "GEN-30-27-BEN-20261015",
+      "editorial_status": "approved-by-Ben-for-proposal-to-Avi",
+      "proposed_list_entry": "[[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי);"
+    },
+    {
+      "id": "ALL-HATAF-NUM-10-9",
+      "ref": "Numbers 10:9",
+      "claim": "ch3:L1132",
+      "note": "Numbers 10:9/2/1",
+      "proposed_entry": "ל!=וֲנִזְכַּרְתֶּ֗ם",
+      "source_scope": "explicit Leningrad non-guttural ḥataf; phonetic function unresolved (Ben)",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Numbers 10:9/2/1",
+        "raw_path": "in/mam-ws/A4-Numbers.json",
+        "raw_note_body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו){{ש}}הערות ברויאר ודותן והמקליד",
+        "parsed_path": "MAM-parsed/plus/A4-Numbers.json",
+        "parsed_pointer": "/book39s/0/chapters/10/9/2/3",
+        "parsed_note_body": "=ל1,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן\nל!=וֲנִזְכַּרְתֶּ֗ם (חטף פתח באות וי\"ו)\nהערות ברויאר ודותן והמקליד",
+        "chapter_revision": {
+          "resolved_title": "במדבר י/טעמים",
+          "page_id": 236446,
+          "requested_title": "במדבר_י/טעמים",
+          "revision_id": 2990906,
+          "sha256": "a8803dd7a388c1e7a6737d41214fcb4471d1c0d0a5245649c0d05e4bb53ef912"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/A4-Numbers.json#L5380",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification",
+      "phonetic_question": "NUM-10-9-BEN-PHONETICS-20261015",
+      "adjudication": "NUM-10-9-BEN-20261015",
+      "editorial_status": "approved-by-Ben-for-proposal-to-Avi",
+      "proposed_list_entry": "[[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם);"
+    },
+    {
+      "id": "ALL-HATAF-SAM-8-10",
+      "ref": "2 Samuel 8:10",
+      "claim": "ch5:L698",
+      "note": "2Samuel 8:10/2/0",
+      "proposed_entry": "א=וּֽלְבָרֲכ֗וֹ",
+      "source_scope": "explicit Aleppo; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "2Samuel 8:10/2/0",
+        "raw_path": "in/mam-ws/BB-2Samuel.json",
+        "raw_note_body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+        "parsed_path": "MAM-parsed/plus/BA-Samuel.json",
+        "parsed_pointer": "/book39s/1/chapters/8/10/2/1",
+        "parsed_note_body": "א=וּֽלְבָרֲכ֗וֹ (חטף)",
+        "chapter_revision": {
+          "resolved_title": "שמואל ב ח/טעמים",
+          "page_id": 237027,
+          "requested_title": "שמואל ב_ח/טעמים",
+          "revision_id": 3010613,
+          "sha256": "2c0a9ffcad0a31f673cc48d895a7d2c3d0d7f82146dd1e63a0c8ba720400245a"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/BA-Samuel.json#L12006",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification",
+      "adjudication": "SAM-8-10-BEN-20261014",
+      "editorial_status": "approved-by-Ben-for-proposal-to-Avi",
+      "proposed_list_entry": "[[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ);"
+    },
+    {
+      "id": "HATAF-PROVERBS-ADDITION",
+      "ref": "Proverbs 30:17",
+      "claim": "ch5:L712",
+      "note": "Proverbs 30:17/2/1",
+      "proposed_entry": "ל=לִֽיקֲּהַ֫ת־אֵ֥ם",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Proverbs 30:17/2/1",
+        "raw_path": "in/mam-ws/D2-Proverbs.json",
+        "raw_note_body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.{{ש}}ל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף){{ש}}דפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+        "parsed_path": "MAM-parsed/plus/D2-Proverbs.json",
+        "parsed_pointer": "/book39s/0/chapters/30/17/2/7",
+        "parsed_note_body": "=א (במקף); לגבי ניקוד האות למ\"ד בחיריק ולא בשווא, ראו ייבין, כתר, ה.1 (עמ' 60) וייבין, מסורה, 392.\nל=לִֽיקֲּהַ֫ת־אֵ֥ם (חטף)\nדפוסים=לִֽיקְּהַ֫ת אֵ֥ם (אין מקף)",
+        "chapter_revision": {
+          "resolved_title": "משלי ל/טעמים",
+          "page_id": 238967,
+          "requested_title": "משלי_ל/טעמים",
+          "revision_id": 3008043,
+          "sha256": "ccafd0a2809ce63646704ba84d8aa2335b276ba054cfe1b91840e78e1ede7526"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D2-Proverbs.json#L19359",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification"
+    },
+    {
+      "id": "ALL-HATAF-SONG-1-6",
+      "ref": "Song of Songs 1:6",
+      "claim": "ch5:L716",
+      "note": "Song of Songs 1:6/2/0",
+      "proposed_entry": "ל!=שֶׁשֱּׁזָפַ֖תְנִי",
+      "source_scope": "explicit Leningrad; optional vocal-sheva vowel",
+      "status": "verified-roster-omission",
+      "root_raw_proof": {
+        "note_id": "Song of Songs 1:6/2/0",
+        "raw_path": "in/mam-ws/E1-Song of Songs.json",
+        "raw_note_body": "=א ובדפוסים{{ש}}ל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+        "parsed_path": "MAM-parsed/plus/E1-Song of Songs.json",
+        "parsed_pointer": "/book39s/0/chapters/1/6/2/1",
+        "parsed_note_body": "=א ובדפוסים\nל!=שֶׁשֱּׁזָפַ֖תְנִי (חטף סגול בשי\"ן)",
+        "chapter_revision": {
+          "resolved_title": "שיר השירים א/טעמים",
+          "page_id": 239145,
+          "requested_title": "שיר השירים_א/טעמים",
+          "revision_id": 2988376,
+          "sha256": "cd7e29b159a32af9c3f847b196e68274d33115b36ac61e43ffc9ffad2d0fa741"
+        },
+        "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E1-Song%20of%20Songs.json#L146",
+        "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+      },
+      "independent_checker": "/root/hataf_independent; separate retained-note and full-roster walk, faithful raw verification",
+      "adjudication": "SONG-1-6-BEN-20261014",
+      "editorial_status": "approved-by-Ben-for-proposal-to-Avi",
+      "proposed_list_entry": "[[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי);"
+    }
+  ],
+  "status": "All books and finite candidates accounted for; explicit source/function uncertainties retained",
+  "limits": "Five enumeration discrepancies are established from explicit cached source claims. Manuscript truth has not been independently reassessed.",
+  "coverage": {
+    "books": {
+      "accounted": 39,
+      "total": 39
+    },
+    "verses": {
+      "accounted": 23202,
+      "total": 23202
+    },
+    "canonical_doc_notes": {
+      "scanned": 3905,
+      "total": 3905
+    },
+    "metadata_note_copies": 4,
+    "list_groups": {
+      "accounted": 24,
+      "total": 24
+    },
+    "list_source_items": {
+      "accounted": 667,
+      "total": 667
+    },
+    "list_word_items": 668,
+    "note_word_candidates": {
+      "accounted": 722,
+      "total": 722
+    },
+    "unlisted_note_words": {
+      "accounted": 44,
+      "total": 44
+    },
+    "unlisted_note_bodies": {
+      "reviewed": 42,
+      "total": 42
+    },
+    "body_word_candidates": {
+      "accounted": 536,
+      "total": 536
+    },
+    "body_form_groups": {
+      "reviewed": 63,
+      "total": 63
+    },
+    "ketiv_qere_parameters": {
+      "scanned": 2577,
+      "total": 2577
+    },
+    "ketiv_qere_vowel_hits": 11
+  },
+  "uncertainty_queue": [
+    {
+      "note_id": "Deuter 3:22/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Leningrad ḥataf ḥiriq is explicitly uncertain: the blurred sign may be gaʿya instead.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "2Samuel 24:16/2/0",
+      "status": "uncertain-ketiv-function",
+      "explanation": "Pointed Aleppo ketiv הָאֲוְרֲ֥נָה has a resh ḥataf, while the qere הָֽאֲרַ֥וְנָה has different letters/vowels. The note supplies no vowel-function statement; whether this is optional vocal-sheva marking is unresolved.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "2Samuel 24:18/2/0",
+      "status": "uncertain-ketiv-function",
+      "explanation": "Pointed Aleppo ketiv אֲרַ֥נֳיה has a nun ḥataf qamats, while qere אֲרַ֥וְנָה differs. Neither a morphological exclusion nor a scoped omission is established.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Jeremiah 48:20/2/0",
+      "status": "ketiv-qere-attribution-gap",
+      "explanation": "The list already lists a ḥataf qere וּֽזֳעָ֑קוּ, but the note expressly documents pointed ketiv וּֽזֳעָ֑קיּ. The manuscript qere vowel is not established by that note; retain the existing source-boundary question.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Jeremiah 48:32/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Breuer reports ḥataf in מִבֲּכִי; the note’s inspection instead suggests a stain or an erased pataḥ stroke leaving sheva. No definite omission follows.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Jeremiah 50:6/2/0",
+      "status": "ketiv-qere-attribution-gap",
+      "explanation": "The list already lists a ḥataf qere שׁוֹבֲב֑וּם, while the note documents pointed ketiv שׁוֹבֲב֑יּם. This remains a source-object boundary, rather than a newly omitted position.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Daniel 12:2/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Leningrad ḥataf pataḥ on yod is expressly uncertain; the note describes an indistinct unusual stroke.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Nehemiah 6:19/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Breuer supports Leningrad ḥataf; Dotan and the note retain doubt because an enlarged image does not show a clear pataḥ stroke.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "unpointed_key": "ובצלצלים",
+      "status": "uncertain-body-function",
+      "explanation": "2Samuel6:5 has a retained ḥataf segol on tsadi, no doc-note and no explicit named-manuscript attribution or function statement. It cannot be certified as a scoped omission or a morphological exclusion.",
+      "occurrences": 1,
+      "forms": [
+        "וּֽבְצֶלְצֱלִֽים"
+      ],
+      "refs": [
+        "2Samuel 6:5"
+      ]
+    }
+  ],
+  "source_framing_exception": {
+    "item": "ch5:L710/item/17",
+    "claim": "ch5:L710",
+    "status": "explicit-source-framing-exception",
+    "specimen": "(ש1=מִ֥מֲתִֽים־יָדְךָ֨ ׀)",
+    "note": "Psalms 17:14/2/0",
+    "explanation": "The list expressly names Sassoon1053 (ש1), while its heading names Aleppo or Leningrad. The note quotes those other manuscripts and reconstructed Aleppo practice; Leningrad explicitly has no ḥataf. This is a concrete framing exception, not a new manuscript reading.",
+    "raw_proof": {
+      "note_id": "Psalms 17:14/2/0",
+      "raw_path": "in/mam-ws/D1-Psalms.json",
+      "raw_note_body": "=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכא כטעם משני: <מִ֥מֲתִֽים־יָדְךָ֨{{מ:לגרמיה-2}}>.{{ש}}לגבי המרכא והגעיה ראו ברויאר, טעמי המקרא, יא.3 (עמ' 264-265): \"הטעמה מיוחדת נוהגת לפני לגרמיה המשמש בתחום שלטון פזר: מרכא משני יבוא בראש התיבה שלפני הלגרמיה – בתנאי שיש חציצה בין המרכא לבין התנועה הראויה להיות מוטעמת. המרכא המשני בא בלא טעם עיקרי, וגעיה באה במקום הטעם\" (והשוו לדוגמה להלן יט, טו). וכך הטעמים אצל ברויאר ומג\"ה, אך הם משמיטים את המקף.{{ש}}ל=<מִֽמְתִ֥ים־יָדְךָ֨{{מ:לגרמיה-2}}> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨{{מ:לגרמיה-2}}> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).{{ש}}ברויאר, מקראות גדולות הכתר, סימנים, מכון ממרא",
+      "parsed_path": "MAM-parsed/plus/D1-Psalms.json",
+      "parsed_pointer": "/book39s/0/chapters/17/14/2/0",
+      "parsed_note_body": "=ש1,ק13,ל-א,גסטר1 (לגבי מרכא כטעם משני וגעיה בהברה המוטעמת ומקף); בכתבי־היד האלה (ש1,ק13,ל-א,גסטר1) ולפי דרכו של הכתר יש גם חטף להורות על התנעת השווא לאחר מרכא כטעם משני: <מִ֥מֲתִֽים־יָדְךָ֨׀>.\nלגבי המרכא והגעיה ראו ברויאר, טעמי המקרא, יא.3 (עמ' 264-265): \"הטעמה מיוחדת נוהגת לפני לגרמיה המשמש בתחום שלטון פזר: מרכא משני יבוא בראש התיבה שלפני הלגרמיה – בתנאי שיש חציצה בין המרכא לבין התנועה הראויה להיות מוטעמת. המרכא המשני בא בלא טעם עיקרי, וגעיה באה במקום הטעם\" (והשוו לדוגמה להלן יט, טו). וכך הטעמים אצל ברויאר ומג\"ה, אך הם משמיטים את המקף.\nל=<מִֽמְתִ֥ים־יָדְךָ֨׀> (געיה ומרכא ומקף, ואין חטף) לפי המקליד (וכן הוא בקורן בהשמטת המקף), או <מִֽמְתִֽים־יָדְךָ֨׀> (שתיהן געיות) לפי דותן (וכך נראה יותר בכתי\"ל).\nברויאר, מקראות גדולות הכתר, סימנים, מכון ממרא",
+      "chapter_revision": {
+        "resolved_title": "תהלים יז/טעמים",
+        "page_id": 238314,
+        "requested_title": "תהלים_יז/טעמים",
+        "revision_id": 2988169,
+        "sha256": "02d60f785a07ce5c64b39168f4c1a0e859ede22e9e8a922b4e9cf649268cb33e"
+      },
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/D1-Psalms.json#L4927",
+      "comparison": "MAM mark order plus the current explicit line-separator, legarmeh-2 and special-letter visible serializations; both faithful bodies retained"
+    }
+  },
+  "editorial_workflow": {
+    "Ben_approvals": "Approved for proposal to Avi, not approval by Avi.",
+    "submission_status": "No issues filed and Avi not contacted; Ben is reviewing the report.",
+    "applications": "No source or edition proposal applied."
+  },
+  "phonetic_questions": [
+    {
+      "id": "NUM-10-9-BEN-PHONETICS-20261015",
+      "case": "ALL-HATAF-NUM-10-9",
+      "note": "Numbers 10:9/2/1",
+      "word": "וֲנִזְכַּרְתֶּ֗ם",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-15",
+        "time": "08:02 UTC",
+        "transcript_evidence": "Sentinel_d946607c16f08191959bbfe2d66bf9f4"
+      },
+      "status": "unresolved-phonetic-question; list-addition-approved",
+      "explanation": "Ben understands an initial sheva to be vocal already. He asks whether this vav ḥataf specifies pataḥ vowel quality, whether pataḥ quality is the default, and whether the following nun’s ḥiriq changes that default. He remains uncertain.",
+      "scope": "This records Ben’s question, not a settled phonetic analysis. His approval of the list addition does not resolve it."
+    }
+  ]
+}

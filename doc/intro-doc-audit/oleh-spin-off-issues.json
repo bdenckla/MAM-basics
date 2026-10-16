@@ -1,0 +1,27 @@
+{
+  "authorization": {
+    "person": "Ben",
+    "date": "2026-10-15",
+    "time": "16:48 UTC",
+    "transcript_evidence": "Sentinel_95a89af0c4c881919b4be237fe750029"
+  },
+  "first": {
+    "title": "Psalm 30:12: name the omitted mark oleh rather than revia",
+    "body_file": ".novc/issue-psalm-30-12-oleh-20261015.md",
+    "body": "Written by a Codex session on 2026-10-15. Ben asked to “correct Psalm30:12 doc-note to say oleh instead of revia.”\n\nAt [Psalm 30:12](https://he.wikisource.org/w/index.php?oldid=2988182#%D7%9C_%D7%99%D7%91), MAM has `לִ֥֫י`; the note quotes Aleppo as `לִ֥י` but says “השמטת נקודת הרביע”. Please name the omitted mark **oleh**, rather than revia.\n\nMAM’s [analogous policy for revia with geresh muqdam](https://he.wikisource.org/w/index.php?oldid=3087893#%D7%A8%D7%91%D7%99%D7%A2_%D7%9E%D7%95%D7%92%D7%A8%D7%A9)—supplying revia even on the same letter—may explain the slip. That explanation is a hypothesis.\n",
+    "number": 309,
+    "url": "https://github.com/bdenckla/MAM-basics/issues/309",
+    "posted_body": "Written by a Codex session on 2026-10-15. Ben asked to “correct Psalm30:12 doc-note to say oleh instead of revia.”\n\nAt [Psalm 30:12](https://he.wikisource.org/w/index.php?oldid=2988182#%D7%9C_%D7%99%D7%91), MAM has `לִ֥֫י`; the note quotes Aleppo as `לִ֥י` but says “השמטת נקודת הרביע”. Please name the omitted mark **oleh**, rather than revia.\n\nMAM’s [analogous policy for revia with geresh muqdam](https://he.wikisource.org/w/index.php?oldid=3087893#%D7%A8%D7%91%D7%99%D7%A2_%D7%9E%D7%95%D7%92%D7%A8%D7%A9)—supplying revia even on the same letter—may explain the slip. That explanation is a hypothesis.\n",
+    "codepoint_readback": "exact-match-except-transport-line-endings"
+  },
+  "second": {
+    "title": "Psalm 42:3: add the note about supplied oleh",
+    "introduction_url": "https://he.wikisource.org/w/index.php?oldid=3087740#%D7%A2%D7%95%D7%9C%D7%94_%D7%95%D7%99%D7%95%D7%A8%D7%93",
+    "body_file": ".novc/issue-psalm-42-3-oleh-20261015.md",
+    "body": "Written by a Codex session on 2026-10-15. Ben asked to “add expected Psalm42:3 note about supplied oleh on same letter as yored.”\n\nPlease add the corresponding doc-note at [Psalm 42:3](https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9E%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9E%D7%91_%D7%92). MAM has `לְאֵ֢ל חָ֥֫י`; the [Introduction’s list](https://he.wikisource.org/w/index.php?oldid=3087740#%D7%A2%D7%95%D7%9C%D7%94_%D7%95%D7%99%D7%95%D7%A8%D7%93) quotes Aleppo as `לְאֵ֢ל חָ֥י`, without the oleh mark. MAM supplies oleh on the same letter as yored.\n\nThe Aleppo attribution comes from the Introduction; no manuscript image was checked. The other twelve listed cases have corresponding notes, including the Psalm 30:12 wording error addressed separately in #309.\n",
+    "number": 310,
+    "url": "https://github.com/bdenckla/MAM-basics/issues/310",
+    "posted_body": "Written by a Codex session on 2026-10-15. Ben asked to “add expected Psalm42:3 note about supplied oleh on same letter as yored.”\n\nPlease add the corresponding doc-note at [Psalm 42:3](https://he.wikisource.org/wiki/%D7%AA%D7%94%D7%9C%D7%99%D7%9D_%D7%9E%D7%91/%D7%98%D7%A2%D7%9E%D7%99%D7%9D#%D7%9E%D7%91_%D7%92). MAM has `לְאֵ֢ל חָ֥֫י`; the [Introduction’s list](https://he.wikisource.org/w/index.php?oldid=3087740#%D7%A2%D7%95%D7%9C%D7%94_%D7%95%D7%99%D7%95%D7%A8%D7%93) quotes Aleppo as `לְאֵ֢ל חָ֥י`, without the oleh mark. MAM supplies oleh on the same letter as yored.\n\nThe Aleppo attribution comes from the Introduction; no manuscript image was checked. The other twelve listed cases have corresponding notes, including the Psalm 30:12 wording error addressed separately in #309.\n",
+    "codepoint_readback": "exact-match-except-transport-line-endings"
+  }
+}

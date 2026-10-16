@@ -1,0 +1,239 @@
+{
+  "base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "inputs": {
+    "in/mam-ws-intro": {
+      "last_commit": "2be890c03fd963e9d88dcf1bc9692be8303849e4 2026-10-13T13:09:30-04:00",
+      "objects": [
+        "100644 blob 3aa6054aa98e420477405c1b3f132cff9a1438cd\tin/mam-ws-intro/README.md",
+        "100644 blob 42e86b70e853dd9bf42e789faf6999281888f0c6\tin/mam-ws-intro/appendices.mediawiki",
+        "100644 blob 9a6475042d48618ca86ac87d744bb2c00a2b7ee1\tin/mam-ws-intro/ch1.mediawiki",
+        "100644 blob eab7a5303b325c90952754d23f004a42df00e192\tin/mam-ws-intro/ch2.mediawiki",
+        "100644 blob 0eb8e3b01f1aab669c3f6127cd7c1f3a70a30776\tin/mam-ws-intro/ch3.mediawiki",
+        "100644 blob 20207b0a3967838706b0849f2f8eb71952bcf243\tin/mam-ws-intro/ch4.mediawiki",
+        "100644 blob c8687086ba347683d5e31fd3b26fd055b5578c40\tin/mam-ws-intro/ch5.mediawiki",
+        "100644 blob 8e5b1aa8af4d8ccbead8cc6a05674f4f2cf8a957\tin/mam-ws-intro/data-sheet-guide.mediawiki",
+        "100644 blob 36accaa3935baae994a45420a0a657013e5e8f22\tin/mam-ws-intro/index-aleppo.mediawiki",
+        "100644 blob 964ce720a5c0d9de7bdbf35dc93e4ff118f4569c\tin/mam-ws-intro/index-leningrad.mediawiki",
+        "100644 blob dfc1e9b53951e484a57ac9aa04d2d8cddd7b29e2\tin/mam-ws-intro/manifest.json",
+        "100644 blob 53659e6cea4825d3a04c3c35def4d3d61e1fd0ce\tin/mam-ws-intro/root.mediawiki",
+        "100644 blob 72a84099cae8a405a0e541ef3ec450bafe170068\tin/mam-ws-intro/summary.mediawiki",
+        "100644 blob 169f14267d54f737a3eae9e8acf51fbf6ba56415\tin/mam-ws-intro/technical-guide.mediawiki",
+        "100644 blob e205f17fc52c08a43952d3cd8c33ff587b7e4e36\tin/mam-ws-intro/westminster-typing.mediawiki"
+      ]
+    },
+    "MAM-parsed/plus": {
+      "last_commit": "647f5e225f69782194137e74627cfaced4a7d2a2 2026-10-13T10:28:22-04:00",
+      "objects": [
+        "100644 blob 9cb57d11f31373049f1158cd4d3e8ac9dc392dcf\tMAM-parsed/plus/A1-Genesis.json",
+        "100644 blob 946328323af7cccb632b717ef7feb04c3d02dc87\tMAM-parsed/plus/A2-Exodus.json",
+        "100644 blob b7f0572550912672a136ee69de1d893160b321ff\tMAM-parsed/plus/A3-Levit.json",
+        "100644 blob 9b89643810eb7b7eb2fb8f8dde4a5bee47feba0d\tMAM-parsed/plus/A4-Numbers.json",
+        "100644 blob 5dec814e1bec69697bfa9e233c8cf670bddf47ab\tMAM-parsed/plus/A5-Deuter.json",
+        "100644 blob 8e8b84ed0de0b1faa5040751c9166d20c383370f\tMAM-parsed/plus/B1-Joshua.json",
+        "100644 blob b13bf93ee6345012d78d2a56a2742f06737ce29c\tMAM-parsed/plus/B2-Judges.json",
+        "100644 blob bcf7c72ee1daa4c137cd8f691fde3fca89607d8d\tMAM-parsed/plus/BA-Samuel.json",
+        "100644 blob 600cb96c98828b9ba20d205db029b07fd97bae56\tMAM-parsed/plus/BC-Kings.json",
+        "100644 blob 1b0ca263f95b5fd33a5952676dc0a415d8263db6\tMAM-parsed/plus/C1-Isaiah.json",
+        "100644 blob 2cd6fa510563372f7054b2ff7ec5b10c3349729d\tMAM-parsed/plus/C2-Jeremiah.json",
+        "100644 blob f765a0af8fecf9546b9cef0f846540ccfdfc71d0\tMAM-parsed/plus/C3-Ezekiel.json",
+        "100644 blob 640409f9d5caa5e4d98078cc76359146bd13a98c\tMAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+        "100644 blob acba1c374cfa6dac85c7fee1136ccb9de616a788\tMAM-parsed/plus/D1-Psalms.json",
+        "100644 blob 582402fd6b4ae5b7a3f9b56759ac2b959aea879a\tMAM-parsed/plus/D2-Proverbs.json",
+        "100644 blob 381ba709d13cdfe456f100f4bb7dc7dec4fde794\tMAM-parsed/plus/D3-Job.json",
+        "100644 blob 8a7a018edbd3cbf7184a18074c14f6b898c6ae9c\tMAM-parsed/plus/E1-Song of Songs.json",
+        "100644 blob 9cdb5e26fdce7521e3c50ee2088fd49f101e3902\tMAM-parsed/plus/E2-Ruth.json",
+        "100644 blob 7498d154b23de9f363ce7938ab04652c61575e02\tMAM-parsed/plus/E3-Lamentations.json",
+        "100644 blob c500f5f379629f34b86fb7b89a8e26a2d4252176\tMAM-parsed/plus/E4-Ecclesiastes.json",
+        "100644 blob 0cb7f0a09ffa7c5b3bf129a09499d9fe7366bc36\tMAM-parsed/plus/E5-Esther.json",
+        "100644 blob dcf053dc91ee0498aa263c3a43fc07639ac0f971\tMAM-parsed/plus/F1-Daniel.json",
+        "100644 blob 6fadbc3f08cdb7131cb60323bd7dd1d0df520b79\tMAM-parsed/plus/FA-Ezra-Nexemiah.json",
+        "100644 blob fcb4d3efbe80d7aad4695dab45d534b064fd1a30\tMAM-parsed/plus/FC-Chronicles.json",
+        "100644 blob 2dacee343cf1671cf6295aaf632189041aac45de\tMAM-parsed/plus/provenance.md"
+      ]
+    },
+    "in/mam-ws": {
+      "last_commit": "647f5e225f69782194137e74627cfaced4a7d2a2 2026-10-13T10:28:22-04:00",
+      "objects": [
+        "100644 blob c18823b6980e8e119e956239f5c44cedfb3abff9\tin/mam-ws/A1-Genesis.json",
+        "100644 blob 4498e38f4464970fa9ceca8dae7e54197d05e7fe\tin/mam-ws/A2-Exodus.json",
+        "100644 blob 891336a445b45b456d8736920aca876e9cbbd579\tin/mam-ws/A3-Levit.json",
+        "100644 blob 88acb05ad83955b88a25cc876a01a59ccd38775b\tin/mam-ws/A4-Numbers.json",
+        "100644 blob 83312a6910264312f229726a31fc8cf29d5c6227\tin/mam-ws/A5-Deuter.json",
+        "100644 blob 6cac5dcfd1127a52dcd993866c0fc5fef68574b7\tin/mam-ws/B1-Joshua.json",
+        "100644 blob 981b04ffd2f20272f8fc33b1b188d1f0c34cc474\tin/mam-ws/B2-Judges.json",
+        "100644 blob 62a44c83e0607af7f67f1f5dcd439d33cf613b81\tin/mam-ws/BA-1Samuel.json",
+        "100644 blob a81695ad658a7f2d8b3ae75d60ae2f58035addef\tin/mam-ws/BB-2Samuel.json",
+        "100644 blob a2db5e817fc0da18eb092cb9c9f876ffe9e4caf2\tin/mam-ws/BC-1Kings.json",
+        "100644 blob 440907abdb3b2ec25242537b31174821709691a7\tin/mam-ws/BD-2Kings.json",
+        "100644 blob 260045c69ed91af9fbbbd74023fd302caedda194\tin/mam-ws/C1-Isaiah.json",
+        "100644 blob 89c0c844858e183c88526f1056a4e419a977ce5e\tin/mam-ws/C2-Jeremiah.json",
+        "100644 blob 607fea83dca74e0e87d495b02fb233b63a5e464b\tin/mam-ws/C3-Ezekiel.json",
+        "100644 blob 24715e355d8ace25e1b95163b0205066248e7c4b\tin/mam-ws/CA-Hosea.json",
+        "100644 blob fc212fb3929f328f0dde0ee588810eca114bd5f6\tin/mam-ws/CB-Joel.json",
+        "100644 blob 70faa4ce996c776f6ebabbcb3bff199bd4c88632\tin/mam-ws/CC-Amos.json",
+        "100644 blob bfc2120ebd1cc6bab3232ceb7aeda008d08f6ecb\tin/mam-ws/CD-Obadiah.json",
+        "100644 blob 0b57829ac94988c097c1bc282ae21719d83ded5f\tin/mam-ws/CE-Jonah.json",
+        "100644 blob 03145e106d6205855fb1b8143c5ec97fd6422982\tin/mam-ws/CF-Micah.json",
+        "100644 blob 2ee2e5d583be731fc89707e9229b8a52579c9d08\tin/mam-ws/CG-Nahum.json",
+        "100644 blob 7e4416050a828d0c6f21fe4ab394827eefec4454\tin/mam-ws/CH-Habakkuk.json",
+        "100644 blob 1d31f3b6e041d1c6d5e78ae9843211aeaacaaa83\tin/mam-ws/CI-Tsefaniah.json",
+        "100644 blob 29a6755079ade149530eff3d83ae796e17055a34\tin/mam-ws/CJ-Haggai.json",
+        "100644 blob b17d74d9e71233bff77c3083967a1f285515b646\tin/mam-ws/CK-Zechariah.json",
+        "100644 blob 3836237918930f1b8f3da8d8c258c923ff2251da\tin/mam-ws/CL-Malachi.json",
+        "100644 blob bf1c96cfa9baa619da7f5c3beb3dbc2480ca999b\tin/mam-ws/D1-Psalms.json",
+        "100644 blob 0cdd35ec4d65f9966528a1d01069c0b63664033c\tin/mam-ws/D2-Proverbs.json",
+        "100644 blob 6aabade1e8971385216818ba04ea6354516a643f\tin/mam-ws/D3-Job.json",
+        "100644 blob 738cf457729123697d85ebbf5f88c6b757b8b4ab\tin/mam-ws/E1-Song of Songs.json",
+        "100644 blob f9f5a66811504a8e4821de71d8299ad059066b7c\tin/mam-ws/E2-Ruth.json",
+        "100644 blob 57eb92f6668616a900be1bede394e91cd746852f\tin/mam-ws/E3-Lamentations.json",
+        "100644 blob 0b4db35e8de63066a2773c5faf36b6d13cecd114\tin/mam-ws/E4-Ecclesiastes.json",
+        "100644 blob 15aac29f88b80a119fb09623090180b31d3b4535\tin/mam-ws/E5-Esther.json",
+        "100644 blob c3671bf51f293b218e75643af1a8d93b10b0378f\tin/mam-ws/F1-Daniel.json",
+        "100644 blob 5a130aaa7135db8f37f1d03f5390cd00f8cc3d89\tin/mam-ws/FA-Ezra.json",
+        "100644 blob ab5030f3a92e9789965ca90c25470407817d9b45\tin/mam-ws/FB-Nehemiah.json",
+        "100644 blob d6bb3b86bca6ffb53ef1117361bc82076183bc52\tin/mam-ws/FC-1Chronicles.json",
+        "100644 blob f84133dd2f00ace09c07cd50d1311c60a116add9\tin/mam-ws/FD-2Chronicles.json"
+      ]
+    },
+    "doc/sigil-decoding.md": {
+      "last_commit": "1f39f028f94f154e627e48702cba6080842716cc 2026-10-12T15:54:37-04:00",
+      "objects": [
+        "100644 blob c8b7091bcf0a1b37154c726bddcc433284127c20\tdoc/sigil-decoding.md"
+      ]
+    },
+    "in/mam-ws-revisions.json": {
+      "last_commit": "647f5e225f69782194137e74627cfaced4a7d2a2 2026-10-13T10:28:22-04:00",
+      "objects": [
+        "100644 blob 5a43afd8dc25775d4e72868791dc3f56cd8ff267\tin/mam-ws-revisions.json"
+      ]
+    }
+  },
+  "issues": {
+    "305": {
+      "body": "In **הניקוד בתוך הכתיב**, under **ספר מלכים** in [chapter 5 of the Wikisource Introduction to MAM](https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A4%D7%A8%D7%A7_%D7%94#%D7%A1%D7%A4%D7%A8_%D7%9E%D7%9C%D7%9B%D7%99%D7%9D_(%D7%97%D7%95%D7%A5_%D7%9E%D7%94%D7%A7%D7%98%D7%A2_%D7%94%D7%97%D7%A1%D7%A8_%D7%91%D7%9B%D7%AA%D7%A8)), the pointed ketiv **&lt;ֵשֵׁ֥נַיְֵהֶ֖ם&gt;** at **2 Kings 18:27** includes a shin dot. The Aleppo manuscript is well preserved here and clearly has no dot above shin. Please remove the shin dot from the Introduction's list.\n\nThe absence is expected: such a dot would belong only to a hypothetical pointing of the “chanted ketiv”, which is something of an oxymoron.\n\n![Aleppo Codex, 2 Kings 18:27: no dot above shin](https://raw.githubusercontent.com/bdenckla/MAM-basics/55f45fff37268cb450c32595a5761643c38dcdb2/in/near-aleppo/img/aleppo-2K18-27-shin.png)\n\nEdited by a Codex session on 2026-10-13, at Ben's request, to focus the body on Avi's correction.\n",
+      "comments": [
+        {
+          "id": "IC_kwDORi0zS88AAAABbrlZyQ",
+          "author": {
+            "login": "bdenckla"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Written by a Codex session on 2026-10-13, at Ben's request. The original issue body is preserved below as technical context; the rewritten body presents the correction for Avi.\n\n<details>\n<summary>Technical provenance and investigation details</summary>\n\nWritten by a Codex session on 2026-10-13. Ben's instruction was: “Create a MAM-basics github issue to sort of do the opposite of what we thought might be needed”. Everything else below is this session's reconstruction, with Ben's manuscript reading attributed explicitly.\n\nThe Introduction's list should omit the shin dot in its Aleppo ketiv form at **2 Kings 18:27**. Near-Aleppo should retain its current form without that dot.\n\n### Manuscript evidence\n\nBen supplied an Aleppo Codex crop and reported on 2026-10-13: “I see no evidence of any kind of dot, shin dot or otherwise, on top of the shin, and the manuscript (Aleppo) is well preserved here, so I feel confident in this result.”\n\n![Aleppo Codex, 2 Kings 18:27: no dot above the ketiv shin](https://raw.githubusercontent.com/bdenckla/MAM-basics/55f45fff37268cb450c32595a5761643c38dcdb2/in/near-aleppo/img/aleppo-2K18-27-shin.png)\n\nThe [tracked screenshot](https://github.com/bdenckla/MAM-basics/blob/55f45fff37268cb450c32595a5761643c38dcdb2/in/near-aleppo/img/aleppo-2K18-27-shin.png) is an unchanged copy of `Screenshot 2026-10-13 133636.png`. Its SHA-256 is `08b5f95b451c0464f15c85815323baf1a66e8aed58eb63cd7c76dc8915d353b8`. The [investigation record](https://github.com/bdenckla/MAM-basics/blob/55f45fff37268cb450c32595a5761643c38dcdb2/doc/near-aleppo-avi-ketiv-investigation.html), section “2 Kings 18:27: shin dot”, records Ben's observation, full screenshot provenance, and the reversed disposition. The published [interesting ketiv/qere FOI case](https://bdenckla.github.io/MAM-basics/near-aleppo/foi/interesting-ketiv-qere.html#2-kings-18-27) will display the crop after the normal Pages deployment.\n\n### Source disagreement and proposed correction\n\nThe [cached Introduction chapter 5 entry](https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/mam-ws-intro/ch5.mediawiki#L430), revision **3087740**, includes U+05C1 **HEBREW POINT SHIN DOT** on the ketiv's shin. Both [MAM chapter-note representations](https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/out/near-aleppo/plus/BC-Kings.json#L15537) omit that dot, as does the [reviewed near-Aleppo pointing](https://github.com/bdenckla/MAM-basics/blob/fb5660216b38f2ad93fdfba50eaec9b6940dd6c9/in/near-aleppo/reviewed-pointed-ketiv.json#L1355).\n\nThe proposed edit is to remove only U+05C1 from that shin in the Introduction's listed form. Retain all other vowels, accents, and orphan-mark notation. The full pointed forms are in the HTML investigation; the issue identifies the exact edit by code point to avoid GitHub's known transport problems with stacked Hebrew marks.\n\n### Work to complete\n\n- Check the live Introduction's chapter 5 entry for 2 Kings 18:27 and remove the shin dot if it still has the cached form.\n- Keep near-Aleppo's current pointing without a shin dot, which agrees with Ben's confident manuscript reading.\n- After the source correction, refresh the Introduction's independent local mirror using its [maintained procedure](https://github.com/bdenckla/MAM-basics/blob/main/in/mam-ws-intro/README.md), and inspect the resulting diff.\n\nThis reverses the earlier possible near-Aleppo addition. The observed absence also removes the evidence that prompted Ben's suspicion of pointing for both a hypothetical “pronounced ketiv” and the euphemistic qere at this site. No such mixed-pointing explanation is needed for this case.\n\n</details>\n",
+          "createdAt": "2026-10-13T18:40:58Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/305#issuecomment-6152608201",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDORi0zS88AAAABbsytYQ",
+          "author": {
+            "login": "bdenckla"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Written by a Codex session on 2026-10-13, at Ben's request.\n\n**The corresponding chapter doc-note needs no correction on the shin-dot point.** At **2 Kings 18:27**, both quoted Aleppo ketiv representations of **שניהם** already omit the shin dot, agreeing with Ben's confirmed manuscript reading. See the [preserved doc-note](https://github.com/bdenckla/MAM-basics/blob/e67573b732546d9ff423bf7b6abca51150b941a7/MAM-parsed/plus/BC-Kings.json#L15856).\n\nThe doc-note's prose discusses tsere placement and does not explicitly state that the shin dot is absent. Its disagreement with the Introduction is in the quoted Aleppo forms. I checked the live Wikisource chapter wikitext on 2026-10-13 and confirmed this reading.\n",
+          "createdAt": "2026-10-13T19:50:37Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/305#issuecomment-6153874785",
+          "viewerDidAuthor": true
+        }
+      ],
+      "labels": [],
+      "state": "OPEN",
+      "title": "Remove the Introduction's shin dot at 2 Kings 18:27"
+    },
+    "306": {
+      "body": "Written by Codex on 2026-10-13. Ben asked: “please create a github issue”. The description below is Codex’s reconstruction.\n\nIn **הניקוד בתוך הכתיב**, under **ספר יחזקאל** in [chapter 5 of the Wikisource Introduction to MAM](https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ה#ספר_יחזקאל), the pointed ketiv **מִדָּֽנ&#x05BC;&#x05B4;&#x05B5;&#x0591;אל** at **Ezekiel 28:3** includes meteg under dalet. Ben confirms that the Aleppo manuscript has no meteg here, as the crop below shows. Please remove that meteg from the Introduction’s list.\n\n![Aleppo Codex, Ezekiel 28:3: no meteg beside dalet’s qamats](https://raw.githubusercontent.com/bdenckla/MAM-basics/9ddaf89350bd66fffb8794fb1d8ae76c65fbd445/in/near-aleppo/img/aleppo-Ez28-3-no-meteg.png)\n\n[Technical context](https://github.com/bdenckla/MAM-basics/blob/main/doc/near-aleppo-avi-ketiv-investigation.html#L198).\n\nEdited by Codex on 2026-10-13 to preserve the complete displayed Introduction form.\n",
+      "comments": [
+        {
+          "id": "IC_kwDORi0zS88AAAABbsyx3w",
+          "author": {
+            "login": "bdenckla"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Written by a Codex session on 2026-10-13, at Ben's request.\n\n**The corresponding chapter doc-note needs no correction on the meteg point.** At **Ezekiel 28:3**, its quoted Aleppo ketiv form of **מדנאל** already omits meteg under dalet, agreeing with Ben's confirmed manuscript reading. See the [preserved doc-note](https://github.com/bdenckla/MAM-basics/blob/e67573b732546d9ff423bf7b6abca51150b941a7/MAM-parsed/plus/C3-Ezekiel.json#L8050).\n\nThe doc-note's prose discusses the marks under nun and does not explicitly state that meteg is absent under dalet. Its disagreement with the Introduction is in the quoted Aleppo form. I checked the live Wikisource chapter wikitext on 2026-10-13 and confirmed this reading.\n",
+          "createdAt": "2026-10-13T19:50:41Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/306#issuecomment-6153875935",
+          "viewerDidAuthor": true
+        }
+      ],
+      "labels": [],
+      "state": "OPEN",
+      "title": "Remove the Introduction's meteg at Ezekiel 28:3"
+    },
+    "307": {
+      "body": "Written by Codex on 2026-10-13. Ben asked for a GitHub issue “to correct the introduction”. The description below is Codex’s reconstruction.\n\nIn **הניקוד בתוך הכתיב**, under **ספר יחזקאל** in [chapter 5 of the Wikisource Introduction to MAM](https://he.wikisource.org/wiki/ויקיטקסט:מבוא_למקרא_על_פי_המסורה/פרק_ה#ספר_יחזקאל), the pointed ketiv **&#x05D3;&#x05BC;&#x05B8;&#x05E0;&#x05B4;&#x05B5;&#x05A3;&#x05D0;&#x05DC;** at **Ezekiel 14:14 and 14:20** omits dagesh from nun. The Aleppo manuscript clearly has the dagesh at both sites, as the crops below show. Please add the dagesh to nun in both entries.\n\n**Ezekiel 14:14**\n\n![Aleppo Codex, Ezekiel 14:14: dagesh inside nun](https://raw.githubusercontent.com/bdenckla/MAM-basics/18adb3fe18619b4b7c40158730d4254a959fc605/in/near-aleppo/img/aleppo-Ez14-14-nun-dagesh.png)\n\n**Ezekiel 14:20**\n\n![Aleppo Codex, Ezekiel 14:20: dagesh inside nun](https://raw.githubusercontent.com/bdenckla/MAM-basics/18adb3fe18619b4b7c40158730d4254a959fc605/in/near-aleppo/img/aleppo-Ez14-20-nun-dagesh.png)\n\n[Investigation record](https://github.com/bdenckla/MAM-basics/blob/18adb3fe18619b4b7c40158730d4254a959fc605/doc/near-aleppo-avi-ketiv-investigation.html#L252).\n",
+      "comments": [
+        {
+          "id": "IC_kwDORi0zS88AAAABbsy1-w",
+          "author": {
+            "login": "bdenckla"
+          },
+          "authorAssociation": "OWNER",
+          "body": "Written by a Codex session on 2026-10-13, at Ben's request.\n\n**Both corresponding chapter doc-notes need no correction on nun's dagesh.** At **Ezekiel 14:14 and 14:20**, the quoted Aleppo ketiv forms of **דנאל** already include nun's dagesh, agreeing with Ben's confirmed manuscript readings. Both doc-notes also explicitly describe nun as dageshed. See the preserved doc-notes for [14:14](https://github.com/bdenckla/MAM-basics/blob/e67573b732546d9ff423bf7b6abca51150b941a7/MAM-parsed/plus/C3-Ezekiel.json#L3224) and [14:20](https://github.com/bdenckla/MAM-basics/blob/e67573b732546d9ff423bf7b6abca51150b941a7/MAM-parsed/plus/C3-Ezekiel.json#L3292).\n\nThe doc-notes disagree with the Introduction's list in both their quoted forms and their prose. I checked the live Wikisource chapter wikitext on 2026-10-13 and confirmed both readings.\n",
+          "createdAt": "2026-10-13T19:50:45Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/307#issuecomment-6153876987",
+          "viewerDidAuthor": true
+        }
+      ],
+      "labels": [],
+      "state": "OPEN",
+      "title": "Add nun’s dagesh to the Introduction at Ezekiel 14:14 and 14:20"
+    },
+    "304": {
+      "body": "Written by a Codex session on 2026-10-11. Ben's instruction was:\n\n> Please create a github issue corresponding to \"sic, missing נְאֻם־ in MAM's illustration\"\n\nEverything else below is this session's reconstruction.\n\nThe MAM doc-note for the qere without ketiv at Jeremiah 31:37 omits נְאֻם־ from its Aleppo body-text illustration:\n\n<div dir=\"rtl\">א=הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")</div>\n\nThe same note's lemma includes the omitted atom:\n\n<div dir=\"rtl\">יָמִ֥ים [בָּאִ֖ים] נְאֻם־יְהֹוָ֑ה</div>\n\nRestore נְאֻם־ immediately before the divine name in the MAM documentation note's illustration on Hebrew Wikisource. After the source correction, reconcile the local capture and the study's translator's annotation.\n\nEvidence at the verified repository commit:\n\n- [Captured MAM doc-note](https://github.com/bdenckla/MAM-basics/blob/5a9f53b72805b3b5ed976ac45bb8e5e207c1e3bb/MAM-parsed/plus/C2-Jeremiah.json#L9550-L9569).\n- [Study quotation and omission annotation](https://github.com/bdenckla/MAM-basics/blob/5a9f53b72805b3b5ed976ac45bb8e5e207c1e3bb/in/near-aleppo/qere-without-ketiv-mam-notes-en.json#L75-L117).\n",
+      "comments": [
+        {
+          "id": "IC_kwDORi0zS88AAAABbHqJ4Q",
+          "author": {
+            "login": "bdenckla"
+          },
+          "authorAssociation": "OWNER",
+          "body": "@skadish1 Do you agree that נְאֻם־ should be added to the doc-note, yielding א=הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה?",
+          "createdAt": "2026-10-11T23:09:12Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/304#issuecomment-6114937313",
+          "viewerDidAuthor": true
+        },
+        {
+          "id": "IC_kwDORi0zS88AAAABbdyzug",
+          "author": {
+            "login": "skadish1"
+          },
+          "authorAssociation": "COLLABORATOR",
+          "body": "[Done](https://he.wikisource.org/w/index.php?title=%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&curid=237690&diff=3088451&oldid=2988015).",
+          "createdAt": "2026-10-13T04:19:55Z",
+          "includesCreatedEdit": false,
+          "isMinimized": false,
+          "minimizedReason": "",
+          "reactionGroups": [],
+          "url": "https://github.com/bdenckla/MAM-basics/issues/304#issuecomment-6138147770",
+          "viewerDidAuthor": false
+        }
+      ],
+      "labels": [],
+      "state": "CLOSED",
+      "title": "Jeremiah 31:37: restore נְאֻם־ in MAM's Aleppo illustration"
+    }
+  },
+  "owner_update_context": {
+    "ecf00895b4cf12e672ab29e5a90213af07aa194e": "ecf00895b4cf12e672ab29e5a90213af07aa194e 2026-10-13T10:54:01-04:00 Regenerate MAM products from the Wikisource refresh",
+    "dabe559f9722e35e35178112d87f715658d74fbf": "dabe559f9722e35e35178112d87f715658d74fbf 2026-10-13T13:03:54-04:00 Reconcile the Jeremiah 31:37 translation and regenerate near-Aleppo pages"
+  }
+}

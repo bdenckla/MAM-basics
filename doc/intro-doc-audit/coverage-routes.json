@@ -1,0 +1,64 @@
+{
+  "ch1": [
+    [1,16,"Edition goals and source basis","policy-with-note-checkable-examples"],
+    [17,170,"Transmission, Masorah and manuscript history","history-with-attributed-corpus-examples"],
+    [171,232,"Textual basis, editions and licensing","mostly-external-source-evidence"],
+    [233,249,"Completeness of local decision documentation","no-finite-decision-denominator"],
+    [250,259,"Typing and WLC chronology","historical-source-with-current-examples"],
+    [260,9999,"Design routing and historical narrative","policy-or-history"]
+  ],
+  "ch2": [
+    [1,68,"Edition display and textual conventions","design-policy-and-structure"],
+    [69,168,"Ketiv/qere, matres and pointing","finite-structure-counts-and-note-evidence"],
+    [169,206,"Accent duplication and qamats variants","structural-populations-and-display-policy"],
+    [207,250,"Holam, paseq and legarmeh","finite-lists-general-rules-and-external-history"],
+    [251,284,"Explicit hataf and morphological exceptions","finite-lists-and-completeness"],
+    [285,335,"Metigah, meteg, maqaf and double accents","conditional-note-policy-and-finite-lists"],
+    [336,392,"Rafe and rare poetic accents","complete-list-and-corpus-populations"],
+    [393,478,"Poetic stress helpers and oleh/veyored","verse-populations-placement-and-policy"],
+    [479,685,"Secondary accents and stress","explicit-lists-and-semantic-projection"],
+    [686,825,"Paragraphs and song layouts","structure-and-note-policy"],
+    [826,914,"Layout history and aesthetics","external-source-and-policy"],
+    [915,1009,"Representative poetic illustrations","bounded-examples-reviewed"],
+    [1010,1094,"Headings, Psalm titles and book order","structure-note-presence-and-history"],
+    [1095,1184,"Versification","cached-comparison-populations-required"],
+    [1185,9999,"Future navigation plans","proposal-not-current-reading-claim"]
+  ],
+  "ch3": [
+    [1,72,"Torah source method and comparative basis","general-rule-and-external-source-evidence"],
+    [73,251,"Leningrad spelling and joined forms","finite-lists-and-completeness"],
+    [252,365,"Special letters and exceptional scribal claims","finite-structure-and-note-evidence"],
+    [366,685,"Torah vowel and accent method","source-rule-and-examples"],
+    [686,749,"Precision and aggregate totals","finite-populations-need-role-projection"],
+    [750,1120,"Torah vowel/accent irregularity lists","finite-note-evidence-lists"],
+    [1121,1136,"Non-guttural hataf rosters","five-roster-counts-reviewed"],
+    [1137,9999,"Meteg policy and exceptions","finite-lists-and-conditional-note-policy"]
+  ],
+  "ch4": [
+    [1,46,"Missing Aleppo extent and source basis","extent-roster-and-source-attribution"],
+    [47,95,"Comparative spelling totals","finite-counts-and-external-comparisons"],
+    [96,351,"Spelling rosters and hard choices","finite-lists-and-note-evidence"],
+    [352,416,"Paragraph and special-letter policy","structure-and-source-attribution"],
+    [417,9999,"Vowel, accent and meteg rosters","finite-lists-and-conditional-note-policy"]
+  ],
+  "ch5": [
+    [1,74,"Aleppo method and Isaiah examples","source-claims-and-finite-statistics"],
+    [75,312,"Spelling, atom joins and Isaiah pointing","finite-note-evidence-and-completeness"],
+    [313,675,"Per-book pointing and pointed-ketiv lists","bounded-pointing-batches-reviewed"],
+    [676,9999,"Hataf and remaining aggregate policy","finite-rosters-and-source-rule"]
+  ],
+  "summary": [[1,9999,"Summary claims and routing","mixed-current-policy-and-chronology"]],
+  "root": [[1,9999,"Introduction navigation","navigation-container"]],
+  "appendices": [
+    [1,219,"Sigil and manuscript roster","current-decoding-spec-and-attribution"],
+    [220,338,"Bibliography and edition identifiers","external-source-history"],
+    [339,438,"Technical template roles and counts","finite-role-aware-structure-populations"],
+    [439,537,"Chronology, contributors and apps","historical-not-doc-note-testable"],
+    [538,9999,"Derivative edition proposals","proposal-not-current-policy"]
+  ],
+  "index-aleppo": [[1,32,"Aleppo surviving/lost extent","extent-and-attribution"],[33,9999,"Aleppo manuscript locators","locator-roster-not-reading-evidence"]],
+  "index-leningrad": [[1,9999,"Leningrad manuscript locators","locator-roster-not-reading-evidence"]],
+  "westminster-typing": [[1,95,"Historical WLC typing categories","historical-snapshot"],[96,9999,"Historical WLC version-change rosters","historical-comparison-populations"]],
+  "data-sheet-guide": [[1,9999,"Frozen spreadsheet column schema","historical-schema-not-current-sheet-proof"]],
+  "technical-guide": [[1,9999,"Redirect to spreadsheet guide","navigation-container"]]
+}

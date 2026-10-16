@@ -1,0 +1,999 @@
+{
+  "author": "Codex",
+  "date": "2026-10-14",
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "fragment_cases": [
+    {
+      "claim": "ch4:L427",
+      "literal_link_title": "ויקיטקסט:מבוא למקרא על פי המסורה/פרק ה#מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתר ארם צובה",
+      "requested_fragment": "מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתר ארם צובה",
+      "target_page": "ch5",
+      "target_revision": 3087740,
+      "literal_target_heading": "==מסורת הקוראים בנביאים וכתובים: מקומות חריגים בנוסח הניקוד והטעמים בכתר ארם צובה==",
+      "target_heading_source_id": "ch5:L280",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L427",
+      "target_heading_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L280",
+      "status": "requested target absent from cached headings and explicit anchors; reviewed corresponding current heading supplied",
+      "boundary": "No live rendering checked. Unexpanded transclusions and live template-generated aliases could affect site behaviour; this is a cached source-target mismatch."
+    },
+    {
+      "claim": "ch5:L294",
+      "literal_link_title": "ויקיטקסט:מבוא למקרא על פי המסורה/פרק ד#מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתי\"ל",
+      "requested_fragment": "מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתי\"ל",
+      "target_page": "ch4",
+      "target_revision": 3087756,
+      "literal_target_heading": "==מסורת הקוראים בנביאים וכתובים: מקומות חריגים בנוסח הניקוד והטעמים בכתי\"ל==",
+      "target_heading_source_id": "ch4:L423",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L294",
+      "target_heading_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L423",
+      "status": "requested target absent from cached headings and explicit anchors; reviewed corresponding current heading supplied",
+      "boundary": "No live rendering checked. Unexpanded transclusions and live template-generated aliases could affect site behaviour; this is a cached source-target mismatch."
+    },
+    {
+      "claim": "index-aleppo:L11",
+      "literal_link_title": "ויקיטקסט:מבוא למקרא על פי המסורה/נספחים#רשימת מקורות (כתבי־יד ודפוסים), כלי עזר וחומרים קשורים",
+      "requested_fragment": "רשימת מקורות (כתבי־יד ודפוסים), כלי עזר וחומרים קשורים",
+      "target_page": "appendices",
+      "target_revision": 3088449,
+      "literal_target_heading": "==רשימת מקורות (כתבי־יד, דפוסים ומחקרים), כלי עזר וחומר להעשרה==",
+      "target_heading_source_id": "appendices:L5",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L11",
+      "target_heading_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L5",
+      "status": "requested target absent from cached headings and explicit anchors; reviewed corresponding current heading supplied",
+      "boundary": "No live rendering checked. Unexpanded transclusions and live template-generated aliases could affect site behaviour; this is a cached source-target mismatch."
+    },
+    {
+      "claim": "index-leningrad:L693",
+      "literal_link_title": "ויקיטקסט:מבוא למקרא על פי המסורה/מפתח לכתר ארם צובה#ספר תרי",
+      "requested_fragment": "ספר תרי",
+      "target_page": "index-aleppo",
+      "target_revision": 3083178,
+      "literal_target_heading": "==ספר תרי עשר==",
+      "target_heading_source_id": "index-aleppo:L452",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-leningrad.mediawiki#L693",
+      "target_heading_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/index-aleppo.mediawiki#L452",
+      "status": "requested target absent from cached headings and explicit anchors; reviewed corresponding current heading supplied",
+      "boundary": "No live rendering checked. Unexpanded transclusions and live template-generated aliases could affect site behaviour; this is a cached source-target mismatch."
+    },
+    {
+      "claim": "data-sheet-guide:L37",
+      "literal_link_title": "ויקיטקסט:מבוא למקרא על פי המסורה/נספחים#רשימת התבניות לעיצוב ותיעוד",
+      "requested_fragment": "רשימת התבניות לעיצוב ותיעוד",
+      "target_page": "appendices",
+      "target_revision": 3088449,
+      "literal_target_heading": "==רשימת התבניות לתיעוד ועיצוב==",
+      "target_heading_source_id": "appendices:L339",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L37",
+      "target_heading_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L339",
+      "status": "requested target absent from cached headings and explicit anchors; reviewed corresponding current heading supplied",
+      "boundary": "No live rendering checked. Unexpanded transclusions and live template-generated aliases could affect site behaviour; this is a cached source-target mismatch."
+    },
+    {
+      "claim": "data-sheet-guide:L59",
+      "literal_link_title": "ויקיטקסט:מבוא למקרא על פי המסורה/נספחים#רשימת התבניות לעיצוב ותיעוד",
+      "requested_fragment": "רשימת התבניות לעיצוב ותיעוד",
+      "target_page": "appendices",
+      "target_revision": 3088449,
+      "literal_target_heading": "==רשימת התבניות לתיעוד ועיצוב==",
+      "target_heading_source_id": "appendices:L339",
+      "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/data-sheet-guide.mediawiki#L59",
+      "target_heading_source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/appendices.mediawiki#L339",
+      "status": "requested target absent from cached headings and explicit anchors; reviewed corresponding current heading supplied",
+      "boundary": "No live rendering checked. Unexpanded transclusions and live template-generated aliases could affect site behaviour; this is a cached source-target mismatch."
+    }
+  ],
+  "fragment_case_count": 6,
+  "Isaiah_enumeration": {
+    "claims": [
+      "ch5:L47",
+      "ch5:L48",
+      "ch5:L49",
+      "ch5:L50",
+      "ch5:L51",
+      "ch5:L53",
+      "ch5:L55",
+      "ch5:L56",
+      "ch5:L57",
+      "ch5:L58",
+      "ch5:L59"
+    ],
+    "first_two_types": [
+      1,
+      3
+    ],
+    "third_type": 2,
+    "first_two_case_total": 4,
+    "first_three_case_total": 6,
+    "last_three_case_range": [
+      10,
+      11
+    ],
+    "verdict": "The first-three/four phrase disagrees with the five-type enumeration and four following decisions; first-two gives the stated four.",
+    "boundary": "Internal grouping wording only; the physical interpretations and Breuer population are not independently verified."
+  },
+  "historical_date_pair": {
+    "claim": "appendices:L476",
+    "literal_date_pair": "ז' טבת תשע\"ד (10.12.14)",
+    "method": "Local pyluach Hebrew/Gregorian conversion, both round trips",
+    "pyluach_version": "2.3.0",
+    "seven_Tevet_5774_Gregorian": "2013-12-10",
+    "ten_December_2014_Hebrew": {
+      "year": 5775,
+      "month_number_Nisan_is_one": 9,
+      "day": 18
+    },
+    "verdict": "The two written dates do not denote the same civil day.",
+    "boundary": "The historical event date is unknown; no choice of corrected date is made."
+  },
+  "Job_prose_reference": {
+    "claim": "ch1:L258",
+    "wrong_ref": [
+      "Job",
+      10,
+      9
+    ],
+    "intended_ref": [
+      "Job",
+      9,
+      10
+    ],
+    "contexts": [
+      {
+        "ref": "Job 9:10",
+        "path": "in/mam-ws/D3-Job.json",
+        "wikitext": "עֹשֶׂ֣ה {{מ:דחי|גְ֭דֹלוֹת|גְ֭דֹל֭וֹת}} עַד־אֵ֣ין חֵ֑קֶר{{ר1}}וְ֝נִפְלָא֗וֹת עַד־אֵ֥ין מִסְפָּֽר׃",
+        "chapter_revision": {
+          "resolved_title": "איוב ט/טעמים",
+          "page_id": 239008,
+          "requested_title": "איוב_ט/טעמים",
+          "revision_id": 2988342,
+          "sha256": "dbb89e01f0de2d016d8540bfa2409f9f170e8303a86b7d5e8c0b71a8ce8c930c"
+        },
+        "parsed_path": "MAM-parsed/plus/D3-Job.json",
+        "parsed_pointer": "/book39s/0/chapters/9/10/2",
+        "complete_EP": [
+          "עֹשֶׂ֣ה ",
+          {
+            "tmpl_name": "מ:דחי",
+            "tmpl_params": {
+              "1": "גְ֭דֹלוֹת",
+              "2": "גְ֭דֹל֭וֹת"
+            }
+          },
+          " עַד־אֵ֣ין חֵ֑קֶר",
+          {
+            "tmpl_name": "ר1"
+          },
+          "וְ֝נִפְלָא֗וֹת עַד־אֵ֥ין מִסְפָּֽר׃"
+        ],
+        "selected_text_fragments": [
+          "עֹשֶׂ֣ה ",
+          "גְ֭דֹלוֹת",
+          " עַד־אֵ֣ין חֵ֑קֶר",
+          "וְ֝נִפְלָא֗וֹת עַד־אֵ֥ין מִסְפָּֽר׃"
+        ],
+        "quoted_letters_present": true
+      },
+      {
+        "ref": "Job 10:9",
+        "path": "in/mam-ws/D3-Job.json",
+        "wikitext": "זְכׇר־נָ֭א כִּי־כַחֹ֣מֶר עֲשִׂיתָ֑נִי{{ר1}}וְֽאֶל־עָפָ֥ר תְּשִׁיבֵֽנִי׃",
+        "chapter_revision": {
+          "resolved_title": "איוב י/טעמים",
+          "page_id": 239012,
+          "requested_title": "איוב_י/טעמים",
+          "revision_id": 2988343,
+          "sha256": "6537045d3ee22b62643d563eebbaaed25bc02ce92f58b42f06f0a6ed0d63adaa"
+        },
+        "parsed_path": "MAM-parsed/plus/D3-Job.json",
+        "parsed_pointer": "/book39s/0/chapters/10/9/2",
+        "complete_EP": [
+          "זְכׇר־נָ֭א כִּי־כַחֹ֣מֶר עֲשִׂיתָ֑נִי",
+          {
+            "tmpl_name": "ר1"
+          },
+          "וְֽאֶל־עָפָ֥ר תְּשִׁיבֵֽנִי׃"
+        ],
+        "selected_text_fragments": [
+          "זְכׇר־נָ֭א כִּי־כַחֹ֣מֶר עֲשִׂיתָ֑נִי",
+          "וְֽאֶל־עָפָ֥ר תְּשִׁיבֵֽנִי׃"
+        ],
+        "quoted_letters_present": false
+      }
+    ],
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch1.mediawiki#L258",
+    "verdict": "The prose chapter/verse is reversed relative to the word, external paths and current cached verse membership.",
+    "boundary": "Historical Westminster/Mechon Mamre forms and manuscript interpretation remain unverified; links were not fetched."
+  },
+  "historical_WLC_framing": {
+    "framing_claims": [
+      "westminster-typing:L3",
+      "westminster-typing:L62",
+      "westminster-typing:L98",
+      "westminster-typing:L1146"
+    ],
+    "version_label_case": {
+      "claim": "westminster-typing:L62",
+      "labelled_version": "4.14",
+      "quoted_version": "4.16",
+      "quoted_heading_claim": "westminster-typing:L66",
+      "literal_quoted_heading": "Transcription notes in the Westminster Leningrad Codex [4.16]",
+      "verdict": "The Hebrew source label does not name the version in the quotation it introduces."
+    },
+    "note_legend_arithmetic": [
+      {
+        "literal_version_heading": "Transcription notes in the Westminster Leningrad Codex [4.14]",
+        "heading_line": 6,
+        "stated_total": 1034,
+        "sum_of_numeric_category_counts": 1034,
+        "matches_stated_total": true,
+        "rows": [
+          {
+            "line": 12,
+            "literal": "1\tBHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.\t263",
+            "count": 263
+          },
+          {
+            "line": 14,
+            "literal": "2\tWe have added a sop pasuq where L and BHS omit it. (The added sof pasuq often is missing from the text.)\t19",
+            "count": 19
+          },
+          {
+            "line": 16,
+            "literal": "3\tWe read or understand L differently than BHS. Often this notation indicates a typographical error in BHS.\t284",
+            "count": 284
+          },
+          {
+            "line": 18,
+            "literal": "4\tPuncta extraordinaria -- a \\u05c4 is used to mark such marks in the text when they are above the line and a \\u05c5 when they are below the line.\t16",
+            "count": 16
+          },
+          {
+            "line": 20,
+            "literal": "5\tLarge letter(s). Shown as large letters without a superscript note number.\t4",
+            "count": 4
+          },
+          {
+            "line": 22,
+            "literal": "6\tSmall letter(s). Shown as small letters without a superscript note number.\t3",
+            "count": 3
+          },
+          {
+            "line": 24,
+            "literal": "7\tSuspended letter(s). Shown as suspended letters without a superscript note number.\t4",
+            "count": 4
+          },
+          {
+            "line": 26,
+            "literal": "8\tInverted nun in the text.\t9",
+            "count": 9
+          },
+          {
+            "line": 28,
+            "literal": "9\tBHS has abandoned L and we concur. All of these occurrences are ketib/qere problems.\t20",
+            "count": 20
+          },
+          {
+            "line": 30,
+            "literal": "a\tAdaptations to a Qere which L and BHS, by their design, do not indicate.\t28",
+            "count": 28
+          },
+          {
+            "line": 32,
+            "literal": "c\tWe read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS.\t160",
+            "count": 160
+          },
+          {
+            "line": 34,
+            "literal": "k\tWe read one or more consonants in L differently from BHS.\t5",
+            "count": 5
+          },
+          {
+            "line": 36,
+            "literal": "m\tMiscellaneous notes to the text and occasions where more than one bracket category applies.\t7",
+            "count": 7
+          },
+          {
+            "line": 38,
+            "literal": "n\tMarks an anomalous form.\t2",
+            "count": 2
+          },
+          {
+            "line": 40,
+            "literal": "p\tWe read punctuation in L differently from BHS.\t43",
+            "count": 43
+          },
+          {
+            "line": 42,
+            "literal": "q\tWe have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.\t36",
+            "count": 36
+          },
+          {
+            "line": 44,
+            "literal": "v\tWe read one or more vowels in L differently from BHS.\t20",
+            "count": 20
+          },
+          {
+            "line": 46,
+            "literal": "y\tYathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.\t24",
+            "count": 24
+          },
+          {
+            "line": 48,
+            "literal": "C\tWe read one or more accents in L differently from BHQ.\t21",
+            "count": 21
+          },
+          {
+            "line": 50,
+            "literal": "F\tMarks a consonant with an anomalous final form that is word-medial.\t1",
+            "count": 1
+          },
+          {
+            "line": 54,
+            "literal": "M\tMarks a word with a final consonant that is a medial (not a final) form.\t2",
+            "count": 2
+          },
+          {
+            "line": 56,
+            "literal": "P\tWe read the punctuation in L differently from BHQ.\t7",
+            "count": 7
+          },
+          {
+            "line": 58,
+            "literal": "Q\tMarks a place where we agree with BHQ against BHS in reading L.\t54",
+            "count": 54
+          },
+          {
+            "line": 60,
+            "literal": "V\tWe read one or more vowels in L differently from BHQ.\t2",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "literal_version_heading": "Transcription notes in the Westminster Leningrad Codex [4.16]",
+        "heading_line": 66,
+        "stated_total": 945,
+        "sum_of_numeric_category_counts": 945,
+        "matches_stated_total": true,
+        "rows": [
+          {
+            "line": 71,
+            "literal": "1\tBHS has been faithful to the Leningrad Codex where there might be a question of the validity of the form and we keep the same form as BHS.\t208",
+            "count": 208
+          },
+          {
+            "line": 72,
+            "literal": "4\tPuncta extraordinaria -- a \\u05c4 is used to mark such marks in the text when they are above the line and a \\u05c5 when they are below the line.\t16",
+            "count": 16
+          },
+          {
+            "line": 73,
+            "literal": "5\tLarge letter(s). Shown as large letters without a superscript note number.\t4",
+            "count": 4
+          },
+          {
+            "line": 74,
+            "literal": "6\tSmall letter(s). Shown as small letters without a superscript note number.\t3",
+            "count": 3
+          },
+          {
+            "line": 75,
+            "literal": "7\tSuspended letter(s). Shown as suspended letters without a superscript note number.\t4",
+            "count": 4
+          },
+          {
+            "line": 76,
+            "literal": "8\tInverted nun in the text.\t9",
+            "count": 9
+          },
+          {
+            "line": 77,
+            "literal": "a\tAdaptations to a Qere which L and BHS, by their design, do not indicate.\t29",
+            "count": 29
+          },
+          {
+            "line": 78,
+            "literal": "c\tWe read one or more accents in L differently than BHS. Often this notation indicates a typographical error in BHS.\t198",
+            "count": 198
+          },
+          {
+            "line": 79,
+            "literal": "k\tWe read one or more consonants in L differently from BHS.\t27",
+            "count": 27
+          },
+          {
+            "line": 80,
+            "literal": "n\tMarks an anomalous form.\t23",
+            "count": 23
+          },
+          {
+            "line": 81,
+            "literal": "p\tWe read punctuation in L differently from BHS.\t77",
+            "count": 77
+          },
+          {
+            "line": 82,
+            "literal": "q\tWe have abandoned or added a ketib/qere relative to BHS. In doing this we agree with L against BHS.\t51",
+            "count": 51
+          },
+          {
+            "line": 83,
+            "literal": "v\tWe read one or more vowels in L differently from BHS.\t31",
+            "count": 31
+          },
+          {
+            "line": 84,
+            "literal": "y\tYathir readings in L which we have designated as Qeres when both Dothan and BHS list a Qere.\t29",
+            "count": 29
+          },
+          {
+            "line": 85,
+            "literal": "C\tWe read one or more accents in L differently from BHQ.\t44",
+            "count": 44
+          },
+          {
+            "line": 86,
+            "literal": "F\tMarks a consonant with an anomalous final form that is word-medial.\t1",
+            "count": 1
+          },
+          {
+            "line": 87,
+            "literal": "K\tWe read one or more consonants in L differently from BHQ.\t1",
+            "count": 1
+          },
+          {
+            "line": 88,
+            "literal": "M\tMarks a word with a final consonant that is a medial (not a final) form.\t2",
+            "count": 2
+          },
+          {
+            "line": 89,
+            "literal": "P\tWe read the punctuation in L differently from BHQ.\t7",
+            "count": 7
+          },
+          {
+            "line": 90,
+            "literal": "Q\tMarks a place where we agree with BHQ against BHS in reading L.\t101",
+            "count": 101
+          },
+          {
+            "line": 91,
+            "literal": "U\tWe agree with both BHS 1997 and BHQ on an unexpected reading.\t76",
+            "count": 76
+          },
+          {
+            "line": 92,
+            "literal": "V\tWe read one or more vowels in L differently from BHQ.\t4",
+            "count": 4
+          }
+        ]
+      }
+    ],
+    "holam_encoding_control": {
+      "claim": "westminster-typing:L98",
+      "source_line": 116,
+      "literal_row": "Gen 4:13.6\tעֲוֹנִ֖י\tעֲוֺנִ֖י\tVowels are different.",
+      "old_literal": "עֲוֹנִ֖י",
+      "new_literal": "עֲוֺנִ֖י",
+      "old_codepoints": [
+        {
+          "character": "ע",
+          "codepoint": "U+05E2",
+          "name": "HEBREW LETTER AYIN"
+        },
+        {
+          "character": "ֲ",
+          "codepoint": "U+05B2",
+          "name": "HEBREW POINT HATAF PATAH"
+        },
+        {
+          "character": "ו",
+          "codepoint": "U+05D5",
+          "name": "HEBREW LETTER VAV"
+        },
+        {
+          "character": "ֹ",
+          "codepoint": "U+05B9",
+          "name": "HEBREW POINT HOLAM"
+        },
+        {
+          "character": "נ",
+          "codepoint": "U+05E0",
+          "name": "HEBREW LETTER NUN"
+        },
+        {
+          "character": "ִ",
+          "codepoint": "U+05B4",
+          "name": "HEBREW POINT HIRIQ"
+        },
+        {
+          "character": "֖",
+          "codepoint": "U+0596",
+          "name": "HEBREW ACCENT TIPEHA"
+        },
+        {
+          "character": "י",
+          "codepoint": "U+05D9",
+          "name": "HEBREW LETTER YOD"
+        }
+      ],
+      "new_codepoints": [
+        {
+          "character": "ע",
+          "codepoint": "U+05E2",
+          "name": "HEBREW LETTER AYIN"
+        },
+        {
+          "character": "ֲ",
+          "codepoint": "U+05B2",
+          "name": "HEBREW POINT HATAF PATAH"
+        },
+        {
+          "character": "ו",
+          "codepoint": "U+05D5",
+          "name": "HEBREW LETTER VAV"
+        },
+        {
+          "character": "ֺ",
+          "codepoint": "U+05BA",
+          "name": "HEBREW POINT HOLAM HASER FOR VAV"
+        },
+        {
+          "character": "נ",
+          "codepoint": "U+05E0",
+          "name": "HEBREW LETTER NUN"
+        },
+        {
+          "character": "ִ",
+          "codepoint": "U+05B4",
+          "name": "HEBREW POINT HIRIQ"
+        },
+        {
+          "character": "֖",
+          "codepoint": "U+0596",
+          "name": "HEBREW ACCENT TIPEHA"
+        },
+        {
+          "character": "י",
+          "codepoint": "U+05D9",
+          "name": "HEBREW LETTER YOD"
+        }
+      ],
+      "verdict": "The quoted change includes the claimed HOLAM to HOLAM HASER FOR VAV encoding example; no physical manuscript interpretation follows."
+    },
+    "version_412_to_414_summary": {
+      "claim": "westminster-typing:L1146",
+      "declared_books": [
+        "Genesis",
+        "Exodus",
+        "Leviticus",
+        "Numbers",
+        "Deuteronomy",
+        "Joshua",
+        "Judges",
+        "1 Samuel",
+        "2 Samuel",
+        "1 Kings",
+        "2 Kings",
+        "Isaiah",
+        "Jeremiah",
+        "Ezekiel",
+        "Hosea",
+        "Joel",
+        "Amos",
+        "Obadiah",
+        "Jonah",
+        "Micah",
+        "Nahum",
+        "Habakkuk",
+        "Zephaniah",
+        "Haggai",
+        "Zechariah",
+        "Malachi",
+        "Psalms",
+        "Proverbs",
+        "Job",
+        "Song of Songs",
+        "Ruth",
+        "Lamentations",
+        "Ecclesiastes",
+        "Esther",
+        "Daniel",
+        "Ezra",
+        "Nehemiah",
+        "1 Chronicles",
+        "2 Chronicles"
+      ],
+      "zero_difference_books": [
+        "Judges",
+        "Hosea",
+        "Joel",
+        "Amos",
+        "Obadiah",
+        "Micah",
+        "Nahum",
+        "Habakkuk",
+        "Zephaniah",
+        "Zechariah",
+        "Malachi",
+        "Job",
+        "Esther",
+        "1 Chronicles"
+      ],
+      "numeric_summary_rows": [
+        {
+          "book": "Genesis",
+          "line": 1160,
+          "literal": "Genesis\t0\t0\t0\t7\t2\t3\t2",
+          "counts": [
+            0,
+            0,
+            0,
+            7,
+            2,
+            3,
+            2
+          ]
+        },
+        {
+          "book": "Exodus",
+          "line": 1185,
+          "literal": "Exodus\t0\t0\t0\t8\t4\t3\t3",
+          "counts": [
+            0,
+            0,
+            0,
+            8,
+            4,
+            3,
+            3
+          ]
+        },
+        {
+          "book": "Leviticus",
+          "line": 1211,
+          "literal": "Leviticus\t0\t0\t0\t6\t7\t3\t2",
+          "counts": [
+            0,
+            0,
+            0,
+            6,
+            7,
+            3,
+            2
+          ]
+        },
+        {
+          "book": "Numbers",
+          "line": 1236,
+          "literal": "Numbers\t0\t0\t0\t5\t0\t3\t1",
+          "counts": [
+            0,
+            0,
+            0,
+            5,
+            0,
+            3,
+            1
+          ]
+        },
+        {
+          "book": "Deuteronomy",
+          "line": 1259,
+          "literal": "Deuteronomy\t0\t0\t12\t13\t19\t23\t2",
+          "counts": [
+            0,
+            0,
+            12,
+            13,
+            19,
+            23,
+            2
+          ]
+        },
+        {
+          "book": "Joshua",
+          "line": 1302,
+          "literal": "Joshua\t0\t0\t0\t2\t3\t0\t2",
+          "counts": [
+            0,
+            0,
+            0,
+            2,
+            3,
+            0,
+            2
+          ]
+        },
+        {
+          "book": "1 Samuel",
+          "line": 1333,
+          "literal": "1 Samuel\t0\t0\t0\t0\t1\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "2 Samuel",
+          "line": 1349,
+          "literal": "2 Samuel\t0\t0\t0\t0\t1\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "1 Kings",
+          "line": 1365,
+          "literal": "1 Kings\t0\t0\t0\t0\t3\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "2 Kings",
+          "line": 1381,
+          "literal": "2 Kings\t0\t0\t0\t1\t1\t1\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "book": "Isaiah",
+          "line": 1400,
+          "literal": "Isaiah\t0\t0\t0\t0\t3\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "Jeremiah",
+          "line": 1416,
+          "literal": "Jeremiah\t0\t0\t0\t0\t2\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "Ezekiel",
+          "line": 1432,
+          "literal": "Ezekiel\t0\t0\t0\t0\t4\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "Jonah",
+          "line": 1492,
+          "literal": "Jonah\t0\t0\t0\t0\t2\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "Haggai",
+          "line": 1552,
+          "literal": "Haggai\t0\t0\t0\t0\t1\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "Psalms",
+          "line": 1590,
+          "literal": "Psalms\t0\t0\t0\t1\t2\t1\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            1,
+            0
+          ]
+        },
+        {
+          "book": "Proverbs",
+          "line": 1609,
+          "literal": "Proverbs\t0\t0\t1\t1\t0\t2\t0",
+          "counts": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            2,
+            0
+          ]
+        },
+        {
+          "book": "Song of Songs",
+          "line": 1640,
+          "literal": "Song of Songs\t0\t0\t1\t0\t0\t1\t0",
+          "counts": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "book": "Ruth",
+          "line": 1659,
+          "literal": "Ruth\t0\t0\t1\t0\t0\t1\t0",
+          "counts": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "book": "Lamentations",
+          "line": 1678,
+          "literal": "Lamentations\t0\t0\t0\t1\t0\t1\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "book": "Ecclesiastes",
+          "line": 1697,
+          "literal": "Ecclesiastes\t0\t0\t0\t0\t1\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "book": "Daniel",
+          "line": 1724,
+          "literal": "Daniel\t0\t0\t0\t1\t0\t1\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "book": "Ezra",
+          "line": 1743,
+          "literal": "Ezra\t0\t0\t1\t2\t0\t3\t0",
+          "counts": [
+            0,
+            0,
+            1,
+            2,
+            0,
+            3,
+            0
+          ]
+        },
+        {
+          "book": "Nehemiah",
+          "line": 1764,
+          "literal": "Nehemiah\t0\t0\t0\t2\t1\t2\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            2,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "book": "2 Chronicles",
+          "line": 1795,
+          "literal": "2 Chronicles\t0\t0\t0\t0\t3\t0\t0",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            3,
+            0,
+            0
+          ]
+        }
+      ],
+      "column_order": [
+        "Verses",
+        "GOs",
+        "Vowels",
+        "Accents",
+        "Morphological divisions",
+        "Notes",
+        "Note values"
+      ],
+      "category_totals": [
+        0,
+        0,
+        16,
+        50,
+        60,
+        48,
+        12
+      ],
+      "boundary": "The quoted summary has 60 morphological-division counts, 50 accent counts and 16 vowel counts. These are category counters that may overlap; row filtering and the intended unit of most changes are not defined sufficiently to infer unique-change majority or historical manuscript accuracy. Matching historical machine-readable 4.12/4.14 inputs are unavailable; current 4.22 is a different source/version."
+    },
+    "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/westminster-typing.mediawiki#L1",
+    "boundary": "Historical source versions are explicitly named in this page. Matching machine-readable legacy versions and physical source controls are unavailable here; current cached WLC 4.22 cannot certify those historical tables. The remaining 843 routed Hebrew table units are not individually semantically assessed."
+  }
+}

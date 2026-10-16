@@ -1,0 +1,802 @@
+{
+  "method": "Manual comparison of complete retained canonical chapter histories with selected dated Introduction passages. Literal quotations are compiled from the API cache; original audit caches, case statuses and Ben decisions remain unchanged. Ecclesiastes additionally has independent cached form/label validation; that defect is distinct from its unresolved Masorah-support question.",
+  "cases": [
+    {
+      "case": "ISA-10-15",
+      "classification": "discrepancy-present-in-observed-history",
+      "result": "The note has discussed the first yod since its 2015 MAM import. The Introduction explanation also names the first yod in January 2023. Its table, already present in the retained February 2023 snapshot, instead quotes a form lacking the second yod; the bracketed summary points to that second position too. No later note change explains this mismatch.",
+      "limits": [
+        "The actual table insertion was not located; this dates the mismatch by its first retained table snapshot.",
+        "The note and explanation report the manuscript judgment; no manuscript image was examined."
+      ],
+      "chapters": [
+        {
+          "key": "isaiah-10",
+          "verses": [
+            15
+          ],
+          "selected": [
+            407682,
+            658345,
+            2696916,
+            2987928
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1934798,
+          2696987,
+          2761045
+        ],
+        "refs": [
+          [
+            "Isaiah",
+            10,
+            15
+          ]
+        ],
+        "line_numbers": {
+          "2696987": [
+            89,
+            90,
+            91,
+            92
+          ],
+          "2761045": [
+            117,
+            118,
+            119,
+            120
+          ]
+        }
+      },
+      "adjacent_pairs": [
+        [
+          407682,
+          658345
+        ]
+      ],
+      "links": [
+        {
+          "label": "Note imported, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?diff=658345&oldid=407682"
+        },
+        {
+          "label": "Table and explanation, 2023-02-01",
+          "revision": 2696987
+        }
+      ]
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "classification": "insufficient-history",
+      "result": "The note attributes tevir to HaKeter from its 2015 MAM import onward; the selected MAM form has merkha throughout. Retained Introduction passages from January 2023 already say that HaKeter chose merkha. The chapter history supplies no later edition-attribution change that explains their disagreement.",
+      "limits": [
+        "The HaKeter edition or version and its printed passage remain unverified.",
+        "Selected Introduction history does not locate the origin of its conflicting edition attribution."
+      ],
+      "chapters": [
+        {
+          "key": "isaiah-55",
+          "verses": [
+            5
+          ],
+          "selected": [
+            403348,
+            658388,
+            2696941,
+            2987973
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1934798,
+          2761045
+        ],
+        "refs": [
+          [
+            "Isaiah",
+            55,
+            5
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          403348,
+          658388
+        ]
+      ],
+      "links": [
+        {
+          "label": "Note imported, 2015-11-08",
+          "url": "https://he.wikisource.org/w/index.php?diff=658388&oldid=403348"
+        },
+        {
+          "label": "Introduction, 2023-01-11",
+          "revision": 1934798
+        }
+      ]
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "classification": "insufficient-history",
+      "result": "The 2015 note already distinguishes a small nun prescribed by the Aleppo Masorah from an ordinary-sized nun in the manuscript text. Its 2023 wording retains that distinction and still does not specify Masorah Parva. The Introduction has the narrower Parva attribution by February 2023; the history does not establish that extra specificity.",
+      "limits": [
+        "The broader Masorah attribution does not contradict the narrower Parva attribution. Its exact location or further evidence remains unresolved.",
+        "No manuscript examination was undertaken."
+      ],
+      "chapters": [
+        {
+          "key": "isaiah-44",
+          "verses": [
+            14
+          ],
+          "selected": [
+            499630,
+            658377,
+            2696982,
+            3010621
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1934798,
+          2696987,
+          2761045
+        ],
+        "refs": [
+          [
+            "Isaiah",
+            44,
+            14
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Note imported, 2015-11-08",
+          "revision": 658377
+        },
+        {
+          "label": "Note wording, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?diff=2696982&oldid=1379458"
+        },
+        {
+          "label": "Introduction, 2023-02-01",
+          "revision": 2696987
+        }
+      ]
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "classification": "introduced-in-note",
+      "result": "The Leningrad quotation and its no-maqaf explanation were added together on 25 March 2026. The quotation already contains maqaf at that insertion. The earlier note documented only the Aleppo ketiv, matching the Introduction example. This dates the note-internal tension rather than a later change to the Introduction.",
+      "limits": [
+        "History does not decide whether the quotation has a supplied display separator or an unintended maqaf. The intended correction remains open."
+      ],
+      "chapters": [
+        {
+          "key": "isaiah-44",
+          "verses": [
+            24
+          ],
+          "selected": [
+            1178399,
+            1178444,
+            2987962,
+            3000539,
+            3010621
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1934798,
+          2761045
+        ],
+        "refs": [
+          [
+            "Isaiah",
+            44,
+            24
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          1178399,
+          1178444
+        ],
+        [
+          2987962,
+          3000539
+        ]
+      ],
+      "links": [
+        {
+          "label": "Aleppo note added, 2021-09-13",
+          "url": "https://he.wikisource.org/w/index.php?diff=1178444&oldid=1178399"
+        },
+        {
+          "label": "Leningrad line added, 2026-03-25",
+          "url": "https://he.wikisource.org/w/index.php?diff=3000539&oldid=2987962"
+        }
+      ]
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "classification": "history-accounted-agreement-scope-unresolved",
+      "result": "The 2015 note already separates the nearby sources with spaced MAM pointing from the uncertain Aleppo maqaf alternatives. On 1 March 2023 a note edit merges Aleppo into the agreement clause while its selected form stays spaced. The 16 February 2026 edit separates those claims again, restoring the earlier distinction. The Introduction has a broad agreement clause by January 2023 and later expands its manuscript list. Whether that clause means the complete compound or specifically merkha remains unclear. This chronology does not establish newly caused Introduction staleness.",
+      "limits": [
+        "The Introduction clause has an ambiguous scope; history does not prove that it intentionally attributes maqaf to all named sources.",
+        "The dated note edit clarifies its claims, without independently establishing a manuscript reading.",
+        "The pinned Introduction passage is separately preserved by the original audit; selected older snapshots establish the age of its wording."
+      ],
+      "chapters": [
+        {
+          "key": "isaiah-59",
+          "verses": [
+            19
+          ],
+          "selected": [
+            658392,
+            2706370,
+            2706372,
+            2825830,
+            2987562,
+            2987581,
+            2989501
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          1934798,
+          2761045
+        ],
+        "refs": [
+          [
+            "Isaiah",
+            59,
+            19
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          2706370,
+          2706372
+        ],
+        [
+          2987562,
+          2987581
+        ]
+      ],
+      "links": [
+        {
+          "label": "Earlier distinction merged, March 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2706372&oldid=2706370"
+        },
+        {
+          "label": "Earlier distinction restored, February 2026",
+          "url": "https://he.wikisource.org/w/index.php?diff=2987581&oldid=2987562"
+        },
+        {
+          "label": "Introduction wording, 2023-01-11",
+          "revision": 1934798
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "revision": 3087740
+        }
+      ]
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "classification": "introduced-in-note",
+      "result": "The note adds the description large final nun on 1 February 2023, while retaining the small-letter template already present in its 2015 MAM version. The retained Introduction list also marks the nun small. The dated change introduces a description/template mismatch inside the note, rather than making the Introduction stale.",
+      "limits": [
+        "This compares explicit source wording and template size, without independently checking the printed editions or manuscript."
+      ],
+      "chapters": [
+        {
+          "key": "jeremiah-39",
+          "verses": [
+            13
+          ],
+          "selected": [
+            658320,
+            1379519,
+            2696972,
+            2988023
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2696987,
+          2761045
+        ],
+        "refs": [
+          [
+            "Jeremiah",
+            39,
+            13
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          1379519,
+          2696972
+        ]
+      ],
+      "links": [
+        {
+          "label": "Size description added, 2023-02-01",
+          "url": "https://he.wikisource.org/w/index.php?diff=2696972&oldid=1379519"
+        },
+        {
+          "label": "Small-letter Introduction entry, 2023-02-01",
+          "revision": 2696987
+        }
+      ]
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "classification": "insufficient-history",
+      "result": "Both local notes have explicitly attributed the quoted ḥataf vowels to Aleppo ketiv since their 2015 MAM versions. The retained Introduction list already labels its different final-consonant forms as Aleppo qere by February 2023. January 2023 changes add a sheva helper to selected MAM qere without changing either ketiv attribution. No later relabelling of the notes explains the Introduction scope.",
+      "limits": [
+        "History does not establish whether the list deliberately illustrates a ketiv vowel on the qere or inadvertently mislabels the quotation.",
+        "The manuscript pointing of the qere is not independently established."
+      ],
+      "chapters": [
+        {
+          "key": "jeremiah-48",
+          "verses": [
+            20
+          ],
+          "selected": [
+            403586,
+            658329,
+            2694131,
+            3087505
+          ]
+        },
+        {
+          "key": "jeremiah-50",
+          "verses": [
+            6
+          ],
+          "selected": [
+            407918,
+            658331,
+            2694134,
+            2988034
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2696987,
+          2761045
+        ],
+        "refs": [
+          [
+            "Jeremiah",
+            48,
+            20
+          ],
+          [
+            "Jeremiah",
+            50,
+            6
+          ]
+        ],
+        "list_claim": "ch5:L704"
+      },
+      "links": [
+        {
+          "label": "Jeremiah 48 ketiv note, 2015-11-08",
+          "revision": 658329
+        },
+        {
+          "label": "Jeremiah 50 ketiv note, 2015-11-08",
+          "revision": 658331
+        },
+        {
+          "label": "Introduction qere labels, 2023-02-01",
+          "revision": 2696987
+        }
+      ]
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "classification": "intentional-exclusion",
+      "result": "The Introduction explicitly excludes Jeremiah 48:32 in the retained list footnote by 1 February 2023. The note has contrasted Breuer ḥataf with a possibly erased pataḥ stroke leaving sheva since 2015; on 29 January 2023 it also offers a stain as an explanation. Both sources retain the reading uncertainty. The absent main-list entry is therefore a documented exclusion, rather than an unexplained omission.",
+      "limits": [
+        "Neither the Breuer report nor the note author alternative is promoted to a settled manuscript reading. No manuscript image was examined."
+      ],
+      "chapters": [
+        {
+          "key": "jeremiah-48",
+          "verses": [
+            32
+          ],
+          "selected": [
+            658329,
+            1379528,
+            2693819,
+            3087505
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2696987,
+          2761045
+        ],
+        "refs": [
+          [
+            "Jeremiah",
+            48,
+            32
+          ]
+        ],
+        "list_claim": "ch5:L704"
+      },
+      "adjacent_pairs": [
+        [
+          1379528,
+          2693819
+        ]
+      ],
+      "links": [
+        {
+          "label": "Stain alternative added, 2023-01-29",
+          "url": "https://he.wikisource.org/w/index.php?diff=2693819&oldid=1379528"
+        },
+        {
+          "label": "Explicit Introduction exclusion, 2023-02-01",
+          "revision": 2696987
+        }
+      ]
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "classification": "established-staleness",
+      "result": "The Introduction starred a form with lamed meteg in February 2023, matching the earlier selected MAM pointing. On 12 March 2026 the note adds uncertainty about Aleppo and then the selected MAM form loses that meteg. The pinned Introduction and the later retained research snapshot still star the earlier form. This establishes staleness of the selected-form indication.",
+      "limits": [
+        "The ink interpretation is the note author report; no manuscript image was examined.",
+        "The October 2026 research snapshot is separate from the unchanged original audit cache; that pinned cache already retains the same starred form."
+      ],
+      "chapters": [
+        {
+          "key": "joshua-14",
+          "verses": [
+            7
+          ],
+          "selected": [
+            650961,
+            2987785,
+            2997882,
+            2997883,
+            2998520
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700411,
+          3088859
+        ],
+        "refs": [
+          [
+            "Joshua",
+            14,
+            7
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          2987785,
+          2997882
+        ],
+        [
+          2997882,
+          2997883
+        ]
+      ],
+      "links": [
+        {
+          "label": "Note qualification, 2026-03-12",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997882&oldid=2987785"
+        },
+        {
+          "label": "Selected meteg removed, 2026-03-12",
+          "url": "https://he.wikisource.org/w/index.php?diff=2997883&oldid=2997882"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "revision": 3087740
+        }
+      ]
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "classification": "insufficient-history",
+      "result": "Selected MAM has segol on shin throughout its retained MAM history. The 2016 note already reports Breuer qamats and disputes it. On 21 March 2023 the note softens that judgment and introduces an explicitly doubtful Leningrad alternative, still quoted with segol. The retained Introduction entry from April 2023 already combines that segol quotation with the qamats caption. A later vowel change does not explain the mismatch.",
+      "limits": [
+        "The sigil itself retains a question mark in both sources; the shorter Introduction caption does not establish certainty.",
+        "The intended quotation for the doubtful manuscript reading remains unresolved. No manuscript dots were examined."
+      ],
+      "chapters": [
+        {
+          "key": "lamentations-4",
+          "verses": [
+            7
+          ],
+          "selected": [
+            408503,
+            671269,
+            1379092,
+            2713560,
+            3010636
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2737602,
+          2823628
+        ],
+        "refs": [
+          [
+            "Lamentations",
+            4,
+            7
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          408503,
+          671269
+        ],
+        [
+          1379092,
+          2713560
+        ]
+      ],
+      "links": [
+        {
+          "label": "Earlier note, 2016-01-24",
+          "revision": 671269
+        },
+        {
+          "label": "Uncertainty revised, 2023-03-21",
+          "url": "https://he.wikisource.org/w/index.php?diff=2713560&oldid=1379092"
+        },
+        {
+          "label": "Introduction, 2023-04-10",
+          "revision": 2737602
+        }
+      ]
+    },
+    {
+      "case": "MAL-HOLAM",
+      "classification": "dated-quotation-divergence",
+      "result": "The earlier note and the February 2023 Introduction example both include ḥolam. On 17 December 2024 the note changes selected MAM meteg placement and later explicitly removes ḥolam from its Aleppo quotation, while retaining the explanation of the unmarked vowel. The pinned Introduction keeps ḥolam in its example. This dates the literal divergence, without settling whether the Introduction deliberately supplies conventional pointing while illustrating meteg.",
+      "limits": [
+        "The meteg descriptions agree; the open question concerns the scope of the illustration and its supplied ḥolam.",
+        "The source explanation of the absent manuscript dot is not independently verified.",
+        "The later research snapshot is distinct from the unchanged original audit cache."
+      ],
+      "chapters": [
+        {
+          "key": "malachi-2",
+          "verses": [
+            7
+          ],
+          "selected": [
+            1098686,
+            2895454,
+            2895461,
+            2895557,
+            2895559,
+            2895561,
+            3026162
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2700411,
+          2761045,
+          3088859
+        ],
+        "refs": [
+          [
+            "Malachi",
+            2,
+            7
+          ]
+        ]
+      },
+      "adjacent_pairs": [
+        [
+          2895461,
+          2895557
+        ],
+        [
+          2895559,
+          2895561
+        ]
+      ],
+      "links": [
+        {
+          "label": "Selected pointing changed, 2024-12-17",
+          "url": "https://he.wikisource.org/w/index.php?diff=2895557&oldid=2895461"
+        },
+        {
+          "label": "Aleppo ḥolam removed, 2024-12-17",
+          "url": "https://he.wikisource.org/w/index.php?diff=2895561&oldid=2895559"
+        },
+        {
+          "label": "Pinned Introduction, 2026-10-08",
+          "revision": 3087740
+        }
+      ]
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "classification": "history-accounted-specific-source-support-absent",
+      "summary": "The canonical note has discussed the same Leningrad spelling and its disagreement with Breuer since 2016. The March 2023 Introduction already has the exclamation mark and its special Masorah-conflict definition, but no retained canonical note identifies the conflicting Leningrad Masorah annotation. The support question remains unresolved. Separately, its Leningrad quotation has two written vav letters but the label describes a mixed full/defective spelling; that label was added on 23 March 2023. Two independent readers and the audit owner confirmed this literal label defect without a manuscript judgment.",
+      "result": "All fifteen visible canonical revisions were inspected. The thirteen MAM note versions retain the selected and Leningrad spellings and discuss Breuer’s report; none supplies or later removes a specific conflicting note in Leningrad’s own Masorah. The selected March 2023 Introduction already contains the exclamation mark and its local definition. Separately, the 23 March 2023 note edit adds a mixed full-vav/defective-vav label to the unchanged Leningrad form containing two written vav letters. The selected form has one vav, and the two different forms now receive the same label. This supplemental label defect remains attached to this existing case for independent review; it creates no new case or approval.",
+      "limits": [
+        "Absence of a local Masorah citation does not prove the Introduction claim false. No Masorah source or manuscript image was inspected.",
+        "The Introduction origin was not exhaustively traced; March 2023 is the earliest selected chapter-4 capture.",
+        "The exclamation mark takes its specific meaning from this chapter’s legend. A generic surprise modifier does not establish a Masorah conflict.",
+        "The supplemental note-label defect concerns the quoted forms and wording, not an independently verified manuscript reading or an approved correction."
+      ],
+      "chapters": [
+        {
+          "key": "ecclesiastes-1",
+          "verses": [
+            17
+          ],
+          "selected": [
+            671283,
+            1379884,
+            2714101,
+            2988393
+          ]
+        }
+      ],
+      "intro": {
+        "revisions": [
+          2707149
+        ],
+        "refs": [
+          [
+            "Ecclesiastes",
+            1,
+            17
+          ]
+        ],
+        "line_numbers": {
+          "2707149": [
+            82
+          ]
+        }
+      },
+      "pinned_introduction_claims": [
+        "ch4:L99",
+        "ch4:L138"
+      ],
+      "links": [
+        {
+          "label": "First canonical MAM note, January 2016",
+          "revision": 671283
+        },
+        {
+          "label": "Introduction and exclamation-mark legend, March 2023",
+          "revision": 2707149
+        },
+        {
+          "label": "Supplemental note-label wording added, March 2023",
+          "url": "https://he.wikisource.org/w/index.php?diff=2714101&oldid=1379884"
+        }
+      ],
+      "adjacent_pairs": [
+        [
+          1379884,
+          2714101
+        ]
+      ],
+      "supplemental_candidate": {
+        "candidate": "Ecclesiastes1:17 note repeats one orthographic label for differently spelled forms",
+        "status": "Independently validated literal form/label defect; retained under the existing case without a new proposal or external action.",
+        "source": {
+          "id": "Ecclesiastes 1:17/2/0",
+          "path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+          "json_pointer": "/book39s/0/chapters/1/17/2/1",
+          "source_url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E4-Ecclesiastes.json#L262",
+          "chapter_revision": {
+            "resolved_title": "קהלת א/טעמים",
+            "page_id": 239195,
+            "requested_title": "קהלת_א/טעמים",
+            "revision_id": 2988393,
+            "sha256": "36c9e4cfbfa7a04955bcc5782f18b488008febc241d41d56c4199c6ed17854e2"
+          }
+        },
+        "primary": {
+          "literal": "הוֹלֵלֹ֖ת",
+          "letters": "הוללת",
+          "vav_count": 1,
+          "label_source_clause": "=א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו)"
+        },
+        "alternative": {
+          "literal": "הוֹלֵל֖וֹת",
+          "letters": "הוללות",
+          "vav_count": 2,
+          "label_source_clause": "ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה."
+        },
+        "shared_literal_label": "כתיב מלא וי\"ו וחסר וי\"ו",
+        "observation": "The selected form has one written vav. The Leningrad alternative adds a final holam vav and has two. Both are labelled full vav and defective vav in the note, while the printed-edition alternative receives the inverse label. This is distinct from the existing case about the Introduction exclamation mark.",
+        "limits": [
+          "This compares the note’s literal forms and labels. It makes no independent manuscript reading; canonical history coverage is now complete."
+        ],
+        "origin_classification": "Label mismatch present when the extra Leningrad parenthetical is inserted, not a later spelling change.",
+        "adjacent_parent": {
+          "kind": "canonical-chapter-verse",
+          "revid": 1379884,
+          "parentid": 903255,
+          "timestamp": "2022-03-03T13:28:54Z",
+          "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1379884",
+          "excerpts": [
+            {
+              "line": 21,
+              "text": "וָאֶתְּנָ֤ה לִבִּי֙ לָדַ֣עַת חׇכְמָ֔ה וְדַ֥עַת {{נוסח|הוֹלֵלֹ֖ת|=א(ק)ש1ת (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (ובהתאם בדותן ובהקלדה). ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}} וְשִׂכְל֑וּת יָדַ֕עְתִּי שֶׁגַּם־זֶ֥ה ה֖וּא רַעְי֥וֹן רֽוּחַ׃"
+            }
+          ],
+          "selected_notes": [
+            {
+              "literal_template": "{{נוסח|הוֹלֵלֹ֖ת|=א(ק)ש1ת (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (ובהתאם בדותן ובהקלדה). ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}}",
+              "primary": "הוֹלֵלֹ֖ת"
+            }
+          ]
+        },
+        "insertion": {
+          "kind": "canonical-chapter-verse",
+          "revid": 2714101,
+          "parentid": 1379884,
+          "timestamp": "2023-03-23T05:24:54Z",
+          "comment": "",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2714101",
+          "excerpts": [
+            {
+              "line": 21,
+              "text": "וָאֶתְּנָ֤ה לִבִּי֙ לָדַ֣עַת חׇכְמָ֔ה וְדַ֥עַת {{נוסח|הוֹלֵלֹ֖ת|=א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה. ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}} וְשִׂכְל֑וּת יָדַ֕עְתִּי שֶׁגַּם־זֶ֥ה ה֖וּא רַעְי֥וֹן רֽוּחַ׃"
+            }
+          ],
+          "selected_notes": [
+            {
+              "literal_template": "{{נוסח|הוֹלֵלֹ֖ת|=א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה. ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}}",
+              "primary": "הוֹלֵלֹ֖ת"
+            }
+          ]
+        },
+        "diff_url": "https://he.wikisource.org/w/index.php?diff=2714101&oldid=1379884",
+        "candidate_status": "Independently validated literal form/label defect; retained under the existing case without a new proposal or external action.",
+        "dating_limit": "All relevant before/after source forms are retained; their manuscript readings have not been independently verified."
+      }
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+[
+  {
+    "claim": "ch2:L430",
+    "wrong": [
+      "Psalms",
+      27,
+      24
+    ],
+    "intended": [
+      "Psalms",
+      27,
+      14
+    ],
+    "reason": "The anchor names nonexistent verse 24; its label names verse 14."
+  },
+  {
+    "claim": "ch3:L296",
+    "wrong": [
+      "Numbers",
+      14,
+      77
+    ],
+    "intended": [
+      "Numbers",
+      14,
+      17
+    ],
+    "reason": "The anchor names nonexistent verse 77; its label and special-letter example name verse 17."
+  },
+  {
+    "claim": "ch3:L701",
+    "wrong": [
+      "Deuter",
+      31,
+      50
+    ],
+    "intended": [
+      "Deuter",
+      31,
+      21
+    ],
+    "reason": "A repeated link names nonexistent verse 50; both display labels and the paragraph's first link name verse 21."
+  },
+  {
+    "claim": "ch4:L686",
+    "wrong": [
+      "Daniel",
+      12,
+      12
+    ],
+    "intended": [
+      "Daniel",
+      12,
+      2
+    ],
+    "reason": "Both label and link name verse 12, but the quoted atom and its detailed note occur at verse 2. Verse 12 has no corresponding atom or note."
+  },
+  {
+    "claim": "ch4:L564",
+    "wrong": [
+      "Ecclesiastes",
+      4,
+      7
+    ],
+    "intended": [
+      "Ecclesiastes",
+      5,
+      17
+    ],
+    "reason": "The displayed label names 5:17 and its doc-note matches the form; the anchor points to 4:7."
+  },
+  {
+    "claim": "ch5:L431",
+    "wrong": [
+      "2Kings",
+      21,
+      20
+    ],
+    "intended": [
+      "2Kings",
+      21,
+      12
+    ],
+    "reason": "The displayed label names 21:12 and its explicitly Aleppo-attributed ketiv note matches; the anchor points to 21:20."
+  },
+  {
+    "claim": "ch5:L561",
+    "wrong": [
+      "2Chronicles",
+      6,
+      7
+    ],
+    "intended": [
+      "2Chronicles",
+      34,
+      22
+    ],
+    "reason": "The displayed label names 34:22 and its doc-note matches the ketiv; the anchor points to 6:7."
+  },
+  {
+    "claim": "ch5:L662",
+    "wrong": [
+      "Proverbs",
+      20,
+      25
+    ],
+    "intended": [
+      "Proverbs",
+      25,
+      20
+    ],
+    "reason": "The quoted compound belongs at 25:20, whose note addresses that maqaf; the linked chapter and verse are transposed."
+  },
+  {
+    "claim": "ch2:L87",
+    "wrong": [
+      "Jeremiah",
+      31,
+      38
+    ],
+    "intended": [
+      "Jeremiah",
+      31,
+      37
+    ],
+    "reason": "The qere-without-ketiv list and appendix list 31:38; the quoted coming atom and its current note occur at 31:37. Verse 31:38 has ordinary qוה/qו ketiv/qere."
+  },
+  {
+    "claim": "ch3:L775",
+    "wrong": [
+      "Genesis",
+      18,
+      21
+    ],
+    "intended": [
+      "Genesis",
+      18,
+      25
+    ],
+    "reason": "Both label and link use18:21; the quoted form and corresponding Leningrad note occur at 18:25. The18:21 note concerns a different atom."
+  },
+  {
+    "claim": "ch2:L264",
+    "wrong": [
+      "Ezekiel",
+      27,
+      3
+    ],
+    "intended": [
+      "Ezekiel",
+      27,
+      4
+    ],
+    "reason": "The named atom and A/MG-H note occur at 27:4;27:3 contains a different atom. Both link and repeated prose say verse3."
+  },
+  {
+    "claim": "ch3:L1401",
+    "wrong": [
+      "Genesis",
+      22,
+      2
+    ],
+    "intended": [
+      "Genesis",
+      22,
+      20
+    ],
+    "reason": "The additional-seder paragraph gives22:2, but its nearby quoted opening and the CP note with seder19* identify22:20."
+  },
+  {
+    "claim": "ch2:L430",
+    "wrong": [
+      "Psalms",
+      27,
+      24
+    ],
+    "intended": [
+      "Psalms",
+      27,
+      14
+    ],
+    "reason": "The label names14 but the target anchor names24; the intended verse and source specimen were independently checked."
+  },
+  {
+    "claim": "ch2:L513",
+    "wrong": [
+      "Psalms",
+      69,
+      7
+    ],
+    "intended": [
+      "Psalms",
+      78,
+      7
+    ],
+    "reason": "The target and specimen identify78:7 while the display label says69:7."
+  },
+  {
+    "claim": "ch2:L515",
+    "wrong": [
+      "Psalms",
+      38,
+      15
+    ],
+    "intended": [
+      "Psalms",
+      38,
+      19
+    ],
+    "reason": "The label names19 but the target points15; the intended and incorrect raw/parsed verses were checked."
+  },
+  {
+    "claim": "ch2:L598",
+    "wrong": [
+      "Proverbs",
+      40,
+      10
+    ],
+    "intended": [
+      "Job",
+      40,
+      10
+    ],
+    "reason": "The label says Proverbs, but the target and scripture context are Job 40:10."
+  },
+  {
+    "claim": "ch2:L331",
+    "wrong": [
+      "Exodus",
+      20,
+      7
+    ],
+    "intended": [
+      "Exodus",
+      20,
+      8
+    ],
+    "reason": "The combined dagesh/rafe specimen is at 20:8;20:7 contains the sabbath opening instead. Raw and complete parsed strands were independently checked."
+  },
+  {
+    "claim": "ch3:L221",
+    "wrong": [
+      "Genesis",
+      6,
+      29
+    ],
+    "intended": [
+      "Genesis",
+      9,
+      29
+    ],
+    "reason": "Chapter9 and label29 use a chapter6 fragment; intended verse supports the boundary claim."
+  },
+  {
+    "claim": "ch3:L306",
+    "wrong": [
+      "Deuter",
+      33,
+      18
+    ],
+    "intended": [
+      "Deuter",
+      32,
+      18
+    ],
+    "reason": "The specimen תשי and small-yod annotation occur in 32:18."
+  },
+  {
+    "claim": "ch3:L563",
+    "wrong": [
+      "Numbers",
+      25,
+      10
+    ],
+    "intended": [
+      "Numbers",
+      25,
+      11
+    ],
+    "reason": "The eight-cell table row quotes פינחס, which occurs in 25:11."
+  },
+  {
+    "claim": "ch3:L707",
+    "wrong": [
+      "Genesis",
+      1,
+      10
+    ],
+    "intended": [
+      "Genesis",
+      2,
+      10
+    ],
+    "reason": "The quoted ונהר atom occurs in 2:10; its old transcription attribution is reviewed separately."
+  },
+  {
+    "claim": "ch2:L813",
+    "wrong": [
+      "Deuter",
+      26,
+      15
+    ],
+    "intended": [
+      "Deuter",
+      27,
+      15
+    ],
+    "reason": "The curses range is labelled26:15–26 and has an empty anchor; chapter26 ends at 19, while the quoted list begins27:15."
+  },
+  {
+    "claim": "ch2:L221",
+    "wrong": [
+      "Numbers",
+      20,
+      29
+    ],
+    "intended": [
+      "Numbers",
+      10,
+      29
+    ],
+    "reason": "Chapter20 page is paired with a chapter10 anchor and label; intended verse has selected legarmeh."
+  },
+  {
+    "claim": "ch2:L221",
+    "wrong": [
+      "Numbers",
+      20,
+      35
+    ],
+    "intended": [
+      "Numbers",
+      10,
+      35
+    ],
+    "reason": "Chapter20 page is paired with a chapter10 anchor and label; intended verse has selected legarmeh."
+  },
+  {
+    "claim": "ch2:L221",
+    "wrong": [
+      "2Samuel",
+      15,
+      2
+    ],
+    "intended": [
+      "2Samuel",
+      15,
+      30
+    ],
+    "reason": "Displayed label is15:30; intended verse has selected legarmeh."
+  },
+  {
+    "claim": "ch2:L221",
+    "wrong": [
+      "Song of Songs",
+      3,
+      3
+    ],
+    "intended": [
+      "Ruth",
+      3,
+      3
+    ],
+    "reason": "Entry under the Ruth heading links Song instead; Ruth 3:3 has selected legarmeh."
+  },
+  {
+    "claim": "ch2:L221",
+    "wrong": [
+      "Song of Songs",
+      3,
+      13
+    ],
+    "intended": [
+      "Ruth",
+      3,
+      13
+    ],
+    "reason": "Entry under Ruth links Song 3:13, but Song 3 has only 11 verses; Ruth 3:13 has selected legarmeh."
+  },
+  {
+    "claim": "ch5:L44",
+    "wrong": [
+      "Isaiah",
+      1,
+      9
+    ],
+    "intended": [
+      "Isaiah",
+      1,
+      12
+    ],
+    "reason": "The quoted מי־בקש phrase occurs in 1:12, not1:9. Selected raw/parsed forms confirm its meteg; the external Memre claim is unverified."
+  },
+  {
+    "claim": "ch4:L398",
+    "wrong": [
+      "Esther",
+      9,
+      3
+    ],
+    "intended": [
+      "Esther",
+      9,
+      2
+    ],
+    "reason": "The associated eight-cell table quotes לפני הם at 9:2; complete raw/parsed note supports the community contrast."
+  },
+  {
+    "claim": "appendices:L375",
+    "wrong": [
+      "Jeremiah",
+      31,
+      38
+    ],
+    "intended": [
+      "Jeremiah",
+      31,
+      37
+    ],
+    "reason": "The qere-only באים example occurs in 31:37; current structure and raw cache corroborate it."
+  },
+  {
+    "claim": "ch2:L681",
+    "wrong": [
+      "Psalms",
+      2,
+      26
+    ],
+    "intended": [
+      "Psalms",
+      118,
+      26
+    ],
+    "reason": "Page and displayed label say118:26, while the fragment says2:26. Intended raw/parsed context agrees with the quoted ברכנו כם atom."
+  },
+  {
+    "claim": "ch1:L258",
+    "wrong": [
+      "Job",
+      10,
+      9
+    ],
+    "intended": [
+      "Job",
+      9,
+      10
+    ],
+    "reason": "The prose reference reverses chapter/verse; the quoted word, two external paths and raw/parsed verse membership identify Job9:10. Historical source forms remain unverified."
+  }
+]

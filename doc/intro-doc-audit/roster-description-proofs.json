@@ -1,0 +1,64 @@
+[
+  {
+    "claim": "ch5:L710",
+    "item": 32,
+    "literal_specimen": "(א?=<שִׁ֥מֳעָֽה{{מ:מקף אפור}}תְפִלָּתִ֨י ׀> [{{קו תחתי|חטף קמץ}}] או <שִׁ֥מֲעָֽה{{מ:מקף אפור}}תְפִלָּתִ֨י ׀> בחטף קמץ)",
+    "note_id": "Psalms 39:13/2/0",
+    "intro_second_form": "שִׁ֥מֲעָֽה",
+    "note_second_form": "שִׁ֥מֲעָֽה",
+    "codepoints": [
+      {
+        "character": "ש",
+        "codepoint": "U+05E9",
+        "name": "HEBREW LETTER SHIN"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "ׁ",
+        "codepoint": "U+05C1",
+        "name": "HEBREW POINT SHIN DOT"
+      },
+      {
+        "character": "֥",
+        "codepoint": "U+05A5",
+        "name": "HEBREW ACCENT MERKHA"
+      },
+      {
+        "character": "מ",
+        "codepoint": "U+05DE",
+        "name": "HEBREW LETTER MEM"
+      },
+      {
+        "character": "ֲ",
+        "codepoint": "U+05B2",
+        "name": "HEBREW POINT HATAF PATAH"
+      },
+      {
+        "character": "ע",
+        "codepoint": "U+05E2",
+        "name": "HEBREW LETTER AYIN"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "ֽ",
+        "codepoint": "U+05BD",
+        "name": "HEBREW POINT METEG"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      }
+    ],
+    "independent_raw_note_proof": "codepoint-proofs.json / PS-39-13",
+    "result": "The second alternative forms agree after MAM-order comparison and encode HATAF PATAH. Introduction prose labels this second alternative hataf qamats; the raw/parsed note says hataf patah."
+  }
+]

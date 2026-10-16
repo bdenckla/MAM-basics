@@ -1,0 +1,660 @@
+[
+  {
+    "id": "JER-31-37-BEN-20261014",
+    "case": "jeremiah-accent",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_a32e0898f09c8191bc489d5b907129fd",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "ירמיהו לא/טעמים",
+      "page_id": 237690,
+      "requested_title": "ירמיהו_לא/טעמים",
+      "revision_id": 3088451,
+      "sha256": "6506efcdb68c809c9c33529e1e216add0993666fc48b17fec42eed632ea46db5"
+    },
+    "introduction": {
+      "claim": "ch5:L458",
+      "revision_id": 3087740,
+      "quote": "יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה"
+    },
+    "current": {
+      "note": "Jeremiah 31:37/2/0",
+      "quote": "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה"
+    },
+    "proposed_quotation": "הִנֵּ֛ה יָמִ֥ים [֯] נְאֻם־יְהוָ֑ה",
+    "changes": [
+      {
+        "before": "נְאֻם־יְהֹוָֽה",
+        "after": "נְאֻם־יְהֹוָ֑ה",
+        "purpose": "Replace U+05BD HEBREW POINT METEG with U+0591 HEBREW ACCENT ETNAHTA; Ben's correctness adjudication."
+      },
+      {
+        "before": "נְאֻם־יְהֹוָ֑ה",
+        "after": "נְאֻם־יְהוָ֑ה",
+        "purpose": "Remove U+05B9 HEBREW POINT HOLAM, as Ben requests to match the manuscript and Introduction."
+      },
+      {
+        "before": "[]",
+        "after": "[֯]",
+        "purpose": "Optionally include U+05AF HEBREW MARK MASORA CIRCLE in the gap; Ben expressly says its omission is not a correctness issue."
+      }
+    ],
+    "research_note": "jeremiah-31-37-adjudication.md",
+    "local_screenshot": {
+      "path": "C:\\Users\\BenDe\\OneDrive\\Pictures\\Screenshots\\Screenshot 2026-10-14 114737.png",
+      "sha256": "363034f1ad10d2cc0c5f4e25079f0c0f6e805bd7eb465a4c6e3fd32b17baba81",
+      "bytes": 72533,
+      "disposition": "inspected locally; not copied into the repository, uploaded or embedded"
+    },
+    "ben_contextual_facts": [
+      {
+        "fact": 1,
+        "observation": "The etnaḥta is broken; Ben judges the ink shape originally non-contiguous, rather than broken through aging."
+      },
+      {
+        "fact": 2,
+        "observation": "This is the famous torn leaf of Aleppo, in its extant section."
+      },
+      {
+        "fact": 3,
+        "observation": "Ben attributes the recent restoration of the needed נְאֻם־ to Avi."
+      }
+    ],
+    "independent_checks": {
+      "screenshot": "The supplied crop visibly shows separated lower accent strokes at the disputed location and no visible ḥolam dot over the divine name. The inspection does not independently determine the cause of the separated strokes or the crop's leaf provenance.",
+      "cache_history": [
+        {
+          "commit": "3c58d0871210fc01298979f286e19bac9d11d58d",
+          "path": "in/mam-ws/C2-Jeremiah.json",
+          "verse37_aleppo_clause": "הִנֵּ֛ה יָמִ֥ים [] יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+          "verse36_ending": "נְאֻם־יְהֹוָֽה׃"
+        },
+        {
+          "commit": "647f5e225f69782194137e74627cfaced4a7d2a2",
+          "path": "in/mam-ws/C2-Jeremiah.json",
+          "verse37_aleppo_clause": "הִנֵּ֛ה יָמִ֥ים [] נְאֻם־יְהֹוָֽה (חסר ניקוד ברווח המיועד ל\"קרי ולא כתיב\")",
+          "verse36_ending": "נְאֻם־יְהֹוָֽה׃"
+        }
+      ],
+      "restoration": "The Aleppo clause changed only by restoration of נְאֻם־ between these two cached snapshots. U+05BD and ḥolam were already present in the older quotation. The completion report corroborates the restoration but does not independently identify the Wikisource editor as Avi.",
+      "cached_issue_completion": {
+        "repository": "bdenckla/MAM-basics",
+        "issue": 304,
+        "state": "CLOSED",
+        "author_login": "skadish1",
+        "created_at": "2026-10-13T04:19:55Z",
+        "comment_url": "https://github.com/bdenckla/MAM-basics/issues/304#issuecomment-6138147770",
+        "body": "[Done](https://he.wikisource.org/w/index.php?title=%D7%99%D7%A8%D7%9E%D7%99%D7%94%D7%95_%D7%9C%D7%90/%D7%98%D7%A2%D7%9E%D7%99%D7%9D&curid=237690&diff=3088451&oldid=2988015).",
+        "linked_old_revision": 2988015,
+        "linked_new_revision": 3088451
+      }
+    },
+    "hypothesis": {
+      "author": "Ben",
+      "status": "not-established-history",
+      "description": "The post-gap נְאֻם־יְהֹוָֽה may have been copied separately from verse 31:36, omitting sof pasuq, rather than copying the whole phrase beginning הִנֵּ֛ה יָמִ֥ים. The preceding verse does have that ending, but matching text does not establish a copying event; the wrong mark predates the recent phrase restoration."
+    },
+    "scope": "Research/report proposal only. No source cache, scripture dataset, edition, Wikisource page, issue/comment, main integration or deployment changed."
+  },
+  {
+    "id": "NUM-9-7-BEN-20261014",
+    "case": "numbers-yod-label",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_ed2fbcd60d008191a26921b22a3c08d9",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "במדבר ט/טעמים",
+      "page_id": 236442,
+      "requested_title": "במדבר_ט/טעמים",
+      "revision_id": 2987712,
+      "sha256": "5b582ecf84038b11b879c1c41c24f7b693c7013e617424d0ec5e4add0fd4a6f5"
+    },
+    "current": {
+      "note": "Numbers 9:7/2/0",
+      "quote": "(כתיב מלא וי\"ו)"
+    },
+    "proposed_quotation": "(כתיב מלא יו\"ד)",
+    "changes": [
+      {
+        "before": "וי\"ו",
+        "after": "יו\"ד",
+        "purpose": "Ben confirms that the full-spelling description should name yod rather than vav; preserve the stored quotation mark and parentheses."
+      }
+    ],
+    "current_label": "Current cached doc-note wording",
+    "proposed_label": "Ben’s confirmed corrected wording — not applied",
+    "current_explanation": "(Spelling with vav included.)",
+    "proposed_explanation": "(Spelling with yod included.)",
+    "research_note": "numbers-9-7-adjudication.md",
+    "independent_check": "The selected MAM word contains yod and no vav. The Introduction and doc-note's Leningrad clause describe the same presence/absence of yod. The existing spelling-prose proof retains the faithful raw-note comparison.",
+    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+  },
+  {
+    "id": "DEUT-32-34-BEN-20261014",
+    "case": "deuteronomy-vav-label",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_04aee01833c88191be854758be2400a8",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "דברים לב/טעמים",
+      "page_id": 236679,
+      "requested_title": "דברים_לב/טעמים",
+      "revision_id": 3079372,
+      "sha256": "3eb6babc521ea19f41b83594c3c8f2b2dcc31d6d6c8f6b4ce8d9b50fd426f58f"
+    },
+    "current": {
+      "note": "Deuter 32:34/2/0",
+      "quote": "(כתיב מלא יו\"ד)"
+    },
+    "proposed_quotation": "(כתיב מלא וי\"ו)",
+    "changes": [
+      {
+        "before": "יו\"ד",
+        "after": "וי\"ו",
+        "purpose": "Ben confirms that the full-spelling description should name vav rather than yod; preserve the stored quotation mark and parentheses. This is inverse to Numbers 9:7."
+      }
+    ],
+    "current_label": "Current cached doc-note wording",
+    "proposed_label": "Ben’s confirmed corrected wording — not applied",
+    "current_explanation": "(Spelling with yod included.)",
+    "proposed_explanation": "(Spelling with vav included.)",
+    "research_note": "deuteronomy-32-34-adjudication.md",
+    "inverse_of": "NUM-9-7-BEN-20261014",
+    "independent_check": "The faithful raw chapter and parsed note both contain the current wording. The selected MAM word contains vav and no yod; the Introduction and the note's Leningrad clause describe the presence/absence of vav. The existing spelling-prose proof retains the raw-note comparison.",
+    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+  },
+  {
+    "id": "DEUT-6-21-BEN-20261014",
+    "case": "deuteronomy-leningrad-spelling",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_4e66eddc6bf48191ba19bb417ae3ae7f",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "opening-list-correction-adjudicated-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "chapter_revision": {
+      "resolved_title": "דברים ו/טעמים",
+      "page_id": 236575,
+      "requested_title": "דברים_ו/טעמים",
+      "revision_id": 2987745,
+      "sha256": "5ba16e01ad47e080b992f10770147fc059c7f7dbf46aa66bfeab7602da8eb23f"
+    },
+    "current": {
+      "note": "Deuter 6:21/2/0",
+      "quote": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)"
+    },
+    "proposed_quotation": "=ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)",
+    "changes": [
+      {
+        "before": "=ל,ל1",
+        "after": "=ל1",
+        "purpose": "Remove only bare ל and its following list comma at the opening. Preserve ל1, מסורת-ל and every other character."
+      }
+    ],
+    "current_full_note": "=ל,ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
+    "proposed_full_note": "=ל1,ש,ש1,ק3[אחרי תיקון],ו,ל3,ל9,פטרבורג-EVR-II-B-8[טקסט בין השורות] ומסורת-ל וטברניות ורמ\"ה (כתיב חסר וי\"ו)\nל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)\nברויאר ציין ספק לגבי הכתיב בכתי\"ש ובכתי\"ל. אבל מעיון בכתבי־היד בהגדלה רואים באופן ברור: כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.\nקורן, ברויאר, סימנים, מכון ממרא",
+    "current_label": "Current opening clause — includes Leningrad",
+    "proposed_label": "Ben’s proposed opening clause — Leningrad removed; Firkovich B17 retained",
+    "current_explanation": "The original list includes bare ל (Leningrad) before ל1 (Firkovich B17).",
+    "proposed_explanation": "Only the first list entry and its comma are removed; Firkovich B17 and the Leningrad Masorah reference remain.",
+    "research_note": "deuteronomy-6-21-adjudication.md",
+    "internal_evidence": [
+      {
+        "quote": "ל!=וַיּוֹצִיאֵ֧נוּ (כתיב מלא וי\"ו)",
+        "meaning": "The explicit Leningrad alternative has plene vav."
+      },
+      {
+        "quote": "כתי\"ש=חסר וי\"ו, כתי\"ל=מלא וי\"ו.",
+        "meaning": "The concluding statement again assigns plene vav to Leningrad, in contrast to Sassoon 507."
+      }
+    ],
+    "manuscript_assessment": {
+      "attribution": "Ben",
+      "reading": "pretty clearly plene-vav",
+      "basis": "Ben independently inspected the manuscript, beyond the internal consistency argument.",
+      "condition": "Not in great shape at this location.",
+      "cause": "Aging damage, erasure, or both remain uncertain."
+    },
+    "local_screenshot": {
+      "path": "C:\\Users\\BenDe\\OneDrive\\Pictures\\Screenshots\\Screenshot 2026-10-14 143534.png",
+      "sha256": "745f14bd5cca6608dca902bb3d95ead6054ab1d2069db4792beb443fbc127ae6",
+      "bytes": 131388,
+      "disposition": "opened locally; not copied into the repository, uploaded or embedded"
+    },
+    "assistant_observation": "The supplied crop has a visibly irregular/obscured area across the word. This inspection does not independently adjudicate the reading or determine the cause of that appearance.",
+    "scope": "Research/report proposal only; the original full note and translation remain visible. No source cache, dataset, Wikisource, issue/comment or main change."
+  },
+  {
+    "id": "DEUT-HATAF-COUNT-BEN-20261014",
+    "case": "deuteronomy-hataf-count",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "transcript_evidence": "Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be"
+    },
+    "status": "word-count-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087744,
+    "current": {
+      "claim": "ch3:L1134",
+      "quote": "(9 פריטים)"
+    },
+    "proposed_quotation": "(12 פריטים)",
+    "changes": [
+      {
+        "before": "(9 פריטים)",
+        "after": "(12 פריטים)",
+        "purpose": "Count the 12 listed words, including both words at 32:10; Ben selects words as the item unit."
+      }
+    ],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Ben’s corrected word count — not applied",
+    "current_explanation": "(9 items.)",
+    "proposed_explanation": "(12 items.)",
+    "research_note": "deuter-hataf-scope.md",
+    "independent_check": "955/955 verses, 365/365 notes, all seven ketiv/qere templates and an independent MAM-simple body pass. All 12 definite scoped note words occur in the list; one uncertain Leningrad 3:22 candidate remains.",
+    "scope": "Research/report proposal only."
+  },
+  {
+    "id": "LAM-1-6-PROPOSAL-20261014",
+    "case": "lamentations-one-two",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "time": "15:03 UTC",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "kind": "substantive-approval",
+      "transcript_evidence": "Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f"
+    },
+    "status": "word-count-correction-approved-by-Ben; proposed-source-correction-not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087893,
+    "current": {
+      "claim": "ch2:L102",
+      "quote": "(\"מִן בַּת־\" כתיב בתיבה אחת, \"מִבַּת־\" קרי בשתי תיבות)."
+    },
+    "proposed_quotation": "(\"מִן בַּת־\" כתיב בשתי תיבות, \"מִבַּת־\" קרי בתיבה אחת).",
+    "changes": [
+      {
+        "before": "(\"מִן בַּת־\" כתיב בתיבה אחת, \"מִבַּת־\" קרי בשתי תיבות).",
+        "after": "(\"מִן בַּת־\" כתיב בשתי תיבות, \"מִבַּת־\" קרי בתיבה אחת).",
+        "purpose": "Preserve the Introduction’s ketiv/qere assignments and pointing, changing only the one/two word counts."
+      }
+    ],
+    "current_label": "Current Introduction example",
+    "proposed_label": "Approved by Ben — corrected Introduction example, not applied",
+    "current_explanation": "(מִן בַּת־: ketiv in one word; מִבַּת־: qere in two words.)",
+    "proposed_explanation": "(מִן בַּת־: ketiv in two words; מִבַּת־: qere in one word.)",
+    "research_note": "lamentations-1-6-proposal.md",
+    "research_label": "Ben’s approval, source evidence and exact correction",
+    "independent_check": "Introduction chapter 2 line 102 names the correct forms but reverses their counts. The cached raw verse and MAM’s special ketiv/qere template agree: ketiv מן בת, qere מִבַּת־, type כתיב תרתין מילין וקרי מילה חדה. No doc-note exists at this verse.",
+    "scope": "Research/report proposal only. Ben approves resolving the contradiction within the Introduction with the existing proposed wording.",
+    "proposal_history": [
+      {
+        "authority": {
+          "person": "Ben",
+          "date": "2026-10-14",
+          "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+          "kind": "independently-verified-proposal",
+          "transcript_evidence": "Sentinel_270f66758edc8191b846ed342c368317"
+        },
+        "status": "independently-verified-word-count-correction; proposed-source-correction-not-applied"
+      }
+    ],
+    "discrepancy_type": "internal-Introduction-contradiction",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied"
+  },
+  {
+    "id": "SONG-1-6-BEN-20261014",
+    "case": "ALL-HATAF-SONG-1-6",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_5cc0b84ada60819184ea0ba0de313702",
+      "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087740,
+    "chapter_revision": {
+      "resolved_title": "שיר השירים א/טעמים",
+      "page_id": 239145,
+      "requested_title": "שיר השירים_א/טעמים",
+      "revision_id": 2988376,
+      "sha256": "cd7e29b159a32af9c3f847b196e68274d33115b36ac61e43ffc9ffad2d0fa741"
+    },
+    "current": {
+      "claim": "ch5:L716",
+      "quote": "(6 פריטים): "
+    },
+    "proposed_quotation": "(7 פריטים): [[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי); ",
+    "changes": [
+      {
+        "before": "(6 פריטים): ",
+        "after": "(7 פריטים): [[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי); ",
+        "purpose": "Add Song of Songs 1:6 as the first list entry and count the seven words. Use the list’s ordinary ל= source-form convention, while retaining != in the doc-note."
+      }
+    ],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Approved by Ben for proposal to Avi — heading and new first entry",
+    "current_explanation": "(6 items.)",
+    "proposed_explanation": "(7 items): Song of Songs 1:6, Leningrad שֶׁשֱּׁזָפַ֖תְנִי.",
+    "research_note": "all-books-hataf.md",
+    "research_label": "Exact proposal, approval and source evidence",
+    "proposed_entry": "[[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי);",
+    "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשיר השירים}}'''[[מקרא על פי המסורה/כתובים#מגילת שיר השירים|מגילת שיר השירים]]''' (6 פריטים): [[שיר השירים ב/טעמים#ב ז|שיר השירים ב,ז]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ או  וְֽאִם־תְּעֽוֹרֲר֛וּ);{{הערה|ראו אותו פריט ב[[#מגילת שיר השירים עד \"בְּנוֹת צִיּוֹן\" (ג,יא)|רשימת הניקוד והטעמים]].}} [[שיר השירים ג/טעמים#ג ב|ג,ב]] (א=וַאֲסוֹבֲבָ֣ה); [[שיר השירים ג/טעמים#ג ג|ג,ג]] (א=הַסֹּבֲבִ֖ים); [[שיר השירים ג/טעמים#ג ה|ג,ה]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ); [[שיר השירים ג/טעמים#ג ו|ג,ו]] (א=כְּתִֽימֲר֖וֹת); [[שיר השירים ח/טעמים#ח ב|ח,ב]] (ל=אֶנְהָֽגֲךָ֗).{{הערה|וכמו כן לפי הסכמת בן־אשר ובן־נפתלי בספר החילופים.}}",
+    "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשיר השירים}}'''[[מקרא על פי המסורה/כתובים#מגילת שיר השירים|מגילת שיר השירים]]''' (7 פריטים): [[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי); [[שיר השירים ב/טעמים#ב ז|שיר השירים ב,ז]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ או  וְֽאִם־תְּעֽוֹרֲר֛וּ);{{הערה|ראו אותו פריט ב[[#מגילת שיר השירים עד \"בְּנוֹת צִיּוֹן\" (ג,יא)|רשימת הניקוד והטעמים]].}} [[שיר השירים ג/טעמים#ג ב|ג,ב]] (א=וַאֲסוֹבֲבָ֣ה); [[שיר השירים ג/טעמים#ג ג|ג,ג]] (א=הַסֹּבֲבִ֖ים); [[שיר השירים ג/טעמים#ג ה|ג,ה]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ); [[שיר השירים ג/טעמים#ג ו|ג,ו]] (א=כְּתִֽימֲר֖וֹת); [[שיר השירים ח/טעמים#ח ב|ח,ב]] (ל=אֶנְהָֽגֲךָ֗).{{הערה|וכמו כן לפי הסכמת בן־אשר ובן־נפתלי בספר החילופים.}}",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "proposed_reviewer": "Avi",
+    "theme": "non-guttural ḥataf list completeness",
+    "syntax_explanation": "The current Song list already uses ל= at8:2. The doc-note’s != means surprisingly equals; the proposed list entry uses ל= to state the manuscript form."
+  },
+  {
+    "id": "SAM-8-10-BEN-20261014",
+    "case": "ALL-HATAF-SAM-8-10",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-14",
+      "transcript_evidence": "Sentinel_d7bf7c8506fc819198b58b2098c0c86e",
+      "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087740,
+    "chapter_revision": {
+      "resolved_title": "שמואל ב ח/טעמים",
+      "page_id": 237027,
+      "requested_title": "שמואל ב_ח/טעמים",
+      "revision_id": 3010613,
+      "sha256": "2c0a9ffcad0a31f673cc48d895a7d2c3d0d7f82146dd1e63a0c8ba720400245a"
+    },
+    "current": {
+      "claim": "ch5:L698",
+      "quote": "(30 פריטים)"
+    },
+    "proposed_quotation": "(31 פריטים): [[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ); ",
+    "changes": [
+      {
+        "before": "(30 פריטים)",
+        "after": "(31 פריטים): [[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ); ",
+        "purpose": "Add the Aleppo resh ḥataf pataḥ word at 2 Samuel 8:10 and count31 word items. The complete proposed list inserts it after 2 Samuel 1:9."
+      }
+    ],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Approved by Ben for proposal to Avi — heading and added entry",
+    "current_explanation": "(30 items.)",
+    "proposed_explanation": "(31 items): 2 Samuel 8:10, Aleppo וּֽלְבָרֲכ֗וֹ.",
+    "research_note": "all-books-hataf.md",
+    "research_label": "Exact proposal, approval and source evidence",
+    "proposed_entry": "[[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ);",
+    "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשמואל}}'''[[מקרא על פי המסורה/נביאים#ספר שמואל|ספר שמואל]]''' (30 פריטים): [[שמואל א ב/טעמים#ב כה|שמ\"א ב,כה]] (א=וּפִֽלֲל֣וֹ); [[שמואל א ג/טעמים#ג יג|שמ\"א ג,יג]] (א=כִּֽי־מְקַלֲלִ֤ים); [[שמואל א ד/טעמים#ד יז|שמ\"א ד,יז]] (א=הַֽמֲבַשֵּׂ֜ר); [[שמואל א ז/טעמים#ז ג|שמ\"א ז,ג]] (א=מִתּוֹכֲכֶ֖ם); [[שמואל א ט/טעמים#ט ו|שמ\"א ט,ו]] (א=נֵ֣לֲכָה); [[שמואל א יג/טעמים#יג י|שמ\"א יג,י]] (א=לְבָרֲכֽוֹ); [[שמואל א יז/טעמים#יז נא|שמ\"א יז,נא]] (א=וַיְמֹ֣תֲתֵ֔הוּ); [[שמואל א יז/טעמים#יז נב|שמ\"א יז,נב]] (א=חַֽלֲלֵ֤י); [[שמואל א יח/טעמים#יח כג|שמ\"א יח,כג]] (א=הַֽנֲקַלָּ֤ה); [[שמואל א כד/טעמים#כד י|שמ\"א כד,י]] (א=לַהֲרָגֲךָ֖); [[שמואל א כה/טעמים#כה ז|שמ\"א כה,ז]] (א=גֹזֲזִ֖ים); [[שמואל א כה/טעמים#כה יא|שמ\"א כה,יא]] (א=לְגֹזֲזָ֑י); [[שמואל א כה/טעמים#כה כו|שמ\"א כה,כו]] (א=וְהַֽמֲבַקְשִׁ֥ים); [[שמואל א כו/טעמים#כו יא|שמ\"א כו,יא]] (א=וְנֵלֲכָה־לָּֽנוּ); [[שמואל א ל/טעמים#ל טז|שמ\"א ל,טז]] (א=וְחֹ֣גֲגִ֔ים); [[שמואל ב א/טעמים#א ט|שמ\"ב א,ט]] (א=וּמֹ֣תֲתֵ֔נִי); [[שמואל ב י/טעמים#י ג|שמ\"ב י,ג]] (א=הַֽמֲכַבֵּ֨ד); [[שמואל ב יג/טעמים#יג כג|שמ\"ב יג,כג]] (א=גֹֽזֲזִים֙); [[שמואל ב יג/טעמים#יג כה|שמ\"ב יג,כה]] (א=וַֽיְבָרֲכֵֽהוּ); [[שמואל ב יד/טעמים#יד י|שמ\"ב יד,י]] (א=הַֽמֲדַבֵּ֤ר); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טו,ז]] (א=אֵ֣לֲכָה); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טז,ז]] (א=בְּקַֽלֲל֑וֹ); [[שמואל ב יט/טעמים#יט ו|שמ\"ב יט,ו]] (א=הַֽמֲמַלְּטִ֤ים); [[שמואל ב יט/טעמים#יט מ|שמ\"ב יט,מ]] (א=וַיְבָ֣רֲכֵ֔הוּ); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=הַֽמֲסִלָּ֑ה); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=מִן־הַֽמֲסִלָּ֤ה); [[שמואל ב כ/טעמים#כ יג|שמ\"ב כ,יג]] (א=מִן־הַֽמֲסִלָּ֑ה);{{הערה|פריט זה חסר ברשימת ברויאר בכתר ירושלים.}} [[שמואל ב כ/טעמים#כ טו|שמ\"ב כ,טו]] (א=סֹֽלֲלָה֙); [[שמואל ב כא/טעמים#כא ג|שמ\"ב כא,ג]] (א=וּבָרֲכ֖וּ); [[שמואל ב כב/טעמים#כב יב|שמ\"ב כב,יב]] (א=חַֽשֲׁרַת־מַ֖יִם).",
+    "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשמואל}}'''[[מקרא על פי המסורה/נביאים#ספר שמואל|ספר שמואל]]''' (31 פריטים): [[שמואל א ב/טעמים#ב כה|שמ\"א ב,כה]] (א=וּפִֽלֲל֣וֹ); [[שמואל א ג/טעמים#ג יג|שמ\"א ג,יג]] (א=כִּֽי־מְקַלֲלִ֤ים); [[שמואל א ד/טעמים#ד יז|שמ\"א ד,יז]] (א=הַֽמֲבַשֵּׂ֜ר); [[שמואל א ז/טעמים#ז ג|שמ\"א ז,ג]] (א=מִתּוֹכֲכֶ֖ם); [[שמואל א ט/טעמים#ט ו|שמ\"א ט,ו]] (א=נֵ֣לֲכָה); [[שמואל א יג/טעמים#יג י|שמ\"א יג,י]] (א=לְבָרֲכֽוֹ); [[שמואל א יז/טעמים#יז נא|שמ\"א יז,נא]] (א=וַיְמֹ֣תֲתֵ֔הוּ); [[שמואל א יז/טעמים#יז נב|שמ\"א יז,נב]] (א=חַֽלֲלֵ֤י); [[שמואל א יח/טעמים#יח כג|שמ\"א יח,כג]] (א=הַֽנֲקַלָּ֤ה); [[שמואל א כד/טעמים#כד י|שמ\"א כד,י]] (א=לַהֲרָגֲךָ֖); [[שמואל א כה/טעמים#כה ז|שמ\"א כה,ז]] (א=גֹזֲזִ֖ים); [[שמואל א כה/טעמים#כה יא|שמ\"א כה,יא]] (א=לְגֹזֲזָ֑י); [[שמואל א כה/טעמים#כה כו|שמ\"א כה,כו]] (א=וְהַֽמֲבַקְשִׁ֥ים); [[שמואל א כו/טעמים#כו יא|שמ\"א כו,יא]] (א=וְנֵלֲכָה־לָּֽנוּ); [[שמואל א ל/טעמים#ל טז|שמ\"א ל,טז]] (א=וְחֹ֣גֲגִ֔ים); [[שמואל ב א/טעמים#א ט|שמ\"ב א,ט]] (א=וּמֹ֣תֲתֵ֔נִי); [[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ); [[שמואל ב י/טעמים#י ג|שמ\"ב י,ג]] (א=הַֽמֲכַבֵּ֨ד); [[שמואל ב יג/טעמים#יג כג|שמ\"ב יג,כג]] (א=גֹֽזֲזִים֙); [[שמואל ב יג/טעמים#יג כה|שמ\"ב יג,כה]] (א=וַֽיְבָרֲכֵֽהוּ); [[שמואל ב יד/טעמים#יד י|שמ\"ב יד,י]] (א=הַֽמֲדַבֵּ֤ר); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טו,ז]] (א=אֵ֣לֲכָה); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טז,ז]] (א=בְּקַֽלֲל֑וֹ); [[שמואל ב יט/טעמים#יט ו|שמ\"ב יט,ו]] (א=הַֽמֲמַלְּטִ֤ים); [[שמואל ב יט/טעמים#יט מ|שמ\"ב יט,מ]] (א=וַיְבָ֣רֲכֵ֔הוּ); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=הַֽמֲסִלָּ֑ה); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=מִן־הַֽמֲסִלָּ֤ה); [[שמואל ב כ/טעמים#כ יג|שמ\"ב כ,יג]] (א=מִן־הַֽמֲסִלָּ֑ה);{{הערה|פריט זה חסר ברשימת ברויאר בכתר ירושלים.}} [[שמואל ב כ/טעמים#כ טו|שמ\"ב כ,טו]] (א=סֹֽלֲלָה֙); [[שמואל ב כא/טעמים#כא ג|שמ\"ב כא,ג]] (א=וּבָרֲכ֖וּ); [[שמואל ב כב/טעמים#כב יב|שמ\"ב כב,יב]] (א=חַֽשֲׁרַת־מַ֖יִם).",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "proposed_reviewer": "Avi",
+    "theme": "non-guttural ḥataf list completeness"
+  },
+  {
+    "id": "NUM-10-9-BEN-20261015",
+    "case": "ALL-HATAF-NUM-10-9",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "transcript_evidence": "Sentinel_d946607c16f08191959bbfe2d66bf9f4",
+      "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "time": "08:02 UTC"
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087744,
+    "chapter_revision": {
+      "resolved_title": "במדבר י/טעמים",
+      "page_id": 236446,
+      "requested_title": "במדבר_י/טעמים",
+      "revision_id": 2990906,
+      "sha256": "a8803dd7a388c1e7a6737d41214fcb4471d1c0d0a5245649c0d05e4bb53ef912"
+    },
+    "current": {
+      "claim": "ch3:L1132",
+      "quote": "(18 פריטים)"
+    },
+    "proposed_quotation": "(19 פריטים): [[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם); ",
+    "changes": [
+      {
+        "before": "(18 פריטים)",
+        "after": "(19 פריטים): [[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם); ",
+        "purpose": "Add the Leningrad vav ḥataf pataḥ word at Numbers 10:9 and count 19 items. The exact insertion is retained in proposed_full_list."
+      }
+    ],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Approved by Ben for proposal to Avi — heading and added entry",
+    "current_explanation": "(18 items.)",
+    "proposed_explanation": "(19 items): Numbers 10:9, Leningrad וֲנִזְכַּרְתֶּ֗ם.",
+    "research_note": "all-books-hataf.md",
+    "research_label": "Exact proposal, approval and source evidence",
+    "proposed_entry": "[[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם);",
+    "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבמדבר}}'''[[מקרא על פי המסורה/תורה#ספר במדבר|ספר במדבר]]''' (18 פריטים): [[במדבר ג/טעמים#ג כז|ג,כז]] (א[ס]=הַקֳּהָתִֽי [{{קו תחתי|חטף קמץ}}]); [[במדבר ד/טעמים#ד ז|ד,ז]] (א[ס]=אֶת־הַקֳּעָרֹ֤ת [{{קו תחתי|חטף קמץ}}]); [[במדבר ה/טעמים#ה יח|ה,יח]] (ל=הַמְאָֽרֲרִֽים); [[במדבר ה/טעמים#ה יט|ה,יט]] (ל=הַֽמְאָרֲרִ֖ים); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַמְאָֽרֲרִ֑ים [1]); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַֽמְאָרֲרִ֖ים [2]); [[במדבר ה/טעמים#ה כז|ה,כז]] (ל=הַמְאָֽרֲרִים֙); [[במדבר ו/טעמים#ו כג|ו,כג]] (ל=תְבָרֲכ֖וּ); [[במדבר ו/טעמים#ו כז|ו,כז]] (ל=אֲבָרֲכֵֽם); [[במדבר טז/טעמים#טז לב|טז,לב]] (ל=כׇּל־הָרֲכֽוּשׁ); [[במדבר יח/טעמים#יח י|יח,י]] (ל=תֹּאכֲלֶ֑נּוּ); [[במדבר יח/טעמים#יח יג|יח,יג]] (ל=יֹאכֲלֶֽנּוּ); [[במדבר כג/טעמים#כג יח|כג,יח]] (ל=וּֽשֲׁמָ֔ע); [[במדבר כג/טעמים#כג כה|כג,כה]] (ל=תְבָרֲכֶֽנּוּ); [[במדבר כד/טעמים#כד ט|כד,ט]] (ל=מְבָרֲכֶ֣יךָ); [[במדבר כה/טעמים#כה יח|כה,יח]] (א[ס]=כִּ֣י צֹרֲרִ֥ים); [[במדבר לב/טעמים#לב לה|לב,לה]] (ל=וְיָגְבֳּהָֽה [{{קו תחתי|חטף קמץ}}]); [[במדבר לג/טעמים#לג נה|לג,נה]] (ל=וְצָרֲר֣וּ).",
+    "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבמדבר}}'''[[מקרא על פי המסורה/תורה#ספר במדבר|ספר במדבר]]''' (19 פריטים): [[במדבר ג/טעמים#ג כז|ג,כז]] (א[ס]=הַקֳּהָתִֽי [{{קו תחתי|חטף קמץ}}]); [[במדבר ד/טעמים#ד ז|ד,ז]] (א[ס]=אֶת־הַקֳּעָרֹ֤ת [{{קו תחתי|חטף קמץ}}]); [[במדבר ה/טעמים#ה יח|ה,יח]] (ל=הַמְאָֽרֲרִֽים); [[במדבר ה/טעמים#ה יט|ה,יט]] (ל=הַֽמְאָרֲרִ֖ים); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַמְאָֽרֲרִ֑ים [1]); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַֽמְאָרֲרִ֖ים [2]); [[במדבר ה/טעמים#ה כז|ה,כז]] (ל=הַמְאָֽרֲרִים֙); [[במדבר ו/טעמים#ו כג|ו,כג]] (ל=תְבָרֲכ֖וּ); [[במדבר ו/טעמים#ו כז|ו,כז]] (ל=אֲבָרֲכֵֽם); [[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם); [[במדבר טז/טעמים#טז לב|טז,לב]] (ל=כׇּל־הָרֲכֽוּשׁ); [[במדבר יח/טעמים#יח י|יח,י]] (ל=תֹּאכֲלֶ֑נּוּ); [[במדבר יח/טעמים#יח יג|יח,יג]] (ל=יֹאכֲלֶֽנּוּ); [[במדבר כג/טעמים#כג יח|כג,יח]] (ל=וּֽשֲׁמָ֔ע); [[במדבר כג/טעמים#כג כה|כג,כה]] (ל=תְבָרֲכֶֽנּוּ); [[במדבר כד/טעמים#כד ט|כד,ט]] (ל=מְבָרֲכֶ֣יךָ); [[במדבר כה/טעמים#כה יח|כה,יח]] (א[ס]=כִּ֣י צֹרֲרִ֥ים); [[במדבר לב/טעמים#לב לה|לב,לה]] (ל=וְיָגְבֳּהָֽה [{{קו תחתי|חטף קמץ}}]); [[במדבר לג/טעמים#לג נה|לג,נה]] (ל=וְצָרֲר֣וּ).",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "proposed_reviewer": "Avi",
+    "theme": "non-guttural ḥataf list completeness",
+    "insertion_validation": {
+      "before": [
+        "Numbers",
+        6,
+        27
+      ],
+      "inserted": [
+        "Numbers",
+        10,
+        9
+      ],
+      "after": [
+        "Numbers",
+        16,
+        32
+      ],
+      "current_items": 18,
+      "proposed_items": 19
+    },
+    "syntax_explanation": "The doc-note’s != means surprisingly equals. The proposed list entry uses ל= to state the manuscript form.",
+    "phonetic_question": {
+      "id": "NUM-10-9-BEN-PHONETICS-20261015",
+      "case": "ALL-HATAF-NUM-10-9",
+      "note": "Numbers 10:9/2/1",
+      "word": "וֲנִזְכַּרְתֶּ֗ם",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-15",
+        "time": "08:02 UTC",
+        "transcript_evidence": "Sentinel_d946607c16f08191959bbfe2d66bf9f4"
+      },
+      "status": "unresolved-phonetic-question; list-addition-approved",
+      "explanation": "Ben understands an initial sheva to be vocal already. He asks whether this vav ḥataf specifies pataḥ vowel quality, whether pataḥ quality is the default, and whether the following nun’s ḥiriq changes that default. He remains uncertain.",
+      "scope": "This records Ben’s question, not a settled phonetic analysis. His approval of the list addition does not resolve it."
+    },
+    "proposal_form_source": {
+      "note": "Numbers 10:9/2/1",
+      "text": "וֲנִזְכַּרְתֶּ֗ם",
+      "construction": "Lookup from the retained doc-note form; MAM mark order verified without altering source captures."
+    }
+  },
+  {
+    "id": "GEN-30-27-BEN-20261015",
+    "case": "ALL-HATAF-GEN-30-27",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "transcript_evidence": "Sentinel_3565f381ef048191a87658483a12f713",
+      "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087744,
+    "chapter_revision": {
+      "resolved_title": "בראשית ל/טעמים",
+      "page_id": 236056,
+      "requested_title": "בראשית_ל/טעמים",
+      "revision_id": 3017397,
+      "sha256": "e1ebe4dc7f3ce3d6f15b9a5cc742a518ca0fee3e65b40065bbee924a239d5991"
+    },
+    "current": {
+      "claim": "ch3:L1126",
+      "quote": "(33 פריטים)"
+    },
+    "proposed_quotation": "(34 פריטים): [[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי); ",
+    "changes": [
+      {
+        "before": "(33 פריטים)",
+        "after": "(34 פריטים): [[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי); ",
+        "purpose": "Add the Leningrad resh ḥataf pataḥ word at Genesis 30:27 and count 34 items. The exact insertion is retained in proposed_full_list."
+      }
+    ],
+    "current_label": "Current Introduction heading",
+    "proposed_label": "Approved by Ben for proposal to Avi — heading and added entry",
+    "current_explanation": "(33 items.)",
+    "proposed_explanation": "(34 items): Genesis 30:27, Leningrad וַיְבָרֲכֵ֥נִי.",
+    "research_note": "all-books-hataf.md",
+    "research_label": "Exact proposal, approval and source evidence",
+    "proposed_entry": "[[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי);",
+    "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבראשית}}'''[[מקרא על פי המסורה/תורה#ספר בראשית|ספר בראשית]]''' (33 פריטים): [[בראשית א/טעמים#א יח|א,יח]] (א[ס],ל=וּֽלֲהַבְדִּ֔יל); [[בראשית ב/טעמים#ב יב|א,יב]] (א[ס],ל=וּֽזֲהַ֛ב); [[בראשית ב/טעמים#ב כג|א,כג]] (ל=לֻֽקֳחָה־זֹּֽאת [{{קו תחתי|חטף קמץ}}]); [[בראשית ג/טעמים#ג יז|ג,יז]] (א[ס],ל=תֹּֽאכֲלֶ֔נָּה); [[בראשית י/טעמים#י ג|י,ג]] (ל=אַשְׁכֲּנַ֥ז); [[בראשית יב/טעמים#יב ג|יב,ג]] (ל=וַאֲבָֽרֲכָה֙); [[בראשית יח/טעמים#יח כא|יח,כא]] (א[ס],ל=אֵֽרֲדָה־נָּ֣א); [[בראשית כב/טעמים#כב יח|כב,יח]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כד/טעמים#כד ס|כד,ס]] (ל=וַיְבָרֲכ֤וּ); [[בראשית כה/טעמים#כה כב|כה,כב]] (ל=וַיִּתְרֹֽצֲצ֤וּ); [[בראשית כו/טעמים#כו ד|כו,ד]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כו/טעמים#כו יב|כו,יב]] (ל=וַֽיְבָרֲכֵ֖הוּ); [[בראשית כז/טעמים#כז יט|כז,יט]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=וַֽיְבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=בֵּרֲכ֖וֹ); [[בראשית כז/טעמים#כז כט|כז,כט]] (ל=וּֽמְבָרֲכֶ֖יךָ); [[בראשית כז/טעמים#כז לא|כז,לא]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז לג|כז,לג]] (ל=וָאֲבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז לד|כז,לד]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז לח|כז,לח]] (א[ס]=הַֽבֲרָכָ֨ה); [[בראשית כז/טעמים#כז לח|כז,לח]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז מא|כז,מא]] (ל=בֵּרֲכ֖וֹ); [[בראשית כח/טעמים#כח ו|כח,ו]] (א[ס],ל=בְּבָרֲכ֣וֹ); [[בראשית כח/טעמים#כח יד|כח,יד]] (ל=וְנִבְרֲכ֥וּ); [[בראשית כט/טעמים#כט ג|כט,ג]] (א[ס],ל=וְגָלֲל֤וּ); [[בראשית כט/טעמים#כט ח|כט,ח]] (ל=וְגָֽלֲלוּ֙); [[בראשית ל/טעמים#ל לח|ל,לח]] (ל=בָּרֳהָטִ֖ים [{{קו תחתי|חטף קמץ}}]); [[בראשית ל/טעמים#ל לח|ל,לח]] (א[ס],ל=בְּשִֽׁקֲת֣וֹת); [[בראשית ל/טעמים#ל מא|ל,מא]] (ל=בָּרֳהָטִ֑ים [{{קו תחתי|חטף קמץ}}]); [[בראשית לח/טעמים#לח יב|לח,יב]] (ל=עַל־גֹּֽזֲזֵ֤י); [[בראשית מח/טעמים#מח ט|מח,ט]] (ל=וַאֲבָרֲכֵֽם); [[בראשית מח/טעמים#מח כ|מח,כ]] (ל=וַיְבָ֨רֲכֵ֜ם); [[בראשית מט/טעמים#מט כג|מט,כג]] (ל=וַֽיְמָרֲרֻ֖הוּ).",
+    "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבראשית}}'''[[מקרא על פי המסורה/תורה#ספר בראשית|ספר בראשית]]''' (34 פריטים): [[בראשית א/טעמים#א יח|א,יח]] (א[ס],ל=וּֽלֲהַבְדִּ֔יל); [[בראשית ב/טעמים#ב יב|א,יב]] (א[ס],ל=וּֽזֲהַ֛ב); [[בראשית ב/טעמים#ב כג|א,כג]] (ל=לֻֽקֳחָה־זֹּֽאת [{{קו תחתי|חטף קמץ}}]); [[בראשית ג/טעמים#ג יז|ג,יז]] (א[ס],ל=תֹּֽאכֲלֶ֔נָּה); [[בראשית י/טעמים#י ג|י,ג]] (ל=אַשְׁכֲּנַ֥ז); [[בראשית יב/טעמים#יב ג|יב,ג]] (ל=וַאֲבָֽרֲכָה֙); [[בראשית יח/טעמים#יח כא|יח,כא]] (א[ס],ל=אֵֽרֲדָה־נָּ֣א); [[בראשית כב/טעמים#כב יח|כב,יח]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כד/טעמים#כד ס|כד,ס]] (ל=וַיְבָרֲכ֤וּ); [[בראשית כה/טעמים#כה כב|כה,כב]] (ל=וַיִּתְרֹֽצֲצ֤וּ); [[בראשית כו/טעמים#כו ד|כו,ד]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כו/טעמים#כו יב|כו,יב]] (ל=וַֽיְבָרֲכֵ֖הוּ); [[בראשית כז/טעמים#כז יט|כז,יט]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=וַֽיְבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=בֵּרֲכ֖וֹ); [[בראשית כז/טעמים#כז כט|כז,כט]] (ל=וּֽמְבָרֲכֶ֖יךָ); [[בראשית כז/טעמים#כז לא|כז,לא]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז לג|כז,לג]] (ל=וָאֲבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז לד|כז,לד]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז לח|כז,לח]] (א[ס]=הַֽבֲרָכָ֨ה); [[בראשית כז/טעמים#כז לח|כז,לח]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז מא|כז,מא]] (ל=בֵּרֲכ֖וֹ); [[בראשית כח/טעמים#כח ו|כח,ו]] (א[ס],ל=בְּבָרֲכ֣וֹ); [[בראשית כח/טעמים#כח יד|כח,יד]] (ל=וְנִבְרֲכ֥וּ); [[בראשית כט/טעמים#כט ג|כט,ג]] (א[ס],ל=וְגָלֲל֤וּ); [[בראשית כט/טעמים#כט ח|כט,ח]] (ל=וְגָֽלֲלוּ֙); [[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי); [[בראשית ל/טעמים#ל לח|ל,לח]] (ל=בָּרֳהָטִ֖ים [{{קו תחתי|חטף קמץ}}]); [[בראשית ל/טעמים#ל לח|ל,לח]] (א[ס],ל=בְּשִֽׁקֲת֣וֹת); [[בראשית ל/טעמים#ל מא|ל,מא]] (ל=בָּרֳהָטִ֑ים [{{קו תחתי|חטף קמץ}}]); [[בראשית לח/טעמים#לח יב|לח,יב]] (ל=עַל־גֹּֽזֲזֵ֤י); [[בראשית מח/טעמים#מח ט|מח,ט]] (ל=וַאֲבָרֲכֵֽם); [[בראשית מח/טעמים#מח כ|מח,כ]] (ל=וַיְבָ֨רֲכֵ֜ם); [[בראשית מט/טעמים#מט כג|מט,כג]] (ל=וַֽיְמָרֲרֻ֖הוּ).",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "proposed_reviewer": "Avi",
+    "theme": "non-guttural ḥataf list completeness",
+    "insertion_validation": {
+      "before": [
+        "Genesis",
+        29,
+        8
+      ],
+      "inserted": [
+        "Genesis",
+        30,
+        27
+      ],
+      "after": [
+        "Genesis",
+        30,
+        38
+      ],
+      "current_items": 33,
+      "proposed_items": 34
+    },
+    "proposal_form_source": {
+      "note": "Genesis 30:27/2/0",
+      "text": "וַיְבָרֲכֵ֥נִי",
+      "construction": "Lookup from the retained doc-note form; MAM mark order verified without altering source captures."
+    }
+  },
+  {
+    "id": "PROV-30-19-BEN-20261015",
+    "case": "proverbs-maqaf-illustration",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "time": "16:11 UTC",
+      "kind": "substantive-approval",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
+      "transcript_evidence": "Sentinel_a0613408f38c8191804afc8c85a5733c"
+    },
+    "status": "approved-by-Ben; proposed-source-correction-not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087893,
+    "current": {
+      "claim": "ch2:L968",
+      "quote": "עֲלֵ֫י צ֥וּר"
+    },
+    "proposed_quotation": "עֲלֵ֫י־צ֥וּר",
+    "changes": [
+      {
+        "before": "עֲלֵ֫י צ֥וּר",
+        "after": "עֲלֵ֫י־צ֥וּר",
+        "purpose": "Replace the single space between the two words in the layout example with maqaf, based on the established stale-example chronology."
+      }
+    ],
+    "current_label": "Current Introduction layout example — word pair",
+    "proposed_label": "Approved by Ben — proposed word pair with maqaf",
+    "current_explanation": "The space-separated word pair in the layout example.",
+    "proposed_explanation": "Replace only that space with maqaf.",
+    "research_note": "proverbs-30-19-history.md",
+    "research_label": "History and Ben’s approved correction",
+    "current_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
+    "proposed_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י־צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
+    "history_basis": "proverbs-30-19-history.json",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "scope": "Proposal/report update only; no live source edit or submission is authorized."
+  },
+  {
+    "id": "OLEH-COUNT-BEN-20261015",
+    "case": "oleh-omission-count",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-15",
+      "time": "16:48 UTC",
+      "transcript_evidence": "Sentinel_95a89af0c4c881919b4be237fe750029",
+      "kind": "substantive-approval",
+      "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087893,
+    "current": {
+      "claim": "ch2:L434",
+      "quote": "בכתר ארם צובה יש השמטה שיטתית ועקבית כזאת של ה\"עולה\" ב-11 פסוקי אמ\"ת"
+    },
+    "proposed_quotation": "בכתר ארם צובה יש השמטה שיטתית ועקבית כזאת של ה\"עולה\" ב-13 פסוקי אמ\"ת",
+    "changes": [
+      {
+        "before": "11",
+        "after": "13",
+        "purpose": "Correct only chapter 2’s declared count to agree with the thirteen listed verses in chapter 5."
+      }
+    ],
+    "current_label": "Current cached chapter 2 count",
+    "proposed_label": "Ben’s approved chapter 2 count — not applied",
+    "current_explanation": "Eleven poetic verses.",
+    "proposed_explanation": "Thirteen poetic verses. This counts listed verses, not supporting doc-notes.",
+    "research_note": "oleh-count-history.md",
+    "research_label": "Count history and the two filed spin-off issues",
+    "submission_status": "not-submitted",
+    "application_status": "unapplied",
+    "spin_off_issues": [
+      {
+        "number": 309,
+        "url": "https://github.com/bdenckla/MAM-basics/issues/309"
+      },
+      {
+        "number": 310,
+        "url": "https://github.com/bdenckla/MAM-basics/issues/310"
+      }
+    ]
+  }
+]

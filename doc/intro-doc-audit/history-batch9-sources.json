@@ -1,0 +1,3838 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "method": "Manual comparison of complete retained canonical chapter histories with selected dated Introduction passages. Literal quotations are compiled from the API cache; original audit caches, case statuses and Ben decisions remain unchanged. Ecclesiastes additionally has independent cached form/label validation; that defect is distinct from its unresolved Masorah-support question.",
+  "chapter_metadata": {
+    "isaiah-10": [
+      {
+        "revid": 403101,
+        "parentid": 0,
+        "timestamp": "2011-05-10T16:02:26Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 407682,
+        "parentid": 403101,
+        "timestamp": "2011-05-12T03:01:05Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658345,
+        "parentid": 407682,
+        "timestamp": "2015-11-08T06:07:14Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 883052,
+        "parentid": 658345,
+        "timestamp": "2019-01-28T07:20:42Z",
+        "comment": ""
+      },
+      {
+        "revid": 903861,
+        "parentid": 883052,
+        "timestamp": "2019-06-10T05:30:51Z",
+        "comment": ""
+      },
+      {
+        "revid": 905251,
+        "parentid": 903861,
+        "timestamp": "2019-06-16T15:21:03Z",
+        "comment": ""
+      },
+      {
+        "revid": 1069991,
+        "parentid": 905251,
+        "timestamp": "2021-03-22T15:18:04Z",
+        "comment": "{{כו\"ק|בית|בַּת־}}צִיּ֔וֹן"
+      },
+      {
+        "revid": 1379422,
+        "parentid": 1069991,
+        "timestamp": "2022-03-03T13:23:05Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 1462980,
+        "parentid": 1379422,
+        "timestamp": "2022-12-29T10:54:28Z",
+        "comment": ""
+      },
+      {
+        "revid": 2696916,
+        "parentid": 1462980,
+        "timestamp": "2023-02-01T13:29:07Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717193,
+        "parentid": 2696916,
+        "timestamp": "2023-03-27T20:23:00Z",
+        "comment": "+[[קטגוריה:ישעיהו י]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759575,
+        "parentid": 2717193,
+        "timestamp": "2023-05-21T15:04:44Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2833717,
+        "parentid": 2759575,
+        "timestamp": "2024-01-15T14:01:55Z",
+        "comment": "מחיקת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2833728,
+        "parentid": 2833717,
+        "timestamp": "2024-01-15T14:40:29Z",
+        "comment": "מחיקת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2859781,
+        "parentid": 2833728,
+        "timestamp": "2024-05-23T04:57:52Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2907996,
+        "parentid": 2859781,
+        "timestamp": "2025-03-08T16:06:02Z",
+        "comment": "מ:לגרמיה-2"
+      },
+      {
+        "revid": 2975392,
+        "parentid": 2907996,
+        "timestamp": "2026-01-13T07:54:35Z",
+        "comment": "בפסוק י\"ז, הוספת מרכא ב\"וְאָ֥כְלָ֛ה\"; תודה למשה גרינברג על התיקון."
+      },
+      {
+        "revid": 2987928,
+        "parentid": 2975392,
+        "timestamp": "2026-02-16T19:29:57Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      }
+    ],
+    "isaiah-55": [
+      {
+        "revid": 403348,
+        "parentid": 0,
+        "timestamp": "2011-05-10T21:13:05Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658388,
+        "parentid": 403348,
+        "timestamp": "2015-11-08T06:08:34Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 903906,
+        "parentid": 658388,
+        "timestamp": "2019-06-10T05:50:33Z",
+        "comment": ""
+      },
+      {
+        "revid": 1379469,
+        "parentid": 903906,
+        "timestamp": "2022-03-03T13:23:40Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2696941,
+        "parentid": 1379469,
+        "timestamp": "2023-02-01T13:58:43Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717238,
+        "parentid": 2696941,
+        "timestamp": "2023-03-27T20:23:34Z",
+        "comment": "+[[קטגוריה:ישעיהו נה]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759621,
+        "parentid": 2717238,
+        "timestamp": "2023-05-21T15:05:50Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2833805,
+        "parentid": 2759621,
+        "timestamp": "2024-01-16T06:16:20Z",
+        "comment": "מחיקת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2859856,
+        "parentid": 2833805,
+        "timestamp": "2024-05-23T04:59:27Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2987973,
+        "parentid": 2859856,
+        "timestamp": "2026-02-16T19:31:10Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      }
+    ],
+    "isaiah-44": [
+      {
+        "revid": 403303,
+        "parentid": 0,
+        "timestamp": "2011-05-10T21:10:00Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 407748,
+        "parentid": 403303,
+        "timestamp": "2011-05-12T03:07:12Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 499630,
+        "parentid": 407748,
+        "timestamp": "2013-08-28T08:19:32Z",
+        "comment": "ע\"פ נוסח המסורה ודף השיחה"
+      },
+      {
+        "revid": 658377,
+        "parentid": 499630,
+        "timestamp": "2015-11-08T06:08:13Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 903895,
+        "parentid": 658377,
+        "timestamp": "2019-06-10T05:43:59Z",
+        "comment": ""
+      },
+      {
+        "revid": 999977,
+        "parentid": 903895,
+        "timestamp": "2020-11-16T11:13:21Z",
+        "comment": "[[תבנית:מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה]]"
+      },
+      {
+        "revid": 1178399,
+        "parentid": 999977,
+        "timestamp": "2021-09-13T13:47:13Z",
+        "comment": "מ:אות מנוקדת"
+      },
+      {
+        "revid": 1178444,
+        "parentid": 1178399,
+        "timestamp": "2021-09-13T19:08:12Z",
+        "comment": "נוסח ... מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה"
+      },
+      {
+        "revid": 1288223,
+        "parentid": 1178444,
+        "timestamp": "2021-11-22T19:29:08Z",
+        "comment": "קמץ קטן בפסוק כ\"ג."
+      },
+      {
+        "revid": 1379458,
+        "parentid": 1288223,
+        "timestamp": "2022-03-03T13:23:32Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2696982,
+        "parentid": 1379458,
+        "timestamp": "2023-02-01T15:04:28Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717227,
+        "parentid": 2696982,
+        "timestamp": "2023-03-27T20:23:26Z",
+        "comment": "+[[קטגוריה:ישעיהו מד]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759610,
+        "parentid": 2717227,
+        "timestamp": "2023-05-21T15:05:34Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2833796,
+        "parentid": 2759610,
+        "timestamp": "2024-01-16T06:06:19Z",
+        "comment": "מחיקת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2833850,
+        "parentid": 2833796,
+        "timestamp": "2024-01-16T11:48:15Z",
+        "comment": "הוספת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2859838,
+        "parentid": 2833850,
+        "timestamp": "2024-05-23T04:59:03Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2987962,
+        "parentid": 2859838,
+        "timestamp": "2026-02-16T19:30:52Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      },
+      {
+        "revid": 3000539,
+        "parentid": 2987962,
+        "timestamp": "2026-03-25T04:56:43Z",
+        "comment": ""
+      },
+      {
+        "revid": 3001647,
+        "parentid": 3000539,
+        "timestamp": "2026-03-30T02:28:37Z",
+        "comment": "remove space before sof pasuq in verse 24"
+      },
+      {
+        "revid": 3010621,
+        "parentid": 3001647,
+        "timestamp": "2026-05-04T01:43:21Z",
+        "comment": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67"
+      }
+    ],
+    "isaiah-59": [
+      {
+        "revid": 403364,
+        "parentid": 0,
+        "timestamp": "2011-05-10T21:14:12Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 407777,
+        "parentid": 403364,
+        "timestamp": "2011-05-12T03:09:42Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658392,
+        "parentid": 407777,
+        "timestamp": "2015-11-08T06:08:41Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 903910,
+        "parentid": 658392,
+        "timestamp": "2019-06-10T05:51:32Z",
+        "comment": ""
+      },
+      {
+        "revid": 905258,
+        "parentid": 903910,
+        "timestamp": "2019-06-16T15:27:01Z",
+        "comment": ""
+      },
+      {
+        "revid": 1379473,
+        "parentid": 905258,
+        "timestamp": "2022-03-03T13:23:43Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 1463458,
+        "parentid": 1379473,
+        "timestamp": "2022-12-29T12:02:59Z",
+        "comment": ""
+      },
+      {
+        "revid": 2696947,
+        "parentid": 1463458,
+        "timestamp": "2023-02-01T14:02:03Z",
+        "comment": ""
+      },
+      {
+        "revid": 2706370,
+        "parentid": 2696947,
+        "timestamp": "2023-03-01T13:47:28Z",
+        "comment": ""
+      },
+      {
+        "revid": 2706372,
+        "parentid": 2706370,
+        "timestamp": "2023-03-01T13:51:25Z",
+        "comment": ""
+      },
+      {
+        "revid": 2706374,
+        "parentid": 2706372,
+        "timestamp": "2023-03-01T13:52:58Z",
+        "comment": ""
+      },
+      {
+        "revid": 2706620,
+        "parentid": 2706374,
+        "timestamp": "2023-03-03T07:41:37Z",
+        "comment": "מקף בתיבת משרת הנחוץ לקריאה, וכן כולם."
+      },
+      {
+        "revid": 2717242,
+        "parentid": 2706620,
+        "timestamp": "2023-03-27T20:23:38Z",
+        "comment": "+[[קטגוריה:ישעיהו נט]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759625,
+        "parentid": 2717242,
+        "timestamp": "2023-05-21T15:05:57Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2825830,
+        "parentid": 2759625,
+        "timestamp": "2023-12-18T16:10:00Z",
+        "comment": ""
+      },
+      {
+        "revid": 2825831,
+        "parentid": 2825830,
+        "timestamp": "2023-12-18T16:16:06Z",
+        "comment": ""
+      },
+      {
+        "revid": 2833853,
+        "parentid": 2825831,
+        "timestamp": "2024-01-16T11:51:42Z",
+        "comment": "הוספת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2859864,
+        "parentid": 2833853,
+        "timestamp": "2024-05-23T04:59:36Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2987559,
+        "parentid": 2859864,
+        "timestamp": "2026-02-16T18:10:01Z",
+        "comment": ""
+      },
+      {
+        "revid": 2987562,
+        "parentid": 2987559,
+        "timestamp": "2026-02-16T18:19:16Z",
+        "comment": ""
+      },
+      {
+        "revid": 2987581,
+        "parentid": 2987562,
+        "timestamp": "2026-02-16T19:13:48Z",
+        "comment": ""
+      },
+      {
+        "revid": 2987584,
+        "parentid": 2987581,
+        "timestamp": "2026-02-16T19:15:34Z",
+        "comment": ""
+      },
+      {
+        "revid": 2987797,
+        "parentid": 2987584,
+        "timestamp": "2026-02-16T19:26:18Z",
+        "comment": ""
+      },
+      {
+        "revid": 2987977,
+        "parentid": 2987797,
+        "timestamp": "2026-02-16T19:31:16Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      },
+      {
+        "revid": 2989501,
+        "parentid": 2987977,
+        "timestamp": "2026-02-17T05:46:01Z",
+        "comment": ""
+      }
+    ],
+    "jeremiah-39": [
+      {
+        "revid": 403550,
+        "parentid": 0,
+        "timestamp": "2011-05-10T21:34:49Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 407899,
+        "parentid": 403550,
+        "timestamp": "2011-05-12T03:19:01Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658320,
+        "parentid": 407899,
+        "timestamp": "2015-11-08T06:06:23Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 903994,
+        "parentid": 658320,
+        "timestamp": "2019-06-10T09:50:40Z",
+        "comment": ""
+      },
+      {
+        "revid": 1379519,
+        "parentid": 903994,
+        "timestamp": "2022-03-03T13:24:20Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2696972,
+        "parentid": 1379519,
+        "timestamp": "2023-02-01T14:48:38Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717293,
+        "parentid": 2696972,
+        "timestamp": "2023-03-27T20:24:44Z",
+        "comment": "+[[קטגוריה:ירמיהו לט]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759671,
+        "parentid": 2717293,
+        "timestamp": "2023-05-21T15:07:12Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2859736,
+        "parentid": 2759671,
+        "timestamp": "2024-05-23T04:56:56Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2908062,
+        "parentid": 2859736,
+        "timestamp": "2025-03-08T16:17:02Z",
+        "comment": "מ:לגרמיה-2"
+      },
+      {
+        "revid": 2911301,
+        "parentid": 2908062,
+        "timestamp": "2025-03-19T16:00:29Z",
+        "comment": "make פסקא באמצע פסוק a sampe arg"
+      },
+      {
+        "revid": 2988023,
+        "parentid": 2911301,
+        "timestamp": "2026-02-16T19:32:34Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      }
+    ],
+    "jeremiah-48": [
+      {
+        "revid": 403586,
+        "parentid": 0,
+        "timestamp": "2011-05-10T21:38:03Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658329,
+        "parentid": 403586,
+        "timestamp": "2015-11-08T06:06:41Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 904021,
+        "parentid": 658329,
+        "timestamp": "2019-06-10T10:20:34Z",
+        "comment": ""
+      },
+      {
+        "revid": 968142,
+        "parentid": 904021,
+        "timestamp": "2020-07-14T12:54:52Z",
+        "comment": "דבריך מרכא >> תביר (כך בכתר; בעקבות תיקון ב-WLC)"
+      },
+      {
+        "revid": 1000167,
+        "parentid": 968142,
+        "timestamp": "2020-11-17T05:12:54Z",
+        "comment": "[[תבנית:מ:כו\"ק של שתי מילים בהערה אחת]]"
+      },
+      {
+        "revid": 1379528,
+        "parentid": 1000167,
+        "timestamp": "2022-03-03T13:24:26Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2693819,
+        "parentid": 1379528,
+        "timestamp": "2023-01-29T18:25:09Z",
+        "comment": "שיפור הערת נוסח בפסוק ל\"ב."
+      },
+      {
+        "revid": 2694131,
+        "parentid": 2693819,
+        "timestamp": "2023-01-30T11:15:29Z",
+        "comment": ""
+      },
+      {
+        "revid": 2703467,
+        "parentid": 2694131,
+        "timestamp": "2023-02-17T10:26:42Z",
+        "comment": "בפסוק ו' \"וְתִֽהְיֶ֔ינָה\" בטעם זקף קטן; בפסוק ז' הקרי \"יַחְדָּֽיו\" ביו\"ד; בפסוק כ\"ח \"בַסֶּ֔לַע\" בלי דגש בבי\"ת; כולם כמו שנמצא בכתר ובכתי\"ל."
+      },
+      {
+        "revid": 2717306,
+        "parentid": 2703467,
+        "timestamp": "2023-03-27T20:24:52Z",
+        "comment": "+[[קטגוריה:ירמיהו מח]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759680,
+        "parentid": 2717306,
+        "timestamp": "2023-05-21T15:07:26Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2859751,
+        "parentid": 2759680,
+        "timestamp": "2024-05-23T04:57:17Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2908070,
+        "parentid": 2859751,
+        "timestamp": "2025-03-08T16:18:23Z",
+        "comment": "מ:לגרמיה-2"
+      },
+      {
+        "revid": 2988032,
+        "parentid": 2908070,
+        "timestamp": "2026-02-16T19:32:49Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      },
+      {
+        "revid": 3010625,
+        "parentid": 2988032,
+        "timestamp": "2026-05-04T01:44:01Z",
+        "comment": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67"
+      },
+      {
+        "revid": 3087505,
+        "parentid": 3010625,
+        "timestamp": "2026-10-07T03:06:00Z",
+        "comment": "Use template קו\"כ, not כו\"ק, where the qere directly follows a maqaf, as MAM's introduction prescribes: 2 Sam 20:23, Jer 48:21, Ezek 39:25 and 2 Chr 13:19"
+      }
+    ],
+    "jeremiah-50": [
+      {
+        "revid": 403594,
+        "parentid": 0,
+        "timestamp": "2011-05-10T21:39:07Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 407918,
+        "parentid": 403594,
+        "timestamp": "2011-05-12T03:21:10Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658331,
+        "parentid": 407918,
+        "timestamp": "2015-11-08T06:06:46Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 904023,
+        "parentid": 658331,
+        "timestamp": "2019-06-10T10:20:59Z",
+        "comment": ""
+      },
+      {
+        "revid": 992199,
+        "parentid": 904023,
+        "timestamp": "2020-10-11T15:31:58Z",
+        "comment": "\"כִּ֤י\" במהפך במקום יתיב"
+      },
+      {
+        "revid": 1288227,
+        "parentid": 992199,
+        "timestamp": "2021-11-22T19:35:48Z",
+        "comment": "קמץ קטן בפסוק כ\"ו."
+      },
+      {
+        "revid": 1379530,
+        "parentid": 1288227,
+        "timestamp": "2022-03-03T13:24:27Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2693676,
+        "parentid": 1379530,
+        "timestamp": "2023-01-29T15:12:05Z",
+        "comment": ""
+      },
+      {
+        "revid": 2694134,
+        "parentid": 2693676,
+        "timestamp": "2023-01-30T11:32:11Z",
+        "comment": ""
+      },
+      {
+        "revid": 2696978,
+        "parentid": 2694134,
+        "timestamp": "2023-02-01T14:54:50Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717308,
+        "parentid": 2696978,
+        "timestamp": "2023-03-27T20:24:54Z",
+        "comment": "+[[קטגוריה:ירמיהו נ]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759683,
+        "parentid": 2717308,
+        "timestamp": "2023-05-21T15:07:29Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2836085,
+        "parentid": 2759683,
+        "timestamp": "2024-01-29T07:02:38Z",
+        "comment": "מחיקת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2859755,
+        "parentid": 2836085,
+        "timestamp": "2024-05-23T04:57:22Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2865252,
+        "parentid": 2859755,
+        "timestamp": "2024-06-24T18:41:28Z",
+        "comment": "בפסוק כ\"ד, הוספת הערת נוסח ב\"וְגַם־נִלְכַּדְתְּ֙\"."
+      },
+      {
+        "revid": 2908072,
+        "parentid": 2865252,
+        "timestamp": "2025-03-08T16:18:43Z",
+        "comment": "מ:לגרמיה-2"
+      },
+      {
+        "revid": 2911302,
+        "parentid": 2908072,
+        "timestamp": "2025-03-19T16:00:39Z",
+        "comment": "make פסקא באמצע פסוק a sampe arg"
+      },
+      {
+        "revid": 2988034,
+        "parentid": 2911302,
+        "timestamp": "2026-02-16T19:32:53Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      }
+    ],
+    "joshua-14": [
+      {
+        "revid": 402517,
+        "parentid": 0,
+        "timestamp": "2011-05-10T14:48:48Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 650961,
+        "parentid": 402517,
+        "timestamp": "2015-09-08T07:54:30Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 658865,
+        "parentid": 650961,
+        "timestamp": "2015-11-09T16:45:56Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 902654,
+        "parentid": 658865,
+        "timestamp": "2019-06-03T04:17:02Z",
+        "comment": ""
+      },
+      {
+        "revid": 1379279,
+        "parentid": 902654,
+        "timestamp": "2022-03-03T13:21:09Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2700051,
+        "parentid": 1379279,
+        "timestamp": "2023-02-08T09:30:48Z",
+        "comment": "הוספת תיעוד נוסח ל\"וַֽיְבָרְכֵ֖הוּ\" בפסוק י\"ג."
+      },
+      {
+        "revid": 2700052,
+        "parentid": 2700051,
+        "timestamp": "2023-02-08T09:31:13Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717031,
+        "parentid": 2700052,
+        "timestamp": "2023-03-27T20:14:48Z",
+        "comment": "+[[קטגוריה:יהושע יד]]; הוספת קטגוריה לפרק מנוקד: נביאים ([[toolforge:quickcategories/batch/6108/|QuickCategories batch #6108]])"
+      },
+      {
+        "revid": 2759427,
+        "parentid": 2717031,
+        "timestamp": "2023-05-21T14:59:53Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2767923,
+        "parentid": 2759427,
+        "timestamp": "2023-06-15T10:43:16Z",
+        "comment": "בפסוק י', \"יְהֹוָ֥ה\" בטעם מרכא כמו בכתר ובכתי\"ל."
+      },
+      {
+        "revid": 2859544,
+        "parentid": 2767923,
+        "timestamp": "2024-05-23T04:52:57Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2892256,
+        "parentid": 2859544,
+        "timestamp": "2024-11-14T18:51:48Z",
+        "comment": ""
+      },
+      {
+        "revid": 2892301,
+        "parentid": 2892256,
+        "timestamp": "2024-11-15T04:08:22Z",
+        "comment": ""
+      },
+      {
+        "revid": 2987785,
+        "parentid": 2892301,
+        "timestamp": "2026-02-16T19:25:59Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      },
+      {
+        "revid": 2997882,
+        "parentid": 2987785,
+        "timestamp": "2026-03-12T18:40:40Z",
+        "comment": ""
+      },
+      {
+        "revid": 2997883,
+        "parentid": 2997882,
+        "timestamp": "2026-03-12T18:41:50Z",
+        "comment": ""
+      },
+      {
+        "revid": 2998520,
+        "parentid": 2997883,
+        "timestamp": "2026-03-16T23:48:54Z",
+        "comment": "restore sof pasuq to verse 7"
+      }
+    ],
+    "lamentations-4": [
+      {
+        "revid": 401685,
+        "parentid": 0,
+        "timestamp": "2011-05-10T12:49:47Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 408503,
+        "parentid": 401685,
+        "timestamp": "2011-05-12T04:24:50Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 671269,
+        "parentid": 408503,
+        "timestamp": "2016-01-24T05:29:02Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 671535,
+        "parentid": 671269,
+        "timestamp": "2016-01-24T05:40:29Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 903452,
+        "parentid": 671535,
+        "timestamp": "2019-06-06T09:46:44Z",
+        "comment": ""
+      },
+      {
+        "revid": 999979,
+        "parentid": 903452,
+        "timestamp": "2020-11-16T11:15:02Z",
+        "comment": "[[תבנית:מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה]]"
+      },
+      {
+        "revid": 1027597,
+        "parentid": 999979,
+        "timestamp": "2021-01-07T14:02:55Z",
+        "comment": ""
+      },
+      {
+        "revid": 1292154,
+        "parentid": 1027597,
+        "timestamp": "2021-12-12T17:39:58Z",
+        "comment": "use לפי not ע\"פ in חסר חיריק לפי הערת המקליד"
+      },
+      {
+        "revid": 1379092,
+        "parentid": 1292154,
+        "timestamp": "2022-03-03T13:18:26Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2713560,
+        "parentid": 1379092,
+        "timestamp": "2023-03-21T10:20:41Z",
+        "comment": ""
+      },
+      {
+        "revid": 2713563,
+        "parentid": 2713560,
+        "timestamp": "2023-03-21T10:29:10Z",
+        "comment": ""
+      },
+      {
+        "revid": 2716587,
+        "parentid": 2713563,
+        "timestamp": "2023-03-27T18:35:51Z",
+        "comment": "הוספת [[קטגוריה:איכה ד]] באמצעות [[Help:HotCat|HotCat]]"
+      },
+      {
+        "revid": 2759232,
+        "parentid": 2716587,
+        "timestamp": "2023-05-21T14:53:26Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2859002,
+        "parentid": 2759232,
+        "timestamp": "2024-05-23T04:41:21Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2906717,
+        "parentid": 2859002,
+        "timestamp": "2025-03-01T22:46:03Z",
+        "comment": "standardize newline use (usually means remove extra newlines)"
+      },
+      {
+        "revid": 2988391,
+        "parentid": 2906717,
+        "timestamp": "2026-02-16T19:42:29Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      },
+      {
+        "revid": 3003339,
+        "parentid": 2988391,
+        "timestamp": "2026-04-06T04:32:54Z",
+        "comment": ""
+      },
+      {
+        "revid": 3003340,
+        "parentid": 3003339,
+        "timestamp": "2026-04-06T04:50:07Z",
+        "comment": ""
+      },
+      {
+        "revid": 3003341,
+        "parentid": 3003340,
+        "timestamp": "2026-04-06T04:54:18Z",
+        "comment": ""
+      },
+      {
+        "revid": 3003343,
+        "parentid": 3003341,
+        "timestamp": "2026-04-06T05:18:02Z",
+        "comment": ""
+      },
+      {
+        "revid": 3003347,
+        "parentid": 3003343,
+        "timestamp": "2026-04-06T05:46:51Z",
+        "comment": ""
+      },
+      {
+        "revid": 3003405,
+        "parentid": 3003347,
+        "timestamp": "2026-04-06T08:14:54Z",
+        "comment": ""
+      },
+      {
+        "revid": 3010636,
+        "parentid": 3003405,
+        "timestamp": "2026-05-04T01:45:51Z",
+        "comment": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67"
+      }
+    ],
+    "malachi-2": [
+      {
+        "revid": 404070,
+        "parentid": 0,
+        "timestamp": "2011-05-10T22:11:50Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 408149,
+        "parentid": 404070,
+        "timestamp": "2011-05-12T03:44:36Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 658449,
+        "parentid": 408149,
+        "timestamp": "2015-11-08T06:10:22Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 904368,
+        "parentid": 658449,
+        "timestamp": "2019-06-12T03:58:19Z",
+        "comment": ""
+      },
+      {
+        "revid": 905862,
+        "parentid": 904368,
+        "timestamp": "2019-06-20T05:06:27Z",
+        "comment": ""
+      },
+      {
+        "revid": 1098686,
+        "parentid": 905862,
+        "timestamp": "2021-06-16T16:52:30Z",
+        "comment": "הערת נוסח על הגעיה בשם הוי\"ה בפסוק ז'"
+      },
+      {
+        "revid": 1379646,
+        "parentid": 1098686,
+        "timestamp": "2022-03-03T13:25:57Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2699651,
+        "parentid": 1379646,
+        "timestamp": "2023-02-07T13:06:46Z",
+        "comment": ""
+      },
+      {
+        "revid": 2699676,
+        "parentid": 2699651,
+        "timestamp": "2023-02-07T13:49:53Z",
+        "comment": ""
+      },
+      {
+        "revid": 2717397,
+        "parentid": 2699676,
+        "timestamp": "2023-03-27T20:30:26Z",
+        "comment": "+[[קטגוריה:מלאכי ב]]; הוספת קטגוריה לפרק מנוקד: נביאים/תרי עשר ([[toolforge:quickcategories/batch/6109/|QuickCategories batch #6109]])"
+      },
+      {
+        "revid": 2759800,
+        "parentid": 2717397,
+        "timestamp": "2023-05-21T15:10:08Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2859902,
+        "parentid": 2759800,
+        "timestamp": "2024-05-23T05:00:24Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2893583,
+        "parentid": 2859902,
+        "timestamp": "2024-11-27T13:55:44Z",
+        "comment": "מחיקת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2893687,
+        "parentid": 2893583,
+        "timestamp": "2024-11-28T06:33:27Z",
+        "comment": "הוספת געיה/געיות בהתאם לכתר ארם צובה."
+      },
+      {
+        "revid": 2895454,
+        "parentid": 2893687,
+        "timestamp": "2024-12-17T05:15:20Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895455,
+        "parentid": 2895454,
+        "timestamp": "2024-12-17T05:32:14Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895458,
+        "parentid": 2895455,
+        "timestamp": "2024-12-17T05:36:58Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895459,
+        "parentid": 2895458,
+        "timestamp": "2024-12-17T05:39:13Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895461,
+        "parentid": 2895459,
+        "timestamp": "2024-12-17T05:50:52Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895557,
+        "parentid": 2895461,
+        "timestamp": "2024-12-17T16:08:41Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895559,
+        "parentid": 2895557,
+        "timestamp": "2024-12-17T16:11:10Z",
+        "comment": ""
+      },
+      {
+        "revid": 2895561,
+        "parentid": 2895559,
+        "timestamp": "2024-12-17T16:15:48Z",
+        "comment": ""
+      },
+      {
+        "revid": 2908144,
+        "parentid": 2895561,
+        "timestamp": "2025-03-08T16:30:43Z",
+        "comment": "מ:לגרמיה-2"
+      },
+      {
+        "revid": 2988151,
+        "parentid": 2908144,
+        "timestamp": "2026-02-16T19:36:00Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      },
+      {
+        "revid": 3026162,
+        "parentid": 2988151,
+        "timestamp": "2026-07-22T11:44:00Z",
+        "comment": ""
+      }
+    ],
+    "ecclesiastes-1": [
+      {
+        "revid": 405023,
+        "parentid": 0,
+        "timestamp": "2011-05-10T23:10:07Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 408509,
+        "parentid": 405023,
+        "timestamp": "2011-05-12T04:25:12Z",
+        "comment": "תיכנות: אורי מילר ואראל סגל"
+      },
+      {
+        "revid": 671283,
+        "parentid": 408509,
+        "timestamp": "2016-01-24T05:29:30Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 671549,
+        "parentid": 671283,
+        "timestamp": "2016-01-24T05:40:56Z",
+        "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה"
+      },
+      {
+        "revid": 903252,
+        "parentid": 671549,
+        "timestamp": "2019-06-05T09:52:57Z",
+        "comment": ""
+      },
+      {
+        "revid": 903254,
+        "parentid": 903252,
+        "timestamp": "2019-06-05T09:53:53Z",
+        "comment": ""
+      },
+      {
+        "revid": 903255,
+        "parentid": 903254,
+        "timestamp": "2019-06-05T09:54:23Z",
+        "comment": ""
+      },
+      {
+        "revid": 1379884,
+        "parentid": 903255,
+        "timestamp": "2022-03-03T13:28:54Z",
+        "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)"
+      },
+      {
+        "revid": 2714101,
+        "parentid": 1379884,
+        "timestamp": "2023-03-23T05:24:54Z",
+        "comment": ""
+      },
+      {
+        "revid": 2716589,
+        "parentid": 2714101,
+        "timestamp": "2023-03-27T18:40:32Z",
+        "comment": "+[[קטגוריה:קהלת א]]; הוספת קטגוריה לפרק ([[toolforge:quickcategories/batch/6102/|QuickCategories batch #6102]])"
+      },
+      {
+        "revid": 2760040,
+        "parentid": 2716589,
+        "timestamp": "2023-05-21T15:16:31Z",
+        "comment": "ניווט"
+      },
+      {
+        "revid": 2860206,
+        "parentid": 2760040,
+        "timestamp": "2024-05-23T05:07:38Z",
+        "comment": "עריכת תבניות ופרמטרים לצורך תצוגת הערות הנוסח"
+      },
+      {
+        "revid": 2906719,
+        "parentid": 2860206,
+        "timestamp": "2025-03-01T22:46:24Z",
+        "comment": "standardize newline use (usually means remove extra newlines)"
+      },
+      {
+        "revid": 2908154,
+        "parentid": 2906719,
+        "timestamp": "2025-03-08T16:34:44Z",
+        "comment": "מ:לגרמיה-2"
+      },
+      {
+        "revid": 2988393,
+        "parentid": 2908154,
+        "timestamp": "2026-02-16T19:42:32Z",
+        "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\""
+      }
+    ]
+  },
+  "unique_chapter_contents_read": 199,
+  "cases": [
+    {
+      "case": "ISA-10-15",
+      "chapters": [
+        {
+          "key": "isaiah-10",
+          "contents_read": 18,
+          "visible_revisions": 18,
+          "states": [
+            {
+              "verse": 15,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403101,
+                    407682
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658345,
+                    883052,
+                    903861,
+                    905251,
+                    1069991,
+                    1379422,
+                    1462980
+                  ],
+                  "templates": [
+                    "{{נוסח|מְרִימָ֔יו|=א?לקש1|א=מְרִמָ֔יו? החלק התחתון נמחק ביו\"ד הראשונה בכתי\"א, ונראה שהמוחק ויתר על המחיקה באמצע, אבל לא השלים את החלק שאותו מחק.|ברויאר, מקראות גדולות הכתר, מכון ממרא (וכן הוא בדפוסים ובקורן)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2696916,
+                    2717193,
+                    2759575,
+                    2833717,
+                    2833728
+                  ],
+                  "templates": [
+                    "{{נוסח|מְרִימָ֔יו|=א?,ל,ק,ש1|א=מְרִמָ֔יו? החלק התחתון נמחק ביו\"ד הראשונה בכתי\"א, ונראה שהמוחק ויתר על המחיקה באמצע, אבל לא השלים את החלק שאותו מחק.|ברויאר, מקראות גדולות הכתר, מכון ממרא (וכן הוא בדפוסים ובקורן)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859781,
+                    2907996,
+                    2975392,
+                    2987928
+                  ],
+                  "templates": [
+                    "{{נוסח|מְרִימָ֔יו|2==א?,ל,ק,ש1{{ש}}א=מְרִמָ֔יו? החלק התחתון נמחק ביו\"ד הראשונה בכתי\"א, ונראה שהמוחק ויתר על המחיקה באמצע, אבל לא השלים את החלק שאותו מחק.{{ש}}ברויאר, מקראות גדולות הכתר, מכון ממרא (וכן הוא בדפוסים ובקורן)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 407682,
+              "parentid": 403101,
+              "timestamp": "2011-05-12T03:01:05Z",
+              "comment": "תיכנות: אורי מילר ואראל סגל",
+              "url": "https://he.wikisource.org/w/index.php?oldid=407682",
+              "excerpts": [
+                {
+                  "line": 17,
+                  "text": "הֲיִתְפָּאֵר֙ הַגַּרְזֶ֔ן עַ֖ל הַחֹצֵ֣ב בּ֑וֹ אִם־יִתְגַּדֵּ֤ל הַמַּשּׂוֹר֙ עַל־מְנִיפ֔וֹ כְּהָנִ֥יף שֵׁ֙בֶט֙ וְאֶת־מְרִימָ֔יו כְּהָרִ֥ים מַטֶּ֖ה לֹא־עֵֽץ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 658345,
+              "parentid": 407682,
+              "timestamp": "2015-11-08T06:07:14Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658345",
+              "excerpts": [
+                {
+                  "line": 22,
+                  "text": "הֲיִתְפָּאֵר֙ הַגַּרְזֶ֔ן עַ֖ל הַחֹצֵ֣ב בּ֑וֹ אִם־יִתְגַּדֵּ֤ל הַמַּשּׂוֹר֙ עַל־מְנִיפ֔וֹ כְּהָנִ֥יף שֵׁ֙בֶט֙ וְאֶת־{{נוסח|מְרִימָ֔יו|=א?לקש1|א=מְרִמָ֔יו? החלק התחתון נמחק ביו\"ד הראשונה בכתי\"א, ונראה שהמוחק ויתר על המחיקה באמצע, אבל לא השלים את החלק שאותו מחק.|ברויאר, מקראות גדולות הכתר, מכון ממרא (וכן הוא בדפוסים ובקורן)}} כְּהָרִ֥ים מַטֶּ֖ה לֹא־עֵֽץ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2696916,
+              "parentid": 1462980,
+              "timestamp": "2023-02-01T13:29:07Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2696916",
+              "excerpts": [
+                {
+                  "line": 20,
+                  "text": "הֲיִתְפָּאֵר֙ הַגַּרְזֶ֔ן עַ֖ל הַחֹצֵ֣ב בּ֑וֹ אִם־יִתְגַּדֵּ֤ל הַמַּשּׂוֹר֙ עַל־מְנִיפ֔וֹ כְּהָנִ֥יף שֵׁ֙בֶט֙ וְאֶת־{{נוסח|מְרִימָ֔יו|=א?,ל,ק,ש1|א=מְרִמָ֔יו? החלק התחתון נמחק ביו\"ד הראשונה בכתי\"א, ונראה שהמוחק ויתר על המחיקה באמצע, אבל לא השלים את החלק שאותו מחק.|ברויאר, מקראות גדולות הכתר, מכון ממרא (וכן הוא בדפוסים ובקורן)}} כְּהָרִ֥ים מַטֶּ֖ה לֹא־עֵֽץ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2987928,
+              "parentid": 2975392,
+              "timestamp": "2026-02-16T19:29:57Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2987928",
+              "excerpts": [
+                {
+                  "line": 21,
+                  "text": "הֲיִתְפָּאֵר֙ הַגַּרְזֶ֔ן עַ֖ל הַחֹצֵ֣ב בּ֑וֹ אִם־יִתְגַּדֵּ֤ל הַמַּשּׂוֹר֙ עַל־מְנִיפ֔וֹ כְּהָנִ֥יף שֵׁ֙בֶט֙ וְאֶת־{{נוסח|מְרִימָ֔יו|2==א?,ל,ק,ש1{{ש}}א=מְרִמָ֔יו? החלק התחתון נמחק ביו\"ד הראשונה בכתי\"א, ונראה שהמוחק ויתר על המחיקה באמצע, אבל לא השלים את החלק שאותו מחק.{{ש}}ברויאר, מקראות גדולות הכתר, מכון ממרא (וכן הוא בדפוסים ובקורן)}} כְּהָרִ֥ים מַטֶּ֖ה לֹא־עֵֽץ׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 1934798,
+          "parentid": 1933501,
+          "timestamp": "2023-01-11T09:10:31Z",
+          "comment": "/* ספר ישעיהו כדוגמה ליישום השיטה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 42,
+              "text": "#ספק קל לגבי קביעת אות אחת בכתר ([[ישעיהו י/טעמים#י טו|י,טו]])."
+            },
+            {
+              "line": 51,
+              "text": "#ספק לגבי אות: בתיבת \"מְרִימָ֔יו\" ([[ישעיהו י/טעמים#י טו|י,טו]]) נמחק החלק התחתון ביו\"ד הראשונה, אבל האות קיימת ברובה. גם בכתבי־יד אחרים הקרובים לכתר (ל,ק,ש1) נכתבה התיבה מלאה עם יו\"ד פעמיים. ייתכן שהמוחק ויתר על המחיקה באמצע, אבל לא שב כדי להשלים את החלק המחוק. ובכל מקרה האות קיימת בפועל בכתר כמו בכתבי־היד ובדפוסים. לכן תופיעה במהדורתנו \"מְרִימָ֔יו\" בכתיב מלא בלי שום ציון (ושאר המידע לגבי האות יהיה בתיעוד הנוסח). וכן הוא במהדורות ברויאר, במקראות גדולות הכתר, ובמכון ממרא."
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2696987,
+          "parentid": 2696986,
+          "timestamp": "2023-02-01T15:31:25Z",
+          "comment": "/* אותיות גדולות וקטנות */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 42,
+              "text": "#ספק קל לגבי קביעת אות אחת בכתר: \"מְרִימָ֔[י]ו\" ([[ישעיהו י/טעמים#י טו|י,טו]])."
+            },
+            {
+              "line": 51,
+              "text": "#ספק לגבי אות: בתיבת \"מְרִימָ֔יו\" ([[ישעיהו י/טעמים#י טו|י,טו]]) נמחק החלק התחתון ביו\"ד הראשונה, אבל האות קיימת ברובה. גם בכתבי־יד אחרים הקרובים לכתר (ל,ק,ש1) נכתבה התיבה מלאה עם יו\"ד פעמיים. ייתכן שהמוחק ויתר על המחיקה באמצע, אבל לא שב כדי להשלים את החלק המחוק. ובכל מקרה האות קיימת בפועל בכתר כמו בכתבי־היד ובדפוסים (וכך גם במהדורות ברויאר, במקראות גדולות הכתר, ובמכון ממרא). לכן תופיעה במהדורתנו \"מְרִימָ֔יו\" בכתיב מלא בלי שום ציון; שאר המידע לגבי האות המסופקת יהיה בתיעוד הנוסח, והמילה תופיעה ב[[#מקומות חריגים בנוסח הכתיב בכתר|רשימת המקומות החריגים בנוסח הכתיב בכתר]]."
+            },
+            {
+              "line": 69,
+              "text": "==מקומות חריגים בנוסח הכתיב בכתר=="
+            },
+            {
+              "line": 89,
+              "text": "|-"
+            },
+            {
+              "line": 90,
+              "text": "|[[ישעיהו י/טעמים#י טו|ישעיהו י טו]]"
+            },
+            {
+              "line": 91,
+              "text": "|מְרִימָ֔ו?"
+            },
+            {
+              "line": 92,
+              "text": "|מְרִימָ֔יו*"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 35,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 40,
+              "text": "#ספק קל לגבי קביעת אות אחת בכתר: \"מְרִימָ֔[י]ו\" ([[ישעיהו י/טעמים#י טו|י,טו]])."
+            },
+            {
+              "line": 49,
+              "text": "#ספק קל לגבי אות אחת: בתיבת \"מְרִימָ֔יו\" ([[ישעיהו י/טעמים#י טו|י,טו]]) נמחק החלק התחתון ביו\"ד הראשונה, אבל האות קיימת ברובה. גם בכתבי־יד אחרים הקרובים לכתר (ל,ק,ש1) נכתבה התיבה מלאה עם יו\"ד פעמיים. ייתכן שהמוחק ויתר על המחיקה באמצע, אבל לא שב כדי להשלים את החלק המחוק. ובכל מקרה האות קיימת בפועל בכתר כמו בכתבי־היד ובדפוסים (וכך גם במהדורות ברויאר, במקראות גדולות הכתר, ובמכון ממרא). לכן תופיעה במהדורתנו \"מְרִימָ֔יו\" בכתיב מלא בלי שום ציון; שאר המידע לגבי האות המסופקת יהיה בתיעוד הנוסח, והמילה תופיעה ב[[#מקומות חריגים בנוסח הכתיב בכתר|רשימת המקומות החריגים בנוסח הכתיב בכתר]]."
+            },
+            {
+              "line": 67,
+              "text": "==מסורת הסופרים בנביאים וכתובים=="
+            },
+            {
+              "line": 69,
+              "text": "===נוסח האותיות והתיבות בכתר ארם צובה==="
+            },
+            {
+              "line": 117,
+              "text": "|-"
+            },
+            {
+              "line": 118,
+              "text": "|[[ישעיהו י/טעמים#י טו|ישעיהו י,טו]]"
+            },
+            {
+              "line": 119,
+              "text": "|מְרִימָ֔ו?"
+            },
+            {
+              "line": 120,
+              "text": "|מְרִימָ֔'''י'''ו*"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "ISA-55-5-EDITION",
+      "chapters": [
+        {
+          "key": "isaiah-55",
+          "contents_read": 10,
+          "visible_revisions": 10,
+          "states": [
+            {
+              "verse": 5,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403348
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658388,
+                    903906,
+                    1379469
+                  ],
+                  "templates": [
+                    "{{נוסח|וְלִקְד֥וֹשׁ|=לק וכן בדפוסים|א=וְלִקְד֛וֹשׁ לפי ברויאר ומקראות גדולות הכתר (ברויאר תיקן \"וְלִקְד֥וֹשׁ\" על פי כתבי־היד הקרובים, ואילו במקראות הכתר הביאו \"וְלִקְד֛וֹשׁ\"). ואמנם מהצבע והצורה של נקודת התביר ייתכן שהוא כתם ובאמת יש כאן מרכא.|קורן, ברויאר, דותן, סימנים, מכון ממרא}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2696941,
+                    2717238,
+                    2759621,
+                    2833805
+                  ],
+                  "templates": [
+                    "{{נוסח|וְלִקְד֥וֹשׁ|=ל,ק וכן בדפוסים|א=וְלִקְד֛וֹשׁ לפי ברויאר ומקראות גדולות הכתר (ברויאר תיקן \"וְלִקְד֥וֹשׁ\" על פי כתבי־היד הקרובים, ואילו במקראות הכתר הביאו \"וְלִקְד֛וֹשׁ\"). ואמנם מהצבע והצורה של נקודת התביר ייתכן שהוא כתם ובאמת יש כאן מרכא.|קורן, ברויאר, דותן, סימנים, מכון ממרא}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859856,
+                    2987973
+                  ],
+                  "templates": [
+                    "{{נוסח|וְלִקְד֥וֹשׁ|2==ל,ק וכן בדפוסים{{ש}}א=וְלִקְד֛וֹשׁ לפי ברויאר ומקראות גדולות הכתר (ברויאר תיקן \"וְלִקְד֥וֹשׁ\" על פי כתבי־היד הקרובים, ואילו במקראות הכתר הביאו \"וְלִקְד֛וֹשׁ\"). ואמנם מהצבע והצורה של נקודת התביר ייתכן שהוא כתם ובאמת יש כאן מרכא.{{ש}}קורן, ברויאר, דותן, סימנים, מכון ממרא}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 403348,
+              "parentid": 0,
+              "timestamp": "2011-05-10T21:13:05Z",
+              "comment": "תיכנות: אורי מילר ואראל סגל",
+              "url": "https://he.wikisource.org/w/index.php?oldid=403348",
+              "excerpts": [
+                {
+                  "line": 7,
+                  "text": "הֵ֣ן גּ֤וֹי לֹֽא־תֵדַע֙ תִּקְרָ֔א וְג֥וֹי לֹֽא־יְדָע֖וּךָ אֵלֶ֣יךָ יָר֑וּצוּ לְמַ֙עַן֙ יְהוָ֣ה אֱלֹהֶ֔יךָ וְלִקְד֥וֹשׁ יִשְׂרָאֵ֖ל כִּ֥י פֵאֲרָֽךְ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 658388,
+              "parentid": 403348,
+              "timestamp": "2015-11-08T06:08:34Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658388",
+              "excerpts": [
+                {
+                  "line": 10,
+                  "text": "הֵ֣ן גּ֤וֹי לֹֽא־תֵדַע֙ תִּקְרָ֔א וְג֥וֹי לֹֽא־יְדָע֖וּךָ אֵלֶ֣יךָ יָר֑וּצוּ לְמַ֙עַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ {{נוסח|וְלִקְד֥וֹשׁ|=לק וכן בדפוסים|א=וְלִקְד֛וֹשׁ לפי ברויאר ומקראות גדולות הכתר (ברויאר תיקן \"וְלִקְד֥וֹשׁ\" על פי כתבי־היד הקרובים, ואילו במקראות הכתר הביאו \"וְלִקְד֛וֹשׁ\"). ואמנם מהצבע והצורה של נקודת התביר ייתכן שהוא כתם ובאמת יש כאן מרכא.|קורן, ברויאר, דותן, סימנים, מכון ממרא}} יִשְׂרָאֵ֖ל כִּ֥י פֵאֲרָֽךְ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2696941,
+              "parentid": 1379469,
+              "timestamp": "2023-02-01T13:58:43Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2696941",
+              "excerpts": [
+                {
+                  "line": 8,
+                  "text": "הֵ֣ן גּ֤וֹי לֹֽא־תֵדַע֙ תִּקְרָ֔א וְג֥וֹי לֹֽא־יְדָע֖וּךָ אֵלֶ֣יךָ יָר֑וּצוּ לְמַ֙עַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ {{נוסח|וְלִקְד֥וֹשׁ|=ל,ק וכן בדפוסים|א=וְלִקְד֛וֹשׁ לפי ברויאר ומקראות גדולות הכתר (ברויאר תיקן \"וְלִקְד֥וֹשׁ\" על פי כתבי־היד הקרובים, ואילו במקראות הכתר הביאו \"וְלִקְד֛וֹשׁ\"). ואמנם מהצבע והצורה של נקודת התביר ייתכן שהוא כתם ובאמת יש כאן מרכא.|קורן, ברויאר, דותן, סימנים, מכון ממרא}} יִשְׂרָאֵ֖ל כִּ֥י פֵאֲרָֽךְ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2987973,
+              "parentid": 2859856,
+              "timestamp": "2026-02-16T19:31:10Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2987973",
+              "excerpts": [
+                {
+                  "line": 9,
+                  "text": "הֵ֣ן גּ֤וֹי לֹֽא־תֵדַע֙ תִּקְרָ֔א וְג֥וֹי לֹֽא־יְדָע֖וּךָ אֵלֶ֣יךָ יָר֑וּצוּ לְמַ֙עַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ {{נוסח|וְלִקְד֥וֹשׁ|2==ל,ק וכן בדפוסים{{ש}}א=וְלִקְד֛וֹשׁ לפי ברויאר ומקראות גדולות הכתר (ברויאר תיקן \"וְלִקְד֥וֹשׁ\" על פי כתבי־היד הקרובים, ואילו במקראות הכתר הביאו \"וְלִקְד֛וֹשׁ\"). ואמנם מהצבע והצורה של נקודת התביר ייתכן שהוא כתם ובאמת יש כאן מרכא.{{ש}}קורן, ברויאר, דותן, סימנים, מכון ממרא}} יִשְׂרָאֵ֖ל כִּ֥י פֵאֲרָֽךְ׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 1934798,
+          "parentid": 1933501,
+          "timestamp": "2023-01-11T09:10:31Z",
+          "comment": "/* ספר ישעיהו כדוגמה ליישום השיטה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 52,
+              "text": "#ספק לגבי טעם ([[ישעיהו נה/טעמים#נה ה|נה,ה]]): \"וְלִקְד֛וֹשׁ\" או \"וְלִקְד֥וֹשׁ\"? הצורה השנייה מתאימה יותר לכללי הטעמים: \"לְמַ֙עַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְלִקְד֥וֹשׁ יִשְׂרָאֵ֖ל כִּ֥י פֵֽאֲרָֽךְ׃\", וכך מופיע בכתבי־היד האחרים הקרובים לכתר (ל,ק) ובדפוסים; וכן הכריעו ברויאר ומג\"ה.{{הערה|כמעט שאין טעויות בכלל במערכת הטעמים בכתר; ראו על כך בייבין, כא.2 (עמ' 197), וייתכן שיש להוסיף את התיבה הזו בתור ספק לשתי המקומות שכבר ציין (גם בהם מדובר על נקודת תביר בטעם שצפוי להיות מרכא). אך מהצבע והצורה של הנקודה ייתכן שיש כאן כתם דיו ולא נקודה שהסופר כתב אותה בכוונה, ואם כן מדובר על מרכא ואין טעות.}}"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 35,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 50,
+              "text": "#ספק לגבי טעם ([[ישעיהו נה/טעמים#נה ה|נה,ה]]): \"וְלִקְד֛וֹשׁ\" או \"וְלִקְד֥וֹשׁ\"? הצורה השנייה מתאימה יותר לכללי הטעמים: \"לְמַ֙עַן֙ יְהֹוָ֣ה אֱלֹהֶ֔יךָ וְלִקְד֥וֹשׁ יִשְׂרָאֵ֖ל כִּ֥י פֵֽאֲרָֽךְ׃\", וכך מופיע בכתבי־היד האחרים הקרובים לכתר (ל,ק) ובדפוסים; וכן הכריעו ברויאר ומג\"ה.{{הערה|כמעט שאין טעויות בכלל במערכת הטעמים בכתר; ראו על כך בייבין, כא.2 (עמ' 197), וייתכן שיש להוסיף את התיבה הזו בתור ספק לשתי המקומות שכבר ציין (גם בהם מדובר על נקודת תביר בטעם שצפוי להיות מרכא). אך מהצבע והצורה של הנקודה ייתכן שיש כאן כתם דיו ולא נקודה שהסופר כתב אותה בכוונה, ואם כן מדובר על מרכא ואין טעות.}}"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "ALEPPO-SPECIAL-ISA44",
+      "chapters": [
+        {
+          "key": "isaiah-44",
+          "contents_read": 20,
+          "visible_revisions": 20,
+          "states": [
+            {
+              "verse": 14,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403303,
+                    407748,
+                    499630
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658377,
+                    903895,
+                    999977,
+                    1178399,
+                    1178444,
+                    1288223,
+                    1379458
+                  ],
+                  "templates": [
+                    "{{נוסח|אֹ֖רֶ{{מ:אות-ק|ן}}|=מסורת-א <ג' נונין זעיר>|א=אֹ֖רֶן בנו\"ן רגילה}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2696982,
+                    2717227,
+                    2759610,
+                    2833796,
+                    2833850
+                  ],
+                  "templates": [
+                    "{{נוסח|אֹ֖רֶ{{מ:אות-ק|ן}}|=מסורת-א באות נו\"ן סופית קטנה <ג' נונין זעיר>|א=אֹ֖רֶן (אות רגילה)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859838,
+                    2987962,
+                    3000539,
+                    3001647,
+                    3010621
+                  ],
+                  "templates": [
+                    "{{נוסח|אֹ֖רֶ{{מ:אות-ק|ן}}|2==מסורת-א באות נו\"ן סופית קטנה <ג' נונין זעיר>{{ש}}א=אֹ֖רֶן (אות רגילה)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 499630,
+              "parentid": 407748,
+              "timestamp": "2013-08-28T08:19:32Z",
+              "comment": "ע\"פ נוסח המסורה ודף השיחה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=499630",
+              "excerpts": [
+                {
+                  "line": 17,
+                  "text": "לִכְרָת־ל֣וֹ אֲרָזִ֔ים וַיִּקַּ֤ח תִּרְזָה֙ וְאַלּ֔וֹן וַיְאַמֶּץ־ל֖וֹ בַּעֲצֵי־יָ֑עַר נָטַ֥ע {{מילה מיוחדת בתנך|אֹ֖רֶ<SMALL>ן</SMALL>|6|ישעיהו מד יד}} וְגֶ֥שֶׁם יְגַדֵּֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 658377,
+              "parentid": 499630,
+              "timestamp": "2015-11-08T06:08:13Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658377",
+              "excerpts": [
+                {
+                  "line": 21,
+                  "text": "לִכְרׇת־ל֣וֹ אֲרָזִ֔ים וַיִּקַּ֤ח תִּרְזָה֙ וְאַלּ֔וֹן וַיְאַמֶּץ־ל֖וֹ בַּעֲצֵי־יָ֑עַר נָטַ֥ע {{נוסח|אֹ֖רֶ{{מ:אות-ק|ן}}|=מסורת-א <ג' נונין זעיר>|א=אֹ֖רֶן בנו\"ן רגילה}} וְגֶ֥שֶׁם יְגַדֵּֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2696982,
+              "parentid": 1379458,
+              "timestamp": "2023-02-01T15:04:28Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2696982",
+              "excerpts": [
+                {
+                  "line": 19,
+                  "text": "לִכְרׇת־ל֣וֹ אֲרָזִ֔ים וַיִּקַּ֤ח תִּרְזָה֙ וְאַלּ֔וֹן וַיְאַמֶּץ־ל֖וֹ בַּעֲצֵי־יָ֑עַר נָטַ֥ע {{נוסח|אֹ֖רֶ{{מ:אות-ק|ן}}|=מסורת-א באות נו\"ן סופית קטנה <ג' נונין זעיר>|א=אֹ֖רֶן (אות רגילה)}} וְגֶ֥שֶׁם יְגַדֵּֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3010621,
+              "parentid": 3001647,
+              "timestamp": "2026-05-04T01:43:21Z",
+              "comment": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3010621",
+              "excerpts": [
+                {
+                  "line": 20,
+                  "text": "לִכְרׇת־ל֣וֹ אֲרָזִ֔ים וַיִּקַּ֤ח תִּרְזָה֙ וְאַלּ֔וֹן וַיְאַמֶּץ־ל֖וֹ בַּעֲצֵי־יָ֑עַר נָטַ֥ע {{נוסח|אֹ֖רֶ{{מ:אות-ק|ן}}|2==מסורת-א באות נו\"ן סופית קטנה <ג' נונין זעיר>{{ש}}א=אֹ֖רֶן (אות רגילה)}} וְגֶ֥שֶׁם יְגַדֵּֽל׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 1934798,
+          "parentid": 1933501,
+          "timestamp": "2023-01-11T09:10:31Z",
+          "comment": "/* ספר ישעיהו כדוגמה ליישום השיטה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 61,
+              "text": "*אותיות גדולות וקטנות: \"אֹ֖רֶ{{אות-ק|ן}}\" בנו\"ן זעירא ([[ישעיהו מד/טעמים#מד יד|מד,יד]]), \"{{אות-ג|צֹ}}פָ֞ו\" בצד\"י גדולה ([[ישעיהו נו/טעמים#נו י|נו,י]]). במהדורתנו נביא את שתי האותיות המיוחדות בהתאם לשיטתנו ע\"פ המנהג.{{הערה|בניגוד למקראות גדולות הכתר, בו ויתרו על הצד\"י הגדולה ב\"צֹפָ֞ו\" ([[ישעיהו נו/טעמים#נו י|נו,י]]) שאין לה סימוכין במסורת הכתר.}}"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2696987,
+          "parentid": 2696986,
+          "timestamp": "2023-02-01T15:31:25Z",
+          "comment": "/* אותיות גדולות וקטנות */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 61,
+              "text": "*אותיות גדולות וקטנות: \"אֹ֖רֶ{{אות-ק|ן}}\" בנו\"ן זעירא ([[ישעיהו מד/טעמים#מד יד|מד,יד]]), \"{{אות-ג|צֹ}}פָ֞ו\" בצד\"י גדולה ([[ישעיהו נו/טעמים#נו י|נו,י]]). במהדורתנו נביא את שתי האותיות המיוחדות בהתאם לשיטתנו ע\"פ המנהג.{{הערה|בניגוד למקראות גדולות הכתר, בו ויתרו על הצד\"י הגדולה ב\"צֹפָ֞ו\" ([[ישעיהו נו/טעמים#נו י|נו,י]]) שאין לה סימוכין במסורת הכתר.}}"
+            },
+            {
+              "line": 137,
+              "text": "==עיצוב כללי בספרי נ\"ך: אותיות מיוחדות=="
+            },
+            {
+              "line": 139,
+              "text": "===אותיות גדולות וקטנות==="
+            },
+            {
+              "line": 148,
+              "text": "#'''(ק)''' [[ישעיהו מד/טעמים#מד יד|ישעיהו (מד,יד)]]: [אֹ֖רֶ{{מ:אות-ק|ן}}]*=מ\"ק-א"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 35,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 59,
+              "text": "*אותיות גדולות וקטנות: \"אֹ֖רֶ{{אות-ק|ן}}\" בנו\"ן זעירא ([[ישעיהו מד/טעמים#מד יד|מד,יד]]), \"{{אות-ג|צֹ}}פָ֞ו\" בצד\"י גדולה ([[ישעיהו נו/טעמים#נו י|נו,י]]). במהדורתנו נביא את שתי האותיות המיוחדות בהתאם לשיטתנו ע\"פ המנהג.{{הערה|בניגוד למקראות גדולות הכתר, בו ויתרו על הצד\"י הגדולה ב\"צֹפָ֞ו\" ([[ישעיהו נו/טעמים#נו י|נו,י]]) שאין לה סימוכין במסורת הכתר.}}"
+            },
+            {
+              "line": 67,
+              "text": "==מסורת הסופרים בנביאים וכתובים=="
+            },
+            {
+              "line": 177,
+              "text": "===אותיות מיוחדות במהדורתנו==="
+            },
+            {
+              "line": 186,
+              "text": "#'''(ק)''' [[ישעיהו מד/טעמים#מד יד|ישעיהו (מד,יד)]]: [אֹ֖רֶ{{מ:אות-ק|ן}}]*=מ\"ק-א"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "ISA-44-24-KETIV-MAQAF",
+      "chapters": [
+        {
+          "key": "isaiah-44",
+          "contents_read": 20,
+          "visible_revisions": 20,
+          "states": [
+            {
+              "verse": 24,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403303,
+                    407748,
+                    499630,
+                    658377,
+                    903895,
+                    999977,
+                    1178399
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    1178444,
+                    1288223,
+                    1379458,
+                    2696982,
+                    2717227,
+                    2759610,
+                    2833796,
+                    2833850
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי}}|א-כתיב=מֵי־אִתִּֽי}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859838,
+                    2987962
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי}}|2=א-כתיב=מֵי־אִתִּֽי}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    3000539,
+                    3001647
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי}}|2=א-כתיב=מֵי־אִתִּֽי (מקף כדי להורות על קריאה של שתי התיבות הכתובות ביחד){{ש}}ל-כתיב=מֵי־אִתִּֽי (אין מקף כי יש בקרי רק תיבה אחת)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    3010621
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק מיוחד|מי אתי|מֵאִתִּֽי|סוג=כו\"ק כתיב תרתין מילין וקרי מילה חדה}}|2=א-כתיב=מֵי־אִתִּֽי (מקף כדי להורות על קריאה של שתי התיבות הכתובות ביחד){{ש}}ל-כתיב=מֵי־אִתִּֽי (אין מקף כי יש בקרי רק תיבה אחת)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 1178399,
+              "parentid": 999977,
+              "timestamp": "2021-09-13T13:47:13Z",
+              "comment": "מ:אות מנוקדת",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1178399",
+              "excerpts": [
+                {
+                  "line": 29,
+                  "text": "כֹּֽה־אָמַ֤ר יְהֹוָה֙ גֹּאֲלֶ֔ךָ וְיֹצֶרְךָ֖ מִבָּ֑טֶן אָנֹכִ֤י יְהֹוָה֙ עֹ֣שֶׂה כֹּ֔ל נֹטֶ֤ה שָׁמַ֙יִם֙ לְבַדִּ֔י רֹקַ֥ע הָאָ֖רֶץ {{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי|א-כתיב=מֵי־אִתִּֽי}}׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 1178444,
+              "parentid": 1178399,
+              "timestamp": "2021-09-13T19:08:12Z",
+              "comment": "נוסח ... מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1178444",
+              "excerpts": [
+                {
+                  "line": 29,
+                  "text": "כֹּֽה־אָמַ֤ר יְהֹוָה֙ גֹּאֲלֶ֔ךָ וְיֹצֶרְךָ֖ מִבָּ֑טֶן אָנֹכִ֤י יְהֹוָה֙ עֹ֣שֶׂה כֹּ֔ל נֹטֶ֤ה שָׁמַ֙יִם֙ לְבַדִּ֔י רֹקַ֥ע הָאָ֖רֶץ {{נוסח|{{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי}}|א-כתיב=מֵי־אִתִּֽי}}׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2987962,
+              "parentid": 2859838,
+              "timestamp": "2026-02-16T19:30:52Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2987962",
+              "excerpts": [
+                {
+                  "line": 30,
+                  "text": "כֹּֽה־אָמַ֤ר יְהֹוָה֙ גֹּאֲלֶ֔ךָ וְיֹצֶרְךָ֖ מִבָּ֑טֶן אָנֹכִ֤י יְהֹוָה֙ עֹ֣שֶׂה כֹּ֔ל נֹטֶ֤ה שָׁמַ֙יִם֙ לְבַדִּ֔י רֹקַ֥ע הָאָ֖רֶץ {{נוסח|{{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי}}|2=א-כתיב=מֵי־אִתִּֽי}}׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3000539,
+              "parentid": 2987962,
+              "timestamp": "2026-03-25T04:56:43Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3000539",
+              "excerpts": [
+                {
+                  "line": 30,
+                  "text": "כֹּֽה־אָמַ֤ר יְהֹוָה֙ גֹּאֲלֶ֔ךָ וְיֹצֶרְךָ֖ מִבָּ֑טֶן אָנֹכִ֤י יְהֹוָה֙ עֹ֣שֶׂה כֹּ֔ל נֹטֶ֤ה שָׁמַ֙יִם֙ לְבַדִּ֔י רֹקַ֥ע הָאָ֖רֶץ {{נוסח|{{מ:כו\"ק כתיב תרתין מילין וקרי מילה חדה|מי אתי|מֵאִתִּֽי}}|2=א-כתיב=מֵי־אִתִּֽי (מקף כדי להורות על קריאה של שתי התיבות הכתובות ביחד){{ש}}ל-כתיב=מֵי־אִתִּֽי (אין מקף כי יש בקרי רק תיבה אחת)}} ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3010621,
+              "parentid": 3001647,
+              "timestamp": "2026-05-04T01:43:21Z",
+              "comment": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3010621",
+              "excerpts": [
+                {
+                  "line": 30,
+                  "text": "כֹּֽה־אָמַ֤ר יְהֹוָה֙ גֹּאֲלֶ֔ךָ וְיֹצֶרְךָ֖ מִבָּ֑טֶן אָנֹכִ֤י יְהֹוָה֙ עֹ֣שֶׂה כֹּ֔ל נֹטֶ֤ה שָׁמַ֙יִם֙ לְבַדִּ֔י רֹקַ֥ע הָאָ֖רֶץ {{נוסח|{{מ:כו\"ק מיוחד|מי אתי|מֵאִתִּֽי|סוג=כו\"ק כתיב תרתין מילין וקרי מילה חדה}}|2=א-כתיב=מֵי־אִתִּֽי (מקף כדי להורות על קריאה של שתי התיבות הכתובות ביחד){{ש}}ל-כתיב=מֵי־אִתִּֽי (אין מקף כי יש בקרי רק תיבה אחת)}}׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 1934798,
+          "parentid": 1933501,
+          "timestamp": "2023-01-11T09:10:31Z",
+          "comment": "/* ספר ישעיהו כדוגמה ליישום השיטה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 45,
+              "text": "#חריגים בניקודו של ה\"כתיב\" (4 מקומות): \"עֲנִוִים֙\" (עֲנִיִּים֙ קרי; [[ישעיהו לב/טעמים#לב ז|לב,ז]]), \"חֹראָיהָ֗ם\" (צוֹאָתָ֗ם קרי; [[ישעיהו לו/טעמים#לו יב|לו,יב]]), \"אֵאֵ֥ שַׁיְנֵיהֶ֖ם\" ([מֵימֵ֥י] רַגְלֵיהֶ֖ם קרי; [[ישעיהו לו/טעמים#לו יב|לו,יב]]), \"מֵי־אִתִּֽי׃\" (מֵאִתִּֽי׃ קרי; [[ישעיהו מד/טעמים#מד כד|מד,כד]])."
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 35,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 43,
+              "text": "#חריגים בניקודו של ה\"כתיב\" (4 מקומות): \"עֲנִוִים֙\" (עֲנִיִּים֙ קרי; [[ישעיהו לב/טעמים#לב ז|לב,ז]]), \"חֹראָיהָ֗ם\" (צוֹאָתָ֗ם קרי; [[ישעיהו לו/טעמים#לו יב|לו,יב]]), \"אֵאֵ֥ שַׁיְנֵיהֶ֖ם\" ([מֵימֵ֥י] רַגְלֵיהֶ֖ם קרי; [[ישעיהו לו/טעמים#לו יב|לו,יב]]), \"מֵי־אִתִּֽי׃\" (מֵאִתִּֽי׃ קרי; [[ישעיהו מד/טעמים#מד כד|מד,כד]])."
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "ISA-59-19-MAQAF",
+      "chapters": [
+        {
+          "key": "isaiah-59",
+          "contents_read": 25,
+          "visible_revisions": 25,
+          "states": [
+            {
+              "verse": 19,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403364,
+                    407777
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658392,
+                    903910,
+                    905258,
+                    1379473
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=לק וכן בדפוסים (וברויאר תיקן על פיהם וכן במכון ממרא)|א?=ר֥וּחַ־יְהֹוָ֖ה (לפי ברויאר במרכא, וכך נראה יותר בצילום כתב־היד)|א?=רֽוּחַ־יְהֹוָ֖ה (וכן במקראות גדולות הכתר)}}",
+                    "{{נוסח|נֹ֥סְסָה|א=נֹ֥סֲסָה}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    1463458
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=לק וכן בדפוסים (וברויאר תיקן על פיהם וכן במכון ממרא)|א?=ר֥וּחַ־יְהֹוָ֖ה (לפי ברויאר במרכא, וכך נראה יותר בצילום כתב־היד)|א?=רֽוּחַ־יְהֹוָ֖ה (וכן במקראות גדולות הכתר)}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2696947
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=ל,ק וכן בדפוסים (וברויאר תיקן על פיהם וכן במכון ממרא)|א?=ר֥וּחַ־יְהֹוָ֖ה (לפי ברויאר במרכא, מקף בתיבת משרת, וכך נראה יותר בצילום כתב־היד)|א?=רֽוּחַ־יְהֹוָ֖ה בגעיה (וכן במקראות גדולות הכתר)}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2706370
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=ל,ש1,ק וכן בדפוסים (וברויאר תיקן על פיהם וכן במכון ממרא)|א?=ר֥וּחַ־יְהֹוָ֖ה (לפי ברויאר במרכא, מקף בתיבת משרת, וכך נראה יותר בצילום כתב־היד)|א?=רֽוּחַ־יְהֹוָ֖ה בגעיה (וכן במקראות גדולות הכתר)}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2706372
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=א?,ל,ש1,ק ובדפוסים, וכן אצל ברויאר ובמכון ממרא); לפי ברויאר יש מרכא ומקף בתיבת משרת, וכך נראה יותר בצילום כתב־היד.|א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכן במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2706374,
+                    2706620,
+                    2717242,
+                    2759625
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=א?,ל,ש1,ק ובדפוסים, וכן אצל ברויאר (ובמכון ממרא); לפי ברויאר יש מרכא ומקף בתיבת משרת, וכך נראה יותר בצילום כתב־היד.|א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכן במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2825830
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=א?,ל,ש1,ק ובדפוסים (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים וקורן וסימנים ומכון ממרא.|א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2825831,
+                    2833853
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|=א?,ל,ש1,ק,פטרבורג-EVR-II-B-55 (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים וקורן וסימנים ומכון ממרא.|א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859864
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==א?,ל,ש1,ק,פטרבורג-EVR-II-B-55 (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים וקורן וסימנים ומכון ממרא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2987559
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==א?,ל,ש1,ק,ל-א,ק25 (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים וקורן וסימנים ומכון ממרא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2987562
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==א?,ל,ש1,ק,ל-א,ק25 (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים (בגינצבורג אין הערה על גירסה אחרת) וקורן וסימנים ומכון ממרא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2987581
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==ל,ש1,ק,ל-א,ק25,ב1 (מרכא וטפחא) וכמו כן בתיג'אן ובדפוסים (בגינצבורג אין הערה על גירסה אחרת) וקורן וסימנים ומכון ממרא.{{ש}}א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה בצילום כתב־היד כי הקו באות רי\"ש נטוי כמרכא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך הכריעו במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2987584
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==ל,ש1,ק,ל-א,ק25,ב1 (מרכא וטפחא); וכמו כן בתיג'אן ובדפוסים (בגינצבורג אין הערה על גירסה אחרת) וקורן וסימנים ומכון ממרא.{{ש}}א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה בצילום כתב־היד כי הקו באות רי\"ש נטוי כמרכא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך הכריעו במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2987797,
+                    2987977
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==ל,ש1,ק,ל-א,ק25,ב1,ש1 (מרכא וטפחא); וכמו כן בתיג'אן ובכתבי־היד הספרדים ובדפוסים (בגינצבורג אין הערה על גירסה אחרת), וכך בקורן וסימנים ומכון ממרא.{{ש}}א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, ובכתב־היד הקו באות רי\"ש נטוי כמרכא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך הכריעו במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2989501
+                  ],
+                  "templates": [
+                    "{{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==ל,ש1,ק,ל-א,ק25,ב1,ש2 (מרכא וטפחא); וכמו כן בתיג'אן ובכתבי־היד הספרדים ובדפוסים (בגינצבורג אין הערה על גירסה אחרת), וכך בקורן וסימנים ומכון ממרא.{{ש}}א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, ובכתב־היד הקו באות רי\"ש נטוי כמרכא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך הכריעו במג\"ה.}}",
+                    "{{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 658392,
+              "parentid": 407777,
+              "timestamp": "2015-11-08T06:08:41Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658392",
+              "excerpts": [
+                {
+                  "line": 25,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|=לק וכן בדפוסים (וברויאר תיקן על פיהם וכן במכון ממרא)|א?=ר֥וּחַ־יְהֹוָ֖ה (לפי ברויאר במרכא, וכך נראה יותר בצילום כתב־היד)|א?=רֽוּחַ־יְהֹוָ֖ה (וכן במקראות גדולות הכתר)}} {{נוסח|נֹ֥סְסָה|א=נֹ֥סֲסָה}} בֽוֹ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2706370,
+              "parentid": 2696947,
+              "timestamp": "2023-03-01T13:47:28Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2706370",
+              "excerpts": [
+                {
+                  "line": 23,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|=ל,ש1,ק וכן בדפוסים (וברויאר תיקן על פיהם וכן במכון ממרא)|א?=ר֥וּחַ־יְהֹוָ֖ה (לפי ברויאר במרכא, מקף בתיבת משרת, וכך נראה יותר בצילום כתב־היד)|א?=רֽוּחַ־יְהֹוָ֖ה בגעיה (וכן במקראות גדולות הכתר)}} {{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}} בֽוֹ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2706372,
+              "parentid": 2706370,
+              "timestamp": "2023-03-01T13:51:25Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2706372",
+              "excerpts": [
+                {
+                  "line": 23,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|=א?,ל,ש1,ק ובדפוסים, וכן אצל ברויאר ובמכון ממרא); לפי ברויאר יש מרכא ומקף בתיבת משרת, וכך נראה יותר בצילום כתב־היד.|א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכן במג\"ה.}} {{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}} בֽוֹ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2825830,
+              "parentid": 2759625,
+              "timestamp": "2023-12-18T16:10:00Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2825830",
+              "excerpts": [
+                {
+                  "line": 24,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|=א?,ל,ש1,ק ובדפוסים (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים וקורן וסימנים ומכון ממרא.|א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}} {{נוסח|נֹ֥סְﬞסָה|א=נֹ֥סֲסָה (חטף)}} בֽוֹ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2987562,
+              "parentid": 2987559,
+              "timestamp": "2026-02-16T18:19:16Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2987562",
+              "excerpts": [
+                {
+                  "line": 24,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==א?,ל,ש1,ק,ל-א,ק25 (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה יותר בצילום כתב־היד, וכמו כן בדפוסים (בגינצבורג אין הערה על גירסה אחרת) וקורן וסימנים ומכון ממרא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך במג\"ה.}} {{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}} בֽוֹ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2987581,
+              "parentid": 2987562,
+              "timestamp": "2026-02-16T19:13:48Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2987581",
+              "excerpts": [
+                {
+                  "line": 24,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==ל,ש1,ק,ל-א,ק25,ב1 (מרכא וטפחא) וכמו כן בתיג'אן ובדפוסים (בגינצבורג אין הערה על גירסה אחרת) וקורן וסימנים ומכון ממרא.{{ש}}א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, וכך נראה בצילום כתב־היד כי הקו באות רי\"ש נטוי כמרכא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך הכריעו במג\"ה.}} {{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}} בֽוֹ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2989501,
+              "parentid": 2987977,
+              "timestamp": "2026-02-17T05:46:01Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2989501",
+              "excerpts": [
+                {
+                  "line": 24,
+                  "text": "וְיִֽרְא֤וּ מִֽמַּעֲרָב֙ אֶת־שֵׁ֣ם יְהֹוָ֔ה וּמִמִּזְרַח־שֶׁ֖מֶשׁ אֶת־כְּבוֹד֑וֹ כִּֽי־יָב֤וֹא כַנָּהָר֙ צָ֔ר {{נוסח|ר֥וּחַ יְהֹוָ֖ה|2==ל,ש1,ק,ל-א,ק25,ב1,ש2 (מרכא וטפחא); וכמו כן בתיג'אן ובכתבי־היד הספרדים ובדפוסים (בגינצבורג אין הערה על גירסה אחרת), וכך בקורן וסימנים ומכון ממרא.{{ש}}א?=ר֥וּחַ־יְהֹוָ֖ה (מרכא וטפחא, ומקף בתיבת המשרת); כך הכריע ברויאר, ובכתב־היד הקו באות רי\"ש נטוי כמרכא.{{ש}}א?=רֽוּחַ־יְהֹוָ֖ה (געיה בתיבה מוקפת?), וכך הכריעו במג\"ה.}} {{נוסח|נֹ֥סְﬞסָה|2=א=נֹ֥סֲסָה (חטף)}} בֽוֹ׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 1934798,
+          "parentid": 1933501,
+          "timestamp": "2023-01-11T09:10:31Z",
+          "comment": "/* ספר ישעיהו כדוגמה ליישום השיטה */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=1934798",
+          "excerpts": [
+            {
+              "line": 37,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 46,
+              "text": "#מקף בתיבת משרת (4-5 מקומות): א. \"נָ֣בֵֽל־צִ֔יץ\" ([[ישעיהו מ/טעמים#מ ז|מ,ז]]); ב. \"וַתּ֤וֹשַֽׁע־לוֹ֙\" ([[ישעיהו נט/טעמים#נט טז|נט,טז]]); ג. \"ר֥וּחַ־יְהוָ֖ה\"? ([[ישעיהו נט/טעמים#נט יט|נט,יט]] לפי ברויאר, וכך נראה יותר מעיון בכתב־היד, וכן הוא גם בכתבי־היד הקרובים לכתר [ל,ק] ובדפוסים; אבל אולי צריך לקרוא רֽוּחַ־יְהוָ֖ה כמו שקבעו במקראות גדולות הכתר]); ד. \"וַתּ֤וֹשַֽׁע־לִי֙\" ([[ישעיהו סג/טעמים#סג ה|סג,ה]]); ה. \"אִם־יִוָּ֥לֵֽד־גּ֖וֹי\" ([[ישעיהו סו/טעמים#סו ח|סו,ח]])."
+            },
+            {
+              "line": 48,
+              "text": "לגבי שלושת הסוגים האחרונים (10-11 מקומות), נוסח הכתר ברור לגמרי בכמעט כולם (למעט \"ר֥וּחַ־יְהוָ֖ה\" ב[[ישעיהו נט/טעמים#נט יט|נט,יט]] כספק מקף בתיבת משרת), ובכולם מדובר על נטייה רווחת בכתר (ולא בטעות סופר) או לפחות על חוסר עקביות בשיטת הניקוד. נטיות אלו אינן עניין של חובה (כי אף הכתר עצמו אינו עקבי לגמרי לגביהן). ולכן לגבי מקף בתיבת משרת ולגבי ניקודו של תיבת הכתיב, במהדורתנו נעצב את המקומות האלה לפי [[משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ב#עיצוב הניקוד והטעמים במהדורתנו|שיטתנו]], ונציין את השינויים בתיעוד הנוסח. ולגבי שתי המילים \"מָעוּז֗וֹ\" (במקום מָעוּזּ֗וֹ) ו\"בְּמָעוּזִ֔י\" (במקום \"בְּמָעוּזִּ֔י\"), בשתיהן אות הזי\"ן תהיה דגושה, כמקובל לא רק בכתבי־היד הקרובים לכתר ובדפוסים, אלא גם בכתר עצמו במקומות אחרים, וכך נשמור על עקביות למען הקורא ובהתאם למטרת העיצוב במהדורתנו.{{הערה|גם הרב ברויאר במהדורותיו החליט כך, וכנראה מאותן סיבות. אך במקראות גדולות הכתר קבעו \"מָעוּז֗וֹ\" ו\"בְּמָעוּזִ֔י\" כדי להעביר את נוסח הכתר בדיוק למרות חריגותו וחוסר העקביות שבו.}}"
+            },
+            {
+              "line": 209,
+              "text": "==עיצוב כללי בספרי נ\"ך: חטפים באותיות לא גרוניות=="
+            },
+            {
+              "line": 213,
+              "text": "{{עוגן|חטפים באותיות לא-גרוניות בישעיהו}}'''ספר ישעיהו (53 פריטים):''' [[ישעיהו א/טעמים#א כג|א,כג]] (א=סוֹרֲרִ֗ים); [[ישעיהו א/טעמים#א ל|א,ל]] (א=וּֽכֲגַנָּ֔ה); [[ישעיהו ב/טעמים#ב ו|ב,ו]] (א=וְעֹנֲנִ֖ים); [[ישעיהו י/טעמים#י א|י,א]] (א=הַחֹֽקֲקִ֖ים); [[ישעיהו י/טעמים#י לא|י,לא]] (א=נָֽדֲדָ֖ה); [[ישעיהו יא/טעמים#יא יג|יא,יג]] (א=וְצֹרֲרֵ֥י); [[ישעיהו יז/טעמים#יז יד|יז,יד]] (א=לְבֹזֲזֵֽינוּ); [[ישעיהו יט/טעמים#יט ו|יט,ו]] (א=דָּלֲל֥וּ); [[ישעיהו יט/טעמים#יט כה|יט,כה]] (א=בֵּרֲכ֛וֹ);{{הערה|בטעות \"יט,כו\" ברשימת ברויאר בסוף תנ\"ך כתר ירושלים.}} [[ישעיהו כא/טעמים#כא ו|כא,ו]] (א=הַֽמֲצַפֶּ֔ה); [[ישעיהו כב/טעמים#כב ג|כב,ג]] (א=נָֽדֲדוּ־יַ֖חַד); [[ישעיהו כב/טעמים#כב טז|כב,טז]] (א=חֹקֲקִ֥י); [[ישעיהו כג/טעמים#כג יג|כג,יג]] (א=עֽוֹרֲרוּ֙); [[ישעיהו כד/טעמים#כד יט|כד,יט]] (א=הִֽתְפּוֹרֲרָה֙); [[ישעיהו כד/טעמים#כד יט|כד,יט]] (א=הִֽתְמוֹטֲטָ֖ה); [[ישעיהו כד/טעמים#כד כ|כד,כ]] (א=וְהִֽתְנוֹדֲדָ֖ה); [[ישעיהו כו/טעמים#כו כ|כו,כ]] (א=וּֽסֲגֹ֥ר); [[ישעיהו כז/טעמים#כז ח|כז,ח]] (א=בְּסַאסֳּאָ֖ה [חטף קמץ]); [[ישעיהו ל/טעמים#ל א|ל,א]] (א=סֽוֹרֲרִים֙); [[ישעיהו לא/טעמים#לא ח|לא,ח]] (א=תֹּאכֲלֶ֑נּוּ); [[ישעיהו לג/טעמים#לג ג|לג,ג]] (א=נָדֲד֖וּ); [[ישעיהו לג/טעמים#לג כב|לג,כב]] (א=מְחֹקֲקֵ֑נוּ); [[ישעיהו לג/טעמים#לג כג|לג,כג]] (א=בָּ֥זֲזוּ); [[ישעיהו לד/טעמים#לד טז|לד,טז]] (א=וּֽקֲרָ֔אוּ); [[ישעיהו לז/טעמים#לז יז|לז,יז]] (א=וּֽשֲׁמָ֔ע); [[ישעיהו לז/טעמים#לז לג|לז,לג]] (א=סֹלֲלָֽה); [[ישעיהו לח/טעמים#לח יח|לח,יח]] (א=יְהַלֲלֶ֑ךָּ); [[ישעיהו מ/טעמים#מ ד|מ,ד]] (א=וְהָרֲכָסִ֖ים); [[ישעיהו מ/טעמים#מ כ|מ,כ]] (א=הַֽמֲסֻכָּ֣ן); [[ישעיהו מב/טעמים#מב כד|מב,כד]] (א=לְבֹזֲזִ֖ים); [[ישעיהו מה/טעמים#מה יד|מה,יד]] (א=וּֽסֲחַר־כּוּשׁ֮); [[ישעיהו מה/טעמים#מה יח|מה,יח]] (א=כֽוֹנֲנָ֔הּ); [[ישעיהו מה/טעמים#מה כ|מה,כ]] (א=וּמִֽתְפַּלֲלִ֔ים); [[ישעיהו מז/טעמים#מז י|מז,י]] (א=שׁוֹבֲבָ֑תֶךְ); [[ישעיהו מח/טעמים#מח יד|מח,יד]] (א=וּֽשֲׁמָ֔עוּ); [[ישעיהו מח/טעמים#מח יז|מח,יז]] (א=מַדְרִֽיכֲךָ֖); [[ישעיהו נא/טעמים#נא ב|נא,ב]] (א=וַאֲבָרֲכֵ֖הוּ); [[ישעיהו נא/טעמים#נא יז|נא,יז]] (א=הִתְעוֹרֲרִ֣י [1]); [[ישעיהו נא/טעמים#נא יז|נא,יז]] (א=הִֽתְעוֹרֲרִ֗י [2]); [[ישעיהו נא/טעמים#נא כ|נא,כ]] (א=הַֽמֲלֵאִ֥ים); [[ישעיהו נב/טעמים#נב ו|נב,ו]] (א=הַֽמֲדַבֵּ֖ר); [[ישעיהו נג/טעמים#נג ז|נג,ז]] (א=גֹזֲזֶ֖יהָ); [[ישעיהו נז/טעמים#נז ג|נז,ג]] (א=עֹנֲנָ֑ה); [[ישעיהו נז/טעמים#נז כ|נז,כ]] (א=וְהָרֲשָׁעִ֖ים); [[ישעיהו נח/טעמים#נח ט|נח,ט]] (א=מִתּֽוֹכֲךָ֙); [[ישעיהו נט/טעמים#נט י|נט,י]] (א=נְגַשֲׁשָׁ֤ה); [[ישעיהו נט/טעמים#נט יט|נט,יט]] (א=נֹ֥סֲסָה); [[ישעיהו סב/טעמים#סב ט|סב,ט]] (א=וְהִֽלֲל֖וּ); [[ישעיהו סב/טעמים#סב י|סב,י]] (א=הַֽמֲסִלָּה֙); [[ישעיהו סג/טעמים#סג יח|סג,יח]] (א=בּוֹסֲס֖וּ); [[ישעיהו סד/טעמים#סד י|סד,י]] (א=הִֽלֲל֙וּךָ֙); [[ישעיהו סה/טעמים#סה יא|סה,יא]] (א=וְהַֽמֲמַלְאִ֖ים); [[ישעיהו סו/טעמים#סו טז|סו,טז]] (א=חַֽלֲלֵ֥י)."
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 35,
+              "text": "==ספר ישעיהו כדוגמה ליישום השיטה=="
+            },
+            {
+              "line": 44,
+              "text": "#מקף בתיבת משרת (4-5 מקומות): א. \"נָ֣בֵֽל־צִ֔יץ\" ([[ישעיהו מ/טעמים#מ ז|מ,ז]]); ב. \"וַתּ֤וֹשַֽׁע־לוֹ֙\" ([[ישעיהו נט/טעמים#נט טז|נט,טז]]); ג. \"ר֥וּחַ־יְהוָ֖ה\"? ([[ישעיהו נט/טעמים#נט יט|נט,יט]] לפי ברויאר, וכך נראה יותר מעיון בכתב־היד, וכן הוא גם בכתבי־היד הקרובים לכתר [ל,ש1,ק] ובדפוסים; אבל אולי צריך לקרוא רֽוּחַ־יְהוָ֖ה כמו שקבעו במקראות גדולות הכתר); ד. \"וַתּ֤וֹשַֽׁע־לִי֙\" ([[ישעיהו סג/טעמים#סג ה|סג,ה]]); ה. \"אִם־יִוָּ֥לֵֽד־גּ֖וֹי\" ([[ישעיהו סו/טעמים#סו ח|סו,ח]])."
+            },
+            {
+              "line": 46,
+              "text": "לגבי שלושת הסוגים האחרונים (10-11 מקומות), נוסח הכתר ברור לגמרי בכמעט כולם (למעט \"ר֥וּחַ־יְהוָ֖ה\" ב[[ישעיהו נט/טעמים#נט יט|נט,יט]] כספק מקף בתיבת משרת), ובכולם מדובר על נטייה רווחת בכתר (ולא בטעות סופר) או לפחות על חוסר עקביות בשיטת הניקוד. נטיות אלו אינן עניין של חובה (כי אף הכתר עצמו אינו עקבי לגמרי לגביהן). ולכן לגבי מקף בתיבת משרת ולגבי ניקודו של תיבת הכתיב, במהדורתנו נעצב את המקומות האלה לפי [[משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ב#עיצוב הניקוד והטעמים במהדורתנו|שיטתנו]], ונציין את השינויים בתיעוד הנוסח. ולגבי שתי המילים \"מָעוּז֗וֹ\" (במקום מָעוּזּ֗וֹ) ו\"בְּמָעוּזִ֔י\" (במקום \"בְּמָעוּזִּ֔י\"), בשתיהן אות הזי\"ן תהיה דגושה, כמקובל לא רק בכתבי־היד הקרובים לכתר ובדפוסים, אלא גם בכתר עצמו במקומות אחרים, וכך נשמור על עקביות למען הקורא ובהתאם למטרת העיצוב במהדורתנו.{{הערה|גם הרב ברויאר במהדורותיו החליט כך, וכנראה מאותן סיבות. אך במקראות גדולות הכתר קבעו \"מָעוּז֗וֹ\" ו\"בְּמָעוּזִ֔י\" כדי להעביר את נוסח הכתר בדיוק למרות חריגותו וחוסר העקביות שבו.}}"
+            },
+            {
+              "line": 641,
+              "text": "==מסורת הקוראים בנ\"ך: עיצוב כללי לחטפים באותיות לא גרוניות=="
+            },
+            {
+              "line": 653,
+              "text": "{{עוגן|חטפים באותיות לא-גרוניות בישעיהו}}'''[[משתמש:Dovi/מקרא על פי המסורה/נביאים#ספר ישעיהו|ספר ישעיהו]] (53 פריטים):''' [[ישעיהו א/טעמים#א כג|א,כג]] (א=סוֹרֲרִ֗ים); [[ישעיהו א/טעמים#א ל|א,ל]] (א=וּֽכֲגַנָּ֔ה); [[ישעיהו ב/טעמים#ב ו|ב,ו]] (א=וְעֹנֲנִ֖ים); [[ישעיהו י/טעמים#י א|י,א]] (א=הַחֹֽקֲקִ֖ים); [[ישעיהו י/טעמים#י לא|י,לא]] (א=נָֽדֲדָ֖ה); [[ישעיהו יא/טעמים#יא יג|יא,יג]] (א=וְצֹרֲרֵ֥י); [[ישעיהו יז/טעמים#יז יד|יז,יד]] (א=לְבֹזֲזֵֽינוּ); [[ישעיהו יט/טעמים#יט ו|יט,ו]] (א=דָּלֲל֥וּ); [[ישעיהו יט/טעמים#יט כה|יט,כה]] (א=בֵּרֲכ֛וֹ);{{הערה|בטעות \"יט,כו\" ברשימת ברויאר בסוף תנ\"ך כתר ירושלים.}} [[ישעיהו כא/טעמים#כא ו|כא,ו]] (א=הַֽמֲצַפֶּ֔ה); [[ישעיהו כב/טעמים#כב ג|כב,ג]] (א=נָֽדֲדוּ־יַ֖חַד); [[ישעיהו כב/טעמים#כב טז|כב,טז]] (א=חֹקֲקִ֥י); [[ישעיהו כג/טעמים#כג יג|כג,יג]] (א=עֽוֹרֲרוּ֙); [[ישעיהו כד/טעמים#כד יט|כד,יט]] (א=הִֽתְפּוֹרֲרָה֙); [[ישעיהו כד/טעמים#כד יט|כד,יט]] (א=הִֽתְמוֹטֲטָ֖ה); [[ישעיהו כד/טעמים#כד כ|כד,כ]] (א=וְהִֽתְנוֹדֲדָ֖ה); [[ישעיהו כו/טעמים#כו כ|כו,כ]] (א=וּֽסֲגֹ֥ר); [[ישעיהו כז/טעמים#כז ח|כז,ח]] (א=בְּסַאסֳּאָ֖ה [{{קו תחתי|חטף קמץ}}]); [[ישעיהו ל/טעמים#ל א|ל,א]] (א=סֽוֹרֲרִים֙); [[ישעיהו לא/טעמים#לא ח|לא,ח]] (א=תֹּאכֲלֶ֑נּוּ); [[ישעיהו לג/טעמים#לג ג|לג,ג]] (א=נָדֲד֖וּ); [[ישעיהו לג/טעמים#לג כב|לג,כב]] (א=מְחֹקֲקֵ֑נוּ); [[ישעיהו לג/טעמים#לג כג|לג,כג]] (א=בָּ֥זֲזוּ); [[ישעיהו לד/טעמים#לד טז|לד,טז]] (א=וּֽקֲרָ֔אוּ); [[ישעיהו לז/טעמים#לז יז|לז,יז]] (א=וּֽשֲׁמָ֔ע); [[ישעיהו לז/טעמים#לז לג|לז,לג]] (א=סֹלֲלָֽה); [[ישעיהו לח/טעמים#לח יח|לח,יח]] (א=יְהַלֲלֶ֑ךָּ); [[ישעיהו מ/טעמים#מ ד|מ,ד]] (א=וְהָרֲכָסִ֖ים); [[ישעיהו מ/טעמים#מ כ|מ,כ]] (א=הַֽמֲסֻכָּ֣ן); [[ישעיהו מב/טעמים#מב כד|מב,כד]] (א=לְבֹזֲזִ֖ים); [[ישעיהו מה/טעמים#מה יד|מה,יד]] (א=וּֽסֲחַר־כּוּשׁ֮); [[ישעיהו מה/טעמים#מה יח|מה,יח]] (א=כֽוֹנֲנָ֔הּ); [[ישעיהו מה/טעמים#מה כ|מה,כ]] (א=וּמִֽתְפַּלֲלִ֔ים); [[ישעיהו מז/טעמים#מז י|מז,י]] (א=שׁוֹבֲבָ֑תֶךְ); [[ישעיהו מח/טעמים#מח יד|מח,יד]] (א=וּֽשֲׁמָ֔עוּ); [[ישעיהו מח/טעמים#מח יז|מח,יז]] (א=מַדְרִֽיכֲךָ֖); [[ישעיהו נא/טעמים#נא ב|נא,ב]] (א=וַאֲבָרֲכֵ֖הוּ); [[ישעיהו נא/טעמים#נא יז|נא,יז]] (א=הִתְעוֹרֲרִ֣י [1]); [[ישעיהו נא/טעמים#נא יז|נא,יז]] (א=הִֽתְעוֹרֲרִ֗י [2]); [[ישעיהו נא/טעמים#נא כ|נא,כ]] (א=הַֽמֲלֵאִ֥ים); [[ישעיהו נב/טעמים#נב ו|נב,ו]] (א=הַֽמֲדַבֵּ֖ר); [[ישעיהו נג/טעמים#נג ז|נג,ז]] (א=גֹזֲזֶ֖יהָ); [[ישעיהו נז/טעמים#נז ג|נז,ג]] (א=עֹנֲנָ֑ה); [[ישעיהו נז/טעמים#נז כ|נז,כ]] (א=וְהָרֲשָׁעִ֖ים); [[ישעיהו נח/טעמים#נח ט|נח,ט]] (א=מִתּֽוֹכֲךָ֙); [[ישעיהו נט/טעמים#נט י|נט,י]] (א=נְגַשֲׁשָׁ֤ה); [[ישעיהו נט/טעמים#נט יט|נט,יט]] (א=נֹ֥סֲסָה); [[ישעיהו סב/טעמים#סב ט|סב,ט]] (א=וְהִֽלֲל֖וּ); [[ישעיהו סב/טעמים#סב י|סב,י]] (א=הַֽמֲסִלָּה֙); [[ישעיהו סג/טעמים#סג יח|סג,יח]] (א=בּוֹסֲס֖וּ); [[ישעיהו סד/טעמים#סד י|סד,י]] (א=הִֽלֲל֙וּךָ֙); [[ישעיהו סה/טעמים#סה יא|סה,יא]] (א=וְהַֽמֲמַלְאִ֖ים); [[ישעיהו סו/טעמים#סו טז|סו,טז]] (א=חַֽלֲלֵ֥י)."
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "SPECIAL-LETTER-JER-39-13",
+      "chapters": [
+        {
+          "key": "jeremiah-39",
+          "contents_read": 12,
+          "visible_revisions": 12,
+          "states": [
+            {
+              "verse": 13,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403550,
+                    407899
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658320,
+                    903994,
+                    1379519
+                  ],
+                  "templates": [
+                    "{{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|=דפוסים וקורן|א=וּנְבֽוּשַׁזְבָּן֙}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2696972,
+                    2717293,
+                    2759671
+                  ],
+                  "templates": [
+                    "{{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|=דפוסים וקורן (אות נו\"ן סופית גדולה)|א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859736,
+                    2908062,
+                    2911301,
+                    2988023
+                  ],
+                  "templates": [
+                    "{{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|2==דפוסים וקורן (אות נו\"ן סופית גדולה){{ש}}א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 658320,
+              "parentid": 407899,
+              "timestamp": "2015-11-08T06:06:23Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658320",
+              "excerpts": [
+                {
+                  "line": 18,
+                  "text": "וַיִּשְׁלַ֞ח נְבוּזַרְאֲדָ֣ן רַב־טַבָּחִ֗ים {{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|=דפוסים וקורן|א=וּנְבֽוּשַׁזְבָּן֙}} רַב־סָרִ֔יס וְנֵרְגַ֥ל שַׂרְאֶ֖צֶר רַב־מָ֑ג וְכֹ֖ל רַבֵּ֥י מֶלֶךְ־בָּבֶֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 1379519,
+              "parentid": 903994,
+              "timestamp": "2022-03-03T13:24:20Z",
+              "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1379519",
+              "excerpts": [
+                {
+                  "line": 16,
+                  "text": "וַיִּשְׁלַ֞ח נְבוּזַרְאֲדָ֣ן רַב־טַבָּחִ֗ים {{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|=דפוסים וקורן|א=וּנְבֽוּשַׁזְבָּן֙}} רַב־סָרִ֔יס וְנֵרְגַ֥ל שַׂרְאֶ֖צֶר רַב־מָ֑ג וְכֹ֖ל רַבֵּ֥י מֶלֶךְ־בָּבֶֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2696972,
+              "parentid": 1379519,
+              "timestamp": "2023-02-01T14:48:38Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2696972",
+              "excerpts": [
+                {
+                  "line": 16,
+                  "text": "וַיִּשְׁלַ֞ח נְבוּזַרְאֲדָ֣ן רַב־טַבָּחִ֗ים {{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|=דפוסים וקורן (אות נו\"ן סופית גדולה)|א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)}} רַב־סָרִ֔יס וְנֵרְגַ֥ל שַׂרְאֶ֖צֶר רַב־מָ֑ג וְכֹ֖ל רַבֵּ֥י מֶלֶךְ־בָּבֶֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2988023,
+              "parentid": 2911301,
+              "timestamp": "2026-02-16T19:32:34Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2988023",
+              "excerpts": [
+                {
+                  "line": 17,
+                  "text": "וַיִּשְׁלַ֞ח נְבוּזַרְאֲדָ֣ן רַב־טַבָּחִ֗ים {{נוסח|וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}|2==דפוסים וקורן (אות נו\"ן סופית גדולה){{ש}}א=וּנְבֽוּשַׁזְבָּן֙ (אות רגילה)}} רַב־סָרִ֔יס וְנֵרְגַ֥ל שַׂרְאֶ֖צֶר רַב־מָ֑ג וְכֹ֖ל רַבֵּ֥י מֶלֶךְ־בָּבֶֽל׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2696987,
+          "parentid": 2696986,
+          "timestamp": "2023-02-01T15:31:25Z",
+          "comment": "/* אותיות גדולות וקטנות */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987",
+          "excerpts": [
+            {
+              "line": 137,
+              "text": "==עיצוב כללי בספרי נ\"ך: אותיות מיוחדות=="
+            },
+            {
+              "line": 139,
+              "text": "===אותיות גדולות וקטנות==="
+            },
+            {
+              "line": 151,
+              "text": "#'''(ק)''' [[ירמיהו לט/טעמים#לט יג|ירמיהו (לט,יג)]]: [וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}]*"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 67,
+              "text": "==מסורת הסופרים בנביאים וכתובים=="
+            },
+            {
+              "line": 177,
+              "text": "===אותיות מיוחדות במהדורתנו==="
+            },
+            {
+              "line": 189,
+              "text": "#'''(ק)''' [[ירמיהו לט/טעמים#לט יג|ירמיהו (לט,יג)]]: [וּנְבֽוּשַׁזְבָּ{{מ:אות-ק|ן֙}}]*"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "HATAF-JEREMIAH-KETIV-QERE",
+      "chapters": [
+        {
+          "key": "jeremiah-48",
+          "contents_read": 16,
+          "visible_revisions": 16,
+          "states": [
+            {
+              "verse": 20,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403586
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658329,
+                    904021,
+                    968142
+                  ],
+                  "templates": [
+                    "{{נוסח|{{כו\"ק|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְעָ֑קוּ}}|א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    1000167,
+                    1379528,
+                    2693819
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק של שתי מילים בהערה אחת|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְעָ֑קוּ}}|א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2694131,
+                    2703467,
+                    2717306,
+                    2759680
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק של שתי מילים בהערה אחת|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְﬞעָ֑קוּ}}|א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859751,
+                    2908070,
+                    2988032
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק של שתי מילים בהערה אחת|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְﬞעָ֑קוּ}}|2=א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    3010625,
+                    3087505
+                  ],
+                  "templates": [
+                    "{{נוסח|{{מ:כו\"ק מיוחד|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְﬞעָ֑קוּ|סוג=כו\"ק של שתי מילים בהערה אחת}}|2=א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 403586,
+              "parentid": 0,
+              "timestamp": "2011-05-10T21:38:03Z",
+              "comment": "תיכנות: אורי מילר ואראל סגל",
+              "url": "https://he.wikisource.org/w/index.php?oldid=403586",
+              "excerpts": [
+                {
+                  "line": 22,
+                  "text": "הֹבִ֥ישׁ מוֹאָ֛ב כִּֽי־חַ֖תָּה {{כתיב וקרי|הילילי וזעקי|הֵילִ֣ילוּ׀ וּֽזְעָ֑קוּ}} הַגִּ֣ידוּ בְאַרְנ֔וֹן כִּ֥י שֻׁדַּ֖ד מוֹאָֽב׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 658329,
+              "parentid": 403586,
+              "timestamp": "2015-11-08T06:06:41Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658329",
+              "excerpts": [
+                {
+                  "line": 26,
+                  "text": "הֹבִ֥ישׁ מוֹאָ֛ב כִּי־חַ֖תָּה {{נוסח|{{כו\"ק|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְעָ֑קוּ}}|א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}} הַגִּ֣ידוּ בְאַרְנ֔וֹן כִּ֥י שֻׁדַּ֖ד מוֹאָֽב׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2694131,
+              "parentid": 2693819,
+              "timestamp": "2023-01-30T11:15:29Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2694131",
+              "excerpts": [
+                {
+                  "line": 24,
+                  "text": "הֹבִ֥ישׁ מוֹאָ֛ב כִּי־חַ֖תָּה {{נוסח|{{מ:כו\"ק של שתי מילים בהערה אחת|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְﬞעָ֑קוּ}}|א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}} הַגִּ֣ידוּ בְאַרְנ֔וֹן כִּ֥י שֻׁדַּ֖ד מוֹאָֽב׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3087505,
+              "parentid": 3010625,
+              "timestamp": "2026-10-07T03:06:00Z",
+              "comment": "Use template קו\"כ, not כו\"ק, where the qere directly follows a maqaf, as MAM's introduction prescribes: 2 Sam 20:23, Jer 48:21, Ezek 39:25 and 2 Chr 13:19",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3087505",
+              "excerpts": [
+                {
+                  "line": 25,
+                  "text": "הֹבִ֥ישׁ מוֹאָ֛ב כִּי־חַ֖תָּה {{נוסח|{{מ:כו\"ק מיוחד|הילילי וזעקי|הֵילִ֣ילוּ{{מ:פסק}}וּֽזְﬞעָ֑קוּ|סוג=כו\"ק של שתי מילים בהערה אחת}}|2=א-כתיב=וּֽזֳעָ֑קיּ (בחטף קמץ)}} הַגִּ֣ידוּ בְאַרְנ֔וֹן כִּ֥י שֻׁדַּ֖ד מוֹאָֽב׃"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "jeremiah-50",
+          "contents_read": 18,
+          "visible_revisions": 18,
+          "states": [
+            {
+              "verse": 6,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403594,
+                    407918
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658331,
+                    904023,
+                    992199,
+                    1288227,
+                    1379530,
+                    2693676
+                  ],
+                  "templates": [
+                    "{{נוסח|{{כו\"ק|שובבים|שׁוֹבְב֑וּם}}|א-כתיב=שׁוֹבֲב֑יּם (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2694134,
+                    2696978,
+                    2717308,
+                    2759683,
+                    2836085
+                  ],
+                  "templates": [
+                    "{{נוסח|{{כו\"ק|שובבים|שׁוֹבְﬞב֑וּם}}|א-כתיב=שׁוֹבֲב֑יּם (חטף)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859755,
+                    2865252,
+                    2908072,
+                    2911302,
+                    2988034
+                  ],
+                  "templates": [
+                    "{{נוסח|{{כו\"ק|שובבים|שׁוֹבְﬞב֑וּם}}|2=א-כתיב=שׁוֹבֲב֑יּם (חטף)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 407918,
+              "parentid": 403594,
+              "timestamp": "2011-05-12T03:21:10Z",
+              "comment": "תיכנות: אורי מילר ואראל סגל",
+              "url": "https://he.wikisource.org/w/index.php?oldid=407918",
+              "excerpts": [
+                {
+                  "line": 8,
+                  "text": "צֹ֤אן אֹֽבְדוֹת֙ {{כתיב וקרי|היה|הָי֣וּ}} עַמִּ֔י רֹעֵיהֶ֣ם הִתְע֔וּם הָרִ֖ים {{כתיב וקרי|שובבים|שֽׁוֹבְב֑וּם}} מֵהַ֤ר אֶל־גִּבְעָה֙ הָלָ֔כוּ שָׁכְח֖וּ רִבְצָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 658331,
+              "parentid": 407918,
+              "timestamp": "2015-11-08T06:06:46Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658331",
+              "excerpts": [
+                {
+                  "line": 12,
+                  "text": "צֹ֤אן אֹֽבְדוֹת֙ {{כו\"ק|היה|הָי֣וּ}} עַמִּ֔י רֹעֵיהֶ֣ם הִתְע֔וּם הָרִ֖ים {{נוסח|{{כו\"ק|שובבים|שׁוֹבְב֑וּם}}|א-כתיב=שׁוֹבֲב֑יּם (חטף)}} מֵהַ֤ר אֶל־גִּבְעָה֙ הָלָ֔כוּ שָׁכְח֖וּ רִבְצָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2694134,
+              "parentid": 2693676,
+              "timestamp": "2023-01-30T11:32:11Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2694134",
+              "excerpts": [
+                {
+                  "line": 10,
+                  "text": "צֹ֤אן אֹֽבְדוֹת֙ {{כו\"ק|היה|הָי֣וּ}} עַמִּ֔י רֹעֵיהֶ֣ם הִתְע֔וּם הָרִ֖ים {{נוסח|{{כו\"ק|שובבים|שׁוֹבְﬞב֑וּם}}|א-כתיב=שׁוֹבֲב֑יּם (חטף)}} מֵהַ֤ר אֶל־גִּבְעָה֙ הָלָ֔כוּ שָׁכְח֖וּ רִבְצָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2988034,
+              "parentid": 2911302,
+              "timestamp": "2026-02-16T19:32:53Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2988034",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "צֹ֤אן אֹֽבְדוֹת֙ {{כו\"ק|היה|הָי֣וּ}} עַמִּ֔י רֹעֵיהֶ֣ם הִתְע֔וּם הָרִ֖ים {{נוסח|{{כו\"ק|שובבים|שׁוֹבְﬞב֑וּם}}|2=א-כתיב=שׁוֹבֲב֑יּם (חטף)}} מֵהַ֤ר אֶל־גִּבְעָה֙ הָלָ֔כוּ שָׁכְח֖וּ רִבְצָֽם׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2696987,
+          "parentid": 2696986,
+          "timestamp": "2023-02-01T15:31:25Z",
+          "comment": "/* אותיות גדולות וקטנות */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987",
+          "excerpts": [
+            {
+              "line": 211,
+              "text": "==עיצוב כללי בספרי נ\"ך: חטפים באותיות לא גרוניות=="
+            },
+            {
+              "line": 217,
+              "text": "{{עוגן|חטפים באותיות לא-גרוניות בירמיהו}}'''[[משתמש:Dovi/מקרא על פי המסורה/נביאים#ספר ירמיהו|ספר ירמיהו]] (37 פריטים):'''{{הערה|1=רשימה זו אינה כוללת את הפריט [[ירמיהו מח/טעמים#מח לב|מח,לב]] (א=מִבֲּכִ֨י), המובא ברשימות ברויאר. נראה יותר שבכתר יש כאן שווא בלבד (\"מִבְּכִ֨י\"), או שהקו של הפתח נמחק; וכך הכריעו גם ב[https://www.mgketer.org/mikra/13/48/1/mg/106 מג\"ה].}} [[ירמיהו ג/טעמים#ג כה|ג,כה]] (א=וּֽתֲכַסֵּנוּ֮); [[ירמיהו ד/טעמים#ד ז|ד,ז]] (א=מִֽסֻּבֲּכ֔וֹ); [[ירמיהו ה/טעמים#ה א|ה,א]] (א=שׁוֹטֲט֞וּ); [[ירמיהו ה/טעמים#ה ה|ה,ה]] (א=אֵֽלֲכָה־לִּ֤י); [[ירמיהו ו/טעמים#ו ו|ו,ו]] (א=סֹֽלֲלָ֑ה); [[ירמיהו ו/טעמים#ו ט|ו,ט]] (א=יְעוֹלֲל֥וּ); [[ירמיהו ו/טעמים#ו כח|ו,כח]] (א=סוֹרֲרִ֔ים); [[ירמיהו ז/טעמים#ז יא|ז,יא]] (א=הַֽמֳעָרַ֣ת [{{קו תחתי|חטף קמץ}}]); [[ירמיהו ח/טעמים#ח ה|ח,ה]] (א=שׁוֹבֲבָ֜ה); [[ירמיהו ח/טעמים#ח כג|ח,כג]] (א=חַֽלֲלֵ֥י); [[ירמיהו ט/טעמים#ט ט|ט,ט]] (א=נָדֲד֖וּ); [[ירמיהו ט/טעמים#ט טז|ט,טז]] (א=לַמְקוֹנֲנ֖וֹת); [[ירמיהו יא/טעמים#יא טו|יא,טו]] (א=הַֽמֲזִמָּ֙תָה֙); [[ירמיהו יא/טעמים#יא כא|יא,כא]] (א=הַֽמֲבַקְשִׁ֥ים); [[ירמיהו יב/טעמים#יב י|יב,י]] (א=בֹּסֲס֖וּ); [[ירמיהו יב/טעמים#יב יב|יב,יב]] (א=שֹֽׁדֲדִ֔ים); [[ירמיהו כ/טעמים#כ יז|כ,יז]] (א=לֹא־מוֹתֲתַ֖נִי); [[ירמיהו כב/טעמים#כב טו|כב,טו]] (א=הֲתִֽמֲלֹ֔ךְ); [[ירמיהו כב/טעמים#כב כ|כב,כ]] (א=וּֽצֳעָ֔קִי [{{קו תחתי|חטף קמץ}}]); [[ירמיהו כב/טעמים#כב כח|כב,כח]] (א=הֽוּטֲלוּ֙); [[ירמיהו כה/טעמים#כה לג|כה,לג]] (א=חַֽלֲלֵ֤י); [[ירמיהו כה/טעמים#כה לו|כה,לו]] (א=וִֽילֲלַ֖ת); [[ירמיהו לא/טעמים#לא לב|לא,לב]] (ל=אֶכְתֲּבֶ֑נָּה);{{הערה|1=בן־נפתלי,'''ל''',ב1=אֶכְתֲּבֶ֑נָּה (חטף פתח); בן־אשר,מ\"ש,דפוסים=אֶכְתֳּבֶ֑נָּה (חטף קמץ); ק=אֶכְתְּבֶ֑נָּה (שווא). הפריט אינו מופיע בספר החילופים מהדורת ליפשיץ; החילוף מוזכר ברד\"ק, ודבריו הובאו במ\"ש.}} [[ירמיהו לב/טעמים#לב ט|לב,ט]] (ל=וָֽאֶשְׁקֲלָה־לּוֹ֙); [[ירמיהו לג/טעמים#לג י|לג,י]] (א=הַֽנֲשַׁמּ֗וֹת); [[ירמיהו מ/טעמים#מ טו|מ,טו]] (א=אֵ֤לֲכָה); [[ירמיהו מא/טעמים#מא ה|מא,ה]] (א=וּמִתְגֹּֽדֲדִ֑ים); [[ירמיהו מד/טעמים#מד ט|מד,ט]] (א=הַֽשֲׁכַחְתֶּם֩); [[ירמיהו מו/טעמים#מו ט|מו,ט]] (א=וְהִתְהֹלֲל֣וּ); [[ירמיהו מח/טעמים#מח כ|מח,כ]] (א-קרי=וּֽזֳעָ֑קוּ [{{קו תחתי|חטף קמץ}}]);  [[ירמיהו מט/טעמים#מט ד|מט,ד]] (א=מַה־תִּתְהַֽלֲלִי֙); [[ירמיהו נ/טעמים#נ ו|נ,ו]] (א-קרי=שׁוֹבֲב֑וּם); [[ירמיהו נ/טעמים#נ י|נ,י]] (א=כָּל־שֹׁלֲלֶ֥יהָ); [[ירמיהו נא/טעמים#נא ב|נא,ב]] (א=וִיבֹקֲק֖וּ);{{הערה|הפריט חסר ברשימות ברויאר.}} [[ירמיהו נא/טעמים#נא ז|נא,ז]] (א=יִתְהֹלֲל֥וּ); [[ירמיהו נא/טעמים#נא מט|נא,מט2]] (א=חַֽלֲלֵ֥י); [[ירמיהו נא/טעמים#נא נג|נא,נג]] (א=שֹׁדֲדִ֛ים)."
+            },
+            {
+              "line": 333,
+              "text": "==ירמיהו=="
+            },
+            {
+              "line": 337,
+              "text": "'''חלק חסר בכתר:''' {{#קטע:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד|חלק חסר בירמיהו}} למידע על החלק החסר בספר ירמיהו ראו '''[[משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד#ירמיהו (קטע)|כאן]]'''."
+            },
+            {
+              "line": 342,
+              "text": "*קרי ולא כתיב ([[משתמש:Dovi/נביאים וכתובים על פי המסורה/ספר ירמיהו/לא|לא,לז]]): [הִנֵּ֛ה יָמִ֥ים {{קרי ולא כתיב|[בָּאִ֖ים]}} נְאֻם־יְהֹוָ֑ה] (בכתר חסר ניקוד ברווח המיועד לקרי)"
+            },
+            {
+              "line": 343,
+              "text": "*ניקוד אותיות הכתיב ([[משתמש:Dovi/נביאים וכתובים על פי המסורה/ספר ירמיהו/לא|לא,לז]]): [{{כו\"ק|קוה|קָ֤ו}}]* / א-כתיב=[קָ֤וְה] (בשוא!)"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 277,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתר ארם צובה=="
+            },
+            {
+              "line": 417,
+              "text": "===ירמיהו (חוץ מהקטע החסר בכתר)==="
+            },
+            {
+              "line": 419,
+              "text": "'''קטע חסר בכתר:''' {{#קטע:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד|חלק חסר בירמיהו}} למידע על הקטע החסר בספר ירמיהו ראו '''[[משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד#ירמיהו (הקטע החסר בכתר ארם צובה)|כאן]]'''."
+            },
+            {
+              "line": 641,
+              "text": "==מסורת הקוראים בנ\"ך: עיצוב כללי לחטפים באותיות לא גרוניות=="
+            },
+            {
+              "line": 655,
+              "text": "{{עוגן|חטפים באותיות לא-גרוניות בירמיהו}}'''[[משתמש:Dovi/מקרא על פי המסורה/נביאים#ספר ירמיהו|ספר ירמיהו]] (37 פריטים):'''{{הערה|1=רשימה זו אינה כוללת את הפריט [[ירמיהו מח/טעמים#מח לב|מח,לב]] (א=מִבֲּכִ֨י), המובא ברשימות ברויאר. נראה יותר שבכתר יש כאן שווא בלבד (\"מִבְּכִ֨י\"), או שהקו של הפתח נמחק; וכך הכריעו גם ב[https://www.mgketer.org/mikra/13/48/1/mg/106 מג\"ה].}} [[ירמיהו ג/טעמים#ג כה|ג,כה]] (א=וּֽתֲכַסֵּנוּ֮); [[ירמיהו ד/טעמים#ד ז|ד,ז]] (א=מִֽסֻּבֲּכ֔וֹ); [[ירמיהו ה/טעמים#ה א|ה,א]] (א=שׁוֹטֲט֞וּ); [[ירמיהו ה/טעמים#ה ה|ה,ה]] (א=אֵֽלֲכָה־לִּ֤י); [[ירמיהו ו/טעמים#ו ו|ו,ו]] (א=סֹֽלֲלָ֑ה); [[ירמיהו ו/טעמים#ו ט|ו,ט]] (א=יְעוֹלֲל֥וּ); [[ירמיהו ו/טעמים#ו כח|ו,כח]] (א=סוֹרֲרִ֔ים); [[ירמיהו ז/טעמים#ז יא|ז,יא]] (א=הַֽמֳעָרַ֣ת [{{קו תחתי|חטף קמץ}}]); [[ירמיהו ח/טעמים#ח ה|ח,ה]] (א=שׁוֹבֲבָ֜ה); [[ירמיהו ח/טעמים#ח כג|ח,כג]] (א=חַֽלֲלֵ֥י); [[ירמיהו ט/טעמים#ט ט|ט,ט]] (א=נָדֲד֖וּ); [[ירמיהו ט/טעמים#ט טז|ט,טז]] (א=לַמְקוֹנֲנ֖וֹת); [[ירמיהו יא/טעמים#יא טו|יא,טו]] (א=הַֽמֲזִמָּ֙תָה֙); [[ירמיהו יא/טעמים#יא כא|יא,כא]] (א=הַֽמֲבַקְשִׁ֥ים); [[ירמיהו יב/טעמים#יב י|יב,י]] (א=בֹּסֲס֖וּ); [[ירמיהו יב/טעמים#יב יב|יב,יב]] (א=שֹֽׁדֲדִ֔ים); [[ירמיהו כ/טעמים#כ יז|כ,יז]] (א=לֹא־מוֹתֲתַ֖נִי); [[ירמיהו כב/טעמים#כב טו|כב,טו]] (א=הֲתִֽמֲלֹ֔ךְ); [[ירמיהו כב/טעמים#כב כ|כב,כ]] (א=וּֽצֳעָ֔קִי [{{קו תחתי|חטף קמץ}}]); [[ירמיהו כב/טעמים#כב כח|כב,כח]] (א=הֽוּטֲלוּ֙); [[ירמיהו כה/טעמים#כה לג|כה,לג]] (א=חַֽלֲלֵ֤י); [[ירמיהו כה/טעמים#כה לו|כה,לו]] (א=וִֽילֲלַ֖ת); [[ירמיהו לא/טעמים#לא לב|לא,לב]] (ל=אֶכְתֲּבֶ֑נָּה);{{הערה|1=בן־נפתלי,'''ל''',ב1=אֶכְתֲּבֶ֑נָּה (חטף פתח); בן־אשר,מ\"ש,דפוסים=אֶכְתֳּבֶ֑נָּה (חטף קמץ); ק=אֶכְתְּבֶ֑נָּה (שווא). הפריט אינו מופיע בספר החילופים מהדורת ליפשיץ; החילוף מוזכר ברד\"ק, ודבריו הובאו במ\"ש.}} [[ירמיהו לב/טעמים#לב ט|לב,ט]] (ל=וָֽאֶשְׁקֲלָה־לּוֹ֙); [[ירמיהו לג/טעמים#לג י|לג,י]] (א=הַֽנֲשַׁמּ֗וֹת); [[ירמיהו מ/טעמים#מ טו|מ,טו]] (א=אֵ֤לֲכָה); [[ירמיהו מא/טעמים#מא ה|מא,ה]] (א=וּמִתְגֹּֽדֲדִ֑ים); [[ירמיהו מד/טעמים#מד ט|מד,ט]] (א=הַֽשֲׁכַחְתֶּם֩); [[ירמיהו מו/טעמים#מו ט|מו,ט]] (א=וְהִתְהֹלֲל֣וּ); [[ירמיהו מח/טעמים#מח כ|מח,כ]] (א-קרי=וּֽזֳעָ֑קוּ [{{קו תחתי|חטף קמץ}}]);  [[ירמיהו מט/טעמים#מט ד|מט,ד]] (א=מַה־תִּתְהַֽלֲלִי֙); [[ירמיהו נ/טעמים#נ ו|נ,ו]] (א-קרי=שׁוֹבֲב֑וּם); [[ירמיהו נ/טעמים#נ י|נ,י]] (א=כָּל־שֹׁלֲלֶ֥יהָ); [[ירמיהו נא/טעמים#נא ב|נא,ב]] (א=וִיבֹקֲק֖וּ);{{הערה|הפריט חסר ברשימות ברויאר.}} [[ירמיהו נא/טעמים#נא ז|נא,ז]] (א=יִתְהֹלֲל֥וּ); [[ירמיהו נא/טעמים#נא מט|נא,מט2]] (א=חַֽלֲלֵ֥י); [[ירמיהו נא/טעמים#נא נג|נא,נג]] (א=שֹׁדֲדִ֛ים)."
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "ALL-HATAF-JER-48-32",
+      "chapters": [
+        {
+          "key": "jeremiah-48",
+          "contents_read": 16,
+          "visible_revisions": 16,
+          "states": [
+            {
+              "verse": 32,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    403586
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    658329,
+                    904021,
+                    968142,
+                    1000167,
+                    1379528
+                  ],
+                  "templates": [
+                    "{{נוסח|מִבְּכִ֨י|לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית), אמנם מעיון בכתר נראה יותר שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שוא בלבד.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2693819,
+                    2694131,
+                    2703467,
+                    2717306,
+                    2759680
+                  ],
+                  "templates": [
+                    "{{נוסח|מִבְּכִ֨י|לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859751,
+                    2908070,
+                    2988032,
+                    3010625,
+                    3087505
+                  ],
+                  "templates": [
+                    "{{נוסח|מִבְּכִ֨י|2=לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 658329,
+              "parentid": 403586,
+              "timestamp": "2015-11-08T06:06:41Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=658329",
+              "excerpts": [
+                {
+                  "line": 38,
+                  "text": "{{נוסח|מִבְּכִ֨י|לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית), אמנם מעיון בכתר נראה יותר שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שוא בלבד.}} יַעְזֵ֤ר אֶבְכֶּה־לָּךְ֙ הַגֶּ֣פֶן שִׂבְמָ֔ה נְטִישֹׁתַ֙יִךְ֙ עָ֣בְרוּ יָ֔ם עַ֛ד יָ֥ם יַעְזֵ֖ר נָגָ֑עוּ עַל־קֵיצֵ֥ךְ וְעַל־בְּצִירֵ֖ךְ שֹׁדֵ֥ד נָפָֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 1379528,
+              "parentid": 1000167,
+              "timestamp": "2022-03-03T13:24:26Z",
+              "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1379528",
+              "excerpts": [
+                {
+                  "line": 36,
+                  "text": "{{נוסח|מִבְּכִ֨י|לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית), אמנם מעיון בכתר נראה יותר שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שוא בלבד.}} יַעְזֵ֤ר אֶבְכֶּה־לָּךְ֙ הַגֶּ֣פֶן שִׂבְמָ֔ה נְטִישֹׁתַ֙יִךְ֙ עָ֣בְרוּ יָ֔ם עַ֛ד יָ֥ם יַעְזֵ֖ר נָגָ֑עוּ עַל־קֵיצֵ֥ךְ וְעַל־בְּצִירֵ֖ךְ שֹׁדֵ֥ד נָפָֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2693819,
+              "parentid": 1379528,
+              "timestamp": "2023-01-29T18:25:09Z",
+              "comment": "שיפור הערת נוסח בפסוק ל\"ב.",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2693819",
+              "excerpts": [
+                {
+                  "line": 36,
+                  "text": "{{נוסח|מִבְּכִ֨י|לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.}} יַעְזֵ֤ר אֶבְכֶּה־לָּךְ֙ הַגֶּ֣פֶן שִׂבְמָ֔ה נְטִישֹׁתַ֙יִךְ֙ עָ֣בְרוּ יָ֔ם עַ֛ד יָ֥ם יַעְזֵ֖ר נָגָ֑עוּ עַל־קֵיצֵ֥ךְ וְעַל־בְּצִירֵ֖ךְ שֹׁדֵ֥ד נָפָֽל׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3087505,
+              "parentid": 3010625,
+              "timestamp": "2026-10-07T03:06:00Z",
+              "comment": "Use template קו\"כ, not כו\"ק, where the qere directly follows a maqaf, as MAM's introduction prescribes: 2 Sam 20:23, Jer 48:21, Ezek 39:25 and 2 Chr 13:19",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3087505",
+              "excerpts": [
+                {
+                  "line": 37,
+                  "text": "{{נוסח|מִבְּכִ֨י|2=לפי ברויאר א=מִבֲּכִ֨י (חטף באות לא גרונית); אמנם מעיון בכתר נראה יותר שמדובר על כתם, או שהיה חטף פתח והקו של הפתח נמחק כדי להשאיר שווא בלבד.}} יַעְזֵ֤ר אֶבְכֶּה־לָּךְ֙ הַגֶּ֣פֶן שִׂבְמָ֔ה נְטִישֹׁתַ֙יִךְ֙ עָ֣בְרוּ יָ֔ם עַ֛ד יָ֥ם יַעְזֵ֖ר נָגָ֑עוּ עַל־קֵיצֵ֥ךְ וְעַל־בְּצִירֵ֖ךְ שֹׁדֵ֥ד נָפָֽל׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2696987,
+          "parentid": 2696986,
+          "timestamp": "2023-02-01T15:31:25Z",
+          "comment": "/* אותיות גדולות וקטנות */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2696987",
+          "excerpts": [
+            {
+              "line": 211,
+              "text": "==עיצוב כללי בספרי נ\"ך: חטפים באותיות לא גרוניות=="
+            },
+            {
+              "line": 217,
+              "text": "{{עוגן|חטפים באותיות לא-גרוניות בירמיהו}}'''[[משתמש:Dovi/מקרא על פי המסורה/נביאים#ספר ירמיהו|ספר ירמיהו]] (37 פריטים):'''{{הערה|1=רשימה זו אינה כוללת את הפריט [[ירמיהו מח/טעמים#מח לב|מח,לב]] (א=מִבֲּכִ֨י), המובא ברשימות ברויאר. נראה יותר שבכתר יש כאן שווא בלבד (\"מִבְּכִ֨י\"), או שהקו של הפתח נמחק; וכך הכריעו גם ב[https://www.mgketer.org/mikra/13/48/1/mg/106 מג\"ה].}} [[ירמיהו ג/טעמים#ג כה|ג,כה]] (א=וּֽתֲכַסֵּנוּ֮); [[ירמיהו ד/טעמים#ד ז|ד,ז]] (א=מִֽסֻּבֲּכ֔וֹ); [[ירמיהו ה/טעמים#ה א|ה,א]] (א=שׁוֹטֲט֞וּ); [[ירמיהו ה/טעמים#ה ה|ה,ה]] (א=אֵֽלֲכָה־לִּ֤י); [[ירמיהו ו/טעמים#ו ו|ו,ו]] (א=סֹֽלֲלָ֑ה); [[ירמיהו ו/טעמים#ו ט|ו,ט]] (א=יְעוֹלֲל֥וּ); [[ירמיהו ו/טעמים#ו כח|ו,כח]] (א=סוֹרֲרִ֔ים); [[ירמיהו ז/טעמים#ז יא|ז,יא]] (א=הַֽמֳעָרַ֣ת [{{קו תחתי|חטף קמץ}}]); [[ירמיהו ח/טעמים#ח ה|ח,ה]] (א=שׁוֹבֲבָ֜ה); [[ירמיהו ח/טעמים#ח כג|ח,כג]] (א=חַֽלֲלֵ֥י); [[ירמיהו ט/טעמים#ט ט|ט,ט]] (א=נָדֲד֖וּ); [[ירמיהו ט/טעמים#ט טז|ט,טז]] (א=לַמְקוֹנֲנ֖וֹת); [[ירמיהו יא/טעמים#יא טו|יא,טו]] (א=הַֽמֲזִמָּ֙תָה֙); [[ירמיהו יא/טעמים#יא כא|יא,כא]] (א=הַֽמֲבַקְשִׁ֥ים); [[ירמיהו יב/טעמים#יב י|יב,י]] (א=בֹּסֲס֖וּ); [[ירמיהו יב/טעמים#יב יב|יב,יב]] (א=שֹֽׁדֲדִ֔ים); [[ירמיהו כ/טעמים#כ יז|כ,יז]] (א=לֹא־מוֹתֲתַ֖נִי); [[ירמיהו כב/טעמים#כב טו|כב,טו]] (א=הֲתִֽמֲלֹ֔ךְ); [[ירמיהו כב/טעמים#כב כ|כב,כ]] (א=וּֽצֳעָ֔קִי [{{קו תחתי|חטף קמץ}}]); [[ירמיהו כב/טעמים#כב כח|כב,כח]] (א=הֽוּטֲלוּ֙); [[ירמיהו כה/טעמים#כה לג|כה,לג]] (א=חַֽלֲלֵ֤י); [[ירמיהו כה/טעמים#כה לו|כה,לו]] (א=וִֽילֲלַ֖ת); [[ירמיהו לא/טעמים#לא לב|לא,לב]] (ל=אֶכְתֲּבֶ֑נָּה);{{הערה|1=בן־נפתלי,'''ל''',ב1=אֶכְתֲּבֶ֑נָּה (חטף פתח); בן־אשר,מ\"ש,דפוסים=אֶכְתֳּבֶ֑נָּה (חטף קמץ); ק=אֶכְתְּבֶ֑נָּה (שווא). הפריט אינו מופיע בספר החילופים מהדורת ליפשיץ; החילוף מוזכר ברד\"ק, ודבריו הובאו במ\"ש.}} [[ירמיהו לב/טעמים#לב ט|לב,ט]] (ל=וָֽאֶשְׁקֲלָה־לּוֹ֙); [[ירמיהו לג/טעמים#לג י|לג,י]] (א=הַֽנֲשַׁמּ֗וֹת); [[ירמיהו מ/טעמים#מ טו|מ,טו]] (א=אֵ֤לֲכָה); [[ירמיהו מא/טעמים#מא ה|מא,ה]] (א=וּמִתְגֹּֽדֲדִ֑ים); [[ירמיהו מד/טעמים#מד ט|מד,ט]] (א=הַֽשֲׁכַחְתֶּם֩); [[ירמיהו מו/טעמים#מו ט|מו,ט]] (א=וְהִתְהֹלֲל֣וּ); [[ירמיהו מח/טעמים#מח כ|מח,כ]] (א-קרי=וּֽזֳעָ֑קוּ [{{קו תחתי|חטף קמץ}}]);  [[ירמיהו מט/טעמים#מט ד|מט,ד]] (א=מַה־תִּתְהַֽלֲלִי֙); [[ירמיהו נ/טעמים#נ ו|נ,ו]] (א-קרי=שׁוֹבֲב֑וּם); [[ירמיהו נ/טעמים#נ י|נ,י]] (א=כָּל־שֹׁלֲלֶ֥יהָ); [[ירמיהו נא/טעמים#נא ב|נא,ב]] (א=וִיבֹקֲק֖וּ);{{הערה|הפריט חסר ברשימות ברויאר.}} [[ירמיהו נא/טעמים#נא ז|נא,ז]] (א=יִתְהֹלֲל֥וּ); [[ירמיהו נא/טעמים#נא מט|נא,מט2]] (א=חַֽלֲלֵ֥י); [[ירמיהו נא/טעמים#נא נג|נא,נג]] (א=שֹׁדֲדִ֛ים)."
+            },
+            {
+              "line": 333,
+              "text": "==ירמיהו=="
+            },
+            {
+              "line": 337,
+              "text": "'''חלק חסר בכתר:''' {{#קטע:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד|חלק חסר בירמיהו}} למידע על החלק החסר בספר ירמיהו ראו '''[[משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד#ירמיהו (קטע)|כאן]]'''."
+            },
+            {
+              "line": 342,
+              "text": "*קרי ולא כתיב ([[משתמש:Dovi/נביאים וכתובים על פי המסורה/ספר ירמיהו/לא|לא,לז]]): [הִנֵּ֛ה יָמִ֥ים {{קרי ולא כתיב|[בָּאִ֖ים]}} נְאֻם־יְהֹוָ֑ה] (בכתר חסר ניקוד ברווח המיועד לקרי)"
+            },
+            {
+              "line": 343,
+              "text": "*ניקוד אותיות הכתיב ([[משתמש:Dovi/נביאים וכתובים על פי המסורה/ספר ירמיהו/לא|לא,לז]]): [{{כו\"ק|קוה|קָ֤ו}}]* / א-כתיב=[קָ֤וְה] (בשוא!)"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 277,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתר ארם צובה=="
+            },
+            {
+              "line": 417,
+              "text": "===ירמיהו (חוץ מהקטע החסר בכתר)==="
+            },
+            {
+              "line": 419,
+              "text": "'''קטע חסר בכתר:''' {{#קטע:משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד|חלק חסר בירמיהו}} למידע על הקטע החסר בספר ירמיהו ראו '''[[משתמש:Dovi/מקרא על פי המסורה/מידע על מהדורה זו/פרק ד#ירמיהו (הקטע החסר בכתר ארם צובה)|כאן]]'''."
+            },
+            {
+              "line": 641,
+              "text": "==מסורת הקוראים בנ\"ך: עיצוב כללי לחטפים באותיות לא גרוניות=="
+            },
+            {
+              "line": 655,
+              "text": "{{עוגן|חטפים באותיות לא-גרוניות בירמיהו}}'''[[משתמש:Dovi/מקרא על פי המסורה/נביאים#ספר ירמיהו|ספר ירמיהו]] (37 פריטים):'''{{הערה|1=רשימה זו אינה כוללת את הפריט [[ירמיהו מח/טעמים#מח לב|מח,לב]] (א=מִבֲּכִ֨י), המובא ברשימות ברויאר. נראה יותר שבכתר יש כאן שווא בלבד (\"מִבְּכִ֨י\"), או שהקו של הפתח נמחק; וכך הכריעו גם ב[https://www.mgketer.org/mikra/13/48/1/mg/106 מג\"ה].}} [[ירמיהו ג/טעמים#ג כה|ג,כה]] (א=וּֽתֲכַסֵּנוּ֮); [[ירמיהו ד/טעמים#ד ז|ד,ז]] (א=מִֽסֻּבֲּכ֔וֹ); [[ירמיהו ה/טעמים#ה א|ה,א]] (א=שׁוֹטֲט֞וּ); [[ירמיהו ה/טעמים#ה ה|ה,ה]] (א=אֵֽלֲכָה־לִּ֤י); [[ירמיהו ו/טעמים#ו ו|ו,ו]] (א=סֹֽלֲלָ֑ה); [[ירמיהו ו/טעמים#ו ט|ו,ט]] (א=יְעוֹלֲל֥וּ); [[ירמיהו ו/טעמים#ו כח|ו,כח]] (א=סוֹרֲרִ֔ים); [[ירמיהו ז/טעמים#ז יא|ז,יא]] (א=הַֽמֳעָרַ֣ת [{{קו תחתי|חטף קמץ}}]); [[ירמיהו ח/טעמים#ח ה|ח,ה]] (א=שׁוֹבֲבָ֜ה); [[ירמיהו ח/טעמים#ח כג|ח,כג]] (א=חַֽלֲלֵ֥י); [[ירמיהו ט/טעמים#ט ט|ט,ט]] (א=נָדֲד֖וּ); [[ירמיהו ט/טעמים#ט טז|ט,טז]] (א=לַמְקוֹנֲנ֖וֹת); [[ירמיהו יא/טעמים#יא טו|יא,טו]] (א=הַֽמֲזִמָּ֙תָה֙); [[ירמיהו יא/טעמים#יא כא|יא,כא]] (א=הַֽמֲבַקְשִׁ֥ים); [[ירמיהו יב/טעמים#יב י|יב,י]] (א=בֹּסֲס֖וּ); [[ירמיהו יב/טעמים#יב יב|יב,יב]] (א=שֹֽׁדֲדִ֔ים); [[ירמיהו כ/טעמים#כ יז|כ,יז]] (א=לֹא־מוֹתֲתַ֖נִי); [[ירמיהו כב/טעמים#כב טו|כב,טו]] (א=הֲתִֽמֲלֹ֔ךְ); [[ירמיהו כב/טעמים#כב כ|כב,כ]] (א=וּֽצֳעָ֔קִי [{{קו תחתי|חטף קמץ}}]); [[ירמיהו כב/טעמים#כב כח|כב,כח]] (א=הֽוּטֲלוּ֙); [[ירמיהו כה/טעמים#כה לג|כה,לג]] (א=חַֽלֲלֵ֤י); [[ירמיהו כה/טעמים#כה לו|כה,לו]] (א=וִֽילֲלַ֖ת); [[ירמיהו לא/טעמים#לא לב|לא,לב]] (ל=אֶכְתֲּבֶ֑נָּה);{{הערה|1=בן־נפתלי,'''ל''',ב1=אֶכְתֲּבֶ֑נָּה (חטף פתח); בן־אשר,מ\"ש,דפוסים=אֶכְתֳּבֶ֑נָּה (חטף קמץ); ק=אֶכְתְּבֶ֑נָּה (שווא). הפריט אינו מופיע בספר החילופים מהדורת ליפשיץ; החילוף מוזכר ברד\"ק, ודבריו הובאו במ\"ש.}} [[ירמיהו לב/טעמים#לב ט|לב,ט]] (ל=וָֽאֶשְׁקֲלָה־לּוֹ֙); [[ירמיהו לג/טעמים#לג י|לג,י]] (א=הַֽנֲשַׁמּ֗וֹת); [[ירמיהו מ/טעמים#מ טו|מ,טו]] (א=אֵ֤לֲכָה); [[ירמיהו מא/טעמים#מא ה|מא,ה]] (א=וּמִתְגֹּֽדֲדִ֑ים); [[ירמיהו מד/טעמים#מד ט|מד,ט]] (א=הַֽשֲׁכַחְתֶּם֩); [[ירמיהו מו/טעמים#מו ט|מו,ט]] (א=וְהִתְהֹלֲל֣וּ); [[ירמיהו מח/טעמים#מח כ|מח,כ]] (א-קרי=וּֽזֳעָ֑קוּ [{{קו תחתי|חטף קמץ}}]);  [[ירמיהו מט/טעמים#מט ד|מט,ד]] (א=מַה־תִּתְהַֽלֲלִי֙); [[ירמיהו נ/טעמים#נ ו|נ,ו]] (א-קרי=שׁוֹבֲב֑וּם); [[ירמיהו נ/טעמים#נ י|נ,י]] (א=כָּל־שֹׁלֲלֶ֥יהָ); [[ירמיהו נא/טעמים#נא ב|נא,ב]] (א=וִיבֹקֲק֖וּ);{{הערה|הפריט חסר ברשימות ברויאר.}} [[ירמיהו נא/טעמים#נא ז|נא,ז]] (א=יִתְהֹלֲל֥וּ); [[ירמיהו נא/טעמים#נא מט|נא,מט2]] (א=חַֽלֲלֵ֥י); [[ירמיהו נא/טעמים#נא נג|נא,נג]] (א=שֹׁדֲדִ֛ים)."
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "JOSH-14-7-SELECTION",
+      "chapters": [
+        {
+          "key": "joshua-14",
+          "contents_read": 17,
+          "visible_revisions": 17,
+          "states": [
+            {
+              "verse": 7,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    402517
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    650961,
+                    658865,
+                    902654,
+                    1379279
+                  ],
+                  "templates": [
+                    "{{נוסח|עִם־לְֽבָבִֽי|=א וכן במג\"ה|ברויאר=עִם־לְבָבִֽי וכן במ\"מ}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2700051,
+                    2700052,
+                    2717031,
+                    2759427,
+                    2767923
+                  ],
+                  "templates": [
+                    "{{נוסח|עִם־לְֽבָבִֽי|=א וכן במג\"ה (געיה בלמ\"ד)|ברויאר=עִם־לְבָבִֽי (בלי געיה) וכן במכון ממרא.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859544,
+                    2892256,
+                    2892301,
+                    2987785
+                  ],
+                  "templates": [
+                    "{{נוסח|עִם־לְֽבָבִֽי|2==א וכן במג\"ה (געיה בלמ\"ד){{ש}}ברויאר=עִם־לְבָבִֽי (בלי געיה) וכן במכון ממרא.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2997882
+                  ],
+                  "templates": [
+                    "{{נוסח|עִם־לְֽבָבִֽי|2==א?,ל (אין געיה), וכך אצל ברויאר וכמו כן בדפוסים.{{ש}}א?=עִם־לְֽבָבִֽי (געיה באות ל?); יש דיו מתחת לאות למ\"ד משמאל לנקודות השווא, ואולי הייתה כוונה לכתוב כאן געיה. כך הכריעו במג\"ה בדפוס, אבל במהדורת מג\"ה הדיגיטלית אין געיה.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2997883,
+                    2998520
+                  ],
+                  "templates": [
+                    "{{נוסח|עִם־לְבָבִֽי|2==א?,ל (אין געיה), וכך אצל ברויאר וכמו כן בדפוסים.{{ש}}א?=עִם־לְֽבָבִֽי (געיה באות ל?); בכתר יש דיו מתחת לאות למ\"ד משמאל לנקודות השווא, ואולי הייתה כוונה לכתוב כאן געיה. כך הכריעו במג\"ה בדפוס, אבל במהדורת מג\"ה הדיגיטלית אין געיה.}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 650961,
+              "parentid": 402517,
+              "timestamp": "2015-09-08T07:54:30Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=650961",
+              "excerpts": [
+                {
+                  "line": 13,
+                  "text": "בֶּן־אַרְבָּעִ֨ים שָׁנָ֜ה אָנֹכִ֗י בִּ֠שְׁלֹ֠חַ מֹשֶׁ֨ה עֶבֶד־יְהֹוָ֥ה אֹתִ֛י מִקָּדֵ֥שׁ בַּרְנֵ֖עַ לְרַגֵּ֣ל אֶת־הָאָ֑רֶץ וָאָשֵׁ֤ב אֹתוֹ֙ דָּבָ֔ר כַּאֲשֶׁ֖ר {{נוסח|עִם־לְֽבָבִֽי|=א וכן במג\"ה|ברויאר=עִם־לְבָבִֽי וכן במ\"מ}}׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2987785,
+              "parentid": 2892301,
+              "timestamp": "2026-02-16T19:25:59Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2987785",
+              "excerpts": [
+                {
+                  "line": 12,
+                  "text": "בֶּן־אַרְבָּעִ֨ים שָׁנָ֜ה אָנֹכִ֗י בִּ֠שְׁלֹ֠חַ מֹשֶׁ֨ה עֶבֶד־יְהֹוָ֥ה אֹתִ֛י מִקָּדֵ֥שׁ בַּרְנֵ֖עַ לְרַגֵּ֣ל אֶת־הָאָ֑רֶץ וָאָשֵׁ֤ב אֹתוֹ֙ דָּבָ֔ר כַּאֲשֶׁ֖ר {{נוסח|עִם־לְֽבָבִֽי|2==א וכן במג\"ה (געיה בלמ\"ד){{ש}}ברויאר=עִם־לְבָבִֽי (בלי געיה) וכן במכון ממרא.}}׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2997882,
+              "parentid": 2987785,
+              "timestamp": "2026-03-12T18:40:40Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2997882",
+              "excerpts": [
+                {
+                  "line": 12,
+                  "text": "בֶּן־אַרְבָּעִ֨ים שָׁנָ֜ה אָנֹכִ֗י בִּ֠שְׁלֹ֠חַ מֹשֶׁ֨ה עֶבֶד־יְהֹוָ֥ה אֹתִ֛י מִקָּדֵ֥שׁ בַּרְנֵ֖עַ לְרַגֵּ֣ל אֶת־הָאָ֑רֶץ וָאָשֵׁ֤ב אֹתוֹ֙ דָּבָ֔ר כַּאֲשֶׁ֖ר {{נוסח|עִם־לְֽבָבִֽי|2==א?,ל (אין געיה), וכך אצל ברויאר וכמו כן בדפוסים.{{ש}}א?=עִם־לְֽבָבִֽי (געיה באות ל?); יש דיו מתחת לאות למ\"ד משמאל לנקודות השווא, ואולי הייתה כוונה לכתוב כאן געיה. כך הכריעו במג\"ה בדפוס, אבל במהדורת מג\"ה הדיגיטלית אין געיה.}}"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2997883,
+              "parentid": 2997882,
+              "timestamp": "2026-03-12T18:41:50Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2997883",
+              "excerpts": [
+                {
+                  "line": 12,
+                  "text": "בֶּן־אַרְבָּעִ֨ים שָׁנָ֜ה אָנֹכִ֗י בִּ֠שְׁלֹ֠חַ מֹשֶׁ֨ה עֶבֶד־יְהֹוָ֥ה אֹתִ֛י מִקָּדֵ֥שׁ בַּרְנֵ֖עַ לְרַגֵּ֣ל אֶת־הָאָ֑רֶץ וָאָשֵׁ֤ב אֹתוֹ֙ דָּבָ֔ר כַּאֲשֶׁ֖ר {{נוסח|עִם־לְבָבִֽי|2==א?,ל (אין געיה), וכך אצל ברויאר וכמו כן בדפוסים.{{ש}}א?=עִם־לְֽבָבִֽי (געיה באות ל?); בכתר יש דיו מתחת לאות למ\"ד משמאל לנקודות השווא, ואולי הייתה כוונה לכתוב כאן געיה. כך הכריעו במג\"ה בדפוס, אבל במהדורת מג\"ה הדיגיטלית אין געיה.}}"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2998520,
+              "parentid": 2997883,
+              "timestamp": "2026-03-16T23:48:54Z",
+              "comment": "restore sof pasuq to verse 7",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2998520",
+              "excerpts": [
+                {
+                  "line": 12,
+                  "text": "בֶּן־אַרְבָּעִ֨ים שָׁנָ֜ה אָנֹכִ֗י בִּ֠שְׁלֹ֠חַ מֹשֶׁ֨ה עֶבֶד־יְהֹוָ֥ה אֹתִ֛י מִקָּדֵ֥שׁ בַּרְנֵ֖עַ לְרַגֵּ֣ל אֶת־הָאָ֑רֶץ וָאָשֵׁ֤ב אֹתוֹ֙ דָּבָ֔ר כַּאֲשֶׁ֖ר {{נוסח|עִם־לְבָבִֽי|2==א?,ל (אין געיה), וכך אצל ברויאר וכמו כן בדפוסים.{{ש}}א?=עִם־לְֽבָבִֽי (געיה באות ל?); בכתר יש דיו מתחת לאות למ\"ד משמאל לנקודות השווא, ואולי הייתה כוונה לכתוב כאן געיה. כך הכריעו במג\"ה בדפוס, אבל במהדורת מג\"ה הדיגיטלית אין געיה.}}׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2700411,
+          "parentid": 2700410,
+          "timestamp": "2023-02-08T20:48:18Z",
+          "comment": "/* שופטים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2700411",
+          "excerpts": [
+            {
+              "line": 252,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים=="
+            },
+            {
+              "line": 262,
+              "text": "===יהושע==="
+            },
+            {
+              "line": 268,
+              "text": "#[[יהושע יד/טעמים#יד ז|יד,ז]] (א*=עִם־לְֽבָבִֽי): געיה בלמ\"ד"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 3088859,
+          "parentid": 3088690,
+          "timestamp": "2026-10-15T09:42:04Z",
+          "comment": "/* ספר יחזקאל */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088859",
+          "excerpts": [
+            {
+              "line": 280,
+              "text": "==מסורת הקוראים בנביאים וכתובים: מקומות חריגים בנוסח הניקוד והטעמים בכתר ארם צובה=="
+            },
+            {
+              "line": 296,
+              "text": "===ספר יהושע==="
+            },
+            {
+              "line": 304,
+              "text": "#[[יהושע יד/טעמים#יד ז|יד,ז]] (א*=עִם־לְֽבָבִֽי): געיה בלמ\"ד"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "SHARED-EXPLANATIONS-LAM-4-7",
+      "chapters": [
+        {
+          "key": "lamentations-4",
+          "contents_read": 23,
+          "visible_revisions": 23,
+          "states": [
+            {
+              "verse": 7,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    401685,
+                    408503
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    671269,
+                    671535,
+                    903452,
+                    999979,
+                    1027597,
+                    1292154,
+                    1379092
+                  ],
+                  "templates": [
+                    "{{נוסח|מִשֶּׁ֔לֶג|=ל|לפי ברויאר קמץ בשי\"ן, אבל בהגדלה רואים סגול בבירור, וכן דעתו של המקליד.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2713560,
+                    2713563,
+                    2716587,
+                    2759232
+                  ],
+                  "templates": [
+                    "{{נוסח|מִשֶּׁ֔לֶג|=ל?,ש1,ק-מ ובדפוסים|ל?!=מִשֶּׁ֔לֶג (קמץ באות שי\"ן?); כך לפי ברויאר, אבל בכתב־היד נראה יותר כמו שתי נקודות צמודות מאשר קו של קמץ; וכן דעתו של המקליד.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859002,
+                    2906717,
+                    2988391,
+                    3003339,
+                    3003340,
+                    3003341,
+                    3003343,
+                    3003347,
+                    3003405,
+                    3010636
+                  ],
+                  "templates": [
+                    "{{נוסח|מִשֶּׁ֔לֶג|2==ל?,ש1,ק-מ ובדפוסים{{ש}}ל?!=מִשֶּׁ֔לֶג (קמץ באות שי\"ן?); כך לפי ברויאר, אבל בכתב־היד נראה יותר כמו שתי נקודות צמודות מאשר קו של קמץ; וכן דעתו של המקליד.}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 408503,
+              "parentid": 401685,
+              "timestamp": "2011-05-12T04:24:50Z",
+              "comment": "תיכנות: אורי מילר ואראל סגל",
+              "url": "https://he.wikisource.org/w/index.php?oldid=408503",
+              "excerpts": [
+                {
+                  "line": 10,
+                  "text": "זַכּ֤וּ נְזִירֶ֙יהָ֙ מִשֶּׁ֔לֶג צַח֖וּ מֵחָלָ֑ב אָ֤דְמוּ עֶ֙צֶם֙ מִפְּנִינִ֔ים סַפִּ֖יר גִּזְרָתָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 671269,
+              "parentid": 408503,
+              "timestamp": "2016-01-24T05:29:02Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=671269",
+              "excerpts": [
+                {
+                  "line": 8,
+                  "text": "זַכּ֤וּ נְזִירֶ֙יהָ֙ {{נוסח|מִשֶּׁ֔לֶג|=ל|לפי ברויאר קמץ בשי\"ן, אבל בהגדלה רואים סגול בבירור, וכן דעתו של המקליד.}} צַח֖וּ מֵחָלָ֑ב אָ֤דְמוּ עֶ֙צֶם֙ מִפְּנִינִ֔ים סַפִּ֖יר גִּזְרָתָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 1379092,
+              "parentid": 1292154,
+              "timestamp": "2022-03-03T13:18:26Z",
+              "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1379092",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "זַכּ֤וּ נְזִירֶ֙יהָ֙ {{נוסח|מִשֶּׁ֔לֶג|=ל|לפי ברויאר קמץ בשי\"ן, אבל בהגדלה רואים סגול בבירור, וכן דעתו של המקליד.}} צַח֖וּ מֵחָלָ֑ב אָ֤דְמוּ עֶ֙צֶם֙ מִפְּנִינִ֔ים סַפִּ֖יר גִּזְרָתָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2713560,
+              "parentid": 1379092,
+              "timestamp": "2023-03-21T10:20:41Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2713560",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "זַכּ֤וּ נְזִירֶ֙יהָ֙ {{נוסח|מִשֶּׁ֔לֶג|=ל?,ש1,ק-מ ובדפוסים|ל?!=מִשֶּׁ֔לֶג (קמץ באות שי\"ן?); כך לפי ברויאר, אבל בכתב־היד נראה יותר כמו שתי נקודות צמודות מאשר קו של קמץ; וכן דעתו של המקליד.}} צַח֖וּ מֵחָלָ֑ב אָ֤דְמוּ עֶ֙צֶם֙ מִפְּנִינִ֔ים סַפִּ֖יר גִּזְרָתָֽם׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3010636,
+              "parentid": 3003405,
+              "timestamp": "2026-05-04T01:45:51Z",
+              "comment": "Migrate 9 deprecated כו\"ק template call sites to {{מ:כו\"ק מיוחד|...|סוג=...}}, per MAM-basics#67",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3010636",
+              "excerpts": [
+                {
+                  "line": 12,
+                  "text": "זַכּ֤וּ נְזִירֶ֙יהָ֙ {{נוסח|מִשֶּׁ֔לֶג|2==ל?,ש1,ק-מ ובדפוסים{{ש}}ל?!=מִשֶּׁ֔לֶג (קמץ באות שי\"ן?); כך לפי ברויאר, אבל בכתב־היד נראה יותר כמו שתי נקודות צמודות מאשר קו של קמץ; וכן דעתו של המקליד.}} צַח֖וּ מֵחָלָ֑ב אָ֤דְמוּ עֶ֙צֶם֙ מִפְּנִינִ֔ים סַפִּ֖יר גִּזְרָתָֽם׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2737602,
+          "parentid": 2737599,
+          "timestamp": "2023-04-10T15:23:21Z",
+          "comment": "/* נוסח האותיות בכתי\"ל */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2737602",
+          "excerpts": [
+            {
+              "line": 364,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתי\"ל=="
+            },
+            {
+              "line": 524,
+              "text": "===איכה==="
+            },
+            {
+              "line": 541,
+              "text": "#[[איכה ד/טעמים#ד ז|ד,ז]] (ל?!=מִשֶּׁ֔לֶג): קמץ באות שי\"ן"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2823628,
+          "parentid": 2812195,
+          "timestamp": "2023-12-06T20:50:19Z",
+          "comment": "/* ספקות והכרעות קשות בקביעת נוסח האותיות והתיבות */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2823628",
+          "excerpts": [
+            {
+              "line": 413,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתי\"ל=="
+            },
+            {
+              "line": 573,
+              "text": "===מגילת איכה==="
+            },
+            {
+              "line": 590,
+              "text": "#[[איכה ד/טעמים#ד ז|ד,ז]] (ל?!=מִשֶּׁ֔לֶג): קמץ באות שי\"ן"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "MAL-HOLAM",
+      "chapters": [
+        {
+          "key": "malachi-2",
+          "contents_read": 25,
+          "visible_revisions": 25,
+          "states": [
+            {
+              "verse": 7,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    404070,
+                    408149,
+                    658449,
+                    904368,
+                    905862
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    1098686,
+                    1379646
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|=א (געיה בה\"א)|ל=יְהֹוָֽה־צְבָא֖וֹת}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2699651
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|=א! (געיה בה\"א של שם הוי\"ה!|ל=יְהֹוָֽה־צְבָא֖וֹת}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2699676,
+                    2717397,
+                    2759800
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|=א! (געיה בה\"א ראשונה של שם הוי\"ה)|ל=יְהֹוָֽה־צְבָא֖וֹת}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2859902,
+                    2893583,
+                    2893687
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א! (געיה בה\"א ראשונה של שם הוי\"ה){{ש}}ל=יְהֹוָֽה־צְבָא֖וֹת}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895454
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה); ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (למרות הנוהג שנקודת החולם אינה כתובה).{{ש}}ל=יְהֹוָֽה־צְבָא֖וֹת}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895455
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר למרות הנוהג שנקודת החולם אינה כתובה בכתר).{{ש}}ל,ק,ש1=יְהֹוָֽה־צְבָא֖וֹת (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895458
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר).{{ש}}ל,ק,ש1=יְהֹוָֽה־צְבָא֖וֹת (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895459
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}ל,ק,ש1=יְהֹוָֽה־צְבָא֖וֹת (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895461
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}ל,ק,ש1=יְהֹוָֽה־צְבָא֖וֹת (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895557
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֹֽוָה־צְבָא֖וֹת (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895559
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֹֽוָה־צְבָא֖וֹת (געיה באות ה\"א הראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2895561,
+                    2908144,
+                    2988151,
+                    3026162
+                  ],
+                  "templates": [
+                    "{{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֽוָה־צְבָא֖וֹת (געיה באות ה\"א הראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 1098686,
+              "parentid": 905862,
+              "timestamp": "2021-06-16T16:52:30Z",
+              "comment": "הערת נוסח על הגעיה בשם הוי\"ה בפסוק ז'",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1098686",
+              "excerpts": [
+                {
+                  "line": 10,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹֽוָה־צְבָא֖וֹת|=א (געיה בה\"א)|ל=יְהֹוָֽה־צְבָא֖וֹת}} הֽוּא׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2895454,
+              "parentid": 2893687,
+              "timestamp": "2024-12-17T05:15:20Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2895454",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה); ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (למרות הנוהג שנקודת החולם אינה כתובה).{{ש}}ל=יְהֹוָֽה־צְבָא֖וֹת}} הֽוּא׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2895461,
+              "parentid": 2895459,
+              "timestamp": "2024-12-17T05:50:52Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2895461",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹֽוָה־צְבָא֖וֹת|2==א (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}ל,ק,ש1=יְהֹוָֽה־צְבָא֖וֹת (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}} הֽוּא׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2895557,
+              "parentid": 2895461,
+              "timestamp": "2024-12-17T16:08:41Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2895557",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֹֽוָה־צְבָא֖וֹת (געיה בה\"א ראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}} הֽוּא׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2895559,
+              "parentid": 2895557,
+              "timestamp": "2024-12-17T16:11:10Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2895559",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֹֽוָה־צְבָא֖וֹת (געיה באות ה\"א הראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}} הֽוּא׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2895561,
+              "parentid": 2895559,
+              "timestamp": "2024-12-17T16:15:48Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2895561",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֽוָה־צְבָא֖וֹת (געיה באות ה\"א הראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}} הֽוּא׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 3026162,
+              "parentid": 2988151,
+              "timestamp": "2026-07-22T11:44:00Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=3026162",
+              "excerpts": [
+                {
+                  "line": 11,
+                  "text": "כִּֽי־שִׂפְתֵ֤י כֹהֵן֙ יִשְׁמְרוּ־דַ֔עַת וְתוֹרָ֖ה יְבַקְשׁ֣וּ מִפִּ֑יהוּ כִּ֛י מַלְאַ֥ךְ {{נוסח|יְהֹוָֽה־צְבָא֖וֹת|2==ל,ק,ש1 (געיה באות וי\"ו של שם הוי\"ה) וכמו כן ברוב הדפוסים וקורן{{ש}}א!=יְהֽוָה־צְבָא֖וֹת (געיה באות ה\"א הראשונה של שם הוי\"ה), וכך אצל ברויאר ומג\"ה, וכמו כן במכון ממרא וסימנים. ראו ייבין ו.9 (עמ' 72): \"געיה בה' החלומה אף על פי שהחולם אינו מסומן, מוכיחה שיש כאן הברה\" (כלומר יש הברה למרות הנוהג שנקודת החולם אינה כתובה בכתר). אמנם השוו ייבין יז.16 (עמ' 174) לגבי מקום הגעיה.{{ש}}פטרבורג-EVR-II-B-55=יְהֹוָה־צְבָא֖וֹת (אין געיה) וכמו כן בגינצבורג.}} הֽוּא׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2700411,
+          "parentid": 2700410,
+          "timestamp": "2023-02-08T20:48:18Z",
+          "comment": "/* שופטים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2700411",
+          "excerpts": [
+            {
+              "line": 252,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים=="
+            },
+            {
+              "line": 371,
+              "text": "===תרי עשר (שני קטעים חסרים)==="
+            },
+            {
+              "line": 381,
+              "text": "#[[מלאכי ב/טעמים#ב ז|מלאכי ב,ז]] (א!*=יְהֹֽוָה־צְבָא֖וֹת): געיה בה\"א ראשונה של שם הוי\"ה"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 2761045,
+          "parentid": 2761044,
+          "timestamp": "2023-05-22T19:43:35Z",
+          "comment": "/* תוספת פסוקים בכתבי־היד ובדפוסים */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2761045",
+          "excerpts": [
+            {
+              "line": 277,
+              "text": "==מסורת הקוראים בנ\"ך: נוסח הניקוד והטעמים בכתר ארם צובה=="
+            },
+            {
+              "line": 474,
+              "text": "===תרי עשר (חוץ מהקטעים החסרים בכתר)==="
+            },
+            {
+              "line": 484,
+              "text": "#[[מלאכי ב/טעמים#ב ז|מלאכי ב,ז]] (א!*=יְהֹֽוָה־צְבָא֖וֹת): געיה בה\"א ראשונה של שם הוי\"ה"
+            }
+          ]
+        },
+        {
+          "kind": "Introduction",
+          "revid": 3088859,
+          "parentid": 3088690,
+          "timestamp": "2026-10-15T09:42:04Z",
+          "comment": "/* ספר יחזקאל */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=3088859",
+          "excerpts": [
+            {
+              "line": 280,
+              "text": "==מסורת הקוראים בנביאים וכתובים: מקומות חריגים בנוסח הניקוד והטעמים בכתר ארם צובה=="
+            },
+            {
+              "line": 499,
+              "text": "===ספר תרי עשר (חוץ מהקטעים החסרים בכתר)==="
+            },
+            {
+              "line": 511,
+              "text": "#[[מלאכי ב/טעמים#ב ז|מלאכי ב,ז]] (א!=יְהֹֽוָה־צְבָא֖וֹת): געיה באות ה\"א הראשונה של שם הוי\"ה"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    },
+    {
+      "case": "SPELLING-SOURCE-ECCLESIASTES",
+      "chapters": [
+        {
+          "key": "ecclesiastes-1",
+          "contents_read": 15,
+          "visible_revisions": 15,
+          "states": [
+            {
+              "verse": 17,
+              "literal_note_states": [
+                {
+                  "revisions": [
+                    405023,
+                    408509
+                  ],
+                  "templates": []
+                },
+                {
+                  "revisions": [
+                    671283,
+                    671549,
+                    903252,
+                    903254,
+                    903255,
+                    1379884
+                  ],
+                  "templates": [
+                    "{{נוסח|הוֹלֵלֹ֖ת|=א(ק)ש1ת (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (ובהתאם בדותן ובהקלדה). ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2714101,
+                    2716589,
+                    2760040
+                  ],
+                  "templates": [
+                    "{{נוסח|הוֹלֵלֹ֖ת|=א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה. ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}}"
+                  ]
+                },
+                {
+                  "revisions": [
+                    2860206,
+                    2906719,
+                    2908154,
+                    2988393
+                  ],
+                  "templates": [
+                    "{{נוסח|הוֹלֵלֹ֖ת|2==א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו){{ש}}ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה. ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.{{ש}}דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}}"
+                  ]
+                }
+              ],
+              "revisions_without_canonical_verse_delimiters": []
+            }
+          ],
+          "selected_sources": [
+            {
+              "kind": "chapter",
+              "revid": 671283,
+              "parentid": 408509,
+              "timestamp": "2016-01-24T05:29:30Z",
+              "comment": "עדכון אוטומטי של פרקי המקרא על-פי המסורה",
+              "url": "https://he.wikisource.org/w/index.php?oldid=671283",
+              "excerpts": [
+                {
+                  "line": 18,
+                  "text": "וָאֶתְּנָ֤ה לִבִּי֙ לָדַ֣עַת חׇכְמָ֔ה וְדַ֥עַת {{נוסח|הוֹלֵלֹ֖ת|=א(ק)ש1ת (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (ובהתאם בדותן ובהקלדה). ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}} וְשִׂכְל֑וּת יָדַ֕עְתִּי שֶׁגַּם־זֶ֥ה ה֖וּא רַעְי֥וֹן רֽוּחַ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 1379884,
+              "parentid": 903255,
+              "timestamp": "2022-03-03T13:28:54Z",
+              "comment": "בוט: החלפת טקסט אוטומטית  (-{{תבנית:משתמש:Dovi/טעמי המקרא +{{מ:טעמי המקרא)",
+              "url": "https://he.wikisource.org/w/index.php?oldid=1379884",
+              "excerpts": [
+                {
+                  "line": 21,
+                  "text": "וָאֶתְּנָ֤ה לִבִּי֙ לָדַ֣עַת חׇכְמָ֔ה וְדַ֥עַת {{נוסח|הוֹלֵלֹ֖ת|=א(ק)ש1ת (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (ובהתאם בדותן ובהקלדה). ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}} וְשִׂכְל֑וּת יָדַ֕עְתִּי שֶׁגַּם־זֶ֥ה ה֖וּא רַעְי֥וֹן רֽוּחַ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2714101,
+              "parentid": 1379884,
+              "timestamp": "2023-03-23T05:24:54Z",
+              "comment": "",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2714101",
+              "excerpts": [
+                {
+                  "line": 21,
+                  "text": "וָאֶתְּנָ֤ה לִבִּי֙ לָדַ֣עַת חׇכְמָ֔ה וְדַ֥עַת {{נוסח|הוֹלֵלֹ֖ת|=א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו)|ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה. ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.|דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}} וְשִׂכְל֑וּת יָדַ֕עְתִּי שֶׁגַּם־זֶ֥ה ה֖וּא רַעְי֥וֹן רֽוּחַ׃"
+                }
+              ]
+            },
+            {
+              "kind": "chapter",
+              "revid": 2988393,
+              "parentid": 2908154,
+              "timestamp": "2026-02-16T19:42:32Z",
+              "comment": "בוט - החלפת \"הפרק בלי מספרים\" ב\"הפרק ללא אותיות הפסוקים\"",
+              "url": "https://he.wikisource.org/w/index.php?oldid=2988393",
+              "excerpts": [
+                {
+                  "line": 22,
+                  "text": "וָאֶתְּנָ֤ה לִבִּי֙ לָדַ֣עַת חׇכְמָ֔ה וְדַ֥עַת {{נוסח|הוֹלֵלֹ֖ת|2==א(ק),ש1,ק-מ (כתיב מלא וי\"ו וחסר וי\"ו){{ש}}ל=הוֹלֵל֖וֹת (כתיב מלא וי\"ו וחסר וי\"ו), וכן בדותן ובהקלדה. ברויאר ציין ל=הוֹלֵלֹ֖ת (כמו ברוב כתבי־היד), אבל הוי\"ו השנייה ברורה בכתי\"ל! האזור מטושטש, וייתכן שלדעתו של ברויאר יש סימני מחיקה לוי\"ו; אולם גם אם היה ניסיון כזה למחיקה הוא לא צלח.{{ש}}דפוסים וקורן=הֹֽלֵל֖וֹת (כתיב חסר וי\"ו ומלא וי\"ו)}} וְשִׂכְל֑וּת יָדַ֕עְתִּי שֶׁגַּם־זֶ֥ה ה֖וּא רַעְי֥וֹן רֽוּחַ׃"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "introduction": [
+        {
+          "kind": "Introduction",
+          "revid": 2707149,
+          "parentid": 2707027,
+          "timestamp": "2023-03-06T11:51:45Z",
+          "comment": "/* תהלים (קטע) */",
+          "url": "https://he.wikisource.org/w/index.php?oldid=2707149",
+          "excerpts": [
+            {
+              "line": 31,
+              "text": "==שחזור מסורת הסופרים בנביאים וכתובים על יסוד כתב־יד לנינגרד (כתי\"ל)=="
+            },
+            {
+              "line": 79,
+              "text": "===נוסח האותיות בכתי\"ל==="
+            },
+            {
+              "line": 82,
+              "text": "'''נוסח הכתיב בכתי\"ל:''' מובאות כאן כל התיבות בכתי\"ל שהכתיב שלהן ראוי לציון. הפריט הראשון בכל שורה ברשימה הוא הכתיב המתאים למסורה והמופיע במהדורתנו ואחריו כוכבית (*). הפריט השני הוא נוסח כתי\"ל, ואחריו סימן קריאה (!) במקרים שבהם הכתיב בכתי\"ל סותר את הערות המסורה שבתוך כתי\"ל עצמו."
+            },
+            {
+              "line": 121,
+              "text": "#[[קהלת א/טעמים#א יז|א,יז]]: [הוֹלֵלֹ֖ת]* / ל=[הוֹלֵל֖וֹת]!{{הערה|נוסח כתי\"ל לתיבה הובא ברשימות ברויאר כזהה לרוב כתבי־היד, כנראה בטעות. וראו בתיעוד הנוסח על תיבה זו.}} / דפוסים=[הֹֽלֵל֖וֹת]"
+            }
+          ]
+        },
+        {
+          "kind": "pinned Introduction cache",
+          "revid": 3087756,
+          "timestamp": "2026-10-08T18:06:50Z",
+          "url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L99",
+          "repository_path": "in/mam-ws-intro/ch4.mediawiki",
+          "excerpts": [
+            {
+              "line": 99,
+              "text": "'''נוסח הכתיב בכתי\"ל:''' מובאות כאן התיבות בכתי\"ל שהכתיב שלהן ראוי לציון. הפריט הראשון בכל שורה ברשימה הוא נוסח הכתיב המתאים למסורה והמופיע במהדורתנו ואחריו כוכבית (*). הפריט השני הוא נוסח אחר של הכתיב שנדחה במהדורתנו – בדרך כלל זה נוסחו של כתי\"ל – ואחריו סימן קריאה (!) במקרים שבהם הכתיב בכתי\"ל סותר את הערות המסורה שבתוך כתי\"ל עצמו."
+            }
+          ]
+        },
+        {
+          "kind": "pinned Introduction cache",
+          "revid": 3087756,
+          "timestamp": "2026-10-08T18:06:50Z",
+          "url": "https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch4.mediawiki#L138",
+          "repository_path": "in/mam-ws-intro/ch4.mediawiki",
+          "excerpts": [
+            {
+              "line": 138,
+              "text": "#[[קהלת א/טעמים#א יז|א,יז]]: [הוֹלֵלֹ֖ת]* / ל=[הוֹלֵל֖וֹת]!{{הערה|נוסח כתי\"ל לתיבה הובא ברשימות ברויאר כזהה לרוב כתבי־היד, כנראה בטעות. וראו בתיעוד הנוסח על תיבה זו.}} / דפוסים=[הֹֽלֵל֖וֹת]"
+            }
+          ]
+        }
+      ],
+      "extra_sources": []
+    }
+  ]
+}

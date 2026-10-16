@@ -1,0 +1,302 @@
+{
+  "batches": [
+    {
+      "page": "ch2",
+      "range": [
+        251,
+        284
+      ],
+      "reviewed": 14,
+      "total": 14,
+      "dispositions": {
+        "bounded-template-or-example-supported": [
+          254,
+          256,
+          258,
+          278,
+          280
+        ],
+        "finite-source-examples-supported-history-unverified": [
+          262
+        ],
+        "incorrect-locator-intended-source-comparison-supported": [
+          264
+        ],
+        "morphology-examples-partly-supported-general-claims-uncheckable": [
+          276
+        ],
+        "general-policy-or-completeness-not-exhaustively-tested": [
+          274
+        ],
+        "external-history-or-editorial-claim-uncheckable": [
+          266,
+          268,
+          270,
+          272
+        ],
+        "glyph-example-supported-usage-and-completeness-uncheckable": [
+          281
+        ]
+      },
+      "method": "Read every selected source unit against complete current verse nodes and relevant note bodies. The five hataf-hiriq source notes were independently checked in raw caches. General history, morphology frequencies and font collisions retain separate boundaries."
+    },
+    {
+      "page": "ch2",
+      "range": [
+        285,
+        392
+      ],
+      "reviewed": 66,
+      "total": 66,
+      "dispositions": {
+        "listed-form-or-finite-membership-supported": [
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          324,
+          333,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          347,
+          348,
+          349
+        ],
+        "bounded-example-or-source-relation-supported": [
+          289,
+          297,
+          301,
+          320,
+          322,
+          332
+        ],
+        "partial-manuscript-attribution": [
+          334
+        ],
+        "qualified-source-or-scope-discrepancy": [
+          305,
+          307,
+          331
+        ],
+        "general-policy-or-completeness-not-exhaustively-tested": [
+          285,
+          295,
+          303,
+          330,
+          336
+        ],
+        "external-history-or-grammar-uncheckable": [
+          291,
+          318,
+          328,
+          346,
+          351,
+          353
+        ],
+        "future-proposal": [
+          357
+        ],
+        "publication-or-display-uncheckable": [
+          361,
+          388
+        ],
+        "navigation-or-table-metadata": [
+          362,
+          363,
+          364,
+          365,
+          366,
+          367,
+          368,
+          369,
+          370,
+          371,
+          372,
+          373,
+          374,
+          375,
+          376,
+          377,
+          378,
+          379,
+          380,
+          381,
+          382,
+          383,
+          384,
+          385,
+          386
+        ]
+      },
+      "method": "Listed note relations and complete selected EP structures were checked. Closed edition-projection censuses establish the seven prose shalshelet, fourteen double-merkha and sixteen qarne-parah memberships, plus the five combined geresh/telisha atoms. The83 rafe specimens and18 Reuben forms were checked as listed membership, without claiming manuscript-wide completeness."
+    },
+    {
+      "page": "ch2",
+      "range": [
+        393,
+        608
+      ],
+      "reviewed": 130,
+      "total": 130,
+      "dispositions": {
+        "incorrect-locator-or-label": [
+          430,
+          513,
+          515,
+          598
+        ],
+        "count-source-or-chronology-scope-unresolved": [
+          394,
+          426,
+          436
+        ],
+        "bounded-example-or-list-membership-supported": [
+          432,
+          450,
+          452,
+          466,
+          507,
+          510,
+          511,
+          512,
+          514,
+          533,
+          535,
+          538,
+          540,
+          543,
+          548,
+          553,
+          555,
+          558,
+          560,
+          563,
+          568,
+          573,
+          578,
+          583,
+          588,
+          593,
+          595,
+          600,
+          603
+        ],
+        "partial-support-attribution-or-interface-limits": [
+          460,
+          462,
+          467,
+          468,
+          469,
+          495,
+          497
+        ],
+        "general-rule-policy-or-completeness-unverified": [
+          396,
+          400,
+          406,
+          408,
+          410,
+          414,
+          416,
+          418,
+          420,
+          422,
+          434,
+          440,
+          442,
+          444,
+          454,
+          464,
+          475,
+          481,
+          483,
+          503,
+          508,
+          509,
+          517
+        ],
+        "external-history-quotation-or-rendering-uncheckable": [
+          398,
+          402,
+          404,
+          412,
+          428,
+          471,
+          489,
+          491,
+          493,
+          499,
+          501,
+          521
+        ],
+        "heading-or-navigation": [
+          438,
+          446,
+          456,
+          477,
+          485
+        ],
+        "table-metadata-or-classification": [
+          522,
+          523,
+          525,
+          527,
+          528,
+          529,
+          530,
+          532,
+          537,
+          542,
+          545,
+          547,
+          550,
+          552,
+          557,
+          562,
+          565,
+          567,
+          570,
+          572,
+          575,
+          577,
+          580,
+          582,
+          585,
+          587,
+          590,
+          592,
+          597,
+          602,
+          605,
+          607
+        ],
+        "hypothetical-maqaf-column": [
+          534,
+          539,
+          544,
+          549,
+          554,
+          559,
+          564,
+          569,
+          574,
+          579,
+          584,
+          589,
+          594,
+          599,
+          604
+        ]
+      },
+      "method": "Selected note source relations and complete parsed/raw examples were read. The table distinguishes fifteen subject rows, sixteen subject verse occurrences, six analogy examples, and a hypothetical maqaf reconstruction column. Corpus-wide numerical claims remain separate from literal selected-stream census counts.",
+      "limits": "The older/current template interface, musical theories, fonts, historical quotations and universal completeness are not established by local example correspondence."
+    }
+  ],
+  "limits": "Assessment of a unit records bounded support and evidence limits. It does not certify every embedded assertion or universal policy."
+}

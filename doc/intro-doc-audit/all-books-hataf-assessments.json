@@ -1,0 +1,1594 @@
+{
+  "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+  "scope_claims": [
+    "ch3:L1123",
+    "ch5:L691",
+    "ch2:L276",
+    "ch2:L281"
+  ],
+  "unlisted_note_dispositions": [
+    {
+      "note_id": "Genesis 18:17/2/0",
+      "status": "reconstruction",
+      "explanation": "The ḥataf form belongs to Miqraot Gedolot HaKeter’s reconstruction of Aleppo practice; the note’s explicit Leningrad form has sheva.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Genesis 27:26/2/0",
+      "status": "rejected-question",
+      "explanation": "The historical Aleppo-question form וּשֲקָה is expressly rejected: sheva only.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Genesis 30:27/2/0",
+      "status": "definite-omission",
+      "explanation": "Explicit Leningrad ḥataf pataḥ on resh; no corresponding list word.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Genesis 41:7/2/0",
+      "status": "contextual-short-o",
+      "explanation": "The שִׁבֳּלִים vowel is intrinsic short-o; the source difference discussed here is dagesh on shin.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Genesis 41:24/2/0",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in שִׁבֳּלִים; the note compares he pointing and dagesh on shin.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Genesis 41:24/2/1",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in שִׁבֳּלִים; source uncertainty concerns dagesh on shin, not optional vocal-sheva marking.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Genesis 41:27/2/0",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in שִׁבֳּלִים; the note’s uncertainty concerns dagesh on shin.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Exodus 37:25/2/0",
+      "status": "explicit-short-o",
+      "explanation": "The note expressly says ḥataf qamats marks short qamats; source disagreement about the glyph is retained.",
+      "confidence": "explicit-note-function"
+    },
+    {
+      "note_id": "Numbers 5:28/2/0",
+      "status": "other-sources",
+      "explanation": "The ḥataf is assigned to British Library Or. 4445 and the Washington Pentateuch, with some editions; Aleppo/Leningrad attribution is not supplied.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Numbers 10:9/2/1",
+      "status": "definite-omission",
+      "explanation": "Explicit surprisingly-equal Leningrad form has ḥataf pataḥ on vav; no corresponding list word.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Numbers 11:1/2/0",
+      "status": "rejected-question",
+      "explanation": "The old question כמתאנֲנים is explicitly answered: sheva only.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Numbers 18:2/2/0",
+      "status": "rejected-question",
+      "explanation": "Aleppo Sefer-question form is explicitly answered sheva only; a printed-edition form repeats the ḥataf quotation.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Deuter 3:22/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Leningrad ḥataf ḥiriq is explicitly uncertain: the blurred sign may be gaʿya instead.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Deuter 32:6/2/0",
+      "status": "other-sources",
+      "explanation": "Non-guttural yod ḥataf belongs only to Firkovich B17; the Leningrad he vowel is guttural.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Deuter 32:13/2/0",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in the qere בָּמֳתֵי and the Aleppo spelling בָּמֳותֵי, as distinguished from the optional vocal-sheva policy.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "2Samuel 8:10/2/0",
+      "status": "definite-omission",
+      "explanation": "Explicit Aleppo ḥataf pataḥ on resh; no corresponding list word.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "2Samuel 24:16/2/0",
+      "status": "uncertain-ketiv-function",
+      "explanation": "Pointed Aleppo ketiv הָאֲוְרֲ֥נָה has a resh ḥataf, while the qere הָֽאֲרַ֥וְנָה has different letters/vowels. The note supplies no vowel-function statement; whether this is optional vocal-sheva marking is unresolved.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "2Samuel 24:18/2/0",
+      "status": "uncertain-ketiv-function",
+      "explanation": "Pointed Aleppo ketiv אֲרַ֥נֳיה has a nun ḥataf qamats, while qere אֲרַ֥וְנָה differs. Neither a morphological exclusion nor a scoped omission is established.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "1Kings 8:33/2/0",
+      "status": "other-sources",
+      "explanation": "The ḥataf form is assigned to Cairo, while Aleppo and Leningrad forms have sheva.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "1Kings 19:20/2/0",
+      "status": "other-sources",
+      "explanation": "Printed editions and Cairo have the alternative qamats/pataḥ ḥataf forms; the note expressly says Aleppo and Leningrad have sheva.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Isaiah 18:4/2/0",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in אֶשְׁקֳטָה, including the Aleppo full spelling; the note’s issue is full spelling and absence of a qere annotation.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Isaiah 58:14/2/0",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in בָּמֳותֵי, with an explicit cross-reference to Deuteronomy32:13.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Jeremiah 29:18/2/0",
+      "status": "ketiv-vowel-transfer",
+      "explanation": "Contextual inference: ketiv לְזַוֲעָה transfers the qere לְזַעֲוָה guttural ayin’s vowel to vav in transposed letters. This does not establish an optional vocal-sheva ḥataf.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Jeremiah 31:34/2/0",
+      "status": "incidental-divine-name",
+      "explanation": "The quoted יֱהֹוִה belongs to a different verse (32:25) in a provenance paragraph; divine-name qere pointing is outside the list’s vocal-sheva purpose.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Jeremiah 48:20/2/0",
+      "status": "ketiv-qere-attribution-gap",
+      "explanation": "The list already lists a ḥataf qere וּֽזֳעָ֑קוּ, but the note expressly documents pointed ketiv וּֽזֳעָ֑קיּ. The manuscript qere vowel is not established by that note; retain the existing source-boundary question.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Jeremiah 48:32/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Breuer reports ḥataf in מִבֲּכִי; the note’s inspection instead suggests a stain or an erased pataḥ stroke leaving sheva. No definite omission follows.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Jeremiah 49:28/2/0",
+      "status": "explicit-short-o",
+      "explanation": "The note expressly says ḥataf qamats marks short qamats.",
+      "confidence": "explicit-note-function"
+    },
+    {
+      "note_id": "Jeremiah 50:6/2/0",
+      "status": "ketiv-qere-attribution-gap",
+      "explanation": "The list already lists a ḥataf qere שׁוֹבֲב֑וּם, while the note documents pointed ketiv שׁוֹבֲב֑יּם. This remains a source-object boundary, rather than a newly omitted position.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Ezekiel 26:9/2/0",
+      "status": "other-sources",
+      "explanation": "The printed-edition ḥataf marks short qamats; it is not assigned to Aleppo or Leningrad.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Ezekiel 32:20/2/0",
+      "status": "explicit-short-o",
+      "explanation": "The note expressly says ḥataf qamats marks short qamats.",
+      "confidence": "explicit-note-function"
+    },
+    {
+      "note_id": "Psalms 144:15/2/0",
+      "status": "divine-name-function",
+      "explanation": "The implicit Aleppo target שֱׁיְהֹוָה has reduced segol on the prefix shin; explicit Leningrad שֶׁיֲהֹוָה has the divine-name vowel on yod. Both forms are retained concretely. The ordinary prefix has segol, not sheva, and this is divine-name qere/function pointing rather than the list’s optional vocal-sheva marking.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Proverbs 30:17/2/1",
+      "status": "definite-omission",
+      "explanation": "Explicit Leningrad qoph ḥataf pataḥ; the list lists only the separate תלעג word at the same verse.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Song of Songs 1:6/2/0",
+      "status": "definite-omission",
+      "explanation": "Explicit surprisingly-equal Leningrad ḥataf segol on shin; no corresponding list word.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Song of Songs 8:4/2/0",
+      "status": "reconstruction",
+      "explanation": "The ḥataf is attributed to reconstructed Aleppo practice; Leningrad is explicitly quoted with sheva and the Aleppo manuscript is not explicitly extant here.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Ruth 2:2/2/1",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in וַאֲלַקֳּטָה; the note compares which consonant has dagesh.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Ruth 2:2/2/2",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in בַשִׁבֳּלִים; the note compares shin dagesh and meteg.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Ruth 2:7/2/0",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic short-o in אֲלַקֳּטָה; the stated uncertainty concerns dagesh on qoph, not the function of its vowel.",
+      "confidence": "contextual-inference"
+    },
+    {
+      "note_id": "Ecclesiastes 2:13/2/0",
+      "status": "other-sources",
+      "explanation": "Named Sassoon 1053, Cairo 13 and Sassoon 82 sources plus reconstructed Aleppo practice have ḥataf; Leningrad explicitly has none.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Esther 1:6/2/1",
+      "status": "other-sources",
+      "explanation": "The explicit ḥataf belongs to St Petersburg EVR-II-B-55 and unspecified books, not the named Aleppo/Leningrad list sources.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Daniel 12:2/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Leningrad ḥataf pataḥ on yod is expressly uncertain; the note describes an indistinct unusual stroke.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "Nehemiah 6:19/2/0",
+      "status": "uncertain-reading",
+      "explanation": "Breuer supports Leningrad ḥataf; Dotan and the note retain doubt because an enlarged image does not show a clear pataḥ stroke.",
+      "confidence": "explicit-source-and-note-context"
+    },
+    {
+      "note_id": "2Chronicles 6:42/2/0",
+      "status": "explicit-short-o",
+      "explanation": "The note expressly says ḥataf qamats marks short qamats.",
+      "confidence": "explicit-note-function"
+    }
+  ],
+  "body_form_dispositions": [
+    {
+      "unpointed_key": "יהוה",
+      "status": "divine-name-function",
+      "explanation": "Divine-name qere pointing; ch2:L161 explains the ordinary case, and ch5:L615 plus its note identify the exceptional prefix form.",
+      "occurrences": 304,
+      "forms": [
+        "יֱהֹוִה֙",
+        "יֱהֹוִ֔ה",
+        "יֱהֹוִ֗ה",
+        "יֱהֹוִ֡ה",
+        "יֱהֹוִֽה",
+        "יֱהֹוִ֖ה",
+        "יֱהֹוִ֑ה",
+        "יֱהֹוִ֛ה",
+        "יֱהֹוִ֜ה",
+        "יֱהֹוִה֒",
+        "יֱהֹוִ֣ה",
+        "יֱהֹוִ֧ה",
+        "יֱ֠הֹוִ֠ה",
+        "יֱהֹוִה֮",
+        "יֱהֹוִ֤ה",
+        "יֱ֝הֹוִ֗ה",
+        "יֱ֘הֹוִ֤ה"
+      ],
+      "refs": [
+        "Genesis 15:2",
+        "Genesis 15:8",
+        "Deuter 3:24",
+        "Deuter 9:26",
+        "Joshua 7:7",
+        "Judges 6:22",
+        "Judges 16:28",
+        "2Samuel 7:18",
+        "2Samuel 7:19",
+        "2Samuel 7:19",
+        "2Samuel 7:20",
+        "2Samuel 7:28",
+        "2Samuel 7:29",
+        "1Kings 2:26",
+        "1Kings 8:53",
+        "Isaiah 3:15",
+        "Isaiah 7:7",
+        "Isaiah 10:23",
+        "Isaiah 10:24",
+        "Isaiah 22:5",
+        "Isaiah 22:12",
+        "Isaiah 22:14",
+        "Isaiah 22:15",
+        "Isaiah 25:8",
+        "Isaiah 28:16",
+        "Isaiah 28:22",
+        "Isaiah 30:15",
+        "Isaiah 40:10",
+        "Isaiah 48:16",
+        "Isaiah 49:22",
+        "Isaiah 50:4",
+        "Isaiah 50:5",
+        "Isaiah 50:7",
+        "Isaiah 50:9",
+        "Isaiah 52:4",
+        "Isaiah 56:8",
+        "Isaiah 61:1",
+        "Isaiah 61:11",
+        "Isaiah 65:13",
+        "Isaiah 65:15",
+        "Jeremiah 1:6",
+        "Jeremiah 2:19",
+        "Jeremiah 2:22",
+        "Jeremiah 4:10",
+        "Jeremiah 7:20",
+        "Jeremiah 14:13",
+        "Jeremiah 32:17",
+        "Jeremiah 32:25",
+        "Jeremiah 44:26",
+        "Jeremiah 46:10",
+        "Jeremiah 46:10",
+        "Jeremiah 49:5",
+        "Jeremiah 50:25",
+        "Jeremiah 50:31",
+        "Ezekiel 2:4",
+        "Ezekiel 3:11",
+        "Ezekiel 3:27",
+        "Ezekiel 4:14",
+        "Ezekiel 5:5",
+        "Ezekiel 5:7",
+        "Ezekiel 5:8",
+        "Ezekiel 5:11",
+        "Ezekiel 6:3",
+        "Ezekiel 6:3",
+        "Ezekiel 6:11",
+        "Ezekiel 7:2",
+        "Ezekiel 7:5",
+        "Ezekiel 8:1",
+        "Ezekiel 9:8",
+        "Ezekiel 11:7",
+        "Ezekiel 11:8",
+        "Ezekiel 11:13",
+        "Ezekiel 11:16",
+        "Ezekiel 11:17",
+        "Ezekiel 11:21",
+        "Ezekiel 12:10",
+        "Ezekiel 12:19",
+        "Ezekiel 12:23",
+        "Ezekiel 12:25",
+        "Ezekiel 12:28",
+        "Ezekiel 12:28",
+        "Ezekiel 13:3",
+        "Ezekiel 13:8",
+        "Ezekiel 13:8",
+        "Ezekiel 13:9",
+        "Ezekiel 13:13",
+        "Ezekiel 13:16",
+        "Ezekiel 13:18",
+        "Ezekiel 13:20",
+        "Ezekiel 14:4",
+        "Ezekiel 14:6",
+        "Ezekiel 14:11",
+        "Ezekiel 14:14",
+        "Ezekiel 14:16",
+        "Ezekiel 14:18",
+        "Ezekiel 14:20",
+        "Ezekiel 14:21",
+        "Ezekiel 14:23",
+        "Ezekiel 15:6",
+        "Ezekiel 15:8",
+        "Ezekiel 16:3",
+        "Ezekiel 16:8",
+        "Ezekiel 16:14",
+        "Ezekiel 16:19",
+        "Ezekiel 16:23",
+        "Ezekiel 16:30",
+        "Ezekiel 16:36",
+        "Ezekiel 16:43",
+        "Ezekiel 16:48",
+        "Ezekiel 16:59",
+        "Ezekiel 16:63",
+        "Ezekiel 17:3",
+        "Ezekiel 17:9",
+        "Ezekiel 17:16",
+        "Ezekiel 17:19",
+        "Ezekiel 17:22",
+        "Ezekiel 18:3",
+        "Ezekiel 18:9",
+        "Ezekiel 18:23",
+        "Ezekiel 18:30",
+        "Ezekiel 18:32",
+        "Ezekiel 20:3",
+        "Ezekiel 20:3",
+        "Ezekiel 20:5",
+        "Ezekiel 20:27",
+        "Ezekiel 20:30",
+        "Ezekiel 20:31",
+        "Ezekiel 20:33",
+        "Ezekiel 20:36",
+        "Ezekiel 20:39",
+        "Ezekiel 20:40",
+        "Ezekiel 20:44",
+        "Ezekiel 21:3",
+        "Ezekiel 21:5",
+        "Ezekiel 21:12",
+        "Ezekiel 21:18",
+        "Ezekiel 21:29",
+        "Ezekiel 21:31",
+        "Ezekiel 21:33",
+        "Ezekiel 22:3",
+        "Ezekiel 22:12",
+        "Ezekiel 22:19",
+        "Ezekiel 22:28",
+        "Ezekiel 22:31",
+        "Ezekiel 23:22",
+        "Ezekiel 23:28",
+        "Ezekiel 23:32",
+        "Ezekiel 23:34",
+        "Ezekiel 23:35",
+        "Ezekiel 23:46",
+        "Ezekiel 23:49",
+        "Ezekiel 24:3",
+        "Ezekiel 24:6",
+        "Ezekiel 24:9",
+        "Ezekiel 24:14",
+        "Ezekiel 24:21",
+        "Ezekiel 24:24",
+        "Ezekiel 25:3",
+        "Ezekiel 25:3",
+        "Ezekiel 25:6",
+        "Ezekiel 25:8",
+        "Ezekiel 25:12",
+        "Ezekiel 25:13",
+        "Ezekiel 25:14",
+        "Ezekiel 25:15",
+        "Ezekiel 25:16",
+        "Ezekiel 26:3",
+        "Ezekiel 26:5",
+        "Ezekiel 26:7",
+        "Ezekiel 26:14",
+        "Ezekiel 26:15",
+        "Ezekiel 26:19",
+        "Ezekiel 26:21",
+        "Ezekiel 27:3",
+        "Ezekiel 28:2",
+        "Ezekiel 28:6",
+        "Ezekiel 28:10",
+        "Ezekiel 28:12",
+        "Ezekiel 28:22",
+        "Ezekiel 28:24",
+        "Ezekiel 28:25",
+        "Ezekiel 29:3",
+        "Ezekiel 29:8",
+        "Ezekiel 29:13",
+        "Ezekiel 29:16",
+        "Ezekiel 29:19",
+        "Ezekiel 29:20",
+        "Ezekiel 30:2",
+        "Ezekiel 30:6",
+        "Ezekiel 30:10",
+        "Ezekiel 30:13",
+        "Ezekiel 30:22",
+        "Ezekiel 31:10",
+        "Ezekiel 31:15",
+        "Ezekiel 31:18",
+        "Ezekiel 32:3",
+        "Ezekiel 32:8",
+        "Ezekiel 32:11",
+        "Ezekiel 32:14",
+        "Ezekiel 32:16",
+        "Ezekiel 32:31",
+        "Ezekiel 32:32",
+        "Ezekiel 33:11",
+        "Ezekiel 33:25",
+        "Ezekiel 33:27",
+        "Ezekiel 34:2",
+        "Ezekiel 34:8",
+        "Ezekiel 34:10",
+        "Ezekiel 34:11",
+        "Ezekiel 34:15",
+        "Ezekiel 34:17",
+        "Ezekiel 34:20",
+        "Ezekiel 34:30",
+        "Ezekiel 34:31",
+        "Ezekiel 35:3",
+        "Ezekiel 35:6",
+        "Ezekiel 35:11",
+        "Ezekiel 35:14",
+        "Ezekiel 36:2",
+        "Ezekiel 36:3",
+        "Ezekiel 36:4",
+        "Ezekiel 36:4",
+        "Ezekiel 36:5",
+        "Ezekiel 36:6",
+        "Ezekiel 36:7",
+        "Ezekiel 36:13",
+        "Ezekiel 36:14",
+        "Ezekiel 36:15",
+        "Ezekiel 36:22",
+        "Ezekiel 36:23",
+        "Ezekiel 36:32",
+        "Ezekiel 36:33",
+        "Ezekiel 36:37",
+        "Ezekiel 37:3",
+        "Ezekiel 37:5",
+        "Ezekiel 37:9",
+        "Ezekiel 37:12",
+        "Ezekiel 37:19",
+        "Ezekiel 37:21",
+        "Ezekiel 38:3",
+        "Ezekiel 38:10",
+        "Ezekiel 38:14",
+        "Ezekiel 38:17",
+        "Ezekiel 38:18",
+        "Ezekiel 38:21",
+        "Ezekiel 39:1",
+        "Ezekiel 39:5",
+        "Ezekiel 39:8",
+        "Ezekiel 39:10",
+        "Ezekiel 39:13",
+        "Ezekiel 39:17",
+        "Ezekiel 39:20",
+        "Ezekiel 39:25",
+        "Ezekiel 39:29",
+        "Ezekiel 43:18",
+        "Ezekiel 43:19",
+        "Ezekiel 43:27",
+        "Ezekiel 44:6",
+        "Ezekiel 44:9",
+        "Ezekiel 44:12",
+        "Ezekiel 44:15",
+        "Ezekiel 44:27",
+        "Ezekiel 45:9",
+        "Ezekiel 45:9",
+        "Ezekiel 45:15",
+        "Ezekiel 45:18",
+        "Ezekiel 46:1",
+        "Ezekiel 46:16",
+        "Ezekiel 47:13",
+        "Ezekiel 47:23",
+        "Ezekiel 48:29",
+        "Amos 1:8",
+        "Amos 3:7",
+        "Amos 3:8",
+        "Amos 3:11",
+        "Amos 3:13",
+        "Amos 4:2",
+        "Amos 4:5",
+        "Amos 5:3",
+        "Amos 6:8",
+        "Amos 7:1",
+        "Amos 7:2",
+        "Amos 7:4",
+        "Amos 7:4",
+        "Amos 7:5",
+        "Amos 7:6",
+        "Amos 8:1",
+        "Amos 8:3",
+        "Amos 8:9",
+        "Amos 8:11",
+        "Amos 9:5",
+        "Amos 9:8",
+        "Obadiah 1:1",
+        "Micah 1:2",
+        "Habakkuk 3:19",
+        "Tsefaniah 1:7",
+        "Zechariah 9:14",
+        "Psalms 69:7",
+        "Psalms 71:5",
+        "Psalms 71:16",
+        "Psalms 73:28",
+        "Psalms 109:21",
+        "Psalms 140:8",
+        "Psalms 141:8"
+      ]
+    },
+    {
+      "unpointed_key": "ראי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "רֳאִ֑י"
+      ],
+      "refs": [
+        "Genesis 16:13"
+      ]
+    },
+    {
+      "unpointed_key": "שבלים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 6,
+      "forms": [
+        "שִׁבֳּלִ֗ים",
+        "שִׁבֳּלִ֔ים",
+        "שִׁבֳּלִ֣ים",
+        "שִׁבֳּלִ֖ים"
+      ],
+      "refs": [
+        "Genesis 41:5",
+        "Genesis 41:6",
+        "Genesis 41:22",
+        "Genesis 41:23",
+        "Isaiah 17:5",
+        "Isaiah 17:5"
+      ]
+    },
+    {
+      "unpointed_key": "השבלים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 6,
+      "forms": [
+        "הַשִּׁבֳּלִ֣ים",
+        "הַֽשִּׁבֳּלִ֔ים",
+        "הַֽשִּׁבֳּלִ֖ים",
+        "הַֽשִּׁבֳּלִים֙"
+      ],
+      "refs": [
+        "Genesis 41:7",
+        "Genesis 41:7",
+        "Genesis 41:24",
+        "Genesis 41:24",
+        "Genesis 41:26",
+        "Genesis 41:27"
+      ]
+    },
+    {
+      "unpointed_key": "צרי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 3,
+      "forms": [
+        "צֳרִי֙",
+        "צֳרִ֔י"
+      ],
+      "refs": [
+        "Genesis 43:11",
+        "Jeremiah 46:11",
+        "Jeremiah 51:8"
+      ]
+    },
+    {
+      "unpointed_key": "הקדשים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 34,
+      "forms": [
+        "הַקֳּדָשִֽׁים",
+        "הַקֳּדָשִׁ֗ים",
+        "הַקֳּדָשִׁ֑ים",
+        "הַקֳּדָשִׁ֖ים",
+        "הַקֳּדָשִׁים֙",
+        "הַקֳּדָשִׁ֔ים",
+        "הַקֳּדָשִׁ֜ים",
+        "הַקֳּדָשִׁ֡ים"
+      ],
+      "refs": [
+        "Exodus 26:33",
+        "Exodus 26:34",
+        "Exodus 28:38",
+        "Levit 21:22",
+        "Levit 21:22",
+        "Levit 22:3",
+        "Levit 22:6",
+        "Levit 22:7",
+        "Levit 22:12",
+        "Numbers 4:4",
+        "Numbers 4:19",
+        "Numbers 18:9",
+        "Numbers 18:10",
+        "Numbers 18:19",
+        "1Kings 6:16",
+        "1Kings 7:50",
+        "1Kings 8:6",
+        "2Kings 12:5",
+        "2Kings 12:19",
+        "Ezekiel 41:4",
+        "Ezekiel 42:13",
+        "Ezekiel 42:13",
+        "Ezekiel 44:13",
+        "Ezra 2:63",
+        "Nehemiah 7:65",
+        "1Chronicles 6:34",
+        "1Chronicles 26:20",
+        "1Chronicles 26:26",
+        "1Chronicles 28:12",
+        "2Chronicles 3:8",
+        "2Chronicles 3:10",
+        "2Chronicles 4:22",
+        "2Chronicles 5:7",
+        "2Chronicles 31:14"
+      ]
+    },
+    {
+      "unpointed_key": "כתנת",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 4,
+      "forms": [
+        "כֻתֳּנֹ֔ת",
+        "כֻּתֳּנֹֽת",
+        "כֻּתֳּנֹת֙"
+      ],
+      "refs": [
+        "Exodus 28:40",
+        "Exodus 29:8",
+        "Exodus 40:14",
+        "Levit 8:13"
+      ]
+    },
+    {
+      "unpointed_key": "בכתנתם",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "בְּכֻתֳּנֹתָ֔ם"
+      ],
+      "refs": [
+        "Levit 10:5"
+      ]
+    },
+    {
+      "unpointed_key": "צפרים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 3,
+      "forms": [
+        "צִפֳּרִ֥ים",
+        "צִפֳּרִ֑ים",
+        "צִפֳּרִ֣ים"
+      ],
+      "refs": [
+        "Levit 14:4",
+        "Levit 14:49",
+        "Psalms 104:17"
+      ]
+    },
+    {
+      "unpointed_key": "בקדשים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "בַּקֳּדָשִׁים֙"
+      ],
+      "refs": [
+        "Levit 22:4"
+      ]
+    },
+    {
+      "unpointed_key": "קדשיו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "קֳדָשָׁ֖יו",
+        "קֳדָשָׁ֔יו"
+      ],
+      "refs": [
+        "Numbers 5:10",
+        "2Kings 12:19"
+      ]
+    },
+    {
+      "unpointed_key": "תקבנו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "תִקֳּבֶ֑נּוּ"
+      ],
+      "refs": [
+        "Numbers 23:25"
+      ]
+    },
+    {
+      "unpointed_key": "קבתה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "קֳבָתָ֑הּ"
+      ],
+      "refs": [
+        "Numbers 25:8"
+      ]
+    },
+    {
+      "unpointed_key": "יהדפנו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "יֶהְדֳּפֶ֑נּוּ"
+      ],
+      "refs": [
+        "Numbers 35:20"
+      ]
+    },
+    {
+      "unpointed_key": "קדקדך",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "קׇדְקֳדֶֽךָ"
+      ],
+      "refs": [
+        "Deuter 28:35"
+      ]
+    },
+    {
+      "unpointed_key": "במתי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 6,
+      "forms": [
+        "בָּ֣מֳתֵי",
+        "בָּ֥מֳתֵי"
+      ],
+      "refs": [
+        "Deuter 32:13",
+        "Isaiah 14:14",
+        "Isaiah 58:14",
+        "Amos 4:13",
+        "Micah 1:3",
+        "Job 9:8"
+      ]
+    },
+    {
+      "unpointed_key": "יהדפם",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "יֶהְדֳּפֵ֣ם"
+      ],
+      "refs": [
+        "Joshua 23:5"
+      ]
+    },
+    {
+      "unpointed_key": "הברקנים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "הַֽבַּרְקֳנִֽים",
+        "הַֽבַּרְקֳנִ֑ים"
+      ],
+      "refs": [
+        "Judges 8:7",
+        "Judges 8:16"
+      ]
+    },
+    {
+      "unpointed_key": "הגרנות",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "הַגֳּרָנֽוֹת",
+        "הַגֳּרָנ֖וֹת"
+      ],
+      "refs": [
+        "1Samuel 23:1",
+        "Joel 2:24"
+      ]
+    },
+    {
+      "unpointed_key": "יגפנו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "יִגֳּפֶ֑נּוּ"
+      ],
+      "refs": [
+        "1Samuel 26:10"
+      ]
+    },
+    {
+      "unpointed_key": "קסמי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "קׇסֳמִי"
+      ],
+      "refs": [
+        "1Samuel 28:8"
+      ]
+    },
+    {
+      "unpointed_key": "ובצלצלים",
+      "status": "uncertain-body-function",
+      "explanation": "2Samuel6:5 has a retained ḥataf segol on tsadi, no doc-note and no explicit named-manuscript attribution or function statement. It cannot be certified as a scoped omission or a morphological exclusion.",
+      "occurrences": 1,
+      "forms": [
+        "וּֽבְצֶלְצֱלִֽים"
+      ],
+      "refs": [
+        "2Samuel 6:5"
+      ]
+    },
+    {
+      "unpointed_key": "קדקדו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 3,
+      "forms": [
+        "קׇדְקֳד֔וֹ",
+        "קׇ֝דְקֳד֗וֹ",
+        "קׇדְקֳדֽוֹ"
+      ],
+      "refs": [
+        "2Samuel 14:25",
+        "Psalms 7:17",
+        "Job 2:7"
+      ]
+    },
+    {
+      "unpointed_key": "עמניות",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "עַמֳּנִיּוֹת֙",
+        "עַמֳּנִיּ֖וֹת"
+      ],
+      "refs": [
+        "1Kings 11:1",
+        "Nehemiah 13:23"
+      ]
+    },
+    {
+      "unpointed_key": "סבלו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "סֻבֳּל֗וֹ",
+        "סֻבֳּלוֹ֙"
+      ],
+      "refs": [
+        "Isaiah 9:3",
+        "Isaiah 10:27"
+      ]
+    },
+    {
+      "unpointed_key": "וסבלו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וְסֻ֨בֳּל֔וֹ"
+      ],
+      "refs": [
+        "Isaiah 14:25"
+      ]
+    },
+    {
+      "unpointed_key": "אשקטה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "אֶשְׁקֳטָ֖ה"
+      ],
+      "refs": [
+        "Isaiah 18:4"
+      ]
+    },
+    {
+      "unpointed_key": "אצרנה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "אֶצֳּרֶֽנָּה"
+      ],
+      "refs": [
+        "Isaiah 27:3"
+      ]
+    },
+    {
+      "unpointed_key": "כצפרים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "כְּצִפֳּרִ֣ים"
+      ],
+      "refs": [
+        "Isaiah 31:5"
+      ]
+    },
+    {
+      "unpointed_key": "יקבנו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "יִקֳּבֶֽנּוּ"
+      ],
+      "refs": [
+        "Isaiah 62:2"
+      ]
+    },
+    {
+      "unpointed_key": "דמי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 3,
+      "forms": [
+        "דֳּמִ֖י",
+        "דֳמִ֖י",
+        "דֳּמִי"
+      ],
+      "refs": [
+        "Isaiah 62:6",
+        "Isaiah 62:7",
+        "Psalms 83:2"
+      ]
+    },
+    {
+      "unpointed_key": "הצרי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "הַצֳּרִי֙"
+      ],
+      "refs": [
+        "Jeremiah 8:22"
+      ]
+    },
+    {
+      "unpointed_key": "אשתלנו",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "אֶשְׁתֳּלֶ֔נּוּ"
+      ],
+      "refs": [
+        "Ezekiel 17:23"
+      ]
+    },
+    {
+      "unpointed_key": "ואסרם",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וְאֶסֳּרֵ֑ם"
+      ],
+      "refs": [
+        "Hosea 10:10"
+      ]
+    },
+    {
+      "unpointed_key": "שיהוה",
+      "status": "divine-name-function",
+      "explanation": "Divine-name qere pointing; ch2:L161 explains the ordinary case, and ch5:L615 plus its note identify the exceptional prefix form.",
+      "occurrences": 1,
+      "forms": [
+        "שֱׁיְהֹוָ֥ה"
+      ],
+      "refs": [
+        "Psalms 144:15"
+      ]
+    },
+    {
+      "unpointed_key": "ואלקטה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וַאֲלַקֳּטָ֣ה"
+      ],
+      "refs": [
+        "Ruth 2:2"
+      ]
+    },
+    {
+      "unpointed_key": "בשבלים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "בַֽשִּׁבֳּלִ֔ים"
+      ],
+      "refs": [
+        "Ruth 2:2"
+      ]
+    },
+    {
+      "unpointed_key": "אלקטה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "אֲלַקֳּטָה"
+      ],
+      "refs": [
+        "Ruth 2:7"
+      ]
+    },
+    {
+      "unpointed_key": "וכצפרים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וְכַ֨צִּפֳּרִ֔ים"
+      ],
+      "refs": [
+        "Ecclesiastes 9:12"
+      ]
+    },
+    {
+      "unpointed_key": "מרדכי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 43,
+      "forms": [
+        "מׇרְדֳּכַ֗י",
+        "מׇרְדֳּכַ֛י",
+        "מׇרְדֳּכַי֙",
+        "מׇרְדֳּכַ֡י",
+        "מׇרְדֳּכָ֑י",
+        "מׇרְדֳּכָֽי",
+        "מׇרְדֳּכַ֔י",
+        "מׇרְדֳּכַ֖י",
+        "מׇרְדֳּכַ֜י",
+        "מׇרְדֳּכַ֣י",
+        "מׇרְדֳּכַ֞י",
+        "מׇרְדֳּכַ֤י",
+        "מׇרְדֳּכַ֥י"
+      ],
+      "refs": [
+        "Esther 2:5",
+        "Esther 2:7",
+        "Esther 2:10",
+        "Esther 2:11",
+        "Esther 2:15",
+        "Esther 2:20",
+        "Esther 2:20",
+        "Esther 2:22",
+        "Esther 3:4",
+        "Esther 3:5",
+        "Esther 3:6",
+        "Esther 3:6",
+        "Esther 4:1",
+        "Esther 4:4",
+        "Esther 4:5",
+        "Esther 4:6",
+        "Esther 4:7",
+        "Esther 4:9",
+        "Esther 4:10",
+        "Esther 4:13",
+        "Esther 4:15",
+        "Esther 4:17",
+        "Esther 5:9",
+        "Esther 5:9",
+        "Esther 5:13",
+        "Esther 5:14",
+        "Esther 6:2",
+        "Esther 6:4",
+        "Esther 6:11",
+        "Esther 6:12",
+        "Esther 6:13",
+        "Esther 8:2",
+        "Esther 8:9",
+        "Esther 9:3",
+        "Esther 9:4",
+        "Esther 9:4",
+        "Esther 9:20",
+        "Esther 9:23",
+        "Esther 9:31",
+        "Esther 10:2",
+        "Esther 10:3",
+        "Ezra 2:2",
+        "Nehemiah 7:7"
+      ]
+    },
+    {
+      "unpointed_key": "ומרדכי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 7,
+      "forms": [
+        "וּמׇרְדֳּכַ֖י",
+        "וּמׇ֨רְדֳּכַ֔י",
+        "וּמׇרְדֳּכַ֗י",
+        "וּמׇרְדֳּכַ֞י",
+        "וּמׇרְדֳּכַ֥י"
+      ],
+      "refs": [
+        "Esther 2:19",
+        "Esther 2:21",
+        "Esther 3:2",
+        "Esther 4:1",
+        "Esther 8:1",
+        "Esther 8:15",
+        "Esther 9:29"
+      ]
+    },
+    {
+      "unpointed_key": "למרדכי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 8,
+      "forms": [
+        "לְמׇרְדֳּכַ֔י",
+        "לְמׇרְדֳּכָ֑י",
+        "לְמׇרְדֳּכָ֔י",
+        "לְמׇרְדֳּכַ֖י",
+        "לְמׇרְדֳּכַ֣י",
+        "לְֽמׇרְדֳּכַ֞י"
+      ],
+      "refs": [
+        "Esther 2:22",
+        "Esther 3:3",
+        "Esther 4:12",
+        "Esther 6:3",
+        "Esther 6:10",
+        "Esther 7:9",
+        "Esther 7:10",
+        "Esther 8:2"
+      ]
+    },
+    {
+      "unpointed_key": "במרדכי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "בְּמׇרְדֳּכַ֣י"
+      ],
+      "refs": [
+        "Esther 3:6"
+      ]
+    },
+    {
+      "unpointed_key": "ולמרדכי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וּֽלְמׇרְדֳּכַ֖י"
+      ],
+      "refs": [
+        "Esther 8:7"
+      ]
+    },
+    {
+      "unpointed_key": "קדמי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "קֳדָמָ֑י",
+        "קֳדָמַי֮"
+      ],
+      "refs": [
+        "Daniel 2:6",
+        "Daniel 6:27"
+      ]
+    },
+    {
+      "unpointed_key": "קבל",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 22,
+      "forms": [
+        "קֳבֵל֙",
+        "קֳבֵ֗ל",
+        "קֳבֵ֣ל",
+        "קֳבֵ֤ל",
+        "קֳבֵ֡ל",
+        "קֳבֵ֕ל",
+        "קֳבֵ֖ל"
+      ],
+      "refs": [
+        "Daniel 2:8",
+        "Daniel 2:10",
+        "Daniel 2:12",
+        "Daniel 2:24",
+        "Daniel 2:40",
+        "Daniel 2:41",
+        "Daniel 2:45",
+        "Daniel 3:7",
+        "Daniel 3:8",
+        "Daniel 3:22",
+        "Daniel 3:29",
+        "Daniel 4:15",
+        "Daniel 5:12",
+        "Daniel 5:22",
+        "Daniel 6:4",
+        "Daniel 6:5",
+        "Daniel 6:10",
+        "Daniel 6:11",
+        "Daniel 6:23",
+        "Ezra 4:14",
+        "Ezra 7:14",
+        "Ezra 7:17"
+      ]
+    },
+    {
+      "unpointed_key": "קדם",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 20,
+      "forms": [
+        "קֳדָם",
+        "קֳדָ֣ם",
+        "קֳדָם֙",
+        "קֳדָ֥ם",
+        "קֳדָ֖ם",
+        "קֳדָ֨ם"
+      ],
+      "refs": [
+        "Daniel 2:10",
+        "Daniel 2:11",
+        "Daniel 2:15",
+        "Daniel 2:18",
+        "Daniel 2:24",
+        "Daniel 2:25",
+        "Daniel 2:27",
+        "Daniel 2:36",
+        "Daniel 3:13",
+        "Daniel 5:13",
+        "Daniel 5:17",
+        "Daniel 6:2",
+        "Daniel 6:11",
+        "Daniel 6:12",
+        "Daniel 6:13",
+        "Daniel 6:14",
+        "Daniel 6:27",
+        "Ezra 4:23",
+        "Ezra 7:14",
+        "Ezra 7:19"
+      ]
+    },
+    {
+      "unpointed_key": "גלי",
+      "status": "aramaic-intrinsic-segol",
+      "explanation": "Intrinsic reduced segol in the Aramaic forms; Daniel2:30 explicitly names the morphological segol function, as distinguished from optional vocal sheva.",
+      "occurrences": 1,
+      "forms": [
+        "גֱּלִ֣י"
+      ],
+      "refs": [
+        "Daniel 2:30"
+      ]
+    },
+    {
+      "unpointed_key": "לקבל",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 5,
+      "forms": [
+        "לׇקֳבֵ֣ל",
+        "לׇקֳבֵ֨ל",
+        "לׇקֳבֵ֗ל"
+      ],
+      "refs": [
+        "Daniel 3:3",
+        "Daniel 5:5",
+        "Daniel 5:10",
+        "Ezra 4:16",
+        "Ezra 6:13"
+      ]
+    },
+    {
+      "unpointed_key": "קדמיהון",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "קֳדָ֣מֵיה֔וֹן"
+      ],
+      "refs": [
+        "Daniel 4:4"
+      ]
+    },
+    {
+      "unpointed_key": "בניתה",
+      "status": "aramaic-intrinsic-segol",
+      "explanation": "Intrinsic reduced segol in the Aramaic forms; Daniel2:30 explicitly names the morphological segol function, as distinguished from optional vocal sheva.",
+      "occurrences": 1,
+      "forms": [
+        "בֱנַיְתַהּ֙"
+      ],
+      "refs": [
+        "Daniel 4:27"
+      ]
+    },
+    {
+      "unpointed_key": "ולקבל",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וְלׇקֳבֵ֥ל"
+      ],
+      "refs": [
+        "Daniel 5:1"
+      ]
+    },
+    {
+      "unpointed_key": "קדמוהי",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 3,
+      "forms": [
+        "קֳדָמ֑וֹהִי",
+        "קֳדָמ֔וֹהִי"
+      ],
+      "refs": [
+        "Daniel 5:19",
+        "Daniel 5:24",
+        "Daniel 7:10"
+      ]
+    },
+    {
+      "unpointed_key": "ומדקה",
+      "status": "aramaic-intrinsic-segol",
+      "explanation": "Intrinsic reduced segol in the Aramaic forms; Daniel2:30 explicitly names the morphological segol function, as distinguished from optional vocal sheva.",
+      "occurrences": 1,
+      "forms": [
+        "וּמַדֱּקָ֔ה"
+      ],
+      "refs": [
+        "Daniel 7:7"
+      ]
+    },
+    {
+      "unpointed_key": "קדמה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 2,
+      "forms": [
+        "קֳדָמַ֑הּ",
+        "קֳדָמַ֖הּ"
+      ],
+      "refs": [
+        "Daniel 7:8",
+        "Daniel 7:20"
+      ]
+    },
+    {
+      "unpointed_key": "ממללה",
+      "status": "aramaic-intrinsic-segol",
+      "explanation": "Intrinsic reduced segol in the Aramaic forms; Daniel2:30 explicitly names the morphological segol function, as distinguished from optional vocal sheva.",
+      "occurrences": 1,
+      "forms": [
+        "מְמַלֱּלָ֑ה"
+      ],
+      "refs": [
+        "Daniel 7:11"
+      ]
+    },
+    {
+      "unpointed_key": "ארכויא",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "אַרְכֳּוָיֵ֤א"
+      ],
+      "refs": [
+        "Ezra 4:9"
+      ]
+    },
+    {
+      "unpointed_key": "קרי",
+      "status": "aramaic-intrinsic-segol",
+      "explanation": "Intrinsic reduced segol in the Aramaic forms; Daniel2:30 explicitly names the morphological segol function, as distinguished from optional vocal sheva.",
+      "occurrences": 2,
+      "forms": [
+        "קֱרִ֖י",
+        "קֱרִ֧י"
+      ],
+      "refs": [
+        "Ezra 4:18",
+        "Ezra 4:23"
+      ]
+    },
+    {
+      "unpointed_key": "ואשקלה",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וָאֶשְׁקֳלָ֣ה"
+      ],
+      "refs": [
+        "Ezra 8:25"
+      ]
+    },
+    {
+      "unpointed_key": "וצפרים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וְצִפֳּרִים֙"
+      ],
+      "refs": [
+        "Nehemiah 5:18"
+      ]
+    },
+    {
+      "unpointed_key": "ולקדשים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "וְלַקֳּדָשִׁים֙"
+      ],
+      "refs": [
+        "Nehemiah 10:34"
+      ]
+    },
+    {
+      "unpointed_key": "אשדדיות",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 1,
+      "forms": [
+        "אַשְׁדֳּדִיּ֔וֹת"
+      ],
+      "refs": [
+        "Nehemiah 13:23"
+      ]
+    },
+    {
+      "unpointed_key": "והקדשים",
+      "status": "contextual-short-o",
+      "explanation": "Intrinsic retained short-o in this inflected/proper-name form, under the morphological-vowel exception. Classification uses the actual form and context, not retention alone; Ezra8:25 supplies an explicit morphological-holam control.",
+      "occurrences": 3,
+      "forms": [
+        "וְֽהַקֳּדָשִׁ֑ים",
+        "וְהַקֳּדָשִׁ֖ים",
+        "וְהַקֳּדָשִׁ֣ים"
+      ],
+      "refs": [
+        "2Chronicles 29:33",
+        "2Chronicles 31:12",
+        "2Chronicles 35:13"
+      ]
+    }
+  ],
+  "independent_checker": {
+    "agent": "/root/hataf_independent",
+    "method": "Separate list/complete-note and MAM-simple enumerations; faithful raw verification and source/function review.",
+    "status": "Complete: note/source/function review and all63 body-form groups independently checked.",
+    "body_partition": {
+      "divine_name": 305,
+      "aramaic_segol": 6,
+      "contextual_morphological_qamats": 224,
+      "unresolved_body_function": 1
+    },
+    "unexpected_roster_exclusions": "Independent raw checks verify explicit short-o, contextual morphology, divine-name/function, source-reconstruction and rejected-question exclusions. Existing Jeremiah ketiv/qere attribution gaps remain unresolved."
+  },
+  "limits": [
+    "Contextual function classifications are explicitly distinguished from notes naming that function.",
+    "A lexical match accounts for a listed position; it does not supply a missing manuscript attribution or establish every alternative quotation. Prior667-item semantic assessments remain authoritative research context."
+  ]
+}

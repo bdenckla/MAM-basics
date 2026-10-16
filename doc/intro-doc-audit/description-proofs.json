@@ -1,0 +1,256 @@
+[
+  {
+    "claim": "ch3:L853",
+    "note_id": "Exodus 7:20/2/0",
+    "raw_note_body": "=ל?,ל1,ב,ש,ש1,ק3,ו ושיטת-א (מרכא בתיבת תביר){{ש}}ל?=וַיֵּהָֽפְכ֛וּ (געיה ותביר?) וכך בהקלדה",
+    "parsed_note_body": "=ל?,ל1,ב,ש,ש1,ק3,ו ושיטת-א (מרכא בתיבת תביר)\nל?=וַיֵּהָֽפְכ֛וּ (געיה ותביר?) וכך בהקלדה",
+    "intro_form": "וַיֵּהָֽפְכ֛וּ",
+    "note_form": "וַיֵּהָֽפְכ֛וּ",
+    "codepoints": [
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ֵ",
+        "codepoint": "U+05B5",
+        "name": "HEBREW POINT TSERE"
+      },
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ָ",
+        "codepoint": "U+05B8",
+        "name": "HEBREW POINT QAMATS"
+      },
+      {
+        "character": "ֽ",
+        "codepoint": "U+05BD",
+        "name": "HEBREW POINT METEG"
+      },
+      {
+        "character": "פ",
+        "codepoint": "U+05E4",
+        "name": "HEBREW LETTER PE"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "כ",
+        "codepoint": "U+05DB",
+        "name": "HEBREW LETTER KAF"
+      },
+      {
+        "character": "֛",
+        "codepoint": "U+059B",
+        "name": "HEBREW ACCENT TEVIR"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      }
+    ],
+    "result": "Quoted atom forms agree after explicit mark-order comparison; description-name disagreement is separately reviewed."
+  },
+  {
+    "claim": "ch3:L1002",
+    "note_id": "Numbers 16:27/2/0",
+    "raw_note_body": "=ב,ש,ש1,ק3,ו ובדפוסים{{ש}}ל!=מִשְׁכַּן־קֹ֛רֶח (סגול באות רי\"ש){{ש}}הערות ברויאר ודותן והמקליד",
+    "parsed_note_body": "=ב,ש,ש1,ק3,ו ובדפוסים\nל!=מִשְׁכַּן־קֹ֛רֶח (סגול באות רי\"ש)\nהערות ברויאר ודותן והמקליד",
+    "intro_form": "קֹ֛רֶח",
+    "note_form": "קֹ֛רֶח",
+    "codepoints": [
+      {
+        "character": "ק",
+        "codepoint": "U+05E7",
+        "name": "HEBREW LETTER QOF"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "֛",
+        "codepoint": "U+059B",
+        "name": "HEBREW ACCENT TEVIR"
+      },
+      {
+        "character": "ר",
+        "codepoint": "U+05E8",
+        "name": "HEBREW LETTER RESH"
+      },
+      {
+        "character": "ֶ",
+        "codepoint": "U+05B6",
+        "name": "HEBREW POINT SEGOL"
+      },
+      {
+        "character": "ח",
+        "codepoint": "U+05D7",
+        "name": "HEBREW LETTER HET"
+      }
+    ],
+    "result": "Quoted atom forms agree after explicit mark-order comparison; description-name disagreement is separately reviewed."
+  },
+  {
+    "claim": "ch3:L1008",
+    "note_id": "Numbers 22:23/2/0",
+    "raw_note_body": "=ל?,ל1,ב,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן{{ש}}ל?!=מִן־הַדֶ֔רֶךְ (חסר דגש באות דל\"ת?); ניתן להבחין בנקודת דגש מטושטשת בצילום.{{ש}}הערת ברויאר, והמקליד תיקן בלי להעיר",
+    "parsed_note_body": "=ל?,ל1,ב,ש,ש1,ק3,ו וכמו כן בדפוסים וקורן\nל?!=מִן־הַדֶ֔רֶךְ (חסר דגש באות דל\"ת?); ניתן להבחין בנקודת דגש מטושטשת בצילום.\nהערת ברויאר, והמקליד תיקן בלי להעיר",
+    "intro_form": "הַדֶ֔רֶךְ",
+    "note_form": "הַדֶ֔רֶךְ",
+    "codepoints": [
+      {
+        "character": "ה",
+        "codepoint": "U+05D4",
+        "name": "HEBREW LETTER HE"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ד",
+        "codepoint": "U+05D3",
+        "name": "HEBREW LETTER DALET"
+      },
+      {
+        "character": "ֶ",
+        "codepoint": "U+05B6",
+        "name": "HEBREW POINT SEGOL"
+      },
+      {
+        "character": "֔",
+        "codepoint": "U+0594",
+        "name": "HEBREW ACCENT ZAQEF QATAN"
+      },
+      {
+        "character": "ר",
+        "codepoint": "U+05E8",
+        "name": "HEBREW LETTER RESH"
+      },
+      {
+        "character": "ֶ",
+        "codepoint": "U+05B6",
+        "name": "HEBREW POINT SEGOL"
+      },
+      {
+        "character": "ך",
+        "codepoint": "U+05DA",
+        "name": "HEBREW LETTER FINAL KAF"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      }
+    ],
+    "result": "Quoted atom forms agree after explicit mark-order comparison; description-name disagreement is separately reviewed."
+  },
+  {
+    "claim": "ch3:L1117",
+    "note_id": "Deuter 28:27/2/0",
+    "raw_note_body": "=ל1,ק3,ל9-כתיב=וּבַעְּפֹלִ֔ים (דגש באות עי\"ן), משמע דגש באות טי\"ת בקרי; וכך אצל ברויאר.{{ש}}א,ל,ש,ש1,ו?,ל3-כתיב!=וּבַעְפֹלִ֔ים (אין דגש באות עי\"ן), משמע קרי=וּבַטְחֹרִ֔ים (חסר דגש באות תי\"ו) וכך במג\"ה",
+    "parsed_note_body": "=ל1,ק3,ל9-כתיב=וּבַעְּפֹלִ֔ים (דגש באות עי\"ן), משמע דגש באות טי\"ת בקרי; וכך אצל ברויאר.\nא,ל,ש,ש1,ו?,ל3-כתיב!=וּבַעְפֹלִ֔ים (אין דגש באות עי\"ן), משמע קרי=וּבַטְחֹרִ֔ים (חסר דגש באות תי\"ו) וכך במג\"ה",
+    "intro_form": "וּבַטְחֹרִ֔ים",
+    "note_form": "וּבַטְחֹרִ֔ים",
+    "codepoints": [
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ב",
+        "codepoint": "U+05D1",
+        "name": "HEBREW LETTER BET"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ט",
+        "codepoint": "U+05D8",
+        "name": "HEBREW LETTER TET"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ח",
+        "codepoint": "U+05D7",
+        "name": "HEBREW LETTER HET"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "ר",
+        "codepoint": "U+05E8",
+        "name": "HEBREW LETTER RESH"
+      },
+      {
+        "character": "ִ",
+        "codepoint": "U+05B4",
+        "name": "HEBREW POINT HIRIQ"
+      },
+      {
+        "character": "֔",
+        "codepoint": "U+0594",
+        "name": "HEBREW ACCENT ZAQEF QATAN"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ם",
+        "codepoint": "U+05DD",
+        "name": "HEBREW LETTER FINAL MEM"
+      }
+    ],
+    "result": "Quoted atom forms agree after explicit mark-order comparison; description-name disagreement is separately reviewed."
+  }
+]

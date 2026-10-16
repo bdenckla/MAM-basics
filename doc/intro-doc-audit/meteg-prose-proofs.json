@@ -1,0 +1,340 @@
+[
+  {
+    "note_id": "Exodus 7:13/2/0",
+    "ref": [
+      "Exodus",
+      7,
+      13
+    ],
+    "kind": "patah-in-meteg-description",
+    "raw_path": "in/mam-ws/A2-Exodus.json",
+    "raw_note_body": "=ל,ל1,ב,ק3,ש,ו; לפי שיטת ב\"א אין געיה כבדה באות וי\"ו, לא כאן ולא להלן ט,לה (\"ויחזק לב פ' וחבירו בלא גע'\"). בכתבי־היד ב,ש,ק3,ו יש געיה קלה באות יו\"ד (וַיֶַּחֱזַק֙), וכמו כן להלן ט,לה בכתבי־היד ב,ק3,ו. וראו ייבין, יב.9 (עמ' 99), שבדוגמאות אחדות בטעם פשטא מועדפת געיה קלה מן הכבדה (כולל הדוגמה הזאת).{{ש}}ש1,ל3=וַֽיֶּחֱזַק֙ (געיה כבדה באות וי\"ו כשיטת בן נפתלי), וכמו כן להלן ט,לה בכתבי־היד ל,ש,ל3.",
+    "parsed_note_body": "=ל,ל1,ב,ק3,ש,ו; לפי שיטת ב\"א אין געיה כבדה באות וי\"ו, לא כאן ולא להלן ט,לה (\"ויחזק לב פ' וחבירו בלא גע'\"). בכתבי־היד ב,ש,ק3,ו יש געיה קלה באות יו\"ד (וַיֶַּחֱזַק֙), וכמו כן להלן ט,לה בכתבי־היד ב,ק3,ו. וראו ייבין, יב.9 (עמ' 99), שבדוגמאות אחדות בטעם פשטא מועדפת געיה קלה מן הכבדה (כולל הדוגמה הזאת).\nש1,ל3=וַֽיֶּחֱזַק֙ (געיה כבדה באות וי\"ו כשיטת בן נפתלי), וכמו כן להלן ט,לה בכתבי־היד ל,ש,ל3.",
+    "target_node": "וַיֶּֽחֱזַק֙",
+    "specimen": "וַיֶַּחֱזַק֙",
+    "codepoints": [
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ֶ",
+        "codepoint": "U+05B6",
+        "name": "HEBREW POINT SEGOL"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ח",
+        "codepoint": "U+05D7",
+        "name": "HEBREW LETTER HET"
+      },
+      {
+        "character": "ֱ",
+        "codepoint": "U+05B1",
+        "name": "HEBREW POINT HATAF SEGOL"
+      },
+      {
+        "character": "ז",
+        "codepoint": "U+05D6",
+        "name": "HEBREW LETTER ZAYIN"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ק",
+        "codepoint": "U+05E7",
+        "name": "HEBREW LETTER QOF"
+      },
+      {
+        "character": "֙",
+        "codepoint": "U+0599",
+        "name": "HEBREW ACCENT PASHTA"
+      }
+    ],
+    "scope": "Note description/source-list consistency; no physical manuscript judgment."
+  },
+  {
+    "note_id": "Levit 3:17/2/0",
+    "ref": [
+      "Levit",
+      3,
+      17
+    ],
+    "kind": "meteg-form-described-as-no-meteg",
+    "raw_path": "in/mam-ws/A3-Levit.json",
+    "raw_note_body": "=ל-מ,ש,ו; ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", הערה 8 ובספר טעמי המקרא פרק ח (וכך ברויאר ומג\"ה). המקום מטושטש בכתי\"ל1; ברור שאין געיה במי\"ם, אבל אולי יתכן שנשאר סימן קלוש של געיה בבי\"ת.{{ש}}ל=מֽוֹשְׁבֹתֵיכֶ֑ם (!), אמנם עיון בצילום כתב היד אולי מראה געיה מחוקה שנייה (?) גם תחת הבי\"ת.{{ש}}ל1?,ב,ש1[ביד שניה]=מוֹשְׁבֹֽתֵיכֶ֑ם (אין געיה){{ש}}קורן=מֽוֹשְׁבֹֽתֵיכֶ֑ם{{ש}}ראו גם את שלושת הדוגמאות המקבילות בויקרא פרק כ\"ג (פסוקים ג', י\"ד, ל\"א) ובהערות הנוסח שם.",
+    "parsed_note_body": "=ל-מ,ש,ו; ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", הערה 8 ובספר טעמי המקרא פרק ח (וכך ברויאר ומג\"ה). המקום מטושטש בכתי\"ל1; ברור שאין געיה במי\"ם, אבל אולי יתכן שנשאר סימן קלוש של געיה בבי\"ת.\nל=מֽוֹשְׁבֹתֵיכֶ֑ם (!), אמנם עיון בצילום כתב היד אולי מראה געיה מחוקה שנייה (?) גם תחת הבי\"ת.\nל1?,ב,ש1[ביד שניה]=מוֹשְׁבֹֽתֵיכֶ֑ם (אין געיה)\nקורן=מֽוֹשְׁבֹֽתֵיכֶ֑ם\nראו גם את שלושת הדוגמאות המקבילות בויקרא פרק כ\"ג (פסוקים ג', י\"ד, ל\"א) ובהערות הנוסח שם.",
+    "target_node": "מוֹשְׁבֹֽתֵיכֶ֑ם",
+    "specimen": "מוֹשְׁבֹֽתֵיכֶ֑ם",
+    "codepoints": [
+      {
+        "character": "מ",
+        "codepoint": "U+05DE",
+        "name": "HEBREW LETTER MEM"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "ש",
+        "codepoint": "U+05E9",
+        "name": "HEBREW LETTER SHIN"
+      },
+      {
+        "character": "ׁ",
+        "codepoint": "U+05C1",
+        "name": "HEBREW POINT SHIN DOT"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ב",
+        "codepoint": "U+05D1",
+        "name": "HEBREW LETTER BET"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "ֽ",
+        "codepoint": "U+05BD",
+        "name": "HEBREW POINT METEG"
+      },
+      {
+        "character": "ת",
+        "codepoint": "U+05EA",
+        "name": "HEBREW LETTER TAV"
+      },
+      {
+        "character": "ֵ",
+        "codepoint": "U+05B5",
+        "name": "HEBREW POINT TSERE"
+      },
+      {
+        "character": "י",
+        "codepoint": "U+05D9",
+        "name": "HEBREW LETTER YOD"
+      },
+      {
+        "character": "כ",
+        "codepoint": "U+05DB",
+        "name": "HEBREW LETTER KAF"
+      },
+      {
+        "character": "ֶ",
+        "codepoint": "U+05B6",
+        "name": "HEBREW POINT SEGOL"
+      },
+      {
+        "character": "֑",
+        "codepoint": "U+0591",
+        "name": "HEBREW ACCENT ETNAHTA"
+      },
+      {
+        "character": "ם",
+        "codepoint": "U+05DD",
+        "name": "HEBREW LETTER FINAL MEM"
+      }
+    ],
+    "scope": "Note description/source-list consistency; no physical manuscript judgment."
+  },
+  {
+    "note_id": "Numbers 10:8/2/0",
+    "ref": [
+      "Numbers",
+      10,
+      8
+    ],
+    "kind": "duplicate-L1-relation",
+    "raw_path": "in/mam-ws/A4-Numbers.json",
+    "raw_note_body": "=ל1,ש,ו (געיה בצד\"י); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", עמ' 287 והערה 8 שם, ובספר טעמי המקרא פרק ח (וכך אצל ברויאר).{{ש}}ל!=בַּֽחֲצֹצְר֑וֹת בניגוד לפסוק י' (שם הניקוד בהתאם לכללים).{{ש}}ל1,ש1,ק3=בַּחֲצֹצְר֑וֹת (אין געיה) וכך במג\"ה.{{ש}}דפוסים וקורן=בַּֽחֲצֹֽצְר֑וֹת (שתי געיות)",
+    "parsed_note_body": "=ל1,ש,ו (געיה בצד\"י); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\", עמ' 287 והערה 8 שם, ובספר טעמי המקרא פרק ח (וכך אצל ברויאר).\nל!=בַּֽחֲצֹצְר֑וֹת בניגוד לפסוק י' (שם הניקוד בהתאם לכללים).\nל1,ש1,ק3=בַּחֲצֹצְר֑וֹת (אין געיה) וכך במג\"ה.\nדפוסים וקורן=בַּֽחֲצֹֽצְר֑וֹת (שתי געיות)",
+    "target_node": "בַּחֲצֹֽצְר֑וֹת",
+    "specimen": "בַּחֲצֹצְר֑וֹת",
+    "codepoints": [
+      {
+        "character": "ב",
+        "codepoint": "U+05D1",
+        "name": "HEBREW LETTER BET"
+      },
+      {
+        "character": "ּ",
+        "codepoint": "U+05BC",
+        "name": "HEBREW POINT DAGESH OR MAPIQ"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ח",
+        "codepoint": "U+05D7",
+        "name": "HEBREW LETTER HET"
+      },
+      {
+        "character": "ֲ",
+        "codepoint": "U+05B2",
+        "name": "HEBREW POINT HATAF PATAH"
+      },
+      {
+        "character": "צ",
+        "codepoint": "U+05E6",
+        "name": "HEBREW LETTER TSADI"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "צ",
+        "codepoint": "U+05E6",
+        "name": "HEBREW LETTER TSADI"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "ר",
+        "codepoint": "U+05E8",
+        "name": "HEBREW LETTER RESH"
+      },
+      {
+        "character": "֑",
+        "codepoint": "U+0591",
+        "name": "HEBREW ACCENT ETNAHTA"
+      },
+      {
+        "character": "ו",
+        "codepoint": "U+05D5",
+        "name": "HEBREW LETTER VAV"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "ת",
+        "codepoint": "U+05EA",
+        "name": "HEBREW LETTER TAV"
+      }
+    ],
+    "scope": "Note description/source-list consistency; no physical manuscript judgment."
+  },
+  {
+    "note_id": "Deuter 1:33/2/0",
+    "ref": [
+      "Deuter",
+      1,
+      33
+    ],
+    "kind": "duplicate-Sh1-relation",
+    "raw_path": "in/mam-ws/A5-Deuter.json",
+    "raw_note_body": "=ל-מ,ש,ש1,ק3,ו,ל3 וכך אצל ברויאר ומג\"ה (וכמו כן בדפוסים וקורן); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\" הערה 8, ובספר טעמי המקרא פרק ח.{{ש}}ל=לַֽחֲנֹֽתְכֶ֑ם בגעיה (ימנית) נוספת באות למ\"ד{{ש}}ל1,ב,ש1=לַחֲנֹתְכֶ֑ם (אין געיה)",
+    "parsed_note_body": "=ל-מ,ש,ש1,ק3,ו,ל3 וכך אצל ברויאר ומג\"ה (וכמו כן בדפוסים וקורן); ראו רשימת ברויאר ב\"ספיקות שאין להם הכרע\" הערה 8, ובספר טעמי המקרא פרק ח.\nל=לַֽחֲנֹֽתְכֶ֑ם בגעיה (ימנית) נוספת באות למ\"ד\nל1,ב,ש1=לַחֲנֹתְכֶ֑ם (אין געיה)",
+    "target_node": "לַחֲנֹֽתְכֶ֑ם",
+    "specimen": "לַחֲנֹתְכֶ֑ם",
+    "codepoints": [
+      {
+        "character": "ל",
+        "codepoint": "U+05DC",
+        "name": "HEBREW LETTER LAMED"
+      },
+      {
+        "character": "ַ",
+        "codepoint": "U+05B7",
+        "name": "HEBREW POINT PATAH"
+      },
+      {
+        "character": "ח",
+        "codepoint": "U+05D7",
+        "name": "HEBREW LETTER HET"
+      },
+      {
+        "character": "ֲ",
+        "codepoint": "U+05B2",
+        "name": "HEBREW POINT HATAF PATAH"
+      },
+      {
+        "character": "נ",
+        "codepoint": "U+05E0",
+        "name": "HEBREW LETTER NUN"
+      },
+      {
+        "character": "ֹ",
+        "codepoint": "U+05B9",
+        "name": "HEBREW POINT HOLAM"
+      },
+      {
+        "character": "ת",
+        "codepoint": "U+05EA",
+        "name": "HEBREW LETTER TAV"
+      },
+      {
+        "character": "ְ",
+        "codepoint": "U+05B0",
+        "name": "HEBREW POINT SHEVA"
+      },
+      {
+        "character": "כ",
+        "codepoint": "U+05DB",
+        "name": "HEBREW LETTER KAF"
+      },
+      {
+        "character": "ֶ",
+        "codepoint": "U+05B6",
+        "name": "HEBREW POINT SEGOL"
+      },
+      {
+        "character": "֑",
+        "codepoint": "U+0591",
+        "name": "HEBREW ACCENT ETNAHTA"
+      },
+      {
+        "character": "ם",
+        "codepoint": "U+05DD",
+        "name": "HEBREW LETTER FINAL MEM"
+      }
+    ],
+    "scope": "Note description/source-list consistency; no physical manuscript judgment."
+  }
+]
