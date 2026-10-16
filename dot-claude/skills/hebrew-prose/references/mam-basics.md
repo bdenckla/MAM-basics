@@ -11,8 +11,8 @@ of transliterated words, including Ben's freely adapted prose and footnotes. Do 
 general preference for "meteg marks" or "alef letters" to that adaptation.
 
 The authoritative adaptation is `py/yeivin_itm/`, with its approved data and documentation in
-`Yeivin-ITM/`. `py/main_yeivin_itm.py render` writes `gh-pages/yeivin-itm/` and the landing page
-`gh-pages/yeivin_itm.html`. All of these are within the exception. Literal quotations elsewhere
+`Yeivin-ITM/`. `py/main_yeivin_itm.py render` writes `gh-pages/yeivin-itm/`, whose landing page is
+`yeivin_itm.html`. All of these are within the exception. Literal quotations elsewhere
 also preserve their wording; authored explanation outside this scope follows the general rule.
 `doc/hebrew-name-plurals.md` describes the rendered-page lint and its scoped exceptions.
 
