@@ -12,7 +12,7 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `3b8b2aea66e72cdf14bca18f809b9e5c38e57605`; seven incoming commits / 13 paths screened; no new consequential defect confirmed. Prior catch-up through `8bc42598e67b5a525d08b78eedea54b5b10ab119`: 97 incoming commits / 346 paths; verification omissions and a corrupted duplicate evidence block repaired separately in `acbb568b23c32708073d7ec7b9fd42e5350d80fe`; no new product/data defect confirmed |
+| Reviewed through | `049e3aabd558ec776bef009fef8ccefc72656021`; eight incoming commits / 22 paths screened, including the preceding screening receipt; no new consequential defect confirmed. Prior catch-up through `8bc42598e67b5a525d08b78eedea54b5b10ab119`: 97 incoming commits / 346 paths; verification omissions and a corrupted duplicate evidence block repaired separately in `acbb568b23c32708073d7ec7b9fd42e5350d80fe`; no new product/data defect confirmed |
 | Last tested | `8bc42598e67b5a525d08b78eedea54b5b10ab119`; all 60 mega steps exit 0; eight SVG geometry/Times-alias differences explained; suite exit 1: 1085 passed, 2 failed, 5 skipped, 82 subtests passed in 340.84s; focused repair checks pass, no all-green full rerun claimed |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
@@ -128,3 +128,14 @@ their maintained authorities. Removed package guards retain the canonical dispat
 quotation exemptions match the research runbook. No new consequential defect or repair.
 No checks ran during this screening; last-tested and all prior failures/results stay unchanged.
 Broad checks remain nightly; this text-only receipt does not advance review to its own commit.
+
+Hourly screening, 2026-10-16 14:49, New York time: reconciled the preceding receipt and
+reviewed seven new owner commits (21 paths) from
+`74a2e907a65d00b82d66f4efe84e281a9f8320e6` through
+`049e3aabd558ec776bef009fef8ccefc72656021`. Yeivin source spacing changes match their
+rendered differences; the mirror whitespace exemption is limited to verbatim MediaWiki files,
+and the skill landing-page correction matches the existing location. The settled decision
+record and crop provenance change documentation/comments, with no near-Aleppo dataset or
+reading-table change. Owner-focused regeneration/check evidence remains attributed to those
+commits; this screening ran no tests and did not independently adjudicate the manuscript image.
+No new consequential defect or repair. Last-tested stays unchanged; broad checks remain nightly.
