@@ -379,6 +379,9 @@ def _tracked_relocation_citations(
     )
     if not references:
         return []
+    # A match must contain this fragment when every candidate contains it.
+    # Retained caches can have thousands of members; skip unrelated source lines.
+    all_references_have_novc = all(".novc" in row["reference"] for row in references)
     result = _git(
         checkout,
         "grep",
@@ -408,6 +411,10 @@ def _tracked_relocation_citations(
                 f"cannot review tracked citation {relative}: {exc}"
             ) from exc
         for line_number, line in enumerate(lines, start=1):
+            if all_references_have_novc and ".novc" not in os.path.normcase(
+                line
+            ).replace("\\", "/"):
+                continue
             for reference in references:
                 if not _reference_matches(
                     line,
