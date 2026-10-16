@@ -1,15 +1,19 @@
 # MAM-basics review and testing trial status
 
-State: live; seven-night trial closed 2026-10-14
+State: live; continuing review/testing renewed 2026-10-16
 
 Policy: [review-trial.md](review-trial.md). One confirmed automation, `Review MAM changes`,
 scheduled seven daily runs on 2026-10-08 through 2026-10-14, around 2 a.m. America/New_York.
+That closed trial remains historical. Ben renewed the work on 2026-10-16; the coordinating
+session confirmed enabled hourly new-main screening from October 16 at 13:00 and daily broad
+checks around 02:00 from October 17, America/New_York, with no end date. Scheduling remains
+with that session; this run created no automation.
 
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c`; final pending-main endpoint reviewed; 64 commits / 300 changed paths; no new consequential defect |
-| Last tested | `f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c`; all 60 mega steps pass with zero tracked output differences; full suite 1086 passed, 5 skipped in 381.44s (0:06:21) |
+| Reviewed through | `8bc42598e67b5a525d08b78eedea54b5b10ab119`; 97 incoming commits / 346 paths; verification omissions and a corrupted duplicate evidence block repaired separately in `acbb568b23c32708073d7ec7b9fd42e5350d80fe`; no new product/data defect confirmed |
+| Last tested | `8bc42598e67b5a525d08b78eedea54b5b10ab119`; all 60 mega steps exit 0; eight SVG geometry/Times-alias differences explained; suite exit 1: 1085 passed, 2 failed, 5 skipped, 82 subtests passed in 340.84s; focused repair checks pass, no all-green full rerun claimed |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
 then `py/main_test.py`. Use each required private sibling's recorded committed checkout;
@@ -28,6 +32,7 @@ the repair commit; a passing suite or no-diff mega is not proof of the underlyin
 | Run 5, 2026-10-12 | `6168259fa913cfc74358972c16ecc7fdb97350f1`; committed allowed inputs `8b8b6af548a1d0016baa7d1ad991801707d66c23` and `853682c32f69dc5dfd90091fd6743f8f3bc00e56` | Reviewed the endpoint from `6d50cea430aa44d059ac45e12d778af1ba5d0a60` (110 reachable incoming commits, 215 changed paths). Independent 24-book comparison agrees with approved changes and current qere/body records. Windows mega exit 0 in 466.070 s, all 60 steps and zero tracked output diffs, including the former eight SVGs. Suite exit 1 in 276.356 s: 1072 passed, 5 documented skips, one missing canonical receipt-pointer failure. Fixed in `3a46a5b138be5b0535c3de99384a9ccce08966c5` under existing policy; decisive lint exit 0 in 0.518 s (1 passed). No new all-green full rerun claimed. [Compact receipt](review-trial-run5-2026-10-12.json). |
 | Run 6, 2026-10-13 | `d921ed3565fb3e6cba8b9d46104e92a488b8df12`; allowed committed input IDs `b65627f15d1fc70f755783b6bcd4ae8b97be74a1` and `384682ab4ef5c64106735af5789a86573c5c0e51` (font receipt checkout; source main remains `853682c32f69dc5dfd90091fd6743f8f3bc00e56`) | Reviewed 72 reachable commits / 347 paths from `3a46a5b138be5b0535c3de99384a9ccce08966c5`. Windows mega exit 0 in 560.244 s, all 60 steps, zero tracked output diffs. Suite exit 1 in 340.588 s: 1079 passed, 5 documented skips, one differential test still passing XML to the JSON-only OSIS caller. Test-only repair `52f73420395ce9416b9928a957cde9287c273843` retains the independent assertions; focused module exit 0 in 0.475 s, 3 passed. No all-green full rerun claimed. [Compact receipt](review-trial-run6-2026-10-13.json). |
 | Run 7 scheduled attempt and final continuation, 2026-10-14 | Frozen source `f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c`; allowed committed input IDs `3d45d8a396b0eadc062116403f143adc0cb5adbf` and `4159205f3765a10ba8df7ec75a1d25dbca82ac54` (font receipt checkout; source main `853682c32f69dc5dfd90091fd6743f8f3bc00e56`) | Scheduled attempt blocked before child creation (HP offline; saved runner startup failed twice with generic ASB error), advancing no checks or anchors. Later authorized HP continuation reviewed `52f73420395ce9416b9928a957cde9287c273843` → `f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c` (64 commits/300 paths). Maintained mega exit 0 in 549.692 s, all 60 steps and zero generated differences; suite exit 0 in 383.274 s: 1086 passed, 5 skipped in 381.44s (0:06:21). No new consequential defect or nightly repair. Owner changes retain their attribution. |
+| Continuing catch-up, 2026-10-16 | Frozen source `8bc42598e67b5a525d08b78eedea54b5b10ab119`; allowed committed inputs `6fe3502687f1e8c60931575c31905956f4dafb24` and `853682c32f69dc5dfd90091fd6743f8f3bc00e56` | Saved cloud mega exit 0 in 490.925 s; all 60 steps and SVG renders ran. Eight SVGs differ only in geometry/known Times alias, all other XML content equal. Suite exit 1 in 344.051 s: 1085 passed, 2 lint failures, 5 established skips, 82 subtests passed. Repair `acbb568b23c32708073d7ec7b9fd42e5350d80fe` records the existing manual-research exclusion, removes redundant package guards, and preserves literal quotation order within the prose lint; five decisive lint checks pass in 1.31 s, six NFC checks in 25.30 s. A corrupted duplicate citation block was removed without changing the proposal. Review/history-inventory CLI outputs reproduce. [Compact receipt](review-continuing-2026-10-16.json). |
 
 Run 1's cloud commands ran sequentially from
 `/workspace/review-trial-run1-20261008/MAM-basics`, with its home interpreter:
@@ -89,3 +94,19 @@ Final continuation completes the previously unfinished check after the seventh s
 Post-freeze inventory: main advanced during execution to `aa505ff7f14ed3a6d5028a9dfa1c3c6ea1fe9490`, four further owner commits covering expanded typography/family counts and approved plural defaults. Those changes and their owner-focused evidence are outside the completed frozen review/test window above. The checked source remains `f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c`; no result or anchor is advanced by that later remote observation.
 
 Approved integration, 2026-10-14: process documentation and this status note are merged over owner main `6fdb1ee044b9671bb0fb4d7c606d119c07b1eb16`. The integration changes only these two documentation files relative to that owner tip. Reviewed/tested source remains `f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c`; later owner commits were not broadly retested. Focused prose/Unicode checks and link/anchor checks validate the documentation integration. The active owner checkout is preserved. No renewed schedule or deployment is authorized by this merge; hbofonts remains branch-only.
+
+Continuing execution, 2026-10-16: the saved cloud forest and owning constrained Python
+3.13.15 environment were verified before the sequential mega/suite commands. Graphviz
+matched its full pin; no cloud step or SVG render was skipped. Isolated committed input
+checkouts excluded regenerated files. No personal computer was needed. Generated differences
+are retained as complete patches in their owning private evidence; no product was accepted.
+The failed full suite remains the original result; decisive focused checks establish the
+verification repair. No manuscript, translation or browser judgment is inferred.
+
+Post-freeze inventory, 2026-10-16: main reached
+`ef2113632c82c5546ae8f4e07a190f7ec235d381` while this run executed. Its three additional
+commits include the separately authorized index-label and issue-policy branches. Those
+changes were not broadly tested by this run; the pending window starts after
+`8bc42598e67b5a525d08b78eedea54b5b10ab119`. Receipt integration does not advance that
+frozen review/test boundary. The October 16 renewal preserves all original trial history
+and substantive repair authority; this run created no duplicate schedule or deployment.

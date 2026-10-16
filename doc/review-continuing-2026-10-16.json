@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-16",
+  "source": "8bc42598e67b5a525d08b78eedea54b5b10ab119",
+  "review_from": "f3e4fdf824bc8ac45f21f4460e94d1bf25ce942c",
+  "incoming_commits": 97,
+  "changed_paths": 346,
+  "allowed_input_commit_ids": [
+    "6fe3502687f1e8c60931575c31905956f4dafb24",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "runner": "saved cloud forest;owning constrained Python3.13.15;Graphviz16.0.0 (20260814.1018)",
+  "mega": {
+    "command": "/workspace/MAM-basics/.venv/bin/python py/main_0_mega.py",
+    "exit_code": 0,
+    "seconds": 490.925,
+    "steps": 60,
+    "cloud_skips": 0,
+    "tracked_differences": "Eight SVGs:geometry/known Times alias only;every other XML element,attribute,text and link agrees."
+  },
+  "suite": {
+    "command": "/workspace/MAM-basics/.venv/bin/python py/main_test.py -q -ra",
+    "exit_code": 1,
+    "seconds": 344.051,
+    "pytest_seconds": 340.84,
+    "passed": 1085,
+    "failed": 2,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "failures": [
+      "test_mega_coverage.py::test_every_program_is_run_by_the_mega_or_declared",
+      "test_prose_mark_order.py::test_hand_authored_prose_is_in_mam_mark_order"
+    ],
+    "skips": "Five established edition-transcription divergences."
+  },
+  "repair": {
+    "commit": "acbb568b23c32708073d7ec7b9fd42e5350d80fe",
+    "scope": "Record existing manual research justification;remove redundant package guards;preserve named literal quotation containers in prose lint;remove corrupted duplicate evidence block. No data/editorial decision changed.",
+    "focused_checks": "5 coverage/mark-order checks pass in1.31s;6 NFC checks pass in25.30s;Black and git diff --check pass.",
+    "full_all_green_rerun": false
+  },
+  "focused_research_commands": [
+    "/workspace/MAM-basics/.venv/bin/python py/main_intro_doc_audit.py review",
+    "/workspace/MAM-basics/.venv/bin/python py/main_intro_doc_audit.py history-inventory"
+  ],
+  "focused_research_result": "152 cases,717 literal passages,12 proposed quotations;94 applicable histories and58 exclusions;tracked outputs reproduce. Snapshot evidence independently checked at8984 claim lines and3905 note nodes.",
+  "matcher_check": "10000 regex differential pairs and5 documented behavior probes agree.",
+  "pending_window": {
+    "from": "8bc42598e67b5a525d08b78eedea54b5b10ab119",
+    "observed_main": "ef2113632c82c5546ae8f4e07a190f7ec235d381",
+    "commits": 3,
+    "disposition": "Two separately authorized branches and their integration are outside the frozen broad checks;do not advance tested anchors for these or later receipt commits."
+  },
+  "schedules": "Coordinating session confirmed enabled hourly new-main screening from2026-10-16 13:00 America/New_York and daily broad checks around02:00 from2026-10-17;no end date;this run created no automation.",
+  "limits": [
+    "No all-green full-suite rerun after the focused repair.",
+    "Passing preservation checks are not editorial/manuscript proof.",
+    "No personal-computer dependency for executed portable commands.",
+    "No direct deployment,dispatch,release,baseline acceptance or frozen-font action."
+  ]
+}
