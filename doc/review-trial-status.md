@@ -12,7 +12,7 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `049e3aabd558ec776bef009fef8ccefc72656021`; eight incoming commits / 22 paths screened, including the preceding screening receipt; no new consequential defect confirmed. Prior catch-up through `8bc42598e67b5a525d08b78eedea54b5b10ab119`: 97 incoming commits / 346 paths; verification omissions and a corrupted duplicate evidence block repaired separately in `acbb568b23c32708073d7ec7b9fd42e5350d80fe`; no new product/data defect confirmed |
+| Reviewed through | `740daaa2af3472441437005769d67cbf21250141`; one new owner commit / 88 paths screened after the preceding receipt; no new consequential defect confirmed. Prior catch-up through `8bc42598e67b5a525d08b78eedea54b5b10ab119`: 97 incoming commits / 346 paths; verification omissions and a corrupted duplicate evidence block repaired separately in `acbb568b23c32708073d7ec7b9fd42e5350d80fe`; no new product/data defect confirmed |
 | Last tested | `8bc42598e67b5a525d08b78eedea54b5b10ab119`; all 60 mega steps exit 0; eight SVG geometry/Times-alias differences explained; suite exit 1: 1085 passed, 2 failed, 5 skipped, 82 subtests passed in 340.84s; focused repair checks pass, no all-green full rerun claimed |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
@@ -139,3 +139,12 @@ record and crop provenance change documentation/comments, with no near-Aleppo da
 reading-table change. Owner-focused regeneration/check evidence remains attributed to those
 commits; this screening ran no tests and did not independently adjudicate the manuscript image.
 No new consequential defect or repair. Last-tested stays unchanged; broad checks remain nightly.
+
+Hourly screening, 2026-10-16 18:29, New York time: reconciled the preceding receipt and
+reviewed `39a1146d4cb02cfd9648f9ef7c054a92f8efbdc8` through
+`740daaa2af3472441437005769d67cbf21250141`. The two notice generators and three HTML
+notices reflect Ben's approved ketiv/qere display policy. All 83 JSON patches contain only
+notice-text changes, in three identical groups of 24, 35 and 24 files; Scripture payloads
+are unchanged. The focused regeneration, 59 claim checks and 16 tests are owner-reported
+commit evidence, not rerun by this screening. No new consequential defect or repair;
+last-tested stays unchanged and broad checks remain nightly.
