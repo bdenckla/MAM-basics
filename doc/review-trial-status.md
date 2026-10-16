@@ -110,3 +110,11 @@ changes were not broadly tested by this run; the pending window starts after
 `8bc42598e67b5a525d08b78eedea54b5b10ab119`. Receipt integration does not advance that
 frozen review/test boundary. The October 16 renewal preserves all original trial history
 and substantive repair authority; this run created no duplicate schedule or deployment.
+
+Receipt integration, 2026-10-16: reconciled the already integrated owner main
+`ef2113632c82c5546ae8f4e07a190f7ec235d381` in
+`007fe0de0f4a38f60983cf845bb0dde3068bbe2d`, without integrating either owner branch a
+second time. The combined coverage/prose mark-order checks pass after reconciliation
+(five tests in 1.10 s). Documentation and source changes remain separate from the
+frozen broad results; no all-green full-suite rerun or later tested anchor is claimed.
+The receipt push uses the existing main workflow, with no direct deployment or dispatch.
