@@ -72,14 +72,16 @@ MAM-parsed source. Every JSON file embeds a <code>consumer_notice</code> immedia
 <li>Use the incremental-folder fallback above. An absent BHS or Sefaria book-group file
 is not an absent book.</li>
 <li>Dispatch explicitly on every documented element role and fail on an unknown element.
-Choose one branch where alternatives remain, including <code>kq</code> and
-<code>cant-all-three</code>; do not concatenate alternatives, a <code>scrdfftar</code> target with its
-note, or a <code>good-ending</code> repetition with running text. MAM-simple has already
+Choose one branch where alternatives remain, including <code>cant-all-three</code>; do not
+concatenate alternatives, a <code>scrdfftar</code> target with its note, or a
+<code>good-ending</code> repetition with running text. MAM-simple has already
 resolved or removed some choices retained by MAM-parsed, so absence here does not
 establish absence in MAM-parsed.</li>
-<li>Identify the two children of <code>kq</code> by element type, not by position. They are in the order
-that MAM's rendered pages on Hebrew Wikisource have, which is qere first in about one pair
-in eight.</li>
+<li>A <code>kq</code> element is not a choice that must be resolved: an edition may show its
+ketiv and its qere together, separated by a space and kept distinguishable, as an unpointed
+ketiv beside its pointed qere is, or only one of them. Identify the two children of
+<code>kq</code> by element type, not by position. They are in the order that MAM's rendered
+pages on Hebrew Wikisource have, which is qere first in about one pair in eight.</li>
 <li>The children of <code>slh-word</code> spell one atom-form. Its <code>slhw-desc-0</code> attribute repeats
 the uninterrupted atom-form without the letter formatting; the attribute is not
 additional Scripture.</li>

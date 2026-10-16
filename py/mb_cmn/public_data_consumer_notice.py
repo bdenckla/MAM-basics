@@ -42,6 +42,26 @@ def _narpas_grouping_rule(label: str) -> str:
 MAM_PARSED_NARPAS_GROUPING_RULE = _narpas_grouping_rule("מ:פסק")
 MAM_SIMPLE_NARPAS_GROUPING_RULE = _narpas_grouping_rule("lp-paseq")
 
+
+def _ketiv_qere_rule(structure: str) -> str:
+    """The ketiv/qere rule, naming the structure as the product itself has it.
+
+    Ben's decision, 2026-10-16: an edition may show both ketiv and qere, as every
+    edition MAM-basics makes except Phonetic MAM does, and one that shows an unpointed
+    ketiv beside its pointed qere makes a legitimate editorial decision. So ketiv/qere
+    is not among the choices the notice says to resolve.
+    """
+    return (
+        f"{structure} is not a choice that must be resolved: an edition may show its "
+        "ketiv and its qere together, separated by a space and kept distinguishable, "
+        "as an unpointed ketiv beside its pointed qere is, or only one of them."
+    )
+
+
+# MAM-parsed has ketiv/qere templates; MAM-simple has the element kq instead.
+MAM_PARSED_KETIV_QERE_RULE = _ketiv_qere_rule("A ketiv/qere template")
+MAM_SIMPLE_KETIV_QERE_RULE = _ketiv_qere_rule("A kq element")
+
 MAM_PARSED_WHITESPACE_TEMPLATE_RULE = (
     "A whitespace template can be the only separator between adjacent Scripture "
     "strings: for example, מ:ששש and ססס can have no literal whitespace at that "
@@ -69,9 +89,10 @@ def mam_parsed_notice() -> dict[str, object]:
             ),
             (
                 "Choose one documented branch of each choice-bearing structure, "
-                "including ketiv/qere, dual cantillation, qamats, and poetic stress-helper "
+                "including dual cantillation, qamats, and poetic stress-helper "
                 "alternatives where present; do not concatenate the branches."
             ),
+            MAM_PARSED_KETIV_QERE_RULE,
             (
                 "A special-letter template's interrupted spelling and uninterrupted "
                 "atom-form are two representations of one atom-form; select one text "
@@ -111,11 +132,12 @@ def mam_simple_notice() -> dict[str, object]:
             ),
             (
                 "Use a closed, role-aware element dispatch and fail on an unknown "
-                "element; choose one branch where alternatives remain, including kq "
-                "and cant-all-three, and do not concatenate note branches or repeated "
+                "element; choose one branch where alternatives remain, including "
+                "cant-all-three, and do not concatenate note branches or repeated "
                 "endings. MAM-simple has already resolved or removed some MAM-parsed "
                 "choices, so absence here does not establish absence there."
             ),
+            MAM_SIMPLE_KETIV_QERE_RULE,
             (
                 "The children of slh-word spell one atom-form and slhw-desc-0 repeats "
                 "that atom-form without letter formatting; do not collect both as "

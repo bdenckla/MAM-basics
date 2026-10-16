@@ -15,10 +15,11 @@ from near_aleppo.phase2_templates import POINTED_KETIV_PARAMETER
 from near_aleppo.phase2_templates import SPACE_WITHOUT_MARKS
 from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 
-# MAM-parsed-plus's notice, the same in all 24 books, copied by script: the notice
-# that NOTICE was last adapted from, on 2026-10-05, when all 24 input notices began
-# to qualify poetic stress-helper alternatives and omitted the redundant
-# parser-boundary rule.
+# MAM-parsed-plus's notice, the same in all 24 books: the notice that NOTICE was last
+# adapted from, on 2026-10-16, when ketiv/qere left the choices the notice says to
+# resolve and gained a rule of its own, by Ben's decision that day. The copy before,
+# made by script on 2026-10-05, followed all 24 input notices in qualifying poetic
+# stress-helper alternatives and omitting the redundant parser-boundary rule.
 _MAM_NOTICE = {
     "summary": (
         "This is a structured dataset, not ready-to-display Scripture; interpret "
@@ -33,9 +34,14 @@ _MAM_NOTICE = {
         ),
         (
             "Choose one documented branch of each choice-bearing structure, "
-            "including ketiv/qere, dual cantillation, qamats, and poetic "
-            "stress-helper alternatives where present; do not concatenate the "
-            "branches."
+            "including dual cantillation, qamats, and poetic stress-helper "
+            "alternatives where present; do not concatenate the branches."
+        ),
+        (
+            "A ketiv/qere template is not a choice that must be resolved: an edition "
+            "may show its ketiv and its qere together, separated by a space and kept "
+            "distinguishable, as an unpointed ketiv beside its pointed qere is, or only "
+            "one of them."
         ),
         (
             "A special-letter template's interrupted spelling and uninterrupted "
@@ -128,10 +134,14 @@ NOTICE = {
             "concatenate the branches. Near-Aleppo has evaluated away MAM's "
             "templates for dual cantillation, qamats, and poetic stress-helper "
             "alternatives, so the branches left in near-Aleppo's text are those "
-            "of the ketiv/qere templates, "
-            f"{POINTED_KETIV_PARAMETER} among them, and of "
-            "the special-letter words it keeps. A copy of MAM's target in "
+            "of the special-letter words it keeps. A copy of MAM's target in "
             f"{MAM_TARGET_PARAMETER} keeps all of MAM's alternatives."
+        ),
+        (
+            "A ketiv/qere template, with its pointed ketiv in "
+            f"{POINTED_KETIV_PARAMETER} where it has one, is not a choice that must "
+            "be resolved: an edition may show its ketiv and its qere together, "
+            "separated by a space and kept distinguishable, or only one of them."
         ),
         (
             "A special-letter template's interrupted spelling and uninterrupted "
