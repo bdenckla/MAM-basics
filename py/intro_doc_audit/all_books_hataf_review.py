@@ -214,7 +214,3 @@ def main():
             "uncertainty_cases": len(uncertainties),
         }
     )
-
-
-if __name__ == "__main__":
-    main()

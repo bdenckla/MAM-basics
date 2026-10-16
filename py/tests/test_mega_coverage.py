@@ -164,6 +164,13 @@ _SEF_AND_OSIS_NOT_KEPT_CURRENT = (
 # naming it otherwise, so a stale reason cannot outlive the step that ended it.
 # ---------------------------------------------------------------------------
 NOT_IN_MEGA: dict[str, str] = {
+    "py/main_intro_doc_audit.py": (
+        "Manual research over a fixed source snapshot, not a product generator."
+        " doc/intro-doc-audit/RUNBOOK.md, Commands and scope, prescribes focused"
+        " review/history-inventory rebuilds and excludes broad enumeration on"
+        " current main; original enumeration and history compilation need their"
+        " recorded source checkout, inputs and optional raw API cache."
+    ),
     "py/main_clc_ruby_review.py": (
         "A manual browser raster measurement for the CLC ruby repair, requiring an"
         " explicitly selected browser and baseline; writes only .novc/ evidence."

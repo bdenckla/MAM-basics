@@ -1,6 +1,6 @@
 # Review and testing process
 
-State: live; revised 2026-10-14
+State: live; revised 2026-10-16
 
 Ben approved the proposed process on 2026-10-07: "I approve; let's try this new process."
 This process controls MAM-basics, MAM-private and occasional hbofonts review and repair work.
@@ -39,11 +39,11 @@ Run broad checks immediately only when a specific consequence cannot accept the 
 that consequence; touching Python or reaching a product alone does not establish the exception.
 Plans and handoffs add no blanket checks or mandatory per-item proof ceremony.
 
-Prefer a dependable working cloud runner for portable nightly checks when its actual
-credentials, inputs and environments are available; reserve HP for Windows-specific checks.
-An offline personal computer must not be a prerequisite for portable testing. No cloud runner
-is claimed fixed or configured: record execution blockers honestly when no working runner is
-available, without advancing unexecuted checks or anchors.
+Use the saved portable cloud forest for portable nightly checks when its actual credentials,
+committed inputs and environments have been verified; reserve HP for Windows-specific checks.
+An offline personal computer must not be a prerequisite for portable testing. An enabled
+schedule or saved configuration is not execution evidence: record blockers honestly when no
+working runner is available, without advancing unexecuted checks or anchors.
 
 At each nightly run, fetch main and record exact repository and required input commits. Use
 isolated checkouts with their home clones' environments, leaving interactive edits untouched.
@@ -109,6 +109,21 @@ anchors; only six nights had execution evidence at that assessment. The status n
 the separately authorized final continuation. Retain nightly testing, consequential new-change review, objective low-risk
 autonomous repairs and quiet successes. New-main-only review was already the trial policy.
 
+Ben renewed continuing review and testing on 2026-10-16 because daytime work relies on the
+nightly broad checks. The coordinating session confirmed two enabled schedules with no end
+date: hourly screening beginning 2026-10-16 at 13:00 America/New_York, and daily broad checks
+around 02:00 America/New_York beginning 2026-10-17. The original seven-night schedule and its
+execution history remain closed; the October 16 catch-up is a separate run.
+
+Hourly screening freezes new main tips and examines meaningful endpoint changes since each
+reviewed-through anchor. Unchanged tips need no repeated review. It uses the existing focused
+check and repair policy; broad checks remain nightly unless the already stated consequence
+requires an immediate run. Nightly checks run MAM-basics mega and suite and MAM-private
+regeneration and audit even when main is unchanged; hbofonts broad checks are due when its
+actual source tip changes. Reconcile later isolated receipts before deciding that a tip is new.
+
 Receipt pushes must respect deployment triggers, including documentation-only main pushes.
-The scheduler is configured separately: this document does not renew or extend the trial or
-create an automation. Further scheduling requires Ben's explicit authorization.
+In particular, hbofonts receipts stay on a separate branch so they do not trigger its Pages
+deployment. The scheduler is managed separately by the coordinating session; this document
+records its confirmed arrangement and creates no automation. Further scheduling changes need
+Ben's authorization. The renewal changes no substantive repair authority or publication policy.
