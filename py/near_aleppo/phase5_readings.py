@@ -385,7 +385,11 @@ _PHASE3_CONFIGURATION_READINGS = {
 # A clause whose form lacks the rafeh marks its words report. Psalms 107:5's
 # bang-marked clause quotes the form without the rafeh that its words say hangs
 # between the two tav letters, so the reading applied is the form with a rafeh on
-# each tav, as 1 Chronicles 4:9's form has one on each of its two letters.
+# each tav, as 1 Chronicles 4:9's form has one on each of its two letters. Ben's crop
+# of the codex at the verse shows, in his words of 2026-10-16, "a rafeh roughly
+# centered between the two tav letters". The unchanged screenshot, "Screenshot
+# 2026-10-16 111519.png", is tracked as in/near-aleppo/img/aleppo-Ps107-5-rafeh.png,
+# SHA-256 491a35226e01b52bd0677f0e394307d832d2f9cf728631329052f19e6d259834.
 _RAFEH_IN_WORDS_READINGS = {
     ("D1-Psalms", "107", "5"): (
         Site(1, 2),
