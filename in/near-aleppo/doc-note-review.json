@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "68097a014007b5b6f9ec81cd9ca3e5eef5c189f4b1a87c3742900b509d5af7c4",
+  "inventory_sha256": "d96f251e7959fd55a9110bd76cdd179bbc945e04b8553c7a399226ed7df09ff6",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -80351,7 +80351,7 @@
         "tmpl_params": {
           "1": "יבחר",
           "2": "יְחֻבַּ֔ר",
-          "כתיב מנוקד": "יְבַּחֻ֔ר"
+          "כתיב מנוקד": "יְבַּ֔חֻר"
         }
       },
       "original_body": [
@@ -80366,7 +80366,7 @@
         "ל-כתיב?!=יְבֻחָ֔ר (קמץ באות חי\"ת?) ע\"פ הערת ברויאר בספק. אבל מעיון בצילום כתב־היד בהגדלה נראה שהוא פת\"ח למרות הטשטוש מתחת לקו (אולי סימן של מחיקה) וכן דעתו של דותן."
       ],
       "change_causes": [
-        "frozen inferred pointing"
+        "individual editorial pointing"
       ],
       "coverage": {
         "category": "missing",
@@ -80375,11 +80375,11 @@
       },
       "candidate_clause": null,
       "proposal_reason": "Structured or whitespace target; preserve explicit MAM context.",
-      "evidence_sha256": "43c28de146e0e456d3fd975491a6142db4ff911a8c710f4d954fab2e37d19cdc",
+      "evidence_sha256": "fb73292714bf8555a63ce080d17dd7d22f9f08e45aea7a133d19fa9401dd681a",
       "review": {
         "status": "reviewed",
         "presentation": "framed-mam",
-        "reason": "Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation.",
+        "reason": "Keep the complete source note in MAM context. Its agreement clause does not specify a pointed ketiv; the qualified Leningrad alternative is not the adopted form. Ben's individual editorial decision is recorded in the maintained investigation.",
         "proposed_parts": {
           "near_clause": null,
           "mam_clauses": [
@@ -80395,12 +80395,12 @@
           {
             "index": 0,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "reason": "Preserve agreement with the original unpointed ketiv and pointed qere presentation; the clause does not attest the separately added pointed ketiv."
           },
           {
             "index": 1,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Structured or whitespace target; preserve explicit MAM context. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+            "reason": "Preserve the qualified Leningrad ketiv and vowel discussion verbatim in MAM context; this comparison is not the adopted near-Aleppo form."
           }
         ]
       }

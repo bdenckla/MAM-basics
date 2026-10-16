@@ -102,6 +102,11 @@ them merely because an issue links them; inspect only within the authorized task
 Copy quoted forms from their source. Do not repair a posted message solely to impose MAM-normal
 order. Distinguish checking whether marks survived transport from checking their order.
 
+GitHub can drop combining marks from an issue body that a comment keeps
+(charlesLoder/leningrad-codex-tei#547, 2026-10-15). Compare every filed body's code points with
+the file sent; where marks are lost, name the atom another way, such as by its id, rather than
+retrying.
+
 ## 4. Correcting a stale fact in an open issue's body
 
 1. **Edit a body only to correct an open issue**: a dead link, an umbrella issue that has since

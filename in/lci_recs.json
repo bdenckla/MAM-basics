@@ -663,7 +663,7 @@
             "stopc": 36,
             "stopv": 30,
             "stopp": 7,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "022B",
@@ -678,7 +678,7 @@
             "stopc": 37,
             "stopv": 15,
             "stopp": 10,
-            "note": null
+            "note": "all 3 columns have 28 lines"
         },
         {
             "page": "023A",
@@ -1248,7 +1248,7 @@
             "stopc": 16,
             "stopv": 3,
             "stopp": 14,
-            "note": null
+            "note": "column 1 of 1; the song at its top is long lines of this one column, spaced to look vaguely like 3 columns"
         },
         {
             "page": "041A",
@@ -1923,7 +1923,7 @@
             "stopc": 10,
             "stopv": 6,
             "stopp": 25,
-            "note": null
+            "note": "column 3 has 28 lines"
         },
         {
             "page": "062A",
@@ -1982,7 +1982,7 @@
             "startp": 1,
             "stopc": 13,
             "stopv": 38,
-            "stopp": 7,
+            "stopp": 8,
             "note": null
         },
         {
@@ -1994,10 +1994,10 @@
             "bkid": "Levit",
             "startc": 13,
             "startv": 38,
-            "startp": 8,
+            "startp": 9,
             "stopc": 14,
             "stopv": 4,
-            "stopp": 10,
+            "stopp": 9,
             "note": null
         },
         {
@@ -2009,7 +2009,7 @@
             "bkid": "Levit",
             "startc": 14,
             "startv": 4,
-            "startp": 11,
+            "startp": 10,
             "stopc": 14,
             "stopv": 25,
             "stopp": 21,
@@ -2373,7 +2373,7 @@
             "stopc": 4,
             "stopv": 8,
             "stopp": 4,
-            "note": null
+            "note": "all 3 columns have 28 lines"
         },
         {
             "page": "076B",
@@ -2388,7 +2388,7 @@
             "stopc": 4,
             "stopv": 32,
             "stopp": 5,
-            "note": null
+            "note": "all 3 columns have 28 lines"
         },
         {
             "page": "077A",
@@ -2523,7 +2523,7 @@
             "stopc": 10,
             "stopv": 22,
             "stopp": 11,
-            "note": null
+            "note": "column 1 has 28 lines"
         },
         {
             "page": "081B",

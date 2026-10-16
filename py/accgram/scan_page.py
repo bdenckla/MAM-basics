@@ -25,7 +25,7 @@ tool, which is the whole reason this exists.
 --crop takes four fractions of the page in 0..1, left top right bottom, applied before the
 resize -- so cropping to a quarter of the page and keeping --width the same doubles the
 effective resolution.  That is what makes a conjunctive legible: a whole Tiqqun page at 1400px
-shows the disjunctive skeleton and the maqafs, but merkha vs. meteg needs the zoom.
+shows the disjunctive skeleton and the maqaf marks, but merkha vs. meteg needs the zoom.
 Right-hand (accented) column of a SimTiq two-column page is roughly --crop 0.5 0 1 1.
 
 --name sets the output stem, so successive crops of one page do not overwrite each other

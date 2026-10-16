@@ -29,14 +29,14 @@ from near_aleppo.phase3_policies import _ADONAI_LETTERS
 SECTION = ("what-the-dataset-changes", "What near-Aleppo changes")
 TEMPLATES = ("templates", "MAM's templates: evaluated away or kept")
 QAMATS = ("qamats-size", "The qamats size")
-DIVINE_NAME = ("divine-name-holam", "The holam in the divine name")
-DIVINE_TITLE = ("divine-title-holam", "The holam in the divine title")
+DIVINE_NAME = ("divine-name-holam", "The ḥolam in the divine name")
+DIVINE_TITLE = ("divine-title-holam", "The ḥolam in the divine title")
 ELOHIM = ("elohim-vowel", "The divine name read Elohim")
 REVIA = ("revia-mugrash", "The revia mugrash")
 OLE = ("ole-and-yored", "The ole on the yored's letter")
 KETIV_QERE = ("ketiv-qere-apparatus", "The ketiv/qere apparatus")
 MAQAF = ("maqaf", "The maqaf")
-HATAF = ("hataf", "The hataf on a letter that is not a guttural")
+HATAF = ("hataf", "The ḥataf on a letter that is not a guttural")
 STRESS = ("stress-helpers", "The stress helpers")
 READINGS = ("codex-readings", "The codex's readings in MAM's notes")
 POINTED_KETIV = ("pointed-ketiv", "The pointed ketiv")
@@ -317,10 +317,10 @@ def _divine_name(numbers):
         _heading(DIVINE_NAME),
         mb_html.para(
             [
-                "Where the divine name is read Adonai, MAM has a holam on its first "
+                "Where the divine name is read Adonai, MAM has a ḥolam on its first "
                 "he, and MAM's introduction says that the codex does not write it "
                 "there except in a few places, which MAM's notes record. Near-Aleppo "
-                "has no holam there, at ",
+                "has no ḥolam there, at ",
                 numbers.snap(_P3, "Adonai reading: holam on the first he stripped"),
                 " words, and keeps it at the ",
                 numbers.snap(
@@ -332,7 +332,7 @@ def _divine_name(numbers):
                     _P3S,
                     "Adonai reading: holam kept where a note records the codex's",
                 ),
-                ". Where the divine name is read Elohim, the codex has the holam, and "
+                ". Where the divine name is read Elohim, the codex has the ḥolam, and "
                 "near-Aleppo has it as MAM does.",
             ]
         ),
@@ -347,9 +347,9 @@ def _divine_title(numbers):
             [
                 "Where a word ending in the letters ",
                 he_name(_ADONAI_LETTERS),
-                " is the divine title, with a qamats on its nun, MAM has a holam on "
+                " is the divine title, with a qamats on its nun, MAM has a ḥolam on "
                 "its dalet, which MAM's introduction says the codex writes only in "
-                "isolated places. Near-Aleppo has no holam there, at ",
+                "isolated places. Near-Aleppo has no ḥolam there, at ",
                 numbers.snap(_P3, "divine title: holam on the dalet stripped"),
                 " words, and keeps it at ",
                 _sites(
@@ -374,7 +374,7 @@ def _elohim(numbers):
         _heading(ELOHIM),
         mb_html.para(
             [
-                "Where the divine name is read Elohim, MAM has a hataf segol on its "
+                "Where the divine name is read Elohim, MAM has a ḥataf segol on its "
                 "yod, and near-Aleppo has a sheva there, at ",
                 numbers.snap(
                     _P3, "Elohim reading: sheva for the hataf segol on the yod"
@@ -582,25 +582,25 @@ def _hataf(numbers):
         _heading(HATAF),
         mb_html.para(
             [
-                "Where the manuscripts have a hataf on a letter that is not a "
+                "Where the manuscripts have a ḥataf on a letter that is not a "
                 "guttural, MAM has a sheva with a varika, U+FB1E HEBREW POINT "
-                "JUDEO-SPANISH VARIKA, and gives the hataf's form in its note on the "
-                "word. Near-Aleppo has the hataf, reading each vowel from the note: a "
-                "hataf patah at ",
+                "JUDEO-SPANISH VARIKA, and gives the ḥataf's form in its note on the "
+                "word. Near-Aleppo has the ḥataf, reading each vowel from the note: a "
+                "ḥataf pataḥ at ",
                 numbers.snap(
                     _P3,
                     "hataf on a non-guttural: sheva and varika replaced by a hataf patah",
                 ),
-                " letters and a hataf qamats at ",
+                " letters and a ḥataf qamats at ",
                 numbers.snap(
                     _P3,
                     "hataf on a non-guttural: sheva and varika replaced by a hataf qamats",
                 ),
                 ". At the ",
                 numbers.snap(_P3, hiriq),
-                " letters where MAM's notes give the codex a hataf hiriq, ",
+                " letters where MAM's notes give the codex a ḥataf ḥiriq, ",
                 _sites(numbers, _P3S, hiriq),
-                ", near-Aleppo has the sheva with a hiriq, as each note writes the "
+                ", near-Aleppo has the sheva with a ḥiriq, as each note writes the "
                 "codex's form. At all ",
                 numbers.snap(
                     _P3,
@@ -613,14 +613,14 @@ def _hataf(numbers):
         *doc_policy_examples.comparison("hataf-hiriq"),
         mb_html.para(
             [
-                "Near-Aleppo has the hataf at every varika of MAM's, whichever "
+                "Near-Aleppo has the ḥataf at every varika of MAM's, whichever "
                 "sources the note cites. Of the ",
                 numbers.fig("varika_notes"),
                 " notes on a varika, ",
                 numbers.fig("varika_notes_without_codex_siglum"),
-                " quote the hataf's form under no siglum beginning with ",
+                " quote the ḥataf's form under no siglum beginning with ",
                 he_name("א"),
-                ", so that there the hataf rests on the convention and on other "
+                ", so that there the ḥataf rests on the convention and on other "
                 "manuscripts rather than on a reading of the codex.",
             ]
         ),
@@ -665,20 +665,32 @@ def _stress(numbers):
             ("cites ל", ", no clause citing the codex"),
         )
     ]
-    stripped = [
-        ("segolta", "segolta"),
-        ("telisha qetanah", "telisha qetanah"),
-        ("telisha gedolah", "telisha gedolah"),
-        ("zarqa", "zarqa"),
+    rows = [
+        [
+            "pashta",
+            "On the second-to-last letter",
+            "Accent alone",
+            numbers.snap(_P3, "stress helpers: pashta's stress helper stripped"),
+        ],
+        [
+            "pashta",
+            "Earlier in the word",
+            "Accent and stress helper",
+            numbers.snap(
+                _P3,
+                "stress helpers: pashta's stress helper kept, a letter standing between",
+            ),
+        ],
     ]
-    stripped_text = []
-    for index, (label, accent) in enumerate(stripped):
-        if index:
-            stripped_text.append(", and " if index == len(stripped) - 1 else ", ")
-        stripped_text += [
-            numbers.snap(_P3, f"stress helpers: {accent}'s stress helper stripped"),
-            f" words with the {label}" if index == 0 else f" with the {label}",
-        ]
+    for accent in ("segolta", "telisha qetanah", "telisha gedolah", "zarqa"):
+        rows.append(
+            [
+                accent,
+                "Present",
+                "Accent alone",
+                numbers.snap(_P3, f"stress helpers: {accent}'s stress helper stripped"),
+            ]
+        )
     return [
         _heading(STRESS),
         mb_html.para(
@@ -690,23 +702,21 @@ def _stress(numbers):
                 "letter (Yeivin, ",
                 itm(),
                 " §239), and near-Aleppo has that convention, where the codex is lost "
-                "too. Where MAM has the pashta's stress helper on a word's "
-                "second-to-last letter, near-Aleppo has the pashta alone, at ",
-                numbers.snap(_P3, "stress helpers: pashta's stress helper stripped"),
-                " words, and it keeps the other ",
-                numbers.snap(
-                    _P3,
-                    "stress helpers: pashta's stress helper kept, a letter standing between",
-                ),
-                ", a mater lectionis counting as a letter between. Where MAM has the "
-                "stress helper of another accent, near-Aleppo has the accent alone: at ",
-                *stripped_text,
-                ". Every stress helper this policy strips is in a prose verse. "
-                "In a poetic verse the characters of a zarqa and its helper are "
-                "the tsinnor and the tsinnorit, two accents, which near-Aleppo keeps. "
-                "The poetic stress helpers of the deḥi and the tsinnor go with MAM's "
-                "templates for them.",
+                "too. A mater lectionis counts as a letter between the stressed "
+                "letter and the word's last letter.",
             ]
+        ),
+        table(
+            ["Accent", "MAM's stress helper", "Near-Aleppo", "Words"],
+            rows,
+            [None, None, None, NUMBER_CELL],
+        ),
+        mb_html.para(
+            "Every stress helper this policy strips is in a prose verse. "
+            "In a poetic verse the characters of a zarqa and its helper are "
+            "the tsinnor and the tsinnorit, two accents, which near-Aleppo keeps. "
+            "The poetic stress helpers of the deḥi and the tsinnor go with MAM's "
+            "templates for them."
         ),
         mb_html.para(
             [
@@ -863,111 +873,32 @@ def _readings(numbers):
     ]
 
 
-_ADJUSTMENTS = (
-    ('BA-Samuel שמ"ב', "5", "2"),
-    ('BA-Samuel שמ"ב', "21", "12"),
-    ("C1-Isaiah", "36", "12"),
-    ("C1-Isaiah", "44", "24"),
-    ("D2-Proverbs", "3", "30"),
-    ('BC-Kings מל"ב', "4", "7"),
-    ("C3-Ezekiel", "14", "14"),
-    ("C3-Ezekiel", "14", "20"),
-    ("C3-Ezekiel", "28", "3"),
-)
-
-
 def _pointed_ketiv(numbers):
-    adjusted = _READ + "pointed ketiv written with a named adjustment"
-    if sorted(map(verse_key, numbers.snap_sites(_P5S, adjusted))) != sorted(
-        _ADJUSTMENTS
-    ):
-        raise AssertionError("the page names the adjusted pointed ketivs' sites")
+    if numbers.fig_value("kq_without_pointed_ketiv"):
+        raise AssertionError("a retained paired ketiv/qere entry lacks a pointed ketiv")
     return [
         _heading(POINTED_KETIV),
         mb_html.para(
             [
-                "Where MAM's notes give the pointed ketiv that the codex has at a "
-                "ketiv/qere template, under the siglum ",
-                he_name("א-כתיב"),
-                " or under a plain ",
-                he_name("א"),
-                " with the ketiv's letters, near-Aleppo writes it in the parameter ",
-                he_name(POINTED_KETIV_PARAMETER),
-                ", and its text follows that parameter: at ",
-                numbers.fig("note_pointed_ketiv_templates"),
-                " templates. At ",
-                numbers.snap(_P5, _READ + "pointed ketiv written as the form stands"),
-                " the parameter is the note's form as it stands, and at ",
-                numbers.snap(_P5, adjusted),
-                " it has an adjustment: without the note's masorah circles, at 2 "
-                "Samuel 5:2 and 21:12; with the maqaf of the note's form where MAM's "
-                "ketiv has a space, at Isaiah 44:24, as the note says the two words "
-                "are read together; with the marks that the note writes on bracketed "
-                "alef letters written as the near-Aleppo dataset's template ",
-                he_name(MARKS_WITHOUT_LETTER),
-                ", at Isaiah 36:12; and at Proverbs 3:30, with a space where MAM has "
-                "a maqaf before the template, as the note's form has it. Ben's "
-                "review of 2026-10-08 places the qubuts before bet on an artificial "
-                "alef at 2 Kings 4:7, omitting the adopted form's CGJ now that "
-                "qubuts and qamats have separate hosts. Ben's revised decision "
-                "of 2026-10-13 places dagesh, tsere and munaḥ on a medial "
-                "artificial dalet at Ezekiel 14:14 and 14:20, and dagesh, tsere "
-                "and atnaḥ on that carrier at 28:3. Nun has the qere nun's "
-                "hiriq alone; the carrier has the absent qere yod's complete "
-                "mark cluster. All four original MAM clauses "
-                "remain verbatim in the notes. Of the "
-                "forms, ",
-                numbers.snap(
-                    _P5, _READ + "pointed ketiv ending in the qere's trailing maqaf"
-                ),
-                " end in the maqaf that follows MAM's qere.",
+                "Near-Aleppo supplies a pointed ketiv for every paired ketiv/qere "
+                "entry it retains: ",
+                numbers.fig("pointed_ketiv_templates"),
+                " entries. In the example edition, the pointed ketiv is the main "
+                "text and the pointed qere appears above it.",
             ]
         ),
         mb_html.para(
             [
-                "An approved frozen source-only algorithm supplies a further ",
-                numbers.fig("inferred_pointed_ketiv_templates"),
-                " pointed-ketiv parameters from MAM's ketiv and pointed qere "
-                "after the representation policies. Each accepted prediction "
-                "has one surviving canonical candidate and no unresolved "
-                "ownership node. Other transfer and source-accounting warnings "
-                "are retained in a separate source archive; singleton selection "
-                "is categorical, not a probability or a guarantee of correctness. "
-                "MAM-note pointings take priority. The frozen import adds no "
-                "source attribution or diagnostic metadata to a template.",
+                "The pointed ketiv keeps the ketiv’s written consonants. Artificial "
+                "carriers, shown between double guillemets, hold marks without "
+                "adding written consonants; see ",
+                link("GAV notation and display", "reading-json.html#gav-display"),
+                ".",
             ]
         ),
         mb_html.para(
-            [
-                "Individual editorial adjudication supplies a further ",
-                numbers.fig("editorial_pointed_ketiv_templates"),
-                " pointed-ketiv parameters, at Genesis 43:28, Ezekiel 42:9, "
-                "and Daniel 5:7, 5:21, and 5:29. "
-                "The ",
-                link("mobile he cases", "ketiv-qere-mobile-he.html"),
-                " explain the unattached patah in Ezekiel; the ",
-                link("Genesis 43:28 case", "ketiv-qere-genesis-43-28.html"),
-                " and ",
-                link("Daniel cases", "ketiv-qere-daniel.html"),
-                " explain inferred readings where Aleppo is not extant. "
-                "These decisions are recorded separately from the frozen algorithmic predictions.",
-            ]
-        ),
-        mb_html.para(
-            [
-                "A sealed reviewed portable import supplies a further ",
-                numbers.fig("reviewed_pointed_ketiv_templates"),
-                " pointed-ketiv parameters: case-specific choices and source-supported "
-                "agreements admitted under the approved plan only after checking "
-                "current targets, notes, prior pointings, written letters and atom "
-                "boundaries. It preserves current qere forms and edition punctuation, "
-                "and includes only the pointings, each with the ketiv and whole qere "
-                "it was made for, which the template must still have when the build "
-                "writes the pointing. "
-                "All retained paired ketiv/qere templates now have an adopted "
-                "pointing. Prior note-derived, frozen and individual "
-                "pointings retain priority.",
-            ]
+            "These pointings include editorial reconstructions; they are not all "
+            "verified readings of Aleppo."
         ),
     ]
 

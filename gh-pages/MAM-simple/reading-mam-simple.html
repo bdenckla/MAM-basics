@@ -94,6 +94,14 @@ into a chanted word. MAM encodes no whitespace before or after narpas to avoid
 prescribing display spacing, not to group the surrounding text. An edition decides
 whether to display spacing before and/or after narpas; an analytical consumer need
 not make a display-spacing decision.</li>
+<li>An element with no text can still matter. <code>spi-invnun</code> stands for the inverted nun,
+followed by a space when its <code>class</code> is <code>including-trailing-space</code>, and a
+plain-text projection must supply the nun and any such space rather than nothing. Within a
+verse, <code>shirah-space</code> and the parashah markers <code>spi-samekh2</code>,
+<code>spi-samekh3</code>, <code>spi-pe2</code> and <code>spi-pe3</code> can be the only separator
+between adjacent text, with no literal whitespace on either side, as at 1Chr.11.26 and
+1Chr.16.8. Dropping such a separator fuses separate atoms, so a plain-text projection must
+supply one; a layout-preserving renderer implements the documented space or break.</li>
 <li>For a break between verses, the parashah marker and the adjacent <code>starts-with-sampe</code>
 and <code>ends-with-sampe</code> fields describe one break. Do not count the same break three
 times.</li>

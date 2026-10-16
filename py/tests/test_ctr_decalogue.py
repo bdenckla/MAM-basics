@@ -7,10 +7,10 @@ cannot distinguish the lookalike accent pairs a reader resolves by grammar (see
 against a re-fetch or a re-vendoring that would quietly change it:
 
 * CTR's Exodus 20 has the ta'am ELYON accents (not the taxton expected of a running text) under
-  a punctuation that is neither strand's: sixteen sof pasuqs, the union of the two strands'
+  a punctuation that is neither strand's: sixteen sof pasuq marks, the union of the two strands'
   boundaries.  Only nine of the sixteen spans have a silluq, so only nine are chanted verses --
   say SOF PASUQ SPAN for the rest, which is what makes the finding statable at all (a real
-  re-division would have moved the silluqs, and silluq is an accent).
+  re-division would have moved the silluq accents, and silluq is an accent).
 * CTR's Deuteronomy 5 is the taxton, division and all: thirteen spans, all with a silluq.
 
 Every residual difference from the followed strand is CONJUNCTIVE -- the disjunctive skeleton,
@@ -143,7 +143,7 @@ def test_the_cross_strand_agreement_collapses(book: str) -> None:
 
 @pytest.mark.parametrize("book", ["ex", "dt"])
 def test_ctr_sof_pasuq_span_structure(book: str) -> None:
-    """Deuteronomy shares the taxton's 13-verse division; Exodus has its own 16 sof pasuqs, the
+    """Deuteronomy shares the taxton's 13-verse division; Exodus has its own 16 sof pasuq marks, the
     elyon accents notwithstanding -- it does not group the commandments the elyon way.
     """
     ctr, source = _ctr(), _source()

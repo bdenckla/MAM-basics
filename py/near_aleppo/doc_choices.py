@@ -48,9 +48,9 @@ _CHOICES = (
     Choice(
         "2026-08-23",
         _BEN,
-        "The rafe marks MAM lacks",
-        "Near-Aleppo has the rafe marks MAM has and no others, so it has fewer than the codex, which has the rafe in many places where MAM does not.",
-        ("Deriving the missing rafe marks by rule",),
+        "The rafeh marks MAM lacks",
+        "Near-Aleppo has the rafeh marks MAM has and no others, so it has fewer than the codex, which has the rafeh in many places where MAM does not.",
+        ("Deriving the missing rafeh marks by rule",),
     ),
     Choice(
         "2026-08-25",
@@ -392,20 +392,20 @@ _CHOICES = (
     Choice(
         "2026-09-16",
         _BEN,
-        "The codex's hataf hiriq",
-        "At the letters where chapter 2 of MAM's introduction says the codex has a hataf hiriq, near-Aleppo has a sheva and a hiriq, the form each note gives the codex.",
+        "The codex's ḥataf ḥiriq",
+        "At the letters where chapter 2 of MAM's introduction says the codex has a ḥataf ḥiriq, near-Aleppo has a sheva and a ḥiriq, the form each note gives the codex.",
         (
-            "A hiriq alone",
+            "A ḥiriq alone",
             "MAM's varika kept",
         ),
     ),
     Choice(
         "2026-09-16",
         _EDITORIAL,
-        "The hataf at Jeremiah 31:32, where two clauses disagree",
-        "Near-Aleppo has the hataf patah of the clause headed `ל`, the one clause that cites a manuscript for a hataf.",
+        "The ḥataf at Jeremiah 31:32, where two clauses disagree",
+        "Near-Aleppo has the ḥataf pataḥ of the clause headed `ל`, the one clause that cites a manuscript for a ḥataf.",
         (
-            "The hataf qamats of the clause naming Ben-Asher, most printed editions, and Koren, which cites no manuscript",
+            "The ḥataf qamats of the clause naming Ben-Asher, most printed editions, and Koren, which cites no manuscript",
         ),
     ),
     Choice(
@@ -466,7 +466,7 @@ _CHOICES = (
         "2026-09-16",
         _BEN,
         "Flags at Deuteronomy 5:23 and Leviticus 10:4",
-        "Neither has a flag: the hataf at Deuteronomy 5:23 rests on the rule and on an undoubted clause, and Leviticus 10:4's question mark is a question and its answer, not a doubt mark.",
+        "Neither has a flag: the ḥataf at Deuteronomy 5:23 rests on the rule and on an undoubted clause, and Leviticus 10:4's question mark is a question and its answer, not a doubt mark.",
         (
             "A flag at Deuteronomy 5:23 alone",
             "A flag at both",
@@ -552,21 +552,21 @@ _CHOICES = (
         "2026-09-23",
         _EDITORIAL,
         "Codex forms that quote the target without its final paseq glyph",
-        "At Psalms 40:13 and Ruth 3:13 near-Aleppo has the paseq glyph that ends MAM's target, and counts the note's form, which quotes the word without it, as in place, the notes being about the hataf and the large nun.",
+        "At Psalms 40:13 and Ruth 3:13 near-Aleppo has the paseq glyph that ends MAM's target, and counts the note's form, which quotes the word without it, as in place, the notes being about the ḥataf and the large nun.",
         (),
     ),
     Choice(
         "2026-09-23",
         _EDITORIAL,
         "Forms marked as errors that restore what a convention removes",
-        "At Psalms 11:1 and 56:5 near-Aleppo has the ole and the yored on one letter, and at Ezekiel 28:22 the divine name with a holam on the first he, as the bang-marked forms the notes give the codex have them, applied and flagged.",
+        "At Psalms 11:1 and 56:5 near-Aleppo has the ole and the yored on one letter, and at Ezekiel 28:22 the divine name with a ḥolam on the first he, as the bang-marked forms the notes give the codex have them, applied and flagged.",
         (),
     ),
     Choice(
         "2026-09-23",
         _EDITORIAL_BEN_CONFIRMED,
         "The `שיטת-א` form at Song of Songs 8:4",
-        "Near-Aleppo has the hataf patah on the first resh that the note's `שיטת-א` clause gives, at a verse where the codex is lost.",
+        "Near-Aleppo has the ḥataf pataḥ on the first resh that the note's `שיטת-א` clause gives, at a verse where the codex is lost.",
         ("Reverting it",),
     ),
     Choice(
@@ -825,9 +825,9 @@ _CHOICES = (
         "2026-10-05",
         _BEN,
         "The later GV carrier extension",
-        "Ben's GV extension of 2026-10-05 accepts the artificial VAV + HOLAM carrier in the template specific to the near-Aleppo dataset, `ניקוד בלי אות`. This records the chosen holam-male meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example edition displays it between double guillemets.",
+        "Ben's GV extension of 2026-10-05 accepts the artificial VAV + HOLAM carrier in the template specific to the near-Aleppo dataset, `ניקוד בלי אות`. This records the chosen ḥolam-male meaning; the original GA shape remains accepted. JSON stores the carrier payload, and the example edition displays it between double guillemets.",
         (
-            "Converting the chosen GV carrier to ALEF + HOLAM, losing its holam-male meaning",
+            "Converting the chosen GV carrier to ALEF + HOLAM, losing its ḥolam-male meaning",
         ),
     ),
     Choice(
@@ -870,15 +870,15 @@ _CHOICES = (
     Choice(
         "2026-10-12",
         _BEN,
-        "The divine-name holam at 1 Kings 8:11",
-        "Near-Aleppo keeps the holam recorded in MAM's note. The note then called Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo; since 2026-10-13 the note itself names Aleppo.",
-        ("Omitting the holam because the note lacks the Aleppo siglum",),
+        "The divine-name ḥolam at 1 Kings 8:11",
+        "Near-Aleppo keeps the ḥolam recorded in MAM's note. The note then called Aleppo only 'the manuscript', without its siglum, but chapter 5 of MAM's introduction explicitly attributes the form to Aleppo; since 2026-10-13 the note itself names Aleppo.",
+        ("Omitting the ḥolam because the note lacks the Aleppo siglum",),
     ),
     Choice(
         "2026-10-13",
         _BEN,
         "The Daniel ketiv carriers at Ezekiel 14:14, 14:20 and 28:3",
-        "Ben revised the October 8 representation and explicitly requested implementation. Nun now has exactly its qere cluster, hiriq without dagesh or accent. A medial dalet carrier has the absent qere yod's dagesh, tsere and accent: munaḥ at 14:14 and 14:20, atnaḥ at 28:3. The GD contract admits exactly these two additional payloads in `ניקוד בלי אות ובלי רווח`. The dalet adds no ketiv consonant; the complete qere and original MAM source clauses are preserved. Ben also supplied an Aleppo crop confirming no meteg at 28:3, so near-Aleppo's absence of meteg is retained and the Introduction's meteg is a separate correction.",
+        "Ben revised the October 8 representation and explicitly requested implementation. Nun now has exactly its qere cluster, ḥiriq without dagesh or accent. A medial dalet carrier has the absent qere yod's dagesh, tsere and accent: munaḥ at 14:14 and 14:20, atnaḥ at 28:3. The GD contract admits exactly these two additional payloads in `ניקוד בלי אות ובלי רווח`. The dalet adds no ketiv consonant; the complete qere and original MAM source clauses are preserved. Ben also supplied an Aleppo crop confirming no meteg at 28:3, so near-Aleppo's absence of meteg is retained and the Introduction's meteg is a separate correction.",
         ("Keeping dagesh and accent on nun and only tsere on a GA carrier",),
     ),
 )

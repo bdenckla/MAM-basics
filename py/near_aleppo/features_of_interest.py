@@ -217,8 +217,7 @@ def _shin_figure(raw):
         mb_html.para(
             mb_html.anchor_h(
                 "Manuscript observation, screenshot provenance and Introduction comparison",
-                "https://github.com/bdenckla/MAM-basics/blob/main/"
-                "doc/near-aleppo-avi-ketiv-investigation.html",
+                "../avi-ketiv-investigation.html#kings-shin",
             )
         ),
         mb_html.para(
@@ -334,7 +333,7 @@ def render():
                 ),
                 mb_html.anchor_h("Qere without ketiv", "qere-without-ketiv.html"),
                 mb_html.anchor_h(
-                    "Cramped atoms and letter spacing", "cramped-atoms.html"
+                    "Cramped words and letter spacing", "cramped-atoms.html"
                 ),
             ]
         ),

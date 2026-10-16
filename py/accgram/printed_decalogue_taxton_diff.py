@@ -9,12 +9,12 @@ criterion, applied once, with the counts derived from the mirrored data instead 
 three prose sites.
 
 **The criterion.**  A difference SITE is one chanted word at which the two strands' text
-differs.  Where the strands put their maqafs differently -- the m-trad's two chanted words לא and
-תעשה against the p-trad's single chanted word, the maqaf compound לא־תעשה -- the site is the
+differs.  Where the strands put their maqaf marks differently -- the m-trad's two chanted words לא
+and תעשה against the p-trad's single chanted word, the maqaf compound לא־תעשה -- the site is the
 shortest run of chanted words on each side whose letter skeletons match, so a maqaf counts as ONE
-site rather than as two or three coincidental differences.  ``diff_sites`` does that alignment.  Note that a maqaf
-difference IS a site here and always has been: this module was already counting on the single
-scale that the three pages now state to the reader (``MAQAF_IS_THE_LAST_RUNG``).
+site rather than as two or three coincidental differences.  ``diff_sites`` does that alignment.
+Note that a maqaf difference IS a site here and always has been: this module was already counting on
+the single scale that the three pages now state to the reader (``MAQAF_IS_THE_LAST_RUNG``).
 
 **What the criterion yields for Deuteronomy** (``dt_taxton_diff_counts``, pinned in
 ``DT_TAXTON_DECOMPOSITION`` and re-derived on every page generation):

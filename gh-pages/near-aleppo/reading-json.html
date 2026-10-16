@@ -15,9 +15,7 @@
 <p><a href="index.html" data-na-link="page">Overview</a> · <a href="reading-json.html" data-na-link="page">Near-Aleppo JSON reference</a> ·
 <a href="editorial-policies.html" data-na-link="page">Editorial policies</a> ·
 <a href="coverage-and-status.html" data-na-link="page">Coverage and limitations</a> · <a href="choices.html" data-na-link="page">Choices and
-alternatives</a> · <a href="ketiv-qere-mobile-he.html" data-na-link="page">Mobile he and the patah</a> ·
-<a href="ketiv-qere-daniel.html" data-na-link="page">Ketiv/qere cases in Daniel</a> ·
-<a href="ketiv-qere-genesis-43-28.html" data-na-link="page">Genesis 43:28</a></p>
+alternatives</a> · <a href="ketiv-pointing.html" data-na-link="page">Ketiv pointing</a></p>
 </nav>
 <p>Contents:</p>
 <ul>
@@ -225,7 +223,7 @@ separators retain their representations.</p>
 <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">אֵ</bdi>"}</code> and GV
 <code dir="ltr">{"1":"<bdi lang="hbo" class="pointed">וֹ</bdi>"}</code> as its
 <code>tmpl_params</code>. GA permits one or more artificial alef letters, each followed by permitted
-marks. GV requires exactly VAV + HOLAM, retaining the holam-male meaning. Neither GA nor GV permits
+marks. GV requires exactly VAV + HOLAM, retaining the ḥolam-male meaning. Neither GA nor GV permits
 a dagesh. Both templates have only parameter 1, containing the carrier payload. The mixed alef/vav
 payload is exactly <bdi lang="hbo" class="pointed">אְאָא֖וֹ</bdi> at 2 Kings 19:31: three marked
 alef letters followed by the artificial VAV + HOLAM carrier. It also forbids dagesh.</p>
@@ -234,7 +232,7 @@ carriers, which are not written ketiv letters. JSON stores the template payload;
 supplies guillemets, as in <bdi lang="hbo" class="pointed">«אֵ»</bdi> and
 <bdi lang="hbo" class="pointed">«וֹ»</bdi>. An adopted GV retains
 <bdi lang="hbo" class="pointed">«וֹ»</bdi>; converting it to
-<bdi lang="hbo" class="pointed">«אֹ»</bdi> loses the chosen holam-male distinction. Surrounding
+<bdi lang="hbo" class="pointed">«אֹ»</bdi> loses the chosen ḥolam-male distinction. Surrounding
 separators remain explicit strings or whitespace templates; an orphan template inserts no automatic
 space.</p>
 <p>The supported nonzero-width template occurs at <a href="edition/B2-Judges.html#c20v13" data-na-link="page">Judges
@@ -344,15 +342,15 @@ retaining all three marks and the qere <bdi lang="hbo" class="pointed">הִנּ�
 <a href="edition/C3-Ezekiel.html#c14v14" data-na-link="page">Ezekiel 14:14</a>,
 <a href="edition/C3-Ezekiel.html#c14v20" data-na-link="page">14:20</a>, and DALET + DAGESH + TSERE + ETNAHTA at
 <a href="edition/C3-Ezekiel.html#c28v3" data-na-link="page">Ezekiel 28:3</a>. These medial carriers hold the complete
-mark cluster of the qere yod absent from the ketiv. Nun has hiriq alone, matching the qere nun. The
+mark cluster of the qere yod absent from the ketiv. Nun has ḥiriq alone, matching the qere nun. The
 resulting forms are <bdi lang="hbo" class="pointed">דָּנִ«דֵּ֣»אל</bdi> and
 <bdi lang="hbo" class="pointed">מִדָּנִ«דֵּ֑»אל</bdi>. No carrier is a written ketiv consonant. GA
 and GV continue to prohibit dagesh.</p>
-<p>For an orphan holam associated with a qere vav where the ketiv has yod, an edition can choose
+<p>For an orphan ḥolam associated with a qere vav where the ketiv has yod, an edition can choose
 among these display options:</p>
 <ul>
 <li>Show GAV directly, retaining the GV carrier before the ketiv yod.</li>
-<li>Collapse the holam backwards onto the consonant before the ketiv yod.</li>
+<li>Collapse the ḥolam backwards onto the consonant before the ketiv yod.</li>
 <li>Attach U+05B9 HEBREW POINT HOLAM to the ketiv yod as a rendering accommodation, without
 asserting that the yod owns the mark.</li>
 </ul>
@@ -361,12 +359,12 @@ depends on the font and rendering system. Prepared markup could let CSS select a
 or position the dot. CSS alone does not reorder the Unicode text, and hiding a carrier does not
 reliably reattach its combining mark to another letter.</p>
 <p>Unicode's <a href="https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-9/" data-na-link="external">Hebrew
-specification, “Holam Male and Holam Haser”</a> uses U+05B9 for holam male on vav when the
-distinction is made. U+05BA HEBREW POINT HOLAM HASER FOR VAV distinguishes holam on consonantal vav;
-its use on other base letters is undefined. U+05B9 is also the ordinary holam on other letters.
-Unicode thus has no separate, letter-independent holam-male dot that would express the qere-vav role
+specification, “Holam Male and Holam Haser”</a> uses U+05B9 for ḥolam male on vav when the
+distinction is made. U+05BA HEBREW POINT HOLAM HASER FOR VAV distinguishes ḥolam on consonantal vav;
+its use on other base letters is undefined. U+05B9 is also the ordinary ḥolam on other letters.
+Unicode thus has no separate, letter-independent ḥolam-male dot that would express the qere-vav role
 when attached to ketiv yod. Applying U+05B9 to yod can display the dot, but does not encode that
-role. A hypothetical letter-independent holam-male dot could make that intention explicit even on
+role. A hypothetical letter-independent ḥolam-male dot could make that intention explicit even on
 yod. The mismatch concerns encoded meaning, not a general Unicode ban on nonstandard letter-mark
 sequences.</p>
 <h3 id="added-parameters">The parameters near-Aleppo adds</h3>
@@ -392,7 +390,7 @@ note's body; at a site with no such clause, the flag is a parameter of the ketiv
 concerned, and its value is one of two fixed sentences: “MAM's apparatus does not say whether the
 codex has a qere note here”, and “MAM's apparatus does not say whether the codex has the maqaf
 here”.</p>
-<p>At <a href="edition/C3-Ezekiel.html#c28v22" data-na-link="page">Ezekiel 28:22</a>, one note reports a missing holam
+<p>At <a href="edition/C3-Ezekiel.html#c28v22" data-na-link="page">Ezekiel 28:22</a>, one note reports a missing ḥolam
 as a manifest error in Aleppo. Near-Aleppo takes that form, with <code>applied-and-flagged</code>.
 Parameter 1 has the near-Aleppo form; <bdi lang="hbo" class="name">מקרא על פי המסורה</bdi> has the
 MAM form:</p>
@@ -443,7 +441,7 @@ Near-Aleppo has it at 1,032 templates, in 922 verses: 869 <bdi lang="hbo" class=
 <p>One character of near-Aleppo's text is a character that MAM-parsed-plus has only in a note body:
 U+200C ZERO WIDTH NON-JOINER, at <a href="edition/D3-Job.html#c38v12" data-na-link="page">Job 38:12</a>, in the pointed
 ketiv that the note there gives the codex, between the ketiv's tav and he. The note's form has it,
-and it is there to keep fonts from treating the he's patah as a furtive patah.</p>
+and it is there to keep fonts from treating the he's pataḥ as a furtive pataḥ.</p>
 <h3 id="consumer-notice">Notes for applications</h3>
 <p>The notes below highlight common pitfalls when consuming the JSON data. For the full rules, see
 <a href="#own-templates" data-na-link="up">template definitions</a>, <a href="#gav-display" data-na-link="up">GAV notation and
@@ -467,11 +465,11 @@ no-space template <bdi lang="hbo" class="name">ניקוד בלי אות ובלי
 + TSERE with exactly MAHAPAKH, MUNAH or ETNAHTA (GD). With MAHAPAKH, GD immediately follows the
 final nun at Isaiah 54:16 and accommodates that nun's marks. With MUNAH at Ezekiel 14:14 and 14:20,
 or ETNAHTA at 28:3, GD follows nun and carries all marks of the qere yod absent from the ketiv; nun
-retains only its qere hiriq. These dalet carriers add no consonant or space. GA and GV still forbid
+retains only its qere ḥiriq. These dalet carriers add no consonant or space. GA and GV still forbid
 dagesh. Never collect any artificial carrier as a ketiv consonant or insert a separator at a
 carrier-template boundary. The mixed alef/vav payload in the original template requires ALEF +
 SHEVA, ALEF + QAMATS, ALEF + TIPEHA, then VAV + HOLAM at 2 Kings 19:31; the final vav retains the
-holam-male carrier meaning. The no-space qere-without-ketiv body payload is exactly ALEF + TSERE +
+ḥolam-male carrier meaning. The no-space qere-without-ketiv body payload is exactly ALEF + TSERE +
 MERKHA, with no dagesh, at 2 Samuel 18:20. The parameterless <bdi lang="hbo" class="name">רווח בלי
 ניקוד</bdi> records horizontal space without marks. Each qere-without-ketiv body template
 immediately precedes the unchanged <bdi lang="hbo" class="name">קרי ולא כתיב</bdi> call in the same

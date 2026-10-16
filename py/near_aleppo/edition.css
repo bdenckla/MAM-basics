@@ -12,7 +12,7 @@ span.near-aleppo-kq-box {
     margin: 0 0.05em;
 }
 /* Keep the apparatus unit together, as CLC does. The shared page writer
-   adds optional breaks after maqafs, including those inside a reading. */
+   adds optional breaks after maqaf marks, including those inside a reading. */
 span.near-aleppo-kq-box wbr {
     display: none;
 }

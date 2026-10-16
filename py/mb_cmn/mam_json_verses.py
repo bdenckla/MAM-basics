@@ -7,7 +7,7 @@ Evr. II B 55 page index, whose consumer guide in ``evr-ii-b-55/README.md`` defin
 atom number through ``get_verse_atoms``. The Aleppo Codex and Cambridge MS Add. 1753
 flat streams under ``aleppo/`` and ``cam1753/`` were made with the same segmentation,
 by generators that were retired on 2026-09-26. An atom is one written form between
-spaces or maqafs, and the standing rule is that the atoms are what is written on the
+spaces or maqaf marks, and the standing rule is that the atoms are what is written on the
 page. What this application uses is where atoms begin and end and which letters they
 have. Pointing and accents play no part in it, so a stream that differs from
 MAM-simple in marks alone, such as a meteg, differs in nothing that matters here (Ben,

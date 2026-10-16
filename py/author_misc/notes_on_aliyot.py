@@ -160,7 +160,7 @@ _INTRO_UL4 = [
     ],
 ]
 
-# ── Dual parashiyot ──
+# ── Dual parashot ──
 
 _DUAL_P1 = "The dual $parashiyot are as follows:"
 _DUAL_OL1 = [
@@ -733,7 +733,7 @@ _CBODY = [
     author.unordered_list(_INTRO_UL3),
     author.para(_INTRO_P5),
     author.unordered_list(_INTRO_UL4),
-    # Dual parashiyot
+    # Dual parashot
     author.heading_level_2("Dual $parashiyot"),
     author.para(_DUAL_P1),
     author.ordered_list(_DUAL_OL1),

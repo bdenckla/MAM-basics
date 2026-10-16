@@ -63,6 +63,12 @@ _EXAMPLES = {
         "\N{HEBREW POINT HIRIQ}",
     ),
 }
+_CAPTION_ENDINGS = {
+    "hataf": (", we have a ḥataf on a non-guttural (in this case, the letter pe):"),
+    "hataf-hiriq": (
+        ", we have a ḥataf ḥiriq (not well rendered in many fonts, unfortunately):"
+    ),
+}
 
 
 def _cell(directory, ref):
@@ -151,7 +157,9 @@ def comparison(name):
         ):
             raise AssertionError("Job example must use the first quoted Aleppo form")
     return [
-        mb_html.para(["For example, at ", *verse_refs((ref,)), ":"]),
+        mb_html.para(
+            ["For example, at ", *verse_refs((ref,)), _CAPTION_ENDINGS.get(name, ":")]
+        ),
         _comparison(before, after),
     ]
 
@@ -194,7 +202,7 @@ def flag_examples():
     if near[flag] != expected or expected not in _clauses(mam["2"], applied_ref):
         raise AssertionError("Ezekiel flag must quote the original bang-marked clause")
     if mam["1"].replace(_HOLAM, "", 1) != near["1"]:
-        raise AssertionError("Ezekiel example must differ only in its missing holam")
+        raise AssertionError("Ezekiel example must differ only in its missing xolam")
     held_ref = ('BC-Kings מל"א', "20", "29")
     held_mam, held = _notes(held_ref, "נכח־אלה")
     held_flag = "flagged-not-applied"
@@ -213,7 +221,7 @@ def flag_examples():
             [
                 "At ",
                 *verse_refs((applied_ref,)),
-                ", one note reports a missing holam as a manifest error in Aleppo. "
+                ", one note reports a missing ḥolam as a manifest error in Aleppo. "
                 "Near-Aleppo takes that form, with ",
                 code(flag),
                 ". Parameter 1 has the near-Aleppo form; ",

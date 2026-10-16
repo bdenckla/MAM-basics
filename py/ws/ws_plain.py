@@ -3,7 +3,7 @@
 Format-2 line boundaries become plain's // notation. An isolated line boundary
 in a verse prefix becomes __ unless a spacing template already supplies the
 separation. Explicit spaces in prefixes use __ too. The inverted-nun template's
-trailing space uses __, as required by render_wikitext_handlers.
+parameter keeps Wikisource's space after the nun as an ASCII space.
 
 Hebrew strings use give_std_mark_order and the existing product spelling of an
 adjacent geresh muqdam/revia pair, geresh muqdam first. Latin composition and
@@ -116,7 +116,5 @@ def _element(element, *, prefix):
     ]
     if wtp1.template_name(element) == template_names.INVERTED_NUN:
         assert len(elements) == 2
-        if elements[1] == [hpu.NUN_HAF + " "]:
-            elements[1] = [hpu.NUN_HAF + "__"]
-        assert elements[1] in ([hpu.NUN_HAF], [hpu.NUN_HAF + "__"])
+        assert elements[1] in ([hpu.NUN_HAF], [hpu.NUN_HAF + " "])
     return wtp1.mktmpl(elements)

@@ -200,7 +200,7 @@ The reviewed proposal used the qere of nontrivial ketiv/qere templates;
 parameter 1 of trivial `מ:קו״כ-אם-2`; parameter 1 of `מ:דחי` and `מ:צינור`;
 parameter `ד` of `מ:קמץ`; and parameter `כפול` of `מ:כפול`. The integrated code
 validates every recognized template and explicitly preserves the earlier
-all-branch traversal. The range label later retains letters and maqafs.
+all-branch traversal. The range label later retains letters and maqaf marks.
 
 Ben must decide whether a range label follows one selected Scripture stream or
 requires all explicit alternatives to produce the same label. Ketiv/qere

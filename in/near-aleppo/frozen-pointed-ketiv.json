@@ -8705,24 +8705,6 @@
       "value": "אַתָּ֖"
     },
     {
-      "id": "E4-Ecclesiastes:9:4:0",
-      "verse": [
-        "E4-Ecclesiastes",
-        "9",
-        "4"
-      ],
-      "path": [
-        1,
-        "tmpl_params",
-        "1"
-      ],
-      "tmpl_params": {
-        "1": "יבחר",
-        "2": "יְחֻבַּ֔ר"
-      },
-      "value": "יְבַּחֻ֔ר"
-    },
-    {
       "id": "E4-Ecclesiastes:10:3:0",
       "verse": [
         "E4-Ecclesiastes",

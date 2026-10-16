@@ -66,7 +66,11 @@ Ranges and text cues identify positions on photographed pages; a cue copied or d
 from MAM is not evidence that the manuscript has MAM's pointing or mark order. A range
 can begin or end mid-verse. Gaps and incomplete coverage are meaningful and must not be
 rounded to whole verses or filled from another edition. Line-break and geometry data
-are separate evidence and must not be inferred from an entry-index record.
+are separate evidence and must not be inferred from an entry-index record. A Leningrad
+record's `note` can describe its page's layout as read from the page image, such as page
+F132A's "column 1 has 28 lines!", where MAM-basics' location estimator assumes 27 lines per
+column. Such notes are incidental: most pages have none, and a missing note says nothing
+about a page's layout.
 
 ## Decisions (proposed 2026-08-06 by the planning session unless attributed to Ben; Ben can veto the proposals)
 

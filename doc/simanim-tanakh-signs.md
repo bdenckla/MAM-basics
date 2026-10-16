@@ -56,13 +56,14 @@ the fastest way to tell where you are.
 ### נסח ועריכה — text and editing (ma'alot 1-4, pp. יא-טו)
 
 **1. הנוסח** (p. יא). The base text is the Aleppo Codex, with the Leningrad manuscript filling
-places the Aleppo lacks, and R. Shalom Shachna Yellin's lists supplying petuxot and setumot where
-it is defective; Esther keeps the customary section divisions rather than the Aleppo order, to
-minimize dispute. The ma'ala also covers page layout — the shape of the שירות and the setting of
-the אמ"ת books in two columns, both taken from the Aleppo manuscript — and the line-breaking
-devices that follow from it, including gray maqafs used to fill a line where a blank is wanted.
-The preface (p. י) is blunt that none of this is meant to decide halakhic questions of petuxot,
-setumot or ketiv/qere; the text was chosen to serve correct reading, not to settle sofrut.
+places the Aleppo lacks, and R. Shalom Shachna Yellin's lists supplying petuxah and setumah
+sections where it is defective; Esther keeps the customary section divisions rather than the
+Aleppo order, to minimize dispute. The ma'ala also covers page layout — the shape of the שירות and
+the setting of the אמ"ת books in two columns, both taken from the Aleppo manuscript — and the
+line-breaking devices that follow from it, including gray maqaf marks used to fill a line where a
+blank is wanted. The preface (p. י) is blunt that none of this is meant to decide halakhic
+questions of petuxah and setumah sections or of ketiv/qere; the text was chosen to serve correct
+reading, not to settle sofrut.
 
 **2. קרי וכתיב** (pp. יב-יג). The qere is set in the text column itself rather than banished to
 the margin, with the ketiv beside it in gray, unpointed, at reduced size. כתיב ולא קרי, קרי ולא
@@ -83,7 +84,7 @@ approximate date carries a geresh (`[3316']`) and a span is written as a range (
 ### סימנים באותיות ובניקוד — signs in the letters and the pointing (ma'alot 5-9, pp. טז-כב)
 
 **5. אותיות** (pp. טז-יט). The largest ma'ala, and a font design rather than a single sign: a
-medium-weight letter cut with room inside it for two distinct dageshes, from which several
+medium-weight letter cut with room inside it for two distinct dagesh marks, from which several
 letter-level signs are derived. A letter whose pronunciation is at stake is drawn **stretched**
 (אות משוכה) — mappiq he, as in Genesis 2:15 לְעָבְדָהּ וּלְשָׁמְרָהּ, and alef/he/ayin bearing a
 shva inside a word, whose colour follows the preceding vowel. Three more follow: **פתח גנובה**,
@@ -126,9 +127,9 @@ than on its stressed syllable — zarqa, segolta, telisha gedola, telisha qetana
 twice, the extra copy marking the stress. Illustrated with Judges 18:19 ויאמרו לו החרש. The
 following case, נסוג אחור, is handled the same way. **Both glyphs together are one accent.**
 
-**12. מתגים** (p. כד). Metegs the manuscripts omit are supplied, particularly before a shva that
-is to be sounded and before xatafs. In the אמ"ת books a **מתג מושאל**, a borrowed meteg, marks the
-stress on words accented with *dexi*, whose own glyph stands before the word and so cannot show
+**12. מתגים** (p. כד). Meteg marks the manuscripts omit are supplied, particularly before a shva that
+is to be sounded and before xataf vowels. In the אמ"ת books a **מתג מושאל**, a borrowed meteg, marks
+the stress on words accented with *dexi*, whose own glyph stands before the word and so cannot show
 where the stress falls.
 
 ### הבדלים בין טעמים דומים — distinctions among similar accents (ma'alot 13-16, pp. כה-כז)

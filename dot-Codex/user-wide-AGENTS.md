@@ -337,6 +337,9 @@ his own words.
 - Do not reopen a dismissed finding without new evidence.
 - Describe a push as pushed or on origin; reserve public/private for repository visibility.
 - Name the actual file and searchable passage when locating evidence or a decision.
+- Name a character in words, by its Unicode name or a plain description such as “a no-break space”,
+  with the code point in parentheses if at all. Never ask the reader to decode a bare code point or
+  a run of code points; spell a run out as its letters and marks.
 
 These rules apply to pages, docstrings, comments, commit messages, issues, plans, and chat.
 

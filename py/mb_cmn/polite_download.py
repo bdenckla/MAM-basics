@@ -6,9 +6,9 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import re
 import time
-from urllib.parse import urlsplit, urlunsplit
-from urllib.robotparser import RobotFileParser
+from urllib.parse import quote, urlsplit, urlunsplit
 
 import requests
 
@@ -212,11 +212,12 @@ class PoliteDownloader:
             self._config.obey_robots_txt if obey_robots is None else obey_robots
         )
         cache_entry = None
-        prepared_url = self._prepare_url(method, url, params)
+        prepared = self._prepare(method, url, params)
+        prepared_url = prepared.url
         if method == "GET" and allow_cache:
             cache_entry = self._read_cache_entry(prepared_url)
         if method == "GET" and obey_robots:
-            self._assert_allowed_by_robots(prepared_url)
+            self._assert_allowed_by_robots(prepared_url, prepared.path_url)
         attempts = max(self._config.retry.max_attempts, 1)
         for attempt in range(1, attempts + 1):
             request_headers = dict(headers or {})
@@ -288,17 +289,19 @@ class PoliteDownloader:
         backoff_s = retry.first_backoff_s * (2 ** (attempt - 1))
         self._sleep_fun(min(backoff_s, retry.max_backoff_s))
 
-    def _assert_allowed_by_robots(self, url):
+    def _assert_allowed_by_robots(self, url, target):
+        """Raise unless robots.txt allows target, the path and query a request
+        for url sends."""
         parsed = urlsplit(url)
         origin = (parsed.scheme, parsed.netloc)
-        parser = self._robots_by_origin.get(origin)
-        if parser is None:
-            parser = self._read_robots_parser(parsed.scheme, parsed.netloc)
-            self._robots_by_origin[origin] = parser
-        if not parser.can_fetch(self._config.user_agent, url):
+        groups = self._robots_by_origin.get(origin)
+        if groups is None:
+            groups = self._read_robots_groups(parsed.scheme, parsed.netloc)
+            self._robots_by_origin[origin] = groups
+        if not _robots_allows(groups, self._config.user_agent, target):
             raise RobotsDisallowedError(f"robots.txt disallows {url}")
 
-    def _read_robots_parser(self, scheme, netloc):
+    def _read_robots_groups(self, scheme, netloc):
         robots_url = urlunsplit((scheme, netloc, "/robots.txt", "", ""))
         self._throttle(robots_url)
         response = self._session.request(
@@ -306,14 +309,14 @@ class PoliteDownloader:
             robots_url,
             timeout=self._config.default_timeout_s,
         )
-        parser = RobotFileParser()
-        parser.set_url(robots_url)
         if response.status_code == 404:
-            parser.parse([])
-            return parser
+            return {}
         response.raise_for_status()
-        parser.parse(response.text.splitlines())
-        return parser
+        # RFC 9309, section 2.3: the file is UTF-8, whatever charset the response
+        # declares.  surrogateescape keeps an invalid sequence's octets, as
+        # urllib.robotparser.RobotFileParser.read does.
+        text = response.content.decode("utf-8", "surrogateescape")
+        return _parse_robots(text.splitlines())
 
     def _read_cache_entry(self, prepared_url):
         paths = self._cache_paths(prepared_url)
@@ -363,5 +366,191 @@ class PoliteDownloader:
         return cache_dir / f"{digest}.json", cache_dir / f"{digest}.body"
 
     @staticmethod
-    def _prepare_url(method, url, params):
-        return requests.Request(method=method, url=url, params=params).prepare().url
+    def _prepare(method, url, params):
+        return requests.Request(method=method, url=url, params=params).prepare()
+
+
+# The robots check implements RFC 9309's path matching itself.  In Python 3.13.15,
+# urllib.robotparser.RobotFileParser percent-encodes "=" and "&" in a pattern with no
+# "?", so that Disallow: /wiki/*action=edit never matches
+# /wiki/index.php?title=X&action=edit; measures a match by the URL text it covers
+# rather than by the rule; and decodes and re-encodes reserved characters, so that
+# %2F matches "/".  Its grouping of lines and choice of a user agent's group are
+# reproduced unchanged.
+
+_URI_UNRESERVED = frozenset(
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-._~"
+)
+_PERCENT_ESCAPE = re.compile("%([0-9A-Fa-f]{2})?")
+
+
+@dataclass(frozen=True)
+class _RobotsRule:
+    """An Allow or Disallow path in comparison form, split at its "*" wildcards."""
+
+    allow: bool
+    pieces: tuple[str, ...]
+    anchored: bool
+    octet_count: int
+
+    @classmethod
+    def from_path(cls, allow, path):
+        """Make a rule from the path an Allow or Disallow line gives.
+
+        A final "$" anchors the rule at the end of the target; any other "$" is a
+        literal character.
+        """
+        anchored = path.endswith("$")
+        if anchored:
+            path = path[:-1]
+        pieces = tuple(_robots_comparison_form(piece) for piece in path.split("*"))
+        octet_count = len("*".join(pieces)) + (1 if anchored else 0)
+        return cls(allow, pieces, anchored, octet_count)
+
+    def matches(self, target):
+        """Whether this rule matches target, a request target in comparison form.
+
+        Each piece after the first is placed at its earliest occurrence, which
+        leaves the most room for the pieces after it.
+        """
+        first, *rest = self.pieces
+        if not target.startswith(first):
+            return False
+        position = len(first)
+        if not rest:
+            return not self.anchored or position == len(target)
+        *middle, last = rest
+        for piece in middle:
+            position = target.find(piece, position)
+            if position < 0:
+                return False
+            position += len(piece)
+        if self.anchored:
+            return len(target) - len(last) >= position and target.endswith(last)
+        return target.find(last, position) >= 0
+
+
+@dataclass(frozen=True)
+class _RobotsGroup:
+    """The user agents a group names, as written, and its rules, in file order."""
+
+    user_agents: tuple[str, ...]
+    rules: tuple[_RobotsRule, ...]
+
+
+def _parse_robots(lines):
+    """Return a robots.txt file's groups, keyed by lowercase user agent.
+
+    Lines form groups, and groups naming the same user agent merge, exactly as in
+    RobotFileParser.parse.  An Allow or Disallow line with an empty path still ends
+    a group's user agents, but matches nothing.
+    """
+    groups = {}
+    user_agents = []
+    rules = []
+    state = "start"  # then "user-agent" after a User-agent line, "rules" after a rule
+    for line in lines:
+        key, colon, value = line.split("#", 1)[0].strip().partition(":")
+        if not colon:
+            continue
+        key = key.strip().lower()
+        value = value.strip()
+        if key == "user-agent":
+            if state == "rules":
+                _add_robots_group(groups, user_agents, rules)
+                user_agents, rules = [], []
+            user_agents.append(value)
+            state = "user-agent"
+        elif key in ("allow", "disallow"):
+            if state != "start":
+                state = "rules"
+                if value:
+                    rules.append(_RobotsRule.from_path(key == "allow", value))
+        elif key in ("crawl-delay", "request-rate"):
+            if state != "start":
+                state = "rules"
+        # A Sitemap line or an unrecognized line leaves the grouping alone.
+    if state != "start":
+        _add_robots_group(groups, user_agents, rules)
+    return groups
+
+
+def _add_robots_group(groups, user_agents, rules):
+    group = _RobotsGroup(tuple(user_agents), tuple(rules))
+    for user_agent in group.user_agents:
+        key = user_agent.lower()
+        earlier = groups.get(key)
+        if earlier is None:
+            groups[key] = group
+            continue
+        # As urllib.robotparser.merge_entries: the user agents both groups name,
+        # spelled and ordered as in the earlier, and its rules before the later's.
+        groups[key] = _RobotsGroup(
+            tuple(a for a in earlier.user_agents if a in group.user_agents),
+            earlier.rules + group.rules,
+        )
+
+
+def _select_robots_group(groups, user_agent):
+    """Return the group RobotFileParser chooses for user_agent, or None.
+
+    First the group named by the whole user agent string; then the first group
+    naming, other than as "*", a substring of its product token; then the "*" group.
+    """
+    group = groups.get(user_agent.lower())
+    if group is not None:
+        return group
+    product = user_agent.split("/")[0].lower()
+    for group in groups.values():
+        for agent in group.user_agents:
+            if agent != "*" and agent.lower() in product:
+                return group
+    return groups.get("*")
+
+
+def _robots_allows(groups, user_agent, target):
+    """Whether robots.txt allows user_agent to request target.
+
+    target is the path and query a request sends.  Of the rules in user_agent's
+    group that match it, the one with the most octets decides, and an Allow wins a
+    tie (RFC 9309, section 2.2.2).  A target that no rule matches is allowed, as is
+    every target when no group applies, and /robots.txt itself.
+    """
+    if target == "/robots.txt":
+        return True
+    group = _select_robots_group(groups, user_agent)
+    if group is None:
+        return True
+    target = _robots_comparison_form(target)
+    decisive = max(
+        (
+            (rule.octet_count, rule.allow)
+            for rule in group.rules
+            if rule.matches(target)
+        ),
+        default=(0, True),
+    )
+    return decisive[1]
+
+
+def _robots_comparison_form(text):
+    """Return text percent-encoded as requests prepares a request target.
+
+    Characters other than the unreserved ones, the sub-delimiters, ":", "@", "/"
+    and "?" are encoded as their UTF-8 octets; an escape of an unreserved character
+    is decoded and any other escape uppercased (RFC 3986, section 6.2.2); and a "%"
+    that begins no escape is encoded.  The sub-delimiters "*" and "$" are encoded
+    too, so that a rule's %2A and %24 match them (RFC 9309, section 2.2.3).
+    """
+    encoded = quote(text, safe="!&'()+,;=:@/?%", errors="surrogateescape")
+    return _PERCENT_ESCAPE.sub(_normalize_percent_escape, encoded)
+
+
+def _normalize_percent_escape(match):
+    hex_digits = match.group(1)
+    if hex_digits is None:
+        return "%25"
+    char = chr(int(hex_digits, 16))
+    if char in _URI_UNRESERVED:
+        return char
+    return "%" + hex_digits.upper()

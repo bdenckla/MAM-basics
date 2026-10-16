@@ -28,6 +28,7 @@ from near_aleppo import build_paths
 from near_aleppo import doc_figures
 from near_aleppo import doc_he_transfer
 from near_aleppo import doc_daniel_sheva
+from near_aleppo import doc_investigation
 from near_aleppo import doc_pages
 from near_aleppo import doc_style
 from near_aleppo import edition
@@ -76,6 +77,7 @@ def render():
     pages.update(features_of_interest.render())
     pages.update(doc_he_transfer.assets())
     pages.update(doc_daniel_sheva.assets())
+    pages.update(doc_investigation.render())
     pages[link_presentation.STYLESHEET] = link_presentation.stylesheet().encode("utf-8")
     for name, content in pages.items():
         if name.endswith(".html"):

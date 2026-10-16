@@ -118,11 +118,11 @@ FLAGGED_NOT_APPLIED = "flagged-not-applied"
 _FLAGS = frozenset({APPLIED_AND_FLAGGED, FLAGGED_NOT_APPLIED})
 
 # The marks-without-letter template represents marks that MAM's notes attribute to
-# a nonzero-width space in the codex. Its original schema has one parameter: alefs,
+# a nonzero-width space in the codex. Its original schema has one parameter: alef letters,
 # each followed by the marks at that position, with alef as an arbitrary carrier.
 # An alef carrier cannot carry dagesh. The GV payload is exactly artificial
 # VAV + HOLAM; every carrier template has only parameter 1.
-# The mixed alef/vav payload requires exactly three marked alefs
+# The mixed alef/vav payload requires exactly three marked alef letters
 # followed by VAV + HOLAM at 2 Kings 19:31, preserving that carrier distinction.
 # The no-space template licenses GA, including ALEF + TSERE + MERKHA,
 # and GD (DALET + DAGESH + TSERE + MAHAPAKH, MUNAH or ETNAHTA).

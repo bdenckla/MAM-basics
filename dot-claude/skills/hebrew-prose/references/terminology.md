@@ -5,7 +5,7 @@ and which known holdouts are deliberate.
 
 ## Atom vs chanted word (wlc-utils#81)
 
-- **Atom** — one written word, between spaces or maqafs; the thing a maqaf joins to the next.
+- **Atom** — one written word, between spaces or maqaf marks; the thing a maqaf joins to the next.
 - **Chanted word** — a lone atom *or* a whole maqaf compound. The unit cantillation operates on,
   normally with one accent. A maqaf compound is ONE chanted word, not two words joined.
 
@@ -86,7 +86,7 @@ Every chanted atom's marking sits on ONE scale of separating force: disjunctives
   read "differ only at the maqaf."
 
 Verdicts became a ladder — chanted verse boundaries → disjunctive skeleton → conjunctives →
-maqafs — each cell naming the first rung that breaks. The reader-facing statement is the verbatim
+maqaf marks — each cell naming the first rung that breaks. The reader-facing statement is the verbatim
 `printed_decalogue_strands.MAQAF_IS_THE_LAST_RUNG`: **splice that constant, do not paraphrase
 it.** Its guardrail comment records the replaced convention so it does not get reinstated.
 
@@ -371,6 +371,13 @@ field and dataclass attribute, `dual_cant_readings`' grouped chanted verse,
 `maqaf_nonfinal_accents_page` was swept 2026-07-28 — its "Koren's reading" heading is now
 "Koren's compound."
 
+**"Form" is the same habit.** Ben, 2026-10-13, on plural nouns for ketiv and qere, with the
+parenthetical as he corrected it on 2026-10-14: *"You are a big fan of 'forms'. I am not against it in this context (I am against it
+in most or all other contexts, and have struggled with you about it in many other contexts)"*,
+and in summary, *"'form' is okay, and perhaps even better than other alternatives in phrases such
+as 'the ketiv form of this word has a yod after ...' but in general prefer 'word' or 'atom'."*
+Prefer "word", or "atom" where the distinction from a chanted word matters.
+
 ## Strand vocabulary
 
 - **strand** = one single-cantillation reading of a dual-cant passage (alef/תחתון/pashut,
@@ -494,17 +501,80 @@ and `illegal_mark` statuses. Existing oddball identifiers remain compatibility i
 ## Plurals of romanized Hebrew words
 
 Do not pluralize romanized Hebrew words with English suffixes or Hebrew plural endings in
-authored prose. Pluralize a context-specific English noun instead: "three alef letters",
-"two meteg marks", "two tsinnor marks", "pointed ketiv forms", "two qere readings", or
-"aliyah portions". The noun must fit the sentence; a lint's default suggestion does not
-settle whether the context calls for forms, readings, words, notes, sections, or another noun.
-Preserve literal quotations, source titles, technical identifiers and data strings. Ordinary
-English words and names are not subject to a blanket suffix replacement. Repository-specific
-exceptions, including MAM-basics' entire Yeivin ITM adaptation, remain in force.
+authored prose. Pluralize an English noun instead: "three alef letters", "two meteg marks",
+"two tsinnor accents", "two qere words", or "aliyah portions". The noun must fit the sentence;
+a lint's default suggestion does not settle the noun a sentence needs. Preserve literal
+quotations, source titles, technical identifiers and data strings. Ordinary English words and
+names are not subject to a blanket suffix replacement. Repository-specific exceptions,
+including MAM-basics' entire Yeivin ITM adaptation, remain in force.
 
 Ben's choice, 2026-10-13: use `parashot`, rather than `parashiyot`, when using the Hebrew plural
 in our own prose. This accepted plural is an exception to the general English-noun preference.
-Quotations and adaptations preserve whichever form they use.
+Quotations and adaptations preserve whichever spelling they use.
+
+**Default nouns.** On 2026-10-13 Ben asked for one default noun for each thing, to use where
+nothing favors another noun, and on 2026-10-14 he approved these principles and this table.
+A row whose source is "Ben" states a choice he made himself on 2026-10-13, while the table was
+being drafted; the other rows were proposed for his approval.
+
+1. **Avoid the plural when a singular reads naturally.** Ben's example: "It is sometimes hard
+   to tell a dexi from a meteg."
+2. **Otherwise use the thing's default noun from the table.**
+3. **Written signs.** The default noun is still correct when the sentence is about the written
+   signs: "the first two pataḥ vowels are shifted late", "two qamats vowels and pashta".
+   "Marks" also works there. When a plural pairs accents or vowels with other marks, "dexi
+   accents and meteg marks" is right, and "dexi marks and meteg marks" is fine if it reads
+   better. "Marks" is required when the plural counts signs that are not separate accents: a
+   tsinnor and its stress helper are two tsinnor marks but one accent, while "two adjacent
+   tsinnor accents" means two real accents.
+4. **Do not let the noun leave a homonym ambiguous**, which Ben called "rarely, if ever wanted".
+   Segol takes "segol accents" or "segol vowels", not "segol marks". Geresh and gershayim take
+   "accents" as accents and "marks" as punctuation.
+5. **An acceptable noun already in place can stay**, especially where changing it would mean
+   many diffs; the default governs new and rewritten text. Ben, of oleh and yored: *"if there is
+   existing prose saying 'yored accents' all over a file that we don't want a zillion diffs in,
+   it could be left alone."*
+
+| Thing | Default noun | Also fine | Source |
+| --- | --- | --- | --- |
+| Letters, final forms included | letters | | |
+| Accents: deḥi, tsinnor, revia, zaqef, pashta, qadma, tevir, geresh, telisha, pazer, munaḥ, merkha, mahapakh, darga, azla, yetiv, etnaḥta, segolta, shalshelet, tipeḥa, oleh-weyored, tsinnorit, silluq and the rest | accents | | Ben: "dexi accents" |
+| Legarmeh | marks | | Ben |
+| Oleh or yored alone, the parts of oleh-weyored | marks | accents | Ben |
+| Segol | segol accents or segol vowels | | Ben |
+| Pataḥ, qamats, tsere, qubuts, shuruq, ḥataf vowels | vowels | | |
+| Ḥiriq | vowels or dots, equally | | Ben |
+| Ḥolam, ḥolam ḥaser, ḥolam male | dots | | Ben |
+| Sheva | marks | | a silent sheva marks no vowel |
+| Meteg | marks | | |
+| Shin dot, sin dot | dots | | Ben |
+| Dagesh, mapiq | marks | dots | Ben, for "dots" |
+| Rafeh, varika | marks | | |
+| Maqaf, paseq, sof pasuq, inverted nun, and geresh or gershayim as punctuation | marks | | |
+| Pasoleg | marks | stroke, for technical pen-on-ink description | Ben |
+| Ketiv, qere | words, or atoms where the distinction from chanted words matters | forms, as in "the ketiv form of this word has a yod after ..."; readings, though rarely if ever better | Ben |
+| Masorah | notes | | |
+| Aliyah | portions | | `notes_on_aliyot` keeps `aliyot` by Ben's exception |
+| Parashah | parashot | | Ben |
+| Setumah, petuḥah | sections | | |
+| Ḥilluf | variants | | |
+| Ta'am | accents | | |
+
+**Stroke.** Ben, 2026-10-13: *"Any straight mark can be referred to as a stroke, in the context
+of describing a manuscript. But it can also be described as a mark, whether in manuscript or
+typographic (screen or paper) form. narpas stroke, legarmeh stroke, silluq stroke, meteg stroke,
+even merkha stroke, dexi stroke, etc. But I would rarely see need to call any of these strokes
+unless discussing very technical pen-on-ink issues like 'the stroke appears to widen towards its
+top'"* Narpas is MAM-basics' short name for narrow-sense paseq.
+
+**Ketiv and qere.** Ben, 2026-10-13: *"I would prefer 'words' where meaning is either clear
+(chanted words vs atoms) or ambiguity (clarity) is not important, atoms where that distinction is
+important."* Of "reading": *"Reading is okay but I'm not sure it is ever better than word, atom,
+or even form."* His wider objection to "form" is recorded under "'Reading' is a technical term
+here, not a catch-all noun".
+
+MAM-basics' plural lint, `py/mb_cmn/hebrew_name_plurals.py`, suggests these default nouns on
+rendered pages, as its `doc/hebrew-name-plurals.md` describes.
 
 ## Transliteration (accgram)
 
@@ -512,6 +582,9 @@ Ben's rendered-prose choices, 2026-10-13: use `qere`, `aliyah`, `parashah`, and 
 rather than `qeri`, `aliya`, `parasha`, and `masora`, in our own prose. Retain literal source
 wording, external work titles, technical identifiers and the repository's adaptation exceptions.
 This choice does not start a sweep of other transliteration variants.
+
+Ben's choice, 2026-10-14: use `rafeh` in authored prose. Retain `RAFE` when
+citing the Unicode name, as in `U+05BF HEBREW POINT RAFE` or `Unicode RAFE`.
 
 Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce ṭ/Ṭ.
 

@@ -774,7 +774,7 @@ def _hebrew_at(example: dict, *, silluq_second: bool = False) -> object:
 
 
 def _form_at(example: dict, *, silluq_second: bool = False) -> str:
-    """The example's letters, accents and maqafs -- and one U+05BD when it is a silluq."""
+    """The example's letters, accents and maqaf marks -- and one U+05BD when it is a silluq."""
     chanted_word = example["word"]
     silluq_at = chanted_word.rfind(mpa.METEG) if silluq_second else -1
     return "".join(
@@ -975,14 +975,14 @@ def _find_span(
 
 
 def _render_span(words: list[str]) -> str:
-    """A run of chanted words as a table cell shows it: letters and accents, maqafs kept.
+    """A run of chanted words as a table cell shows it: letters and accents, maqaf marks kept.
 
     The cells ARE the comparison, so nothing is described in words that can be shown (Ben,
     2026-07-28: "why would you only describe in words what can be shown in Unicode?", and
     2026-07-29: "I need to just see this using actual unicode").  ``accents_and_letters`` reduces
     each atom to its letters and accents -- no vowels, and no meteg, which is not an accent --
-    and the maqafs it drops go back between the atoms they joined, so a compound reads as the one
-    chanted word it is.
+    and the maqaf marks it drops go back between the atoms they joined, so a compound reads as the
+    one chanted word it is.
 
     A span runs to whatever length keeps every chanted word in it WHOLE in all three columns.
     The two Exodus cases therefore carry לך: the עליון joins it to the second atom, and half of

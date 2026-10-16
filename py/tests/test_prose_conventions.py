@@ -288,33 +288,37 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
     scan = hebrew_name_plurals.html_findings
     html = (
         "<p>Three <i>alef</i>s, two munaḥs, dageshes, shevas, metegim, "
-        "final-kafs, and <span>maqaf</span>\u200as.</p>\n"
+        "final-kafs, vavs, segols, and <span>maqaf</span>\u200as.</p>\n"
         '<img alt="two lameds" title="two tsinnors">'
     )
     found = scan(html, "gh-pages/example.html")
     assert [f.preferred for f in found] == [
         "alef letters",
-        "munaḥ marks",
+        "munaḥ accents",
         "dagesh marks",
         "sheva marks",
         "meteg marks",
         "final-kaf letters",
+        "vav letters",
+        "segol accents or segol vowels",
         "maqaf marks",
         "lamed letters",
-        "tsinnor marks",
+        "tsinnor accents",
     ]
     assert found[-1].line == 2
     assert scan("<i>METEG</i>S", "gh-pages/example.html")[0].preferred == "METEG marks"
     exempt = (
         '<p id="maqafs" class="metegs"><a href="maqafs.html#metegs">link</a></p>'
         '<code>maqafs metegs_by_verse unit.ketivs unit.qeres</code><script>const x = "maqafs";</script>'
-        '<span lang="hbo-Latn">ḥets·rón</span><blockquote>metegs</blockquote>'
+        '<span lang="hbo-Latn">ḥéts</span><blockquote>metegs</blockquote>'
         '<q>dageshes</q><p data-hebrew-plural-ok="literal source">alefs</p>'
         "<p>English sins, shins and bets; alphabetic, pages, marks, dots, and helpers.</p>"
     )
     assert not scan(exempt, "gh-pages/example.html")
     assert not scan(html, "gh-pages/yeivin-itm/new-adapted-prose.html")
     assert not scan(html, "gh-pages/yeivin_itm.html")
+    assert not scan(html, "gh-pages/phonetic-mam/tnkh/A1-Genesis/09.html")
+    assert scan(html, "gh-pages/phonetic-mam/testsuite-jacobson-likely-typos.html")
     quote = "<p>five yods and no Masorah circle is present to indicate which yod is superfluous</p>"
     assert not scan(quote, "gh-pages/clc/Proverbs.html")
     assert scan(quote + "<p>two yods</p>", "gh-pages/clc/Proverbs.html")
@@ -329,8 +333,8 @@ def test_hebrew_plural_detection_and_scoped_exceptions() -> None:
     )
     nouns = "<p>ketivs, <i>qere</i>s, masorot, aliyot, parashiyot, parashot, setumot, petuḥot.</p>"
     assert [f.preferred for f in scan(nouns, "gh-pages/example.html")] == [
-        "ketiv forms",
-        "qere forms",
+        "ketiv words",
+        "qere words",
         "masorah notes",
         "aliyah portions",
         "parashot",

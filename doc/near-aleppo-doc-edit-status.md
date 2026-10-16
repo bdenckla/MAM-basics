@@ -2923,3 +2923,73 @@ A read-only independent review found one italicization issue, corrected before
 the final checks. Every generated diff was inspected; `git diff --check` passed.
 No automated browser inspection is claimed. Mega and the full suite remain on
 the approved nightly cadence for this presentation batch.
+
+## Pointed-ketiv section for readers — 2026-10-14
+
+**Status:** implemented by Codex at Ben’s request to describe what the pointed
+ketiv forms contain, removing how the pointings were obtained.
+
+**Change:** Replaced the four dense paragraphs under “The pointed ketiv” with
+three short paragraphs about complete coverage, ketiv/qere display, preserved
+consonants, carrier notation and reconstructed pointings. Removed import
+categories, approval history, technical checks and case-by-case decision details.
+The generator checks the retained claim that every paired entry has a pointed
+ketiv. Existing detailed documentation remains linked from the section.
+
+**Verification:** Work began in the clean main checkout at `5d0265b5`.
+Black and HTML regeneration passed. A comparison with the captured page confirms
+that only this section changed; its count is 1,032 and its GAV link resolves to
+the existing section. No other generated file or dataset changed. Five focused
+prose checks and `git diff --check` passed. A read-only review found no
+consequential issue. Mega and the full suite remain on the approved nightly
+cadence for this prose revision.
+
+## Rafeh spelling — 2026-10-14
+
+**Status:** implemented by Codex. Ben prefers “rafeh” in prose and requires
+literal Unicode RAFE names to keep their spelling. The canonical Hebrew prose
+reference now records that choice and uses “Rafeh” in its default-noun table.
+
+**Change:** Corrected the ten prose occurrences across editorial policies,
+coverage and choices. Extended the Near-Aleppo rendered spelling lint to reject
+“rafe” in prose while retaining complete Unicode names and “Unicode RAFE” labels.
+
+**Verification:** Work began in the clean main checkout at `d4f322e3`.
+Black, HTML regeneration, skill validation and five focused prose checks passed.
+Scratch reversions to the former spellings fail at all ten occurrences; literal
+Unicode citations pass and bare uppercase prose still fails. Only the three
+documentation pages changed among generated products; the dataset is unchanged.
+Mega and the full suite remain on the approved nightly cadence for this spelling
+and instruction change.
+
+## Stress-helper counts as a table — 2026-10-14
+
+**Status:** implemented by Codex at Ben’s request to replace the inline counts
+with a table.
+
+**Change:** Six rows show the accent, MAM’s stress helper, Near-Aleppo’s form
+and the number of words. Pashta has separate rows for a helper on the
+second-to-last letter and an earlier letter. The mater-lectionis qualification
+stays above the table; the prose/poetic explanation and note-recorded exceptions
+stay below it. Counts still come from the same build populations.
+
+**Verification:** Work began in the clean main checkout at `880b92f9`.
+Black, HTML regeneration and five focused prose checks passed. A differential
+comparison against the captured page confirms all six counts and outcomes,
+numeric-cell alignment, preserved explanatory passages and unchanged content
+outside the section. Only `editorial-policies.html` changed among generated
+files; the dataset is unchanged. Mega and the full suite remain on the approved
+nightly cadence for this presentation change.
+
+## Name the vowel examples in their captions — 2026-10-14
+
+**Status:** implemented by Codex at Ben’s request. The Psalms 40:13 caption
+identifies a ḥataf on a non-guttural, the letter pe. The Psalms 14:1 caption
+identifies a ḥataf ḥiriq and notes its poor rendering in many fonts.
+
+**Verification:** Work began in the clean main checkout at `c1db3b82`.
+Black, HTML regeneration and five focused prose checks passed. A comparison
+with the captured page confirms exactly the two requested caption changes;
+the verse links, Hebrew examples and all other page content are unchanged.
+No other generated file or dataset changed. Mega and the full suite remain
+on the approved nightly cadence for these caption edits.

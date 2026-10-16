@@ -27,7 +27,7 @@ nucleus:
 
 * A full vowel or a xataf is one.  So is a SHURUQ -- a vav with a dagesh point, no vowel of its
   own, and no nucleus on the letter before it, which is what tells a shuruq from a doubled vav
-  closing the syllable before it (the two vavs of ויצוו differ in exactly that).
+  closing the syllable before it (the two vav letters of ויצוו differ in exactly that).
 * A SHEVA is not, and is ignored rather than judged vocal or silent.  Ignoring it cannot move the
   last nucleus: a vocal sheva is always followed by a full vowel, which is counted in its own
   right, and a silent one closes a syllable that already has its nucleus.  So the
@@ -97,7 +97,7 @@ NOT_IMPOSITIVE = frozenset(
     )
 )
 
-# Every point that is a syllable nucleus: the full vowels, the three xatafs, and qamats qatan.
+# Every point that is a syllable nucleus: the full vowels, the three xataf vowels, and qamats qatan.
 # The sheva is deliberately absent -- see the module docstring on why it needs no verdict.  A
 # shuruq is a nucleus too but is not a point of its own, so ``_nuclei`` reads it separately.
 _NUCLEUS_POINTS = frozenset(
@@ -162,7 +162,7 @@ def ends_in_furtive_patax(word: str) -> bool:
 def _nuclei(word: str) -> list[tuple[int, int]]:
     """Where each of the chanted word's syllables begins, as ``(letter ordinal, tie-break)``.
 
-    Ordinals count base letters from 1 across the whole chanted word, maqafs included, so a
+    Ordinals count base letters from 1 across the whole chanted word, maqaf marks included, so a
     compound's atoms number straight through as the one chanted word they are.  The tie-break is
     0 for a syllable whose onset is a written letter and 1 for one whose onset is not, which puts
     the second sort between that letter and the next; ``is_final_stress`` compares an accent's
