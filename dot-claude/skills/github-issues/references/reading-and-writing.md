@@ -2,6 +2,16 @@
 
 Read the sections needed for the requested operation before touching GitHub.
 
+## Human-facing issue text
+
+Keep human-facing issue bodies and comments short and readable, with substantive facts and
+the justification a human needs visible. Hide facts relevant only to machines or AI, for
+example in linked Git-tracked research documentation or a collapsed `<details>` section.
+Choose the mechanism that suits the issue.
+
+Exceptions are allowed when an issue's purpose calls for them, notably an issue explicitly
+intended only for later AI reading. This is Ben's policy of 2026-10-15.
+
 ## 1. Reading an issue in full
 
 1. Read an issue you are about to work on, comment on or edit with one command. In a Claude
