@@ -865,6 +865,28 @@ def _readings(numbers):
         ),
         mb_html.para(
             [
+                "Near-Aleppo also has the rafeh marks that MAM's notes report for the "
+                "codex without doubt, even in words alone, a rafeh written across two "
+                "letters being a rafeh on each: the form a clause quotes is taken with "
+                "the rafeh marks its words report (",
+                _sites(
+                    numbers,
+                    _P5S,
+                    _READ
+                    + "applied form given the rafeh marks its clause's words report",
+                ),
+                "), and the target is given the rafeh marks an agreeing clause "
+                "reports (",
+                _sites(
+                    numbers,
+                    _P5S,
+                    _READ + "target given the rafeh marks an agreeing clause reports",
+                ),
+                ").",
+            ]
+        ),
+        mb_html.para(
+            [
                 "The ",
                 link("Isaiah 27:5 example", "index.html#what-the-dataset-is"),
                 " compares MAM's target with the Aleppo form quoted in its note.",

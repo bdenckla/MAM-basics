@@ -23,7 +23,10 @@ and unexpected parameter sets fail before writing.
 Representation policies then apply the declared near-Aleppo conventions. Source
 relations are read from MAM's clause heads, including testimony and doubt
 qualifiers. Direct readings quoted in MAM notes are applied only where their
-classified form and target meet the code's explicit requirements. Ambiguous
+classified form and target meet the code's explicit requirements. By Ben's rule
+of 2026-10-16, a rafeh that a note reports for the codex without doubt is in the
+text even where the note reports it only in words, a rafeh written across two
+letters being one on each; phase 5 names each such site. Ambiguous
 readings remain pending or flagged. The build records every population and site
 list in `in/near-aleppo/build-populations.json`, pinning none, so that the file's
 diff shows what a change to MAM's text or to the build moved.

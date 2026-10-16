@@ -130,6 +130,7 @@ _PHASE5_WRITES = (
     "template that is the target",
     _READ + "pointed ketiv written as the form stands",
     _READ + "pointed ketiv written with a named adjustment",
+    _READ + "target given the rafeh marks an agreeing clause reports",
 )
 
 
