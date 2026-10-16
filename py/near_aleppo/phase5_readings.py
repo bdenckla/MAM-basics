@@ -408,6 +408,10 @@ _AGREEING_RAFEH_READINGS = {
         False,
     ),
 }
+# Ben decided on 2026-10-16 to leave three notes that mention a rafeh as they are, no
+# rafeh being added: Proverbs 6:3's, whose clause citing the codex is doubt-marked, and
+# Exodus 2:3's and Deuteronomy 14:21's, where a rafeh appears only in the question that
+# the testimony א(ס) answers.
 
 # Differing clauses whose head names שיטת-א are admitted only where the codex is
 # lost. The table identifies thirteen clauses explicitly, each at a lost verse. MAM-parsed-plus supplies the Scripture

@@ -885,10 +885,11 @@ _CHOICES = (
         "2026-10-16",
         _BEN,
         "The rafeh marks MAM's notes report for the codex",
-        "Where a note of MAM's reports a rafeh for the codex and expresses no doubt about it, near-Aleppo has that rafeh, even where the note reports it only in words; MAM's note itself is left as it is. A rafeh written across two letters is a rafeh on each, as in the form 1 Chronicles 4:9's note gives the codex, so at Psalms 107:5, whose note says that the rafeh hangs between the two tav letters, near-Aleppo has a rafeh on each tav. The rule also gives near-Aleppo the rafeh that Exodus 1:10's note reports from a testimony to the lost codex, and the rafeh that Deuteronomy 5:3's note reports from a photograph of the codex.",
+        "Where a note of MAM's reports a rafeh for the codex and expresses no doubt about it, near-Aleppo has that rafeh, even where the note reports it only in words; MAM's note itself is left as it is. A rafeh written across two letters is a rafeh on each, as in the form 1 Chronicles 4:9's note gives the codex, so at Psalms 107:5, whose note says that the rafeh hangs between the two tav letters, near-Aleppo has a rafeh on each tav. The rule also gives near-Aleppo the rafeh that Exodus 1:10's note reports from a testimony to the lost codex, and the rafeh that Deuteronomy 5:3's note reports from a photograph of the codex. Near-Aleppo adds none at Proverbs 6:3, whose clause citing the codex is doubt-marked, nor at Exodus 2:3 and Deuteronomy 14:21, where a rafeh appears only in the question that a testimony to the lost codex answers.",
         (
             "The rafeh marks of MAM's text and of the forms MAM's notes quote, and no others",
             "Editing MAM's note at Psalms 107:5 so that its form has a rafeh on each tav",
+            "A rafeh at Exodus 2:3 and Deuteronomy 14:21 too, from the testimony's question",
         ),
     ),
 )
