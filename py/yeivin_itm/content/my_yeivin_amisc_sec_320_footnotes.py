@@ -105,7 +105,7 @@ _CONT_LI_HUFT_3 = [
     [" can be considered a kind of ambiguous mark,"],
     [" somewhat like the ambiguous marks discussed above."],
     [" For example, without a stress helper,"],
-    [" the placement of stress is ambiguous in a word with "],
+    [" the placement of stress is ambiguous in a word with"],
     [" the prepositive ", sub.telisha_gedolah()],
     [" or the postpositive ", sub.pashta(), "."],
     [" The placement of stress can also be ambiguous"],
