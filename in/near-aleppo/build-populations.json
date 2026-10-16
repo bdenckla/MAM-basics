@@ -339,14 +339,16 @@
     "codex readings: pending, the form stopping at the codex's space for a qere without ketiv, bang-marked": 0,
     "codex readings: not applied, and flagged": 1,
     "codex readings: not applied, and flagged, bang-marked": 0,
-    "codex readings: note targets changed": 189,
+    "codex readings: note targets changed": 191,
     "codex readings: note targets changed, bang-marked": 80,
     "codex readings: applied readings with a configuration a phase 3 policy removes": 3,
     "codex readings: differing clauses whose head names שיטת-א": 13,
     "codex readings: differing clauses whose head names שיטת-א, the head being prose": 2,
     "codex readings: שיטת-א reading already in place": 11,
     "codex readings: שיטת-א reading not applied": 1,
-    "codex readings: שיטת-א reading applied, the whole of a plain target": 1
+    "codex readings: שיטת-א reading applied, the whole of a plain target": 1,
+    "codex readings: applied form given the rafeh marks its clause's words report": 1,
+    "codex readings: target given the rafeh marks an agreeing clause reports": 2
   },
   "phase5_sites": {
     "codex readings: empty clauses in note bodies": [
@@ -610,12 +612,19 @@
     ],
     "codex readings: שיטת-א reading applied, the whole of a plain target": [
       ["E1-Song of Songs", "8", "4"]
+    ],
+    "codex readings: applied form given the rafeh marks its clause's words report": [
+      ["D1-Psalms", "107", "5"]
+    ],
+    "codex readings: target given the rafeh marks an agreeing clause reports": [
+      ["A2-Exodus", "1", "10"],
+      ["A5-Deuter", "5", "3"]
     ]
   },
   "phase6_counts": {
     "נוסח: notes reached": 3596,
     "מ:הערה-2: notes reached": 27,
-    "נוסח: notes given MAM's target": 1549,
+    "נוסח: notes given MAM's target": 1551,
     "מ:הערה-2: notes given MAM's target": 5
   },
   "flag_counts": {

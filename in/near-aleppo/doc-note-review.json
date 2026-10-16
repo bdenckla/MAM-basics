@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "inventory_sha256": "d96f251e7959fd55a9110bd76cdd179bbc945e04b8553c7a399226ed7df09ff6",
+  "inventory_sha256": "5449b4d0ce28e32c2d969aa17ad9e4599b40dfc8a834d132a87e6c850daea267",
   "notes": [
     {
       "id": "A1-Genesis 1:1 note 1 נוסח",
@@ -5346,6 +5346,54 @@
             "index": 2,
             "disposition": "mam-context",
             "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
+          }
+        ]
+      }
+    },
+    {
+      "id": "A2-Exodus 1:10 note 1 נוסח",
+      "ref": [
+        "A2-Exodus",
+        "1",
+        "10"
+      ],
+      "note_ordinal": 1,
+      "source_template": "נוסח",
+      "source_note_sha256": "6d9974651848d9bf7ab79d9714f64beb4570428d3c09a57ac7794f87f4db8797",
+      "original_target": "נִֽתְחַכְּמָ֖ה",
+      "near_target": "נִֽתְֿחַכְּמָ֖ה",
+      "original_body": "=א(ס),ל,ל1,ב,ש,ש1,ק3,ו (נו\"ן בגעיה והתי\"ו רפה); א(ס),ל1,ב,ש,ק3=נִֽתְֿחַכְּמָ֖ה עם סימן רפה בתי\"ו.",
+      "clauses": [
+        "=א(ס),ל,ל1,ב,ש,ש1,ק3,ו (נו\"ן בגעיה והתי\"ו רפה); א(ס),ל1,ב,ש,ק3=נִֽתְֿחַכְּמָ֖ה עם סימן רפה בתי\"ו."
+      ],
+      "change_causes": [
+        "note-derived readings"
+      ],
+      "coverage": {
+        "category": "missing",
+        "pages": [],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "5e0dd0d138e11a28f2ed6670f5ab5d871b4cda87f484eb3e5e75ffbab3b7aa52",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "Reviewed by Claude on 2026-10-16. By Ben's rule of that day, the near target has the rafeh on the tav that the clause's second relation, after its semicolon, reports for the testimony א(ס) to the lost codex, quoting that complete form. The clause opens with an agreement with MAM's target, so no plain clause has the near target as its subject; keep the complete source note in MAM context.",
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "=א(ס),ל,ל1,ב,ש,ש1,ק3,ו (נו\"ן בגעיה והתי\"ו רפה); א(ס),ל1,ב,ש,ק3=נִֽתְֿחַכְּמָ֖ה עם סימן רפה בתי\"ו."
+            ]
+          ]
+        },
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Its opening agreement is with MAM's target, and its second relation, which quotes the near target, stays with it."
           }
         ]
       }
@@ -13027,6 +13075,69 @@
             "index": 3,
             "disposition": "mam-context",
             "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. No unique plain clause quoting the complete target; retain the source note. Individual clause review confirms that explicit MAM context preserves the source's claims and qualifications without a new interpretation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "A5-Deuter 5:3 note 2 נוסח",
+      "ref": [
+        "A5-Deuter",
+        "5",
+        "3"
+      ],
+      "note_ordinal": 2,
+      "source_template": "נוסח",
+      "source_note_sha256": "1ddf04c42abcb632ab414f30053d10ffdc88ab8e0e67da3be99dc58e60638ef7",
+      "original_target": "אֵ֥לֶּה פֹ֛ה",
+      "near_target": "אֵ֥לֶּה פֹֿ֛ה",
+      "original_body": [
+        "=א(ס,צילום),ל,ל1,ש,ש1,ק3,ו,ל3,פטרבורג-EVR-II-B-8 <אלה פה דגש קל? לא כן אלא פה רפה> בצילום הכתר נשאר רושם של סימן רפה מעל האות.",
+        {
+          "tmpl_name": "ש"
+        },
+        "דפוסים וקורן=אֵ֥לֶּה פֹּ֛ה (פ\"ה דגושה)"
+      ],
+      "clauses": [
+        "=א(ס,צילום),ל,ל1,ש,ש1,ק3,ו,ל3,פטרבורג-EVR-II-B-8 <אלה פה דגש קל? לא כן אלא פה רפה> בצילום הכתר נשאר רושם של סימן רפה מעל האות.",
+        "דפוסים וקורן=אֵ֥לֶּה פֹּ֛ה (פ\"ה דגושה)"
+      ],
+      "change_causes": [
+        "note-derived readings"
+      ],
+      "coverage": {
+        "category": "missing",
+        "pages": [],
+        "partial_gap_boundaries": []
+      },
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "f5fbab9842f293624c018a6c89ecac7fe52d514ca587a79d5d5f554a37d6ef9c",
+      "review": {
+        "status": "reviewed",
+        "presentation": "framed-mam",
+        "reason": "Reviewed by Claude on 2026-10-16. By Ben's rule of that day, the near target has the rafeh on the pe that the agreeing clause reports from the codex's photograph. No clause quotes the complete near target; keep both source clauses verbatim as MAM context.",
+        "proposed_parts": {
+          "near_clause": null,
+          "mam_clauses": [
+            [
+              "=א(ס,צילום),ל,ל1,ש,ש1,ק3,ו,ל3,פטרבורג-EVR-II-B-8 <אלה פה דגש קל? לא כן אלא פה רפה> בצילום הכתר נשאר רושם של סימן רפה מעל האות."
+            ],
+            [
+              "דפוסים וקורן=אֵ֥לֶּה פֹּ֛ה (פ\"ה דגושה)"
+            ]
+          ]
+        },
+        "clauses": [
+          {
+            "index": 0,
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Its agreement is with MAM's target, and its last sentence reports the photograph's rafeh, which the near target adds."
+          },
+          {
+            "index": 1,
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. It records the printed editions' dagesh in the pe, which neither MAM's target nor the near target has."
           }
         ]
       }
@@ -60757,7 +60868,7 @@
       "source_template": "נוסח",
       "source_note_sha256": "d4151404aef9b90d84d268babeaf67f9522b7572dcb8035cbe7091a5cce10d01",
       "original_target": "תִּתְעַטָּֽף",
-      "near_target": "תִתְעַטָּֽף",
+      "near_target": "תִֿתְֿעַטָּֽף",
       "original_body": [
         "=ל,ש1 ובדפוסים",
         {
@@ -60779,20 +60890,21 @@
         ],
         "partial_gap_boundaries": []
       },
-      "candidate_clause": 1,
-      "proposal_reason": "One literal full-target alternative; semantic review of its suffix and other clauses required.",
-      "evidence_sha256": "1cafd8cf14de64a2613b1eab68a54041d1eeb8515c9d314ca1363943b3687c03",
+      "candidate_clause": null,
+      "proposal_reason": "No unique plain clause quoting the complete target; retain the source note.",
+      "evidence_sha256": "8c277d4a5f8544ac66ba9d051a3ecf0b859e039a064793f1166be3ed37e02058",
       "review": {
         "status": "reviewed",
-        "presentation": "recast",
-        "reason": "Reviewed literal source agreement: retain the complete source head and suffix; keep all remaining clauses in their original order under MAM's labelled target. This attributes agreement and does not explain near-Aleppo's selection.",
+        "presentation": "framed-mam",
+        "reason": "Reviewed by Claude on 2026-10-16. By Ben's rule of that day, the near target has the rafeh that the codex clause's words say hangs between the two tav letters, written as a rafeh on each tav. The clause's quoted form lacks those rafeh marks, so it no longer quotes the complete near target and the earlier literal recast cannot stand; both source clauses stay verbatim as MAM context under MAM's labelled target.",
         "proposed_parts": {
-          "near_clause": [
-            "=א! (חסר דגש באות תי\"ו הראשונה, וסימן הרפה תלוי בין שתי אותיות התי\"ו)"
-          ],
+          "near_clause": null,
           "mam_clauses": [
             [
               "=ל,ש1 ובדפוסים"
+            ],
+            [
+              "א!=תִתְעַטָּֽף (חסר דגש באות תי\"ו הראשונה, וסימן הרפה תלוי בין שתי אותיות התי\"ו)"
             ]
           ]
         },
@@ -60800,12 +60912,12 @@
           {
             "index": 0,
             "disposition": "mam-context",
-            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Reorganization changes only the independently reviewed literal agreement clause."
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Its agreement is with MAM's target, which has a dagesh in the first tav."
           },
           {
             "index": 1,
-            "disposition": "near-subject",
-            "reason": "Complete literal form matches the near target; preserve the attributed source and every qualification verbatim."
+            "disposition": "mam-context",
+            "reason": "Keep this source clause verbatim with its original MAM subject, explanations, alternatives and cross-references. Its form is the near target less the two rafeh marks that its own words report, so the complete clause stays in MAM context rather than being recast as literal agreement."
           }
         ]
       }

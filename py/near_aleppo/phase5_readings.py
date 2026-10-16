@@ -79,6 +79,18 @@ conflict; phase6_flags.py gives the note a flagged-not-applied parameter holding
 א(ר) clause. Job 38:12 retains the form's ZERO WIDTH NON-JOINER between tav and he
 to keep fonts from treating the he's patah as a furtive patah.
 
+The rafeh marks that MAM's notes report in words. By Ben's rule of 2026-10-16, a
+rafeh that a note reports for the codex, expressing no doubt about it, is in the
+dataset's text, and a rafeh written across two letters is a rafeh on each, as in the
+form 1 Chronicles 4:9's note gives the codex.
+Two tables name the sites, and the clause each names must still hold the words that
+report the rafeh. At the clause _RAFEH_IN_WORDS_READINGS names, Psalms 107:5's, the
+reading applied is the clause's form with the rafeh marks its words report, and the
+in-place test reads the forms of that note so completed. At the agreeing clauses
+_AGREEING_RAFEH_READINGS names, Exodus 1:10's and Deuteronomy 5:3's, the rafeh marks
+go onto the named letters of the target as phase 3 leaves it. Each rafeh goes among
+its letter's marks in MAM-normal order.
+
 What stays for later work: the plane readings of _PENDING_PLANE_READINGS; those of
 _ONE_SIDED_PLANE_READINGS and Jeremiah 31:37; the forms with exceptional punctuation,
 the clauses with no form, the prose-led heads and the prose descriptions, which the
@@ -96,6 +108,7 @@ from collections import defaultdict
 import re
 from typing import NamedTuple
 
+from mb_cmn import uni_denorm
 from near_aleppo import phase2_templates as phase2
 from near_aleppo import phase3_policies as phase3
 
@@ -191,6 +204,7 @@ _KETIV_SIGLUM = "א-כתיב"
 _QERE_SIGLUM = "א-קרי"
 
 _MASORA_CIRCLE = "\N{HEBREW MARK MASORA CIRCLE}"
+_RAFEH = "\N{HEBREW POINT RAFE}"
 _ZERO_WIDTH_NON_JOINER = "\N{ZERO WIDTH NON-JOINER}"
 # The near-Aleppo dataset's rule-8 carriers, in square brackets, then a space and the rest of a portion.
 _CARRIERS_THEN_TEXT = re.compile(r"\[([^\]]*)\] (.+)")
@@ -362,6 +376,39 @@ _PHASE3_CONFIGURATION_READINGS = {
     ("D1-Psalms", "56", "5"): (Site(1, 1), _OLE_AND_YORED),
 }
 
+# The rafeh marks that a clause reports for the codex in words, which Ben's rule of
+# 2026-10-16 puts in the dataset's text, a rafeh written across two letters being a
+# rafeh on each. Each entry names the clause; the letters that take a rafeh, each by
+# its 1-based position among the letters of the form or target and the letter it must
+# be; and the clause's words that report the rafeh, which must still be there.
+#
+# A clause whose form lacks the rafeh marks its words report. Psalms 107:5's
+# bang-marked clause quotes the form without the rafeh that its words say hangs
+# between the two tav letters, so the reading applied is the form with a rafeh on
+# each tav, as 1 Chronicles 4:9's form has one on each of its two letters.
+_RAFEH_IN_WORDS_READINGS = {
+    ("D1-Psalms", "107", "5"): (
+        Site(1, 2),
+        ((1, "ת"), (2, "ת")),
+        'וסימן הרפה תלוי בין שתי אותיות התי"ו',
+    ),
+}
+# An agreeing clause that reports a rafeh the target lacks, where the codex is lost.
+# At Exodus 1:10 the clause's second relation, after its semicolon, gives the testimony
+# א(ס) the target's form with a rafeh on the tav, a relation phase 5 does not otherwise
+# read; the form must then be the one that relation quotes. At Deuteronomy 5:3 the
+# clause says that the codex's photograph keeps a trace of a rafeh above the pe. The
+# last field says whether the clause quotes the target with its rafeh after an "=".
+_AGREEING_RAFEH_READINGS = {
+    ("A2-Exodus", "1", "10"): (Site(1, 1), ((2, "ת"),), 'עם סימן רפה בתי"ו', True),
+    ("A5-Deuter", "5", "3"): (
+        Site(2, 1),
+        ((4, "פ"),),
+        "בצילום הכתר נשאר רושם של סימן רפה מעל האות",
+        False,
+    ),
+}
+
 # Differing clauses whose head names שיטת-א are admitted only where the codex is
 # lost. The table identifies thirteen clauses explicitly, each at a lost verse. MAM-parsed-plus supplies the Scripture
 # and notes; the public census checks extantness independently.
@@ -400,6 +447,8 @@ _TABLES = {
     "_QERE_WITHOUT_KETIV_READINGS": _QERE_WITHOUT_KETIV_READINGS,
     "NOT_APPLIED_READINGS": NOT_APPLIED_READINGS,
     "_PHASE3_CONFIGURATION_READINGS": _PHASE3_CONFIGURATION_READINGS,
+    "_RAFEH_IN_WORDS_READINGS": _RAFEH_IN_WORDS_READINGS,
+    "_AGREEING_RAFEH_READINGS": _AGREEING_RAFEH_READINGS,
     "_SHITAT_ALEF_READINGS": _SHITAT_ALEF_READINGS,
     "_POINTED_KETIV_ADJUSTMENTS": _POINTED_KETIV_ADJUSTMENTS,
     "_ZERO_WIDTH_NON_JOINER_READINGS": _ZERO_WIDTH_NON_JOINER_READINGS,
@@ -446,6 +495,12 @@ _NOT_APPLIED = "codex readings: not applied, and flagged"
 _TARGETS_CHANGED = "codex readings: note targets changed"
 _CONFIGURATIONS = (
     "codex readings: applied readings with a configuration a phase 3 policy removes"
+)
+_RAFEH_IN_WORDS = (
+    "codex readings: applied form given the rafeh marks its clause's words report"
+)
+_AGREEING_RAFEH = (
+    "codex readings: target given the rafeh marks an agreeing clause reports"
 )
 _SHITAT_ALEF_CLAUSES = "codex readings: differing clauses whose head names שיטת-א"
 _SHITAT_ALEF_PROSE = (
@@ -547,6 +602,8 @@ class Readings:
         candidates = []
         plane = []
         shitat_alef = []
+        # The agreeing clauses, those opening with "=", by position.
+        agreeing = {}
         direct = 0
         position = 0
         for text in phase3._clauses(params[_BODY], verse):
@@ -555,6 +612,8 @@ class Readings:
                 continue
             position += 1
             head, equals, rest = text.partition("=")
+            if equals and not head:
+                agreeing[position] = text
             if not equals or not head:
                 continue
             stripped = head.strip()
@@ -602,6 +661,9 @@ class Readings:
             self._plane(clause, note, verse)
         for site, head, rest in shitat_alef:
             self._shitat_alef(site, head, rest, note, verse)
+        rafeh = _AGREEING_RAFEH_READINGS.get(verse)
+        if rafeh is not None and rafeh[0].note == number:
+            self._agreeing_rafeh(rafeh, agreeing, note, verse)
         if self.counts[_TARGETS_CHANGED] - changed > 1:
             raise AssertionError(
                 f"{verse}: note {number} has more than one reading that changes its "
@@ -613,6 +675,14 @@ class Readings:
         """Decide and carry out what becomes of one apply-candidate."""
         target = note["tmpl_params"][_TARGET]
         form = clause.forms[0]
+        in_words = _RAFEH_IN_WORDS_READINGS.get(verse)
+        if in_words is not None and in_words[0] == clause.site:
+            if in_words[2] not in clause.rest:
+                raise AssertionError(
+                    f"{verse}: clause {clause.site.clause} of note {clause.site.note} "
+                    "lacks the words that _RAFEH_IN_WORDS_READINGS says report its "
+                    "rafeh"
+                )
         if _KETIV_LETTERS_READINGS.get(verse) == clause.site:
             self._uses["_KETIV_LETTERS_READINGS"] += 1
             direct_target = _direct_ketiv_qere_target(target, verse, clause.site)
@@ -709,10 +779,13 @@ class Readings:
         The shapes are closed: a plain target, of which the form replaces the whole or,
         at a site of _SUB_SPAN_READINGS, the named atoms; and one kept template of
         _KEPT_TARGET_FAMILIES, whose selected parameter the form replaces, the form
-        having the qere's letters in a ketiv/qere family. Any other shape raises.
+        having the qere's letters in a ketiv/qere family. Any other shape raises. At a
+        note of _RAFEH_IN_WORDS_READINGS what is written is the form with the rafeh
+        marks its clause's words report.
         """
         params = note["tmpl_params"]
         target = params[_TARGET]
+        written = _completed(form, verse, site.note)
         sub_span = _SUB_SPAN_READINGS.get(verse)
         if sub_span is not None and sub_span[0] == site:
             self._uses["_SUB_SPAN_READINGS"] += 1
@@ -726,12 +799,12 @@ class Readings:
                     f"{verse}: a sub-span reading whose letters are not the named "
                     "atoms'"
                 )
-            _check_replacement(form, target[start:end], verse)
-            params[_TARGET] = target[:start] + form + target[end:]
+            _check_replacement(written, target[start:end], verse)
+            params[_TARGET] = target[:start] + written + target[end:]
             kind = _APPLIED_ATOMS
         elif isinstance(target, str):
-            _check_replacement(form, target, verse)
-            params[_TARGET] = form
+            _check_replacement(written, target, verse)
+            params[_TARGET] = written
             kind = _APPLIED_WHOLE
         elif isinstance(target, dict) and target["tmpl_name"] in _KEPT_TARGET_FAMILIES:
             name = target["tmpl_name"]
@@ -759,8 +832,8 @@ class Readings:
                         f"{verse}: a reading at a {name} with the letters of neither "
                         "its ketiv nor its qere"
                     )
-            _check_replacement(form, value, verse)
-            target["tmpl_params"][key] = form
+            _check_replacement(written, value, verse)
+            target["tmpl_params"][key] = written
             kind = _APPLIED_KEPT
         else:
             raise AssertionError(
@@ -769,7 +842,41 @@ class Readings:
             )
         if not in_place(form, params[_TARGET], verse, site.note, _SELECTED_SIDE):
             raise AssertionError(f"{verse}: an applied reading is not in place")
+        if written != form:
+            self._uses["_RAFEH_IN_WORDS_READINGS"] += 1
+            self._tally(_RAFEH_IN_WORDS, verse)
         return kind
+
+    def _agreeing_rafeh(self, entry, agreeing, note, verse):
+        """Give the plain target of ``note`` the rafeh marks its agreeing clause
+        reports, in place, as ``entry``, an entry of _AGREEING_RAFEH_READINGS, names
+        them; ``agreeing`` holds the note's agreeing clauses by position."""
+        site, letters, words, quoted = entry
+        self._uses["_AGREEING_RAFEH_READINGS"] += 1
+        text = agreeing.get(site.clause)
+        if text is None or words not in text:
+            raise AssertionError(
+                f"{verse}: clause {site.clause} of note {site.note} is not an agreeing "
+                "clause with the words that _AGREEING_RAFEH_READINGS says report its "
+                "rafeh"
+            )
+        params = note["tmpl_params"]
+        target = params[_TARGET]
+        if not isinstance(target, str):
+            raise AssertionError(
+                f"{verse}: a rafeh that an agreeing clause reports, for a target that is "
+                "not plain text"
+            )
+        form = _with_rafeh(target, letters, verse)
+        if quoted and ("=" + form) not in text:
+            raise AssertionError(
+                f"{verse}: an agreeing clause not quoting the target with the rafeh "
+                "marks it reports, where _AGREEING_RAFEH_READINGS says it does"
+            )
+        _check_replacement(form, target, verse)
+        params[_TARGET] = form
+        self._tally(_TARGETS_CHANGED)
+        self._tally(_AGREEING_RAFEH, verse)
 
     def _plane(self, clause, note, verse):
         """Decide and carry out what becomes of one reading of a ketiv/qere plane.
@@ -1099,7 +1206,9 @@ def in_place(form, target, verse, note, side):
     each ketiv/qere template read by the parameters _SIDE_KEYS names for the side, or,
     for the selected text, by phase2.selected_keys. A form read on the ketiv side at a
     note of _POINTED_KETIV_ADJUSTMENTS whose adjustment is _WITHOUT_MASORA_CIRCLES is
-    compared less its HEBREW MARK MASORA CIRCLE. On the selected text it is also in
+    compared less its HEBREW MARK MASORA CIRCLE, and a form read on the selected text
+    at a note of _RAFEH_IN_WORDS_READINGS is compared with the rafeh marks its clause's
+    words report. On the selected text it is also in
     place, at a note of _FORM_WITHOUT_PASEQ_READINGS, where it equals that text less
     the one HEBREW PUNCTUATION PASEQ that ends it, and at a note of
     _SUB_SPAN_READINGS, where it equals the named atoms of that text. The near-Aleppo dataset's rule-8 template
@@ -1121,6 +1230,8 @@ def _in_place_kind(form, target, verse, note, side):
         and named[1] == _WITHOUT_MASORA_CIRCLES
     ):
         form = form.replace(_MASORA_CIRCLE, "")
+    if side == _SELECTED_SIDE:
+        form = _completed(form, verse, note)
     text = _side_text(target, verse, side)
     if form == text:
         return _AS_SELECTED if side == _SELECTED_SIDE else _ON_ITS_SIDE
@@ -1436,6 +1547,47 @@ def _reading_head(rest):
 def _canonical(form):
     """``form`` with phase 3's qamats-size policy applied."""
     return form.replace(phase3.QAMATS_QATAN, phase3.QAMATS)
+
+
+def _completed(form, verse, note):
+    """``form`` with the rafeh marks its clause's words report, where it is a form of
+    note ``note`` of a verse that _RAFEH_IN_WORDS_READINGS names, and otherwise
+    ``form``."""
+    entry = _RAFEH_IN_WORDS_READINGS.get(verse)
+    if entry is None or entry[0].note != note:
+        return form
+    return _with_rafeh(form, entry[1], verse)
+
+
+def _with_rafeh(text, letters, verse):
+    """``text`` with a rafeh on each of ``letters``.
+
+    Each of ``letters`` is a letter's 1-based position among the letters of ``text``,
+    as phase3._atoms finds them, and the letter it must be. The letter's marks must
+    follow it directly, in MAM-normal order and with no rafeh, and the rafeh goes among
+    them in that order, as uni_denorm.give_std_mark_order puts it.
+    """
+    clusters = [cluster for atom in phase3._atoms(text) for cluster in atom]
+    out = text
+    # From the last named letter back, so that no insertion moves a letter to come.
+    for position, letter in sorted(letters, reverse=True):
+        if not 1 <= position <= len(clusters):
+            raise AssertionError(f"{verse}: no letter {position} to take a rafeh")
+        index, marks = clusters[position - 1]
+        end = index + 1 + len(marks)
+        cluster = text[index:end]
+        if (
+            text[index] != letter
+            or marks != list(range(index + 1, end))
+            or _RAFEH in cluster
+            or not uni_denorm.has_std_mark_order(cluster)
+        ):
+            raise AssertionError(
+                f"{verse}: letter {position} is not a {letter} whose marks follow it in "
+                "MAM-normal order and lack a rafeh"
+            )
+        out = out[:index] + uni_denorm.give_std_mark_order(cluster + _RAFEH) + out[end:]
+    return out
 
 
 def _check_replacement(form, replaced, verse):

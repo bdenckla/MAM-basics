@@ -49,7 +49,7 @@ _CHOICES = (
         "2026-08-23",
         _BEN,
         "The rafeh marks MAM lacks",
-        "Near-Aleppo has the rafeh marks MAM has and no others, so it has fewer than the codex, which has the rafeh in many places where MAM does not.",
+        "Near-Aleppo has the rafeh marks MAM has and derives none by rule, so it has fewer than the codex, which has the rafeh in many places where MAM does not. As first stated, the choice gave near-Aleppo no rafeh marks but MAM's; Ben refined it on 2026-10-16, as recorded below.",
         ("Deriving the missing rafeh marks by rule",),
     ),
     Choice(
@@ -880,6 +880,16 @@ _CHOICES = (
         "The Daniel ketiv carriers at Ezekiel 14:14, 14:20 and 28:3",
         "Ben revised the October 8 representation and explicitly requested implementation. Nun now has exactly its qere cluster, ḥiriq without dagesh or accent. A medial dalet carrier has the absent qere yod's dagesh, tsere and accent: munaḥ at 14:14 and 14:20, atnaḥ at 28:3. The GD contract admits exactly these two additional payloads in `ניקוד בלי אות ובלי רווח`. The dalet adds no ketiv consonant; the complete qere and original MAM source clauses are preserved. Ben also supplied an Aleppo crop confirming no meteg at 28:3, so near-Aleppo's absence of meteg is retained and the Introduction's meteg is a separate correction.",
         ("Keeping dagesh and accent on nun and only tsere on a GA carrier",),
+    ),
+    Choice(
+        "2026-10-16",
+        _BEN,
+        "The rafeh marks MAM's notes report for the codex",
+        "Where a note of MAM's reports a rafeh for the codex and expresses no doubt about it, near-Aleppo has that rafeh, even where the note reports it only in words; MAM's note itself is left as it is. A rafeh written across two letters is a rafeh on each, as in the form 1 Chronicles 4:9's note gives the codex, so at Psalms 107:5, whose note says that the rafeh hangs between the two tav letters, near-Aleppo has a rafeh on each tav. The rule also gives near-Aleppo the rafeh that Exodus 1:10's note reports from a testimony to the lost codex, and the rafeh that Deuteronomy 5:3's note reports from a photograph of the codex.",
+        (
+            "The rafeh marks of MAM's text and of the forms MAM's notes quote, and no others",
+            "Editing MAM's note at Psalms 107:5 so that its form has a rafeh on each tav",
+        ),
     ),
 )
 
