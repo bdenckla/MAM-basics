@@ -606,6 +606,6 @@
   "limits": [
     "Exact substring validation does not establish manuscript truth or translation accuracy.",
     "Source reviewers and root reread translations and decisions; physical-source and quotation-scope questions remain explicit.",
-    "No cache refresh, manuscript scan, scripture change, issue/comment, main integration or deployment."
+    "Rendering reads the recorded snapshot and writes research outputs only; it changes no source cache, scripture or published file."
   ]
 }

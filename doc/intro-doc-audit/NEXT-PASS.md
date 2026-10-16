@@ -1,7 +1,7 @@
 # Cached audit boundary register
 
-State: the productive continuation described by the prior prompt is accounted for;
-remaining decisions require evidence or authority outside this cached-only audit.
+State: the productive continuation described by the prior prompt is accounted for; remaining decisions require evidence or authority outside this cached-only audit.
+Updates and later status: [NEXT-PASS-update.md](NEXT-PASS-update.md).
 Author: Codex, 2026-10-14.
 
 This is the agent's reconstruction of the delegated request, not a new instruction

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import mwparserfromhell
 
-from intro_doc_audit import audit, human_review
+from intro_doc_audit import audit, human_review, snapshot
 from intro_doc_audit.history_evidence import (
     CachedHistory,
     capture,
@@ -179,12 +179,8 @@ def main(batch, cache_dir=".novc/proverbs-history-api"):
         for claim_id in record.get("pinned_introduction_claims", []):
             claim = claims[claim_id]
             page_key = claim_id.split(":", 1)[0]
-            manifest = json.loads(
-                (audit.ROOT / "in/mam-ws-intro/manifest.json").read_bytes()
-            )["pages"][page_key]
-            literal = (
-                (audit.ROOT / claim["path"]).read_text(encoding="utf-8").splitlines()
-            )
+            manifest = snapshot.data("in/mam-ws-intro/manifest.json")["pages"][page_key]
+            literal = snapshot.text(claim["path"]).splitlines()
             assert literal[claim["line"] - 1] == claim["text"]
             intro.append(
                 {

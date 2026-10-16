@@ -53,8 +53,10 @@ def source_node(value):
 
 @cache
 def raw_book(book):
+    from intro_doc_audit import snapshot
+
     path = audit.ROOT / "in/mam-ws" / f"{bl.ordered_short_dash_full_39(book)}.json"
-    return path, json.loads(path.read_text(encoding="utf-8"))
+    return path, snapshot.data(path.relative_to(audit.ROOT).as_posix())
 
 
 def context(ref):

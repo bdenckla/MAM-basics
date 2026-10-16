@@ -8,7 +8,7 @@ from urllib.parse import quote
 
 import mwparserfromhell
 
-from intro_doc_audit import audit
+from intro_doc_audit import audit, snapshot
 
 
 def read(name):
@@ -73,9 +73,7 @@ def parsed_verse_line(path, pointer):
         raise ValueError("Verse part pointer must identify a canonical verse")
     wanted_book, wanted_chapter, wanted_verse = int(parts[2]), parts[4], parts[5]
     book_index, chapter = -1, None
-    for line, text in enumerate(
-        (audit.ROOT / path).read_text(encoding="utf-8").splitlines(), 1
-    ):
+    for line, text in enumerate(snapshot.text(path).splitlines(), 1):
         if text.startswith('      "book24_name":'):
             book_index += 1
             chapter = None
@@ -116,9 +114,7 @@ class Sources:
             record = context([book, chapter, verse])
             literal = record["wikitext"]
             # The faithful raw line is linked; no absent note is manufactured.
-            lines = (
-                (audit.ROOT / record["path"]).read_text(encoding="utf-8").splitlines()
-            )
+            lines = snapshot.text(record["path"]).splitlines()
             encoded = json.dumps(literal, ensure_ascii=False)[1:-1]
             line = next(i for i, value in enumerate(lines, 1) if encoded in value)
             record = dict(record, source_url=audit.source_url(record["path"], line))
@@ -126,17 +122,13 @@ class Sources:
             path = passage["path"]
             if not re.fullmatch(r"in/mam-ws-intro/[a-z0-9-]+\.mediawiki", path):
                 raise ValueError("Raw Introduction source must be a cached page")
-            literal = (
-                (audit.ROOT / path)
-                .read_text(encoding="utf-8")
-                .splitlines()[passage["line"] - 1]
-            )
+            literal = snapshot.text(path).splitlines()[passage["line"] - 1]
             record = {"source_url": audit.source_url(path, passage["line"])}
         elif passage.get("source") == "verse-parts":
             path = passage["path"]
             if not re.fullmatch(r"MAM-parsed/plus/[A-Za-z0-9-]+\.json", path):
                 raise ValueError("Verse parts must come from a parsed cached book")
-            data = json.loads((audit.ROOT / path).read_text(encoding="utf-8"))
+            data = snapshot.data(path)
             pieces = []
             for part in passage["parts"]:
                 value = at_pointer(data, part["pointer"])
@@ -596,7 +588,7 @@ def coverage_report(cases, literal_passages, proposed_quotations=0):
         "limits": [
             "Exact substring validation does not establish manuscript truth or translation accuracy.",
             "Source reviewers and root reread translations and decisions; physical-source and quotation-scope questions remain explicit.",
-            "No cache refresh, manuscript scan, scripture change, issue/comment, main integration or deployment.",
+            "Rendering reads the recorded snapshot and writes research outputs only; it changes no source cache, scripture or published file.",
         ],
     }
 

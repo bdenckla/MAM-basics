@@ -1,5 +1,11 @@
 # Methods and evidence for MAM Introduction and doc-note discrepancies
 
+State: live
+
+For current continuation instructions, use [RUNBOOK.md](RUNBOOK.md). Earlier
+counts and authorization statements below describe their individual checkpoints;
+[history-completion.json](history-completion.json) records the completed history pass.
+
 Open [review.html](review.html) for the readable comparisons. This appendix retains
 the technical inventory, source versions, coverage limits and supporting evidence.
 
@@ -17,7 +23,7 @@ and maps all 32/32 verse-reference records and 6/6 section-link records. The ver
 records include one exact duplicate. Agreement controls and the nine resolved
 unsigned ḥataf comparisons stay in this appendix and their original data.
 
-The renderer validates 666 source passages against literal stored strings,
+The renderer validates 717 source passages against literal stored strings,
 including the ketiv/qere pairs in the complete chapter 2/appendix comparison and the new source/function examples.
 Selected MAM words use explicit target pointers; the four unannotated verse
 examples use declared literal pieces with exact parsed-file pointers. These are
@@ -44,7 +50,7 @@ punctuation in both before/after comparisons. Ben subsequently adjudicated
 [Deuteronomy 6:21](deuteronomy-6-21-adjudication.md): remove only bare ל from the
 opening list, retaining ל1. The original complete note and translation stay visible;
 the manuscript assessment is Ben’s and damage/erasure causes remain uncertain.
-The renderer checks eleven proposed
+The renderer checks twelve proposed
 quotations against their declared edits, separately from source-passage validation.
 The three contextual facts, local screenshot observations and bounded restoration
 history are retained with attribution. The copying theory remains a hypothesis;
@@ -76,7 +82,7 @@ words are recorded. Reproduce this finite check with
 sentence and the actual MAM ketiv/qere words. Its source-based proposal preserves
 the Introduction’s assignments and corrects only its one/two counts. Ben approved
 this correction on 2026-10-15 as a contradiction within the Introduction; the report
-now has eleven user-adjudicated comparisons.
+then had eleven user-adjudicated comparisons.
 [report-prose-revision.json](report-prose-revision.json) records the authored
 classifier and transliteration corrections. Existing report-scoped plural and
 transliteration lint rules were applied, supplemented by a manual ḥataf/ḥet scan;
@@ -108,7 +114,7 @@ Regenerate the readable review and its presentation coverage record with
 specified below. No semantic census needs to be rerun for a presentation edit.
 
 State: finite reference and productive cached prose passes accounted for; external and editorial evidence boundaries retained.
-Isolated research branch, no integration scheduled.
+Ben authorized integration of the research into main on 2026-10-16; proposals remain unapplied.
 
 This audit uses the repository snapshot at `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`.
 It changes no Scripture input, edition, published page, or manuscript interpretation.
