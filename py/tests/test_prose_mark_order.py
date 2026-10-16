@@ -110,7 +110,34 @@ from mb_cmn import paths, uni_denorm
 # failing mark-order scan. Ben requested preserving this original historical
 # review's exact bytes; its source and comparison readings must not be rewritten.
 # doc/branch-integration-2026-10-11.md records the original size and SHA-256.
-_EXCLUDED: frozenset[str] = frozenset({"doc/yod-holam-review-20261007.html"})
+_EXCLUDED: frozenset[str] = frozenset(
+    {
+        "doc/yod-holam-review-20261007.html",
+        # Generated research display, including original source mark order.
+        # intro_doc_audit.review validates its literal passages and proposals;
+        # doc/intro-doc-audit/RUNBOOK.md records the preservation requirement.
+        "doc/intro-doc-audit/review.html",
+    }
+)
+
+
+def _is_literal_research_quotation(rel: str, line: str) -> bool:
+    """The explicit source-quotation containers in three named research notes.
+
+    Their own text and doc/intro-doc-audit/RUNBOOK.md require original mark order.
+    Authored prose outside these containers remains in scope.
+    """
+    if rel == "doc/intro-doc-audit/deuter-hataf-scope.md":
+        # Each table row stacks the Introduction and doc-note literal forms.
+        return line.startswith("| ") and "<br>" in line and line.endswith(" |")
+    if rel == "doc/intro-doc-audit/jeremiah-31-37-adjudication.md":
+        return line.startswith('<div lang="he" dir="rtl">') and line.endswith("</div>")
+    if rel == "doc/intro-doc-audit/lamentations-1-6-proposal.md":
+        return line.startswith("> ") or (
+            line.startswith('{{מ:כו"ק מיוחד|') and line.endswith("}}")
+        )
+    return False
+
 
 # Far below the number of files in scope, and here only to catch a pathspec that
 # swallowed everything -- not to assert a tree size. It deliberately carries no
@@ -163,6 +190,8 @@ def test_hand_authored_prose_is_in_mam_mark_order():
         if uni_denorm.has_std_mark_order(text):
             continue
         for num, line in enumerate(text.split("\n"), 1):
+            if _is_literal_research_quotation(rel, line):
+                continue
             if not uni_denorm.has_std_mark_order(line):
                 offenders.append(f"{rel}:{num}")
 

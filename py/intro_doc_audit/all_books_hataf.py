@@ -282,7 +282,3 @@ def main():
             ensure_ascii=False,
         )
     )
-
-
-if __name__ == "__main__":
-    main()

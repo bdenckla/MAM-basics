@@ -171,16 +171,16 @@ _GUTT = [
     [" $x_shewa notation for $vocshewa."],
 ]
 _CONT_FTNT_FR1_LWVS = [  # LWVS: letter with vocal shewa
-    [" In an ", sub.fr1(), " word,"],
+    ["In an ", sub.fr1(), " word,"],
     [" the letter with the $vocshewa"],
     [" is always a non-guttural,"],
     [" because it has a $dagesh_xazaq."],
     [" Since"],
     *_NON_GUTT,
 ]
-_CONT_FTNT_FR2_CLOSED = [[" I.e. closed by a letter with a $silshewa or a $maqqef."]]
+_CONT_FTNT_FR2_CLOSED = [["I.e. closed by a letter with a $silshewa or a $maqqef."]]
 _CONT_FTNT_FR2_LWVS = [
-    [" In an ", sub.fr2(), " word,"],
+    ["In an ", sub.fr2(), " word,"],
     [" the letter with the $vocshewa"],
     [" can be any letter, guttural or non-guttural."],
     [" If"],
@@ -189,7 +189,7 @@ _CONT_FTNT_FR2_LWVS = [
     *_GUTT,
 ]
 _CONT_FTNT_FR3_LWVS = [
-    [" In an ", sub.fr3(), " word,"],
+    ["In an ", sub.fr3(), " word,"],
     [" the letter with the $vocshewa"],
     [" is always a guttural. Since"],
     *_GUTT,

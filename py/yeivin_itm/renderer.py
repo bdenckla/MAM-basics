@@ -253,7 +253,7 @@ _CAVEAT = aht_html.para(
     [
         "Note that this is a loose adaptation of the work of Yeivin and Revell:",
         " while some sections are faithfully rendered,",
-        " I’ve taken great liberties with others. "
+        " I’ve taken great liberties with others."
         #
         " I’ve tried to relegate actual ideas of my own to footnotes,"
         " but I may not have observed that discipline fully.",

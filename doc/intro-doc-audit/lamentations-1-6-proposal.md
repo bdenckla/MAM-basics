@@ -32,15 +32,6 @@ Evidence uses source commit `89cb865729b0876f1fd32a8a3579eaec80b4fc0c`:
 * [Cached raw Lamentations](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws/E3-Lamentations.json), verse 1:6.
 * [MAM template](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E3-Lamentations.json), pointer `/book39s/0/chapters/1/6/2/1`
 
-Evidence uses source commit `3`:
-
-* [Introduction, chapter 2 line 102](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch2.mediawiki#L102), revision **3087893**.
-* [Cached raw Lamentations](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws/E3-Lamentations.json), verse 1:6.
-* [MAM template](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/MAM-parsed/plus/E3-Lamentations.json), pointer `4` were checked directly.
-
-Ben requested a concrete proposal on 2026-10-14
-(`סוג` were checked directly.
-
 Ben requested a concrete proposal on 2026-10-14
 (`Sentinel_270f66758edc8191b846ed342c368317`). The source correction was initially an independently
 verified proposal. Ben subsequently approved it as recorded below; it remains
