@@ -89,6 +89,13 @@ including original mark order, remain unchanged; the integration receipt records
 source commit, byte count and SHA-256. It is excluded by exact path from the authored
 prose lint, rather than normalized or treated as current authored examples.
 
+The Introduction/doc-note research also preserves original quotation order, as
+`doc/intro-doc-audit/RUNBOOK.md` requires. Its generated `review.html` is excluded
+by exact path; the review renderer validates the literal passages and proposals.
+In the maintained Deuteronomy comparison, Jeremiah adjudication and Lamentations
+proposal notes, only their named literal-quotation containers are exempt. Their
+authored prose remains checked. Neither exception changes the preserved strings.
+
 Scope: only those five code points have a declared priority. A vowel and an accent pass in either order, so
 `has_std_mark_order` says nothing about which of them comes first.
 
