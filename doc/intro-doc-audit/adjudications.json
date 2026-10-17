@@ -700,5 +700,48 @@
     },
     "application_status": "unapplied",
     "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."
+  },
+  {
+    "id": "JOB-9-10-BEN-20261017",
+    "case": "job-chapter-verse",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-17",
+      "time": "18:47 UTC",
+      "kind": "substantive-approval",
+      "source_agent": "Claude Code",
+      "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+      "quotation": "Regarding \"Job 9:10 — chapter and verse reversed in an example\", yeah this is pretty obviously a typo of the form you identify. Please create a github issue for it."
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-312; not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3087907,
+    "current": {
+      "claim": "ch1:L258",
+      "quote": "לדוגמה: באיוב י,ט התיבה"
+    },
+    "proposed_quotation": "לדוגמה: באיוב ט,י התיבה",
+    "changes": [
+      {
+        "before": "באיוב י,ט",
+        "after": "באיוב ט,י",
+        "purpose": "Swap the chapter and verse numerals so that the example names Job 9:10, where its word is and where its Westminster and Mechon Mamre links point."
+      }
+    ],
+    "current_label": "Current Introduction reference",
+    "proposed_label": "Ben’s approved reference — not applied",
+    "current_explanation": "Names Job 10:9.",
+    "proposed_explanation": "Names Job 9:10; only the order of the two numerals changes.",
+    "research_note": "job-9-10-adjudication.md",
+    "research_label": "Ben’s decision and the evidence",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 312,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/312",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1260 code points"
+    },
+    "application_status": "unapplied",
+    "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."
   }
 ]

@@ -655,6 +655,11 @@ def main(cases=None, output="review.html"):
     if len(ids) != len(set(ids)):
         raise ValueError("Duplicate readable case IDs")
     reviewed = reviewed_case_ids(cases)
+    if any(
+        record.get("application_status", "unapplied") != "unapplied"
+        for record in read("adjudications.json")
+    ):
+        raise ValueError("A proposal is recorded as applied; update the footer")
     sections = []
     for key, title, lead in (
         (
@@ -706,7 +711,7 @@ def main(cases=None, output="review.html"):
         + ".reviewed{margin-top:42px;scroll-margin-top:85px}.reviewed>summary{cursor:pointer}.reviewed>summary h2{display:inline;margin:0}"
         + '</style></head><body><main><h1>MAM Introduction and doc-note discrepancies</h1><p class="intro">The comparison and question precede the quoted evidence. Explanatory Hebrew prose is translated; Scripture is retained in Hebrew.</p><div class="toolbar"><label for="size">Hebrew size <output id="value">30</output> px</label><input id="size" type="range" min="20" max="48" value="30" aria-label="Hebrew size"><nav><a href="#discrepancies">Discrepancies</a><a href="#questions">Questions</a><a href="#tracked">Tracked issues</a><a href="#reviewed">Reviewed</a></nav></div>'
         + "".join(sections)
-        + '<footer><p>Ben’s approvals identify proposals for Avi’s review. No proposed changes have been applied or submitted.</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
+        + '<footer><p>Ben’s approvals identify proposals for Avi’s review. The Reviewed cases that say “Tracked in” an issue have been submitted to him, and no approved proposal is recorded as applied.</p><a href="METHODS.md">Methods, evidence and coverage</a></footer></main><script>const slider=document.getElementById("size");slider.addEventListener("input",()=>{document.documentElement.style.setProperty("--he-size",slider.value+"px");document.getElementById("value").textContent=slider.value});</script></body></html>'
     )
     if output == "review.html":
         audit.dump(

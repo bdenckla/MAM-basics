@@ -25,9 +25,9 @@
     "covered": 6,
     "total": 6
   },
-  "literal_passages_checked": 717,
-  "proposed_quotations_checked": 13,
-  "user_adjudicated_comparisons": 13,
+  "literal_passages_checked": 718,
+  "proposed_quotations_checked": 14,
+  "user_adjudicated_comparisons": 14,
   "reviewed_cases": [
     "jeremiah-accent",
     "numbers-yod-label",
@@ -41,12 +41,12 @@
     "lamentations-one-two",
     "proverbs-maqaf-illustration",
     "oleh-omission-count",
-    "appendix-date-pair"
+    "appendix-date-pair",
+    "job-chapter-verse"
   ],
   "unevaluated_cases": [
     "different-qere-count",
     "isaiah-decision-types",
-    "job-chapter-verse",
     "westminster-version-label",
     "seder-year-type",
     "tracked-shin-dot",

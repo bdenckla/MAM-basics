@@ -1590,8 +1590,14 @@
       }
     ],
     "explanation": "The current cached text at Job 9:10 contains the word; Job 10:9 does not. The Westminster URL and Mechon Mamre chapter-9 path support the former reference. No external page was fetched, and this check does not verify the example’s historical transcription or manuscript claims.",
-    "decision": "Reconcile the prose reference with Job 9:10 if that is the intended example.",
-    "reading_forms": []
+    "decision": "Ben, 2026-10-17: an obvious typo. He approves changing באיוב י,ט to באיוב ט,י, as shown below, so that the example names Job 9:10; #312 proposes that change to Avi.",
+    "reading_forms": [],
+    "prose_quotes": [
+      "באיוב י,ט",
+      "באיוב ט,י"
+    ],
+    "adjudication": "JOB-9-10-BEN-20261017",
+    "issue_number": 312
   },
   {
     "id": "westminster-version-label",
