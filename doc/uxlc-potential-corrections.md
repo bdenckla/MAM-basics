@@ -62,3 +62,21 @@ recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on
    location estimator, so those three values are estimates, not readings of the manuscript.
 3. 2026.08.05-19 (2 Sam 5:21.1), Daniel Holman's, describes removing a maqaf, but its change text
    equals its reference text, maqaf included, so the record proposes no change.
+
+## 4. Wrong letter name in a change-record note, found 2026-10-17
+
+Daniel Holman's record `UXLC2022.08.29#20` (also written 2022.08.29-20), released in 2022.12.07,
+cites 1 Sam 18:28.11. Its note
+says "patah under the ayin" where it should say "patah under the aleph". This is a correction to
+the letter named in the note: alef. It does not change the record's proposed vowel change or its
+Approved status. The note's exact wording is retained below; nothing has been reported.
+
+<details>
+<summary>Exact UXLC note</summary>
+
+> Ben Denckla: BHL has a hataf-patah under the aleph; BHL Appendix A finds a patah under the ayin in the LC but notes the difficulty reading the LC.
+
+</details>
+
+Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record `/404`, note `/404/notes/0` (changeset
+`2022.08.29`, number `20`; release `2022.12.07`; manuscript locator `Folio_161A 1:23`).
