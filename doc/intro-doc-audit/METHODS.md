@@ -521,6 +521,15 @@ heading at chapter 2 line 915; its live rendered anchor was not checked. Source 
 wording details are retained in report-prose-revision.json. Other MAM body-text labels
 identify their selected source form, including the deḥi and qamats-qatan forms.
 
+Since 2026-10-17 every passage panel instead links to the live Wikisource page, as
+Ben asked that day: an Introduction passage at the nearest heading at or above its
+snapshot line, with the anchor taken from the current mirror's headings, and a
+doc-note or verse passage at its verse anchor on MAM's chapter page. A live link
+can show text newer than the quotation. That day all 72 distinct Introduction
+anchors were found on the live pages, all 130 verse links had their verse template
+in the cached chapters, and 15 verse anchors on six chapter pages were found in the
+rendered pages. The two hand-made section links were removed.
+
 The subsequent [Proverbs 30:19 history check](proverbs-30-19-history.md) locates
 the actual 2013-05-27 example insertion and the 2020-11-08 chapter change from
 space to maqaf. All 41 visible chapter revisions and 22 linked-draft revisions

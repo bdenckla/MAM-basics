@@ -3,12 +3,15 @@
 import html
 import json
 import re
+from collections import Counter
 from functools import cache
-from urllib.parse import quote
 
 import mwparserfromhell
 
 from intro_doc_audit import audit, snapshot
+from mb_cmn import hebrew_verse_numerals as hvn
+from mb_cmn.he_wikisource_url import he_page_url
+from mb_cmn.mam_bknas_and_std_bknas import he_bk39_name
 
 
 def read(name):
@@ -147,8 +150,93 @@ class Sources:
         return record
 
 
+@cache
+def intro_page_titles():
+    """The mirrored Introduction pages' Wikisource titles, by page key."""
+    pages = json.loads(
+        (audit.ROOT / "in/mam-ws-intro/manifest.json").read_text(encoding="utf-8")
+    )["pages"]
+    return {key: page["title"] for key, page in pages.items()}
+
+
+@cache
+def mirror_headings(path):
+    """The current mirror's headings in page order, each with its MediaWiki anchor."""
+    seen, headings = Counter(), []
+    for line in (audit.ROOT / path).read_text(encoding="utf-8").splitlines():
+        if match := audit.HEAD.match(line):
+            text = " ".join(match[2].split())
+            anchor = text.replace(" ", "_")
+            seen[anchor] += 1
+            if seen[anchor] > 1:
+                anchor += f"_{seen[anchor]}"
+            headings.append((text, anchor))
+    return headings
+
+
+def section_link(path, line):
+    """Link the live Introduction page at the snapshot heading at or above line.
+
+    The heading comes from the recorded snapshot; its anchor comes from the current
+    mirror, which stands in for the live page. A heading the current mirror lacks
+    stops the build rather than leaving a dead anchor.
+    """
+    if not re.fullmatch(r"in/mam-ws-intro/[a-z0-9-]+\.mediawiki", path):
+        raise ValueError("An Introduction link needs a cached Introduction page")
+    above = [
+        " ".join(match[2].split())
+        for text in snapshot.text(path).splitlines()[:line]
+        if (match := audit.HEAD.match(text))
+    ]
+    page_key = path.removeprefix("in/mam-ws-intro/").removesuffix(".mediawiki")
+    title = intro_page_titles()[page_key]
+    if not above:
+        return he_page_url(title.replace(" ", "_")), escaped(title)
+    heading = above[-1]
+    if re.search(r"[\[\]{}<>'&]", heading):
+        raise ValueError(f"Heading markup needs its own anchor rule: {heading}")
+    anchors = [a for text, a in mirror_headings(path) if text == heading]
+    occurrence = above.count(heading)
+    if len(anchors) < occurrence:
+        raise ValueError(f"The current mirror lacks the heading {heading!r} in {path}")
+    url = he_page_url(title.replace(" ", "_"), anchors[occurrence - 1])
+    return url, prose(heading, (heading,))
+
+
+def verse_link(title, ref):
+    """Link the live MAM chapter page at the verse's anchor."""
+    chapter, verse = map(int, ref.rsplit(" ", 1)[1].split(":"))
+    chapter_he, verse_he = hvn.INT_TO_STR_DIC[chapter], hvn.INT_TO_STR_DIC[verse]
+    if not title.endswith(f" {chapter_he}/טעמים"):
+        raise ValueError(f"The chapter page {title} does not hold {ref}")
+    url = he_page_url(title.replace(" ", "_"), f"{chapter_he}_{verse_he}")
+    return url, escaped(ref)
+
+
+def wikisource_link(passage, sources):
+    """Return the URL and label of the live Wikisource place a passage quotes.
+
+    The link is to the live page, so after a later edit it can show newer text than
+    the quotation; Ben chose that on 2026-10-17. Dispatch follows Sources.resolve.
+    """
+    if "claim" in passage or passage.get("source") == "claim":
+        claim = sources.claims[passage.get("claim", passage.get("id"))]
+        return section_link(claim["path"], claim["line"])
+    if "note" in passage or passage.get("source") in {"note", "note-target"}:
+        note = sources.notes[passage.get("note", passage.get("id"))]
+        return verse_link(note["chapter_revision"]["resolved_title"], note["ref"])
+    if passage.get("source") == "intro-raw":
+        return section_link(passage["path"], passage["line"])
+    if passage.get("source") == "verse":
+        book, location = passage["id"].rsplit(" ", 1)
+        chapter_he = hvn.INT_TO_STR_DIC[int(location.split(":")[0])]
+        return verse_link(f"{he_bk39_name(book)} {chapter_he}/טעמים", passage["id"])
+    raise ValueError(f"No Wikisource link rule for this passage: {passage}")
+
+
 def panel(passage, sources):
     sources.resolve(passage)
+    url, label = wikisource_link(passage, sources)
     if passage.get("entire_note"):
         if passage["quote"] != sources.notes[passage["note"]]["body_text"]:
             raise ValueError("A complete note panel must contain the entire note")
@@ -176,7 +264,11 @@ def panel(passage, sources):
         + (" full-width" if passage.get("full_width") else "")
         + '"><h4>'
         + escaped(passage["label"])
-        + '</h4><div class="he" lang="he" dir="rtl">'
+        + '</h4><p class="source-link"><a href="'
+        + escaped(url)
+        + '">Wikisource: '
+        + label
+        + '</a></p><div class="he" lang="he" dir="rtl">'
         + escaped(visible_wikitext(quote))
         + "</div>"
         + (
@@ -339,45 +431,14 @@ def word_comparison_table(comparison, sources):
     )
 
 
-def introduction_section_link(reference, sources):
-    """Link the unique cached section heading, without a live-page fetch."""
-    path = reference["path"]
-    heading = reference["heading"]
-    sources.resolve(
-        {
-            "source": "intro-raw",
-            "path": path,
-            "line": reference["heading_line"],
-            "quote": heading,
-        }
-    )
-    lines = (audit.ROOT / path).read_text(encoding="utf-8").splitlines()
-    if sum(line.strip("=") == heading for line in lines) != 1:
-        raise ValueError("Section link needs one exact cached heading")
-    manifest = json.loads(
-        (audit.ROOT / "in/mam-ws-intro/manifest.json").read_text(encoding="utf-8")
-    )["pages"][reference["page_key"]]
-    url = (
-        "https://he.wikisource.org/wiki/"
-        + quote(manifest["title"].replace(" ", "_"), safe="/:")
-        + "#"
-        + quote(heading.replace(" ", "_"), safe=":")
-    )
-    if url != reference["url"] or manifest["revid"] != reference["revision"]:
-        raise ValueError("Section link differs from the cached page and heading")
-    return (
-        '<p>Introduction section: <a href="'
-        + escaped(url)
-        + '">'
-        + prose(heading, (heading,))
-        + "</a></p>"
-    )
-
-
 def card(case, sources):
     for key in ("title", "issue", "decision", "panels"):
         if not case.get(key):
             raise ValueError(f"Incomplete readable case {case.get('id')}: {key}")
+    if "introduction_section" in case:
+        raise ValueError(
+            "Section links are now per passage; remove introduction_section"
+        )
     passages = "".join(panel(p, sources) for p in case["panels"])
     membership = (
         membership_table(case["membership_comparison"], sources)
@@ -416,11 +477,6 @@ def card(case, sources):
         )
     adjudication = (
         adjudication_comparison(case, sources) if case.get("adjudication") else ""
-    )
-    section_link = (
-        introduction_section_link(case["introduction_section"], sources)
-        if case.get("introduction_section")
-        else ""
     )
     history = case.get("revision_history")
     history_note = (
@@ -463,7 +519,6 @@ def card(case, sources):
             case.get("prose_quotes", ()),
         )
         + "</p></div>"
-        + section_link
         + history_note
         + spin_offs
         + membership

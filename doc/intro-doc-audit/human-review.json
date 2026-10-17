@@ -945,15 +945,6 @@
     ],
     "decision": "Ben approves replacing the space with maqaf in the layout example, as shown below.",
     "reading_forms": [],
-    "introduction_section": {
-      "page_key": "ch2",
-      "path": "in/mam-ws-intro/ch2.mediawiki",
-      "heading_line": 915,
-      "heading": "עיצוב פסוקי אמ\"ת במהדורתנו: היישום בפועל",
-      "url": "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A4%D7%A8%D7%A7_%D7%91#%D7%A2%D7%99%D7%A6%D7%95%D7%91_%D7%A4%D7%A1%D7%95%D7%A7%D7%99_%D7%90%D7%9E%22%D7%AA_%D7%91%D7%9E%D7%94%D7%93%D7%95%D7%A8%D7%AA%D7%A0%D7%95:_%D7%94%D7%99%D7%99%D7%A9%D7%95%D7%9D_%D7%91%D7%A4%D7%95%D7%A2%D7%9C",
-      "revision": 3087893,
-      "anchor_basis": "MediaWiki heading fragment from the unique literal cached heading (spaces to underscores); no live rendered-anchor check."
-    },
     "revision_history": {
       "summary": "Added on 27 May 2013 with MAM’s then-current spaced form; the chapter changed to maqaf on 8 November 2020. The Introduction still has the space before and after that change and in its cached 2026 revision. This establishes an outdated example.",
       "links": [
@@ -1550,15 +1541,6 @@
     "explanation": "7 Tevet 5774 corresponds to 10 December 2013. Conversely, 10 December 2014 corresponds to 18 Kislev 5775. The local calendar conversions round-trip, so the stated pair cannot name one date.",
     "decision": "Ben, 2026-10-17: treat the Hebrew date as definitive; an off-by-one typo in the year explains “(10.12.14)”. He approves changing it to “(10.12.13)”, as shown below, and #311 proposes that change to Avi.",
     "reading_forms": [],
-    "introduction_section": {
-      "page_key": "appendices",
-      "path": "in/mam-ws-intro/appendices.mediawiki",
-      "heading_line": 474,
-      "heading": "חלק שני: חמש מגילות ושאר המקומות החסרים בכתר ארם צובה",
-      "url": "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A0%D7%A1%D7%A4%D7%97%D7%99%D7%9D#%D7%97%D7%9C%D7%A7_%D7%A9%D7%A0%D7%99:_%D7%97%D7%9E%D7%A9_%D7%9E%D7%92%D7%99%D7%9C%D7%95%D7%AA_%D7%95%D7%A9%D7%90%D7%A8_%D7%94%D7%9E%D7%A7%D7%95%D7%9E%D7%95%D7%AA_%D7%94%D7%97%D7%A1%D7%A8%D7%99%D7%9D_%D7%91%D7%9B%D7%AA%D7%A8_%D7%90%D7%A8%D7%9D_%D7%A6%D7%95%D7%91%D7%94",
-      "revision": 3088449,
-      "anchor_basis": "MediaWiki heading fragment from the unique literal cached heading (spaces to underscores); no live rendered-anchor check."
-    },
     "revision_history": {
       "summary": "Chapter 1 gained this sentence, with “(10.12.14)” already in it, in an edit saved at 14:22 UTC on 10 December 2013, the day of 7 Tevet 5774; the preceding revision, of 8 December 2013, lacks it. On 22 May 2019 the paragraph moved unchanged to the appendices, and the current revision, of 16 October 2026, still has “(10.12.14)”. A sentence written in December 2013 cannot report work ending in December 2014.",
       "links": [

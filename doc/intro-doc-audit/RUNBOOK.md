@@ -36,6 +36,12 @@ or Wikisource. Any later application or submission needs its own recorded scope.
   available locally; rendering fails rather than substituting another version.
 - `review.html` and `human-review-coverage.json` are generated. Opening or
   collapsing a case is UI state only; it is neither a decision nor completion.
+- Every quoted passage links to the live Wikisource page: an Introduction
+  passage at the nearest heading at or above its snapshot line, a doc-note or
+  verse at its verse anchor on MAM's chapter page. Ben chose live links on
+  2026-10-17, accepting that a link can show text newer than the quotation. A
+  heading missing from the current mirror stops the rebuild; cases carry no
+  hand-made section links.
 - `history-completion.json`, `revision-history-inventory.json` and
   `revision-history-results.json` record history coverage. The final original
   pass has 94/94 dispositions, including explicitly inconclusive cases; this
