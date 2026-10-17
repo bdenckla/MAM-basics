@@ -42,3 +42,7 @@ Ben approved the existing correction on 2026-10-15 at 15:03 UTC
 contradiction within the Introduction. The case is now in the collapsed Reviewed
 section, with its exact proposed wording and source quotations preserved. No source
 correction has been submitted or applied.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #322 proposes this correction to Avi; it is not applied.

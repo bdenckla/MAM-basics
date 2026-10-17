@@ -6,11 +6,11 @@ each word, source, vowel and proposed addition.
 
 | Verse | Explicit doc-note form | Current list | Editorial state |
 | --- | --- | --- | --- |
-| Genesis 30:27 | ל=וַיְבָרֲכֵ֥נִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1126) omits this word | Approved by Ben for proposal to Avi |
-| Numbers 10:9 | ל!=וֲנִזְכַּרְתֶּ֗ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132) omits this word | Approved by Ben for proposal to Avi |
-| 2 Samuel 8:10 | א=וּֽלְבָרֲכ֗וֹ | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L698) omits this word | Approved by Ben for proposal to Avi |
+| Genesis 30:27 | ל=וַיְבָרֲכֵ֥נִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1126) omits this word | Approved by Ben; proposed to Avi in #320 |
+| Numbers 10:9 | ל!=וֲנִזְכַּרְתֶּ֗ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch3.mediawiki#L1132) omits this word | Approved by Ben; proposed to Avi in #319 |
+| 2 Samuel 8:10 | א=וּֽלְבָרֲכ֗וֹ | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L698) omits this word | Approved by Ben; proposed to Avi in #318 |
 | Proverbs 30:17 | ל=לִֽיקֲּהַ֫ת־אֵ֥ם | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L712) omits this word | Ben’s review pending |
-| Song of Songs 1:6 | ל!=שֶׁשֱּׁזָפַ֖תְנִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L716) omits this word | Approved by Ben for proposal to Avi |
+| Song of Songs 1:6 | ל!=שֶׁשֱּׁזָפַ֖תְנִי | [List](https://github.com/bdenckla/MAM-basics/blob/89cb865729b0876f1fd32a8a3579eaec80b4fc0c/in/mam-ws-intro/ch5.mediawiki#L716) omits this word | Approved by Ben; proposed to Avi in #317 |
 
 Ben approves adding Song of Songs 1:6 (2026-10-14,
 `Sentinel_5cc0b84ada60819184ea0ba0de313702`). The list uses `ל=` at 8:2;
@@ -24,7 +24,7 @@ Insert this as the first entry and change `(6 פריטים)` to `(7 פריטים
 The doc-note retains `ל!=שֶׁשֱּׁזָפַ֖תְנִי`: `!=` means **surprisingly equals**.
 The exact current/proposed list, source revision and approval are retained in
 [adjudications.json](adjudications.json). Ben’s approvals are proposals for Avi’s
-review, not approval by Avi. No issue was filed, Avi was not contacted, and no
+review, not approval by Avi. At the time no issue was filed, Avi was not contacted, and no
 proposal was applied (`Sentinel_131b2b3098388191979e1058cfcfcfbd`).
 
 ## Concrete uncertainty and scope decisions
@@ -261,3 +261,7 @@ The exact source forms, current/proposed lists, insertion checks, approval evide
 separate phonetic question are retained in [adjudications.json](adjudications.json).
 These additions have not been submitted or applied. Proverbs 30:17 still awaits Ben’s
 decision.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #317 (Song of Songs 1:6), #318 (2 Samuel 8:10), #319 (Numbers 10:9) and #320 (Genesis 30:27) propose the four approved additions to Avi; none is applied. Proverbs 30:17 still awaits Ben's review.

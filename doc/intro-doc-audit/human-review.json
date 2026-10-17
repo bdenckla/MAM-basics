@@ -185,7 +185,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=3088451&oldid=2988015"
         }
       ]
-    }
+    },
+    "issue_number": 313
   },
   {
     "id": "numbers-yod-label",
@@ -253,7 +254,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2826807&oldid=2826802"
         }
       ]
-    }
+    },
+    "issue_number": 314
   },
   {
     "id": "deuteronomy-vav-label",
@@ -308,7 +310,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2835959&oldid=2835958"
         }
       ]
-    }
+    },
+    "issue_number": 315
   },
   {
     "id": "deuteronomy-leningrad-spelling",
@@ -399,7 +402,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2810192&oldid=2759383"
         }
       ]
-    }
+    },
+    "issue_number": 316
   },
   {
     "id": "ALL-HATAF-SONG-1-6",
@@ -462,7 +466,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2705674&oldid=1379872"
         }
       ]
-    }
+    },
+    "issue_number": 317
   },
   {
     "id": "ALL-HATAF-SAM-8-10",
@@ -521,7 +526,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2700730&oldid=2700515"
         }
       ]
-    }
+    },
+    "issue_number": 318
   },
   {
     "id": "ALL-HATAF-NUM-10-9",
@@ -580,7 +586,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2806442&oldid=2806441"
         }
       ]
-    }
+    },
+    "issue_number": 319
   },
   {
     "id": "ALL-HATAF-GEN-30-27",
@@ -635,7 +642,8 @@
           "url": "https://he.wikisource.org/w/index.php?diff=2800792&oldid=2799568"
         }
       ]
-    }
+    },
+    "issue_number": 320
   },
   {
     "id": "deuteronomy-hataf-count",
@@ -836,7 +844,8 @@
         }
       ]
     },
-    "adjudication": "DEUT-HATAF-COUNT-BEN-20261014"
+    "adjudication": "DEUT-HATAF-COUNT-BEN-20261014",
+    "issue_number": 321
   },
   {
     "id": "lamentations-one-two",
@@ -897,7 +906,8 @@
       "מִבַּת־"
     ],
     "adjudication": "LAM-1-6-PROPOSAL-20261014",
-    "discrepancy_type": "internal-Introduction-contradiction"
+    "discrepancy_type": "internal-Introduction-contradiction",
+    "issue_number": 322
   },
   {
     "id": "proverbs-maqaf-illustration",
@@ -962,7 +972,8 @@
         }
       ]
     },
-    "adjudication": "PROV-30-19-BEN-20261015"
+    "adjudication": "PROV-30-19-BEN-20261015",
+    "issue_number": 323
   },
   {
     "id": "oleh-omission-count",
@@ -1480,7 +1491,8 @@
         "label": "#310: Psalm 42:3 — missing supplied-oleh note",
         "url": "https://github.com/bdenckla/MAM-basics/issues/310"
       }
-    ]
+    ],
+    "issue_number": 324
   },
   {
     "id": "isaiah-decision-types",

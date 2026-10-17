@@ -19,3 +19,14 @@ This integration authorizes no source-data edits, deployment or further external
 submission. The separate index-label and issue-writing-policy branches are outside
 its scope. Open the main checkout's sibling [review.html](review.html) rather than
 relying on the original temporary checkout path.
+
+## 2026-10-17 — Wikisource links and submitted proposals
+
+Ben asked that every review entry link to Hebrew Wikisource; each quoted passage
+now links to the live page at the heading above it, or at its verse
+([RUNBOOK.md](RUNBOOK.md)). He then authorized issues for every approved
+proposal: #311 (the appendix's date) and #312 (the Job 9:10 reference), and
+#313–#324 for the twelve corrections approved earlier. Each
+decision record in [adjudications.json](adjudications.json) holds its issue and
+Ben's authorization; no proposal is applied. Proverbs 30:17's ḥataf addition
+still awaits Ben's review.

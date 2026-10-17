@@ -1,6 +1,6 @@
 # Numbers 9:7 — Ben’s confirmed doc-note wording correction
 
-State: live; Ben confirmed 2026-10-14; proposed source correction not applied.
+State: live; Ben confirmed 2026-10-14; proposed source correction not applied; proposal submitted in #314.
 
 Ben explicitly confirms that the doc-note should name yod rather than vav,
 in `Sentinel_ed2fbcd60d008191a26921b22a3c08d9`. The
@@ -27,3 +27,7 @@ chapter revision **2987712**; the Introduction entry is `ch3:L153`.
 The historical quotation is unchanged. This report update does not apply the
 correction to Wikisource, a cache, dataset or edition, and does not create an issue
 or merge main.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #314 proposes this correction to Avi; it is not applied.

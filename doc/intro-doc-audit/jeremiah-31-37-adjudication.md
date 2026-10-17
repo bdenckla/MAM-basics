@@ -1,6 +1,6 @@
 # Jeremiah 31:37 — Ben’s adjudication of the doc-note quotation
 
-State: live; Ben adjudicated 2026-10-14; research proposal recorded, source correction not applied.
+State: live; Ben adjudicated 2026-10-14; research proposal recorded, source correction not applied; proposal submitted in #313.
 
 This note records Ben’s direct adjudication and contextual observations from
 `Sentinel_a32e0898f09c8191bc489d5b907129fd`. Codex prepared the research record on
@@ -111,3 +111,7 @@ does not establish the origin of the mark.
 
 No Wikisource edit, issue/comment, dataset or edition change, main integration,
 deployment, or screenshot publication is part of this research update.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #313 proposes this correction to Avi; it is not applied.

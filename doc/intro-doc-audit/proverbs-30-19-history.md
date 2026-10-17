@@ -89,3 +89,7 @@ The case is settled and appears in Reviewed. The exact proposal is retained in
 Only the one boundary changes in the full proposed example. The separate Aleppo
 quotation and all historical source evidence are preserved. This approval records
 a proposal; no wiki edit or submission to Avi has occurred.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #323 proposes this correction to Avi; it is not applied.

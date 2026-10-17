@@ -1,6 +1,6 @@
 # Deuteronomy 6:21 — Ben’s adjudication of the opening source list
 
-State: live; Ben adjudicated 2026-10-14; proposed source correction not applied.
+State: live; Ben adjudicated 2026-10-14; proposed source correction not applied; proposal submitted in #316.
 
 Ben requests removing only bare ל from the opening defective-vav list in
 `Sentinel_4e66eddc6bf48191ba19bb417ae3ae7f`. His manuscript assessment is attributed
@@ -63,3 +63,7 @@ pointer `/book39s/0/chapters/6/21/2/1`, chapter revision **2987745**. The comple
 four-clause note and translation remain unchanged as historical evidence.
 Only the proposed note has the initial list entry removed. Research-only updates
 do not edit a cache, dataset, Wikisource page, issue/comment or main.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #316 proposes this correction to Avi; it is not applied.

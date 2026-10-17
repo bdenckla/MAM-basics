@@ -32,3 +32,7 @@ including every Hebrew codepoint. Exact quotations and the thirteen comparisons
 remain in [review.html](review.html#oleh-omission-count);
 [history evidence](oleh-count-history-sources.json) and
 [note evidence](oleh-count-evidence.json) retain the source details.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #324 proposes this correction to Avi; it is not applied.

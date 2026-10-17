@@ -8,7 +8,7 @@
       "transcript_evidence": "Sentinel_a32e0898f09c8191bc489d5b907129fd",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied",
+    "status": "doc-note-error-adjudicated-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-313",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "ירמיהו לא/טעמים",
@@ -99,7 +99,23 @@
       "status": "not-established-history",
       "description": "The post-gap נְאֻם־יְהֹוָֽה may have been copied separately from verse 31:36, omitting sof pasuq, rather than copying the whole phrase beginning הִנֵּ֛ה יָמִ֥ים. The preceding verse does have that ending, but matching text does not establish a copying event; the wrong mark predates the recent phrase restoration."
     },
-    "scope": "Research/report proposal only. No source cache, scripture dataset, edition, Wikisource page, issue/comment, main integration or deployment changed."
+    "scope": "Research/report proposal only. No source cache, scripture dataset, edition, Wikisource page, issue/comment, main integration or deployment changed. Ben later authorized submission: #313, filed 2026-10-17, proposes this correction to Avi.",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 313,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/313",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1643 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    },
+    "application_status": "unapplied"
   },
   {
     "id": "NUM-9-7-BEN-20261014",
@@ -110,7 +126,7 @@
       "transcript_evidence": "Sentinel_ed2fbcd60d008191a26921b22a3c08d9",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-314",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "במדבר ט/טעמים",
@@ -137,7 +153,23 @@
     "proposed_explanation": "(Spelling with yod included.)",
     "research_note": "numbers-9-7-adjudication.md",
     "independent_check": "The selected MAM word contains yod and no vav. The Introduction and doc-note's Leningrad clause describe the same presence/absence of yod. The existing spelling-prose proof retains the faithful raw-note comparison.",
-    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged. Ben later authorized submission: #314, filed 2026-10-17, proposes this correction to Avi.",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 314,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/314",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1259 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    },
+    "application_status": "unapplied"
   },
   {
     "id": "DEUT-32-34-BEN-20261014",
@@ -148,7 +180,7 @@
       "transcript_evidence": "Sentinel_04aee01833c88191be854758be2400a8",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "status": "doc-note-wording-correction-confirmed-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-315",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "דברים לב/טעמים",
@@ -176,7 +208,23 @@
     "research_note": "deuteronomy-32-34-adjudication.md",
     "inverse_of": "NUM-9-7-BEN-20261014",
     "independent_check": "The faithful raw chapter and parsed note both contain the current wording. The selected MAM word contains vav and no yod; the Introduction and the note's Leningrad clause describe the presence/absence of vav. The existing spelling-prose proof retains the raw-note comparison.",
-    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged."
+    "scope": "Research/report proposal only; the source cache, Wikisource, datasets, editions and main are unchanged. Ben later authorized submission: #315, filed 2026-10-17, proposes this correction to Avi.",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 315,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/315",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1274 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    },
+    "application_status": "unapplied"
   },
   {
     "id": "DEUT-6-21-BEN-20261014",
@@ -187,7 +235,7 @@
       "transcript_evidence": "Sentinel_4e66eddc6bf48191ba19bb417ae3ae7f",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "opening-list-correction-adjudicated-by-Ben; proposed-source-correction-not-applied",
+    "status": "opening-list-correction-adjudicated-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-316",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "chapter_revision": {
       "resolved_title": "דברים ו/טעמים",
@@ -239,7 +287,23 @@
       "disposition": "opened locally; not copied into the repository, uploaded or embedded"
     },
     "assistant_observation": "The supplied crop has a visibly irregular/obscured area across the word. This inspection does not independently adjudicate the reading or determine the cause of that appearance.",
-    "scope": "Research/report proposal only; the original full note and translation remain visible. No source cache, dataset, Wikisource, issue/comment or main change."
+    "scope": "Research/report proposal only; the original full note and translation remain visible. No source cache, dataset, Wikisource, issue/comment or main change. Ben later authorized submission: #316, filed 2026-10-17, proposes this correction to Avi.",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 316,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/316",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1508 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    },
+    "application_status": "unapplied"
   },
   {
     "id": "DEUT-HATAF-COUNT-BEN-20261014",
@@ -250,7 +314,7 @@
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
       "transcript_evidence": "Sentinel_5acb3b8ffb3c8191a3ac6cac00f3e4be"
     },
-    "status": "word-count-confirmed-by-Ben; proposed-source-correction-not-applied",
+    "status": "word-count-confirmed-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-321",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087744,
     "current": {
@@ -271,7 +335,23 @@
     "proposed_explanation": "(12 items.)",
     "research_note": "deuter-hataf-scope.md",
     "independent_check": "955/955 verses, 365/365 notes, all seven ketiv/qere templates and an independent MAM-simple body pass. All 12 definite scoped note words occur in the list; one uncertain Leningrad 3:22 candidate remains.",
-    "scope": "Research/report proposal only."
+    "scope": "Research/report proposal only. Ben later authorized submission: #321, filed 2026-10-17, proposes this correction to Avi.",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 321,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/321",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1608 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    },
+    "application_status": "unapplied"
   },
   {
     "id": "LAM-1-6-PROPOSAL-20261014",
@@ -284,7 +364,7 @@
       "kind": "substantive-approval",
       "transcript_evidence": "Sentinel_d0a73e635cc48191afb8ad0bf4fa6a4f"
     },
-    "status": "word-count-correction-approved-by-Ben; proposed-source-correction-not-applied",
+    "status": "word-count-correction-approved-by-Ben; proposed-source-correction-not-applied; submitted-in-issue-322",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087893,
     "current": {
@@ -306,7 +386,7 @@
     "research_note": "lamentations-1-6-proposal.md",
     "research_label": "Ben’s approval, source evidence and exact correction",
     "independent_check": "Introduction chapter 2 line 102 names the correct forms but reverses their counts. The cached raw verse and MAM’s special ketiv/qere template agree: ketiv מן בת, qere מִבַּת־, type כתיב תרתין מילין וקרי מילה חדה. No doc-note exists at this verse.",
-    "scope": "Research/report proposal only. Ben approves resolving the contradiction within the Introduction with the existing proposed wording.",
+    "scope": "Research/report proposal only. Ben approves resolving the contradiction within the Introduction with the existing proposed wording. Ben later authorized submission: #322, filed 2026-10-17, proposes this correction to Avi.",
     "proposal_history": [
       {
         "authority": {
@@ -320,8 +400,22 @@
       }
     ],
     "discrepancy_type": "internal-Introduction-contradiction",
-    "submission_status": "not-submitted",
-    "application_status": "unapplied"
+    "submission_status": "submitted",
+    "application_status": "unapplied",
+    "submission": {
+      "number": 322,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/322",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1624 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    }
   },
   {
     "id": "SONG-1-6-BEN-20261014",
@@ -333,7 +427,7 @@
       "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-317; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087740,
     "chapter_revision": {
@@ -364,11 +458,25 @@
     "proposed_entry": "[[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי);",
     "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשיר השירים}}'''[[מקרא על פי המסורה/כתובים#מגילת שיר השירים|מגילת שיר השירים]]''' (6 פריטים): [[שיר השירים ב/טעמים#ב ז|שיר השירים ב,ז]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ או  וְֽאִם־תְּעֽוֹרֲר֛וּ);{{הערה|ראו אותו פריט ב[[#מגילת שיר השירים עד \"בְּנוֹת צִיּוֹן\" (ג,יא)|רשימת הניקוד והטעמים]].}} [[שיר השירים ג/טעמים#ג ב|ג,ב]] (א=וַאֲסוֹבֲבָ֣ה); [[שיר השירים ג/טעמים#ג ג|ג,ג]] (א=הַסֹּבֲבִ֖ים); [[שיר השירים ג/טעמים#ג ה|ג,ה]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ); [[שיר השירים ג/טעמים#ג ו|ג,ו]] (א=כְּתִֽימֲר֖וֹת); [[שיר השירים ח/טעמים#ח ב|ח,ב]] (ל=אֶנְהָֽגֲךָ֗).{{הערה|וכמו כן לפי הסכמת בן־אשר ובן־נפתלי בספר החילופים.}}",
     "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשיר השירים}}'''[[מקרא על פי המסורה/כתובים#מגילת שיר השירים|מגילת שיר השירים]]''' (7 פריטים): [[שיר השירים א/טעמים#א ו|שיר השירים א,ו]] (ל=שֶׁשֱּׁזָפַ֖תְנִי); [[שיר השירים ב/טעמים#ב ז|שיר השירים ב,ז]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ או  וְֽאִם־תְּעֽוֹרֲר֛וּ);{{הערה|ראו אותו פריט ב[[#מגילת שיר השירים עד \"בְּנוֹת צִיּוֹן\" (ג,יא)|רשימת הניקוד והטעמים]].}} [[שיר השירים ג/טעמים#ג ב|ג,ב]] (א=וַאֲסוֹבֲבָ֣ה); [[שיר השירים ג/טעמים#ג ג|ג,ג]] (א=הַסֹּבֲבִ֖ים); [[שיר השירים ג/טעמים#ג ה|ג,ה]] (א=וְֽאִם־תְּע֥וֹרֲר֛וּ); [[שיר השירים ג/טעמים#ג ו|ג,ו]] (א=כְּתִֽימֲר֖וֹת); [[שיר השירים ח/טעמים#ח ב|ח,ב]] (ל=אֶנְהָֽגֲךָ֗).{{הערה|וכמו כן לפי הסכמת בן־אשר ובן־נפתלי בספר החילופים.}}",
-    "submission_status": "not-submitted",
+    "submission_status": "submitted",
     "application_status": "unapplied",
     "proposed_reviewer": "Avi",
     "theme": "non-guttural ḥataf list completeness",
-    "syntax_explanation": "The current Song list already uses ל= at8:2. The doc-note’s != means surprisingly equals; the proposed list entry uses ל= to state the manuscript form."
+    "syntax_explanation": "The current Song list already uses ל= at8:2. The doc-note’s != means surprisingly equals; the proposed list entry uses ל= to state the manuscript form.",
+    "submission": {
+      "number": 317,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/317",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1940 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    }
   },
   {
     "id": "SAM-8-10-BEN-20261014",
@@ -380,7 +488,7 @@
       "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-318; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087740,
     "chapter_revision": {
@@ -411,10 +519,24 @@
     "proposed_entry": "[[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ);",
     "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשמואל}}'''[[מקרא על פי המסורה/נביאים#ספר שמואל|ספר שמואל]]''' (30 פריטים): [[שמואל א ב/טעמים#ב כה|שמ\"א ב,כה]] (א=וּפִֽלֲל֣וֹ); [[שמואל א ג/טעמים#ג יג|שמ\"א ג,יג]] (א=כִּֽי־מְקַלֲלִ֤ים); [[שמואל א ד/טעמים#ד יז|שמ\"א ד,יז]] (א=הַֽמֲבַשֵּׂ֜ר); [[שמואל א ז/טעמים#ז ג|שמ\"א ז,ג]] (א=מִתּוֹכֲכֶ֖ם); [[שמואל א ט/טעמים#ט ו|שמ\"א ט,ו]] (א=נֵ֣לֲכָה); [[שמואל א יג/טעמים#יג י|שמ\"א יג,י]] (א=לְבָרֲכֽוֹ); [[שמואל א יז/טעמים#יז נא|שמ\"א יז,נא]] (א=וַיְמֹ֣תֲתֵ֔הוּ); [[שמואל א יז/טעמים#יז נב|שמ\"א יז,נב]] (א=חַֽלֲלֵ֤י); [[שמואל א יח/טעמים#יח כג|שמ\"א יח,כג]] (א=הַֽנֲקַלָּ֤ה); [[שמואל א כד/טעמים#כד י|שמ\"א כד,י]] (א=לַהֲרָגֲךָ֖); [[שמואל א כה/טעמים#כה ז|שמ\"א כה,ז]] (א=גֹזֲזִ֖ים); [[שמואל א כה/טעמים#כה יא|שמ\"א כה,יא]] (א=לְגֹזֲזָ֑י); [[שמואל א כה/טעמים#כה כו|שמ\"א כה,כו]] (א=וְהַֽמֲבַקְשִׁ֥ים); [[שמואל א כו/טעמים#כו יא|שמ\"א כו,יא]] (א=וְנֵלֲכָה־לָּֽנוּ); [[שמואל א ל/טעמים#ל טז|שמ\"א ל,טז]] (א=וְחֹ֣גֲגִ֔ים); [[שמואל ב א/טעמים#א ט|שמ\"ב א,ט]] (א=וּמֹ֣תֲתֵ֔נִי); [[שמואל ב י/טעמים#י ג|שמ\"ב י,ג]] (א=הַֽמֲכַבֵּ֨ד); [[שמואל ב יג/טעמים#יג כג|שמ\"ב יג,כג]] (א=גֹֽזֲזִים֙); [[שמואל ב יג/טעמים#יג כה|שמ\"ב יג,כה]] (א=וַֽיְבָרֲכֵֽהוּ); [[שמואל ב יד/טעמים#יד י|שמ\"ב יד,י]] (א=הַֽמֲדַבֵּ֤ר); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טו,ז]] (א=אֵ֣לֲכָה); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טז,ז]] (א=בְּקַֽלֲל֑וֹ); [[שמואל ב יט/טעמים#יט ו|שמ\"ב יט,ו]] (א=הַֽמֲמַלְּטִ֤ים); [[שמואל ב יט/טעמים#יט מ|שמ\"ב יט,מ]] (א=וַיְבָ֣רֲכֵ֔הוּ); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=הַֽמֲסִלָּ֑ה); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=מִן־הַֽמֲסִלָּ֤ה); [[שמואל ב כ/טעמים#כ יג|שמ\"ב כ,יג]] (א=מִן־הַֽמֲסִלָּ֑ה);{{הערה|פריט זה חסר ברשימת ברויאר בכתר ירושלים.}} [[שמואל ב כ/טעמים#כ טו|שמ\"ב כ,טו]] (א=סֹֽלֲלָה֙); [[שמואל ב כא/טעמים#כא ג|שמ\"ב כא,ג]] (א=וּבָרֲכ֖וּ); [[שמואל ב כב/טעמים#כב יב|שמ\"ב כב,יב]] (א=חַֽשֲׁרַת־מַ֖יִם).",
     "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בשמואל}}'''[[מקרא על פי המסורה/נביאים#ספר שמואל|ספר שמואל]]''' (31 פריטים): [[שמואל א ב/טעמים#ב כה|שמ\"א ב,כה]] (א=וּפִֽלֲל֣וֹ); [[שמואל א ג/טעמים#ג יג|שמ\"א ג,יג]] (א=כִּֽי־מְקַלֲלִ֤ים); [[שמואל א ד/טעמים#ד יז|שמ\"א ד,יז]] (א=הַֽמֲבַשֵּׂ֜ר); [[שמואל א ז/טעמים#ז ג|שמ\"א ז,ג]] (א=מִתּוֹכֲכֶ֖ם); [[שמואל א ט/טעמים#ט ו|שמ\"א ט,ו]] (א=נֵ֣לֲכָה); [[שמואל א יג/טעמים#יג י|שמ\"א יג,י]] (א=לְבָרֲכֽוֹ); [[שמואל א יז/טעמים#יז נא|שמ\"א יז,נא]] (א=וַיְמֹ֣תֲתֵ֔הוּ); [[שמואל א יז/טעמים#יז נב|שמ\"א יז,נב]] (א=חַֽלֲלֵ֤י); [[שמואל א יח/טעמים#יח כג|שמ\"א יח,כג]] (א=הַֽנֲקַלָּ֤ה); [[שמואל א כד/טעמים#כד י|שמ\"א כד,י]] (א=לַהֲרָגֲךָ֖); [[שמואל א כה/טעמים#כה ז|שמ\"א כה,ז]] (א=גֹזֲזִ֖ים); [[שמואל א כה/טעמים#כה יא|שמ\"א כה,יא]] (א=לְגֹזֲזָ֑י); [[שמואל א כה/טעמים#כה כו|שמ\"א כה,כו]] (א=וְהַֽמֲבַקְשִׁ֥ים); [[שמואל א כו/טעמים#כו יא|שמ\"א כו,יא]] (א=וְנֵלֲכָה־לָּֽנוּ); [[שמואל א ל/טעמים#ל טז|שמ\"א ל,טז]] (א=וְחֹ֣גֲגִ֔ים); [[שמואל ב א/טעמים#א ט|שמ\"ב א,ט]] (א=וּמֹ֣תֲתֵ֔נִי); [[שמואל ב ח/טעמים#ח י|שמ\"ב ח,י]] (א=וּֽלְבָרֲכ֗וֹ); [[שמואל ב י/טעמים#י ג|שמ\"ב י,ג]] (א=הַֽמֲכַבֵּ֨ד); [[שמואל ב יג/טעמים#יג כג|שמ\"ב יג,כג]] (א=גֹֽזֲזִים֙); [[שמואל ב יג/טעמים#יג כה|שמ\"ב יג,כה]] (א=וַֽיְבָרֲכֵֽהוּ); [[שמואל ב יד/טעמים#יד י|שמ\"ב יד,י]] (א=הַֽמֲדַבֵּ֤ר); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טו,ז]] (א=אֵ֣לֲכָה); [[שמואל ב טו/טעמים#טו ז|שמ\"ב טז,ז]] (א=בְּקַֽלֲל֑וֹ); [[שמואל ב יט/טעמים#יט ו|שמ\"ב יט,ו]] (א=הַֽמֲמַלְּטִ֤ים); [[שמואל ב יט/טעמים#יט מ|שמ\"ב יט,מ]] (א=וַיְבָ֣רֲכֵ֔הוּ); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=הַֽמֲסִלָּ֑ה); [[שמואל ב כ/טעמים#כ יב|שמ\"ב כ,יב]] (א=מִן־הַֽמֲסִלָּ֤ה); [[שמואל ב כ/טעמים#כ יג|שמ\"ב כ,יג]] (א=מִן־הַֽמֲסִלָּ֑ה);{{הערה|פריט זה חסר ברשימת ברויאר בכתר ירושלים.}} [[שמואל ב כ/טעמים#כ טו|שמ\"ב כ,טו]] (א=סֹֽלֲלָה֙); [[שמואל ב כא/טעמים#כא ג|שמ\"ב כא,ג]] (א=וּבָרֲכ֖וּ); [[שמואל ב כב/טעמים#כב יב|שמ\"ב כב,יב]] (א=חַֽשֲׁרַת־מַ֖יִם).",
-    "submission_status": "not-submitted",
+    "submission_status": "submitted",
     "application_status": "unapplied",
     "proposed_reviewer": "Avi",
-    "theme": "non-guttural ḥataf list completeness"
+    "theme": "non-guttural ḥataf list completeness",
+    "submission": {
+      "number": 318,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/318",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1882 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    }
   },
   {
     "id": "NUM-10-9-BEN-20261015",
@@ -427,7 +549,7 @@
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
       "time": "08:02 UTC"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-319; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087744,
     "chapter_revision": {
@@ -458,7 +580,7 @@
     "proposed_entry": "[[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם);",
     "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבמדבר}}'''[[מקרא על פי המסורה/תורה#ספר במדבר|ספר במדבר]]''' (18 פריטים): [[במדבר ג/טעמים#ג כז|ג,כז]] (א[ס]=הַקֳּהָתִֽי [{{קו תחתי|חטף קמץ}}]); [[במדבר ד/טעמים#ד ז|ד,ז]] (א[ס]=אֶת־הַקֳּעָרֹ֤ת [{{קו תחתי|חטף קמץ}}]); [[במדבר ה/טעמים#ה יח|ה,יח]] (ל=הַמְאָֽרֲרִֽים); [[במדבר ה/טעמים#ה יט|ה,יט]] (ל=הַֽמְאָרֲרִ֖ים); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַמְאָֽרֲרִ֑ים [1]); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַֽמְאָרֲרִ֖ים [2]); [[במדבר ה/טעמים#ה כז|ה,כז]] (ל=הַמְאָֽרֲרִים֙); [[במדבר ו/טעמים#ו כג|ו,כג]] (ל=תְבָרֲכ֖וּ); [[במדבר ו/טעמים#ו כז|ו,כז]] (ל=אֲבָרֲכֵֽם); [[במדבר טז/טעמים#טז לב|טז,לב]] (ל=כׇּל־הָרֲכֽוּשׁ); [[במדבר יח/טעמים#יח י|יח,י]] (ל=תֹּאכֲלֶ֑נּוּ); [[במדבר יח/טעמים#יח יג|יח,יג]] (ל=יֹאכֲלֶֽנּוּ); [[במדבר כג/טעמים#כג יח|כג,יח]] (ל=וּֽשֲׁמָ֔ע); [[במדבר כג/טעמים#כג כה|כג,כה]] (ל=תְבָרֲכֶֽנּוּ); [[במדבר כד/טעמים#כד ט|כד,ט]] (ל=מְבָרֲכֶ֣יךָ); [[במדבר כה/טעמים#כה יח|כה,יח]] (א[ס]=כִּ֣י צֹרֲרִ֥ים); [[במדבר לב/טעמים#לב לה|לב,לה]] (ל=וְיָגְבֳּהָֽה [{{קו תחתי|חטף קמץ}}]); [[במדבר לג/טעמים#לג נה|לג,נה]] (ל=וְצָרֲר֣וּ).",
     "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבמדבר}}'''[[מקרא על פי המסורה/תורה#ספר במדבר|ספר במדבר]]''' (19 פריטים): [[במדבר ג/טעמים#ג כז|ג,כז]] (א[ס]=הַקֳּהָתִֽי [{{קו תחתי|חטף קמץ}}]); [[במדבר ד/טעמים#ד ז|ד,ז]] (א[ס]=אֶת־הַקֳּעָרֹ֤ת [{{קו תחתי|חטף קמץ}}]); [[במדבר ה/טעמים#ה יח|ה,יח]] (ל=הַמְאָֽרֲרִֽים); [[במדבר ה/טעמים#ה יט|ה,יט]] (ל=הַֽמְאָרֲרִ֖ים); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַמְאָֽרֲרִ֑ים [1]); [[במדבר ה/טעמים#ה כד|ה,כד]] (ל=הַֽמְאָרֲרִ֖ים [2]); [[במדבר ה/טעמים#ה כז|ה,כז]] (ל=הַמְאָֽרֲרִים֙); [[במדבר ו/טעמים#ו כג|ו,כג]] (ל=תְבָרֲכ֖וּ); [[במדבר ו/טעמים#ו כז|ו,כז]] (ל=אֲבָרֲכֵֽם); [[במדבר י/טעמים#י ט|י,ט]] (ל=וֲנִזְכַּרְתֶּ֗ם); [[במדבר טז/טעמים#טז לב|טז,לב]] (ל=כׇּל־הָרֲכֽוּשׁ); [[במדבר יח/טעמים#יח י|יח,י]] (ל=תֹּאכֲלֶ֑נּוּ); [[במדבר יח/טעמים#יח יג|יח,יג]] (ל=יֹאכֲלֶֽנּוּ); [[במדבר כג/טעמים#כג יח|כג,יח]] (ל=וּֽשֲׁמָ֔ע); [[במדבר כג/טעמים#כג כה|כג,כה]] (ל=תְבָרֲכֶֽנּוּ); [[במדבר כד/טעמים#כד ט|כד,ט]] (ל=מְבָרֲכֶ֣יךָ); [[במדבר כה/טעמים#כה יח|כה,יח]] (א[ס]=כִּ֣י צֹרֲרִ֥ים); [[במדבר לב/טעמים#לב לה|לב,לה]] (ל=וְיָגְבֳּהָֽה [{{קו תחתי|חטף קמץ}}]); [[במדבר לג/טעמים#לג נה|לג,נה]] (ל=וְצָרֲר֣וּ).",
-    "submission_status": "not-submitted",
+    "submission_status": "submitted",
     "application_status": "unapplied",
     "proposed_reviewer": "Avi",
     "theme": "non-guttural ḥataf list completeness",
@@ -501,6 +623,20 @@
       "note": "Numbers 10:9/2/1",
       "text": "וֲנִזְכַּרְתֶּ֗ם",
       "construction": "Lookup from the retained doc-note form; MAM mark order verified without altering source captures."
+    },
+    "submission": {
+      "number": 319,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/319",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1735 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
     }
   },
   {
@@ -513,7 +649,7 @@
       "workflow_evidence": "Sentinel_131b2b3098388191979e1058cfcfcfbd",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-320; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087744,
     "chapter_revision": {
@@ -544,7 +680,7 @@
     "proposed_entry": "[[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי);",
     "current_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבראשית}}'''[[מקרא על פי המסורה/תורה#ספר בראשית|ספר בראשית]]''' (33 פריטים): [[בראשית א/טעמים#א יח|א,יח]] (א[ס],ל=וּֽלֲהַבְדִּ֔יל); [[בראשית ב/טעמים#ב יב|א,יב]] (א[ס],ל=וּֽזֲהַ֛ב); [[בראשית ב/טעמים#ב כג|א,כג]] (ל=לֻֽקֳחָה־זֹּֽאת [{{קו תחתי|חטף קמץ}}]); [[בראשית ג/טעמים#ג יז|ג,יז]] (א[ס],ל=תֹּֽאכֲלֶ֔נָּה); [[בראשית י/טעמים#י ג|י,ג]] (ל=אַשְׁכֲּנַ֥ז); [[בראשית יב/טעמים#יב ג|יב,ג]] (ל=וַאֲבָֽרֲכָה֙); [[בראשית יח/טעמים#יח כא|יח,כא]] (א[ס],ל=אֵֽרֲדָה־נָּ֣א); [[בראשית כב/טעמים#כב יח|כב,יח]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כד/טעמים#כד ס|כד,ס]] (ל=וַיְבָרֲכ֤וּ); [[בראשית כה/טעמים#כה כב|כה,כב]] (ל=וַיִּתְרֹֽצֲצ֤וּ); [[בראשית כו/טעמים#כו ד|כו,ד]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כו/טעמים#כו יב|כו,יב]] (ל=וַֽיְבָרֲכֵ֖הוּ); [[בראשית כז/טעמים#כז יט|כז,יט]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=וַֽיְבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=בֵּרֲכ֖וֹ); [[בראשית כז/טעמים#כז כט|כז,כט]] (ל=וּֽמְבָרֲכֶ֖יךָ); [[בראשית כז/טעמים#כז לא|כז,לא]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז לג|כז,לג]] (ל=וָאֲבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז לד|כז,לד]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז לח|כז,לח]] (א[ס]=הַֽבֲרָכָ֨ה); [[בראשית כז/טעמים#כז לח|כז,לח]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז מא|כז,מא]] (ל=בֵּרֲכ֖וֹ); [[בראשית כח/טעמים#כח ו|כח,ו]] (א[ס],ל=בְּבָרֲכ֣וֹ); [[בראשית כח/טעמים#כח יד|כח,יד]] (ל=וְנִבְרֲכ֥וּ); [[בראשית כט/טעמים#כט ג|כט,ג]] (א[ס],ל=וְגָלֲל֤וּ); [[בראשית כט/טעמים#כט ח|כט,ח]] (ל=וְגָֽלֲלוּ֙); [[בראשית ל/טעמים#ל לח|ל,לח]] (ל=בָּרֳהָטִ֖ים [{{קו תחתי|חטף קמץ}}]); [[בראשית ל/טעמים#ל לח|ל,לח]] (א[ס],ל=בְּשִֽׁקֲת֣וֹת); [[בראשית ל/טעמים#ל מא|ל,מא]] (ל=בָּרֳהָטִ֑ים [{{קו תחתי|חטף קמץ}}]); [[בראשית לח/טעמים#לח יב|לח,יב]] (ל=עַל־גֹּֽזֲזֵ֤י); [[בראשית מח/טעמים#מח ט|מח,ט]] (ל=וַאֲבָרֲכֵֽם); [[בראשית מח/טעמים#מח כ|מח,כ]] (ל=וַיְבָ֨רֲכֵ֜ם); [[בראשית מט/טעמים#מט כג|מט,כג]] (ל=וַֽיְמָרֲרֻ֖הוּ).",
     "proposed_full_list": "{{עוגן בשורה|חטפים באותיות לא-גרוניות בבראשית}}'''[[מקרא על פי המסורה/תורה#ספר בראשית|ספר בראשית]]''' (34 פריטים): [[בראשית א/טעמים#א יח|א,יח]] (א[ס],ל=וּֽלֲהַבְדִּ֔יל); [[בראשית ב/טעמים#ב יב|א,יב]] (א[ס],ל=וּֽזֲהַ֛ב); [[בראשית ב/טעמים#ב כג|א,כג]] (ל=לֻֽקֳחָה־זֹּֽאת [{{קו תחתי|חטף קמץ}}]); [[בראשית ג/טעמים#ג יז|ג,יז]] (א[ס],ל=תֹּֽאכֲלֶ֔נָּה); [[בראשית י/טעמים#י ג|י,ג]] (ל=אַשְׁכֲּנַ֥ז); [[בראשית יב/טעמים#יב ג|יב,ג]] (ל=וַאֲבָֽרֲכָה֙); [[בראשית יח/טעמים#יח כא|יח,כא]] (א[ס],ל=אֵֽרֲדָה־נָּ֣א); [[בראשית כב/טעמים#כב יח|כב,יח]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כד/טעמים#כד ס|כד,ס]] (ל=וַיְבָרֲכ֤וּ); [[בראשית כה/טעמים#כה כב|כה,כב]] (ל=וַיִּתְרֹֽצֲצ֤וּ); [[בראשית כו/טעמים#כו ד|כו,ד]] (ל=וְהִתְבָּרֲכ֣וּ); [[בראשית כו/טעמים#כו יב|כו,יב]] (ל=וַֽיְבָרֲכֵ֖הוּ); [[בראשית כז/טעמים#כז יט|כז,יט]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=וַֽיְבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז כז|כז,כז]] (ל=בֵּרֲכ֖וֹ); [[בראשית כז/טעמים#כז כט|כז,כט]] (ל=וּֽמְבָרֲכֶ֖יךָ); [[בראשית כז/טעמים#כז לא|כז,לא]] (ל=תְּבָרֲכַ֥נִּי); [[בראשית כז/טעמים#כז לג|כז,לג]] (ל=וָאֲבָרֲכֵ֑הוּ); [[בראשית כז/טעמים#כז לד|כז,לד]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז לח|כז,לח]] (א[ס]=הַֽבֲרָכָ֨ה); [[בראשית כז/טעמים#כז לח|כז,לח]] (ל=בָּרֲכֵ֥נִי); [[בראשית כז/טעמים#כז מא|כז,מא]] (ל=בֵּרֲכ֖וֹ); [[בראשית כח/טעמים#כח ו|כח,ו]] (א[ס],ל=בְּבָרֲכ֣וֹ); [[בראשית כח/טעמים#כח יד|כח,יד]] (ל=וְנִבְרֲכ֥וּ); [[בראשית כט/טעמים#כט ג|כט,ג]] (א[ס],ל=וְגָלֲל֤וּ); [[בראשית כט/טעמים#כט ח|כט,ח]] (ל=וְגָֽלֲלוּ֙); [[בראשית ל/טעמים#ל כז|ל,כז]] (ל=וַיְבָרֲכֵ֥נִי); [[בראשית ל/טעמים#ל לח|ל,לח]] (ל=בָּרֳהָטִ֖ים [{{קו תחתי|חטף קמץ}}]); [[בראשית ל/טעמים#ל לח|ל,לח]] (א[ס],ל=בְּשִֽׁקֲת֣וֹת); [[בראשית ל/טעמים#ל מא|ל,מא]] (ל=בָּרֳהָטִ֑ים [{{קו תחתי|חטף קמץ}}]); [[בראשית לח/טעמים#לח יב|לח,יב]] (ל=עַל־גֹּֽזֲזֵ֤י); [[בראשית מח/טעמים#מח ט|מח,ט]] (ל=וַאֲבָרֲכֵֽם); [[בראשית מח/טעמים#מח כ|מח,כ]] (ל=וַיְבָ֨רֲכֵ֜ם); [[בראשית מט/טעמים#מט כג|מט,כג]] (ל=וַֽיְמָרֲרֻ֖הוּ).",
-    "submission_status": "not-submitted",
+    "submission_status": "submitted",
     "application_status": "unapplied",
     "proposed_reviewer": "Avi",
     "theme": "non-guttural ḥataf list completeness",
@@ -571,6 +707,20 @@
       "note": "Genesis 30:27/2/0",
       "text": "וַיְבָרֲכֵ֥נִי",
       "construction": "Lookup from the retained doc-note form; MAM mark order verified without altering source captures."
+    },
+    "submission": {
+      "number": 320,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/320",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1771 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
     }
   },
   {
@@ -584,7 +734,7 @@
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4",
       "transcript_evidence": "Sentinel_a0613408f38c8191804afc8c85a5733c"
     },
-    "status": "approved-by-Ben; proposed-source-correction-not-submitted-or-applied",
+    "status": "approved-by-Ben; proposed-source-correction-submitted-in-issue-323; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087893,
     "current": {
@@ -608,9 +758,23 @@
     "current_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
     "proposed_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י־צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
     "history_basis": "proverbs-30-19-history.json",
-    "submission_status": "not-submitted",
+    "submission_status": "submitted",
     "application_status": "unapplied",
-    "scope": "Proposal/report update only; no live source edit or submission is authorized."
+    "scope": "Proposal/report update only; no live source edit or submission is authorized. Ben later authorized submission: #323, filed 2026-10-17, proposes this correction to Avi.",
+    "submission": {
+      "number": 323,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/323",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1907 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    }
   },
   {
     "id": "OLEH-COUNT-BEN-20261015",
@@ -623,7 +787,7 @@
       "kind": "substantive-approval",
       "source_thread_id": "01a0fe66-3397-70d3-b313-4f1dfaa190c4"
     },
-    "status": "approved-by-Ben-for-proposal-to-Avi; not-submitted-or-applied",
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-324; not-applied",
     "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
     "introduction_revision": 3087893,
     "current": {
@@ -644,7 +808,7 @@
     "proposed_explanation": "Thirteen poetic verses. This counts listed verses, not supporting doc-notes.",
     "research_note": "oleh-count-history.md",
     "research_label": "Count history and the two filed spin-off issues",
-    "submission_status": "not-submitted",
+    "submission_status": "submitted",
     "application_status": "unapplied",
     "spin_off_issues": [
       {
@@ -655,7 +819,21 @@
         "number": 310,
         "url": "https://github.com/bdenckla/MAM-basics/issues/310"
       }
-    ]
+    ],
+    "submission": {
+      "number": 324,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/324",
+      "filed": "2026-10-17",
+      "read_back": "identical, 1252 code points",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-17",
+        "time": "20:20 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Sure, go ahead and file those 12 issues"
+      }
+    }
   },
   {
     "id": "APPENDIX-DATE-BEN-20261017",
@@ -739,7 +917,16 @@
       "number": 312,
       "url": "https://github.com/bdenckla/MAM-basics/issues/312",
       "filed": "2026-10-17",
-      "read_back": "identical, 1260 code points"
+      "read_back": "identical, 1260 code points",
+      "comments": [
+        {
+          "url": "https://github.com/bdenckla/MAM-basics/issues/312#issuecomment-6240438440",
+          "posted": "2026-10-17",
+          "read_back": "identical, 557 code points",
+          "authority": "Ben, 2026-10-17: “Sure, add these to the issue”",
+          "summary": "The footnote's mgketer link uses book 30, which opens the Song of Songs, chapter 1; Job 9 is book 29. The footnote also misspells Westminster once, without samekh."
+        }
+      ]
     },
     "application_status": "unapplied",
     "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."

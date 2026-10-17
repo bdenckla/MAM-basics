@@ -22,7 +22,10 @@ revision on 2026-10-17):
   Mechon Mamre link, `c2709.htm`, is Job chapter 9.
 - Its mgketer link, `mikra/30/9/1`, uses book 30. In the repository's mgketer
   numbering (`py/mb_cmn/verse_external_links.py`) Job is book 29 and book 30 is
-  the Song of Songs. That link was not opened, and #312 does not mention it.
+  the Song of Songs. On 2026-10-17 mgketer.org's page for that link was the
+  Song of Songs, chapter 1, and its Job 9 page was book 29. At Ben's request
+  a [comment on #312](https://github.com/bdenckla/MAM-basics/issues/312#issuecomment-6240438440) reports this, together with
+  the footnote's one misspelling of Westminster, `וסטמינטר`, without samekh.
 
 ## Ben's decision
 

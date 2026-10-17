@@ -91,3 +91,7 @@ The cached evidence has been accounted for. It cannot establish the absence of
 manuscript occurrences that the cached notes never record. Resolving 3:22 would
 require deciding the note’s existing uncertainty; no manuscript scan work or
 interpretation change was undertaken or is proposed here.
+
+## Submitted to Avi
+
+On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #321 proposes this correction to Avi; it is not applied.
