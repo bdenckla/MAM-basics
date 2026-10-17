@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-17",
+  "scheduled_for_utc": "2026-10-17T06:00:00+00:00",
+  "source": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+  "previous_tested": "8bc42598e67b5a525d08b78eedea54b5b10ab119",
+  "review": {
+    "previous_recorded_anchor": "740daaa2af3472441437005769d67cbf21250141",
+    "reviewed_through": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+    "new_commits": 1,
+    "changed_paths": 1,
+    "disposition": "Reconciled the supplied hourly screening and examined the final status-only receipt. No new substantive endpoint change or consequential defect."
+  },
+  "allowed_input_commit_ids": [
+    "2507cdca31640043f7063392725d1491acf80f8b",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "runner": "Saved portable cloud forest; owning constrained Python 3.13.15; pinned Graphviz 16.0.0 (20260814.1018); no user-PC dependency.",
+  "mega": {
+    "name": "basics-mega",
+    "cwd": "/workspace/nightly-20261017/MAM-basics",
+    "source": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "started_at_utc": "2026-10-17T06:28:50.212223+00:00",
+    "exit_code": 0,
+    "seconds": 468.032,
+    "finished_at_utc": "2026-10-17T06:36:38.244102+00:00",
+    "steps": 60,
+    "cloud_skips": 0
+  },
+  "suite": {
+    "name": "basics-suite",
+    "cwd": "/workspace/nightly-20261017/MAM-basics",
+    "source": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "started_at_utc": "2026-10-17T06:36:38.467655+00:00",
+    "exit_code": 0,
+    "seconds": 312.451,
+    "finished_at_utc": "2026-10-17T06:41:50.919072+00:00",
+    "pytest_seconds": 309.2,
+    "passed": 1087,
+    "failed": 0,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "generated_differences": {
+    "svg_files": 8,
+    "svg_result": "Only geometry and known Times font-family aliases differ; all other XML elements, attributes, text and links agree.",
+    "change_log_files": 2,
+    "change_log_result": "Only the new_tree provenance ID and its two HTML references refresh to the frozen committed MAM-parsed/plus tree. All ten changes and report content agree.",
+    "provenance": {
+      "json_equal_except_new_tree": true,
+      "new_tree_is_frozen_committed_input": true,
+      "html_equal_except_tree_id_references": true,
+      "html_tree_id_references": 2,
+      "diff_count": 10,
+      "old_tree": "a0fca078bc1085582018576a8c228f54c81e4504",
+      "new_tree": "017e8377e7788f7e92cc8eb0944375b2cb879e4e"
+    },
+    "complete_patches": "Preserved in the owning private repository before cleanup; no regenerated output accepted."
+  },
+  "prior_repair": {
+    "commit": "acbb568b23c32708073d7ec7b9fd42e5350d80fe",
+    "ancestor_of_tested_source": true,
+    "result": "The complete suite now passes at the recorded source. The earlier failure receipt remains historical."
+  },
+  "pending_window": {
+    "frozen_source": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+    "observed_main": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+    "pending_commits": 0,
+    "observed_at_utc": "2026-10-17T06:45:37.803740+00:00",
+    "disposition": "No pending source window."
+  },
+  "execution_note": "The parent reported that an earlier task attempt failed before any turn. This is the only broad run: scheduled for 06:00 UTC, it began at 06:28:50 UTC after setup verification. A later transport disconnect did not stop the recorder or commands; no duplicate broad run was started.",
+  "publication": "Isolated review-nightly-20261017 branch only; no main/shared integration, direct deployment or dispatch.",
+  "limits": [
+    "Passing checks do not adjudicate editorial or manuscript interpretation.",
+    "No new repair, source refresh, baseline acceptance or frozen-font action.",
+    "This run created no schedules; the coordinating session owns the enabled hourly and daily schedules."
+  ]
+}
