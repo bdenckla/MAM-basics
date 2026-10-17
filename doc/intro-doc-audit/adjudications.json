@@ -656,5 +656,49 @@
         "url": "https://github.com/bdenckla/MAM-basics/issues/310"
       }
     ]
+  },
+  {
+    "id": "APPENDIX-DATE-BEN-20261017",
+    "case": "appendix-date-pair",
+    "authority": {
+      "person": "Ben",
+      "date": "2026-10-17",
+      "time": "15:27 UTC",
+      "kind": "substantive-approval",
+      "source_agent": "Claude Code",
+      "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+      "quotation": "I'm satisfied to treat the hebrew date (ז' טבת תשע\"ד) as definitive, since it is not the one in parens. And, the \"wrongness\" of the one in parens can be explained by an off-by-one typo in the year."
+    },
+    "status": "approved-by-Ben-for-proposal-to-Avi; submitted-in-issue-311; not-applied",
+    "source_base_commit": "89cb865729b0876f1fd32a8a3579eaec80b4fc0c",
+    "introduction_revision": 3088449,
+    "current": {
+      "claim": "appendices:L476",
+      "quote": "עוד שלב אחרון של עדכונים ותיקונים (בעיקר בהערות הנוסח) הסתיים בז' טבת תשע\"ד (10.12.14)."
+    },
+    "proposed_quotation": "עוד שלב אחרון של עדכונים ותיקונים (בעיקר בהערות הנוסח) הסתיים בז' טבת תשע\"ד (10.12.13).",
+    "changes": [
+      {
+        "before": "(10.12.14)",
+        "after": "(10.12.13)",
+        "purpose": "Change only the Gregorian year, so that the date in parentheses is 7 Tevet 5774, 10 December 2013; keep the Hebrew date, which Ben treats as definitive."
+      }
+    ],
+    "current_label": "Current Introduction date sentence",
+    "proposed_label": "Ben’s approved Gregorian year — not applied",
+    "current_explanation": "7 Tevet 5774 paired with 10 December 2014, which was 18 Kislev 5775.",
+    "proposed_explanation": "Only the year changes, from 14 to 13; the Hebrew date stays.",
+    "research_note": "appendix-date-pair-history.md",
+    "research_label": "History and Ben’s decision",
+    "history_basis": "appendix-date-pair-history.json",
+    "submission_status": "submitted",
+    "submission": {
+      "number": 311,
+      "url": "https://github.com/bdenckla/MAM-basics/issues/311",
+      "filed": "2026-10-17",
+      "read_back": "identical, 2580 code points"
+    },
+    "application_status": "unapplied",
+    "scope": "Ben authorized filing the proposal for Avi as an issue. No Wikisource edit is authorized or made here."
   }
 ]

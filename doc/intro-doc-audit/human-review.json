@@ -1538,18 +1538,50 @@
     "section": "discrepancies",
     "title": "The appendix’s completion date — 7 Tevet 5774 or 10 December 2014?",
     "issue": "The Hebrew and Gregorian dates printed for the end of a round of corrections fall in different years.",
-    "context": "This is the Introduction appendix’s account of work on the edition, especially the doc-notes. It is a date-label comparison; it does not establish when that work actually ended.",
+    "context": "The sentence closes the appendix’s account of the project’s second stage, the Five Megillot and the other passages missing from the Aleppo Codex. It dates that stage’s last round of updates and corrections, mainly to the doc-notes; the appendix says no more about the round. The page history dates when the sentence was written, not when that work ended.",
     "panels": [
       {
         "label": "Introduction, appendix — stated completion date",
         "claim": "appendices:L476",
-        "quote": "הסתיים בז' טבת תשע\"ד (10.12.14).",
-        "translation": "Ended on 7 Tevet 5774 (10 December 2014)."
+        "quote": "עוד שלב אחרון של עדכונים ותיקונים (בעיקר בהערות הנוסח) הסתיים בז' טבת תשע\"ד (10.12.14).",
+        "translation": "A further, final stage of updates and corrections (mainly in the doc-notes) ended on 7 Tevet 5774 (10.12.14)."
       }
     ],
     "explanation": "7 Tevet 5774 corresponds to 10 December 2013. Conversely, 10 December 2014 corresponds to 18 Kislev 5775. The local calendar conversions round-trip, so the stated pair cannot name one date.",
-    "decision": "Use the historical evidence to decide which date is intended, then make the other calendar date agree. Do not choose the event date from this mismatch alone.",
-    "reading_forms": []
+    "decision": "Ben, 2026-10-17: treat the Hebrew date as definitive; an off-by-one typo in the year explains “(10.12.14)”. He approves changing it to “(10.12.13)”, as shown below, and #311 proposes that change to Avi.",
+    "reading_forms": [],
+    "introduction_section": {
+      "page_key": "appendices",
+      "path": "in/mam-ws-intro/appendices.mediawiki",
+      "heading_line": 474,
+      "heading": "חלק שני: חמש מגילות ושאר המקומות החסרים בכתר ארם צובה",
+      "url": "https://he.wikisource.org/wiki/%D7%95%D7%99%D7%A7%D7%99%D7%98%D7%A7%D7%A1%D7%98:%D7%9E%D7%91%D7%95%D7%90_%D7%9C%D7%9E%D7%A7%D7%A8%D7%90_%D7%A2%D7%9C_%D7%A4%D7%99_%D7%94%D7%9E%D7%A1%D7%95%D7%A8%D7%94/%D7%A0%D7%A1%D7%A4%D7%97%D7%99%D7%9D#%D7%97%D7%9C%D7%A7_%D7%A9%D7%A0%D7%99:_%D7%97%D7%9E%D7%A9_%D7%9E%D7%92%D7%99%D7%9C%D7%95%D7%AA_%D7%95%D7%A9%D7%90%D7%A8_%D7%94%D7%9E%D7%A7%D7%95%D7%9E%D7%95%D7%AA_%D7%94%D7%97%D7%A1%D7%A8%D7%99%D7%9D_%D7%91%D7%9B%D7%AA%D7%A8_%D7%90%D7%A8%D7%9D_%D7%A6%D7%95%D7%91%D7%94",
+      "revision": 3088449,
+      "anchor_basis": "MediaWiki heading fragment from the unique literal cached heading (spaces to underscores); no live rendered-anchor check."
+    },
+    "revision_history": {
+      "summary": "Chapter 1 gained this sentence, with “(10.12.14)” already in it, in an edit saved at 14:22 UTC on 10 December 2013, the day of 7 Tevet 5774; the preceding revision, of 8 December 2013, lacks it. On 22 May 2019 the paragraph moved unchanged to the appendices, and the current revision, of 16 October 2026, still has “(10.12.14)”. A sentence written in December 2013 cannot report work ending in December 2014.",
+      "links": [
+        {
+          "label": "2013 addition to chapter 1",
+          "url": "https://he.wikisource.org/w/index.php?diff=517248&oldid=516953"
+        },
+        {
+          "label": "2019 removal from chapter 1",
+          "url": "https://he.wikisource.org/w/index.php?diff=900792&oldid=889002"
+        },
+        {
+          "label": "2019 addition to the appendices",
+          "url": "https://he.wikisource.org/w/index.php?diff=900793&oldid=888238"
+        },
+        {
+          "label": "History record and Ben’s decision",
+          "url": "appendix-date-pair-history.md"
+        }
+      ]
+    },
+    "adjudication": "APPENDIX-DATE-BEN-20261017",
+    "issue_number": 311
   },
   {
     "id": "job-chapter-verse",
