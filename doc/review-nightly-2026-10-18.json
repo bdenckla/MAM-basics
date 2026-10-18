@@ -1,0 +1,254 @@
+{
+  "date": "2026-10-18",
+  "scheduled_for_utc": "2026-10-18T06:00:00+00:00",
+  "coordination": {
+    "recorded_clearance_at_utc": "2026-10-18T06:37:23.631239+00:00",
+    "disposition": "Expensive execution began only after the coordinating session explicitly cleared the resource hold."
+  },
+  "runner": "Saved portable cloud forest; owning constrained Python 3.13.15 environments verified; pinned Graphviz 16.0.0 (20260814.1018); no user-PC inputs required.",
+  "publication": "Isolated review-nightly-20261018 branch only; no main push, deployment or dispatch.",
+  "hourly_receipts": "Pending hourly receipt updates in the coordinating session were not changed or discarded. This bounded endpoint review accounts for all new source changes since the recovered October 17 reviewed anchors; it claims no test execution for hourly screening.",
+  "source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+  "previous_tested": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+  "prior_receipt": "1e2bbaf8eccadae4ce9f3cdee695c7f92d225535",
+  "allowed_input_commit_ids": [
+    "3c7a60e9cfd7f670a35b3ea4dbfc2179367ef4aa",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "review": {
+    "review_from": "b82fe2374923e86b857a6d6ff0ca560d74789045",
+    "source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "commits": 4,
+    "changed_paths": 20,
+    "prior_12_proposals_preserved": true,
+    "recorded_submissions": [
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      317,
+      318,
+      319,
+      320,
+      321,
+      322,
+      323,
+      324
+    ],
+    "application_statuses": "All 14 unapplied; no source-data changes",
+    "readable_cases": 152,
+    "literal_passages": 718,
+    "proposed_quotations": 14,
+    "history_inventory_context_drift": [
+      {
+        "case": "appendix-date-pair",
+        "recorded_ben_reviewed": false,
+        "current_adjudication": "APPENDIX-DATE-BEN-20261017",
+        "recorded_adjudication": null,
+        "scope": "excluded-internal-or-control",
+        "history_status": "excluded"
+      },
+      {
+        "case": "job-chapter-verse",
+        "recorded_ben_reviewed": false,
+        "current_adjudication": "JOB-9-10-BEN-20261017",
+        "recorded_adjudication": null,
+        "scope": "excluded-internal-or-control",
+        "history_status": "excluded"
+      }
+    ],
+    "disposition": "Endpoint review completed: live-link dispatch follows the declared cached page/verse routes; the prior twelve proposals remain unchanged, two existing Ben decisions are recorded, and all fourteen submissions remain unapplied. Focused commands completed; inventory context differences are classified separately. Owner live-link and issue-posting evidence was not independently repeated.",
+    "reviewed_through": "80dd9f04e56ae705981749ba9fbafb7fb243c3de"
+  },
+  "mega": {
+    "name": "basics-mega",
+    "cwd": "/workspace/nightly-20261018/MAM-basics",
+    "source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "started_at_utc": "2026-10-18T06:37:23.655409+00:00",
+    "exit_code": 0,
+    "seconds": 459.423,
+    "finished_at_utc": "2026-10-18T06:45:03.078605+00:00",
+    "steps": 60,
+    "cloud_skips": 0
+  },
+  "suite": {
+    "name": "basics-suite",
+    "cwd": "/workspace/nightly-20261018/MAM-basics",
+    "source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "started_at_utc": "2026-10-18T06:45:03.290226+00:00",
+    "exit_code": 0,
+    "seconds": 300.922,
+    "finished_at_utc": "2026-10-18T06:50:04.212706+00:00",
+    "pytest_seconds": 298.25,
+    "passed": 1087,
+    "failed": 0,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "focused_commands": [
+    {
+      "name": "basics-review",
+      "cwd": "/workspace/nightly-20261018/MAM-basics",
+      "source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "review"
+      ],
+      "started_at_utc": "2026-10-18T06:50:04.234153+00:00",
+      "exit_code": 0,
+      "seconds": 1.418,
+      "finished_at_utc": "2026-10-18T06:50:05.652350+00:00"
+    },
+    {
+      "name": "basics-history",
+      "cwd": "/workspace/nightly-20261018/MAM-basics",
+      "source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "history-inventory"
+      ],
+      "started_at_utc": "2026-10-18T06:50:05.693769+00:00",
+      "exit_code": 0,
+      "seconds": 0.265,
+      "finished_at_utc": "2026-10-18T06:50:05.958601+00:00"
+    }
+  ],
+  "focused_result": "Review outputs reproduce: 152 cases, 718 literal passages and 14 proposed quotations. History inventory differs only in four context fields for two existing Ben decisions; no history classification or population changes.",
+  "generated_differences": {
+    "svg_files": 8,
+    "svg_result": "Geometry/known Times alias only; all other XML elements, attributes, text and links agree.",
+    "change_log_provenance": {
+      "json_equal_except_new_tree": true,
+      "new_tree_is_frozen_committed_input": true,
+      "html_equal_except_tree_id_references": true,
+      "html_tree_id_references": 2,
+      "diff_count": 10,
+      "old_tree": "a0fca078bc1085582018576a8c228f54c81e4504",
+      "new_tree": "017e8377e7788f7e92cc8eb0944375b2cb879e4e"
+    },
+    "history_inventory": {
+      "changes": [
+        {
+          "case": "appendix-date-pair",
+          "fields": {
+            "ben_reviewed": {
+              "before": false,
+              "after": true
+            },
+            "adjudication": {
+              "before": null,
+              "after": "APPENDIX-DATE-BEN-20261017"
+            }
+          }
+        },
+        {
+          "case": "job-chapter-verse",
+          "fields": {
+            "ben_reviewed": {
+              "before": false,
+              "after": true
+            },
+            "adjudication": {
+              "before": null,
+              "after": "JOB-9-10-BEN-20261017"
+            }
+          }
+        }
+      ],
+      "changed_scalar_fields": 4,
+      "all_other_fields_equal": true,
+      "classification_and_population_changes": 0,
+      "meaning": "Generated context now reflects the two recorded Ben approvals; exclusion/history routing and all other fields are unchanged."
+    },
+    "complete_patches": "Preserved in the owning private repository before cleanup."
+  },
+  "repair": {
+    "commit": "339dbb3b95b690bf42f915360b57f9393791448d",
+    "parent": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "branch": "review-nightly-20261018",
+    "scope": "Four generated context fields reflect two existing substantive Ben approvals; no classification, population, source-data or editorial decision changes.",
+    "evidence": {
+      "changes": [
+        {
+          "case": "appendix-date-pair",
+          "fields": {
+            "ben_reviewed": {
+              "before": false,
+              "after": true
+            },
+            "adjudication": {
+              "before": null,
+              "after": "APPENDIX-DATE-BEN-20261017"
+            }
+          }
+        },
+        {
+          "case": "job-chapter-verse",
+          "fields": {
+            "ben_reviewed": {
+              "before": false,
+              "after": true
+            },
+            "adjudication": {
+              "before": null,
+              "after": "JOB-9-10-BEN-20261017"
+            }
+          }
+        }
+      ],
+      "changed_scalar_fields": 4,
+      "all_other_fields_equal": true,
+      "classification_and_population_changes": 0,
+      "meaning": "Generated context now reflects the two recorded Ben approvals; exclusion/history routing and all other fields are unchanged."
+    },
+    "focused_recheck": {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "history-inventory"
+      ],
+      "source": "339dbb3b95b690bf42f915360b57f9393791448d",
+      "started_at_utc": "2026-10-18T06:53:19.031152+00:00",
+      "seconds": 0.214,
+      "exit_code": 0,
+      "inventory_byte_identical": true
+    },
+    "main_integration": false,
+    "full_suite_rerun_on_repair": false
+  },
+  "pending_window": {
+    "frozen_source": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "observed_main": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "pending_commits": 0,
+    "frozen_source_is_ancestor": true,
+    "observed_at_utc": "2026-10-18T06:53:18.902346+00:00",
+    "disposition": "No pending source window."
+  },
+  "limits": [
+    "Broad results belong to the frozen source, not later receipt or repair commits.",
+    "No new Hebrew/editorial decision, source refresh, product regeneration acceptance, baseline acceptance or frozen-font action.",
+    "Passing checks do not establish manuscript, translation or editorial correctness.",
+    "No schedules created; the coordinating session owns the enabled schedules."
+  ]
+}
