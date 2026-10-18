@@ -40,7 +40,7 @@ def run(
 ):
     """Use a bot to process chapters of Hebrew Wikisource."""
     assert not (no_save and identity_run), (no_save, identity_run)
-    _assert_pywikibot_dir_configured(pywikibot_args)
+    assert_pywikibot_dir_configured(pywikibot_args)
     run_paths = _build_run_paths()
     my_utils_fm.show_progress_g(__file__, "run-artifacts", run_paths["run-root"])
     if (no_save or identity_run) and post_download:
@@ -206,7 +206,11 @@ def _run_bot_on_book(botctx, book_plan):
         _run_bot_on_chapter(botctx, bkid, chapter_plan)
 
 
-def _assert_pywikibot_dir_configured(pywikibot_args):
+def assert_pywikibot_dir_configured(pywikibot_args):
+    """Exit unless a pywikibot directory holding the bot's login files is named.
+
+    The introduction bot, py/subcommands/ws_bot_intro.py, makes the same check.
+    """
     pywikibot_dir = _resolve_pywikibot_dir(pywikibot_args)
     if not pywikibot_dir:
         raise SystemExit(

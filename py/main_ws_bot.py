@@ -7,9 +7,13 @@ Subcommands:
     proto
                 Run the same edit flow against local files instead of the live
                 site.
+    intro
+                Edit pages of MAM's introduction via pywikibot, selecting them by
+                their in/mam-ws-intro/manifest.json keys rather than by book.
 
 Examples:
     .venv/Scripts/python.exe py/main_ws_bot.py proto --edits path.json
+    .venv/Scripts/python.exe py/main_ws_bot.py intro --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-post-download
     .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
@@ -19,6 +23,7 @@ Examples:
 import argparse
 import sys
 
+from subcommands import ws_bot_intro
 from subcommands import ws_bot_proto
 from subcommands import ws_bot_real
 from ws import ws_download_selector as wsds
@@ -35,7 +40,9 @@ def main() -> None:
     args, extra_args = parser.parse_known_args()
     if extra_args and not getattr(args, "allow_extra_args", False):
         parser.error(f"unrecognized arguments: {' '.join(extra_args)}")
-    wsds.validate_selector_args(args, args.selector_parser)
+    # The intro subcommand selects pages by key and has no chapter selector.
+    if args.selector_parser is not None:
+        wsds.validate_selector_args(args, args.selector_parser)
     args.func(args, extra_args)
 
 
@@ -97,6 +104,27 @@ def build_parser() -> argparse.ArgumentParser:
         allow_extra_args=False,
         selector_parser=proto_parser,
     )
+
+    intro_parser = subparsers.add_parser(
+        "intro",
+        help="Edit pages of MAM's introduction via pywikibot.",
+    )
+    intro_parser.add_argument("--edits", required=True)
+    intro_parser.add_argument(
+        "--no-post-download",
+        action="store_true",
+        help="Skip refreshing in/mam-ws-intro/ after a run that saved a page",
+    )
+    intro_parser.add_argument(
+        "--no-save",
+        action="store_true",
+        help="Apply the edits without saving; fail if any page would change",
+    )
+    intro_parser.set_defaults(
+        func=_run_intro,
+        allow_extra_args=True,
+        selector_parser=None,
+    )
     return parser
 
 
@@ -113,6 +141,15 @@ def _run_real(args: argparse.Namespace, pywikibot_args) -> None:
 
 def _run_proto(args: argparse.Namespace, _extra_args) -> None:
     ws_bot_proto.almost_main(args.edits, wsds.selected_book_plans(args))
+
+
+def _run_intro(args: argparse.Namespace, pywikibot_args) -> None:
+    ws_bot_intro.run(
+        args.edits,
+        pywikibot_args,
+        post_download=not args.no_post_download,
+        no_save=args.no_save,
+    )
 
 
 if __name__ == "__main__":

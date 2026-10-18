@@ -392,6 +392,12 @@ NOT_IN_MEGA: dict[str, str] = {
         " plumbing, and needs the network and the bot login.  Proposed in"
         " doc/mega-coverage-2026-09-10.md §4."
     ),
+    "py/main_ws_bot.py intro": (
+        "Claude-written on 2026-10-18, when Ben asked for a bot edit of MAM's"
+        " introduction: it saves edits to live Hebrew Wikisource under Ben's bot"
+        " account, so every run is a deliberate act.  Recorded in"
+        " py/ws/pywikibot-setup.md and py/ws/ws_bot_edit_history.md."
+    ),
     "py/main_tmpl_survey.py --write-expanded-stack-grammar-lock": (
         "Claude-written, accepted by Ben on 2026-09-10: every survey run is checked"
         " against the plus lock, so rewriting it on every run would make that check pass"

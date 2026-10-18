@@ -112,6 +112,24 @@ and the run's artifact directory.
 
        .venv/Scripts/python.exe py/main_ws_bot.py real --edits path.json -dir:$env:USERPROFILE/.pywikibot --identity-run
 
+## Introduction pages
+
+`main_ws_bot.py intro` edits pages of MAM's introduction, which the chapter bot
+cannot select. Its edit file has `"summary"`, `"edit-kind": "explicit-replacement"`
+and `"pages"`, which maps a key of `in/mam-ws-intro/manifest.json`, such as `ch2`, to
+a list of `{"old", "new", "comment"}` objects; each `old` must occur exactly once in
+its page. It takes the same `-dir:` argument:
+
+       .venv/Scripts/python.exe py/main_ws_bot.py intro --edits path.json -dir:$env:USERPROFILE/.pywikibot --no-save
+
+As with the chapter bot, `--no-save` saves nothing and, before a save, is expected to
+exit non-zero, listing exactly the pages the edit file targets. A saving run then
+refreshes the introduction's mirror, as `py/main_download.py fr-ws-intro` does, unless
+`--no-post-download` is given; that refresh rewrites all thirteen mirrored pages, so
+read its whole diff. Each run writes the edited page texts to
+`.novc/mam-ws-bot-intro-runs/<timestamp>/pages/` and the saved pages' diff links to
+`misc/saved-pages.json` there.
+
 ## Real-run artifact layout
 
 Each `main_ws_bot.py real` run now writes artifacts to a fresh timestamped
