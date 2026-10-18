@@ -619,8 +619,8 @@
       "scope": "excluded-internal-or-control",
       "scope_reason": "The two dates disagree within the appendix.",
       "comparison_kind": "Introduction-MAM",
-      "ben_reviewed": false,
-      "adjudication": null,
+      "ben_reviewed": true,
+      "adjudication": "APPENDIX-DATE-BEN-20261017",
       "introduction_claims": [
         "appendices:L476"
       ],
@@ -641,8 +641,8 @@
       "scope": "excluded-internal-or-control",
       "scope_reason": "The Introduction's reference label reverses its own link destination.",
       "comparison_kind": "Introduction-MAM",
-      "ben_reviewed": false,
-      "adjudication": null,
+      "ben_reviewed": true,
+      "adjudication": "JOB-9-10-BEN-20261017",
       "introduction_claims": [
         "ch1:L258"
       ],
