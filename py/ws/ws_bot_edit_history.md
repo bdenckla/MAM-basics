@@ -301,7 +301,7 @@ infrastructure has changed enough to make them misleading examples:
 - **Specification:** `in/mam-ws-bot-edits/silluq-before-meteg.json`;
   run artifacts `.novc/mam-ws-bot-real-runs/20261012-155640-850657-0400/`.
 
-### Exodus note links: 17:16 unbolded and given JSTOR's public address, 26:7 templated again, 2026-10-13 — current
+### Exodus note links: 17:16 unbolded and given JSTOR's public address, 26:7 templated again, 2026-10-13
 
 - **Purpose:** Let MAM-parsed read two notes that the Wikisource user Dovi had edited.
   Exodus 17:16's note, extended on 2026-10-12 with a paragraph citing Yuval Weiss's
@@ -334,6 +334,42 @@ infrastructure has changed enough to make them misleading examples:
 - **JSON files:** `in/mam-ws-bot-edits/exodus-17-26-note-links.json` and its selector,
   `exodus-17-26-note-links.chapters.json`; run artifacts
   `.novc/mam-ws-bot-real-runs/20261013-102232-324529-0400/`.
+
+### Introduction note templates: every `נוסח` call given `2=`, 2026-10-18 — current
+
+- **Purpose:** Ben asked on 2026-10-18 for every `{{נוסח}}` call in MAM's introduction to
+  take the form MAM's chapter pages use, the note as parameter 2 written `2=`, as a
+  uniform policy "rather than be 'clever'" about which notes need it. The template reads
+  only parameters 1 and 2, and shows parameter 2 only in the note-display edition; the
+  chapter pages took this form in the note-display edits of May 2024, and the
+  introduction's calls predated them. Of its six calls, four gave the note as one
+  argument, two positional and two named `א=`. Two split one note over several
+  arguments, chapter 2's Job 11:6 example and chapter 3's Genesis 35:22 example; the run
+  joined their arguments in order with `{{ש}}`, the chapter pages' separator, and the
+  joined Job 11:6 call equals MAM's own note at that verse.
+- **New mode:** the chapter bot selects only chapters, so this run added
+  `main_ws_bot.py intro` (`py/subcommands/ws_bot_intro.py`), which selects introduction
+  pages by their `in/mam-ws-intro/manifest.json` keys and has the chapter bot's login
+  check, dry run and post-run download (`fr-ws-intro`).
+- **Saving run:** chapter 2, revision 3087893 → 3090585 (four calls); chapter 3, 3087744 →
+  3090586 (one); chapter 4, 3088866 → 3090587 (one).
+- **Safety rule:** a script cut each `old` from the live wikitext of all 13 pages, read
+  just before the run; each occurs exactly once, and each `new` parses as exactly
+  parameter 1 and `2=`. The `--no-save` dry run's pages equalled that capture with the
+  replacements applied, codepoint for codepoint; the saving run's pages equalled the dry
+  run's, and the refreshed mirror's pages equalled both.
+- **Post-run download:** the refresh also brought in four of Avi's edits made since the
+  previous mirror commit: a dagesh in a ketiv-list form at Ecclesiastes 9:4 (chapter 4,
+  revision 3088866), nun's dagesh in the ketiv forms at Ezekiel 14:14 and 14:20, as
+  MAM-basics#307 asked (chapter 5, revision 3088859), and a phrase after the Heidenheim
+  Psalms entry (appendices, revision 3089143).
+- **One-shot:** every `old` describes the pre-edit text. Confirmed 2026-10-18,
+  immediately after the run: a `--no-save` re-run raised on chapter 2's first `old`.
+- **Follow-up:** MAM-basics#323's before and after now show the `2=` form.
+- **Edit level:** Raw page text string replacement, page-targeted.
+- **JSON file:** `in/mam-ws-bot-edits/intro-nusach-2-prefix.json`; run artifacts
+  `.novc/mam-ws-bot-intro-runs/20261018-121729-392296-0400/`, dry run
+  `.novc/mam-ws-bot-intro-runs/20261018-121701-421342-0400/`.
 
 ## How to look up the original code
 

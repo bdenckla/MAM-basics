@@ -30,3 +30,11 @@ proposal: #311 (the appendix's date) and #312 (the Job 9:10 reference), and
 decision record in [adjudications.json](adjudications.json) holds its issue and
 Ben's authorization; no proposal is applied. Proverbs 30:17's ḥataf addition
 still awaits Ben's review.
+
+## 2026-10-18 — the Introduction's note templates
+
+Ben asked that every `{{נוסח}}` call in the Introduction take the chapter pages'
+form, the note as parameter 2 written `2=`. The Wikisource bot's new `intro` mode
+made the six edits on chapters 2, 3 and 4 (`py/ws/ws_bot_edit_history.md`), the
+mirror was refreshed, and #323's before and after now show the `2=` form. The
+audit's snapshot quotations are unchanged.

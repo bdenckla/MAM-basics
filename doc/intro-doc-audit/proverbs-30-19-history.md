@@ -93,3 +93,11 @@ a proposal; no wiki edit or submission to Avi has occurred.
 ## Submitted to Avi
 
 On 2026-10-17 at 20:20 UTC Ben asked for an issue for each correction he had approved in this review: “Sure, go ahead and file those 12 issues”. #323 proposes this correction to Avi; it is not applied.
+
+## The example's note template, 2026-10-18
+
+At Ben's request a bot edit gave every `{{נוסח}}` call in the Introduction the
+form MAM's chapter pages use, with the note as parameter 2 written `2=`. In this
+example it changed only that ([chapter 2 revision 3090585](https://he.wikisource.org/w/index.php?diff=3090585&oldid=3087893)). The
+proposal's full example in [adjudications.json](adjudications.json) now has `2=`
+too, and #323's before and after show it.

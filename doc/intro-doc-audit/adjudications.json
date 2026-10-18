@@ -756,7 +756,7 @@
     "research_note": "proverbs-30-19-history.md",
     "research_label": "History and Ben’s approved correction",
     "current_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
-    "proposed_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י־צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
+    "proposed_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י־צ֥וּר|2=א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
     "history_basis": "proverbs-30-19-history.json",
     "submission_status": "submitted",
     "application_status": "unapplied",
@@ -773,7 +773,30 @@
         "source_agent": "Claude Code",
         "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
         "quotation": "Sure, go ahead and file those 12 issues"
-      }
+      },
+      "body_edits": [
+        {
+          "date": "2026-10-18",
+          "note": "Edited on 2026-10-18 by a Claude session, at Ben's request, to show the example's {{נוסח}} call with 2=, as chapter 2 has had it since revision 3090585.",
+          "read_back": "identical (py/main_github_issue_edit.py)",
+          "summary": "The before and after blocks show the 2= form, and the details say which revision added it."
+        }
+      ]
+    },
+    "syntax_update": {
+      "date": "2026-10-18",
+      "authority": {
+        "person": "Ben",
+        "date": "2026-10-18",
+        "time": "16:07 UTC",
+        "source_agent": "Claude Code",
+        "source_thread_id": "2f820cf6-3d3f-4301-bdb1-d71685173e13",
+        "quotation": "Use a bot to update all Introduction calls to נוסח to call it in its modern/correct form, namely, with the 2= prefix (technically not always needed but better to make this a uniform policy rather than be \"clever\" and determine which second parameter values don't need it)."
+      },
+      "revision": 3090585,
+      "diff": "https://he.wikisource.org/w/index.php?diff=3090585&oldid=3087893",
+      "live_full_example": "דֶּ֤רֶךְ הַנֶּ֨שֶׁר{{מ:לגרמיה}}בַּשָּׁמַיִם֮{{ר1}}דֶּ֥רֶךְ נָחָ֗שׁ {{נוסח|עֲלֵ֫י צ֥וּר|2=א=עֲלֵ֫י־צ֥וּר (במקף)}}{{ר3}}דֶּֽרֶךְ־אֳנִיָּ֥ה בְלֶב־יָ֑ם{{ר1}}וְדֶ֖רֶךְ גֶּ֣בֶר בְּעַלְמָֽה׃",
+      "note": "A bot edit gave every {{נוסח}} call in the Introduction the 2= form; in this example it changed only that. current_full_example keeps the audit snapshot's form, and proposed_full_example now has 2= too."
     }
   },
   {

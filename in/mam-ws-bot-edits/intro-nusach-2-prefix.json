@@ -1,0 +1,42 @@
+{
+  "summary": "Give every {{נוסח}} call in MAM's introduction the form its chapter pages use: the note as parameter 2, written 2=, with a note split over several arguments joined by {{ש}}",
+  "edit-kind": "explicit-replacement",
+  "pages": {
+    "ch2": [
+      {
+        "old": "{{נוסח|תחת השי\"ן|במקור נכתב בטעות: תחת העי\"ן.}}",
+        "new": "{{נוסח|תחת השי\"ן|2=במקור נכתב בטעות: תחת העי\"ן.}}",
+        "comment": "line 404 of revision 3087893: note given as positional argument"
+      },
+      {
+        "old": "{{נוסח|ה֗֝וּא|א=ה֝וּא}}",
+        "new": "{{נוסח|ה֗֝וּא|2=א=ה֝וּא}}",
+        "comment": "line 932 of revision 3087893: note given as named 'א' argument"
+      },
+      {
+        "old": "{{נוסח|עֲלֵ֫י צ֥וּר|א=עֲלֵ֫י־צ֥וּר (במקף)}}",
+        "new": "{{נוסח|עֲלֵ֫י צ֥וּר|2=א=עֲלֵ֫י־צ֥וּר (במקף)}}",
+        "comment": "line 968 of revision 3087893: note given as named 'א' argument"
+      },
+      {
+        "old": "{{נוסח|לְֽת֫וּשִׁיָּ֥ה|=א (מקום העולה באות הראויה לגעיה)|דפוסים=לְֽתוּשִׁ֫יָּ֥ה}}",
+        "new": "{{נוסח|לְֽת֫וּשִׁיָּ֥ה|2==א (מקום העולה באות הראויה לגעיה){{ש}}דפוסים=לְֽתוּשִׁ֫יָּ֥ה}}",
+        "comment": "line 974 of revision 3087893: note split over 2 arguments (named '', named 'דפוסים'), joined by {{ש}}"
+      }
+    ],
+    "ch3": [
+      {
+        "old": "{{נוסח|רְאוּבֵ{{שני טעמים באות אחת|֗|֔}}ן|=ש ומ\"ש (רביע וזקף קטן)|ל=רְאוּבֵ{{שנין טעמים באות אחת|֔|֗}}ן (זקף קטן ורביע בהיפוך סדר הופעת הטעמים)|ברויאר היה בספק אם הרביע קיים בכתי\"ל, אבל מעיון בכתב־היד מתברר שכן (וכך קבע גם דותן).}}",
+        "new": "{{נוסח|רְאוּבֵ{{שני טעמים באות אחת|֗|֔}}ן|2==ש ומ\"ש (רביע וזקף קטן){{ש}}ל=רְאוּבֵ{{שנין טעמים באות אחת|֔|֗}}ן (זקף קטן ורביע בהיפוך סדר הופעת הטעמים){{ש}}ברויאר היה בספק אם הרביע קיים בכתי\"ל, אבל מעיון בכתב־היד מתברר שכן (וכך קבע גם דותן).}}",
+        "comment": "line 1356 of revision 3087744: note split over 3 arguments (named '', named 'ל', positional), joined by {{ש}}"
+      }
+    ],
+    "ch4": [
+      {
+        "old": "{{נוסח|אשר|במקור אתר וצ\"ל אשר}}",
+        "new": "{{נוסח|אשר|2=במקור אתר וצ\"ל אשר}}",
+        "comment": "line 346 of revision 3088866: note given as positional argument"
+      }
+    ]
+  }
+}
