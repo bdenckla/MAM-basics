@@ -1,4 +1,4 @@
-# Potential UXLC corrections, not reported
+# Potential UXLC corrections
 
 State: live. Section 4's correction was sent to Chris Kimball, the UXLC's editor, on 2026-10-19,
 in Ben's report "Errors in BHL claims in UXLC change-record notes". Nothing else here has been
