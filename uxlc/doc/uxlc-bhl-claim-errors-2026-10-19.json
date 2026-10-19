@@ -1,0 +1,1286 @@
+{
+  "about": {
+    "title": "Errors in BHL claims in UXLC change-record notes: findings and crop recipes",
+    "written_at": "2026-10-19T15:58:24-04:00",
+    "written_by": "Claude (Claude Code, Opus 5.5), at Ben Denckla's direction, by a scratch script that reran the report's generator and checked its output against the sent page.",
+    "report": {
+      "title": "Errors in BHL claims in UXLC change-record notes",
+      "dated": "19 October 2026",
+      "sent_on": "2026-10-19",
+      "sent_by": "Ben Denckla",
+      "sent_to": "Chris Kimball, UXLC's editor",
+      "prepared_by": "Claude sessions in Claude Code, at Ben Denckla's direction and with his edits.",
+      "sent_files": [
+        {
+          "file": "uxlc-bhl-claim-errors-2026-10-19.html",
+          "bytes": 120086,
+          "sha256": "1d2769f613e995229b8bf44bfdd776667daf562295f71aeec246196b2200d82a"
+        },
+        {
+          "file": "uxlc-bhl-claim-errors-2026-10-19.pdf",
+          "bytes": 231878,
+          "sha256": "e6c6ba0131e20b0049c957b1b48615fcfc8f8492508f52209d5bb5ca5af7cac9",
+          "note": "A print of the HTML, made in a Chromium browser; it embeds the same ten crops."
+        }
+      ],
+      "tracked_copy": {
+        "file": "uxlc-bhl-claim-errors-2026-10-19.html",
+        "differs_from_the_sent_html": "Each of the ten BHLA scan crops is replaced by a bracketed placeholder naming its BHLA page and entry, and a paragraph below the date says so. Nothing else differs."
+      }
+    },
+    "sources": {
+      "bhla_and_bhl": "The BHL Appendix A reference review on MAM-private's branch codex/bhl-appendix-a-20261016, at commit 6745feaab336c1e2548e2748f712a24c82dd71bb, under masorah-books/books/bhl/appendix-a/: reference-review.model.json, reference-change-record-links.json, body-counterparts.json and pages/page-NNNN.json. Every BHLA and BHL word here is that review's transcription of the printed page.",
+      "change_records": "MAM-basics' in/UXLC-misc/all_changes.json, whose records the review quotes byte for byte. Record 2026.08.05-115, newer than both, is from the 2026.10.19 change list as downloaded from tanach.us on 2026-10-19 (XML SHA-256 28a8f235c9294e113610025b9aee6734eb935e1ed352c97eacb2d6fbb5c96729).",
+      "generator": "make_report.py, make_crops.py and live_records.py, untracked, under .novc/uxlc-bhl-claims/ in the primary forest's MAM-basics clone. On 2026-10-19 this file's builder reran make_report.py and checked that the page it wrote is byte-identical to the sent HTML.",
+      "hebrew": "Every Hebrew string is copied by script from those sources or from the sent page, which the generator wrote from them; none is retyped. Each keeps its source's mark order, which is not always MAM's."
+    },
+    "fields": {
+      "findings": "One per row of the report's tables, in the report's order.",
+      "section": "The report's heading for the row's table.",
+      "kind": "\"wrong\", or \"unclear\" where the report calls the sentence true in spirit (the passage says verse where it means word).",
+      "record": "The change record: id, citation, release, its tanach.us change-list link, its index in all_changes.json as a JSON pointer (null for a record newer than that file), its reference and change texts, all its notes, and whether it has the analysis tags aBHL and aBHLA. The notes are as all_changes.json gives them, with white space collapsed; a newer record's are as its change list gives them.",
+      "note_index": "The 0-based index, in record.notes, of the note holding the passage.",
+      "passage": "The exact text of the note that the finding is about. The report shows it with white space collapsed.",
+      "suggestion": "The replacement the report suggests for the passage: a string, a list of paragraphs, or null where the report suggests no wording.",
+      "explanation": "The report's parenthetical explanation of the suggestion, or null.",
+      "bhla_entry": "The BHLA entry the finding rests on, as the review transcribes it: its review id (p<page>-c<column>-<number>), page, column, reference, word and any further words; for \"another word of the verse\", the entry the passage overlooks. Null when the finding is about the BHL body alone.",
+      "words": "The report's Words cell, top to bottom: each word with its label, or same_as naming the word above that it equals. UXLC's words are shown as the report shows them: an atom ending in maqaf joined to the next, and no sof pasuq.",
+      "crop": "For a first-table row, the entry id of its crop in crops.",
+      "report_note": "The first table's numbered note for the row, as plain text.",
+      "untagged_bhla_agreements": "Records whose resulting UXLC word is BHLA's but that lack the aBHLA tag; the report says each record's page says, by default, \"The UXLC does not agree with either BHL text.\"",
+      "scans": "The BHLA page scans that the crops are cut from, as committed to MAM-private at the commit named, each identified there by path and git blob, and anywhere by byte count and SHA-256. MAM-private's source-manifest.json, at that commit, lists the same files with the same byte counts and hashes.",
+      "crops": "A recipe for each crop that the sent copies show, in the first table's order. scan names its file in scans. rectangle is [left, top, right, bottom), in the scan's decoded pixels, top-left origin, with no EXIF orientation applied: the convention of MAM-private's source-manifest.json. To re-cut a crop, crop the decoded scan to rectangle, convert it to 8-bit grayscale (Pillow mode L) and save it as JPEG with quality 88 and optimize=True. With Pillow 12.3.0, on 2026-10-19, that reproduced every output byte for byte. shown_at is the width and height at which the sent page showed the crop, half its pixels.",
+      "crop_rectangles_chosen": "Each rectangle spans the entry's column, between the midpoints of the gutters around it (60 pixels beyond an outermost column), and the height of the review's box for the entry, trimmed left and right to 24 pixels beyond the ink: pixels darker than 110 after a 3-by-3 median filter."
+    }
+  },
+  "findings": [
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2022.08.22-1",
+        "citation": "Job 39:2.4",
+        "release": "2022.12.07",
+        "tanach_us": "https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.22-1",
+        "all_changes_json": "/381",
+        "reftext": "וְ֝יָדַ֗עְתָּ",
+        "changetext": "וְ֝יָדַעְתָּ֗",
+        "notes": [
+          "The revia over the tav is merged with an accent from the preceding line.",
+          "Ben Denckla: BHL agrees that this tav has a revia (and BHL implicitly agrees that no other letter in this word has revia!). BHL Appendix A has no entry for this word."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHL Appendix A has no entry for this word.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-35",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 39:2",
+        "hebrew": "וְ֝יָדַעְתָּ֜",
+        "for": "this word"
+      },
+      "crop": "p1236-c1-35",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "וְ֝יָדַעְתָּ֜"
+        },
+        {
+          "label": "UXLC before",
+          "hebrew": "וְ֝יָדַ֗עְתָּ"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "וְ֝יָדַעְתָּ֗"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2022.08.30-19",
+        "citation": "2Sam 8:1.2",
+        "release": "2022.12.07",
+        "tanach_us": "https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.30-19",
+        "all_changes_json": "/433",
+        "reftext": "אַֽחֲרֵי־ כֵ֔ן",
+        "changetext": "אַֽחֲרֵיכֵ֔ן",
+        "notes": [
+          "UXLC word differs from the other texts. The UXLC does not split the 6 consonants between the resh and the yod also lacks a maqaf after the resh because no maqaf is visible in the photo.",
+          "The Sefaria MAM has a maqaf between the resh and the yod.",
+          "Ben Denckla: The BHL splits the 6 consonants between the resh and the yod and adds a maqaf after the resh. BHL Appendix A has no entry for this word."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 2,
+      "passage": "BHL Appendix A has no entry for this word.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1232-c1-12",
+        "page": 1232,
+        "column": 1,
+        "reference": "2 Samuel 8:1",
+        "hebrew": "אַֽחֲרֵי כֵ֔ן",
+        "for": "this word"
+      },
+      "crop": "p1232-c1-12",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "אַֽחֲרֵי כֵ֔ן"
+        },
+        {
+          "label": "UXLC before",
+          "hebrew": "אַֽחֲרֵי־כֵ֔ן"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "אַֽחֲרֵיכֵ֔ן"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2022.09.01-18",
+        "citation": "2Kings 14:8.1",
+        "release": "2022.12.07",
+        "tanach_us": "https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.09.01-18",
+        "all_changes_json": "/505",
+        "reftext": "אָ֣ז",
+        "changetext": "אָ֣ז",
+        "notes": [
+          "The ink on this word is flaking off.",
+          "The BHL has a qamats then munah under the aleph; BHL Appendix A has no entries for this word."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHL Appendix A has no entries for this word.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1232-c2-32",
+        "page": 1232,
+        "column": 2,
+        "reference": "2 Kings 14:8",
+        "hebrew": "אָ֥ז",
+        "for": "this word"
+      },
+      "crop": "p1232-c2-32",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "אָ֥ז"
+        },
+        {
+          "label": "UXLC",
+          "hebrew": "אָ֣ז"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2023.03.25-115",
+        "citation": "Ps 125:3.3",
+        "release": "2023.07.04",
+        "tanach_us": "https://tanach.us/Changes/2023.07.04%20-%20Changes/2023.07.04%20-%20Changes.html#2023.03.25-115",
+        "all_changes_json": "/787",
+        "reftext": "יָנ֡וּחַ",
+        "changetext": "יָנ֡וּחַ",
+        "notes": [
+          "The accent qarney-para, \"great pazer\" (נ֟) is usually found only in books outside of the Sifrei Emet. The circles at the ends of the \"horns\" are a modern embellishment and not a factor in the decision making. The mark is likely to be a poorly written, but ordinary, pazer.",
+          "BHL has an ordinary pazer over the nun. BHL Appendix A has no note on this word in the verse. It does note word 12, however."
+        ],
+        "aBHL": true,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHL Appendix A has no note on this word in the verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1235-c2-02",
+        "page": 1235,
+        "column": 2,
+        "reference": "Psalms 125:3",
+        "hebrew": "יָנ֟וּחַ",
+        "for": "this word",
+        "additional_hebrew": [
+          {
+            "label": "=",
+            "hebrew": "יָנ֟וּחַ"
+          }
+        ],
+        "source_annotations": [
+          "(= יָנ֟וּחַ)"
+        ]
+      },
+      "crop": "p1235-c2-02",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "יָנ֟וּחַ"
+        },
+        {
+          "label": "UXLC",
+          "hebrew": "יָנ֡וּחַ"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2023.06.09-10",
+        "citation": "Prov 12:10.7",
+        "release": "2023.10.19",
+        "tanach_us": "https://tanach.us/Changes/2023.10.19%20-%20Changes/2023.10.19%20-%20Changes.html#2023.06.09-10",
+        "all_changes_json": "/818",
+        "reftext": "אַכְזָרִֽי׃",
+        "changetext": "אַכְזָרֽ͏ִי׃",
+        "notes": [
+          "The mark below the qof has the northeast-to-southwest inclination of a merkha. Since this word occurs at the end of the verse, the mark should be a meteg acting as a siluq; a merkha is inappropriate here. Adding note 't'.",
+          "BHL has a meteg after the hiriq. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1235-c2-29",
+        "page": 1235,
+        "column": 2,
+        "reference": "Proverbs 12:10",
+        "hebrew": "אַכְזָֽרִי",
+        "for": "this word"
+      },
+      "crop": "p1235-c2-29",
+      "report_note": {
+        "number": 1,
+        "text": "Prov 12:10.7: our transcription of BHLA has the silluq on the zayin, after its qamats, but BHLA's marks there are cramped, so that assignment is uncertain. Even so, BHLA as we transcribe it and “UXLC after” agree on the main point: both have the silluq between the qamats and the ḥiriq. What is unclear, in the manuscript as in BHLA, is whether the silluq is on the resh, before its ḥiriq, or on the zayin, after its qamats. “UXLC after” has it on the resh, which is in some ways the more charitable interpretation of the manuscript: it posits only an “early silluq”, not a change to the word's stress."
+      },
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "אַכְזָֽרִי"
+        },
+        {
+          "label": "UXLC before",
+          "hebrew": "אַכְזָרִֽי"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "אַכְזָרֽ͏ִי"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2026.02.05-22",
+        "citation": "Job 8:1.4",
+        "release": "2026.04.01",
+        "tanach_us": "https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-22",
+        "all_changes_json": "/1217",
+        "reftext": "וַיֹאמַֽר׃",
+        "changetext": "וַיֹאמַֽר׃",
+        "notes": [
+          "No dagesh is present in the yod. The text quality is excellent.",
+          "BHL has a dagesh in the yod. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1235-c3-30",
+        "page": 1235,
+        "column": 3,
+        "reference": "Job 8:1",
+        "hebrew": "וַיֹאמַֽר",
+        "for": "this word"
+      },
+      "crop": "p1235-c3-30",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "וַיֹאמַֽר"
+        },
+        {
+          "label": "UXLC",
+          "same_as": "BHLA"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2026.02.05-35",
+        "citation": "Job 10:15.12",
+        "release": "2026.04.01",
+        "tanach_us": "https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-35",
+        "all_changes_json": "/1230",
+        "reftext": "עָנְיֽ͏ִי׃",
+        "changetext": "עָנְי֥‍ִי׃",
+        "notes": [
+          "Under the first yod is a sloping line followed by a hiriq. The line slopes significantly in the northeast-to-southwest orientation as a merkha. Although the accent probably was intended to be a meteg, the UXLC transcription must make it a merkha for consistency.",
+          "BHL has a hiriq, then meteg under the first yod. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-02",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 10:15",
+        "hebrew": "עָנְיֽ͏ִי",
+        "for": "this word"
+      },
+      "crop": "p1236-c1-02",
+      "report_note": {
+        "number": 2,
+        "text": "Job 10:15.12: on its first yod, UXLC's word after the change has three characters, in this order: HEBREW ACCENT MERKHA (U+05A5), ZERO WIDTH JOINER (U+200D) and HEBREW POINT HIRIQ (U+05B4). UXLC's joiner keeps the merkha displayed before the ḥiriq, as the record's note describes the manuscript: “a sloping line followed by a hiriq.” Side by side, the merkha's stroke and the ḥiriq's dot look like a tevir, but the word has no HEBREW ACCENT TEVIR (U+059B)."
+      },
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "עָנְיֽ͏ִי"
+        },
+        {
+          "label": "UXLC before",
+          "same_as": "BHLA"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "עָנְי֥‍ִי"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2026.02.05-52",
+        "citation": "Job 16:20.4",
+        "release": "2026.04.01",
+        "tanach_us": "https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-52",
+        "all_changes_json": "/1247",
+        "reftext": "אֱ֝ל֗וֹהַ",
+        "changetext": "אֱ֝ל֗וֹהַּ",
+        "notes": [
+          "A dagesh is dark and well-positioned in he. Add the dagesh to the text.",
+          "BHL has a dagesh in the he. BHLA has no entry for this verse."
+        ],
+        "aBHL": true,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-12",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 16:20",
+        "hebrew": "אֱ֝ל֗וֹהַ",
+        "for": "this word"
+      },
+      "crop": "p1236-c1-12",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "אֱ֝ל֗וֹהַ"
+        },
+        {
+          "label": "UXLC before",
+          "same_as": "BHLA"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "אֱ֝ל֗וֹהַּ"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2026.08.05-8",
+        "citation": "Lev 15:8.2",
+        "release": "2026.10.19",
+        "tanach_us": "https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-8",
+        "all_changes_json": "/1376",
+        "reftext": "יָרֹ֛ק",
+        "changetext": "יָרֹ֛ק",
+        "notes": [
+          "The spacing between the slash and the dot of the putative tevir below the resh is excessive. However, the dot is reasonably dark, well-shaped and well-positioned. BHL and others consider the dot to be an anomaly and prefer a merkha as the actual accent. Add note 't'.",
+          "BHL has a merkha below the resh. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1230-c3-05",
+        "page": 1230,
+        "column": 3,
+        "reference": "Leviticus 15:8",
+        "hebrew": "יָרֹ֛ק",
+        "for": "this word"
+      },
+      "crop": "p1230-c3-05",
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "יָרֹ֛ק"
+        },
+        {
+          "label": "UXLC",
+          "same_as": "BHLA"
+        }
+      ]
+    },
+    {
+      "section": "BHLA has an entry for the word",
+      "kind": "wrong",
+      "record": {
+        "id": "2026.08.05-115",
+        "citation": "Mic 1:14.10",
+        "release": "2026.10.19",
+        "tanach_us": "https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-115",
+        "all_changes_json": null,
+        "reftext": "לְמַלְכֵ֥י",
+        "changetext": "לְמַלְכֵ֥י",
+        "notes": [
+          "The clearly-defined accent under the kaf has the northeast-to-southwest inclination of a merkha (ס֥). A tipeha (ס֖) has a southeaset-to-northwest inclination and the accent in the image is NOT a tipeha. A note 'c' will be added to the kaf noting that this is probably a particularity of the LC.",
+          "BHL has a tsere then tipeha under the kaf.  BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": null,
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1234-c1-08",
+        "page": 1234,
+        "column": 1,
+        "reference": "Micah 1:14",
+        "hebrew": "לְמַלְכֵ֥י",
+        "for": "this word"
+      },
+      "crop": "p1234-c1-08",
+      "report_note": {
+        "number": 3,
+        "text": "Mic 1:14.10: UXLC's earlier record for this word, 2022.12.12-9, correctly says “BHL Appendix A has a merkha under the kaf.”"
+      },
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "לְמַלְכֵ֥י"
+        },
+        {
+          "label": "UXLC",
+          "same_as": "BHLA"
+        }
+      ]
+    },
+    {
+      "section": "BHLA's entry for the verse is for another word",
+      "kind": "unclear",
+      "record": {
+        "id": "2024.04.12-26",
+        "citation": "2Sam 20:8.15",
+        "release": "2024.10.19",
+        "tanach_us": "https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.12-26",
+        "all_changes_json": "/1078",
+        "reftext": "וְעָלָ֞יו",
+        "changetext": "וְעָלָ֞ו",
+        "notes": [
+          "Example from BHL \"Qere and Ketiv\", p. xxi, third of Dotan's 4 qere cases: \"obliged to add a qere\". This word has neither a qere nor yatir Masoretic note. It also lacks any Masoretic note; however, Dotan ascribes the lack of note to \"scribe's negligence\". This qere is pre-existing in the UXLC, but has no support in the LC. Remove the yod from the qere; then remove the qere/ketiv pair, putting the qere word into a normal word with a 'w' tag.",
+          "BHL has the qere word וְעָלָ֞יו. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": "BHLA has no entry for this word.",
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1232-c1-25",
+        "page": 1232,
+        "column": 1,
+        "reference": "2 Samuel 20:8",
+        "hebrew": "לְבֻשׁ֗וּ",
+        "for": "another word of the verse"
+      },
+      "words": [
+        {
+          "label": "UXLC before",
+          "hebrew": "וְעָלָ֞יו"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "וְעָלָ֞ו"
+        }
+      ]
+    },
+    {
+      "section": "BHLA's entry for the verse is for another word",
+      "kind": "unclear",
+      "record": {
+        "id": "2026.02.05-64",
+        "citation": "Job 19:16.5",
+        "release": "2026.04.01",
+        "tanach_us": "https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-64",
+        "all_changes_json": "/1259",
+        "reftext": "בְּמוֹ־",
+        "changetext": "בְּמוֹ־",
+        "notes": [
+          "The image shows both parts of a maqaf-joined pair, this word is the first in the pair. No accent appears above the bet.",
+          "BHL has no accent above the bet. BHLA has no entry for this verse."
+        ],
+        "aBHL": true,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": "BHLA has no entry for this word.",
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-16",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 19:16",
+        "hebrew": "קָּ֭רָאתִי",
+        "for": "another word of the verse",
+        "source_annotations": [
+          "(?)"
+        ]
+      },
+      "words": [
+        {
+          "label": "UXLC",
+          "hebrew": "בְּמוֹ־"
+        }
+      ]
+    },
+    {
+      "section": "BHLA's entry for the verse is for another word",
+      "kind": "unclear",
+      "record": {
+        "id": "2026.02.05-65",
+        "citation": "Job 19:16.6",
+        "release": "2026.04.01",
+        "tanach_us": "https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-65",
+        "all_changes_json": "/1260",
+        "reftext": "פִ֝֗י",
+        "changetext": "פִ֗‍֝י",
+        "notes": [
+          "The image shows both parts of a maqaf-joined pair, this word is the second in the pair. A geresh-muqdam over the pe is clear; it is preceded by a small dot that may be a revia. Add transcription note 't'. Note that the putative revia appears before the geresh-muqdam in the image. Place the revia before the gerseh-muqdam; adding a zero-width-joiner (ZWJ, x200d) between them to achieve the ordering in the display.",
+          "BHL has a geresh-muqdam and a revia in that order. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": "BHLA has no entry for this word.",
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-16",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 19:16",
+        "hebrew": "קָּ֭רָאתִי",
+        "for": "another word of the verse",
+        "source_annotations": [
+          "(?)"
+        ]
+      },
+      "words": [
+        {
+          "label": "UXLC before",
+          "hebrew": "פִ֝֗י"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "פִ֗‍֝י"
+        }
+      ]
+    },
+    {
+      "section": "BHLA's entry for the verse is for another word",
+      "kind": "unclear",
+      "record": {
+        "id": "2026.02.05-78",
+        "citation": "Job 22:21.4",
+        "release": "2026.04.01",
+        "tanach_us": "https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-78",
+        "all_changes_json": "/1273",
+        "reftext": "וּשְׁלם",
+        "changetext": "וּשְׁלם",
+        "notes": [
+          "A very faint merkha or etnachta can be seen under the lamed. It is much lighter than surrounding text and may have been an erasure. It's too faint to be transcribed.",
+          "BHL has an etnachta under the lamed. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": "BHLA has no entry for this word.",
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-18",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 22:21",
+        "hebrew": "עִמּ֑וֹ",
+        "for": "another word of the verse",
+        "source_annotations": [
+          "(?)"
+        ]
+      },
+      "words": [
+        {
+          "label": "UXLC",
+          "hebrew": "וּשְׁלם"
+        }
+      ]
+    },
+    {
+      "section": "BHLA's entry for the verse is for another word",
+      "kind": "unclear",
+      "record": {
+        "id": "2026.08.05-5",
+        "citation": "Ex 20:3.2",
+        "release": "2026.10.19",
+        "tanach_us": "https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-5",
+        "all_changes_json": "/1373",
+        "reftext": "יִהְיֶֽה־",
+        "changetext": "יִהְיֶֽה־",
+        "notes": [
+          "The accent under the second yod lacks the northeast-to-southwest inclination required by the UXLC to transcribe as a merkha. Other texts have a merkha rather than a meteg under the second yod.",
+          "BHL has a merkha under the second yod. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": "BHLA has no entry for this word.",
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1230-c1-20",
+        "page": 1230,
+        "column": 1,
+        "reference": "Exodus 20:2",
+        "hebrew": "לֹֽ֣א",
+        "for": "another word of the verse",
+        "additional_hebrew": [
+          {
+            "label": "instead of",
+            "hebrew": "לֹֽ֣א־"
+          }
+        ]
+      },
+      "words": [
+        {
+          "label": "UXLC",
+          "hebrew": "יִהְיֶֽה־"
+        }
+      ]
+    },
+    {
+      "section": "BHLA's entry for the verse is for another word",
+      "kind": "unclear",
+      "record": {
+        "id": "2026.08.05-27",
+        "citation": "Job 11:6.3",
+        "release": "2026.10.19",
+        "tanach_us": "https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-27",
+        "all_changes_json": "/1395",
+        "reftext": "תַּֽעֲלֻמ֣וֹת",
+        "changetext": "תַּֽעֲלֻמ֣וֹת",
+        "notes": [
+          "The accent under the mem is clearly a munah. The author reports some editions see this as a merkha. Dotan sees it as a munah, however.",
+          "BHL has a munah under the mem. BHLA has no entry for this verse."
+        ],
+        "aBHL": true,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHLA has no entry for this verse.",
+      "suggestion": "BHLA has no entry for this word.",
+      "explanation": null,
+      "bhla_entry": {
+        "id": "p1236-c1-04",
+        "page": 1236,
+        "column": 1,
+        "reference": "Job 11:6",
+        "hebrew": "אֱ֝ל֗וֹהַ",
+        "for": "another word of the verse"
+      },
+      "words": [
+        {
+          "label": "UXLC",
+          "hebrew": "תַּֽעֲלֻמ֣וֹת"
+        }
+      ]
+    },
+    {
+      "section": "Other errors about BHLA",
+      "kind": "wrong",
+      "record": {
+        "id": "2022.08.29-20",
+        "citation": "1Sam 18:28.11",
+        "release": "2022.12.07",
+        "tanach_us": "https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.29-20",
+        "all_changes_json": "/404",
+        "reftext": "אֲהֵבַֽתְהוּ׃",
+        "changetext": "אַהֵבַֽתְהוּ׃",
+        "notes": [
+          "Ben Denckla: BHL has a hataf-patah under the aleph; BHL Appendix A finds a patah under the ayin in the LC but notes the difficulty reading the LC."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 0,
+      "passage": "BHL Appendix A finds a patah under the ayin in the LC but notes the difficulty reading the LC.",
+      "suggestion": "BHL Appendix A finds a patah under the aleph in the LC but notes the difficulty reading the LC.",
+      "explanation": "The word has no ayin. BHLA's pataḥ is under the alef, and BHLA marks the entry with a question mark.",
+      "bhla_entry": {
+        "id": "p1232-c1-04",
+        "page": 1232,
+        "column": 1,
+        "reference": "1 Samuel 18:28",
+        "hebrew": "אַהֵבַֽתְהוּ",
+        "for": "this word",
+        "source_annotations": [
+          "(?)"
+        ]
+      },
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "אַהֵבַֽתְהוּ"
+        },
+        {
+          "label": "UXLC before",
+          "hebrew": "אֲהֵבַֽתְהוּ"
+        }
+      ]
+    },
+    {
+      "section": "Other errors about BHLA",
+      "kind": "wrong",
+      "record": {
+        "id": "2024.04.15-35",
+        "citation": "Prov 23:26.8",
+        "release": "2024.10.19",
+        "tanach_us": "https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.15-35",
+        "all_changes_json": "/1135",
+        "reftext": "תִּצֹּֽרְנָה׃",
+        "changetext": "תִּצֽרְֹנָה׃",
+        "notes": [
+          "The qere word in the left margin, תצרנה, has the order of the tsade/resh reversed from that of the ketiv body text, תרצנה. In the ketiv body text the resh has a meteg; the tsade has a holam above the letter and a (weak) sheva below the letter. Letter by letter transposition of the markings puts a meteg on tsade and a holam above and a sheva below for the resh. Since the resh in the ketiv cannot take a dagesh, a dagesh cannot be placed in the tsade.",
+          "BHL qere word, תִּצֹּֽרְנָה׃, has a dagesh a holam on the tsade. BHLA qere word has no dagesh in the tsade, תִּצֹֽרְנָה׃; BHLA acknowledges (\"instead of:\") that the holam should be placed on the resh, too. The UXLC agrees with the BHLA \"instead of:\" qere word."
+        ],
+        "aBHL": false,
+        "aBHLA": true
+      },
+      "note_index": 1,
+      "passage": "BHL qere word, תִּצֹּֽרְנָה׃, has a dagesh a holam on the tsade. BHLA qere word has no dagesh in the tsade, תִּצֹֽרְנָה׃; BHLA acknowledges (\"instead of:\") that the holam should be placed on the resh, too. The UXLC agrees with the BHLA \"instead of:\" qere word.",
+      "suggestion": [
+        "BHLA agrees with UXLC that there is no dagesh in the צ in Leningrad.",
+        "Nonetheless, BHL body supplies, ex nihilo, a dagesh in the צ of its pointed qere, because that is the consensus pointing of this word and BHL body is merely a Leningrad-flavored consensus edition, not a diplomatic edition of Leningrad.",
+        "UXLC does not have a dagesh in the צ of its pointed qere, because UXLC is a diplomatic edition of Leningrad, albeit one that has only unpointed ketiv and pointed qere, a somewhat awkward exception to its diplomatic stance, since of course Leningrad has only pointed ketiv and unpointed qere.",
+        "BHLA agrees with UXLC that the ḥolam ḥaser dot is on the צ in Leningrad.",
+        "Nonetheless, in the journey from ketiv to qere, BHL body allows this ḥolam ḥaser dot to travel with its letter, צ, rather than stay with its letter-position, 3. Note that in BHL body and UXLC, the under-marks, silluq and sheva, stay with their letter-positions (2 and 3) rather than traveling with their letters across the רצ to צר transposition journey that is the essence of this ketiv/qere.",
+        "BHL body allows the ḥolam ḥaser dot to travel with its letter, צ, for the same reason that it supplies a dagesh in the צ of its pointed qere. BHLA notes that the consensus pointed ketiv (the \"instead of\" form of this word) would have the ḥolam ḥaser dot on ר.",
+        "UXLC does not allow the ḥolam ḥaser dot to travel with its letter, צ, for the same reason that its pointed qere has no dagesh in the צ."
+      ],
+      "explanation": "The note calls BHLA's word a qere word and writes it in the qere's letter order, תִּצֹֽרְנָה; BHLA's two words have the ketiv's letter order.",
+      "bhla_entry": {
+        "id": "p1235-c3-11",
+        "page": 1235,
+        "column": 3,
+        "reference": "Proverbs 23:26",
+        "hebrew": "תִּרֽצְֹנָה",
+        "for": "this word",
+        "additional_hebrew": [
+          {
+            "label": "instead of",
+            "hebrew": "תִּרֹֽצְנָה"
+          }
+        ],
+        "source_annotations": [
+          "(instead of: תִּרֹֽצְנָה)"
+        ]
+      },
+      "words": [
+        {
+          "label": "BHLA",
+          "hebrew": "תִּרֽצְֹנָה"
+        },
+        {
+          "label": "BHLA “instead of”",
+          "hebrew": "תִּרֹֽצְנָה"
+        },
+        {
+          "label": "BHL qere",
+          "hebrew": "תִּצֹּֽרְנָה"
+        },
+        {
+          "label": "UXLC after",
+          "hebrew": "תִּצֽרְֹנָה"
+        }
+      ]
+    },
+    {
+      "section": "Errors about both BHLA and the BHL body text",
+      "kind": "wrong",
+      "record": {
+        "id": "2024.04.12-31",
+        "citation": "Deut 22:16.4",
+        "release": "2024.10.19",
+        "tanach_us": "https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.12-31",
+        "all_changes_json": "/1083",
+        "reftext": "הַֽנַּעַרָ֖ה",
+        "changetext": "הַֽנַּעַרָ֖ה",
+        "notes": [
+          "Example from BHL \"Qere and Ketiv\", p. xxi, fourth of Dotan's 4 qere cases: unmarked qeres. Dotan has converted 13 LC qere/ketiv pairs in Deuteronomy 22 to ordinary words \"For the sake of convenience and esthetic reasons\". The words contain the ketiv letters with the qere markings as in the LC itself. This is one of the 13. The JPS Tanach(1999) preserves these qeres in all 13 cases. The above image shows a Masoretic dot referring to clear qere marking in the left margin: רה. The UXLC retains this qere/ketiv pair in fidelity to the LC.",
+          "BHL has no qere form for this word; it has the ketiv body text: הַֽנַּעַרָ֖. BHLA has no entry for this verse."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHL has no qere form for this word; it has the ketiv body text: הַֽנַּעַרָ֖. BHLA has no entry for this verse.",
+      "suggestion": "BHL has no qere form for this word; BHL has the pointed ketiv הַֽנַּעֲרָ֖, and BHLA has the pointed ketiv הַֽנַּעַרָ֖.",
+      "explanation": "The note gives BHLA's pointed ketiv as BHL's, and says that BHLA has no entry for this verse.",
+      "bhla_entry": {
+        "id": "p1231-c1-25",
+        "page": 1231,
+        "column": 1,
+        "reference": "Deuteronomy 22:16",
+        "hebrew": "הַֽנַּעַרָ֖",
+        "for": "this word"
+      },
+      "words": [
+        {
+          "label": "BHL",
+          "hebrew": "הַֽנַּעֲרָ֖"
+        },
+        {
+          "label": "in the note",
+          "hebrew": "הַֽנַּעַרָ֖"
+        }
+      ]
+    },
+    {
+      "section": "Errors about both BHLA and the BHL body text",
+      "kind": "wrong",
+      "record": {
+        "id": "2024.04.15-2",
+        "citation": "Gen 43:28.9",
+        "release": "2024.10.19",
+        "tanach_us": "https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.15-2",
+        "all_changes_json": "/1102",
+        "reftext": "וַיִּֽשְׁתַּחֲוּֽוּ׃",
+        "changetext": "וַיִּֽשְׁתַּחֲוֻּֽו׃",
+        "notes": [
+          "The qere letters in the left margin, וישתחוו, end in two vavs, whereas the (ketiv) body text shown in the image ends in a single vav. A problem arises as to how to distribute the 3 vowel/accent markings (dagesh, qubuts, meteg) shown on the (ketiv) body text vav among the two vavs of the qere. The conventional assignment is to place a dagesh on each of the last two vavs, leaving the meteg on the next-to-last vav (וַיִּֽשְׁתַּחֲוּֽוּ׃ as in the reference text and the BHLA qere). This replaces the qubuts with a dagesh acting as a shuruq dot. The same word appears as an ordinary word with a merkha accent in Gen 27:29.10. The UXLC places the qubuts on the next-to-last vav to be true to the LC image. A transcription note 'q' is added to emphasize this decision.",
+          "BHL has qere has no dagesh on the next-to-last vav and a dagesh in the last vav; the meteg is on the next-to-last vav, וְיִֽשְׁתַּחֲו֤וּ. BHLA agrees with the markings on the marked ketiv above, but has a dagesh on the last two vavs with the meteg on the next-to-last vav as in the reference text."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 1,
+      "passage": "BHL has qere has no dagesh on the next-to-last vav and a dagesh in the last vav; the meteg is on the next-to-last vav, וְיִֽשְׁתַּחֲו֤וּ. BHLA agrees with the markings on the marked ketiv above, but has a dagesh on the last two vavs with the meteg on the next-to-last vav as in the reference text.",
+      "suggestion": "BHL's qere has no dagesh on the next-to-last vav and a dagesh in the last vav; the silluq is on the next-to-last vav, וַיִּֽשְׁתַּחֲוֽוּ. BHLA's pointed ketiv agrees with the markings on the LC's ketiv described above, but BHLA's qere word has a dagesh on both of the last two vavs with the silluq on the next-to-last vav as in the reference text.",
+      "explanation": "BHL's qere, in the margin, differs from the quoted word in three marks: pataḥ, not sheva, under the first vav; a dagesh in the yod; and silluq (the note's meteg), not mahapakh, on the next-to-last vav. In the second sentence, “the marked ketiv above” is the LC's ketiv as the record's first note describes it; the sentence's first half is about BHLA's pointed ketiv, and its second half is about BHLA's qere word.",
+      "bhla_entry": {
+        "id": "p1229-c3-07",
+        "page": 1229,
+        "column": 3,
+        "reference": "Genesis 43:28",
+        "hebrew": "וַיִּֽשְׁתַּחֲוֻּֽ",
+        "for": "this word",
+        "additional_hebrew": [
+          {
+            "label": "qere",
+            "hebrew": "וַיִּֽשְׁתַּחֲוּֽוּ"
+          }
+        ],
+        "source_annotations": [
+          "(= qere וַיִּֽשְׁתַּחֲוּֽוּ)"
+        ]
+      },
+      "words": [
+        {
+          "label": "BHL qere",
+          "hebrew": "וַיִּֽשְׁתַּחֲוֽוּ"
+        },
+        {
+          "label": "in the note",
+          "hebrew": "וְיִֽשְׁתַּחֲו֤וּ"
+        },
+        {
+          "label": "BHLA",
+          "hebrew": "וַיִּֽשְׁתַּחֲוֻּֽ"
+        },
+        {
+          "label": "BHLA qere",
+          "hebrew": "וַיִּֽשְׁתַּחֲוּֽוּ"
+        },
+        {
+          "label": "UXLC before",
+          "same_as": "BHLA qere"
+        }
+      ]
+    },
+    {
+      "section": "Errors about the BHL body text",
+      "kind": "wrong",
+      "record": {
+        "id": "2022.08.30-19",
+        "citation": "2Sam 8:1.2",
+        "release": "2022.12.07",
+        "tanach_us": "https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.30-19",
+        "all_changes_json": "/433",
+        "reftext": "אַֽחֲרֵי־ כֵ֔ן",
+        "changetext": "אַֽחֲרֵיכֵ֔ן",
+        "notes": [
+          "UXLC word differs from the other texts. The UXLC does not split the 6 consonants between the resh and the yod also lacks a maqaf after the resh because no maqaf is visible in the photo.",
+          "The Sefaria MAM has a maqaf between the resh and the yod.",
+          "Ben Denckla: The BHL splits the 6 consonants between the resh and the yod and adds a maqaf after the resh. BHL Appendix A has no entry for this word."
+        ],
+        "aBHL": false,
+        "aBHLA": false
+      },
+      "note_index": 2,
+      "passage": "The BHL splits the 6 consonants between the resh and the yod and adds a maqaf after the resh.",
+      "suggestion": "The BHL splits the 6 consonants between the yod and the kaf and adds a maqaf after the yod.",
+      "explanation": "The record's other two notes name the same two letters.",
+      "bhla_entry": null,
+      "words": [
+        {
+          "label": "BHL",
+          "hebrew": "אַֽחֲרֵי־כֵ֔ן"
+        }
+      ]
+    }
+  ],
+  "untagged_bhla_agreements": [
+    "2026.02.05-22",
+    "2026.08.05-8",
+    "2026.08.05-115"
+  ],
+  "scans": {
+    "repository": "MAM-private",
+    "commit": "6745feaab336c1e2548e2748f712a24c82dd71bb",
+    "files": [
+      {
+        "path": "masorah-books/books/bhl/appendix-a/source-pages/1230.jpg",
+        "git_blob": "fd920f4da272bbe7d9dd19c243eacbb6739423db",
+        "bytes": 2552316,
+        "sha256": "b234bbdd4441622b95904e6c19acabab3b10045a281f85d848b8d70f43fb3e03",
+        "width": 3400,
+        "height": 4700,
+        "mode": "RGB"
+      },
+      {
+        "path": "masorah-books/books/bhl/appendix-a/source-pages/1232.jpg",
+        "git_blob": "968375b34f0bbc9875c5ca4554aa9a4eb9c76feb",
+        "bytes": 2276798,
+        "sha256": "f96f683c49e488190b258b8207702d81ee0df7bc60c79f3b4ed6c7c887e4e241",
+        "width": 3400,
+        "height": 4700,
+        "mode": "RGB"
+      },
+      {
+        "path": "masorah-books/books/bhl/appendix-a/source-pages/1234.jpg",
+        "git_blob": "d78d938bf6102dfd9f0a75f4a2bbf6fddf26df71",
+        "bytes": 2456452,
+        "sha256": "fe333b3d05f9a1af210af28146b7f1cce4c45109ced16be0a2996e95d14938f9",
+        "width": 3400,
+        "height": 4700,
+        "mode": "RGB"
+      },
+      {
+        "path": "masorah-books/books/bhl/appendix-a/source-pages/1235.jpg",
+        "git_blob": "6d95b408ce80b16f87d73b9b3fd55e59acac19b6",
+        "bytes": 3022158,
+        "sha256": "e1470583a1ffb9857de9f94137e4c7a86604cd381fd547aac667f19d1b982d80",
+        "width": 3400,
+        "height": 4700,
+        "mode": "RGB"
+      },
+      {
+        "path": "masorah-books/books/bhl/appendix-a/source-pages/1236.jpg",
+        "git_blob": "fd610fd527a6e2b2eb8e4c4a7b9c57a9036c2d5f",
+        "bytes": 2123940,
+        "sha256": "312ec24df4fa1db8d3bc4c92a72f3081a9619e9d0489c8c9ba33372226450164",
+        "width": 3400,
+        "height": 4700,
+        "mode": "RGB"
+      }
+    ]
+  },
+  "crops": [
+    {
+      "entry": "p1236-c1-35",
+      "record": "2022.08.22-1",
+      "alt": "BHLA: the entry for Job 39:2",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1236.jpg",
+      "rectangle": [
+        197,
+        4120,
+        699,
+        4260
+      ],
+      "output": {
+        "width": 502,
+        "height": 140,
+        "bytes": 7401,
+        "sha256": "2b517a7f0b6b86899d3fffbb0adc244ef522966ca68086f1f5784358a1dd2ed3"
+      },
+      "shown_at": [
+        251,
+        70
+      ]
+    },
+    {
+      "entry": "p1232-c1-12",
+      "record": "2022.08.30-19",
+      "alt": "BHLA: the entry for 2 Samuel 8:1",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1232.jpg",
+      "rectangle": [
+        201,
+        1864,
+        717,
+        1979
+      ],
+      "output": {
+        "width": 516,
+        "height": 115,
+        "bytes": 6762,
+        "sha256": "2819b50583db6a31c748014102dc223bc0171f9658e13d319a6c3a8c889b9f9c"
+      },
+      "shown_at": [
+        258,
+        58
+      ]
+    },
+    {
+      "entry": "p1232-c2-32",
+      "record": "2022.09.01-18",
+      "alt": "BHLA: the entry for 2 Kings 14:8",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1232.jpg",
+      "rectangle": [
+        1215,
+        4031,
+        1621,
+        4146
+      ],
+      "output": {
+        "width": 406,
+        "height": 115,
+        "bytes": 4453,
+        "sha256": "8e3aeda2fe7872e67751e62607685186a12647dc12f456a3288907d339825cdf"
+      },
+      "shown_at": [
+        203,
+        58
+      ]
+    },
+    {
+      "entry": "p1235-c2-02",
+      "record": "2023.03.25-115",
+      "alt": "BHLA: the entry for Psalms 125:3",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1235.jpg",
+      "rectangle": [
+        1286,
+        470,
+        1970,
+        613
+      ],
+      "output": {
+        "width": 684,
+        "height": 143,
+        "bytes": 13260,
+        "sha256": "a77f7d6f8af0f94e1c76896f13bb30670dc6800af9e43846a7de22cbe3162dcf"
+      },
+      "shown_at": [
+        342,
+        72
+      ]
+    },
+    {
+      "entry": "p1235-c2-29",
+      "record": "2023.06.09-10",
+      "alt": "BHLA: the entry for Proverbs 12:10",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1235.jpg",
+      "rectangle": [
+        1288,
+        3696,
+        1756,
+        3836
+      ],
+      "output": {
+        "width": 468,
+        "height": 140,
+        "bytes": 8110,
+        "sha256": "61374eb4cce46eb317ffc42c2bc10496a99c77bfc151ea27b0da674433e02c39"
+      },
+      "shown_at": [
+        234,
+        70
+      ]
+    },
+    {
+      "entry": "p1235-c3-30",
+      "record": "2026.02.05-22",
+      "alt": "BHLA: the entry for Job 8:1",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1235.jpg",
+      "rectangle": [
+        2290,
+        3818,
+        2827,
+        3958
+      ],
+      "output": {
+        "width": 537,
+        "height": 140,
+        "bytes": 7405,
+        "sha256": "dd7840937556c0f93f3e0f8e67bcb93f1e870975e122e7e3df8ecb466bdc92af"
+      },
+      "shown_at": [
+        268,
+        70
+      ]
+    },
+    {
+      "entry": "p1236-c1-02",
+      "record": "2026.02.05-35",
+      "alt": "BHLA: the entry for Job 10:15",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1236.jpg",
+      "rectangle": [
+        198,
+        470,
+        583,
+        610
+      ],
+      "output": {
+        "width": 385,
+        "height": 140,
+        "bytes": 5708,
+        "sha256": "4cfd863c86ba0028e5575d7d461379aed6080a736e83ceec7ba9da7e63841aad"
+      },
+      "shown_at": [
+        192,
+        70
+      ]
+    },
+    {
+      "entry": "p1236-c1-12",
+      "record": "2026.02.05-52",
+      "alt": "BHLA: the entry for Job 16:20",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1236.jpg",
+      "rectangle": [
+        199,
+        1575,
+        643,
+        1715
+      ],
+      "output": {
+        "width": 444,
+        "height": 140,
+        "bytes": 6681,
+        "sha256": "b5a9c12040d7fae290c421a14948392b5870d10323450e1dabcc6a4e5930d8aa"
+      },
+      "shown_at": [
+        222,
+        70
+      ]
+    },
+    {
+      "entry": "p1230-c3-05",
+      "record": "2026.08.05-8",
+      "alt": "BHLA: the entry for Leviticus 15:8",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1230.jpg",
+      "rectangle": [
+        2213,
+        810,
+        2591,
+        915
+      ],
+      "output": {
+        "width": 378,
+        "height": 105,
+        "bytes": 5465,
+        "sha256": "dde6fc15fa7f7650b19d6eef8ed5d3d2eb9590bfb09403a7309b3003c00ec1f7"
+      },
+      "shown_at": [
+        189,
+        52
+      ]
+    },
+    {
+      "entry": "p1234-c1-08",
+      "record": "2026.08.05-115",
+      "alt": "BHLA: the entry for Micah 1:14",
+      "scan": "masorah-books/books/bhl/appendix-a/source-pages/1234.jpg",
+      "rectangle": [
+        193,
+        1868,
+        645,
+        2003
+      ],
+      "output": {
+        "width": 452,
+        "height": 135,
+        "bytes": 8333,
+        "sha256": "5ef20c0adc9282370d0168ca498eb7702cfaad48fd562f3de22da505ea55f1cd"
+      },
+      "shown_at": [
+        226,
+        68
+      ]
+    }
+  ]
+}

@@ -361,7 +361,11 @@ Each is a feature this doc names, organized with grounding + open questions.
   #2; issue #19). That guard is a distinct thing from the tanach.us note page's *own* `<h2>`
   change-summary heading, which — unlike the `uxlc_changes` description above — **is** rendered,
   verbatim, as the note's opening sentence, since it is part of the same trusted downloaded page as
-  the `<p>` prose ([#30](https://github.com/bdenckla/UXLC-utils/issues/30)). The `wlc-utils`
+  the `<p>` prose ([#30](https://github.com/bdenckla/UXLC-utils/issues/30)). A NoteMaker-generated
+  note page repeats the change record named in its opening comment: the page's `<h2>` is the
+  record's description, and each `<p>` before the author's name is one of the record's notes, word
+  for word, BHL and BHLA claims included. So an error in a change record's notes reaches CLC's
+  readers, as the Prov 12:10.7 `t` note on the Proverbs page does (§7.11). The `wlc-utils`
   bracket-note definitions cover the separate bracket-note layer (§7.2).
 - **Body placement is a *separate* axis from the highlight.** The highlight (above) is just a flag
   on the word — every noted word carries it. It does **not** dictate where the note *body* renders,
@@ -784,8 +788,16 @@ note category in §7.9 / §8.
 Grounding: the repo already ingests **BHL Appendix A, but for Psalms only** so far —
 [uxlc_bhl_appendix_a.py](../../py/uxlc_changes/uxlc_bhl_appendix_a.py) reads
 `in/UXLC-misc/BHL Appendix A Psalms.csv` (book ch:v plus optional word-index locales). Extending
-Appendix A coverage beyond Psalms belongs to §7.12's long tail. **[TBD]** locate how UXLC encodes
-its BHL agreement, so CLC can show the corrected judgment precisely.
+Appendix A coverage beyond Psalms belongs to §7.12's long tail. UXLC records its agreement with
+BHL and with BHLA in each change record's `<analysistags>`, as `<aBHL/>` and `<aBHLA/>`, which
+`py/uxlc_changes/uxlc_change_prep.py` reads; a record with neither tag says on its tanach.us page,
+by default, "The UXLC does not agree with either BHL text." Neither the tags nor the notes' BHL
+claims are always right.
+[uxlc-bhl-claim-errors-2026-10-19.html](uxlc-bhl-claim-errors-2026-10-19.html), sent to UXLC's
+editor, Chris Kimball, on 19 October 2026, lists the wrong or unclear BHL and BHLA claims in the
+notes of 20 change records, three of which leave UXLC with BHLA's word but lack `<aBHLA/>`; its
+[JSON companion](uxlc-bhl-claim-errors-2026-10-19.json) gives each finding's record, note and BHLA
+entry. **[TBD]** how CLC shows the corrected judgment.
 
 ### 7.12 Harvesting desirable changes from other editions
 Sources to mine for changes CLC might want to adopt. Each yields **candidate** notes / charitable

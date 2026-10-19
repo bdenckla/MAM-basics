@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BHL claims in UXLC notes</title>
+<style>
+:root { color-scheme: light; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1b1b1b; background: #fff; line-height: 1.45; margin: 2em auto; max-width: 72em; padding: 0 1em; }
+h1 { font-size: 1.45em; margin-bottom: .2em; }
+.date { color: #555; margin-top: 0; }
+h2 { font-size: 1.12em; margin: 2em 0 .4em; }
+ul { margin: .3em 0 .7em; }
+table { border-collapse: collapse; margin: .6em 0 1.2em; }
+th, td { border: 1px solid #c8c8c8; padding: .35em .6em; vertical-align: middle; text-align: left; }
+th { background: #f2f2f2; font-weight: 600; }
+td[dir="rtl"] { text-align: right; }
+td.text { vertical-align: top; }
+td.scan { padding: .2em .4em; }
+td.scan img { display: block; }
+.he, .hi { font-family: "SBL Hebrew", "Ezra SIL", "Taamey Frank CLM", "Noto Serif Hebrew", "Times New Roman", serif; }
+.he { font-size: 1.65em; line-height: 1.55; white-space: nowrap; }
+th { white-space: nowrap; }
+.he.spaced, .hi.spaced { letter-spacing: .2em; }
+.long-head { font-weight: 600; margin: .4em 0 .2em; }
+blockquote.long { margin: 0 0 1.4em 1.4em; max-width: 52em; }
+blockquote.long p { margin: .45em 0; }
+.hi { font-size: 1.3em; }
+.stack { display: grid; grid-template-columns: auto auto; column-gap: .8em; align-items: baseline; justify-content: start; }
+.lbl { font-size: .8em; color: #555; white-space: nowrap; }
+.ref { white-space: nowrap; }
+ol.notes { font-size: .92em; margin: -.6em 0 1.2em; max-width: 52em; padding-left: 1.6em; }
+ol.notes li { margin: .3em 0; }
+.nw { white-space: nowrap; }
+.del { background: #ffcecb; }
+.ins { background: #b4f1c2; }
+td.bcv { padding-left: .8em; }
+.sub { margin-top: .35em; font-size: .92em; }
+a { color: #0b57d0; }
+@page { margin: 1.6cm; }
+@media print {
+  body { margin: 0 auto; }
+  .del, .ins, th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  tr, ol.notes li, blockquote.long p { break-inside: avoid; }
+  h2, .long-head { break-after: avoid; }
+  tbody tr:first-child { break-before: avoid; }  /* a heading and header row stay with a row */
+}
+</style>
+</head>
+<body>
+<h1>Errors in BHL claims in UXLC change-record notes</h1>
+<p class="date">19 October 2026</p>
+<p class="date">This copy, tracked in MAM-basics, omits the ten BHLA scan crops shown in the copy that Ben Denckla sent to Chris Kimball, UXLC's editor, on 19 October 2026. <a href="uxlc-bhl-claim-errors-2026-10-19.json">uxlc-bhl-claim-errors-2026-10-19.json</a> gives each crop's recipe and the sent files' SHA-256 hashes.</p>
+<p>Many UXLC change records have a note saying what BHL (BHL body), or its Appendix A (BHLA), has at the word being changed. In some cases these claims are at odds with what BHL or BHLA actually has; those cases are listed below.</p>
+<h2>BHLA has an entry for the word</h2>
+<p>Each of these notes says that BHLA has no entry, for the word or for the verse:</p>
+<ul><li>“BHL Appendix A has no entry for this word.”</li><li>“BHL Appendix A has no entries for this word.”</li><li>“BHL Appendix A has no note on this word in the verse.”</li><li>“BHLA has no entry for this verse.”</li></ul>
+<p>But in truth we find that BHLA <strong>does</strong> have an entry for the word in question; it is shown above the change record's UXLC word. Records 2026.02.05-22, 2026.08.05-8 and 2026.08.05-115 leave UXLC with BHLA's word, but none has the analysis tag that says so; each record's page instead says, by default, “The UXLC does not agree with either BHL text.”</p>
+<table>
+<thead><tr><th>BHLA scan</th><th>Words</th><th>bcv/change-rec</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1236, entry p1236-c1-35: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">וְ֝יָדַעְתָּ֜</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">וְ֝יָדַ֗עְתָּ</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he">וְ֝יָדַעְתָּ֗</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">Job 39:2.4<br><a href="https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.22-1">2022.08.22-1</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1232, entry p1232-c1-12: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">אַֽחֲרֵי כֵ֔ן</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">אַֽחֲרֵי־כֵ֔ן</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he">אַֽחֲרֵיכֵ֔ן</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">2Sam 8:1.2<br><a href="https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.30-19">2022.08.30-19</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1232, entry p1232-c2-32: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">אָ֥ז</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">אָ֣ז</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">2Kings 14:8.1<br><a href="https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.09.01-18">2022.09.01-18</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1235, entry p1235-c2-02: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">יָנ֟וּחַ</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">יָנ֡וּחַ</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Ps 125:3.3<br><a href="https://tanach.us/Changes/2023.07.04%20-%20Changes/2023.07.04%20-%20Changes.html#2023.03.25-115">2023.03.25-115</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1235, entry p1235-c2-29: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he spaced">אַכְזָֽרִי</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he spaced">אַכְזָרִֽי</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he spaced">אַכְזָרֽ͏ִי</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">Prov 12:10.7<br><a href="https://tanach.us/Changes/2023.10.19%20-%20Changes/2023.10.19%20-%20Changes.html#2023.06.09-10">2023.06.09-10</a></td><td class="nw">1</td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1235, entry p1235-c3-30: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">וַיֹאמַֽר</span><span class="lbl" dir="ltr">BHLA</span><span class="ref" dir="ltr">[=BHLA]</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Job 8:1.4<br><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-22">2026.02.05-22</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1236, entry p1236-c1-02: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he spaced">עָנְיֽ͏ִי</span><span class="lbl" dir="ltr">BHLA</span><span class="ref" dir="ltr">[=BHLA]</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he spaced">עָנְי֥‍ִי</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">Job 10:15.12<br><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-35">2026.02.05-35</a></td><td class="nw">2</td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1236, entry p1236-c1-12: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">אֱ֝ל֗וֹהַ</span><span class="lbl" dir="ltr">BHLA</span><span class="ref" dir="ltr">[=BHLA]</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he">אֱ֝ל֗וֹהַּ</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">Job 16:20.4<br><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-52">2026.02.05-52</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1230, entry p1230-c3-05: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">יָרֹ֛ק</span><span class="lbl" dir="ltr">BHLA</span><span class="ref" dir="ltr">[=BHLA]</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Lev 15:8.2<br><a href="https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-8">2026.08.05-8</a></td><td class="nw"></td></tr>
+<tr><td class="scan"><span class="lbl">[BHLA p. 1234, entry p1234-c1-08: crop omitted]</span></td><td dir="rtl"><div class="stack"><span lang="hbo" class="he">לְמַלְכֵ֥י</span><span class="lbl" dir="ltr">BHLA</span><span class="ref" dir="ltr">[=BHLA]</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Mic 1:14.10<br><a href="https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-115">2026.08.05-115</a></td><td class="nw">3</td></tr>
+</tbody>
+</table>
+<ol class="notes"><li>Prov 12:10.7: our transcription of BHLA has the silluq on the zayin, after its qamats, but BHLA's marks there are cramped, so that assignment is uncertain. Even so, BHLA as we transcribe it and “UXLC after” agree on the main point: both have the silluq between the qamats and the ḥiriq. What is unclear, in the manuscript as in BHLA, is whether the silluq is on the resh, before its ḥiriq, or on the zayin, after its qamats. “UXLC after” has it on the resh, which is in some ways the more charitable interpretation of the manuscript: it posits only an “early silluq”, not a change to the word's stress.</li><li>Job 10:15.12: on its first yod, UXLC's word after the change has three characters, in this order: HEBREW ACCENT MERKHA (U+05A5), ZERO WIDTH JOINER (U+200D) and HEBREW POINT HIRIQ (U+05B4). UXLC's joiner keeps the merkha displayed before the ḥiriq, as the record's note describes the manuscript: “a sloping line followed by a hiriq.” Side by side, the merkha's stroke and the ḥiriq's dot look like a tevir, but the word has no HEBREW ACCENT TEVIR (U+059B).</li><li>Mic 1:14.10: UXLC's earlier record for this word, <a href="https://tanach.us/Changes/2023.04.01%20-%20Changes/2023.04.01%20-%20Changes.html#2022.12.12-9">2022.12.12-9</a>, correctly says “BHL Appendix A has a merkha under the kaf.”</li></ol>
+<h2>BHLA's entry for the verse is for another word</h2>
+<p>Each of these notes says “BHLA has no entry for this <span class="del">verse</span>.” BHLA has an entry for the verse, but it is for another word, so the sentence is true in spirit. We suggest replacing it with “BHLA has no entry for this <span class="ins">word</span>.”</p>
+<table>
+<thead><tr><th>Words</th><th>bcv/change-rec</th></tr></thead>
+<tbody>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">וְעָלָ֞יו</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he">וְעָלָ֞ו</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">2Sam 20:8.15<br><a href="https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.12-26">2024.04.12-26</a></td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">בְּמוֹ־</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Job 19:16.5<br><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-64">2026.02.05-64</a></td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">פִ֝֗י</span><span class="lbl" dir="ltr">UXLC before</span><span lang="hbo" class="he">פִ֗‍֝י</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">Job 19:16.6<br><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-65">2026.02.05-65</a></td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">וּשְׁלם</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Job 22:21.4<br><a href="https://tanach.us/Changes/2026.04.01%20-%20Changes/2026.04.01%20-%20Changes.html#2026.02.05-78">2026.02.05-78</a></td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">יִהְיֶֽה־</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Ex 20:3.2<br><a href="https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-5">2026.08.05-5</a></td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">תַּֽעֲלֻמ֣וֹת</span><span class="lbl" dir="ltr">UXLC</span></div></td><td class="nw bcv">Job 11:6.3<br><a href="https://tanach.us/Changes/2026.10.19%20-%20Changes/2026.10.19%20-%20Changes.html#2026.08.05-27">2026.08.05-27</a></td></tr>
+</tbody>
+</table>
+<h2>Other errors about BHLA</h2>
+<table>
+<thead><tr><th>Words</th><th>bcv/change-rec</th><th>The note says</th><th>Suggestion</th></tr></thead>
+<tbody>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">אַהֵבַֽתְהוּ</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">אֲהֵבַֽתְהוּ</span><span class="lbl" dir="ltr">UXLC before</span></div></td><td class="nw bcv">1Sam 18:28.11<br><a href="https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.29-20">2022.08.29-20</a></td><td class="text">BHL Appendix A finds a patah under the <span class="del">ayin</span> in the LC but notes the difficulty reading the LC.</td><td class="text">“BHL Appendix A finds a patah under the <span class="ins">aleph</span> in the LC but notes the difficulty reading the LC.”<br><br>(The word has no ayin. BHLA's pataḥ is under the alef, and BHLA marks the entry with a question mark.)</td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">תִּרֽצְֹנָה</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">תִּרֹֽצְנָה</span><span class="lbl" dir="ltr">BHLA “instead of”</span><span lang="hbo" class="he">תִּצֹּֽרְנָה</span><span class="lbl" dir="ltr">BHL qere</span><span lang="hbo" class="he">תִּצֽרְֹנָה</span><span class="lbl" dir="ltr">UXLC after</span></div></td><td class="nw bcv">Prov 23:26.8<br><a href="https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.15-35">2024.04.15-35</a></td><td class="text">BHL qere word, <bdi lang="hbo" class="hi">תִּצֹּֽרְנָה׃</bdi>, has a dagesh a holam on the tsade. BHLA qere word has no dagesh in the tsade, <bdi lang="hbo" class="hi">תִּצֹֽרְנָה׃</bdi>; BHLA acknowledges ("instead of:") that the holam should be placed on the resh, too. The UXLC agrees with the BHLA "instead of:" qere word.</td><td class="text">[see below]<br><br>(The note calls BHLA's word a qere word and writes it in the qere's letter order, <bdi lang="hbo" class="hi">תִּצֹֽרְנָה</bdi>; BHLA's two words have the ketiv's letter order.)</td></tr>
+</tbody>
+</table>
+<p class="long-head">Suggestion for Prov 23:26.8 (2024.04.15-35):</p><blockquote class="long"><p>BHLA agrees with UXLC that there is no dagesh in the <bdi lang="hbo">צ</bdi> in Leningrad.</p><p>Nonetheless, BHL body supplies, ex nihilo, a dagesh in the <bdi lang="hbo">צ</bdi> of its pointed qere, because that is the consensus pointing of this word and BHL body is merely a Leningrad-flavored consensus edition, not a diplomatic edition of Leningrad.</p><p>UXLC does not have a dagesh in the <bdi lang="hbo">צ</bdi> of its pointed qere, because UXLC is a diplomatic edition of Leningrad, albeit one that has only unpointed ketiv and pointed qere, a somewhat awkward exception to its diplomatic stance, since of course Leningrad has only pointed ketiv and unpointed qere.</p><p>BHLA agrees with UXLC that the ḥolam ḥaser dot is on the <bdi lang="hbo">צ</bdi> in Leningrad.</p><p>Nonetheless, in the journey from ketiv to qere, BHL body allows this ḥolam ḥaser dot to travel with its letter, <bdi lang="hbo">צ</bdi>, rather than stay with its letter-position, 3. Note that in BHL body and UXLC, the under-marks, silluq and sheva, stay with their letter-positions (2 and 3) rather than traveling with their letters across the <bdi lang="hbo">רצ</bdi> to <bdi lang="hbo">צר</bdi> transposition journey that is the essence of this ketiv/qere.</p><p>BHL body allows the ḥolam ḥaser dot to travel with its letter, <bdi lang="hbo">צ</bdi>, for the same reason that it supplies a dagesh in the <bdi lang="hbo">צ</bdi> of its pointed qere. BHLA notes that the consensus pointed ketiv (the "instead of" form of this word) would have the ḥolam ḥaser dot on <bdi lang="hbo">ר</bdi>.</p><p>UXLC does not allow the ḥolam ḥaser dot to travel with its letter, <bdi lang="hbo">צ</bdi>, for the same reason that its pointed qere has no dagesh in the <bdi lang="hbo">צ</bdi>.</p></blockquote>
+<h2>Errors about both BHLA and the BHL body text</h2>
+<table>
+<thead><tr><th>Words</th><th>bcv/change-rec</th><th>The note says</th><th>Suggestion</th></tr></thead>
+<tbody>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he spaced">הַֽנַּעֲרָ֖</span><span class="lbl" dir="ltr">BHL</span><span lang="hbo" class="he spaced">הַֽנַּעַרָ֖</span><span class="lbl" dir="ltr">in the note</span></div></td><td class="nw bcv">Deut 22:16.4<br><a href="https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.12-31">2024.04.12-31</a></td><td class="text">BHL has no qere form for this word; <span class="del">it</span> has the ketiv <span class="del">body text: <bdi lang="hbo" class="hi spaced">הַֽנַּעַרָ֖</bdi>.</span> BHLA has <span class="del">no entry for this verse</span>.</td><td class="text">“BHL has no qere form for this word; <span class="ins">BHL</span> has the <span class="ins">pointed</span> ketiv <span class="ins"><bdi lang="hbo" class="hi spaced">הַֽנַּעֲרָ֖</bdi>, and</span> BHLA has <span class="ins">the pointed ketiv <bdi lang="hbo" class="hi spaced">הַֽנַּעַרָ֖</bdi></span>.”<br><br>(The note gives BHLA's pointed ketiv as BHL's, and says that BHLA has no entry for this verse.)</td></tr>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">וַיִּֽשְׁתַּחֲוֽוּ</span><span class="lbl" dir="ltr">BHL qere</span><span lang="hbo" class="he">וְיִֽשְׁתַּחֲו֤וּ</span><span class="lbl" dir="ltr">in the note</span><span lang="hbo" class="he">וַיִּֽשְׁתַּחֲוֻּֽ</span><span class="lbl" dir="ltr">BHLA</span><span lang="hbo" class="he">וַיִּֽשְׁתַּחֲוּֽוּ</span><span class="lbl" dir="ltr">BHLA qere</span><span class="ref" dir="ltr">[=BHLA qere]</span><span class="lbl" dir="ltr">UXLC before</span></div></td><td class="nw bcv">Gen 43:28.9<br><a href="https://tanach.us/Changes/2024.10.19%20-%20Changes/2024.10.19%20-%20Changes.html#2024.04.15-2">2024.04.15-2</a></td><td class="text"><span class="del">BHL has</span> qere has no dagesh on the next-to-last vav and a dagesh in the last vav; the <span class="del">meteg</span> is on the next-to-last vav, <span class="del"><bdi lang="hbo" class="hi">וְיִֽשְׁתַּחֲו֤וּ</bdi></span>. <span class="del">BHLA</span> agrees with the markings on the <span class="del">marked</span> ketiv above, but has a dagesh on the last two vavs with the <span class="del">meteg</span> on the next-to-last vav as in the reference text.</td><td class="text">“<span class="ins">BHL's</span> qere has no dagesh on the next-to-last vav and a dagesh in the last vav; the <span class="ins">silluq</span> is on the next-to-last vav, <span class="ins"><bdi lang="hbo" class="hi">וַיִּֽשְׁתַּחֲוֽוּ</bdi></span>. <span class="ins">BHLA's pointed ketiv</span> agrees with the markings on the <span class="ins">LC's</span> ketiv <span class="ins">described</span> above, but <span class="ins">BHLA's qere word</span> has a dagesh on <span class="ins">both of</span> the last two vavs with the <span class="ins">silluq</span> on the next-to-last vav as in the reference text.”<br><br>(BHL's qere, in the margin, differs from the quoted word in three marks: pataḥ, not sheva, under the first vav; a dagesh in the yod; and silluq (the note's meteg), not mahapakh, on the next-to-last vav. In the second sentence, “the marked ketiv above” is the LC's ketiv as the record's first note describes it; the sentence's first half is about BHLA's pointed ketiv, and its second half is about BHLA's qere word.)</td></tr>
+</tbody>
+</table>
+<h2>Errors about the BHL body text</h2>
+<table>
+<thead><tr><th>Words</th><th>bcv/change-rec</th><th>The note says</th><th>Suggestion</th></tr></thead>
+<tbody>
+<tr><td dir="rtl"><div class="stack"><span lang="hbo" class="he">אַֽחֲרֵי־כֵ֔ן</span><span class="lbl" dir="ltr">BHL</span></div></td><td class="nw bcv">2Sam 8:1.2<br><a href="https://tanach.us/Changes/2022.12.07%20-%20Changes/2022.12.07%20-%20Changes.html#2022.08.30-19">2022.08.30-19</a></td><td class="text">The BHL splits the 6 consonants between the <span class="del">resh</span> and the <span class="del">yod</span> and adds a maqaf after the <span class="del">resh</span>.</td><td class="text">“The BHL splits the 6 consonants between the <span class="ins">yod</span> and the <span class="ins">kaf</span> and adds a maqaf after the <span class="ins">yod</span>.”<br><br>(The record's other two notes name the same two letters.)</td></tr>
+</tbody>
+</table>
+</body>
+</html>
