@@ -10,6 +10,10 @@ potential corrections should be recorded in a file in the "doc" folder somewhere
 care to report them in the future." This file is that record. Add any later potential UXLC
 correction here.
 
+On 2026-10-19 a Claude session rechecked every record below against its change list as tanach.us
+then served it. Five of the six lists matched MAM-basics' archived copies record for record. The
+sixth, the 2026.10.19 list, had changed, and sections 2 and 3 say how.
+
 A change record's **locator** is its page, column and line, written here as page, then
 column:line, such as F063A 2:20. The UXLC's locators count only lines that hold text, so a
 citation below blank lines has a line number lower, by the number of blank lines above it, than a
@@ -37,7 +41,7 @@ Salisbury, gives F073A 1:3, as the TEI and Claude's reading do.
 The comparison's working files are untracked, under `.novc/lc-tei-phase1/` in the primary
 forest's MAM-basics clone, with the crops in its `out/crops/`.
 
-## 2. A pending UXLC 2.6 record that cites the wrong position, found 2026-10-14
+## 2. A pending UXLC 2.6 record that cited the wrong position, found 2026-10-14
 
 Daniel Holman's record 2026.08.05-10, in the proposed UXLC 2.6 change list with file date
 2026.10.19, cites Lev 25:20.3 for "Remove mahapakh under the kaf. Remove note 'c'." Its
@@ -49,12 +53,16 @@ atom, which is page F071B, column 2, line 16, and the TEI and Claude's reading a
 override copy of the change list, `uxlc/in/UXLC-misc-fixed/2026.10.19 - Changes.xml`, fills the
 empty fields with an estimate, 2:14; section 3 says why.
 
+The change list as tanach.us served it on 2026-10-19, described at the end of section 3, cites
+Lev 25:20.4 for this record, so its position is now right. The record still leaves its column and
+line empty.
+
 ## 3. Defects in the proposed UXLC 2.6 change list, noted 2026-08-12
 
 UXLC-utils commit
 [3435fc81](https://github.com/bdenckla/UXLC-utils/commit/3435fc8130642528cfc8a134a645bf4dc7af1141)
 recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on 2026-08-12, now
-`uxlc/in/UXLC-misc/2026.10.19 - Changes.xml`. No later copy has been checked.
+`uxlc/in/UXLC-misc/2026.10.19 - Changes.xml`. A later copy is compared at the end of this section.
 
 1. 2026.08.05-27 (Job 11:6.3) gives its book as `job`, lowercase.
 2. 2026.08.05-5 (Ex 20:3.2), 2026.08.05-10 (Lev 25:20.3) and 2026.08.05-25 (Job 34:20.4) give a
@@ -62,6 +70,14 @@ recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on
    location estimator, so those three values are estimates, not readings of the manuscript.
 3. 2026.08.05-19 (2 Sam 5:21.1), Daniel Holman's, describes removing a maqaf, but its change text
    equals its reference text, maqaf included, so the record proposes no change.
+
+A Claude session compared these items with the change list as tanach.us served it on 2026-10-19,
+when the list had 140 records and was marked installed rather than proposed. Items 1 and 3 are
+fixed there, and item 2 is not. Record 2026.08.05-27 gives its book as `Job`. Record
+2026.08.05-19's change text no longer has the maqaf that its reference text has, so the record
+now proposes the removal that its description names. Records 2026.08.05-5, 2026.08.05-10 and
+2026.08.05-25 still give a page but an empty column and line. That copy is not kept in this
+repository.
 
 ## 4. Wrong letter name in a change-record note, found 2026-10-17
 
