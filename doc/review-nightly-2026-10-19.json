@@ -1,0 +1,145 @@
+{
+  "date": "2026-10-19",
+  "scheduled_for_utc": "2026-10-19T06:00:00+00:00",
+  "runner": "Saved portable cloud forest; owning constrained Python 3.13.15 environments verified; pinned Graphviz 16.0.0 (20260814.1018); no user-PC input dependency.",
+  "publication": "Isolated review-nightly-20261019 branch only; no main push, deployment or dispatch.",
+  "scheduling": "Existing continuing schedules remain parent-owned and unchanged; no duplicate automation created.",
+  "limits": [
+    "Results belong to the frozen source, not later receipt or unmerged repair commits.",
+    "No Hebrew/editorial decision, live bot operation, issue operation, baseline acceptance, frozen-font generation or publication.",
+    "Passing checks do not establish manuscript or editorial correctness."
+  ],
+  "source": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+  "previous_tested": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+  "prior_receipt": "6480c7c452071f4847b5b1b29741d06f09ef803a",
+  "allowed_input_commit_ids": [
+    "3c7a60e9cfd7f670a35b3ea4dbfc2179367ef4aa",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "review": {
+    "review_from": "80dd9f04e56ae705981749ba9fbafb7fb243c3de",
+    "source": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "reviewed_through": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "commits": 2,
+    "changed_paths": 16,
+    "offline_differential": [
+      {
+        "page": "ch2",
+        "replacements": 4,
+        "matches_frozen_mirror": true,
+        "unrelated_source_edit": false
+      },
+      {
+        "page": "ch3",
+        "replacements": 1,
+        "matches_frozen_mirror": true,
+        "unrelated_source_edit": false
+      },
+      {
+        "page": "ch4",
+        "replacements": 1,
+        "matches_frozen_mirror": true,
+        "unrelated_source_edit": true
+      }
+    ],
+    "explicit_parameter_2_calls": 6,
+    "manifest_page_sizes_verified": 13,
+    "changed_adjudication_ids": [
+      "PROV-30-19-BEN-20261015"
+    ],
+    "all_14_proposals_unapplied": true,
+    "snapshot_quotations_unchanged": true,
+    "disposition": "Reviewed the page-key bot dispatch, exact-one-occurrence replacement guard, no-save branch, save and post-download flow, six committed replacements and refreshed mirror. Frozen mirror reconstruction and independent template parsing agree. Other upstream mirror changes are documented verbatim source captures, not new editorial decisions. No live Wikisource action or issue operation was repeated.",
+    "known_pending_repair": {
+      "commit": "339dbb3b95b690bf42f915360b57f9393791448d",
+      "finding": "October 18 history inventory context synchronization for two existing Ben decisions",
+      "integrated_in_checked_source": false,
+      "scope": "Existing finding, unchanged by this endpoint; no reapplication or broad result claimed for repair."
+    },
+    "limits": [
+      "Offline differential and source review do not verify live account behavior or manuscript truth.",
+      "All checks refer to exact frozen sources; no editorial or publishing decision made."
+    ]
+  },
+  "mega": {
+    "name": "basics-mega",
+    "cwd": "/workspace/nightly-20261019/MAM-basics",
+    "source": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "started_at_utc": "2026-10-19T06:05:46.982546+00:00",
+    "exit_code": 0,
+    "seconds": 492.84,
+    "finished_at_utc": "2026-10-19T06:13:59.822592+00:00",
+    "steps": 60,
+    "cloud_skips": 0
+  },
+  "suite": {
+    "name": "basics-suite",
+    "cwd": "/workspace/nightly-20261019/MAM-basics",
+    "source": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "started_at_utc": "2026-10-19T06:14:00.025324+00:00",
+    "exit_code": 0,
+    "seconds": 325.203,
+    "finished_at_utc": "2026-10-19T06:19:25.228938+00:00",
+    "pytest_seconds": 322.23,
+    "passed": 1087,
+    "failed": 0,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "focused_commands": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_intro_doc_audit.py",
+        "review"
+      ],
+      "cwd": "/workspace/nightly-20261019/MAM-basics",
+      "source": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+      "started_at_utc": "2026-10-19T06:23:01.278231+00:00",
+      "exit_code": 0,
+      "seconds": 1.617,
+      "finished_at_utc": "2026-10-19T06:23:02.895452+00:00"
+    }
+  ],
+  "focused_result": "Research review regeneration reproduces tracked outputs; snapshot quotations and all fourteen unapplied proposals remain unchanged.",
+  "generated_differences": {
+    "svg_files": 8,
+    "classification": "Geometry and known Times font-family aliases only; all other XML text, attributes and links agree.",
+    "change_log_provenance": {
+      "json_equal_except_new_tree": true,
+      "new_tree_is_frozen_committed_input": true,
+      "html_equal_except_tree_id_references": true,
+      "html_tree_id_references": 2,
+      "diff_count": 10,
+      "old_tree": "a0fca078bc1085582018576a8c228f54c81e4504",
+      "new_tree": "017e8377e7788f7e92cc8eb0944375b2cb879e4e"
+    },
+    "complete_patches": "Preserved in the owning private repository before cleanup; source-tree movement is not a defect."
+  },
+  "repair": null,
+  "pending_window": {
+    "frozen_source": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "observed_main": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "pending_commits": 0,
+    "frozen_source_is_ancestor": true,
+    "observed_at_utc": "2026-10-19T06:23:23.279236+00:00",
+    "disposition": "No pending source window."
+  }
+}
