@@ -11,6 +11,7 @@ ends without that line: see main().
 """
 
 import argparse
+import dataclasses
 import sys
 from pathlib import Path
 import zipfile
@@ -107,7 +108,7 @@ def main():
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8", errors="backslashreplace")
     args = _parse_args()
-    with polite_download.PoliteDownloader(_UXLC_DOWNLOAD_CONFIG) as session:
+    with polite_download.PoliteDownloader(_download_config(args.host)) as session:
         _download_latest_uxlc(session, args.host)
         for filename in my_uxlc_changes.FILENAMES:
             if "fake" in filename:
@@ -131,6 +132,13 @@ def _parse_args():
         help=f"host to fetch from (default {my_uxlc.UXLC_DOWNLOAD_HOST})",
     )
     return parser.parse_args()
+
+
+def _download_config(host):
+    """_UXLC_DOWNLOAD_CONFIG with my_uxlc's robots_user_agent for host."""
+    return dataclasses.replace(
+        _UXLC_DOWNLOAD_CONFIG, robots_user_agent=my_uxlc.robots_user_agent(host)
+    )
 
 
 _UXLC_DOWNLOAD_CONFIG = polite_download.PoliteDownloadConfig(

@@ -66,6 +66,15 @@ class PoliteDownloadConfig:
     retry: RetryConfig = field(default_factory=RetryConfig)
     cache: CacheConfig = field(default_factory=CacheConfig)
     obey_robots_txt: bool = False
+    # The user agent robots.txt is obeyed as, if not user_agent.  The User-Agent
+    # header still sends user_agent.
+    robots_user_agent: str | None = None
+
+    def give_robots_user_agent(self):
+        """Return the user agent whose robots.txt group governs requests."""
+        if self.robots_user_agent is None:
+            return self.user_agent
+        return self.robots_user_agent
 
     def give_base_headers(self):
         """Return the default headers for the downloader session."""
@@ -298,8 +307,9 @@ class PoliteDownloader:
         if groups is None:
             groups = self._read_robots_groups(parsed.scheme, parsed.netloc)
             self._robots_by_origin[origin] = groups
-        if not _robots_allows(groups, self._config.user_agent, target):
-            raise RobotsDisallowedError(f"robots.txt disallows {url}")
+        user_agent = self._config.give_robots_user_agent()
+        if not _robots_allows(groups, user_agent, target):
+            raise RobotsDisallowedError(f"robots.txt disallows {url} for {user_agent}")
 
     def _read_robots_groups(self, scheme, netloc):
         robots_url = urlunsplit((scheme, netloc, "/robots.txt", "", ""))

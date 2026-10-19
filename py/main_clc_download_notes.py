@@ -36,6 +36,7 @@ those down can be added here later -- see the note in the loop.)
 """
 
 import argparse
+import dataclasses
 import sys
 
 import requests
@@ -102,7 +103,7 @@ def main():
         book_ids = tbn.ALL_BK39_IDS
     total_found = total_missing = 0
     note_storage = clc_note_storage.NoteStorageOperation()
-    with polite_download.PoliteDownloader(_NOTES_CONFIG) as session:
+    with polite_download.PoliteDownloader(_notes_config(args.host)) as session:
         for book_id in book_ids:
             book = clc_read.read_book(book_id)
             found = missing = 0
@@ -149,6 +150,13 @@ def _parse_args():
         help=f"host to fetch from (default {my_uxlc.UXLC_DOWNLOAD_HOST})",
     )
     return parser.parse_args()
+
+
+def _notes_config(host):
+    """_NOTES_CONFIG with my_uxlc's robots_user_agent for host."""
+    return dataclasses.replace(
+        _NOTES_CONFIG, robots_user_agent=my_uxlc.robots_user_agent(host)
+    )
 
 
 _NOTES_CONFIG = polite_download.PoliteDownloadConfig(

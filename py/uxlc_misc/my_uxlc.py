@@ -17,16 +17,25 @@ whatever host a run happened to fetch from.
 UXLC_DOWNLOAD_HOST = "hcanat.us"
 """The host the two downloaders fetch from by default; ``--host`` overrides it.
 
-Not tanach.us, as of 2026-08-12.  tanach.us' robots.txt has disallowed every path for
+Not tanach.us, as of 2026-08-12.  tanach.us' robots.txt had disallowed every path for
 every user agent since 2026-08-02, and mb_cmn.polite_download obeys it, so a download
-from tanach.us raises RobotsDisallowedError before making a request.  Chris Kimball
+from tanach.us raised RobotsDisallowedError before making a request.  Chris Kimball
 opened hcanat.us instead of reopening tanach.us -- the same tree on the same address,
 under a robots.txt of its own, cut at 15:53 GMT that day to a single MJ12bot stanza
-that permits every URL either downloader fetches.  Ben's decision the same day: treat
-that as the answer and fetch from hcanat.us.
+that permitted every URL either downloader fetches.  Ben's decision the same day:
+treat that as the answer and fetch from hcanat.us.
 
-The two hosts do not serve identical bytes everywhere, so this default is not a pure
-relabeling:
+robots.txt no longer tells the two hosts apart.  One GET of each on 2026-10-19, at
+15:43 GMT, found both still on one address, 68.169.52.176, and serving the same 92
+bytes, last modified on 2026-10-18 (11:09:33 GMT on hcanat.us, 11:22:11 GMT on
+tanach.us): "User-agent: *" and "User-agent: MJ12bot" each with "Disallow: /", and
+"User-agent: Claude-User" with "Allow: /".  Under their own user agents, both
+downloaders were disallowed every URL on both hosts.  They now obey robots.txt as
+UXLC_ROBOTS_USER_AGENT, whose group allows every path on either host.  Ben's decision
+the same day: keep fetching from hcanat.us.
+
+The two hosts do not serve identical bytes everywhere -- as last compared, on
+2026-08-12 -- so this default is not a pure relabeling:
 
   * ``/Books/`` and ``/Changes/`` agree.  A full ``main_uxlc_download_changes --host
     hcanat.us`` run on 2026-08-12 produced 39 of 39 core-XML files, 7 of 7 under
@@ -41,6 +50,33 @@ relabeling:
     do not match the existing entries.  clc_note_pages parses what is committed;
     mixing the two templates remains a decision nobody has made.
 """
+
+UXLC_ROBOTS_USER_AGENT = "Claude-User"
+"""The user agent the two downloaders obey robots.txt as on UXLC_HOST and
+UXLC_DOWNLOAD_HOST; each still sends its own User-Agent header.
+
+On 2026-10-19 both hosts' robots.txt allowed only Claude-User: see
+UXLC_DOWNLOAD_HOST.  Ben's permission that day: these programs may act as
+Claude-User, whether or not they advertise it, because his email with Chris Kimball
+authorizes the downloads -- he is "satisfied that I (and my scripts) are authorized"
+-- and he would rather not keep asking Kimball to adjust robots.txt.  His choice the
+same day: each program keeps its own User-Agent header and obeys robots.txt as
+Claude-User.  A robots.txt that closed to Claude-User any path these programs fetch
+would therefore still stop them.  The permission rests on Kimball's authorization,
+so robots_user_agent applies it to his two hosts only.
+"""
+
+
+def robots_user_agent(host):
+    """The robots_user_agent of a downloader's config for fetching from host.
+
+    UXLC_ROBOTS_USER_AGENT on UXLC_HOST and UXLC_DOWNLOAD_HOST.  Anywhere else, as
+    through ``--host``, None, which leaves a downloader obeying robots.txt under its
+    own user agent.
+    """
+    if host in (UXLC_HOST, UXLC_DOWNLOAD_HOST):
+        return UXLC_ROBOTS_USER_AGENT
+    return None
 
 
 def canonical_xml_path(book_id):
