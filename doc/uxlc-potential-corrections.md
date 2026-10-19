@@ -80,3 +80,21 @@ Approved status. The note's exact wording is retained below; nothing has been re
 
 Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record `/404`, note `/404/notes/0` (changeset
 `2022.08.29`, number `20`; release `2022.12.07`; manuscript locator `Folio_161A 1:23`).
+
+## 5. Wrong letter name in a change-record note at Proverbs 12:10, found 2026-10-19
+
+Daniel Holman's record `UXLC2023.06.09#10` (also written 2023.06.09-10), released in 2023.10.19,
+cites Prov 12:10.7. Its first note says "The mark below the qof" where it should say "The mark
+below the resh": the word has no qof, and the record's description names the resh. This corrects
+only the letter named in the note. It does not change the record's proposed change or its Approved
+status. The note's exact wording is retained below; nothing has been reported.
+
+<details>
+<summary>Exact UXLC note</summary>
+
+> The mark below the qof has the northeast-to-southwest inclination of a merkha. Since this word occurs at the end of the verse, the mark should be a meteg acting as a siluq; a merkha is inappropriate here. Adding note 't'.
+
+</details>
+
+Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record `/818`, note `/818/notes/0` (changeset
+`2023.06.09`, number `10`; release `2023.10.19`; manuscript locator `Folio_413B 2:10`).
