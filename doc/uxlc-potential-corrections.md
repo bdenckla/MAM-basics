@@ -1,7 +1,8 @@
 # Potential UXLC corrections, not reported
 
-State: live. Nothing here has been sent to the UXLC, to its editor or to the author of any
-change record.
+State: live. Section 4's correction was sent to Chris Kimball, the UXLC's editor, on 2026-10-19,
+in Ben's report "Errors in BHL claims in UXLC change-record notes". Nothing else here has been
+sent to the UXLC, to its editor or to the author of any change record.
 
 Ben decided on 2026-10-15 to report none of the UXLC problems in sections 1 and 2: "Leave all of
 this as is. I don't care about mistakes in UXLC any more." He then added: "who knows, maybe I'll start caring
@@ -85,7 +86,7 @@ Daniel Holman's record `UXLC2022.08.29#20` (also written 2022.08.29-20), release
 cites 1 Sam 18:28.11. Its note
 says "patah under the ayin" where it should say "patah under the aleph". This is a correction to
 the letter named in the note: alef. It does not change the record's proposed vowel change or its
-Approved status. The note's exact wording is retained below; nothing has been reported.
+Approved status. The note's exact wording is retained below.
 
 <details>
 <summary>Exact UXLC note</summary>
@@ -96,6 +97,13 @@ Approved status. The note's exact wording is retained below; nothing has been re
 
 Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record `/404`, note `/404/notes/0` (changeset
 `2022.08.29`, number `20`; release `2022.12.07`; manuscript locator `Folio_161A 1:23`).
+
+Ben reported this correction to Chris Kimball on 2026-10-19, in his report "Errors in BHL claims
+in UXLC change-record notes", sent as an HTML file and a PDF. The report lists this record under
+"Other errors about BHLA" and suggests replacing the passage with "BHL Appendix A finds a patah
+under the aleph in the LC but notes the difficulty reading the LC." Its working files are
+untracked, under `.novc/uxlc-bhl-claims/` in the primary forest's MAM-basics clone, with the two
+files sent in its `sent-2026-10-19/`.
 
 ## 5. Wrong letter name in a change-record note at Proverbs 12:10, found 2026-10-19
 
