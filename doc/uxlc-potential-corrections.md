@@ -101,9 +101,13 @@ Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record
 Ben reported this correction to Chris Kimball on 2026-10-19, in his report "Errors in BHL claims
 in UXLC change-record notes", sent as an HTML file and a PDF. The report lists this record under
 "Other errors about BHLA" and suggests replacing the passage with "BHL Appendix A finds a patah
-under the aleph in the LC but notes the difficulty reading the LC." Its working files are
-untracked, under `.novc/uxlc-bhl-claims/` in the primary forest's MAM-basics clone, with the two
-files sent in its `sent-2026-10-19/`.
+under the aleph in the LC but notes the difficulty reading the LC." MAM-basics tracks the HTML
+sent, less its ten BHLA scan crops, as
+[uxlc/doc/uxlc-bhl-claim-errors-2026-10-19.html](../uxlc/doc/uxlc-bhl-claim-errors-2026-10-19.html),
+and gives each of the report's findings, and each crop's recipe, as data in
+[uxlc/doc/uxlc-bhl-claim-errors-2026-10-19.json](../uxlc/doc/uxlc-bhl-claim-errors-2026-10-19.json).
+The report's working files are untracked, under `.novc/uxlc-bhl-claims/` in the primary forest's
+MAM-basics clone, with the two files sent in its `sent-2026-10-19/`.
 
 ## 5. Wrong letter name in a change-record note at Proverbs 12:10, found 2026-10-19
 
@@ -111,7 +115,9 @@ Daniel Holman's record `UXLC2023.06.09#10` (also written 2023.06.09-10), release
 cites Prov 12:10.7. Its first note says "The mark below the qof" where it should say "The mark
 below the resh": the word has no qof, and the record's description names the resh. This corrects
 only the letter named in the note. It does not change the record's proposed change or its Approved
-status. The note's exact wording is retained below; nothing has been reported.
+status. The note's exact wording is retained below. This correction has not been reported. The
+record's second note is in Ben's report of 2026-10-19 (section 4) for a different error: it says
+that BHLA has no entry for this verse, and the report finds that BHLA has an entry for this word.
 
 <details>
 <summary>Exact UXLC note</summary>
