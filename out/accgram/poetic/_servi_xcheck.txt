@@ -2,14 +2,14 @@
 
 ## SILLUQ
   L adjacent servant: MUNAX:1785, MERKHA:1523, ILLUY:43, TARXA:1
-  vs MAM (length-matched verses): both-served 3350 (agree 3349, type-conflict 1); one-sided 4; verse-count-mismatch 13
+  vs MAM (length-matched verses): both-served 3347 (agree 3346, type-conflict 1); one-sided 5; verse-count-mismatch 13
   verdict: 1 servant-type conflict(s) with MAM -- investigate
   servant-type conflicts (ref: L -> MAM):
     Psalms 60:3: MERKHA -> MUNAX
 
 ## OLEH_WEYORED
   L adjacent servant: GALGAL:198, MAHAPAKH:15, MERKHA:5
-  vs MAM (length-matched verses): both-served 200 (agree 197, type-conflict 3); one-sided 18; verse-count-mismatch 7
+  vs MAM (length-matched verses): both-served 195 (agree 192, type-conflict 3); one-sided 23; verse-count-mismatch 7
   verdict: 3 servant-type conflict(s) with MAM -- investigate
   servant-type conflicts (ref: L -> MAM):
     Psalms 51:19: GALGAL -> MAHAPAKH
@@ -59,7 +59,7 @@
 
 ## LEGARMEH
   L adjacent servant: MAHAPAKH:211, ILLUY:32, MERKHA:24, MUNAX:1
-  vs MAM (length-matched verses): both-served 251 (agree 250, type-conflict 1); one-sided 13; verse-count-mismatch 22
+  vs MAM (length-matched verses): both-served 235 (agree 234, type-conflict 1); one-sided 27; verse-count-mismatch 22
   verdict: 1 servant-type conflict(s) with MAM -- investigate
   servant-type conflicts (ref: L -> MAM):
     Psalms 40:13: MERKHA -> MAHAPAKH

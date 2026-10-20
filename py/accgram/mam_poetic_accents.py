@@ -115,8 +115,8 @@ _DISJ_PRIORITY: list[tuple[str, str]] = [
 # vocabulary the scanner emits), so servant choices compare apples-to-apples across
 # the two witnesses.  The oleh-weyored servus is written atnax-hafukh (U+05A2) in MAM
 # but coded galgal in the LC (see the disjunctive note above); it is normalized to GALGAL
-# so the same structural slot matches.  Priority only disambiguates a word carrying
-# more than one conjunctive mark (rare) -- the first match wins.
+# so the same structural slot matches.  The order is not a priority: of a chanted word's
+# conjunctive marks, ``_word_servus`` and ``_word_self_servus`` take the one by position.
 _SERVUS_SIGNS: list[tuple[str, str]] = [
     (ha.MUN, pan.MUNAX),
     (ha.MER, pan.MERKHA),
@@ -143,16 +143,12 @@ _DROP_TYPES = frozenset(
         "spi-invnun",
     }
 )
-# MAM's gray maqaf.  This module reads it as a boundary between two atoms, so the two are two
-# chanted words, as it read them in effect before it read whole runs (2026-10-20).
-# ``mam_simple_verse`` reads the same node as a maqaf ending the atom before it, so the two are
-# one chanted word, and MAM's introduction adds a gray maqaf where two atoms are fit to be
-# joined by a maqaf.  Reading it that way here would change the chanted words of 109 more
-# poetic verses (measured 2026-10-20), and, since ``_word_servus`` takes a chanted word's
-# servus by a fixed priority rather than by position, it would name the wrong servant in
-# compounds such as Psalms 117:2's כִּ֥י־גָ֘בַ֤ר, where the mahapakh stands next to the
-# legarmeh but the merkha comes first in that priority.  Which reading this oracle takes is
-# Ben's to decide.
+# MAM's gray maqaf, read as an ordinary maqaf: it ends the atom before it, so the two atoms
+# are one chanted word, as ``mam_simple_verse`` reads it.  Ben's decision, 2026-10-20: the
+# poetic grammar of MAM is checked "against a version of MAM in which gray maqaf marks are
+# turned black".  MAM's introduction adds a gray maqaf where two atoms are fit to be joined by
+# a maqaf.  Until that day this module dropped the node, which split the two atoms into two
+# chanted words.
 _GRAY_MAQAF = "implicit-maqaf"
 _KETIV_TYPES = frozenset({"ketiv", "kq-k", "kq-k-velo-q"})
 _QERE_TYPES = frozenset({"qere", "kq-q", "kq-trivial", "kq-q-velo-k"})
@@ -220,12 +216,22 @@ def _word_servus(accents: str) -> str | None:
     """Resolve a no-disjunctive word's combining accents to a poetic servus token, or None.
 
     Called only for a word with no divider (a divider word's own conjunctive is captured
-    separately as its self_servus, via ``_word_self_servus``).
+    separately as its self_servus, via ``_word_self_servus``).  Where the chanted word has
+    more than one conjunctive, the servus is the one that stands last, next to the
+    disjunctive it serves, as ``_word_self_servus`` takes the one closest before its own
+    disjunctive.  It took the first in ``_SERVUS_SIGNS``' order until 2026-10-20, which in 25
+    of MAM's poetic chanted words was not the last, and would have been in 61 once a gray
+    maqaf joined its atoms: Psalms 117:2's כִּ֥י־גָ֘בַ֤ר has a merkha on its first atom and,
+    next to the legarmeh after it, a mahapakh.
     """
+    best_idx = -1
+    best_name: str | None = None
     for sign, name in _SERVUS_SIGNS:
-        if sign in accents:
-            return name
-    return None
+        idx = accents.rfind(sign)
+        if idx > best_idx:
+            best_idx = idx
+            best_name = name
+    return best_name
 
 
 def _emit_word_event(word: str, events: list[_Event]) -> None:
@@ -341,10 +347,10 @@ def _walk(node: object, out: list[object]) -> None:
     text runs; pre-order traversal preserves their position relative to the words, and
     ``_verse_events`` passes their LP_LEG / LP_PASEQ events through.  Ketiv halves of a
     qere/ketiv pair are skipped (the qere is what is read).  Each node type is the
-    fragment ``mam_simple_verse._mam_simple_fragments`` makes of it, but for MAM's gray
-    maqaf (``_GRAY_MAQAF``): a ketiv and the ``_DROP_TYPES`` stand between atoms; a
-    ``kq-k-velo-q-maq`` and an ``sdt-note`` are nothing at all, as their atom is the one
-    either side; and a qere is spliced into the run around it.
+    fragment ``mam_simple_verse._mam_simple_fragments`` makes of it: a ketiv and the
+    ``_DROP_TYPES`` stand between atoms; a ``kq-k-velo-q-maq`` and an ``sdt-note`` are
+    nothing at all, as their atom is the one either side; MAM's gray maqaf
+    (``_GRAY_MAQAF``) is an ordinary maqaf; and a qere is spliced into the run around it.
     """
     if not isinstance(node, dict):
         raise TypeError(f"Expected MAM-simple poetic node object, got {node!r}")
@@ -363,7 +369,8 @@ def _walk(node: object, out: list[object]) -> None:
     if node_type in {"kq-k-velo-q-maq", "sdt-note"}:
         return
     if node_type == _GRAY_MAQAF:
-        out.append(_BOUNDARY)
+        # No boundary before it, so it ends the atom it follows.
+        out.append(hpunc.MAQ)
         return
     if node_type in _DROP_TYPES:
         out.append(_BOUNDARY)
