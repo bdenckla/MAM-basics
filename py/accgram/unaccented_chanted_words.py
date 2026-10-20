@@ -13,8 +13,9 @@ grammatical with every chanted word accented.
 THE RULE.  Every chanted word of a verse has an accent: a codepoint in U+0591..U+05AE on one of its
 atoms.  Meteg, U+05BD, is not an accent, nor are Unicode PASEQ, sof pasuq and the puncta.  The rule
 is about marks, not tokens, so a chanted word whose only accent is a stress helper or a mark the
-scanner swallows still has an accent here; the prose lexical layer's other checks, and the poetic
-scanner's ``STRAY_ACCENT``, are what judge such a mark.
+scanner swallows still has an accent here; the prose lexical layer's other checks, its
+``stray_accents`` among them, and the poetic scanner's ``STRAY_ACCENT``, are what judge such a
+mark.
 
 HOW THE CHANTED WORDS ARE READ OFF THE BODY.  ``uni_to_marks.verse_to_marks`` writes a space between
 two chanted words and a maqaf (``-``) between two atoms of one, and writes everything else a verse
