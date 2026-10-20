@@ -86,13 +86,29 @@ def base_letters(word: str) -> str:
     )
 
 
+def letters_and_maqaf(chanted_word: str) -> str:
+    """A chanted word's letters and its maqaf marks: what a summary shows of it.
+
+    A compound keeps the maqaf between its atoms, gray ones included, since this module reads
+    a gray maqaf as an ordinary one (``_GRAY_MAQAF``).  Until 2026-10-20 the summary showed
+    ``base_letters``, which runs a compound's atoms together, as Psalms 31:20's מהרבטובך.
+    ``base_letters`` of this is the alignment key.
+    """
+    return "".join(
+        ch
+        for ch in chanted_word
+        if _HEBREW_LETTER_LO <= ord(ch) <= _HEBREW_LETTER_HI or ch == hpunc.MAQ
+    )
+
+
 # One in-order traversal event:
 # (kind, disjunctive_marker, servus, self_servus, text, chanted_word).
 # A WORD carries a (provisional) disjunctive marker XOR a servus (its main accent is
 # either a divider or a conjunctive), plus an optional self_servus: a conjunctive sign
 # standing on the same chanted word before the disjunctive mark (a long chanted word can
-# host its servus -- e.g. galgal then pazer), ``text`` = its base letters (the alignment
-# key), and ``chanted_word`` = the marked Hebrew text. SOFPASUQ carries its text and
+# host its servus -- e.g. galgal then pazer), ``text`` = its letters and maqaf marks
+# (``letters_and_maqaf``; its ``base_letters`` is the alignment key), and
+# ``chanted_word`` = the marked Hebrew text. SOFPASUQ carries its text and
 # chanted word; LP_LEG / LP_PASEQ carry none of the five values.
 _Event = tuple[str, str | None, str | None, str | None, str | None, str | None]
 
@@ -243,7 +259,7 @@ def _emit_word_event(word: str, events: list[_Event]) -> None:
     marker; a disjunctive one instead records any conjunctive standing before
     its divider within the same chanted word as self_servus.
     """
-    letters = base_letters(word)
+    letters = letters_and_maqaf(word)
     if _SOF_PASUQ in word:
         events.append(("SOFPASUQ", None, None, None, letters, word))
         return
@@ -484,7 +500,7 @@ def _build_word_accents(events: list[_Event]) -> list[list[str | None]]:
     gedolah); bare shalshelet (qetannah) is swallowed to a None disjunctive; generic
     REVIA is reclassified to gadol/qatan/mugrash by the next disjunctive-bearing word
     (the same rule as ``poetic_scanner._reclassify_revia``).  The servus,
-    self_servus, and text (base-letter alignment key) columns are carried through
+    self_servus, and text (``letters_and_maqaf``) columns are carried through
     untouched.
     """
     events = list(events)
@@ -588,13 +604,14 @@ def disjunctives_from_verse_node(verse_node: dict) -> list[str]:
 def word_disj_and_text_from_verse_node(
     verse_node: dict,
 ) -> list[tuple[str, str | None]]:
-    """Per-word ``(base_letters, disjunctive_or_None)`` for a MAM-simple verse, in order.
+    """Per-word ``(letters_and_maqaf, disjunctive_or_None)`` for a MAM-simple verse, in order.
 
     The disjunctive is the fully resolved one (legarmeh / shalshelet gedolah / revia
-    classified, as in ``word_accents_from_verse_node``); the letters are the word-
-    alignment key (see ``base_letters``).  This is the per-word datum the poetic
-    ungrammatical-verse report aligns against its WLC counterpart to describe divider differences
-    word-for-word rather than over the conjunctive-stripped disjunctive skeleton.
+    classified, as in ``word_accents_from_verse_node``); the letters keep the chanted
+    word's maqaf marks for display, and their ``base_letters`` is the word-alignment key.
+    This is the per-word datum the poetic ungrammatical-verse report aligns against its WLC
+    counterpart to describe divider differences word-for-word rather than over the
+    conjunctive-stripped disjunctive skeleton.
     """
     return [(w[3] or "", w[0]) for w in _build_word_accents(_verse_events(verse_node))]
 

@@ -96,12 +96,13 @@ def _word_aligned_clauses(row: dict[str, object]) -> list[str] | None:
         return None
     mam_words = [(letters, (d,) if d else ()) for letters, d in row["mam_words"]]
 
-    # The WLC chanted-word strings keep their maqaf for display ("הלא־בבטן"); the MAM side's
-    # base_letters drops it, so strip it back out for the alignment key only -- the
-    # opcode indices below still address the maqaf-bearing wlc_words for phrasing.
+    # Both sides' chanted-word strings keep their maqaf for display, WLC's "הלא־בבטן" and
+    # MAM's "מה־רב־טובך", a gray maqaf of MAM's among them.  The alignment key strips it from
+    # both, so the key is the letters alone, as it was when the MAM side dropped its maqaf --
+    # the opcode indices below still address the maqaf-bearing strings for phrasing.
     matcher = difflib.SequenceMatcher(
         a=[letters.replace(hpunc.MAQ, "") for letters, _ in wlc_words],
-        b=[letters for letters, _ in mam_words],
+        b=[letters.replace(hpunc.MAQ, "") for letters, _ in mam_words],
         autojunk=False,
     )
     clauses: list[str] = []
@@ -142,8 +143,8 @@ def _wlc_letter_words(wlc_verse: object) -> list[str] | None:
     M-C scanner's whitespace-delimited words, since a compound has no space in it); the
     maqaf itself is kept in the returned
     string so a compound displays as "הלא־בבטן" rather than the run-together
-    "הלאבבטן" (the alignment key strips it back out -- see _word_aligned_clauses --
-    since the MAM side's base_letters drops the maqaf).  Punctuation-only tokens
+    "הלאבבטן", as the MAM side keeps its maqaf (``mam_poetic_accents.letters_and_maqaf``);
+    the alignment key strips both -- see _word_aligned_clauses.  Punctuation-only tokens
     (paseq) drop out.  None if the verse carries no ``vels``."""
     if not isinstance(wlc_verse, dict):
         return None
