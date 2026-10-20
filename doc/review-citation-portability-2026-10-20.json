@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-20",
+  "branch": "review-citation-portability-20261020",
+  "reviewed_source": "d27594238139e75d507b2b2a921de1707946c3d1",
+  "repair_commit": "44a457c513795920b5d350ef27074fc1acca919a",
+  "scope": "Isolated work/review branch only; no main integration or main/shared push, deployment, broad rerun, retirement optimization, benchmark or operational simulation.",
+  "runner": {
+    "os": "Linux x86_64",
+    "python": "3.13.15",
+    "checkout": "Existing clean independent full cloud clone at /workspace/MAM-basics; no new clone or linked worktree.",
+    "native_windows_run": false
+  },
+  "review": {
+    "from": "a9db1ad3b30a5d8da411457b9d93457554b2384c",
+    "through": "d27594238139e75d507b2b2a921de1707946c3d1",
+    "prior_screening": "Earlier harmless-change connector screens through the from-anchor are parent-reported; this run owns the five-commit/59-path endpoint review.",
+    "commits": 5,
+    "changed_paths": 59,
+    "principal_change": "12578b0e234af0e0c83b6a58f970243964e490f0",
+    "disposition": "Reviewed shared read-atom/chanted-word extraction, ketiv/qere and note/maqaf handling, prose lexical and UXLC-checker dispatch, positioned poetic NO_ACCENT insertion, missing grammar terminal, summary integration, and fail-fast guards for direct strand parsers. No further consequential implementation defect confirmed. Generated checker findings remain algorithmic findings; no manuscript judgment or reading change.",
+    "limitations": [
+      "The 2 Kings 5:18 ketiv-without-qere joining convention remains provisional. The corpus differential oracle shares that convention and does not establish Ben's editorial policy.",
+      "Mark-body flattening of multiword qere remains lossy; the new whole-corpus differential check found no changed no-accent result for the current WLC 4.22 input.",
+      "No production code, source text, editorial decision or generated product was changed by this repair."
+    ]
+  },
+  "reproduction": {
+    "owner_receipt": "a14f499d3ddd6ca7f660fdd7180eb8c2895d255b",
+    "owner_reported_windows_failure": "Ten oracle parametrizations fail with OSError Errno 22 while creating a tab-containing filename, before reaching the collector.",
+    "linux_before": {
+      "passed": 12,
+      "failed": 0,
+      "seconds": 0.274
+    },
+    "windows_name_check": {
+      "source": "d27594238139e75d507b2b2a921de1707946c3d1",
+      "platform": "Linux; no native Windows execution",
+      "fixture_filenames": [
+        "z citation.md",
+        "a\ttab.md"
+      ],
+      "windows_reserved": {
+        "z citation.md": false,
+        "a\ttab.md": true
+      },
+      "owner_native_receipt": "a14f499d3ddd6ca7f660fdd7180eb8c2895d255b"
+    },
+    "repair": "Use z citation.md and a space.md on all platforms; add a tab-containing filename only when os.name is posix. Existing NUL-delimited output, whitespace, ordering, explicit citation oracle and unreadable-file coverage remain.",
+    "actual_filename_selection_after": {
+      "nt": {
+        "filenames": [
+          "z citation.md",
+          "a space.md"
+        ],
+        "windows_reserved": []
+      },
+      "posix": {
+        "filenames": [
+          "z citation.md",
+          "a space.md",
+          "a\ttab.md"
+        ],
+        "windows_reserved": [
+          "a\ttab.md"
+        ]
+      },
+      "qualification": "Actual filename-selection AST checked under nt/posix names on Linux; not native Windows I/O or a Windows test run."
+    }
+  },
+  "focused_checks": {
+    "code_commit": "44a457c513795920b5d350ef27074fc1acca919a",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "py/tests/test_worktree_retirement_citations.py",
+      "py/tests/test_unaccented_chanted_words.py",
+      "py/tests/test_poetic_scanner.py",
+      "py/tests/test_prose_ob_notes_smoke.py",
+      "-q",
+      "-ra"
+    ],
+    "passed": 36,
+    "failed": 0,
+    "skipped": 0,
+    "wall_seconds": 3.914,
+    "pytest_seconds": 3.75,
+    "includes": "Citation oracle cases, whole-corpus read-atom/qere differential, poetic scanner cases and prose note smoke checks.",
+    "algorithm_probe": {
+      "cwd": "/workspace/MAM-basics/py",
+      "description": "Focused prose/poetic old-vs-new synthetic-prefix integration probe",
+      "started_at_utc": "2026-10-20T16:16:11.911061+00:00",
+      "exit_code": 0,
+      "seconds": 0.327
+    },
+    "algorithm_probe_result": {
+      "case": "prepend one unaccented placeholder atom to a known clean stored verse; no source file edited",
+      "prose_baseline_silently_accepted": true,
+      "prose_current_rejects": true,
+      "poetic_baseline_silently_accepted": true,
+      "poetic_current_NO_ACCENT_rejects": true,
+      "other_poetic_tokens_unchanged": true,
+      "shared_fail_fast_guard_rejects": true,
+      "editorial_or_manuscript_claim": false
+    },
+    "black": "Changed Python file already formatted; no formatter diff.",
+    "diff_check": "passed"
+  },
+  "generated_endpoint_comparison": {
+    "incoming_commits": 5,
+    "changed_paths": 59,
+    "summaries": {
+      "prose": {
+        "before": {
+          "oddballs": 96,
+          "books_with_oddballs": 24
+        },
+        "after": {
+          "oddballs": 125,
+          "books_with_oddballs": 28
+        }
+      },
+      "poetic": {
+        "before": {
+          "oddballs": 15,
+          "missing_silluq": 13,
+          "no_parse": 2
+        },
+        "after": {
+          "oddballs": 25,
+          "missing_silluq": 13,
+          "no_parse": 12
+        }
+      },
+      "fix_tester": {
+        "before": {
+          "tested": 96,
+          "confirmed": 95,
+          "denied": 1,
+          "changed": 0,
+          "untestable": 0,
+          "speculative_total": 16,
+          "speculative_confirmed": 15,
+          "synthesized": 1,
+          "agree": 86,
+          "disagree": 1
+        },
+        "after": {
+          "tested": 125,
+          "confirmed": 121,
+          "denied": 2,
+          "changed": 0,
+          "untestable": 2,
+          "speculative_total": 16,
+          "speculative_confirmed": 15,
+          "synthesized": 1,
+          "agree": 86,
+          "disagree": 1
+        }
+      }
+    },
+    "interpretation": "Algorithmic checker/verdict changes with unchanged source text; no manuscript judgment or adopted text change."
+  },
+  "book_record_deltas": {
+    "prose": {
+      "verses_in_changed_book_files": 11781,
+      "changed_verse_records": 33,
+      "status_transitions": {
+        "clean -> illegal_mark": 29,
+        "error -> illegal_mark": 4
+      },
+      "all_source_unicode_and_mark_bodies_equal": true,
+      "changed_records_explained_by_no_accent": true
+    },
+    "poetic": {
+      "verses_in_changed_book_files": 4465,
+      "changed_verse_records": 10,
+      "status_transitions": {
+        "clean -> no_parse": 10
+      },
+      "all_source_unicode_and_mark_bodies_equal": true,
+      "changed_records_explained_by_no_accent": true
+    }
+  },
+  "broad_checks": {
+    "run_here": false,
+    "last_agent_nightly_broad_source": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+    "original_nightly_receipt": "2560261b137a357189718fb8301e1d745a5b8763",
+    "owner_reported_checked_source": "b643e9796e326e553a5d0aa7af3f50bfe462d6c0",
+    "owner_receipt": "a14f499d3ddd6ca7f660fdd7180eb8c2895d255b",
+    "owner_mega": {
+      "exit_code": 0,
+      "seconds": 891,
+      "reported_tracked_differences": 0
+    },
+    "owner_suite": {
+      "passed": 1089,
+      "failed": 10,
+      "skipped": 5
+    },
+    "qualification": "Owner broad evidence is attributed, not independently rerun. Only dot-Codex/user-wide-AGENTS.md differs between the owner checked source and the reviewed endpoint. No passing broad result for the repair is claimed."
+  },
+  "pending": {
+    "native_windows_citation_check": {
+      "status": "pending",
+      "action": "Run the selected full clone environment's Python with py/main_test.py py/tests/test_worktree_retirement_citations.py -q -ra from that clone root.",
+      "target": "review-citation-portability-20261020 at code commit 44a457c513795920b5d350ef27074fc1acca919a",
+      "reason": "Selected executor is Linux; native Win32 filesystem APIs are unavailable. No native Windows result is claimed.",
+      "already_completed": "Owner native failure inspected; original Linux citation control passed; repaired Linux focused modules and actual nt/posix filename-selection checks pass."
+    },
+    "main_at_receipt_preparation": "d27594238139e75d507b2b2a921de1707946c3d1",
+    "frozen_review_source": "d27594238139e75d507b2b2a921de1707946c3d1",
+    "later_main_review": "Not advanced beyond the frozen review source."
+  }
+}
