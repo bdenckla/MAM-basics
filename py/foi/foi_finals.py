@@ -96,7 +96,8 @@ def _write_index_dot_html(outspecs):
 def _write_finals3(args_foi, all_fois, outspec):
     outfile_stem, foi_paths = outspec
     outs = {"rowdics": [], "html_tables": {}}
-    for foi_path in sorted(foi_paths):
+    sort_key = holam_e.section_sort_key if outfile_stem == "holam-before-vav" else None
+    for foi_path in sorted(foi_paths, key=sort_key):
         for foi_struct in all_fois[foi_path]:
             fpfs = foi_path, foi_struct
             _make_final_for_foi_struct(fpfs, outs)
@@ -137,11 +138,9 @@ def _get_rows(foi_path, foi_struct):
     else:
         assert False, foi_target_type
     row_dic_for_json = _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents)
-    html_qualifier = (
-        holam_e.qualifier_for_html(qualifier)
-        if foi_path[0] == "holam-before-vav"
-        else qualifier
-    )
+    html_qualifier = {} if foi_path[0] == "holam-before-vav" else qualifier
+    if foi_path[0] == "holam-before-vav":
+        html_contents = holam_e.spaced_examples(html_contents)
     row_dic_for_html = _row_dic_for_html(bcv_anchor, html_qualifier, html_contents)
     return row_dic_for_json, row_dic_for_html
 
@@ -230,7 +229,8 @@ def _write_html(args_foi, outfile_stem, html_tables, rowdics):
         else _overall_head(outfile_stem)
     )
     body_contents = _foi_body_wrapper(overall_head + body1 + body2)
-    title = f"{outfile_stem} (MAM features of interest)"
+    title_stem = holam_e.TITLE if outfile_stem == "holam-before-vav" else outfile_stem
+    title = f"{title_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(
         title,
         _out_path_for_html(outfile_stem),
@@ -402,7 +402,7 @@ _OVERALL_EXPLANATIONS = {
 
 def _section_heads(outfile_stem, tuple_foi_path, len_trs):
     rem_thresholds = 5, 20, 80
-    if len_trs > rem_thresholds[1]:
+    if len_trs > rem_thresholds[1] and outfile_stem != "holam-before-vav":
         count1 = rem_thresholds[0]
         tup1 = count1, len_trs
         tup2 = len_trs - count1, len_trs

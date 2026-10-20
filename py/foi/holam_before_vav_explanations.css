@@ -2,8 +2,20 @@
 td[lang="hbo"] {
     font-size: 200%;
     line-height: 1.8;
-    letter-spacing: 0.1em;
     white-space: nowrap;
+}
+.holam-normal-spacing {
+    letter-spacing: normal;
+}
+.holam-expanded-spacing {
+    letter-spacing: 0.1em;
+}
+.holam-spacing-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.4em;
+    line-height: 1.4;
+    margin-top: 0.4em;
+    text-align: right;
 }
 td:not([lang="hbo"]) {
     vertical-align: middle;

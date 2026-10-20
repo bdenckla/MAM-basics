@@ -4,95 +4,82 @@ from collections import Counter
 from pathlib import Path
 
 from accgram import printed_decalogue_strands as names
+from foi.foiz_wt_holam_before_vav import HASER_CATEGORY
 from mb_cmn import hebrew_accents as ha
-from mb_cmn import hebrew_points as hp
-from mb_cmn import str_defs as sd
-from mb_cmn import unicode_data
 from mb_misc import mb_html
 from py_html.my_html_span_romanized import rmn
 
-TITLE = "Holam before vav"
+TITLE = "Holam before vav and holam haser for vav"
 STYLE = Path(__file__).with_suffix(".css").read_text(encoding="utf-8")
 _NAMES = {
     ha.ZAQ_Q: names.ROM_ZAQEF_QATAN + " qatan",
     ha.REV: names.ROM_REVIA,
-    ha.MAH: names.ROM_MAHAPAKH,
-    ha.MER: names.ROM_MERKHA,
-    ha.MUN: names.ROM_MUNAX,
-    ha.TIP: names.ROM_TIPEHA,
-    hp.MTGOSLQ: names.ROM_METEG,
-}
-_VOWEL_NAMES = {
-    hp.SEGOL_V: "segol vowel",
-    hp.QAMATS: names.ROM_QAMATS,
-    hp.TSERE: "tsere",
 }
 
 
-def _name(mark):
-    return _NAMES.get(mark) or _VOWEL_NAMES.get(mark) or unicode_data.name(mark)
+def section_sort_key(path):
+    """Keep the two original sections first, then the separate encoding."""
+    return path[-1] == HASER_CATEGORY, path
 
 
-def qualifier_for_html(qualifier):
-    """Name every mark on the matched vav, preserving the source order."""
-    parts = []
-    for mark in qualifier["vav_marks"]:
-        if parts:
-            parts.append(", ")
-        if mark == sd.CGJ:
-            parts.append("combining grapheme joiner")
-        else:
-            parts.append(rmn(_name(mark)))
-    bhl = qualifier["bhl"]
-    if bhl:
-        page = mb_html.span(
-            f"BHL p. {bhl['printed_page']}",
-            {
-                "title": f"Scan {bhl['scan_filename']}; inventory position {bhl['inventory_index_1based']}"
-            },
+def spaced_examples(contents):
+    """Show the same unmodified Hebrew nodes with two spacing presentations."""
+    result = []
+    for label, css_class in (
+        ("Normal spacing", "holam-normal-spacing"),
+        ("Expanded spacing", "holam-expanded-spacing"),
+    ):
+        result.extend(
+            (
+                mb_html.div(
+                    label,
+                    {"class": "holam-spacing-label", "dir": "ltr", "lang": "en"},
+                ),
+                mb_html.div(contents, {"class": css_class}),
+            )
         )
-    else:
-        page = "BHL page not located"
-    return {"Vav marks": parts or ["None"], "BHL page": page}
+    return result
 
 
 def introduction(rows):
     """Derive every displayed count from the newly generated FOI rows."""
+    pairs = [row for row in rows if row["fp"] != HASER_CATEGORY]
+    haser = [row for row in rows if row["fp"] == HASER_CATEGORY]
     above = Counter(
-        mark for row in rows for mark in row["vav_marks"] if mark in ha.UNI_OVER_ACCENTS
+        mark
+        for row in pairs
+        for mark in row["vav_marks"]
+        if mark in ha.UNI_OVER_ACCENTS
     )
     mark_counts = []
     for mark, count in above.items():
         if mark_counts:
             mark_counts.append("; ")
-        mark_counts.extend((rmn(_name(mark)), f": {count}"))
+        mark_counts.extend((rmn(_NAMES[mark]), f": {count}"))
     return [
         mb_html.heading_level_1(TITLE),
         mb_html.para(
-            f"All {len(rows)} occurrences in {len({r['bcv_short'] for r in rows})} verses "
-            "of MAM. A non-vav letter has a holam dot, and the next letter is vav; "
-            "combining marks may intervene. The divine name, including prefixed "
-            "occurrences, is excluded. Holam haser for vav is also excluded."
+            f"The first two groups show all {len(pairs)} occurrences in "
+            f"{len({r['bcv_short'] for r in pairs})} verses of MAM where a non-vav "
+            "letter has a holam dot and the next letter is vav; combining marks may "
+            "intervene. These groups exclude the divine name, including prefixed occurrences."
         ),
         mb_html.para(
-            "The blue text marks the holam-bearing letter and following vav. "
-            "The original marks remain on their original letters. Hebrew is enlarged "
-            "and spaced to make the mark placement easier to inspect."
+            f'The third group, "{HASER_CATEGORY}", shows all {len(haser)} occurrences '
+            f"in {len({r['bcv_short'] for r in haser})} verses of the separate Unicode "
+            "character HOLAM HASER FOR VAV (U+05BA). Each is on vav; another following "
+            "vav is not required."
         ),
         mb_html.para(
-            ["Above-marks on the matched vav: ", *mark_counts, "."]
+            "In the first two groups, the blue text marks the holam-bearing letter "
+            "and following vav. In the third group, it marks the vav with holam haser. "
+            "The original marks remain on their original letters. Each occurrence "
+            'is enlarged and shown with "Normal spacing" and "Expanded spacing"; '
+            "only the letter spacing differs."
+        ),
+        mb_html.para(
+            ['In "With an above-mark on vav": ', *mark_counts, "."]
             if mark_counts
             else "No matched vav has an above-accent."
-        ),
-        mb_html.para(
-            "The marks column names all marks on the matched vav. "
-            "An accent on another letter does not put an occurrence in the first group."
-        ),
-        mb_html.para(
-            "BHL page numbers are the printed page numbers, checked against the "
-            "verse text. Hover over a page number for its scan filename and inventory "
-            "position. These locations do not imply agreement with MAM's pointing. "
-            "In Nehemiah 6:6, the target is on page 1113 although that page's header "
-            "begins at 6:7."
         ),
     ]
