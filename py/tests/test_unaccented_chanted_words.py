@@ -15,7 +15,7 @@ keep each qere word apart, and requires the two readings to agree on two things:
 The oracle here shares no code with the module: it groups the verse's words by the maqaf each
 word ends with, and treats a ketiv, a petuxah or setumah and a nun inversum as no words at all.
 Like the module, it lets the maqaf before a ketiv with no qere join its word to the next word
-that is read (rule 3's provisional clause).
+that is read (rule 3; Ben's decision of 2026-10-20).
 """
 
 from __future__ import annotations
