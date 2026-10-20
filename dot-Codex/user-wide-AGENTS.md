@@ -108,7 +108,9 @@ either agent may read any forest. Work already under way in the other agent's fo
 **A full clone is the default checkout.** Ben's preference, 2026-10-20: work, including a session
 started for separate or parallel work, runs in a full clone in a forest its agent owns rather
 than in a new linked worktree. Worktrees remain permitted; in Ben's words, "managing their
-growth, i.e. deleting them, is proving too taxing."
+growth, i.e. deleting them, is proving too taxing." Claude gets no third forest for now: Ben
+decided the same day to gain experience with this scheme first, so a Claude session that needs to
+write while both of Claude's forests are in use may use a linked worktree instead.
 
 ## Linked worktrees
 
