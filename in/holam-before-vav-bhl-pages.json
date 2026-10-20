@@ -1,0 +1,90 @@
+{
+  "description": "Printed BHL pages, checked against the target verse text and printed footer. Scan filenames and complete-inventory positions are separate locators.",
+  "pages": {
+    "I24:2": {
+      "printed_page": 607,
+      "scan_filename": "0607-Isaiah.jpg",
+      "inventory_index_1based": 636
+    },
+    "I47:11": {
+      "printed_page": 631,
+      "scan_filename": "0631-Isaiah.jpg",
+      "inventory_index_1based": 660
+    },
+    "I49:23": {
+      "printed_page": 634,
+      "scan_filename": "0634-Isaiah.jpg",
+      "inventory_index_1based": 663
+    },
+    "Ee7:26": {
+      "printed_page": 740,
+      "scan_filename": "0740-Ee.jpg",
+      "inventory_index_1based": 769
+    },
+    "Ps25:3": {
+      "printed_page": 875,
+      "scan_filename": "0875-Ps.jpg",
+      "inventory_index_1based": 904
+    },
+    "Ps37:9": {
+      "printed_page": 882,
+      "scan_filename": "0882-Ps.jpg",
+      "inventory_index_1based": 911
+    },
+    "Ps37:21": {
+      "printed_page": 882,
+      "scan_filename": "0882-Ps.jpg",
+      "inventory_index_1based": 911
+    },
+    "Ps69:7": {
+      "printed_page": 898,
+      "scan_filename": "0898-Ps.jpg",
+      "inventory_index_1based": 927
+    },
+    "Ps88:16": {
+      "printed_page": 909,
+      "scan_filename": "0909-Ps.jpg",
+      "inventory_index_1based": 938
+    },
+    "Pr22:7": {
+      "printed_page": 963,
+      "scan_filename": "0963-Pr.jpg",
+      "inventory_index_1based": 992
+    },
+    "La3:25": {
+      "printed_page": 1028,
+      "scan_filename": "1028-La.jpg",
+      "inventory_index_1based": 1057
+    },
+    "Ec2:22": {
+      "printed_page": 1036,
+      "scan_filename": "1036-Ec.jpg",
+      "inventory_index_1based": 1065
+    },
+    "Es3:8": {
+      "printed_page": 1052,
+      "scan_filename": "1052-Es.jpg",
+      "inventory_index_1based": 1081
+    },
+    "Es5:13": {
+      "printed_page": 1054,
+      "scan_filename": "1054-Es.jpg",
+      "inventory_index_1based": 1083
+    },
+    "Es7:4": {
+      "printed_page": 1056,
+      "scan_filename": "1056-Es.jpg",
+      "inventory_index_1based": 1085
+    },
+    "Ne6:6": {
+      "printed_page": 1113,
+      "scan_filename": "1113-Ne.jpg",
+      "inventory_index_1based": 1142
+    }
+  },
+  "notes": [
+    "Both Ezekiel 7:26 occurrences are on printed page 740.",
+    "Nehemiah 6:6 begins on page 1112, but the target atom is on page 1113; that page's header begins at 6:7.",
+    "These locations do not assert agreement between BHL and MAM in pointing or cantillation."
+  ]
+}

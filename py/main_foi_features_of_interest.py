@@ -36,6 +36,7 @@ from foi import foiz_wt_rev_mug as foi_rev_mug
 from foi import foiz_wt_slh_word as foi_slh_word
 from foi import foiz_wt_mtgmtg as foi_mtgmtg
 from foi import foiz_wt_unicode as foi_unicode
+from foi import foiz_wt_holam_before_vav as foi_holam_before_vav
 
 from mb_cmn import paths
 from mb_cmn.worker_budget import choose_workers
@@ -94,6 +95,7 @@ _WIKITEXT_FOIS_FUN_FOR_CLARG = {
     "args-foi-slh-word": foi_slh_word.find_fois_wt,
     "args-foi-mtgmtg": foi_mtgmtg.find_fois_wt,
     "args-foi-unicode": foi_unicode.find_fois_wt,
+    "args-foi-holam-before-vav": foi_holam_before_vav.find_fois_wt,
 }
 _WIKITEXT_CLARGS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.keys())
 _WIKITEXT_FOIS_FNS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.values())

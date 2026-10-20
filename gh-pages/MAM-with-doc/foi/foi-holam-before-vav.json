@@ -1,0 +1,189 @@
+[
+  {
+    "bcv_short": "I24:2",
+    "vav_marks": "ֶ֔",
+    "bhl": {
+      "printed_page": 607,
+      "scan_filename": "0607-Isaiah.jpg",
+      "inventory_index_1based": 636
+    },
+    "fp": "With an above-mark on vav",
+    "r": "כַּלֹּוֶ֔ה"
+  },
+  {
+    "bcv_short": "I47:11",
+    "vav_marks": "ָ֔",
+    "bhl": {
+      "printed_page": 631,
+      "scan_filename": "0631-Isaiah.jpg",
+      "inventory_index_1based": 660
+    },
+    "fp": "With an above-mark on vav",
+    "r": "הֹוָ֔ה"
+  },
+  {
+    "bcv_short": "Pr22:7",
+    "vav_marks": "ֶ֗",
+    "bhl": {
+      "printed_page": 963,
+      "scan_filename": "0963-Pr.jpg",
+      "inventory_index_1based": 992
+    },
+    "fp": "With an above-mark on vav",
+    "r": "לֹ֝וֶ֗ה"
+  },
+  {
+    "bcv_short": "La3:25",
+    "vav_marks": "ָ֔",
+    "bhl": {
+      "printed_page": 1028,
+      "scan_filename": "1028-La.jpg",
+      "inventory_index_1based": 1057
+    },
+    "fp": "With an above-mark on vav",
+    "r": "לְקֹוָ֔ו"
+  },
+  {
+    "bcv_short": "I49:23",
+    "vav_marks": "ָֽ",
+    "bhl": {
+      "printed_page": 634,
+      "scan_filename": "0634-Isaiah.jpg",
+      "inventory_index_1based": 663
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "קֹוָֽי"
+  },
+  {
+    "bcv_short": "Ee7:26",
+    "vav_marks": "ָ֤",
+    "bhl": {
+      "printed_page": 740,
+      "scan_filename": "0740-Ee.jpg",
+      "inventory_index_1based": 769
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "הֹוָ֤ה"
+  },
+  {
+    "bcv_short": "Ee7:26",
+    "vav_marks": "ָ",
+    "bhl": {
+      "printed_page": 740,
+      "scan_filename": "0740-Ee.jpg",
+      "inventory_index_1based": 769
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "הֹוָה֙"
+  },
+  {
+    "bcv_short": "Ps25:3",
+    "vav_marks": "ֶ",
+    "bhl": {
+      "printed_page": 875,
+      "scan_filename": "0875-Ps.jpg",
+      "inventory_index_1based": 904
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "קֹ֭וֶיךָ"
+  },
+  {
+    "bcv_short": "Ps37:9",
+    "vav_marks": "ֵ֥",
+    "bhl": {
+      "printed_page": 882,
+      "scan_filename": "0882-Ps.jpg",
+      "inventory_index_1based": 911
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "וְקֹוֵ֥י"
+  },
+  {
+    "bcv_short": "Ps37:21",
+    "vav_marks": "ֶ֣",
+    "bhl": {
+      "printed_page": 882,
+      "scan_filename": "0882-Ps.jpg",
+      "inventory_index_1based": 911
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "לֹוֶ֣ה"
+  },
+  {
+    "bcv_short": "Ps69:7",
+    "vav_marks": "ֶ",
+    "bhl": {
+      "printed_page": 898,
+      "scan_filename": "0898-Ps.jpg",
+      "inventory_index_1based": 927
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "קֹוֶיךָ֮"
+  },
+  {
+    "bcv_short": "Ps88:16",
+    "vav_marks": "ֵ֣",
+    "bhl": {
+      "printed_page": 909,
+      "scan_filename": "0909-Ps.jpg",
+      "inventory_index_1based": 938
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "וְגֹוֵ֣עַ"
+  },
+  {
+    "bcv_short": "Ec2:22",
+    "vav_marks": "ֶ֤",
+    "bhl": {
+      "printed_page": 1036,
+      "scan_filename": "1036-Ec.jpg",
+      "inventory_index_1based": 1065
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "הֹוֶ֤ה"
+  },
+  {
+    "bcv_short": "Es3:8",
+    "vav_marks": "ֶ֖",
+    "bhl": {
+      "printed_page": 1052,
+      "scan_filename": "1052-Es.jpg",
+      "inventory_index_1based": 1081
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "שֹׁוֶ֖ה"
+  },
+  {
+    "bcv_short": "Es5:13",
+    "vav_marks": "ֶ֖",
+    "bhl": {
+      "printed_page": 1054,
+      "scan_filename": "1054-Es.jpg",
+      "inventory_index_1based": 1083
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "שֹׁוֶ֖ה"
+  },
+  {
+    "bcv_short": "Es7:4",
+    "vav_marks": "ֶ֖",
+    "bhl": {
+      "printed_page": 1056,
+      "scan_filename": "1056-Es.jpg",
+      "inventory_index_1based": 1085
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "שֹׁוֶ֖ה"
+  },
+  {
+    "bcv_short": "Ne6:6",
+    "vav_marks": "ֶ֤",
+    "bhl": {
+      "printed_page": 1113,
+      "scan_filename": "1113-Ne.jpg",
+      "inventory_index_1based": 1142
+    },
+    "fp": "Without an above-mark on vav",
+    "r": "הֹוֶ֤ה"
+  }
+]

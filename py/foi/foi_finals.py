@@ -22,6 +22,7 @@ from foi import quick_brown_explanations as quick_brown_e
 from foi import rare_tmpls_explanations as rare_tmpls_e
 from foi import slh_word_explanations as slh_word_e
 from foi import unicode_explanations as unicode_e
+from foi import holam_before_vav_explanations as holam_e
 
 # XXX TODO show a "table of contents"
 # XXX TODO show friendlier descriptions of the FOIs
@@ -102,7 +103,7 @@ def _write_finals3(args_foi, all_fois, outspec):
     if outfile_stem == "mtgmtg":
         mtgmtg_e.validate_quoted_mam_atoms(outs["rowdics"])
     _write_json(args_foi, outfile_stem, outs["rowdics"])
-    _write_html(args_foi, outfile_stem, outs["html_tables"])
+    _write_html(args_foi, outfile_stem, outs["html_tables"], outs["rowdics"])
 
 
 def _make_final_for_foi_struct(fpfs, outs):
@@ -136,7 +137,12 @@ def _get_rows(foi_path, foi_struct):
     else:
         assert False, foi_target_type
     row_dic_for_json = _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents)
-    row_dic_for_html = _row_dic_for_html(bcv_anchor, qualifier, html_contents)
+    html_qualifier = (
+        holam_e.qualifier_for_html(qualifier)
+        if foi_path[0] == "holam-before-vav"
+        else qualifier
+    )
+    row_dic_for_html = _row_dic_for_html(bcv_anchor, html_qualifier, html_contents)
     return row_dic_for_json, row_dic_for_html
 
 
@@ -213,18 +219,24 @@ def _outfilename_for_json(outfile_stem):
     return f"foi-{outfile_stem}.json"
 
 
-def _write_html(args_foi, outfile_stem, html_tables):
+def _write_html(args_foi, outfile_stem, html_tables, rowdics):
     body1, body2 = _get_html_body1_and_2(outfile_stem, html_tables)
     if not body1:
         assert args_foi
         return
-    body_contents = _foi_body_wrapper(_overall_head(outfile_stem) + body1 + body2)
+    overall_head = (
+        holam_e.introduction(rowdics)
+        if outfile_stem == "holam-before-vav"
+        else _overall_head(outfile_stem)
+    )
+    body_contents = _foi_body_wrapper(overall_head + body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(
         title,
         _out_path_for_html(outfile_stem),
         css_hrefs=(_CSS_HREF,),
         html_comment=provenance.generated_html_comment(__file__),
+        head_style=holam_e.STYLE if outfile_stem == "holam-before-vav" else None,
     )
     mb_html.write_html_to_file(body_contents, write_ctx)
 

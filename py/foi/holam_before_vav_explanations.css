@@ -1,0 +1,17 @@
+/* The established extra-letter-spacing convention makes mark hosts visible. */
+td[lang="hbo"] {
+    font-size: 200%;
+    line-height: 1.8;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+}
+td:not([lang="hbo"]) {
+    vertical-align: middle;
+}
+td:nth-child(2) {
+    white-space: nowrap;
+    padding-left: 0.6em;
+}
+.romanized {
+    font-style: italic;
+}
