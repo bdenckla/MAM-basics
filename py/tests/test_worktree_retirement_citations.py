@@ -2,6 +2,7 @@
 
 import hashlib
 import ntpath
+import os
 import posixpath
 import subprocess
 from types import SimpleNamespace
@@ -88,7 +89,11 @@ def test_citation_output_matches_explicit_line_oracle(
     add("`.novc/artifact.txt` then `.novc/artifact.txt`", 0)
 
     content = ("\n".join(lines) + "\n").encode("utf-8")
-    filenames = ["z citation.md", "a\ttab.md"]
+    filenames = ["z citation.md", "a space.md"]
+    # Exercise whitespace on every platform; only POSIX accepts control characters
+    # in filenames. Git's NUL-delimited output must preserve the tab there too.
+    if os.name == "posix":
+        filenames.append("a\ttab.md")
     for filename in filenames:
         (tmp_path / filename).write_bytes(content)
 

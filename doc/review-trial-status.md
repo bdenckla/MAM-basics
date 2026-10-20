@@ -12,7 +12,7 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5`; ten commits / 11 paths since the reconciled October 19 anchor; scoped downloader, retained report and citation optimization reviewed; no new consequential defect |
+| Reviewed through | `d27594238139e75d507b2b2a921de1707946c3d1`; parent-reported harmless connector screens through `a9db1ad3b30a5d8da411457b9d93457554b2384c`, then this five-commit / 59-path code/generated endpoint review; objective citation-fixture portability repair `44a457c513795920b5d350ef27074fc1acca919a` stays isolated; no editorial change |
 | Last tested | `040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5`; mega exit 0, all 60 steps; suite exit 0: 1099 passed, 5 skipped, 82 subtests passed in 329.42s (0:05:29); explained differences preserved |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
@@ -37,6 +37,7 @@ the repair commit; a passing suite or no-diff mega is not proof of the underlyin
 | Nightly, 2026-10-18 | `80dd9f04e56ae705981749ba9fbafb7fb243c3de`; allowed committed inputs `3c7a60e9cfd7f670a35b3ea4dbfc2179367ef4aa` and `853682c32f69dc5dfd90091fd6743f8f3bc00e56` | Mega exit 0 in 459.423 s, 60 steps; full suite exit 0 in 300.922 s: 1087 passed, 5 established skips, 82 subtests passed. Eight SVG layout differences and two change-log provenance differences verified and preserved privately. Focused review reproduces 152 cases / 718 literal passages / 14 proposed quotations. Four stale history-inventory context fields synchronized with two existing Ben decisions in `339dbb3b95b690bf42f915360b57f9393791448d`; focused rebuild reproduces, no history routing or source-data change. Reconciled prior receipt `1e2bbaf8eccadae4ce9f3cdee695c7f92d225535`; pending hourly receipt work remains accounted for by this endpoint review. [Compact receipt](https://github.com/bdenckla/MAM-basics/blob/6480c7c452071f4847b5b1b29741d06f09ef803a/doc/review-nightly-2026-10-18.json). Isolated branch only; no main push or deployment. |
 | Nightly, 2026-10-19 | `2716f6333613cd680b7c9054f2307e88cb0eff23`; allowed committed inputs `3c7a60e9cfd7f670a35b3ea4dbfc2179367ef4aa` and `853682c32f69dc5dfd90091fd6743f8f3bc00e56` | Mega exit 0 in 492.840 s, all 60 steps; full suite exit 0 in 325.203 s: 1087 passed, 5 established skips, 82 subtests passed. Eight SVG layout and two change-log provenance differences verified and preserved privately. Offline reconstruction confirms six template replacements and all 13 mirror page sizes; focused research review reproduces. No new defect or repair; the October 18 inventory-context repair remains separate and unmerged. [Compact receipt](https://github.com/bdenckla/MAM-basics/blob/c27501150f4ce9bc3fb6d8e7ca18e0a79f1b77b3/doc/review-nightly-2026-10-19.json). Isolated branch only; no main push or deployment. |
 | Nightly, 2026-10-20 | `040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5`; allowed committed inputs `91d800de422d71deaa6ef28f05b4193223ca9e61`, `853682c32f69dc5dfd90091fd6743f8f3bc00e56` | Mega exit 0 in 479.191 s, 60 steps; suite exit 0 in 332.349 s: 1099 passed, 5 skipped, 82 subtests passed in 329.42s (0:05:29). Eight SVG layout/Times-alias and two provenance-only differences independently verified and preserved privately. Reviewed ten commits / 11 paths; offline downloader/report probes pass. No new consequential defect or repair. [Compact receipt](https://github.com/bdenckla/MAM-basics/blob/2560261b137a357189718fb8301e1d745a5b8763/doc/review-nightly-2026-10-20.json). Isolated branch only; no main integration or deployment. |
+| Focused review and portability repair, 2026-10-20 | Reviewed `d27594238139e75d507b2b2a921de1707946c3d1` from `a9db1ad3b30a5d8da411457b9d93457554b2384c`; repair `44a457c513795920b5d350ef27074fc1acca919a` | Owner receipt `a14f499d3ddd6ca7f660fdd7180eb8c2895d255b` reports mega pass on `b643e9796e326e553a5d0aa7af3f50bfe462d6c0`, with suite 1089 passed, ten Windows-invalid-filename failures and five skips. Linux source control: 12 citation tests pass; repaired focused modules: 36 passed. Actual filename-selection checks retain POSIX tab coverage and select Windows-safe names; no native Windows rerun is claimed. Algorithmic generated deltas are explained with source text unchanged; the 2 Kings 5:18 joining convention stays provisional. No broad rerun or main integration. [Compact receipt](review-citation-portability-2026-10-20.json). |
 
 Run 1's cloud commands ran sequentially from
 `/workspace/review-trial-run1-20261008/MAM-basics`, with its home interpreter:
@@ -160,3 +161,15 @@ the immutable commits linked above. Only this maintained note is integrated here
 reviewed source anchors, sibling inputs, failures and skips remain those actually recorded;
 this documentation commit advances none of them. No mega or full suite is repeated for this
 integration; focused receipt, anchor and link checks apply. No workflow is dispatched.
+
+Citation portability verification and approved integration, 2026-10-20: the coordinating
+session verified native Windows results for exact commit
+`c9bde2e515aca8efbf288c6725489100e06e1970`: all 12 citation tests passed, including
+the ten previously failing parametrizations, with CPython 3.13.15, pytest 9.1.1 and Windows 11
+build 26300. The [single structured receipt update](review-citation-portability-2026-10-20-update.json)
+records the later result; the base receipt retains its original Linux-only state and now
+links that update. Ben approved integrating the narrow test repair and its receipt into main.
+No full suite or mega is repeated, no broad-tested anchor is advanced, and the owner
+receipt's ten full-suite failures and five skips remain historical results. The integration
+adds no FOI or other branch, production change, generated output or workflow change. Pages
+has no push trigger; no workflow is dispatched.

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-20",
+  "state": "open; first entry 2026-10-20",
+  "base_receipt": "review-citation-portability-2026-10-20.json",
+  "original_receipt_commit": "c9bde2e515aca8efbf288c6725489100e06e1970",
+  "passage_updated": "pending.native_windows_citation_check reported pending because the original executor was Linux.",
+  "current_status": "Subsequent native Windows citation verification passed; the earlier pending entry remains the historical Linux execution state.",
+  "native_windows_verification": {
+    "tested_commit": "c9bde2e515aca8efbf288c6725489100e06e1970",
+    "code_repair_commit": "44a457c513795920b5d350ef27074fc1acca919a",
+    "command": "py/main_test.py py/tests/test_worktree_retirement_citations.py -q -ra, using the selected Windows clone environment",
+    "implementation": "CPython",
+    "python": "3.13.15",
+    "pytest": "9.1.1",
+    "os": "Windows 11",
+    "build": "26300",
+    "passed": 12,
+    "failed": 0,
+    "previously_failing_parametrizations_passed": 10,
+    "provenance": "The coordinating session verified the completed HP task and retained summary.json. This result is supplied verified Windows evidence, not a Windows run by the Linux integration executor."
+  },
+  "prior_focused_linux_result": {
+    "code_commit": "44a457c513795920b5d350ef27074fc1acca919a",
+    "focused_tests_passed": 36,
+    "receipt_lint_passed": 1
+  },
+  "integration_scope": {
+    "approved_branch_head": "c9bde2e515aca8efbf288c6725489100e06e1970",
+    "files": "Citation test fixture, original review receipt/status note and this single structured receipt update only.",
+    "excluded": "No FOI or other branch, production code, source text, generated product or workflow change.",
+    "deployment_preflight": "The sole tracked Pages workflow has schedule/manual triggers and no push trigger; no workflow dispatch is performed.",
+    "broad_checks": "No new broad run; existing nightly and owner broad-tested source anchors, failures and skips are unchanged."
+  }
+}
