@@ -9,6 +9,7 @@ from collections import Counter
 from html.parser import HTMLParser
 import json
 import re
+import pytest
 
 from accgram.mam_simple_verse import load_mam_simple_for_refs, mam_simple_refs
 from foi import foi_struct as fct
@@ -23,7 +24,7 @@ from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 _MARK = r"[\u034f\u0591-\u05bd\u05bf\u05c1\u05c2\u05c4\u05c5\u05c7-\u05c9\ufb1e]"
 _ATOM = re.compile(r"[א-ת](?:[א-ת]|" + _MARK + r")*")
 _PAIR = re.compile(r"(?=([א-הז-ת])(" + _MARK + r"*)ו(" + _MARK + r"*))")
-_CLUSTER = re.compile(r"([א-ת])(" + _MARK + r"*)")
+_HASER_PAIR = re.compile(r"(?=(ו)(" + _MARK + r"*)ו(" + _MARK + r"*))")
 
 
 def _text(node):
@@ -71,23 +72,41 @@ def test_complete_foi_matches_mam_simple():
                                 else "Without an above-mark on vav"
                             ),
                         ] += 1
-                for match in _CLUSTER.finditer(atom):
+                for match in _HASER_PAIR.finditer(atom):
                     if hp.XOLAM_XFV in match[2]:
-                        assert match[1] == "ו", (bcv, atom)
-                        expected[bcv, atom, match[2], "Holam haser for vav"] += match[
-                            2
-                        ].count(hp.XOLAM_XFV)
+                        expected[
+                            bcv, atom, match[3], "Holam haser for vav before vav"
+                        ] += 1
     assert actual, "The FOI found no occurrences"
     assert actual == expected
 
 
+@pytest.mark.parametrize(
+    "atom",
+    (
+        "ו" + hp.XOLAM_XFV + "ה",
+        "ו" + hp.XOLAM_XFV,
+        "ו" + hp.XOLAM_XFV + "הו",
+        "ה" + hp.XOLAM_XFV + "ו",
+    ),
+)
+def test_haser_requires_vav_as_next_base_letter(atom):
+    assert list(foi.haser_pairs(atom)) == []
+
+
+def test_haser_allows_an_intervening_accent():
+    atom = "ו" + hp.XOLAM_XFV + ha.REV + "ו" + hp.SEGOL_V
+    assert list(foi.haser_pairs(atom)) == [(0, len(atom), hp.SEGOL_V)]
+
+
 class _SpacingPage(HTMLParser):
-    """Read the rendered Scripture examples, excluding their English labels."""
+    """Read Scripture spans in the two adjacent Hebrew cells of every row."""
 
     def __init__(self):
         super().__init__()
         self.examples = []
         self.current = None
+        self.span_depth = 0
         self.cell_counts = []
 
     def handle_starttag(self, tag, attrs):
@@ -96,22 +115,26 @@ class _SpacingPage(HTMLParser):
             self.cell_counts.append(0)
         if tag == "td":
             self.cell_counts[-1] += 1
-        if tag == "div" and attributes.get("class") in {
+        if tag == "span" and attributes.get("class") in {
             "holam-normal-spacing",
             "holam-expanded-spacing",
         }:
             self.current = [attributes["class"], ""]
-        if tag == "span" and self.current is not None:
+            self.span_depth = 1
+        elif tag == "span" and self.current is not None:
             assert attributes == {"class": "mam-doc-target-without-callout"}
+            self.span_depth += 1
 
     def handle_data(self, text):
         if self.current is not None:
             self.current[1] += text
 
     def handle_endtag(self, tag):
-        if tag == "div" and self.current is not None:
-            self.examples.append((self.current[0], self.current[1].strip()))
-            self.current = None
+        if tag == "span" and self.current is not None:
+            self.span_depth -= 1
+            if self.span_depth == 0:
+                self.examples.append((self.current[0], self.current[1].strip()))
+                self.current = None
 
 
 def test_rendered_spacing_versions_preserve_every_occurrence():
@@ -128,9 +151,11 @@ def test_rendered_spacing_versions_preserve_every_occurrence():
         for row in rows
         for spacing in ("holam-normal-spacing", "holam-expanded-spacing")
     ]
-    assert page.cell_counts == [2] * len(rows)
+    assert page.cell_counts == [3] * len(rows)
     assert not any("bhl" in row for row in rows)
     assert "BHL" not in source
     assert "The marks column" not in source
+    assert "Normal spacing" not in source
+    assert "Expanded spacing" not in source
     assert re.search(r"\.holam-normal-spacing\s*\{\s*letter-spacing: normal;", source)
     assert re.search(r"\.holam-expanded-spacing\s*\{\s*letter-spacing: 0\.1em;", source)

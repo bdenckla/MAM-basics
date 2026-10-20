@@ -139,9 +139,14 @@ def _get_rows(foi_path, foi_struct):
         assert False, foi_target_type
     row_dic_for_json = _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents)
     html_qualifier = {} if foi_path[0] == "holam-before-vav" else qualifier
-    if foi_path[0] == "holam-before-vav":
-        html_contents = holam_e.spaced_examples(html_contents)
     row_dic_for_html = _row_dic_for_html(bcv_anchor, html_qualifier, html_contents)
+    if foi_path[0] == "holam-before-vav":
+        row_dic_for_html["html_contents"] = mb_html.span_c(
+            html_contents, "holam-normal-spacing"
+        )
+        row_dic_for_html["expanded_html_contents"] = mb_html.span_c(
+            html_contents, "holam-expanded-spacing"
+        )
     return row_dic_for_json, row_dic_for_html
 
 
@@ -181,8 +186,17 @@ def _append_table_row(io_html_tables, foi_path, row_dic):
 def _make_table_row(row_dic):
     td_attrs = {"lang": "hbo", "dir": "rtl"}
     hc_td = mb_html.table_datum(row_dic["html_contents"], td_attrs)
-    other_tds = tuple(_my_td(k, v) for k, v in row_dic.items() if k != "html_contents")
-    return mb_html.table_row((hc_td, *other_tds))
+    hebrew_tds = [hc_td]
+    if "expanded_html_contents" in row_dic:
+        hebrew_tds.append(
+            mb_html.table_datum(row_dic["expanded_html_contents"], td_attrs)
+        )
+    other_tds = tuple(
+        _my_td(k, v)
+        for k, v in row_dic.items()
+        if k not in {"html_contents", "expanded_html_contents"}
+    )
+    return mb_html.table_row((*hebrew_tds, *other_tds))
 
 
 def _my_td(key, htseq_or_str_or_none):
@@ -228,7 +242,12 @@ def _write_html(args_foi, outfile_stem, html_tables, rowdics):
         if outfile_stem == "holam-before-vav"
         else _overall_head(outfile_stem)
     )
-    body_contents = _foi_body_wrapper(overall_head + body1 + body2)
+    ending = (
+        holam_e.empty_haser_section(rowdics)
+        if outfile_stem == "holam-before-vav"
+        else []
+    )
+    body_contents = _foi_body_wrapper(overall_head + body1 + body2 + ending)
     title_stem = holam_e.TITLE if outfile_stem == "holam-before-vav" else outfile_stem
     title = f"{title_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(

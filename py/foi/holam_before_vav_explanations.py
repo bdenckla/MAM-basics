@@ -9,7 +9,7 @@ from mb_cmn import hebrew_accents as ha
 from mb_misc import mb_html
 from py_html.my_html_span_romanized import rmn
 
-TITLE = "Holam before vav and holam haser for vav"
+TITLE = "Holam before vav"
 STYLE = Path(__file__).with_suffix(".css").read_text(encoding="utf-8")
 _NAMES = {
     ha.ZAQ_Q: names.ROM_ZAQEF_QATAN + " qatan",
@@ -22,23 +22,11 @@ def section_sort_key(path):
     return path[-1] == HASER_CATEGORY, path
 
 
-def spaced_examples(contents):
-    """Show the same unmodified Hebrew nodes with two spacing presentations."""
-    result = []
-    for label, css_class in (
-        ("Normal spacing", "holam-normal-spacing"),
-        ("Expanded spacing", "holam-expanded-spacing"),
-    ):
-        result.extend(
-            (
-                mb_html.div(
-                    label,
-                    {"class": "holam-spacing-label", "dir": "ltr", "lang": "en"},
-                ),
-                mb_html.div(contents, {"class": css_class}),
-            )
-        )
-    return result
+def empty_haser_section(rows):
+    """Keep the requested third category visible when its corpus count is zero."""
+    if any(row["fp"] == HASER_CATEGORY for row in rows):
+        return []
+    return [mb_html.para(f"{HASER_CATEGORY}: no occurrences.")]
 
 
 def introduction(rows):
@@ -65,17 +53,21 @@ def introduction(rows):
             "intervene. These groups exclude the divine name, including prefixed occurrences."
         ),
         mb_html.para(
-            f'The third group, "{HASER_CATEGORY}", shows all {len(haser)} occurrences '
-            f"in {len({r['bcv_short'] for r in haser})} verses of the separate Unicode "
-            "character HOLAM HASER FOR VAV (U+05BA). Each is on vav; another following "
-            "vav is not required."
+            f'The third group, "{HASER_CATEGORY}", requires vav with HOLAM HASER '
+            "FOR VAV (U+05BA), followed by another vav as the next base letter. "
+            "Combining marks may intervene; another letter may not. "
+            + (
+                f"There are {len(haser)} occurrences in "
+                f"{len({r['bcv_short'] for r in haser})} verses."
+                if haser
+                else "There are no occurrences in MAM."
+            )
         ),
         mb_html.para(
             "In the first two groups, the blue text marks the holam-bearing letter "
-            "and following vav. In the third group, it marks the vav with holam haser. "
+            "and following vav. In the third group, it marks both vav letters. "
             "The original marks remain on their original letters. Each occurrence "
-            'is enlarged and shown with "Normal spacing" and "Expanded spacing"; '
-            "only the letter spacing differs."
+            "is enlarged and shown in adjacent columns; only the letter spacing differs."
         ),
         mb_html.para(
             ['In "With an above-mark on vav": ', *mark_counts, "."]

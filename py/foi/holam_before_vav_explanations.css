@@ -10,17 +10,10 @@ td[lang="hbo"] {
 .holam-expanded-spacing {
     letter-spacing: 0.1em;
 }
-.holam-spacing-label {
-    font-family: system-ui, sans-serif;
-    font-size: 0.4em;
-    line-height: 1.4;
-    margin-top: 0.4em;
-    text-align: right;
-}
 td:not([lang="hbo"]) {
     vertical-align: middle;
 }
-td:nth-child(2) {
+td:last-child {
     white-space: nowrap;
     padding-left: 0.6em;
 }
