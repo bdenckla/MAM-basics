@@ -1,6 +1,6 @@
 {
   "summary-counts": {
-    "tracked-clusters": 1910,
+    "tracked-clusters": 1906,
     "treated-ordinary-rafeh": 8
   },
   "treated-ordinary-bucket": {
@@ -52,7 +52,7 @@
       "key": "meteg-cgj-vowel",
       "label": "meteg, CGJ, vowel, optional pre-wm.",
       "count-label": "SD.Early-meteg",
-      "count": 720,
+      "count": 718,
       "examples": [
         {
           "bcvp": "Genesis 1:7.16",
@@ -61,7 +61,7 @@
           "cluster-index": 1,
           "sequence": "av",
           "mark names": "meteg/siluq, combining-grapheme-joiner, pataḥ",
-          "count": 394
+          "count": 393
         },
         {
           "bcvp": "Psalms 29:1.4",
@@ -115,7 +115,7 @@
           "cluster-index": 1,
           "sequence": "av",
           "mark names": "meteg/siluq, combining-grapheme-joiner, segol-vowel",
-          "count": 59
+          "count": 58
         },
         {
           "bcvp": "Ezekiel 26:16.1",
@@ -176,7 +176,7 @@
         "without-pre-wm": {
           "key": "without-pre-wm",
           "label": "without pre-wm",
-          "count": 705,
+          "count": 703,
           "examples": [
             {
               "bcvp": "Genesis 1:7.16",
@@ -185,7 +185,7 @@
               "cluster-index": 1,
               "sequence": "av",
               "mark names": "meteg/siluq, combining-grapheme-joiner, pataḥ",
-              "count": 394
+              "count": 393
             },
             {
               "bcvp": "Genesis 1:26.17",
@@ -212,7 +212,7 @@
               "cluster-index": 1,
               "sequence": "av",
               "mark names": "meteg/siluq, combining-grapheme-joiner, segol-vowel",
-              "count": 59
+              "count": 58
             },
             {
               "bcvp": "Ezekiel 26:16.1",
@@ -734,7 +734,7 @@
       "key": "initial-meteg-pre-wm",
       "label": "On the first letter of a word only (after an optional vowel): meteg, pre-wm.",
       "count-label": "SDV.FL.meteg, pre-wm.",
-      "count": 220,
+      "count": 218,
       "examples": [
         {
           "bcvp": "Psalms 21:14.5",
@@ -743,7 +743,7 @@
           "cluster-index": 1,
           "sequence": "aa",
           "mark names": "dagesh/mapiq/shuruq-dot, meteg/siluq, geresh-muqdam",
-          "count": 10
+          "count": 8
         },
         {
           "bcvp": "2Chronicles 4:2.6",

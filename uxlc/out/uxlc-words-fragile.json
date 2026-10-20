@@ -48,11 +48,11 @@
     "fragile_word_n_with_drops": "q,_,τ,:,r,o,(mun),σ"
   },
   {
-    "fragile_word_u": "תַעֲשֶֽׂ֙ה־",
-    "fragile_word_n": "תַעֲשֶֽׂ֙ה־",
-    "fragile_word_u_cs": "τ,_,3,:_,$,·si,∵,(pash),(mos),h,-",
-    "fragile_word_n_cs": "τ,_,3,:_,$,∵,(mos),·si,(pash),h,-",
-    "fragile_word_u_with_drops": "τ,_,3,:_,$,∵,(pash),(mos),h,-",
-    "fragile_word_n_with_drops": "τ,_,3,:_,$,∵,(mos),(pash),h,-"
+    "fragile_word_u": "תַעֲשֶֽׂ֨ה־",
+    "fragile_word_n": "תַעֲשֶֽׂ֨ה־",
+    "fragile_word_u_cs": "τ,_,3,:_,$,·si,∵,(qom),(mos),h,-",
+    "fragile_word_n_cs": "τ,_,3,:_,$,∵,(mos),·si,(qom),h,-",
+    "fragile_word_u_with_drops": "τ,_,3,:_,$,∵,(qom),(mos),h,-",
+    "fragile_word_n_with_drops": "τ,_,3,:_,$,∵,(mos),(qom),h,-"
   }
 ]

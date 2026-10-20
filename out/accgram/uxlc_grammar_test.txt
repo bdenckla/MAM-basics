@@ -1,25 +1,25 @@
 === OUT set: WLC-4.22 vs UXLC grammaticality (changes NOT in prose output) ===
 
-prose-corpus verses          : 211  (228 changes)
-  validated                  : 196 verses (212 changes)
-  excluded                   : 15 verses (16 changes)
+prose-corpus verses          : 231  (249 changes)
+  validated                  : 216 verses (232 changes)
+  excluded                   : 15 verses (17 changes)
 
-  of validated: scanner-VISIBLE change 105, no-op 91
+  of validated: scanner-VISIBLE change 121, no-op 95
 
 2x2 over validated VERSES (all):
-  WLC-gram    -> UXLC-gram   : 183
+  WLC-gram    -> UXLC-gram   : 199
   WLC-gram    -> UXLC-ungram : 10
-  WLC-ungram  -> UXLC-gram   : 2
-  WLC-ungram  -> UXLC-ungram : 1
+  WLC-ungram  -> UXLC-gram   : 5
+  WLC-ungram  -> UXLC-ungram : 2
 
 2x2 over scanner-VISIBLE verses (the meaningful denominator):
-  WLC-gram    -> UXLC-gram   : 92
+  WLC-gram    -> UXLC-gram   : 104
   WLC-gram    -> UXLC-ungram : 10
-  WLC-ungram  -> UXLC-gram   : 2
-  WLC-ungram  -> UXLC-ungram : 1
+  WLC-ungram  -> UXLC-gram   : 5
+  WLC-ungram  -> UXLC-ungram : 2
 
 WLC-gram -> UXLC-ungram (degradation): 10 verses
-    1Kings 2:30.12   [accent/add_accent] Add merka following segol under the mem.
+    1Kings 12:5.3    [accent/substitution] Change merkha to tipeha under the kaf. Add note 'm'.
     1Kings 12:25.6   [accent/substitution] Replace tipeha and patah from under resh with qamats. P
     1Kings 17:16.9   [accent/substitution] Change munah under the bet to a mahapakh.
     1Sam 17:52.23    [silluq/remove_terminator] Remove sof-pasuq. Add note 'c'.
@@ -30,12 +30,16 @@ WLC-gram -> UXLC-ungram (degradation): 10 verses
     Jer 52:18.10     [accent/substitution] Change revia on pe to zaqef qatan.
     Josh 14:10.4     [accent/substitution] Change munah under vav to meteg. Add note 'm'.
 
-WLC-ungram -> UXLC-gram (fix): 2 verses
+WLC-ungram -> UXLC-gram (fix): 5 verses
+    Ezek 11:1.29     [accent/substitution] Change tipeha to meteg below resh.
     Ex 38:12.6       [accent/substitution] Change merkha under he to meteg. Add note 'm'.
-    Judg 11:24.7     [accent/substitution] Change mercha under tav to munah.
+    Jer 10:3.11      [accent/substitution] Change merkha to meteg under the dalet.
+    Jer 46:4.6       [accent/substitution] Change merkha to meteg under the kaf.
+    Lev 25:20.4      [accent/substitution] Remove mahapakh under the kaf. Remove 'c' note.
 
 Excluded verses (synth could not be validated):
     1Chr 10:1.4                  ref-mismatch: synth WLC word != real M-C word
+    1Kings 2:30.12, 1Kings 2:30.12 UXLC-39 cross-check: doubled stress-helper accent
     2Sam 6:7.1                   ref-mismatch: synth WLC word != real M-C word
     2Sam 8:1.2                   ref-mismatch: synth WLC word != real M-C word
     Deut 12:30.12                ref-mismatch: synth WLC word != real M-C word
@@ -48,38 +52,37 @@ Excluded verses (synth could not be validated):
     Jer 27:13.7                  ref-mismatch: synth WLC word != real M-C word
     Jer 48:27.13                 ref-mismatch: synth WLC word != real M-C word
     Josh 2:3.7                   UXLC-39 cross-check: doubled stress-helper accent
-    Lev 25:20.3                  ref-mismatch: synth WLC word != real M-C word
     Num 11:24.2                  ref-mismatch: synth WLC word != real M-C word
 
 By-kind breakdown of solo-change verses (confidence buckets):
-  add_accent        : WLC-gram->[g  13 / u   2]   WLC-ungram->[g   0 / u   0]
+  add_accent        : WLC-gram->[g  14 / u   1]   WLC-ungram->[g   0 / u   1]
   remove_terminator : WLC-gram->[g   0 / u   2]   WLC-ungram->[g   0 / u   0]
-  substitution      : WLC-gram->[g 155 / u   6]   WLC-ungram->[g   2 / u   1]
+  substitution      : WLC-gram->[g 170 / u   7]   WLC-ungram->[g   5 / u   1]
 
 
 === IN set: WLC-4.22 vs UXLC grammaticality (changes IN prose output) ===
 
-prose-corpus verses          : 45  (46 changes)
-  validated                  : 32 verses (32 changes)
-  excluded                   : 13 verses (14 changes)
+prose-corpus verses          : 46  (46 changes)
+  validated                  : 33 verses (33 changes)
+  excluded                   : 13 verses (13 changes)
 
-  of validated: scanner-VISIBLE change 31, no-op 1
+  of validated: scanner-VISIBLE change 32, no-op 1
 
 2x2 over validated VERSES (all):
   WLC-gram    -> UXLC-gram   : 1
   WLC-gram    -> UXLC-ungram : 0
-  WLC-ungram  -> UXLC-gram   : 29
+  WLC-ungram  -> UXLC-gram   : 30
   WLC-ungram  -> UXLC-ungram : 2
 
 2x2 over scanner-VISIBLE verses (the meaningful denominator):
   WLC-gram    -> UXLC-gram   : 0
   WLC-gram    -> UXLC-ungram : 0
-  WLC-ungram  -> UXLC-gram   : 29
+  WLC-ungram  -> UXLC-gram   : 30
   WLC-ungram  -> UXLC-ungram : 2
 
 WLC-gram -> UXLC-ungram (degradation): 0 verses
 
-WLC-ungram -> UXLC-gram (fix): 29 verses
+WLC-ungram -> UXLC-gram (fix): 30 verses
     1Kings 6:2.10    [accent/substitution] Change mahapakh under resh to munah.
     1Kings 6:3.6     [accent/substitution] Change munah under resh to mahapakh.
     1Kings 8:11.6    [accent/substitution] Change merkha to munah.
@@ -105,6 +108,7 @@ WLC-ungram -> UXLC-gram (fix): 29 verses
     Jer 31:32.11     [accent/substitution] Change tipeha under alef to munah.
     Jer 46:4.6       [accent/substitution] Change merkha under kaf to meteg.
     Jer 51:9.2       [accent/substitution] Change munah to mahapakh under the pe.
+    Judg 11:24.7     [accent/substitution] Change mercha under tav to munah.
     Judg 21:16.1     [accent/substitution] Remove qadma on resh; place a pashta on the final vav.
     Mic 2:7.11       [accent/substitution] Remove qadma on the resh, add pashta to yod.
     Neh 2:10.12      [accent/substitution] Change merkha to munah under the bet.
@@ -118,7 +122,7 @@ Excluded verses (synth could not be validated):
     Ex 36:2.4                    ref-mismatch: synth WLC word != real M-C word
     Gen 17:20.1                  ref-mismatch: synth WLC word != real M-C word
     Gen 47:29.3                  ref-mismatch: synth WLC word != real M-C word
-    Jer 49:19.11, Jer 49:19.11   ref-mismatch: synth WLC word != real M-C word
+    Jer 49:19.11                 ref-mismatch: synth WLC word != real M-C word
     Josh 4:8.4                   ref-mismatch: synth WLC word != real M-C word
     Josh 10:30.6                 ref-mismatch: synth WLC word != real M-C word
     Lev 4:2.4                    ref-mismatch: synth WLC word != real M-C word
@@ -127,14 +131,17 @@ Excluded verses (synth could not be validated):
 
 By-kind breakdown of solo-change verses (confidence buckets):
   add_accent        : WLC-gram->[g   0 / u   0]   WLC-ungram->[g   1 / u   0]
-  substitution      : WLC-gram->[g   1 / u   0]   WLC-ungram->[g  28 / u   2]
+  substitution      : WLC-gram->[g   1 / u   0]   WLC-ungram->[g  29 / u   2]
 
 
 === Directional asymmetry across the grammaticality boundary ===
 
-  OUT set: WLC-gram->UXLC-ungram 10, WLC-ungram->UXLC-gram 2.
-  IN  set: WLC-ungram->UXLC-gram 29, WLC-gram->UXLC-ungram 0.
+  OUT set: WLC-gram->UXLC-ungram 10, WLC-ungram->UXLC-gram 5.
+  IN  set: WLC-ungram->UXLC-gram 30, WLC-gram->UXLC-ungram 0.
 
   The asymmetry does NOT hold as stated. Crossing the wrong way:
+    OUT set: ek 11:1 (Ezek 11:1.29) -- WLC-ungram->UXLC-gram, a fix
     OUT set: ex 38:12 (Ex 38:12.6) -- WLC-ungram->UXLC-gram, a fix
-    OUT set: ju 11:24 (Judg 11:24.7) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: je 10:3 (Jer 10:3.11) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: je 46:4 (Jer 46:4.6) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: lv 25:20 (Lev 25:20.4) -- WLC-ungram->UXLC-gram, a fix

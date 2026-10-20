@@ -209,6 +209,22 @@
   },
   {
     "book": "Proverbs",
+    "ch": 19,
+    "v": 7,
+    "atom_index": 1,
+    "atom_text": "כָּֽל",
+    "note_code": "m",
+    "note_text": "[note not yet downloaded]",
+    "source": "uxlc-x-note",
+    "diff_type": "under-bar",
+    "is_uxlc_departure": false,
+    "uxlc_reading": "כָּֽל",
+    "clc_reading": "כָּֽל",
+    "source_url": "https://tanach.us/Notes/Proverbs/Proverbs.19.7.1-m.html",
+    "superseding_uxlc_change": []
+  },
+  {
+    "book": "Proverbs",
     "ch": 20,
     "v": 1,
     "atom_index": 2,
@@ -257,6 +273,22 @@
   },
   {
     "book": "Proverbs",
+    "ch": 23,
+    "v": 7,
+    "atom_index": 2,
+    "atom_text": "כְּמּֽוֹ",
+    "note_code": "m",
+    "note_text": "[note not yet downloaded]",
+    "source": "uxlc-x-note",
+    "diff_type": "under-bar",
+    "is_uxlc_departure": false,
+    "uxlc_reading": "כְּמּֽוֹ",
+    "clc_reading": "כְּמּֽוֹ",
+    "source_url": "https://tanach.us/Notes/Proverbs/Proverbs.23.7.2-m.html",
+    "superseding_uxlc_change": []
+  },
+  {
+    "book": "Proverbs",
     "ch": 27,
     "v": 15,
     "atom_index": 2,
@@ -269,6 +301,22 @@
     "uxlc_reading": "ט֭וֹרֵד",
     "clc_reading": "ט֭וֹרֵד",
     "source_url": "https://tanach.us/Notes/Proverbs/Proverbs.27.15.2-t.html",
+    "superseding_uxlc_change": []
+  },
+  {
+    "book": "Proverbs",
+    "ch": 28,
+    "v": 3,
+    "atom_index": 1,
+    "atom_text": "גּבֶר",
+    "note_code": "t",
+    "note_text": "Remove markings under the gimel; examine a possible maqaf at the end of word. Add note 't'. The text is in very bad shape in this region. The markings under the gimel are uncertain and will be removed. No maqaf is visible at the end. Adding note 't'. BHL has a segol then munah under the gimel and no maqaf at the end. BHLA has no entry for this verse.",
+    "source": "uxlc-x-note",
+    "diff_type": "transcription-uncertainty",
+    "is_uxlc_departure": false,
+    "uxlc_reading": "גּבֶר",
+    "clc_reading": "גּבֶר",
+    "source_url": "https://tanach.us/Notes/Proverbs/Proverbs.28.3.1-t.html",
     "superseding_uxlc_change": []
   },
   {

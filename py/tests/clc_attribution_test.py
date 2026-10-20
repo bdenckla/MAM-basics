@@ -13,7 +13,7 @@ import clc.clc_attribution as attribution
 import uxlc_misc.my_uxlc as my_uxlc
 import uxlc_misc.uxlc_utils_html as H
 
-_VERSION = "UXLC 2.5"
+_VERSION = "UXLC 2.6"
 
 
 def test_uxlc_version():

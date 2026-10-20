@@ -925,20 +925,14 @@ def test_decalogue_pasoleg_tokenization_deuteronomy():
     # dt 5:8 — the Deuteronomy twin of ex 20:4 (#29). Same three pasoleg atoms (elyon keeps,
     # taxton drops) and the same מתחת pair, but here NEITHER occurrence is QUPO — an ordinary
     # cross-book textual difference from ex 20:4 (see the module comment in clc_dual_cant_oracle.py).
-    # Atom 2's mid-word pashta is corrected to a qadma upstream by clc_collect (simulated
-    # below), so it is no longer an omitted-accent case — but the qadma still belongs to
-    # taxton alone (MAM's cant-alef has it, cant-bet has a plain meteg instead), so the
-    # oracle's cluster tracks it as an ordinary position-safe divergence, same as any other.
+    # Atom 2 has had a qadma rather than a mid-word pashta since UXLC 2.6 installed its
+    # change 2026.04.10-10, so it is no longer an omitted-accent case — but the qadma still
+    # belongs to taxton alone (MAM's cant-alef has it, cant-bet has a plain meteg instead),
+    # so the oracle's cluster tracks it as an ordinary position-safe divergence, same as
+    # any other.
     OMIT = dc.clc_note.SOURCE_DUAL_CANT_OMITTED_ACCENT
     combined8 = _read_atoms("Deuteronomy.xml", 5, 8)
     assert len(combined8) == 16, f"expected 16 atoms, got {len(combined8)}"
-    # clc_collect._apply_pending_uxlc_changes patches this atom upstream in the real
-    # pipeline (Deut 5:8.2's pashta -> qadma, per UXLC's own pending change #10); this
-    # test reads raw XML directly, bypassing clc_collect, so simulate that patch here.
-    combined8[1] = {
-        **combined8[1],
-        "text": combined8[1]["text"].replace(acc.PASH, acc.QOM, 1),
-    }
     _c8, alef8, bet8 = dc.strand_views("Deuter", 5, 8, combined8)
     for i in (3, 7, 13):  # atoms 4, 8, 14 (0-based): פסל / בשמים / במים
         a, b = alef8.atoms[i]["text"], bet8.atoms[i]["text"]

@@ -16,6 +16,9 @@ from hkq_cmn.verify_table_words_in_mam_plus import (
 )
 
 WORD_LIKE_TAGS = frozenset({"w", "k", "q"})
+# Each entry is (the table's qere claim, UXLC's buggy qere). UXLC 2.6 fixed the one
+# entry's bug (change 2026.04.10-1), so the table's claim now matches UXLC directly;
+# test_verify_table_notes_in_uxlc still exercises the entry with UXLC 2.5's qere.
 KNOWN_UXLC_BUGGY_QERE_BY_VERSE = {
     "Joshua 10:24.19": ("הֶהָלְכ֣וּ", "הֶהָלְכ֣וְּּ"),
 }

@@ -18,7 +18,6 @@ note) and never an invented per-code gloss. clc_changes is kept only for the
 atom-letter consistency guard.
 """
 
-import mb_cmn.hebrew_accents as acc
 import mb_cmn.hebrew_letters as hl
 import clc.clc_changes as clc_changes
 import clc.clc_note as clc_note
@@ -71,25 +70,24 @@ _KNOWN_ATOM_MISMATCHES = {
 # code dependency on that module.
 _NOTES_SUPERSEDED_BY_UXLC_CHANGE = {
     # Deut 5:8.2-t: superseded by 2026.10.19 changes, change #10, "Change
-    # pashta over sin to qadma" (in/UXLC-misc/2026.10.19 - Changes.xml).
+    # pashta over sin to qadma" (uxlc/in/UXLC-misc/2026.10.19 - Changes.xml), which
+    # UXLC 2.6 installed.  UXLC 2.6 keeps the t note, whose prose predates the change.
     ("Deuter", 5, 8, 2, "t"): ("2026.10.19", "2026.04.10-10"),
 }
 
 # Atoms where CLC pre-emptively applies a UXLC-authored PENDING correction to its own
-# reading -- CLC's first-ever real departure from UXLC's own manuscript text (design
-# doc §1: "charitable but transparent" -- every departure recorded as a note). Keyed
-# by (book, ch, v, position); value is (old_char, new_char, release_date, change_id).
+# reading -- a real departure from UXLC's own manuscript text (design doc §1:
+# "charitable but transparent" -- every departure recorded as a note). Keyed by
+# (book, ch, v, position); value is (old_char, new_char, release_date, change_id).
 # old_char must appear in the atom's current text exactly once. Applied to the atom's
 # text in collect_for_book, immediately after clc_read.read_book(), so every
 # downstream consumer (rendering, clc_dual_cant's strand split) sees the corrected
 # reading automatically -- only this dict needs to change for a future such case.
-_UXLC_PENDING_CHANGES_APPLIED = {
-    # Deut 5:8.2 תעשה: UXLC's own pending change #10 (2026.10.19) already proposes
-    # correcting a pashta mid-word on the sin (grammatically impossible -- pashta
-    # must fall on a word's final letter) to a qadma, corroborated by BHL. CLC
-    # applies that correction now rather than waiting for UXLC to formally adopt it.
-    ("Deuter", 5, 8, 2): (acc.PASH, acc.QOM, "2026.10.19", "2026.04.10-10"),
-}
+#
+# Empty since UXLC 2.6 (2026.10.19) installed the one correction it held: Deut 5:8.2
+# תעשה, whose mid-word pashta on the sin (grammatically impossible -- pashta must
+# fall on a word's final letter) UXLC's change 2026.04.10-10 replaced with a qadma.
+_UXLC_PENDING_CHANGES_APPLIED = {}
 
 
 def _apply_pending_uxlc_changes(book, book_id):

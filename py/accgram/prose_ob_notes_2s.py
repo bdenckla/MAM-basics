@@ -14,7 +14,7 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "אדנ֨י",
         "st-summary": "BHS transcribes a syllable as having qadma rather than pashta.",
         "img": "LC-174A-col-1-line-7-2S-11v11.png",
-        "pending_uxlc_change": "2026.10.19/2026.04.10-4",
+        "uxlc_change": "2026.10.19/2026.04.10-4",
     },
     "2s 23:9": {
         "st-source": "bhs",

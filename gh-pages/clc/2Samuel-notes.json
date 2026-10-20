@@ -81,6 +81,22 @@
   },
   {
     "book": "2Samuel",
+    "ch": 5,
+    "v": 21,
+    "atom_index": 1,
+    "atom_text": "וַיַּעַזְבוּ",
+    "note_code": "t",
+    "note_text": "[note not yet downloaded]",
+    "source": "uxlc-x-note",
+    "diff_type": "transcription-uncertainty",
+    "is_uxlc_departure": false,
+    "uxlc_reading": "וַיַּעַזְבוּ",
+    "clc_reading": "וַיַּעַזְבוּ",
+    "source_url": "https://tanach.us/Notes/Samuel_2/Samuel_2.5.21.1-t.html",
+    "superseding_uxlc_change": []
+  },
+  {
+    "book": "2Samuel",
     "ch": 6,
     "v": 3,
     "atom_index": 20,

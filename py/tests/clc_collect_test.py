@@ -3,17 +3,17 @@
 Run from the repo root:
     .venv/Scripts/python.exe py/main_test.py py/tests/clc_collect_test.py
 
-Covers clc_collect's pending-UXLC-change patch (_UXLC_PENDING_CHANGES_APPLIED):
-Deut 5:8.2's mid-word pashta is corrected to a qadma upstream, before any note or
-strand split ever runs — CLC's first-ever real is_uxlc_departure=True instance
-(design doc §7.4), and the first real UXLC-text departure the strand oracle
-(clc_dual_cant) sees, rather than an omitted-accent annotation.
+Covers Deut 5's notes as clc_collect collects them. Until UXLC 2.6 (2026.10.19),
+clc_collect's pending-UXLC-change patch (_UXLC_PENDING_CHANGES_APPLIED) corrected
+Deut 5:8.2's mid-word pashta to a qadma upstream, CLC's first real
+is_uxlc_departure=True instance (design doc §7.4). UXLC 2.6 installed that
+correction as its change 2026.04.10-10, so the patch has no entry and the atom's
+t note is a plain UXLC note whose stale prose that change supersedes.
 """
 
 import clc.clc_collect as clc_collect
 import clc.clc_dual_cant as clc_dual_cant
 import clc.clc_long_note as clc_long_note
-import clc.clc_note as clc_note
 import clc.clc_render as clc_render
 import mb_cmn.hebrew_accents as acc
 import mb_cmn.hebrew_points as hpo
@@ -26,28 +26,17 @@ def _deut_5_8_atom2_note(notes):
     return matches[0]
 
 
-def test_text_patch():
-    book, _notes = clc_collect.collect_for_book("Deuter", chapters={5})
-    atom = book[4][7][1]  # ch5, v8, atom-index 2 (0-based: [4][7][1])
-    assert acc.QOM in atom["text"] and acc.PASH not in atom["text"], atom["text"]
-
-
 def test_note_fields():
     _book, notes = clc_collect.collect_for_book("Deuter", chapters={5})
     note = _deut_5_8_atom2_note(notes)
-    assert note.is_uxlc_departure is True
-    assert acc.PASH in note.uxlc_reading and acc.QOM not in note.uxlc_reading
-    assert acc.QOM in note.clc_reading and acc.PASH not in note.clc_reading
-    assert note.diff_type == clc_note.DIFF_UXLC_PENDING_CHANGE_APPLIED
+    assert note.is_uxlc_departure is False
     assert note.superseding_uxlc_change == ("2026.10.19", "2026.04.10-10")
     assert note.note_code == "t"
 
 
-def test_no_leakage():
+def test_no_departures():
     _book, notes = clc_collect.collect_for_book("Deuter", chapters={5})
     for note in notes:
-        if note.ch == 5 and note.v == 8 and note.atom_index == 2:
-            continue
         assert note.is_uxlc_departure is False, note
         assert note.uxlc_reading == note.clc_reading == note.atom_text, note
 
@@ -56,23 +45,18 @@ def test_render():
     _book, notes = clc_collect.collect_for_book("Deuter", chapters={5})
     note = _deut_5_8_atom2_note(notes)
     html = H.el_to_str_no_wbr(clc_render._note_block([note]))
-    # The departure note's body follows the demoted bare-letter heading on one line, em-dash-joined.
-    assert 'class="clc-note"' in html and " — Here CLC replaces UXLC's " in html
-    assert "pashta" in html and "qadma" in html
-    # No note-code prefix or superseding-change citation: those belong to showing
-    # the UXLC note itself, which this departure note deliberately doesn't. But
-    # "pending change" itself links to the change record.
-    assert 'class="clc-note-code"' not in html
-    assert 'class="clc-superseded-cite"' not in html
-    assert ">pending change</a>" in html
-    assert "2026.04.10-10" in html  # in the link's href, not as visible cite text
+    # The UXLC note itself, its prose replaced by a citation of the change record that
+    # supersedes it.
+    assert 'class="clc-note-code"' in html
+    assert 'class="clc-superseded-cite"' in html
+    assert ">2026.04.10-10</a>" in html
     assert note.note_text not in html  # still-suppressed stale prose never shown
 
 
 def test_dual_cant_integration():
     # Confirms clc_dual_cant_oracle._ORACLE's dt 5:8 atom-2 entry (no more "omit", and the qadma
-    # kept exclusive to taxton per MAM's cant-alef/cant-bet) against *real* patched input,
-    # not just in isolation.
+    # kept exclusive to taxton per MAM's cant-alef/cant-bet) against *real* input, whose
+    # qadma has been UXLC's own since UXLC 2.6, not just in isolation.
     book, _notes = clc_collect.collect_for_book("Deuter", chapters={5})
     _c8, alef8, bet8 = clc_dual_cant.strand_views("Deuter", 5, 8, book[4][7])
     a2, b2 = alef8.atoms[1]["text"], bet8.atoms[1]["text"]

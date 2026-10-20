@@ -2,32 +2,32 @@
   "summary-counts": {
     "total-clusters": 1200055,
     "excluded-atoms": 804,
-    "ordinary": 1198122,
-    "treated-as-ordinary": 1910,
-    "weird": 23
+    "ordinary": 1198125,
+    "treated-as-ordinary": 1906,
+    "weird": 24
   },
   "class-counts": {
-    "ordinary": 1198122,
-    "explicit-order": 5,
-    "initial-double-aom": 3,
+    "ordinary": 1198125,
+    "explicit-order": 6,
+    "initial-double-aom": 5,
     "multi-vowel": 2,
-    "noninitial-double-aom": 4,
+    "noninitial-double-aom": 3,
     "unexpected-mark": 0,
-    "other-ordering": 9
+    "other-ordering": 8
   },
   "sequence-counts-by-class": {
     "ordinary": {
-      "dv": 71312,
-      "v": 435352,
+      "dv": 71313,
+      "v": 435354,
       "": 326402,
       "sva": 15344,
       "va": 165878,
       "sdv": 2399,
-      "da": 8072,
-      "d": 39844,
+      "da": 8074,
+      "d": 39843,
       "sv": 28873,
       "a": 47103,
-      "dva": 46200,
+      "dva": 46199,
       "s": 6693,
       "sdva": 2055,
       "sa": 2327,
@@ -35,13 +35,15 @@
       "sd": 89
     },
     "explicit-order": {
-      "av": 2,
+      "av": 3,
       "dvv": 1,
       "vaa": 1,
       "sav": 1
     },
     "initial-double-aom": {
       "vaa": 2,
+      "daa": 1,
+      "aa": 1,
       "svaa": 1
     },
     "multi-vowel": {
@@ -49,14 +51,13 @@
       "vv": 1
     },
     "noninitial-double-aom": {
-      "vaa": 3,
+      "vaa": 2,
       "dvaa": 1
     },
     "unexpected-mark": {},
     "other-ordering": {
       "vd": 1,
       "dav": 2,
-      "ddv": 1,
       "dvda": 1,
       "dsva": 1,
       "adv": 1,
@@ -85,6 +86,17 @@
         "cluster": "תִּ͏ְ",
         "sequence": "dvv",
         "mark names": "dagesh/mapiq/shuruq-dot, ḥiriq, combining-grapheme-joiner, sheva",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Psalms 31:24.1",
+        "notes": "",
+        "atom": "א֥͏ֶהֱב֥וּ",
+        "atom-note-schematic": null,
+        "cluster-index": 1,
+        "cluster": "א֥͏ֶ",
+        "sequence": "av",
+        "mark names": "merkha/yored, combining-grapheme-joiner, segol-vowel",
         "mark names comment": null
       },
       {
@@ -135,6 +147,28 @@
         "cluster": "אָ֥֨",
         "sequence": "vaa",
         "mark names": "qamats, merkha/yored, qadma",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Psalms 119:61.4",
+        "notes": "",
+        "atom": "תּ֥֝וֹרָתְךָ֗",
+        "atom-note-schematic": null,
+        "cluster-index": 1,
+        "cluster": "תּ֥֝",
+        "sequence": "daa",
+        "mark names": "dagesh/mapiq/shuruq-dot, merkha/yored, geresh-muqdam",
+        "mark names comment": null
+      },
+      {
+        "bcvp": "Psalms 119:77.5",
+        "notes": "",
+        "atom": "ת֥֝וֹרָתְךָ֗",
+        "atom-note-schematic": null,
+        "cluster-index": 1,
+        "cluster": "ת֥֝",
+        "sequence": "aa",
+        "mark names": "merkha/yored, geresh-muqdam",
         "mark names comment": null
       },
       {
@@ -189,17 +223,6 @@
       }
     ],
     "noninitial-double-aom": [
-      {
-        "bcvp": "Levit 25:20.4",
-        "notes": "c",
-        "atom": "נֹּאכַ֤֖ל",
-        "atom-note-schematic": "נאכ.ל",
-        "cluster-index": 3,
-        "cluster": "כַ֤֖",
-        "sequence": "vaa",
-        "mark names": "pataḥ, mahapakh, tipeḥa/tarḥa",
-        "mark names comment": null
-      },
       {
         "bcvp": "Ezekiel 20:31.7",
         "notes": "",
@@ -256,17 +279,6 @@
         "cluster": "יֹּ֣",
         "sequence": "dav",
         "mark names": "dagesh/mapiq/shuruq-dot, munaḥ, ḥolam",
-        "mark names comment": null
-      },
-      {
-        "bcvp": "Joshua 10:24.20",
-        "notes": "",
-        "atom": "הֶהָלְכ֣וְּּ",
-        "atom-note-schematic": null,
-        "cluster-index": 5,
-        "cluster": "וְּּ",
-        "sequence": "ddv",
-        "mark names": "dagesh/mapiq/shuruq-dot, dagesh/mapiq/shuruq-dot, sheva",
         "mark names comment": null
       },
       {

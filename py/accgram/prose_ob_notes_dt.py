@@ -24,12 +24,12 @@ BY_REF: dict[str, dict[str, object]] = {
         # ungrammatical. (MAM's taxton has the qadma and its elyon has the meteg, which
         # the scanner swallows, which is why MAM's elyon parses cleanly.) The checker supplies
         # the taxton's qadma (clean, on the supplied-marks page) and emits WLC's actual
-        # merkha in the elyon, so only the elyon is a dt 5:8 oddity now. UXLC corrects
-        # the merkha to a meteg but supplies a pashta rather than the due qadma; see the
-        # linked UXLC note page (its `-t` te'amim note). UXLC has since proposed a pending
-        # change (for UXLC 2.6) to change that pashta to the qadma -- exactly the
-        # correction this note argues for. Whether the error originates in LC, BHS, or BHQ
-        # has not been confirmed -> tbd.
+        # merkha in the elyon, so only the elyon is a dt 5:8 oddity now. UXLC 2.5 had a
+        # meteg for the merkha but a pashta rather than the due qadma; see the linked UXLC
+        # note page (its `-t` te'amim note). UXLC 2.6 has the qadma: its change
+        # 2026.04.10-10 replaced that pashta -- exactly the correction this note argues
+        # for. Whether the error originates in LC, BHS, or BHQ has not been confirmed ->
+        # tbd.
         "st-source": "tbd",
         "wlc_focus": "תעש֥ה־",
         "st-summary": (
@@ -76,13 +76,12 @@ BY_REF: dict[str, dict[str, object]] = {
             " evidence when the manuscript evidence is ambiguous, for example when the"
             " manuscript image is blurry or the manuscript itself is in bad shape.",
             #
-            "UXLC goes most of the way towards correcting WLC here. While UXLC does"
-            " correct the merkha to be a meteg, unfortunately UXLC adds a pashta rather"
-            " than a qadma.",
+            "UXLC 2.6 has exactly that better transcription: a meteg rather than a merkha"
+            " under the ש, and a qadma over the ש.",
             #
-            "UXLC has now proposed a pending change (slated for UXLC 2.6) that changes"
-            " this pashta over the ש to a qadma — exactly the correction we advocate"
-            " here. See the “Pending UXLC change” link above.",
+            "UXLC 2.5 already had the meteg, but it had a pashta rather than a qadma over"
+            " the ש. The “UXLC change” linked above replaced that pashta with the qadma,"
+            " which is exactly the correction we advocate here.",
             #
             "This error in WLC probably has its source in BHS and/or BHQ, i.e. this error is"
             " unlikely original to WLC, but we have not confirmed that.",
@@ -91,15 +90,15 @@ BY_REF: dict[str, dict[str, object]] = {
         # (issue wlc-utils#36). One per-strand table replaces the old combined focus/diff table:
         # the merkha breaks both readings, but the two readings disagree on what is due
         # (taxton: a qadma; elyon: no accent, just a meteg), so splitting clarifies that
-        # the elyon correction (merkha→meteg) is agreed by MAM and UXLC while only the
-        # taxton correction (qadma vs pashta) is where they part. Keyed by strand_label;
+        # MAM and UXLC agree on both corrections: the elyon's (merkha→meteg) and, since
+        # UXLC 2.6, the taxton's (a qadma, where UXLC 2.5 had a pashta). Keyed by strand_label;
         # each row is (value, desc, source). The WLC value is cross-checked against the
         # detangled stream at render time, so it cannot silently drift.
         "dual_cant_tables": {
             "taxton": [
                 {"value": "תעשה", "desc": "no accent", "source": "WLC"},
                 {"value": "תעש֨ה", "desc": "qadma", "source": "MAM"},
-                {"value": "תעש֙ה", "desc": "pashta", "source": "UXLC"},
+                {"value": "תעש֨ה", "desc": "qadma", "source": "UXLC"},
             ],
             "elyon": [
                 {"value": "תעש֥ה־", "desc": "merkha", "source": "WLC"},
@@ -107,7 +106,7 @@ BY_REF: dict[str, dict[str, object]] = {
                 {"value": "תעשֽה־", "desc": "meteg", "source": "UXLC"},
             ],
         },
-        "pending_uxlc_change": "2026.10.19/2026.04.10-10",
+        "uxlc_change": "2026.10.19/2026.04.10-10",
         "uxlc_note_page": "https://tanach.us/Notes/Deuteronomy/Deuteronomy.5.8.2-t.html",
     },
     "dt 9:20": {

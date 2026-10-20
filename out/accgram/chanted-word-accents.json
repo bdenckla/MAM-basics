@@ -469,7 +469,7 @@
     ]
    },
    "uxlc": {
-    "accents_split_across_atoms": 22,
+    "accents_split_across_atoms": 21,
     "of_them_with_a_gaya_after_the_nonfinal_accent": 2,
     "with_a_gaya_by_sequence": {
      "mahapakh pashta": 1,
@@ -477,9 +477,9 @@
     },
     "without_a_gaya_by_sequence": {
      "mayela atnax": 7,
-     "merkha tipexa": 3,
      "mahapakh pashta": 2,
      "merkha silluq": 2,
+     "merkha tipexa": 2,
      "munax zaqef": 2,
      "munax munax": 1,
      "munax revia": 1,
@@ -10562,21 +10562,21 @@
   "uxlc": {
    "kind": "produced from WLC 4.20 by WLC2XML -- the same transcription, corrected",
    "verses": 18724,
-   "chanted_words": 233115,
-   "atomic_chanted_words": 196342,
-   "maqaf_compounds": 36773,
-   "hits": 1591,
+   "chanted_words": 233121,
+   "atomic_chanted_words": 196354,
+   "maqaf_compounds": 36767,
+   "hits": 1593,
    "by_kind": {
-    "an atomic chanted word": 1113,
-    "a maqaf compound, its accents all on the final atom": 456,
-    "a maqaf compound, its accents split across atoms": 22
+    "an atomic chanted word": 1115,
+    "a maqaf compound, its accents all on the final atom": 457,
+    "a maqaf compound, its accents split across atoms": 21
    },
    "by_sequence": {
-    "munax zaqef": 1374,
+    "munax zaqef": 1375,
     "azla geresh": 125,
+    "merkha tevir": 16,
     "mayela atnax": 10,
-    "merkha tevir": 10,
-    "merkha tipexa": 10,
+    "merkha tipexa": 9,
     "mahapakh pashta": 8,
     "munax revia": 6,
     "qadma darga": 6,
@@ -10585,17 +10585,14 @@
     "mayela silluq": 5,
     "merkha silluq": 3,
     "gershayim telishagedola": 2,
-    "merkha merkha": 2,
     "munax atnax": 2,
     "munax munax": 2,
-    "darga gershayim": 1,
     "geresh telishagedola": 1,
-    "mahapakh tipexa": 1,
-    "merkha atnax": 1,
     "merkha legarmeh": 1,
+    "merkha merkha": 1,
     "munax mahapakh": 1,
     "munax pazer": 1,
-    "qadma pashta": 1,
+    "pashta zaqef": 1,
     "telishagedola geresh": 1,
     "telishagedola gershayim": 1,
     "telishagedola revia": 1,
@@ -10605,7 +10602,7 @@
    },
    "geresh_folds": [],
    "methigazaqef": {
-    "tokens": 321,
+    "tokens": 318,
     "crossing_a_chanted_word_boundary": 0,
     "crossings": []
    },
@@ -11361,12 +11358,6 @@
      "kind": "a maqaf compound, its accents all on the final atom"
     },
     {
-     "bcv": "2c24:27",
-     "chanted_word": "י֧ר֞ב",
-     "sequence": "darga gershayim",
-     "kind": "an atomic chanted word"
-    },
-    {
      "bcv": "2k17:13",
      "chanted_word": "ש֜֠בו",
      "sequence": "geresh telishagedola",
@@ -11434,12 +11425,6 @@
      "chanted_word": "ש֤הימים֙",
      "sequence": "mahapakh pashta",
      "kind": "an atomic chanted word"
-    },
-    {
-     "bcv": "lv25:20",
-     "chanted_word": "מה־נאכ֤֖ל",
-     "sequence": "mahapakh tipexa",
-     "kind": "a maqaf compound, its accents all on the final atom"
     },
     {
      "bcv": "gn8:18",
@@ -11540,12 +11525,6 @@
      "kind": "an atomic chanted word"
     },
     {
-     "bcv": "je46:4",
-     "chanted_word": "בכ֥ובע֑ים",
-     "sequence": "merkha atnax",
-     "kind": "an atomic chanted word"
-    },
-    {
      "bcv": "ne8:7",
      "chanted_word": "ושר֥בי֣ה",
      "sequence": "merkha legarmeh",
@@ -11553,12 +11532,6 @@
     },
     {
      "bcv": "gn18:15",
-     "chanted_word": "וי֥אמ֥ר",
-     "sequence": "merkha merkha",
-     "kind": "an atomic chanted word"
-    },
-    {
-     "bcv": "1k2:30",
      "chanted_word": "וי֥אמ֥ר",
      "sequence": "merkha merkha",
      "kind": "an atomic chanted word"
@@ -11638,8 +11611,44 @@
      "kind": "an atomic chanted word"
     },
     {
+     "bcv": "2k11:7",
+     "chanted_word": "וש֥מר֛ו",
+     "sequence": "merkha tevir",
+     "kind": "an atomic chanted word"
+    },
+    {
+     "bcv": "je12:10",
+     "chanted_word": "נ֥תנ֛ו",
+     "sequence": "merkha tevir",
+     "kind": "an atomic chanted word"
+    },
+    {
+     "bcv": "ek33:28",
+     "chanted_word": "וש֥ממ֛ו",
+     "sequence": "merkha tevir",
+     "kind": "an atomic chanted word"
+    },
+    {
      "bcv": "er9:2",
      "chanted_word": "ה֥ית֛ה",
+     "sequence": "merkha tevir",
+     "kind": "an atomic chanted word"
+    },
+    {
+     "bcv": "1c14:11",
+     "chanted_word": "ק֥רא֛ו",
+     "sequence": "merkha tevir",
+     "kind": "an atomic chanted word"
+    },
+    {
+     "bcv": "2c1:10",
+     "chanted_word": "וא֥צא֛ה",
+     "sequence": "merkha tevir",
+     "kind": "an atomic chanted word"
+    },
+    {
+     "bcv": "2c16:2",
+     "chanted_word": "מא֥צר֛ות",
      "sequence": "merkha tevir",
      "kind": "an atomic chanted word"
     },
@@ -11674,13 +11683,6 @@
      "chanted_word": "מבל֥יגית֖י",
      "sequence": "merkha tipexa",
      "kind": "an atomic chanted word"
-    },
-    {
-     "bcv": "je10:3",
-     "chanted_word": "יד֥י־חר֖ש",
-     "sequence": "merkha tipexa",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
     },
     {
      "bcv": "ek36:25",
@@ -19277,6 +19279,12 @@
      "kind": "an atomic chanted word"
     },
     {
+     "bcv": "1c7:18",
+     "chanted_word": "את־א֣ישה֔וד",
+     "sequence": "munax zaqef",
+     "kind": "a maqaf compound, its accents all on the final atom"
+    },
+    {
      "bcv": "1c7:28",
      "chanted_word": "ומ֣שבות֔ם",
      "sequence": "munax zaqef",
@@ -20027,6 +20035,12 @@
      "kind": "an atomic chanted word"
     },
     {
+     "bcv": "lv7:25",
+     "chanted_word": "מן־ה֙בהמ֔ה",
+     "sequence": "pashta zaqef",
+     "kind": "a maqaf compound, its accents all on the final atom"
+    },
+    {
      "bcv": "jb1:15",
      "chanted_word": "ואמ֨לט֧ה",
      "sequence": "qadma darga",
@@ -20132,12 +20146,6 @@
      "bcv": "ne12:44",
      "chanted_word": "לא֨וצר֥ות",
      "sequence": "qadma merkha",
-     "kind": "an atomic chanted word"
-    },
-    {
-     "bcv": "je49:19",
-     "chanted_word": "אריצ֨נו֙",
-     "sequence": "qadma pashta",
      "kind": "an atomic chanted word"
     },
     {

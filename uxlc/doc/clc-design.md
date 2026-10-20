@@ -25,8 +25,8 @@ is internally coherent. UXLC, by contrast, often resolves the same ambiguities m
 
 > Working tension to keep honest: charity must not become silent emendation. Every charitable
 > choice that departs from UXLC should be **recorded as a note** (see §7.3–7.5) so the reader
-> can see what we did and why. "Charitable but transparent." (First applied at Deut 5:8.2 — see
-> §7.4.) Two features carry the transparency half: an **introductory essay** that *argues* the
+> can see what we did and why. "Charitable but transparent." (First applied at Deut 5:8.2, until
+> UXLC 2.6 made the same correction itself — see §7.4.) Two features carry the transparency half: an **introductory essay** that *argues* the
 > principle (§7.10), and a **differences-from-UXLC index** that *shows the receipts* (§7.9).
 
 ---
@@ -421,12 +421,12 @@ Each is a feature this doc names, organized with grounding + open questions.
   records (e.g. `"existing UXLC change proposal": ("2024.04.01", "2024.01.29-4")`).
 - **First instance:** Deut 5:8.2 (`t` note) is superseded by 2026.10.19 change #10 ("Change
   pashta over sin to qadma") — see `_NOTES_SUPERSEDED_BY_UXLC_CHANGE` in `py/clc/clc_collect.py`
-  and the `superseding_uxlc_change` field on `ClcNote`. CLC now also *applies* that same
-  correction to its own displayed text (`_UXLC_PENDING_CHANGES_APPLIED`, same file) — the
-  first real `is_uxlc_departure=True` note in the skeleton
-  (`diff_type=DIFF_UXLC_PENDING_CHANGE_APPLIED`); the combined/text-column reading is CLC's
-  corrected qadma, with UXLC's original pashta preserved in the note's `uxlc_reading` and
-  shown in its prose.
+  and the `superseding_uxlc_change` field on `ClcNote`. Until UXLC 2.6 installed that change on
+  2026-10-19, CLC also *applied* the same correction to its own displayed text
+  (`_UXLC_PENDING_CHANGES_APPLIED`, same file) — the first real `is_uxlc_departure=True` note in
+  the skeleton (`diff_type=DIFF_UXLC_PENDING_CHANGE_APPLIED`), with UXLC's original pashta
+  preserved in the note's `uxlc_reading` and shown in its prose. UXLC 2.6 has the qadma itself,
+  so that table is now empty and the atom's `t` note is an ordinary UXLC note again.
 
 ### 7.5 FOIs as a kind of note
 - Surface FOIs (`kq`, `mark-grammar`, `mark-grammar-2`, …) as notes, **especially the rarer
@@ -459,9 +459,9 @@ Each is a feature this doc names, organized with grounding + open questions.
   should foot-note rather than hide. Strong fit with the CLC thesis — and CLC now does this itself
   for the narrow **maqaf/sof-pasuq** subset, supplying them **bracketed, green, and footnoted**
   rather than hidden (as raw UXLC) or silently baked in (as the detangler). **Deut 5:8 תעשה** is no
-  longer an anomaly here at all: `clc_collect` applies UXLC's own pending correction (§7.4) to the
-  base text before this oracle ever runs, so both the combined row and both strands simply show the
-  corrected qadma as an ordinary shared mark; no omitted-accent case remains for this atom.
+  longer an anomaly here at all: UXLC 2.6 has the qadma itself (§7.4), so this oracle receives it
+  as an ordinary mark and gives it to the taḥton alone, as MAM does; no omitted-accent case
+  remains for this atom.
 
 **Single-strand display.** Where a dual-cant verse is one row today, CLC shows **three**: the
 combined form plus its two strands — labeled e.g. `35:22-C`, `35:22-א` (pashut), `35:22-ב`
@@ -1083,7 +1083,7 @@ skeleton (doc/clc-skeleton-plan.md) is complete and exceeded**; output exists fo
 
 | feature | status | where / note |
 |---|---|---|
-| §7.1 charitable under-bar | **seed only** | m/d under-bar (+ t transcription-uncertainty) notes *surfaced* (clc_collect); no accent grammar / resolution — `is_uxlc_departure` always False, except the one §7.4 pending-change instance (Deut 5:8.2) |
+| §7.1 charitable under-bar | **seed only** | m/d under-bar (+ t transcription-uncertainty) notes *surfaced* (clc_collect); no accent grammar / resolution — `is_uxlc_departure` always False (its one §7.4 pending-change instance, Deut 5:8.2, ended when UXLC 2.6 installed the change) |
 | §7.2 bracket-note restoration | not started | plan written up: [#33](https://github.com/bdenckla/UXLC-utils/issues/33) (attachment + UXLC-vs-WLC diff gate), [#34](https://github.com/bdenckla/UXLC-utils/issues/34) (MAM enrichment, depends on #33) |
 | §7.3 MAM-style highlighted notes | **done (skeleton form)** | 3-col `text \| ref \| doc` renderer (clc_render); noted words highlighted (`clc-doc-target`), same-page anchors dropped (issue #6 reversal) — only off-page notes link; most bodies inline, six case-by-case relegated to a long-notes page, one per main page (`clc_render._LONG_NOTE_SPECS`, `gh-pages/clc/<label>-long-notes.html`) |
 | §7.4 change records as notes | **first instance** | change log used only for the consistency guard, not as a note, EXCEPT one instance: Deut 5:8.2-t's stale note is suppressed in favor of a link to the superseding 2026.10.19 change #10 (`clc_collect._NOTES_SUPERSEDED_BY_UXLC_CHANGE`, `ClcNote.superseding_uxlc_change`) |
@@ -1091,7 +1091,7 @@ skeleton (doc/clc-skeleton-plan.md) is complete and exceeded**; output exists fo
 | §7.6 images / Sefaria links | not started | — |
 | §7.7 dual-cant strands | **done** | Gen 35:22 + every Decalogue divergence verse encoded (`clc_dual_cant_oracle._ORACLE`: ex 20:2–6,8–10,13–15; dt 5:6–10,12–15,17–19 — 23 verses; the other 9 verses in the two passage ranges genuinely don't diverge and correctly carry no entry) — pure-accent + sof-pasuq suppression, supplied maqaf/sof-pasuq, rafe/dagesh by the faithful policy, omitted-accent notes (accents NOTED, never supplied), the QUPO vowel split (patax/qamats on one letter), and Unicode-PASEQ tokenization (a MAM tokenization-convention fold, no new runtime mechanism). [#20](https://github.com/bdenckla/UXLC-utils/issues/20) closed. The rafe/dagesh and QUPO splits — previously resolved silently — now each emit a reader-facing note on the combined (`-C`) row naming both strands, and the divergence set was proven closed against every `_ORACLE` atom ([#47](https://github.com/bdenckla/UXLC-utils/issues/47)). No §7.9 departure rows yet. MAM's per-witness sof-pasuq + two-marks-on-one-letter doc-notes independently corroborate the supplied taḥton sof-pasuqs and the QUPO vowel split ([#43](https://github.com/bdenckla/UXLC-utils/issues/43)/[#44](https://github.com/bdenckla/UXLC-utils/issues/44), validation only — nothing rendered or embedded); MAM's legarmeh/paseq tags + pisqah-be'emtsa-pasuq markings likewise corroborate the pasoleg subtraction and the coveting-verse internal breaks ([#42](https://github.com/bdenckla/UXLC-utils/issues/42), also validation only — see §7.16) |
 | §7.8 versification | **done (validation-only)** | Primary vtrad-BHS. The MAM↔BHS Decalogue verse map is hand-encoded in `clc_versification.py` (4 merge groups → `clc_to_mam` etc.; MAM = taḥton-strand boundaries, so `MAM Ex 20:2`=BHS 20:2+3, `Ex 20:12`=BHS 20:13–16, `Dt 5:6`=BHS 5:6+7, `Dt 5:16`=BHS 5:17–20). No new rendered surface: §7.7 already renders the overlay (MAM's versification *is* the taḥton strand), proven 1:1 against `clc_dual_cant_oracle._ORACLE` in `clc_versification_test`. MAM consulted as signal, embedded nowhere at runtime (hand-encoded once vs. `.novc/mam_decalogue_versemap.json`, all 53 verses). `clc_to_mam` is the shared CLC→MAM helper [#38](https://github.com/bdenckla/UXLC-utils/issues/38) needs. [#45](https://github.com/bdenckla/UXLC-utils/issues/45) closed |
-| §7.9 differences-from-UXLC index | not started | the page itself is unbuilt, still blocked on LC manuscript order (§9 #10); one real `is_uxlc_departure` instance now exists to drive it (Deut 5:8.2, §7.4) |
+| §7.9 differences-from-UXLC index | not started | the page itself is unbuilt, still blocked on LC manuscript order (§9 #10); its one real `is_uxlc_departure` instance (Deut 5:8.2, §7.4) ended when UXLC 2.6 installed the change |
 | §7.10 intro essay / landing page | **landing page done; essay not started** | `gh-pages/clc/index.html` lists the five reading pages and two longer-notes pages; the MAM-basics homepage links to it (Ben, 2026-10-08) |
 | §7.11 BHL body vs. Appendix A | not started | Appendix A ingested for Psalms only (pre-CLC) |
 | §7.12 harvesting other editions | not started | — |

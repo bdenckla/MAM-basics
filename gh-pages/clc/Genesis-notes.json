@@ -161,6 +161,22 @@
   },
   {
     "book": "Genesis",
+    "ch": 40,
+    "v": 17,
+    "atom_index": 2,
+    "atom_text": "הָֽעֶלְי֔וֹן",
+    "note_code": "t",
+    "note_text": "[note not yet downloaded]",
+    "source": "uxlc-x-note",
+    "diff_type": "transcription-uncertainty",
+    "is_uxlc_departure": false,
+    "uxlc_reading": "הָֽעֶלְי֔וֹן",
+    "clc_reading": "הָֽעֶלְי֔וֹן",
+    "source_url": "https://tanach.us/Notes/Genesis/Genesis.40.17.2-t.html",
+    "superseding_uxlc_change": []
+  },
+  {
+    "book": "Genesis",
     "ch": 41,
     "v": 24,
     "atom_index": 2,

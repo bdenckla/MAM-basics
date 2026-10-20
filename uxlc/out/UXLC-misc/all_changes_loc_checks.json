@@ -13681,16 +13681,6 @@
   },
   {
     "change_release": "2026.10.19",
-    "change_cite": "Ezek 8:6.14",
-    "change_page": "279B",
-    "change_column": 2,
-    "change_line": 19,
-    "change_fline": 46,
-    "guess_fline": 44.78,
-    "fline_diff": -1.22
-  },
-  {
-    "change_release": "2026.10.19",
     "change_cite": "Gen 26:7.21",
     "change_page": "015A",
     "change_column": 1,
@@ -13781,13 +13771,13 @@
   },
   {
     "change_release": "2026.10.19",
-    "change_cite": "Lev 25:20.3",
+    "change_cite": "Lev 25:20.4",
     "change_page": "071B",
     "change_column": 2,
     "change_line": 14,
     "change_fline": 41,
-    "guess_fline": 41.04,
-    "fline_diff": 0.04
+    "guess_fline": 41.27,
+    "fline_diff": 0.27
   },
   {
     "change_release": "2026.10.19",
@@ -13988,5 +13978,1005 @@
     "change_fline": 30,
     "guess_fline": 30.06,
     "fline_diff": 0.06
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 2:46.4",
+    "change_page": "328B",
+    "change_column": 2,
+    "change_line": 24,
+    "change_fline": 51,
+    "guess_fline": 53.48,
+    "fline_diff": 2.48
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 4:28.1",
+    "change_page": "329B",
+    "change_column": 2,
+    "change_line": 20,
+    "change_fline": 47,
+    "guess_fline": 48.78,
+    "fline_diff": 1.78
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 5:11.4",
+    "change_page": "330A",
+    "change_column": 2,
+    "change_line": 9,
+    "change_fline": 36,
+    "guess_fline": 38.49,
+    "fline_diff": 2.49
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 5:16.1",
+    "change_page": "330A",
+    "change_column": 2,
+    "change_line": 21,
+    "change_fline": 48,
+    "guess_fline": 51.07,
+    "fline_diff": 3.07
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 7:18.5",
+    "change_page": "332A",
+    "change_column": 1,
+    "change_line": 24,
+    "change_fline": 24,
+    "guess_fline": 24.81,
+    "fline_diff": 0.81
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 14:11.18",
+    "change_page": "336A",
+    "change_column": 2,
+    "change_line": 17,
+    "change_fline": 44,
+    "guess_fline": 45.4,
+    "fline_diff": 1.4
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Chr 27:21.8",
+    "change_page": "343A",
+    "change_column": 2,
+    "change_line": 13,
+    "change_fline": 40,
+    "guess_fline": 37.98,
+    "fline_diff": -2.02
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Chr 1:10.6",
+    "change_page": "345A",
+    "change_column": 1,
+    "change_line": 10,
+    "change_fline": 10,
+    "guess_fline": 11.75,
+    "fline_diff": 1.75
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Chr 13:12.13",
+    "change_page": "351B",
+    "change_column": 3,
+    "change_line": 8,
+    "change_fline": 62,
+    "guess_fline": 62.47,
+    "fline_diff": 0.47
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Chr 16:2.5",
+    "change_page": "352B",
+    "change_column": 3,
+    "change_line": 9,
+    "change_fline": 63,
+    "guess_fline": 61.51,
+    "fline_diff": -1.49
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Chr 21:19.7",
+    "change_page": "356A",
+    "change_column": 1,
+    "change_line": 3,
+    "change_fline": 3,
+    "guess_fline": 4.07,
+    "fline_diff": 1.07
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Chr 31:9.4",
+    "change_page": "361B",
+    "change_column": 3,
+    "change_line": 5,
+    "change_fline": 59,
+    "guess_fline": 59.25,
+    "fline_diff": 0.25
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Chr 33:21.2",
+    "change_page": "363B",
+    "change_column": 1,
+    "change_line": 3,
+    "change_fline": 3,
+    "guess_fline": 3.19,
+    "fline_diff": 0.19
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 5:11.1",
+    "change_page": "366B",
+    "change_column": 1,
+    "change_line": 8,
+    "change_fline": 8,
+    "guess_fline": 8.62,
+    "fline_diff": 0.62
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 9:1.2",
+    "change_page": "367A",
+    "change_column": 1,
+    "change_line": 7,
+    "change_fline": 7,
+    "guess_fline": 7.46,
+    "fline_diff": 0.46
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 12:7.1",
+    "change_page": "367B",
+    "change_column": 1,
+    "change_line": 23,
+    "change_fline": 23,
+    "guess_fline": 24.9,
+    "fline_diff": 1.9
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 14:7.1",
+    "change_page": "367B",
+    "change_column": 2,
+    "change_line": 22,
+    "change_fline": 49,
+    "guess_fline": 48.98,
+    "fline_diff": -0.02
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 15:5.8",
+    "change_page": "368A",
+    "change_column": 1,
+    "change_line": 4,
+    "change_fline": 4,
+    "guess_fline": 5.46,
+    "fline_diff": 1.46
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 17:14.1",
+    "change_page": "368A",
+    "change_column": 2,
+    "change_line": 13,
+    "change_fline": 40,
+    "guess_fline": 40.77,
+    "fline_diff": 0.77
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 18:7.3",
+    "change_page": "368A",
+    "change_column": 2,
+    "change_line": 27,
+    "change_fline": 54,
+    "guess_fline": 54.14,
+    "fline_diff": 0.14
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 19:15.1",
+    "change_page": "369A",
+    "change_column": 1,
+    "change_line": 18,
+    "change_fline": 18,
+    "guess_fline": 19.9,
+    "fline_diff": 1.9
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 31:12.5",
+    "change_page": "371A",
+    "change_column": 1,
+    "change_line": 19,
+    "change_fline": 19,
+    "guess_fline": 19.59,
+    "fline_diff": 0.59
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 31:24.1",
+    "change_page": "371A",
+    "change_column": 2,
+    "change_line": 9,
+    "change_fline": 36,
+    "guess_fline": 36.41,
+    "fline_diff": 0.41
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 35:10.5",
+    "change_page": "372A",
+    "change_column": 1,
+    "change_line": 12,
+    "change_fline": 12,
+    "guess_fline": 13.35,
+    "fline_diff": 1.35
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 37:14.2",
+    "change_page": "372B",
+    "change_column": 1,
+    "change_line": 16,
+    "change_fline": 16,
+    "guess_fline": 17.74,
+    "fline_diff": 1.74
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 37:40.1",
+    "change_page": "372B",
+    "change_column": 2,
+    "change_line": 20,
+    "change_fline": 47,
+    "guess_fline": 48.76,
+    "fline_diff": 1.76
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 39:2.2",
+    "change_page": "373A",
+    "change_column": 1,
+    "change_line": 24,
+    "change_fline": 24,
+    "guess_fline": 24.64,
+    "fline_diff": 0.64
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 40:5.1",
+    "change_page": "373A",
+    "change_column": 2,
+    "change_line": 22,
+    "change_fline": 49,
+    "guess_fline": 50.24,
+    "fline_diff": 1.24
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 40:6.6",
+    "change_page": "373A",
+    "change_column": 2,
+    "change_line": 24,
+    "change_fline": 51,
+    "guess_fline": 53.03,
+    "fline_diff": 2.03
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 40:13.2",
+    "change_page": "373B",
+    "change_column": 1,
+    "change_line": 10,
+    "change_fline": 10,
+    "guess_fline": 11.38,
+    "fline_diff": 1.38
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 42:3.5",
+    "change_page": "373B",
+    "change_column": 2,
+    "change_line": 17,
+    "change_fline": 44,
+    "guess_fline": 46.17,
+    "fline_diff": 2.17
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 44:13.5",
+    "change_page": "374A",
+    "change_column": 2,
+    "change_line": 13,
+    "change_fline": 40,
+    "guess_fline": 38.99,
+    "fline_diff": -1.01
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 46:12.5",
+    "change_page": "374B",
+    "change_column": 2,
+    "change_line": 19,
+    "change_fline": 46,
+    "guess_fline": 48.01,
+    "fline_diff": 2.01
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 47:5.5",
+    "change_page": "374B",
+    "change_column": 2,
+    "change_line": 26,
+    "change_fline": 53,
+    "guess_fline": 54.13,
+    "fline_diff": 1.13
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 48:5.4",
+    "change_page": "375A",
+    "change_column": 1,
+    "change_line": 13,
+    "change_fline": 13,
+    "guess_fline": 13.23,
+    "fline_diff": 0.23
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 49:15.2",
+    "change_page": "375A",
+    "change_column": 2,
+    "change_line": 18,
+    "change_fline": 45,
+    "guess_fline": 44.3,
+    "fline_diff": -0.7
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 50:23.3",
+    "change_page": "375B",
+    "change_column": 2,
+    "change_line": 2,
+    "change_fline": 29,
+    "guess_fline": 29.66,
+    "fline_diff": 0.66
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 51:19.1",
+    "change_page": "375B",
+    "change_column": 2,
+    "change_line": 23,
+    "change_fline": 50,
+    "guess_fline": 51.36,
+    "fline_diff": 1.36
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 53:3.6",
+    "change_page": "376A",
+    "change_column": 1,
+    "change_line": 20,
+    "change_fline": 20,
+    "guess_fline": 21.32,
+    "fline_diff": 1.32
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 53:7.1",
+    "change_page": "376A",
+    "change_column": 2,
+    "change_line": 1,
+    "change_fline": 28,
+    "guess_fline": 28.78,
+    "fline_diff": 0.78
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 55:20.6",
+    "change_page": "376B",
+    "change_column": 1,
+    "change_line": 12,
+    "change_fline": 12,
+    "guess_fline": 12.16,
+    "fline_diff": 0.16
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 58:10.1",
+    "change_page": "377A",
+    "change_column": 1,
+    "change_line": 13,
+    "change_fline": 13,
+    "guess_fline": 14.93,
+    "fline_diff": 1.93
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 59:12.9",
+    "change_page": "377A",
+    "change_column": 2,
+    "change_line": 9,
+    "change_fline": 36,
+    "guess_fline": 36.6,
+    "fline_diff": 0.6
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 60:3.5",
+    "change_page": "377A",
+    "change_column": 2,
+    "change_line": 23,
+    "change_fline": 50,
+    "guess_fline": 51.39,
+    "fline_diff": 1.39
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 65:10.2",
+    "change_page": "378A",
+    "change_column": 2,
+    "change_line": 6,
+    "change_fline": 33,
+    "guess_fline": 33.87,
+    "fline_diff": 0.87
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 69:1.1",
+    "change_page": "379A",
+    "change_column": 1,
+    "change_line": 26,
+    "change_fline": 26,
+    "guess_fline": 25.25,
+    "fline_diff": -0.75
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 72:4.7",
+    "change_page": "380A",
+    "change_column": 1,
+    "change_line": 17,
+    "change_fline": 17,
+    "guess_fline": 16.91,
+    "fline_diff": -0.09
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 86:9.9",
+    "change_page": "383B",
+    "change_column": 2,
+    "change_line": 7,
+    "change_fline": 34,
+    "guess_fline": 34.3,
+    "fline_diff": 0.3
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 93:2.4",
+    "change_page": "385A",
+    "change_column": 2,
+    "change_line": 25,
+    "change_fline": 52,
+    "guess_fline": 54.02,
+    "fline_diff": 2.02
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 94:6.4",
+    "change_page": "385B",
+    "change_column": 1,
+    "change_line": 10,
+    "change_fline": 10,
+    "guess_fline": 10.37,
+    "fline_diff": 0.37
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 105:40.1",
+    "change_page": "388A",
+    "change_column": 1,
+    "change_line": 18,
+    "change_fline": 18,
+    "guess_fline": 20.11,
+    "fline_diff": 2.11
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 106:29.2",
+    "change_page": "388B",
+    "change_column": 1,
+    "change_line": 7,
+    "change_fline": 7,
+    "guess_fline": 7.19,
+    "fline_diff": 0.19
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 106:38.1",
+    "change_page": "388B",
+    "change_column": 1,
+    "change_line": 16,
+    "change_fline": 16,
+    "guess_fline": 17.12,
+    "fline_diff": 1.12
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 118:17.1",
+    "change_page": "390B",
+    "change_column": 2,
+    "change_line": 17,
+    "change_fline": 44,
+    "guess_fline": 44.39,
+    "fline_diff": 0.39
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 119:51.5",
+    "change_page": "391B",
+    "change_column": 1,
+    "change_line": 7,
+    "change_fline": 7,
+    "guess_fline": 7.32,
+    "fline_diff": 0.32
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 119:61.4",
+    "change_page": "391B",
+    "change_column": 1,
+    "change_line": 17,
+    "change_fline": 17,
+    "guess_fline": 17.43,
+    "fline_diff": 0.43
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 119:77.5",
+    "change_page": "391B",
+    "change_column": 2,
+    "change_line": 8,
+    "change_fline": 35,
+    "guess_fline": 36.76,
+    "fline_diff": 1.76
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 119:109.4",
+    "change_page": "392A",
+    "change_column": 1,
+    "change_line": 16,
+    "change_fline": 16,
+    "guess_fline": 19.37,
+    "fline_diff": 3.37
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ps 143:10.2",
+    "change_page": "395B",
+    "change_column": 2,
+    "change_line": 8,
+    "change_fline": 35,
+    "guess_fline": 35.15,
+    "fline_diff": 0.15
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Prov 8:13.1",
+    "change_page": "412A",
+    "change_column": 2,
+    "change_line": 20,
+    "change_fline": 47,
+    "guess_fline": 48.1,
+    "fline_diff": 1.1
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Prov 19:7.1",
+    "change_page": "416A",
+    "change_column": 1,
+    "change_line": 17,
+    "change_fline": 17,
+    "guess_fline": 18.2,
+    "fline_diff": 1.2
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Prov 23:7.2",
+    "change_page": "417B",
+    "change_column": 1,
+    "change_line": 11,
+    "change_fline": 11,
+    "guess_fline": 11.11,
+    "fline_diff": 0.11
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Prov 28:3.1",
+    "change_page": "419B",
+    "change_column": 1,
+    "change_line": 1,
+    "change_fline": 1,
+    "guess_fline": 1.89,
+    "fline_diff": 0.89
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Prov 30:15.1",
+    "change_page": "420A",
+    "change_column": 2,
+    "change_line": 19,
+    "change_fline": 46,
+    "guess_fline": 48.46,
+    "fline_diff": 2.46
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Jer 3:24.2",
+    "change_page": "247B",
+    "change_column": 1,
+    "change_line": 8,
+    "change_fline": 8,
+    "guess_fline": 8.05,
+    "fline_diff": 0.05
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Jer 8:9.9",
+    "change_page": "250A",
+    "change_column": 3,
+    "change_line": 27,
+    "change_fline": 81,
+    "guess_fline": 82.0,
+    "fline_diff": 1.0
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Jer 10:3.11",
+    "change_page": "251A",
+    "change_column": 3,
+    "change_line": 11,
+    "change_fline": 65,
+    "guess_fline": 65.24,
+    "fline_diff": 0.24
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Jer 12:10.8",
+    "change_page": "252B",
+    "change_column": 1,
+    "change_line": 11,
+    "change_fline": 11,
+    "guess_fline": 12.25,
+    "fline_diff": 1.25
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Jer 28:9.7",
+    "change_page": "261A",
+    "change_column": 1,
+    "change_line": 18,
+    "change_fline": 18,
+    "guess_fline": 19.84,
+    "fline_diff": 1.84
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Jer 46:4.6",
+    "change_page": "271B",
+    "change_column": 1,
+    "change_line": 5,
+    "change_fline": 5,
+    "guess_fline": 4.96,
+    "fline_diff": -0.04
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 1:4.12",
+    "change_page": "276B",
+    "change_column": 2,
+    "change_line": 16,
+    "change_fline": 43,
+    "guess_fline": 46.14,
+    "fline_diff": 3.14
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 8:6.14",
+    "change_page": "279B",
+    "change_column": 2,
+    "change_line": 19,
+    "change_fline": 46,
+    "guess_fline": 44.78,
+    "fline_diff": -1.22
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 8:15.9",
+    "change_page": "279B",
+    "change_column": 3,
+    "change_line": 23,
+    "change_fline": 77,
+    "guess_fline": 77.32,
+    "fline_diff": 0.32
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 11:1.29",
+    "change_page": "280B",
+    "change_column": 3,
+    "change_line": 2,
+    "change_fline": 56,
+    "guess_fline": 58.54,
+    "fline_diff": 2.54
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 16:12.1",
+    "change_page": "283A",
+    "change_column": 2,
+    "change_line": 26,
+    "change_fline": 53,
+    "guess_fline": 55.53,
+    "fline_diff": 2.53
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 23:11.8",
+    "change_page": "288A",
+    "change_column": 2,
+    "change_line": 26,
+    "change_fline": 53,
+    "guess_fline": 54.2,
+    "fline_diff": 1.2
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 32:21.9",
+    "change_page": "293A",
+    "change_column": 3,
+    "change_line": 11,
+    "change_fline": 65,
+    "guess_fline": 66.51,
+    "fline_diff": 1.51
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 33:28.9",
+    "change_page": "294A",
+    "change_column": 2,
+    "change_line": 24,
+    "change_fline": 51,
+    "guess_fline": 50.68,
+    "fline_diff": -0.32
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 36:3.18",
+    "change_page": "295A",
+    "change_column": 3,
+    "change_line": 22,
+    "change_fline": 76,
+    "guess_fline": 77.28,
+    "fline_diff": 1.28
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezek 44:6.14",
+    "change_page": "301A",
+    "change_column": 1,
+    "change_line": 5,
+    "change_fline": 5,
+    "guess_fline": 6.02,
+    "fline_diff": 1.02
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Hos 5:6.3",
+    "change_page": "305A",
+    "change_column": 3,
+    "change_line": 2,
+    "change_fline": 56,
+    "guess_fline": 57.61,
+    "fline_diff": 1.61
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Am 3:10.7",
+    "change_page": "309B",
+    "change_column": 3,
+    "change_line": 7,
+    "change_fline": 61,
+    "guess_fline": 62.36,
+    "fline_diff": 1.36
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Am 8:12.8",
+    "change_page": "311B",
+    "change_column": 2,
+    "change_line": 3,
+    "change_fline": 30,
+    "guess_fline": 30.1,
+    "fline_diff": 0.1
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ob 1:1.17",
+    "change_page": "312A",
+    "change_column": 1,
+    "change_line": 20,
+    "change_fline": 20,
+    "guess_fline": 20.83,
+    "fline_diff": 0.83
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Mic 1:14.10",
+    "change_page": "313B",
+    "change_column": 2,
+    "change_line": 27,
+    "change_fline": 54,
+    "guess_fline": 52.87,
+    "fline_diff": -1.13
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Zech 12:5.1",
+    "change_page": "323B",
+    "change_column": 2,
+    "change_line": 7,
+    "change_fline": 34,
+    "guess_fline": 35.71,
+    "fline_diff": 1.71
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Dan 5:3.8",
+    "change_page": "441B",
+    "change_column": 3,
+    "change_line": 17,
+    "change_fline": 71,
+    "guess_fline": 72.07,
+    "fline_diff": 1.07
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Dan 10:19.13",
+    "change_page": "446A",
+    "change_column": 2,
+    "change_line": 4,
+    "change_fline": 31,
+    "guess_fline": 32.67,
+    "fline_diff": 1.67
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Sam 28:12.11",
+    "change_page": "166B",
+    "change_column": 3,
+    "change_line": 23,
+    "change_fline": 77,
+    "guess_fline": 77.7,
+    "fline_diff": 0.7
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Kings 2:30.12",
+    "change_page": "186A",
+    "change_column": 1,
+    "change_line": 12,
+    "change_fline": 12,
+    "guess_fline": 12.98,
+    "fline_diff": 0.98
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Kings 7:40.4",
+    "change_page": "189B",
+    "change_column": 2,
+    "change_line": 23,
+    "change_fline": 50,
+    "guess_fline": 47.53,
+    "fline_diff": -2.47
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Kings 12:5.3",
+    "change_page": "193B",
+    "change_column": 3,
+    "change_line": 24,
+    "change_fline": 78,
+    "guess_fline": 77.81,
+    "fline_diff": -0.19
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "1Kings 18:38.8",
+    "change_page": "199A",
+    "change_column": 1,
+    "change_line": 5,
+    "change_fline": 5,
+    "guess_fline": 5.14,
+    "fline_diff": 0.14
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Kings 2:9.16",
+    "change_page": "203A",
+    "change_column": 3,
+    "change_line": 12,
+    "change_fline": 66,
+    "guess_fline": 66.87,
+    "fline_diff": 0.87
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Kings 8:18.12",
+    "change_page": "207B",
+    "change_column": 2,
+    "change_line": 26,
+    "change_fline": 53,
+    "guess_fline": 52.81,
+    "fline_diff": -0.19
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "2Kings 11:7.7",
+    "change_page": "210A",
+    "change_column": 1,
+    "change_line": 10,
+    "change_fline": 10,
+    "guess_fline": 9.44,
+    "fline_diff": -0.56
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezra 6:2.3",
+    "change_page": "450B",
+    "change_column": 2,
+    "change_line": 13,
+    "change_fline": 40,
+    "guess_fline": 39.93,
+    "fline_diff": -0.07
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Ezra 8:18.15",
+    "change_page": "452A",
+    "change_column": 3,
+    "change_line": 21,
+    "change_fline": 75,
+    "guess_fline": 75.35,
+    "fline_diff": 0.35
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Neh 7:1.7",
+    "change_page": "457B",
+    "change_column": 1,
+    "change_line": 16,
+    "change_fline": 16,
+    "guess_fline": 19.89,
+    "fline_diff": 3.89
+  },
+  {
+    "change_release": "2026.10.19",
+    "change_cite": "Esth 8:14.5",
+    "change_page": "436B",
+    "change_column": 2,
+    "change_line": 10,
+    "change_fline": 37,
+    "guess_fline": 37.55,
+    "fline_diff": 0.55
   }
 ]

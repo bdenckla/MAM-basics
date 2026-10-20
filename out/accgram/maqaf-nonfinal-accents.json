@@ -4819,14 +4819,14 @@
    "kind": "produced from WLC 4.20 by WLC2XML -- the same transcription, corrected",
    "prose": {
     "verses": 18724,
-    "maqaf_compounds": 36773,
-    "hits": 128,
-    "simple_two_accent_words": 1287,
+    "maqaf_compounds": 36767,
+    "hits": 127,
+    "simple_two_accent_words": 1290,
     "simple_by_pair": {
      "mun-zaq": 958,
      "qad-zaq": 175,
      "qad-ger": 98,
-     "mer-tev": 9,
+     "mer-tev": 15,
      "qad-dar": 5,
      "tip-sil": 4,
      "mer-tip": 4,
@@ -4836,12 +4836,9 @@
      "mah-pash": 3,
      "tip-etn": 3,
      "mun-etn": 2,
-     "dar-ger2": 1,
      "telg-ger": 1,
      "mun-paz": 1,
      "telg-rev": 1,
-     "mer-etn": 1,
-     "qad-pash": 1,
      "mun-mah": 1,
      "telg-ger2": 1,
      "mer-mun": 1,
@@ -4868,6 +4865,10 @@
       "word": "שֶׁ֣עִמָּהֶ֑ם",
       "bcv": "1c5:20"
      },
+     "mer-tev": {
+      "word": "קָ֥רְא֛וּ",
+      "bcv": "1c14:11"
+     },
      "mer-tip": {
       "word": "לְמַבָּרִ֥אשׁוֹנָ֖ה",
       "bcv": "1c15:13"
@@ -4875,10 +4876,6 @@
      "qad-dar": {
       "word": "וַאֲדֹ֨נִיָּ֧הוּ",
       "bcv": "2c17:8"
-     },
-     "dar-ger2": {
-      "word": "יִ֧רֶ֞ב",
-      "bcv": "2c24:27"
      },
      "qad-mah": {
       "word": "בְּקִינ֨וֹתֵיהֶ֤ם",
@@ -4891,10 +4888,6 @@
      "qad-mer": {
       "word": "הַמּֽ͏ַאֲכִ֨לְךָ֥",
       "bcv": "dt8:16"
-     },
-     "mer-tev": {
-      "word": "יָ֥דְךָ֛",
-      "bcv": "dt13:10"
      },
      "mah-pash": {
       "word": "שֶׁ֤הַנְּחָלִים֙",
@@ -4915,14 +4908,6 @@
      "telg-rev": {
       "word": "וַ֠יִּשְׁמַ֗ע",
       "bcv": "je36:11"
-     },
-     "mer-etn": {
-      "word": "בְּכ֥וֹבָעִ֑ים",
-      "bcv": "je46:4"
-     },
-     "qad-pash": {
-      "word": "אֲרִיצֶ֨נּוּ֙",
-      "bcv": "je49:19"
      },
      "mun-mah": {
       "word": "שֶׁ֣הֵ֤ם",
@@ -4945,7 +4930,7 @@
      "mun-zaq": 826,
      "qad-zaq": 162,
      "qad-ger": 95,
-     "mer-tev": 9,
+     "mer-tev": 15,
      "tip-sil": 4,
      "mer-tip": 4,
      "qad-dar": 4,
@@ -4954,10 +4939,8 @@
      "qad-mer": 3,
      "tip-etn": 3,
      "mun-etn": 2,
-     "dar-ger2": 1,
      "mun-paz": 1,
      "telg-rev": 1,
-     "mer-etn": 1,
      "mun-mah": 1,
      "telg-ger2": 1,
      "mer-mun": 1,
@@ -5021,10 +5004,10 @@
       "reason": "the two marks are on one letter"
      }
     ],
-    "concentrators": 495,
+    "concentrators": 494,
     "concentrator_by_shape": {
-     "0-mun+zaq": 399,
-     "0-qad+zaq": 41,
+     "0-mun+zaq": 400,
+     "0-qad+zaq": 38,
      "0-qad+ger": 27,
      "0-0-mun+zaq": 15,
      "0-mer+tip": 3,
@@ -5032,13 +5015,14 @@
      "0-qad+mah": 2,
      "0-mer+tev": 1,
      "0-mun+rev": 1,
+     "0-pash+zaq": 1,
      "0-qad+dar": 1,
      "0-mah+pash+pash": 1,
      "0-mah+pash": 1
     },
     "concentrator_by_pair": {
-     "mun-zaq": 414,
-     "qad-zaq": 41,
+     "mun-zaq": 415,
+     "qad-zaq": 38,
      "qad-ger": 27,
      "mer-tip": 3,
      "qad-mer": 3,
@@ -5046,6 +5030,7 @@
      "mah-pash": 2,
      "mer-tev": 1,
      "mun-rev": 1,
+     "pash-zaq": 1,
      "qad-dar": 1
     },
     "concentrator_example_by_pair": {
@@ -5081,6 +5066,10 @@
       "word": "עַד־יֵ֨עָרֶ֥ה",
       "bcv": "is32:15"
      },
+     "pash-zaq": {
+      "word": "מִן־הַ֙בְּהֵמָ֔ה",
+      "bcv": "lv7:25"
+     },
      "qad-dar": {
       "word": "בֶן־ק֨וֹלָיָ֧ה",
       "bcv": "ne11:7"
@@ -5091,26 +5080,24 @@
      }
     },
     "concentrator_final_stress_by_pair": {
-     "mun-zaq": 369,
-     "qad-zaq": 40,
+     "mun-zaq": 370,
+     "qad-zaq": 38,
      "qad-ger": 26,
      "qad-mer": 3,
      "mer-tip": 2,
      "qad-mah": 2,
      "mer-tev": 1,
      "mun-rev": 1,
+     "pash-zaq": 1,
      "qad-dar": 1
     },
     "concentrator_excluded": {
      "a stress-helper pair: one accent written twice": {
       "tsit-tsor": 1
-     },
-     "the two marks are on one letter": {
-      "mah-tip": 1
      }
     },
     "by_anfa_reason": {
-     "a: a secondary accent the compound inherits": 122,
+     "a: a secondary accent the compound inherits": 121,
      "b: a maqaf after an atom that keeps its own conjunctive (ITM §293)": 5,
      "c: a maqaf after a gaʿya that follows the atom's accent (ITM §357)": 1
     },
@@ -5118,9 +5105,9 @@
      "metigah-zaqef (ITM §223)": 105,
      "mayela before an etnaxta (ITM §216)": 7,
      "unnamed": 5,
-     "secondary merkha in the tipexa's chanted word (ITM §233)": 3,
      "secondary mahapakh in the pashta's chanted word (ITM §241)": 2,
      "munax-zaqef (ITM §221)": 2,
+     "secondary merkha in the tipexa's chanted word (ITM §233)": 2,
      "unnamed -- not at the atom's own accent position": 1,
      "ITM §357's maqaf after gaʿya (Breuer CoS Ch. 1 §43)": 1,
      "mayela before a silluq (ITM §210)": 1,
@@ -5132,7 +5119,6 @@
      "0-qad-zaq": 4,
      "mah-pash": 3,
      "mun-zaq": 2,
-     "mer-tip": 2,
      "mun-mun": 1,
      "0-mer-sil": 1,
      "tip-0-mun": 1,
@@ -5142,7 +5128,8 @@
      "mun-rev": 1,
      "tip-mah": 1,
      "mer-0": 1,
-     "qad-0-zaq": 1
+     "qad-0-zaq": 1,
+     "mer-tip": 1
     },
     "occurrences": [
      {
@@ -5251,18 +5238,6 @@
        "joined_letters_after_accent": 1,
        "free_letters_after_accent": 1,
        "free_occurrences": 40
-      }
-     },
-     {
-      "bcv": "je10:3",
-      "word": "יְדֵ֥י־חָרָ֖שׁ",
-      "shape": "mer-tip",
-      "anfa_reason": "a: a secondary accent the compound inherits",
-      "configuration": "secondary merkha in the tipexa's chanted word (ITM §233)",
-      "oracle": {
-       "joined_letters_after_accent": 1,
-       "free_letters_after_accent": 1,
-       "free_occurrences": 17
       }
      },
      {
@@ -5838,7 +5813,7 @@
       "oracle": {
        "joined_letters_after_accent": 1,
        "free_letters_after_accent": 1,
-       "free_occurrences": 212
+       "free_occurrences": 211
       }
      },
      {
@@ -5850,7 +5825,7 @@
       "oracle": {
        "joined_letters_after_accent": 1,
        "free_letters_after_accent": 1,
-       "free_occurrences": 212
+       "free_occurrences": 211
       }
      },
      {
@@ -6654,7 +6629,7 @@
       "oracle": {
        "joined_letters_after_accent": 1,
        "free_letters_after_accent": 1,
-       "free_occurrences": 212
+       "free_occurrences": 211
       }
      },
      {
@@ -6685,36 +6660,36 @@
    },
    "poetic": {
     "verses": 4465,
-    "maqaf_compounds": 4274,
-    "hits": 29,
-    "simple_two_accent_words": 3088,
+    "maqaf_compounds": 4276,
+    "hits": 26,
+    "simple_two_accent_words": 3097,
     "simple_by_pair": {
-     "germ-rev": 2342,
-     "ole-mer": 312,
+     "germ-rev": 2339,
+     "ole-mer": 311,
      "tsit-mah": 163,
-     "tip-mun": 25,
+     "tip-mun": 30,
      "dex-mun": 16,
      "tsit-mer": 12,
+     "germ-mer-rev": 10,
      "atnh-ole": 9,
      "mah-mer": 9,
-     "germ-mer-rev": 8,
      "mah-qad": 7,
+     "mer-qad": 7,
      "dex-mer": 5,
      "mer-rev": 4,
-     "mer-qad": 4,
+     "mer-mun": 4,
      "mah-mun": 4,
      "mer-sil": 3,
      "mun-etn": 3,
      "tsit-mah-rev": 2,
      "dex-rev": 2,
      "yby-paz": 2,
-     "mer-mun": 2,
      "germ-ger": 1,
      "atnh-ole-mer": 1,
      "tip-sil": 1,
      "ilu-qad": 1,
      "mah-ole": 1,
-     "mun-mer": 1
+     "mer-etn": 1
     },
     "simple_example_by_pair": {
      "germ-rev": {
@@ -6777,6 +6752,10 @@
       "word": "ה֤וֹלֵ֥ךְ",
       "bcv": "pr7:22"
      },
+     "mer-mun": {
+      "word": "יִ֥רְאַ֣ת",
+      "bcv": "pr8:13"
+     },
      "mah-qad": {
       "word": "יֹ֤סֵ֨ר ׀",
       "bcv": "pr9:7"
@@ -6809,37 +6788,33 @@
       "word": "פֹּ֤עֲלֵ֫י",
       "bcv": "ps53:5"
      },
-     "mun-mer": {
-      "word": "תְּשׁ֣וֹבֵ֥ב",
-      "bcv": "ps60:3"
-     },
-     "mer-mun": {
-      "word": "תְּה֥וֹתְת֣וּ",
-      "bcv": "ps62:4"
-     },
      "mah-mun": {
       "word": "בָּ֤ר֣וּךְ",
       "bcv": "ps68:20"
+     },
+     "mer-etn": {
+      "word": "בְּמַ֥עַלְלֵיהֶ֑ם",
+      "bcv": "ps106:29"
      }
     },
     "simple_final_stress_by_pair": {
-     "germ-rev": 1874,
+     "germ-rev": 1871,
      "ole-mer": 230,
      "tsit-mah": 126,
-     "tip-mun": 15,
+     "tip-mun": 19,
      "tsit-mer": 12,
+     "germ-mer-rev": 10,
      "atnh-ole": 9,
-     "germ-mer-rev": 8,
      "mah-mer": 8,
      "mah-qad": 7,
+     "mer-qad": 7,
      "dex-mer": 5,
-     "mer-qad": 4,
+     "mer-mun": 4,
      "mah-mun": 4,
      "mer-rev": 3,
      "mer-sil": 3,
      "mun-etn": 3,
      "dex-rev": 2,
-     "mer-mun": 2,
      "tsit-mah-rev": 1,
      "germ-ger": 1,
      "atnh-ole-mer": 1,
@@ -6847,7 +6822,7 @@
      "tip-sil": 1,
      "ilu-qad": 1,
      "mah-ole": 1,
-     "mun-mer": 1,
+     "mer-etn": 1,
      "dex-mun": 0
     },
     "simple_excluded": {
@@ -6855,6 +6830,7 @@
       "germ-rev": 144,
       "tip-rev": 1,
       "mer-qad": 1,
+      "mer-germ-rev": 1,
       "rev-ger": 1,
       "mun-dex": 1
      }
@@ -7977,6 +7953,16 @@
       "reason": "the two marks are on one letter"
      },
      {
+      "bcv": "ps119:61",
+      "word": "תּ֥֝וֹרָתְךָ֗",
+      "pair": [
+       "mer",
+       "germ",
+       "rev"
+      ],
+      "reason": "the two marks are on one letter"
+     },
+     {
       "bcv": "ps119:62",
       "word": "עַ֝֗ל",
       "pair": [
@@ -8262,7 +8248,7 @@
      }
     },
     "concentrator_final_stress_by_pair": {
-     "germ-rev": 238,
+     "germ-rev": 237,
      "ole-mer": 20,
      "atnh-ole": 7,
      "tsit-mah": 5,
@@ -8277,25 +8263,26 @@
      "the two marks are on one letter": {
       "germ-rev": 94,
       "rev-germ": 1,
-      "mun-dex": 1
+      "mun-dex": 1,
+      "mer-germ-rev": 1
      }
     },
     "by_anfa_reason": {
-     "(not attempted -- the ANFA-reason split is prose doctrine)": 29
+     "(not attempted -- the ANFA-reason split is prose doctrine)": 26
     },
     "by_configuration": {
-     "null": 29
+     "null": 26
     },
     "by_shape": {
      "ole-mer": 9,
      "mah-tip": 4,
-     "mer-qad": 3,
-     "mer-germ+rev": 2,
      "mun-dex": 2,
      "mah-yby": 1,
      "germ-dex": 1,
+     "mer-germ+rev": 1,
      "mun-etn": 1,
      "mer-rev": 1,
+     "mer-qad": 1,
      "mah+mer-0": 1,
      "mer-paz": 1,
      "tip-sil": 1,
@@ -8372,7 +8359,7 @@
       "oracle": {
        "joined_letters_after_accent": 2,
        "free_letters_after_accent": 1,
-       "free_occurrences": 34
+       "free_occurrences": 33
       }
      },
      {
@@ -8424,18 +8411,6 @@
       }
      },
      {
-      "bcv": "ps44:13",
-      "word": "וְלֹ֥א־רִ֝בִּ֗יתָ",
-      "shape": "mer-germ+rev",
-      "anfa_reason": "(not attempted -- the ANFA-reason split is prose doctrine)",
-      "configuration": null,
-      "oracle": {
-       "joined_letters_after_accent": 1,
-       "free_letters_after_accent": 1,
-       "free_occurrences": 118
-      }
-     },
-     {
       "bcv": "ps89:20",
       "word": "דִּבַּ֥רְתָּֽ־בְחָז֡וֹן",
       "shape": "mer-paz",
@@ -8448,18 +8423,6 @@
       }
      },
      {
-      "bcv": "ps19:15",
-      "word": "יִֽהְי֥וּ־לְרָצ֨וֹן ׀",
-      "shape": "mer-qad",
-      "anfa_reason": "(not attempted -- the ANFA-reason split is prose doctrine)",
-      "configuration": null,
-      "oracle": {
-       "joined_letters_after_accent": 1,
-       "free_letters_after_accent": 1,
-       "free_occurrences": 7
-      }
-     },
-     {
       "bcv": "ps39:13",
       "word": "שִֽׁמְעָ֥ה־תְפִלָּתִ֨י ׀",
       "shape": "mer-qad",
@@ -8469,18 +8432,6 @@
        "joined_letters_after_accent": 1,
        "free_letters_after_accent": 1,
        "free_occurrences": 7
-      }
-     },
-     {
-      "bcv": "ps40:13",
-      "word": "אָפְפ֥וּ־עָלַ֨י ׀",
-      "shape": "mer-qad",
-      "anfa_reason": "(not attempted -- the ANFA-reason split is prose doctrine)",
-      "configuration": null,
-      "oracle": {
-       "joined_letters_after_accent": 1,
-       "free_letters_after_accent": null,
-       "free_occurrences": 0
       }
      },
      {

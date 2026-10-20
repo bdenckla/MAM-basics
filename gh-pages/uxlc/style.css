@@ -120,7 +120,7 @@ ul.clc-note-parts { margin: 0.25em 0 0; padding-inline-start: 1.5em; }
    whichever slot the missing member would have occupied). */
 ruby.clc-kq span.clc-kq-none { font-size: 70%; color: light-dark(#777, #999); }
 /* UXLC attribution (clc_attribution): the page-level credit under the <h1>, and
-   the short "— UXLC 2.5" cite ending each note. Small + muted so they stay out of
+   the short "— UXLC 2.6" cite ending each note. Small + muted so they stay out of
    the way of the text and notes. */
 p.clc-attribution { font-size: 85%; color: light-dark(#555, #aaa); margin-top: 0; margin-bottom: 1em; }
 span.clc-note-cite { font-size: 85%; color: light-dark(#777, #999); }

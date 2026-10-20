@@ -1,7 +1,7 @@
 """Exports the UXLC attribution citations CLC must carry to use UXLC's notes.
 
 The UXLC author licenses the detailed notes on condition that (1) each note cites
-the UXLC and its version number ("UXLC 2.5") and (2) UXLC is cited as the base of
+the UXLC and its version number ("UXLC 2.6") and (2) UXLC is cited as the base of
 the Hebrew biblical text. This is the single source of truth for that wording and
 version, so nothing is duplicated:
 
@@ -11,7 +11,7 @@ version, so nothing is duplicated:
   * note_cite()   -> the short per-note cite appended to each note (condition 1)
 
 The version is read once from the core-XML header (uxlc_version), never hardcoded,
-so the citations auto-update if UXLC bumps to 2.6.
+so the citations auto-update when UXLC bumps its version, as they did from 2.5 to 2.6.
 """
 
 import xml.etree.ElementTree as ET
@@ -27,7 +27,7 @@ _VERSION_MEMO = None
 
 
 def uxlc_version():
-    """The UXLC edition string (e.g. "UXLC 2.5"), read once from the XML header.
+    """The UXLC edition string (e.g. "UXLC 2.6"), read once from the XML header.
 
     Data-driven so the citation auto-updates if UXLC bumps its version: parse the
     ``<version>`` out of the canonical core-XML header rather than hardcoding it.
@@ -70,7 +70,7 @@ def top_credit():
 
 
 def note_cite(source_url):
-    """The per-note cite (htel): a small ``— UXLC 2.5`` linked to its note page.
+    """The per-note cite (htel): a small ``— UXLC 2.6`` linked to its note page.
 
     Links to the specific tanach.us note page the prose came from. Every m/d/t
     note has such a page, so clc_collect always supplies its URL — even for a
@@ -115,7 +115,7 @@ def superseding_change_cite(release_and_id):
     _release_date, change_id = release_and_id
     return H.span(
         [
-            "Superseded by pending UXLC change ",
+            "Superseded by UXLC change ",
             change_record_link(release_and_id, change_id),
             ".",
         ],

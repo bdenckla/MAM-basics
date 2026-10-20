@@ -35,7 +35,7 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "י֧ר֞ב",
         "st-summary": "BHS adds a gershayim out of nowhere.",
         "img": "LC-357B-col-2-line-6-2C-24v27.png",
-        "pending_uxlc_change": "2026.10.19/2026.04.10-6",
+        "uxlc_change": "2026.10.19/2026.04.10-6",
         "comment": "Perhaps the darga was accidentally repeated from the previous chanted word, which legitimately has a darga.",
     },
     "2c 25:1": {

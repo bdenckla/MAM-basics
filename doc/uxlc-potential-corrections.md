@@ -62,8 +62,9 @@ line empty.
 
 UXLC-utils commit
 [3435fc81](https://github.com/bdenckla/UXLC-utils/commit/3435fc8130642528cfc8a134a645bf4dc7af1141)
-recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on 2026-08-12, now
-`uxlc/in/UXLC-misc/2026.10.19 - Changes.xml`. A later copy is compared at the end of this section.
+recorded these in the copy of `2026.10.19 - Changes.xml` taken from hcanat.us on 2026-08-12, which
+`uxlc/in/UXLC-misc/2026.10.19 - Changes.xml` held until 2026-10-20. A later copy is compared at the
+end of this section.
 
 1. 2026.08.05-27 (Job 11:6.3) gives its book as `job`, lowercase.
 2. 2026.08.05-5 (Ex 20:3.2), 2026.08.05-10 (Lev 25:20.3) and 2026.08.05-25 (Job 34:20.4) give a
@@ -76,9 +77,22 @@ A Claude session compared these items with the change list as tanach.us served i
 when the list had 140 records and was marked installed rather than proposed. Items 1 and 3 are
 fixed there, and item 2 is not. Record 2026.08.05-27 gives its book as `Job`. Record
 2026.08.05-19's change text no longer has the maqaf that its reference text has, so the record
-now proposes the removal that its description names. Records 2026.08.05-5, 2026.08.05-10 and
-2026.08.05-25 still give a page but an empty column and line. That copy is not kept in this
-repository.
+now proposes the removal that its description names. Four records of the installed list give a
+page but an empty column and line: item 2's three, and 2026.08.05-47, which the proposed list
+lacked.
+
+| Record | Citation in the installed list | Page | Override's estimate |
+| --- | --- | --- | --- |
+| 2026.08.05-5 | Ex 20:3.2 | F043A | 2:19 |
+| 2026.08.05-10 | Lev 25:20.4 | F071B | 2:14 |
+| 2026.08.05-25 | Job 34:20.4 | F406B | 2:27 |
+| 2026.08.05-47 | Ps 14:7.1 | F367B | 2:22 |
+
+Since 2026-10-20, `uxlc/in/UXLC-misc/2026.10.19 - Changes.xml` has been the installed list, as
+hcanat.us served it that day, byte for byte the copy that tanach.us served on 2026-10-19. The
+override copy was rebuilt from it the same day. It fills the four empty locators with the location
+estimator's values in the table, the first three unchanged, and it no longer needs item 1's
+correction.
 
 ## 4. Wrong letter name in a change-record note, found 2026-10-17
 

@@ -132,7 +132,7 @@ BY_REF: dict[str, dict[str, object]] = {
         "st-summary": "BHS transcribes a meteg as a merkha.",
         "wlc_focus": "יד֥י־",
         "img": "LC-251A-col-3-line-11-Je-10v3.png",
-        "pending_uxlc_change": "2026.10.19/2026.04.10-8",
+        "uxlc_change": "2026.10.19/2026.04.10-8",
         "comment": (
             _JE_1003_01,
             _JE_1003_02,
@@ -184,8 +184,7 @@ BY_REF: dict[str, dict[str, object]] = {
         "st-source": "bhs",
         "st-summary": "BHS misses a pashta on אריצנו, transcribing only its stress helper.",
         "wlc_focus": "אריצ֨נו",
-        "uxlc_change": "2023.04.01/2022.12.10-60",
-        "pending_uxlc_change": "2026.10.19/2026.04.10-3",
+        "uxlc_change": "2026.10.19/2026.04.10-3",
         "comment": (
             "See the image in the UXLC change to which we link above."
             " BHS transcribes only the pashta stress helper, not the pashta itself."
@@ -273,12 +272,12 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "בכ֥ובע֑ים",
         "st-summary": "BHS transcribes a meteg as a merkha.",
         "img": "LC-271B-col-1-line-5-Je-46v4.png",
-        "pending_uxlc_change": "2026.10.19/2026.04.10-9",
+        "uxlc_change": "2026.10.19/2026.04.10-9",
     },
     "je 51:9": {
         "st-source": "bhs",
         "wlc_focus": "רפ֣ינו",
         "st-summary": BHS_TRANSCRIBES,
-        "pending_uxlc_change": "2026.10.19/2026.04.10-2",
+        "uxlc_change": "2026.10.19/2026.04.10-2",
     },
 }
