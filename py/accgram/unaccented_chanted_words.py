@@ -34,10 +34,12 @@ the list raises, as "template dispatch is closed" requires:
    maqaf written before a ketiv joins its atom to the next atom that is read: the qere.  ``**qq`` is
    the placeholder of a ketiv with no qere, where nothing is read.  Where an atom with a maqaf
    stands before a ketiv that has no qere, the maqaf joins it to the atom after the ketiv, as
-   ``mam_simple_verse`` joins MAM's (its ``kq-k-velo-q-maq`` node yields no boundary).  THAT CLAUSE
-   IS PROVISIONAL: it rests on that loader's choice and not on a decision of Ben's.  WLC 4.22 has
-   one such place, 2 Kings 5:18, where יִסְלַח־ stands before the unread ketiv נא and the
-   next read atom is יְהוָ֥ה.
+   ``mam_simple_verse`` joins MAM's (its ``kq-k-velo-q-maq`` node yields no boundary).  WLC 4.22
+   has one such place, 2 Kings 5:18, where יִסְלַח־ stands before the unread ketiv נא and the
+   next read atom is יְהוָ֥ה.  Ben's decision, 2026-10-20, was to keep that join: the qere is
+   "all we care about for cantillation grammar purposes", in it יסלח־ is one chanted word with
+   the name after it (Phonetic MAM's verse, ``gh-pages/phonetic-mam/tnkh/BD-2Kings/05.html``),
+   and "there's no reason for our interpretation of WLC to differ from the consensus text".
 4. **Section markers.**  A petuxah or setumah is a lone ``P`` or ``S`` run, a nun inversum
    ``N]8``.  None is an atom.
 5. **Silluq.**  The chanted word with the verse's first sof pasuq, or the verse's last chanted word
@@ -48,10 +50,20 @@ the list raises, as "template dispatch is closed" requires:
    legarmeh's chanted word has an accent all the same: the munax of a prose legarmeh, or the azla
    or mahapakh of a poetic one.  A paseq belongs to the atom before it, so a paseq standing alone
    as a run raises: the scanners' legarmeh rules cannot reach across a space, which is what issue
-   #215 found in MAM before ``chanted_word_accents_units._fold_lone_bars``.
+   #215 found in MAM before ``chanted_word_accents_units._fold_lone_bars``.  A chanted word whose
+   only mark is the bar, with no munax (or, in a poetic verse, no azla or mahapakh) before it, has
+   no accent, so its verse is reported like any other; UXLC 2.6 has two, at Joshua 14:10 and
+   1 Samuel 2:16.  Ben's decision, 2026-10-20, was to report such a word, "a word with only a
+   legarmeh (no accent)" in his words, rather than stop the run: his concern was that it not
+   "whiff by", as a chanted word with no accent did before this rule.
 7. **Notes.**  A ``]N`` note marker is part of the atom it follows, even across a maqaf: a word
    that ends with a maqaf keeps its notes after it, and ``fix_apply`` joins the atom after such
    notes to them without a space where a fix gives a word its maqaf (Genesis 18:18's ``]U``).
+
+NAMES ARE NOT EXEMPT.  A name that WLC writes as two atoms gets no exemption, the first atom
+being a chanted word like any other.  Ben's decision, 2026-10-20, in his words: "No exception
+for these two names, or for any names."  The two were WLC 4.22's פדה צור at Numbers 7:59 and
+צורי שדי at Numbers 10:19, each of which MAM writes as one word.
 
 DUAL CANTILLATION.  ``prose_filter`` keeps the dually cantillated verses of Genesis 35:22 and the
 Decalogues out of the corpus scan, so the rule never sees WLC's tangled stream, in which an atom's
@@ -191,7 +203,8 @@ def raise_on_unaccented_chanted_words(body: str, where: str) -> None:
     For the verdict paths that apply no lexical layer, named in the module docstring: a chanted
     word with no accent there would leave the grammar a verse it reads as if the chanted word
     were not there, and the clean verdict it might return would be a claim about a different
-    verse.
+    verse.  Ben's decision, 2026-10-20: keep this check, which stops the run, until a real case
+    appears, rather than give those paths the lexical layer and a status their pages can show.
     """
     words = unaccented_chanted_words(body)
     if words:

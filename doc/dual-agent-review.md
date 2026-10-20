@@ -348,9 +348,11 @@ in** (Ben's decision, 2026-09-29, whose words `doc/periodic-review.md`, "The che
 uses", records): a full clone in any forest — `$HOME/GitRepos`, `$HOME/GitRepos2`, `$HOME/GitRepos3`
 and so on — or a linked worktree of one of those clones, and perhaps some day a cloud session's
 checkout. A round may still use a linked worktree made for it, but no step of this procedure
-requires one. A local branch is only that checkout's carrier for `origin/dar-<date>`. It may use the
-remote branch's name when available or a checkout-specific name when, for example, another worktree
-registered to the same clone already has `dar-<date>` checked out. In a full clone the carrier is
+requires one. Since Ben's decision of 2026-10-20, the forest is one that the session's own agent
+owns (`doc/clone-forests.md`, “Forest ownership”). A local branch is only that checkout's carrier
+for `origin/dar-<date>`. It may use the remote branch's name when available or a checkout-specific
+name when, for example, another worktree registered to the same clone already has `dar-<date>`
+checked out. In a full clone the carrier is
 temporary, under the common instruction body's “Git and commits” exception for a named shared
 branch: the clone switches back to `main` when the task ends, since `doc/clone-forests.md`'s
 synchronization check fails a full clone on any other branch. When the Claude desktop app creates a

@@ -34,6 +34,9 @@ uses a recency criterion, apply that criterion rather than widening it to every 
   secondary forests on each machine. A roster clone in any declared forest is expected.
   Each full clone owns its environments; a worktree uses its home clone's environments.
   Repository sweeps cover the invoking clone's forest, never a different forest by default.
+  Each forest has one owning agent, as `clone_forests`' `ownership` entry declares: set up,
+  synchronize or sweep only a forest your agent owns. Either agent may run the fetch-only
+  checks over any forest.
 
 - An evacuated public repository can remain live as a Pages redirect host or issue tracker
   while its clone belongs on no machine. Do not restore such a clone for ordinary development,

@@ -46,7 +46,10 @@ schedule or saved configuration is not execution evidence: record blockers hones
 working runner is available, without advancing unexecuted checks or anchors.
 
 At each nightly run, fetch main and record exact repository and required input commits. Use
-isolated checkouts with their home clones' environments, leaving interactive edits untouched.
+isolated checkouts, leaving interactive edits untouched. Since Ben's decision of 2026-10-20
+(`doc/clone-forests.md`, “Forest ownership”), such a checkout is in a forest the running agent
+owns: by default a full clone that no interactive session is using, with its own environments,
+otherwise a linked worktree there with its home clone's environments.
 Review only new endpoint diffs; run MAM-basics and MAM-private's broad checks nightly. Check
 hbofonts for incoming commits and run its broad checks when its tip changed. Its maintained
 command includes its checks. Keep missing checks and unavailable environments explicit.

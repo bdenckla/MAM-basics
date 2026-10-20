@@ -58,7 +58,9 @@ That checkout may be a full clone in any forest — `$HOME/GitRepos`, `$HOME/Git
 `$HOME/GitRepos3` and so on, as `doc/clone-forests.md` describes — or a linked worktree of one of
 those clones, and perhaps some day a cloud session's checkout. A review may still use a linked
 worktree made for it, but nothing in this procedure or in `doc/dual-agent-review.md` requires one.
-The one-writer rule above applies to whichever checkout the review uses.
+Since Ben's decision of 2026-10-20, the forest is one that the session's own agent owns, as
+`doc/clone-forests.md`, “Forest ownership”, says. The one-writer rule above applies to whichever
+checkout the review uses.
 
 ## The effort a review runs at — Ben's decision, 2026-09-30
 

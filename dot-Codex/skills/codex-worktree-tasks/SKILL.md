@@ -11,6 +11,15 @@ environment, successors, lost-edit diagnosis and integration, live in the shared
 `linked-worktrees` skill; load it with this one. This skill adds what is specific to Codex's
 managed worktrees and tasks.
 
+## A full clone is the default checkout
+
+By Ben's decision of 2026-10-20, Codex works by default in full clones in the forests it owns,
+`$HOME/GitRepos3` and, when it needs another place, `$HOME/GitRepos4`, rather than in new
+worktrees; the common instruction body's “Clone forests and portable work” gives the ownership
+rule. A Codex-managed worktree remains permitted when a task needs one. Create it only from a
+saved project whose clone is in a Codex forest: integration fast-forwards the home clone's
+`main`, and `$HOME/GitRepos` and `$HOME/GitRepos2` belong to Claude.
+
 ## Load the reference for the selected work
 
 - For a new Codex-managed worktree's branch, or Windows `safe.directory` errors, read

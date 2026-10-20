@@ -1,12 +1,30 @@
 # Full clone forests and dependency constraints
 
-State: runbook. Ben approved the forest and pinning policy on 2026-09-29.
+State: runbook. Ben approved the forest and pinning policy on 2026-09-29 and forest ownership on
+2026-10-20.
 
 `in/repo_maintenance_policy.json`, `clone_forests`, declares the layout. Each machine's
 `$HOME/GitRepos` is its primary forest; optional `$HOME/GitRepos<N>` forests have integer N
 at least 2. Every forest holds the canonical repository names in `all-repos.code-workspace`
 with matching origins. No machine or forest is globally primary. Forest creation is separate
 from worktree retirement; an existing forest is not a disposable task directory.
+
+## Forest ownership
+
+Ben decided on 2026-10-20 that each forest has one owning agent, so that Claude and Codex need
+not coordinate checkouts: Claude owns `$HOME/GitRepos` and `$HOME/GitRepos2`, and Codex owns
+`$HOME/GitRepos3` and, when it needs another place, `$HOME/GitRepos4`, which Codex may create.
+`clone_forests`' `ownership` entry declares this, and the common instruction body's “Clone
+forests and portable work” gives the rule every session follows. The same day Ben made a full
+clone the default checkout: "I'm not forbidding worktrees, just trying to shift the default mode
+of work to be in these forests of clones rather than worktrees of a clone in one of those forests
+of clones."
+
+Only a forest's owner runs the write form of `--sync-forest` on it. The check forms below,
+`--sync-forest <root> --check` and `--forest-status`, fetch but change no checkout, local branch
+or environment, so either agent may run them over any forest. Codex creates `$HOME/GitRepos4` by
+running the write form from its `$HOME/GitRepos3/MAM-basics` clone, then verifies the new forest
+as “Work and verification” describes.
 
 ## Synchronization
 
