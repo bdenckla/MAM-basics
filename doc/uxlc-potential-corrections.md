@@ -11,6 +11,11 @@ potential corrections should be recorded in a file in the "doc" folder somewhere
 care to report them in the future." This file is that record. Add any later potential UXLC
 correction here.
 
+Ben's clarification of 2026-10-20: the file holds potential corrections that the UXLC's editor,
+Chris Kimball, might be interested in, "not the (rather huge) set of potential corrections we
+might want to make in CLC". A correction argued from grammar alone belongs with CLC, since the
+UXLC "does not often (if ever) accept grammatical arguments".
+
 On 2026-10-19 a Claude session rechecked every record below against its change list as tanach.us
 then served it. Five of the six lists matched MAM-basics' archived copies record for record. The
 sixth, the 2026.10.19 list, had changed, and sections 2 and 3 say how.
