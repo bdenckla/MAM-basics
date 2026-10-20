@@ -17194,7 +17194,7 @@
 "bcv": "ek8:6",
 "input": {
 "unicode": "וי֣אמר אל֔י בן־ אד֕ם הרא֥ה את֖ה מ֣ה ה֣ם עש֑ים תועב֨ות גדל֜ות אש֥ר בית־ ישרא֣ל׀ עש֣ים פ֗ה לרחקה֙ מע֣ל מקדש֔י ועוד֙ תש֣וב תרא֔ה תועב֖ות גדלֽות׃",
-"marks": "אא֣אאא אא֔א אא-אא֕א אאא֥א אא֖א *אאא **א֣א-א֣א אא֑אא אאאא֨אא אאא֜אא אא֥א אֽאא-אאאא֣א׀ אא֣אא א֗א אאֽאאא֙ אא֣א אאאא֔א אאאא֙ אא֣אא אאא֔א אאאא֖אא אאאֽאא׃ S",
+"marks": "אא֣אאא אא֔א אא-אא֕א אאא֥א אא֖א *אאא **א֣א א֣א אא֑אא אאאא֨אא אאא֜אא אא֥א אֽאא-אאאא֣א׀ אא֣אא א֗א אאֽאאא֙ אא֣א אאאא֔א אאאא֙ אא֣אא אאא֔א אאאא֖אא אאאֽאא׃ S",
 "tokens": [
 "TILDE",
 "MUNAX",
@@ -17222,14 +17222,6 @@
 "SOFPASUQ"
 ]
 },
-"chanted_word_accents": [
-{
-"marks": "**א֣א-א֣א",
-"sequence": "munax munax",
-"kind": "a maqaf compound, its accents split across atoms",
-"itm_section": null
-}
-],
 "status": "clean",
 "tree": {
 "label": "silluq_clause",
@@ -20352,7 +20344,7 @@
 "bcv": "ek9:11",
 "input": {
 "unicode": "והנ֞ה הא֣יש׀ לב֣ש הבד֗ים אש֤ר הק֙סת֙ במתנ֔יו מש֥יב דב֖ר לאמ֑ר עש֕יתי ככ֖ל אש֥ר צויתֽני׃",
-"marks": "אאא֞א אא֣אא׀ אא֣א אאא֗אא אא֤א אא֙אא֙ אאאא֔אא אא֥אא אא֖א אאא֑א אא֕אאא *אאאא **אא֖א]v-אא֥א אאאאֽאא׃ S",
+"marks": "אאא֞א אא֣אא׀ אא֣א אאא֗אא אא֤א אא֙אא֙ אאאא֔אא אא֥אא אא֖א אאא֑א אא֕אאא *אאאא **אא֖א]v אא֥א אאאאֽאא׃ S",
 "tokens": [
 "TILDE",
 "GERSHAYIM",
@@ -20372,14 +20364,6 @@
 "SOFPASUQ"
 ]
 },
-"chanted_word_accents": [
-{
-"marks": "**אא֖א]v-אא֥א",
-"sequence": "tipexa merkha",
-"kind": "a maqaf compound, its accents split across atoms",
-"itm_section": null
-}
-],
 "status": "clean",
 "tree": {
 "label": "silluq_clause",
@@ -127082,7 +127066,7 @@
 "bcv": "ek42:9",
 "input": {
 "unicode": "ומת֖חת הלשכ֣ות הא֑לה המביא֙ מהקד֔ים בבא֣ו לה֔נה מהחצ֖ר החצנֽה׃",
-"marks": "*אאאאאא-אאאאא **אאא֖אא-אאאא֣אא אא֑אא *אאאאא **אאאאא֙ אֽאאא֔אא אאא֣א אא֔אא אֽאאא֖א אאאאֽא׃",
+"marks": "*אאאאאא-אאאאא **אאא֖אא אאאא֣אא אא֑אא *אאאאא **אאאאא֙ אֽאאא֔אא אאא֣א אא֔אא אֽאאא֖א אאאאֽא׃",
 "tokens": [
 "TILDE",
 "TIPEXA",
@@ -127097,14 +127081,6 @@
 "SOFPASUQ"
 ]
 },
-"chanted_word_accents": [
-{
-"marks": "**אאא֖אא-אאאא֣אא",
-"sequence": "tipexa munax",
-"kind": "a maqaf compound, its accents split across atoms",
-"itm_section": null
-}
-],
 "status": "clean",
 "tree": {
 "label": "silluq_clause",

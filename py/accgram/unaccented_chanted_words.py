@@ -24,9 +24,8 @@ the list raises, as "template dispatch is closed" requires:
 1. **Maqaf.**  A maqaf compound is ONE chanted word.  Its non-final atoms need no accent of their
    own; the compound as a whole needs one.  A maqaf joins its atom to the next atom that is read,
    so a maqaf with no atom after it in its run reaches across what follows: two maqaf marks in a
-   row, which a qere leaves where one of its words ends with a maqaf, and a maqaf before a space,
-   which ``main_uxlc_grammar_test.splice_unit`` leaves where it splices in a word that ends with
-   one.
+   row and a maqaf before a space, both of which ``main_uxlc_grammar_test.splice_unit`` leaves
+   where it splices in a word that ends with a maqaf.
 2. **Ketiv.**  A ketiv is written but not read, unpointed and unaccented.  ``*`` opens its run and
    the run is the ketiv to its end, its later atoms, notes and maqaf marks included; ``*kk`` is the
    placeholder of a qere with no ketiv.  No atom of a ketiv belongs to any chanted word.
@@ -70,14 +69,13 @@ Decalogues out of the corpus scan, so the rule never sees WLC's tangled stream, 
 two marks serve two strands.  ``dual_cant_detangle`` builds each strand with MAM's punctuation and
 supplies a strand's accent from MAM where WLC lacks it, the ``SuppliedMark`` charity.
 
-A LIMIT OF THE BODY.  ``uni_to_marks._kq_to_marks`` joins the words of a qere with maqaf marks,
-whether the words are a compound or not, so a qere of two chanted words is read here as one
-compound and one of its words could lack an accent unnoticed.  The body cannot say which: a qere
-of the two words ``A`` and ``B-`` followed by the atom ``C``, and a qere of the one word ``A-``
-followed by the atoms ``B-`` and ``C``, are both ``**A-B-C``.
-``tests/test_unaccented_chanted_words.py`` holds this reading of WLC 4.22 to a reading of its
-``-kq-u`` verses themselves, which has each qere word apart, so the test fails if the limit ever
-changes a result.
+THE QERE'S CHANTED WORDS.  ``uni_to_marks._kq_to_marks`` joins the words of a qere as it joins a
+verse's elements, so a qere of two chanted words is two runs of the body, the first opened by
+``**``, and each is read as the chanted word it is.  Until 2026-10-20 it joined them by maqaf
+marks, so that such a qere read here as one compound, and one of its words could have lacked an
+accent unnoticed; none of WLC 4.22's 24 qeres of two or more words did.
+``tests/test_unaccented_chanted_words.py`` holds this reading of WLC 4.22, chanted word by
+chanted word, to a reading of its ``-kq-u`` verses themselves.
 
 WHERE IT IS APPLIED.  The prose checker reads it through ``lexical_validation``, as an
 ``illegal_mark`` with the code ``no accent``, so ``prose_run``, ``fix_tester``,

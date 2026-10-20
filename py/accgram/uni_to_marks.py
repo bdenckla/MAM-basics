@@ -206,13 +206,37 @@ def _kq_to_marks(kq: object) -> str:
     qere, then scans the (pointed) qere normally -- so only the qere carries grammar-
     visible marks.  An implicit-empty side (qere perpetuum / ketiv-only) emits the
     ``*kk`` / ``**qq`` placeholder the M-C source used, both swallowed.
+
+    The two sides are joined differently.  The ketiv stays one run, its words joined by
+    maqaf marks, because a ketiv is never read and its run must reach to its end
+    (``unaccented_chanted_words``' rule 2).  The words of a qere are read, so they are joined
+    as ``verse_to_marks`` joins verse elements: a space between two chanted words, and no
+    separator after a word that ends with a maqaf, so that a qere's chanted words are apart in
+    the body as they are in the verse.  Until 2026-10-20 the qere's words were joined by maqaf
+    marks too, which made a qere of two chanted words, such as Genesis 30:11's בָּ֣א גָ֑ד, one
+    maqaf compound in the body, and left two maqaf marks in a row after a qere word that has one
+    of its own.
     """
     ketiv, qere = kq if isinstance(kq, (list, tuple)) and len(kq) == 2 else ([], [])
     ketiv_words = [w for w in (_kq_word(v) for v in ketiv) if w]
     qere_words = [w for w in (_kq_word(v) for v in qere) if w]
     ketiv_part = "*" + "-".join(ketiv_words) if ketiv_words else "*kk"
-    qere_part = "**" + "-".join(qere_words) if qere_words else "**qq"
+    qere_part = "**" + _join_like_verse_elements(qere_words) if qere_words else "**qq"
     return f"{ketiv_part} {qere_part}"
+
+
+def _join_like_verse_elements(frags: list[str]) -> str:
+    """Join mark fragments as ``verse_to_marks`` joins a verse's elements.
+
+    A space between two fragments, unless the earlier one ends with a maqaf, which joins the
+    two into one chanted word.
+    """
+    parts: list[str] = []
+    for frag in frags:
+        if parts and not parts[-1].endswith(am.MAQAF):
+            parts.append(" ")
+        parts.append(frag)
+    return "".join(parts)
 
 
 def _kq_word(vel: object) -> str:
@@ -230,17 +254,9 @@ def verse_to_marks(verse: dict) -> str:
     vels = verse.get("vels")
     if not isinstance(vels, list):
         return ""
-    parts: list[str] = []
-    prev_ended_maqaf = False
-    for vel in vels:
-        frag = _vel_to_marks(vel)
-        if not frag:
-            continue
-        if parts and not prev_ended_maqaf:
-            parts.append(" ")
-        parts.append(frag)
-        prev_ended_maqaf = frag.endswith(am.MAQAF)
-    return "".join(parts)
+    return _join_like_verse_elements(
+        [frag for frag in (_vel_to_marks(vel) for vel in vels) if frag]
+    )
 
 
 # --- book-text builder (drop-in for split_wlc.split_wlc_to_book_texts) ---------

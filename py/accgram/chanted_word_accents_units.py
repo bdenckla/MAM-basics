@@ -80,7 +80,7 @@ class Unit:
 class Frag:
     """One atom's Unicode and marks, plus what the joiner needs to know about it.
 
-    ``always_starts_a_unit`` is for the qere of a ketiv-qere element, which
+    ``always_starts_a_unit`` is for the first word of the qere of a ketiv-qere element, which
     ``uni_to_marks._kq_to_marks`` separates from its ketiv by a space unconditionally -- even
     where the ketiv ends with a maqaf, as Numbers 23:13's לך־ does.  Without the flag the maqaf
     rule would join them and the rebuilt body would lose that space.
@@ -96,27 +96,34 @@ def _plain_frag(atom: str) -> Frag:
     return Frag(atom, uni_to_marks.word_to_marks(atom), True)
 
 
-def _kq_side_frag(side: object, marker: str, *, is_word: bool) -> Frag:
-    """One side of a ketiv-qere element as a single fragment, atoms joined by maqaf.
+def _kq_side_frags(side: object, marker: str) -> list[Frag]:
+    """One side of a ketiv-qere element, as ``uni_to_marks._kq_to_marks`` writes it.
 
-    Mirrors ``uni_to_marks._kq_to_marks``: the ketiv is ``*`` + its atoms, the qere ``**`` + its
-    atoms, an empty side becoming the ``*kk`` / ``**qq`` placeholder the Michigan-Claremont source
-    used.  Both are one fragment rather than one per atom, so the Unicode side is the whole qere
-    -- which is the chanted word the reader wants to see.
+    The ketiv is one fragment, ``*`` + its atoms joined by maqaf marks: one run of the body, and
+    no chanted word.  The qere is one fragment per word, ``**`` opening the first, and
+    ``_verse_units`` joins them as ``_kq_to_marks`` does, as verse elements, so each chanted word
+    of the qere is a unit of its own, with its own Unicode beside its marks.  An empty side is
+    the ``*kk`` / ``**qq`` placeholder the Michigan-Claremont source used.
     """
-    starts = marker == "**"
+    is_qere = marker == "**"
     words = [w for w in (_kq_word(v) for v in (side or ())) if w[1]]
     if not words:
         # An empty side is a placeholder, not a chanted word, so ``is_word`` is False even on
         # the qere side: ``**qq`` stands for a ketiv with no qere, where nothing is chanted
         # (see ``_EMPTY_QERE_PLACEHOLDER``).
-        return Frag("", _EMPTY_QERE_PLACEHOLDER if starts else "*kk", False, starts)
-    return Frag(
-        UNI_MAQAF.join(w[0] for w in words),
-        marker + "-".join(w[1] for w in words),
-        is_word,
-        starts,
-    )
+        return [Frag("", _EMPTY_QERE_PLACEHOLDER if is_qere else "*kk", False, is_qere)]
+    if not is_qere:
+        return [
+            Frag(
+                UNI_MAQAF.join(w[0] for w in words),
+                marker + "-".join(w[1] for w in words),
+                False,
+            )
+        ]
+    (first_text, first_marks), *rest = words
+    return [Frag(first_text, marker + first_marks, True, True)] + [
+        Frag(text, marks, True) for text, marks in rest
+    ]
 
 
 def _kq_word(vel: object) -> tuple[str, str]:
@@ -157,10 +164,7 @@ def _wlc_vel_frags(vel: object) -> list[Frag]:
     kq = vel.get("kq")
     if kq is not None:
         ketiv, qere = kq if isinstance(kq, (list, tuple)) and len(kq) == 2 else ([], [])
-        return [
-            _kq_side_frag(ketiv, "*", is_word=False),
-            _kq_side_frag(qere, "**", is_word=True),
-        ]
+        return [*_kq_side_frags(ketiv, "*"), *_kq_side_frags(qere, "**")]
     word = vel.get("word")
     if isinstance(word, str):
         return [
@@ -412,8 +416,9 @@ def _by_chanted_word(
 # The runs of a mark body that are not chanted words.  ``uni_to_marks`` has a petuhah or setumah
 # as a lone ``P`` or ``S`` and a nun inversum as ``N]8``, and a ketiv as ``*`` followed by its
 # letters (or ``*kk`` where the ketiv side is empty); the qere after it opens with ``**`` and IS
-# a chanted word -- unless it is the ``**qq`` placeholder of a ketiv with no qere, where nothing
-# is chanted (see ``_EMPTY_QERE_PLACEHOLDER``).  The only other ASCII in a mark body is the
+# chanted, its first chanted word the run that ``**`` opens and any later one a plain run of its
+# own -- unless it is the ``**qq`` placeholder of a ketiv with no qere, where nothing is chanted
+# (see ``_EMPTY_QERE_PLACEHOLDER``).  The only other ASCII in a mark body is the
 # ``]N`` note suffix, which never stands alone, so none of these tests can collide with a real
 # chanted word.
 _SAM_PE_INUN_MARKS = frozenset(("P", "S", "N]8"))
