@@ -61,10 +61,10 @@ the list raises, as "template dispatch is closed" requires:
    that ends with a maqaf keeps its notes after it, and ``fix_apply`` joins the atom after such
    notes to them without a space where a fix gives a word its maqaf (Genesis 18:18's ``]U``).
 
-NAMES ARE NOT EXEMPT.  A name that WLC writes as two atoms gets no exemption, the first atom
+NAMES ARE NOT EXEMPT.  A name that WLC has as two atoms gets no exemption, the first atom
 being a chanted word like any other.  Ben's decision, 2026-10-20, in his words: "No exception
 for these two names, or for any names."  The two were WLC 4.22's פדה צור at Numbers 7:59 and
-צורי שדי at Numbers 10:19, each of which MAM writes as one word.
+צורי שדי at Numbers 10:19, each of which MAM has as one word.
 
 DUAL CANTILLATION.  ``prose_filter`` keeps the dually cantillated verses of Genesis 35:22 and the
 Decalogues out of the corpus scan, so the rule never sees WLC's tangled stream, in which an atom's
