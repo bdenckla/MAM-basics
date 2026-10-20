@@ -109,8 +109,10 @@ either agent may read any forest. Work already under way in the other agent's fo
 started for separate or parallel work, runs in a full clone in a forest its agent owns rather
 than in a new linked worktree. Worktrees remain permitted; in Ben's words, "managing their
 growth, i.e. deleting them, is proving too taxing." Claude gets no third forest for now: Ben
-decided the same day to gain experience with this scheme first, so a Claude session that needs to
-write while both of Claude's forests are in use may use a linked worktree instead.
+decided the same day to gain experience with this scheme first. A Claude session that needs to
+write while both of Claude's forests are in use runs as a cloud session where the task can run
+in the cloud, which Ben called "usually … an even better alternative than a worktree"
+(2026-10-20); otherwise it may use a linked worktree.
 
 ## Linked worktrees
 
