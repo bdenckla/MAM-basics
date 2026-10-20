@@ -97,9 +97,18 @@ that machine. The scan archive is at `$HOME/OneDrive/Documents/ScansOfBooks` by 
 `BOOK_SCANS_ROOT` overrides that location; other such inputs, such as the user's pywikibot
 configuration, are found through explicit account configuration.
 
-Ben's preference, 2026-10-20: a session started for separate or parallel work runs in a full
-clone in a secondary forest (`$HOME/GitRepos2` or `$HOME/GitRepos3`), not in a new linked
-worktree.
+**Each forest has one owning agent**, by Ben's decision of 2026-10-20, so that Claude and Codex
+need not coordinate checkouts with each other. Claude owns `$HOME/GitRepos` and
+`$HOME/GitRepos2`. Codex owns `$HOME/GitRepos3` and, when it needs another place,
+`$HOME/GitRepos4`, which Codex may create. Only a forest's owner edits, commits, runs generators
+or synchronizes clones there, including through a linked worktree whose home clone is there;
+either agent may read any forest. Work already under way in the other agent's forest on
+2026-10-20 finishes there, pushes its work and leaves each clone it used clean on `main`.
+
+**A full clone is the default checkout.** Ben's preference, 2026-10-20: work, including a session
+started for separate or parallel work, runs in a full clone in a forest its agent owns rather
+than in a new linked worktree. Worktrees remain permitted; in Ben's words, "managing their
+growth, i.e. deleting them, is proving too taxing."
 
 ## Linked worktrees
 
@@ -309,7 +318,7 @@ sub-agent results, verifies material claims before adopting them, owns integrati
 final answer. Within any one checkout, only one agent writes, stages or commits at a time. A
 procedure with a shared remote branch may impose a stricter one-writer rule across separate
 checkouts as well. Delegate read-only investigation freely; if concurrent agents must write, give
-the agents separate verified worktrees. A sub-agent never stages or commits another agent's
+the agents separate verified checkouts. A sub-agent never stages or commits another agent's
 unfinished files.
 
 ## Final messages begin with one H1 report heading

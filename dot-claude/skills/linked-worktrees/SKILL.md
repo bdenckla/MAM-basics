@@ -8,7 +8,10 @@ description: Ben's rules, for Claude and Codex alike, for working in a linked Gi
 These rules apply to linked worktrees in any clone forest, whichever agent works in them. The
 common instruction body keeps the rules every session needs: verify the exact checkout before
 editing, use the home clone's interpreter by absolute path, and never junction, symlink or copy
-the home clone's environment. A multi-repository review procedure may add its own manifest and
+the home clone's environment. Since Ben's decision of 2026-10-20, a linked worktree is permitted
+but is no longer the default checkout, and its home clone is in a forest its agent owns; the
+common body's “Clone forests and portable work” gives the forest ownership. A multi-repository
+review procedure may add its own manifest and
 stricter ownership rules. ChatGPT-Codex also loads `codex-worktree-tasks` for creating, forking
 and archiving Codex tasks and for a Codex-managed worktree's branch name.
 
