@@ -259,7 +259,7 @@
       },
       "manuscript_folio": "035A",
       "change_record_ids": [
-        "2026.08.05-6"
+        "2026.08.05-3"
       ],
       "images": [
         {
@@ -306,7 +306,7 @@
       },
       "manuscript_folio": "037B",
       "change_record_ids": [
-        "2026.08.05-3"
+        "2026.08.05-4"
       ],
       "images": [
         {
@@ -353,7 +353,7 @@
       },
       "manuscript_folio": "043A",
       "change_record_ids": [
-        "2026.08.05-4"
+        "2026.08.05-5"
       ],
       "images": [
         {
@@ -400,7 +400,7 @@
       },
       "manuscript_folio": "055A",
       "change_record_ids": [
-        "2026.08.05-5"
+        "2026.08.05-6"
       ],
       "images": [
         {
@@ -956,7 +956,9 @@
         }
       ],
       "manuscript_folio": "153B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-17"
+      ],
       "images": [
         {
           "attachment": "1Sa 7.10.10.png",
@@ -1000,7 +1002,9 @@
         }
       ],
       "manuscript_folio": "156A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-18"
+      ],
       "images": [
         {
           "attachment": "1Sa 13.4.11.png",
@@ -1036,7 +1040,9 @@
         }
       ],
       "manuscript_folio": null,
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-119"
+      ],
       "images": [
         {
           "attachment": "1Sa 28.12 L has a Maqqef.png",
@@ -1080,7 +1086,9 @@
         }
       ],
       "manuscript_folio": "171A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-19"
+      ],
       "images": [
         {
           "attachment": "2Sa 5.21.1 .png",
@@ -1129,7 +1137,9 @@
         }
       ],
       "manuscript_folio": "172B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-20"
+      ],
       "images": [
         {
           "attachment": "2 Samuel 7.22.7.png",
@@ -1173,7 +1183,9 @@
         }
       ],
       "manuscript_folio": "177A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-21"
+      ],
       "images": [
         {
           "attachment": "2Sa 15.26.11.png",
@@ -1217,7 +1229,9 @@
         }
       ],
       "manuscript_folio": "183B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-22"
+      ],
       "images": [
         {
           "attachment": "2Sa 24.10.19.png",
@@ -1257,7 +1271,9 @@
         }
       ],
       "manuscript_folio": "246B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-95"
+      ],
       "images": [
         {
           "attachment": "Jer 3.24.2.png",
@@ -1297,7 +1313,9 @@
         }
       ],
       "manuscript_folio": "250A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-96"
+      ],
       "images": [
         {
           "attachment": "Jer 8.9.9.png",
@@ -1338,7 +1356,8 @@
       ],
       "manuscript_folio": "251A",
       "change_record_ids": [
-        "2026.04.10-8"
+        "2026.04.10-8",
+        "2026.08.05-97"
       ],
       "images": [
         {
@@ -1379,7 +1398,9 @@
         }
       ],
       "manuscript_folio": "252B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-98"
+      ],
       "images": [
         {
           "attachment": "Jer 12.10.8.png",
@@ -1419,7 +1440,9 @@
         }
       ],
       "manuscript_folio": "261A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-99"
+      ],
       "images": [
         {
           "attachment": "Jer 28.9.7.png",
@@ -1460,7 +1483,8 @@
       ],
       "manuscript_folio": "271B",
       "change_record_ids": [
-        "2026.04.10-9"
+        "2026.04.10-9",
+        "2026.08.05-100"
       ],
       "images": [
         {
@@ -1501,7 +1525,9 @@
         }
       ],
       "manuscript_folio": "276B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-101"
+      ],
       "images": [
         {
           "attachment": "Ezek 1.4.12.png",
@@ -1583,7 +1609,9 @@
         }
       ],
       "manuscript_folio": "279B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-103"
+      ],
       "images": [
         {
           "attachment": "Ezek 8.15.9.png",
@@ -1623,7 +1651,9 @@
         }
       ],
       "manuscript_folio": "280B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-104"
+      ],
       "images": [
         {
           "attachment": "Ezek 11.1.29.png",
@@ -1663,7 +1693,9 @@
         }
       ],
       "manuscript_folio": "283A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-105"
+      ],
       "images": [
         {
           "attachment": "Ezek 16.12.1.png",
@@ -1703,7 +1735,9 @@
         }
       ],
       "manuscript_folio": "288A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-106"
+      ],
       "images": [
         {
           "attachment": "Ezek 23.11.8.png",
@@ -1743,7 +1777,9 @@
         }
       ],
       "manuscript_folio": "293A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-107"
+      ],
       "images": [
         {
           "attachment": "Ezek 32.21.9.png",
@@ -1783,7 +1819,9 @@
         }
       ],
       "manuscript_folio": "294A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-108"
+      ],
       "images": [
         {
           "attachment": "Ezek 33.28.9.png",
@@ -1823,7 +1861,9 @@
         }
       ],
       "manuscript_folio": "295A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-109"
+      ],
       "images": [
         {
           "attachment": "Ezek 36.3.18.png",
@@ -1863,7 +1903,9 @@
         }
       ],
       "manuscript_folio": "301A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-110"
+      ],
       "images": [
         {
           "attachment": "Ezek 44.6.14.png",
@@ -1903,7 +1945,9 @@
         }
       ],
       "manuscript_folio": "305A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-111"
+      ],
       "images": [
         {
           "attachment": "Hos 5.6.3.png",
@@ -1943,7 +1987,9 @@
         }
       ],
       "manuscript_folio": "309B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-112"
+      ],
       "images": [
         {
           "attachment": "Amos 3.10.7.png",
@@ -1983,7 +2029,9 @@
         }
       ],
       "manuscript_folio": "309B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-113"
+      ],
       "images": []
     },
     {
@@ -2017,7 +2065,9 @@
         }
       ],
       "manuscript_folio": "311A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-114"
+      ],
       "images": [
         {
           "attachment": "Obad 1.1.17.png",
@@ -2057,7 +2107,9 @@
         }
       ],
       "manuscript_folio": "312A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-115"
+      ],
       "images": [
         {
           "attachment": "Mic 1.14.10.png",
@@ -2097,7 +2149,9 @@
         }
       ],
       "manuscript_folio": "322B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-116"
+      ],
       "images": [
         {
           "attachment": "Zech 12.5.1.png",
@@ -2145,7 +2199,9 @@
         }
       ],
       "manuscript_folio": "366B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-44"
+      ],
       "images": [
         {
           "attachment": "Ps 5.11.1.png",
@@ -2241,7 +2297,9 @@
         }
       ],
       "manuscript_folio": "367A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-45"
+      ],
       "images": [
         {
           "attachment": "Ps 9.1.2.png",
@@ -2294,7 +2352,9 @@
         }
       ],
       "manuscript_folio": "367B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-46"
+      ],
       "images": [
         {
           "attachment": "Ps 12.7.1.png",
@@ -2342,7 +2402,9 @@
         }
       ],
       "manuscript_folio": "367B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-47"
+      ],
       "images": [
         {
           "attachment": "Ps 14.7.1.png",
@@ -2390,7 +2452,9 @@
         }
       ],
       "manuscript_folio": "368A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-48"
+      ],
       "images": [
         {
           "attachment": "Ps 15.5.8.png",
@@ -2438,7 +2502,9 @@
         }
       ],
       "manuscript_folio": "368A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-49"
+      ],
       "images": [
         {
           "attachment": "Ps 17.14.1.png",
@@ -2534,7 +2600,9 @@
         }
       ],
       "manuscript_folio": "368A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-50"
+      ],
       "images": [
         {
           "attachment": "Ps 18.7.3.png",
@@ -2582,7 +2650,9 @@
         }
       ],
       "manuscript_folio": "369A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-51"
+      ],
       "images": [
         {
           "attachment": "Ps 19.15.1.png",
@@ -2630,7 +2700,9 @@
         }
       ],
       "manuscript_folio": "371A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-52"
+      ],
       "images": [
         {
           "attachment": "Ps 31.12.5.png",
@@ -2678,7 +2750,9 @@
         }
       ],
       "manuscript_folio": "371A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-53"
+      ],
       "images": [
         {
           "attachment": "Ps 31.24.1.png",
@@ -2726,7 +2800,9 @@
         }
       ],
       "manuscript_folio": "372A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-54"
+      ],
       "images": [
         {
           "attachment": "Ps 35.10.5.png",
@@ -2774,7 +2850,9 @@
         }
       ],
       "manuscript_folio": "372B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-55"
+      ],
       "images": [
         {
           "attachment": "Ps 37.14.2.png",
@@ -2822,7 +2900,9 @@
         }
       ],
       "manuscript_folio": "372B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-56"
+      ],
       "images": [
         {
           "attachment": "Ps 37.40.1.png",
@@ -2870,7 +2950,9 @@
         }
       ],
       "manuscript_folio": "373A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-57"
+      ],
       "images": [
         {
           "attachment": "Ps 39.2.2.png",
@@ -2918,7 +3000,9 @@
         }
       ],
       "manuscript_folio": "373A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-58"
+      ],
       "images": [
         {
           "attachment": "Ps 40.5.1.png",
@@ -2966,7 +3050,9 @@
         }
       ],
       "manuscript_folio": "373A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-59"
+      ],
       "images": [
         {
           "attachment": "Ps 40.6.6.png",
@@ -3014,7 +3100,9 @@
         }
       ],
       "manuscript_folio": "373B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-60"
+      ],
       "images": [
         {
           "attachment": "Ps 40.13.2.png",
@@ -3062,7 +3150,9 @@
         }
       ],
       "manuscript_folio": "373B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-61"
+      ],
       "images": [
         {
           "attachment": "Ps 42.3.5.png",
@@ -3110,7 +3200,9 @@
         }
       ],
       "manuscript_folio": "374A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-62"
+      ],
       "images": [
         {
           "attachment": "Ps 44.13.5.png",
@@ -3158,7 +3250,9 @@
         }
       ],
       "manuscript_folio": "374B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-63"
+      ],
       "images": [
         {
           "attachment": "Ps 46.12.5.png",
@@ -3206,7 +3300,9 @@
         }
       ],
       "manuscript_folio": "374B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-64"
+      ],
       "images": [
         {
           "attachment": "Ps 47.5.5.png",
@@ -3254,7 +3350,9 @@
         }
       ],
       "manuscript_folio": "375A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-65"
+      ],
       "images": [
         {
           "attachment": "Ps 48.5.4.png",
@@ -3302,7 +3400,9 @@
         }
       ],
       "manuscript_folio": "375A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-66"
+      ],
       "images": [
         {
           "attachment": "Ps 49.15.2.png",
@@ -3350,7 +3450,9 @@
         }
       ],
       "manuscript_folio": "375B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-67"
+      ],
       "images": [
         {
           "attachment": "Ps 50.23.3.png",
@@ -3398,7 +3500,9 @@
         }
       ],
       "manuscript_folio": "375B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-68"
+      ],
       "images": [
         {
           "attachment": "Ps 51.19.1.png",
@@ -3446,7 +3550,9 @@
         }
       ],
       "manuscript_folio": "376A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-69"
+      ],
       "images": [
         {
           "attachment": "Ps 53.3.6.png",
@@ -3494,7 +3600,9 @@
         }
       ],
       "manuscript_folio": "376A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-70"
+      ],
       "images": [
         {
           "attachment": "Ps 53.7.1.png",
@@ -3542,7 +3650,9 @@
         }
       ],
       "manuscript_folio": "376B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-71"
+      ],
       "images": [
         {
           "attachment": "Ps 55.20.6.png",
@@ -3590,7 +3700,9 @@
         }
       ],
       "manuscript_folio": "377A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-72"
+      ],
       "images": [
         {
           "attachment": "Ps 58.10.1.png",
@@ -3638,7 +3750,9 @@
         }
       ],
       "manuscript_folio": "377A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-73"
+      ],
       "images": [
         {
           "attachment": "Ps 59.12.9.png",
@@ -3686,7 +3800,9 @@
         }
       ],
       "manuscript_folio": "377A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-74"
+      ],
       "images": [
         {
           "attachment": "Ps 60.3.5.png",
@@ -3734,7 +3850,9 @@
         }
       ],
       "manuscript_folio": "378A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-75"
+      ],
       "images": [
         {
           "attachment": "Ps 65.10.2.png",
@@ -3782,7 +3900,9 @@
         }
       ],
       "manuscript_folio": "379A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-76"
+      ],
       "images": [
         {
           "attachment": "Ps 69.1.1.png",
@@ -3830,7 +3950,9 @@
         }
       ],
       "manuscript_folio": "380A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-77"
+      ],
       "images": [
         {
           "attachment": "Ps 72.4.7.png",
@@ -3878,7 +4000,9 @@
         }
       ],
       "manuscript_folio": "383B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-78"
+      ],
       "images": [
         {
           "attachment": "Ps 86.9.9.png",
@@ -3926,7 +4050,9 @@
         }
       ],
       "manuscript_folio": "385A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-79"
+      ],
       "images": [
         {
           "attachment": "Ps 93.2.4.png",
@@ -3974,7 +4100,9 @@
         }
       ],
       "manuscript_folio": "385B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-80"
+      ],
       "images": [
         {
           "attachment": "Ps 94.6.4.png",
@@ -4022,7 +4150,9 @@
         }
       ],
       "manuscript_folio": "388A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-81"
+      ],
       "images": [
         {
           "attachment": "Ps 105.40.1.png",
@@ -4070,7 +4200,9 @@
         }
       ],
       "manuscript_folio": "388B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-82"
+      ],
       "images": [
         {
           "attachment": "Ps 106.29.2.png",
@@ -4118,7 +4250,9 @@
         }
       ],
       "manuscript_folio": "388B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-83"
+      ],
       "images": [
         {
           "attachment": "Ps 106.38.1.png",
@@ -4166,7 +4300,9 @@
         }
       ],
       "manuscript_folio": "390B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-84"
+      ],
       "images": [
         {
           "attachment": "Ps 118.17.1.png",
@@ -4214,7 +4350,9 @@
         }
       ],
       "manuscript_folio": "391B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-85"
+      ],
       "images": [
         {
           "attachment": "Ps 119.51.5.png",
@@ -4262,7 +4400,9 @@
         }
       ],
       "manuscript_folio": "391B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-86"
+      ],
       "images": [
         {
           "attachment": "Ps 119.61.4.png",
@@ -4310,7 +4450,9 @@
         }
       ],
       "manuscript_folio": "391B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-87"
+      ],
       "images": [
         {
           "attachment": "Ps 119.77.5.png",
@@ -4358,7 +4500,9 @@
         }
       ],
       "manuscript_folio": "392A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-88"
+      ],
       "images": [
         {
           "attachment": "Ps 119.109.4.png",
@@ -4406,7 +4550,9 @@
         }
       ],
       "manuscript_folio": "395B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-89"
+      ],
       "images": [
         {
           "attachment": "Ps 143.10.2.png",
@@ -4458,7 +4604,9 @@
         }
       ],
       "manuscript_folio": "412A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-90"
+      ],
       "images": [
         {
           "attachment": "Prov 8.13.1.png",
@@ -4510,7 +4658,9 @@
         }
       ],
       "manuscript_folio": "416A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-91"
+      ],
       "images": [
         {
           "attachment": "Prov 19.7.1.png",
@@ -4562,7 +4712,9 @@
         }
       ],
       "manuscript_folio": "417B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-92"
+      ],
       "images": [
         {
           "attachment": "Prov 23.7.2.png",
@@ -4614,7 +4766,9 @@
         }
       ],
       "manuscript_folio": "419B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-93"
+      ],
       "images": [
         {
           "attachment": "Prov 28.3.1.png",
@@ -4666,7 +4820,9 @@
         }
       ],
       "manuscript_folio": "420A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-94"
+      ],
       "images": [
         {
           "attachment": "Prov 30.15.1.png",
@@ -5127,7 +5283,9 @@
         }
       ],
       "manuscript_folio": "436B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-130"
+      ],
       "images": [
         {
           "attachment": "Est 8.14.5.png",
@@ -5167,7 +5325,9 @@
         }
       ],
       "manuscript_folio": "441B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-117"
+      ],
       "images": [
         {
           "attachment": "Dan 5.3.8.png",
@@ -5207,7 +5367,9 @@
         }
       ],
       "manuscript_folio": "446A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-118"
+      ],
       "images": [
         {
           "attachment": "Dan 10.19.13.png",
@@ -5247,7 +5409,9 @@
         }
       ],
       "manuscript_folio": "450B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-127"
+      ],
       "images": [
         {
           "attachment": "Ezra 6.2.3.png",
@@ -5287,7 +5451,9 @@
         }
       ],
       "manuscript_folio": "452A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-128"
+      ],
       "images": [
         {
           "attachment": "Ezra 8.18.15.png",
@@ -5327,7 +5493,9 @@
         }
       ],
       "manuscript_folio": "457B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-129"
+      ],
       "images": [
         {
           "attachment": "Neh 7.1.7.png",
@@ -5367,7 +5535,9 @@
         }
       ],
       "manuscript_folio": "328B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-31"
+      ],
       "images": [
         {
           "attachment": "1Ch 2.46.4.png",
@@ -5407,7 +5577,9 @@
         }
       ],
       "manuscript_folio": "329B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-32"
+      ],
       "images": [
         {
           "attachment": "1Ch 4.28.1.png",
@@ -5447,7 +5619,9 @@
         }
       ],
       "manuscript_folio": "330A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-33"
+      ],
       "images": [
         {
           "attachment": "1Ch 5.11.4.png",
@@ -5487,7 +5661,9 @@
         }
       ],
       "manuscript_folio": "330A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-34"
+      ],
       "images": [
         {
           "attachment": "1Ch 5.16.1.png",
@@ -5527,7 +5703,9 @@
         }
       ],
       "manuscript_folio": "332A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-35"
+      ],
       "images": [
         {
           "attachment": "1Ch 7.18.5.png",
@@ -5567,7 +5745,9 @@
         }
       ],
       "manuscript_folio": "336A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-36"
+      ],
       "images": [
         {
           "attachment": "1Ch 14.11.18.png",
@@ -5607,7 +5787,9 @@
         }
       ],
       "manuscript_folio": "343A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-37"
+      ],
       "images": [
         {
           "attachment": "1Ch 27.21.7.png",
@@ -5647,7 +5829,9 @@
         }
       ],
       "manuscript_folio": "345A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-38"
+      ],
       "images": [
         {
           "attachment": "2Ch 1.10.6.png",
@@ -5687,7 +5871,9 @@
         }
       ],
       "manuscript_folio": "351B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-39"
+      ],
       "images": [
         {
           "attachment": "2Ch 13.12.13.png",
@@ -5727,7 +5913,9 @@
         }
       ],
       "manuscript_folio": "352B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-40"
+      ],
       "images": [
         {
           "attachment": "2Ch 16.2.5.png",
@@ -5767,7 +5955,9 @@
         }
       ],
       "manuscript_folio": "356A",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-41"
+      ],
       "images": [
         {
           "attachment": "2Ch 21.19.7.png",
@@ -5807,7 +5997,9 @@
         }
       ],
       "manuscript_folio": "361B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-42"
+      ],
       "images": [
         {
           "attachment": "2Ch 31.9.4.png",
@@ -5847,7 +6039,9 @@
         }
       ],
       "manuscript_folio": "363B",
-      "change_record_ids": [],
+      "change_record_ids": [
+        "2026.08.05-43"
+      ],
       "images": [
         {
           "attachment": "2Ch 33.21.2.png",

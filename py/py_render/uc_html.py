@@ -472,8 +472,13 @@ def _change_items_paragraph(cases: list[CorrectionCase]) -> str:
     """The intro's paragraph about the change-item links, counts and all.
 
     Generated rather than written out because it counts cases: a message
-    arriving, or the UXLC's editor reaching one of the six cases with no change
+    arriving, or the UXLC's editor reaching one of the cases with no change
     item yet, would otherwise leave a written-out figure quietly wrong.
+
+    Until 2026-10-20 the sentence on doubled cases said each had one item per
+    word of a compound whose two marks the case asks to exchange, a reading of
+    Joshua 20:4 that uxlc_change_records corrected on 2026-08-12. Each doubled
+    case has two items on the same word.
     """
     linked = [case for case in cases if change_record_links(case.ref.key)]
     doubled = _chapter_verse_list(
@@ -484,9 +489,12 @@ def _change_items_paragraph(cases: list[CorrectionCase]) -> str:
         if not doubled
         else (
             f" The {_and_list(doubled)} "
-            + ("case has" if len(doubled) == 1 else "cases have")
-            + " two, one per word of a compound whose two marks the case asks to"
-            " exchange."
+            + (
+                "case has two, both"
+                if len(doubled) == 1
+                else "cases have two each, each pair"
+            )
+            + " on the same word."
         )
     )
     return (
@@ -494,9 +502,9 @@ def _change_items_paragraph(cases: list[CorrectionCase]) -> str:
         f" in {CHANGES_PAGE_LABEL}, {CHANGES_PAGE_DESCRIPTION}. Of the"
         f" {len(cases)} cases, {len(linked)} have such a change item and"
         f" {len(cases) - len(linked)} have none.{doubled_sentence} A change item"
-        " is the editor's wording rather than Holman's, and the Judges 11:24 one"
-        " is older than the message quoted beside it: Ben Denckla entered it in"
-        " April, on the same word and about the same indistinct mark."
+        " is the editor's wording rather than Holman's. The three entered in"
+        " April, on Judges 11:24 and Jeremiah 46:4 by Ben Denckla and on Jeremiah"
+        " 10:3 by Holman, are older than the messages quoted beside them."
     )
 
 

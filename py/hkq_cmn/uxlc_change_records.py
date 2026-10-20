@@ -9,17 +9,20 @@ case to its records is therefore written out here rather than derived.
 
 Four things the table records that a derivation would have got wrong:
 
-  * The change list numbers the atom differently from Holman in three cases.
-    His Lev 16:21.6 is the list's Lev 16:21.7, his Joshua 5:1 word 36 is its
-    Josh 5:1.37, and his Ezek 8:6.12 is its Ezek 8:6.14. The word is the same
-    one in each -- the same form is quoted and the same correction described.
+  * The change list numbers the atom differently from Holman in five cases.
+    Holman's Lev 16:21.6 is the list's Lev 16:21.7, Joshua 5:1 word 36 is Josh
+    5:1.37, Ezek 8:6.12 is Ezek 8:6.14, 2 Sam 24:10.19 is 2Sam 24:10.20, and
+    1 Chr 27:21.7 is 1Chr 27:21.8. The word is the same one in each -- the same
+    form is quoted and the same correction described.
 
-    All three are the two numberings ``uxlc_standard_atoms`` sets out
-    rather than a discrepancy: the list numbers a ketiv and its qere separately
+    All five are the two numberings ``uxlc_standard_atoms`` sets out rather
+    than a discrepancy. In the first three, the list numbers a ketiv and its qere separately
     and Holman numbers the pair once, so the list's number runs ahead of his by
     one for every element of a pair earlier in the verse. Ezek 8:6 is where it
     runs ahead by two, that verse's ketiv מהם having two qere atoms, מָ֣ה and
-    הֵ֣ם. The card shows the list's number on all three of them.
+    הֵ֣ם. In 2 Sam 24:10 and 1 Chr 27:21, the list counts
+    the samekh earlier in the verse as an atom, and Holman does not. The card
+    shows the list's number on all five of them.
 
     The list proposed for UXLC 2.6 had a fourth, Lev 25:20, which ketiv/qere
     does not explain, that verse having no such pair. The two indexes were the
@@ -49,18 +52,26 @@ Four things the table records that a derivation would have got wrong:
     the list had split it into one record per word; that id is Judges 11:24.7's,
     as the paragraph above says.
 
-  * Two of the Jeremiah records predate Holman's Jeremiah message and one of
-    them is not his: 2026.04.10-8 on Jer 10:3.11 is Holman's own, and
-    2026.04.10-9 on Jer 46:4.6 is Ben Denckla's. Both are the change list's
-    record for the word the case is about.
+  * The two Jeremiah cases have two records each. 2026.04.10-8 on Jer 10:3.11
+    and 2026.04.10-9 on Jer 46:4.6 predate Holman's Jeremiah message; the first
+    is Holman's own and the second Ben Denckla's. Holman's second pass entered
+    each correction again, as 2026.08.05-97 and 2026.08.05-100. All four are
+    linked, as both of Judges 11:24.7's are.
 
-The six Samuel cases have no record in this list, nor do the Psalms, Proverbs,
-Chronicles, Ezra, Nehemiah, Esther and Minor Prophets cases, nor Job 10:6.4 and
-Job 32:6.6. That is what the list holds, not a judgement about them.
+Four cases have no record in this list: Ps 8:9.6, Ps 18:3.2, Job 10:6.4 and Job
+32:6.6. That is what the list holds, not a judgement about them.
 
-Two of the list's own records match no case here: 2026.08.05-1 and -2, on Gen
-26:7.21 and Gen 40:17.2, are Holman's but belong to a Genesis message this repo
-does not have.
+Sixteen of the list's own records match no case here. Nine are Holman's:
+2026.08.05-1 and -2, on Gen 26:7.21 and Gen 40:17.2, and 2026.08.05-120 to
+-126, on seven verses of 1 and 2 Kings, books in which this repo has no case.
+Seven are Ben Denckla's, 2026.04.10-1 to -6 and -10.
+
+On 2026-10-20 the table was re-read against the installed list, matching each
+case's atom in ``data/uxlc_standard_atoms.json`` with each record's citation.
+Until then it lacked 96 of the cases that the installed list has records for,
+among them six Samuel cases whose records, 2026.08.05-17 to -22, the proposed
+list already had; and each of its four Exodus entries named the record of
+another Exodus case.
 
 The page is versioned by date, so a later one has a different URL. When it
 appears, update ``CHANGES_PAGE_URL`` and re-read the ids: a case with no record
@@ -83,10 +94,10 @@ CHANGES_PAGE_DESCRIPTION = "the change list for UXLC 2.6"
 # the card shows it. Leviticus is Levit and Deuteronomy is Deuter there. The
 # values are the change list's own ids, which is what its anchors are.
 CHANGE_RECORD_IDS_BY_REF = {
-    "Exodus 7:20.19": ("2026.08.05-6",),
-    "Exodus 11:6.1": ("2026.08.05-3",),
-    "Exodus 20:3.2": ("2026.08.05-4",),
-    "Exodus 38:12.6": ("2026.08.05-5",),
+    "Exodus 7:20.19": ("2026.08.05-3",),
+    "Exodus 11:6.1": ("2026.08.05-4",),
+    "Exodus 20:3.2": ("2026.08.05-5",),
+    "Exodus 38:12.6": ("2026.08.05-6",),
     "Levit 7:25.6": ("2026.08.05-7",),
     "Levit 15:8.2": ("2026.08.05-8",),
     # The list files this one as Lev 16:21.7, counting the verse's ketiv and its
@@ -107,14 +118,95 @@ CHANGE_RECORD_IDS_BY_REF = {
     "Joshua 20:4.12": ("2026.08.05-15",),
     # Ben Denckla's, then Holman's own following on from it. See above.
     "Judges 11:24.7": ("2026.04.10-7", "2026.08.05-16"),
-    # Holman's own, entered four months before his Jeremiah message.
-    "Jeremiah 10:3.11": ("2026.04.10-8",),
-    # Ben Denckla's, on the word Holman's Jer 46:4 case is about.
-    "Jeremiah 46:4.6": ("2026.04.10-9",),
+    "1Samuel 7:10.10": ("2026.08.05-17",),
+    "1Samuel 13:4.11": ("2026.08.05-18",),
+    "1Samuel 28:12.11": ("2026.08.05-119",),
+    "2Samuel 5:21.1": ("2026.08.05-19",),
+    "2Samuel 7:22.7": ("2026.08.05-20",),
+    "2Samuel 15:26.11": ("2026.08.05-21",),
+    # The list files this one as 2Sam 24:10.20, counting the samekh earlier in
+    # the verse as an atom where Holman does not count it. See above.
+    "2Samuel 24:10.19": ("2026.08.05-22",),
+    "Jeremiah 3:24.2": ("2026.08.05-95",),
+    "Jeremiah 8:9.9": ("2026.08.05-96",),
+    # Holman's own, entered four months before Holman's Jeremiah message, then
+    # entered again on Holman's second pass. See above.
+    "Jeremiah 10:3.11": ("2026.04.10-8", "2026.08.05-97"),
+    "Jeremiah 12:10.8": ("2026.08.05-98",),
+    "Jeremiah 28:9.7": ("2026.08.05-99",),
+    # Ben Denckla's, on the word Holman's Jer 46:4 case is about, then Holman's
+    # own, from Holman's second pass. See above.
+    "Jeremiah 46:4.6": ("2026.04.10-9", "2026.08.05-100"),
+    "Ezekiel 1:4.12": ("2026.08.05-101",),
     # The list files this one as Ezek 8:6.14, that verse's ketiv מהם having two
     # qere atoms, מָ֣ה and הֵ֣ם, which the list counts separately. See above.
     # The proposed list numbered the record 2026.07.24-1.
     "Ezekiel 8:6.12": ("2026.08.05-102",),
+    "Ezekiel 8:15.9": ("2026.08.05-103",),
+    "Ezekiel 11:1.29": ("2026.08.05-104",),
+    "Ezekiel 16:12.1": ("2026.08.05-105",),
+    "Ezekiel 23:11.8": ("2026.08.05-106",),
+    "Ezekiel 32:21.9": ("2026.08.05-107",),
+    "Ezekiel 33:28.9": ("2026.08.05-108",),
+    "Ezekiel 36:3.18": ("2026.08.05-109",),
+    "Ezekiel 44:6.14": ("2026.08.05-110",),
+    "Hosea 5:6.3": ("2026.08.05-111",),
+    "Amos 3:10.7": ("2026.08.05-112",),
+    "Amos 8:12.8": ("2026.08.05-113",),
+    "Obadiah 1:1.17": ("2026.08.05-114",),
+    "Micah 1:14.10": ("2026.08.05-115",),
+    "Zechariah 12:5.1": ("2026.08.05-116",),
+    "Psalms 5:11.1": ("2026.08.05-44",),
+    "Psalms 9:1.2": ("2026.08.05-45",),
+    "Psalms 12:7.1": ("2026.08.05-46",),
+    "Psalms 14:7.1": ("2026.08.05-47",),
+    "Psalms 15:5.8": ("2026.08.05-48",),
+    "Psalms 17:14.1": ("2026.08.05-49",),
+    "Psalms 18:7.3": ("2026.08.05-50",),
+    "Psalms 19:15.1": ("2026.08.05-51",),
+    "Psalms 31:12.5": ("2026.08.05-52",),
+    "Psalms 31:24.1": ("2026.08.05-53",),
+    "Psalms 35:10.5": ("2026.08.05-54",),
+    "Psalms 37:14.2": ("2026.08.05-55",),
+    "Psalms 37:40.1": ("2026.08.05-56",),
+    "Psalms 39:2.2": ("2026.08.05-57",),
+    "Psalms 40:5.1": ("2026.08.05-58",),
+    "Psalms 40:6.6": ("2026.08.05-59",),
+    "Psalms 40:13.2": ("2026.08.05-60",),
+    "Psalms 42:3.5": ("2026.08.05-61",),
+    "Psalms 44:13.5": ("2026.08.05-62",),
+    "Psalms 46:12.5": ("2026.08.05-63",),
+    "Psalms 47:5.5": ("2026.08.05-64",),
+    "Psalms 48:5.4": ("2026.08.05-65",),
+    "Psalms 49:15.2": ("2026.08.05-66",),
+    "Psalms 50:23.3": ("2026.08.05-67",),
+    "Psalms 51:19.1": ("2026.08.05-68",),
+    "Psalms 53:3.6": ("2026.08.05-69",),
+    "Psalms 53:7.1": ("2026.08.05-70",),
+    "Psalms 55:20.6": ("2026.08.05-71",),
+    "Psalms 58:10.1": ("2026.08.05-72",),
+    "Psalms 59:12.9": ("2026.08.05-73",),
+    "Psalms 60:3.5": ("2026.08.05-74",),
+    "Psalms 65:10.2": ("2026.08.05-75",),
+    "Psalms 69:1.1": ("2026.08.05-76",),
+    "Psalms 72:4.7": ("2026.08.05-77",),
+    "Psalms 86:9.9": ("2026.08.05-78",),
+    "Psalms 93:2.4": ("2026.08.05-79",),
+    "Psalms 94:6.4": ("2026.08.05-80",),
+    "Psalms 105:40.1": ("2026.08.05-81",),
+    "Psalms 106:29.2": ("2026.08.05-82",),
+    "Psalms 106:38.1": ("2026.08.05-83",),
+    "Psalms 118:17.1": ("2026.08.05-84",),
+    "Psalms 119:51.5": ("2026.08.05-85",),
+    "Psalms 119:61.4": ("2026.08.05-86",),
+    "Psalms 119:77.5": ("2026.08.05-87",),
+    "Psalms 119:109.4": ("2026.08.05-88",),
+    "Psalms 143:10.2": ("2026.08.05-89",),
+    "Proverbs 8:13.1": ("2026.08.05-90",),
+    "Proverbs 19:7.1": ("2026.08.05-91",),
+    "Proverbs 23:7.2": ("2026.08.05-92",),
+    "Proverbs 28:3.1": ("2026.08.05-93",),
+    "Proverbs 30:15.1": ("2026.08.05-94",),
     "Job 11:6.3": ("2026.08.05-27",),
     "Job 15:35.3": ("2026.08.05-23",),
     "Job 17:3.5": ("2026.08.05-28",),
@@ -123,6 +215,27 @@ CHANGE_RECORD_IDS_BY_REF = {
     "Job 32:12.1": ("2026.08.05-30",),
     "Job 34:20.4": ("2026.08.05-25",),
     "Job 39:28.4": ("2026.08.05-26",),
+    "Esther 8:14.5": ("2026.08.05-130",),
+    "Daniel 5:3.8": ("2026.08.05-117",),
+    "Daniel 10:19.13": ("2026.08.05-118",),
+    "Ezra 6:2.3": ("2026.08.05-127",),
+    "Ezra 8:18.15": ("2026.08.05-128",),
+    "Nehemiah 7:1.7": ("2026.08.05-129",),
+    "1Chronicles 2:46.4": ("2026.08.05-31",),
+    "1Chronicles 4:28.1": ("2026.08.05-32",),
+    "1Chronicles 5:11.4": ("2026.08.05-33",),
+    "1Chronicles 5:16.1": ("2026.08.05-34",),
+    "1Chronicles 7:18.5": ("2026.08.05-35",),
+    "1Chronicles 14:11.18": ("2026.08.05-36",),
+    # The list files this one as 1Chr 27:21.8, counting the samekh earlier in
+    # the verse as an atom where Holman does not count it. See above.
+    "1Chronicles 27:21.7": ("2026.08.05-37",),
+    "2Chronicles 1:10.6": ("2026.08.05-38",),
+    "2Chronicles 13:12.13": ("2026.08.05-39",),
+    "2Chronicles 16:2.5": ("2026.08.05-40",),
+    "2Chronicles 21:19.7": ("2026.08.05-41",),
+    "2Chronicles 31:9.4": ("2026.08.05-42",),
+    "2Chronicles 33:21.2": ("2026.08.05-43",),
 }
 
 
