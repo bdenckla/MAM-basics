@@ -1,0 +1,122 @@
+{
+  "date": "2026-10-20",
+  "scheduled_for_utc": "2026-10-20T06:00:00+00:00",
+  "runner": "Saved portable cloud forest; six owning constrained Python 3.13.15 environments and pinned Graphviz 16.0.0 (20260814.1018) verified.",
+  "publication": "Isolated review-nightly-20261020 branch only; no main integration, deployment or workflow dispatch.",
+  "scheduling": "Existing continuing schedules remain parent-owned and unchanged; no automation created.",
+  "limits": [
+    "Results belong to the frozen source, not the later receipt commit.",
+    "No Hebrew/editorial decision, live downloader/bot action, font baseline acceptance or frozen-font generation.",
+    "Passing checks and structural review do not establish manuscript/editorial truth; native Windows filesystem, browser, clipboard and print behavior were not exercised."
+  ],
+  "source": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+  "previous_tested": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+  "prior_receipt": "c27501150f4ce9bc3fb6d8e7ca18e0a79f1b77b3",
+  "allowed_input_commit_ids": [
+    "91d800de422d71deaa6ef28f05b4193223ca9e61",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "review": {
+    "from": "2716f6333613cd680b7c9054f2307e88cb0eff23",
+    "reviewed_through": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+    "commits": 10,
+    "changed_paths": 11,
+    "disposition": "Reviewed UXLC host-scoped robots configuration and downloader plumbing, the retained public report and correction status, and the citation-prefilter equivalence. Offline host/default probes pass. All 21 findings retain their quoted passages and listed literal forms; 20 note records match the public archive, while one explicitly unarchived record was not refetched. All ten scan placeholders and crop dimensions agree. Full suite includes the new differential citation cases. No new consequential defect or repair; no live download or editorial adjudication.",
+    "prior_unmerged_repair": "339dbb3b95b690bf42f915360b57f9393791448d remains separate; this run did not reapply or integrate it."
+  },
+  "mega": {
+    "name": "basics-mega",
+    "cwd": "/workspace/nightly-20261020/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "source": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+    "started_at_utc": "2026-10-20T06:14:24.236693+00:00",
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 479.191,
+    "finished_at_utc": "2026-10-20T06:22:23.428298+00:00",
+    "steps": 60,
+    "cloud_skips": 0
+  },
+  "suite": {
+    "name": "basics-suite",
+    "cwd": "/workspace/nightly-20261020/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "source": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+    "started_at_utc": "2026-10-20T06:22:38.239928+00:00",
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 332.349,
+    "finished_at_utc": "2026-10-20T06:28:10.589199+00:00",
+    "passed": 1099,
+    "failed": 0,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "summary": "1099 passed, 5 skipped, 82 subtests passed in 329.42s (0:05:29)",
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "focused_commands": [
+    {
+      "name": "robots-probe",
+      "cwd": "/workspace/nightly-20261020/MAM-basics/py",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-c",
+        "import json\nimport main_clc_download_notes as notes\nimport main_uxlc_download_changes as changes\nfrom mb_cmn.polite_download import PoliteDownloadConfig\nrows=[]\nfor module,factory,base in [(notes,notes._notes_config,notes._NOTES_CONFIG),(changes,changes._download_config,changes._UXLC_DOWNLOAD_CONFIG)]:\n    for host in ['hcanat.us','tanach.us','example.invalid']:\n        config=factory(host)\n        expected='Claude-User' if host!='example.invalid' else base.user_agent\n        assert config.give_robots_user_agent()==expected\n        assert config.give_base_headers()['User-Agent']==base.user_agent\n        assert config.obey_robots_txt\n        rows.append({'downloader':module.__name__,'host':host,'robots_user_agent':config.give_robots_user_agent(),'header_preserved':True})\nassert PoliteDownloadConfig(user_agent='default-probe').give_robots_user_agent()=='default-probe'\nprint(json.dumps({'offline_host_cases':rows,'default_fallback_passed':True,'network_requests':0}))\n"
+      ],
+      "source": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+      "started_at_utc": "2026-10-20T06:34:38.041556+00:00",
+      "status": "completed",
+      "exit_code": 0,
+      "seconds": 0.127,
+      "finished_at_utc": "2026-10-20T06:34:38.168562+00:00"
+    }
+  ],
+  "report_verification": {
+    "findings": 21,
+    "archived_note_comparisons": 20,
+    "all_retained_passages_match_their_quoted_notes": true,
+    "not_in_public_archive_and_not_refetched": [
+      "2026.08.05-115"
+    ],
+    "listed_hebrew_forms_present_exactly": true,
+    "crop_placeholders": 10,
+    "crop_recipe_dimensions_match": true,
+    "scans_embedded": false
+  },
+  "scratch_probe_correction": "First two report probe attempts exited 1 because the scratch checker assumed every word had a Hebrew literal and every record had a public archive pointer. Corrected handling of explicit same-as aliases and the null archive pointer passes; source files were unchanged. Original attempt evidence is retained privately.",
+  "generated_differences": {
+    "svg_files": 8,
+    "classification": "Geometry/known Times aliases only; every other XML element, comment, attribute, text and link agrees.",
+    "change_log_provenance": {
+      "old_tree": "a0fca078bc1085582018576a8c228f54c81e4504",
+      "new_tree": "017e8377e7788f7e92cc8eb0944375b2cb879e4e",
+      "frozen_input_tree_verified": true,
+      "json_equal_except_new_tree": true,
+      "html_equal_except_tree_id": true,
+      "html_tree_id_references": 2
+    },
+    "complete_patches": "Preserved in the owning private evidence before cleanup; no generated products accepted."
+  },
+  "repair": null,
+  "pending_window": {
+    "frozen_source": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+    "observed_main": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+    "pending_commits": 0,
+    "frozen_source_is_ancestor": true,
+    "observed_at_utc": "2026-10-20T06:35:10.708456+00:00"
+  }
+}
