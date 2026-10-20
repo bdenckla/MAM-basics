@@ -172,7 +172,8 @@ one.
 1. Jer 10:3.11, F251A 3:11: 2026.04.10-8 and 2026.08.05-97, both Daniel Holman's, change
    יְדֵ֥י־ to יְדֵֽי־, with a meteg rather than a merkha under the dalet. 2026.04.10-8 also
    adds an "m" note, which UXLC 2.6 has; 2026.08.05-97 adds none.
-2. Jer 46:4.6, F271B 1:5: 2026.04.10-9, Ben's, and 2026.08.05-100, Daniel Holman's, change
+2. Jer 46:4.6, F271B 1:5: 2026.04.10-9, which the UXLC's editor wrote from Ben's emailed
+   suggestion, and 2026.08.05-100, Daniel Holman's, change
    בְּכ֥וֹבָעִ֑ים to בְּכֽוֹבָעִ֑ים, with a meteg rather than a merkha under the kaf. 2026.08.05-100
    carries the aBHL tag, and its tanach.us page says that the UXLC agrees with the BHL body
    text. 2026.04.10-9 carries neither BHL tag, so its page says "The UXLC does not agree with
