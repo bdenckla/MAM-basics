@@ -96,8 +96,7 @@ def _write_index_dot_html(outspecs):
 def _write_finals3(args_foi, all_fois, outspec):
     outfile_stem, foi_paths = outspec
     outs = {"rowdics": [], "html_tables": {}}
-    sort_key = holam_e.section_sort_key if outfile_stem == "holam-before-vav" else None
-    for foi_path in sorted(foi_paths, key=sort_key):
+    for foi_path in sorted(foi_paths):
         for foi_struct in all_fois[foi_path]:
             fpfs = foi_path, foi_struct
             _make_final_for_foi_struct(fpfs, outs)
@@ -242,12 +241,7 @@ def _write_html(args_foi, outfile_stem, html_tables, rowdics):
         if outfile_stem == "holam-before-vav"
         else _overall_head(outfile_stem)
     )
-    ending = (
-        holam_e.empty_haser_section(rowdics)
-        if outfile_stem == "holam-before-vav"
-        else []
-    )
-    body_contents = _foi_body_wrapper(overall_head + body1 + body2 + ending)
+    body_contents = _foi_body_wrapper(overall_head + body1 + body2)
     title_stem = holam_e.TITLE if outfile_stem == "holam-before-vav" else outfile_stem
     title = f"{title_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(

@@ -5,11 +5,12 @@ non-trivial qere, parameter 1 (pointed ketiv) of the trivial ketiv/qere
 template, the first stress-helper representation, the dalet qamats
 alternative, and combined cantillation. Alternatives are not additional
 occurrences. Combining marks may intervene; another base letter may not.
-The separate U+05BA category requires vav with holam haser for vav and then
-another vav as the next base letter. The original pair categories are unchanged.
+Generation asserts that no vav with U+05BA has another vav as its next base
+letter. That assertion supports the introduction's precisely scoped zero claim.
 """
 
 from hkq_cmn.qere_projection import QereProjectionPolicy, project_qere_atoms
+from mb_cmn import bib_locales as tbn
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_letters as hl
 from mb_cmn import hebrew_points as hp
@@ -36,7 +37,6 @@ _ABOVE_POINTS = {
     hpu.MCIRC,
 }
 _ABOVE_MARKS = ha.UNI_OVER_ACCENTS | _ABOVE_POINTS
-HASER_CATEGORY = "Holam haser for vav before vav"
 
 
 def find_fois_wt(mroge):
@@ -48,17 +48,18 @@ def find_fois_wt(mroge):
         item["text"]
         for item in project_qere_atoms(minirow.EP, source=None, policy=_POLICY)
     )
-    pairs = [
+    atoms = tuple(atom for _, _, atom in iter_atoms(text))
+    for atom in atoms:
+        assert not tuple(haser_pairs(atom)), (
+            "Expected no vav with HOLAM HASER FOR VAV (U+05BA) followed by "
+            "vav as its next base letter in the selected MAM body text; "
+            f"found at {tbn.short_bcv_of_bcvt(mroge['mroge-bcvt'])}: {atom!r}"
+        )
+    return [
         _feature(atom, start, end, marks)
-        for _, _, atom in iter_atoms(text)
+        for atom in atoms
         for start, end, marks in matching_pairs(atom)
     ]
-    haser = [
-        _feature(atom, start, end, marks, HASER_CATEGORY)
-        for _, _, atom in iter_atoms(text)
-        for start, end, marks in haser_pairs(atom)
-    ]
-    return pairs + haser
 
 
 def haser_pairs(atom):
@@ -91,12 +92,9 @@ def matching_pairs(atom):
             yield start, vav_stop, atom[vav_start + 1 : vav_stop]
 
 
-def _feature(atom, start, end, marks, category=None):
+def _feature(atom, start, end, marks):
     above = "".join(mark for mark in marks if mark in _ABOVE_MARKS)
-    if category is None:
-        category = (
-            "With an above-mark on vav" if above else "Without an above-mark on vav"
-        )
+    category = "With an above-mark on vav" if above else "Without an above-mark on vav"
     target = (
         atom[:start],
         mb_html.span_c(atom[start:end], "mam-doc-target-without-callout"),

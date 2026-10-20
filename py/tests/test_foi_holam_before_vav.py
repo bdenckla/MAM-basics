@@ -9,6 +9,7 @@ from collections import Counter
 from html.parser import HTMLParser
 import json
 import re
+from types import SimpleNamespace
 import pytest
 
 from accgram.mam_simple_verse import load_mam_simple_for_refs, mam_simple_refs
@@ -72,11 +73,9 @@ def test_complete_foi_matches_mam_simple():
                                 else "Without an above-mark on vav"
                             ),
                         ] += 1
-                for match in _HASER_PAIR.finditer(atom):
-                    if hp.XOLAM_XFV in match[2]:
-                        expected[
-                            bcv, atom, match[3], "Holam haser for vav before vav"
-                        ] += 1
+                assert not any(
+                    hp.XOLAM_XFV in match[2] for match in _HASER_PAIR.finditer(atom)
+                ), (bcv, atom)
     assert actual, "The FOI found no occurrences"
     assert actual == expected
 
@@ -97,6 +96,16 @@ def test_haser_requires_vav_as_next_base_letter(atom):
 def test_haser_allows_an_intervening_accent():
     atom = "ו" + hp.XOLAM_XFV + ha.REV + "ו" + hp.SEGOL_V
     assert list(foi.haser_pairs(atom)) == [(0, len(atom), hp.SEGOL_V)]
+
+
+def test_generation_rejects_a_haser_pair():
+    atom = "ו" + hp.XOLAM_XFV + ha.REV + "ו" + hp.SEGOL_V
+    mroge = {
+        "mroge-bcvt": tbn.mk_bcvtmam(tbn.BK_GENESIS, 1, 1),
+        "mroge-minirow": SimpleNamespace(EP=(atom,)),
+    }
+    with pytest.raises(AssertionError, match="next base letter.*G1:1"):
+        foi.find_fois_wt(mroge)
 
 
 class _SpacingPage(HTMLParser):
@@ -157,5 +166,7 @@ def test_rendered_spacing_versions_preserve_every_occurrence():
     assert "The marks column" not in source
     assert "Normal spacing" not in source
     assert "Expanded spacing" not in source
+    assert "third group" not in source
+    assert "Holam haser for vav before vav: no occurrences" not in source
     assert re.search(r"\.holam-normal-spacing\s*\{\s*letter-spacing: normal;", source)
     assert re.search(r"\.holam-expanded-spacing\s*\{\s*letter-spacing: 0\.1em;", source)
