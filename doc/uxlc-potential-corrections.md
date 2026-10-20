@@ -161,3 +161,20 @@ note each record adds, but each record's change text has the change:
    says that the mark lacks the inclination "to be transcribed as a merkha", but its change text,
    וְשֵׁרֵ֥בְיָ֛ה, has a merkha under the resh where its reference text, וְשֵׁרֵֽבְיָ֛ה, has a meteg. UXLC 2.6
    adds an "m" note to the atom.
+
+## 7. Duplicate records in the installed UXLC 2.6 list, found 2026-10-20
+
+Two pairs of records in the installed UXLC 2.6 list make the same change at the same atom, with the
+same reference text, change text and locator. Unlike 2026.08.05-16, whose note says that it
+"follows on Ben Denckla's change of 2026.04.10 - 7", neither later record mentions the earlier
+one.
+
+1. Jer 10:3.11, F251A 3:11: 2026.04.10-8 and 2026.08.05-97, both Daniel Holman's, change
+   יְדֵ֥י־ to יְדֵֽי־, with a meteg rather than a merkha under the dalet. 2026.04.10-8 also
+   adds an "m" note, which UXLC 2.6 has; 2026.08.05-97 adds none.
+2. Jer 46:4.6, F271B 1:5: 2026.04.10-9, which the UXLC's editor wrote from Ben's emailed
+   suggestion, and 2026.08.05-100, Daniel Holman's, change
+   בְּכ֥וֹבָעִ֑ים to בְּכֽוֹבָעִ֑ים, with a meteg rather than a merkha under the kaf. 2026.08.05-100
+   carries the aBHL tag, and its tanach.us page says that the UXLC agrees with the BHL body
+   text. 2026.04.10-9 carries neither BHL tag, so its page says "The UXLC does not agree with
+   either BHL text", though its note says that BHL has a meteg under the kaf.

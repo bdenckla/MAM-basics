@@ -54,14 +54,14 @@ Four things the table records that a derivation would have got wrong:
 
   * The two Jeremiah cases have two records each. 2026.04.10-8 on Jer 10:3.11
     and 2026.04.10-9 on Jer 46:4.6 predate Holman's Jeremiah message; the first
-    is Holman's own and the second Ben Denckla's. Holman's second pass entered
+    is Holman's and the second Ben Denckla's. Holman's second pass entered
     each correction again, as 2026.08.05-97 and 2026.08.05-100. All four are
     linked, as both of Judges 11:24.7's are.
 
 Four cases have no record in this list: Ps 8:9.6, Ps 18:3.2, Job 10:6.4 and Job
 32:6.6. That is what the list holds, not a judgement about them.
 
-Sixteen of the list's own records match no case here. Nine are Holman's:
+Sixteen of the list's records match no case here. Nine are Holman's:
 2026.08.05-1 and -2, on Gen 26:7.21 and Gen 40:17.2, and 2026.08.05-120 to
 -126, on seven verses of 1 and 2 Kings, books in which this repo has no case.
 Seven are Ben Denckla's, 2026.04.10-1 to -6 and -10.
@@ -129,13 +129,13 @@ CHANGE_RECORD_IDS_BY_REF = {
     "2Samuel 24:10.19": ("2026.08.05-22",),
     "Jeremiah 3:24.2": ("2026.08.05-95",),
     "Jeremiah 8:9.9": ("2026.08.05-96",),
-    # Holman's own, entered four months before Holman's Jeremiah message, then
+    # Holman's, entered four months before Holman's Jeremiah message, then
     # entered again on Holman's second pass. See above.
     "Jeremiah 10:3.11": ("2026.04.10-8", "2026.08.05-97"),
     "Jeremiah 12:10.8": ("2026.08.05-98",),
     "Jeremiah 28:9.7": ("2026.08.05-99",),
-    # Ben Denckla's, on the word Holman's Jer 46:4 case is about, then Holman's
-    # own, from Holman's second pass. See above.
+    # Ben Denckla's, on the word Holman's Jer 46:4 case is about, then Holman's,
+    # from Holman's second pass. See above.
     "Jeremiah 46:4.6": ("2026.04.10-9", "2026.08.05-100"),
     "Ezekiel 1:4.12": ("2026.08.05-101",),
     # The list files this one as Ezek 8:6.14, that verse's ketiv מהם having two
