@@ -57,6 +57,7 @@ import re
 from pathlib import Path
 
 from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_punctuation as hpunc
 from mb_misc import osis_book_abbrevs as oba
 
 from accgram import mam_simple_verse
@@ -130,7 +131,8 @@ _SERVUS_SIGNS: list[tuple[str, str]] = [
     (ha.TIP, pan.TARXA),  # U+0596 (tipexa in prose) is the poetic tarxa servant
 ]
 
-# Node types whose subtree carries no cantillated text for our purposes.
+# Node types whose subtree carries no cantillated text for our purposes, each standing
+# between two atoms: each is a boundary in the fragment list ``_walk`` builds.
 _DROP_TYPES = frozenset(
     {
         "good-ending",
@@ -139,9 +141,19 @@ _DROP_TYPES = frozenset(
         "spi-samekh2",
         "spi-samekh3",
         "spi-invnun",
-        "implicit-maqaf",
     }
 )
+# MAM's gray maqaf.  This module reads it as a boundary between two atoms, so the two are two
+# chanted words, as it read them in effect before it read whole runs (2026-10-20).
+# ``mam_simple_verse`` reads the same node as a maqaf ending the atom before it, so the two are
+# one chanted word, and MAM's introduction adds a gray maqaf where two atoms are fit to be
+# joined by a maqaf.  Reading it that way here would change the chanted words of 109 more
+# poetic verses (measured 2026-10-20), and, since ``_word_servus`` takes a chanted word's
+# servus by a fixed priority rather than by position, it would name the wrong servant in
+# compounds such as Psalms 117:2's כִּ֥י־גָ֘בַ֤ר, where the mahapakh stands next to the
+# legarmeh but the merkha comes first in that priority.  Which reading this oracle takes is
+# Ben's to decide.
+_GRAY_MAQAF = "implicit-maqaf"
 _KETIV_TYPES = frozenset({"ketiv", "kq-k", "kq-k-velo-q"})
 _QERE_TYPES = frozenset({"qere", "kq-q", "kq-trivial", "kq-q-velo-k"})
 _DIRECT_QERE_TYPES = _QERE_TYPES
@@ -216,11 +228,8 @@ def _word_servus(accents: str) -> str | None:
     return None
 
 
-def _emit_word_events(text: str, events: list[_Event]) -> None:
-    """Append a WORD event per whitespace-delimited chanted word.
-
-    Whitespace-delimited means CHANTED word: a maqaf compound has no space in it, so it
-    comes through whole (issue wlc-utils#81).
+def _emit_word_event(word: str, events: list[_Event]) -> None:
+    """Append the event of one chanted word: an atom, or the atoms of a maqaf compound.
 
     The verse's last chanted word carries SOF PASUQ; its meteg is silluq, so it is
     emitted as a ('SOFPASUQ', None, None, None) sentinel the second pass turns into
@@ -228,33 +237,114 @@ def _emit_word_events(text: str, events: list[_Event]) -> None:
     marker; a disjunctive one instead records any conjunctive standing before
     its divider within the same chanted word as self_servus.
     """
-    for word in text.split():
-        letters = base_letters(word)
-        if _SOF_PASUQ in word:
-            events.append(("SOFPASUQ", None, None, None, letters, word))
+    letters = base_letters(word)
+    if _SOF_PASUQ in word:
+        events.append(("SOFPASUQ", None, None, None, letters, word))
+        return
+    marker, marker_char = _word_marker_and_char(word)
+    if marker is None:
+        events.append(("WORD", None, _word_servus(word), None, letters, word))
+        return
+    # Oleh-weyored is a two-mark sign (ole + a yored merkha); MAM sometimes
+    # encodes the yored merkha BEFORE the ole, so it would masquerade as a
+    # same-word servant.  It is part of the divider, and oleh-weyored's true
+    # servant always sits on the preceding word, so it has no self_servus.
+    self_servus = (
+        None if marker == pan.OLEH_WEYORED else _word_self_servus(word, marker_char)
+    )
+    events.append(("WORD", marker, None, self_servus, letters, word))
+
+
+class _Boundary:
+    """A node that stands between two atoms and contributes no text of its own.
+
+    The counterpart of ``mam_simple_verse._Boundary``: a MAM-simple ``text`` run carries
+    its own spaces, and a structural node standing between two runs is often the only thing
+    between them, so dropping such a node outright would fuse the atoms either side.
+    """
+
+    def __repr__(self) -> str:  # pragma: no cover - debugging aid only
+        return "<boundary>"
+
+
+_BOUNDARY = _Boundary()
+
+
+def _verse_events(verse_node: dict) -> list[_Event]:
+    """The verse's WORD / LP_LEG / LP_PASEQ / SOFPASUQ events, in order.
+
+    ``_walk`` gathers the verse as text fragments, boundaries and paseq events, and the
+    text between two of the others is joined into one run before it is split into atoms.
+    Splitting each node's text on its own, as this module did until 2026-10-20, splits an
+    atom at every node inside it.  A ``letter-large``, ``letter-small`` or ``letter-hung``
+    sits with the rest of its atom in an ``slh-word``, and Proverbs 28:17's אָ֭דָם, whose
+    dalet is small, came out as three atoms.  A qere is spliced into the run around it, and
+    each of the 49 poetic verses where nothing but a maqaf or the sof pasuq stands between a
+    qere and the atom beside it lost that join: a verse-final qere left its sof pasuq an
+    atom of its own, and the silluq with it.  ``mam_simple_verse._tokens_from_fragments``
+    fixed the same defect in the MAM-simple loader under issue wlc-utils#91, and this is
+    that idea.
+
+    An atom is what ``mam_simple_verse._split_mam_simple_text`` makes of a run: the text
+    between spaces, a maqaf ending its atom.  An atom ending in a maqaf joins the atom read
+    after it into one chanted word (issue wlc-utils#81), as
+    ``maqaf_nonfinal_accents._join_on_maqaf`` joins MAM-simple's atoms, even where a ketiv
+    with no qere stands between the two; a paseq event cannot stand inside a compound, and
+    raises if it does.
+    """
+    fragments: list[object] = []
+    _walk(verse_node, fragments)
+    events: list[_Event] = []
+    pending = ""
+    run: list[str] = []
+
+    def take_atoms() -> None:
+        nonlocal pending
+        for atom in _run_atoms("".join(run)):
+            pending += atom
+            if not pending.endswith(hpunc.MAQ):
+                _emit_word_event(pending, events)
+                pending = ""
+        run.clear()
+
+    for fragment in fragments:
+        if isinstance(fragment, str):
+            run.append(fragment)
             continue
-        marker, marker_char = _word_marker_and_char(word)
-        if marker is None:
-            events.append(("WORD", None, _word_servus(word), None, letters, word))
-        else:
-            # Oleh-weyored is a two-mark sign (ole + a yored merkha); MAM sometimes
-            # encodes the yored merkha BEFORE the ole, so it would masquerade as a
-            # same-word servant.  It is part of the divider, and oleh-weyored's true
-            # servant always sits on the preceding word, so it has no self_servus.
-            self_servus = (
-                None
-                if marker == pan.OLEH_WEYORED
-                else _word_self_servus(word, marker_char)
-            )
-            events.append(("WORD", marker, None, self_servus, letters, word))
+        take_atoms()
+        if fragment is _BOUNDARY:
+            continue
+        if pending:
+            raise ValueError(f"a paseq inside a maqaf compound, after {pending!r}")
+        events.append(fragment)
+    take_atoms()
+    if pending:
+        _emit_word_event(pending, events)
+    return events
 
 
-def _walk(node: object, events: list[_Event]) -> None:
-    """In-order DFS collecting WORD / LP_LEG / LP_PASEQ / SOFPASUQ events.
+def _run_atoms(text: str) -> list[str]:
+    """The atoms of one run: split at each space, a maqaf ending the atom it follows."""
+    atoms: list[str] = []
+    for spaced in text.split():
+        pieces = spaced.split(hpunc.MAQ)
+        atoms.extend(piece + hpunc.MAQ for piece in pieces[:-1])
+        if pieces[-1]:
+            atoms.append(pieces[-1])
+    return atoms
+
+
+def _walk(node: object, out: list[object]) -> None:
+    """In-order DFS collecting text fragments, ``_BOUNDARY`` separators and paseq events.
 
     ``lp-legarmeih`` and ``lp-paseq`` are sibling structural nodes that sit between
-    text runs; pre-order traversal preserves their position relative to the words.
-    Ketiv halves of a qere/ketiv pair are skipped (the qere is what is read).
+    text runs; pre-order traversal preserves their position relative to the words, and
+    ``_verse_events`` passes their LP_LEG / LP_PASEQ events through.  Ketiv halves of a
+    qere/ketiv pair are skipped (the qere is what is read).  Each node type is the
+    fragment ``mam_simple_verse._mam_simple_fragments`` makes of it, but for MAM's gray
+    maqaf (``_GRAY_MAQAF``): a ketiv and the ``_DROP_TYPES`` stand between atoms; a
+    ``kq-k-velo-q-maq`` and an ``sdt-note`` are nothing at all, as their atom is the one
+    either side; and a qere is spliced into the run around it.
     """
     if not isinstance(node, dict):
         raise TypeError(f"Expected MAM-simple poetic node object, got {node!r}")
@@ -262,17 +352,24 @@ def _walk(node: object, events: list[_Event]) -> None:
     if not isinstance(node_type, str):
         raise ValueError(f"MAM-simple poetic node has no string type: {node!r}")
     if node_type == "lp-legarmeih":
-        events.append(("LP_LEG", None, None, None, None, None))
+        out.append(("LP_LEG", None, None, None, None, None))
         return
     if node_type == "lp-paseq":
-        events.append(("LP_PASEQ", None, None, None, None, None))
+        out.append(("LP_PASEQ", None, None, None, None, None))
         return
-    if node_type in _KETIV_TYPES | {"kq-k-velo-q-maq", "sdt-note"}:
+    if node_type in _KETIV_TYPES:
+        out.append(_BOUNDARY)
+        return
+    if node_type in {"kq-k-velo-q-maq", "sdt-note"}:
+        return
+    if node_type == _GRAY_MAQAF:
+        out.append(_BOUNDARY)
         return
     if node_type in _DROP_TYPES:
+        out.append(_BOUNDARY)
         return
     if node_type == "kq":
-        _walk_kq(node, events)
+        _walk_kq(node, out)
         return
     if node_type == "cant-all-three":
         raise ValueError(
@@ -284,7 +381,7 @@ def _walk(node: object, events: list[_Event]) -> None:
         if contents is None:
             text = node.get("text")
             if isinstance(text, str):
-                _emit_word_events(text, events)
+                out.append(text)
                 return
             raise ValueError(
                 f"MAM-simple poetic {node_type!r} node has neither text nor contents"
@@ -311,10 +408,10 @@ def _walk(node: object, events: list[_Event]) -> None:
                     raise ValueError(
                         "silluq annotation lacks its following sof pasuq text"
                     )
-                _emit_word_events(child["text"] + following["text"], events)
+                out.append(child["text"] + following["text"])
                 index += 2
             else:
-                _walk(child, events)
+                _walk(child, out)
                 index += 1
         return
 
@@ -326,14 +423,19 @@ def _walk(node: object, events: list[_Event]) -> None:
         text = node.get("text")
         if not isinstance(text, str):
             raise ValueError(f"MAM-simple poetic {node_type!r} node has no text")
-        _emit_word_events(text, events)
+        out.append(text)
         return
 
     raise ValueError(f"Unclassified MAM-simple poetic node type {node_type!r}")
 
 
-def _walk_kq(node: dict, events: list[_Event]) -> None:
-    """Walk a ketiv/qere node, reading only its qere half (the accented reading)."""
+def _walk_kq(node: dict, out: list[object]) -> None:
+    """Walk a ketiv/qere node, reading only its qere half (the accented reading).
+
+    No boundary either side, as ``mam_simple_verse._mam_simple_kq_qere_fragments`` has none:
+    the runs around a qere carry their own spacing, and a verse-final qere is followed by a
+    ``text`` run holding the sof pasuq alone, which belongs to the qere's last atom.
+    """
     contents = node.get("contents")
     if not isinstance(contents, list):
         raise ValueError("MAM-simple poetic kq node has no contents list")
@@ -346,7 +448,7 @@ def _walk_kq(node: dict, events: list[_Event]) -> None:
     if not qere_children:
         raise ValueError("MAM-simple poetic kq node has no recognized qere child")
     for child in qere_children:
-        _walk(child, events)
+        _walk(child, out)
 
 
 def _first_chanted_word_supplies_yored(
@@ -464,9 +566,7 @@ def word_accents_from_verse_node(
     ``(None, None, None)``.  At most one of ``disjunctive``/``servus`` is non-None.  The
     final word is ``(SILLUQ, None, None)``.
     """
-    events: list[_Event] = []
-    _walk(verse_node, events)
-    return [(w[0], w[1], w[2]) for w in _build_word_accents(events)]
+    return [(w[0], w[1], w[2]) for w in _build_word_accents(_verse_events(verse_node))]
 
 
 def disjunctives_from_verse_node(verse_node: dict) -> list[str]:
@@ -489,9 +589,7 @@ def word_disj_and_text_from_verse_node(
     ungrammatical-verse report aligns against its WLC counterpart to describe divider differences
     word-for-word rather than over the conjunctive-stripped disjunctive skeleton.
     """
-    events: list[_Event] = []
-    _walk(verse_node, events)
-    return [(w[3] or "", w[0]) for w in _build_word_accents(events)]
+    return [(w[3] or "", w[0]) for w in _build_word_accents(_verse_events(verse_node))]
 
 
 def servi_before_in_words(

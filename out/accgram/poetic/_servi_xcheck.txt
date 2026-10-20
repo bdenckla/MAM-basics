@@ -2,7 +2,7 @@
 
 ## SILLUQ
   L adjacent servant: MUNAX:1785, MERKHA:1523, ILLUY:43, TARXA:1
-  vs MAM (length-matched verses): both-served 3332 (agree 3331, type-conflict 1); one-sided 22; verse-count-mismatch 13
+  vs MAM (length-matched verses): both-served 3350 (agree 3349, type-conflict 1); one-sided 4; verse-count-mismatch 13
   verdict: 1 servant-type conflict(s) with MAM -- investigate
   servant-type conflicts (ref: L -> MAM):
     Psalms 60:3: MERKHA -> MUNAX
@@ -18,7 +18,7 @@
 
 ## ATNAX
   L adjacent servant: MUNAX:2812, MERKHA:788, MAHAPAKH:4, ILLUY:2, TARXA:1
-  vs MAM (length-matched verses): both-served 3599 (agree 3596, type-conflict 3); one-sided 16; verse-count-mismatch 1
+  vs MAM (length-matched verses): both-served 3605 (agree 3602, type-conflict 3); one-sided 10; verse-count-mismatch 1
   verdict: 3 servant-type conflict(s) with MAM -- investigate
   servant-type conflicts (ref: L -> MAM):
     Proverbs 3:4: TARXA -> MERKHA
@@ -32,7 +32,7 @@
 
 ## REVIA_MUGRASH
   L adjacent servant: MERKHA:1185, MAHAPAKH:9, ILLUY:1
-  vs MAM (length-matched verses): both-served 1188 (agree 1188, type-conflict 0); one-sided 18; verse-count-mismatch 3
+  vs MAM (length-matched verses): both-served 1189 (agree 1189, type-conflict 0); one-sided 17; verse-count-mismatch 3
   verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
 
 ## REVIA_QATAN
@@ -47,7 +47,7 @@
 
 ## TSINNOR
   L adjacent servant: MUNAX:69, MERKHA:51, MAHAPAKH:1, AZLA:1
-  vs MAM (length-matched verses): both-served 120 (agree 120, type-conflict 0); one-sided 6; verse-count-mismatch 0
+  vs MAM (length-matched verses): both-served 121 (agree 121, type-conflict 0); one-sided 5; verse-count-mismatch 0
   verdict: varied in L; no servant-type conflict with MAM (rule candidate -- may flag nothing if L is already uniform)
 
 ## PAZER
