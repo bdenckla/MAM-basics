@@ -97,6 +97,10 @@ that machine. The scan archive is at `$HOME/OneDrive/Documents/ScansOfBooks` by 
 `BOOK_SCANS_ROOT` overrides that location; other such inputs, such as the user's pywikibot
 configuration, are found through explicit account configuration.
 
+Ben's preference, 2026-10-20: a session started for separate or parallel work runs in a full
+clone in a secondary forest (`$HOME/GitRepos2` or `$HOME/GitRepos3`), not in a new linked
+worktree.
+
 ## Linked worktrees
 
 Before editing any checkout, verify it with `git rev-parse --show-toplevel`, `git rev-parse
