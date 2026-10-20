@@ -103,7 +103,11 @@ verse, <code>shirah-space</code> and the parashah markers <code>spi-samekh2</cod
 <code>spi-samekh3</code>, <code>spi-pe2</code> and <code>spi-pe3</code> can be the only separator
 between adjacent text, with no literal whitespace on either side, as at 1Chr.11.26 and
 1Chr.16.8. Dropping such a separator fuses separate atoms, so a plain-text projection must
-supply one; a layout-preserving renderer implements the documented space or break.</li>
+supply one; a layout-preserving renderer implements the documented space or break. MAM's gray
+maqaf (<code>implicit-maqaf</code>) also has no text, and no whitespace stands on either side of
+it. A consumer may read it as a maqaf, as a space or as a distinct kind of maqaf, such as a gray
+one; a consumer that drops it runs the atoms on either side of it together into one atom, which
+is very unlikely to be what it wants.</li>
 <li>For a break between verses, the parashah marker and the adjacent <code>starts-with-sampe</code>
 and <code>ends-with-sampe</code> fields describe one break. Do not count the same break three
 times.</li>
@@ -171,8 +175,8 @@ if __name__ == &quot;__main__&quot;:
 </code></pre>
 <p>Two points in it are easy to get wrong:</p>
 <ul>
-<li><strong>An element without text can still contribute.</strong> <code>lp-legarmeih</code> contributes the
-glyph U+05C0, and <code>implicit-maqaf</code> contributes an ordinary maqaf. MAM
+<li><strong>An element without text can still contribute.</strong> In this program,
+<code>lp-legarmeih</code> contributes the glyph U+05C0, and <code>implicit-maqaf</code> contributes an ordinary maqaf. MAM
 encodes no space around <code>implicit-maqaf</code>, so a program that gives it nothing runs
 two atoms together: Job 34:10 would read <bdi lang="hbo" dir="rtl">שִׁמְע֫וּלִ֥י</bdi> instead of <bdi lang="hbo" dir="rtl">שִׁמְע֫וּ־לִ֥י</bdi>.</li>
 <li><strong>Write non-ASCII to a file, not to stdout.</strong> On Windows, Python encodes a redirected

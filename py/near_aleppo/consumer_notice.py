@@ -17,7 +17,11 @@ from near_aleppo.phase6_mam_targets import MAM_TARGET_PARAMETER
 
 # MAM-parsed-plus's notice, the same in all 24 books: the notice that NOTICE was last
 # adapted from, on 2026-10-16, when ketiv/qere left the choices the notice says to
-# resolve and gained a rule of its own, by Ben's decision that day. The copy before,
+# resolve and gained a rule of its own, by Ben's decision that day. On 2026-10-20 MAM's
+# notice gained a rule on its gray maqaf, מ:מקף אפור, which NOTICE leaves out: near-Aleppo
+# has a space wherever MAM has a gray maqaf (doc_choices, "The gray maqaf"), so the
+# template is left only in the copies of MAM's target, all 23 of them, which NOTICE
+# already says are not Scripture. The copy before,
 # made by script on 2026-10-05, followed all 24 input notices in qualifying poetic
 # stress-helper alternatives and omitting the redundant parser-boundary rule.
 _MAM_NOTICE = {
@@ -70,6 +74,13 @@ _MAM_NOTICE = {
             "renderer must implement the documented space or break. This rule does "
             "not apply to narpas, whose missing literal whitespace prescribes no "
             "display spacing."
+        ),
+        (
+            "MAM's gray maqaf (מ:מקף אפור) is a template with no parameters, and no "
+            "whitespace stands on either side of it. A consumer may read it as a maqaf, "
+            "as a space or as a distinct kind of maqaf, such as a gray one; a consumer "
+            "that drops it runs the atoms on either side of it together into one atom, "
+            "which is very unlikely to be what it wants."
         ),
         (
             "For literal search, byte comparison, or MAM-compatible output, preserve "

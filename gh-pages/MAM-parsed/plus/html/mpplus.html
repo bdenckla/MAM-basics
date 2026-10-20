@@ -612,6 +612,10 @@ display-spacing decision.</li>
 descriptive parameter as Scripture. A plain-text projection that does not preserve layout must
 supply a separator; a layout-preserving renderer must implement the documented space or break. This
 rule does not apply to narpas, whose missing literal whitespace prescribes no display spacing.</li>
+<li>MAM's gray maqaf (מ:מקף אפור) is a template with no parameters, and no whitespace stands on
+either side of it. A consumer may read it as a maqaf, as a space or as a distinct kind of maqaf,
+such as a gray one; a consumer that drops it runs the atoms on either side of it together into one
+atom, which is very unlikely to be what it wants.</li>
 <li>For literal search, byte comparison, or MAM-compatible output, preserve MAM mark order or
 transform both sides deliberately; Unicode-normalized text can look identical while comparing
 differently.</li>

@@ -73,6 +73,30 @@ MAM_PARSED_WHITESPACE_TEMPLATE_RULE = (
 )
 
 
+def _gray_maqaf_rule(label: str, what: str) -> str:
+    """The gray-maqaf sentences, naming the gray maqaf as the product itself has it.
+
+    Ben's position, 2026-10-20, as relayed to this change: a consumer is free to read MAM's
+    gray maqaf as a space, as an ordinary maqaf or as some other kind of maqaf, such as a
+    visibly gray one, and is free to drop it and join the atoms on either side of it only at
+    its peril, since that is very unlikely to be what anyone wants.  So the sentences permit
+    the readings and warn about the drop without forbidding it.
+    """
+    return (
+        f"MAM's gray maqaf ({label}) {what}, and no whitespace stands on either side of "
+        "it. A consumer may read it as a maqaf, as a space or as a distinct kind of maqaf, "
+        "such as a gray one; a consumer that drops it runs the atoms on either side of it "
+        "together into one atom, which is very unlikely to be what it wants."
+    )
+
+
+# MAM-parsed has the template מ:מקף אפור; MAM-simple has the element implicit-maqaf instead.
+MAM_PARSED_GRAY_MAQAF_RULE = _gray_maqaf_rule(
+    "מ:מקף אפור", "is a template with no parameters"
+)
+MAM_SIMPLE_GRAY_MAQAF_SENTENCES = _gray_maqaf_rule("implicit-maqaf", "also has no text")
+
+
 def mam_parsed_notice() -> dict[str, object]:
     """Return the notice for a MAM-parsed-plus payload."""
     return {
@@ -105,6 +129,7 @@ def mam_parsed_notice() -> dict[str, object]:
             ),
             MAM_PARSED_NARPAS_GROUPING_RULE,
             MAM_PARSED_WHITESPACE_TEMPLATE_RULE,
+            MAM_PARSED_GRAY_MAQAF_RULE,
             (
                 "For literal search, byte comparison, or MAM-compatible output, "
                 "preserve MAM mark order or transform both sides deliberately; "
@@ -159,7 +184,7 @@ def mam_simple_notice() -> dict[str, object]:
                 "whitespace at that boundary. Do not drop such an element. A plain-text "
                 "projection that does not preserve layout must supply the inverted nun "
                 "and each such separator; a layout-preserving renderer must implement "
-                "the documented space or break."
+                "the documented space or break. " + MAM_SIMPLE_GRAY_MAQAF_SENTENCES
             ),
             (
                 "For a break between verses, the parashah marker and the adjacent "
