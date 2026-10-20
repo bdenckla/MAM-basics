@@ -16,7 +16,7 @@ from mb_cmn import bib_locales as tbn
 # The book code tanach.us puts in a Tanach.xml query, e.g. Tanach.xml?Ex7:20.
 # Copied whole from MAM-basics py/uxlc_fois/fois_mark_grammar_html.py's
 # _TANACH_US_BOOK_CODES; that repo also has a py_uxlc table of the same codes,
-# but the py_uxlc one is missing Nahum and Habakkuk.
+# but the py_uxlc one was missing Nahum and Habakkuk until 2026-10-20.
 TANACH_US_BOOK_CODES = {
     "Genesis": "Gen",
     "Exodus": "Ex",
