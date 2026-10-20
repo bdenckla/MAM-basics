@@ -1,6 +1,7 @@
 {
   "date": "2026-10-20",
   "branch": "review-citation-portability-20261020",
+  "updates": "review-citation-portability-2026-10-20-update.json",
   "reviewed_source": "d27594238139e75d507b2b2a921de1707946c3d1",
   "repair_commit": "44a457c513795920b5d350ef27074fc1acca919a",
   "scope": "Isolated work/review branch only; no main integration or main/shared push, deployment, broad rerun, retirement optimization, benchmark or operational simulation.",

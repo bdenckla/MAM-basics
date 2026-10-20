@@ -161,3 +161,15 @@ the immutable commits linked above. Only this maintained note is integrated here
 reviewed source anchors, sibling inputs, failures and skips remain those actually recorded;
 this documentation commit advances none of them. No mega or full suite is repeated for this
 integration; focused receipt, anchor and link checks apply. No workflow is dispatched.
+
+Citation portability verification and approved integration, 2026-10-20: the coordinating
+session verified native Windows results for exact commit
+`c9bde2e515aca8efbf288c6725489100e06e1970`: all 12 citation tests passed, including
+the ten previously failing parametrizations, with CPython 3.13.15, pytest 9.1.1 and Windows 11
+build 26300. The [single structured receipt update](review-citation-portability-2026-10-20-update.json)
+records the later result; the base receipt retains its original Linux-only state and now
+links that update. Ben approved integrating the narrow test repair and its receipt into main.
+No full suite or mega is repeated, no broad-tested anchor is advanced, and the owner
+receipt's ten full-suite failures and five skips remain historical results. The integration
+adds no FOI or other branch, production change, generated output or workflow change. Pages
+has no push trigger; no workflow is dispatched.
