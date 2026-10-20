@@ -22,12 +22,17 @@ can evaluate, we:
   1. Transcode the real WLC 4.22 verse to its scanner-ready mark body from the
      canonical `-kq-u` Unicode source (issue wlc-utils#9 retired the old wlc422_ps.txt
      text input; the body is now built straight from the `-kq-u` JSON).
-  2. Locate the changed word (by the citation's word index).
+  2. Locate the changed word by the citation's word index, which counts a verse's
+     graphical objects as tanach.us counts them (`numbered_atoms`): each word, ketiv
+     word and qere word, and each petuxah, setumah and nun inversum.  A reference
+     reading with a word boundary inside it spans two (`words_spanned`).
   3. VALIDATE: synthesize the WLC reading of that word from `refuni` (Unicode token
      names -> accent marks) and confirm that scanning the synthesized word
      yields the SAME token stream as scanning the real word.  This certifies,
      per case, that our name->mark synthesis is faithful for this accent content
-     (it auto-excludes stress-helper / ordering cases we can't reproduce).
+     (it auto-excludes stress-helper / ordering cases we can't reproduce).  The
+     scanner cannot see a maqaf, so the synthesized word must also end with a maqaf
+     exactly where the real one does.
      An ADD-accent change is additionally cross-checked against the real UXLC-39
      XML word (`uxlc39_word_marks`): a prepositive/postpositive accent that is
      written twice in the manuscript (graphical edge mark + inner stress-helper/yated) is
@@ -36,7 +41,11 @@ can evaluate, we:
      doubled telisha gedola).
   4. If validated, synthesize the UXLC reading from `changeuni`, splice it into the
      verse body, and re-run the existing checker on both the original (WLC) and edited
-     (UXLC) verse.  Classify each as grammatical / ungrammatical.  The checker is the one
+     (UXLC) verse.  The UXLC word's own maqaf decides what follows it (`splice_atoms`),
+     so a change that removes a maqaf is judged without it, the atom after it a chanted
+     word of its own, and one that adds a maqaf is judged with the two atoms one
+     chanted word.  Until 2026-10-20 the splice kept the body's maqaf marks and spaces
+     whatever the change did to them.  Classify each as grammatical / ungrammatical.  The checker is the one
      `prose_run` applies: the lexical layer (`lexical_validation.lexical_ungrammatical`)
      first, then the scanner and grammar.  The lexical layer is what sees a change that
      leaves a chanted word with no accent, such as UXLC 2.6's meteg for WLC 4.22's merkha at
@@ -51,7 +60,9 @@ out/accgram/uxlc_grammar_test.txt.  Console output is ASCII only.
 from __future__ import annotations
 
 import json
+import re
 from collections import Counter
+from dataclasses import dataclass
 
 from accgram import accent_marks as am
 from accgram import lexical_validation
@@ -114,6 +125,10 @@ NAME2MARK = {
 }
 # Non-accent tokens that still carry meaning for the scanner.
 _METEGISH = {"meteg", "silluq"}
+# The placeholders ``uni_to_marks._kq_to_marks`` writes for a ketiv-qere's empty side, and
+# the ``]N`` note markers it writes after a word, which follow its maqaf where it has one.
+_PLACEHOLDERS = frozenset(("*kk", "**qq"))
+_NOTES_RE = re.compile(r"(?:\][A-Za-z0-9])+")
 
 
 def synth_word(uni_tokens: list[str]) -> str | None:
@@ -121,11 +136,12 @@ def synth_word(uni_tokens: list[str]) -> str | None:
 
     Letters -> a filler placeholder (the scanner swallows letters; they only serve
     as non-terminator TEXT).  Vowels/points are dropped.  Accents/meteg/sof-pasuq/
-    paseq/maqaf become their marks/delimiters, in order.  Returns None if a token has
-    no known prose mark (e.g. a poetic accent) -> case is unsupported.
+    paseq/maqaf become their marks/delimiters, in order.  A space is a word boundary,
+    and stays one, unless it is a paseq's or follows a maqaf (`words_spanned`).  Returns
+    None if a token has no known prose mark (e.g. a poetic accent) -> case is unsupported.
     """
     out: list[str] = []
-    for tok in uni_tokens:
+    for i, tok in enumerate(uni_tokens):
         if tok in NAME2MARK:
             out.append(NAME2MARK[tok])
         elif tok in _METEGISH:
@@ -137,14 +153,33 @@ def synth_word(uni_tokens: list[str]) -> str | None:
         elif tok == "maqaf":
             out.append(am.MAQAF)
         elif tok == "space":
-            # The flanking space of a paseq: paseq attaches to its word with no
-            # word-boundary space, so emit nothing (a real space here would spuriously
-            # split the maqaf-unit into two words).
-            continue
+            # The flanking space of a paseq attaches the paseq to its word, and the space
+            # after a maqaf is the maqaf's word boundary, written twice; neither is a space
+            # of the body (a real space there would spuriously split the word in two).
+            if not _is_word_boundary_space(uni_tokens, i):
+                continue
+            out.append(" ")
         else:
             # consonant or vowel/point -> a placeholder filler letter.
             out.append(am.LETTER)
     return "".join(out)
+
+
+def words_spanned(uni_tokens: list[str]) -> int:
+    """How many of tanach.us's words a refuni/changeuni reading spans.
+
+    One, and one more for each word boundary inside it: a maqaf with more of the reading after
+    it, and a space that is neither a paseq's nor the one after a maqaf.  A reference reading
+    spans two words where a change merges them (2 Samuel 6:7.1, 8:1.2) or joins them with a
+    maqaf (Exodus 5:22.11).
+    """
+    n = 1
+    for i, tok in enumerate(uni_tokens):
+        if tok == "maqaf" and any(t != "space" for t in uni_tokens[i + 1 :]):
+            n += 1
+        elif tok == "space" and _is_word_boundary_space(uni_tokens, i):
+            n += 1
+    return n
 
 
 def scan_word_tokens(word: str, bb: str, ch: int, vs: int) -> tuple[str, ...]:
@@ -153,28 +188,99 @@ def scan_word_tokens(word: str, bb: str, ch: int, vs: int) -> tuple[str, ...]:
     return tuple(t.type for t in toks)
 
 
-def maqaf_units(body: str):
-    """Flatten an M-C verse body into maqaf-units (tanach.us word numbering).
+@dataclass(frozen=True)
+class NumberedAtom:
+    """One of a verse's graphical objects, numbered as tanach.us numbers them, in its mark body.
 
-    Returns (units, owners): `units[i]` is the i-th maqaf-unit string; `owners[i]`
-    is (space_index, maqaf_index_within_space_token) so a unit can be spliced back
-    while preserving the maqaf / space structure of the body.
+    ``text`` is the object's own marks, a qere's ``**`` or a ketiv's ``*`` and its note markers
+    included, its maqaf not.  ``tail`` is all the body has after it before the next numbered
+    object: its own maqaf where it has one, the maqaf that joins one ketiv atom to the next, note
+    markers written after a maqaf, an empty side's placeholder, and a space.
     """
-    units: list[str] = []
-    owners: list[tuple[int, int]] = []
-    for si, sp in enumerate(body.split(" ")):
-        for mi, mu in enumerate(sp.split("-")):
-            units.append(mu)
-            owners.append((si, mi))
-    return units, owners
+
+    text: str
+    tail: str
+    in_ketiv: bool
+
+    @property
+    def has_maqaf(self) -> bool:
+        """Whether the object ends with a maqaf of its own."""
+        if not self.in_ketiv:
+            return self.tail.startswith(am.MAQAF)
+        # A ketiv is one run, a maqaf joining each of its atoms to the next, so a tail of that
+        # one maqaf alone is the join; any longer tail that opens with a maqaf has the atom's own.
+        return self.tail.startswith(am.MAQAF) and self.tail != am.MAQAF
 
 
-def splice_unit(body: str, owner: tuple[int, int], new_unit: str) -> str:
-    """Return `body` with one maqaf-unit replaced, preserving structure."""
-    space_tokens = [sp.split("-") for sp in body.split(" ")]
-    si, mi = owner
-    space_tokens[si][mi] = new_unit
-    return " ".join("-".join(parts) for parts in space_tokens)
+def numbered_atoms(body: str) -> tuple[str, list[NumberedAtom]]:
+    """A verse's mark body as tanach.us's graphical objects, and what stands before the first.
+
+    tanach.us numbers each word of a verse, each ketiv word and each qere word among them, and
+    each petuxah, setumah and nun inversum: its list of the differences between WLC 4.14 and
+    4.16, quoted in ``in/mam-ws-intro/westminster-typing.mediawiki``, defines the graphical
+    object so, and a change record's citation counts them.  None of the pieces the body has
+    besides is one: an empty side's ``*kk`` or ``**qq`` placeholder, the empty piece a ketiv
+    leaves between two maqaf marks or before a space, and note markers written after a maqaf.
+    Each belongs to the tail of the object before it.  The body is ``head`` followed by each
+    object's ``text`` and ``tail``.
+    """
+    head = ""
+    atoms: list[NumberedAtom] = []
+    runs = body.split(" ")
+    for r, run in enumerate(runs):
+        in_ketiv = run.startswith("*") and not run.startswith("**")
+        pieces = run.split(am.MAQAF)
+        for k, piece in enumerate(pieces):
+            if k < len(pieces) - 1:
+                sep = am.MAQAF
+            elif r < len(runs) - 1:
+                sep = " "
+            else:
+                sep = ""
+            numbered = (
+                piece != ""
+                and piece not in _PLACEHOLDERS
+                and not (k > 0 and _NOTES_RE.fullmatch(piece))
+            )
+            if numbered:
+                atoms.append(NumberedAtom(piece, sep, in_ketiv))
+            elif atoms:
+                last = atoms[-1]
+                atoms[-1] = NumberedAtom(last.text, last.tail + piece + sep, in_ketiv)
+            else:
+                head += piece + sep
+    return head, atoms
+
+
+def splice_atoms(
+    atoms: list[NumberedAtom], first: int, last: int, new_word: str
+) -> None:
+    """Put the synthesized ``new_word`` in place of ``atoms[first]`` to ``atoms[last]``.
+
+    ``new_word`` is the UXLC reading of those objects, and a maqaf at its end is its own, so it
+    decides what follows it, as the maqaf decides it in ``uni_to_marks``.  Where the WLC object
+    has a maqaf and the UXLC word none, a space takes the maqaf's place, and the atom after it
+    is a chanted word of its own; where the UXLC word has a maqaf the WLC object lacks, the
+    maqaf takes the space's place and the two are one chanted word; where both have one, it
+    stays one.  A ketiv keeps the maqaf that joins its atoms either way.  The objects after the
+    first are emptied, so the numbering of every other object stands.
+    """
+    if any(atoms[i].in_ketiv != atoms[first].in_ketiv for i in range(first, last + 1)):
+        raise ValueError("a change spans a ketiv and what is read beside it")
+    opener = atoms[first].text[
+        : len(atoms[first].text) - len(atoms[first].text.lstrip("*"))
+    ]
+    tail = _tail_for(atoms[last], new_word.endswith(am.MAQAF))
+    atoms[first] = NumberedAtom(
+        opener + new_word.removesuffix(am.MAQAF), tail, atoms[first].in_ketiv
+    )
+    for i in range(first + 1, last + 1):
+        atoms[i] = NumberedAtom("", "", atoms[i].in_ketiv)
+
+
+def joined_atoms(head: str, atoms: list[NumberedAtom]) -> str:
+    """The mark body ``numbered_atoms`` read, or that ``splice_atoms`` made of it."""
+    return head + "".join(atom.text + atom.tail for atom in atoms)
 
 
 def is_ungrammatical(parser, body: str, bb: str, ch: int, vs: int) -> bool:
@@ -220,6 +326,49 @@ def _kind(r) -> str:
     return "substitution"
 
 
+def _lexical_findings(body: str) -> list[tuple[str, str]]:
+    """What the lexical layer finds in ``body``, each finding as its code and its atom."""
+    return [
+        (mark.code, mark.atom)
+        for mark in lexical_validation.lexical_ungrammatical(body)
+    ]
+
+
+def _is_word_boundary_space(uni_tokens: list[str], i: int) -> bool:
+    """Whether the ``space`` at ``uni_tokens[i]`` stands between two of tanach.us's words.
+
+    Not a paseq's flanking space, which attaches the paseq to the word before it, nor the space
+    after a maqaf, which is the same boundary as the maqaf.
+    """
+    following = uni_tokens[i + 1] if i + 1 < len(uni_tokens) else None
+    preceding = uni_tokens[i - 1] if i > 0 else None
+    return following not in (None, "paseq") and preceding != "maqaf"
+
+
+def _tail_for(atom: NumberedAtom, gains_maqaf: bool) -> str:
+    """``atom``'s tail once it does or does not end with a maqaf, as ``splice_atoms`` says.
+
+    A maqaf that goes takes the note markers written after it with it, as the object's own note
+    markers go with its text, the synthesized word having none.
+    """
+    tail = atom.tail
+    if atom.has_maqaf == gains_maqaf:
+        return tail
+    if gains_maqaf:
+        if atom.in_ketiv:
+            return am.MAQAF + tail
+        if not tail.startswith(" "):
+            raise ValueError(f"a maqaf added where no space follows: {atom!r}")
+        return am.MAQAF + tail[1:]
+    rest = tail[1:]
+    notes = _NOTES_RE.match(rest)
+    if notes is not None:
+        rest = rest[notes.end() :]
+    if atom.in_ketiv or rest.startswith(" "):
+        return rest
+    return " " + rest
+
+
 def _transcoded_bodies(
     keys,
 ) -> dict[tuple[str, int, int], str]:
@@ -246,7 +395,8 @@ def _uxlc_book(bk_id: str) -> list:
 
 def _uxlc_maqaf_units(verse_words: list[str]) -> list[str]:
     """Flatten one UXLC-39 verse (a list of ``<w>``/``<q>`` word strings) into
-    maqaf-units, matching tanach.us word numbering (and our M-C ``maqaf_units``).
+    maqaf-units, matching tanach.us word numbering where the verse has no ketiv, petuxah,
+    setumah or nun inversum (and our M-C ``numbered_atoms``, which counts those too).
 
     Two reconciliations against the raw ``<w>`` order are needed:
 
@@ -309,7 +459,7 @@ def evaluate(records: list[dict], parser) -> dict:
 
     stat = Counter()
     grid = Counter()  # (wlc, uxlc) -> n verses (all validated)
-    grid_visible = Counter()  # (wlc, uxlc) -> n verses (scanner-visible only)
+    grid_visible = Counter()  # (wlc, uxlc) -> n verses (checker-visible only)
     cell_by_kind = Counter()  # (kind, wlc, uxlc) over individual changes in solo verses
     broke = []  # verses: WLC-gram -> UXLC-ungram
     fixed = []  # verses: WLC-ungram -> UXLC-gram
@@ -322,37 +472,50 @@ def evaluate(records: list[dict], parser) -> dict:
         if body is None:
             stat["no_body"] += 1
             continue
-        units, owners = maqaf_units(body)
+        head, atoms = numbered_atoms(body)
+        if joined_atoms(head, atoms) != body:
+            raise ValueError(
+                f"{bb} {ch}:{vs}: the numbered atoms do not rebuild {body!r}"
+            )
 
         # Validate every change in the verse; apply them all to build UXLC body.
-        uxlc_body = body
+        uxlc_atoms = list(atoms)
         reason = ""
         for wd, r, bk in changes:
-            if not (1 <= wd <= len(units)):
+            ref_tokens = (r.get("refuni_gen") or r.get("refuni") or "").split()
+            first, last = wd - 1, wd - 2 + words_spanned(ref_tokens)
+            if not (0 <= first and last < len(atoms)):
                 reason = "word-index out of range"
                 break
-            ref_syn = synth_word((r.get("refuni_gen") or r.get("refuni") or "").split())
+            ref_syn = synth_word(ref_tokens)
             chg_syn = synth_word(
                 (r.get("changeuni_gen") or r.get("changeuni") or "").split()
             )
             if ref_syn is None or chg_syn is None:
                 reason = "unsupported accent (no prose mark)"
                 break
+            wlc_word = joined_atoms("", atoms[first:last]) + atoms[last].text
             if scan_word_tokens(ref_syn, bb, ch, vs) != scan_word_tokens(
-                units[wd - 1], bb, ch, vs
+                wlc_word, bb, ch, vs
             ):
                 reason = "ref-mismatch: synth WLC word != real M-C word"
+                break
+            # The maqaf is invisible to the token comparison above, and the reference
+            # reading's maqaf is the one a change keeps or removes, so it must be WLC 4.22's.
+            if ref_syn.endswith(am.MAQAF) != atoms[last].has_maqaf:
+                reason = "ref-mismatch: synth WLC word's maqaf != real M-C word's"
                 break
             # ADD-accent cross-check against the real UXLC-39 XML: a doubled
             # prepositive/postpositive accent (graphical edge mark + inner
             # stress-helper) is fused/de-duped by the real uni_to_marks pipeline
             # but not by our name->mark synth, so exclude such a change.
             if _kind(r) == "add_accent":
-                real = uxlc39_word_marks(bk, ch, vs, wd, len(units))
+                real = uxlc39_word_marks(bk, ch, vs, wd, len(atoms))
                 if real is not None and scan_word_tokens(chg_syn, bb, ch, vs) != real:
                     reason = "UXLC-39 cross-check: doubled stress-helper accent"
                     break
-            uxlc_body = splice_unit(uxlc_body, owners[wd - 1], chg_syn)
+            splice_atoms(uxlc_atoms, first, last, chg_syn)
+        uxlc_body = joined_atoms(head, uxlc_atoms)
         if reason:
             stat["unreliable_verses"] += 1
             stat["unreliable_changes"] += len(changes)
@@ -363,16 +526,21 @@ def evaluate(records: list[dict], parser) -> dict:
         stat["validated_verses"] += 1
         stat["validated_changes"] += len(changes)
 
-        # A change is "scanner-visible" only if it alters the accent-token stream;
-        # otherwise (meteg reorder, collapsed sub-distinction, ...) the grammar
-        # cannot possibly react and the verse is a trivial neutral.
+        # A change is "checker-visible" only if it alters the accent-token stream or what
+        # the lexical layer finds; otherwise (meteg reorder, collapsed sub-distinction, ...)
+        # the checker cannot possibly react and the verse is a trivial neutral.  A change
+        # that removes or adds a maqaf and touches no accent alters the token stream only
+        # where a rule reads across a maqaf (the metigah-zaqef fuse, the mayela lookahead),
+        # but the lexical layer sees the chanted word with no accent it leaves or ends.
         wlc_stream = tuple(
             t.type for t in scan_accents(body, bb, ch, vs, HasLegarmeh())
         )
         uxlc_stream = tuple(
             t.type for t in scan_accents(uxlc_body, bb, ch, vs, HasLegarmeh())
         )
-        visible = wlc_stream != uxlc_stream
+        visible = wlc_stream != uxlc_stream or _lexical_findings(
+            body
+        ) != _lexical_findings(uxlc_body)
         stat["visible" if visible else "noop"] += 1
 
         wlc_bad = is_ungrammatical(parser, body, bb, ch, vs)
@@ -431,14 +599,14 @@ def report_section(res: dict, title: str, p) -> None:
         f"  excluded                   : {stat['unreliable_verses']} verses ({stat['unreliable_changes']} changes)"
     )
     p()
-    p(f"  of validated: scanner-VISIBLE change {stat['visible']}, no-op {stat['noop']}")
+    p(f"  of validated: checker-VISIBLE change {stat['visible']}, no-op {stat['noop']}")
     p()
     p("2x2 over validated VERSES (all):")
     for w in ("WLC-gram", "WLC-ungram"):
         for u in ("UXLC-gram", "UXLC-ungram"):
             p(f"  {w:11s} -> {u:12s}: {grid[(w, u)]}")
     p()
-    p("2x2 over scanner-VISIBLE verses (the meaningful denominator):")
+    p("2x2 over checker-VISIBLE verses (the meaningful denominator):")
     for w in ("WLC-gram", "WLC-ungram"):
         for u in ("UXLC-gram", "UXLC-ungram"):
             p(f"  {w:11s} -> {u:12s}: {grid_visible[(w, u)]}")

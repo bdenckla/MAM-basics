@@ -23,9 +23,10 @@ the list raises, as "template dispatch is closed" requires:
 
 1. **Maqaf.**  A maqaf compound is ONE chanted word.  Its non-final atoms need no accent of their
    own; the compound as a whole needs one.  A maqaf joins its atom to the next atom that is read,
-   so a maqaf with no atom after it in its run reaches across what follows: two maqaf marks in a
-   row and a maqaf before a space, both of which ``main_uxlc_grammar_test.splice_unit`` leaves
-   where it splices in a word that ends with a maqaf.
+   so a maqaf with no atom after it in its run reaches across what follows, as it must where a
+   ketiv stands between (rule 3).  Two maqaf marks in a row and a maqaf before a space are read
+   the same way, though since 2026-10-20 neither ``uni_to_marks`` nor
+   ``main_uxlc_grammar_test.splice_atoms`` writes either after an atom that is read.
 2. **Ketiv.**  A ketiv is written but not read, unpointed and unaccented.  ``*`` opens its run and
    the run is the ketiv to its end, its later atoms, notes and maqaf marks included; ``*kk`` is the
    placeholder of a qere with no ketiv.  No atom of a ketiv belongs to any chanted word.
