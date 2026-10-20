@@ -55,7 +55,9 @@ accent -> poetic reading (the accents that matter in the Three Books):
   fail-fast (Plan C): any other stray accent (U+0591..U+05AE) no rule consumes is
   emitted as STRAY_ACCENT (the grammar has no terminal for it -> NO_PARSE), never
   silently swallowed.  Zero live customers (the lone ps124:4 geresh is consumed by the
-  same-letter revia mugrash charity).
+  same-letter revia mugrash charity).  Likewise a chanted word with no accent, which no
+  rule above can tokenize, gets a NO_ACCENT token from scan_verse rather than vanishing
+  from the stream (accgram.unaccented_chanted_words holds the rule and its exemptions).
 
 Note: "revia mugrash without geresh" (#367 = Breuer Ch 10 §14) -- a bare revia
 acting as the main verse divider when the verse has no atnax -- is NOT a gap: it is
@@ -83,6 +85,7 @@ from dataclasses import dataclass
 
 from accgram import accent_marks as am
 from accgram import poetic_accent_names as pan
+from accgram import unaccented_chanted_words as ucw
 from mb_cmn import hebrew_accents as ha
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -346,6 +349,7 @@ _LEAF: dict[str, str] = {
     # in scan_accents.  `!` (not a space) marks two distinct accents on one letter with no
     # natural order, as the prose mahapakh!azla / mahapakh!tipexa (see prose_scanner._LEAF).
     pan.STRAY_ACCENT: "stray accent",
+    pan.NO_ACCENT: "no accent",
     pan.MUNAX: "munax",
     pan.MERKHA: "merkha",
     pan.MAHAPAKH: "mahapakh",
@@ -430,6 +434,25 @@ def _fuse_cross_chanted_word_yored(body: str, raw_tokens: list[Token]) -> list[T
         token.type == pan.OLEH_WEYORED for token in raw_tokens
     ), body
     return fused
+
+
+def _with_unaccented_chanted_words(body: str, tokens: list[Token]) -> list[Token]:
+    """``tokens`` with a NO_ACCENT token at the start of each chanted word with no accent.
+
+    No token starts inside such a chanted word, since every token starts at an accent, at the
+    silluq's meteg or at the first sof pasuq, and that chanted word has none of them; asserted
+    rather than assumed, because a token there would make the order of the merged stream a
+    guess.
+    """
+    words = ucw.unaccented_chanted_words(body)
+    if not words:
+        return tokens
+    for word in words:
+        assert not any(word.start <= t.start < word.end for t in tokens), body
+    inserted = [
+        Token(pan.NO_ACCENT, _LEAF[pan.NO_ACCENT], word.start) for word in words
+    ]
+    return sorted(tokens + inserted, key=lambda token: token.start)
 
 
 def _reclassify_revia(types: list[str]) -> list[str]:
@@ -539,10 +562,21 @@ class Verse:
     body: str
 
 
+def scan_verse_tokens(body: str) -> list[Token]:
+    """The positioned tokens of a verse's grammar stream, ``scan_verse``'s without TILDE.
+
+    ``scan_accent_tokens``' tokens, with a ``NO_ACCENT`` token at the place of each chanted word
+    with no accent (``unaccented_chanted_words``), which no accent rule can tokenize and the
+    grammar has no terminal for.  ``scan_accent_tokens`` stays the tokens of the accent marks
+    alone.
+    """
+    return _with_unaccented_chanted_words(body, scan_accent_tokens(body))
+
+
 def scan_verse(reference: str, body: str) -> Verse:
-    """Scan one verse body into a grammar-ready token stream."""
+    """Scan one verse body into a grammar-ready token stream (``scan_verse_tokens``)."""
     tokens: list[tuple[str, str]] = [("TILDE", "")]
-    tokens += scan_accents(body)
+    tokens += [(token.type, token.leaf) for token in scan_verse_tokens(body)]
     return Verse(reference=reference, tokens=tokens, body=body)
 
 

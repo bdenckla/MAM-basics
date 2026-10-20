@@ -1,16 +1,21 @@
 # Fix-tester: do MAM-simple values resolve annotated prose ungrammatical?
 
-confirmed: 95  denied: 1  changed: 0  untestable: 0  (96 annotated ungrammatical tested)
+confirmed: 121  denied: 2  changed: 0  untestable: 2  (125 annotated ungrammatical tested)
 speculations: 16 total; 15 confirmed, 1 denied/changed, 0 untestable
 synthesized fixes (no MAM diff; tested the note's synth_fix): 1
 claim-vs-result: 86 agree, 1 disagree
 
-## CONFIRMED -- MAM fix clears the error  (95)
+## CONFIRMED -- MAM fix clears the error  (121)
   1c 1:53 [claim: expects_fix] [AGREE]
     fix: אל֣וף -> אל֥וף
     transform: word "אל֣וף" -> "אל֥וף" ((mun) -> (mer))
     before: MERKHA TEVIR MERKHA TIPEXA MUNAX SILLUQ SOFPASUQ  [ERROR: silluq_phrase]
     after:  MERKHA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  1c 22:4
+    fix: כי -> כי־
+    transform: word "כי" -> "כי־" ((none) -> (maqaf))
+    before: MERKHA TIPEXA MUNAX ATNAX TELISHAGEDOLA AZLA GERESH DARGA TEVIR TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MERKHA TIPEXA MUNAX ATNAX TELISHAGEDOLA AZLA GERESH DARGA TEVIR TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   1k 6:2 [claim: expects_fix] [AGREE]
     fix: ועשר֤ים -> ועשר֣ים
     transform: word "ועשר֤ים" -> "ועשר֣ים" ((mah) -> (mun))
@@ -51,6 +56,16 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "גדולֽה" -> "גדולֽה׃" ((none) -> (sof pasuq))
     before: GERSHAYIM MUNAX REVIA MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MUNAX ZAQEF DARGA TEVIR TIPEXA MERKHA SILLUQ MISSING_SOFPASUQ  [ERROR: sof_pasuq_phrase]
     after:  GERSHAYIM MUNAX REVIA MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MUNAX ZAQEF DARGA TEVIR TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  1s 13:4
+    fix: וגם־ נבאש -> וגם־ נבא֥ש
+    transform: word "וגם־" -> "וגם־" ((none) -> (none)); word "נבאש" -> "נבא֥ש" ((none) -> (mer))
+    before: GERSHAYIM MUNAX REVIA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA ATNAX MERKHA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  GERSHAYIM MUNAX REVIA MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MERKHA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  1s 14:24
+    fix: ולא -> ולא־
+    transform: word "ולא" -> "ולא־" ((none) -> (maqaf))
+    before: MERKHA TIPEXA MUNAX ATNAX TELISHAQETANNA AZLA GERESH REVIA MUNAX TELISHAGEDOLA AZLA GERESH REVIA PASHTA MUNAX ZAQEF MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MERKHA TIPEXA MUNAX ATNAX TELISHAQETANNA AZLA GERESH REVIA MUNAX TELISHAGEDOLA AZLA GERESH REVIA PASHTA MUNAX ZAQEF MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   2c 7:5 [claim: expects_fix] [AGREE]
     fix: ז֣בח הבק֗ר -> ז֣בח הבקר֒
     transform: word "ז֣בח" -> "ז֣בח" ((none) -> (none)); word "הבק֗ר" -> "הבקר֒" ((rev) -> (seg_a))
@@ -61,6 +76,11 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "שר֤י" -> "שר֧י" ((mah) -> (dar))
     before: QADMA MAHAPAKH TEVIR MERKHA TIPEXA MUNAX ATNAX TIPEXA SILLUQ SOFPASUQ  [ERROR: tevir_phrase]
     after:  QADMA DARGA TEVIR MERKHA TIPEXA MUNAX ATNAX TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  2c 16:4
+    fix: בן -> בן־
+    transform: word "בן" -> "בן־" ((none) -> (maqaf))
+    before: AZLA GERESH MUNAX REVIA TELISHAGEDOLA QADMA MAHAPAKH PASHTA MUNAX ZAQEF PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  AZLA GERESH MUNAX REVIA TELISHAGEDOLA QADMA MAHAPAKH PASHTA MUNAX ZAQEF PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   2c 22:12 [claim: expects_fix] [AGREE]
     fix: שנ֖ים -> שנ֑ים
     transform: word "שנ֖ים" -> "שנ֑ים" ((tip) -> (atn))
@@ -76,6 +96,16 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "ועשר֣ים" -> "ועשר֤ים" ((mun) -> (mah))
     before: QADMA MAHAPAKH PASHTA MUNAX ZAQEF MUNAX PASHTA ZAQEF TIPEXA ATNAX MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: pashta_phrase]
     after:  QADMA MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF TIPEXA ATNAX MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  2k 5:27
+    fix: ובזרעך -> ובזרעך֖
+    transform: word "ובזרעך" -> "ובזרעך֖" ((none) -> (tip))
+    before: MAHAPAKH PASHTA ZAQEF ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MAHAPAKH PASHTA ZAQEF TIPEXA ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  2k 18:27
+    fix: את -> את־
+    transform: word "את" -> "את־" ((none) -> (maqaf))
+    before: AZLA GERESH REVIA QADMA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MUNAX REVIA PASHTA MUNAX ZAQEF MUNAX REVIA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  AZLA GERESH REVIA QADMA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MUNAX REVIA PASHTA MUNAX ZAQEF MUNAX REVIA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   2k 23:36 [claim: expects_fix] [AGREE]
     fix: שנ֨ה -> שנה֙
     transform: word "שנ֨ה" -> "שנה֙" ((qom) -> (pash))
@@ -94,8 +124,13 @@ claim-vs-result: 86 agree, 1 disagree
   2s 23:9
     fix: בפלשתים -> בפלשתים֙
     transform: word "בפלשתים" -> "בפלשתים֙" ((none) -> (pash))
-    before: TEVIR MERKHA TIPEXA ATNAX AZLA GERESH REVIA MAHAPAKH MUNAX ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: zaqef_phrase]
+    before: TEVIR MERKHA TIPEXA ATNAX AZLA GERESH REVIA MAHAPAKH MUNAX ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
     after:  TEVIR MERKHA TIPEXA ATNAX AZLA GERESH REVIA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  2s 24:13
+    fix: שבע -> שבע־
+    transform: word "שבע" -> "שבע־" ((none) -> (maqaf))
+    before: MERKHA TIPEXA ATNAX MUNAX PAZER MUNAX MUNAX MUNAX MUNAX PAZER MUNAX TELISHAGEDOLA AZLA GERESH MUNAX REVIA TELISHAGEDOLA QADMA MERKHA PASHTA ZAQEF PASHTA MUNAX ZAQEF MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MERKHA TIPEXA ATNAX MUNAX PAZER MUNAX MUNAX MUNAX MUNAX PAZER MUNAX TELISHAGEDOLA AZLA GERESH MUNAX REVIA TELISHAGEDOLA QADMA MERKHA PASHTA ZAQEF PASHTA MUNAX ZAQEF MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   am 1:14 [claim: expects_fix] [AGREE]
     fix: סופֽה -> סופֽה׃
     transform: word "סופֽה" -> "סופֽה׃" ((none) -> (sof pasuq))
@@ -111,11 +146,31 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "מצרֽים" -> "מצרֽים׃" ((none) -> (sof pasuq))
     before: AZLA GERESH REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ MISSING_SOFPASUQ  [ERROR: sof_pasuq_phrase]
     after:  AZLA GERESH REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  ca 7:13
+    fix: אם -> אם־
+    transform: word "אם" -> "אם־" ((none) -> (maqaf))
+    before: PASHTA ZAQEF GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA ATNAX TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  PASHTA ZAQEF GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA ATNAX TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   da 2:41 [claim: expects_fix] [AGREE]
     fix: ד֥י -> די־
     transform: word "ד֥י" -> "די־" ((mer) -> (maqaf))
     before: GERESH MUNAX REVIA GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF MERKHA MERKHA TIPEXA ATNAX PASHTA MUNAX ZAQEF METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: tipexa_phrase]
     after:  GERESH MUNAX REVIA GERSHAYIM MAHAPAKH PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX PASHTA MUNAX ZAQEF METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  dt 1:38
+    fix: בן -> בן־
+    transform: word "בן" -> "בן־" ((none) -> (maqaf))
+    before: MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MUNAX ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MUNAX ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  dt 4:46
+    fix: ובני -> ובנ֣י
+    transform: word "ובני" -> "ובנ֣י" ((none) -> (mun))
+    before: AZLA GERESH REVIA YETIV MUNAX ZAQEF REVIA PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX QADMA MAHAPAKH PASHTA ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  AZLA GERESH REVIA YETIV MUNAX ZAQEF REVIA PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX QADMA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  dt 8:3
+    fix: את -> את־
+    transform: word "את" -> "את־" ((none) -> (maqaf))
+    before: ZARQA SEGOLTA MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MUNAX REVIA TELISHAGEDOLA MUNAX MAHAPAKH PASHTA MUNAX ZAQEF TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  ZARQA SEGOLTA MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MUNAX REVIA TELISHAGEDOLA MUNAX MAHAPAKH PASHTA MUNAX ZAQEF TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   dt 9:20 [claim: expects_fix] [AGREE]
     fix: ההֽוא -> ההֽוא׃
     transform: word "ההֽוא" -> "ההֽוא׃" ((none) -> (sof pasuq))
@@ -149,7 +204,7 @@ claim-vs-result: 86 agree, 1 disagree
   dt 24:10 [speculative] [claim: expects_fix] [AGREE]
     fix: ברעך -> ברעך֖
     transform: word "ברעך" -> "ברעך֖" ((none) -> (tip))
-    before: MERKHA MUNAX ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: atnax_phrase]
+    before: MERKHA MUNAX ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
     after:  MERKHA TIPEXA MUNAX ATNAX MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   dt 25:9 [claim: expects_fix] [AGREE]
     fix: אחֽיו -> אחֽיו׃
@@ -161,6 +216,11 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "ישרא֘ל" -> "ישראל֮" ((zarshit) -> (zarnor))
     before: AZLA GERESH REVIA AZLA GERESH MUNAX MUNAX SEGOLTA MUNAX REVIA PASHTA MUNAX ZAQEF ZAQEFGADOL QADMA DARGA TEVIR TIPEXA MUNAX ATNAX TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:82]
     after:  AZLA GERESH REVIA AZLA GERESH MUNAX ZARQA MUNAX SEGOLTA MUNAX REVIA PASHTA MUNAX ZAQEF ZAQEFGADOL QADMA DARGA TEVIR TIPEXA MUNAX ATNAX TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  dt 33:28
+    fix: יערפו -> י֥ערפו
+    transform: word "יערפו" -> "י֥ערפו" ((none) -> (mer))
+    before: TELISHAQETANNA QADMA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  TELISHAQETANNA QADMA MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   ec 7:21 [claim: expects_fix] [AGREE]
     fix: אש֥ר -> אש֛ר
     transform: word "אש֥ר" -> "אש֛ר" ((mer) -> (tev))
@@ -191,6 +251,26 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "ישראֽל" -> "ישראֽל׃" ((none) -> (sof pasuq))
     before: ZAQEFGADOL MERKHA TIPEXA MUNAX ATNAX DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ MISSING_SOFPASUQ  [ERROR: sof_pasuq_phrase]
     after:  ZAQEFGADOL MERKHA TIPEXA MUNAX ATNAX DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  ek 43:17
+    fix: והגבול -> והגבול֩
+    transform: word "והגבול" -> "והגבול֩" ((none) -> (tel_q))
+    before: GERSHAYIM DARGA MUNAX REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MUNAX ATNAX AZLA GERESH MUNAX REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  GERSHAYIM DARGA MUNAX REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MUNAX ATNAX TELISHAQETANNA AZLA GERESH MUNAX REVIA MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  ek 46:12
+    fix: את -> את־
+    transform: word "את" -> "את־" ((none) -> (maqaf))
+    before: TELISHAQETANNA AZLA GERESH MUNAX ZARQA MUNAX SEGOLTA MUNAX REVIA PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA MUNAX ATNAX TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  TELISHAQETANNA AZLA GERESH MUNAX ZARQA MUNAX SEGOLTA MUNAX REVIA PASHTA MUNAX ZAQEF MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA MUNAX ATNAX TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  er 4:14
+    fix: אריך -> אריך־
+    transform: word "אריך" -> "אריך־" ((none) -> (maqaf))
+    before: REVIA PASHTA MAHAPAKH PASHTA ZAQEF MUNAX ZAQEF MERKHA TIPEXA ATNAX METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  REVIA PASHTA MAHAPAKH PASHTA ZAQEF MUNAX ZAQEF MERKHA TIPEXA ATNAX METHIGAZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  es 5:14
+    fix: אל -> אל־
+    transform: word "אל" -> "אל־" ((none) -> (maqaf))
+    before: MUNAX TELISHAQETANNA AZLA GERESH REVIA ZARQA MUNAX MUNAX SEGOLTA LEGARMEH MUNAX REVIA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MUNAX TELISHAQETANNA AZLA GERESH REVIA ZARQA MUNAX MUNAX SEGOLTA LEGARMEH MUNAX REVIA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA ATNAX DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   ex 2:5 [claim: expects_fix] [AGREE]
     fix: ותקחֽה -> ותקחֽה׃
     transform: word "ותקחֽה" -> "ותקחֽה׃" ((none) -> (sof pasuq))
@@ -199,13 +279,18 @@ claim-vs-result: 86 agree, 1 disagree
   ex 4:10
     fix: דברך -> דברך֖
     transform: word "דברך" -> "דברך֖" ((none) -> (tip))
-    before: QADMA MUNAX ZARQA MUNAX SEGOLTA TELISHAQETANNA AZLA GERESH REVIA MAHAPAKH PASHTA MUNAX ZAQEF TEVIR MERKHA ATNAX DARGA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: atnax_phrase]
+    before: QADMA MUNAX ZARQA MUNAX SEGOLTA TELISHAQETANNA AZLA GERESH REVIA MAHAPAKH PASHTA MUNAX ZAQEF TEVIR MERKHA ATNAX DARGA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
     after:  QADMA MUNAX ZARQA MUNAX SEGOLTA TELISHAQETANNA AZLA GERESH REVIA MAHAPAKH PASHTA MUNAX ZAQEF TEVIR MERKHA TIPEXA ATNAX DARGA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   ex 6:6 [claim: expects_fix] [AGREE]
     fix: ישרא֘ל -> ישראל֮
     transform: word "ישרא֘ל" -> "ישראל֮" ((zarshit) -> (zarnor))
     before: GERSHAYIM MERKHA MUNAX SEGOLTA MUNAX REVIA PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:82]
     after:  GERSHAYIM MERKHA ZARQA MUNAX SEGOLTA MUNAX REVIA PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  ex 9:22
+    fix: אל־ משה -> אל־ מש֗ה
+    transform: word "אל־" -> "אל־" ((none) -> (none)); word "משה" -> "מש֗ה" ((none) -> (rev))
+    before: AZLA GERESH MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA MUNAX ATNAX MUNAX REVIA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  AZLA GERESH REVIA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA MUNAX ATNAX MUNAX REVIA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
   ex 14:25 [claim: expects_fix] [AGREE]
     fix: במצרֽים -> במצרֽים׃
     transform: word "במצרֽים" -> "במצרֽים׃" ((none) -> (sof pasuq))
@@ -261,6 +346,16 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "ישרא֘ל" -> "ישראל֮" ((zarshit) -> (zarnor))
     before: MUNAX SEGOLTA LEGARMEH MUNAX REVIA MAHAPAKH PASHTA QADMA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA MUNAX ATNAX MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:82]
     after:  MUNAX ZARQA SEGOLTA LEGARMEH MUNAX REVIA MAHAPAKH PASHTA QADMA MAHAPAKH PASHTA ZAQEF MERKHA TIPEXA MUNAX ATNAX MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  hb 2:8
+    fix: כי -> כי־
+    transform: word "כי" -> "כי־" ((none) -> (maqaf))
+    before: MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX MAHAPAKH PASHTA ZAQEF TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  ho 2:16
+    fix: על -> על־
+    transform: word "על" -> "על־" ((none) -> (maqaf))
+    before: REVIA MAHAPAKH PASHTA ZAQEF TIPEXA ATNAX TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  REVIA MAHAPAKH PASHTA ZAQEF TIPEXA ATNAX TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   ho 4:19 [claim: expects_fix] [AGREE]
     fix: מזבחותֽם -> מזבחותֽם׃
     transform: word "מזבחותֽם" -> "מזבחותֽם׃" ((none) -> (sof pasuq))
@@ -321,6 +416,16 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "מא֖רץ" -> "מא֣רץ" ((tip) -> (mun))
     before: MUNAX REVIA MAHAPAKH PASHTA ZAQEF PASHTA MUNAX ZAQEF TIPEXA TIPEXA ATNAX GERESH MUNAX REVIA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: atnax_phrase]
     after:  MUNAX REVIA MAHAPAKH PASHTA ZAQEF PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX GERESH MUNAX REVIA TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  je 32:13
+    fix: את -> את־
+    transform: word "את" -> "את־" ((none) -> (maqaf))
+    before: PASHTA ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  PASHTA ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  je 34:21
+    fix: וביד -> ובי֗ד
+    transform: word "וביד" -> "ובי֗ד" ((none) -> (rev))
+    before: AZLA GERESH REVIA PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX YETIV MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  AZLA GERESH REVIA PASHTA MUNAX ZAQEF TIPEXA MUNAX ATNAX REVIA YETIV MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   je 37:10 [claim: expects_fix] [AGREE]
     fix: ונ֨שארו -> ונ֨שארו־
     transform: word "ונ֨שארו" -> "ונ֨שארו־" ((none) -> (maqaf))
@@ -371,6 +476,16 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "וי֣אמר" -> "וי֥אמר" ((mun) -> (mer))
     before: MUNAX TIPEXA MUNAX ATNAX TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: tipexa_phrase]
     after:  MERKHA TIPEXA MUNAX ATNAX TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  ju 6:2
+    fix: עשו -> עש֥ו
+    transform: word "עשו" -> "עש֥ו" ((none) -> (mer))
+    before: MERKHA TIPEXA ATNAX AZLA GERESH LEGARMEH MUNAX REVIA PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MERKHA TIPEXA ATNAX AZLA GERESH MERKHA LEGARMEH MUNAX REVIA PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  ju 9:2
+    fix: כי־ עצמכם -> כי־ עצמכ֥ם
+    transform: word "כי־" -> "כי־" ((none) -> (none)); word "עצמכם" -> "עצמכ֥ם" ((none) -> (mer))
+    before: GERSHAYIM QADMA MUNAX ZARQA MUNAX SEGOLTA AZLA GERESH MUNAX REVIA YETIV MUNAX ZAQEF MERKHA TIPEXA MUNAX ATNAX ZAQEFGADOL TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  GERSHAYIM QADMA MUNAX ZARQA MUNAX SEGOLTA AZLA GERESH MUNAX REVIA YETIV MUNAX ZAQEF MERKHA TIPEXA MUNAX ATNAX ZAQEFGADOL MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   ju 11:24 [claim: expects_fix] [AGREE]
     fix: אות֥ו תיר֑ש -> אות֣ו תיר֑ש
     transform: word "אות֥ו" -> "אות֣ו" ((mer) -> (mun))
@@ -381,11 +496,21 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "פ֛לאי׃" -> "פֽלאי׃" ((tev) -> (sil))
     before: MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA MUNAX ATNAX TEVIR SOFPASUQ  [ERROR: silluq_phrase]
     after:  MAHAPAKH PASHTA MUNAX ZAQEF MERKHA TIPEXA MUNAX ATNAX SILLUQ SOFPASUQ  [CLEAN]
+  ju 20:36
+    fix: אשר -> אשר־
+    transform: word "אשר" -> "אשר־" ((none) -> (maqaf))
+    before: MERKHA TIPEXA MUNAX ATNAX QADMA MAHAPAKH PASHTA ZAQEF MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MERKHA TIPEXA MUNAX ATNAX QADMA MAHAPAKH PASHTA ZAQEF MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   ju 21:16 [claim: expects_fix] [AGREE]
     fix: ויאמר֨ו -> ויאמרו֙
     transform: word "ויאמר֨ו" -> "ויאמרו֙" ((qom) -> (pash))
     before: QADMA MUNAX ZAQEF MERKHA TIPEXA ATNAX MERKHA TIPEXA SILLUQ SOFPASUQ  [ERROR: zaqef_phrase]
     after:  PASHTA MUNAX ZAQEF MERKHA TIPEXA ATNAX MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
+  lm 2:3
+    fix: בחרי -> בחרי־
+    transform: word "בחרי" -> "בחרי־" ((none) -> (maqaf))
+    before: MUNAX REVIA YETIV MUNAX ZAQEF MERKHA TEVIR TIPEXA MUNAX ATNAX MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  MUNAX REVIA YETIV MUNAX ZAQEF MERKHA TEVIR TIPEXA MUNAX ATNAX MAHAPAKH PASHTA MUNAX ZAQEF TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   lm 5:5 [speculative] [claim: expects_fix] [AGREE]
     fix: הונ֖ח -> הונח־
     transform: word "הונ֖ח" -> "הונח־" ((tip) -> (maqaf))
@@ -461,6 +586,11 @@ claim-vs-result: 86 agree, 1 disagree
     transform: word "קטֽרת" -> "קטֽרת׃" ((none) -> (sof pasuq))
     before: MERKHA TEVIR MERKHA TIPEXA MERKHA SILLUQ MISSING_SOFPASUQ  [ERROR: sof_pasuq_phrase]
     after:  MERKHA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [CLEAN]
+  nu 12:9
+    fix: ויחר -> ויחר־
+    transform: word "ויחר" -> "ויחר־" ((none) -> (maqaf))
+    before: DARGA TEVIR TIPEXA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  DARGA TEVIR TIPEXA SILLUQ SOFPASUQ  [CLEAN]
   nu 20:19 [claim: expects_fix] [AGREE]
     fix: ישרא֘ל -> ישראל֮
     transform: word "ישרא֘ל" -> "ישראל֮" ((zarshit) -> (zarnor))
@@ -479,19 +609,31 @@ claim-vs-result: 86 agree, 1 disagree
   ob 1:1
     fix: עליה -> על֖יה
     transform: word "עליה" -> "על֖יה" ((none) -> (tip))
-    before: TIPEXA ATNAX TELISHAQETANNA AZLA GERESH REVIA AZLA GERESH MAHAPAKH PASHTA PASHTA MUNAX ZAQEF TEVIR MERKHA SILLUQ SOFPASUQ  [ERROR: tipexa_phrase]
+    before: TIPEXA ATNAX TELISHAQETANNA AZLA GERESH REVIA AZLA GERESH MAHAPAKH PASHTA PASHTA MUNAX ZAQEF TEVIR MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
     after:  TIPEXA ATNAX TELISHAQETANNA AZLA GERESH REVIA AZLA GERESH MAHAPAKH PASHTA PASHTA MUNAX ZAQEF TEVIR MERKHA TIPEXA SILLUQ SOFPASUQ  [CLEAN]
 
-## DENIED -- same error remains after the fix  (1)
+## DENIED -- same error remains after the fix  (2)
   dt 5:8 [speculative] [claim: expects_fix] [DISAGREE]
     fix: תעש֥ה־ -> תעש֨ה־
     transform: word "תעש֥ה־" -> "תעש֨ה־" ((mer) -> (qom))
     before: MUNAX MERKHA MERKHA MUNAX MUNAX ZAQEF PAZER MAHAPAKH MUNAX MUNAX ZAQEF PAZER MERKHA TELISHAQETANNA TIPEXA QADMA ATNAX GERESH MERKHA TIPEXA MUNAX MERKHA MUNAX SILLUQ REVIA SOFPASUQ  [ERROR: illegal_mark:atnax!geresh, illegal_mark:mahapakh!munax, illegal_mark:merkha!munax, illegal_mark:munax!pashta, illegal_mark:tipexa!munax, illegal_mark:tipexa!qadma, illegal_mark:zaqef!pazer]
     after:  MUNAX QADMA MERKHA MUNAX MUNAX ZAQEF PAZER MAHAPAKH MUNAX MUNAX ZAQEF PAZER MERKHA TELISHAQETANNA TIPEXA QADMA ATNAX GERESH MERKHA TIPEXA MUNAX MERKHA MUNAX SILLUQ REVIA SOFPASUQ  [ERROR: illegal_mark:atnax!geresh, illegal_mark:mahapakh!munax, illegal_mark:merkha!munax, illegal_mark:munax!pashta, illegal_mark:tipexa!munax, illegal_mark:tipexa!qadma, illegal_mark:zaqef!pazer]
+  mi 5:7
+    fix: בעדרי -> בעדרי־
+    transform: word "בעדרי" -> "בעדרי־" ((none) -> (maqaf))
+    before: TELISHAQETANNA AZLA GERESH REVIA PASHTA MUNAX ZAQEF PASHTA MUNAX ZAQEF TIPEXA ATNAX DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
+    after:  TELISHAQETANNA AZLA GERESH REVIA PASHTA MUNAX ZAQEF PASHTA MUNAX ZAQEF TIPEXA ATNAX DARGA TEVIR MERKHA TIPEXA MERKHA SILLUQ SOFPASUQ  [ERROR: illegal_mark:no accent]
 
 ## CHANGED -- a different error appears after the fix  (0)
 
-## UNTESTABLE -- fix could not be applied mechanically  (0)
+## UNTESTABLE -- fix could not be applied mechanically  (2)
+  (note: a *medial* 'vowel_only'/'meteg_only' mark is grammar-inert, the scanner swallowing it; 'merge_target_missing' means the named merge_next verse was not found in the source.  None is a verdict on the ungrammatical verse.)
+  nu 7:59
+    fix: פדה צֽור׃ -> פדהצֽור׃
+    reason: multi_word (diff spans more than one word)
+  nu 10:19
+    fix: צורי שדֽי׃ -> צורישדֽי׃
+    reason: multi_word (diff spans more than one word)
 
 ## Review queue: speculative claims whose result disagrees  (1)
   dt 5:8  [DENIED] claim: 'WLC’s “tangled” form for תעשה carries only a merkha on the ש, but a better LC transcription would be a meteg (elyon) and a qadma (taḥton).'

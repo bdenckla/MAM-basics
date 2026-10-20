@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from accgram.prose_ob_notes_shared import NO_ACCENT
+
 BY_REF: dict[str, dict[str, object]] = {
     "2s 6:20": {
         "st-source": "bhs",
@@ -21,5 +23,9 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "בפלשתים",
         "st-summary": "BHS does not transcribe a pashta, leaving the chanted word without accent.",
         "uxlc_change": "2021.10.19/2021.08.07-3",
+    },
+    "2s 24:13": {
+        **NO_ACCENT,
+        "wlc_focus": "שבע",
     },
 }

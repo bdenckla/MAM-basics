@@ -5,6 +5,7 @@ from __future__ import annotations
 from accgram.prose_ob_notes_shared import (
     MISSING_SOF_PASUQ_COMMENT,
     MISSING_SOF_PASUQ_SUMMARY,
+    NO_ACCENT,
     SOMEWHERE,
 )
 
@@ -27,5 +28,9 @@ BY_REF: dict[str, dict[str, object]] = {
         "st-source": "tbd",
         "wlc_focus": "ירומם׃",
         "st-summary": SOMEWHERE,
+    },
+    "ho 2:16": {
+        **NO_ACCENT,
+        "wlc_focus": "על",
     },
 }

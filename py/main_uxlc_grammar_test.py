@@ -35,8 +35,13 @@ can evaluate, we:
      synthesis, so such a case is marked unreliable and excluded (e.g. Josh 2:3.7's
      doubled telisha gedola).
   4. If validated, synthesize the UXLC reading from `changeuni`, splice it into the
-     verse body, and re-run the existing scanner+grammar on both the original
-     (WLC) and edited (UXLC) verse.  Classify each as grammatical / ungrammatical.
+     verse body, and re-run the existing checker on both the original (WLC) and edited
+     (UXLC) verse.  Classify each as grammatical / ungrammatical.  The checker is the one
+     `prose_run` applies: the lexical layer (`lexical_validation.lexical_ungrammatical`)
+     first, then the scanner and grammar.  The lexical layer is what sees a change that
+     leaves a chanted word with no accent, such as UXLC 2.6's meteg for WLC 4.22's merkha at
+     Exodus 38:12: the scanner emits no token for such a chanted word, so the grammar alone
+     reads the verse as if the chanted word were not there.
 
 Output: per-set WLC-vs-UXLC 2x2s, coverage (how many validated), the excluded
 verses with reasons, and the directional-asymmetry conclusion, written to
@@ -49,6 +54,7 @@ import json
 from collections import Counter
 
 from accgram import accent_marks as am
+from accgram import lexical_validation
 from accgram import rtms_data
 from accgram import rtms_rows
 from accgram import uni_to_marks
@@ -172,6 +178,9 @@ def splice_unit(body: str, owner: tuple[int, int], new_unit: str) -> str:
 
 
 def is_ungrammatical(parser, body: str, bb: str, ch: int, vs: int) -> bool:
+    if lexical_validation.lexical_ungrammatical(body):
+        # The lexical layer fires first and decides the verse, as in prose_run.
+        return True
     toks = [Token("TILDE", "")] + scan_accents(body, bb, ch, vs, HasLegarmeh())
     tree = parse_tokens(parser, toks)
     if tree is None:
@@ -375,8 +384,15 @@ def evaluate(records: list[dict], parser) -> dict:
         if visible:
             grid_visible[cell] += 1
         grid[cell] += 1
+        # The cut description is stripped, since a cut that ends on a space would leave
+        # trailing whitespace in the report.
         descs = [
-            (r["citation"], r["accent_change_reason"], _kind(r), r["description"][:55])
+            (
+                r["citation"],
+                r["accent_change_reason"],
+                _kind(r),
+                r["description"][:55].rstrip(),
+            )
             for _, r, _ in changes
         ]
         # Attribute by-kind only for solo-change verses (clean attribution).

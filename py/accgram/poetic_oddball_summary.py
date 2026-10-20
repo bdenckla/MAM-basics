@@ -29,9 +29,10 @@ from __future__ import annotations
 
 import difflib
 
+from accgram import poetic_accent_names as pan
 from accgram.mam_poetic_accents import base_letters
 from accgram.poetic_accent_names import POETIC_DISJUNCTIVES
-from accgram.poetic_scanner import scan_accent_tokens
+from accgram.poetic_scanner import scan_verse_tokens
 from mb_cmn import hebrew_punctuation as hpunc
 
 
@@ -165,8 +166,10 @@ def _wlc_disjunctives_per_word(body: str) -> list[tuple[str, ...]]:
 
     The scanner runs verse-level passes (unmarked-ole recovery, revia
     reclassification) that need context beyond one chanted word, so partition its
-    positioned whole-verse token stream by each chanted word's offsets."""
-    tokens = scan_accent_tokens(body)
+    positioned whole-verse token stream by each chanted word's offsets.  A chanted word
+    with no accent has its NO_ACCENT token here, so the summary says it has no accent
+    rather than calling it a conjunctive."""
+    tokens = scan_verse_tokens(body)
     words: list[tuple[str, ...]] = []
     pos = 0
     for run in body.split(" "):
@@ -176,7 +179,10 @@ def _wlc_disjunctives_per_word(body: str) -> list[tuple[str, ...]]:
                 tuple(
                     token.type
                     for token in tokens
-                    if pos <= token.start < end and token.type in POETIC_DISJUNCTIVES
+                    if pos <= token.start < end
+                    and (
+                        token.type in POETIC_DISJUNCTIVES or token.type == pan.NO_ACCENT
+                    )
                 )
             )
         pos += len(run) + 1

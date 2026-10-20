@@ -3,7 +3,7 @@
 "summary": {
 "verses": 1289,
 "oddballs": 6,
-"illegal_marks": 1,
+"illegal_marks": 4,
 "location_only": 0
 },
 "verses": [
@@ -29740,105 +29740,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "בֶּן־פְּדָה",
+"atom": "אא-אאא]p"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "segolta_clause",
-"children": [
-{
-"label": "zarqa_phrase",
+"label": "illegal_mark no accent in בֶּן־פְּדָה",
 "leaves": [
-"munax",
-"zarqa"
-]
-},
-{
-"label": "segolta_phrase",
-"leaves": [
-"munax",
-"segolta"
-]
-}
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"mahapakh",
-"pashta"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"munax",
-"zaqef"
-]
-}
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"merkha",
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"atnax"
-]
-}
-]
-}
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_clause",
-"children": [
-{
-"label": "tevir_phrase",
-"leaves": [
-"tevir"
-]
-},
-{
-"label": "tipexa_phrase",
-"leaves": [
-"merkha",
-"tipexa"
-]
-}
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },
@@ -39908,56 +39821,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "בֶּן־צוּרִֽי",
+"atom": "אא-אאאֽא"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "zaqef_phrase",
+"label": "illegal_mark no accent in בֶּן־צוּרִֽי",
 "leaves": [
-"methiga-zaqef"
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },
@@ -46802,34 +46677,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "וַיִּֽחַר",
+"atom": "אאֽאא]1"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_clause",
-"children": [
-{
-"label": "tevir_phrase",
+"label": "illegal_mark no accent in וַיִּֽחַר",
 "leaves": [
-"darga",
-"tevir"
-]
-},
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-}
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
+"ERROR"
 ]
 }
 },

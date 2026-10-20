@@ -3,7 +3,7 @@
 "summary": {
 "verses": 1023,
 "oddballs": 0,
-"no_parse": 1
+"no_parse": 3
 },
 "verses": [
 {
@@ -20129,54 +20129,19 @@
 "DEXI",
 "MUNAX",
 "ATNAX",
+"NO_ACCENT",
 "REVIA_MUGRASH",
 "MERKHA",
 "SILLUQ",
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "dexi_phrase",
-"leaves": [
-"dexi"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 4,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "revia_mugrash_phrase",
-"leaves": [
-"revia mugrash"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"merkha",
-"silluq"
-]
-}
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Job 17:4",
@@ -28296,43 +28261,19 @@
 "TILDE",
 "MUNAX",
 "ATNAX",
+"NO_ACCENT",
 "REVIA_MUGRASH",
 "MERKHA",
 "SILLUQ",
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 3,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "revia_mugrash_phrase",
-"leaves": [
-"revia mugrash"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"merkha",
-"silluq"
-]
-}
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Job 22:22",

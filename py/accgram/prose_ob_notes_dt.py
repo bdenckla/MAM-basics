@@ -7,6 +7,7 @@ from py_html import wlc_utils_html
 from accgram.prose_ob_notes_shared import (
     MISSING_SOF_PASUQ_COMMENT,
     MISSING_SOF_PASUQ_SUMMARY,
+    NO_ACCENT,
     SOMEWHERE,
     TAXTON,
     TIPEXA,
@@ -180,5 +181,21 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "ישרא֘ל",
         "uxlc_change": "2021.04.01/2020.12.06-9",
         **ZARQA_WHIM,
+    },
+    "dt 1:38": {
+        **NO_ACCENT,
+        "wlc_focus": "בן",
+    },
+    "dt 4:46": {
+        **NO_ACCENT,
+        "wlc_focus": "ובני",
+    },
+    "dt 8:3": {
+        **NO_ACCENT,
+        "wlc_focus": "את",
+    },
+    "dt 33:28": {
+        **NO_ACCENT,
+        "wlc_focus": "יערפו",
     },
 }

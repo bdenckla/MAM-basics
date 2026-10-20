@@ -3,7 +3,7 @@
 "summary": {
 "verses": 1364,
 "oddballs": 11,
-"illegal_marks": 1,
+"illegal_marks": 3,
 "location_only": 0
 },
 "verses": [
@@ -95398,44 +95398,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "אֶת",
+"atom": "אא]1"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
+"label": "illegal_mark no accent in אֶת",
 "leaves": [
-"pashta"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"zaqef"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },
@@ -105326,114 +105300,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "וּבְיַד",
+"atom": "אאאא"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "revia_clause",
-"children": [
-{
-"label": "geresh_phrase",
+"label": "illegal_mark no accent in וּבְיַד",
 "leaves": [
-"azla",
-"geresh"
-]
-},
-{
-"label": "revia_phrase",
-"leaves": [
-"revia"
-]
-}
-]
-},
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"pashta"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"munax",
-"zaqef"
-]
-}
-]
-}
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"yetiv"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"munax",
-"zaqef"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },

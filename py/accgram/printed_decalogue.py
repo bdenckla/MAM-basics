@@ -55,6 +55,7 @@ from pathlib import Path
 
 from accgram import printed_decalogue_fetch
 from accgram import uni_to_marks
+from accgram import unaccented_chanted_words as ucw
 
 # Aliased because ``ChantedVerseResult`` has a field of the module's own name, and an
 # unaliased import would sit one scope away from it for no gain.
@@ -163,6 +164,8 @@ def parse_marks_body(
     covers the case that motivated the check, Koren's Deuteronomy appendix עליון, which has a
     munax on each atom of the one chanted word לא־תעשה.
     """
+    # The scanner would drop a chanted word with no accent, and this path has no status for one.
+    ucw.raise_on_unaccented_chanted_words(body, f"{book} chanted verse {index}")
     # None of the Decalogue readings is a HasLegarmeh corpus; a fresh per-verse instance is
     # immaterial. Chapter/verse are only for scanner diagnostics, unused on this path.
     tokens = [Token("TILDE", "")] + scan_accents(body, book, 20, 2, HasLegarmeh())

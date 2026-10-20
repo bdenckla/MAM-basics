@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from accgram.prose_ob_notes_shared import (
     MUNAX,
+    NO_ACCENT,
 )
 
 _JU_1318_01 = (
@@ -96,5 +97,17 @@ BY_REF: dict[str, dict[str, object]] = {
         "st-summary": "BHS transcribes a syllable as having qadma rather than pashta.",
         "img": "LC-150A-col-1-line-22-Ju-21v16.png",
         "uxlc_change": "2026.10.19/2026.04.10-5",
+    },
+    "ju 6:2": {
+        **NO_ACCENT,
+        "wlc_focus": "עשו",
+    },
+    "ju 9:2": {
+        **NO_ACCENT,
+        "wlc_focus": "כי־ עצמכם",
+    },
+    "ju 20:36": {
+        **NO_ACCENT,
+        "wlc_focus": "אשר",
     },
 }

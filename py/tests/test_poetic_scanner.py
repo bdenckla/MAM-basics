@@ -277,20 +277,23 @@ def test_same_letter_oleh_weyored_fuses_not_banged():
     # the pre-stress letter, yored merkha on the stress letter -- 0 same-letter in WLC).
     # The same-letter merkha+ole must fuse to the one OLEH_WEYORED disjunctive, not fall
     # through to the bang guard as merkha!ole -> NO_PARSE.
+    # The head ends with no space, so the tail's first X is part of its atom: written after a
+    # space, that X would be a chanted word with no accent, and scan_verse's NO_ACCENT token
+    # for it would keep the verse from parsing (accgram.unaccented_chanted_words).
     tail = "X XX" + am.ATNAX + "X XX" + am.METEG + am.SOF_PASUQ
-    same = _types_marks("X" + am.MERKHA + am.OLE + "X " + tail)
+    same = _types_marks("X" + am.MERKHA + am.OLE + "X" + tail)
     assert pan.OLEH_WEYORED in same
     assert pan.MERKHA not in same  # the yored merkha is consumed, not a servus
     assert "MERKHA_OLE" not in same  # not banged
     assert not any(
-        "!" in leaf for _t, leaf in scan_accents("X" + am.MERKHA + am.OLE + "X " + tail)
+        "!" in leaf for _t, leaf in scan_accents("X" + am.MERKHA + am.OLE + "X" + tail)
     )
     # and the verse parses cleanly
     parser = build_parser()
-    toks = scan_verse("test 1:1", "X" + am.MERKHA + am.OLE + "X " + tail).tokens
+    toks = scan_verse("test 1:1", "X" + am.MERKHA + am.OLE + "X" + tail).tokens
     assert parse_tokens(parser, toks) is not None
     # the ole-first same-letter order (already handled by the OLE...MERKHA rule) also fuses
-    same2 = _types_marks("X" + am.OLE + am.MERKHA + "X " + tail)
+    same2 = _types_marks("X" + am.OLE + am.MERKHA + "X" + tail)
     assert pan.OLEH_WEYORED in same2 and pan.MERKHA not in same2
 
 

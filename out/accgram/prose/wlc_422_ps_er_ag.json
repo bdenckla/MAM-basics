@@ -3,7 +3,7 @@
 "summary": {
 "verses": 280,
 "oddballs": 0,
-"illegal_marks": 0,
+"illegal_marks": 1,
 "location_only": 0
 },
 "verses": [
@@ -9708,114 +9708,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "אֲ‍ֽרִֽיךְ",
+"atom": "אֽאֽאא"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "revia_phrase",
+"label": "illegal_mark no accent in אֲ‍ֽרִֽיךְ",
 "leaves": [
-"revia"
-]
-},
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"pashta"
-]
-},
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"mahapakh",
-"pashta"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"zaqef"
-]
-}
-]
-}
-]
-}
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "zaqef_phrase",
-"leaves": [
-"munax",
-"zaqef"
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"merkha",
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"atnax"
-]
-}
-]
-}
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "zaqef_phrase",
-"leaves": [
-"methiga-zaqef"
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"merkha",
-"silluq"
-]
-}
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },

@@ -55,6 +55,12 @@ as a stress-helper, is illegal.  (It is one instance of a broader, not-yet-imple
 family of word-level rules -- every postpositive accent must fall on the final letter,
 every prepositive on the first.)
 
+A fourth check (``unaccented_chanted_words``) flags a chanted word with no accent, which the
+scanner cannot represent at all: it emits tokens for accent marks alone, so such a chanted word
+drops out of the token stream and the grammar judges the verse without it.
+``accgram.unaccented_chanted_words`` holds the rule, the reading of chanted words off the mark
+body and each kind of atom the rule exempts; the poetic scanner reads the same module.
+
 The module is self-contained: it reads the per-atom Unicode mark stream straight from
 the verse body (the scanner-ready marks ``uni_to_marks`` produces), with no dependency
 on the scanner internals.  It is kept general enough that other unpaired stress-helpers
@@ -69,6 +75,7 @@ import re
 from dataclasses import dataclass
 
 from accgram import accent_marks as am
+from accgram import unaccented_chanted_words as ucw
 
 # Atoms are delimited by spaces and maqaf (``-``), mirroring the scanner's TEXT
 # class ``[^ \r\n\-]*`` which keeps a fused helper...zarqa pair inside one atom.
@@ -160,18 +167,24 @@ def _accent_leaf(mark: str) -> str:
 
 @dataclass(frozen=True)
 class LexicalUngrammaticalMark:
-    """A lexically illegal mark configuration confined to one atom.
+    """A lexically illegal mark configuration in one atom, or a chanted word with no accent.
 
-    Covers both a stress-helper left without its fusion partner (unpaired 82) and a
-    non-whitelisted same-letter accent pair (e.g. mahapakh!tipexa); ``code``
-    distinguishes them.  ``rep_char`` is a representative codepoint of the offending
-    word, used by prose_run to locate the pointed-Hebrew word for the report.
+    Covers a stress-helper left without its fusion partner (unpaired 82), a
+    non-whitelisted same-letter accent pair (e.g. mahapakh!tipexa), a misplaced telisha
+    qetanna and a chanted word with no accent; ``code`` distinguishes them.  ``rep_char``
+    is a representative codepoint of the offending word, used by prose_run to locate the
+    pointed-Hebrew word for the report.  A chanted word with no accent has no mark to find it
+    by, so it has an empty ``rep_char`` and is located by ``read_atoms`` instead.
     """
 
     code: str  # M-C code label ("82"), bang pair label ("mahapakh!tipexa"), or a
-    # placement descriptor ("medial telisha qetanna")
-    atom: str  # the maqaf/space-delimited atom that contains it
+    # placement descriptor ("medial telisha qetanna", "no accent")
+    atom: str  # the maqaf/space-delimited atom that contains it; for "no accent", the
+    # chanted word's atoms joined by maqaf marks
     rep_char: str  # a mark of the offending word, for locating its Unicode word
+    # For "no accent": the ordinals of the chanted word's atoms among the verse's read atoms
+    # (``unaccented_chanted_words.Atom.read_index``).
+    read_atoms: tuple[int, ...] = ()
 
 
 def unpaired_stress_helpers(body: str) -> list[LexicalUngrammaticalMark]:
@@ -268,17 +281,35 @@ def nonfinal_telisha_qetannas(body: str) -> list[LexicalUngrammaticalMark]:
     return unpaired
 
 
+def unaccented_chanted_words(body: str) -> list[LexicalUngrammaticalMark]:
+    """Every chanted word with no accent in a prose verse body, code ``no accent``.
+
+    ``accgram.unaccented_chanted_words`` holds the rule and the kinds of atom it exempts.  Each
+    result is located by ``read_atoms``, since the chanted word has no mark to find it by.
+    """
+    return [
+        LexicalUngrammaticalMark(
+            code="no accent",
+            atom=word.marks,
+            rep_char="",
+            read_atoms=tuple(atom.read_index for atom in word.atoms),
+        )
+        for word in ucw.unaccented_chanted_words(body)
+    ]
+
+
 def lexical_ungrammatical(body: str) -> list[LexicalUngrammaticalMark]:
     """Every prose lexical / word-placement ungrammatical in ``body``, in one pass.
 
-    The union of this module's three checks, each an ``illegal_mark`` ERROR that diverges
+    The union of this module's four checks, each an ``illegal_mark`` ERROR that diverges
     from the goerwitz C oracle in the documented MISSING_SOFPASUQ spirit:
 
       * an unpaired stress-helper (`unpaired_stress_helpers`, M-C ``82``);
       * a non-whitelisted same-letter accent pair (`illegal_same_letter_pairs`,
-        mahapakh!tipexa, lv25:20); and
+        mahapakh!tipexa, lv25:20);
       * a telisha qetanna misplaced on a non-final letter (`nonfinal_telisha_qetannas`,
-        the lone M-C ``24`` of je 44:17).
+        the lone M-C ``24`` of je 44:17); and
+      * a chanted word with no accent (`unaccented_chanted_words`).
 
     This is the single entry point the prose consumers share -- prose_run (the corpus
     output), almost_errors_trees (the exhibit page), and fix_tester (the fix harness) --
@@ -290,4 +321,5 @@ def lexical_ungrammatical(body: str) -> list[LexicalUngrammaticalMark]:
         unpaired_stress_helpers(body)
         + illegal_same_letter_pairs(body)
         + nonfinal_telisha_qetannas(body)
+        + unaccented_chanted_words(body)
     )

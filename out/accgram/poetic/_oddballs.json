@@ -3,9 +3,9 @@
   "artifacts_description": "poetic (Three Books) ungrammatical verses for review",
   "payload_provenance_note": "Each row is a poetic verse the checker could not parse cleanly: either a missing-silluq verse recovered into an ERROR-leaf tree ('missing_silluq') or a structural L anomaly -- the disjunctive hierarchy is violated or a token is lexically illicit -- emitted as a NO_PARSE line ('no_parse'). wlc_disjunctives is the scanner's disjunctive skeleton; mam_disjunctives is the MAM-simple oracle's, for comparison. For a NO_PARSE verse, stall names the offending accent (its 1-based ordinal among the verse's accents and its token type) -- where the LALR(1) parse dead-ended, i.e. every accent before it was consumable (the stall point, not necessarily the root-cause accent). output_file names the *_ag.json holding the verse's parse record.",
   "summary": {
-    "oddballs": 15,
+    "oddballs": 25,
     "missing_silluq": 13,
-    "no_parse": 2
+    "no_parse": 12
   },
   "oddballs": [
     {
@@ -130,6 +130,39 @@
       "tree": "0 silluq_clause\n  1 atnax_clause\n    2 dexi_phrase\n      munax dexi \n    2 atnax_phrase\n      atnax \n  1 silluq_clause\n    2 revia_mugrash_phrase\n      revia mugrash \n    2 silluq_phrase\n      ERROR "
     },
     {
+      "ref": "Psalms 38:10",
+      "bb": "ps",
+      "kind": "no_parse",
+      "content": "אדני נגדך֥ כל־ תאות֑י ו֝אנחת֗י ממך֥ לא־ נסתֽרה׃",
+      "output_file": "wlc_422_ps_ps_ag.json",
+      "token_types": [
+        "TILDE",
+        "NO_ACCENT",
+        "MERKHA",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "REVIA_GADOL",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 1,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: >>NO_ACCENT<< MERKHA ATNAX REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 1/6: NO_ACCENT)"
+    },
+    {
       "ref": "Psalms 56:10",
       "bb": "ps",
       "kind": "no_parse",
@@ -219,6 +252,84 @@
       ],
       "stall": null,
       "tree": "0 silluq_clause\n  1 atnax_phrase\n    munax munax atnax \n  1 silluq_clause\n    2 revia_mugrash_phrase\n      revia mugrash \n    2 silluq_phrase\n      ERROR "
+    },
+    {
+      "ref": "Psalms 62:4",
+      "bb": "ps",
+      "kind": "no_parse",
+      "content": "עד־ א֤נה׀ תהותת֣ו על איש֮ תרצח֪ו כ֫לכ֥ם כק֥יר נט֑וי ג֝ד֗ר הדחויֽה׃",
+      "output_file": "wlc_422_ps_ps_ag.json",
+      "token_types": [
+        "TILDE",
+        "LEGARMEH",
+        "MUNAX",
+        "NO_ACCENT",
+        "TSINNOR",
+        "GALGAL",
+        "OLEH_WEYORED",
+        "MERKHA",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "LEGARMEH",
+        "TSINNOR",
+        "OLEH_WEYORED",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "LEGARMEH",
+        "TSINNOR",
+        "OLEH_WEYORED",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 3,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: LEGARMEH MUNAX >>NO_ACCENT<< TSINNOR GALGAL OLEH_WEYORED MERKHA ATNAX REVIA_MUGRASH SILLUQ  (stalled at accent 3/10: NO_ACCENT)"
+    },
+    {
+      "ref": "Psalms 68:13",
+      "bb": "ps",
+      "kind": "no_parse",
+      "content": "מלכ֣י צ֭באות ידד֣ון ידד֑ון ונות ב֝֗ית תחל֥ק שלֽל׃",
+      "output_file": "wlc_422_ps_ps_ag.json",
+      "token_types": [
+        "TILDE",
+        "MUNAX",
+        "DEXI",
+        "MUNAX",
+        "ATNAX",
+        "NO_ACCENT",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 5,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: MUNAX DEXI MUNAX ATNAX >>NO_ACCENT<< REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 5/8: NO_ACCENT)"
     },
     {
       "ref": "Psalms 71:4",
@@ -363,6 +474,138 @@
       "tree": "0 silluq_clause\n  1 atnax_phrase\n    merkha atnax \n  1 silluq_phrase\n    ERROR "
     },
     {
+      "ref": "Psalms 118:17",
+      "bb": "ps",
+      "kind": "no_parse",
+      "content": "לא אמ֥ות כי־ אחי֑ה ו֝אספ֗ר מעש֥י יֽה׃",
+      "output_file": "wlc_422_ps_ps_ag.json",
+      "token_types": [
+        "TILDE",
+        "NO_ACCENT",
+        "MERKHA",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 1,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: >>NO_ACCENT<< MERKHA ATNAX REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 1/6: NO_ACCENT)"
+    },
+    {
+      "ref": "Psalms 119:96",
+      "bb": "ps",
+      "kind": "no_parse",
+      "content": "לכל ת֭כלה רא֣יתי ק֑ץ רחב֖ה מצותך֣ מאֽד׃",
+      "output_file": "wlc_422_ps_ps_ag.json",
+      "token_types": [
+        "TILDE",
+        "NO_ACCENT",
+        "DEXI",
+        "MUNAX",
+        "ATNAX",
+        "TARXA",
+        "MUNAX",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 1,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: >>NO_ACCENT<< DEXI MUNAX ATNAX TARXA MUNAX SILLUQ  (stalled at accent 1/7: NO_ACCENT)"
+    },
+    {
+      "ref": "Job 17:3",
+      "bb": "jb",
+      "kind": "no_parse",
+      "content": "שימה־ נ֭א ערב֣ני עמ֑ך מי ה֝֗וא ליד֥י יתקֽע׃",
+      "output_file": "wlc_422_ps_jb_ag.json",
+      "token_types": [
+        "TILDE",
+        "DEXI",
+        "MUNAX",
+        "ATNAX",
+        "NO_ACCENT",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 4,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: DEXI MUNAX ATNAX >>NO_ACCENT<< REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 4/7: NO_ACCENT)"
+    },
+    {
+      "ref": "Job 22:21",
+      "bb": "jb",
+      "kind": "no_parse",
+      "content": "הסכן־ נ֣א עמ֑ו ושלם ב֝ה֗ם תבואתך֥ טובֽה׃",
+      "output_file": "wlc_422_ps_jb_ag.json",
+      "token_types": [
+        "TILDE",
+        "MUNAX",
+        "ATNAX",
+        "NO_ACCENT",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 3,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: MUNAX ATNAX >>NO_ACCENT<< REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 3/6: NO_ACCENT)"
+    },
+    {
       "ref": "Job 31:15",
       "bb": "jb",
       "kind": "no_parse",
@@ -397,6 +640,38 @@
         "token_type": "ATNAX"
       },
       "tree": "NO_PARSE: REVIA_MUGRASH DEXI MUNAX >>ATNAX<< REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 4/7: ATNAX)"
+    },
+    {
+      "ref": "Proverbs 2:21",
+      "bb": "pr",
+      "kind": "no_parse",
+      "content": "כי־ ישר֥ים ישכנו א֑רץ ו֝תמימ֗ים יו֥תרו בֽה׃",
+      "output_file": "wlc_422_ps_pr_ag.json",
+      "token_types": [
+        "TILDE",
+        "MERKHA",
+        "NO_ACCENT",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 2,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: MERKHA >>NO_ACCENT<< ATNAX REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 2/6: NO_ACCENT)"
     },
     {
       "ref": "Proverbs 8:28",
@@ -451,6 +726,75 @@
       ],
       "stall": null,
       "tree": "0 silluq_clause\n  1 atnax_clause\n    2 dexi_phrase\n      munax dexi \n    2 atnax_phrase\n      munax atnax \n  1 silluq_phrase\n    ERROR "
+    },
+    {
+      "ref": "Proverbs 28:7",
+      "bb": "pr",
+      "kind": "no_parse",
+      "content": "נוצ֣ר ת֭ורה ב֣ן מב֑ין ורעה ז֝ולל֗ים יכל֥ים אבֽיו׃",
+      "output_file": "wlc_422_ps_pr_ag.json",
+      "token_types": [
+        "TILDE",
+        "MUNAX",
+        "DEXI",
+        "MUNAX",
+        "ATNAX",
+        "NO_ACCENT",
+        "REVIA_MUGRASH",
+        "MERKHA",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 5,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: MUNAX DEXI MUNAX ATNAX >>NO_ACCENT<< REVIA_MUGRASH MERKHA SILLUQ  (stalled at accent 5/8: NO_ACCENT)"
+    },
+    {
+      "ref": "Proverbs 28:17",
+      "bb": "pr",
+      "kind": "no_parse",
+      "content": "א֭דם עש֣ק בדם־ נפש עד־ ב֥ור י֝נ֗וס אל־ יתמכו־ בֽו׃",
+      "output_file": "wlc_422_ps_pr_ag.json",
+      "token_types": [
+        "TILDE",
+        "DEXI",
+        "MUNAX",
+        "NO_ACCENT",
+        "MERKHA",
+        "REVIA_MUGRASH",
+        "SILLUQ",
+        "SOFPASUQ"
+      ],
+      "wlc_disjunctives": [
+        "DEXI",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "mam_disjunctives": [
+        "DEXI",
+        "ATNAX",
+        "REVIA_MUGRASH",
+        "SILLUQ"
+      ],
+      "stall": {
+        "accent_index": 3,
+        "token_type": "NO_ACCENT"
+      },
+      "tree": "NO_PARSE: DEXI MUNAX >>NO_ACCENT<< MERKHA REVIA_MUGRASH SILLUQ  (stalled at accent 3/6: NO_ACCENT)"
     }
   ]
 }

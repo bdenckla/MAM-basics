@@ -5,6 +5,7 @@ from __future__ import annotations
 from accgram.prose_ob_notes_shared import (
     MISSING_SOF_PASUQ_COMMENT,
     MISSING_SOF_PASUQ_SUMMARY,
+    NO_ACCENT,
     TIPEXA,
     ambiguous_mark_context_comment,
 )
@@ -39,5 +40,13 @@ BY_REF: dict[str, dict[str, object]] = {
         "st-summary": MISSING_SOF_PASUQ_SUMMARY,
         "wlc_focus": "ישראֽל",
         "comment": MISSING_SOF_PASUQ_COMMENT,
+    },
+    "ek 43:17": {
+        **NO_ACCENT,
+        "wlc_focus": "והגבול",
+    },
+    "ek 46:12": {
+        **NO_ACCENT,
+        "wlc_focus": "את",
     },
 }

@@ -63,6 +63,7 @@ from dataclasses import dataclass
 
 from accgram import accent_marks as am
 from accgram import uni_to_marks
+from accgram import unaccented_chanted_words as ucw
 from accgram.prose_ply_grammar import LOCATION_ONLY, parse_tokens
 from accgram.prose_scanner import HasLegarmeh, Token, scan_accents
 from accgram.tree import TN, tree_to_obj
@@ -941,6 +942,9 @@ def _parse_chanted_verse(
     parser,
 ) -> ChantedVerseResult:
     body = uni_to_marks.verse_to_marks({"vels": [v.text for v in cv]})
+    # A strand takes MAM's accent where WLC lacks one (the SuppliedMark charity), so none of its
+    # chanted words should lack an accent; the scanner would drop one that did.
+    ucw.raise_on_unaccented_chanted_words(body, _bcv_span_ref(cv, label, ordinal))
     # None of the three loci is a HasLegarmeh passage, so a fresh per-verse instance is
     # immaterial; pass the strand's first numbered verse for the (unused-here) ref.
     first_bcv = cv[0].bcv

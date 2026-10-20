@@ -5,6 +5,7 @@ from __future__ import annotations
 from accgram.prose_ob_notes_shared import (
     BHS_TRANSCRIBES,
     MUNAX,
+    NO_ACCENT,
     TIPEXA,
     TIP_LIKE_INCL,
     ambiguous_mark_context_comment,
@@ -279,5 +280,13 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "רפ֣ינו",
         "st-summary": BHS_TRANSCRIBES,
         "uxlc_change": "2026.10.19/2026.04.10-2",
+    },
+    "je 32:13": {
+        **NO_ACCENT,
+        "wlc_focus": "את",
+    },
+    "je 34:21": {
+        **NO_ACCENT,
+        "wlc_focus": "וביד",
     },
 }

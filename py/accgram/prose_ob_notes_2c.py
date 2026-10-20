@@ -6,6 +6,7 @@ from accgram.prose_ob_notes_shared import (
     BHS_TRANSCRIBES,
     ETNAXTA,
     MUNAX,
+    NO_ACCENT,
     TIPEXA,
 )
 
@@ -46,5 +47,9 @@ BY_REF: dict[str, dict[str, object]] = {
         "comment": (
             "See the UXLC change image. UXLC corrects WLC but places the mahapakh under the yod, an aggresively uncharitable location for it."
         ),
+    },
+    "2c 16:4": {
+        **NO_ACCENT,
+        "wlc_focus": "בן",
     },
 }

@@ -6,6 +6,7 @@ from accgram.prose_ob_notes_shared import (
     ETNAXTA,
     MISSING_SOF_PASUQ_COMMENT,
     MISSING_SOF_PASUQ_SUMMARY,
+    NO_ACCENT,
     PETUXAH,
     SOMEWHERE,
     ZARQA_WHIM_SUMMARY,
@@ -149,5 +150,17 @@ BY_REF: dict[str, dict[str, object]] = {
         "st-source": "tbd",
         "wlc_focus": "לאחיו׃",
         "st-summary": SOMEWHERE,
+    },
+    "nu 7:59": {
+        **NO_ACCENT,
+        "wlc_focus": "בן־ פדה",
+    },
+    "nu 10:19": {
+        **NO_ACCENT,
+        "wlc_focus": "בן־ צורי",
+    },
+    "nu 12:9": {
+        **NO_ACCENT,
+        "wlc_focus": "ויחר",
     },
 }

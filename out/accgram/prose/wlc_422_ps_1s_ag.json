@@ -3,7 +3,7 @@
 "summary": {
 "verses": 811,
 "oddballs": 1,
-"illegal_marks": 0,
+"illegal_marks": 2,
 "location_only": 0
 },
 "verses": [
@@ -34489,104 +34489,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "וְגַם־נִבְאַשׁ",
+"atom": "אאא-אאאא"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "revia_clause",
-"children": [
-{
-"label": "geresh_phrase",
+"label": "illegal_mark no accent in וְגַם־נִבְאַשׁ",
 "leaves": [
-"gershayim"
-]
-},
-{
-"label": "revia_phrase",
-"leaves": [
-"munax",
-"revia"
-]
-}
-]
-},
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"mahapakh",
-"pashta"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"munax",
-"zaqef"
-]
-}
-]
-}
-]
-},
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"atnax"
-]
-}
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_clause",
-"children": [
-{
-"label": "tevir_phrase",
-"leaves": [
-"merkha",
-"tevir"
-]
-},
-{
-"label": "tipexa_phrase",
-"leaves": [
-"merkha",
-"tipexa"
-]
-}
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },
@@ -39854,129 +39768,18 @@
 "itm_section": "§219"
 }
 ],
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "וְלֹֽא",
+"atom": "אאֽא"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
+"label": "illegal_mark no accent in וְלֹֽא",
 "leaves": [
-"merkha",
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "revia_clause",
-"children": [
-{
-"label": "geresh_phrase",
-"leaves": [
-"telishaqetanna",
-"azla",
-"geresh"
-]
-},
-{
-"label": "revia_phrase",
-"leaves": [
-"revia"
-]
-}
-]
-},
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "revia_clause",
-"children": [
-{
-"label": "big_telisha_phrase",
-"leaves": [
-"munax",
-"telishagedola"
-]
-},
-{
-"label": "revia_clause",
-"children": [
-{
-"label": "geresh_phrase",
-"leaves": [
-"azla",
-"geresh"
-]
-},
-{
-"label": "revia_phrase",
-"leaves": [
-"revia"
-]
-}
-]
-}
-]
-},
-{
-"label": "zaqef_clause",
-"children": [
-{
-"label": "pashta_phrase",
-"leaves": [
-"pashta"
-]
-},
-{
-"label": "zaqef_phrase",
-"leaves": [
-"munax",
-"zaqef"
-]
-}
-]
-}
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_phrase",
-"leaves": [
-"merkha",
-"tipexa"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },

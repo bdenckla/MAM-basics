@@ -3,7 +3,7 @@
 "summary": {
 "verses": 2527,
 "oddballs": 11,
-"no_parse": 1
+"no_parse": 6
 },
 "verses": [
 {
@@ -36530,6 +36530,7 @@
 "marks": "אֽאאא אאאא֥ אא-אאאא֑א א֝אאאא֗א אאא֥ אא-אאאֽאא׃",
 "tokens": [
 "TILDE",
+"NO_ACCENT",
 "MERKHA",
 "ATNAX",
 "REVIA_MUGRASH",
@@ -36538,37 +36539,12 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_phrase",
-"leaves": [
-"merkha",
-"atnax"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 1,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "revia_mugrash_phrase",
-"leaves": [
-"revia mugrash"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"merkha",
-"silluq"
-]
-}
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Psalms 38:11",
@@ -58878,6 +58854,7 @@
 "TILDE",
 "LEGARMEH",
 "MUNAX",
+"NO_ACCENT",
 "TSINNOR",
 "GALGAL",
 "OLEH_WEYORED",
@@ -58888,71 +58865,12 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "oleh_weyored_clause",
-"children": [
-{
-"label": "tsinnor_clause",
-"children": [
-{
-"label": "legarmeh_phrase",
-"leaves": [
-"legarmeh"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 3,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "tsinnor_phrase",
-"leaves": [
-"munax",
-"tsinnor"
-]
-}
-]
-},
-{
-"label": "oleh_weyored_phrase",
-"leaves": [
-"galgal",
-"oleh we-yored"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_phrase",
-"leaves": [
-"merkha",
-"atnax"
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "revia_mugrash_phrase",
-"leaves": [
-"revia mugrash"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Psalms 62:5",
@@ -64218,55 +64136,19 @@
 "DEXI",
 "MUNAX",
 "ATNAX",
+"NO_ACCENT",
 "REVIA_MUGRASH",
 "MERKHA",
 "SILLUQ",
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "dexi_phrase",
-"leaves": [
-"munax",
-"dexi"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 5,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "revia_mugrash_phrase",
-"leaves": [
-"revia mugrash"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"merkha",
-"silluq"
-]
-}
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Psalms 68:14",
@@ -122677,6 +122559,7 @@
 "marks": "אֽא אא֥אא אא-אֽאא֑א א֝אאא֗א אֽאא֥א אֽא׃",
 "tokens": [
 "TILDE",
+"NO_ACCENT",
 "MERKHA",
 "ATNAX",
 "REVIA_MUGRASH",
@@ -122685,37 +122568,12 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_phrase",
-"leaves": [
-"merkha",
-"atnax"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 1,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "revia_mugrash_phrase",
-"leaves": [
-"revia mugrash"
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"merkha",
-"silluq"
-]
-}
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Psalms 118:18",
@@ -128069,6 +127927,7 @@
 "marks": "אֽאא א֭אאא אא֣אאא א֑א אאא֖א אאאאא֣ אאֽא׃",
 "tokens": [
 "TILDE",
+"NO_ACCENT",
 "DEXI",
 "MUNAX",
 "ATNAX",
@@ -128078,38 +127937,12 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
-"tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "dexi_phrase",
-"leaves": [
-"dexi"
-]
+"status": "no_parse",
+"stall": {
+"accent_index": 1,
+"token_type": "NO_ACCENT"
 },
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"tarxa",
-"munax",
-"silluq"
-]
-}
-]
-}
+"tree": null
 },
 {
 "ref": "Psalms 119:97",

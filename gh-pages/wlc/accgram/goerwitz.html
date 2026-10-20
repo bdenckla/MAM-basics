@@ -12,7 +12,7 @@
 <h1>Goerwitz Run on WLC</h1>
 <h2>
 Introduction</h2>
-<p>This page lists the 96 WLC 4.22 verses that are considered ungrammatical by the Python port of
+<p>This page lists the 125 WLC 4.22 verses that are considered ungrammatical by the Python port of
 the Goerwitz accent checker.</p>
 <p>These verses are considered ungrammatical because they parse into a tree containing the string
 “ERROR”; each section below includes one such tree. Potential causes of “ERROR” include WLC issues,
@@ -65,7 +65,7 @@ missing silluq<span class="gf-opt-count">
 (8)</span></label><label><input type="checkbox" class="gf-category" value="zwhim" checked="checked">
 zarqa whim<span class="gf-opt-count">
 (12)</span></label><label><input type="checkbox" class="gf-category" value="other" checked="checked">
-other<span class="gf-opt-count"> (56)</span></label></fieldset>
+other<span class="gf-opt-count"> (85)</span></label></fieldset>
 <fieldset>
 <legend>
 Source</legend>
@@ -76,7 +76,7 @@ BHS/BHQ<span class="gf-opt-count">
 (34)</span></label><label><input type="checkbox" class="gf-source" value="lc" checked="checked">
 LC<span class="gf-opt-count">
 (12)</span></label><label><input type="checkbox" class="gf-source" value="tbd" checked="checked">
-unclear/TBD<span class="gf-opt-count"> (36)</span></label></fieldset>
+unclear/TBD<span class="gf-opt-count"> (65)</span></label></fieldset>
 <fieldset>
 <legend>
 UXLC change</legend>
@@ -84,16 +84,16 @@ UXLC change</legend>
 has<span class="gf-opt-count">
 (47)</span></label><label><input type="radio" class="gf-uchange" name="gf-uchange" value="no">
 doesn't have<span class="gf-opt-count">
-(49)</span></label><label><input type="radio" class="gf-uchange" name="gf-uchange" value="any" checked="checked">
+(78)</span></label><label><input type="radio" class="gf-uchange" name="gf-uchange" value="any" checked="checked">
 don't care</label></fieldset>
 <fieldset>
 <legend>
 WLC bracket-note</legend>
 <label><input type="radio" class="gf-wnote" name="gf-wnote" value="yes">
 has<span class="gf-opt-count">
-(50)</span></label><label><input type="radio" class="gf-wnote" name="gf-wnote" value="no"> doesn't
+(63)</span></label><label><input type="radio" class="gf-wnote" name="gf-wnote" value="no"> doesn't
 have<span class="gf-opt-count">
-(46)</span></label><label><input type="radio" class="gf-wnote" name="gf-wnote" value="any" checked="checked">
+(62)</span></label><label><input type="radio" class="gf-wnote" name="gf-wnote" value="any" checked="checked">
 don't care</label></fieldset>
 <p class="gf-count"></p>
 </div>
@@ -264,18 +264,8 @@ Summary: The LC lacks an accent on this chanted word.</p>
 </table>
 <div class="goerwitz-obs-tree-wrap">
 <table class="goerwitz-obs-error-table">
-<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="10" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">1</td><td colspan="7" title="atnax_clause">atnc</td><td colspan="3" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">2</td><td colspan="2" title="segolta_clause">segac</td><td colspan="5" title="atnax_clause">atnc</td><td colspan="2" title="tipexa_clause">tipc</td><td title="silluq_phrase">slqp</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">3</td><td title="zarqa_phrase">zarp</td><td title="segolta_phrase">segap</td><td colspan="4" title="zaqef_clause">zaqqc</td><td title="atnax_phrase">atnp</td><td title="tevir_phrase">tevp</td><td title="tipexa_phrase">tipp</td><td colspan="1"></td></tr>
-<tr><td class="goerwitz-obs-depth-cell">4</td><td colspan="2"></td><td colspan="2" title="revia_clause">revc</td><td colspan="2" title="zaqef_clause">zaqqc</td><td colspan="4"></td></tr>
-<tr><td class="goerwitz-obs-depth-cell">5</td><td colspan="2"></td><td title="geresh_phrase">gerp</td><td title="revia_phrase">revp</td><td title="pashta_phrase">pashp</td><td title="zaqef_phrase">zaqqp</td><td colspan="4"></td></tr>
-<tr><td class="goerwitz-obs-depth-cell"></td><td title="qadma munax zarqa">qom mun
-zar</td><td title="munax segolta">mun sega</td><td title="telishaqetanna azla geresh">telq qom
-ger</td><td title="revia">rev</td><td title="mahapakh pashta">mah
-pash</td><td title="munax zaqef">mun
-zaqq</td><td class="goerwitz-obs-error-cell">ERROR</td><td title="darga tevir">dar
-tev</td><td title="merkha tipexa">mer tip</td><td title="silluq">slq</td></tr>
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in דַּבֶּרְךָ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -301,6 +291,28 @@ change</a></p>
 <div class="goerwitz-obs-tree-wrap">
 <table class="goerwitz-obs-error-table">
 <tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark 82 in יִשְׂרָאֵ֘ל</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obex9v22">
+ex 9:22</h2>
+<p><a href="#obex9v22" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A2-Exodus.html#c9v22">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ex9:22">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וי֨אמר יהו֜ה
+<span class="goerwitz-tms-focus-highlight">אל־ משה</span> נט֤ה את־ ידך֙ על־ השמ֔ים ויה֥י בר֖ד בכל־
+א֣רץ מצר֑ים על־ האד֣ם ועל־ הבהמ֗ה וע֛ל כל־ ע֥שב השד֖ה בא֥רץ מצרֽים׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">אל־ משה</td><td>maqaf</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">אל־ מש֗ה</td><td>maqaf revia</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֶל־מֹשֶׁה</td></tr>
 <tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
@@ -793,6 +805,28 @@ tip</td><td title="silluq">slq</td><td class="goerwitz-obs-error-cell">ERROR</td
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obnu7v59">
+nu 7:59</h2>
+<p><a href="#obnu7v59" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A4-Numbers.html#c7v59">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Num7:59">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ולז֣בח השלמים֮ בק֣ר שנים֒ איל֤ם חמשה֙ עתד֣ים
+חמש֔ה כבש֥ים בני־ שנ֖ה חמש֑ה ז֛ה קרב֥ן גמליא֖ל <span class="goerwitz-tms-focus-highlight">בן־
+פדה</span> צֽור׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">בן־ פדה</td><td>maqaf</td><td>wlc_focus</td></tr>
+<tr><td>wlc422: [פדה | צֽור׃]; mam_simple: פדהצֽור׃</td><td></td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בֶּן־פְּדָה</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="msp" data-source="tbd" data-uchange="0" data-wnote="1">
 <hr><h2 id="obnu7v68">
 nu 7:68</h2>
@@ -817,6 +851,50 @@ from the LC.</p>
 <tr><td class="goerwitz-obs-depth-cell"></td><td title="merkha tevir">mer
 tev</td><td title="merkha tipexa">mer tip</td><td title="merkha silluq">mer
 slq</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obnu10v19">
+nu 10:19</h2>
+<p><a href="#obnu10v19" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A4-Numbers.html#c10v19">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Num10:19">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וע֨ל־ צב֔א מט֖ה בנ֣י שמע֑ון שלמיא֖ל
+<span class="goerwitz-tms-focus-highlight">בן־ צורי</span> שדֽי׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">בן־ צורי</td><td>maqaf</td><td>wlc_focus</td></tr>
+<tr><td>wlc422: [צורי | שדֽי׃]; mam_simple: צורישדֽי׃</td><td></td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בֶּן־צוּרִֽי</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obnu12v9">
+nu 12:9</h2>
+<p><a href="#obnu12v9" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A4-Numbers.html#c12v9">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Num12:9">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl"><span class="goerwitz-tms-focus-highlight">ויחר</span>
+א֧ף יהו֛ה ב֖ם וילֽך׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">ויֽחר</td><td style="text-align: right;"><span title="BHS has been faithful to ל (the Leningrad Codex) where there might be a question of the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but the latter refers to cases where BHQ has been published and we keep the same form as both BHS and BHQ.)">]1</span></td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td>wlc422: [ויחר | א֧ף]; uxlc:
+ויחרא֧ף</td><td style="text-align: right;"></td><td></td><td>diff_wlc_uxlc</td></tr>
+<tr><td lang="hbo" dir="rtl">ויֽחר־</td><td style="text-align: right;"></td><td>meteg-maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וַיִּֽחַר</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -926,6 +1004,51 @@ tip</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obdt1v38">
+dt 1:38</h2>
+<p><a href="#obdt1v38" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c1v38">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Deut1:38">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">יהוש֤ע
+<span class="goerwitz-tms-focus-highlight">בן</span> נון֙ העמ֣ד לפנ֔יך ה֖וא י֣בא ש֑מה את֣ו חז֔ק כי־
+ה֖וא ינחל֥נה את־ ישראֽל׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">בן</td><td style="text-align: right;"><span title="Marks a place where we agree with BHQ against BHS in reading ל. This note will be preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with BHS.">]Q</span><span title="An anomalous form in the text of ל. This bracket note was new to WLC 4.14 (only two occurrences in that version), and was not yet widely used at first, occurring on only 23 words in WLC 4.16. However, this bracket note occurs on 111 words (167 morphemes) in WLC 4.20.">]n</span><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHS. (This is similar to the note “]P”, but the latter refers to a punctuation difference against BHQ.)">]p</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">בן־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בִּן</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obdt4v46">
+dt 4:46</h2>
+<p><a href="#obdt4v46" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c4v46">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Deut4:46">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">בע֨בר הירד֜ן בג֗יא מ֚ול ב֣ית פע֔ור בא֗רץ סיחן֙
+מ֣לך האמר֔י אש֥ר יוש֖ב בחשב֑ון אש֨ר הכ֤ה משה֙ <span class="goerwitz-tms-focus-highlight">ובני</span>
+ישרא֔ל בצאת֖ם ממצרֽים׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">ובנֽי</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">ובנ֣י</td><td>munaḥ</td><td>diff_wlc_uxlc</td></tr>
+<tr><td lang="hbo" dir="rtl">ובנ֣י</td><td>munaḥ</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וּבְנֵֽי</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="1" data-wnote="0">
 <hr><h2 id="obdt5v8">
 dt 5:8</h2>
@@ -1011,6 +1134,30 @@ qadma over the ש. The “UXLC change” linked above replaced that pashta with 
 exactly the correction we advocate here.</p>
 <p class="goerwitz-tms-comment">This error in WLC probably has its source in BHS and/or BHQ, i.e.
 this error is unlikely original to WLC, but we have not confirmed that.</p>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obdt8v3">
+dt 8:3</h2>
+<p><a href="#obdt8v3" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c8v3">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Deut8:3">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ויענך֮ וירעבך֒ ויאכלך֤
+<span class="goerwitz-tms-focus-highlight">את</span> המן֙ אש֣ר לא־ יד֔עת ול֥א ידע֖ון אבת֑יך למ֣ען
+הודעך֗ כ֠י ל֣א על־ הל֤חם לבדו֙ יחי֣ה האד֔ם כ֛י על־ כל־ מוצ֥א פי־ יהו֖ה יחי֥ה האדֽם׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">את</td><td style="text-align: right;"><span title="Marks a place where we agree with BHQ against BHS in reading ל. This note will be preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with BHS.">]Q</span><span title="An anomalous form in the text of ל. This bracket note was new to WLC 4.14 (only two occurrences in that version), and was not yet widely used at first, occurring on only 23 words in WLC 4.16. However, this bracket note occurs on 111 words (167 morphemes) in WLC 4.20.">]n</span><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHS. (This is similar to the note “]P”, but the latter refers to a punctuation difference against BHQ.)">]p</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">את־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam[1]</td></tr>
+<tr><td>wlc422: הודעך֗; mam_simple:
+הודיעך֗</td><td style="text-align: right;"></td><td></td><td>diff_wlc_mam[2]</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֶת</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
 </section>
 <section class="goerwitz-verse" data-category="msp" data-source="tbd" data-uchange="0" data-wnote="1">
 <hr><h2 id="obdt9v20">
@@ -1214,11 +1361,8 @@ grammar, may be examples of that.</p>
 expected tipeḥa anywhere in the chanted word.</p>
 <div class="goerwitz-obs-tree-wrap">
 <table class="goerwitz-obs-error-table">
-<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="3" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">1</td><td title="atnax_phrase">atnp</td><td colspan="2" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">2</td><td colspan="1"></td><td title="tipexa_phrase">tipp</td><td title="silluq_phrase">slqp</td></tr>
-<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td><td title="merkha tipexa">mer
-tip</td><td title="merkha silluq">mer slq</td></tr>
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בְרֵֽעֲךָ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -1278,6 +1422,27 @@ change</a></p>
 <div class="goerwitz-obs-tree-wrap">
 <table class="goerwitz-obs-error-table">
 <tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark 82 in יִשְׂרָאֵ֘ל</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obdt33v28">
+dt 33:28</h2>
+<p><a href="#obdt33v28" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/A5-Deuter.html#c33v28">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Deut33:28">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וישכן֩ ישרא֨ל ב֤טח בדד֙ ע֣ין יעק֔ב אל־ א֖רץ דג֣ן
+ותיר֑וש אף־ שמ֖יו <span class="goerwitz-tms-focus-highlight">יערפו</span> טֽל׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">יֽערפו</td><td style="text-align: right;"><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHQ. (This is similar to the note “]p”, but the latter refers to punctuation differences against BHS.)">]P</span><span title="We read an accent in ל differently from BHS. (This is similar to the note “]C”, but the latter refers to accent differences against BHQ.)">]c</span></td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">י֥ערפו</td><td style="text-align: right;"></td><td>merkha</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in יַֽעַרְפוּ</td></tr>
 <tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
@@ -1399,6 +1564,52 @@ tip</td><td title="silluq">slq</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obju6v2">
+ju 6:2</h2>
+<p><a href="#obju6v2" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c6v2">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Judg6:2">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ות֥עז יד־ מדי֖ן על־ ישרא֑ל מפנ֨י מדי֜ן
+<span class="goerwitz-tms-focus-highlight">עשו</span> לה֣ם׀ בנ֣י ישרא֗ל את־ המנהרות֙ אש֣ר בהר֔ים
+ואת־ המער֖ות ואת־ המצדֽות׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">עשֽו</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">עש֥ו</td><td>merkha</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in עָשֽׂוּ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obju9v2">
+ju 9:2</h2>
+<p><a href="#obju9v2" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c9v2">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Judg9:2">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">דברו־ נ֞א באזנ֨י כל־ בעל֣י שכם֮ מה־ ט֣וב לכם֒
+המש֨ל בכ֜ם שבע֣ים א֗יש כ֚ל בנ֣י ירב֔על אם־ מש֥ל בכ֖ם א֣יש אח֑ד וזכרת֕ם
+<span class="goerwitz-tms-focus-highlight">כי־ עצמכם</span> ובשרכ֖ם אנֽי׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">כי־ עצמכם</td><td>maqaf</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">כי־ עצמכ֥ם</td><td>maqaf merkha</td><td>diff_wlc_mam[1]</td></tr>
+<tr><td>wlc422: אנֽי׃; mam_simple: אֽני׃</td><td></td><td>diff_wlc_mam[2]</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in
+כִּֽי־עַצְמֵכֶם</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="other" data-source="bhs" data-uchange="1" data-wnote="0">
 <hr><h2 id="obju11v24">
 ju 11:24</h2>
@@ -1503,6 +1714,28 @@ atn</td><td title="tevir">tev</td><td class="goerwitz-obs-error-cell">ERROR</td>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obju20v36">
+ju 20:36</h2>
+<p><a href="#obju20v36" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/B2-Judges.html#c20v36">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Judg20:36">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וירא֥ו בני־ בנימ֖ן כ֣י נג֑פו ויתנ֨ו איש־ ישרא֤ל
+מקום֙ לבנימ֔ן כ֤י בטחו֙ אל־ ה֣אר֔ב <span class="goerwitz-tms-focus-highlight">אשר</span> ש֖מו אל־
+הגבעֽה׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">אשר</td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">אשר־</td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֲשֶׁר</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="other" data-source="bhs" data-uchange="1" data-wnote="0">
 <hr><h2 id="obju21v16">
 ju 21:16</h2>
@@ -1568,6 +1801,51 @@ zaqq</td><td title="merkha tipexa">mer tip</td><td title="atnax">atn</td><td tit
 zaqq</td><td title="darga tevir">dar
 tev</td><td title="tipexa">tip</td><td title="merkha silluq">mer
 slq</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="ob1s13v4">
+1s 13:4</h2>
+<p><a href="#ob1s13v4" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c13v4">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?1Sam13:4">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וכל־ ישרא֞ל שמע֣ו לאמ֗ר הכ֤ה שאול֙ את־ נצ֣יב
+פלשת֔ים <span class="goerwitz-tms-focus-highlight">וגם־ נבאש</span> ישרא֖ל בפלשת֑ים ויצעק֥ו הע֛ם
+אחר֥י שא֖ול הגלגֽל׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">וגם־ נבאש</td><td>maqaf</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">וגם־ נבא֥ש</td><td>maqaf merkha</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וְגַם־נִבְאַשׁ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="ob1s14v24">
+1s 14:24</h2>
+<p><a href="#ob1s14v24" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BA-1Samuel.html#c14v24">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?1Sam14:24">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ואיש־ ישרא֥ל נג֖ש בי֣ום הה֑וא ויאל֩ שא֨ול את־
+הע֜ם לאמ֗ר אר֣ור ה֠איש אשר־ י֨אכל ל֜חם עד־ הע֗רב ונקמתי֙ מא֣יב֔י
+<span class="goerwitz-tms-focus-highlight">ולא</span> טע֥ם כל־ הע֖ם לֽחם׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">ולֽא</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td>wlc422: ויאל֩; mam_simple: וי֩אל֩</td><td></td><td>diff_wlc_mam[1]</td></tr>
+<tr><td lang="hbo" dir="rtl">ולא־</td><td>maqaf</td><td>diff_wlc_mam[2]</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וְלֹֽא</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -1670,15 +1948,32 @@ change</a></p>
 </table>
 <div class="goerwitz-obs-tree-wrap">
 <table class="goerwitz-obs-error-table">
-<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="8" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">1</td><td colspan="3" title="atnax_clause">atnc</td><td colspan="5" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">2</td><td colspan="2" title="tipexa_clause">tipc</td><td title="atnax_phrase">atnp</td><td colspan="3" title="zaqef_clause">zaqqc</td><td colspan="2" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">3</td><td title="tevir_phrase">tevp</td><td title="tipexa_phrase">tipp</td><td colspan="1"></td><td colspan="2" title="revia_clause">revc</td><td title="zaqef_phrase">zaqqp</td><td title="tipexa_phrase">tipp</td><td title="silluq_phrase">slqp</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">4</td><td colspan="3"></td><td title="geresh_phrase">gerp</td><td title="revia_phrase">revp</td><td colspan="3"></td></tr>
-<tr><td class="goerwitz-obs-depth-cell"></td><td title="tevir">tev</td><td title="merkha tipexa">mer
-tip</td><td title="atnax">atn</td><td title="azla geresh">qom
-ger</td><td title="revia">rev</td><td class="goerwitz-obs-error-cell">ERROR</td><td title="tipexa">tip</td><td title="merkha silluq">mer
-slq</td></tr>
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in
+בַּפְּלִשְׁתִּים</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="ob2s24v13">
+2s 24:13</h2>
+<p><a href="#ob2s24v13" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BB-2Samuel.html#c24v13">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?2Sam24:13">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ויבא־ ג֥ד אל־ דו֖ד ויגד־ ל֑ו וי֣אמר ל֡ו התב֣וא
+לך֣ <span class="goerwitz-tms-focus-highlight">שבע</span> שנ֣ים׀ רע֣ב׀ בארצ֡ך אם־ שלש֣ה ח֠דשים נסך֨
+לפני־ צר֜יך וה֣וא רדפ֗ך ואם־ ה֠יות של֨שת ימ֥ים ד֙בר֙ בארצ֔ך עתה֙ ד֣ע ורא֔ה מה־ אש֥יב שלח֖י דבֽר׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">שֽבע</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">שֽבע־</td><td>meteg-maqaf</td><td>diff_wlc_uxlc</td></tr>
+<tr><td lang="hbo" dir="rtl">שבע־</td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in שֶֽׁבַע</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -1932,6 +2227,51 @@ involves merkha kefula; I wonder whether, because it is so rare, we lack a good 
 atn</td><td title="legarmeh">lgm</td><td title="munax revia">mun
 rev</td><td title="pashta">pash</td><td title="zaqef">zaqq</td><td title="qadma darga tevir">qom dar
 tev</td><td title="merkha tipexa">mer tip</td><td title="merkha silluq">mer slq</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="ob2k5v27">
+2k 5:27</h2>
+<p><a href="#ob2k5v27" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c5v27">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?2Kings5:27">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וצר֤עת נעמן֙ תדבק־ בך֔
+<span class="goerwitz-tms-focus-highlight">ובזרעך</span> לעול֑ם ויצ֥א מלפנ֖יו מצר֥ע כשֽלג׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">וֽבזרעך</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">וֽבזרעך֖</td><td>meteg-tipeḥa</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וּֽבְזַרְעֲךָ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="ob2k18v27">
+2k 18:27</h2>
+<p><a href="#ob2k18v27" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/BD-2Kings.html#c18v27">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?2Kings18:27">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וי֨אמר אליה֜ם רב־ שק֗ה הע֨ל אדנ֤יך ואל֙יך֙ שלח֣ני
+אדנ֔י לדב֖ר את־ הדבר֣ים הא֑לה הל֣א על־ האנש֗ים הישבים֙ על־ ה֣חמ֔ה לאכ֣ל
+<span class="goerwitz-tms-focus-highlight">את</span> צואת֗ם ולשת֛ות את־ מימ֥י רגליה֖ם עמכֽם׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">את</td><td style="text-align: right;"><span title="BHS has been faithful to ל (the Leningrad Codex) where there might be a question of the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but the latter refers to cases where BHQ has been published and we keep the same form as both BHS and BHQ.)">]1</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td>wlc422: [רב־ | שק֗ה]; mam_simple:
+רבשק֗ה</td><td style="text-align: right;"></td><td></td><td>diff_wlc_mam[1]</td></tr>
+<tr><td lang="hbo" dir="rtl">את־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam[2]</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֶת</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -2298,6 +2638,50 @@ tip</td><td title="silluq">slq</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obje32v13">
+je 32:13</h2>
+<p><a href="#obje32v13" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c32v13">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Jer32:13">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ואצוה֙
+<span class="goerwitz-tms-focus-highlight">את</span> בר֔וך לעיניה֖ם לאמֽר׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">את</td><td style="text-align: right;"><span title="BHS has been faithful to ל (the Leningrad Codex) where there might be a question of the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but the latter refers to cases where BHQ has been published and we keep the same form as both BHS and BHQ.)">]1</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">את־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֶת</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obje34v21">
+je 34:21</h2>
+<p><a href="#obje34v21" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C2-Jeremiah.html#c34v21">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Jer34:21">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ואת־ צדקי֨הו מלך־ יהוד֜ה ואת־ שר֗יו אתן֙ בי֣ד
+איביה֔ם ובי֖ד מבקש֣י נפש֑ם <span class="goerwitz-tms-focus-highlight">וביד</span> ח֚יל מ֣לך בב֔ל
+העל֖ים מעליכֽם׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">וביד</td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">ובי֗ד</td><td>revia</td><td>diff_wlc_uxlc</td></tr>
+<tr><td lang="hbo" dir="rtl">ובי֗ד</td><td>revia</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וּבְיַד</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="other" data-source="lc" data-uchange="0" data-wnote="0">
 <hr><h2 id="obje37v10">
 je 37:10</h2>
@@ -2659,6 +3043,72 @@ slq</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obek43v17">
+ek 43:17</h2>
+<p><a href="#obek43v17" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c43v17">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ezek43:17">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">והעזר֞ה ארב֧ע עשר֣ה א֗רך בארב֤ע עשרה֙ ר֔חב א֖ל
+ארב֣עת רבע֑יה <span class="goerwitz-tms-focus-highlight">והגבול</span> סב֨יב אות֜ה חצ֣י האמ֗ה והחיק־
+ל֤ה אמה֙ סב֔יב ומעלת֖הו פנ֥ות קדֽים׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">והגבול</td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">והגבול֩</td><td></td><td>diff_wlc_uxlc</td></tr>
+<tr><td lang="hbo" dir="rtl">והגבול֩</td><td></td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in וְהַגְּבוּל</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obek46v12">
+ek 46:12</h2>
+<p><a href="#obek46v12" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/C3-Ezekiel.html#c46v12">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ezek46:12">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וכי־ יעשה֩ הנש֨יא נדב֜ה עול֣ה או־ שלמים֮ נדב֣ה
+ליהוה֒ ופ֣תח ל֗ו <span class="goerwitz-tms-focus-highlight">את</span> הש֙ער֙ הפנ֣ה קד֔ים ועש֤ה את־
+עלתו֙ ואת־ שלמ֔יו כאש֥ר יעש֖ה בי֣ום השב֑ת ויצ֛א וסג֥ר את־ הש֖ער אחר֥י צאתֽו׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">את</td><td style="text-align: right;"><span title="BHS has been faithful to ל (the Leningrad Codex) where there might be a question of the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but the latter refers to cases where BHQ has been published and we keep the same form as both BHS and BHQ.)">]1</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">את־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֶת</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obho2v16">
+ho 2:16</h2>
+<p><a href="#obho2v16" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/CA-Hosea.html#c2v16">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Hos2:16">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">לכ֗ן הנ֤ה אנכי֙ מפת֔יה והלכת֖יה המדב֑ר ודברת֖י
+<span class="goerwitz-tms-focus-highlight">על</span> לבֽה׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">על</td><td style="text-align: right;"><span title="Marks a place where we agree with BHQ against BHS in reading ל. This note will be preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with BHS.">]Q</span><span title="An anomalous form in the text of ל. This bracket note was new to WLC 4.14 (only two occurrences in that version), and was not yet widely used at first, occurring on only 23 words in WLC 4.16. However, this bracket note occurs on 111 words (167 morphemes) in WLC 4.20.">]n</span><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHS. (This is similar to the note “]P”, but the latter refers to a punctuation difference against BHQ.)">]p</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">על־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in עַל</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="msp" data-source="tbd" data-uchange="0" data-wnote="1">
 <hr><h2 id="obho4v19">
 ho 4:19</h2>
@@ -2849,17 +3299,8 @@ Summary: The LC has no visible accent on עליה.</p>
 <p class="goerwitz-tms-comment">See the image in the UXLC note to which we link above.</p>
 <div class="goerwitz-obs-tree-wrap">
 <table class="goerwitz-obs-error-table">
-<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="11" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">1</td><td colspan="2" title="atnax_clause">atnc</td><td colspan="9" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">2</td><td title="tipexa_phrase">tipp</td><td title="atnax_phrase">atnp</td><td colspan="6" title="zaqef_clause">zaqqc</td><td colspan="3" title="silluq_clause">slqc</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">3</td><td colspan="2"></td><td colspan="2" title="revia_clause">revc</td><td colspan="4" title="zaqef_clause">zaqqc</td><td colspan="2" title="tipexa_clause">tipc</td><td title="silluq_phrase">slqp</td></tr>
-<tr><td class="goerwitz-obs-depth-cell">4</td><td colspan="2"></td><td title="geresh_phrase">gerp</td><td title="revia_phrase">revp</td><td colspan="2" title="pashta_clause">pashc</td><td colspan="2" title="zaqef_clause">zaqqc</td><td title="tevir_phrase">tevp</td><td title="tipexa_phrase">tipp</td><td colspan="1"></td></tr>
-<tr><td class="goerwitz-obs-depth-cell">5</td><td colspan="4"></td><td title="geresh_phrase">gerp</td><td title="pashta_phrase">pashp</td><td title="pashta_phrase">pashp</td><td title="zaqef_phrase">zaqqp</td><td colspan="3"></td></tr>
-<tr><td class="goerwitz-obs-depth-cell"></td><td title="tipexa">tip</td><td title="atnax">atn</td><td title="telishaqetanna azla geresh">telq
-qom ger</td><td title="revia">rev</td><td title="azla geresh">qom
-ger</td><td title="mahapakh pashta">mah
-pash</td><td title="pashta">pash</td><td title="munax zaqef">mun
-zaqq</td><td title="tevir">tev</td><td class="goerwitz-obs-error-cell">ERROR</td><td title="silluq">slq</td></tr>
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in עָלֶיהָ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -2899,6 +3340,97 @@ ERROR and the defect are in one place.</p>
 rev</td><td title="pashta">pash</td><td title="munax zaqef">mun
 zaqq</td><td title="tipexa">tip</td><td title="atnax">atn</td><td class="goerwitz-obs-error-cell">ERROR</td><td title="tipexa">tip</td><td title="merkha silluq">mer
 slq</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obmi5v7">
+mi 5:7</h2>
+<p><a href="#obmi5v7" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/CF-Micah.html#c5v7">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Mic5:7">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">והיה֩ שאר֨ית יעק֜ב בגוי֗ם בק֙רב֙ עמ֣ים רב֔ים
+כאריה֙ בבהמ֣ות י֔ער ככפ֖יר <span class="goerwitz-tms-focus-highlight">בעדרי</span> צ֑אן אש֧ר אם עב֛ר
+ורמ֥ס וטר֖ף וא֥ין מצֽיל׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">בעדרי</td><td style="text-align: right;"><span title="Marks a place where we agree with BHQ against BHS in reading ל. This note will be preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with BHS.">]Q</span><span title="An anomalous form in the text of ל. This bracket note was new to WLC 4.14 (only two occurrences in that version), and was not yet widely used at first, occurring on only 23 words in WLC 4.16. However, this bracket note occurs on 111 words (167 morphemes) in WLC 4.20.">]n</span><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHS. (This is similar to the note “]P”, but the latter refers to a punctuation difference against BHQ.)">]p</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">בעדרי־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam[1]</td></tr>
+<tr><td>wlc422: אם; mam_simple:
+אם־</td><td style="text-align: right;"></td><td></td><td>diff_wlc_mam[2]</td></tr>
+</table>
+<p class="goerwitz-tms-comment">In this verse the chanted word אם has neither mark either.</p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בְּעֶדְרֵי; no accent in
+אִם</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obhb2v8">
+hb 2:8</h2>
+<p><a href="#obhb2v8" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/CH-Habakkuk.html#c2v8">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Hab2:8">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl"><span class="goerwitz-tms-focus-highlight">כי</span>
+את֤ה של֙ות֙ גוי֣ם רב֔ים ישל֖וך כל־ י֣תר עמ֑ים מדמ֤י אדם֙ וחמס־ א֔רץ קרי֖ה וכל־ י֥שבי בֽה׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">כֽי</td><td style="text-align: right;"><span title="BHS and BHQ have both been faithful to ל (the Leningrad Codex) where there might be a question of the validity of the form and we keep the same form as both BHS and BHQ. This is similar to the note “]1”, but the latter refers to cases where we keep the same form as just BHS. (“]U” only applies when the relevant fascicle of BHQ has been published and BHQ has the same reading as BHS.)">]U</span></td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">כֽי־</td><td style="text-align: right;"></td><td>meteg-maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in כִּֽי</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="obca7v13">
+ca 7:13</h2>
+<p><a href="#obca7v13" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E1-Song%20of%20Songs.html#c7v13">Mwd</a>
+| <a href="https://tanach.us/Tanach.xml?Song7:13">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">נשכ֙ימה֙ לכרמ֔ים נרא֞ה
+<span class="goerwitz-tms-focus-highlight">אם</span> פרח֤ה הג֙פן֙ פת֣ח הסמד֔ר הנ֖צו הרמונ֑ים ש֛ם
+את֥ן את־ דד֖י לֽך׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">אם</td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">אם־</td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אִם</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="oblm2v3">
+lm 2:3</h2>
+<p><a href="#oblm2v3" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E3-Lamentations.html#c2v3">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Lam2:3">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">גד֣ע
+<span class="goerwitz-tms-focus-highlight">בחרי</span> א֗ף כ֚ל ק֣רן ישרא֔ל הש֥יב אח֛ור ימינ֖ו מפנ֣י
+אוי֑ב ויבע֤ר ביעקב֙ כא֣ש להב֔ה אכל֖ה סבֽיב׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">בֽחרי</td><td style="text-align: right;"><span title="Marks a place where we agree with BHQ against BHS in reading ל. This note will be preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with BHS.">]Q</span><span title="An anomalous form in the text of ל. This bracket note was new to WLC 4.14 (only two occurrences in that version), and was not yet widely used at first, occurring on only 23 words in WLC 4.16. However, this bracket note occurs on 111 words (167 morphemes) in WLC 4.20.">]n</span><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHS. (This is similar to the note “]P”, but the latter refers to a punctuation difference against BHQ.)">]p</span></td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">בֽחרי־</td><td style="text-align: right;"></td><td>meteg-maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בָּֽחֳרִי</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -3052,6 +3584,29 @@ atn</td><td title="tipexa">tip</td><td title="silluq">slq</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="obes5v14">
+es 5:14</h2>
+<p><a href="#obes5v14" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/E5-Esther.html#c5v14">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Esth5:14">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ות֣אמר לו֩ ז֨רש אשת֜ו וכל־ אהב֗יו יעשו־ עץ֮ גב֣ה
+חמש֣ים אמה֒ ובב֣קר׀ אמ֣ר למ֗לך ויתל֤ו את־ מרדכי֙ על֔יו ובא־ עם־ המ֥לך
+<span class="goerwitz-tms-focus-highlight">אל</span> המשת֖ה שמ֑ח וייט֧ב הדב֛ר לפנ֥י המ֖ן וי֥עש
+העֽץ׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">אל</td><td style="text-align: right;"><span title="Marks a place where we agree with BHQ against BHS in reading ל. This note will be preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with BHS.">]Q</span><span title="An anomalous form in the text of ל. This bracket note was new to WLC 4.14 (only two occurrences in that version), and was not yet widely used at first, occurring on only 23 words in WLC 4.16. However, this bracket note occurs on 111 words (167 morphemes) in WLC 4.20.">]n</span><span title="We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל differently from BHS. (This is similar to the note “]P”, but the latter refers to a punctuation difference against BHQ.)">]p</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">אל־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֶל</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="1" data-wnote="0">
 <hr><h2 id="obda2v41">
 da 2:41</h2>
@@ -3084,6 +3639,28 @@ pash</td><td title="munax zaqef">mun zaqq</td><td title="mahapakh pashta">mah
 pash</td><td title="zaqef">zaqq</td><td class="goerwitz-obs-error-cell">ERROR</td><td title="atnax">atn</td><td title="pashta">pash</td><td title="munax zaqef">mun
 zaqq</td><td>methiga-zaqef</td><td title="tipexa">tip</td><td title="merkha silluq">mer
 slq</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="ober4v14">
+er 4:14</h2>
+<p><a href="#ober4v14" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/FA-Ezra.html#c4v14">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ezra4:14">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">כע֗ן כל־ קבל֙ די־ מל֤ח היכלא֙ מל֔חנא וערו֣ת מלכ֔א
+ל֥א <span class="goerwitz-tms-focus-highlight">אריך</span> ל֖נא למחז֑א ע֨ל־ דנ֔ה של֖חנא והוד֥ענא
+למלכֽא׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">אֽרֽיך</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">אֽרֽיך־</td><td>meteg-meteg-maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in אֲ‍ֽרִֽיךְ</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -3185,6 +3762,29 @@ tev</td><td title="merkha tipexa">mer tip</td><td class="goerwitz-obs-error-cell
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="0">
+<hr><h2 id="ob1c22v4">
+1c 22:4</h2>
+<p><a href="#ob1c22v4" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/FC-1Chronicles.html#c22v4">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?1Chr22:4">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">ועצ֥י ארז֖ים לא֣ין מספ֑ר
+<span class="goerwitz-tms-focus-highlight">כי</span> ה֠ביאו הצידנ֨ים והצר֜ים עצ֧י ארז֛ים לר֖ב
+לדוֽיד׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">כֽי</td><td>meteg-space</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">כֽי־</td><td>meteg-maqaf</td><td>diff_wlc_uxlc</td></tr>
+<tr><td lang="hbo" dir="rtl">כֽי־</td><td>meteg-maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in כִּֽי</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-category="other" data-source="bhs" data-uchange="1" data-wnote="0">
 <hr><h2 id="ob2c7v5">
 2c 7:5</h2>
@@ -3245,6 +3845,28 @@ change</a></p>
 <tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td><td title="merkha tipexa">mer
 tip</td><td title="munax atnax">mun
 atn</td><td title="tipexa">tip</td><td title="silluq">slq</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-category="other" data-source="tbd" data-uchange="0" data-wnote="1">
+<hr><h2 id="ob2c16v4">
+2c 16:4</h2>
+<p><a href="#ob2c16v4" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Summary: WLC has neither an accent on this chanted word nor a maqaf joining it to the atom after
+it.</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/FD-2Chronicles.html#c16v4">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?2Chr16:4">UXLC</a></p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">וישמ֨ע
+<span class="goerwitz-tms-focus-highlight">בן</span> הד֜ד אל־ המ֣לך אס֗א ו֠ישלח את־ שר֨י החיל֤ים
+אשר־ לו֙ אל־ ער֣י ישרא֔ל ויכו֙ את־ עי֣ון ואת־ ד֔ן וא֖ת אב֣ל מ֑ים וא֥ת כל־ מסכנ֖ות ער֥י נפתלֽי׃</p>
+<table class="goerwitz-tms-sat">
+<tr><td lang="hbo" dir="rtl">בן</td><td style="text-align: right;"><span title="BHS has been faithful to ל (the Leningrad Codex) where there might be a question of the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but the latter refers to cases where BHQ has been published and we keep the same form as both BHS and BHQ.)">]1</span></td><td>no_accent</td><td>wlc_focus</td></tr>
+<tr><td lang="hbo" dir="rtl">בן־</td><td style="text-align: right;"></td><td>maqaf</td><td>diff_wlc_mam</td></tr>
+</table>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td>illegal_mark no accent in בֶּן</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -3357,6 +3979,10 @@ WLC Bracket Notes</h2>
 the validity of the form and we keep the same form as BHS. (This is similar to the note “]U”, but
 the latter refers to cases where BHQ has been published and we keep the same form as both BHS and
 BHQ.)</li>
+<li>
+<code>]P</code>: We read a punctuation character (Maqqef, Mappiq, Dagesh, space, or Sof Pasuq) in ל
+differently from BHQ. (This is similar to the note “]p”, but the latter refers to punctuation
+differences against BHS.)</li>
 <li>
 <code>]Q</code>: Marks a place where we agree with BHQ against BHS in reading ל. This note will be
 preceded or followed by one or more bracket notes to specify the type(s) of disagreement(s) with

@@ -447,9 +447,10 @@ def _build_intro(ungrammatical: list[dict[str, object]]) -> tuple[object, ...]:
                 "“missing silluq,” where the sof pasuq arrives with no silluq, "
                 "recovered into an ERROR-leaf tree (structure preserved).",
                 "“NO_PARSE,” a structural L anomaly for which no valid tree exists "
-                "— whether the disjunctive hierarchy is violated or a token is "
-                "lexically illicit; the offending accent (where the parse "
-                "dead-ended) is marked “← stalled here” in its tree and named in "
+                "— whether the disjunctive hierarchy is violated, a token is "
+                "lexically illicit, or a chanted word has no accent at all (shown as "
+                "NO_ACCENT); the offending accent, or the NO_ACCENT, where the parse "
+                "dead-ended is marked “← stalled here” in its tree and named in "
                 "the meta line.",
             )
         ),

@@ -9,6 +9,7 @@ from accgram.prose_ob_notes_shared import (
     MISSING_SOF_PASUQ_COMMENT,
     MISSING_SOF_PASUQ_SUMMARY,
     MUNAX,
+    NO_ACCENT,
     TIPEXA,
     TIP_LIKE_INCL,
 )
@@ -160,5 +161,50 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "אל֣וף",
         "st-summary": f"The LC has a {MUNAX} where a merkha is expected.",
         "img": "LC-328A-col-1-line-27-1C-1v53.png",
+    },
+    "1c 22:4": {
+        **NO_ACCENT,
+        "wlc_focus": "כי",
+    },
+    "1s 13:4": {
+        **NO_ACCENT,
+        "wlc_focus": "וגם־ נבאש",
+    },
+    "1s 14:24": {
+        **NO_ACCENT,
+        "wlc_focus": "ולא",
+    },
+    "2k 5:27": {
+        **NO_ACCENT,
+        "wlc_focus": "ובזרעך",
+    },
+    "2k 18:27": {
+        **NO_ACCENT,
+        "wlc_focus": "את",
+    },
+    "ca 7:13": {
+        **NO_ACCENT,
+        "wlc_focus": "אם",
+    },
+    "er 4:14": {
+        **NO_ACCENT,
+        "wlc_focus": "אריך",
+    },
+    "es 5:14": {
+        **NO_ACCENT,
+        "wlc_focus": "אל",
+    },
+    "hb 2:8": {
+        **NO_ACCENT,
+        "wlc_focus": "כי",
+    },
+    "lm 2:3": {
+        **NO_ACCENT,
+        "wlc_focus": "בחרי",
+    },
+    "mi 5:7": {
+        **NO_ACCENT,
+        "wlc_focus": "בעדרי",
+        "comment": "In this verse the chanted word אם has neither mark either.",
     },
 }

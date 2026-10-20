@@ -72,6 +72,12 @@ SHALSHELET = "SHALSHELET"
 # future-proofing guard, the poetic side of "nothing vanishes silently".
 STRAY_ACCENT = "STRAY_ACCENT"
 
+# A chanted word with NO accent at all, which no accent rule can tokenize: ``scan_verse`` emits
+# this at the chanted word's place (``accgram.unaccented_chanted_words`` holds the rule and its
+# exemptions).  Like STRAY_ACCENT it has no grammar terminal, so the verse becomes a NO_PARSE
+# stalled at the chanted word rather than a parse that never saw it.
+NO_ACCENT = "NO_ACCENT"
+
 # --- conjunctive servi ---------------------------------------------------------
 MUNAX = "MUNAX"  # munax
 MERKHA = "MERKHA"

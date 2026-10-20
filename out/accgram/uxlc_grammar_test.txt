@@ -7,33 +7,56 @@ prose-corpus verses          : 231  (249 changes)
   of validated: scanner-VISIBLE change 121, no-op 95
 
 2x2 over validated VERSES (all):
-  WLC-gram    -> UXLC-gram   : 199
-  WLC-gram    -> UXLC-ungram : 10
-  WLC-ungram  -> UXLC-gram   : 5
-  WLC-ungram  -> UXLC-ungram : 2
+  WLC-gram    -> UXLC-gram   : 179
+  WLC-gram    -> UXLC-ungram : 25
+  WLC-ungram  -> UXLC-gram   : 8
+  WLC-ungram  -> UXLC-ungram : 4
 
 2x2 over scanner-VISIBLE verses (the meaningful denominator):
-  WLC-gram    -> UXLC-gram   : 104
-  WLC-gram    -> UXLC-ungram : 10
-  WLC-ungram  -> UXLC-gram   : 5
-  WLC-ungram  -> UXLC-ungram : 2
+  WLC-gram    -> UXLC-gram   : 86
+  WLC-gram    -> UXLC-ungram : 25
+  WLC-ungram  -> UXLC-gram   : 6
+  WLC-ungram  -> UXLC-ungram : 4
 
-WLC-gram -> UXLC-ungram (degradation): 10 verses
+WLC-gram -> UXLC-ungram (degradation): 25 verses
     1Kings 12:5.3    [accent/substitution] Change merkha to tipeha under the kaf. Add note 'm'.
     1Kings 12:25.6   [accent/substitution] Replace tipeha and patah from under resh with qamats. P
     1Kings 17:16.9   [accent/substitution] Change munah under the bet to a mahapakh.
+    1Kings 17:23.13  [accent/substitution] Remove tipeha under aleph. Add note 't'
+    1Kings 17:23.14  [accent/substitution] Replace merkha under het with tipeha.
+    1Sam 2:16.13     [accent/substitution] Change merkha following the patah under the mem to mete
+    1Sam 10:3.26     [accent/substitution] Change merkha under het to tipeha. Add note 't'.
+    1Sam 10:3.27     [accent/substitution] Change tipeha under sin to meteg. Add note 'm'.
     1Sam 17:52.23    [silluq/remove_terminator] Remove sof-pasuq. Add note 'c'.
+    1Sam 21:14.12    [accent/substitution] Change merkha under the yod to meteg. Add note 'm' .
+    2Chr 33:21.2     [accent/substitution] Change darga to meteg under the resh.
+    2Kings 9:14.17   [accent/substitution] Change merkha under nun to tipeha.
+    2Kings 9:14.18   [accent/substitution] Change tipeha under aleph to meteg. Add note 'm'.
+    2Kings 9:17.19   [accent/substitution] Replace sheva on shin with patah. Add 't' note. Replace
     2Kings 9:35.10   [accent/substitution] Replace merkha under pe with tipeha.
+    2Kings 10:33.13  [accent/substitution] Remove munah from under shin.
+    2Kings 13:11.1   [accent/substitution] Change hataf-patah under ayin to patah. Change merkha u
+    2Kings 13:11.6   [accent/substitution] Replace revia on samekh with telisha-gedola.
+    2Kings 14:6.7    [accent/substitution] Replace munah under samekh with meteg. Add note 't'.
+    2Sam 3:5.1       [accent/substitution] Remove dagesh from first shin, remove munah from under
+    2Sam 7:22.7      [accent/substitution] Change munah to meteg under the aleph.
+    2Sam 15:26.10    [accent/substitution] Change merkha under shin to tipeha.
+    2Sam 15:26.11    [accent/substitution] Change tipeha under tet to meteg. Add note 'm'.
     Ezek 34:12.20    [accent/substitution] Change merkha under yod to tipeha.
     Ex 22:4.18       [silluq/remove_terminator] Remove sof pasuq; add note 'c'.
     Gen 18:15.8      [accent/add_accent] Add merkha after segol under mem. Add note 't'.
+    Gen 28:7.8       [accent/substitution] Change merkha on dalet to a meteg. Add 'm' note.
     Jer 52:18.10     [accent/substitution] Change revia on pe to zaqef qatan.
     Josh 14:10.4     [accent/substitution] Change munah under vav to meteg. Add note 'm'.
+    Josh 19:8.8      [accent/substitution] Add note 'm' to bet, remove merkha from lamed.
 
-WLC-ungram -> UXLC-gram (fix): 5 verses
-    Ezek 11:1.29     [accent/substitution] Change tipeha to meteg below resh.
-    Ex 38:12.6       [accent/substitution] Change merkha under he to meteg. Add note 'm'.
+WLC-ungram -> UXLC-gram (fix): 8 verses
+    1Chr 22:4.5      [maqaf/substitution] Add maqaf to end of word.
+    2Sam 24:13.11    [maqaf/substitution] Add maqaf to end of word.
+    Deut 4:46.17     [accent/substitution] Replace meteg under nun with munah.
+    Ezek 43:17.11    [accent/add_accent] Add telisha qetana to lamed. Remove note 'c'.
     Jer 10:3.11      [accent/substitution] Change merkha to meteg under the dalet.
+    Jer 34:21.13     [accent/add_accent] Add revia above the yod.
     Jer 46:4.6       [accent/substitution] Change merkha to meteg under the kaf.
     Lev 25:20.4      [accent/substitution] Remove mahapakh under the kaf. Remove 'c' note.
 
@@ -55,9 +78,9 @@ Excluded verses (synth could not be validated):
     Num 11:24.2                  ref-mismatch: synth WLC word != real M-C word
 
 By-kind breakdown of solo-change verses (confidence buckets):
-  add_accent        : WLC-gram->[g  14 / u   1]   WLC-ungram->[g   0 / u   1]
+  add_accent        : WLC-gram->[g  12 / u   1]   WLC-ungram->[g   2 / u   1]
   remove_terminator : WLC-gram->[g   0 / u   2]   WLC-ungram->[g   0 / u   0]
-  substitution      : WLC-gram->[g 170 / u   7]   WLC-ungram->[g   5 / u   1]
+  substitution      : WLC-gram->[g 157 / u  17]   WLC-ungram->[g   6 / u   3]
 
 
 === IN set: WLC-4.22 vs UXLC grammaticality (changes IN prose output) ===
@@ -69,24 +92,23 @@ prose-corpus verses          : 46  (46 changes)
   of validated: scanner-VISIBLE change 32, no-op 1
 
 2x2 over validated VERSES (all):
-  WLC-gram    -> UXLC-gram   : 1
+  WLC-gram    -> UXLC-gram   : 0
   WLC-gram    -> UXLC-ungram : 0
-  WLC-ungram  -> UXLC-gram   : 30
-  WLC-ungram  -> UXLC-ungram : 2
+  WLC-ungram  -> UXLC-gram   : 28
+  WLC-ungram  -> UXLC-ungram : 5
 
 2x2 over scanner-VISIBLE verses (the meaningful denominator):
   WLC-gram    -> UXLC-gram   : 0
   WLC-gram    -> UXLC-ungram : 0
-  WLC-ungram  -> UXLC-gram   : 30
-  WLC-ungram  -> UXLC-ungram : 2
+  WLC-ungram  -> UXLC-gram   : 27
+  WLC-ungram  -> UXLC-ungram : 5
 
 WLC-gram -> UXLC-ungram (degradation): 0 verses
 
-WLC-ungram -> UXLC-gram (fix): 30 verses
+WLC-ungram -> UXLC-gram (fix): 28 verses
     1Kings 6:2.10    [accent/substitution] Change mahapakh under resh to munah.
     1Kings 6:3.6     [accent/substitution] Change munah under resh to mahapakh.
     1Kings 8:11.6    [accent/substitution] Change merkha to munah.
-    1Kings 16:33.13  [accent/substitution] Remove qadma above the kaf. Add note 't'.
     1Kings 20:29.3   [accent+maqaf/substitution] Change merkha under nun to meteg. Add maqaf to end of w
     2Chr 8:10.2      [accent/substitution] Replace mahapakh under resh with darga.
     2Chr 22:12.7     [accent/substitution] Changes tipeha to etnachta under the nun.
@@ -95,17 +117,16 @@ WLC-ungram -> UXLC-gram (fix): 30 verses
     2Kings 23:36.4   [accent/substitution] Remove qadma above nun, add pashta to he.
     2Sam 6:20.21     [accent/substitution] Change qadma on nun to pashta on yod.
     2Sam 23:9.15     [accent/add_accent] Add Pashta ( ס֙ ) to final Mem.
-    Dan 2:41.18      [accent/substitution] Change merkha to meteg under dalet. Ignore possible dag
     Eccl 7:21.9      [accent/substitution] Change merkha under shin to tevir.
     Eccl 9:18.8      [accent/substitution] Change merkha on bet to tipeha.
     Eccl 12:14.1     [accent/substitution] Change mahapakh on kaf to yetiv.
     Ex 28:1.9        [accent/substitution] Change zaqef qatan to revia, add note 't'.
     Jer 9:10.12      [accent/substitution] Change tipeha under the lamed to a merkha.
-    Jer 9:11.19      [accent/substitution] Change tipeha under lamed to meteg. Add transcription n
     Jer 10:3.11      [accent/substitution] Change merkha to meteg under the dalet. Add note 'm'.
     Jer 26:5.3       [accent/substitution] Change qadma on resh to pashta on yod. Add note 't'.
     Jer 28:2.8       [accent/substitution] Change gershayim above the bet to a zaqef gadol.
     Jer 31:32.11     [accent/substitution] Change tipeha under alef to munah.
+    Jer 44:17.1      [accent/substitution] Move telisha qetana on kaf to yod.
     Jer 46:4.6       [accent/substitution] Change merkha under kaf to meteg.
     Jer 51:9.2       [accent/substitution] Change munah to mahapakh under the pe.
     Judg 11:24.7     [accent/substitution] Change mercha under tav to munah.
@@ -131,17 +152,20 @@ Excluded verses (synth could not be validated):
 
 By-kind breakdown of solo-change verses (confidence buckets):
   add_accent        : WLC-gram->[g   0 / u   0]   WLC-ungram->[g   1 / u   0]
-  substitution      : WLC-gram->[g   1 / u   0]   WLC-ungram->[g  29 / u   2]
+  substitution      : WLC-gram->[g   0 / u   0]   WLC-ungram->[g  27 / u   5]
 
 
 === Directional asymmetry across the grammaticality boundary ===
 
-  OUT set: WLC-gram->UXLC-ungram 10, WLC-ungram->UXLC-gram 5.
-  IN  set: WLC-ungram->UXLC-gram 30, WLC-gram->UXLC-ungram 0.
+  OUT set: WLC-gram->UXLC-ungram 25, WLC-ungram->UXLC-gram 8.
+  IN  set: WLC-ungram->UXLC-gram 28, WLC-gram->UXLC-ungram 0.
 
   The asymmetry does NOT hold as stated. Crossing the wrong way:
-    OUT set: ek 11:1 (Ezek 11:1.29) -- WLC-ungram->UXLC-gram, a fix
-    OUT set: ex 38:12 (Ex 38:12.6) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: 1c 22:4 (1Chr 22:4.5) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: 2s 24:13 (2Sam 24:13.11) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: dt 4:46 (Deut 4:46.17) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: ek 43:17 (Ezek 43:17.11) -- WLC-ungram->UXLC-gram, a fix
     OUT set: je 10:3 (Jer 10:3.11) -- WLC-ungram->UXLC-gram, a fix
+    OUT set: je 34:21 (Jer 34:21.13) -- WLC-ungram->UXLC-gram, a fix
     OUT set: je 46:4 (Jer 46:4.6) -- WLC-ungram->UXLC-gram, a fix
     OUT set: lv 25:20 (Lev 25:20.4) -- WLC-ungram->UXLC-gram, a fix

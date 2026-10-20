@@ -25,8 +25,9 @@ _CONSUMERS = (
 def test_ob_notes_dataset_is_populated() -> None:
     # One note per ungrammatical verse: rtmsr_overview._source raises on any ungrammatical
     # with no "st-source", so this count tracks the ungrammatical count (93 -> 96 when the
-    # METHIGAZAQEF fuse stopped at a space -- issue #218).
-    assert len(prose_ob_notes.get_structured_text()) == 96
+    # METHIGAZAQEF fuse stopped at a space -- issue #218; 96 -> 125 when a chanted word with
+    # no accent became ungrammatical -- accgram.unaccented_chanted_words).
+    assert len(prose_ob_notes.get_structured_text()) == 125
 
 
 def test_consumers_import() -> None:

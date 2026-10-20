@@ -12,8 +12,8 @@
 <h1>Poetic checker run on WLC</h1>
 <h2>
 Introduction</h2>
-<p>This page lists the 15 poetic (Three Books) WLC 4.22 verses the poetic accent grammar cannot
-parse cleanly (13 missing-silluq, 2 NO_PARSE). Use the filter below to narrow the list.</p>
+<p>This page lists the 25 poetic (Three Books) WLC 4.22 verses the poetic accent grammar cannot
+parse cleanly (13 missing-silluq, 12 NO_PARSE). Use the filter below to narrow the list.</p>
 <p>For the converse — the quirks the checker silently accepts rather than flags, including the
 poetic ps124:4 geresh charity, with the alternate readings shown as parse trees — see the
 <a href="almost-errors.html">Almost errors</a> page.</p>
@@ -24,8 +24,9 @@ poetic ps124:4 geresh charity, with the alternate readings shown as parse trees 
 (structure preserved).</li>
 <li>
 “NO_PARSE,” a structural L anomaly for which no valid tree exists — whether the disjunctive
-hierarchy is violated or a token is lexically illicit; the offending accent (where the parse
-dead-ended) is marked “← stalled here” in its tree and named in the meta line.</li>
+hierarchy is violated, a token is lexically illicit, or a chanted word has no accent at all (shown
+as NO_ACCENT); the offending accent, or the NO_ACCENT, where the parse dead-ended is marked “←
+stalled here” in its tree and named in the meta line.</li>
 </ul>
 <p>Each verse shows its pointed-Hebrew text (the verse-final chanted word highlighted for
 missing-silluq cases) and — for missing-silluq verses — a SAT focus-word table comparing the WLC
@@ -41,24 +42,24 @@ Kind</legend>
 <label><input type="checkbox" class="pf-kind" value="missing_silluq" checked="checked"> missing
 silluq<span class="gf-opt-count">
 (13)</span></label><label><input type="checkbox" class="pf-kind" value="no_parse" checked="checked">
-NO_PARSE<span class="gf-opt-count"> (2)</span></label></fieldset>
+NO_PARSE<span class="gf-opt-count"> (12)</span></label></fieldset>
 <fieldset>
 <legend>
 Book</legend>
 <label><input type="checkbox" class="pf-book" value="ps" checked="checked">
 Psalms<span class="gf-opt-count">
-(12)</span></label><label><input type="checkbox" class="pf-book" value="pr" checked="checked">
+(17)</span></label><label><input type="checkbox" class="pf-book" value="pr" checked="checked">
 Proverbs<span class="gf-opt-count">
-(2)</span></label><label><input type="checkbox" class="pf-book" value="jb" checked="checked">
-Job<span class="gf-opt-count"> (1)</span></label></fieldset>
+(5)</span></label><label><input type="checkbox" class="pf-book" value="jb" checked="checked">
+Job<span class="gf-opt-count"> (3)</span></label></fieldset>
 <fieldset>
 <legend>
 MAM compare</legend>
 <label><input type="checkbox" class="pf-agree" value="agree" checked="checked"> WLC =
 MAM<span class="gf-opt-count">
-(1)</span></label><label><input type="checkbox" class="pf-agree" value="differ" checked="checked">
+(9)</span></label><label><input type="checkbox" class="pf-agree" value="differ" checked="checked">
 WLC ≠ MAM<span class="gf-opt-count">
-(14)</span></label><label><input type="checkbox" class="pf-agree" value="na" checked="checked"> not
+(16)</span></label><label><input type="checkbox" class="pf-agree" value="na" checked="checked"> not
 in MAM-simple<span class="gf-opt-count"></span></label></fieldset>
 <p class="pf-count"></p>
 </div>
@@ -183,6 +184,29 @@ mugrash</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="ps" data-agree="differ">
+<hr><h2 id="obps38v10">
+Psalms 38:10</h2>
+<p><a href="#obps38v10" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c38v10">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ps38:10">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>Chanted-word-aligned against MAM-simple, on אדני, WLC has no accent where MAM
+has revia gadol.</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">אדני נגדך֥ כל־ תאות֑י ו֝אנחת֗י ממך֥ לא־
+נסתֽרה׃</p>
+<p class="poetic-src"><span lang="hbo">אדני נגדך֥ כל־ תאות֑י ו֝אנחת֗י ממך֥ לא־ נסתֽרה׃</span></p>
+<p class="poetic-meta">tokens: TILDE NO_ACCENT MERKHA ATNAX REVIA_MUGRASH MERKHA SILLUQ SOFPASUQ ·
+parser stalled at accent 1/6 (NO_ACCENT) · <code>wlc_422_ps_ps_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="7">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>NO_ACCENT ← stalled
+here</td><td>MERKHA</td><td>ATNAX</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-kind="no_parse" data-book="ps" data-agree="agree">
 <hr><h2 id="obps56v10">
 Psalms 56:10</h2>
@@ -295,6 +319,59 @@ conjunctive) where MAM has silluq.</p>
 <tr><td class="goerwitz-obs-depth-cell"></td><td title="munax munax atnax">mun mun
 atn</td><td title="revia mugrash">rev
 mugrash</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="ps" data-agree="agree">
+<hr><h2 id="obps62v4">
+Psalms 62:4</h2>
+<p><a href="#obps62v4" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c62v4">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ps62:4">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">עד־ א֤נה׀ תהותת֣ו על איש֮ תרצח֪ו כ֫לכ֥ם כק֥יר
+נט֑וי ג֝ד֗ר הדחויֽה׃</p>
+<p class="poetic-src"><span lang="hbo">עד־ א֤נה׀ תהותת֣ו על איש֮ תרצח֪ו כ֫לכ֥ם כק֥יר נט֑וי ג֝ד֗ר
+הדחויֽה׃</span></p>
+<p class="poetic-meta">tokens: TILDE LEGARMEH MUNAX NO_ACCENT TSINNOR GALGAL OLEH_WEYORED MERKHA
+ATNAX REVIA_MUGRASH SILLUQ SOFPASUQ · parser stalled at accent 3/10 (NO_ACCENT) ·
+<code>wlc_422_ps_ps_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="11">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>LEGARMEH</td><td>MUNAX</td><td>NO_ACCENT ← stalled
+here</td><td>TSINNOR</td><td>GALGAL</td><td>OLEH_WEYORED</td><td>MERKHA</td><td>ATNAX</td><td>REVIA_MUGRASH</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="ps" data-agree="agree">
+<hr><h2 id="obps68v13">
+Psalms 68:13</h2>
+<p><a href="#obps68v13" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c68v13">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ps68:13">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">מלכ֣י צ֭באות ידד֣ון ידד֑ון ונות ב֝֗ית תחל֥ק
+שלֽל׃</p>
+<p class="poetic-src"><span lang="hbo">מלכ֣י צ֭באות ידד֣ון ידד֑ון ונות ב֝֗ית תחל֥ק שלֽל׃</span></p>
+<p class="poetic-meta">tokens: TILDE MUNAX DEXI MUNAX ATNAX NO_ACCENT REVIA_MUGRASH MERKHA SILLUQ
+SOFPASUQ · parser stalled at accent 5/8 (NO_ACCENT) · <code>wlc_422_ps_ps_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="9">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>MUNAX</td><td>DEXI</td><td>MUNAX</td><td>ATNAX</td><td>NO_ACCENT
+← stalled
+here</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
@@ -447,6 +524,78 @@ atn</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="ps" data-agree="agree">
+<hr><h2 id="obps118v17">
+Psalms 118:17</h2>
+<p><a href="#obps118v17" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c118v17">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ps118:17">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">לא אמ֥ות כי־ אחי֑ה ו֝אספ֗ר מעש֥י יֽה׃</p>
+<p class="poetic-src"><span lang="hbo">לא אמ֥ות כי־ אחי֑ה ו֝אספ֗ר מעש֥י יֽה׃</span></p>
+<p class="poetic-meta">tokens: TILDE NO_ACCENT MERKHA ATNAX REVIA_MUGRASH MERKHA SILLUQ SOFPASUQ ·
+parser stalled at accent 1/6 (NO_ACCENT) · <code>wlc_422_ps_ps_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="7">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>NO_ACCENT ← stalled
+here</td><td>MERKHA</td><td>ATNAX</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="ps" data-agree="agree">
+<hr><h2 id="obps119v96">
+Psalms 119:96</h2>
+<p><a href="#obps119v96" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D1-Psalms.html#c119v96">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Ps119:96">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">לכל ת֭כלה רא֣יתי ק֑ץ רחב֖ה מצותך֣ מאֽד׃</p>
+<p class="poetic-src"><span lang="hbo">לכל ת֭כלה רא֣יתי ק֑ץ רחב֖ה מצותך֣ מאֽד׃</span></p>
+<p class="poetic-meta">tokens: TILDE NO_ACCENT DEXI MUNAX ATNAX TARXA MUNAX SILLUQ SOFPASUQ · parser
+stalled at accent 1/7 (NO_ACCENT) · <code>wlc_422_ps_ps_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="8">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>NO_ACCENT ← stalled
+here</td><td>DEXI</td><td>MUNAX</td><td>ATNAX</td><td>TARXA</td><td>MUNAX</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="pr" data-agree="agree">
+<hr><h2 id="obpr2v21">
+Proverbs 2:21</h2>
+<p><a href="#obpr2v21" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c2v21">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Prov2:21">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">כי־ ישר֥ים ישכנו א֑רץ ו֝תמימ֗ים יו֥תרו בֽה׃</p>
+<p class="poetic-src"><span lang="hbo">כי־ ישר֥ים ישכנו א֑רץ ו֝תמימ֗ים יו֥תרו בֽה׃</span></p>
+<p class="poetic-meta">tokens: TILDE MERKHA NO_ACCENT ATNAX REVIA_MUGRASH MERKHA SILLUQ SOFPASUQ ·
+parser stalled at accent 2/6 (NO_ACCENT) · <code>wlc_422_ps_pr_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="7">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>MERKHA</td><td>NO_ACCENT ← stalled
+here</td><td>ATNAX</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
 <section class="goerwitz-verse" data-kind="missing_silluq" data-book="pr" data-agree="differ">
 <hr><h2 id="obpr8v28">
 Proverbs 8:28</h2>
@@ -503,6 +652,104 @@ conjunctive) where MAM has silluq.</p>
 <tr><td class="goerwitz-obs-depth-cell">2</td><td title="dexi_phrase">dexip</td><td title="atnax_phrase">atnp</td><td colspan="1"></td></tr>
 <tr><td class="goerwitz-obs-depth-cell"></td><td title="munax dexi">mun
 dexi</td><td title="munax atnax">mun atn</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="pr" data-agree="agree">
+<hr><h2 id="obpr28v7">
+Proverbs 28:7</h2>
+<p><a href="#obpr28v7" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c28v7">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Prov28:7">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">נוצ֣ר ת֭ורה ב֣ן מב֑ין ורעה ז֝ולל֗ים יכל֥ים
+אבֽיו׃</p>
+<p class="poetic-src"><span lang="hbo">נוצ֣ר ת֭ורה ב֣ן מב֑ין ורעה ז֝ולל֗ים יכל֥ים אבֽיו׃</span></p>
+<p class="poetic-meta">tokens: TILDE MUNAX DEXI MUNAX ATNAX NO_ACCENT REVIA_MUGRASH MERKHA SILLUQ
+SOFPASUQ · parser stalled at accent 5/8 (NO_ACCENT) · <code>wlc_422_ps_pr_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="9">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>MUNAX</td><td>DEXI</td><td>MUNAX</td><td>ATNAX</td><td>NO_ACCENT
+← stalled
+here</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="pr" data-agree="differ">
+<hr><h2 id="obpr28v17">
+Proverbs 28:17</h2>
+<p><a href="#obpr28v17" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D2-Proverbs.html#c28v17">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Prov28:17">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>Chanted-word-aligned against MAM-simple, WLC segments this stretch as אדם [dexi]
+where MAM has א [dexi], ד, ם; on בדם־נפש, WLC has no accent where MAM has atnax.</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">א֭דם עש֣ק בדם־ נפש עד־ ב֥ור י֝נ֗וס אל־ יתמכו־
+בֽו׃</p>
+<p class="poetic-src"><span lang="hbo">א֭דם עש֣ק בדם־ נפש עד־ ב֥ור י֝נ֗וס אל־ יתמכו־ בֽו׃</span></p>
+<p class="poetic-meta">tokens: TILDE DEXI MUNAX NO_ACCENT MERKHA REVIA_MUGRASH SILLUQ SOFPASUQ ·
+parser stalled at accent 3/6 (NO_ACCENT) · <code>wlc_422_ps_pr_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="7">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>DEXI</td><td>MUNAX</td><td>NO_ACCENT ← stalled
+here</td><td>MERKHA</td><td>REVIA_MUGRASH</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="jb" data-agree="agree">
+<hr><h2 id="objb17v3">
+Job 17:3</h2>
+<p><a href="#objb17v3" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c17v3">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Job17:3">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">שימה־ נ֭א ערב֣ני עמ֑ך מי ה֝֗וא ליד֥י יתקֽע׃</p>
+<p class="poetic-src"><span lang="hbo">שימה־ נ֭א ערב֣ני עמ֑ך מי ה֝֗וא ליד֥י יתקֽע׃</span></p>
+<p class="poetic-meta">tokens: TILDE DEXI MUNAX ATNAX NO_ACCENT REVIA_MUGRASH MERKHA SILLUQ SOFPASUQ
+· parser stalled at accent 4/7 (NO_ACCENT) · <code>wlc_422_ps_jb_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="8">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>DEXI</td><td>MUNAX</td><td>ATNAX</td><td>NO_ACCENT
+← stalled
+here</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
+</table>
+</div>
+</section>
+<section class="goerwitz-verse" data-kind="no_parse" data-book="jb" data-agree="agree">
+<hr><h2 id="objb22v21">
+Job 22:21</h2>
+<p><a href="#objb22v21" title="Permalink to this section" aria-label="Permalink to this section">🔗</a>
+Kind: NO_PARSE (L anomaly — no valid tree exists).</p>
+<p><a href="https://bdenckla.github.io/MAM-basics/MAM-with-doc/D3-Job.html#c22v21">Mwd</a> |
+<a href="https://tanach.us/Tanach.xml?Job22:21">UXLC</a></p>
+<p class="poetic-auto-summary"><span class="poetic-auto-summary-label">Auto-derived summary
+(tentative): </span>WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does not
+parse — so the anomaly is below the disjunctive skeleton (a conjunctive or lexical matter), not a
+disjunctive divergence. This skeleton-level oracle does not look beneath the skeleton, so it cannot
+say whether WLC and MAM diverge there (they may well: e.g. Ps 56:10's extra merkha).</p>
+<p class="goerwitz-tms-verse" lang="hbo" dir="rtl">הסכן־ נ֣א עמ֑ו ושלם ב֝ה֗ם תבואתך֥ טובֽה׃</p>
+<p class="poetic-src"><span lang="hbo">הסכן־ נ֣א עמ֑ו ושלם ב֝ה֗ם תבואתך֥ טובֽה׃</span></p>
+<p class="poetic-meta">tokens: TILDE MUNAX ATNAX NO_ACCENT REVIA_MUGRASH MERKHA SILLUQ SOFPASUQ ·
+parser stalled at accent 3/6 (NO_ACCENT) · <code>wlc_422_ps_jb_ag.json</code></p>
+<div class="goerwitz-obs-tree-wrap">
+<table class="goerwitz-obs-error-table">
+<tr><td class="goerwitz-obs-depth-cell">0</td><td colspan="7">no_parse</td></tr>
+<tr><td class="goerwitz-obs-depth-cell"></td><td>MUNAX</td><td>ATNAX</td><td>NO_ACCENT ← stalled
+here</td><td>REVIA_MUGRASH</td><td>MERKHA</td><td>SILLUQ</td><td class="goerwitz-obs-error-cell">ERROR</td></tr>
 </table>
 </div>
 </section>

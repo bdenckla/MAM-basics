@@ -3,7 +3,7 @@
 "summary": {
 "verses": 943,
 "oddballs": 1,
-"illegal_marks": 0,
+"illegal_marks": 1,
 "location_only": 0
 },
 "verses": [
@@ -64646,81 +64646,18 @@
 "SOFPASUQ"
 ]
 },
-"status": "clean",
+"status": "illegal_mark",
+"errors": [
+{
+"code": "no accent",
+"word": "כִּֽי",
+"atom": "אֽא"
+}
+],
 "tree": {
-"label": "silluq_clause",
-"children": [
-{
-"label": "atnax_clause",
-"children": [
-{
-"label": "tipexa_phrase",
+"label": "illegal_mark no accent in כִּֽי",
 "leaves": [
-"merkha",
-"tipexa"
-]
-},
-{
-"label": "atnax_phrase",
-"leaves": [
-"munax",
-"atnax"
-]
-}
-]
-},
-{
-"label": "silluq_clause",
-"children": [
-{
-"label": "tipexa_clause",
-"children": [
-{
-"label": "tevir_clause",
-"children": [
-{
-"label": "big_telisha_phrase",
-"leaves": [
-"telishagedola"
-]
-},
-{
-"label": "tevir_clause",
-"children": [
-{
-"label": "geresh_phrase",
-"leaves": [
-"azla",
-"geresh"
-]
-},
-{
-"label": "tevir_phrase",
-"leaves": [
-"darga",
-"tevir"
-]
-}
-]
-}
-]
-},
-{
-"label": "tipexa_phrase",
-"leaves": [
-"tipexa"
-]
-}
-]
-},
-{
-"label": "silluq_phrase",
-"leaves": [
-"silluq"
-]
-}
-]
-}
+"ERROR"
 ]
 }
 },

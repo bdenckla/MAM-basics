@@ -68,6 +68,20 @@ BHS_TRANSCRIBES = "BHS transcribes a $diff_wlc_mam_desc as a $wlc_focus_desc."
 ZARQA_WHIM_SUMMARY = "WLC turns a scribal zarqa whim into an outright error."
 
 
+# A chanted word the checker flags because it has no accent
+# (accgram.unaccented_chanted_words), where nobody has yet read the manuscript.  The
+# summary names the two marks of which WLC has neither, an accent and a maqaf after the
+# chanted word's last atom; which of them is due, and where in the LC-BHS-WLC pipeline it
+# is absent, is what the source attribution "tbd" leaves open.
+NO_ACCENT_SUMMARY = (
+    "WLC has neither an accent on this chanted word nor a maqaf joining it to the atom"
+    " after it."
+)
+
+
+NO_ACCENT = {"st-source": "tbd", "st-summary": NO_ACCENT_SUMMARY}
+
+
 # In-page link to the nu 20:19 ungrammatical section. The href must match that
 # section's anchor id (see ob_report.ungrammatical_anchor_id: "ob" + bcv with ":"->"v").
 ZARQA_WHIM = {

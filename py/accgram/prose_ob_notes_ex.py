@@ -7,6 +7,7 @@ from accgram.prose_ob_notes_shared import (
     MISSING_SOF_PASUQ_COMMENT,
     MISSING_SOF_PASUQ_SUMMARY,
     MUNAX,
+    NO_ACCENT,
     ZARQA_WHIM,
 )
 
@@ -76,5 +77,9 @@ BY_REF: dict[str, dict[str, object]] = {
         "wlc_focus": "עמודיה֥ם",
         "st-summary": f"The LC has something like a merkha where a {MUNAX} is expected.",
         "img": "LC-055A-col-1-line-3-Ex-38v12.png",
+    },
+    "ex 9:22": {
+        **NO_ACCENT,
+        "wlc_focus": "אל־ משה",
     },
 }

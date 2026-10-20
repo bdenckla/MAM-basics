@@ -46,7 +46,10 @@ BKNA_MAP_UXLC_TO_STD = {  # not a two-way map! (E.g. 1Chr & 1 Chr)
     "Jon": tbn.BK_JONAH,
     "Mic": tbn.BK_MIKHAH,
     # Naxum
-    # Xabaqquq
+    # Westminster's change records cite Habakkuk as "Hab" (Hab 1:1.1 and Hab 3:19.1 in
+    # in/mam-ws-intro/westminster-typing.mediawiki); first needed for the tanach.us link of
+    # an ungrammatical Habakkuk verse, Hab 2:8.
+    "Hab": tbn.BK_XABA,
     "Zeph": tbn.BK_TSEF,
     "Hag": tbn.BK_XAGGAI,
     "Zech": tbn.BK_ZEKHAR,

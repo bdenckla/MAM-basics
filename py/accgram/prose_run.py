@@ -65,17 +65,30 @@ def _ungrammatical_unicode_words(
     enough to locate it (``82`` = the zarqa stress-helper U+0598; a same-letter pair =
     its first/distinguishing mark, e.g. mahapakh U+05A4, NOT the tipexa that recurs
     elsewhere in lv25:20).  Collect the words carrying each rep_char in order and pair
-    them with ``marks``.  Falls back to a mark's raw M-C atom if the Unicode word cannot
-    be located (so the label is always populated)."""
-    rep_chars = {mark.rep_char for mark in marks}
+    them with ``marks``.  A chanted word with no accent has no such mark, and is located
+    instead by its ``read_atoms``, the ordinals of its atoms among the words
+    ``_verse_display_words`` yields, which are the atoms the mark body reads in the same order
+    (``tests/test_unaccented_chanted_words.py`` holds the two to each other).  Falls back to
+    a mark's raw M-C atom if the Unicode word cannot be located (so the label is always
+    populated)."""
+    display_words = list(_verse_display_words(verse))
+    rep_chars = {mark.rep_char for mark in marks if not mark.read_atoms}
     by_char: dict[str, list[str]] = {}
-    for word in _verse_display_words(verse):
+    for word in display_words:
         for char in rep_chars:
             if char in word:
                 by_char.setdefault(char, []).append(word)
     cursor: dict[str, int] = {}
     out: list[str] = []
     for mark in marks:
+        if mark.read_atoms:
+            located = all(i < len(display_words) for i in mark.read_atoms)
+            out.append(
+                "".join(display_words[i] for i in mark.read_atoms)
+                if located
+                else mark.atom
+            )
+            continue
         char = mark.rep_char
         candidates = by_char.get(char, [])
         i = cursor.get(char, 0)
@@ -167,10 +180,11 @@ def _verse_record(
         record["chanted_word_accents"] = two_accents
 
     # Prose lexical layer (divergence from the goerwitz C oracle): an alphabet /
-    # word-placement error -- an unpaired stress-helper, a same-letter accent pair, or
-    # a misplaced telisha qetanna (full enumeration in lexical_validation.lexical_
-    # ungrammatical).  Flag it uniformly with a fixed ERROR tree and skip the grammar
-    # entirely -- the context need not be parsed, and all such verses read identically.
+    # word-placement error -- an unpaired stress-helper, a same-letter accent pair, a
+    # misplaced telisha qetanna, or a chanted word with no accent (full enumeration in
+    # lexical_validation.lexical_ungrammatical).  Flag it uniformly with a fixed ERROR tree
+    # and skip the grammar entirely -- the context need not be parsed, and all such verses
+    # read identically.
     ungrammatical = lexical_validation.lexical_ungrammatical(verse.body)
     if ungrammatical:
         kq_verse = wlc_index.get(bcv) if wlc_index else None
