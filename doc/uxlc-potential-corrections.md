@@ -142,3 +142,17 @@ that BHLA has no entry for this verse, and the report finds that BHLA has an ent
 
 Source: [archived UXLC change records](../in/UXLC-misc/all_changes.json), record `/818`, note `/818/notes/0` (changeset
 `2023.06.09`, number `10`; release `2023.10.19`; manuscript locator `Folio_413B 2:10`).
+
+## 6. Change texts that UXLC 2.6 did not install, found 2026-10-20
+
+Two of Daniel Holman's records in the installed UXLC 2.6 list are typed NoTextChange, and each
+record's first note says the change it examines will not be made. UXLC 2.6's text has only the
+note each record adds, but each record's change text has the change:
+
+1. 2026.08.05-81 (Ps 105:40.1) examines a possible maqaf. Its note says that the putative maqaf
+   "will not be added", but its change text, שָׁאַ֣ל־, ends in a maqaf that its reference text,
+   שָׁאַ֣ל, lacks. UXLC 2.6 adds a "t" note to the atom.
+2. 2026.08.05-128 (Ezra 8:18.15) examines the meteg under the resh as a possible merkha. Its note
+   says that the mark lacks the inclination "to be transcribed as a merkha", but its change text,
+   וְשֵׁרֵ֥בְיָ֛ה, has a merkha under the resh where its reference text, וְשֵׁרֵֽבְיָ֛ה, has a meteg. UXLC 2.6
+   adds an "m" note to the atom.
