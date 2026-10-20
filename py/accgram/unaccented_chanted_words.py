@@ -50,7 +50,12 @@ the list raises, as "template dispatch is closed" requires:
    legarmeh's chanted word has an accent all the same: the munax of a prose legarmeh, or the azla
    or mahapakh of a poetic one.  A paseq belongs to the atom before it, so a paseq standing alone
    as a run raises: the scanners' legarmeh rules cannot reach across a space, which is what issue
-   #215 found in MAM before ``chanted_word_accents_units._fold_lone_bars``.
+   #215 found in MAM before ``chanted_word_accents_units._fold_lone_bars``.  A chanted word whose
+   only mark is the bar, with no munax (or, in a poetic verse, no azla or mahapakh) before it, has
+   no accent, so its verse is reported like any other; UXLC 2.6 has two, at Joshua 14:10 and
+   1 Samuel 2:16.  Ben's decision, 2026-10-20, was to report such a word, "a word with only a
+   legarmeh (no accent)" in his words, rather than stop the run: his concern was that it not
+   "whiff by", as a chanted word with no accent did before this rule.
 7. **Notes.**  A ``]N`` note marker is part of the atom it follows, even across a maqaf: a word
    that ends with a maqaf keeps its notes after it, and ``fix_apply`` joins the atom after such
    notes to them without a space where a fix gives a word its maqaf (Genesis 18:18's ``]U``).
@@ -198,7 +203,8 @@ def raise_on_unaccented_chanted_words(body: str, where: str) -> None:
     For the verdict paths that apply no lexical layer, named in the module docstring: a chanted
     word with no accent there would leave the grammar a verse it reads as if the chanted word
     were not there, and the clean verdict it might return would be a claim about a different
-    verse.
+    verse.  Ben's decision, 2026-10-20: keep this check, which stops the run, until a real case
+    appears, rather than give those paths the lexical layer and a status their pages can show.
     """
     words = unaccented_chanted_words(body)
     if words:
