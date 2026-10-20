@@ -43,6 +43,15 @@ def derive_tentative_summary(row: dict[str, object]) -> str:
             "for comparison."
         )
     if row["wlc_disjunctives"] == row["mam_disjunctives"]:
+        # Equal skeletons are not equal placements: the same dividers in the same order can
+        # sit on different chanted words, as at Job 22:21, where WLC has the atnax on עמו and
+        # MAM on ושלם.  So the chanted-word alignment runs here too.
+        clauses = _word_aligned_clauses(row)
+        if clauses:
+            return (
+                "WLC and MAM-simple have the same disjunctive skeleton, but aligned chanted "
+                "word by chanted word, " + "; ".join(clauses) + "."
+            )
         return (
             "WLC and MAM-simple agree on the disjunctive skeleton, yet the verse does "
             "not parse — so the anomaly is below the disjunctive skeleton (a conjunctive "
