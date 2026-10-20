@@ -82,6 +82,12 @@ BY_REF: dict[str, dict[str, object]] = {
                 " without any acknowledgment of either illegality or uncertainty is,"
                 " to me, bordering on irresponsible."
             ],
+            [
+                f"UXLC 2.6 does what this note asks: it has a {MUNAX} under the ת,"
+                " and it files a “t” note, recording that transcription as uncertain."
+                f" The {MUNAX} comes from the “UXLC change” linked above, and the “t”"
+                " note from an earlier UXLC change on the same atom, 2026.04.10-7."
+            ],
         ),
     },
     "ju 21:16": {
