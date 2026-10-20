@@ -41,8 +41,8 @@ def introduction(rows):
         ),
         mb_html.para(
             "The blue text marks the holam-bearing letter and following vav. "
-            "The original marks remain on their original letters. Each occurrence "
-            "is enlarged and shown in adjacent columns; only the letter spacing differs."
+            "Each occurrence appears twice in its row: once with normal letter "
+            "spacing and once with expanded letter spacing."
         ),
         mb_html.para(
             ['In "With an above-mark on vav": ', *mark_counts, "."]
