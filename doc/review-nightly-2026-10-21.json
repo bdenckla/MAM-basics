@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-21",
+  "scheduled_for_utc": "2026-10-21T06:00:00+00:00",
+  "runner": "Saved Linux cloud forest; existing independent full clones; no other writer/test process found; parent screening tasks idle.",
+  "checkout_strategy": "Use idle full clones on isolated nightly branches; preserve and classify complete generated patches before restoring explained output changes to their exact committed inputs between sequential stages. No new clone or worktree.",
+  "publication": "Only review-nightly-20261021 isolated receipt/work branches; no main integration, deployment or workflow dispatch.",
+  "continuing_schedule": "Continuing October 16 authorization; scheduler unchanged, no duplicate automation.",
+  "limits": [
+    "All results belong to the exact frozen source and recorded sibling inputs, not the later receipt commit.",
+    "No manuscript or editorial decision is inferred from passing checks; no source refresh, font baseline acceptance or frozen-font generation."
+  ],
+  "source": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+  "previous_broad_tested": "040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5",
+  "allowed_input_commit_ids": [
+    "9428a91d57c53bcc741fed786e3fd6b438c87d3d",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "review": {
+    "from": "d27594238139e75d507b2b2a921de1707946c3d1",
+    "through": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+    "incoming_commits": 11,
+    "changed_paths": 15,
+    "runtime_equivalence": {
+      "py/accgram/unaccented_chanted_words.py": "AST equal after removing docstrings; no runtime policy change",
+      "py/tests/test_unaccented_chanted_words.py": "AST equal after removing docstrings; no runtime policy change"
+    },
+    "decisions": "Later recorded Ben decisions settle the formerly provisional 2 Kings 5:18 join, retain the fail-fast path guard, report bar-only chanted words through normal findings, and add no name exemptions. No decision is reopened.",
+    "ownership": "Current full-clone/cloud ownership policy read and followed using idle saved cloud full clones."
+  },
+  "mega": {
+    "name": "basics-mega",
+    "cwd": "/workspace/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "source": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+    "started_at_utc": "2026-10-21T06:38:08.197232+00:00",
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 490.42,
+    "finished_at_utc": "2026-10-21T06:46:18.617841+00:00",
+    "steps": 60
+  },
+  "suite": {
+    "name": "basics-suite",
+    "cwd": "/workspace/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "source": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+    "started_at_utc": "2026-10-21T06:47:26.347871+00:00",
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 327.609,
+    "finished_at_utc": "2026-10-21T06:52:53.956896+00:00",
+    "summary": "1099 passed, 5 skipped, 82 subtests passed in 324.67s (0:05:24)",
+    "passed": 1099,
+    "failed": 0,
+    "skipped": 5,
+    "subtests_passed": 82,
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "generated_differences": {
+    "svg_files": 8,
+    "classification": "Geometry and known Times aliases only; every other XML element, comment, attribute, text and link agrees.",
+    "change_log": {
+      "status": "unchanged",
+      "tracked_non_svg_changes": 0
+    },
+    "complete_patches": "Preserved privately with hashes and exact reverse-apply checks; no generated products accepted."
+  },
+  "repair": null,
+  "pending_source_window": {
+    "frozen_input": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+    "observed_main": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+    "observed_at_utc": "2026-10-21T06:58:13.122290+00:00",
+    "frozen_is_ancestor": true,
+    "incoming_commits_after_freeze": 0,
+    "changed_path_count_after_freeze": 0,
+    "status": "no later source window"
+  }
+}
