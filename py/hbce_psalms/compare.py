@@ -107,7 +107,6 @@ class Tok:
         "unclear",
         "supplied",
         "orig",
-        "gray_maqaf_after",
         "kq",
         "flags",
     )
@@ -118,7 +117,6 @@ class Tok:
         self.unclear = False
         self.supplied = False
         self.orig = None  # inside an <app>: the first hand's reading (joined text)
-        self.gray_maqaf_after = False
         self.kq = None
         self.flags = set()
 
@@ -311,16 +309,14 @@ def mam_children_tokens(el, out: list, tagcount: Counter, flags=None) -> None:
         if tag == "text":
             mam_split_text(child.get("text", ""), out, flags)
         elif tag == "lp-legarmeih":
-            if out:
-                out[-1].paseq = True
-                out[-1].flags.add("legarmeh")
+            _previous_token(out, tag).paseq = True
+            out[-1].flags.add("legarmeh")
         elif tag == "lp-paseq":
-            if out:
-                out[-1].paseq = True
-                out[-1].flags.add("narpas")
+            _previous_token(out, tag).paseq = True
+            out[-1].flags.add("narpas")
         elif tag == "implicit-maqaf":
-            if out:
-                out[-1].gray_maqaf_after = True
+            # A boundary, as the module docstring says: the next text starts a token.
+            _previous_token(out, tag)
         elif tag == "kq":
             k = mam_simple_json.find_child(child, "kq-k")
             q = mam_simple_json.find_child(child, "kq-q")
@@ -344,8 +340,7 @@ def mam_children_tokens(el, out: list, tagcount: Counter, flags=None) -> None:
         elif tag == "kq-q-velo-k":
             mam_split_text(child.get("text", ""), out, {"kq-q-velo-k"})
         elif tag == "kq-k-velo-q-maq":
-            if out:
-                out[-1].text += hpu.MAQ
+            _previous_token(out, tag).text += hpu.MAQ
         elif tag == "slh-word":
             t = Tok(mam_slh_word(child))
             t.flags.add("slh-word")
@@ -377,7 +372,6 @@ def mam_finalize(tokens: list) -> list:
             prev.text += t.text
             prev.paseq = t.paseq
             prev.flags |= t.flags
-            prev.gray_maqaf_after = t.gray_maqaf_after
             continue
         out.append(t)
     return [t for t in out if t.text]
@@ -741,3 +735,10 @@ def write_comparisons() -> list[str]:
     summary = hbce_paths.out_dir() / "compare_summary.txt"
     summary.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
     return lines
+
+
+def _previous_token(out: list, tag: str) -> Tok:
+    """The token a MAM-simple mark element follows; a mark with none before it raises."""
+    if not out:
+        raise ValueError(f"a MAM-simple <{tag}> with no chanted word before it")
+    return out[-1]
