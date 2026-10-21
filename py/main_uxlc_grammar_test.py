@@ -231,6 +231,9 @@ def numbered_atoms(body: str) -> tuple[str, list[NumberedAtom]]:
         in_ketiv = run.startswith("*") and not run.startswith("**")
         pieces = run.split(am.MAQAF)
         for k, piece in enumerate(pieces):
+            # A preceding read atom's maqaf can put the ketiv opener inside this run.
+            if piece.startswith("*"):
+                in_ketiv = not piece.startswith("**")
             if k < len(pieces) - 1:
                 sep = am.MAQAF
             elif r < len(runs) - 1:
@@ -246,7 +249,10 @@ def numbered_atoms(body: str) -> tuple[str, list[NumberedAtom]]:
                 atoms.append(NumberedAtom(piece, sep, in_ketiv))
             elif atoms:
                 last = atoms[-1]
-                atoms[-1] = NumberedAtom(last.text, last.tail + piece + sep, in_ketiv)
+                # Tail material keeps its object's role even if this run has another.
+                atoms[-1] = NumberedAtom(
+                    last.text, last.tail + piece + sep, last.in_ketiv
+                )
             else:
                 head += piece + sep
     return head, atoms
