@@ -106,7 +106,9 @@ def _kq_side_frags(side: object, marker: str) -> list[Frag]:
     the ``*kk`` / ``**qq`` placeholder the Michigan-Claremont source used.
     """
     is_qere = marker == "**"
-    words = [w for w in (_kq_word(v) for v in (side or ())) if w[1]]
+    if not isinstance(side, (list, tuple)):
+        raise TypeError(f"unclassified WLC ketiv-qere side: {side!r}")
+    words = [_kq_word(v) for v in side]
     if not words:
         # An empty side is a placeholder, not a chanted word, so ``is_word`` is False even on
         # the qere side: ``**qq`` stands for a ketiv with no qere, where nothing is chanted
@@ -127,16 +129,25 @@ def _kq_side_frags(side: object, marker: str) -> list[Frag]:
 
 
 def _kq_word(vel: object) -> tuple[str, str]:
+    """A word element's text and marks, as ``uni_to_marks._word_marks`` reads it.
+
+    The element is a string or a ``word`` with optional ``notes``; any other raises, as
+    does a word that gives no mark at all.
+    """
     if isinstance(vel, str):
-        return (vel, uni_to_marks.word_to_marks(vel))
-    if isinstance(vel, dict):
-        word = vel.get("word")
-        if isinstance(word, str):
-            return (
-                word,
-                uni_to_marks.word_to_marks(word) + _notes_suffix(vel.get("notes")),
-            )
-    return ("", "")
+        word, notes = vel, None
+    elif (
+        isinstance(vel, dict)
+        and set(vel) in ({"word"}, {"word", "notes"})
+        and isinstance(vel["word"], str)
+    ):
+        word, notes = vel["word"], vel.get("notes")
+    else:
+        raise ValueError(f"unclassified WLC word element: {vel!r}")
+    marks = uni_to_marks.word_to_marks(word)
+    if not marks:
+        raise ValueError(f"WLC word element with no marks: {vel!r}")
+    return (word, marks + _notes_suffix(notes))
 
 
 def _notes_suffix(notes: object) -> str:
@@ -144,37 +155,36 @@ def _notes_suffix(notes: object) -> str:
 
     They are kept because the legarmeh and mayela lookaheads key on ``]<digit>``: dropping them
     would let a lookahead run past a blocker it should have stopped at, and a METHIGAZAQEF fuse
-    two tokens the checker keeps apart.
+    two tokens the checker keeps apart.  No notes give nothing; any value but a string or a
+    list of strings raises.
     """
+    if notes is None:
+        return ""
     if isinstance(notes, str):
         return notes
-    if isinstance(notes, list):
-        return "".join(n for n in notes if isinstance(n, str))
-    return ""
+    if isinstance(notes, list) and all(isinstance(n, str) for n in notes):
+        return "".join(notes)
+    raise TypeError(f"unclassified WLC notes value: {notes!r}")
 
 
 def _wlc_vel_frags(vel: object) -> list[Frag]:
-    if isinstance(vel, str):
-        return [_plain_frag(vel)]
-    if not isinstance(vel, dict):
-        return []
-    sam = vel.get("sam_pe_inun")
-    if isinstance(sam, str):
+    """One verse element's fragments, read as ``uni_to_marks._vel_to_marks`` reads it.
+
+    Any element but a word, a petuhah, setumah or nun inversum, or a ketiv-qere raises.
+    """
+    if isinstance(vel, dict) and set(vel) == {"sam_pe_inun"}:
+        sam = vel["sam_pe_inun"]
+        if sam not in ("P", "S", "N"):
+            raise ValueError(f"unclassified WLC sam_pe_inun value: {sam!r}")
         return [Frag("", "N]8" if sam == "N" else sam, False)]
-    kq = vel.get("kq")
-    if kq is not None:
-        ketiv, qere = kq if isinstance(kq, (list, tuple)) and len(kq) == 2 else ([], [])
+    if isinstance(vel, dict) and set(vel) == {"kq"}:
+        kq = vel["kq"]
+        if not (isinstance(kq, (list, tuple)) and len(kq) == 2):
+            raise TypeError(f"unclassified WLC ketiv-qere value: {kq!r}")
+        ketiv, qere = kq
         return [*_kq_side_frags(ketiv, "*"), *_kq_side_frags(qere, "**")]
-    word = vel.get("word")
-    if isinstance(word, str):
-        return [
-            Frag(
-                word,
-                uni_to_marks.word_to_marks(word) + _notes_suffix(vel.get("notes")),
-                True,
-            )
-        ]
-    return []
+    word, marks = _kq_word(vel)
+    return [Frag(word, marks, True)]
 
 
 def wlc_frags(kq_u_dir: Path) -> dict[str, list[Frag]]:
@@ -182,7 +192,9 @@ def wlc_frags(kq_u_dir: Path) -> dict[str, list[Frag]]:
     out: dict[str, list[Frag]] = {}
     for bcv, verse in index.items():
         vels = verse.get("vels")
-        frags = [f for vel in (vels or []) for f in _wlc_vel_frags(vel)]
+        if not isinstance(vels, list):
+            raise TypeError(f"WLC verse {bcv} has no vels list")
+        frags = [f for vel in vels for f in _wlc_vel_frags(vel)]
         body, _units = _verse_units(frags)
         # The rebuild is the check: if it stops matching the body the checker actually scans,
         # every token position below is attributed to the wrong chanted word.

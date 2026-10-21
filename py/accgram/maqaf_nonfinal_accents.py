@@ -401,34 +401,51 @@ def _join_on_maqaf(atoms: list[str]) -> list[str]:
 
 def wlc_words(kq_u_dir: Path) -> dict[str, list[str]]:
     index = rtms_data.load_wlc422_index(kq_u_dir)
-    return {
-        bcv: _join_on_maqaf(
-            [a for vel in (verse.get("vels") or []) for a in _wlc_vel_atoms(vel)]
-        )
-        for bcv, verse in index.items()
-    }
+    out: dict[str, list[str]] = {}
+    for bcv, verse in index.items():
+        vels = verse.get("vels")
+        if not isinstance(vels, list):
+            raise TypeError(f"WLC verse {bcv} has no vels list")
+        out[bcv] = _join_on_maqaf([a for vel in vels for a in _wlc_vel_atoms(vel)])
+    return out
 
 
 def _wlc_vel_atoms(vel: object) -> list[str]:
     """The pointed atoms of one verse element; the ketiv is dropped, the qere kept.
 
     A ketiv is unpointed and never accented, so it can only add spurious unaccented atoms;
-    the qere is the side that has the marks the scanners read.
+    the qere is the side that has the marks the scanners read.  The element is a word, a
+    petuhah, setumah or nun inversum, or a ketiv-qere, as ``uni_to_marks._vel_to_marks``
+    reads it; any other raises.
     """
-    if isinstance(vel, str):
-        return [vel]
-    if not isinstance(vel, dict):
+    if isinstance(vel, dict) and set(vel) == {"sam_pe_inun"}:
+        if vel["sam_pe_inun"] not in ("P", "S", "N"):
+            raise ValueError(f"unclassified WLC sam_pe_inun value: {vel!r}")
         return []
-    if isinstance(vel.get("sam_pe_inun"), str):
-        return []
-    kq = vel.get("kq")
-    if kq is not None:
-        _ketiv, qere = (
-            kq if isinstance(kq, (list, tuple)) and len(kq) == 2 else ([], [])
-        )
-        return [a for sub in qere for a in _wlc_vel_atoms(sub)]
-    word = vel.get("word")
-    return [word] if isinstance(word, str) else []
+    if isinstance(vel, dict) and set(vel) == {"kq"}:
+        kq = vel["kq"]
+        if not (
+            isinstance(kq, (list, tuple))
+            and len(kq) == 2
+            and all(isinstance(side, (list, tuple)) for side in kq)
+        ):
+            raise TypeError(f"unclassified WLC ketiv-qere value: {kq!r}")
+        return [_wlc_word(sub) for sub in kq[1]]
+    return [_wlc_word(vel)]
+
+
+def _wlc_word(vel: object) -> str:
+    """A word element's text: a non-empty string, or a ``word`` with optional ``notes``."""
+    if isinstance(vel, str) and vel:
+        return vel
+    if (
+        isinstance(vel, dict)
+        and set(vel) in ({"word"}, {"word", "notes"})
+        and isinstance(vel["word"], str)
+        and vel["word"]
+    ):
+        return vel["word"]
+    raise ValueError(f"unclassified WLC word element: {vel!r}")
 
 
 def mam_words(

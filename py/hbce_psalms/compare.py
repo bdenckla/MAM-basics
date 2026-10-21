@@ -192,11 +192,10 @@ def hbce_tokens(el, out: list, tagcount: Counter) -> None:
             hbce_tokens(child, out, tagcount)
         elif tag == "pc":
             txt = "".join(child.itertext()).strip()
-            if hpu.PASOLEG in txt and out:
-                out[-1].paseq = True
+            if hpu.PASOLEG in txt:
+                _previous_token(out, "an HBCE <pc> paseq").paseq = True
             elif txt in _PC_SOF_PASUQ_FORMS:
-                if out:
-                    out[-1].flags.add("sof-pasuq-pc")
+                _previous_token(out, "an HBCE <pc> sof pasuq").flags.add("sof-pasuq-pc")
             else:
                 raise ValueError(f"unrecognized <pc> text: {txt!r}")
         elif tag == "gap":
@@ -309,14 +308,14 @@ def mam_children_tokens(el, out: list, tagcount: Counter, flags=None) -> None:
         if tag == "text":
             mam_split_text(child.get("text", ""), out, flags)
         elif tag == "lp-legarmeih":
-            _previous_token(out, tag).paseq = True
+            _previous_token(out, f"a MAM-simple <{tag}>").paseq = True
             out[-1].flags.add("legarmeh")
         elif tag == "lp-paseq":
-            _previous_token(out, tag).paseq = True
+            _previous_token(out, f"a MAM-simple <{tag}>").paseq = True
             out[-1].flags.add("narpas")
         elif tag == "implicit-maqaf":
             # A boundary, as the module docstring says: the next text starts a token.
-            _previous_token(out, tag)
+            _previous_token(out, f"a MAM-simple <{tag}>")
         elif tag == "kq":
             k = mam_simple_json.find_child(child, "kq-k")
             q = mam_simple_json.find_child(child, "kq-q")
@@ -340,7 +339,7 @@ def mam_children_tokens(el, out: list, tagcount: Counter, flags=None) -> None:
         elif tag == "kq-q-velo-k":
             mam_split_text(child.get("text", ""), out, {"kq-q-velo-k"})
         elif tag == "kq-k-velo-q-maq":
-            _previous_token(out, tag).text += hpu.MAQ
+            _previous_token(out, f"a MAM-simple <{tag}>").text += hpu.MAQ
         elif tag == "slh-word":
             t = Tok(mam_slh_word(child))
             t.flags.add("slh-word")
@@ -737,8 +736,12 @@ def write_comparisons() -> list[str]:
     return lines
 
 
-def _previous_token(out: list, tag: str) -> Tok:
-    """The token a MAM-simple mark element follows; a mark with none before it raises."""
+def _previous_token(out: list, what: str) -> Tok:
+    """The token a mark follows; a mark with none before it raises.
+
+    ``what`` names the mark in the error: a MAM-simple element or an HBCE ``<pc>``.
+    Until 2026-10-21 the HBCE reader passed over a sof pasuq with no word before it.
+    """
     if not out:
-        raise ValueError(f"a MAM-simple <{tag}> with no chanted word before it")
+        raise ValueError(f"{what} with no chanted word before it")
     return out[-1]

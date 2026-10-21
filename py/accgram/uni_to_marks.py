@@ -72,6 +72,9 @@ DROPPED_FILLER = frozenset(
     ]
 )
 
+# The values of a WLC petuhah / setumah / nun inversum element.
+_SAM_PE_INUN = frozenset({"P", "S", "N"})
+
 # Prepositive accents: written at the word's start but relocated by
 # `wlc_uword._PREPOS_PATT` to just after the first letter -- a move that can carry
 # them past an accent on that first letter, inverting the accent order the scanner
@@ -192,36 +195,34 @@ def _notes_suffix(notes: object) -> str:
     key on ``]<digit>``).
 
     The kq-u loader collapses a ``notes`` list into one string
-    (`rtms_data._collapse_wlc_notes_to_string`), so accept either form.
+    (`rtms_data._collapse_wlc_notes_to_string`), so accept either form, or no notes at
+    all; any other value raises.
     """
+    if notes is None:
+        return ""
     if isinstance(notes, str):
         return notes
-    if isinstance(notes, list):
-        return "".join(n for n in notes if isinstance(n, str))
-    return ""
+    if isinstance(notes, list) and all(isinstance(n, str) for n in notes):
+        return "".join(notes)
+    raise TypeError(f"unclassified WLC notes value: {notes!r}")
 
 
 def _vel_to_marks(vel: object) -> str:
-    """Transcode one verse element to its mark fragment."""
-    if isinstance(vel, str):
-        return word_to_marks(vel)
-    if not isinstance(vel, dict):
-        return ""
+    """Transcode one verse element to its mark fragment.
 
-    sam = vel.get("sam_pe_inun")
-    if isinstance(sam, str):
+    The element is a word (see ``_word_marks``), a petuhah, setumah or nun inversum, or a
+    ketiv-qere; any other raises.  Until 2026-10-21 any other gave nothing.
+    """
+    if isinstance(vel, dict) and set(vel) == {"sam_pe_inun"}:
+        sam = vel["sam_pe_inun"]
+        if sam not in _SAM_PE_INUN:
+            raise ValueError(f"unclassified WLC sam_pe_inun value: {sam!r}")
         # Petuhah/setumah/nun-inversum: a lone P/S/N atom; N re-acquires its ``]8`` note
         # (mirrors wlc_read_and_parse_mdc._distinguish_sam_pe_inun).  Scanner swallows it.
         return "N]8" if sam == "N" else sam
-
-    kq = vel.get("kq")
-    if kq is not None:
-        return _kq_to_marks(kq)
-
-    word = vel.get("word")
-    if isinstance(word, str):
-        return word_to_marks(word) + _notes_suffix(vel.get("notes"))
-    return ""
+    if isinstance(vel, dict) and set(vel) == {"kq"}:
+        return _kq_to_marks(vel["kq"])
+    return _word_marks(vel)
 
 
 def _kq_to_marks(kq: object) -> str:
@@ -242,9 +243,15 @@ def _kq_to_marks(kq: object) -> str:
     maqaf compound in the body, and left two maqaf marks in a row after a qere word that has one
     of its own.
     """
-    ketiv, qere = kq if isinstance(kq, (list, tuple)) and len(kq) == 2 else ([], [])
-    ketiv_words = [w for w in (_kq_word(v) for v in ketiv) if w]
-    qere_words = [w for w in (_kq_word(v) for v in qere) if w]
+    if not (
+        isinstance(kq, (list, tuple))
+        and len(kq) == 2
+        and all(isinstance(side, (list, tuple)) for side in kq)
+    ):
+        raise TypeError(f"unclassified WLC ketiv-qere value: {kq!r}")
+    ketiv, qere = kq
+    ketiv_words = [_word_marks(v) for v in ketiv]
+    qere_words = [_word_marks(v) for v in qere]
     ketiv_part = "*" + "-".join(ketiv_words) if ketiv_words else "*kk"
     qere_part = "**" + _join_like_verse_elements(qere_words) if qere_words else "**qq"
     return f"{ketiv_part} {qere_part}"
@@ -264,24 +271,34 @@ def _join_like_verse_elements(frags: list[str]) -> str:
     return "".join(parts)
 
 
-def _kq_word(vel: object) -> str:
+def _word_marks(vel: object) -> str:
+    """The marks of one word element: a string, or a ``word`` with optional ``notes``.
+
+    Any other element raises, as does a word that gives no mark at all; until 2026-10-21
+    either gave nothing, and the caller dropped it.
+    """
     if isinstance(vel, str):
-        return word_to_marks(vel)
-    if isinstance(vel, dict):
-        word = vel.get("word")
-        if isinstance(word, str):
-            return word_to_marks(word) + _notes_suffix(vel.get("notes"))
-    return ""
+        word, notes = vel, None
+    elif (
+        isinstance(vel, dict)
+        and set(vel) in ({"word"}, {"word", "notes"})
+        and isinstance(vel["word"], str)
+    ):
+        word, notes = vel["word"], vel.get("notes")
+    else:
+        raise ValueError(f"unclassified WLC word element: {vel!r}")
+    marks = word_to_marks(word)
+    if not marks:
+        raise ValueError(f"WLC word element with no marks: {vel!r}")
+    return marks + _notes_suffix(notes)
 
 
 def verse_to_marks(verse: dict) -> str:
     """Transcode one ``-kq-u`` verse ``{bcv, vels}`` into the scanner-ready mark body."""
     vels = verse.get("vels")
     if not isinstance(vels, list):
-        return ""
-    return _join_like_verse_elements(
-        [frag for frag in (_vel_to_marks(vel) for vel in vels) if frag]
-    )
+        raise TypeError(f"WLC verse has no vels list: {verse!r}")
+    return _join_like_verse_elements([_vel_to_marks(vel) for vel in vels])
 
 
 # --- book-text builder (drop-in for split_wlc.split_wlc_to_book_texts) ---------
