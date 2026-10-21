@@ -269,7 +269,7 @@ def run(args: argparse.Namespace) -> None:
         input_path, keep_line_fn=prose_filter.should_keep_line
     )
     wlc_index = rtms_data.load_wlc422_index(input_path)
-    mam_by_bcv = _load_dual_cant_mam()  # None if MAM-simple is absent
+    mam_by_bcv = _load_dual_cant_mam()
 
     total_parsed = 0
     total_verses = 0
@@ -294,20 +294,22 @@ def run(args: argparse.Namespace) -> None:
     )
 
 
-def _load_dual_cant_mam() -> dict[str, dict] | None:
-    """Load the MAM-simple strands for the dual-cantillation loci, or None if the
-    local MAM-simple product is absent (the normal prose run does not require it; the
-    detangled dual-cant fold-in is then simply skipped)."""
+def _load_dual_cant_mam() -> dict[str, dict]:
+    """Load the MAM-simple strands for the dual-cantillation loci.
+
+    MAM-simple is a tracked product of this repository, so its absence raises.  Until
+    2026-10-21 an absent MAM-simple returned None, and the detangled dual-cant fold-in
+    was silently skipped.
+    """
     mam_dir = mam_simple_verse.default_mam_simple_dir(paths.repo_root())
-    if not mam_dir.is_dir():
-        return None
+    mam_simple_verse.require_mam_simple(mam_dir)
     return mam_simple_verse.load_mam_simple_for_refs(
         mam_dir, dual_cant_detangle.all_refs_by_book(), include_strands=True
     )
 
 
 def _fold_dual_cant_oddities(
-    bb: str, wlc_index: dict[str, dict], mam_by_bcv: dict[str, dict] | None, parser
+    bb: str, wlc_index: dict[str, dict], mam_by_bcv: dict[str, dict], parser
 ) -> list[dict[str, object]]:
     """Detangled dual-cantillation oddity records to fold into book ``bb`` (issue wlc-utils#36).
 
@@ -316,7 +318,7 @@ def _fold_dual_cant_oddities(
     ungrammatical verse.  Those ungrammatical chanted verses are folded in here so they appear in the
     existing prose ungrammatical-verse report (goerwitz.html), keyed by their numbered verse.
     """
-    if mam_by_bcv is None or dual_cant_detangle.passage_for_book(bb) is None:
+    if dual_cant_detangle.passage_for_book(bb) is None:
         return []
     return dual_cant_detangle.folded_ungrammatical_records(
         bb, wlc_index, mam_by_bcv, parser

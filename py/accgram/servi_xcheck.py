@@ -147,7 +147,7 @@ def collect(
                     rep.l_dist[servus] += 1
             words = mam_words.get(ref)
             if words is None:
-                continue
+                raise ValueError(f"MAM-simple has no poetic verse {ref}")
             m_seq = servi_before_in_words(words, target)
             if len(l_seq) != len(m_seq):
                 rep.len_mismatch += 1

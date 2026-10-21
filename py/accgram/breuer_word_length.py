@@ -912,9 +912,7 @@ def mam_atoms(vels: list) -> list[str]:
     it is kept as its own atom rather than dropped, so such a verse would fail loudly.
     """
     atoms: list[str] = []
-    for vel in vels:
-        if not isinstance(vel, str) or not vel:
-            continue
+    for vel in mam_simple_verse.string_vels(vels, "mam_atoms"):
         if vel == hpunc.PASOLEG and atoms:
             atoms[-1] += vel
         else:

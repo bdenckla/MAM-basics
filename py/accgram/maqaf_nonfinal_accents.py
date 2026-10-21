@@ -447,7 +447,7 @@ def mam_words(
     )
     return {
         bcv: _join_on_maqaf(
-            [v for v in payload["mam_simple_verse"]["vels"] if isinstance(v, str)]
+            mam_simple_verse.string_vels(payload["mam_simple_verse"]["vels"], bcv)
         )
         for bcv, payload in loaded.items()
     }
@@ -482,11 +482,7 @@ def mam_words_for_cantillation(
     )
     return {
         bcv: _join_on_maqaf(
-            [
-                value
-                for value in payload["mam_simple_verse"][vels_key]
-                if isinstance(value, str)
-            ]
+            mam_simple_verse.string_vels(payload["mam_simple_verse"][vels_key], bcv)
         )
         for bcv, payload in loaded.items()
     }

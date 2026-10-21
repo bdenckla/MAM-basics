@@ -38,6 +38,7 @@ Parity with the Phase-1 outputs is verified by a zero-diff of the git-tracked
 
 from __future__ import annotations
 
+import unicodedata
 from collections import OrderedDict
 from pathlib import Path
 
@@ -53,6 +54,22 @@ MAQAF = "־"  # U+05BE; emitted as the boundary mark ``-``
 # kept too (their codepoints are already their marks).
 KEPT_NON_ACCENT = frozenset(
     (am.METEG, am.PASEQ, am.SOF_PASUQ, am.UPPER_DOT, am.LOWER_DOT)
+)
+
+# The points, the varika and two invisible joiners are filler to the scanners: dropped.
+# Any other codepoint raises.  Until 2026-10-21 whatever was not classified was dropped
+# too, so Phonetic MAM's tilde for MAM's gray maqaf vanished and ran two atoms together.
+DROPPED_FILLER = frozenset(
+    [chr(cp) for cp in range(0x05B0, 0x05BD)]  # sheva through dagesh or mapiq
+    + [
+        "\N{HEBREW POINT RAFE}",
+        "\N{HEBREW POINT SHIN DOT}",
+        "\N{HEBREW POINT SIN DOT}",
+        "\N{HEBREW POINT QAMATS QATAN}",
+        "\N{HEBREW POINT JUDEO-SPANISH VARIKA}",
+        "\N{COMBINING GRAPHEME JOINER}",
+        "\N{ZERO WIDTH JOINER}",
+    ]
 )
 
 # Prepositive accents: written at the word's start but relocated by
@@ -127,7 +144,10 @@ def word_to_marks(word: str) -> str:
     prepos_marks: list[str] = []
     other_marks: list[str] = []
     telg_seen = 0
-    for ch in word:
+    # A paseq/legarmeh glyph after a space in the string -- UXLC's word element has it so, and
+    # so does MAM-simple's lone bar as chanted_word_accents_units._fold_lone_bars joins it --
+    # loses that one space, so the mark run is WLC's.  Any other space raises below.
+    for ch in word.replace(" " + am.PASEQ, am.PASEQ):
         if is_base_letter(ch):
             skeleton.append(am.LETTER)
             continue
@@ -146,6 +166,11 @@ def word_to_marks(word: str) -> str:
         elif ch in KEPT_NON_ACCENT:
             mark = ch
         if mark is None:
+            if ch not in DROPPED_FILLER:
+                raise ValueError(
+                    f"word_to_marks has no rule for {unicodedata.name(ch, repr(ch))}"
+                    f" in {word!r}"
+                )
             continue  # a point/vowel/dagesh/shin-dot/etc. -> dropped (scanner filler)
         skeleton.append(None)
         # In a telg + gerstar word the telg and a co-located geresh muqdam are kept in

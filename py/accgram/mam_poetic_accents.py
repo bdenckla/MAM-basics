@@ -61,6 +61,7 @@ from mb_misc import osis_book_abbrevs as oba
 
 from accgram import mam_simple_verse
 from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
+from mb_cmn import mam_simple_json
 from accgram import poetic_accent_names as pan
 from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
@@ -338,11 +339,15 @@ def _walk_kq(node: dict, events: list[_Event]) -> None:
     if not isinstance(contents, list):
         raise ValueError("MAM-simple poetic kq node has no contents list")
 
-    qere_children = [
+    unclassified = [
         child
         for child in contents
-        if isinstance(child, dict) and child.get("type") in _QERE_TYPES
+        if not isinstance(child, dict)
+        or child.get("type") not in _QERE_TYPES | _KETIV_TYPES
     ]
+    if unclassified:
+        raise ValueError(f"MAM-simple poetic kq node has children {unclassified!r}")
+    qere_children = [child for child in contents if child["type"] in _QERE_TYPES]
     if not qere_children:
         raise ValueError("MAM-simple poetic kq node has no recognized qere child")
     for child in qere_children:
@@ -532,21 +537,16 @@ def servi_before_from_verse_node(verse_node: dict, target: str) -> list[str | No
 
 
 def _iter_verse_nodes(value: object):
-    """Locate every verse in the complete MAM-simple book structure.
+    """Locate every verse of one loaded MAM-simple JSON file.
 
-    This structural inventory does not flatten text or choose an alternative.
+    This structural inventory does not flatten text or choose an alternative.  It walks
+    the explicit book24/book39/chapter hierarchy (``mb_cmn.mam_simple_json.verses``), so
+    a node out of place raises; until 2026-10-21 it walked any structure and passed over
+    whatever was not a verse.
     """
-    if isinstance(value, dict):
-        if value.get("type") == "verse":
-            yield value
-            return
-        contents = value.get("contents")
-        if isinstance(contents, list):
-            for child in contents:
-                yield from _iter_verse_nodes(child)
-    elif isinstance(value, list):
-        for child in value:
-            yield from _iter_verse_nodes(child)
+    if not isinstance(value, dict) or not isinstance(value.get("contents"), list):
+        raise ValueError("Expected a loaded MAM-simple JSON file")
+    yield from mam_simple_json.verses({"type": "book24", "contents": value["contents"]})
 
 
 def _iter_book_verses(mam_simple_dir: Path, books: tuple[str, ...]):
@@ -564,11 +564,13 @@ def _iter_book_verses(mam_simple_dir: Path, books: tuple[str, ...]):
             root = json.load(f_in)
         for verse_node in _iter_verse_nodes(root):
             osis_id = verse_node.get("osisID")
-            if not isinstance(osis_id, str) or not osis_id.startswith(f"{prefix}."):
-                continue
+            if not isinstance(osis_id, str):
+                raise ValueError(f"MAM-simple verse has no string osisID: {osis_id!r}")
+            if not osis_id.startswith(f"{prefix}."):
+                continue  # a verse of another book in the same book group
             parts = osis_id.split(".")
             if len(parts) != 3:
-                continue
+                raise ValueError(f"Malformed MAM-simple verse osisID {osis_id!r}")
             yield f"{bk39id} {parts[1]}:{parts[2]}", verse_node
 
 

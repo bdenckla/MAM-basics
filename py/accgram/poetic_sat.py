@@ -53,23 +53,29 @@ def build_focus_enriched_row(
     mam_simple_dir: Path,
 ) -> dict[str, object] | None:
     """The build_enriched_row payload for one verse's SAT table, filtered to the
-    focus word, or None when a witness verse is missing (so the run stays
-    non-fatal)."""
-    try:
-        enriched_row, _diff = rtms_data.build_enriched_row(
-            row={"ref": bb_ref, "output_file": output_file, "wlc_focus": wlc_focus},
-            bcv=bcv,
-            ref=bb_ref,
-            wlc422_by_bcv=wlc422_by_bcv,
-            uxlc_by_bcv=uxlc_by_bcv,
-            mam_simple_by_bcv=mam_simple_by_bcv,
-            wlc422_kq_u_dir=wlc422_kq_u_dir,
-            uxlc_dir=uxlc_dir,
-            mam_simple_dir=mam_simple_dir,
-            wlc_focus=wlc_focus,
-        )
-    except ValueError:
+    focus word, or None when WLC 4.22, UXLC or MAM-simple lacks the verse (so the
+    run stays non-fatal).
+
+    Only such a missing verse returns None.  Until 2026-10-21 every ValueError from
+    build_enriched_row did, so a shape error in one of the three texts read as a
+    missing verse.
+    """
+    if any(
+        bcv not in by_bcv for by_bcv in (wlc422_by_bcv, uxlc_by_bcv, mam_simple_by_bcv)
+    ):
         return None
+    enriched_row, _diff = rtms_data.build_enriched_row(
+        row={"ref": bb_ref, "output_file": output_file, "wlc_focus": wlc_focus},
+        bcv=bcv,
+        ref=bb_ref,
+        wlc422_by_bcv=wlc422_by_bcv,
+        uxlc_by_bcv=uxlc_by_bcv,
+        mam_simple_by_bcv=mam_simple_by_bcv,
+        wlc422_kq_u_dir=wlc422_kq_u_dir,
+        uxlc_dir=uxlc_dir,
+        mam_simple_dir=mam_simple_dir,
+        wlc_focus=wlc_focus,
+    )
     # build_enriched_row keeps every word-level diff in the verse; the SAT table is
     # a focus-WORD table, so drop the incidental non-focus diffs (the prose page does
     # this per-verse via rtmsr_sat's hand-curated _SAT_ROW_SUPPRESSIONS_BY_REF).

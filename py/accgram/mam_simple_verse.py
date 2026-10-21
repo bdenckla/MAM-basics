@@ -203,6 +203,21 @@ def mam_simple_json_path(mam_simple_dir: Path, bk39id: str) -> Path:
     )
 
 
+def string_vels(vels: list[object], where: str) -> list[str]:
+    """``vels``, every one of which must be a non-empty string.
+
+    A loader run without ``include_native_paseq_roles`` yields nothing else, so another
+    token is a loud failure here rather than one a caller's ``isinstance`` filter drops,
+    as the filters at six call sites did until 2026-10-21.
+    """
+    for vel in vels:
+        if not isinstance(vel, str) or not vel:
+            raise TypeError(
+                f"{where}: MAM-simple token is not a non-empty string: {vel!r}"
+            )
+    return vels
+
+
 def _mam_simple_json_file_for_bk39id(bk39id: str) -> str:
     bk24id = tbn.bk24id(bk39id)
     bk39ids = tbn.bk39ids_of_bk24(bk24id)
@@ -269,7 +284,20 @@ def _normalize_mam_simple_verse(
     ``vels_cant_bet``, the ``cant-alef`` / ``cant-bet`` strands (issue wlc-utils#36).  In a verse
     with no dual span all three are identical, so a single-cantillation verse in a
     Decalogue range yields a shared stream automatically.
+
+    A BHS or Sefaria verse that MAM has no verse for has the placeholder text "—"
+    (gh-pages/MAM-simple/reading-mam-simple-json.html, "Versification Fields"), which is
+    not Scripture, so it yields no atoms.  Until 2026-10-21 the placeholder reached the
+    callers as an atom, and word_to_marks dropped its one character.
     """
+    if verse_node.get("contents-corresponds-to") == "no verse in MAM":
+        keys = set(verse_node) - _SAMPE_KEYS
+        if keys != _NO_VERSE_IN_MAM_KEYS or verse_node["text"] != "\N{EM DASH}":
+            raise ValueError(f"Unexpected no-verse-in-MAM placeholder: {verse_node!r}")
+        empty: dict[str, object] = {"vels": []}
+        if include_strands:
+            empty.update(vels_cant_alef=[], vels_cant_bet=[])
+        return empty
     verse: dict[str, object] = {
         "vels": _normalize_mam_simple_node(
             verse_node,
@@ -334,6 +362,9 @@ _TRANSPARENT_CONTENT_NODE_TYPES = frozenset(
 )
 _TEXT_NODE_TYPES = frozenset({"text", "letter-large", "letter-small", "letter-hung"})
 _DIRECT_QERE_NODE_TYPES = frozenset({"qere", "kq-trivial", "kq-q-velo-k", "kq-q"})
+_KETIV_NODE_TYPES = frozenset({"kq-k", "ketiv", "kq-k-velo-q"})
+_SAMPE_KEYS = frozenset({"starts-with-sampe", "ends-with-sampe"})
+_NO_VERSE_IN_MAM_KEYS = frozenset({"type", "osisID", "contents-corresponds-to", "text"})
 
 
 def _normalize_mam_simple_node(
@@ -429,6 +460,14 @@ def _mam_simple_fragments(
         contents = node.get("contents")
         if not isinstance(contents, list):
             raise ValueError(f"MAM-simple {node_type!r} node has no contents list")
+        strands = [
+            child.get("type") if isinstance(child, dict) else child
+            for child in contents
+        ]
+        if strands != [CANT_COMBINED, CANT_ALEF, CANT_BET]:
+            raise ValueError(
+                f"MAM-simple {node_type!r} node has the children {strands!r}"
+            )
         matching_children = [
             child
             for child in contents
@@ -452,7 +491,7 @@ def _mam_simple_fragments(
             include_native_paseq_roles=include_native_paseq_roles,
             silluq_annotations=silluq_annotations,
         )
-    if node_type in {"kq-k", "ketiv", "kq-k-velo-q"}:
+    if node_type in _KETIV_NODE_TYPES:
         return [_BOUNDARY]
     if node_type == "kq-k-velo-q-maq":
         return []
@@ -527,9 +566,12 @@ def _mam_simple_kq_qere_fragments(
     if not isinstance(contents, list):
         raise ValueError("MAM-simple kq node has no contents list")
 
-    qere_nodes = [
-        child for child in contents if isinstance(child, dict) and _is_qere_node(child)
-    ]
+    for child in contents:
+        if not isinstance(child, dict) or not (
+            _is_qere_node(child) or child.get("type") in _KETIV_NODE_TYPES
+        ):
+            raise ValueError(f"MAM-simple kq node has an unclassified child: {child!r}")
+    qere_nodes = [child for child in contents if _is_qere_node(child)]
     if not qere_nodes:
         raise ValueError("MAM-simple kq node has no recognized qere child")
     out_fragments: list[object] = []

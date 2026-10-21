@@ -514,11 +514,7 @@ def _mam_final_forms(bcvs: set[str]) -> dict[str, str]:
         raise ValueError(f"MAM-simple lacks requested references: {missing}")
     return {
         bcv: _verse_final_chanted_word(
-            [
-                word
-                for word in payload["mam_simple_verse"]["vels"]
-                if isinstance(word, str)
-            ],
+            mam_simple_verse.string_vels(payload["mam_simple_verse"]["vels"], bcv),
             bcv=bcv,
             source="MAM-simple",
         )

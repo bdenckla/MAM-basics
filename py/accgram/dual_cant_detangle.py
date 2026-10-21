@@ -62,6 +62,7 @@ import unicodedata
 from dataclasses import dataclass
 
 from accgram import accent_marks as am
+from accgram import mam_simple_verse
 from accgram import uni_to_marks
 from accgram import unaccented_chanted_words as ucw
 from accgram.prose_ply_grammar import LOCATION_ONLY, parse_tokens
@@ -337,14 +338,13 @@ def _strand_tokens(
     for chnu, vrnu in passage.refs:
         bcv = f"{passage.bb}{chnu}:{vrnu}"
         info = mam_by_bcv.get(bcv)
-        if not isinstance(info, dict):
-            continue
-        verse = info.get("mam_simple_verse")
-        if not isinstance(verse, dict):
-            continue
-        for tok in verse.get(vels_key, []):
-            if isinstance(tok, str) and tok:
-                out.append(_Tok(bcv, tok))
+        if not isinstance(info, dict) or not isinstance(
+            info.get("mam_simple_verse"), dict
+        ):
+            raise ValueError(f"MAM-simple lacks the dual-cantillation verse {bcv}")
+        tokens = info["mam_simple_verse"][vels_key]
+        for tok in mam_simple_verse.string_vels(tokens, bcv):
+            out.append(_Tok(bcv, tok))
     return out
 
 

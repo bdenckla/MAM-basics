@@ -101,7 +101,7 @@ def collect_divergences(
         for verse in scan_book(text, bb):
             mam = mam_by_ref.get(verse.reference)
             if mam is None:
-                continue
+                raise ValueError(f"MAM-simple has no poetic verse {verse.reference}")
             total += 1
             tokens = reconcile_tokens(
                 verse.reference, verse.body, list(verse.tokens), mam, parser

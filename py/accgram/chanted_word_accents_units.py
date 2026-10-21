@@ -236,7 +236,7 @@ def mam_frags(refs_by_book: dict[str, set[tuple[int, int]]]) -> dict[str, list[F
     return {
         bcv: _atom_frags(
             _fold_lone_bars(
-                [v for v in payload["mam_simple_verse"]["vels"] if isinstance(v, str)],
+                mam_simple_verse.string_vels(payload["mam_simple_verse"]["vels"], bcv),
                 bcv,
             )
         )
