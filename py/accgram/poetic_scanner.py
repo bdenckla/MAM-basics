@@ -91,13 +91,18 @@ from wlc_cmn.wlc_book_codes import wlc_bb_to_bk39id
 
 _TEXT = am.TEXT  # within one maqqef/space-delimited atom (as in prose)
 
-# The run of letters after a tsinnorit, up to its partner, in the metsunnar rules:
-# like _TEXT but also excluding every accent (U+0591..U+05AE), so the partner is the
-# FIRST accent after the tsinnorit.  Intra-atom, this keeps the fusion from reaching
-# across an intervening divider (an ole, a mahapakh-legarmeh) to a later conjunctive;
-# in the omitted-maqaf rule it additionally enforces a tsinnorit-*only* first atom (no
-# main accent of its own -- the cue that the chanted word continues across the hyphen).
-_TSINNORIT_ATOM_TAIL = r"[^ \r\n֑-֮-]*"
+# The run after a tsinnorit, up to its partner, in the metsunnar rules: every
+# character but a space, a line break or an accent (U+0591..U+05AE), so the partner
+# is the FIRST accent after the tsinnorit.  A maqaf may stand in the run, so the
+# partner may be on a later atom of the tsinnorit's chanted word: Ben Denckla's
+# decision of 2026-10-21, "In most ways, including this way, a compound word should
+# be treated the same as a simple word."  Until then the run stopped at a maqaf too,
+# and a tsinnorit on the atom before a maqaf was a stray accent.  Excluding accents
+# keeps the fusion from reaching across an intervening divider (an ole, a
+# mahapakh-legarmeh) to a later conjunctive; in the omitted-maqaf rule it
+# additionally enforces a tsinnorit-*only* chanted word before the space (no main
+# accent of its own -- the cue that the chanted word continues across the space).
+_TSINNORIT_TAIL = "[^ \r\n\N{HEBREW ACCENT ETNAHTA}-\N{HEBREW ACCENT ZINOR}]*"
 
 # The unaccented run between an oleh and its yored: letters, points, meteg, and
 # the M-C note markers pass through, but an accent, maqaf, or separator refuses
@@ -262,26 +267,27 @@ _POETIC_GG_RULES: list[tuple[re.Pattern[str], str | None]] = [
     # mahapakh / merkha metsunnar = a tsinnorit (U+0598) fused onto its mahapakh /
     # merkha partner in the same chanted word, the secondary tsinnorit consumed into
     # one conjunctive token instead of swallowed (Plan C).  Two graphical shapes:
-    #   - intra-atom: tsinnorit and its partner in one space/maqaf-delimited atom;
-    #   - omitted-maqaf: a tsinnorit-only atom (no main accent of its own -- the cue),
-    #     then a single space (the omitted hyphen, Breuer §22), then the next atom that
-    #     completes the chanted word and carries the partner.  Must precede the bare
-    #     MAHAPAKH / MERKHA rules.  Both shapes use _TSINNORIT_ATOM_TAIL (no accent
+    #   - intra-chanted-word: tsinnorit and its partner in one chanted word, in one
+    #     atom or in two atoms joined by a maqaf;
+    #   - omitted-maqaf: a tsinnorit-only chanted word (no main accent of its own --
+    #     the cue), then a single space (the omitted hyphen, Breuer §22), then the next
+    #     atom that completes the chanted word and carries the partner.  Must precede
+    #     the bare MAHAPAKH / MERKHA rules.  Both shapes use _TSINNORIT_TAIL (no accent
     #     between the tsinnorit and its partner): the partner is the FIRST accent after
     #     the tsinnorit (Yeivin §372 "immediately before the stress"; corpus-confirmed
     #     for all 198), so the rule cannot reach across an intervening divider (an ole,
     #     a mahapakh-legarmeh) to steal it, and the two shapes stay disjoint.
     (
-        re.compile(am.TSINNORIT + _TSINNORIT_ATOM_TAIL + am.MAHAPAKH),
+        re.compile(am.TSINNORIT + _TSINNORIT_TAIL + am.MAHAPAKH),
         pan.MAHAPAKH_METSUNNAR,
     ),
-    (re.compile(am.TSINNORIT + _TSINNORIT_ATOM_TAIL + am.MERKHA), pan.MERKHA_METSUNNAR),
+    (re.compile(am.TSINNORIT + _TSINNORIT_TAIL + am.MERKHA), pan.MERKHA_METSUNNAR),
     (
-        re.compile(am.TSINNORIT + _TSINNORIT_ATOM_TAIL + " " + _TEXT + am.MAHAPAKH),
+        re.compile(am.TSINNORIT + _TSINNORIT_TAIL + " " + _TEXT + am.MAHAPAKH),
         pan.MAHAPAKH_METSUNNAR,
     ),
     (
-        re.compile(am.TSINNORIT + _TSINNORIT_ATOM_TAIL + " " + _TEXT + am.MERKHA),
+        re.compile(am.TSINNORIT + _TSINNORIT_TAIL + " " + _TEXT + am.MERKHA),
         pan.MERKHA_METSUNNAR,
     ),
     # revia (gadol/qatan) -- reclassified in the second pass.
