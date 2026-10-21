@@ -692,7 +692,12 @@ def _accent_grammar_tokens_by_entry(
         if isinstance(event, analysis_reader.Reading):
             word = event.scanner_word()
             entries.append(event)
-            fragments.append(cwa.Frag(word, uni_to_marks.word_to_marks(word), True))
+            # The scanners are given Phonetic MAM's tilde as the maqaf it stands for, as
+            # _phonetic_mam_join_key gives it.  Until 2026-10-21 word_to_marks skipped the
+            # tilde, running the atoms either side of a gray maqaf together into one, so a
+            # tsinnorit read as one token with the next atom's merkha or mahapakh.
+            marks = uni_to_marks.word_to_marks(word.replace(hpu.NU_GMAQ, MAQAF))
+            fragments.append(cwa.Frag(word, marks, True))
         elif event == _PHONETIC_MAM_PASOLEG:
             assert fragments, (bb, chnu, vrnu)
             prior = fragments[-1]

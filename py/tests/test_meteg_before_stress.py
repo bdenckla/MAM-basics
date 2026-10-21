@@ -117,17 +117,18 @@ def _scanner_tokens(book, chapter, verse_number, verse, has_legarmeh):
     """Each displayed reading of one selected verse, with its accgram scanner tokens.
 
     The scanners read each chanted word's plain displayed Hebrew, with the display's
-    paseq marker appended to the chanted word before it, as
-    post_stress_meteg_model._accent_grammar_tokens_by_entry appends it.
+    paseq marker appended to the chanted word before it and its gray maqaf given as a
+    maqaf, as post_stress_meteg_model._accent_grammar_tokens_by_entry gives them.
     """
     bb = bk39id_to_wlc_bb(book)
     entries, fragments = [], []
     for event in verse.events():
         if isinstance(event, analysis_reader.Reading):
             entries.append(event)
-            fragments.append(
-                cwa.Frag(event.hebrew, uni_to_marks.word_to_marks(event.hebrew), True)
+            marks = uni_to_marks.word_to_marks(
+                event.hebrew.replace(hpu.NU_GMAQ, hpu.MAQ)
             )
+            fragments.append(cwa.Frag(event.hebrew, marks, True))
         elif event == post_stress_meteg_model._PHONETIC_MAM_PASOLEG:
             prior = fragments[-1]
             fragments[-1] = cwa.Frag(prior.text, prior.marks + hpu.PASOLEG, True)
