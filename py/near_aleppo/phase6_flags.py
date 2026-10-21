@@ -486,7 +486,8 @@ def _matching_templates(value, family, key, expected):
         found.append(value)
     rule = phase2._RULES.get(value["tmpl_name"])
     if rule is None:
-        return found
+        # Until 2026-10-21 a template with no phase-2 rule ended the search silently.
+        raise ValueError(f"No phase-2 rule for template {value['tmpl_name']!r}")
     params = value.get("tmpl_params", {})
     if rule.action == phase2._DISSOLVE:
         found += _matching_templates(params[rule.keys[0]], family, key, expected)
@@ -495,4 +496,11 @@ def _matching_templates(value, family, key, expected):
     elif rule.action == phase2._KEEP_KQ:
         for item in params.values():
             found += _matching_templates(item, family, key, expected)
+    elif rule.action not in (
+        phase2._VERBATIM,
+        phase2._MARK,
+        phase2._COLLAPSE_WORD,
+        phase2._CARRIERS,
+    ):
+        raise ValueError(f"Unclassified phase-2 action {rule.action!r}")
     return found

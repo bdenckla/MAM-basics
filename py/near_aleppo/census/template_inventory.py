@@ -84,6 +84,8 @@ def main():
     settled_counts = Counter()
 
     def walk_raw(w):
+        if isinstance(w, str):
+            return
         if isinstance(w, (list, tuple)):
             for x in w:
                 walk_raw(x)
@@ -95,8 +97,12 @@ def main():
             raw_keysets[name][tuple(sorted(keys))] += 1
             for k in keys:
                 walk_raw(wtp.template_param_val(w, k))
+            return
+        raise TypeError(f"unclassified MAM-parsed-plus node: {w!r}")
 
     def walk_settled(w):
+        if isinstance(w, str):
+            return
         if isinstance(w, (list, tuple)):
             for x in w:
                 walk_settled(x)
@@ -106,6 +112,8 @@ def main():
             settled_counts[name] += 1
             for k in keys_settled(name, list(wtp.template_param_keys(w))):
                 walk_settled(wtp.template_param_val(w, k))
+            return
+        raise TypeError(f"unclassified MAM-parsed-plus node: {w!r}")
 
     for bkid in tbn.ALL_BK39_IDS:
         if bkid not in books:

@@ -55,7 +55,7 @@ def each_nusach(wtel, out):
             each_nusach(x, out)
         return
     if not wtp.is_template(wtel):
-        return
+        raise TypeError(f"unclassified MAM-parsed-plus node: {wtel!r}")
     name = wtp.template_name(wtel)
     if name == NUSACH:
         out.append(wtel)
@@ -78,6 +78,8 @@ def flatten(wtel, out):
             return
         for k in edition_parameter_keys(wtel):
             flatten(wtp.template_param_val(wtel, k), out)
+    else:
+        raise TypeError(f"unclassified MAM-parsed-plus node: {wtel!r}")
 
 
 def text_of(val):

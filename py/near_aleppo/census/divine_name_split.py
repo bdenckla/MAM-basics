@@ -57,7 +57,7 @@ def render(w):
             return " "
         keys = edition_parameter_keys(w)
         return " ".join(render(wtp.template_param_val(w, k)) for k in keys)
-    return ""
+    raise TypeError(f"unclassified MAM-parsed-plus node: {w!r}")
 
 
 def clusters(atom):

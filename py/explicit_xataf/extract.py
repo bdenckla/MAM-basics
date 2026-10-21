@@ -40,13 +40,22 @@ _BARE_WORD_RE = re.compile(
 def flatten_arg1_strings(arg1):
     """Extract all plain strings from arg[1], which may be a list of
     strings and template dicts (e.g. {"tmpl_name": "ש"} separators).
-    Adjacent strings are joined to handle angle brackets split across elements."""
+    Adjacent strings are joined to handle angle brackets split across elements.
+
+    A template is left out of the strings, but it must be one join_arg1_strings
+    classifies, so an unknown one raises here; until 2026-10-21 any template,
+    known or not, was passed over.
+    """
     if isinstance(arg1, str):
         return [arg1]
+    if not isinstance(arg1, list):
+        raise TypeError(f"unclassified MAM note-body node: {type(arg1).__name__}")
     out = []
     for item in arg1:
         if isinstance(item, str):
             out.append(item)
+        else:
+            join_arg1_strings(item)
     return out
 
 

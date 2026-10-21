@@ -38,10 +38,12 @@ def render(w, qamats_key=None):
         overrides = None if qamats_key is None else {QAMATS_TMPL: (qamats_key,)}
         keys = edition_parameter_keys(w, overrides=overrides)
         return "".join(render(wtp.template_param_val(w, k), qamats_key) for k in keys)
-    return ""
+    raise TypeError(f"unclassified MAM-parsed-plus node: {w!r}")
 
 
 def find(w, out):
+    if isinstance(w, str):
+        return
     if isinstance(w, (list, tuple)):
         for x in w:
             find(x, out)
@@ -56,6 +58,8 @@ def find(w, out):
         keys = edition_parameter_keys(w)
         for k in keys:
             find(wtp.template_param_val(w, k), out)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus node: {w!r}")
 
 
 def nm(c):

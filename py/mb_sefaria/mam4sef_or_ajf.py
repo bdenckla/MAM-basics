@@ -11,6 +11,7 @@ from mb_cmn import bib_locales as tbn
 from mb_cmn import provenance
 from mb_cmn import paths
 from mb_cmn.mam_simple_book_group import resolve_book_group_path
+from mb_cmn import mam_simple_json
 from mb_misc import write_utils
 from mb_sefaria import write_utils_sef_or_ajf
 from mb_cmn import shrink
@@ -96,12 +97,15 @@ def _read_book_group(variant, bkg_name):
 
 
 def _iter_verses(root_jobj):
-    for book39 in root_jobj["contents"]:
-        if book39["type"] != "book39":
-            continue
-        for item in book39["contents"]:
-            if item["type"] == "chapter":
-                yield from (v for v in item["contents"] if v["type"] == "verse")
+    """Every verse, through the explicit book24/book39/chapter hierarchy.
+
+    mam_simple_json.verses raises on a node out of place.  Until 2026-10-21 any child of
+    a book group, a book or a chapter that was not a book, chapter or verse was passed
+    over; only bare parashah markers stand there, and they still are.
+    """
+    yield from mam_simple_json.verses(
+        {"type": "book24", "contents": root_jobj["contents"]}
+    )
 
 
 def _iter_verses_with_cant_all_three(root_jobj):

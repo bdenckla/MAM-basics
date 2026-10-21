@@ -77,19 +77,23 @@ def iter_verses(corpus: Corpus) -> Iterator[tuple]:
 def iter_template_objects(node) -> Iterator[dict]:
     """Recursively yield every template object (dict with 'tmpl_name') in node.
 
-    Handles the full range of node types found in the plus corpus:
+    Handles the full range of node types found in the plus corpus, and raises on any other:
     - dict with 'tmpl_name': a template object; yield it, recurse into tmpl_params values.
     - list: recurse into each element.
     - str: no templates inside; stop.
     """
-    if isinstance(node, dict):
-        if "tmpl_name" in node:
-            yield node
-            for val in node.get("tmpl_params", {}).values():
-                yield from iter_template_objects(val)
-    elif isinstance(node, list):
+    if isinstance(node, str):
+        return
+    if isinstance(node, list):
         for item in node:
             yield from iter_template_objects(item)
+        return
+    if isinstance(node, dict) and "tmpl_name" in node:
+        yield node
+        for val in node.get("tmpl_params", {}).values():
+            yield from iter_template_objects(val)
+        return
+    raise TypeError(f"unclassified MAM-parsed-plus node: {node!r}")
 
 
 def iter_all_template_objects(corpus: Corpus) -> Iterator[dict]:
