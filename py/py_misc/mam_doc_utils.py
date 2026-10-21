@@ -11,7 +11,6 @@ from py_misc import uni_heb_char_classes as uhc
 from render_wt import render_element as renel
 from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import template_names as tmpln
-from mb_misc import hebrew_letter_words as hlw
 
 
 def mark_doc_targets(renseq):
@@ -91,9 +90,9 @@ def _does_not_need_callout(doc_lemma):
 
 
 def _has_pointed_string_within(ren_els):
-    pointed_sum = _pointed_sum(ren_els)
-    pointed_letters = hlw.letters_and_maqafs(pointed_sum)
-    return len(pointed_letters) > 0
+    # Only whether a letter is there.  The strings are summed with no separator, so the
+    # sum is not the one chanted word that hebrew_letter_words.letters_and_maqafs takes.
+    return any(ch in _LETTERS for ch in _pointed_sum(ren_els))
 
 
 def _pointed_sum(ren_els):
@@ -125,6 +124,7 @@ def _mark_doc_targets_in_ren_el(ren_el):
 
 
 _VOW_AND_ACC = set(uhc.VOWEL_POINTS) | set(uhc.ACCENTS)
+_LETTERS = frozenset(uhc.LETTERS)
 _MAM_DOC_NOTE_CALLOUT = renel.mk_ren_el_tc("mam-doc-callout", ("*",))
 LEMMA_FROM_STR = {
     " ": ("__",),
