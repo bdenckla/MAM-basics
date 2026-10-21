@@ -88201,7 +88201,7 @@
 "bcv": "gn30:11",
 "input": {
 "unicode": "ות֥אמר לא֖ה ב֣א ג֑ד ותקר֥א את־ שמ֖ו גֽד׃",
-"marks": "אא֥אאא אא֖א *אאא **א֣א-א֑א אאאא֥א אא-אא֖א אֽא׃",
+"marks": "אא֥אאא אא֖א *אאא **א֣א א֑א אאאא֥א אא-אא֖א אֽא׃",
 "tokens": [
 "TILDE",
 "MERKHA",
@@ -88214,14 +88214,6 @@
 "SOFPASUQ"
 ]
 },
-"chanted_word_accents": [
-{
-"marks": "**א֣א-א֑א",
-"sequence": "munax atnax",
-"kind": "a maqaf compound, its accents split across atoms",
-"itm_section": "§215"
-}
-],
 "status": "clean",
 "tree": {
 "label": "silluq_clause",

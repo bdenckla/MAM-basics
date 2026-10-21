@@ -434,29 +434,25 @@
   "which_corpus_has_it": "MAM's, and hardly L's -- which is what both books' manuscript labels predict. Yeivin's §357 examples are in C, in S, in A and C, and in L3; Breuer's is ancient manuscripts generally. The counts below are the check on that.",
   "by_corpus": {
    "wlc422": {
-    "accents_split_across_atoms": 45,
+    "accents_split_across_atoms": 32,
     "of_them_with_a_gaya_after_the_nonfinal_accent": 1,
     "with_a_gaya_by_sequence": {
      "mayela silluq": 1
     },
     "without_a_gaya_by_sequence": {
-     "merkha tipexa": 8,
      "mayela atnax": 7,
-     "munax zaqef": 5,
+     "merkha tipexa": 5,
      "merkha silluq": 4,
      "mahapakh pashta": 3,
-     "munax atnax": 3,
-     "munax munax": 3,
-     "tipexa munax": 2,
+     "munax zaqef": 3,
+     "munax munax": 2,
      "darga tevir": 1,
      "merkha pashta": 1,
      "merkha tevir": 1,
+     "munax atnax": 1,
      "munax revia": 1,
      "munax telishagedola": 1,
-     "pashta zaqef": 1,
-     "tipexa mahapakh": 1,
-     "tipexa merkha": 1,
-     "zaqef tipexa": 1
+     "tipexa mahapakh": 1
     },
     "with_a_gaya": [
      {
@@ -849,19 +845,19 @@
   "wlc422": {
    "kind": "diplomatic: the Westminster transcription of the Leningrad Codex",
    "verses": 18724,
-   "chanted_words": 233232,
-   "atomic_chanted_words": 196412,
-   "maqaf_compounds": 36820,
-   "hits": 1602,
+   "chanted_words": 233245,
+   "atomic_chanted_words": 196437,
+   "maqaf_compounds": 36808,
+   "hits": 1589,
    "by_kind": {
     "an atomic chanted word": 1107,
     "a maqaf compound, its accents all on the final atom": 450,
-    "a maqaf compound, its accents split across atoms": 45
+    "a maqaf compound, its accents split across atoms": 32
    },
    "by_sequence": {
-    "munax zaqef": 1377,
+    "munax zaqef": 1375,
     "azla geresh": 126,
-    "merkha tipexa": 15,
+    "merkha tipexa": 12,
     "mayela atnax": 10,
     "mahapakh pashta": 8,
     "munax revia": 6,
@@ -870,11 +866,10 @@
     "qadma merkha": 6,
     "mayela silluq": 5,
     "merkha silluq": 5,
-    "munax atnax": 5,
-    "munax munax": 4,
+    "munax atnax": 3,
+    "munax munax": 3,
     "gershayim telishagedola": 2,
     "merkha tevir": 2,
-    "tipexa munax": 2,
     "darga gershayim": 1,
     "darga tevir": 1,
     "geresh telishagedola": 1,
@@ -885,13 +880,10 @@
     "munax mahapakh": 1,
     "munax pazer": 1,
     "munax telishagedola": 1,
-    "pashta zaqef": 1,
     "telishagedola geresh": 1,
     "telishagedola gershayim": 1,
     "telishagedola revia": 1,
-    "tipexa mahapakh": 1,
-    "tipexa merkha": 1,
-    "zaqef tipexa": 1
+    "tipexa mahapakh": 1
    },
    "geresh_folds": [],
    "methigazaqef": {
@@ -1922,13 +1914,6 @@
      "kind": "a maqaf compound, its accents all on the final atom"
     },
     {
-     "bcv": "dt33:2",
-     "chanted_word": "א֥ש־ד֖ת",
-     "sequence": "merkha tipexa",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
      "bcv": "1s2:13",
      "chanted_word": "של֥ש־השנ֖ים",
      "sequence": "merkha tipexa",
@@ -1940,20 +1925,6 @@
      "chanted_word": "כל־הה֥רות֖יה",
      "sequence": "merkha tipexa",
      "kind": "a maqaf compound, its accents all on the final atom"
-    },
-    {
-     "bcv": "2k18:27",
-     "chanted_word": "מימ֥י־רגליה֖ם",
-     "sequence": "merkha tipexa",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
-     "bcv": "is36:12",
-     "chanted_word": "מימ֥י־רגליה֖ם",
-     "sequence": "merkha tipexa",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
     },
     {
      "bcv": "je8:18",
@@ -2007,13 +1978,6 @@
      "kind": "an atomic chanted word"
     },
     {
-     "bcv": "gn30:11",
-     "chanted_word": "ב֣א־ג֑ד",
-     "sequence": "munax atnax",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
      "bcv": "2s12:25",
      "chanted_word": "יד֣ידי֑ה",
      "sequence": "munax atnax",
@@ -2033,13 +1997,6 @@
      "kind": "an atomic chanted word"
     },
     {
-     "bcv": "1c27:12",
-     "chanted_word": "לב֣ן־ימינ֑י",
-     "sequence": "munax atnax",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
      "bcv": "lm4:9",
      "chanted_word": "ש֣ה֤ם",
      "sequence": "munax mahapakh",
@@ -2050,13 +2007,6 @@
      "chanted_word": "א֣ל֣ה",
      "sequence": "munax munax",
      "kind": "an atomic chanted word"
-    },
-    {
-     "bcv": "ek8:6",
-     "chanted_word": "מ֣ה־ה֣ם",
-     "sequence": "munax munax",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
     },
     {
      "bcv": "1c27:14",
@@ -9212,13 +9162,6 @@
      "kind": "an atomic chanted word"
     },
     {
-     "bcv": "er4:12",
-     "chanted_word": "ושורי֣א־שכל֔ילו",
-     "sequence": "munax zaqef",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
      "bcv": "er4:17",
      "chanted_word": "כנו֣תה֔ון",
      "sequence": "munax zaqef",
@@ -9295,13 +9238,6 @@
      "chanted_word": "ומן־הש֣ער֔ים",
      "sequence": "munax zaqef",
      "kind": "a maqaf compound, its accents all on the final atom"
-    },
-    {
-     "bcv": "ne2:13",
-     "chanted_word": "ה֣ם־פרוצ֔ים",
-     "sequence": "munax zaqef",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
     },
     {
      "bcv": "ne3:7",
@@ -10390,13 +10326,6 @@
      "kind": "an atomic chanted word"
     },
     {
-     "bcv": "2s21:12",
-     "chanted_word": "ש֙מה֙־פלשת֔ים",
-     "sequence": "pashta zaqef",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
      "bcv": "jb1:15",
      "chanted_word": "ואמ֨לט֧ה",
      "sequence": "qadma darga",
@@ -10526,34 +10455,6 @@
      "bcv": "je48:12",
      "chanted_word": "הנ֖ה־ימ֤ים",
      "sequence": "tipexa mahapakh",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
-     "bcv": "ek9:11",
-     "chanted_word": "ככ֖ל־אש֥ר",
-     "sequence": "tipexa merkha",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
-     "bcv": "je6:29",
-     "chanted_word": "מא֖ש־ת֣ם",
-     "sequence": "tipexa munax",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
-     "bcv": "ek42:9",
-     "chanted_word": "ומת֖חת־הלשכ֣ות",
-     "sequence": "tipexa munax",
-     "kind": "a maqaf compound, its accents split across atoms",
-     "gaya_after_the_nonfinal_accent": false
-    },
-    {
-     "bcv": "1c9:4",
-     "chanted_word": "בנ֔י־מן־בני־פ֖רץ",
-     "sequence": "zaqef tipexa",
      "kind": "a maqaf compound, its accents split across atoms",
      "gaya_after_the_nonfinal_accent": false
     }

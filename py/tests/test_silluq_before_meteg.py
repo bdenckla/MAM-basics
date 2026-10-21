@@ -84,10 +84,9 @@ def test_annotation_boundaries_preserve_poetic_word_events():
                 {"type": "text", "text": _SOF},
             ],
         }
-        baseline_events, annotated_events = [], []
-        mam_poetic_accents._walk(plain, baseline_events)
-        mam_poetic_accents._walk(annotated, annotated_events)
-        assert annotated_events == baseline_events
+        assert mam_poetic_accents._verse_events(
+            annotated
+        ) == mam_poetic_accents._verse_events(plain)
         assert mam_simple_verse._normalize_mam_simple_verse(
             annotated
         ) == mam_simple_verse._normalize_mam_simple_verse(plain)

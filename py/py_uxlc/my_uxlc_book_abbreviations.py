@@ -45,10 +45,18 @@ BKNA_MAP_UXLC_TO_STD = {  # not a two-way map! (E.g. 1Chr & 1 Chr)
     "Ob": tbn.BK_OVADIAH,
     "Jon": tbn.BK_JONAH,
     "Mic": tbn.BK_MIKHAH,
-    # Naxum
-    # Westminster's change records cite Habakkuk as "Hab" (Hab 1:1.1 and Hab 3:19.1 in
-    # in/mam-ws-intro/westminster-typing.mediawiki); first needed for the tanach.us link of
-    # an ungrammatical Habakkuk verse, Hab 2:8.
+    # No change record cites Nahum, and the WLC difference lists quoted in
+    # in/mam-ws-intro/westminster-typing.mediawiki find "No differences found in Nahum!", so
+    # "Nah" is UXLC's own abbreviation instead: the <abbrev> of uxlc/in/UXLC-rest/TanachIndex.xml
+    # and of in/UXLC-39/Nahum.xml's header.  That is the field the citations follow: measured
+    # 2026-10-20, all 37 books cited in in/UXLC-misc/all_changes.json are cited by their
+    # TanachIndex abbreviation (a space after a leading digit aside), and Nahum and Habakkuk
+    # are the only two never cited.
+    "Nah": tbn.BK_NAXUM,
+    # The list of differences between WLC 4.14 and 4.16 quoted in
+    # in/mam-ws-intro/westminster-typing.mediawiki cites Habakkuk as "Hab" (Hab 1:1.1 and
+    # Hab 3:19.1); first needed for the tanach.us link of an ungrammatical Habakkuk verse,
+    # Hab 2:8.
     "Hab": tbn.BK_XABA,
     "Zeph": tbn.BK_TSEF,
     "Hag": tbn.BK_XAGGAI,

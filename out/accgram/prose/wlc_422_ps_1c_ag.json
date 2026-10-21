@@ -28969,7 +28969,7 @@
 "bcv": "1c9:4",
 "input": {
 "unicode": "עות֨י בן־ עמיה֤וד בן־ עמרי֙ בן־ אמר֣י בן־ בנ֔י מן־ בני־ פ֖רץ בן־ יהודֽה׃",
-"marks": "אאא֨א אא-אאאא֤אא אא-אאאא֙ אא-אאא֣א אא-*אאאאא- **אא֔א-אא-אאא-א֖אא אא-אאאאֽא׃",
+"marks": "אאא֨א אא-אאאא֤אא אא-אאאא֙ אא-אאא֣א אא-*אאאאא- **אא֔א אא-אאא-א֖אא אא-אאאאֽא׃",
 "tokens": [
 "TILDE",
 "QADMA",
@@ -28982,14 +28982,6 @@
 "SOFPASUQ"
 ]
 },
-"chanted_word_accents": [
-{
-"marks": "**אא֔א-אא-אאא-א֖אא",
-"sequence": "zaqef tipexa",
-"kind": "a maqaf compound, its accents split across atoms",
-"itm_section": null
-}
-],
 "status": "clean",
 "tree": {
 "label": "silluq_clause",
@@ -78842,7 +78834,7 @@
 "bcv": "1c27:12",
 "input": {
 "unicode": "התשיעי֙ לח֣דש התשיע֔י אביע֥זר הענתת֖י לב֣ן׀ ימינ֑י ועל֙ מחלקת֔ו עשר֥ים וארבע֖ה אֽלף׃",
-"marks": "אאאאאא֙ אא֣אא אאאאא֔א אאאא֥אא אאאאא֖א *אאאאאאאא **אא֣א׀-אאאא֑א אאא֙ אאאאא֔א אאא֥אא אאאאא֖א אֽאא׃ S",
+"marks": "אאאאאא֙ אא֣אא אאאאא֔א אאאא֥אא אאאאא֖א *אאאאאאאא **אא֣א׀ אאאא֑א אאא֙ אאאאא֔א אאא֥אא אאאאא֖א אֽאא׃ S",
 "tokens": [
 "TILDE",
 "PASHTA",
@@ -78860,14 +78852,6 @@
 "SOFPASUQ"
 ]
 },
-"chanted_word_accents": [
-{
-"marks": "**אא֣א׀-אאאא֑א",
-"sequence": "munax atnax",
-"kind": "a maqaf compound, its accents split across atoms",
-"itm_section": "§215"
-}
-],
 "status": "clean",
 "tree": {
 "label": "silluq_clause",

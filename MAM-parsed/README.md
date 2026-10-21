@@ -33,8 +33,8 @@ For detailed documentation of the file structures, see:
 
 * [Reading MAM-parsed plus](https://bdenckla.github.io/MAM-basics/MAM-parsed/plus/html/mpplus.html) — structure reference for the "plus" format
 
-The [consumer cautions](#consumer-cautions) below cover whitespace templates and text
-spacing around narpas (narrow-sense paseq, מ:פסק).
+The [consumer cautions](#consumer-cautions) below cover whitespace templates, text
+spacing around narpas (narrow-sense paseq, מ:פסק), and MAM's gray maqaf.
 
 This product directory also contains a toy sample application
 [`main_tmpl_survey_toy_example.py`](py-examples/main_tmpl_survey_toy_example.py),
@@ -126,3 +126,10 @@ is not a whitespace template. The omission is not a grouping instruction: narpas
 a chanted word. The omission also prescribes no display spacing. An edition decides
 whether to display spacing before and/or after narpas; an analytical consumer need not
 make a display-spacing decision.
+
+### Gray maqaf
+
+MAM's gray maqaf, the template `מ:מקף אפור`, has no parameters, and no whitespace stands on
+either side of it. A consumer may read it as a maqaf, as a space or as a distinct kind of
+maqaf, such as a gray one; a consumer that drops it runs the atoms on either side of it
+together into one atom, which is very unlikely to be what it wants.

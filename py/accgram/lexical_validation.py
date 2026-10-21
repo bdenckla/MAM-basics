@@ -61,6 +61,16 @@ drops out of the token stream and the grammar judges the verse without it.
 ``accgram.unaccented_chanted_words`` holds the rule, the reading of chanted words off the mark
 body and each kind of atom the rule exempts; the poetic scanner reads the same module.
 
+A fifth check (``stray_accents``) is the prose counterpart of the poetic scanner's
+``STRAY_ACCENT``: an accent the prose scanner has no rule for, which its catch-all swallows as
+it swallows a letter.  Four of the poetic system's accents have none -- ole, illuy, dexi and
+atnax hafukh -- and the prose shalshelet is a shalshelet followed by a paseq in its atom, so a
+shalshelet with no paseq after it has none either.  Each would otherwise vanish from the token
+stream, and a chanted word whose only accent it is would drop out as a chanted word with no
+accent does, though the fourth check does not see it, the mark being an accent.  WLC 4.22's
+prose verses have none of them (measured 2026-10-20); a UXLC reading can, since
+``main_uxlc_grammar_test``'s ``NAME2MARK`` gives a mark to UXLC's names for ole, illuy and dexi.
+
 The module is self-contained: it reads the per-atom Unicode mark stream straight from
 the verse body (the scanner-ready marks ``uni_to_marks`` produces), with no dependency
 on the scanner internals.  It is kept general enough that other unpaired stress-helpers
@@ -161,6 +171,16 @@ _ACCENT_LEAF_NAME: dict[str, str] = {
 }
 
 
+# The accents the prose scanner has no rule for (``stray_accents``), named as the poetic scanner
+# names them; atnax hafukh has no ``accent_marks`` alias, the mark being poetic only.
+_PROSE_TOKENLESS_ACCENTS: dict[str, str] = {
+    am.OLE: "ole",
+    am.ILUY: "illuy",
+    am.DEXI: "dexi",
+    "\N{HEBREW ACCENT ATNAH HAFUKH}": "atnax hafukh",
+}
+
+
 def _accent_leaf(mark: str) -> str:
     return _ACCENT_LEAF_NAME.get(mark, f"U+{ord(mark):04X}")
 
@@ -171,14 +191,15 @@ class LexicalUngrammaticalMark:
 
     Covers a stress-helper left without its fusion partner (unpaired 82), a
     non-whitelisted same-letter accent pair (e.g. mahapakh!tipexa), a misplaced telisha
-    qetanna and a chanted word with no accent; ``code`` distinguishes them.  ``rep_char``
+    qetanna, a chanted word with no accent and an accent the prose scanner has no token for;
+    ``code`` distinguishes them.  ``rep_char``
     is a representative codepoint of the offending word, used by prose_run to locate the
     pointed-Hebrew word for the report.  A chanted word with no accent has no mark to find it
     by, so it has an empty ``rep_char`` and is located by ``read_atoms`` instead.
     """
 
-    code: str  # M-C code label ("82"), bang pair label ("mahapakh!tipexa"), or a
-    # placement descriptor ("medial telisha qetanna", "no accent")
+    code: str  # M-C code label ("82"), bang pair label ("mahapakh!tipexa"), a placement
+    # descriptor ("medial telisha qetanna", "no accent"), or a stray accent ("stray dexi")
     atom: str  # the maqaf/space-delimited atom that contains it; for "no accent", the
     # chanted word's atoms joined by maqaf marks
     rep_char: str  # a mark of the offending word, for locating its Unicode word
@@ -298,18 +319,42 @@ def unaccented_chanted_words(body: str) -> list[LexicalUngrammaticalMark]:
     ]
 
 
+def stray_accents(body: str) -> list[LexicalUngrammaticalMark]:
+    """Every accent in a prose verse body that the prose scanner has no token for.
+
+    The prose counterpart of the poetic scanner's ``STRAY_ACCENT``, coded ``stray <name>``:
+    an ole, illuy, dexi or atnax hafukh anywhere, and a shalshelet with no paseq after it in its
+    atom, the prose scanner's shalshelet rule being shalshelet ``{TEXT}`` paseq, where
+    ``{TEXT}`` stays within one atom.
+    """
+    stray: list[LexicalUngrammaticalMark] = []
+    for atom in _ATOM_SPLIT_RE.split(body):
+        for i, ch in enumerate(atom):
+            name = _PROSE_TOKENLESS_ACCENTS.get(ch)
+            if ch == am.SHALSHELET and am.PASEQ not in atom[i + 1 :]:
+                name = "shalshelet"
+            if name is not None:
+                stray.append(
+                    LexicalUngrammaticalMark(
+                        code=f"stray {name}", atom=atom, rep_char=ch
+                    )
+                )
+    return stray
+
+
 def lexical_ungrammatical(body: str) -> list[LexicalUngrammaticalMark]:
     """Every prose lexical / word-placement ungrammatical in ``body``, in one pass.
 
-    The union of this module's four checks, each an ``illegal_mark`` ERROR that diverges
+    The union of this module's five checks, each an ``illegal_mark`` ERROR that diverges
     from the goerwitz C oracle in the documented MISSING_SOFPASUQ spirit:
 
       * an unpaired stress-helper (`unpaired_stress_helpers`, M-C ``82``);
       * a non-whitelisted same-letter accent pair (`illegal_same_letter_pairs`,
         mahapakh!tipexa, lv25:20);
       * a telisha qetanna misplaced on a non-final letter (`nonfinal_telisha_qetannas`,
-        the lone M-C ``24`` of je 44:17); and
-      * a chanted word with no accent (`unaccented_chanted_words`).
+        the lone M-C ``24`` of je 44:17);
+      * a chanted word with no accent (`unaccented_chanted_words`); and
+      * an accent the prose scanner has no token for (`stray_accents`).
 
     This is the single entry point the prose consumers share -- prose_run (the corpus
     output), almost_errors_trees (the exhibit page), and fix_tester (the fix harness) --
@@ -322,4 +367,5 @@ def lexical_ungrammatical(body: str) -> list[LexicalUngrammaticalMark]:
         + illegal_same_letter_pairs(body)
         + nonfinal_telisha_qetannas(body)
         + unaccented_chanted_words(body)
+        + stray_accents(body)
     )

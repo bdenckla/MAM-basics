@@ -112,7 +112,7 @@ StructuredTextLookup = Callable[[dict[str, object], str], object]
 #   token_types       full scanned token-type sequence (tuple[str, ...])
 #   wlc_disjunctives  WLC disjunctive skeleton, scanner (tuple[str, ...])
 #   mam_disjunctives  MAM oracle skeleton (tuple[str, ...] | None if absent)
-#   mam_words         MAM per-chanted-word (base_letters, disjunctive_or_None), the
+#   mam_words         MAM per-chanted-word (letters_and_maqaf, disjunctive_or_None), the
 #                     chanted-word-aligned counterpart of mam_disjunctives used to derive
 #                     the summary; None if the verse is absent from MAM-simple.
 #                     Not written to _oddballs.json (the skeletons are the datum).

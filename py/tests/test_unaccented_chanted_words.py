@@ -2,15 +2,18 @@
 
 ``accgram.unaccented_chanted_words`` reads chanted words off the mark body that
 ``uni_to_marks.verse_to_marks`` writes, because the mark body is all that most verdict paths
-have.  The body is a lossy flattening of the ``-kq-u`` verse: a ketiv and its qere share one
-fragment, and the words of a qere are joined there by maqaf marks whether or not they are a
-compound.  This test reads every WLC 4.22 verse a second way, from its verse elements, which
-keep each qere word apart, and requires the two readings to agree on two things:
+have.  The body is a flattening of the ``-kq-u`` verse: a ketiv and its qere are runs of one
+fragment, and the ketiv, a petuxah or setumah and a nun inversum are runs that hold no word that
+is read.  This test reads every WLC 4.22 verse a second way, from its verse elements, and
+requires the two readings to agree on three things:
 
 1. The atoms the body reads, in order, are the words ``prose_run._verse_display_words`` yields,
    which is what lets ``prose_run`` name a chanted word with no accent by ``read_atoms``.
-2. The chanted words with no accent are the same chanted words.  This is where the qere limit
-   in the module docstring would show, if it ever changed a result.
+2. The chanted words are the same chanted words, each qere word apart: the body's runs and maqaf
+   marks on one side, the maqaf each word of the verse ends with on the other.  A qere of two
+   chanted words is two chanted words on both sides, which the body did not say until
+   ``uni_to_marks._kq_to_marks`` joined a qere's words as verse elements (2026-10-20).
+3. The chanted words with no accent, the silluq's excepted, are the same chanted words.
 
 The oracle here shares no code with the module: it groups the verse's words by the maqaf each
 word ends with, and treats a ketiv, a petuxah or setumah and a nun inversum as no words at all.
@@ -44,12 +47,25 @@ def test_body_reading_agrees_with_the_kq_u_verses():
         if display != words or [_bare(a.marks) for a in atoms] != expected:
             misaligned.append(bcv)
             continue
+        chanted = [
+            tuple(words[atom.read_index] for atom in cw.atoms)
+            for cw in ucw.chanted_words(body)
+        ]
+        oracle_chanted = _oracle_chanted_words(words)
+        if chanted != oracle_chanted:
+            disagreeing.append(
+                f"{bcv}: chanted words, body {chanted}, verse {oracle_chanted}"
+            )
+            continue
         found = [
             tuple(words[atom.read_index] for atom in cw.atoms)
             for cw in ucw.unaccented_chanted_words(body)
         ]
-        if found != _oracle(words):
-            disagreeing.append(f"{bcv}: body {found}, verse {_oracle(words)}")
+        oracle_unaccented = _oracle_unaccented(oracle_chanted)
+        if found != oracle_unaccented:
+            disagreeing.append(
+                f"{bcv}: no accent, body {found}, verse {oracle_unaccented}"
+            )
     assert (
         not misaligned
     ), f"read atoms out of step with the verse's words: {misaligned}"
@@ -83,8 +99,8 @@ def _read_words(vels: list) -> list[str]:
     return out
 
 
-def _oracle(words: list[str]) -> list[tuple[str, ...]]:
-    """The verse's chanted words with no accent, each as its words, the silluq's excepted."""
+def _oracle_chanted_words(words: list[str]) -> list[tuple[str, ...]]:
+    """The verse's chanted words, each as its words: a word ending in a maqaf joins the next."""
     chanted: list[tuple[str, ...]] = []
     current: list[str] = []
     for word in words:
@@ -94,6 +110,11 @@ def _oracle(words: list[str]) -> list[tuple[str, ...]]:
             current = []
     if current:
         chanted.append(tuple(current))
+    return chanted
+
+
+def _oracle_unaccented(chanted: list[tuple[str, ...]]) -> list[tuple[str, ...]]:
+    """Those of ``chanted`` with no accent, the silluq's excepted."""
     silluq = next(
         (i for i, cw in enumerate(chanted) if any(_SOF_PASUQ in w for w in cw)),
         len(chanted) - 1,

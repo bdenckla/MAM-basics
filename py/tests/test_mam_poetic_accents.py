@@ -32,7 +32,12 @@ def _text(*accents: str) -> dict:
 
 
 def _verse(*nodes: dict) -> dict:
-    return {"type": "verse", "osisID": "Ps.1.1", "contents": list(nodes)}
+    # MAM-simple's text runs carry their own spaces, and the extractor splits a run into atoms
+    # only once the run is whole, so a space stands between each two of these nodes.
+    contents = [nodes[0]]
+    for node in nodes[1:]:
+        contents += [{"type": "text", "text": " "}, node]
+    return {"type": "verse", "osisID": "Ps.1.1", "contents": contents}
 
 
 def test_oleh_weyored_and_atnax_and_silluq():
