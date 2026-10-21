@@ -1,0 +1,291 @@
+"""Independent boundary probes; no generator or corpus grammar run."""
+
+from dataclasses import asdict
+import inspect
+import json
+from pathlib import Path
+
+import pytest
+
+from accgram import accent_marks as am
+from accgram import chanted_word_accents_units as units
+from accgram import lexical_validation as lex
+from accgram import mam_poetic_accents as poetic
+from accgram import poetic_accent_names as pan
+from accgram import poetic_oddball_summary as summary
+from accgram import rtms_data, rtms_rows, uni_to_marks
+from mb_cmn import bib_locales as bib, hebrew_accents as ha
+import main_uxlc_grammar_test as ux
+from py_uxlc import my_uxlc_book_abbreviations as canonical
+from uxlc_misc import my_uxlc_book_abbreviations as compat
+
+HERE = Path(__file__).parent
+
+
+@pytest.mark.parametrize(
+    "body,flags",
+    [
+        ("*A **qq B", [True, False]),
+        ("*A-B **qq C", [True, True, False]),
+        ("*A- **qq B", [True, False]),
+        ("*kk **A B", [False, False]),
+        ("A-]n B", [False, False]),
+        ("A-*K **Q", [False, True, False]),
+        ("**Q-*K-L **R", [False, True, True, False]),
+    ],
+)
+def test_unnumbered_tails_preserve_object_ownership(body, flags):
+    head, atoms = ux.numbered_atoms(body)
+    assert ux.joined_atoms(head, atoms) == body
+    assert [a.in_ketiv for a in atoms] == flags
+
+
+@pytest.mark.parametrize(
+    "body,first,last,replacement,expected",
+    [
+        ("A-B C", 0, 0, "A", "A B C"),
+        ("A B", 0, 0, "A-", "A-B"),
+        ("A-]n B", 0, 0, "A", "A B"),
+        ("A B C D", 0, 1, "AB", "AB C D"),
+        ("*kk **Q R", 0, 0, "Q-", "*kk **Q-R"),
+        ("*A-B **qq C", 0, 1, "AB", "*AB **qq C"),
+    ],
+)
+def test_splice_has_declared_boundary_and_stable_indices(
+    body, first, last, replacement, expected
+):
+    head, atoms = ux.numbered_atoms(body)
+    count = len(atoms)
+    ux.splice_atoms(atoms, first, last, replacement)
+    assert ux.joined_atoms(head, atoms) == expected
+    assert len(atoms) == count
+    assert all(
+        not atoms[i].text and not atoms[i].tail for i in range(first + 1, last + 1)
+    )
+
+
+def test_qere_spanning_ketiv_is_rejected():
+    head, atoms = ux.numbered_atoms("**Q *K **R")
+    with pytest.raises(ValueError, match="spans a ketiv"):
+        ux.splice_atoms(atoms, 0, 2, "QR")
+    assert ux.joined_atoms(head, atoms) == "**Q *K **R"
+    head, atoms = ux.numbered_atoms("**Q-*K **R")
+    with pytest.raises(ValueError, match="spans a ketiv"):
+        ux.splice_atoms(atoms, 0, 1, "QK")
+
+
+@pytest.mark.parametrize(
+    "tokens,n",
+    [
+        (["alef", "space", "bet"], 2),
+        (["alef", "maqaf", "space", "bet"], 2),
+        (["alef", "space", "paseq", "space", "bet"], 2),
+        (["alef", "maqaf"], 1),
+    ],
+)
+def test_synthesis_and_numbering_share_boundary_count(tokens, n):
+    body = ux.synth_word(tokens)
+    assert ux.words_spanned(tokens) == n
+    assert len(ux.numbered_atoms(body)[1]) == n
+
+
+def test_qere_words_and_units_keep_separate_chanted_words():
+    verse = {
+        "vels": [{"kq": [["כתב"], ["ב" + ha.MER, "ג" + ha.ATN]]}, "ד" + ha.MER + "׃"]
+    }
+    frags = [f for vel in verse["vels"] for f in units._wlc_vel_frags(vel)]
+    body, items = units._verse_units(frags)
+    assert body == uni_to_marks.verse_to_marks(verse)
+    assert [u.text for u in items if u.is_word] == [
+        "ב" + ha.MER,
+        "ג" + ha.ATN,
+        "ד" + ha.MER + "׃",
+    ]
+    verse["vels"][0]["kq"][1][0] += "־"
+    frags = [f for vel in verse["vels"] for f in units._wlc_vel_frags(vel)]
+    body, items = units._verse_units(frags)
+    assert body == uni_to_marks.verse_to_marks(verse)
+    assert len([u for u in items if u.is_word]) == 2
+
+
+def verse(*nodes):
+    return {"type": "verse", "contents": list(nodes)}
+
+
+def text(value):
+    return {"type": "text", "text": value}
+
+
+def test_poetic_fragmentation_and_qere_joins_match_flat_reading():
+    flat = verse(text("אב" + ha.DEX + " ג" + ha.MER + "׃"))
+    split = verse(
+        text("א"),
+        {"type": "slh-word", "contents": [{"type": "letter-small", "text": "ב"}]},
+        text(ha.DEX + " "),
+        {
+            "type": "kq",
+            "contents": [
+                {"type": "ketiv", "text": "כ"},
+                {"type": "qere", "text": "ג" + ha.MER},
+            ],
+        },
+        text("׃"),
+    )
+    assert poetic._verse_events(split) == poetic._verse_events(flat)
+
+
+def test_gray_maqaf_matches_black_and_nearest_conjunctive():
+    gray = verse(
+        text("א" + ha.MER),
+        {"type": "implicit-maqaf"},
+        text("ב" + ha.MAH + " ג" + ha.MER + "׃"),
+    )
+    black = verse(text("א" + ha.MER + "־ב" + ha.MAH + " ג" + ha.MER + "׃"))
+    assert poetic._verse_events(gray) == poetic._verse_events(black)
+    assert poetic.word_accents_from_verse_node(gray)[0] == (None, pan.MAHAPAKH, None)
+    assert poetic.word_disj_and_text_from_verse_node(gray)[0][0] == "א־ב"
+    for first, last, expected in [
+        (ha.MER, ha.MUN, pan.MUNAX),
+        (ha.MUN, ha.MER, pan.MERKHA),
+    ]:
+        assert poetic._word_servus("א" + first + "ב" + last) == expected
+
+
+def test_poetic_structural_boundary_and_illegal_paseq_join():
+    node = verse(text("א" + ha.MER), {"type": "spi-pe2"}, text("ב" + ha.DEX))
+    assert len(poetic._verse_events(node)) == 2
+    with pytest.raises(ValueError, match="paseq inside a maqaf"):
+        poetic._verse_events(
+            verse(text("א־"), {"type": "lp-paseq"}, text("ב" + ha.MER))
+        )
+
+
+def test_equal_skeleton_still_compares_placements():
+    source = {
+        "vels": ["אב" + ha.ATN, "גד" + ha.MER, "הו" + "\N{HEBREW POINT METEG}" + "׃"]
+    }
+    row = {
+        "wlc_disjunctives": ("ATNAX", "SILLUQ"),
+        "mam_disjunctives": ("ATNAX", "SILLUQ"),
+        "mam_words": [("אב", None), ("גד", "ATNAX"), ("הו", "SILLUQ")],
+        "body": uni_to_marks.verse_to_marks(source),
+        "wlc422_kq_u_verse": source,
+    }
+    assert summary._wlc_chanted_words(row) == [
+        ("אב", ("ATNAX",)),
+        ("גד", ()),
+        ("הו", ("SILLUQ",)),
+    ]
+    assert summary._word_aligned_clauses(row)
+    assert "same disjunctive skeleton, but aligned" in summary.derive_tentative_summary(
+        row
+    )
+
+
+@pytest.mark.parametrize("mark", [am.OLE, am.ILUY, am.DEXI, ha.ATN_H])
+def test_stray_accents_are_explicit(mark):
+    assert len(lex.stray_accents("A" + mark)) == 1
+
+
+def test_shalshelet_requires_paseq_in_same_atom():
+    assert not lex.stray_accents("A" + am.SHALSHELET + "B" + am.PASEQ)
+    assert lex.stray_accents("A" + am.SHALSHELET + " B" + am.PASEQ)
+    assert lex.stray_accents("A" + am.SHALSHELET + "-B" + am.PASEQ)
+    assert not lex.stray_accents("A" + am.MERKHA + " B" + am.ATNAX)
+
+
+def test_abbreviation_reexports_are_identical():
+    assert compat.BKNA_MAP_UXLC_TO_STD is canonical.BKNA_MAP_UXLC_TO_STD
+    assert compat.BKNA_MAP_STD_TO_UXLC is canonical.BKNA_MAP_STD_TO_UXLC
+    assert compat.expand_citation is canonical.expand_citation
+    assert canonical.expand_citation("Nah 1:1.1") == (bib.BK_NAXUM, 1, 1, 1)
+    assert canonical.expand_citation("Hab 2:8.1") == (bib.BK_XABA, 2, 8, 1)
+
+
+def test_actual_input_impact_inventory():
+    original = inspect.getsource(ux.numbered_atoms)
+    needle = "NumberedAtom(last.text, last.tail + piece + sep, in_ketiv)"
+    if needle in original:
+        fixed = original.replace(
+            needle, "NumberedAtom(last.text, last.tail + piece + sep, last.in_ketiv)"
+        )
+        fixed = fixed.replace(
+            "for k, piece in enumerate(pieces):",
+            'for k, piece in enumerate(pieces):\n            if piece.startswith("*"):\n                in_ketiv = not piece.startswith("**")',
+        )
+        namespace = dict(vars(ux))
+        exec(compile(fixed, "<ownership-only shadow repair>", "exec"), namespace)
+        corrected = namespace["numbered_atoms"]
+    else:
+        assert "last.in_ketiv" in original
+        corrected = ux.numbered_atoms
+    records = json.loads(ux.SRC.read_bytes())
+    index = rtms_data.load_wlc422_index(ux.WLC_KQ_U)
+    affected = []
+    targeted = []
+    selected = {}
+    for record in records:
+        bk, ch, vs, wd = ux.expand_citation(record["citation"])
+        bb = ux.bk39id_to_wlc_bb(bk)
+        if ux.prose_filter.should_keep_line(bb, ch, vs):
+            selected.setdefault((bb, ch, vs), []).append((wd, record))
+    roundtrips = 0
+    for key, changes in selected.items():
+        item = index.get(rtms_rows.to_compact_bcv(*key))
+        if not isinstance(item, dict):
+            continue
+        body = uni_to_marks.verse_to_marks(item)
+        head, old = ux.numbered_atoms(body)
+        head2, new = corrected(body)
+        assert ux.joined_atoms(head, old) == ux.joined_atoms(head2, new) == body
+        roundtrips += 1
+        different = {i for i, (a, b) in enumerate(zip(old, new)) if a != b}
+        if different:
+            affected.append(
+                {
+                    "reference": list(key),
+                    "indices_1based": [i + 1 for i in sorted(different)],
+                }
+            )
+        for wd, record in changes:
+            end = (
+                wd
+                - 2
+                + ux.words_spanned(
+                    (record.get("refuni_gen") or record.get("refuni") or "").split()
+                )
+            )
+            if different & set(range(wd - 1, end + 1)):
+                targeted.append(record["citation"])
+    examples = []
+    for bcv, item in index.items():
+        if any(
+            isinstance(v, dict) and v.get("kq") and not v["kq"][1]
+            for v in item.get("vels", [])
+        ):
+            body = uni_to_marks.verse_to_marks(item)
+            head, atoms = ux.numbered_atoms(body)
+            examples.append(
+                {"bcv": bcv, "body": body, "atoms": [asdict(a) for a in atoms]}
+            )
+    result = {
+        "selected_prose_change_verses": len(selected),
+        "exact_roundtrips": roundtrips,
+        "selected_verses_with_changed_metadata": affected,
+        "change_records_targeting_changed_metadata": targeted,
+        "ketiv_only_source_examples": examples,
+        "is_original_source": needle in original,
+    }
+    (
+        HERE
+        / (
+            "source-input-impact.json"
+            if needle in original
+            else "repair-input-impact.json"
+        )
+    ).write_text(
+        json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    assert (
+        not targeted
+    ), "Investigate actual report target impact before claiming unchanged report inputs"

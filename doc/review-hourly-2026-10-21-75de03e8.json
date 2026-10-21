@@ -1,0 +1,192 @@
+{
+  "date": "2026-10-21",
+  "state": "executed 2026-10-21",
+  "review_from_exclusive": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+  "reviewed_through": "75de03e816162c6e5f7005eb85b36a5024c09cce",
+  "incoming_commits": 16,
+  "changed_paths": 100,
+  "last_broad_tested_unchanged": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+  "prior_nightly_receipt_commit": "aa79651c8e5beda011e6c834fad346f4aa8b6e3f",
+  "repair_commit": "062da1e80a1e725b1dd176a9b9d3e9c18a1b6076",
+  "branch": "review-hourly-20261021-75de03e8",
+  "runner": "Saved Linux cloud executor, idle independent full Basics clone with its own Python 3.13.15 environment; original work checkout was clean at 040dbfb3dfb0dcb37ce2e439b9402207fdc8a9c5. No new worktree or clone. Current policy and canonical Hebrew-prose skill/reference read.",
+  "scope": "Focused review only. Private untouched; no sibling checkout selected or mutated. Public tracked MAM, WLC and UXLC inputs belong to the frozen source. No broad mega/full suite, corpus grammar regeneration, native Windows run, deployment, main integration or workflow dispatch.",
+  "confirmed_defect": {
+    "surface": "py/main_uxlc_grammar_test.py:numbered_atoms",
+    "reproduction": "Appending **qq to *A-B gives the final ketiv atom a false in_ketiv value; a splice across the two ketiv atoms then raises a cross-role error. A ketiv opener after a preceding read atom maqaf, as in **Q-*K **R, is also missed, allowing a splice across read/ketiv roles.",
+    "repair": "Preserve last.in_ketiv when folding unnumbered tail material; recognize star openers on each maqaf-separated piece. No text/tail serialization or authored Hebrew changes.",
+    "regression": "New differential lint compares roles and cross-role splice guards with independent structured kq-u inputs over empty/nonempty sides and a preceding maqaf.",
+    "impact": {
+      "selected_prose_change_verses": 273,
+      "exact_roundtrips": 273,
+      "metadata_affected_verses": [
+        {
+          "reference": [
+            "2k",
+            17,
+            13
+          ],
+          "indices_1based": [
+            7
+          ]
+        },
+        {
+          "reference": [
+            "2s",
+            23,
+            9
+          ],
+          "indices_1based": [
+            5
+          ]
+        },
+        {
+          "reference": [
+            "ex",
+            22,
+            4
+          ],
+          "indices_1based": [
+            9
+          ]
+        },
+        {
+          "reference": [
+            "is",
+            30,
+            32
+          ],
+          "indices_1based": [
+            15
+          ]
+        },
+        {
+          "reference": [
+            "jb",
+            42,
+            10
+          ],
+          "indices_1based": [
+            4
+          ]
+        },
+        {
+          "reference": [
+            "da",
+            7,
+            19
+          ],
+          "indices_1based": [
+            11
+          ]
+        },
+        {
+          "reference": [
+            "2s",
+            18,
+            20
+          ],
+          "indices_1based": [
+            18
+          ]
+        },
+        {
+          "reference": [
+            "js",
+            5,
+            1
+          ],
+          "indices_1based": [
+            27
+          ]
+        }
+      ],
+      "change_records_targeting_affected_metadata": [],
+      "ketiv_only_source_examples": 6
+    },
+    "report_consequence": "Eight of 273 selected prose-change verse bodies contain metadata corrected by the repair; no change record targets any affected atom. Number/text/tail and all 273 roundtrips are exact. Current report input bodies and classification branches therefore do not change from this repair; no full parser/report regeneration was needed or run.",
+    "status": "Fixed and decisively checked on the isolated work branch; remains unintegrated into main."
+  },
+  "review_dispositions": [
+    {
+      "surface": "uni_to_marks and chanted_word_accents_units qere joins",
+      "result": "Reviewed separate chanted qere words, preserved ketiv runs and placeholders, note/maqaf boundaries and unit/body consistency. Maintained differential body-vs-kq-u check and independent two-word/compound probes pass. Existing editorial choices remain intact."
+    },
+    {
+      "surface": "mam_poetic_accents and poetic summaries",
+      "result": "Reviewed fragment reassembly, structural boundaries, qere/sof-pasuq joins, gray maqaf under Ben's recorded policy, last-position conjunctive selection and maqaf-preserving display. Independent flat-vs-fragment/gray-vs-black equivalences and a real scanner-backed equal-skeleton/different-placement example pass. Summary differences are algorithmic findings, not manuscript judgments."
+    },
+    {
+      "surface": "lexical stray accents",
+      "result": "Reviewed the prose tokenless-accent and same-atom shalshelet/paseq checks. Independent valid/invalid atom-boundary probes pass; no source reading changed."
+    },
+    {
+      "surface": "UXLC splice and canonical abbreviation maps",
+      "result": "Roundtrip, maqaf add/remove, notes, empty sides, stable multiword indices and cross-role qere/ketiv probes pass after the narrow ownership repair. Compatibility maps and expand_citation are the canonical objects by identity; Nah/Hab lookups pass."
+    },
+    {
+      "surface": "generated public payloads and consumer notices",
+      "result": "All 59 changed corpus JSON files (24 parsed-plus, 35 simple) are exactly equal outside their consumer_notice objects. The change-log pair differs only in new_tree provenance and names the exact committed parsed-plus tree. No manuscript payload changed."
+    }
+  ],
+  "checks": [
+    {
+      "source": "75de03e816162c6e5f7005eb85b36a5024c09cce",
+      "command": "/workspace/MAM-basics/.venv/bin/python py/main_test.py py/tests/test_mam_poetic_accents.py py/tests/test_silluq_before_meteg.py py/tests/test_unaccented_chanted_words.py py/tests/test_lexical_validation.py py/tests/test_poetic_oddballs.py py/tests/test_public_data_consumer_notices.py -q -ra",
+      "exit_code": 0,
+      "result": "51 passed in 4.30s"
+    },
+    {
+      "source": "75de03e816162c6e5f7005eb85b36a5024c09cce",
+      "command": "py/main_test.py .novc/review-hourly-20261021-75de03e8/test_independent_probes.py -q -ra --tb=short",
+      "exit_code": 1,
+      "result": "7 failed, 23 passed in 0.33s; seven ownership/guard failures reproduce the confirmed defect"
+    },
+    {
+      "source": "062da1e80a1e725b1dd176a9b9d3e9c18a1b6076",
+      "command": "py/main_test.py py/tests/test_uxlc_numbered_atom_ownership.py .novc/review-hourly-20261021-75de03e8/test_independent_probes.py -q -ra --tb=short",
+      "exit_code": 0,
+      "result": "32 passed in 0.40s; tested working code is exactly the committed repair"
+    },
+    {
+      "source_window": [
+        "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+        "75de03e816162c6e5f7005eb85b36a5024c09cce"
+      ],
+      "command": ".venv/bin/python .novc/review-hourly-20261021-75de03e8/audit_payloads.py",
+      "exit_code": 0,
+      "result": "59 notice-only payloads; exact change-log tree/HTML substitution; input-impact inventory retained"
+    },
+    {
+      "command": ".venv/bin/python -m black <changed Python files>; git diff --check",
+      "exit_code": 0,
+      "result": "Changed Python formatted; whitespace checks pass"
+    }
+  ],
+  "probe_tooling_note": "An initial scratch run included two fixture errors (an unsupported spi-pe spelling and a wrong mam_words value shape); those were corrected before the recorded seven-failure source comparison. The final equal-skeleton probe uses the real scanner/transcoder without a mocked WLC word view.",
+  "limits": [
+    "The committed report states 58 OUT degradations. That corpus aggregate and the author claim of 13 removed false compounds were not independently regenerated here; neither is used as manuscript evidence. Focused mechanism probes and exact payload comparisons supply this review's independent evidence.",
+    "No full corpus grammar/page regeneration was run. Existing generated accgram outputs were reviewed as report/model products, not accepted Hebrew/editorial repairs.",
+    "No new native source investigation, font acceptance or frozen font generation."
+  ],
+  "evidence": {
+    "directory": "review-hourly-2026-10-21-75de03e8-evidence",
+    "files": {
+      "independent-probes.py.txt": {
+        "bytes": 10533,
+        "sha256": "fb3f062de33f6b3eafb8c51f1dfc509d475b490dffd34e64b968567b60341744"
+      },
+      "payload-audit.json": {
+        "bytes": 14036,
+        "sha256": "f435ae0e3ee84d9d364d3d4fb3c131e8f7ff7d09c3942a746ae06b2185f73b56"
+      },
+      "payload-audit.py.txt": {
+        "bytes": 2984,
+        "sha256": "0ea856c63cf3e0ac877b2ce8c121d88c389904d7fecd74cbfa0adb4dd7149dd8"
+      }
+    },
+    "replay": "For the source failure/impact inventory, select frozen 75de03e816162c6e5f7005eb85b36a5024c09cce in an idle isolated checkout and copy independent-probes.py.txt to .novc/review-hourly-20261021-75de03e8/test_independent_probes.py; run it through py/main_test.py from the root. That writes source-input-impact.json beside itself. For repaired checks select 062da1e80a1e725b1dd176a9b9d3e9c18a1b6076 and use the same probe path plus the committed regression test. payload-audit.py.txt uses the original source-input-impact.json and exact frozen Git objects; its cloud root path needs adjustment for another machine. No generator, image or private input is needed.",
+    "raw_logs": ".novc/review-hourly-20261021-75de03e8; no routine log/cache/output bulk copied"
+  },
+  "recorded_at_utc": "2026-10-21T14:28:15.369967+00:00"
+}

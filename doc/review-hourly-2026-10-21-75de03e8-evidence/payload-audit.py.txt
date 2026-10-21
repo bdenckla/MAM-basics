@@ -1,0 +1,82 @@
+"""Verify exact non-notice payloads and summarize recorded probe evidence."""
+
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+
+root = Path("/workspace/MAM-basics")
+scratch = root / ".novc/review-hourly-20261021-75de03e8"
+start = "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc"
+end = "75de03e816162c6e5f7005eb85b36a5024c09cce"
+
+
+def git(*a):
+    return subprocess.check_output(["git", "-C", str(root), *a])
+
+
+paths = [
+    p.decode() for p in git("diff", "--name-only", "-z", start, end).split(b"\0") if p
+]
+checked = []
+for path in paths:
+    if not path.endswith(".json") or not path.startswith(
+        ("MAM-parsed/plus/", "MAM-simple/json-")
+    ):
+        continue
+    a = json.loads(git("show", start + ":" + path))
+    b = json.loads(git("show", end + ":" + path))
+    if path.startswith("MAM-parsed/"):
+        left = a["header"].pop("consumer_notice")
+        right = b["header"].pop("consumer_notice")
+    else:
+        left = a.pop("consumer_notice")
+        right = b.pop("consumer_notice")
+    assert left != right and a == b, path
+    payload = json.dumps(a, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    checked.append(
+        {
+            "path": path,
+            "non_notice_payload_equal": True,
+            "non_notice_payload_sha256": hashlib.sha256(payload).hexdigest(),
+        }
+    )
+change = "gh-pages/MAM-with-doc/change-log/unpinned-latest.json"
+old = json.loads(git("show", start + ":" + change))
+new = json.loads(git("show", end + ":" + change))
+before = old.pop("new_tree")
+after = new.pop("new_tree")
+assert old == new
+tree = git("rev-parse", end + ":MAM-parsed/plus").decode().strip()
+assert tree == after
+html = change.removesuffix(".json") + ".html"
+assert git("show", start + ":" + html).replace(before.encode(), after.encode()) == git(
+    "show", end + ":" + html
+)
+impact = json.loads((scratch / "source-input-impact.json").read_bytes())
+result = {
+    "source_from": start,
+    "source_through": end,
+    "incoming_commits": int(git("rev-list", "--count", start + ".." + end)),
+    "changed_paths": len(paths),
+    "notice_only_payload_files": len(checked),
+    "notice_payloads": checked,
+    "change_log_provenance_only": {
+        "old_tree": before,
+        "new_tree": after,
+        "exact_frozen_tree_verified": True,
+    },
+    "source_input_probe": {
+        "selected_prose_change_verses": impact["selected_prose_change_verses"],
+        "exact_roundtrips": impact["exact_roundtrips"],
+        "metadata_affected_verses": impact["selected_verses_with_changed_metadata"],
+        "change_records_targeting_affected_metadata": impact[
+            "change_records_targeting_changed_metadata"
+        ],
+        "ketiv_only_source_examples": len(impact["ketiv_only_source_examples"]),
+    },
+}
+(scratch / "payload-audit.json").write_text(
+    json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+)
+print(json.dumps({k: v for k, v in result.items() if k != "notice_payloads"}, indent=2))

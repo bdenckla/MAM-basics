@@ -1,0 +1,397 @@
+{
+  "source_from": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+  "source_through": "75de03e816162c6e5f7005eb85b36a5024c09cce",
+  "incoming_commits": 16,
+  "changed_paths": 100,
+  "notice_only_payload_files": 59,
+  "notice_payloads": [
+    {
+      "path": "MAM-parsed/plus/A1-Genesis.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "f4bfdc4a511f6339cd43ba540d54afa38b2af979d074eecbb13bbd2a8231337c"
+    },
+    {
+      "path": "MAM-parsed/plus/A2-Exodus.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "8beeeacef096aeacbbd5728b38303fd08419121e7ca22349f5183236108df462"
+    },
+    {
+      "path": "MAM-parsed/plus/A3-Levit.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "e855cb077ec3b7fcfb08fe9eecab2f70743a314e349a09943ebb5db565bf43c4"
+    },
+    {
+      "path": "MAM-parsed/plus/A4-Numbers.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "91c7983a84a384a33767a65b38b41e161d17da21471bce66a87b886536c92122"
+    },
+    {
+      "path": "MAM-parsed/plus/A5-Deuter.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "285a33db51920d24f345e50106df06e86a277b9f742dc1c9d065f441a45dca15"
+    },
+    {
+      "path": "MAM-parsed/plus/B1-Joshua.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "e2a7e9dbad2976b3c85ea044afa861687e1628aaae84f783317fecb626b2d049"
+    },
+    {
+      "path": "MAM-parsed/plus/B2-Judges.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "a80d3e7ce0ad144b65cf849f9642085141937bcd5ec50cb0082e80419cd42364"
+    },
+    {
+      "path": "MAM-parsed/plus/BA-Samuel.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "2147e57a5c1d219291222e86d0f87422f6fe84f07aa1a2c82b3890f9f17533de"
+    },
+    {
+      "path": "MAM-parsed/plus/BC-Kings.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "95867a017c1522394bff4f985145751a1814a0852b3e959e153763fb164629d0"
+    },
+    {
+      "path": "MAM-parsed/plus/C1-Isaiah.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "4940c2471368ee740d5d751014f78350bc454ba31aecc03a0f50130c1ef90ae1"
+    },
+    {
+      "path": "MAM-parsed/plus/C2-Jeremiah.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "3024de33f073d02066e67af95327cb9c55e67d9a5ce2595cb1f473796b6f6382"
+    },
+    {
+      "path": "MAM-parsed/plus/C3-Ezekiel.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "c980153e28271a6b992cbc2a019362b311401e2a839c16cf491f2b100c655501"
+    },
+    {
+      "path": "MAM-parsed/plus/CA-The-12-Minor-Prophets.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "930fc4cea4f6dc27cae351d18cae01eb95ee514c86ec7b2ea830d02d5bb4e3ae"
+    },
+    {
+      "path": "MAM-parsed/plus/D1-Psalms.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "79109288cb2c04914165be564b18d9536ccba1dda81d74c834f04ab309362b5e"
+    },
+    {
+      "path": "MAM-parsed/plus/D2-Proverbs.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "2c1df28266e0d425fbb3781a5ff55a5cc8cf54a238d53dac3a30a99b0855ebe0"
+    },
+    {
+      "path": "MAM-parsed/plus/D3-Job.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "36e8af6387c715571df72d0c3213d618ad9be48d8203164cf42af01c64c37b83"
+    },
+    {
+      "path": "MAM-parsed/plus/E1-Song of Songs.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "d42c224c74d9ce1807f7604197c77b1ed069de05cde7f5f9df36e4fa1e6c1f34"
+    },
+    {
+      "path": "MAM-parsed/plus/E2-Ruth.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "237ded359619fa09617dbae5add51cfad06c4abf8d932054733c188e058ca858"
+    },
+    {
+      "path": "MAM-parsed/plus/E3-Lamentations.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "862e6b3582ccd524d113b850974199baf7a8cdda384fe297ff5abc4f50ac3362"
+    },
+    {
+      "path": "MAM-parsed/plus/E4-Ecclesiastes.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "ba83e2804ebbb3fb5c51cbd1cffec4da416a04973d0f86c3849a7d97669fbab3"
+    },
+    {
+      "path": "MAM-parsed/plus/E5-Esther.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "4b3d71ca79e1cf3ae4b18ad58c07e0e75c34e4a625e34252c8bdec5114919b1f"
+    },
+    {
+      "path": "MAM-parsed/plus/F1-Daniel.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "284d06accf2453d3f276c5e32c392780bf1c3270fb7926f586e84e231440e2f3"
+    },
+    {
+      "path": "MAM-parsed/plus/FA-Ezra-Nexemiah.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "53e155a0af205a1f033482af102c854eb40b5a6b2f9d95b13e6c9a925eac3465"
+    },
+    {
+      "path": "MAM-parsed/plus/FC-Chronicles.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "9eaecc5f3770a42e007b13c85f0d42bb003e6f85b477f9394b8a88db35033dc5"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-bhs/1Sam-2Sam.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "a4a3ef7dc3c4d7260abf22ecd928e7e5fc1f7e7d4eb1e3e4577dd9757c8238c1"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-bhs/Deut.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "f8aeac678ae36a34681ea14a79cf76874f85fef99ede2241f3b1b564be6200c2"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-bhs/Exod.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "31d1e3026845dbc674456abacc6a4492cffd6a60dafb8cd100e068572f5e40b2"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-bhs/Jer.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "81ffabcb77d8bf9cbd0ca68b51841e43bbc81ef41f5220d3c0ac18c1175b6faa"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-bhs/Josh.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "dd1ab9cbccc0354e67d7929b0ce67e6e9fabb04f83bb192841a8bf2a1d48c123"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-bhs/Num.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "b93813afee578a901eb2c3824b0708ad92b47db56900428812934dcf7eed90c8"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/1Chr-2Chr.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "81044a583a12ab3f2bbc27e5c45dc781e17557d53aaf0c22c1b6ecd556d9c671"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/1Kgs-2Kgs.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "cb39b5eae00e9c2d95b88e70cb90ca24930c3510069b5505884a7f954f155b83"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/1Sam-2Sam.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "2cc96ec3997292c830fb2304bc91ed199d9034955f76af71a4aac7cfc74cd44c"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Dan.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "a3a6fd351090ff47cfb2d36ee7288c578f845d249c3fa6b0bdf25254156e86ac"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Deut.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "ac416cc28f3c81e63ea7c4101921323d80ca537a2f1b59bc354db6a20df960c4"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Eccl.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "55a6a8b5503fe1b892cb6ceaaab22599dd793099ebe106f8ad6436277d81b989"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Esth.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "55514eee5fb87ac36ee51bc9ba0f77aefcc58dc249fcba4064249d1ac08dc0a9"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Exod.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "5faf739fd77fa2b390c0b02297ff2df919b1baead8bfa98966633dec2eaed38c"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Ezek.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "7083f62a77958ea4a8d2cea2c5c1e045e6d46d855cd236b60ad44989985473fd"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Ezra-Neh.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "add76225654c335c7128ea6d29ebb66f59a1f71db328c633ffbf24780dfc88aa"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Gen.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "72e7549f118cf819d0dcd483ba8f233f621dad0f024e0510adf3d0150f069f1d"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Hos-Mal.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "b17016c1afdde57ececdab4a7b0be1e4dada86e0d63b64d391c8b365b1bf16a0"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Isa.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "2f663442a071f6d8829de0b5802cce5d5c648d236236a410ef9c07784fdf1104"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Jer.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "c0666df0414d5e57aecb2055edc6af6b52e7de5c23abead9504dac79515b2245"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Job.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "f5035b0c28c86b6343b77b347001c099bc687daf02a6da7a39feabd756458fb6"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Josh.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "a4018f35bbad781608e997e3a7ce839eec7e3e753a679159cc8a0a922024cd6d"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Judg.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "0028c7ca16c62d96a2515fa32ec48205e5f0e4ba666e906cb6faa77ae14ae831"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Lam.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "d43c4a70e9004f6d1fc89f573eecd5bc5bd28939aa3e264fb0caa351d3228feb"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Lev.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "a576980122f5d402c17122da41d2e2e5da6c52860b5f2f4e6762442c648664a4"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Num.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "81d005591a0f3bbf53b670639142c093f12e6aba5dd0146721554154d11da2ec"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Prov.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "ae4f9c5125dbc69105b716b60380e151ac403c9a623736eea2790384a46d5278"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Ps.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "ef830d642c1b58a5521b48df7ebaca3208d3fb5bf65c387f67c306e124b78b03"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Ruth.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "434fca61eeb6609d06cae9338b0a2efa61ce96834a404baa6b706d6721c1dc15"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-mam/Song.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "4365a8cd36ecae32651eea9eff1cd289c24057a53837acdde862007bc560f2ec"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-sef/1Sam-2Sam.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "d46a7328bdfef6c5ed2a0d2d0f613509072a3e359f2e3e993cd8b50dc062ef68"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-sef/Deut.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "a9069d8997688e147e00aac8dca3e9928510ffdda77d5401f831b855f17b4879"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-sef/Exod.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "1817b578fa94577f4bfd26a140a537267d9e5b8f459652a67599a23b698003d9"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-sef/Jer.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "8c428bc99f74351093605e04451803ddc1a118c0fe07a5b048ef179da605c97a"
+    },
+    {
+      "path": "MAM-simple/json-vtrad-sef/Josh.json",
+      "non_notice_payload_equal": true,
+      "non_notice_payload_sha256": "2bcc0555f84fa6b9200b9a80919f54698909a3feac5a979513e002bb6b39cafe"
+    }
+  ],
+  "change_log_provenance_only": {
+    "old_tree": "017e8377e7788f7e92cc8eb0944375b2cb879e4e",
+    "new_tree": "b93e35a04dc457fc5b5ba333fa5d1b88a315d749",
+    "exact_frozen_tree_verified": true
+  },
+  "source_input_probe": {
+    "selected_prose_change_verses": 273,
+    "exact_roundtrips": 273,
+    "metadata_affected_verses": [
+      {
+        "reference": [
+          "2k",
+          17,
+          13
+        ],
+        "indices_1based": [
+          7
+        ]
+      },
+      {
+        "reference": [
+          "2s",
+          23,
+          9
+        ],
+        "indices_1based": [
+          5
+        ]
+      },
+      {
+        "reference": [
+          "ex",
+          22,
+          4
+        ],
+        "indices_1based": [
+          9
+        ]
+      },
+      {
+        "reference": [
+          "is",
+          30,
+          32
+        ],
+        "indices_1based": [
+          15
+        ]
+      },
+      {
+        "reference": [
+          "jb",
+          42,
+          10
+        ],
+        "indices_1based": [
+          4
+        ]
+      },
+      {
+        "reference": [
+          "da",
+          7,
+          19
+        ],
+        "indices_1based": [
+          11
+        ]
+      },
+      {
+        "reference": [
+          "2s",
+          18,
+          20
+        ],
+        "indices_1based": [
+          18
+        ]
+      },
+      {
+        "reference": [
+          "js",
+          5,
+          1
+        ],
+        "indices_1based": [
+          27
+        ]
+      }
+    ],
+    "change_records_targeting_affected_metadata": [],
+    "ketiv_only_source_examples": 6
+  }
+}
