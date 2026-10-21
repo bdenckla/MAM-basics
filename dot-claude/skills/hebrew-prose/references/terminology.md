@@ -538,7 +538,7 @@ being drafted; the other rows were proposed for his approval.
 | Thing | Default noun | Also fine | Source |
 | --- | --- | --- | --- |
 | Letters, final forms included | letters | | |
-| Accents: deḥi, tsinnor, revia, zaqef, pashta, qadma, tevir, geresh, telisha, pazer, munaḥ, merkha, mahapakh, darga, azla, yetiv, etnaḥta, segolta, shalshelet, tipeḥa, oleh-weyored, tsinnorit, silluq and the rest | accents | | Ben: "dexi accents" |
+| Accents: deḥi, tsinnor, revia, zaqef, pashta, qadma, tevir, geresh, telisha, pazer, munaḥ, merkha, mahapakh, darga, azla, yetiv, atnaḥ, segolta, shalshelet, tipeḥa, oleh-weyored, tsinnorit, silluq and the rest | accents | | Ben: "dexi accents" |
 | Legarmeh | marks | | Ben |
 | Oleh or yored alone, the parts of oleh-weyored | marks | accents | Ben |
 | Segol | segol accents or segol vowels | | Ben |
@@ -575,6 +575,27 @@ here, not a catch-all noun".
 
 MAM-basics' plural lint, `py/mb_cmn/hebrew_name_plurals.py`, suggests these default nouns on
 rendered pages, as its `doc/hebrew-name-plurals.md` describes.
+
+## Atnaḥ in authored prose
+
+Ben's decision, 2026-10-21: use **atnaḥ** in authored prose. Reserve **ETNAHTA**
+for literal Unicode-name quotations such as HEBREW ACCENT ETNAHTA. Preserve
+source quotations and technical identifiers.
+
+## Tipeḥa and tarḥa depend on the verse's accent system
+
+Use **tipeḥa** in prose accentuation and **tarḥa** in poetic accentuation. Do not
+name a poetic mark tipeḥa merely because Unicode calls U+0596 HEBREW ACCENT TIPEHA.
+Determine the system of the verse, not just its book: Job's narrative frame uses
+prose accentuation. Literal Unicode names and source quotations remain exact.
+
+## Zaqef where brevity matters
+
+Ben's decision, 2026-10-21: in headings, compact labels, and other places where
+brevity matters, use **zaqef** with **qatan** implicit. Name **zaqef gadol** explicitly
+where it applies. For example, write "zaqef–revia" rather than "zaqef qatan–revia".
+Keep full names when they clarify a contrast, and preserve literal quotations,
+Unicode names and technical identifiers.
 
 ## Transliteration (accgram)
 
