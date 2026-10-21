@@ -79,18 +79,18 @@ XATAF_QAMATS_POLICY = QereProjectionPolicy(
     dual_cantillation_argument_keys=("כפול",),
 )
 
-# The historical foi-kq-simple pqere field omits separator punctuation.  The
-# unresolved question of whether that field should retain a paseq/legarmeh glyph
-# is deferred in the same plan document.
+# The historical foi-kq-simple pqere field omits the paseq/legarmeh glyph.  The
+# unresolved question of whether that field should retain it is deferred in the
+# same plan document.  Whitespace and the gray maqaf take the defaults: giving
+# either nothing would run two atoms together, which Ben Denckla ruled out for the
+# gray maqaf on 2026-10-20.
 FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY = QereProjectionPolicy(
     name="foi-kq-simple-main-compatible",
     trivial_qere_argument_key="3",
     stress_helper_argument_keys=("1",),
     qamats_argument_keys=("ד",),
     dual_cantillation_argument_keys=("כפול",),
-    whitespace_text="",
     paseq_legarmeh_text="",
-    gray_maqaf_text="",
     excluded_qamats_text="",
 )
 
@@ -250,7 +250,12 @@ def project_qere_atoms(
         return [_text_atom(policy.whitespace_text, source)]
 
     if cmp_name in {"מ:פסק", "מ:לגרמיה-2"}:
-        return [_text_atom(policy.paseq_legarmeh_text, source)]
+        text = policy.paseq_legarmeh_text
+        # MAM has no space on either side of a narrow-sense paseq, so a policy
+        # that omits the glyph still keeps the atoms apart there.
+        if not text and cmp_name == "מ:פסק":
+            text = " "
+        return [_text_atom(text, source)]
 
     if cmp_name == "מ:מקף אפור":
         return [_text_atom(policy.gray_maqaf_text, source)]

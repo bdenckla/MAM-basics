@@ -418,9 +418,10 @@ def letters_and_maqaf(word: str) -> str:
     Maqaf is kept, so a compound one text writes as one chanted word and the other as two does
     NOT join -- which is right: maqaf is the last rung of the accents' own scale, so a maqaf
     difference is an accentuation difference and belongs in the reported residue rather than
-    being matched through.
+    being matched through.  Phonetic MAM's gray maqaf, a tilde, is read as a maqaf: dropping
+    it would run its two atoms together.
     """
-    return _NOT_A_LETTER.sub("", word)
+    return _NOT_A_LETTER.sub("", word.replace(hpunc.NU_GMAQ, hpunc.MAQ))
 
 
 def accents_of(word: str) -> str:

@@ -113,9 +113,16 @@ def _flatten_wtel(wtel):
 
 
 def _recurse_on_keys(tmpl, keys):
-    return sum_of_seqs(
-        [_flatten_wtseq(wtp.template_param_val(tmpl, key)) for key in keys]
-    )
+    """Every declared alternative, each set apart by a space.
+
+    Which alternatives a label should read is deferred (see the module docstring),
+    but reading several must not run the end of one into the start of the next:
+    until 2026-10-21 they were concatenated with nothing between them.
+    """
+    parts = []
+    for key in keys:
+        parts.extend((" ", *_flatten_wtseq(wtp.template_param_val(tmpl, key)), " "))
+    return tuple(parts)
 
 
 def _recurse_on_stress_helper_params(tmpl):
@@ -130,8 +137,9 @@ def _recurse_on_dual_cantillation_params(tmpl):
     return _recurse_on_keys(tmpl, ("כפול", "א", "ב"))
 
 
-def _hnd_return_empty(_tmpl):
-    return tuple()
+def _hnd_return_space(_tmpl):
+    # A narrow-sense paseq has no space on either side in MAM, so it is a boundary.
+    return (" ",)
 
 
 def _hnd_slh_word(tmpl):
@@ -146,5 +154,5 @@ _STAGE_2_HANDLERS = {
     "מ:קמץ": _recurse_on_qamats_params,
     "מ:כפול": _recurse_on_dual_cantillation_params,
     tmpln.SLH_WORD: _hnd_slh_word,
-    "מ:פסק": _hnd_return_empty,
+    "מ:פסק": _hnd_return_space,
 }

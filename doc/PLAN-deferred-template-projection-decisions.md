@@ -212,6 +212,17 @@ Before implementation, locate every caller of `range_label_for_minirow`,
 `range_label_for_minirow_span`, and `range_label_for_wtseq`. Regenerate the
 caller-owned products and treat their complete diffs as the test.
 
+Settled on 2026-10-21, under the rule described at the end of item 7:
+`_recurse_on_keys` sets each declared alternative apart with a space instead of
+running its end into the start of the next, and a narrow-sense paseq gives a
+space instead of nothing. Closing `hebrew_letter_words.letters_and_maqafs` that
+day exposed the first: in Deuteronomy 5:6, the sof pasuq that ends one
+dual-cantillation alternative and the atom that opens the next had run together
+into one token. The traversal still reads every
+declared alternative, and which of them a label should read remains deferred.
+The only product of these labels, the versification-differences page, rendered
+byte-identical, as `py/tests/test_versification_differences_doc.py` checks.
+
 ### 5. Double-meteg FOI dual-cantillation population
 
 Consumer and searchable anchor: `py/foi/foiz_wt_mtgmtg.py:FOILERS`.
@@ -268,6 +279,17 @@ point and inspect the complete HTML diff. Locate the owning entry point from the
 current callers of `build_columns` and `gather_examples`; do not guess a command
 from the module path.
 
+Settled on 2026-10-21, outside this deferral: a top-level separator template,
+the gray maqaf included, contributes a space in `_word_template_text` rather
+than nothing. Ben's rule of 2026-10-20 lets a consumer read MAM's gray maqaf as
+a space, as a maqaf or as a maqaf of its own kind, but not drop it and run
+together the atoms on either side; on 2026-10-21 he approved closing every such
+site. That settles only the separators. The page's projection contract above,
+including what a top-level template that carries an atom contributes, remains
+deferred. The page then rendered byte-identical:
+`versification_and_cantillation.generate_doc.check_output_matches()` returned
+true.
+
 ### 8. Punctuation in the `foi-kq-simple` `pqere` field
 
 Consumer and searchable anchors:
@@ -287,6 +309,17 @@ After a decision, regenerate the focused FOI artifact with:
 
 Inspect `gh-pages/MAM-with-doc/foi/foi-kq-simple.json` and the corresponding HTML
 artifact.
+
+Settled on 2026-10-21, under the rule described at the end of item 7:
+`FOI_KQ_SIMPLE_MAIN_COMPATIBLE_POLICY` in `py/hkq_cmn/qere_projection.py` no
+longer gives nothing for a whitespace template or the gray maqaf; both take the
+policy defaults, a space and a maqaf. The policy still omits the paseq/legarmeh
+glyph, which this item leaves open, but `project_qere_atoms` gives a
+narrow-sense paseq a space when a policy omits the glyph, because MAM has no
+space on either side of a narrow-sense paseq. No parameter of a trivial
+ketiv/qere template, `מ:קו״כ-אם-2`, holds a whitespace template, a gray maqaf
+or a narrow-sense paseq, and the Psalms 10:5 legarmeh still gives nothing, so
+the command above regenerated its artifacts unchanged.
 
 ### 9. RTMS Scripture projection
 

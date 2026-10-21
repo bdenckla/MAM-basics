@@ -25,6 +25,8 @@ _ELYON = "ב"  # עליון
 # chanted, so it always takes the qere — see _el_text and issue #199. (This matches how
 # py_misc/wt_qere.py resolves the read form: recurse on the kq template's 2nd argument.)
 _KQ_QERE = "2"
+# The templates that stand between two atoms and are none of them.
+_SEPARATOR_TMPL_NAMES = tmpln.NO_ATOM_TMPL_NAMES | {tmpln.INVERTED_NUN, "ש"}
 
 
 def _strand_str(unit, param):
@@ -110,14 +112,18 @@ def _word_template_text(wtel):
 
     Issue #199 arose when dropping a top-level ketiv/qere deleted Deut 5:9's
     last word מִצְוֺתָֽי and left first/last-word extraction seeing the bare ׃
-    that follows it. Standard ketiv/qere therefore contributes qere. Every
-    other current top-level template contributes no text here, preserving the
-    behavior on main while the page's wider projection contract remains
-    deferred in doc/PLAN-deferred-template-projection-decisions.md.
+    that follows it. Standard ketiv/qere therefore contributes qere. A
+    separator template, the gray maqaf included, contributes a space, so that
+    the atoms on either side of it are never run together. Every other current
+    top-level template contributes no text here, preserving the behavior on
+    main while the page's wider projection contract remains deferred in
+    doc/PLAN-deferred-template-projection-decisions.md.
     """
     tmpln.validate_current_plus_template(wtel)
     if wtp.is_template_with_name_in(wtel, tmpln.STD_KQ_TMPL_NAMES):
         return "".join(_el_text(sub) for sub in wtp.template_param_val(wtel, _KQ_QERE))
+    if wtp.is_template_with_name_in(wtel, _SEPARATOR_TMPL_NAMES):
+        return " "
     return ""
 
 
