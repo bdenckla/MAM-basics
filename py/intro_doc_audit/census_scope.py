@@ -19,6 +19,10 @@ VARIANTS = {
     "doubled_helpers": {"מ:דחי": ("2",), "מ:צינור": ("2",)},
     "alternate_qamats": {"מ:קמץ": ("ס",)},
 }
+# A legarmeh's mark belongs with the atom before it, and in every Scripture branch of MAM
+# what follows one is whitespace, a spacing template or the end of its parameter, so it
+# gives nothing (measured 2026-10-21).
+_LEGARMEH_TEMPLATE_NAMES = frozenset({"מ:לגרמיה", "מ:לגרמיה-2"})
 
 
 def selected_parts(value, overrides):
@@ -30,6 +34,14 @@ def selected_parts(value, overrides):
     keys = projection.edition_parameter_keys_for(
         value["tmpl_name"], params.keys(), overrides=overrides
     )
+    if value["tmpl_name"] in _LEGARMEH_TEMPLATE_NAMES:
+        return []
+    if value["tmpl_name"] in projection.EDITION_SEPARATOR_TEMPLATE_NAMES:
+        # A separator stands between two atoms, as MAM's gray maqaf and the narrow-sense
+        # paseq do with no whitespace on either side, so it gives a space, as the
+        # near-Aleppo census renderers give it.  Until 2026-10-21 it gave nothing, and the
+        # callers' joins ran the two atoms together.
+        return [" "]
     return [part for key in keys for part in selected_parts(params[key], overrides)]
 
 
