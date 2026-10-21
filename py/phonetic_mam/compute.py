@@ -9,6 +9,7 @@ import json
 import sys
 
 from mb_cmn import bib_locales
+from mb_cmn import hebrew_punctuation
 from mb_cmn.silluq_before_meteg import validate_silluq_before_meteg
 from phonetic_mam.core import bccvecs_that_are_known as knowns
 from phonetic_mam.core import deep_latin
@@ -140,13 +141,14 @@ def _phrase(args):
         if skeleton in skeletons:
             raise ProtocolError("duplicate silluq-before-meteg annotation")
         skeletons.add(skeleton)
+        # A chanted word's last atom follows its last maqaf, gray or black.
         matches = [
             atom
             for word in phrase.split(" ")
             for atom in [
-                distinguished.to_generic_points(word).split(
-                    "\N{HEBREW PUNCTUATION MAQAF}"
-                )[-1]
+                distinguished.to_generic_points(word)
+                .replace(hebrew_punctuation.NU_GMAQ, hebrew_punctuation.MAQ)
+                .split(hebrew_punctuation.MAQ)[-1]
             ]
             if "".join(c for c in atom if 0x05D0 <= ord(c) <= 0x05EA) == skeleton
         ]

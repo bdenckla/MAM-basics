@@ -131,9 +131,9 @@ def _get_sas_from_ndc_cw_wfmtt(dtx, cw_wfmtt):
 def _explicit_silluq_accar(dtx, cw_str, eudlcw):
     """Use source position metadata for stress, retaining the full displayed text."""
     generic = disting.to_generic_points(cw_str)
-    prefix, separator, atom = generic.rpartition(hpu.MAQ)
-    if not separator:
-        atom = generic
+    # The last atom follows the chanted word's last maqaf, gray or black.
+    cut = max(generic.rfind(hpu.MAQ), generic.rfind(hpu.NU_GMAQ)) + 1
+    head, atom = generic[:cut], generic[cut:]
     text = atom.removesuffix(hpu.SOPA)
     letters = "".join(c for c in text if 0x05D0 <= ord(c) <= 0x05EA)
     for annotation in dtx.get("dtx-silluq-before-meteg", []):
@@ -145,6 +145,6 @@ def _explicit_silluq_accar(dtx, cw_str, eudlcw):
                 f"{dtxs.get_bcvt(dtx)}: annotated silluq is not verse-final"
             )
         cleaned = drop_post_silluq_metegs(text, scaffold, str(dtxs.get_bcvt(dtx)))
-        stress_text = (prefix + separator if separator else "") + cleaned + hpu.SOPA
+        stress_text = head + cleaned + hpu.SOPA
         return rfh.accar(rfh.get_eudlcw_from_cw_ndns(stress_text))
     return rfh.accar(eudlcw)

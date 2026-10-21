@@ -46,6 +46,8 @@ def _split_into_clusters(string):
     # pattern for a cluster with maqaf
     # Attach maqaf to its preceding letter rather than making it a cluster of its own!
     clusters = re.findall(patclu_wm, string)
+    if "".join(clusters) != string:
+        raise ValueError("a character lies outside every untangler cluster")
     return clusters
 
 
