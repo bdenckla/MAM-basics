@@ -143,16 +143,20 @@ _RETURN_ARG1_TMPL_NAMES = _SLH_TMPL_NAMES + (
 )
 # Templates where arg 2 is the primary word
 _RETURN_ARG2_TMPL_NAMES = ("קרי ולא כתיב", "כתיב ולא קרי")
-# Templates that contribute no Hebrew text (structural/spacing marks)
+# Templates that contribute no Hebrew text (structural marks).  MAM has whitespace after
+# every legarmeh, and the three chapter tags never stand between two atoms.
 _ZERO_CONTENT_TMPL_NAMES = (
     "מ:לגרמיה-2",
-    "מ:פסק",
-    "מ:מקף אפור",
-    "ר4",
     tmpln.NO_PAR_AT_STA_OF_CHAP21,
     tmpln.NO_PAR_AT_STA_OF_CHAP03,
     tmpln.NO_PAR_AT_STA_OF_WEEKLY,
 )
+# Templates that stand between two atoms with no whitespace on either side, so each
+# contributes a space, as the whitespace templates do: nothing would run the two atoms
+# together, as it did until 2026-10-21 (Psalms 106:1's הַ֥לְﬞלוּ and יָ֨הּ came out as one
+# atom).  MAM's gray maqaf is read here as a space, as near-Aleppo reads it; the
+# narrow-sense paseq's glyph is left out, as before, but not the boundary it marks.
+_SEPARATOR_TMPL_NAMES = ("מ:מקף אפור", "מ:פסק", "ר4")
 
 
 def flatten_text(wtel):
@@ -163,6 +167,8 @@ def flatten_text(wtel):
 
     For מ:דחי and מ:צינור (stress-variant) templates, returns only the
     first arg, since the second arg is the same word with different stress.
+
+    A whitespace template or one of _SEPARATOR_TMPL_NAMES returns a space.
     """
     if isinstance(wtel, str):
         return wtel
@@ -186,7 +192,9 @@ def flatten_text(wtel):
         if wtp.is_template_with_name(wtel, "מ:קמץ"):
             return flatten_text(wtp.template_param_val(wtel, "ד"))
         if wtp.is_template_with_name_in(wtel, tmpln.WHITESPACE_TMPL_NAMES):
-            return ""
+            return " "
+        if wtp.is_template_with_name_in(wtel, _SEPARATOR_TMPL_NAMES):
+            return " "
         if wtp.is_template_with_name_in(wtel, _ZERO_CONTENT_TMPL_NAMES):
             return ""
         raise ValueError(f"Unexpected template in flatten_text: {wtel}")

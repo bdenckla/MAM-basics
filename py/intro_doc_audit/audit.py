@@ -287,7 +287,7 @@ def inventory_notes():
                                     "body_node": params["2"],
                                     "body_text": body,
                                     "target_survey_text": target_text,
-                                    "target_projection_notice": "Existing hataf survey projection: qere and primary stress only; structural marks and whitespace may be omitted. Use target_node for evidence.",
+                                    "target_projection_notice": "Existing hataf survey projection: qere and primary stress only; structural marks may be omitted, but every separator between two atoms, the gray maqaf included, gives a space. Use target_node for evidence.",
                                     "target_projection_error": target_projection_error,
                                     "chapter_revision": revisions[bkid][
                                         hvn.INT_TO_STR_DIC[int(chapter)]
