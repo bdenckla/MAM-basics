@@ -576,6 +576,22 @@ here, not a catch-all noun".
 MAM-basics' plural lint, `py/mb_cmn/hebrew_name_plurals.py`, suggests these default nouns on
 rendered pages, as its `doc/hebrew-name-plurals.md` describes.
 
+## Mapiq in alef
+
+Call an interior dot in alef **mapiq**, not dagesh, in authored prose. Keep the
+source codepoint unchanged; the prose name follows the parent letter rather than
+blindly repeating Unicode's DAGESH OR MAPIQ name. Preserve exact source quotations
+and explicit discussions of Unicode names.
+
+## Ḥolam dot when referring to the written mark
+
+Call the written mark a **ḥolam dot**, not bare **ḥolam**. Where the distinction
+matters, use **ḥolam ḥaser dot** or **ḥolam male dot**. Bare **ḥolam** remains
+appropriate for the vowel as distinct from its written mark. Preserve verbatim
+quotations, literal Unicode names, technical identifiers, and established names
+whose meaning would change. An encoding choice about which letter precedes a dot
+does not by itself establish the naqdan's conceptual association of the dot.
+
 ## Atnaḥ in authored prose
 
 Ben's decision, 2026-10-21: use **atnaḥ** in authored prose. Reserve **ETNAHTA**
