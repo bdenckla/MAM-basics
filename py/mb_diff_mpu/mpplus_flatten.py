@@ -23,7 +23,7 @@ from mb_cmn.str_defs import DOUB_VERT_LINE
 from mb_cmn.template_names import STD_KQ_TMPL_NAMES
 from mb_diff_mpu.mpplus_param_access import MISSING, get_param
 
-_PARASHAH_NAMES = {"סס", "ססס", "פפ", "פפפ"}
+_PARASHAH_NAMES = frozenset({"ר0", "ר1", "ר2", "ר3", "ר4", "סס", "ססס", "פפ", "פפפ"})
 _PARAM1_BODY_NAMES = (
     template_names.IN_WORD_TMPL_NAMES
     | template_names.STRESS_HELPER_TMPL_NAMES
@@ -44,10 +44,12 @@ _STD_KQ_TEMPLATE_NAMES = frozenset(STD_KQ_TMPL_NAMES)
 
 
 def is_parashah_template(name):
-    """Check if template is a parashah marker (רN, סס, ססס, פפ, פפפ)."""
-    if name in _PARASHAH_NAMES:
-        return True
-    return len(name) >= 2 and name[0] == "ר" and name[1:].isdigit()
+    """Check if template is a parashah marker (ר0 to ר4, סס, ססס, פפ, פפפ).
+
+    The names are listed rather than matched by shape, so a resh-and-digits name
+    no MAM-parsed-plus revision has used is not taken for one.
+    """
+    return name in _PARASHAH_NAMES
 
 
 def is_std_kq_template(name):

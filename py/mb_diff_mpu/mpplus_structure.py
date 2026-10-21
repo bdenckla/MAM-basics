@@ -46,17 +46,16 @@ def collect_template_names(obj):
     """Collect names in all classified structural branches, excluding note prose."""
     names = []
     if isinstance(obj, dict):
-        if "tmpl_name" in obj:
-            if obj["tmpl_name"] == "נוסח":
-                for _key, value in _classified_param_items_for_structure(obj):
-                    names.extend(collect_template_names(value))
-                return names
-            names.append(_canonical_template_name_for_structure(obj))
+        if "tmpl_name" not in obj:
+            raise TypeError(f"MAM-parsed-plus structure dict lacks tmpl_name: {obj!r}")
+        if obj["tmpl_name"] == "נוסח":
             for _key, value in _classified_param_items_for_structure(obj):
                 names.extend(collect_template_names(value))
             return names
-        for key in sorted(obj):
-            names.extend(collect_template_names(obj[key]))
+        names.append(_canonical_template_name_for_structure(obj))
+        for _key, value in _classified_param_items_for_structure(obj):
+            names.extend(collect_template_names(value))
+        return names
     elif isinstance(obj, list):
         for item in obj:
             names.extend(collect_template_names(item))
@@ -185,12 +184,7 @@ def _structure_occurrences(obj, path=()):
             f"unclassified MAM-parsed-plus structure node: {type(obj).__name__}"
         )
     if "tmpl_name" not in obj:
-        occurrences = []
-        for key in sorted(obj):
-            occurrences.extend(
-                _structure_occurrences(obj[key], path + (("dict", key),))
-            )
-        return occurrences
+        raise TypeError(f"MAM-parsed-plus structure dict lacks tmpl_name: {obj!r}")
 
     name = _canonical_template_name_for_structure(obj)
     if obj["tmpl_name"] == "נוסח":

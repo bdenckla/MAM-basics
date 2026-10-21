@@ -289,7 +289,8 @@ def postprocess_kq_html(html_str):
         lambda m: _kq_ruby_html(m.group(2), m.group(1)),
         html_str,
     )
-    # Strip any remaining stray sentinels
+    # A sentinel left over means a ketiv and qere that would run together unpaired.
     for s in (_KQ_K_START, _KQ_K_END, _KQ_Q_START, _KQ_Q_END):
-        html_str = html_str.replace(s, "")
+        if s in html_str:
+            raise ValueError(f"unpaired ketiv/qere sentinel in {html_str!r}")
     return html_str
