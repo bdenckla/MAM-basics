@@ -116,14 +116,14 @@ class MarkReordered:
 class GrayMaqafAdded:
     """A space was replaced by a gray maqaf."""
 
-    pass
+    position: int  # the space's index among the grapheme clusters of the old text
 
 
 @dataclass(frozen=True)
 class GrayMaqafRemoved:
     """A gray maqaf was replaced by a space."""
 
-    pass
+    position: int  # the gray maqaf's index among the grapheme clusters of the old text
 
 
 @dataclass(frozen=True)

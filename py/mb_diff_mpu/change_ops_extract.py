@@ -361,15 +361,27 @@ def _find_paseq_fragment(old_text, new_text):
 
 
 def _extract_maqaf_ops(old_text, new_text):
-    """Extract GrayMaqafAdded/GrayMaqafRemoved ops."""
-    old_count = old_text.count(NU_GMAQ)
-    new_count = new_text.count(NU_GMAQ)
-    diff = new_count - old_count
-    if diff > 0:
-        return [GrayMaqafAdded() for _ in range(diff)]
-    if diff < 0:
-        return [GrayMaqafRemoved() for _ in range(-diff)]
-    return []
+    """Extract GrayMaqafAdded/GrayMaqafRemoved ops.
+
+    One op for each grapheme cluster where a space and a gray maqaf trade places, carrying
+    that cluster's position in the old text.  Until 2026-10-21 the ops carried no position:
+    they were counted off the number of gray maqaf marks, and applying one changed the
+    verse's first space, or deleted its first gray maqaf, wherever the change was.
+    """
+    old_clusters = grapheme_clusters(old_text)
+    new_clusters = grapheme_clusters(new_text)
+    matcher = SequenceMatcher(None, old_clusters, new_clusters, autojunk=False)
+    ops = []
+    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
+        if tag != "replace" or i2 - i1 != j2 - j1:
+            continue
+        pairs = zip(old_clusters[i1:i2], new_clusters[j1:j2])
+        for offset, (old_cluster, new_cluster) in enumerate(pairs):
+            if (old_cluster, new_cluster) == (" ", NU_GMAQ):
+                ops.append(GrayMaqafAdded(position=i1 + offset))
+            elif (old_cluster, new_cluster) == (NU_GMAQ, " "):
+                ops.append(GrayMaqafRemoved(position=i1 + offset))
+    return ops
 
 
 # ── Structural extraction ───────────────────────────────────

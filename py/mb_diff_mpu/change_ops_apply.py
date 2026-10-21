@@ -212,6 +212,13 @@ def _apply_paseq_fragment_op(clusters, op):
     return True
 
 
+def _swap_cluster(clusters, position, old, new):
+    """Replace the cluster at *position*, which must be *old*, with *new*."""
+    if position >= len(clusters) or clusters[position] != old:
+        raise ValueError(f"No {old!r} at cluster {position} to replace with {new!r}")
+    clusters[position] = new
+
+
 def apply_text_ops(old_text, ops):
     """Apply text-level ChangeOps to *old_text* and return the result.
 
@@ -242,16 +249,11 @@ def apply_text_ops(old_text, ops):
         mark_run = []
         if isinstance(op, GrayMaqafAdded):
             # A space becomes a gray maqaf (tilde) in flattened text
-            for i, c in enumerate(clusters):
-                if c == " ":
-                    clusters[i] = NU_GMAQ
-                    break
+            _swap_cluster(clusters, op.position, " ", NU_GMAQ)
         elif isinstance(op, GrayMaqafRemoved):
-            # A gray maqaf (tilde) is deleted — the words concatenate
-            for i, c in enumerate(clusters):
-                if c == NU_GMAQ:
-                    del clusters[i]
-                    break
+            # A gray maqaf (tilde) becomes a space, as change_ops.GrayMaqafRemoved says.
+            # Until 2026-10-21 it was deleted, which ran the two atoms together.
+            _swap_cluster(clusters, op.position, NU_GMAQ, " ")
         elif isinstance(op, PaseqAdded):
             # Insert the appropriate paseq-like character.
             # Legarmeh flattens to PASOLEG (U+05C0); paseq flattens to

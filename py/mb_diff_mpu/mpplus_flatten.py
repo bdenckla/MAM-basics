@@ -114,14 +114,16 @@ def flatten_element(el):
 
 
 def flatten_ep_words_only_for_diff(ep):
-    """Flatten EP to diff-friendly body text, omitting positional-punctuation templates.
+    """Flatten EP to diff-friendly body text, omitting positional-punctuation marks.
 
     Identical to flatten_ep_for_diff() except that templates whose sole
     contribution is a punctuation character at a specific position in the verse
-    (מ:לגרמיה, מ:לגרמיה-2, מ:פסק, מ:מקף אפור) contribute nothing to the
+    (מ:לגרמיה, מ:לגרמיה-2, מ:פסק, מ:מקף אפור) contribute no character to the
     output.  This lets two EPs that share the same words but differ only in
     the placement of those punctuation markers compare as equal, enabling
-    same-count reorder detection in mpplus_extract._diff_ep.
+    same-count reorder detection in mpplus_extract._diff_ep.  Each still
+    contributes the boundary it marks, as a space: the paseq and the gray maqaf
+    stand between two atoms with no whitespace on either side.
     """
     buf = _new_diff_buffer()
     for el in ep:
@@ -282,7 +284,7 @@ def _flatten_diff_element_words_only(el, buf):
 
 
 def _flatten_diff_template_words_only(tmpl, buf):
-    """Like _flatten_diff_template but positional-punctuation templates are no-ops."""
+    """Like _flatten_diff_template, but positional-punctuation templates give no mark."""
     name = tmpl["tmpl_name"]
     if is_parashah_template(name):
         _append_diff_text(buf, " ")
@@ -313,8 +315,12 @@ def _flatten_diff_template_words_only(tmpl, buf):
         if pd is not MISSING:
             _flatten_diff_element_words_only(pd, buf)
         return
-    # Positional-punctuation templates: deliberately omitted (no contribution)
+    # Positional-punctuation templates: their characters are deliberately omitted, but
+    # not the boundary each marks.  A space beside existing whitespace adds nothing, and
+    # the paseq and the gray maqaf have no whitespace on either side; until 2026-10-21
+    # they contributed nothing, which ran the two atoms around them together.
     if name in ("מ:לגרמיה-2", "מ:לגרמיה", "מ:פסק", "מ:מקף אפור"):
+        _append_diff_text(buf, " ")
         return
     if name == "מ:כפול":
         pk = get_param(tmpl, "כפול")
