@@ -14,10 +14,10 @@ defined for future use.  This module is that definition, and
 
 THE THREE TIERS
 
-1. PUBLISHED.  ``gh-pages/``, deployed from ``main`` once daily at 4:17 AM, New York
-   time, and on manual dispatch.  Anyone with the URL reads it, and either deployment
-   is the act that makes that true, so a change reaching this tier is outward-facing
-   in the ordinary sense.
+1. PUBLISHED.  ``gh-pages/``, deployed from ``main`` only on manual dispatch; Ben
+   ended its daily scheduled deployment on 2026-10-22.  Anyone with the URL reads it,
+   and a dispatch is the act that makes that true, so a change reaching this tier is
+   outward-facing in the ordinary sense.
 2. DISTRIBUTED DATA.  ``MAM-parsed/`` (whose current parsed payload is
    ``MAM-parsed/plus/``), ``MAM-simple/``, ``MAM-for-Sefaria/``, ``MAM-with-doc/``,
    ``MAM-OSIS/``, ``Phonetic-MAM/``, ``Yeivin-ITM/`` and ``out/near-aleppo/``. These
@@ -184,7 +184,7 @@ _MEGA_WRAPPER_DELEGATES = {
 
 
 def published_tree() -> Path:
-    """Tier 1: the tree published from ``main`` daily and on manual dispatch."""
+    """Tier 1: the tree published from ``main`` on manual dispatch."""
     return paths.repo_root() / "gh-pages"
 
 

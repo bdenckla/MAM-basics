@@ -1,9 +1,6 @@
 name: Deploy GitHub Pages
 
 on:
-  schedule:
-    - cron: "17 4 * * *"
-      timezone: America/New_York
   workflow_dispatch:
 
 permissions:
