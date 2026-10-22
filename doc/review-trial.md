@@ -126,7 +126,9 @@ regeneration and audit even when main is unchanged; hbofonts broad checks are du
 actual source tip changes. Reconcile later isolated receipts before deciding that a tip is new.
 
 Receipt pushes must respect deployment triggers, including documentation-only main pushes.
-In particular, hbofonts receipts stay on a separate branch so they do not trigger its Pages
-deployment. The scheduler is managed separately by the coordinating session; this document
+By Ben's decision of 2026-10-22, hbofonts' Pages deployment runs only when started by hand.
+Until that change reaches hbofonts' main, a push there still deploys, so hbofonts receipts stay
+on a separate branch; once it has, a receipt push to that main deploys nothing. The scheduler
+is managed separately by the coordinating session; this document
 records its confirmed arrangement and creates no automation. Further scheduling changes need
 Ben's authorization. The renewal changes no substantive repair authority or publication policy.
