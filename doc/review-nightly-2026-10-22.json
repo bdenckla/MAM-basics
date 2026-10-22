@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-22",
+  "scheduled_for_utc": "2026-10-22T06:00:00+00:00",
+  "runner": "Saved isolated Linux cloud full clones; no active test/generator or other writer at freeze; no HP use.",
+  "frozen_at_utc": "2026-10-22T07:01:28.336055+00:00",
+  "publication": "Isolated review-nightly-20261022 branches only. No main/shared/deployment integration, workflow dispatch, deployment, baseline acceptance or frozen-font regeneration.",
+  "review": "Fetched main tips equal the latest isolated reviewed-through anchors. Reconciled their maintained notes; no completed endpoint review repeated.",
+  "continuing_schedule": "Parent verified enabled; unchanged; no automation created.",
+  "source": "838b1d6b49f33ac988b677227793896c9af5337c",
+  "previous_broad_tested": "eecb2e8abf54fd9aee90d8455073a8f69b93f0bc",
+  "reconciled_review_receipt": "c9e1e0e6b44785068a0d0f0cadf8927cdf0dffa5",
+  "reviewed_through": "838b1d6b49f33ac988b677227793896c9af5337c",
+  "allowed_input_commit_ids": [
+    "b58ea672854a0ee563c9fdbd64afe93859ec2cc9",
+    "853682c32f69dc5dfd90091fd6743f8f3bc00e56"
+  ],
+  "mega": {
+    "name": "basics-mega",
+    "cwd": "/workspace/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "started_at_utc": "2026-10-22T07:01:28.558158+00:00",
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 820.51,
+    "finished_at_utc": "2026-10-22T07:15:09.145177+00:00",
+    "steps": 60,
+    "skipped_steps": 0
+  },
+  "suite": {
+    "name": "basics-suite",
+    "cwd": "/workspace/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "started_at_utc": "2026-10-22T07:16:50.096351+00:00",
+    "status": "completed",
+    "exit_code": 0,
+    "seconds": 534.653,
+    "finished_at_utc": "2026-10-22T07:25:44.828950+00:00",
+    "summary": "1099 passed, 5 skipped, 82 subtests passed in 531.73s (0:08:51)",
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "generated_differences": {
+    "svg_files": 8,
+    "non_svg_files": 0,
+    "classification": "Graphviz geometry and known Times aliases only; same elements, comments, nongeometry attributes, text and links. Three routed splines have additional cubic control points. Complete patch and hashes retained privately.",
+    "restoration": "Explained outputs restored by exact verified reverse apply before the suite, which ran against the clean frozen commit. No generated output accepted."
+  },
+  "pending_repair": "062da1e80a1e725b1dd176a9b9d3e9c18a1b6076 remains isolated pending approval; not included in these results.",
+  "limitations": [
+    "Five existing edition-transcription divergences remain skips; the complete reasons are recorded above.",
+    "Passing broad checks do not establish the correctness of editorial interpretations."
+  ],
+  "pending_source_window": {
+    "frozen_source": "838b1d6b49f33ac988b677227793896c9af5337c",
+    "observed_main": "838b1d6b49f33ac988b677227793896c9af5337c",
+    "observed_at_utc": "2026-10-22T07:33:51.145459+00:00",
+    "main_changed_since_freeze": false,
+    "status": "no later source window"
+  }
+}
