@@ -9,7 +9,7 @@ _COMPAR1 = [
 _COMPAR2 = [
     "It is said (from direct inspection of μL in Russia) that there is",
     " “a pale yellow dot in the [צ]",
-    " which could be the trace of a worn-off [דגש]”",
+    " which could be a trace of a worn-off [דגש]”",
     [" in ", golinets_citation("242")],
 ]
 _COMPAR3 = [
