@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-23",
+  "scheduled_for_utc": "2026-10-23T06:00:00+00:00",
+  "frozen_at_utc": "2026-10-23T06:27:33.429558+00:00",
+  "runner": "Saved cloud environment; agent-owned committed isolated worktrees, using their home-clone constrained Python 3.13.15 environments; commands sequential, no expensive overlap.",
+  "publication": "Only review-nightly-20261023 isolated branches. No main/shared/deployment integration, workflow dispatch, release/publish, baseline acceptance, frozen-font generation or HP operation.",
+  "review": "Reconciled the latest isolated maintained receipt; startup main equals reviewed-through, so no completed endpoint review repeated.",
+  "continuing_schedule": "Parent owns scheduling and verified the continuing daily schedule enabled at 06:18 UTC; no automation operation by this task.",
+  "environment": "All six owning environments pass pip check and no-index constrained dependency dry-run. Pinned Graphviz 16.0.0 (20260814.1018); native FontForge 20230101.",
+  "source": "27f263cb6a158566ec290a67123364f6b690106b",
+  "reviewed_through": "27f263cb6a158566ec290a67123364f6b690106b",
+  "reconciled_receipt": "d2572818ad34cb868d9272d26fa96eb515877ad9",
+  "previous_broad_tested": "838b1d6b49f33ac988b677227793896c9af5337c",
+  "allowed_input_commit_ids": [
+    "b58ea672854a0ee563c9fdbd64afe93859ec2cc9",
+    "56f4ba837f70c9a6a7a3ad4692c49e5d09c98eec"
+  ],
+  "mega": {
+    "stage": "basics-mega",
+    "cwd": "/workspace/scratch/nightly-20261023/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_0_mega.py"
+    ],
+    "started_utc": "2026-10-23T06:27:43.685175+00:00",
+    "completed_utc": "2026-10-23T06:40:56.786367+00:00",
+    "seconds": 793.101,
+    "exit_code": 0,
+    "steps": 60,
+    "skipped_steps": 0
+  },
+  "suite": {
+    "stage": "basics-suite",
+    "cwd": "/workspace/scratch/nightly-20261023/MAM-basics",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_test.py",
+      "-q",
+      "-ra"
+    ],
+    "started_utc": "2026-10-23T06:41:16.451410+00:00",
+    "completed_utc": "2026-10-23T06:49:12.627487+00:00",
+    "seconds": 476.176,
+    "exit_code": 0,
+    "summary": "1099 passed, 5 skipped, 82 subtests passed in 472.56s (0:07:52)",
+    "skip_details": [
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+      "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+    ]
+  },
+  "generated_differences": {
+    "svg_files": 8,
+    "other_files": 0,
+    "classification": "Fresh XML comparison preserves element/comment structure, text, links, nongeometry attributes and geometry command types; differences are geometry and Times aliases only. Complete patch preserved privately, then exact verified reverse-applied before the clean suite. No output accepted."
+  },
+  "pending_repair": "062da1e80a1e725b1dd176a9b9d3e9c18a1b6076 remains isolated; not integrated or included in these checks.",
+  "limitations": [
+    "Five existing edition-transcription skips; passing tests do not establish editorial correctness."
+  ],
+  "observed_completion": {
+    "main": "27f263cb6a158566ec290a67123364f6b690106b",
+    "observed_at_utc": "2026-10-23T07:00:20.569457+00:00",
+    "changed_since_freeze": false,
+    "pending_main_window": "none"
+  }
+}
