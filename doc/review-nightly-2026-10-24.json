@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-24",
+  "scheduled_for_utc": "2026-10-24T06:00:00+00:00",
+  "attempt_status": "blocked_before_process_creation",
+  "source_candidate_main": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+  "reviewed_through": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+  "last_broad_tested": "27f263cb6a158566ec290a67123364f6b690106b",
+  "reconciled_receipt": "23e370cc2e9af2463f34a088ea52e05c62f71220",
+  "previous_nightly_receipt": "180806349a53ed865cc598a3bbea532e11e65274",
+  "read_only_observation_utc": "2026-10-24 06:43:55 UTC",
+  "review": "Current main equals the latest reconciled reviewed-through anchor. No endpoint review repeated; prior focused and broad results retain their original scopes.",
+  "blocker": {
+    "action": "Start the selected saved execution environment and obtain a shell",
+    "outcome": "pending_or_unavailable; no shell process created",
+    "reason": "No usable execution environment is available. Wait for an environment to become available before using this tool.",
+    "evidence": "Two startup waits produced neither readiness nor a failure result and were ended locally; both minimal pwd shell attempts returned the quoted error. This is an availability blocker, not an approval denial."
+  },
+  "runtime_inputs": {
+    "selected_checkouts": null,
+    "verified_interpreters": null,
+    "observed_candidate_input_commit_ids": [
+      "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+      "d3ecd8747d1affef80bb02c72064e85e41d0dc80"
+    ],
+    "limitation": "GitHub commit observations only. No runtime checkout, sibling-input cleanliness, environment constraints or process inventory was verified; no other sibling commit is inferred."
+  },
+  "maintained_stages": [
+    {
+      "stage": "basics-mega",
+      "entry_point": "py/main_0_mega.py",
+      "status": "not_started",
+      "exit_code": null,
+      "seconds": null,
+      "interpreter": "not selected; launch with the verified home clone's absolute interpreter when execution is available"
+    },
+    {
+      "stage": "basics-suite",
+      "entry_point": "py/main_test.py -q -ra",
+      "status": "not_started",
+      "exit_code": null,
+      "seconds": null,
+      "interpreter": "not selected; launch with the verified home clone's absolute interpreter when execution is available"
+    }
+  ],
+  "execution_results": {
+    "tests_run": 0,
+    "failures": null,
+    "skips": null,
+    "generated_diff_comparison": "not run",
+    "anchor_advanced": false
+  },
+  "preparation": "Read current repository instructions, Basics controlling trial policy and maintained status notes through GitHub; reconciled the latest isolated status and preceding nightly result; reread maintained entry points. Canonical topology, linked-worktree and receipt skills read through their tracked fallback. Local .agents files remain unavailable with the environment.",
+  "processes": {
+    "launched_by_this_attempt": 0,
+    "live_inventory": "unavailable",
+    "dispatch_state": "Parent reported the previous nightly/font/BHL work complete and no live tests before delegation; this was not independently rechecked."
+  },
+  "preservation": "No interactive HP checkout, generated output, QA expectation, frozen font, release, workflow dispatch or deployment was operated on. No temporary worktree was created, so none requires cleanup.",
+  "publication": "Receipt files only on review-nightly-20261024. No main/shared/deployment branch integration. Broad checks remain due.",
+  "limitations": [
+    "This receipt proves preparation and the runner blocker only. It is not broad execution or a passing result.",
+    "Previous nightly drift classifications are historical evidence, not fresh comparisons."
+  ],
+  "pending_repair": "062da1e80a1e725b1dd176a9b9d3e9c18a1b6076 remains isolated and unintegrated."
+}
