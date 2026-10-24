@@ -166,18 +166,21 @@ def _row_dic_for_json(foi_path, bcv_short, qualifier, html_contents):
 
 
 def _append_table_row(io_html_tables, foi_path, row_dic):
-    table_row = _make_table_row(row_dic)
+    table_row = _make_table_row(foi_path, row_dic)
     tfp = tuple(foi_path)
     if tfp not in io_html_tables:
         io_html_tables[tfp] = []
     io_html_tables[tfp].append(table_row)
 
 
-def _make_table_row(row_dic):
-    td_attrs = {"lang": "hbo", "dir": "rtl"}
-    hc_td = mb_html.table_datum(row_dic["html_contents"], td_attrs)
+def _make_table_row(foi_path, row_dic):
+    if foi_path[0] == "slh-word":
+        target_tds = slh_word_e.html_target_cells(row_dic["html_contents"])
+    else:
+        td_attrs = {"lang": "hbo", "dir": "rtl"}
+        target_tds = (mb_html.table_datum(row_dic["html_contents"], td_attrs),)
     other_tds = tuple(_my_td(k, v) for k, v in row_dic.items() if k != "html_contents")
-    return mb_html.table_row((hc_td, *other_tds))
+    return mb_html.table_row((*target_tds, *other_tds))
 
 
 def _my_td(key, htseq_or_str_or_none):
