@@ -13,7 +13,7 @@ with that session; this run created no automation.
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
 | Reviewed through | `cda80a1cb5b49f709c13f3ad332eca68992e02ef`; connector review of the two-commit / three-path endpoint from `27f263cb6a158566ec290a67123364f6b690106b`: one-word Job 5:5 quotation correction and its matching generated JSON/HTML copies; no executable behavior change or consequential defect. Prior checker repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076` remains isolated, pending Ben's main-integration approval. |
-| Last tested | `27f263cb6a158566ec290a67123364f6b690106b`; October 23 mega exit 0, 60 steps/no skips in 793.101 s; full suite exit 0 in 476.176 s: 1099 passed, 5 existing skips, 82 subtests passed; eight freshly explained SVG differences preserved |
+| Last tested | `cda80a1cb5b49f709c13f3ad332eca68992e02ef`; October 24 HP recovery: mega exit 0, 60 steps/no skips in 870.820 s, zero tracked output differences; suite exit 0 in 590.685 s: 1099 passed, 5 skipped, 82 subtests passed in 588.06s (0:09:48). [Recovery receipt](review-nightly-2026-10-24-hp-recovery.json) |
 | Last focused checked | Source `75de03e816162c6e5f7005eb85b36a5024c09cce`: 51 maintained tests pass; repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076`: 32 independent/regression checks pass. No broad-test advance |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
@@ -192,3 +192,5 @@ All 2 prescribed broad stages are unstarted, with no exit code, duration, fresh 
 comparison or tested-anchor advance. [Compact blocked receipt](review-nightly-2026-10-24.json).
 No test process or temporary checkout was created; existing live-process inventory was unavailable.
 Main integration, interactive HP work, baseline acceptance, frozen-font work and deployment did not occur.
+
+HP recovery, 2026-10-24: mega exit 0, 60 steps/no skips in 870.820 s, zero tracked output differences; suite exit 0 in 590.685 s: 1099 passed, 5 skipped, 82 subtests passed in 588.06s (0:09:48). The original blocked startup entry and JSON remain unchanged. Exact current main and committed sibling inputs are recorded in the [HP recovery receipt](review-nightly-2026-10-24-hp-recovery.json). Generated differences were preserved and independently inspected; no product or baseline was accepted. No new repair, main integration or deployment.

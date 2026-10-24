@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-24",
+  "recovery_completed_utc": "2026-10-24T13:07:40.575994+00:00",
+  "recovery_status": "completed",
+  "initial_blocked_receipt": "38ea4bf21a456e404224d40b833c075d44bfe3b7",
+  "initial_failure_preservation": "The earlier cloud startup failure and all original fields remain unchanged in review-nightly-2026-10-24.json; this is later HP execution evidence.",
+  "source": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+  "reviewed_through": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+  "previous_broad_tested": "27f263cb6a158566ec290a67123364f6b690106b",
+  "last_broad_tested": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+  "observed_completion": {
+    "observed": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+    "frozen_source": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+    "changed_since_freeze": false
+  },
+  "reconciled_review_receipt": "23e370cc2e9af2463f34a088ea52e05c62f71220",
+  "review": "At the initial freeze, freshly fetched main equaled the reconciled reviewed-through source; no completed endpoint review was repeated. Later observations are recorded separately.",
+  "runner": "HP; exact-main isolated committed worktrees backed by Codex-owned GitRepos3; commands sequential; corresponding home-clone Python 3.13.15 environments.",
+  "environment": "Every direct requirement pinned; all six constrained no-index dependency dry-runs and pip check commands passed without package changes. Graphviz 16.0.0 (20260814.1018).",
+  "commands": [
+    {
+      "stage": "basics-mega",
+      "cwd": "C:/Users/BenDe/Documents/Codex/2026-10-24/task/run/MAM-basics",
+      "source": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+      "command": [
+        "C:/Users/BenDe/GitRepos3/MAM-basics/.venv/Scripts/python.exe",
+        "py/main_0_mega.py"
+      ],
+      "started_utc": "2026-10-24T12:24:15.341445+00:00",
+      "pid": 19448,
+      "exit_code": 0,
+      "seconds": 870.82,
+      "completed_utc": "2026-10-24T12:38:46.190007+00:00",
+      "tracked_status_after_command": ""
+    },
+    {
+      "stage": "basics-suite",
+      "cwd": "C:/Users/BenDe/Documents/Codex/2026-10-24/task/run/MAM-basics",
+      "source": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+      "command": [
+        "C:/Users/BenDe/GitRepos3/MAM-basics/.venv/Scripts/python.exe",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "started_utc": "2026-10-24T12:39:01.655386+00:00",
+      "pid": 18260,
+      "exit_code": 0,
+      "seconds": 590.685,
+      "completed_utc": "2026-10-24T12:48:52.340749+00:00",
+      "tracked_status_after_command": ""
+    }
+  ],
+  "result": "mega exit 0, 60 steps/no skips in 870.820 s, zero tracked output differences; suite exit 0 in 590.685 s: 1099 passed, 5 skipped, 82 subtests passed in 588.06s (0:09:48)",
+  "generated_differences": {
+    "repository": "MAM-basics",
+    "source": "cda80a1cb5b49f709c13f3ad332eca68992e02ef",
+    "files": [],
+    "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "preservation": "Interactive checkouts preserved. No main integration, baseline acceptance, frozen-font regeneration, publish/release or deployment. Pending repair branches remain separate.",
+  "cleanup": "Runtime/input/audit worktrees removed after evidence preservation and clean-status verification. Receipt worktrees are removed after verified isolated-branch pushes.",
+  "publication": "Narrow receipt/evidence changes only; normal fast-forward push to review-nightly-20261024; no shared/main/deployment branch change.",
+  "allowed_input_commit_ids": [
+    "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+    "d3ecd8747d1affef80bb02c72064e85e41d0dc80"
+  ],
+  "suite_skip_details": [
+    "SKIPPED [1] py\\tests\\test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py\\tests\\test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py\\tests\\test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py\\tests\\test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py\\tests\\test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+  ],
+  "limitations": [
+    "Five existing edition-transcription skips; no editorial or manuscript correctness claim follows from these checks."
+  ],
+  "pending_repair": "062da1e80a1e725b1dd176a9b9d3e9c18a1b6076 remains isolated; not integrated or included."
+}
