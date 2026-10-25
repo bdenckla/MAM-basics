@@ -115,7 +115,10 @@ order. Distinguish checking whether marks survived transport from checking their
 GitHub can drop combining marks from an issue body that a comment keeps
 (charlesLoder/leningrad-codex-tei#547, 2026-10-15). Compare every filed body's code points with
 the file sent; where marks are lost, name the atom another way, such as by its id, rather than
-retrying.
+retrying. On MAM-basics #332 (2026-10-24), GitHub dropped all five marks of one tsadi (PATAH,
+TIPEHA, COMBINING GRAPHEME JOINER, QAMATS, METEG) from both places the body cited the atom,
+while letters with three marks, one of them with a joiner, kept theirs. Describe an atom whose
+letter has that many marks in words from the start.
 
 ## 4. Correcting a stale fact in an open issue's body
 
