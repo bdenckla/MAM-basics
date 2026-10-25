@@ -13,7 +13,7 @@ with that session; this run created no automation.
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
 | Reviewed through | `926a6e785be4236673ac4a5c8c34afe63ed417f4`; connector screening of the one-commit / one-path endpoint from `0f66512aa92d32f7de463b9aad82b8c2edec9462`: issue-writing reference documents observed combining-mark transport loss; no consequential defect confirmed. Prior checker repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076` remains isolated. |
-| Last tested | `cda80a1cb5b49f709c13f3ad332eca68992e02ef`; October 24 HP recovery: mega exit 0, 60 steps/no skips in 870.820 s, zero tracked output differences; suite exit 0 in 590.685 s: 1099 passed, 5 skipped, 82 subtests passed in 588.06s (0:09:48). [Recovery receipt](review-nightly-2026-10-24-hp-recovery.json) |
+| Last tested | `926a6e785be4236673ac4a5c8c34afe63ed417f4`; October 25 HP nightly: mega exit 0 in 868.023 s, all 60 steps/no skips; full suite exit 0 in 614.898 s, 1099 passed, 5 skipped, 82 subtests passed; zero tracked output differences. [Compact receipt](review-nightly-2026-10-25.json) |
 | Last focused checked | Source `75de03e816162c6e5f7005eb85b36a5024c09cce`: 51 maintained tests pass; repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076`: 32 independent/regression checks pass. No broad-test advance |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
@@ -227,3 +227,5 @@ Reviewed-through advances to the frozen endpoint; broad-tested and focused-check
 the original startup failure and the later HP results remain unchanged. This update preserves
 the prior maintained history on the isolated receipt branch only; no main/shared-branch
 integration, deployment, editorial change, baseline acceptance or frozen-font regeneration.
+
+Nightly broad checks, 2026-10-25: reconciled isolated receipt `5a7fcf0f9372bc0035341ebde2b40199ffb5734f`; the frozen source was already screened, so no review window was repeated. Completed the maintained broad checks with zero tracked output differences. The [compact receipt](review-nightly-2026-10-25.json) records exact source/input commits, commands, durations, actual skips and limitations. Earlier blocked attempts, failures, focused results and pending isolated repairs keep their original scope. This branch preserves the previous receipt history; its code tree is not the tested source. No source repair, main integration, deployment, baseline acceptance, frozen-font regeneration or schedule change.

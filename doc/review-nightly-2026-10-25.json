@@ -1,0 +1,71 @@
+{
+  "date": "2026-10-25",
+  "host": "Bens-HP-mini",
+  "source_commit": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "receipt_parent": "5a7fcf0f9372bc0035341ebde2b40199ffb5734f",
+  "review": "Exact source already screened; no repeated review or advance beyond source tip.",
+  "stages": [
+    {
+      "stage": "basics-mega",
+      "command": [
+        "C:/Users/BenDe/GitRepos3/MAM-basics/.venv/Scripts/python.exe",
+        "py/main_0_mega.py"
+      ],
+      "cwd": "C:/Users/BenDe/Documents/Codex/2026-10-25/task/nightly/MAM-basics",
+      "started_utc": "2026-10-25T06:29:05.322828+00:00",
+      "inputs": {
+        "source": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+        "allowed_committed_input_ids": [
+          "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+          "11c837eae7123d2567a88f3ea9c939a33dd39ae8"
+        ]
+      },
+      "status": "completed",
+      "pid": 27120,
+      "exit_code": 0,
+      "elapsed_seconds": 868.0230828999775,
+      "finished_utc": "2026-10-25T06:43:33.511494+00:00",
+      "before_status": [],
+      "after_status": [],
+      "diff_paths": []
+    },
+    {
+      "stage": "basics-suite",
+      "command": [
+        "C:/Users/BenDe/GitRepos3/MAM-basics/.venv/Scripts/python.exe",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "C:/Users/BenDe/Documents/Codex/2026-10-25/task/nightly/MAM-basics",
+      "started_utc": "2026-10-25T06:43:45.851953+00:00",
+      "inputs": {
+        "source": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+        "allowed_committed_input_ids": [
+          "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+          "11c837eae7123d2567a88f3ea9c939a33dd39ae8"
+        ]
+      },
+      "status": "completed",
+      "pid": 27136,
+      "exit_code": 0,
+      "elapsed_seconds": 614.8976288000122,
+      "finished_utc": "2026-10-25T06:54:00.813994+00:00",
+      "before_status": [],
+      "after_status": [],
+      "diff_paths": []
+    }
+  ],
+  "result": {
+    "short": "mega exit 0 in 868.023 s, all 60 steps/no skips; full suite exit 0 in 614.898 s, 1099 passed, 5 skipped, 82 subtests passed; zero tracked output differences",
+    "detail": "The maintained mega and full suite ran sequentially on frozen source 926a6e785be4236673ac4a5c8c34afe63ed417f4 with selected committed input IDs 5d3063820afe6a55a20aa47d721b8f18e1b0aa9b and 11c837eae7123d2567a88f3ea9c939a33dd39ae8. All 60 mega steps and required SVG renders completed. The full suite reported 1099 passed, 5 skipped and 82 subtests passed in 612.21 s; process duration was 614.898 s. The five established edition-transcription skips are koren_ex_elyon, simtan_dt_taxton, simtiq_dt_taxton, simtiq_ex_elyon and simtiq_ex_taxton: each diverges from its Wikisource strand and needs an agreeing control page. Both post-stage tracked diffs are empty. No new source defect or repair was established. Passing checks add no editorial or manuscript judgment."
+  },
+  "limits": [
+    "No editorial or manuscript judgment",
+    "No deployment, release, baseline acceptance or frozen-font operation",
+    "No broad result claimed for receipt-tree code or later main"
+  ],
+  "receipt_branch": "review-nightly-20261025-hp-receipts",
+  "main_observed_at_receipt_preparation": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "main_still_matches_tested_source": true
+}
