@@ -12,7 +12,7 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `cda80a1cb5b49f709c13f3ad332eca68992e02ef`; connector review of the two-commit / three-path endpoint from `27f263cb6a158566ec290a67123364f6b690106b`: one-word Job 5:5 quotation correction and its matching generated JSON/HTML copies; no executable behavior change or consequential defect. Prior checker repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076` remains isolated, pending Ben's main-integration approval. |
+| Reviewed through | `0f66512aa92d32f7de463b9aad82b8c2edec9462`; connector screening of the one-commit / three-path endpoint from `cda80a1cb5b49f709c13f3ad332eca68992e02ef`: SLH explanation-column presentation only; no consequential defect confirmed. Prior checker repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076` remains isolated. |
 | Last tested | `cda80a1cb5b49f709c13f3ad332eca68992e02ef`; October 24 HP recovery: mega exit 0, 60 steps/no skips in 870.820 s, zero tracked output differences; suite exit 0 in 590.685 s: 1099 passed, 5 skipped, 82 subtests passed in 588.06s (0:09:48). [Recovery receipt](review-nightly-2026-10-24-hp-recovery.json) |
 | Last focused checked | Source `75de03e816162c6e5f7005eb85b36a5024c09cce`: 51 maintained tests pass; repair `062da1e80a1e725b1dd176a9b9d3e9c18a1b6076`: 32 independent/regression checks pass. No broad-test advance |
 
@@ -194,3 +194,20 @@ No test process or temporary checkout was created; existing live-process invento
 Main integration, interactive HP work, baseline acceptance, frozen-font work and deployment did not occur.
 
 HP recovery, 2026-10-24: mega exit 0, 60 steps/no skips in 870.820 s, zero tracked output differences; suite exit 0 in 590.685 s: 1099 passed, 5 skipped, 82 subtests passed in 588.06s (0:09:48). The original blocked startup entry and JSON remain unchanged. Exact current main and committed sibling inputs are recorded in the [HP recovery receipt](review-nightly-2026-10-24-hp-recovery.json). Generated differences were preserved and independently inspected; no product or baseline was accepted. No new repair, main integration or deployment.
+
+Hourly connector screening, 2026-10-24 20:09, New York time (2026-10-25 00:09 UTC):
+reconciled completed HP receipt [`c8b6ce67`](https://github.com/bdenckla/MAM-basics/commit/c8b6ce6719de119fd430a6b9d98e36e7477a27c1)
+without repeating its checks or earlier windows. Reviewed the [one-commit/three-path endpoint](https://github.com/bdenckla/MAM-basics/compare/cda80a1cb5b49f709c13f3ad332eca68992e02ef...0f66512aa92d32f7de463b9aad82b8c2edec9462).
+The two Python changes isolate SLH prose in a `lang=he`, RTL cell, keeping compact text
+in its `lang=hbo` cell; the generated SLH page reflects that split. The description producer
+supplies the singleton string and terminal parenthesized explanation required by the splitter.
+The JSON serialization path, non-SLH table construction, qualifiers and render attributes are
+unchanged. No consequential defect or repair; classification is reviewed/screened, not broadly tested.
+The [owner commit](https://github.com/bdenckla/MAM-basics/commit/0f66512aa92d32f7de463b9aad82b8c2edec9462)
+records Black/whitespace checks, focused regeneration, five style/prose tests, unchanged generic
+FOI output, all 159 displayed rows/parsed-page comparison and computed-style/render inspection.
+Those executed checks were not rerun here. This screening ran no tests or generators; the
+broad-tested anchor remains `cda80a1cb5b49f709c13f3ad332eca68992e02ef`, with the original blocked
+attempt and later HP result preserved. This receipt branches from the latest isolated receipt,
+not from the reviewed source: its checkout is evidence, not a new tested source. No main/shared
+branch change, deployment, editorial change, baseline acceptance or frozen-font regeneration.
