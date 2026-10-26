@@ -1,8 +1,8 @@
 /* Hand-authored styles for the three pages that document MAM-for-Sefaria, index.html,
    unicode-names/index.html and ajf/index.html, which py/author_misc/mam4sef_index.py,
    mam4sef_unicode_names_index.py and mam4sef_ajf_index.py generate. Each page links the
-   site's document.css first. Only pointed Hebrew has lang="hbo"; unpointed Hebrew stays in
-   the surrounding font. */
+   site's document.css first. lang="hbo" marks pointed Hebrew and each form lifted from the
+   files, unpointed parts and all; unpointed Hebrew in prose stays in the surrounding font. */
 :root {
     /* The page's color conventions, with readable shades in each theme. */
     --color-dim: light-dark(#707070, #aaa);
@@ -49,7 +49,7 @@ table.data td {
     text-align: start;
     vertical-align: middle;
 }
-table.data td[dir="rtl"] { line-height: 1.6; }
+table.data td[lang="hbo"] { line-height: 1.6; }
 table.data td.bcv {
     white-space: nowrap;
     padding-left: 0.6em;

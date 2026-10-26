@@ -96,16 +96,16 @@ verbatim:
   `<bdi>`: the two Jerusalem spellings and the NUN HAFUKHA on the Sefaria page, the letters of
   the attention-color convention on the Sefaria and AJF pages, and the four strand names on the
   AJF page.
-- **Unpointed Hebrew in an example** is too. A lifted ketiv, samekh or pe break, or inverted nun
-  stays in the surrounding font, and the pointed rest of its cell is in `lang="hbo"` spans; a
-  cell with nothing unpointed keeps `lang="hbo"` on its `td`. This is the classification of
-  `py/accgram/almost_errors_html_shared.py`'s `wrap_hebrew_runs`, which the `hebrew-prose`
-  skill's rendered-prose reference names for unpointed Hebrew. The line height that `styles.css`
-  gave `td[lang="hbo"]` now goes to every `td[dir="rtl"]`, and its header comment names the three
-  pages.
+- **Unpointed Hebrew in an example** was too, in `658ffef3`, until the next entry put each
+  example back in one font. A lifted ketiv, samekh or pe break, or inverted nun stayed in the
+  surrounding font, and the pointed rest of its cell went in `lang="hbo"` spans: the
+  classification of `py/accgram/almost_errors_html_shared.py`'s `wrap_hebrew_runs`, which the
+  `hebrew-prose` skill's rendered-prose reference names for unpointed Hebrew. For that commit,
+  `styles.css` moved the line height of `td[lang="hbo"]` to every `td[dir="rtl"]`; its header
+  comment now names the three pages.
 - **A guard:** `py/author_misc/mam4sef_common.py`'s `write_page` refuses a page that has an
-  unpointed Hebrew token under `lang="hbo"`. A token of punctuation alone, such as the PASEQ
-  between two pointed atoms of an example, is allowed.
+  unpointed Hebrew token under `lang="hbo"`, now only in prose (the next entry). A token of
+  punctuation alone is allowed.
 
 ### Verification of these changes
 
@@ -114,5 +114,22 @@ verbatim:
 Hebrew token on the three pages, joined across inline elements, found no pointed token outside
 `lang="hbo"` and no unpointed word inside it. The mega and the suite are left to the nightly
 run. The Pages workflow was not started.
+
+## 2026-10-26, later still: each lifted example in one font
+
+Written by Claude (Opus 5.5) on 2026-10-26, in the same session. Told that the change above set a
+lifted ketiv in another font than its qere, and that one font for a lifted example would be a
+small change, Ben replied, verbatim: "keep those in one font (namely the font for pointed
+hebreW)".
+
+So each table cell that holds a form lifted from the files is again `lang="hbo"` throughout, its
+ketiv, breaks and inverted nun included, and `styles.css` has its line height on
+`td[lang="hbo"]` again. Unpointed Hebrew in prose stays in the surrounding font, and the guard in
+`write_page` now exempts the cells of lifted forms.
+
+Verification: `py/main_authored.py gen-mam-for-sefaria-doc` twice, with identical output; Black
+and Ruff; `git diff --cached --check`; the fourteen test files, 59 passed. The scratch token check
+found unpointed Hebrew under `lang="hbo"` only in lifted forms, and none in prose. The mega and
+the suite are left to the nightly run. The Pages workflow was not started.
 
 State of the plan: executed 2026-10-26, as revised here.
