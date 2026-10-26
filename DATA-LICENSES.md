@@ -95,7 +95,7 @@ away:**
 | `MAM-simple/` | MAM-simple's JSON exports, documentation, license, and example programs | MAM's CC-BY-SA 4.0, as `MAM-simple/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-simple/`, except `woff2/Taamey_D.woff2` | MAM-simple's generated index, HTML documentation, and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-simple product |
 | `MAM-for-Sefaria/` | MAM-for-Sefaria's standard and AJF CSV exports, Unicode-name listings, license, README, and source metadata | MAM's CC-BY-SA 4.0, as `MAM-for-Sefaria/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
-| `gh-pages/MAM-for-Sefaria/`, except `woff2/Taamey_D.woff2` | MAM-for-Sefaria's generated index and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-for-Sefaria product |
+| `gh-pages/MAM-for-Sefaria/`, except `woff2/Taamey_D.woff2` | MAM-for-Sefaria's three generated documentation pages, `index.html`, `unicode-names/index.html` and `ajf/index.html`, and their stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-for-Sefaria product |
 | `MAM-parsed/` | MAM-parsed's plus JSON, historical release snapshots, documentation, license, and example program | MAM's CC-BY-SA 4.0, as `MAM-parsed/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |
 | `gh-pages/MAM-parsed/`, except `woff2/Taamey_D.woff2` | MAM-parsed's generated documentation, call graphs, and stylesheet | MAM's CC-BY-SA 4.0, inherited from the MAM-parsed product |
 | `MAM-with-doc/` | the MAM-with-doc product README, license, repository attributes, and ignore rules | MAM's CC-BY-SA 4.0, as `MAM-with-doc/LICENSE.md` states. The product moved here from its source repository on 2026-09-06 |

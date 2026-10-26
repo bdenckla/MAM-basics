@@ -1,9 +1,9 @@
 """MAM-for-Sefaria's tracked files, read with closed dispatch and counted.
 
-This is the reading half of ``gh-pages/MAM-for-Sefaria/index.html``, "The encoding of MAM
-for Sefaria"; ``mam4sef_index.py`` beside it is the page half.  ``survey()`` returns
-everything the page states about the files, and the page states nothing it does not get from
-here.
+This is the reading half of the three pages that document MAM-for-Sefaria, whose modules
+``mam4sef_common.py`` beside it names: "The encoding of MAM for Sefaria", on ``csv/``, and the
+pages on the listings and on the AJF variant.  ``survey()`` returns everything the pages state
+about the files, and they state nothing they do not get from here.
 
 WHAT IS READ.  Every tracked file of the product's four folders, listed with
 ``git ls-files -z``: the 39 Sefaria CSV files of ``MAM-for-Sefaria/csv/``, the 39 AJF CSV files
@@ -11,19 +11,19 @@ of ``MAM-for-Sefaria/csv-ajf/``, and the 78 Unicode-name listings of
 ``MAM-for-Sefaria/misc/unicode-names/`` and ``MAM-for-Sefaria/misc/unicode-names-ajf/``.
 Nothing else in MAM-basics reads these files back, and their only writer,
 ``py/main_mam4sef.py``, is run by hand, so they can lag MAM-simple (``AGENTS.md``, "What this
-repository's products are").  That is why the page reads them rather than MAM-simple: what it
-documents is what the product ships.  The one exception is the meteg-after-silluq table, whose
+repository's products are").  That is why the pages read them rather than MAM-simple: what
+they document is what the product ships.  The one exception is the meteg-after-silluq table, whose
 "other versions of MAM" row is by definition not what the product ships; it is read from the
 silluq-before-meteg annotations of ``MAM-simple/json-vtrad-mam/``, the input that
 ``py/tests/test_sefaria_silluq_documentation.py`` checks the table against.
 
 CLOSED DISPATCH.  Every element, class, attribute, character reference and code point of the
-files is dispatched on by name, and anything unrecognized raises, so the page's lists of markup
-and characters are complete by construction.  The string-level features the page names are
+files is dispatched on by name, and anything unrecognized raises, so the pages' lists of markup
+and characters are complete by construction.  The string-level features the pages name are
 dispatched the same way: each run of NO-BREAK SPACE by its neighbours, each PASEQ by its markup
 and spacing, each COMBINING GRAPHEME JOINER by the marks around it, each ketiv/qere pair by its
 order, separator and word counts.  A new feature in a regenerated file therefore stops the build
-here, as a finding for Ben, rather than reaching the page undescribed.
+here, as a finding for Ben, rather than reaching the pages undescribed.
 
 THE LISTINGS ARE RE-DERIVED.  Each listing is rebuilt from its CSV file with the line format of
 ``py/mb_misc/write_utils.py`` and the short names of ``mb_cmn.uni_heb``, and must equal the
@@ -84,7 +84,12 @@ _LETTER = "[א-ת]"
 # Every Hebrew mark the files may attach to a letter: the accents and points, the two
 # extraordinary dots, and COMBINING GRAPHEME JOINER.  The four Hebrew punctuation marks the files
 # have, MAQAF, PASEQ, SOF PASUQ and NUN HAFUKHA, are not among them: they stand between atoms.
-_MARK = "[֑-ׇֽֿׁׂׅׄ͏]"
+_MARK = (
+    "[\N{HEBREW ACCENT ETNAHTA}-\N{HEBREW POINT METEG}\N{HEBREW POINT RAFE}"
+    "\N{HEBREW POINT SHIN DOT}\N{HEBREW POINT SIN DOT}\N{HEBREW MARK UPPER DOT}"
+    "\N{HEBREW MARK LOWER DOT}\N{HEBREW POINT QAMATS QATAN}"
+    "\N{COMBINING GRAPHEME JOINER}]"
+)
 MARK_CLASS = _MARK
 _MARK_RE = re.compile(_MARK)
 CLUSTER_RE = re.compile(f"{_LETTER}{_MARK}*")
@@ -102,13 +107,12 @@ VOWELS = frozenset(
     "\N{HEBREW POINT QUBUTS}\N{HEBREW POINT QAMATS QATAN}"
 )
 _ACCENTS = frozenset(chr(cp) for cp in range(0x0591, 0x05AF))
-# The marks the page lists as having code points of their own.
+# The marks the page lists as having code points of their own, each as opposed to that of a
+# mark it looks like: QAMATS, HOLAM and YERAH BEN YOMO.
 OWN_CODE_POINT_MARKS = (
     "\N{HEBREW POINT QAMATS QATAN}",
     "\N{HEBREW POINT HOLAM HASER FOR VAV}",
-    hpo.RAFE,
-    hpu.UPDOT,
-    hpu.LODOT,
+    ha.ATN_H,
 )
 _PUNCTUATION = frozenset((hpu.MAQ, hpu.PASOLEG, hpu.SOPA, hpu.NUN_HAF))
 _ASCII = frozenset(" ()[]{}")
@@ -165,10 +169,12 @@ _FIXED_TEXT = {
     "k-velo-q-maq": hpu.MAQ,
     "legarmeh": hpu.PASOLEG,
 }
-# The handler keys of the two exporters this page accounts for.  A handler added to either
-# table raises in check_handlers until the page says what the files have for it.
+# The handler keys of the two exporters these pages account for.  A handler added to either
+# table raises in check_handlers until a page says what the files have for it.
 _SEF_HANDLER_KEYS = frozenset(mam4sef_handlers.HANDLERS)
-_AJF_STRANDS = ("rv-cant-combined", "rv-cant-alef", "rv-cant-bet")
+# The strands of a verse with two cantillations, as the AJF exporter's handler tables and the
+# AJF listings name them.
+AJF_STRANDS = ("rv-cant-combined", "rv-cant-alef", "rv-cant-bet")
 
 
 @dataclasses.dataclass
@@ -315,7 +321,7 @@ def marks_of(cluster: str) -> str:
 
 
 def short_name(char: str) -> str:
-    """A code point's Unicode name less its script and class words, as the page shows it."""
+    """A code point's Unicode name less its script and class words, as the pages show it."""
     name = unicode_data.name(char)
     for prefix in (
         "HEBREW LETTER ",
@@ -712,13 +718,19 @@ def _check_listings(verses: list, ajf_rows: list) -> dict:
             if row.alef:
                 want = []
                 for strand, field in zip(
-                    _AJF_STRANDS, (row.combined, row.alef, row.bet)
+                    AJF_STRANDS, (row.combined, row.alef, row.bet)
                 ):
                     want.append(strand)
                     want.extend(_listing_lines([field], "    "))
             else:
                 want = _listing_lines([row.combined] if row.combined else [])
             stripped = _match_listing(want, lines, row.ref)
+            # The AJF page says why: each such row's last field, its cant-bet strand, ends
+            # with a samekh break, whose space the CSV writer stripped.
+            if stripped and not (row.alef and row.bet.endswith("{ס}")):
+                raise ValueError(
+                    f"{row.ref}: a listing longer than its row, unexplained"
+                )
             out["ajf stripped"] += stripped
             out["ajf verses"] += 1
             out["ajf lines"] += len(lines)
@@ -1065,7 +1077,8 @@ def _survey_ajf_text(
 def check_handlers() -> dict:
     """What the Sefaria exporter writes for each MAM-simple node it leaves out, pinned.
 
-    The page's "What the files leave out" section rests on these.  Each is checked by
+    The Sefaria page's "What the files leave out" section rests on these, and the AJF page's
+    strands and table of spellings on the AJF exporter's handlers below.  Each is checked by
     calling the handler, so a handler changed to write something fails here.
     """
     handlers = mam4sef_handlers.HANDLERS
@@ -1089,14 +1102,14 @@ def check_handlers() -> dict:
     if kept != target:
         raise ValueError("the Sefaria handler for scrdfftar keeps more than its target")
     strand_keys = (("cant-combined", None), ("cant-alef", None), ("cant-bet", None))
-    for strand, key in zip(_AJF_STRANDS, strand_keys):
+    for strand, key in zip(AJF_STRANDS, strand_keys):
         table = mam4ajf_handlers.HANDLERS[strand]
         if table[key]({"type": key[0]}, probe, []) != probe:
             raise ValueError(
                 f"the AJF {strand} handler for {key} does not pass its text"
             )
     # What csv-ajf/ has where csv/ has markup that the files' text cannot show, each as the
-    # page's table of spellings states it.
+    # AJF page's table of spellings states it.
     ajf = mam4ajf_handlers.HANDLERS["rv-cant-combined"]
     plain = {
         ("shirah-space", None): [" "],
@@ -1162,10 +1175,6 @@ def survey() -> Survey:
                 if mark in atom:
                     atoms[f"with {unicode_data.name(mark)}"] += 1
             clusters = CLUSTER_RE.findall(atom)
-            if ha.GER_M in atom:
-                if ha.GER_M not in clusters[0] or ha.REV not in atom:
-                    raise ValueError(f"{verse.ref}: a GERESH MUQDAM in {atom!r}")
-                zarqa["geresh muqdam with revia"] += atom.count(ha.GER_M)
             for index, cluster in enumerate(clusters):
                 last = index == len(clusters) - 1
                 vowels = [m for m in cluster if m in VOWELS]

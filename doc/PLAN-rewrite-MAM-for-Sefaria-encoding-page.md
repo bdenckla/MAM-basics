@@ -1,6 +1,7 @@
 # Plan: rewrite the MAM-for-Sefaria encoding page to document what MAM-for-Sefaria contains
 
 State: executed 2026-10-26; see "Execution record" at the end.
+Updates and later status: [PLAN-rewrite-MAM-for-Sefaria-encoding-page-update.md](PLAN-rewrite-MAM-for-Sefaria-encoding-page-update.md).
 
 Ben approved this plan on 2026-10-26 through plan-mode approval, without revising it. This is
 its tracked copy: the plan as approved, less its private evidence and its private follow-ups,

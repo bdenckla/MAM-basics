@@ -23,8 +23,9 @@ Subcommands:
                 a claim fails, unless --skip-verify-mp says not to verify.
     gen-mam-for-sefaria-doc
                 Write gh-pages/MAM-for-Sefaria/index.html, "The encoding of MAM
-                for Sefaria", and its woff2/Taamey_D.woff2, from the tracked
-                files of MAM-for-Sefaria/ (py/author_misc/mam4sef_index.py).
+                for Sefaria", its unicode-names/index.html and ajf/index.html,
+                and their woff2/Taamey_D.woff2, from the tracked files of
+                MAM-for-Sefaria/ (py/author_misc/mam4sef_*index.py).
     verify-mp
                 Run MAM-parsed claim verification without rewriting
                 MAM-parsed authored HTML/CSS outputs.
@@ -67,7 +68,9 @@ from author_misc import he_ws_intro_to_mam_gray_maqaf_1 as gray_maqaf
 from author_misc import he_ws_intro_to_mam_pasleg as pasleg
 from author_misc import he_ws_intro_to_mam_gaya_text as gaya_text
 from author_misc import mam_parsed_docs_build
+from author_misc import mam4sef_ajf_index
 from author_misc import mam4sef_index
+from author_misc import mam4sef_unicode_names_index
 from author_site import post_stress_meteg
 from author_site import site_data
 from author_site import site_index
@@ -196,8 +199,9 @@ def cmd_gen_site(args):
 
 
 def gen_mam_for_sefaria_doc():
-    """Write the MAM-for-Sefaria encoding page and its font copy."""
-    print(f"Generated {mam4sef_index.gen_html_file()}")
+    """Write the three MAM-for-Sefaria documentation pages and their font copy."""
+    for page in (mam4sef_index, mam4sef_unicode_names_index, mam4sef_ajf_index):
+        print(f"Generated {page.gen_html_file()}")
 
 
 def cmd_gen_mam_for_sefaria_doc(_args):
@@ -268,8 +272,9 @@ def build_parser():
     sub.add_parser(
         "gen-mam-for-sefaria-doc",
         help=(
-            "Generate gh-pages/MAM-for-Sefaria/index.html and its font copy from the"
-            " tracked files of MAM-for-Sefaria/."
+            "Generate gh-pages/MAM-for-Sefaria/index.html, unicode-names/index.html and"
+            " ajf/index.html, and their font copy, from the tracked files of"
+            " MAM-for-Sefaria/."
         ),
     )
     sub.add_parser(

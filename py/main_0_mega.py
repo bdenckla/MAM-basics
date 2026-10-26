@@ -743,19 +743,20 @@ _STEPS = [
         " tmpl-survey's",
     ),
     # Added 2026-10-26, when gh-pages/MAM-for-Sefaria/index.html stopped being hand-authored
-    # (doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md).  The page reads only tracked files,
-    # MAM-for-Sefaria/'s and, for its meteg-after-silluq table, MAM-simple/json-vtrad-mam/,
-    # so it follows any later rerun of the hand-run py/main_mam4sef.py.  It is last because
-    # MAM-for-Sefaria/ may lag MAM-simple (Ben's decision of 2026-09-30, in AGENTS.md), and
-    # the page raises rather than state a claim its files no longer bear out, such as a
-    # meteg-after-silluq annotation of MAM-simple that the CSV files predate; last, that
-    # failure stops no other step.
+    # (doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md); the same day its listings and its
+    # AJF variant got pages of their own, unicode-names/index.html and ajf/index.html.  The
+    # pages read only tracked files, MAM-for-Sefaria/'s and, for the meteg-after-silluq table,
+    # MAM-simple/json-vtrad-mam/, so they follow any later rerun of the hand-run
+    # py/main_mam4sef.py.  The step is last because MAM-for-Sefaria/ may lag MAM-simple (Ben's
+    # decision of 2026-09-30, in AGENTS.md), and the pages raise rather than state a claim
+    # their files no longer bear out, such as a meteg-after-silluq annotation of MAM-simple
+    # that the CSV files predate; last, that failure stops no other step.
     StepRecord(
         "mam-for-sefaria-doc",
         main_authored.gen_mam_for_sefaria_doc,
         "runs py/main_authored.py gen-mam-for-sefaria-doc, which writes"
-        " gh-pages/MAM-for-Sefaria/index.html and its woff2/ font copy; must come after"
-        " mam-simple",
+        " gh-pages/MAM-for-Sefaria/index.html, unicode-names/index.html, ajf/index.html"
+        " and their woff2/ font copy; must come after mam-simple",
     ),
 ]
 

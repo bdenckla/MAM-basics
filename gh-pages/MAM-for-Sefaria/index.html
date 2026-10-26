@@ -17,14 +17,13 @@
 Hebrew Bible, based on the Aleppo Codex and related manuscripts, whose text is on Hebrew Wikisource.
 <abbr class="small-caps">MAM</abbr>-for-Sefaria is the extract of
 <abbr class="small-caps">MAM</abbr> that Sefaria imports and shows as its default Tanakh. This page
-describes what the files of <abbr class="small-caps">MAM</abbr>-for-Sefaria have, and how they
-encode it.</p>
-<p>The files are in the
+describes the files that Sefaria imports, what they have, and how they encode it.</p>
+<p>The files are in the folder <code>csv/</code> of the
 <a href="https://github.com/bdenckla/MAM-basics/tree/main/MAM-for-Sefaria"><code>MAM-for-Sefaria</code></a>
 directory of the repository <code>MAM-basics</code>, whose
 <a href="https://github.com/bdenckla/MAM-basics/blob/main/MAM-for-Sefaria/README.md">README</a> says
-how current they are. Every count, and every example of
-<abbr class="small-caps">MAM</abbr>-for-Sefaria, on this page is taken from those files.</p>
+how current they are. Every example of <abbr class="small-caps">MAM</abbr>-for-Sefaria on this page,
+and every count of what it has, is taken from those files.</p>
 <p>This page has three typographic conventions:</p>
 <ol>
 <li><span title="an example of hover text">Text styled like this</span> reveals more on hover, where
@@ -36,47 +35,10 @@ Unicode code point, less the words that name its script and class. Hovering show
 here <span class="unicode-code-point-name">HEBREW ACCENT ZARQA</span>.</li>
 </ol>
 <h2 id="files">The files</h2>
-<p><abbr class="small-caps">MAM</abbr>-for-Sefaria has four folders. Each has one file for each of
-the 39 books, named by the book's title on Sefaria, as <code>I Samuel.csv</code> is, and a
-provenance note, <code>_provenance.md</code>.</p>
-<div class="table-wrap">
-<table class="data">
-<tr>
-<th>Folder</th>
-<th>Verse numbering</th>
-<th>Verses</th>
-<th>What a file has</th>
-</tr>
-<tr>
-<td><code>csv/</code></td>
-<td>Sefaria's</td>
-<td class="num">23,206</td>
-<td>each verse's reference and its text in HTML, after five header rows</td>
-</tr>
-<tr>
-<td><code>csv-ajf/</code></td>
-<td><abbr class="small-caps">BHS</abbr>'s</td>
-<td class="num">23,213</td>
-<td>each verse's reference and plain text, and its two strands where it has two cantillations</td>
-</tr>
-<tr>
-<td><code>misc/unicode-names/</code></td>
-<td>Sefaria's</td>
-<td class="num">23,206</td>
-<td>the code points of each verse of <code>csv/</code></td>
-</tr>
-<tr>
-<td><code>misc/unicode-names-ajf/</code></td>
-<td><abbr class="small-caps">BHS</abbr>'s</td>
-<td class="num">23,213</td>
-<td>the code points of each verse of <code>csv-ajf/</code></td>
-</tr>
-</table>
-</div>
-<h3>The <code>csv/</code> folder</h3>
-<p>Each file of <code>csv/</code> is a CSV file in UTF-8, with CRLF line ends and no byte-order
-mark. Its first five rows are a header, each row a key and its value. Every file has the same
-values, but for the first:</p>
+<p>The folder <code>csv/</code> has a file for each of the 39 books, named by the book's title on
+Sefaria, as <code>I Samuel.csv</code> is, and a provenance note, <code>_provenance.md</code>. Each
+book's file is a CSV file in UTF-8, with CRLF line ends and no byte-order mark. Its first five rows
+are a header, each row a key and its value. Every file has the same values, but for the first:</p>
 <div class="table-wrap">
 <table class="data">
 <tr>
@@ -126,810 +88,19 @@ it may be reported to
 at Hebrew Wikisource. Please check the documentation notes before reporting an error.</blockquote>
 <p>After the header, each of the 23,206 rows is a verse, with two fields: the verse's reference,
 such as <code>Genesis 1:1</code>, and the verse's text, in HTML.</p>
-<h3>The <code>csv-ajf/</code> folder</h3>
-<p>The files of <code>csv-ajf/</code> are the AJF variant. They are CSV files in UTF-8 with CRLF
-line ends, as those of <code>csv/</code> are, but they have no header, and their verses are numbered
-as in <abbr class="small-caps">BHS</abbr>. Each of their 23,213 rows has four fields: the verse's
-reference, its text, and its <code>cant-alef</code> and <code>cant-bet</code> strands, which are
-empty but in the 24 verses that have two cantillations: Genesis 35:22; Exodus 20:2–6, 20:8–10 and
-20:13–15; and Deuteronomy 5:6–10, 5:12–15 and 5:17–19.</p>
-<p>In those verses the second field has the text that represents both strands, as <code>csv/</code>
-has it too. The third and fourth fields have the strands themselves, which are, as
-<a href="../MAM-simple/reading-mam-simple-json.html#dual-cantillation-cant-all-three">the guide to
-MAM-simple's JSON</a> says, the <bdi lang="hbo">תחתון</bdi> and <bdi lang="hbo">עליון</bdi> strands
-in the Decalogues, and the <bdi lang="hbo">פשוטה</bdi> and <bdi lang="hbo">מדרשית</bdi> strands at
-Genesis 35:22.</p>
-<p>Their text is plain: it has no HTML, and neither of the two spaces that <code>csv/</code> writes
-as character references. So they spell some things differently:</p>
-<div class="table-wrap">
-<table class="data">
-<tr>
-<th></th>
-<th><code>csv/</code></th>
-<th><code>csv-ajf/</code></th>
-</tr>
-<tr>
-<td>a <span class="romanized">samekh</span> break</td>
-<td><span class="unicode-code-point-name">NO-BREAK SPACE</span>, then <code>{ס}</code> in a span,
-then eight more</td>
-<td><span class="unicode-code-point-name">SPACE</span>, <code>{ס}</code>,
-<span class="unicode-code-point-name">SPACE</span></td>
-</tr>
-<tr>
-<td>a <span class="romanized">pe</span> break</td>
-<td><span class="unicode-code-point-name">NO-BREAK SPACE</span>, then <code>{פ}</code> in a span,
-then <code>&lt;br&gt;</code></td>
-<td><span class="unicode-code-point-name">SPACE</span>, <code>{פ}</code>,
-<span class="unicode-code-point-name">SPACE</span></td>
-</tr>
-<tr>
-<td>a <span class="romanized">legarmeh</span></td>
-<td><span class="unicode-code-point-name">THIN SPACE</span>, then
-<span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ</span> in
-<code>&lt;b&gt;</code></td>
-<td><span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ</span>, right after
-its atom</td>
-</tr>
-<tr>
-<td>a <span class="romanized">paseq</span></td>
-<td><span class="unicode-code-point-name">THIN SPACE</span>,
-<span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ</span> in
-<code>&lt;small&gt;</code>, <span class="unicode-code-point-name">THIN SPACE</span></td>
-<td>two <span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ</span> marks,
-with no space on either side</td>
-</tr>
-<tr>
-<td>a space of song spacing</td>
-<td>eight <span class="unicode-code-point-name">NO-BREAK SPACE</span> characters</td>
-<td><span class="unicode-code-point-name">SPACE</span></td>
-</tr>
-<tr>
-<td>a <span class="romanized">ketiv</span> and its <span class="romanized">qere</span></td>
-<td>in the order <abbr class="small-caps">MAM</abbr> has them</td>
-<td>the <span class="romanized">ketiv</span> first</td>
-</tr>
-<tr>
-<td>a trivial pair, an implicit <span class="romanized">maqaf</span>, or a small, large or hung
-letter</td>
-<td>in a span or element of its own</td>
-<td>the text alone</td>
-</tr>
-</table>
-</div>
-<p>In the text field of <code>csv-ajf/</code>, each of these has the count it has in
-<code>csv/</code>: 1,787 <span class="romanized">legarmeh</span> and 508
-<span class="romanized">paseq</span> marks, 1,982 <span class="romanized">samekh</span> and 1,571
-<span class="romanized">pe</span> breaks, and 1,047 pairs of a <span class="romanized">ketiv</span>
-and its <span class="romanized">qere</span>.</p>
-<h3>The Unicode-name listings</h3>
-<p>Each file of <code>misc/unicode-names/</code> lists the code points of one book of
-<code>csv/</code>, and each file of <code>misc/unicode-names-ajf/</code> those of one book of
-<code>csv-ajf/</code>. They are text files in UTF-8, with LF line ends. A listing's first line is
-<code>unicode_names Genesis</code>, for its book. Then each verse has a line that names it, a line
-for each run of its text, and a blank line, but for the last verse.</p>
-<p>The line that names a verse has the book's identifier in <code>MAM-basics</code>, the chapter and
-verse, and the verse numbering, as <code>Genesis 1:5 in vtrad vtsef</code> and <code>Levit 1:1 in
-vtrad vtbhs</code> do. Each <span class="unicode-code-point-name">SPACE</span> and
-<span class="unicode-code-point-name">NO-BREAK SPACE</span> has a line of its own, with its name,
-and so splits the text into runs. A run's line has its code points, separated by commas, each by the
-short name that the table below gives it. In <code>misc/unicode-names/</code>, each HTML element has
-lines of its own: one with <code>START</code> and the element's tag and class before its contents,
-and one with <code>STOP</code> after them, or a single line with <code>START/STOP</code> for
-<code>br</code>, which has no contents. In <code>misc/unicode-names-ajf/</code>, a verse with two
-cantillations lists each of its three texts after a line that names it,
-<code>rv-cant-combined</code>, <code>rv-cant-alef</code> or <code>rv-cant-bet</code>, with the
-text's lines indented by four spaces.</p>
-<p>For example, Genesis 1:5 has this text in <code>csv/</code>:</p>
-<div class="table-wrap">
-<table class="data">
-<tr>
-<td lang="hbo" dir="rtl">וַיִּקְרָ֨א אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;לָאוֹר֙ י֔וֹם
-וְלַחֹ֖שֶׁךְ קָ֣רָא לָ֑יְלָה וַֽיְהִי־עֶ֥רֶב וַֽיְהִי־בֹ֖קֶר י֥וֹם
-אֶחָֽד׃&nbsp;<span class="mam-spi-pe">{פ}</span><br>
-</td>
-<td class="bcv">Genesis 1:5</td>
-</tr>
-</table>
-</div>
-<p>and these lines in its listing:</p>
-<pre>
-Genesis 1:5 in vtrad vtsef
-v,_,y,·,i,q,:,r,a,(qom),α
-SPACE
-α,:∵,l,o,h,i,(mah),y,m.,THIN SPACE
-START small
-|
-STOP small
-THIN SPACE,l,a,α,v,o,r,(pash)
-SPACE
-y,(zaq_q),v,o,m.
-SPACE
-v,:,l,_,x,o,(tip),$,·sh,∵,k.,:
-SPACE
-q,a,(mun),r,a,α
-SPACE
-l,a,(atn),y,:,l,a,h
-SPACE
-v,_,(mos),y,:,h,i,y,-,3,∵,(mer),r,∵,b
-SPACE
-v,_,(mos),y,:,h,i,y,-,b,o,(tip),q,∵,r
-SPACE
-y,(mer),v,o,m.
-SPACE
-α,∵,x,a,(mos),d,(sopa)
-NO-BREAK SPACE
-START span class=mam-spi-pe
-LEFT CURLY BRACKET,p,RIGHT CURLY BRACKET
-STOP span class=mam-spi-pe
-START/STOP br</pre>
-<p>These are all 92 code points that the files have, with the short name each has in the listings,
-and how many times each folder has it:</p>
-<div class="table-wrap">
-<table class="data">
-<tr>
-<th>Code point</th>
-<th>Unicode name</th>
-<th>In the listings</th>
-<th><code>csv/</code></th>
-<th><code>csv-ajf/</code></th>
-</tr>
-<tr>
-<td><code>U+0020</code></td>
-<td><span class="unicode-code-point-name">SPACE</span></td>
-<td><code>SPACE</code></td>
-<td class="num">239,774</td>
-<td class="num">247,619</td>
-</tr>
-<tr>
-<td><code>U+0028</code></td>
-<td><span class="unicode-code-point-name">LEFT PARENTHESIS</span></td>
-<td><code>LEFT PARENTHESIS</code></td>
-<td class="num">1,055</td>
-<td class="num">1,057</td>
-</tr>
-<tr>
-<td><code>U+0029</code></td>
-<td><span class="unicode-code-point-name">RIGHT PARENTHESIS</span></td>
-<td><code>RIGHT PARENTHESIS</code></td>
-<td class="num">1,055</td>
-<td class="num">1,057</td>
-</tr>
-<tr>
-<td><code>U+005B</code></td>
-<td><span class="unicode-code-point-name">LEFT SQUARE BRACKET</span></td>
-<td><code>LEFT SQUARE BRACKET</code></td>
-<td class="num">1,056</td>
-<td class="num">1,058</td>
-</tr>
-<tr>
-<td><code>U+005D</code></td>
-<td><span class="unicode-code-point-name">RIGHT SQUARE BRACKET</span></td>
-<td><code>RIGHT SQUARE BRACKET</code></td>
-<td class="num">1,056</td>
-<td class="num">1,058</td>
-</tr>
-<tr>
-<td><code>U+007B</code></td>
-<td><span class="unicode-code-point-name">LEFT CURLY BRACKET</span></td>
-<td><code>LEFT CURLY BRACKET</code></td>
-<td class="num">3,553</td>
-<td class="num">3,573</td>
-</tr>
-<tr>
-<td><code>U+007D</code></td>
-<td><span class="unicode-code-point-name">RIGHT CURLY BRACKET</span></td>
-<td><code>RIGHT CURLY BRACKET</code></td>
-<td class="num">3,553</td>
-<td class="num">3,573</td>
-</tr>
-<tr>
-<td><code>U+00A0</code></td>
-<td><span class="unicode-code-point-name">NO-BREAK SPACE</span></td>
-<td><code>NO-BREAK SPACE</code></td>
-<td class="num">22,042</td>
-<td class="num">0</td>
-</tr>
-<tr>
-<td><code>U+034F</code></td>
-<td><span class="unicode-code-point-name">COMBINING GRAPHEME JOINER</span></td>
-<td><code>CGJ</code></td>
-<td class="num">652</td>
-<td class="num">652</td>
-</tr>
-<tr>
-<td><code>U+0591</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ETNAHTA</span></td>
-<td><code>(atn)</code></td>
-<td class="num">21,573</td>
-<td class="num">21,594</td>
-</tr>
-<tr>
-<td><code>U+0592</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT SEGOL</span></td>
-<td><code>(seg_a)</code></td>
-<td class="num">1,125</td>
-<td class="num">1,131</td>
-</tr>
-<tr>
-<td><code>U+0593</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT SHALSHELET</span></td>
-<td><code>(sha)</code></td>
-<td class="num">46</td>
-<td class="num">46</td>
-</tr>
-<tr>
-<td><code>U+0594</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ZAQEF QATAN</span></td>
-<td><code>(zaq_q)</code></td>
-<td class="num">25,563</td>
-<td class="num">25,594</td>
-</tr>
-<tr>
-<td><code>U+0595</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ZAQEF GADOL</span></td>
-<td><code>(zaq_g)</code></td>
-<td class="num">1,656</td>
-<td class="num">1,657</td>
-</tr>
-<tr>
-<td><code>U+0596</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT TIPEHA</span></td>
-<td><code>(tip)</code></td>
-<td class="num">37,144</td>
-<td class="num">37,194</td>
-</tr>
-<tr>
-<td><code>U+0597</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT REVIA</span></td>
-<td><code>(rev)</code></td>
-<td class="num">12,890</td>
-<td class="num">12,911</td>
-</tr>
-<tr>
-<td><code>U+0598</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ZARQA</span></td>
-<td><code>(zarshit)</code></td>
-<td class="num">378</td>
-<td class="num">378</td>
-</tr>
-<tr>
-<td><code>U+0599</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT PASHTA</span></td>
-<td><code>(pash)</code></td>
-<td class="num">24,465</td>
-<td class="num">24,507</td>
-</tr>
-<tr>
-<td><code>U+059A</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT YETIV</span></td>
-<td><code>(yet)</code></td>
-<td class="num">1,178</td>
-<td class="num">1,178</td>
-</tr>
-<tr>
-<td><code>U+059B</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT TEVIR</span></td>
-<td><code>(tev)</code></td>
-<td class="num">7,861</td>
-<td class="num">7,875</td>
-</tr>
-<tr>
-<td><code>U+059C</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT GERESH</span></td>
-<td><code>(ger)</code></td>
-<td class="num">4,175</td>
-<td class="num">4,188</td>
-</tr>
-<tr>
-<td><code>U+059D</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT GERESH MUQDAM</span></td>
-<td><code>(ger_m)</code></td>
-<td class="num">2,963</td>
-<td class="num">2,963</td>
-</tr>
-<tr>
-<td><code>U+059E</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT GERSHAYIM</span></td>
-<td><code>(ger_2)</code></td>
-<td class="num">1,730</td>
-<td class="num">1,735</td>
-</tr>
-<tr>
-<td><code>U+059F</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT QARNEY PARA</span></td>
-<td><code>(qar)</code></td>
-<td class="num">16</td>
-<td class="num">16</td>
-</tr>
-<tr>
-<td><code>U+05A0</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT TELISHA GEDOLA</span></td>
-<td><code>(tel_g)</code></td>
-<td class="num">2,199</td>
-<td class="num">2,213</td>
-</tr>
-<tr>
-<td><code>U+05A1</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT PAZER</span></td>
-<td><code>(paz)</code></td>
-<td class="num">955</td>
-<td class="num">962</td>
-</tr>
-<tr>
-<td><code>U+05A2</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ATNAH HAFUKH</span></td>
-<td><code>(atn_h)</code></td>
-<td class="num">195</td>
-<td class="num">195</td>
-</tr>
-<tr>
-<td><code>U+05A3</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT MUNAH</span></td>
-<td><code>(mun)</code></td>
-<td class="num">41,353</td>
-<td class="num">41,438</td>
-</tr>
-<tr>
-<td><code>U+05A4</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT MAHAPAKH</span></td>
-<td><code>(mah)</code></td>
-<td class="num">12,613</td>
-<td class="num">12,630</td>
-</tr>
-<tr>
-<td><code>U+05A5</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT MERKHA</span></td>
-<td><code>(mer)</code></td>
-<td class="num">33,356</td>
-<td class="num">33,406</td>
-</tr>
-<tr>
-<td><code>U+05A6</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT MERKHA KEFULA</span></td>
-<td><code>(mer_2)</code></td>
-<td class="num">14</td>
-<td class="num">14</td>
-</tr>
-<tr>
-<td><code>U+05A7</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT DARGA</span></td>
-<td><code>(dar)</code></td>
-<td class="num">3,271</td>
-<td class="num">3,279</td>
-</tr>
-<tr>
-<td><code>U+05A8</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT QADMA</span></td>
-<td><code>(qom)</code></td>
-<td class="num">7,624</td>
-<td class="num">7,644</td>
-</tr>
-<tr>
-<td><code>U+05A9</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT TELISHA QETANA</span></td>
-<td><code>(tel_q)</code></td>
-<td class="num">2,199</td>
-<td class="num">2,206</td>
-</tr>
-<tr>
-<td><code>U+05AA</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT YERAH BEN YOMO</span></td>
-<td><code>(yby)</code></td>
-<td class="num">55</td>
-<td class="num">55</td>
-</tr>
-<tr>
-<td><code>U+05AB</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT OLE</span></td>
-<td><code>(ole)</code></td>
-<td class="num">423</td>
-<td class="num">423</td>
-</tr>
-<tr>
-<td><code>U+05AC</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ILUY</span></td>
-<td><code>(ilu)</code></td>
-<td class="num">184</td>
-<td class="num">184</td>
-</tr>
-<tr>
-<td><code>U+05AD</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT DEHI</span></td>
-<td><code>(dex)</code></td>
-<td class="num">2,679</td>
-<td class="num">2,679</td>
-</tr>
-<tr>
-<td><code>U+05AE</code></td>
-<td><span class="unicode-code-point-name">HEBREW ACCENT ZINOR</span></td>
-<td><code>(zarnor)</code></td>
-<td class="num">1,239</td>
-<td class="num">1,243</td>
-</tr>
-<tr>
-<td><code>U+05B0</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT SHEVA</span></td>
-<td><code>:</code></td>
-<td class="num">150,382</td>
-<td class="num">150,606</td>
-</tr>
-<tr>
-<td><code>U+05B1</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT HATAF SEGOL</span></td>
-<td><code>:∵</code></td>
-<td class="num">4,774</td>
-<td class="num">4,796</td>
-</tr>
-<tr>
-<td><code>U+05B2</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT HATAF PATAH</span></td>
-<td><code>:_</code></td>
-<td class="num">25,420</td>
-<td class="num">25,494</td>
-</tr>
-<tr>
-<td><code>U+05B3</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT HATAF QAMATS</span></td>
-<td><code>:a</code></td>
-<td class="num">620</td>
-<td class="num">620</td>
-</tr>
-<tr>
-<td><code>U+05B4</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT HIRIQ</span></td>
-<td><code>i</code></td>
-<td class="num">109,000</td>
-<td class="num">109,176</td>
-</tr>
-<tr>
-<td><code>U+05B5</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT TSERE</span></td>
-<td><code>‥</code></td>
-<td class="num">59,034</td>
-<td class="num">59,096</td>
-</tr>
-<tr>
-<td><code>U+05B6</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT SEGOL</span></td>
-<td><code>∵</code></td>
-<td class="num">75,200</td>
-<td class="num">75,346</td>
-</tr>
-<tr>
-<td><code>U+05B7</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT PATAH</span></td>
-<td><code>_</code></td>
-<td class="num">117,283</td>
-<td class="num">117,467</td>
-</tr>
-<tr>
-<td><code>U+05B8</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT QAMATS</span></td>
-<td><code>a</code></td>
-<td class="num">144,580</td>
-<td class="num">144,842</td>
-</tr>
-<tr>
-<td><code>U+05B9</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT HOLAM</span></td>
-<td><code>o</code></td>
-<td class="num">80,183</td>
-<td class="num">80,333</td>
-</tr>
-<tr>
-<td><code>U+05BA</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT HOLAM HASER FOR VAV</span></td>
-<td><code>xxfv</code></td>
-<td class="num">416</td>
-<td class="num">424</td>
-</tr>
-<tr>
-<td><code>U+05BB</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT QUBUTS</span></td>
-<td><code>u</code></td>
-<td class="num">4,366</td>
-<td class="num">4,366</td>
-</tr>
-<tr>
-<td><code>U+05BC</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT DAGESH OR MAPIQ</span></td>
-<td><code>·</code></td>
-<td class="num">170,877</td>
-<td class="num">171,085</td>
-</tr>
-<tr>
-<td><code>U+05BD</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT METEG</span></td>
-<td><code>(mos)</code></td>
-<td class="num">38,216</td>
-<td class="num">38,284</td>
-</tr>
-<tr>
-<td><code>U+05BE</code></td>
-<td><span class="unicode-code-point-name">HEBREW PUNCTUATION MAQAF</span></td>
-<td><code>-</code></td>
-<td class="num">42,642</td>
-<td class="num">42,703</td>
-</tr>
-<tr>
-<td><code>U+05BF</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT RAFE</span></td>
-<td><code>‾</code></td>
-<td class="num">92</td>
-<td class="num">92</td>
-</tr>
-<tr>
-<td><code>U+05C0</code></td>
-<td><span class="unicode-code-point-name">HEBREW PUNCTUATION PASEQ</span></td>
-<td><code>|</code></td>
-<td class="num">2,295</td>
-<td class="num">2,818</td>
-</tr>
-<tr>
-<td><code>U+05C1</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT SHIN DOT</span></td>
-<td><code>·sh</code></td>
-<td class="num">46,066</td>
-<td class="num">46,154</td>
-</tr>
-<tr>
-<td><code>U+05C2</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT SIN DOT</span></td>
-<td><code>·si</code></td>
-<td class="num">12,084</td>
-<td class="num">12,112</td>
-</tr>
-<tr>
-<td><code>U+05C3</code></td>
-<td><span class="unicode-code-point-name">HEBREW PUNCTUATION SOF PASUQ</span></td>
-<td><code>(sopa)</code></td>
-<td class="num">23,211</td>
-<td class="num">23,240</td>
-</tr>
-<tr>
-<td><code>U+05C4</code></td>
-<td><span class="unicode-code-point-name">HEBREW MARK UPPER DOT</span></td>
-<td><code>HMA UPPER DOT</code></td>
-<td class="num">53</td>
-<td class="num">53</td>
-</tr>
-<tr>
-<td><code>U+05C5</code></td>
-<td><span class="unicode-code-point-name">HEBREW MARK LOWER DOT</span></td>
-<td><code>HMA LOWER DOT</code></td>
-<td class="num">4</td>
-<td class="num">4</td>
-</tr>
-<tr>
-<td><code>U+05C6</code></td>
-<td><span class="unicode-code-point-name">HEBREW PUNCTUATION NUN HAFUKHA</span></td>
-<td><code>HPU NUN HAFUKHA</code></td>
-<td class="num">9</td>
-<td class="num">9</td>
-</tr>
-<tr>
-<td><code>U+05C7</code></td>
-<td><span class="unicode-code-point-name">HEBREW POINT QAMATS QATAN</span></td>
-<td><code>oa</code></td>
-<td class="num">7,434</td>
-<td class="num">7,456</td>
-</tr>
-<tr>
-<td><code>U+05D0</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER ALEF</span></td>
-<td><code>α</code></td>
-<td class="num">95,989</td>
-<td class="num">96,163</td>
-</tr>
-<tr>
-<td><code>U+05D1</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER BET</span></td>
-<td><code>b</code></td>
-<td class="num">65,460</td>
-<td class="num">65,568</td>
-</tr>
-<tr>
-<td><code>U+05D2</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER GIMEL</span></td>
-<td><code>g</code></td>
-<td class="num">10,131</td>
-<td class="num">10,141</td>
-</tr>
-<tr>
-<td><code>U+05D3</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER DALET</span></td>
-<td><code>d</code></td>
-<td class="num">32,515</td>
-<td class="num">32,549</td>
-</tr>
-<tr>
-<td><code>U+05D4</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER HE</span></td>
-<td><code>h</code></td>
-<td class="num">102,289</td>
-<td class="num">102,427</td>
-</tr>
-<tr>
-<td><code>U+05D5</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER VAV</span></td>
-<td><code>v</code></td>
-<td class="num">130,206</td>
-<td class="num">130,374</td>
-</tr>
-<tr>
-<td><code>U+05D6</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER ZAYIN</span></td>
-<td><code>z</code></td>
-<td class="num">9,131</td>
-<td class="num">9,139</td>
-</tr>
-<tr>
-<td><code>U+05D7</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER HET</span></td>
-<td><code>x</code></td>
-<td class="num">27,705</td>
-<td class="num">27,735</td>
-</tr>
-<tr>
-<td><code>U+05D8</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER TET</span></td>
-<td><code>θ</code></td>
-<td class="num">6,343</td>
-<td class="num">6,345</td>
-</tr>
-<tr>
-<td><code>U+05D9</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER YOD</span></td>
-<td><code>y</code></td>
-<td class="num">138,507</td>
-<td class="num">138,709</td>
-</tr>
-<tr>
-<td><code>U+05DA</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER FINAL KAF</span></td>
-<td><code>k.</code></td>
-<td class="num">14,073</td>
-<td class="num">14,153</td>
-</tr>
-<tr>
-<td><code>U+05DB</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER KAF</span></td>
-<td><code>k</code></td>
-<td class="num">33,593</td>
-<td class="num">33,643</td>
-</tr>
-<tr>
-<td><code>U+05DC</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER LAMED</span></td>
-<td><code>l</code></td>
-<td class="num">88,587</td>
-<td class="num">88,755</td>
-</tr>
-<tr>
-<td><code>U+05DD</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER FINAL MEM</span></td>
-<td><code>m.</code></td>
-<td class="num">41,438</td>
-<td class="num">41,506</td>
-</tr>
-<tr>
-<td><code>U+05DE</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER MEM</span></td>
-<td><code>m</code></td>
-<td class="num">57,837</td>
-<td class="num">57,923</td>
-</tr>
-<tr>
-<td><code>U+05DF</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER FINAL NUN</span></td>
-<td><code>n.</code></td>
-<td class="num">15,298</td>
-<td class="num">15,310</td>
-</tr>
-<tr>
-<td><code>U+05E0</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER NUN</span></td>
-<td><code>n</code></td>
-<td class="num">40,071</td>
-<td class="num">40,119</td>
-</tr>
-<tr>
-<td><code>U+05E1</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER SAMEKH</span></td>
-<td><code>σ</code></td>
-<td class="num">9,660</td>
-<td class="num">9,686</td>
-</tr>
-<tr>
-<td><code>U+05E2</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER AYIN</span></td>
-<td><code>3</code></td>
-<td class="num">44,995</td>
-<td class="num">45,081</td>
-</tr>
-<tr>
-<td><code>U+05E3</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER FINAL PE</span></td>
-<td><code>p.</code></td>
-<td class="num">2,561</td>
-<td class="num">2,565</td>
-</tr>
-<tr>
-<td><code>U+05E4</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER PE</span></td>
-<td><code>p</code></td>
-<td class="num">17,358</td>
-<td class="num">17,378</td>
-</tr>
-<tr>
-<td><code>U+05E5</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER FINAL TSADI</span></td>
-<td><code>c.</code></td>
-<td class="num">3,290</td>
-<td class="num">3,306</td>
-</tr>
-<tr>
-<td><code>U+05E6</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER TSADI</span></td>
-<td><code>c</code></td>
-<td class="num">11,760</td>
-<td class="num">11,786</td>
-</tr>
-<tr>
-<td><code>U+05E7</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER QOF</span></td>
-<td><code>q</code></td>
-<td class="num">16,335</td>
-<td class="num">16,351</td>
-</tr>
-<tr>
-<td><code>U+05E8</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER RESH</span></td>
-<td><code>r</code></td>
-<td class="num">68,304</td>
-<td class="num">68,392</td>
-</tr>
-<tr>
-<td><code>U+05E9</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER SHIN</span></td>
-<td><code>$</code></td>
-<td class="num">58,421</td>
-<td class="num">58,537</td>
-</tr>
-<tr>
-<td><code>U+05EA</code></td>
-<td><span class="unicode-code-point-name">HEBREW LETTER TAV</span></td>
-<td><code>τ</code></td>
-<td class="num">63,502</td>
-<td class="num">63,630</td>
-</tr>
-<tr>
-<td><code>U+2009</code></td>
-<td><span class="unicode-code-point-name">THIN SPACE</span></td>
-<td><code>THIN SPACE</code></td>
-<td class="num">2,803</td>
-<td class="num">0</td>
-</tr>
-<tr>
-<td><code>U+2014</code></td>
-<td><span class="unicode-code-point-name">EM DASH</span></td>
-<td><code>EM DASH</code></td>
-<td class="num">2</td>
-<td class="num">2</td>
-</tr>
-</table>
-</div>
+<p>The folder <code>misc/unicode-names/</code> has a listing for each book's file, which names each
+code point of each verse's text. The page <a href="unicode-names/index.html">The Unicode-name
+listings of <abbr class="small-caps">MAM</abbr> for Sefaria</a> describes the listings, and gives
+the name and count of each of the 92 code points that the files have.</p>
 <h3>Verse numbering</h3>
-<p>The verses of <code>csv/</code> are numbered as Sefaria numbers them, and those of
-<code>csv-ajf/</code> as <abbr class="small-caps">BHS</abbr> numbers them, so a reference can name
-different text in the two folders. The page
+<p>The verses are numbered as Sefaria numbers them. The page
 <a href="../MAM-simple/versification-differences.html">Versification Differences: MAM, BHS, and
-Sefaria</a> lists the differences. Every reference of <code>csv/</code> is also in
-<code>csv-ajf/</code>, which has 7 more: Exodus 20:24–26, Numbers 25:19 and Deuteronomy 5:31–33.</p>
-<p>Both numberings have Joshua 21:36–37, for which <abbr class="small-caps">MAM</abbr> has no text.
-In both folders, each of these rows has only an <span class="unicode-code-point-name">EM DASH</span>
-(—), since an empty field would let the text of another version show at that verse on Sefaria. The
-files have no other <span class="unicode-code-point-name">EM DASH</span>.</p>
+Sefaria</a> lists where that numbering differs from <abbr class="small-caps">MAM</abbr>'s and
+<abbr class="small-caps">BHS</abbr>'s.</p>
+<p>Sefaria's numbering has Josh 21:36–37, for which <abbr class="small-caps">MAM</abbr> has no text.
+Each of these rows has only an <span class="unicode-code-point-name">EM DASH</span> (—), since an
+empty field would let the text of another version show at that verse on Sefaria. The files have no
+other <span class="unicode-code-point-name">EM DASH</span>.</p>
 <h2 id="markup">Markup</h2>
 <p>The verse text of <code>csv/</code> is HTML with 6 elements, of which only <code>span</code> has
 an attribute, its class. These are all the elements and classes that the files have:</p>
@@ -1047,7 +218,7 @@ files tell them apart by markup and spacing:</p>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">וְכֹ֣ל&thinsp;<b>׀</b> שִׂ֣יחַ</td>
-<td class="bcv">Genesis 2:5</td>
+<td class="bcv">Gen 2:5</td>
 <td><span class="romanized">legarmeh</span></td>
 <td><span class="unicode-code-point-name">THIN SPACE</span>, then
 <span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ</span> in
@@ -1056,7 +227,7 @@ files tell them apart by markup and spacing:</p>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">אֱלֹהִ֤ים&thinsp;<small>׀</small>&thinsp;לָאוֹר֙</td>
-<td class="bcv">Genesis 1:5</td>
+<td class="bcv">Gen 1:5</td>
 <td><span class="romanized">paseq</span></td>
 <td><span class="unicode-code-point-name">THIN SPACE</span>,
 <span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ</span> in
@@ -1111,8 +282,17 @@ the <span class="unicode-code-point-name" title="HEBREW PUNCTUATION PASEQ">PASEQ
 </table>
 </div>
 <p>Song spacing, <abbr class="small-caps">MAM</abbr>-simple's <code>shirah-space</code>, is in these
-chapters, with these numbers of spaces: Exodus 15 (43), Deuteronomy 32 (67), Joshua 12 (16), Judges
-5 (86), II Samuel 22 (47), Ecclesiastes 3 (27), Esther 9 (11) and I Chronicles 16 (31).</p>
+chapters, with these numbers of spaces:</p>
+<ul>
+<li>Exod 15 (43)</li>
+<li>Deut 32 (67)</li>
+<li>Josh 12 (16)</li>
+<li>Judg 5 (86)</li>
+<li>2 Sam 22 (47)</li>
+<li>Eccl 3 (27)</li>
+<li>Esth 9 (11)</li>
+<li>1 Chr 16 (31)</li>
+</ul>
 <h3>Breaks and inverted <span class="romanized">nun</span></h3>
 <p>Each of the 1,982 <span class="romanized">samekh</span> breaks is <code>{ס}</code> in a span of
 class <code>mam-spi-samekh</code>, with a <span class="unicode-code-point-name">NO-BREAK
@@ -1123,13 +303,11 @@ after it. Most end a verse, but 145 <span class="romanized">samekh</span> and 24
 <span class="romanized">pe</span> breaks are inside one.</p>
 <p>Each of the 9 inverted <span class="romanized">nun</span> marks is <bdi lang="hbo">׆</bdi>
 (<span class="unicode-code-point-name" title="HEBREW PUNCTUATION NUN HAFUKHA">NUN HAFUKHA</span>) in
-a span of class <code>mam-spi-invnun</code>, at Numbers 10:35–36, and Psalms 107:23–28 and
-107:40.</p>
+a span of class <code>mam-spi-invnun</code>, at Num 10:35–36, and Ps 107:23–28 and 40.</p>
 <h3>Small, large and hung letters</h3>
 <p>A small letter is in <code>&lt;small&gt;</code> (23 times), a large letter in
-<code>&lt;big&gt;</code> (27 times) and a hung letter in <code>&lt;sup&gt;</code> (4 times, at
-Judges 18:30; Psalms 80:14; and Job 38:13 and 38:15). Each of these elements holds one letter and
-its marks:</p>
+<code>&lt;big&gt;</code> (27 times) and a hung letter in <code>&lt;sup&gt;</code> (4 times, at Judg
+18:30; Ps 80:14; and Job 38:13 and 15). Each of these elements holds one letter and its marks:</p>
 <div class="table-wrap">
 <table class="data">
 <tr>
@@ -1139,7 +317,7 @@ its marks:</p>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">בִּשְׁ<small>פַּ</small>רְ<big>פָּ</big>רָ֖א</td>
-<td class="bcv">Daniel 6:20</td>
+<td class="bcv">Dan 6:20</td>
 <td>a small letter and a large one</td>
 </tr>
 <tr>
@@ -1171,7 +349,7 @@ of these shapes:</p>
 <tr>
 <th>Example</th>
 <th>Reference</th>
-<th>Order</th>
+<th><span title="whether the qere comes before the ketiv">q first?</span></th>
 <th>Separator</th>
 <th><span title="the number of words of the ketiv, then of the qere">Words</span></th>
 <th>Count</th>
@@ -1179,8 +357,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl"><span class="mam-kq"><span class="mam-kq-k">(הוצא)</span>
 <span class="mam-kq-q">[הַיְצֵ֣א]</span></span></td>
-<td class="bcv">Genesis 8:17</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">Gen 8:17</td>
+<td></td>
 <td>a space</td>
 <td>1, 1</td>
 <td class="num">887</td>
@@ -1188,8 +366,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl">אֶת־<span class="mam-kq"><span class="mam-kq-q">[יְע֥וּשׁ]</span>
 <span class="mam-kq-k">(יעיש)</span></span></td>
-<td class="bcv">Genesis 36:5</td>
-<td>the <span class="romanized">qere</span> first</td>
+<td class="bcv">Gen 36:5</td>
+<td>q first</td>
 <td>a space</td>
 <td>1, 1</td>
 <td class="num">131</td>
@@ -1197,8 +375,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl"><span class="mam-kq"><span class="mam-kq-k">(כי טוב)</span>
 <span class="mam-kq-q">[כְּט֣וֹב]</span></span></td>
-<td class="bcv">Judges 16:25</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">Judg 16:25</td>
+<td></td>
 <td>a space</td>
 <td>2, 1</td>
 <td class="num">11</td>
@@ -1206,8 +384,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl"><span class="mam-kq"><span class="mam-kq-k">(בגד)</span>
 <span class="mam-kq-q">[בָּ֣א גָ֑ד]</span></span></td>
-<td class="bcv">Genesis 30:11</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">Gen 30:11</td>
+<td></td>
 <td>a space</td>
 <td>1, 2</td>
 <td class="num">8</td>
@@ -1215,8 +393,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl"><span class="mam-kq"><span class="mam-kq-k">(הייתה מוציא)</span>
 <span class="mam-kq-q">[הָיִ֛יתָ הַמּוֹצִ֥יא]</span></span></td>
-<td class="bcv">II Samuel 5:2</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">2 Sam 5:2</td>
+<td></td>
 <td>a space</td>
 <td>2, 2</td>
 <td class="num">5</td>
@@ -1224,16 +402,16 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl">אֶת־<span class="mam-kq"><span class="mam-kq-q">[מֵימֵ֥י
 רַגְלֵיהֶ֖ם]</span> <span class="mam-kq-k">(שניהם)</span></span></td>
-<td class="bcv">II Kings 18:27</td>
-<td>the <span class="romanized">qere</span> first</td>
+<td class="bcv">2 Kgs 18:27</td>
+<td>q first</td>
 <td>a space</td>
 <td>1, 2</td>
 <td class="num">2</td>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">עַד־<span class="mam-kq"><span class="mam-kq-k">(יעבור)</span>־<span class="mam-kq-q">[יַעֲבׇר־]</span></span>זָֽעַם׃</td>
-<td class="bcv">Isaiah 26:20</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">Isa 26:20</td>
+<td></td>
 <td>a <span class="unicode-code-point-name" title="HEBREW PUNCTUATION MAQAF">MAQAF</span></td>
 <td>1, 1</td>
 <td class="num">1</td>
@@ -1241,8 +419,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl">בֶן־<span class="mam-kq"><span class="mam-kq-k">(בנימן)</span>־<span class="mam-kq-q">[בָּנִ֔י
 מִן־]</span></span>בְּנֵי־פֶ֖רֶץ</td>
-<td class="bcv">I Chronicles 9:4</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">1 Chr 9:4</td>
+<td></td>
 <td>a <span class="unicode-code-point-name" title="HEBREW PUNCTUATION MAQAF">MAQAF</span></td>
 <td>1, 2</td>
 <td class="num">1</td>
@@ -1250,8 +428,8 @@ of these shapes:</p>
 <tr>
 <td lang="hbo" dir="rtl"><span class="mam-kq"><span class="mam-kq-k">(תלום שם הפלשתים)</span>
 <span class="mam-kq-q">[תְּלָא֥וּם שָׁ֙מָּה֙ פְּלִשְׁתִּ֔ים]</span></span></td>
-<td class="bcv">II Samuel 21:12</td>
-<td>the <span class="romanized">ketiv</span> first</td>
+<td class="bcv">2 Sam 21:12</td>
+<td></td>
 <td>a space</td>
 <td>3, 3</td>
 <td class="num">1</td>
@@ -1259,15 +437,15 @@ of these shapes:</p>
 </table>
 </div>
 <p>A <span class="romanized">ketiv velo qere</span>, a <span class="romanized">ketiv</span> that is
-written but not read, is a span of class <code>mam-kq-k</code> with no pair around it, at II Samuel
-13:33 and 15:21; II Kings 5:18; Jeremiah 38:16, 39:12 and 51:3; Ezekiel 48:16; and Ruth 3:12. A
+written but not read, is a span of class <code>mam-kq-k</code> with no pair around it, at 2 Sam
+13:33 and 15:21; 2 Kgs 5:18; Jer 38:16, 39:12 and 51:3; Ezek 48:16; and Ruth 3:12. A
 <span class="romanized">qere velo ketiv</span>, a <span class="romanized">qere</span> that is read
-but not written, is likewise a span of class <code>mam-kq-q</code>, at Judges 20:13; II Samuel 16:23
-and 18:20; II Kings 19:31 and 19:37; Jeremiah 31:38 and 50:29; and Ruth 3:5 and 3:17. A trivial
-pair, which <a href="../MAM-simple/reading-mam-simple-json.html">the guide to MAM-simple's JSON</a>
-describes as a <span class="romanized">ketiv/qere</span> “whose two forms differ in a way that needs
-no separate display”, is one pointed atom in a span of class <code>mam-kq-trivial</code>. An example
-of each, with its count:</p>
+but not written, is likewise a span of class <code>mam-kq-q</code>, at Judg 20:13; 2 Sam 16:23 and
+18:20; 2 Kgs 19:31 and 37; Jer 31:38 and 50:29; and Ruth 3:5 and 17. A trivial pair, which
+<a href="../MAM-simple/reading-mam-simple-json.html">the guide to MAM-simple's JSON</a> describes as
+a <span class="romanized">ketiv/qere</span> “whose two forms differ in a way that needs no separate
+display”, is one pointed atom in a span of class <code>mam-kq-trivial</code>. An example of each,
+with its count:</p>
 <div class="table-wrap">
 <table class="data">
 <tr>
@@ -1290,14 +468,14 @@ of each, with its count:</p>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">כִּֽי־<span class="mam-kq-k">(אם)</span><span class="k-velo-q-maq">־</span>אַמְנ֥וֹן</td>
-<td class="bcv">II Samuel 13:33</td>
+<td class="bcv">2 Sam 13:33</td>
 <td>a <span class="romanized">maqaf</span> after a <span class="romanized">ketiv velo
 qere</span></td>
 <td class="num">2</td>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl"><span class="mam-kq-trivial">אׇֽהֳלֹה֙</span></td>
-<td class="bcv">Genesis 13:3</td>
+<td class="bcv">Gen 13:3</td>
 <td>a trivial pair</td>
 <td class="num">149</td>
 </tr>
@@ -1353,51 +531,8 @@ As <abbr class="small-caps">MAM</abbr>-for-Sefaria uses them:</p>
 <td class="num">508</td>
 <td><span class="romanized">paseq</span></td>
 </tr>
-<tr>
-<td><span class="unicode-code-point-name" title="HEBREW ACCENT YERAH BEN YOMO">YERAH BEN
-YOMO</span></td>
-<td>prose verses</td>
-<td class="num">16</td>
-<td><span class="romanized">yeraḥ ben yomo</span></td>
-</tr>
-<tr>
-<td><span class="unicode-code-point-name" title="HEBREW ACCENT YERAH BEN YOMO">YERAH BEN
-YOMO</span></td>
-<td>poetic verses</td>
-<td class="num">39</td>
-<td><span class="romanized">galgal</span></td>
-</tr>
-<tr>
-<td><span class="unicode-code-point-name" title="HEBREW ACCENT ATNAH HAFUKH">ATNAH
-HAFUKH</span></td>
-<td>poetic verses</td>
-<td class="num">195</td>
-<td><span class="romanized">atnaḥ hafukh</span></td>
-</tr>
-<tr>
-<td><span class="unicode-code-point-name" title="HEBREW ACCENT GERESH">GERESH</span></td>
-<td>prose verses</td>
-<td class="num">4,175</td>
-<td><span class="romanized">geresh</span></td>
-</tr>
-<tr>
-<td><span class="unicode-code-point-name" title="HEBREW ACCENT GERESH MUQDAM">GERESH
-MUQDAM</span></td>
-<td>poetic verses</td>
-<td class="num">2,963</td>
-<td><span class="romanized">geresh muqdam</span>, which with <span class="romanized">revia</span> is
-<span class="romanized">revia mugrash</span></td>
-</tr>
 </table>
 </div>
-<p><span class="unicode-code-point-name" title="HEBREW ACCENT ATNAH HAFUKH">ATNAH HAFUKH</span> and
-<span class="unicode-code-point-name" title="HEBREW ACCENT GERESH MUQDAM">GERESH MUQDAM</span> are
-only in poetic verses, and
-<span class="unicode-code-point-name" title="HEBREW ACCENT GERESH">GERESH</span> only in prose
-verses. Each of the 2,963 atoms with a
-<span class="unicode-code-point-name" title="HEBREW ACCENT GERESH MUQDAM">GERESH MUQDAM</span> has
-it on its first letter, and also has a
-<span class="unicode-code-point-name" title="HEBREW ACCENT REVIA">REVIA</span>.</p>
 <h3>Marks with code points of their own</h3>
 <p><abbr class="small-caps">MAM</abbr>-for-Sefaria has each of these marks as a code point of its
 own. The counts are of the marks and of the atoms that have them:</p>
@@ -1413,7 +548,7 @@ own. The counts are of the marks and of the atoms that have them:</p>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">וּבְכׇל־הָרֶ֖מֶשׂ</td>
-<td class="bcv">Genesis 1:26</td>
+<td class="bcv">Gen 1:26</td>
 <td><span class="unicode-code-point-name" title="HEBREW POINT QAMATS QATAN">QAMATS QATAN</span></td>
 <td><span class="romanized">qamats qatan</span></td>
 <td class="num">7,434</td>
@@ -1421,7 +556,7 @@ own. The counts are of the marks and of the atoms that have them:</p>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">עֲוֺנִ֖י</td>
-<td class="bcv">Genesis 4:13</td>
+<td class="bcv">Gen 4:13</td>
 <td><span class="unicode-code-point-name" title="HEBREW POINT HOLAM HASER FOR VAV">HOLAM HASER FOR
 VAV</span></td>
 <td><span class="romanized">ḥolam ḥaser</span> on a <span class="romanized">vav</span> that is a
@@ -1430,28 +565,15 @@ consonant</td>
 <td class="num">416</td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">וַתַּחְמְרָ֥הֿ</td>
-<td class="bcv">Exodus 2:3</td>
-<td><span class="unicode-code-point-name" title="HEBREW POINT RAFE">RAFE</span></td>
-<td><span class="romanized">rafeh</span></td>
-<td class="num">92</td>
-<td class="num">92</td>
-</tr>
-<tr>
-<td lang="hbo" dir="rtl">וְׄאַׄהֲׄרֹ֛ׄןׄ</td>
-<td class="bcv">Numbers 3:39</td>
-<td><span class="unicode-code-point-name" title="HEBREW MARK UPPER DOT">UPPER DOT</span></td>
-<td>an extraordinary dot above a letter</td>
-<td class="num">53</td>
-<td class="num">17</td>
-</tr>
-<tr>
-<td lang="hbo" dir="rtl">לׅׄוּׅׄלֵׅ֗ׄאׅׄ</td>
-<td class="bcv">Psalms 27:13</td>
-<td><span class="unicode-code-point-name" title="HEBREW MARK LOWER DOT">LOWER DOT</span></td>
-<td>an extraordinary dot below a letter</td>
-<td class="num">4</td>
-<td class="num">1</td>
+<td lang="hbo" dir="rtl">בַּעֲצַ֢ת</td>
+<td class="bcv">Ps 1:1</td>
+<td><span class="unicode-code-point-name" title="HEBREW ACCENT ATNAH HAFUKH">ATNAH
+HAFUKH</span></td>
+<td><span class="romanized">atnaḥ hafukh</span>, as opposed to
+<span class="unicode-code-point-name" title="HEBREW ACCENT YERAH BEN YOMO">YERAH BEN
+YOMO</span></td>
+<td class="num">195</td>
+<td class="num">195</td>
 </tr>
 </table>
 </div>
@@ -1471,7 +593,7 @@ and <span class="romanized">telisha gedolah</span></h3>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">זֶ֞֠ה</td>
-<td class="bcv">Genesis 5:29</td>
+<td class="bcv">Gen 5:29</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER ZAYIN">ZAYIN</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT SEGOL">SEGOL</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT GERSHAYIM">GERSHAYIM</span>,
@@ -1480,7 +602,7 @@ GEDOLA</span></td>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">קִ֞֠רְב֞֠וּ</td>
-<td class="bcv">Leviticus 10:4</td>
+<td class="bcv">Lev 10:4</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER QOF">QOF</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT GERSHAYIM">GERSHAYIM</span>,
@@ -1492,7 +614,7 @@ GEDOLA</span></td>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">שֻׁ֜֠בוּ</td>
-<td class="bcv">II Kings 17:13</td>
+<td class="bcv">2 Kgs 17:13</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER SHIN">SHIN</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT SHIN DOT">SHIN DOT</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QUBUTS">QUBUTS</span>,
@@ -1502,7 +624,7 @@ GEDOLA</span></td>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">וּ֜֠לְאֵ֜֠לֶּה</td>
-<td class="bcv">Ezekiel 48:10</td>
+<td class="bcv">Ezek 48:10</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER VAV">VAV</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT DAGESH OR MAPIQ">DAGESH OR MAPIQ</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT GERESH">GERESH</span>,
@@ -1515,7 +637,7 @@ GEDOLA</span></td>
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">זֹ֞֠את</td>
-<td class="bcv">Zephaniah 2:15</td>
+<td class="bcv">Zeph 2:15</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER ZAYIN">ZAYIN</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT HOLAM">HOLAM</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT GERSHAYIM">GERSHAYIM</span>,
@@ -1528,11 +650,10 @@ GEDOLA</span></td>
 <p>Each of the 1,239 <span class="unicode-code-point-name" title="HEBREW ACCENT ZINOR">ZINOR</span>
 marks is on the last letter of its atom: the <span class="romanized">zarqa</span> in prose verses
 and the <span class="romanized">tsinnor</span> in poetic verses. Of them, 59 are on a
-<span class="romanized">lamed</span>, as at Leviticus 4:2 below. In prose verses, each of the 180
+<span class="romanized">lamed</span>, as at Lev 4:2 below. In prose verses, each of the 180
 <span class="unicode-code-point-name" title="HEBREW ACCENT ZARQA">ZARQA</span> marks is the
 <span class="romanized">zarqa</span>'s stress helper, on an earlier letter of the atom than its
-<span class="unicode-code-point-name" title="HEBREW ACCENT ZINOR">ZINOR</span>, as at Genesis
-19:4:</p>
+<span class="unicode-code-point-name" title="HEBREW ACCENT ZINOR">ZINOR</span>, as at Gen 19:4:</p>
 <div class="table-wrap">
 <table class="data">
 <tr>
@@ -1542,7 +663,7 @@ and the <span class="romanized">tsinnor</span> in poetic verses. Of them, 59 are
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">טֶ֘רֶם֮</td>
-<td class="bcv">Genesis 19:4</td>
+<td class="bcv">Gen 19:4</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER TET">TET</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT SEGOL">SEGOL</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT ZARQA">ZARQA</span><br>
@@ -1553,7 +674,7 @@ and the <span class="romanized">tsinnor</span> in poetic verses. Of them, 59 are
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">יִשְׂרָאֵל֮</td>
-<td class="bcv">Leviticus 4:2</td>
+<td class="bcv">Lev 4:2</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER YOD">YOD</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ</span><br>
 <span class="unicode-code-point-name" title="HEBREW LETTER SHIN">SHIN</span>,
@@ -1572,16 +693,15 @@ and the <span class="romanized">tsinnor</span> in poetic verses. Of them, 59 are
 <span class="romanized">silluq</span></h3>
 <p>In 2 atoms, <abbr class="small-caps">MAM</abbr>'s source identifies a
 <span class="romanized">silluq</span> that has a <span class="romanized">meteg</span> after it, on a
-later letter of the atom. <abbr class="small-caps">MAM</abbr>-for-Sefaria, in <code>csv/</code> and
-<code>csv-ajf/</code> alike, has the <span class="romanized">silluq</span> and every other mark of
-each atom, but not that <span class="romanized">meteg</span>, which other versions of
-<abbr class="small-caps">MAM</abbr>, <abbr class="small-caps">MAM</abbr>-simple among them,
-have:</p>
+later letter of the atom. <abbr class="small-caps">MAM</abbr>-for-Sefaria has the
+<span class="romanized">silluq</span> and every other mark of each atom, but not that
+<span class="romanized">meteg</span>, which other versions of <abbr class="small-caps">MAM</abbr>,
+<abbr class="small-caps">MAM</abbr>-simple among them, have:</p>
 <div class="table-wrap">
 <table id="meteg-after-silluq-cases" class="data">
 <tr>
 <th scope="col">Version</th>
-<th scope="col" data-osis-id="1Kgs.7.37">I Kings 7:37</th>
+<th scope="col" data-osis-id="1Kgs.7.37">1 Kgs 7:37</th>
 <th scope="col" data-osis-id="Job.4.12">Job 4:12</th>
 </tr>
 <tr data-version="sefaria">
@@ -1619,9 +739,10 @@ have no notes. <abbr class="small-caps">MAM</abbr>'s documentation notes, which
 link.</li>
 <li>The <a href="../MAM-simple/reading-mam-simple-json.html#repeated-endings-good-ending">verse that
 four books repeat</a> after their last (<code>good-ending</code>).</li>
-<li>In <code>csv/</code>, the <code>cant-alef</code> and <code>cant-bet</code> strands of the 24
-verses with two cantillations, whose text represents both strands at once. <code>csv-ajf/</code> has
-the strands too.</li>
+<li>The <a href="../MAM-simple/reading-mam-simple-json.html#dual-cantillation-cant-all-three">two
+strands</a> of each verse that has two cantillations (<code>cant-alef</code> and
+<code>cant-bet</code>). The files keep the text that represents both strands at once
+(<code>cant-combined</code>).</li>
 </ol>
 <h2 id="robust-unicode">Robust Unicode</h2>
 <p>Unicode normalization sorts the marks of each letter by their combining classes. A
@@ -1656,7 +777,7 @@ orphaned <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ<
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">יְרוּשָׁ<span class="attention">לַ֖͏ִ</span>ם</td>
-<td class="bcv">Judges 1:7</td>
+<td class="bcv">Judg 1:7</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER LAMED">LAMED</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT PATAH">PATAH</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT TIPEHA">TIPEHA</span>,
@@ -1671,7 +792,7 @@ orphaned <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ<
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">יְרוּשָׁ<span class="attention">לָ֑͏ִ</span>ם</td>
-<td class="bcv">Joshua 15:8</td>
+<td class="bcv">Josh 15:8</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER LAMED">LAMED</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span>,
@@ -1685,7 +806,7 @@ orphaned <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ<
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">יְרוּשָׁ<span class="attention">לַ֛͏ְ</span>מָה</td>
-<td class="bcv">Isaiah 36:2</td>
+<td class="bcv">Isa 36:2</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER LAMED">LAMED</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT PATAH">PATAH</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT TEVIR">TEVIR</span>,
@@ -1699,7 +820,7 @@ orphaned <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ<
 </tr>
 <tr>
 <td lang="hbo" dir="rtl">יְרוּשָׁ<span class="attention">לָ֑͏ְ</span>מָה</td>
-<td class="bcv">II Kings 9:28</td>
+<td class="bcv">2 Kgs 9:28</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER LAMED">LAMED</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span>,
@@ -1717,10 +838,7 @@ orphaned <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ<
 <p>The other 14 are in verses with two cantillations, on a letter whose text represents both
 strands: the marks before the
 <span class="unicode-code-point-name" title="COMBINING GRAPHEME JOINER">CGJ</span> are one strand's,
-and the marks after it are the other's. <code>csv-ajf/</code> has the strands too, with no
-<span class="unicode-code-point-name" title="COMBINING GRAPHEME JOINER">CGJ</span> on that letter,
-which the tables show in the attention color. They give each atom's references in both folders,
-since the two numberings differ in the Decalogues. In 4 atoms, one strand has a
+and the marks after it are the other's. In 4 atoms, one strand has a
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span> and an accent or
 <span class="unicode-code-point-name" title="HEBREW POINT METEG">METEG</span> below the letter, and
 the other a <span class="unicode-code-point-name" title="HEBREW POINT PATAH">PATAH</span> and an
@@ -1728,20 +846,14 @@ accent above it:</p>
 <div class="table-wrap">
 <table class="data">
 <tr>
-<th>Both strands<br>
-<code>cant-alef</code><br>
-<code>cant-bet</code></th>
-<th>In <code>csv-ajf/</code></th>
-<th>In <code>csv/</code></th>
+<th>Example</th>
+<th>References</th>
 <th>The letter's code points</th>
 <th>Normalized without the CGJ</th>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">עַל־פָּ<span class="attention">נָֽ͏ַ֗</span>י׃<br>
-עַל־פָּ<span class="attention">נָֽ</span>י׃<br>
-עַל־פָּ<span class="attention">נַ֗</span>י</td>
-<td class="bcv">Exodus 20:3 and Deuteronomy 5:7</td>
-<td class="bcv">Exodus 20:3 and Deuteronomy 5:7</td>
+<td lang="hbo" dir="rtl">עַל־פָּ<span class="attention">נָֽ͏ַ֗</span>י׃</td>
+<td class="bcv">Exod 20:3 and Deut 5:7</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER NUN">NUN</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT METEG">METEG</span>,
@@ -1755,11 +867,8 @@ accent above it:</p>
 <span class="unicode-code-point-name" title="HEBREW ACCENT REVIA">REVIA</span></td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">מִ<span class="attention">תָּ֑͏ַ֜</span>חַת<br>
-מִ<span class="attention">תָּ֑</span>חַת<br>
-מִ<span class="attention">תַּ֜</span>חַת</td>
-<td class="bcv">Exodus 20:4 and Deuteronomy 5:8</td>
-<td class="bcv">Exodus 20:4 and Deuteronomy 5:8</td>
+<td lang="hbo" dir="rtl">מִ<span class="attention">תָּ֑͏ַ֜</span>חַת</td>
+<td class="bcv">Exod 20:4 and Deut 5:8</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER TAV">TAV</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT DAGESH OR MAPIQ">DAGESH OR MAPIQ</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
@@ -1781,20 +890,14 @@ accent above it:</p>
 <div class="table-wrap">
 <table class="data">
 <tr>
-<th>Both strands<br>
-<code>cant-alef</code><br>
-<code>cant-bet</code></th>
-<th>In <code>csv-ajf/</code></th>
-<th>In <code>csv/</code></th>
+<th>Example</th>
+<th>References</th>
 <th>The letter's code points</th>
 <th>Normalized without the CGJ</th>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">יִשְׂרָ<span class="attention">אֵ֑͏ֽ</span>ל׃<br>
-יִשְׂרָ<span class="attention">אֵֽ</span>ל׃<br>
-יִשְׂרָ<span class="attention">אֵ֑</span>ל</td>
-<td class="bcv">Genesis 35:22</td>
-<td class="bcv">Genesis 35:22</td>
+<td lang="hbo" dir="rtl">יִשְׂרָ<span class="attention">אֵ֑͏ֽ</span>ל׃</td>
+<td class="bcv">Gen 35:22</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER ALEF">ALEF</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT TSERE">TSERE</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span>,
@@ -1806,11 +909,8 @@ accent above it:</p>
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span></td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">עֲבָ<span class="attention">דִ֑͏ֽ</span>ים׃<br>
-עֲבָ<span class="attention">דִ֑</span>ים<br>
-עֲבָ<span class="attention">דִֽ</span>ים׃</td>
-<td class="bcv">Exodus 20:2 and Deuteronomy 5:6</td>
-<td class="bcv">Exodus 20:2 and Deuteronomy 5:6</td>
+<td lang="hbo" dir="rtl">עֲבָ<span class="attention">דִ֑͏ֽ</span>ים׃</td>
+<td class="bcv">Exod 20:2 and Deut 5:6</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER DALET">DALET</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT HIRIQ">HIRIQ</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span>,
@@ -1822,11 +922,8 @@ accent above it:</p>
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span></td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">לֹֽ֣א־יִהְ<span class="attention">יֶ֥͏ֽ</span>ה־לְךָ֛֩<br>
-לֹֽא־יִהְ<span class="attention">יֶ֥</span>ה לְךָ֛<br>
-לֹ֣א יִהְ<span class="attention">יֶֽ</span>ה־לְךָ֩</td>
-<td class="bcv">Exodus 20:3 and Deuteronomy 5:7</td>
-<td class="bcv">Exodus 20:3 and Deuteronomy 5:7</td>
+<td lang="hbo" dir="rtl">לֹֽ֣א־יִהְ<span class="attention">יֶ֥͏ֽ</span>ה־לְךָ֛֩</td>
+<td class="bcv">Exod 20:3 and Deut 5:7</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER YOD">YOD</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT SEGOL">SEGOL</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT MERKHA">MERKHA</span>,
@@ -1838,11 +935,8 @@ accent above it:</p>
 <span class="unicode-code-point-name" title="HEBREW ACCENT MERKHA">MERKHA</span></td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">וּבִנְ<span class="attention">ךָ֣͏ֽ</span>־וּ֠בִתֶּ֗ךָ<br>
-וּבִנְ<span class="attention">ךָ֣</span> וּבִתֶּ֗ךָ<br>
-וּבִנְ<span class="attention">ךָֽ</span>־וּ֠בִתֶּ֠ךָ</td>
-<td class="bcv">Exodus 20:10</td>
-<td class="bcv">Exodus 20:10</td>
+<td lang="hbo" dir="rtl">וּבִנְ<span class="attention">ךָ֣͏ֽ</span>־וּ֠בִתֶּ֗ךָ</td>
+<td class="bcv">Exod 20:10</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER FINAL KAF">FINAL KAF</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT MUNAH">MUNAH</span>,
@@ -1854,11 +948,8 @@ accent above it:</p>
 <span class="unicode-code-point-name" title="HEBREW ACCENT MUNAH">MUNAH</span></td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">תִּֿרְ<span class="attention">צָ֖͏ֽ</span>ח׃<br>
-תִרְ<span class="attention">צָ֖</span>ח<br>
-תִּרְ<span class="attention">צָֽ</span>ח׃</td>
-<td class="bcv">Exodus 20:13 and Deuteronomy 5:17</td>
-<td class="bcv">Exodus 20:13 and Deuteronomy 5:17</td>
+<td lang="hbo" dir="rtl">תִּֿרְ<span class="attention">צָ֖͏ֽ</span>ח׃</td>
+<td class="bcv">Exod 20:13 and Deut 5:17</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER TSADI">TSADI</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT TIPEHA">TIPEHA</span>,
@@ -1870,11 +961,8 @@ accent above it:</p>
 <span class="unicode-code-point-name" title="HEBREW ACCENT TIPEHA">TIPEHA</span></td>
 </tr>
 <tr>
-<td lang="hbo" dir="rtl">תִּֿנְ<span class="attention">אָ֑͏ֽ</span>ף׃<br>
-תִנְ<span class="attention">אָ֑</span>ף<br>
-תִּנְ<span class="attention">אָֽ</span>ף׃</td>
-<td class="bcv">Exodus 20:14 and Deuteronomy 5:18</td>
-<td class="bcv">Exodus 20:13 and Deuteronomy 5:17</td>
+<td lang="hbo" dir="rtl">תִּֿנְ<span class="attention">אָ֑͏ֽ</span>ף׃</td>
+<td class="bcv">Exod 20:13 and Deut 5:17</td>
 <td><span class="unicode-code-point-name" title="HEBREW LETTER ALEF">ALEF</span>,
 <span class="unicode-code-point-name" title="HEBREW POINT QAMATS">QAMATS</span>,
 <span class="unicode-code-point-name" title="HEBREW ACCENT ETNAHTA">ETNAHTA</span>,
