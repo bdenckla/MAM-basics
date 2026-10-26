@@ -38,6 +38,12 @@ def make_empty_all_fois():
     return collections.defaultdict(list)
 
 
+def declare_foi_paths(all_fois, foi_paths):
+    """Give each declared foi_path an empty list in all_fois when it has none."""
+    for foi_path in foi_paths:
+        all_fois.setdefault(foi_path, [])
+
+
 def get_bcvt(foi_struct):
     """Get the bcv part of the given foi_struct."""
     return foi_struct["_foi_struct_bcvt"]
