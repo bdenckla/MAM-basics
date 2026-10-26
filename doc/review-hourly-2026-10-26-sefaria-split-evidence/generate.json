@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_authored.py",
+    "gen-mam-for-sefaria-doc"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+  "started_utc": "2026-10-26T16:49:50.430961+00:00",
+  "completed_utc": "2026-10-26T16:50:00.297349+00:00",
+  "seconds": 9.866,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

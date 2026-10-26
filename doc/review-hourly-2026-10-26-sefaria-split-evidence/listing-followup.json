@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    ".novc/split/test_split.py::test_new_ajf_listing_trailing_space_explanation",
+    "-q",
+    "-ra"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+  "started_utc": "2026-10-26T16:53:53.767005+00:00",
+  "completed_utc": "2026-10-26T16:53:54.860311+00:00",
+  "seconds": 1.093,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "py/tests/test_sefaria_silluq_documentation.py",
+    "py/tests/test_shared_html_styles.py",
+    "py/tests/test_mega_coverage.py",
+    "py/tests/test_product_scopes.py",
+    "py/tests/source_hygiene_test.py",
+    "py/tests/test_accent_marks_source.py",
+    "py/tests/test_prose_mark_order.py",
+    "-q",
+    "-ra"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+  "started_utc": "2026-10-26T16:51:30.392289+00:00",
+  "completed_utc": "2026-10-26T16:52:20.201691+00:00",
+  "seconds": 49.809,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

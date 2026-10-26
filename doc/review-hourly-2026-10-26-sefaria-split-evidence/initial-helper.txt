@@ -1,0 +1,223 @@
+"""One-off raw-export differential and structural checks of the page split."""
+
+from collections import Counter
+import csv
+import hashlib
+from html.parser import HTMLParser
+import json
+import re
+import subprocess
+from urllib.parse import unquote, urlsplit
+
+import pytest
+
+from mb_cmn import paths
+
+ROOT = paths.repo_root()
+PAGES = {
+    "main": ROOT / "gh-pages/MAM-for-Sefaria/index.html",
+    "names": ROOT / "gh-pages/MAM-for-Sefaria/unicode-names/index.html",
+    "ajf": ROOT / "gh-pages/MAM-for-Sefaria/ajf/index.html",
+}
+RESULT = {}
+
+
+class RawHTML(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.data = []
+        self.elements = Counter()
+
+    def handle_starttag(self, tag, attrs):
+        self.elements[tag, dict(attrs).get("class", "")] += 1
+
+    def handle_data(self, text):
+        self.data.append(text)
+
+
+class Page(RawHTML):
+    def __init__(self):
+        super().__init__()
+        self.tables = []
+        self.table = self.row = self.cell = None
+        self.ids, self.links, self.styles, self.metas = [], [], [], []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if "id" in attrs:
+            self.ids.append(attrs["id"])
+        if tag == "a" and "href" in attrs:
+            self.links.append(attrs["href"])
+        if tag == "link" and attrs.get("rel") == "stylesheet":
+            self.styles.append(attrs["href"])
+        if tag == "meta":
+            self.metas.append(attrs)
+        if tag == "table":
+            assert self.table is None
+            self.table = []
+        elif tag == "tr":
+            self.row = []
+        elif tag in {"td", "th"}:
+            assert self.cell is None
+            self.cell = {"attrs": attrs, "text": ""}
+        elif tag == "br" and self.cell is not None:
+            self.cell["text"] += " "
+
+    def handle_data(self, text):
+        self.data.append(text)
+        if self.cell is not None:
+            self.cell["text"] += text
+
+    def handle_endtag(self, tag):
+        if tag in {"td", "th"}:
+            self.row.append(self.cell)
+            self.cell = None
+        elif tag == "tr":
+            self.table.append(self.row)
+            self.row = None
+        elif tag == "table":
+            self.tables.append(self.table)
+            self.table = None
+
+
+def norm(text):
+    return " ".join(text.split())
+
+
+def parse(path):
+    page = Page()
+    page.feed(path.read_text(encoding="utf-8"))
+    page.close()
+    return page
+
+
+@pytest.fixture(scope="module")
+def raw():
+    result = {"characters": {}, "rows": {}, "all_text": [], "elements": Counter(), "ajf_by_book": {}}
+    for folder in ("csv", "csv-ajf"):
+        files = sorted((ROOT / "MAM-for-Sefaria" / folder).glob("*.csv"))
+        assert len(files) == 39
+        chars = Counter()
+        count = dual = 0
+        for file in files:
+            with file.open(encoding="utf-8", newline="") as stream:
+                rows = list(csv.reader(stream))
+            if folder == "csv":
+                rows = rows[5:]
+                assert rows and all(len(row) == 2 for row in rows)
+                for ref, html in rows:
+                    html_reader = RawHTML()
+                    html_reader.feed(html)
+                    text = "".join(html_reader.data)
+                    chars.update(text)
+                    result["elements"].update(html_reader.elements)
+                    result["all_text"].append(text)
+            else:
+                assert rows and all(len(row) == 4 for row in rows)
+                result["ajf_by_book"][file.stem] = rows
+                for ref, combined, alef, bet in rows:
+                    assert bool(alef) == bool(bet)
+                    dual += bool(alef)
+                    chars.update(combined + alef + bet)
+                    result["all_text"].extend((combined, alef, bet))
+            count += len(rows)
+        result["characters"][folder] = chars
+        result["rows"][folder] = count
+        if folder == "csv-ajf":
+            result["dual"] = dual
+    return result
+
+
+def test_split_code_point_and_markup_tables_preserve_raw_counts(raw):
+    counts = {}
+    for key, folder in (("names", "csv"), ("ajf", "csv-ajf")):
+        page = parse(PAGES[key])
+        tables = [table for table in page.tables if [norm(cell["text"]) for cell in table[0]] == ["Code point", "Unicode name", "In the listings", "Count"]]
+        assert len(tables) == 1
+        observed = Counter()
+        for row in tables[0][1:]:
+            cp = int(norm(row[0]["text"])[2:], 16)
+            assert chr(cp) not in observed
+            observed[chr(cp)] = int(norm(row[-1]["text"]).replace(",", ""))
+        assert dict(observed) == dict(raw["characters"][folder])
+        counts[key] = len(observed)
+    main = parse(PAGES["main"])
+    inventory = [table for table in main.tables if [norm(cell["text"]) for cell in table[0]] == ["Element", "Class", "Count", "What it holds"]]
+    assert len(inventory) == 1
+    observed = Counter({(norm(row[0]["text"]), norm(row[1]["text"])): int(norm(row[2]["text"]).replace(",", "")) for row in inventory[0][1:]})
+    assert observed == raw["elements"]
+    # The split changes documentation only; no export, annotation or font-source input changed.
+    delta = subprocess.check_output(["git", "diff", "--name-only", "-z", "ee700b4713ea242e5d27f18bdff3093756df97d7", "c6701099fd146832cb74a523d549a0e4c09c97b1", "--", "MAM-for-Sefaria", "MAM-simple", "doc/woff2"])
+    assert delta == b""
+    assert f"{raw['rows']['csv']:,}" in "".join(main.data)
+    assert f"{raw['rows']['csv-ajf']:,}" in "".join(parse(PAGES["ajf"]).data)
+    RESULT.update({"raw_rows": raw["rows"], "dual_cantillation_rows": raw["dual"], "code_point_rows": counts, "all_code_point_counts_exact": True, "markup_rows": len(observed), "all_markup_counts_exact": True, "input_delta": []})
+
+
+def test_new_ajf_listing_trailing_space_explanation(raw):
+    found = []
+    for title, rows in raw["ajf_by_book"].items():
+        path = ROOT / "MAM-for-Sefaria/misc/unicode-names-ajf" / f"{title}.txt"
+        lines = path.read_text(encoding="utf-8").splitlines()
+        assert lines[0] == f"unicode_names {title}"
+        blocks, block = [], []
+        for line in [*lines[1:], ""]:
+            if line:
+                block.append(line)
+            elif block:
+                blocks.append(block)
+                block = []
+        assert len(blocks) == len(rows)
+        for row, block in zip(rows, blocks):
+            assert f" {row[0].rsplit(' ', 1)[1]} in vtrad " in block[0]
+            if block[-1].strip() == "SPACE":
+                assert block[-1] == "    SPACE"
+                assert row[2] and row[3].endswith("{ס}")
+                found.append(row[0])
+    assert len(found) == 9
+    ajf_text = norm(" ".join(parse(PAGES["ajf"]).data))
+    assert "In 9 of those verses" in ajf_text
+    RESULT["ajf_listing_trailing_space_refs"] = found
+
+
+def test_topology_local_links_assets_and_rendered_hebrew(raw):
+    docs = {key: parse(path) for key, path in PAGES.items()}
+    for key in ("main", "names"):
+        doc = docs[key]
+        assert not re.search(r"AJF|csv-ajf|unicode-names-ajf", " ".join(doc.data), re.I)
+        assert not any("ajf" in urlsplit(href).path.lower() for href in doc.links)
+    assert "unicode-names/index.html" in docs["main"].links
+    assert "../index.html" in docs["names"].links
+    assert {"../index.html", "../unicode-names/index.html"} <= set(docs["ajf"].links)
+    hebrew_counts = {}
+    cluster_re = re.compile(r"[\u05d0-\u05ea][\u0591-\u05bd\u05bf\u05c1-\u05c5\u05c7\u034f]*")
+    vowels = set(map(chr, range(0x05B0, 0x05BC))) | {"\N{HEBREW POINT QAMATS QATAN}"}
+    allowed = {m.group() for text in raw["all_text"] for m in cluster_re.finditer(text)}
+    multi = Counter()
+    for key, doc in docs.items():
+        assert len(doc.ids) == len(set(doc.ids))
+        assert len([m for m in doc.metas if m.get("name") == "viewport"]) == 1
+        targets = [(PAGES[key].parent / unquote(href)).resolve() for href in doc.styles]
+        assert targets == [ROOT / "gh-pages/document.css", ROOT / "gh-pages/MAM-for-Sefaria/styles.css"]
+        for href in doc.links:
+            url = urlsplit(href)
+            if url.scheme or url.netloc:
+                continue
+            target = (PAGES[key].parent / unquote(url.path)).resolve() if url.path else PAGES[key]
+            assert target.is_file(), (key, href)
+            if url.fragment:
+                assert unquote(url.fragment) in parse(target).ids, (key, href)
+        cells = [cell for table in doc.tables for row in table for cell in row if cell["attrs"].get("lang") == "hbo"]
+        assert cells
+        hebrew_counts[key] = len(cells)
+        for cell in cells:
+            assert cell["attrs"].get("dir") == "rtl"
+            for match in cluster_re.finditer(cell["text"]):
+                cluster = match.group()
+                if sum(char in vowels for char in cluster) > 1:
+                    assert "\N{COMBINING GRAPHEME JOINER}" in cluster and cluster in allowed
+                    multi[key] += 1
+    font = ROOT / "gh-pages/MAM-for-Sefaria/woff2/Taamey_D.woff2"
+    assert font.read_bytes() == (ROOT / "doc/woff2/Taamey_D.woff2").read_bytes()
+    RESULT.update({"topology": "Main links listings; neither links or names AJF; AJF links both.", "all_local_links_and_fragments_resolve": True, "shared_stylesheet_targets_exact": True, "rendered_hebrew_cells": hebrew_counts, "two_vowel_product_clusters_with_CGJ": dict(multi), "font_sha256": hashlib.sha256(font.read_bytes()).hexdigest()})
+    (ROOT / ".novc/split/independent-result.json").write_text(json.dumps(RESULT, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

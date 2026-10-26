@@ -1,0 +1,40 @@
+{
+  "raw_rows": {
+    "csv": 23206,
+    "csv-ajf": 23213
+  },
+  "dual_cantillation_rows": 24,
+  "code_point_rows": {
+    "names": 92,
+    "ajf": 90
+  },
+  "all_code_point_counts_exact": true,
+  "markup_rows": 14,
+  "all_markup_counts_exact": true,
+  "input_delta": [],
+  "topology": "Main links listings; neither links or names AJF; AJF links both.",
+  "all_local_links_and_fragments_resolve": true,
+  "shared_stylesheet_targets_exact": true,
+  "rendered_hebrew_cells": {
+    "main": 44,
+    "names": 1,
+    "ajf": 8
+  },
+  "two_vowel_product_clusters_with_CGJ": {
+    "main": 6,
+    "ajf": 2
+  },
+  "font_sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474",
+  "ajf_listing_trailing_space_refs": [
+    "Deuteronomy 5:10",
+    "Deuteronomy 5:15",
+    "Deuteronomy 5:17",
+    "Deuteronomy 5:18",
+    "Deuteronomy 5:19",
+    "Exodus 20:6",
+    "Exodus 20:13",
+    "Exodus 20:14",
+    "Exodus 20:15"
+  ],
+  "ajf_listing_trailing_spaces_retained_in_CSV": 3482
+}

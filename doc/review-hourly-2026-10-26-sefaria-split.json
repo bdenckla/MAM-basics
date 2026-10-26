@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-26",
+  "recorded_utc": "2026-10-26T16:55:30.531404+00:00",
+  "review_start": "ee700b4713ea242e5d27f18bdff3093756df97d7",
+  "source_commit": "c6701099fd146832cb74a523d549a0e4c09c97b1",
+  "receipt_parent": "86c1afedd4b8fd693d709b168143e82ee7bf3444",
+  "receipt_branch": "review-hourly-20261026-sefaria-split-receipts",
+  "source_checkout": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+  "committed_inputs": {
+    "CSV_exports_and_listings": "c6701099fd146832cb74a523d549a0e4c09c97b1",
+    "MAM-simple_annotations": "c6701099fd146832cb74a523d549a0e4c09c97b1",
+    "canonical_documentation_font": "c6701099fd146832cb74a523d549a0e4c09c97b1"
+  },
+  "runtime_sibling_inputs": [],
+  "review": {
+    "window": "One commit / 13 endpoint paths; prior windows not re-reviewed.",
+    "examined": "Main/AJF/Unicode-name split and common generator, survey diff, authored/mega integration, three generated HTML pages, license scope wording and plan update. Existing source guidance and review policy retained.",
+    "disposition": "No consequential defect confirmed; no source repair, issue or decision PR. Split/navigation, short references, column/list changes and omitted prose match the recorded editorial decisions. License diff changes the documentation inventory only, retaining existing terms and font exception; no new publication/license decision made."
+  },
+  "stages": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-for-sefaria-doc"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+      "started_utc": "2026-10-26T16:49:50.430961+00:00",
+      "completed_utc": "2026-10-26T16:50:00.297349+00:00",
+      "seconds": 9.866,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_sefaria_silluq_documentation.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_mega_coverage.py",
+        "py/tests/test_product_scopes.py",
+        "py/tests/source_hygiene_test.py",
+        "py/tests/test_accent_marks_source.py",
+        "py/tests/test_prose_mark_order.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+      "started_utc": "2026-10-26T16:51:30.392289+00:00",
+      "completed_utc": "2026-10-26T16:52:20.201691+00:00",
+      "seconds": 49.809,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        ".novc/split/test_split.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+      "started_utc": "2026-10-26T16:52:33.439847+00:00",
+      "completed_utc": "2026-10-26T16:52:34.933105+00:00",
+      "seconds": 1.493,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        ".novc/split/test_split.py::test_new_ajf_listing_trailing_space_explanation",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-sefaria-split/basics-source",
+      "started_utc": "2026-10-26T16:53:53.767005+00:00",
+      "completed_utc": "2026-10-26T16:53:54.860311+00:00",
+      "seconds": 1.093,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "stage_results": {
+    "generate": "Exit 0 in 9.866 s; all three HTML pages reproduce, canonical font unchanged; clean tracked status.",
+    "maintained": "Exit 0 in 49.809 s; seven focused test modules: 25 passed, zero failed/skipped in 48.27 s.",
+    "independent": "Initial scratch run: exit 1 in 1.493 s; two passed, one failed in 1.33 s. The trailing-space oracle incorrectly counted a non-dual combined-field SPACE already present in the CSV as a stripped final-field SPACE. This is a scratch-check defect, not a product finding.",
+    "listing-followup": "After distinguishing CSV-retained spaces from final-field stripping, only the failed check ran: exit 0 in 1.093 s; one passed in 0.89 s. It independently identifies all nine documented cases and 3,482 retained trailing spaces. No generator, maintained test or earlier successful independent check repeated; no combined all-green invocation claimed."
+  },
+  "sequential_stage_order_verified": true,
+  "independent_results": {
+    "raw_rows": {
+      "csv": 23206,
+      "csv-ajf": 23213
+    },
+    "dual_cantillation_rows": 24,
+    "code_point_rows": {
+      "names": 92,
+      "ajf": 90
+    },
+    "all_code_point_counts_exact": true,
+    "markup_rows": 14,
+    "all_markup_counts_exact": true,
+    "input_delta": [],
+    "topology": "Main links listings; neither links or names AJF; AJF links both.",
+    "all_local_links_and_fragments_resolve": true,
+    "shared_stylesheet_targets_exact": true,
+    "rendered_hebrew_cells": {
+      "main": 44,
+      "names": 1,
+      "ajf": 8
+    },
+    "two_vowel_product_clusters_with_CGJ": {
+      "main": 6,
+      "ajf": 2
+    },
+    "font_sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474",
+    "ajf_listing_trailing_space_refs": [
+      "Deuteronomy 5:10",
+      "Deuteronomy 5:15",
+      "Deuteronomy 5:17",
+      "Deuteronomy 5:18",
+      "Deuteronomy 5:19",
+      "Exodus 20:6",
+      "Exodus 20:13",
+      "Exodus 20:14",
+      "Exodus 20:15"
+    ],
+    "ajf_listing_trailing_spaces_retained_in_CSV": 3482
+  },
+  "decisive_scope": "Independent CSV/HTML parser imports neither new survey nor generator code. All 92 CSV and 90 AJF code-point rows/counts, and all 14 markup rows/counts, match raw inputs. Links/fragments and common stylesheet targets resolve for all three pages; main/listings name/link no AJF, main links listings, AJF links both. All 53 marked Hebrew cells are RTL; displayed two-vowel clusters retain their product CGJs. The nine new listing exceptions are independently distinguished from spaces actually retained in the CSV. Existing differential verifies every meteg-after-silluq case against annotations/exporters. Git endpoint input diff is empty for exports, annotations and canonical font.",
+  "output_comparison": {
+    "tracked_differences_after_each_stage": [],
+    "source_final_status": "clean",
+    "CSV_annotations_font_inputs_changed": false,
+    "canonical_font_sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
+  },
+  "cheap_checks": "Black --check passes on all seven changed Python files; git diff --check passes. Receipt helper is formatted and checked for AST equivalence to the executed corrected scratch helper.",
+  "prior_results_preserved": {
+    "broad_tested": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "prior_focused_receipt": "86c1afedd4b8fd693d709b168143e82ee7bf3444",
+    "prior_overlap_record": "Unchanged in the preceding receipt and maintained history."
+  },
+  "evidence_directory": "review-hourly-2026-10-26-sefaria-split-evidence",
+  "raw_evidence_preserved": "/workspace/scratch/review-hourly-20261026-sefaria-split/raw-evidence",
+  "limits": [
+    "Focused checks only; no full mega/suite or new broad-tested anchor.",
+    "No browser/manuscript judgment, export refresh, font build, baseline acceptance or frozen regeneration.",
+    "No main integration/push, workflow dispatch, deployment, publication, new permission/license decision, or Fonts/Private/HP action."
+  ],
+  "remote_main_observed_before_receipt": "c6701099fd146832cb74a523d549a0e4c09c97b1",
+  "remaining_review_window_at_observation": null,
+  "evidence_packaging": "Initial staged diff check flagged trailing spaces emitted by pytest in the failure diagnostic. Preserve the exact raw log as independent.log.gz (and outside the worktree), rather than editing its text. Final receipt whitespace check applies to the preserved compressed artifact."
+}
