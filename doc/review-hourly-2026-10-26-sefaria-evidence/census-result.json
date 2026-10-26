@@ -1,0 +1,34 @@
+{
+  "dual_cantillation_rows": 24,
+  "raw_file_count": 78,
+  "rows_by_folder": {
+    "csv": 23206,
+    "csv-ajf": 23213
+  },
+  "distinct_code_points": 92,
+  "code_point_counts_exact": true,
+  "element_class_counts_exact": true,
+  "markup_counts": {
+    "b": 1787,
+    "span mam-spi-pe": 1571,
+    "br": 1571,
+    "span mam-spi-samekh": 1982,
+    "span mam-kq": 1047,
+    "span mam-kq-k": 1055,
+    "span mam-kq-q": 1056,
+    "span mam-kq-trivial": 149,
+    "small": 531,
+    "big": 27,
+    "span k-velo-q-maq": 2,
+    "span mam-implicit-maqaf": 116,
+    "sup": 4,
+    "span mam-spi-invnun": 9
+  },
+  "rendered_hebrew_cells": 47,
+  "rendered_two_vowel_clusters_with_product_CGJ": 6,
+  "local_links_and_fragments_resolve": true,
+  "font_copies": {
+    "count": 17,
+    "sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
+  }
+}

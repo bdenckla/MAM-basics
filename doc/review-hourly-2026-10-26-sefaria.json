@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-26",
+  "recorded_utc": "2026-10-26T15:29:44.793320+00:00",
+  "review_start": "3c6b216c13c3ffa043501a485ea5481a6ab31e93",
+  "source_commit": "ee700b4713ea242e5d27f18bdff3093756df97d7",
+  "receipt_parent": "556df8b0dcc46be5998a1850f4b85c33e143775e",
+  "receipt_branch": "review-hourly-20261026-sefaria-receipts",
+  "source_checkout": "/workspace/review-hourly-20261026-sefaria/basics-source",
+  "committed_inputs": {
+    "MAM-for-Sefaria_CSVs_and_listings": "ee700b4713ea242e5d27f18bdff3093756df97d7",
+    "MAM-simple_silluq_annotations": "ee700b4713ea242e5d27f18bdff3093756df97d7",
+    "canonical_documentation_font": "ee700b4713ea242e5d27f18bdff3093756df97d7",
+    "trusted_site_surveys_for_shared_writer_comparison": "ee700b4713ea242e5d27f18bdff3093756df97d7"
+  },
+  "runtime_sibling_inputs": [],
+  "review": {
+    "window": "Three reachable incoming commits / 12 endpoint paths; previous FOI window not repeated.",
+    "examined": "Complete survey and page modules, authored/mega integration, shared author/HTML changes and coverage map, generated HTML/CSS/font, license-row diff, and executed plan. The plan and author check claims were treated as evidence; neither supplied authority for a new publication or licensing action.",
+    "disposition": "No consequential defect confirmed; no source repair, issue or decision PR. The license wording retains the existing font-specific terms and adjusts the inventory/exception for a byte-identical canonical asset. No new licensing or publishing decision made."
+  },
+  "executed": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-for-sefaria-doc"
+      ],
+      "exit_code": 0,
+      "comparison": "Regenerated new encoding HTML and canonical font copy; no final tracked output difference."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_sefaria_silluq_documentation.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_product_scopes.py",
+        "py/tests/test_mega_coverage.py",
+        "py/tests/test_prose_conventions.py",
+        "py/tests/test_transliterations.py",
+        "-q",
+        "-ra"
+      ],
+      "exit_code": 0,
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "pytest_seconds": 42.27
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-misc"
+      ],
+      "exit_code": 0,
+      "comparison": "Existing miscellaneous authored outputs reproduce; no final tracked output difference."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-site",
+        "--trust-surveys"
+      ],
+      "exit_code": 0,
+      "comparison": "All 18 reported site outputs reproduce using committed surveys; no final tracked output difference."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        ".novc/hourly-sefaria/test_census.py",
+        "-q",
+        "-ra"
+      ],
+      "exit_code": 0,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "pytest_seconds": 1.43
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/mam4sef_index.py",
+        "py/author_misc/mam4sef_survey.py",
+        "py/main_0_mega.py",
+        "py/main_authored.py",
+        "py/mb_author/author.py",
+        "py/mb_misc/mb_html.py",
+        "py/tests/test_mega_coverage.py"
+      ],
+      "exit_code": 0,
+      "result": "All seven changed Python files unchanged by Black."
+    }
+  ],
+  "independent_census": {
+    "dual_cantillation_rows": 24,
+    "raw_file_count": 78,
+    "rows_by_folder": {
+      "csv": 23206,
+      "csv-ajf": 23213
+    },
+    "distinct_code_points": 92,
+    "code_point_counts_exact": true,
+    "element_class_counts_exact": true,
+    "markup_counts": {
+      "b": 1787,
+      "span mam-spi-pe": 1571,
+      "br": 1571,
+      "span mam-spi-samekh": 1982,
+      "span mam-kq": 1047,
+      "span mam-kq-k": 1055,
+      "span mam-kq-q": 1056,
+      "span mam-kq-trivial": 149,
+      "small": 531,
+      "big": 27,
+      "span k-velo-q-maq": 2,
+      "span mam-implicit-maqaf": 116,
+      "sup": 4,
+      "span mam-spi-invnun": 9
+    },
+    "rendered_hebrew_cells": 47,
+    "rendered_two_vowel_clusters_with_product_CGJ": 6,
+    "local_links_and_fragments_resolve": true,
+    "font_copies": {
+      "count": 17,
+      "sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
+    }
+  },
+  "independent_check_scope": "A separate standard-library CSV/HTML reader, importing no new survey/page code, counts the 78 CSV files and checks the rendered folder totals, all 92 code-point counts in both variants, and the entire 14-row element/class inventory. It also checks local links/fragments, viewport, RTL on all 47 marked Hebrew cells, six displayed two-vowel clusters against product clusters with CGJ retained, and all 17 canonical font-copy hashes. Existing silluq differential compares all canonical annotations with both exporters and the displayed table.",
+  "output_comparison": {
+    "tracked_diff": [],
+    "source_final_status": "clean",
+    "source_exports_changed": false,
+    "other_generated_pages_changed": false,
+    "font_asset_sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
+  },
+  "execution_cadence_note": "gen-misc began while the first focused pytest process was still finishing; this was an unintended overlap, not a second runner or broad job. Both returned 0 and left no tracked difference. The independent census ran after all generation and first pytest completion; it passed. No fully sequential claim is made for that overlap.",
+  "prior_results": {
+    "reviewed_before_this_window": "3c6b216c13c3ffa043501a485ea5481a6ab31e93",
+    "broad_tested_unchanged": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+    "previous_focused_result": "556df8b0's FOI check, initial scratch whitespace-assertion failure and one-check continuation remain unchanged in history."
+  },
+  "limits": [
+    "No full mega or full suite rerun; no new broad-tested anchor. Existing focused checks do not prove manuscript/editorial judgments or actual browser font rendering.",
+    "No CSV/export refresh or font build; only canonical committed font copying. No baseline acceptance or frozen-font regeneration.",
+    "No Private/Fonts/HP action, main push/integration, workflow dispatch, deployment, publication or scheduling change."
+  ],
+  "evidence_directory": "review-hourly-2026-10-26-sefaria-evidence",
+  "raw_evidence_preserved": "/workspace/scratch/review-hourly-20261026-sefaria/raw-evidence",
+  "remote_main_observed_before_receipt": "ee700b4713ea242e5d27f18bdff3093756df97d7",
+  "remaining_review_window_at_observation": null
+}
