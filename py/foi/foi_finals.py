@@ -14,6 +14,7 @@ from foi import tsinnorit_explanations as tsinnorit_e
 from foi import ole_yored_explanations as ole_yored_e
 from foi import sec_yyy_explanations as sec_merk_e
 from foi import dml_an_explanations as dml_e
+from foi import doc_note_notation_explanations as doc_note_notation_e
 from foi import kq_simple_explanations as kq_simple_e
 from foi import kq_complex_explanations as kq_complex_e
 from foi import mtgmtg_explanations as mtgmtg_e
@@ -94,14 +95,17 @@ def _write_index_dot_html(outspecs):
 
 def _write_finals3(args_foi, all_fois, outspec):
     outfile_stem, foi_paths = outspec
-    outs = {"rowdics": [], "html_tables": {}}
+    # Every path gets a table, in sorted order, so that a declared category with no
+    # rows keeps its section.
+    html_tables = {tuple(foi_path): [] for foi_path in sorted(foi_paths)}
+    outs = {"rowdics": [], "html_tables": html_tables}
     for foi_path in sorted(foi_paths):
         for foi_struct in all_fois[foi_path]:
             fpfs = foi_path, foi_struct
             _make_final_for_foi_struct(fpfs, outs)
     if outfile_stem == "mtgmtg":
         mtgmtg_e.validate_quoted_mam_atoms(outs["rowdics"])
-    _write_json(args_foi, outfile_stem, outs["rowdics"])
+    _write_json(outfile_stem, outs["rowdics"])
     _write_html(args_foi, outfile_stem, outs["html_tables"])
 
 
@@ -190,10 +194,8 @@ def _my_td(key, htseq_or_str_or_none):
     return mb_html.table_datum(htseq_or_str_or_none, td_attrs)
 
 
-def _write_json(args_foi, outfile_stem, rowdics):
-    if not rowdics:
-        assert args_foi
-        return
+def _write_json(outfile_stem, rowdics):
+    # Only a declared stem reaches here with no rows; its JSON is then [].
     out_path = _out_path_for_json(outfile_stem)
     file_io.json_dump_to_file_path(rowdics, out_path)
 
@@ -258,6 +260,8 @@ def _get_html_body1_and_2(outfile_stem, html_tables):
 
 
 def _html_for_section(head, trs):
+    if not trs:  # A declared category with no rows has no table.
+        return head
     return head + [mb_html.table(trs, {"class": "border-collapse"})]
 
 
@@ -309,6 +313,8 @@ def _escape_space(id_str):
 def _intro_contents(sfp, part_n, the_id):
     anc = mb_html.anchor_h("#", f"#{the_id}")  # self-anchor
     sfp_cs_q = f"{sfp}: " if sfp else ""  # cs: colon space; q: maybe
+    if part_n is None:  # A declared category with no rows
+        return [anc, " ", f"{sfp_cs_q}None are found."]
     return [anc, " ", f"{sfp_cs_q}Immediately below, ", *part_n]
 
 
@@ -350,6 +356,7 @@ def _label_explanation_para(tuple_foi_path, explanation):
 _EXPLANATIONS = {
     "alef-dual-ml-alef-first": dml_e.EXPLANATIONS_DML_A1,
     "alef-dual-ml-alef-second": dml_e.EXPLANATIONS_DML_A2,
+    "doc-note-notation": doc_note_notation_e.explanation_for_path,
     "kq-simple": kq_simple_e.explanation_for_path,
     "kq-complex": kq_complex_e.explanation_for_path,
     "mtgmtg": mtgmtg_e.explanation_for_path,
@@ -372,6 +379,7 @@ _EXPLANATIONS = {
 _OVERALL_EXPLANATIONS = {
     "alef-dual-ml-alef-first": dml_e.OVERALL_EXPLANATION_DML_A1,
     "alef-dual-ml-alef-second": dml_e.OVERALL_EXPLANATION_DML_A2,
+    "doc-note-notation": doc_note_notation_e.OVERALL_EXPLANATION,
     "kq-simple": kq_simple_e.OVERALL_EXPLANATION,
     "kq-complex": kq_complex_e.OVERALL_EXPLANATION,
     "mtgmtg": mtgmtg_e.OVERALL_EXPLANATION,
@@ -402,9 +410,13 @@ def _section_heads(outfile_stem, tuple_foi_path, len_trs):
         )
         the_1st = f"the first {tup1[0]} of {tup1[1]} are shown."
         part1 = [the_1st, *part1b]
-    else:
+    elif len_trs:
         count1 = len_trs
         part1 = [f"all {len_trs} are shown."]
+        part2 = None
+    else:  # A declared category with no rows
+        count1 = 0
+        part1 = None
         part2 = None
     head1a = [_intro(tuple_foi_path, part1)]
     head1b = _head1b(tuple_foi_path)

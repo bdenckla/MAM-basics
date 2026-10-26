@@ -19,6 +19,7 @@ from foi import foi_finals
 from foi import foi_struct as fct
 from foi.foi_find_wt_fois_for_1_bk import find_wt_fois_for_1_bk
 
+from foi import foiz_wt_doc_note_notation as foi_doc_note_notation
 from foi import foiz_wt_dual_ml_alef as foi_dual_ml_alef
 from foi import foiz_wt_kq_1 as foi_kq_1
 from foi import foiz_wt_kq_2 as foi_kq_2
@@ -70,13 +71,27 @@ def _fois_funs_for_wt(clargs_foi):
     return _WIKITEXT_FOIS_FNS
 
 
+def _declared_foi_paths(clargs_foi):
+    clargs = [clargs_foi] if clargs_foi else _WIKITEXT_CLARGS
+    return [
+        foi_path
+        for clarg in clargs
+        for foi_path in _DECLARED_FOI_PATHS_FOR_CLARG.get(clarg, ())
+    ]
+
+
 def _make_intermediates(foi, single_threaded, books_mpu):
     all_fois = fct.make_empty_all_fois()
     _do_wikitext_features_of_interest(foi, single_threaded, books_mpu, all_fois)
+    # A declared category keeps its section, and its stem keeps its page, even with
+    # no rows.  Only the FOIs that ran declare theirs, so a --foi run of another FOI
+    # never writes a declared FOI's page.
+    fct.declare_foi_paths(all_fois, _declared_foi_paths(foi))
     return all_fois
 
 
 _WIKITEXT_FOIS_FUN_FOR_CLARG = {
+    "args-foi-doc-note-notation": foi_doc_note_notation.find_fois_wt,
     "args-foi-dual-ml-alef": foi_dual_ml_alef.find_fois_wt,
     "args-foi-kq-1": foi_kq_1.find_fois_wt,
     "args-foi-kq-2": foi_kq_2.find_fois_wt,
@@ -97,6 +112,10 @@ _WIKITEXT_FOIS_FUN_FOR_CLARG = {
 }
 _WIKITEXT_CLARGS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.keys())
 _WIKITEXT_FOIS_FNS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.values())
+# The foi_paths of the FOIs whose categories appear even when they have no rows.
+_DECLARED_FOI_PATHS_FOR_CLARG = {
+    "args-foi-doc-note-notation": foi_doc_note_notation.FOI_PATHS,
+}
 
 
 def almost_main(foi=None, single_threaded=False):
