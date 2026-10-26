@@ -356,7 +356,6 @@ def _label_explanation_para(tuple_foi_path, explanation):
 _EXPLANATIONS = {
     "alef-dual-ml-alef-first": dml_e.EXPLANATIONS_DML_A1,
     "alef-dual-ml-alef-second": dml_e.EXPLANATIONS_DML_A2,
-    "doc-note-notation": doc_note_notation_e.explanation_for_path,
     "kq-simple": kq_simple_e.explanation_for_path,
     "kq-complex": kq_complex_e.explanation_for_path,
     "mtgmtg": mtgmtg_e.explanation_for_path,
