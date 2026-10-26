@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-26",
+  "host": "saved portable cloud environment",
+  "source_commit": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "receipt_parent": "f0162355445de9a6dbf34df3fd58e1fd693b5d15",
+  "receipt_branch": "review-nightly-20261026-cloud-receipts",
+  "review": "Reconciled the supplied latest isolated receipt. Main equals reviewed-through; no new endpoint window and no repeated earlier review.",
+  "stages": [
+    {
+      "name": "basics-mega",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "started_utc": "2026-10-26T06:05:58.429730+00:00",
+      "completed_utc": "2026-10-26T06:13:53.929257+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 475.487,
+      "tracked_diff_before": false,
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "allowed_committed_input_ids": [
+        "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+        "3daea2b370398bd093560dbf5b4efb8916301463"
+      ]
+    },
+    {
+      "name": "basics-suite",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "started_utc": "2026-10-26T06:14:24.220074+00:00",
+      "completed_utc": "2026-10-26T06:19:45.598824+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 321.367,
+      "tracked_diff_before": false,
+      "changed_paths": [],
+      "allowed_committed_input_ids": [
+        "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+        "3daea2b370398bd093560dbf5b4efb8916301463"
+      ]
+    }
+  ],
+  "result": {
+    "short": "mega exit 0 in 475.487 s, all 60 steps/no skips; full suite exit 0 in 321.367 s: 1099 passed, 5 established skips, 82 subtests passed; eight explained SVG geometry/Times-alias differences preserved and reversed",
+    "detail": "All 60 maintained mega steps and SVG renders completed. All non-SVG generated content reproduces. Fresh XML comparison of all eight SVGs permits only coordinates/dimensions/geometry and the known Times New Roman,serif to Times,serif alias; every other element, attribute, text, tail, link and comment agrees. Exact committed/generated files, hashes and complete patch are preserved privately. The verified patch was reverse-applied before the suite, which began clean and left no tracked changes. Pytest reports 1099 passed, 5 skipped, 82 subtests passed in 318.54 s; process duration is 321.367 s. The established skips are koren_ex_elyon, simtan_dt_taxton, simtiq_dt_taxton, simtiq_ex_elyon and simtiq_ex_taxton; each diverges from its Wikisource strand and needs an agreeing control page. No source defect or repair was established."
+  },
+  "main_observed_at_receipt_preparation": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "main_still_matches_tested_source": true,
+  "limits": [
+    "No editorial/manuscript or browser judgment",
+    "No source repair, main push/integration, workflow dispatch, deployment, publication, baseline acceptance or frozen-font regeneration",
+    "No broad result claimed for receipt-tree code or later main; prior failures and isolated repair dispositions unchanged"
+  ]
+}
