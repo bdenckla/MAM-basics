@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-26",
+  "reviewed_window": {
+    "from": "4490e668dc168b598010dd2250878defc88830c1",
+    "through": "629218d2f44c006f36eeb0dcb16e8eacdd052a41",
+    "commits": 2,
+    "paths": 83
+  },
+  "receipt_parent": "0f7314624d37086b307072baaad3217045b7242c",
+  "findings": "No consequential product defect confirmed; no production repair.",
+  "stages": [
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/changed-python-format.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "py/author_misc/mam4sef_ajf_index.py",
+        "py/author_misc/mam4sef_common.py",
+        "py/author_misc/mam4sef_index.py",
+        "py/author_misc/mam4sef_unicode_names_index.py",
+        "py/author_site/post_stress_meteg.py",
+        "py/boj_paths.py",
+        "py/boj_render/two_col_css_styles_a.py",
+        "py/intro_doc_audit/human_review.py",
+        "py/main_0_mega.py",
+        "py/main_authored.py",
+        "py/main_clc_ruby_review.py",
+        "py/main_mam_simple.py",
+        "py/mb_diff_mpu/mpplus_assets.py",
+        "py/mb_misc/report_stylesheet.py",
+        "py/near_aleppo/doc_investigation.py",
+        "py/near_aleppo/doc_style.py",
+        "py/near_aleppo/main_html_pages.py",
+        "py/phonetic_mam/publication.py",
+        "py/phonetic_mam/renderer.py",
+        "py/py_html/taamey_d_assets.py",
+        "py/py_render/uc_html.py",
+        "py/subcommands/diff_mpplus.py",
+        "py/tests/test_diff_mpplus_unpinned_latest.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_sibling_reach.py",
+        "py/versification_and_cantillation/generate_doc.py",
+        "py/yeivin_itm/publication.py",
+        "py/yeivin_itm/renderer.py"
+      ],
+      "cwd": ".",
+      "started_utc": "2026-10-26T23:29:02.647179+00:00",
+      "completed_utc": "2026-10-26T23:29:03.125000+00:00",
+      "seconds": 0.478,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/independent-asset-checks.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261026-shared-release/test_asset_review.py",
+        "py/tests/test_versification_and_cantillation_doc.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+      "started_utc": "2026-10-26T23:26:17.699047+00:00",
+      "completed_utc": "2026-10-26T23:26:18.200635+00:00",
+      "seconds": 0.502,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/investigation-diagnosis.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261026-shared-release/test_asset_review.py::test_investigation_reproduces",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+      "started_utc": "2026-10-26T23:26:33.417417+00:00",
+      "completed_utc": "2026-10-26T23:26:33.641970+00:00",
+      "seconds": 0.225,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/investigation-pipeline-check.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261026-shared-release/test_asset_review.py::test_investigation_reproduces",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+      "started_utc": "2026-10-26T23:26:42.871479+00:00",
+      "completed_utc": "2026-10-26T23:26:43.089615+00:00",
+      "seconds": 0.218,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/phonetic-render.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_phonetic_mam.py",
+        "render"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+      "started_utc": "2026-10-26T23:25:11.566382+00:00",
+      "completed_utc": "2026-10-26T23:25:40.316642+00:00",
+      "seconds": 28.75,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/sefaria-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-for-sefaria-doc"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+      "started_utc": "2026-10-26T23:26:53.283075+00:00",
+      "completed_utc": "2026-10-26T23:27:01.825737+00:00",
+      "seconds": 8.543,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "record": "review-hourly-2026-10-26-shared-font-evidence/shared-font-focused-tests.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_shared_html_styles.py",
+        "py/tests/test_diff_mpplus_unpinned_latest.py",
+        "py/tests/test_yeivin_itm.py",
+        "py/tests/test_phonetic_display_release.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+      "started_utc": "2026-10-26T23:24:14.572936+00:00",
+      "completed_utc": "2026-10-26T23:24:58.800143+00:00",
+      "seconds": 44.227,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "processes": "No competing review/check process at start. All 13 recorded stages across both repositories were synchronously awaited and their recorded intervals do not overlap.",
+  "source_status": "Every focused stage ended with zero tracked differences.",
+  "limits": [
+    "Focused checks only; broad-tested anchor retained unchanged.",
+    "No main/shared integration, deployment/dispatch, publish command, font build, frozen-font regeneration or baseline acceptance.",
+    "No MAM-private file or font pin changed.",
+    "This receipt branch continues maintained history; its code checkout is not the tested source."
+  ],
+  "remote_before_receipt": {
+    "main": "629218d2f44c006f36eeb0dcb16e8eacdd052a41",
+    "prior_receipt": "0f7314624d37086b307072baaad3217045b7242c"
+  },
+  "remaining_window_at_receipt_preparation": null,
+  "runtime_inputs": "The selected checks/renderers use tracked files in this exact Basics checkout; no sibling runtime inputs.",
+  "font_input": {
+    "version": "0.921",
+    "sha256": "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474",
+    "recorded_upstream_source": "40115a364a4e05f610cbd4e6a0abb76fd72b7dab",
+    "old_identical_copies": 17,
+    "current_copies": 1
+  },
+  "comparisons": [
+    "25 maintained tests passed, zero skips: all published linked/inline CSS dependencies resolve, one root WOFF2, registered differential report regeneration and standalone packages match, Yeivin generation/assets and public Phonetic release checks pass.",
+    "Independent run: 8 passed, 55 subtests passed, 1 scratch comparison failed; diagnosis repeated only that check and confirmed omission of existing link-presentation postprocessing. After including the actual pipeline step, only that check reran and passed. No production change.",
+    "All 17 previous font blobs equal the canonical bytes; 9 support assets equal generated mappings and both moved same-host source links resolve. The three changed published HTML files differ only in font/source references; no visible text/data change.",
+    "Focused near-Aleppo investigation render (including existing link-presentation) and evidence images reproduce; shared/standalone UXLC report asset paths and standalone font bytes verified.",
+    "Phonetic render and all three Sefaria documentation pages reproduce with zero tracked differences. The five maintained versification documentation checks and 55 subtests pass.",
+    "Black --check passes all 28 changed Python files; endpoint git diff --check passes."
+  ],
+  "published_html_pages_checked": 1675,
+  "failures": [
+    {
+      "stage": "independent-asset-checks",
+      "cause": "Scratch helper compared an intermediate near-Aleppo page before existing link-presentation postprocessing.",
+      "result": "8 passed, 1 failed, 55 subtests passed; tracked tree unchanged."
+    },
+    {
+      "stage": "investigation-diagnosis",
+      "cause": "Same intermediate-page mismatch, now preserved as exact diff and generated bytes.",
+      "result": "1 failed; no product defect."
+    },
+    {
+      "stage": "investigation-pipeline-check",
+      "result": "Corrected comparison passed alone; 1 passed."
+    }
+  ],
+  "licensing_scope": "Reviewed changed declarations against moved assets and unchanged font/support bytes. Existing upstream terms, source archive and exact-build limitation remain; no new licensing/publication conclusion or grant invented."
+}

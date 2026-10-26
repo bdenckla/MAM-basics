@@ -12,9 +12,9 @@ with that session; this run created no automation.
 | Anchor | Commit/result |
 | --- | --- |
 | Adopted baseline | `d66a3faf1403e945a0f41e5d25c86c3ac72b871f` |
-| Reviewed through | `4490e668dc168b598010dd2250878defc88830c1`; endpoint from `fab8bd0a886d623c4fd6b2a324594f8aee19af87` is an 11-line plan completion record only; connector-screened, no consequential defect or deeper review needed. |
+| Reviewed through | `629218d2f44c006f36eeb0dcb16e8eacdd052a41`; shared font consolidation reviewed against `4490e668dc168b598010dd2250878defc88830c1`; focused asset/generator comparisons, no consequential defect or repair. |
 | Last tested | `926a6e785be4236673ac4a5c8c34afe63ed417f4`; October 26 cloud nightly: mega exit 0 in 475.487 s, all 60 steps/no skips; full suite exit 0 in 321.367 s: 1099 passed, 5 established skips, 82 subtests passed; eight explained SVG geometry/Times-alias differences preserved and reversed. [Compact receipt](review-nightly-2026-10-26.json) |
-| Last focused checked | `fab8bd0a886d623c4fd6b2a324594f8aee19af87`; three generated pages reproduce; both maintained checks and 53-cell comparison pass, and guard check passes alone after scratch adapter correction. [Receipt](review-hourly-2026-10-26-prose-font.json). Broad-tested and earlier results unchanged. |
+| Last focused checked | `629218d2f44c006f36eeb0dcb16e8eacdd052a41`; 25 maintained tests pass; 8 further checks and 55 subtests pass, with the remaining scratch comparison passing alone after the omitted link-presentation stage was included. Phonetic/Sefaria output reproduces. [Receipt](review-hourly-2026-10-26-shared-font.json). Broad-tested anchor unchanged. |
 
 Run from an isolated repository root with its home clone's interpreter: `py/main_0_mega.py`,
 then `py/main_test.py`. Use each required private sibling's recorded committed checkout;
@@ -256,3 +256,5 @@ Pages workflow was read and is manual-only; no dispatch or publication is author
 or performed by this record. No executable, generated output, data or policy change,
 so no deeper investigation, executor, regeneration or test run was needed. Owner-reported
 checks are not claimed as ours. Prior focused and broad-tested anchors remain unchanged.
+
+Hourly focused review, 2026-10-26: continued `0f7314624d37086b307072baaad3217045b7242c` and closed only `4490e668dc168b598010dd2250878defc88830c1` through `629218d2f44c006f36eeb0dcb16e8eacdd052a41` (two commits / 83 paths). Shared asset resolution, unchanged 0.921 bytes, source-link reachability, standalone packaging and focused Phonetic/Yeivin/Sefaria/near-Aleppo/versification comparisons pass. The scratch near-Aleppo comparison initially omitted the existing link-presentation stage; its diagnostic failure and corrected one-check pass are retained. No consequential defect or repair; license wording was assessed only against existing declarations and moved bytes. [Compact receipt](review-hourly-2026-10-26-shared-font.json) records actual commands, failures, zero skips, output comparisons and limits. All stages across both repositories were awaited sequentially. Broad-tested anchor, prior failures and receipt history remain unchanged. This new isolated receipt branch contains no integration, deployment, font generation or baseline acceptance; its code tree is not the tested source.

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_phonetic_mam.py",
+    "render"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+  "started_utc": "2026-10-26T23:25:11.566382+00:00",
+  "completed_utc": "2026-10-26T23:25:40.316642+00:00",
+  "seconds": 28.75,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

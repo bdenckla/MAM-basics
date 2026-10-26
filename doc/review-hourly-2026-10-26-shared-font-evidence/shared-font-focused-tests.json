@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "py/tests/test_shared_html_styles.py",
+    "py/tests/test_diff_mpplus_unpinned_latest.py",
+    "py/tests/test_yeivin_itm.py",
+    "py/tests/test_phonetic_display_release.py",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+  "started_utc": "2026-10-26T23:24:14.572936+00:00",
+  "completed_utc": "2026-10-26T23:24:58.800143+00:00",
+  "seconds": 44.227,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

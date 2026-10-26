@@ -1,0 +1,20 @@
+{
+  "investigation-pipeline-check.json": "8945787fd4879cf654365bec19edd768e5d8678f750e979693b18d2dfbe66b7a",
+  "investigation.diff": "48437bc7fe71fcd826e648a38f070a729f35ccbb9b5b4790f36fac7e9345d5d4",
+  "changed-python-format.log": "701f5c3d269a9545572080b8794268af58c93174ca4788505afcc48200ede337",
+  "shared-font-focused-tests.json": "1f77bfa51a4b1d74cfa2b90dc688861dbaf957d15cadf2cb1db440d72a151990",
+  "phonetic-render.json": "258f646e4a5bc4d23d5e00a07f29429f2a13783c6f0e14aa6c5f8d1068b7c1e5",
+  "investigation-pipeline-check.log": "5b19689a97d618d5cdfce632de67285a8efa3c57100a80350a5bb7ca9e05ae34",
+  "independent-asset-checks.log": "2b901b51af208ca95a197d62d716d805ca62a96498ac3842e33255ee52a3668a",
+  "investigation-diagnosis.log": "8bd8c48ade9c7fb73df59d7a2d6957738364e43b12468062c008fc15e7217574",
+  "investigation-generated.html": "fd12b73c2f90f8e3ec610a72583e12876753c35bf68d597fdcd3f78b54581966",
+  "sefaria-regeneration.log": "d908fc8e47967ba4aea62b455152aef9747fde817b10ad31560fb5c70bcd3db4",
+  "phonetic-render.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "shared-font-focused-tests.log": "7a83bc9f219b418c97ef27fe14f4a3aec2d81ced118a49e77e8592f73e97673d",
+  "sefaria-regeneration.json": "0fc0c7df839407d17ebcba39e62f88d6d089805a6999d60c1f4725a89d542d2d",
+  "independent-asset-checks.json": "edded44709b31e4e584f921018e6e3e97562e7a1977e5b6dc611d6bcb789c7bb",
+  "changed-python-format.json": "5ad925a5e3410e660f00b57dfb22215d7f194b87441d464283da5c06152e11ad",
+  "investigation-diagnosis.json": "515dbb89c59cdeae7d050a932523eae8c398ee6855a7f82f414a82d13f1a0d52",
+  "test_asset_review.py": "4cb655d9af8bc0ec27f1b27a378b85e27d0a15ea672040ea2547e27b655f81d5",
+  "test_asset_review.initial.py": "95c5af006d6d77cbf31a35b19f178842093d4e64ed6d2ac649743a1233295186"
+}

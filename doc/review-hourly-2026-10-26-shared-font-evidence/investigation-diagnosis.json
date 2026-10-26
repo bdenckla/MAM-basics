@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "/workspace/scratch/review-hourly-20261026-shared-release/test_asset_review.py::test_investigation_reproduces",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+  "started_utc": "2026-10-26T23:26:33.417417+00:00",
+  "completed_utc": "2026-10-26T23:26:33.641970+00:00",
+  "seconds": 0.225,
+  "exit_code": 1,
+  "tracked_status_after": ""
+}

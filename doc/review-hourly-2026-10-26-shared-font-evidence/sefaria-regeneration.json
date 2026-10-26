@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_authored.py",
+    "gen-mam-for-sefaria-doc"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+  "started_utc": "2026-10-26T23:26:53.283075+00:00",
+  "completed_utc": "2026-10-26T23:27:01.825737+00:00",
+  "seconds": 8.543,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

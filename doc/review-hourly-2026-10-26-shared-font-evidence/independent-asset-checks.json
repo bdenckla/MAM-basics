@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "/workspace/scratch/review-hourly-20261026-shared-release/test_asset_review.py",
+    "py/tests/test_versification_and_cantillation_doc.py",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-shared-release/basics-source",
+  "started_utc": "2026-10-26T23:26:17.699047+00:00",
+  "completed_utc": "2026-10-26T23:26:18.200635+00:00",
+  "seconds": 0.502,
+  "exit_code": 1,
+  "tracked_status_after": ""
+}
