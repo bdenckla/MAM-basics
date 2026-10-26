@@ -132,4 +132,15 @@ and Ruff; `git diff --cached --check`; the fourteen test files, 59 passed. The s
 found unpointed Hebrew under `lang="hbo"` only in lifted forms, and none in prose. The mega and
 the suite are left to the nightly run. The Pages workflow was not started.
 
+## 2026-10-26: Ben's review is finished
+
+Written by Claude (Opus 5.5) on 2026-10-26, in the same session. Ben finished reviewing the three
+pages as of `fab8bd0a` and asked for no further change, writing, verbatim: "I'm satisfied with all
+three pages, mainly because I don't care that much about the AJF page or the abbreviations." Of
+the Pages dispatch he wrote, verbatim: "Will handle that separately, perhaps leaving to nightly".
+
+As of this entry no dispatch has been made, so the site does not yet have the three pages:
+`.github/workflows/pages.yml` runs only when dispatched, and the nightly checks of
+`doc/review-trial.md` dispatch no workflow.
+
 State of the plan: executed 2026-10-26, as revised here.
