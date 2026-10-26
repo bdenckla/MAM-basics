@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    ".novc/hourly/test_font_style.py::test_prose_style_and_guard_follow_actual_fragments",
+    "-q",
+    "-ra"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-font-style/basics-source",
+  "started_utc": "2026-10-26T18:19:20.848826+00:00",
+  "completed_utc": "2026-10-26T18:19:21.093486+00:00",
+  "seconds": 0.245,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

@@ -1,0 +1,118 @@
+"""Focused document differential and guard probes from actual generated fragments."""
+
+import copy
+from html.parser import HTMLParser
+import json
+from pathlib import Path
+import re
+import subprocess
+
+import pytest
+
+from mb_cmn import paths
+from mb_misc import mb_html
+from author_misc import mam4sef_common as subject
+
+ROOT = paths.repo_root()
+FILES = ["gh-pages/MAM-for-Sefaria/index.html", "gh-pages/MAM-for-Sefaria/unicode-names/index.html", "gh-pages/MAM-for-Sefaria/ajf/index.html"]
+LETTERS = re.compile(r"[\u05d0-\u05ea\u05c6]")
+MARKS = re.compile(r"[\u0591-\u05bd\u05bf\u05c1-\u05c5\u05c7\u034f]")
+TOKENS = re.compile(r"[\u05d0-\u05ea\u0591-\u05c7\u034f]+")
+CLUSTERS = re.compile(r"[\u05d0-\u05ea][\u0591-\u05bd\u05bf\u05c1-\u05c5\u05c7\u034f]+")
+RESULT = {}
+
+
+class Tree(HTMLParser):
+    def __init__(self, source):
+        super().__init__(convert_charrefs=True)
+        self.root = {"tag": "root", "attrs": {}, "kids": []}
+        self.stack = [self.root]
+        self.feed(source)
+        self.close()
+        assert len(self.stack) == 1
+
+    def handle_starttag(self, tag, attrs):
+        node = {"tag": tag, "attrs": dict(attrs), "kids": []}
+        self.stack[-1]["kids"].append(node)
+        if tag not in {"meta", "link", "br", "hr", "img", "input"}:
+            self.stack.append(node)
+
+    def handle_endtag(self, tag):
+        assert self.stack[-1]["tag"] == tag
+        self.stack.pop()
+
+    def handle_data(self, data):
+        self.stack[-1]["kids"].append(data)
+
+
+def text(node):
+    if isinstance(node, str):
+        return node
+    if node["tag"] == "br":
+        return "\n"
+    return "".join(map(text, node["kids"]))
+
+
+def nodes(node):
+    if isinstance(node, str):
+        return
+    yield node
+    for kid in node["kids"]:
+        yield from nodes(kid)
+
+
+def htel(node):
+    if isinstance(node, str):
+        return node
+    return mb_html.htel_mk(node["tag"], node["attrs"] or None, [htel(kid) for kid in node["kids"]] or None)
+
+
+def norm_layout(value):
+    return re.sub(" +", " ", re.sub(r"[\r\n\t]", " ", value)).strip(" ")
+
+
+def test_lifted_example_cells_preserved_and_one_font():
+    counts = {}
+    for relative in FILES:
+        old = Tree(subprocess.check_output(["git", "show", f"c6701099fd146832cb74a523d549a0e4c09c97b1:{relative}"]).decode())
+        new = Tree((ROOT / relative).read_text(encoding="utf-8"))
+        def cells(tree):
+            return [node for node in nodes(tree.root) if node["tag"] == "td" and node["attrs"].get("lang") == "hbo"]
+        old_cells, new_cells = cells(old), cells(new)
+        assert new_cells
+        assert [norm_layout(text(node)) for node in old_cells] == [norm_layout(text(node)) for node in new_cells]
+        assert all(node["attrs"].get("dir") == "rtl" for node in new_cells)
+        assert all(not child["attrs"].get("style") for node in new_cells for child in nodes(node))
+        counts[relative] = len(new_cells)
+    RESULT["preserved_lifted_cells"] = counts
+    RESULT["comparison"] = "All 53 cells retain their ordered example text, including exact Hebrew marks, thin/no-break spaces and unpointed parts. Only ASCII layout whitespace is collapsed for this comparison."
+
+
+def test_prose_style_and_guard_follow_actual_fragments():
+    candidates = []
+    pointed = None
+    for relative in FILES:
+        tree = Tree((ROOT / relative).read_text(encoding="utf-8"))
+        subject._guard_unpointed_hbo([htel(kid) for kid in tree.root["kids"]])
+        for node in nodes(tree.root):
+            value = text(node)
+            if node["tag"] == "bdi" and LETTERS.search(value) and not MARKS.search(value):
+                assert node["attrs"].get("lang") != "hbo"
+                candidates.append(node)
+            if node["tag"] == "td" and node["attrs"].get("lang") == "hbo":
+                if match := CLUSTERS.search(value):
+                    pointed = match.group()
+    assert candidates and pointed
+    for node in candidates:
+        changed = copy.deepcopy(node)
+        changed["attrs"]["lang"] = "hbo"
+        with pytest.raises(ValueError, match="unpointed Hebrew"):
+            subject._guard_unpointed_hbo(htel(changed))
+    joined = mb_html.bdi([pointed[0], mb_html.span_c(pointed[1:], "attention")], {"lang": "hbo"})
+    subject._guard_unpointed_hbo(joined)
+    separated = mb_html.bdi([pointed[0], mb_html.line_break(), pointed[1:]], {"lang": "hbo"})
+    with pytest.raises(ValueError, match="unpointed Hebrew"):
+        subject._guard_unpointed_hbo(separated)
+    RESULT["unpointed_prose_fragments_rejected_when_restyled"] = len(candidates)
+    RESULT["inline_join_and_br_boundary"] = "Actual pointed fragment passes across an inline span; insertion of a line break makes its isolated base fail."
+    (ROOT / ".novc/hourly/style-result.json").write_text(json.dumps(RESULT, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

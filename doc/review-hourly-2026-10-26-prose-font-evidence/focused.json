@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "py/tests/test_sefaria_silluq_documentation.py",
+    "py/tests/test_shared_html_styles.py",
+    ".novc/hourly/test_font_style.py",
+    "-q",
+    "-ra"
+  ],
+  "cwd": "/workspace/review-hourly-20261026-font-style/basics-source",
+  "started_utc": "2026-10-26T18:16:17.631939+00:00",
+  "completed_utc": "2026-10-26T18:16:32.015348+00:00",
+  "seconds": 14.383,
+  "exit_code": 1,
+  "tracked_status_after": ""
+}

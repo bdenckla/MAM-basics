@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-26",
+  "recorded_utc": "2026-10-26T18:25:04.923746+00:00",
+  "process_inventory_before_start": "No active review/test/generator job; only environment infrastructure and defunct Git children. Both home checkouts clean; four new isolated committed worktrees used.",
+  "all_expensive_stages_sequential": true,
+  "runtime_sibling_inputs": [],
+  "repairs": [],
+  "limits": [
+    "Focused evidence only; no full suite/mega or broad-tested advance.",
+    "No main/shared-branch push or integration, deployment, workflow dispatch, font generation, baseline acceptance or frozen regeneration.",
+    "No Private reader/font-pin change, manuscript judgment or new editorial/licensing decision."
+  ],
+  "remaining_window_at_freeze": null,
+  "review_start": "c6701099fd146832cb74a523d549a0e4c09c97b1",
+  "source_commit": "fab8bd0a886d623c4fd6b2a324594f8aee19af87",
+  "receipt_parent": "505af0986bf7a1dff8e5fcc3cebe2c75a664b306",
+  "receipt_branch": "review-hourly-20261026-font-style-receipts",
+  "committed_inputs": {
+    "all_public_page_data_and_font": "fab8bd0a886d623c4fd6b2a324594f8aee19af87"
+  },
+  "review": "Two commits / seven endpoint paths. Prose uses surrounding font, all lifted example cells retain the Hebrew font, and requested normalization columns are removed. Guard traversal and generated changes inspected. No consequential product defect or source repair.",
+  "stages": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-for-sefaria-doc"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-font-style/basics-source",
+      "started_utc": "2026-10-26T18:14:56.196675+00:00",
+      "completed_utc": "2026-10-26T18:15:05.148141+00:00",
+      "seconds": 8.951,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "py/tests/test_sefaria_silluq_documentation.py",
+        "py/tests/test_shared_html_styles.py",
+        ".novc/hourly/test_font_style.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-font-style/basics-source",
+      "started_utc": "2026-10-26T18:16:17.631939+00:00",
+      "completed_utc": "2026-10-26T18:16:32.015348+00:00",
+      "seconds": 14.383,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        ".novc/hourly/test_font_style.py::test_prose_style_and_guard_follow_actual_fragments",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026-font-style/basics-source",
+      "started_utc": "2026-10-26T18:19:20.848826+00:00",
+      "completed_utc": "2026-10-26T18:19:21.093486+00:00",
+      "seconds": 0.245,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "results": "Three pages regenerate with no tracked difference. Initial focused run: three passed (including both maintained tests and ordered text preservation of all 53 example cells), one scratch adapter failure, zero skips. The adapter incorrectly fed rendered whitespace to the authoring constructor; using the plain supported node representation corrects it. Only that check reran: one passed in 0.06 s, proving the guard rejects all 11 restyled unpointed prose fragments, joins pointed inline fragments and treats a line break as a boundary. No combined all-green invocation claimed. No source change.",
+  "guard_result": {
+    "unpointed_prose_fragments_rejected_when_restyled": 11,
+    "inline_join_and_br_boundary": "Actual pointed fragment passes across an inline span; insertion of a line break makes its isolated base fail."
+  },
+  "cheap_checks": "Black --check passes for the three changed Python files; source and receipt whitespace checks pass. Raw failure logs are preserved as gzip without editing their bytes.",
+  "broad_tested_unchanged": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "evidence_directory": "review-hourly-2026-10-26-prose-font-evidence"
+}

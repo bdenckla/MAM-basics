@@ -1,0 +1,4 @@
+{
+  "unpointed_prose_fragments_rejected_when_restyled": 11,
+  "inline_join_and_br_boundary": "Actual pointed fragment passes across an inline span; insertion of a line break makes its isolated base fail."
+}
