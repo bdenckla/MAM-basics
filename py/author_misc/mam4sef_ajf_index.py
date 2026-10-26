@@ -449,7 +449,7 @@ def _pin_claims(s) -> None:
 
 
 def gen_html_file():
-    """Write the page and its font, and return the page's path."""
+    """Write the page and return its path."""
     s = ms.survey()
     _pin_claims(s)
     cbody = [

@@ -41,7 +41,7 @@
 }
 @font-face {
   font-family: "Taamey D WOFF2";
-  src: url("woff2/Taamey_D.woff2");
+  src: url("../woff2/Taamey_D.woff2");
 }
 .case-fields { display: grid; grid-template-columns: max-content 1fr; gap: .1rem .7rem; }
 .case-field { display: contents; }

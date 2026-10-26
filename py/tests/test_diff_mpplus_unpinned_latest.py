@@ -11,6 +11,7 @@ import tempfile
 import unittest
 from unittest import mock
 
+from py_html import taamey_d_assets
 from subcommands import diff_mpplus
 
 
@@ -125,6 +126,10 @@ def test_registered_report_tree_declares_every_checked_artifact():
     expected = {"index.html"}
     shared_base = (directory / "../../report.css").resolve()
     assert shared_base.is_file(), shared_base
+    # The site's one copy of the font, beside the shared base; generation never writes it.
+    shared_font = (shared_base.parent / taamey_d_assets.FONT).resolve()
+    assert shared_font == taamey_d_assets.font_path().resolve(), shared_font
+    assert shared_font.is_file(), shared_font
     for name in [*(entry["name"] for entry in releases), "unpinned-latest"]:
         report = directory / f"{name}.html"
         serialized = directory / f"{name}.json"
@@ -149,10 +154,7 @@ def test_registered_report_tree_declares_every_checked_artifact():
                 fonts = re.findall(r'url\("([^\"]+\.woff2)"\)', css)
                 assert fonts, f"no Hebrew font declared by {asset}"
                 for font in fonts:
-                    font_path = (directory / font).resolve()
-                    assert font_path.is_relative_to(directory.resolve()), font
-                    assert font_path.is_file(), font
-                    expected.add(font)
+                    assert (directory / font).resolve() == shared_font, font
     index_assets = _ReportAssets()
     index_assets.feed((directory / "index.html").read_text(encoding="utf-8"))
     assert index_assets.assets == {"../../report.css", "style.css"}
@@ -178,8 +180,15 @@ def test_registered_outputs_match_real_regeneration():
 
 
 def test_standalone_release_reports_match_published_reports():
-    """Compare every registered release's standalone package with its published report."""
+    """Compare every registered release's standalone package with its published report.
+
+    The package differs from publication only in where its page finds the shared base
+    and where its stylesheet finds the font: in report-assets/ and woff2/ inside the
+    package, rather than at the site's root.
+    """
     published = Path(diff_mpplus.CHANGE_LOG_DIR)
+    site_font_url = b'url("../../' + taamey_d_assets.FONT.encode("ascii") + b'")'
+    bundle_font_url = b'url("' + taamey_d_assets.FONT.encode("ascii") + b'")'
     releases = json.loads(Path(diff_mpplus.RELEASES_JSON).read_text(encoding="utf-8"))[
         "releases"
     ]
@@ -207,12 +216,18 @@ def test_standalone_release_reports_match_published_reports():
                 .replace(b'href="../../report.css"', b'href="report-assets/report.css"')
             )
             assert (directory / f"{name}.html").read_bytes() == expected_html
-            for asset in (f"{name}.json", "style.css", "filter.js"):
+            for asset in (f"{name}.json", "filter.js"):
                 assert (directory / asset).read_bytes() == (
                     published / asset
                 ).read_bytes()
-            font = Path("woff2/Taamey_D.woff2")
-            assert (directory / font).read_bytes() == (published / font).read_bytes()
+            published_css = (published / "style.css").read_bytes()
+            assert published_css.count(site_font_url) == 1
+            assert (directory / "style.css").read_bytes() == published_css.replace(
+                site_font_url, bundle_font_url
+            )
+            assert (directory / taamey_d_assets.FONT).read_bytes() == (
+                taamey_d_assets.font_path().read_bytes()
+            )
             assert (directory / "report-assets" / "report.css").read_bytes() == (
                 published / "../../report.css"
             ).read_bytes()

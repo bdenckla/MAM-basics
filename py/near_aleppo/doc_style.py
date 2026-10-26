@@ -2,7 +2,7 @@
 
 The pages load document.css for English typography, then MAM-parsed's extension.
 This stylesheet adds the Hebrew examples, template notation and specialized
-tables. Pointed Hebrew uses 20pt Taamey D from the page set's font copy.
+tables. Pointed Hebrew uses 20pt Taamey D from the site's one copy of the font.
 Unpointed Hebrew inherits the surrounding text's default font and size.
 The HTML isolates bidirectional runs with bdi elements.
 """
@@ -18,7 +18,7 @@ _CSS_TEMPLATE = """\
 
 @font-face {
   font-family: "Taamey D";
-  src: url("woff2/Taamey_D.woff2") format("woff2");
+  src: url("../woff2/Taamey_D.woff2") format("woff2");
 }
 
 :root {

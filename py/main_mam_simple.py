@@ -243,7 +243,7 @@ def write_generated_docs():
     """Rewrite each doc this program generates, only where its content changed.
 
     The doc-only half of this program: gh-pages/MAM-simple/versification-differences.html,
-    gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and font,
+    gh-pages/MAM-simple/versification-and-cantillation.html with its CSS,
     and gh-pages/MAM-simple/index.html.  Public since 2026-09-10, when
     py/main_0_mega.py's mam-simple-docs step began calling it; that module's
     mam-simple step runs almost_main, which does not reach these docs.

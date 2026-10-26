@@ -977,7 +977,7 @@ Tracked in [#36](https://github.com/bdenckla/UXLC-utils/issues/36), closed.
 ## 8. Presentation / tech notes
 - Output is a static site under **`gh-pages/clc/`** (same pattern as `gh-pages/uxlc/amb-early-mtg/`
   and `gh-pages/uxlc/fois/`, and as MAM).
-- Reuse the Taamey font (`gh-pages/uxlc/woff2/Taamey_D.woff2`) and `gh-pages/uxlc/style.css`.
+- Reuse the Taamey font (`gh-pages/woff2/Taamey_D.woff2`) and `gh-pages/uxlc/style.css`.
 - Borrow MAM's 3-column CSS vocabulary (`mam-doc-*`) or define a parallel `clc-doc-*` set.
 - **Note-body placement (see §7.3):** short notes inline in the doc column, **long notes relegated
   to a separate "big-doc" page** (MAM-with-doc model, §5); the always-link points to wherever the

@@ -28,16 +28,11 @@ _OUTPUT_PATH = (
 # hand-authored shared gh-pages/document.css without rewriting that base.
 _CSS_SOURCE_PATH = Path(doc.__file__).with_name(doc.CSS_FILENAME)
 _CSS_OUTPUT_PATH = _OUTPUT_PATH.with_name(doc.CSS_FILENAME)
-# A third deployed file: the Hebrew font the CSS's @font-face names (issue #203, C1). The page's
-# payload is boundary words stripped to letters + accents, so it needs a font that renders those
-# accents — hence a self-hosted woff2, as our other Pages-served pages do, rather than a
-# system-font stack most visitors would not resolve. Deployed at the product path the CSS's
-# url("woff2/Taamey_D.woff2") resolves to; the former MAM-simple Pages tree had no binary asset before this.
-#
-# Copied verbatim from the canonical in-repo font, with full-byte comparison and
-# an explicit missing-source failure, as report_stylesheet.copy_report_font does.
-_WOFF2_SOURCE_PATH = paths.repo_root() / "doc" / "woff2" / "Taamey_D.woff2"
-_WOFF2_OUTPUT_PATH = _OUTPUT_PATH.parent / "woff2" / _WOFF2_SOURCE_PATH.name
+# The CSS's @font-face names a self-hosted Hebrew font (issue #203, C1). The page's payload is
+# boundary words stripped to letters + accents, so it needs a font that renders those accents,
+# rather than a system-font stack most visitors would not resolve. Its url,
+# "../woff2/Taamey_D.woff2", reaches the site's one copy of Taamey D,
+# gh-pages/woff2/Taamey_D.woff2, which no generator writes; so this module deploys no font.
 
 # The doc quotes Exodus and Numbers in the body, and Deuteronomy in the appendix (both
 # dual-cantillation Decalogue books; Numbers 25/26 is the non-Decalogue case).
@@ -53,40 +48,27 @@ def _css_source_text() -> str:
     return _CSS_SOURCE_PATH.read_text(encoding="utf-8")
 
 
-def _woff2_source_bytes() -> bytes:
-    # A missing source must fail loudly. Swallowing it would let check_output_matches() report
-    # "up to date" for a deployed page whose @font-face points at a file we never wrote.
-    return _WOFF2_SOURCE_PATH.read_bytes()
-
-
 def output_path():
     return _OUTPUT_PATH
 
 
 def check_output_matches() -> bool:
-    # Assign each, then combine — `return a and b and c` would short-circuit past the later
-    # checks, silently exempting the CSS and the font from the up-to-date test.
+    # Assign each, then combine — `return a and b` would short-circuit past the later
+    # check, silently exempting the CSS from the up-to-date test.
     html_matches = _matches(_OUTPUT_PATH, render_full_html())
     css_matches = _matches(_CSS_OUTPUT_PATH, _css_source_text())
-    woff2_matches = _matches_bytes(_WOFF2_OUTPUT_PATH, _woff2_source_bytes())
-    return html_matches and css_matches and woff2_matches
+    return html_matches and css_matches
 
 
 def write_output_if_changed() -> bool:
     # Likewise: assign each write, then combine, so `or` cannot skip a later one.
     html_changed = _write_if_changed(_OUTPUT_PATH, render_full_html())
     css_changed = _write_if_changed(_CSS_OUTPUT_PATH, _css_source_text())
-    woff2_changed = _write_bytes_if_changed(_WOFF2_OUTPUT_PATH, _woff2_source_bytes())
-    return html_changed or css_changed or woff2_changed
+    return html_changed or css_changed
 
 
 def _matches(path, expected: str) -> bool:
     return path.exists() and path.read_text(encoding="utf-8") == expected
-
-
-def _matches_bytes(path, expected: bytes) -> bool:
-    # Compare all bytes so a same-size but different font is detected.
-    return path.exists() and path.read_bytes() == expected
 
 
 def _write_if_changed(path, text: str) -> bool:
@@ -97,14 +79,4 @@ def _write_if_changed(path, text: str) -> bool:
     # directly so the Windows working tree matches and doesn't churn.
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8", newline="")
-    return True
-
-
-def _write_bytes_if_changed(path, data: bytes) -> bool:
-    # No newline= counterpart to _write_if_changed's: that is the text files' LF policy, and a
-    # byte copy is exempt from it (MAM-simple's .gitattributes marks *.woff2 binary).
-    if path.exists() and path.read_bytes() == data:
-        return False
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(data)
     return True

@@ -29,10 +29,9 @@ Hebrew on it has two vowels on one letter, except where the files have them, wit
 GRAPHEME JOINER between them that keeps their order.  The old page's table of Sefaria's earlier
 Exodus 20:4 had such a letter with no CGJ, and how it looked depended on the font.
 
-THE FONT.  The page loads ``woff2/Taamey_D.woff2`` beside it, a copy of ``doc/woff2/``'s that
-``mb_misc.report_stylesheet.copy_report_font`` keeps byte-identical, under the family name
-"Taamey D WOFF2", so a reader sees MAM-basics' Taamey D with nothing installed and no locally
-installed Taamey D takes its place.
+THE FONT.  The page's ``styles.css`` loads the site's one copy of Taamey D,
+``gh-pages/woff2/Taamey_D.woff2``, under the family name "Taamey D WOFF2", so a reader sees
+MAM-basics' Taamey D with nothing installed and no locally installed Taamey D takes its place.
 
 ``py/tests/test_sefaria_silluq_documentation.py`` parses the meteg-after-silluq table that
 ``_meteg_after_silluq`` writes, and checks it against MAM-simple and both exporters' handlers:
@@ -1189,7 +1188,7 @@ def _pin_claims(s) -> None:
 
 
 def gen_html_file():
-    """Write the page and its font, and return the page's path."""
+    """Write the page and return its path."""
     s = ms.survey()
     _pin_claims(s)
     cbody = [

@@ -65,14 +65,16 @@ verify the integrated local pages, not the deployed site.
 ## Font support
 
 `in/font-support/taamey-d-0.921/` holds the immutable source archive, license,
-copyright notice, and provenance for the frozen font. The pure
-`py_html.taamey_d_assets.product_font_assets` helper returns the font and its complete
-same-host support mapping together, without writing files. Each product publisher
-must copy the whole mapping and expose its font's `woff2/SOURCE.txt` link.
+copyright notice, and provenance for the frozen font. The font itself is the site's
+one copy, `gh-pages/woff2/Taamey_D.woff2`, which the pure
+`py_html.taamey_d_assets.site_font_assets` helper checks against its pin before
+returning the font's complete same-host support mapping, without writing files. Each
+publisher that links the font's `woff2/SOURCE.txt`, as the Phonetic MAM index does,
+must copy the whole mapping.
 
 The support package's input closure and source identities have been checked.
 An exact font rebuild has not been established. The Phonetic target includes the
-unchanged font and its complete same-host source-support tree together.
+font's complete same-host source-support tree.
 
 ## Public consumers and independent analysis
 

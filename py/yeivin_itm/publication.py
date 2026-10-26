@@ -4,13 +4,17 @@ import difflib
 from pathlib import Path
 
 from mb_cmn import paths as repo_paths
-from py_html.taamey_d_assets import product_font_assets
+from py_html.taamey_d_assets import site_font_assets
 from yeivin_itm import claim_schema, claims, paths, renderer, source_lint
 
 
 def assets():
-    """Return the shared family stylesheet and licensed font mapping."""
-    result = product_font_assets("yeivin-itm")
+    """Return the shared family stylesheet and the site font's support mapping.
+
+    The landing page links the site font's SOURCE.txt, so the publication carries
+    the complete set that stands beside the font.
+    """
+    result = site_font_assets()
     result["yeivin-itm/style.css"] = (
         Path(__file__).with_name("assets") / "style.css"
     ).read_bytes()

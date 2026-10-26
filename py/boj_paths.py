@@ -173,7 +173,7 @@ def gh_pages_dir() -> Path:
     """Published-HTML tree at MAM-basics' ``gh-pages/book-of-job`` subtree.
 
     The MAM-basics Pages workflow deploys its parent ``gh-pages`` tree. 517 of this
-    subtree's 696 files are PNGs that no program writes, so a full regeneration
+    subtree's 693 files are PNGs that no program writes, so a full regeneration
     rewrites a minority of it; see the Phase 4 execution record for the split.
     """
     return paths.gh_pages_dir() / "book-of-job"
@@ -184,10 +184,10 @@ def out_dir() -> Path:
 
     Six are written by ``main_gen_misc_authored_english_documents``; the seventh,
     ``cam1753_crops_path()`` below, was appended to by the manual crop-ingest step
-    until that step was deleted on 2026-09-26, and now has LF line endings like the other 183
-    text files among the 701 retained under ``gh-pages/book-of-job`` and
-    ``book-of-job/out``; the remaining 517 are binary, 515 PNG images and two WOFF2 fonts
-    (measured 2026-09-30 with ``git ls-files --eol``).
+    until that step was deleted on 2026-09-26, and now has LF line endings like the other 182
+    text files among the 700 retained under ``gh-pages/book-of-job`` and
+    ``book-of-job/out``; the remaining 517 are binary, all PNG images (measured 2026-10-26
+    with ``git ls-files --eol``).
     """
     return paths.repo_root() / "book-of-job" / "out"
 

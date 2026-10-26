@@ -17,7 +17,7 @@ body {
 /* MAM-basics' copy of Taamey D, under a family name no installed font has. */
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../woff2/Taamey_D.woff2");
 }
 *[lang="hbo"] {
     font-family: "Taamey D WOFF2";

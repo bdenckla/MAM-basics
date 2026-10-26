@@ -67,18 +67,32 @@ Published reports link to the root base. Temporary differential generation uses
 the same logical hrefs as publication. Explicit standalone outputs copy the base
 into `report-assets/report.css` inside their output directory. The separate
 directory keeps the base clear of specialty sheets even when several standalone
-reports share an output directory. Report fonts come
-from `doc/woff2/`, with a missing source treated as an error and full-byte
-comparison before copying.
+reports share an output directory. The font follows the same routing: a published
+report's stylesheet loads the site's one copy beside the root base, and an
+explicit standalone output copies that pinned file into `woff2/` inside its
+output directory.
 
 CSS font and image URLs resolve from the stylesheet's directory, not from the
 HTML page. Keep family-specific font URLs in their extensions when sharing a
 base across directories.
 
+## Hebrew font
+
+Every page that sets Hebrew in Taamey D loads one file,
+`gh-pages/woff2/Taamey_D.woff2`, through a relative URL from its stylesheet:
+`../woff2/Taamey_D.woff2` from a family directory such as `gh-pages/wlc/`, and
+`../../woff2/Taamey_D.woff2` from one level deeper. Like the root base, the font
+lives directly in the published tree, and no code writes it.
+`py/py_html/taamey_d_assets.py` pins its SHA-256. The Phonetic MAM and Yeivin ITM
+publishers write its `FONT-NOTICE.txt`, `GPL-2.0.txt` and `SOURCE.txt` beside it,
+and their landing pages link that `SOURCE.txt`. Pages under `doc/` that use the
+font reach the same file by a relative path into `gh-pages/woff2/`.
+
 ## Regeneration and verification
 
 Run the affected generators, then the mega and suite required by `AGENTS.md`.
 Changes to the hand-run OSIS generator also require `py/main_mam_osis.py`.
-`py/tests/test_shared_html_styles.py` checks local stylesheet and font references
+`py/tests/test_shared_html_styles.py` checks local stylesheet and font references,
+requires every published font reference and file to be the one Taamey D copy,
 and requires each shared base to load before its registered family extensions.
 Report differential checks also cover complete standalone asset bundles.

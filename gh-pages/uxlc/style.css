@@ -6,7 +6,7 @@
 }
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../woff2/Taamey_D.woff2");
 }
 span.cluster-highlight {
     background-color: light-dark(#f3e3a4, #5a4a1f);

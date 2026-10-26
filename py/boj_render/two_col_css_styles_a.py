@@ -7,7 +7,7 @@ AUTHORED_STYLES_STR = """
 }
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../woff2/Taamey_D.woff2");
 }
 em { font-style: normal; font-weight: bold; }
 img.maxwidth50pc { max-width: 50%; }

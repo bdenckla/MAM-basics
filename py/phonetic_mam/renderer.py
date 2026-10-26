@@ -57,7 +57,9 @@ def render_index():
         html.unordered_list(sections),
         html.horizontal_rule(),
         html.para(_link("Phonetic testsuites", "testsuites.html")),
-        html.para(html.anchor("Font license and source", {"href": "woff2/SOURCE.txt"})),
+        html.para(
+            html.anchor("Font license and source", {"href": "../woff2/SOURCE.txt"})
+        ),
         html.para(
             html.anchor(
                 [

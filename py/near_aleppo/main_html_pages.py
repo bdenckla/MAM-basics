@@ -4,8 +4,9 @@ Documentation figures come from the build's population file or are computed
 from local MAM, near-Aleppo and the Aleppo coverage index. The shared MAM-with-doc
 renderer writes the 39-book example edition and its long-note pages.
 
-The output tree is gh-pages/near-aleppo. Generation owns its complete contents
-except two hash-checked copies of Taamey D. Pages render entirely in memory before
+The output tree is gh-pages/near-aleppo. Generation owns its complete contents; the
+pages load the site's one copy of Taamey D from outside it, gh-pages/woff2/, which
+py/py_html/taamey_d_assets.py pins. Pages render entirely in memory before
 writing. Beside them it writes out/render-tags-unused/near-aleppo.json, the render tags
 the edition handles that no page uses. The public presentation ledger preserves
 source notes and reviewed clause dispositions, with each note's evidence hash and a
@@ -18,7 +19,6 @@ reviewed and equal to a fresh source enumeration.
 """
 
 import argparse
-import hashlib
 import json
 import posixpath
 import sys
@@ -45,12 +45,6 @@ from py_misc import ren_tag_survey as rts
 _SHARED_STYLESHEET = "../MAM-parsed/style.css"
 _STYLESHEET = "style.css"
 _EDITION = "edition/"
-_FONTS = ("woff2/Taamey_D.woff2", _EDITION + "woff2/Taamey_D.woff2")
-# The SHA-256 of MAM-basics' gh-pages/MAM-with-doc/woff2/Taamey_D.woff2, 21,148 bytes,
-# copied with git show at 732e9f124345306461336ee9873960d90d63b9b6. The file is the same
-# at the shared renderer's pin, bfab23cbfd0d1928892dd23aab31da826d8836b3, as the re-pin of
-# 2026-09-27 measured. Nothing here reads the font at the pin, so a re-pin compares it.
-_FONT_SHA256 = "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
 # The render tags the edition handles that no page uses, written beside the pages.
 _UNUSED_TAGS_REPORT = rts.unused_report_path("near-aleppo")
 
@@ -117,36 +111,20 @@ def _documentation_html(title, body, comment):
 
 
 def _unexpected(pages):
-    """The files in html-pages/ that are neither a page written here nor a font."""
+    """The files in html-pages/ that are not pages written here."""
     out_dir = build_paths.html_pages_dir()
     if not out_dir.is_dir():
         return []
-    owned = set(pages) | set(_FONTS)
     return sorted(
         path.relative_to(out_dir).as_posix()
         for path in out_dir.rglob("*")
-        if path.is_file() and path.relative_to(out_dir).as_posix() not in owned
+        if path.is_file() and path.relative_to(out_dir).as_posix() not in pages
     )
-
-
-def _font_problems():
-    problems = []
-    for name in _FONTS:
-        font = build_paths.html_pages_dir() / name
-        if not font.is_file():
-            problems.append(
-                f"missing {name}: copy it with git show "
-                "bfab23cb:gh-pages/MAM-with-doc/woff2/Taamey_D.woff2 from MAM-basics"
-            )
-        elif hashlib.sha256(font.read_bytes()).hexdigest() != _FONT_SHA256:
-            problems.append(f"{name} is not the pinned copy of MAM-basics' font")
-    return problems
 
 
 def write(pages, unused_tags):
     out_dir = build_paths.html_pages_dir()
     problems = [f"unexpected {name}" for name in _unexpected(pages)]
-    problems += _font_problems()
     if problems:
         raise AssertionError(f"{out_dir}: " + "; ".join(problems))
     for name, data in pages.items():
@@ -171,16 +149,12 @@ def check(pages, unused_tags):
     elif json.loads(_UNUSED_TAGS_REPORT.read_text(encoding="utf-8")) != unused_tags:
         problems.append(f"differs {_UNUSED_TAGS_REPORT}")
     problems += [f"unexpected {name}" for name in _unexpected(pages)]
-    problems += _font_problems()
     if problems:
         print(f"The pages in {out_dir} are not current:")
         for problem in problems:
             print(f"  {problem}")
         return 1
-    print(
-        f"The pages in {out_dir} are current ({len(pages)} files and "
-        f"{len(_FONTS)} copies of the font)"
-    )
+    print(f"The pages in {out_dir} are current ({len(pages)} files)")
     return 0
 
 

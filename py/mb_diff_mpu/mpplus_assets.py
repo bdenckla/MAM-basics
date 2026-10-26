@@ -11,7 +11,7 @@ Exports:
 import os
 from pathlib import Path
 
-from mb_misc.report_stylesheet import copy_report_font, prepare_report_stylesheet
+from mb_misc.report_stylesheet import prepare_report_font, prepare_report_stylesheet
 
 CATEGORY_INFO = {
     "meteg-removal": ("Meteg removal", "#1565c0"),
@@ -31,8 +31,11 @@ CATEGORY_INFO = {
 }
 
 
-def css():
-    """Return change-log-specific CSS layered over the shared report base."""
+def css(font_href):
+    """Return change-log-specific CSS layered over the shared report base.
+
+    ``font_href`` is Taamey D's URL from the stylesheet's own directory.
+    """
     lines = [
         """/* Generated file - DO NOT EDIT DIRECTLY.
    Edit py/mb_diff_mpu/mpplus_assets.py in MAM-basics and regenerate. */
@@ -170,10 +173,12 @@ ruby.kq-pair rt {
     )
     for cat in CATEGORY_INFO:
         lines.append(f".cat-{cat} {{ background: var(--cat-{cat}); }}")
-    lines.append("""@font-face {
-    font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
-}""")
+    lines.append(
+        "@font-face {\n"
+        '    font-family: "Taamey D WOFF2";\n'
+        f'    src: url("{font_href}");\n'
+        "}"
+    )
     return "\n".join(lines)
 
 
@@ -263,19 +268,19 @@ def js():
 })();"""
 
 
-def _copy_woff2(out_dir):
-    """Copy the repository's canonical font into the report's output bundle."""
-    copy_report_font(Path(out_dir))
-
-
 def write_shared_assets(
     out_dir, *, report_css_href: str | None = "../../report.css"
 ) -> str:
-    """Write local specialty assets and return the shared or packaged base href."""
+    """Write local specialty assets and return the shared or packaged base href.
+
+    A report that links the shared base loads the site's one Taamey D font; a
+    standalone report, whose ``report_css_href`` is None, gets its own copy.
+    """
     base_href = prepare_report_stylesheet(Path(out_dir), shared_href=report_css_href)
+    font_href = prepare_report_font(Path(out_dir), report_css_href=report_css_href)
     css_path = os.path.join(out_dir, "style.css")
     js_path = os.path.join(out_dir, "filter.js")
-    css_content = css()
+    css_content = css(font_href)
     js_content = js()
     for path, content in ((css_path, css_content), (js_path, js_content)):
         existing = None
@@ -285,5 +290,4 @@ def write_shared_assets(
         if existing != content:
             with open(path, "w", encoding="utf-8", newline="") as f:
                 f.write(content)
-    _copy_woff2(out_dir)
     return base_href

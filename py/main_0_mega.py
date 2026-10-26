@@ -348,8 +348,8 @@ _STEPS = [
         "py/main_mam_simple.py doc-only: reads MAM-parsed's plus/ tree and rewrites,"
         " each only where its content changed,"
         " gh-pages/MAM-simple/versification-differences.html,"
-        " gh-pages/MAM-simple/versification-and-cantillation.html with its CSS and"
-        " font, and gh-pages/MAM-simple/index.html; must come after parse-ws",
+        " gh-pages/MAM-simple/versification-and-cantillation.html with its CSS,"
+        " and gh-pages/MAM-simple/index.html; must come after parse-ws",
     ),
     # The mam4sef-and-ajf and mam-osis steps stood here until 2026-09-12, when Ben
     # took both out: "I know of no reason to be supplying constantly-updated versions
@@ -630,10 +630,11 @@ _STEPS = [
         _run_phonetic_mam_render,
         "reads the tracked public release, its stylesheet and script in"
         " py/phonetic_mam/assets/, the five example images in in/phonetic-mam-images/,"
-        " and the frozen font inputs doc/woff2/ and in/font-support/taamey-d-0.921/;"
-        " writes the unified phonetic-mam site and the shared"
-        " gh-pages/font-sources/taamey-d-0.921/ package, which yeivin-itm-render also"
-        " writes; runs in cloud",
+        " the site's one font, gh-pages/woff2/Taamey_D.woff2, which it checks against"
+        " its pin, and in/font-support/taamey-d-0.921/; writes the unified phonetic-mam"
+        " site, the font's three notice and source files beside it in gh-pages/woff2/"
+        " and the shared gh-pages/font-sources/taamey-d-0.921/ package, which"
+        " yeivin-itm-render also writes; runs in cloud",
     ),
     StepRecord(
         "accgram-survey-meteg-before-stress",
@@ -649,11 +650,12 @@ _STEPS = [
         "yeivin-itm-render",
         _run_yeivin_itm_render,
         "reads the approved tracked claims, the adaptation and"
-        " py/yeivin_itm/assets/style.css, and the frozen font inputs doc/woff2/ and"
+        " py/yeivin_itm/assets/style.css, the site's one font,"
+        " gh-pages/woff2/Taamey_D.woff2, which it checks against its pin, and"
         " in/font-support/taamey-d-0.921/; writes the 17 public Yeivin pages,"
-        " gh-pages/yeivin-itm/style.css, the four files of gh-pages/yeivin-itm/woff2/"
-        " and the shared gh-pages/font-sources/taamey-d-0.921/ package, which"
-        " phonetic-mam-render also writes",
+        " gh-pages/yeivin-itm/style.css, and the font's three notice and source files"
+        " in gh-pages/woff2/ and the shared gh-pages/font-sources/taamey-d-0.921/"
+        " package, both of which phonetic-mam-render also writes",
     ),
     # Added 2026-09-10, when Ben decided the survey "should join mega" on two conditions: a
     # worktree run finds MAM-private beside its home clone with no REPOS_ROOT (516a4a1a), and
@@ -755,8 +757,8 @@ _STEPS = [
         "mam-for-sefaria-doc",
         main_authored.gen_mam_for_sefaria_doc,
         "runs py/main_authored.py gen-mam-for-sefaria-doc, which writes"
-        " gh-pages/MAM-for-Sefaria/index.html, unicode-names/index.html, ajf/index.html"
-        " and their woff2/ font copy; must come after mam-simple",
+        " gh-pages/MAM-for-Sefaria/index.html, unicode-names/index.html and"
+        " ajf/index.html; must come after mam-simple",
     ),
 ]
 

@@ -71,11 +71,11 @@ blockquote.verse {
   font-feature-settings: 'ss01'; /* ss01 = xataf qamats qatan */
   font-style: normal; /* never italicize Hebrew, even inside italic context */
 }
-/* Deployed next to this stylesheet by generate_doc.py (a third output file beside the .html and
-   this .css), so the url is a sibling-relative path resolved against the CSS, not the page. */
+/* The site's one copy of Taamey D, gh-pages/woff2/Taamey_D.woff2. The url resolves against
+   this CSS, in gh-pages/MAM-simple/, not against the page. */
 @font-face {
   font-family: "Taamey D WOFF2";
-  src: url("woff2/Taamey_D.woff2");
+  src: url("../woff2/Taamey_D.woff2");
 }
 
 /* Deuteronomy appendix: anti-highlighting. Hue marks a chanted verse's role

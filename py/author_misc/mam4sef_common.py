@@ -32,7 +32,6 @@ from mb_cmn import str_defs as sd
 from mb_cmn import unicode_data
 from mb_misc import mb_html
 from mb_misc import osis_book_abbrevs
-from mb_misc import report_stylesheet
 from mb_sefaria import sef_cmn
 from author_misc import mam4sef_survey as ms
 
@@ -461,15 +460,14 @@ def _guard_unpointed_hbo(cbody) -> None:
 
 
 def write_page(py_file, subdir: str | None, title: str, cbody: list, s):
-    """Write one page in ``gh-pages/MAM-for-Sefaria/``, or in a folder in it, and the font.
+    """Write one page in ``gh-pages/MAM-for-Sefaria/``, or in a folder in it.
 
-    The pages share ``styles.css`` and the font copy beside it, which
-    ``report_stylesheet.copy_report_font`` keeps byte-identical to ``doc/woff2/``'s.
+    The pages share ``styles.css``, whose ``@font-face`` loads the site's one copy of
+    Taamey D, ``gh-pages/woff2/Taamey_D.woff2``.
     """
     _guard_two_vowels(cbody, s)
     _guard_unpointed_hbo(cbody)
     top = paths.gh_pages_dir() / OUT_DIR
-    report_stylesheet.copy_report_font(top)
     if subdir is None:
         out_dir, css_hrefs = top, ("../document.css", "styles.css")
     else:

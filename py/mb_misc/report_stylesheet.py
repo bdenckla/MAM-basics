@@ -1,8 +1,10 @@
-"""Reference or package the authored report base and deploy its reports' Hebrew font."""
+"""Reference or package the authored report base and the site's Hebrew font."""
 
 from pathlib import Path
+import posixpath
 
 from mb_cmn import paths
+from py_html import taamey_d_assets
 
 
 def prepare_report_stylesheet(
@@ -27,12 +29,20 @@ def prepare_report_stylesheet(
     return relative_path.as_posix()
 
 
-def copy_report_font(output_dir: Path) -> None:
-    """Copy the canonical Taamey D font, failing if its source is missing."""
-    source = paths.repo_root() / "doc" / "woff2" / "Taamey_D.woff2"
-    content = source.read_bytes()
-    destination = output_dir / "woff2" / source.name
-    if destination.is_file() and destination.read_bytes() == content:
-        return
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_bytes(content)
+def prepare_report_font(output_dir: Path, *, report_css_href: str | None) -> str:
+    """Return the Taamey D URL for a report stylesheet that sits beside its page.
+
+    A report that links the shared base at ``report_css_href`` loads the site's one
+    font, which sits beside that base under ``woff2/``, so published and temporary
+    differential generation get the same URL and neither writes a font. A standalone
+    report, whose ``report_css_href`` is None, gets its own copy of the pinned font in
+    ``woff2/`` inside ``output_dir``.
+    """
+    if report_css_href is not None:
+        return posixpath.join(posixpath.dirname(report_css_href), taamey_d_assets.FONT)
+    content = taamey_d_assets.font_bytes()
+    destination = output_dir / taamey_d_assets.FONT
+    if not (destination.is_file() and destination.read_bytes() == content):
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_bytes(content)
+    return taamey_d_assets.FONT

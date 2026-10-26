@@ -210,7 +210,7 @@ def _render_yeivin_top_page(anchor_dic, pages):
         aht_html.heading_level_1(h1_contents),
         aht_html.unordered_list(bookpart_list_items),
         aht_html.para(
-            aht_html.anchor("Font license and source", {"href": "woff2/SOURCE.txt"})
+            aht_html.anchor("Font license and source", {"href": "../woff2/SOURCE.txt"})
         ),
     ]
     title = "Excerpts from ITM by Yeivin"

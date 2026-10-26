@@ -99,7 +99,6 @@ def generated_artifact_names() -> tuple[str, ...]:
             "index.html",
             "style.css",
             "filter.js",
-            "woff2/Taamey_D.woff2",
         )
     )
     return tuple(names)

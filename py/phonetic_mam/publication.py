@@ -3,7 +3,7 @@
 from mb_cmn import paths
 from phonetic_mam import example_display, release, renderer
 from py_html.forbidden_phonetic_marks import refuse_forbidden_phonetic_marks
-from py_html.taamey_d_assets import product_font_assets
+from py_html.taamey_d_assets import site_font_assets
 
 
 def _write(path, data):
@@ -18,7 +18,8 @@ def render():
     release.validate_complete_release()
     examples = release.read_examples()
     example_pages = example_display.page_texts(examples)
-    assets = product_font_assets("phonetic-mam")
+    # The index links the site font's SOURCE.txt, so the publication carries its support set.
+    assets = site_font_assets()
     for name, data in renderer.source_assets().items():
         assets[f"phonetic-mam/{name}"] = data
     for name in example_display.IMAGE_NAMES:

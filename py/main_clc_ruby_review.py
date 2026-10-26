@@ -27,6 +27,7 @@ from PIL import Image, ImageChops, ImageFilter
 from playwright.sync_api import sync_playwright
 
 from mb_cmn import paths
+from py_html import taamey_d_assets
 import uxlc_paths
 
 ROOT = paths.repo_root()
@@ -119,9 +120,7 @@ def review_html(samples, family, size, family_css, side, comparison_font, curren
         + " {",
         current_css,
     )
-    css += font_face(
-        "Taamey D WOFF2", ROOT / "gh-pages/uxlc/woff2/Taamey_D.woff2", "woff2"
-    )
+    css += font_face("Taamey D WOFF2", taamey_d_assets.font_path(), "woff2")
     if comparison_font:
         css += font_face("Comparison Hebrew", comparison_font, "truetype")
     # Equal black foregrounds make the threshold independent of editorial colors.

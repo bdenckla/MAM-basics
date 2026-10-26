@@ -87,7 +87,7 @@ span.post-stress-meteg-next-word { color: light-dark(#666, #aaa); }
 span.post-stress-meteg-not-fit-failure { color: light-dark(#b00000, #ff9b9b); }
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../woff2/Taamey_D.woff2");
 }
 /* Emphasis in running prose, where accgram pages used to shout in ALL CAPS.  Bold rather than
    the browser's default italic: italic is already spoken for by the shared span.romanized rule and by the

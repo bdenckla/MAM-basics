@@ -1,17 +1,24 @@
-"""Prepare the frozen font and its same-host source support as one asset set.
+"""The site's one Taamey D font, checked against its pin, and its same-host support files.
 
-This module returns bytes and performs no writes. A product publisher must include
-the complete returned mapping in the same publication and link its font SOURCE.txt
-from a product page. The upstream source archive is immutable input, not executable
-repository code or a claim of an independently reproduced font build.
+Every published stylesheet that sets Hebrew in Taamey D loads ``gh-pages/woff2/Taamey_D.woff2``
+by a relative URL. That tracked file is the canonical font: no code writes it, and
+``font_bytes`` refuses it unless it is the pinned binary. ``site_font_assets`` returns bytes and
+performs no writes: the notices and ``SOURCE.txt`` that stand beside the font in
+``gh-pages/woff2/``, and the source package in ``gh-pages/font-sources/``. A publisher whose pages
+link that ``SOURCE.txt`` must include the complete returned mapping in the same publication; the
+Phonetic MAM and Yeivin ITM publishers both do. The upstream source archive is immutable input,
+not executable repository code or a claim of an independently reproduced font build.
 """
 
 import hashlib
 import io
+import posixpath
 import zipfile
 
 from mb_cmn import paths
 
+# The Pages-root-relative path of the site's one copy of the font.
+FONT = "woff2/Taamey_D.woff2"
 _VERSION = "taamey-d-0.921"
 _FONT_HASH = "5cc8df8ae3311b91e506edbb294561f6f0e39ebe4260bdb972c90902186c2474"
 _ARCHIVE = "Taamey_D-0.921-source-40115a364a4e.zip"
@@ -34,19 +41,29 @@ _ARCHIVED_COMPANIONS = (
 # The two support files that neither the archive nor its inventory records.
 _UNARCHIVED_SHA256 = {
     "SOURCE.txt": "6e4497069cb52456348480bb75964019ae4cbcb0c4bbf839e8d24b9adc699c37",
-    "PRODUCT-WOFF2-SOURCE.txt": "5da2baf9ac4cc80596e21149d8b876aecd5268376b6c98301167a2bbf233278f",
+    "PRODUCT-WOFF2-SOURCE.txt": "4dc079cc8b47739b4e6cfc0e5a2a54bcef53aea722d471d37ba550f103870cc4",
 }
 
 
-def product_font_assets(product):
-    """Return Pages-root-relative assets for one explicitly supported product."""
-    if product not in ("phonetic-mam", "yeivin-itm"):
-        raise ValueError(f"Unknown font asset owner: {product!r}")
-    root = paths.repo_root()
-    support = root / "in" / "font-support" / _VERSION
-    font = (root / "doc" / "woff2" / "Taamey_D.woff2").read_bytes()
+def font_path():
+    """Return the path of the site's one tracked copy of the font."""
+    return paths.gh_pages_dir() / FONT
+
+
+def font_bytes():
+    """Return the site's font, refusing any file that is not the pinned binary."""
+    font = font_path().read_bytes()
     if hashlib.sha256(font).hexdigest() != _FONT_HASH:
-        raise ValueError("Taamey D differs from the source package's frozen font")
+        raise ValueError(
+            f"gh-pages/{FONT} differs from the source package's frozen font"
+        )
+    return font
+
+
+def site_font_assets():
+    """Return the Pages-root-relative support files of the site's one font."""
+    font_bytes()
+    support = paths.repo_root() / "in" / "font-support" / _VERSION
     shared = {name: (support / name).read_bytes() for name in _SHARED_FILES}
     if hashlib.sha256(shared[_ARCHIVE]).hexdigest() != _ARCHIVE_HASH:
         raise ValueError("Taamey D source archive differs from its reviewed input")
@@ -65,9 +82,8 @@ def product_font_assets(product):
         if hashlib.sha256(data).hexdigest() != _UNARCHIVED_SHA256[name]:
             raise ValueError(f"Taamey D {name} differs from its recorded SHA-256")
     assets = {f"font-sources/{_VERSION}/{name}": data for name, data in shared.items()}
-    prefix = f"{product}/woff2"
-    assets[f"{prefix}/Taamey_D.woff2"] = font
+    beside_font = posixpath.dirname(FONT)
     for name in ("FONT-NOTICE.txt", "GPL-2.0.txt"):
-        assets[f"{prefix}/{name}"] = shared[name]
-    assets[f"{prefix}/SOURCE.txt"] = unarchived["PRODUCT-WOFF2-SOURCE.txt"]
+        assets[f"{beside_font}/{name}"] = shared[name]
+    assets[f"{beside_font}/SOURCE.txt"] = unarchived["PRODUCT-WOFF2-SOURCE.txt"]
     return assets

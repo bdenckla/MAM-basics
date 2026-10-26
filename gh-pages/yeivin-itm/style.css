@@ -1,6 +1,6 @@
 /* Shared Phonetic MAM and Yeivin ITM styles, loaded after document.css. */
 *[lang="hbo"] { font-family: "Taamey D WOFF2"; font-size: 140%; }
-@font-face { font-family: "Taamey D WOFF2"; src: url("woff2/Taamey_D.woff2"); }
+@font-face { font-family: "Taamey D WOFF2"; src: url("../woff2/Taamey_D.woff2"); }
 em { font-style: normal; font-weight: bold; }
 *.pre-or-post { color: gray; }
 span.mam-implicit-maqaf { color: gray; }

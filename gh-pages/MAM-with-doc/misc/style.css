@@ -18,7 +18,7 @@
 h1 *[lang="hbo"], h2 *[lang="hbo"], h3 *[lang="hbo"] { font-weight: normal; }
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../../woff2/Taamey_D.woff2");
 }
 em { font-style: normal; font-weight: bold; }
 /* The box an AI-generated page opens with, e.g. he_ws_intro_to_mam_gaya_text.html's

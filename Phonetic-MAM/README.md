@@ -90,9 +90,10 @@ Run the repository's `py/main_phonetic_mam.py` entry point from MAM-basics:
 - `export` regenerates the public display product through its private input adapter
 - `render` reads this public product, its stylesheet and script in
   `py/phonetic_mam/assets/`, the five example images in
-  `in/phonetic-mam-images/`, and the Taamey D font in `doc/woff2/` with its
-  source support in `in/font-support/`; it writes `gh-pages/phonetic-mam/` and
-  the shared font-source package in `gh-pages/font-sources/`
+  `in/phonetic-mam-images/`, and the site's Taamey D font in `gh-pages/woff2/`
+  with its source support in `in/font-support/`; it writes
+  `gh-pages/phonetic-mam/`, the font's notices beside it in `gh-pages/woff2/`
+  and the shared font-source package in `gh-pages/font-sources/`
 - `check` validates all of Phonetic MAM without writing
 - `compute` serves explicitly versioned, read-only computations over stdin/stdout;
   this local transport is not a Phonetic MAM data format and saves no inputs or results

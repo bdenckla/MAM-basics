@@ -19,7 +19,7 @@ body {
 }
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../woff2/Taamey_D.woff2");
 }
 span.mam-dqq-unstressed { font-feature-settings: 'ss01', 'ss02'; }
 /* ss01 = xataf qamats qatan */

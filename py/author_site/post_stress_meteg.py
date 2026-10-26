@@ -16,7 +16,8 @@ and this page's corpus is MAM rather than WLC.
 The pages link ``gh-pages/document.css`` for English prose, ``gh-pages/style.css`` for
 the deploy-root extension, and ``gh-pages/wlc/style.css`` for the Hebrew font, specialized
 tables and controls. A stylesheet's ``@font-face`` URL
-resolves against the stylesheet, so ``woff2/Taamey_D.woff2`` reaches the font from here too.
+resolves against the stylesheet, so its ``../woff2/Taamey_D.woff2`` reaches the site's one
+copy of the font from here too.
 
 WHY THIS PAGE SHOWS POINTED HEBREW where the accgram pages show letters and accents alone.
 ``accents_and_letters`` drops U+05BD along with the vowels, and U+05BD is this page's whole

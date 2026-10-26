@@ -24,8 +24,8 @@ Subcommands:
     gen-mam-for-sefaria-doc
                 Write gh-pages/MAM-for-Sefaria/index.html, "The encoding of MAM
                 for Sefaria", its unicode-names/index.html and ajf/index.html,
-                and their woff2/Taamey_D.woff2, from the tracked files of
-                MAM-for-Sefaria/ (py/author_misc/mam4sef_*index.py).
+                from the tracked files of MAM-for-Sefaria/
+                (py/author_misc/mam4sef_*index.py).
     verify-mp
                 Run MAM-parsed claim verification without rewriting
                 MAM-parsed authored HTML/CSS outputs.
@@ -199,7 +199,7 @@ def cmd_gen_site(args):
 
 
 def gen_mam_for_sefaria_doc():
-    """Write the three MAM-for-Sefaria documentation pages and their font copy."""
+    """Write the three MAM-for-Sefaria documentation pages."""
     for page in (mam4sef_index, mam4sef_unicode_names_index, mam4sef_ajf_index):
         print(f"Generated {page.gen_html_file()}")
 
@@ -273,8 +273,7 @@ def build_parser():
         "gen-mam-for-sefaria-doc",
         help=(
             "Generate gh-pages/MAM-for-Sefaria/index.html, unicode-names/index.html and"
-            " ajf/index.html, and their font copy, from the tracked files of"
-            " MAM-for-Sefaria/."
+            " ajf/index.html from the tracked files of MAM-for-Sefaria/."
         ),
     )
     sub.add_parser(

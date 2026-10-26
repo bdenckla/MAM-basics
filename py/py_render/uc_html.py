@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 import struct
 
-from mb_misc.report_stylesheet import copy_report_font, prepare_report_stylesheet
+from mb_misc.report_stylesheet import prepare_report_font, prepare_report_stylesheet
 from py_render.rt_assets import PALETTE
 from py_render.uc_case_card import (
     case_card_html,
@@ -63,6 +63,8 @@ PAGE_HEADING = "Daniel Holman’s change proposals for UXLC"
 INDEX_PAGE = "index.html"
 INDEX_NAV_LABEL = "Index"
 THIS_NAV_LABEL = "UXLC suggestions"
+# What the authored stylesheet has where its @font-face names the font's URL.
+_FONT_URL_PLACEHOLDER = "__TAAMEY_D_WOFF2__"
 
 # The intro is these, then the four generated paragraphs
 # _atom_numbering_paragraph, _forms_paragraph, _manuscript_location_paragraph,
@@ -201,13 +203,22 @@ def _write_assets(
         output_html_path.parent,
         shared_href=report_css_href,
     )
-    copy_report_font(output_html_path.parent)
+    # The published report loads the site's one Taamey D font; a standalone one,
+    # whose report_css_href is None, gets its own copy.
+    font_href = prepare_report_font(
+        output_html_path.parent, report_css_href=report_css_href
+    )
     colour_rules = "\n".join(
         f".cat-{filter_id} {{ background: {PALETTE[index % len(PALETTE)]}; }}"
         for index, filter_id in enumerate(filter_ids)
     )
     css_text = (assets_dir / "uxlc_corrections.css").read_text(encoding="utf-8")
     css_text = css_text.replace("/* __FILTER_COLORS__ */", colour_rules)
+    if css_text.count(_FONT_URL_PLACEHOLDER) != 1:
+        raise ValueError(
+            f"uxlc_corrections.css must name {_FONT_URL_PLACEHOLDER} exactly once"
+        )
+    css_text = css_text.replace(_FONT_URL_PLACEHOLDER, font_href)
     output_html_path.with_suffix(".css").write_text(
         css_text, encoding="utf-8", newline=""
     )

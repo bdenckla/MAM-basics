@@ -157,5 +157,5 @@ ruby.kq-pair rt {
 .cat-misc { background: var(--cat-misc); }
 @font-face {
     font-family: "Taamey D WOFF2";
-    src: url("woff2/Taamey_D.woff2");
+    src: url("../../woff2/Taamey_D.woff2");
 }
