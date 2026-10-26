@@ -25,6 +25,7 @@ class WriteCtx:
     body_class: Union[str, None] = None
     add_wbr: bool = False
     html_comment: Union[str, None] = None
+    viewport: bool = False
 
 
 def write_html_to_file(body_contents, wc: WriteCtx):
@@ -35,7 +36,11 @@ def write_html_to_file(body_contents, wc: WriteCtx):
             * a title
             * an output path
     """
-    other = {"head_style": wc.head_style, "body_class": wc.body_class}
+    other = {
+        "head_style": wc.head_style,
+        "body_class": wc.body_class,
+        "viewport": wc.viewport,
+    }
     html_el = html_el2(wc.title, body_contents, wc.css_hrefs, other=other)
     file_io.with_tmp_openw(
         wc.path, {}, _write_callback, wc.add_wbr, wc.html_comment, html_el
@@ -48,7 +53,11 @@ def html_text(body_contents, wc: WriteCtx):
     nothing; wc.path is not read.
     """
     # Render pages in memory so callers can check them before writing.
-    other = {"head_style": wc.head_style, "body_class": wc.body_class}
+    other = {
+        "head_style": wc.head_style,
+        "body_class": wc.body_class,
+        "viewport": wc.viewport,
+    }
     html_el = html_el2(wc.title, body_contents, wc.css_hrefs, other=other)
     out_fp = io.StringIO()
     _write_callback(wc.add_wbr, wc.html_comment, html_el, out_fp)
@@ -91,11 +100,23 @@ def add_htel_to_etxml(etxml_parent, htel):
 
 def html_el2(title_text, body_contents, css_hrefs=(), other=None):
     """Make an <html> element."""
-    other_defaults = {"lang": "en", "head_style": None, "body_class": None}
+    other_defaults = {
+        "lang": "en",
+        "head_style": None,
+        "body_class": None,
+        "viewport": False,
+    }
     if other is None:
         other = {}
     other = {**other_defaults, **other}
     meta = htel_mk("meta", attr={"charset": "utf-8"})
+    viewport_attr = {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1",
+    }
+    metas = (
+        (meta, htel_mk("meta", attr=viewport_attr)) if other["viewport"] else (meta,)
+    )
     title = htel_mk("title", flex_contents=(title_text,))
     links_to_css = st_map(_link_to_css, css_hrefs)
     if other["head_style"] is None:
@@ -103,7 +124,7 @@ def html_el2(title_text, body_contents, css_hrefs=(), other=None):
     else:
         style_el = htel_mk("style", flex_contents=(other["head_style"],))
         style_els = (style_el,)
-    head_cont = (meta, title) + style_els + links_to_css
+    head_cont = metas + (title,) + style_els + links_to_css
     _head = htel_mk("head", flex_contents=head_cont)
     body_attr = {"class": other["body_class"]} if other["body_class"] else None
     _body = htel_mk("body", attr=body_attr, flex_contents=body_contents)
@@ -458,6 +479,7 @@ _LB2 = {
     "span": "",
     "abbr": "",
     "em": "",
+    "i": "",
     "sub": "",
     "sup": "",
     "big": "",

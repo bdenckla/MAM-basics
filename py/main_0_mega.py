@@ -742,6 +742,21 @@ _STEPS = [
         " Graphviz, and a cloud session skips its two SVG renders as it does"
         " tmpl-survey's",
     ),
+    # Added 2026-10-26, when gh-pages/MAM-for-Sefaria/index.html stopped being hand-authored
+    # (doc/PLAN-rewrite-MAM-for-Sefaria-encoding-page.md).  The page reads only tracked files,
+    # MAM-for-Sefaria/'s and, for its meteg-after-silluq table, MAM-simple/json-vtrad-mam/,
+    # so it follows any later rerun of the hand-run py/main_mam4sef.py.  It is last because
+    # MAM-for-Sefaria/ may lag MAM-simple (Ben's decision of 2026-09-30, in AGENTS.md), and
+    # the page raises rather than state a claim its files no longer bear out, such as a
+    # meteg-after-silluq annotation of MAM-simple that the CSV files predate; last, that
+    # failure stops no other step.
+    StepRecord(
+        "mam-for-sefaria-doc",
+        main_authored.gen_mam_for_sefaria_doc,
+        "runs py/main_authored.py gen-mam-for-sefaria-doc, which writes"
+        " gh-pages/MAM-for-Sefaria/index.html and its woff2/ font copy; must come after"
+        " mam-simple",
+    ),
 ]
 
 _STEP_NAMES = [step.step_id for step in _STEPS]

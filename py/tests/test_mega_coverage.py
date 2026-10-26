@@ -546,6 +546,10 @@ _RUNNER_CALLS: dict[str, tuple[str, ...]] = {
     "main_authored.almost_main": ("py/main_authored.py gen-misc",),
     # What cmd_gen_site runs for `gen-site --trust-surveys`.
     "main_authored.gen_site": ("py/main_authored.py gen-site --trust-surveys",),
+    # What cmd_gen_mam_for_sefaria_doc runs.
+    "main_authored.gen_mam_for_sefaria_doc": (
+        "py/main_authored.py gen-mam-for-sefaria-doc",
+    ),
     # The export core-only runs, which ends by calling the function copy-support-files
     # calls, mam_simple_copy_py_files.copy_support_files().
     "main_mam_simple.almost_main": (

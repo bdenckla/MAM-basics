@@ -11,7 +11,9 @@ from mb_cmn.my_utils import dv_map
 from mb_author import dollar_sub_g
 
 
-def help_gen_html_file(py_file, tdm_ch, fname, title, cbody, body_class=None):
+def help_gen_html_file(
+    py_file, tdm_ch, fname, title, cbody, body_class=None, viewport=False
+):
     assert_stem_eq(py_file, fname)
     top_dir, css_hrefs = tdm_ch
     if isinstance(css_hrefs, str):
@@ -24,6 +26,7 @@ def help_gen_html_file(py_file, tdm_ch, fname, title, cbody, body_class=None):
         css_hrefs=css_hrefs,
         body_class=body_class,
         html_comment=comment,
+        viewport=viewport,
     )
     mb_html.write_html_to_file(cbody, write_ctx)
     return fname, title
@@ -527,6 +530,7 @@ _ROMANIZED = {
     "$masorah_qetanah": "masorah qetanah",
     "$masorah_gedolah": "masorah gedolah",
     "$ketiv_velo_qere": "ketiv velo qere",
+    "$qere_velo_ketiv": "qere velo ketiv",
     "$ketiv_veqere": "ketiv veqere",
     "$naqdan": "naqdan",
     "$tsade": "tsade",
@@ -555,6 +559,7 @@ _ROMANIZED = {
     "$shalshelet_qetanah": "shalshelet qetanah",
     "$revmug": "revia mugrash",
     "$telisha": "telisha",
+    "$telisha_gedolah": "telisha gedolah",
     "$tevir": "tevir",
     "$vav": "vav",
     "$qq": "qamats qatan",
@@ -563,6 +568,7 @@ _ROMANIZED = {
     "$zarqa": "zarqa",
     "$tarxa": "tarḥa",
     "$geresh": "geresh",
+    "$gershayim": "gershayim",
     "$tav": "tav",
     "$tav_rafeh": "tav rafeh",
     "$segol": "segol",

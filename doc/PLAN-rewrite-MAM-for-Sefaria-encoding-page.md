@@ -1,6 +1,6 @@
 # Plan: rewrite the MAM-for-Sefaria encoding page to document what MAM-for-Sefaria contains
 
-State: live
+State: executed 2026-10-26; see "Execution record" at the end.
 
 Ben approved this plan on 2026-10-26 through plan-mode approval, without revising it. This is
 its tracked copy: the plan as approved, less its private evidence and its private follow-ups,
@@ -319,12 +319,57 @@ cannot wait; the last pushed commit message says so, per `AGENTS.md`.
 
 | Id | Requirement | Status |
 | --- | --- | --- |
-| R1 | Ben, 2026-10-24: rewrite the page to document what MAM-for-Sefaria contains | active |
-| R2 | No old Sefaria text, comparison or history on the page (follows from R1) | active |
+| R1 | Ben, 2026-10-24: rewrite the page to document what MAM-for-Sefaria contains | implemented |
+| R2 | No old Sefaria text, comparison or history on the page (follows from R1) | implemented |
 | R3 | Old Sefaria's Exodus 20:4 atom, whose look depends on the installed font | superseded by R1 |
-| R4 | The page covers all four folders, `csv-ajf/` and the listings included (follows from R1) | active |
-| R5 | "AJF" stays unexpanded unless Ben supplies its meaning | active |
-| R6 | The page's figures come from today's files, not the 2021 copy (follows from R1) | active |
+| R4 | The page covers all four folders, `csv-ajf/` and the listings included (follows from R1) | implemented |
+| R5 | "AJF" stays unexpanded unless Ben supplies its meaning | implemented |
+| R6 | The page's figures come from today's files, not the 2021 copy (follows from R1) | implemented |
 | Q1 | Decision 1 above, how the page is produced | (a), approved with the plan, 2026-10-26 |
 | Q2 | Decision 2 above, which Taamey D the page uses | (a), approved with the plan, 2026-10-26 |
 | Q3 | Decision 3 above, who executes and integrates | a fresh session, approved with the plan, 2026-10-26 |
+
+## Execution record
+
+Executed by Claude (Opus 5.5) on 2026-10-26, in a full MAM-basics clone in a Claude-owned forest,
+from `926a6e78`, a descendant of `27f263cb`, clean on `main`.
+
+- **The generator.** `py/author_misc/mam4sef_survey.py` reads the 156 tracked files of
+  `MAM-for-Sefaria/` with closed dispatch and counts what the page states;
+  `py/author_misc/mam4sef_index.py` writes the page from that survey, with the lookups, pins and
+  two-vowel guard of design items 5–6. `py/main_authored.py gen-mam-for-sefaria-doc` runs it,
+  and so does the mega's last step, `mam-for-sefaria-doc`.
+- **What the inventory added to the outline:** each listing is re-derived from its CSV file and
+  must match it line for line, but for the trailing spaces that the CSV writer strips from a
+  row's last field; `csv-ajf/`'s spellings are checked against the counts of `csv/`; the
+  ketiv/qere shapes include a pair of three words each and two pairs separated by a maqaf,
+  besides the five types the old page named; a table of all 92 code points, with the listings'
+  short names; the contexts of each run of NO-BREAK SPACE, and the breaks inside verses; and,
+  for the Decalogue's CGJ letters, the two strands from `csv-ajf/`, which show that the marks on
+  either side of each CGJ are the two strands'.
+- **Departures from "Expected changed and unchanged paths":**
+  1. `py/product_scopes.py` is unchanged. The step's runner is
+     `main_authored.gen_mam_for_sefaria_doc`, a function of `py/main_authored.py`, which
+     `_GENERATOR_ENTRY_POINTS` already declares, so no wrapper needs declaring.
+  2. `py/tests/test_mega_coverage.py` has a new `_RUNNER_CALLS` entry naming the subcommand that
+     function runs, which the scan needs for a function of a program with subcommands.
+  3. `py/mb_misc/mb_html.py` has the smallest writer changes the page needed: an optional
+     viewport meta, `WriteCtx.viewport`, off by default, and a line-break entry for `<i>`, which
+     the `Version Notes` header has. `py/mb_author/author.py` passes the viewport through
+     `help_gen_html_file` and has three new romanized keys, `$gershayim`, `$telisha_gedolah` and
+     `$qere_velo_ketiv`. Regenerating with `py/main_authored.py gen-misc` and
+     `gen-site --trust-surveys` changed no tracked page.
+  4. The meteg-after-silluq table's case list and its "other versions of MAM" row come from the
+     silluq-before-meteg annotations of `MAM-simple/json-vtrad-mam/`, which no CSV file has. Its
+     Sefaria row, and every other example, come from the CSV files.
+  5. The romanized names come from `author.py`'s `$` keys, the single source of this family of
+     pages, rather than the `ROM_*` constants of `py/accgram/printed_decalogue_strands.py`, which
+     serve the printed-Decalogue pages and import the accgram grammar.
+  6. The mega step is the last of `_STEPS`, rather than beside `gen-misc`: the page raises when
+     its files no longer bear out a claim, as when `MAM-for-Sefaria/` lags a MAM-simple change
+     the page describes, and last, that failure stops no other step.
+- **Verification:** the subcommand twice, with identical output; Black on every changed Python
+  file; `git diff --check`; the eleven test files of "Verification" item 3, 47 tests passing; and
+  the content checks of item 5, which found none of the dropped terms and `lang="hbo"
+  dir="rtl"` on every `td` that holds Hebrew. The mega and the suite are left to the nightly run,
+  per `doc/review-trial.md`.
