@@ -652,3 +652,12 @@ Tet and tav both use plain `t`/`T` in Ben's transliteration; do not introduce แน
   the spellings inline. `tests/test_transliterations.py` (#26) guards them tree-wide.
 - Unrelated X: the scanner's base-letter placeholder `accent_marks.LETTER` is **alef (ื)**, not
   `"X"`. Do not reintroduce `X` or a display-conversion step.
+
+## Dagesh in a letter
+
+In authored prose, locate the mark with **dagesh in [letter]**, rather than
+**[letter] dagesh**: write "dagesh in shin", not "shin dagesh". The latter can
+sound like a name for the letter and mark together rather than locating the mark.
+Adjust capitalization and grammar to the context: sentence-initial "Shin dagesh"
+becomes "Dagesh in shin"; "the missing yod dagesh" becomes "the missing dagesh in
+yod". Preserve literal source quotations, Unicode names and technical identifiers.
