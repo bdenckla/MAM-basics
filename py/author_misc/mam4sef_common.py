@@ -14,12 +14,17 @@ here: each must match exactly one place in the files, by a reference and the let
 atoms, so no pointed Hebrew on the pages is typed.  A reference is shown with its book's short
 name, Gen 2:5 rather than Genesis 2:5, as Ben asked the same day, but where a page quotes what a
 file has.
+
+Only pointed Hebrew is in the Hebrew font: ``unpointed`` sets an unpointed form in prose,
+``td_he`` leaves a lifted ketiv, break or inverted nun in the surrounding font, and
+``write_page`` refuses a page with an unpointed Hebrew token under ``lang="hbo"``.
 """
 
 import re
 
 from mb_author import author
 from mb_cmn import hebrew_accents as ha
+from mb_cmn import hebrew_punctuation as hpu
 from mb_cmn import paths
 from mb_cmn import str_defs as sd
 from mb_cmn import unicode_data
@@ -47,6 +52,13 @@ MARK_ORDER_URL = f"{GITHUB}/blob/main/doc/mam-normal-mark-order.md"
 
 # A letter or a mark: what may not stand right before or after a matched form.
 _EDGE = f"[א-ת{ms.MARK_CLASS[1:-1]}]"
+# A token of Hebrew text, as a browser shapes it: letters, marks and the four Hebrew
+# punctuation marks the files have, with nothing else between them.
+_HEBREW_TOKEN_RE = re.compile(
+    f"(?:[א-ת]|{ms.MARK_CLASS}"
+    f"|[{re.escape(hpu.MAQ + hpu.PASOLEG + hpu.SOPA + hpu.NUN_HAF)}])+"
+)
+_MARK_RE = re.compile(ms.MARK_CLASS)
 _BK39_OF_TITLE = {title: bk39id for bk39id, title in sef_cmn.SEF_BKNA.items()}
 
 
@@ -65,8 +77,15 @@ def code(text: str):
     return mb_html.code(text)
 
 
-def he(contents):
-    return author.hbo(contents)
+def unpointed(contents):
+    """Unpointed Hebrew in prose: isolated for its direction, in the surrounding font.
+
+    Only pointed Hebrew takes ``lang="hbo"``, whose stylesheet rule sets Taamey D at 140%.  Ben
+    asked again on 2026-10-26 that "unpointed Hebrew words" not be put "in pointed-Hebrew
+    styling", as ``accgram.almost_errors_html_shared.wrap_hebrew_runs`` already leaves them;
+    ``write_page`` refuses a page that does.
+    """
+    return mb_html.bdi(contents)
 
 
 def rom(text: str):
@@ -138,7 +157,81 @@ def td(contents, attr=None):
 
 
 def td_he(contents):
-    return mb_html.table_datum(contents, {"lang": "hbo", "dir": "rtl"})
+    """A table cell of Hebrew: right to left, and in the Hebrew font where it is pointed.
+
+    A form lifted from csv/ can hold elements whose text is unpointed, a ketiv, a break or an
+    inverted nun; those stay in the surrounding font, as ``unpointed`` says, and the rest of
+    the cell goes in ``lang="hbo"`` spans.
+    """
+    nodes = contents if isinstance(contents, list) else [contents]
+    if not _has_unpointed(nodes):
+        return mb_html.table_datum(nodes, {"lang": "hbo", "dir": "rtl"})
+    return mb_html.table_datum(_hbo_groups(nodes), {"dir": "rtl"})
+
+
+# The classes of the elements of csv/ whose text has no point or accent: a ketiv, the two
+# breaks and the inverted nun.
+_UNPOINTED_CLASSES = frozenset(
+    ("mam-kq-k", "mam-spi-samekh", "mam-spi-pe", "mam-spi-invnun")
+)
+
+
+def _is_unpointed_el(node) -> bool:
+    if not mb_html.is_htel(node):
+        return False
+    return (node.get("attr") or {}).get("class") in _UNPOINTED_CLASSES
+
+
+def _has_unpointed(nodes: list) -> bool:
+    return any(
+        _is_unpointed_el(node)
+        or (mb_html.is_htel(node) and _has_unpointed(node.get("contents") or []))
+        for node in nodes
+    )
+
+
+def _hbo_groups(nodes: list) -> list:
+    """``nodes`` with each run of pointed siblings in a ``lang="hbo"`` span.
+
+    An unpointed element is left as it is, and an element that holds one is rebuilt with its
+    children grouped the same way.  The spaces at either end of a run stay outside its span.
+    """
+    out, run = [], []
+
+    def close():
+        items = list(run)
+        run.clear()
+        if not items:
+            return
+        head = tail = ""
+        if isinstance(items[0], str):
+            kept = items[0].lstrip()
+            head, items[0] = items[0][: len(items[0]) - len(kept)], kept
+        if isinstance(items[-1], str):
+            kept = items[-1].rstrip()
+            tail, items[-1] = items[-1][len(kept) :], kept
+        items = [item for item in items if item != ""]
+        if head:
+            out.append(head)
+        if items:
+            out.append(mb_html.span(items, {"lang": "hbo"}))
+        if tail:
+            out.append(tail)
+
+    for node in nodes:
+        if _is_unpointed_el(node):
+            close()
+            out.append(node)
+        elif mb_html.is_htel(node) and _has_unpointed(node.get("contents") or []):
+            close()
+            tag = mb_html.htel_get_tag(node)
+            out.append(
+                mb_html.htel_mk(tag, node.get("attr"), _hbo_groups(node["contents"]))
+            )
+        else:
+            run.append(node)
+    close()
+    return out
 
 
 def td_ref(ref: str):
@@ -168,9 +261,9 @@ def conventions(*, attention: bool) -> list:
             [
                 mb_html.span_c("Text styled like this", "attention"),
                 " draws attention to letters of a form, as to the ",
-                he("ב"),
+                unpointed("ב"),
                 " of ",
-                he(["א", mb_html.span_c("ב", "attention"), "ג"]),
+                unpointed(["א", mb_html.span_c("ב", "attention"), "ג"]),
                 ".",
             ]
         )
@@ -397,6 +490,42 @@ def _guard_two_vowels(cbody, s) -> None:
                 )
 
 
+def _guard_unpointed_hbo(cbody) -> None:
+    """Refuse a page that sets unpointed Hebrew in the Hebrew font.
+
+    The text of each element with ``lang="hbo"`` is read as a browser shapes it, joined across
+    inline elements, and each of its Hebrew tokens with a letter or a NUN HAFUKHA must have a
+    point or an accent.  A token of punctuation alone, such as the PASEQ between two pointed
+    atoms of an example, needs none.
+    """
+
+    def text(node) -> str:
+        if isinstance(node, str):
+            return node
+        if isinstance(node, (list, tuple)):
+            return "".join(text(item) for item in node)
+        if mb_html.is_htel(node):
+            if mb_html.htel_get_tag(node) == "br":
+                return " "
+            return text(node.get("contents") or [])
+        return ""
+
+    def visit(node):
+        if isinstance(node, (list, tuple)):
+            for item in node:
+                visit(item)
+        elif mb_html.is_htel(node):
+            if (node.get("attr") or {}).get("lang") != "hbo":
+                visit(node.get("contents") or [])
+                return
+            for token in _HEBREW_TOKEN_RE.findall(text(node)):
+                based = any(c in ms.LETTERS or c == hpu.NUN_HAF for c in token)
+                if based and not _MARK_RE.search(token):
+                    raise ValueError(f"unpointed Hebrew, {token!r}, in the Hebrew font")
+
+    visit(cbody)
+
+
 def write_page(py_file, subdir: str | None, title: str, cbody: list, s):
     """Write one page in ``gh-pages/MAM-for-Sefaria/``, or in a folder in it, and the font.
 
@@ -404,6 +533,7 @@ def write_page(py_file, subdir: str | None, title: str, cbody: list, s):
     ``report_stylesheet.copy_report_font`` keeps byte-identical to ``doc/woff2/``'s.
     """
     _guard_two_vowels(cbody, s)
+    _guard_unpointed_hbo(cbody)
     top = paths.gh_pages_dir() / OUT_DIR
     report_stylesheet.copy_report_font(top)
     if subdir is None:

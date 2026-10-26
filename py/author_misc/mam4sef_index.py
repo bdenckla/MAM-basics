@@ -509,7 +509,7 @@ def _breaks(s):
         ),
         mc.p(
             f"Each of the {mc.num(c['invnun'])} inverted $nun marks is ",
-            mc.he(hpu.NUN_HAF),
+            mc.unpointed(hpu.NUN_HAF),
             " (",
             mc.uname(hpu.NUN_HAF),
             ") in a span of class ",
@@ -1037,7 +1037,6 @@ def _cgj_rows_jerusalem(s):
                         mc.td_he([part for part in form if part != ""]),
                         mc.td_ref(ref),
                         mb_html.table_datum(mc.name_list(example[0]["cluster"])),
-                        mb_html.table_datum(mc.name_list(example[0]["normalized"])),
                         mb_html.table_datum(count, {"class": "num"}),
                     ]
                 )
@@ -1062,7 +1061,6 @@ def _cgj_rows_strands(s, kind):
                     mc.td_he(form),
                     mc.td_refs([h["ref"] for h in hits]),
                     mb_html.table_datum(mc.name_list(hits[0]["cluster"])),
-                    mb_html.table_datum(mc.name_list(hits[0]["normalized"])),
                 ]
             )
         )
@@ -1082,14 +1080,12 @@ def _robust_unicode(s):
         "Example",
         "Reference",
         ["The ", "$lamed", "'s code points"],
-        "Normalized without the CGJ",
         "Count",
     ]
     headers_s = [
         "Example",
         "References",
         "The letter's code points",
-        "Normalized without the CGJ",
     ]
     n_j_hiriq, n_j_sheva = len(cgj["jerusalem-hiriq"]), len(cgj["jerusalem-sheva"])
     n_j_bare = sum(
@@ -1118,16 +1114,14 @@ def _robust_unicode(s):
             " two vowels has a ",
             mc.cgj(),
             " between them. The tables give, for each kind, the code points of the letter in"
-            " order, and the order that normalization would give them without the ",
-            mc.cgj(),
-            ".",
+            " order.",
         ),
         author.heading_level_3("Jerusalem"),
         mc.p(
             f"{mc.num(n_j_hiriq + n_j_sheva)} are in atoms spelled ",
-            mc.he("ירושלם"),
+            mc.unpointed("ירושלם"),
             f" ({mc.num(n_j_hiriq)}) or ",
-            mc.he("ירושלמה"),
+            mc.unpointed("ירושלמה"),
             f" ({mc.num(n_j_sheva)}), with or without a prefix, on the $lamed. It has its own"
             " vowel, ",
             mc.uname(_PATAH),

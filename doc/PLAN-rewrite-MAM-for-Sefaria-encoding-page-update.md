@@ -72,4 +72,47 @@ and `py/tests/test_prose_mark_order.py`, 12 passed. The three pages were read in
 and the suite are left to the nightly run, per `doc/review-trial.md`. The Pages workflow was not
 started; publication waits for Ben's go-ahead.
 
+## 2026-10-26, later: the normalized column, and unpointed Hebrew
+
+Written by Claude (Opus 5.5) on 2026-10-26, in the same session. Ben's next two requests, quoted
+verbatim:
+
+1. "I don't think we need the "Normalized without the CGJ" column in any of the three tables in
+   which it appears."
+2. "Again and again and again you but unpointed Hebrew words in pointed-Hebrew styling. Please do
+   not, in "638 are in atoms spelled ירושלם (634) or ירושלמה " and elsewere in this document (I'm
+   not sure if there are other cases elsewhere in this document: I think there's an inverted nun
+   case, which similarly should just be left in the surrounding (default) font)"
+
+### What changed
+
+- **The column** is gone from the three tables that had it, all on the Sefaria page: the
+  Jerusalem table and the two tables under "Two strands on one letter". So is the clause of the
+  "Robust Unicode" paragraph that described it, "and the order that normalization would give
+  them without the CGJ". The AJF page's strand tables never had the column. The survey still
+  checks that normalization would reorder the marks of each letter that has a CGJ, which the
+  paragraph still states.
+- **Unpointed Hebrew in prose** is in the surrounding font, isolated for its direction in a
+  `<bdi>`: the two Jerusalem spellings and the NUN HAFUKHA on the Sefaria page, the letters of
+  the attention-color convention on the Sefaria and AJF pages, and the four strand names on the
+  AJF page.
+- **Unpointed Hebrew in an example** is too. A lifted ketiv, samekh or pe break, or inverted nun
+  stays in the surrounding font, and the pointed rest of its cell is in `lang="hbo"` spans; a
+  cell with nothing unpointed keeps `lang="hbo"` on its `td`. This is the classification of
+  `py/accgram/almost_errors_html_shared.py`'s `wrap_hebrew_runs`, which the `hebrew-prose`
+  skill's rendered-prose reference names for unpointed Hebrew. The line height that `styles.css`
+  gave `td[lang="hbo"]` now goes to every `td[dir="rtl"]`, and its header comment names the three
+  pages.
+- **A guard:** `py/author_misc/mam4sef_common.py`'s `write_page` refuses a page that has an
+  unpointed Hebrew token under `lang="hbo"`. A token of punctuation alone, such as the PASEQ
+  between two pointed atoms of an example, is allowed.
+
+### Verification of these changes
+
+`py/main_authored.py gen-mam-for-sefaria-doc` twice, with identical output; Black and Ruff;
+`git diff --cached --check`; the fourteen test files above, 59 passed. A scratch check of every
+Hebrew token on the three pages, joined across inline elements, found no pointed token outside
+`lang="hbo"` and no unpointed word inside it. The mega and the suite are left to the nightly
+run. The Pages workflow was not started.
+
 State of the plan: executed 2026-10-26, as revised here.
