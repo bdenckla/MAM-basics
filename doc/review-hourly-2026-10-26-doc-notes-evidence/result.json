@@ -1,0 +1,25 @@
+{
+  "selected-note": {
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_foi_features_of_interest.py",
+      "--foi",
+      "args-foi-doc-note-notation",
+      "--single-threaded"
+    ],
+    "exit_code": 0,
+    "seconds": 0.543
+  },
+  "selected-other": {
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "py/main_foi_features_of_interest.py",
+      "--foi",
+      "args-foi-kq-2",
+      "--single-threaded"
+    ],
+    "exit_code": 0,
+    "seconds": 0.547
+  },
+  "isolation": "Selected note run reproduces all files; selected kq-2 run leaves note HTML/JSON and index bytes and nanosecond mtimes unchanged."
+}

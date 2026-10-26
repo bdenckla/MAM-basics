@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-26",
+  "recorded_utc": "2026-10-26T15:09:54.300527+00:00",
+  "source_commit": "3c6b216c13c3ffa043501a485ea5481a6ab31e93",
+  "review_start": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "receipt_parent": "c6a28fc5388f84017064e7d48e75234426b8e912",
+  "receipt_branch": "review-hourly-20261026-doc-notes-receipts",
+  "committed_inputs": {
+    "MAM-parsed-plus": "3c6b216c13c3ffa043501a485ea5481a6ab31e93"
+  },
+  "runtime_sibling_inputs": [],
+  "review": "Read all two-commit/eight-path endpoint changes and relevant helpers. New note-body inventory and shared empty-category support agree with the declared population and output policy; final prose removal preserves the owner's editorial choice. No consequential defect confirmed; no repair.",
+  "executed": [
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        ".novc/hourly/test_doc_note_focused.py",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026/basics-source",
+      "exit_code": 1,
+      "pytest_seconds": 14.42,
+      "passed": 6,
+      "failed": 1,
+      "failure": "Scratch-only assertion counted a literal 'None are found.' twice; one occurrence is wrapped across a newline. Rendered text/sections were correct. No source change."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        ".novc/hourly/test_doc_note_focused.py",
+        "-k",
+        "empty_declared",
+        "-q",
+        "-ra"
+      ],
+      "cwd": "/workspace/review-hourly-20261026/basics-source",
+      "exit_code": 0,
+      "pytest_seconds": 1.14,
+      "passed": 1,
+      "deselected": 6,
+      "change": "Normalize whitespace in that scratch assertion only. Earlier successful checks and full FOI generation were not repeated."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--single-threaded"
+      ],
+      "exit_code": 0,
+      "invocation": "Initial focused check; stdout preserved in evidence/all-foi.log. Separate CLI duration was not persisted before the scratch assertion failed; no duration invented."
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--foi",
+        "args-foi-doc-note-notation",
+        "--single-threaded"
+      ],
+      "exit_code": 0,
+      "seconds": 0.543
+    },
+    {
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_foi_features_of_interest.py",
+        "--foi",
+        "args-foi-kq-2",
+        "--single-threaded"
+      ],
+      "exit_code": 0,
+      "seconds": 0.547
+    }
+  ],
+  "results": {
+    "raw_census": "All 24 committed MAM-parsed/plus JSON books; independent recursive raw-structure walker and character scanner, no production regex/traversal helpers; exact multiplicity, form and verse equality.",
+    "rows": [
+      {
+        "bcv_short": "G5:29",
+        "fp": "plus",
+        "r": "זֶ֠+ז֞ה"
+      },
+      {
+        "bcv_short": "G35:22",
+        "fp": "plus",
+        "r": "רְאוּבֵ֔+ב֗ן"
+      },
+      {
+        "bcv_short": "E20:12",
+        "fp": "plus",
+        "r": "תִּֿרְצַ֖+צָֽח"
+      },
+      {
+        "bcv_short": "2K17:13",
+        "fp": "plus",
+        "r": "שֻׁ֠+ש֜בוּ"
+      },
+      {
+        "bcv_short": "2K18:27",
+        "fp": "plus",
+        "r": "[אֵ]שֵ֥נַיְ+יֵהֶ֖ם"
+      },
+      {
+        "bcv_short": "Ee48:10",
+        "fp": "plus",
+        "r": "וּ֜+וּ֠לְאֵלֶּה"
+      },
+      {
+        "bcv_short": "Ee48:10",
+        "fp": "plus",
+        "r": "וּ֜+וּ֠לְאֵ֜לֶּה"
+      },
+      {
+        "bcv_short": "Ts2:15",
+        "fp": "plus",
+        "r": "זֹ֠+ז֞את"
+      }
+    ],
+    "plus_rows": 8,
+    "double_guillemet_rows": 0,
+    "output_comparison": {
+      "root_files_reproduced_byte_for_byte": 51,
+      "preexisting_root_files_unchanged": 49,
+      "unexpected_differences": [],
+      "tracked_source_status_after": "clean"
+    },
+    "focused_scope": "CP/DP/EP note bodies; targets and next_CP excluded outside a body; nested notes/templates, both dual/qamats alternatives, good endings, scroll notes outside/inside bodies; double and single guillemets, plus boundaries; fully empty declared stem writes [] and retains both sections without tables; selected-other leaves note HTML/JSON and index bytes plus nanosecond mtimes unchanged."
+  },
+  "cheap_checks": "Home Python 3.13.15 pip check passed. Black --check passes for all five changed Python files; git diff --check passes.",
+  "evidence_directory": "review-hourly-2026-10-26-doc-notes-evidence",
+  "raw_evidence_preserved": "/workspace/scratch/review-hourly-20261026/basics-raw",
+  "broad_tested_unchanged": "926a6e785be4236673ac4a5c8c34afe63ed417f4",
+  "limits": [
+    "Focused checks only; no full mega or suite rerun, and no new broad-tested claim.",
+    "No manuscript/editorial interpretation or browser rendering claim; the documented template-interruption limitation remains.",
+    "No source repair, Private mutation, HP action, main integration/push, workflow dispatch, deployment, font generation, baseline acceptance or frozen regeneration."
+  ],
+  "remaining_review_window_at_freeze": null
+}
