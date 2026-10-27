@@ -15,7 +15,9 @@ texts must have the same letters, and their marks must differ on exactly one
 letter, the helper's letter, where parameter 2 has one dexi more than parameter 1.
 If, apart from that dexi, parameter 2 lacks only a meteg that parameter 1 has on
 that letter, the call is one of the page's rows, and both of its parameters must
-be text, as the page shows them.  If nothing else differs, parameter 1 has no
+be text.  A row shows parameter 1 above the chanted word as MAM-with-doc renders
+it, with its render options: parameter 2 with parameter 1's meteg kept.  If
+nothing else differs, parameter 1 has no
 meteg, or has meteg marks only before the helper's letter, at least one on an
 earlier atom of a maqaf compound or all of them in the helper's atom.  Any other
 call raises, so that the page's introduction, which states these kinds, is
@@ -103,7 +105,11 @@ def _handle_dexi(bcvt, foilers, _stack, tmpl):
     if kind == METEG_ON_HELPER_LETTER:
         if _params(tmpl) != [[text_1], [text_2]]:
             raise ValueError(f"{bcvt}: a row with a special-letter word: {tmpl!r}")
-        qualifier = {"parameter_2": text_2, "note": None}
+        qualifier = {
+            "parameter_2": text_2,
+            "mam_with_doc": _mam_with_doc_form(bcvt, tmpl),
+            "note": None,
+        }
         fois.append((ROWS_FOI_PATH, fct.make_qtarget(text_1, qualifier)))
     for key in ("1", "2"):
         fois += fwh.find_fois_in_wtseq(foilers, wtp.template_param_val(tmpl, key))
@@ -127,6 +133,15 @@ def _with_note(bcvt, note, foi):
         raise ValueError(f"{bcvt}: a row's note lacks {NOTE_WORDS}: {note!r}")
     qualifier = {**fct.qtar_qual(target), "note": _note_html(bcvt, note)}
     return foi_path, fct.make_qtarget(fct.qtar_proper(target), qualifier)
+
+
+def _mam_with_doc_form(bcvt, tmpl):
+    """The chanted word as MAM-with-doc's verse column has it."""
+    hctx = handlers.default_hctx(bcvt, mwdwb.RENOPTS_MAM_WITH_DOC)
+    form = wt_help.render_wtseq(hctx, [tmpl])
+    if not (len(form) == 1 and isinstance(form[0], str)):
+        raise ValueError(f"{bcvt}: MAM-with-doc's form is not text: {form!r}")
+    return form[0]
 
 
 def _note_html(bcvt, note):

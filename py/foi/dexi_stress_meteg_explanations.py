@@ -48,14 +48,15 @@ def overall_explanation(census):
             (
                 "Below are the chanted words whose parameter 1 has a meteg on the",
                 "letter where parameter 2 has the helper, the two parameters being",
-                "otherwise the same. In each row, parameter 1 is above parameter 2,",
-                "and to their left is MAM's documentation note on the word, as",
-                "MAM-with-doc shows it. Each of those notes describes the meteg as",
-                f"“{dsm.NOTE_WORDS}”, a ga'ya stroke to show where the stress is.",
-                "MAM's parameter 2 lacks that meteg, but with the helper drawn above",
-                "the letter and the meteg below it, MAM-with-doc keeps the meteg:",
-                "since 2026-10-27 it has shown each of these chanted words as",
-                "parameter 2 with parameter 1's meteg.",
+                "otherwise the same. MAM's parameter 2 lacks that meteg, but with the",
+                "helper drawn above the letter and the meteg below it, MAM-with-doc",
+                "keeps the meteg: since 2026-10-27 it has shown each of these",
+                "chanted words as parameter 2 with parameter 1's meteg. In each row,",
+                "parameter 1 is above the chanted word as MAM-with-doc shows it, with",
+                "both the meteg and the helper, and to their left is MAM's",
+                "documentation note on the word, as MAM-with-doc shows it too. Each",
+                f"of those notes describes the meteg as “{dsm.NOTE_WORDS}”, a ga'ya",
+                "stroke to show where the stress is.",
             )
         ),
     )
@@ -105,21 +106,24 @@ def _example(call):
     """The call's parameter 1 above its parameter 2, as a paragraph of its own."""
     if set(call) != {"bcv_anchor", "parameter_2", "html_contents"}:
         raise ValueError(f"unexpected census row keys: {sorted(call)}")
-    return mb_html.para(_forms(call), _EXAMPLE)
+    return mb_html.para(_above(call["html_contents"], call["parameter_2"]), _EXAMPLE)
 
 
-def _forms(row_dic):
-    return row_dic["html_contents"], mb_html.line_break(), row_dic["parameter_2"]
+def _above(upper, lower):
+    return upper, mb_html.line_break(), lower
 
 
 def html_row_cells(row_dic):
-    """The note, then parameters 1 and 2 one above the other, then the verse, each
-    cell lined above and below, so that the lines divide the table's rows."""
-    if set(row_dic) != {"bcv_anchor", "parameter_2", "note", "html_contents"}:
+    """The note; then parameter 1 above the chanted word as MAM-with-doc shows it,
+    which keeps parameter 1's meteg; then the verse. Each cell is lined above and
+    below, so that the lines divide the table's rows."""
+    keys = {"bcv_anchor", "parameter_2", "mam_with_doc", "note", "html_contents"}
+    if set(row_dic) != keys:
         raise ValueError(f"unexpected row keys: {sorted(row_dic)}")
     hebrew = {**_BORDERED, **_HEBREW}
+    forms = _above(row_dic["html_contents"], row_dic["mam_with_doc"])
     return (
         mb_html.table_datum(row_dic["note"], hebrew),
-        mb_html.table_datum(_forms(row_dic), hebrew),
+        mb_html.table_datum(forms, hebrew),
         mb_html.table_datum(row_dic["bcv_anchor"], _BORDERED),
     )
