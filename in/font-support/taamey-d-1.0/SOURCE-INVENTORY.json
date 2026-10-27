@@ -1,0 +1,95 @@
+{
+  "font": "Taamey D",
+  "version": "1.0",
+  "release_snapshot": {
+    "identifier": "1.0-hbofonts-68cd62902202",
+    "url": "https://bdenckla.github.io/hbofonts/downloads/snapshots/1.0-hbofonts-68cd62902202/",
+    "published_date": "2026-10-26",
+    "source_repository": "https://github.com/bdenckla/hbofonts",
+    "source_commit": "68cd629022028ec648c0ee2f36ac0480123d0d47",
+    "sha256sums_sha256": "d56a609c5f4f050d35e7c821de89656516bcae391ac5ac5e01a6c6905610d7e7",
+    "provenance_sha256": "25dd028af4cd174de4e3983ca5c09e8921542a2545b783de84618c9dfd9d008f"
+  },
+  "binary": {
+    "filename": "Taamey_D.woff2",
+    "size": 22264,
+    "sha256": "f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151",
+    "git_blob": "0459900225d1eaa6a05c87b8df64adba459b9739",
+    "release_archive": "Taamey_D.zip",
+    "release_archive_sha256": "be17640488ccd497908349114e8ea329bdd98aa4f59f6725cf4c2b278bfb3628",
+    "release_member": "Taamey_D/Taamey_D.woff2"
+  },
+  "source_archive": {
+    "filename": "Taamey_D-1.0-sources.zip",
+    "release_filename": "Taamey_D-sources.zip",
+    "size": 73688,
+    "sha256": "19bcdd68fd0a7526a0cd38d9f5ee50e86e6e7b69ba05e40738522add68300ad4",
+    "members": [
+      {
+        "path": "font-m-TaD/Taamey_D-nofea.sym.sfd",
+        "size": 181510,
+        "sha256": "e2555f215630a84482b11ee454466a5cd2309a5ae5abc94f525ca791c24b4c70"
+      },
+      {
+        "path": "font-m-TaD/Taamey_D.sym.fea",
+        "size": 45503,
+        "sha256": "df3b65e921f36235fe183c6729b4e020f085bb0800ffe25b7304443f565c74af"
+      },
+      {
+        "path": "font-m-TaD/ffscript_generate_sfd_n_ttf.py",
+        "size": 412,
+        "sha256": "488a4778a0244cbe986fdef26fc27d6e21b6dba557cb958c185d78ac7c5b1db8"
+      },
+      {
+        "path": "font-m-TaD/license.sym.txt",
+        "size": 37,
+        "sha256": "4da1233fb44bd05cfe777e363620563bc32c665611d824958b4fe55553c41d11"
+      },
+      {
+        "path": "font-m-TaD/license.txt",
+        "size": 1479,
+        "sha256": "8ebfda3e92cfc3bbf20d8ef1ba12dd050aa04842f003fb321560835d01d1e58c"
+      },
+      {
+        "path": "main_fill_in_template.py",
+        "size": 14966,
+        "sha256": "132dde29e405c75f86ddce1435c550056e208dfa81afdc40791da2e7427845db"
+      },
+      {
+        "path": "my_font_version.py",
+        "size": 16,
+        "sha256": "91f48f71ca5b4063c282c9c2e184be62adcbcaf3c31168a83bb471c153ed99b0"
+      },
+      {
+        "path": "my_open.py",
+        "size": 1760,
+        "sha256": "31d50757d4f072dd4f686241e1c3721bf4753f2ccc16ea5a0c8a43e0b1fe346a"
+      },
+      {
+        "path": "py/main_mega.py",
+        "size": 6114,
+        "sha256": "93361956e086c53bb15978e7ca06c61a7915c9d2f3a05ddb366f9deb866b897b"
+      }
+    ]
+  },
+  "font_notice": {
+    "origin": "OpenType name ID 0 of the exact 1.0 binary, identical to that of 0.921",
+    "extracted_utf8_sha256": "a9f90ba574cebfe67c6941706daf03eaf5c49159c082c44adf3dc7b997060d62",
+    "packaged_sha256": "25f37bd8a9785e2112994bb0583e6068aab610546b195dfbeb8b93c4ef79b9e1",
+    "formatting": "Removed whitespace on otherwise blank lines and added a final LF; all copyright and license wording preserved."
+  },
+  "gpl_text": {
+    "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+    "size": 17984,
+    "sha256": "edaef632cbb643e4e7a221717a6c441a4c1a7c918e6e4d56debc3d8739b233f6"
+  },
+  "checks": {
+    "release_archives": "Taamey_D.zip and Taamey_D-sources.zip match the snapshot's SHA256SUMS.txt and provenance.json",
+    "source_archive_members": "All nine members match provenance.json's paths, sizes and SHA-256 values",
+    "binary": "Taamey_D.woff2 is byte-identical to Taamey_D.zip's Taamey_D/Taamey_D.woff2",
+    "font_notice": "Name ID 0 of the 1.0 TTF and WOFF2, read with fontTools, is identical to that of 0.921; FONT-NOTICE.txt is derived from it as recorded above",
+    "source_input_closure": "Static inspection of the generate-only path of py/main_mega.py, script imports and feature-file includes",
+    "source_execution": "None",
+    "exact_binary_rebuild": "Not established"
+  }
+}

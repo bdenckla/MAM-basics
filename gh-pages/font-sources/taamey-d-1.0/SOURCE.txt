@@ -1,0 +1,39 @@
+Taamey D 1.0: license, source, and provenance
+=============================================
+
+This directory provides the source package and notices for the unmodified
+22,264-byte Taamey_D.woff2 that MAM-basics' published pages load.
+Font SHA-256: f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151
+
+Download the complete Taamey D build inputs from this directory:
+  Taamey_D-1.0-sources.zip
+Archive size: 73688 bytes
+Archive SHA-256: 19bcdd68fd0a7526a0cd38d9f5ee50e86e6e7b69ba05e40738522add68300ad4
+
+Companion files in this directory:
+  FONT-NOTICE.txt: copyright, GNU GPL version 2 grant, and embedding exception
+  GPL-2.0.txt: complete GNU GPL version 2 text
+  SOURCE-INVENTORY.json: release identities and exact archive-member hashes
+  BUILD.txt: source scope, build procedure, dependencies, and limitations
+
+The downloadable ZIP is Taamey_D-sources.zip from the Taamey D release snapshot
+1.0-hbofonts-68cd62902202, unchanged except for its file name. It holds nine
+source and build files and contains no font binary and none of the companion
+files above. The font is the Taamey_D/Taamey_D.woff2 member of the same
+snapshot's Taamey_D.zip. The snapshot is published at:
+  https://bdenckla.github.io/hbofonts/downloads/snapshots/1.0-hbofonts-68cd62902202/
+
+The maintained MAM-basics copy of this directory is published alongside the font
+under font-sources/taamey-d-1.0/. Its purpose is to provide same-host, no-charge
+access to the source under GNU GPL version 2 section 3, rather than depending
+only on the release's own download. Keep the source ZIP and notices publicly
+available whenever the associated font is distributed.
+
+The archive and its nine members were checked against the snapshot's
+SHA256SUMS.txt and provenance.json. No build script was run. Byte-for-byte
+reproduction of the WOFF2 has not been established; see BUILD.txt.
+
+The font is GNU GPL version 2 with the exception reproduced in FONT-NOTICE.txt.
+MAM-basics does not relicense it or the source bundle under GPL version 3.
+The embedding exception applies to documents using the font; redistribution of
+the font itself still requires its notices, license, and corresponding source.

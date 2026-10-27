@@ -3,10 +3,20 @@
 This is a typography heuristic, not a collision detector. A yod or vav with
 a wide below-vowel and a below-accent can crowd neighboring ink
 even after the font has avoided overlap. NAEE expands such atoms by 0.06em,
-alongside the six observed advance-adding contexts in the frozen Taamey D 0.921
-source and its precise preceding-yod vowel-raising context beside qof. These
-font-derived contexts preserve their below-mark order and filtering conditions;
-they do not enable either general FOI trial screen wholesale.
+alongside the six observed advance-adding contexts in Taamey D's source and its
+precise preceding-yod vowel-raising context beside qof. These font-derived
+contexts preserve their below-mark order and filtering conditions; they do not
+enable either general FOI trial screen wholesale.
+
+The contexts were read from the Taamey D 0.921 source, and 1.0 keeps them. A
+fontTools comparison of the two fonts' GPOS tables on 2026-10-26 found the two
+kern lookups and the vowel-raising rule unchanged, except that their glyph
+classes gain sheva na (U+05C8) and the letters with dagesh xazaq (U+05C9),
+neither of which any atom in MAM-parsed/plus/ or out/near-aleppo/plus/ has, and
+that the glyph for he with mapiq has a new name. 1.0 also draws a dexi
+stress helper, a dexi on a later letter of its atom, with a top-meteg glyph that
+the vowel-raising rule's mark filtering skips; for no atom in those two trees does
+skipping such a dexi change this screen's result.
 
 HTML conversion sees contiguous text leaves after semantic rendering. Atoms split
 by special-letter or vowel-variant spans may be missed or only partly expanded;
@@ -35,7 +45,7 @@ _VOWEL_ACCENT_LETTERS = frozenset(
 _WIDE_BELOW_VOWELS = frozenset(
     (hp.TSERE, hp.SEGOL_V, hp.XSEGOL, hp.XPATAX, hp.XQAMATS, hp.QUBUTS)
 )
-# The broader narrow-letter class in the frozen Taamey D source's @narlets.
+# The broader narrow-letter class in the Taamey D source's @narlets.
 _NARROW_PAIR_LETTERS = _VOWEL_ACCENT_LETTERS | frozenset(
     (
         "\N{HEBREW LETTER GIMEL}",
@@ -50,8 +60,10 @@ _BELOW_VOWELS = _WIDE_BELOW_VOWELS | frozenset(
 _BELOW_ACCENTS_OR_METEG = ha.UNI_UNDER_ACCENTS | {hp.MTGOSLQ}
 _BELOW_MARKS = _BELOW_VOWELS | _BELOW_ACCENTS_OR_METEG
 # Taamey D.sym.fea's @blws and @blw_wides, rather than the broader trial sets.
-# Yetiv and dexi are excluded by the kern lookups' mark filtering; sheva na is
-# not a glyph in this font. Patax and qamats are wide in the font's classes.
+# Yetiv and dexi are excluded by the kern lookups' mark filtering. Sheva na is
+# left out as it was absent from 0.921; 1.0 adds it to @blws, but no atom in the
+# two trees the module docstring names has one. Patax and qamats are wide in the
+# font's classes.
 _FONT_BELOW = _BELOW_MARKS - {ha.YET, ha.DEX, hp.SHEVA_NA}
 _FONT_WIDE = _FONT_BELOW - {hp.SHEVA, hp.XIRIQ, hp.MTGOSLQ}
 _FONT_XATAFS = frozenset((hp.XSEGOL, hp.XPATAX, hp.XQAMATS))
@@ -105,8 +117,8 @@ def _font_below(marks, *, include_dehi=False):
 def _font_added_space(clusters):
     """The five kern1AddThin contexts and the observed second kern2AddThin rule.
 
-    Source: in/font-support/taamey-d-0.921/'s frozen source archive,
-    sources/font-m-TaD/Taamey_D.sym.fea, lines 137–150. The first kern2AddThin
+    Source: in/font-support/taamey-d-1.0/'s source archive,
+    font-m-TaD/Taamey_D.sym.fea, lines 203–216. The first kern2AddThin
     rule (two below marks before a narrow letter with three) remains a trial:
     the selected-Scripture investigation found no occurrence to judge visually.
     """
@@ -183,7 +195,7 @@ def _font_added_space(clusters):
 
 
 def _yod_before_qof(clusters):
-    """Screen the exact vowel-raising context in the font source's line 333."""
+    """Screen the exact vowel-raising context at line 422 of the 1.0 source's .fea."""
     for (first, a), (second, b) in zip(clusters, clusters[1:]):
         if first != "י" or second != "ק":
             continue
