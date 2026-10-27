@@ -1,0 +1,69 @@
+{
+  "date": "2026-10-27",
+  "state": "completed focused review",
+  "recorded_utc": "2026-10-27T19:29:44.383581+00:00",
+  "window": {
+    "from": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+    "through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "commits": 2,
+    "paths": 5
+  },
+  "receipt_parent": "739a9e2bfd95381e98dcf58604c71fce8cf563db",
+  "prior_inspection_and_pure_checks": "review-hourly-2026-10-27-translations-partial.json; completed evidence retained unchanged and not rerun.",
+  "release_and_overlap": "Parent explicitly released the HP generation hold after confirming completed clean work and no task processes at 19:27 UTC. Fresh local process inventory found no active generator/test. The two new generation stages were awaited strictly sequentially.",
+  "inputs": {
+    "basics_code_and_all_runtime_inputs": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "differential_parent": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+    "runtime_siblings": "None required or consumed. FOI reads committed MAM-parsed-plus and other local tracked renderer inputs; no Private or font input checkout needed."
+  },
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-translations-evidence/selected-foi.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-translations-complete/run_foi.py",
+        "selected"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-translations-complete/source",
+      "started_utc": "2026-10-27T19:28:28.851658+00:00",
+      "completed_utc": "2026-10-27T19:28:30.116443+00:00",
+      "seconds": 1.265,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-translations-evidence/full-foi.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-translations-complete/run_foi.py",
+        "full"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-translations-complete/source",
+      "started_utc": "2026-10-27T19:28:35.775752+00:00",
+      "completed_utc": "2026-10-27T19:28:49.625730+00:00",
+      "seconds": 13.85,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "comparisons": [
+    "Selected --foi args-foi-dexi-stress-meteg --single-threaded: generator exit 0; all 53 output files byte-identical before/after, with no added/deleted files. Only its HTML/JSON pair and provenance.md receive new mtimes; every unselected page and index retain both bytes and mtime.",
+    "Full --single-threaded FOI family: generator exit 0; all 53 output files byte-identical, with no tracked differences or unrelated output changes. Fifty-two files were rewritten; the existing poetic-verlen.csv is untouched. Before/after SHA-256, size and nanosecond mtime inventories are retained for each run.",
+    "Together with the unchanged partial evidence: nine original notes/forms/references and 20 parts are preserved; all 14 embedded Hebrew quotations match source codepoints; 10 Python cases, five differential serializer controls and 18 simulated clicks pass. These tests were not repeated in this continuation."
+  ],
+  "failure_status": "No generator or comparison failure, no generation skip. Prior pure checks also have no unexpected failure; their six intentional rejection cases remain attributed to that earlier run.",
+  "disposition": "Close only this frozen window. No consequential implementation defect or repair confirmed. Preserve editorial choices and explicit AI/not-human-reviewed translation caveats; no human approval or new Hebrew interpretation inferred.",
+  "reviewed_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "focused_checked_through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+  "broad_tested_unchanged": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "not_run": "No repeat pure tests/formatting, full mega/suite, browser/layout/accessibility check, font build/shaping, baseline acceptance, frozen-font generation, Private/HP regeneration, release or deployment. No author test claim adopted.",
+  "raw_evidence": "/workspace/scratch/review-hourly-20261027-translations-complete/source-raw",
+  "raw_archive": "/workspace/scratch/review-hourly-20261027-translations-complete/source-raw.tar.gz",
+  "remote_before_receipt": {
+    "refs/heads/main": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "refs/heads/review-hourly-20261027-translations-partial-receipts": "739a9e2bfd95381e98dcf58604c71fce8cf563db"
+  },
+  "remaining_window": null,
+  "blockers": [],
+  "limits": "Focused-tested means only the explicit partial-plus-continuation evidence. Receipt branch code tree is not the tested source. Original finished receipts remain unchanged; broad anchor preserved. Isolated receipt push only, no main/shared integration or policy/publication change. Archive bytes/membership verified before completed temporary-checkout cleanup."
+}

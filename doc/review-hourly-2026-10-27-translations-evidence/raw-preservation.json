@@ -1,0 +1,14 @@
+{
+  "raw": "/workspace/scratch/review-hourly-20261027-translations-complete/source-raw",
+  "archive": "/workspace/scratch/review-hourly-20261027-translations-complete/source-raw.tar.gz",
+  "archive_sha256": "28ab121d614f6c5c1e2172d1042e012698794ce34f5a4b8ca98f8b1816052936",
+  "file_sha256": {
+    "hourly/foi-full-comparison.json": "507b9e894c34079bfd5c67215cf92b80fff1ac48a6fcab19fbe09d10679f85d8",
+    "hourly/full-foi.json": "25ff214c88471d2a77405072edbc1a8155dde3867ae229a956d91ab064d9a22b",
+    "hourly/selected-foi.json": "fd4704bf67a2f7fe8ba3466b6469fb291ffba5d3a9e1b7a07e983048d70ef8a8",
+    "hourly/foi-selected-comparison.json": "2204218c593cd59504439408772c7e1e9db418398d8c4023fca9340446e30a32",
+    "hourly/full-foi.log": "bc8471891b76500b2cfd8e06b5c9590eb30288873d395a4c8995034a8deefca6",
+    "hourly/selected-foi.log": "cada95f8fef6bf9db59c4a28999afb8f052654baf973f7ca6dcffefb7b3ef0a5"
+  },
+  "membership_and_bytes_verified": true
+}
