@@ -30,7 +30,8 @@ def overall_explanation(counts):
                 "deḥi on the first letter of the stressed syllable. MAM's template",
                 "מ:דחי gives a chanted word in two forms, parameter 1 without the",
                 "helper and parameter 2 with it, and since 2026-10-26 MAM-with-doc",
-                "has shown parameter 2.",
+                "has shown parameter 2. Taamey D, the font of these pages, draws the",
+                "helper as a top meteg, a vertical bar above its letter.",
             )
         ),
         " ".join(
@@ -41,6 +42,10 @@ def overall_explanation(counts):
                 "and to their left is MAM's documentation note on the word, as",
                 "MAM-with-doc shows it. Each of those notes describes the meteg as",
                 f"“{dsm.NOTE_WORDS}”, a ga'ya stroke to show where the stress is.",
+                "MAM's parameter 2 lacks that meteg, but with the helper drawn above",
+                "the letter and the meteg below it, MAM-with-doc keeps the meteg:",
+                "since 2026-10-27 it has shown each of these chanted words as",
+                "parameter 2 with parameter 1's meteg.",
             )
         ),
         " ".join(

@@ -193,7 +193,19 @@ _ACCENT_TEMPLATE_NAMES_BY_ROW = (
                 mb_html.line_break(),
                 author.hbo("מ:צינור"),
             ],
-            "$Dexi and $tsinnor variation. Presents both stress-helped and non-stress-helped versions of a word.",
+            [
+                "$Dexi and $tsinnor variation. Presents both stress-helped and"
+                " non-stress-helped versions of a word: param 1 without the stress"
+                " helper and param 2 with it. Param 2 does not always stand on its"
+                " own. In a few calls of ",
+                author.hbo("מ:דחי"),
+                ", param 1 has a $meteg on the letter where param 2 has the $dexi"
+                " stress helper, and param 2 lacks that $meteg. Only with param 1"
+                " can an application tell that this helper is a special kind: one"
+                " whose stress a $meteg already indicates. Some applications may"
+                " want to read param 2's helper with param 1's help, as $MAM-with-doc"
+                " does, showing param 2 with that $meteg kept; others may not.",
+            ],
         ],
     ),
     (

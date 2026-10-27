@@ -24,11 +24,14 @@ from mb_cmn import my_utils
 #         Each dualcant phrase has an alef & bet cant as well as a combined cant.
 #             For Reuben: alef=פשוטה & bet=מדרשית
 #             For Decalogues: alef=taxton & bet=elyon
-#     ro_stress_helper: which parameter of מ:דחי and מ:צינור is shown
+#     ro_stress_helper: which form of מ:דחי and מ:צינור is shown
 #         None or 'rv-without-stress-helper': parameter 1, the chanted word
 #             with its accent alone (None is the default)
 #         'rv-with-stress-helper': parameter 2, the same chanted word with
 #             the accent's stress helper as well
+#         'rv-with-stress-helper-keeping-meteg': parameter 2, keeping a meteg
+#             that parameter 1 has on the helper's letter and parameter 2 lacks,
+#             for pages whose font draws a dexi stress helper as a top meteg
 
 
 def render(bkid, books_mpu, renopts=None, io_renlog=None):

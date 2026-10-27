@@ -71,7 +71,8 @@ def _handle_disputed(dsa_disputed_part):
 #
 # MAM has dexi stress helpers, in parameter 2 of מ:דחי. Whether the variants
 # that this handler analyzes have parameter 1 or parameter 2 of a מ:דחי inside
-# them is the caller's choice, by ro_stress_helper (see
+# them, and whether parameter 2 keeps a meteg that parameter 1 has, is the
+# caller's choice, by ro_stress_helper (see
 # render_wikitext_handlers). Where they have parameter 1, the word has no dexi
 # stress helper, so to determine whether its dexi indicates stress, we would
 # have to determine whether the word NEEDS a stress helper. Dexi never appears
