@@ -178,3 +178,42 @@ one.
    carries the aBHL tag, and its tanach.us page says that the UXLC agrees with the BHL body
    text. 2026.04.10-9 carries neither BHL tag, so its page says "The UXLC does not agree with
    either BHL text", though its note says that BHL has a meteg under the kaf.
+
+## 8. A ZWJ between two marks in three atoms of Job, found 2026-10-27
+
+Three atoms in Job have a zero-width joiner (ZWJ) between two marks. In Job 32:6 and 10:15 the
+joiner keeps an accent before a ḥiriq, an order that normalization would otherwise change, so the
+Unicode Standard calls for a combining grapheme joiner (CGJ) there. In Job 19:16 the joiner is
+between a revia and a geresh muqdam, whose order normalization never changes, so that atom needs
+no joiner. Ben, 2026-10-27, of Job 32:6: "The editor of UXLC doesn't understand the difference
+between ZWJ and CGJ, or at least, confused them in this case."
+
+| Citation | Atom | Locator | Marks in the UXLC's order | Record that added the ZWJ | Release |
+| --- | --- | --- | --- | --- | --- |
+| Job 32:6.11 | יְשִׁישׁ֑‍ִים | F406A 1:20 | shin dot, atnaḥ, ZWJ, ḥiriq, on the second shin | Daniel Holman's 2023.06.10-39 | 2023.10.19 |
+| Job 10:15.12 | עָנְי֥‍ִי׃ | F400A 1:14 | merkha, ZWJ, ḥiriq, on the first yod | Ben's 2026.02.05-35 | 2026.04.01 |
+| Job 19:16.6 | פִ֗‍֝י | F402B 1:9 | ḥiriq, revia, ZWJ, geresh muqdam, on the pe | Ben's 2026.02.05-65 | 2026.04.01 |
+
+Both joiners have combining class 0, so the text survives normalization either way; the
+difference is meaning. The Unicode Standard 18.0 (section 23.2.4) gives the CGJ the job of
+keeping canonically equivalent mark orders distinct, with a Hebrew example (lamed,
+pataḥ, CGJ, ḥiriq), and warns against confusing it with the ZWJ, which (section 23.2.2)
+requests a more connected rendering, such as a ligature. Its Hebrew section (9.1, "Meteg")
+uses the CGJ to keep a meteg-vowel order under normalization and the ZWJ only to request a
+meteg in the middle of a ḥataf vowel. A revia and a geresh muqdam have the same combining
+class, 230, so either order of the two survives normalization without a joiner.
+
+UXLC 2.6's text (MAM-basics `in/UXLC-39/`) has 1,141 CGJs, 264 of them directly between an
+accent and a vowel, as in the atom בִנְיָמ֑͏ִן at Num 7:60. It has 83 ZWJs: 80 between a ḥataf
+vowel and a meteg, the medial-meteg request, and these three. It has no ZWNJ.
+
+The one record that states a reason gives the display: 2026.02.05-65 says the ZWJ is there
+"to achieve the ordering in the display". 2026.02.05-35 replaced Job 10:15's existing CGJ
+(silluq, CGJ, ḥiriq) with a ZWJ when it changed the silluq to a merkha, and Ben's
+2026.02.05-115 re-examined the order at Job 32:6 and kept the ZWJ. The ZWJ gives that display
+only by breaking mark positioning: with HarfBuzz, the shaping engine Chrome and Firefox use,
+Taamey D leaves the mark after each ZWJ unpositioned, at its letter's edge. With a CGJ,
+Taamey D positions Job 32:6's ḥiriq under the shin, left of the atnaḥ.
+
+Correction: in Job 32:6 and 10:15, replace the ZWJ with a CGJ; in Job 19:16, remove it. CLC
+does not cover Job yet; it could make the same corrections if the UXLC does not.
