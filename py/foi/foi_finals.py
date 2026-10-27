@@ -96,9 +96,13 @@ def _write_index_dot_html(outspecs):
 
 def _write_finals3(args_foi, all_fois, outspec):
     outfile_stem, foi_paths = outspec
-    # A counted path's rows are counted for the page's introduction, not listed.
+    # A counted path's rows go to the page's introduction, which counts them and may
+    # show some of them, rather than to a table.
     counted = _COUNTED_FOI_PATHS.get(outfile_stem, frozenset())
-    counts = {foi_path: len(all_fois[foi_path]) for foi_path in counted}
+    census = {
+        foi_path: [_get_rows(foi_path, fs)[1] for fs in all_fois[foi_path]]
+        for foi_path in counted
+    }
     listed = sorted(foi_path for foi_path in foi_paths if foi_path not in counted)
     # Every listed path gets a table, in sorted order, so that a declared category
     # with no rows keeps its section.
@@ -111,7 +115,7 @@ def _write_finals3(args_foi, all_fois, outspec):
     if outfile_stem == "mtgmtg":
         mtgmtg_e.validate_quoted_mam_atoms(outs["rowdics"])
     _write_json(outfile_stem, outs["rowdics"])
-    _write_html(args_foi, outfile_stem, outs["html_tables"], counts)
+    _write_html(args_foi, outfile_stem, outs["html_tables"], census)
 
 
 def _make_final_for_foi_struct(fpfs, outs):
@@ -225,12 +229,12 @@ def _outfilename_for_json(outfile_stem):
     return f"foi-{outfile_stem}.json"
 
 
-def _write_html(args_foi, outfile_stem, html_tables, counts):
+def _write_html(args_foi, outfile_stem, html_tables, census):
     body1, body2 = _get_html_body1_and_2(outfile_stem, html_tables)
     if not body1:
         assert args_foi
         return
-    overall_head = _overall_head(outfile_stem, counts)
+    overall_head = _overall_head(outfile_stem, census)
     body_contents = _foi_body_wrapper(overall_head + body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(
@@ -247,12 +251,12 @@ def _foi_body_wrapper(contents):
     return [mb_html.div(contents, {"style": style})]
 
 
-def _overall_head(outfile_stem, counts):
+def _overall_head(outfile_stem, census):
     explanation = _OVERALL_EXPLANATIONS.get(outfile_stem)
     if explanation is None:
         return []
-    if callable(explanation):  # Its figures are the counts of the counted paths.
-        explanation = explanation(counts)
+    if callable(explanation):  # It makes its HTML from the counted paths' rows.
+        return list(explanation(census))
     if isinstance(explanation, str):
         return [mb_html.para(explanation)]
     return [mb_html.para(paragraph) for paragraph in explanation]
@@ -409,8 +413,8 @@ _OVERALL_EXPLANATIONS = {
 }
 
 
-# The foi_paths of a stem whose rows its page counts in its introduction, whose
-# explanation then takes the counts, rather than listing them.
+# The foi_paths of a stem whose rows go to its page's introduction rather than to a
+# table; its explanation then takes those rows and returns the introduction's HTML.
 _COUNTED_FOI_PATHS = {
     "dexi-stress-meteg": dexi_stress_meteg_e.COUNTED_FOI_PATHS,
 }

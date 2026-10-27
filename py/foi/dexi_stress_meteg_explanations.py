@@ -1,37 +1,47 @@
 """The dexi-stress-meteg FOI page's introduction and table cells.
 
-The introduction's figures are the counts that foiz_wt_dexi_stress_meteg records
-under its CENSUS_FOI_PATHS, read when the page is generated.
+The introduction's figures are the numbers of calls that foiz_wt_dexi_stress_meteg
+records under its CENSUS_FOI_PATHS, and its two examples are the first calls, in the
+order of the books, of two of those kinds; both are read when the page is generated.
 """
 
 from foi import foiz_wt_dexi_stress_meteg as dsm
 from mb_misc import mb_html
 
 COUNTED_FOI_PATHS = frozenset(dsm.CENSUS_FOI_PATHS.values())
+_HEBREW = {"lang": "hbo", "dir": "rtl"}
+# An example is a paragraph of its own, centered.
+_EXAMPLE = {**_HEBREW, "style": "text-align: center"}
+# A table cell's lines above and below, as MAM-with-doc's verse rows have them.
+_BORDERED = {"class": "top-n-bot-bordered"}
 
 
-def overall_explanation(counts):
-    """Return the introduction's paragraphs; counts gives the number of מ:דחי calls
-    of each kind by its census foi_path."""
-    if set(counts) != COUNTED_FOI_PATHS:
-        raise ValueError(f"census counts for other foi_paths: {sorted(counts)}")
-    kinds = {kind: counts[foi_path] for kind, foi_path in dsm.CENSUS_FOI_PATHS.items()}
-    earlier_atom = kinds[dsm.METEG_ON_EARLIER_ATOM]
-    earlier_in_atom = kinds[dsm.METEG_EARLIER_IN_STRESSED_ATOM]
-    before = earlier_atom + earlier_in_atom
+def overall_explanation(census):
+    """Return the introduction's HTML; census gives, for each census foi_path, the
+    rows of the מ:דחי calls of its kind, in the order of the books."""
+    if set(census) != COUNTED_FOI_PATHS:
+        raise ValueError(f"census rows for other foi_paths: {sorted(census)}")
+    calls = {kind: census[foi_path] for kind, foi_path in dsm.CENSUS_FOI_PATHS.items()}
+    kinds = {kind: len(kind_calls) for kind, kind_calls in calls.items()}
+    earlier_atom = calls[dsm.METEG_ON_EARLIER_ATOM]
+    earlier_in_atom = calls[dsm.METEG_EARLIER_IN_STRESSED_ATOM]
+    if not (earlier_atom and earlier_in_atom):
+        raise ValueError(f"no example of a meteg before the stress: {kinds}")
+    before = len(earlier_atom) + len(earlier_in_atom)
     rows = kinds[dsm.METEG_ON_HELPER_LETTER]
     if before <= rows:
         raise ValueError(f"no longer usually before the stressed syllable: {kinds}")
-    return (
+    paragraphs = (
         " ".join(
             (
-                "Deḥi is prepositive, so its position does not show which syllable of",
-                "its chanted word has the stress. A stress helper shows it: a second",
-                "deḥi on the first letter of the stressed syllable. MAM's template",
-                "מ:דחי gives a chanted word in two forms, parameter 1 without the",
-                "helper and parameter 2 with it, and since 2026-10-26 MAM-with-doc",
-                "has shown parameter 2. Taamey D, the font of these pages, draws the",
-                "helper as a top meteg, a vertical bar above its letter.",
+                "Deḥi is prepositive, so its position does not necessarily show",
+                "which syllable of its chanted word has the stress. A stress helper",
+                "shows it: a second deḥi on the first letter of the stressed",
+                "syllable. MAM's template מ:דחי gives a chanted word in two forms,",
+                "parameter 1 without the helper and parameter 2 with it, and since",
+                "2026-10-26 MAM-with-doc has shown parameter 2. Taamey D, the font",
+                "of these pages, draws the helper as a top meteg, a vertical bar",
+                "above its letter.",
             )
         ),
         " ".join(
@@ -48,21 +58,32 @@ def overall_explanation(counts):
                 "parameter 2 with parameter 1's meteg.",
             )
         ),
-        " ".join(
-            filter(
-                None,
-                (
-                    "A meteg in parameter 1 is usually before the stressed syllable.",
-                    f"Of MAM's {sum(kinds.values()):,} uses of מ:דחי, parameter 1 has",
-                    f"no meteg in {kinds[dsm.NO_METEG]:,}. In {before:,}, it has meteg",
-                    "marks only before the stressed syllable: on an earlier atom of a",
-                    f"maqaf compound in {earlier_atom:,}, and only earlier in the atom",
-                    f"with the stress in {earlier_in_atom:,}.",
-                    _rows_sentence(rows),
-                    _unclassified_sentence(kinds[dsm.TEMPLATE_IN_PARAMETER]),
-                ),
-            )
+    )
+    return (
+        *map(mb_html.para, paragraphs),
+        _lead_in(
+            (
+                "A meteg in parameter 1 is usually before the stressed syllable.",
+                f"Of MAM's {sum(kinds.values()):,} uses of מ:דחי, parameter 1 has",
+                f"no meteg in {kinds[dsm.NO_METEG]:,}. In {before:,}, it has meteg",
+                "marks only before the stressed syllable. In",
+                f"{len(earlier_atom):,} of those, a meteg is on an earlier atom of",
+                "a maqaf compound, as in this chanted word from",
+            ),
+            earlier_atom[0],
+            ", shown with parameter 1 above parameter 2:",
         ),
+        _example(earlier_atom[0]),
+        _lead_in(
+            (
+                f"In the other {len(earlier_in_atom):,}, the meteg marks are only",
+                "earlier in the atom with the stress, as in this chanted word from",
+            ),
+            earlier_in_atom[0],
+            ":",
+        ),
+        _example(earlier_in_atom[0]),
+        mb_html.para(_rows_sentence(rows)),
     )
 
 
@@ -75,28 +96,30 @@ def _rows_sentence(rows):
     )
 
 
-def _unclassified_sentence(count):
-    if not count:
-        return ""
-    if count == 1:
-        return (
-            "The remaining one has a template inside a parameter and is not"
-            " classified here."
-        )
-    return (
-        f"The remaining {count:,} have a template inside a parameter and are not"
-        " classified here."
-    )
+def _lead_in(words, call, after):
+    """A paragraph of the words, the verse of the call, and after."""
+    return mb_html.para((" ".join(words), " ", *call["bcv_anchor"], after))
+
+
+def _example(call):
+    """The call's parameter 1 above its parameter 2, as a paragraph of its own."""
+    if set(call) != {"bcv_anchor", "parameter_2", "html_contents"}:
+        raise ValueError(f"unexpected census row keys: {sorted(call)}")
+    return mb_html.para(_forms(call), _EXAMPLE)
+
+
+def _forms(row_dic):
+    return row_dic["html_contents"], mb_html.line_break(), row_dic["parameter_2"]
 
 
 def html_row_cells(row_dic):
-    """The note, then parameters 1 and 2 one above the other, then the verse."""
+    """The note, then parameters 1 and 2 one above the other, then the verse, each
+    cell lined above and below, so that the lines divide the table's rows."""
     if set(row_dic) != {"bcv_anchor", "parameter_2", "note", "html_contents"}:
         raise ValueError(f"unexpected row keys: {sorted(row_dic)}")
-    hebrew = {"lang": "hbo", "dir": "rtl"}
-    forms = row_dic["html_contents"], mb_html.line_break(), row_dic["parameter_2"]
+    hebrew = {**_BORDERED, **_HEBREW}
     return (
         mb_html.table_datum(row_dic["note"], hebrew),
-        mb_html.table_datum(forms, hebrew),
-        mb_html.table_datum(row_dic["bcv_anchor"]),
+        mb_html.table_datum(_forms(row_dic), hebrew),
+        mb_html.table_datum(row_dic["bcv_anchor"], _BORDERED),
     )

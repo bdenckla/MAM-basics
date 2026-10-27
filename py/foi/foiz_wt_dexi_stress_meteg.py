@@ -8,23 +8,27 @@ columns C, D and E, and in a book's good ending, at any depth.  A MinirowExt's
 next_CP repeats the next verse's column C, so it is not scanned.  Every template
 stays recognized by name, through all_branch_foilers.
 
-KINDS.  A call with a template inside a parameter is not classified.  In any other
-call, the two parameters must have the same letters, and their marks must differ on
-exactly one letter, the helper's letter, where parameter 2 has one dexi more than
-parameter 1.  If, apart from that dexi, parameter 2 lacks only a meteg that
-parameter 1 has on that letter, the call is one of the page's rows.  If nothing
-else differs, parameter 1 has no meteg, or has meteg marks only before the
-helper's letter, at least one on an earlier atom of a maqaf compound or all of
-them in the helper's atom.  Any other call raises, so that the page's
-introduction, which states these kinds, is revised rather than made false.
+KINDS.  Each parameter is compared as the text of its chanted word.  A parameter
+is that text, or one מ:אות-מיוחדת-במילה, a word with a special letter, whose
+parameter 2 is the word's text uninterrupted; any other parameter raises.  The two
+texts must have the same letters, and their marks must differ on exactly one
+letter, the helper's letter, where parameter 2 has one dexi more than parameter 1.
+If, apart from that dexi, parameter 2 lacks only a meteg that parameter 1 has on
+that letter, the call is one of the page's rows, and both of its parameters must
+be text, as the page shows them.  If nothing else differs, parameter 1 has no
+meteg, or has meteg marks only before the helper's letter, at least one on an
+earlier atom of a maqaf compound or all of them in the helper's atom.  Any other
+call raises, so that the page's introduction, which states these kinds, is
+revised rather than made false.
 
 NOTES.  A row's note is the innermost נוסח whose target holds the call, rendered
 as MAM-with-doc renders a note, with its render options.  A row outside every
 note's target, or whose note lacks the words that the page's introduction quotes,
 raises, for the same reason.
 
-Every call is also recorded under the CENSUS_FOI_PATHS of its kind.  foi_finals
-counts those for the page's introduction rather than listing them.
+Every call is also recorded, with its two texts, under the CENSUS_FOI_PATHS of its
+kind.  foi_finals gives those to the page's introduction, which counts them and
+takes its examples from them, rather than listing them.
 """
 
 import functools
@@ -36,6 +40,7 @@ from foi import foi_wikitext_helpers as fwh
 from mb_cmn import hebrew_accents as ha
 from mb_cmn import hebrew_points as hpo
 from mb_cmn import hebrew_punctuation as hpu
+from mb_cmn import template_names as tmpln
 from mb_cmn import ws_tmpl2 as wtp
 from mwd import mwd_write_book as mwdwb
 from py_misc import mam_doc_utils as doc_utils
@@ -51,7 +56,6 @@ NO_METEG = "no-meteg"
 METEG_ON_EARLIER_ATOM = "meteg-on-earlier-atom"
 METEG_EARLIER_IN_STRESSED_ATOM = "meteg-earlier-in-stressed-atom"
 METEG_ON_HELPER_LETTER = "meteg-on-helper-letter"
-TEMPLATE_IN_PARAMETER = "template-in-parameter"
 CENSUS_FOI_PATHS = {
     kind: (STEM, "census", kind)
     for kind in (
@@ -59,12 +63,14 @@ CENSUS_FOI_PATHS = {
         METEG_ON_EARLIER_ATOM,
         METEG_EARLIER_IN_STRESSED_ATOM,
         METEG_ON_HELPER_LETTER,
-        TEMPLATE_IN_PARAMETER,
     )
 }
 FOI_PATHS = (ROWS_FOI_PATH, *CENSUS_FOI_PATHS.values())
 # The words of the notes that the page's introduction quotes.
 NOTE_WORDS = "קו של געיה להורות על מקום הטעם"
+# For each template that a parameter can be, its parameter that holds the chanted
+# word's text uninterrupted, as render_wikitext_handlers also has it.
+_UNINTERRUPTED_WORD_PARAMETERS = {tmpln.SLH_WORD: "2"}
 
 
 def find_fois_wt(mroge):
@@ -90,10 +96,13 @@ def find_fois_wt(mroge):
 
 
 def _handle_dexi(bcvt, foilers, _stack, tmpl):
-    kind = _kind(bcvt, tmpl)
-    fois = [(CENSUS_FOI_PATHS[kind], kind)]
+    text_1, text_2 = (_text(bcvt, tmpl, val) for val in _params(tmpl))
+    kind = _kind(bcvt, tmpl, text_1, text_2)
+    census_target = fct.make_qtarget(text_1, {"parameter_2": text_2})
+    fois = [(CENSUS_FOI_PATHS[kind], census_target)]
     if kind == METEG_ON_HELPER_LETTER:
-        (text_1,), (text_2,) = _params(tmpl)
+        if _params(tmpl) != [[text_1], [text_2]]:
+            raise ValueError(f"{bcvt}: a row with a special-letter word: {tmpl!r}")
         qualifier = {"parameter_2": text_2, "note": None}
         fois.append((ROWS_FOI_PATH, fct.make_qtarget(text_1, qualifier)))
     for key in ("1", "2"):
@@ -132,11 +141,23 @@ def _params(tmpl):
     return [wtp.template_param_val(tmpl, key) for key in ("1", "2")]
 
 
-def _kind(bcvt, tmpl):
-    vals = _params(tmpl)
-    if not all(len(val) == 1 and isinstance(val[0], str) for val in vals):
-        return TEMPLATE_IN_PARAMETER
-    (text_1,), (text_2,) = vals
+def _text(bcvt, tmpl, val):
+    """The text of the chanted word that the parameter val holds."""
+    if len(val) != 1:
+        raise ValueError(f"{bcvt}: a parameter of {len(val)} elements: {tmpl!r}")
+    (wtel,) = val
+    if isinstance(wtel, str):
+        return wtel
+    name = wtp.template_name_if_is_template(wtel)
+    if name not in _UNINTERRUPTED_WORD_PARAMETERS:
+        raise ValueError(f"{bcvt}: a parameter that is not a word: {tmpl!r}")
+    word = wtp.template_param_val(wtel, _UNINTERRUPTED_WORD_PARAMETERS[name])
+    if not (len(word) == 1 and isinstance(word[0], str)):
+        raise ValueError(f"{bcvt}: a special-letter word that is not text: {tmpl!r}")
+    return word[0]
+
+
+def _kind(bcvt, tmpl, text_1, text_2):
     clusters_1, clusters_2 = _clusters(text_1), _clusters(text_2)
     if [cluster[:2] for cluster in clusters_1] != [
         cluster[:2] for cluster in clusters_2
