@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-27",
+  "host": "saved portable cloud environment",
+  "source_commit": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "receipt_parent": "d227e2b7d2153a7fb69a6345e11e0cdb2febd04c",
+  "previous_nightly_preserved": "c6a28fc5388f84017064e7d48e75234426b8e912",
+  "receipt_branch": "review-nightly-20261027-cloud-receipts",
+  "reviewed_through": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "review": "Actual frozen main equals the reconciled reviewed-through anchor. No new pending endpoint window; earlier reviews were not repeated.",
+  "stages": [
+    {
+      "name": "basics-mega",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "9302ad04b347aa2db3ee0004962cd66202031cce",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_0_mega.py"
+      ],
+      "started_utc": "2026-10-27T06:41:01.870169+00:00",
+      "completed_utc": "2026-10-27T06:49:17.374235+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 495.494,
+      "changed_paths": [
+        "doc/process-documentation/MAM-process.dot.svg",
+        "doc/process-documentation/pipeline.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-c.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-d.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-call-graph-e.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dexi-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-dualcant-call-graph.svg",
+        "gh-pages/MAM-parsed/plus/svg/plus-kvq-call-graph.svg"
+      ],
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+        "bb25283c010ea738ee11416edc1eb2faf12419c7"
+      ]
+    },
+    {
+      "name": "basics-suite",
+      "cwd": "/workspace/MAM-basics",
+      "commit": "9302ad04b347aa2db3ee0004962cd66202031cce",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "-q",
+        "-ra"
+      ],
+      "started_utc": "2026-10-27T06:50:46.104037+00:00",
+      "completed_utc": "2026-10-27T06:56:19.418321+00:00",
+      "state": "completed",
+      "exit_code": 0,
+      "elapsed_seconds": 333.3,
+      "changed_paths": [],
+      "tracked_diff_before": false,
+      "allowed_committed_input_ids": [
+        "5d3063820afe6a55a20aa47d721b8f18e1b0aa9b",
+        "bb25283c010ea738ee11416edc1eb2faf12419c7"
+      ]
+    }
+  ],
+  "result": "mega exit 0 in 495.494 s, all 61 steps/no skips; full suite exit 0 in 333.300 s: 1100 passed, 5 skipped, 82 subtests passed in 329.93s (0:05:29); eight explained SVG differences preserved and reversed",
+  "limits": [
+    "Broad evidence belongs only to recorded source and committed sibling inputs, not receipt-tree code or later main.",
+    "No source repair or new Hebrew/editorial/manuscript judgment. Earlier failures, owner attribution and isolated repair dispositions preserved.",
+    "No main/shared integration or push, workflow dispatch, deployment, release/publication, baseline acceptance, frozen-font regeneration or schedule change."
+  ],
+  "suite_summary": "1100 passed, 5 skipped, 82 subtests passed in 329.93s (0:05:29)",
+  "skips": [
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: koren_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtan_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_dt_taxton diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_elyon diverges from its Wikisource strand; the control needs an agreeing page",
+    "SKIPPED [1] py/tests/test_edition_transcriptions.py:1169: simtiq_ex_taxton diverges from its Wikisource strand; the control needs an agreeing page"
+  ],
+  "completed_mega_steps": 61,
+  "mega_skips": 0,
+  "generated_difference_disposition": "Fresh XML comparison confirms only geometry and the known Times font-family alias; all other XML content and comments agree. Exact originals, generated files, hashes and patch preserved privately, then reversed before the clean full suite. All non-SVG products reproduce.",
+  "scratch_helper_failure": {
+    "exit_code": 1,
+    "error": "AssertionError: scratch bookkeeping expected 60 timed steps; actual maintained workflow completed 61, including mam-for-sefaria-doc.",
+    "completed_before_failure": "Fresh SVG structural comparison, output/patch preservation, checked reverse apply and clean-source verification completed before the stale count assertion.",
+    "disposition": "Corrected scratch count validation to compare completed timings with the runner summary. No broad command rerun, source repair or new product difference."
+  }
+}
