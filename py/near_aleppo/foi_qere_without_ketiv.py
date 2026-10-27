@@ -212,10 +212,13 @@ def mam_examples(rows):
         bkids, str(build_paths.mam_parsed_plus_dir().parent)
     )
     ctx = hfr.HfrCtx(hfrm.HT_TAC_FOR_RT_FOR_MAM_WITH_DOC)
-    rendered = {
-        book: rwt.render(book, books, mwd_write_book.RENOPTS_MAM_WITH_DOC, {})
-        for book in bkids
+    # This near-Aleppo page shows parameter 1 of מ:דחי and מ:צינור, as
+    # edition.NEAR_ALEPPO_MODE does, where MAM-with-doc shows parameter 2.
+    renopts = {
+        **mwd_write_book.RENOPTS_MAM_WITH_DOC,
+        "ro_stress_helper": "rv-without-stress-helper",
     }
+    rendered = {book: rwt.render(book, books, renopts, {}) for book in bkids}
     result = {}
     for row in rows:
         book, chapter, verse = row["reference"]

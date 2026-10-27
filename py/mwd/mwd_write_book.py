@@ -174,4 +174,7 @@ RENOPTS_MAM_WITH_DOC = {
     "ro_no_slh_word": True,
     "ro_trivial_ketiv_qere_to_doc": True,
     "ro_scrdfftar_to_doc": True,
+    # Parameter 2 of מ:דחי and מ:צינור, the chanted word with the accent's stress
+    # helper, since Ben asked on 2026-10-26 that MAM-with-doc show those forms.
+    "ro_stress_helper": "rv-with-stress-helper",
 }

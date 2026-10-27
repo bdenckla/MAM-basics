@@ -259,9 +259,34 @@ def _handle_gray_maqaf(hctx, tmpl):
     )
 
 
-def _handle_stress_of_dexi_word(hctx, tmpl):
-    assert wtp.template_len(tmpl) in (2, 3)
-    return wt_help.render_tmpl_el(hctx, tmpl, 1)
+def _handle_stress_helper_word(hctx, tmpl):
+    """Show one of the two forms that מ:דחי or מ:צינור gives a chanted word.
+
+    Parameter 1 is the chanted word with its accent alone, and parameter 2 is the
+    same chanted word with the accent's stress helper as well. The caller's render
+    option ro_stress_helper chooses between them, by _STRESS_HELPER_PARAMETERS.
+    """
+    if set(wtp.template_param_keys(tmpl)) != {"1", "2"}:
+        raise ValueError(f"{hctx.bcvt}: unexpected stress-helper parameters: {tmpl!r}")
+    choice = wt_help.get_renopt(hctx, "ro_stress_helper")
+    if choice not in _STRESS_HELPER_PARAMETERS:
+        raise ValueError(f"{hctx.bcvt}: unknown ro_stress_helper value: {choice!r}")
+    param_name = _STRESS_HELPER_PARAMETERS[choice]
+    if all(wtel == "" for wtel in wtp.template_param_val(tmpl, param_name)):
+        raise ValueError(
+            f"{hctx.bcvt}: empty stress-helper parameter {param_name}: {tmpl!r}"
+        )
+    return wt_help.render_named_param_val(hctx, tmpl, param_name)
+
+
+# The parameter of מ:דחי and מ:צינור that each value of ro_stress_helper shows.
+# None, the value of a caller that does not set the option, shows parameter 1, as
+# every caller did before the option existed.
+_STRESS_HELPER_PARAMETERS = {
+    None: "1",
+    "rv-without-stress-helper": "1",
+    "rv-with-stress-helper": "2",
+}
 
 
 def _handle_silluq_before_meteg(hctx, tmpl):
@@ -276,11 +301,6 @@ def _handle_silluq_before_meteg(hctx, tmpl):
         "silluq-before-meteg", (text,), {"letters-with-silluq": letters_with_silluq}
     )
     return _abstract_default(hctx, abstract, text)
-
-
-def _handle_stress_of_tsinnor_word(hctx, tmpl):
-    assert wtp.template_len(tmpl) in (2, 3)
-    return wt_help.render_tmpl_el(hctx, tmpl, 1)
 
 
 def _handle_dualcant(hctx, tmpl):
@@ -652,9 +672,9 @@ _HANDLER_SPECS_FOR_MISC = {
     "מ:לגרמיה-2": {_MASK_ELP: _handle_legarmeih_2},
     "מ:פסק": {_MASK_ELP: _handle_paseq},
     "מ:מקף אפור": {_MASK_EL: _handle_gray_maqaf},
-    "מ:דחי": {_MASK_ELP: _handle_stress_of_dexi_word},
+    "מ:דחי": {_MASK_ELP: _handle_stress_helper_word},
     tmpln.SILLUQ_BEFORE_METEG: {_MASK_ELP: _handle_silluq_before_meteg},
-    "מ:צינור": {_MASK_ELP: _handle_stress_of_tsinnor_word},
+    "מ:צינור": {_MASK_ELP: _handle_stress_helper_word},
     "מ:קמץ": {_MASK_ELP: qamats_variation.handle},
     "מ:אות-ק": {_MASK_ELP: _handle_small_letter},
     "מ:אות-ג": {_MASK_ELP: _handle_large_letter},

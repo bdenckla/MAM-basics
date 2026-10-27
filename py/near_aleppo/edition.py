@@ -140,6 +140,10 @@ NEAR_ALEPPO_MODE = Mode(
         "ro_trivial_ketiv_qere_to_doc": False,
         "ro_ketiv_qere_ruby": True,
         "ro_paseq_glyph_as_legarmeih": True,
+        # MAM's target shows parameter 1 of מ:דחי and מ:צינור, where MAM-with-doc
+        # shows parameter 2: doc_choices, "How the edition has the added parameters".
+        # The edition's features-of-interest pages take this mode's options too.
+        "ro_stress_helper": "rv-without-stress-helper",
         "ro_english_flag_values": (
             phase6_flags._QERE_SILENCE,
             phase6_flags._MAQAF_SILENCE,

@@ -655,7 +655,7 @@ _CHOICES = (
         "2026-09-23",
         _BEN,
         "How the edition has the added parameters",
-        "Each parameter near-Aleppo adds is one more line of its note, labelled with its name; MAM's target is rendered as MAM-with-doc renders MAM's text, and a flag's value as the JSON has it.",
+        "Each parameter near-Aleppo adds is one more line of its note, labelled with its name; MAM's target is rendered as MAM-with-doc renders MAM's text, and a flag's value as the JSON has it. One exception dates from 2026-10-26, when MAM-with-doc began to show parameter `2` of `מ:דחי` and `מ:צינור`, the chanted word with its accent's stress helper. Ben asked that day: “Please continue to use the forms without stress helpers in near-Aleppo.” So MAM's target in the edition still has parameter `1` of each, the chanted word without the stress helper.",
         (
             "Flags as markers",
             "MAM's target only",

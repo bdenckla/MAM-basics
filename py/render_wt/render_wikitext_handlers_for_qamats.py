@@ -69,13 +69,17 @@ def _handle_disputed(dsa_disputed_part):
 #
 # Note that we consider revia to be the stress helper for geresh muqdam.
 #
-# It is unclear what to do about dexi since MAM doesn’t have dexi stress
-# helpers. To determine whether a MAM dexi indicates stress, we have to
-# determine whether the word NEEDS a stress helper, since we know it won't
-# HAVE a stress helper! Dexi never appears on a syllable with qamats qatan,
-# but I don't know if qamats qatan ever appears on a syllable that needs
-# a dexi stress helper. I guess it is okay to have small meteg on such
-# a syllable though.
+# MAM has dexi stress helpers, in parameter 2 of מ:דחי. Whether the variants
+# that this handler analyzes have parameter 1 or parameter 2 of a מ:דחי inside
+# them is the caller's choice, by ro_stress_helper (see
+# render_wikitext_handlers). Where they have parameter 1, the word has no dexi
+# stress helper, so to determine whether its dexi indicates stress, we would
+# have to determine whether the word NEEDS a stress helper. Dexi never appears
+# on a syllable with qamats qatan, but I don't know if qamats qatan ever
+# appears on a syllable that needs a dexi stress helper. I guess it is okay to
+# have small meteg on such a syllable though. Where they have parameter 2, a
+# dexi stress helper after the disputed qamats on its letter would fail the
+# assertion in analyze_qamats_variant's _get_accent_if_any.
 
 
 def _dal_qamats_variation(hctx, tmpl):
