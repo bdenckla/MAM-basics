@@ -1,0 +1,41 @@
+{
+  "changed_codepoints": [
+    "U+05AD",
+    "U+05AE",
+    "U+05BD"
+  ],
+  "meteg_examples": [
+    {
+      "parameter_1": "אָ֭נֹכִֽי",
+      "parameter_2": "אָ֭נֹכִ֭י"
+    },
+    {
+      "parameter_1": "אֹ֭כֵֽל",
+      "parameter_2": "אֹ֭כֵ֭ל"
+    },
+    {
+      "parameter_1": "ק֭וּמָֽה",
+      "parameter_2": "ק֭וּמָ֭ה"
+    },
+    {
+      "parameter_1": "ע֭וּרָֽה",
+      "parameter_2": "ע֭וּרָ֭ה"
+    },
+    {
+      "parameter_1": "יִ֭מָּחֽוּ",
+      "parameter_2": "יִ֭מָּח֭וּ"
+    },
+    {
+      "parameter_1": "צָ֭רָתִֽי",
+      "parameter_2": "צָ֭רָתִ֭י"
+    },
+    {
+      "parameter_1": "ע֭וּרָֽה",
+      "parameter_2": "ע֭וּרָ֭ה"
+    },
+    {
+      "parameter_1": "קָ֭רָֽאתִי",
+      "parameter_2": "קָ֭רָ֭אתִי"
+    }
+  ]
+}

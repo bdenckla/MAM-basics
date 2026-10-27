@@ -1,0 +1,231 @@
+{
+  "date": "2026-10-27",
+  "prepared_utc": "2026-10-27T03:39:37.301303+00:00",
+  "reviewed_window": {
+    "from": "629218d2f44c006f36eeb0dcb16e8eacdd052a41",
+    "through": "9302ad04b347aa2db3ee0004962cd66202031cce",
+    "commits": 1,
+    "paths": 13
+  },
+  "receipt_parent": "b3ac70cdb47de783ed3cd0404df60059709df8f9",
+  "runtime_inputs": "Only committed files in the source or exact parent Basics checkout. No sibling runtime inputs.",
+  "disposition": "No consequential implementation defect confirmed; no production repair. The authorized editorial choice is preserved.",
+  "source_review": "Read all seven changed Python files and call sites, all six generated endpoint changes, current AGENTS/review policy and maintained receipt history. MAM-with-doc selects parameter 2; default and both near-Aleppo entry points retain parameter 1, including copied MAM target context.",
+  "comparisons": [
+    "MAM-with-doc regeneration for Psalms, Proverbs and Job reproduces all selected book outputs with no tracked difference.",
+    "Near-Aleppo maintained --html --check reproduces all 106 generated files and the unused-tag report, including edition, copied MAM targets and FOI pages; no tracked difference.",
+    "Independent exact-parent renderer oracle matches every semantic render element and documentation field for 4,512 verses in each of default, near-Aleppo and MAM-with-doc modes. For MAM-with-doc only, the old renderer receives raw parameter 2 in its existing parameter-1 input slot; its handlers are not patched.",
+    "Default, explicit parameter-1 and repeated default renders remain equal after parameter-2 rendering. The real FOI study renders 9 rows through 5 book calls, all with parameter 1; the MAM-with-doc option dictionary remains unchanged.",
+    "Raw inventory finds 2,317 dehi and 56 tsinnor templates, only in the three affected books; all 7,119 occurrence/option comparisons pass. Fourteen raw occurrences are under a qamats template; complete corpus comparison covers the surrounding qamats analysis as well.",
+    "Both template names reject 10 malformed parameter sets, 18 empty-selected forms and 2 unknown options. Six nested selected/unselected branch cases pass without traversing the deliberately invalid unselected branch.",
+    "Five changed MAM-with-doc HTML files retain every element and attribute; remaining differences are line wrapping and the three mark codepoints whose differences are independently found in the raw parameter pairs (U+05AD/U+05AE/U+05BD). The near-Aleppo choices page changes only the declared explanation cell.",
+    "Black --check passes all seven changed Python files; endpoint git diff --check passes."
+  ],
+  "test_summary": {
+    "parent_oracle": "1 passed",
+    "current_independent_checks": "4 passed",
+    "skips": 0,
+    "production_failures": 0
+  },
+  "scratch_failures": [
+    {
+      "stage": "endpoint-and-format-check",
+      "result": "exit 1",
+      "cause": "Scratch HTML oracle incorrectly assumed parameter 2 only adds dehi/tsinnor; selected raw forms also replace some meteg marks."
+    },
+    {
+      "stage": "endpoint-diagnosis",
+      "result": "SIGTERM / subprocess -15 after 38.105 seconds",
+      "cause": "Stopped an unnecessarily costly whole-document SequenceMatcher diagnostic; awaited its exit before any next check.",
+      "record_recovery": "Recovered verbatim stage fields from the successful tool wait response for session 18200. The later linear scratch diagnostic reused endpoint-diagnosis.json and overwrote the original stage metadata with mismatch details. Those details and the empty original log are preserved separately. No check was rerun to reconstruct this record."
+    },
+    {
+      "stage": "endpoint-first-difference",
+      "result": "exit 1",
+      "cause": "Linear diagnostic isolated the same scratch assumption at Psalms 44:27; exact mismatch retained."
+    },
+    {
+      "stage": "endpoint-raw-parameter-check",
+      "result": "exit 0",
+      "cause": "Replaced the unsupported mark-only-addition assumption with a character-difference set derived from all raw parameter pairs; output/markup/choice-cell and formatting checks pass."
+    }
+  ],
+  "corpus": {
+    "parent": "629218d2f44c006f36eeb0dcb16e8eacdd052a41",
+    "source": "9302ad04b347aa2db3ee0004962cd66202031cce",
+    "books": [
+      "Psalms",
+      "Proverbs",
+      "Job"
+    ],
+    "verses_per_mode": 4512,
+    "modes_compared": [
+      "default",
+      "near",
+      "mwd"
+    ],
+    "all_render_elements_and_documentation_fields_equal_to_parent_oracle": true,
+    "parent_mwd_input": "Only each selected helper's parameter 2 is supplied to the old renderer in its parameter-1 slot; no renderer handler is patched.",
+    "default_explicit_without_and_repeat_equal": true,
+    "render_records_sha256": "ff13872e959ad357442bb269cb73507276ac1c19c2635807cd21c90b89cbd80f"
+  },
+  "inventory": {
+    "raw_occurrences": {
+      "מ:דחי": 2317,
+      "מ:צינור": 56
+    },
+    "files": [
+      "D1-Psalms.json",
+      "D2-Proverbs.json",
+      "D3-Job.json"
+    ],
+    "ancestor_contexts": {
+      "": 2305,
+      "נוסח": 39,
+      "מ:קמץ": 14,
+      "כו״ק": 6,
+      "נוסח/כו״ק": 1,
+      "מ:קו״כ-אם-2": 8
+    },
+    "occurrence_option_comparisons": 7119
+  },
+  "malformed": {
+    "bad_parameter_sets": 10,
+    "empty_selected": 18,
+    "nested_selected_and_unselected_isolation": 6,
+    "unknown_options": 2
+  },
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-mam-with-doc-sifem.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--section6",
+        "SifEm"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:32:08.065028+00:00",
+      "completed_utc": "2026-10-27T03:32:10.666973+00:00",
+      "seconds": 2.602,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/baseline-parent-corpus-oracle.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-stress-helper/test_review.py::test_corpus_differential",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/baseline",
+      "started_utc": "2026-10-27T03:33:35.825043+00:00",
+      "completed_utc": "2026-10-27T03:33:39.487154+00:00",
+      "seconds": 3.662,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-helper-independent-checks.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-stress-helper/test_review.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:34:21.515859+00:00",
+      "completed_utc": "2026-10-27T03:34:25.155472+00:00",
+      "seconds": 3.64,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-near-aleppo-html-check.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_near_aleppo.py",
+        "--html",
+        "--check"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:34:47.627282+00:00",
+      "completed_utc": "2026-10-27T03:35:11.769525+00:00",
+      "seconds": 24.142,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-endpoint-and-format-check.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-stress-helper/check_endpoint.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:35:26.295336+00:00",
+      "completed_utc": "2026-10-27T03:35:26.575590+00:00",
+      "seconds": 0.28,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-endpoint-diagnosis-termination.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-stress-helper/check_endpoint.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:35:40.576026+00:00",
+      "completed_utc": "2026-10-27T03:36:18.681181+00:00",
+      "seconds": 38.105,
+      "exit_code": -15,
+      "tracked_status_after": "",
+      "record_provenance": "Recovered verbatim stage fields from the successful tool wait response for session 18200. The later linear scratch diagnostic reused endpoint-diagnosis.json and overwrote the original stage metadata with mismatch details. Those details and the empty original log are preserved separately. No check was rerun to reconstruct this record."
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-endpoint-first-difference.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-stress-helper/check_endpoint.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:36:19.414455+00:00",
+      "completed_utc": "2026-10-27T03:36:19.914198+00:00",
+      "seconds": 0.5,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-stress-helper-evidence/source-endpoint-raw-parameter-check.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-stress-helper/check_endpoint.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+      "started_utc": "2026-10-27T03:37:39.059065+00:00",
+      "completed_utc": "2026-10-27T03:37:39.984135+00:00",
+      "seconds": 0.925,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "sequential": "Every recorded process interval is disjoint; all commands, including the terminated scratch diagnostic, were awaited before starting the next stage.",
+  "preservation": {
+    "raw_novc_archives": [
+      "/workspace/scratch/review-hourly-20261027-stress-helper/source-raw",
+      "/workspace/scratch/review-hourly-20261027-stress-helper/baseline-raw"
+    ],
+    "baseline_render_records": "baseline-raw/hourly/baseline-records.json.gz",
+    "baseline_records_sha256": "108dc800d71f0ae6d63b2846cb9c8dc7a2e2ea996b1a9ad42323827b3dd16cf2",
+    "formatted_evidence_helpers_ast_equal_to_executed": true
+  },
+  "limits": [
+    "Focused review only; broad-tested remains 926a6e785be4236673ac4a5c8c34afe63ed417f4. Claimed author mega/suite results were not adopted.",
+    "No full mega/suite, font regeneration, baseline acceptance, main/shared push or deployment.",
+    "No change to Hebrew interpretation, Private files or font pin.",
+    "This isolated receipt continues prior history; its code checkout is not the tested source."
+  ],
+  "remaining_window_at_preparation": null,
+  "completed_stage_count": 8
+}

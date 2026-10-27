@@ -1,0 +1,19 @@
+{
+  "parent": "629218d2f44c006f36eeb0dcb16e8eacdd052a41",
+  "source": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "books": [
+    "Psalms",
+    "Proverbs",
+    "Job"
+  ],
+  "verses_per_mode": 4512,
+  "modes_compared": [
+    "default",
+    "near",
+    "mwd"
+  ],
+  "all_render_elements_and_documentation_fields_equal_to_parent_oracle": true,
+  "parent_mwd_input": "Only each selected helper's parameter 2 is supplied to the old renderer in its parameter-1 slot; no renderer handler is patched.",
+  "default_explicit_without_and_repeat_equal": true,
+  "render_records_sha256": "ff13872e959ad357442bb269cb73507276ac1c19c2635807cd21c90b89cbd80f"
+}

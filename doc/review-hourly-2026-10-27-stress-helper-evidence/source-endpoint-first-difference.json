@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-stress-helper/check_endpoint.py"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+  "started_utc": "2026-10-27T03:36:19.414455+00:00",
+  "completed_utc": "2026-10-27T03:36:19.914198+00:00",
+  "seconds": 0.5,
+  "exit_code": 1,
+  "tracked_status_after": ""
+}

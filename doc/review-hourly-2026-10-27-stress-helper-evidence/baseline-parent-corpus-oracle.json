@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "/workspace/scratch/review-hourly-20261027-stress-helper/test_review.py::test_corpus_differential",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-stress-helper/baseline",
+  "started_utc": "2026-10-27T03:33:35.825043+00:00",
+  "completed_utc": "2026-10-27T03:33:39.487154+00:00",
+  "seconds": 3.662,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

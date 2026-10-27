@@ -1,0 +1,6 @@
+{
+  "bad_parameter_sets": 10,
+  "empty_selected": 18,
+  "nested_selected_and_unselected_isolation": 6,
+  "unknown_options": 2
+}

@@ -1,0 +1,51 @@
+{
+  "gh-pages/MAM-with-doc/D1-Psalms-big-doc.html": {
+    "all_markup_and_attributes_equal": true,
+    "only_raw_parameter_mark_differences_and_line_wrapping": true,
+    "mark_count_deltas": {
+      "U+05AD": 5,
+      "U+05AE": 2,
+      "U+05BD": 0
+    }
+  },
+  "gh-pages/MAM-with-doc/D1-Psalms.html": {
+    "all_markup_and_attributes_equal": true,
+    "only_raw_parameter_mark_differences_and_line_wrapping": true,
+    "mark_count_deltas": {
+      "U+05AD": 1286,
+      "U+05AE": 52,
+      "U+05BD": -14
+    }
+  },
+  "gh-pages/MAM-with-doc/D2-Proverbs.html": {
+    "all_markup_and_attributes_equal": true,
+    "only_raw_parameter_mark_differences_and_line_wrapping": true,
+    "mark_count_deltas": {
+      "U+05AD": 554,
+      "U+05AE": 4,
+      "U+05BD": -2
+    }
+  },
+  "gh-pages/MAM-with-doc/D3-Job-big-doc.html": {
+    "all_markup_and_attributes_equal": true,
+    "only_raw_parameter_mark_differences_and_line_wrapping": true,
+    "mark_count_deltas": {
+      "U+05AD": 3,
+      "U+05AE": 0,
+      "U+05BD": 0
+    }
+  },
+  "gh-pages/MAM-with-doc/D3-Job.html": {
+    "all_markup_and_attributes_equal": true,
+    "only_raw_parameter_mark_differences_and_line_wrapping": true,
+    "mark_count_deltas": {
+      "U+05AD": 512,
+      "U+05AE": 2,
+      "U+05BD": -2
+    }
+  },
+  "gh-pages/near-aleppo/choices.html": {
+    "only_one_declared_choice_cell_changed": true,
+    "row": 77
+  }
+}

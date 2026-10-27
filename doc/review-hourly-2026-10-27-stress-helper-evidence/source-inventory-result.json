@@ -1,0 +1,20 @@
+{
+  "raw_occurrences": {
+    "מ:דחי": 2317,
+    "מ:צינור": 56
+  },
+  "files": [
+    "D1-Psalms.json",
+    "D2-Proverbs.json",
+    "D3-Job.json"
+  ],
+  "ancestor_contexts": {
+    "": 2305,
+    "נוסח": 39,
+    "מ:קמץ": 14,
+    "כו״ק": 6,
+    "נוסח/כו״ק": 1,
+    "מ:קו״כ-אם-2": 8
+  },
+  "occurrence_option_comparisons": 7119
+}

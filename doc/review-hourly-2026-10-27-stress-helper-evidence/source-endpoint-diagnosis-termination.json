@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-stress-helper/check_endpoint.py"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-stress-helper/source",
+  "started_utc": "2026-10-27T03:35:40.576026+00:00",
+  "completed_utc": "2026-10-27T03:36:18.681181+00:00",
+  "seconds": 38.105,
+  "exit_code": -15,
+  "tracked_status_after": "",
+  "record_provenance": "Recovered verbatim stage fields from the successful tool wait response for session 18200. The later linear scratch diagnostic reused endpoint-diagnosis.json and overwrote the original stage metadata with mismatch details. Those details and the empty original log are preserved separately. No check was rerun to reconstruct this record."
+}
