@@ -255,6 +255,16 @@ def abbr(contents, attr=None):
     return htel_mk("abbr", attr, contents)
 
 
+def button(contents, attr=None):
+    """Make a <button> element."""
+    return htel_mk("button", attr=attr, flex_contents=contents)
+
+
+def script(contents, attr=None):
+    """Make a <script> element."""
+    return htel_mk("script", attr=attr, flex_contents=contents)
+
+
 def span_c(contents, the_class=None):
     """Make a <span> element, given a value for the "class" attr."""
     return span(contents, the_class and {"class": the_class})
@@ -377,7 +387,7 @@ def raw_html(html_str: str):
 def _do_space_asserts(tag, fs_contents):
     if not fs_contents:
         return
-    if tag == "style":
+    if tag in _VERBATIM_TAGS:
         return
     assert not _has_lt_space(fs_contents), (fs_contents[0], fs_contents[-1])
     for htel in fs_contents:
@@ -444,14 +454,16 @@ def _html_el1(attr, contents):
 # now supplies its own tables instead of forking the serializer to edit these.
 _NOCLOSE_TUPLE = "br", "hr", "meta", "link", "col", "img"
 _NOCLOSE_SET = {*_NOCLOSE_TUPLE}
-# Emitted raw: entities are not decoded inside <style>, so escaping its CSS would break
-# it.  (This generalizes what used to be a hardcoded ``eltag == "style"`` case.)
-_VERBATIM_TAGS = {"style"}
+# Emitted raw: entities are not decoded inside <style> or <script>, so escaping their CSS
+# or JavaScript would break it.  (This generalizes what used to be a hardcoded
+# ``eltag == "style"`` case.)
+_VERBATIM_TAGS = {"style", "script"}
 _LB2 = {
     "html": "\n",
     "head": "\n",
     "title": "\n",
     "style": "\n",
+    "script": "\n",
     "body": "\n",
     "h1": "\n",
     "h2": "\n",
@@ -477,6 +489,7 @@ _LB2 = {
     "rp": "",
     "a": "",
     "span": "",
+    "button": "",
     "abbr": "",
     "em": "",
     "i": "",
@@ -495,6 +508,7 @@ _LB1 = {
     **{tag: "" for tag in _NOCLOSE_TUPLE},
     #
     "title": "",
+    "script": "",
     "h1": "",
     "h2": "",
     "h3": "",
