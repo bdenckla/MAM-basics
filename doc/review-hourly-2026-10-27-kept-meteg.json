@@ -1,0 +1,176 @@
+{
+  "date": "2026-10-27",
+  "state": "completed focused review",
+  "recorded_utc": "2026-10-27T13:58:16.162356+00:00",
+  "window": {
+    "from": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+    "through": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "commits": 3,
+    "paths": 14
+  },
+  "receipt_parent": "684c482aa3b6e4c474e5b0bd8186134f2ac1c876",
+  "prior_lightweight_evidence": "review-hourly-2026-10-27-kept-meteg-partial.json",
+  "overlap_release": "Parent explicitly confirmed HP reader processes exited and released the hold before this continuation. Process inventory found no competing generator/test; all eight stages were awaited sequentially, including across source/baseline checkouts.",
+  "inputs": {
+    "basics": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "parent_renderer": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+    "siblings": "None required or consumed. No Private content or runtime input; no Fonts runtime input."
+  },
+  "disposition": "No consequential implementation defect confirmed; no production repair. User editorial choices are preserved. Kept-meteg form is isolated to the selected MAM-with-doc option; raw source parameters and other products retain their declared forms.",
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/mam-with-doc-sifem-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_mam_with_doc.py",
+        "--section6",
+        "SifEm"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:49:51.097750+00:00",
+      "completed_utc": "2026-10-27T13:49:53.263270+00:00",
+      "seconds": 2.166,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/foi-family-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/run_foi.py",
+        "full"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:50:45.856876+00:00",
+      "completed_utc": "2026-10-27T13:50:59.941935+00:00",
+      "seconds": 14.085,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/mam-parsed-docs-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_authored.py",
+        "gen-mam-parsed-docs"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:51:29.676931+00:00",
+      "completed_utc": "2026-10-27T13:51:34.295200+00:00",
+      "seconds": 4.618,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/baseline-parent-render-oracle.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/test_render_oracle.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/baseline",
+      "started_utc": "2026-10-27T13:51:53.880755+00:00",
+      "completed_utc": "2026-10-27T13:51:59.690955+00:00",
+      "seconds": 5.81,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/current-render-oracle.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/test_render_oracle.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:52:24.996553+00:00",
+      "completed_utc": "2026-10-27T13:52:29.670373+00:00",
+      "seconds": 4.674,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/foi-selected-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/run_foi.py",
+        "selected"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:52:58.190025+00:00",
+      "completed_utc": "2026-10-27T13:52:58.841277+00:00",
+      "seconds": 0.651,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/foi-other-isolation.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/run_foi.py",
+        "other"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:53:02.204033+00:00",
+      "completed_utc": "2026-10-27T13:53:02.753213+00:00",
+      "seconds": 0.549,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-evidence/helper-and-census-focused-tests.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/test_focused.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:53:45.070076+00:00",
+      "completed_utc": "2026-10-27T13:53:46.709164+00:00",
+      "seconds": 1.639,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "comparisons": [
+    "MAM-with-doc --section6 SifEm reproduces Psalms, Proverbs and Job without tracked changes. MAM-parsed documentation regeneration reproduces its outputs and all 59 verification claims pass, with zero failures/pending claims.",
+    "Full single-threaded FOI-family generation, selected dehi generation and another selected FOI each preserve every one of the 53 files byte-for-byte, including shared-renderer products and index. Before/after SHA-256 inventories are retained.",
+    "Exact-parent differential rendering matches all semantic/documentation fields for 4,512 verses in four modes. Default, near-Aleppo and raw parameter 2 agree unchanged; current kept-meteg mode agrees with the parent renderer supplied independently derived third forms for only the nine exact raw replacement pairs. Source data, renderer handlers and options were not patched. A repeated default call and input/options immutability also pass.",
+    "All 2,373 actual dehi/tsinnor helper calls agree with independently selected forms in all four modes (9,492 comparisons); exactly nine kept forms differ and three special-letter calls preserve their wrapper rendering. Fourteen malformed-input mutations reject, including an unselected empty form and unsupported wrappers.",
+    "Special-letter calls classify as no-meteg; unsupported kept-meteg inside a wrapper rejects. Nested-note selection uses the innermost target, validates the note body, traverses C/D/E and good-ending, excludes next_CP and rejects bare body-only rows. Empty listed rows with counted populations retain the introduction, two example blocks and empty-section text without a table or selected-run index.",
+    "Actual near-Aleppo FOI execution uses parameter 1 for all five book calls over nine study records; shared MAM-with-doc options remain unchanged. Prior independent census, raw pairs, first examples, note lemmas and endpoint-only meteg changes remain in the immutable partial receipt."
+  ],
+  "test_results": {
+    "parent_oracle": "1 passed in 4.36 s",
+    "current_oracle": "1 passed in 4.36 s",
+    "helper_and_census": "19 passed in 1.37 s",
+    "failures_rechecks_skips": "No test/generator failures, reruns or skips in this continuation. Previous-window scratch failures remain in their original receipts and are not reclassified."
+  },
+  "broad_tested_unchanged": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "scope_limits": [
+    "No full mega/suite, font generation/shaping/baseline acceptance, Private write, main/shared integration, deployment or dispatch.",
+    "Fonts documentation window was already completed through 8189d897 in receipt 89b58577 and was not repeated. Receipt branch code tree is not the tested source.",
+    "No new editorial, linguistic, manuscript or licensing conclusion. Passing focused checks are not broad-test evidence."
+  ],
+  "raw_evidence": {
+    "source": "/workspace/scratch/review-hourly-20261027-kept-meteg/source-completed-raw",
+    "baseline": "/workspace/scratch/review-hourly-20261027-kept-meteg/baseline-raw",
+    "parent_semantic_record": "baseline-raw/hourly/parent-render-records.json.gz",
+    "note": "All original .novc files preserved and byte-verified outside task-owned worktrees before cleanup. Executed helper bytes and logs are retained; formatted helper copies are AST-identical."
+  },
+  "remote_before_receipt": {
+    "checked_utc": "2026-10-27T13:58:16.162131+00:00",
+    "refs": {
+      "refs/heads/main": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+      "refs/heads/review-hourly-20261027-kept-meteg-receipts": "684c482aa3b6e4c474e5b0bd8186134f2ac1c876"
+    }
+  },
+  "remaining_window": {
+    "from": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "through": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+    "state": "newer main endpoint not reviewed or tested in this task"
+  }
+}

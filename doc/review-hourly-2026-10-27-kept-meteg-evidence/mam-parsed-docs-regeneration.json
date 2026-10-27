@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_authored.py",
+    "gen-mam-parsed-docs"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+  "started_utc": "2026-10-27T13:51:29.676931+00:00",
+  "completed_utc": "2026-10-27T13:51:34.295200+00:00",
+  "seconds": 4.618,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

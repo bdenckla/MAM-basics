@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-kept-meteg/run_foi.py",
+    "full"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+  "started_utc": "2026-10-27T13:50:45.856876+00:00",
+  "completed_utc": "2026-10-27T13:50:59.941935+00:00",
+  "seconds": 14.085,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

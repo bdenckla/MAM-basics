@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "/workspace/scratch/review-hourly-20261027-kept-meteg/test_render_oracle.py",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-kept-meteg/baseline",
+  "started_utc": "2026-10-27T13:51:53.880755+00:00",
+  "completed_utc": "2026-10-27T13:51:59.690955+00:00",
+  "seconds": 5.81,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}
