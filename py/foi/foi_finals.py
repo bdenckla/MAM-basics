@@ -236,6 +236,9 @@ def _write_html(args_foi, outfile_stem, html_tables, census):
         return
     overall_head = _overall_head(outfile_stem, census)
     body_contents = _foi_body_wrapper(overall_head + body1 + body2)
+    script = _SCRIPTS.get(outfile_stem)
+    if script is not None:  # After the tables, so that it finds their elements.
+        body_contents.append(mb_html.script(script))
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(
         title,
@@ -417,6 +420,12 @@ _OVERALL_EXPLANATIONS = {
 # table; its explanation then takes those rows and returns the introduction's HTML.
 _COUNTED_FOI_PATHS = {
     "dexi-stress-meteg": dexi_stress_meteg_e.COUNTED_FOI_PATHS,
+}
+
+
+# The JavaScript of a stem whose page has a script, which follows the page's tables.
+_SCRIPTS = {
+    "dexi-stress-meteg": dexi_stress_meteg_e.SCRIPT,
 }
 
 

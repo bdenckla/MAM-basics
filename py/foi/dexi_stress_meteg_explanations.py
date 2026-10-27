@@ -1,10 +1,13 @@
-"""The dexi-stress-meteg FOI page's introduction and table cells.
+"""The dexi-stress-meteg FOI page's introduction, table cells and script.
 
 The introduction's figures are the numbers of calls that foiz_wt_dexi_stress_meteg
 records under its CENSUS_FOI_PATHS, and its two examples are the first calls, in the
 order of the books, of two of those kinds; both are read when the page is generated.
 """
 
+import json
+
+from foi import dexi_stress_meteg_translations as translations
 from foi import foiz_wt_dexi_stress_meteg as dsm
 from mb_misc import mb_html
 
@@ -14,6 +17,26 @@ _HEBREW = {"lang": "hbo", "dir": "rtl"}
 _EXAMPLE = {**_HEBREW, "style": "text-align: center"}
 # A table cell's lines above and below, as MAM-with-doc's verse rows have them.
 _BORDERED = {"class": "top-n-bot-bordered"}
+# The button above each note, labelled with what a click on it shows.
+_TOGGLE_CLASS = "translation-toggle"
+_TO_ENGLISH = "click to show English translation"
+_TO_HEBREW = "click to show original Hebrew"
+_HIDDEN = {"hidden": ""}
+# The page's script, after its table. A note's cell holds its button, then the
+# Hebrew note, then the note's English translation, hidden. A click on the button
+# shows whichever of the two is hidden in place of the other, and relabels the button.
+SCRIPT = f"""
+for (const button of document.querySelectorAll({json.dumps(f"button.{_TOGGLE_CLASS}")})) {{
+  button.addEventListener("click", () => {{
+    const [hebrew, english] = button.parentElement.querySelectorAll(":scope > div");
+    hebrew.hidden = !hebrew.hidden;
+    english.hidden = !hebrew.hidden;
+    button.textContent = hebrew.hidden
+      ? {json.dumps(_TO_HEBREW)}
+      : {json.dumps(_TO_ENGLISH)};
+  }});
+}}
+"""
 
 
 def overall_explanation(census):
@@ -57,6 +80,14 @@ def overall_explanation(census):
                 "documentation note on the word, as MAM-with-doc shows it too. Each",
                 f"of those notes describes the meteg as “{dsm.NOTE_WORDS}”, a ga'ya",
                 "stroke to show where the stress is.",
+            )
+        ),
+        " ".join(
+            (
+                "A button above each note shows an English translation of the note",
+                "in its place. These are AI-generated translations, not yet reviewed",
+                "by a human: Claude, an AI model, translated the notes into English",
+                "on 2026-10-27.",
             )
         ),
     )
@@ -114,16 +145,28 @@ def _above(upper, lower):
 
 
 def html_row_cells(row_dic):
-    """The note; then parameter 1 above the chanted word as MAM-with-doc shows it,
-    which keeps parameter 1's meteg; then the verse. Each cell is lined above and
-    below, so that the lines divide the table's rows."""
+    """The note, below a button that shows the note's English translation in its
+    place; then parameter 1 above the chanted word as MAM-with-doc shows it, which
+    keeps parameter 1's meteg; then the verse. Each cell is lined above and below, so
+    that the lines divide the table's rows.
+
+    The note's cell holds a Hebrew block and an English one, so the Hebrew block, not
+    the cell, has the Hebrew language and direction: a Hebrew cell would set the
+    English in the Hebrew font at its larger size, and enlarge the Hebrew words
+    quoted in the English a second time."""
     keys = {"bcv_anchor", "parameter_2", "mam_with_doc", "note", "html_contents"}
     if set(row_dic) != keys:
         raise ValueError(f"unexpected row keys: {sorted(row_dic)}")
     hebrew = {**_BORDERED, **_HEBREW}
     forms = _above(row_dic["html_contents"], row_dic["mam_with_doc"])
+    toggle = mb_html.button(_TO_ENGLISH, {"type": "button", "class": _TOGGLE_CLASS})
+    note = (
+        toggle,
+        mb_html.div(row_dic["note"], _HEBREW),
+        mb_html.div(translations.english_note(row_dic["note"]), _HIDDEN),
+    )
     return (
-        mb_html.table_datum(row_dic["note"], hebrew),
+        mb_html.table_datum(note, _BORDERED),
         mb_html.table_datum(forms, hebrew),
         mb_html.table_datum(row_dic["bcv_anchor"], _BORDERED),
     )
