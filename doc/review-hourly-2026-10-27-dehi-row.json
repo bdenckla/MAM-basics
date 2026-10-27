@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-27",
+  "state": "completed focused review",
+  "recorded_utc": "2026-10-27T14:05:23.790309+00:00",
+  "window": {
+    "from": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "through": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+    "commits": 1,
+    "paths": 4
+  },
+  "receipt_parent": "abe5c1fb06d9c9ba3d51a161dc239c5b0adc1163",
+  "inputs": {
+    "basics": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+    "parent_data_and_html": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "prior_independent_form_evidence": "review-hourly-2026-10-27-kept-meteg-partial-evidence/lightweight-result.json, preserved in receipt parent; raw copy retained under /workspace/scratch/review-hourly-20261027-kept-meteg/source-raw/hourly/",
+    "sibling_inputs": "None required or consumed; no Private/Fonts content or runtime use."
+  },
+  "source_review": "Read the complete four-path endpoint. The collector uses the maintained MAM-with-doc rendering options to add a checked plain-text mam_with_doc field only to listed rows. Table rows use parameter 1 over that field; census examples retain raw parameter 2. The rendered explanation describes that distinction. Policies, renderer implementation, raw inputs, other products and publication workflows are unchanged.",
+  "disposition": "No consequential implementation defect or repair; editorial choices preserved. No new interpretation or authority inferred from the prose.",
+  "comparisons": [
+    "All nine row references, parameter 1, raw parameter 2, notes and other existing JSON fields equal the parent exactly; only mam_with_doc is added.",
+    "Every mam_with_doc field equals the corresponding committed MAM-with-doc verse's marked target and the prior independently derived kept-meteg form, codepoint-for-codepoint.",
+    "All nine HTML upper forms remain parameter 1; all nine lower forms equal mam_with_doc, retaining lang=hbo/RTL. DOM comparison permits only these nine lower-form substitutions and the second explanatory paragraph: all notes, links, examples, counts and other markup match the parent.",
+    "Selected dehi and full single-threaded FOI-family generation each reproduce all 53 files byte-for-byte, with no tracked differences or unrelated output changes. Before/after SHA-256 inventories are retained."
+  ],
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-row-evidence/row-comparison-tests.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-dehi-row/test_rows.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-row/source",
+      "started_utc": "2026-10-27T14:03:37.461081+00:00",
+      "completed_utc": "2026-10-27T14:03:37.957099+00:00",
+      "seconds": 0.496,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-row-evidence/html-comparison-followup.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-dehi-row/test_rows.py::test_html_changes_are_only_explanation_and_nine_lower_forms",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-row/source",
+      "started_utc": "2026-10-27T14:03:50.351276+00:00",
+      "completed_utc": "2026-10-27T14:03:50.560174+00:00",
+      "seconds": 0.209,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-row-evidence/foi-selected-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-dehi-row/run_foi.py",
+        "selected"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-row/source",
+      "started_utc": "2026-10-27T14:03:53.411635+00:00",
+      "completed_utc": "2026-10-27T14:03:54.153667+00:00",
+      "seconds": 0.742,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-row-evidence/foi-family-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-dehi-row/run_foi.py",
+        "full"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-row/source",
+      "started_utc": "2026-10-27T14:03:57.165286+00:00",
+      "completed_utc": "2026-10-27T14:04:10.827024+00:00",
+      "seconds": 13.662,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-row-evidence/changed-python-format.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "--workers",
+        "1",
+        "py/foi/dexi_stress_meteg_explanations.py",
+        "py/foi/foiz_wt_dexi_stress_meteg.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-row/source",
+      "started_utc": "2026-10-27T14:04:19.027917+00:00",
+      "completed_utc": "2026-10-27T14:04:19.322880+00:00",
+      "seconds": 0.295,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "tests": {
+    "initial": "2 passed, 1 scratch XPath failure in 0.16 s; zero skips",
+    "followup": "Only the failed HTML comparison reran: 1 passed in 0.04 s; zero skips",
+    "failure_disposition": "The scratch selector assumed id=intro enclosed the explanatory paragraphs, but it identifies a later standalone paragraph. After selecting the actual body/div paragraphs, the exact DOM comparison passes. Original helper/log retained; production unchanged, no all-green full rerun claimed."
+  },
+  "format": "Both changed Python files pass Black --check --workers 1; endpoint git diff --check passes.",
+  "sequential_execution": "Start inventory found no competing generator/test. All five stages were awaited strictly sequentially; no broad checks.",
+  "broad_tested_unchanged": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "limits": "No broad suite/mega, MAM-with-doc regeneration (its source and products are unchanged), font work, Private write, main/shared push/integration, deployment or Pages dispatch. Fonts window was already closed and not repeated. Prior finished receipts/failures remain immutable; receipt branch code tree is not the tested source.",
+  "raw_evidence": "/workspace/scratch/review-hourly-20261027-dehi-row/source-raw",
+  "remote_before_receipt": {
+    "refs/heads/main": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+    "refs/heads/review-hourly-20261027-kept-meteg-receipts": "abe5c1fb06d9c9ba3d51a161dc239c5b0adc1163"
+  },
+  "remaining_window": null
+}

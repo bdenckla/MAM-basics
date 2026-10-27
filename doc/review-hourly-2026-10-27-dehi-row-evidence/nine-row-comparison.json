@@ -1,0 +1,70 @@
+{
+  "rows": [
+    {
+      "reference": "Ps44:27",
+      "parameter_1": "ק֭וּמָֽה",
+      "raw_parameter_2": "ק֭וּמָ֭ה",
+      "mam_with_doc": "ק֭וּמָֽ֭ה",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Ps57:9",
+      "parameter_1": "ע֭וּרָֽה",
+      "raw_parameter_2": "ע֭וּרָ֭ה",
+      "mam_with_doc": "ע֭וּרָֽ֭ה",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Ps69:29",
+      "parameter_1": "יִ֭מָּחֽוּ",
+      "raw_parameter_2": "יִ֭מָּח֭וּ",
+      "mam_with_doc": "יִ֭מָּחֽ֭וּ",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Ps86:7",
+      "parameter_1": "צָ֭רָתִֽי",
+      "raw_parameter_2": "צָ֭רָתִ֭י",
+      "mam_with_doc": "צָ֭רָתִֽ֭י",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Ps108:3",
+      "parameter_1": "ע֭וּרָֽה",
+      "raw_parameter_2": "ע֭וּרָ֭ה",
+      "mam_with_doc": "ע֭וּרָֽ֭ה",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Ps138:3",
+      "parameter_1": "קָ֭רָֽאתִי",
+      "raw_parameter_2": "קָ֭רָ֭אתִי",
+      "mam_with_doc": "קָ֭רָֽ֭אתִי",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Ps139:7",
+      "parameter_1": "אָ֭נָֽה",
+      "raw_parameter_2": "אָ֭נָ֭ה",
+      "mam_with_doc": "אָ֭נָֽ֭ה",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Pr13:25",
+      "parameter_1": "אֹ֭כֵֽל",
+      "raw_parameter_2": "אֹ֭כֵ֭ל",
+      "mam_with_doc": "אֹ֭כֵֽ֭ל",
+      "verse_target_exact": true
+    },
+    {
+      "reference": "Jb29:16",
+      "parameter_1": "אָ֭נֹכִֽי",
+      "raw_parameter_2": "אָ֭נֹכִ֭י",
+      "mam_with_doc": "אָ֭נֹכִֽ֭י",
+      "verse_target_exact": true
+    }
+  ],
+  "parent_raw_data_and_notes_preserved": true,
+  "independent_kept_forms_match": true,
+  "all_nine_mwd_verse_targets_match": true
+}
