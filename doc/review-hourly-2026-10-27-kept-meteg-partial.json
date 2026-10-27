@@ -1,0 +1,217 @@
+{
+  "date": "2026-10-27",
+  "state": "partial; source/lightweight endpoint inspection complete, runtime focused work held",
+  "window": {
+    "from": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+    "through": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "commits": 3,
+    "paths": 14
+  },
+  "receipt_parent": "415ce27bde3cb64ffeb91c010aca4b76e2629481",
+  "reviewed_through_unchanged": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+  "broad_tested_unchanged": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "source_inspection": "Read current policy/status and actual endpoint source/call-site and output diffs. MAM-with-doc selects the new keeping-meteg form; default and near-Aleppo remain parameter 1, explicit with-helper remains parameter 2. Shared callback now receives ordered census rows and emits HTML; the three special-letter calls use their uninterrupted parameter-2 text for classification. Runtime correctness/isolation remains pending.",
+  "completed_lightweight_evidence": {
+    "source": "d0cc6752d9820d3038ae0f72c2886190ed431c6e",
+    "parent": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+    "started_utc": "2026-10-27T13:17:43.292191+00:00",
+    "completed_utc": "2026-10-27T13:17:43.552795+00:00",
+    "seconds": 0.261,
+    "raw_helper_counts": {
+      "מ:דחי": 2317,
+      "מ:צינור": 56
+    },
+    "independent_dehi_census": {
+      "no-meteg": 2053,
+      "meteg-earlier-in-stressed-atom": 94,
+      "meteg-on-earlier-atom": 161,
+      "meteg-on-helper-letter": 9
+    },
+    "classified_special_letter_calls": [
+      {
+        "reference": "Ps80:16",
+        "kind": "no-meteg",
+        "parameter_1": "וְ֭כַנָּה",
+        "parameter_2": "וְ֭כַנָּ֭ה",
+        "both_wrapped": true
+      },
+      {
+        "reference": "Pr1:1",
+        "kind": "no-meteg",
+        "parameter_1": "מִ֭שְׁלֵי",
+        "parameter_2": "מִ֭שְׁלֵ֭י",
+        "both_wrapped": true
+      },
+      {
+        "reference": "Pr28:17",
+        "kind": "no-meteg",
+        "parameter_1": "אָ֭דָם",
+        "parameter_2": "אָ֭דָ֭ם",
+        "both_wrapped": true
+      }
+    ],
+    "raw_meteg_replacement_cases": [
+      {
+        "reference": "Ps44:27",
+        "template": "מ:דחי",
+        "parameter_1": "ק֭וּמָֽה",
+        "parameter_2": "ק֭וּמָ֭ה",
+        "independent_kept_form": "ק֭וּמָֽ֭ה"
+      },
+      {
+        "reference": "Ps57:9",
+        "template": "מ:דחי",
+        "parameter_1": "ע֭וּרָֽה",
+        "parameter_2": "ע֭וּרָ֭ה",
+        "independent_kept_form": "ע֭וּרָֽ֭ה"
+      },
+      {
+        "reference": "Ps69:29",
+        "template": "מ:דחי",
+        "parameter_1": "יִ֭מָּחֽוּ",
+        "parameter_2": "יִ֭מָּח֭וּ",
+        "independent_kept_form": "יִ֭מָּחֽ֭וּ"
+      },
+      {
+        "reference": "Ps86:7",
+        "template": "מ:דחי",
+        "parameter_1": "צָ֭רָתִֽי",
+        "parameter_2": "צָ֭רָתִ֭י",
+        "independent_kept_form": "צָ֭רָתִֽ֭י"
+      },
+      {
+        "reference": "Ps108:3",
+        "template": "מ:דחי",
+        "parameter_1": "ע֭וּרָֽה",
+        "parameter_2": "ע֭וּרָ֭ה",
+        "independent_kept_form": "ע֭וּרָֽ֭ה"
+      },
+      {
+        "reference": "Ps138:3",
+        "template": "מ:דחי",
+        "parameter_1": "קָ֭רָֽאתִי",
+        "parameter_2": "קָ֭רָ֭אתִי",
+        "independent_kept_form": "קָ֭רָֽ֭אתִי"
+      },
+      {
+        "reference": "Ps139:7",
+        "template": "מ:דחי",
+        "parameter_1": "אָ֭נָֽה",
+        "parameter_2": "אָ֭נָ֭ה",
+        "independent_kept_form": "אָ֭נָֽ֭ה"
+      },
+      {
+        "reference": "Pr13:25",
+        "template": "מ:דחי",
+        "parameter_1": "אֹ֭כֵֽל",
+        "parameter_2": "אֹ֭כֵ֭ל",
+        "independent_kept_form": "אֹ֭כֵֽ֭ל"
+      },
+      {
+        "reference": "Jb29:16",
+        "template": "מ:דחי",
+        "parameter_1": "אָ֭נֹכִֽי",
+        "parameter_2": "אָ֭נֹכִ֭י",
+        "independent_kept_form": "אָ֭נֹכִֽ֭י"
+      }
+    ],
+    "first_raw_examples": {
+      "no-meteg": {
+        "reference": "Ps1:1",
+        "parameter_1": "חַ֭טָּאִים",
+        "parameter_2": "חַ֭טָּאִ֭ים"
+      },
+      "meteg-earlier-in-stressed-atom": {
+        "reference": "Ps2:3",
+        "parameter_1": "נְֽ֭נַתְּקָה",
+        "parameter_2": "נְֽ֭נַתְּקָ֭ה"
+      },
+      "meteg-on-earlier-atom": {
+        "reference": "Ps3:7",
+        "parameter_1": "לֹֽא־אִ֭ירָא",
+        "parameter_2": "לֹֽא־אִ֭ירָ֭א"
+      },
+      "meteg-on-helper-letter": {
+        "reference": "Ps44:27",
+        "parameter_1": "ק֭וּמָֽה",
+        "parameter_2": "ק֭וּמָ֭ה"
+      }
+    },
+    "published_nine_raw_pairs_preserved": true,
+    "nine_note_lemmas_equal_independent_kept_forms": true,
+    "intro_examples_match_first_raw_calls": true,
+    "three_book_html_changes_only_meteg_and_wrapping": {
+      "D1-Psalms": 14,
+      "D2-Proverbs": 2,
+      "D3-Job": 2
+    },
+    "raw_phonetic_and_near_aleppo_products_unchanged": true,
+    "limits": "File/source inspection only, with no project rendering/classification calls, generators, tests, font build/shaping or Private content read. Runtime validation/isolation/regeneration remain pending parent release."
+  },
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-partial-evidence/lightweight-raw-and-endpoint-inspection.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-kept-meteg/lightweight_inspection.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:17:43.242018+00:00",
+      "completed_utc": "2026-10-27T13:17:44.037044+00:00",
+      "seconds": 0.795,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-kept-meteg-partial-evidence/changed-python-format.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "--workers",
+        "1",
+        "py/author_misc/mp_cmn_rows_core.py",
+        "py/foi/dexi_stress_meteg_explanations.py",
+        "py/foi/foi_finals.py",
+        "py/foi/foiz_wt_dexi_stress_meteg.py",
+        "py/mwd/mwd_write_book.py",
+        "py/render_wt/render_wikitext.py",
+        "py/render_wt/render_wikitext_handlers.py",
+        "py/render_wt/render_wikitext_handlers_for_qamats.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+      "started_utc": "2026-10-27T13:20:52.061865+00:00",
+      "completed_utc": "2026-10-27T13:20:52.594065+00:00",
+      "seconds": 0.532,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "formatting": "Black --check --workers 1 passes all eight changed Python files; git diff --check 46f80ecc d0cc6752 passes.",
+  "disposition": "No consequential defect confirmed by completed inspection. No production repair or new editorial/linguistic interpretation.",
+  "not_run": [
+    "No project renderer/FOI classifier, generator, substantial test/suite, font build or shaping run.",
+    "No three-book MAM-with-doc, full/selected FOI or MAM-parsed documentation regeneration.",
+    "No runtime differential comparison of options/default/near-Aleppo, malformed/special-letter/nested-qamats cases or shared callback/empty/isolation behavior."
+  ],
+  "pending_after_parent_release": [
+    "Compare all helper forms independently, including kept meteg, raw parameter-2 and parameter-1 isolation, all three special-letter cases and malformed/unselected validation.",
+    "Run three-book MAM-with-doc regeneration, single-threaded FOI family and selected-run comparisons, and py/main_authored.py gen-mam-parsed-docs sequentially; compare exact committed products.",
+    "Verify the new ordered census/example HTML callback, first examples, empty/listed categories, note selection and unchanged existing FOI products."
+  ],
+  "blocker": {
+    "action": "Expensive generators and substantial focused tests",
+    "target": "Basics 46f80ecc through d0cc6752",
+    "reason": "Parent explicitly holds this execution while the HP grammar-reader work is active in Private; no release received.",
+    "state": "pending, not started",
+    "denied": false
+  },
+  "runtime_inputs": "Completed lightweight work uses committed files in Basics only; no sibling/private runtime input.",
+  "retained_checkouts": [
+    "/workspace/review-hourly-20261027-kept-meteg/source",
+    "/workspace/review-hourly-20261027-kept-meteg/receipts"
+  ],
+  "raw_evidence": "/workspace/scratch/review-hourly-20261027-kept-meteg/source-raw",
+  "limits": "No anchor advance, broad rerun, main/shared push, deployment, font generation/baseline or Private write. Previous reviews/receipts remain at their original scope."
+}

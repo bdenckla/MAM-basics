@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "-m",
+    "black",
+    "--check",
+    "--workers",
+    "1",
+    "py/author_misc/mp_cmn_rows_core.py",
+    "py/foi/dexi_stress_meteg_explanations.py",
+    "py/foi/foi_finals.py",
+    "py/foi/foiz_wt_dexi_stress_meteg.py",
+    "py/mwd/mwd_write_book.py",
+    "py/render_wt/render_wikitext.py",
+    "py/render_wt/render_wikitext_handlers.py",
+    "py/render_wt/render_wikitext_handlers_for_qamats.py"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+  "started_utc": "2026-10-27T13:20:52.061865+00:00",
+  "completed_utc": "2026-10-27T13:20:52.594065+00:00",
+  "seconds": 0.532,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

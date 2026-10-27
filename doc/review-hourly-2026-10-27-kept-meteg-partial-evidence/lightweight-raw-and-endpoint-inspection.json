@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-kept-meteg/lightweight_inspection.py"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-kept-meteg/source",
+  "started_utc": "2026-10-27T13:17:43.242018+00:00",
+  "completed_utc": "2026-10-27T13:17:44.037044+00:00",
+  "seconds": 0.795,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}
