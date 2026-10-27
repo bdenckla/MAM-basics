@@ -1,0 +1,22 @@
+{
+  "raw": "/workspace/scratch/review-hourly-20261027-translations/source-raw",
+  "archive": "/workspace/scratch/review-hourly-20261027-translations/source-raw.tar.gz",
+  "archive_sha256": "d099b54b97cdfd9c6430304b57995412b9ef53edf49093d7cbf3a38fe04383cc",
+  "file_sha256": {
+    "hourly/pure-javascript-toggle.json": "777d58fecf7994b3d77912a01f15a166ffe0bf73aa422c827f24d3678c50ea6b",
+    "hourly/toggle-input.json": "926af3598b729f2f9e4fbb4d9e76d56675b696e74d44f432197218abfa4c815c",
+    "hourly/translation-parts-result.json": "08800aa8aa3ee6fe13fded6e229fda23dbc8ec6e57e24569dc41afe7c8b1a82b",
+    "hourly/changed-python-format.log": "26a5fd9505f2b5608a20c4fed4b4c4795e0783d03b72ade02a6af34dae8ad086",
+    "hourly/pure-note-serializer-and-hook.log": "43be76faac9efd4be375832f561a486305184383c6b630dc6c8c894fcba83aa1",
+    "hourly/serializer-controls-result.json": "31ef3a7a6ab41f5dcaaa972fe47753e10ed4c2fedfbbbde9359716738431d3f9",
+    "hourly/committed-page-result.json": "9acbbd815ce7800b6367f583edfdab9cf666e2bb77c7db09ddd6b01d0722598b",
+    "hourly/pure-javascript-toggle.log": "fbf3b6c3f08c096d975685dd8cea1540d3a5e6ea6c227fc9959d6cb058c719da",
+    "hourly/pure-note-serializer-and-hook.json": "1a63889f355ba263b3777f2588a4bf9b0513ced938ae119d0efb9b973365f402",
+    "hourly/parent_mb_html.py": "2dd007a3c50c9ba05929eac6eba2fd11a989c80a686edf58e79ccccc1d782d1e",
+    "hourly/toggle-result.json": "a3614a8d3c9f1d422f9601c0fbd1e6940c74b02d3bd9b52f21757eecd4052a13",
+    "hourly/changed-python-format.json": "f9ed0bb521af2c567ed558db6a2dd8b6457004a46d0fd626c647f6e95997e4bd",
+    "hourly/mocked-hook-result.json": "3949d66c4ed1ed2001ba199e14633f0c61a435f5f5f2462969986f4180e1e7ef",
+    "hourly/__pycache__/parent_mb_html.cpython-313.pyc": "b847681d76def8bba1fbbab23c16e9e6735cd776d530038ee3fa6252d1f029a3"
+  },
+  "membership_and_bytes_verified": true
+}

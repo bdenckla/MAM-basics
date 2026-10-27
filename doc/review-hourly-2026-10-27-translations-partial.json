@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-27",
+  "state": "partial; endpoint inspection and lightweight pure checks completed; product regeneration pending",
+  "recorded_utc": "2026-10-27T19:16:11.992240+00:00",
+  "window": {
+    "from": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+    "through": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "commits": 2,
+    "paths": [
+      "gh-pages/MAM-with-doc/foi/foi-dexi-stress-meteg.html",
+      "py/foi/dexi_stress_meteg_explanations.py",
+      "py/foi/dexi_stress_meteg_translations.py",
+      "py/foi/foi_finals.py",
+      "py/mb_misc/mb_html.py"
+    ]
+  },
+  "receipt_parent": "c96858f04650bfe80319f3eb43f859ce436608ed",
+  "classification": "Meaningful generator/shared-renderer and prose change: nine notes gain exact-key English translations and toggle controls; only the dexi-stress-meteg page receives a script, and shared HTML serialization gains script/button support.",
+  "inspection": "Read current policy/AGENTS, maintained status, full endpoint changes and affected call sites. Translation entries are keyed by exact lemma and note parts, rejecting missing/stale or malformed notes. Hebrew quoted in English must appear codepoint-exact in its corresponding original part. Source text, siglum expansions and per-part associations were compared against the maintained references; no clear objective contradiction found. This is not human editorial approval of the AI translations or a new manuscript/linguistic interpretation. AI provenance and not-human-reviewed caveats remain explicit.",
+  "inputs": {
+    "code_and_committed_products": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "differential_parent": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+    "runtime_siblings": "None: completed pure checks use only the frozen Basics checkout and synthetic HTML/DOM objects. No Private/font runtime inputs read."
+  },
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-translations-partial-evidence/pure-note-serializer-and-hook.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-translations/test_pure.py",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-translations/source",
+      "started_utc": "2026-10-27T19:12:25.662551+00:00",
+      "completed_utc": "2026-10-27T19:12:26.887974+00:00",
+      "seconds": 1.225,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-translations-partial-evidence/pure-javascript-toggle.json",
+      "command": [
+        "node",
+        "/workspace/scratch/review-hourly-20261027-translations/toggle.cjs",
+        ".novc/hourly/toggle-input.json",
+        ".novc/hourly/toggle-result.json"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-translations/source",
+      "started_utc": "2026-10-27T19:13:14.825939+00:00",
+      "completed_utc": "2026-10-27T19:13:14.987258+00:00",
+      "seconds": 0.161,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-translations-partial-evidence/changed-python-format.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "-m",
+        "black",
+        "--check",
+        "--workers",
+        "1",
+        "py/foi/dexi_stress_meteg_explanations.py",
+        "py/foi/dexi_stress_meteg_translations.py",
+        "py/foi/foi_finals.py",
+        "py/mb_misc/mb_html.py"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-translations/source",
+      "started_utc": "2026-10-27T19:13:15.176825+00:00",
+      "completed_utc": "2026-10-27T19:13:15.518220+00:00",
+      "seconds": 0.341,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "results": [
+    "Official py/main_test.py runner: 10 passed in 0.15 s, zero skips; stage exit 0 in 1.225 s. Six deliberate stale/malformed/foreign-quote/duplicate-key cases raise ValueError as expected.",
+    "All nine committed notes and their 20 parts are covered. Fourteen embedded Hebrew quotation runs match the original corresponding note parts exactly; the source data remains unmodified.",
+    "Committed-page DOM comparison preserves every original Hebrew note, forms cell, reference and other page content after removal of only the added controls/translations, caveat paragraph and final script. The tracked raw JSON is byte-identical to the parent. Only this one generated HTML file changes in the endpoint.",
+    "Five shared serializer controls are byte-equal to parent behavior: escaped normal text, mixed Hebrew span, list, table and verbatim style. Script comparison operators remain raw; normal text/button space assertions remain enforced.",
+    "Mocked _write_html hook verifies the script follows the table wrapper for the selected stem only; no real collector or product write is exercised.",
+    "Actual committed script evaluated by Node with tiny fake DOM contracts: nine buttons, 18 clicks, correct labels/hidden states and isolation of other rows. No real browser, layout or accessibility audit claimed.",
+    "Black --check --workers 1 passes all four changed Python files; endpoint git diff --check passes. All executed stages were awaited sequentially and left tracked source clean."
+  ],
+  "failure_status": "No unexpected failure in completed checks. Deliberate rejection cases are expected exceptions, not product failures.",
+  "disposition": "No consequential defect confirmed by completed evidence; no repair. The substantive window remains pending until focused regeneration/product comparisons complete.",
+  "blocker": {
+    "action": "Selected dexi-stress-meteg FOI regeneration, then single-threaded full FOI-family regeneration and exact product comparisons",
+    "target": {
+      "from": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+      "through": "5c28eba09f95fd491afef38454149bde628ee2a7"
+    },
+    "reason": "Parent confirmed the HP BHL task is starting canonical generation for a second prose layer and explicitly retained the expensive-regeneration hold until parent release.",
+    "state": "pending, not started",
+    "denied": false,
+    "uncertain_outcome": false
+  },
+  "pending_after_parent_release": [
+    "Run selected FOI generation from this exact committed source; compare expected page reproduction, original data preservation and unselected output isolation.",
+    "Run the single-threaded full FOI family sequentially; compare every affected shared-renderer output to committed products and explain any differences. No full mega/suite is required for this bounded review."
+  ],
+  "not_run": "No FOI collector/generator, full FOI family, real browser, mega/full suite, font build/shaping, baseline acceptance, frozen-font generation, release or deployment. Author-reported tests are not adopted.",
+  "reviewed_through_unchanged": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+  "focused_checked_unchanged": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+  "broad_tested_unchanged": "9302ad04b347aa2db3ee0004962cd66202031cce",
+  "raw_evidence": "/workspace/scratch/review-hourly-20261027-translations/source-raw",
+  "raw_archive": "/workspace/scratch/review-hourly-20261027-translations/source-raw.tar.gz",
+  "remote_before_receipt": {
+    "refs/heads/main": "5c28eba09f95fd491afef38454149bde628ee2a7",
+    "refs/heads/review-hourly-20261027-zwj-doc-receipts": "c96858f04650bfe80319f3eb43f859ce436608ed"
+  },
+  "newer_window": null,
+  "limits": "Branch-only evidence continuing the exact maintained receipt parent. No source/editorial change, Private/HP or Fonts action, main/shared integration or publishing permission change. Completed temporary worktrees will be cleaned after preservation and remote receipt verification; source can be recreated at the exact frozen commit after release."
+}
