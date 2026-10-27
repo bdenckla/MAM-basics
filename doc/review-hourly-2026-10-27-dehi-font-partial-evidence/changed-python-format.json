@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "-m",
+    "black",
+    "--check",
+    "--workers",
+    "1",
+    "py/foi/dexi_stress_meteg_explanations.py",
+    "py/foi/foi_finals.py",
+    "py/foi/foiz_wt_dexi_stress_meteg.py",
+    "py/main_0_mega.py",
+    "py/main_foi_features_of_interest.py",
+    "py/py_html/hebrew_letter_spacing.py",
+    "py/py_html/taamey_d_assets.py",
+    "py/py_misc/mwd_utils.py"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+  "started_utc": "2026-10-27T11:32:03.227877+00:00",
+  "completed_utc": "2026-10-27T11:32:03.710620+00:00",
+  "seconds": 0.483,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

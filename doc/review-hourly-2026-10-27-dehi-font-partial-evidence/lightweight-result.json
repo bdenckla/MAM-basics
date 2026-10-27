@@ -1,0 +1,45 @@
+{
+  "source": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+  "began_utc": "2026-10-27T11:29:55.591180+00:00",
+  "ended_utc": "2026-10-27T11:29:55.893993+00:00",
+  "seconds": 0.303,
+  "archive_checks": {
+    "font_tip": "bb25283c010ea738ee11416edc1eb2faf12419c7",
+    "release_source": "68cd629022028ec648c0ee2f36ac0480123d0d47",
+    "binary_sha256": "f17ec56ac2ef44a0f1e78b1d9adaaef6330ed1a1f9dec3d0ad1c87390e0dc151",
+    "source_zip_sha256": "19bcdd68fd0a7526a0cd38d9f5ee50e86e6e7b69ba05e40738522add68300ad4",
+    "source_members_exact_git_bytes": 9,
+    "snapshot_metadata_hashes_equal": true,
+    "embedded_notice_matches_recorded_formatting": true,
+    "support_mapping_files": 9,
+    "same_host_source_links": [
+      "../font-sources/taamey-d-1.0/Taamey_D-1.0-sources.zip",
+      "../font-sources/taamey-d-1.0/SOURCE.txt"
+    ]
+  },
+  "independent_raw_census": {
+    "no-meteg": 2050,
+    "meteg-earlier-in-stressed-atom": 94,
+    "meteg-on-earlier-atom": 161,
+    "meteg-on-helper-letter": 9,
+    "template-in-parameter": 3
+  },
+  "raw_rows_equal_published": 9,
+  "raw_refs": [
+    "Ps44:27",
+    "Ps57:9",
+    "Ps69:29",
+    "Ps86:7",
+    "Ps108:3",
+    "Ps138:3",
+    "Ps139:7",
+    "Pr13:25",
+    "Jb29:16"
+  ],
+  "special_mark_counts_in_all_raw_json": {
+    "U+05C8": 0,
+    "U+05C9": 0
+  },
+  "spacing_executable_ast_unchanged": true,
+  "limits": "No generator, project classifier/rendering call, font build, shaping, suite or Private read. Only lightweight file/archive/hash and direct raw-JSON inspection. Regeneration and shared-renderer regression checks await parent release of overlap restriction."
+}
