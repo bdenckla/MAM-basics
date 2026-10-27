@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "/workspace/scratch/review-hourly-20261027-dehi-font/test_focused.py",
+    "py/tests/test_yeivin_itm.py::test_assets_and_output_allowlist_match_generation",
+    "py/tests/test_shared_html_styles.py::test_published_tree_holds_one_font_file",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+  "started_utc": "2026-10-27T11:44:21.856229+00:00",
+  "completed_utc": "2026-10-27T11:44:23.007247+00:00",
+  "seconds": 1.151,
+  "exit_code": 1,
+  "tracked_status_after": ""
+}

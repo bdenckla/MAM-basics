@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "py/main_test.py",
+    "/workspace/scratch/review-hourly-20261027-dehi-font/test_focused.py::test_counted_paths_stay_out_of_rows_and_empty_section_remains",
+    "/workspace/scratch/review-hourly-20261027-dehi-font/test_focused.py::test_nine_notes_match_mam_with_doc_cells",
+    "-q"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+  "started_utc": "2026-10-27T11:45:19.234683+00:00",
+  "completed_utc": "2026-10-27T11:45:19.534042+00:00",
+  "seconds": 0.299,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

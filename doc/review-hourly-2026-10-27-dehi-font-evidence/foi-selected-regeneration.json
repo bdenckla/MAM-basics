@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-dehi-font/run_foi.py",
+    "selected"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+  "started_utc": "2026-10-27T11:40:35.411513+00:00",
+  "completed_utc": "2026-10-27T11:40:36.097042+00:00",
+  "seconds": 0.686,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-27",
+  "state": "completed focused review",
+  "recorded_utc": "2026-10-27T11:50:47.321044+00:00",
+  "window": {
+    "from": "9302ad04b347aa2db3ee0004962cd66202031cce",
+    "through": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+    "commits": 2,
+    "local_git_paths": 41
+  },
+  "receipt_parent": "db1140f81f9f6426c186e5351dfd54acfe7931d2",
+  "nightly_history": "ab2b85d7c75cc927d930b1d17b112d301d42dae1",
+  "prior_lightweight_evidence": "review-hourly-2026-10-27-dehi-font-partial.json",
+  "overlap_release": "Parent explicitly confirmed HP task-owned processes exited and released the restriction before any continuation generator/test ran. Start inventory found no competing expensive process.",
+  "inputs": {
+    "basics": "46f80ecc8b29fdd7f5fdf30c40bc2b3382bbb352",
+    "font_snapshot_tree_read_by_prior_hash_check": "bb25283c010ea738ee11416edc1eb2faf12419c7",
+    "release_source": "68cd629022028ec648c0ee2f36ac0480123d0d47",
+    "private": "No runtime input or content read in this focused work; no write."
+  },
+  "disposition": "No consequential implementation defect confirmed; no production repair. User editorial/license choices are preserved without adding new legal, manuscript or publishing conclusions.",
+  "stages": [
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-font-evidence/foi-selected-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-dehi-font/run_foi.py",
+        "selected"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+      "started_utc": "2026-10-27T11:40:35.411513+00:00",
+      "completed_utc": "2026-10-27T11:40:36.097042+00:00",
+      "seconds": 0.686,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-font-evidence/foi-family-regeneration.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-dehi-font/run_foi.py",
+        "full"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+      "started_utc": "2026-10-27T11:40:41.262623+00:00",
+      "completed_utc": "2026-10-27T11:40:53.062358+00:00",
+      "seconds": 11.8,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-font-evidence/foi-other-isolation.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "/workspace/scratch/review-hourly-20261027-dehi-font/run_foi.py",
+        "other"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+      "started_utc": "2026-10-27T11:43:11.860223+00:00",
+      "completed_utc": "2026-10-27T11:43:12.361050+00:00",
+      "seconds": 0.501,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-font-evidence/focused-foi-and-assets.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-dehi-font/test_focused.py",
+        "py/tests/test_yeivin_itm.py::test_assets_and_output_allowlist_match_generation",
+        "py/tests/test_shared_html_styles.py::test_published_tree_holds_one_font_file",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+      "started_utc": "2026-10-27T11:44:21.856229+00:00",
+      "completed_utc": "2026-10-27T11:44:23.007247+00:00",
+      "seconds": 1.151,
+      "exit_code": 1,
+      "tracked_status_after": ""
+    },
+    {
+      "evidence": "review-hourly-2026-10-27-dehi-font-evidence/focused-note-and-empty-followup.json",
+      "command": [
+        "/workspace/MAM-basics/.venv/bin/python",
+        "py/main_test.py",
+        "/workspace/scratch/review-hourly-20261027-dehi-font/test_focused.py::test_counted_paths_stay_out_of_rows_and_empty_section_remains",
+        "/workspace/scratch/review-hourly-20261027-dehi-font/test_focused.py::test_nine_notes_match_mam_with_doc_cells",
+        "-q"
+      ],
+      "cwd": "/workspace/review-hourly-20261027-dehi-font/source",
+      "started_utc": "2026-10-27T11:45:19.234683+00:00",
+      "completed_utc": "2026-10-27T11:45:19.534042+00:00",
+      "seconds": 0.299,
+      "exit_code": 0,
+      "tracked_status_after": ""
+    }
+  ],
+  "comparisons": [
+    "Selected dehi, full single-threaded FOI family, and another selected FOI each preserve all 53 root/subtree output files byte-for-byte, including every pre-existing FOI, new counted introduction, nine row records and index. No generated difference accepted.",
+    "Actual note JSON matches the complete ordered text, tags and attributes of the nine MAM-with-doc notes (following any big-doc link); comparisons ignore renderer line wrapping, wbr opportunities and generated note IDs only.",
+    "Nested target notes select the innermost note. A nested note in an outer body retains its own note; a bare body row/outside-note row and missing required quotation reject. C/D/E and good-ending traversal is counted; next_CP is excluded. Nested helper parameters are both inventoried.",
+    "Counted paths are excluded from JSON/table rows; a zero-row population with nonempty census retains its empty section and introduction and creates no table/index in a selected run.",
+    "Four malformed classification mutations reject. Production asset guards reject corrupt font, archive, support text and inventory-member mismatch; the current nine-file asset mapping exactly matches publication. Existing Yeivin asset/output lint and one-font-file lint pass."
+  ],
+  "test_results": {
+    "initial": "13 passed, 2 scratch-adapter failures, zero skips in 0.74 s",
+    "followup": "Only the corrected two checks reran: 2 passed, zero skips in 0.14 s",
+    "failure_disposition": "Empty-section assertion mistook HTML line wrapping for absent wording; note comparison mistook renderer wbr placement for changed content. Original helpers/logs retained; after DOM/whitespace-aware correction both pass. No production change or all-green full rerun claimed."
+  },
+  "receipt_assembly_failure": "First assembly attempt raised KeyError: started_utc because an output-comparison record also contained a command field. It failed before maintained status changes. Collection was narrowed to timestamped execution records and assembly resumed; no generator or check was repeated.",
+  "previous_verified_results": "Partial receipt independently matches 2,317 dehi occurrences (2,050 / 161 / 94 / 9 / 3), all nine raw row pairs, canonical WOFF2/source ZIP and their release hashes, nine exact Git source members, nine published support files and source links. Spacing executable AST unchanged; eight-file Black and endpoint whitespace checks pass. These commands were not repeated.",
+  "scope_limits": [
+    "Broad-tested remains 9302ad04b347aa2db3ee0004962cd66202031cce; no full mega/suite.",
+    "No font build, shaping, baseline acceptance, Private change, main/shared integration or deployment/dispatch.",
+    "Separate font repair remains outside this work. No retrospective exhaustive old/new page/word shaping comparison or licensing interpretation.",
+    "Receipt branch code tree is not the tested source. Prior partial hold, nightly results and historical failures remain at their recorded scopes."
+  ],
+  "remaining_frozen_window": null
+}
