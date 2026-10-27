@@ -237,6 +237,14 @@ def _html_for_nondoc(hfr_ctx: hfr.HfrCtx, ver_ndd: VerseNdd):
     return nondoc_veraf.map_over((hfr.html_for_ren_el, hfr_ctx))
 
 
+def html_for_self_contained_note(hfr_ctx: hfr.HfrCtx, doc):
+    """Return the HTML that a verse's note column has for one note shown in full,
+    doc being a note as mam_doc_utils.extract_docs returns it."""
+    # A self-contained note uses neither the book nor the verse of its _DocCtx.
+    doc_ctx = _DocCtx(None, hfr_ctx, None)
+    return _html_for_single_doc_ren_el(doc_ctx, _DocType.SELF_CONTAINED, (0, doc))
+
+
 def _html_for_docs(doc_ctx: _DocCtx, doc_type):
     # The notes of a verse's three rows are numbered in one sequence, in the order the
     # rows appear, because a note's id is made from the verse and that number alone.

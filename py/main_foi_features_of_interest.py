@@ -19,6 +19,7 @@ from foi import foi_finals
 from foi import foi_struct as fct
 from foi.foi_find_wt_fois_for_1_bk import find_wt_fois_for_1_bk
 
+from foi import foiz_wt_dexi_stress_meteg as foi_dexi_stress_meteg
 from foi import foiz_wt_doc_note_notation as foi_doc_note_notation
 from foi import foiz_wt_dual_ml_alef as foi_dual_ml_alef
 from foi import foiz_wt_kq_1 as foi_kq_1
@@ -91,6 +92,7 @@ def _make_intermediates(foi, single_threaded, books_mpu):
 
 
 _WIKITEXT_FOIS_FUN_FOR_CLARG = {
+    "args-foi-dexi-stress-meteg": foi_dexi_stress_meteg.find_fois_wt,
     "args-foi-doc-note-notation": foi_doc_note_notation.find_fois_wt,
     "args-foi-dual-ml-alef": foi_dual_ml_alef.find_fois_wt,
     "args-foi-kq-1": foi_kq_1.find_fois_wt,
@@ -114,6 +116,7 @@ _WIKITEXT_CLARGS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.keys())
 _WIKITEXT_FOIS_FNS = list(_WIKITEXT_FOIS_FUN_FOR_CLARG.values())
 # The foi_paths of the FOIs whose categories appear even when they have no rows.
 _DECLARED_FOI_PATHS_FOR_CLARG = {
+    "args-foi-dexi-stress-meteg": foi_dexi_stress_meteg.FOI_PATHS,
     "args-foi-doc-note-notation": foi_doc_note_notation.FOI_PATHS,
 }
 

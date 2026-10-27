@@ -14,6 +14,7 @@ from foi import tsinnorit_explanations as tsinnorit_e
 from foi import ole_yored_explanations as ole_yored_e
 from foi import sec_yyy_explanations as sec_merk_e
 from foi import dml_an_explanations as dml_e
+from foi import dexi_stress_meteg_explanations as dexi_stress_meteg_e
 from foi import doc_note_notation_explanations as doc_note_notation_e
 from foi import kq_simple_explanations as kq_simple_e
 from foi import kq_complex_explanations as kq_complex_e
@@ -95,18 +96,22 @@ def _write_index_dot_html(outspecs):
 
 def _write_finals3(args_foi, all_fois, outspec):
     outfile_stem, foi_paths = outspec
-    # Every path gets a table, in sorted order, so that a declared category with no
-    # rows keeps its section.
-    html_tables = {tuple(foi_path): [] for foi_path in sorted(foi_paths)}
+    # A counted path's rows are counted for the page's introduction, not listed.
+    counted = _COUNTED_FOI_PATHS.get(outfile_stem, frozenset())
+    counts = {foi_path: len(all_fois[foi_path]) for foi_path in counted}
+    listed = sorted(foi_path for foi_path in foi_paths if foi_path not in counted)
+    # Every listed path gets a table, in sorted order, so that a declared category
+    # with no rows keeps its section.
+    html_tables = {tuple(foi_path): [] for foi_path in listed}
     outs = {"rowdics": [], "html_tables": html_tables}
-    for foi_path in sorted(foi_paths):
+    for foi_path in listed:
         for foi_struct in all_fois[foi_path]:
             fpfs = foi_path, foi_struct
             _make_final_for_foi_struct(fpfs, outs)
     if outfile_stem == "mtgmtg":
         mtgmtg_e.validate_quoted_mam_atoms(outs["rowdics"])
     _write_json(outfile_stem, outs["rowdics"])
-    _write_html(args_foi, outfile_stem, outs["html_tables"])
+    _write_html(args_foi, outfile_stem, outs["html_tables"], counts)
 
 
 def _make_final_for_foi_struct(fpfs, outs):
@@ -178,6 +183,8 @@ def _append_table_row(io_html_tables, foi_path, row_dic):
 
 
 def _make_table_row(foi_path, row_dic):
+    if foi_path[0] == "dexi-stress-meteg":
+        return mb_html.table_row(dexi_stress_meteg_e.html_row_cells(row_dic))
     if foi_path[0] == "slh-word":
         target_tds = slh_word_e.html_target_cells(row_dic["html_contents"])
     else:
@@ -218,12 +225,13 @@ def _outfilename_for_json(outfile_stem):
     return f"foi-{outfile_stem}.json"
 
 
-def _write_html(args_foi, outfile_stem, html_tables):
+def _write_html(args_foi, outfile_stem, html_tables, counts):
     body1, body2 = _get_html_body1_and_2(outfile_stem, html_tables)
     if not body1:
         assert args_foi
         return
-    body_contents = _foi_body_wrapper(_overall_head(outfile_stem) + body1 + body2)
+    overall_head = _overall_head(outfile_stem, counts)
+    body_contents = _foi_body_wrapper(overall_head + body1 + body2)
     title = f"{outfile_stem} (MAM features of interest)"
     write_ctx = mb_html.WriteCtx(
         title,
@@ -239,10 +247,12 @@ def _foi_body_wrapper(contents):
     return [mb_html.div(contents, {"style": style})]
 
 
-def _overall_head(outfile_stem):
+def _overall_head(outfile_stem, counts):
     explanation = _OVERALL_EXPLANATIONS.get(outfile_stem)
     if explanation is None:
         return []
+    if callable(explanation):  # Its figures are the counts of the counted paths.
+        explanation = explanation(counts)
     if isinstance(explanation, str):
         return [mb_html.para(explanation)]
     return [mb_html.para(paragraph) for paragraph in explanation]
@@ -378,6 +388,7 @@ _EXPLANATIONS = {
 _OVERALL_EXPLANATIONS = {
     "alef-dual-ml-alef-first": dml_e.OVERALL_EXPLANATION_DML_A1,
     "alef-dual-ml-alef-second": dml_e.OVERALL_EXPLANATION_DML_A2,
+    "dexi-stress-meteg": dexi_stress_meteg_e.overall_explanation,
     "doc-note-notation": doc_note_notation_e.OVERALL_EXPLANATION,
     "kq-simple": kq_simple_e.OVERALL_EXPLANATION,
     "kq-complex": kq_complex_e.OVERALL_EXPLANATION,
@@ -395,6 +406,13 @@ _OVERALL_EXPLANATIONS = {
     "slh-word": slh_word_e.OVERALL_EXPLANATION,
     "tsinnorit": tsinnorit_e.OVERALL_EXPLANATION,
     "unicode": unicode_e.OVERALL_EXPLANATION,
+}
+
+
+# The foi_paths of a stem whose rows its page counts in its introduction, whose
+# explanation then takes the counts, rather than listing them.
+_COUNTED_FOI_PATHS = {
+    "dexi-stress-meteg": dexi_stress_meteg_e.COUNTED_FOI_PATHS,
 }
 
 
