@@ -290,6 +290,9 @@ def _handle_stress_helper_word(hctx, tmpl):
 # where parameter 1 has it. Ben, 2026-10-27: "in contexts like "MAM with doc",
 # where we feel we are controlling the font, and we feel confident that the dexi
 # stress helper will be shown as "top meteg", we should also show the meteg below".
+# Phonetic MAM's pages are set in Taamey D too, but they show its distributed
+# release, whose readers choose their own fonts, and that release keeps MAM's
+# parameter 2 as it is. Ben, 2026-10-27: "let's leave Phonetic MAM as-is".
 _STRESS_HELPER_FORMS = {
     None: "parameter 1",
     "rv-without-stress-helper": "parameter 1",
