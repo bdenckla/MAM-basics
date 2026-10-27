@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-zwj/basics_screen.py"
+  ],
+  "cwd": "/workspace/review-hourly-20261027-zwj/basics-receipts",
+  "started_utc": "2026-10-27T16:47:45.587624+00:00",
+  "completed_utc": "2026-10-27T16:47:46.422510+00:00",
+  "seconds": 0.835,
+  "exit_code": 0,
+  "tracked_status_after": ""
+}

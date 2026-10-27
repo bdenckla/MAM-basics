@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/workspace/MAM-basics/.venv/bin/python",
+    "/workspace/scratch/review-hourly-20261027-zwj/basics_screen.py"
+  ],
+  "exit_code": 1,
+  "error": "TypeError: string indices must be integers, not 'str' at author['name']",
+  "timing": "Initial direct lightweight invocation timing was not captured; do not infer it from followup metadata.",
+  "disposition": "Archived author entries are strings, not dictionaries. Counts and first atom/record checks reached before failure. Corrected reader checks expected names in archived author data and passes all three records. No source edit or MAM test/generator run."
+}

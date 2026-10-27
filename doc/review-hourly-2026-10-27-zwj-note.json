@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-27",
+  "state": "completed documentation screen",
+  "recorded_utc": "2026-10-27T16:54:19.221970+00:00",
+  "window": {
+    "from": "3b23037b7e1752fdce2f7d5fa78cc5b9a3476f77",
+    "through": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+    "commits": 1,
+    "paths": 1
+  },
+  "receipt_parent": "f449b3f718fe17f94f889aa1037af472d7cdfa87",
+  "inspection": "Only the live potential-corrections note adds section 8; no executable/data/product/process/publication change. Read exact frozen source XML/change records and official Unicode 18 sections 9.1, 23.2.2 and 23.2.4.",
+  "evidence": "review-hourly-2026-10-27-zwj-note-evidence/screen-result.json",
+  "result": "All three atoms/positions, authors, citations, releases and recorded locators match the archived sources; record 35's CGJ-to-ZWJ replacement, record 65's stated display reason and record 115's retained ZWJ agree. Independent 39-book counts match: 1,141 CGJ; 264 accent-CGJ-vowel; 83 ZWJ, of which 80 medial-meteg requests and the three Job instances; no ZWNJ. Combining-class/reordering queries agree with the note's ordering distinction. Official standard sections support the stated functions. Three stated font-behavior observations also agree with committed-artifact checks, whose private details stay in the owning repository.",
+  "stage": {
+    "evidence": "review-hourly-2026-10-27-zwj-note-evidence/documentation-screen-followup.json",
+    "command": [
+      "/workspace/MAM-basics/.venv/bin/python",
+      "/workspace/scratch/review-hourly-20261027-zwj/basics_screen.py"
+    ],
+    "cwd": "/workspace/review-hourly-20261027-zwj/basics-receipts",
+    "started_utc": "2026-10-27T16:47:45.587624+00:00",
+    "completed_utc": "2026-10-27T16:47:46.422510+00:00",
+    "seconds": 0.835,
+    "exit_code": 0,
+    "tracked_status_after": ""
+  },
+  "scratch_failure": "review-hourly-2026-10-27-zwj-note-evidence/initial-scratch-failure.json",
+  "disposition": "No consequential contradiction found. Preserve the owner's recommendations; no manuscript-image, CLC-coverage, external-report or fresh editorial judgment inferred.",
+  "anchor_effect": "Advance reviewed-through only; existing broad-tested and project-focused-tested anchors remain byte-identical.",
+  "not_run": "No MAM test, generator, broad suite/mega, source refresh, deployment or external message.",
+  "privacy": "No private font paths, detailed metrics, serialized output or source evidence copied into this public receipt.",
+  "raw_evidence": "/workspace/scratch/review-hourly-20261027-zwj/basics-raw",
+  "remote_before_receipt": {
+    "refs/heads/main": "076198c8a4469d08204b9e33c510d5ff02ae7e48",
+    "refs/heads/review-hourly-20261027-dehi-row-receipts": "f449b3f718fe17f94f889aa1037af472d7cdfa87"
+  },
+  "remaining_window": null
+}
